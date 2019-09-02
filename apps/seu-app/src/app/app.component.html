@@ -1,9 +1,11 @@
+<div >
 <app-header></app-header>
-<br/>
-<br/>
-<br/>
-<div class="container-fluid"> 
+
+<div  [class.isPrinting]="printService.isPrinting"  class="container-fluid"> 
+	
 	<router-outlet></router-outlet>
+	<router-outlet name="print"></router-outlet>
+
 </div>
  
-
+</div>

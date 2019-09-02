@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Lecture } from 'src/app/shared/models/lecture';
+import { CertificateIDService } from '../certificate-id.service';
 
 @Component({
   selector: 'app-certificate-id',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CertificateIDComponent implements OnInit {
 
-  constructor() { }
+  constructor(private certificateIDService: CertificateIDService) { }
+  certificateDetails;
+  arabicPrint: string;
+  EngPrint: string;
+
+  lectures: Lecture[];
 
   ngOnInit() {
+
+this.arabicPrint =    this.certificateIDService.DownloadCertificate();
+this.EngPrint =    this.certificateIDService.DownloadEngCertificate();
+
+this.certificateIDService.getCertificateID().then(
+      (res) => {
+                this.certificateDetails = ((res)as any) .data;
+                this.lectures = (((res)as any) .data as any).Lectures;
+      }
+    );
   }
+
 
 }

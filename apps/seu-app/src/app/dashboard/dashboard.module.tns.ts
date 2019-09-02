@@ -10,7 +10,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module.tns';
 @NgModule({
   declarations: [SpinnerComponent, HomeComponent, PostsComponent],
   imports: [
-    NativeScriptCommonModule,DashboardRoutingModule
+    NativeScriptCommonModule, DashboardRoutingModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [PostsService]

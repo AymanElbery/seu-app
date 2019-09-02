@@ -5,19 +5,20 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
 
- private _apiURI  : string;
- private _tokenName:string;
+ // tslint:disable-next-line: variable-name
+ private _apiURI: string;
+ // tslint:disable-next-line: variable-name
+ private _tokenName: string;
   constructor() {
-      this._apiURI = 'http://192.168.8.105:7300/api';
-      this._tokenName='auth_token';
+      this._apiURI = 'http://seuapps.seu.edu.sa/stdservicesapi';
+      this._tokenName = 'auth_token';
    }
 
-   getToken()
-   {
+   getToken() {
      return this._tokenName;
    }
 
    getApiURI() {
        return this._apiURI;
-   }    
+   }
 }
