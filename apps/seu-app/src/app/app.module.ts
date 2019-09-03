@@ -27,6 +27,7 @@ import { OtherAffairModule } from './other-affair/other-affair.module';
 import { PrintService } from './shared/services/print.service';
 import { PrintLayoutComponent } from './PrintExample/print-layout/print-layout.component';
 import { PrintFileComponent } from './PrintExample/print-file/print-file.component';
+import { GraduatesAffairsModule } from './graduates-affairs/graduates-affairs.module';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { PrintFileComponent } from './PrintExample/print-file/print-file.compone
     , FinanceAffairModule
     , ExamsAffairModule
     , OtherAffairModule
+    , GraduatesAffairsModule
   ],
   providers: [ConfigService,
      HttpRequestService

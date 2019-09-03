@@ -1,0 +1,133 @@
+<div class="jumbotron jumbtron-fluid">
+    <h3 class="display-5 text-center">   {{graduateData.labels.title}}</h3>
+    <h6 class="display-6 text-center">
+ {{graduateData.labels.date}}:{{graduateData.values.date}}</h6>
+    <div class="row">
+  <div  class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="form-group">
+      
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><b>{{graduateData.labels.student_name}} </b> </div>
+        </div>
+        <input  value="{{graduateData.values.student_name}}"  class="form-control" readonly>
+      </div>
+    </div>   
+  </div>
+
+   <div  class="col-md-1"></div>
+
+</div>
+<div class="row">
+    <div  class="col-md-1"></div>
+
+    <div class="col-md-5">
+      <div class="form-group">
+        
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><b> {{graduateData.labels.college}} </b> </div>
+          </div>
+          <input name="ID"   value="{{graduateData.values.coll}}"  class="form-control" readonly>
+        </div>
+      </div>   
+    </div>
+    <div class="col-md-5">
+  
+        <div class="form-group">
+        
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><b>  رقم الطالب / الطالبه</b> </div>
+              </div>
+              <input name="fsermester"  value="{{graduateData.values.std_id}}"   class="form-control" readonly>
+            </div>
+          </div>   
+      </div>  <div  class="col-md-1"></div>
+
+  </div>
+  
+  <div class="row">
+      <div  class="col-md-1"></div>
+
+      <div class="col-md-5">
+        <div class="form-group">
+          
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><b> {{graduateData.labels.ssn}}    </b> </div>
+            </div>
+            <input name="accamdeicStatus"   value=" {{graduateData.values.ssn}}  "  class="form-control" readonly>
+          </div>
+        </div>   
+      </div>
+      <div class="col-md-5">
+    
+          <div class="form-group">
+          
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><b>{{graduateData.labels.major}}    </b> </div>
+                </div>
+                <input name="TotalGrade"  value="{{graduateData.values.major}}"   class="form-control" readonly>
+              </div>
+            </div>   
+        </div>
+        <div  class="col-md-1"></div>
+
+    </div>
+    
+    <div class="row">
+        <div  class="col-md-1"></div>
+
+        <div class="col-md-5">
+          <div class="form-group">
+            
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><b> {{graduateData.labels.branch}} </b> </div>
+              </div>
+              <input name="AcademicCurrentStatus"  value="{{graduateData.values.branch}}"   class="form-control" readonly>
+            </div>
+          </div>   
+        </div>
+
+        <div class="col-md-5">
+      
+            <div class="form-group">
+            
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text"><b> المرحله  </b> </div>
+                  </div>
+                  <input name="Fees"  value="{{graduateData.values.level}}"   class="form-control" readonly>
+                </div>
+              </div>   
+          </div>        <div  class="col-md-1"></div>
+
+      </div> </div>
+
+      <p style="direction: rtl;float: right;text-align: right">
+          {{graduateData.labels.txt1}}   {{graduateData.labels.term}}
+          {{graduateData.labels.txt2}} {{graduateData.values.final_graduation_GPA}} {{graduateData.labels.txt7}}
+         <br/>
+          {{graduateData.labels.txt3}}
+          <br/>
+          {{graduateData.labels.txt4}}
+          <br/>
+          <b>ملحوظة</b>  {{graduateData.labels.txt5}}
+          <br/>
+          <b> {{graduateData.labels.txt6}}</b>
+        </p>
+     
+        <div  class="btn-group btn-group-justified col-md-12 ">
+            <div class="col-md-4"></div>
+            <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
+              طباعة</a>
+            <a class="btn btn-primary" href="{{EngPrint}}"><span class="glyphicon glyphicon-print"></span>
+              Print</a>
+            <div class="col-md-4"></div>
+          
+            </div>
+   

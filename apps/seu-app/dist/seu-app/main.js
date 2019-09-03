@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".printDiv {\r\n    page-break-after: always;\r\n   \r\n  \r\n  }\r\n  div {color:red}\r\n  .printDiv:last-child {\r\n    page-break-after: avoid;\r\n  }\r\n\r\n  \r\n  \r\n\r\n  \r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvUHJpbnRFeGFtcGxlL3ByaW50LWZpbGUvcHJpbnQtZmlsZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksd0JBQXdCOzs7RUFHMUI7RUFDQSxLQUFLLFNBQVM7RUFDZDtJQUNFLHVCQUF1QjtFQUN6QiIsImZpbGUiOiJzcmMvYXBwL1ByaW50RXhhbXBsZS9wcmludC1maWxlL3ByaW50LWZpbGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcmludERpdiB7XHJcbiAgICBwYWdlLWJyZWFrLWFmdGVyOiBhbHdheXM7XHJcbiAgIFxyXG4gIFxyXG4gIH1cclxuICBkaXYge2NvbG9yOnJlZH1cclxuICAucHJpbnREaXY6bGFzdC1jaGlsZCB7XHJcbiAgICBwYWdlLWJyZWFrLWFmdGVyOiBhdm9pZDtcclxuICB9XHJcblxyXG4gIFxyXG4gIFxyXG5cclxuICBcclxuICAiXX0= */"
+module.exports = ".printDiv {\r\n    page-break-after: always;\r\n   \r\n  \r\n  }\r\n  div {color:red}\r\n  .printDiv:last-child {\r\n    page-break-after: avoid;\r\n  }\r\n\r\n  \r\n  \r\n\r\n  \r\n  \r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL1ByaW50RXhhbXBsZS9wcmludC1maWxlL3ByaW50LWZpbGUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHdCQUF3Qjs7O0VBRzFCO0VBQ0EsS0FBSyxTQUFTO0VBQ2Q7SUFDRSx1QkFBdUI7RUFDekIiLCJmaWxlIjoiLi4vUHJpbnRFeGFtcGxlL3ByaW50LWZpbGUvcHJpbnQtZmlsZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnByaW50RGl2IHtcclxuICAgIHBhZ2UtYnJlYWstYWZ0ZXI6IGFsd2F5cztcclxuICAgXHJcbiAgXHJcbiAgfVxyXG4gIGRpdiB7Y29sb3I6cmVkfVxyXG4gIC5wcmludERpdjpsYXN0LWNoaWxkIHtcclxuICAgIHBhZ2UtYnJlYWstYWZ0ZXI6IGF2b2lkO1xyXG4gIH1cclxuXHJcbiAgXHJcbiAgXHJcblxyXG4gIFxyXG4gICJdfQ== */"
 
 /***/ }),
 
@@ -109,7 +109,7 @@ var PrintFileComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".header, .header-space,\r\n.footer, .footer-space { height: 100px; }\r\n.header { position: fixed; top: 0; }\r\n.footer { position: fixed; bottom: 0; }\r\n@media screen {\r\n  :host {\r\n    display: none;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvUHJpbnRFeGFtcGxlL3ByaW50LWxheW91dC9wcmludC1sYXlvdXQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTt5QkFDeUIsYUFBYSxFQUFFO0FBQ3hDLFVBQVUsZUFBZSxFQUFFLE1BQU0sRUFBRTtBQUNuQyxVQUFVLGVBQWUsRUFBRSxTQUFTLEVBQUU7QUFFdEM7RUFDRTtJQUNFLGFBQWE7RUFDZjtBQUNGIiwiZmlsZSI6InNyYy9hcHAvUHJpbnRFeGFtcGxlL3ByaW50LWxheW91dC9wcmludC1sYXlvdXQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5oZWFkZXIsIC5oZWFkZXItc3BhY2UsXHJcbi5mb290ZXIsIC5mb290ZXItc3BhY2UgeyBoZWlnaHQ6IDEwMHB4OyB9XHJcbi5oZWFkZXIgeyBwb3NpdGlvbjogZml4ZWQ7IHRvcDogMDsgfVxyXG4uZm9vdGVyIHsgcG9zaXRpb246IGZpeGVkOyBib3R0b206IDA7IH1cclxuXHJcbkBtZWRpYSBzY3JlZW4ge1xyXG4gIDpob3N0IHtcclxuICAgIGRpc3BsYXk6IG5vbmU7XHJcbiAgfVxyXG59XHJcbiJdfQ== */"
+module.exports = ".header, .header-space,\r\n.footer, .footer-space { height: 100px; }\r\n.header { position: fixed; top: 0; }\r\n.footer { position: fixed; bottom: 0; }\r\n@media screen {\r\n  :host {\r\n    display: none;\r\n  }\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL1ByaW50RXhhbXBsZS9wcmludC1sYXlvdXQvcHJpbnQtbGF5b3V0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7eUJBQ3lCLGFBQWEsRUFBRTtBQUN4QyxVQUFVLGVBQWUsRUFBRSxNQUFNLEVBQUU7QUFDbkMsVUFBVSxlQUFlLEVBQUUsU0FBUyxFQUFFO0FBRXRDO0VBQ0U7SUFDRSxhQUFhO0VBQ2Y7QUFDRiIsImZpbGUiOiIuLi9QcmludEV4YW1wbGUvcHJpbnQtbGF5b3V0L3ByaW50LWxheW91dC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmhlYWRlciwgLmhlYWRlci1zcGFjZSxcclxuLmZvb3RlciwgLmZvb3Rlci1zcGFjZSB7IGhlaWdodDogMTAwcHg7IH1cclxuLmhlYWRlciB7IHBvc2l0aW9uOiBmaXhlZDsgdG9wOiAwOyB9XHJcbi5mb290ZXIgeyBwb3NpdGlvbjogZml4ZWQ7IGJvdHRvbTogMDsgfVxyXG5cclxuQG1lZGlhIHNjcmVlbiB7XHJcbiAgOmhvc3Qge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICB9XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -165,7 +165,7 @@ var PrintLayoutComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljYWZmL2FjYWRlbWljLXJlY29yZC9hY2FkZW1pYy1yZWNvcmQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY2FmZi9hY2FkZW1pYy1yZWNvcmQvYWNhZGVtaWMtcmVjb3JkLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -221,7 +221,7 @@ var AcademicRecordComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljYWZmL2FjYWRlbWljLXN0YXR1cy9hY2FkZW1pYy1zdGF0dXMuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY2FmZi9hY2FkZW1pYy1zdGF0dXMvYWNhZGVtaWMtc3RhdHVzLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -232,7 +232,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-6\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>اسم الطالب</b> </div>\n        </div>\n        <input  value=\"{{student.name}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n  <div class=\"col-md-6\">\n\n      <div class=\"form-group\">\n      \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b>الرقم الجامعي </b> </div>\n            </div>\n            <input name=\"studentNo\"  value=\"{{student.std_id}}\"   class=\"form-control\" readonly>\n          </div>\n        </div>   \n    </div>\n</div>\n<div class=\"row\">\n    <div class=\"col-md-6\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b>رقم الهويه </b> </div>\n          </div>\n          <input name=\"ID\"   value=\"{{student.ssn}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    <div class=\"col-md-6\">\n  \n        <div class=\"form-group\">\n        \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b> فصل القبول </b> </div>\n              </div>\n              <input name=\"fsermester\"  value=\"{{student.std_adm_term_label}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n      </div>\n  </div>\n  \n  <div class=\"row\">\n      <div class=\"col-md-6\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b>الحالة الاكاديمية الحاليه </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\"{{student.current_acadimic_status_label}}\"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-6\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>المعدل التراكمي النهائي  </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{student.final_graduation_GPA}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n    </div>\n    \n    <div class=\"row\">\n        <div class=\"col-md-6\">\n          <div class=\"form-group\">\n            \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b>الوضع الاكاديمي </b> </div>\n              </div>\n              <input name=\"AcademicCurrentStatus\"  value=\"{{student.acadimic_position_label}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n        </div>\n        <div class=\"col-md-6\">\n      \n            <div class=\"form-group\">\n            \n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"><b> الرسوم الدراسية  </b> </div>\n                  </div>\n                  <input name=\"Fees\"  value=\"{{student.std_fees}}\"   class=\"form-control\" readonly>\n                </div>\n              </div>   \n          </div>\n      </div>\n      \n      <div class=\"card\">\n          <h5 class=\"card-header h5\"><div class=\"row\">\n              الحالة الاكاديمية للطالب خلال الفصول الدراسيه\n            </div>\n            </h5>\n          <div class=\"card-body\">\n              <div class=\"row\"> <div class=\"col-md-12\">\n                  <div class=\"form-group\">\n                      <div class=\"input-group\">\n                          <div class=\"input-group-prepend\">\n                            <div class=\"input-group-text\"><b>  الفصول الدراسية  </b> </div>\n                          </div>\n                      <select name=\"trems\" ng-model=\"selectedSems\" #t (change)=\"getTrmsDetails(t.value)\"   class=\"form-control\">\n                        <option *ngFor=\"let item of studentTerms\" value=\"{{item.TERM_CODE}}\">{{item.TERM_DESC}}</option>\n                      </select></div>\n                    </div>\n              </div></div>\n              <div class=\"row\"> \n                  <div class=\"col-md-6\">\n                    <div class=\"form-group\">\n                      \n                      <div class=\"input-group\">\n                        <div class=\"input-group-prepend\">\n                          <div class=\"input-group-text\"><b>الكلية </b> </div>\n                        </div>\n                        <input  value=\"{{studentTermDetails.COLL_CODE}}\"  class=\"form-control\" readonly>\n                      </div>\n                    </div>   \n                  </div>\n                  <div class=\"col-md-6\">\n                \n                      <div class=\"form-group\">\n                      \n                          <div class=\"input-group\">\n                            <div class=\"input-group-prepend\">\n                              <div class=\"input-group-text\"><b>التخصص  </b> </div>\n                            </div>\n                            <input name=\"studentNo\"  value=\"{{studentTermDetails.MAJR_code}}\"   class=\"form-control\" readonly>\n                          </div>\n                        </div>   \n                    </div>\n                </div>\n                <div class=\"row\">\n                    <div class=\"col-md-6\">\n                      <div class=\"form-group\">\n                        \n                        <div class=\"input-group\">\n                          <div class=\"input-group-prepend\">\n                            <div class=\"input-group-text\"><b>الفرع  </b> </div>\n                          </div>\n                          <input name=\"ID\"   value=\"{{studentTermDetails.CAMP_code}}\"  class=\"form-control\" readonly>\n                        </div>\n                      </div>   \n                    </div>\n                    <div class=\"col-md-6\">\n                  \n                        <div class=\"form-group\">\n                        \n                            <div class=\"input-group\">\n                              <div class=\"input-group-prepend\">\n                                <div class=\"input-group-text\"><b>  المعدل التراكمي </b> </div>\n                              </div>\n                              <input name=\"fsermester\"  value=\"{{studentTermDetails.gba}}\"   class=\"form-control\" readonly>\n                            </div>\n                          </div>   \n                      </div>\n                  </div>\n                  \n                  <div class=\"row\">\n                      <div class=\"col-md-6\">\n                        <div class=\"form-group\">\n                          \n                          <div class=\"input-group\">\n                            <div class=\"input-group-prepend\">\n                              <div class=\"input-group-text\"><b>  حالة التسجيل </b> </div>\n                            </div>\n                            <input name=\"accamdeicStatus\"   value=\"{{studentTermDetails.RegisterationStatus}}\"  class=\"form-control\" readonly>\n                          </div>\n                        </div>   \n                      </div>\n                      <div class=\"col-md-6\">\n                    \n                          <div class=\"form-group\">\n                          \n                              <div class=\"input-group\">\n                                <div class=\"input-group-prepend\">\n                                  <div class=\"input-group-text\"><b>المستوى الدراسي    </b> </div>\n                                </div>\n                                <input name=\"TotalGrade\"  value=\"{{studentTermDetails.study_level}}\"   class=\"form-control\" readonly>\n                              </div>\n                            </div>   \n                        </div>\n                    </div>\n                    \n                    <div class=\"row\">\n                        <div class=\"col-md-6\">\n                          <div class=\"form-group\">\n                            \n                            <div class=\"input-group\">\n                              <div class=\"input-group-prepend\">\n                                <div class=\"input-group-text\"><b>الحالة الاكاديمية  </b> </div>\n                              </div>\n                              <input name=\"AcademicCurrentStatus\"  value=\"{{studentTermDetails.acadimic_status}}\"   class=\"form-control\" readonly>\n                            </div>\n                          </div>   \n                        </div>\n                        <div class=\"col-md-6\">\n                      \n                            <div class=\"form-group\">\n                            \n                                <div class=\"input-group\">\n                                  <div class=\"input-group-prepend\">\n                                    <div class=\"input-group-text\"><b> الوضع الاكاديمي   </b> </div>\n                                  </div>\n                                  <input name=\"Fees\"  value=\"{{studentTermDetails.ACADIMICPOSITION}}\"   class=\"form-control\" readonly>\n                                </div>\n                              </div>   \n                          </div>\n                      </div>\n                      <div class=\"row\">\n                          <div class=\"col-md-12\">\n                            <div class=\"form-group\">\n                              \n                              <div class=\"input-group\">\n                                <div class=\"input-group-prepend\">\n                                  <div class=\"input-group-text\"><b>المرحلة الدراسية   </b> </div>\n                                </div>\n                                <input name=\"AcademicCurrentStatus\"  value=\"{{studentTermDetails.STD_UGGR}}\"   class=\"form-control\" readonly>\n                              </div>\n                            </div>   \n                          </div>\n                          \n                        </div>\n                \n          </div>\n        </div>\n        <br/><br/>\n        <a class=\"btn btn-info\" href=\"{{arabicPrint}}\"> طباعة</a>\n        <a class=\"btn btn-info\" href=\"{{EngPrint}}\"> Print</a>\n        "
+module.exports = "\n<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">  الحالة الاكاديمية</h3>\n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-5\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>اسم الطالب</b> </div>\n        </div>\n        <input  value=\"{{student.name}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n\n  <div class=\"col-md-5\">\n\n      <div class=\"form-group\">\n      \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b>الرقم الجامعي </b> </div>\n            </div>\n            <input name=\"studentNo\"  value=\"{{student.std_id}}\"   class=\"form-control\" readonly>\n          </div>\n        </div>   \n    </div>  <div  class=\"col-md-1\"></div>\n\n</div>\n<div class=\"row\">\n    <div  class=\"col-md-1\"></div>\n\n    <div class=\"col-md-5\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b>رقم الهويه </b> </div>\n          </div>\n          <input name=\"ID\"   value=\"{{student.ssn}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    <div class=\"col-md-5\">\n  \n        <div class=\"form-group\">\n        \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b> فصل القبول </b> </div>\n              </div>\n              <input name=\"fsermester\"  value=\"{{student.std_adm_term_label}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n      </div>  <div  class=\"col-md-1\"></div>\n\n  </div>\n  \n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b>الحالة الاكاديمية الحاليه </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\"{{student.current_acadimic_status_label}}\"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-5\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>المعدل التراكمي النهائي  </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{student.final_graduation_GPA}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n        <div  class=\"col-md-1\"></div>\n\n    </div>\n    \n    <div class=\"row\">\n        <div  class=\"col-md-1\"></div>\n\n        <div class=\"col-md-5\">\n          <div class=\"form-group\">\n            \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b>الوضع الاكاديمي </b> </div>\n              </div>\n              <input name=\"AcademicCurrentStatus\"  value=\"{{student.acadimic_position_label}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n        </div>\n\n        <div class=\"col-md-5\">\n      \n            <div class=\"form-group\">\n            \n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"><b> الرسوم الدراسية  </b> </div>\n                  </div>\n                  <input name=\"Fees\"  value=\"{{student.std_fees}}\"   class=\"form-control\" readonly>\n                </div>\n              </div>   \n          </div>        <div  class=\"col-md-1\"></div>\n\n      </div>\n      <div class=\"row\">      <div class=\"col-md-1\">\n</div>\n      <div class=\"col-md-10\">\n\n      <div class=\"card\">\n          <h5 class=\"card-header h6\"><div class=\"row\">\n              الحالة الاكاديمية للطالب خلال الفصول الدراسيه\n            </div>\n            </h5>\n          <div class=\"card-body\">\n              <div class=\"row\">\n                  <div  class=\"col-md-1\"></div>\n\n                <div class=\"col-md-10\">\n                  <div class=\"form-group\">\n                      <div class=\"input-group\">\n                          <div class=\"input-group-prepend\">\n                            <div class=\"input-group-text\"><b>  الفصول الدراسية  </b> </div>\n                          </div>\n                      <select name=\"trems\" ng-model=\"selectedSems\" #t (change)=\"getTrmsDetails(t.value)\"   class=\"form-control\">\n                        <option *ngFor=\"let item of studentTerms\" value=\"{{item.TERM_CODE}}\">{{item.TERM_DESC}}</option>\n                      </select></div>\n                    </div>\n              </div></div>\n              <div class=\"row\"> \n                  <div  class=\"col-md-1\"></div>\n\n                  <div class=\"col-md-5\">\n                    <div class=\"form-group\">\n                      \n                      <div class=\"input-group\">\n                        <div class=\"input-group-prepend\">\n                          <div class=\"input-group-text\"><b>الكلية </b> </div>\n                        </div>\n                        <input  value=\"{{studentTermDetails.COLL_CODE}}\"  class=\"form-control\" readonly>\n                      </div>\n                    </div>   \n                  </div>\n                  <div class=\"col-md-5\">\n                \n                      <div class=\"form-group\">\n                      \n                          <div class=\"input-group\">\n                            <div class=\"input-group-prepend\">\n                              <div class=\"input-group-text\"><b>التخصص  </b> </div>\n                            </div>\n                            <input name=\"studentNo\"  value=\"{{studentTermDetails.MAJR_code}}\"   class=\"form-control\" readonly>\n                          </div>\n                        </div>   \n                    </div>        <div  class=\"col-md-1\"></div>\n\n                </div>\n                <div class=\"row\">        <div  class=\"col-md-1\"></div>\n\n                    <div class=\"col-md-5\">\n                      <div class=\"form-group\">\n                        \n                        <div class=\"input-group\">\n                          <div class=\"input-group-prepend\">\n                            <div class=\"input-group-text\"><b>الفرع  </b> </div>\n                          </div>\n                          <input name=\"ID\"   value=\"{{studentTermDetails.CAMP_code}}\"  class=\"form-control\" readonly>\n                        </div>\n                      </div>   \n                    </div>\n                    <div class=\"col-md-5\">\n                  \n                        <div class=\"form-group\">\n                        \n                            <div class=\"input-group\">\n                              <div class=\"input-group-prepend\">\n                                <div class=\"input-group-text\"><b>  المعدل التراكمي </b> </div>\n                              </div>\n                              <input name=\"fsermester\"  value=\"{{studentTermDetails.gba}}\"   class=\"form-control\" readonly>\n                            </div>\n                          </div>   \n                      </div>        <div  class=\"col-md-1\"></div>\n\n                  </div>\n                  \n                  <div class=\"row\">\n                      <div  class=\"col-md-1\"></div>\n\n                      <div class=\"col-md-5\">\n                        <div class=\"form-group\">\n                          \n                          <div class=\"input-group\">\n                            <div class=\"input-group-prepend\">\n                              <div class=\"input-group-text\"><b>  حالة التسجيل </b> </div>\n                            </div>\n                            <input name=\"accamdeicStatus\"   value=\"{{studentTermDetails.RegisterationStatus}}\"  class=\"form-control\" readonly>\n                          </div>\n                        </div>   \n                      </div>\n                      <div class=\"col-md-5\">\n                    \n                          <div class=\"form-group\">\n                          \n                              <div class=\"input-group\">\n                                <div class=\"input-group-prepend\">\n                                  <div class=\"input-group-text\"><b>المستوى الدراسي    </b> </div>\n                                </div>\n                                <input name=\"TotalGrade\"  value=\"{{studentTermDetails.study_level}}\"   class=\"form-control\" readonly>\n                              </div>\n                            </div>   \n                        </div>        <div  class=\"col-md-1\"></div>\n\n                    </div>\n                    \n                    <div class=\"row\">\n                        <div  class=\"col-md-1\"></div>\n\n                        <div class=\"col-md-5\">\n                          <div class=\"form-group\">\n                            \n                            <div class=\"input-group\">\n                              <div class=\"input-group-prepend\">\n                                <div class=\"input-group-text\"><b>الحالة الاكاديمية  </b> </div>\n                              </div>\n                              <input name=\"AcademicCurrentStatus\"  value=\"{{studentTermDetails.acadimic_status}}\"   class=\"form-control\" readonly>\n                            </div>\n                          </div>   \n                        </div>\n                        <div class=\"col-md-5\">\n                      \n                            <div class=\"form-group\">\n                            \n                                <div class=\"input-group\">\n                                  <div class=\"input-group-prepend\">\n                                    <div class=\"input-group-text\"><b> الوضع الاكاديمي   </b> </div>\n                                  </div>\n                                  <input name=\"Fees\"  value=\"{{studentTermDetails.ACADIMICPOSITION}}\"   class=\"form-control\" readonly>\n                                </div>\n                              </div>   \n                          </div>        <div  class=\"col-md-1\"></div>\n\n                      </div>\n                      <div class=\"row\">\n                          <div  class=\"col-md-1\"></div>\n\n                          <div class=\"col-md-10\">\n                            <div class=\"form-group\">\n                              \n                              <div class=\"input-group\">\n                                <div class=\"input-group-prepend\">\n                                  <div class=\"input-group-text\"><b>المرحلة الدراسية   </b> </div>\n                                </div>\n                                <input name=\"AcademicCurrentStatus\"  value=\"{{studentTermDetails.STD_UGGR}}\"   class=\"form-control\" readonly>\n                              </div>\n                            </div>   \n                          </div>        <div  class=\"col-md-1\"></div>\n\n                          \n                        </div>\n                \n          </div>\n        </div></div></div>\n        <br/><br/>\n        <p style=\"text-align: center\">\n        <a class=\"btn btn-info\" href=\"{{arabicPrint}}\"> طباعة</a>\n        <a class=\"btn btn-info\" href=\"{{EngPrint}}\"> Print</a></p>\n      </div>\n"
 
 /***/ }),
 
@@ -437,7 +437,7 @@ var CertificateIDService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljYWZmL2NlcnRpZmljYXRlLWlkL2NlcnRpZmljYXRlLWlkLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY2FmZi9jZXJ0aWZpY2F0ZS1pZC9jZXJ0aWZpY2F0ZS1pZC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -448,7 +448,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p style=\"text-align: center;direction: rtl\">\n\n<b>  {{certificateDetails.labels.date}} </b>  {{certificateDetails.values.date}}\n<b>  {{certificateDetails.labels.ssn}} </b>  {{certificateDetails.values.ssn}}\n<br>\n {{certificateDetails.labels.txt1}}   {{certificateDetails.values.std_name}}\n {{certificateDetails.labels.txt2}}   {{certificateDetails.values.std_id}}\n\n {{certificateDetails.labels.txt3}}   {{certificateDetails.values.coll}}\n\n {{certificateDetails.labels.txt4}}   {{certificateDetails.values.major}}\n <br/>\n\n\n {{certificateDetails.labels.txt5}}   {{certificateDetails.values.term}}\n\n {{certificateDetails.labels.txt6}}  \n\n {{certificateDetails.labels.txt7}}  \n <br/>\n <br/>\n\n <ng-template [ngIf]=\"lectures ==null\" [ngIfElse]=\"NoLec\">\n  <div>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th scope=\"col\">{{certificateDetails.labels.crn}}</th>\n          <th scope=\"col\">{{certificateDetails.labels.course}}</th>\n          <th scope=\"col\">{{certificateDetails.labels.day_and_date}}</th>\n          <th scope=\"col\">{{certificateDetails.labels.time}}</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of lectures\">\n          <td >{{item.CRN}}</td>\n          <td>{{item.CRSE_TITLE}}</td>\n          <td>{{item.CRSE_DAY}}</td>\n          <td>{{item.CRSE_TIME}}</td>\n        </tr>\n       \n      </tbody>\n    </table>  </div>\n    <br/>\n    \n\n</ng-template>\n\n<ng-template #NoLec>\n  <div>\n <b>{{certificateDetails.labels.txt8}}  </b>\n  </div>\n</ng-template>\n<br/><br/>\n{{certificateDetails.labels.txt9}}  <br/>\n{{certificateDetails.labels.txt10}}  \n<br/><br/>\n<b>\n{{certificateDetails.labels.txt11}}  \n</b>\n{{certificateDetails.labels.txt12}}  \n<br/>\n<br/>\n{{certificateDetails.labels.txt13}}  \n\n\n\n\n<br/><br/>\n\n\n</p>\n\n<div  class=\"btn-group btn-group-justified col-md-12 \">\n  <div class=\"col-md-4\"></div>\n  <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n    طباعة</a>\n  <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n    Print</a>\n  <div class=\"col-md-4\"></div>\n\n  </div>\n"
+module.exports = "<div >\n    <h3 class=\"display-5 text-center\">  شهادة تعريف</h3>\n<p style=\"text-align: center;direction: rtl\">\n\n<b>  {{certificateDetails.labels.date}} </b>  {{certificateDetails.values.date}}\n<b>  {{certificateDetails.labels.ssn}} </b>  {{certificateDetails.values.ssn}}\n<br>\n {{certificateDetails.labels.txt1}}   {{certificateDetails.values.std_name}}\n {{certificateDetails.labels.txt2}}   {{certificateDetails.values.std_id}}\n\n {{certificateDetails.labels.txt3}}   {{certificateDetails.values.coll}}\n\n {{certificateDetails.labels.txt4}}   {{certificateDetails.values.major}}\n <br/>\n\n\n {{certificateDetails.labels.txt5}}   {{certificateDetails.values.term}}\n\n {{certificateDetails.labels.txt6}}  \n\n {{certificateDetails.labels.txt7}}  \n <br/>\n <br/>\n\n <ng-template [ngIf]=\"lectures ==null\" [ngIfElse]=\"NoLec\">\n  <div>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th scope=\"col\">{{certificateDetails.labels.crn}}</th>\n          <th scope=\"col\">{{certificateDetails.labels.course}}</th>\n          <th scope=\"col\">{{certificateDetails.labels.day_and_date}}</th>\n          <th scope=\"col\">{{certificateDetails.labels.time}}</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of lectures\">\n          <td >{{item.CRN}}</td>\n          <td>{{item.CRSE_TITLE}}</td>\n          <td>{{item.CRSE_DAY}}</td>\n          <td>{{item.CRSE_TIME}}</td>\n        </tr>\n       \n      </tbody>\n    </table>  </div>\n    <br/>\n    \n\n</ng-template>\n\n<ng-template #NoLec>\n  <div>\n <b>{{certificateDetails.labels.txt8}}  </b>\n  </div>\n</ng-template>\n<br/><br/>\n{{certificateDetails.labels.txt9}}  <br/>\n{{certificateDetails.labels.txt10}}  \n<br/><br/>\n<b>\n{{certificateDetails.labels.txt11}}  \n</b>\n{{certificateDetails.labels.txt12}}  \n<br/>\n<br/>\n{{certificateDetails.labels.txt13}}  \n\n\n\n\n<br/><br/>\n\n\n</p>\n\n<div  class=\"btn-group btn-group-justified col-md-12 \">\n  <div class=\"col-md-4\"></div>\n  <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n    طباعة</a>\n  <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n    Print</a>\n  <div class=\"col-md-4\"></div>\n\n  </div>\n</div>"
 
 /***/ }),
 
@@ -637,7 +637,7 @@ var AcademicprocsModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvY2FuY2VsLWNvdXJzZS9jYW5jZWwtY291cnNlLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY3Byb2NzL2NhbmNlbC1jb3Vyc2UvY2FuY2VsLWNvdXJzZS5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -693,7 +693,7 @@ var CancelCourseComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvY2hhbmdlLXJlcXVlc3QvY2hhbmdlLXJlcXVlc3QuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY3Byb2NzL2NoYW5nZS1yZXF1ZXN0L2NoYW5nZS1yZXF1ZXN0LmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -749,7 +749,7 @@ var ChangeRequestComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvZXhjZXB0LXNlbWVzdGVyL2V4Y2VwdC1zZW1lc3Rlci5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY3Byb2NzL2V4Y2VwdC1zZW1lc3Rlci9leGNlcHQtc2VtZXN0ZXIuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -805,7 +805,7 @@ var ExceptSemesterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvZXhlY3VzZS1yZXF1ZXN0L2V4ZWN1c2UtcmVxdWVzdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY3Byb2NzL2V4ZWN1c2UtcmVxdWVzdC9leGVjdXNlLXJlcXVlc3QuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -861,7 +861,7 @@ var ExecuseRequestComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvcG9zdHBvbmUtcmVxdWVzdC9wb3N0cG9uZS1yZXF1ZXN0LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY3Byb2NzL3Bvc3Rwb25lLXJlcXVlc3QvcG9zdHBvbmUtcmVxdWVzdC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -917,7 +917,7 @@ var PostponeRequestComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvcmUtZWVucm9sbG1lbnQvcmUtZWVucm9sbG1lbnQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY3Byb2NzL3JlLWVlbnJvbGxtZW50L3JlLWVlbnJvbGxtZW50LmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -973,7 +973,7 @@ var ReEenrollmentComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3Mvc3VtbWVyLXdpdGhkcmF3L3N1bW1lci13aXRoZHJhdy5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY3Byb2NzL3N1bW1lci13aXRoZHJhdy9zdW1tZXItd2l0aGRyYXcuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -1029,7 +1029,7 @@ var SummerWithdrawComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3Mvd2l0aGRyYXctZnJvbS11bml2L3dpdGhkcmF3LWZyb20tdW5pdi5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2FkZW1pY3Byb2NzL3dpdGhkcmF3LWZyb20tdW5pdi93aXRoZHJhdy1mcm9tLXVuaXYuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -1171,7 +1171,7 @@ var AccountModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvbG9naW4tZm9ybS9sb2dpbi1mb3JtLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2NvdW50L2xvZ2luLWZvcm0vbG9naW4tZm9ybS5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -1273,7 +1273,7 @@ var LoginFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjY291bnQvcmVnaXN0cmF0aW9uLWZvcm0vcmVnaXN0cmF0aW9uLWZvcm0uY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hY2NvdW50L3JlZ2lzdHJhdGlvbi1mb3JtL3JlZ2lzdHJhdGlvbi1mb3JtLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -1461,7 +1461,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hcHAuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -1551,6 +1551,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_services_print_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./shared/services/print.service */ "./src/app/shared/services/print.service.ts");
 /* harmony import */ var _PrintExample_print_layout_print_layout_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./PrintExample/print-layout/print-layout.component */ "./src/app/PrintExample/print-layout/print-layout.component.ts");
 /* harmony import */ var _PrintExample_print_file_print_file_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./PrintExample/print-file/print-file.component */ "./src/app/PrintExample/print-file/print-file.component.ts");
+/* harmony import */ var _graduates_affairs_graduates_affairs_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./graduates-affairs/graduates-affairs.module */ "./src/app/graduates-affairs/graduates-affairs.module.ts");
+
 
 
 
@@ -1600,7 +1602,8 @@ var AppModule = /** @class */ (function () {
                 _lectures_absence_lectures_absence_module__WEBPACK_IMPORTED_MODULE_21__["LecturesAbsenceModule"],
                 _finance_affair_finance_affair_module__WEBPACK_IMPORTED_MODULE_22__["FinanceAffairModule"],
                 _exams_affair_exams_affair_module__WEBPACK_IMPORTED_MODULE_23__["ExamsAffairModule"],
-                _other_affair_other_affair_module__WEBPACK_IMPORTED_MODULE_24__["OtherAffairModule"]
+                _other_affair_other_affair_module__WEBPACK_IMPORTED_MODULE_24__["OtherAffairModule"],
+                _graduates_affairs_graduates_affairs_module__WEBPACK_IMPORTED_MODULE_28__["GraduatesAffairsModule"]
             ],
             providers: [_shared_services_config_service__WEBPACK_IMPORTED_MODULE_7__["ConfigService"],
                 _shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_11__["HttpRequestService"],
@@ -1624,7 +1627,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2F1dG8tZ2VuZXJhdGVkL2F1dG8tZ2VuZXJhdGVkLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9hdXRvLWdlbmVyYXRlZC9hdXRvLWdlbmVyYXRlZC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -1776,7 +1779,7 @@ var DashboardModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9ob21lL2hvbWUuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9kYXNoYm9hcmQvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -1832,7 +1835,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9wb3N0cy9wb3N0cy5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9kYXNoYm9hcmQvcG9zdHMvcG9zdHMuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -1966,7 +1969,7 @@ var PostsService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Rhc2hib2FyZC9zcGlubmVyL3NwaW5uZXIuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9kYXNoYm9hcmQvc3Bpbm5lci9zcGlubmVyLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -2022,7 +2025,7 @@ var SpinnerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VxdWFsaXplL2NvdXJzZS1lcXVhbGl6ZS9jb3Vyc2UtZXF1YWxpemUuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9lcXVhbGl6ZS9jb3Vyc2UtZXF1YWxpemUvY291cnNlLWVxdWFsaXplLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -2078,7 +2081,7 @@ var CourseEqualizeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VxdWFsaXplL2VuZ2xpc2gtZXFhdWxpemUvZW5nbGlzaC1lcWF1bGl6ZS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9lcXVhbGl6ZS9lbmdsaXNoLWVxYXVsaXplL2VuZ2xpc2gtZXFhdWxpemUuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -2208,7 +2211,7 @@ var EqualizeModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zLWFmZmFpci9leGFtcy1hYnNlbmNlLWV4Y3VzZXMvZXhhbXMtYWJzZW5jZS1leGN1c2VzLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9leGFtcy1hZmZhaXIvZXhhbXMtYWJzZW5jZS1leGN1c2VzL2V4YW1zLWFic2VuY2UtZXhjdXNlcy5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -2342,7 +2345,7 @@ var ExamsAffairModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zLWFmZmFpci9leGFtcy1hdHRlbmQtc3RhdC9leGFtcy1hdHRlbmQtc3RhdC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9leGFtcy1hZmZhaXIvZXhhbXMtYXR0ZW5kLXN0YXQvZXhhbXMtYXR0ZW5kLXN0YXQuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -2398,7 +2401,7 @@ var ExamsAttendStatComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zLWFmZmFpci9leGFtcy1yZXN1bHQtb2JqZWN0aW9uL2V4YW1zLXJlc3VsdC1vYmplY3Rpb24uY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9leGFtcy1hZmZhaXIvZXhhbXMtcmVzdWx0LW9iamVjdGlvbi9leGFtcy1yZXN1bHQtb2JqZWN0aW9uLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -2454,7 +2457,7 @@ var ExamsResultObjectionComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zLWFmZmFpci9leGFtcy1zY2hlZHVsZS9leGFtcy1zY2hlZHVsZS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9leGFtcy1hZmZhaXIvZXhhbXMtc2NoZWR1bGUvZXhhbXMtc2NoZWR1bGUuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -2582,7 +2585,7 @@ var FinanceAffairModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2ZpbmFuY2UtYWZmYWlyL3R1aXRpb24tZmVlcy1zdGF0L3R1aXRpb24tZmVlcy1zdGF0LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9maW5hbmNlLWFmZmFpci90dWl0aW9uLWZlZXMtc3RhdC90dWl0aW9uLWZlZXMtc3RhdC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -2625,6 +2628,199 @@ var TuitionFeesStatComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], TuitionFeesStatComponent);
     return TuitionFeesStatComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/graduates-affairs/graduate-state/graduate-state.component.css":
+/*!*******************************************************************************!*\
+  !*** ./src/app/graduates-affairs/graduate-state/graduate-state.component.css ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJncmFkdWF0ZS1zdGF0ZS9ncmFkdWF0ZS1zdGF0ZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/graduates-affairs/graduate-state/graduate-state.component.html":
+/*!********************************************************************************!*\
+  !*** ./src/app/graduates-affairs/graduate-state/graduate-state.component.html ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">   {{graduateData.labels.title}}</h3>\n    <h6 class=\"display-6 text-center\">\n {{graduateData.labels.date}}:{{graduateData.values.date}}</h6>\n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-10\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>{{graduateData.labels.student_name}} </b> </div>\n        </div>\n        <input  value=\"{{graduateData.values.student_name}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n\n   <div  class=\"col-md-1\"></div>\n\n</div>\n<div class=\"row\">\n    <div  class=\"col-md-1\"></div>\n\n    <div class=\"col-md-5\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b> {{graduateData.labels.college}} </b> </div>\n          </div>\n          <input name=\"ID\"   value=\"{{graduateData.values.coll}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    <div class=\"col-md-5\">\n  \n        <div class=\"form-group\">\n        \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b>  رقم الطالب / الطالبه</b> </div>\n              </div>\n              <input name=\"fsermester\"  value=\"{{graduateData.values.std_id}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n      </div>  <div  class=\"col-md-1\"></div>\n\n  </div>\n  \n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b> {{graduateData.labels.ssn}}    </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\" {{graduateData.values.ssn}}  \"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-5\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>{{graduateData.labels.major}}    </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{graduateData.values.major}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n        <div  class=\"col-md-1\"></div>\n\n    </div>\n    \n    <div class=\"row\">\n        <div  class=\"col-md-1\"></div>\n\n        <div class=\"col-md-5\">\n          <div class=\"form-group\">\n            \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b> {{graduateData.labels.branch}} </b> </div>\n              </div>\n              <input name=\"AcademicCurrentStatus\"  value=\"{{graduateData.values.branch}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n        </div>\n\n        <div class=\"col-md-5\">\n      \n            <div class=\"form-group\">\n            \n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"><b> المرحله  </b> </div>\n                  </div>\n                  <input name=\"Fees\"  value=\"{{graduateData.values.level}}\"   class=\"form-control\" readonly>\n                </div>\n              </div>   \n          </div>        <div  class=\"col-md-1\"></div>\n\n      </div> </div>\n\n      <p style=\"direction: rtl;float: right;text-align: right\">\n          {{graduateData.labels.txt1}}   {{graduateData.labels.term}}\n          {{graduateData.labels.txt2}} {{graduateData.values.final_graduation_GPA}} {{graduateData.labels.txt7}}\n         <br/>\n          {{graduateData.labels.txt3}}\n          <br/>\n          {{graduateData.labels.txt4}}\n          <br/>\n          <b>ملحوظة</b>  {{graduateData.labels.txt5}}\n          <br/>\n          <b> {{graduateData.labels.txt6}}</b>\n        </p>\n     \n        <div  class=\"btn-group btn-group-justified col-md-12 \">\n            <div class=\"col-md-4\"></div>\n            <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              طباعة</a>\n            <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              Print</a>\n            <div class=\"col-md-4\"></div>\n          \n            </div>\n   "
+
+/***/ }),
+
+/***/ "./src/app/graduates-affairs/graduate-state/graduate-state.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/graduates-affairs/graduate-state/graduate-state.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: GraduateStateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GraduateStateComponent", function() { return GraduateStateComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_graduates_state_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/graduates-state.service */ "./src/app/graduates-affairs/services/graduates-state.service.ts");
+
+
+
+var GraduateStateComponent = /** @class */ (function () {
+    function GraduateStateComponent(graduateStateSer) {
+        this.graduateStateSer = graduateStateSer;
+    }
+    GraduateStateComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.arabicPrint = this.graduateStateSer.DownloadStatement();
+        this.EngPrint = this.graduateStateSer.DownloadEngStatement();
+        this.graduateStateSer.getStatement().then(function (res) { _this.graduateData = res.data; });
+    };
+    GraduateStateComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-graduate-state',
+            template: __webpack_require__(/*! ./graduate-state.component.html */ "./src/app/graduates-affairs/graduate-state/graduate-state.component.html"),
+            styles: [__webpack_require__(/*! ./graduate-state.component.css */ "./src/app/graduates-affairs/graduate-state/graduate-state.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_graduates_state_service__WEBPACK_IMPORTED_MODULE_2__["GraduatesStateService"]])
+    ], GraduateStateComponent);
+    return GraduateStateComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/graduates-affairs/graduates-affairs-routing.module.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/graduates-affairs/graduates-affairs-routing.module.ts ***!
+  \***********************************************************************/
+/*! exports provided: GraduatesAffairsRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GraduatesAffairsRoutingModule", function() { return GraduatesAffairsRoutingModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _graduate_state_graduate_state_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./graduate-state/graduate-state.component */ "./src/app/graduates-affairs/graduate-state/graduate-state.component.ts");
+
+
+
+
+var routes = [
+    { path: 'graduates', component: _graduate_state_graduate_state_component__WEBPACK_IMPORTED_MODULE_3__["GraduateStateComponent"] },
+    {
+        path: 'graduates',
+        children: [
+            { path: 'statement', component: _graduate_state_graduate_state_component__WEBPACK_IMPORTED_MODULE_3__["GraduateStateComponent"] }
+        ]
+    }
+];
+var GraduatesAffairsRoutingModule = /** @class */ (function () {
+    function GraduatesAffairsRoutingModule() {
+    }
+    GraduatesAffairsRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
+        })
+    ], GraduatesAffairsRoutingModule);
+    return GraduatesAffairsRoutingModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/graduates-affairs/graduates-affairs.module.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/graduates-affairs/graduates-affairs.module.ts ***!
+  \***************************************************************/
+/*! exports provided: GraduatesAffairsModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GraduatesAffairsModule", function() { return GraduatesAffairsModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _graduates_affairs_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./graduates-affairs-routing.module */ "./src/app/graduates-affairs/graduates-affairs-routing.module.ts");
+/* harmony import */ var _graduate_state_graduate_state_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graduate-state/graduate-state.component */ "./src/app/graduates-affairs/graduate-state/graduate-state.component.ts");
+/* harmony import */ var _services_graduates_state_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/graduates-state.service */ "./src/app/graduates-affairs/services/graduates-state.service.ts");
+
+
+
+
+
+
+var GraduatesAffairsModule = /** @class */ (function () {
+    function GraduatesAffairsModule() {
+    }
+    GraduatesAffairsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            declarations: [_graduate_state_graduate_state_component__WEBPACK_IMPORTED_MODULE_4__["GraduateStateComponent"]],
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                _graduates_affairs_routing_module__WEBPACK_IMPORTED_MODULE_3__["GraduatesAffairsRoutingModule"]
+            ],
+            providers: [_services_graduates_state_service__WEBPACK_IMPORTED_MODULE_5__["GraduatesStateService"]]
+        })
+    ], GraduatesAffairsModule);
+    return GraduatesAffairsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/graduates-affairs/services/graduates-state.service.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/graduates-affairs/services/graduates-state.service.ts ***!
+  \***********************************************************************/
+/*! exports provided: GraduatesStateService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GraduatesStateService", function() { return GraduatesStateService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var GraduatesStateService = /** @class */ (function () {
+    function GraduatesStateService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    GraduatesStateService.prototype.getStatement = function () {
+        return this.httRequest.GetRequest('/graduation_statement/statement').toPromise();
+    };
+    GraduatesStateService.prototype.DownloadStatement = function () {
+        return this.configService.getApiURI() + '/graduation_statement/statement_print';
+    };
+    GraduatesStateService.prototype.DownloadEngStatement = function () {
+        return this.configService.getApiURI() + '/graduation_statement/statement_print?Lang=en';
+    };
+    GraduatesStateService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], GraduatesStateService);
+    return GraduatesStateService;
 }());
 
 
@@ -2683,7 +2879,7 @@ var AuthGuard = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -2694,7 +2890,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n    <a class=\"navbar-brand\" href=\"#\">تطبيق تجريبي</a>\n    <button class=\"navbar-toggler d-lg-none\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n      \n        <ul *ngIf=\"status\" class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n               <a class=\"nav-link\" (click)=\"logout()\" href=\"#\">تسجيل خروج</a>\n            </li>\n            <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/dashboard\">home</a> \n            </li>   \n           \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">بيانات</a> \n              </li> \n                    \n          </ul>\n\n          <ul *ngIf=\"!status\" class=\"nav navbar-nav\">\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">home</a> \n                  </li>   \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/register\"> تسجيل مستخدم جديد</a>\n              </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/login\">تسجيل دخول</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a> \n              </li>  \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/certificate\"> شهادة تعريف</a> \n                </li>  \n          </ul>\n                     \n    </div>\n  </nav>\n</header>\n<br/>\n<br/>\n<br/>"
+module.exports = "<header>\n  <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n    <a class=\"navbar-brand\" href=\"#\">تطبيق تجريبي</a>\n    <button class=\"navbar-toggler d-lg-none\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n      \n        <ul *ngIf=\"status\" class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n               <a class=\"nav-link\" (click)=\"logout()\" href=\"#\">تسجيل خروج</a>\n            </li>\n            <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/dashboard\">home</a> \n            </li>   \n           \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">بيانات</a> \n              </li> \n                    \n          </ul>\n\n          <ul *ngIf=\"!status\" class=\"nav navbar-nav\">\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">home</a> \n                  </li>   \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/register\"> تسجيل مستخدم جديد</a>\n              </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/login\">تسجيل دخول</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a> \n              </li>  \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/certificate\"> شهادة تعريف</a> \n                </li>  \n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/graduates/statement\"> افادة خريج </a> \n                    </li>  \n          </ul>\n                     \n    </div>\n  </nav>\n</header>\n<br/>\n<br/>\n<br/>"
 
 /***/ }),
 
@@ -2751,7 +2947,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9ob21lL2hvbWUuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -2817,7 +3013,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xlY3R1cmVzLWFic2VuY2UvYWJzZW5jZS1leGN1c2VzL2Fic2VuY2UtZXhjdXNlcy5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9sZWN0dXJlcy1hYnNlbmNlL2Fic2VuY2UtZXhjdXNlcy9hYnNlbmNlLWV4Y3VzZXMuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -2873,7 +3069,7 @@ var AbsenceExcusesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xlY3R1cmVzLWFic2VuY2UvYWJzZW5jZS1xdWVyeS9hYnNlbmNlLXF1ZXJ5LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9sZWN0dXJlcy1hYnNlbmNlL2Fic2VuY2UtcXVlcnkvYWJzZW5jZS1xdWVyeS5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -3005,7 +3201,7 @@ var LecturesAbsenceModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xlY3R1cmVzLWFic2VuY2UvbWVkaWNhbC1yZXBvcnQvbWVkaWNhbC1yZXBvcnQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9sZWN0dXJlcy1hYnNlbmNlL21lZGljYWwtcmVwb3J0L21lZGljYWwtcmVwb3J0LmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -3061,7 +3257,7 @@ var MedicalReportComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL25hbWUtY29tcG9uZW50L25hbWUtY29tcG9uZW50LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9uYW1lLWNvbXBvbmVudC9uYW1lLWNvbXBvbmVudC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -3117,7 +3313,7 @@ var NameComponentComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL290aGVyLWFmZmFpci9pZHJlcGxhY2VtZW50L2lkcmVwbGFjZW1lbnQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9vdGhlci1hZmZhaXIvaWRyZXBsYWNlbWVudC9pZHJlcGxhY2VtZW50LmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -3247,7 +3443,7 @@ var OtherAffairModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL290aGVyLWFmZmFpci91bml2ZXJzaXR5LWlkL3VuaXZlcnNpdHktaWQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9vdGhlci1hZmZhaXIvdW5pdmVyc2l0eS1pZC91bml2ZXJzaXR5LWlkLmNvbXBvbmVudC5jc3MifQ== */"
 
 /***/ }),
 
@@ -3303,7 +3499,7 @@ var UniversityIDComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlZ2lzdGVyLWNvdXJzZXMvZnJlc2htZW4td2lzaGVzL2ZyZXNobWVuLXdpc2hlcy5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9yZWdpc3Rlci1jb3Vyc2VzL2ZyZXNobWVuLXdpc2hlcy9mcmVzaG1lbi13aXNoZXMuY29tcG9uZW50LmNzcyJ9 */"
 
 /***/ }),
 
@@ -3433,7 +3629,7 @@ var RegisterCoursesModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlZ2lzdGVyLWNvdXJzZXMvcmVnaXN0ZXItaGVscC9yZWdpc3Rlci1oZWxwLmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9yZWdpc3Rlci1jb3Vyc2VzL3JlZ2lzdGVyLWhlbHAvcmVnaXN0ZXItaGVscC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
