@@ -15,10 +15,10 @@ export class GraduatesStateService {
    }
    DownloadStatement() {
 
-    return this.configService.getApiURI() + '/graduation_statement/statement_print';
+    return this.configService.getApiURI() + '/graduation_statement/get_statement_print';
    }
    DownloadEngStatement() {
 
-    return this.configService.getApiURI() + '/graduation_statement/statement_print?Lang=en';
+    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?Lang=en';
    }
 }
