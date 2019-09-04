@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AcademicStatusComponent } from './academic-status/academic-status.component';
 import { CertificateIDComponent } from './certificate-id/certificate-id.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'academicaff', component: AcademicStatusComponent },

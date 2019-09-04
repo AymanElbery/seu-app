@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AcademicStatusService } from '../services/academic-status.service';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-academic-status',
   templateUrl: './academic-status.component.html',
@@ -19,19 +19,25 @@ export class AcademicStatusComponent implements OnInit {
   constructor(private academicStatusService: AcademicStatusService) { }
 
   ngOnInit() {
-    this.arabicPrint = this.academicStatusService.DownloadStatus();
-    this.EngPrint = this.academicStatusService.DownloadEngStatus();
-    this.academicStatusService.getStaudentStatus().then((res) => {
+
+
+      this.academicStatusService.getStaudentStatus().then((res) => {
       this.student = (res as any).data.student;
       this.studentTerms = (res as any).data.STD_TERMS;
       this.studentTermDetails = (res as any).data.STD_TermDetails;
       console.log(this.studentTermDetails);
+      this.selectedSems = this.studentTerms[0].TERM_CODE;
+      this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
+      this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
+
     } );
   }
 
   getTrmsDetails(val) {
 
-     this.academicStatusService.getStaudentTermDetails( parseInt(val, 10)).then(
+    this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
+    this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
+    this.academicStatusService.getStaudentTermDetails( parseInt(val, 10)).then(
       (res) => {
       this.studentTermDetails = (res as any).data.STD_TermDetails;
       }

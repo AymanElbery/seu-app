@@ -7,12 +7,14 @@ import { CertificateIDComponent } from './certificate-id/certificate-id.componen
 import { AcademicRecordComponent } from './academic-record/academic-record.component';
 import { AcademicStatusService } from './services/academic-status.service';
 import { CertificateIDService } from './certificate-id.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ AcademicStatusComponent, CertificateIDComponent, AcademicRecordComponent],
   imports: [
     CommonModule,
-    AcademicaffRoutingModule
+    AcademicaffRoutingModule,
+    FormsModule
   ],
   providers: [AcademicStatusService, CertificateIDService]
 })

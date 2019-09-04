@@ -21,12 +21,12 @@ export class AcademicStatusService {
 
     return this.httRequest.GetRequest('/academic_status/getTermDetails?TermCode=' + code).toPromise();
    }
-   DownloadStatus() {
+   DownloadStatus(code) {
 
-    return this.configService.getApiURI() + '/academic_status/academic_status_print';
+    return this.configService.getApiURI() + '/academic_status/academic_status_print?TermCode' + code;
    }
-   DownloadEngStatus() {
+   DownloadEngStatus(code) {
 
-    return this.configService.getApiURI() + '/academic_status/academic_status_print?Lang=en';
+    return this.configService.getApiURI() + '/academic_status/academic_status_print?Lang=en&TermCode' + code;
    }
 }

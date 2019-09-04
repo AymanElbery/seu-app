@@ -136,7 +136,7 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text"><b>  الفصول الدراسية  </b> </div>
                           </div>
-                      <select name="trems" ng-model="selectedSems" #t (change)="getTrmsDetails(t.value)"   class="form-control">
+                      <select name="trems" [(ngModel)]="selectedSems" #t (change)="getTrmsDetails(t.value)"   class="form-control">
                         <option *ngFor="let item of studentTerms" value="{{item.TERM_CODE}}">{{item.TERM_DESC}}</option>
                       </select></div>
                     </div>
