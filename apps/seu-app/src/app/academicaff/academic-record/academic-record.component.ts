@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AcademicRecordService } from '../services/academic-record.service';
 
 @Component({
   selector: 'app-academic-record',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcademicRecordComponent implements OnInit {
 
-  constructor() { }
+  recoredData;
+  arabicPrint: string;
+  EngPrint: string;
+  constructor(private academicService: AcademicRecordService) { }
 
   ngOnInit() {
+    this.academicService.getِAcademicRecord().then(
+      res => {
+    this.recoredData =    (res as any).data;
+      }
+    );
+    this.arabicPrint =   this.academicService.Download();
+    this.EngPrint = this.academicService.DownloadEng();
   }
 
 }

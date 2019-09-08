@@ -7,29 +7,28 @@ import { Subscription } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit ,OnDestroy{
-  subscription:Subscription;
+export class HeaderComponent implements OnInit , OnDestroy {
+  constructor(private userManager: UserManagerService) {
 
-  
+
+  }
+  subscription: Subscription;
+  isNavbarCollapsed;
+
+  status = false;
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  status:Boolean=false;
-  constructor(private userManager:UserManagerService) { 
 
-   
-  }
-
-
-  logout()
-  {
+  logout() {
    this.userManager.logout();
 
   }
   ngOnInit() {
-    
-  this.subscription=  this.userManager.authNavStatus$.subscribe(res=>this.status=res);
+
+  this.subscription =  this.userManager.authNavStatus$.subscribe(res => this.status = res);
   }
 
 

@@ -1,3 +1,229 @@
-<p>
-  academic-record works!
-</p>
+<div class="card"   >
+  <h5 class="card-header "  style="text-align: right" >سجل الطالب الاكاديمي</h5>
+  <div class="card-body">
+    <h5 class="card-title text-center">{{recoredData.student_name}}</h5>
+  <div class="row">
+        <div  class="col-md-1"></div>
+
+    <div class="col-md-5">
+
+      <div class="form-group">
+      
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><b> الكليه </b> </div>
+            </div>
+            <input name="coll"  value="{{recoredData.coll}}"   class="form-control" readonly>
+          </div>
+        </div>   
+    </div>
+    <div class="col-md-5">
+
+        <div class="form-group">
+        
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><b> الرقم الجامعي </b> </div>
+              </div>
+              <input name="coll"  value="{{recoredData.std_id}}"   class="form-control" readonly>
+            </div>
+          </div>   
+      </div>  <div  class="col-md-1"></div>
+
+</div>
+<div class="row">
+    <div  class="col-md-1"></div>
+
+    <div class="col-md-5">
+      <div class="form-group">
+        
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><b>التخصص  </b> </div>
+          </div>
+          <input name="ID"   value="{{recoredData.major}}"  class="form-control" readonly>
+        </div>
+      </div>   
+    </div>
+    <div class="col-md-5">
+  
+        <div class="form-group">
+        
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><b> رقم الهويه  </b> </div>
+              </div>
+              <input name="fsermester"  value="{{recoredData.ssn}}"   class="form-control" readonly>
+            </div>
+          </div>   
+      </div>  <div  class="col-md-1"></div>
+
+  </div>
+  
+  <div class="row">
+      <div  class="col-md-1"></div>
+
+      <div class="col-md-5">
+        <div class="form-group">
+          
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><b>  ألدرجه </b> </div>
+            </div>
+            <input name="accamdeicStatus"   value="{{recoredData.grade}}"  class="form-control" readonly>
+          </div>
+        </div>   
+      </div>
+      <div class="col-md-5">
+    
+          <div class="form-group">
+          
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><b>  حالة الطالب  </b> </div>
+                </div>
+                <input name="TotalGrade"  value="{{recoredData.status}}"   class="form-control" readonly>
+              </div>
+            </div>   
+        </div>
+        <div  class="col-md-1"></div></div>
+
+  </div>
+</div>
+
+<div class="accordion"  style="direction: rtl;text-align: right" id="accordionExample">
+  <div class="row"><div class="col-md-12"  *ngFor="let item of recoredData.terms ; let i = index">
+      <div class="card " >
+          <div class="card-header" id="heading{{i}}">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse"  [attr.data-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'collapse'+i">
+    <b>    الفصل {{item.Term}} لسنة {{item.Year}} </b> 
+       </button>
+            </h2>
+          </div>
+      
+          <div id="collapse{{i}}" class="collapse" [attr.aria-labelledby]="'heading'+i" data-parent="#accordionExample">
+             <div class="card-body">
+                <div class="row">
+            
+                <div class="col-md-3">
+            
+                  <div class="form-group">
+                  
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text"><b> الفصل </b> </div>
+                        </div>
+                        <input name="coll"  value="{{item.Term}}"   class="form-control" readonly>
+                      </div>
+                    </div>   
+                </div>
+                <div class="col-md-3">
+            
+                    <div class="form-group">
+                    
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text"><b> العام  </b> </div>
+                          </div>
+                          <input name="coll"  value="{{item.Year}}"   class="form-control" readonly>
+                        </div>
+                      </div>   
+                  </div> 
+                  
+                  <div class="col-md-3">
+            
+                      <div class="form-group">
+                      
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><b>  التخصص </b> </div>
+                            </div>
+                            <input name="coll"  value="{{item.Major}}"   class="form-control" readonly>
+                          </div>
+                        </div>   
+                    </div>
+                    <div class="col-md-3">
+            
+                        <div class="form-group">
+                        
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text"><b> الحالة  </b> </div>
+                              </div>
+                              <input name="coll"  value="{{item.Status}}"   class="form-control" readonly>
+                            </div>
+                          </div>   
+                      </div>
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">رمز المقرر</th>
+                              <th scope="col">اسم المقرر</th>
+                              <th scope="col">التقدير</th>
+                              <th scope="col">الساعات</th>
+                              <th scope="col">النقاط</th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let it of item.courses">
+                              <td >{{it.ID}}</td>
+                              <td>{{it.CRSE_TITLE}}</td>
+                              <td>{{it.GRADE_TITLE}}</td>
+                              <td>{{it.HRS}}</td>
+                              <td>{{it.Points}}</td>
+
+                            </tr>
+                           
+                          </tbody>
+                        </table>
+                        <table class="table  table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">ساعات </th>
+                                <th scope="col">مسجلة </th>
+                                <th scope="col">نجاح</th>
+                                <th scope="col">مكتسبة</th>
+                                <th scope="col">النقاط</th>
+                                <th scope="col">المعدل</th>
+  
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <th scope="row">فصلي</th>
+                              <td>{{item.registredHours}}</td>
+                              <td>{{item.gpa_hours}}</td>
+                              <td>{{item.earned_hours}}</td>
+                              <td>{{item.quality_points}}</td>
+                              <td>{{item.gpa}}</td>
+  <tr>
+                              <th scope="row">تراكمي</th>
+                              <td>{{item.TotalregistredHours}}</td>
+                              <td>{{item.total_gpa_hours}}</td>
+                              <td>{{item.total_earned_hours}}</td>
+                              <td>{{item.total_quality_points}}</td>
+                              <td>{{item.total_gpa}}</td>  
+                            </tr>
+                            </tbody></table>
+            
+            </div>
+              
+
+
+            </div>
+          </div>
+        </div>
+       
+      </div>
+  </div> </div>
+  <div  class="btn-group btn-group-justified col-md-12 ">
+      <div class="col-md-4"></div>
+      <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
+        طباعة</a>
+      <a class="btn btn-primary" href="{{EngPrint}}"><span class="glyphicon glyphicon-print"></span>
+        Print</a>
+      <div class="col-md-4"></div>
+    
+      </div>
+  

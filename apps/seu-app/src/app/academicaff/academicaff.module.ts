@@ -8,6 +8,7 @@ import { AcademicRecordComponent } from './academic-record/academic-record.compo
 import { AcademicStatusService } from './services/academic-status.service';
 import { CertificateIDService } from './certificate-id.service';
 import { FormsModule } from '@angular/forms';
+import { AcademicRecordService } from './services/academic-record.service';
 
 @NgModule({
   declarations: [ AcademicStatusComponent, CertificateIDComponent, AcademicRecordComponent],
@@ -16,6 +17,6 @@ import { FormsModule } from '@angular/forms';
     AcademicaffRoutingModule,
     FormsModule
   ],
-  providers: [AcademicStatusService, CertificateIDService]
+  providers: [AcademicStatusService, CertificateIDService, AcademicRecordService]
 })
 export class AcademicaffModule { }
