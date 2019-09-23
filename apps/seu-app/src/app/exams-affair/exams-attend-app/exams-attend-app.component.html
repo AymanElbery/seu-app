@@ -1,0 +1,263 @@
+<div class="container">
+    <h3 class="text-center">شهادة  اثبات حضور  اختبارات</h3>
+      <div class="row">
+        <div class="col-12">
+          <div class="card mt-3 tab-card">
+            <div class="card-header tab-card-header">
+              <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">
+                        {{eaData.Term_Exam_With_Schedule.labels.title}}   
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">الاختبارات الفصليه بدون جدول</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">الاختبارات النهائيه مع الجدول</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="Four" aria-selected="false">الاختبارات النهائيه بدون جدول</a>
+                </li>
+              </ul>
+            </div>
+    
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+                <h5 class="card-title text-center">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>
+                <p class="card-text" style="text-align: right" > 
+                    {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}
+                    <br/>
+                     الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}
+                
+                <br/>
+                {{eaData.Term_Exam_With_Schedule.labels.txt1}}
+                {{eaData.Term_Exam_With_Schedule.values.student_name}}
+                {{eaData.Term_Exam_With_Schedule.labels.txt2}}
+                {{eaData.Term_Exam_With_Schedule.values.std_id}}
+                {{eaData.Term_Exam_With_Schedule.labels.txt3}}
+                {{eaData.Term_Exam_With_Schedule.values.coll}}
+                {{eaData.Term_Exam_With_Schedule.labels.txt4}}
+                {{eaData.Term_Exam_With_Schedule.values.term}}
+                <br/>
+                {{eaData.Term_Exam_With_Schedule.labels.txt5}}
+  
+                {{eaData.Term_Exam_With_Schedule.values.startDay}}
+                {{eaData.Term_Exam_With_Schedule.labels.txt6}}
+                {{eaData.Term_Exam_With_Schedule.values.endDay}}
+                <br/>
+                {{eaData.Term_Exam_With_Schedule.labels.txt7}}
+  
+                
+  
+                
+                    </p>         
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">CRN </th>
+                        <th scope="col">اسم المقرر</th>
+                        <th scope="col">اليوم</th>
+                        <th scope="col">الوقت</th>
+                        <th scope="col">الحضور</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let it of eaData.Term_Exam_With_Schedule.Term_Schedule">
+                        <td >{{it.CRN}}</td>
+                        <td>{{it.CRSE_TITLE}}</td>
+                        <td>{{it.CRSE_DAY}}</td>
+                        <td style="direction: ltr">({{toHTML(it.CRSE_TIME)}})</td>
+                        <td>{{it.STD_ATTEND}}</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  <br>
+                  <p style="text-align: right">
+                  {{eaData.Term_Exam_With_Schedule.labels.txt8}}
+           
+                  {{eaData.Term_Exam_With_Schedule.labels.txt9}}
+            <br>
+            {{eaData.Term_Exam_With_Schedule.labels.txt10}}
+            
+            {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>
+             
+          
+            <div  class="btn-group btn-group-justified col-md-12 ">
+                <div class="col-md-4"></div>
+                <a class="btn btn-primary" href="{{termSchedule}}"><span class="glyphicon glyphicon-print"></span>
+                  طباعة</a>
+                  <a class="btn btn-primary" href="{{termScheduleEn}}"><span class="glyphicon glyphicon-print"></span>
+                    Print</a>
+                <div class="col-md-4"></div>
+              
+                </div>
+          </div>
+              <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+                  <h5 class="card-title text-center">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>
+                  <p class="card-text" style="text-align: right" > 
+                      {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}
+                      <br/>
+                       الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}
+                       <br/>
+                       {{eaData.Term_Exam_Without_Schedule.labels.txt1}}
+                       {{eaData.Term_Exam_Without_Schedule.values.student_name}}
+                       {{eaData.Term_Exam_Without_Schedule.labels.txt2}}
+                       {{eaData.Term_Exam_Without_Schedule.values.std_id}}
+                       {{eaData.Term_Exam_Without_Schedule.labels.txt3}}
+                       {{eaData.Term_Exam_Without_Schedule.values.coll}}
+                       {{eaData.Term_Exam_Without_Schedule.labels.txt4}}
+                       {{eaData.Term_Exam_Without_Schedule.values.term}}
+                       <br/>
+                       {{eaData.Term_Exam_Without_Schedule.labels.txt5}}
+         
+                       {{eaData.Term_Exam_Without_Schedule.values.startDay}}
+                       {{eaData.Term_Exam_Without_Schedule.labels.txt6}}
+                       {{eaData.Term_Exam_Without_Schedule.values.endDay}}
+                       <br/>
+                       {{eaData.Term_Exam_Without_Schedule.labels.txt7}}
+         <br>
+         {{eaData.Term_Exam_Without_Schedule.labels.txt8}}
+  
+         {{eaData.Term_Exam_Without_Schedule.labels.txt9}}
+   <br>
+   {{eaData.Term_Exam_Without_Schedule.labels.txt10}}
+   
+   {{eaData.Term_Exam_Without_Schedule.labels.txt11}}
+  
+  
+  
+                  
+                      </p>         
+                      <div  class="btn-group btn-group-justified col-md-12 ">
+                          <div class="col-md-4"></div>
+                          <a class="btn btn-primary" href="{{term}}"><span class="glyphicon glyphicon-print"></span>
+                            طباعة</a>
+                            <a class="btn btn-primary" href="{{term}}"><span class="glyphicon glyphicon-print"></span>
+                              Print</a>
+                            <div class="col-md-4"></div>
+                          </div>
+              </div>
+              <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
+                  <h5 class="card-title text-center">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>
+                  <p class="card-text" style="text-align: right" > 
+                      {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}
+                      <br/>
+                       الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}
+                  
+                  <br/>
+                  {{eaData.Final_Exam_With_Schedule.labels.txt1}}
+                  {{eaData.Final_Exam_With_Schedule.values.student_name}}
+                  {{eaData.Final_Exam_With_Schedule.labels.txt2}}
+                  {{eaData.Final_Exam_With_Schedule.values.std_id}}
+                  {{eaData.Final_Exam_With_Schedule.labels.txt3}}
+                  {{eaData.Final_Exam_With_Schedule.values.coll}}
+                  {{eaData.Final_Exam_With_Schedule.labels.txt4}}
+                  {{eaData.Final_Exam_With_Schedule.values.term}}
+                  <br/>
+                  {{eaData.Final_Exam_With_Schedule.labels.txt5}}
+    
+                  {{eaData.Final_Exam_With_Schedule.values.startDay}}
+                  {{eaData.Final_Exam_With_Schedule.labels.txt6}}
+                  {{eaData.Final_Exam_With_Schedule.values.endDay}}
+                  <br/>
+                  {{eaData.Final_Exam_With_Schedule.labels.txt7}}
+    
+                  
+    
+                  
+                      </p>         
+                  <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">CRN </th>
+                          <th scope="col">اسم المقرر</th>
+                          <th scope="col">اليوم</th>
+                          <th scope="col">الوقت</th>
+                          <th scope="col">الحضور</th>
+
+    
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let it of eaData.Final_Exam_With_Schedule.Final_Schedule">
+                          <td >{{it.CRN}}</td>
+                          <td>{{it.CRSE_TITLE}}</td>
+                          <td>{{it.CRSE_DAY}}</td>
+                          <td style="direction: ltr">({{toHTML(it.CRSE_TIME)}})</td>
+                          <td>{{it.STD_ATTEND}}</td>
+
+    
+                        </tr>
+                       
+                      </tbody>
+                    </table>
+                    <br>
+                    <p style="text-align: right">
+                    {{eaData.Final_Exam_With_Schedule.labels.txt8}}
+             
+                    {{eaData.Final_Exam_With_Schedule.labels.txt9}}
+              <br>
+              {{eaData.Final_Exam_With_Schedule.labels.txt10}}
+              
+              {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>
+                        
+              <div  class="btn-group btn-group-justified col-md-12 ">
+                  <div class="col-md-4"></div>
+                  <a class="btn btn-primary" href="{{finalschedule}}"><span class="glyphicon glyphicon-print"></span>
+                    طباعة</a>
+                    <a class="btn btn-primary" href="{{finalscheduleEn}}"><span class="glyphicon glyphicon-print"></span>
+                      Print</a>
+                  <div class="col-md-4"></div>
+                
+                  </div>
+                  </div>
+                  <div class="tab-pane fade p-3" id="four" role="tabpanel" aria-labelledby="four-tab">
+                      <h5 class="card-title text-center">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>
+                      <p class="card-text" style="text-align: right" > 
+                          {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}
+                          <br/>
+                           الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}
+                           <br/>
+                           {{eaData.Final_Exam_Without_Schedule.labels.txt1}}
+                           {{eaData.Final_Exam_Without_Schedule.values.student_name}}
+                           {{eaData.Final_Exam_Without_Schedule.labels.txt2}}
+                           {{eaData.Final_Exam_Without_Schedule.values.std_id}}
+                           {{eaData.Final_Exam_Without_Schedule.labels.txt3}}
+                           {{eaData.Final_Exam_Without_Schedule.values.coll}}
+                           {{eaData.Final_Exam_Without_Schedule.labels.txt4}}
+                           {{eaData.Final_Exam_Without_Schedule.values.term}}
+                           <br/>
+                           {{eaData.Final_Exam_Without_Schedule.labels.txt5}}
+             
+                           {{eaData.Final_Exam_Without_Schedule.values.startDay}}
+                           {{eaData.Final_Exam_Without_Schedule.labels.txt6}}
+                           {{eaData.Final_Exam_Without_Schedule.values.endDay}}
+                           <br/>
+                           {{eaData.Final_Exam_Without_Schedule.labels.txt7}}
+             <br>
+             {{eaData.Final_Exam_Without_Schedule.labels.txt8}}
+      
+             {{eaData.Final_Exam_Without_Schedule.labels.txt9}}
+       <br>
+       {{eaData.Final_Exam_Without_Schedule.labels.txt10}}
+       
+       {{eaData.Final_Exam_Without_Schedule.labels.txt11}}
+      
+      
+      
+                      
+                          </p>    
+                          <div  class="btn-group btn-group-justified col-md-12 ">
+                              <div class="col-md-4"></div>
+                              <a class="btn btn-primary" href="{{final}}"><span class="glyphicon glyphicon-print"></span>
+                                طباعة</a>
+                                <a class="btn btn-primary" href="{{finalEn}}"><span class="glyphicon glyphicon-print"></span>
+                                  Print</a>
+                                
+                              <div class="col-md-4"></div>
+                            
+                              </div>
+                        </div>

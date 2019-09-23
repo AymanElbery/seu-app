@@ -1,3 +1,92 @@
-<p>
-  absence-query works!
-</p>
+<div class="jumbotron jumbtron-fluid">
+    <h3 class="display-5 text-center">   استعلام الغياب </h3>
+    <div *ngIf="status==0"  class="alert alert-primary text-center" role="alert">
+        {{absData.messages}} 
+      </div>
+    <div class="row">
+  <div  class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="form-group">
+      
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><b>نسبة غياب المحاضرات التقليدية  </b> </div>
+        </div>
+        <input  value="{{absData.absent_percentage_actual_lectures}}"  class="form-control" readonly>
+      </div>
+    </div>   
+  </div>
+  
+   <div  class="col-md-1"></div>
+
+</div>
+
+<div class="row">
+    <div  class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="form-group">
+        
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><b>نسبة غياب المحاضرات الافتراضيه  </b> </div>
+          </div>
+          <input  value="{{absData.absent_percentage_virtual_lectures}}"  class="form-control" readonly>
+        </div>
+      </div>   
+    </div>
+    
+     <div  class="col-md-1"></div>
+  
+  </div>
+  <div class="row">
+      <div  class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="form-group">
+          
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><b>نسبة غياب المحاضرات الكلية  </b> </div>
+            </div>
+            <input  value="{{absData.absent_percentage_total}}"  class="form-control" readonly>
+          </div>
+        </div>   
+      </div>
+      
+       <div  class="col-md-1"></div>
+    
+    </div>
+    
+  
+    
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">رمز المقرر </th>
+                  <th scope="col">اسم المقرر</th>
+                  <th scope="col">نوع المحاضره</th>
+                  <th scope="col">حالة الحضور</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let it of absData.lectures">
+                  <td >{{it.CODE}}</td>
+                  <td>{{it.TITLE}}</td>
+                  <td>{{it.TYPE}}</td>
+                  <td>{{it.STATUS}}</td>
+                </tr>
+               
+              </tbody>
+            </table>
+
+      
+            </div>
+            <div  class="btn-group btn-group-justified col-md-12 ">
+                <div class="col-md-4"></div>
+                <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
+                  طباعة</a>
+                <a class="btn btn-primary" href="{{EngPrint}}"><span class="glyphicon glyphicon-print"></span>
+                  Print</a>
+                <div class="col-md-4"></div>
+              
+                </div>

@@ -1,0 +1,79 @@
+<!-- Modal -->
+<mat-dialog-content>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب انسحاب من الجامعه</h5>
+        
+      </div>
+      <div class="modal-body">
+        <P class="text-center">بيانات بيانات بيانات</P>
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+          
+        <div class="form-group">
+           
+               <select name="branch" #BranchID="ngModel" [(ngModel)]="withdraw.branch" class="form-control" 
+          [class.is-invalid]="!isValid && withdraw.branch==0">
+            <option value="">اختر اقرب فرع</option>
+            <option *ngFor="let item of reqData.branches" value="{{item.id}}">{{item.name}}</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">رقم الهاتف</div>
+              </div>
+              <input name="mobile" #mobile="ngModel" [(ngModel)]="withdraw.mobile" class="form-control" >
+            </div>
+          </div>
+         
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">البريد الالكتروني</div>
+                </div>
+                <input name="email" #email="ngModel" [(ngModel)]="withdraw.email" class="form-control" >
+              </div>
+            </div>
+           
+          </div>
+          <div *ngIf="!reqData.display_bank_account">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">IBAN </div>
+                  </div>
+                  <input name="IBAN" #IBAN="ngModel" [(ngModel)]="withdraw.IBAN" class="form-control" >
+                </div>
+              </div>
+             
+            </div>
+            <div class="form-group">
+           
+              <select name="BANKID" #BANKID="ngModel" [(ngModel)]="withdraw.BANKID" class="form-control" 
+         [class.is-invalid]="!isValid && withdraw.BANKID==0">
+           <option value="0">اختر  البنك</option>
+           <option *ngFor="let item of reqData.bankList" value="{{item.BANK_PK}}">{{item.BANK_TITLE}}</option>
+         </select>
+       </div>
+       <div class="image-upload">
+        <img [src]="withdraw.bankimage" style="width:400px;height:300px"/>
+        <input name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" />
+    </div> 
+
+          </div>
+        <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+                    <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+        </div>
+      </form>
+      </div>
+      
+    </div>
+  </div>
+</mat-dialog-content>

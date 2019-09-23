@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExamAttendanceService } from '../services/exam-attendance.service';
 
 @Component({
   selector: 'app-exams-attend-stat',
@@ -7,9 +8,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExamsAttendStatComponent implements OnInit {
 
-  constructor() { }
+  eaData;
+  finalschedule: string;
+  final: string;
+  termSchedule: string;
+  term: string;
+  finalscheduleEn: string;
+  finalEn: string;
+  termScheduleEn: string;
+  termEn: string;
+
+  constructor(private academicService: ExamAttendanceService) { }
 
   ngOnInit() {
-  }
+    this.academicService.getِExamsAttednace('S180105049').then(
+      res => {
+    this.eaData =    (res as any).data;
+      }
+    );
+    this.finalschedule =   this.academicService.Print_Final_Exam_With_Schedule();
+    this.final = this.academicService.Print_Final_Exam_Without_Schedule();
+    this.termSchedule = this.academicService.Print_Term_Exam_With_Schedule();
+    this.term = this.academicService.Print_Term_Exam_Without_Schedule();
+    this.finalscheduleEn =   this.academicService.Print_Final_Exam_With_ScheduleEn();
+    this.finalEn = this.academicService.Print_Final_Exam_Without_ScheduleEn();
+    this.termScheduleEn = this.academicService.Print_Term_Exam_With_ScheduleEn();
+    this.termEn = this.academicService.Print_Term_Exam_Without_ScheduleEn();
 
+
+  }
+  toHTML(input): any {
+    return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
+}
 }

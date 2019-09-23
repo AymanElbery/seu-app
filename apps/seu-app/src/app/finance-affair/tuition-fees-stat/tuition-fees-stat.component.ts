@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TuitionFeesService } from '../tuition-fees.service';
 
 @Component({
   selector: 'app-tuition-fees-stat',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TuitionFeesStatComponent implements OnInit {
 
-  constructor() { }
+  feesData;
+  arabicPrint: string;
+  EngPrint: string;
+  constructor(private academicService: TuitionFeesService) { }
 
   ngOnInit() {
+    this.academicService.getِTuitionFeez().then(
+      res => {
+    this.feesData =    (res as any).data;
+      }
+    );
+    this.arabicPrint =   this.academicService.Download();
+    this.EngPrint = this.academicService.DownloadEng();
   }
 
 }

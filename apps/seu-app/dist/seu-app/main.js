@@ -2338,10 +2338,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _exams_attend_stat_exams_attend_stat_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./exams-attend-stat/exams-attend-stat.component */ "./src/app/exams-affair/exams-attend-stat/exams-attend-stat.component.ts");
+/* harmony import */ var _exams_attend_app_exams_attend_app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./exams-attend-app/exams-attend-app.component */ "./src/app/exams-affair/exams-attend-app/exams-attend-app.component.ts");
 
 
 
-var routes = [];
+
+
+var routes = [{ path: 'exams', component: _exams_attend_stat_exams_attend_stat_component__WEBPACK_IMPORTED_MODULE_3__["ExamsAttendStatComponent"] },
+    {
+        path: 'exams',
+        children: [
+            { path: 'attend', component: _exams_attend_stat_exams_attend_stat_component__WEBPACK_IMPORTED_MODULE_3__["ExamsAttendStatComponent"] },
+            { path: 'attendapp', component: _exams_attend_app_exams_attend_app_component__WEBPACK_IMPORTED_MODULE_4__["ExamsAttendAppComponent"] },
+        ]
+    }];
 var ExamsAffairRoutingModule = /** @class */ (function () {
     function ExamsAffairRoutingModule() {
     }
@@ -2376,6 +2387,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _exams_attend_stat_exams_attend_stat_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./exams-attend-stat/exams-attend-stat.component */ "./src/app/exams-affair/exams-attend-stat/exams-attend-stat.component.ts");
 /* harmony import */ var _exams_absence_excuses_exams_absence_excuses_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./exams-absence-excuses/exams-absence-excuses.component */ "./src/app/exams-affair/exams-absence-excuses/exams-absence-excuses.component.ts");
 /* harmony import */ var _exams_result_objection_exams_result_objection_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./exams-result-objection/exams-result-objection.component */ "./src/app/exams-affair/exams-result-objection/exams-result-objection.component.ts");
+/* harmony import */ var _services_exam_attendance_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/exam-attendance.service */ "./src/app/exams-affair/services/exam-attendance.service.ts");
+/* harmony import */ var _exams_attend_app_exams_attend_app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./exams-attend-app/exams-attend-app.component */ "./src/app/exams-affair/exams-attend-app/exams-attend-app.component.ts");
+/* harmony import */ var _services_exams_attend_app_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/exams-attend-app.service */ "./src/app/exams-affair/services/exams-attend-app.service.ts");
+
+
+
 
 
 
@@ -2389,14 +2406,89 @@ var ExamsAffairModule = /** @class */ (function () {
     }
     ExamsAffairModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_exams_schedule_exams_schedule_component__WEBPACK_IMPORTED_MODULE_4__["ExamsScheduleComponent"], _exams_attend_stat_exams_attend_stat_component__WEBPACK_IMPORTED_MODULE_5__["ExamsAttendStatComponent"], _exams_absence_excuses_exams_absence_excuses_component__WEBPACK_IMPORTED_MODULE_6__["ExamsAbsenceExcusesComponent"], _exams_result_objection_exams_result_objection_component__WEBPACK_IMPORTED_MODULE_7__["ExamsResultObjectionComponent"]],
+            declarations: [_exams_schedule_exams_schedule_component__WEBPACK_IMPORTED_MODULE_4__["ExamsScheduleComponent"],
+                _exams_attend_stat_exams_attend_stat_component__WEBPACK_IMPORTED_MODULE_5__["ExamsAttendStatComponent"],
+                _exams_absence_excuses_exams_absence_excuses_component__WEBPACK_IMPORTED_MODULE_6__["ExamsAbsenceExcusesComponent"],
+                _exams_result_objection_exams_result_objection_component__WEBPACK_IMPORTED_MODULE_7__["ExamsResultObjectionComponent"],
+                _exams_attend_app_exams_attend_app_component__WEBPACK_IMPORTED_MODULE_9__["ExamsAttendAppComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _exams_affair_routing_module__WEBPACK_IMPORTED_MODULE_3__["ExamsAffairRoutingModule"]
-            ]
+            ],
+            providers: [_services_exam_attendance_service__WEBPACK_IMPORTED_MODULE_8__["ExamAttendanceService"], _services_exams_attend_app_service__WEBPACK_IMPORTED_MODULE_10__["ExamsAttendAppService"]]
         })
     ], ExamsAffairModule);
     return ExamsAffairModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/exams-affair/exams-attend-app/exams-attend-app.component.css":
+/*!******************************************************************************!*\
+  !*** ./src/app/exams-affair/exams-attend-app/exams-attend-app.component.css ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2V4YW1zLWFmZmFpci9leGFtcy1hdHRlbmQtYXBwL2V4YW1zLWF0dGVuZC1hcHAuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/exams-affair/exams-attend-app/exams-attend-app.component.html":
+/*!*******************************************************************************!*\
+  !*** ./src/app/exams-affair/exams-attend-app/exams-attend-app.component.html ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n    <h3 class=\"text-center\">شهادة  اثبات حضور  اختبارات</h3>\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"card mt-3 tab-card\">\n            <div class=\"card-header tab-card-header\">\n              <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                        {{eaData.Term_Exam_With_Schedule.labels.title}}   \n                    </a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\n                </li>\n              </ul>\n            </div>\n    \n            <div class=\"tab-content\" id=\"myTabContent\">\n              <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\n                \n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt1}}\n                {{eaData.Term_Exam_With_Schedule.values.student_name}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt2}}\n                {{eaData.Term_Exam_With_Schedule.values.std_id}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt3}}\n                {{eaData.Term_Exam_With_Schedule.values.coll}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt4}}\n                {{eaData.Term_Exam_With_Schedule.values.term}}\n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt5}}\n  \n                {{eaData.Term_Exam_With_Schedule.values.startDay}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt6}}\n                {{eaData.Term_Exam_With_Schedule.values.endDay}}\n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt7}}\n  \n                \n  \n                \n                    </p>         \n                <table class=\"table\">\n                    <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">اليوم</th>\n                        <th scope=\"col\">الوقت</th>\n                        <th scope=\"col\">الحضور</th>\n\n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\n                        <td >{{it.CRN}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.CRSE_DAY}}</td>\n                        <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n                        <td>{{it.STD_ATTEND}}</td>\n                      </tr>\n                     \n                    </tbody>\n                  </table>\n                  <br>\n                  <p style=\"text-align: right\">\n                  {{eaData.Term_Exam_With_Schedule.labels.txt8}}\n           \n                  {{eaData.Term_Exam_With_Schedule.labels.txt9}}\n            <br>\n            {{eaData.Term_Exam_With_Schedule.labels.txt10}}\n            \n            {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\n             \n          \n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n               \n                <div class=\"col-md-4\"></div>\n              \n                </div>\n          </div>\n              <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                  <h5 class=\"card-title text-center\">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>\n                  <p class=\"card-text\" style=\"text-align: right\" > \n                      {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\n                      <br/>\n                       الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\n                       {{eaData.Term_Exam_Without_Schedule.values.student_name}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\n                       {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\n                       {{eaData.Term_Exam_Without_Schedule.values.coll}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\n                       {{eaData.Term_Exam_Without_Schedule.values.term}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\n         \n                       {{eaData.Term_Exam_Without_Schedule.values.startDay}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\n                       {{eaData.Term_Exam_Without_Schedule.values.endDay}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\n         <br>\n         {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\n  \n         {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\n   <br>\n   {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\n   \n   {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\n  \n  \n  \n                  \n                      </p>         \n                      <div  class=\"btn-group btn-group-justified col-md-12 \">\n                          <div class=\"col-md-4\"></div>\n                          <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                            طباعة</a>\n                         \n                            <div class=\"col-md-4\"></div>\n                          </div>\n              </div>\n              <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                  <h5 class=\"card-title text-center\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>\n                  <p class=\"card-text\" style=\"text-align: right\" > \n                      {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\n                      <br/>\n                       الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                  \n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt1}}\n                  {{eaData.Final_Exam_With_Schedule.values.student_name}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt2}}\n                  {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt3}}\n                  {{eaData.Final_Exam_With_Schedule.values.coll}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt4}}\n                  {{eaData.Final_Exam_With_Schedule.values.term}}\n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt5}}\n    \n                  {{eaData.Final_Exam_With_Schedule.values.startDay}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt6}}\n                  {{eaData.Final_Exam_With_Schedule.values.endDay}}\n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt7}}\n    \n                  \n    \n                  \n                      </p>         \n                  <table class=\"table\">\n                      <thead>\n                        <tr>\n                          <th scope=\"col\">CRN </th>\n                          <th scope=\"col\">اسم المقرر</th>\n                          <th scope=\"col\">اليوم</th>\n                          <th scope=\"col\">الوقت</th>\n                          <th scope=\"col\">الحضور</th>\n\n    \n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\n                          <td >{{it.CRN}}</td>\n                          <td>{{it.CRSE_TITLE}}</td>\n                          <td>{{it.CRSE_DAY}}</td>\n                          <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n                          <td>{{it.STD_ATTEND}}</td>\n\n    \n                        </tr>\n                       \n                      </tbody>\n                    </table>\n                    <br>\n                    <p style=\"text-align: right\">\n                    {{eaData.Final_Exam_With_Schedule.labels.txt8}}\n             \n                    {{eaData.Final_Exam_With_Schedule.labels.txt9}}\n              <br>\n              {{eaData.Final_Exam_With_Schedule.labels.txt10}}\n              \n              {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\n                        \n              <div  class=\"btn-group btn-group-justified col-md-12 \">\n                  <div class=\"col-md-4\"></div>\n                  <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                    طباعة</a>\n                 \n                  <div class=\"col-md-4\"></div>\n                \n                  </div>\n                  </div>\n                  <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\n                      <h5 class=\"card-title text-center\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>\n                      <p class=\"card-text\" style=\"text-align: right\" > \n                          {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\n                          <br/>\n                           الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\n                           {{eaData.Final_Exam_Without_Schedule.values.student_name}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\n                           {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\n                           {{eaData.Final_Exam_Without_Schedule.values.coll}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\n                           {{eaData.Final_Exam_Without_Schedule.values.term}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\n             \n                           {{eaData.Final_Exam_Without_Schedule.values.startDay}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\n                           {{eaData.Final_Exam_Without_Schedule.values.endDay}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\n             <br>\n             {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\n      \n             {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\n       <br>\n       {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\n       \n       {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\n      \n      \n      \n                      \n                          </p>    \n                          <div  class=\"btn-group btn-group-justified col-md-12 \">\n                              <div class=\"col-md-4\"></div>\n                              <a class=\"btn btn-primary\" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                                طباعة</a>\n                              \n                              <div class=\"col-md-4\"></div>\n                            \n                              </div>\n                        </div>"
+
+/***/ }),
+
+/***/ "./src/app/exams-affair/exams-attend-app/exams-attend-app.component.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/exams-affair/exams-attend-app/exams-attend-app.component.ts ***!
+  \*****************************************************************************/
+/*! exports provided: ExamsAttendAppComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExamsAttendAppComponent", function() { return ExamsAttendAppComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_exams_attend_app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/exams-attend-app.service */ "./src/app/exams-affair/services/exams-attend-app.service.ts");
+
+
+
+var ExamsAttendAppComponent = /** @class */ (function () {
+    function ExamsAttendAppComponent(academicService) {
+        this.academicService = academicService;
+    }
+    ExamsAttendAppComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.academicService.getِExamsAttednace('S180105049').then(function (res) {
+            _this.eaData = res.data;
+        });
+        this.finalschedule = this.academicService.Print_Final_Exam_With_Schedule();
+        this.final = this.academicService.Print_Final_Exam_Without_Schedule();
+        this.termSchedule = this.academicService.Print_Term_Exam_With_Schedule();
+        this.term = this.academicService.Print_Term_Exam_Without_Schedule();
+    };
+    ExamsAttendAppComponent.prototype.toHTML = function (input) {
+        return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
+    };
+    ExamsAttendAppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-exams-attend-app',
+            template: __webpack_require__(/*! ./exams-attend-app.component.html */ "./src/app/exams-affair/exams-attend-app/exams-attend-app.component.html"),
+            styles: [__webpack_require__(/*! ./exams-attend-app.component.css */ "./src/app/exams-affair/exams-attend-app/exams-attend-app.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_exams_attend_app_service__WEBPACK_IMPORTED_MODULE_2__["ExamsAttendAppService"]])
+    ], ExamsAttendAppComponent);
+    return ExamsAttendAppComponent;
 }());
 
 
@@ -2421,7 +2513,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  exams-attend-stat works!\n</p>\n"
+module.exports = "<div class=\"container\">\n  <h3 class=\"text-center\">شهادة حضور  اختبارات</h3>\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <div class=\"card mt-3 tab-card\">\n          <div class=\"card-header tab-card-header\">\n            <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                      {{eaData.Term_Exam_With_Schedule.labels.title}}   \n                  </a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\n              </li>\n            </ul>\n          </div>\n  \n          <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n              <h5 class=\"card-title text-center\">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>\n              <p class=\"card-text\" style=\"text-align: right\" > \n                  {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\n                  <br/>\n                   الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\n              \n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt1}}\n              {{eaData.Term_Exam_With_Schedule.values.student_name}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt2}}\n              {{eaData.Term_Exam_With_Schedule.values.std_id}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt3}}\n              {{eaData.Term_Exam_With_Schedule.values.coll}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt4}}\n              {{eaData.Term_Exam_With_Schedule.values.term}}\n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt5}}\n\n              {{eaData.Term_Exam_With_Schedule.values.startDay}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt6}}\n              {{eaData.Term_Exam_With_Schedule.values.endDay}}\n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt7}}\n\n              \n\n              \n                  </p>         \n              <table style=\"direction: rtl\" class=\"table\">\n                  <thead>\n                    <tr>\n                      <th scope=\"col\">CRN </th>\n                      <th scope=\"col\">اسم المقرر</th>\n                      <th scope=\"col\">اليوم</th>\n                      <th scope=\"col\">الوقت</th>\n\n                    </tr>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\n                      <td >{{it.CRN}}</td>\n                      <td>{{it.CRSE_TITLE}}</td>\n                      <td>{{it.CRSE_DAY}}</td>\n                      <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n\n                    </tr>\n                   \n                  </tbody>\n                </table>\n                <br>\n                <p style=\"text-align: right\">\n                {{eaData.Term_Exam_With_Schedule.labels.txt8}}\n         \n                {{eaData.Term_Exam_With_Schedule.labels.txt9}}\n          <br>\n          {{eaData.Term_Exam_With_Schedule.labels.txt10}}\n          \n          {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\n           \n        \n          <div  class=\"btn-group btn-group-justified col-md-12 \">\n              <div class=\"col-md-4\"></div>\n              <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                طباعة</a>\n             \n              <div class=\"col-md-4\"></div>\n            \n              </div>\n        </div>\n            <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\n                     {{eaData.Term_Exam_Without_Schedule.values.student_name}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\n                     {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\n                     {{eaData.Term_Exam_Without_Schedule.values.coll}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\n                     {{eaData.Term_Exam_Without_Schedule.values.term}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\n       \n                     {{eaData.Term_Exam_Without_Schedule.values.startDay}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\n                     {{eaData.Term_Exam_Without_Schedule.values.endDay}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\n       <br>\n       {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\n\n       {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\n <br>\n {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\n \n {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\n\n\n\n                \n                    </p>         \n                    <div  class=\"btn-group btn-group-justified col-md-12 \">\n                        <div class=\"col-md-4\"></div>\n                        <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                          طباعة</a>\n                       \n                          <div class=\"col-md-4\"></div>\n                        </div>\n            </div>\n            <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                \n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt1}}\n                {{eaData.Final_Exam_With_Schedule.values.student_name}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt2}}\n                {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt3}}\n                {{eaData.Final_Exam_With_Schedule.values.coll}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt4}}\n                {{eaData.Final_Exam_With_Schedule.values.term}}\n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt5}}\n  \n                {{eaData.Final_Exam_With_Schedule.values.startDay}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt6}}\n                {{eaData.Final_Exam_With_Schedule.values.endDay}}\n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt7}}\n  \n                \n  \n                \n                    </p>         \n                <table class=\"table\">\n                    <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">اليوم</th>\n                        <th scope=\"col\">الوقت</th>\n  \n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\n                        <td >{{it.CRN}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.CRSE_DAY}}</td>\n                        <td style=\"direction: ltr>({{toHTML(it.CRSE_TIME)}})</td>\n  \n                      </tr>\n                     \n                    </tbody>\n                  </table>\n                  <br>\n                  <p style=\"text-align: right\">\n                  {{eaData.Final_Exam_With_Schedule.labels.txt8}}\n           \n                  {{eaData.Final_Exam_With_Schedule.labels.txt9}}\n            <br>\n            {{eaData.Final_Exam_With_Schedule.labels.txt10}}\n            \n            {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\n                      \n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n               \n                <div class=\"col-md-4\"></div>\n              \n                </div>\n                </div>\n                <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\n                    <h5 class=\"card-title text-center\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>\n                    <p class=\"card-text\" style=\"text-align: right\" > \n                        {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\n                        <br/>\n                         الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\n                         {{eaData.Final_Exam_Without_Schedule.values.student_name}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\n                         {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\n                         {{eaData.Final_Exam_Without_Schedule.values.coll}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\n                         {{eaData.Final_Exam_Without_Schedule.values.term}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\n           \n                         {{eaData.Final_Exam_Without_Schedule.values.startDay}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\n                         {{eaData.Final_Exam_Without_Schedule.values.endDay}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\n           <br>\n           {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\n    \n           {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\n     <br>\n     {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\n     \n     {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\n    \n    \n    \n                    \n                        </p>    \n                        <div  class=\"btn-group btn-group-justified col-md-12 \">\n                            <div class=\"col-md-4\"></div>\n                            <a class=\"btn btn-primary\" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                              طباعة</a>\n                            \n                            <div class=\"col-md-4\"></div>\n                          \n                            </div>\n                      </div>"
 
 /***/ }),
 
@@ -2437,12 +2529,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExamsAttendStatComponent", function() { return ExamsAttendStatComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_exam_attendance_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/exam-attendance.service */ "./src/app/exams-affair/services/exam-attendance.service.ts");
+
 
 
 var ExamsAttendStatComponent = /** @class */ (function () {
-    function ExamsAttendStatComponent() {
+    function ExamsAttendStatComponent(academicService) {
+        this.academicService = academicService;
     }
     ExamsAttendStatComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.academicService.getِExamsAttednace('S180105049').then(function (res) {
+            _this.eaData = res.data;
+        });
+        this.finalschedule = this.academicService.Print_Final_Exam_With_Schedule();
+        this.final = this.academicService.Print_Final_Exam_Without_Schedule();
+        this.termSchedule = this.academicService.Print_Term_Exam_With_Schedule();
+        this.term = this.academicService.Print_Term_Exam_Without_Schedule();
+    };
+    ExamsAttendStatComponent.prototype.toHTML = function (input) {
+        return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
     };
     ExamsAttendStatComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2450,7 +2556,7 @@ var ExamsAttendStatComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./exams-attend-stat.component.html */ "./src/app/exams-affair/exams-attend-stat/exams-attend-stat.component.html"),
             styles: [__webpack_require__(/*! ./exams-attend-stat.component.css */ "./src/app/exams-affair/exams-attend-stat/exams-attend-stat.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_exam_attendance_service__WEBPACK_IMPORTED_MODULE_2__["ExamAttendanceService"]])
     ], ExamsAttendStatComponent);
     return ExamsAttendStatComponent;
 }());
@@ -2571,6 +2677,120 @@ var ExamsScheduleComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/exams-affair/services/exam-attendance.service.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/exams-affair/services/exam-attendance.service.ts ***!
+  \******************************************************************/
+/*! exports provided: ExamAttendanceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExamAttendanceService", function() { return ExamAttendanceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var ExamAttendanceService = /** @class */ (function () {
+    function ExamAttendanceService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    ExamAttendanceService.prototype.getِExamsAttednace = function (id) {
+        return this.httRequest.GetRequest('attendance_service?std_id=S180105049').toPromise();
+    };
+    ExamAttendanceService.prototype.Print_Term_Exam_With_Schedule = function () {
+        return this.configService.getApiURI() + '/attendance_service/download?type=Term_Exam_With_Schedule';
+    };
+    ExamAttendanceService.prototype.Print_Term_Exam_Without_Schedule = function () {
+        return this.configService.getApiURI() + '/attendance_service/download?type=Term_Exam_Without_Schedule';
+    };
+    ExamAttendanceService.prototype.Print_Final_Exam_With_Schedule = function () {
+        return this.configService.getApiURI() + '/attendance_service/download?type=Final_Exam_With_Schedule';
+    };
+    ExamAttendanceService.prototype.Print_Final_Exam_Without_Schedule = function () {
+        return this.configService.getApiURI() + '/attendance_service/download?type=Final_Exam_Without_Schedule';
+    };
+    ExamAttendanceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], ExamAttendanceService);
+    return ExamAttendanceService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/exams-affair/services/exams-attend-app.service.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/exams-affair/services/exams-attend-app.service.ts ***!
+  \*******************************************************************/
+/*! exports provided: ExamsAttendAppService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExamsAttendAppService", function() { return ExamsAttendAppService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var ExamsAttendAppService = /** @class */ (function () {
+    function ExamsAttendAppService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    ExamsAttendAppService.prototype.getِExamsAttednace = function (id) {
+        return this.httRequest.GetRequest('proof_attendance_service?std_id=S180105049').toPromise();
+    };
+    ExamsAttendAppService.prototype.Print_Term_Exam_With_Schedule = function () {
+        return this.configService.getApiURI() + '/proof_attendance_service/download?type=Term_Exam_With_Schedule';
+    };
+    ExamsAttendAppService.prototype.Print_Term_Exam_Without_Schedule = function () {
+        return this.configService.getApiURI() + '/proof_attendance_service/download?type=Term_Exam_Without_Schedule';
+    };
+    ExamsAttendAppService.prototype.Print_Final_Exam_With_Schedule = function () {
+        return this.configService.getApiURI() + '/proof_attendance_service/download?type=Final_Exam_With_Schedule';
+    };
+    ExamsAttendAppService.prototype.Print_Final_Exam_Without_Schedule = function () {
+        return this.configService.getApiURI() + '/proof_attendance_service/download?type=Final_Exam_Without_Schedule';
+    };
+    ExamsAttendAppService.prototype.Print_Term_Exam_With_ScheduleEn = function () {
+        return this.configService.getApiURI() + '/proof_attendance_service/download?type=Term_Exam_With_Schedule&Lang=en';
+    };
+    ExamsAttendAppService.prototype.Print_Term_Exam_Without_ScheduleEn = function () {
+        return this.configService.getApiURI() + '/proof_attendance_service/download?type=Term_Exam_Without_Schedule&Lang=en';
+    };
+    ExamsAttendAppService.prototype.Print_Final_Exam_With_ScheduleEn = function () {
+        return this.configService.getApiURI() + '/proof_attendance_service/download?type=Final_Exam_With_Schedule&Lang=en';
+    };
+    ExamsAttendAppService.prototype.Print_Final_Exam_Without_ScheduleEn = function () {
+        return this.configService.getApiURI() + '/proof_attendance_service/download?type=Final_Exam_Without_Schedule&Lang=en';
+    };
+    ExamsAttendAppService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], ExamsAttendAppService);
+    return ExamsAttendAppService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/finance-affair/finance-affair-routing.module.ts":
 /*!*****************************************************************!*\
   !*** ./src/app/finance-affair/finance-affair-routing.module.ts ***!
@@ -2584,10 +2804,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _tuition_fees_stat_tuition_fees_stat_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./tuition-fees-stat/tuition-fees-stat.component */ "./src/app/finance-affair/tuition-fees-stat/tuition-fees-stat.component.ts");
 
 
 
-var routes = [];
+
+var routes = [
+    { path: 'finance', component: _tuition_fees_stat_tuition_fees_stat_component__WEBPACK_IMPORTED_MODULE_3__["TuitionFeesStatComponent"] },
+    {
+        path: 'finance',
+        children: [
+            { path: 'fees', component: _tuition_fees_stat_tuition_fees_stat_component__WEBPACK_IMPORTED_MODULE_3__["TuitionFeesStatComponent"] }
+        ]
+    }
+];
 var FinanceAffairRoutingModule = /** @class */ (function () {
     function FinanceAffairRoutingModule() {
     }
@@ -2619,6 +2849,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _finance_affair_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./finance-affair-routing.module */ "./src/app/finance-affair/finance-affair-routing.module.ts");
 /* harmony import */ var _tuition_fees_stat_tuition_fees_stat_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./tuition-fees-stat/tuition-fees-stat.component */ "./src/app/finance-affair/tuition-fees-stat/tuition-fees-stat.component.ts");
+/* harmony import */ var _tuition_fees_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./tuition-fees.service */ "./src/app/finance-affair/tuition-fees.service.ts");
+
 
 
 
@@ -2633,6 +2865,9 @@ var FinanceAffairModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _finance_affair_routing_module__WEBPACK_IMPORTED_MODULE_3__["FinanceAffairRoutingModule"]
+            ],
+            providers: [
+                _tuition_fees_service__WEBPACK_IMPORTED_MODULE_5__["TuitionFeesService"]
             ]
         })
     ], FinanceAffairModule);
@@ -2661,7 +2896,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  tuition-fees-stat works!\n</p>\n"
+module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">  افادة الرسوم الداسية</h3>\n    \n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-10\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>اسم الطالب </b> </div>\n        </div>\n        <input  value=\"{{feesData.values.std_name}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n\n   <div  class=\"col-md-1\"></div>\n\n</div>\n<div class=\"row\">\n    <div  class=\"col-md-1\"></div>\n\n    <div class=\"col-md-5\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b> رقم الهويه </b> </div>\n          </div>\n          <input name=\"ID\"   value=\"{{feesData.values.ssn}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    <div class=\"col-md-5\">\n  \n        <div class=\"form-group\">\n        \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b>  رقم الطالب / الطالبه</b> </div>\n              </div>\n              <input name=\"fsermester\"  value=\"{{feesData.values.std_id}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n      </div>  <div  class=\"col-md-1\"></div>\n\n  </div>\n  \n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b> الكلية     </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\" {{feesData.values.coll}}  \"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-5\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>التخصص    </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{feesData.values.major}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n        <div  class=\"col-md-1\"></div>\n\n    </div>\n    \n    <div class=\"row\">\n        <div  class=\"col-md-1\"></div>\n\n        <div class=\"col-md-5\">\n          <div class=\"form-group\">\n            \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b> المستووى الدراسي </b> </div>\n              </div>\n              <input name=\"AcademicCurrentStatus\"  value=\"{{feesData.values.level}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n        </div>\n\n        <div class=\"col-md-5\">\n      \n            <div class=\"form-group\">\n            \n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"><b> المرحله  </b> </div>\n                  </div>\n                  <input name=\"Fees\"  value=\"{{feesData.values.stage}}\"   class=\"form-control\" readonly>\n                </div>\n              </div>   \n          </div>        <div  class=\"col-md-1\"></div>\n\n      </div> \n      <div class=\"row\">\n          <div  class=\"col-md-1\"></div>\n  \n          <div class=\"col-md-5\">\n            <div class=\"form-group\">\n              \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>  الحالة </b> </div>\n                </div>\n                <input name=\"AcademicCurrentStatus\"  value=\"{{feesData.values.status}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n          </div>\n  \n          <div class=\"col-md-5\">\n        \n              <div class=\"form-group\">\n              \n                  <div class=\"input-group\">\n                    <div class=\"input-group-prepend\">\n                      <div class=\"input-group-text\"><b> الفرع  </b> </div>\n                    </div>\n                    <input name=\"Fees\"  value=\"{{feesData.values.branch}}\"   class=\"form-control\" readonly>\n                  </div>\n                </div>   \n            </div>        <div  class=\"col-md-1\"></div>\n  \n        </div> \n    </div>\n      <div class=\"jumbotron jumbtron-fluid\">\n\n   <div class=\"row\">\n\n      <p style=\"direction: rtl;float: right;text-align: right;padding-right: 50px\">\n          {{feesData.labels.txt1}}   {{feesData.values.term}}\n          {{feesData.labels.txt2}} {{feesData.values.final_graduation_GPA}} {{feesData.labels.txt7}}\n         <br/>\n          {{feesData.labels.txt3}}\n          {{feesData.values.total}}\n\n          {{feesData.labels.txt4}}\n          <br/>\n            {{feesData.labels.txt5}}\n          <br/>\n          <b> {{feesData.labels.txt6}}</b>\n        </p>\n      </div> </div>\n        <div  class=\"btn-group btn-group-justified col-md-12 \">\n            <div class=\"col-md-4\"></div>\n            <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              طباعة</a>\n            <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              Print</a>\n            <div class=\"col-md-4\"></div>\n          \n            </div>\n   "
 
 /***/ }),
 
@@ -2677,12 +2912,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TuitionFeesStatComponent", function() { return TuitionFeesStatComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _tuition_fees_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../tuition-fees.service */ "./src/app/finance-affair/tuition-fees.service.ts");
+
 
 
 var TuitionFeesStatComponent = /** @class */ (function () {
-    function TuitionFeesStatComponent() {
+    function TuitionFeesStatComponent(academicService) {
+        this.academicService = academicService;
     }
     TuitionFeesStatComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.academicService.getِTuitionFeez().then(function (res) {
+            _this.feesData = res.data;
+        });
+        this.arabicPrint = this.academicService.Download();
+        this.EngPrint = this.academicService.DownloadEng();
     };
     TuitionFeesStatComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2690,9 +2934,54 @@ var TuitionFeesStatComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./tuition-fees-stat.component.html */ "./src/app/finance-affair/tuition-fees-stat/tuition-fees-stat.component.html"),
             styles: [__webpack_require__(/*! ./tuition-fees-stat.component.css */ "./src/app/finance-affair/tuition-fees-stat/tuition-fees-stat.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_tuition_fees_service__WEBPACK_IMPORTED_MODULE_2__["TuitionFeesService"]])
     ], TuitionFeesStatComponent);
     return TuitionFeesStatComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/finance-affair/tuition-fees.service.ts":
+/*!********************************************************!*\
+  !*** ./src/app/finance-affair/tuition-fees.service.ts ***!
+  \********************************************************/
+/*! exports provided: TuitionFeesService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TuitionFeesService", function() { return TuitionFeesService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var _shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var TuitionFeesService = /** @class */ (function () {
+    function TuitionFeesService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    TuitionFeesService.prototype.getِTuitionFeez = function () {
+        return this.httRequest.GetRequest('fees_stmt_request_service').toPromise();
+    };
+    TuitionFeesService.prototype.Download = function () {
+        return this.configService.getApiURI() + '/fees_stmt_request_service/download';
+    };
+    TuitionFeesService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/fees_stmt_request_service/download?Lang=en';
+    };
+    TuitionFeesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], _shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], TuitionFeesService);
+    return TuitionFeesService;
 }());
 
 
@@ -2955,7 +3244,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n    <a class=\"navbar-brand\" href=\"#\">تطبيق تجريبي</a>\n    <button class=\"navbar-toggler d-lg-none\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n      \n        <ul *ngIf=\"status\" class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n               <a class=\"nav-link\" (click)=\"logout()\" href=\"#\">تسجيل خروج</a>\n            </li>\n            <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/dashboard\">home</a> \n            </li>   \n           \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">بيانات</a> \n              </li> \n                    \n          </ul>\n\n          <ul *ngIf=\"!status\" class=\"nav navbar-nav\">\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">home</a> \n                  </li>   \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/register\"> تسجيل مستخدم جديد</a>\n              </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/login\">تسجيل دخول</a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a> \n              </li>  \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/certificate\"> شهادة تعريف</a> \n                </li>  \n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/graduates/statement\"> افادة خريج </a> \n                    </li>  \n                    <li class=\"nav-item\">\n                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/record\"> السجل  </a> \n                      </li>  \n          </ul>\n                     \n    </div>\n  </nav>\n</header>\n<br/>\n<br/>\n<br/>"
+module.exports = "<header>\n  <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n    <a class=\"navbar-brand\" href=\"#\">تطبيق تجريبي</a>\n    <button class=\"navbar-toggler d-lg-none\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n      \n        <ul *ngIf=\"status\" class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n               <a class=\"nav-link\" (click)=\"logout()\" href=\"#\">تسجيل خروج</a>\n            </li>\n            <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/dashboard\">home</a> \n            </li>   \n           \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">بيانات</a> \n              </li> \n                    \n          </ul>\n\n          <ul *ngIf=\"!status\" class=\"nav navbar-nav\">\n             \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a> \n              </li>  \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/certificate\"> شهادة تعريف</a> \n                </li>  \n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/graduates/statement\"> افادة خريج </a> \n                    </li>  \n                    <li class=\"nav-item\">\n                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/record\"> السجل  </a> \n                      </li>  \n                      <li class=\"nav-item\">\n                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/finance/fees\"> المصاريف  </a> \n                          </li> \n                          <li class=\"nav-item\">\n                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/medicalreport\"> التقرير الطبي  </a> \n                              </li> \n\n                              <li class=\"nav-item\">\n                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/lectabs\">  استعلام الغياب  </a> \n                                  </li> \n\n                                           <li class=\"nav-item\">\n                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attend\"> حضور اختبارات   </a> \n                                                  </li> \n                                                  <li class=\"nav-item\">\n                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attendapp\"> اثبات حضور    </a> \n                                                      </li> \n                                                      \n                                      \n          </ul>\n                     \n          \n    </div>\n  </nav>\n</header>\n<br/>\n<br/>\n<br/>"
 
 /***/ }),
 
@@ -3145,7 +3434,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  absence-query works!\n</p>\n"
+module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">   استعلام الغياب </h3>\n    <div *ngIf=\"status==0\"  class=\"alert alert-primary text-center\" role=\"alert\">\n        {{absData.messages}} \n      </div>\n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-10\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>نسبة غياب المحاضرات التقليدية  </b> </div>\n        </div>\n        <input  value=\"{{absData.absent_percentage_actual_lectures}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n  \n   <div  class=\"col-md-1\"></div>\n\n</div>\n\n<div class=\"row\">\n    <div  class=\"col-md-1\"></div>\n    <div class=\"col-md-10\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الافتراضيه  </b> </div>\n          </div>\n          <input  value=\"{{absData.absent_percentage_virtual_lectures}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    \n     <div  class=\"col-md-1\"></div>\n  \n  </div>\n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n      <div class=\"col-md-10\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الكلية  </b> </div>\n            </div>\n            <input  value=\"{{absData.absent_percentage_total}}\"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      \n       <div  class=\"col-md-1\"></div>\n    \n    </div>\n    \n  \n    \n          <table class=\"table\">\n              <thead>\n                <tr>\n                  <th scope=\"col\">رمز المقرر </th>\n                  <th scope=\"col\">اسم المقرر</th>\n                  <th scope=\"col\">نوع المحاضره</th>\n                  <th scope=\"col\">حالة الحضور</th>\n\n                </tr>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let it of absData.lectures\">\n                  <td >{{it.CODE}}</td>\n                  <td>{{it.TITLE}}</td>\n                  <td>{{it.TYPE}}</td>\n                  <td>{{it.STATUS}}</td>\n                </tr>\n               \n              </tbody>\n            </table>\n\n      \n            </div>\n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n                <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  Print</a>\n                <div class=\"col-md-4\"></div>\n              \n                </div>"
 
 /***/ }),
 
@@ -3161,12 +3450,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AbsenceQueryComponent", function() { return AbsenceQueryComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_lecture_abs_query_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/lecture-abs-query.service */ "./src/app/lectures-absence/services/lecture-abs-query.service.ts");
+
 
 
 var AbsenceQueryComponent = /** @class */ (function () {
-    function AbsenceQueryComponent() {
+    function AbsenceQueryComponent(academicService) {
+        this.academicService = academicService;
     }
     AbsenceQueryComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.academicService.getِAbsemceQuery().then(function (res) {
+            _this.absData = res.data;
+            _this.status = res.status;
+        });
+        this.arabicPrint = this.academicService.Download();
+        this.EngPrint = this.academicService.DownloadEng();
+    };
+    AbsenceQueryComponent.prototype.toHTML = function (input) {
+        return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
     };
     AbsenceQueryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -3174,7 +3476,7 @@ var AbsenceQueryComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./absence-query.component.html */ "./src/app/lectures-absence/absence-query/absence-query.component.html"),
             styles: [__webpack_require__(/*! ./absence-query.component.css */ "./src/app/lectures-absence/absence-query/absence-query.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_lecture_abs_query_service__WEBPACK_IMPORTED_MODULE_2__["LectureAbsQueryService"]])
     ], AbsenceQueryComponent);
     return AbsenceQueryComponent;
 }());
@@ -3196,10 +3498,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _medical_report_medical_report_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./medical-report/medical-report.component */ "./src/app/lectures-absence/medical-report/medical-report.component.ts");
+/* harmony import */ var _absence_query_absence_query_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./absence-query/absence-query.component */ "./src/app/lectures-absence/absence-query/absence-query.component.ts");
 
 
 
-var routes = [];
+
+
+var routes = [{ path: 'lecabsence', component: _medical_report_medical_report_component__WEBPACK_IMPORTED_MODULE_3__["MedicalReportComponent"] },
+    {
+        path: 'lecabsence',
+        children: [
+            { path: 'medicalreport', component: _medical_report_medical_report_component__WEBPACK_IMPORTED_MODULE_3__["MedicalReportComponent"] },
+            { path: 'lectabs', component: _absence_query_absence_query_component__WEBPACK_IMPORTED_MODULE_4__["AbsenceQueryComponent"] },
+        ]
+    }];
 var LecturesAbsenceRoutingModule = /** @class */ (function () {
     function LecturesAbsenceRoutingModule() {
     }
@@ -3233,6 +3546,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _absence_excuses_absence_excuses_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./absence-excuses/absence-excuses.component */ "./src/app/lectures-absence/absence-excuses/absence-excuses.component.ts");
 /* harmony import */ var _absence_query_absence_query_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./absence-query/absence-query.component */ "./src/app/lectures-absence/absence-query/absence-query.component.ts");
 /* harmony import */ var _medical_report_medical_report_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./medical-report/medical-report.component */ "./src/app/lectures-absence/medical-report/medical-report.component.ts");
+/* harmony import */ var _services_medical_report_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/medical-report.service */ "./src/app/lectures-absence/services/medical-report.service.ts");
+/* harmony import */ var _services_lecture_abs_query_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/lecture-abs-query.service */ "./src/app/lectures-absence/services/lecture-abs-query.service.ts");
+
+
 
 
 
@@ -3249,7 +3566,8 @@ var LecturesAbsenceModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _lectures_absence_routing_module__WEBPACK_IMPORTED_MODULE_3__["LecturesAbsenceRoutingModule"]
-            ]
+            ],
+            providers: [_services_medical_report_service__WEBPACK_IMPORTED_MODULE_7__["MedicalReportService"], _services_lecture_abs_query_service__WEBPACK_IMPORTED_MODULE_8__["LectureAbsQueryService"]]
         })
     ], LecturesAbsenceModule);
     return LecturesAbsenceModule;
@@ -3277,7 +3595,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  medical-report works!\n</p>\n"
+module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">   التقرير الطبي</h3>\n    <h6 class=\"display-6 text-center\">   {{mrData.labels.txt1}} : {{mrData.values.date}} </h6>\n    <h6 class=\"display-6 text-center\">   السجل المدني :  {{mrData.values.ssn}} </h6>\n\n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-5\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>اسم الطالب </b> </div>\n        </div>\n        <input  value=\"{{mrData.values.std_name}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n  <div class=\"col-md-5\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b>الرقم الجامعي  </b> </div>\n          </div>\n          <input  value=\"{{mrData.values.std_id}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n   <div  class=\"col-md-1\"></div>\n\n</div>\n\n  \n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b> الكلية     </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\" {{mrData.values.coll}}  \"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-5\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>التخصص    </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{mrData.values.major}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n        <div  class=\"col-md-1\"></div>\n\n    </div>\n    \n  \n    </div>\n      <div class=\"jumbotron jumbtron-fluid\">\n\n   <div class=\"row\">\n\n      <p style=\"direction: rtl;float: right;text-align: right;padding-right: 50px\">\n          \n        {{mrData.labels.txt2}}\n         <br/>\n         <br/>\n         <b>\n        -{{mrData.labels.txt3}}\n          </b>\n        \n        </p>\n      </div> </div>\n        <div  class=\"btn-group btn-group-justified col-md-12 \">\n            <div class=\"col-md-4\"></div>\n            <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              طباعة</a>\n            <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              Print</a>\n            <div class=\"col-md-4\"></div>\n          \n            </div>\n   "
 
 /***/ }),
 
@@ -3293,12 +3611,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicalReportComponent", function() { return MedicalReportComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_medical_report_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/medical-report.service */ "./src/app/lectures-absence/services/medical-report.service.ts");
+
 
 
 var MedicalReportComponent = /** @class */ (function () {
-    function MedicalReportComponent() {
+    function MedicalReportComponent(academicService) {
+        this.academicService = academicService;
     }
     MedicalReportComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.academicService.getِMedicalReport().then(function (res) {
+            _this.mrData = res.data;
+        });
+        this.arabicPrint = this.academicService.Download();
+        this.EngPrint = this.academicService.DownloadEng();
     };
     MedicalReportComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -3306,9 +3633,99 @@ var MedicalReportComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./medical-report.component.html */ "./src/app/lectures-absence/medical-report/medical-report.component.html"),
             styles: [__webpack_require__(/*! ./medical-report.component.css */ "./src/app/lectures-absence/medical-report/medical-report.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_medical_report_service__WEBPACK_IMPORTED_MODULE_2__["MedicalReportService"]])
     ], MedicalReportComponent);
     return MedicalReportComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/lectures-absence/services/lecture-abs-query.service.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/lectures-absence/services/lecture-abs-query.service.ts ***!
+  \************************************************************************/
+/*! exports provided: LectureAbsQueryService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LectureAbsQueryService", function() { return LectureAbsQueryService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var LectureAbsQueryService = /** @class */ (function () {
+    function LectureAbsQueryService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    LectureAbsQueryService.prototype.getِAbsemceQuery = function () {
+        return this.httRequest.GetRequest('absent_service?std_id=S180105049 ').toPromise();
+    };
+    LectureAbsQueryService.prototype.Download = function () {
+        return this.configService.getApiURI() + '/absent_service/download';
+    };
+    LectureAbsQueryService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/absent_service/download?Lang=en';
+    };
+    LectureAbsQueryService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], LectureAbsQueryService);
+    return LectureAbsQueryService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/lectures-absence/services/medical-report.service.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/lectures-absence/services/medical-report.service.ts ***!
+  \*********************************************************************/
+/*! exports provided: MedicalReportService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicalReportService", function() { return MedicalReportService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var MedicalReportService = /** @class */ (function () {
+    function MedicalReportService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    MedicalReportService.prototype.getِMedicalReport = function () {
+        return this.httRequest.GetRequest('medical_report_service').toPromise();
+    };
+    MedicalReportService.prototype.Download = function () {
+        return this.configService.getApiURI() + '/medical_report_service/download';
+    };
+    MedicalReportService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/medical_report_service/download?Lang=en';
+    };
+    MedicalReportService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], MedicalReportService);
+    return MedicalReportService;
 }());
 
 

@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ExamsAttendStatComponent } from './exams-attend-stat/exams-attend-stat.component';
+import { ExamsAttendAppComponent } from './exams-attend-app/exams-attend-app.component';
 
-const routes: Routes = [];
+const routes: Routes = [{ path: 'exams', component: ExamsAttendStatComponent },
+{
+  path: 'exams',
+  children: [
+  { path: 'attend',  component: ExamsAttendStatComponent },
+  { path: 'attendapp',  component: ExamsAttendAppComponent },
+
+
+ ]
+}];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

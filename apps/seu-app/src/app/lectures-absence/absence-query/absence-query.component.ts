@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LectureAbsQueryService } from '../services/lecture-abs-query.service';
 
 @Component({
   selector: 'app-absence-query',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AbsenceQueryComponent implements OnInit {
 
-  constructor() { }
+  absData;
+  EngPrint: string;
+  arabicPrint: string;
+  status;
+
+  constructor(private academicService: LectureAbsQueryService) { }
 
   ngOnInit() {
+    this.academicService.getِAbsemceQuery().then(
+      res => {
+    this.absData =    (res as any).data;
+    this.status = (res as any).status;
+      }
+    );
+    this.arabicPrint =   this.academicService.Download();
+    this.EngPrint = this.academicService.DownloadEng();
   }
+  toHTML(input): any {
+    return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
+}
 
 }

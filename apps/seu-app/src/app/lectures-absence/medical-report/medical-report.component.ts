@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MedicalReportService } from '../services/medical-report.service';
 
 @Component({
   selector: 'app-medical-report',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicalReportComponent implements OnInit {
 
-  constructor() { }
+  mrData;
+  arabicPrint: string;
+  EngPrint: string;
+  constructor(private academicService: MedicalReportService) { }
 
   ngOnInit() {
+    this.academicService.getِMedicalReport().then(
+      res => {
+    this.mrData =    (res as any).data;
+      }
+    );
+    this.arabicPrint =   this.academicService.Download();
+    this.EngPrint = this.academicService.DownloadEng();
   }
 
 }
