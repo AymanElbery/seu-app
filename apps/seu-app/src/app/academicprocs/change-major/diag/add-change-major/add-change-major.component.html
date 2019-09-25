@@ -1,3 +1,32 @@
-<p>
-  add-change-major works!
-</p>
+<!-- Modal -->
+<mat-dialog-content>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب انسحاب من الجامعه</h5>
+          
+        </div>
+        <div class="modal-body">
+          <P class="text-center">بيانات بيانات بيانات</P>
+          <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+            
+          <div class="form-group">
+             
+                 <select name="major" #BranchID="ngModel" [(ngModel)]="mj.major" class="form-control" 
+            [class.is-invalid]="!isValid && mj.major==0">
+              <option value="">اختر  التخصص</option>
+              <option *ngFor="let item of reqData.majors" value="{{item.MAJOR_PK}}">{{item.MAJOR_TITLE}}</option>
+            </select>
+          </div>
+      
+          <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+                      <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+  
+            <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+          </div>
+        </form>
+        </div>
+        
+      </div>
+    </div>
+  </mat-dialog-content>

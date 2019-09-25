@@ -3,59 +3,181 @@
     <div *ngIf="status==0"  class="alert alert-primary text-center" role="alert">
         {{absData.messages}} 
       </div>
-    <div class="row">
-  <div  class="col-md-1"></div>
-  <div class="col-md-10">
-    <div class="form-group">
-      
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text"><b>نسبة غياب المحاضرات التقليدية  </b> </div>
-        </div>
-        <input  value="{{absData.absent_percentage_actual_lectures}}"  class="form-control" readonly>
-      </div>
-    </div>   
-  </div>
+      <div class="card mt-3 tab-card">
+          <div class="card-header tab-card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                  <a class="nav-link" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">
+                      نسبة غياب المحاضرات الكلية
+
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">
+                      نسبة غياب المحاضرات التقليدية
+
+        </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">
+                      نسبة غياب المحاضرات الافتراضيه
+
+        </a>
+              </li>
+             
+            </ul>
+          </div>
   
-   <div  class="col-md-1"></div>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+              <h5 class="card-title text-center">نسبة غياب المحاضرات الكلية
+                </h5>
+              
+              <table *ngIf="absData.absent_percentage_total.length>0;else array1" class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">CRN </th>
+                      <th scope="col">كود المقرر</th>
+                      <th scope="col">اسم المقرر</th>
+                      <th scope="col">نسبة الغباب</th>
 
-</div>
-
-<div class="row">
-    <div  class="col-md-1"></div>
-    <div class="col-md-10">
-      <div class="form-group">
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let it of absData.absent_percentage_total">
+                      <td >{{it.CRN}}</td>
+                      <td >{{it.CRES_CODE}}</td>
+                      <td>{{it.CRSE_TITLE}}</td>
+                      <td>{{it.ABSENT_PERCENTAGE_TOTAL}}</td>
+                    </tr>
+                   
+                  </tbody>
+                </table>
+                <br> <ng-template #array1>
+                
+                    <div class="row">
+                        <div  class="col-md-1"></div>
+                        <div class="col-md-10">
+                          <div class="form-group">
+                            
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text"><b>نسبة غياب المحاضرات الكلية  </b> </div>
+                              </div>
+                              <input  value="0"  class="form-control" readonly>
+                            </div>
+                          </div>   
+                        </div>
+                        
+                         <div  class="col-md-1"></div>
+                      
+                      </div>
+         
+               </ng-template>
+           
         
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text"><b>نسبة غياب المحاضرات الافتراضيه  </b> </div>
-          </div>
-          <input  value="{{absData.absent_percentage_virtual_lectures}}"  class="form-control" readonly>
+         
         </div>
-      </div>   
-    </div>
-    
-     <div  class="col-md-1"></div>
+            <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+                <h5 class="card-title text-center">نسبة غياب المحاضرات التقليدية
+                  </h5>
+                   
+
+              <table *ngIf="absData.absent_percentage_actual_lectures.length>=0;else emptyArr2" class="table">
+                  <thead>
+                      <tr>
+                        <th scope="col">CRN </th>
+                        <th scope="col">كود المقرر</th>
+                        <th scope="col">اسم المقرر</th>
+                        <th scope="col">نسبة الغباب</th>
   
-  </div>
-  <div class="row">
-      <div  class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="form-group">
-          
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><b>نسبة غياب المحاضرات الكلية  </b> </div>
-            </div>
-            <input  value="{{absData.absent_percentage_total}}"  class="form-control" readonly>
-          </div>
-        </div>   
-      </div>
-      
-       <div  class="col-md-1"></div>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let it of absData.absent_percentage_actual_lectures">
+                        <td >{{it.CRN}}</td>
+                        <td >{{it.CRES_CODE}}</td>
+                        <td>{{it.CRSE_TITLE}}</td>
+                        <td>{{it.ABSENT_PERCENTAGE_FTF}}</td>
+                      </tr>
+                     
+                    </tbody>
+             
+                </table>
+                <ng-template #emptyArr2>
+                <div  class="row">
+                    <div  class="col-md-1"></div>
+                    <div class="col-md-10">
+                      <div class="form-group">
+                        
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <div class="input-group-text"><b>نسبة غياب المحاضرات التقليدية  </b> </div>
+                          </div>
+                          <input  value="0"  class="form-control" readonly>
+                        </div>
+                      </div>   
+                    </div>
+                    
+                     <div  class="col-md-1"></div>
+                  
+                  </div>
+                </ng-template>
+                      
+         </div>
+            <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
+                <h5 class="card-title text-center">نسبة غياب المحاضرات الافتراضيه
+                  </h5>
+               
+                <table  class="table" *ngIf="absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3">
+                     <thead>
+                        <tr>
+                          <th scope="col">CRN </th>
+                          <th scope="col">كود المقرر</th>
+                          <th scope="col">اسم المقرر</th>
+                          <th scope="col">نسبة الغباب</th>
     
-    </div>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let it of absData.absent_percentage_virtual_lectures">
+                          <td >{{it.CRN}}</td>
+                          <td >{{it.CRES_CODE}}</td>
+                          <td>{{it.CRSE_TITLE}}</td>
+                          <td>{{it.ABSENT_PERCENTAGE_VERT}}</td>
+                        </tr>
+                       
+                      </tbody>
+                               </table>
+                  <br>
+                  <ng-template  #array3>
+                      <div class="row">
+                          <div  class="col-md-1"></div>
+                          <div class="col-md-10">
+                            <div class="form-group">
+                              
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text"><b>نسبة غياب المحاضرات الافتراضيه  </b> </div>
+                                </div>
+                                <input  value="{{absData.absent_percentage_virtual_lectures}}"  class="form-control" readonly>
+                              </div>
+                            </div>   
+                          </div>
+                          
+                           <div  class="col-md-1"></div>
+                        
+                        </div>
+                  </ng-template>
+                </div>
+                </div>
+        </div>
+                  
     
+
+<br/>
+  <h3 class="text-center">المحاضرات</h3>
+  <br/>
   
     
           <table class="table">

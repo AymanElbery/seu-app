@@ -19,6 +19,7 @@ export class AbsenceQueryComponent implements OnInit {
     this.academicService.getِAbsemceQuery().then(
       res => {
     this.absData =    (res as any).data;
+    console.log(this.absData.absent_percentage_total);
     this.status = (res as any).status;
       }
     );
