@@ -35,6 +35,9 @@ import { AddEnglishEqualizerComponent } from './english-equalize/diag/add-englis
 import { EnglishEqualizerService } from './services/english-equalizer.service';
 import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re-enroll.component';
 import { ReEnrollService } from './services/re-enroll.service';
+import { ChangeMajorComponent } from './change-major/change-major.component';
+import { ChangeMajorService } from './services/change-major.service';
+import { AddChangeMajorComponent } from './change-major/diag/add-change-major/add-change-major.component';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -56,7 +59,9 @@ import { ReEnrollService } from './services/re-enroll.service';
            AddCourseEqualizeComponent,
            EnglishEqualizeComponent,
            AddEnglishEqualizerComponent,
-           AddReEnrollComponent],
+           AddReEnrollComponent,
+           ChangeMajorComponent,
+           AddChangeMajorComponent],
 
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
@@ -65,7 +70,8 @@ import { ReEnrollService } from './services/re-enroll.service';
          AddExecuseTermComponent,
          AddCourseEqualizeComponent,
          AddEnglishEqualizerComponent,
-         AddReEnrollComponent
+         AddReEnrollComponent,
+         AddChangeMajorComponent
       ],
 
   imports: [
@@ -83,7 +89,8 @@ import { ReEnrollService } from './services/re-enroll.service';
       TermExecuseService,
       CourseEqualizerService,
       EnglishEqualizerService,
-      ReEnrollService
+      ReEnrollService,
+      ChangeMajorService
   ]
 
 })
