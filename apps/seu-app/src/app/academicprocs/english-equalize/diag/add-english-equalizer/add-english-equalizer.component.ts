@@ -16,7 +16,7 @@ import { EnglishEqual } from 'src/app/shared/models/english-equal';
 export class AddEnglishEqualizerComponent implements OnInit {
 
   englishEqual: EnglishEqual;
-  reqData: any;
+  reqData: EnglishEqual;
 msgs: any;
 private imageSrc = '';
 
@@ -25,15 +25,15 @@ private imageSrc = '';
                private toastr: ToastrService, private acadmicProc: EnglishEqualizerService ) { }
 
   ngOnInit() {
-    this.englishEqual = {tests: [], attachment: ''};
+    this.englishEqual = {tests: [], attachment: '', ENG_TESTS: []};
 
     this.reqData = this.acadmicProc.reqData;
 
   }
-  changeStatus(id, s, e, i) {
+  changeStatus(it, e, i) {
     if (e.target.checked) {
-      const selreq = {test: id, score: s};
-      this.englishEqual.tests.push(selreq);
+      it.test = it.TEST_PK;
+      this.englishEqual.tests.push(it);
       console.log(this.englishEqual.tests);
     } else {
       this.englishEqual.tests.splice(i, 1);

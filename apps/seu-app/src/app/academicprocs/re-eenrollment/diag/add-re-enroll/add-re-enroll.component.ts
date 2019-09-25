@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ReEnroll } from 'src/app/shared/models/re-enroll';
 import { ReEnrollService } from 'src/app/academicprocs/services/re-enroll.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { AddCourseCancelComponent } from 'src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component';
 import { NgForm } from '@angular/forms';
@@ -19,38 +19,59 @@ export class AddReEnrollComponent implements OnInit {
   reEnroll: ReEnroll;
   reqData;
   msgs;
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ReEnrollService) { }
+  constructor( @Inject(MAT_DIALOG_DATA) public data,
+               public dialogRef: MatDialogRef<AddReEnrollComponent>,
+               private toastr: ToastrService,  private acadmicProc: ReEnrollService) { }
 
   ngOnInit() {
-    this.reEnroll = {proof: '', reason: '', as_proof: '1'};
+    this.reEnroll = {proof: '', reason: '', has_proof: '1'};
     this.acadmicProc.getِgetRequests().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
-      }
+
+
+
+  }
     );
   }
 
-  openDialoge() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
-    dialogConfig.width = '50%';
 
-    this.dialog.open(AddCourseCancelComponent, dialogConfig);
-  }
 
   addRequest(data) {
     this.acadmicProc.AddRequest(data).then(  res => {
       this.acadmicProc.msgs = (res as any).messages;
+      this.msgs.forEach((element: any) => {
+        this.toastr.success('', element.body);
+
         });
+    });
+
   }
   onSubmit(form: NgForm) {
-this.addRequest(form.value);
+this.addRequest(this.reEnroll);
+console.log(this.reEnroll);
+this.dialogRef.close();
 
-
+  }
+  handleInputChange(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    const pattern = /image-*/;
+    const reader = new FileReader();
+    /* if (!file.type.match(pattern)) {
+      alert('invalid format');
+      return;
+    }
+     */
+    reader.onload = this._handleReaderLoaded.bind(this);
+    reader.readAsDataURL(file);
+  }
+  _handleReaderLoaded(e) {
+    const reader = e.target;
+    this.reEnroll.proof = reader.result;
+    console.log(this.reEnroll.proof);
   }
 
   print(req) {
@@ -72,5 +93,7 @@ call(hr) {
 return  Math.floor(Math.random() * 10) + hr ;
 
 }
-
+closeDiag() {
+  this.dialogRef.close();
+}
 }

@@ -25,7 +25,7 @@ export class EnglishEqualizerService {
 
    Download(req) {
 
-    return this.configService.getApiURI() + '/english_certificates_service/download/execuse_request/' + req + '?std_id=S160239561';
+    return this.configService.getApiURI() + '/english_certificates_service/download/english_certificates/' + req + '?std_id=S160239561';
    }
    DownloadEng() {
 

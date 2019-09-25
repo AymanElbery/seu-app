@@ -1,47 +1,53 @@
 <mat-dialog-content>
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
+   
+     
         <div class="modal-header">
-          <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب انسحاب من الجامعه</h5>
+          <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">      طلب معادلة اللغه الانجليزيه </h5>
           
         </div>
         <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-  
         <div class="modal-body">
-  <table style="text-align: center" class="table">
-      <thead>
-        <tr>
-          <th scope="col">اسم المقرر </th>
-    
-          <th scope="col"> رمز المقرر</th>
-          <th scope="col">عدد الساعات </th>
-          <th scope="col">   </th>
-    
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let it of reqData.RegisteredCourses;let i=index;">
-          <td>{{it.CRSE_TITLE}}</td>
-         
-    
-          <td>{{it.CRES_CODE}}</td>
-          <td>{{it.CREDIT_HR}}</td>
-       
-    
-          <td>
-              <input type="checkbox" name="chkCourse" (change)="changeStatus(it.CRES_CODE,$event,i)" #chkCourse  id="defaultUnchecked">
-         </td>
-    
-        </tr>
-        
-      </tbody>
-    </table>
-    <div class="image-upload">
-        <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)" />
-    </div> 
-   <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-        <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+            <table style="text-align: center" class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">اسم الاختبار </th>
+                    <th scope="col">الدرجه  </th>
   
-  <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
-  </div>
-        </div></form></div></div></mat-dialog-content>
+                    <th scope="col">   </th>
+              
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let it of reqData.ENG_TESTS;let i=index;">
+                    <td>{{it.TEST_TITLE}}</td>
+                   
+              
+                    <td>    <input   #score="ngModel" name="score" [(ngModel)]="it.score"  class="form-control col-md-6" min="1" max="10" type="number" value="1" id="example-number-input">
+                    </td>
+                   
+                  
+                    
+              
+                    <td>
+                        <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event,i)" #chkCourse  id="defaultUnchecked">
+                   </td>
+              
+                  </tr>
+                  
+                </tbody>
+              </table>
+              <div class="image-upload">
+                  <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)" />
+              </div> 
+             
+            <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+                        <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+    
+              <button  type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+            </div>
+            </div>
+          </form>
+     
+          
+    
+    </mat-dialog-content>

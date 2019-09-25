@@ -21,6 +21,9 @@
   
         <th scope="col">تاريخ الطلب</th>
         <th scope="col">حالة الطلب</th>
+        <th scope="col"> الرد </th>
+        <th scope="col"> تاريخ الرد </th>
+
         <th scope="col"> طباعة الطلب</th>
         <th scope="col"> حذف الطلب </th>
   
@@ -33,6 +36,8 @@
   
         <td>{{it.insert_date}}</td>
         <td>{{it.status}}</td>
+        <td>{{it.rejection_reason}}</td>
+        <td>{{it.approval_date}}</td>
         <td><a class="btn btn-primary" [href]="print(it.request_number)" ><span class="glyphicon glyphicon-print"></span>
           Print</a></td>
   

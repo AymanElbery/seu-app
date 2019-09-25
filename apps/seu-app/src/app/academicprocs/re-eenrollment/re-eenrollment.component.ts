@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ReEnrollService } from '../services/re-enroll.service';
 import { AddCourseCancelComponent } from '../cancel-course/diag/add-course-cancel/add-course-cancel.component';
 import { NgForm } from '@angular/forms';
+import { AddReEnrollComponent } from './diag/add-re-enroll/add-re-enroll.component';
 
 @Component({
   selector: 'app-re-eenrollment',
@@ -22,7 +23,7 @@ export class ReEenrollmentComponent implements OnInit {
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ReEnrollService) { }
 
   ngOnInit() {
-    this.reEnroll = {proof: '', reason: '', as_proof: '1'};
+    this.reEnroll = {proof: '', reason: '', has_proof: '1'};
     this.acadmicProc.getِgetRequests().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;
@@ -39,7 +40,7 @@ export class ReEenrollmentComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
 
-    this.dialog.open(AddCourseCancelComponent, dialogConfig);
+    this.dialog.open(AddReEnrollComponent, dialogConfig);
   }
 
   addRequest(data) {
@@ -63,7 +64,7 @@ return    this.acadmicProc.Download(req);
       this.toastr.success('', (res as any).messages.body);
 
     });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
+    this.acadmicProc.reqData.requests.splice(index, 1);
 
   }
 
