@@ -622,10 +622,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _withdraw_from_univ_withdraw_from_univ_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./withdraw-from-univ/withdraw-from-univ.component */ "./src/app/academicprocs/withdraw-from-univ/withdraw-from-univ.component.ts");
+/* harmony import */ var _postpone_request_postpone_request_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./postpone-request/postpone-request.component */ "./src/app/academicprocs/postpone-request/postpone-request.component.ts");
+/* harmony import */ var _summer_withdraw_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./summer-withdraw/summer-withdraw.component */ "./src/app/academicprocs/summer-withdraw/summer-withdraw.component.ts");
+/* harmony import */ var _cancel_course_cancel_course_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cancel-course/cancel-course.component */ "./src/app/academicprocs/cancel-course/cancel-course.component.ts");
+/* harmony import */ var _execuse_request_execuse_request_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./execuse-request/execuse-request.component */ "./src/app/academicprocs/execuse-request/execuse-request.component.ts");
+/* harmony import */ var _course_equalize_course_equalize_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./course-equalize/course-equalize.component */ "./src/app/academicprocs/course-equalize/course-equalize.component.ts");
+/* harmony import */ var _english_equalize_english_equalize_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./english-equalize/english-equalize.component */ "./src/app/academicprocs/english-equalize/english-equalize.component.ts");
+/* harmony import */ var _re_eenrollment_re_eenrollment_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./re-eenrollment/re-eenrollment.component */ "./src/app/academicprocs/re-eenrollment/re-eenrollment.component.ts");
+/* harmony import */ var _change_major_change_major_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./change-major/change-major.component */ "./src/app/academicprocs/change-major/change-major.component.ts");
 
 
 
-var routes = [];
+
+
+
+
+
+
+
+
+
+var routes = [{ path: 'procedures', component: _withdraw_from_univ_withdraw_from_univ_component__WEBPACK_IMPORTED_MODULE_3__["WithdrawFromUnivComponent"] },
+    {
+        path: 'procedures',
+        children: [
+            { path: 'withdrawuniv', component: _withdraw_from_univ_withdraw_from_univ_component__WEBPACK_IMPORTED_MODULE_3__["WithdrawFromUnivComponent"] },
+            { path: 'postpone', component: _postpone_request_postpone_request_component__WEBPACK_IMPORTED_MODULE_4__["PostponeRequestComponent"] },
+            { path: 'summer', component: _summer_withdraw_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_5__["SummerWithdrawComponent"] },
+            { path: 'cancelcourse', component: _cancel_course_cancel_course_component__WEBPACK_IMPORTED_MODULE_6__["CancelCourseComponent"] },
+            { path: 'execuse', component: _execuse_request_execuse_request_component__WEBPACK_IMPORTED_MODULE_7__["ExecuseRequestComponent"] },
+            { path: 'equalize', component: _course_equalize_course_equalize_component__WEBPACK_IMPORTED_MODULE_8__["CourseEqualizeComponent"] },
+            { path: 'eequalize', component: _english_equalize_english_equalize_component__WEBPACK_IMPORTED_MODULE_9__["EnglishEqualizeComponent"] },
+            { path: 'reenrol', component: _re_eenrollment_re_eenrollment_component__WEBPACK_IMPORTED_MODULE_10__["ReEenrollmentComponent"] },
+            { path: 'changemajor', component: _change_major_change_major_component__WEBPACK_IMPORTED_MODULE_11__["ChangeMajorComponent"] },
+        ]
+    }];
 var AcademicprocsRoutingModule = /** @class */ (function () {
     function AcademicprocsRoutingModule() {
     }
@@ -664,6 +696,60 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _change_request_change_request_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./change-request/change-request.component */ "./src/app/academicprocs/change-request/change-request.component.ts");
 /* harmony import */ var _cancel_course_cancel_course_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./cancel-course/cancel-course.component */ "./src/app/academicprocs/cancel-course/cancel-course.component.ts");
 /* harmony import */ var _withdraw_from_univ_withdraw_from_univ_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./withdraw-from-univ/withdraw-from-univ.component */ "./src/app/academicprocs/withdraw-from-univ/withdraw-from-univ.component.ts");
+/* harmony import */ var _services_withdraw_from_univ_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/withdraw-from-univ.service */ "./src/app/academicprocs/services/withdraw-from-univ.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _withdraw_from_univ_diag_add_request_add_request_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./withdraw-from-univ/diag/add-request/add-request.component */ "./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.ts");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _shared_directives_hr_minute_directive__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../shared/directives/hr-minute.directive */ "./src/app/shared/directives/hr-minute.directive.ts");
+/* harmony import */ var _shared_components_timer_timer_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../shared/components/timer/timer.component */ "./src/app/shared/components/timer/timer.component.ts");
+/* harmony import */ var _services_term_postpone_service__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./services/term-postpone.service */ "./src/app/academicprocs/services/term-postpone.service.ts");
+/* harmony import */ var _postpone_request_diag_add_postpone_add_postpone_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./postpone-request/diag/add-postpone/add-postpone.component */ "./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.ts");
+/* harmony import */ var _summer_withdraw_diag_add_summer_withdraw_add_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component */ "./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.ts");
+/* harmony import */ var _services_summer_withdraw_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./services/summer-withdraw.service */ "./src/app/academicprocs/services/summer-withdraw.service.ts");
+/* harmony import */ var _services_cancel_course_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./services/cancel-course.service */ "./src/app/academicprocs/services/cancel-course.service.ts");
+/* harmony import */ var _cancel_course_diag_add_course_cancel_add_course_cancel_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./cancel-course/diag/add-course-cancel/add-course-cancel.component */ "./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.ts");
+/* harmony import */ var _execuse_request_diag_add_execuse_term_add_execuse_term_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./execuse-request/diag/add-execuse-term/add-execuse-term.component */ "./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.ts");
+/* harmony import */ var _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./services/term-execuse.service */ "./src/app/academicprocs/services/term-execuse.service.ts");
+/* harmony import */ var _course_equalize_course_equalize_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./course-equalize/course-equalize.component */ "./src/app/academicprocs/course-equalize/course-equalize.component.ts");
+/* harmony import */ var _course_equalize_diag_add_course_equalize_add_course_equalize_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./course-equalize/diag/add-course-equalize/add-course-equalize.component */ "./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.ts");
+/* harmony import */ var _services_course_equalizer_service__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./services/course-equalizer.service */ "./src/app/academicprocs/services/course-equalizer.service.ts");
+/* harmony import */ var _english_equalize_english_equalize_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./english-equalize/english-equalize.component */ "./src/app/academicprocs/english-equalize/english-equalize.component.ts");
+/* harmony import */ var _english_equalize_diag_add_english_equalizer_add_english_equalizer_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./english-equalize/diag/add-english-equalizer/add-english-equalizer.component */ "./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.ts");
+/* harmony import */ var _services_english_equalizer_service__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./services/english-equalizer.service */ "./src/app/academicprocs/services/english-equalizer.service.ts");
+/* harmony import */ var _re_eenrollment_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./re-eenrollment/diag/add-re-enroll/add-re-enroll.component */ "./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.ts");
+/* harmony import */ var _services_re_enroll_service__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./services/re-enroll.service */ "./src/app/academicprocs/services/re-enroll.service.ts");
+/* harmony import */ var _change_major_change_major_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./change-major/change-major.component */ "./src/app/academicprocs/change-major/change-major.component.ts");
+/* harmony import */ var _services_change_major_service__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./services/change-major.service */ "./src/app/academicprocs/services/change-major.service.ts");
+/* harmony import */ var _change_major_diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./change-major/diag/add-change-major/add-change-major.component */ "./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -681,10 +767,55 @@ var AcademicprocsModule = /** @class */ (function () {
     }
     AcademicprocsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_postpone_request_postpone_request_component__WEBPACK_IMPORTED_MODULE_4__["PostponeRequestComponent"], _execuse_request_execuse_request_component__WEBPACK_IMPORTED_MODULE_5__["ExecuseRequestComponent"], _summer_withdraw_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_6__["SummerWithdrawComponent"], _re_eenrollment_re_eenrollment_component__WEBPACK_IMPORTED_MODULE_7__["ReEenrollmentComponent"], _except_semester_except_semester_component__WEBPACK_IMPORTED_MODULE_8__["ExceptSemesterComponent"], _change_request_change_request_component__WEBPACK_IMPORTED_MODULE_9__["ChangeRequestComponent"], _cancel_course_cancel_course_component__WEBPACK_IMPORTED_MODULE_10__["CancelCourseComponent"], _withdraw_from_univ_withdraw_from_univ_component__WEBPACK_IMPORTED_MODULE_11__["WithdrawFromUnivComponent"]],
+            declarations: [_postpone_request_postpone_request_component__WEBPACK_IMPORTED_MODULE_4__["PostponeRequestComponent"],
+                _execuse_request_execuse_request_component__WEBPACK_IMPORTED_MODULE_5__["ExecuseRequestComponent"],
+                _summer_withdraw_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_6__["SummerWithdrawComponent"],
+                _re_eenrollment_re_eenrollment_component__WEBPACK_IMPORTED_MODULE_7__["ReEenrollmentComponent"],
+                _except_semester_except_semester_component__WEBPACK_IMPORTED_MODULE_8__["ExceptSemesterComponent"],
+                _change_request_change_request_component__WEBPACK_IMPORTED_MODULE_9__["ChangeRequestComponent"],
+                _cancel_course_cancel_course_component__WEBPACK_IMPORTED_MODULE_10__["CancelCourseComponent"],
+                _withdraw_from_univ_withdraw_from_univ_component__WEBPACK_IMPORTED_MODULE_11__["WithdrawFromUnivComponent"],
+                _withdraw_from_univ_diag_add_request_add_request_component__WEBPACK_IMPORTED_MODULE_14__["AddRequestComponent"],
+                _postpone_request_diag_add_postpone_add_postpone_component__WEBPACK_IMPORTED_MODULE_21__["AddPostponeComponent"],
+                _shared_directives_hr_minute_directive__WEBPACK_IMPORTED_MODULE_18__["HrMinuteDirective"],
+                _shared_components_timer_timer_component__WEBPACK_IMPORTED_MODULE_19__["TimerComponent"],
+                _summer_withdraw_diag_add_summer_withdraw_add_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_22__["AddSummerWithdrawComponent"],
+                _cancel_course_diag_add_course_cancel_add_course_cancel_component__WEBPACK_IMPORTED_MODULE_25__["AddCourseCancelComponent"],
+                _execuse_request_diag_add_execuse_term_add_execuse_term_component__WEBPACK_IMPORTED_MODULE_26__["AddExecuseTermComponent"],
+                _course_equalize_course_equalize_component__WEBPACK_IMPORTED_MODULE_28__["CourseEqualizeComponent"],
+                _course_equalize_diag_add_course_equalize_add_course_equalize_component__WEBPACK_IMPORTED_MODULE_29__["AddCourseEqualizeComponent"],
+                _english_equalize_english_equalize_component__WEBPACK_IMPORTED_MODULE_31__["EnglishEqualizeComponent"],
+                _english_equalize_diag_add_english_equalizer_add_english_equalizer_component__WEBPACK_IMPORTED_MODULE_32__["AddEnglishEqualizerComponent"],
+                _re_eenrollment_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_34__["AddReEnrollComponent"],
+                _change_major_change_major_component__WEBPACK_IMPORTED_MODULE_36__["ChangeMajorComponent"],
+                _change_major_diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_38__["AddChangeMajorComponent"]],
+            entryComponents: [_withdraw_from_univ_diag_add_request_add_request_component__WEBPACK_IMPORTED_MODULE_14__["AddRequestComponent"],
+                _postpone_request_diag_add_postpone_add_postpone_component__WEBPACK_IMPORTED_MODULE_21__["AddPostponeComponent"],
+                _summer_withdraw_diag_add_summer_withdraw_add_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_22__["AddSummerWithdrawComponent"],
+                _cancel_course_diag_add_course_cancel_add_course_cancel_component__WEBPACK_IMPORTED_MODULE_25__["AddCourseCancelComponent"],
+                _execuse_request_diag_add_execuse_term_add_execuse_term_component__WEBPACK_IMPORTED_MODULE_26__["AddExecuseTermComponent"],
+                _course_equalize_diag_add_course_equalize_add_course_equalize_component__WEBPACK_IMPORTED_MODULE_29__["AddCourseEqualizeComponent"],
+                _english_equalize_diag_add_english_equalizer_add_english_equalizer_component__WEBPACK_IMPORTED_MODULE_32__["AddEnglishEqualizerComponent"],
+                _re_eenrollment_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_34__["AddReEnrollComponent"],
+                _change_major_diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_38__["AddChangeMajorComponent"]
+            ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _academicprocs_routing_module__WEBPACK_IMPORTED_MODULE_3__["AcademicprocsRoutingModule"]
+                _academicprocs_routing_module__WEBPACK_IMPORTED_MODULE_3__["AcademicprocsRoutingModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"],
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_15__["BrowserAnimationsModule"],
+                _angular_material_dialog__WEBPACK_IMPORTED_MODULE_16__["MatDialogModule"],
+                ngx_toastr__WEBPACK_IMPORTED_MODULE_17__["ToastrModule"].forRoot() // ToastrModule added
+            ],
+            providers: [_services_withdraw_from_univ_service__WEBPACK_IMPORTED_MODULE_12__["WithdrawFromUnivService"],
+                _services_term_postpone_service__WEBPACK_IMPORTED_MODULE_20__["TermPostponeService"],
+                _services_summer_withdraw_service__WEBPACK_IMPORTED_MODULE_23__["SummerWithdrawService"],
+                _services_cancel_course_service__WEBPACK_IMPORTED_MODULE_24__["CancelCourseService"],
+                _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_27__["TermExecuseService"],
+                _services_course_equalizer_service__WEBPACK_IMPORTED_MODULE_30__["CourseEqualizerService"],
+                _services_english_equalizer_service__WEBPACK_IMPORTED_MODULE_33__["EnglishEqualizerService"],
+                _services_re_enroll_service__WEBPACK_IMPORTED_MODULE_35__["ReEnrollService"],
+                _services_change_major_service__WEBPACK_IMPORTED_MODULE_37__["ChangeMajorService"]
             ]
         })
     ], AcademicprocsModule);
@@ -713,7 +844,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  cancel-course works!\n</p>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n  {{msg.body}}!\n</div>\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n<div style=\"direction: ltr;text-align: center\">\n  \n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n  اضافة طلب\n</button>\n<br/>\n<br/>\n\n</div>\n<div>\n<table style=\"text-align: center\" class=\"table\">\n  <thead>\n    <tr>\n      <th scope=\"col\">رقم الطلب</th>\n\n      <th scope=\"col\">تاريخ الطلب</th>\n      <th scope=\"col\">حالة الطلب</th>\n      <th scope=\"col\"> طباعة الطلب</th>\n      <th scope=\"col\"> حذف الطلب </th>\n\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let it of reqData.requests;let i=index;\">\n      <td>{{it.request_number}}</td>\n     \n\n      <td>{{it.insert_date}}</td>\n      <td>{{it.status}}</td>\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n        Print</a></td>\n\n      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n\n    </tr>\n    \n  </tbody>\n</table>\n</div>\n"
 
 /***/ }),
 
@@ -729,12 +860,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CancelCourseComponent", function() { return CancelCourseComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_cancel_course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/cancel-course.service */ "./src/app/academicprocs/services/cancel-course.service.ts");
+/* harmony import */ var _diag_add_course_cancel_add_course_cancel_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-course-cancel/add-course-cancel.component */ "./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.ts");
+
+
+
+
 
 
 var CancelCourseComponent = /** @class */ (function () {
-    function CancelCourseComponent() {
+    function CancelCourseComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
     }
     CancelCourseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.cancelCousre = { courses: null, agreement: 1 };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    CancelCourseComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_course_cancel_add_course_cancel_component__WEBPACK_IMPORTED_MODULE_5__["AddCourseCancelComponent"], dialogConfig);
+    };
+    CancelCourseComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    CancelCourseComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    CancelCourseComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    CancelCourseComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    CancelCourseComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
     };
     CancelCourseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -742,9 +923,336 @@ var CancelCourseComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./cancel-course.component.html */ "./src/app/academicprocs/cancel-course/cancel-course.component.html"),
             styles: [__webpack_require__(/*! ./cancel-course.component.css */ "./src/app/academicprocs/cancel-course/cancel-course.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_cancel_course_service__WEBPACK_IMPORTED_MODULE_4__["CancelCourseService"]])
     ], CancelCourseComponent);
     return CancelCourseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.css":
+/*!****************************************************************************************************!*\
+  !*** ./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.css ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvY2FuY2VsLWNvdXJzZS9kaWFnL2FkZC1jb3Vyc2UtY2FuY2VsL2FkZC1jb3Vyc2UtY2FuY2VsLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.html":
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.html ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-dialog-content>\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب انسحاب من الجامعه</h5>\n        \n      </div>\n      <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n\n      <div class=\"modal-body\">\n<table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">اسم المقرر </th>\n  \n        <th scope=\"col\"> رمز المقرر</th>\n        <th scope=\"col\">عدد الساعات </th>\n        <th scope=\"col\">   </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.RegisteredCourses;let i=index;\">\n        <td>{{it.CRSE_TITLE}}</td>\n       \n  \n        <td>{{it.CRES_CODE}}</td>\n        <td>{{it.CREDIT_HR}}</td>\n     \n  \n        <td>\n            <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it.CRES_CODE,$event,i)\" #chkCourse  id=\"defaultUnchecked\">\n       </td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n\n<button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n</div>\n      </div></form></div></div></mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.ts":
+/*!***************************************************************************************************!*\
+  !*** ./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.ts ***!
+  \***************************************************************************************************/
+/*! exports provided: AddCourseCancelComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddCourseCancelComponent", function() { return AddCourseCancelComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_academicprocs_services_cancel_course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/academicprocs/services/cancel-course.service */ "./src/app/academicprocs/services/cancel-course.service.ts");
+
+
+
+
+
+var AddCourseCancelComponent = /** @class */ (function () {
+    function AddCourseCancelComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.imageSrc = '';
+    }
+    AddCourseCancelComponent.prototype.ngOnInit = function () {
+        this.cancelCousre = { courses: [], agreement: 1 };
+        this.reqData = this.acadmicProc.reqData;
+    };
+    AddCourseCancelComponent.prototype.changeStatus = function (id, e, i) {
+        if (e.target.checked) {
+            var selCouse = { value: id };
+            this.cancelCousre.courses.push(selCouse);
+            console.log(this.cancelCousre.courses);
+        }
+        else {
+            this.cancelCousre.courses.splice(i, 1);
+        }
+    };
+    AddCourseCancelComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        console.log(data);
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddCourseCancelComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.cancelCousre);
+        this.dialogRef.close();
+    };
+    AddCourseCancelComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddCourseCancelComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-course-cancel',
+            template: __webpack_require__(/*! ./add-course-cancel.component.html */ "./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.html"),
+            styles: [__webpack_require__(/*! ./add-course-cancel.component.css */ "./src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_academicprocs_services_cancel_course_service__WEBPACK_IMPORTED_MODULE_4__["CancelCourseService"]])
+    ], AddCourseCancelComponent);
+    return AddCourseCancelComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/change-major/change-major.component.css":
+/*!***********************************************************************!*\
+  !*** ./src/app/academicprocs/change-major/change-major.component.css ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvY2hhbmdlLW1ham9yL2NoYW5nZS1tYWpvci5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/change-major/change-major.component.html":
+/*!************************************************************************!*\
+  !*** ./src/app/academicprocs/change-major/change-major.component.html ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> طباعة الطلب</th>\n        <th scope=\"col\"> حذف الطلب </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n        <td>{{it.request_number}}</td>\n       \n  \n        <td>{{it.insert_date}}</td>\n        <td>{{it.status}}</td>\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n        <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/change-major/change-major.component.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/academicprocs/change-major/change-major.component.ts ***!
+  \**********************************************************************/
+/*! exports provided: ChangeMajorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangeMajorComponent", function() { return ChangeMajorComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_change_major_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/change-major.service */ "./src/app/academicprocs/services/change-major.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-change-major/add-change-major.component */ "./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.ts");
+
+
+
+
+
+
+var ChangeMajorComponent = /** @class */ (function () {
+    function ChangeMajorComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    ChangeMajorComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.cancelCousre = { courses: null, agreement: 1 };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    ChangeMajorComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_5__["AddChangeMajorComponent"], dialogConfig);
+    };
+    ChangeMajorComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    ChangeMajorComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    ChangeMajorComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    ChangeMajorComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    ChangeMajorComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    ChangeMajorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-change-major',
+            template: __webpack_require__(/*! ./change-major.component.html */ "./src/app/academicprocs/change-major/change-major.component.html"),
+            styles: [__webpack_require__(/*! ./change-major.component.css */ "./src/app/academicprocs/change-major/change-major.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _services_change_major_service__WEBPACK_IMPORTED_MODULE_2__["ChangeMajorService"]])
+    ], ChangeMajorComponent);
+    return ChangeMajorComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.css":
+/*!*************************************************************************************************!*\
+  !*** ./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.css ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvY2hhbmdlLW1ham9yL2RpYWcvYWRkLWNoYW5nZS1tYWpvci9hZGQtY2hhbmdlLW1ham9yLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.html":
+/*!**************************************************************************************************!*\
+  !*** ./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.html ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\n<mat-dialog-content>\n    <div class=\"modal-dialog\" role=\"document\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب انسحاب من الجامعه</h5>\n          \n        </div>\n        <div class=\"modal-body\">\n          <P class=\"text-center\">بيانات بيانات بيانات</P>\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n            \n          <div class=\"form-group\">\n             \n                 <select name=\"major\" #BranchID=\"ngModel\" [(ngModel)]=\"mj.major\" class=\"form-control\" \n            [class.is-invalid]=\"!isValid && mj.major==0\">\n              <option value=\"\">اختر  التخصص</option>\n              <option *ngFor=\"let item of reqData.majors\" value=\"{{item.MAJOR_PK}}\">{{item.MAJOR_TITLE}}</option>\n            </select>\n          </div>\n      \n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n  \n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n          </div>\n        </form>\n        </div>\n        \n      </div>\n    </div>\n  </mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.ts":
+/*!************************************************************************************************!*\
+  !*** ./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.ts ***!
+  \************************************************************************************************/
+/*! exports provided: AddChangeMajorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddChangeMajorComponent", function() { return AddChangeMajorComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_academicprocs_services_change_major_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/academicprocs/services/change-major.service */ "./src/app/academicprocs/services/change-major.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var AddChangeMajorComponent = /** @class */ (function () {
+    function AddChangeMajorComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    AddChangeMajorComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.mj = { major: '' };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    AddChangeMajorComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddChangeMajorComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.mj);
+        console.log(this.mj);
+        this.dialogRef.close();
+    };
+    AddChangeMajorComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddChangeMajorComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+    };
+    AddChangeMajorComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    AddChangeMajorComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    AddChangeMajorComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    AddChangeMajorComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddChangeMajorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-change-major',
+            template: __webpack_require__(/*! ./add-change-major.component.html */ "./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.html"),
+            styles: [__webpack_require__(/*! ./add-change-major.component.css */ "./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], src_app_academicprocs_services_change_major_service__WEBPACK_IMPORTED_MODULE_2__["ChangeMajorService"]])
+    ], AddChangeMajorComponent);
+    return AddChangeMajorComponent;
 }());
 
 
@@ -807,6 +1315,457 @@ var ChangeRequestComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/academicprocs/course-equalize/course-equalize.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/academicprocs/course-equalize/course-equalize.component.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvY291cnNlLWVxdWFsaXplL2NvdXJzZS1lcXVhbGl6ZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/course-equalize/course-equalize.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/academicprocs/course-equalize/course-equalize.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> الرد </th>\n        <th scope=\"col\"> تاريخ الرد </th>\n\n        <th scope=\"col\"> طباعة الطلب</th>\n        <th scope=\"col\"> حذف الطلب </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n        <td>{{it.request_number}}</td>\n       \n  \n        <td>{{it.insert_date}}</td>\n        <td>{{it.status}}</td>\n        <td>{{it.rejection_reason}}</td>\n        <td>{{it.approval_date}}</td>\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n        <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/course-equalize/course-equalize.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/academicprocs/course-equalize/course-equalize.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: CourseEqualizeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseEqualizeComponent", function() { return CourseEqualizeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_course_equalizer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/course-equalizer.service */ "./src/app/academicprocs/services/course-equalizer.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _diag_add_course_equalize_add_course_equalize_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-course-equalize/add-course-equalize.component */ "./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.ts");
+
+
+
+
+
+
+var CourseEqualizeComponent = /** @class */ (function () {
+    function CourseEqualizeComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    CourseEqualizeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reason = '';
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            console.log(res);
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    CourseEqualizeComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '70%';
+        this.dialog.open(_diag_add_course_equalize_add_course_equalize_component__WEBPACK_IMPORTED_MODULE_5__["AddCourseEqualizeComponent"], dialogConfig);
+    };
+    CourseEqualizeComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    CourseEqualizeComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    CourseEqualizeComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    CourseEqualizeComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    CourseEqualizeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-course-equalize',
+            template: __webpack_require__(/*! ./course-equalize.component.html */ "./src/app/academicprocs/course-equalize/course-equalize.component.html"),
+            styles: [__webpack_require__(/*! ./course-equalize.component.css */ "./src/app/academicprocs/course-equalize/course-equalize.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _services_course_equalizer_service__WEBPACK_IMPORTED_MODULE_2__["CourseEqualizerService"]])
+    ], CourseEqualizeComponent);
+    return CourseEqualizeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.css":
+/*!**********************************************************************************************************!*\
+  !*** ./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.css ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvY291cnNlLWVxdWFsaXplL2RpYWcvYWRkLWNvdXJzZS1lcXVhbGl6ZS9hZGQtY291cnNlLWVxdWFsaXplLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.html ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\n<mat-dialog-content>\n    \n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">   معادلة مقررات</h5>\n          \n        </div>\n        <div class=\"modal-body\">\n          <P class=\"text-center\">---  </P>\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n            \n          <div class=\"form-group\">\n             \n                 <select name=\"PREV_UNIV\" #PREV_UNIV=\"ngModel\" [(ngModel)]=\"curseEqual.PREV_UNIV\" class=\"form-control\" \n            [class.is-invalid]=\" curseEqual.PREV_UNIV==0\">\n              <option value=\"0\">الجامعه  </option>\n              <option *ngFor=\"let item of reqData.univ_list_arr\" value=\"{{item.UN_ID}}\">{{item.UNIV_AR}}</option>\n            </select>\n          </div>\n          <table style=\"text-align: center\" class=\"table\">\n              <thead>\n                <tr>\n                  <th scope=\"col\">اسم المقرر </th>\n                  <th scope=\"col\">عدد الساعات </th>\n                  <th scope=\"col\">الدرجه  </th>\n                  <th scope=\"col\">اللغه  </th>\n\n                  <th scope=\"col\">   </th>\n            \n                </tr>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let it of reqData.course_list;let i=index;\">\n                  <td>{{it.CRSE_TITLE}}</td>\n                 \n            \n                  <td>    <input   #TRNS_HRS=\"ngModel\" name=\"TRNS_HRS\" [(ngModel)]=\"it.TRNS_HRS\"  class=\"form-control col-md-6\" min=\"1\" max=\"10\" type=\"number\" value=\"1\" id=\"example-number-input\">\n                  </td>\n                  <td>   \n                      <select class=\"custom-select  col-md-10\"  #TRNS_GRADE=\"ngModel\" name=\"TRNS_GRADE\" [(ngModel)]=\"it.TRNS_GRADE\" id=\"inlineFormCustomSelect\">\n                        <option  value=\"A\">A</option>\n                        <option value=\"A+\">A+</option>\n                        <option value=\"B\">B</option>\n                        <option selected value=\"B+\">B+</option>\n\n                      </select>\n                    \n                  </td>\n                  <td>   \n                      <select class=\"custom-select  col-md-10\"  #TRNS_LANG=\"ngModel\" name=\"TRNS_LANG\" [(ngModel)]=\"it.TRNS_LANG\" id=\"inlineFormCustomSelect\">\n                          <option selected value=\"1\">عربي</option>\n                          <option value=\"2\">ENG</option>\n                         \n  \n                        </select>\n                  </td>\n                  \n            \n                  <td>\n                      <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event,i)\" #chkCourse  id=\"defaultUnchecked\">\n                 </td>\n            \n                </tr>\n                \n              </tbody>\n            </table>\n            <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\">وصف المقرر </div>\n                </div>\n                <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\n            </div> \n            <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\">صورة السجل </div>\n                </div>\n                <input name=\"imageUrl2\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange2($event)\" />\n            </div> \n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n  \n            <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n          </div>\n        </form>\n        </div>\n        \n  \n  </mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.ts":
+/*!*********************************************************************************************************!*\
+  !*** ./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.ts ***!
+  \*********************************************************************************************************/
+/*! exports provided: AddCourseEqualizeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddCourseEqualizeComponent", function() { return AddCourseEqualizeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_academicprocs_services_course_equalizer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/academicprocs/services/course-equalizer.service */ "./src/app/academicprocs/services/course-equalizer.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var AddCourseEqualizeComponent = /** @class */ (function () {
+    function AddCourseEqualizeComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.imageSrc = '';
+    }
+    AddCourseEqualizeComponent.prototype.ngOnInit = function () {
+        this.curseEqual = { courses: [],
+            can_add_new_request: false,
+            course_list: [],
+            messages: [],
+            univ_list_arr: [],
+            PREV_UNIV: 0,
+            DESC_CRSE_FILE: '', TRANSCRIPT_FILE: '' };
+        this.reqData = this.acadmicProc.reqData;
+    };
+    AddCourseEqualizeComponent.prototype.changeStatus = function (it, e, i) {
+        if (e.target.checked) {
+            it.TRNS_CRSE = it.CRSE_PK;
+            this.curseEqual.courses.push(it);
+            console.log(this.curseEqual.courses);
+        }
+        else {
+            this.curseEqual.courses.splice(i, 1);
+        }
+    };
+    AddCourseEqualizeComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddCourseEqualizeComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.curseEqual.DESC_CRSE_FILE = reader.result;
+        console.log(this.curseEqual.DESC_CRSE_FILE);
+    };
+    AddCourseEqualizeComponent.prototype.handleInputChange2 = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        reader.onload = this._handleReaderLoaded2.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddCourseEqualizeComponent.prototype._handleReaderLoaded2 = function (e) {
+        var reader = e.target;
+        this.curseEqual.TRANSCRIPT_FILE = reader.result;
+        console.log(this.curseEqual.TRANSCRIPT_FILE);
+    };
+    AddCourseEqualizeComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddCourseEqualizeComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.curseEqual);
+        console.log(this.curseEqual);
+        this.dialogRef.close();
+    };
+    AddCourseEqualizeComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddCourseEqualizeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-course-equalize',
+            template: __webpack_require__(/*! ./add-course-equalize.component.html */ "./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.html"),
+            styles: [__webpack_require__(/*! ./add-course-equalize.component.css */ "./src/app/academicprocs/course-equalize/diag/add-course-equalize/add-course-equalize.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], src_app_academicprocs_services_course_equalizer_service__WEBPACK_IMPORTED_MODULE_2__["CourseEqualizerService"]])
+    ], AddCourseEqualizeComponent);
+    return AddCourseEqualizeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.css":
+/*!***************************************************************************************************************!*\
+  !*** ./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.css ***!
+  \***************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvZW5nbGlzaC1lcXVhbGl6ZS9kaWFnL2FkZC1lbmdsaXNoLWVxdWFsaXplci9hZGQtZW5nbGlzaC1lcXVhbGl6ZXIuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.html ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-dialog-content>\n   \n     \n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">      طلب معادلة اللغه الانجليزيه </h5>\n          \n        </div>\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n        <div class=\"modal-body\">\n            <table style=\"text-align: center\" class=\"table\">\n                <thead>\n                  <tr>\n                    <th scope=\"col\">اسم الاختبار </th>\n                    <th scope=\"col\">الدرجه  </th>\n  \n                    <th scope=\"col\">   </th>\n              \n                  </tr>\n                </thead>\n                <tbody>\n                  <tr *ngFor=\"let it of reqData.ENG_TESTS;let i=index;\">\n                    <td>{{it.TEST_TITLE}}</td>\n                   \n              \n                    <td>    <input   #score=\"ngModel\" name=\"score\" [(ngModel)]=\"it.score\"  class=\"form-control col-md-6\" min=\"1\" max=\"10\" type=\"number\" value=\"1\" id=\"example-number-input\">\n                    </td>\n                   \n                  \n                    \n              \n                    <td>\n                        <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event,i)\" #chkCourse  id=\"defaultUnchecked\">\n                   </td>\n              \n                  </tr>\n                  \n                </tbody>\n              </table>\n              <div class=\"image-upload\">\n                  <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\n              </div> \n             \n            <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                        <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n    \n              <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n            </div>\n            </div>\n          </form>\n     \n          \n    \n    </mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.ts":
+/*!**************************************************************************************************************!*\
+  !*** ./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.ts ***!
+  \**************************************************************************************************************/
+/*! exports provided: AddEnglishEqualizerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddEnglishEqualizerComponent", function() { return AddEnglishEqualizerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_academicprocs_services_english_equalizer_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/academicprocs/services/english-equalizer.service */ "./src/app/academicprocs/services/english-equalizer.service.ts");
+
+
+
+
+
+var AddEnglishEqualizerComponent = /** @class */ (function () {
+    function AddEnglishEqualizerComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.imageSrc = '';
+    }
+    AddEnglishEqualizerComponent.prototype.ngOnInit = function () {
+        this.englishEqual = { tests: [], attachment: '', ENG_TESTS: [] };
+        this.reqData = this.acadmicProc.reqData;
+    };
+    AddEnglishEqualizerComponent.prototype.changeStatus = function (it, e, i) {
+        if (e.target.checked) {
+            it.test = it.TEST_PK;
+            this.englishEqual.tests.push(it);
+            console.log(this.englishEqual.tests);
+        }
+        else {
+            this.englishEqual.tests.splice(i, 1);
+        }
+    };
+    AddEnglishEqualizerComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        console.log(data);
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddEnglishEqualizerComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.englishEqual);
+        this.dialogRef.close();
+    };
+    AddEnglishEqualizerComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddEnglishEqualizerComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddEnglishEqualizerComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.englishEqual.attachment = reader.result;
+        console.log(this.englishEqual.attachment);
+    };
+    AddEnglishEqualizerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-english-equalizer',
+            template: __webpack_require__(/*! ./add-english-equalizer.component.html */ "./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.html"),
+            styles: [__webpack_require__(/*! ./add-english-equalizer.component.css */ "./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_academicprocs_services_english_equalizer_service__WEBPACK_IMPORTED_MODULE_4__["EnglishEqualizerService"]])
+    ], AddEnglishEqualizerComponent);
+    return AddEnglishEqualizerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/english-equalize/english-equalize.component.css":
+/*!*******************************************************************************!*\
+  !*** ./src/app/academicprocs/english-equalize/english-equalize.component.css ***!
+  \*******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvZW5nbGlzaC1lcXVhbGl6ZS9lbmdsaXNoLWVxdWFsaXplLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/english-equalize/english-equalize.component.html":
+/*!********************************************************************************!*\
+  !*** ./src/app/academicprocs/english-equalize/english-equalize.component.html ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">تاريخ الرد</th>\n\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> طباعه</th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.requests;let i=index;\">\n        <td>{{it.request_number}}</td>\n       \n  \n        <td>{{it.insert_date}}</td>\n        \n        <td>{{it.approval_date}}</td>\n        <td>{{it.status}}</td>\n\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/english-equalize/english-equalize.component.ts":
+/*!******************************************************************************!*\
+  !*** ./src/app/academicprocs/english-equalize/english-equalize.component.ts ***!
+  \******************************************************************************/
+/*! exports provided: EnglishEqualizeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnglishEqualizeComponent", function() { return EnglishEqualizeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_english_equalizer_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/english-equalizer.service */ "./src/app/academicprocs/services/english-equalizer.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _diag_add_english_equalizer_add_english_equalizer_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-english-equalizer/add-english-equalizer.component */ "./src/app/academicprocs/english-equalize/diag/add-english-equalizer/add-english-equalizer.component.ts");
+
+
+
+
+
+
+var EnglishEqualizeComponent = /** @class */ (function () {
+    function EnglishEqualizeComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    EnglishEqualizeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reason = '';
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            console.log(res);
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    EnglishEqualizeComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_english_equalizer_add_english_equalizer_component__WEBPACK_IMPORTED_MODULE_5__["AddEnglishEqualizerComponent"], dialogConfig);
+    };
+    EnglishEqualizeComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    EnglishEqualizeComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    EnglishEqualizeComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    EnglishEqualizeComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    EnglishEqualizeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-english-equalize',
+            template: __webpack_require__(/*! ./english-equalize.component.html */ "./src/app/academicprocs/english-equalize/english-equalize.component.html"),
+            styles: [__webpack_require__(/*! ./english-equalize.component.css */ "./src/app/academicprocs/english-equalize/english-equalize.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _services_english_equalizer_service__WEBPACK_IMPORTED_MODULE_2__["EnglishEqualizerService"]])
+    ], EnglishEqualizeComponent);
+    return EnglishEqualizeComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/academicprocs/except-semester/except-semester.component.css":
 /*!*****************************************************************************!*\
   !*** ./src/app/academicprocs/except-semester/except-semester.component.css ***!
@@ -863,6 +1822,95 @@ var ExceptSemesterComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.css":
+/*!****************************************************************************************************!*\
+  !*** ./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.css ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvZXhlY3VzZS1yZXF1ZXN0L2RpYWcvYWRkLWV4ZWN1c2UtdGVybS9hZGQtZXhlY3VzZS10ZXJtLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.html":
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.html ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\n<mat-dialog-content>\n    <div class=\"modal-dialog\" role=\"document\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب الاعتذار عن الفصل الدراسي</h5>\n            \n        </div>\n        <div class=\"modal-body\">\n          <P class=\"text-center\">  </P>\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n            \n      \n          \n           \n         \n          <div class=\"form-row\">\n              <div class=\"form-group col-md-12\">\n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"> السبب</div>\n                  </div>\n                  <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\n                </div>\n              </div>\n             \n            </div>\n            \n              \n       \n           \n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n  \n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n          </div>\n        </form>\n        </div>\n    </div>\n        \n     </div>\n  </mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.ts":
+/*!***************************************************************************************************!*\
+  !*** ./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.ts ***!
+  \***************************************************************************************************/
+/*! exports provided: AddExecuseTermComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddExecuseTermComponent", function() { return AddExecuseTermComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_academicprocs_services_term_execuse_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/academicprocs/services/term-execuse.service */ "./src/app/academicprocs/services/term-execuse.service.ts");
+
+
+
+
+
+var AddExecuseTermComponent = /** @class */ (function () {
+    function AddExecuseTermComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.imageSrc = '';
+    }
+    AddExecuseTermComponent.prototype.ngOnInit = function () {
+        this.postpone = { reason: '' };
+        this.reqData = this.acadmicProc.reqData;
+    };
+    AddExecuseTermComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            console.log(data);
+            _this.msgs = res.messages;
+            console.log(_this.msgs);
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddExecuseTermComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+        this.dialogRef.close();
+    };
+    AddExecuseTermComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddExecuseTermComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-execuse-term',
+            template: __webpack_require__(/*! ./add-execuse-term.component.html */ "./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.html"),
+            styles: [__webpack_require__(/*! ./add-execuse-term.component.css */ "./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_academicprocs_services_term_execuse_service__WEBPACK_IMPORTED_MODULE_4__["TermExecuseService"]])
+    ], AddExecuseTermComponent);
+    return AddExecuseTermComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/academicprocs/execuse-request/execuse-request.component.css":
 /*!*****************************************************************************!*\
   !*** ./src/app/academicprocs/execuse-request/execuse-request.component.css ***!
@@ -881,7 +1929,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  execuse-request works!\n</p>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> طباعة الطلب</th>\n        <th scope=\"col\"> حذف الطلب </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n        <td>{{it.request_number}}</td>\n       \n  \n        <td>{{it.insert_date}}</td>\n        <td>{{it.status}}</td>\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n        <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
 
 /***/ }),
 
@@ -897,12 +1945,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExecuseRequestComponent", function() { return ExecuseRequestComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/term-execuse.service */ "./src/app/academicprocs/services/term-execuse.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _diag_add_execuse_term_add_execuse_term_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-execuse-term/add-execuse-term.component */ "./src/app/academicprocs/execuse-request/diag/add-execuse-term/add-execuse-term.component.ts");
+
+
+
+
 
 
 var ExecuseRequestComponent = /** @class */ (function () {
-    function ExecuseRequestComponent() {
+    function ExecuseRequestComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
     }
     ExecuseRequestComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reason = '';
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    ExecuseRequestComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_execuse_term_add_execuse_term_component__WEBPACK_IMPORTED_MODULE_5__["AddExecuseTermComponent"], dialogConfig);
+    };
+    ExecuseRequestComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    ExecuseRequestComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    ExecuseRequestComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    ExecuseRequestComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
     };
     ExecuseRequestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -910,9 +2005,98 @@ var ExecuseRequestComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./execuse-request.component.html */ "./src/app/academicprocs/execuse-request/execuse-request.component.html"),
             styles: [__webpack_require__(/*! ./execuse-request.component.css */ "./src/app/academicprocs/execuse-request/execuse-request.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_2__["TermExecuseService"]])
     ], ExecuseRequestComponent);
     return ExecuseRequestComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.css":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.css ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvcG9zdHBvbmUtcmVxdWVzdC9kaWFnL2FkZC1wb3N0cG9uZS9hZGQtcG9zdHBvbmUuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.html ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\n<mat-dialog-content>\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب تأجيل من الجامعه</h5>\n        \n      </div>\n      <div class=\"modal-body\">\n        <P class=\"text-center\">  </P>\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n          \n    \n        \n         \n       \n        <div class=\"form-row\">\n            <div class=\"form-group col-md-12\">\n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"> السبب</div>\n                </div>\n                <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\n              </div>\n            </div>\n           \n          </div>\n          \n            \n     \n         \n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n        </div>\n      </form>\n      </div>\n  </div>\n      \n   </div>\n</mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.ts":
+/*!********************************************************************************************!*\
+  !*** ./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.ts ***!
+  \********************************************************************************************/
+/*! exports provided: AddPostponeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPostponeComponent", function() { return AddPostponeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var src_app_academicprocs_services_term_postpone_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/academicprocs/services/term-postpone.service */ "./src/app/academicprocs/services/term-postpone.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var AddPostponeComponent = /** @class */ (function () {
+    function AddPostponeComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.imageSrc = '';
+    }
+    AddPostponeComponent.prototype.ngOnInit = function () {
+        this.postpone = { reason: '' };
+        this.reqData = this.acadmicProc.reqData;
+    };
+    AddPostponeComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            console.log(data);
+            _this.msgs = res.messages;
+            console.log(_this.msgs);
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddPostponeComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+        this.dialogRef.close();
+    };
+    AddPostponeComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddPostponeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-postpone',
+            template: __webpack_require__(/*! ./add-postpone.component.html */ "./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.html"),
+            styles: [__webpack_require__(/*! ./add-postpone.component.css */ "./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], src_app_academicprocs_services_term_postpone_service__WEBPACK_IMPORTED_MODULE_3__["TermPostponeService"]])
+    ], AddPostponeComponent);
+    return AddPostponeComponent;
 }());
 
 
@@ -937,7 +2121,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  postpone-request works!\n</p>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n  {{msg.body}}!\n</div>\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n<div style=\"direction: ltr;text-align: center\">\n  \n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n  اضافة طلب\n</button>\n<br/>\n<br/>\n\n</div>\n<div>\n<table style=\"text-align: center\" class=\"table\">\n  <thead>\n    <tr>\n      <th scope=\"col\">رقم الطلب</th>\n\n      <th scope=\"col\">تاريخ الطلب</th>\n      <th scope=\"col\">حالة الطلب</th>\n      <th scope=\"col\"> طباعة الطلب</th>\n      <th scope=\"col\"> حذف الطلب </th>\n\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n      <td>{{it.request_number}}</td>\n     \n\n      <td>{{it.insert_date}}</td>\n      <td>{{it.status}}</td>\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n        Print</a></td>\n\n      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n\n    </tr>\n    \n  </tbody>\n</table>\n</div>\n"
 
 /***/ }),
 
@@ -953,12 +2137,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostponeRequestComponent", function() { return PostponeRequestComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_term_postpone_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/term-postpone.service */ "./src/app/academicprocs/services/term-postpone.service.ts");
+/* harmony import */ var _diag_add_postpone_add_postpone_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-postpone/add-postpone.component */ "./src/app/academicprocs/postpone-request/diag/add-postpone/add-postpone.component.ts");
+
+
+
+
 
 
 var PostponeRequestComponent = /** @class */ (function () {
-    function PostponeRequestComponent() {
+    function PostponeRequestComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
     }
     PostponeRequestComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reason = '';
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    PostponeRequestComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_postpone_add_postpone_component__WEBPACK_IMPORTED_MODULE_5__["AddPostponeComponent"], dialogConfig);
+    };
+    PostponeRequestComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    PostponeRequestComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    PostponeRequestComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    PostponeRequestComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
     };
     PostponeRequestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -966,9 +2197,134 @@ var PostponeRequestComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./postpone-request.component.html */ "./src/app/academicprocs/postpone-request/postpone-request.component.html"),
             styles: [__webpack_require__(/*! ./postpone-request.component.css */ "./src/app/academicprocs/postpone-request/postpone-request.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_term_postpone_service__WEBPACK_IMPORTED_MODULE_4__["TermPostponeService"]])
     ], PostponeRequestComponent);
     return PostponeRequestComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.css":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.css ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvcmUtZWVucm9sbG1lbnQvZGlhZy9hZGQtcmUtZW5yb2xsL2FkZC1yZS1lbnJvbGwuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.html ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\n<mat-dialog-content>\n    <div class=\"modal-dialog\" role=\"document\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب اعادة قيد   </h5>\n            \n        </div>\n        <div class=\"modal-body\">\n          <P class=\"text-center\">  </P>\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n            \n      \n          \n           \n         \n          <div class=\"form-row\">\n              <div class=\"form-group col-md-12\">\n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"> السبب</div>\n                  </div>\n                  <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"reEnroll.reason\" class=\"form-control\" >\n                </div>\n              </div>\n             \n            </div>\n            \n            <div class=\"image-upload\">\n                <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\n            </div> \n       \n           \n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n  \n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n          </div>\n        </form>\n        </div>\n    </div>\n        \n     </div>\n  </mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.ts":
+/*!********************************************************************************************!*\
+  !*** ./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.ts ***!
+  \********************************************************************************************/
+/*! exports provided: AddReEnrollComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddReEnrollComponent", function() { return AddReEnrollComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_academicprocs_services_re_enroll_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/academicprocs/services/re-enroll.service */ "./src/app/academicprocs/services/re-enroll.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var AddReEnrollComponent = /** @class */ (function () {
+    function AddReEnrollComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    AddReEnrollComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reEnroll = { proof: '', reason: '', has_proof: '1' };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    AddReEnrollComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddReEnrollComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.reEnroll);
+        console.log(this.reEnroll);
+        this.dialogRef.close();
+    };
+    AddReEnrollComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddReEnrollComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.reEnroll.proof = reader.result;
+        console.log(this.reEnroll.proof);
+    };
+    AddReEnrollComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    AddReEnrollComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    AddReEnrollComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    AddReEnrollComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddReEnrollComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-re-enroll',
+            template: __webpack_require__(/*! ./add-re-enroll.component.html */ "./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.html"),
+            styles: [__webpack_require__(/*! ./add-re-enroll.component.css */ "./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], src_app_academicprocs_services_re_enroll_service__WEBPACK_IMPORTED_MODULE_2__["ReEnrollService"]])
+    ], AddReEnrollComponent);
+    return AddReEnrollComponent;
 }());
 
 
@@ -993,7 +2349,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  re-eenrollment works!\n</p>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> طباعة الطلب</th>\n        <th scope=\"col\"> حذف الطلب </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.requests;let i=index;\">\n        <td>{{it.request_number}}</td>\n  \n        <td>{{it.insert_date}}</td>\n        <td>{{it.status}}</td>\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n        <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
 
 /***/ }),
 
@@ -1009,12 +2365,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReEenrollmentComponent", function() { return ReEenrollmentComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_re_enroll_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/re-enroll.service */ "./src/app/academicprocs/services/re-enroll.service.ts");
+/* harmony import */ var _diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-re-enroll/add-re-enroll.component */ "./src/app/academicprocs/re-eenrollment/diag/add-re-enroll/add-re-enroll.component.ts");
+
+
+
+
 
 
 var ReEenrollmentComponent = /** @class */ (function () {
-    function ReEenrollmentComponent() {
+    function ReEenrollmentComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
     }
     ReEenrollmentComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reEnroll = { proof: '', reason: '', has_proof: '1' };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    ReEenrollmentComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_5__["AddReEnrollComponent"], dialogConfig);
+    };
+    ReEenrollmentComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    ReEenrollmentComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    ReEenrollmentComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    ReEenrollmentComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.requests.splice(index, 1);
+        }
+    };
+    ReEenrollmentComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
     };
     ReEenrollmentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1022,9 +2428,556 @@ var ReEenrollmentComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./re-eenrollment.component.html */ "./src/app/academicprocs/re-eenrollment/re-eenrollment.component.html"),
             styles: [__webpack_require__(/*! ./re-eenrollment.component.css */ "./src/app/academicprocs/re-eenrollment/re-eenrollment.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_re_enroll_service__WEBPACK_IMPORTED_MODULE_4__["ReEnrollService"]])
     ], ReEenrollmentComponent);
     return ReEenrollmentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/cancel-course.service.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/academicprocs/services/cancel-course.service.ts ***!
+  \*****************************************************************/
+/*! exports provided: CancelCourseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CancelCourseService", function() { return CancelCourseService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var CancelCourseService = /** @class */ (function () {
+    function CancelCourseService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    CancelCourseService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('course_cancel?std_id=S120000101').toPromise();
+    };
+    CancelCourseService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('course_cancel/insert?std_id=S120000101', data).toPromise();
+    };
+    CancelCourseService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('course_cancel/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    CancelCourseService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req + '?std_id=S160239561';
+    };
+    CancelCourseService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/crse_cancel/download?Lang=en';
+    };
+    CancelCourseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], CancelCourseService);
+    return CancelCourseService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/change-major.service.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/academicprocs/services/change-major.service.ts ***!
+  \****************************************************************/
+/*! exports provided: ChangeMajorService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangeMajorService", function() { return ChangeMajorService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var ChangeMajorService = /** @class */ (function () {
+    function ChangeMajorService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    ChangeMajorService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('change_major_service?std_id=S120000101').toPromise();
+    };
+    ChangeMajorService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('change_major_service/insert?std_id=S120000101', data).toPromise();
+    };
+    ChangeMajorService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('change_major_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    ChangeMajorService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/return_service/download/return_request/' + req + '?std_id=S160239561';
+    };
+    ChangeMajorService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/return_service/download?Lang=en';
+    };
+    ChangeMajorService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], ChangeMajorService);
+    return ChangeMajorService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/course-equalizer.service.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/academicprocs/services/course-equalizer.service.ts ***!
+  \********************************************************************/
+/*! exports provided: CourseEqualizerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseEqualizerService", function() { return CourseEqualizerService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var CourseEqualizerService = /** @class */ (function () {
+    function CourseEqualizerService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    CourseEqualizerService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('course_transfer_service?std_id=S120000101').toPromise();
+    };
+    CourseEqualizerService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('course_transfer_service/insert?std_id=S120000101', data).toPromise();
+    };
+    CourseEqualizerService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('course_transfer_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    CourseEqualizerService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req + '?std_id=S160239561';
+    };
+    CourseEqualizerService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
+    };
+    CourseEqualizerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], CourseEqualizerService);
+    return CourseEqualizerService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/english-equalizer.service.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/academicprocs/services/english-equalizer.service.ts ***!
+  \*********************************************************************/
+/*! exports provided: EnglishEqualizerService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnglishEqualizerService", function() { return EnglishEqualizerService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var EnglishEqualizerService = /** @class */ (function () {
+    function EnglishEqualizerService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    EnglishEqualizerService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('english_certificates_service?std_id=S120000101').toPromise();
+    };
+    EnglishEqualizerService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('english_certificates_service/insert?std_id=S120000101', data).toPromise();
+    };
+    EnglishEqualizerService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('english_certificates_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    EnglishEqualizerService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/english_certificates_service/download/english_certificates/' + req + '?std_id=S160239561';
+    };
+    EnglishEqualizerService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
+    };
+    EnglishEqualizerService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], EnglishEqualizerService);
+    return EnglishEqualizerService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/re-enroll.service.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/academicprocs/services/re-enroll.service.ts ***!
+  \*************************************************************/
+/*! exports provided: ReEnrollService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReEnrollService", function() { return ReEnrollService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var ReEnrollService = /** @class */ (function () {
+    function ReEnrollService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    ReEnrollService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('return_service?std_id=S120000101').toPromise();
+    };
+    ReEnrollService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('return_service/insert?std_id=S120000101', data).toPromise();
+    };
+    ReEnrollService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('return_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    ReEnrollService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/return_service/download/return_request/' + req + '?std_id=S160239561';
+    };
+    ReEnrollService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/return_service/download?Lang=en';
+    };
+    ReEnrollService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], ReEnrollService);
+    return ReEnrollService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/summer-withdraw.service.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/academicprocs/services/summer-withdraw.service.ts ***!
+  \*******************************************************************/
+/*! exports provided: SummerWithdrawService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SummerWithdrawService", function() { return SummerWithdrawService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var SummerWithdrawService = /** @class */ (function () {
+    function SummerWithdrawService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    SummerWithdrawService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('execuse_service?std_id=S120000101').toPromise();
+    };
+    SummerWithdrawService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('execuse_service/insert?std_id=S120000101', data).toPromise();
+    };
+    SummerWithdrawService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('execuse_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    SummerWithdrawService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/cancel_summer_service/execuse_service/download/' + req + '?std_id=S160239561';
+    };
+    SummerWithdrawService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/execuse_service/download?Lang=en';
+    };
+    SummerWithdrawService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], SummerWithdrawService);
+    return SummerWithdrawService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/term-execuse.service.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/academicprocs/services/term-execuse.service.ts ***!
+  \****************************************************************/
+/*! exports provided: TermExecuseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TermExecuseService", function() { return TermExecuseService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var TermExecuseService = /** @class */ (function () {
+    function TermExecuseService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    TermExecuseService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('execuse_service?std_id=S120000101').toPromise();
+    };
+    TermExecuseService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('execuse_service/insert?std_id=S120000101', data).toPromise();
+    };
+    TermExecuseService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('execuse_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    TermExecuseService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req + '?std_id=S160239561';
+    };
+    TermExecuseService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
+    };
+    TermExecuseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], TermExecuseService);
+    return TermExecuseService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/term-postpone.service.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/academicprocs/services/term-postpone.service.ts ***!
+  \*****************************************************************/
+/*! exports provided: TermPostponeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TermPostponeService", function() { return TermPostponeService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var TermPostponeService = /** @class */ (function () {
+    function TermPostponeService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    TermPostponeService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('postpone_service?std_id=S120000101').toPromise();
+    };
+    TermPostponeService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('postpone_service/insert?std_id=S120000101', data).toPromise();
+    };
+    TermPostponeService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('postpone_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    TermPostponeService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/postpone_service/download/postpone/' + req + '?std_id=S160239561';
+    };
+    TermPostponeService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
+    };
+    TermPostponeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], TermPostponeService);
+    return TermPostponeService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/withdraw-from-univ.service.ts":
+/*!**********************************************************************!*\
+  !*** ./src/app/academicprocs/services/withdraw-from-univ.service.ts ***!
+  \**********************************************************************/
+/*! exports provided: WithdrawFromUnivService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WithdrawFromUnivService", function() { return WithdrawFromUnivService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var WithdrawFromUnivService = /** @class */ (function () {
+    function WithdrawFromUnivService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    WithdrawFromUnivService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('withdraw_service?std_id=S120000101').toPromise();
+    };
+    WithdrawFromUnivService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('withdraw_service/insert?std_id=S120000101', data).toPromise();
+    };
+    WithdrawFromUnivService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('withdraw_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    WithdrawFromUnivService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/withdraw_service/download/' + req + '?std_id=S160239561';
+    };
+    WithdrawFromUnivService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/fees_stmt_request_service/download?Lang=en';
+    };
+    WithdrawFromUnivService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], WithdrawFromUnivService);
+    return WithdrawFromUnivService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.css":
+/*!**********************************************************************************************************!*\
+  !*** ./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.css ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3Mvc3VtbWVyLXdpdGhkcmF3L2RpYWcvYWRkLXN1bW1lci13aXRoZHJhdy9hZGQtc3VtbWVyLXdpdGhkcmF3LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.html":
+/*!***********************************************************************************************************!*\
+  !*** ./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.html ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\n<mat-dialog-content>\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> الاعتذار عن الفصل الصيفي  </h5>\n        \n      </div>\n      <div class=\"modal-body\">\n        <P class=\"text-center\">  </P>\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n          \n    \n        \n         \n       \n        <div class=\"form-row\">\n            <div class=\"form-group col-md-12\">\n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"> السبب</div>\n                </div>\n                <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\n              </div>\n            </div>\n           \n          </div>\n          \n            \n     \n         \n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n        </div>\n      </form>\n      </div>\n  </div>\n      \n   </div>\n</mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.ts":
+/*!*********************************************************************************************************!*\
+  !*** ./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.ts ***!
+  \*********************************************************************************************************/
+/*! exports provided: AddSummerWithdrawComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddSummerWithdrawComponent", function() { return AddSummerWithdrawComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_academicprocs_services_summer_withdraw_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/academicprocs/services/summer-withdraw.service */ "./src/app/academicprocs/services/summer-withdraw.service.ts");
+
+
+
+
+
+var AddSummerWithdrawComponent = /** @class */ (function () {
+    function AddSummerWithdrawComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    AddSummerWithdrawComponent.prototype.ngOnInit = function () {
+        this.postpone = { reason: '' };
+        this.reqData = this.acadmicProc.reqData;
+    };
+    AddSummerWithdrawComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            console.log(data);
+            _this.msgs = res.messages;
+            console.log(_this.msgs);
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddSummerWithdrawComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+        this.dialogRef.close();
+    };
+    AddSummerWithdrawComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddSummerWithdrawComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-summer-withdraw',
+            template: __webpack_require__(/*! ./add-summer-withdraw.component.html */ "./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.html"),
+            styles: [__webpack_require__(/*! ./add-summer-withdraw.component.css */ "./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_academicprocs_services_summer_withdraw_service__WEBPACK_IMPORTED_MODULE_4__["SummerWithdrawService"]])
+    ], AddSummerWithdrawComponent);
+    return AddSummerWithdrawComponent;
 }());
 
 
@@ -1049,7 +3002,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  summer-withdraw works!\n</p>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n  {{msg.body}}!\n</div>\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n<div style=\"direction: ltr;text-align: center\">\n  \n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n  اضافة طلب\n</button>\n<br/>\n<br/>\n\n</div>\n<div>\n<table style=\"text-align: center\" class=\"table\">\n  <thead>\n    <tr>\n      <th scope=\"col\">رقم الطلب</th>\n\n      <th scope=\"col\">تاريخ الطلب</th>\n      <th scope=\"col\">حالة الطلب</th>\n      <th scope=\"col\"> حذف الطلب </th>\n\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n      <td>{{it.request_number}}</td>\n     \n\n      <td>{{it.insert_date}}</td>\n      <td>{{it.status}}</td>\n      \n\n      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n\n    </tr>\n    \n  </tbody>\n</table>\n</div>\n"
 
 /***/ }),
 
@@ -1065,12 +3018,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SummerWithdrawComponent", function() { return SummerWithdrawComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_summer_withdraw_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/summer-withdraw.service */ "./src/app/academicprocs/services/summer-withdraw.service.ts");
+/* harmony import */ var _diag_add_summer_withdraw_add_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-summer-withdraw/add-summer-withdraw.component */ "./src/app/academicprocs/summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.ts");
+
+
+
+
 
 
 var SummerWithdrawComponent = /** @class */ (function () {
-    function SummerWithdrawComponent() {
+    function SummerWithdrawComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
     }
     SummerWithdrawComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reason = '';
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    SummerWithdrawComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_summer_withdraw_add_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_5__["AddSummerWithdrawComponent"], dialogConfig);
+    };
+    SummerWithdrawComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    SummerWithdrawComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    SummerWithdrawComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    SummerWithdrawComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    SummerWithdrawComponent.prototype.deleteReq = function (id) {
+        throw new Error('Method not implemented.');
     };
     SummerWithdrawComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1078,9 +3081,112 @@ var SummerWithdrawComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./summer-withdraw.component.html */ "./src/app/academicprocs/summer-withdraw/summer-withdraw.component.html"),
             styles: [__webpack_require__(/*! ./summer-withdraw.component.css */ "./src/app/academicprocs/summer-withdraw/summer-withdraw.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_summer_withdraw_service__WEBPACK_IMPORTED_MODULE_4__["SummerWithdrawService"]])
     ], SummerWithdrawComponent);
     return SummerWithdrawComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.css":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.css ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3Mvd2l0aGRyYXctZnJvbS11bml2L2RpYWcvYWRkLXJlcXVlc3QvYWRkLXJlcXVlc3QuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.html ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\n<mat-dialog-content>\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب انسحاب من الجامعه</h5>\n        \n      </div>\n      <div class=\"modal-body\">\n        <P class=\"text-center\">بيانات بيانات بيانات</P>\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n          \n        <div class=\"form-group\">\n           \n               <select name=\"branch\" #BranchID=\"ngModel\" [(ngModel)]=\"withdraw.branch\" class=\"form-control\" \n          [class.is-invalid]=\"!isValid && withdraw.branch==0\">\n            <option value=\"\">اختر اقرب فرع</option>\n            <option *ngFor=\"let item of reqData.branches\" value=\"{{item.id}}\">{{item.name}}</option>\n          </select>\n        </div>\n        <div class=\"form-row\">\n          <div class=\"form-group col-md-12\">\n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\">رقم الهاتف</div>\n              </div>\n              <input name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"withdraw.mobile\" class=\"form-control\" >\n            </div>\n          </div>\n         \n        </div>\n        <div class=\"form-row\">\n            <div class=\"form-group col-md-12\">\n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\">البريد الالكتروني</div>\n                </div>\n                <input name=\"email\" #email=\"ngModel\" [(ngModel)]=\"withdraw.email\" class=\"form-control\" >\n              </div>\n            </div>\n           \n          </div>\n          <div *ngIf=\"!reqData.display_bank_account\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-12\">\n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\">IBAN </div>\n                  </div>\n                  <input name=\"IBAN\" #IBAN=\"ngModel\" [(ngModel)]=\"withdraw.IBAN\" class=\"form-control\" >\n                </div>\n              </div>\n             \n            </div>\n            <div class=\"form-group\">\n           \n              <select name=\"BANKID\" #BANKID=\"ngModel\" [(ngModel)]=\"withdraw.BANKID\" class=\"form-control\" \n         [class.is-invalid]=\"!isValid && withdraw.BANKID==0\">\n           <option value=\"0\">اختر  البنك</option>\n           <option *ngFor=\"let item of reqData.bankList\" value=\"{{item.BANK_PK}}\">{{item.BANK_TITLE}}</option>\n         </select>\n       </div>\n       <div class=\"image-upload\">\n        <img [src]=\"withdraw.bankimage\" style=\"width:400px;height:300px\"/>\n        <input name=\"imageUrl\" type=\"file\" accept=\"image/*\" (change)=\"handleInputChange($event)\" />\n    </div> \n\n          </div>\n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n        </div>\n      </form>\n      </div>\n      \n    </div>\n  </div>\n</mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.ts":
+/*!********************************************************************************************!*\
+  !*** ./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.ts ***!
+  \********************************************************************************************/
+/*! exports provided: AddRequestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddRequestComponent", function() { return AddRequestComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var src_app_academicprocs_services_withdraw_from_univ_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/academicprocs/services/withdraw-from-univ.service */ "./src/app/academicprocs/services/withdraw-from-univ.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var AddRequestComponent = /** @class */ (function () {
+    function AddRequestComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.imageSrc = '';
+    }
+    AddRequestComponent.prototype.ngOnInit = function () {
+        this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
+        this.reqData = this.acadmicProc.reqData;
+    };
+    AddRequestComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        if (!file.type.match(pattern)) {
+            alert('invalid format');
+            return;
+        }
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddRequestComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.withdraw.bankimage = reader.result;
+        console.log(this.withdraw.bankimage);
+    };
+    AddRequestComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddRequestComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+        this.dialogRef.close();
+    };
+    AddRequestComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddRequestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-request',
+            template: __webpack_require__(/*! ./add-request.component.html */ "./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.html"),
+            styles: [__webpack_require__(/*! ./add-request.component.css */ "./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], src_app_academicprocs_services_withdraw_from_univ_service__WEBPACK_IMPORTED_MODULE_3__["WithdrawFromUnivService"]])
+    ], AddRequestComponent);
+    return AddRequestComponent;
 }());
 
 
@@ -1105,7 +3211,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  withdraw-from-univ works!\n</p>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n  {{msg.body}}!\n</div>\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n<div style=\"direction: ltr;text-align: center\">\n  \n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n  اضافة طلب\n</button>\n<br/>\n<br/>\n\n</div>\n<div>\n<table style=\"text-align: center\" class=\"table\">\n  <thead>\n    <tr>\n      <th scope=\"col\">رقم الطلب</th>\n      <th scope=\"col\">الفصل الدراسه </th>\n      <th scope=\"col\">طباعة الافاده  </th>\n\n      <th scope=\"col\">تاريخ الطلب</th>\n      <th scope=\"col\">حالة الطلب</th>\n      <th scope=\"col\"> طباعة الطلب</th>\n      <th scope=\"col\"> حذف الطلب </th>\n\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n      <td>{{it.request_number}}</td>\n      <td>{{it.term}}</td>\n      <td>Print Resp</td>\n\n      <td>{{it.insert_date}}</td>\n      <td>{{it.status}}</td>\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n        Print</a></td>\n\n      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n\n    </tr>\n    \n  </tbody>\n</table>\n</div>\n"
 
 /***/ }),
 
@@ -1121,12 +3227,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WithdrawFromUnivComponent", function() { return WithdrawFromUnivComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_withdraw_from_univ_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/withdraw-from-univ.service */ "./src/app/academicprocs/services/withdraw-from-univ.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _diag_add_request_add_request_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./diag/add-request/add-request.component */ "./src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
 
 
 var WithdrawFromUnivComponent = /** @class */ (function () {
-    function WithdrawFromUnivComponent() {
+    function WithdrawFromUnivComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
     }
     WithdrawFromUnivComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    WithdrawFromUnivComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_request_add_request_component__WEBPACK_IMPORTED_MODULE_4__["AddRequestComponent"], dialogConfig);
+    };
+    WithdrawFromUnivComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    WithdrawFromUnivComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    WithdrawFromUnivComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    WithdrawFromUnivComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    WithdrawFromUnivComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
     };
     WithdrawFromUnivComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1134,7 +3290,7 @@ var WithdrawFromUnivComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./withdraw-from-univ.component.html */ "./src/app/academicprocs/withdraw-from-univ/withdraw-from-univ.component.html"),
             styles: [__webpack_require__(/*! ./withdraw-from-univ.component.css */ "./src/app/academicprocs/withdraw-from-univ/withdraw-from-univ.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_5__["ToastrService"], _services_withdraw_from_univ_service__WEBPACK_IMPORTED_MODULE_2__["WithdrawFromUnivService"]])
     ], WithdrawFromUnivComponent);
     return WithdrawFromUnivComponent;
 }());
@@ -1608,15 +3764,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _academicaff_academicaff_module__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./academicaff/academicaff.module */ "./src/app/academicaff/academicaff.module.ts");
 /* harmony import */ var _name_component_name_component_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./name-component/name-component.component */ "./src/app/name-component/name-component.component.ts");
 /* harmony import */ var _register_courses_register_courses_module__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./register-courses/register-courses.module */ "./src/app/register-courses/register-courses.module.ts");
-/* harmony import */ var _equalize_equalize_module__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./equalize/equalize.module */ "./src/app/equalize/equalize.module.ts");
-/* harmony import */ var _lectures_absence_lectures_absence_module__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./lectures-absence/lectures-absence.module */ "./src/app/lectures-absence/lectures-absence.module.ts");
-/* harmony import */ var _finance_affair_finance_affair_module__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./finance-affair/finance-affair.module */ "./src/app/finance-affair/finance-affair.module.ts");
-/* harmony import */ var _exams_affair_exams_affair_module__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./exams-affair/exams-affair.module */ "./src/app/exams-affair/exams-affair.module.ts");
-/* harmony import */ var _other_affair_other_affair_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./other-affair/other-affair.module */ "./src/app/other-affair/other-affair.module.ts");
-/* harmony import */ var _shared_services_print_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./shared/services/print.service */ "./src/app/shared/services/print.service.ts");
-/* harmony import */ var _PrintExample_print_layout_print_layout_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./PrintExample/print-layout/print-layout.component */ "./src/app/PrintExample/print-layout/print-layout.component.ts");
-/* harmony import */ var _PrintExample_print_file_print_file_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./PrintExample/print-file/print-file.component */ "./src/app/PrintExample/print-file/print-file.component.ts");
-/* harmony import */ var _graduates_affairs_graduates_affairs_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./graduates-affairs/graduates-affairs.module */ "./src/app/graduates-affairs/graduates-affairs.module.ts");
+/* harmony import */ var _lectures_absence_lectures_absence_module__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./lectures-absence/lectures-absence.module */ "./src/app/lectures-absence/lectures-absence.module.ts");
+/* harmony import */ var _finance_affair_finance_affair_module__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./finance-affair/finance-affair.module */ "./src/app/finance-affair/finance-affair.module.ts");
+/* harmony import */ var _exams_affair_exams_affair_module__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./exams-affair/exams-affair.module */ "./src/app/exams-affair/exams-affair.module.ts");
+/* harmony import */ var _other_affair_other_affair_module__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./other-affair/other-affair.module */ "./src/app/other-affair/other-affair.module.ts");
+/* harmony import */ var _shared_services_print_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./shared/services/print.service */ "./src/app/shared/services/print.service.ts");
+/* harmony import */ var _PrintExample_print_layout_print_layout_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./PrintExample/print-layout/print-layout.component */ "./src/app/PrintExample/print-layout/print-layout.component.ts");
+/* harmony import */ var _PrintExample_print_file_print_file_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./PrintExample/print-file/print-file.component */ "./src/app/PrintExample/print-file/print-file.component.ts");
+/* harmony import */ var _graduates_affairs_graduates_affairs_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./graduates-affairs/graduates-affairs.module */ "./src/app/graduates-affairs/graduates-affairs.module.ts");
+/* harmony import */ var angular_font_awesome__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! angular-font-awesome */ "./node_modules/angular-font-awesome/dist/angular-font-awesome.es5.js");
 
 
 
@@ -1652,10 +3808,17 @@ var AppModule = /** @class */ (function () {
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_10__["HeaderComponent"], _auto_generated_auto_generated_component__WEBPACK_IMPORTED_MODULE_13__["AutoGeneratedComponent"], _name_component_name_component_component__WEBPACK_IMPORTED_MODULE_18__["NameComponentComponent"], _PrintExample_print_layout_print_layout_component__WEBPACK_IMPORTED_MODULE_26__["PrintLayoutComponent"], _PrintExample_print_file_print_file_component__WEBPACK_IMPORTED_MODULE_27__["PrintFileComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"],
+                _header_header_component__WEBPACK_IMPORTED_MODULE_10__["HeaderComponent"],
+                _auto_generated_auto_generated_component__WEBPACK_IMPORTED_MODULE_13__["AutoGeneratedComponent"],
+                _name_component_name_component_component__WEBPACK_IMPORTED_MODULE_18__["NameComponentComponent"],
+                _PrintExample_print_layout_print_layout_component__WEBPACK_IMPORTED_MODULE_25__["PrintLayoutComponent"],
+                _PrintExample_print_file_print_file_component__WEBPACK_IMPORTED_MODULE_26__["PrintFileComponent"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                angular_font_awesome__WEBPACK_IMPORTED_MODULE_28__["AngularFontAwesomeModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_14__["HttpClientModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _account_account_module__WEBPACK_IMPORTED_MODULE_6__["AccountModule"],
                 _dashboard_dashboard_module__WEBPACK_IMPORTED_MODULE_5__["DashboardModule"],
@@ -1663,18 +3826,17 @@ var AppModule = /** @class */ (function () {
                 _academicprocs_academicprocs_module__WEBPACK_IMPORTED_MODULE_16__["AcademicprocsModule"],
                 _academicaff_academicaff_module__WEBPACK_IMPORTED_MODULE_17__["AcademicaffModule"],
                 _register_courses_register_courses_module__WEBPACK_IMPORTED_MODULE_19__["RegisterCoursesModule"],
-                _equalize_equalize_module__WEBPACK_IMPORTED_MODULE_20__["EqualizeModule"],
-                _lectures_absence_lectures_absence_module__WEBPACK_IMPORTED_MODULE_21__["LecturesAbsenceModule"],
-                _finance_affair_finance_affair_module__WEBPACK_IMPORTED_MODULE_22__["FinanceAffairModule"],
-                _exams_affair_exams_affair_module__WEBPACK_IMPORTED_MODULE_23__["ExamsAffairModule"],
-                _other_affair_other_affair_module__WEBPACK_IMPORTED_MODULE_24__["OtherAffairModule"],
-                _graduates_affairs_graduates_affairs_module__WEBPACK_IMPORTED_MODULE_28__["GraduatesAffairsModule"]
+                _lectures_absence_lectures_absence_module__WEBPACK_IMPORTED_MODULE_20__["LecturesAbsenceModule"],
+                _finance_affair_finance_affair_module__WEBPACK_IMPORTED_MODULE_21__["FinanceAffairModule"],
+                _exams_affair_exams_affair_module__WEBPACK_IMPORTED_MODULE_22__["ExamsAffairModule"],
+                _other_affair_other_affair_module__WEBPACK_IMPORTED_MODULE_23__["OtherAffairModule"],
+                _graduates_affairs_graduates_affairs_module__WEBPACK_IMPORTED_MODULE_27__["GraduatesAffairsModule"]
             ],
             providers: [_shared_services_config_service__WEBPACK_IMPORTED_MODULE_7__["ConfigService"],
                 _shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_11__["HttpRequestService"],
                 _shared_services_user_manager_service__WEBPACK_IMPORTED_MODULE_12__["UserManagerService"],
                 _shared_services_app_storage_service__WEBPACK_IMPORTED_MODULE_15__["AppStorageService"],
-                _shared_services_print_service__WEBPACK_IMPORTED_MODULE_25__["PrintService"]],
+                _shared_services_print_service__WEBPACK_IMPORTED_MODULE_24__["PrintService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
@@ -2083,192 +4245,6 @@ var SpinnerComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/equalize/course-equalize/course-equalize.component.css":
-/*!************************************************************************!*\
-  !*** ./src/app/equalize/course-equalize/course-equalize.component.css ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VxdWFsaXplL2NvdXJzZS1lcXVhbGl6ZS9jb3Vyc2UtZXF1YWxpemUuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/equalize/course-equalize/course-equalize.component.html":
-/*!*************************************************************************!*\
-  !*** ./src/app/equalize/course-equalize/course-equalize.component.html ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  course-equalize works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/equalize/course-equalize/course-equalize.component.ts":
-/*!***********************************************************************!*\
-  !*** ./src/app/equalize/course-equalize/course-equalize.component.ts ***!
-  \***********************************************************************/
-/*! exports provided: CourseEqualizeComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CourseEqualizeComponent", function() { return CourseEqualizeComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var CourseEqualizeComponent = /** @class */ (function () {
-    function CourseEqualizeComponent() {
-    }
-    CourseEqualizeComponent.prototype.ngOnInit = function () {
-    };
-    CourseEqualizeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-course-equalize',
-            template: __webpack_require__(/*! ./course-equalize.component.html */ "./src/app/equalize/course-equalize/course-equalize.component.html"),
-            styles: [__webpack_require__(/*! ./course-equalize.component.css */ "./src/app/equalize/course-equalize/course-equalize.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], CourseEqualizeComponent);
-    return CourseEqualizeComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/equalize/english-eqaulize/english-eqaulize.component.css":
-/*!**************************************************************************!*\
-  !*** ./src/app/equalize/english-eqaulize/english-eqaulize.component.css ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VxdWFsaXplL2VuZ2xpc2gtZXFhdWxpemUvZW5nbGlzaC1lcWF1bGl6ZS5jb21wb25lbnQuY3NzIn0= */"
-
-/***/ }),
-
-/***/ "./src/app/equalize/english-eqaulize/english-eqaulize.component.html":
-/*!***************************************************************************!*\
-  !*** ./src/app/equalize/english-eqaulize/english-eqaulize.component.html ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  english-eqaulize works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/equalize/english-eqaulize/english-eqaulize.component.ts":
-/*!*************************************************************************!*\
-  !*** ./src/app/equalize/english-eqaulize/english-eqaulize.component.ts ***!
-  \*************************************************************************/
-/*! exports provided: EnglishEqaulizeComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EnglishEqaulizeComponent", function() { return EnglishEqaulizeComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var EnglishEqaulizeComponent = /** @class */ (function () {
-    function EnglishEqaulizeComponent() {
-    }
-    EnglishEqaulizeComponent.prototype.ngOnInit = function () {
-    };
-    EnglishEqaulizeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-english-eqaulize',
-            template: __webpack_require__(/*! ./english-eqaulize.component.html */ "./src/app/equalize/english-eqaulize/english-eqaulize.component.html"),
-            styles: [__webpack_require__(/*! ./english-eqaulize.component.css */ "./src/app/equalize/english-eqaulize/english-eqaulize.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], EnglishEqaulizeComponent);
-    return EnglishEqaulizeComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/equalize/equalize-routing.module.ts":
-/*!*****************************************************!*\
-  !*** ./src/app/equalize/equalize-routing.module.ts ***!
-  \*****************************************************/
-/*! exports provided: EqualizeRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EqualizeRoutingModule", function() { return EqualizeRoutingModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
-
-
-var routes = [];
-var EqualizeRoutingModule = /** @class */ (function () {
-    function EqualizeRoutingModule() {
-    }
-    EqualizeRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
-        })
-    ], EqualizeRoutingModule);
-    return EqualizeRoutingModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/equalize/equalize.module.ts":
-/*!*********************************************!*\
-  !*** ./src/app/equalize/equalize.module.ts ***!
-  \*********************************************/
-/*! exports provided: EqualizeModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EqualizeModule", function() { return EqualizeModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _equalize_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./equalize-routing.module */ "./src/app/equalize/equalize-routing.module.ts");
-/* harmony import */ var _course_equalize_course_equalize_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./course-equalize/course-equalize.component */ "./src/app/equalize/course-equalize/course-equalize.component.ts");
-/* harmony import */ var _english_eqaulize_english_eqaulize_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./english-eqaulize/english-eqaulize.component */ "./src/app/equalize/english-eqaulize/english-eqaulize.component.ts");
-
-
-
-
-
-
-var EqualizeModule = /** @class */ (function () {
-    function EqualizeModule() {
-    }
-    EqualizeModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_course_equalize_course_equalize_component__WEBPACK_IMPORTED_MODULE_4__["CourseEqualizeComponent"], _english_eqaulize_english_eqaulize_component__WEBPACK_IMPORTED_MODULE_5__["EnglishEqaulizeComponent"]],
-            imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _equalize_routing_module__WEBPACK_IMPORTED_MODULE_3__["EqualizeRoutingModule"]
-            ]
-        })
-    ], EqualizeModule);
-    return EqualizeModule;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/exams-affair/exams-absence-excuses/exams-absence-excuses.component.css":
 /*!****************************************************************************************!*\
   !*** ./src/app/exams-affair/exams-absence-excuses/exams-absence-excuses.component.css ***!
@@ -2443,7 +4419,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <h3 class=\"text-center\">شهادة  اثبات حضور  اختبارات</h3>\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"card mt-3 tab-card\">\n            <div class=\"card-header tab-card-header\">\n              <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                        {{eaData.Term_Exam_With_Schedule.labels.title}}   \n                    </a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\n                </li>\n              </ul>\n            </div>\n    \n            <div class=\"tab-content\" id=\"myTabContent\">\n              <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\n                \n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt1}}\n                {{eaData.Term_Exam_With_Schedule.values.student_name}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt2}}\n                {{eaData.Term_Exam_With_Schedule.values.std_id}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt3}}\n                {{eaData.Term_Exam_With_Schedule.values.coll}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt4}}\n                {{eaData.Term_Exam_With_Schedule.values.term}}\n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt5}}\n  \n                {{eaData.Term_Exam_With_Schedule.values.startDay}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt6}}\n                {{eaData.Term_Exam_With_Schedule.values.endDay}}\n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt7}}\n  \n                \n  \n                \n                    </p>         \n                <table class=\"table\">\n                    <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">اليوم</th>\n                        <th scope=\"col\">الوقت</th>\n                        <th scope=\"col\">الحضور</th>\n\n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\n                        <td >{{it.CRN}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.CRSE_DAY}}</td>\n                        <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n                        <td>{{it.STD_ATTEND}}</td>\n                      </tr>\n                     \n                    </tbody>\n                  </table>\n                  <br>\n                  <p style=\"text-align: right\">\n                  {{eaData.Term_Exam_With_Schedule.labels.txt8}}\n           \n                  {{eaData.Term_Exam_With_Schedule.labels.txt9}}\n            <br>\n            {{eaData.Term_Exam_With_Schedule.labels.txt10}}\n            \n            {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\n             \n          \n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n               \n                <div class=\"col-md-4\"></div>\n              \n                </div>\n          </div>\n              <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                  <h5 class=\"card-title text-center\">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>\n                  <p class=\"card-text\" style=\"text-align: right\" > \n                      {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\n                      <br/>\n                       الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\n                       {{eaData.Term_Exam_Without_Schedule.values.student_name}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\n                       {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\n                       {{eaData.Term_Exam_Without_Schedule.values.coll}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\n                       {{eaData.Term_Exam_Without_Schedule.values.term}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\n         \n                       {{eaData.Term_Exam_Without_Schedule.values.startDay}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\n                       {{eaData.Term_Exam_Without_Schedule.values.endDay}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\n         <br>\n         {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\n  \n         {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\n   <br>\n   {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\n   \n   {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\n  \n  \n  \n                  \n                      </p>         \n                      <div  class=\"btn-group btn-group-justified col-md-12 \">\n                          <div class=\"col-md-4\"></div>\n                          <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                            طباعة</a>\n                         \n                            <div class=\"col-md-4\"></div>\n                          </div>\n              </div>\n              <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                  <h5 class=\"card-title text-center\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>\n                  <p class=\"card-text\" style=\"text-align: right\" > \n                      {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\n                      <br/>\n                       الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                  \n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt1}}\n                  {{eaData.Final_Exam_With_Schedule.values.student_name}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt2}}\n                  {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt3}}\n                  {{eaData.Final_Exam_With_Schedule.values.coll}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt4}}\n                  {{eaData.Final_Exam_With_Schedule.values.term}}\n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt5}}\n    \n                  {{eaData.Final_Exam_With_Schedule.values.startDay}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt6}}\n                  {{eaData.Final_Exam_With_Schedule.values.endDay}}\n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt7}}\n    \n                  \n    \n                  \n                      </p>         \n                  <table class=\"table\">\n                      <thead>\n                        <tr>\n                          <th scope=\"col\">CRN </th>\n                          <th scope=\"col\">اسم المقرر</th>\n                          <th scope=\"col\">اليوم</th>\n                          <th scope=\"col\">الوقت</th>\n                          <th scope=\"col\">الحضور</th>\n\n    \n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\n                          <td >{{it.CRN}}</td>\n                          <td>{{it.CRSE_TITLE}}</td>\n                          <td>{{it.CRSE_DAY}}</td>\n                          <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n                          <td>{{it.STD_ATTEND}}</td>\n\n    \n                        </tr>\n                       \n                      </tbody>\n                    </table>\n                    <br>\n                    <p style=\"text-align: right\">\n                    {{eaData.Final_Exam_With_Schedule.labels.txt8}}\n             \n                    {{eaData.Final_Exam_With_Schedule.labels.txt9}}\n              <br>\n              {{eaData.Final_Exam_With_Schedule.labels.txt10}}\n              \n              {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\n                        \n              <div  class=\"btn-group btn-group-justified col-md-12 \">\n                  <div class=\"col-md-4\"></div>\n                  <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                    طباعة</a>\n                 \n                  <div class=\"col-md-4\"></div>\n                \n                  </div>\n                  </div>\n                  <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\n                      <h5 class=\"card-title text-center\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>\n                      <p class=\"card-text\" style=\"text-align: right\" > \n                          {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\n                          <br/>\n                           الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\n                           {{eaData.Final_Exam_Without_Schedule.values.student_name}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\n                           {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\n                           {{eaData.Final_Exam_Without_Schedule.values.coll}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\n                           {{eaData.Final_Exam_Without_Schedule.values.term}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\n             \n                           {{eaData.Final_Exam_Without_Schedule.values.startDay}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\n                           {{eaData.Final_Exam_Without_Schedule.values.endDay}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\n             <br>\n             {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\n      \n             {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\n       <br>\n       {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\n       \n       {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\n      \n      \n      \n                      \n                          </p>    \n                          <div  class=\"btn-group btn-group-justified col-md-12 \">\n                              <div class=\"col-md-4\"></div>\n                              <a class=\"btn btn-primary\" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                                طباعة</a>\n                              \n                              <div class=\"col-md-4\"></div>\n                            \n                              </div>\n                        </div>"
+module.exports = "<div class=\"container\">\n    <h3 class=\"text-center\">شهادة  اثبات حضور  اختبارات</h3>\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"card mt-3 tab-card\">\n            <div class=\"card-header tab-card-header\">\n              <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                        {{eaData.Term_Exam_With_Schedule.labels.title}}   \n                    </a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\n                </li>\n              </ul>\n            </div>\n    \n            <div class=\"tab-content\" id=\"myTabContent\">\n              <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\n                \n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt1}}\n                {{eaData.Term_Exam_With_Schedule.values.student_name}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt2}}\n                {{eaData.Term_Exam_With_Schedule.values.std_id}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt3}}\n                {{eaData.Term_Exam_With_Schedule.values.coll}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt4}}\n                {{eaData.Term_Exam_With_Schedule.values.term}}\n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt5}}\n  \n                {{eaData.Term_Exam_With_Schedule.values.startDay}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt6}}\n                {{eaData.Term_Exam_With_Schedule.values.endDay}}\n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt7}}\n  \n                \n  \n                \n                    </p>         \n                <table class=\"table\">\n                    <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">اليوم</th>\n                        <th scope=\"col\">الوقت</th>\n                        <th scope=\"col\">الحضور</th>\n\n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\n                        <td >{{it.CRN}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.CRSE_DAY}}</td>\n                        <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n                        <td>{{it.STD_ATTEND}}</td>\n                      </tr>\n                     \n                    </tbody>\n                  </table>\n                  <br>\n                  <p style=\"text-align: right\">\n                  {{eaData.Term_Exam_With_Schedule.labels.txt8}}\n           \n                  {{eaData.Term_Exam_With_Schedule.labels.txt9}}\n            <br>\n            {{eaData.Term_Exam_With_Schedule.labels.txt10}}\n            \n            {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\n             \n          \n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{termSchedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n                  <a class=\"btn btn-primary\" href=\"{{termScheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                    Print</a>\n                <div class=\"col-md-4\"></div>\n              \n                </div>\n          </div>\n              <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                  <h5 class=\"card-title text-center\">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>\n                  <p class=\"card-text\" style=\"text-align: right\" > \n                      {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\n                      <br/>\n                       الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\n                       {{eaData.Term_Exam_Without_Schedule.values.student_name}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\n                       {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\n                       {{eaData.Term_Exam_Without_Schedule.values.coll}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\n                       {{eaData.Term_Exam_Without_Schedule.values.term}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\n         \n                       {{eaData.Term_Exam_Without_Schedule.values.startDay}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\n                       {{eaData.Term_Exam_Without_Schedule.values.endDay}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\n         <br>\n         {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\n  \n         {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\n   <br>\n   {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\n   \n   {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\n  \n  \n  \n                  \n                      </p>         \n                      <div  class=\"btn-group btn-group-justified col-md-12 \">\n                          <div class=\"col-md-4\"></div>\n                          <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                            طباعة</a>\n                            <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                              Print</a>\n                            <div class=\"col-md-4\"></div>\n                          </div>\n              </div>\n              <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                  <h5 class=\"card-title text-center\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>\n                  <p class=\"card-text\" style=\"text-align: right\" > \n                      {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\n                      <br/>\n                       الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                  \n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt1}}\n                  {{eaData.Final_Exam_With_Schedule.values.student_name}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt2}}\n                  {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt3}}\n                  {{eaData.Final_Exam_With_Schedule.values.coll}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt4}}\n                  {{eaData.Final_Exam_With_Schedule.values.term}}\n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt5}}\n    \n                  {{eaData.Final_Exam_With_Schedule.values.startDay}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt6}}\n                  {{eaData.Final_Exam_With_Schedule.values.endDay}}\n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt7}}\n    \n                  \n    \n                  \n                      </p>         \n                  <table class=\"table\">\n                      <thead>\n                        <tr>\n                          <th scope=\"col\">CRN </th>\n                          <th scope=\"col\">اسم المقرر</th>\n                          <th scope=\"col\">اليوم</th>\n                          <th scope=\"col\">الوقت</th>\n                          <th scope=\"col\">الحضور</th>\n\n    \n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\n                          <td >{{it.CRN}}</td>\n                          <td>{{it.CRSE_TITLE}}</td>\n                          <td>{{it.CRSE_DAY}}</td>\n                          <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n                          <td>{{it.STD_ATTEND}}</td>\n\n    \n                        </tr>\n                       \n                      </tbody>\n                    </table>\n                    <br>\n                    <p style=\"text-align: right\">\n                    {{eaData.Final_Exam_With_Schedule.labels.txt8}}\n             \n                    {{eaData.Final_Exam_With_Schedule.labels.txt9}}\n              <br>\n              {{eaData.Final_Exam_With_Schedule.labels.txt10}}\n              \n              {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\n                        \n              <div  class=\"btn-group btn-group-justified col-md-12 \">\n                  <div class=\"col-md-4\"></div>\n                  <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                    طباعة</a>\n                    <a class=\"btn btn-primary\" href=\"{{finalscheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                      Print</a>\n                  <div class=\"col-md-4\"></div>\n                \n                  </div>\n                  </div>\n                  <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\n                      <h5 class=\"card-title text-center\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>\n                      <p class=\"card-text\" style=\"text-align: right\" > \n                          {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\n                          <br/>\n                           الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\n                           {{eaData.Final_Exam_Without_Schedule.values.student_name}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\n                           {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\n                           {{eaData.Final_Exam_Without_Schedule.values.coll}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\n                           {{eaData.Final_Exam_Without_Schedule.values.term}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\n             \n                           {{eaData.Final_Exam_Without_Schedule.values.startDay}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\n                           {{eaData.Final_Exam_Without_Schedule.values.endDay}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\n             <br>\n             {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\n      \n             {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\n       <br>\n       {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\n       \n       {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\n      \n      \n      \n                      \n                          </p>    \n                          <div  class=\"btn-group btn-group-justified col-md-12 \">\n                              <div class=\"col-md-4\"></div>\n                              <a class=\"btn btn-primary\" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                                طباعة</a>\n                                <a class=\"btn btn-primary\" href=\"{{finalEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                                  Print</a>\n                                \n                              <div class=\"col-md-4\"></div>\n                            \n                              </div>\n                        </div>"
 
 /***/ }),
 
@@ -2476,6 +4452,10 @@ var ExamsAttendAppComponent = /** @class */ (function () {
         this.final = this.academicService.Print_Final_Exam_Without_Schedule();
         this.termSchedule = this.academicService.Print_Term_Exam_With_Schedule();
         this.term = this.academicService.Print_Term_Exam_Without_Schedule();
+        this.finalscheduleEn = this.academicService.Print_Final_Exam_With_ScheduleEn();
+        this.finalEn = this.academicService.Print_Final_Exam_Without_ScheduleEn();
+        this.termScheduleEn = this.academicService.Print_Term_Exam_With_ScheduleEn();
+        this.termEn = this.academicService.Print_Term_Exam_Without_ScheduleEn();
     };
     ExamsAttendAppComponent.prototype.toHTML = function (input) {
         return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
@@ -2513,7 +4493,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h3 class=\"text-center\">شهادة حضور  اختبارات</h3>\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <div class=\"card mt-3 tab-card\">\n          <div class=\"card-header tab-card-header\">\n            <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                      {{eaData.Term_Exam_With_Schedule.labels.title}}   \n                  </a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\n              </li>\n            </ul>\n          </div>\n  \n          <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n              <h5 class=\"card-title text-center\">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>\n              <p class=\"card-text\" style=\"text-align: right\" > \n                  {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\n                  <br/>\n                   الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\n              \n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt1}}\n              {{eaData.Term_Exam_With_Schedule.values.student_name}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt2}}\n              {{eaData.Term_Exam_With_Schedule.values.std_id}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt3}}\n              {{eaData.Term_Exam_With_Schedule.values.coll}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt4}}\n              {{eaData.Term_Exam_With_Schedule.values.term}}\n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt5}}\n\n              {{eaData.Term_Exam_With_Schedule.values.startDay}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt6}}\n              {{eaData.Term_Exam_With_Schedule.values.endDay}}\n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt7}}\n\n              \n\n              \n                  </p>         \n              <table style=\"direction: rtl\" class=\"table\">\n                  <thead>\n                    <tr>\n                      <th scope=\"col\">CRN </th>\n                      <th scope=\"col\">اسم المقرر</th>\n                      <th scope=\"col\">اليوم</th>\n                      <th scope=\"col\">الوقت</th>\n\n                    </tr>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\n                      <td >{{it.CRN}}</td>\n                      <td>{{it.CRSE_TITLE}}</td>\n                      <td>{{it.CRSE_DAY}}</td>\n                      <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n\n                    </tr>\n                   \n                  </tbody>\n                </table>\n                <br>\n                <p style=\"text-align: right\">\n                {{eaData.Term_Exam_With_Schedule.labels.txt8}}\n         \n                {{eaData.Term_Exam_With_Schedule.labels.txt9}}\n          <br>\n          {{eaData.Term_Exam_With_Schedule.labels.txt10}}\n          \n          {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\n           \n        \n          <div  class=\"btn-group btn-group-justified col-md-12 \">\n              <div class=\"col-md-4\"></div>\n              <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                طباعة</a>\n             \n              <div class=\"col-md-4\"></div>\n            \n              </div>\n        </div>\n            <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\n                     {{eaData.Term_Exam_Without_Schedule.values.student_name}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\n                     {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\n                     {{eaData.Term_Exam_Without_Schedule.values.coll}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\n                     {{eaData.Term_Exam_Without_Schedule.values.term}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\n       \n                     {{eaData.Term_Exam_Without_Schedule.values.startDay}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\n                     {{eaData.Term_Exam_Without_Schedule.values.endDay}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\n       <br>\n       {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\n\n       {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\n <br>\n {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\n \n {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\n\n\n\n                \n                    </p>         \n                    <div  class=\"btn-group btn-group-justified col-md-12 \">\n                        <div class=\"col-md-4\"></div>\n                        <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                          طباعة</a>\n                       \n                          <div class=\"col-md-4\"></div>\n                        </div>\n            </div>\n            <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                \n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt1}}\n                {{eaData.Final_Exam_With_Schedule.values.student_name}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt2}}\n                {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt3}}\n                {{eaData.Final_Exam_With_Schedule.values.coll}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt4}}\n                {{eaData.Final_Exam_With_Schedule.values.term}}\n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt5}}\n  \n                {{eaData.Final_Exam_With_Schedule.values.startDay}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt6}}\n                {{eaData.Final_Exam_With_Schedule.values.endDay}}\n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt7}}\n  \n                \n  \n                \n                    </p>         \n                <table class=\"table\">\n                    <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">اليوم</th>\n                        <th scope=\"col\">الوقت</th>\n  \n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\n                        <td >{{it.CRN}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.CRSE_DAY}}</td>\n                        <td style=\"direction: ltr>({{toHTML(it.CRSE_TIME)}})</td>\n  \n                      </tr>\n                     \n                    </tbody>\n                  </table>\n                  <br>\n                  <p style=\"text-align: right\">\n                  {{eaData.Final_Exam_With_Schedule.labels.txt8}}\n           \n                  {{eaData.Final_Exam_With_Schedule.labels.txt9}}\n            <br>\n            {{eaData.Final_Exam_With_Schedule.labels.txt10}}\n            \n            {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\n                      \n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n               \n                <div class=\"col-md-4\"></div>\n              \n                </div>\n                </div>\n                <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\n                    <h5 class=\"card-title text-center\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>\n                    <p class=\"card-text\" style=\"text-align: right\" > \n                        {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\n                        <br/>\n                         الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\n                         {{eaData.Final_Exam_Without_Schedule.values.student_name}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\n                         {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\n                         {{eaData.Final_Exam_Without_Schedule.values.coll}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\n                         {{eaData.Final_Exam_Without_Schedule.values.term}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\n           \n                         {{eaData.Final_Exam_Without_Schedule.values.startDay}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\n                         {{eaData.Final_Exam_Without_Schedule.values.endDay}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\n           <br>\n           {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\n    \n           {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\n     <br>\n     {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\n     \n     {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\n    \n    \n    \n                    \n                        </p>    \n                        <div  class=\"btn-group btn-group-justified col-md-12 \">\n                            <div class=\"col-md-4\"></div>\n                            <a class=\"btn btn-primary\" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                              طباعة</a>\n                            \n                            <div class=\"col-md-4\"></div>\n                          \n                            </div>\n                      </div>"
+module.exports = "<div class=\"container\">\n  <h3 class=\"text-center\">شهادة حضور  اختبارات</h3>\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <div class=\"card mt-3 tab-card\">\n          <div class=\"card-header tab-card-header\">\n            <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                      {{eaData.Term_Exam_With_Schedule.labels.title}}   \n                  </a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\n              </li>\n            </ul>\n          </div>\n  \n          <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n              <h5 class=\"card-title text-center\">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>\n              <p class=\"card-text\" style=\"text-align: right\" > \n                  {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\n                  <br/>\n                   الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\n              \n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt1}}\n              {{eaData.Term_Exam_With_Schedule.values.student_name}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt2}}\n              {{eaData.Term_Exam_With_Schedule.values.std_id}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt3}}\n              {{eaData.Term_Exam_With_Schedule.values.coll}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt4}}\n              {{eaData.Term_Exam_With_Schedule.values.term}}\n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt5}}\n\n              {{eaData.Term_Exam_With_Schedule.values.startDay}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt6}}\n              {{eaData.Term_Exam_With_Schedule.values.endDay}}\n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt7}}\n\n              \n\n              \n                  </p>         \n              <table style=\"direction: rtl\" class=\"table\">\n                  <thead>\n                    <tr>\n                      <th scope=\"col\">CRN </th>\n                      <th scope=\"col\">اسم المقرر</th>\n                      <th scope=\"col\">اليوم</th>\n                      <th scope=\"col\">الوقت</th>\n\n                    </tr>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\n                      <td >{{it.CRN}}</td>\n                      <td>{{it.CRSE_TITLE}}</td>\n                      <td>{{it.CRSE_DAY}}</td>\n                      <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n\n                    </tr>\n                   \n                  </tbody>\n                </table>\n                <br>\n                <p style=\"text-align: right\">\n                {{eaData.Term_Exam_With_Schedule.labels.txt8}}\n         \n                {{eaData.Term_Exam_With_Schedule.labels.txt9}}\n          <br>\n          {{eaData.Term_Exam_With_Schedule.labels.txt10}}\n          \n          {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\n           \n        \n          <div  class=\"btn-group btn-group-justified col-md-12 \">\n              <div class=\"col-md-4\"></div>\n              <a class=\"btn btn-primary\" href=\"{{termSchedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                طباعة</a>\n                <a class=\"btn btn-primary\" href=\"{{termScheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  Print</a>\n              <div class=\"col-md-4\"></div>\n            \n              </div>\n        </div>\n            <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\n                     {{eaData.Term_Exam_Without_Schedule.values.student_name}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\n                     {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\n                     {{eaData.Term_Exam_Without_Schedule.values.coll}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\n                     {{eaData.Term_Exam_Without_Schedule.values.term}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\n       \n                     {{eaData.Term_Exam_Without_Schedule.values.startDay}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\n                     {{eaData.Term_Exam_Without_Schedule.values.endDay}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\n       <br>\n       {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\n\n       {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\n <br>\n {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\n \n {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\n\n\n\n                \n                    </p>         \n                    <div  class=\"btn-group btn-group-justified col-md-12 \">\n                        <div class=\"col-md-4\"></div>\n                        <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                          طباعة</a>\n                          <a class=\"btn btn-primary\" href=\"{{termEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                            Print</a>\n                          <div class=\"col-md-4\"></div>\n                        </div>\n            </div>\n            <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                \n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt1}}\n                {{eaData.Final_Exam_With_Schedule.values.student_name}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt2}}\n                {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt3}}\n                {{eaData.Final_Exam_With_Schedule.values.coll}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt4}}\n                {{eaData.Final_Exam_With_Schedule.values.term}}\n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt5}}\n  \n                {{eaData.Final_Exam_With_Schedule.values.startDay}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt6}}\n                {{eaData.Final_Exam_With_Schedule.values.endDay}}\n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt7}}\n  \n                \n  \n                \n                    </p>         \n                <table class=\"table\">\n                    <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">اليوم</th>\n                        <th scope=\"col\">الوقت</th>\n  \n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\n                        <td >{{it.CRN}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.CRSE_DAY}}</td>\n                        <td style=\"direction:ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n  \n                      </tr>\n                     \n                    </tbody>\n                  </table>\n                  <br>\n                  <p style=\"text-align: right\">\n                  {{eaData.Final_Exam_With_Schedule.labels.txt8}}\n           \n                  {{eaData.Final_Exam_With_Schedule.labels.txt9}}\n            <br>\n            {{eaData.Final_Exam_With_Schedule.labels.txt10}}\n            \n            {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\n                      \n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n                  <a class=\"btn btn-primary\" href=\"{{finalscheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                    Print</a>\n                <div class=\"col-md-4\"></div>\n              \n                </div>\n                </div>\n                <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\n                    <h5 class=\"card-title text-center\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>\n                    <p class=\"card-text\" style=\"text-align: right\" > \n                        {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\n                        <br/>\n                         الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\n                         {{eaData.Final_Exam_Without_Schedule.values.student_name}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\n                         {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\n                         {{eaData.Final_Exam_Without_Schedule.values.coll}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\n                         {{eaData.Final_Exam_Without_Schedule.values.term}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\n           \n                         {{eaData.Final_Exam_Without_Schedule.values.startDay}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\n                         {{eaData.Final_Exam_Without_Schedule.values.endDay}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\n           <br>\n           {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\n    \n           {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\n     <br>\n     {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\n     \n     {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\n    \n    \n    \n                    \n                        </p>    \n                        <div  class=\"btn-group btn-group-justified col-md-12 \">\n                            <div class=\"col-md-4\"></div>\n                            <a class=\"btn btn-primary\" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                              طباعة</a>\n                              <a class=\"btn btn-primary\" href=\"{{finalEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                                English</a>\n                              \n                            <div class=\"col-md-4\"></div>\n                          \n                            </div>\n                      </div>"
 
 /***/ }),
 
@@ -2546,6 +4526,10 @@ var ExamsAttendStatComponent = /** @class */ (function () {
         this.final = this.academicService.Print_Final_Exam_Without_Schedule();
         this.termSchedule = this.academicService.Print_Term_Exam_With_Schedule();
         this.term = this.academicService.Print_Term_Exam_Without_Schedule();
+        this.finalscheduleEn = this.academicService.Print_Final_Exam_With_ScheduleEn();
+        this.finalEn = this.academicService.Print_Final_Exam_Without_ScheduleEn();
+        this.termScheduleEn = this.academicService.Print_Term_Exam_With_ScheduleEn();
+        this.termEn = this.academicService.Print_Term_Exam_Without_ScheduleEn();
     };
     ExamsAttendStatComponent.prototype.toHTML = function (input) {
         return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
@@ -2714,6 +4698,18 @@ var ExamAttendanceService = /** @class */ (function () {
     };
     ExamAttendanceService.prototype.Print_Final_Exam_Without_Schedule = function () {
         return this.configService.getApiURI() + '/attendance_service/download?type=Final_Exam_Without_Schedule';
+    };
+    ExamAttendanceService.prototype.Print_Term_Exam_With_ScheduleEn = function () {
+        return this.configService.getApiURI() + '/attendance_service/download?type=Term_Exam_With_Schedule&Lang=en';
+    };
+    ExamAttendanceService.prototype.Print_Term_Exam_Without_ScheduleEn = function () {
+        return this.configService.getApiURI() + '/attendance_service/download?type=Term_Exam_Without_Schedule&Lang=en';
+    };
+    ExamAttendanceService.prototype.Print_Final_Exam_With_ScheduleEn = function () {
+        return this.configService.getApiURI() + '/attendance_service/download?type=Final_Exam_With_Schedule&Lang=en';
+    };
+    ExamAttendanceService.prototype.Print_Final_Exam_Without_ScheduleEn = function () {
+        return this.configService.getApiURI() + '/attendance_service/download?type=Final_Exam_Without_Schedule&Lang=en';
     };
     ExamAttendanceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -3244,7 +5240,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n    <a class=\"navbar-brand\" href=\"#\">تطبيق تجريبي</a>\n    <button class=\"navbar-toggler d-lg-none\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n      \n        <ul *ngIf=\"status\" class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n               <a class=\"nav-link\" (click)=\"logout()\" href=\"#\">تسجيل خروج</a>\n            </li>\n            <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/dashboard\">home</a> \n            </li>   \n           \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">بيانات</a> \n              </li> \n                    \n          </ul>\n\n          <ul *ngIf=\"!status\" class=\"nav navbar-nav\">\n             \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a> \n              </li>  \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/certificate\"> شهادة تعريف</a> \n                </li>  \n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/graduates/statement\"> افادة خريج </a> \n                    </li>  \n                    <li class=\"nav-item\">\n                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/record\"> السجل  </a> \n                      </li>  \n                      <li class=\"nav-item\">\n                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/finance/fees\"> المصاريف  </a> \n                          </li> \n                          <li class=\"nav-item\">\n                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/medicalreport\"> التقرير الطبي  </a> \n                              </li> \n\n                              <li class=\"nav-item\">\n                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/lectabs\">  استعلام الغياب  </a> \n                                  </li> \n\n                                           <li class=\"nav-item\">\n                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attend\"> حضور اختبارات   </a> \n                                                  </li> \n                                                  <li class=\"nav-item\">\n                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attendapp\"> اثبات حضور    </a> \n                                                      </li> \n                                                      \n                                      \n          </ul>\n                     \n          \n    </div>\n  </nav>\n</header>\n<br/>\n<br/>\n<br/>"
+module.exports = "<header>\n  <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n    <a class=\"navbar-brand\" href=\"#\">تطبيق تجريبي</a>\n    <button class=\"navbar-toggler d-lg-none\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n      \n        <ul *ngIf=\"status\" class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n               <a class=\"nav-link\" (click)=\"logout()\" href=\"#\">تسجيل خروج</a>\n            </li>\n            <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/dashboard\">home</a> \n            </li>   \n           \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">بيانات</a> \n              </li> \n                    \n          </ul>\n\n          <ul *ngIf=\"!status\" class=\"nav navbar-nav\">\n             \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/status\">الحالة </a> \n              </li>  \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/certificate\">  تعريف</a> \n                </li>  \n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/graduates/statement\">  خريج </a> \n                    </li>  \n                    <li class=\"nav-item\">\n                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/record\"> السجل  </a> \n                      </li>  \n                      <li class=\"nav-item\">\n                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/finance/fees\"> المصاريف  </a> \n                          </li> \n                          <li class=\"nav-item\">\n                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/medicalreport\">  الطبي  </a> \n                              </li> \n\n                              <li class=\"nav-item\">\n                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/lectabs\">   الغياب  </a> \n                                  </li> \n\n                                           <li class=\"nav-item\">\n                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attend\">  اختبارات   </a> \n                                                  </li> \n                                                  <li class=\"nav-item\">\n                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attendapp\"> اثبات ح    </a> \n                                                      </li> \n                                                      <li class=\"nav-item\">\n                                                        <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/withdrawuniv\"> انسحاب     </a> \n                                                        </li>\n                                                        <li class=\"nav-item\">\n                                                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/postpone\"> تاجيل     </a> \n                                                          </li>\n                                                          <li class=\"nav-item\">\n                                                            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/summer\"> الصيفي     </a> \n                                                            </li>\n                                                            <li class=\"nav-item\">\n                                                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/cancelcourse\"> غ مقرر     </a> \n                                                              </li>\n                                                              <li class=\"nav-item\">\n                                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/execuse\"> الاعتذار     </a> \n                                                                  </li>\n                                                                  <li class=\"nav-item\">\n                                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/equalize\"> معادلة     </a> \n                                                                      </li>\n                                                                      <li class=\"nav-item\">\n                                                                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/eequalize\"> E     </a> \n                                                                          </li>\n                                                                          <li class=\"nav-item\">\n                                                                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/reenrol\"> Eroll    </a> \n                                                                              </li>\n                                                                              <li class=\"nav-item\">\n                                                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/changemajor\"> major    </a> \n                                                                                  </li>\n                                      \n          </ul>\n                     \n          \n    </div>\n  </nav>\n</header>\n<br/>\n<br/>\n<br/>"
 
 /***/ }),
 
@@ -3423,7 +5419,7 @@ var AbsenceExcusesComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xlY3R1cmVzLWFic2VuY2UvYWJzZW5jZS1xdWVyeS9hYnNlbmNlLXF1ZXJ5LmNvbXBvbmVudC5jc3MifQ== */"
+module.exports = "td {text-align: right}\r\nth {text-align: right}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbGVjdHVyZXMtYWJzZW5jZS9hYnNlbmNlLXF1ZXJ5L2Fic2VuY2UtcXVlcnkuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxJQUFJLGlCQUFpQjtBQUNyQixJQUFJLGlCQUFpQiIsImZpbGUiOiJzcmMvYXBwL2xlY3R1cmVzLWFic2VuY2UvYWJzZW5jZS1xdWVyeS9hYnNlbmNlLXF1ZXJ5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ0ZCB7dGV4dC1hbGlnbjogcmlnaHR9XHJcbnRoIHt0ZXh0LWFsaWduOiByaWdodH0iXX0= */"
 
 /***/ }),
 
@@ -3434,7 +5430,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">   استعلام الغياب </h3>\n    <div *ngIf=\"status==0\"  class=\"alert alert-primary text-center\" role=\"alert\">\n        {{absData.messages}} \n      </div>\n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-10\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>نسبة غياب المحاضرات التقليدية  </b> </div>\n        </div>\n        <input  value=\"{{absData.absent_percentage_actual_lectures}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n  \n   <div  class=\"col-md-1\"></div>\n\n</div>\n\n<div class=\"row\">\n    <div  class=\"col-md-1\"></div>\n    <div class=\"col-md-10\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الافتراضيه  </b> </div>\n          </div>\n          <input  value=\"{{absData.absent_percentage_virtual_lectures}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    \n     <div  class=\"col-md-1\"></div>\n  \n  </div>\n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n      <div class=\"col-md-10\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الكلية  </b> </div>\n            </div>\n            <input  value=\"{{absData.absent_percentage_total}}\"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      \n       <div  class=\"col-md-1\"></div>\n    \n    </div>\n    \n  \n    \n          <table class=\"table\">\n              <thead>\n                <tr>\n                  <th scope=\"col\">رمز المقرر </th>\n                  <th scope=\"col\">اسم المقرر</th>\n                  <th scope=\"col\">نوع المحاضره</th>\n                  <th scope=\"col\">حالة الحضور</th>\n\n                </tr>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let it of absData.lectures\">\n                  <td >{{it.CODE}}</td>\n                  <td>{{it.TITLE}}</td>\n                  <td>{{it.TYPE}}</td>\n                  <td>{{it.STATUS}}</td>\n                </tr>\n               \n              </tbody>\n            </table>\n\n      \n            </div>\n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n                <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  Print</a>\n                <div class=\"col-md-4\"></div>\n              \n                </div>"
+module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">   استعلام الغياب </h3>\n    <div *ngIf=\"status==0\"  class=\"alert alert-primary text-center\" role=\"alert\">\n        {{absData.messages}} \n      </div>\n      <div class=\"card mt-3 tab-card\">\n          <div class=\"card-header tab-card-header\">\n            <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                      نسبة غياب المحاضرات الكلية\n\n                  </a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">\n                      نسبة غياب المحاضرات التقليدية\n\n        </a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">\n                      نسبة غياب المحاضرات الافتراضيه\n\n        </a>\n              </li>\n             \n            </ul>\n          </div>\n  \n          <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n              <h5 class=\"card-title text-center\">نسبة غياب المحاضرات الكلية\n                </h5>\n              \n              <table *ngIf=\"absData.absent_percentage_total.length>0;else array1\" class=\"table\">\n                  <thead>\n                    <tr>\n                      <th scope=\"col\">CRN </th>\n                      <th scope=\"col\">كود المقرر</th>\n                      <th scope=\"col\">اسم المقرر</th>\n                      <th scope=\"col\">نسبة الغباب</th>\n\n                    </tr>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let it of absData.absent_percentage_total\">\n                      <td >{{it.CRN}}</td>\n                      <td >{{it.CRES_CODE}}</td>\n                      <td>{{it.CRSE_TITLE}}</td>\n                      <td>{{it.ABSENT_PERCENTAGE_TOTAL}}</td>\n                    </tr>\n                   \n                  </tbody>\n                </table>\n                <br> <ng-template #array1>\n                \n                    <div class=\"row\">\n                        <div  class=\"col-md-1\"></div>\n                        <div class=\"col-md-10\">\n                          <div class=\"form-group\">\n                            \n                            <div class=\"input-group\">\n                              <div class=\"input-group-prepend\">\n                                <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الكلية  </b> </div>\n                              </div>\n                              <input  value=\"0\"  class=\"form-control\" readonly>\n                            </div>\n                          </div>   \n                        </div>\n                        \n                         <div  class=\"col-md-1\"></div>\n                      \n                      </div>\n         \n               </ng-template>\n           \n        \n         \n        </div>\n            <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                <h5 class=\"card-title text-center\">نسبة غياب المحاضرات التقليدية\n                  </h5>\n                   \n\n              <table *ngIf=\"absData.absent_percentage_actual_lectures.length>=0;else emptyArr2\" class=\"table\">\n                  <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">كود المقرر</th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">نسبة الغباب</th>\n  \n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of absData.absent_percentage_actual_lectures\">\n                        <td >{{it.CRN}}</td>\n                        <td >{{it.CRES_CODE}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.ABSENT_PERCENTAGE_FTF}}</td>\n                      </tr>\n                     \n                    </tbody>\n             \n                </table>\n                <ng-template #emptyArr2>\n                <div  class=\"row\">\n                    <div  class=\"col-md-1\"></div>\n                    <div class=\"col-md-10\">\n                      <div class=\"form-group\">\n                        \n                        <div class=\"input-group\">\n                          <div class=\"input-group-prepend\">\n                            <div class=\"input-group-text\"><b>نسبة غياب المحاضرات التقليدية  </b> </div>\n                          </div>\n                          <input  value=\"0\"  class=\"form-control\" readonly>\n                        </div>\n                      </div>   \n                    </div>\n                    \n                     <div  class=\"col-md-1\"></div>\n                  \n                  </div>\n                </ng-template>\n                      \n         </div>\n            <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                <h5 class=\"card-title text-center\">نسبة غياب المحاضرات الافتراضيه\n                  </h5>\n               \n                <table  class=\"table\" *ngIf=\"absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3\">\n                     <thead>\n                        <tr>\n                          <th scope=\"col\">CRN </th>\n                          <th scope=\"col\">كود المقرر</th>\n                          <th scope=\"col\">اسم المقرر</th>\n                          <th scope=\"col\">نسبة الغباب</th>\n    \n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor=\"let it of absData.absent_percentage_virtual_lectures\">\n                          <td >{{it.CRN}}</td>\n                          <td >{{it.CRES_CODE}}</td>\n                          <td>{{it.CRSE_TITLE}}</td>\n                          <td>{{it.ABSENT_PERCENTAGE_VERT}}</td>\n                        </tr>\n                       \n                      </tbody>\n                               </table>\n                  <br>\n                  <ng-template  #array3>\n                      <div class=\"row\">\n                          <div  class=\"col-md-1\"></div>\n                          <div class=\"col-md-10\">\n                            <div class=\"form-group\">\n                              \n                              <div class=\"input-group\">\n                                <div class=\"input-group-prepend\">\n                                  <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الافتراضيه  </b> </div>\n                                </div>\n                                <input  value=\"{{absData.absent_percentage_virtual_lectures}}\"  class=\"form-control\" readonly>\n                              </div>\n                            </div>   \n                          </div>\n                          \n                           <div  class=\"col-md-1\"></div>\n                        \n                        </div>\n                  </ng-template>\n                </div>\n                </div>\n        </div>\n                  \n    \n\n<br/>\n  <h3 class=\"text-center\">المحاضرات</h3>\n  <br/>\n  \n    \n          <table class=\"table\">\n              <thead>\n                <tr>\n                  <th scope=\"col\">رمز المقرر </th>\n                  <th scope=\"col\">اسم المقرر</th>\n                  <th scope=\"col\">نوع المحاضره</th>\n                  <th scope=\"col\">حالة الحضور</th>\n\n                </tr>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let it of absData.lectures\">\n                  <td >{{it.CODE}}</td>\n                  <td>{{it.TITLE}}</td>\n                  <td>{{it.TYPE}}</td>\n                  <td>{{it.STATUS}}</td>\n                </tr>\n               \n              </tbody>\n            </table>\n\n      \n            </div>\n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n                <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  Print</a>\n                <div class=\"col-md-4\"></div>\n              \n                </div>"
 
 /***/ }),
 
@@ -3462,6 +5458,7 @@ var AbsenceQueryComponent = /** @class */ (function () {
         var _this = this;
         this.academicService.getِAbsemceQuery().then(function (res) {
             _this.absData = res.data;
+            console.log(_this.absData.absent_percentage_total);
             _this.status = res.status;
         });
         this.arabicPrint = this.academicService.Download();
@@ -4154,6 +6151,127 @@ var RegisterHelpComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], RegisterHelpComponent);
     return RegisterHelpComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/components/timer/timer.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/shared/components/timer/timer.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NoYXJlZC9jb21wb25lbnRzL3RpbWVyL3RpbWVyLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/timer/timer.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/shared/components/timer/timer.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "{{timerText}}"
+
+/***/ }),
+
+/***/ "./src/app/shared/components/timer/timer.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/shared/components/timer/timer.component.ts ***!
+  \************************************************************/
+/*! exports provided: TimerComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimerComponent", function() { return TimerComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var TimerComponent = /** @class */ (function () {
+    function TimerComponent() {
+        this.timer = 100;
+        this.toHHMMSS = function (secs) {
+            var sec = parseInt(secs, 10);
+            var hours = Math.floor(sec / 3600);
+            var minutes = Math.floor(sec / 60) % 60;
+            var seconds = sec % 60;
+            return [hours, minutes, seconds]
+                .map(function (v) { return v < 10 ? '0' + v : v; })
+                .filter(function (v, i) { return v !== '00' || i > 0; })
+                .join(':');
+        };
+    }
+    TimerComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.timer = this.hr * 60 * 60;
+        setInterval(function () {
+            _this.timer = (_this.timer) - 1;
+            if (_this.timer > 0) {
+                _this.timerText = _this.toHHMMSS(_this.timer);
+            }
+            else {
+                _this.timerText = '0';
+            }
+        }, 1000);
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], TimerComponent.prototype, "hr", void 0);
+    TimerComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-timer',
+            template: __webpack_require__(/*! ./timer.component.html */ "./src/app/shared/components/timer/timer.component.html"),
+            styles: [__webpack_require__(/*! ./timer.component.css */ "./src/app/shared/components/timer/timer.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], TimerComponent);
+    return TimerComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/shared/directives/hr-minute.directive.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/shared/directives/hr-minute.directive.ts ***!
+  \**********************************************************/
+/*! exports provided: HrMinuteDirective */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HrMinuteDirective", function() { return HrMinuteDirective; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var HrMinuteDirective = /** @class */ (function () {
+    function HrMinuteDirective(el) {
+        this.el = el;
+    }
+    HrMinuteDirective.prototype.ngAfterViewInit = function () {
+        this.HrMin = 'Min';
+        this.el.nativeElement.innerText = this.hr * 10;
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
+    ], HrMinuteDirective.prototype, "hr", void 0);
+    HrMinuteDirective = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Directive"])({
+            selector: '[appHrMinute]',
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]])
+    ], HrMinuteDirective);
+    return HrMinuteDirective;
 }());
 
 
