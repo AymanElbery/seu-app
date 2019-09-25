@@ -1,0 +1,50 @@
+{
+  "data": {
+    "camps": [
+      {
+        "CAMP_CODE": "02M",
+        "CAMP_DESC": "Jeddah-Males"
+      },
+      {
+        "CAMP_CODE": "03M",
+        "CAMP_DESC": "Dammam-Males"
+      },
+      {
+        "CAMP_CODE": "04M",
+        "CAMP_DESC": "Medinah-Males"
+      },
+      {
+        "CAMP_CODE": "07M",
+        "CAMP_DESC": "Abha-Males"
+      }
+    ],
+    "reqs": [
+      {
+        "request_number": "1054",
+        "ACTIVE": "1",
+        "CAMP_TITLE": "«·„œÌ‰… ÿ·«»",
+        "insert_date": "2019-09-20",
+        "deletable": true,
+        "status": "«·ÿ·»  Õ  «·œ—«”…",
+        "APPROVAL_DATE": null
+      },
+      {
+        "request_number": "619",
+        "ACTIVE": "1",
+        "CAMP_TITLE": "Ãœ… ÿ·«»",
+        "insert_date": "2018-06-21",
+        "deletable": false,
+        "status": "«·ÿ·»  Õ  «·œ—«”…",
+        "APPROVAL_DATE": null
+      }
+    ],
+    "can_add_new_request": true
+  },
+  "messages": [
+    [
+      
+    ]
+  ],
+  "status": 1,
+  "result": ""
+}
