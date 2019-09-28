@@ -38,6 +38,7 @@ import { ReEnrollService } from './services/re-enroll.service';
 import { ChangeMajorComponent } from './change-major/change-major.component';
 import { ChangeMajorService } from './services/change-major.service';
 import { AddChangeMajorComponent } from './change-major/diag/add-change-major/add-change-major.component';
+import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -61,7 +62,8 @@ import { AddChangeMajorComponent } from './change-major/diag/add-change-major/ad
            AddEnglishEqualizerComponent,
            AddReEnrollComponent,
            ChangeMajorComponent,
-           AddChangeMajorComponent],
+           AddChangeMajorComponent,
+           AddRequestChangeComponent],
 
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
@@ -71,7 +73,8 @@ import { AddChangeMajorComponent } from './change-major/diag/add-change-major/ad
          AddCourseEqualizeComponent,
          AddEnglishEqualizerComponent,
          AddReEnrollComponent,
-         AddChangeMajorComponent
+         AddChangeMajorComponent,
+         AddRequestChangeComponent
       ],
 
   imports: [

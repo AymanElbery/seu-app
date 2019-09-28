@@ -30,8 +30,10 @@ export class ChangeMajorComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+
       }
     );
+
   }
 
   openDialoge() {
@@ -61,6 +63,7 @@ return    this.acadmicProc.Download(req);
   delete(id, index) {
     if ( confirm('هل انت متأكد')) {
     this.acadmicProc.deleteReq(id).then(res => {
+      console.log(id);
       this.toastr.success('', (res as any).messages.body);
 
     });

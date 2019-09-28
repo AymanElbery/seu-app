@@ -1,3 +1,49 @@
-<p>
-  change-request works!
-</p>
+<div style="text-align: right" *ngFor="let msg of msgs" class="alert alert-info" role="alert">
+  {{msg.body}}!
+</div>
+<div *ngIf="msg!=null" style="text-align: right"  class="alert alert-info" role="alert">
+    {{msg.body}}!
+  </div>
+<div style="direction: ltr;text-align: center">
+  
+  <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+  اضافة طلب
+</button>
+<br/>
+<br/>
+
+</div>
+<div>
+<table style="text-align: center" class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">الفرع المطلوب</th>
+
+      <th scope="col">تاريخ انشاء الطلب</th>
+
+      <th scope="col">تاريخ الرد</th>
+      <th scope="col">حالة الطلب</th>
+      <th scope="col">الاجراء</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let it of reqData.reqs;let i=index;">
+      <td>{{i+1}}</td>
+      <td>{{it.CAMP_TITLE}}</td>
+      <td>{{it.insert_date}}</td>
+
+
+      <td>{{it.APPROVAL_DATE}} </td>
+      <td>{{it.status}}</td>
+      
+
+      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class="btn btn-sm btn-danger" style="color: white"  (click)="delete(it.request_number,i)"><i  class="fa fa-trash"><app-timer [hr]="it.time_to_delete_per_hour"></app-timer></i> </button></td>
+
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+
