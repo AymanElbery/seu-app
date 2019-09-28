@@ -2,23 +2,24 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">طلب تغيير </h5>
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب تغيير فرع </h5>
         
       </div>
       <form #form="ngForm" autocomplete="off" (submit)="onSubmit()">
 
       <div class="modal-body">
 <!--drop down list-->
-<div style="text-align:right" >اختيار الوصف</div>
+<p style="text-align:center" >اختيار الفرع</p>
 
 <select class="form-control" #CampID="ngModel" id="selected_id" [(ngModel)]="cmp.camp"  name="Camp" [class.is-invalid]="cmp.camp == ''">
-  <option value=''>اختر  التخصص</option>
+  <option value=''>اختر  الفرع</option>
   <option *ngFor="let camp of camps" [value]="camp.CAMP_CODE">{{camp.CAMP_DESC}}</option>
 </select>
 
 <!--<mat-select >
   <mat-option *ngFor="let camp of reqData.camps" [value]="camp.CAMP_CODE">{{camp.CAMP_DESC}}</mat-option>
 </mat-select>-->
+<br>
   
  <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
       <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
