@@ -9,6 +9,7 @@ import { CourseEqualizeComponent } from './course-equalize/course-equalize.compo
 import { EnglishEqualizeComponent } from './english-equalize/english-equalize.component';
 import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component';
 import { ChangeMajorComponent } from './change-major/change-major.component';
+import { ChangeRequestComponent } from './change-request/change-request.component';
 
 const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivComponent },
 {
@@ -23,6 +24,7 @@ const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivCompone
   { path: 'eequalize',  component: EnglishEqualizeComponent },
   { path: 'reenrol',  component: ReEenrollmentComponent },
   { path: 'changemajor',  component: ChangeMajorComponent },
+  { path: 'changerequest',  component: ChangeRequestComponent }
 
 
 
