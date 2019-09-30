@@ -24,9 +24,11 @@ import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re
 import { ChangeMajorComponent } from './change-major/change-major.component';
 import { AddChangeMajorComponent } from './diag/add-change-major/add-change-major.component';
 import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component';
+import { ObjectExamComponent } from './object-exam/object-exam.component';
+import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-exam-object.component';
 
 @NgModule({
-  declarations: [PostponeRequestComponent, ExecuseRequestComponent, SummerWithdrawComponent, ReEenrollmentComponent, ExceptSemesterComponent, ChangeRequestComponent, CancelCourseComponent, WithdrawFromUnivComponent, AddRequestComponent, AddPostponeComponent, AddSummerWithdrawComponent, AddCancelCourseComponent, AddCourseCancelComponent, AddExecuseTermComponent, CourseEqualizeComponent, AddCourseEqualizeComponent, EnglishEqualizeComponent, AddEnglishEqualizerComponent, AddReEnrollComponent, ChangeMajorComponent, AddChangeMajorComponent, AddRequestChangeComponent],
+  declarations: [PostponeRequestComponent, ExecuseRequestComponent, SummerWithdrawComponent, ReEenrollmentComponent, ExceptSemesterComponent, ChangeRequestComponent, CancelCourseComponent, WithdrawFromUnivComponent, AddRequestComponent, AddPostponeComponent, AddSummerWithdrawComponent, AddCancelCourseComponent, AddCourseCancelComponent, AddExecuseTermComponent, CourseEqualizeComponent, AddCourseEqualizeComponent, EnglishEqualizeComponent, AddEnglishEqualizerComponent, AddReEnrollComponent, ChangeMajorComponent, AddChangeMajorComponent, AddRequestChangeComponent, ObjectExamComponent, AddExamObjectComponent],
   imports: [
     AcademicprocsRoutingModule,
     NativeScriptCommonModule

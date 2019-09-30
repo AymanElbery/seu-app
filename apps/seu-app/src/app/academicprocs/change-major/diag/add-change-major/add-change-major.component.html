@@ -13,7 +13,7 @@
           <div class="form-group">
              
                  <select name="major" #BranchID="ngModel" [(ngModel)]="mj.major" class="form-control" 
-            [class.is-invalid]="!isValid && mj.major==0">
+            [class.is-invalid]="mj.major==''">
               <option value="">اختر  التخصص</option>
               <option *ngFor="let item of reqData.majors" value="{{item.MAJOR_PK}}">{{item.MAJOR_TITLE}}</option>
             </select>

@@ -13,7 +13,7 @@ import { AddRequestChangeComponent } from './diag/add-request-change/add-request
 })
 export class ChangeRequestComponent implements OnInit {
 
-  printAR;
+  //printAR;
   //changeRequest: ChangeRequest;
   reqData;
   msgs;
@@ -28,6 +28,8 @@ export class ChangeRequestComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    //console.log(this.reqData.reqs);
+
     //console.log(this.reqData);
     //this.canAdd = this.reqData.can_add_new_request;
       }
@@ -61,15 +63,20 @@ this.addRequest(form.value);
 
     if ( confirm('هل انت متأكد')) {
     this.acadmicProc.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
+      this.msgs =   (res as any).messages;
 
+      this.msgs.forEach((element: any) => {
+        this.toastr.success('', element.body);
+    
+        });
     });
     this.acadmicProc.reqData.reqs.splice(index, 1);
 
   }
 
 }
-call(hr) {
+/* call(hr) {
 return  Math.floor(Math.random() * 10) + hr ;
 
-}}
+}*/
+}

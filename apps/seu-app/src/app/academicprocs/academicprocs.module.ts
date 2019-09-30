@@ -39,6 +39,8 @@ import { ChangeMajorComponent } from './change-major/change-major.component';
 import { ChangeMajorService } from './services/change-major.service';
 import { AddChangeMajorComponent } from './change-major/diag/add-change-major/add-change-major.component';
 import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component';
+import { ObjectExamComponent } from './object-exam/object-exam.component';
+import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-exam-object.component';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -63,7 +65,9 @@ import { AddRequestChangeComponent } from './change-request/diag/add-request-cha
            AddReEnrollComponent,
            ChangeMajorComponent,
            AddChangeMajorComponent,
-           AddRequestChangeComponent],
+           AddRequestChangeComponent,
+           ObjectExamComponent,
+           AddExamObjectComponent],
 
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
@@ -74,7 +78,8 @@ import { AddRequestChangeComponent } from './change-request/diag/add-request-cha
          AddEnglishEqualizerComponent,
          AddReEnrollComponent,
          AddChangeMajorComponent,
-         AddRequestChangeComponent
+         AddRequestChangeComponent,
+         AddExamObjectComponent
       ],
 
   imports: [

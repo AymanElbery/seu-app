@@ -1,0 +1,91 @@
+<mat-dialog-content>
+   
+     
+  <div class="modal-header">
+    <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">    اضافة اعتراض على احد الاختبارات </h5>
+    
+  </div>
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <div class="modal-body">
+      
+    <p style="text-align:center" >اختيار المنهج</p>
+
+    <table style="text-align: center" class="table">
+      <thead>
+        <tr>
+          <th scope="col">اسم المنهج </th>
+          <th scope="col">اسم المعلم  </th>
+
+          <th scope="col">   </th>
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let it of reqData.exams;let i=index;">
+          <td>{{it.CRSE_TITLE}}</td>
+         
+    
+          <td>    <input    name="teacherName"  class="form-control col-md-6"  [id]="i">
+          </td>
+         
+        
+          
+    
+          <td>
+              <input type="checkbox" name="chkCourse" (change)="changeStatus(it.CRN,$event,i)" #chkCourse  id="defaultUnchecked">
+         </td>
+    
+        </tr>
+        
+      </tbody>
+    </table>
+    
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"> أسباب الاعتراض</div>
+          </div>
+          <input name="reason" #reason="ngModel" [(ngModel)]="exam.reason" class="form-control" >
+        </div>
+        <br>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"> رقم الحساب</div>
+          </div>
+          <input   #accountNumber="ngModel" name="accountNumber" [(ngModel)]="exam.account_number"  class="form-control" type="text" id="example-number-input">
+        </div>
+        <br>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"> الضريبة</div>
+          </div>
+          <input   #feesAmount="ngModel" name="feesAmount" [(ngModel)]="exam.fees_amount" class="form-control"  type="text" id="example-number-input">
+        </div>
+      </div>
+     
+    </div>
+    
+    <!-- <select class="form-control" #bankIDD="ngModel" [(ngModel)]="exam.bank"  name="Bank" [class.is-invalid]="exam.bank == ''">
+      <option value=''>اختر  البنك</option>
+      <option *ngFor="let bank of reqData.banks" [value]="bank.key">{{bank.value}}</option>
+    </select> -->
+    
+
+
+    <br>
+        <div class="image-upload">
+            <input name="Url" type="file" accept="*/*" (change)="handleInputChange($event)" />
+        </div> 
+       
+      <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+                  <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+
+        <button  type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+      </div>
+      </div>
+    </form>
+
+    
+
+</mat-dialog-content>

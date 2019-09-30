@@ -40,6 +40,8 @@ private imageSrc = '';
     } else {
       this.curseEqual.courses.splice(i, 1);
     }
+    //console.log(this.curseEqual.courses);
+
   }
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -61,8 +63,10 @@ private imageSrc = '';
     reader.readAsDataURL(file);
   }
   _handleReaderLoaded2(e) {
+
     const reader = e.target;
     this.curseEqual.TRANSCRIPT_FILE = reader.result;
+
     console.log(this.curseEqual.TRANSCRIPT_FILE);
   }
   addRequest(data: any) {

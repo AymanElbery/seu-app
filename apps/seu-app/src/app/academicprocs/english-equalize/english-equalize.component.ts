@@ -61,8 +61,12 @@ return    this.acadmicProc.Download(req);
   delete(id, index) {
     if ( confirm('هل انت متأكد')) {
     this.acadmicProc.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
+      this.msgs =   (res as any).messages;
 
+      this.msgs.forEach((element: any) => {
+        this.toastr.success('', element.body);
+    
+        });
     });
     this.acadmicProc.reqData.reqs.splice(index, 1);
 

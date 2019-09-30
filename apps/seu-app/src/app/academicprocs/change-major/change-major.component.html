@@ -6,7 +6,7 @@
     </div>
   <div style="direction: ltr;text-align: center">
     
-    <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+    <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
     اضافة طلب
   </button>
   <br/>
@@ -37,7 +37,7 @@
         <td>{{it.REQ_PROG}}</td>
         
   
-        <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class="btn btn-sm btn-danger" style="color: white"  (click)="delete(it.request_number,i)"><i  class="fa fa-trash"><app-timer [hr]="it.time_to_delete_per_hour"></app-timer></i> </button></td>
+        <td><button [disabled]='!it.deletable'  class="btn btn-sm btn-danger" style="color: white"  (click)="delete(it.request_number,i)"><i  class="fa fa-trash"></i> </button></td>
   
       </tr>
       
