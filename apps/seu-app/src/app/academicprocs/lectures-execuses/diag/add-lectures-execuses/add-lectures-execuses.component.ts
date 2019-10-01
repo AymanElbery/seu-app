@@ -29,13 +29,20 @@ reqData;
     console.log(this.reqData);
 
   }
-  changeStatus(it, e, i) {
+  changeStatus(it, e) {
     if (e.target.checked) {
-      this.lectureExecuse.courses.push(it.CRN);
-      console.log(this.lectureExecuse.courses);
+      this.lectureExecuse.courses.push({CRSE:it.CRN});
     } else {
-      this.lectureExecuse.courses.splice(i, 1);
-    }
+      for(let i = 0 ; i<this.lectureExecuse.courses.length;i++)
+      {
+        console.log(this.lectureExecuse.courses[i]);
+        console.log(it.CRN);
+        if(this.lectureExecuse.courses[i].CRSE ==it.CRN)
+          this.lectureExecuse.courses.splice(i, 1);
+
+      }    }
+      console.log(this.lectureExecuse.courses);
+
   }
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
