@@ -21,18 +21,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let it of reqData.exams;let i=index;">
+        <tr *ngFor="let it of exam.exams;let i=index;">
           <td>{{it.CRSE_TITLE}}</td>
          
     
-          <td>    <input    name="teacherName"  class="form-control col-md-6"  [id]="i">
+          <td>    <input    name="teacherName"  class="form-control col-md-6"  #TeacherID="ngModel" [(ngModel)]="it.teacher"  name="Teacher" >
           </td>
          
         
           
     
           <td>
-              <input type="checkbox" name="chkCourse" (change)="changeStatus(it.CRN,$event,i)" #chkCourse  id="defaultUnchecked">
+              <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event)" #chkCourse  >
          </td>
     
         </tr>
@@ -40,6 +40,13 @@
       </tbody>
     </table>
     
+    <select class="form-control" #BankID="ngModel" [(ngModel)]="exam.bank"  name="Bank" [class.is-invalid]="exam.bank == -1">
+      <option value=-1>اختر  البنك</option>
+      <option *ngFor="let bank of reqData.banks" [value]="bank.id">{{bank.value}}</option>
+    </select>
+
+    <br>
+
     <div class="form-row">
       <div class="form-group col-md-12">
         <div class="input-group">
@@ -53,14 +60,14 @@
           <div class="input-group-prepend">
             <div class="input-group-text"> رقم الحساب</div>
           </div>
-          <input   #accountNumber="ngModel" name="accountNumber" [(ngModel)]="exam.account_number"  class="form-control" type="text" id="example-number-input">
+          <input   #accountNumber="ngModel" name="accountNumber" [(ngModel)]="exam.account_number"  class="form-control" type="text" >
         </div>
         <br>
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text"> الضريبة</div>
           </div>
-          <input   #feesAmount="ngModel" name="feesAmount" [(ngModel)]="exam.fees_amount" class="form-control"  type="text" id="example-number-input">
+          <input   #feesAmount="ngModel" name="feesAmount" [(ngModel)]="exam.fees_amount" class="form-control"  type="text" >
         </div>
       </div>
      

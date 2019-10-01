@@ -16,6 +16,7 @@ export class ObjectExamComponent implements OnInit {
   //changeRequest: ChangeRequest;
   reqData;
   msgs;
+  status;
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ObjectExamService) { }
 
   ngOnInit() {
@@ -60,13 +61,18 @@ export class ObjectExamComponent implements OnInit {
        
   //console.log((res as any).status);
   this.msgs =   (res as any).messages;
+  this.status =   (res as any).status;
+  //console.log(this.status);
 
   this.msgs.forEach((element: any) => {
     this.toastr.success('', element.body);
 
     });
+    if(this.status == 1)
+        this.acadmicProc.reqData.requests.splice(index, 1);
       });
-      this.acadmicProc.reqData.requests.splice(index, 1);
+      //console.log(this.status);
+      
   
     }
   

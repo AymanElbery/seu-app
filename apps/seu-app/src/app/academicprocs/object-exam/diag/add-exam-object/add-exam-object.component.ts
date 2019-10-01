@@ -16,11 +16,11 @@ export class AddExamObjectComponent implements OnInit {
 reqData: any;
 exam:ObjectExam;
 msgs: any;
-exams;
+//exams;
 //courses:[];
 //teacherName:string;
 //choosedCode:string;
-private imageSrc = '';
+//private imageSrc = '';
 
   constructor( @Inject(MAT_DIALOG_DATA) public data,
                public dialogRef: MatDialogRef<AddExamObjectComponent>,
@@ -29,16 +29,17 @@ private imageSrc = '';
   ngOnInit() {
     //this.changeRequest = {camp: []};
     //this.exam = {camp:''};
-    this.exam = {courses:[],bank : -1, reason:"",account_number:"",fees_amount:"",attachment:""};
+    this.exam = {courses:[],exams:[],bank : -1, reason:"",account_number:"",fees_amount:"",attachment:""};
     this.acadmicProc.getgetRequests().then(
       res => {
         this.acadmicProc.reqData =    (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
-
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
+        this.exam.exams=this.acadmicProc.reqData.exams;
+
         //this.canAdd = this.reqData.can_add_new_request;
-        this.exams=this.reqData.exams;
+        //this.exams=this.reqData.exams;
         //console.log(this.reqData.banks[0]);
       }
         );
@@ -46,12 +47,15 @@ private imageSrc = '';
       }
 
   addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(  res => {
+
+    data.bank = parseInt(data.bank);
+   this.acadmicProc.AddRequest(data).then(  res => {
    this.msgs =   (res as any).messages;
    this.msgs.forEach((element: any) => {
     this.toastr.success('', element.body);
 
     });
+    console.log(data);
         });
 
     //this.cmp = {camp:''};
@@ -78,19 +82,27 @@ private imageSrc = '';
     this.dialogRef.close();
   }
 
-  changeStatus(CourseId:string,e,index:number)
+  changeStatus(item,e)
   {
-    console.log(index);
+   //console.log(index);
     if (e.target.checked) {
-      let teacherName = (document.getElementById(index.toString()) as HTMLInputElement).value;
-      let teacherNameV2 = (teacherName==undefined)?"":teacherName;
-      this.exam.courses.push({CRSE:parseInt(CourseId),teacher:teacherNameV2});
+      console.log(item);
+      //let teacherName = item.teacher;
+      this.exam.courses.push({CRSE:parseInt(item.CRN),teacher:item.teacher});
       
     } else {
-      this.exam.courses.splice(index, 1);
-      console.log(22);
+     // let id = e.target.getAttribute('data-CheckBoxId');
+      //console.log(e.target);
+      for(let i = 0 ; i<this.exam.courses.length;i++)
+      {
+        if(this.exam.courses[i].CRSE ==item.CRN)
+          this.exam.courses.splice(i, 1);
+
+      }
+      //this.exam.courses.splice(index, 1);
+      //console.log(22);
     }
-    console.log(this.exam.courses);
+   // console.log(this.exam.courses);
 
   }
 

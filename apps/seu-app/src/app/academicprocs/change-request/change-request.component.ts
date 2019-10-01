@@ -17,6 +17,7 @@ export class ChangeRequestComponent implements OnInit {
   //changeRequest: ChangeRequest;
   reqData;
   msgs;
+  status;
   //canAdd:boolean;
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ChangeRequestService) { }
 
@@ -65,12 +66,15 @@ this.addRequest(form.value);
     this.acadmicProc.deleteReq(id).then(res => {
       this.msgs =   (res as any).messages;
 
+      this.status =   (res as any).status;
+
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
     
         });
+        if(this.status == 1)
+          this.acadmicProc.reqData.requests.splice(index, 1);
     });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
 
   }
 
