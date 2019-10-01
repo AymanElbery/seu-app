@@ -1,0 +1,85 @@
+<!-- Modal -->
+<mat-dialog-content>
+    
+  <div class="modal-header">
+    <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">   معادلة مقررات</h5>
+    
+  </div>
+  <div class="modal-body">
+    <P class="text-center">---  </P>
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+      
+    <div class="form-group">
+       
+           <select name="week" #week="ngModel" [(ngModel)]="lectureExecuse.week" class="form-control" 
+      [class.is-invalid]=" lectureExecuse.week==''">
+        <option value="">الاسبوع  </option>
+        <option *ngFor="let item of reqData.weeks_list" value="{{item.id}}">{{item.value}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+       
+      <select name="reason" #reason="ngModel" [(ngModel)]="lectureExecuse.reason" class="form-control" 
+ [class.is-invalid]=" lectureExecuse.reason==''">
+   <option value="">العذر  </option>
+   <option *ngFor="let item of reqData.text_list" value="{{item.text1}}">{{item.text1}}</option>
+ </select>
+    </div>
+    <div class="form-group">
+ <select name="type" #type="ngModel" [(ngModel)]="lectureExecuse.type" class="form-control" 
+ [class.is-invalid]=" lectureExecuse.reason==''">
+   <option value="">نوع المحاضره  </option>
+   <option *ngFor="let item of reqData.lectures_type" value="{{item.id}}">{{item.value}}</option>
+ </select>
+    </div>
+    <div class="form-group">
+ <input class="form-control" name="date"  #date="ngModel" [(ngModel)]="lectureExecuse.date"   type="date" style="direction: rtl;text-align:right">
+</div>
+    <table style="text-align: center" class="table">
+        <thead>
+          <tr>
+              <th scope="col">crn  </th>
+
+            <th scope="col">اسم المقرر </th>
+    
+
+            <th scope="col">   </th>
+      
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let it of reqData.schedules;let i=index;">
+              <td>{{it.CRN}}</td>
+
+            <td>{{it.CRSE_TITLE}}</td>
+           
+      
+           
+           
+            
+      
+            <td>
+                <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event,i)" #chkCourse  id="defaultUnchecked">
+           </td>
+      
+          </tr>
+          
+        </tbody>
+      </table>
+      <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text">ملف  </div>
+          </div>
+          <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)" />
+      </div> 
+     
+    <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+                <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+
+      <button  type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+    </div>
+  </form>
+  </div>
+  
+
+</mat-dialog-content>

@@ -39,6 +39,11 @@ import { ChangeMajorComponent } from './change-major/change-major.component';
 import { ChangeMajorService } from './services/change-major.service';
 import { AddChangeMajorComponent } from './change-major/diag/add-change-major/add-change-major.component';
 import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component';
+import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
+import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
+import { LectureExecuseServiceService } from './services/lecture-execuse-service.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -63,7 +68,9 @@ import { AddRequestChangeComponent } from './change-request/diag/add-request-cha
            AddReEnrollComponent,
            ChangeMajorComponent,
            AddChangeMajorComponent,
-           AddRequestChangeComponent],
+           AddRequestChangeComponent,
+           LecturesExecusesComponent,
+           AddLecturesExecusesComponent],
 
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
@@ -74,7 +81,8 @@ import { AddRequestChangeComponent } from './change-request/diag/add-request-cha
          AddEnglishEqualizerComponent,
          AddReEnrollComponent,
          AddChangeMajorComponent,
-         AddRequestChangeComponent
+         AddRequestChangeComponent,
+         AddLecturesExecusesComponent
       ],
 
   imports: [
@@ -83,6 +91,8 @@ import { AddRequestChangeComponent } from './change-request/diag/add-request-cha
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatDatepickerModule,
+     MatNativeDateModule,
     ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [WithdrawFromUnivService,
@@ -93,7 +103,8 @@ import { AddRequestChangeComponent } from './change-request/diag/add-request-cha
       CourseEqualizerService,
       EnglishEqualizerService,
       ReEnrollService,
-      ChangeMajorService
+      ChangeMajorService,
+      LectureExecuseServiceService
   ]
 
 })

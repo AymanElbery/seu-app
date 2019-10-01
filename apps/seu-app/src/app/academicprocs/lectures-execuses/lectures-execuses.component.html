@@ -1,0 +1,60 @@
+
+<div style="text-align: right" *ngFor="let msg of msgs" class="alert alert-info" role="alert">
+  {{msg.body}}!
+</div>
+<div *ngIf="msg!=null" style="text-align: right"  class="alert alert-info" role="alert">
+    {{msg.body}}!
+  </div>
+<div style="direction: ltr;text-align: center">
+  
+  <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+  اضافة طلب
+</button>
+<br/>
+<br/>
+
+</div>
+<div>
+<table style="text-align: center" class="table">
+  <thead>
+    <tr>
+      <th scope="col">رقم الطلب</th>
+
+      <th scope="col"> CRN</th>
+      <th scope="col"> المقرر </th>
+      <th scope="col">  انشاء الطلب </th>
+      <th scope="col"> تاريخ الغياب  </th>
+
+      <th scope="col">  اسبوع الغياب</th>
+      <th scope="col">   نوع المحاضره</th>
+      <th scope="col">   حالة الطلب </th>
+      <th scope="col">    ملف العذر </th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let it of reqData.requests;let i=index;">
+      <td>{{it.request_number}}</td>
+      <td>{{it.courseId}}</td>
+      <td>{{it.course_title}}</td>
+      <td>{{it.insert_date}}</td>
+
+      <td>{{it.absance_date}}</td>
+      <td>{{it.week}}</td>
+
+      <td>{{it.class_type}}</td>
+
+
+
+      <td>{{it.status}}</td>
+
+      <td><a class="btn btn-primary" [href]="print(it.request_number)" ><span class="glyphicon glyphicon-print"></span>
+        Print</a></td>
+
+
+    </tr>
+    
+  </tbody>
+</table>
+</div>
