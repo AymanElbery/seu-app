@@ -21,6 +21,7 @@ export class WithdrawFromUnivComponent implements OnInit {
   withdraw: UnivWithdraw;
   reqData;
   msgs;
+  status;
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: WithdrawFromUnivService) { }
 
   ngOnInit() {
@@ -31,6 +32,7 @@ export class WithdrawFromUnivComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    //console.log(this.reqData.reqs);
       }
     );
   }
@@ -62,11 +64,17 @@ return    this.acadmicProc.Download(req);
   delete(id, index) {
     if ( confirm('هل انت متأكد')) {
     this.acadmicProc.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
+      this.msgs =   (res as any).messages;
 
+      this.status =   (res as any).status;
+
+      this.msgs.forEach((element: any) => {
+        this.toastr.success('', element.body);
+    
+        });
+        if(this.status == 1)
+          this.acadmicProc.reqData.requests.splice(index, 1);
     });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
-
   }
 
 }

@@ -30,14 +30,21 @@ private imageSrc = '';
     this.reqData = this.acadmicProc.reqData;
 
   }
-  changeStatus(it, e, i) {
+  changeStatus(it, e) {
     if (e.target.checked) {
       it.test = it.TEST_PK;
       this.englishEqual.tests.push(it);
       console.log(this.englishEqual.tests);
     } else {
-      this.englishEqual.tests.splice(i, 1);
+      for(let i = 0 ; i<this.englishEqual.tests.length;i++)
+      {
+        if(this.englishEqual.tests[i].test ==it.test)
+          this.englishEqual.tests.splice(i, 1);
+
+      }
     }
+    //console.log(this.englishEqual.tests);
+
   }
 
   addRequest(data: any) {

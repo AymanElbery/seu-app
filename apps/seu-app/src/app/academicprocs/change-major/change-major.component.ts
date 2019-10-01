@@ -20,6 +20,7 @@ export class ChangeMajorComponent implements OnInit {
   cancelCousre: CancelCousre;
   reqData;
   msgs;
+  status;
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ChangeMajorService) { }
 
   ngOnInit() {
@@ -30,6 +31,7 @@ export class ChangeMajorComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    //console.log(this.reqData.reqs);
 
       }
     );
@@ -64,11 +66,17 @@ return    this.acadmicProc.Download(req);
     if ( confirm('هل انت متأكد')) {
     this.acadmicProc.deleteReq(id).then(res => {
       console.log(id);
-      this.toastr.success('', (res as any).messages.body);
+      this.msgs =   (res as any).messages;
 
+      this.status =   (res as any).status;
+
+      this.msgs.forEach((element: any) => {
+        this.toastr.success('', element.body);
+    
+        });
+        if(this.status == 1)
+          this.acadmicProc.reqData.requests.splice(index, 1);
     });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
-
   }
 
 }

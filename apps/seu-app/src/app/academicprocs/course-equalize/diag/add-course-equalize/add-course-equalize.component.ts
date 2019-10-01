@@ -32,14 +32,22 @@ private imageSrc = '';
     this.reqData = this.acadmicProc.reqData as CourseEqual ;
 
   }
-  changeStatus(it, e, i) {
+  changeStatus(it, e) {
     if (e.target.checked) {
+      console.log(it);
       it.TRNS_CRSE = it.CRSE_PK;
       this.curseEqual.courses.push(it);
-      console.log(this.curseEqual.courses);
+      console.log(this.curseEqual.courses[0]);
     } else {
-      this.curseEqual.courses.splice(i, 1);
+      for(let i = 0 ; i<this.curseEqual.courses.length;i++)
+      {
+        if(this.curseEqual.courses[i].TRNS_CRSE ==it.TRNS_CRSE)
+          this.curseEqual.courses.splice(i, 1);
+
+      }
     }
+    console.log(this.curseEqual.courses);
+
   }
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -61,8 +69,10 @@ private imageSrc = '';
     reader.readAsDataURL(file);
   }
   _handleReaderLoaded2(e) {
+
     const reader = e.target;
     this.curseEqual.TRANSCRIPT_FILE = reader.result;
+
     console.log(this.curseEqual.TRANSCRIPT_FILE);
   }
   addRequest(data: any) {

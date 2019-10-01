@@ -11,7 +11,7 @@
 <!--drop down list-->
 <p style="text-align:center" >اختيار الفرع</p>
 
-<select class="form-control" #CampID="ngModel" id="selected_id" [(ngModel)]="cmp.camp"  name="Camp" [class.is-invalid]="cmp.camp == ''">
+<select class="form-control" #CampID="ngModel" [(ngModel)]="cmp.camp"  name="Camp" [class.is-invalid]="cmp.camp == ''">
   <option value=''>اختر  الفرع</option>
   <option *ngFor="let camp of camps" [value]="camp.CAMP_CODE">{{camp.CAMP_DESC}}</option>
 </select>

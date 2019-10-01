@@ -28,7 +28,7 @@ import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses
 import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
 
 @NgModule({
-  declarations: [PostponeRequestComponent, ExecuseRequestComponent, SummerWithdrawComponent, ReEenrollmentComponent, ExceptSemesterComponent, ChangeRequestComponent, CancelCourseComponent, WithdrawFromUnivComponent, AddRequestComponent, AddPostponeComponent, AddSummerWithdrawComponent, AddCancelCourseComponent, AddCourseCancelComponent, AddExecuseTermComponent, CourseEqualizeComponent, AddCourseEqualizeComponent, EnglishEqualizeComponent, AddEnglishEqualizerComponent, AddReEnrollComponent, ChangeMajorComponent, AddChangeMajorComponent, AddRequestChangeComponent, LecturesExecusesComponent, AddLecturesExecusesComponent],
+
   imports: [
     AcademicprocsRoutingModule,
     NativeScriptCommonModule

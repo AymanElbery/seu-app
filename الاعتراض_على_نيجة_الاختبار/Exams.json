@@ -1,0 +1,57 @@
+{
+  "data": {
+    "requests": [
+      {
+        "request_number": "621",
+        "courseId": "11318",
+        "course_title": "Multimedia Systems Development",
+        "deletable": true,
+        "insert_date": "2019-09-29 05:30:41 PM",
+        "status": "الطلب تحت الدراسة"
+      },
+      {
+        "request_number": "620",
+        "courseId": "11319",
+        "course_title": "IT Security and Policies",
+        "deletable": true,
+        "insert_date": "2019-09-29 04:56:52 PM",
+        "status": "الطلب تحت الدراسة"
+      }
+    ],
+    "exams": [
+      {
+        "CRN": "10738",
+        "CRSE_TITLE": "Islamic culture (4)"
+      },
+      {
+        "CRN": "12146",
+        "CRSE_TITLE": "Commercial contracts and opera"
+      },
+      {
+        "CRN": "12150",
+        "CRSE_TITLE": "Special criminal law"
+      },
+      {
+        "CRN": "12148",
+        "CRSE_TITLE": "Property and financial law"
+      },
+      {
+        "CRN": "12149",
+        "CRSE_TITLE": "Family Law"
+      },
+      {
+        "CRN": "12147",
+        "CRSE_TITLE": "Bank Guarantees and Letters of"
+      }
+    ],
+    "can_add_new_request": false
+  },
+  "messages": [
+    {
+      "body": "الخدمة مغلقة",
+      "type": "info"
+    }
+  ],
+  "status": 1,
+  "result": ""
+}

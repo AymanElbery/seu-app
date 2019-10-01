@@ -18,6 +18,7 @@ export class PostponeRequestComponent implements OnInit {
   reason: string;
   reqData;
   msgs;
+  status;
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: TermPostponeService) { }
 
   ngOnInit() {
@@ -60,10 +61,17 @@ return    this.acadmicProc.Download(req);
   delete(id, index) {
     if ( confirm('هل انت متأكد')) {
     this.acadmicProc.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
+      this.msgs =   (res as any).messages;
 
+      this.status =   (res as any).status;
+
+      this.msgs.forEach((element: any) => {
+        this.toastr.success('', element.body);
+    
+        });
+        if(this.status == 1)
+          this.acadmicProc.reqData.requests.splice(index, 1);
     });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
 
   }
 

@@ -40,7 +40,9 @@ import { ChangeMajorService } from './services/change-major.service';
 import { AddChangeMajorComponent } from './change-major/diag/add-change-major/add-change-major.component';
 import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
+import { ObjectExamComponent } from './object-exam/object-exam.component';
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
+import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-exam-object.component';
 import { LectureExecuseServiceService } from './services/lecture-execuse-service.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -68,9 +70,12 @@ import { MatNativeDateModule } from '@angular/material/core';
            AddReEnrollComponent,
            ChangeMajorComponent,
            AddChangeMajorComponent,
+
            AddRequestChangeComponent,
            LecturesExecusesComponent,
-           AddLecturesExecusesComponent],
+           ObjectExamComponent,
+           AddLecturesExecusesComponent,
+           AddExamObjectComponent],
 
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
@@ -82,7 +87,8 @@ import { MatNativeDateModule } from '@angular/material/core';
          AddReEnrollComponent,
          AddChangeMajorComponent,
          AddRequestChangeComponent,
-         AddLecturesExecusesComponent
+         AddLecturesExecusesComponent,
+         AddExamObjectComponent
       ],
 
   imports: [
