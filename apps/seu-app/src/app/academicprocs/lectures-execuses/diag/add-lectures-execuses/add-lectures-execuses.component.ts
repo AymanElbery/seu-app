@@ -31,17 +31,17 @@ reqData;
   }
   changeStatus(it, e) {
     if (e.target.checked) {
-      this.lectureExecuse.courses.push({CRSE:it.CRN});
+      this.lectureExecuse.courses.push({CRSE: it.CRN});
     } else {
-      for(let i = 0 ; i<this.lectureExecuse.courses.length;i++)
-      {
+      for (let i = 0 ; i < this.lectureExecuse.courses.length; i++) {
         console.log(this.lectureExecuse.courses[i]);
         console.log(it.CRN);
-        if(this.lectureExecuse.courses[i].CRSE ==it.CRN)
+        if (this.lectureExecuse.courses[i].CRSE === it.CRN) {
           this.lectureExecuse.courses.splice(i, 1);
+        }
 
       }    }
-      console.log(this.lectureExecuse.courses);
+    console.log(this.lectureExecuse.courses);
 
   }
   handleInputChange(e) {

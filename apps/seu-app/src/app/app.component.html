@@ -1,11 +1,32 @@
-<div >
+<main role="main"  >
+<div class="wrapper">
 <app-header></app-header>
+<div class="page-wrap">
 
+<app-menu></app-menu>
 <div  [class.isPrinting]="printService.isPrinting"  class="container-fluid"> 
 	
 	<router-outlet></router-outlet>
 	<router-outlet name="print"></router-outlet>
 
 </div>
- 
 </div>
+ <app-footer></app-footer>
+          
+</div>
+   
+
+<!-- Main jumbotron for a primary marketing message or call to action 
+<div   class="jumbotron">
+  <div class="container">
+	<h1 class="display-3"> </h1>
+	<p>This demo shows  flow using Angular and ASP.NET Core 3.0 WebApi</p>
+	<p><a class="btn btn-primary btn-lg" href="#" role="button" routerLink="/register">تسجيل مستخدم جديد</a>
+	  
+	  <a class="btn btn-primary btn-lg" href="#" role="button" routerLink="/login">تسجيل دخول  </a>       
+	  <button class="btn btn-primary btn-lg" href="#" role="button"  (click)="onPrintFile()"> طباعة  </button></p>       
+
+	</div>
+</div> -->
+
+</main>

@@ -23,6 +23,9 @@ import { AcademicaffModule } from './academicaff/academicaff.module.tns';
 import { PrintLayoutComponent } from './PrintExample/print-layout/print-layout.component';
 import { PrintFileComponent } from './PrintExample/print-file/print-file.component';
 import { TimerComponent } from './shared/components/timer/timer.component';
+import { FooterComponent } from './footer/footer.component';
+import { MenuComponent } from './menu/menu.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { TimerComponent } from './shared/components/timer/timer.component';
     PrintLayoutComponent,
     PrintFileComponent,
     TimerComponent,
+    FooterComponent,
+    MenuComponent,
+    PageHeaderComponent,
   ],
   imports: [
     NativeScriptModule,

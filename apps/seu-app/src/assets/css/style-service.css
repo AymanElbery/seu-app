@@ -5,14 +5,15 @@
 body { font-family: 'Changa', sans-serif; letter-spacing: .6px }
 
 .wrapper .page-wrap .app-sidebar .sidebar-content .nav-container .navigation-main .nav-item a span {
-    font-size: 13px;
+    font-size: 12px;
 }
 .widget .widget-header .widget-title {
     font-size: 18px;
     
     text-align: center;
 }
-.widget{ overflow: visible; margin-top: -10px}
+.widget{ overflow: visible; margin-top: -10px ; background: none;     border-radius: 8px;
+}
 .widget .widget-body {
     padding: 0px; padding-bottom: 5px; 
 }
@@ -20,8 +21,10 @@ body { font-family: 'Changa', sans-serif; letter-spacing: .6px }
     padding: 10px 20px;
     border-bottom:0;
     position: relative;
-    background: #1c2172;
-    color: #fff;
+    background: #e6e6e6;
+    color: #1c2172;
+    border-radius: 8px 8px 0 0;
+
 }
 .widget .widget-header .widget-tools .btn-widget-tool {
     padding: 12px 5px;
@@ -113,17 +116,24 @@ body { font-family: 'Changa', sans-serif; letter-spacing: .6px }
     color: #fff;
 }
 
+.wrapper .page-wrap .app-sidebar{box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 2px 5px rgba(0, 0, 0, 0.1);}
+
 .wrapper .page-wrap .app-sidebar.colored .sidebar-header .header-brand {
     color: #000440;
     font-size: 15px;
     font-weight: 600;
 }
 .wrapper .page-wrap .app-sidebar.colored .sidebar-content {
-    background-color: #000440;
+    background-color: #e4e4e4;
 }
 .wrapper .page-wrap .app-sidebar.colored .sidebar-header {
-    background-color: #ffffff;
-    text-align: center
+    background-color: #e4e4e4;
+    text-align: center;
+    border-bottom: 2px solid #cecece;
+}
+
+.wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item a {
+    color: #1c2172;
 }
 
 .wrapper .page-wrap .app-sidebar .sidebar-content .nav-container .navigation-main .nav-lavel {
@@ -135,7 +145,7 @@ body { font-family: 'Changa', sans-serif; letter-spacing: .6px }
     visibility: visible;
     width: 100%;
      color: #f28d1e;
-    background: #000329;
+    background: #cecece;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -147,7 +157,7 @@ body { font-family: 'Changa', sans-serif; letter-spacing: .6px }
 }
 .card  {
     box-shadow:none;
-    margin-bottom: 10px
+    margin-bottom: 10px; background: none;
 }
 .card .card-body {
  padding: 10px 20px;
@@ -288,7 +298,7 @@ select.form-control {
     font-size: 14px;
 }
 .wrapper .header-top {
-    background-color: #f28d1e;
+    background-color: #fff;
     padding-top: 7px;    padding-bottom: 7px;
 
    
@@ -301,11 +311,11 @@ select.form-control {
     width: 100%;
 }
 .wrapper .page-wrap .app-sidebar .sidebar-header {
-    padding: 5px 0px;
+    padding: 5px 8px;
     height: 64px;
 }
 .wrapper .page-wrap .app-sidebar .sidebar-header .header-brand .logo-img img {
-    width: 235px;
+    width: 230px;
 }
 .wrapper .header-top .top-menu .avatar {
    
@@ -387,7 +397,8 @@ a.social{    color: #000440;
     font-size: 16px; color:#000440; margin-left: 3px
 }
 .wrapper .header-top .top-menu a.pub-ser  {
-    font-size: 13px; color:#000440;
+    font-size: 11px; color:#000440;     line-height: 3.7;
+
 }
 div.pub-ser2{ padding: 0}
 .wrapper .header-top .top-menu .dropdown .dropdown-menu.menu-grid .dropdown-item {
@@ -408,17 +419,184 @@ div.pub-ser2{ padding: 0}
     color: #f28d1e;
 }
 .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item .submenu-content {
-    background-color: #01032b;
+    background-color: #ececec;
 }
-table h6 { margin: 0}
-table tr:nth-of-type(even){background: #1c2172; color:#fff }
 
+.table th, .table td {
+}
+.wrapper .page-wrap .app-sidebar .sidebar-content .nav-container .navigation-main .nav-item.has-sub .submenu-content .menu-item {
+    padding: 10px 5px;
+    font-size: 11px;
+    padding-right: 34px;
+    margin: 0;
+}
 
-table a {color: #fff}
-table a:hover {color: #f28d1e}
-.table-e, .table-e>tbody>tr>td, .table-e>tbody>tr>th, .table-e>tfoot>tr>td, .table-e>tfoot>tr>th, .table-e>thead>tr>td, .table-e>thead>tr>th {
-    border: 1px solid #000440;
+.wrapper .header-top .top-menu .dropdown .dropdown-menu.menu-grid {
+    width: 350px;
+}
+.wrapper .header-top .top-menu .dropdown .dropdown-menu.menu-grid p{
+font-size: 12px;
+    color: #ffffff;
+    margin-bottom: 0px;
+    padding: 8px 10px;
+    background: #1c2172;
+}
+.wrapper .header-top .top-menu .dropdown .dropdown-menu.menu-grid ul{
+    color: #1c2172;
+    margin-bottom: 0px;
+    direction: rtl; 
+    list-style: none;}
+.wrapper .header-top .top-menu .dropdown .dropdown-menu.menu-grid ul .bg-danger
+{
+    padding: 7px 6px ; font-size: 9px;
+    float: left; background-color: #f28d1e !important
+        
+}
+.list-group-item {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding:  10px;
+}
+
+.list-group-item:first-child {
+     border-radius: 0; 
+}
+.list-group-item.active {
+    z-index: 2;
+    color: #1c2172;
+    background-color: #eeeff3;
+    border-color: #eeeff3;
+}
+.new-ser{ text-align: center; padding: 14px; 0;  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.07) !important;   transition: all 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+ }
+.new-ser:hover{box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.09) !important;   transition: all 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+ }
+.new-ser i { font-size: 20px ; color:#f28d1e }
+.new-ser a{ font-size: 14px ; color:#1c2172 }
+.new-ser p{ margin: 0 }
+.pb-30 {
+    padding-bottom: 28px !important;
+}
+.wrapper .page-wrap .footer {
+    background: #222a3e;
+    padding: 15px 0px;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    font-size: 13px;
+     color:#fff; 
     text-align: center;
-    padding: 15px;
-    font-weight: 600;
 }
+
+
+.service-single
+ {
+  width: 100%;
+  height: 23vh;
+  background: url(../images/ser.jpg) top center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+       background-position: 100% 445px;
+}
+
+.service-single:before {
+  content: "";
+  background-image: linear-gradient(-90deg, rgba(6, 12, 34, .9), rgba(6, 12, 34, 0.8));
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+
+}
+
+
+.service-single h3 {
+    color: #fff;
+    font-size: 17px;
+    position: relative;
+    line-height: 1.7;
+    letter-spacing: 1px;
+    margin-top: 10px
+    
+}
+.service-single p {
+    color: #f28d1e;
+    font-size: 11px;
+    line-height: 1.7;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+.service-single .ik {
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.7;
+    margin-left: 10px
+}
+.service-single span {
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-left: 10px;
+    text-align: right
+        
+    
+}
+.service-single .badge {
+    background: #f28d1e;
+    padding: 1px 6px
+    
+}
+.prin .btn {border-radius: 10px; margin-left: 20px; background: #1c2172; border-color:#1c2172}
+.prin .btn:hover {border-radius: 5px; color: #fff;}
+
+.ser-block { margin-bottom: 15px}
+.ser-state{ margin: 25px 0}
+
+ .state { box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05); padding: 8px 12px 4px  }
+
+ .state h6 { color: #f28d1e; font-size: 11px; margin-bottom: 5px;  }
+ .state h5 { color: #1c2172; font-size: 13px }
+
+.bg-info {
+    background-color: #f28d1e !important;
+}
+.progress-sm .progress-bar {
+    height: .2rem;
+}
+.progress{background: none; border-radius: 0}
+
+select.form-control {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 20px;
+    background-image: url(../images/down-arrow.svg);
+    background-position: center left 15px;
+    height: 35px !important;
+}
+.form-group {
+    color: #1c2172;
+    font-size: 11px;
+    margin-bottom: 0
+}
+.form-control{
+border: 1px solid #e6e6e6;
+}
+.descr{text-align: left}
+.ser-state p { text-align: center; color: #1c2172}
+
+.stu-name{text-align: center; margin: 20px auto; background:#e6e6e6 ; border-radius: 8px; }
+.stu-name h5  {color: #1c2172; font-size: 13px ; margin-bottom: 3px }
+.stu-name h5 span{color: #f28d1e; font-size: 12px; }
+
+.accordion .btn-block{ border-radius:8px 8px 0 0;background: #e6e6e6; color: #1c2172 ; border-color: #e6e6e6}
+.accordion .btn-block:hover{ border-radius: 4px; color: #f28d1e ; text-decoration: none}
+.accordion .btn-block:focus{ text-decoration: none}
+.card .card-header {
+    border-bottom:0;
+}
+.accordion .collapse .back{ box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.07) !important; border-radius: 0 0 8px 8px ; margin-top: -14px; padding: 10px  }
