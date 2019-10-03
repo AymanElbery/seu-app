@@ -1,281 +1,232 @@
-
-<div class="jumbotron jumbtron-fluid">
-    <h3 class="display-5 text-center">  الحالة الاكاديمية</h3>
-    <div class="row">
-  <div  class="col-md-1"></div>
-  <div class="col-md-5">
-    <div class="form-group">
-      
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text"><b>اسم الطالب</b> </div>
-        </div>
-        <input  value="{{student.name}}"  class="form-control" readonly>
-      </div>
-    </div>   
-  </div>
-
-  <div class="col-md-5">
-
-      <div class="form-group">
-      
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><b>الرقم الجامعي </b> </div>
-            </div>
-            <input name="studentNo"  value="{{student.std_id}}"   class="form-control" readonly>
-          </div>
-        </div>   
-    </div>  <div  class="col-md-1"></div>
-
-</div>
-<div class="row">
-    <div  class="col-md-1"></div>
-
-    <div class="col-md-5">
-      <div class="form-group">
-        
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text"><b>رقم الهويه </b> </div>
-          </div>
-          <input name="ID"   value="{{student.ssn}}"  class="form-control" readonly>
-        </div>
-      </div>   
-    </div>
-    <div class="col-md-5">
-  
-        <div class="form-group">
-        
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text"><b> فصل القبول </b> </div>
-              </div>
-              <input name="fsermester"  value="{{student.std_adm_term_label}}"   class="form-control" readonly>
-            </div>
-          </div>   
-      </div>  <div  class="col-md-1"></div>
-
-  </div>
-  
-  <div class="row">
-      <div  class="col-md-1"></div>
-
-      <div class="col-md-5">
-        <div class="form-group">
-          
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><b>الحالة الاكاديمية الحاليه </b> </div>
-            </div>
-            <input name="accamdeicStatus"   value="{{student.current_acadimic_status_label}}"  class="form-control" readonly>
-          </div>
-        </div>   
-      </div>
-      <div class="col-md-5">
-    
-          <div class="form-group">
-          
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"><b>المعدل التراكمي النهائي  </b> </div>
-                </div>
-                <input name="TotalGrade"  value="{{student.final_graduation_GPA}}"   class="form-control" readonly>
-              </div>
-            </div>   
-        </div>
-        <div  class="col-md-1"></div>
-
-    </div>
-    
-    <div class="row">
-        <div  class="col-md-1"></div>
-
-        <div class="col-md-5">
-          <div class="form-group">
-            
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text"><b>الوضع الاكاديمي </b> </div>
-              </div>
-              <input name="AcademicCurrentStatus"  value="{{student.acadimic_position_label}}"   class="form-control" readonly>
-            </div>
-          </div>   
-        </div>
-
-        <div class="col-md-5">
-      
-            <div class="form-group">
-            
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text"><b> الرسوم الدراسية  </b> </div>
-                  </div>
-                  <input name="Fees"  value="{{student.std_fees}}"   class="form-control" readonly>
-                </div>
-              </div>   
-          </div>        <div  class="col-md-1"></div>
-
-      </div>
-      <div class="row">      <div class="col-md-1">
-</div>
-      <div class="col-md-10">
-
-      <div class="card">
-          <h5 class="card-header h6"><div class="row">
-              الحالة الاكاديمية للطالب خلال الفصول الدراسيه
-            </div>
-            </h5>
-          <div class="card-body">
-              <div class="row">
-                  <div  class="col-md-1"></div>
-
-                <div class="col-md-10">
-                  <div class="form-group">
-                      <div class="input-group">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text"><b>  الفصول الدراسية  </b> </div>
-                          </div>
-                      <select name="trems" [(ngModel)]="selectedSems" #t (change)="getTrmsDetails(t.value)"   class="form-control">
-                        <option *ngFor="let item of studentTerms" value="{{item.TERM_CODE}}">{{item.TERM_DESC}}</option>
-                      </select></div>
+      <div class="main-content" style="padding-top:0;">
+                    
+        <section class="service-single">
+            <div class="container">
+                    <h3> الحالة الأكاديمية </h3>
+                 <div class="row">
+                    <div class=" col-md-5">
+                      <p> </p>
+                     </div>
+                    <div class=" col-md-6 descr">
+                      <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+                        &nbsp; &nbsp; &nbsp; &nbsp;
+                        <a href="{{arabicPrint}}"><i class="ik ik-download"></i> </a>
+                        <a href="#"><i class="ik ik-film"></i></a>
                     </div>
-              </div></div>
-              <div class="row"> 
-                  <div  class="col-md-1"></div>
-
-                  <div class="col-md-5">
-                    <div class="form-group">
-                      
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><b>الكلية </b> </div>
-                        </div>
-                        <input  value="{{studentTermDetails.COLL_CODE}}"  class="form-control" readonly>
-                      </div>
-                    </div>   
-                  </div>
-                  <div class="col-md-5">
+                </div>
+                </div>
+             </section>
+                    
+        <section  class="ser-state">
+            <div class="container">
+                 <div class="row ser-block">
+                    <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>اسم الطالب / الطالبة </h6>
+                             <h5>{{student.name}} </h5>
+                          </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                    </div>
+                     <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>الرقم الجامعي	 </h6>
+                             <h5>{{student.std_id}} </h5>
+                          </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>رقم الهوية </h6>
+                             <h5>{{student.ssn}} </h5>
+                          </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                    </div>
+                </div>
                 
-                      <div class="form-group">
-                      
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><b>التخصص  </b> </div>
-                            </div>
-                            <input name="studentNo"  value="{{studentTermDetails.MAJR_code}}"   class="form-control" readonly>
+                <div class="row ser-block">
+                 <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>فصل القبول	</h6>
+                             <h5>{{student.std_adm_term_label}} </h5>
                           </div>
-                        </div>   
-                    </div>        <div  class="col-md-1"></div>
-
-                </div>
-                <div class="row">        <div  class="col-md-1"></div>
-
-                    <div class="col-md-5">
-                      <div class="form-group">
-                        
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text"><b>الفرع  </b> </div>
-                          </div>
-                          <input name="ID"   value="{{studentTermDetails.CAMP_code}}"  class="form-control" readonly>
-                        </div>
-                      </div>   
-                    </div>
-                    <div class="col-md-5">
-                  
-                        <div class="form-group">
-                        
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text"><b>  المعدل التراكمي </b> </div>
-                              </div>
-                              <input name="fsermester"  value="{{studentTermDetails.gba}}"   class="form-control" readonly>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
                             </div>
-                          </div>   
-                      </div>        <div  class="col-md-1"></div>
-
+                 </div>
+                 <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>الحالة الأكاديمية الحالية	</h6>
+                             <h5>{{student.current_acadimic_status_label}} </h5>
+                          </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
                   </div>
-                  
-                  <div class="row">
-                      <div  class="col-md-1"></div>
-
-                      <div class="col-md-5">
-                        <div class="form-group">
-                          
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><b>  حالة التسجيل </b> </div>
-                            </div>
-                            <input name="accamdeicStatus"   value="{{studentTermDetails.RegisterationStatus}}"  class="form-control" readonly>
+                  <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>المعدل التراكمي النهائي </h6>
+                             <h5>{{student.final_graduation_GPA}} </h5>
                           </div>
-                        </div>   
-                      </div>
-                      <div class="col-md-5">
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                 </div>
+                </div>
+                
+                <div class="row  ser-block">
+                 <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>الوضع الأكاديمي</h6>
+                             <h5> {{student.acadimic_position_label}}</h5>
+                          </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                </div>
+                 <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>الرسوم الدراسية	</h6>
+                             <h5>{{student.std_fees}} </h5>
+                          </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                 </div>
+                </div>
+             </div>
+         </section>
+                 
                     
-                          <div class="form-group">
-                          
-                              <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <div class="input-group-text"><b>المستوى الدراسي    </b> </div>
-                                </div>
-                                <input name="TotalGrade"  value="{{studentTermDetails.study_level}}"   class="form-control" readonly>
-                              </div>
-                            </div>   
-                        </div>        <div  class="col-md-1"></div>
-
-                    </div>
-                    
+         <section  class="ser-state">
+            <div class="container">
+                <div class="widget">
+                    <div class="widget-header" >
                     <div class="row">
-                        <div  class="col-md-1"></div>
-
-                        <div class="col-md-5">
-                          <div class="form-group">
-                            
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text"><b>الحالة الاكاديمية  </b> </div>
-                              </div>
-                              <input name="AcademicCurrentStatus"  value="{{studentTermDetails.acadimic_status}}"   class="form-control" readonly>
-                            </div>
-                          </div>   
-                        </div>
-                        <div class="col-md-5">
-                      
-                            <div class="form-group">
-                            
-                                <div class="input-group">
-                                  <div class="input-group-prepend">
-                                    <div class="input-group-text"><b> الوضع الاكاديمي   </b> </div>
-                                  </div>
-                                  <input name="Fees"  value="{{studentTermDetails.ACADIMICPOSITION}}"   class="form-control" readonly>
-                                </div>
-                              </div>   
-                          </div>        <div  class="col-md-1"></div>
-
+                      <div class="col-md-6">
+                       <h3 class="widget-title" style="font-size:12px;text-align: right">الحالة الأكاديمية للطالب خلال الفصول الدراسية  </h3>
                       </div>
-                      <div class="row">
-                          <div  class="col-md-1"></div>
-
-                          <div class="col-md-10">
-                            <div class="form-group">
-                              
-                              <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <div class="input-group-text"><b>المرحلة الدراسية   </b> </div>
-                                </div>
-                                <input name="AcademicCurrentStatus"  value="{{studentTermDetails.STD_UGGR}}"   class="form-control" readonly>
-                              </div>
-                            </div>   
-                          </div>        <div  class="col-md-1"></div>
-
-                          
+                     <div class="col-md-6">
+                      <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">الفصل الدراسي </label>
+                        <div class="col-sm-9">
+                           
+                          <select name="trems" [(ngModel)]="selectedSems" #t (change)="getTrmsDetails(t.value)"   class="form-control">
+                            <option *ngFor="let item of studentTerms" value="{{item.TERM_CODE}}">{{item.TERM_DESC}}</option>
+                          </select>
                         </div>
+                      </div>
+                     </div>
+                    </div>
+                    </div>
+                     <div class="row ser-block">
+                        <div class="col-md-4 col-sm-12 ">
+                          <div class="state">
+                             <h6>الكلية</h6>
+                             <h5> {{studentTermDetails.COLL_CODE}} </h5>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 10%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                       <div class=" col-md-4 col-sm-12 ">
+                          <div class="state">
+                             <h6>التخصص</h6>
+                             <h5> {{studentTermDetails.MAJR_code}}</h5>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 10%;"></div>
+                            </div>
+                            </div>
+                      </div>
+                      <div class=" col-md-4 col-sm-12 ">
+                          <div class="state">
+                             <h6>الفرع</h6>
+                             <h5> {{studentTermDetails.CAMP_code}}</h5>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 10%;"></div>
+                            </div>
+                             </div>
+                        </div>
+                    </div>
+                    
+                     <div class="row ser-block">
+                        <div class="col-md-4 col-sm-12 ">
+                          <div class="state">
+                             <h6>المعدل التراكمي	</h6>
+                             <h5>{{studentTermDetails.gba}}</h5>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 10%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                       <div class=" col-md-4 col-sm-12 ">
+                          <div class="state">
+                             <h6>حالة التسجيل	</h6>
+                             <h5> {{studentTermDetails.RegisterationStatus}}</h5>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 10%;"></div>
+                            </div>
+                            </div>
+                      </div>
+                      <div class=" col-md-4 col-sm-12 ">
+                          <div class="state">
+                             <h6>المستوي الدراسي</h6>
+                             <h5>{{studentTermDetails.study_level}} </h5>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 10%;"></div>
+                            </div>
+                             </div>
+                        </div>
+                    </div>
+                 
+                    
+                     <div class="row ser-block">
+                        <div class="col-md-4 col-sm-12 ">
+                          <div class="state">
+                             <h6>الحالة الأكاديمية</h6>
+                             <h5>{{studentTermDetails.acadimic_status}}  </h5>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 10%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                       <div class=" col-md-4 col-sm-12 ">
+                          <div class="state">
+                             <h6>الوضع الأكاديمي	</h6>
+                             <h5>{{studentTermDetails.ACADIMICPOSITION}}</h5>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 10%;"></div>
+                            </div>
+                            </div>
+                      </div>
+                      <div class=" col-md-4 col-sm-12 ">
+                          <div class="state">
+                             <h6>المرحلة الدراسية</h6>
+                             <h5> {{studentTermDetails.STD_UGGR}}</h5>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 10%;"></div>
+                            </div>
+                             </div>
+                        </div>
+                    </div>
+                 
+                 
+                </div>
+               </div>
+              </section>
                 
-          </div>
-        </div></div></div>
-        <br/><br/>
-        <p style="text-align: center">
-        <a class="btn btn-info" href="{{arabicPrint}}"> طباعة</a>
-        <a class="btn btn-info" href="{{EngPrint}}"> Print</a></p>
+                  <div style="text-align: center" class="prin">
+                        <a class="btn"  href="{{arabicPrint}}">عربي <i class="ik ik-save"></i> </a>
+                        <a class="btn"  href="{{EngPrint}}">  <i class="ik ik-save"></i> English  </a>
+                     </div>
+                    
+                  
+                          
       </div>
+     
+       
