@@ -1,4 +1,4 @@
-<div class="jumbotron jumbtron-fluid">
+<!-- <div class="jumbotron jumbtron-fluid">
     <h3 class="display-5 text-center">  شهادة تعريف</h3>
 <p style="text-align: center;direction: rtl">
 
@@ -82,4 +82,129 @@
   <div class="col-md-4"></div>
 
   </div>
+</div>
+ -->
+<div class="main-content" style="padding-top:0;">
+                    
+  <section class="service-single">
+      <div class="container">
+              <h3>شهادة تعريف</h3>
+           <div class="row">
+              <div class=" col-md-5">
+                <p> شهادة تعريف شهادة تعريف شهادة تعريف </p>
+               </div>
+              <div class=" col-md-6 descr">
+                <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+                  &nbsp; &nbsp; &nbsp; &nbsp;
+                  <a href="#"><i class="ik ik-download"></i> </a>
+                  <a href="#"><i class="ik ik-film"></i></a>
+              </div>
+          </div>
+          </div>
+       </section>
+              
+  <section  class="ser-state">
+      <div class="container">
+           <div class="row ser-block">
+              <div class=" col-md-6 col-sm-12">
+                    <div class="state">
+                       <h6> {{certificateDetails.labels.date}}  </h6>
+                       <h5> {{certificateDetails.values.date}}</h5>
+                    </div>
+                      <div class="progress progress-sm">
+                          <div class="progress-bar bg-info" style="width: 15%;"></div>
+                      </div>
+              </div>
+               <div class=" col-md-6 col-sm-12">
+                    <div class="state">
+                       <h6>{{certificateDetails.labels.ssn}} </h6>
+                       <h5>{{certificateDetails.values.ssn}}</h5>
+                    </div>
+                      <div class="progress progress-sm">
+                          <div class="progress-bar bg-info" style="width: 15%;"></div>
+                      </div>
+              </div>
+              
+          </div>
+       </div>
+   </section>
+           <section  class="ser-state">
+      <div class="container">
+              <p>{{certificateDetails.labelngs.txt1}}   {{certificateDetails.values.std_name}}
+                {{certificateDetails.labels.txt2}}   {{certificateDetails.values.std_id}}
+               
+                {{certificateDetails.labels.txt3}}   {{certificateDetails.values.coll}}
+               
+                {{certificateDetails.labels.txt4}}   {{certificateDetails.values.major}}
+                <br/>
+               
+               
+                {{certificateDetails.labels.txt5}}   {{certificateDetails.values.term}}
+               
+                {{certificateDetails.labels.txt6}}  
+               
+                {{certificateDetails.labels.txt7}}  
+                <br/>
+                <br/> </p>
+                <ng-template [ngIf]="lectures ==null" [ngIfElse]="NoLec">
+                  <div>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">{{certificateDetails.labels.crn}}</th>
+                          <th scope="col">{{certificateDetails.labels.course}}</th>
+                          <th scope="col">{{certificateDetails.labels.day_and_date}}</th>
+                          <th scope="col">{{certificateDetails.labels.time}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of lectures">
+                          <td >{{item.CRN}}</td>
+                          <td>{{item.CRSE_TITLE}}</td>
+                          <td>{{item.CRSE_DAY}}</td>
+                          <td>{{item.CRSE_TIME}}</td>
+                        </tr>
+                       
+                      </tbody>
+                    </table>  </div>
+                    <br/>
+                    
+                
+                </ng-template>
+                
+                <ng-template #NoLec>
+                  <div>
+                 <b>{{certificateDetails.labels.txt8}}  </b>
+                  </div>
+                </ng-template>
+                <br/><br/>
+                {{certificateDetails.labels.txt9}}  <br/>
+                {{certificateDetails.labels.txt10}}  
+                <br/><br/>
+                <b>
+                {{certificateDetails.labels.txt11}}  
+                </b>
+                {{certificateDetails.labels.txt12}}  
+                <br/>
+                <br/>
+                {{certificateDetails.labels.txt13}}  
+                
+                
+                
+                
+                <br/><br/>
+                
+                
+       </div>
+   </section>
+           
+
+          
+            <div style="text-align: center" class="prin">
+                  <button class="btn">عربي <i class="ik ik-save"></i> </button>
+                  <button class="btn"> <i class="ik ik-save"></i> English  </button>
+               </div>
+              
+            
+                    
 </div>
