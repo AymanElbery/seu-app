@@ -31,7 +31,7 @@ export class ChangeMajorComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
-    //console.log(this.reqData.reqs);
+    // console.log(this.reqData.reqs);
 
       }
     );
@@ -72,10 +72,11 @@ return    this.acadmicProc.Download(req);
 
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
-    
+
         });
-        if(this.status == 1)
+        if (this.status == 1) {
           this.acadmicProc.reqData.requests.splice(index, 1);
+        }
     });
   }
 

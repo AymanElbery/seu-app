@@ -1,162 +1,162 @@
-<div class="card"   >
-  <h5 class="card-header "  style="text-align: right" >سجل الطالب الاكاديمي</h5>
-  <div class="card-body">
-    <h5 class="card-title text-center">{{recoredData.student_name}}</h5>
-  <div class="row">
-        <div  class="col-md-1"></div>
-
-    <div class="col-md-5">
-
-      <div class="form-group">
-      
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><b> الكليه </b> </div>
-            </div>
-            <input name="coll"  value="{{recoredData.coll}}"   class="form-control" readonly>
-          </div>
-        </div>   
-    </div>
-    <div class="col-md-5">
-
-        <div class="form-group">
-        
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text"><b> الرقم الجامعي </b> </div>
-              </div>
-              <input name="coll"  value="{{recoredData.std_id}}"   class="form-control" readonly>
-            </div>
-          </div>   
-      </div>  <div  class="col-md-1"></div>
-
-</div>
-<div class="row">
-    <div  class="col-md-1"></div>
-
-    <div class="col-md-5">
-      <div class="form-group">
-        
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text"><b>التخصص  </b> </div>
-          </div>
-          <input name="ID"   value="{{recoredData.major}}"  class="form-control" readonly>
-        </div>
-      </div>   
-    </div>
-    <div class="col-md-5">
-  
-        <div class="form-group">
-        
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text"><b> رقم الهويه  </b> </div>
-              </div>
-              <input name="fsermester"  value="{{recoredData.ssn}}"   class="form-control" readonly>
-            </div>
-          </div>   
-      </div>  <div  class="col-md-1"></div>
-
-  </div>
-  
-  <div class="row">
-      <div  class="col-md-1"></div>
-
-      <div class="col-md-5">
-        <div class="form-group">
-          
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><b>  ألدرجه </b> </div>
-            </div>
-            <input name="accamdeicStatus"   value="{{recoredData.grade}}"  class="form-control" readonly>
-          </div>
-        </div>   
-      </div>
-      <div class="col-md-5">
+<div class="main-content" style="padding-top:0">
+               
     
-          <div class="form-group">
-          
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"><b>  حالة الطالب  </b> </div>
-                </div>
-                <input name="TotalGrade"  value="{{recoredData.status}}"   class="form-control" readonly>
+    
+                            
+  <section class="service-single">
+
+      <div class="container">
+              <h3> سجل الطالب الأكاديمي </h3>
+           <div class="row">
+              <div class=" col-md-5">
+                <p>  سجل الطالب الأكاديمي سجل الطالب الأكاديمي سجل الطالب الأكاديمي سجل الطالب الأكاديمي</p>
+               </div>
+              <div class=" col-md-6 descr">
+                <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+                  &nbsp; &nbsp; &nbsp; &nbsp;
+                  <a href="#"><i class="ik ik-download"></i> </a>
+                  <a href="#"><i class="ik ik-film"></i></a>
               </div>
-            </div>   
+          </div>
+          </div>
+       </section>
+       
+       <div class=" stu-name col-md-4 col-sm-12 ">
+        <div class="state">
+           <h5> <span>اسم الطالب : </span>{{recoredData.student_name}}  </h5> 
         </div>
-        <div  class="col-md-1"></div></div>
+   </div>
+               
+   <section  class="ser-state">
+     
+    <div class="container">
+         <div class="row ser-block">
+            <div class="col-md-4 col-sm-12">
+                  <div class="state">
+                     <h6>الكلية</h6>
+                     <h5> {{recoredData.coll}} </h5>
+                  </div>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-info" style="width: 15%;"></div>
+                    </div>
+            </div>
+              <div class=" col-md-4 col-sm-12">
+                  <div class="state">
+                     <h6>التخصص </h6>
+                     <h5> {{recoredData.major}} </h5>
+                  </div>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-info" style="width: 15%;"></div>
+                    </div>
+         </div>
+             <div class=" col-md-4 col-sm-12">
+                  <div class="state">
+                     <h6>الرقم الجامعي	 </h6>
+                     <h5>{{recoredData.std_id}} </h5>
+                  </div>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-info" style="width: 15%;"></div>
+                    </div>
+            </div>
+            
+        </div>
+        
+        <div class="row ser-block">
+            <div class=" col-md-4 col-sm-12">
+                  <div class="state">
+                     <h6>رقم الهوية </h6>
+                     <h5>{{recoredData.ssn}} </h5>
+                  </div>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-info" style="width: 15%;"></div>
+                    </div>
+            </div>
+         <div class=" col-md-4 col-sm-12">
+                  <div class="state">
+                     <h6>الدرجة	</h6>
+                     <h5>{{recoredData.grade}} </h5>
+                  </div>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-info" style="width: 15%;"></div>
+                    </div>
+         </div>
+         <div class=" col-md-4 col-sm-12">
+                  <div class="state">
+                     <h6>حالة الطالب</h6>
+                     <h5>{{recoredData.status}} </h5>
+                  </div>
+                    <div class="progress progress-sm">
+                        <div class="progress-bar bg-info" style="width: 15%;"></div>
+                    </div>
+          </div>
+         
+        </div>
+       
+     </div>
+ </section>
+       
 
-  </div>
-</div>
 
-<div class="accordion"  style="direction: rtl;text-align: right" id="accordionExample">
-  <div class="row"><div class="col-md-12"  *ngFor="let item of recoredData.terms ; let i = index">
+
+<div class="accordion"   id="accordionExample">
+  <div  *ngFor="let item of recoredData.terms ; let i = index">
       <div class="card " >
           <div class="card-header" id="heading{{i}}">
             <h2 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse"  [attr.data-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'collapse'+i">
+              <button class="btn btn-link btn-block" type="button" data-toggle="collapse"  [attr.data-target]="'#collapse'+i" aria-expanded="false" [attr.aria-controls]="'collapse'+i">
     <b>    الفصل {{item.Term}} لسنة {{item.Year}} </b> 
        </button>
             </h2>
           </div>
       
           <div id="collapse{{i}}" class="collapse" [attr.aria-labelledby]="'heading'+i" data-parent="#accordionExample">
-             <div class="card-body">
-                <div class="row">
-            
-                <div class="col-md-3">
-            
-                  <div class="form-group">
-                  
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><b> الفصل </b> </div>
-                        </div>
-                        <input name="coll"  value="{{item.Term}}"   class="form-control" readonly>
+            <div class="container">
+              <div class="back">
+          <div class="row ser-block">
+                  <div class="col-md-3 col-sm-12 ">
+                    <div class="state">
+                       <h6>الفصل</h6>
+                       <h5> {{item.Term}} </h5>
+                      <div class="progress progress-sm">
+                          <div class="progress-bar bg-info" style="width: 10%;"></div>
                       </div>
-                    </div>   
-                </div>
-                <div class="col-md-3">
-            
-                    <div class="form-group">
-                    
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text"><b> العام  </b> </div>
-                          </div>
-                          <input name="coll"  value="{{item.Year}}"   class="form-control" readonly>
-                        </div>
-                      </div>   
-                  </div> 
-                  
-                  <div class="col-md-3">
-            
-                      <div class="form-group">
-                      
-                          <div class="input-group">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><b>  التخصص </b> </div>
-                            </div>
-                            <input name="coll"  value="{{item.Major}}"   class="form-control" readonly>
-                          </div>
-                        </div>   
                     </div>
-                    <div class="col-md-3">
-            
-                        <div class="form-group">
-                        
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text"><b> الحالة  </b> </div>
-                              </div>
-                              <input name="coll"  value="{{item.Status}}"   class="form-control" readonly>
-                            </div>
-                          </div>   
+                  </div>
+                 <div class=" col-md-3 col-sm-12 ">
+                    <div class="state">
+                       <h6>العام</h6>
+                       <h5>{{item.Year}} </h5>
+                      <div class="progress progress-sm">
+                          <div class="progress-bar bg-info" style="width: 10%;"></div>
                       </div>
-                      <table class="table">
-                          <thead>
+                      </div>
+                </div>
+                <div class=" col-md-3 col-sm-12 ">
+                    <div class="state">
+                       <h6>التخصص</h6>
+                       <h5> {{item.Major}} </h5>
+                      <div class="progress progress-sm">
+                          <div class="progress-bar bg-info" style="width: 10%;"></div>
+                      </div>
+                       </div>
+                  </div>
+                <div class=" col-md-3 col-sm-12 ">
+                    <div class="state">
+                       <h6>الحالة</h6>
+                       <h5>{{item.Status}}  </h5>
+                      <div class="progress progress-sm">
+                          <div class="progress-bar bg-info" style="width: 10%;"></div>
+                      </div>
+                       </div>
+                  </div>
+              </div>
+                  
+            
+              <div class="table-responsive">
+              
+ 
+                  <table class="table table-striped table-bordered">
+                      <thead style="background: #e6e6e6">
                             <tr>
                               <th scope="col">رمز المقرر</th>
                               <th scope="col">اسم المقرر</th>
@@ -178,8 +178,12 @@
                            
                           </tbody>
                         </table>
-                        <table class="table  table-bordered">
-                            <thead>
+                        </div>
+                        <div class="table-responsive">
+              
+ 
+                            <table class="table table-striped table-bordered">
+                                <thead style="background: #e6e6e6">
                               <tr>
                                 <th scope="col">ساعات </th>
                                 <th scope="col">مسجلة </th>
@@ -207,7 +211,7 @@
                             </tr>
                             </tbody></table>
             
-            </div>
+          
               
 
 
@@ -216,7 +220,8 @@
         </div>
        
       </div>
-  </div> </div>
+  </div>
+  </div>
   <div  class="btn-group btn-group-justified col-md-12 ">
       <div class="col-md-4"></div>
       <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
@@ -226,4 +231,4 @@
       <div class="col-md-4"></div>
     
       </div>
-  
+  </div>
