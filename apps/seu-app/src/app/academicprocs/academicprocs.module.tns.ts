@@ -26,6 +26,7 @@ import { AddChangeMajorComponent } from './diag/add-change-major/add-change-majo
 import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
 import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
+import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
 
 @NgModule({
 
@@ -33,6 +34,7 @@ import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-l
     AcademicprocsRoutingModule,
     NativeScriptCommonModule
   ],
-  schemas: [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA],
+  declarations: [RegisterationHelperComponent]
 })
 export class AcademicprocsModule { }
