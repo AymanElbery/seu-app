@@ -6,7 +6,7 @@
     </div>
   <div style="direction: ltr;text-align: center">
     
-    <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+    <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
     اضافة طلب
   </button>
   <br/>

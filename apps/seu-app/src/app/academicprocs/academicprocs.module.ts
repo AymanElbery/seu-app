@@ -46,6 +46,7 @@ import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-e
 import { LectureExecuseServiceService } from './services/lecture-execuse-service.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -75,7 +76,8 @@ import { MatNativeDateModule } from '@angular/material/core';
            LecturesExecusesComponent,
            ObjectExamComponent,
            AddLecturesExecusesComponent,
-           AddExamObjectComponent],
+           AddExamObjectComponent,
+           RegisterationHelperComponent],
 
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
