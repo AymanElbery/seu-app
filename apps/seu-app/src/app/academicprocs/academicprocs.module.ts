@@ -48,6 +48,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
 import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
+import {UnivCardComponent} from './univ-card/univ-card.component';
+import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -79,7 +81,10 @@ import { AddRegisterationHelperComponent } from './registeration-helper/diag/add
            AddLecturesExecusesComponent,
            AddExamObjectComponent,
            RegisterationHelperComponent,
-           AddRegisterationHelperComponent],
+           AddRegisterationHelperComponent,
+           UnivCardComponent,
+           AddUnivCardComponent],
+
 
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
@@ -93,7 +98,8 @@ import { AddRegisterationHelperComponent } from './registeration-helper/diag/add
          AddRequestChangeComponent,
          AddLecturesExecusesComponent,
          AddExamObjectComponent,
-         AddRegisterationHelperComponent
+         AddRegisterationHelperComponent,
+        AddUnivCardComponent
       ],
 
   imports: [
