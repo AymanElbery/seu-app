@@ -46,98 +46,16 @@
   </div>
 
 
-  <div class="widget">
-      <div class="widget-header">
-        <h3 class="widget-title">  تسجيل طلب</h3>
-      </div>
 
-      <section  class="ser-state">
-          <div class="container">
-               <div class="row ser-block">
-                  <div class=" col-md-6 col-sm-12">
-                        <div class="state">
-                           <h6>الكلية </h6>
-                           <select class="form-control" #CollegeID="ngModel" [(ngModel)]="college.theCollege"  name="College" [class.is-invalid]="college.theCollege == ''">
-                            <!-- <option value=''>اختر  الكلية</option>--> 
-                              <option *ngFor="let coll of colleges" [value]="coll.id">{{coll.value}}</option>
-                            </select>
-                            
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-                  </div>
-                   <div class=" col-md-6 col-sm-12">
-                        <div class="state">
-                            <h6>المقررات </h6>
-                            <!--  <select class="form-control" #CampID="ngModel" [(ngModel)]="cmp.camp"  name="Camp" [class.is-invalid]="cmp.camp == ''">
-                                 <option value=''>اختر  الفرع</option>
-                                 <option *ngFor="let camp of camps" [value]="camp.CAMP_CODE">{{camp.CAMP_DESC}}</option>
-                               </select>
-                               -->
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-                  </div>
-
-              </div>
-              
-              <div class="row ser-block">
-               <div class=" col-md-6 col-sm-12">
-                        <div class="state">
-                            <h6>الشعب </h6>
-                            <!--  <select class="form-control" #CampID="ngModel" [(ngModel)]="cmp.camp"  name="Camp" [class.is-invalid]="cmp.camp == ''">
-                                 <option value=''>اختر  الفرع</option>
-                                 <option *ngFor="let camp of camps" [value]="camp.CAMP_CODE">{{camp.CAMP_DESC}}</option>
-                               </select>
-                               -->
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-               </div>
-               <div class=" col-md-6 col-sm-12">
-                        <div class="state">
-                            <h6>رسالة الخطأ </h6>
-                            <select class="form-control" #ErrorMsgID="ngModel" [(ngModel)]="errorMessage.theMessages"  name="ErrorMessage" [class.is-invalid]="errorMessage.theMessages == ''">
-                                <!-- <option value=''>اختر  الكلية</option>--> 
-                                  <option *ngFor="let msg of errorMessages" [value]="msg.id">{{msg.value}}</option>
-                                </select>
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-                </div>
-                
-              </div>
-              
-              <div class="row  ser-block">
-               <div class=" col-md-12 col-sm-12">
-                        <div class="state">
-                            <h6>ملاحظات </h6>
-                            <textarea type="text" class="form-control"  [(ngModel)]="note"  #NotesID="ngModel" ></textarea>
-                            <!--  <select class="form-control" #CampID="ngModel" [(ngModel)]="cmp.camp"  name="Camp" [class.is-invalid]="cmp.camp == ''">
-                                 <option value=''>اختر  الفرع</option>
-                                 <option *ngFor="let camp of camps" [value]="camp.CAMP_CODE">{{camp.CAMP_DESC}}</option>
-                               </select>
-                               -->
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-              </div>
-              
-              </div>
-           </div>
-       </section>
-
-  </div>
 
 
 
   <div class="widget">
     <div class="widget-header">
+
+      <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+        اضافة طلب
+      </button>
       <h3 class="widget-title"> الطلبات السابقة</h3>
     </div>
     <div class="table-responsive">
@@ -167,8 +85,9 @@
             <td>{{it.status}}</td>
             <td>{{it.admin_note}}</td>
 
-            <td><button [disabled]='!it.deletable'  class="btn btn-sm btn-danger" style="color: white"  (click)="delete(it.REQ_PK,i)"><i  class="fa fa-trash"></i> </button></td>
-<!--[disabled]='!it.deletable'-->
+            <td><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
+                (click)="delete(it.REQ_PK,i)"><i class="fa fa-trash"></i> </button></td>
+            <!--[disabled]='!it.deletable'-->
           </tr>
 
         </tbody>

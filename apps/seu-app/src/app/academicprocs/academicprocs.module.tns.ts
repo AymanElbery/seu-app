@@ -27,6 +27,7 @@ import { AddRequestChangeComponent } from './change-request/diag/add-request-cha
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
 import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
+import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
 
 @NgModule({
 
@@ -35,6 +36,6 @@ import { RegisterationHelperComponent } from './registeration-helper/registerati
     NativeScriptCommonModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  declarations: [RegisterationHelperComponent]
+  declarations: [RegisterationHelperComponent, AddRegisterationHelperComponent]
 })
 export class AcademicprocsModule { }

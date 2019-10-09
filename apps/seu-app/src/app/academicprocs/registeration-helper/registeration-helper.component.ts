@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RegistrationHelperService } from '../services/registration-helper.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
+import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
+import { AddRegisterationHelperComponent } from './diag/add-registeration-helper/add-registeration-helper.component';
 
 @Component({
   selector: 'app-registeration-helper',
@@ -14,32 +16,37 @@ export class RegisterationHelperComponent implements OnInit {
   reqData;
   msgs;
   status;
-  colleges: any;
+  /*colleges: any;
   college: { theCollege };
 
   errorMessages: any;
-  errorMessage: { theMessages };
-  constructor(private toastr: ToastrService, private acadmicProc: RegistrationHelperService) { }
+  errorMessage: { theMessages };*/
+
+
+  constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: RegistrationHelperService) { }
 
 
   ngOnInit() {
     // this.cancelCousre = {courses: null, agreement: 1};
-    this.college = { theCollege: '' };
-    this.errorMessage = { theMessages: '' };
+
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
-        this.colleges = this.acadmicProc.reqData.colledges;
-        this.errorMessages = this.acadmicProc.reqData.error_messages;
+        //this.colleges = this.acadmicProc.reqData.colledges;
+      //  this.errorMessages = this.acadmicProc.reqData.error_messages;
         // console.log(this.reqData.reqs);
 
       }
     );
 
+    
+
   }
+
+  
 
   delete(id, index) {
     if (confirm('هل انت متأكد')) {
@@ -59,6 +66,17 @@ export class RegisterationHelperComponent implements OnInit {
       });
     }
 
+  }
+
+  openDialoge() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = '60%';
+    dialogConfig.height = '80%';
+    dialogConfig.direction="rtl";
+
+    this.dialog.open(AddRegisterationHelperComponent, dialogConfig);
   }
 
 }
