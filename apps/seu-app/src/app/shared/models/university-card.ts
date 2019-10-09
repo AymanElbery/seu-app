@@ -5,4 +5,6 @@ export interface universityCard {
     day:string;
     time:string;
     level:string;
+    photo:string;
+    ssn_file:string;
 }

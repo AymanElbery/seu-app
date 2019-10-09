@@ -47,6 +47,8 @@ import { LectureExecuseServiceService } from './services/lecture-execuse-service
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
+import {UnivCardComponent} from './univ-card/univ-card.component';
+import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -77,7 +79,9 @@ import { RegisterationHelperComponent } from './registeration-helper/registerati
            ObjectExamComponent,
            AddLecturesExecusesComponent,
            AddExamObjectComponent,
-           RegisterationHelperComponent],
+           RegisterationHelperComponent,
+           UnivCardComponent,
+           AddUnivCardComponent],
 
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
@@ -90,7 +94,8 @@ import { RegisterationHelperComponent } from './registeration-helper/registerati
          AddChangeMajorComponent,
          AddRequestChangeComponent,
          AddLecturesExecusesComponent,
-         AddExamObjectComponent
+         AddExamObjectComponent,
+        AddUnivCardComponent
       ],
 
   imports: [
