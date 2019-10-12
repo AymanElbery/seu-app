@@ -91,7 +91,7 @@ import {ExamExcuseService}  from './services/exam-excuse.service';
            AddUnivCardComponent,
            AddUnivCardComponent,
            ExamExcuseComponent,
-           AddExamExcuseComponent
+           AddExamExcuseComponent,
            AddUnivCardComponent,
            RegisterWishesComponent],
           
