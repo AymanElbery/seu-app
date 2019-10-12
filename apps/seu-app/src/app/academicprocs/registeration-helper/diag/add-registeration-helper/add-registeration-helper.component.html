@@ -18,7 +18,7 @@
               <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>الكلية </h6>
-                  <select class="form-control" #CollegeID="ngModel" [(ngModel)]="registerationHelper.colledge"
+                  <select required class="form-control" #CollegeID="ngModel" [(ngModel)]="registerationHelper.colledge"
                     name="College" [class.is-invalid]="registerationHelper.colledge == ''" #t
                     (change)="collegeCourses(t.value)">
 
@@ -33,7 +33,7 @@
               <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>المقررات </h6>
-                  <select class="form-control" #CourseID="ngModel" [(ngModel)]="registerationHelper.course"
+                  <select required class="form-control" #CourseID="ngModel" [(ngModel)]="registerationHelper.course"
                     name="CourseID" [class.is-invalid]="registerationHelper.course == ''" #c
                     (change)="courseDepartments(c.value)">
                     <option value=''>اختر المقرر</option>
@@ -51,7 +51,7 @@
               <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>الشعب </h6>
-                  <select class="form-control" #DeptID="ngModel" [(ngModel)]="registerationHelper.department"
+                  <select required class="form-control" #DeptID="ngModel" [(ngModel)]="registerationHelper.department"
                     name="DeptID" [class.is-invalid]="registerationHelper.department == ''">
                     <option value=''>اختر الشعبة</option>
                     <option *ngFor="let dept of departments" [value]="dept.CRN">{{dept.BLDG_DESC}}</option>
@@ -64,7 +64,7 @@
               <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>رسالة الخطأ </h6>
-                  <select class="form-control" #ErrorMsgID="ngModel" [(ngModel)]="registerationHelper.message"
+                  <select required class="form-control" #ErrorMsgID="ngModel" [(ngModel)]="registerationHelper.message"
                     name="ErrorMsgID" [class.is-invalid]="registerationHelper.message == ''">
                     <option *ngFor="let msg of errorMessages" [value]="msg.id">{{msg.value}}</option>
                   </select>
@@ -80,8 +80,8 @@
               <div class=" col-md-12 col-sm-12">
                 <div class="state">
                   <h6>ملاحظات </h6>
-                  <textarea type="text" class="form-control" [(ngModel)]="registerationHelper.comment"
-                    #NotesID="ngModel" name="NotesID"></textarea>
+                  <textarea [class.is-invalid]="form.invalid" type="text" class="form-control" [(ngModel)]="registerationHelper.comment"
+                    #NotesID="ngModel" name="NotesID" required></textarea>
 
                 </div>
                 <div class="progress progress-sm">
@@ -98,7 +98,7 @@
             <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
               الغاء</button>
 
-            <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+            <button [disabled]="form.invalid" type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
           </div>
         </div>
       </form>

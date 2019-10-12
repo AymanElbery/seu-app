@@ -16,17 +16,9 @@ export class AddRegisterationHelperComponent implements OnInit {
   reqData: any;
   msgs: any;
   colleges: any;
-
-
-
   errorMessages: any;
-
-
   courses: any;
-
-
   departments: any;
-
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddRegisterationHelperComponent>,
@@ -56,7 +48,7 @@ export class AddRegisterationHelperComponent implements OnInit {
   addRequest(data: any) {
     //console.log(data);
     this.acadmicProc.AddRequest(data).then(res => {
-      this.msgs = (res as any).messages;
+   //   this.msgs = (res as any).messages;
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
 

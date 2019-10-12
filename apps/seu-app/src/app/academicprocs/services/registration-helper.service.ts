@@ -13,7 +13,10 @@ export class RegistrationHelperService {
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
 
   getِgetRequests() {
+    //?std_id=S180105049
+    //?std_id=S160239561
     //?std_id=S190000060
+    //?std_id=S120000101
     return this.httRequest.GetRequest('registeration_helper_service').toPromise();
   }
 
@@ -27,13 +30,14 @@ export class RegistrationHelperService {
   }
   deleteReq(id) {
     //+ '?std_id=S120000101'
-    return this.httRequest.GetRequest('registeration_helper_service/remove/' + id).toPromise();
+    return this.httRequest.GetRequest('registeration_helper_service/cancel/' + id).toPromise();
 
   }
 
   AddRequest(data) {
-    alert('S');
+   alert('S');
     alert(data.colledge)
-    return this.httRequest.postRequest('registeration_helper_service/insert/', data).toPromise();
+    console.log(data);
+    return this.httRequest.postRequest('registeration_helper_service/insert', data).toPromise();
 }
 }

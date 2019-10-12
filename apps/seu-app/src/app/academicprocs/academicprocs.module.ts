@@ -50,6 +50,8 @@ import { RegisterationHelperComponent } from './registeration-helper/registerati
 import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
 import {UnivCardComponent} from './univ-card/univ-card.component';
 import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
+import { RegisterWishesComponent } from './register-wishes/register-wishes.component';
+
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -83,7 +85,8 @@ import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card
            RegisterationHelperComponent,
            AddRegisterationHelperComponent,
            UnivCardComponent,
-           AddUnivCardComponent],
+           AddUnivCardComponent,
+           RegisterWishesComponent],
 
 
      entryComponents: [AddRequestComponent,
