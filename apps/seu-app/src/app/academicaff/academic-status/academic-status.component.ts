@@ -14,14 +14,15 @@ export class AcademicStatusComponent implements OnInit {
   selectedSems;
   arabicPrint: string;
   EngPrint: string;
+  isLoading = false;
 
 
   constructor(private academicStatusService: AcademicStatusService) { }
 
   ngOnInit() {
 
-
-      this.academicStatusService.getStaudentStatus().then((res) => {
+ this.isLoading = true;
+ this.academicStatusService.getStaudentStatus().then((res) => {
       this.student = (res as any).data.student;
       this.studentTerms = (res as any).data.STD_TERMS;
       this.studentTermDetails = (res as any).data.STD_TermDetails;
@@ -29,17 +30,19 @@ export class AcademicStatusComponent implements OnInit {
       this.selectedSems = this.studentTerms[0].TERM_CODE;
       this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
       this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
-
+      this.isLoading = false;
     } );
   }
 
   getTrmsDetails(val) {
 
+    this.isLoading = true;
     this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
     this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
     this.academicStatusService.getStaudentTermDetails( parseInt(val, 10)).then(
       (res) => {
       this.studentTermDetails = (res as any).data.STD_TermDetails;
+      this.isLoading = false;
       }
      );
   }

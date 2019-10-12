@@ -159,13 +159,13 @@
   
                   
                       </p>     </div></div>    
-                      <div  class="btn-group btn-group-justified col-md-12 ">
-                          <div class="col-md-4"></div>
+                      <div style="text-align: center" class="prin">               
+
                           <a class="btn btn-primary" href="{{term}}"><span class="glyphicon glyphicon-print"></span>
                             طباعة</a>
                             <a class="btn btn-primary" href="{{term}}"><span class="glyphicon glyphicon-print"></span>
                               Print</a>
-                            <div class="col-md-4"></div>
+                          
                           </div>
               </div>
               <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
@@ -240,18 +240,20 @@
               
               {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>
             </div> </div>
-              <div  class="btn-group btn-group-justified col-md-12 ">
-                  <div class="col-md-4"></div>
+            <div style="text-align: center" class="prin">               
+
                   <a class="btn btn-primary" href="{{finalschedule}}"><span class="glyphicon glyphicon-print"></span>
                     طباعة</a>
                     <a class="btn btn-primary" href="{{finalscheduleEn}}"><span class="glyphicon glyphicon-print"></span>
                       Print</a>
-                  <div class="col-md-4"></div>
+                  
                 
                   </div>
                   </div>
                   <div class="tab-pane fade p-3" id="four" role="tabpanel" aria-labelledby="four-tab">
-                      <h5 class="card-title text-center">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>
+                    <div class="widget"><div class="widget-header">
+                      <h3 class="widget-title" style="font-size:14px;">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h3>
+                    </div>
                       <p class="card-text" style="text-align: right" > 
                           {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}
                           <br/>
@@ -285,15 +287,16 @@
       
       
                       
-                          </p>    
-                          <div  class="btn-group btn-group-justified col-md-12 ">
-                              <div class="col-md-4"></div>
-                              <a class="btn btn-primary" href="{{final}}"><span class="glyphicon glyphicon-print"></span>
+                          </p>
+                    </div>    
+                    <div style="text-align: center" class="prin">               
+
+                              <a class="btn " href="{{final}}"><span class="glyphicon glyphicon-print"></span>
                                 طباعة</a>
-                                <a class="btn btn-primary" href="{{finalEn}}"><span class="glyphicon glyphicon-print"></span>
+                                <a class="btn" href="{{finalEn}}"><span class="glyphicon glyphicon-print"></span>
                                   Print</a>
                                 
-                              <div class="col-md-4"></div>
+                              
                             
                               </div>
                         </div></div></section>

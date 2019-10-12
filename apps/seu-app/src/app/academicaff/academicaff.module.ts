@@ -9,13 +9,16 @@ import { AcademicStatusService } from './services/academic-status.service';
 import { CertificateIDService } from './certificate-id.service';
 import { FormsModule } from '@angular/forms';
 import { AcademicRecordService } from './services/academic-record.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [ AcademicStatusComponent, CertificateIDComponent, AcademicRecordComponent],
   imports: [
     CommonModule,
     AcademicaffRoutingModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [AcademicStatusService, CertificateIDService, AcademicRecordService]
 })
