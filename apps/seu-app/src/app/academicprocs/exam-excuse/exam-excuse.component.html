@@ -1,0 +1,51 @@
+<div class="main-content" >
+
+  <div  *ngFor="let msg of msgs" class="alert alert-info" role="alert">
+      {{msg.body}}!
+    </div>
+    <div *ngIf="msg!=null" style="text-align: right"  class="alert alert-info" role="alert">
+        {{msg.body}}!
+      </div>
+    <div style="direction: ltr;text-align: center">
+      
+      <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+      اضافة طلب
+    </button>
+    <br/>
+    <br/>
+    
+    </div>
+    <div>
+      <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+        <thead style="background: #ebecf0">
+  
+        <tr>
+          <th scope="col">رقم الطلب</th>
+          <th scope="col">CRN</th>
+          <th scope="col">اسم المقرر</th>
+          <th scope="col">تاريخ إنشاء الطلب</th>
+          <th scope="col">تاريخ الرد </th>
+          <th scope="col"> حالة الطلب</th>
+          <th scope="col"> حذف الطلب </th>
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let it of reqData.requests;let i=index;">
+          <td>{{it.request_number}}</td>
+          <td>{{it.courseId}}</td>
+          <td>{{it.course_title}}</td>
+          <td>{{it.insert_date}}</td>
+          <td>{{it.admin_date}}</td>
+          <td>{{it.status}}</td>
+         
+         
+          <td><button [disabled]='!it.deletable'  class="btn btn-sm btn-danger" style="color: white"  (click)="delete(it.request_number,i)"><i  class="fa fa-trash"></i> </button></td>
+    
+        </tr>
+        
+      </tbody>
+    </table></div>
+    </div>
+  </div>
