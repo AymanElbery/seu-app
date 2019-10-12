@@ -55,6 +55,7 @@ import { RegisterWishesComponent } from './register-wishes/register-wishes.compo
 import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
 import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
 import {ExamExcuseService}  from './services/exam-excuse.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -93,7 +94,9 @@ import {ExamExcuseService}  from './services/exam-excuse.service';
            ExamExcuseComponent,
            AddExamExcuseComponent,
            AddUnivCardComponent,
-           RegisterWishesComponent],
+           RegisterWishesComponent
+           
+],
           
 
 
@@ -122,6 +125,7 @@ import {ExamExcuseService}  from './services/exam-excuse.service';
     MatDialogModule,
     MatDatepickerModule,
      MatNativeDateModule,
+     MatProgressSpinnerModule,
     ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [WithdrawFromUnivService,

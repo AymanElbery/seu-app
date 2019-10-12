@@ -15,16 +15,19 @@ export class RegisterWishesComponent implements OnInit {
   reqData;
   msgs;
   status;
-  constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: RegisterWishesService) { }
 
+  constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: RegisterWishesService) { }
+  
   ngOnInit() {
     this.registerWishes = { tow_days:0,wish:'' };
+
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
+
 
       }
     );
@@ -34,11 +37,11 @@ export class RegisterWishesComponent implements OnInit {
     if (confirm('هل انت متأكد')) {
       this.acadmicProc.deleteReq(id).then(res => {
         console.log(id);
-        this.msgs = (res as any).messages;
+        let messages = (res as any).messages;
 
         this.status = (res as any).status;
 
-        this.msgs.forEach((element: any) => {
+        messages.forEach((element: any) => {
           this.toastr.success('', element.body);
 
         });
@@ -59,10 +62,12 @@ export class RegisterWishesComponent implements OnInit {
 
   addRequest(data: any) {
     //console.log(data);
+    
     this.acadmicProc.AddRequest(data).then(res => {
-   //   this.msgs = (res as any).messages;
-      this.msgs.forEach((element: any) => {
+       let msgss = (res as any).messages;
+      msgss.forEach((element: any) => {
         this.toastr.success('', element.body);
+        this.registerWishes = { tow_days:0,wish:'' };
 
       });
     });

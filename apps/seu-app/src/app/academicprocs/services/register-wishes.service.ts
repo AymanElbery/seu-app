@@ -21,8 +21,8 @@ export class RegisterWishesService {
   }
 
   AddRequest(data) {
-  /*  alert('S');
-    alert(data.colledge)*/
+
+    console.log(data);
     return this.httRequest.postRequest('register_wishes_service/insert', data).toPromise();
 }
 }

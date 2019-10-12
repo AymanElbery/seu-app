@@ -35,9 +35,7 @@ export class RegistrationHelperService {
   }
 
   AddRequest(data) {
-   alert('S');
-    alert(data.colledge)
-    console.log(data);
+
     return this.httRequest.postRequest('registeration_helper_service/insert', data).toPromise();
 }
 }
