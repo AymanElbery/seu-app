@@ -50,6 +50,10 @@ import { RegisterationHelperComponent } from './registeration-helper/registerati
 import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
 import {UnivCardComponent} from './univ-card/univ-card.component';
 import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
+import {UvnivCardService} from './services/uvniv-card.service';
+import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
+import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
+import {ExamExcuseService}  from './services/exam-excuse.service';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -74,7 +78,6 @@ import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card
            AddReEnrollComponent,
            ChangeMajorComponent,
            AddChangeMajorComponent,
-
            AddRequestChangeComponent,
            LecturesExecusesComponent,
            ObjectExamComponent,
@@ -83,7 +86,10 @@ import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card
            RegisterationHelperComponent,
            AddRegisterationHelperComponent,
            UnivCardComponent,
-           AddUnivCardComponent],
+           AddUnivCardComponent,
+           ExamExcuseComponent,
+           AddExamExcuseComponent
+          ],
 
 
      entryComponents: [AddRequestComponent,
@@ -99,7 +105,8 @@ import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card
          AddLecturesExecusesComponent,
          AddExamObjectComponent,
          AddRegisterationHelperComponent,
-        AddUnivCardComponent
+        AddUnivCardComponent,
+        AddExamExcuseComponent
       ],
 
   imports: [
@@ -121,7 +128,9 @@ import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card
       EnglishEqualizerService,
       ReEnrollService,
       ChangeMajorService,
-      LectureExecuseServiceService
+      LectureExecuseServiceService,
+      UvnivCardService,
+      ExamExcuseService
   ]
 
 })

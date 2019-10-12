@@ -108,15 +108,16 @@
                           <div class="state">
                             <h6>  اضف صورة الهوية </h6>
                             <div class="custom-file">
-                                <input name="ssn_file"  type="file" accept="*/*" (change)="handleInputChangeFile($event)" />
+                                <input name="ssn_file"  type="file" accept="*/*" (change)="handleInputChangeFile($event)" class="custom-file-input" />
                                  <label  for="customFileLang"  class="custom-file-label ">
                                  </label> 
                               </div>
+                            </div>
                              
                             <div class="progress progress-sm">
                                 <div class="progress-bar bg-info" style="width: 15%;"></div>
                             </div>
-                    </div>
+                    
                      </div>
                   </div>
                 </div>
@@ -129,179 +130,10 @@
            </div>
             </div>
 
-        <!-- <div class="form-row">
-            <div class="form-group col-md-12">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"> الاسم باللغة العربية</div>
-                </div>
-                <input name="name" #name="ngModel" [(ngModel)]="card.name" class="form-control" >
-              </div>
-            </div>
-            
-           
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"> رقم بطاقة الهوية الوطنية او ما يقوم مقامها:</div>
-                </div>
-                <input name="ssn" #ssn="ngModel" [(ngModel)]="card.ssn" class="form-control" >
-              </div>
-            </div>
-            
-           
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"> رقم الجوال :</div>
-                </div>
-                <input name="phone" #phone="ngModel" [(ngModel)]="card.phone" class="form-control" >
-              </div>
-            </div>
-            
-           
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <select name="level" #level="ngModel" [(ngModel)]="card.level" class="form-control" 
-              [class.is-invalid]="card.level==''">
-                <option value="">اختر المرحلة الدراسية</option>
-                <option *ngFor="let item of reqData.levels" value="{{item.id}}">{{item.value}}</option>
-              </select>
-            </div>
-          </div>
-         
-          <div class="form-row mt-10" >
-            <div class="form-group col-md-12">
-              <select name="time" #time="ngModel" [(ngModel)]="card.time" class="form-control" 
-              [class.is-invalid]="card.time==''">
-                <option value="">اختر فترة الدراسة</option>
-                <option *ngFor="let item of reqData.times" value="{{item.id}}">{{item.value}}</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-row mt-10"  >
-            <div class="form-group col-md-12">
-              <select name="day" #time="ngModel" [(ngModel)]="card.day" class="form-control" 
-              [class.is-invalid]="card.day==''">
-                <option value="">اختر اليوم </option>
-                <option *ngFor="let item of reqData.days" value="{{item.id}}">{{item.value}}</option>
-              </select>
-            </div>
-        
-          </div>
-          <div class="form-row mt-10">
-             <div class="form-group col-md-12"> 
-                <div class="custom-file">
-                    <input name="photo"  type="file" accept="*/*" (change)="handleInputChange($event)"  class="custom-file-input" id="customFileLangHTML"  />
-                    <label class="custom-file-label" for="customFileLangHTML" >
-                      اضف صورة</label>
-                  </div>
-                  
-                  
-              
-           
-          </div>
-          </div>
-     
-         <div style="margin-top: 10px;">
-              <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-                <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
-               <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
-              </div>
-         </div>
-         -->
+       
       </form>
 
-      <!-- <section  class="ser-state">
-          <div class="container">
-               <div class="row ser-block">
-                  <div class=" col-md-12 col-sm-12">
-                        <div class="state">
-                           <h6>اسم الطالب / الطالبة </h6>
-                           
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-                  </div>
-                   <div class=" col-md-4 col-sm-12">
-                        <div class="state">
-                           <h6>الرقم الجامعي	 </h6>
-                           <h5>{{student.std_id}} </h5>
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-                  </div>
-                  <div class=" col-md-4 col-sm-12">
-                        <div class="state">
-                           <h6>رقم الهوية </h6>
-                           <h5>{{student.ssn}} </h5>
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-                  </div>
-              </div>
-              
-              <div class="row ser-block">
-               <div class=" col-md-4 col-sm-12">
-                        <div class="state">
-                           <h6>فصل القبول	</h6>
-                           <h5>{{student.std_adm_term_label}} </h5>
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-               </div>
-               <div class=" col-md-4 col-sm-12">
-                        <div class="state">
-                           <h6>الحالة الأكاديمية الحالية	</h6>
-                           <h5>{{student.current_acadimic_status_label}} </h5>
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-                </div>
-                <div class=" col-md-4 col-sm-12">
-                        <div class="state">
-                           <h6>المعدل التراكمي النهائي </h6>
-                           <h5>{{student.final_graduation_GPA}} </h5>
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-               </div>
-              </div>
-              
-              <div class="row  ser-block">
-               <div class=" col-md-4 col-sm-12">
-                        <div class="state">
-                           <h6>الوضع الأكاديمي</h6>
-                           <h5> {{student.acadimic_position_label}}</h5>
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-              </div>
-               <div class=" col-md-4 col-sm-12">
-                        <div class="state">
-                           <h6>الرسوم الدراسية	</h6>
-                           <h5>{{student.std_fees}} </h5>
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 15%;"></div>
-                          </div>
-               </div>
-              </div>
-           </div>
-       </section>
-                -->
+    
 
 
       </div>

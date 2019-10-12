@@ -14,6 +14,7 @@ import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectu
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
 import {UnivCardComponent} from './univ-card/univ-card.component';
+import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
 
 const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivComponent },
 {
@@ -32,7 +33,8 @@ const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivCompone
   { path: 'objectexam',  component: ObjectExamComponent },
   { path: 'lecexecuse',  component: LecturesExecusesComponent },
   { path: 'reghelper',  component: RegisterationHelperComponent },
-  {path:'universitycard',component:UnivCardComponent}
+  { path:'universitycard',component:UnivCardComponent},
+   {path:'examexcuse',component:ExamExcuseComponent}
 
 
 
