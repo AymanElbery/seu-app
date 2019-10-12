@@ -1,0 +1,39 @@
+import { Injectable } from '@angular/core';
+import { ConfigService } from 'src/app/shared/services/config.service';
+import { HttpRequestService } from 'src/app/shared/services/http-request.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class RegistrationHelperService {
+  reqData;
+  msgs;
+  courses;
+  departments;
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
+
+  getِgetRequests() {
+    //?std_id=S190000060
+    return this.httRequest.GetRequest('registeration_helper_service').toPromise();
+  }
+
+  getِgetCourse(collegeId) {
+    //?std_id=S190000060
+    return this.httRequest.GetRequest('registeration_helper_service/get_courses_for_colledges/' + collegeId).toPromise();
+  }
+  getِgetDepartments(courseId) {
+    //?std_id=S190000060
+    return this.httRequest.GetRequest('registeration_helper_service/get_departments/' + courseId).toPromise();
+  }
+  deleteReq(id) {
+    //+ '?std_id=S120000101'
+    return this.httRequest.GetRequest('registeration_helper_service/remove/' + id).toPromise();
+
+  }
+
+  AddRequest(data) {
+    alert('S');
+    alert(data.colledge)
+    return this.httRequest.postRequest('registeration_helper_service/insert/', data).toPromise();
+}
+}

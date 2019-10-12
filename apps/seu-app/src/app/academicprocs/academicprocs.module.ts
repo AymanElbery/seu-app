@@ -46,6 +46,14 @@ import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-e
 import { LectureExecuseServiceService } from './services/lecture-execuse-service.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
+import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
+import {UnivCardComponent} from './univ-card/univ-card.component';
+import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
+import {UvnivCardService} from './services/uvniv-card.service';
+import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
+import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
+import {ExamExcuseService}  from './services/exam-excuse.service';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -70,12 +78,19 @@ import { MatNativeDateModule } from '@angular/material/core';
            AddReEnrollComponent,
            ChangeMajorComponent,
            AddChangeMajorComponent,
-
            AddRequestChangeComponent,
            LecturesExecusesComponent,
            ObjectExamComponent,
            AddLecturesExecusesComponent,
-           AddExamObjectComponent],
+           AddExamObjectComponent,
+           RegisterationHelperComponent,
+           AddRegisterationHelperComponent,
+           UnivCardComponent,
+           AddUnivCardComponent,
+           ExamExcuseComponent,
+           AddExamExcuseComponent
+          ],
+
 
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
@@ -88,7 +103,10 @@ import { MatNativeDateModule } from '@angular/material/core';
          AddChangeMajorComponent,
          AddRequestChangeComponent,
          AddLecturesExecusesComponent,
-         AddExamObjectComponent
+         AddExamObjectComponent,
+         AddRegisterationHelperComponent,
+        AddUnivCardComponent,
+        AddExamExcuseComponent
       ],
 
   imports: [
@@ -110,7 +128,9 @@ import { MatNativeDateModule } from '@angular/material/core';
       EnglishEqualizerService,
       ReEnrollService,
       ChangeMajorService,
-      LectureExecuseServiceService
+      LectureExecuseServiceService,
+      UvnivCardService,
+      ExamExcuseService
   ]
 
 })
