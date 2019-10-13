@@ -56,7 +56,15 @@ import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
 import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
 import {ExamExcuseService}  from './services/exam-excuse.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {TerminationRequestComponent} from './termination-request/termination-request.component';
+import {AddTerminationRequestComponent} from './termination-request/diag/add-termination-request/add-termination-request.component';
+import {TerminationService} from './services/termination.service';
+import {TrainingRequestComponent} from './training-request/training-request.component';
+import {AddTrainingRequestComponent} from './training-request/diag/add-training-request/add-training-request.component';
+import {TrainingRequestService} from './services/training-request.service';
+import {AddBankreceiptComponent} from './univ-card/diag/add-bankreceipt/add-bankreceipt.component';
+import {MissingUnivCardService} from './services/missing-univ-card.service';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -94,7 +102,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
            ExamExcuseComponent,
            AddExamExcuseComponent,
            AddUnivCardComponent,
-           RegisterWishesComponent
+           RegisterWishesComponent,
+           TerminationRequestComponent,
+           AddTerminationRequestComponent,
+           TrainingRequestComponent,
+           AddTrainingRequestComponent,
+           AddBankreceiptComponent
+           
            
 ],
           
@@ -114,7 +128,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
          AddExamObjectComponent,
          AddRegisterationHelperComponent,
         AddUnivCardComponent,
-        AddExamExcuseComponent
+        AddExamExcuseComponent,
+        AddTerminationRequestComponent,
+        AddTrainingRequestComponent,
+        AddBankreceiptComponent
+
       ],
 
   imports: [
@@ -139,7 +157,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
       ChangeMajorService,
       LectureExecuseServiceService,
       UvnivCardService,
-      ExamExcuseService
+      ExamExcuseService,
+      TerminationService,
+      TrainingRequestService,
+      MissingUnivCardService
   ]
 
 })
