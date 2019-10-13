@@ -41,7 +41,7 @@ module.exports = ".printDiv {\r\n    page-break-after: always;\r\n   \r\n  \r\n 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n    <div style=\"font-size: xx-large\" class=\"printDiv\">HELP</div>\n<div class=\"printDiv\">\n  <h1>\n    Example Document\n  </h1>\n  <div>\n    <p  [class.isValid]=\"printService.isPrinting\" >\n      This is an example document that shows how to have a footer that repeats at the bottom of every page, but also isn't covered up by paragraph text.\n    </p>\n  </div>\n  <div>\n    <h3 >\n      Example Section I\n    </h3>\n    <p >\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum metus sit amet urna lobortis sollicitudin. Nulla mattis purus porta lorem tempor, a cursus tellus facilisis. Aliquam pretium nibh vitae elit placerat vestibulum. Duis felis ipsum, consectetur id pellentesque in, porta sit amet sapien. Ut tristique enim sem, laoreet bibendum nisl fermentum vitae. Ut aliquet sem ac lorem malesuada sodales. Fusce iaculis ipsum ex, in mollis dolor dapibus sit amet. In convallis felis in orci fermentum gravida a vel orci. Sed tincidunt porta nibh sit amet varius. Donec et odio eget odio tempus auctor ac eget ex.\n      \n      Pellentesque vitae augue sed purus dictum ultricies at eu neque. Nullam ut mauris a purus tristique euismod. Sed elementum, leo id placerat congue, leo tellus pharetra orci, eget ultricies odio quam sit amet ipsum. Praesent feugiat, lorem at commodo egestas, felis ligula pharetra sapien, in placerat mauris nisi aliquet tortor. Quisque nibh lectus, laoreet vel mollis a, tincidunt vel ipsum. Sed blandit vehicula sollicitudin. Donec et sapien justo. Ut fermentum ipsum imperdiet diam condimentum, eget varius sapien dictum. Sed sed elit egestas libero maximus finibus eu eget massa.\n      \n      Duis finibus vestibulum finibus. Nunc lobortis lacus ut libero mattis tempor. Nulla a nunc at nisl elementum congue. Nunc eu consectetur mauris. Etiam non placerat massa. Etiam eu urna in metus tempus molestie sed eget diam. Nunc sem velit, elementum sit amet fringilla in, dictum sit amet sem. Quisque convallis faucibus purus dignissim dictum. Sed semper, mi vel accumsan sollicitudin, massa massa pellentesque justo, eget auctor sapien enim ac elit.\n      \n      Nullam turpis augue, lacinia ut libero ac, rhoncus bibendum ligula. Mauris ullamcorper maximus turpis, a consequat turpis bibendum sit amet. Nam vitae dui nec velit hendrerit faucibus. Vivamus nunc diam, porta tristique augue nec, dignissim venenatis felis. Proin mattis id risus in feugiat. Etiam cursus faucibus nisi. In in nisi ullamcorper, convallis lectus et, ornare nulla. Cras tristique nulla eros, non maximus odio imperdiet eu. Nullam egestas dignissim est, et fringilla odio pretium eleifend. Nullam tincidunt sapien fermentum, rhoncus risus ac, ullamcorper libero. Vestibulum bibendum molestie dui nec tincidunt. Mauris tempus, orci ut congue vulputate, erat orci aliquam orci, sed eleifend orci dui sed tellus. Pellentesque pellentesque massa vulputate urna pretium, consectetur pulvinar orci pulvinar.\n      \n      Donec aliquet imperdiet ex, et tincidunt risus convallis eget. Etiam eu fermentum lectus, molestie eleifend nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam dignissim, erat vitae congue molestie, ante urna sagittis est, et sagittis lacus risus vitae est. Sed elementum ipsum et pellentesque dignissim. Sed vehicula feugiat pretium. Donec ex lacus, dictum faucibus lectus sit amet, tempus hendrerit ante. Ut sollicitudin sodales metus, at placerat risus viverra ut.\n      \n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum metus sit amet urna lobortis sollicitudin. Nulla mattis purus porta lorem tempor, a cursus tellus facilisis. Aliquam pretium nibh vitae elit placerat vestibulum. Duis felis ipsum, consectetur id pellentesque in, porta sit amet sapien. Ut tristique enim sem, laoreet bibendum nisl fermentum vitae. Ut aliquet sem ac lorem malesuada sodales. Fusce iaculis ipsum ex, in mollis dolor dapibus sit amet. In convallis felis in orci fermentum gravida a vel orci. Sed tincidunt porta nibh sit amet varius. Donec et odio eget odio tempus auctor ac eget ex.\n      \n      Duis finibus vestibulum finibus. Nunc lobortis lacus ut libero mattis tempor. Nulla a nunc at nisl elementum congue. Nunc eu consectetur mauris. Etiam non placerat massa. Etiam eu urna in metus tempus molestie sed eget diam. Nunc sem velit, elementum sit amet fringilla in, dictum sit amet sem. Quisque convallis faucibus purus dignissim dictum. Sed semper, mi vel accumsan sollicitudin, massa massa pellentesque justo, eget auctor sapien enim ac elit.\n      \n      Nullam turpis augue, lacinia ut libero ac, rhoncus bibendum ligula. Mauris ullamcorper maximus turpis, a consequat turpis bibendum sit amet. Nam vitae dui nec velit hendrerit faucibus. Vivamus nunc diam, porta tristique augue nec, dignissim venenatis felis. Proin mattis id risus in feugiat. Etiam cursus faucibus nisi. In in nisi ullamcorper, convallis lectus et, ornare nulla. Cras tristique nulla eros, non maximus odio imperdiet eu. Nullam egestas dignissim est, et fringilla odio pretium eleifend. Nullam tincidunt sapien fermentum, rhoncus risus ac, ullamcorper libero.\n    </p>\n  </div>\n  <br/><br/><br/><br/>\n  <div class=\"content-block\">\n    <h3>Example Section II</h3>\n    <p>\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum metus sit amet urna lobortis sollicitudin. Nulla mattis purus porta lorem tempor, a cursus tellus facilisis. Aliquam pretium nibh vitae elit placerat vestibulum. Duis felis ipsum, consectetur id pellentesque in, porta sit amet sapien. Ut tristique enim sem, laoreet bibendum nisl fermentum vitae. Ut aliquet sem ac lorem malesuada sodales. Fusce iaculis ipsum ex, in mollis dolor dapibus sit amet. In convallis felis in orci fermentum gravida a vel orci. Sed tincidunt porta nibh sit amet varius. Donec et odio eget odio tempus auctor ac eget ex.\n      \n      Pellentesque vitae augue sed purus dictum ultricies at eu neque. Nullam ut mauris a purus tristique euismod. Sed elementum, leo id placerat congue, leo tellus pharetra orci, eget ultricies odio quam sit amet ipsum. Praesent feugiat, lorem at commodo egestas, felis ligula pharetra sapien, in placerat mauris nisi aliquet tortor. Quisque nibh lectus, laoreet vel mollis a, tincidunt vel ipsum. Sed blandit vehicula sollicitudin. Donec et sapien justo. Ut fermentum ipsum imperdiet diam condimentum, eget varius sapien dictum. Sed sed elit egestas libero maximus finibus eu eget massa.\n    </p>\n  </div>\n</div>\n"
+module.exports = "\r\n    <div style=\"font-size: xx-large\" class=\"printDiv\">HELP</div>\r\n<div class=\"printDiv\">\r\n  <h1>\r\n    Example Document\r\n  </h1>\r\n  <div>\r\n    <p  [class.isValid]=\"printService.isPrinting\" >\r\n      This is an example document that shows how to have a footer that repeats at the bottom of every page, but also isn't covered up by paragraph text.\r\n    </p>\r\n  </div>\r\n  <div>\r\n    <h3 >\r\n      Example Section I\r\n    </h3>\r\n    <p >\r\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum metus sit amet urna lobortis sollicitudin. Nulla mattis purus porta lorem tempor, a cursus tellus facilisis. Aliquam pretium nibh vitae elit placerat vestibulum. Duis felis ipsum, consectetur id pellentesque in, porta sit amet sapien. Ut tristique enim sem, laoreet bibendum nisl fermentum vitae. Ut aliquet sem ac lorem malesuada sodales. Fusce iaculis ipsum ex, in mollis dolor dapibus sit amet. In convallis felis in orci fermentum gravida a vel orci. Sed tincidunt porta nibh sit amet varius. Donec et odio eget odio tempus auctor ac eget ex.\r\n      \r\n      Pellentesque vitae augue sed purus dictum ultricies at eu neque. Nullam ut mauris a purus tristique euismod. Sed elementum, leo id placerat congue, leo tellus pharetra orci, eget ultricies odio quam sit amet ipsum. Praesent feugiat, lorem at commodo egestas, felis ligula pharetra sapien, in placerat mauris nisi aliquet tortor. Quisque nibh lectus, laoreet vel mollis a, tincidunt vel ipsum. Sed blandit vehicula sollicitudin. Donec et sapien justo. Ut fermentum ipsum imperdiet diam condimentum, eget varius sapien dictum. Sed sed elit egestas libero maximus finibus eu eget massa.\r\n      \r\n      Duis finibus vestibulum finibus. Nunc lobortis lacus ut libero mattis tempor. Nulla a nunc at nisl elementum congue. Nunc eu consectetur mauris. Etiam non placerat massa. Etiam eu urna in metus tempus molestie sed eget diam. Nunc sem velit, elementum sit amet fringilla in, dictum sit amet sem. Quisque convallis faucibus purus dignissim dictum. Sed semper, mi vel accumsan sollicitudin, massa massa pellentesque justo, eget auctor sapien enim ac elit.\r\n      \r\n      Nullam turpis augue, lacinia ut libero ac, rhoncus bibendum ligula. Mauris ullamcorper maximus turpis, a consequat turpis bibendum sit amet. Nam vitae dui nec velit hendrerit faucibus. Vivamus nunc diam, porta tristique augue nec, dignissim venenatis felis. Proin mattis id risus in feugiat. Etiam cursus faucibus nisi. In in nisi ullamcorper, convallis lectus et, ornare nulla. Cras tristique nulla eros, non maximus odio imperdiet eu. Nullam egestas dignissim est, et fringilla odio pretium eleifend. Nullam tincidunt sapien fermentum, rhoncus risus ac, ullamcorper libero. Vestibulum bibendum molestie dui nec tincidunt. Mauris tempus, orci ut congue vulputate, erat orci aliquam orci, sed eleifend orci dui sed tellus. Pellentesque pellentesque massa vulputate urna pretium, consectetur pulvinar orci pulvinar.\r\n      \r\n      Donec aliquet imperdiet ex, et tincidunt risus convallis eget. Etiam eu fermentum lectus, molestie eleifend nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam dignissim, erat vitae congue molestie, ante urna sagittis est, et sagittis lacus risus vitae est. Sed elementum ipsum et pellentesque dignissim. Sed vehicula feugiat pretium. Donec ex lacus, dictum faucibus lectus sit amet, tempus hendrerit ante. Ut sollicitudin sodales metus, at placerat risus viverra ut.\r\n      \r\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum metus sit amet urna lobortis sollicitudin. Nulla mattis purus porta lorem tempor, a cursus tellus facilisis. Aliquam pretium nibh vitae elit placerat vestibulum. Duis felis ipsum, consectetur id pellentesque in, porta sit amet sapien. Ut tristique enim sem, laoreet bibendum nisl fermentum vitae. Ut aliquet sem ac lorem malesuada sodales. Fusce iaculis ipsum ex, in mollis dolor dapibus sit amet. In convallis felis in orci fermentum gravida a vel orci. Sed tincidunt porta nibh sit amet varius. Donec et odio eget odio tempus auctor ac eget ex.\r\n      \r\n      Duis finibus vestibulum finibus. Nunc lobortis lacus ut libero mattis tempor. Nulla a nunc at nisl elementum congue. Nunc eu consectetur mauris. Etiam non placerat massa. Etiam eu urna in metus tempus molestie sed eget diam. Nunc sem velit, elementum sit amet fringilla in, dictum sit amet sem. Quisque convallis faucibus purus dignissim dictum. Sed semper, mi vel accumsan sollicitudin, massa massa pellentesque justo, eget auctor sapien enim ac elit.\r\n      \r\n      Nullam turpis augue, lacinia ut libero ac, rhoncus bibendum ligula. Mauris ullamcorper maximus turpis, a consequat turpis bibendum sit amet. Nam vitae dui nec velit hendrerit faucibus. Vivamus nunc diam, porta tristique augue nec, dignissim venenatis felis. Proin mattis id risus in feugiat. Etiam cursus faucibus nisi. In in nisi ullamcorper, convallis lectus et, ornare nulla. Cras tristique nulla eros, non maximus odio imperdiet eu. Nullam egestas dignissim est, et fringilla odio pretium eleifend. Nullam tincidunt sapien fermentum, rhoncus risus ac, ullamcorper libero.\r\n    </p>\r\n  </div>\r\n  <br/><br/><br/><br/>\r\n  <div class=\"content-block\">\r\n    <h3>Example Section II</h3>\r\n    <p>\r\n      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vestibulum metus sit amet urna lobortis sollicitudin. Nulla mattis purus porta lorem tempor, a cursus tellus facilisis. Aliquam pretium nibh vitae elit placerat vestibulum. Duis felis ipsum, consectetur id pellentesque in, porta sit amet sapien. Ut tristique enim sem, laoreet bibendum nisl fermentum vitae. Ut aliquet sem ac lorem malesuada sodales. Fusce iaculis ipsum ex, in mollis dolor dapibus sit amet. In convallis felis in orci fermentum gravida a vel orci. Sed tincidunt porta nibh sit amet varius. Donec et odio eget odio tempus auctor ac eget ex.\r\n      \r\n      Pellentesque vitae augue sed purus dictum ultricies at eu neque. Nullam ut mauris a purus tristique euismod. Sed elementum, leo id placerat congue, leo tellus pharetra orci, eget ultricies odio quam sit amet ipsum. Praesent feugiat, lorem at commodo egestas, felis ligula pharetra sapien, in placerat mauris nisi aliquet tortor. Quisque nibh lectus, laoreet vel mollis a, tincidunt vel ipsum. Sed blandit vehicula sollicitudin. Donec et sapien justo. Ut fermentum ipsum imperdiet diam condimentum, eget varius sapien dictum. Sed sed elit egestas libero maximus finibus eu eget massa.\r\n    </p>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -120,7 +120,7 @@ module.exports = ".header, .header-space,\r\n.footer, .footer-space { height: 10
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<table>\n  <thead><tr><td>\n    <div class=\"header-space\"></div>\n  </td></tr></thead>\n  <tbody><tr><td>\n    <div class=\"content\">\n      <router-outlet>\n        \n      </router-outlet>\n    </div>\n  </td></tr></tbody>\n  <tfoot><tr><td>\n    <div class=\"footer-space\"></div>\n  </td></tr></tfoot>\n</table>\n\n<div class=\"header\">  HEADER HEADERHEADER   HEADER  HEADER  HEADER HEADER HEADER</div>\n<div class=\"footer\"> FOOTER FOOTERFOOTER FOOTER FOOTER FOOTER FOOTER </div>\n"
+module.exports = "<table>\r\n  <thead><tr><td>\r\n    <div class=\"header-space\"></div>\r\n  </td></tr></thead>\r\n  <tbody><tr><td>\r\n    <div class=\"content\">\r\n      <router-outlet>\r\n        \r\n      </router-outlet>\r\n    </div>\r\n  </td></tr></tbody>\r\n  <tfoot><tr><td>\r\n    <div class=\"footer-space\"></div>\r\n  </td></tr></tfoot>\r\n</table>\r\n\r\n<div class=\"header\">  HEADER HEADERHEADER   HEADER  HEADER  HEADER HEADER HEADER</div>\r\n<div class=\"footer\"> FOOTER FOOTERFOOTER FOOTER FOOTER FOOTER FOOTER </div>\r\n"
 
 /***/ }),
 
@@ -176,7 +176,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card\"   >\n  <h5 class=\"card-header \"  style=\"text-align: right\" >سجل الطالب الاكاديمي</h5>\n  <div class=\"card-body\">\n    <h5 class=\"card-title text-center\">{{recoredData.student_name}}</h5>\n  <div class=\"row\">\n        <div  class=\"col-md-1\"></div>\n\n    <div class=\"col-md-5\">\n\n      <div class=\"form-group\">\n      \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b> الكليه </b> </div>\n            </div>\n            <input name=\"coll\"  value=\"{{recoredData.coll}}\"   class=\"form-control\" readonly>\n          </div>\n        </div>   \n    </div>\n    <div class=\"col-md-5\">\n\n        <div class=\"form-group\">\n        \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b> الرقم الجامعي </b> </div>\n              </div>\n              <input name=\"coll\"  value=\"{{recoredData.std_id}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n      </div>  <div  class=\"col-md-1\"></div>\n\n</div>\n<div class=\"row\">\n    <div  class=\"col-md-1\"></div>\n\n    <div class=\"col-md-5\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b>التخصص  </b> </div>\n          </div>\n          <input name=\"ID\"   value=\"{{recoredData.major}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    <div class=\"col-md-5\">\n  \n        <div class=\"form-group\">\n        \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b> رقم الهويه  </b> </div>\n              </div>\n              <input name=\"fsermester\"  value=\"{{recoredData.ssn}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n      </div>  <div  class=\"col-md-1\"></div>\n\n  </div>\n  \n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b>  ألدرجه </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\"{{recoredData.grade}}\"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-5\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>  حالة الطالب  </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{recoredData.status}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n        <div  class=\"col-md-1\"></div></div>\n\n  </div>\n</div>\n\n<div class=\"accordion\"  style=\"direction: rtl;text-align: right\" id=\"accordionExample\">\n  <div class=\"row\"><div class=\"col-md-12\"  *ngFor=\"let item of recoredData.terms ; let i = index\">\n      <div class=\"card \" >\n          <div class=\"card-header\" id=\"heading{{i}}\">\n            <h2 class=\"mb-0\">\n              <button class=\"btn btn-link\" type=\"button\" data-toggle=\"collapse\"  [attr.data-target]=\"'#collapse'+i\" aria-expanded=\"false\" [attr.aria-controls]=\"'collapse'+i\">\n    <b>    الفصل {{item.Term}} لسنة {{item.Year}} </b> \n       </button>\n            </h2>\n          </div>\n      \n          <div id=\"collapse{{i}}\" class=\"collapse\" [attr.aria-labelledby]=\"'heading'+i\" data-parent=\"#accordionExample\">\n             <div class=\"card-body\">\n                <div class=\"row\">\n            \n                <div class=\"col-md-3\">\n            \n                  <div class=\"form-group\">\n                  \n                      <div class=\"input-group\">\n                        <div class=\"input-group-prepend\">\n                          <div class=\"input-group-text\"><b> الفصل </b> </div>\n                        </div>\n                        <input name=\"coll\"  value=\"{{item.Term}}\"   class=\"form-control\" readonly>\n                      </div>\n                    </div>   \n                </div>\n                <div class=\"col-md-3\">\n            \n                    <div class=\"form-group\">\n                    \n                        <div class=\"input-group\">\n                          <div class=\"input-group-prepend\">\n                            <div class=\"input-group-text\"><b> العام  </b> </div>\n                          </div>\n                          <input name=\"coll\"  value=\"{{item.Year}}\"   class=\"form-control\" readonly>\n                        </div>\n                      </div>   \n                  </div> \n                  \n                  <div class=\"col-md-3\">\n            \n                      <div class=\"form-group\">\n                      \n                          <div class=\"input-group\">\n                            <div class=\"input-group-prepend\">\n                              <div class=\"input-group-text\"><b>  التخصص </b> </div>\n                            </div>\n                            <input name=\"coll\"  value=\"{{item.Major}}\"   class=\"form-control\" readonly>\n                          </div>\n                        </div>   \n                    </div>\n                    <div class=\"col-md-3\">\n            \n                        <div class=\"form-group\">\n                        \n                            <div class=\"input-group\">\n                              <div class=\"input-group-prepend\">\n                                <div class=\"input-group-text\"><b> الحالة  </b> </div>\n                              </div>\n                              <input name=\"coll\"  value=\"{{item.Status}}\"   class=\"form-control\" readonly>\n                            </div>\n                          </div>   \n                      </div>\n                      <table class=\"table\">\n                          <thead>\n                            <tr>\n                              <th scope=\"col\">رمز المقرر</th>\n                              <th scope=\"col\">اسم المقرر</th>\n                              <th scope=\"col\">التقدير</th>\n                              <th scope=\"col\">الساعات</th>\n                              <th scope=\"col\">النقاط</th>\n\n                            </tr>\n                          </thead>\n                          <tbody>\n                            <tr *ngFor=\"let it of item.courses\">\n                              <td >{{it.ID}}</td>\n                              <td>{{it.CRSE_TITLE}}</td>\n                              <td>{{it.GRADE_TITLE}}</td>\n                              <td>{{it.HRS}}</td>\n                              <td>{{it.Points}}</td>\n\n                            </tr>\n                           \n                          </tbody>\n                        </table>\n                        <table class=\"table  table-bordered\">\n                            <thead>\n                              <tr>\n                                <th scope=\"col\">ساعات </th>\n                                <th scope=\"col\">مسجلة </th>\n                                <th scope=\"col\">نجاح</th>\n                                <th scope=\"col\">مكتسبة</th>\n                                <th scope=\"col\">النقاط</th>\n                                <th scope=\"col\">المعدل</th>\n  \n                              </tr>\n                            </thead>\n                            <tbody>\n                              <th scope=\"row\">فصلي</th>\n                              <td>{{item.registredHours}}</td>\n                              <td>{{item.gpa_hours}}</td>\n                              <td>{{item.earned_hours}}</td>\n                              <td>{{item.quality_points}}</td>\n                              <td>{{item.gpa}}</td>\n  <tr>\n                              <th scope=\"row\">تراكمي</th>\n                              <td>{{item.TotalregistredHours}}</td>\n                              <td>{{item.total_gpa_hours}}</td>\n                              <td>{{item.total_earned_hours}}</td>\n                              <td>{{item.total_quality_points}}</td>\n                              <td>{{item.total_gpa}}</td>  \n                            </tr>\n                            </tbody></table>\n            \n            </div>\n              \n\n\n            </div>\n          </div>\n        </div>\n       \n      </div>\n  </div> </div>\n  <div  class=\"btn-group btn-group-justified col-md-12 \">\n      <div class=\"col-md-4\"></div>\n      <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n        طباعة</a>\n      <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n        Print</a>\n      <div class=\"col-md-4\"></div>\n    \n      </div>\n  "
+module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n               \r\n    <mat-progress-spinner mode=\"indeterminate\"></mat-progress-spinner>\r\n    \r\n                            \r\n  <section class=\"service-single\">\r\n\r\n      <div class=\"container\">\r\n              <h3> سجل الطالب الأكاديمي </h3>\r\n           <div class=\"row\">\r\n              <div class=\" col-md-5\">\r\n                <p>  سجل الطالب الأكاديمي سجل الطالب الأكاديمي سجل الطالب الأكاديمي سجل الطالب الأكاديمي</p>\r\n               </div>\r\n              <div class=\" col-md-6 descr\">\r\n                <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                  &nbsp; &nbsp; &nbsp; &nbsp;\r\n                  <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                  <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n              </div>\r\n          </div>\r\n          </div>\r\n       </section>\r\n       \r\n       <div class=\" stu-name col-md-4 col-sm-12 \">\r\n        <div class=\"state\">\r\n           <h5> <span>اسم الطالب : </span>{{recoredData.student_name}}  </h5> \r\n        </div>\r\n   </div>\r\n               \r\n   <section  class=\"ser-state\">\r\n     \r\n    <div class=\"container\">\r\n         <div class=\"row ser-block\">\r\n            <div class=\"col-md-4 col-sm-12\">\r\n                  <div class=\"state\">\r\n                     <h6>الكلية</h6>\r\n                     <h5> {{recoredData.coll}} </h5>\r\n                  </div>\r\n                    <div class=\"progress progress-sm\">\r\n                        <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                    </div>\r\n            </div>\r\n              <div class=\" col-md-4 col-sm-12\">\r\n                  <div class=\"state\">\r\n                     <h6>التخصص </h6>\r\n                     <h5> {{recoredData.major}} </h5>\r\n                  </div>\r\n                    <div class=\"progress progress-sm\">\r\n                        <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                    </div>\r\n         </div>\r\n             <div class=\" col-md-4 col-sm-12\">\r\n                  <div class=\"state\">\r\n                     <h6>الرقم الجامعي\t </h6>\r\n                     <h5>{{recoredData.std_id}} </h5>\r\n                  </div>\r\n                    <div class=\"progress progress-sm\">\r\n                        <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                    </div>\r\n            </div>\r\n            \r\n        </div>\r\n        \r\n        <div class=\"row ser-block\">\r\n            <div class=\" col-md-4 col-sm-12\">\r\n                  <div class=\"state\">\r\n                     <h6>رقم الهوية </h6>\r\n                     <h5>{{recoredData.ssn}} </h5>\r\n                  </div>\r\n                    <div class=\"progress progress-sm\">\r\n                        <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                    </div>\r\n            </div>\r\n         <div class=\" col-md-4 col-sm-12\">\r\n                  <div class=\"state\">\r\n                     <h6>الدرجة\t</h6>\r\n                     <h5>{{recoredData.grade}} </h5>\r\n                  </div>\r\n                    <div class=\"progress progress-sm\">\r\n                        <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                    </div>\r\n         </div>\r\n         <div class=\" col-md-4 col-sm-12\">\r\n                  <div class=\"state\">\r\n                     <h6>حالة الطالب</h6>\r\n                     <h5>{{recoredData.status}} </h5>\r\n                  </div>\r\n                    <div class=\"progress progress-sm\">\r\n                        <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                    </div>\r\n          </div>\r\n         \r\n        </div>\r\n       \r\n     </div>\r\n </section>\r\n       \r\n\r\n\r\n\r\n<div class=\"accordion\"   id=\"accordionExample\">\r\n  <div  *ngFor=\"let item of recoredData.terms ; let i = index\">\r\n      <div class=\"card \" >\r\n          <div class=\"card-header\" id=\"heading{{i}}\">\r\n            <h2 class=\"mb-0\">\r\n              <button class=\"btn btn-link btn-block\" type=\"button\" data-toggle=\"collapse\"  [attr.data-target]=\"'#collapse'+i\" aria-expanded=\"false\" [attr.aria-controls]=\"'collapse'+i\">\r\n    <b>    الفصل {{item.Term}} لسنة {{item.Year}} </b> \r\n       </button>\r\n            </h2>\r\n          </div>\r\n      \r\n          <div id=\"collapse{{i}}\" class=\"collapse\" [attr.aria-labelledby]=\"'heading'+i\" data-parent=\"#accordionExample\">\r\n            <div class=\"container\">\r\n              <div class=\"back\">\r\n          <div class=\"row ser-block\">\r\n                  <div class=\"col-md-3 col-sm-12 \">\r\n                    <div class=\"state\">\r\n                       <h6>الفصل</h6>\r\n                       <h5> {{item.Term}} </h5>\r\n                      <div class=\"progress progress-sm\">\r\n                          <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                 <div class=\" col-md-3 col-sm-12 \">\r\n                    <div class=\"state\">\r\n                       <h6>العام</h6>\r\n                       <h5>{{item.Year}} </h5>\r\n                      <div class=\"progress progress-sm\">\r\n                          <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                      </div>\r\n                      </div>\r\n                </div>\r\n                <div class=\" col-md-3 col-sm-12 \">\r\n                    <div class=\"state\">\r\n                       <h6>التخصص</h6>\r\n                       <h5> {{item.Major}} </h5>\r\n                      <div class=\"progress progress-sm\">\r\n                          <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                      </div>\r\n                       </div>\r\n                  </div>\r\n                <div class=\" col-md-3 col-sm-12 \">\r\n                    <div class=\"state\">\r\n                       <h6>الحالة</h6>\r\n                       <h5>{{item.Status}}  </h5>\r\n                      <div class=\"progress progress-sm\">\r\n                          <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                      </div>\r\n                       </div>\r\n                  </div>\r\n              </div>\r\n                  \r\n            \r\n              <div class=\"table-responsive\">\r\n              \r\n \r\n                  <table class=\"table table-striped table-bordered\">\r\n                      <thead style=\"background: #e6e6e6\">\r\n                            <tr>\r\n                              <th scope=\"col\">رمز المقرر</th>\r\n                              <th scope=\"col\">اسم المقرر</th>\r\n                              <th scope=\"col\">التقدير</th>\r\n                              <th scope=\"col\">الساعات</th>\r\n                              <th scope=\"col\">النقاط</th>\r\n\r\n                            </tr>\r\n                          </thead>\r\n                          <tbody>\r\n                            <tr *ngFor=\"let it of item.courses\">\r\n                              <td >{{it.ID}}</td>\r\n                              <td>{{it.CRSE_TITLE}}</td>\r\n                              <td>{{it.GRADE_TITLE}}</td>\r\n                              <td>{{it.HRS}}</td>\r\n                              <td>{{it.Points}}</td>\r\n\r\n                            </tr>\r\n                           \r\n                          </tbody>\r\n                        </table>\r\n                        </div>\r\n                        <div class=\"table-responsive\">\r\n              \r\n \r\n                            <table class=\"table table-striped table-bordered\">\r\n                                <thead style=\"background: #e6e6e6\">\r\n                              <tr>\r\n                                <th scope=\"col\">ساعات </th>\r\n                                <th scope=\"col\">مسجلة </th>\r\n                                <th scope=\"col\">نجاح</th>\r\n                                <th scope=\"col\">مكتسبة</th>\r\n                                <th scope=\"col\">النقاط</th>\r\n                                <th scope=\"col\">المعدل</th>\r\n  \r\n                              </tr>\r\n                            </thead>\r\n                            <tbody>\r\n                              <th scope=\"row\">فصلي</th>\r\n                              <td>{{item.registredHours}}</td>\r\n                              <td>{{item.gpa_hours}}</td>\r\n                              <td>{{item.earned_hours}}</td>\r\n                              <td>{{item.quality_points}}</td>\r\n                              <td>{{item.gpa}}</td>\r\n  <tr>\r\n                              <th scope=\"row\">تراكمي</th>\r\n                              <td>{{item.TotalregistredHours}}</td>\r\n                              <td>{{item.total_gpa_hours}}</td>\r\n                              <td>{{item.total_earned_hours}}</td>\r\n                              <td>{{item.total_quality_points}}</td>\r\n                              <td>{{item.total_gpa}}</td>  \r\n                            </tr>\r\n                            </tbody></table>\r\n            \r\n          \r\n              \r\n\r\n\r\n            </div>\r\n          </div>\r\n        </div>\r\n       \r\n      </div>\r\n  </div>\r\n  </div>\r\n  <div  class=\"btn-group btn-group-justified col-md-12 \">\r\n      <div class=\"col-md-4\"></div>\r\n      <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n        طباعة</a>\r\n      <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n        Print</a>\r\n      <div class=\"col-md-4\"></div>\r\n    \r\n      </div>\r\n  </div>"
 
 /***/ }),
 
@@ -241,7 +241,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">  الحالة الاكاديمية</h3>\n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-5\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>اسم الطالب</b> </div>\n        </div>\n        <input  value=\"{{student.name}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n\n  <div class=\"col-md-5\">\n\n      <div class=\"form-group\">\n      \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b>الرقم الجامعي </b> </div>\n            </div>\n            <input name=\"studentNo\"  value=\"{{student.std_id}}\"   class=\"form-control\" readonly>\n          </div>\n        </div>   \n    </div>  <div  class=\"col-md-1\"></div>\n\n</div>\n<div class=\"row\">\n    <div  class=\"col-md-1\"></div>\n\n    <div class=\"col-md-5\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b>رقم الهويه </b> </div>\n          </div>\n          <input name=\"ID\"   value=\"{{student.ssn}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    <div class=\"col-md-5\">\n  \n        <div class=\"form-group\">\n        \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b> فصل القبول </b> </div>\n              </div>\n              <input name=\"fsermester\"  value=\"{{student.std_adm_term_label}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n      </div>  <div  class=\"col-md-1\"></div>\n\n  </div>\n  \n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b>الحالة الاكاديمية الحاليه </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\"{{student.current_acadimic_status_label}}\"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-5\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>المعدل التراكمي النهائي  </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{student.final_graduation_GPA}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n        <div  class=\"col-md-1\"></div>\n\n    </div>\n    \n    <div class=\"row\">\n        <div  class=\"col-md-1\"></div>\n\n        <div class=\"col-md-5\">\n          <div class=\"form-group\">\n            \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b>الوضع الاكاديمي </b> </div>\n              </div>\n              <input name=\"AcademicCurrentStatus\"  value=\"{{student.acadimic_position_label}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n        </div>\n\n        <div class=\"col-md-5\">\n      \n            <div class=\"form-group\">\n            \n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"><b> الرسوم الدراسية  </b> </div>\n                  </div>\n                  <input name=\"Fees\"  value=\"{{student.std_fees}}\"   class=\"form-control\" readonly>\n                </div>\n              </div>   \n          </div>        <div  class=\"col-md-1\"></div>\n\n      </div>\n      <div class=\"row\">      <div class=\"col-md-1\">\n</div>\n      <div class=\"col-md-10\">\n\n      <div class=\"card\">\n          <h5 class=\"card-header h6\"><div class=\"row\">\n              الحالة الاكاديمية للطالب خلال الفصول الدراسيه\n            </div>\n            </h5>\n          <div class=\"card-body\">\n              <div class=\"row\">\n                  <div  class=\"col-md-1\"></div>\n\n                <div class=\"col-md-10\">\n                  <div class=\"form-group\">\n                      <div class=\"input-group\">\n                          <div class=\"input-group-prepend\">\n                            <div class=\"input-group-text\"><b>  الفصول الدراسية  </b> </div>\n                          </div>\n                      <select name=\"trems\" [(ngModel)]=\"selectedSems\" #t (change)=\"getTrmsDetails(t.value)\"   class=\"form-control\">\n                        <option *ngFor=\"let item of studentTerms\" value=\"{{item.TERM_CODE}}\">{{item.TERM_DESC}}</option>\n                      </select></div>\n                    </div>\n              </div></div>\n              <div class=\"row\"> \n                  <div  class=\"col-md-1\"></div>\n\n                  <div class=\"col-md-5\">\n                    <div class=\"form-group\">\n                      \n                      <div class=\"input-group\">\n                        <div class=\"input-group-prepend\">\n                          <div class=\"input-group-text\"><b>الكلية </b> </div>\n                        </div>\n                        <input  value=\"{{studentTermDetails.COLL_CODE}}\"  class=\"form-control\" readonly>\n                      </div>\n                    </div>   \n                  </div>\n                  <div class=\"col-md-5\">\n                \n                      <div class=\"form-group\">\n                      \n                          <div class=\"input-group\">\n                            <div class=\"input-group-prepend\">\n                              <div class=\"input-group-text\"><b>التخصص  </b> </div>\n                            </div>\n                            <input name=\"studentNo\"  value=\"{{studentTermDetails.MAJR_code}}\"   class=\"form-control\" readonly>\n                          </div>\n                        </div>   \n                    </div>        <div  class=\"col-md-1\"></div>\n\n                </div>\n                <div class=\"row\">        <div  class=\"col-md-1\"></div>\n\n                    <div class=\"col-md-5\">\n                      <div class=\"form-group\">\n                        \n                        <div class=\"input-group\">\n                          <div class=\"input-group-prepend\">\n                            <div class=\"input-group-text\"><b>الفرع  </b> </div>\n                          </div>\n                          <input name=\"ID\"   value=\"{{studentTermDetails.CAMP_code}}\"  class=\"form-control\" readonly>\n                        </div>\n                      </div>   \n                    </div>\n                    <div class=\"col-md-5\">\n                  \n                        <div class=\"form-group\">\n                        \n                            <div class=\"input-group\">\n                              <div class=\"input-group-prepend\">\n                                <div class=\"input-group-text\"><b>  المعدل التراكمي </b> </div>\n                              </div>\n                              <input name=\"fsermester\"  value=\"{{studentTermDetails.gba}}\"   class=\"form-control\" readonly>\n                            </div>\n                          </div>   \n                      </div>        <div  class=\"col-md-1\"></div>\n\n                  </div>\n                  \n                  <div class=\"row\">\n                      <div  class=\"col-md-1\"></div>\n\n                      <div class=\"col-md-5\">\n                        <div class=\"form-group\">\n                          \n                          <div class=\"input-group\">\n                            <div class=\"input-group-prepend\">\n                              <div class=\"input-group-text\"><b>  حالة التسجيل </b> </div>\n                            </div>\n                            <input name=\"accamdeicStatus\"   value=\"{{studentTermDetails.RegisterationStatus}}\"  class=\"form-control\" readonly>\n                          </div>\n                        </div>   \n                      </div>\n                      <div class=\"col-md-5\">\n                    \n                          <div class=\"form-group\">\n                          \n                              <div class=\"input-group\">\n                                <div class=\"input-group-prepend\">\n                                  <div class=\"input-group-text\"><b>المستوى الدراسي    </b> </div>\n                                </div>\n                                <input name=\"TotalGrade\"  value=\"{{studentTermDetails.study_level}}\"   class=\"form-control\" readonly>\n                              </div>\n                            </div>   \n                        </div>        <div  class=\"col-md-1\"></div>\n\n                    </div>\n                    \n                    <div class=\"row\">\n                        <div  class=\"col-md-1\"></div>\n\n                        <div class=\"col-md-5\">\n                          <div class=\"form-group\">\n                            \n                            <div class=\"input-group\">\n                              <div class=\"input-group-prepend\">\n                                <div class=\"input-group-text\"><b>الحالة الاكاديمية  </b> </div>\n                              </div>\n                              <input name=\"AcademicCurrentStatus\"  value=\"{{studentTermDetails.acadimic_status}}\"   class=\"form-control\" readonly>\n                            </div>\n                          </div>   \n                        </div>\n                        <div class=\"col-md-5\">\n                      \n                            <div class=\"form-group\">\n                            \n                                <div class=\"input-group\">\n                                  <div class=\"input-group-prepend\">\n                                    <div class=\"input-group-text\"><b> الوضع الاكاديمي   </b> </div>\n                                  </div>\n                                  <input name=\"Fees\"  value=\"{{studentTermDetails.ACADIMICPOSITION}}\"   class=\"form-control\" readonly>\n                                </div>\n                              </div>   \n                          </div>        <div  class=\"col-md-1\"></div>\n\n                      </div>\n                      <div class=\"row\">\n                          <div  class=\"col-md-1\"></div>\n\n                          <div class=\"col-md-10\">\n                            <div class=\"form-group\">\n                              \n                              <div class=\"input-group\">\n                                <div class=\"input-group-prepend\">\n                                  <div class=\"input-group-text\"><b>المرحلة الدراسية   </b> </div>\n                                </div>\n                                <input name=\"AcademicCurrentStatus\"  value=\"{{studentTermDetails.STD_UGGR}}\"   class=\"form-control\" readonly>\n                              </div>\n                            </div>   \n                          </div>        <div  class=\"col-md-1\"></div>\n\n                          \n                        </div>\n                \n          </div>\n        </div></div></div>\n        <br/><br/>\n        <p style=\"text-align: center\">\n        <a class=\"btn btn-info\" href=\"{{arabicPrint}}\"> طباعة</a>\n        <a class=\"btn btn-info\" href=\"{{EngPrint}}\"> Print</a></p>\n      </div>\n"
+module.exports = "    <div class=\"main-content\" style=\"padding-top:0;\">\r\n          <mat-spinner  *ngIf=\"isLoading\" style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\"></mat-spinner>\r\n\r\n        <section class=\"service-single\">\r\n            <div class=\"container\">\r\n                    <h3> الحالة الأكاديمية </h3>\r\n                 <div class=\"row\">\r\n                    <div class=\" col-md-5\">\r\n                      <p> </p>\r\n                     </div>\r\n                    <div class=\" col-md-6 descr\">\r\n                      <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                        &nbsp; &nbsp; &nbsp; &nbsp;\r\n                        <a href=\"{{arabicPrint}}\"><i class=\"ik ik-download\"></i> </a>\r\n                        <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n                    </div>\r\n                </div>\r\n                </div>\r\n             </section>\r\n                    \r\n        <section  class=\"ser-state\">\r\n            <div class=\"container\">\r\n                 <div class=\"row ser-block\">\r\n                    <div class=\" col-md-4 col-sm-12\">\r\n                          <div class=\"state\">\r\n                             <h6>اسم الطالب / الطالبة </h6>\r\n                             <h5>{{student.name}} </h5>\r\n                          </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                    </div>\r\n                     <div class=\" col-md-4 col-sm-12\">\r\n                          <div class=\"state\">\r\n                             <h6>الرقم الجامعي\t </h6>\r\n                             <h5>{{student.std_id}} </h5>\r\n                          </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                    </div>\r\n                    <div class=\" col-md-4 col-sm-12\">\r\n                          <div class=\"state\">\r\n                             <h6>رقم الهوية </h6>\r\n                             <h5>{{student.ssn}} </h5>\r\n                          </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                    </div>\r\n                </div>\r\n                \r\n                <div class=\"row ser-block\">\r\n                 <div class=\" col-md-4 col-sm-12\">\r\n                          <div class=\"state\">\r\n                             <h6>فصل القبول\t</h6>\r\n                             <h5>{{student.std_adm_term_label}} </h5>\r\n                          </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                 </div>\r\n                 <div class=\" col-md-4 col-sm-12\">\r\n                          <div class=\"state\">\r\n                             <h6>الحالة الأكاديمية الحالية\t</h6>\r\n                             <h5>{{student.current_acadimic_status_label}} </h5>\r\n                          </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                  </div>\r\n                  <div class=\" col-md-4 col-sm-12\">\r\n                          <div class=\"state\">\r\n                             <h6>المعدل التراكمي النهائي </h6>\r\n                             <h5>{{student.final_graduation_GPA}} </h5>\r\n                          </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                 </div>\r\n                </div>\r\n                \r\n                <div class=\"row  ser-block\">\r\n                 <div class=\" col-md-4 col-sm-12\">\r\n                          <div class=\"state\">\r\n                             <h6>الوضع الأكاديمي</h6>\r\n                             <h5> {{student.acadimic_position_label}}</h5>\r\n                          </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                </div>\r\n                 <div class=\" col-md-4 col-sm-12\">\r\n                          <div class=\"state\">\r\n                             <h6>الرسوم الدراسية\t</h6>\r\n                             <h5>{{student.std_fees}} </h5>\r\n                          </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                 </div>\r\n                </div>\r\n             </div>\r\n         </section>\r\n                 \r\n                    \r\n         <section  class=\"ser-state\">\r\n            <div class=\"container\">\r\n                <div class=\"widget\">\r\n                    <div class=\"widget-header\" >\r\n                    <div class=\"row\">\r\n                      <div class=\"col-md-6\">\r\n                       <h3 class=\"widget-title\" style=\"font-size:12px;text-align: right\">الحالة الأكاديمية للطالب خلال الفصول الدراسية  </h3>\r\n                      </div>\r\n                     <div class=\"col-md-6\">\r\n                      <div class=\"form-group row\">\r\n                        <label for=\"\" class=\"col-sm-3 col-form-label\">الفصل الدراسي </label>\r\n                        <div class=\"col-sm-9\">\r\n                           \r\n                          <select name=\"trems\" [(ngModel)]=\"selectedSems\" #t (change)=\"getTrmsDetails(t.value)\"   class=\"form-control\">\r\n                            <option *ngFor=\"let item of studentTerms\" value=\"{{item.TERM_CODE}}\">{{item.TERM_DESC}}</option>\r\n                          </select>\r\n                        </div>\r\n                      </div>\r\n                     </div>\r\n                    </div>\r\n                    </div>\r\n                     <div class=\"row ser-block\">\r\n                        <div class=\"col-md-4 col-sm-12 \">\r\n                          <div class=\"state\">\r\n                             <h6>الكلية</h6>\r\n                             <h5> {{studentTermDetails.COLL_CODE}} </h5>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                       <div class=\" col-md-4 col-sm-12 \">\r\n                          <div class=\"state\">\r\n                             <h6>التخصص</h6>\r\n                             <h5> {{studentTermDetails.MAJR_code}}</h5>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                            </div>\r\n                            </div>\r\n                      </div>\r\n                      <div class=\" col-md-4 col-sm-12 \">\r\n                          <div class=\"state\">\r\n                             <h6>الفرع</h6>\r\n                             <h5> {{studentTermDetails.CAMP_code}}</h5>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                            </div>\r\n                             </div>\r\n                        </div>\r\n                    </div>\r\n                    \r\n                     <div class=\"row ser-block\">\r\n                        <div class=\"col-md-4 col-sm-12 \">\r\n                          <div class=\"state\">\r\n                             <h6>المعدل التراكمي\t</h6>\r\n                             <h5>{{studentTermDetails.gba}}</h5>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                       <div class=\" col-md-4 col-sm-12 \">\r\n                          <div class=\"state\">\r\n                             <h6>حالة التسجيل\t</h6>\r\n                             <h5> {{studentTermDetails.RegisterationStatus}}</h5>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                            </div>\r\n                            </div>\r\n                      </div>\r\n                      <div class=\" col-md-4 col-sm-12 \">\r\n                          <div class=\"state\">\r\n                             <h6>المستوي الدراسي</h6>\r\n                             <h5>{{studentTermDetails.study_level}} </h5>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                            </div>\r\n                             </div>\r\n                        </div>\r\n                    </div>\r\n                 \r\n                    \r\n                     <div class=\"row ser-block\">\r\n                        <div class=\"col-md-4 col-sm-12 \">\r\n                          <div class=\"state\">\r\n                             <h6>الحالة الأكاديمية</h6>\r\n                             <h5>{{studentTermDetails.acadimic_status}}  </h5>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                            </div>\r\n                          </div>\r\n                        </div>\r\n                       <div class=\" col-md-4 col-sm-12 \">\r\n                          <div class=\"state\">\r\n                             <h6>الوضع الأكاديمي\t</h6>\r\n                             <h5>{{studentTermDetails.ACADIMICPOSITION}}</h5>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                            </div>\r\n                            </div>\r\n                      </div>\r\n                      <div class=\" col-md-4 col-sm-12 \">\r\n                          <div class=\"state\">\r\n                             <h6>المرحلة الدراسية</h6>\r\n                             <h5> {{studentTermDetails.STD_UGGR}}</h5>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 10%;\"></div>\r\n                            </div>\r\n                             </div>\r\n                        </div>\r\n                    </div>\r\n                 \r\n                 \r\n                </div>\r\n               </div>\r\n              </section>\r\n                \r\n                  <div style=\"text-align: center\" class=\"prin\">\r\n                        <a class=\"btn\"  href=\"{{arabicPrint}}\">عربي <i class=\"ik ik-save\"></i> </a>\r\n                        <a class=\"btn\"  href=\"{{EngPrint}}\">  <i class=\"ik ik-save\"></i> English  </a>\r\n                     </div>\r\n                    \r\n                  \r\n                          \r\n      </div>\r\n     \r\n       \r\n"
 
 /***/ }),
 
@@ -264,9 +264,11 @@ __webpack_require__.r(__webpack_exports__);
 var AcademicStatusComponent = /** @class */ (function () {
     function AcademicStatusComponent(academicStatusService) {
         this.academicStatusService = academicStatusService;
+        this.isLoading = false;
     }
     AcademicStatusComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.isLoading = true;
         this.academicStatusService.getStaudentStatus().then(function (res) {
             _this.student = res.data.student;
             _this.studentTerms = res.data.STD_TERMS;
@@ -275,14 +277,17 @@ var AcademicStatusComponent = /** @class */ (function () {
             _this.selectedSems = _this.studentTerms[0].TERM_CODE;
             _this.arabicPrint = _this.academicStatusService.DownloadStatus(_this.selectedSems);
             _this.EngPrint = _this.academicStatusService.DownloadEngStatus(_this.selectedSems);
+            _this.isLoading = false;
         });
     };
     AcademicStatusComponent.prototype.getTrmsDetails = function (val) {
         var _this = this;
+        this.isLoading = true;
         this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
         this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
         this.academicStatusService.getStaudentTermDetails(parseInt(val, 10)).then(function (res) {
             _this.studentTermDetails = res.data.STD_TermDetails;
+            _this.isLoading = false;
         });
     };
     AcademicStatusComponent.prototype.downlaodFile = function () {
@@ -373,6 +378,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _certificate_id_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./certificate-id.service */ "./src/app/academicaff/certificate-id.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _services_academic_record_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./services/academic-record.service */ "./src/app/academicaff/services/academic-record.service.ts");
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm5/progress-spinner.es5.js");
+
 
 
 
@@ -393,7 +400,8 @@ var AcademicaffModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _academicaff_routing_module__WEBPACK_IMPORTED_MODULE_3__["AcademicaffRoutingModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"]
+                _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
+                _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_11__["MatProgressSpinnerModule"]
             ],
             providers: [_services_academic_status_service__WEBPACK_IMPORTED_MODULE_7__["AcademicStatusService"], _certificate_id_service__WEBPACK_IMPORTED_MODULE_8__["CertificateIDService"], _services_academic_record_service__WEBPACK_IMPORTED_MODULE_10__["AcademicRecordService"]]
         })
@@ -468,7 +476,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">  شهادة تعريف</h3>\n<p style=\"text-align: center;direction: rtl\">\n\n<b>  {{certificateDetails.labels.date}} </b>  {{certificateDetails.values.date}}\n<b>  {{certificateDetails.labels.ssn}} </b>  {{certificateDetails.values.ssn}}\n<br>\n {{certificateDetails.labelngs.txt1}}   {{certificateDetails.values.std_name}}\n {{certificateDetails.labels.txt2}}   {{certificateDetails.values.std_id}}\n\n {{certificateDetails.labels.txt3}}   {{certificateDetails.values.coll}}\n\n {{certificateDetails.labels.txt4}}   {{certificateDetails.values.major}}\n <br/>\n\n\n {{certificateDetails.labels.txt5}}   {{certificateDetails.values.term}}\n\n {{certificateDetails.labels.txt6}}  \n\n {{certificateDetails.labels.txt7}}  \n <br/>\n <br/>\n\n <ng-template [ngIf]=\"lectures ==null\" [ngIfElse]=\"NoLec\">\n  <div>\n    <table class=\"table\">\n      <thead>\n        <tr>\n          <th scope=\"col\">{{certificateDetails.labels.crn}}</th>\n          <th scope=\"col\">{{certificateDetails.labels.course}}</th>\n          <th scope=\"col\">{{certificateDetails.labels.day_and_date}}</th>\n          <th scope=\"col\">{{certificateDetails.labels.time}}</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let item of lectures\">\n          <td >{{item.CRN}}</td>\n          <td>{{item.CRSE_TITLE}}</td>\n          <td>{{item.CRSE_DAY}}</td>\n          <td>{{item.CRSE_TIME}}</td>\n        </tr>\n       \n      </tbody>\n    </table>  </div>\n    <br/>\n    \n\n</ng-template>\n\n<ng-template #NoLec>\n  <div>\n <b>{{certificateDetails.labels.txt8}}  </b>\n  </div>\n</ng-template>\n<br/><br/>\n{{certificateDetails.labels.txt9}}  <br/>\n{{certificateDetails.labels.txt10}}  \n<br/><br/>\n<b>\n{{certificateDetails.labels.txt11}}  \n</b>\n{{certificateDetails.labels.txt12}}  \n<br/>\n<br/>\n{{certificateDetails.labels.txt13}}  \n\n\n\n\n<br/><br/>\n\n\n</p>\n\n<div  class=\"btn-group btn-group-justified col-md-12 \">\n  <div class=\"col-md-4\"></div>\n  <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n    طباعة</a>\n  <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n    Print</a>\n  <div class=\"col-md-4\"></div>\n\n  </div>\n</div>"
+module.exports = "<!-- <div class=\"jumbotron jumbtron-fluid\">\r\n    <h3 class=\"display-5 text-center\">  شهادة تعريف</h3>\r\n<p style=\"text-align: center;direction: rtl\">\r\n\r\n<b>  {{certificateDetails.labels.date}} </b>  {{certificateDetails.values.date}}\r\n<b>  {{certificateDetails.labels.ssn}} </b>  {{certificateDetails.values.ssn}}\r\n<br>\r\n {{certificateDetails.labelngs.txt1}}   {{certificateDetails.values.std_name}}\r\n {{certificateDetails.labels.txt2}}   {{certificateDetails.values.std_id}}\r\n\r\n {{certificateDetails.labels.txt3}}   {{certificateDetails.values.coll}}\r\n\r\n {{certificateDetails.labels.txt4}}   {{certificateDetails.values.major}}\r\n <br/>\r\n\r\n\r\n {{certificateDetails.labels.txt5}}   {{certificateDetails.values.term}}\r\n\r\n {{certificateDetails.labels.txt6}}  \r\n\r\n {{certificateDetails.labels.txt7}}  \r\n <br/>\r\n <br/>\r\n\r\n <ng-template [ngIf]=\"lectures ==null\" [ngIfElse]=\"NoLec\">\r\n  <div>\r\n    <table class=\"table\">\r\n      <thead>\r\n        <tr>\r\n          <th scope=\"col\">{{certificateDetails.labels.crn}}</th>\r\n          <th scope=\"col\">{{certificateDetails.labels.course}}</th>\r\n          <th scope=\"col\">{{certificateDetails.labels.day_and_date}}</th>\r\n          <th scope=\"col\">{{certificateDetails.labels.time}}</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let item of lectures\">\r\n          <td >{{item.CRN}}</td>\r\n          <td>{{item.CRSE_TITLE}}</td>\r\n          <td>{{item.CRSE_DAY}}</td>\r\n          <td>{{item.CRSE_TIME}}</td>\r\n        </tr>\r\n       \r\n      </tbody>\r\n    </table>  </div>\r\n    <br/>\r\n    \r\n\r\n</ng-template>\r\n\r\n<ng-template #NoLec>\r\n  <div>\r\n <b>{{certificateDetails.labels.txt8}}  </b>\r\n  </div>\r\n</ng-template>\r\n<br/><br/>\r\n{{certificateDetails.labels.txt9}}  <br/>\r\n{{certificateDetails.labels.txt10}}  \r\n<br/><br/>\r\n<b>\r\n{{certificateDetails.labels.txt11}}  \r\n</b>\r\n{{certificateDetails.labels.txt12}}  \r\n<br/>\r\n<br/>\r\n{{certificateDetails.labels.txt13}}  \r\n\r\n\r\n\r\n\r\n<br/><br/>\r\n\r\n\r\n</p>\r\n\r\n<div  class=\"btn-group btn-group-justified col-md-12 \">\r\n  <div class=\"col-md-4\"></div>\r\n  <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n    طباعة</a>\r\n  <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n    Print</a>\r\n  <div class=\"col-md-4\"></div>\r\n\r\n  </div>\r\n</div>\r\n -->\r\n<div class=\"main-content\" style=\"padding-top:0;\">\r\n                    \r\n  <section class=\"service-single\">\r\n      <div class=\"container\">\r\n              <h3>شهادة تعريف</h3>\r\n           <div class=\"row\">\r\n              <div class=\" col-md-5\">\r\n                <p> شهادة تعريف شهادة تعريف شهادة تعريف </p>\r\n               </div>\r\n              <div class=\" col-md-6 descr\">\r\n                <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                  &nbsp; &nbsp; &nbsp; &nbsp;\r\n                  <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                  <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n              </div>\r\n          </div>\r\n          </div>\r\n       </section>\r\n              \r\n  <section  class=\"ser-state\">\r\n      <div class=\"container\">\r\n           <div class=\"row ser-block\">\r\n              <div class=\" col-md-6 col-sm-12\">\r\n                    <div class=\"state\">\r\n                       <h6> {{certificateDetails.labels.date}}  </h6>\r\n                       <h5> {{certificateDetails.values.date}}</h5>\r\n                    </div>\r\n                      <div class=\"progress progress-sm\">\r\n                          <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                      </div>\r\n              </div>\r\n               <div class=\" col-md-6 col-sm-12\">\r\n                    <div class=\"state\">\r\n                       <h6>{{certificateDetails.labels.ssn}} </h6>\r\n                       <h5>{{certificateDetails.values.ssn}}</h5>\r\n                    </div>\r\n                      <div class=\"progress progress-sm\">\r\n                          <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                      </div>\r\n              </div>\r\n              \r\n          </div>\r\n       </div>\r\n   </section>\r\n           <section  class=\"ser-state\">\r\n      <div class=\"container\">\r\n              <p>{{certificateDetails.labelngs.txt1}}   {{certificateDetails.values.std_name}}\r\n                {{certificateDetails.labels.txt2}}   {{certificateDetails.values.std_id}}\r\n               \r\n                {{certificateDetails.labels.txt3}}   {{certificateDetails.values.coll}}\r\n               \r\n                {{certificateDetails.labels.txt4}}   {{certificateDetails.values.major}}\r\n                <br/>\r\n               \r\n               \r\n                {{certificateDetails.labels.txt5}}   {{certificateDetails.values.term}}\r\n               \r\n                {{certificateDetails.labels.txt6}}  \r\n               \r\n                {{certificateDetails.labels.txt7}}  \r\n                <br/>\r\n                <br/> </p>\r\n                <ng-template [ngIf]=\"lectures ==null\" [ngIfElse]=\"NoLec\">\r\n                  <div>\r\n                    <table class=\"table\">\r\n                      <thead>\r\n                        <tr>\r\n                          <th scope=\"col\">{{certificateDetails.labels.crn}}</th>\r\n                          <th scope=\"col\">{{certificateDetails.labels.course}}</th>\r\n                          <th scope=\"col\">{{certificateDetails.labels.day_and_date}}</th>\r\n                          <th scope=\"col\">{{certificateDetails.labels.time}}</th>\r\n                        </tr>\r\n                      </thead>\r\n                      <tbody>\r\n                        <tr *ngFor=\"let item of lectures\">\r\n                          <td >{{item.CRN}}</td>\r\n                          <td>{{item.CRSE_TITLE}}</td>\r\n                          <td>{{item.CRSE_DAY}}</td>\r\n                          <td>{{item.CRSE_TIME}}</td>\r\n                        </tr>\r\n                       \r\n                      </tbody>\r\n                    </table>  </div>\r\n                    <br/>\r\n                    \r\n                \r\n                </ng-template>\r\n                \r\n                <ng-template #NoLec>\r\n                  <div>\r\n                 <b>{{certificateDetails.labels.txt8}}  </b>\r\n                  </div>\r\n                </ng-template>\r\n                <br/><br/>\r\n                {{certificateDetails.labels.txt9}}  <br/>\r\n                {{certificateDetails.labels.txt10}}  \r\n                <br/><br/>\r\n                <b>\r\n                {{certificateDetails.labels.txt11}}  \r\n                </b>\r\n                {{certificateDetails.labels.txt12}}  \r\n                <br/>\r\n                <br/>\r\n                {{certificateDetails.labels.txt13}}  \r\n                \r\n                \r\n                \r\n                \r\n                <br/><br/>\r\n                \r\n                \r\n       </div>\r\n   </section>\r\n           \r\n\r\n          \r\n            <div style=\"text-align: center\" class=\"prin\">\r\n                  <button class=\"btn\">عربي <i class=\"ik ik-save\"></i> </button>\r\n                  <button class=\"btn\"> <i class=\"ik ik-save\"></i> English  </button>\r\n               </div>\r\n              \r\n            \r\n                    \r\n</div>"
 
 /***/ }),
 
@@ -631,6 +639,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _english_equalize_english_equalize_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./english-equalize/english-equalize.component */ "./src/app/academicprocs/english-equalize/english-equalize.component.ts");
 /* harmony import */ var _re_eenrollment_re_eenrollment_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./re-eenrollment/re-eenrollment.component */ "./src/app/academicprocs/re-eenrollment/re-eenrollment.component.ts");
 /* harmony import */ var _change_major_change_major_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./change-major/change-major.component */ "./src/app/academicprocs/change-major/change-major.component.ts");
+/* harmony import */ var _change_request_change_request_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./change-request/change-request.component */ "./src/app/academicprocs/change-request/change-request.component.ts");
+/* harmony import */ var _object_exam_object_exam_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./object-exam/object-exam.component */ "./src/app/academicprocs/object-exam/object-exam.component.ts");
+/* harmony import */ var _lectures_execuses_lectures_execuses_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./lectures-execuses/lectures-execuses.component */ "./src/app/academicprocs/lectures-execuses/lectures-execuses.component.ts");
+/* harmony import */ var _registeration_helper_registeration_helper_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./registeration-helper/registeration-helper.component */ "./src/app/academicprocs/registeration-helper/registeration-helper.component.ts");
+/* harmony import */ var _univ_card_univ_card_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./univ-card/univ-card.component */ "./src/app/academicprocs/univ-card/univ-card.component.ts");
+/* harmony import */ var _exam_excuse_exam_excuse_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./exam-excuse/exam-excuse.component */ "./src/app/academicprocs/exam-excuse/exam-excuse.component.ts");
+/* harmony import */ var _register_wishes_register_wishes_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./register-wishes/register-wishes.component */ "./src/app/academicprocs/register-wishes/register-wishes.component.ts");
+
+
+
+
+
+
+
 
 
 
@@ -656,6 +678,15 @@ var routes = [{ path: 'procedures', component: _withdraw_from_univ_withdraw_from
             { path: 'eequalize', component: _english_equalize_english_equalize_component__WEBPACK_IMPORTED_MODULE_9__["EnglishEqualizeComponent"] },
             { path: 'reenrol', component: _re_eenrollment_re_eenrollment_component__WEBPACK_IMPORTED_MODULE_10__["ReEenrollmentComponent"] },
             { path: 'changemajor', component: _change_major_change_major_component__WEBPACK_IMPORTED_MODULE_11__["ChangeMajorComponent"] },
+            { path: 'changerequest', component: _change_request_change_request_component__WEBPACK_IMPORTED_MODULE_12__["ChangeRequestComponent"] },
+            { path: 'objectexam', component: _object_exam_object_exam_component__WEBPACK_IMPORTED_MODULE_13__["ObjectExamComponent"] },
+            { path: 'lecexecuse', component: _lectures_execuses_lectures_execuses_component__WEBPACK_IMPORTED_MODULE_14__["LecturesExecusesComponent"] },
+            { path: 'reghelper', component: _registeration_helper_registeration_helper_component__WEBPACK_IMPORTED_MODULE_15__["RegisterationHelperComponent"] },
+            { path: 'universitycard', component: _univ_card_univ_card_component__WEBPACK_IMPORTED_MODULE_16__["UnivCardComponent"] },
+            { path: 'universitycard', component: _univ_card_univ_card_component__WEBPACK_IMPORTED_MODULE_16__["UnivCardComponent"] },
+            { path: 'examexcuse', component: _exam_excuse_exam_excuse_component__WEBPACK_IMPORTED_MODULE_17__["ExamExcuseComponent"] },
+            { path: 'universitycard', component: _univ_card_univ_card_component__WEBPACK_IMPORTED_MODULE_16__["UnivCardComponent"] },
+            { path: 'registerwishes', component: _register_wishes_register_wishes_component__WEBPACK_IMPORTED_MODULE_18__["RegisterWishesComponent"] }
         ]
     }];
 var AcademicprocsRoutingModule = /** @class */ (function () {
@@ -723,6 +754,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _change_major_change_major_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./change-major/change-major.component */ "./src/app/academicprocs/change-major/change-major.component.ts");
 /* harmony import */ var _services_change_major_service__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./services/change-major.service */ "./src/app/academicprocs/services/change-major.service.ts");
 /* harmony import */ var _change_major_diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./change-major/diag/add-change-major/add-change-major.component */ "./src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component.ts");
+/* harmony import */ var _change_request_diag_add_request_change_add_request_change_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./change-request/diag/add-request-change/add-request-change.component */ "./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.ts");
+/* harmony import */ var _lectures_execuses_lectures_execuses_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./lectures-execuses/lectures-execuses.component */ "./src/app/academicprocs/lectures-execuses/lectures-execuses.component.ts");
+/* harmony import */ var _object_exam_object_exam_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./object-exam/object-exam.component */ "./src/app/academicprocs/object-exam/object-exam.component.ts");
+/* harmony import */ var _lectures_execuses_diag_add_lectures_execuses_add_lectures_execuses_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component */ "./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.ts");
+/* harmony import */ var _object_exam_diag_add_exam_object_add_exam_object_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./object-exam/diag/add-exam-object/add-exam-object.component */ "./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.ts");
+/* harmony import */ var _services_lecture_execuse_service_service__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./services/lecture-execuse-service.service */ "./src/app/academicprocs/services/lecture-execuse-service.service.ts");
+/* harmony import */ var _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @angular/material/datepicker */ "./node_modules/@angular/material/esm5/datepicker.es5.js");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @angular/material/core */ "./node_modules/@angular/material/esm5/core.es5.js");
+/* harmony import */ var _registeration_helper_registeration_helper_component__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./registeration-helper/registeration-helper.component */ "./src/app/academicprocs/registeration-helper/registeration-helper.component.ts");
+/* harmony import */ var _registeration_helper_diag_add_registeration_helper_add_registeration_helper_component__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./registeration-helper/diag/add-registeration-helper/add-registeration-helper.component */ "./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.ts");
+/* harmony import */ var _univ_card_univ_card_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./univ-card/univ-card.component */ "./src/app/academicprocs/univ-card/univ-card.component.ts");
+/* harmony import */ var _univ_card_diag_add_univ_card_add_univ_card_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./univ-card/diag/add-univ-card/add-univ-card.component */ "./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.ts");
+/* harmony import */ var _services_uvniv_card_service__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./services/uvniv-card.service */ "./src/app/academicprocs/services/uvniv-card.service.ts");
+/* harmony import */ var _register_wishes_register_wishes_component__WEBPACK_IMPORTED_MODULE_52__ = __webpack_require__(/*! ./register-wishes/register-wishes.component */ "./src/app/academicprocs/register-wishes/register-wishes.component.ts");
+/* harmony import */ var _exam_excuse_exam_excuse_component__WEBPACK_IMPORTED_MODULE_53__ = __webpack_require__(/*! ./exam-excuse/exam-excuse.component */ "./src/app/academicprocs/exam-excuse/exam-excuse.component.ts");
+/* harmony import */ var _exam_excuse_diag_add_exam_excuse_add_exam_excuse_component__WEBPACK_IMPORTED_MODULE_54__ = __webpack_require__(/*! ./exam-excuse/diag/add-exam-excuse/add-exam-excuse.component */ "./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.ts");
+/* harmony import */ var _services_exam_excuse_service__WEBPACK_IMPORTED_MODULE_55__ = __webpack_require__(/*! ./services/exam-excuse.service */ "./src/app/academicprocs/services/exam-excuse.service.ts");
+/* harmony import */ var _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_56__ = __webpack_require__(/*! @angular/material/progress-spinner */ "./node_modules/@angular/material/esm5/progress-spinner.es5.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -788,7 +855,22 @@ var AcademicprocsModule = /** @class */ (function () {
                 _english_equalize_diag_add_english_equalizer_add_english_equalizer_component__WEBPACK_IMPORTED_MODULE_32__["AddEnglishEqualizerComponent"],
                 _re_eenrollment_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_34__["AddReEnrollComponent"],
                 _change_major_change_major_component__WEBPACK_IMPORTED_MODULE_36__["ChangeMajorComponent"],
-                _change_major_diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_38__["AddChangeMajorComponent"]],
+                _change_major_diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_38__["AddChangeMajorComponent"],
+                _change_request_diag_add_request_change_add_request_change_component__WEBPACK_IMPORTED_MODULE_39__["AddRequestChangeComponent"],
+                _lectures_execuses_lectures_execuses_component__WEBPACK_IMPORTED_MODULE_40__["LecturesExecusesComponent"],
+                _object_exam_object_exam_component__WEBPACK_IMPORTED_MODULE_41__["ObjectExamComponent"],
+                _lectures_execuses_diag_add_lectures_execuses_add_lectures_execuses_component__WEBPACK_IMPORTED_MODULE_42__["AddLecturesExecusesComponent"],
+                _object_exam_diag_add_exam_object_add_exam_object_component__WEBPACK_IMPORTED_MODULE_43__["AddExamObjectComponent"],
+                _registeration_helper_registeration_helper_component__WEBPACK_IMPORTED_MODULE_47__["RegisterationHelperComponent"],
+                _registeration_helper_diag_add_registeration_helper_add_registeration_helper_component__WEBPACK_IMPORTED_MODULE_48__["AddRegisterationHelperComponent"],
+                _univ_card_univ_card_component__WEBPACK_IMPORTED_MODULE_49__["UnivCardComponent"],
+                _univ_card_diag_add_univ_card_add_univ_card_component__WEBPACK_IMPORTED_MODULE_50__["AddUnivCardComponent"],
+                _univ_card_diag_add_univ_card_add_univ_card_component__WEBPACK_IMPORTED_MODULE_50__["AddUnivCardComponent"],
+                _exam_excuse_exam_excuse_component__WEBPACK_IMPORTED_MODULE_53__["ExamExcuseComponent"],
+                _exam_excuse_diag_add_exam_excuse_add_exam_excuse_component__WEBPACK_IMPORTED_MODULE_54__["AddExamExcuseComponent"],
+                _univ_card_diag_add_univ_card_add_univ_card_component__WEBPACK_IMPORTED_MODULE_50__["AddUnivCardComponent"],
+                _register_wishes_register_wishes_component__WEBPACK_IMPORTED_MODULE_52__["RegisterWishesComponent"]
+            ],
             entryComponents: [_withdraw_from_univ_diag_add_request_add_request_component__WEBPACK_IMPORTED_MODULE_14__["AddRequestComponent"],
                 _postpone_request_diag_add_postpone_add_postpone_component__WEBPACK_IMPORTED_MODULE_21__["AddPostponeComponent"],
                 _summer_withdraw_diag_add_summer_withdraw_add_summer_withdraw_component__WEBPACK_IMPORTED_MODULE_22__["AddSummerWithdrawComponent"],
@@ -797,7 +879,13 @@ var AcademicprocsModule = /** @class */ (function () {
                 _course_equalize_diag_add_course_equalize_add_course_equalize_component__WEBPACK_IMPORTED_MODULE_29__["AddCourseEqualizeComponent"],
                 _english_equalize_diag_add_english_equalizer_add_english_equalizer_component__WEBPACK_IMPORTED_MODULE_32__["AddEnglishEqualizerComponent"],
                 _re_eenrollment_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_34__["AddReEnrollComponent"],
-                _change_major_diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_38__["AddChangeMajorComponent"]
+                _change_major_diag_add_change_major_add_change_major_component__WEBPACK_IMPORTED_MODULE_38__["AddChangeMajorComponent"],
+                _change_request_diag_add_request_change_add_request_change_component__WEBPACK_IMPORTED_MODULE_39__["AddRequestChangeComponent"],
+                _lectures_execuses_diag_add_lectures_execuses_add_lectures_execuses_component__WEBPACK_IMPORTED_MODULE_42__["AddLecturesExecusesComponent"],
+                _object_exam_diag_add_exam_object_add_exam_object_component__WEBPACK_IMPORTED_MODULE_43__["AddExamObjectComponent"],
+                _registeration_helper_diag_add_registeration_helper_add_registeration_helper_component__WEBPACK_IMPORTED_MODULE_48__["AddRegisterationHelperComponent"],
+                _univ_card_diag_add_univ_card_add_univ_card_component__WEBPACK_IMPORTED_MODULE_50__["AddUnivCardComponent"],
+                _exam_excuse_diag_add_exam_excuse_add_exam_excuse_component__WEBPACK_IMPORTED_MODULE_54__["AddExamExcuseComponent"]
             ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -805,6 +893,9 @@ var AcademicprocsModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_13__["FormsModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_15__["BrowserAnimationsModule"],
                 _angular_material_dialog__WEBPACK_IMPORTED_MODULE_16__["MatDialogModule"],
+                _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_45__["MatDatepickerModule"],
+                _angular_material_core__WEBPACK_IMPORTED_MODULE_46__["MatNativeDateModule"],
+                _angular_material_progress_spinner__WEBPACK_IMPORTED_MODULE_56__["MatProgressSpinnerModule"],
                 ngx_toastr__WEBPACK_IMPORTED_MODULE_17__["ToastrModule"].forRoot() // ToastrModule added
             ],
             providers: [_services_withdraw_from_univ_service__WEBPACK_IMPORTED_MODULE_12__["WithdrawFromUnivService"],
@@ -815,7 +906,10 @@ var AcademicprocsModule = /** @class */ (function () {
                 _services_course_equalizer_service__WEBPACK_IMPORTED_MODULE_30__["CourseEqualizerService"],
                 _services_english_equalizer_service__WEBPACK_IMPORTED_MODULE_33__["EnglishEqualizerService"],
                 _services_re_enroll_service__WEBPACK_IMPORTED_MODULE_35__["ReEnrollService"],
-                _services_change_major_service__WEBPACK_IMPORTED_MODULE_37__["ChangeMajorService"]
+                _services_change_major_service__WEBPACK_IMPORTED_MODULE_37__["ChangeMajorService"],
+                _services_lecture_execuse_service_service__WEBPACK_IMPORTED_MODULE_44__["LectureExecuseServiceService"],
+                _services_uvniv_card_service__WEBPACK_IMPORTED_MODULE_51__["UvnivCardService"],
+                _services_exam_excuse_service__WEBPACK_IMPORTED_MODULE_55__["ExamExcuseService"]
             ]
         })
     ], AcademicprocsModule);
@@ -844,7 +938,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n  {{msg.body}}!\n</div>\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n<div style=\"direction: ltr;text-align: center\">\n  \n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n  اضافة طلب\n</button>\n<br/>\n<br/>\n\n</div>\n<div>\n<table style=\"text-align: center\" class=\"table\">\n  <thead>\n    <tr>\n      <th scope=\"col\">رقم الطلب</th>\n\n      <th scope=\"col\">تاريخ الطلب</th>\n      <th scope=\"col\">حالة الطلب</th>\n      <th scope=\"col\"> طباعة الطلب</th>\n      <th scope=\"col\"> حذف الطلب </th>\n\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let it of reqData.requests;let i=index;\">\n      <td>{{it.request_number}}</td>\n     \n\n      <td>{{it.insert_date}}</td>\n      <td>{{it.status}}</td>\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n        Print</a></td>\n\n      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n\n    </tr>\n    \n  </tbody>\n</table>\n</div>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n  {{msg.body}}!\r\n</div>\r\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n<div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div>\r\n<div>\r\n<table style=\"text-align: center\" class=\"table\">\r\n  <thead>\r\n    <tr>\r\n      <th scope=\"col\">رقم الطلب</th>\r\n\r\n      <th scope=\"col\">تاريخ الطلب</th>\r\n      <th scope=\"col\">حالة الطلب</th>\r\n      <th scope=\"col\"> طباعة الطلب</th>\r\n      <th scope=\"col\"> حذف الطلب </th>\r\n\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n      <td>{{it.request_number}}</td>\r\n     \r\n\r\n      <td>{{it.insert_date}}</td>\r\n      <td>{{it.status}}</td>\r\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\r\n        Print</a></td>\r\n\r\n      <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\r\n\r\n    </tr>\r\n    \r\n  </tbody>\r\n</table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -884,6 +978,7 @@ var CancelCourseComponent = /** @class */ (function () {
             _this.acadmicProc.msgs = res.messages;
             _this.reqData = _this.acadmicProc.reqData;
             _this.msgs = _this.acadmicProc.msgs;
+            //console.log(this.reqData.requests);
         });
     };
     CancelCourseComponent.prototype.openDialoge = function () {
@@ -909,9 +1004,14 @@ var CancelCourseComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('هل انت متأكد')) {
             this.acadmicProc.deleteReq(id).then(function (res) {
-                _this.toastr.success('', res.messages.body);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
             });
-            this.acadmicProc.reqData.reqs.splice(index, 1);
         }
     };
     CancelCourseComponent.prototype.call = function (hr) {
@@ -950,7 +1050,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-dialog-content>\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب انسحاب من الجامعه</h5>\n        \n      </div>\n      <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n\n      <div class=\"modal-body\">\n<table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">اسم المقرر </th>\n  \n        <th scope=\"col\"> رمز المقرر</th>\n        <th scope=\"col\">عدد الساعات </th>\n        <th scope=\"col\">   </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.RegisteredCourses;let i=index;\">\n        <td>{{it.CRSE_TITLE}}</td>\n       \n  \n        <td>{{it.CRES_CODE}}</td>\n        <td>{{it.CREDIT_HR}}</td>\n     \n  \n        <td>\n            <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it.CRES_CODE,$event,i)\" #chkCourse  id=\"defaultUnchecked\">\n       </td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n\n<button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n</div>\n      </div></form></div></div></mat-dialog-content>"
+module.exports = "<mat-dialog-content>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب انسحاب من الجامعه</h5>\r\n        \r\n      </div>\r\n      <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n\r\n      <div class=\"modal-body\">\r\n<table style=\"text-align: center\" class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">اسم المقرر </th>\r\n  \r\n        <th scope=\"col\"> رمز المقرر</th>\r\n        <th scope=\"col\">عدد الساعات </th>\r\n        <th scope=\"col\">   </th>\r\n  \r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let it of reqData.RegisteredCourses;let i=index;\">\r\n        <td>{{it.CRSE_TITLE}}</td>\r\n       \r\n  \r\n        <td>{{it.CRES_CODE}}</td>\r\n        <td>{{it.CREDIT_HR}}</td>\r\n     \r\n  \r\n        <td>\r\n            <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it.CRES_CODE,$event,i)\" #chkCourse  id=\"defaultUnchecked\">\r\n       </td>\r\n  \r\n      </tr>\r\n      \r\n    </tbody>\r\n  </table>\r\n <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n<button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n</div>\r\n      </div></form></div></div></mat-dialog-content>"
 
 /***/ }),
 
@@ -1048,7 +1148,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> طباعة الطلب</th>\n        <th scope=\"col\"> حذف الطلب </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n        <td>{{it.request_number}}</td>\n       \n  \n        <td>{{it.insert_date}}</td>\n        <td>{{it.status}}</td>\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n        <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
+module.exports = "<div class=\"main-content\" >\r\n\r\n<div  *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>\r\n  <div>\r\n    <div class=\"table-responsive\">\r\n  <table class=\"table table-striped table-bordered\">\r\n      <thead style=\"background: #ebecf0\">\r\n\r\n      <tr>\r\n        <th scope=\"col\">رقم الطلب</th>\r\n  \r\n        <th scope=\"col\">تاريخ الطلب</th>\r\n        <th scope=\"col\"> التخصص الحالي</th>\r\n        <th scope=\"col\"> التخصص المطلوب</th>\r\n\r\n        <th scope=\"col\"> حذف الطلب </th>\r\n  \r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n        <td>{{it.request_number}}</td>\r\n       \r\n  \r\n        <td>{{it.insert_date}}</td>\r\n        <td>{{it.CURR_PROG}}</td>\r\n        <td>{{it.REQ_PROG}}</td>\r\n        \r\n  \r\n        <td><button [disabled]='!it.deletable'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"></i> </button></td>\r\n  \r\n      </tr>\r\n      \r\n    </tbody>\r\n  </table></div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1088,6 +1188,7 @@ var ChangeMajorComponent = /** @class */ (function () {
             _this.acadmicProc.msgs = res.messages;
             _this.reqData = _this.acadmicProc.reqData;
             _this.msgs = _this.acadmicProc.msgs;
+            // console.log(this.reqData.reqs);
         });
     };
     ChangeMajorComponent.prototype.openDialoge = function () {
@@ -1113,9 +1214,16 @@ var ChangeMajorComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('هل انت متأكد')) {
             this.acadmicProc.deleteReq(id).then(function (res) {
-                _this.toastr.success('', res.messages.body);
+                console.log(id);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1) {
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+                }
             });
-            this.acadmicProc.reqData.reqs.splice(index, 1);
         }
     };
     ChangeMajorComponent.prototype.call = function (hr) {
@@ -1154,7 +1262,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\n<mat-dialog-content>\n    <div class=\"modal-dialog\" role=\"document\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب انسحاب من الجامعه</h5>\n          \n        </div>\n        <div class=\"modal-body\">\n          <P class=\"text-center\">بيانات بيانات بيانات</P>\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n            \n          <div class=\"form-group\">\n             \n                 <select name=\"major\" #BranchID=\"ngModel\" [(ngModel)]=\"mj.major\" class=\"form-control\" \n            [class.is-invalid]=\"!isValid && mj.major==0\">\n              <option value=\"\">اختر  التخصص</option>\n              <option *ngFor=\"let item of reqData.majors\" value=\"{{item.MAJOR_PK}}\">{{item.MAJOR_TITLE}}</option>\n            </select>\n          </div>\n      \n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n  \n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n          </div>\n        </form>\n        </div>\n        \n      </div>\n    </div>\n  </mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب  تغير التخصص </h5>\r\n          \r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <P class=\"text-center\">بيانات بيانات بيانات</P>\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n            \r\n          <div class=\"form-group\">\r\n             \r\n                 <select name=\"major\" #BranchID=\"ngModel\" [(ngModel)]=\"mj.major\" class=\"form-control\" \r\n            [class.is-invalid]=\"mj.major==''\">\r\n              <option value=\"\">اختر  التخصص</option>\r\n              <option *ngFor=\"let item of reqData.majors\" value=\"{{item.MAJOR_PK}}\">{{item.MAJOR_TITLE}}</option>\r\n            </select>\r\n          </div>\r\n      \r\n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n  \r\n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n          </div>\r\n        </form>\r\n        </div>\r\n        \r\n      </div>\r\n    </div>\r\n  </mat-dialog-content>"
 
 /***/ }),
 
@@ -1255,6 +1363,7 @@ var AddChangeMajorComponent = /** @class */ (function () {
     return AddChangeMajorComponent;
 }());
 
+//
 
 
 /***/ }),
@@ -1277,7 +1386,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  change-request works!\n</p>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n  {{msg.body}}!\r\n</div>\r\n\r\n<div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div>\r\n<div>\r\n<table style=\"text-align: center\" class=\"table\">\r\n  <thead>\r\n    <tr>\r\n      <th scope=\"col\">#</th>\r\n      <th scope=\"col\">الفرع المطلوب</th>\r\n\r\n      <th scope=\"col\">تاريخ انشاء الطلب</th>\r\n\r\n      <th scope=\"col\">تاريخ الرد</th>\r\n      <th scope=\"col\">حالة الطلب</th>\r\n      <th scope=\"col\">الاجراء</th>\r\n\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n      <td>{{i+1}}</td>\r\n      <td>{{it.CAMP_TITLE}}</td>\r\n      <td>{{it.insert_date}}</td>\r\n\r\n\r\n      <td>{{it.APPROVAL_DATE}} </td>\r\n      <td>{{it.status}}</td>\r\n      \r\n\r\n      <td><button [disabled]='!it.deletable'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"></i> </button></td>\r\n\r\n    </tr>\r\n    \r\n  </tbody>\r\n</table>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -1293,12 +1402,67 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangeRequestComponent", function() { return ChangeRequestComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_change_request_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/change-request.service */ "./src/app/academicprocs/services/change-request.service.ts");
+/* harmony import */ var _diag_add_request_change_add_request_change_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-request-change/add-request-change.component */ "./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.ts");
+
+
+//import { changeRequest } from 'src/app/shared/models/cancel-cousre';
+
+
 
 
 var ChangeRequestComponent = /** @class */ (function () {
-    function ChangeRequestComponent() {
+    //canAdd:boolean;
+    function ChangeRequestComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
     }
     ChangeRequestComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        //this.changeRequest = {courses: null, agreement: 1};
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+            //console.log(this.reqData.reqs);
+            //console.log(this.reqData);
+            //this.canAdd = this.reqData.can_add_new_request;
+        });
+    };
+    ChangeRequestComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_request_change_add_request_change_component__WEBPACK_IMPORTED_MODULE_5__["AddRequestChangeComponent"], dialogConfig);
+    };
+    ChangeRequestComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    ChangeRequestComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    ChangeRequestComponent.prototype.delete = function (id, index) {
+        // console.log(id);
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+            });
+        }
     };
     ChangeRequestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1306,9 +1470,118 @@ var ChangeRequestComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./change-request.component.html */ "./src/app/academicprocs/change-request/change-request.component.html"),
             styles: [__webpack_require__(/*! ./change-request.component.css */ "./src/app/academicprocs/change-request/change-request.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_change_request_service__WEBPACK_IMPORTED_MODULE_4__["ChangeRequestService"]])
     ], ChangeRequestComponent);
     return ChangeRequestComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.css":
+/*!*******************************************************************************************************!*\
+  !*** ./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.css ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvY2hhbmdlLXJlcXVlc3QvZGlhZy9hZGQtcmVxdWVzdC1jaGFuZ2UvYWRkLXJlcXVlc3QtY2hhbmdlLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.html ***!
+  \********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-dialog-content>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب تغيير فرع </h5>\r\n        \r\n      </div>\r\n      <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit()\">\r\n\r\n      <div class=\"modal-body\">\r\n<!--drop down list-->\r\n<p style=\"text-align:center\" >اختيار الفرع</p>\r\n\r\n<select class=\"form-control\" #CampID=\"ngModel\" [(ngModel)]=\"cmp.camp\"  name=\"Camp\" [class.is-invalid]=\"cmp.camp == ''\">\r\n  <option value=''>اختر  الفرع</option>\r\n  <option *ngFor=\"let camp of camps\" [value]=\"camp.CAMP_CODE\">{{camp.CAMP_DESC}}</option>\r\n</select>\r\n\r\n<!--<mat-select >\r\n  <mat-option *ngFor=\"let camp of reqData.camps\" [value]=\"camp.CAMP_CODE\">{{camp.CAMP_DESC}}</mat-option>\r\n</mat-select>-->\r\n<br>\r\n  \r\n <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n<button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n</div>\r\n      </div></form></div></div></mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.ts":
+/*!******************************************************************************************************!*\
+  !*** ./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.ts ***!
+  \******************************************************************************************************/
+/*! exports provided: AddRequestChangeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddRequestChangeComponent", function() { return AddRequestChangeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_academicprocs_services_change_request_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/academicprocs/services/change-request.service */ "./src/app/academicprocs/services/change-request.service.ts");
+
+
+
+
+
+var AddRequestChangeComponent = /** @class */ (function () {
+    function AddRequestChangeComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        //choosedCode:string;
+        this.imageSrc = '';
+    }
+    AddRequestChangeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        //this.changeRequest = {camp: []};
+        this.cmp = { camp: '' };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.camps = _this.acadmicProc.reqData.camps;
+            _this.msgs = _this.acadmicProc.msgs;
+            //console.log(this.camps);
+            //this.canAdd = this.reqData.can_add_new_request;
+        });
+    };
+    AddRequestChangeComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        //console.log(data);
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+        //this.cmp = {camp:''};
+    };
+    AddRequestChangeComponent.prototype.onSubmit = function () {
+        if (this.cmp.camp == "")
+            return;
+        //this.changeRequest.camp.push({key:"camp",value:this.choosedCode});
+        /*let dropDown;
+        dropDown = document.getElementById("selected_id") as HTMLSelectElement;
+        let selectedItem =dropDown[dropDown.selectedIndex];
+        //console.log(selectedItem.innerHTML  + "" + selectedItem.value);
+        this.changeRequest.camp.push({key:selectedItem.innerHTML,value:selectedItem.value});*/
+        /*if(this.changeRequest.camp.length == 0)
+          return;*/
+        this.addRequest(this.cmp);
+        this.dialogRef.close();
+    };
+    AddRequestChangeComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddRequestChangeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-request-change',
+            template: __webpack_require__(/*! ./add-request-change.component.html */ "./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.html"),
+            styles: [__webpack_require__(/*! ./add-request-change.component.css */ "./src/app/academicprocs/change-request/diag/add-request-change/add-request-change.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_academicprocs_services_change_request_service__WEBPACK_IMPORTED_MODULE_4__["ChangeRequestService"]])
+    ], AddRequestChangeComponent);
+    return AddRequestChangeComponent;
 }());
 
 
@@ -1333,7 +1606,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> الرد </th>\n        <th scope=\"col\"> تاريخ الرد </th>\n\n        <th scope=\"col\"> طباعة الطلب</th>\n        <th scope=\"col\"> حذف الطلب </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n        <td>{{it.request_number}}</td>\n       \n  \n        <td>{{it.insert_date}}</td>\n        <td>{{it.status}}</td>\n        <td>{{it.rejection_reason}}</td>\n        <td>{{it.approval_date}}</td>\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n        <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>\r\n  <div>\r\n  <table style=\"text-align: center\" class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">رقم الطلب</th>\r\n  \r\n        <th scope=\"col\">تاريخ الطلب</th>\r\n        <th scope=\"col\">حالة الطلب</th>\r\n        <th scope=\"col\"> الرد </th>\r\n        <th scope=\"col\"> تاريخ الرد </th>\r\n\r\n        <th scope=\"col\"> طباعة الطلب</th>\r\n        <th scope=\"col\"> حذف الطلب </th>\r\n  \r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n        <td>{{it.request_number}}</td>\r\n       \r\n  \r\n        <td>{{it.insert_date}}</td>\r\n        <td>{{it.status}}</td>\r\n        <td>{{it.rejection_reason}}</td>\r\n        <td>{{it.approval_date}}</td>\r\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\r\n          Print</a></td>\r\n  \r\n        <td><button [disabled]='!it.deletable'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"></i> </button></td>\r\n  \r\n      </tr>\r\n      \r\n    </tbody>\r\n  </table>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -1374,6 +1647,7 @@ var CourseEqualizeComponent = /** @class */ (function () {
             _this.acadmicProc.msgs = res.messages;
             _this.reqData = _this.acadmicProc.reqData;
             _this.msgs = _this.acadmicProc.msgs;
+            //console.log(this.reqData.reqs);
         });
     };
     CourseEqualizeComponent.prototype.openDialoge = function () {
@@ -1399,9 +1673,14 @@ var CourseEqualizeComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('هل انت متأكد')) {
             this.acadmicProc.deleteReq(id).then(function (res) {
-                _this.toastr.success('', res.messages.body);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
             });
-            this.acadmicProc.reqData.reqs.splice(index, 1);
         }
     };
     CourseEqualizeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1437,7 +1716,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\n<mat-dialog-content>\n    \n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">   معادلة مقررات</h5>\n          \n        </div>\n        <div class=\"modal-body\">\n          <P class=\"text-center\">---  </P>\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n            \n          <div class=\"form-group\">\n             \n                 <select name=\"PREV_UNIV\" #PREV_UNIV=\"ngModel\" [(ngModel)]=\"curseEqual.PREV_UNIV\" class=\"form-control\" \n            [class.is-invalid]=\" curseEqual.PREV_UNIV==0\">\n              <option value=\"0\">الجامعه  </option>\n              <option *ngFor=\"let item of reqData.univ_list_arr\" value=\"{{item.UN_ID}}\">{{item.UNIV_AR}}</option>\n            </select>\n          </div>\n          <table style=\"text-align: center\" class=\"table\">\n              <thead>\n                <tr>\n                  <th scope=\"col\">اسم المقرر </th>\n                  <th scope=\"col\">عدد الساعات </th>\n                  <th scope=\"col\">الدرجه  </th>\n                  <th scope=\"col\">اللغه  </th>\n\n                  <th scope=\"col\">   </th>\n            \n                </tr>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let it of reqData.course_list;let i=index;\">\n                  <td>{{it.CRSE_TITLE}}</td>\n                 \n            \n                  <td>    <input   #TRNS_HRS=\"ngModel\" name=\"TRNS_HRS\" [(ngModel)]=\"it.TRNS_HRS\"  class=\"form-control col-md-6\" min=\"1\" max=\"10\" type=\"number\" value=\"1\" id=\"example-number-input\">\n                  </td>\n                  <td>   \n                      <select class=\"custom-select  col-md-10\"  #TRNS_GRADE=\"ngModel\" name=\"TRNS_GRADE\" [(ngModel)]=\"it.TRNS_GRADE\" id=\"inlineFormCustomSelect\">\n                        <option  value=\"A\">A</option>\n                        <option value=\"A+\">A+</option>\n                        <option value=\"B\">B</option>\n                        <option selected value=\"B+\">B+</option>\n\n                      </select>\n                    \n                  </td>\n                  <td>   \n                      <select class=\"custom-select  col-md-10\"  #TRNS_LANG=\"ngModel\" name=\"TRNS_LANG\" [(ngModel)]=\"it.TRNS_LANG\" id=\"inlineFormCustomSelect\">\n                          <option selected value=\"1\">عربي</option>\n                          <option value=\"2\">ENG</option>\n                         \n  \n                        </select>\n                  </td>\n                  \n            \n                  <td>\n                      <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event,i)\" #chkCourse  id=\"defaultUnchecked\">\n                 </td>\n            \n                </tr>\n                \n              </tbody>\n            </table>\n            <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\">وصف المقرر </div>\n                </div>\n                <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\n            </div> \n            <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\">صورة السجل </div>\n                </div>\n                <input name=\"imageUrl2\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange2($event)\" />\n            </div> \n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n  \n            <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n          </div>\n        </form>\n        </div>\n        \n  \n  </mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n    \r\n        <div class=\"modal-header\">\r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">   معادلة مقررات</h5>\r\n          \r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <P class=\"text-center\">---  </P>\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n            \r\n          <div class=\"form-group\">\r\n             \r\n                 <select name=\"PREV_UNIV\" #PREV_UNIV=\"ngModel\" [(ngModel)]=\"curseEqual.PREV_UNIV\" class=\"form-control\" \r\n            [class.is-invalid]=\" curseEqual.PREV_UNIV==0\">\r\n              <option value=\"0\">الجامعه  </option>\r\n              <option *ngFor=\"let item of reqData.univ_list_arr\" value=\"{{item.UN_ID}}\">{{item.UNIV_AR}}</option>\r\n            </select>\r\n          </div>\r\n          <table style=\"text-align: center\" class=\"table\">\r\n              <thead>\r\n                <tr>\r\n                  <th scope=\"col\">اسم المقرر </th>\r\n                  <th scope=\"col\">عدد الساعات </th>\r\n                  <th scope=\"col\">الدرجه  </th>\r\n                  <th scope=\"col\">اللغه  </th>\r\n\r\n                  <th scope=\"col\">   </th>\r\n            \r\n                </tr>\r\n              </thead>\r\n              <tbody>\r\n                <tr *ngFor=\"let it of reqData.course_list;let i=index;\">\r\n                  <td>{{it.CRSE_TITLE}}</td>\r\n                 \r\n            \r\n                  <td>    <input   #TRNS_HRS=\"ngModel\" name=\"TRNS_HRS\" [(ngModel)]=\"it.TRNS_HRS\"  class=\"form-control col-md-6\" min=\"1\" max=\"10\" type=\"number\" value=\"1\" id=\"example-number-input\">\r\n                  </td>\r\n                  <td>   \r\n                      <select class=\"custom-select  col-md-10\"  #TRNS_GRADE=\"ngModel\" name=\"TRNS_GRADE\" [(ngModel)]=\"it.TRNS_GRADE\" id=\"inlineFormCustomSelect\">\r\n                        <option  value=\"A\">A</option>\r\n                        <option value=\"A+\">A+</option>\r\n                        <option value=\"B\">B</option>\r\n                        <option selected value=\"B+\">B+</option>\r\n\r\n                      </select>\r\n                    \r\n                  </td>\r\n                  <td>   \r\n                      <select class=\"custom-select  col-md-10\"  #TRNS_LANG=\"ngModel\" name=\"TRNS_LANG\" [(ngModel)]=\"it.TRNS_LANG\" id=\"inlineFormCustomSelect\">\r\n                          <option selected value=\"1\">عربي</option>\r\n                          <option value=\"2\">ENG</option>\r\n                         \r\n  \r\n                        </select>\r\n                  </td>\r\n                  \r\n            \r\n                  <td>\r\n                      <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event)\" #chkCourse  id=\"defaultUnchecked\">\r\n                 </td>\r\n            \r\n                </tr>\r\n                \r\n              </tbody>\r\n            </table>\r\n            <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\">وصف المقرر </div>\r\n                </div>\r\n                <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n            </div> \r\n            <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\">صورة السجل </div>\r\n                </div>\r\n                <input name=\"imageUrl2\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange2($event)\" />\r\n            </div> \r\n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n  \r\n            <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n          </div>\r\n        </form>\r\n        </div>\r\n        \r\n  \r\n  </mat-dialog-content>"
 
 /***/ }),
 
@@ -1479,15 +1758,20 @@ var AddCourseEqualizeComponent = /** @class */ (function () {
             DESC_CRSE_FILE: '', TRANSCRIPT_FILE: '' };
         this.reqData = this.acadmicProc.reqData;
     };
-    AddCourseEqualizeComponent.prototype.changeStatus = function (it, e, i) {
+    AddCourseEqualizeComponent.prototype.changeStatus = function (it, e) {
         if (e.target.checked) {
+            console.log(it);
             it.TRNS_CRSE = it.CRSE_PK;
             this.curseEqual.courses.push(it);
-            console.log(this.curseEqual.courses);
+            console.log(this.curseEqual.courses[0]);
         }
         else {
-            this.curseEqual.courses.splice(i, 1);
+            for (var i = 0; i < this.curseEqual.courses.length; i++) {
+                if (this.curseEqual.courses[i].TRNS_CRSE == it.TRNS_CRSE)
+                    this.curseEqual.courses.splice(i, 1);
+            }
         }
+        console.log(this.curseEqual.courses);
     };
     AddCourseEqualizeComponent.prototype.handleInputChange = function (e) {
         var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -1565,7 +1849,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-dialog-content>\n   \n     \n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">      طلب معادلة اللغه الانجليزيه </h5>\n          \n        </div>\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n        <div class=\"modal-body\">\n            <table style=\"text-align: center\" class=\"table\">\n                <thead>\n                  <tr>\n                    <th scope=\"col\">اسم الاختبار </th>\n                    <th scope=\"col\">الدرجه  </th>\n  \n                    <th scope=\"col\">   </th>\n              \n                  </tr>\n                </thead>\n                <tbody>\n                  <tr *ngFor=\"let it of reqData.ENG_TESTS;let i=index;\">\n                    <td>{{it.TEST_TITLE}}</td>\n                   \n              \n                    <td>    <input   #score=\"ngModel\" name=\"score\" [(ngModel)]=\"it.score\"  class=\"form-control col-md-6\" min=\"1\" max=\"10\" type=\"number\" value=\"1\" id=\"example-number-input\">\n                    </td>\n                   \n                  \n                    \n              \n                    <td>\n                        <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event,i)\" #chkCourse  id=\"defaultUnchecked\">\n                   </td>\n              \n                  </tr>\n                  \n                </tbody>\n              </table>\n              <div class=\"image-upload\">\n                  <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\n              </div> \n             \n            <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                        <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n    \n              <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n            </div>\n            </div>\n          </form>\n     \n          \n    \n    </mat-dialog-content>"
+module.exports = "<mat-dialog-content>\r\n   \r\n     \r\n        <div class=\"modal-header\">\r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">      طلب معادلة اللغه الانجليزيه </h5>\r\n          \r\n        </div>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n        <div class=\"modal-body\">\r\n            <table style=\"text-align: center\" class=\"table\">\r\n                <thead>\r\n                  <tr>\r\n                    <th scope=\"col\">اسم الاختبار </th>\r\n                    <th scope=\"col\">الدرجه  </th>\r\n  \r\n                    <th scope=\"col\">   </th>\r\n              \r\n                  </tr>\r\n                </thead>\r\n                <tbody>\r\n                  <tr *ngFor=\"let it of reqData.ENG_TESTS;let i=index;\">\r\n                    <td>{{it.TEST_TITLE}}</td>\r\n                   \r\n              \r\n                    <td>    <input   #score=\"ngModel\" name=\"score\" [(ngModel)]=\"it.score\"  class=\"form-control col-md-6\" min=\"1\" max=\"10\" type=\"number\" value=\"1\" id=\"example-number-input\">\r\n                    </td>\r\n                   \r\n                  \r\n                    \r\n              \r\n                    <td>\r\n                        <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event)\" #chkCourse  id=\"defaultUnchecked\">\r\n                   </td>\r\n              \r\n                  </tr>\r\n                  \r\n                </tbody>\r\n              </table>\r\n              <div class=\"image-upload\">\r\n                  <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n              </div> \r\n             \r\n            <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                        <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n    \r\n              <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n            </div>\r\n            </div>\r\n          </form>\r\n     \r\n          \r\n    \r\n    </mat-dialog-content>"
 
 /***/ }),
 
@@ -1601,15 +1885,19 @@ var AddEnglishEqualizerComponent = /** @class */ (function () {
         this.englishEqual = { tests: [], attachment: '', ENG_TESTS: [] };
         this.reqData = this.acadmicProc.reqData;
     };
-    AddEnglishEqualizerComponent.prototype.changeStatus = function (it, e, i) {
+    AddEnglishEqualizerComponent.prototype.changeStatus = function (it, e) {
         if (e.target.checked) {
             it.test = it.TEST_PK;
             this.englishEqual.tests.push(it);
             console.log(this.englishEqual.tests);
         }
         else {
-            this.englishEqual.tests.splice(i, 1);
+            for (var i = 0; i < this.englishEqual.tests.length; i++) {
+                if (this.englishEqual.tests[i].test == it.test)
+                    this.englishEqual.tests.splice(i, 1);
+            }
         }
+        //console.log(this.englishEqual.tests);
     };
     AddEnglishEqualizerComponent.prototype.addRequest = function (data) {
         var _this = this;
@@ -1680,7 +1968,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">تاريخ الرد</th>\n\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> طباعه</th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.requests;let i=index;\">\n        <td>{{it.request_number}}</td>\n       \n  \n        <td>{{it.insert_date}}</td>\n        \n        <td>{{it.approval_date}}</td>\n        <td>{{it.status}}</td>\n\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>\r\n  <div>\r\n  <table style=\"text-align: center\" class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">رقم الطلب</th>\r\n  \r\n        <th scope=\"col\">تاريخ الطلب</th>\r\n        <th scope=\"col\">تاريخ الرد</th>\r\n\r\n        <th scope=\"col\">حالة الطلب</th>\r\n        <th scope=\"col\"> طباعه</th>\r\n  \r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n        <td>{{it.request_number}}</td>\r\n       \r\n  \r\n        <td>{{it.insert_date}}</td>\r\n        \r\n        <td>{{it.approval_date}}</td>\r\n        <td>{{it.status}}</td>\r\n\r\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\r\n          Print</a></td>\r\n  \r\n      </tr>\r\n      \r\n    </tbody>\r\n  </table>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -1746,9 +2034,15 @@ var EnglishEqualizeComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('هل انت متأكد')) {
             this.acadmicProc.deleteReq(id).then(function (res) {
-                _this.toastr.success('', res.messages.body);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
             });
-            this.acadmicProc.reqData.reqs.splice(index, 1);
+            //this.acadmicProc.reqData.reqs.splice(index, 1);
         }
     };
     EnglishEqualizeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -1760,6 +2054,229 @@ var EnglishEqualizeComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _services_english_equalizer_service__WEBPACK_IMPORTED_MODULE_2__["EnglishEqualizerService"]])
     ], EnglishEqualizeComponent);
     return EnglishEqualizeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.css":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.css ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvZXhhbS1leGN1c2UvZGlhZy9hZGQtZXhhbS1leGN1c2UvYWRkLWV4YW0tZXhjdXNlLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.html":
+/*!***********************************************************************************************!*\
+  !*** ./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.html ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-dialog-content>\r\n   \r\n     \r\n  <div class=\"modal-header\">\r\n    <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">      تقديم الأعذار للمتغيبين عن الاختبارات بعذر    </h5>\r\n    \r\n  </div>\r\n  <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n  <div class=\"modal-body\">\r\n      <div class=\"main-content\" style=\"padding-top:0;\">\r\n          <section  class=\"ser-state\">\r\n              <div class=\"container\">\r\n                   <div class=\"row ser-block\">\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                          <div class=\"state\">\r\n                              <h6> اختر المقرر </h6>\r\n                              <table style=\"text-align: center\" class=\"table\">\r\n                                  <thead  style=\"font-size: 15px;\">\r\n                                    <tr>\r\n                                      <th scope=\"col\">اسم المقرر </th>\r\n      \r\n                                      <th scope=\"col\"> رقم المقرر  </th>\r\n                                      <th scope=\"col\">   </th>\r\n                                      <th scope=\"col\"> #  </th>\r\n\r\n                                \r\n                                    </tr>\r\n                                  </thead>\r\n                                  <tbody style=\"font-size: 14px;\">\r\n                                    <tr *ngFor=\"let it of reqData.schedules;let i=index;\">\r\n                                      <td>{{it.CRSE_TITLE}}</td>\r\n                                      <td>{{it.CRN}}</td>\r\n                                \r\n                                      <td>\r\n                                          <input type=\"checkbox\" name=\"courses\" (change)=\"changeStatus(it,$event)\" #courses  id=\"defaultUnchecked\">\r\n                                    </td>\r\n                                    <td>{{i+1}}</td>\r\n                                \r\n                                    </tr>\r\n                                    \r\n                                  </tbody>\r\n                                </table>\r\n                          </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\" ></div>\r\n                            </div>\r\n                      </div>\r\n                        \r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6> اختر نوع الاختبار </h6>\r\n                              <select name=\"type\" #time=\"ngModel\" [(ngModel)]=\"examExcuse.type\" class=\"form-control\" \r\n                              [class.is-invalid]=\"examExcuse.type==''\">\r\n                                <option value=\"\">نوع الاختبار</option>\r\n                                <option *ngFor=\"let item of reqData.exams_type\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                              </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                        <div class=\"state\">\r\n                          <h6> سبب التغيب عن الاختبار  </h6>\r\n                          <textarea name=\"reason\" class=\"form-control\"  #reason=\"ngModel\" [(ngModel)]=\"examExcuse.reason\"></textarea>\r\n                        </div>\r\n                          <div class=\"progress progress-sm\">\r\n                              <div class=\"progress-bar bg-info\" style=\"width: 15%;\" ></div>\r\n                          </div>\r\n                      </div>\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                        <div class=\"state\">\r\n                          <h6> رفع الوثائق التي تثبت سبب تغيبك عن الاختبار </h6>\r\n                          <div class=\"custom-file\">\r\n                              <input name=\"attachment\"  id=\"attachment\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n                              <label  for=\"attachment\"  class=\"custom-file-label \">\r\n                              </label> \r\n                            </div>\r\n                          </div>\r\n                          <div class=\"progress progress-sm\">\r\n                              <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                          </div>\r\n                 \r\n                     </div>\r\n                     <div style=\"margin-top: 15px;\">\r\n                        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                                     <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                        </div>\r\n                      </div>\r\n                        \r\n                    </div>\r\n                </div>\r\n           </section>\r\n      </div>\r\n      </div>\r\n\r\n    </form>\r\n\r\n    \r\n\r\n</mat-dialog-content>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.ts":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.ts ***!
+  \*********************************************************************************************/
+/*! exports provided: AddExamExcuseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddExamExcuseComponent", function() { return AddExamExcuseComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_exam_excuse_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/exam-excuse.service */ "./src/app/academicprocs/services/exam-excuse.service.ts");
+
+
+
+
+
+var AddExamExcuseComponent = /** @class */ (function () {
+    function AddExamExcuseComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    AddExamExcuseComponent.prototype.ngOnInit = function () {
+        this.examExcuse = { courses: [], reason: '', type: '', attachment: '' };
+        this.reqData = this.acadmicProc.reqData;
+    };
+    AddExamExcuseComponent.prototype.changeStatus = function (it, e) {
+        if (e.target.checked) {
+            this.examExcuse.courses.push({ CRSE: it.CRN });
+            //   console.log(this.examExcuse.courses);
+            // } else {
+            //   for(let i = 0 ; i<this.examExcuse.courses.length;i++)
+            //   {
+            //     if(this.examExcuse.courses[i].CRSE ==it.test)
+            //       this.examExcuse.courses.splice(i, 1);
+            //   }
+        }
+        //console.log(this.englishEqual.tests);
+    };
+    AddExamExcuseComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        console.log(data);
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddExamExcuseComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.examExcuse);
+        this.dialogRef.close();
+    };
+    AddExamExcuseComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddExamExcuseComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /pdf-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddExamExcuseComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.examExcuse.attachment = reader.result;
+        console.log(this.examExcuse.attachment);
+    };
+    AddExamExcuseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-exam-excuse',
+            template: __webpack_require__(/*! ./add-exam-excuse.component.html */ "./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.html"),
+            styles: [__webpack_require__(/*! ./add-exam-excuse.component.css */ "./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_exam_excuse_service__WEBPACK_IMPORTED_MODULE_4__["ExamExcuseService"]])
+    ], AddExamExcuseComponent);
+    return AddExamExcuseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/exam-excuse/exam-excuse.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/academicprocs/exam-excuse/exam-excuse.component.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvZXhhbS1leGN1c2UvZXhhbS1leGN1c2UuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/exam-excuse/exam-excuse.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/app/academicprocs/exam-excuse/exam-excuse.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\" >\r\n\r\n  <div  *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n    <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n        {{msg.body}}!\r\n      </div>\r\n    <div style=\"direction: ltr;text-align: center\">\r\n      \r\n      <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n      اضافة طلب\r\n    </button>\r\n    <br/>\r\n    <br/>\r\n    \r\n    </div>\r\n    <div>\r\n      <div class=\"table-responsive\">\r\n    <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n  \r\n        <tr>\r\n          <th scope=\"col\">رقم الطلب</th>\r\n          <th scope=\"col\">CRN</th>\r\n          <th scope=\"col\">اسم المقرر</th>\r\n          <th scope=\"col\">تاريخ إنشاء الطلب</th>\r\n          <th scope=\"col\">تاريخ الرد </th>\r\n          <th scope=\"col\"> حالة الطلب</th>\r\n          <th scope=\"col\"> حذف الطلب </th>\r\n    \r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n          <td>{{it.request_number}}</td>\r\n          <td>{{it.courseId}}</td>\r\n          <td>{{it.course_title}}</td>\r\n          <td>{{it.insert_date}}</td>\r\n          <td>{{it.admin_date}}</td>\r\n          <td>{{it.status}}</td>\r\n         \r\n         \r\n          <td><button [disabled]='!it.deletable'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"></i> </button></td>\r\n    \r\n        </tr>\r\n        \r\n      </tbody>\r\n    </table></div>\r\n    </div>\r\n  </div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/exam-excuse/exam-excuse.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/academicprocs/exam-excuse/exam-excuse.component.ts ***!
+  \********************************************************************/
+/*! exports provided: ExamExcuseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExamExcuseComponent", function() { return ExamExcuseComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_exam_excuse_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/exam-excuse.service */ "./src/app/academicprocs/services/exam-excuse.service.ts");
+/* harmony import */ var _diag_add_exam_excuse_add_exam_excuse_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-exam-excuse/add-exam-excuse.component */ "./src/app/academicprocs/exam-excuse/diag/add-exam-excuse/add-exam-excuse.component.ts");
+
+
+
+
+
+
+var ExamExcuseComponent = /** @class */ (function () {
+    function ExamExcuseComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    ExamExcuseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            console.log(res);
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    ExamExcuseComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_exam_excuse_add_exam_excuse_component__WEBPACK_IMPORTED_MODULE_5__["AddExamExcuseComponent"], dialogConfig);
+    };
+    ExamExcuseComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    ExamExcuseComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    ExamExcuseComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+            });
+            //this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    ExamExcuseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-exam-excuse',
+            template: __webpack_require__(/*! ./exam-excuse.component.html */ "./src/app/academicprocs/exam-excuse/exam-excuse.component.html"),
+            styles: [__webpack_require__(/*! ./exam-excuse.component.css */ "./src/app/academicprocs/exam-excuse/exam-excuse.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_exam_excuse_service__WEBPACK_IMPORTED_MODULE_4__["ExamExcuseService"]])
+    ], ExamExcuseComponent);
+    return ExamExcuseComponent;
 }());
 
 
@@ -1784,7 +2301,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  except-semester works!\n</p>\n"
+module.exports = "<p>\r\n  except-semester works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1840,7 +2357,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\n<mat-dialog-content>\n    <div class=\"modal-dialog\" role=\"document\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب الاعتذار عن الفصل الدراسي</h5>\n            \n        </div>\n        <div class=\"modal-body\">\n          <P class=\"text-center\">  </P>\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n            \n      \n          \n           \n         \n          <div class=\"form-row\">\n              <div class=\"form-group col-md-12\">\n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"> السبب</div>\n                  </div>\n                  <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\n                </div>\n              </div>\n             \n            </div>\n            \n              \n       \n           \n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n  \n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n          </div>\n        </form>\n        </div>\n    </div>\n        \n     </div>\n  </mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب الاعتذار عن الفصل الدراسي</h5>\r\n            \r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <P class=\"text-center\">  </P>\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n            \r\n      \r\n          \r\n           \r\n         \r\n          <div class=\"form-row\">\r\n              <div class=\"form-group col-md-12\">\r\n                <div class=\"input-group\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <div class=\"input-group-text\"> السبب</div>\r\n                  </div>\r\n                  <input required name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\r\n                </div>\r\n              </div>\r\n             \r\n            </div>\r\n            \r\n              \r\n       \r\n           \r\n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n  \r\n            <button  [disabled]=\"form.invalid\" type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n          </div>\r\n        </form>\r\n        </div>\r\n    </div>\r\n        \r\n     </div>\r\n  </mat-dialog-content>"
 
 /***/ }),
 
@@ -1929,7 +2446,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> طباعة الطلب</th>\n        <th scope=\"col\"> حذف الطلب </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n        <td>{{it.request_number}}</td>\n       \n  \n        <td>{{it.insert_date}}</td>\n        <td>{{it.status}}</td>\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n        <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>\r\n  <div>\r\n  <table style=\"text-align: center\" class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">رقم الطلب</th>\r\n  \r\n        <th scope=\"col\">تاريخ الطلب</th>\r\n        <th scope=\"col\">حالة الطلب</th>\r\n        <th scope=\"col\"> طباعة الطلب</th>\r\n        <th scope=\"col\"> حذف الطلب </th>\r\n  \r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n        <td>{{it.request_number}}</td>\r\n       \r\n  \r\n        <td>{{it.insert_date}}</td>\r\n        <td>{{it.status}}</td>\r\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\r\n          Print</a></td>\r\n  \r\n        <td><button [disabled]='!it.deletable'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"></i> </button></td>\r\n  \r\n      </tr>\r\n      \r\n    </tbody>\r\n  </table>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -1969,6 +2486,7 @@ var ExecuseRequestComponent = /** @class */ (function () {
             _this.acadmicProc.msgs = res.messages;
             _this.reqData = _this.acadmicProc.reqData;
             _this.msgs = _this.acadmicProc.msgs;
+            //console.log(this.reqData.reqs);
         });
     };
     ExecuseRequestComponent.prototype.openDialoge = function () {
@@ -1994,9 +2512,15 @@ var ExecuseRequestComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('هل انت متأكد')) {
             this.acadmicProc.deleteReq(id).then(function (res) {
-                _this.toastr.success('', res.messages.body);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                //console.log( this.status);
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
             });
-            this.acadmicProc.reqData.reqs.splice(index, 1);
         }
     };
     ExecuseRequestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2008,6 +2532,495 @@ var ExecuseRequestComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_2__["TermExecuseService"]])
     ], ExecuseRequestComponent);
     return ExecuseRequestComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.css":
+/*!****************************************************************************************************************!*\
+  !*** ./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.css ***!
+  \****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvbGVjdHVyZXMtZXhlY3VzZXMvZGlhZy9hZGQtbGVjdHVyZXMtZXhlY3VzZXMvYWRkLWxlY3R1cmVzLWV4ZWN1c2VzLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.html":
+/*!*****************************************************************************************************************!*\
+  !*** ./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.html ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n    \r\n  <div class=\"modal-header\">\r\n    <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">   معادلة مقررات</h5>\r\n    \r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <P class=\"text-center\">---  </P>\r\n    <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n      \r\n    <div class=\"form-group\">\r\n       \r\n           <select name=\"week\" #week=\"ngModel\" [(ngModel)]=\"lectureExecuse.week\" class=\"form-control\" \r\n      [class.is-invalid]=\" lectureExecuse.week==''\">\r\n        <option value=\"\">الاسبوع  </option>\r\n        <option *ngFor=\"let item of reqData.weeks_list\" value=\"{{item.id}}\">{{item.value}}</option>\r\n      </select>\r\n    </div>\r\n    <div class=\"form-group\">\r\n       \r\n      <select name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"lectureExecuse.reason\" class=\"form-control\" \r\n [class.is-invalid]=\" lectureExecuse.reason==''\">\r\n   <option value=\"\">العذر  </option>\r\n   <option *ngFor=\"let item of reqData.text_list\" value=\"{{item.text1}}\">{{item.text1}}</option>\r\n </select>\r\n    </div>\r\n    <div class=\"form-group\">\r\n <select name=\"type\" #type=\"ngModel\" [(ngModel)]=\"lectureExecuse.type\" class=\"form-control\" \r\n [class.is-invalid]=\" lectureExecuse.reason==''\">\r\n   <option value=\"\">نوع المحاضره  </option>\r\n   <option *ngFor=\"let item of reqData.lectures_type\" value=\"{{item.id}}\">{{item.value}}</option>\r\n </select>\r\n    </div>\r\n    <div class=\"form-group\">\r\n <input class=\"form-control\" name=\"date\"  #date=\"ngModel\" [(ngModel)]=\"lectureExecuse.date\"   type=\"date\" style=\"direction: rtl;text-align:right\">\r\n</div>\r\n    <table style=\"text-align: center\" class=\"table\">\r\n        <thead>\r\n          <tr>\r\n              <th scope=\"col\">crn  </th>\r\n\r\n            <th scope=\"col\">اسم المقرر </th>\r\n    \r\n\r\n            <th scope=\"col\">   </th>\r\n      \r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.schedules;let i=index;\">\r\n              <td>{{it.CRN}}</td>\r\n\r\n            <td>{{it.CRSE_TITLE}}</td>\r\n           \r\n      \r\n           \r\n           \r\n            \r\n      \r\n            <td>\r\n                <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event,i)\" #chkCourse  id=\"defaultUnchecked\">\r\n           </td>\r\n      \r\n          </tr>\r\n          \r\n        </tbody>\r\n      </table>\r\n      <div class=\"input-group\">\r\n          <div class=\"input-group-prepend\">\r\n            <div class=\"input-group-text\">ملف  </div>\r\n          </div>\r\n          <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n      </div> \r\n     \r\n    <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n      <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n    </div>\r\n  </form>\r\n  </div>\r\n  \r\n\r\n</mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.ts":
+/*!***************************************************************************************************************!*\
+  !*** ./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.ts ***!
+  \***************************************************************************************************************/
+/*! exports provided: AddLecturesExecusesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddLecturesExecusesComponent", function() { return AddLecturesExecusesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_academicprocs_services_lecture_execuse_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/academicprocs/services/lecture-execuse-service.service */ "./src/app/academicprocs/services/lecture-execuse-service.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+
+
+
+
+
+var AddLecturesExecusesComponent = /** @class */ (function () {
+    function AddLecturesExecusesComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.imageSrc = '';
+    }
+    AddLecturesExecusesComponent.prototype.ngOnInit = function () {
+        this.lectureExecuse = { courses: [], attachment: '', reason: '', date: '', type: '', week: ''
+        };
+        this.reqData = this.acadmicProc.reqData;
+        console.log(this.reqData);
+    };
+    AddLecturesExecusesComponent.prototype.changeStatus = function (it, e) {
+        if (e.target.checked) {
+            this.lectureExecuse.courses.push({ CRSE: it.CRN });
+        }
+        else {
+            for (var i = 0; i < this.lectureExecuse.courses.length; i++) {
+                console.log(this.lectureExecuse.courses[i]);
+                console.log(it.CRN);
+                if (this.lectureExecuse.courses[i].CRSE === it.CRN) {
+                    this.lectureExecuse.courses.splice(i, 1);
+                }
+            }
+        }
+        console.log(this.lectureExecuse.courses);
+    };
+    AddLecturesExecusesComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddLecturesExecusesComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.lectureExecuse.attachment = reader.result;
+        console.log(this.lectureExecuse.attachment);
+    };
+    AddLecturesExecusesComponent.prototype.handleInputChange2 = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = this._handleReaderLoaded2.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddLecturesExecusesComponent.prototype._handleReaderLoaded2 = function (e) {
+        var reader = e.target;
+        this.lectureExecuse.attachment = reader.result;
+        console.log(this.lectureExecuse.attachment);
+    };
+    AddLecturesExecusesComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddLecturesExecusesComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.lectureExecuse);
+        console.log(this.lectureExecuse);
+        this.dialogRef.close();
+    };
+    AddLecturesExecusesComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddLecturesExecusesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-lectures-execuses',
+            template: __webpack_require__(/*! ./add-lectures-execuses.component.html */ "./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.html"),
+            styles: [__webpack_require__(/*! ./add-lectures-execuses.component.css */ "./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], src_app_academicprocs_services_lecture_execuse_service_service__WEBPACK_IMPORTED_MODULE_2__["LectureExecuseServiceService"]])
+    ], AddLecturesExecusesComponent);
+    return AddLecturesExecusesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/lectures-execuses/lectures-execuses.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/academicprocs/lectures-execuses/lectures-execuses.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvbGVjdHVyZXMtZXhlY3VzZXMvbGVjdHVyZXMtZXhlY3VzZXMuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/lectures-execuses/lectures-execuses.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/academicprocs/lectures-execuses/lectures-execuses.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n  {{msg.body}}!\r\n</div>\r\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n<div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div>\r\n<div>\r\n<table style=\"text-align: center\" class=\"table\">\r\n  <thead>\r\n    <tr>\r\n      <th scope=\"col\">رقم الطلب</th>\r\n\r\n      <th scope=\"col\"> CRN</th>\r\n      <th scope=\"col\"> المقرر </th>\r\n      <th scope=\"col\">  انشاء الطلب </th>\r\n      <th scope=\"col\"> تاريخ الغياب  </th>\r\n\r\n      <th scope=\"col\">  اسبوع الغياب</th>\r\n      <th scope=\"col\">   نوع المحاضره</th>\r\n      <th scope=\"col\">   حالة الطلب </th>\r\n      <th scope=\"col\">    ملف العذر </th>\r\n\r\n\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n      <td>{{it.request_number}}</td>\r\n      <td>{{it.courseId}}</td>\r\n      <td>{{it.course_title}}</td>\r\n      <td>{{it.insert_date}}</td>\r\n\r\n      <td>{{it.absance_date}}</td>\r\n      <td>{{it.week}}</td>\r\n\r\n      <td>{{it.class_type}}</td>\r\n\r\n\r\n\r\n      <td>{{it.status}}</td>\r\n\r\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\r\n        Print</a></td>\r\n\r\n\r\n    </tr>\r\n    \r\n  </tbody>\r\n</table>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/lectures-execuses/lectures-execuses.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/academicprocs/lectures-execuses/lectures-execuses.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: LecturesExecusesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LecturesExecusesComponent", function() { return LecturesExecusesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_lecture_execuse_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/lecture-execuse-service.service */ "./src/app/academicprocs/services/lecture-execuse-service.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _diag_add_lectures_execuses_add_lectures_execuses_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-lectures-execuses/add-lectures-execuses.component */ "./src/app/academicprocs/lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.ts");
+
+
+
+
+
+
+var LecturesExecusesComponent = /** @class */ (function () {
+    function LecturesExecusesComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    LecturesExecusesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.lectureExecuse = { attachment: '', courses: [], date: '', reason: '', type: '', week: '' };
+        this.acadmicProc.getRequests().then(function (res) {
+            console.log(res);
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    LecturesExecusesComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '70%';
+        this.dialog.open(_diag_add_lectures_execuses_add_lectures_execuses_component__WEBPACK_IMPORTED_MODULE_5__["AddLecturesExecusesComponent"], dialogConfig);
+    };
+    LecturesExecusesComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    LecturesExecusesComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    LecturesExecusesComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    LecturesExecusesComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    LecturesExecusesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-lectures-execuses',
+            template: __webpack_require__(/*! ./lectures-execuses.component.html */ "./src/app/academicprocs/lectures-execuses/lectures-execuses.component.html"),
+            styles: [__webpack_require__(/*! ./lectures-execuses.component.css */ "./src/app/academicprocs/lectures-execuses/lectures-execuses.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _services_lecture_execuse_service_service__WEBPACK_IMPORTED_MODULE_2__["LectureExecuseServiceService"]])
+    ], LecturesExecusesComponent);
+    return LecturesExecusesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.css":
+/*!**********************************************************************************************!*\
+  !*** ./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.css ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3Mvb2JqZWN0LWV4YW0vZGlhZy9hZGQtZXhhbS1vYmplY3QvYWRkLWV4YW0tb2JqZWN0LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.html":
+/*!***********************************************************************************************!*\
+  !*** ./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.html ***!
+  \***********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-dialog-content>\r\n   \r\n     \r\n  <div class=\"modal-header\">\r\n    <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">    اضافة اعتراض على احد الاختبارات </h5>\r\n    \r\n  </div>\r\n  <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n  <div class=\"modal-body\">\r\n      \r\n    <p style=\"text-align:center\" >اختيار المنهج</p>\r\n\r\n    <table style=\"text-align: center\" class=\"table\">\r\n      <thead>\r\n        <tr>\r\n          <th scope=\"col\">اسم المنهج </th>\r\n          <th scope=\"col\">اسم المعلم  </th>\r\n\r\n          <th scope=\"col\">   </th>\r\n    \r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let it of exam.exams;let i=index;\">\r\n          <td>{{it.CRSE_TITLE}}</td>\r\n         \r\n    \r\n          <td>    <input    name=\"teacherName\"  class=\"form-control col-md-6\"  #TeacherID=\"ngModel\" [(ngModel)]=\"it.teacher\"  name=\"Teacher\" >\r\n          </td>\r\n         \r\n        \r\n          \r\n    \r\n          <td>\r\n              <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event)\" #chkCourse  > \r\n         </td>\r\n    \r\n        </tr>\r\n        \r\n      </tbody>\r\n    </table>\r\n    \r\n    <select class=\"form-control\" #BankID=\"ngModel\" [(ngModel)]=\"exam.bank\"  name=\"Bank\" [class.is-invalid]=\"exam.bank == -1\">\r\n      <option value=-1>اختر  البنك</option>\r\n      <option *ngFor=\"let bank of reqData.banks\" [value]=\"bank.id\">{{bank.value}}</option>\r\n    </select>\r\n\r\n    <br>\r\n\r\n    <div class=\"form-row\">\r\n      <div class=\"form-group col-md-12\">\r\n        <div class=\"input-group\">\r\n          <div class=\"input-group-prepend\">\r\n            <div class=\"input-group-text\"> أسباب الاعتراض</div>\r\n          </div>\r\n          <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"exam.reason\" class=\"form-control\" >\r\n        </div>\r\n        <br>\r\n        <div class=\"input-group\">\r\n          <div class=\"input-group-prepend\">\r\n            <div class=\"input-group-text\"> رقم الحساب</div>\r\n          </div>\r\n          <input   #accountNumber=\"ngModel\" name=\"accountNumber\" [(ngModel)]=\"exam.account_number\"  class=\"form-control\" type=\"text\" >\r\n        </div>\r\n        <br>\r\n        <div class=\"input-group\">\r\n          <div class=\"input-group-prepend\">\r\n            <div class=\"input-group-text\"> الضريبة</div>\r\n          </div>\r\n          <input   #feesAmount=\"ngModel\" name=\"feesAmount\" [(ngModel)]=\"exam.fees_amount\" class=\"form-control\"  type=\"text\" >\r\n        </div>\r\n      </div>\r\n     \r\n    </div>\r\n    \r\n    <!-- <select class=\"form-control\" #bankIDD=\"ngModel\" [(ngModel)]=\"exam.bank\"  name=\"Bank\" [class.is-invalid]=\"exam.bank == ''\">\r\n      <option value=''>اختر  البنك</option>\r\n      <option *ngFor=\"let bank of reqData.banks\" [value]=\"bank.key\">{{bank.value}}</option>\r\n    </select> -->\r\n    \r\n\r\n\r\n    <br>\r\n        <div class=\"image-upload\">\r\n            <input name=\"Url\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n        </div> \r\n       \r\n      <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                  <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n        <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n      </div>\r\n      </div>\r\n    </form>\r\n\r\n    \r\n\r\n</mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.ts":
+/*!*********************************************************************************************!*\
+  !*** ./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.ts ***!
+  \*********************************************************************************************/
+/*! exports provided: AddExamObjectComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddExamObjectComponent", function() { return AddExamObjectComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_academicprocs_services_object_exam_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/academicprocs/services/object-exam.service */ "./src/app/academicprocs/services/object-exam.service.ts");
+
+
+
+
+
+var AddExamObjectComponent = /** @class */ (function () {
+    //exams;
+    //courses:[];
+    //teacherName:string;
+    //choosedCode:string;
+    //private imageSrc = '';
+    function AddExamObjectComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    AddExamObjectComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        //this.changeRequest = {camp: []};
+        //this.exam = {camp:''};
+        this.exam = { courses: [], exams: [], bank: -1, reason: "", account_number: "", fees_amount: "", attachment: "" };
+        this.acadmicProc.getgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+            _this.exam.exams = _this.acadmicProc.reqData.exams;
+            //this.canAdd = this.reqData.can_add_new_request;
+            //this.exams=this.reqData.exams;
+            //console.log(this.reqData.banks[0]);
+        });
+    };
+    AddExamObjectComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        data.bank = parseInt(data.bank);
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+            console.log(data);
+        });
+        //this.cmp = {camp:''};
+    };
+    AddExamObjectComponent.prototype.onSubmit = function () {
+        /*let dropDown;
+        dropDown = document.getElementById("selected_id") as HTMLSelectElement;
+        let selectedItem =dropDown[dropDown.selectedIndex];
+        //console.log(selectedItem.innerHTML  + "" + selectedItem.value);
+        this.changeRequest.camp.push({key:selectedItem.innerHTML,value:selectedItem.value});*/
+        /*if(this.changeRequest.camp.length == 0)
+          return;*/
+        //this.exam.fees_amount="200";
+        //this.exam.account_number="4444-uu-df";
+        this.addRequest(this.exam);
+        this.dialogRef.close();
+    };
+    AddExamObjectComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddExamObjectComponent.prototype.changeStatus = function (item, e) {
+        //console.log(index);
+        if (e.target.checked) {
+            console.log(item);
+            //let teacherName = item.teacher;
+            this.exam.courses.push({ CRSE: parseInt(item.CRN), teacher: item.teacher });
+        }
+        else {
+            // let id = e.target.getAttribute('data-CheckBoxId');
+            //console.log(e.target);
+            for (var i = 0; i < this.exam.courses.length; i++) {
+                if (this.exam.courses[i].CRSE == item.CRN)
+                    this.exam.courses.splice(i, 1);
+            }
+            //this.exam.courses.splice(index, 1);
+            //console.log(22);
+        }
+        // console.log(this.exam.courses);
+    };
+    AddExamObjectComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddExamObjectComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.exam.attachment = reader.result;
+        console.log(this.exam.attachment);
+    };
+    AddExamObjectComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-exam-object',
+            template: __webpack_require__(/*! ./add-exam-object.component.html */ "./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.html"),
+            styles: [__webpack_require__(/*! ./add-exam-object.component.css */ "./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_academicprocs_services_object_exam_service__WEBPACK_IMPORTED_MODULE_4__["ObjectExamService"]])
+    ], AddExamObjectComponent);
+    return AddExamObjectComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/object-exam/object-exam.component.css":
+/*!*********************************************************************!*\
+  !*** ./src/app/academicprocs/object-exam/object-exam.component.css ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3Mvb2JqZWN0LWV4YW0vb2JqZWN0LWV4YW0uY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/object-exam/object-exam.component.html":
+/*!**********************************************************************!*\
+  !*** ./src/app/academicprocs/object-exam/object-exam.component.html ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n  {{msg.body}}!\r\n</div>\r\n\r\n<div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div>\r\n<div>\r\n<table style=\"text-align: center\" class=\"table\">\r\n  <thead>\r\n    <tr>\r\n      <th scope=\"col\">CRN</th>\r\n      <th scope=\"col\">اسم المقرر</th>\r\n\r\n      <th scope=\"col\">تاريخ انشاء الطلب</th>\r\n\r\n      <th scope=\"col\">حالة الطلب</th>\r\n      <th scope=\"col\">الاجراء</th>\r\n\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n      <td>{{it.courseId}}</td>\r\n      <td>{{it.course_title}}</td>\r\n      <td>{{it.insert_date}}</td>\r\n\r\n      <td>{{it.status}}</td>\r\n      \r\n\r\n      <td><button [disabled]='!it.deletable'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"></i> </button></td>\r\n\r\n    </tr>\r\n    \r\n  </tbody>\r\n</table>\r\n</div>\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/object-exam/object-exam.component.ts":
+/*!********************************************************************!*\
+  !*** ./src/app/academicprocs/object-exam/object-exam.component.ts ***!
+  \********************************************************************/
+/*! exports provided: ObjectExamComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ObjectExamComponent", function() { return ObjectExamComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _services_object_exam_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/object-exam.service */ "./src/app/academicprocs/services/object-exam.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _diag_add_exam_object_add_exam_object_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-exam-object/add-exam-object.component */ "./src/app/academicprocs/object-exam/diag/add-exam-object/add-exam-object.component.ts");
+
+
+
+
+
+
+var ObjectExamComponent = /** @class */ (function () {
+    function ObjectExamComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    ObjectExamComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.acadmicProc.getRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+            console.log(_this.reqData.banks.CRN);
+            console.log(res.status);
+        });
+    };
+    ObjectExamComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_exam_object_add_exam_object_component__WEBPACK_IMPORTED_MODULE_5__["AddExamObjectComponent"], dialogConfig);
+    };
+    /* addRequest(data) {
+      this.acadmicProc.AddRequest(data).then(  res => {
+        this.acadmicProc.msgs = (res as any).messages;
+          });
+    }
+    onSubmit(form: NgForm) {
+  this.addRequest(form.value);
+  
+  
+    }
+  
+    */
+    ObjectExamComponent.prototype.delete = function (id, index) {
+        // console.log(id);
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                //console.log((res as any).status);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                //console.log(this.status);
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+            });
+            //console.log(this.status);
+        }
+    };
+    ObjectExamComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-object-exam',
+            template: __webpack_require__(/*! ./object-exam.component.html */ "./src/app/academicprocs/object-exam/object-exam.component.html"),
+            styles: [__webpack_require__(/*! ./object-exam.component.css */ "./src/app/academicprocs/object-exam/object-exam.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _services_object_exam_service__WEBPACK_IMPORTED_MODULE_3__["ObjectExamService"]])
+    ], ObjectExamComponent);
+    return ObjectExamComponent;
 }());
 
 
@@ -2032,7 +3045,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\n<mat-dialog-content>\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب تأجيل من الجامعه</h5>\n        \n      </div>\n      <div class=\"modal-body\">\n        <P class=\"text-center\">  </P>\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n          \n    \n        \n         \n       \n        <div class=\"form-row\">\n            <div class=\"form-group col-md-12\">\n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"> السبب</div>\n                </div>\n                <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\n              </div>\n            </div>\n           \n          </div>\n          \n            \n     \n         \n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n        </div>\n      </form>\n      </div>\n  </div>\n      \n   </div>\n</mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب تأجيل من الجامعه</h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">  </P>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n          \r\n    \r\n        \r\n         \r\n       \r\n        <div class=\"form-row\">\r\n            <div class=\"form-group col-md-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"> السبب</div>\r\n                </div>\r\n                <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\r\n              </div>\r\n            </div>\r\n           \r\n          </div>\r\n          \r\n            \r\n     \r\n         \r\n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n        </div>\r\n      </form>\r\n      </div>\r\n  </div>\r\n      \r\n   </div>\r\n</mat-dialog-content>"
 
 /***/ }),
 
@@ -2121,7 +3134,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n  {{msg.body}}!\n</div>\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n<div style=\"direction: ltr;text-align: center\">\n  \n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n  اضافة طلب\n</button>\n<br/>\n<br/>\n\n</div>\n<div>\n<table style=\"text-align: center\" class=\"table\">\n  <thead>\n    <tr>\n      <th scope=\"col\">رقم الطلب</th>\n\n      <th scope=\"col\">تاريخ الطلب</th>\n      <th scope=\"col\">حالة الطلب</th>\n      <th scope=\"col\"> طباعة الطلب</th>\n      <th scope=\"col\"> حذف الطلب </th>\n\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n      <td>{{it.request_number}}</td>\n     \n\n      <td>{{it.insert_date}}</td>\n      <td>{{it.status}}</td>\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n        Print</a></td>\n\n      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n\n    </tr>\n    \n  </tbody>\n</table>\n</div>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n  {{msg.body}}!\r\n</div>\r\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n<div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div>\r\n<div>\r\n<table style=\"text-align: center\" class=\"table\">\r\n  <thead>\r\n    <tr>\r\n      <th scope=\"col\">رقم الطلب</th>\r\n\r\n      <th scope=\"col\">تاريخ الطلب</th>\r\n      <th scope=\"col\">حالة الطلب</th>\r\n      <th scope=\"col\"> طباعة الطلب</th>\r\n      <th scope=\"col\"> حذف الطلب </th>\r\n\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n      <td>{{it.request_number}}</td>\r\n     \r\n\r\n      <td>{{it.insert_date}}</td>\r\n      <td>{{it.status}}</td>\r\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\r\n        Print</a></td>\r\n\r\n      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\r\n\r\n    </tr>\r\n    \r\n  </tbody>\r\n</table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2186,9 +3199,14 @@ var PostponeRequestComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('هل انت متأكد')) {
             this.acadmicProc.deleteReq(id).then(function (res) {
-                _this.toastr.success('', res.messages.body);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
             });
-            this.acadmicProc.reqData.reqs.splice(index, 1);
         }
     };
     PostponeRequestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -2224,7 +3242,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\n<mat-dialog-content>\n    <div class=\"modal-dialog\" role=\"document\">\n      <div class=\"modal-content\">\n        <div class=\"modal-header\">\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب اعادة قيد   </h5>\n            \n        </div>\n        <div class=\"modal-body\">\n          <P class=\"text-center\">  </P>\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n            \n      \n          \n           \n         \n          <div class=\"form-row\">\n              <div class=\"form-group col-md-12\">\n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"> السبب</div>\n                  </div>\n                  <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"reEnroll.reason\" class=\"form-control\" >\n                </div>\n              </div>\n             \n            </div>\n            \n            <div class=\"image-upload\">\n                <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\n            </div> \n       \n           \n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n  \n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n          </div>\n        </form>\n        </div>\n    </div>\n        \n     </div>\n  </mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب اعادة قيد   </h5>\r\n            \r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <P class=\"text-center\">  </P>\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n            \r\n      \r\n          \r\n           \r\n         \r\n          <div class=\"form-row\">\r\n              <div class=\"form-group col-md-12\">\r\n                <div class=\"input-group\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <div class=\"input-group-text\"> السبب</div>\r\n                  </div>\r\n                  <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"reEnroll.reason\" class=\"form-control\" >\r\n                </div>\r\n              </div>\r\n             \r\n            </div>\r\n            \r\n            <div class=\"image-upload\">\r\n                <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n            </div> \r\n       \r\n           \r\n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n  \r\n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n          </div>\r\n        </form>\r\n        </div>\r\n    </div>\r\n        \r\n     </div>\r\n  </mat-dialog-content>"
 
 /***/ }),
 
@@ -2349,7 +3367,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}!\n    </div>\n  <div style=\"direction: ltr;text-align: center\">\n    \n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n    اضافة طلب\n  </button>\n  <br/>\n  <br/>\n  \n  </div>\n  <div>\n  <table style=\"text-align: center\" class=\"table\">\n    <thead>\n      <tr>\n        <th scope=\"col\">رقم الطلب</th>\n  \n        <th scope=\"col\">تاريخ الطلب</th>\n        <th scope=\"col\">حالة الطلب</th>\n        <th scope=\"col\"> طباعة الطلب</th>\n        <th scope=\"col\"> حذف الطلب </th>\n  \n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let it of reqData.requests;let i=index;\">\n        <td>{{it.request_number}}</td>\n  \n        <td>{{it.insert_date}}</td>\n        <td>{{it.status}}</td>\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n          Print</a></td>\n  \n        <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n  \n      </tr>\n      \n    </tbody>\n  </table>\n  </div>\n  "
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>\r\n  <div>\r\n  <table style=\"text-align: center\" class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">رقم الطلب</th>\r\n  \r\n        <th scope=\"col\">تاريخ الطلب</th>\r\n        <th scope=\"col\">حالة الطلب</th>\r\n        <th scope=\"col\"> طباعة الطلب</th>\r\n        <th scope=\"col\"> حذف الطلب </th>\r\n  \r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n        <td>{{it.request_number}}</td>\r\n  \r\n        <td>{{it.insert_date}}</td>\r\n        <td>{{it.status}}</td>\r\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\r\n          Print</a></td>\r\n  \r\n        <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\r\n  \r\n      </tr>\r\n      \r\n    </tbody>\r\n  </table>\r\n  </div>\r\n  "
 
 /***/ }),
 
@@ -2414,9 +3432,14 @@ var ReEenrollmentComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('هل انت متأكد')) {
             this.acadmicProc.deleteReq(id).then(function (res) {
-                _this.toastr.success('', res.messages.body);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
             });
-            this.acadmicProc.reqData.requests.splice(index, 1);
         }
     };
     ReEenrollmentComponent.prototype.call = function (hr) {
@@ -2431,6 +3454,329 @@ var ReEenrollmentComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_re_enroll_service__WEBPACK_IMPORTED_MODULE_4__["ReEnrollService"]])
     ], ReEenrollmentComponent);
     return ReEenrollmentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/register-wishes/register-wishes.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/academicprocs/register-wishes/register-wishes.component.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvcmVnaXN0ZXItd2lzaGVzL3JlZ2lzdGVyLXdpc2hlcy5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/register-wishes/register-wishes.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/academicprocs/register-wishes/register-wishes.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\">\n  <div>\n    <div *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n      {{msg.body}}! \n    </div>\n\n\n\n\n    <div class=\"widget\">\n      <div class=\"widget-header\">\n        <h3 class=\"widget-title\">بيانات الطالب / الطالبة</h3>\n      </div>\n\n\n      <section class=\"ser-state\">\n        <div class=\"container\">\n          <div class=\"row ser-block\">\n            <div class=\" col-md-6 col-sm-12\">\n              <div class=\"state\">\n                <h6>اسم الطالب / الطالبة </h6>\n                <h5>{{reqData.student_name}} </h5>\n              </div>\n              <div class=\"progress progress-sm\">\n                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n              </div>\n            </div>\n            <div class=\" col-md-6 col-sm-12\">\n              <div class=\"state\">\n                <h6>رقم الطالب / الطالبة </h6>\n                <h5>{{reqData.student_id}} </h5>\n              </div>\n              <div class=\"progress progress-sm\">\n                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n              </div>\n            </div>\n\n          </div>\n\n          <div class=\"row ser-block\">\n            <div class=\" col-md-6 col-sm-12\">\n              <div class=\"state\">\n                <h6>الكلية </h6>\n                <h5>{{reqData.colledge}} </h5>\n              </div>\n              <div class=\"progress progress-sm\">\n                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n              </div>\n            </div>\n            <div class=\" col-md-6 col-sm-12\">\n              <div class=\"state\">\n                <h6>التخصص </h6>\n                <h5>{{reqData.major}} </h5>\n              </div>\n              <div class=\"progress progress-sm\">\n                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n              </div>\n            </div>\n\n          </div>\n\n          <div class=\"row  ser-block\">\n            <div class=\" col-md-6 col-sm-12\">\n              <div class=\"state\">\n                <h6>الحالة الأكاديمية </h6>\n                <h5>{{reqData.academic_status}} </h5>\n              </div>\n              <div class=\"progress progress-sm\">\n                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n              </div>\n            </div>\n            <div class=\" col-md-6 col-sm-12\">\n              <div class=\"state\">\n                <h6>فرع الدراسة </h6>\n                <h5>{{reqData.branch}} </h5>\n              </div>\n              <div class=\"progress progress-sm\">\n                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </section>\n\n\n\n    </div>\n    <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n      <section class=\"ser-state\">\n        <div class=\"widget\">\n          <div class=\"widget-header\">\n\n            <h3 class=\"widget-title\"> اختر الرغبات</h3>\n          </div>\n\n          <div class=\"container\">\n            <div class=\"row ser-block\">\n              <div class=\" col-md-4 col-sm-12\">\n                <div class=\"state\">\n                  <h6>هل ترغب ب يومين (يبدأ من 5 مساء) </h6>\n                  <input type=\"checkbox\" class=\"checkbox\" style=\"height: 20px;width:20px;\" #TowDaya=\"ngModel\" [(ngModel)]=\"registerWishes.tow_days\"\n                    name=\"TowDaya\" ng-true-value=0 ng-false-value=1>\n                </div>\n                <div class=\"progress progress-sm\">\n                  <div class=\"progress-bar bg-info\" style=\"width: 25%;\"></div>\n                </div>\n              </div>\n              <div class=\" col-md-4 col-sm-12\">\n                <div class=\"state\">\n                  <h6>الأيام و الفترات المتاحة </h6>\n                  <select required class=\"form-control\" #Wishes=\"ngModel\" [(ngModel)]=\"registerWishes.wish\"\n                    name=\"Wishes\" [class.is-invalid]=\"registerWishes.wish == ''\">\n                    <option value=''>اختر الفترة المتاحة</option>\n                    <option *ngFor=\"let wish of reqData.wishes_list\" [value]=\"wish.id\">{{wish.value}}</option>\n                  </select>\n\n                </div>\n                <div class=\"progress progress-sm\">\n                  <div class=\"progress-bar bg-info\" style=\"width: 25%;\"></div>\n                </div>\n              </div>\n\n              <div class=\" col-md-4 col-sm-12\">\n                <div class=\"state\">\n                  <h6> <br /> </h6>\n                  <button [disabled]=\"reqData.can_add_new_request\" type=\"submit\" class=\"btn btn-dark\"><i\n                      class=\"fa fa-database\"></i> ارسال الطلب</button>\n\n                </div>\n                <!--  <div class=\"progress progress-sm\">\n                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n                    </div>-->\n              </div>\n\n            </div>\n          </div>\n        </div>\n      </section>\n    </form>\n\n    <div class=\"widget\">\n      <div class=\"widget-header\">\n\n\n\n\n        <h3 class=\"widget-title\"> الرغبات التي قمت بإدخالها</h3>\n      </div>\n      <div class=\"table-responsive\">\n        <table class=\"table table-striped table-bordered\">\n          <thead style=\"background: #ebecf0\">\n\n            <tr>\n              <th scope=\"col\">ترتيب الرغبة</th>\n\n              <th scope=\"col\">اليوم و الفترة</th>\n              <th scope=\"col\"> تاريخ الطلب</th>\n              <th scope=\"col\"> إلغاء الطلب</th>\n\n\n\n            </tr>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let it of reqData.requests;let i=index;\">\n              <td>{{it.sort}}</td>\n\n\n              <td>{{it.duration}}</td>\n              <td>{{it.insert_date}}</td>\n\n              <td><button class=\"btn btn-sm btn-danger\" style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i\n                    class=\"fa fa-trash\"></i> </button></td>\n              <!--[disabled]='!it.deletable'-->\n            </tr>\n\n          </tbody>\n        </table>\n      </div>\n    </div>\n\n\n\n\n\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/register-wishes/register-wishes.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/academicprocs/register-wishes/register-wishes.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: RegisterWishesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterWishesComponent", function() { return RegisterWishesComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_register_wishes_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/register-wishes.service */ "./src/app/academicprocs/services/register-wishes.service.ts");
+
+
+
+
+
+var RegisterWishesComponent = /** @class */ (function () {
+    function RegisterWishesComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    RegisterWishesComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.registerWishes = { tow_days: 0, wish: '' };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    RegisterWishesComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                console.log(id);
+                var messages = res.messages;
+                _this.status = res.status;
+                messages.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1) {
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+                }
+            });
+        }
+    };
+    RegisterWishesComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.registerWishes);
+    };
+    RegisterWishesComponent.prototype.addRequest = function (data) {
+        //console.log(data);
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            var msgss = res.messages;
+            msgss.forEach(function (element) {
+                _this.toastr.success('', element.body);
+                _this.registerWishes = { tow_days: 0, wish: '' };
+            });
+        });
+        //this.cmp = {camp:''};
+    };
+    RegisterWishesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-register-wishes',
+            template: __webpack_require__(/*! ./register-wishes.component.html */ "./src/app/academicprocs/register-wishes/register-wishes.component.html"),
+            styles: [__webpack_require__(/*! ./register-wishes.component.css */ "./src/app/academicprocs/register-wishes/register-wishes.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_register_wishes_service__WEBPACK_IMPORTED_MODULE_4__["RegisterWishesService"]])
+    ], RegisterWishesComponent);
+    return RegisterWishesComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.css":
+/*!*************************************************************************************************************************!*\
+  !*** ./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.css ***!
+  \*************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvcmVnaXN0ZXJhdGlvbi1oZWxwZXIvZGlhZy9hZGQtcmVnaXN0ZXJhdGlvbi1oZWxwZXIvYWRkLXJlZ2lzdGVyYXRpb24taGVscGVyLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.html":
+/*!**************************************************************************************************************************!*\
+  !*** ./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.html ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-dialog-content style=\"height: 2500px\">\n\n\n    <div class=\"widget\">\n        <!--<div class=\"widget-header\">\n          <h3 class=\"widget-title\"> تسجيل طلب</h3>\n        </div>\n      -->\n        \n  <mat-spinner  *ngIf=\"isLoading\" style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\"></mat-spinner>\n\n     \n\n      <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n\n        <section class=\"ser-state\">\n          <div class=\"container\">\n            <div class=\"row ser-block\">\n              <div class=\" col-md-6 col-sm-12\">\n                <div class=\"state\">\n                  <h6>الكلية </h6>\n                  <select required class=\"form-control\" #CollegeID=\"ngModel\" [(ngModel)]=\"registerationHelper.colledge\"\n                    name=\"College\" [class.is-invalid]=\"registerationHelper.colledge == ''\" #t\n                    (change)=\"collegeCourses(t.value)\">\n\n                    <option *ngFor=\"let coll of colleges\" [value]=\"coll.id\">{{coll.value}}</option>\n                  </select>\n\n                </div>\n                <div class=\"progress progress-sm\">\n                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n                </div>\n              </div>\n              <div class=\" col-md-6 col-sm-12\">\n                <div class=\"state\">\n                  <h6>المقررات </h6>\n                  <select required class=\"form-control\" #CourseID=\"ngModel\" [(ngModel)]=\"registerationHelper.course\"\n                    name=\"CourseID\" [class.is-invalid]=\"registerationHelper.course == ''\" #c\n                    (change)=\"courseDepartments(c.value)\">\n                    <option value=''>اختر المقرر</option>\n                    <option *ngFor=\"let course of courses\" [value]=\"course.CRS_CODE\">{{course.CRSE_TITLE}}</option>\n                  </select>\n                </div>\n                <div class=\"progress progress-sm\">\n                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n                </div>\n              </div>\n\n            </div>\n\n            <div class=\"row ser-block\">\n              <div class=\" col-md-6 col-sm-12\">\n                <div class=\"state\">\n                  <h6>الشعب </h6>\n                  <select required class=\"form-control\" #DeptID=\"ngModel\" [(ngModel)]=\"registerationHelper.department\"\n                    name=\"DeptID\" [class.is-invalid]=\"registerationHelper.department == ''\">\n                    <option value=''>اختر الشعبة</option>\n                    <option *ngFor=\"let dept of departments\" [value]=\"dept.CRN\">{{dept.BLDG_DESC}}</option>\n                  </select>\n                </div>\n                <div class=\"progress progress-sm\">\n                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n                </div>\n              </div>\n              <div class=\" col-md-6 col-sm-12\">\n                <div class=\"state\">\n                  <h6>رسالة الخطأ </h6>\n                  <select required class=\"form-control\" #ErrorMsgID=\"ngModel\" [(ngModel)]=\"registerationHelper.message\"\n                    name=\"ErrorMsgID\" [class.is-invalid]=\"registerationHelper.message == ''\">\n                    <option *ngFor=\"let msg of errorMessages\" [value]=\"msg.id\">{{msg.value}}</option>\n                  </select>\n                </div>\n                <div class=\"progress progress-sm\">\n                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n                </div>\n              </div>\n\n            </div>\n\n            <div class=\"row  ser-block\">\n              <div class=\" col-md-12 col-sm-12\">\n                <div class=\"state\">\n                  <h6>ملاحظات </h6>\n                  <textarea [class.is-invalid]=\"form.invalid\" type=\"text\" class=\"form-control\" [(ngModel)]=\"registerationHelper.comment\"\n                    #NotesID=\"ngModel\" name=\"NotesID\" required></textarea>\n\n                </div>\n                <div class=\"progress progress-sm\">\n                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\n                </div>\n              </div>\n\n            </div>\n          </div>\n        </section>\n\n        <div class=\"modal-body\">\n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n            <button type=\"button\" (click)=\"closeDiag()\" class=\"btn btn-outline-dark ml-1\"><i class=\"fa fa-close\"></i>\n              الغاء</button>\n\n            <button [disabled]=\"form.invalid\" type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n          </div>\n        </div>\n      </form>\n    </div>\n \n</mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.ts":
+/*!************************************************************************************************************************!*\
+  !*** ./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.ts ***!
+  \************************************************************************************************************************/
+/*! exports provided: AddRegisterationHelperComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddRegisterationHelperComponent", function() { return AddRegisterationHelperComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_academicprocs_services_registration_helper_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/academicprocs/services/registration-helper.service */ "./src/app/academicprocs/services/registration-helper.service.ts");
+
+
+
+
+
+var AddRegisterationHelperComponent = /** @class */ (function () {
+    function AddRegisterationHelperComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.isLoading = false;
+    }
+    AddRegisterationHelperComponent.prototype.ngOnInit = function () {
+        this.registerationHelper = { colledge: '', course: '', department: '', comment: '', message: '' };
+        this.reqData = this.acadmicProc.reqData;
+        this.colleges = this.acadmicProc.reqData.colledges;
+        this.errorMessages = this.acadmicProc.reqData.error_messages;
+    };
+    AddRegisterationHelperComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.registerationHelper);
+        this.dialogRef.close();
+    };
+    AddRegisterationHelperComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddRegisterationHelperComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        //console.log(data);
+        this.isLoading = true;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+            _this.isLoading = false;
+        });
+        //this.cmp = {camp:''};
+    };
+    AddRegisterationHelperComponent.prototype.collegeCourses = function (collegeId) {
+        var _this = this;
+        this.isLoading = true;
+        this.acadmicProc.getِgetCourse(collegeId).then(function (res) {
+            _this.acadmicProc.courses = res.data;
+            _this.courses = _this.acadmicProc.courses;
+            _this.isLoading = false;
+        });
+    };
+    AddRegisterationHelperComponent.prototype.courseDepartments = function (courseId) {
+        var _this = this;
+        this.isLoading = true;
+        this.acadmicProc.getِgetDepartments(courseId).then(function (res) {
+            _this.acadmicProc.departments = res.data;
+            _this.departments = _this.acadmicProc.departments;
+            _this.isLoading = false;
+        });
+    };
+    AddRegisterationHelperComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-registeration-helper',
+            template: __webpack_require__(/*! ./add-registeration-helper.component.html */ "./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.html"),
+            styles: [__webpack_require__(/*! ./add-registeration-helper.component.css */ "./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_academicprocs_services_registration_helper_service__WEBPACK_IMPORTED_MODULE_4__["RegistrationHelperService"]])
+    ], AddRegisterationHelperComponent);
+    return AddRegisterationHelperComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/registeration-helper/registeration-helper.component.css":
+/*!***************************************************************************************!*\
+  !*** ./src/app/academicprocs/registeration-helper/registeration-helper.component.css ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvcmVnaXN0ZXJhdGlvbi1oZWxwZXIvcmVnaXN0ZXJhdGlvbi1oZWxwZXIuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/registeration-helper/registeration-helper.component.html":
+/*!****************************************************************************************!*\
+  !*** ./src/app/academicprocs/registeration-helper/registeration-helper.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\">\n\n  <div *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n\n\n\n\n  <div class=\"widget\">\n    <div class=\"widget-header\">\n      <h3 class=\"widget-title\">الجدول الدراسي</h3>\n    </div>\n    <div class=\"table-responsive\">\n      <table class=\"table table-striped table-bordered\">\n        <thead style=\"background: #ebecf0\">\n\n          <tr>\n            <th scope=\"col\">CRN</th>\n\n            <th scope=\"col\">المادة</th>\n            <th scope=\"col\"> اليوم</th>\n            <th scope=\"col\"> الوقت</th>\n\n\n\n          </tr>\n        </thead>\n        <tbody>\n          <tr *ngFor=\"let it of reqData.schedule;let i=index;\">\n            <td>{{it.CRN}}</td>\n\n\n            <td>{{it.CRSE_TITLE}}</td>\n            <td>{{it.DAYES}}</td>\n            <td>{{it.LECT_TIME}}</td>\n\n\n\n\n          </tr>\n\n        </tbody>\n      </table>\n    </div>\n  </div>\n\n\n\n\n\n\n  <div class=\"widget\">\n    <div class=\"widget-header\">\n\n      <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\n        اضافة طلب\n      </button>\n      <h3 class=\"widget-title\"> الطلبات السابقة</h3>\n    </div>\n    <div class=\"table-responsive\">\n      <table class=\"table table-striped table-bordered\">\n        <thead style=\"background: #ebecf0\">\n\n          <tr>\n            <th scope=\"col\">المقرر</th>\n\n            <th scope=\"col\">رسالة الخطأ</th>\n            <th scope=\"col\"> تاريخ الطلب</th>\n            <th scope=\"col\"> الحالة</th>\n            <th scope=\"col\"> ملاحظات</th>\n            <th scope=\"col\"> إلغاء الطلب</th>\n\n\n\n          </tr>\n        </thead>\n        <tbody>\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\n            <td>{{it.course}}</td>\n\n\n            <td>{{it.message}}</td>\n            <td>{{it.insert_date}}</td>\n            <td>{{it.status}}</td>\n            <td>{{it.admin_note}}</td>\n\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\n            <!--[disabled]='!it.deletable'-->\n          </tr>\n\n        </tbody>\n      </table>\n    </div>\n  </div>\n\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/registeration-helper/registeration-helper.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/academicprocs/registeration-helper/registeration-helper.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: RegisterationHelperComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterationHelperComponent", function() { return RegisterationHelperComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_registration_helper_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/registration-helper.service */ "./src/app/academicprocs/services/registration-helper.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _diag_add_registeration_helper_add_registeration_helper_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-registeration-helper/add-registeration-helper.component */ "./src/app/academicprocs/registeration-helper/diag/add-registeration-helper/add-registeration-helper.component.ts");
+
+
+
+
+
+
+var RegisterationHelperComponent = /** @class */ (function () {
+    /*colleges: any;
+    college: { theCollege };
+  
+    errorMessages: any;
+    errorMessage: { theMessages };*/
+    function RegisterationHelperComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    RegisterationHelperComponent.prototype.ngOnInit = function () {
+        // this.cancelCousre = {courses: null, agreement: 1};
+        var _this = this;
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+            //this.colleges = this.acadmicProc.reqData.colledges;
+            //  this.errorMessages = this.acadmicProc.reqData.error_messages;
+            // console.log(this.reqData.reqs);
+        });
+    };
+    RegisterationHelperComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                console.log(id);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1) {
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+                }
+            });
+        }
+    };
+    RegisterationHelperComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '60%';
+        dialogConfig.height = '80%';
+        dialogConfig.direction = "rtl";
+        this.dialog.open(_diag_add_registeration_helper_add_registeration_helper_component__WEBPACK_IMPORTED_MODULE_5__["AddRegisterationHelperComponent"], dialogConfig);
+    };
+    RegisterationHelperComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-registeration-helper',
+            template: __webpack_require__(/*! ./registeration-helper.component.html */ "./src/app/academicprocs/registeration-helper/registeration-helper.component.html"),
+            styles: [__webpack_require__(/*! ./registeration-helper.component.css */ "./src/app/academicprocs/registeration-helper/registeration-helper.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_registration_helper_service__WEBPACK_IMPORTED_MODULE_2__["RegistrationHelperService"]])
+    ], RegisterationHelperComponent);
+    return RegisterationHelperComponent;
 }());
 
 
@@ -2539,6 +3885,51 @@ var ChangeMajorService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/academicprocs/services/change-request.service.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/academicprocs/services/change-request.service.ts ***!
+  \******************************************************************/
+/*! exports provided: ChangeRequestService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangeRequestService", function() { return ChangeRequestService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var ChangeRequestService = /** @class */ (function () {
+    function ChangeRequestService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    ChangeRequestService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('change_camp_service?std_id=S120000101').toPromise();
+    };
+    ChangeRequestService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('change_camp_service/insert?std_id=S120000101', data).toPromise();
+    };
+    ChangeRequestService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('change_camp_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    ChangeRequestService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], ChangeRequestService);
+    return ChangeRequestService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/academicprocs/services/course-equalizer.service.ts":
 /*!********************************************************************!*\
   !*** ./src/app/academicprocs/services/course-equalizer.service.ts ***!
@@ -2641,6 +4032,150 @@ var EnglishEqualizerService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/academicprocs/services/exam-excuse.service.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/academicprocs/services/exam-excuse.service.ts ***!
+  \***************************************************************/
+/*! exports provided: ExamExcuseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ExamExcuseService", function() { return ExamExcuseService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var ExamExcuseService = /** @class */ (function () {
+    function ExamExcuseService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    ExamExcuseService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('exam_excuse_service?std_id=S190000060').toPromise();
+    };
+    ExamExcuseService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('exam_excuse_service/insert?std_id=S190000060', data).toPromise();
+    };
+    ExamExcuseService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('exam_excuse_service/remove/' + id + '?std_id=S190000060').toPromise();
+    };
+    ExamExcuseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], ExamExcuseService);
+    return ExamExcuseService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/lecture-execuse-service.service.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/academicprocs/services/lecture-execuse-service.service.ts ***!
+  \***************************************************************************/
+/*! exports provided: LectureExecuseServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LectureExecuseServiceService", function() { return LectureExecuseServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var LectureExecuseServiceService = /** @class */ (function () {
+    function LectureExecuseServiceService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    LectureExecuseServiceService.prototype.getRequests = function () {
+        return this.httRequest.GetRequest('lecture_excuse_service?std_id=S180105049').toPromise();
+    };
+    LectureExecuseServiceService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('lecture_excuse_service/insert?std_id=S120000101', data).toPromise();
+    };
+    LectureExecuseServiceService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('lecture_excuse_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    LectureExecuseServiceService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req + '?std_id=S160239561';
+    };
+    LectureExecuseServiceService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/lecture_excuse_service/download?Lang=en';
+    };
+    LectureExecuseServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], LectureExecuseServiceService);
+    return LectureExecuseServiceService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/object-exam.service.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/academicprocs/services/object-exam.service.ts ***!
+  \***************************************************************/
+/*! exports provided: ObjectExamService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ObjectExamService", function() { return ObjectExamService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var ObjectExamService = /** @class */ (function () {
+    function ObjectExamService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    ObjectExamService.prototype.getRequests = function () {
+        return this.httRequest.GetRequest('exam_objections_service').toPromise();
+    };
+    ObjectExamService.prototype.getgetRequests = function () {
+        return this.httRequest.GetRequest('exam_objections_service?std_id=S160239561').toPromise();
+    };
+    ObjectExamService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('exam_objections_service/insert?', data).toPromise();
+    };
+    ObjectExamService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('exam_objections_service/remove/' + id + '?std_id=S160239561').toPromise();
+    };
+    ObjectExamService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], ObjectExamService);
+    return ObjectExamService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/academicprocs/services/re-enroll.service.ts":
 /*!*************************************************************!*\
   !*** ./src/app/academicprocs/services/re-enroll.service.ts ***!
@@ -2686,6 +4221,112 @@ var ReEnrollService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
     ], ReEnrollService);
     return ReEnrollService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/register-wishes.service.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/academicprocs/services/register-wishes.service.ts ***!
+  \*******************************************************************/
+/*! exports provided: RegisterWishesService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegisterWishesService", function() { return RegisterWishesService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+
+
+
+
+var RegisterWishesService = /** @class */ (function () {
+    function RegisterWishesService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    RegisterWishesService.prototype.getِgetRequests = function () {
+        //?std_id=S180105049
+        return this.httRequest.GetRequest('register_wishes_service?std_id=S190000060').toPromise();
+    };
+    RegisterWishesService.prototype.deleteReq = function (id) {
+        //+ '?std_id=S120000101'
+        return this.httRequest.GetRequest('register_wishes_service/cancel/' + id).toPromise();
+    };
+    RegisterWishesService.prototype.AddRequest = function (data) {
+        console.log(data);
+        return this.httRequest.postRequest('register_wishes_service/insert', data).toPromise();
+    };
+    RegisterWishesService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_3__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_2__["HttpRequestService"]])
+    ], RegisterWishesService);
+    return RegisterWishesService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/services/registration-helper.service.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/academicprocs/services/registration-helper.service.ts ***!
+  \***********************************************************************/
+/*! exports provided: RegistrationHelperService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistrationHelperService", function() { return RegistrationHelperService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var RegistrationHelperService = /** @class */ (function () {
+    function RegistrationHelperService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    RegistrationHelperService.prototype.getِgetRequests = function () {
+        //?std_id=S180105049
+        //?std_id=S160239561
+        //?std_id=S190000060
+        //?std_id=S120000101
+        return this.httRequest.GetRequest('registeration_helper_service').toPromise();
+    };
+    RegistrationHelperService.prototype.getِgetCourse = function (collegeId) {
+        //?std_id=S190000060
+        return this.httRequest.GetRequest('registeration_helper_service/get_courses_for_colledges/' + collegeId).toPromise();
+    };
+    RegistrationHelperService.prototype.getِgetDepartments = function (courseId) {
+        //?std_id=S190000060
+        return this.httRequest.GetRequest('registeration_helper_service/get_departments/' + courseId).toPromise();
+    };
+    RegistrationHelperService.prototype.deleteReq = function (id) {
+        //+ '?std_id=S120000101'
+        return this.httRequest.GetRequest('registeration_helper_service/cancel/' + id).toPromise();
+    };
+    RegistrationHelperService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('registeration_helper_service/insert', data).toPromise();
+    };
+    RegistrationHelperService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], RegistrationHelperService);
+    return RegistrationHelperService;
 }());
 
 
@@ -2845,6 +4486,51 @@ var TermPostponeService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/academicprocs/services/uvniv-card.service.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/academicprocs/services/uvniv-card.service.ts ***!
+  \**************************************************************/
+/*! exports provided: UvnivCardService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UvnivCardService", function() { return UvnivCardService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var UvnivCardService = /** @class */ (function () {
+    function UvnivCardService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+    }
+    UvnivCardService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('card_university_service?std_id=S120000101').toPromise();
+    };
+    UvnivCardService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('card_university_service/insert?std_id=S120000101', data).toPromise();
+    };
+    UvnivCardService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('card_university_service/remove/' + id + '?std_id=S120000101').toPromise();
+    };
+    UvnivCardService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], UvnivCardService);
+    return UvnivCardService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/academicprocs/services/withdraw-from-univ.service.ts":
 /*!**********************************************************************!*\
   !*** ./src/app/academicprocs/services/withdraw-from-univ.service.ts ***!
@@ -2914,7 +4600,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\n<mat-dialog-content>\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> الاعتذار عن الفصل الصيفي  </h5>\n        \n      </div>\n      <div class=\"modal-body\">\n        <P class=\"text-center\">  </P>\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n          \n    \n        \n         \n       \n        <div class=\"form-row\">\n            <div class=\"form-group col-md-12\">\n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"> السبب</div>\n                </div>\n                <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\n              </div>\n            </div>\n           \n          </div>\n          \n            \n     \n         \n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n        </div>\n      </form>\n      </div>\n  </div>\n      \n   </div>\n</mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> الاعتذار عن الفصل الصيفي  </h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">  </P>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n          \r\n    \r\n        \r\n         \r\n       \r\n        <div class=\"form-row\">\r\n            <div class=\"form-group col-md-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"> السبب</div>\r\n                </div>\r\n                <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\r\n              </div>\r\n            </div>\r\n           \r\n          </div>\r\n          \r\n            \r\n     \r\n         \r\n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n        </div>\r\n      </form>\r\n      </div>\r\n  </div>\r\n      \r\n   </div>\r\n</mat-dialog-content>"
 
 /***/ }),
 
@@ -3002,7 +4688,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n  {{msg.body}}!\n</div>\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n<div style=\"direction: ltr;text-align: center\">\n  \n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n  اضافة طلب\n</button>\n<br/>\n<br/>\n\n</div>\n<div>\n<table style=\"text-align: center\" class=\"table\">\n  <thead>\n    <tr>\n      <th scope=\"col\">رقم الطلب</th>\n\n      <th scope=\"col\">تاريخ الطلب</th>\n      <th scope=\"col\">حالة الطلب</th>\n      <th scope=\"col\"> حذف الطلب </th>\n\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n      <td>{{it.request_number}}</td>\n     \n\n      <td>{{it.insert_date}}</td>\n      <td>{{it.status}}</td>\n      \n\n      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n\n    </tr>\n    \n  </tbody>\n</table>\n</div>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n  {{msg.body}}!\r\n</div>\r\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n<div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div>\r\n<div>\r\n<table style=\"text-align: center\" class=\"table\">\r\n  <thead>\r\n    <tr>\r\n      <th scope=\"col\">رقم الطلب</th>\r\n\r\n      <th scope=\"col\">تاريخ الطلب</th>\r\n      <th scope=\"col\">حالة الطلب</th>\r\n      <th scope=\"col\"> حذف الطلب </th>\r\n\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n      <td>{{it.request_number}}</td>\r\n     \r\n\r\n      <td>{{it.insert_date}}</td>\r\n      <td>{{it.status}}</td>\r\n      \r\n\r\n      <td><button [disabled]='!it.deletable'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"></i> </button></td>\r\n\r\n    </tr>\r\n    \r\n  </tbody>\r\n</table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3042,6 +4728,7 @@ var SummerWithdrawComponent = /** @class */ (function () {
             _this.acadmicProc.msgs = res.messages;
             _this.reqData = _this.acadmicProc.reqData;
             _this.msgs = _this.acadmicProc.msgs;
+            //console.log(this.reqData.reqs[0].time_to_delete_per_hour);
         });
     };
     SummerWithdrawComponent.prototype.openDialoge = function () {
@@ -3067,9 +4754,14 @@ var SummerWithdrawComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('هل انت متأكد')) {
             this.acadmicProc.deleteReq(id).then(function (res) {
-                _this.toastr.success('', res.messages.body);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
             });
-            this.acadmicProc.reqData.reqs.splice(index, 1);
         }
     };
     SummerWithdrawComponent.prototype.deleteReq = function (id) {
@@ -3084,6 +4776,261 @@ var SummerWithdrawComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_summer_withdraw_service__WEBPACK_IMPORTED_MODULE_4__["SummerWithdrawService"]])
     ], SummerWithdrawComponent);
     return SummerWithdrawComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.css":
+/*!****************************************************************************************!*\
+  !*** ./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.css ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvdW5pdi1jYXJkL2RpYWcvYWRkLXVuaXYtY2FyZC9hZGQtdW5pdi1jYXJkLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.html":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.html ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\r\n\r\n<mat-dialog-content>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5  class=\"modal-title  \" id=\"exampleModalLabel\"> طلب بطاقة جامعية   </h5>\r\n          \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">  </P>\r\n        <div>\r\n          <h6>شروط تقديم الطلب </h6>\r\n            <ul class=\"list-group\" style=\"font-size: 12px;\">\r\n                <li class=\"list-group-item list-group-item-info\">:رفع صورة شخصية للمتقدم على ان تكون</li>\r\n                <li class=\"list-group-item list-group-item-info\">مقاس الصورة 4*6</li>\r\n                <li class=\"list-group-item list-group-item-info\">ملونة وبخلفية بيضاء</li>\r\n                <li class=\"list-group-item list-group-item-info\">للطالبات : يجب ان تكون الطالبة محجبة</li>\r\n                <li class=\"list-group-item list-group-item-info\">يجب ان تكون الصورة ذات جودة عالية</li>\r\n                <li class=\"list-group-item list-group-item-info\">لن يتم استخراج بطاقة جامعية من غير صورة شخصية</li>\r\n              </ul>\r\n        </div>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n            <div class=\"main-content\" style=\"padding-top:0;\">\r\n            <section  class=\"ser-state\">\r\n                <div class=\"container\">\r\n                     <div class=\"row ser-block\">\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                 <h6>اسم الطالب / الطالبة </h6>\r\n                                 <input name=\"name\" #name=\"ngModel\" [(ngModel)]=\"card.name\" class=\"form-control\" >\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                         </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                <h6>رقم بطاقة الهوية الوطنية او ما يقوم مقامها</h6>\r\n                                <input name=\"ssn\" #ssn=\"ngModel\" [(ngModel)]=\"card.ssn\" class=\"form-control\" >\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                        </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>رقم الجوال </h6>\r\n                              <input name=\"phone\" #phone=\"ngModel\" [(ngModel)]=\"card.phone\" class=\"form-control\" >\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>المرحلة الدراسية</h6>\r\n                                      <select name=\"level\" #level=\"ngModel\" [(ngModel)]=\"card.level\" class=\"form-control\" \r\n                          [class.is-invalid]=\"card.level==''\">\r\n                            <option value=\"\">اختر المرحلة الدراسية</option> \r\n                            <option *ngFor=\"let item of reqData.levels\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                          </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6> فترة الدراسة </h6>\r\n                              <select name=\"time\" #time=\"ngModel\" [(ngModel)]=\"card.time\" class=\"form-control\" \r\n                              [class.is-invalid]=\"card.time==''\">\r\n                                <option value=\"\">اختر فترة الدراسة</option>\r\n                                <option *ngFor=\"let item of reqData.times\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                              </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>اليوم </h6>\r\n                              <select name=\"day\" #time=\"ngModel\" [(ngModel)]=\"card.day\" class=\"form-control\" \r\n                              [class.is-invalid]=\"card.day==''\">\r\n                                <option value=\"\">اختر اليوم </option>\r\n                                <option *ngFor=\"let item of reqData.days\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                              </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>  اضف صورة شخصية </h6>\r\n                              <div class=\"custom-file\">\r\n                                  <input name=\"photo\"  type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\"  class=\"custom-file-input\" id=\"customFileLangHTML\"  />\r\n                                  <label class=\"custom-file-label\" for=\"customFileLangHTML\" >\r\n                                    اضف صورة</label>\r\n                                </div>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                          <div class=\"state\">\r\n                            <h6>  اضف صورة الهوية </h6>\r\n                            <div class=\"custom-file\">\r\n                                <input name=\"ssn_file\"  type=\"file\" accept=\"*/*\" (change)=\"handleInputChangeFile($event)\" class=\"custom-file-input\" />\r\n                                 <label  for=\"customFileLang\"  class=\"custom-file-label \">\r\n                                 </label> \r\n                              </div>\r\n                            </div>\r\n                             \r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                    \r\n                     </div>\r\n                  </div>\r\n                </div>\r\n             </section>\r\n             <div style=\"margin-top: 10px;\">\r\n                <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                  <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                 <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                </div>\r\n           </div>\r\n            </div>\r\n\r\n       \r\n      </form>\r\n\r\n    \r\n\r\n\r\n      </div>\r\n  </div>\r\n      \r\n   </div>\r\n</mat-dialog-content>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.ts":
+/*!***************************************************************************************!*\
+  !*** ./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.ts ***!
+  \***************************************************************************************/
+/*! exports provided: AddUnivCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddUnivCardComponent", function() { return AddUnivCardComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_uvniv_card_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/uvniv-card.service */ "./src/app/academicprocs/services/uvniv-card.service.ts");
+
+
+
+
+
+var AddUnivCardComponent = /** @class */ (function () {
+    function AddUnivCardComponent(data, dialogRef, toastr, univCard) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.univCard = univCard;
+    }
+    AddUnivCardComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
+        this.univCard.getِgetRequests().then(function (res) {
+            _this.univCard.reqData = res.data;
+            _this.univCard.msgs = res.messages;
+            _this.reqData = _this.univCard.reqData;
+            _this.msgs = _this.univCard.msgs;
+        });
+    };
+    AddUnivCardComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.univCard.AddRequest(data).then(function (res) {
+            _this.univCard.msgs = res.messages;
+            _this.msgs = _this.univCard.msgs;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddUnivCardComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.card);
+        console.log(this.card);
+        this.dialogRef.close();
+    };
+    AddUnivCardComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddUnivCardComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.card.photo = reader.result;
+        //console.log(this.card.photo);
+    };
+    AddUnivCardComponent.prototype.handleInputChangeFile = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoadedFile.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddUnivCardComponent.prototype._handleReaderLoadedFile = function (e) {
+        var reader = e.target;
+        this.card.ssn_file = reader.result;
+        //console.log(this.card.photo);
+    };
+    //   print(req) {
+    // return    this.univCard.Download(req);
+    //   }
+    AddUnivCardComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.univCard.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.univCard.reqData.reqs.splice(index, 1);
+        }
+    };
+    AddUnivCardComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    AddUnivCardComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddUnivCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-univ-card',
+            template: __webpack_require__(/*! ./add-univ-card.component.html */ "./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.html"),
+            styles: [__webpack_require__(/*! ./add-univ-card.component.css */ "./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_uvniv_card_service__WEBPACK_IMPORTED_MODULE_4__["UvnivCardService"]])
+    ], AddUnivCardComponent);
+    return AddUnivCardComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/univ-card/univ-card.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/academicprocs/univ-card/univ-card.component.css ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FjYWRlbWljcHJvY3MvdW5pdi1jYXJkL3VuaXYtY2FyZC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/univ-card/univ-card.component.html":
+/*!******************************************************************!*\
+  !*** ./src/app/academicprocs/univ-card/univ-card.component.html ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\" >\r\n\r\n  <div  *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n    <div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n        {{msg.body}}!\r\n      </div>\r\n    <div style=\"direction: ltr;text-align: center\">\r\n      \r\n      <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n      اضافة طلب\r\n    </button>\r\n    <br/>\r\n    <br/>\r\n    \r\n    </div>\r\n    <div>\r\n      <div class=\"table-responsive\">\r\n    <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n  \r\n        <tr>\r\n          <th scope=\"col\">رقم الطلب</th>\r\n    \r\n          <th scope=\"col\">تاريخ الطلب</th>\r\n          <th scope=\"col\"> حالة الطلب</th>\r\n        \r\n  \r\n          <th scope=\"col\"> حذف الطلب </th>\r\n    \r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n          <td>{{it.id}}</td>\r\n          <td>{{it.INSRT_DATE}}</td>\r\n          <td>{{it.status}}</td>\r\n         \r\n         \r\n          \r\n    \r\n          <td><button [disabled]='!it.deletable'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.id,i)\"><i  class=\"fa fa-trash\"></i> </button></td>\r\n    \r\n        </tr>\r\n        \r\n      </tbody>\r\n    </table></div>\r\n    </div>\r\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/academicprocs/univ-card/univ-card.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/academicprocs/univ-card/univ-card.component.ts ***!
+  \****************************************************************/
+/*! exports provided: UnivCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnivCardComponent", function() { return UnivCardComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_uvniv_card_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/uvniv-card.service */ "./src/app/academicprocs/services/uvniv-card.service.ts");
+/* harmony import */ var _diag_add_univ_card_add_univ_card_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-univ-card/add-univ-card.component */ "./src/app/academicprocs/univ-card/diag/add-univ-card/add-univ-card.component.ts");
+
+
+
+
+
+
+var UnivCardComponent = /** @class */ (function () {
+    function UnivCardComponent(dialog, toastr, univCard) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.univCard = univCard;
+    }
+    UnivCardComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
+        this.univCard.getِgetRequests().then(function (res) {
+            _this.univCard.reqData = res.data;
+            _this.univCard.msgs = res.messages;
+            _this.reqData = _this.univCard.reqData;
+            _this.msgs = _this.univCard.msgs;
+        });
+    };
+    UnivCardComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_univ_card_add_univ_card_component__WEBPACK_IMPORTED_MODULE_5__["AddUnivCardComponent"], dialogConfig);
+    };
+    UnivCardComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.univCard.AddRequest(data).then(function (res) {
+            _this.univCard.msgs = res.messages;
+            alert(_this.univCard.msgs[0]);
+        });
+    };
+    UnivCardComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    //   print(req) {
+    // return    this.univCard.Download(req);
+    //   }
+    UnivCardComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.univCard.deleteReq(id).then(function (res) {
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.univCard.reqData.requests.splice(index, 1);
+            });
+        }
+    };
+    UnivCardComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    UnivCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-univ-card',
+            template: __webpack_require__(/*! ./univ-card.component.html */ "./src/app/academicprocs/univ-card/univ-card.component.html"),
+            styles: [__webpack_require__(/*! ./univ-card.component.css */ "./src/app/academicprocs/univ-card/univ-card.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_uvniv_card_service__WEBPACK_IMPORTED_MODULE_4__["UvnivCardService"]])
+    ], UnivCardComponent);
+    return UnivCardComponent;
 }());
 
 
@@ -3108,7 +5055,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\n<mat-dialog-content>\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب انسحاب من الجامعه</h5>\n        \n      </div>\n      <div class=\"modal-body\">\n        <P class=\"text-center\">بيانات بيانات بيانات</P>\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\n          \n        <div class=\"form-group\">\n           \n               <select name=\"branch\" #BranchID=\"ngModel\" [(ngModel)]=\"withdraw.branch\" class=\"form-control\" \n          [class.is-invalid]=\"!isValid && withdraw.branch==0\">\n            <option value=\"\">اختر اقرب فرع</option>\n            <option *ngFor=\"let item of reqData.branches\" value=\"{{item.id}}\">{{item.name}}</option>\n          </select>\n        </div>\n        <div class=\"form-row\">\n          <div class=\"form-group col-md-12\">\n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\">رقم الهاتف</div>\n              </div>\n              <input name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"withdraw.mobile\" class=\"form-control\" >\n            </div>\n          </div>\n         \n        </div>\n        <div class=\"form-row\">\n            <div class=\"form-group col-md-12\">\n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\">البريد الالكتروني</div>\n                </div>\n                <input name=\"email\" #email=\"ngModel\" [(ngModel)]=\"withdraw.email\" class=\"form-control\" >\n              </div>\n            </div>\n           \n          </div>\n          <div *ngIf=\"!reqData.display_bank_account\">\n            <div class=\"form-row\">\n              <div class=\"form-group col-md-12\">\n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\">IBAN </div>\n                  </div>\n                  <input name=\"IBAN\" #IBAN=\"ngModel\" [(ngModel)]=\"withdraw.IBAN\" class=\"form-control\" >\n                </div>\n              </div>\n             \n            </div>\n            <div class=\"form-group\">\n           \n              <select name=\"BANKID\" #BANKID=\"ngModel\" [(ngModel)]=\"withdraw.BANKID\" class=\"form-control\" \n         [class.is-invalid]=\"!isValid && withdraw.BANKID==0\">\n           <option value=\"0\">اختر  البنك</option>\n           <option *ngFor=\"let item of reqData.bankList\" value=\"{{item.BANK_PK}}\">{{item.BANK_TITLE}}</option>\n         </select>\n       </div>\n       <div class=\"image-upload\">\n        <img [src]=\"withdraw.bankimage\" style=\"width:400px;height:300px\"/>\n        <input name=\"imageUrl\" type=\"file\" accept=\"image/*\" (change)=\"handleInputChange($event)\" />\n    </div> \n\n          </div>\n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\n\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\n        </div>\n      </form>\n      </div>\n      \n    </div>\n  </div>\n</mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب انسحاب من الجامعه</h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">بيانات بيانات بيانات</P>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n          \r\n        <div class=\"form-group\">\r\n           \r\n               <select name=\"branch\" #BranchID=\"ngModel\" [(ngModel)]=\"withdraw.branch\" class=\"form-control\" \r\n          [class.is-invalid]=\"!isValid && withdraw.branch==0\">\r\n            <option value=\"\">اختر اقرب فرع</option>\r\n            <option *ngFor=\"let item of reqData.branches\" value=\"{{item.id}}\">{{item.name}}</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-12\">\r\n            <div class=\"input-group\">\r\n              <div class=\"input-group-prepend\">\r\n                <div class=\"input-group-text\">رقم الهاتف</div>\r\n              </div>\r\n              <input name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"withdraw.mobile\" class=\"form-control\" >\r\n            </div>\r\n          </div>\r\n         \r\n        </div>\r\n        <div class=\"form-row\">\r\n            <div class=\"form-group col-md-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\">البريد الالكتروني</div>\r\n                </div>\r\n                <input name=\"email\" #email=\"ngModel\" [(ngModel)]=\"withdraw.email\" class=\"form-control\" >\r\n              </div>\r\n            </div>\r\n           \r\n          </div>\r\n          <div *ngIf=\"!reqData.display_bank_account\">\r\n            <div class=\"form-row\">\r\n              <div class=\"form-group col-md-12\">\r\n                <div class=\"input-group\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <div class=\"input-group-text\">IBAN </div>\r\n                  </div>\r\n                  <input name=\"IBAN\" #IBAN=\"ngModel\" [(ngModel)]=\"withdraw.IBAN\" class=\"form-control\" >\r\n                </div>\r\n              </div>\r\n             \r\n            </div>\r\n            <div class=\"form-group\">\r\n           \r\n              <select name=\"BANKID\" #BANKID=\"ngModel\" [(ngModel)]=\"withdraw.BANKID\" class=\"form-control\" \r\n         [class.is-invalid]=\"!isValid && withdraw.BANKID==0\">\r\n           <option value=\"0\">اختر  البنك</option>\r\n           <option *ngFor=\"let item of reqData.bankList\" value=\"{{item.BANK_PK}}\">{{item.BANK_TITLE}}</option>\r\n         </select>\r\n       </div>\r\n       <div class=\"image-upload\">\r\n        <img [src]=\"withdraw.bankimage\" style=\"width:400px;height:300px\"/>\r\n        <input name=\"imageUrl\" type=\"file\" accept=\"image/*\" (change)=\"handleInputChange($event)\" />\r\n    </div> \r\n\r\n          </div>\r\n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n        </div>\r\n      </form>\r\n      </div>\r\n      \r\n    </div>\r\n  </div>\r\n</mat-dialog-content>"
 
 /***/ }),
 
@@ -3211,7 +5158,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\n  {{msg.body}}!\n</div>\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\n    {{msg.body}}!\n  </div>\n<div style=\"direction: ltr;text-align: center\">\n  \n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n  اضافة طلب\n</button>\n<br/>\n<br/>\n\n</div>\n<div>\n<table style=\"text-align: center\" class=\"table\">\n  <thead>\n    <tr>\n      <th scope=\"col\">رقم الطلب</th>\n      <th scope=\"col\">الفصل الدراسه </th>\n      <th scope=\"col\">طباعة الافاده  </th>\n\n      <th scope=\"col\">تاريخ الطلب</th>\n      <th scope=\"col\">حالة الطلب</th>\n      <th scope=\"col\"> طباعة الطلب</th>\n      <th scope=\"col\"> حذف الطلب </th>\n\n    </tr>\n  </thead>\n  <tbody>\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n      <td>{{it.request_number}}</td>\n      <td>{{it.term}}</td>\n      <td>Print Resp</td>\n\n      <td>{{it.insert_date}}</td>\n      <td>{{it.status}}</td>\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\n        Print</a></td>\n\n      <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\n\n    </tr>\n    \n  </tbody>\n</table>\n</div>\n"
+module.exports = "<div style=\"text-align: right\" *ngFor=\"let msg of msgs\" class=\"alert alert-info\" role=\"alert\">\r\n  {{msg.body}}!\r\n</div>\r\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"  class=\"alert alert-info\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n<div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div>\r\n<div>\r\n<table style=\"text-align: center\" class=\"table\">\r\n  <thead>\r\n    <tr>\r\n      <th scope=\"col\">رقم الطلب</th>\r\n      <th scope=\"col\">الفصل الدراسه </th>\r\n      <th scope=\"col\">طباعة الافاده  </th>\r\n\r\n      <th scope=\"col\">تاريخ الطلب</th>\r\n      <th scope=\"col\">حالة الطلب</th>\r\n      <th scope=\"col\"> طباعة الطلب</th>\r\n      <th scope=\"col\"> حذف الطلب </th>\r\n\r\n    </tr>\r\n  </thead>\r\n  <tbody>\r\n    <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n      <td>{{it.request_number}}</td>\r\n      <td>{{it.term}}</td>\r\n      <td>Print Resp</td>\r\n\r\n      <td>{{it.insert_date}}</td>\r\n      <td>{{it.status}}</td>\r\n      <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\" ><span class=\"glyphicon glyphicon-print\"></span>\r\n        Print</a></td>\r\n\r\n      <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'  class=\"btn btn-sm btn-danger\" style=\"color: white\"  (click)=\"delete(it.request_number,i)\"><i  class=\"fa fa-trash\"><app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer></i> </button></td>\r\n\r\n    </tr>\r\n    \r\n  </tbody>\r\n</table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -3251,6 +5198,7 @@ var WithdrawFromUnivComponent = /** @class */ (function () {
             _this.acadmicProc.msgs = res.messages;
             _this.reqData = _this.acadmicProc.reqData;
             _this.msgs = _this.acadmicProc.msgs;
+            //console.log(this.reqData.reqs);
         });
     };
     WithdrawFromUnivComponent.prototype.openDialoge = function () {
@@ -3276,9 +5224,14 @@ var WithdrawFromUnivComponent = /** @class */ (function () {
         var _this = this;
         if (confirm('هل انت متأكد')) {
             this.acadmicProc.deleteReq(id).then(function (res) {
-                _this.toastr.success('', res.messages.body);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
             });
-            this.acadmicProc.reqData.reqs.splice(index, 1);
         }
     };
     WithdrawFromUnivComponent.prototype.call = function (hr) {
@@ -3403,7 +5356,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n \n</div>\n\n<div class=\"row\">\n  <div class=\"col-md-6\">\n      <form #f=\"ngForm\" novalidate (ngSubmit)=\"login(f)\">\n          \n          <div class=\"form-group\">\n            <label for=\"email\">اسم المستخدم</label>\n            <input id=\"email\" type=\"text\" required name=\"email\" class=\"form-control\" placeholder=\"Email\" [ngModel]=\"credentials.email\" #email=\"ngModel\" tmFocus validateEmail>\n            <small [hidden]=\"email.valid || (email.pristine && !submitted)\" class=\"text-danger\">Please enter a valid email</small>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"password\">كلمة المرور</label>\n            <input type=\"password\" class=\"form-control\" id=\"password\" required name=\"password\" placeholder=\"Password\" ngModel>\n          </div>          \n\n          <div class=\"form-group\">\n              <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"f.invalid || isRequesting\">دخول</button>\n          </div>\n\n          <div *ngIf=\"errors\" class=\"alert alert-danger\" role=\"alert\">\n              <strong>Oops!</strong> {{errors}}\n            </div> \n          \n        </form>\n   </div>\n</div>\n\n\n"
+module.exports = "<div class=\"row\">\r\n \r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-md-6\">\r\n      <form #f=\"ngForm\" novalidate (ngSubmit)=\"login(f)\">\r\n          \r\n          <div class=\"form-group\">\r\n            <label for=\"email\">اسم المستخدم</label>\r\n            <input id=\"email\" type=\"text\" required name=\"email\" class=\"form-control\" placeholder=\"Email\" [ngModel]=\"credentials.email\" #email=\"ngModel\" tmFocus validateEmail>\r\n            <small [hidden]=\"email.valid || (email.pristine && !submitted)\" class=\"text-danger\">Please enter a valid email</small>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"password\">كلمة المرور</label>\r\n            <input type=\"password\" class=\"form-control\" id=\"password\" required name=\"password\" placeholder=\"Password\" ngModel>\r\n          </div>          \r\n\r\n          <div class=\"form-group\">\r\n              <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"f.invalid || isRequesting\">دخول</button>\r\n          </div>\r\n\r\n          <div *ngIf=\"errors\" class=\"alert alert-danger\" role=\"alert\">\r\n              <strong>Oops!</strong> {{errors}}\r\n            </div> \r\n          \r\n        </form>\r\n   </div>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -3505,7 +5458,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-6\">\n    <h2>Please enter your information</h2>\n  </div>\n</div>\n\n<div class=\"row\">\n  <div class=\"col-md-6\">\n      <form #f=\"ngForm\" novalidate (ngSubmit)=\"registerUser(f)\">\n          <div class=\"form-group\">\n              <label for=\"first-name\">الاسم الاول</label>\n              <input type=\"text\" class=\"form-control\" id=\"first-name\" placeholder=\"First name\" name=\"firstName\" tmFocus ngModel>              \n          </div>\n          <div class=\"form-group\">\n              <label for=\"last-name\"> الاسم الاخير</label>\n              <input type=\"text\" class=\"form-control\" id=\"last-name\" placeholder=\"Last name\" name=\"lastName\" ngModel>              \n          </div>\n          <div class=\"form-group\">\n            <label for=\"username\">اسم المستخدم </label>\n          \t<input id=\"fusername\" type=\"text\" validateUserName required name=\"username\"  class=\"form-control\" placeholder=\"UserName\" ngModel  #username=\"ngModel\">\n            <small [hidden]=\"username.valid   ||(username.pristine && !submitted)\" class=\"text-danger\">Please enter a valid username</small>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"email\">البريد</label>\n          \t<input id=\"email\" type=\"text\" required name=\"email\" validateEmail class=\"form-control\" placeholder=\"Email\" ngModel  #email=\"ngModel\">\n            <small [hidden]=\"email.valid || (email.pristine && !submitted)\" class=\"text-danger\">Please enter a valid email</small>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"password\">كلمة المرور</label>\n            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" placeholder=\"Password\" ngModel>\n          </div>   \n          <div class=\"form-group\">\n             <label for=\"address\">العنوان</label>\n             <input type=\"text\" class=\"form-control\" id=\"address\" placeholder=\"address\"  required name=\"address\" ngModel>              \n          </div> \n\n          <div class=\"form-group\">\n              <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"f.invalid || isRequesting\">Sign Up</button>\n          </div>\n\n          <div *ngIf=\"errors\" class=\"alert alert-danger\" role=\"alert\">\n              <strong>Oops!</strong> {{errors}}\n            </div>               \n          \n        </form>\n   </div>\n</div>\n\n\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-6\">\r\n    <h2>Please enter your information</h2>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-md-6\">\r\n      <form #f=\"ngForm\" novalidate (ngSubmit)=\"registerUser(f)\">\r\n          <div class=\"form-group\">\r\n              <label for=\"first-name\">الاسم الاول</label>\r\n              <input type=\"text\" class=\"form-control\" id=\"first-name\" placeholder=\"First name\" name=\"firstName\" tmFocus ngModel>              \r\n          </div>\r\n          <div class=\"form-group\">\r\n              <label for=\"last-name\"> الاسم الاخير</label>\r\n              <input type=\"text\" class=\"form-control\" id=\"last-name\" placeholder=\"Last name\" name=\"lastName\" ngModel>              \r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"username\">اسم المستخدم </label>\r\n          \t<input id=\"fusername\" type=\"text\" validateUserName required name=\"username\"  class=\"form-control\" placeholder=\"UserName\" ngModel  #username=\"ngModel\">\r\n            <small [hidden]=\"username.valid   ||(username.pristine && !submitted)\" class=\"text-danger\">Please enter a valid username</small>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"email\">البريد</label>\r\n          \t<input id=\"email\" type=\"text\" required name=\"email\" validateEmail class=\"form-control\" placeholder=\"Email\" ngModel  #email=\"ngModel\">\r\n            <small [hidden]=\"email.valid || (email.pristine && !submitted)\" class=\"text-danger\">Please enter a valid email</small>\r\n          </div>\r\n          <div class=\"form-group\">\r\n            <label for=\"password\">كلمة المرور</label>\r\n            <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" placeholder=\"Password\" ngModel>\r\n          </div>   \r\n          <div class=\"form-group\">\r\n             <label for=\"address\">العنوان</label>\r\n             <input type=\"text\" class=\"form-control\" id=\"address\" placeholder=\"address\"  required name=\"address\" ngModel>              \r\n          </div> \r\n\r\n          <div class=\"form-group\">\r\n              <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"f.invalid || isRequesting\">Sign Up</button>\r\n          </div>\r\n\r\n          <div *ngIf=\"errors\" class=\"alert alert-danger\" role=\"alert\">\r\n              <strong>Oops!</strong> {{errors}}\r\n            </div>               \r\n          \r\n        </form>\r\n   </div>\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -3693,7 +5646,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div >\n<app-header></app-header>\n\n<div  [class.isPrinting]=\"printService.isPrinting\"  class=\"container-fluid\"> \n\t\n\t<router-outlet></router-outlet>\n\t<router-outlet name=\"print\"></router-outlet>\n\n</div>\n \n</div>\n"
+module.exports = "<main role=\"main\"  >\r\n<div class=\"wrapper\">\r\n<app-header></app-header>\r\n<div class=\"page-wrap\">\r\n\r\n<app-menu></app-menu>\r\n<div  [class.isPrinting]=\"printService.isPrinting\"  class=\"container-fluid\"> \r\n\t\r\n\t<router-outlet></router-outlet>\r\n\t<router-outlet name=\"print\"></router-outlet>\r\n\r\n</div>\r\n</div>\r\n <app-footer></app-footer>\r\n          \r\n</div>\r\n   \r\n\r\n<!-- Main jumbotron for a primary marketing message or call to action \r\n<div   class=\"jumbotron\">\r\n  <div class=\"container\">\r\n\t<h1 class=\"display-3\"> </h1>\r\n\t<p>This demo shows  flow using Angular and ASP.NET Core 3.0 WebApi</p>\r\n\t<p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\" routerLink=\"/register\">تسجيل مستخدم جديد</a>\r\n\t  \r\n\t  <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\" routerLink=\"/login\">تسجيل دخول  </a>       \r\n\t  <button class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\"  (click)=\"onPrintFile()\"> طباعة  </button></p>       \r\n\r\n\t</div>\r\n</div> -->\r\n\r\n</main>"
 
 /***/ }),
 
@@ -3773,6 +5726,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PrintExample_print_file_print_file_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./PrintExample/print-file/print-file.component */ "./src/app/PrintExample/print-file/print-file.component.ts");
 /* harmony import */ var _graduates_affairs_graduates_affairs_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./graduates-affairs/graduates-affairs.module */ "./src/app/graduates-affairs/graduates-affairs.module.ts");
 /* harmony import */ var angular_font_awesome__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! angular-font-awesome */ "./node_modules/angular-font-awesome/dist/angular-font-awesome.es5.js");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
+/* harmony import */ var _menu_menu_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./menu/menu.component */ "./src/app/menu/menu.component.ts");
+/* harmony import */ var _page_header_page_header_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./page-header/page-header.component */ "./src/app/page-header/page-header.component.ts");
+
+
+
 
 
 
@@ -3813,7 +5772,10 @@ var AppModule = /** @class */ (function () {
                 _auto_generated_auto_generated_component__WEBPACK_IMPORTED_MODULE_13__["AutoGeneratedComponent"],
                 _name_component_name_component_component__WEBPACK_IMPORTED_MODULE_18__["NameComponentComponent"],
                 _PrintExample_print_layout_print_layout_component__WEBPACK_IMPORTED_MODULE_25__["PrintLayoutComponent"],
-                _PrintExample_print_file_print_file_component__WEBPACK_IMPORTED_MODULE_26__["PrintFileComponent"]
+                _PrintExample_print_file_print_file_component__WEBPACK_IMPORTED_MODULE_26__["PrintFileComponent"],
+                _footer_footer_component__WEBPACK_IMPORTED_MODULE_29__["FooterComponent"],
+                _menu_menu_component__WEBPACK_IMPORTED_MODULE_30__["MenuComponent"],
+                _page_header_page_header_component__WEBPACK_IMPORTED_MODULE_31__["PageHeaderComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -3865,7 +5827,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  auto-generated works!\n</p>\n"
+module.exports = "<p>\r\n  auto-generated works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -4017,7 +5979,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main role=\"main\">\n   <br/><br/><br/>\n    <div class=\"container\">dd</div></main>\n"
+module.exports = "<main role=\"main\">\r\n   <br/><br/><br/>\r\n    <div class=\"container\">dd</div></main>\r\n"
 
 /***/ }),
 
@@ -4073,7 +6035,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n  <br/>\n  <br/>\n  <br/>\n  posts works!\n  <button (click)=\"GetPosts()\"  value=\"Load Posts\">Auth Posts</button>\n  <button (click)=\"GetPostsAnon()\"  value=\"Load Posts\">Posts</button>\n  <button (click)=\"update()\"  value=\"Load Posts\">update</button>\n\n  {{showMsg$ |async}}\n \n  <ul >\n    <li  *ngFor=\"let post of posts$ | async ;\">{{post.title}} </li>\n  \n  </ul>\n  <ng-template #loading>\n    <p>\n      Show this only if \"show\" is not true\n    </p>\n  </ng-template>\n\n"
+module.exports = "\r\n  <br/>\r\n  <br/>\r\n  <br/>\r\n  posts works!\r\n  <button (click)=\"GetPosts()\"  value=\"Load Posts\">Auth Posts</button>\r\n  <button (click)=\"GetPostsAnon()\"  value=\"Load Posts\">Posts</button>\r\n  <button (click)=\"update()\"  value=\"Load Posts\">update</button>\r\n\r\n  {{showMsg$ |async}}\r\n \r\n  <ul >\r\n    <li  *ngFor=\"let post of posts$ | async ;\">{{post.title}} </li>\r\n  \r\n  </ul>\r\n  <ng-template #loading>\r\n    <p>\r\n      Show this only if \"show\" is not true\r\n    </p>\r\n  </ng-template>\r\n\r\n"
 
 /***/ }),
 
@@ -4207,7 +6169,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  spinner works!\n</p>\n"
+module.exports = "<p>\r\n  spinner works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -4263,7 +6225,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  exams-absence-excuses works!\n</p>\n"
+module.exports = "<p>\r\n</p>\r\n"
 
 /***/ }),
 
@@ -4419,7 +6381,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <h3 class=\"text-center\">شهادة  اثبات حضور  اختبارات</h3>\n      <div class=\"row\">\n        <div class=\"col-12\">\n          <div class=\"card mt-3 tab-card\">\n            <div class=\"card-header tab-card-header\">\n              <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                        {{eaData.Term_Exam_With_Schedule.labels.title}}   \n                    </a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\n                </li>\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\n                </li>\n              </ul>\n            </div>\n    \n            <div class=\"tab-content\" id=\"myTabContent\">\n              <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\n                \n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt1}}\n                {{eaData.Term_Exam_With_Schedule.values.student_name}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt2}}\n                {{eaData.Term_Exam_With_Schedule.values.std_id}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt3}}\n                {{eaData.Term_Exam_With_Schedule.values.coll}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt4}}\n                {{eaData.Term_Exam_With_Schedule.values.term}}\n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt5}}\n  \n                {{eaData.Term_Exam_With_Schedule.values.startDay}}\n                {{eaData.Term_Exam_With_Schedule.labels.txt6}}\n                {{eaData.Term_Exam_With_Schedule.values.endDay}}\n                <br/>\n                {{eaData.Term_Exam_With_Schedule.labels.txt7}}\n  \n                \n  \n                \n                    </p>         \n                <table class=\"table\">\n                    <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">اليوم</th>\n                        <th scope=\"col\">الوقت</th>\n                        <th scope=\"col\">الحضور</th>\n\n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\n                        <td >{{it.CRN}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.CRSE_DAY}}</td>\n                        <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n                        <td>{{it.STD_ATTEND}}</td>\n                      </tr>\n                     \n                    </tbody>\n                  </table>\n                  <br>\n                  <p style=\"text-align: right\">\n                  {{eaData.Term_Exam_With_Schedule.labels.txt8}}\n           \n                  {{eaData.Term_Exam_With_Schedule.labels.txt9}}\n            <br>\n            {{eaData.Term_Exam_With_Schedule.labels.txt10}}\n            \n            {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\n             \n          \n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{termSchedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n                  <a class=\"btn btn-primary\" href=\"{{termScheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                    Print</a>\n                <div class=\"col-md-4\"></div>\n              \n                </div>\n          </div>\n              <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                  <h5 class=\"card-title text-center\">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>\n                  <p class=\"card-text\" style=\"text-align: right\" > \n                      {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\n                      <br/>\n                       الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\n                       {{eaData.Term_Exam_Without_Schedule.values.student_name}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\n                       {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\n                       {{eaData.Term_Exam_Without_Schedule.values.coll}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\n                       {{eaData.Term_Exam_Without_Schedule.values.term}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\n         \n                       {{eaData.Term_Exam_Without_Schedule.values.startDay}}\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\n                       {{eaData.Term_Exam_Without_Schedule.values.endDay}}\n                       <br/>\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\n         <br>\n         {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\n  \n         {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\n   <br>\n   {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\n   \n   {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\n  \n  \n  \n                  \n                      </p>         \n                      <div  class=\"btn-group btn-group-justified col-md-12 \">\n                          <div class=\"col-md-4\"></div>\n                          <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                            طباعة</a>\n                            <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                              Print</a>\n                            <div class=\"col-md-4\"></div>\n                          </div>\n              </div>\n              <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                  <h5 class=\"card-title text-center\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>\n                  <p class=\"card-text\" style=\"text-align: right\" > \n                      {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\n                      <br/>\n                       الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                  \n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt1}}\n                  {{eaData.Final_Exam_With_Schedule.values.student_name}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt2}}\n                  {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt3}}\n                  {{eaData.Final_Exam_With_Schedule.values.coll}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt4}}\n                  {{eaData.Final_Exam_With_Schedule.values.term}}\n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt5}}\n    \n                  {{eaData.Final_Exam_With_Schedule.values.startDay}}\n                  {{eaData.Final_Exam_With_Schedule.labels.txt6}}\n                  {{eaData.Final_Exam_With_Schedule.values.endDay}}\n                  <br/>\n                  {{eaData.Final_Exam_With_Schedule.labels.txt7}}\n    \n                  \n    \n                  \n                      </p>         \n                  <table class=\"table\">\n                      <thead>\n                        <tr>\n                          <th scope=\"col\">CRN </th>\n                          <th scope=\"col\">اسم المقرر</th>\n                          <th scope=\"col\">اليوم</th>\n                          <th scope=\"col\">الوقت</th>\n                          <th scope=\"col\">الحضور</th>\n\n    \n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\n                          <td >{{it.CRN}}</td>\n                          <td>{{it.CRSE_TITLE}}</td>\n                          <td>{{it.CRSE_DAY}}</td>\n                          <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n                          <td>{{it.STD_ATTEND}}</td>\n\n    \n                        </tr>\n                       \n                      </tbody>\n                    </table>\n                    <br>\n                    <p style=\"text-align: right\">\n                    {{eaData.Final_Exam_With_Schedule.labels.txt8}}\n             \n                    {{eaData.Final_Exam_With_Schedule.labels.txt9}}\n              <br>\n              {{eaData.Final_Exam_With_Schedule.labels.txt10}}\n              \n              {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\n                        \n              <div  class=\"btn-group btn-group-justified col-md-12 \">\n                  <div class=\"col-md-4\"></div>\n                  <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                    طباعة</a>\n                    <a class=\"btn btn-primary\" href=\"{{finalscheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                      Print</a>\n                  <div class=\"col-md-4\"></div>\n                \n                  </div>\n                  </div>\n                  <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\n                      <h5 class=\"card-title text-center\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>\n                      <p class=\"card-text\" style=\"text-align: right\" > \n                          {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\n                          <br/>\n                           الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\n                           {{eaData.Final_Exam_Without_Schedule.values.student_name}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\n                           {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\n                           {{eaData.Final_Exam_Without_Schedule.values.coll}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\n                           {{eaData.Final_Exam_Without_Schedule.values.term}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\n             \n                           {{eaData.Final_Exam_Without_Schedule.values.startDay}}\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\n                           {{eaData.Final_Exam_Without_Schedule.values.endDay}}\n                           <br/>\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\n             <br>\n             {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\n      \n             {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\n       <br>\n       {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\n       \n       {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\n      \n      \n      \n                      \n                          </p>    \n                          <div  class=\"btn-group btn-group-justified col-md-12 \">\n                              <div class=\"col-md-4\"></div>\n                              <a class=\"btn btn-primary\" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                                طباعة</a>\n                                <a class=\"btn btn-primary\" href=\"{{finalEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                                  Print</a>\n                                \n                              <div class=\"col-md-4\"></div>\n                            \n                              </div>\n                        </div>"
+module.exports = "<div class=\"main-content\" style=\"padding-top:0;\">\r\n                    \r\n    <section class=\"service-single\">\r\n            <div class=\"container\">\r\n                    <h3> شهادة اثبات حضور اختبارات\r\n                      </h3>\r\n                 <div class=\"row\">\r\n                    <div class=\" col-md-5\">\r\n                      <p> شهادة اثبات حضور اختبارات\r\n                        </p>\r\n                     </div>\r\n                    <div class=\" col-md-6 descr\">\r\n                      <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                        &nbsp; &nbsp; &nbsp; &nbsp;\r\n                        <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                        <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n                    </div>\r\n                </div>\r\n                </div>\r\n         </section>\r\n         <section  class=\"ser-state\">\r\n    <div *ngIf=\"status==0\"  class=\"alert alert-primary text-center\" role=\"alert\">\r\n        {{absData.messages}} \r\n      </div>\r\n              <nav>\r\n                  <div class=\"nav nav-tabs\" id=\"nav-tab\" role=\"tablist\">\r\n               \r\n                    <a class=\"nav-item nav-link active\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\r\n                        {{eaData.Term_Exam_With_Schedule.labels.title}}   \r\n                    </a>\r\n                \r\n                    <a class=\" nav-item nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\r\n                    <a class=\"nav-item nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\r\n               \r\n                    <a class=\"nav-item nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\r\n              \r\n                  </div></nav>\r\n          \r\n    \r\n            <div class=\"tab-content\" id=\"myTabContent\">\r\n              <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\r\n                \r\n                 <div class=\"widget\">\r\n                    <div class=\"widget-header\" style=\"padding: 5px 0\" >\r\n                        <h3 class=\"widget-title\" style=\"font-size:14px;\">{{eaData.Term_Exam_With_Schedule.labels.title}}</h3></div>\r\n                    <div class=\"hints\">\r\n                   \r\n                <p style=\"text-align: right;padding: 5px\"> \r\n                    {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\r\n                    <br/>\r\n                     الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\r\n                \r\n                <br/>\r\n                {{eaData.Term_Exam_With_Schedule.labels.txt1}}\r\n                {{eaData.Term_Exam_With_Schedule.values.student_name}}\r\n                {{eaData.Term_Exam_With_Schedule.labels.txt2}}\r\n                {{eaData.Term_Exam_With_Schedule.values.std_id}}\r\n                {{eaData.Term_Exam_With_Schedule.labels.txt3}}\r\n                {{eaData.Term_Exam_With_Schedule.values.coll}}\r\n                {{eaData.Term_Exam_With_Schedule.labels.txt4}}\r\n                {{eaData.Term_Exam_With_Schedule.values.term}}\r\n                <br/>\r\n                {{eaData.Term_Exam_With_Schedule.labels.txt5}}\r\n  \r\n                {{eaData.Term_Exam_With_Schedule.values.startDay}}\r\n                {{eaData.Term_Exam_With_Schedule.labels.txt6}}\r\n                {{eaData.Term_Exam_With_Schedule.values.endDay}}\r\n                <br/>\r\n                {{eaData.Term_Exam_With_Schedule.labels.txt7}}\r\n  \r\n                \r\n  \r\n                \r\n                    </p>  </div> \r\n                  </div>   \r\n                  <div class=\"widget\">  \r\n                      <div class=\"table-responsive\">\r\n                          <table class=\"table table-striped table-bordered\">\r\n                          <thead style=\"background: #ebecf0\">\r\n                      <tr>\r\n                        <th scope=\"col\">CRN </th>\r\n                        <th scope=\"col\">اسم المقرر</th>\r\n                        <th scope=\"col\">اليوم</th>\r\n                        <th scope=\"col\">الوقت</th>\r\n                        <th scope=\"col\">الحضور</th>\r\n\r\n                      </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                      <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\r\n                        <td >{{it.CRN}}</td>\r\n                        <td>{{it.CRSE_TITLE}}</td>\r\n                        <td>{{it.CRSE_DAY}}</td>\r\n                        <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\r\n                        <td>{{it.STD_ATTEND}}</td>\r\n                      </tr>\r\n                     \r\n                    </tbody>\r\n                  </table></div> </div>\r\n                  <br>\r\n                  <div class=\"widget\">\r\n                  <p style=\"text-align: right;padding: 5px\">\r\n                  {{eaData.Term_Exam_With_Schedule.labels.txt8}}\r\n           \r\n                  {{eaData.Term_Exam_With_Schedule.labels.txt9}}\r\n            <br>\r\n            {{eaData.Term_Exam_With_Schedule.labels.txt10}}\r\n            \r\n            {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\r\n          </div>\r\n          \r\n          <div style=\"text-align: center\" class=\"prin\">               \r\n                <a class=\"btn \" href=\"{{termSchedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                  طباعة</a>\r\n                  <a class=\"btn \" href=\"{{termScheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                    Print</a>\r\n              \r\n                </div>\r\n          </div>\r\n              <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\r\n                  \r\n                  <div class=\"widget\">\r\n                      <div class=\"widget-header\" style=\"padding: 5px 0\" >\r\n                          <h3 class=\"widget-title\" style=\"font-size:14px;\">{{eaData.Term_Exam_Without_Schedule.labels.title}}</h3></div>\r\n                      <div class=\"hints\">\r\n                     \r\n                  <p style=\"text-align: right;padding: 5px\"> \r\n                \r\n                      {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\r\n                      <br/>\r\n                       الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\r\n                       <br/>\r\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\r\n                       {{eaData.Term_Exam_Without_Schedule.values.student_name}}\r\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\r\n                       {{eaData.Term_Exam_Without_Schedule.values.std_id}}\r\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\r\n                       {{eaData.Term_Exam_Without_Schedule.values.coll}}\r\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\r\n                       {{eaData.Term_Exam_Without_Schedule.values.term}}\r\n                       <br/>\r\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\r\n         \r\n                       {{eaData.Term_Exam_Without_Schedule.values.startDay}}\r\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\r\n                       {{eaData.Term_Exam_Without_Schedule.values.endDay}}\r\n                       <br/>\r\n                       {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\r\n         <br>\r\n         {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\r\n  \r\n         {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\r\n   <br>\r\n   {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\r\n   \r\n   {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\r\n  \r\n  \r\n  \r\n                  \r\n                      </p>     </div></div>    \r\n                      <div style=\"text-align: center\" class=\"prin\">               \r\n\r\n                          <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                            طباعة</a>\r\n                            <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                              Print</a>\r\n                          \r\n                          </div>\r\n              </div>\r\n              <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\r\n                  <div class=\"widget\">\r\n                      <div class=\"widget-header\" style=\"padding: 5px 0\" >\r\n                          <h3 class=\"widget-title\" style=\"font-size:14px;\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h3>\r\n                 </div>\r\n                 <div class=\"hints\">\r\n                   \r\n                    <p style=\"text-align: right;padding: 5px\"> \r\n                                            {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\r\n                      <br/>\r\n                       الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\r\n                  \r\n                  <br/>\r\n                  {{eaData.Final_Exam_With_Schedule.labels.txt1}}\r\n                  {{eaData.Final_Exam_With_Schedule.values.student_name}}\r\n                  {{eaData.Final_Exam_With_Schedule.labels.txt2}}\r\n                  {{eaData.Final_Exam_With_Schedule.values.std_id}}\r\n                  {{eaData.Final_Exam_With_Schedule.labels.txt3}}\r\n                  {{eaData.Final_Exam_With_Schedule.values.coll}}\r\n                  {{eaData.Final_Exam_With_Schedule.labels.txt4}}\r\n                  {{eaData.Final_Exam_With_Schedule.values.term}}\r\n                  <br/>\r\n                  {{eaData.Final_Exam_With_Schedule.labels.txt5}}\r\n    \r\n                  {{eaData.Final_Exam_With_Schedule.values.startDay}}\r\n                  {{eaData.Final_Exam_With_Schedule.labels.txt6}}\r\n                  {{eaData.Final_Exam_With_Schedule.values.endDay}}\r\n                  <br/>\r\n                  {{eaData.Final_Exam_With_Schedule.labels.txt7}}\r\n    \r\n                  \r\n    \r\n                  \r\n                      </p>    </div>  \r\n                      </div> \r\n                      <div class=\"table-responsive\">\r\n                          <table class=\"table table-striped table-bordered\">\r\n                              <thead style=\"background: #ebecf0\">                      \r\n                        <tr>\r\n                          <th scope=\"col\">CRN </th>\r\n                          <th scope=\"col\">اسم المقرر</th>\r\n                          <th scope=\"col\">اليوم</th>\r\n                          <th scope=\"col\">الوقت</th>\r\n                          <th scope=\"col\">الحضور</th>\r\n\r\n    \r\n                        </tr>\r\n                      </thead>\r\n                      <tbody>\r\n                        <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\r\n                          <td >{{it.CRN}}</td>\r\n                          <td>{{it.CRSE_TITLE}}</td>\r\n                          <td>{{it.CRSE_DAY}}</td>\r\n                          <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\r\n                          <td>{{it.STD_ATTEND}}</td>\r\n\r\n    \r\n                        </tr>\r\n                       \r\n                      </tbody>\r\n                    </table></div>  \r\n                    <br>\r\n                    <div class=\"widget\"><div class=\"hints\">\r\n                    <p style=\"text-align: right\">\r\n                    {{eaData.Final_Exam_With_Schedule.labels.txt8}}\r\n             \r\n                    {{eaData.Final_Exam_With_Schedule.labels.txt9}}\r\n              <br>\r\n              {{eaData.Final_Exam_With_Schedule.labels.txt10}}\r\n              \r\n              {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\r\n            </div> </div>\r\n            <div style=\"text-align: center\" class=\"prin\">               \r\n\r\n                  <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                    طباعة</a>\r\n                    <a class=\"btn btn-primary\" href=\"{{finalscheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                      Print</a>\r\n                  \r\n                \r\n                  </div>\r\n                  </div>\r\n                  <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\r\n                    <div class=\"widget\"><div class=\"widget-header\">\r\n                      <h3 class=\"widget-title\" style=\"font-size:14px;\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h3>\r\n                    </div>\r\n                      <p class=\"card-text\" style=\"text-align: right\" > \r\n                          {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\r\n                          <br/>\r\n                           الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\r\n                           <br/>\r\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\r\n                           {{eaData.Final_Exam_Without_Schedule.values.student_name}}\r\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\r\n                           {{eaData.Final_Exam_Without_Schedule.values.std_id}}\r\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\r\n                           {{eaData.Final_Exam_Without_Schedule.values.coll}}\r\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\r\n                           {{eaData.Final_Exam_Without_Schedule.values.term}}\r\n                           <br/>\r\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\r\n             \r\n                           {{eaData.Final_Exam_Without_Schedule.values.startDay}}\r\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\r\n                           {{eaData.Final_Exam_Without_Schedule.values.endDay}}\r\n                           <br/>\r\n                           {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\r\n             <br>\r\n             {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\r\n      \r\n             {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\r\n       <br>\r\n       {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\r\n       \r\n       {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\r\n      \r\n      \r\n      \r\n                      \r\n                          </p>\r\n                    </div>    \r\n                    <div style=\"text-align: center\" class=\"prin\">               \r\n\r\n                              <a class=\"btn \" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                                طباعة</a>\r\n                                <a class=\"btn\" href=\"{{finalEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                                  Print</a>\r\n                                \r\n                              \r\n                            \r\n                              </div>\r\n                        </div></div></section>"
 
 /***/ }),
 
@@ -4493,7 +6455,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h3 class=\"text-center\">شهادة حضور  اختبارات</h3>\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <div class=\"card mt-3 tab-card\">\n          <div class=\"card-header tab-card-header\">\n            <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                      {{eaData.Term_Exam_With_Schedule.labels.title}}   \n                  </a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\n              </li>\n            </ul>\n          </div>\n  \n          <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n              <h5 class=\"card-title text-center\">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>\n              <p class=\"card-text\" style=\"text-align: right\" > \n                  {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\n                  <br/>\n                   الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\n              \n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt1}}\n              {{eaData.Term_Exam_With_Schedule.values.student_name}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt2}}\n              {{eaData.Term_Exam_With_Schedule.values.std_id}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt3}}\n              {{eaData.Term_Exam_With_Schedule.values.coll}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt4}}\n              {{eaData.Term_Exam_With_Schedule.values.term}}\n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt5}}\n\n              {{eaData.Term_Exam_With_Schedule.values.startDay}}\n              {{eaData.Term_Exam_With_Schedule.labels.txt6}}\n              {{eaData.Term_Exam_With_Schedule.values.endDay}}\n              <br/>\n              {{eaData.Term_Exam_With_Schedule.labels.txt7}}\n\n              \n\n              \n                  </p>         \n              <table style=\"direction: rtl\" class=\"table\">\n                  <thead>\n                    <tr>\n                      <th scope=\"col\">CRN </th>\n                      <th scope=\"col\">اسم المقرر</th>\n                      <th scope=\"col\">اليوم</th>\n                      <th scope=\"col\">الوقت</th>\n\n                    </tr>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\n                      <td >{{it.CRN}}</td>\n                      <td>{{it.CRSE_TITLE}}</td>\n                      <td>{{it.CRSE_DAY}}</td>\n                      <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n\n                    </tr>\n                   \n                  </tbody>\n                </table>\n                <br>\n                <p style=\"text-align: right\">\n                {{eaData.Term_Exam_With_Schedule.labels.txt8}}\n         \n                {{eaData.Term_Exam_With_Schedule.labels.txt9}}\n          <br>\n          {{eaData.Term_Exam_With_Schedule.labels.txt10}}\n          \n          {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\n           \n        \n          <div  class=\"btn-group btn-group-justified col-md-12 \">\n              <div class=\"col-md-4\"></div>\n              <a class=\"btn btn-primary\" href=\"{{termSchedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                طباعة</a>\n                <a class=\"btn btn-primary\" href=\"{{termScheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  Print</a>\n              <div class=\"col-md-4\"></div>\n            \n              </div>\n        </div>\n            <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\n                     {{eaData.Term_Exam_Without_Schedule.values.student_name}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\n                     {{eaData.Term_Exam_Without_Schedule.values.std_id}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\n                     {{eaData.Term_Exam_Without_Schedule.values.coll}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\n                     {{eaData.Term_Exam_Without_Schedule.values.term}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\n       \n                     {{eaData.Term_Exam_Without_Schedule.values.startDay}}\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\n                     {{eaData.Term_Exam_Without_Schedule.values.endDay}}\n                     <br/>\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\n       <br>\n       {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\n\n       {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\n <br>\n {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\n \n {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\n\n\n\n                \n                    </p>         \n                    <div  class=\"btn-group btn-group-justified col-md-12 \">\n                        <div class=\"col-md-4\"></div>\n                        <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                          طباعة</a>\n                          <a class=\"btn btn-primary\" href=\"{{termEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                            Print</a>\n                          <div class=\"col-md-4\"></div>\n                        </div>\n            </div>\n            <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                <h5 class=\"card-title text-center\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>\n                <p class=\"card-text\" style=\"text-align: right\" > \n                    {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\n                    <br/>\n                     الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                \n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt1}}\n                {{eaData.Final_Exam_With_Schedule.values.student_name}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt2}}\n                {{eaData.Final_Exam_With_Schedule.values.std_id}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt3}}\n                {{eaData.Final_Exam_With_Schedule.values.coll}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt4}}\n                {{eaData.Final_Exam_With_Schedule.values.term}}\n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt5}}\n  \n                {{eaData.Final_Exam_With_Schedule.values.startDay}}\n                {{eaData.Final_Exam_With_Schedule.labels.txt6}}\n                {{eaData.Final_Exam_With_Schedule.values.endDay}}\n                <br/>\n                {{eaData.Final_Exam_With_Schedule.labels.txt7}}\n  \n                \n  \n                \n                    </p>         \n                <table class=\"table\">\n                    <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">اليوم</th>\n                        <th scope=\"col\">الوقت</th>\n  \n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\n                        <td >{{it.CRN}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.CRSE_DAY}}</td>\n                        <td style=\"direction:ltr\">({{toHTML(it.CRSE_TIME)}})</td>\n  \n                      </tr>\n                     \n                    </tbody>\n                  </table>\n                  <br>\n                  <p style=\"text-align: right\">\n                  {{eaData.Final_Exam_With_Schedule.labels.txt8}}\n           \n                  {{eaData.Final_Exam_With_Schedule.labels.txt9}}\n            <br>\n            {{eaData.Final_Exam_With_Schedule.labels.txt10}}\n            \n            {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\n                      \n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n                  <a class=\"btn btn-primary\" href=\"{{finalscheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                    Print</a>\n                <div class=\"col-md-4\"></div>\n              \n                </div>\n                </div>\n                <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\n                    <h5 class=\"card-title text-center\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>\n                    <p class=\"card-text\" style=\"text-align: right\" > \n                        {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\n                        <br/>\n                         الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\n                         {{eaData.Final_Exam_Without_Schedule.values.student_name}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\n                         {{eaData.Final_Exam_Without_Schedule.values.std_id}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\n                         {{eaData.Final_Exam_Without_Schedule.values.coll}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\n                         {{eaData.Final_Exam_Without_Schedule.values.term}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\n           \n                         {{eaData.Final_Exam_Without_Schedule.values.startDay}}\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\n                         {{eaData.Final_Exam_Without_Schedule.values.endDay}}\n                         <br/>\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\n           <br>\n           {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\n    \n           {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\n     <br>\n     {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\n     \n     {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\n    \n    \n    \n                    \n                        </p>    \n                        <div  class=\"btn-group btn-group-justified col-md-12 \">\n                            <div class=\"col-md-4\"></div>\n                            <a class=\"btn btn-primary\" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                              طباعة</a>\n                              <a class=\"btn btn-primary\" href=\"{{finalEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                                English</a>\n                              \n                            <div class=\"col-md-4\"></div>\n                          \n                            </div>\n                      </div>"
+module.exports = "<div class=\"container\">\r\n  <h3 class=\"text-center\">شهادة حضور  اختبارات</h3>\r\n    <div class=\"row\">\r\n      <div class=\"col-12\">\r\n        <div class=\"card mt-3 tab-card\">\r\n          <div class=\"card-header tab-card-header\">\r\n            <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\r\n              <li class=\"nav-item\">\r\n                  <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\r\n                      {{eaData.Term_Exam_With_Schedule.labels.title}}   \r\n                  </a>\r\n              </li>\r\n              <li class=\"nav-item\">\r\n                  <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">الاختبارات الفصليه بدون جدول</a>\r\n              </li>\r\n              <li class=\"nav-item\">\r\n                  <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">الاختبارات النهائيه مع الجدول</a>\r\n              </li>\r\n              <li class=\"nav-item\">\r\n                  <a class=\"nav-link\" id=\"four-tab\" data-toggle=\"tab\" href=\"#four\" role=\"tab\" aria-controls=\"Four\" aria-selected=\"false\">الاختبارات النهائيه بدون جدول</a>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n  \r\n          <div class=\"tab-content\" id=\"myTabContent\">\r\n            <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\r\n              <h5 class=\"card-title text-center\">{{eaData.Term_Exam_With_Schedule.labels.title}}  </h5>\r\n              <p class=\"card-text\" style=\"text-align: right\" > \r\n                  {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}\r\n                  <br/>\r\n                   الرقم الجامعي : {{eaData.Term_Exam_With_Schedule.values.std_id}}\r\n              \r\n              <br/>\r\n              {{eaData.Term_Exam_With_Schedule.labels.txt1}}\r\n              {{eaData.Term_Exam_With_Schedule.values.student_name}}\r\n              {{eaData.Term_Exam_With_Schedule.labels.txt2}}\r\n              {{eaData.Term_Exam_With_Schedule.values.std_id}}\r\n              {{eaData.Term_Exam_With_Schedule.labels.txt3}}\r\n              {{eaData.Term_Exam_With_Schedule.values.coll}}\r\n              {{eaData.Term_Exam_With_Schedule.labels.txt4}}\r\n              {{eaData.Term_Exam_With_Schedule.values.term}}\r\n              <br/>\r\n              {{eaData.Term_Exam_With_Schedule.labels.txt5}}\r\n\r\n              {{eaData.Term_Exam_With_Schedule.values.startDay}}\r\n              {{eaData.Term_Exam_With_Schedule.labels.txt6}}\r\n              {{eaData.Term_Exam_With_Schedule.values.endDay}}\r\n              <br/>\r\n              {{eaData.Term_Exam_With_Schedule.labels.txt7}}\r\n\r\n              \r\n\r\n              \r\n                  </p>         \r\n              <table style=\"direction: rtl\" class=\"table\">\r\n                  <thead>\r\n                    <tr>\r\n                      <th scope=\"col\">CRN </th>\r\n                      <th scope=\"col\">اسم المقرر</th>\r\n                      <th scope=\"col\">اليوم</th>\r\n                      <th scope=\"col\">الوقت</th>\r\n\r\n                    </tr>\r\n                  </thead>\r\n                  <tbody>\r\n                    <tr *ngFor=\"let it of eaData.Term_Exam_With_Schedule.Term_Schedule\">\r\n                      <td >{{it.CRN}}</td>\r\n                      <td>{{it.CRSE_TITLE}}</td>\r\n                      <td>{{it.CRSE_DAY}}</td>\r\n                      <td style=\"direction: ltr\">({{toHTML(it.CRSE_TIME)}})</td>\r\n\r\n                    </tr>\r\n                   \r\n                  </tbody>\r\n                </table>\r\n                <br>\r\n                <p style=\"text-align: right\">\r\n                {{eaData.Term_Exam_With_Schedule.labels.txt8}}\r\n         \r\n                {{eaData.Term_Exam_With_Schedule.labels.txt9}}\r\n          <br>\r\n          {{eaData.Term_Exam_With_Schedule.labels.txt10}}\r\n          \r\n          {{eaData.Term_Exam_With_Schedule.labels.txt11}}</p>\r\n           \r\n        \r\n          <div  class=\"btn-group btn-group-justified col-md-12 \">\r\n              <div class=\"col-md-4\"></div>\r\n              <a class=\"btn btn-primary\" href=\"{{termSchedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                طباعة</a>\r\n                <a class=\"btn btn-primary\" href=\"{{termScheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                  Print</a>\r\n              <div class=\"col-md-4\"></div>\r\n            \r\n              </div>\r\n        </div>\r\n            <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\r\n                <h5 class=\"card-title text-center\">{{eaData.Term_Exam_Without_Schedule.labels.title}}  </h5>\r\n                <p class=\"card-text\" style=\"text-align: right\" > \r\n                    {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}\r\n                    <br/>\r\n                     الرقم الجامعي : {{eaData.Term_Exam_Without_Schedule.values.std_id}}\r\n                     <br/>\r\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt1}}\r\n                     {{eaData.Term_Exam_Without_Schedule.values.student_name}}\r\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt2}}\r\n                     {{eaData.Term_Exam_Without_Schedule.values.std_id}}\r\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt3}}\r\n                     {{eaData.Term_Exam_Without_Schedule.values.coll}}\r\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt4}}\r\n                     {{eaData.Term_Exam_Without_Schedule.values.term}}\r\n                     <br/>\r\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt5}}\r\n       \r\n                     {{eaData.Term_Exam_Without_Schedule.values.startDay}}\r\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt6}}\r\n                     {{eaData.Term_Exam_Without_Schedule.values.endDay}}\r\n                     <br/>\r\n                     {{eaData.Term_Exam_Without_Schedule.labels.txt7}}\r\n       <br>\r\n       {{eaData.Term_Exam_Without_Schedule.labels.txt8}}\r\n\r\n       {{eaData.Term_Exam_Without_Schedule.labels.txt9}}\r\n <br>\r\n {{eaData.Term_Exam_Without_Schedule.labels.txt10}}\r\n \r\n {{eaData.Term_Exam_Without_Schedule.labels.txt11}}\r\n\r\n\r\n\r\n                \r\n                    </p>         \r\n                    <div  class=\"btn-group btn-group-justified col-md-12 \">\r\n                        <div class=\"col-md-4\"></div>\r\n                        <a class=\"btn btn-primary\" href=\"{{term}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                          طباعة</a>\r\n                          <a class=\"btn btn-primary\" href=\"{{termEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                            Print</a>\r\n                          <div class=\"col-md-4\"></div>\r\n                        </div>\r\n            </div>\r\n            <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\r\n                <h5 class=\"card-title text-center\">{{eaData.Final_Exam_With_Schedule.labels.title}}  </h5>\r\n                <p class=\"card-text\" style=\"text-align: right\" > \r\n                    {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}\r\n                    <br/>\r\n                     الرقم الجامعي : {{eaData.Final_Exam_With_Schedule.values.std_id}}\r\n                \r\n                <br/>\r\n                {{eaData.Final_Exam_With_Schedule.labels.txt1}}\r\n                {{eaData.Final_Exam_With_Schedule.values.student_name}}\r\n                {{eaData.Final_Exam_With_Schedule.labels.txt2}}\r\n                {{eaData.Final_Exam_With_Schedule.values.std_id}}\r\n                {{eaData.Final_Exam_With_Schedule.labels.txt3}}\r\n                {{eaData.Final_Exam_With_Schedule.values.coll}}\r\n                {{eaData.Final_Exam_With_Schedule.labels.txt4}}\r\n                {{eaData.Final_Exam_With_Schedule.values.term}}\r\n                <br/>\r\n                {{eaData.Final_Exam_With_Schedule.labels.txt5}}\r\n  \r\n                {{eaData.Final_Exam_With_Schedule.values.startDay}}\r\n                {{eaData.Final_Exam_With_Schedule.labels.txt6}}\r\n                {{eaData.Final_Exam_With_Schedule.values.endDay}}\r\n                <br/>\r\n                {{eaData.Final_Exam_With_Schedule.labels.txt7}}\r\n  \r\n                \r\n  \r\n                \r\n                    </p>         \r\n                <table class=\"table\">\r\n                    <thead>\r\n                      <tr>\r\n                        <th scope=\"col\">CRN </th>\r\n                        <th scope=\"col\">اسم المقرر</th>\r\n                        <th scope=\"col\">اليوم</th>\r\n                        <th scope=\"col\">الوقت</th>\r\n  \r\n                      </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                      <tr *ngFor=\"let it of eaData.Final_Exam_With_Schedule.Final_Schedule\">\r\n                        <td >{{it.CRN}}</td>\r\n                        <td>{{it.CRSE_TITLE}}</td>\r\n                        <td>{{it.CRSE_DAY}}</td>\r\n                        <td style=\"direction:ltr\">({{toHTML(it.CRSE_TIME)}})</td>\r\n  \r\n                      </tr>\r\n                     \r\n                    </tbody>\r\n                  </table>\r\n                  <br>\r\n                  <p style=\"text-align: right\">\r\n                  {{eaData.Final_Exam_With_Schedule.labels.txt8}}\r\n           \r\n                  {{eaData.Final_Exam_With_Schedule.labels.txt9}}\r\n            <br>\r\n            {{eaData.Final_Exam_With_Schedule.labels.txt10}}\r\n            \r\n            {{eaData.Final_Exam_With_Schedule.labels.txt11}}</p>\r\n                      \r\n            <div  class=\"btn-group btn-group-justified col-md-12 \">\r\n                <div class=\"col-md-4\"></div>\r\n                <a class=\"btn btn-primary\" href=\"{{finalschedule}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                  طباعة</a>\r\n                  <a class=\"btn btn-primary\" href=\"{{finalscheduleEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                    Print</a>\r\n                <div class=\"col-md-4\"></div>\r\n              \r\n                </div>\r\n                </div>\r\n                <div class=\"tab-pane fade p-3\" id=\"four\" role=\"tabpanel\" aria-labelledby=\"four-tab\">\r\n                    <h5 class=\"card-title text-center\">{{eaData.Final_Exam_Without_Schedule.labels.title}}  </h5>\r\n                    <p class=\"card-text\" style=\"text-align: right\" > \r\n                        {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}\r\n                        <br/>\r\n                         الرقم الجامعي : {{eaData.Final_Exam_Without_Schedule.values.std_id}}\r\n                         <br/>\r\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt1}}\r\n                         {{eaData.Final_Exam_Without_Schedule.values.student_name}}\r\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt2}}\r\n                         {{eaData.Final_Exam_Without_Schedule.values.std_id}}\r\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt3}}\r\n                         {{eaData.Final_Exam_Without_Schedule.values.coll}}\r\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt4}}\r\n                         {{eaData.Final_Exam_Without_Schedule.values.term}}\r\n                         <br/>\r\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt5}}\r\n           \r\n                         {{eaData.Final_Exam_Without_Schedule.values.startDay}}\r\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt6}}\r\n                         {{eaData.Final_Exam_Without_Schedule.values.endDay}}\r\n                         <br/>\r\n                         {{eaData.Final_Exam_Without_Schedule.labels.txt7}}\r\n           <br>\r\n           {{eaData.Final_Exam_Without_Schedule.labels.txt8}}\r\n    \r\n           {{eaData.Final_Exam_Without_Schedule.labels.txt9}}\r\n     <br>\r\n     {{eaData.Final_Exam_Without_Schedule.labels.txt10}}\r\n     \r\n     {{eaData.Final_Exam_Without_Schedule.labels.txt11}}\r\n    \r\n    \r\n    \r\n                    \r\n                        </p>    \r\n                        <div  class=\"btn-group btn-group-justified col-md-12 \">\r\n                            <div class=\"col-md-4\"></div>\r\n                            <a class=\"btn btn-primary\" href=\"{{final}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                              طباعة</a>\r\n                              <a class=\"btn btn-primary\" href=\"{{finalEn}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                                English</a>\r\n                              \r\n                            <div class=\"col-md-4\"></div>\r\n                          \r\n                            </div>\r\n                      </div>"
 
 /***/ }),
 
@@ -4567,7 +6529,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  exams-result-objection works!\n</p>\n"
+module.exports = "<p>\r\n  exams-result-objection works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -4623,7 +6585,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  exams-schedule works!\n</p>\n"
+module.exports = "<p>\r\n  exams-schedule works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -4892,7 +6854,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">  افادة الرسوم الداسية</h3>\n    \n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-10\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>اسم الطالب </b> </div>\n        </div>\n        <input  value=\"{{feesData.values.std_name}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n\n   <div  class=\"col-md-1\"></div>\n\n</div>\n<div class=\"row\">\n    <div  class=\"col-md-1\"></div>\n\n    <div class=\"col-md-5\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b> رقم الهويه </b> </div>\n          </div>\n          <input name=\"ID\"   value=\"{{feesData.values.ssn}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    <div class=\"col-md-5\">\n  \n        <div class=\"form-group\">\n        \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b>  رقم الطالب / الطالبه</b> </div>\n              </div>\n              <input name=\"fsermester\"  value=\"{{feesData.values.std_id}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n      </div>  <div  class=\"col-md-1\"></div>\n\n  </div>\n  \n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b> الكلية     </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\" {{feesData.values.coll}}  \"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-5\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>التخصص    </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{feesData.values.major}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n        <div  class=\"col-md-1\"></div>\n\n    </div>\n    \n    <div class=\"row\">\n        <div  class=\"col-md-1\"></div>\n\n        <div class=\"col-md-5\">\n          <div class=\"form-group\">\n            \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b> المستووى الدراسي </b> </div>\n              </div>\n              <input name=\"AcademicCurrentStatus\"  value=\"{{feesData.values.level}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n        </div>\n\n        <div class=\"col-md-5\">\n      \n            <div class=\"form-group\">\n            \n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"><b> المرحله  </b> </div>\n                  </div>\n                  <input name=\"Fees\"  value=\"{{feesData.values.stage}}\"   class=\"form-control\" readonly>\n                </div>\n              </div>   \n          </div>        <div  class=\"col-md-1\"></div>\n\n      </div> \n      <div class=\"row\">\n          <div  class=\"col-md-1\"></div>\n  \n          <div class=\"col-md-5\">\n            <div class=\"form-group\">\n              \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>  الحالة </b> </div>\n                </div>\n                <input name=\"AcademicCurrentStatus\"  value=\"{{feesData.values.status}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n          </div>\n  \n          <div class=\"col-md-5\">\n        \n              <div class=\"form-group\">\n              \n                  <div class=\"input-group\">\n                    <div class=\"input-group-prepend\">\n                      <div class=\"input-group-text\"><b> الفرع  </b> </div>\n                    </div>\n                    <input name=\"Fees\"  value=\"{{feesData.values.branch}}\"   class=\"form-control\" readonly>\n                  </div>\n                </div>   \n            </div>        <div  class=\"col-md-1\"></div>\n  \n        </div> \n    </div>\n      <div class=\"jumbotron jumbtron-fluid\">\n\n   <div class=\"row\">\n\n      <p style=\"direction: rtl;float: right;text-align: right;padding-right: 50px\">\n          {{feesData.labels.txt1}}   {{feesData.values.term}}\n          {{feesData.labels.txt2}} {{feesData.values.final_graduation_GPA}} {{feesData.labels.txt7}}\n         <br/>\n          {{feesData.labels.txt3}}\n          {{feesData.values.total}}\n\n          {{feesData.labels.txt4}}\n          <br/>\n            {{feesData.labels.txt5}}\n          <br/>\n          <b> {{feesData.labels.txt6}}</b>\n        </p>\n      </div> </div>\n        <div  class=\"btn-group btn-group-justified col-md-12 \">\n            <div class=\"col-md-4\"></div>\n            <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              طباعة</a>\n            <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              Print</a>\n            <div class=\"col-md-4\"></div>\n          \n            </div>\n   "
+module.exports = "<div class=\"jumbotron jumbtron-fluid\">\r\n    <h3 class=\"display-5 text-center\">  افادة الرسوم الداسية</h3>\r\n    \r\n    <div class=\"row\">\r\n  <div  class=\"col-md-1\"></div>\r\n  <div class=\"col-md-10\">\r\n    <div class=\"form-group\">\r\n      \r\n      <div class=\"input-group\">\r\n        <div class=\"input-group-prepend\">\r\n          <div class=\"input-group-text\"><b>اسم الطالب </b> </div>\r\n        </div>\r\n        <input  value=\"{{feesData.values.std_name}}\"  class=\"form-control\" readonly>\r\n      </div>\r\n    </div>   \r\n  </div>\r\n\r\n   <div  class=\"col-md-1\"></div>\r\n\r\n</div>\r\n<div class=\"row\">\r\n    <div  class=\"col-md-1\"></div>\r\n\r\n    <div class=\"col-md-5\">\r\n      <div class=\"form-group\">\r\n        \r\n        <div class=\"input-group\">\r\n          <div class=\"input-group-prepend\">\r\n            <div class=\"input-group-text\"><b> رقم الهويه </b> </div>\r\n          </div>\r\n          <input name=\"ID\"   value=\"{{feesData.values.ssn}}\"  class=\"form-control\" readonly>\r\n        </div>\r\n      </div>   \r\n    </div>\r\n    <div class=\"col-md-5\">\r\n  \r\n        <div class=\"form-group\">\r\n        \r\n            <div class=\"input-group\">\r\n              <div class=\"input-group-prepend\">\r\n                <div class=\"input-group-text\"><b>  رقم الطالب / الطالبه</b> </div>\r\n              </div>\r\n              <input name=\"fsermester\"  value=\"{{feesData.values.std_id}}\"   class=\"form-control\" readonly>\r\n            </div>\r\n          </div>   \r\n      </div>  <div  class=\"col-md-1\"></div>\r\n\r\n  </div>\r\n  \r\n  <div class=\"row\">\r\n      <div  class=\"col-md-1\"></div>\r\n\r\n      <div class=\"col-md-5\">\r\n        <div class=\"form-group\">\r\n          \r\n          <div class=\"input-group\">\r\n            <div class=\"input-group-prepend\">\r\n              <div class=\"input-group-text\"><b> الكلية     </b> </div>\r\n            </div>\r\n            <input name=\"accamdeicStatus\"   value=\" {{feesData.values.coll}}  \"  class=\"form-control\" readonly>\r\n          </div>\r\n        </div>   \r\n      </div>\r\n      <div class=\"col-md-5\">\r\n    \r\n          <div class=\"form-group\">\r\n          \r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><b>التخصص    </b> </div>\r\n                </div>\r\n                <input name=\"TotalGrade\"  value=\"{{feesData.values.major}}\"   class=\"form-control\" readonly>\r\n              </div>\r\n            </div>   \r\n        </div>\r\n        <div  class=\"col-md-1\"></div>\r\n\r\n    </div>\r\n    \r\n    <div class=\"row\">\r\n        <div  class=\"col-md-1\"></div>\r\n\r\n        <div class=\"col-md-5\">\r\n          <div class=\"form-group\">\r\n            \r\n            <div class=\"input-group\">\r\n              <div class=\"input-group-prepend\">\r\n                <div class=\"input-group-text\"><b> المستووى الدراسي </b> </div>\r\n              </div>\r\n              <input name=\"AcademicCurrentStatus\"  value=\"{{feesData.values.level}}\"   class=\"form-control\" readonly>\r\n            </div>\r\n          </div>   \r\n        </div>\r\n\r\n        <div class=\"col-md-5\">\r\n      \r\n            <div class=\"form-group\">\r\n            \r\n                <div class=\"input-group\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <div class=\"input-group-text\"><b> المرحله  </b> </div>\r\n                  </div>\r\n                  <input name=\"Fees\"  value=\"{{feesData.values.stage}}\"   class=\"form-control\" readonly>\r\n                </div>\r\n              </div>   \r\n          </div>        <div  class=\"col-md-1\"></div>\r\n\r\n      </div> \r\n      <div class=\"row\">\r\n          <div  class=\"col-md-1\"></div>\r\n  \r\n          <div class=\"col-md-5\">\r\n            <div class=\"form-group\">\r\n              \r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><b>  الحالة </b> </div>\r\n                </div>\r\n                <input name=\"AcademicCurrentStatus\"  value=\"{{feesData.values.status}}\"   class=\"form-control\" readonly>\r\n              </div>\r\n            </div>   \r\n          </div>\r\n  \r\n          <div class=\"col-md-5\">\r\n        \r\n              <div class=\"form-group\">\r\n              \r\n                  <div class=\"input-group\">\r\n                    <div class=\"input-group-prepend\">\r\n                      <div class=\"input-group-text\"><b> الفرع  </b> </div>\r\n                    </div>\r\n                    <input name=\"Fees\"  value=\"{{feesData.values.branch}}\"   class=\"form-control\" readonly>\r\n                  </div>\r\n                </div>   \r\n            </div>        <div  class=\"col-md-1\"></div>\r\n  \r\n        </div> \r\n    </div>\r\n      <div class=\"jumbotron jumbtron-fluid\">\r\n\r\n   <div class=\"row\">\r\n\r\n      <p style=\"direction: rtl;float: right;text-align: right;padding-right: 50px\">\r\n          {{feesData.labels.txt1}}   {{feesData.values.term}}\r\n          {{feesData.labels.txt2}} {{feesData.values.final_graduation_GPA}} {{feesData.labels.txt7}}\r\n         <br/>\r\n          {{feesData.labels.txt3}}\r\n          {{feesData.values.total}}\r\n\r\n          {{feesData.labels.txt4}}\r\n          <br/>\r\n            {{feesData.labels.txt5}}\r\n          <br/>\r\n          <b> {{feesData.labels.txt6}}</b>\r\n        </p>\r\n      </div> </div>\r\n        <div  class=\"btn-group btn-group-justified col-md-12 \">\r\n            <div class=\"col-md-4\"></div>\r\n            <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n              طباعة</a>\r\n            <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n              Print</a>\r\n            <div class=\"col-md-4\"></div>\r\n          \r\n            </div>\r\n   "
 
 /***/ }),
 
@@ -4984,6 +6946,62 @@ var TuitionFeesService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/footer/footer.component.css":
+/*!*********************************************!*\
+  !*** ./src/app/footer/footer.component.css ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/footer/footer.component.html":
+/*!**********************************************!*\
+  !*** ./src/app/footer/footer.component.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<footer class=\"footer\">\r\n  <div class=\"w-100 clearfix\">\r\n      <span class=\"text-center\"> © 2019 الجامعة السعودية الإلكترونية . جميع الحقوق محفوظة  </span>\r\n  </div>\r\n</footer>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/footer/footer.component.ts":
+/*!********************************************!*\
+  !*** ./src/app/footer/footer.component.ts ***!
+  \********************************************/
+/*! exports provided: FooterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var FooterComponent = /** @class */ (function () {
+    function FooterComponent() {
+    }
+    FooterComponent.prototype.ngOnInit = function () {
+    };
+    FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-footer',
+            template: __webpack_require__(/*! ./footer.component.html */ "./src/app/footer/footer.component.html"),
+            styles: [__webpack_require__(/*! ./footer.component.css */ "./src/app/footer/footer.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], FooterComponent);
+    return FooterComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/graduates-affairs/graduate-state/graduate-state.component.css":
 /*!*******************************************************************************!*\
   !*** ./src/app/graduates-affairs/graduate-state/graduate-state.component.css ***!
@@ -5002,7 +7020,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">   {{graduateData.labels.title}}</h3>\n    <h6 class=\"display-6 text-center\">\n {{graduateData.labels.date}}:{{graduateData.values.date}}</h6>\n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-10\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>{{graduateData.labels.student_name}} </b> </div>\n        </div>\n        <input  value=\"{{graduateData.values.student_name}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n\n   <div  class=\"col-md-1\"></div>\n\n</div>\n<div class=\"row\">\n    <div  class=\"col-md-1\"></div>\n\n    <div class=\"col-md-5\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b> {{graduateData.labels.college}} </b> </div>\n          </div>\n          <input name=\"ID\"   value=\"{{graduateData.values.coll}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n    <div class=\"col-md-5\">\n  \n        <div class=\"form-group\">\n        \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b>  رقم الطالب / الطالبه</b> </div>\n              </div>\n              <input name=\"fsermester\"  value=\"{{graduateData.values.std_id}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n      </div>  <div  class=\"col-md-1\"></div>\n\n  </div>\n  \n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b> {{graduateData.labels.ssn}}    </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\" {{graduateData.values.ssn}}  \"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-5\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>{{graduateData.labels.major}}    </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{graduateData.values.major}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n        <div  class=\"col-md-1\"></div>\n\n    </div>\n    \n    <div class=\"row\">\n        <div  class=\"col-md-1\"></div>\n\n        <div class=\"col-md-5\">\n          <div class=\"form-group\">\n            \n            <div class=\"input-group\">\n              <div class=\"input-group-prepend\">\n                <div class=\"input-group-text\"><b> {{graduateData.labels.branch}} </b> </div>\n              </div>\n              <input name=\"AcademicCurrentStatus\"  value=\"{{graduateData.values.branch}}\"   class=\"form-control\" readonly>\n            </div>\n          </div>   \n        </div>\n\n        <div class=\"col-md-5\">\n      \n            <div class=\"form-group\">\n            \n                <div class=\"input-group\">\n                  <div class=\"input-group-prepend\">\n                    <div class=\"input-group-text\"><b> المرحله  </b> </div>\n                  </div>\n                  <input name=\"Fees\"  value=\"{{graduateData.values.level}}\"   class=\"form-control\" readonly>\n                </div>\n              </div>   \n          </div>        <div  class=\"col-md-1\"></div>\n\n      </div> </div>\n      <div class=\"jumbotron jumbtron-fluid\">\n\n   <div class=\"row\">\n\n      <p style=\"direction: rtl;float: right;text-align: right;padding-right: 50px\">\n          {{graduateData.labels.txt1}}   {{graduateData.values.term}}\n          {{graduateData.labels.txt2}} {{graduateData.values.final_graduation_GPA}} {{graduateData.labels.txt7}}\n         <br/>\n          {{graduateData.labels.txt3}}\n          <br/>\n          {{graduateData.labels.txt4}}\n          <br/>\n          <b>ملحوظة</b>  {{graduateData.labels.txt5}}\n          <br/>\n          <b> {{graduateData.labels.txt6}}</b>\n        </p>\n      </div> </div>\n        <div  class=\"btn-group btn-group-justified col-md-12 \">\n            <div class=\"col-md-4\"></div>\n            <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              طباعة</a>\n            <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              Print</a>\n            <div class=\"col-md-4\"></div>\n          \n            </div>\n   "
+module.exports = "<div class=\"main-content\" style=\"padding-top:0;\">\r\n\r\n</div>\r\n\r\n\r\n<div class=\"jumbotron jumbtron-fluid\">\r\n    <h3 class=\"display-5 text-center\">   {{graduateData.labels.title}}</h3>\r\n    <h6 class=\"display-6 text-center\">\r\n {{graduateData.labels.date}}:{{graduateData.values.date}}</h6>\r\n    <div class=\"row\">\r\n  <div  class=\"col-md-1\"></div>\r\n  <div class=\"col-md-10\">\r\n    <div class=\"form-group\">\r\n      \r\n      <div class=\"input-group\">\r\n        <div class=\"input-group-prepend\">\r\n          <div class=\"input-group-text\"><b>{{graduateData.labels.student_name}} </b> </div>\r\n        </div>\r\n        <input  value=\"{{graduateData.values.student_name}}\"  class=\"form-control\" readonly>\r\n      </div>\r\n    </div>   \r\n  </div>\r\n\r\n   <div  class=\"col-md-1\"></div>\r\n\r\n</div>\r\n<div class=\"row\">\r\n    <div  class=\"col-md-1\"></div>\r\n\r\n    <div class=\"col-md-5\">\r\n      <div class=\"form-group\">\r\n        \r\n        <div class=\"input-group\">\r\n          <div class=\"input-group-prepend\">\r\n            <div class=\"input-group-text\"><b> {{graduateData.labels.college}} </b> </div>\r\n          </div>\r\n          <input name=\"ID\"   value=\"{{graduateData.values.coll}}\"  class=\"form-control\" readonly>\r\n        </div>\r\n      </div>   \r\n    </div>\r\n    <div class=\"col-md-5\">\r\n  \r\n        <div class=\"form-group\">\r\n        \r\n            <div class=\"input-group\">\r\n              <div class=\"input-group-prepend\">\r\n                <div class=\"input-group-text\"><b>  رقم الطالب / الطالبه</b> </div>\r\n              </div>\r\n              <input name=\"fsermester\"  value=\"{{graduateData.values.std_id}}\"   class=\"form-control\" readonly>\r\n            </div>\r\n          </div>   \r\n      </div>  <div  class=\"col-md-1\"></div>\r\n\r\n  </div>\r\n  \r\n  <div class=\"row\">\r\n      <div  class=\"col-md-1\"></div>\r\n\r\n      <div class=\"col-md-5\">\r\n        <div class=\"form-group\">\r\n          \r\n          <div class=\"input-group\">\r\n            <div class=\"input-group-prepend\">\r\n              <div class=\"input-group-text\"><b> {{graduateData.labels.ssn}}    </b> </div>\r\n            </div>\r\n            <input name=\"accamdeicStatus\"   value=\" {{graduateData.values.ssn}}  \"  class=\"form-control\" readonly>\r\n          </div>\r\n        </div>   \r\n      </div>\r\n      <div class=\"col-md-5\">\r\n    \r\n          <div class=\"form-group\">\r\n          \r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><b>{{graduateData.labels.major}}    </b> </div>\r\n                </div>\r\n                <input name=\"TotalGrade\"  value=\"{{graduateData.values.major}}\"   class=\"form-control\" readonly>\r\n              </div>\r\n            </div>   \r\n        </div>\r\n        <div  class=\"col-md-1\"></div>\r\n\r\n    </div>\r\n    \r\n    <div class=\"row\">\r\n        <div  class=\"col-md-1\"></div>\r\n\r\n        <div class=\"col-md-5\">\r\n          <div class=\"form-group\">\r\n            \r\n            <div class=\"input-group\">\r\n              <div class=\"input-group-prepend\">\r\n                <div class=\"input-group-text\"><b> {{graduateData.labels.branch}} </b> </div>\r\n              </div>\r\n              <input name=\"AcademicCurrentStatus\"  value=\"{{graduateData.values.branch}}\"   class=\"form-control\" readonly>\r\n            </div>\r\n          </div>   \r\n        </div>\r\n\r\n        <div class=\"col-md-5\">\r\n      \r\n            <div class=\"form-group\">\r\n            \r\n                <div class=\"input-group\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <div class=\"input-group-text\"><b> المرحله  </b> </div>\r\n                  </div>\r\n                  <input name=\"Fees\"  value=\"{{graduateData.values.level}}\"   class=\"form-control\" readonly>\r\n                </div>\r\n              </div>   \r\n          </div>        <div  class=\"col-md-1\"></div>\r\n\r\n      </div> </div>\r\n      <div class=\"jumbotron jumbtron-fluid\">\r\n\r\n   <div class=\"row\">\r\n\r\n      <p style=\"direction: rtl;float: right;text-align: right;padding-right: 50px\">\r\n          {{graduateData.labels.txt1}}   {{graduateData.values.term}}\r\n          {{graduateData.labels.txt2}} {{graduateData.values.final_graduation_GPA}} {{graduateData.labels.txt7}}\r\n         <br/>\r\n          {{graduateData.labels.txt3}}\r\n          <br/>\r\n          {{graduateData.labels.txt4}}\r\n          <br/>\r\n          <b>ملحوظة</b>  {{graduateData.labels.txt5}}\r\n          <br/>\r\n          <b> {{graduateData.labels.txt6}}</b>\r\n        </p>\r\n      </div> </div>\r\n        <div  class=\"btn-group btn-group-justified col-md-12 \">\r\n            <div class=\"col-md-4\"></div>\r\n            <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n              طباعة</a>\r\n            <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n              Print</a>\r\n            <div class=\"col-md-4\"></div>\r\n          \r\n            </div>\r\n   "
 
 /***/ }),
 
@@ -5240,7 +7258,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n    <a class=\"navbar-brand\" href=\"#\">تطبيق تجريبي</a>\n    <button class=\"navbar-toggler d-lg-none\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n      \n        <ul *ngIf=\"status\" class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n               <a class=\"nav-link\" (click)=\"logout()\" href=\"#\">تسجيل خروج</a>\n            </li>\n            <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/dashboard\">home</a> \n            </li>   \n           \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">بيانات</a> \n              </li> \n                    \n          </ul>\n\n          <ul *ngIf=\"!status\" class=\"nav navbar-nav\">\n             \n            <li class=\"nav-item\">\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/status\">الحالة </a> \n              </li>  \n              <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/certificate\">  تعريف</a> \n                </li>  \n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/graduates/statement\">  خريج </a> \n                    </li>  \n                    <li class=\"nav-item\">\n                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/record\"> السجل  </a> \n                      </li>  \n                      <li class=\"nav-item\">\n                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/finance/fees\"> المصاريف  </a> \n                          </li> \n                          <li class=\"nav-item\">\n                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/medicalreport\">  الطبي  </a> \n                              </li> \n\n                              <li class=\"nav-item\">\n                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/lectabs\">   الغياب  </a> \n                                  </li> \n\n                                           <li class=\"nav-item\">\n                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attend\">  اختبارات   </a> \n                                                  </li> \n                                                  <li class=\"nav-item\">\n                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attendapp\"> اثبات ح    </a> \n                                                      </li> \n                                                      <li class=\"nav-item\">\n                                                        <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/withdrawuniv\"> انسحاب     </a> \n                                                        </li>\n                                                        <li class=\"nav-item\">\n                                                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/postpone\"> تاجيل     </a> \n                                                          </li>\n                                                          <li class=\"nav-item\">\n                                                            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/summer\"> الصيفي     </a> \n                                                            </li>\n                                                            <li class=\"nav-item\">\n                                                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/cancelcourse\"> غ مقرر     </a> \n                                                              </li>\n                                                              <li class=\"nav-item\">\n                                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/execuse\"> الاعتذار     </a> \n                                                                  </li>\n                                                                  <li class=\"nav-item\">\n                                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/equalize\"> معادلة     </a> \n                                                                      </li>\n                                                                      <li class=\"nav-item\">\n                                                                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/eequalize\"> E     </a> \n                                                                          </li>\n                                                                          <li class=\"nav-item\">\n                                                                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/reenrol\"> Eroll    </a> \n                                                                              </li>\n                                                                              <li class=\"nav-item\">\n                                                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/changemajor\"> major    </a> \n                                                                                  </li>\n                                      \n          </ul>\n                     \n          \n    </div>\n  </nav>\n</header>\n<br/>\n<br/>\n<br/>"
+module.exports = "<!--header>\r\n  <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\r\n\r\n    <button class=\"navbar-toggler d-lg-none\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\r\n      \r\n        <ul *ngIf=\"status\" class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item\">\r\n               <a class=\"nav-link\" (click)=\"logout()\" href=\"#\">تسجيل خروج</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/dashboard\">home</a> \r\n            </li>   \r\n           \r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"dashboard/posts\">بيانات</a> \r\n              </li> \r\n                    \r\n          </ul>\r\n\r\n          <ul *ngIf=\"!status\" class=\"nav navbar-nav\">\r\n             \r\n            <li class=\"nav-item\">\r\n              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/status\">الحالة </a> \r\n              </li>  \r\n              <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/certificate\">  تعريف</a> \r\n                </li>  \r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/graduates/statement\">  خريج </a> \r\n                    </li>  \r\n                    <li class=\"nav-item\">\r\n                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/academicaff/record\"> السجل  </a> \r\n                      </li>  \r\n                      <li class=\"nav-item\">\r\n                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/finance/fees\"> المصاريف  </a> \r\n                          </li> \r\n                          <li class=\"nav-item\">\r\n                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/medicalreport\">  الطبي  </a> \r\n                              </li> \r\n\r\n                              <li class=\"nav-item\">\r\n                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/lecabsence/lectabs\">   الغياب  </a> \r\n                                  </li> \r\n\r\n                                           <li class=\"nav-item\">\r\n                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attend\">  اختبارات   </a> \r\n                                                  </li> \r\n                                                  <li class=\"nav-item\">\r\n                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/exams/attendapp\"> اثبات ح    </a> \r\n                                                      </li> \r\n                                                      <li class=\"nav-item\">\r\n                                                        <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/withdrawuniv\"> انسحاب     </a> \r\n                                                        </li>\r\n                                                        <li class=\"nav-item\">\r\n                                                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/postpone\"> تاجيل     </a> \r\n                                                          </li>\r\n                                                          <li class=\"nav-item\">\r\n                                                            <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/summer\"> الصيفي     </a> \r\n                                                            </li>\r\n                                                            <li class=\"nav-item\">\r\n                                                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/cancelcourse\"> غ مقرر     </a> \r\n                                                              </li>\r\n                                                              <li class=\"nav-item\">\r\n                                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/execuse\"> الاعتذار     </a> \r\n                                                                  </li>\r\n                                                                  <li class=\"nav-item\">\r\n                                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/equalize\"> معادلة     </a> \r\n                                                                      </li>\r\n                                                                      <li class=\"nav-item\">\r\n                                                                          <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/eequalize\"> E     </a> \r\n                                                                          </li>\r\n                                                                          <li class=\"nav-item\">\r\n                                                                              <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/reenrol\"> Eroll    </a> \r\n                                                                              </li>\r\n                                                                              <li class=\"nav-item\">\r\n                                                                                  <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/changemajor\"> major    </a> \r\n                                                                                  </li>\r\n                                                                                  <li class=\"nav-item\">\r\n                                                                                    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/changerequest\"> CR    </a> \r\n                                                                                    </li>\r\n                                                                                    <li class=\"nav-item\">\r\n                                                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/lecexecuse\"> LE    </a> \r\n                                                                                      </li>\r\n                                                                                    <li class=\"nav-item\">\r\n                                                                                      <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/procedures/objectexam\"> OE   </a> \r\n                                                                                      </li>\r\n                                      \r\n          </ul>\r\n                     \r\n          \r\n    </div>\r\n  </nav>\r\n</header-->\r\n\r\n<header class=\"header-top\" header-theme=\"\" >\r\n  <div class=\"container-fluid\">\r\n      <div class=\"d-flex justify-content-between\">\r\n                <div class=\"top-menu d-flex align-items-center\">\r\n              <a type=\"\" class=\"btn-icon mobile-nav-toggle d-lg-none\"><span></span></a>\r\n              <div class=\"d-none d-sm-block\">\r\n               <a href=\"#\" class=\"social\"><i class=\"ik ik-facebook\"></i></a>\r\n               <a href=\"#\" class=\"social\"><i class=\"ik ik-youtube\"></i></a>\r\n               <a href=\"#\" class=\"social\"><i class=\"ik ik-twitter\"></i></a>\r\n               <a href=\"#\" class=\"social\"><i class=\"ik ik-instagram\"></i></a>\r\n           </div>\r\n              <div class=\"header-search d-none d-sm-block\">\r\n                  <div class=\"input-group \">\r\n                      <span class=\"input-group-addon search-close\"><i class=\"ik ik-x\"></i></span>\r\n                      <input type=\"text\" class=\"form-control\">\r\n                      <span class=\"input-group-addon search-btn\"><i class=\"ik ik-search\"></i></span>\r\n                  </div>\r\n              </div>\r\n                    \r\n               <div class=\"d-none d-sm-block\">   \r\n              <a href=\"#\" class=\"social\" style=\"font-size: 20px; font-weight: 400\"> E  </a>\r\n               <a href=\"#\" class=\"social\"  style=\"font-size: 20px; margin-top: -6px; display: none\"> ع</a>\r\n                </div>\r\n\r\n\r\n          </div>\r\n        \r\n       \r\n          <div class=\"top-menu d-flex align-items-center\">\r\n               <div class=\"dropdown\">\r\n                  <a class=\"dropdown-toggle pub-ser\" href=\"#\" id=\"menuDropdown\" data-toggle=\"dropdown\">\r\n                    <i class=\"ik ik-chevron-down\"></i>  طلباتي </a>\r\n                  <div class=\"dropdown-menu dropdown-menu-right menu-grid pub-ser2\">\r\n                  <p style=\"border-radius: 5px 5px 0 0\"> <span class=\"badge bg-danger\" style=\"padding: 3px 6px\">  2</span> &nbsp; طلبات قيد التنفيذ </p>\r\n                      <ul class=\"list-group\" >\r\n                        <li class=\"list-group-item active\"> إخلاء طرف<span class=\"badge bg-danger\">ينتهي بعد 1 يوم</span></li>\r\n                        <li class=\"list-group-item \"> خدمة سداد الرسوم الدراسية<span class=\"badge bg-danger\">ينتهي بعد 3 ساعة</span></li>\r\n                      </ul>\r\n                      \r\n                        <p>   <span class=\"badge bg-danger\"style=\"padding: 3px 6px\">  4</span> &nbsp; طلبات منتهية </p>\r\n                      <ul class=\"list-group\" >\r\n                        <li class=\"list-group-item active\">خدمة الإعفاء من الرسوم الدراسية </li>\r\n                        <li class=\"list-group-item \"> خدمة نظام إدارة الهوية </li>\r\n                        <li class=\"list-group-item active\"> شهادة التعريف</li>\r\n                       <li class=\"list-group-item \">الحالة الأكاديمية</li>\r\n                      </ul>\r\n                  </div>\r\n              </div>\r\n              \r\n              <div class=\"dropdown\">\r\n                  <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"notiDropdown\"  data-toggle=\"dropdown\">\r\n                  <i class=\"ik ik-bell\"></i><span class=\"badge bg-danger\">3</span></a>\r\n                  <div class=\"dropdown-menu dropdown-menu-right notification-dropdown\">\r\n                      <h4 class=\"header\">الإشعارات</h4>\r\n                      <div class=\"notifications-wrap\">\r\n                          <a href=\"#\" class=\"media\">\r\n                           <span class=\"d-flex\"><i class=\"ik ik-check\"></i>  </span>\r\n                              <span class=\"media-body\">\r\n                                  <span class=\"heading-font-family media-heading\">تمت الموافقه ع طلبك</span> \r\n                              </span>\r\n                          </a>\r\n                          <a href=\"#\" class=\"media\">\r\n                           <span class=\"d-flex\"><i class=\"ik ik-check\"></i>  </span>\r\n                              <span class=\"media-body\">\r\n                                  <span class=\"heading-font-family media-heading\">لديك خبر جديد</span> \r\n                              </span>\r\n                          </a>\r\n                           <a href=\"#\" class=\"media\">                                                                                   <span class=\"d-flex\"><i class=\"ik ik-check\"></i>  </span>\r\n                              <span class=\"media-body\">\r\n                                  <span class=\"heading-font-family media-heading\">لديك خبر جديد</span> \r\n                              </span>\r\n                          </a>\r\n                      </div>\r\n                      <div class=\"footer\"><a href=\"\">كل الإشعارات</a></div>\r\n                  </div>\r\n              </div>\r\n              \r\n             \r\n              <div class=\"dropdown\">\r\n                  <a class=\"dropdown-toggle pub-ser\" href=\"#\" id=\"userDropdown\" data-toggle=\"dropdown\">\r\n                  <i class=\"ik ik-chevron-down\"></i>\r\n                 <img class=\"avatar\" src=\"assets/images/avatar.png\" alt=\"\"> <span style=\"font-size: 11px\"> مرحبا : محمد علي </span>   </a>\r\n                  <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"userDropdown\">\r\n                      <a class=\"dropdown-item\" href=\"\">الملف الشخصي <i class=\"ik ik-user dropdown-icon\"></i> </a>\r\n                      <a class=\"dropdown-item\" href=\"\">تسجيل خروج <i class=\"ik ik-power dropdown-icon\"></i> </a>\r\n                  </div>\r\n              </div>\r\n\r\n          </div>\r\n      </div>\r\n  </div>\r\n</header>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -5308,7 +7326,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main role=\"main\"  >\n \n  <!-- Main jumbotron for a primary marketing message or call to action -->\n  <div   class=\"jumbotron\">\n    <div class=\"container\">\n      <h1 class=\"display-3\"> </h1>\n      <p>This demo shows  flow using Angular and ASP.NET Core 3.0 WebApi</p>\n      <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\" routerLink=\"/register\">تسجيل مستخدم جديد</a>\n        \n        <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\" routerLink=\"/login\">تسجيل دخول  </a>       \n        <button class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\"  (click)=\"onPrintFile()\"> طباعة  </button></p>       \n\n      </div>\n  </div>\n\n</main>\n"
+module.exports = "\r\n   \r\n\r\n       \r\n        <div class=\"main-content\">\r\n            <div class=\"container-fluid\">\r\n                <div class=\"row\">\r\n                    <div class=\"col-md-6\">\r\n                             <div class=\"widget \">\r\n                    <div class=\"widget-header\">\r\n                        <h3 class=\"widget-title\"> <i class=\"ik ik-bar-chart-2\"></i> أخباري  </h3>\r\n                    </div>\r\n                  \r\n                    <div class=\"widget-body\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-md-12 \">\r\n                                <div class=\"owl-container\">\r\n                                    <div class=\"owl-carousel basic\">\r\n                                      <div class=\"card\">\r\n                                            <div class=\"news\">\r\n                                              <img src=\"assets/images/gallery/1.jpg\" alt=\"\" class=\"img-thumbnail\">\r\n                                              <div class=\"details\">\r\n                                                <h3><a href=\"#\">الجامعة الإلكترونية تنظم حفل المعايدة السنوي بمناسبة عيد الفطر لمنسوبيها</a></h3>\r\n                                                <div class=\"social\">\r\n                                                   <p style=\"text-align: center; margin-top: 10px; color: #fff\"> <i class=\"fa fa-calendar\" style=\"color: #f28d1e\"></i> 09.10.2019 </p>\r\n                                                </div>\r\n                                              </div>\r\n                                          \r\n                                        </div>\r\n                                        </div>\r\n                                        \r\n                                          <div class=\"card\">\r\n                                            <div class=\"news\">\r\n                                              <img src=\"assets/images/gallery/1.jpg\" alt=\"\" class=\"img-thumbnail\">\r\n                                              <div class=\"details\">\r\n                                                <h3><a href=\"#\">الجامعة الإلكترونية تنظم حفل المعايدة السنوي بمناسبة عيد الفطر لمنسوبيها</a></h3>\r\n                                                <div class=\"social\">\r\n                                                   <p style=\"text-align: center; margin-top: 10px; color: #fff\"> <i class=\"fa fa-calendar\" style=\"color: #f28d1e\"></i> 09.10.2019 </p>\r\n                                                </div>\r\n                                              </div>\r\n                                          \r\n                                        </div>\r\n                                         </div>\r\n                                      <div class=\"card\">\r\n                                             <div class=\"news\">\r\n                                              <img src=\"assets/images/gallery/1.jpg\" alt=\"\" class=\"img-thumbnail\">\r\n                                              <div class=\"details\">\r\n                                                <h3><a href=\"#\">الجامعة الإلكترونية تنظم حفل المعايدة السنوي بمناسبة عيد الفطر لمنسوبيها</a></h3>\r\n                                                <div class=\"social\">\r\n                                                   <p style=\"text-align: center; margin-top: 10px; color: #fff\"> <i class=\"fa fa-calendar\" style=\"color: #f28d1e\"></i> 09.10.2019 </p>\r\n                                                </div>\r\n                                              </div>\r\n                                          \r\n                                        </div>\r\n                                        </div>\r\n                                       <div class=\"card\">\r\n                                             <div class=\"news\">\r\n                                              <img src=\"assets/images/gallery/1.jpg\" alt=\"\" class=\"img-thumbnail\">\r\n                                              <div class=\"details\">\r\n                                                <h3><a href=\"#\">الجامعة الإلكترونية تنظم حفل المعايدة السنوي بمناسبة عيد الفطر لمنسوبيها</a></h3>\r\n                                                <div class=\"social\">\r\n                                                   <p style=\"text-align: center; margin-top: 10px; color: #fff\"> <i class=\"fa fa-calendar\" style=\"color: #f28d1e\"></i> 09.10.2019 </p>\r\n                                                </div>\r\n                                              </div>\r\n                                          \r\n                                        </div>\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"slider-nav text-center\">\r\n                                        <a href=\"#\" class=\"left-arrow owl-prev\">\r\n                                            <i class=\"ik ik-chevron-right\"></i>\r\n                                        </a>\r\n                                        <div class=\"slider-dot-container\"></div>\r\n                                        <a href=\"#\" class=\"right-arrow owl-next\">\r\n                                            <i class=\"ik ik-chevron-left\"></i>\r\n                                        </a>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                                 </div>\r\n                           </div>\r\n                       </div>\r\n                               \r\n                     <div class=\"col-md-6\">\r\n                    <div class=\"widget \">\r\n                    <div class=\"widget-header\">\r\n                        <h3 class=\"widget-title\"> <i class=\"ik ik-image\"></i>  إعلاناتي </h3>\r\n                    </div>\r\n                    <div class=\"widget-body\">\r\n                        <div class=\"row\">\r\n                            <div class=\"col-md-12 \">\r\n                                <div class=\"owl-container\">\r\n                                    <div class=\"owl-carousel advertise\">\r\n                                      <div class=\"card\">\r\n                                      <div class=\"news\">\r\n                                         <img src=\"assets/images/adv.png\" alt=\"\" class=\"img-thumbnail\">\r\n                                        </div>\r\n                                        </div>\r\n                                       <div class=\"card\">\r\n                                          <div class=\"news\">\r\n                                              <img src=\"assets/images/adv2.png\" alt=\"\" class=\"img-thumbnail\">\r\n                                        </div>\r\n                                        </div>\r\n                                         <div class=\"card\">\r\n                                           <div class=\"news\">\r\n                                              <img src=\"assets/images/adv3.png\" alt=\"\" class=\"img-thumbnail\">\r\n                                        </div>\r\n                                        </div>\r\n                                      \r\n                                    </div>\r\n                                    <div class=\"slider-nav text-center\">\r\n                                        <a href=\"#\" class=\"left-arrow owl-prev\">\r\n                                            <i class=\"ik ik-chevron-right\"></i>\r\n                                        </a>\r\n                                        <div class=\"slider-dot-container\"></div>\r\n                                        <a href=\"#\" class=\"right-arrow owl-next\">\r\n                                            <i class=\"ik ik-chevron-left\"></i>\r\n                                        </a>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                                 </div>\r\n                           </div>\r\n                       </div>\r\n                               \r\n                     </div>\r\n            \r\n                 \r\n                <div class=\"row\">\r\n                   <div class=\"col-md-6\">\r\n                    <div class=\"widget\">\r\n                        <div class=\"card latest-update-card\">\r\n                         <div class=\"widget-header\">\r\n                        <h3 class=\"widget-title\"> <i class=\"ik ik-calendar\"></i>  فعالياتي </h3>\r\n                        </div>\r\n                        <div class=\"card-block\">\r\n                            <div class=\"latest-update-box\">\r\n                                <div class=\"row pb-30\">\r\n                                    <div class=\"col-auto update-meta pr-0\">\r\n                                        <i class=\"ik ik-calendar bg-icon update-icon\"></i>\r\n                                    </div>\r\n                                    <div class=\"col\">\r\n                                        <a href=\"#\"><h6>الجامعة الإلكترونية تنظم حفل المعايدة السنوي بمناسبة عيد الفطر لمنسوبيها </h6></a>\r\n                                        <p class=\" mb-0\"><i class=\"fa fa-calendar\" style=\"color: #1c2172\"></i> 12 محرم </p>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"row pb-30\">\r\n                                    <div class=\"col-auto update-meta pr-0\">\r\n                                        <i class=\"ik ik-calendar bg-icon update-icon\"> </i>\r\n                                    </div>\r\n                                    <div class=\"col\">\r\n                                        <a href=\"#\"><h6>الجامعة الإلكترونية تنظم حفل المعايدة السنوي بمناسبة عيد الفطر لمنسوبيها </h6></a>\r\n                                        <p class=\" mb-0\"><i class=\"fa fa-calendar\" style=\"color: #1c2172\"></i> 22 محرم </p>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"row pb-30\">\r\n                                    <div class=\"col-auto update-meta pr-0\">\r\n                                        <i class=\"ik ik-calendar bg-icon update-icon\"></i>\r\n                                    </div>\r\n                                    <div class=\"col\">\r\n                                        <a href=\"#\"><h6>الجامعة الإلكترونية تنظم حفل المعايدة السنوي بمناسبة عيد الفطر لمنسوبيها </h6></a>\r\n                                        <p class=\" mb-0\"><i class=\"fa fa-calendar\" style=\"color: #1c2172\"></i> 28 محرم </p>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"row pb-30\">\r\n                                    <div class=\"col-auto update-meta pr-0\">\r\n                                        <i class=\"ik ik-calendar bg-icon update-icon\"></i>\r\n                                    </div>\r\n                                    <div class=\"col\">\r\n                                        <a href=\"#\"><h6>الجامعة الإلكترونية تنظم حفل المعايدة السنوي بمناسبة عيد الفطر لمنسوبيها </h6></a>\r\n                                        <p class=\" mb-0\"><i class=\"fa fa-calendar\" style=\"color: #1c2172\"></i> 30 محرم </p>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                                </div>\r\n                        </div>\r\n                    </div>\r\n                           </div>\r\n                       \r\n                   <div class=\"col-md-6\">\r\n                    <div class=\"widget\">\r\n                        <div class=\"card\">\r\n                            <div class=\"widget-header\">\r\n                            <h3 class=\"widget-title\"> <i class=\"ik ik-info\"></i>  خدمات عامة </h3>\r\n                           </div>\r\n                            <div class=\"card-body\" style=\"padding: 0 15px\">\r\n                            <div class=\"row\">\r\n                             <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-bold\"></i>\r\n                                 <p><a href=\"\">نظام BlackBoard </a></p>\r\n                             </div>\r\n                                 <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-mail\"></i>\r\n                                 <p><a href=\"\">البريد الإلكتروني </a></p>\r\n                             </div>\r\n                            </div>\r\n                                \r\n                            <div class=\"row\">\r\n                                     <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-book-open\"></i>\r\n                                 <p><a href=\"\">إدارة المصادر المعرفية </a></p>\r\n                             </div>\r\n                             <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-message-square\"></i>\r\n                                 <p><a href=\"\">المنتدي </a></p>\r\n                             </div>\r\n                            </div>\r\n                                \r\n                                <div class=\"row\">\r\n                                 <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-calendar\"></i>\r\n                                 <p><a href=\"\">التقويم الدراسي </a></p>\r\n                                </div>\r\n                                 <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-clipboard\"></i>\r\n                                 <p><a href=\"\">تعليمات الأنظمة التعليمية </a></p>\r\n                                </div>\r\n                                </div>\r\n                                <div class=\"row\">\r\n                             <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-users\"></i>\r\n                                 <p><a href=\"\">دعم الدخول الموحد  </a></p>\r\n                             </div>\r\n                                 <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-settings\"></i>\r\n                                 <p><a href=\"\">نظام دعم   </a></p>\r\n                             </div>\r\n                            </div>\r\n                             <div class=\"row\">\r\n                               <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-link\"></i>\r\n                                 <p><a href=\"\"> تحديث بيانات </a></p>\r\n                             </div>\r\n                             <div class=\"col-md-6 new-ser\">\r\n                                <i class=\"ik ik-command\"></i>\r\n                                 <p><a href=\"\">الحقوق الطلابية  </a></p>\r\n                             </div>\r\n                                 \r\n                            </div>\r\n                                 <div class=\"row\">\r\n                                    <div class=\"col-md-12 new-ser\">\r\n                                <i class=\"ik ik-tablet\"></i>\r\n                                 <p><a href=\"\"> خدمات نظام معلومات الطلبة  </a></p>\r\n                             </div> \r\n                                </div>\r\n                            </div>\r\n                       \r\n                        </div>\r\n                    </div>\r\n                 </div>\r\n                         \r\n               </div>\r\n                \r\n               \r\n                \r\n           </div>\r\n                 \r\n                      \r\n    </div>\r\n        \r\n        \r\n       \r\n\r\n       \r\n"
 
 /***/ }),
 
@@ -5374,7 +7392,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  absence-excuses works!\n</p>\n"
+module.exports = "<p>\r\n  absence-excuses works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -5430,7 +7448,7 @@ module.exports = "td {text-align: right}\r\nth {text-align: right}\r\n/*# source
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">   استعلام الغياب </h3>\n    <div *ngIf=\"status==0\"  class=\"alert alert-primary text-center\" role=\"alert\">\n        {{absData.messages}} \n      </div>\n      <div class=\"card mt-3 tab-card\">\n          <div class=\"card-header tab-card-header\">\n            <ul class=\"nav nav-tabs card-header-tabs\" id=\"myTab\" role=\"tablist\">\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\n                      نسبة غياب المحاضرات الكلية\n\n                  </a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">\n                      نسبة غياب المحاضرات التقليدية\n\n        </a>\n              </li>\n              <li class=\"nav-item\">\n                  <a class=\"nav-link\" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">\n                      نسبة غياب المحاضرات الافتراضيه\n\n        </a>\n              </li>\n             \n            </ul>\n          </div>\n  \n          <div class=\"tab-content\" id=\"myTabContent\">\n            <div class=\"tab-pane fade show active p-3\" id=\"one\" role=\"tabpanel\" aria-labelledby=\"one-tab\">\n              <h5 class=\"card-title text-center\">نسبة غياب المحاضرات الكلية\n                </h5>\n              \n              <table *ngIf=\"absData.absent_percentage_total.length>0;else array1\" class=\"table\">\n                  <thead>\n                    <tr>\n                      <th scope=\"col\">CRN </th>\n                      <th scope=\"col\">كود المقرر</th>\n                      <th scope=\"col\">اسم المقرر</th>\n                      <th scope=\"col\">نسبة الغباب</th>\n\n                    </tr>\n                  </thead>\n                  <tbody>\n                    <tr *ngFor=\"let it of absData.absent_percentage_total\">\n                      <td >{{it.CRN}}</td>\n                      <td >{{it.CRES_CODE}}</td>\n                      <td>{{it.CRSE_TITLE}}</td>\n                      <td>{{it.ABSENT_PERCENTAGE_TOTAL}}</td>\n                    </tr>\n                   \n                  </tbody>\n                </table>\n                <br> <ng-template #array1>\n                \n                    <div class=\"row\">\n                        <div  class=\"col-md-1\"></div>\n                        <div class=\"col-md-10\">\n                          <div class=\"form-group\">\n                            \n                            <div class=\"input-group\">\n                              <div class=\"input-group-prepend\">\n                                <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الكلية  </b> </div>\n                              </div>\n                              <input  value=\"0\"  class=\"form-control\" readonly>\n                            </div>\n                          </div>   \n                        </div>\n                        \n                         <div  class=\"col-md-1\"></div>\n                      \n                      </div>\n         \n               </ng-template>\n           \n        \n         \n        </div>\n            <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\n                <h5 class=\"card-title text-center\">نسبة غياب المحاضرات التقليدية\n                  </h5>\n                   \n\n              <table *ngIf=\"absData.absent_percentage_actual_lectures.length>=0;else emptyArr2\" class=\"table\">\n                  <thead>\n                      <tr>\n                        <th scope=\"col\">CRN </th>\n                        <th scope=\"col\">كود المقرر</th>\n                        <th scope=\"col\">اسم المقرر</th>\n                        <th scope=\"col\">نسبة الغباب</th>\n  \n                      </tr>\n                    </thead>\n                    <tbody>\n                      <tr *ngFor=\"let it of absData.absent_percentage_actual_lectures\">\n                        <td >{{it.CRN}}</td>\n                        <td >{{it.CRES_CODE}}</td>\n                        <td>{{it.CRSE_TITLE}}</td>\n                        <td>{{it.ABSENT_PERCENTAGE_FTF}}</td>\n                      </tr>\n                     \n                    </tbody>\n             \n                </table>\n                <ng-template #emptyArr2>\n                <div  class=\"row\">\n                    <div  class=\"col-md-1\"></div>\n                    <div class=\"col-md-10\">\n                      <div class=\"form-group\">\n                        \n                        <div class=\"input-group\">\n                          <div class=\"input-group-prepend\">\n                            <div class=\"input-group-text\"><b>نسبة غياب المحاضرات التقليدية  </b> </div>\n                          </div>\n                          <input  value=\"0\"  class=\"form-control\" readonly>\n                        </div>\n                      </div>   \n                    </div>\n                    \n                     <div  class=\"col-md-1\"></div>\n                  \n                  </div>\n                </ng-template>\n                      \n         </div>\n            <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\n                <h5 class=\"card-title text-center\">نسبة غياب المحاضرات الافتراضيه\n                  </h5>\n               \n                <table  class=\"table\" *ngIf=\"absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3\">\n                     <thead>\n                        <tr>\n                          <th scope=\"col\">CRN </th>\n                          <th scope=\"col\">كود المقرر</th>\n                          <th scope=\"col\">اسم المقرر</th>\n                          <th scope=\"col\">نسبة الغباب</th>\n    \n                        </tr>\n                      </thead>\n                      <tbody>\n                        <tr *ngFor=\"let it of absData.absent_percentage_virtual_lectures\">\n                          <td >{{it.CRN}}</td>\n                          <td >{{it.CRES_CODE}}</td>\n                          <td>{{it.CRSE_TITLE}}</td>\n                          <td>{{it.ABSENT_PERCENTAGE_VERT}}</td>\n                        </tr>\n                       \n                      </tbody>\n                               </table>\n                  <br>\n                  <ng-template  #array3>\n                      <div class=\"row\">\n                          <div  class=\"col-md-1\"></div>\n                          <div class=\"col-md-10\">\n                            <div class=\"form-group\">\n                              \n                              <div class=\"input-group\">\n                                <div class=\"input-group-prepend\">\n                                  <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الافتراضيه  </b> </div>\n                                </div>\n                                <input  value=\"{{absData.absent_percentage_virtual_lectures}}\"  class=\"form-control\" readonly>\n                              </div>\n                            </div>   \n                          </div>\n                          \n                           <div  class=\"col-md-1\"></div>\n                        \n                        </div>\n                  </ng-template>\n                </div>\n                </div>\n        </div>\n                  \n    \n\n<br/>\n  <h3 class=\"text-center\">المحاضرات</h3>\n  <br/>\n  \n    \n          <table class=\"table\">\n              <thead>\n                <tr>\n                  <th scope=\"col\">رمز المقرر </th>\n                  <th scope=\"col\">اسم المقرر</th>\n                  <th scope=\"col\">نوع المحاضره</th>\n                  <th scope=\"col\">حالة الحضور</th>\n\n                </tr>\n              </thead>\n              <tbody>\n                <tr *ngFor=\"let it of absData.lectures\">\n                  <td >{{it.CODE}}</td>\n                  <td>{{it.TITLE}}</td>\n                  <td>{{it.TYPE}}</td>\n                  <td>{{it.STATUS}}</td>\n                </tr>\n               \n              </tbody>\n            </table>\n\n      \n            </div>\n            <div  class=\"btn-group btn-group-justified col-md-12 \">\n                <div class=\"col-md-4\"></div>\n                <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  طباعة</a>\n                <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n                  Print</a>\n                <div class=\"col-md-4\"></div>\n              \n                </div>"
+module.exports = "<div class=\"main-content\" style=\"padding-top:0;\">\r\n                    \r\n    <section class=\"service-single\">\r\n            <div class=\"container\">\r\n                    <h3> استعلام الغياب  </h3>\r\n                 <div class=\"row\">\r\n                    <div class=\" col-md-5\">\r\n                      <p> استعلام الغياب  استعلام الغياب  استعلام الغياب  استعلام الغياب  استعلام الغياب </p>\r\n                     </div>\r\n                    <div class=\" col-md-6 descr\">\r\n                      <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                        &nbsp; &nbsp; &nbsp; &nbsp;\r\n                        <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                        <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n                    </div>\r\n                </div>\r\n                </div>\r\n         </section>\r\n    <div *ngIf=\"status==0\"  class=\"alert alert-primary text-center\" role=\"alert\">\r\n        {{absData.messages}} \r\n      </div>\r\n      <section  class=\"ser-state\">\r\n        <nav>          \r\n        <div class=\"nav-item  nav nav-tabs \" id=\"myTab\" role=\"tablist\">\r\n                  <a class=\"nav-link nav-link active\" id=\"one-tab\" data-toggle=\"tab\" href=\"#one\" role=\"tab\" aria-controls=\"One\" aria-selected=\"true\">\r\n                      نسبة غياب المحاضرات الكلية\r\n\r\n                  </a>\r\n              \r\n                  <a class=\"nav-item nav-link \" id=\"two-tab\" data-toggle=\"tab\" href=\"#two\" role=\"tab\" aria-controls=\"Two\" aria-selected=\"false\">\r\n                      نسبة غياب المحاضرات التقليدية\r\n\r\n        </a>\r\n              \r\n              \r\n                  <a class=\"nav-item  nav-link \" id=\"three-tab\" data-toggle=\"tab\" href=\"#three\" role=\"tab\" aria-controls=\"Three\" aria-selected=\"false\">\r\n                      نسبة غياب المحاضرات الافتراضيه\r\n        </a>\r\n              \r\n             \r\n            </div>\r\n        \r\n          </nav> \r\n          <div class=\"tab-content\" id=\"myTabContent\">\r\n              <div class=\"tab-pane fade show active\" id=\"one\" >\r\n              <div class=\"widget\">\r\n                  <div class=\"widget-header\" style=\"padding: 5px 0\" >\r\n                 <h3 class=\"widget-title\" style=\"font-size:14px;\">المحاضرات </h3>\r\n                 </div>\r\n                          <div class=\"table-responsive\">\r\n                              <table *ngIf=\"absData.absent_percentage_total.length>0;else array1\" class=\"table table-striped table-bordered\">\r\n                        <thead style=\"background: #ebecf0\">\r\n              \r\n              \r\n                 \r\n                    <tr>\r\n                      <th scope=\"col\">CRN </th>\r\n                      <th scope=\"col\">كود المقرر</th>\r\n                      <th scope=\"col\">اسم المقرر</th>\r\n                      <th scope=\"col\">نسبة الغباب</th>\r\n\r\n                    </tr>\r\n                  </thead>\r\n                  <tbody>\r\n                    <tr *ngFor=\"let it of absData.absent_percentage_total\">\r\n                      <td >{{it.CRN}}</td>\r\n                      <td >{{it.CRES_CODE}}</td>\r\n                      <td>{{it.CRSE_TITLE}}</td>\r\n                      <td>{{it.ABSENT_PERCENTAGE_TOTAL}}</td>\r\n                    </tr>\r\n                   \r\n                  </tbody>\r\n                </table></div>\r\n                <br> <ng-template #array1>\r\n                \r\n                    <div class=\"row\">\r\n                        <div  class=\"col-md-1\"></div>\r\n                        <div class=\"col-md-10\">\r\n                          <div class=\"form-group\">\r\n                            \r\n                            <div class=\"input-group\">\r\n                              <div class=\"input-group-prepend\">\r\n                                <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الكلية  </b> </div>\r\n                              </div>\r\n                              <input  value=\"0\"  class=\"form-control\" readonly>\r\n                            </div>\r\n                          </div>   \r\n                        </div>\r\n                        \r\n                         <div  class=\"col-md-1\"></div>\r\n                      \r\n                      </div>\r\n         \r\n               </ng-template>\r\n           \r\n        \r\n         \r\n        </div></div>\r\n            <div class=\"tab-pane fade p-3\" id=\"two\" role=\"tabpanel\" aria-labelledby=\"two-tab\">\r\n                <div class=\"widget\">\r\n                    <div class=\"widget-header\" style=\"padding: 5px 0\" >\r\n                   <h3 class=\"widget-title\" style=\"font-size:14px;\">المحاضرات </h3>\r\n                   </div>\r\n                            <div class=\"table-responsive\">\r\n                   \r\n\r\n              <table  *ngIf=\"absData.absent_percentage_actual_lectures.length>=0;else emptyArr2\" class=\"table table-striped table-bordered\">\r\n                  <thead  style=\"background: #ebecf0\">\r\n                      <tr>\r\n                        <th scope=\"col\">CRN </th>\r\n                        <th scope=\"col\">كود المقرر</th>\r\n                        <th scope=\"col\">اسم المقرر</th>\r\n                        <th scope=\"col\">نسبة الغباب</th>\r\n  \r\n                      </tr>\r\n                    </thead>\r\n                    <tbody>\r\n                      <tr *ngFor=\"let it of absData.absent_percentage_actual_lectures\">\r\n                        <td >{{it.CRN}}</td>\r\n                        <td >{{it.CRES_CODE}}</td>\r\n                        <td>{{it.CRSE_TITLE}}</td>\r\n                        <td>{{it.ABSENT_PERCENTAGE_FTF}}</td>\r\n                      </tr>\r\n                     \r\n                    </tbody>\r\n             \r\n                </table>\r\n                            </div>\r\n                <ng-template #emptyArr2>\r\n                <div  class=\"row\">\r\n                    <div  class=\"col-md-1\"></div>\r\n                    <div class=\"col-md-10\">\r\n                      <div class=\"form-group\">\r\n                        \r\n                        <div class=\"input-group\">\r\n                          <div class=\"input-group-prepend\">\r\n                            <div class=\"input-group-text\"><b>نسبة غياب المحاضرات التقليدية  </b> </div>\r\n                          </div>\r\n                          <input  value=\"0\"  class=\"form-control\" readonly>\r\n                        </div>\r\n                      </div>   \r\n                    </div>\r\n                    \r\n                     <div  class=\"col-md-1\"></div>\r\n                  \r\n                  </div>\r\n                </ng-template></div>\r\n                      \r\n         </div>\r\n            <div class=\"tab-pane fade p-3\" id=\"three\" role=\"tabpanel\" aria-labelledby=\"three-tab\">\r\n                <div class=\"widget\">\r\n                    <div class=\"widget-header\" style=\"padding: 5px 0\" >\r\n                   <h3 class=\"widget-title\" style=\"font-size:14px;\">المحاضرات </h3>\r\n                   </div>\r\n                   \r\n               <div class=\"table-responsive\"> \r\n                <table  class=\"table table-striped table-bordered\" *ngIf=\"absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3\">\r\n                    <thead style=\"background: #ebecf0\">\r\n                        <tr >\r\n                          <th scope=\"col\">CRN </th>\r\n                          <th scope=\"col\">كود المقرر</th>\r\n                          <th scope=\"col\">اسم المقرر</th>\r\n                          <th scope=\"col\">نسبة الغباب</th>\r\n    \r\n                        </tr>\r\n                      </thead>\r\n                      <tbody>\r\n                        <tr *ngFor=\"let it of absData.absent_percentage_virtual_lectures\">\r\n                          <td >{{it.CRN}}</td>\r\n                          <td >{{it.CRES_CODE}}</td>\r\n                          <td>{{it.CRSE_TITLE}}</td>\r\n                          <td>{{it.ABSENT_PERCENTAGE_VERT}}</td>\r\n                        </tr>\r\n                       \r\n                      </tbody>\r\n                               </table></div>\r\n                  <br>\r\n                  <ng-template  #emptyArr3>\r\n                      <div class=\"row\">\r\n                          <div  class=\"col-md-1\"></div>\r\n                          <div class=\"col-md-10\">\r\n                            <div class=\"form-group\">\r\n                              \r\n                              <div class=\"input-group\">\r\n                                <div class=\"input-group-prepend\">\r\n                                  <div class=\"input-group-text\"><b>نسبة غياب المحاضرات الافتراضيه  </b> </div>\r\n                                </div>\r\n                                <input  value=\"{{absData.absent_percentage_virtual_lectures}}\"  class=\"form-control\" readonly>\r\n                              </div>\r\n                            </div>   \r\n                          </div>\r\n                          \r\n                           <div  class=\"col-md-1\"></div>\r\n                        \r\n                        </div>\r\n                  </ng-template>\r\n                </div>\r\n                </div>\r\n          </div>\r\n              </section>\r\n                  \r\n    \r\n\r\n\r\n              <div class=\"widget\">\r\n                  <div class=\"widget-header\" style=\"padding: 5px 0\" >\r\n                 <h3 class=\"widget-title\" style=\"font-size:14px;\">المحاضرات </h3>\r\n                 </div>\r\n                          <div class=\"table-responsive\">\r\n                        <table class=\"table table-striped table-bordered\">\r\n                        <thead style=\"background: #ebecf0\">\r\n                <tr>\r\n                  <th scope=\"col\">رمز المقرر </th>\r\n                  <th scope=\"col\">اسم المقرر</th>\r\n                  <th scope=\"col\">نوع المحاضره</th>\r\n                  <th scope=\"col\">حالة الحضور</th>\r\n\r\n                </tr>\r\n              </thead>\r\n              <tbody>\r\n                <tr *ngFor=\"let it of absData.lectures\">\r\n                  <td >{{it.CODE}}</td>\r\n                  <td>{{it.TITLE}}</td>\r\n                  <td>{{it.TYPE}}</td>\r\n                  <td>{{it.STATUS}}</td>\r\n                </tr>\r\n               \r\n              </tbody>\r\n            </table>\r\n\r\n      \r\n            </div></div>\r\n            <div  class=\"btn-group btn-group-justified col-md-12 \">\r\n                <div class=\"col-md-4\"></div>\r\n                <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                  طباعة</a>\r\n                <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n                  Print</a>\r\n                <div class=\"col-md-4\"></div>\r\n              \r\n                </div>"
 
 /***/ }),
 
@@ -5592,7 +7610,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron jumbtron-fluid\">\n    <h3 class=\"display-5 text-center\">   التقرير الطبي</h3>\n    <h6 class=\"display-6 text-center\">   {{mrData.labels.txt1}} : {{mrData.values.date}} </h6>\n    <h6 class=\"display-6 text-center\">   السجل المدني :  {{mrData.values.ssn}} </h6>\n\n    <div class=\"row\">\n  <div  class=\"col-md-1\"></div>\n  <div class=\"col-md-5\">\n    <div class=\"form-group\">\n      \n      <div class=\"input-group\">\n        <div class=\"input-group-prepend\">\n          <div class=\"input-group-text\"><b>اسم الطالب </b> </div>\n        </div>\n        <input  value=\"{{mrData.values.std_name}}\"  class=\"form-control\" readonly>\n      </div>\n    </div>   \n  </div>\n  <div class=\"col-md-5\">\n      <div class=\"form-group\">\n        \n        <div class=\"input-group\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\"><b>الرقم الجامعي  </b> </div>\n          </div>\n          <input  value=\"{{mrData.values.std_id}}\"  class=\"form-control\" readonly>\n        </div>\n      </div>   \n    </div>\n   <div  class=\"col-md-1\"></div>\n\n</div>\n\n  \n  <div class=\"row\">\n      <div  class=\"col-md-1\"></div>\n\n      <div class=\"col-md-5\">\n        <div class=\"form-group\">\n          \n          <div class=\"input-group\">\n            <div class=\"input-group-prepend\">\n              <div class=\"input-group-text\"><b> الكلية     </b> </div>\n            </div>\n            <input name=\"accamdeicStatus\"   value=\" {{mrData.values.coll}}  \"  class=\"form-control\" readonly>\n          </div>\n        </div>   \n      </div>\n      <div class=\"col-md-5\">\n    \n          <div class=\"form-group\">\n          \n              <div class=\"input-group\">\n                <div class=\"input-group-prepend\">\n                  <div class=\"input-group-text\"><b>التخصص    </b> </div>\n                </div>\n                <input name=\"TotalGrade\"  value=\"{{mrData.values.major}}\"   class=\"form-control\" readonly>\n              </div>\n            </div>   \n        </div>\n        <div  class=\"col-md-1\"></div>\n\n    </div>\n    \n  \n    </div>\n      <div class=\"jumbotron jumbtron-fluid\">\n\n   <div class=\"row\">\n\n      <p style=\"direction: rtl;float: right;text-align: right;padding-right: 50px\">\n          \n        {{mrData.labels.txt2}}\n         <br/>\n         <br/>\n         <b>\n        -{{mrData.labels.txt3}}\n          </b>\n        \n        </p>\n      </div> </div>\n        <div  class=\"btn-group btn-group-justified col-md-12 \">\n            <div class=\"col-md-4\"></div>\n            <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              طباعة</a>\n            <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\n              Print</a>\n            <div class=\"col-md-4\"></div>\n          \n            </div>\n   "
+module.exports = "<div class=\"jumbotron jumbtron-fluid\">\r\n    <h3 class=\"display-5 text-center\">   التقرير الطبي</h3>\r\n    <h6 class=\"display-6 text-center\">   {{mrData.labels.txt1}} : {{mrData.values.date}} </h6>\r\n    <h6 class=\"display-6 text-center\">   السجل المدني :  {{mrData.values.ssn}} </h6>\r\n\r\n    <div class=\"row\">\r\n  <div  class=\"col-md-1\"></div>\r\n  <div class=\"col-md-5\">\r\n    <div class=\"form-group\">\r\n      \r\n      <div class=\"input-group\">\r\n        <div class=\"input-group-prepend\">\r\n          <div class=\"input-group-text\"><b>اسم الطالب </b> </div>\r\n        </div>\r\n        <input  value=\"{{mrData.values.std_name}}\"  class=\"form-control\" readonly>\r\n      </div>\r\n    </div>   \r\n  </div>\r\n  <div class=\"col-md-5\">\r\n      <div class=\"form-group\">\r\n        \r\n        <div class=\"input-group\">\r\n          <div class=\"input-group-prepend\">\r\n            <div class=\"input-group-text\"><b>الرقم الجامعي  </b> </div>\r\n          </div>\r\n          <input  value=\"{{mrData.values.std_id}}\"  class=\"form-control\" readonly>\r\n        </div>\r\n      </div>   \r\n    </div>\r\n   <div  class=\"col-md-1\"></div>\r\n\r\n</div>\r\n\r\n  \r\n  <div class=\"row\">\r\n      <div  class=\"col-md-1\"></div>\r\n\r\n      <div class=\"col-md-5\">\r\n        <div class=\"form-group\">\r\n          \r\n          <div class=\"input-group\">\r\n            <div class=\"input-group-prepend\">\r\n              <div class=\"input-group-text\"><b> الكلية     </b> </div>\r\n            </div>\r\n            <input name=\"accamdeicStatus\"   value=\" {{mrData.values.coll}}  \"  class=\"form-control\" readonly>\r\n          </div>\r\n        </div>   \r\n      </div>\r\n      <div class=\"col-md-5\">\r\n    \r\n          <div class=\"form-group\">\r\n          \r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"><b>التخصص    </b> </div>\r\n                </div>\r\n                <input name=\"TotalGrade\"  value=\"{{mrData.values.major}}\"   class=\"form-control\" readonly>\r\n              </div>\r\n            </div>   \r\n        </div>\r\n        <div  class=\"col-md-1\"></div>\r\n\r\n    </div>\r\n    \r\n  \r\n    </div>\r\n      <div class=\"jumbotron jumbtron-fluid\">\r\n\r\n   <div class=\"row\">\r\n\r\n      <p style=\"direction: rtl;float: right;text-align: right;padding-right: 50px\">\r\n          \r\n        {{mrData.labels.txt2}}\r\n         <br/>\r\n         <br/>\r\n         <b>\r\n        -{{mrData.labels.txt3}}\r\n          </b>\r\n        \r\n        </p>\r\n      </div> </div>\r\n        <div  class=\"btn-group btn-group-justified col-md-12 \">\r\n            <div class=\"col-md-4\"></div>\r\n            <a class=\"btn btn-primary\" href=\"{{arabicPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n              طباعة</a>\r\n            <a class=\"btn btn-primary\" href=\"{{EngPrint}}\"><span class=\"glyphicon glyphicon-print\"></span>\r\n              Print</a>\r\n            <div class=\"col-md-4\"></div>\r\n          \r\n            </div>\r\n   "
 
 /***/ }),
 
@@ -5729,6 +7747,62 @@ var MedicalReportService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/menu/menu.component.css":
+/*!*****************************************!*\
+  !*** ./src/app/menu/menu.component.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21lbnUvbWVudS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/menu/menu.component.html":
+/*!******************************************!*\
+  !*** ./src/app/menu/menu.component.html ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"app-sidebar colored\">\r\n  <div class=\"sidebar-header\">\r\n      <a id=\"sidebarClose\" class=\"nav-close\"><i class=\"ik ik-x\"></i></a>\r\n       <a class=\"header-brand\" href=\"#\">\r\n          <div class=\"logo-img\">\r\n             <img src=\"assets/images/logo-ar.png\" class=\"header-brand-img\" alt=\"lavalite\"> \r\n          </div>\r\n      </a>\r\n  </div>\r\n  \r\n  <div class=\"sidebar-content\">\r\n      <div class=\"nav-container\">\r\n          <nav id=\"main-menu-navigation\" class=\"navigation-main\">\r\n                   <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>مصادر التعلم</span> <i class=\"ik ik-book-open\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 1</a>\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 2</a>\r\n                       <a href=\"#\" class=\"menu-item\">خدمة 3 </a>\r\n                  </div>\r\n              </div>\r\n                 <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الشئون الأكاديمية</span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a>\r\n                      <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/certificate\">  شهادة تعريف</a>\r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/graduates/statement\">  شهادة تخرج</a>\r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/record\"> السجل الطلابي</a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/lecabsence/medicalreport\">  التقرير الطبي  </a>\r\n                       <a href=\"#\" class=\"menu-item\"   routerLink=\"/lecabsence/lectabs\">   تقرير الغياب  </a> \r\n                  </div>\r\n              </div>\r\n                <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الإجراءات الأكاديمية</span> <i class=\"ik ik-layers\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changemajor\"> تغيير التخصص </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changerequest\"> تغيير فرع الدراسة </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/execuse\"> الاعتذار عن فصل دراسي </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/reenrol\"> طلب اعادة قيد </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/postpone\"> تاجيل     </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/reghelper\"> مساعد التسجيل     </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/universitycard\"> البطاقة الجامعية     </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/examexcuse\"> تقديم الأعذار للمتغيبين عن الاختبارات   </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/registerwishes\"> رغبات التسجيل للمستجدين     </a>\r\n\r\n                  </div>\r\n              </div>\r\n                 <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>  التغيب عن المحاضرات </span> <i class=\"ik ik-info\"></i></a>\r\n                 <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/lecexecuse\">تغيب عن المحاضرة</a> \r\n                      \r\n                  </div>\r\n              </div>\r\n                <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> تسجيل المقررات </span> <i class=\"ik ik-server\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/cancelcourse\"> الغاء المقرر     </a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/summer\"> الاعتذار عن الفصل الصيفي     </a>\r\n                  </div>\r\n              </div>\r\n                <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>المعادلات </span> <i class=\"ik ik-sidebar\"></i></a>\r\n                 <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/eequalize\"> ادخال ما يعادل اللغة الانجليزية  </a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/equalize\"> معادلة منهج معين    </a> \r\n                  </div>\r\n              </div>\r\n                <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>  الشئون المالية </span> <i class=\"ik ik-dollar-sign\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/finance/fees\"> دفع المصاريف  </a> \r\n                      \r\n                  </div>\r\n              </div>\r\n                <div class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"><span> شئون الإختبارات </span> <i class=\"ik ik-trending-down\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/objectexam\"> الاعتراض على الاختبارات </a> \r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attend\">  جداول الاختبارات   </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attendapp\"> اثبات حضور الاختبارات    </a> \r\n\r\n                  </div>\r\n              </div>\r\n                <div class=\"nav-lavel\">  </div>\r\n               <div class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"> <span class=\"badge badge-danger\">11</span><span>خدمات عامة </span>\r\n                     <i class=\"ik ik-align-right\"></i> </a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\"> نظام BlackBoard  <i class=\"ik ik-bold\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> البريد الإلكتروني      <i class=\"ik ik-mail\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> إدارة المصادر المعرفية  <i class=\"ik ik-book-open\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> المنتدي           <i class=\"ik ik-message-square\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> التقويم الدراسي       <i class=\"ik ik-calendar\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">تعليمات الأنظمة التعليمية <i class=\"ik ik-clipboard\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">دعم الدخول الموحد     <i class=\"ik ik-users\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">نظام دعم           <i class=\"ik ik-settings\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> تحديث بيانات        <i class=\"ik ik-link\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">الحقوق الطلابية        <i class=\"ik ik-command\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> خدمات نظام معلومات الطلبة   <i class=\"ik ik-tablet\"></i> </a>\r\n                  </div>\r\n              </div>\r\n         \r\n                  <div class=\"nav-lavel\"> </div>\r\n                    <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"  ><span>  إرشادات عامة  </span> <i class=\"ik ik-alert-circle\"></i>\r\n                   </a>\r\n                   </div>\r\n                  <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"><span>استفسارات  </span> <i class=\"ik ik-settings\"></i>\r\n                    </a>\r\n                  </div>\r\n           \r\n          </nav>\r\n      </div>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/menu/menu.component.ts":
+/*!****************************************!*\
+  !*** ./src/app/menu/menu.component.ts ***!
+  \****************************************/
+/*! exports provided: MenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuComponent", function() { return MenuComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var MenuComponent = /** @class */ (function () {
+    function MenuComponent() {
+    }
+    MenuComponent.prototype.ngOnInit = function () {
+    };
+    MenuComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-menu',
+            template: __webpack_require__(/*! ./menu.component.html */ "./src/app/menu/menu.component.html"),
+            styles: [__webpack_require__(/*! ./menu.component.css */ "./src/app/menu/menu.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], MenuComponent);
+    return MenuComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/name-component/name-component.component.css":
 /*!*************************************************************!*\
   !*** ./src/app/name-component/name-component.component.css ***!
@@ -5747,7 +7821,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  name-component works!\n</p>\n"
+module.exports = "<p>\r\n  name-component works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -5803,7 +7877,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  idreplacement works!\n</p>\n"
+module.exports = "<p>\r\n  idreplacement works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -5933,7 +8007,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  university-id works!\n</p>\n"
+module.exports = "<p>\r\n  university-id works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -5971,6 +8045,62 @@ var UniversityIDComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/page-header/page-header.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/page-header/page-header.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2UtaGVhZGVyL3BhZ2UtaGVhZGVyLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/page-header/page-header.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/page-header/page-header.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<main role=\"main\"  >\r\n  <div class=\"wrapper\">\r\n<header class=\"header-top\" header-theme=\"\" >\r\n  <div class=\"container-fluid\">\r\n      <div class=\"d-flex justify-content-between\">\r\n                <div class=\"top-menu d-flex align-items-center\">\r\n              <a type=\"\" class=\"btn-icon mobile-nav-toggle d-lg-none\"><span></span></a>\r\n              <div class=\"d-none d-sm-block\">\r\n               <a href=\"#\" class=\"social\"><i class=\"ik ik-facebook\"></i></a>\r\n               <a href=\"#\" class=\"social\"><i class=\"ik ik-youtube\"></i></a>\r\n               <a href=\"#\" class=\"social\"><i class=\"ik ik-twitter\"></i></a>\r\n               <a href=\"#\" class=\"social\"><i class=\"ik ik-instagram\"></i></a>\r\n           </div>\r\n              <div class=\"header-search d-none d-sm-block\">\r\n                  <div class=\"input-group \">\r\n                      <span class=\"input-group-addon search-close\"><i class=\"ik ik-x\"></i></span>\r\n                      <input type=\"text\" class=\"form-control\">\r\n                      <span class=\"input-group-addon search-btn\"><i class=\"ik ik-search\"></i></span>\r\n                  </div>\r\n              </div>\r\n                    \r\n               <div class=\"d-none d-sm-block\">   \r\n              <a href=\"#\" class=\"social\" style=\"font-size: 20px; font-weight: 400\"> E  </a>\r\n               <a href=\"#\" class=\"social\"  style=\"font-size: 20px; margin-top: -6px; display: none\"> ع</a>\r\n                </div>\r\n\r\n\r\n          </div>\r\n        \r\n       \r\n          <div class=\"top-menu d-flex align-items-center\">\r\n               <div class=\"dropdown\">\r\n                  <a class=\"dropdown-toggle pub-ser\" href=\"#\" id=\"menuDropdown\" data-toggle=\"dropdown\">\r\n                    <i class=\"ik ik-chevron-down\"></i>  طلباتي </a>\r\n                  <div class=\"dropdown-menu dropdown-menu-right menu-grid pub-ser2\">\r\n                  <p style=\"border-radius: 5px 5px 0 0\"> <span class=\"badge bg-danger\" style=\"padding: 3px 6px\">  2</span> &nbsp; طلبات قيد التنفيذ </p>\r\n                      <ul class=\"list-group\" >\r\n                        <li class=\"list-group-item active\"> إخلاء طرف<span class=\"badge bg-danger\">ينتهي بعد 1 يوم</span></li>\r\n                        <li class=\"list-group-item \"> خدمة سداد الرسوم الدراسية<span class=\"badge bg-danger\">ينتهي بعد 3 ساعة</span></li>\r\n                      </ul>\r\n                      \r\n                        <p>   <span class=\"badge bg-danger\"style=\"padding: 3px 6px\">  4</span> &nbsp; طلبات منتهية </p>\r\n                      <ul class=\"list-group\" >\r\n                        <li class=\"list-group-item active\">خدمة الإعفاء من الرسوم الدراسية </li>\r\n                        <li class=\"list-group-item \"> خدمة نظام إدارة الهوية </li>\r\n                        <li class=\"list-group-item active\"> شهادة التعريف</li>\r\n                       <li class=\"list-group-item \">الحالة الأكاديمية</li>\r\n                      </ul>\r\n                  </div>\r\n              </div>\r\n              \r\n              <div class=\"dropdown\">\r\n                  <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"notiDropdown\"  data-toggle=\"dropdown\">\r\n                  <i class=\"ik ik-bell\"></i><span class=\"badge bg-danger\">3</span></a>\r\n                  <div class=\"dropdown-menu dropdown-menu-right notification-dropdown\">\r\n                      <h4 class=\"header\">الإشعارات</h4>\r\n                      <div class=\"notifications-wrap\">\r\n                          <a href=\"#\" class=\"media\">\r\n                           <span class=\"d-flex\"><i class=\"ik ik-check\"></i>  </span>\r\n                              <span class=\"media-body\">\r\n                                  <span class=\"heading-font-family media-heading\">تمت الموافقه ع طلبك</span> \r\n                              </span>\r\n                          </a>\r\n                          <a href=\"#\" class=\"media\">\r\n                           <span class=\"d-flex\"><i class=\"ik ik-check\"></i>  </span>\r\n                              <span class=\"media-body\">\r\n                                  <span class=\"heading-font-family media-heading\">لديك خبر جديد</span> \r\n                              </span>\r\n                          </a>\r\n                           <a href=\"#\" class=\"media\">                                                                                   <span class=\"d-flex\"><i class=\"ik ik-check\"></i>  </span>\r\n                              <span class=\"media-body\">\r\n                                  <span class=\"heading-font-family media-heading\">لديك خبر جديد</span> \r\n                              </span>\r\n                          </a>\r\n                      </div>\r\n                      <div class=\"footer\"><a href=\"\">كل الإشعارات</a></div>\r\n                  </div>\r\n              </div>\r\n              \r\n             \r\n              <div class=\"dropdown\">\r\n                  <a class=\"dropdown-toggle pub-ser\" href=\"#\" id=\"userDropdown\" data-toggle=\"dropdown\">\r\n                  <i class=\"ik ik-chevron-down\"></i>\r\n                 <img class=\"avatar\" src=\"assets/images/avatar.png\" alt=\"\"> <span style=\"font-size: 11px\"> مرحبا : محمد علي </span>   </a>\r\n                  <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"userDropdown\">\r\n                      <a class=\"dropdown-item\" href=\"\">الملف الشخصي <i class=\"ik ik-user dropdown-icon\"></i> </a>\r\n                      <a class=\"dropdown-item\" href=\"\">تسجيل خروج <i class=\"ik ik-power dropdown-icon\"></i> </a>\r\n                  </div>\r\n              </div>\r\n\r\n          </div>\r\n      </div>\r\n  </div>\r\n</header>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/page-header/page-header.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/page-header/page-header.component.ts ***!
+  \******************************************************/
+/*! exports provided: PageHeaderComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageHeaderComponent", function() { return PageHeaderComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PageHeaderComponent = /** @class */ (function () {
+    function PageHeaderComponent() {
+    }
+    PageHeaderComponent.prototype.ngOnInit = function () {
+    };
+    PageHeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-page-header',
+            template: __webpack_require__(/*! ./page-header.component.html */ "./src/app/page-header/page-header.component.html"),
+            styles: [__webpack_require__(/*! ./page-header.component.css */ "./src/app/page-header/page-header.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], PageHeaderComponent);
+    return PageHeaderComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/register-courses/freshmen-wishes/freshmen-wishes.component.css":
 /*!********************************************************************************!*\
   !*** ./src/app/register-courses/freshmen-wishes/freshmen-wishes.component.css ***!
@@ -5989,7 +8119,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  freshmen-wishes works!\n</p>\n"
+module.exports = "<p>\r\n  freshmen-wishes works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -6119,7 +8249,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  register-help works!\n</p>\n"
+module.exports = "<p>\r\n  register-help works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -6663,7 +8793,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\ys-projects\std\apps\seu-app\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! E:\SourceCode\std\apps\seu-app\src\main.ts */"./src/main.ts");
 
 
 /***/ })
