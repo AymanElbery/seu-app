@@ -22,33 +22,24 @@ msgs: any;
 
   ngOnInit() {
     this.examExcuse = {courses:[], reason: '', type:'',attachment:''};
-
     this.reqData = this.acadmicProc.reqData;
 
   }
   changeStatus(it, e) {
     if (e.target.checked) {
-     
-      
+    
       this.examExcuse.courses.push({CRSE:it.CRN});
-    //   console.log(this.examExcuse.courses);
-    // } else {
-    //   for(let i = 0 ; i<this.examExcuse.courses.length;i++)
-    //   {
-    //     if(this.examExcuse.courses[i].CRSE ==it.test)
-    //       this.examExcuse.courses.splice(i, 1);
-
-    //   }
+   
     }
-    //console.log(this.englishEqual.tests);
+    
 
   }
 
   addRequest(data: any) {
-    console.log(data);
+   
     this.acadmicProc.AddRequest(data).then(  res => {
-   this.msgs =   (res as any).messages;
-   this.msgs.forEach((element: any) => {
+    this.msgs =   (res as any).messages;
+    this.msgs.forEach((element: any) => {
     this.toastr.success('', element.body);
 
     });
@@ -81,7 +72,6 @@ this.dialogRef.close();
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.examExcuse.attachment = reader.result;
-    console.log(this.examExcuse.attachment);
   }
 
 
