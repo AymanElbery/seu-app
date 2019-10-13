@@ -16,17 +16,10 @@ export class AddRegisterationHelperComponent implements OnInit {
   reqData: any;
   msgs: any;
   colleges: any;
-
-
-
   errorMessages: any;
-
-
   courses: any;
-
-
   departments: any;
-
+  isLoading=false;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddRegisterationHelperComponent>,
@@ -55,12 +48,15 @@ export class AddRegisterationHelperComponent implements OnInit {
 
   addRequest(data: any) {
     //console.log(data);
+    this.isLoading=true;
     this.acadmicProc.AddRequest(data).then(res => {
       this.msgs = (res as any).messages;
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
-
+       
       });
+
+      this.isLoading=false;
     });
 
 
@@ -70,19 +66,23 @@ export class AddRegisterationHelperComponent implements OnInit {
   }
 
   collegeCourses(collegeId) {
+    this.isLoading=true;
     this.acadmicProc.getِgetCourse(collegeId).then(
       res => {
         this.acadmicProc.courses = (res as any).data;
         this.courses = this.acadmicProc.courses;
+        this.isLoading=false;
       }
     );
   }
 
   courseDepartments(courseId) {
+    this.isLoading=true;
     this.acadmicProc.getِgetDepartments(courseId).then(
       res => {
         this.acadmicProc.departments = (res as any).data;
         this.departments = this.acadmicProc.departments;
+        this.isLoading=false;
       }
     );
   }

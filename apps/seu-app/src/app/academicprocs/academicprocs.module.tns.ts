@@ -28,6 +28,8 @@ import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses
 import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
 import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
+import { RegisterWishesComponent } from './register-wishes/register-wishes.component';
+import { AddRegisterWishesComponent } from './register-wishes/diag/add-register-wishes/add-register-wishes.component';
 
 @NgModule({
 
@@ -36,6 +38,6 @@ import { AddRegisterationHelperComponent } from './registeration-helper/diag/add
     NativeScriptCommonModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
-  declarations: [RegisterationHelperComponent, AddRegisterationHelperComponent]
+  declarations: [RegisterationHelperComponent, AddRegisterationHelperComponent, RegisterWishesComponent, AddRegisterWishesComponent]
 })
 export class AcademicprocsModule { }

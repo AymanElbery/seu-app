@@ -51,9 +51,12 @@ import { AddRegisterationHelperComponent } from './registeration-helper/diag/add
 import {UnivCardComponent} from './univ-card/univ-card.component';
 import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
 import {UvnivCardService} from './services/uvniv-card.service';
+import { RegisterWishesComponent } from './register-wishes/register-wishes.component';
 import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
 import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
 import {ExamExcuseService}  from './services/exam-excuse.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -87,9 +90,14 @@ import {ExamExcuseService}  from './services/exam-excuse.service';
            AddRegisterationHelperComponent,
            UnivCardComponent,
            AddUnivCardComponent,
+           AddUnivCardComponent,
            ExamExcuseComponent,
-           AddExamExcuseComponent
-          ],
+           AddExamExcuseComponent,
+           AddUnivCardComponent,
+           RegisterWishesComponent
+           
+],
+          
 
 
      entryComponents: [AddRequestComponent,
@@ -117,6 +125,7 @@ import {ExamExcuseService}  from './services/exam-excuse.service';
     MatDialogModule,
     MatDatepickerModule,
      MatNativeDateModule,
+     MatProgressSpinnerModule,
     ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [WithdrawFromUnivService,
