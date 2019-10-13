@@ -1,52 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { RegistrationHelperService } from '../services/registration-helper.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { NgForm } from '@angular/forms';
-import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
-import { AddRegisterationHelperComponent } from './diag/add-registeration-helper/add-registeration-helper.component';
+import { VisitorStudentService } from '../services/visitor-student.service';
+import { AddVisitorStudentComponent } from './diag/add-visitor-student/add-visitor-student.component';
 
 @Component({
-  selector: 'app-registeration-helper',
-  templateUrl: './registeration-helper.component.html',
-  styleUrls: ['./registeration-helper.component.css']
+  selector: 'app-visitor-student',
+  templateUrl: './visitor-student.component.html',
+  styleUrls: ['./visitor-student.component.css']
 })
-export class RegisterationHelperComponent implements OnInit {
-
-  printAR;
+export class VisitorStudentComponent implements OnInit {
   reqData;
   msgs;
   status;
-  /*colleges: any;
-  college: { theCollege };
-
-  errorMessages: any;
-  errorMessage: { theMessages };*/
-
-
-  constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: RegistrationHelperService) { }
-
+  isLoading = false;
+  constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: VisitorStudentService) { }
 
   ngOnInit() {
-    // this.cancelCousre = {courses: null, agreement: 1};
-
+    this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
-        //this.colleges = this.acadmicProc.reqData.colledges;
-      //  this.errorMessages = this.acadmicProc.reqData.error_messages;
-        // console.log(this.reqData.reqs);
+        this.isLoading = false;
 
       }
     );
-
-    
-
   }
-
-  
 
   delete(id, index) {
     if (confirm('هل انت متأكد')) {
@@ -76,9 +58,12 @@ export class RegisterationHelperComponent implements OnInit {
     dialogConfig.height = '80%';
     dialogConfig.direction = "rtl";
     dialogConfig.position = { top: '100px', left: '25px' };
-
-
-    this.dialog.open(AddRegisterationHelperComponent, dialogConfig);
+    this.dialog.open(AddVisitorStudentComponent, dialogConfig);
   }
+
+  printRequest(requestNbr) {
+    return this.acadmicProc.Download(requestNbr);
+  }
+
 
 }

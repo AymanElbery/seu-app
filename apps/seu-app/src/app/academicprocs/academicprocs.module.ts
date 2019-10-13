@@ -56,6 +56,8 @@ import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
 import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
 import {ExamExcuseService}  from './services/exam-excuse.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
+import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component';
 
 
 @NgModule({
@@ -94,7 +96,9 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
            ExamExcuseComponent,
            AddExamExcuseComponent,
            AddUnivCardComponent,
-           RegisterWishesComponent
+           RegisterWishesComponent,
+           VisitorStudentComponent,
+           AddVisitorStudentComponent
            
 ],
           
@@ -114,7 +118,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
          AddExamObjectComponent,
          AddRegisterationHelperComponent,
         AddUnivCardComponent,
-        AddExamExcuseComponent
+        AddExamExcuseComponent,
+        AddVisitorStudentComponent
       ],
 
   imports: [
