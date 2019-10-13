@@ -1,46 +1,46 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { examExcuse } from 'src/app/shared/models/exam_excuse';
-import {ExamExcuseService} from '../../../services/exam-excuse.service';
-@Component({
-  selector: 'app-add-exam-excuse',
-  templateUrl: './add-exam-excuse.component.html',
-  styleUrls: ['./add-exam-excuse.component.css']
-})
-export class AddExamExcuseComponent implements OnInit {
+import {MissingUnivCardService} from '../../../services/missing-univ-card.service';
+import {missingCard} from '../../../../shared/models/missing-card';
+import {UnivCardComponent} from '../../../univ-card/univ-card.component';
 
-  examExcuse: examExcuse;
+@Component({
+  selector: 'app-add-bankreceipt',
+  templateUrl: './add-bankreceipt.component.html',
+  styleUrls: ['./add-bankreceipt.component.css']
+})
+export class AddBankreceiptComponent implements OnInit {
+
+  missingCard: missingCard;
   reqData;
-msgs: any;
+  @Input() reqNo:String;
+  msgs: any;
+ 
 
 
   constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddExamExcuseComponent>,
-               private toastr: ToastrService, private acadmicProc: ExamExcuseService ) { }
+               public dialogRef: MatDialogRef<AddBankreceiptComponent>,
+               private toastr: ToastrService, private acadmicProc: MissingUnivCardService ) { }
 
   ngOnInit() {
-    this.examExcuse = {courses:[], reason: '', type:'',attachment:''};
+    this.missingCard = {receipt:'',request_number:''};
+  
     this.reqData = this.acadmicProc.reqData;
 
   }
-  changeStatus(it, e) {
-    if (e.target.checked) {
-    
-      this.examExcuse.courses.push({CRSE:it.CRN});
-   
-    }
+ 
     
 
-  }
-
+  
   addRequest(data: any) {
    
     this.acadmicProc.AddRequest(data).then(  res => {
     this.msgs =   (res as any).messages;
     this.msgs.forEach((element: any) => {
     this.toastr.success('', element.body);
+    console.log(this.missingCard);
 
     });
         });
@@ -50,7 +50,7 @@ msgs: any;
   }
 
   onSubmit(form: NgForm) {
-this.addRequest(this.examExcuse);
+this.addRequest(this.missingCard);
 this.dialogRef.close();
 
   }
@@ -71,8 +71,6 @@ this.dialogRef.close();
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    this.examExcuse.attachment = reader.result;
+    this.missingCard.receipt = reader.result;
   }
-
-
 }

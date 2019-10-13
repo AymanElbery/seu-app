@@ -56,9 +56,17 @@ import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
 import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
 import {ExamExcuseService}  from './services/exam-excuse.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {TerminationRequestComponent} from './termination-request/termination-request.component';
+import {AddTerminationRequestComponent} from './termination-request/diag/add-termination-request/add-termination-request.component';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
 import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component';
-
+import {TerminationService} from './services/termination.service';
+import {TrainingRequestComponent} from './training-request/training-request.component';
+import {AddTrainingRequestComponent} from './training-request/diag/add-training-request/add-training-request.component';
+import {TrainingRequestService} from './services/training-request.service';
+import {AddBankreceiptComponent} from './univ-card/diag/add-bankreceipt/add-bankreceipt.component';
+import {MissingUnivCardService} from './services/missing-univ-card.service';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -96,9 +104,15 @@ import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-s
            ExamExcuseComponent,
            AddExamExcuseComponent,
            AddUnivCardComponent,
+           TerminationRequestComponent,
+           AddTerminationRequestComponent,
+           TrainingRequestComponent,
+           AddTrainingRequestComponent,
+           AddBankreceiptComponent
            RegisterWishesComponent,
            VisitorStudentComponent,
            AddVisitorStudentComponent
+           
            
 ],
           
@@ -118,8 +132,12 @@ import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-s
          AddExamObjectComponent,
          AddRegisterationHelperComponent,
         AddUnivCardComponent,
+        AddTerminationRequestComponent,
+        AddTrainingRequestComponent,
+        AddBankreceiptComponent
         AddExamExcuseComponent,
         AddVisitorStudentComponent
+
       ],
 
   imports: [
@@ -144,7 +162,10 @@ import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-s
       ChangeMajorService,
       LectureExecuseServiceService,
       UvnivCardService,
-      ExamExcuseService
+      ExamExcuseService,
+      TerminationService,
+      TrainingRequestService,
+      MissingUnivCardService
   ]
 
 })

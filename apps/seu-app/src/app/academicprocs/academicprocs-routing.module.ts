@@ -16,6 +16,8 @@ import { RegisterationHelperComponent } from './registeration-helper/registerati
 import {UnivCardComponent} from './univ-card/univ-card.component';
 import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
 import { RegisterWishesComponent } from './register-wishes/register-wishes.component';
+import {TerminationRequestComponent} from './termination-request/termination-request.component';
+import {TrainingRequestComponent} from './training-request/training-request.component';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
 
 const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivComponent },
@@ -39,6 +41,8 @@ const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivCompone
   { path:'universitycard',component:UnivCardComponent},
    {path:'examexcuse',component:ExamExcuseComponent},
   {path:'universitycard',component:UnivCardComponent},
+  {path:'terminate' ,component:TerminationRequestComponent},
+  {path:'training',component:TrainingRequestComponent}
   { path: 'registerwishes',  component: RegisterWishesComponent },
   { path: 'visitorstudent',  component: VisitorStudentComponent }
 
