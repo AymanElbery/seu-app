@@ -13,7 +13,7 @@ export class MissingUnivCardService {
 
   
    AddRequest(data) {
-       return this.httRequest.postRequest('/card_missing_university_service/upload_bankreceipt/',data).toPromise();
+       return this.httRequest.postRequest('/card_missing_university_service/upload_bankreceipt',data).toPromise();
    }
    
 

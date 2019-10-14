@@ -17,10 +17,10 @@
                                 <div class="state">
                                    <h6>وصل العملية البنكية </h6>
                                    <div class="custom-file">
-                                      <input name="receipt"  type="file" accept="*/*" (change)="handleInputChangeFile($event)" class="custom-file-input" />
+                                      <input name="receipt"  type="file" accept="*/*" (change)="handleInputChange($event)" class="custom-file-input" />
                                        <label  for="customFileLang"  class="custom-file-label ">
                                        </label>
-                                        <input type="text" name="request_number" [value]="reqNo" hidden/>
+                                        <input type="text" name="request_number"  #request_number="ngModel" [(ngModel)]="missingCard.request_number"  hidden />
                                     </div>                                </div>
                                   <div class="progress progress-sm">
                                       <div class="progress-bar bg-info" style="width: 15%;"></div>

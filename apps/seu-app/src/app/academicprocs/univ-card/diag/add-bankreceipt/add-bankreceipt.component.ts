@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import {MissingUnivCardService} from '../../../services/missing-univ-card.service';
 import {missingCard} from '../../../../shared/models/missing-card';
 import {UnivCardComponent} from '../../../univ-card/univ-card.component';
+import {UvnivCardService} from '../../../services/univ-card.service';
+
 
 @Component({
   selector: 'app-add-bankreceipt',
@@ -15,19 +17,20 @@ export class AddBankreceiptComponent implements OnInit {
 
   missingCard: missingCard;
   reqData;
-  @Input() reqNo:String;
+  reqNo;
   msgs: any;
  
 
 
   constructor( @Inject(MAT_DIALOG_DATA) public data,
                public dialogRef: MatDialogRef<AddBankreceiptComponent>,
-               private toastr: ToastrService, private acadmicProc: MissingUnivCardService ) { }
+               private toastr: ToastrService, private acadmicProc: MissingUnivCardService ,private addCard:UvnivCardService ) { }
 
   ngOnInit() {
+    this.addCard.share.subscribe(x=>this.reqNo=x);
     this.missingCard = {receipt:'',request_number:''};
-  
     this.reqData = this.acadmicProc.reqData;
+    
 
   }
  
@@ -40,7 +43,6 @@ export class AddBankreceiptComponent implements OnInit {
     this.msgs =   (res as any).messages;
     this.msgs.forEach((element: any) => {
     this.toastr.success('', element.body);
-    console.log(this.missingCard);
 
     });
         });
@@ -51,6 +53,8 @@ export class AddBankreceiptComponent implements OnInit {
 
   onSubmit(form: NgForm) {
 this.addRequest(this.missingCard);
+console.log(this.missingCard);
+
 this.dialogRef.close();
 
   }
