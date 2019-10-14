@@ -50,7 +50,7 @@ import { RegisterationHelperComponent } from './registeration-helper/registerati
 import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
 import {UnivCardComponent} from './univ-card/univ-card.component';
 import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
-import {UvnivCardService} from './services/uvniv-card.service';
+import {UvnivCardService} from './services/univ-card.service';
 import { RegisterWishesComponent } from './register-wishes/register-wishes.component';
 import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
 import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
@@ -108,7 +108,7 @@ import { from } from 'rxjs';
            AddTerminationRequestComponent,
            TrainingRequestComponent,
            AddTrainingRequestComponent,
-           AddBankreceiptComponent
+           AddBankreceiptComponent,
            RegisterWishesComponent,
            VisitorStudentComponent,
            AddVisitorStudentComponent
@@ -134,7 +134,7 @@ import { from } from 'rxjs';
         AddUnivCardComponent,
         AddTerminationRequestComponent,
         AddTrainingRequestComponent,
-        AddBankreceiptComponent
+        AddBankreceiptComponent,
         AddExamExcuseComponent,
         AddVisitorStudentComponent
 

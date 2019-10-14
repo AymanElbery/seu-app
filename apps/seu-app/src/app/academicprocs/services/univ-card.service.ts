@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from 'src/app/shared/services/config.service';
 import { HttpRequestService } from 'src/app/shared/services/http-request.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UvnivCardService {
-
   reqData;
+  // reqData=new BehaviorSubject<string>("");
+  // public share=this.reqData.asObservable();
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
 
@@ -23,12 +25,5 @@ export class UvnivCardService {
 
   }
 
-  //  Download(req) {
-
-  //   return this.configService.getApiURI() + '/return_service/download/return_request/' + req + '?std_id=S160239561';
-  //  }
-  //  DownloadEng() {
-
-  //   return this.configService.getApiURI() + '/return_service/download?Lang=en';
-  //  }
+ 
 }

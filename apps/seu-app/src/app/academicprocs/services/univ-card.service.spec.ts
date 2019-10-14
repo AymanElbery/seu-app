@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UvnivCardService } from './uvniv-card.service';
+import { UvnivCardService } from './univ-card.service';
 
 describe('UvnivCardService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

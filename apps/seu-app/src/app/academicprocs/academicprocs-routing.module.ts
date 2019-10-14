@@ -10,7 +10,8 @@ import { EnglishEqualizeComponent } from './english-equalize/english-equalize.co
 import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component';
 import { ChangeMajorComponent } from './change-major/change-major.component';
 import { ChangeRequestComponent } from './change-request/change-request.component';
-import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';import { ObjectExamComponent } from './object-exam/object-exam.component';
+import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
+import { ObjectExamComponent } from './object-exam/object-exam.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
 import {UnivCardComponent} from './univ-card/univ-card.component';
@@ -37,12 +38,12 @@ const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivCompone
   { path: 'objectexam',  component: ObjectExamComponent },
   { path: 'lecexecuse',  component: LecturesExecusesComponent },
   { path: 'reghelper',  component: RegisterationHelperComponent },
-  {path:'universitycard',component:UnivCardComponent},
   { path:'universitycard',component:UnivCardComponent},
-   {path:'examexcuse',component:ExamExcuseComponent},
-  {path:'universitycard',component:UnivCardComponent},
-  {path:'terminate' ,component:TerminationRequestComponent},
-  {path:'training',component:TrainingRequestComponent}
+  { path:'universitycard',component:UnivCardComponent},
+  { path:'examexcuse',component:ExamExcuseComponent},
+  { path:'universitycard',component:UnivCardComponent},
+  { path:'terminate' ,component:TerminationRequestComponent},
+  { path:'training',component:TrainingRequestComponent},
   { path: 'registerwishes',  component: RegisterWishesComponent },
   { path: 'visitorstudent',  component: VisitorStudentComponent }
 
