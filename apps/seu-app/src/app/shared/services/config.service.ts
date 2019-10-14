@@ -10,7 +10,7 @@ export class ConfigService {
  // tslint:disable-next-line: variable-name
  private _tokenName: string;
   constructor() {
-      this._apiURI = 'http://seuapps.seu.edu.sa/stdservicesapi';
+      this._apiURI = 'https://seuapps.seu.edu.sa/stdservicesapi';
       this._tokenName = 'auth_token';
    }
 

@@ -1,5 +1,5 @@
 <!-- Modal -->
-<mat-dialog-content>
+<mat-dialog-content dir="rtl">
     
         <div class="modal-header">
           <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">   معادلة مقررات</h5>
@@ -16,6 +16,7 @@
               <option value="0">الجامعه  </option>
               <option *ngFor="let item of reqData.univ_list_arr" value="{{item.UN_ID}}">{{item.UNIV_AR}}</option>
             </select>
+            <br/>
           </div>
           <table style="text-align: center" class="table">
               <thead>

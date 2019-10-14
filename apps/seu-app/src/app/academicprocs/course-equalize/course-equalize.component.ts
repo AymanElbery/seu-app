@@ -31,7 +31,7 @@ this.acadmicProc.getِgetRequests().then(
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
-        //console.log(this.reqData.reqs);
+        // console.log(this.reqData.reqs);
       }
     );
   }
@@ -40,7 +40,7 @@ this.acadmicProc.getِgetRequests().then(
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
-    dialogConfig.width = '70%';
+    dialogConfig.width = '60%';
 
 
     this.dialog.open(AddCourseEqualizeComponent, dialogConfig);
@@ -71,10 +71,11 @@ return    this.acadmicProc.Download(req);
 
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
-    
+
         });
-        if(this.status == 1)
+      if (this.status === 1) {
           this.acadmicProc.reqData.requests.splice(index, 1);
+        }
     });
   }
 

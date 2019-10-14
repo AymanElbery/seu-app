@@ -1,5 +1,5 @@
 <!-- Modal -->
-<mat-dialog-content>
+<mat-dialog-content dir="rtl">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -18,7 +18,7 @@
               <option *ngFor="let item of reqData.majors" value="{{item.MAJOR_PK}}">{{item.MAJOR_TITLE}}</option>
             </select>
           </div>
-      
+      <br/>
           <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
                       <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
   
