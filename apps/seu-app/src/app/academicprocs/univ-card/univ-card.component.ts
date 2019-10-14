@@ -3,7 +3,7 @@ import {universityCard} from '../../shared/models/university-card';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
-import {UvnivCardService} from '../services/uvniv-card.service';
+import {UvnivCardService} from '../services/univ-card.service';
 import {AddUnivCardComponent} from './diag/add-univ-card/add-univ-card.component';
 import {AddBankreceiptComponent} from '../univ-card/diag/add-bankreceipt/add-bankreceipt.component';
 @Component({
@@ -75,8 +75,8 @@ this.addRequest(form.value);
         this.toastr.success('', element.body);
     
         });
-        if(this.status == 1)
-          this.univCard.reqData.requests.splice(index, 1);
+        //  if(this.status == 1)
+        //       this.univCard.reqData.requests.splice(index, 1);
     });
 
   }
