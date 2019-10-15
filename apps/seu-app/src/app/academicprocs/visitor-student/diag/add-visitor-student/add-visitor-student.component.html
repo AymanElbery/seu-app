@@ -18,7 +18,6 @@
       <div class="widget-header">
         <h3 class="widget-title">إضافة طلب</h3>
       </div>
-
     </div>
     <section class="ser-state">
       <div class="container">
@@ -37,9 +36,7 @@
                 </select>
 
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+         
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
@@ -50,9 +47,7 @@
                   <option *ngFor="let t of termList" [value]="t.id">{{t.value}}</option>
                 </select>
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+           
             </div>
 
             <div class=" col-md-4 col-sm-12">
@@ -64,9 +59,7 @@
                   <option *ngFor="let y of yearList" [value]="y.id">{{y.value}}</option>
                 </select>
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+          
             </div>
 
           </div>
@@ -86,9 +79,7 @@
                   [class.is-invalid]="visitorStudent.course_name == ''">
 
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+        
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
@@ -98,9 +89,7 @@
                   [class.is-invalid]="visitorStudent.course_symbol == ''">
 
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+             
             </div>
 
             <div class=" col-md-4 col-sm-12">
@@ -111,9 +100,7 @@
                   [class.is-invalid]="visitorStudent.course_code == ''">
 
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+      
             </div>
 
           </div>
@@ -126,9 +113,7 @@
 
 
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+        
             </div>
 
             <div class=" col-md-8 col-sm-12">
@@ -139,9 +124,7 @@
                 <h6>الرجاء رفع ملف توصيف المقرر في ملف من نوع PNG,JIF,JPG,MicrosoftWord,PDF أو BMP حجم الملف يجب ألا
                   يزيد عن 5 ميجا بايت</h6>
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+             
             </div>
 
           </div>
@@ -163,9 +146,7 @@
 
 
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+         
             </div>
 
           </div>
@@ -194,7 +175,7 @@
                   <div class="state">
                       <h6>أوافق</h6>
                       <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel" [(ngModel)]="approves.approve"
-                      name="Approve" >
+                      name="Approve"  >
     
     
                   </div>

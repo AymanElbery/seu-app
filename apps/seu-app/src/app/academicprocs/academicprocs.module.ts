@@ -67,6 +67,8 @@ import {TrainingRequestService} from './services/training-request.service';
 import {AddBankreceiptComponent} from './univ-card/diag/add-bankreceipt/add-bankreceipt.component';
 import {MissingUnivCardService} from './services/missing-univ-card.service';
 import { from } from 'rxjs';
+import { FeesExceptionComponent } from './fees-exception/fees-exception.component';
+import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-exception/add-fees-exception.component';
 
 @NgModule({
   declarations: [PostponeRequestComponent
@@ -111,7 +113,10 @@ import { from } from 'rxjs';
            AddBankreceiptComponent,
            RegisterWishesComponent,
            VisitorStudentComponent,
-           AddVisitorStudentComponent
+           AddVisitorStudentComponent,
+           FeesExceptionComponent,
+        AddFeesExceptionComponent
+
            
            
 ],
@@ -136,7 +141,8 @@ import { from } from 'rxjs';
         AddTrainingRequestComponent,
         AddBankreceiptComponent,
         AddExamExcuseComponent,
-        AddVisitorStudentComponent
+        AddVisitorStudentComponent,
+        AddFeesExceptionComponent
 
       ],
 

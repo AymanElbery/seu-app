@@ -1,0 +1,162 @@
+<mat-dialog-content style="height: 2500px">
+
+  <mat-spinner *ngIf="isLoading"
+    style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+  </mat-spinner>
+
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <div class="widget">
+      <div class="widget-header">
+        <h3 class="widget-title">إضافة طلب</h3>
+      </div>
+    </div>
+
+
+    <section class="ser-state">
+      <div class="container">
+
+        <div class="row ser-block">
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>هل ترغب ب </h6>
+              <select required class="form-control" #exceptionType="ngModel" [(ngModel)]="feesException.exception_type"
+                name="exceptionType" [class.is-invalid]="feesException.exception_type == ''">
+                <option value=''>اختر </option>
+                <option *ngFor="let e of exceptionTypeList" [value]="e.id">{{e.value}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div *ngIf="feesException.exception_type=='1'" class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>اسم صاحب الحساب رباعي </h6>
+              <input type="text" required class="form-control" #AccountName="ngModel"
+                [(ngModel)]="feesException.account_name" name="AccountName"
+                [class.is-invalid]="feesException.account_name == ''">
+            </div>
+          </div>
+
+          <div *ngIf="feesException.exception_type=='1'" class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>البريد الإلكتروني </h6>
+              <input type="email" required class="form-control" #Email="ngModel" [(ngModel)]="feesException.email"
+                name="Email" [class.is-invalid]="feesException.email == ''">
+            </div>
+          </div>
+
+          <div *ngIf="feesException.exception_type=='0'" class="col-md-8 col-sm-12">
+            <div class="state">
+              <h6> الفئة التي تنتمي إليها من أجل الحصول على إعفاء</h6>
+              <select required class="form-control" #association="ngModel" [(ngModel)]="feesException.association"
+                name="association" [class.is-invalid]="feesException.association == ''">
+                <option value=''>اختر </option>
+                <option *ngFor="let e of associationsList" [value]="e.id">{{e.value}}</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div *ngIf="feesException.exception_type=='1'" class="row ser-block">
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>إسم البنك</h6>
+              <select required class="form-control" #bank="ngModel" [(ngModel)]="feesException.bank" name="bank"
+                [class.is-invalid]="feesException.bank == ''">
+                <option value=''>اختر </option>
+                <option *ngFor="let e of banksList" [value]="e.BANK_PK">{{e.BANK_TITLE}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>رقم الأيبان </h6>
+              <input type="text" required class="form-control" #Iban="ngModel" [(ngModel)]="feesException.iban"
+                name="Iban" [class.is-invalid]="feesException.iban == ''">
+            </div>
+          </div>
+
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>صورة البطاقة البنكية </h6>
+              <input name="attachment" id="attachment" type="file" accept="*/*" (change)="handleInputChange($event)" />
+            </div>
+          </div>
+
+        </div>
+
+
+        <div *ngIf="feesException.exception_type=='1'" class="row ser-block">
+
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>رقم الحساب </h6>
+              <input type="text" required class="form-control" #AccountId="ngModel"
+                [(ngModel)]="feesException.account_id" name="AccountId"
+                [class.is-invalid]="feesException.account_id == ''">
+            </div>
+          </div>
+          <!--
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>صاحب الحساب </h6>
+
+              <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #AccountOwner="ngModel"
+                [(ngModel)]="accountOwner" name="AccountOwner"  (change)="ownerChange(accountOwner)" >
+            </div>
+          </div>
+-->
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>هل أنت صاحب الحساب البنكي؟</h6>
+              <select required class="form-control" #accountOwner1="ngModel" [(ngModel)]="accountOwner"
+                name="accountOwner1" [class.is-invalid]="accountOwner == ''" #p (change)="ownerChange(p.value)">
+                <option value=''>اختر </option>
+                <option *ngFor="let e of haveAccountList" [value]="e.id">{{e.value}}</option>
+              </select>
+            </div>
+          </div>
+
+
+
+
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>صلة القرابة</h6>
+              <select required class="form-control" #accountRelative="ngModel"
+                [(ngModel)]="feesException.account_relative" name="accountRelative"
+                [class.is-invalid]="feesException.account_relative == '' && accountOwner=='0'" [disabled]="accountOwner=='1' || accountOwner==''">
+                <option value=''>اختر </option>
+                <option *ngFor="let e of accountRelativeList" [value]="e.id">{{e.value}}</option>
+              </select>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+      </div>
+    </section>
+
+
+
+
+    <div class="modal-body">
+      <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+        <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+          الغاء</button>
+
+        <button [disabled]="(form.invalid)" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+          حفظ</button>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>

@@ -23,9 +23,7 @@
                 </select>
 
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+           
             </div>
             <div class=" col-md-6 col-sm-12">
               <div class="state">
@@ -37,9 +35,7 @@
                   <option *ngFor="let course of courses" [value]="course.CRS_CODE">{{course.CRSE_TITLE}}</option>
                 </select>
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+      
             </div>
 
           </div>
@@ -54,9 +50,7 @@
                   <option *ngFor="let dept of departments" [value]="dept.CRN">{{dept.BLDG_DESC}}</option>
                 </select>
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+           
             </div>
             <div class=" col-md-6 col-sm-12">
               <div class="state">
@@ -66,9 +60,7 @@
                   <option *ngFor="let msg of errorMessages" [value]="msg.id">{{msg.value}}</option>
                 </select>
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+        
             </div>
 
           </div>
@@ -81,9 +73,7 @@
                   [(ngModel)]="registerationHelper.comment" #NotesID="ngModel" name="NotesID" required></textarea>
 
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 0%;"></div>
-              </div>
+           
             </div>
 
           </div>

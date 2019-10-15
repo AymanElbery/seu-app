@@ -1,9 +1,15 @@
 <div class="main-content">
-  <div>
+  
+  
+  <div class="widget">
+    <div class="widget-header">
+      <h3 class="widget-title">رغبات التسجيل للمستجدين</h3>
+    </div>
+  </div>
+
     <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
       {{msg.body}}! 
     </div>
-
 
 
 
@@ -101,9 +107,7 @@
                   <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #TowDaya="ngModel" [(ngModel)]="registerWishes.tow_days"
                     name="TowDaya" ng-true-value=0 ng-false-value=1>
                 </div>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-info" style="width: 25%;"></div>
-                </div>
+            
               </div>
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
@@ -115,9 +119,7 @@
                   </select>
 
                 </div>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-info" style="width: 25%;"></div>
-                </div>
+            
               </div>
 
               <div class=" col-md-4 col-sm-12">

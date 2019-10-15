@@ -1,53 +1,12 @@
 <div class="main-content">
   <div class="widget">
     <div class="widget-header">
-      <h3 class="widget-title"> مساعد التسجيل</h3>
+      <h3 class="widget-title">الإعفاء من الرسوم الدراسية</h3>
     </div>
   </div>
 
   <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
     {{msg.body}}!
-  </div>
-
-
-
-
-  <div class="widget">
-    <div class="widget-header">
-      <h3 class="widget-title">الجدول الدراسي</h3>
-    </div>
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered">
-        <thead style="background: #ebecf0">
-
-          <tr>
-            <th scope="col">CRN</th>
-
-            <th scope="col">المادة</th>
-            <th scope="col"> اليوم</th>
-            <th scope="col"> الوقت</th>
-
-
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let it of reqData.schedule;let i=index;">
-            <td>{{it.CRN}}</td>
-
-
-            <td>{{it.CRSE_TITLE}}</td>
-            <td>{{it.DAYES}}</td>
-            <td>{{it.LECT_TIME}}</td>
-
-
-
-
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
   </div>
 
 
@@ -71,31 +30,26 @@
         <thead style="background: #ebecf0">
 
           <tr>
-            <th scope="col">المقرر</th>
-
-            <th scope="col">رسالة الخطأ</th>
-            <th scope="col"> تاريخ الطلب</th>
+            <th scope="col">رقم الطلب</th>
+            <th scope="col">تاريخ الطلب</th>
+            <th scope="col"> سبب الرفض</th>
             <th scope="col"> الحالة</th>
-            <th scope="col"> ملاحظات</th>
             <th scope="col"> إلغاء الطلب</th>
-
-
-
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let it of reqData.requests;let i=index;">
-            <td>{{it.course}}</td>
+            <td>{{it.request_number}}</td>
 
 
-            <td>{{it.message}}</td>
             <td>{{it.insert_date}}</td>
+            <td>{{it.rejection_reason}}</td>
             <td>{{it.status}}</td>
-            <td>{{it.admin_note}}</td>
+
 
             <td><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
-            <!--[disabled]='!it.deletable'-->
+            
           </tr>
 
         </tbody>
