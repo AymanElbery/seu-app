@@ -5,7 +5,6 @@ import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import {UvnivCardService} from '../services/univ-card.service';
 import {AddUnivCardComponent} from './diag/add-univ-card/add-univ-card.component';
-import {AddBankreceiptComponent} from '../univ-card/diag/add-bankreceipt/add-bankreceipt.component';
 import { missingCard } from 'src/app/shared/models/missing-card';
 import { MissingUnivCardService } from '../services/missing-univ-card.service';
 @Component({
@@ -29,6 +28,8 @@ export class UnivCardComponent implements OnInit {
     this.univCard.msgs = (res as any).messages;
     this.reqData = this.univCard.reqData;
     this.msgs = this.univCard.msgs;
+    var key=this.reqData;
+   
       }
     );
   }
@@ -41,13 +42,7 @@ export class UnivCardComponent implements OnInit {
 
     this.dialog.open(AddUnivCardComponent, dialogConfig);
   }
-  openDialogeBankreceipt(id) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
-    dialogConfig.width = '50%';
-     this.receiptDiag.open(AddBankreceiptComponent, dialogConfig);
-  }
+ 
 
   addRequest(data) {
     this.univCard.AddRequest(data).then(  res => {

@@ -13,9 +13,21 @@ export class MissingUnivCardService {
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
 
   
-   AddRequest(data) {
+   UploadFileRequest(data) {
        return this.httRequest.postRequest('/card_missing_university_service/upload_bankreceipt',data).toPromise();
    }
+   getِgetRequests() {
+
+    return this.httRequest.GetRequest('card_missing_university_service').toPromise();
+   }
+   AddRequest(data) {
+       return this.httRequest.postRequest('card_missing_university_service/insert', data).toPromise();
+   }
+   deleteReq(id) {
+     return this.httRequest.GetRequest('card_missing_university_service/remove/'+ id).toPromise();
+ 
+   }
+
    
 
 }

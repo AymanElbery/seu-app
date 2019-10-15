@@ -64,7 +64,9 @@ import {TerminationService} from './services/termination.service';
 import {TrainingRequestComponent} from './training-request/training-request.component';
 import {AddTrainingRequestComponent} from './training-request/diag/add-training-request/add-training-request.component';
 import {TrainingRequestService} from './services/training-request.service';
-import {AddBankreceiptComponent} from './univ-card/diag/add-bankreceipt/add-bankreceipt.component';
+import {MissingCardComponent} from './missing-card/missing-card/missing-card.component';
+import {AddBankReceiptComponent} from './missing-card/diag/add-bank-receipt/add-bank-receipt.component';
+import {AddMissingCardDataComponent} from './missing-card/diag/add-missing-card-data/add-missing-card-data.component';
 import {MissingUnivCardService} from './services/missing-univ-card.service';
 import { from } from 'rxjs';
 import { FeesExceptionComponent } from './fees-exception/fees-exception.component';
@@ -110,9 +112,12 @@ import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-except
            AddTerminationRequestComponent,
            TrainingRequestComponent,
            AddTrainingRequestComponent,
-           AddBankreceiptComponent,
            RegisterWishesComponent,
            VisitorStudentComponent,
+        
+           AddMissingCardDataComponent,
+           MissingCardComponent,
+           AddBankReceiptComponent,
            AddVisitorStudentComponent,
            FeesExceptionComponent,
         AddFeesExceptionComponent
@@ -139,7 +144,8 @@ import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-except
         AddUnivCardComponent,
         AddTerminationRequestComponent,
         AddTrainingRequestComponent,
-        AddBankreceiptComponent,
+        AddBankReceiptComponent,
+        AddMissingCardDataComponent,
         AddExamExcuseComponent,
         AddVisitorStudentComponent,
         AddFeesExceptionComponent

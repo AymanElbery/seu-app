@@ -20,6 +20,7 @@ import { RegisterWishesComponent } from './register-wishes/register-wishes.compo
 import {TerminationRequestComponent} from './termination-request/termination-request.component';
 import {TrainingRequestComponent} from './training-request/training-request.component';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
+import {MissingCardComponent} from './missing-card/missing-card/missing-card.component';
 import { FeesExceptionComponent } from './fees-exception/fees-exception.component';
 
 const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivComponent },
@@ -47,6 +48,7 @@ const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivCompone
   { path:'training',component:TrainingRequestComponent},
   { path: 'registerwishes',  component: RegisterWishesComponent },
   { path: 'visitorstudent',  component: VisitorStudentComponent },
+  { path: 'missingcard',  component: MissingCardComponent },
   { path: 'feesexception',  component: FeesExceptionComponent }
 
   
