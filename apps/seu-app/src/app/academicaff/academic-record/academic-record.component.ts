@@ -11,16 +11,19 @@ export class AcademicRecordComponent implements OnInit {
   recoredData;
   arabicPrint: string;
   EngPrint: string;
+  isLoading = false;
   constructor(private academicService: AcademicRecordService) { }
 
   ngOnInit() {
-    this.academicService.getِAcademicRecord().then(
+     this.isLoading = true;
+     this.academicService.getِAcademicRecord().then(
       res => {
     this.recoredData =    (res as any).data;
+    this.isLoading = false;
       }
     );
-    this.arabicPrint =   this.academicService.Download();
-    this.EngPrint = this.academicService.DownloadEng();
+     this.arabicPrint =   this.academicService.Download();
+     this.EngPrint = this.academicService.DownloadEng();
   }
 
 }
