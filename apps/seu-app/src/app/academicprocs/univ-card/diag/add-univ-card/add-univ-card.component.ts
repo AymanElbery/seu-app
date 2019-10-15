@@ -100,7 +100,7 @@ this.dialogRef.close();
       this.toastr.success('', (res as any).messages.body);
 
     });
-    this.univCard.reqData.reqs.splice(index, 1);
+    //this.univCard.reqData.reqs.splice(index, 1);
 
   }
 

@@ -27,7 +27,7 @@ export class AddBankreceiptComponent implements OnInit {
                private toastr: ToastrService, private acadmicProc: MissingUnivCardService ,private addCard:UvnivCardService ) { }
 
   ngOnInit() {
-    this.addCard.share.subscribe(x=>this.reqNo=x);
+    //this.addCard.share.subscribe(x=>this.reqNo=x);
     this.missingCard = {receipt:'',request_number:''};
     this.reqData = this.acadmicProc.reqData;
     

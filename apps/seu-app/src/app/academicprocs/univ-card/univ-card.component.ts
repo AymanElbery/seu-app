@@ -6,6 +6,8 @@ import { NgForm } from '@angular/forms';
 import {UvnivCardService} from '../services/univ-card.service';
 import {AddUnivCardComponent} from './diag/add-univ-card/add-univ-card.component';
 import {AddBankreceiptComponent} from '../univ-card/diag/add-bankreceipt/add-bankreceipt.component';
+import { missingCard } from 'src/app/shared/models/missing-card';
+import { MissingUnivCardService } from '../services/missing-univ-card.service';
 @Component({
   selector: 'app-univ-card',
   templateUrl: './univ-card.component.html',
@@ -17,7 +19,7 @@ export class UnivCardComponent implements OnInit {
   reqData;
   msgs;
   status;
-  constructor(public dialog: MatDialog, public receiptDiag:MatDialog ,private toastr: ToastrService, private univCard: UvnivCardService) { }
+  constructor(public dialog: MatDialog, public receiptDiag:MatDialog ,private toastr: ToastrService, private univCard: UvnivCardService ,private missCard:MissingUnivCardService) { }
 
   ngOnInit() {
     this.card = {name: '', phone: '', ssn: '',day:'',time:'',level:'',photo:'',ssn_file:''};
@@ -39,13 +41,12 @@ export class UnivCardComponent implements OnInit {
 
     this.dialog.open(AddUnivCardComponent, dialogConfig);
   }
-  openDialogeBankreceipt() {
+  openDialogeBankreceipt(id) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
-
-    this.receiptDiag.open(AddBankreceiptComponent, dialogConfig);
+     this.receiptDiag.open(AddBankreceiptComponent, dialogConfig);
   }
 
   addRequest(data) {
