@@ -25,7 +25,8 @@
     
           <th scope="col">تاريخ الطلب</th>
           <th scope="col"> حالة الطلب</th>
-        
+          <th scope="col"> المطلوب </th>
+          <th scope="col">رفع وصل العملية البنكية </th>
           <th scope="col"> حذف الطلب </th>
     
         </tr>
@@ -35,7 +36,9 @@
           <td>{{it.id}}</td>
           <td>{{it.INSRT_DATE}}</td>
           <td>{{it.status}}</td>
+          <td>{{it.info_message}}</td>
          
+          <td><button  (click)="openDialogeBankreceipt(it.id)"  class="btn btn-sm btn-danger"> ارفع الوصل  </button></td>
           <td><button [disabled]='!it.deletable'  class="btn btn-sm btn-danger" style="color: white"  (click)="delete(it.id,i)"><i  class="fa fa-trash"></i> </button></td>
         </tr>
         

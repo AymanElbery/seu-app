@@ -8,7 +8,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class UvnivCardService {
   reqData;
-   public share = this.reqData.asObservable();
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
 
