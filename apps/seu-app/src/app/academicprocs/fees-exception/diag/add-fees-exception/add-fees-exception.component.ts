@@ -24,6 +24,8 @@ export class AddFeesExceptionComponent implements OnInit {
   associationsList: any;
   isLoading = false;
   accountOwner: any;
+  fileType:string;
+  approve:false;
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
@@ -34,7 +36,7 @@ export class AddFeesExceptionComponent implements OnInit {
     this.feesException = {
       exception_type: '', account_name: '', email: '', bank: '',
       iban: '', account_id: '', account_relative: '', association: '', work_status: '', proof_status: '',
-      insurance_card: '', id_card: '', letter: '', mco_id_card: ''
+      insurance_card: '', id_card: '', letter: '', mco_id_card: '', bank_card: ''
     };
     this.accountOwner = '';
     this.reqData = this.acadmicProc.reqData;
@@ -72,7 +74,10 @@ export class AddFeesExceptionComponent implements OnInit {
     });
   }
 
-  handleInputChange(e) {
+  handleInputChange(e, fileType) {
+    this.fileType=fileType;
+    console.log('handleInputChange ');
+    console.log(this.fileType);
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const pattern = /pdf-*/;
     const reader = new FileReader();
@@ -81,7 +86,25 @@ export class AddFeesExceptionComponent implements OnInit {
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    //  this.visitorStudent.attachment = reader.result;
+    console.log('_reader ');
+    console.log(this.fileType);
+    console.log(e);
+
+    if (this.fileType == 'bank_card')
+      this.feesException.bank_card = reader.result;
+    else if (this.fileType == 'proof_status')
+      this.feesException.proof_status = reader.result;
+    else if (this.fileType == 'insurance_card')
+      this.feesException.insurance_card = reader.result;
+    else if (this.fileType == 'id_card')
+      this.feesException.id_card = reader.result;
+    else if (this.fileType == 'work_status')
+      this.feesException.work_status = reader.result;
+    else if (this.fileType == 'letter')
+      this.feesException.letter = reader.result;
+    else if (this.fileType == 'mco_id_card')
+      this.feesException.mco_id_card = reader.result;
+
   }
 
   ownerChange(p) {
@@ -91,5 +114,57 @@ export class AddFeesExceptionComponent implements OnInit {
 
     console.log(p);
   }
+
+  exceptionTypeChange(p) {
+    if (p == '0') {
+      this.feesException.account_name = '';
+      this.feesException.email = '';
+      this.feesException.bank = '';
+      this.feesException.account_id = '';
+      this.feesException.account_relative = '';
+      this.feesException.iban = '';
+      this.feesException.bank_card = '';
+      this.accountOwner = '';
+    }
+    else if (p == '1') {
+      this.feesException.association = '';
+      this.feesException.proof_status = '';
+      this.feesException.insurance_card = '';
+      this.feesException.id_card = '';
+      this.feesException.work_status = '';
+      this.feesException.letter = '';
+      this.feesException.mco_id_card = '';
+    }
+
+    console.log(p);
+  }
+
+  associationChange(p) {
+    if (p == '0') {
+      this.feesException.id_card = '';
+      this.feesException.work_status = '';
+      this.feesException.letter = '';
+      this.feesException.mco_id_card = '';
+    }
+    else if (p == '1') {
+      this.feesException.proof_status = '';
+      this.feesException.insurance_card = '';
+      this.feesException.work_status = '';
+      this.feesException.letter = '';
+      this.feesException.mco_id_card = '';
+    }
+
+    else if (p == '2') {
+      this.feesException.proof_status = '';
+      this.feesException.insurance_card = '';
+      this.feesException.id_card = '';
+      this.feesException.work_status = '';
+
+    }
+
+    console.log(p);
+
+  }
+
 
 }

@@ -22,7 +22,7 @@ export class FeesExceptionService {
   }
 
   AddRequest(data) {
-
-    return this.httRequest.postRequest('fees_exception_service/remove', data).toPromise();
+console.log(data);
+    return this.httRequest.postRequest('fees_exception_service/insert', data).toPromise();
   }
 }
