@@ -15,6 +15,7 @@ export class AcademicRecordComponent implements OnInit {
   constructor(private academicService: AcademicRecordService) { }
 
   ngOnInit() {
+
      this.isLoading = true;
      this.academicService.getِAcademicRecord().then(
       res => {
