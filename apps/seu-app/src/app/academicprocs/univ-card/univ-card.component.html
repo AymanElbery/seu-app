@@ -1,5 +1,17 @@
 <div class="main-content" >
-
+    <section _ngcontent-fpr-c11="" class="service-single mb-10">
+        <div _ngcontent-fpr-c11="" class="container">
+        <h3 _ngcontent-fpr-c11="">  طلب بطاقة جامعية   </h3>
+        <div _ngcontent-fpr-c11="" class="row">
+          <div _ngcontent-fpr-c11="" class=" col-md-5">
+        <p _ngcontent-fpr-c11=""></p>
+      </div>
+      <div _ngcontent-fpr-c11="" class=" col-md-6 descr">
+        <span _ngcontent-fpr-c11="">مدة الإنجاز : <span _ngcontent-fpr-c11="" class="badge">3 يوم</span></span> &nbsp; &nbsp; &nbsp; &nbsp; <a _ngcontent-fpr-c11="" href="https://seuapps.seu.edu.sa/stdservicesapi/academic_status/academic_status_print?TermCode201610"><i _ngcontent-fpr-c11="" class="ik ik-download"></i></a><a _ngcontent-fpr-c11="" href="#"><i _ngcontent-fpr-c11="" class="ik ik-film"></i></a>
+      </div>
+    </div>
+    </div>
+    </section>
   <div  *ngFor="let msg of msgs" class="alert alert-info" role="alert">
       {{msg.body}}!
     </div>
@@ -8,7 +20,7 @@
       </div>
     <div style="direction: ltr;text-align: center">
       
-      <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+      <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
       اضافة طلب
     </button>
     <br/>
