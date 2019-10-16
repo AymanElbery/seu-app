@@ -1,142 +1,118 @@
-<div class="jumbotron jumbtron-fluid">
-    <h3 class="display-5 text-center">  افادة الرسوم الداسية</h3>
+<div class="main-content" >
+
+
+    <div class="widget"><div class="widget-header"><h3 class="widget-title"> 
+        افادة الرسوم الداسية
+
+    </h3> </div>
+    <br>
     
-    <div class="row">
-  <div  class="col-md-1"></div>
-  <div class="col-md-10">
-    <div class="form-group">
-      
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text"><b>اسم الطالب </b> </div>
-        </div>
-        <input  value="{{feesData.values.std_name}}"  class="form-control" readonly>
-      </div>
-    </div>   
-  </div>
-
-   <div  class="col-md-1"></div>
-
-</div>
-<div class="row">
-    <div  class="col-md-1"></div>
-
-    <div class="col-md-5">
-      <div class="form-group">
-        
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text"><b> رقم الهويه </b> </div>
-          </div>
-          <input name="ID"   value="{{feesData.values.ssn}}"  class="form-control" readonly>
-        </div>
-      </div>   
-    </div>
-    <div class="col-md-5">
-  
-        <div class="form-group">
-        
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text"><b>  رقم الطالب / الطالبه</b> </div>
-              </div>
-              <input name="fsermester"  value="{{feesData.values.std_id}}"   class="form-control" readonly>
-            </div>
-          </div>   
-      </div>  <div  class="col-md-1"></div>
-
-  </div>
-  
-  <div class="row">
-      <div  class="col-md-1"></div>
-
-      <div class="col-md-5">
-        <div class="form-group">
-          
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <div class="input-group-text"><b> الكلية     </b> </div>
-            </div>
-            <input name="accamdeicStatus"   value=" {{feesData.values.coll}}  "  class="form-control" readonly>
-          </div>
-        </div>   
-      </div>
-      <div class="col-md-5">
     
-          <div class="form-group">
-          
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"><b>التخصص    </b> </div>
-                </div>
-                <input name="TotalGrade"  value="{{feesData.values.major}}"   class="form-control" readonly>
-              </div>
-            </div>   
-        </div>
-        <div  class="col-md-1"></div>
-
-    </div>
     
-    <div class="row">
-        <div  class="col-md-1"></div>
-
-        <div class="col-md-5">
-          <div class="form-group">
-            
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text"><b> المستووى الدراسي </b> </div>
-              </div>
-              <input name="AcademicCurrentStatus"  value="{{feesData.values.level}}"   class="form-control" readonly>
-            </div>
-          </div>   
-        </div>
-
-        <div class="col-md-5">
-      
-            <div class="form-group">
-            
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text"><b> المرحله  </b> </div>
-                  </div>
-                  <input name="Fees"  value="{{feesData.values.stage}}"   class="form-control" readonly>
-                </div>
-              </div>   
-          </div>        <div  class="col-md-1"></div>
-
-      </div> 
-      <div class="row">
-          <div  class="col-md-1"></div>
-  
-          <div class="col-md-5">
-            <div class="form-group">
-              
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <div class="input-group-text"><b>  الحالة </b> </div>
-                </div>
-                <input name="AcademicCurrentStatus"  value="{{feesData.values.status}}"   class="form-control" readonly>
-              </div>
-            </div>   
-          </div>
-  
-          <div class="col-md-5">
-        
-              <div class="form-group">
-              
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><b> الفرع  </b> </div>
+    
+    
+        <section  class="ser-state">
+            <div class="container">
+                 <div class="row ser-block">
+                    <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6> اسم الطالب </h6>
+                             <h5>{{feesData.values.std_name}}</h5>
+                          </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 100%;"></div>
+                            </div>
                     </div>
-                    <input name="Fees"  value="{{feesData.values.branch}}"   class="form-control" readonly>
+                    <div class=" col-md-4 col-sm-12">
+                        <div class="state">
+                           <h6>الرقم الجامعي </h6>
+                           <h5>{{feesData.values.std_id}} </h5>
+                        </div>
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-info" style="width: 100%;"></div>
+                          </div>
                   </div>
-                </div>   
-            </div>        <div  class="col-md-1"></div>
-  
-        </div> 
-    </div>
-      <div class="jumbotron jumbtron-fluid">
+                  <div class=" col-md-4 col-sm-12">
+                      <div class="state">
+                         <h6>   السجل المدني  </h6>
+                         <h5>{{feesData.values.ssn}}</h5>
+                      </div>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-info" style="width: 100%;"></div>
+                        </div>
+                   </div>
+                  
+                  </div>
+                
+                  <div class="row ser-block">
+                      <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                               <h6> الكلية  </h6>
+                               <h5>{{feesData.values.coll}}</h5>
+                            </div>
+                              <div class="progress progress-sm">
+                                  <div class="progress-bar bg-info" style="width: 100%;"></div>
+                              </div>
+                      </div>
+                      <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>التخصص</h6>
+                             <h5>{{feesData.values.major}} </h5>
+                          </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 100%;"></div>
+                            </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-12">
+                        <div class="state">
+                           <h6>المستووى الدراسي
+                            </h6>
+                           <h5>{{feesData.values.level}} </h5>
+                        </div>
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-info" style="width: 100%;"></div>
+                          </div>
+                  </div>
+                  
+                    
+                    </div>
+                    
+                
+                  <div class="row ser-block">
+                      <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                               <h6> الكلية  </h6>
+                               <h5>{{feesData.values.coll}}</h5>
+                            </div>
+                              <div class="progress progress-sm">
+                                  <div class="progress-bar bg-info" style="width: 100%;"></div>
+                              </div>
+                      </div>
+                      <div class=" col-md-4 col-sm-12">
+                          <div class="state">
+                             <h6>الحاله</h6>
+                             <h5>{{feesData.values.status}} </h5>
+                          </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 100%;"></div>
+                            </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-12">
+                        <div class="state">
+                           <h6> الفرع
+                            </h6>
+                           <h5>{{feesData.values.branch}} </h5>
+                        </div>
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-info" style="width: 100%;"></div>
+                          </div>
+                  </div>
+                    
+                    </div>
+            </div></section>
+          </div>
+
+  <div class="jumbotron jumbtron-fluid">
 
    <div class="row">
 
@@ -154,7 +130,7 @@
           <b> {{feesData.labels.txt6}}</b>
         </p>
       </div> </div>
-        <div  class="btn-group btn-group-justified col-md-12 ">
+        <div  class="row prin ">
             <div class="col-md-4"></div>
             <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
               طباعة</a>
@@ -162,5 +138,5 @@
               Print</a>
             <div class="col-md-4"></div>
           
-            </div>
+            </div></div>
    

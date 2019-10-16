@@ -1,6 +1,6 @@
 <!-- Modal -->
 <mat-dialog-content>
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" style="direction: rtl">
       <div class="modal-content">
         <div class="modal-header">
           <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب اعادة قيد   </h5>
@@ -29,7 +29,7 @@
             <div class="image-upload">
                 <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)" />
             </div> 
-       
+       <br/>
            
           <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
                       <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
