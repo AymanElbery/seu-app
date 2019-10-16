@@ -1,7 +1,6 @@
+
 <div class="main-content" style="padding-top:0">
                
-    <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner>
-
                             
   <section class="service-single">
 
@@ -20,14 +19,24 @@
           </div>
           </div>
        </section>
-       
-       <div class=" stu-name col-md-4 col-sm-12 ">
+      
+          <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
+              <div class="state">
+      
+                  <h5>  جاري تحميل البيانات .....................</h5>
+
+      
+              </div> </div>
+       <div *ngIf="!isLoading"  class=" stu-name col-md-4 col-sm-12 ">
         <div class="state">
-           <h5> <span>اسم الطالب : </span>{{recoredData.student_name}}  </h5> 
+
+           <h5> <span>اسم الطالب : </span>
+            {{recoredData.student_name}}  </h5> 
+
         </div>
    </div>
                
-   <section  class="ser-state">
+   <section *ngIf="!isLoading"  class="ser-state">
      
     <div class="container">
          <div class="row ser-block">
@@ -98,7 +107,7 @@
 
 
 
-<div class="accordion"   id="accordionExample">
+<div class="accordion" *ngIf="!isLoading"   id="accordionExample">
   <div  *ngFor="let item of recoredData.terms ; let i = index">
       <div class="card " >
           <div class="card-header" id="heading{{i}}">
@@ -222,7 +231,7 @@
       </div>
   </div>
   </div>
-  <div  class="btn-group btn-group-justified col-md-12 ">
+  <div  class=" row prin ">
       <div class="col-md-4"></div>
       <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
         طباعة</a>
@@ -231,4 +240,6 @@
       <div class="col-md-4"></div>
     
       </div>
+      <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner>
+
   </div>

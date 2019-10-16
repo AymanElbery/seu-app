@@ -6,5 +6,5 @@ export interface CourseEqual {
     messages;
     PREV_UNIV: number;
     DESC_CRSE_FILE: string;
-    TRANSCRIPT_FILE:string;
+    TRANSCRIPT_FILE: string;
 }

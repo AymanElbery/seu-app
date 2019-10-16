@@ -37,7 +37,7 @@ this.acadmicProc.getRequests().then(
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
-    dialogConfig.width = '70%';
+    dialogConfig.width = '60%';
 
 
     this.dialog.open(AddLecturesExecusesComponent, dialogConfig);

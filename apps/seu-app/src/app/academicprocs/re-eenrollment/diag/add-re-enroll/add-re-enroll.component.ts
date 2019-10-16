@@ -94,6 +94,7 @@ return  Math.floor(Math.random() * 10) + hr ;
 
 }
 closeDiag() {
+
   this.dialogRef.close();
 }
 }

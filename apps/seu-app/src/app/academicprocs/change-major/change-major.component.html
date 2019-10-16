@@ -1,5 +1,20 @@
 <div class="main-content" >
-
+    <section class="service-single">
+        <div class="container">
+                <h3> تغير الفرع</h3>
+             <div class="row">
+                <div class=" col-md-5">
+                  <p>     تغير فرع الجامعه  </p>
+                 </div>
+                <div class=" col-md-6 descr">
+                  <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    
+                </div>
+            </div>
+            </div>
+         </section>
+<div class="widget">
 <div  *ngFor="let msg of msgs" class="alert alert-info" role="alert">
     {{msg.body}}!
   </div>
@@ -8,7 +23,7 @@
     </div>
   <div style="direction: ltr;text-align: center">
     
-    <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+    <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
     اضافة طلب
   </button>
   <br/>
