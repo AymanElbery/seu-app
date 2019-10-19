@@ -16,6 +16,7 @@ export class RegisterationHelperComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
   /*colleges: any;
   college: { theCollege };
 
@@ -28,25 +29,26 @@ export class RegisterationHelperComponent implements OnInit {
 
   ngOnInit() {
     // this.cancelCousre = {courses: null, agreement: 1};
-
+    this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
         //this.colleges = this.acadmicProc.reqData.colledges;
-      //  this.errorMessages = this.acadmicProc.reqData.error_messages;
+        //  this.errorMessages = this.acadmicProc.reqData.error_messages;
         // console.log(this.reqData.reqs);
 
       }
     );
 
-    
+
 
   }
 
-  
+
 
   delete(id, index) {
     if (confirm('هل انت متأكد')) {

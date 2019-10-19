@@ -1,7 +1,9 @@
 <mat-dialog-content style="height: 2500px">
 
 
-
+    <mat-spinner *ngIf="isLoading"
+    style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+  </mat-spinner>
 
   <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
     <div class="widget">

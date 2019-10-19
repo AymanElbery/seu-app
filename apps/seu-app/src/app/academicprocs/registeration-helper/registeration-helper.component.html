@@ -1,9 +1,26 @@
 <div class="main-content">
-  <div class="widget">
-    <div class="widget-header">
-      <h3 class="widget-title"> مساعد التسجيل</h3>
+
+
+
+  <section class="service-single">
+    <div class="container">
+      <h3> مساعد التسجيل</h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p> طلب مساعد التسجيل </p>
+        </div>
+        <div class=" col-md-6 descr">
+          <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <mat-spinner *ngIf="isLoading"
+  style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+</mat-spinner>
 
   <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
     {{msg.body}}!

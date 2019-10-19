@@ -15,10 +15,12 @@ export class RegisterWishesComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
 
   constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: RegisterWishesService) { }
   
   ngOnInit() {
+    this.isLoading=true;
     this.registerWishes = { tow_days:0,wish:'' };
 
     this.acadmicProc.getِgetRequests().then(
@@ -27,7 +29,7 @@ export class RegisterWishesComponent implements OnInit {
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
-
+        this.isLoading=false;
 
       }
     );
