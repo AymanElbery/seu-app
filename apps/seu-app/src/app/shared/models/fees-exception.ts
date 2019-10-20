@@ -13,4 +13,5 @@ export interface FeesException {
     id_card: string;
     letter: string;
     mco_id_card: string;
+    bank_card:string;
 }

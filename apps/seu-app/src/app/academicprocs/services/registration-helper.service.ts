@@ -22,9 +22,11 @@ export class RegistrationHelperService {
 
   getِgetCourse(collegeId) {
     //?std_id=S190000060
+    collegeId = collegeId == '' ? '0' : collegeId;
     return this.httRequest.GetRequest('registeration_helper_service/get_courses_for_colledges/' + collegeId).toPromise();
   }
   getِgetDepartments(courseId) {
+    courseId = courseId == '' ? '0' : courseId;
     //?std_id=S190000060
     return this.httRequest.GetRequest('registeration_helper_service/get_departments/' + courseId).toPromise();
   }
@@ -37,5 +39,5 @@ export class RegistrationHelperService {
   AddRequest(data) {
 
     return this.httRequest.postRequest('registeration_helper_service/insert', data).toPromise();
-}
+  }
 }

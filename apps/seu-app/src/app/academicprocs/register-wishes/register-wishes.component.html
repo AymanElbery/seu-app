@@ -1,188 +1,201 @@
 <div class="main-content">
-  
-  
+
+    <mat-spinner *ngIf="isLoading"
+    style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+  </mat-spinner>
+
+  <section class="service-single">
+    <div class="container">
+      <h3> التسجيل للمستجدين</h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p> رغبات التسجيل للمستجدين </p>
+        </div>
+        <div class=" col-md-6 descr">
+          <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
+    {{msg.body}}!
+  </div>
+
+
+
   <div class="widget">
     <div class="widget-header">
-      <h3 class="widget-title">رغبات التسجيل للمستجدين</h3>
-    </div>
-  </div>
-
-    <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
-      {{msg.body}}! 
+      <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
     </div>
 
 
+    <section class="ser-state">
+      <div class="container">
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>اسم الطالب / الطالبة </h6>
+              <h5>{{reqData.student_name}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 15%;"></div>
+            </div>
+          </div>
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>رقم الطالب / الطالبة </h6>
+              <h5>{{reqData.student_id}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 15%;"></div>
+            </div>
+          </div>
 
-    <div class="widget">
-      <div class="widget-header">
-        <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
+        </div>
+
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>الكلية </h6>
+              <h5>{{reqData.colledge}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 15%;"></div>
+            </div>
+          </div>
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>التخصص </h6>
+              <h5>{{reqData.major}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 15%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row  ser-block">
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>الحالة الأكاديمية </h6>
+              <h5>{{reqData.academic_status}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 15%;"></div>
+            </div>
+          </div>
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>فرع الدراسة </h6>
+              <h5>{{reqData.branch}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 15%;"></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
 
-      <section class="ser-state">
+
+  </div>
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <section class="ser-state">
+      <div class="widget">
+        <div class="widget-header">
+
+          <h3 class="widget-title"> اختر الرغبات</h3>
+        </div>
+
         <div class="container">
           <div class="row ser-block">
-            <div class=" col-md-6 col-sm-12">
+            <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>اسم الطالب / الطالبة </h6>
-                <h5>{{reqData.student_name}} </h5>
+                <h6>هل ترغب ب يومين (يبدأ من 5 مساء) </h6>
+                <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #TowDaya="ngModel"
+                  [(ngModel)]="registerWishes.tow_days" name="TowDaya" ng-true-value=0 ng-false-value=1>
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 15%;"></div>
-              </div>
-            </div>
-            <div class=" col-md-6 col-sm-12">
-              <div class="state">
-                <h6>رقم الطالب / الطالبة </h6>
-                <h5>{{reqData.student_id}} </h5>
-              </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 15%;"></div>
-              </div>
-            </div>
 
-          </div>
-
-          <div class="row ser-block">
-            <div class=" col-md-6 col-sm-12">
-              <div class="state">
-                <h6>الكلية </h6>
-                <h5>{{reqData.colledge}} </h5>
-              </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 15%;"></div>
-              </div>
             </div>
-            <div class=" col-md-6 col-sm-12">
+            <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>التخصص </h6>
-                <h5>{{reqData.major}} </h5>
+                <h6>الأيام و الفترات المتاحة </h6>
+                <select required class="form-control" #Wishes="ngModel" [(ngModel)]="registerWishes.wish" name="Wishes"
+                  [class.is-invalid]="registerWishes.wish == ''">
+                  <option value=''>اختر الفترة المتاحة</option>
+                  <option *ngFor="let wish of reqData.wishes_list" [value]="wish.id">{{wish.value}}</option>
+                </select>
+
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 15%;"></div>
-              </div>
+
             </div>
 
-          </div>
-
-          <div class="row  ser-block">
-            <div class=" col-md-6 col-sm-12">
+            <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الحالة الأكاديمية </h6>
-                <h5>{{reqData.academic_status}} </h5>
+                <h6> <br /> </h6>
+                <button [disabled]="reqData.can_add_new_request" type="submit" class="btn btn-dark"><i
+                    class="fa fa-database"></i> ارسال الطلب</button>
+
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 15%;"></div>
-              </div>
-            </div>
-            <div class=" col-md-6 col-sm-12">
-              <div class="state">
-                <h6>فرع الدراسة </h6>
-                <h5>{{reqData.branch}} </h5>
-              </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info" style="width: 15%;"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-    </div>
-    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-      <section class="ser-state">
-        <div class="widget">
-          <div class="widget-header">
-
-            <h3 class="widget-title"> اختر الرغبات</h3>
-          </div>
-
-          <div class="container">
-            <div class="row ser-block">
-              <div class=" col-md-4 col-sm-12">
-                <div class="state">
-                  <h6>هل ترغب ب يومين (يبدأ من 5 مساء) </h6>
-                  <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #TowDaya="ngModel" [(ngModel)]="registerWishes.tow_days"
-                    name="TowDaya" ng-true-value=0 ng-false-value=1>
-                </div>
-            
-              </div>
-              <div class=" col-md-4 col-sm-12">
-                <div class="state">
-                  <h6>الأيام و الفترات المتاحة </h6>
-                  <select required class="form-control" #Wishes="ngModel" [(ngModel)]="registerWishes.wish"
-                    name="Wishes" [class.is-invalid]="registerWishes.wish == ''">
-                    <option value=''>اختر الفترة المتاحة</option>
-                    <option *ngFor="let wish of reqData.wishes_list" [value]="wish.id">{{wish.value}}</option>
-                  </select>
-
-                </div>
-            
-              </div>
-
-              <div class=" col-md-4 col-sm-12">
-                <div class="state">
-                  <h6> <br /> </h6>
-                  <button [disabled]="reqData.can_add_new_request" type="submit" class="btn btn-dark"><i
-                      class="fa fa-database"></i> ارسال الطلب</button>
-
-                </div>
-                <!--  <div class="progress progress-sm">
+              <!--  <div class="progress progress-sm">
                       <div class="progress-bar bg-info" style="width: 15%;"></div>
                     </div>-->
-              </div>
-
             </div>
+
           </div>
         </div>
-      </section>
-    </form>
-
-    <div class="widget">
-      <div class="widget-header">
-
-
-
-
-        <h3 class="widget-title"> الرغبات التي قمت بإدخالها</h3>
       </div>
-      <div class="table-responsive">
-        <table class="table table-striped table-bordered">
-          <thead style="background: #ebecf0">
+    </section>
+  </form>
 
-            <tr>
-              <th scope="col">ترتيب الرغبة</th>
-
-              <th scope="col">اليوم و الفترة</th>
-              <th scope="col"> تاريخ الطلب</th>
-              <th scope="col"> إلغاء الطلب</th>
+  <div class="widget">
+    <div class="widget-header">
 
 
 
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let it of reqData.requests;let i=index;">
-              <td>{{it.sort}}</td>
 
-
-              <td>{{it.duration}}</td>
-              <td>{{it.insert_date}}</td>
-
-              <td><button class="btn btn-sm btn-danger" style="color: white" (click)="delete(it.request_number,i)"><i
-                    class="fa fa-trash"></i> </button></td>
-              <!--[disabled]='!it.deletable'-->
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
+      <h3 class="widget-title"> الرغبات التي قمت بإدخالها</h3>
     </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead style="background: #ebecf0">
+
+          <tr>
+            <th scope="col">ترتيب الرغبة</th>
+
+            <th scope="col">اليوم و الفترة</th>
+            <th scope="col"> تاريخ الطلب</th>
+            <th scope="col"> إلغاء الطلب</th>
 
 
 
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let it of reqData.requests;let i=index;">
+            <td>{{it.sort}}</td>
 
 
+            <td>{{it.duration}}</td>
+            <td>{{it.insert_date}}</td>
+
+            <td><button class="btn btn-sm btn-danger" style="color: white" (click)="delete(it.request_number,i)"><i
+                  class="fa fa-trash"></i> </button></td>
+            <!--[disabled]='!it.deletable'-->
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
   </div>
+
+
+
+
+
+</div>

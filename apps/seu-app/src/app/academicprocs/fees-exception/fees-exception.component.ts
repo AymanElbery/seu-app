@@ -13,18 +13,20 @@ export class FeesExceptionComponent implements OnInit {
   reqData;
   msgs;
   status;
-
+  isLoading=false;
 
 
   constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: FeesExceptionService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
+        this.isLoading=false;
       }
     );
   }
