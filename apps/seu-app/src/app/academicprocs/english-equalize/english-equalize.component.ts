@@ -37,7 +37,7 @@ this.acadmicProc.getِgetRequests().then(
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
-    dialogConfig.width = '50%';
+    dialogConfig.width = '60%';
 
     this.dialog.open(AddEnglishEqualizerComponent, dialogConfig);
   }
@@ -68,12 +68,13 @@ return    this.acadmicProc.Download(req);
 
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
-    
+
         });
-        if(this.status == 1)
+      if (this.status == 1) {
           this.acadmicProc.reqData.requests.splice(index, 1);
+        }
     });
-    //this.acadmicProc.reqData.reqs.splice(index, 1);
+    // this.acadmicProc.reqData.reqs.splice(index, 1);
 
   }
 
