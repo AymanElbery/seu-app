@@ -1,5 +1,5 @@
 <div class="main-content"  >
-    <section class="service-single">
+    <section class="service-single mb-10" >
         <div class="container">
                 <h3> تغير الفرع</h3>
              <div class="row">
@@ -14,15 +14,21 @@
             </div>
             </div>
          </section>
-                
-<div class="content">
-  <div class="widget">
+    <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12  ">
+          <div class="state">
+  
+              <h5>  جاري تحميل البيانات .....................</h5>
+  
+  <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
+  
+          </div> </div> 
  
-<div style="text-align: right" *ngFor="let msg of msgs" class="alert alert-info" role="alert">
-  {{msg.body}}!
-</div>
-
-<div style="direction: ltr;text-align: center">
+          <div  class="ser-state" *ngIf="!isLoading">
+              <div style="text-align: right" *ngFor="let msg of msgs" class="alert alert-info" role="alert">
+                {{msg.body}}!
+              </div>
+          </div>
+<!-- <div style="direction: ltr;text-align: center">
   
   <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
   اضافة طلب
@@ -30,7 +36,18 @@
 <br/>
 <br/>
 
-</div>
+</div> -->
+<div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+
+
+      <h3 class="widget-title"> الطلبات السابقة
+        <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+          اضافة طلب
+        </button>
+
+      </h3>
+    </div>
 <div class="table-responsive">
     <table class="table table-striped table-bordered">
         <thead style="background: #ebecf0">
@@ -67,4 +84,4 @@
 </div>
 </div>
 </div>
-</div>
+

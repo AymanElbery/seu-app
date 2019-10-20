@@ -19,18 +19,22 @@ export class PostponeRequestComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
+
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: TermPostponeService) { }
 
   ngOnInit() {
-this.reason = '';
-this.acadmicProc.getِgetRequests().then(
-      res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-      }
-    );
+    this.isLoading=true;
+    this.reason = '';
+    this.acadmicProc.getِgetRequests().then(
+          res => {
+        this.acadmicProc.reqData =    (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading=false;
+          }
+        );
   }
 
   openDialoge() {

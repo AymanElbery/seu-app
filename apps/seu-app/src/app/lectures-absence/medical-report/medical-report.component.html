@@ -17,7 +17,15 @@
             </div>
             </div>
          </section>
-    <div class="widget">
+         <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
+          <div class="state">
+  
+              <h5>  جاري تحميل البيانات .....................</h5>
+  
+  <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
+  
+          </div> </div> 
+    <div class="widget"  *ngIf="!isLoading">
     <br>
     
     <h6 class="display-6 text-center">
@@ -82,7 +90,7 @@
                     </div>
             </div></section>
           </div>
-      <div class="jumbotron jumbtron-fluid">
+      <div class="jumbotron jumbtron-fluid"  *ngIf="!isLoading">
 
    <div class="row">
 
@@ -97,7 +105,7 @@
         
         </p>
       </div> </div>
-        <div  class="row  prin ">
+        <div  class="row  prin "  *ngIf="!isLoading">
             <div class="col-md-4"></div>
             <a class="btn " href="{{arabicPrint}}"><i class="ik ik-save"></i> 
               طباعة</a>

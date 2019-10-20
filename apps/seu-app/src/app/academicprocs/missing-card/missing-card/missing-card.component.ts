@@ -17,9 +17,12 @@ export class MissingCardComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
+
   constructor(public dialog: MatDialog, public receiptDiag:MatDialog ,private toastr: ToastrService ,private missCard:MissingUnivCardService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.card = {name: '', phone: '', ssn: '',day:'',time:'',level:'',photo:'',ssn_file:''};
     this.missCard.getِgetRequests().then(
       res => {
@@ -27,6 +30,7 @@ export class MissingCardComponent implements OnInit {
     this.missCard.msgs = (res as any).messages;
     this.reqData = this.missCard.reqData;
     this.msgs = this.missCard.msgs;
+    this.isLoading=false;
    
       }
     );

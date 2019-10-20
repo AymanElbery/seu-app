@@ -1,6 +1,6 @@
 <div class="main-content" >
 
-    <section _ngcontent-fpr-c11="" class="service-single mb-10">
+    <section _ngcontent-fpr-c11="" class="service-single ">
         <div _ngcontent-fpr-c11="" class="container">
         <h3 _ngcontent-fpr-c11="">  طلب التدريب الميداني والعملي  </h3>
         <div _ngcontent-fpr-c11="" class="row">
@@ -13,14 +13,23 @@
     </div>
     </div>
     </section>
-
-    <div  *ngFor="let msg of msgs" class="alert alert-info" role="alert">
-        {{msg.body}}!
-      </div>
-      <div *ngIf="msg!=null" style="text-align: right"  class="alert alert-info" role="alert">
+    <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12  ">
+        <div class="state">
+  
+            <h5>  جاري تحميل البيانات .....................</h5>
+  
+  <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
+  
+        </div> </div> 
+        <div  class="ser-state" *ngIf="!isLoading">
+        <div  *ngFor="let msg of msgs" class="alert alert-info" role="alert">
+            {{msg.body}}!
+          </div>
+    </div>
+      <div *ngIf="msg!=null && !isLoading" style="text-align: right"  class="alert alert-info" role="alert">
           {{msg.body}}!
         </div>
-      <div style="direction: ltr;text-align: center">
+      <!-- <div style="direction: ltr;text-align: center">
         
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
         اضافة طلب
@@ -28,8 +37,16 @@
       <br/>
       <br/>
       
-      </div>
-      <div>
+      </div> -->
+      <div class="widget"   *ngIf="!isLoading">
+          <div class="widget-header">
+              <h3 class="widget-title"> الطلبات السابقة
+                   
+                  <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+                      اضافة طلب
+                    </button>
+            </h3>
+          </div>
         <div class="table-responsive">
       <table class="table table-striped table-bordered">
           <thead style="background: #ebecf0">
@@ -61,23 +78,28 @@
           
         </tbody>
       </table></div>
+      <div class="jumbotron jumbtron-fluid"  *ngIf="!isLoading" >
+          <div class="row mb-10">
+      <!-- <p style="direction: rtl;float: right;text-align: right;padding-right: 50px"> -->
+          <div style="margin-top: 15px;">
+            <h3 style="direction: rtl;float: right;text-align: right;padding-right: 50px">تعليمات الطلب   </h3>
+          </div>
+          </div>
+            <div class="row">
+              <ul>
+                <ol>
+                  <li>القبول مشروط  باجتيازك  لـ 86 ساعة علماً بأنه لن تتمكن من التدريب ويعتبر تسجيلك في التدريب ملغي الا باجتياز 86 ساعة وفي حال عدم  اجتيازك لـ 86 ساعة</li>
+                  <li>
+                    يقوم الطالب بتعبئة خطاب التدريب ونماذج التسجيل للتدريب  العملي 
+                    ( <a href="#" >بالعربي</a> و 
+                    <a href="#" >English</a>)
+                    ونموذج معلومات الطالب
+                    ( <a href="#" >من هنا </a>) </li> 
 
-      <div style="margin-top: 15px;">
-        <h3>تعليمات الطلب   </h3>
-          <ul>
-            <ol>
-              <li>القبول مشروط  باجتيازك  لـ 86 ساعة علماً بأنه لن تتمكن من التدريب ويعتبر تسجيلك في التدريب ملغي الا باجتياز 86 ساعة وفي حال عدم  اجتيازك لـ 86 ساعة</li>
-              <li>
-                 يقوم الطالب بتعبئة خطاب التدريب ونماذج التسجيل للتدريب  العملي 
-                ( <a href="#" >بالعربي</a> و 
-                 <a href="#" >English</a>)
-                ونموذج معلومات الطالب
-                ( <a href="#" >من هنا </a>) </li> 
-
-              <li> بعد الانتهاء من تعبئة النماذج وختمها أمل إعادة ارسالها علي البريد الالكتروني الخاص بالتدريب الصيفي  cci.spt@seu.edu.sa  </li>
-            </ol>
-          </ul>
-       
-      </div>
+                  <li> بعد الانتهاء من تعبئة النماذج وختمها أمل إعادة ارسالها علي البريد الالكتروني الخاص بالتدريب الصيفي  cci.spt@seu.edu.sa  </li>
+                </ol>
+              </ul>
+            </div>
+       </div>
       </div>
     </div>

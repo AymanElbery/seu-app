@@ -11,16 +11,21 @@ export class MedicalReportComponent implements OnInit {
   mrData;
   arabicPrint: string;
   EngPrint: string;
+  isLoading = false;
+
   constructor(private academicService: MedicalReportService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.academicService.getِMedicalReport().then(
       res => {
     this.mrData =    (res as any).data;
+    this.isLoading=false;
       }
     );
     this.arabicPrint =   this.academicService.Download();
     this.EngPrint = this.academicService.DownloadEng();
+    
   }
 
 }
