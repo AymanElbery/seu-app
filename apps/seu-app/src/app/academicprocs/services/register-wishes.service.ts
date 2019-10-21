@@ -8,9 +8,9 @@ import { ConfigService } from 'src/app/shared/services/config.service';
 export class RegisterWishesService {
   reqData;
   msgs;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
-			  }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = "stdservicesapi";
+  }
   getِgetRequests() {
     //?std_id=S180105049
     return this.httRequest.GetRequest('register_wishes_service?std_id=S190000060').toPromise();
@@ -26,5 +26,5 @@ export class RegisterWishesService {
 
     console.log(data);
     return this.httRequest.postRequest('register_wishes_service/insert', data).toPromise();
-}
+  }
 }

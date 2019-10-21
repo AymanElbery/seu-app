@@ -28,7 +28,5 @@ export class ConfigService {
       return this._apiURI+this.baseUrl;
 
   }
-  getMasterApiURI() {
-    return this._apiURIMaster;
-  }
+
 }
