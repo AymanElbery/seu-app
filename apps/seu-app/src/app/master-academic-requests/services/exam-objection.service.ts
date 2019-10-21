@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class ExamObjectionService {
 
-  constructor() { }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = 'stdsUnivapi';
+  }
 }
