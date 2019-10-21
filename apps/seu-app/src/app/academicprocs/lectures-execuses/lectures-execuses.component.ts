@@ -23,16 +23,16 @@ export class LecturesExecusesComponent implements OnInit {
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: LectureExecuseServiceService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-this.lectureExecuse = {attachment: '', courses: [], date: '', reason: '', type: '', week: ''};
-this.acadmicProc.getRequests().then(
+    this.isLoading = true;
+    this.lectureExecuse = {attachment: '', courses: [], date: '', reason: '', type: '', week: ''};
+    this.acadmicProc.getRequests().then(
       res => {
         console.log(res);
         this.acadmicProc.reqData =    (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
-        this.isLoading=false;
+        this.isLoading = false;
       }
     );
   }

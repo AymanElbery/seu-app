@@ -5,8 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
 
+ isMasterUrl = false;
  // tslint:disable-next-line: variable-name
  private _apiURI: string;
+ // tslint:disable-next-line: variable-name
  private _apiURIMaster: string;
 
 
@@ -23,7 +25,10 @@ export class ConfigService {
    }
 
    getApiURI() {
-       return this._apiURI;
+     if (this.isMasterUrl) {
+     return this._apiURIMaster;
+     }
+     return this._apiURI;
    }
    getMasterApiURI() {
     return this._apiURIMaster;
