@@ -18,9 +18,12 @@ export class TrainingRequestComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
+
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: TrainingRequestService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.training = {organization:''};
     this.acadmicProc.getِgetRequests().then(
       res => {
@@ -28,6 +31,7 @@ export class TrainingRequestComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    this.isLoading=false;
  
 
       }

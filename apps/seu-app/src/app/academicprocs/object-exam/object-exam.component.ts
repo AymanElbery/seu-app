@@ -17,9 +17,12 @@ export class ObjectExamComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
+
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ObjectExamService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.acadmicProc.getRequests().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;
@@ -28,7 +31,7 @@ export class ObjectExamComponent implements OnInit {
     this.msgs = this.acadmicProc.msgs;
     console.log(this.reqData.banks.CRN);
     console.log((res as any).status);
-
+    this.isLoading=false;
       }
     )}
 

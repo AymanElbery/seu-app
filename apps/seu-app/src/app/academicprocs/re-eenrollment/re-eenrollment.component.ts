@@ -21,9 +21,12 @@ export class ReEenrollmentComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
+
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ReEnrollService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.reEnroll = {proof: '', reason: '', has_proof: '1'};
     this.acadmicProc.getِgetRequests().then(
       res => {
@@ -31,6 +34,7 @@ export class ReEenrollmentComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    this.isLoading=false;
       }
     );
   }

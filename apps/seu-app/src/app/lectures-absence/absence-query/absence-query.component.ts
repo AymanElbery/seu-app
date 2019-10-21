@@ -12,15 +12,19 @@ export class AbsenceQueryComponent implements OnInit {
   EngPrint: string;
   arabicPrint: string;
   status;
+  isLoading = false;
 
   constructor(private academicService: LectureAbsQueryService) { }
 
   ngOnInit() {
+    this.isLoading = true;
+
     this.academicService.getِAbsemceQuery().then(
       res => {
     this.absData =    (res as any).data;
     console.log(this.absData.absent_percentage_total);
     this.status = (res as any).status;
+    this.isLoading=false;
       }
     );
     this.arabicPrint =   this.academicService.Download();

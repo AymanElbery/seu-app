@@ -7,12 +7,15 @@ import { AbsenceQueryComponent } from './absence-query/absence-query.component';
 import { MedicalReportComponent } from './medical-report/medical-report.component';
 import { MedicalReportService } from './services/medical-report.service';
 import { LectureAbsQueryService } from './services/lecture-abs-query.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [AbsenceExcusesComponent, AbsenceQueryComponent, MedicalReportComponent],
   imports: [
     CommonModule,
-    LecturesAbsenceRoutingModule
+    LecturesAbsenceRoutingModule,
+    MatProgressSpinnerModule
   ],
   providers : [MedicalReportService, LectureAbsQueryService]
 })

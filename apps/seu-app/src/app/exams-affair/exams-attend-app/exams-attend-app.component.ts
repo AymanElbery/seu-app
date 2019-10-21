@@ -17,13 +17,18 @@ export class ExamsAttendAppComponent implements OnInit {
   finalEn: string;
   termScheduleEn: string;
   termEn: string;
+  isLoading = false;
+
 
   constructor(private academicService: ExamsAttendAppService) { }
 
   ngOnInit() {
+    this.isLoading=true;
+
     this.academicService.getِExamsAttednace('S180105049').then(
       res => {
     this.eaData =    (res as any).data;
+    this.isLoading=false;
       }
     );
     this.finalschedule =   this.academicService.Print_Final_Exam_With_Schedule();

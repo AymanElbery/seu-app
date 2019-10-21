@@ -11,12 +11,15 @@ export class TuitionFeesStatComponent implements OnInit {
   feesData;
   arabicPrint: string;
   EngPrint: string;
-  constructor(private academicService: TuitionFeesService) { }
+  isLoading = false;
 
+  constructor(private academicService: TuitionFeesService) { }
   ngOnInit() {
+    this.isLoading=true;
     this.academicService.getِTuitionFeez().then(
       res => {
     this.feesData =    (res as any).data;
+    this.isLoading=false;
       }
     );
     this.arabicPrint =   this.academicService.Download();

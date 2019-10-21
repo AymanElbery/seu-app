@@ -102,8 +102,16 @@
           </div>
           </div>
        </section>
+       <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
+        <div class="state">
+
+            <h5>  جاري تحميل البيانات .....................</h5>
+
+<mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
+
+        </div> </div>    
               
-  <section  class="ser-state">
+  <section  class="ser-state" *ngIf="!isLoading">
       <div class="container">
            <div class="row ser-block">
               <div class=" col-md-6 col-sm-12">
@@ -128,7 +136,7 @@
           </div>
        </div>
    </section>
-           <section  class="ser-state">
+   <section  class="ser-state" *ngIf="!isLoading">
       <div class="container">
               <p>{{certificateDetails.labelngs.txt1}}   {{certificateDetails.values.std_name}}
                 {{certificateDetails.labels.txt2}}   {{certificateDetails.values.std_id}}
@@ -200,7 +208,7 @@
            
 
           
-            <div style="text-align: center" class="prin">
+            <div style="text-align: center" class="prin" *ngIf="!isLoading">
                   <button class="btn">عربي <i class="ik ik-save"></i> </button>
                   <button class="btn"> <i class="ik ik-save"></i> English  </button>
                </div>

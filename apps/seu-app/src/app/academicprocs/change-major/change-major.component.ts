@@ -21,9 +21,12 @@ export class ChangeMajorComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
+
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ChangeMajorService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.cancelCousre = {courses: null, agreement: 1};
     this.acadmicProc.getِgetRequests().then(
       res => {
@@ -31,6 +34,7 @@ export class ChangeMajorComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    this.isLoading=false;
     // console.log(this.reqData.reqs);
 
       }

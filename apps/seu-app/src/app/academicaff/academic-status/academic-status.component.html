@@ -1,7 +1,7 @@
     <div class="main-content" style="padding-top:0;">
-          <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner>
+          <!-- <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> -->
 
-        <section class="service-single">
+        <section class="service-single ">
             <div class="container">
                     <h3> الحالة الأكاديمية </h3>
                  <div class="row">
@@ -17,9 +17,24 @@
                 </div>
                 </div>
              </section>
-                    
-        <section  class="ser-state">
-            <div class="container">
+        <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
+              <div class="state">
+      
+                  <h5>  جاري تحميل البيانات .....................</h5>
+
+    <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
+
+              </div> </div>    
+              <div  class="ser-state" *ngIf="!isLoading">
+              </div>
+         <div class="widget" *ngIf="!isLoading" >
+            <div class="widget-header">
+                <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
+              </div>
+            <section  class="ser-state" >
+
+           <div class="container"> 
+               
                  <div class="row ser-block">
                     <div class=" col-md-4 col-sm-12">
                           <div class="state">
@@ -100,11 +115,11 @@
                             </div>
                  </div>
                 </div>
-             </div>
+            </div> 
          </section>
                  
-                    
-         <section  class="ser-state">
+              </div>      
+         <section  class="ser-state"   *ngIf="!isLoading">
             <div class="container">
                 <div class="widget">
                     <div class="widget-header" >
@@ -221,12 +236,11 @@
                </div>
               </section>
                 
-                  <div style="text-align: center" class="prin">
+          <div style="text-align: center" class="prin"  *ngIf="!isLoading">
                         <a class="btn"  href="{{arabicPrint}}">عربي <i class="ik ik-save"></i> </a>
                         <a class="btn"  href="{{EngPrint}}">  <i class="ik ik-save"></i> English  </a>
-                     </div>
+               </div>
                     
-                  
                           
       </div>
      

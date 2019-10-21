@@ -2,7 +2,7 @@
                
 
                           
-<section class="service-single">
+  <section class="service-single">
 
     <div class="container">
             <h3> الاعتذار عن المحاضرات   </h3>
@@ -19,17 +19,25 @@
         </div>
         </div>
      </section>
-     
+  <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12  ">
+      <div class="state">
 
+          <h5>  جاري تحميل البيانات .....................</h5>
 
-<div style="text-align: right" *ngFor="let msg of msgs" class="alert alert-info" role="alert">
-  {{msg.body}}!
-</div>
-<div *ngIf="msg!=null" style="text-align: right"  class="alert alert-info" role="alert">
+<mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
+
+      </div>
+   </div> 
+  <div  class="ser-state" *ngIf="!isLoading">
+    <div style="text-align: right" *ngFor="let msg of msgs" class="alert alert-info" role="alert">
+      {{msg.body}}!
+    </div>
+    </div>
+<div *ngIf="msg!=null && !isLoading" style="text-align: right"  class="alert alert-info" role="alert">
     {{msg.body}}!
   </div>
-  <br/>
-<div style="direction: ltr;text-align: center">
+ 
+<!-- <div style="direction: ltr;text-align: center">
   
   <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
   اضافة طلب
@@ -37,7 +45,18 @@
 <br/>
 <br/>
 
-</div>
+</div> -->
+<div class="widget" *ngIf="!isLoading">
+  <div class="widget-header">
+
+
+    <h3 class="widget-title"> الطلبات السابقة
+      <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+        اضافة طلب
+      </button>
+
+    </h3>
+  </div>
 <div class="table-responsive">
   <table class="table table-striped table-bordered">
       <thead style="background: #ebecf0">         
@@ -82,5 +101,6 @@
     
   </tbody>
 </table>
+</div>
 </div>
 </div>

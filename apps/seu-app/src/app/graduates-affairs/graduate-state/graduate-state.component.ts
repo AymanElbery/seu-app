@@ -11,15 +11,17 @@ export class GraduateStateComponent implements OnInit {
   graduateData;
   arabicPrint: string;
   EngPrint: string;
+  isLoading = false;
   constructor(private graduateStateSer: GraduatesStateService) { }
 
   ngOnInit() {
-
+this.isLoading=true;
 this.arabicPrint =    this.graduateStateSer.DownloadStatement();
 this.EngPrint =    this.graduateStateSer.DownloadEngStatement();
 
 this.graduateStateSer.getStatement().then(
-      (res) => {this.graduateData = (res as any).data; }
+      (res) => {this.graduateData = (res as any).data;
+      this.isLoading=false; }
     );
   }
 

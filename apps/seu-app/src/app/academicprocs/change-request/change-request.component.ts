@@ -18,10 +18,13 @@ export class ChangeRequestComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
+
   //canAdd:boolean;
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ChangeRequestService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     //this.changeRequest = {courses: null, agreement: 1};
     this.acadmicProc.getِgetRequests().then(
       res => {
@@ -29,6 +32,7 @@ export class ChangeRequestComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    this.isLoading=false;
     //console.log(this.reqData.reqs);
 
     //console.log(this.reqData);

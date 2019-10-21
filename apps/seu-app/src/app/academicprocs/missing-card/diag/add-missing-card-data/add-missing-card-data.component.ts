@@ -15,11 +15,14 @@ export class AddMissingCardDataComponent implements OnInit {
   card:universityCard;
   reqData;
   msgs;
+  isLoading = false;
+
   constructor( @Inject(MAT_DIALOG_DATA) public data,
                public dialogRef: MatDialogRef<AddMissingCardDataComponent>,
                private toastr: ToastrService,  private univCard: MissingUnivCardService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.card = {name: '', phone: '', ssn: '',day:'',time:'',level:'',photo:'',ssn_file:''};
     this.univCard.getِgetRequests().then(
       res => {
@@ -27,6 +30,7 @@ export class AddMissingCardDataComponent implements OnInit {
     this.univCard.msgs = (res as any).messages;
     this.reqData = this.univCard.reqData;
     this.msgs = this.univCard.msgs;
+    this.isLoading=false;
 
   }
     );
