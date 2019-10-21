@@ -72,6 +72,7 @@ import { MasterStudentDataModule } from './master-student-data/master-student-da
     , MasterOtherRequestsModule
     , MasterPrintCertificatesModule
     , MasterStudentDataModule
+    
 
   ],
   providers: [ConfigService,

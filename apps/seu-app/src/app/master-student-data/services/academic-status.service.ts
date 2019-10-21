@@ -9,25 +9,12 @@ export class AcademicStatusService {
 
   reqData;
   msgs;
-     constructor(private configService: ConfigService, private httRequest: HttpRequestService)
-     {
-                    this.configService.baseUrl = 'stdservicesapi';
-	  	}
-  getِgetRequests() {
-    // ?std_id=S180105049
-
-    return this.httRequest.GetRequest('register_wishes_service?std_id=S190000060').toPromise();
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = "stdsUnivapi";
   }
+  getRequests() {
+    //?std_id=S180105049
 
-  deleteReq(id) {
-    // + '?std_id=S120000101'
-    return this.httRequest.GetRequest('register_wishes_service/cancel/' + id).toPromise();
-
+    return this.httRequest.GetRequest('academic_status_service ').toPromise();
   }
-
-  AddRequest(data) {
-
-    console.log(data);
-    return this.httRequest.postRequest('register_wishes_service/insert', data).toPromise();
-}
 }
