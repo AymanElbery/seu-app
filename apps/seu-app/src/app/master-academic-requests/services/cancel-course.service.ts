@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CancelCourseService {
 
-  constructor() { }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = 'stdsUnivapi';
+  }
 }
