@@ -8,7 +8,9 @@ import { HttpRequestService } from '../../shared/services/http-request.service';
 export class PostsService {
 
 
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
+ 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+              
+			  }
 
 
   getAuthPosts() {

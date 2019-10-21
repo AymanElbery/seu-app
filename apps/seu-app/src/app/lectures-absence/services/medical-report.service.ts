@@ -7,7 +7,9 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
 })
 export class MedicalReportService {
 
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
+ 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = "stdservicesapi";
+			  }
 
 
   getِMedicalReport() {

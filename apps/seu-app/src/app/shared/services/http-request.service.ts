@@ -33,6 +33,7 @@ private createAuthRequestHeader(toekn) {
     GetRequest(path: string) {
 
     const url = this.configService.getApiURI() + '/' + path;
+    console.log(url);
   //  let headers= new Headers();
    // headers.append('Content-Type', 'application/json');
     const headers = this.createRequestHeader();

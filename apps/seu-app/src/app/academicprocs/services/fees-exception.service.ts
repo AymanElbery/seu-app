@@ -8,7 +8,9 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
 export class FeesExceptionService {
   reqData;
   msgs;
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
+ 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = "stdservicesapi";
+			  }
 
   getِgetRequests() {
     return this.httRequest.GetRequest('fees_exception_service').toPromise();

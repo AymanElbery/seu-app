@@ -8,7 +8,9 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
 export class ExamsAttendAppService {
 
 
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
+ 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = "stdservicesapi";
+			  }
 
 
   getِExamsAttednace(id) {

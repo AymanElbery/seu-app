@@ -9,7 +9,9 @@ export class TermExecuseService {
 
   reqData;
   msgs;
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
+ 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = "stdservicesapi";
+			  }
 
   getِgetRequests() {
 

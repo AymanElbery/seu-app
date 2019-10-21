@@ -7,7 +7,9 @@ import { HttpRequestService } from '../shared/services/http-request.service';
 })
 export class TuitionFeesService {
 
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
+ 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = "stdservicesapi";
+			  }
 
 
   getِTuitionFeez() {

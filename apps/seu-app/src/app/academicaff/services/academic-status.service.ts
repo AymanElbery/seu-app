@@ -9,7 +9,9 @@ import { map } from 'rxjs/operators';
 })
 export class AcademicStatusService {
 
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
+ 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = "stdservicesapi";
+			  }
 
 
   getStaudentStatus() {

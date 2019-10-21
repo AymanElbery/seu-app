@@ -9,10 +9,12 @@ export class CancelCourseService {
 
   reqData;
   msgs;
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
-
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { 
+    this.configService.baseUrl = "stdservicesapi";
+  }
+ 
   getِgetRequests() {
-
+   
    return this.httRequest.GetRequest('course_cancel?std_id=S120000101').toPromise();
   }
   AddRequest(data) {

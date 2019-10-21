@@ -10,7 +10,9 @@ export class LectureExecuseServiceService {
 
   reqData;
   msgs;
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) { }
+ 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = "stdservicesapi";
+			  }
 
   getRequests() {
 
