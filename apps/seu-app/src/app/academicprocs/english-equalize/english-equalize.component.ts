@@ -70,7 +70,7 @@ return    this.acadmicProc.Download(req);
         this.toastr.success('', element.body);
 
         });
-      if (this.status == 1) {
+      if (this.status === 1) {
           this.acadmicProc.reqData.requests.splice(index, 1);
         }
     });
