@@ -11,7 +11,6 @@ export class AcademicRecordService {
                     this.configService.baseUrl = "stdservicesapi";
 			  }
 
-
   getِAcademicRecord() {
 
    return this.httRequest.GetRequest('academic_record_service/get_academic_record').toPromise();
