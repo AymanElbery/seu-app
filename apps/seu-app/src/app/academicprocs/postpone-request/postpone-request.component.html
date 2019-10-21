@@ -14,23 +14,21 @@
             </div>
             </div>
          </section>
-         <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12  ">
+    <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12  ">
           <div class="state">
   
               <h5>  جاري تحميل البيانات .....................</h5>
   
   <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
   
-          </div> </div> 
-         
-
-
-          <div  class="ser-state" *ngIf="!isLoading">
+          </div>
+       </div> 
+     <div  class="ser-state" *ngIf="!isLoading">
             <div style="text-align: right" *ngFor="let msg of msgs" class="alert alert-info" role="alert">
               {{msg.body}}!
             </div>
-          </div>
-          <div *ngIf="msg!=null && !isLoading" style="text-align: right"  class="alert alert-info" role="alert">
+         </div>
+      <div *ngIf="msg!=null && !isLoading" style="text-align: right"  class="alert alert-info" role="alert">
               {{msg.body}}!
             </div>
 <!-- <div style="direction: ltr;text-align: center">
@@ -43,8 +41,8 @@
 <br/>
 
 </div> -->
-<div class="widget" *ngIf="!isLoading">
-    <div class="widget-header">
+       <div class="widget" *ngIf="!isLoading">
+   <div class="widget-header">
 
 
       <h3 class="widget-title"> الطلبات السابقة

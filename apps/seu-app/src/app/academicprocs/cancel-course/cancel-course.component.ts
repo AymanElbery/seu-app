@@ -19,9 +19,12 @@ export class CancelCourseComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
+
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: CancelCourseService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.cancelCousre = {courses: null, agreement: 1};
     this.acadmicProc.getِgetRequests().then(
       res => {
@@ -29,6 +32,7 @@ export class CancelCourseComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    this.isLoading=false;
     // console.log(this.reqData.requests);
       }
     );

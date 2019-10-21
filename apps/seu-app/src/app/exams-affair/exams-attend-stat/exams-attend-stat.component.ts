@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExamAttendanceService } from '../services/exam-attendance.service';
+// import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-exams-attend-stat',
@@ -17,13 +18,16 @@ export class ExamsAttendStatComponent implements OnInit {
   finalEn: string;
   termScheduleEn: string;
   termEn: string;
+  isLoading = false;
 
   constructor(private academicService: ExamAttendanceService) { }
 
   ngOnInit() {
+    this.isLoading=true;
     this.academicService.getِExamsAttednace('S180105049').then(
       res => {
     this.eaData =    (res as any).data;
+    this.isLoading=false;
       }
     );
     this.finalschedule =   this.academicService.Print_Final_Exam_With_Schedule();

@@ -9,6 +9,7 @@ import { ExamsResultObjectionComponent } from './exams-result-objection/exams-re
 import { ExamAttendanceService } from './services/exam-attendance.service';
 import { ExamsAttendAppComponent } from './exams-attend-app/exams-attend-app.component';
 import { ExamsAttendAppService } from './services/exams-attend-app.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [ExamsScheduleComponent,
@@ -18,7 +19,8 @@ import { ExamsAttendAppService } from './services/exams-attend-app.service';
       ExamsAttendAppComponent],
   imports: [
     CommonModule,
-    ExamsAffairRoutingModule
+    ExamsAffairRoutingModule,
+    MatProgressSpinnerModule
   ],
   providers: [ExamAttendanceService, ExamsAttendAppService]
 })

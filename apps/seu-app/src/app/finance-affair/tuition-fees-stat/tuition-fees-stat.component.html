@@ -1,17 +1,36 @@
 <div class="main-content" >
 
+  <section class="service-single">
+    <div class="container">
+            <h3>  افادة الرسوم الداسية
+            </h3>
+         <div class="row">
+            <div class=" col-md-5">
+              <p>         افادة الرسوم الداسية
+              </p>
+             </div>
+            <div class=" col-md-6 descr">
+              <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                
+            </div>
+        </div>
+        </div>
+     </section>
+   <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12  ">
+      <div class="state">
 
-    <div class="widget"><div class="widget-header"><h3 class="widget-title"> 
-        افادة الرسوم الداسية
+          <h5>  جاري تحميل البيانات .....................</h5>
 
-    </h3> </div>
-    <br>
-    
-    
-    
-    
-    
-        <section  class="ser-state">
+<mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
+
+      </div> </div> 
+      <div  class="ser-state" *ngIf="!isLoading"></div>
+    <div class="widget" *ngIf="!isLoading" >
+      <div class="widget-header">
+          <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
+        </div>
+  <section  class="ser-state" *ngIf="!isLoading"> 
             <div class="container">
                  <div class="row ser-block">
                     <div class=" col-md-4 col-sm-12">
@@ -111,8 +130,7 @@
                     </div>
             </div></section>
           </div>
-
-  <div class="jumbotron jumbtron-fluid">
+  <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading">
 
    <div class="row">
 
@@ -130,7 +148,7 @@
           <b> {{feesData.labels.txt6}}</b>
         </p>
       </div> </div>
-        <div  class="row prin ">
+        <div  class="row prin " *ngIf="!isLoading">
             <div class="col-md-4"></div>
             <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
               طباعة</a>

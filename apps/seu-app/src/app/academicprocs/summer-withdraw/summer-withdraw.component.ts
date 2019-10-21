@@ -19,9 +19,12 @@ export class SummerWithdrawComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
+
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: SummerWithdrawService) { }
 
   ngOnInit() {
+    this.isLoading=true;
 this.reason = '';
 this.acadmicProc.getِgetRequests().then(
       res => {
@@ -29,6 +32,7 @@ this.acadmicProc.getِgetRequests().then(
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    this.isLoading=false;
     //console.log(this.reqData.reqs[0].time_to_delete_per_hour);
       }
     );
