@@ -15,6 +15,6 @@ export class AcademicStatusService {
   getRequests() {
     //?std_id=S180105049
 
-    return this.httRequest.GetRequest('academic_status_service').toPromise();
+
   }
 }
