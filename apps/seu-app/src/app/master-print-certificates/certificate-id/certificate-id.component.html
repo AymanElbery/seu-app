@@ -1,3 +1,129 @@
-<p>
-  certificate-id works!
-</p>
+<div class="main-content">
+
+  <!-- <mat-spinner *ngIf="isLoading"
+  style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+</mat-spinner> -->
+
+  <section class="service-single">
+    <div class="container">
+      <h3> شهادة التعريف</h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p>  شهادة التعريف </p>
+        </div>
+        <div class=" col-md-6 descr">
+          <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12  ">
+    <div class="state">
+
+      <h5> جاري تحميل البيانات .....................</h5>
+
+      <mat-spinner *ngIf="isLoading"
+        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+      </mat-spinner>
+
+    </div>
+  </div>
+  <div class="ser-state" *ngIf="!isLoading">
+    <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
+      {{msg.body}}!
+    </div>
+
+  </div>
+  <div class="ser-state">
+      <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+        {{reqData.labels.txt1}}   {{reqData.values.std_name}}
+        {{reqData.labels.txt2}} {{reqData.values.std_id}} {{reqData.labels.txt3}} {{reqData.values.coll}} 
+      
+        {{reqData.labels.txt4}} {{reqData.values.major}}
+      
+        {{reqData.labels.txt5}}   {{reqData.values.term}}   {{reqData.labels.txt6}}  {{reqData.labels.txt7}}
+        <br/>
+        </p>
+  </div>
+  <div class="widget" *ngIf="!isLoading">
+    <div >
+      <p>
+          {{reqData.labels.date}}   {{reqData.values.date}}  {{reqData.ssn}}  {{reqData.values.ssn}}
+      </p>
+    </div>
+    <div class="widget-header">
+      <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
+    </div>
+
+
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+          <thead style="background: #ebecf0">
+    
+        <tr>
+          <th scope="col">CRN</th>
+    
+          <th scope="col">المادة </th>
+          <th scope="col">اليوم</th>
+  
+          <th scope="col">الوقت</th>
+          <th scope="col"> نوع المحاضرة</th>
+    
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let it of reqData.courses;let i=index;">
+          <td>{{it.course_id}}</td>
+         
+    
+          <td>{{it.course_name}}</td>
+          
+          <td>{{it.day}}</td>
+          <td>{{it.time}}</td>
+          <td>{{it.type}}</td>
+  
+          <!-- <td><a class="btn btn-primary" [href]="print(it.request_number)" ><span class="glyphicon glyphicon-print"></span>
+            Print</a></td> -->
+    
+        </tr>
+        
+      </tbody>
+    </table>
+    </div>
+
+
+  </div>
+  <div class="jumbotron jumbtron-fluid"  *ngIf="!isLoading" >
+
+    <div class="row">
+ 
+       <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+        {{reqData.labels.txt8}}  {{reqData.labels.txt9}}
+           <b>ملحوظة</b>  {{reqData.labels.txt11}} 
+           <br/>
+         </p>
+       </div> </div>
+  <div  class=" row prin "  *ngIf="!isLoading">
+    <div class="col-md-4"></div>
+    <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+      {{reqData.labels.txt12}}
+      </p>
+    <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
+      طباعة</a>
+    <a class="btn btn-primary" href="{{EngPrint}}"><span class="glyphicon glyphicon-print"></span>
+      Print</a>
+    <div class="col-md-4"></div>
+  
+    </div>
+    <!-- <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> -->
+
+</div>
+
+
+
+
+
+
+
