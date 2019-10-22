@@ -10,10 +10,10 @@ export class AcademicStatusService {
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-    this.configService.baseUrl = "stdsUnivapi";
+    this.configService.baseUrl = 'stdsUnivapi';
   }
   getRequests() {
-    //?std_id=S180105049
+    // ?std_id=S180105049
 
     return this.httRequest.GetRequest('academic_status_service').toPromise();
   }

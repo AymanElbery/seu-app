@@ -23,16 +23,16 @@ export class EnglishEqualizeComponent implements OnInit {
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: EnglishEqualizerService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-this.reason = '';
-this.acadmicProc.getِgetRequests().then(
+    this.isLoading = true;
+    this.reason = '';
+    this.acadmicProc.getِgetRequests().then(
       res => {
         console.log(res);
         this.acadmicProc.reqData =    (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
-        this.isLoading=false;
+        this.isLoading = false;
       }
     );
   }
