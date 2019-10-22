@@ -10,8 +10,18 @@ import { EnglishEqualizeComponent } from './english-equalize/english-equalize.co
 import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component';
 import { ChangeMajorComponent } from './change-major/change-major.component';
 import { ChangeRequestComponent } from './change-request/change-request.component';
-import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
+import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
 import { ObjectExamComponent } from './object-exam/object-exam.component';
+import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
+import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
+import {UnivCardComponent} from './univ-card/univ-card.component';
+import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
+import { RegisterWishesComponent } from './register-wishes/register-wishes.component';
+import {TerminationRequestComponent} from './termination-request/termination-request.component';
+import {TrainingRequestComponent} from './training-request/training-request.component';
+import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
+import {MissingCardComponent} from './missing-card/missing-card/missing-card.component';
+import { FeesExceptionComponent } from './fees-exception/fees-exception.component';
 
 const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivComponent },
 {
@@ -28,9 +38,20 @@ const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivCompone
   { path: 'changemajor',  component: ChangeMajorComponent },
   { path: 'changerequest',  component: ChangeRequestComponent },
   { path: 'objectexam',  component: ObjectExamComponent },
-  { path: 'lecexecuse',  component: LecturesExecusesComponent }
+  { path: 'lecexecuse',  component: LecturesExecusesComponent },
+  { path: 'reghelper',  component: RegisterationHelperComponent },
+  { path:'universitycard',component:UnivCardComponent},
+  { path:'universitycard',component:UnivCardComponent},
+  { path:'examexcuse',component:ExamExcuseComponent},
+  { path:'universitycard',component:UnivCardComponent},
+  { path:'terminate' ,component:TerminationRequestComponent},
+  { path:'training',component:TrainingRequestComponent},
+  { path: 'registerwishes',  component: RegisterWishesComponent },
+  { path: 'visitorstudent',  component: VisitorStudentComponent },
+  { path: 'missingcard',  component: MissingCardComponent },
+  { path: 'feesexception',  component: FeesExceptionComponent }
 
-
+  
 
  ]
 }];
