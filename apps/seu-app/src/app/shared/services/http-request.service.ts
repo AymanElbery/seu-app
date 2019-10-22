@@ -39,7 +39,7 @@ private createAuthRequestHeader(toekn) {
     const headers = this.createRequestHeader();
 
    // let options = new RequestOptions({ headers: headers });
-    return this.http.post(url, { headers});
+    return this.http.get(url, { headers});
    }
    GetFullUrlRequest(path: string) {
 

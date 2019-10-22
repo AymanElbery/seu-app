@@ -15,6 +15,6 @@ export class AcademicStatusService {
   getRequests() {
     //?std_id=S180105049
 
-    return this.httRequest.GetFullUrlRequest('https://seuapps.seu.edu.sa/stdsUnivapi/identification_certificate').toPromise();
+
   }
 }

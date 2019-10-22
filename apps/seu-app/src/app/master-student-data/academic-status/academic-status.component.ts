@@ -20,7 +20,7 @@ export class AcademicStatusComponent implements OnInit {
     this.stdData.getRequests().then(
       res => {
        
-
+        console.log(this.reqData);
       }
     );
   }
