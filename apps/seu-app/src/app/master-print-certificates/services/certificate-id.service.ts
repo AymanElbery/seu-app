@@ -10,10 +10,10 @@ export class CertificateIDService {
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-    this.configService.baseUrl = "stdsUnivapi";
+    this.configService.baseUrl = 'stdsUnivapi';
   }
   getRequest() {
-    //?std_id=S180105049
+    // ?std_id=S180105049
     return this.httRequest.GetRequest('identification_certificate').toPromise();
   }
   Download() {
