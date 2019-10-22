@@ -12,7 +12,7 @@ export class CertificateIDService {
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
     this.configService.baseUrl = "stdsUnivapi";
   }
-  getRequests() {
+  getRequest() {
     //?std_id=S180105049
     return this.httRequest.GetRequest('identification_certificate').toPromise();
   }

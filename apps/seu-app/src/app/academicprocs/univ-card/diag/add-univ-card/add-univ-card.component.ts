@@ -13,7 +13,7 @@ import {UvnivCardService} from '../../../services/univ-card.service';
 export class AddUnivCardComponent implements OnInit {
 
 
-  card:universityCard;
+  card: universityCard;
   reqData;
   msgs;
   constructor( @Inject(MAT_DIALOG_DATA) public data,
@@ -21,7 +21,7 @@ export class AddUnivCardComponent implements OnInit {
                private toastr: ToastrService,  private univCard: UvnivCardService) { }
 
   ngOnInit() {
-    this.card = {name: '', phone: '', ssn: '',day:'',time:'',level:'',photo:'',ssn_file:''};
+    this.card = {name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: ''};
     this.univCard.getِgetRequests().then(
       res => {
     this.univCard.reqData =    (res as any).data;
@@ -69,7 +69,7 @@ this.dialogRef.close();
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.card.photo = reader.result;
-    //console.log(this.card.photo);
+    // console.log(this.card.photo);
   }
   handleInputChangeFile(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -86,7 +86,7 @@ this.dialogRef.close();
   _handleReaderLoadedFile(e) {
     const reader = e.target;
     this.card.ssn_file = reader.result;
-    //console.log(this.card.photo);
+    // console.log(this.card.photo);
   }
 
 
@@ -100,7 +100,7 @@ this.dialogRef.close();
       this.toastr.success('', (res as any).messages.body);
 
     });
-    //this.univCard.reqData.reqs.splice(index, 1);
+    this.univCard.reqData.reqs.splice(index, 1);
 
   }
 

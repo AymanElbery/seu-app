@@ -9,7 +9,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {CertificateIDComponent} from './certificate-id/certificate-id.component';
 import { MasterPrintCertificatesRoutingModule } from './master-print-certificates-routing.module';
-import {CertificateIDService} from './services/certificate-id.service';
+import { CertificateIDService } from './services/certificate-id.service';
 
 @NgModule({
   declarations: [CertificateIDComponent],
@@ -24,5 +24,6 @@ import {CertificateIDService} from './services/certificate-id.service';
     BrowserAnimationsModule
   ],
   providers:[CertificateIDService]
+
 })
 export class MasterPrintCertificatesModule { }
