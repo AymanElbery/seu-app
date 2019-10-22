@@ -36,23 +36,33 @@
     </div>
 
   </div>
-  <div class="ser-state">
-      <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
-        {{reqData.labels.txt1}}   {{reqData.values.std_name}}
-        {{reqData.labels.txt2}} {{reqData.values.std_id}} {{reqData.labels.txt3}} {{reqData.values.coll}} 
-      
-        {{reqData.labels.txt4}} {{reqData.values.major}}
-      
-        {{reqData.labels.txt5}}   {{reqData.values.term}}   {{reqData.labels.txt6}}  {{reqData.labels.txt7}}
-        <br/>
-        </p>
+  <div class="ser-state" *ngIf="!isLoading">
   </div>
   <div class="widget" *ngIf="!isLoading">
-    <div >
-      <p>
-          {{reqData.labels.date}}   {{reqData.values.date}}  {{reqData.ssn}}  {{reqData.values.ssn}}
-      </p>
-    </div>
+    
+      <div class="hints">
+          <p style="text-align: right;padding: 5px"> 
+              {{reqData.labels.date}}   {{reqData.values.date}} 
+              <br/>
+               {{reqData.labels.ssn}}  {{reqData.values.ssn}}
+            <br/>
+                {{reqData.labels.txt1}}   {{reqData.values.std_name}}
+                {{reqData.labels.txt2}} {{reqData.values.std_id}} {{reqData.labels.txt3}} {{reqData.values.coll}} 
+              
+                {{reqData.labels.txt4}} {{reqData.values.major}}
+              
+                {{reqData.labels.txt5}}   {{reqData.values.term}}   {{reqData.labels.txt6}}  {{reqData.labels.txt7}}
+                <br/>
+                </p>
+        </div>
+  </div>
+  
+  <div class="widget" *ngIf="!isLoading">
+      <!-- <div class="hints">
+          <h6 class="display-6 text-center">    
+                {{reqData.labels.date}}   {{reqData.values.date}}  {{reqData.labels.ssn}}  {{reqData.values.ssn}}
+      </h6>
+    </div> -->
     <div class="widget-header">
       <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
     </div>
@@ -97,19 +107,20 @@
   </div>
   <div class="jumbotron jumbtron-fluid"  *ngIf="!isLoading" >
 
-    <div class="row">
- 
-       <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
-        {{reqData.labels.txt8}}  {{reqData.labels.txt9}}
+      <p class="card-text" style="text-align: right" > 
+        {{reqData.labels.txt8}} <br/> {{reqData.labels.txt9}}
+        <br/> 
+        <br/>
            <b>ملحوظة</b>  {{reqData.labels.txt11}} 
            <br/>
+           {{reqData.labels.txt12}}
+
          </p>
-       </div> </div>
+       </div> 
+         
+      
   <div  class=" row prin "  *ngIf="!isLoading">
     <div class="col-md-4"></div>
-    <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
-      {{reqData.labels.txt12}}
-      </p>
     <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
       طباعة</a>
     <a class="btn btn-primary" href="{{EngPrint}}"><span class="glyphicon glyphicon-print"></span>
