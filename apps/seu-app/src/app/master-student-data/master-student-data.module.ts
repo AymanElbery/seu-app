@@ -26,6 +26,6 @@ import { AcademicRecordService } from './services/academic-record.service';
     MatDialogModule,
     BrowserAnimationsModule
   ],
-  providers: [AcademicStatusService,AcademicRecordService]
+  providers: [AcademicStatusService, AcademicRecordService]
 })
 export class MasterStudentDataModule { }

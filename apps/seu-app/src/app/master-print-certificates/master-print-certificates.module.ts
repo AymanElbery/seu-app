@@ -1,18 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MasterPrintCertificatesRoutingModule } from './master-print-certificates-routing.module';
-import {CertificateIDService} from './services/certificate-id.service';
-import {CertificateIDComponent} from './certificate-id/certificate-id.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+import { MasterPrintCertificatesRoutingModule } from './master-print-certificates-routing.module';
+import { CertificateIDComponent } from './certificate-id/certificate-id.component';
+import { CertificateIDService } from './services/certificate-id.service';
 
 @NgModule({
   declarations: [CertificateIDComponent],
   imports: [
     CommonModule,
     MasterPrintCertificatesRoutingModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    FormsModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
-  providers:[CertificateIDService]
+  providers: [CertificateIDService]
 })
 export class MasterPrintCertificatesModule { }
