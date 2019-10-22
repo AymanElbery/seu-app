@@ -10,6 +10,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { MasterStudentDataRoutingModule } from './master-student-data-routing.module';
 import { AcademicStatusComponent } from './academic-status/academic-status.component';
+import { AcademicStatusService } from './services/academic-status.service';
 
 @NgModule({
   declarations: [AcademicStatusComponent],
@@ -22,6 +23,6 @@ import { AcademicStatusComponent } from './academic-status/academic-status.compo
     FormsModule,
     MatDialogModule,
     BrowserAnimationsModule
-  ]
+  ],providers:[AcademicStatusService]
 })
 export class MasterStudentDataModule { }
