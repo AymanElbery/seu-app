@@ -7,11 +7,12 @@ import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {CertificateIDComponent} from './certificate-id/certificate-id.component';
 import { MasterPrintCertificatesRoutingModule } from './master-print-certificates-routing.module';
+import {CertificateIDService} from './services/certificate-id.service';
 
 @NgModule({
-  declarations: [],
+  declarations: [CertificateIDComponent],
   imports: [
     CommonModule,
     MasterPrintCertificatesRoutingModule,
@@ -21,6 +22,7 @@ import { MasterPrintCertificatesRoutingModule } from './master-print-certificate
     FormsModule,
     MatDialogModule,
     BrowserAnimationsModule
-  ]
+  ],
+  providers:[CertificateIDService]
 })
 export class MasterPrintCertificatesModule { }
