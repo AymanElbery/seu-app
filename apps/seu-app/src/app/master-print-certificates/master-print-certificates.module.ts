@@ -10,9 +10,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {CertificateIDComponent} from './certificate-id/certificate-id.component';
 import { MasterPrintCertificatesRoutingModule } from './master-print-certificates-routing.module';
 import { CertificateIDService } from './services/certificate-id.service';
+import {ExamAttendanceCertificateComponent} from './exam-attendance-certificate/exam-attendance-certificate.component';
+import {ExamAttendanceCertificateService} from './services/exam-attendance-certificate.service';
 
 @NgModule({
-  declarations: [CertificateIDComponent],
+  declarations: [CertificateIDComponent,
+    ExamAttendanceCertificateComponent
+  ],
   imports: [
     CommonModule,
     MasterPrintCertificatesRoutingModule,
@@ -23,7 +27,9 @@ import { CertificateIDService } from './services/certificate-id.service';
     MatDialogModule,
     BrowserAnimationsModule
   ],
-  providers:[CertificateIDService]
+  providers:[CertificateIDService,
+    ExamAttendanceCertificateService
+  ]
 
 })
 export class MasterPrintCertificatesModule { }

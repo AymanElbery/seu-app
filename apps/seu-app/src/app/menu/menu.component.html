@@ -39,7 +39,7 @@
                   <a href="javascript:void(0)"><span> طباعة الشهادات  </span> <i class="ik ik-user"></i></a>
                   <div class="submenu-content">
                       <a href="#" class="menu-item" routerLink="/masterstdcertificate/idcertificate">شهادة التعريف</a>
-                      <a href="#" class="menu-item">شهادة حضور الإختبار</a>
+                      <a href="#" class="menu-item" routerLink="/masterstdcertificate/examattendacecertificate">شهادة حضور الإختبار</a>
                        <a href="#" class="menu-item"> شهادة إثبات حضور الإختبار </a>
                   </div>
               </div>
@@ -81,74 +81,88 @@
                   <div class="submenu-content">
                       <a href="#" class="menu-item" routerLink="/academicaff/status">الحالة الاكاديمية</a>
                       <a href="#" class="menu-item"  routerLink="/academicaff/certificate">  شهادة تعريف</a>
-                       <a href="#" class="menu-item"  routerLink="/graduates/statement">  شهادة تخرج</a>
-                       <a href="#" class="menu-item"  routerLink="/academicaff/record"> السجل الطلابي</a> 
-                       <a href="#" class="menu-item" routerLink="/lecabsence/medicalreport">  التقرير الطبي  </a>
-                       <a href="#" class="menu-item"   routerLink="/lecabsence/lectabs">   تقرير الغياب  </a> 
+                      <a href="#" class="menu-item"  routerLink="/academicaff/record"> السجل الاكاديمي</a> 
+                       <a href="#" class="menu-item"  routerLink="/graduates/statement">  إفادة خريج</a>
                   </div>
               </div>
                 <div *ngIf="menuType==1" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span> الإجراءات الأكاديمية</span> <i class="ik ik-layers"></i></a>
                   <div class="submenu-content">
-                       <a href="#" class="menu-item" routerLink="/procedures/changemajor"> تغيير التخصص </a> 
-                       <a href="#" class="menu-item" routerLink="/procedures/changerequest"> تغيير فرع الدراسة </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/execuse"> الاعتذار عن فصل دراسي </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/reenrol"> طلب اعادة قيد </a>
+                        <a href="#" class="menu-item" routerLink="/procedures/terminate">الانسحاب من الجامعة   </a>
                        <a href="#" class="menu-item" routerLink="/procedures/postpone"> تأجيل الفصل الدراسي
                        </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/reghelper"> مساعد التسجيل     </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/universitycard"> البطاقة الجامعية     </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/missingcard">طلب بطاقة جامعية بدل فاقد </a>
+                       <a href="#" class="menu-item" routerLink="/procedures/execuse"> الاعتذار عن الفصل دراسي </a>
+                       <a href="#" class="menu-item" routerLink="/procedures/summer"> الاعتذار عن الفصل الصيفي     </a>
 
-                       <a href="#" class="menu-item" routerLink="/procedures/examexcuse"> تقديم الأعذار للمتغيبين عن الاختبارات   </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/registerwishes"> رغبات التسجيل للمستجدين     </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/terminate"> طلب فصل استثنائي   </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/visitorstudent"> طلب الدراسة كطالب زائر في جامعة أخرى     </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/training"> طلب التدريب الميداني والعملي  </a>
-                       <a href="#" class="menu-item" routerLink="/procedures/feesexception"> الإعفاء من الرسوم الدراسية </a>
+                       <a href="#" class="menu-item" routerLink="/procedures/reenrol">  اعادة قيد </a>
+                       <a href="#" class="menu-item" routerLink="/procedures/cancelcourse"> الانسحاب من مقرر     </a>
+
+                       <a href="#" class="menu-item" routerLink="/procedures/equalize"> معادلة المقررات    </a> 
+                       <a href="#" class="menu-item" routerLink="/procedures/eequalize"> معادلة اللغة الانجليزية </a>
+
+                       <a href="#" class="menu-item" routerLink="/procedures/changemajor"> تغيير التخصص </a> 
+                       <a href="#" class="menu-item" routerLink="/procedures/changerequest">تغيير الفرع </a>
+
+                       <a href="#" class="menu-item" routerLink="/procedures/lecexecuse">رفع الاعذار للمحاضرات</a> 
+                       <a href="#" class="menu-item" routerLink="/procedures/objectexam"> الاعتراض على نتيجة الاختبار النهائي </a> 
+
+                       <a href="#" class="menu-item"   routerLink="/lecabsence/lectabs">   الاستعلام عن الغيايات  </a> 
+                       <a href="#" class="menu-item" routerLink="/procedures/visitorstudent"> طلب الدراسة كطالب زائر     </a>
+
+
+                      
+                       <!-- <a href="#" class="menu-item" routerLink="/procedures/examexcuse"> تقديم الأعذار للمتغيبين عن الاختبارات   </a> -->
 
 
                        
 
                   </div>
               </div>
-                 <div *ngIf="menuType==1" class="nav-item has-sub ">
-                  <a href="javascript:void(0)"><span>  التغيب عن المحاضرات </span> <i class="ik ik-info"></i></a>
-                 <div class="submenu-content">
-                      <a href="#" class="menu-item" routerLink="/procedures/lecexecuse">تغيب عن المحاضرة</a> 
-                      
-                  </div>
+              <div *ngIf="menuType==1" class="nav-item has-sub ">
+                    <a href="javascript:void(0)"><span> تسجيل المقررات </span> <i class="ik ik-dollar-sign"></i></a>
+                    <div class="submenu-content">
+                            <a href="#" class="menu-item" routerLink="/procedures/registerwishes"> رغبات التسجيل للمستجدين     </a>
+                            <a href="#" class="menu-item" routerLink="/procedures/reghelper"> مساعد التسجيل     </a>
+
+                        </div>
               </div>
-                <div *ngIf="menuType==1" class="nav-item has-sub ">
-                  <a href="javascript:void(0)"><span> تسجيل المقررات </span> <i class="ik ik-server"></i></a>
-                  <div class="submenu-content">
-                      <a href="#" class="menu-item" routerLink="/procedures/cancelcourse"> الغاء المقرر     </a>
-                      <a href="#" class="menu-item" routerLink="/procedures/summer"> الاعتذار عن الفصل الصيفي     </a>
-                  </div>
-              </div>
-                <div *ngIf="menuType==1" class="nav-item has-sub ">
+                <!-- <div *ngIf="menuType==1" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span>المعادلات </span> <i class="ik ik-sidebar"></i></a>
                  <div class="submenu-content">
                       <a href="#" class="menu-item" routerLink="/procedures/eequalize"> ادخال ما يعادل اللغة الانجليزية  </a>
                       <a href="#" class="menu-item" routerLink="/procedures/equalize"> معادلة منهج معين    </a> 
                   </div>
-              </div>
+              </div> -->
                 <div *ngIf="menuType==1" class="nav-item has-sub ">
-                  <a href="javascript:void(0)"><span>  الشئون المالية </span> <i class="ik ik-dollar-sign"></i></a>
+                  <a href="javascript:void(0)"><span>  الشؤون المالية </span> <i class="ik ik-dollar-sign"></i></a>
                   <div class="submenu-content">
-                      <a href="#" class="menu-item" routerLink="/finance/fees"> دفع المصاريف  </a> 
-                      
-                  </div>
-              </div>
-                <div *ngIf="menuType==1" class="nav-item has-sub ">
-                 <a href="javascript:void(0)"><span> شئون الإختبارات </span> <i class="ik ik-trending-down"></i></a>
-                  <div class="submenu-content">
-                      <a href="#" class="menu-item" routerLink="/procedures/objectexam"> الاعتراض على الاختبارات </a> 
-                      <a href="#" class="menu-item" routerLink="/exams/attend">  جداول الاختبارات   </a>
-                       <a href="#" class="menu-item" routerLink="/exams/attendapp"> اثبات حضور الاختبارات    </a> 
+                      <a href="#" class="menu-item" routerLink="/finance/fees"> سداد الرسوم الدراسية  </a> 
+                      <a href="#" class="menu-item" routerLink="/procedures/feesexception"> الإعفاء من الرسوم الدراسية </a>
 
                   </div>
               </div>
+                <div *ngIf="menuType==1" class="nav-item has-sub ">
+                 <a href="javascript:void(0)"><span> شؤون الإختبارات </span> <i class="ik ik-trending-down"></i></a>
+                  <div class="submenu-content">
+                     <a href="#" class="menu-item" routerLink="/exams/attend">  جداول الاختبارات   </a>
+                     <a href="#" class="menu-item" routerLink="/exams/"> شهادة  حضور الاختبارات    </a> 
+                     <a href="#" class="menu-item" routerLink="/exams/attendapp"> شهادة اثبات حضور الاختبارات    </a> 
+                      <a href="#" class="menu-item" routerLink="/procedures/examexcuse"> رفع الاعذار للاختبارات  </a> 
+
+                  </div>
+                
+           
+                </div>
+                <div *ngIf="menuType==1" class="nav-item has-sub ">
+                        <a href="javascript:void(0)"><span> طلبات أخرى   </span> <i class="ik ik-user"></i></a>
+                        <div class="submenu-content">
+                                <a href="#" class="menu-item" routerLink="/lecabsence/medicalreport"> طلب تقرير طبي  </a>
+                                <a href="#" class="menu-item" routerLink="/procedures/universitycard">  طلب البطاقة الجامعية     </a>
+                                <a href="#" class="menu-item" routerLink="/procedures/missingcard">طلب بطاقة جامعية بدل فاقد </a>
+                                <a href="#" class="menu-item" routerLink="/procedures/training"> طلب التدريب الميداني  </a>
+
+                            </div>
+                </div>
                 <div class="nav-lavel">  </div>
                <div class="nav-item has-sub ">
                  <a href="javascript:void(0)"> <span class="badge badge-danger">11</span><span>خدمات عامة </span>
