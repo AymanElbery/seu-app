@@ -23,11 +23,11 @@ export class ExamsAttendStatComponent implements OnInit {
   constructor(private academicService: ExamAttendanceService) { }
 
   ngOnInit() {
-    this.isLoading=true;
+    this.isLoading = true;
     this.academicService.getِExamsAttednace('S180105049').then(
       res => {
     this.eaData =    (res as any).data;
-    this.isLoading=false;
+    this.isLoading = false;
       }
     );
     this.finalschedule =   this.academicService.Print_Final_Exam_With_Schedule();
