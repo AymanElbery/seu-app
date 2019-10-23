@@ -91,7 +91,9 @@
           <td>{{it.course_name}}</td>
           
           <td>{{it.day}}</td>
-          <td>{{it.time}}</td>
+          
+          <td style="direction: ltr">({{toHTML(it.time)}})</td>
+
           <td>{{it.type}}</td>
   
           <!-- <td><a class="btn btn-primary" [href]="print(it.request_number)" ><span class="glyphicon glyphicon-print"></span>
