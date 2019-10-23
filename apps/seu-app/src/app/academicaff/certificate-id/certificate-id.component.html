@@ -154,10 +154,12 @@
                 {{certificateDetails.labels.txt7}}  
                 <br/>
                 <br/> </p>
-                <ng-template [ngIf]="lectures ==null" [ngIfElse]="NoLec">
-                  <div>
-                    <table class="table">
-                      <thead>
+                <ng-template [ngIf]="lectures !=null" [ngIfElse]="NoLec">
+                    <div class="table-responsive">
+                
+   
+                        <table class="table table-striped table-bordered">
+                            <thead style="background: #e6e6e6">
                         <tr>
                           <th scope="col">{{certificateDetails.labels.crn}}</th>
                           <th scope="col">{{certificateDetails.labels.course}}</th>

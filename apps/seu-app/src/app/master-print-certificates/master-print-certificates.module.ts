@@ -23,7 +23,7 @@ import { CertificateIDService } from './services/certificate-id.service';
     MatDialogModule,
     BrowserAnimationsModule
   ],
-  providers:[CertificateIDService]
+  providers: [CertificateIDService]
 
 })
 export class MasterPrintCertificatesModule { }

@@ -17,7 +17,7 @@ export class CertificateIDComponent implements OnInit {
   lectures: Lecture[];
   isLoading = false;
   ngOnInit() {
-this.isLoading=true;
+this.isLoading = true;
 this.arabicPrint =    this.certificateIDService.DownloadCertificate();
 this.EngPrint =    this.certificateIDService.DownloadEngCertificate();
 
@@ -25,7 +25,7 @@ this.certificateIDService.getCertificateID().then(
       (res) => {
                 this.certificateDetails = ((res)as any) .data;
                 this.lectures = (((res)as any) .data as any).Lectures;
-                this.isLoading=false;
+                this.isLoading = false;
       }
     );
   }
