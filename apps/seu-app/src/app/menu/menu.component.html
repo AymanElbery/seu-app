@@ -82,7 +82,7 @@
                       <a href="#" class="menu-item" routerLink="/academicaff/status">الحالة الاكاديمية</a>
                       <a href="#" class="menu-item"  routerLink="/academicaff/certificate">  شهادة تعريف</a>
                       <a href="#" class="menu-item"  routerLink="/academicaff/record"> السجل الاكاديمي</a> 
-                       <a href="#" class="menu-item"  routerLink="/graduates/statement">  إفادة خريج</a>
+                       <a href="#" class="menu-item"  routerLink="/academicaff/graduationstatment">  إفادة خريج</a>
                   </div>
               </div>
                 <div *ngIf="menuType==1" class="nav-item has-sub ">
@@ -106,7 +106,7 @@
                        <a href="#" class="menu-item" routerLink="/procedures/lecexecuse">رفع الاعذار للمحاضرات</a> 
                        <a href="#" class="menu-item" routerLink="/procedures/objectexam"> الاعتراض على نتيجة الاختبار النهائي </a> 
 
-                       <a href="#" class="menu-item"   routerLink="/lecabsence/lectabs">   الاستعلام عن الغيايات  </a> 
+                       <a href="#" class="menu-item"   routerLink="/procedures/lectabs">   الاستعلام عن الغيايات  </a> 
                        <a href="#" class="menu-item" routerLink="/procedures/visitorstudent"> طلب الدراسة كطالب زائر     </a>
 
 
@@ -121,22 +121,17 @@
               <div *ngIf="menuType==1" class="nav-item has-sub ">
                     <a href="javascript:void(0)"><span> تسجيل المقررات </span> <i class="ik ik-dollar-sign"></i></a>
                     <div class="submenu-content">
-                            <a href="#" class="menu-item" routerLink="/procedures/registerwishes"> رغبات التسجيل للمستجدين     </a>
-                            <a href="#" class="menu-item" routerLink="/procedures/reghelper"> مساعد التسجيل     </a>
+                            <a href="#" class="menu-item" routerLink="/registercourses/registerwishes"> رغبات التسجيل للمستجدين     </a>
+                            <a href="#" class="menu-item" routerLink="/registercourses/reghelper"> مساعد التسجيل     </a>
 
                         </div>
               </div>
-                <!-- <div *ngIf="menuType==1" class="nav-item has-sub ">
-                  <a href="javascript:void(0)"><span>المعادلات </span> <i class="ik ik-sidebar"></i></a>
-                 <div class="submenu-content">
-                      <a href="#" class="menu-item" routerLink="/procedures/eequalize"> ادخال ما يعادل اللغة الانجليزية  </a>
-                      <a href="#" class="menu-item" routerLink="/procedures/equalize"> معادلة منهج معين    </a> 
-                  </div>
-              </div> -->
+             
+            
                 <div *ngIf="menuType==1" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span>  الشؤون المالية </span> <i class="ik ik-dollar-sign"></i></a>
                   <div class="submenu-content">
-                      <a href="#" class="menu-item" routerLink="/finance/fees"> سداد الرسوم الدراسية  </a> 
+                      <a href="#" class="menu-item" routerLink="/finance/fees">  افادة بالرسوم الدراسية </a> 
                       <a href="#" class="menu-item" routerLink="/procedures/feesexception"> الإعفاء من الرسوم الدراسية </a>
 
                   </div>
@@ -144,7 +139,7 @@
                 <div *ngIf="menuType==1" class="nav-item has-sub ">
                  <a href="javascript:void(0)"><span> شؤون الإختبارات </span> <i class="ik ik-trending-down"></i></a>
                   <div class="submenu-content">
-                     <a href="#" class="menu-item" routerLink="/exams/attend">  جداول الاختبارات   </a>
+                     <!-- <a href="#" class="menu-item" routerLink="/exams/attend">  جداول الاختبارات   </a> -->
                      <a href="#" class="menu-item" routerLink="/exams/"> شهادة  حضور الاختبارات    </a> 
                      <a href="#" class="menu-item" routerLink="/exams/attendapp"> شهادة اثبات حضور الاختبارات    </a> 
                       <a href="#" class="menu-item" routerLink="/procedures/examexcuse"> رفع الاعذار للاختبارات  </a> 
@@ -163,7 +158,7 @@
 
                             </div>
                 </div>
-                <div class="nav-lavel">  </div>
+                <!-- <div class="nav-lavel">  </div> -->
                <div class="nav-item has-sub ">
                  <a href="javascript:void(0)"> <span class="badge badge-danger">11</span><span>خدمات عامة </span>
                      <i class="ik ik-align-right"></i> </a>

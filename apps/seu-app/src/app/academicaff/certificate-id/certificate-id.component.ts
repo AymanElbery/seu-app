@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Lecture } from 'src/app/shared/models/lecture';
-import { CertificateIDService } from '../certificate-id.service';
+import { CertificateIDService } from '../services/certificate-id.service';
 
 @Component({
   selector: 'app-certificate-id',

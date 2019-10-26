@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RegistrationHelperService } from '../../register-courses/services/registration-helper.service';
+import { RegistrationHelperService } from '../services/registration-helper.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
@@ -39,7 +39,7 @@ export class RegisterationHelperComponent implements OnInit {
         this.isLoading = false;
         //this.colleges = this.acadmicProc.reqData.colledges;
         //  this.errorMessages = this.acadmicProc.reqData.error_messages;
-        // console.log(this.reqData.reqs);
+        // console.log(this.reqData);
 
       }
     );

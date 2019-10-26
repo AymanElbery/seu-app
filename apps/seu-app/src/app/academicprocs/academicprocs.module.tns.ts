@@ -28,8 +28,8 @@ import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses
 import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
 import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
-import { RegisterWishesComponent } from './register-wishes/register-wishes.component';
-import { AddRegisterWishesComponent } from './register-wishes/diag/add-register-wishes/add-register-wishes.component';
+import { RegisterWishesComponent } from '../register-courses/register-wishes/register-wishes.component';
+import { AddRegisterWishesComponent } from '../register-courses/register-wishes/diag/add-register-wishes/add-register-wishes.component';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
 import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component';
 

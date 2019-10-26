@@ -5,38 +5,37 @@
   <section class="service-single">
 
       <div class="container">
-              <h3> سجل الطالب الأكاديمي </h3>
+              <h3> السجل الأكاديمي  </h3>
            <div class="row">
               <div class=" col-md-5">
-                <p>  سجل الطالب الأكاديمي سجل الطالب الأكاديمي سجل الطالب الأكاديمي سجل الطالب الأكاديمي</p>
+                <p>   السجل الأكاديمي</p>
                </div>
-              <div class=" col-md-6 descr">
+              <!-- <div class=" col-md-6 descr">
                 <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                   &nbsp; &nbsp; &nbsp; &nbsp;
                   <a href="#"><i class="ik ik-download"></i> </a>
                   <a href="#"><i class="ik ik-film"></i></a>
-              </div>
+              </div> -->
           </div>
           </div>
        </section>
-      
-          <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
+   <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
               <div class="state">
       
                   <h5>  جاري تحميل البيانات .....................</h5>
 
     <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner>
 
-              </div> </div>
-       <div *ngIf="!isLoading"  class=" stu-name col-md-4 col-sm-12 ">
+              </div>
+     </div>
+   <div *ngIf="!isLoading"  class=" stu-name col-md-4 col-sm-12 ">
         <div class="state">
 
            <h5> <span>اسم الطالب : </span>
             {{recoredData.student_name}}  </h5> 
 
         </div>
-   </div>
-               
+   </div>          
    <section *ngIf="!isLoading"  class="ser-state">
      
     <div class="container">
@@ -104,10 +103,6 @@
        
      </div>
  </section>
-       
-
-
-
 <div class="accordion" *ngIf="!isLoading"   id="accordionExample">
   <div  *ngFor="let item of recoredData.terms ; let i = index">
       <div class="card " >

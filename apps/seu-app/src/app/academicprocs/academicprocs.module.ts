@@ -46,12 +46,9 @@ import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-e
 import { LectureExecuseServiceService } from './services/lecture-execuse-service.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
-import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
 import {UnivCardComponent} from './univ-card/univ-card.component';
 import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
 import {UvnivCardService} from './services/univ-card.service';
-import { RegisterWishesComponent } from './register-wishes/register-wishes.component';
 import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
 import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
 import {ExamExcuseService}  from './services/exam-excuse.service';
@@ -71,7 +68,8 @@ import {MissingUnivCardService} from './services/missing-univ-card.service';
 import { from } from 'rxjs';
 import { FeesExceptionComponent } from './fees-exception/fees-exception.component';
 import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-exception/add-fees-exception.component';
-
+import {AbsenceQueryComponent} from './absence-query/absence-query.component';
+import {LectureAbsQueryService} from './services/lecture-abs-query.service';
 @NgModule({
   declarations: [PostponeRequestComponent
     , ExecuseRequestComponent,
@@ -100,8 +98,6 @@ import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-except
            ObjectExamComponent,
            AddLecturesExecusesComponent,
            AddExamObjectComponent,
-           RegisterationHelperComponent,
-           AddRegisterationHelperComponent,
            UnivCardComponent,
            AddUnivCardComponent,
            AddUnivCardComponent,
@@ -112,7 +108,6 @@ import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-except
            AddTerminationRequestComponent,
            TrainingRequestComponent,
            AddTrainingRequestComponent,
-           RegisterWishesComponent,
            VisitorStudentComponent,
         
            AddMissingCardDataComponent,
@@ -120,7 +115,8 @@ import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-except
            AddBankReceiptComponent,
            AddVisitorStudentComponent,
            FeesExceptionComponent,
-        AddFeesExceptionComponent
+        AddFeesExceptionComponent,
+        AbsenceQueryComponent
 
            
            
@@ -140,7 +136,6 @@ import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-except
          AddRequestChangeComponent,
          AddLecturesExecusesComponent,
          AddExamObjectComponent,
-         AddRegisterationHelperComponent,
         AddUnivCardComponent,
         AddTerminationRequestComponent,
         AddTrainingRequestComponent,
@@ -177,7 +172,8 @@ import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-except
       ExamExcuseService,
       TerminationService,
       TrainingRequestService,
-      MissingUnivCardService
+      MissingUnivCardService,
+      LectureAbsQueryService
   ]
 
 })
