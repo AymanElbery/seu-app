@@ -12,4 +12,10 @@ export class AbseneQueryService {
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
     this.configService.baseUrl = "stdsUnivapi";
   }
+
+  getRequests() {
+
+    return this.httRequest.GetRequest('absent_service').toPromise();
+   }
+ 
 }

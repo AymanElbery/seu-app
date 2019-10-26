@@ -12,10 +12,13 @@ import { MasterPrintCertificatesRoutingModule } from './master-print-certificate
 import { CertificateIDService } from './services/certificate-id.service';
 import {ExamAttendanceCertificateComponent} from './exam-attendance-certificate/exam-attendance-certificate.component';
 import {ExamAttendanceCertificateService} from './services/exam-attendance-certificate.service';
+import { ExamAttendanceCertificateAppService } from './services/exam-attendance-certificate-app.service';
+import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certificate-app/exam-attendance-certificate-app.component';
 
 @NgModule({
   declarations: [CertificateIDComponent,
-    ExamAttendanceCertificateComponent
+    ExamAttendanceCertificateComponent,
+    ExamAttendanceCertificateAppComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +31,8 @@ import {ExamAttendanceCertificateService} from './services/exam-attendance-certi
     BrowserAnimationsModule
   ],
   providers:[CertificateIDService,
-    ExamAttendanceCertificateService
+    ExamAttendanceCertificateService,
+    ExamAttendanceCertificateAppService
   ]
 
 })

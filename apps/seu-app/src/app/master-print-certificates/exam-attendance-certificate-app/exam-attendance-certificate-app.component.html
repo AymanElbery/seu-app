@@ -1,3 +1,396 @@
-<p>
-  exam-attendance-certificate-app works!
-</p>
+<div class="main-content" style="padding-top:0;">
+
+  <section class="service-single">
+    <div class="container">
+      <h3> شهادة إثبات حضور الإختبار
+      </h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p> شهادة إثبات حضور الإختبار
+          </p>
+        </div>
+        <div class=" col-md-6 descr">
+          <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+          &nbsp; &nbsp; &nbsp; &nbsp;
+          <a href="#"><i class="ik ik-download"></i> </a>
+          <a href="#"><i class="ik ik-film"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
+    <div class="state">
+
+      <h5> جاري تحميل البيانات .....................</h5>
+
+      <mat-spinner *ngIf="isLoading"
+        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+      </mat-spinner>
+
+    </div>
+  </div>
+
+  <div class="ser-state" *ngIf="!isLoading">
+    <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
+      {{msg.body}}!
+    </div>
+  </div>
+  <div *ngIf="msg!=null && !isLoading" style="text-align: right" class="alert alert-info" role="alert">
+    {{msg.body}}!
+  </div>
+  <section class="ser-state" *ngIf="!isLoading">
+    <nav>
+      <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">
+        <a class="nav-link nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One"
+          aria-selected="true">
+          الاختبارات الفصلية مع جدول
+
+        </a>
+        <a class="nav-item nav-link " id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two"
+          aria-selected="false">
+          الاختبارات الفصلية بدون جدول
+
+        </a>
+        <a class="nav-item  nav-link " id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three"
+          aria-selected="false">
+          الاختبارات النهائية مع جدول
+        </a>
+        <a class="nav-item  nav-link " id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="Four"
+          aria-selected="false">
+          الاختبارات النهائية بدون جدول
+        </a>
+
+
+      </div>
+
+    </nav>
+    <div class="tab-content" id="myTabContent" *ngIf="!isLoading">
+      <div class="tab-pane fade show active mt-10" id="one">
+        <div class="widget">
+          <div class="widget-header" style="padding: 5px 0">
+            <h4 class="widget-title" style="font-size:14px;">شهادة حضور الاختبارات</h4>
+          </div>
+          <div style="padding:10px;">
+            <p style="text-align: right;padding: 10px;">
+
+              {{reqData.Term_Exam_With_Schedule.labels.date}} {{reqData.Term_Exam_With_Schedule.values.date}}
+              <br />
+              {{reqData.Term_Exam_With_Schedule.labels.ssn}} {{reqData.Term_Exam_With_Schedule.values.ssn}}
+              <br />
+              {{reqData.Term_Exam_With_Schedule.labels.txt1}} {{reqData.Term_Exam_With_Schedule.values.student_name}}
+              {{reqData.Term_Exam_With_Schedule.labels.txt2}} {{reqData.Term_Exam_With_Schedule.values.std_id}}
+              {{reqData.Term_Exam_With_Schedule.labels.txt3}} {{reqData.Term_Exam_With_Schedule.values.coll}}
+
+              {{reqData.Term_Exam_With_Schedule.labels.txt4}} {{reqData.Term_Exam_With_Schedule.values.term}}
+
+              {{reqData.Term_Exam_With_Schedule.labels.txt5}} {{reqData.Term_Exam_With_Schedule.values.startDay}}
+              {{reqData.Term_Exam_With_Schedule.labels.txt6}} {{reqData.Term_Exam_With_Schedule.values.endDay}}
+              {{reqData.Term_Exam_With_Schedule.labels.txt7}}
+              <br />
+            </p>
+          </div>
+
+        </div>
+        <div class="widget">
+          <div class="widget-header" style="padding: 5px 0">
+            <h3 class="widget-title" style="font-size:14px;">جدول الاختبارات </h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead style="background: #ebecf0">
+
+
+
+                <tr>
+                  <th scope="col">CRN </th>
+                  <th scope="col">المادة</th>
+                  <th scope="col">اليوم</th>
+                  <th scope="col">الوقت</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let it of reqData.Term_Exam_With_Schedule.Term_Schedule">
+                  <td>{{it.CRN}} </td>
+                  <td> {{it.CRSE_TITLE}} </td>
+                  <td> {{it.CRSE_DAY}} </td>
+                  <td> {{it.CRSE_TIME_EN}} </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <!-- <br> <ng-template #array1>
+                  
+                      <div class="row">
+                          <div  class="col-md-1"></div>
+                          <div class="col-md-10">
+                            <div class="form-group">
+                              
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text"><b>نسبة غياب المحاضرات الكلية  </b> </div>
+                                </div>
+                                <input  value="0"  class="form-control" readonly>
+                              </div>
+                            </div>   
+                          </div>
+                          
+                          <div  class="col-md-1"></div>
+                        
+                        </div>
+          
+                </ng-template> -->
+
+
+
+
+        </div>
+        <div class="jumbotron jumbtron-fluid">
+
+          <p class="card-text" style="text-align: right">
+            {{reqData.Term_Exam_With_Schedule.labels.txt8}} <br /> {{reqData.Term_Exam_With_Schedule.labels.txt9}}
+            <br />
+            <br />
+            <b>ملحوظة</b> {{reqData.Term_Exam_With_Schedule.labels.txt11}}
+            <br />
+            {{reqData.Term_Exam_With_Schedule.labels.txt12}}
+
+          </p>
+        </div>
+
+        <div class="btn-group btn-group-justified col-md-12 ">
+          <div class="col-md-4"></div>
+          <div class="row">
+            <div style="padding: 5px;">
+              <a class="btn btn-primary" href="{{arabicPrintTermWithSchedule}}"><span
+                  class="glyphicon glyphicon-print"></span>
+                طباعة</a>
+            </div>
+            <div style="padding: 5px;">
+              <a class="btn btn-primary" href="{{EngPrintTermWithSchedule}}"><span
+                  class="glyphicon glyphicon-print"></span>
+                Print</a>
+            </div>
+          </div>
+
+          <div class="col-md-4"></div>
+
+        </div>
+      </div>
+      <div class="tab-pane fade p-3 mt-10" id="two" role="tabpanel" aria-labelledby="two-tab">
+        <div class="widget">
+          <div class="widget-header" style="padding: 5px 0">
+            <h4 class="widget-title" style="font-size:14px;">شهادة حضور الاختبارات</h4>
+          </div>
+          <div style="padding:10px;">
+            <p style="text-align: right;padding: 10px;">
+
+              {{reqData.Term_Exam_Without_Schedule.labels.date}} {{reqData.Term_Exam_Without_Schedule.values.date}}
+              <br />
+              {{reqData.Term_Exam_Without_Schedule.labels.ssn}} {{reqData.Term_Exam_Without_Schedule.values.ssn}}
+              <br />
+              {{reqData.Term_Exam_Without_Schedule.labels.txt1}}
+              {{reqData.Term_Exam_Without_Schedule.values.student_name}}
+              {{reqData.Term_Exam_Without_Schedule.labels.txt2}} {{reqData.Term_Exam_Without_Schedule.values.std_id}}
+              {{reqData.Term_Exam_Without_Schedule.labels.txt3}} {{reqData.Term_Exam_Without_Schedule.values.coll}}
+
+              {{reqData.Term_Exam_Without_Schedule.labels.txt4}} {{reqData.Term_Exam_Without_Schedule.values.term}}
+
+              {{reqData.Term_Exam_Without_Schedule.labels.txt5}} {{reqData.Term_Exam_Without_Schedule.values.startDay}}
+              {{reqData.Term_Exam_Without_Schedule.labels.txt6}} {{reqData.Term_Exam_Without_Schedule.values.endDay}}
+              {{reqData.Term_Exam_Without_Schedule.labels.txt7}}
+              <br />
+            </p>
+          </div>
+
+        </div>
+        <div class="jumbotron jumbtron-fluid">
+
+          <p class="card-text" style="text-align: right">
+            {{reqData.Term_Exam_Without_Schedule.labels.txt8}} <br /> {{reqData.Term_Exam_Without_Schedule.labels.txt9}}
+            <br />
+            <br />
+            <b>ملحوظة</b> {{reqData.Term_Exam_Without_Schedule.labels.txt11}}
+            <br />
+            {{reqData.Term_Exam_Without_Schedule.labels.txt12}}
+
+          </p>
+        </div>
+        <div class="btn-group btn-group-justified col-md-12 ">
+          <div class="col-md-4"></div>
+          <div class="row">
+            <div style="padding: 5px;">
+              <a class="btn btn-primary" href="{{arabicPrintTermWithoutSchedule}}"><span
+                  class="glyphicon glyphicon-print"></span>
+                طباعة</a>
+            </div>
+            <div style="padding: 5px;">
+              <a class="btn btn-primary" href="{{EngPrintTermWithoutSchedule}}"><span
+                  class="glyphicon glyphicon-print"></span>
+                Print</a>
+            </div>
+          </div>
+
+          <div class="col-md-4"></div>
+
+        </div>
+
+
+      </div>
+      <div class="tab-pane fade p-3 mt-10" id="three" role="tabpanel" aria-labelledby="three-tab">
+        <div class="widget">
+          <div class="widget-header" style="padding: 5px 0">
+            <h4 class="widget-title" style="font-size:14px;">شهادة حضور الاختبارات</h4>
+          </div>
+          <div style="padding:10px;">
+            <p style="text-align: right;padding: 10px;">
+
+              {{reqData.Final_Exam_With_Schedule.labels.date}} {{reqData.Final_Exam_With_Schedule.values.date}}
+              <br />
+              {{reqData.Final_Exam_With_Schedule.labels.ssn}} {{reqData.Final_Exam_With_Schedule.values.ssn}}
+              <br />
+              {{reqData.Final_Exam_With_Schedule.labels.txt1}} {{reqData.Final_Exam_With_Schedule.values.student_name}}
+              {{reqData.Final_Exam_With_Schedule.labels.txt2}} {{reqData.Final_Exam_With_Schedule.values.std_id}}
+              {{reqData.Final_Exam_With_Schedule.labels.txt3}} {{reqData.Final_Exam_With_Schedule.values.coll}}
+
+              {{reqData.Final_Exam_With_Schedule.labels.txt4}} {{reqData.Final_Exam_With_Schedule.values.term}}
+
+              {{reqData.Final_Exam_With_Schedule.labels.txt5}} {{reqData.Final_Exam_With_Schedule.values.startDay}}
+              {{reqData.Final_Exam_With_Schedule.labels.txt6}} {{reqData.Final_Exam_With_Schedule.values.endDay}}
+              {{reqData.Final_Exam_With_Schedule.labels.txt7}}
+              <br />
+            </p>
+          </div>
+
+        </div>
+        <div class="widget">
+          <div class="widget-header" style="padding: 5px 0">
+            <h3 class="widget-title" style="font-size:14px;">جدول الاختبارات </h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead style="background: #ebecf0">
+
+
+
+                <tr>
+                  <th scope="col">CRN </th>
+                  <th scope="col">المادة</th>
+                  <th scope="col">اليوم</th>
+                  <th scope="col">الوقت</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let it of reqData.Final_Exam_With_Schedule.Final_Schedule">
+                  <td>{{it.CRN}} </td>
+                  <td> {{it.CRSE_TITLE}} </td>
+                  <td> {{it.CRSE_DAY}} </td>
+                  <td> {{it.CRSE_TIME}} </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+        <div class="jumbotron jumbtron-fluid">
+
+          <p class="card-text" style="text-align: right">
+            {{reqData.Final_Exam_With_Schedule.labels.txt8}} <br /> {{reqData.Final_Exam_With_Schedule.labels.txt9}}
+            <br />
+            <br />
+            <b>ملحوظة</b> {{reqData.Final_Exam_With_Schedule.labels.txt11}}
+            <br />
+            {{reqData.Final_Exam_With_Schedule.labels.txt12}}
+
+          </p>
+        </div>
+
+        <div class="btn-group btn-group-justified col-md-12 ">
+          <div class="col-md-4"></div>
+          <div class="row">
+            <div style="padding: 5px;">
+              <a class="btn btn-primary" href="{{arabicPrintFinalWithSchedule}}"><span
+                  class="glyphicon glyphicon-print"></span>
+                طباعة</a>
+            </div>
+            <div style="padding: 5px;">
+              <a class="btn btn-primary" href="{{EngPrintFinalWithSchedule}}"><span
+                  class="glyphicon glyphicon-print"></span>
+                Print</a>
+            </div>
+          </div>
+
+          <div class="col-md-4"></div>
+
+        </div>
+      </div>
+      <div class="tab-pane fade p-3 mt-10" id="four" role="tabpanel" aria-labelledby="four-tab">
+        <div class="widget">
+          <div class="widget-header" style="padding: 5px 0">
+            <h4 class="widget-title" style="font-size:14px;">شهادة حضور الاختبارات</h4>
+          </div>
+          <div style="padding:10px;">
+            <p style="text-align: right;padding: 10px;">
+
+              {{reqData.Final_Exam_Without_Schedule.labels.date}} {{reqData.Final_Exam_Without_Schedule.values.date}}
+              <br />
+              {{reqData.Final_Exam_Without_Schedule.labels.ssn}} {{reqData.Final_Exam_Without_Schedule.values.ssn}}
+              <br />
+              {{reqData.Final_Exam_Without_Schedule.labels.txt1}}
+              {{reqData.Final_Exam_Without_Schedule.values.student_name}}
+              {{reqData.Final_Exam_Without_Schedule.labels.txt2}} {{reqData.Final_Exam_Without_Schedule.values.std_id}}
+              {{reqData.Final_Exam_Without_Schedule.labels.txt3}} {{reqData.Final_Exam_Without_Schedule.values.coll}}
+
+              {{reqData.Final_Exam_Without_Schedule.labels.txt4}} {{reqData.Final_Exam_Without_Schedule.values.term}}
+
+              {{reqData.Final_Exam_Without_Schedule.labels.txt5}}
+              {{reqData.Final_Exam_Without_Schedule.values.startDay}}
+              {{reqData.Final_Exam_Without_Schedule.labels.txt6}} {{reqData.Final_Exam_Without_Schedule.values.endDay}}
+              {{reqData.Final_Exam_Without_Schedule.labels.txt7}}
+              <br />
+            </p>
+          </div>
+
+        </div>
+        <div class="jumbotron jumbtron-fluid">
+
+          <p class="card-text" style="text-align: right">
+            {{reqData.Final_Exam_Without_Schedule.labels.txt8}} <br />
+            {{reqData.Final_Exam_Without_Schedule.labels.txt9}}
+            <br />
+            <br />
+            <b>ملحوظة</b> {{reqData.Final_Exam_Without_Schedule.labels.txt11}}
+            <br />
+            {{reqData.Final_Exam_Without_Schedule.labels.txt12}}
+
+          </p>
+        </div>
+        <div class="btn-group btn-group-justified col-md-12 ">
+          <div class="col-md-4"></div>
+          <div class="row">
+            <div style="padding: 5px;">
+              <a class="btn btn-primary" href="{{arabicPrintFinalWithoutSchedule}}"><span
+                  class="glyphicon glyphicon-print"></span>
+                طباعة</a>
+            </div>
+            <div style="padding: 5px;">
+              <a class="btn btn-primary" href="{{EngPrintFinalWithoutSchedule}}"><span
+                  class="glyphicon glyphicon-print"></span>
+                Print</a>
+            </div>
+          </div>
+
+          <div class="col-md-4"></div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+</div>

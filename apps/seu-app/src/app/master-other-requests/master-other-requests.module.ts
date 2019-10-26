@@ -7,10 +7,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MasterOtherRequestsRoutingModule } from './master-other-requests-routing.module';
+import { AbsenceQueryComponent } from './absence-query/absence-query.component';
+import { AbseneQueryService } from './services/absene-query.service';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [AbsenceQueryComponent],
   imports: [
     CommonModule,
     MasterOtherRequestsRoutingModule,
@@ -20,6 +22,7 @@ import { MasterOtherRequestsRoutingModule } from './master-other-requests-routin
     FormsModule,
     MatDialogModule,
     BrowserAnimationsModule
-  ]
+  ],
+  providers: [AbseneQueryService]
 })
 export class MasterOtherRequestsModule { }
