@@ -26,7 +26,6 @@ import { OtherAffairModule } from './other-affair/other-affair.module';
 import { PrintService } from './shared/services/print.service';
 import { PrintLayoutComponent } from './PrintExample/print-layout/print-layout.component';
 import { PrintFileComponent } from './PrintExample/print-file/print-file.component';
-import { GraduatesAffairsModule } from './graduates-affairs/graduates-affairs.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HrMinuteDirective } from './shared/directives/hr-minute.directive';
 import { FooterComponent } from './footer/footer.component';
@@ -66,12 +65,12 @@ import { MasterStudentDataModule } from './master-student-data/master-student-da
     , FinanceAffairModule
     , ExamsAffairModule
     , OtherAffairModule
-    , GraduatesAffairsModule
     , MasterAcademicRequestsModule
     , MasterFinanceAffairModule
     , MasterOtherRequestsModule
     , MasterPrintCertificatesModule
     , MasterStudentDataModule
+    ,RegisterCoursesModule
     
 
   ],

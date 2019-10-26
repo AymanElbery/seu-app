@@ -2,21 +2,21 @@
                     
     <section class="service-single">
             <div class="container">
-                    <h3> استعلام الغياب  </h3>
+                    <h3>الاستعلام عن الغيابات  </h3>
                  <div class="row">
                     <div class=" col-md-5">
-                      <p> استعلام الغياب  استعلام الغياب  استعلام الغياب  استعلام الغياب  استعلام الغياب </p>
+                      <p>الاستعلام عن الغيابات </p>
                      </div>
-                    <div class=" col-md-6 descr">
+                    <!-- <div class=" col-md-6 descr">
                       <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                         &nbsp; &nbsp; &nbsp; &nbsp;
                         <a href="#"><i class="ik ik-download"></i> </a>
                         <a href="#"><i class="ik ik-film"></i></a>
-                    </div>
+                    </div> -->
                 </div>
                 </div>
          </section>
-         <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
+     <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
           <div class="state">
   
               <h5>  جاري تحميل البيانات .....................</h5>
@@ -27,7 +27,7 @@
     <div *ngIf="status==0 && !isLoading"  class="alert alert-primary text-center" role="alert" >
         {{absData.messages}} 
       </div>
-      <section  class="ser-state" *ngIf="!isLoading">
+     <section  class="ser-state" *ngIf="!isLoading">
         <nav>          
         <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">
                   <a class="nav-link nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">
@@ -205,12 +205,8 @@
                 </div>
                 </div>
           </div>
-              </section>
-                  
-    
-
-
-              <div class="widget"  *ngIf="!isLoading">
+      </section>
+      <div class="widget"  *ngIf="!isLoading">
                   <div class="widget-header" style="padding: 5px 0" >
                  <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
                  </div>
@@ -237,8 +233,9 @@
             </table>
 
       
-            </div></div>
-            <div  class="btn-group btn-group-justified col-md-12 " *ngIf="!isLoading">
+       </div>
+      </div>
+      <div  class="btn-group btn-group-justified col-md-12 " *ngIf="!isLoading">
                 <div class="col-md-4"></div>
                 <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
                   طباعة</a>
@@ -246,4 +243,5 @@
                   Print</a>
                 <div class="col-md-4"></div>
               
-                </div>
+          </div>
+</div>

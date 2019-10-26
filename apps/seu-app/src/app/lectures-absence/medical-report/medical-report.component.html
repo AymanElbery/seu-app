@@ -3,28 +3,29 @@
 
     <section class="service-single">
         <div class="container">
-                <h3> التقرير الطبي  </h3>
+                <h3>طلب تقرير طبي  </h3>
              <div class="row">
                 <div class=" col-md-5">
-                  <p> </p>
+                  <p>طلب تقرير طبي  </p>
                  </div>
-                <div class=" col-md-6 descr">
+                <!-- <div class=" col-md-6 descr">
                   <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                     &nbsp; &nbsp; &nbsp; &nbsp;
                     <a href="{{arabicPrint}}"><i class="ik ik-download"></i> </a>
                     <a href="#"><i class="ik ik-film"></i></a>
-                </div>
+                </div> -->
             </div>
             </div>
-         </section>
-         <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
+    </section>
+     <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
           <div class="state">
   
               <h5>  جاري تحميل البيانات .....................</h5>
   
   <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
   
-          </div> </div> 
+      </div> 
+    </div> 
     <div class="widget"  *ngIf="!isLoading">
     <br>
     
@@ -91,23 +92,23 @@
                     
                     </div>
             </div></section>
-          </div>
-      <div class="jumbotron jumbtron-fluid"  *ngIf="!isLoading">
+    </div>
+     <div class="jumbotron jumbtron-fluid"  *ngIf="!isLoading">
+      <div class="row">
 
-   <div class="row">
-
-      <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
-          
-        {{mrData.labels.txt2}}
-         <br/>
-         <br/>
-         <b>
-        -{{mrData.labels.txt3}}
-          </b>
-        
-        </p>
-      </div> </div>
-        <div  class="row  prin "  *ngIf="!isLoading">
+          <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+              
+            {{mrData.labels.txt2}}
+            <br/>
+            <br/>
+            <b>
+            -{{mrData.labels.txt3}}
+              </b>
+            
+            </p>
+          </div> 
+    </div>
+     <div  class="row  prin "  *ngIf="!isLoading">
             <div class="col-md-4"></div>
             <a class="btn " href="{{arabicPrint}}"><i class="ik ik-save"></i> 
               طباعة</a>
@@ -115,5 +116,5 @@
               Print</a>
             <div class="col-md-4"></div>
           
-            </div>
-         </div>    
+    </div>
+ </div>    

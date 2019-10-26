@@ -1,14 +1,14 @@
 <div class="main-content" >
     <section _ngcontent-fpr-c11="" class="service-single ">
         <div _ngcontent-fpr-c11="" class="container">
-        <h3 _ngcontent-fpr-c11="">  طلب بطاقة جامعية   </h3>
+        <h3 _ngcontent-fpr-c11="">  طلب البطاقة الجامعية   </h3>
         <div _ngcontent-fpr-c11="" class="row">
           <div _ngcontent-fpr-c11="" class=" col-md-5">
-        <p _ngcontent-fpr-c11=""></p>
+        <p _ngcontent-fpr-c11="">طلب البطاقة الجامعية </p>
       </div>
-      <div _ngcontent-fpr-c11="" class=" col-md-6 descr">
+      <!-- <div _ngcontent-fpr-c11="" class=" col-md-6 descr">
         <span _ngcontent-fpr-c11="">مدة الإنجاز : <span _ngcontent-fpr-c11="" class="badge">3 يوم</span></span> &nbsp; &nbsp; &nbsp; &nbsp; <a _ngcontent-fpr-c11="" href="https://seuapps.seu.edu.sa/stdservicesapi/academic_status/academic_status_print?TermCode201610"><i _ngcontent-fpr-c11="" class="ik ik-download"></i></a><a _ngcontent-fpr-c11="" href="#"><i _ngcontent-fpr-c11="" class="ik ik-film"></i></a>
-      </div>
+      </div> -->
     </div>
     </div>
     </section>
@@ -19,18 +19,16 @@
 
 <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
 
-      </div> </div> 
-
-      <div  class="ser-state" *ngIf="!isLoading">
+      </div>
+     </div> 
+     <div  class="ser-state" *ngIf="!isLoading">
         <div  *ngFor="let msg of msgs" class="alert alert-info" role="alert">
       {{msg.body}}!
     </div>
       </div>
-    
     <div *ngIf="msg!=null && !isLoading" style="text-align: right"  class="alert alert-info" role="alert">
         {{msg.body}}!
       </div>
-
     <!-- <div style="direction: ltr;text-align: center"  *ngIf="!isLoading">
       
       <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
