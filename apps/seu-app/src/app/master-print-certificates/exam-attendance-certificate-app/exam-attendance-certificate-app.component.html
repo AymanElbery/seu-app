@@ -31,12 +31,16 @@
   </div>
 
   <div class="ser-state" *ngIf="!isLoading">
-    <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
-      {{msg}}!
+    <div *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'sucess' ? 'alert alert-sucess' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}!
     </div>
   </div>
-  <div *ngIf="msg!=null && !isLoading" style="text-align: right" class="alert alert-info" role="alert">
-    {{msg}}!
+  <div *ngIf="msg!=null && !isLoading" style="text-align: right"
+    [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'sucess' ? 'alert alert-sucess' : 'alert alert-warning'))"
+    role="alert">
+    {{msg.body}}!
   </div>
   <section class="ser-state" *ngIf="!isLoading">
     <nav>

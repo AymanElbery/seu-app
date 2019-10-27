@@ -31,10 +31,11 @@
     </div>
   </div>
   <div class="ser-state" *ngIf="!isLoading">
-    <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
-      {{msg}}!
+    <div *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'sucess' ? 'alert alert-sucess' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}!
     </div>
-
   </div>
 
   <div class="widget" *ngIf="!isLoading">

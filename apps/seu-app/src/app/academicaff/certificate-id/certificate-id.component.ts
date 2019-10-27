@@ -17,20 +17,20 @@ export class CertificateIDComponent implements OnInit {
   lectures: Lecture[];
   isLoading = false;
   ngOnInit() {
-this.isLoading = true;
-this.arabicPrint =    this.certificateIDService.DownloadCertificate();
-this.EngPrint =    this.certificateIDService.DownloadEngCertificate();
+    this.isLoading = true;
+    this.arabicPrint = this.certificateIDService.DownloadCertificate();
+    this.EngPrint = this.certificateIDService.DownloadEngCertificate();
 
-this.certificateIDService.getCertificateID().then(
+    this.certificateIDService.getCertificateID().then(
       (res) => {
-                this.certificateDetails = ((res)as any) .data;
-                this.lectures = (((res)as any) .data as any).Lectures;
-                this.isLoading = false;
+        this.certificateDetails = ((res) as any).data;
+        this.lectures = (((res) as any).data as any).Lectures;
+        this.isLoading = false;
       }
     );
   }
   toHTML(input): any {
     return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
-}
+  }
 
 }
