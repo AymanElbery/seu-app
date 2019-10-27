@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { universityCard } from 'src/app/shared/models/university-card';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { MissingUnivCardService } from 'src/app/other-affair/services/missing-univ-card.service';
+import { MissingUnivCardService } from '../../../services/missing-univ-card.service';
 
 @Component({
   selector: 'app-add-missing-card-data',

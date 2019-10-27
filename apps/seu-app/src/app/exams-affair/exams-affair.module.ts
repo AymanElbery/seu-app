@@ -10,18 +10,32 @@ import { ExamAttendanceService } from './services/exam-attendance.service';
 import { ExamsAttendAppComponent } from './exams-attend-app/exams-attend-app.component';
 import { ExamsAttendAppService } from './services/exams-attend-app.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
+import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
+import {ExamExcuseService} from './services/exam-excuse.service';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [ExamsScheduleComponent,
      ExamsAttendStatComponent,
      ExamsAbsenceExcusesComponent,
       ExamsResultObjectionComponent,
-      ExamsAttendAppComponent],
+      ExamsAttendAppComponent,
+      ExamExcuseComponent,
+      AddExamExcuseComponent
+
+    ],
+    entryComponents:[AddExamExcuseComponent],
   imports: [
     CommonModule,
     ExamsAffairRoutingModule,
-    MatProgressSpinnerModule
+    FormsModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    ToastrModule.forRoot() 
   ],
-  providers: [ExamAttendanceService, ExamsAttendAppService]
+  providers: [ExamAttendanceService, ExamsAttendAppService,ExamExcuseService]
 })
 export class ExamsAffairModule { }

@@ -1,36 +1,35 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { universityCard } from 'src/app/shared/models/university-card';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { MissingUnivCardService } from 'src/app/other-affair/services/missing-univ-card.service';
+import { NgForm } from '@angular/forms';
+import {UvnivCardService} from '../../../services/univ-card.service';
 
 @Component({
-  selector: 'app-add-missing-card-data',
-  templateUrl: './add-missing-card-data.component.html',
-  styleUrls: ['./add-missing-card-data.component.css']
+  selector: 'app-add-univ-card',
+  templateUrl: './add-univ-card.component.html',
+  styleUrls: ['./add-univ-card.component.css']
 })
-export class AddMissingCardDataComponent implements OnInit {
+export class AddUnivCardComponent implements OnInit {
 
-  card:universityCard;
+
+  card: universityCard;
   reqData;
   msgs;
-  isLoading = false;
-
   constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddMissingCardDataComponent>,
-               private toastr: ToastrService,  private univCard: MissingUnivCardService) { }
+               public dialogRef: MatDialogRef<AddUnivCardComponent>,
+               private toastr: ToastrService,  private univCard: UvnivCardService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-    this.card = {name: '', phone: '', ssn: '',day:'',time:'',level:'',photo:'',ssn_file:''};
+    this.card = {name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: ''};
     this.univCard.getِgetRequests().then(
       res => {
     this.univCard.reqData =    (res as any).data;
     this.univCard.msgs = (res as any).messages;
     this.reqData = this.univCard.reqData;
     this.msgs = this.univCard.msgs;
-    this.isLoading=false;
+
+
 
   }
     );
@@ -70,7 +69,7 @@ this.dialogRef.close();
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.card.photo = reader.result;
-    //console.log(this.card.photo);
+    // console.log(this.card.photo);
   }
   handleInputChangeFile(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -87,7 +86,7 @@ this.dialogRef.close();
   _handleReaderLoadedFile(e) {
     const reader = e.target;
     this.card.ssn_file = reader.result;
-    //console.log(this.card.photo);
+    // console.log(this.card.photo);
   }
 
 
@@ -101,7 +100,7 @@ this.dialogRef.close();
       this.toastr.success('', (res as any).messages.body);
 
     });
-    //this.univCard.reqData.reqs.splice(index, 1);
+    this.univCard.reqData.reqs.splice(index, 1);
 
   }
 
@@ -113,6 +112,5 @@ return  Math.floor(Math.random() * 10) + hr ;
 closeDiag() {
   this.dialogRef.close();
 }
-
 
 }

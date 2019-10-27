@@ -2,14 +2,45 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { OtherAffairRoutingModule } from './other-affair-routing.module';
-import { UniversityIDComponent } from './university-id/university-id.component';
-import { IDReplacementComponent } from './idreplacement/idreplacement.component';
-
+import {MedicalReportComponent} from './medical-report/medical-report.component';
+import {MedicalReportService} from './services/medical-report.service';
+import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ToastrModule } from 'ngx-toastr';
+import {UnivCardComponent} from './univ-card/univ-card.component';
+import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
+import {UvnivCardService} from './services/univ-card.service';
+import {MissingCardComponent} from './missing-card/missing-card/missing-card.component';
+import {AddBankReceiptComponent} from './missing-card/diag/add-bank-receipt/add-bank-receipt.component';
+import {AddMissingCardDataComponent} from './missing-card/diag/add-missing-card-data/add-missing-card-data.component';
+import {MissingUnivCardService} from './services/missing-univ-card.service';
 @NgModule({
-  declarations: [UniversityIDComponent, IDReplacementComponent],
+
+  declarations: [MedicalReportComponent,
+    UnivCardComponent,
+    AddUnivCardComponent,
+    MissingCardComponent,
+    AddBankReceiptComponent,
+    AddMissingCardDataComponent
+  ],
+  entryComponents:[ AddBankReceiptComponent,
+    AddMissingCardDataComponent,
+    AddUnivCardComponent
+  ],
   imports: [
     CommonModule,
-    OtherAffairRoutingModule
+    OtherAffairRoutingModule,
+    FormsModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    ToastrModule.forRoot() 
+  ],
+  providers: [MedicalReportService,
+    UvnivCardService,
+    MissingUnivCardService
+    
+  
   ]
 })
 export class OtherAffairModule { }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { universityCard } from 'src/app/shared/models/university-card';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { MissingUnivCardService } from '../../../other-affair/services/missing-univ-card.service';
+import { MissingUnivCardService } from '../../services/missing-univ-card.service';
 import {AddBankReceiptComponent} from '../diag/add-bank-receipt/add-bank-receipt.component'
 import {AddMissingCardDataComponent} from '../diag/add-missing-card-data/add-missing-card-data.component';
 import { NgForm } from '@angular/forms';

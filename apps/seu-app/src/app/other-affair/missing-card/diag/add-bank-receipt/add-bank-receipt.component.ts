@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MissingUnivCardService } from 'src/app/other-affair/services/missing-univ-card.service';
+import { MissingUnivCardService } from '../../../services/missing-univ-card.service';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { missingCard } from 'src/app/shared/models/missing-card';

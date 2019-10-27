@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TuitionFeesStatComponent } from './tuition-fees-stat/tuition-fees-stat.component';
+import {FeesExceptionComponent} from './fees-exception/fees-exception.component';
 
 const routes: Routes = [
   { path: 'finance', component: TuitionFeesStatComponent },
   {
     path: 'finance',
     children: [
-    { path: 'fees',  component: TuitionFeesStatComponent }
+    { path: 'fees',  component: TuitionFeesStatComponent },
+    { path:'feesexception',component:FeesExceptionComponent}
 
    ]
   }

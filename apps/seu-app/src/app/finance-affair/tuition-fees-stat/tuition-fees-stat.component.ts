@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TuitionFeesService } from '../tuition-fees.service';
+import { TuitionFeesService } from '../services/tuition-fees.service';
 
 @Component({
   selector: 'app-tuition-fees-stat',

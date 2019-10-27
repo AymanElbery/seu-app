@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { FeesExceptionService } from 'src/app/academicprocs/services/fees-exception.service';
+import { FeesExceptionService } from 'src/app/finance-affair/services/fees-exception.service';
 import { FeesException } from 'src/app/shared/models/fees-exception';
 import { NgForm } from '@angular/forms';
 

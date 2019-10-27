@@ -48,10 +48,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {UnivCardComponent} from './univ-card/univ-card.component';
 import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
-import {UvnivCardService} from './services/univ-card.service';
-import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
-import {AddExamExcuseComponent} from './exam-excuse/diag/add-exam-excuse/add-exam-excuse.component';
-import {ExamExcuseService}  from './services/exam-excuse.service';
+import {UvnivCardService} from '../other-affair/services/univ-card.service';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {TerminationRequestComponent} from './termination-request/termination-request.component';
 import {AddTerminationRequestComponent} from './termination-request/diag/add-termination-request/add-termination-request.component';
@@ -64,10 +61,8 @@ import {TrainingRequestService} from './services/training-request.service';
 import {MissingCardComponent} from './missing-card/missing-card/missing-card.component';
 import {AddBankReceiptComponent} from './missing-card/diag/add-bank-receipt/add-bank-receipt.component';
 import {AddMissingCardDataComponent} from './missing-card/diag/add-missing-card-data/add-missing-card-data.component';
-import {MissingUnivCardService} from './services/missing-univ-card.service';
+import {MissingUnivCardService} from '../other-affair/services/missing-univ-card.service';
 import { from } from 'rxjs';
-import { FeesExceptionComponent } from './fees-exception/fees-exception.component';
-import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-exception/add-fees-exception.component';
 import {AbsenceQueryComponent} from './absence-query/absence-query.component';
 import {LectureAbsQueryService} from './services/lecture-abs-query.service';
 @NgModule({
@@ -101,8 +96,6 @@ import {LectureAbsQueryService} from './services/lecture-abs-query.service';
            UnivCardComponent,
            AddUnivCardComponent,
            AddUnivCardComponent,
-           ExamExcuseComponent,
-           AddExamExcuseComponent,
            AddUnivCardComponent,
            TerminationRequestComponent,
            AddTerminationRequestComponent,
@@ -114,8 +107,6 @@ import {LectureAbsQueryService} from './services/lecture-abs-query.service';
            MissingCardComponent,
            AddBankReceiptComponent,
            AddVisitorStudentComponent,
-           FeesExceptionComponent,
-        AddFeesExceptionComponent,
         AbsenceQueryComponent
 
            
@@ -141,9 +132,7 @@ import {LectureAbsQueryService} from './services/lecture-abs-query.service';
         AddTrainingRequestComponent,
         AddBankReceiptComponent,
         AddMissingCardDataComponent,
-        AddExamExcuseComponent,
         AddVisitorStudentComponent,
-        AddFeesExceptionComponent
 
       ],
 
@@ -169,11 +158,9 @@ import {LectureAbsQueryService} from './services/lecture-abs-query.service';
       ChangeMajorService,
       LectureExecuseServiceService,
       UvnivCardService,
-      ExamExcuseService,
       TerminationService,
       TrainingRequestService,
       MissingUnivCardService,
-      LectureAbsQueryService
   ]
 
 })

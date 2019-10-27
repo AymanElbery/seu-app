@@ -55,10 +55,8 @@ export class FeesExceptionComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
-    dialogConfig.width = '80%';
-    dialogConfig.height = '80%';
-    dialogConfig.direction = "rtl";
-    dialogConfig.position = { top: '100px', left: '25px' };
+    dialogConfig.width = '50%';
+    // dialogConfig.position = { top: '100px', left: '25px' };
 
 
     this.dialog.open(AddFeesExceptionComponent, dialogConfig);

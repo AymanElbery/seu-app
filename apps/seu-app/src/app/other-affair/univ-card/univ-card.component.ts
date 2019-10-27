@@ -3,10 +3,10 @@ import {universityCard} from '../../shared/models/university-card';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
-import {UvnivCardService} from '../../other-affair/services/univ-card.service';
+import {UvnivCardService} from '../services/univ-card.service';
 import {AddUnivCardComponent} from './diag/add-univ-card/add-univ-card.component';
 import { missingCard } from 'src/app/shared/models/missing-card';
-import { MissingUnivCardService } from '../../other-affair/services/missing-univ-card.service';
+import { MissingUnivCardService } from '../services/missing-univ-card.service';
 @Component({
   selector: 'app-univ-card',
   templateUrl: './univ-card.component.html',

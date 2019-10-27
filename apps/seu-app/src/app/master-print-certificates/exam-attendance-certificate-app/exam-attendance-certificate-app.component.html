@@ -9,12 +9,12 @@
           <p> شهادة إثبات حضور الإختبار
           </p>
         </div>
-        <div class=" col-md-6 descr">
+        <!-- <div class=" col-md-6 descr">
           <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
           &nbsp; &nbsp; &nbsp; &nbsp;
           <a href="#"><i class="ik ik-download"></i> </a>
           <a href="#"><i class="ik ik-film"></i></a>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -32,11 +32,11 @@
 
   <div class="ser-state" *ngIf="!isLoading">
     <div *ngFor="let msg of msgs" class="alert alert-info" role="alert">
-      {{msg.body}}!
+      {{msg}}!
     </div>
   </div>
   <div *ngIf="msg!=null && !isLoading" style="text-align: right" class="alert alert-info" role="alert">
-    {{msg.body}}!
+    {{msg}}!
   </div>
   <section class="ser-state" *ngIf="!isLoading">
     <nav>

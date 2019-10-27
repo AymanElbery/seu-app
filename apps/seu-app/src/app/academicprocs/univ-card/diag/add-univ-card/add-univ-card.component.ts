@@ -3,7 +3,7 @@ import { universityCard } from 'src/app/shared/models/university-card';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
-import {UvnivCardService} from '../../../services/univ-card.service';
+import {UvnivCardService} from '../../../../other-affair/services/univ-card.service';
 
 @Component({
   selector: 'app-add-univ-card',
