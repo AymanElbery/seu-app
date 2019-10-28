@@ -15,6 +15,10 @@ import {MissingCardComponent} from './missing-card/missing-card/missing-card.com
 import {AddBankReceiptComponent} from './missing-card/diag/add-bank-receipt/add-bank-receipt.component';
 import {AddMissingCardDataComponent} from './missing-card/diag/add-missing-card-data/add-missing-card-data.component';
 import {MissingUnivCardService} from './services/missing-univ-card.service';
+import {TrainingRequestComponent} from './training-request/training-request.component';
+import {AddTrainingRequestComponent} from './training-request/diag/add-training-request/add-training-request.component';
+import {TrainingRequestService} from './services/training-request.service';
+
 @NgModule({
 
   declarations: [MedicalReportComponent,
@@ -22,11 +26,15 @@ import {MissingUnivCardService} from './services/missing-univ-card.service';
     AddUnivCardComponent,
     MissingCardComponent,
     AddBankReceiptComponent,
-    AddMissingCardDataComponent
+    AddMissingCardDataComponent,
+    TrainingRequestComponent,
+    AddTrainingRequestComponent
+
   ],
   entryComponents:[ AddBankReceiptComponent,
     AddMissingCardDataComponent,
-    AddUnivCardComponent
+    AddUnivCardComponent,
+    AddTrainingRequestComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +46,8 @@ import {MissingUnivCardService} from './services/missing-univ-card.service';
   ],
   providers: [MedicalReportService,
     UvnivCardService,
-    MissingUnivCardService
+    MissingUnivCardService,
+    TrainingRequestService
     
   
   ]

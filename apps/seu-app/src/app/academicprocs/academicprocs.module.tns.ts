@@ -13,8 +13,7 @@ import { WithdrawFromUnivComponent } from './withdraw-from-univ/withdraw-from-un
 import { AddRequestComponent } from './withdraw-from-univ/diag/add-request/add-request.component';
 import { AddPostponeComponent } from './postpone-request/diag/add-postpone/add-postpone.component';
 import { AddSummerWithdrawComponent } from './summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component';
-import { AddCancelCourseComponent } from './diag/add-cancel-course/add-cancel-course.component';
-import { AddCourseCancelComponent } from './diag/add-course-cancel/add-course-cancel.component';
+
 import { AddExecuseTermComponent } from './execuse-request/diag/add-execuse-term/add-execuse-term.component';
 import { CourseEqualizeComponent } from './course-equalize/course-equalize.component';
 import { AddCourseEqualizeComponent } from './course-equalize/diag/add-course-equalize/add-course-equalize.component';
@@ -22,14 +21,11 @@ import { EnglishEqualizeComponent } from './english-equalize/english-equalize.co
 import { AddEnglishEqualizerComponent } from './english-equalize/diag/add-english-equalizer/add-english-equalizer.component';
 import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re-enroll.component';
 import { ChangeMajorComponent } from './change-major/change-major.component';
-import { AddChangeMajorComponent } from './diag/add-change-major/add-change-major.component';
 import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
-import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component';
 import { AddRegisterationHelperComponent } from './registeration-helper/diag/add-registeration-helper/add-registeration-helper.component';
 import { RegisterWishesComponent } from '../register-courses/register-wishes/register-wishes.component';
-import { AddRegisterWishesComponent } from '../register-courses/register-wishes/diag/add-register-wishes/add-register-wishes.component';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
 import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component';
 

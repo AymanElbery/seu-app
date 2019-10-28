@@ -14,7 +14,6 @@ import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectu
 import { ObjectExamComponent } from './object-exam/object-exam.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
 import {TerminationRequestComponent} from './termination-request/termination-request.component';
-import {TrainingRequestComponent} from './training-request/training-request.component';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
 import {AbsenceQueryComponent} from './absence-query/absence-query.component';
 
@@ -35,9 +34,8 @@ const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivCompone
   { path: 'objectexam',  component: ObjectExamComponent },
   { path: 'lecexecuse',  component: LecturesExecusesComponent },
   { path:'terminate' ,component:TerminationRequestComponent},
-  { path:'training',component:TrainingRequestComponent},
   { path: 'visitorstudent',  component: VisitorStudentComponent },
-  {path:"lectabs" ,component:AbsenceQueryComponent}
+  { path:"lectabs" ,component:AbsenceQueryComponent}
 
   
 

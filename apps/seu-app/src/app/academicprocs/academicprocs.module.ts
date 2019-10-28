@@ -55,9 +55,6 @@ import {AddTerminationRequestComponent} from './termination-request/diag/add-ter
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
 import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component';
 import {TerminationService} from './services/termination.service';
-import {TrainingRequestComponent} from './training-request/training-request.component';
-import {AddTrainingRequestComponent} from './training-request/diag/add-training-request/add-training-request.component';
-import {TrainingRequestService} from './services/training-request.service';
 import {MissingCardComponent} from './missing-card/missing-card/missing-card.component';
 import {AddBankReceiptComponent} from './missing-card/diag/add-bank-receipt/add-bank-receipt.component';
 import {AddMissingCardDataComponent} from './missing-card/diag/add-missing-card-data/add-missing-card-data.component';
@@ -99,8 +96,6 @@ import {LectureAbsQueryService} from './services/lecture-abs-query.service';
            AddUnivCardComponent,
            TerminationRequestComponent,
            AddTerminationRequestComponent,
-           TrainingRequestComponent,
-           AddTrainingRequestComponent,
            VisitorStudentComponent,
         
            AddMissingCardDataComponent,
@@ -129,7 +124,6 @@ import {LectureAbsQueryService} from './services/lecture-abs-query.service';
          AddExamObjectComponent,
         AddUnivCardComponent,
         AddTerminationRequestComponent,
-        AddTrainingRequestComponent,
         AddBankReceiptComponent,
         AddMissingCardDataComponent,
         AddVisitorStudentComponent,
@@ -159,7 +153,6 @@ import {LectureAbsQueryService} from './services/lecture-abs-query.service';
       LectureExecuseServiceService,
       UvnivCardService,
       TerminationService,
-      TrainingRequestService,
       MissingUnivCardService,
   ]
 
