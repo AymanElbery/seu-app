@@ -15,14 +15,16 @@ export class AcademicStatusComponent implements OnInit {
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
+  isLoadingTerm = false;
 
 
   constructor(private academicStatusService: AcademicStatusService) { }
 
   ngOnInit() {
 
- this.isLoading = true;
- this.academicStatusService.getStaudentStatus().then((res) => {
+    this.isLoading = true;
+    this.isLoadingTerm = true;
+    this.academicStatusService.getStaudentStatus().then((res) => {
       this.student = (res as any).data.student;
       this.studentTerms = (res as any).data.STD_TERMS;
       this.studentTermDetails = (res as any).data.STD_TermDetails;
@@ -31,20 +33,23 @@ export class AcademicStatusComponent implements OnInit {
       this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
       this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
       this.isLoading = false;
-    } );
+      this.isLoadingTerm = false;
+    });
   }
 
   getTrmsDetails(val) {
 
-    this.isLoading = true;
+    this.isLoadingTerm = true;
     this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
     this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
-    this.academicStatusService.getStaudentTermDetails( parseInt(val, 10)).then(
+    
+    this.academicStatusService.getStaudentTermDetails(parseInt(val, 10)).then(
       (res) => {
-      this.studentTermDetails = (res as any).data.STD_TermDetails;
-      this.isLoading = false;
+        this.studentTermDetails = (res as any).data.STD_TermDetails;
+        this.isLoadingTerm = false;
+
       }
-     );
+    );
   }
 
 

@@ -1,120 +1,136 @@
-<div class="main-content" >
+<div class="main-content">
 
 
-    <section class="service-single">
-        <div class="container">
-                <h3>طلب تقرير طبي  </h3>
-             <div class="row">
-                <div class=" col-md-5">
-                  <p>طلب تقرير طبي  </p>
-                 </div>
-                <!-- <div class=" col-md-6 descr">
+  <section class="service-single">
+    <div class="container">
+      <h3>طلب تقرير طبي </h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p>طلب تقرير طبي </p>
+        </div>
+        <!-- <div class=" col-md-6 descr">
                   <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                     &nbsp; &nbsp; &nbsp; &nbsp;
                     <a href="{{arabicPrint}}"><i class="ik ik-download"></i> </a>
                     <a href="#"><i class="ik ik-film"></i></a>
                 </div> -->
-            </div>
-            </div>
-    </section>
-     <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
-          <div class="state">
-  
-              <h5>  جاري تحميل البيانات .....................</h5>
-  
-  <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
-  
-      </div> 
-    </div> 
-    <div class="widget"  *ngIf="!isLoading">
-    <br>
-    
-    <h6 class="display-6 text-center">
-        {{mrData.labels.txt1}} : {{mrData.values.date}}</h6>
-    
-        <div class="widget-header">
-            <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
-          </div>
-    
-        <section  class="ser-state">
-            <div class="container">
-                 <div class="row ser-block">
-                    <div class=" col-md-4 col-sm-12">
-                          <div class="state">
-                             <h6> اسم الطالب </h6>
-                             <h5>{{mrData.values.std_name}}</h5>
-                          </div>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-info" style="width: 100%;"></div>
-                            </div>
-                    </div>
-                    <div class=" col-md-4 col-sm-12">
-                        <div class="state">
-                           <h6>الرقم الجامعي </h6>
-                           <h5>{{mrData.values.std_id}} </h5>
-                        </div>
-                          <div class="progress progress-sm">
-                              <div class="progress-bar bg-info" style="width: 100%;"></div>
-                          </div>
-                  </div>
-                  <div class=" col-md-4 col-sm-12">
-                      <div class="state">
-                         <h6>   السجل المدني  </h6>
-                         <h5>{{mrData.values.ssn}}</h5>
-                      </div>
-                        <div class="progress progress-sm">
-                            <div class="progress-bar bg-info" style="width: 100%;"></div>
-                        </div>
-                   </div>
-                  
-                  </div>
-                
-                  <div class="row ser-block">
-                      <div class=" col-md-4 col-sm-12">
-                            <div class="state">
-                               <h6> الكلية  </h6>
-                               <h5>{{mrData.values.coll}}</h5>
-                            </div>
-                              <div class="progress progress-sm">
-                                  <div class="progress-bar bg-info" style="width: 100%;"></div>
-                              </div>
-                      </div>
-                      <div class=" col-md-4 col-sm-12">
-                          <div class="state">
-                             <h6>التخصص</h6>
-                             <h5>{{mrData.values.major}} </h5>
-                          </div>
-                            <div class="progress progress-sm">
-                                <div class="progress-bar bg-info" style="width: 100%;"></div>
-                            </div>
-                    </div>
-                    
-                    
-                    </div>
-            </div></section>
+      </div>
     </div>
-     <div class="jumbotron jumbtron-fluid"  *ngIf="!isLoading">
-      <div class="row">
+  </section>
+  <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12 ">
+    <div class="state">
 
-          <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
-              
-            {{mrData.labels.txt2}}
-            <br/>
-            <br/>
-            <b>
-            -{{mrData.labels.txt3}}
-              </b>
-            
-            </p>
-          </div> 
+      <h5> جاري تحميل البيانات .....................</h5>
+
+      <mat-spinner *ngIf="isLoading"
+        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+      </mat-spinner>
+
     </div>
-     <div  class="row  prin "  *ngIf="!isLoading">
-            <div class="col-md-4"></div>
-            <a class="btn " href="{{arabicPrint}}"><i class="ik ik-save"></i> 
-              طباعة</a>
-            <a class="btn " href="{{EngPrint}}"><i class="ik ik-save"></i> 
-              Print</a>
-            <div class="col-md-4"></div>
-          
+  </div>
+  <div class="widget" *ngIf="!isLoading">
+    <br>
+
+    <h6 class="display-6 text-center">
+
+      {{mrData.labels.title}}</h6>
+
+
+
+    <h6 class="display-6 text-center">
+
+      {{mrData.labels.txt1}} : {{mrData.values.date}}</h6>
+
+    <div class="widget-header">
+      <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
     </div>
- </div>    
+
+    <section class="ser-state">
+      <div class="container">
+        <div class="row ser-block">
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6> اسم الطالب </h6>
+              <h5>{{mrData.values.std_name}}</h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>الرقم الجامعي </h6>
+              <h5>{{mrData.values.std_id}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6> السجل المدني </h6>
+              <h5>{{mrData.values.ssn}}</h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 100%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row ser-block">
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6> الكلية </h6>
+              <h5>{{mrData.values.coll}}</h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 100%;"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>التخصص</h6>
+              <h5>{{mrData.values.major}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info" style="width: 100%;"></div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading">
+    <div class="row">
+      <p style="direction: rtl;float: right;text-align: center;padding-right: 50px">
+        <br />
+        {{mrData.labels.part1}}
+        <br />
+        {{mrData.labels.part2}}
+      </p>
+      <br />
+      <br />
+      <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+        ملحوظة:
+        <br />
+        {{mrData.labels.txt2}}
+        <br />
+        <b>
+          -{{mrData.labels.txt3}}
+        </b>
+      </p>
+    </div>
+  </div>
+  <div class="row  prin " *ngIf="!isLoading">
+    <div class="col-md-4"></div>
+    <a class="btn " href="{{arabicPrint}}"><i class="ik ik-save"></i>
+      طباعة</a>
+    <a class="btn " href="{{EngPrint}}"><i class="ik ik-save"></i>
+      Print</a>
+    <div class="col-md-4"></div>
+
+  </div>
+</div>

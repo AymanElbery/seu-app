@@ -13,7 +13,8 @@ export class GraduatesStateService {
 
   getStatement() {
 
-    return this.httRequest.GetRequest('/graduation_statement/statement').toPromise();
+    
+    return this.httRequest.GetRequest('/graduation_statement/statement?std_id=S190268809').toPromise();
    }
    DownloadStatement() {
 
