@@ -15,13 +15,13 @@ export class UvnivCardService {
 
   getِgetRequests() {
 
-   return this.httRequest.GetRequest('card_university_service?std_id=S120000101').toPromise();
+   return this.httRequest.GetRequest('card_university_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('card_university_service/insert?std_id=S120000101', data).toPromise();
+      return this.httRequest.postRequest('card_university_service/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('card_university_service/remove/' + id + '?std_id=S120000101').toPromise();
+    return this.httRequest.GetRequest('card_university_service/remove/' + id ).toPromise();
 
   }
 

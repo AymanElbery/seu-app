@@ -15,7 +15,8 @@ export class ExamAttendanceService {
   getِExamsAttednace() {
     //std_id=S120000101
     //std_id=S180105049
-return this.httRequest.GetRequest('attendance_service?std_id=S180105049').toPromise();
+    //S120000101
+return this.httRequest.GetRequest('attendance_service').toPromise();
   }
 
   Print_Term_Exam_With_Schedule() {

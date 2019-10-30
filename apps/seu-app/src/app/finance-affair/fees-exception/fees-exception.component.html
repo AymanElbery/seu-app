@@ -42,7 +42,7 @@
 
 
       <h3 class="widget-title"> الطلبات السابقة
-        <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
           اضافة طلب
         </button>
 
@@ -55,23 +55,24 @@
           <tr>
             <th scope="col">رقم الطلب</th>
             <th scope="col">تاريخ الطلب</th>
-            <th scope="col"> سبب الرفض</th>
             <th scope="col"> الحالة</th>
+            <th scope="col"> سبب الرفض</th>
             <th scope="col"> إلغاء الطلب</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let it of reqData.requests;let i=index;">
             <td>{{it.request_number}}</td>
-
-
             <td>{{it.insert_date}}</td>
-            <td>{{it.rejection_reason}}</td>
             <td>{{it.status}}</td>
+            <td>{{it.rejection_reason}}</td>
 
+            <td *ngIf='it.deletable'><button  [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
+                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button>
+              
+              </td>
 
-            <td><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
-                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
+              <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
 
           </tr>
 

@@ -20,7 +20,7 @@ export class UnivCardComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog, public receiptDiag:MatDialog ,private toastr: ToastrService, private univCard: UvnivCardService ,private missCard:MissingUnivCardService) { }
+  constructor(public dialog: MatDialog, public receiptDiag:MatDialog ,private toastr: ToastrService, private univCard: UvnivCardService ) { }
 
   ngOnInit() {
     this.isLoading=true;
@@ -33,7 +33,7 @@ export class UnivCardComponent implements OnInit {
     this.msgs = this.univCard.msgs;
     var key=this.reqData;
     this.isLoading=false;
-   
+   console.log(this.reqData);
       }
     );
   }

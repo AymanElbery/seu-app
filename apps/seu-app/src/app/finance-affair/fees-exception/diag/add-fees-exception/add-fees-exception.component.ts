@@ -24,8 +24,8 @@ export class AddFeesExceptionComponent implements OnInit {
   associationsList: any;
   isLoading = false;
   accountOwner: any;
-  fileType:string;
-  approve:false;
+  fileType: string;
+  approve: false;
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
@@ -75,7 +75,7 @@ export class AddFeesExceptionComponent implements OnInit {
   }
 
   handleInputChange(e, fileType) {
-    this.fileType=fileType;
+    this.fileType = fileType;
     console.log('handleInputChange ');
     console.log(this.fileType);
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -116,53 +116,35 @@ export class AddFeesExceptionComponent implements OnInit {
   }
 
   exceptionTypeChange(p) {
-    if (p == '0') {
-      this.feesException.account_name = '';
-      this.feesException.email = '';
-      this.feesException.bank = '';
-      this.feesException.account_id = '';
-      this.feesException.account_relative = '';
-      this.feesException.iban = '';
-      this.feesException.bank_card = '';
-      this.accountOwner = '';
-    }
-    else if (p == '1') {
-      this.feesException.association = '';
-      this.feesException.proof_status = '';
-      this.feesException.insurance_card = '';
-      this.feesException.id_card = '';
-      this.feesException.work_status = '';
-      this.feesException.letter = '';
-      this.feesException.mco_id_card = '';
-    }
 
-    console.log(p);
+    this.feesException.association = '';
+
+    this.feesException.account_name = '';
+    this.feesException.email = '';
+    this.feesException.bank = '';
+    this.feesException.account_id = '';
+    this.feesException.account_relative = '';
+    this.feesException.iban = '';
+    this.feesException.bank_card = '';
+    this.accountOwner = '';
+
+
+    this.feesException.proof_status = '';
+    this.feesException.insurance_card = '';
+    this.feesException.id_card = '';
+    this.feesException.work_status = '';
+    this.feesException.letter = '';
+    this.feesException.mco_id_card = '';
+
   }
 
   associationChange(p) {
-    if (p == '0') {
-      this.feesException.id_card = '';
-      this.feesException.work_status = '';
-      this.feesException.letter = '';
-      this.feesException.mco_id_card = '';
-    }
-    else if (p == '1') {
-      this.feesException.proof_status = '';
-      this.feesException.insurance_card = '';
-      this.feesException.work_status = '';
-      this.feesException.letter = '';
-      this.feesException.mco_id_card = '';
-    }
-
-    else if (p == '2') {
-      this.feesException.proof_status = '';
-      this.feesException.insurance_card = '';
-      this.feesException.id_card = '';
-      this.feesException.work_status = '';
-
-    }
-
-    console.log(p);
+    this.feesException.proof_status = '';
+    this.feesException.insurance_card = '';
+    this.feesException.work_status = '';
+    this.feesException.letter = '';
+    this.feesException.mco_id_card = '';
+    this.feesException.id_card = '';
 
   }
 
