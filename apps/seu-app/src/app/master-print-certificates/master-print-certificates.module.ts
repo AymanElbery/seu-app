@@ -30,6 +30,7 @@ import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certifi
     MatDialogModule,
     BrowserAnimationsModule
   ],
+  
   providers:[CertificateIDService,
     ExamAttendanceCertificateService,
     ExamAttendanceCertificateAppService

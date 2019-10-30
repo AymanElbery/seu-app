@@ -12,4 +12,17 @@ export class ChangeBranchService {
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
     this.configService.baseUrl = "stdsUnivapi";
   }
+  getِgetRequests() {
+
+   return this.httRequest.GetRequest('change_camp_service').toPromise();
+  }
+  AddRequest(data) {
+      return this.httRequest.postRequest('change_camp_service/update', data).toPromise();
+  }
+  deleteReq(id) {
+    return this.httRequest.GetRequest('change_camp_service/remove/' + id ).toPromise();
+
+  }
+
+   
 }

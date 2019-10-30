@@ -1,0 +1,60 @@
+<!-- Modal -->
+<mat-dialog-content dir="rtl">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب  تغير التخصص </h5>
+        
+      </div>
+      <div class="modal-body">
+          <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
+              <div class="main-content" style="padding-top:0;">
+              <section  class="ser-state">
+                  <div class="container">
+                       <div class="row ser-block">
+                          <div class="col-md-12 col-sm-12">
+                              <div class="state">
+                                  <h6>اختيار الفرع المطلوب  </h6>
+                                  <select name="camp" #camp="ngModel" [(ngModel)]="branch.camp" class="form-control" 
+                                  [class.is-invalid]="branch.camp==''">
+                                    <option value="">اختر  الفرع</option>
+                                    <option *ngFor="let item of reqData.camps" value="{{item.SOBCURR_CAMP_CODE}}">{{item.STVCAMP_DESC}}</option>
+                                  </select>
+                               </div>
+                          </div>
+                          <div class="col-md-12 col-sm-12">
+                               <div class="state">
+                                  <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>
+                                  <textarea name="mobile" #mobile="ngModel" [(ngModel)]="branch.mobile" class="form-control" >
+                                    </textarea>
+                               </div>
+                          </div>
+                          <div class="col-md-12 col-sm-12">
+                                <div class="state">
+                                   <h6> سبب التحويل </h6>
+                                   <textarea name="reason" #reason="ngModel" [(ngModel)]="termination.reason" class="form-control" >
+                                     </textarea>
+                                </div>
+                          </div>
+                         
+                                  <div class="progress progress-sm">
+                                      <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  </div>
+                           </div>
+                           
+                    </div>
+                
+               </section>
+               <div style="margin-top: 10px;">
+                  <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+                    <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+                   <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                  </div>
+             </div>
+              </div>
+  
+         
+        </form>
+  
+
+

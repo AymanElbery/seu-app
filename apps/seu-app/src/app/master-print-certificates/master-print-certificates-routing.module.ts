@@ -10,6 +10,7 @@ const routes: Routes = [{ path: 'masterstdcertificate', component: CertificateID
   { path: 'idcertificate',  component: CertificateIDComponent },
   { path:'examattendacecertificate', component:ExamAttendanceCertificateComponent},
   { path:'examattendacecertificateapp', component:ExamAttendanceCertificateAppComponent}
+ 
 
  ]
 }
