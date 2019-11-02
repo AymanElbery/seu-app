@@ -21,19 +21,19 @@ export class SummerWithdrawComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: SummerWithdrawService) { }
+  constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: SummerWithdrawService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-this.reason = '';
-this.acadmicProc.getِgetRequests().then(
+    this.isLoading = true;
+    this.reason = '';
+    this.acadmicProc.getِgetRequests().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-    this.isLoading=false;
-    //console.log(this.reqData.reqs[0].time_to_delete_per_hour);
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+        //console.log(this.reqData.reqs[0].time_to_delete_per_hour);
       }
     );
   }
@@ -49,41 +49,41 @@ this.acadmicProc.getِgetRequests().then(
   }
 
   addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
+    this.acadmicProc.AddRequest(data).then(res => {
       this.acadmicProc.msgs = (res as any).messages;
-        });
+    });
   }
 
   onSubmit(form: NgForm) {
 
-this.addRequest(form.value);
+    this.addRequest(form.value);
 
 
   }
 
   print(req) {
-return    this.acadmicProc.Download(req);
+    return this.acadmicProc.Download(req);
 
   }
 
   delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.msgs =   (res as any).messages;
+    if (confirm('هل انت متأكد')) {
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.msgs = (res as any).messages;
 
-      this.status =   (res as any).status;
+        this.status = (res as any).status;
 
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-    
+        this.msgs.forEach((element: any) => {
+          this.toastr.success('', element.body);
+
         });
-        if(this.status == 1)
-          this.acadmicProc.reqData.requests.splice(index, 1);
-    });
+        if (this.status == 1)
+          this.acadmicProc.reqData.reqs.splice(index, 1);
+      });
+
+    }
 
   }
-
-}
   deleteReq(id: any) {
     throw new Error('Method not implemented.');
   }

@@ -14,20 +14,20 @@ export class WithdrawFromUnivService {
 			  }
 
   getِgetRequests() {
-
-   return this.httRequest.GetRequest('withdraw_service?std_id=S120000101').toPromise();
+//?std_id=S120000101
+   return this.httRequest.GetRequest('withdraw_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('withdraw_service/insert?std_id=S120000101', data).toPromise();
+      return this.httRequest.postRequest('withdraw_service/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('withdraw_service/remove/' + id + '?std_id=S120000101').toPromise();
+    return this.httRequest.GetRequest('withdraw_service/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
 
-    return this.configService.getApiURI() + '/withdraw_service/download/' + req + '?std_id=S160239561';
+    return this.configService.getApiURI() + '/withdraw_service/download/' + req ;
    }
    DownloadEng() {
 

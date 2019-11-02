@@ -15,20 +15,20 @@ export class TermPostponeService {
 			  }
 
   getِgetRequests() {
-
-   return this.httRequest.GetRequest('postpone_service?std_id=S120000101').toPromise();
+//?std_id=S120000101
+   return this.httRequest.GetRequest('postpone_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('postpone_service/insert?std_id=S120000101', data).toPromise();
+      return this.httRequest.postRequest('postpone_service/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('postpone_service/remove/' + id + '?std_id=S120000101').toPromise();
+    return this.httRequest.GetRequest('postpone_service/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
 
-    return this.configService.getApiURI() + '/postpone_service/download/postpone/' + req + '?std_id=S160239561';
+    return this.configService.getApiURI() + '/postpone_service/download/postpone/' + req ;
    }
    DownloadEng() {
 

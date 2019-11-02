@@ -14,18 +14,18 @@ export class ObjectExamService {
 			  }
 
   getRequests() {
-
+//?std_id=S160239561
    return this.httRequest.GetRequest('exam_objections_service').toPromise();
   }
   getgetRequests() {
 
-    return this.httRequest.GetRequest('exam_objections_service?std_id=S160239561').toPromise();
+    return this.httRequest.GetRequest('exam_objections_service').toPromise();
    }
   AddRequest(data) {
       return this.httRequest.postRequest('exam_objections_service/insert?', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('exam_objections_service/remove/' + id+ '?std_id=S160239561').toPromise();
+    return this.httRequest.GetRequest('exam_objections_service/remove/' + id).toPromise();
 
   }
 }

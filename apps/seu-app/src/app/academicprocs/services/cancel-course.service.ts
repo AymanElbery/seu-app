@@ -14,20 +14,20 @@ export class CancelCourseService {
   }
  
   getِgetRequests() {
-   
-   return this.httRequest.GetRequest('course_cancel?std_id=S120000101').toPromise();
+   //?std_id=S120000101
+   return this.httRequest.GetRequest('course_cancel').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('course_cancel/insert?std_id=S120000101', data).toPromise();
+      return this.httRequest.postRequest('course_cancel/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('course_cancel/remove/' + id + '?std_id=S120000101').toPromise();
+    return this.httRequest.GetRequest('course_cancel/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
 
-    return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req + '?std_id=S160239561';
+    return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req ;
    }
    DownloadEng() {
 

@@ -22,9 +22,11 @@ export class WithdrawFromUnivComponent implements OnInit {
   reqData;
   msgs;
   status;
+  isLoading = false;
   constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: WithdrawFromUnivService) { }
 
   ngOnInit() {
+    this.isLoading = true;
     this.withdraw = {FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile : null, bankimage : '', BANKID: 0};
     this.acadmicProc.getِgetRequests().then(
       res => {
@@ -32,6 +34,7 @@ export class WithdrawFromUnivComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    this.isLoading=false;
     //console.log(this.reqData.reqs);
       }
     );
@@ -42,6 +45,7 @@ export class WithdrawFromUnivComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
+    dialogConfig.direction="rtl";
 
     this.dialog.open(AddRequestComponent, dialogConfig);
   }

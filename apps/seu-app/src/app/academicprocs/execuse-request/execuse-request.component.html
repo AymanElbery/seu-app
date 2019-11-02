@@ -32,7 +32,7 @@
 الاعتذار عن فصل دراسي
     </h3> </div> -->
 
-  <div class="ser-state" *ngIf="!isLoading">
+  <div class="ser-state" *ngIf="!isLoading && msgs.length > 0">
     <div *ngFor="let msg of msgs"
       [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
       role="alert">
@@ -83,8 +83,10 @@
                   class="glyphicon glyphicon-print"></span>
                 Print</a></td>
 
-            <td><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
+            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
+
+                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
 
           </tr>
 

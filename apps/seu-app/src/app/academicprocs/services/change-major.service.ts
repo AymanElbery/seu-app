@@ -16,20 +16,20 @@ constructor(private configService: ConfigService, private httRequest: HttpReques
 }
 
   getِgetRequests() {
-
-   return this.httRequest.GetRequest('change_major_service?std_id=S120000101').toPromise();
+//?std_id=S120000101
+   return this.httRequest.GetRequest('change_major_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('change_major_service/insert?std_id=S120000101', data).toPromise();
+      return this.httRequest.postRequest('change_major_service/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('change_major_service/remove/' + id + '?std_id=S120000101').toPromise();
+    return this.httRequest.GetRequest('change_major_service/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
 
-    return this.configService.getApiURI() + '/return_service/download/return_request/' + req + '?std_id=S160239561';
+    return this.configService.getApiURI() + '/return_service/download/return_request/' + req ;
    }
    DownloadEng() {
 

@@ -25,7 +25,7 @@
 
     </div>
   </div>
-  <div class="ser-state" *ngIf="!isLoading">
+  <div class="ser-state" *ngIf="!isLoading && msgs.length > 0">
     <div *ngFor="let msg of msgs"
       [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
       role="alert">
@@ -46,7 +46,7 @@
 
 
       <h3 class="widget-title"> الطلبات السابقة
-        <button type="button" class="btn btn-primary" (click)="openDialoge()">
+        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
           اضافة طلب
         </button>
 
@@ -76,10 +76,13 @@
                   class="glyphicon glyphicon-print"></span>
                 Print</a></td>
 
-            <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0' class="btn btn-sm btn-danger"
-                style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
+            <td *ngIf='it.deletable  && it.time_to_delete_per_hour>0'><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'
+                class="btn btn-sm btn-danger" style="color: white" (click)="delete(it.request_number,i)"><i
+                  class="fa fa-trash">
                   <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>
                 </i> </button></td>
+
+            <td *ngIf='!it.deletable  || it.time_to_delete_per_hour<=0'>لا يمكن إلغاء الطلب</td>
 
           </tr>
 

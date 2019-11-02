@@ -32,7 +32,7 @@
                 <select required class="form-control" #UniversityID="ngModel" [(ngModel)]="visitorStudent.university"
                   name="UniversityID" [class.is-invalid]="visitorStudent.university == ''">
                   <option value=''>اختر الجامعة</option>
-                  <option *ngFor="let un of universitiesList" [value]="un.UN_ID">{{un.UNIV_AR}}</option>
+                  <option *ngFor="let un of universitiesList" [value]="un.UN_ID">{{un.UN_NAME}}</option>
                 </select>
 
               </div>
@@ -158,11 +158,14 @@
             <div class="row  ser-block">
               <div class=" col-md-12 col-sm-12">
                 <div class="state">
-                  <h6>1.عدم</h6>
-                  <h6>2.</h6>
-                  <h6>3.</h6>
-                  <h6>4.</h6>
-                  <h6>5.</h6>
+                    <h6>{{reqData.notes.nots}}</h6>
+                    <h6>1- {{reqData.notes.txt1}}</h6>
+                    <h6>2- {{reqData.notes.txt2}}</h6>
+                    <h6>3- {{reqData.notes.txt3}}</h6>
+                    <h6>4- {{reqData.notes.txt4}}</h6>
+                    <h6>5- {{reqData.notes.txt5}}</h6>
+
+              
   
   
                 </div>

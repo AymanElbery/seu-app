@@ -19,7 +19,7 @@ export class VisitorStudentService {
     //?std_id=S190000060
     //?std_id=S120000101
     //?std_id=S180372820
-    return this.httRequest.GetRequest('visitor_student_service?std_id=S180372820').toPromise();
+    return this.httRequest.GetRequest('visitor_student_service').toPromise();
   }
 
 

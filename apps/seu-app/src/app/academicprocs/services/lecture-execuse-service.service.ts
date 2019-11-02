@@ -10,28 +10,28 @@ export class LectureExecuseServiceService {
 
   reqData;
   msgs;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
-			  }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = "stdservicesapi";
+  }
 
   getRequests() {
-
-   return this.httRequest.GetRequest('lecture_excuse_service?std_id=S180105049').toPromise();
+    //?std_id=S180105049
+    return this.httRequest.GetRequest('lecture_excuse_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('lecture_excuse_service/insert?std_id=S120000101', data).toPromise();
+    return this.httRequest.postRequest('lecture_excuse_service/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('lecture_excuse_service/remove/' + id + '?std_id=S120000101').toPromise();
+    return this.httRequest.GetRequest('lecture_excuse_service/remove/' + id).toPromise();
 
   }
 
-   Download(req) {
+  Download(req) {
 
-    return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req + '?std_id=S160239561';
-   }
-   DownloadEng() {
+    return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req;
+  }
+  DownloadEng() {
 
     return this.configService.getApiURI() + '/lecture_excuse_service/download?Lang=en';
-   }
+  }
 }

@@ -16,22 +16,22 @@ export class SummerWithdrawService {
 
   getِgetRequests() {
 
-   return this.httRequest.GetRequest('execuse_service?std_id=S120000101').toPromise();
+   return this.httRequest.GetRequest('cancel_summer_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('execuse_service/insert?std_id=S120000101', data).toPromise();
+      return this.httRequest.postRequest('cancel_summer_service/insert',data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('execuse_service/remove/' + id + '?std_id=S120000101').toPromise();
+    return this.httRequest.GetRequest('cancel_summer_service/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
 
-    return this.configService.getApiURI() + '/cancel_summer_service/execuse_service/download/' + req + '?std_id=S160239561';
+    return this.configService.getApiURI() + '/cancel_summer_service/download/' + req ;
    }
    DownloadEng() {
 
-    return this.configService.getApiURI() + '/execuse_service/download?Lang=en';
+    return this.configService.getApiURI() + '/cancel_summer_service/download?Lang=en';
    }
 }
