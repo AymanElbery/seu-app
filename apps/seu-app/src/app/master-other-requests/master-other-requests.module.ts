@@ -27,7 +27,8 @@ import { ToastrModule } from 'ngx-toastr';
 @NgModule({
 
   declarations: [AbsenceQueryComponent, ChangeBranchComponent, AddChangeBranchComponent,
-    ChangeCourseComponent, PersonalIDComponent],
+    ChangeCourseComponent, PersonalIDComponent,
+    AddChangeBranchComponent, AddChangeCourseComponent, AddPersonalIdComponent],
   entryComponents: [AddChangeBranchComponent, AddChangeCourseComponent, AddPersonalIdComponent],
   imports: [
     CommonModule,

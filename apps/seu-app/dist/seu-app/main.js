@@ -9871,7 +9871,8 @@ var MasterOtherRequestsModule = /** @class */ (function () {
     MasterOtherRequestsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [_absence_query_absence_query_component__WEBPACK_IMPORTED_MODULE_10__["AbsenceQueryComponent"], _change_branch_change_branch_component__WEBPACK_IMPORTED_MODULE_13__["ChangeBranchComponent"], _change_branch_diag_add_change_branch_add_change_branch_component__WEBPACK_IMPORTED_MODULE_14__["AddChangeBranchComponent"],
-                _change_course_change_course_component__WEBPACK_IMPORTED_MODULE_15__["ChangeCourseComponent"], _personal_id_personal_id_component__WEBPACK_IMPORTED_MODULE_19__["PersonalIDComponent"]],
+                _change_course_change_course_component__WEBPACK_IMPORTED_MODULE_15__["ChangeCourseComponent"], _personal_id_personal_id_component__WEBPACK_IMPORTED_MODULE_19__["PersonalIDComponent"],
+                _change_branch_diag_add_change_branch_add_change_branch_component__WEBPACK_IMPORTED_MODULE_14__["AddChangeBranchComponent"], _change_course_diag_add_change_course_add_change_course_component__WEBPACK_IMPORTED_MODULE_16__["AddChangeCourseComponent"], _personal_id_diag_add_personal_id_add_personal_id_component__WEBPACK_IMPORTED_MODULE_20__["AddPersonalIdComponent"]],
             entryComponents: [_change_branch_diag_add_change_branch_add_change_branch_component__WEBPACK_IMPORTED_MODULE_14__["AddChangeBranchComponent"], _change_course_diag_add_change_course_add_change_course_component__WEBPACK_IMPORTED_MODULE_16__["AddChangeCourseComponent"], _personal_id_diag_add_personal_id_add_personal_id_component__WEBPACK_IMPORTED_MODULE_20__["AddPersonalIdComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
