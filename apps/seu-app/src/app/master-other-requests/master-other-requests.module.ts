@@ -14,12 +14,23 @@ import{ChangeBranchComponent } from './change-branch/change-branch.component'
 import { from } from 'rxjs';
 import{AddChangeBranchComponent} from './change-branch/diag/add-change-branch/add-change-branch.component';
 
-
+import {PersonalIDComponent} from './personal-id/personal-id.component';
+import {AddPersonalIdComponent} from './personal-id/diag/add-personal-id/add-personal-id.component';
+import {PersonalIDService} from './services/personal-id.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
-  declarations: [AbsenceQueryComponent,ChangeBranchComponent,AddChangeBranchComponent],
-  entryComponents:[AddChangeBranchComponent],
+  declarations: [AbsenceQueryComponent
+    ,ChangeBranchComponent
+    ,AddChangeBranchComponent
+    ,AddPersonalIdComponent
+    ,PersonalIDComponent
+  ],
+
+  entryComponents:[AddChangeBranchComponent
+    ,AddPersonalIdComponent
+  ],
   imports: [
     CommonModule,
     MasterOtherRequestsRoutingModule,
@@ -28,9 +39,14 @@ import{AddChangeBranchComponent} from './change-branch/diag/add-change-branch/ad
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot() 
+    
   ],
-  providers: [AbseneQueryService,ChangeBranchService]
+  providers: [AbseneQueryService
+    ,ChangeBranchService
+    ,PersonalIDService
+  ]
 
 })
 export class MasterOtherRequestsModule { }
