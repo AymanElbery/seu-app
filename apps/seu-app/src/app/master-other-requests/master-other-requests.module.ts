@@ -13,13 +13,17 @@ import{ChangeBranchService}  from './services/change-branch.service';
 import{ChangeBranchComponent } from './change-branch/change-branch.component'
 import { from } from 'rxjs';
 import{AddChangeBranchComponent} from './change-branch/diag/add-change-branch/add-change-branch.component';
+import{ChangeCourseComponent} from './change-course/change-course.component';
+import{AddChangeCourseComponent} from'./change-course/diag/add-change-course/add-change-course.component';
+import { ChangeCourseService } from './services/change-course.service';
+import { MatCheckboxModule} from '@angular/material';
 
 
 
 
 @NgModule({
-  declarations: [AbsenceQueryComponent,ChangeBranchComponent,AddChangeBranchComponent],
-  entryComponents:[AddChangeBranchComponent],
+  declarations: [AbsenceQueryComponent,ChangeBranchComponent,AddChangeBranchComponent,ChangeCourseComponent,AddChangeCourseComponent],
+  entryComponents:[AddChangeBranchComponent,AddChangeCourseComponent],
   imports: [
     CommonModule,
     MasterOtherRequestsRoutingModule,
@@ -28,9 +32,10 @@ import{AddChangeBranchComponent} from './change-branch/diag/add-change-branch/ad
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCheckboxModule,
   ],
-  providers: [AbseneQueryService,ChangeBranchService]
+  providers: [AbseneQueryService,ChangeBranchService,ChangeCourseService]
 
 })
 export class MasterOtherRequestsModule { }

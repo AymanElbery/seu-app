@@ -17,7 +17,7 @@ export class ChangeBranchService {
    return this.httRequest.GetRequest('change_camp_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('change_camp_service/update', data).toPromise();
+      return this.httRequest.postRequest('change_camp_service/insert', data).toPromise();
   }
   deleteReq(id) {
     return this.httRequest.GetRequest('change_camp_service/remove/' + id ).toPromise();

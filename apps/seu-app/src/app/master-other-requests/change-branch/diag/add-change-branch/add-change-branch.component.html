@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب  تغير التخصص </h5>
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب  تغيير الفرع </h5>
         
       </div>
       <div class="modal-body">
@@ -12,30 +12,39 @@
               <section  class="ser-state">
                   <div class="container">
                        <div class="row ser-block">
-                          <div class="col-md-12 col-sm-12">
-                              <div class="state">
-                                  <h6>اختيار الفرع المطلوب  </h6>
-                                  <select name="camp" #camp="ngModel" [(ngModel)]="branch.camp" class="form-control" 
-                                  [class.is-invalid]="branch.camp==''">
-                                    <option value="">اختر  الفرع</option>
-                                    <option *ngFor="let item of reqData.camps" value="{{item.SOBCURR_CAMP_CODE}}">{{item.STVCAMP_DESC}}</option>
-                                  </select>
-                               </div>
+                        <div class="col-md-12 col-sm-12">
+                          <div class="state">
+                              <h6>اختيار الفرع المطلوب  </h6>
+                              <select name="camp" #camp="ngModel" [(ngModel)]="branch.camp" class="form-control" 
+                              [class.is-invalid]="branch.camp==''">
+
+                                <option *ngFor="let item of reqData.camps" value="{{item.key}}">{{item.value}}</option>
+                              </select>                              
+                           </div>
+                           <div class="progress progress-sm">
+                            <div class="progress-bar bg-info" style="width: 15%;"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 col-sm-12">
+                        <div class="state">
+                          <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>                               
+                          <input name="mobile" #mobile="ngModel" [(ngModel)]="branch.mobile" class="form-control" >
+                        </div>
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-info" style="width: 15%;"></div>
                           </div>
-                          <div class="col-md-12 col-sm-12">
-                               <div class="state">
-                                  <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>
-                                  <textarea name="mobile" #mobile="ngModel" [(ngModel)]="branch.mobile" class="form-control" >
-                                    </textarea>
-                               </div>
-                          </div>
+                       </div>                     
                           <div class="col-md-12 col-sm-12">
                                 <div class="state">
                                    <h6> سبب التحويل </h6>
                                    <textarea name="reason" #reason="ngModel" [(ngModel)]="branch.reason" class="form-control" >
                                      </textarea>
-                                </div>
-                          </div>
+                                    </div>
+                                     <div class="progress progress-sm">
+                                      <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  </div>
+                        </div>
+                        
                          
                                   <div class="progress progress-sm">
                                       <div class="progress-bar bg-info" style="width: 15%;"></div>
