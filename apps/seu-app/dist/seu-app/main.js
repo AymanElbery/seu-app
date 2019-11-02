@@ -1160,7 +1160,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الانسحاب من مقرر </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الانسحاب من مقرر</p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div style=\"text-align: right\" *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                  <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>\r\n                </i> </button></td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الانسحاب من مقرر </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الانسحاب من مقرر</p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div style=\"text-align: right\" *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td  *ngIf='it.deletable && it.time_to_delete_per_hour>0'><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                  <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>\r\n                </i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable || it.time_to_delete_per_hour<=0'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -1374,7 +1374,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> تغيير التخصص</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> تغيير التخصص </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12 \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button> \r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>-->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\"> التخصص الحالي</th>\r\n            <th scope=\"col\"> التخصص المطلوب</th>\r\n\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.CURR_PROG}}</td>\r\n            <td>{{it.REQ_PROG}}</td>\r\n\r\n\r\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>"
+module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> تغيير التخصص</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> تغيير التخصص </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12 \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button> \r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>-->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\"> التخصص الحالي</th>\r\n            <th scope=\"col\"> التخصص المطلوب</th>\r\n\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.CURR_PROG}}</td>\r\n            <td>{{it.REQ_PROG}}</td>\r\n\r\n\r\n            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>"
 
 /***/ }),
 
@@ -1491,7 +1491,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\r\n<mat-dialog-content dir=\"rtl\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب  تغير التخصص </h5>\r\n          \r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <P class=\"text-center\">بيانات بيانات بيانات</P>\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n            \r\n          <div class=\"form-group\">\r\n             \r\n                 <select name=\"major\" #BranchID=\"ngModel\" [(ngModel)]=\"mj.major\" class=\"form-control\" \r\n            [class.is-invalid]=\"mj.major==''\">\r\n              <option value=\"\">اختر  التخصص</option>\r\n              <option *ngFor=\"let item of reqData.majors\" value=\"{{item.MAJOR_PK}}\">{{item.MAJOR_TITLE}}</option>\r\n            </select>\r\n          </div>\r\n      <br/>\r\n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n  \r\n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n          </div>\r\n        </form>\r\n        </div>\r\n        \r\n      </div>\r\n    </div>\r\n  </mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content dir=\"rtl\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب  تغير التخصص </h5>\r\n          \r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <P class=\"text-center\">بيانات  </P>\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n            \r\n          <div class=\"form-group\">\r\n             \r\n                 <select name=\"major\" #BranchID=\"ngModel\" [(ngModel)]=\"mj.major\" class=\"form-control\" \r\n            [class.is-invalid]=\"mj.major==''\">\r\n              <option value=\"\">اختر  التخصص</option>\r\n              <option *ngFor=\"let item of reqData.majors\" value=\"{{item.MAJOR_PK}}\">{{item.MAJOR_TITLE}}</option>\r\n            </select>\r\n          </div>\r\n      <br/>\r\n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                      <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n  \r\n            <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n          </div>\r\n        </form>\r\n        </div>\r\n        \r\n      </div>\r\n    </div>\r\n  </mat-dialog-content>"
 
 /***/ }),
 
@@ -2463,7 +2463,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> الاعتذار عن فصل دراسي\r\n      </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الاعتذار عن فصل دراسي\r\n          </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                \r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12 \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <!-- <div class=\"widget\"  *ngIf=\"!isLoading\"><div class=\"widget-header\"><h3 class=\"widget-title\"> \r\nالاعتذار عن فصل دراسي\r\n    </h3> </div> -->\r\n\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\" > \r\n    \r\n          <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n        <br/>\r\n        <br/>\r\n        \r\n        </div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n\r\n</div>"
+module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> الاعتذار عن فصل دراسي\r\n      </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الاعتذار عن فصل دراسي\r\n          </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                \r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12 \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <!-- <div class=\"widget\"  *ngIf=\"!isLoading\"><div class=\"widget-header\"><h3 class=\"widget-title\"> \r\nالاعتذار عن فصل دراسي\r\n    </h3> </div> -->\r\n\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading && msgs.length > 0\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\" > \r\n    \r\n          <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n        <br/>\r\n        <br/>\r\n        \r\n        </div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n\r\n</div>"
 
 /***/ }),
 
@@ -3329,7 +3329,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الاعتراض على نتيجة الاختبار النهائي</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الاعتراض على نتيجة الاختبار النهائي</p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n\r\n\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">CRN</th>\r\n            <th scope=\"col\">اسم المقرر</th>\r\n\r\n            <th scope=\"col\">تاريخ انشاء الطلب</th>\r\n\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\">الاجراء</th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n            <td>{{it.courseId}}</td>\r\n            <td>{{it.course_title}}</td>\r\n            <td>{{it.insert_date}}</td>\r\n\r\n            <td>{{it.status}}</td>\r\n\r\n\r\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الاعتراض على نتيجة الاختبار النهائي</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الاعتراض على نتيجة الاختبار النهائي</p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n\r\n\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">CRN</th>\r\n            <th scope=\"col\">اسم المقرر</th>\r\n\r\n            <th scope=\"col\">تاريخ انشاء الطلب</th>\r\n\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\">الاجراء</th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n            <td>{{it.courseId}}</td>\r\n            <td>{{it.course_title}}</td>\r\n            <td>{{it.insert_date}}</td>\r\n\r\n            <td>{{it.status}}</td>\r\n\r\n\r\n            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n            <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -3534,7 +3534,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> تأجيل الفصل الدراسي </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> تأجيل الفصل الدراسي </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  <br/>\r\n  <br/>\r\n  <button *ngIf=\"reqData.can_add_new_request\"  type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                  <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>\r\n                </i> </button></td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>"
+module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> تأجيل الفصل الدراسي </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> تأجيل الفصل الدراسي </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  <br/>\r\n  <br/>\r\n  <button *ngIf=\"reqData.can_add_new_request\"  type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td *ngIf='it.deletable'><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                  <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>\r\n                </i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>"
 
 /***/ }),
 
@@ -3770,7 +3770,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single mb-10\">\r\n    <div class=\"container\">\r\n      <h3> اعادة القيد </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> اعادة القيد </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button  type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br/>\r\n  <br/>\r\n  \r\n  </div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                  <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>\r\n                </i> </button></td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single mb-10\">\r\n    <div class=\"container\">\r\n      <h3> اعادة القيد </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> اعادة القيد </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading && msgs.length > 0\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button  type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br/>\r\n  <br/>\r\n  \r\n  </div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td *ngIf='it.deletable  && it.time_to_delete_per_hour>0'><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'\r\n                class=\"btn btn-sm btn-danger\" style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i\r\n                  class=\"fa fa-trash\">\r\n                  <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>\r\n                </i> </button></td>\r\n\r\n            <td *ngIf='!it.deletable  || it.time_to_delete_per_hour<=0'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -3891,16 +3891,17 @@ var CancelCourseService = /** @class */ (function () {
         this.configService.baseUrl = "stdservicesapi";
     }
     CancelCourseService.prototype.getِgetRequests = function () {
-        return this.httRequest.GetRequest('course_cancel?std_id=S120000101').toPromise();
+        //?std_id=S120000101
+        return this.httRequest.GetRequest('course_cancel').toPromise();
     };
     CancelCourseService.prototype.AddRequest = function (data) {
-        return this.httRequest.postRequest('course_cancel/insert?std_id=S120000101', data).toPromise();
+        return this.httRequest.postRequest('course_cancel/insert', data).toPromise();
     };
     CancelCourseService.prototype.deleteReq = function (id) {
-        return this.httRequest.GetRequest('course_cancel/remove/' + id + '?std_id=S120000101').toPromise();
+        return this.httRequest.GetRequest('course_cancel/remove/' + id).toPromise();
     };
     CancelCourseService.prototype.Download = function (req) {
-        return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req + '?std_id=S160239561';
+        return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req;
     };
     CancelCourseService.prototype.DownloadEng = function () {
         return this.configService.getApiURI() + '/crse_cancel/download?Lang=en';
@@ -3943,16 +3944,17 @@ var ChangeMajorService = /** @class */ (function () {
         this.configService.baseUrl = 'stdservicesapi';
     }
     ChangeMajorService.prototype.getِgetRequests = function () {
-        return this.httRequest.GetRequest('change_major_service?std_id=S120000101').toPromise();
+        //?std_id=S120000101
+        return this.httRequest.GetRequest('change_major_service').toPromise();
     };
     ChangeMajorService.prototype.AddRequest = function (data) {
-        return this.httRequest.postRequest('change_major_service/insert?std_id=S120000101', data).toPromise();
+        return this.httRequest.postRequest('change_major_service/insert', data).toPromise();
     };
     ChangeMajorService.prototype.deleteReq = function (id) {
-        return this.httRequest.GetRequest('change_major_service/remove/' + id + '?std_id=S120000101').toPromise();
+        return this.httRequest.GetRequest('change_major_service/remove/' + id).toPromise();
     };
     ChangeMajorService.prototype.Download = function (req) {
-        return this.configService.getApiURI() + '/return_service/download/return_request/' + req + '?std_id=S160239561';
+        return this.configService.getApiURI() + '/return_service/download/return_request/' + req;
     };
     ChangeMajorService.prototype.DownloadEng = function () {
         return this.configService.getApiURI() + '/return_service/download?Lang=en';
@@ -4191,16 +4193,17 @@ var LectureExecuseServiceService = /** @class */ (function () {
         this.configService.baseUrl = "stdservicesapi";
     }
     LectureExecuseServiceService.prototype.getRequests = function () {
-        return this.httRequest.GetRequest('lecture_excuse_service?std_id=S180105049').toPromise();
+        //?std_id=S180105049
+        return this.httRequest.GetRequest('lecture_excuse_service').toPromise();
     };
     LectureExecuseServiceService.prototype.AddRequest = function (data) {
-        return this.httRequest.postRequest('lecture_excuse_service/insert?std_id=S120000101', data).toPromise();
+        return this.httRequest.postRequest('lecture_excuse_service/insert', data).toPromise();
     };
     LectureExecuseServiceService.prototype.deleteReq = function (id) {
-        return this.httRequest.GetRequest('lecture_excuse_service/remove/' + id + '?std_id=S120000101').toPromise();
+        return this.httRequest.GetRequest('lecture_excuse_service/remove/' + id).toPromise();
     };
     LectureExecuseServiceService.prototype.Download = function (req) {
-        return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req + '?std_id=S160239561';
+        return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req;
     };
     LectureExecuseServiceService.prototype.DownloadEng = function () {
         return this.configService.getApiURI() + '/lecture_excuse_service/download?Lang=en';
@@ -4243,16 +4246,17 @@ var ObjectExamService = /** @class */ (function () {
         this.configService.baseUrl = "stdservicesapi";
     }
     ObjectExamService.prototype.getRequests = function () {
+        //?std_id=S160239561
         return this.httRequest.GetRequest('exam_objections_service').toPromise();
     };
     ObjectExamService.prototype.getgetRequests = function () {
-        return this.httRequest.GetRequest('exam_objections_service?std_id=S160239561').toPromise();
+        return this.httRequest.GetRequest('exam_objections_service').toPromise();
     };
     ObjectExamService.prototype.AddRequest = function (data) {
         return this.httRequest.postRequest('exam_objections_service/insert?', data).toPromise();
     };
     ObjectExamService.prototype.deleteReq = function (id) {
-        return this.httRequest.GetRequest('exam_objections_service/remove/' + id + '?std_id=S160239561').toPromise();
+        return this.httRequest.GetRequest('exam_objections_service/remove/' + id).toPromise();
     };
     ObjectExamService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -4292,16 +4296,17 @@ var ReEnrollService = /** @class */ (function () {
         this.configService.baseUrl = "stdservicesapi";
     }
     ReEnrollService.prototype.getِgetRequests = function () {
-        return this.httRequest.GetRequest('return_service?std_id=S120000101').toPromise();
+        //?std_id=S120000101
+        return this.httRequest.GetRequest('return_service').toPromise();
     };
     ReEnrollService.prototype.AddRequest = function (data) {
-        return this.httRequest.postRequest('return_service/insert?std_id=S120000101', data).toPromise();
+        return this.httRequest.postRequest('return_service/insert', data).toPromise();
     };
     ReEnrollService.prototype.deleteReq = function (id) {
-        return this.httRequest.GetRequest('return_service/remove/' + id + '?std_id=S120000101').toPromise();
+        return this.httRequest.GetRequest('return_service/remove/' + id).toPromise();
     };
     ReEnrollService.prototype.Download = function (req) {
-        return this.configService.getApiURI() + '/return_service/download/return_request/' + req + '?std_id=S160239561';
+        return this.configService.getApiURI() + '/return_service/download/return_request/' + req;
     };
     ReEnrollService.prototype.DownloadEng = function () {
         return this.configService.getApiURI() + '/return_service/download?Lang=en';
@@ -4344,19 +4349,19 @@ var SummerWithdrawService = /** @class */ (function () {
         this.configService.baseUrl = "stdservicesapi";
     }
     SummerWithdrawService.prototype.getِgetRequests = function () {
-        return this.httRequest.GetRequest('execuse_service?std_id=S120000101').toPromise();
+        return this.httRequest.GetRequest('cancel_summer_service').toPromise();
     };
     SummerWithdrawService.prototype.AddRequest = function (data) {
-        return this.httRequest.postRequest('execuse_service/insert?std_id=S120000101', data).toPromise();
+        return this.httRequest.postRequest('cancel_summer_service/insert', data).toPromise();
     };
     SummerWithdrawService.prototype.deleteReq = function (id) {
-        return this.httRequest.GetRequest('execuse_service/remove/' + id + '?std_id=S120000101').toPromise();
+        return this.httRequest.GetRequest('cancel_summer_service/remove/' + id).toPromise();
     };
     SummerWithdrawService.prototype.Download = function (req) {
-        return this.configService.getApiURI() + '/cancel_summer_service/execuse_service/download/' + req + '?std_id=S160239561';
+        return this.configService.getApiURI() + '/cancel_summer_service/download/' + req;
     };
     SummerWithdrawService.prototype.DownloadEng = function () {
-        return this.configService.getApiURI() + '/execuse_service/download?Lang=en';
+        return this.configService.getApiURI() + '/cancel_summer_service/download?Lang=en';
     };
     SummerWithdrawService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -4396,16 +4401,17 @@ var TermExecuseService = /** @class */ (function () {
         this.configService.baseUrl = "stdservicesapi";
     }
     TermExecuseService.prototype.getِgetRequests = function () {
-        return this.httRequest.GetRequest('execuse_service?std_id=S120000101').toPromise();
+        //?std_id=S120000101
+        return this.httRequest.GetRequest('execuse_service').toPromise();
     };
     TermExecuseService.prototype.AddRequest = function (data) {
-        return this.httRequest.postRequest('execuse_service/insert?std_id=S120000101', data).toPromise();
+        return this.httRequest.postRequest('execuse_service/insert', data).toPromise();
     };
     TermExecuseService.prototype.deleteReq = function (id) {
-        return this.httRequest.GetRequest('execuse_service/remove/' + id + '?std_id=S120000101').toPromise();
+        return this.httRequest.GetRequest('execuse_service/remove/' + id).toPromise();
     };
     TermExecuseService.prototype.Download = function (req) {
-        return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req + '?std_id=S160239561';
+        return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req;
     };
     TermExecuseService.prototype.DownloadEng = function () {
         return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
@@ -4448,16 +4454,17 @@ var TermPostponeService = /** @class */ (function () {
         this.configService.baseUrl = "stdservicesapi";
     }
     TermPostponeService.prototype.getِgetRequests = function () {
-        return this.httRequest.GetRequest('postpone_service?std_id=S120000101').toPromise();
+        //?std_id=S120000101
+        return this.httRequest.GetRequest('postpone_service').toPromise();
     };
     TermPostponeService.prototype.AddRequest = function (data) {
-        return this.httRequest.postRequest('postpone_service/insert?std_id=S120000101', data).toPromise();
+        return this.httRequest.postRequest('postpone_service/insert', data).toPromise();
     };
     TermPostponeService.prototype.deleteReq = function (id) {
-        return this.httRequest.GetRequest('postpone_service/remove/' + id + '?std_id=S120000101').toPromise();
+        return this.httRequest.GetRequest('postpone_service/remove/' + id).toPromise();
     };
     TermPostponeService.prototype.Download = function (req) {
-        return this.configService.getApiURI() + '/postpone_service/download/postpone/' + req + '?std_id=S160239561';
+        return this.configService.getApiURI() + '/postpone_service/download/postpone/' + req;
     };
     TermPostponeService.prototype.DownloadEng = function () {
         return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
@@ -4557,7 +4564,7 @@ var VisitorStudentService = /** @class */ (function () {
         //?std_id=S190000060
         //?std_id=S120000101
         //?std_id=S180372820
-        return this.httRequest.GetRequest('visitor_student_service?std_id=S180372820').toPromise();
+        return this.httRequest.GetRequest('visitor_student_service').toPromise();
     };
     VisitorStudentService.prototype.deleteReq = function (id) {
         //+ '?std_id=S120000101'
@@ -4607,16 +4614,17 @@ var WithdrawFromUnivService = /** @class */ (function () {
         this.configService.baseUrl = "stdservicesapi";
     }
     WithdrawFromUnivService.prototype.getِgetRequests = function () {
-        return this.httRequest.GetRequest('withdraw_service?std_id=S120000101').toPromise();
+        //?std_id=S120000101
+        return this.httRequest.GetRequest('withdraw_service').toPromise();
     };
     WithdrawFromUnivService.prototype.AddRequest = function (data) {
-        return this.httRequest.postRequest('withdraw_service/insert?std_id=S120000101', data).toPromise();
+        return this.httRequest.postRequest('withdraw_service/insert', data).toPromise();
     };
     WithdrawFromUnivService.prototype.deleteReq = function (id) {
-        return this.httRequest.GetRequest('withdraw_service/remove/' + id + '?std_id=S120000101').toPromise();
+        return this.httRequest.GetRequest('withdraw_service/remove/' + id).toPromise();
     };
     WithdrawFromUnivService.prototype.Download = function (req) {
-        return this.configService.getApiURI() + '/withdraw_service/download/' + req + '?std_id=S160239561';
+        return this.configService.getApiURI() + '/withdraw_service/download/' + req;
     };
     WithdrawFromUnivService.prototype.DownloadEng = function () {
         return this.configService.getApiURI() + '/fees_stmt_request_service/download?Lang=en';
@@ -4652,7 +4660,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n  <div class=\"modal-dialog\" style=\"direction: rtl;\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> الاعتذار عن الفصل الصيفي  </h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">  </P>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n          \r\n    \r\n        \r\n         \r\n       \r\n        <div class=\"form-row\">\r\n            <div class=\"form-group col-md-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"> السبب</div>\r\n                </div>\r\n                <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\r\n              </div>\r\n            </div>\r\n           \r\n          </div>\r\n          \r\n            \r\n     \r\n         \r\n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n        </div>\r\n      </form>\r\n      </div>\r\n  </div>\r\n      \r\n   </div>\r\n</mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n  <div class=\"modal-dialog\" style=\"direction: rtl;\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> الاعتذار عن الفصل الصيفي  </h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">  </P>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n          \r\n    \r\n        \r\n         \r\n       \r\n        <div class=\"form-row\">\r\n            <div class=\"form-group col-md-12\">\r\n              <div class=\"input-group\">\r\n                <h5>\r\n                  تنبيه: إعتذارك عن الفصل الصيفي يعني إنسحابك من المقرارات المسجلة\r\n                </h5>\r\n              </div>\r\n            </div>\r\n           \r\n          </div>\r\n          \r\n            \r\n     \r\n         \r\n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n        </div>\r\n      </form>\r\n      </div>\r\n  </div>\r\n      \r\n   </div>\r\n</mat-dialog-content>"
 
 /***/ }),
 
@@ -4740,7 +4748,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الاعتذار عن الفصل الصيفي</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الاعتذار عن الفصل الصيفي</p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n\r\n\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n\r\n\r\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الاعتذار عن الفصل الصيفي</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الاعتذار عن الفصل الصيفي</p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n\r\n\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n\r\n\r\n            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -4815,7 +4823,7 @@ var SummerWithdrawComponent = /** @class */ (function () {
                     _this.toastr.success('', element.body);
                 });
                 if (_this.status == 1)
-                    _this.acadmicProc.reqData.requests.splice(index, 1);
+                    _this.acadmicProc.reqData.reqs.splice(index, 1);
             });
         }
     };
@@ -5357,7 +5365,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-dialog-content style=\"height: 2500px\">\r\n\r\n\r\n\r\n  <!--<div class=\"widget-header\">\r\n            <h3 class=\"widget-title\"> تسجيل طلب</h3>\r\n          </div>\r\n        -->\r\n\r\n  <mat-spinner *ngIf=\"isLoading\"\r\n    style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n  </mat-spinner>\r\n\r\n\r\n\r\n  <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n    <div class=\"widget\">\r\n      <div class=\"widget-header\">\r\n        <h3 class=\"widget-title\">إضافة طلب</h3>\r\n      </div>\r\n    </div>\r\n    <section class=\"ser-state\">\r\n      <div class=\"container\">\r\n        <div class=\"widget\">\r\n          <div class=\"widget-header\">\r\n            <h3 class=\"widget-title\">معلومات الجامعة</h3>\r\n          </div>\r\n          <div class=\"row ser-block\">\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>إسم الجامعة المراد الدراسة بها </h6>\r\n                <select required class=\"form-control\" #UniversityID=\"ngModel\" [(ngModel)]=\"visitorStudent.university\"\r\n                  name=\"UniversityID\" [class.is-invalid]=\"visitorStudent.university == ''\">\r\n                  <option value=''>اختر الجامعة</option>\r\n                  <option *ngFor=\"let un of universitiesList\" [value]=\"un.UN_ID\">{{un.UNIV_AR}}</option>\r\n                </select>\r\n\r\n              </div>\r\n         \r\n            </div>\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>الفصل الدراسي </h6>\r\n                <select required class=\"form-control\" #TermID=\"ngModel\" [(ngModel)]=\"visitorStudent.term\" name=\"TermID\"\r\n                  [class.is-invalid]=\"visitorStudent.term == ''\">\r\n                  <option value=''>اختر الفصل الدراسي</option>\r\n                  <option *ngFor=\"let t of termList\" [value]=\"t.id\">{{t.value}}</option>\r\n                </select>\r\n              </div>\r\n           \r\n            </div>\r\n\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>العام الجامعي </h6>\r\n                <select required class=\"form-control\" #YearID=\"ngModel\" [(ngModel)]=\"visitorStudent.year\" name=\"YearID\"\r\n                  [class.is-invalid]=\"visitorStudent.year == ''\">\r\n                  <option value=''>اختر العام الجامعي</option>\r\n                  <option *ngFor=\"let y of yearList\" [value]=\"y.id\">{{y.value}}</option>\r\n                </select>\r\n              </div>\r\n          \r\n            </div>\r\n\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <div class=\"widget\">\r\n          <div class=\"widget-header\">\r\n            <h3 class=\"widget-title\">معلومات المقرر المراد دراسته خارج الجامعة</h3>\r\n          </div>\r\n          <div class=\"row ser-block\">\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>إسم المقرر </h6>\r\n                <input type=\"text\" required class=\"form-control\" #CourseName=\"ngModel\"\r\n                  [(ngModel)]=\"visitorStudent.course_name\" name=\"CourseName\"\r\n                  [class.is-invalid]=\"visitorStudent.course_name == ''\">\r\n\r\n              </div>\r\n        \r\n            </div>\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>رمز المقرر الحرفي</h6>\r\n                <input type=\"text\" required class=\"form-control\" #CourseSymbol=\"ngModel\"\r\n                  [(ngModel)]=\"visitorStudent.course_symbol\" name=\"CourseSymbol\"\r\n                  [class.is-invalid]=\"visitorStudent.course_symbol == ''\">\r\n\r\n              </div>\r\n             \r\n            </div>\r\n\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>رمز المقرر الرقمي</h6>\r\n                <input type=\"text\" required class=\"form-control\" #CourseCode=\"ngModel\"\r\n                  [(ngModel)]=\"visitorStudent.course_code\" name=\"CourseCode\"\r\n                  [class.is-invalid]=\"visitorStudent.course_code == ''\">\r\n\r\n              </div>\r\n      \r\n            </div>\r\n\r\n          </div>\r\n          <div class=\"row  ser-block\">\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>عدد ساعات المقرر</h6>\r\n                <input type=\"text\" required class=\"form-control\" #CourseHours=\"ngModel\"\r\n                  [(ngModel)]=\"visitorStudent.hours\" name=\"CourseHours\" [class.is-invalid]=\"visitorStudent.hours == ''\">\r\n\r\n\r\n              </div>\r\n        \r\n            </div>\r\n\r\n            <div class=\" col-md-8 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>رفع ملف توصيف المقرر</h6>\r\n                <input name=\"attachment\" id=\"attachment\" type=\"file\" accept=\"*/*\"\r\n                  (change)=\"handleInputChange($event)\" />\r\n                <h6>الرجاء رفع ملف توصيف المقرر في ملف من نوع PNG,JIF,JPG,MicrosoftWord,PDF أو BMP حجم الملف يجب ألا\r\n                  يزيد عن 5 ميجا بايت</h6>\r\n              </div>\r\n             \r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"widget\">\r\n          <div class=\"widget-header\">\r\n            <h3 class=\"widget-title\">معلومات خاصة للمقرر المكافئ في الجامعة</h3>\r\n          </div>\r\n          <div class=\"row  ser-block\">\r\n            <div class=\" col-md-6 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>إختر المادة</h6>\r\n                <select required class=\"form-control\" #CourseID=\"ngModel\" [(ngModel)]=\"visitorStudent.course_equal\"\r\n                  name=\"CourseID\" [class.is-invalid]=\"visitorStudent.course_equal == ''\">\r\n                  <option value=''>اختر المادة</option>\r\n                  <option *ngFor=\"let c of coursesList\" [value]=\"c.id\">{{c.value}}</option>\r\n                </select>\r\n\r\n\r\n              </div>\r\n         \r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n        <div class=\"widget\">\r\n            <div class=\"widget-header\">\r\n              <h3 class=\"widget-title\">إقرار و تعهد</h3>\r\n            </div>\r\n            <div class=\"row  ser-block\">\r\n              <div class=\" col-md-12 col-sm-12\">\r\n                <div class=\"state\">\r\n                  <h6>1.عدم</h6>\r\n                  <h6>2.</h6>\r\n                  <h6>3.</h6>\r\n                  <h6>4.</h6>\r\n                  <h6>5.</h6>\r\n  \r\n  \r\n                </div>\r\n                \r\n              </div>\r\n  \r\n            </div>\r\n            <div class=\"row  ser-block\">\r\n                <div class=\" col-md-12 col-sm-12\">\r\n                  <div class=\"state\">\r\n                      <h6>أوافق</h6>\r\n                      <input type=\"checkbox\" class=\"checkbox\" style=\"height: 20px;width:20px;\" #Approve=\"ngModel\" [(ngModel)]=\"approves.approve\"\r\n                      name=\"Approve\"  >\r\n    \r\n    \r\n                  </div>\r\n                  \r\n                </div>\r\n    \r\n              </div>\r\n            \r\n          </div>\r\n\r\n      </div>\r\n    </section>\r\n\r\n    <div class=\"modal-body\">\r\n      <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n        <button type=\"button\" (click)=\"closeDiag()\" class=\"btn btn-outline-dark ml-1\"><i class=\"fa fa-close\"></i>\r\n          الغاء</button>\r\n          \r\n        <button [disabled]=\"(form.invalid || !approves.approve)\" type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i>\r\n          حفظ</button>\r\n      </div>\r\n    </div>\r\n\r\n  </form>\r\n\r\n\r\n</mat-dialog-content>"
+module.exports = "<mat-dialog-content style=\"height: 2500px\">\r\n\r\n\r\n\r\n  <!--<div class=\"widget-header\">\r\n            <h3 class=\"widget-title\"> تسجيل طلب</h3>\r\n          </div>\r\n        -->\r\n\r\n  <mat-spinner *ngIf=\"isLoading\"\r\n    style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n  </mat-spinner>\r\n\r\n\r\n\r\n  <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n    <div class=\"widget\">\r\n      <div class=\"widget-header\">\r\n        <h3 class=\"widget-title\">إضافة طلب</h3>\r\n      </div>\r\n    </div>\r\n    <section class=\"ser-state\">\r\n      <div class=\"container\">\r\n        <div class=\"widget\">\r\n          <div class=\"widget-header\">\r\n            <h3 class=\"widget-title\">معلومات الجامعة</h3>\r\n          </div>\r\n          <div class=\"row ser-block\">\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>إسم الجامعة المراد الدراسة بها </h6>\r\n                <select required class=\"form-control\" #UniversityID=\"ngModel\" [(ngModel)]=\"visitorStudent.university\"\r\n                  name=\"UniversityID\" [class.is-invalid]=\"visitorStudent.university == ''\">\r\n                  <option value=''>اختر الجامعة</option>\r\n                  <option *ngFor=\"let un of universitiesList\" [value]=\"un.UN_ID\">{{un.UN_NAME}}</option>\r\n                </select>\r\n\r\n              </div>\r\n         \r\n            </div>\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>الفصل الدراسي </h6>\r\n                <select required class=\"form-control\" #TermID=\"ngModel\" [(ngModel)]=\"visitorStudent.term\" name=\"TermID\"\r\n                  [class.is-invalid]=\"visitorStudent.term == ''\">\r\n                  <option value=''>اختر الفصل الدراسي</option>\r\n                  <option *ngFor=\"let t of termList\" [value]=\"t.id\">{{t.value}}</option>\r\n                </select>\r\n              </div>\r\n           \r\n            </div>\r\n\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>العام الجامعي </h6>\r\n                <select required class=\"form-control\" #YearID=\"ngModel\" [(ngModel)]=\"visitorStudent.year\" name=\"YearID\"\r\n                  [class.is-invalid]=\"visitorStudent.year == ''\">\r\n                  <option value=''>اختر العام الجامعي</option>\r\n                  <option *ngFor=\"let y of yearList\" [value]=\"y.id\">{{y.value}}</option>\r\n                </select>\r\n              </div>\r\n          \r\n            </div>\r\n\r\n          </div>\r\n\r\n        </div>\r\n\r\n        <div class=\"widget\">\r\n          <div class=\"widget-header\">\r\n            <h3 class=\"widget-title\">معلومات المقرر المراد دراسته خارج الجامعة</h3>\r\n          </div>\r\n          <div class=\"row ser-block\">\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>إسم المقرر </h6>\r\n                <input type=\"text\" required class=\"form-control\" #CourseName=\"ngModel\"\r\n                  [(ngModel)]=\"visitorStudent.course_name\" name=\"CourseName\"\r\n                  [class.is-invalid]=\"visitorStudent.course_name == ''\">\r\n\r\n              </div>\r\n        \r\n            </div>\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>رمز المقرر الحرفي</h6>\r\n                <input type=\"text\" required class=\"form-control\" #CourseSymbol=\"ngModel\"\r\n                  [(ngModel)]=\"visitorStudent.course_symbol\" name=\"CourseSymbol\"\r\n                  [class.is-invalid]=\"visitorStudent.course_symbol == ''\">\r\n\r\n              </div>\r\n             \r\n            </div>\r\n\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>رمز المقرر الرقمي</h6>\r\n                <input type=\"text\" required class=\"form-control\" #CourseCode=\"ngModel\"\r\n                  [(ngModel)]=\"visitorStudent.course_code\" name=\"CourseCode\"\r\n                  [class.is-invalid]=\"visitorStudent.course_code == ''\">\r\n\r\n              </div>\r\n      \r\n            </div>\r\n\r\n          </div>\r\n          <div class=\"row  ser-block\">\r\n            <div class=\" col-md-4 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>عدد ساعات المقرر</h6>\r\n                <input type=\"text\" required class=\"form-control\" #CourseHours=\"ngModel\"\r\n                  [(ngModel)]=\"visitorStudent.hours\" name=\"CourseHours\" [class.is-invalid]=\"visitorStudent.hours == ''\">\r\n\r\n\r\n              </div>\r\n        \r\n            </div>\r\n\r\n            <div class=\" col-md-8 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>رفع ملف توصيف المقرر</h6>\r\n                <input name=\"attachment\" id=\"attachment\" type=\"file\" accept=\"*/*\"\r\n                  (change)=\"handleInputChange($event)\" />\r\n                <h6>الرجاء رفع ملف توصيف المقرر في ملف من نوع PNG,JIF,JPG,MicrosoftWord,PDF أو BMP حجم الملف يجب ألا\r\n                  يزيد عن 5 ميجا بايت</h6>\r\n              </div>\r\n             \r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"widget\">\r\n          <div class=\"widget-header\">\r\n            <h3 class=\"widget-title\">معلومات خاصة للمقرر المكافئ في الجامعة</h3>\r\n          </div>\r\n          <div class=\"row  ser-block\">\r\n            <div class=\" col-md-6 col-sm-12\">\r\n              <div class=\"state\">\r\n                <h6>إختر المادة</h6>\r\n                <select required class=\"form-control\" #CourseID=\"ngModel\" [(ngModel)]=\"visitorStudent.course_equal\"\r\n                  name=\"CourseID\" [class.is-invalid]=\"visitorStudent.course_equal == ''\">\r\n                  <option value=''>اختر المادة</option>\r\n                  <option *ngFor=\"let c of coursesList\" [value]=\"c.id\">{{c.value}}</option>\r\n                </select>\r\n\r\n\r\n              </div>\r\n         \r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n        <div class=\"widget\">\r\n            <div class=\"widget-header\">\r\n              <h3 class=\"widget-title\">إقرار و تعهد</h3>\r\n            </div>\r\n            <div class=\"row  ser-block\">\r\n              <div class=\" col-md-12 col-sm-12\">\r\n                <div class=\"state\">\r\n                    <h6>{{reqData.notes.nots}}</h6>\r\n                    <h6>1- {{reqData.notes.txt1}}</h6>\r\n                    <h6>2- {{reqData.notes.txt2}}</h6>\r\n                    <h6>3- {{reqData.notes.txt3}}</h6>\r\n                    <h6>4- {{reqData.notes.txt4}}</h6>\r\n                    <h6>5- {{reqData.notes.txt5}}</h6>\r\n\r\n              \r\n  \r\n  \r\n                </div>\r\n                \r\n              </div>\r\n  \r\n            </div>\r\n            <div class=\"row  ser-block\">\r\n                <div class=\" col-md-12 col-sm-12\">\r\n                  <div class=\"state\">\r\n                      <h6>أوافق</h6>\r\n                      <input type=\"checkbox\" class=\"checkbox\" style=\"height: 20px;width:20px;\" #Approve=\"ngModel\" [(ngModel)]=\"approves.approve\"\r\n                      name=\"Approve\"  >\r\n    \r\n    \r\n                  </div>\r\n                  \r\n                </div>\r\n    \r\n              </div>\r\n            \r\n          </div>\r\n\r\n      </div>\r\n    </section>\r\n\r\n    <div class=\"modal-body\">\r\n      <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n        <button type=\"button\" (click)=\"closeDiag()\" class=\"btn btn-outline-dark ml-1\"><i class=\"fa fa-close\"></i>\r\n          الغاء</button>\r\n          \r\n        <button [disabled]=\"(form.invalid || !approves.approve)\" type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i>\r\n          حفظ</button>\r\n      </div>\r\n    </div>\r\n\r\n  </form>\r\n\r\n\r\n</mat-dialog-content>"
 
 /***/ }),
 
@@ -5471,7 +5479,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\r\n\r\n  <!-- <mat-spinner  *ngIf=\"isLoading\" style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\"></mat-spinner> -->\r\n\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> طلب الدراسة كطالب زائر</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> طلب الدراسة كطالب زائر </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n            <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n            &nbsp; &nbsp; &nbsp; &nbsp;\r\n  \r\n          </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n      <h3 class=\"widget-title\">طلبات سابقة\r\n\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">إسم المقرر</th>\r\n            <th scope=\"col\"> تاريخ إنشاء الطلب</th>\r\n            <th scope=\"col\"> حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة</th>\r\n            <th scope=\"col\"> الإجراء</th>\r\n\r\n\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.course_equal}}</td>\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n\r\n            <td><a class=\"btn btn-sm btn-primary\" style=\"color: white\" [href]=\"printRequest(it.request_number)\"><i\r\n                  class=\"fa fa-print\"></i> </a></td>\r\n\r\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n\r\n\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>"
+module.exports = "<div class=\"main-content\">\r\n\r\n  <!-- <mat-spinner  *ngIf=\"isLoading\" style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\"></mat-spinner> -->\r\n\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> طلب الدراسة كطالب زائر</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> طلب الدراسة كطالب زائر </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n            <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n            &nbsp; &nbsp; &nbsp; &nbsp;\r\n  \r\n          </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n      <h3 class=\"widget-title\">طلبات سابقة\r\n\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">إسم المقرر</th>\r\n            <th scope=\"col\"> تاريخ إنشاء الطلب</th>\r\n            <th scope=\"col\"> حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة</th>\r\n            <th scope=\"col\"> الإجراء</th>\r\n\r\n\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.course_equal}}</td>\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n\r\n            <td><a class=\"btn btn-sm btn-primary\" style=\"color: white\" [href]=\"printRequest(it.request_number)\"><i\r\n                  class=\"fa fa-print\"></i> </a></td>\r\n\r\n            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -5577,7 +5585,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب انسحاب من الجامعه</h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">بيانات بيانات بيانات</P>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n          \r\n        <div class=\"form-group\">\r\n           \r\n               <select name=\"branch\" #BranchID=\"ngModel\" [(ngModel)]=\"withdraw.branch\" class=\"form-control\" \r\n          [class.is-invalid]=\"!isValid && withdraw.branch==0\">\r\n            <option value=\"\">اختر اقرب فرع</option>\r\n            <option *ngFor=\"let item of reqData.branches\" value=\"{{item.id}}\">{{item.name}}</option>\r\n          </select>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-12\">\r\n            <div class=\"input-group\">\r\n              <div class=\"input-group-prepend\">\r\n                <div class=\"input-group-text\">رقم الهاتف</div>\r\n              </div>\r\n              <input name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"withdraw.mobile\" class=\"form-control\" >\r\n            </div>\r\n          </div>\r\n         \r\n        </div>\r\n        <div class=\"form-row\">\r\n            <div class=\"form-group col-md-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\">البريد الالكتروني</div>\r\n                </div>\r\n                <input name=\"email\" #email=\"ngModel\" [(ngModel)]=\"withdraw.email\" class=\"form-control\" >\r\n              </div>\r\n            </div>\r\n           \r\n          </div>\r\n          <div *ngIf=\"!reqData.display_bank_account\">\r\n            <div class=\"form-row\">\r\n              <div class=\"form-group col-md-12\">\r\n                <div class=\"input-group\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <div class=\"input-group-text\">IBAN </div>\r\n                  </div>\r\n                  <input name=\"IBAN\" #IBAN=\"ngModel\" [(ngModel)]=\"withdraw.IBAN\" class=\"form-control\" >\r\n                </div>\r\n              </div>\r\n             \r\n            </div>\r\n            <div class=\"form-group\">\r\n           \r\n              <select name=\"BANKID\" #BANKID=\"ngModel\" [(ngModel)]=\"withdraw.BANKID\" class=\"form-control\" \r\n         [class.is-invalid]=\"!isValid && withdraw.BANKID==0\">\r\n           <option value=\"0\">اختر  البنك</option>\r\n           <option *ngFor=\"let item of reqData.bankList\" value=\"{{item.BANK_PK}}\">{{item.BANK_TITLE}}</option>\r\n         </select>\r\n       </div>\r\n       <div class=\"image-upload\">\r\n        <img [src]=\"withdraw.bankimage\" style=\"width:400px;height:300px\"/>\r\n        <input name=\"imageUrl\" type=\"file\" accept=\"image/*\" (change)=\"handleInputChange($event)\" />\r\n    </div> \r\n\r\n          </div>\r\n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n        </div>\r\n      </form>\r\n      </div>\r\n      \r\n    </div>\r\n  </div>\r\n</mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n\r\n\r\n\r\n\r\n\r\n  <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n\r\n    <div class=\"widget\">\r\n      <div class=\"widget-header\">\r\n        <h3 class=\"widget-title\">طلب انسحاب من الجامعه</h3>\r\n      </div>\r\n\r\n      <div class=\"row ser-block\">\r\n        <div class=\" col-md-12 col-sm-12\">\r\n          <div class=\"state\">\r\n            <h6>الفرع </h6>\r\n\r\n            <select required name=\"branch\" #BranchID=\"ngModel\" [(ngModel)]=\"withdraw.branch\" class=\"form-control\"\r\n              [class.is-invalid]=\"!isValid && withdraw.branch==0\">\r\n              <option value=\"\">اختر اقرب فرع</option>\r\n              <option *ngFor=\"let item of reqData.branches\" value=\"{{item.id}}\">{{item.name}}</option>\r\n            </select>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row ser-block\">\r\n        <div class=\" col-md-12 col-sm-12\">\r\n          <div class=\"state\">\r\n            <h6>رقم الهاتف </h6>\r\n            <input required name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"withdraw.mobile\" class=\"form-control\"\r\n              [class.is-invalid]=\"withdraw.mobile==null\">\r\n\r\n\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n\r\n      <div class=\"row ser-block\">\r\n        <div class=\" col-md-12 col-sm-12\">\r\n          <div class=\"state\">\r\n            <h6>البريد الإلكتروني </h6>\r\n            <input email required type=\"email\" name=\"email\" #email=\"ngModel\" [(ngModel)]=\"withdraw.email\"\r\n              class=\"form-control\" [class.is-invalid]=\"withdraw.email==''\">\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n\r\n\r\n    </div>\r\n\r\n    <!-- <div *ngIf=\"reqData.display_bank_account\">\r\n            <div class=\"form-row\">\r\n              <div class=\"form-group col-md-12\">\r\n                <div class=\"input-group\">\r\n                  <div class=\"input-group-prepend\">\r\n                    <div class=\"input-group-text\">IBAN </div>\r\n                  </div>\r\n                  <input name=\"IBAN\" #IBAN=\"ngModel\" [(ngModel)]=\"withdraw.IBAN\" class=\"form-control\">\r\n                </div>\r\n              </div>\r\n\r\n            </div>\r\n            <div class=\"form-group\">\r\n\r\n              <select name=\"BANKID\" #BANKID=\"ngModel\" [(ngModel)]=\"withdraw.BANKID\" class=\"form-control\"\r\n                [class.is-invalid]=\"!isValid && withdraw.BANKID==0\">\r\n                <option value=\"0\">اختر البنك</option>\r\n                <option *ngFor=\"let item of reqData.bankList\" value=\"{{item.BANK_PK}}\">{{item.BANK_TITLE}}</option>\r\n              </select>\r\n            </div>\r\n            <div class=\"image-upload\">\r\n              <img [src]=\"withdraw.bankimage\" style=\"width:400px;height:300px\" />\r\n              <input name=\"imageUrl\" type=\"file\" accept=\"image/*\" (change)=\"handleInputChange($event)\" />\r\n            </div>\r\n\r\n          </div>\r\n        -->\r\n    <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n      <button type=\"button\" (click)=\"closeDiag()\" class=\"btn btn-outline-dark ml-1\"><i class=\"fa fa-close\"></i>\r\n        الغاء</button>\r\n\r\n      <button [disabled]=\"form.invalid\" type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n    </div>\r\n  </form>\r\n\r\n\r\n\r\n</mat-dialog-content>"
 
 /***/ }),
 
@@ -5680,7 +5688,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n  <div *ngFor=\"let msg of msgs\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n</div>\r\n<div *ngIf=\"msg!=null\" style=\"text-align: right\"\r\n  [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n  role=\"alert\">\r\n  {{msg.body}}!\r\n</div>\r\n<div style=\"direction: ltr;text-align: center\">\r\n\r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br />\r\n  <br />\r\n\r\n</div>\r\n<div>\r\n  <table style=\"text-align: center\" class=\"table\">\r\n    <thead>\r\n      <tr>\r\n        <th scope=\"col\">رقم الطلب</th>\r\n        <th scope=\"col\">الفصل الدراسه </th>\r\n        <th scope=\"col\">طباعة الافاده </th>\r\n\r\n        <th scope=\"col\">تاريخ الطلب</th>\r\n        <th scope=\"col\">حالة الطلب</th>\r\n        <th scope=\"col\"> طباعة الطلب</th>\r\n        <th scope=\"col\"> حذف الطلب </th>\r\n\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n        <td>{{it.request_number}}</td>\r\n        <td>{{it.term}}</td>\r\n        <td>Print Resp</td>\r\n\r\n        <td>{{it.insert_date}}</td>\r\n        <td>{{it.status}}</td>\r\n        <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span class=\"glyphicon glyphicon-print\"></span>\r\n            Print</a></td>\r\n\r\n        <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0' class=\"btn btn-sm btn-danger\"\r\n            style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n              <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>\r\n            </i> </button></td>\r\n\r\n      </tr>\r\n\r\n    </tbody>\r\n  </table>\r\n</div>"
+module.exports = "<div class=\"main-content\">\r\n\r\n  <!-- <mat-spinner  *ngIf=\"isLoading\" style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\"></mat-spinner> -->\r\n\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> طلب الإنسحاب من الجامعة</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> طلب الإنسحاب من الجامعة </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n            <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n            &nbsp; &nbsp; &nbsp; &nbsp;\r\n  \r\n          </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n\r\n\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n      <h3 class=\"widget-title\">طلبات سابقة\r\n\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n            <th scope=\"col\">الفصل الدراسه </th>\r\n            <th scope=\"col\">طباعة الافاده </th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n            <td>{{it.term}}</td>\r\n            <td>Print Resp</td>\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td *ngIf='it.deletable'><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                  <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>\r\n                </i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>"
 
 /***/ }),
 
@@ -5711,15 +5719,18 @@ var WithdrawFromUnivComponent = /** @class */ (function () {
         this.dialog = dialog;
         this.toastr = toastr;
         this.acadmicProc = acadmicProc;
+        this.isLoading = false;
     }
     WithdrawFromUnivComponent.prototype.ngOnInit = function () {
         var _this = this;
+        this.isLoading = true;
         this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
         this.acadmicProc.getِgetRequests().then(function (res) {
             _this.acadmicProc.reqData = res.data;
             _this.acadmicProc.msgs = res.messages;
             _this.reqData = _this.acadmicProc.reqData;
             _this.msgs = _this.acadmicProc.msgs;
+            _this.isLoading = false;
             //console.log(this.reqData.reqs);
         });
     };
@@ -5728,6 +5739,7 @@ var WithdrawFromUnivComponent = /** @class */ (function () {
         dialogConfig.autoFocus = true;
         dialogConfig.disableClose = true;
         dialogConfig.width = '50%';
+        dialogConfig.direction = "rtl";
         this.dialog.open(_diag_add_request_add_request_component__WEBPACK_IMPORTED_MODULE_4__["AddRequestComponent"], dialogConfig);
     };
     WithdrawFromUnivComponent.prototype.addRequest = function (data) {
@@ -8518,6 +8530,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _university_withdrawal_university_withdrawal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./university-withdrawal/university-withdrawal.component */ "./src/app/master-academic-requests/university-withdrawal/university-withdrawal.component.ts");
+/* harmony import */ var _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./term-execuse/term-execuse.component */ "./src/app/master-academic-requests/term-execuse/term-execuse.component.ts");
+
 
 
 
@@ -8528,6 +8542,7 @@ var routes = [
         path: 'academicrequests',
         children: [
             { path: 'withdrawal', component: _university_withdrawal_university_withdrawal_component__WEBPACK_IMPORTED_MODULE_3__["UniversityWithdrawalComponent"] },
+            { path: 'termexecuse', component: _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_4__["TermExecuseComponent"] }
         ]
     }
 ];
@@ -8570,6 +8585,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _master_academic_requests_routing_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./master-academic-requests-routing.module */ "./src/app/master-academic-requests/master-academic-requests-routing.module.ts");
 /* harmony import */ var _university_withdrawal_diag_add_withdrawal_request_add_withdrawal_request_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./university-withdrawal/diag/add-withdrawal-request/add-withdrawal-request.component */ "./src/app/master-academic-requests/university-withdrawal/diag/add-withdrawal-request/add-withdrawal-request.component.ts");
 /* harmony import */ var _services_university_withdrawal_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/university-withdrawal.service */ "./src/app/master-academic-requests/services/university-withdrawal.service.ts");
+/* harmony import */ var _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./term-execuse/term-execuse.component */ "./src/app/master-academic-requests/term-execuse/term-execuse.component.ts");
+/* harmony import */ var _term_execuse_diag_add_term_execuse_add_term_execuse_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./term-execuse/diag/add-term-execuse/add-term-execuse.component */ "./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.ts");
+/* harmony import */ var _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/term-execuse.service */ "./src/app/master-academic-requests/services/term-execuse.service.ts");
+
+
+
 
 
 
@@ -8588,8 +8609,14 @@ var MasterAcademicRequestsModule = /** @class */ (function () {
     }
     MasterAcademicRequestsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_university_withdrawal_diag_add_withdrawal_request_add_withdrawal_request_component__WEBPACK_IMPORTED_MODULE_11__["AddWithdrawalRequestComponent"], _university_withdrawal_university_withdrawal_component__WEBPACK_IMPORTED_MODULE_9__["UniversityWithdrawalComponent"]],
-            entryComponents: [_university_withdrawal_diag_add_withdrawal_request_add_withdrawal_request_component__WEBPACK_IMPORTED_MODULE_11__["AddWithdrawalRequestComponent"]],
+            declarations: [_university_withdrawal_diag_add_withdrawal_request_add_withdrawal_request_component__WEBPACK_IMPORTED_MODULE_11__["AddWithdrawalRequestComponent"],
+                _university_withdrawal_university_withdrawal_component__WEBPACK_IMPORTED_MODULE_9__["UniversityWithdrawalComponent"],
+                _term_execuse_diag_add_term_execuse_add_term_execuse_component__WEBPACK_IMPORTED_MODULE_14__["AddTermExecuseComponent"],
+                _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_13__["TermExecuseComponent"]
+            ],
+            entryComponents: [_university_withdrawal_diag_add_withdrawal_request_add_withdrawal_request_component__WEBPACK_IMPORTED_MODULE_11__["AddWithdrawalRequestComponent"],
+                _term_execuse_diag_add_term_execuse_add_term_execuse_component__WEBPACK_IMPORTED_MODULE_14__["AddTermExecuseComponent"]
+            ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _master_academic_requests_routing_module__WEBPACK_IMPORTED_MODULE_10__["MasterAcademicRequestsRoutingModule"],
@@ -8600,10 +8627,58 @@ var MasterAcademicRequestsModule = /** @class */ (function () {
                 _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"]
             ],
-            providers: [_services_university_withdrawal_service__WEBPACK_IMPORTED_MODULE_12__["UniversityWithdrawalService"]]
+            providers: [_services_university_withdrawal_service__WEBPACK_IMPORTED_MODULE_12__["UniversityWithdrawalService"],
+                _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_15__["TermExecuseService"]
+            ]
         })
     ], MasterAcademicRequestsModule);
     return MasterAcademicRequestsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/services/term-execuse.service.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/master-academic-requests/services/term-execuse.service.ts ***!
+  \***************************************************************************/
+/*! exports provided: TermExecuseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TermExecuseService", function() { return TermExecuseService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var TermExecuseService = /** @class */ (function () {
+    function TermExecuseService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+        this.configService.baseUrl = 'stdsUnivapi';
+    }
+    TermExecuseService.prototype.getRequest = function () {
+        return this.httRequest.GetRequest('execuse_service').toPromise();
+    };
+    TermExecuseService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('execuse_service/insert', data).toPromise();
+    };
+    TermExecuseService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('execuse_service/remove/' + id).toPromise();
+    };
+    TermExecuseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], TermExecuseService);
+    return TermExecuseService;
 }());
 
 
@@ -8662,6 +8737,213 @@ var UniversityWithdrawalService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.css":
+/*!************************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.css ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1hY2FkZW1pYy1yZXF1ZXN0cy90ZXJtLWV4ZWN1c2UvZGlhZy9hZGQtdGVybS1leGVjdXNlL2FkZC10ZXJtLWV4ZWN1c2UuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.html ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<mat-dialog-content dir=\"rtl\">\r\n    <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n       \r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">  طلب حذف المقررات (الاعتذار عن الفصل)</h5>\r\n          \r\n        </div>\r\n        <div class=\"modal-body\">\r\n            <P class=\"text-center\">\r\n                <span style=\"color: red;\">تنبيه:</span> يسمح للطالب إلغاء أو تعديل الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.\r\n                أرغب في الاعتذار عن الدراسة اعتباراً من الفصل الدراسي الأول  1440\\1441 هـ      \r\n              </P>\r\n \r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n                  <section  class=\"ser-state\">\r\n                      <div class=\"container\">\r\n                           <div class=\"row ser-block\">\r\n                              <div class=\"col-md-12 col-sm-12\">\r\n                                  <div class=\"state\">\r\n                                     <h6> عدد الفصول الدراسية التي تود الااعتذار عنها </h6>\r\n                                    \r\n                                     <select name=\"num_terms\" #num_terms=\"ngModel\" [(ngModel)]=\"termExecuse.num_terms\" class=\"form-control\" \r\n                                     [class.is-invalid]=\"mj.major==''\">\r\n                                       <option value=\"\">اختر عدد الفصول الدراسية</option>\r\n                                       <option *ngFor=\"let item of reqData.majors\" value=\"{{item.MAJOR_PK}}\">{{item.MAJOR_TITLE}}</option>\r\n                                     </select>\r\n      \r\n                                      </div>\r\n                                    <div class=\"progress progress-sm\">\r\n                                        <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                    </div>\r\n                             </div>\r\n                              <div class=\"col-md-12 col-sm-12\">\r\n                                  <div class=\"state\">\r\n                                     <h6> رقم الجوال (05xxxxxxxx)  </h6>\r\n                                    \r\n                                        <input name=\"mobile\" type=\"text\"  #mobile=\"ngModel\" [(ngModel)]=\"termExecuse.mobile\" class=\"form-control\"/>\r\n      \r\n                                      </div>\r\n                                    <div class=\"progress progress-sm\">\r\n                                        <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                    </div>\r\n                             </div>\r\n                           <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                 <h6> سبب الاعتذار </h6>\r\n                               \r\n                                    <textarea name=\"reason\" type=\"text\"  #reason=\"ngModel\" [(ngModel)]=\"termExecuse.reason\" class=\"form-control\">\r\n                                    </textarea>\r\n                                   \r\n                                    \r\n                                  </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                         </div>\r\n                        \r\n                        </div>\r\n                      </div>\r\n                </section>\r\n                        \r\n         \r\n          \r\n           \r\n            <div style=\"margin-top: 10px;\">\r\n              <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                          <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n      \r\n                <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n              </div>\r\n          </div>\r\n                           \r\n             </div>\r\n        </form>\r\n     </div>\r\n        \r\n  </div>\r\n\r\n  </mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.ts":
+/*!***********************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.ts ***!
+  \***********************************************************************************************************/
+/*! exports provided: AddTermExecuseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddTermExecuseComponent", function() { return AddTermExecuseComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../services/term-execuse.service */ "./src/app/master-academic-requests/services/term-execuse.service.ts");
+
+
+
+
+
+var AddTermExecuseComponent = /** @class */ (function () {
+    function AddTermExecuseComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    AddTermExecuseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.termExecuse = { reason: '', mobile: '', num_terms: '' };
+        this.acadmicProc.getRequest().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    AddTermExecuseComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            console.log(_this.msgs);
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddTermExecuseComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.termExecuse);
+        console.log(this.termExecuse);
+        this.dialogRef.close();
+    };
+    AddTermExecuseComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddTermExecuseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-term-execuse',
+            template: __webpack_require__(/*! ./add-term-execuse.component.html */ "./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.html"),
+            styles: [__webpack_require__(/*! ./add-term-execuse.component.css */ "./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_4__["TermExecuseService"]])
+    ], AddTermExecuseComponent);
+    return AddTermExecuseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/term-execuse/term-execuse.component.css":
+/*!**********************************************************************************!*\
+  !*** ./src/app/master-academic-requests/term-execuse/term-execuse.component.css ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1hY2FkZW1pYy1yZXF1ZXN0cy90ZXJtLWV4ZWN1c2UvdGVybS1leGVjdXNlLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/term-execuse/term-execuse.component.html":
+/*!***********************************************************************************!*\
+  !*** ./src/app/master-academic-requests/term-execuse/term-execuse.component.html ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n    <section class=\"service-single\">\r\n  \r\n      <div class=\"container\">\r\n        <h3>طلب حذف المقررات (الاعتذار عن الفصل)  </h3>\r\n        <div class=\"row\">\r\n          <div class=\" col-md-5\">\r\n            <p> طلب حذف المقررات (الاعتذار عن الفصل)  </p>\r\n          </div>\r\n          <!-- <div class=\" col-md-6 descr\">\r\n                <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                  &nbsp; &nbsp; &nbsp; &nbsp;\r\n                  <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                  <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n              </div> -->\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n      <div class=\"state\">\r\n  \r\n        <h5> جاري تحميل البيانات .....................</h5>\r\n  \r\n        <mat-spinner *ngIf=\"isLoading\"\r\n          style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n        </mat-spinner>\r\n  \r\n      </div>\r\n    </div>\r\n    <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n      <div style=\"text-align: right\" *ngFor=\"let msg of msgs\"\r\n        [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n        role=\"alert\">\r\n        {{msg.body}}!\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n    <!-- <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br/>\r\n  <br/>\r\n  \r\n  </div> -->\r\n    <div class=\"widget\" *ngIf=\"!isLoading\">\r\n      <div class=\"widget-header\">\r\n  \r\n  \r\n        <h3 class=\"widget-title\"> الطلبات السابقة\r\n          <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n            اضافة طلب\r\n          </button>\r\n  \r\n        </h3>\r\n      </div>\r\n      <div class=\"table-responsive\">\r\n        <table class=\"table table-striped table-bordered\">\r\n          <thead style=\"background: #e6e6e6\">\r\n            <tr>\r\n              <th scope=\"col\">رقم الطلب</th>\r\n  \r\n              <th scope=\"col\">تاريخ الطلب</th>\r\n              <th scope=\"col\">حالة الطلب</th>\r\n    \r\n              <th scope=\"col\"> حذف الطلب </th>\r\n  \r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n              <td>{{it.request_number}}</td>\r\n              <td>{{it.insert_date}}</td>\r\n              <td>{{it.status}}</td>\r\n\r\n              <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\"\r\n                  style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                    <!-- <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer> -->\r\n                  </i> </button></td>\r\n  \r\n            </tr>\r\n  \r\n          </tbody>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  "
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/term-execuse/term-execuse.component.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/app/master-academic-requests/term-execuse/term-execuse.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: TermExecuseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TermExecuseComponent", function() { return TermExecuseComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/term-execuse.service */ "./src/app/master-academic-requests/services/term-execuse.service.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _diag_add_term_execuse_add_term_execuse_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-term-execuse/add-term-execuse.component */ "./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.ts");
+
+
+
+
+
+
+var TermExecuseComponent = /** @class */ (function () {
+    function TermExecuseComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.isLoading = false;
+    }
+    TermExecuseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.isLoading = true;
+        this.termExecuse = { reason: '', mobile: '', num_terms: '' };
+        this.acadmicProc.getRequest().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+            _this.isLoading = false;
+            // console.log(this.reqData.requests);
+        });
+    };
+    TermExecuseComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_term_execuse_add_term_execuse_component__WEBPACK_IMPORTED_MODULE_5__["AddTermExecuseComponent"], dialogConfig);
+    };
+    TermExecuseComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    TermExecuseComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    TermExecuseComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status === 1) {
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+                }
+            });
+        }
+    };
+    TermExecuseComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    TermExecuseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-term-execuse',
+            template: __webpack_require__(/*! ./term-execuse.component.html */ "./src/app/master-academic-requests/term-execuse/term-execuse.component.html"),
+            styles: [__webpack_require__(/*! ./term-execuse.component.css */ "./src/app/master-academic-requests/term-execuse/term-execuse.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_4__["ToastrService"], _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_2__["TermExecuseService"]])
+    ], TermExecuseComponent);
+    return TermExecuseComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/master-academic-requests/university-withdrawal/diag/add-withdrawal-request/add-withdrawal-request.component.css":
 /*!*********************************************************************************************************************************!*\
   !*** ./src/app/master-academic-requests/university-withdrawal/diag/add-withdrawal-request/add-withdrawal-request.component.css ***!
@@ -8680,7 +8962,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-dialog-content dir=\"rtl\">\r\n    <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n       \r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">  الانسحاب من الجامعة</h5>\r\n          \r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <!-- <P class=\"text-center\">---  </P> -->\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n                  <section  class=\"ser-state\">\r\n                      <div class=\"container\">\r\n                           <div class=\"row ser-block\">\r\n                           <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                 <h6>البريد الالكنروني </h6>\r\n                                 <div class=\"custom-file\">\r\n                                    <input name=\"email\" type=\"text\"  #email=\"ngModel\" [(ngModel)]=\"withdrawalReq.email\" class=\"form-control\"/>\r\n                                   \r\n                                    </div>\r\n                                  </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                         </div>\r\n                         <div class=\"col-md-12 col-sm-12\">\r\n                          <div class=\"state\">\r\n                             <h6>رقم الجوال </h6>\r\n                             <div class=\"custom-file\">\r\n                                <input name=\"mobile\" type=\"text\"  #mobile=\"ngModel\" [(ngModel)]=\"withdrawalReq.mobile\" class=\"form-control\"/>\r\n                               \r\n                                </div>\r\n                              </div>\r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                     </div>\r\n                        </div>\r\n                      </div>\r\n                </section>\r\n                        \r\n         \r\n          \r\n           \r\n            <div style=\"margin-top: 10px;\">\r\n              <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                          <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n      \r\n                <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n              </div>\r\n          </div>\r\n                           \r\n             </div>\r\n        </form>\r\n     </div>\r\n        \r\n  </div>\r\n\r\n  </mat-dialog-content>"
+module.exports = "<mat-dialog-content dir=\"rtl\">\r\n    <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n       \r\n          <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">  الانسحاب من الجامعة</h5>\r\n          \r\n        </div>\r\n        <div class=\"modal-body\">\r\n            <P class=\"text-center\">\r\n                <span style=\"color: red;\">تنبيه:</span> يسمح للطالب إلغاء أو تعديل الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.\r\n                أرغب في سحب ملفي نهائياً من الجامعة وليس لي الحق المطالبة باعادة قبولي مرة اخرى  كما لا يحق لي المطالبة باسترداد كامل او جزء من الرسوم \r\n                الدراسية التي قمت بسدادها للجامعة في حالة تجاوز  تاريخ انسحابي التاريخ المحدد للانسحاب  \r\n                الذي اعلنته الجامعة \r\n               \r\n              </P>\r\n          <!-- <P class=\"text-center\">---  </P> -->\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n                  <section  class=\"ser-state\">\r\n                      <div class=\"container\">\r\n                           <div class=\"row ser-block\">\r\n                              <div class=\"col-md-12 col-sm-12\">\r\n                                  <div class=\"state\">\r\n                                     <h6> رقم الجوال (05xxxxxxxx)  </h6>\r\n                                        <input name=\"mobile\" type=\"text\"  #mobile=\"ngModel\" [(ngModel)]=\"withdrawalReq.mobile\" class=\"form-control\"/>\r\n                                      </div>\r\n                                    <div class=\"progress progress-sm\">\r\n                                        <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                    </div>\r\n                             </div>\r\n                           <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                 <h6> البريد الالكتروني (غير الجامعي) </h6>\r\n                                    <input name=\"email\" type=\"text\"  #email=\"ngModel\" [(ngModel)]=\"withdrawalReq.email\" class=\"form-control\"/>\r\n                                  </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                         </div>\r\n                        \r\n                        </div>\r\n                      </div>\r\n                </section>\r\n                        \r\n         \r\n          \r\n           \r\n            <div style=\"margin-top: 10px;\">\r\n              <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                          <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n      \r\n                <button  type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n              </div>\r\n          </div>\r\n                           \r\n             </div>\r\n        </form>\r\n     </div>\r\n        \r\n  </div>\r\n\r\n  </mat-dialog-content>"
 
 /***/ }),
 
@@ -8768,7 +9050,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الانسحاب من الجامعة </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الانسحاب من الجامعة </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div style=\"text-align: right\" *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                  <!-- <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer> -->\r\n                </i> </button></td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الانسحاب من الجامعة </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الانسحاب من الجامعة </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div style=\"text-align: right\" *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                  <!-- <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer> -->\r\n                </i> </button></td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -9155,7 +9437,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\r\n<mat-dialog-content dir=\"rtl\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب  تغير التخصص </h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n              <section  class=\"ser-state\">\r\n                  <div class=\"container\">\r\n                       <div class=\"row ser-block\">\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                  <h6>اختيار الفرع المطلوب  </h6>\r\n                                  <select name=\"camp\" #camp=\"ngModel\" [(ngModel)]=\"branch.camp\" class=\"form-control\" \r\n                                  [class.is-invalid]=\"branch.camp==''\">\r\n                                    <option value=\"\">اختر  الفرع</option>\r\n                                    <option *ngFor=\"let item of reqData.camps\" value=\"{{item.SOBCURR_CAMP_CODE}}\">{{item.STVCAMP_DESC}}</option>\r\n                                  </select>\r\n                               </div>\r\n                          </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                               <div class=\"state\">\r\n                                  <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>\r\n                                  <textarea name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"branch.mobile\" class=\"form-control\" >\r\n                                    </textarea>\r\n                               </div>\r\n                          </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                                <div class=\"state\">\r\n                                   <h6> سبب التحويل </h6>\r\n                                   <textarea name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"termination.reason\" class=\"form-control\" >\r\n                                     </textarea>\r\n                                </div>\r\n                          </div>\r\n                         \r\n                                  <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                           </div>\r\n                           \r\n                    </div>\r\n                \r\n               </section>\r\n               <div style=\"margin-top: 10px;\">\r\n                  <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                   <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                  </div>\r\n             </div>\r\n              </div>\r\n  \r\n         \r\n        </form>\r\n  \r\n\r\n\r\n"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content dir=\"rtl\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب  تغيير الفرع </h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n              <section  class=\"ser-state\">\r\n                  <div class=\"container\">\r\n                       <div class=\"row ser-block\">\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                          <div class=\"state\">\r\n                              <h6>اختيار الفرع المطلوب  </h6>\r\n                              <select name=\"camp\" #camp=\"ngModel\" [(ngModel)]=\"branch.camp\" class=\"form-control\" \r\n                              [class.is-invalid]=\"branch.camp==''\">\r\n\r\n                                <option *ngFor=\"let item of reqData.camps\" value=\"{{item.key}}\">{{item.value}}</option>\r\n                              </select>                              \r\n                           </div>\r\n                           <div class=\"progress progress-sm\">\r\n                            <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                        <div class=\"state\">\r\n                          <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>                               \r\n                          <input name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"branch.mobile\" class=\"form-control\" >\r\n                        </div>\r\n                          <div class=\"progress progress-sm\">\r\n                              <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                          </div>\r\n                       </div>                     \r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                                <div class=\"state\">\r\n                                   <h6> سبب التحويل </h6>\r\n                                   <textarea name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"branch.reason\" class=\"form-control\" >\r\n                                     </textarea>\r\n                                    </div>\r\n                                     <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                        </div>\r\n                        \r\n                         \r\n                                  <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                           </div>\r\n                           \r\n                    </div>\r\n                \r\n               </section>\r\n               <div style=\"margin-top: 10px;\">\r\n                  <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                   <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                  </div>\r\n             </div>\r\n              </div>\r\n  \r\n         \r\n        </form>\r\n  \r\n\r\n\r\n"
 
 /***/ }),
 
@@ -9194,6 +9476,7 @@ var AddChangeBranchComponent = /** @class */ (function () {
             _this.acadmicProc.msgs = res.messages;
             _this.reqData = _this.acadmicProc.reqData;
             _this.msgs = _this.acadmicProc.msgs;
+            console.log(_this.reqData);
         });
     };
     AddChangeBranchComponent.prototype.addRequest = function (data) {
@@ -9242,6 +9525,241 @@ var AddChangeBranchComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/master-other-requests/change-course/change-course.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/master-other-requests/change-course/change-course.component.css ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1vdGhlci1yZXF1ZXN0cy9jaGFuZ2UtY291cnNlL2NoYW5nZS1jb3Vyc2UuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/change-course/change-course.component.html":
+/*!**********************************************************************************!*\
+  !*** ./src/app/master-other-requests/change-course/change-course.component.html ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> تغيير التخصص</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> تغيير التخصص </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12 \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button> \r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>-->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\"> التخصص الحالي</th>\r\n            <th scope=\"col\"> التخصص المطلوب</th>\r\n\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n     <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.CURR_PROG}}</td>\r\n            <td>{{it.REQ_PROG}}</td>\r\n\r\n\r\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n          </tr> \r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/change-course/change-course.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/master-other-requests/change-course/change-course.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: ChangeCourseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangeCourseComponent", function() { return ChangeCourseComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_change_course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/change-course.service */ "./src/app/master-other-requests/services/change-course.service.ts");
+/* harmony import */ var _diag_add_change_course_add_change_course_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-change-course/add-change-course.component */ "./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.ts");
+
+
+
+
+
+
+var ChangeCourseComponent = /** @class */ (function () {
+    function ChangeCourseComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.isLoading = false;
+    }
+    ChangeCourseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.isLoading = true;
+        this.changecourse = { major: '', mobile: '', reason: '', outside: '', bacholar_copy: '' };
+        this.acadmicProc.getRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+            _this.isLoading = false;
+            console.log(_this.acadmicProc.reqData);
+        });
+    };
+    ChangeCourseComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_change_course_add_change_course_component__WEBPACK_IMPORTED_MODULE_5__["AddChangeCourseComponent"], dialogConfig);
+    };
+    ChangeCourseComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    ChangeCourseComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    ChangeCourseComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                console.log(id);
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status === 1) {
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+                }
+            });
+        }
+    };
+    ChangeCourseComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    ChangeCourseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-change-course',
+            template: __webpack_require__(/*! ./change-course.component.html */ "./src/app/master-other-requests/change-course/change-course.component.html"),
+            styles: [__webpack_require__(/*! ./change-course.component.css */ "./src/app/master-other-requests/change-course/change-course.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_change_course_service__WEBPACK_IMPORTED_MODULE_4__["ChangeCourseService"]])
+    ], ChangeCourseComponent);
+    return ChangeCourseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.css":
+/*!************************************************************************************************************!*\
+  !*** ./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.css ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1vdGhlci1yZXF1ZXN0cy9jaGFuZ2UtY291cnNlL2RpYWcvYWRkLWNoYW5nZS1jb3Vyc2UvYWRkLWNoYW5nZS1jb3Vyc2UuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.html":
+/*!*************************************************************************************************************!*\
+  !*** ./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.html ***!
+  \*************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content dir=\"rtl\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب  تغيير البرنامج </h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n              <section  class=\"ser-state\">\r\n                  <div class=\"container\">\r\n                       <div class=\"row ser-block\">\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                          <div class=\"state\">\r\n                              <h6>اختيار التخصص المطلوب  </h6>\r\n                              <select name=\"major\" #major=\"ngModel\" [(ngModel)]=\"course.major\" class=\"form-control\" \r\n                              [class.is-invalid]=\"course.major==''\">\r\n\r\n                                <option *ngFor=\"let item of reqData.majors\" value=\"{{item.key}}\">{{item.value}}</option>\r\n                              </select>                              \r\n                           </div>\r\n                           <div class=\"progress progress-sm\">\r\n                            <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                        <div class=\"state\">\r\n                          <h6> رقم الجوال </h6>                               \r\n                          <input name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"course.mobile\" class=\"form-control\" >\r\n                        </div>\r\n                          <div class=\"progress progress-sm\">\r\n                              <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                          </div>\r\n                  </div>                        \r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                                <div class=\"state\">\r\n                                   <h6> سبب التحويل </h6>\r\n                                   <textarea name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"course.reason\" class=\"form-control\" >\r\n                                     </textarea>\r\n                                     <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                                </div>\r\n                          </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <mat-checkbox #test>\r\n                                  <h6>  هل حصلت على الشهادة بالخارج ؟  </h6>  \r\n\r\n                              </mat-checkbox>\r\n                                                           \r\n                                  </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>  \r\n                          <div class=\"col-md-12 col-sm-12\" *ngIf=\"test.checked\">\r\n                            <div class=\"state\">\r\n                              <h6 > رفع الوثائق التي تثبت حصولك على الشهادة بالخارج </h6>\r\n                              <div class=\"custom-file\">\r\n                                  <input  name=\"attachment\"  id=\"attachment\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n                                  <label  for=\"attachment\"  class=\"custom-file-label \">\r\n                                  </label> \r\n                                </div>\r\n                              </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                     \r\n                         </div>\r\n                    \r\n                           </div>\r\n                           \r\n                    </div>\r\n                \r\n               </section>\r\n               <div style=\"margin-top: 10px;\">\r\n                  <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                   <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                  </div>\r\n             </div>\r\n              </div>\r\n  \r\n         \r\n        </form>\r\n  \r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.ts":
+/*!***********************************************************************************************************!*\
+  !*** ./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.ts ***!
+  \***********************************************************************************************************/
+/*! exports provided: AddChangeCourseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddChangeCourseComponent", function() { return AddChangeCourseComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_master_other_requests_services_change_course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/master-other-requests/services/change-course.service */ "./src/app/master-other-requests/services/change-course.service.ts");
+
+
+
+
+
+var AddChangeCourseComponent = /** @class */ (function () {
+    function AddChangeCourseComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    AddChangeCourseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.course = { major: '', mobile: '', reason: '', outside: '', bacholar_copy: '' };
+        this.acadmicProc.getRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    AddChangeCourseComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddChangeCourseComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.course);
+        console.log(this.course);
+        this.dialogRef.close();
+    };
+    AddChangeCourseComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /pdf-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddChangeCourseComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.course.bacholar_copy = reader.result;
+    };
+    AddChangeCourseComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    AddChangeCourseComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    AddChangeCourseComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddChangeCourseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-change-course',
+            template: __webpack_require__(/*! ./add-change-course.component.html */ "./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.html"),
+            styles: [__webpack_require__(/*! ./add-change-course.component.css */ "./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_master_other_requests_services_change_course_service__WEBPACK_IMPORTED_MODULE_4__["ChangeCourseService"]])
+    ], AddChangeCourseComponent);
+    return AddChangeCourseComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/master-other-requests/master-other-requests-routing.module.ts":
 /*!*******************************************************************************!*\
   !*** ./src/app/master-other-requests/master-other-requests-routing.module.ts ***!
@@ -9257,6 +9775,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _absence_query_absence_query_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./absence-query/absence-query.component */ "./src/app/master-other-requests/absence-query/absence-query.component.ts");
 /* harmony import */ var _change_branch_change_branch_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./change-branch/change-branch.component */ "./src/app/master-other-requests/change-branch/change-branch.component.ts");
+/* harmony import */ var _change_course_change_course_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./change-course/change-course.component */ "./src/app/master-other-requests/change-course/change-course.component.ts");
+/* harmony import */ var _personal_id_personal_id_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./personal-id/personal-id.component */ "./src/app/master-other-requests/personal-id/personal-id.component.ts");
+
+
 
 
 
@@ -9268,6 +9790,8 @@ var routes = [{ path: 'otherrequests', component: _absence_query_absence_query_c
         children: [
             { path: 'absencequery', component: _absence_query_absence_query_component__WEBPACK_IMPORTED_MODULE_3__["AbsenceQueryComponent"] },
             { path: 'changebranch', component: _change_branch_change_branch_component__WEBPACK_IMPORTED_MODULE_4__["ChangeBranchComponent"] },
+            { path: 'changecourse', component: _change_course_change_course_component__WEBPACK_IMPORTED_MODULE_5__["ChangeCourseComponent"] },
+            { path: 'personalid', component: _personal_id_personal_id_component__WEBPACK_IMPORTED_MODULE_6__["PersonalIDComponent"] },
         ]
     }
 ];
@@ -9312,6 +9836,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_change_branch_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/change-branch.service */ "./src/app/master-other-requests/services/change-branch.service.ts");
 /* harmony import */ var _change_branch_change_branch_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./change-branch/change-branch.component */ "./src/app/master-other-requests/change-branch/change-branch.component.ts");
 /* harmony import */ var _change_branch_diag_add_change_branch_add_change_branch_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./change-branch/diag/add-change-branch/add-change-branch.component */ "./src/app/master-other-requests/change-branch/diag/add-change-branch/add-change-branch.component.ts");
+/* harmony import */ var _change_course_change_course_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./change-course/change-course.component */ "./src/app/master-other-requests/change-course/change-course.component.ts");
+/* harmony import */ var _change_course_diag_add_change_course_add_change_course_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./change-course/diag/add-change-course/add-change-course.component */ "./src/app/master-other-requests/change-course/diag/add-change-course/add-change-course.component.ts");
+/* harmony import */ var _services_change_course_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/change-course.service */ "./src/app/master-other-requests/services/change-course.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _personal_id_personal_id_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./personal-id/personal-id.component */ "./src/app/master-other-requests/personal-id/personal-id.component.ts");
+/* harmony import */ var _personal_id_diag_add_personal_id_add_personal_id_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./personal-id/diag/add-personal-id/add-personal-id.component */ "./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.ts");
+/* harmony import */ var _services_personal_id_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/personal-id.service */ "./src/app/master-other-requests/services/personal-id.service.ts");
+
+
+
+
+
+
+
 
 
 
@@ -9332,8 +9870,9 @@ var MasterOtherRequestsModule = /** @class */ (function () {
     }
     MasterOtherRequestsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_absence_query_absence_query_component__WEBPACK_IMPORTED_MODULE_10__["AbsenceQueryComponent"], _change_branch_change_branch_component__WEBPACK_IMPORTED_MODULE_13__["ChangeBranchComponent"], _change_branch_diag_add_change_branch_add_change_branch_component__WEBPACK_IMPORTED_MODULE_14__["AddChangeBranchComponent"]],
-            entryComponents: [_change_branch_diag_add_change_branch_add_change_branch_component__WEBPACK_IMPORTED_MODULE_14__["AddChangeBranchComponent"]],
+            declarations: [_absence_query_absence_query_component__WEBPACK_IMPORTED_MODULE_10__["AbsenceQueryComponent"], _change_branch_change_branch_component__WEBPACK_IMPORTED_MODULE_13__["ChangeBranchComponent"], _change_branch_diag_add_change_branch_add_change_branch_component__WEBPACK_IMPORTED_MODULE_14__["AddChangeBranchComponent"],
+                _change_course_change_course_component__WEBPACK_IMPORTED_MODULE_15__["ChangeCourseComponent"], _personal_id_personal_id_component__WEBPACK_IMPORTED_MODULE_19__["PersonalIDComponent"]],
+            entryComponents: [_change_branch_diag_add_change_branch_add_change_branch_component__WEBPACK_IMPORTED_MODULE_14__["AddChangeBranchComponent"], _change_course_diag_add_change_course_add_change_course_component__WEBPACK_IMPORTED_MODULE_16__["AddChangeCourseComponent"], _personal_id_diag_add_personal_id_add_personal_id_component__WEBPACK_IMPORTED_MODULE_20__["AddPersonalIdComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _master_other_requests_routing_module__WEBPACK_IMPORTED_MODULE_9__["MasterOtherRequestsRoutingModule"],
@@ -9342,12 +9881,268 @@ var MasterOtherRequestsModule = /** @class */ (function () {
                 _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_6__["MatDatepickerModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
                 _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_18__["MatCheckboxModule"],
             ],
-            providers: [_services_absene_query_service__WEBPACK_IMPORTED_MODULE_11__["AbseneQueryService"], _services_change_branch_service__WEBPACK_IMPORTED_MODULE_12__["ChangeBranchService"]]
+            providers: [_services_absene_query_service__WEBPACK_IMPORTED_MODULE_11__["AbseneQueryService"], _services_change_branch_service__WEBPACK_IMPORTED_MODULE_12__["ChangeBranchService"], _services_change_course_service__WEBPACK_IMPORTED_MODULE_17__["ChangeCourseService"], _services_personal_id_service__WEBPACK_IMPORTED_MODULE_21__["PersonalIDService"]]
         })
     ], MasterOtherRequestsModule);
     return MasterOtherRequestsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.css":
+/*!******************************************************************************************************!*\
+  !*** ./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.css ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1vdGhlci1yZXF1ZXN0cy9wZXJzb25hbC1pZC9kaWFnL2FkZC1wZXJzb25hbC1pZC9hZGQtcGVyc29uYWwtaWQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.html":
+/*!*******************************************************************************************************!*\
+  !*** ./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.html ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<mat-dialog-content>\r\n    <div class=\"modal-dialog\" role=\"document\"style=\"direction: rtl;\">\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <h5  class=\"modal-title  \" id=\"exampleModalLabel\"> طلب بطاقة جامعية   </h5>\r\n            \r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <P class=\"text-center\">  </P>\r\n          <div>\r\n            <h6>شروط تقديم الطلب </h6>\r\n              <ul class=\"list-group\" style=\"font-size: 12px;\">\r\n                  <li class=\"list-group-item list-group-item-info\">:رفع صورة شخصية للمتقدم على ان تكون</li>\r\n                  <li class=\"list-group-item list-group-item-info\">مقاس الصورة 4*6</li>\r\n                  <li class=\"list-group-item list-group-item-info\">ملونة وبخلفية بيضاء</li>\r\n                  <li class=\"list-group-item list-group-item-info\">للطالبات : يجب ان تكون الطالبة محجبة</li>\r\n                  <li class=\"list-group-item list-group-item-info\">يجب ان تكون الصورة ذات جودة عالية</li>\r\n                  <li class=\"list-group-item list-group-item-info\">لن يتم استخراج بطاقة جامعية من غير صورة شخصية</li>\r\n                </ul>\r\n          </div>\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n              <section  class=\"ser-state\">\r\n                  <div class=\"container\">\r\n                       <div class=\"row ser-block\">\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                                <div class=\"state\">\r\n                                   <h6>اسم الطالب / الطالبة </h6>\r\n                                   <input name=\"name\" #name=\"ngModel\" [(ngModel)]=\"card.name\" class=\"form-control\" >\r\n                                </div>\r\n                                  <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                           </div>\r\n                            <div class=\"col-md-12 col-sm-12\">\r\n                                <div class=\"state\">\r\n                                  <h6>رقم بطاقة الهوية الوطنية او ما يقوم مقامها</h6>\r\n                                  <input name=\"ssn\" #ssn=\"ngModel\" [(ngModel)]=\"card.ssn\" class=\"form-control\" >\r\n                                </div>\r\n                                  <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                          </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                <h6>رقم الجوال </h6>\r\n                                <input name=\"phone\" #phone=\"ngModel\" [(ngModel)]=\"card.phone\" class=\"form-control\" >\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                        </div>\r\n                           <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                <h6>المرحلة الدراسية</h6>\r\n                                        <select name=\"level\" #level=\"ngModel\" [(ngModel)]=\"card.level\" class=\"form-control\" \r\n                            [class.is-invalid]=\"card.level==''\">\r\n                              <option value=\"\">اختر المرحلة الدراسية</option> \r\n                              <option *ngFor=\"let item of reqData.levels\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                            </select>\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                        </div> \r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                <h6> فترة الدراسة </h6>\r\n                                <select name=\"time\" #time=\"ngModel\" [(ngModel)]=\"card.time\" class=\"form-control\" \r\n                                [class.is-invalid]=\"card.time==''\">\r\n                                  <option value=\"\">اختر فترة الدراسة</option>\r\n                                  <option *ngFor=\"let item of reqData.times\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                                </select>\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                        </div> \r\n                         <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                <h6>اليوم </h6>\r\n                                <select name=\"day\" #time=\"ngModel\" [(ngModel)]=\"card.day\" class=\"form-control\" \r\n                                [class.is-invalid]=\"card.day==''\">\r\n                                  <option value=\"\">اختر اليوم </option>\r\n                                  <option *ngFor=\"let item of reqData.days\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                                </select>\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                        </div> \r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                <h6>  اضف صورة شخصية </h6>\r\n                                <div class=\"custom-file\">\r\n                                    <input name=\"photo\"  type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\"  class=\"custom-file-input\" id=\"customFileLangHTML\"  />\r\n                                    <label class=\"custom-file-label\" for=\"customFileLangHTML\" >\r\n                                      اضف صورة</label>\r\n                                  </div>\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                        </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>  اضف صورة الهوية </h6>\r\n                              <div class=\"custom-file\">\r\n                                  <input name=\"ssn_file\"  type=\"file\" accept=\"*/*\" (change)=\"handleInputChangeFile($event)\" class=\"custom-file-input\" />\r\n                                   <label  for=\"customFileLang\"  class=\"custom-file-label \">\r\n                                   </label> \r\n                                </div>\r\n                              </div>\r\n                               \r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      \r\n                       </div>\r\n                    </div>\r\n                  </div>\r\n               </section>\r\n               <div style=\"margin-top: 10px;\">\r\n                  <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                   <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                  </div>\r\n             </div>\r\n              </div>\r\n  \r\n         \r\n        </form>\r\n  \r\n      \r\n  \r\n  \r\n        </div>\r\n    </div>\r\n        \r\n     </div>\r\n  </mat-dialog-content>\r\n  \r\n"
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.ts":
+/*!*****************************************************************************************************!*\
+  !*** ./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.ts ***!
+  \*****************************************************************************************************/
+/*! exports provided: AddPersonalIdComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddPersonalIdComponent", function() { return AddPersonalIdComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_master_other_requests_services_personal_id_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/master-other-requests/services/personal-id.service */ "./src/app/master-other-requests/services/personal-id.service.ts");
+
+
+
+
+
+var AddPersonalIdComponent = /** @class */ (function () {
+    function AddPersonalIdComponent(data, dialogRef, toastr, univCard) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.univCard = univCard;
+    }
+    AddPersonalIdComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
+        this.univCard.getِgetRequests().then(function (res) {
+            _this.univCard.reqData = res.data;
+            _this.univCard.msgs = res.messages;
+            _this.reqData = _this.univCard.reqData;
+            _this.msgs = _this.univCard.msgs;
+        });
+    };
+    AddPersonalIdComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.univCard.AddRequest(data).then(function (res) {
+            _this.univCard.msgs = res.messages;
+            _this.msgs = _this.univCard.msgs;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddPersonalIdComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.card);
+        console.log(this.card);
+        this.dialogRef.close();
+    };
+    AddPersonalIdComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddPersonalIdComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.card.photo = reader.result;
+        // console.log(this.card.photo);
+    };
+    AddPersonalIdComponent.prototype.handleInputChangeFile = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoadedFile.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddPersonalIdComponent.prototype._handleReaderLoadedFile = function (e) {
+        var reader = e.target;
+        this.card.ssn_file = reader.result;
+        // console.log(this.card.photo);
+    };
+    AddPersonalIdComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.univCard.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.univCard.reqData.reqs.splice(index, 1);
+        }
+    };
+    AddPersonalIdComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    AddPersonalIdComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddPersonalIdComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-personal-id',
+            template: __webpack_require__(/*! ./add-personal-id.component.html */ "./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.html"),
+            styles: [__webpack_require__(/*! ./add-personal-id.component.css */ "./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_master_other_requests_services_personal_id_service__WEBPACK_IMPORTED_MODULE_4__["PersonalIDService"]])
+    ], AddPersonalIdComponent);
+    return AddPersonalIdComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/personal-id/personal-id.component.css":
+/*!*****************************************************************************!*\
+  !*** ./src/app/master-other-requests/personal-id/personal-id.component.css ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1vdGhlci1yZXF1ZXN0cy9wZXJzb25hbC1pZC9wZXJzb25hbC1pZC5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/personal-id/personal-id.component.html":
+/*!******************************************************************************!*\
+  !*** ./src/app/master-other-requests/personal-id/personal-id.component.html ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\">\r\n    <section _ngcontent-fpr-c11=\"\" class=\"service-single \">\r\n      <div _ngcontent-fpr-c11=\"\" class=\"container\">\r\n        <h3 _ngcontent-fpr-c11=\"\"> طلب البطاقة الجامعية </h3>\r\n        <div _ngcontent-fpr-c11=\"\" class=\"row\">\r\n          <div _ngcontent-fpr-c11=\"\" class=\" col-md-5\">\r\n            <p _ngcontent-fpr-c11=\"\">طلب البطاقة الجامعية </p>\r\n          </div>\r\n          <!-- <div _ngcontent-fpr-c11=\"\" class=\" col-md-6 descr\">\r\n          <span _ngcontent-fpr-c11=\"\">مدة الإنجاز : <span _ngcontent-fpr-c11=\"\" class=\"badge\">3 يوم</span></span> &nbsp; &nbsp; &nbsp; &nbsp; <a _ngcontent-fpr-c11=\"\" href=\"https://seuapps.seu.edu.sa/stdservicesapi/academic_status/academic_status_print?TermCode201610\"><i _ngcontent-fpr-c11=\"\" class=\"ik ik-download\"></i></a><a _ngcontent-fpr-c11=\"\" href=\"#\"><i _ngcontent-fpr-c11=\"\" class=\"ik ik-film\"></i></a>\r\n        </div> -->\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n      <div class=\"state\">\r\n  \r\n        <h5> جاري تحميل البيانات .....................</h5>\r\n  \r\n        <mat-spinner *ngIf=\"isLoading\"\r\n          style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n        </mat-spinner>\r\n  \r\n      </div>\r\n    </div>\r\n    <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n      <div *ngFor=\"let msg of msgs\"\r\n        [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n        role=\"alert\">\r\n        {{msg.body}}!\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n    <!-- <div style=\"direction: ltr;text-align: center\"  *ngIf=\"!isLoading\">\r\n        \r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n        اضافة طلب\r\n      </button>\r\n      <br/>\r\n      <br/>\r\n      \r\n      </div> -->\r\n    <div class=\"widget\" *ngIf=\"!isLoading\">\r\n      <div class=\"widget-header\">\r\n        <h3 class=\"widget-title\"> الطلبات السابقة\r\n  \r\n          <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n            اضافة طلب\r\n          </button>\r\n        </h3>\r\n      </div>\r\n  \r\n      <div class=\"table-responsive\">\r\n        <table class=\"table table-striped table-bordered\">\r\n          <thead style=\"background: #ebecf0\">\r\n  \r\n            <tr>\r\n              <th scope=\"col\">رقم الطلب</th>\r\n  \r\n              <th scope=\"col\">تاريخ الطلب</th>\r\n              <th scope=\"col\"> حالة الطلب</th>\r\n  \r\n              <th scope=\"col\"> حذف الطلب </th>\r\n  \r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n              <td>{{it.id}}</td>\r\n              <td>{{it.INSRT_DATE}}</td>\r\n              <td>{{it.status}}</td>\r\n  \r\n              <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                  (click)=\"delete(it.id,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n  \r\n                  <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n            </tr>\r\n  \r\n          </tbody>\r\n        </table>\r\n      </div>\r\n    </div>\r\n  </div>"
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/personal-id/personal-id.component.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/master-other-requests/personal-id/personal-id.component.ts ***!
+  \****************************************************************************/
+/*! exports provided: PersonalIDComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PersonalIDComponent", function() { return PersonalIDComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_personal_id_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/personal-id.service */ "./src/app/master-other-requests/services/personal-id.service.ts");
+/* harmony import */ var _diag_add_personal_id_add_personal_id_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-personal-id/add-personal-id.component */ "./src/app/master-other-requests/personal-id/diag/add-personal-id/add-personal-id.component.ts");
+
+
+
+
+
+
+var PersonalIDComponent = /** @class */ (function () {
+    function PersonalIDComponent(dialog, receiptDiag, toastr, univCard) {
+        this.dialog = dialog;
+        this.receiptDiag = receiptDiag;
+        this.toastr = toastr;
+        this.univCard = univCard;
+        this.isLoading = false;
+    }
+    PersonalIDComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.isLoading = true;
+        this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
+        this.univCard.getِgetRequests().then(function (res) {
+            _this.univCard.reqData = res.data;
+            _this.univCard.msgs = res.messages;
+            _this.reqData = _this.univCard.reqData;
+            _this.msgs = _this.univCard.msgs;
+            var key = _this.reqData;
+            _this.isLoading = false;
+            console.log(_this.reqData);
+        });
+    };
+    PersonalIDComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_personal_id_add_personal_id_component__WEBPACK_IMPORTED_MODULE_5__["AddPersonalIdComponent"], dialogConfig);
+    };
+    PersonalIDComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.univCard.AddRequest(data).then(function (res) {
+            _this.univCard.msgs = res.messages;
+            alert(_this.univCard.msgs[0]);
+        });
+    };
+    PersonalIDComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    PersonalIDComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.univCard.deleteReq(id).then(function (res) {
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                //  if(this.status == 1)
+                //       this.univCard.reqData.requests.splice(index, 1);
+            });
+        }
+    };
+    PersonalIDComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    PersonalIDComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-personal-id',
+            template: __webpack_require__(/*! ./personal-id.component.html */ "./src/app/master-other-requests/personal-id/personal-id.component.html"),
+            styles: [__webpack_require__(/*! ./personal-id.component.css */ "./src/app/master-other-requests/personal-id/personal-id.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_personal_id_service__WEBPACK_IMPORTED_MODULE_4__["PersonalIDService"]])
+    ], PersonalIDComponent);
+    return PersonalIDComponent;
 }());
 
 
@@ -9422,7 +10217,7 @@ var ChangeBranchService = /** @class */ (function () {
         return this.httRequest.GetRequest('change_camp_service').toPromise();
     };
     ChangeBranchService.prototype.AddRequest = function (data) {
-        return this.httRequest.postRequest('change_camp_service/update', data).toPromise();
+        return this.httRequest.postRequest('change_camp_service/insert', data).toPromise();
     };
     ChangeBranchService.prototype.deleteReq = function (id) {
         return this.httRequest.GetRequest('change_camp_service/remove/' + id).toPromise();
@@ -9434,6 +10229,98 @@ var ChangeBranchService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
     ], ChangeBranchService);
     return ChangeBranchService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/services/change-course.service.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/master-other-requests/services/change-course.service.ts ***!
+  \*************************************************************************/
+/*! exports provided: ChangeCourseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChangeCourseService", function() { return ChangeCourseService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var ChangeCourseService = /** @class */ (function () {
+    function ChangeCourseService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+        this.configService.baseUrl = "stdsUnivapi";
+    }
+    ChangeCourseService.prototype.getRequests = function () {
+        return this.httRequest.GetRequest('change_major_service').toPromise();
+    };
+    ChangeCourseService.prototype.AddRequest = function (data) {
+        return this.httRequest.GetRequest('change_major_service/insert').toPromise();
+    };
+    ChangeCourseService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('change_major_service/remove' + id).toPromise();
+    };
+    ChangeCourseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], ChangeCourseService);
+    return ChangeCourseService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-other-requests/services/personal-id.service.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/master-other-requests/services/personal-id.service.ts ***!
+  \***********************************************************************/
+/*! exports provided: PersonalIDService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PersonalIDService", function() { return PersonalIDService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var PersonalIDService = /** @class */ (function () {
+    function PersonalIDService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+        this.configService.baseUrl = "stdsUnivapi";
+    }
+    PersonalIDService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('card_university_service').toPromise();
+    };
+    PersonalIDService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('card_university_service/insert', data).toPromise();
+    };
+    PersonalIDService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('card_university_service/remove/' + id).toPromise();
+    };
+    PersonalIDService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], PersonalIDService);
+    return PersonalIDService;
 }());
 
 
@@ -10297,7 +11184,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"app-sidebar colored\">\r\n  <div class=\"sidebar-header\">\r\n      <a id=\"sidebarClose\" class=\"nav-close\"><i class=\"ik ik-x\"></i></a>\r\n       <a class=\"header-brand\" href=\"#\">\r\n          <div class=\"logo-img\">\r\n             <img src=\"assets/images/logo-ar.png\" class=\"header-brand-img\" alt=\"lavalite\"> \r\n          </div>\r\n      </a>\r\n  </div>\r\n  <div class=\"sidebar-header\">\r\n      <select  name=\"menuType\" [(ngModel)]=\"menuType\" #t  class=\"form-control\"  style=\"color: #1c2172;direction: rtl;\" id=\"exampleFormControlSelect1\">\r\n          <option value=\"1\">خدمات البكالوريوس</option>\r\n          <option value=\"2\">خدمات الماجستير</option>\r\n         \r\n        </select>      \r\n  </div>\r\n  \r\n  <div class=\"sidebar-content\">\r\n      <div class=\"nav-container\">\r\n          <nav id=\"main-menu-navigation\" class=\"navigation-main\">\r\n                   <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>مصادر التعلم</span> <i class=\"ik ik-book-open\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 1</a>\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 2</a>\r\n                       <a href=\"#\" class=\"menu-item\">خدمة 3 </a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>بيانات الطالب </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstddata/academicstatus\">الحالة الأكاديمية</a>\r\n\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstddata/academicrecord\">السجل الأكاديمي</a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> طباعة الشهادات  </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/idcertificate\">شهادة التعريف</a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/examattendacecertificate\">شهادة حضور الإختبار</a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/examattendacecertificateapp\"> شهادة إثبات حضور الإختبار </a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الطلبات الأكاديمية   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/academicrequests/withdrawal\">طلب إنسحاب من الجامعة</a>\r\n                      <a href=\"#\" class=\"menu-item\">طلب تأجيل الدراسة</a>\r\n                       <a href=\"#\" class=\"menu-item\"> طلب حذف المقررات (الإعتذار عن الفصل  ) </a>\r\n                       <a href=\"#\" class=\"menu-item\">الاعتراض على نتيجة الاختبار النهائي</a>\r\n                       <a href=\"#\" class=\"menu-item\">حذف مقرر</a>\r\n                       <a href=\"#\" class=\"menu-item\">طلب إعادة قيد</a>\r\n                       <a href=\"#\" class=\"menu-item\">رفع الأعذار للاختبارات</a>\r\n                 \r\n                       <a href=\"#\" class=\"menu-item\">رفع الأعذار للمحاضرات</a>\r\n\r\n                      </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الشؤون المالية   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\">سداد الرسوم</a>\r\n                     \r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> طلبات أخرى   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/otherrequests/changebranch\">تحويل إلى فرع آخر</a>\r\n                      <a href=\"#\" class=\"menu-item\">تحويل إلى برنامج آخر</a>\r\n                       <a href=\"#\" class=\"menu-item\"> طلب البطاقة الجامعية  </a>\r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/otherrequests/absencequery\">الاستعلام عن الغيابات</a>\r\n                       <a href=\"#\" class=\"menu-item\">معلومات الخريج</a>\r\n                      \r\n                  </div>\r\n              </div>\r\n                 <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الشئون الأكاديمية</span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a>\r\n                      <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/certificate\">  شهادة تعريف</a>\r\n                      <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/record\"> السجل الاكاديمي</a> \r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/graduationstatment\">  إفادة خريج</a>\r\n                  </div>\r\n              </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الإجراءات الأكاديمية</span> <i class=\"ik ik-layers\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                        <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/terminate\">الانسحاب من الجامعة   </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/postpone\"> تأجيل الفصل الدراسي\r\n                       </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/execuse\"> الاعتذار عن الفصل دراسي </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/summer\"> الاعتذار عن الفصل الصيفي     </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/reenrol\">  اعادة قيد </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/cancelcourse\"> الانسحاب من مقرر     </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/equalize\"> معادلة المقررات    </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/eequalize\"> معادلة اللغة الانجليزية </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changemajor\"> تغيير التخصص </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changerequest\">تغيير الفرع </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/lecexecuse\">رفع الاعذار للمحاضرات</a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/objectexam\"> الاعتراض على نتيجة الاختبار النهائي </a> \r\n\r\n                       <a href=\"#\" class=\"menu-item\"   routerLink=\"/procedures/lectabs\">   الاستعلام عن الغيايات  </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/visitorstudent\"> طلب الدراسة كطالب زائر     </a>\r\n\r\n\r\n                      \r\n                       <!-- <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/examexcuse\"> تقديم الأعذار للمتغيبين عن الاختبارات   </a> -->\r\n\r\n\r\n                       \r\n\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                    <a href=\"javascript:void(0)\"><span> تسجيل المقررات </span> <i class=\"ik ik-dollar-sign\"></i></a>\r\n                    <div class=\"submenu-content\">\r\n                            <a href=\"#\" class=\"menu-item\" routerLink=\"/registercourses/registerwishes\"> رغبات التسجيل للمستجدين     </a>\r\n                            <a href=\"#\" class=\"menu-item\" routerLink=\"/registercourses/reghelper\"> مساعد التسجيل     </a>\r\n\r\n                        </div>\r\n              </div>\r\n             \r\n            \r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>  الشؤون المالية </span> <i class=\"ik ik-dollar-sign\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/finance/fees\">  افادة بالرسوم الدراسية </a> \r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/finance/feesexception\"> الإعفاء من الرسوم الدراسية </a>\r\n\r\n                  </div>\r\n              </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"><span> شؤون الإختبارات </span> <i class=\"ik ik-trending-down\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                     <!-- <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attend\">  جداول الاختبارات   </a> -->\r\n                     <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/\"> شهادة  حضور الاختبارات    </a> \r\n                     <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attendapp\"> شهادة اثبات حضور الاختبارات    </a> \r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/examexcuse\"> رفع الاعذار للاختبارات  </a> \r\n\r\n                  </div>\r\n                \r\n           \r\n                </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                        <a href=\"javascript:void(0)\"><span> طلبات أخرى   </span> <i class=\"ik ik-user\"></i></a>\r\n                        <div class=\"submenu-content\">\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/medicalreport\"> طلب تقرير طبي  </a>\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/universitycard\">  طلب البطاقة الجامعية     </a>\r\n                             <!--   <a href=\"#\" class=\"menu-item\" routerLink=\"/other/missingcard\">طلب بطاقة جامعية بدل فاقد </a>\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/training\"> طلب التدريب الميداني  </a>-->\r\n\r\n                            </div>\r\n                </div>\r\n                <!-- <div class=\"nav-lavel\">  </div> -->\r\n               <div class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"> <span class=\"badge badge-danger\">11</span><span>خدمات عامة </span>\r\n                     <i class=\"ik ik-align-right\"></i> </a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\"> نظام BlackBoard  <i class=\"ik ik-bold\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> البريد الإلكتروني      <i class=\"ik ik-mail\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> إدارة المصادر المعرفية  <i class=\"ik ik-book-open\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> المنتدي           <i class=\"ik ik-message-square\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> التقويم الدراسي       <i class=\"ik ik-calendar\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">تعليمات الأنظمة التعليمية <i class=\"ik ik-clipboard\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">دعم الدخول الموحد     <i class=\"ik ik-users\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">نظام دعم           <i class=\"ik ik-settings\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> تحديث بيانات        <i class=\"ik ik-link\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">الحقوق الطلابية        <i class=\"ik ik-command\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> خدمات نظام معلومات الطلبة   <i class=\"ik ik-tablet\"></i> </a>\r\n                  </div>\r\n              </div>\r\n         \r\n                  <div class=\"nav-lavel\"> </div>\r\n                    <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"  ><span>  إرشادات عامة  </span> <i class=\"ik ik-alert-circle\"></i>\r\n                   </a>\r\n                   </div>\r\n                  <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"><span>استفسارات  </span> <i class=\"ik ik-settings\"></i>\r\n                    </a>\r\n                  </div>\r\n           \r\n          </nav>\r\n      </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"app-sidebar colored\">\r\n  <div class=\"sidebar-header\">\r\n      <a id=\"sidebarClose\" class=\"nav-close\"><i class=\"ik ik-x\"></i></a>\r\n       <a class=\"header-brand\" href=\"#\">\r\n          <div class=\"logo-img\">\r\n             <img src=\"assets/images/logo-ar.png\" class=\"header-brand-img\" alt=\"lavalite\"> \r\n          </div>\r\n      </a>\r\n  </div>\r\n  <div class=\"sidebar-header\">\r\n      <select  name=\"menuType\" [(ngModel)]=\"menuType\" #t  class=\"form-control\"  style=\"color: #1c2172;direction: rtl;\" id=\"exampleFormControlSelect1\">\r\n          <option value=\"1\">خدمات البكالوريوس</option>\r\n          <option value=\"2\">خدمات الماجستير</option>\r\n         \r\n        </select>      \r\n  </div>\r\n  \r\n  <div class=\"sidebar-content\">\r\n      <div class=\"nav-container\">\r\n          <nav id=\"main-menu-navigation\" class=\"navigation-main\">\r\n                   <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>مصادر التعلم</span> <i class=\"ik ik-book-open\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 1</a>\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 2</a>\r\n                       <a href=\"#\" class=\"menu-item\">خدمة 3 </a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>بيانات الطالب </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstddata/academicstatus\">الحالة الأكاديمية</a>\r\n\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstddata/academicrecord\">السجل الأكاديمي</a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> طباعة الشهادات  </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/idcertificate\">شهادة التعريف</a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/examattendacecertificate\">شهادة حضور الإختبار</a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/examattendacecertificateapp\"> شهادة إثبات حضور الإختبار </a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الطلبات الأكاديمية   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/academicrequests/withdrawal\">طلب إنسحاب من الجامعة</a>\r\n                      <a href=\"#\" class=\"menu-item\"  >طلب تأجيل الدراسة</a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/academicrequests/termexecuse\"> طلب حذف المقررات (الإعتذار عن الفصل  ) </a>\r\n                       <a href=\"#\" class=\"menu-item\">الاعتراض على نتيجة الاختبار النهائي</a>\r\n                       <a href=\"#\" class=\"menu-item\">حذف مقرر</a>\r\n                       <a href=\"#\" class=\"menu-item\">طلب إعادة قيد</a>\r\n                       <a href=\"#\" class=\"menu-item\">رفع الأعذار للاختبارات</a>\r\n                 \r\n                       <a href=\"#\" class=\"menu-item\">رفع الأعذار للمحاضرات</a>\r\n\r\n                      </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الشؤون المالية   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\">سداد الرسوم</a>\r\n                     \r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> طلبات أخرى   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/otherrequests/changebranch\">تحويل إلى فرع آخر</a>\r\n<<<<<<< HEAD\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/otherrequests/changecourse\">تحويل إلى برنامج آخر</a>\r\n                       <a href=\"#\" class=\"menu-item\"> طلب البطاقة الجامعية  </a>\r\n=======\r\n                      <a href=\"#\" class=\"menu-item\">تحويل إلى برنامج آخر</a>\r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/otherrequests/personalid\"> طلب البطاقة الجامعية  </a>\r\n>>>>>>> 090a49ed99df921684352d6e5945f50a142175a8\r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/otherrequests/absencequery\">الاستعلام عن الغيابات</a>\r\n                       <a href=\"#\" class=\"menu-item\">معلومات الخريج</a>\r\n                      \r\n                  </div>\r\n              </div>\r\n                 <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الشئون الأكاديمية</span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a>\r\n                      <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/certificate\">  شهادة تعريف</a>\r\n                      <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/record\"> السجل الاكاديمي</a> \r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/graduationstatment\">  إفادة خريج</a>\r\n                  </div>\r\n              </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الإجراءات الأكاديمية</span> <i class=\"ik ik-layers\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <!--  <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/terminate\">الانسحاب من الجامعة   </a>-->\r\n                        <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/withdrawuniv\">الانسحاب من الجامعة   </a>\r\n                        \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/postpone\"> تأجيل الفصل الدراسي\r\n                       </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/execuse\"> الاعتذار عن الفصل دراسي </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/summer\"> الاعتذار عن الفصل الصيفي     </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/reenrol\">  اعادة قيد </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/cancelcourse\"> الانسحاب من مقرر     </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/equalize\"> معادلة المقررات    </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/eequalize\"> معادلة اللغة الانجليزية </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changemajor\"> تغيير التخصص </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changerequest\">تغيير الفرع </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/lecexecuse\">رفع الاعذار للمحاضرات</a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/objectexam\"> الاعتراض على نتيجة الاختبار النهائي </a> \r\n\r\n                       <a href=\"#\" class=\"menu-item\"   routerLink=\"/procedures/lectabs\">   الاستعلام عن الغيايات  </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/visitorstudent\"> طلب الدراسة كطالب زائر     </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/terminate\"> طلب فصل استثنائي   </a>\r\n\r\n\r\n                      \r\n                       <!-- <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/examexcuse\"> تقديم الأعذار للمتغيبين عن الاختبارات   </a> -->\r\n\r\n\r\n                       \r\n\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                    <a href=\"javascript:void(0)\"><span> تسجيل المقررات </span> <i class=\"ik ik-dollar-sign\"></i></a>\r\n                    <div class=\"submenu-content\">\r\n                            <a href=\"#\" class=\"menu-item\" routerLink=\"/registercourses/registerwishes\"> رغبات التسجيل للمستجدين     </a>\r\n                            <a href=\"#\" class=\"menu-item\" routerLink=\"/registercourses/reghelper\"> مساعد التسجيل     </a>\r\n\r\n                        </div>\r\n              </div>\r\n             \r\n            \r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>  الشؤون المالية </span> <i class=\"ik ik-dollar-sign\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/finance/fees\">  افادة بالرسوم الدراسية </a> \r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/finance/feesexception\"> الإعفاء من الرسوم الدراسية </a>\r\n\r\n                  </div>\r\n              </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"><span> شؤون الإختبارات </span> <i class=\"ik ik-trending-down\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                     <!-- <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attend\">  جداول الاختبارات   </a> -->\r\n                     <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/\"> شهادة  حضور الاختبارات    </a> \r\n                     <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attendapp\"> شهادة اثبات حضور الاختبارات    </a> \r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/examexcuse\"> رفع الاعذار للاختبارات  </a> \r\n\r\n                  </div>\r\n                \r\n           \r\n                </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                        <a href=\"javascript:void(0)\"><span> طلبات أخرى   </span> <i class=\"ik ik-user\"></i></a>\r\n                        <div class=\"submenu-content\">\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/medicalreport\"> طلب تقرير طبي  </a>\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/universitycard\">  طلب البطاقة الجامعية     </a>\r\n                             <!--   <a href=\"#\" class=\"menu-item\" routerLink=\"/other/missingcard\">طلب بطاقة جامعية بدل فاقد </a>\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/training\"> طلب التدريب الميداني  </a>-->\r\n\r\n                            </div>\r\n                </div>\r\n                <!-- <div class=\"nav-lavel\">  </div> -->\r\n               <div class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"> <span class=\"badge badge-danger\">11</span><span>خدمات عامة </span>\r\n                     <i class=\"ik ik-align-right\"></i> </a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\"> نظام BlackBoard  <i class=\"ik ik-bold\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> البريد الإلكتروني      <i class=\"ik ik-mail\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> إدارة المصادر المعرفية  <i class=\"ik ik-book-open\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> المنتدي           <i class=\"ik ik-message-square\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> التقويم الدراسي       <i class=\"ik ik-calendar\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">تعليمات الأنظمة التعليمية <i class=\"ik ik-clipboard\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">دعم الدخول الموحد     <i class=\"ik ik-users\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">نظام دعم           <i class=\"ik ik-settings\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> تحديث بيانات        <i class=\"ik ik-link\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">الحقوق الطلابية        <i class=\"ik ik-command\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> خدمات نظام معلومات الطلبة   <i class=\"ik ik-tablet\"></i> </a>\r\n                  </div>\r\n              </div>\r\n         \r\n                  <div class=\"nav-lavel\"> </div>\r\n                    <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"  ><span>  إرشادات عامة  </span> <i class=\"ik ik-alert-circle\"></i>\r\n                   </a>\r\n                   </div>\r\n                  <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"><span>استفسارات  </span> <i class=\"ik ik-settings\"></i>\r\n                    </a>\r\n                  </div>\r\n           \r\n          </nav>\r\n      </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -11429,7 +12316,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\r\n\r\n<mat-dialog-content>\r\n  <div class=\"modal-dialog\" role=\"document\"style=\"direction: rtl;\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5  class=\"modal-title  \" id=\"exampleModalLabel\"> طلب بطاقة جامعية   </h5>\r\n          \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">  </P>\r\n        <div>\r\n          <h6>شروط تقديم الطلب </h6>\r\n            <ul class=\"list-group\" style=\"font-size: 12px;\">\r\n                <li class=\"list-group-item list-group-item-info\">:رفع صورة شخصية للمتقدم على ان تكون</li>\r\n                <li class=\"list-group-item list-group-item-info\">مقاس الصورة 4*6</li>\r\n                <li class=\"list-group-item list-group-item-info\">ملونة وبخلفية بيضاء</li>\r\n                <li class=\"list-group-item list-group-item-info\">للطالبات : يجب ان تكون الطالبة محجبة</li>\r\n                <li class=\"list-group-item list-group-item-info\">يجب ان تكون الصورة ذات جودة عالية</li>\r\n                <li class=\"list-group-item list-group-item-info\">لن يتم استخراج بطاقة جامعية من غير صورة شخصية</li>\r\n              </ul>\r\n        </div>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n            <div class=\"main-content\" style=\"padding-top:0;\">\r\n            <section  class=\"ser-state\">\r\n                <div class=\"container\">\r\n                     <div class=\"row ser-block\">\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                 <h6>اسم الطالب / الطالبة </h6>\r\n                                 <input name=\"name\" #name=\"ngModel\" [(ngModel)]=\"card.name\" class=\"form-control\" >\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                         </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                <h6>رقم بطاقة الهوية الوطنية او ما يقوم مقامها</h6>\r\n                                <input name=\"ssn\" #ssn=\"ngModel\" [(ngModel)]=\"card.ssn\" class=\"form-control\" >\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                        </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>رقم الجوال </h6>\r\n                              <input name=\"phone\" #phone=\"ngModel\" [(ngModel)]=\"card.phone\" class=\"form-control\" >\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>المرحلة الدراسية</h6>\r\n                                      <select name=\"level\" #level=\"ngModel\" [(ngModel)]=\"card.level\" class=\"form-control\" \r\n                          [class.is-invalid]=\"card.level==''\">\r\n                            <option value=\"\">اختر المرحلة الدراسية</option> \r\n                            <option *ngFor=\"let item of reqData.levels\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                          </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6> فترة الدراسة </h6>\r\n                              <select name=\"time\" #time=\"ngModel\" [(ngModel)]=\"card.time\" class=\"form-control\" \r\n                              [class.is-invalid]=\"card.time==''\">\r\n                                <option value=\"\">اختر فترة الدراسة</option>\r\n                                <option *ngFor=\"let item of reqData.times\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                              </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>اليوم </h6>\r\n                              <select name=\"day\" #time=\"ngModel\" [(ngModel)]=\"card.day\" class=\"form-control\" \r\n                              [class.is-invalid]=\"card.day==''\">\r\n                                <option value=\"\">اختر اليوم </option>\r\n                                <option *ngFor=\"let item of reqData.days\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                              </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>  اضف صورة شخصية </h6>\r\n                              <div class=\"custom-file\">\r\n                                  <input name=\"photo\"  type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\"  class=\"custom-file-input\" id=\"customFileLangHTML\"  />\r\n                                  <label class=\"custom-file-label\" for=\"customFileLangHTML\" >\r\n                                    اضف صورة</label>\r\n                                </div>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                          <div class=\"state\">\r\n                            <h6>  اضف صورة الهوية </h6>\r\n                            <div class=\"custom-file\">\r\n                                <input name=\"ssn_file\"  type=\"file\" accept=\"*/*\" (change)=\"handleInputChangeFile($event)\" class=\"custom-file-input\" />\r\n                                 <label  for=\"customFileLang\"  class=\"custom-file-label \">\r\n                                 </label> \r\n                              </div>\r\n                            </div>\r\n                             \r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                    \r\n                     </div>\r\n                  </div>\r\n                </div>\r\n             </section>\r\n             <div style=\"margin-top: 10px;\">\r\n                <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                  <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                 <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                </div>\r\n           </div>\r\n            </div>\r\n\r\n       \r\n      </form>\r\n\r\n    \r\n\r\n\r\n      </div>\r\n  </div>\r\n      \r\n   </div>\r\n</mat-dialog-content>\r\n"
+module.exports = "<!-- Modal -->\r\n\r\n<mat-dialog-content>\r\n\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5  class=\"modal-title  \" id=\"exampleModalLabel\"> طلب بطاقة جامعية   </h5>\r\n          \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">  </P>\r\n        <div>\r\n          <h6>شروط تقديم الطلب </h6>\r\n            <ul class=\"list-group\" style=\"font-size: 12px;\">\r\n                <li class=\"list-group-item list-group-item-info\">:رفع صورة شخصية للمتقدم على ان تكون</li>\r\n                <li class=\"list-group-item list-group-item-info\">مقاس الصورة 4*6</li>\r\n                <li class=\"list-group-item list-group-item-info\">ملونة وبخلفية بيضاء</li>\r\n                <li class=\"list-group-item list-group-item-info\">للطالبات : يجب ان تكون الطالبة محجبة</li>\r\n                <li class=\"list-group-item list-group-item-info\">يجب ان تكون الصورة ذات جودة عالية</li>\r\n                <li class=\"list-group-item list-group-item-info\">لن يتم استخراج بطاقة جامعية من غير صورة شخصية</li>\r\n              </ul>\r\n        </div>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n            <div class=\"main-content\" style=\"padding-top:0;\">\r\n            <section  class=\"ser-state\">\r\n                <div class=\"container\">\r\n                     <div class=\"row ser-block\">\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                 <h6>اسم الطالب / الطالبة </h6>\r\n                                 <input name=\"name\" #name=\"ngModel\" [(ngModel)]=\"card.name\" class=\"form-control\" >\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                         </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">\r\n                                <h6>رقم بطاقة الهوية الوطنية او ما يقوم مقامها</h6>\r\n                                <input name=\"ssn\" #ssn=\"ngModel\" [(ngModel)]=\"card.ssn\" class=\"form-control\" >\r\n                              </div>\r\n                                <div class=\"progress progress-sm\">\r\n                                    <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                </div>\r\n                        </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>رقم الجوال </h6>\r\n                              <input name=\"phone\" #phone=\"ngModel\" [(ngModel)]=\"card.phone\" class=\"form-control\" >\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>المرحلة الدراسية</h6>\r\n                                      <select name=\"level\" #level=\"ngModel\" [(ngModel)]=\"card.level\" class=\"form-control\" \r\n                          [class.is-invalid]=\"card.level==''\">\r\n                            <option value=\"\">اختر المرحلة الدراسية</option> \r\n                            <option *ngFor=\"let item of reqData.levels\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                          </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6> فترة الدراسة </h6>\r\n                              <select name=\"time\" #time=\"ngModel\" [(ngModel)]=\"card.time\" class=\"form-control\" \r\n                              [class.is-invalid]=\"card.time==''\">\r\n                                <option value=\"\">اختر فترة الدراسة</option>\r\n                                <option *ngFor=\"let item of reqData.times\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                              </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>اليوم </h6>\r\n                              <select name=\"day\" #time=\"ngModel\" [(ngModel)]=\"card.day\" class=\"form-control\" \r\n                              [class.is-invalid]=\"card.day==''\">\r\n                                <option value=\"\">اختر اليوم </option>\r\n                                <option *ngFor=\"let item of reqData.days\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                              </select>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6>  اضف صورة شخصية </h6>\r\n                              <div class=\"custom-file\">\r\n                                  <input name=\"photo\"  type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\"  class=\"custom-file-input\" id=\"customFileLangHTML\"  />\r\n                                  <label class=\"custom-file-label\" for=\"customFileLangHTML\" >\r\n                                    اضف صورة</label>\r\n                                </div>\r\n                            </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                          <div class=\"state\">\r\n                            <h6>  اضف صورة الهوية </h6>\r\n                            <div class=\"custom-file\">\r\n                                <input name=\"ssn_file\"  type=\"file\" accept=\"*/*\" (change)=\"handleInputChangeFile($event)\" class=\"custom-file-input\" />\r\n                                 <label  for=\"customFileLang\"  class=\"custom-file-label \">\r\n                                 </label> \r\n                              </div>\r\n                            </div>\r\n                             \r\n                            <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                    \r\n                     </div>\r\n                  </div>\r\n                </div>\r\n             </section>\r\n             <div style=\"margin-top: 10px;\">\r\n                <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                  <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                 <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                </div>\r\n           </div>\r\n            </div>\r\n\r\n       \r\n      </form>\r\n\r\n    \r\n\r\n\r\n      </div>\r\n  </div>\r\n      \r\n   \r\n</mat-dialog-content>\r\n"
 
 /***/ }),
 
@@ -11637,9 +12524,6 @@ var UnivCardComponent = /** @class */ (function () {
     UnivCardComponent.prototype.onSubmit = function (form) {
         this.addRequest(form.value);
     };
-    //   print(req) {
-    // return    this.univCard.Download(req);
-    //   }
     UnivCardComponent.prototype.delete = function (id, index) {
         var _this = this;
         if (confirm('هل انت متأكد')) {
@@ -12599,6 +13483,10 @@ var HttpRequestService = /** @class */ (function () {
         var headers = this.createRequestHeader();
         // headers.append('Content-Type', 'application/json');
         //  let options = new RequestOptions({ headers: headers });
+        /* if (body == null)
+           return this.http.post(url, { headers });
+         else*/
+        console.log(body);
         return this.http.post(url, JSON.stringify(body), { headers: headers });
     };
     HttpRequestService.prototype.postAuthRequest = function (path, body) {
