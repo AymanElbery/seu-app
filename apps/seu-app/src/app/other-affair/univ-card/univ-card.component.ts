@@ -60,10 +60,6 @@ this.addRequest(form.value);
 
   }
 
-//   print(req) {
-// return    this.univCard.Download(req);
-
-//   }
   delete(id, index) {
     if ( confirm('هل انت متأكد')) {
     this.univCard.deleteReq(id).then(res => {
