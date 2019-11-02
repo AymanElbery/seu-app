@@ -18,12 +18,28 @@ import{AddChangeCourseComponent} from'./change-course/diag/add-change-course/add
 import { ChangeCourseService } from './services/change-course.service';
 import { MatCheckboxModule} from '@angular/material';
 
-
+import {PersonalIDComponent} from './personal-id/personal-id.component';
+import {AddPersonalIdComponent} from './personal-id/diag/add-personal-id/add-personal-id.component';
+import {PersonalIDService} from './services/personal-id.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
+<<<<<<< HEAD
   declarations: [AbsenceQueryComponent,ChangeBranchComponent,AddChangeBranchComponent,ChangeCourseComponent,AddChangeCourseComponent],
   entryComponents:[AddChangeBranchComponent,AddChangeCourseComponent],
+=======
+  declarations: [AbsenceQueryComponent
+    ,ChangeBranchComponent
+    ,AddChangeBranchComponent
+    ,AddPersonalIdComponent
+    ,PersonalIDComponent
+  ],
+
+  entryComponents:[AddChangeBranchComponent
+    ,AddPersonalIdComponent
+  ],
+>>>>>>> 090a49ed99df921684352d6e5945f50a142175a8
   imports: [
     CommonModule,
     MasterOtherRequestsRoutingModule,
@@ -33,9 +49,19 @@ import { MatCheckboxModule} from '@angular/material';
     FormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
+<<<<<<< HEAD
     MatCheckboxModule,
   ],
   providers: [AbseneQueryService,ChangeBranchService,ChangeCourseService]
+=======
+    ToastrModule.forRoot() 
+    
+  ],
+  providers: [AbseneQueryService
+    ,ChangeBranchService
+    ,PersonalIDService
+  ]
+>>>>>>> 090a49ed99df921684352d6e5945f50a142175a8
 
 })
 export class MasterOtherRequestsModule { }

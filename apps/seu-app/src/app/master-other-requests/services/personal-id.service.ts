@@ -12,4 +12,15 @@ export class PersonalIDService {
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
     this.configService.baseUrl = "stdsUnivapi";
   }
+  getِgetRequests() {
+
+    return this.httRequest.GetRequest('card_university_service').toPromise();
+   }
+   AddRequest(data) {
+       return this.httRequest.postRequest('card_university_service/insert', data).toPromise();
+   }
+   deleteReq(id) {
+     return this.httRequest.GetRequest('card_university_service/remove/' + id ).toPromise();
+ 
+   }
 }

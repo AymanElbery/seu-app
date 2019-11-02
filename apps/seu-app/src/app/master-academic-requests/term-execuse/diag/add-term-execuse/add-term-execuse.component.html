@@ -2,18 +2,15 @@
     <div class="modal-content">
         <div class="modal-header">
        
-          <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">  الانسحاب من الجامعة</h5>
+          <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">  طلب حذف المقررات (الاعتذار عن الفصل)</h5>
           
         </div>
         <div class="modal-body">
             <P class="text-center">
                 <span style="color: red;">تنبيه:</span> يسمح للطالب إلغاء أو تعديل الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.
-                أرغب في سحب ملفي نهائياً من الجامعة وليس لي الحق المطالبة باعادة قبولي مرة اخرى  كما لا يحق لي المطالبة باسترداد كامل او جزء من الرسوم 
-                الدراسية التي قمت بسدادها للجامعة في حالة تجاوز  تاريخ انسحابي التاريخ المحدد للانسحاب  
-                الذي اعلنته الجامعة 
-               
+                أرغب في الاعتذار عن الدراسة اعتباراً من الفصل الدراسي الأول  1440\1441 هـ      
               </P>
-          <!-- <P class="text-center">---  </P> -->
+ 
           <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
               <div class="main-content" style="padding-top:0;">
                   <section  class="ser-state">
@@ -21,8 +18,25 @@
                            <div class="row ser-block">
                               <div class="col-md-12 col-sm-12">
                                   <div class="state">
+                                     <h6> عدد الفصول الدراسية التي تود الااعتذار عنها </h6>
+                                    
+                                     <select name="num_terms" #num_terms="ngModel" [(ngModel)]="termExecuse.num_terms" class="form-control" 
+                                     [class.is-invalid]="mj.major==''">
+                                       <option value="">اختر عدد الفصول الدراسية</option>
+                                       <option *ngFor="let item of reqData.majors" value="{{item.MAJOR_PK}}">{{item.MAJOR_TITLE}}</option>
+                                     </select>
+      
+                                      </div>
+                                    <div class="progress progress-sm">
+                                        <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                    </div>
+                             </div>
+                              <div class="col-md-12 col-sm-12">
+                                  <div class="state">
                                      <h6> رقم الجوال (05xxxxxxxx)  </h6>
-                                        <input name="mobile" type="text"  #mobile="ngModel" [(ngModel)]="withdrawalReq.mobile" class="form-control"/>
+                                    
+                                        <input name="mobile" type="text"  #mobile="ngModel" [(ngModel)]="termExecuse.mobile" class="form-control"/>
+      
                                       </div>
                                     <div class="progress progress-sm">
                                         <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -30,8 +44,12 @@
                              </div>
                            <div class="col-md-12 col-sm-12">
                               <div class="state">
-                                 <h6> البريد الالكتروني (غير الجامعي) </h6>
-                                    <input name="email" type="text"  #email="ngModel" [(ngModel)]="withdrawalReq.email" class="form-control"/>
+                                 <h6> سبب الاعتذار </h6>
+                               
+                                    <textarea name="reason" type="text"  #reason="ngModel" [(ngModel)]="termExecuse.reason" class="form-control">
+                                    </textarea>
+                                   
+                                    
                                   </div>
                                 <div class="progress progress-sm">
                                     <div class="progress-bar bg-info" style="width: 15%;"></div>

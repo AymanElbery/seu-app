@@ -10,9 +10,18 @@ import {UniversityWithdrawalComponent} from './university-withdrawal/university-
 import { MasterAcademicRequestsRoutingModule } from './master-academic-requests-routing.module';
 import {AddWithdrawalRequestComponent} from './university-withdrawal/diag/add-withdrawal-request/add-withdrawal-request.component';
 import {UniversityWithdrawalService} from './services/university-withdrawal.service';
+import {TermExecuseComponent} from './term-execuse/term-execuse.component';
+import {AddTermExecuseComponent} from './term-execuse/diag/add-term-execuse/add-term-execuse.component';
+import {TermExecuseService} from './services/term-execuse.service';
 @NgModule({
-  declarations: [AddWithdrawalRequestComponent,UniversityWithdrawalComponent],
-  entryComponents:[AddWithdrawalRequestComponent],
+  declarations: [AddWithdrawalRequestComponent
+    ,UniversityWithdrawalComponent
+    ,AddTermExecuseComponent
+    ,TermExecuseComponent
+  ],
+  entryComponents:[AddWithdrawalRequestComponent,
+    AddTermExecuseComponent
+  ],
   imports: [
     CommonModule,
     MasterAcademicRequestsRoutingModule,
@@ -24,6 +33,8 @@ import {UniversityWithdrawalService} from './services/university-withdrawal.serv
     BrowserAnimationsModule
 
   ],
-  providers:[UniversityWithdrawalService]
+  providers:[UniversityWithdrawalService,
+    TermExecuseService
+  ]
 })
 export class MasterAcademicRequestsModule { }
