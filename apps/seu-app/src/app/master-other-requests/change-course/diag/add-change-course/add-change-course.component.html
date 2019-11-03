@@ -46,7 +46,7 @@
                           </div>
                           <div class="col-md-12 col-sm-12">
                             <div class="state">
-                              <mat-checkbox #test>
+                              <mat-checkbox #outside name="course.outside "  [(ngModel)]="course.outside" >
                                   <h6>  هل حصلت على الشهادة بالخارج ؟  </h6>  
 
                               </mat-checkbox>
@@ -56,7 +56,7 @@
                                   <div class="progress-bar bg-info" style="width: 15%;"></div>
                               </div>
                       </div>  
-                          <div class="col-md-12 col-sm-12" *ngIf="test.checked">
+                          <div class="col-md-12 col-sm-12" *ngIf="outside.checked">
                             <div class="state">
                               <h6 > رفع الوثائق التي تثبت حصولك على الشهادة بالخارج </h6>
                               <div class="custom-file">

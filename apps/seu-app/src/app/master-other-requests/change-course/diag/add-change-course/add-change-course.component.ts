@@ -52,9 +52,17 @@ export class AddChangeCourseComponent implements OnInit {
 
   }
   onSubmit(form: NgForm) {
-this.addRequest(this.course);
-console.log(this.course);
-this.dialogRef.close();
+  if(this.course.outside.toString()=="true")
+  {
+    this.course.outside="1"
+  }
+  else
+  {
+    this.course.outside="0"
+  }
+ 
+    this.addRequest(this.course);
+    this.dialogRef.close();
 
   }
   
