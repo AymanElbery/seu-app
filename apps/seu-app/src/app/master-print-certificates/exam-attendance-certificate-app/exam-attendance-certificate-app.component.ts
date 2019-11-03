@@ -20,6 +20,11 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
   arabicPrintFinalWithoutSchedule: string;
   EngPrintFinalWithoutSchedule: string;
   isLoading = false;
+
+  finalScheduleMsgs;
+  finalMsgs;
+  termScheduleMsgs;
+  termMsgs;
   constructor(private printCertificate: ExamAttendanceCertificateAppService) { }
 
   ngOnInit() {
@@ -31,6 +36,11 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
         this.reqData = this.printCertificate.reqData;
         this.msgs = this.printCertificate.msgs;
         this.isLoading = false;
+
+        this.termScheduleMsgs = this.reqData.Term_Exam_With_Schedule.messages;
+        this.termMsgs = this.reqData.Term_Exam_Without_Schedule.messages;
+        this.finalScheduleMsgs = this.reqData.Final_Exam_With_Schedule.messages;
+        this.finalMsgs = this.reqData.Final_Exam_Without_Schedule.messages;
         console.log(this.reqData);
       });
 

@@ -24,6 +24,11 @@ export class ExamAttendanceCertificateComponent implements OnInit {
   isLoading = false;
   isFinal_Exam_Without_Schedule=false;
   isFinal_Exam_With_Schedule=false;
+
+  finalScheduleMsgs;
+  finalMsgs;
+  termScheduleMsgs;
+  termMsgs;
   constructor( private stdData:ExamAttendanceCertificateService) { }
 
   ngOnInit() {
@@ -35,6 +40,11 @@ export class ExamAttendanceCertificateComponent implements OnInit {
        this.reqData=this.stdData.reqData;
        this.msgs=this.stdData.msgs;
        this.isLoading=false;
+
+       this.termScheduleMsgs = this.reqData.Term_Exam_With_Schedule.messages;
+       this.termMsgs = this.reqData.Term_Exam_Without_Schedule.messages;
+       this.finalScheduleMsgs = this.reqData.Final_Exam_With_Schedule.messages;
+       this.finalMsgs = this.reqData.Final_Exam_Without_Schedule.messages;
       //  if(this.reqData.Final_Exam_Without_Schedule !=null)
       //  {
 

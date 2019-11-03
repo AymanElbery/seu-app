@@ -18,7 +18,10 @@ export class ExamsAttendAppComponent implements OnInit {
   termScheduleEn: string;
   termEn: string;
   isLoading = false;
-
+  finalScheduleMsgs;
+  finalMsgs;
+  termScheduleMsgs;
+  termMsgs;
 
   constructor(private academicService: ExamsAttendAppService) { }
 
@@ -29,6 +32,10 @@ export class ExamsAttendAppComponent implements OnInit {
       res => {
     this.eaData =    (res as any).data;
     this.isLoading=false;
+    this.termScheduleMsgs = this.eaData.Term_Exam_With_Schedule.messages;
+    this.termMsgs = this.eaData.Term_Exam_Without_Schedule.messages;
+    this.finalScheduleMsgs = this.eaData.Final_Exam_With_Schedule.messages;
+    this.finalMsgs = this.eaData.Final_Exam_Without_Schedule.messages;
       }
     );
     this.finalschedule =   this.academicService.Print_Final_Exam_With_Schedule();
