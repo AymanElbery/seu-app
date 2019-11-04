@@ -15,32 +15,35 @@ export class AddLecturesExecusesComponent implements OnInit {
 
   lectureExecuse: LectureExecuse;
   msgs: any;
-private imageSrc = '';
-reqData;
+  private imageSrc = '';
+  reqData;
+  weeksDatesList;
 
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddLecturesExecusesComponent>,
-               private toastr: ToastrService, private acadmicProc: LectureExecuseServiceService ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddLecturesExecusesComponent>,
+    private toastr: ToastrService, private acadmicProc: LectureExecuseServiceService) { }
 
   ngOnInit() {
-    this.lectureExecuse = {courses: [], attachment: '', reason: '', date: '', type: '', week: ''
+    this.lectureExecuse = {
+      courses: [], attachment: '', reason: '', date: '', type: '', week: ''
     };
-    this.reqData = this.acadmicProc.reqData  ;
+    this.reqData = this.acadmicProc.reqData;
     console.log(this.reqData);
 
   }
   changeStatus(it, e) {
     if (e.target.checked) {
-      this.lectureExecuse.courses.push({CRSE: it.CRN});
+      this.lectureExecuse.courses.push({ CRSE: it.CRN });
     } else {
-      for (let i = 0 ; i < this.lectureExecuse.courses.length; i++) {
+      for (let i = 0; i < this.lectureExecuse.courses.length; i++) {
         console.log(this.lectureExecuse.courses[i]);
         console.log(it.CRN);
         if (this.lectureExecuse.courses[i].CRSE === it.CRN) {
           this.lectureExecuse.courses.splice(i, 1);
         }
 
-      }    }
+      }
+    }
     console.log(this.lectureExecuse.courses);
 
   }
@@ -67,26 +70,39 @@ reqData;
     console.log(this.lectureExecuse.attachment);
   }
   addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-   this.msgs =   (res as any).messages;
-   this.msgs.forEach((element: any) => {
-    this.toastr.success('', element.body);
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.msgs = (res as any).messages;
+      this.msgs.forEach((element: any) => {
+        this.toastr.success('', element.body);
 
+      });
     });
-        });
 
 
 
   }
   onSubmit(form: NgForm) {
 
-this.addRequest(this.lectureExecuse);
-console.log(this.lectureExecuse);
-this.dialogRef.close();
+    this.addRequest(this.lectureExecuse);
+    console.log(this.lectureExecuse);
+    this.dialogRef.close();
 
   }
   closeDiag() {
     this.dialogRef.close();
+  }
+
+  weekChange() {
+
+    this.weeksDatesList = [];
+    this.lectureExecuse.date = '';
+
+    for (let item of this.reqData.weeks_list) {
+
+      if (item.id == this.lectureExecuse.week) {
+        this.weeksDatesList = item.week_dates;
+      }
+    }
   }
 
 

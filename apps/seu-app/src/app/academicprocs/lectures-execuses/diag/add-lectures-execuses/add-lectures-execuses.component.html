@@ -26,7 +26,7 @@
       <div class="form-group">
 
         <select name="week" #week="ngModel" [(ngModel)]="lectureExecuse.week" class="form-control"
-          [class.is-invalid]=" lectureExecuse.week==''">
+          [class.is-invalid]=" lectureExecuse.week==''" (change)="weekChange()">
           <option value="">الاسبوع </option>
           <option *ngFor="let item of reqData.weeks_list" value="{{item.id}}">{{item.value}}</option>
         </select>
@@ -48,11 +48,22 @@
           <option *ngFor="let item of reqData.lectures_type" value="{{item.id}}">{{item.value}}</option>
         </select>
       </div><br />
+
+      <div class="form-group">
+        <select name="date" #type="ngModel" [(ngModel)]="lectureExecuse.date" class="form-control"
+          [class.is-invalid]=" lectureExecuse.date==''">
+          <option value="">التاريخ </option>
+          <option *ngFor="let item of weeksDatesList" value="{{item}}">{{item}}</option>
+        </select>
+      </div><br />
+      <!--
       <div class="form-group" dir="rtl"> التاريخ :
+
         <input style="direction: rtl;" class="form-control" name="date" #date="ngModel"
           [(ngModel)]="lectureExecuse.date" type="date" style="direction: rtl;text-align:right">
       </div>
-      <br />
+    
+      <br />  -->
       <table style="text-align: center" class="table">
         <thead>
           <tr>

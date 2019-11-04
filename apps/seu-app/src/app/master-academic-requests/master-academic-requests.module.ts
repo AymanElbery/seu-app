@@ -20,8 +20,12 @@ import{ReEnrollComponent} from './re-enroll/re-enroll.component';
 import{AddReEnrollComponent} from './re-enroll/diag/add-re-enroll/add-re-enroll.component';
 import{ReEnrollService} from './services/re-enroll.service';
 import { ToastrModule } from 'ngx-toastr';
-import { HrMinuteDirective } from '../shared/directives/hr-minute.directive';
-import { TimerComponent } from '../shared/components/timer/timer.component';
+
+import { CancelCourseComponent } from './cancel-course/cancel-course.component';
+import { AddChangeCourseComponent } from '../master-other-requests/change-course/diag/add-change-course/add-change-course.component';
+import { AddCancelCourseRequestComponent } from './cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component';
+import { AcademicprocsModule } from '../academicprocs/academicprocs.module';
+
 
 @NgModule({
   declarations: [AddWithdrawalRequestComponent
@@ -31,14 +35,16 @@ import { TimerComponent } from '../shared/components/timer/timer.component';
     ,StudyPostponeComponent,
     AddStudyPostponeComponent,
     ReEnrollComponent,
-    //  HrMinuteDirective,
-    //  TimerComponent,
+
     AddReEnrollComponent,
+    CancelCourseComponent,
+    AddCancelCourseRequestComponent
   ],
   entryComponents:[AddWithdrawalRequestComponent,
     AddTermExecuseComponent,
     AddStudyPostponeComponent,
     AddReEnrollComponent,
+    AddCancelCourseRequestComponent
   ],
   imports: [
     CommonModule,
@@ -49,6 +55,8 @@ import { TimerComponent } from '../shared/components/timer/timer.component';
     FormsModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    AcademicprocsModule,
+
     ToastrModule.forRoot(),
 
   ],
