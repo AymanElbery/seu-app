@@ -13,14 +13,32 @@ import {UniversityWithdrawalService} from './services/university-withdrawal.serv
 import {TermExecuseComponent} from './term-execuse/term-execuse.component';
 import {AddTermExecuseComponent} from './term-execuse/diag/add-term-execuse/add-term-execuse.component';
 import {TermExecuseService} from './services/term-execuse.service';
+import {StudyPostponeComponent} from './study-postpone/study-postpone.component';
+import {StudyPostponeService} from './services/study-postpone.service';
+import{AddStudyPostponeComponent} from './study-postpone/diag/add-study-postpone/add-study-postpone.component';
+import{ReEnrollComponent} from './re-enroll/re-enroll.component';
+import{AddReEnrollComponent} from './re-enroll/diag/add-re-enroll/add-re-enroll.component';
+import{ReEnrollService} from './services/re-enroll.service';
+import { ToastrModule } from 'ngx-toastr';
+import { HrMinuteDirective } from '../shared/directives/hr-minute.directive';
+import { TimerComponent } from '../shared/components/timer/timer.component';
+
 @NgModule({
   declarations: [AddWithdrawalRequestComponent
     ,UniversityWithdrawalComponent
     ,AddTermExecuseComponent
     ,TermExecuseComponent
+    ,StudyPostponeComponent,
+    AddStudyPostponeComponent,
+    ReEnrollComponent,
+    //  HrMinuteDirective,
+    //  TimerComponent,
+    AddReEnrollComponent,
   ],
   entryComponents:[AddWithdrawalRequestComponent,
-    AddTermExecuseComponent
+    AddTermExecuseComponent,
+    AddStudyPostponeComponent,
+    AddReEnrollComponent,
   ],
   imports: [
     CommonModule,
@@ -30,11 +48,12 @@ import {TermExecuseService} from './services/term-execuse.service';
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
 
   ],
   providers:[UniversityWithdrawalService,
-    TermExecuseService
+    TermExecuseService,StudyPostponeService,ReEnrollService,
   ]
 })
 export class MasterAcademicRequestsModule { }

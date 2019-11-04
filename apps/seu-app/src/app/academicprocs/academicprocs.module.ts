@@ -13,7 +13,6 @@ import { WithdrawFromUnivComponent } from './withdraw-from-univ/withdraw-from-un
 import { WithdrawFromUnivService } from './services/withdraw-from-univ.service';
 import { FormsModule } from '@angular/forms';
 import { AddRequestComponent } from './withdraw-from-univ/diag/add-request/add-request.component';
-
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ToastrModule } from 'ngx-toastr';
