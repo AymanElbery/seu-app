@@ -62,6 +62,7 @@ import {MissingUnivCardService} from '../other-affair/services/missing-univ-card
 import { from } from 'rxjs';
 import {AbsenceQueryComponent} from './absence-query/absence-query.component';
 import {LectureAbsQueryService} from './services/lecture-abs-query.service';
+import { TimerModule } from '../shared/components/timer/timer.module';
 @NgModule({
   declarations: [PostponeRequestComponent
     , ExecuseRequestComponent,
@@ -73,8 +74,6 @@ import {LectureAbsQueryService} from './services/lecture-abs-query.service';
        WithdrawFromUnivComponent,
        AddRequestComponent,
         AddPostponeComponent,
-         HrMinuteDirective,
-         TimerComponent,
          AddSummerWithdrawComponent,
            AddCourseCancelComponent,
            AddExecuseTermComponent,
@@ -139,7 +138,8 @@ import {LectureAbsQueryService} from './services/lecture-abs-query.service';
     MatDatepickerModule,
      MatNativeDateModule,
      MatProgressSpinnerModule,
-    ToastrModule.forRoot() // ToastrModule added
+    ToastrModule.forRoot(),
+    TimerModule
   ],
   providers: [WithdrawFromUnivService,
      TermPostponeService,

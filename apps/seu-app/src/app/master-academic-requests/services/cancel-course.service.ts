@@ -16,10 +16,10 @@ export class CancelCourseService {
     return this.httRequest.GetRequest('course_cancel').toPromise();
   }
   AddRequest(data) {
-    return this.httRequest.postRequest('course_cancel/insert', data).toPromise();
+    return this.httRequest.postRequest('Course_cancel_service/insert', data).toPromise();
 }
   deleteReq(id) {
-    return this.httRequest.GetRequest('course_cancel/remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('Course_cancel_service/remove/' + id ).toPromise();
 
   }
 }
