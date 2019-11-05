@@ -16,6 +16,7 @@ export class AddCancelCourseRequestComponent implements OnInit {
   cancelCousre: CancelCousreMaster;
   reqData: any;
   msgs: any;
+  approve:boolean;
   private imageSrc = '';
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddCancelCourseRequestComponent>,
@@ -25,6 +26,9 @@ export class AddCancelCourseRequestComponent implements OnInit {
     this.cancelCousre = { course_number: 0, agreement: 1 };
 
     this.reqData = this.acadmicProc.reqData;
+
+    this.approve=false;
+   //console.log(this.reqData.notes);
   }
 
   changeStatus(id, e, i) {
