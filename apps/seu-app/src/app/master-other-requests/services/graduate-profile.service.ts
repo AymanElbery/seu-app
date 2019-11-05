@@ -12,4 +12,13 @@ export class GraduateProfileService {
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
     this.configService.baseUrl = "stdsUnivapi";
   }
+  getRequest() {
+    
+    return this.httRequest.GetRequest('grade_info_service').toPromise();
+  }
+
+  deleteReq(id) {
+    return this.httRequest.GetRequest('grade_info_service/remove/' + id ).toPromise();
+
+  }
 }
