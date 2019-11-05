@@ -35,6 +35,8 @@ export class AddChangeCourseComponent implements OnInit {
 
 
 
+
+
   }
     );
   }
@@ -83,6 +85,25 @@ export class AddChangeCourseComponent implements OnInit {
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.course.bacholar_copy = reader.result;
+
+  }
+
+  
+  handleacadinputChange(i) {
+    const file = i.dataTransfer ? i.dataTransfer.files[0] : i.target.files[0];
+    const pattern = /pdf-*/;
+    const reder = new FileReader();
+    /* if (!file.type.match(pattern)) {
+      alert('invalid format');
+      return;
+    }
+     */
+    reder.onload = this._handleReaderLoaded.bind(this);
+    reder.readAsDataURL(file);
+  }
+  _handleRederLoaded(i) {
+    const reder = i.target;
+    this.course.academic_record = reder.result;
 
   }
 

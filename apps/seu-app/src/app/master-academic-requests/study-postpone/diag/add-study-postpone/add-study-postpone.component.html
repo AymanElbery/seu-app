@@ -8,26 +8,30 @@
       </div>
       <div class="modal-body">
           <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
+              <h6 style="text-align: center">تنبيه:يسمح للطالب بالغاء الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.</h6> 
+               <br>
+               <h6 style="color: black ; font-size: 12px" class="modal-title">أرغب فى تأجيل الدراسة اعتبارا من {{reqData.cur_term}}</h6>                                           
               <div class="main-content" style="padding-top:0;">
               <section  class="ser-state">
                   <div class="container">
-                       <div class="row ser-block">
-                        <div class="col-md-12 col-sm-12">
-                          <div class="state">
-                              <h6>  مدة التأجيل (بالفصول)  </h6>
-                              <select name="num_terms" #num_terms="ngModel" [(ngModel)]="studypostpone.num_terms" class="form-control" 
-                              [class.is-invalid]="studypostpone.num_terms==''">
-                                <option *ngFor="let item of reqData.data" value="{{item.key}}">{{item.cur_term}}</option>
-                              </select>                              
-                           </div>
-                           <div class="progress progress-sm">
-                            <div class="progress-bar bg-info" style="width: 15%;"></div>
-                        </div>
-                      </div>
+                       <div class="row ser-block"> 
+                            <div class="col-md-12 col-sm-12">
+                              <div class="state">                               
+                                <h6> مدة التأجيل (بالفصول) </h6>
+                                  <select name="num_terms" #num_terms="ngModel" [(ngModel)]="postpone.num_terms" class="form-control" 
+                                  [class.is-invalid]="postpone.num_terms==''">                                
+                                    <option *ngFor="let item of reqData.terms" value="{{item.id}}">{{item.value}}</option>
+                                  </select>                              
+                               </div>
+                               <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                          </div>
+
                       <div class="col-md-12 col-sm-12">
                         <div class="state">
                           <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>                               
-                          <input name="mobile" #mobile="ngModel" [(ngModel)]="studypostpone.mobile" class="form-control" >
+                          <input name="mobile" #mobile="ngModel" [(ngModel)]="postpone.mobile" class="form-control" >
                         </div>
                           <div class="progress progress-sm">
                               <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -36,15 +40,14 @@
                           <div class="col-md-12 col-sm-12">
                                 <div class="state">
                                    <h6> سبب التحويل </h6>
-                                   <textarea name="reason" #reason="ngModel" [(ngModel)]="studypostpone.reason" class="form-control" >
+                                   <textarea name="reason" #reason="ngModel" [(ngModel)]="postpone.reason" class="form-control" >
                                      </textarea>
                                     </div>
                                      <div class="progress progress-sm">
                                       <div class="progress-bar bg-info" style="width: 15%;"></div>
                                   </div>
                         </div>
-                        
-                         
+
                                   <div class="progress progress-sm">
                                       <div class="progress-bar bg-info" style="width: 15%;"></div>
                                   </div>
