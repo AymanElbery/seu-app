@@ -46,8 +46,18 @@
                           </div>
                           <div class="col-md-12 col-sm-12">
                             <div class="state">
+                               <h6>  السجل الأكاديمي </h6>
+                               <textarea name="academic_record" #academic_record="ngModel" [(ngModel)]="course.academic_record" class="form-control" >
+                                 </textarea>
+                                 <div class="progress progress-sm">
+                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                              </div>
+                            </div>
+                      </div>
+                          <div class="col-md-12 col-sm-12">
+                            <div class="state">
                               <mat-checkbox #outside name="course.outside "  [(ngModel)]="course.outside" >
-                                  <h6>  هل حصلت على الشهادة بالخارج ؟  </h6>  
+                                  <h6>  هل حصلت على البكالوريس من خارج المملكة ؟  </h6>  
 
                               </mat-checkbox>
                                                            
@@ -58,7 +68,7 @@
                       </div>  
                           <div class="col-md-12 col-sm-12" *ngIf="outside.checked">
                             <div class="state">
-                              <h6 > رفع الوثائق التي تثبت حصولك على الشهادة بالخارج </h6>
+                              <h6 >  معادة شهادة البكالوريس للوثائق من خارج المملكة</h6>
                               <div class="custom-file">
                                   <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChange($event)" />
                                   <label  for="attachment"  class="custom-file-label ">

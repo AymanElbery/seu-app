@@ -25,7 +25,7 @@ export class AddChangeCourseComponent implements OnInit {
                private toastr: ToastrService,  private acadmicProc: ChangeCourseService) { }
 
   ngOnInit() {
-    this.course = {major: '', mobile: '',reason:'',outside:'',bacholar_copy:''};
+    this.course = {major: '', mobile: '',reason:'',outside:'',bacholar_copy:'',academic_record:''};
     this.acadmicProc.getRequests().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;
@@ -63,9 +63,11 @@ export class AddChangeCourseComponent implements OnInit {
  
     this.addRequest(this.course);
     this.dialogRef.close();
+    console.log(this.course);
 
   }
   
+
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const pattern = /pdf-*/;

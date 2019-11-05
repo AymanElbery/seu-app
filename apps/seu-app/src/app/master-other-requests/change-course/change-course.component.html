@@ -60,11 +60,10 @@
 
           <tr>
             <th scope="col">رقم الطلب</th>
-
+            <th scope="col"> التخصص </th>
+            <th scope="col">حالة الطلب</th>
             <th scope="col">تاريخ الطلب</th>
-            <th scope="col"> التخصص الحالي</th>
-            <th scope="col"> التخصص المطلوب</th>
-
+            <th scope="col">  تاريخ الموافقة </th>
             <th scope="col"> حذف الطلب </th>
 
           </tr>
@@ -72,15 +71,19 @@
         <tbody>
      <tr *ngFor="let it of reqData.reqs;let i=index;">
             <td>{{it.request_number}}</td>
-
-
+            <td>{{it.MAJOR_TITLE}}</td>
+            <td>{{it.status}}</td>
             <td>{{it.insert_date}}</td>
-            <td>{{it.CURR_PROG}}</td>
-            <td>{{it.REQ_PROG}}</td>
+            <td>{{it.APPROVAL_DATE}}</td>
 
 
-            <td><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
-                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
+            <td *ngIf='it.deletable'><button
+              [disabled]='!it.deletable' class="btn btn-sm btn-danger"
+              style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
+                 <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
+              </i> </button></td>
+
+          <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
 
           </tr> 
 
