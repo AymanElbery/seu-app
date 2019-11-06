@@ -1,11 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { LectureExecuse } from 'src/app/shared/models/lecture-execuse';
-import { LectureExecuseServiceService } from 'src/app/academicprocs/services/lecture-execuse-service.service';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr';
-import { CourseEqual } from 'src/app/shared/models/course-equal';
 import { NgForm } from '@angular/forms';
-
+import { LectureExecuse } from 'src/app/shared/models/lecture-execuse';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { ToastrService } from 'ngx-toastr';
+import {LecturesExecusesService} from '../../../services/lectures-execuses.service';
 @Component({
   selector: 'app-add-lectures-execuses',
   templateUrl: './add-lectures-execuses.component.html',
@@ -20,7 +18,7 @@ reqData;
 
   constructor( @Inject(MAT_DIALOG_DATA) public data,
                public dialogRef: MatDialogRef<AddLecturesExecusesComponent>,
-               private toastr: ToastrService, private acadmicProc: LectureExecuseServiceService ) { }
+               private toastr: ToastrService, private acadmicProc: LecturesExecusesService ) { }
 
   ngOnInit() {
     this.lectureExecuse = {courses: [], attachment: '', reason: '', date: '', type: '', week: ''
@@ -88,6 +86,7 @@ this.dialogRef.close();
   closeDiag() {
     this.dialogRef.close();
   }
+
 
 
 }

@@ -70,14 +70,7 @@
     </nav>
     <div class="tab-content" id="myTabContent" *ngIf="!isLoading">
       <div class="tab-pane fade show active mt-10" id="one">
-          <div class="ser-state" *ngIf="!isLoading && termScheduleMsgs.length>0">
-              <div *ngFor="let msg of termScheduleMsgs"
-                [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
-                role="alert">
-                {{msg.body}}!
-              </div>
-            </div>
-        <div class="widget" *ngIf="termScheduleMsgs.length == 0">
+        <div class="widget">
           <div class="widget-header" style="padding: 5px 0">
             <h4 class="widget-title" style="font-size:14px;">شهادة حضور الاختبارات</h4>
           </div>
@@ -102,7 +95,7 @@
           </div>
 
         </div>
-        <div class="widget" *ngIf="termScheduleMsgs.length == 0">
+        <div class="widget">
           <div class="widget-header" style="padding: 5px 0">
             <h3 class="widget-title" style="font-size:14px;">جدول الاختبارات </h3>
           </div>
@@ -157,7 +150,7 @@
 
 
         </div>
-        <div class="jumbotron jumbtron-fluid" *ngIf="termScheduleMsgs.length == 0">
+        <div class="jumbotron jumbtron-fluid">
 
           <p class="card-text" style="text-align: right">
             {{reqData.Term_Exam_With_Schedule.labels.txt8}} <br /> {{reqData.Term_Exam_With_Schedule.labels.txt9}}
@@ -170,7 +163,7 @@
           </p>
         </div>
 
-        <div class="btn-group btn-group-justified col-md-12" *ngIf="termScheduleMsgs.length == 0">
+        <div class="btn-group btn-group-justified col-md-12 ">
           <div class="col-md-4"></div>
           <div class="row">
             <div style="padding: 5px;">
@@ -190,14 +183,7 @@
         </div>
       </div>
       <div class="tab-pane fade p-3 mt-10" id="two" role="tabpanel" aria-labelledby="two-tab">
-          <div class="ser-state" *ngIf="!isLoading && termMsgs.length>0">
-              <div *ngFor="let msg of termMsgs"
-                [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
-                role="alert">
-                {{msg.body}}!
-              </div>
-            </div>
-        <div class="widget" *ngIf="termMsgs == 0">
+        <div class="widget">
           <div class="widget-header" style="padding: 5px 0">
             <h4 class="widget-title" style="font-size:14px;">شهادة حضور الاختبارات</h4>
           </div>
@@ -223,7 +209,7 @@
           </div>
 
         </div>
-        <div class="jumbotron jumbtron-fluid" *ngIf="termMsgs == 0">
+        <div class="jumbotron jumbtron-fluid">
 
           <p class="card-text" style="text-align: right">
             {{reqData.Term_Exam_Without_Schedule.labels.txt8}} <br /> {{reqData.Term_Exam_Without_Schedule.labels.txt9}}
@@ -235,7 +221,7 @@
 
           </p>
         </div>
-        <div class="btn-group btn-group-justified col-md-12 " *ngIf="termMsgs == 0">
+        <div class="btn-group btn-group-justified col-md-12 ">
           <div class="col-md-4"></div>
           <div class="row">
             <div style="padding: 5px;">
@@ -257,14 +243,7 @@
 
       </div>
       <div class="tab-pane fade p-3 mt-10" id="three" role="tabpanel" aria-labelledby="three-tab">
-          <div class="ser-state" *ngIf="!isLoading && finalScheduleMsgs.length>0">
-              <div *ngFor="let msg of finalScheduleMsgs"
-                [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
-                role="alert">
-                {{msg.body}}!
-              </div>
-            </div>
-        <div class="widget"  *ngIf="finalScheduleMsgs == 0">
+        <div class="widget">
           <div class="widget-header" style="padding: 5px 0">
             <h4 class="widget-title" style="font-size:14px;">شهادة حضور الاختبارات</h4>
           </div>
@@ -289,7 +268,7 @@
           </div>
 
         </div>
-        <div class="widget"  *ngIf="finalScheduleMsgs == 0">
+        <div class="widget">
           <div class="widget-header" style="padding: 5px 0">
             <h3 class="widget-title" style="font-size:14px;">جدول الاختبارات </h3>
           </div>
@@ -321,7 +300,7 @@
 
 
         </div>
-        <div class="jumbotron jumbtron-fluid"  *ngIf="finalScheduleMsgs == 0">
+        <div class="jumbotron jumbtron-fluid">
 
           <p class="card-text" style="text-align: right">
             {{reqData.Final_Exam_With_Schedule.labels.txt8}} <br /> {{reqData.Final_Exam_With_Schedule.labels.txt9}}
@@ -334,7 +313,7 @@
           </p>
         </div>
 
-        <div class="btn-group btn-group-justified col-md-12 "  *ngIf="finalScheduleMsgs == 0">
+        <div class="btn-group btn-group-justified col-md-12 ">
           <div class="col-md-4"></div>
           <div class="row">
             <div style="padding: 5px;">
@@ -354,14 +333,7 @@
         </div>
       </div>
       <div class="tab-pane fade p-3 mt-10" id="four" role="tabpanel" aria-labelledby="four-tab">
-          <div class="ser-state" *ngIf="!isLoading && finalMsgs.length>0">
-              <div *ngFor="let msg of finalMsgs"
-                [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
-                role="alert">
-                {{msg.body}}!
-              </div>
-            </div>
-        <div class="widget" *ngIf="finalMsgs==0">
+        <div class="widget">
           <div class="widget-header" style="padding: 5px 0">
             <h4 class="widget-title" style="font-size:14px;">شهادة حضور الاختبارات</h4>
           </div>
@@ -388,7 +360,7 @@
           </div>
 
         </div>
-        <div class="jumbotron jumbtron-fluid" *ngIf="finalMsgs==0">
+        <div class="jumbotron jumbtron-fluid">
 
           <p class="card-text" style="text-align: right">
             {{reqData.Final_Exam_Without_Schedule.labels.txt8}} <br />
@@ -401,7 +373,7 @@
 
           </p>
         </div>
-        <div class="btn-group btn-group-justified col-md-12 " *ngIf="finalMsgs==0">
+        <div class="btn-group btn-group-justified col-md-12 ">
           <div class="col-md-4"></div>
           <div class="row">
             <div style="padding: 5px;">

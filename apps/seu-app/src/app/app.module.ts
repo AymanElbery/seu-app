@@ -36,6 +36,7 @@ import { MasterFinanceAffairModule } from './master-finance-affair/master-financ
 import { MasterOtherRequestsModule } from './master-other-requests/master-other-requests.module';
 import { MasterPrintCertificatesModule } from './master-print-certificates/master-print-certificates.module';
 import { MasterStudentDataModule } from './master-student-data/master-student-data.module';
+import { TimerModule } from './shared/components/timer/timer.module';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { MasterStudentDataModule } from './master-student-data/master-student-da
     FooterComponent,
     MenuComponent,
     PageHeaderComponent
-
+    
   ],
   imports: [
     BrowserModule,
@@ -70,7 +71,7 @@ import { MasterStudentDataModule } from './master-student-data/master-student-da
     , MasterOtherRequestsModule
     , MasterPrintCertificatesModule
     , MasterStudentDataModule
-    ,RegisterCoursesModule
+    ,TimerModule
     
 
   ],

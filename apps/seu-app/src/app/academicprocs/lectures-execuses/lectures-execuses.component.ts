@@ -75,6 +75,4 @@ return    this.acadmicProc.Download(req);
 
 }
 
-
-
 }
