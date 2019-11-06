@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { AddCancelCourseRequestComponent } from './diag/add-cancel-course-request/add-cancel-course-request.component';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
-import { CancelCourseService } from 'src/app/academicprocs/services/cancel-course.service';
+import { CancelCourseService } from '../services/cancel-course.service';
 import { courseCancel } from 'src/app/shared/models/course-cancel';
 
 @Component({
@@ -25,14 +25,14 @@ export class CancelCourseComponent implements OnInit {
   ngOnInit() {
     this.isLoading=true;
     this.cancelCousre = {course_number:'', agreement: ''};
-    this.acadmicProc.getِgetRequests().then(
+    this.acadmicProc.getRequest().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
     this.isLoading=false;
-    // console.log(this.reqData.requests);
+     console.log(this.reqData.requests);
       }
     );
   }

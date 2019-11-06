@@ -14,25 +14,6 @@
               <div class="main-content" style="padding-top:0;">
               <section  class="ser-state">
                   <div class="container">
-<<<<<<< HEAD
-                       <div class="row ser-block">
-                        <div class="col-md-12 col-sm-12">
-                          <div class="state">
-                              <h6>  مدة التأجيل (بالفصول)  </h6>
-                              <select name="num_terms" #num_terms="ngModel" [(ngModel)]="postpone.num_terms" class="form-control" 
-                              [class.is-invalid]="postpone.num_terms==''">
-                                <option *ngFor="let item of reqData.camps" value="{{item.key}}">{{item.value}}</option>
-                              </select>                              
-                           </div>
-                           <div class="progress progress-sm">
-                            <div class="progress-bar bg-info" style="width: 15%;"></div>
-                        </div>
-                      </div>
-                      <div class="col-md-12 col-sm-12">
-                        <div class="state">
-                          <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>                               
-                          <input name="mobile" #mobile="ngModel" [(ngModel)]="branch.mobile" class="form-control" >
-=======
                        <div class="row ser-block"> 
                             <div class="col-md-12 col-sm-12">
                               <div class="state">                               
@@ -51,7 +32,6 @@
                         <div class="state">
                           <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>                               
                           <input name="mobile" #mobile="ngModel" [(ngModel)]="postpone.mobile" class="form-control" >
->>>>>>> ae4aec55228952faa71c2f3b82ef78ff0020417d
                         </div>
                           <div class="progress progress-sm">
                               <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -60,11 +40,7 @@
                           <div class="col-md-12 col-sm-12">
                                 <div class="state">
                                    <h6> سبب التحويل </h6>
-<<<<<<< HEAD
-                                   <textarea name="reason" #reason="ngModel" [(ngModel)]="branch.reason" class="form-control" >
-=======
                                    <textarea name="reason" #reason="ngModel" [(ngModel)]="postpone.reason" class="form-control" >
->>>>>>> ae4aec55228952faa71c2f3b82ef78ff0020417d
                                      </textarea>
                                     </div>
                                      <div class="progress progress-sm">
@@ -90,6 +66,10 @@
   
          
         </form>
+        </div>
+        </div>
+        </div>
+   </mat-dialog-content>
   
 
 

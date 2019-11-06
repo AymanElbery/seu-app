@@ -20,6 +20,12 @@ import { ToastrModule } from 'ngx-toastr';
 import { TimerComponent } from '../shared/components/timer/timer.component';
 import { HrMinuteDirective } from '../shared/directives/hr-minute.directive';
 import { TimerModule } from '../shared/components/timer/timer.module';
+import {ExamsExecusesComponent} from './exams-execuses/exams-execuses.component';
+import {AddExamExecuseComponent} from './exams-execuses/diag/add-exam-execuse/add-exam-execuse.component';
+import {ExamsExecusesService} from './services/exams-execuses.service';
+import {LecturesExecusesComponent} from './lectures-execuses/lectures-execuses.component';
+import {AddLecturesExecusesComponent} from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
+import {LecturesExecusesService} from './services/lectures-execuses.service';
 
 @NgModule({
   declarations: [AddWithdrawalRequestComponent
@@ -28,11 +34,18 @@ import { TimerModule } from '../shared/components/timer/timer.module';
     ,TermExecuseComponent
     ,AddCancelCourseRequestComponent
     ,CancelCourseComponent
+    ,AddExamExecuseComponent
+    ,ExamsExecusesComponent
+    ,AddLecturesExecusesComponent
+    ,LecturesExecusesComponent
+
    
   ],
   entryComponents:[AddWithdrawalRequestComponent,
     AddTermExecuseComponent,
-    AddCancelCourseRequestComponent
+    AddCancelCourseRequestComponent,
+    AddExamExecuseComponent,
+    AddLecturesExecusesComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +63,9 @@ import { TimerModule } from '../shared/components/timer/timer.module';
   ],
   providers:[UniversityWithdrawalService,
     TermExecuseService,
-    CancelCourseService
+    CancelCourseService,
+    ExamsExecusesService,
+    LecturesExecusesService
   ]
 })
 export class MasterAcademicRequestsModule { }

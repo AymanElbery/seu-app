@@ -1,24 +1,25 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr';
 import { examExcuse } from 'src/app/shared/models/exam_excuse';
-import {ExamExcuseService} from '../../../services/exam-excuse.service';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { ToastrService } from 'ngx-toastr';
+import {ExamsExecusesService} from '../../../services/exams-execuses.service';
+
 @Component({
-  selector: 'app-add-exam-excuse',
-  templateUrl: './add-exam-excuse.component.html',
-  styleUrls: ['./add-exam-excuse.component.css']
+  selector: 'app-add-exam-execuse',
+  templateUrl: './add-exam-execuse.component.html',
+  styleUrls: ['./add-exam-execuse.component.css']
 })
-export class AddExamExcuseComponent implements OnInit {
+export class AddExamExecuseComponent implements OnInit {
 
   examExcuse: examExcuse;
   reqData;
-  msgs: any;
+msgs: any;
 
 
   constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddExamExcuseComponent>,
-               private toastr: ToastrService, private acadmicProc: ExamExcuseService ) { }
+               public dialogRef: MatDialogRef<AddExamExecuseComponent>,
+               private toastr: ToastrService, private acadmicProc: ExamsExecusesService ) { }
 
   ngOnInit() {
     this.examExcuse = {courses:[], reason: '', type:'',attachment:''};
@@ -76,3 +77,4 @@ this.dialogRef.close();
 
 
 }
+
