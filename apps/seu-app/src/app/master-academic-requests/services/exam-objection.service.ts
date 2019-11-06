@@ -6,8 +6,25 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class ExamObjectionService {
+reqData;
+msgs;
+  
+constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+  this.configService.baseUrl = 'stdsUnivapi';
+      }
 
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-    this.configService.baseUrl = 'stdsUnivapi';
-  }
+getRequests() {
+ return this.httRequest.GetRequest('exam_objections_service').toPromise();
+}
+// getgetRequests() {
+
+//   return this.httRequest.GetRequest('exam_objections_service').toPromise();
+//  }
+AddRequest(data) {
+    return this.httRequest.postRequest('exam_objections_service/insert?', data).toPromise();
+}
+deleteReq(id) {
+  return this.httRequest.GetRequest('exam_objections_service/remove/' + id).toPromise();
+
+}
 }

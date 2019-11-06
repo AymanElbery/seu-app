@@ -21,7 +21,8 @@ export class AddReEnrollComponent implements OnInit {
                private toastr: ToastrService,  private acadmicProc: ReEnrollService) { }
 
   ngOnInit() {
-    this.reEnroll = {proof: '', reason: '', has_proof: '1'};
+   
+    this.reEnroll = {proof: '', reason: '', has_proof: ''};
     this.acadmicProc.getِgetRequests().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;
@@ -42,56 +43,115 @@ export class AddReEnrollComponent implements OnInit {
       this.acadmicProc.msgs = (res as any).messages;
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
-
+         
         });
     });
 
   }
   onSubmit(form: NgForm) {
-this.addRequest(this.reEnroll);
-console.log(this.reEnroll);
-this.dialogRef.close();
-
-  }
-  handleInputChange(e) {
-    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-    const pattern = /image-*/;
-    const reader = new FileReader();
-    /* if (!file.type.match(pattern)) {
-      alert('invalid format');
-      return;
+    if(this.reEnroll.has_proof.toString()=="true")
+    {
+      this.reEnroll.has_proof="1"
     }
-     */
-    reader.onload = this._handleReaderLoaded.bind(this);
-    reader.readAsDataURL(file);
+    else
+    {
+      this.reEnroll.has_proof="0"
+    }
+   
+      this.addRequest(this.reEnroll);
+      this.dialogRef.close();
+      console.log(this.reEnroll);
+  
+    }
+    
+  
+    handleInputChange(e) {
+      const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+      const pattern = /pdf-*/;
+      const reader = new FileReader();
+      /* if (!file.type.match(pattern)) {
+        alert('invalid format');
+        return;
+      }
+       */
+      reader.onload = this._handleReaderLoaded.bind(this);
+      reader.readAsDataURL(file);
+    }
+    _handleReaderLoaded(e) {
+      const reader = e.target;
+      this.reEnroll.has_proof = reader.result;
+  
+    }
+
+    print(req) {
+    return    this.acadmicProc.Download(req);
+    }  
+ 
+    delete(id, index) {
+      if ( confirm('هل انت متأكد')) {
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.success('', (res as any).messages.body);
+  
+      });
+      this.acadmicProc.reqData.reqs.splice(index, 1);
+  
+    }
+  
   }
-  _handleReaderLoaded(e) {
-    const reader = e.target;
-    this.reEnroll.proof = reader.result;
-    console.log(this.reEnroll.proof);
+  call(hr) {
+  return  Math.floor(Math.random() * 10) + hr ;
+  
   }
-
-  print(req) {
-return    this.acadmicProc.Download(req);
-
+  closeDiag() {
+    this.dialogRef.close();
   }
-  delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
-
-    });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
-
-  }
-
 }
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
+//   }
+//   onSubmit(form: NgForm) {
+// this.addRequest(this.reEnroll);
+// // alert(this.reEnroll.reason +""+this.reEnroll.has_proof);
+// this.dialogRef.close();
 
-}
-closeDiag() {
+//   }
+//   handleInputChange(e) {
+//     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+//     const pattern = /image-*/;
+//     const reader = new FileReader();
+//     /* if (!file.type.match(pattern)) {
+//       alert('invalid format');
+//       return;
+//     }
+//      */
+//     reader.onload = this._handleReaderLoaded.bind(this);
+//     reader.readAsDataURL(file);
+//   }
+//   _handleReaderLoaded(e) {
+//     const reader = e.target;
+//     this.reEnroll.proof = reader.result;
 
-  this.dialogRef.close();
-}
-}
+//   }
+
+//   print(req) {
+// return    this.acadmicProc.Download(req);
+
+//   }
+//   delete(id, index) {
+//     if ( confirm('هل انت متأكد')) {
+//     this.acadmicProc.deleteReq(id).then(res => {
+//       this.toastr.success('', (res as any).messages.body);
+
+//     });
+//     this.acadmicProc.reqData.reqs.splice(index, 1);
+
+//   }
+
+// }
+// call(hr) {
+// return  Math.floor(Math.random() * 10) + hr ;
+
+// }
+// closeDiag() {
+
+//   this.dialogRef.close();
+// }
+// }

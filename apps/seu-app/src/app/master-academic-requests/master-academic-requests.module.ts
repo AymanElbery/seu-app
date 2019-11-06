@@ -25,8 +25,10 @@ import { CancelCourseComponent } from './cancel-course/cancel-course.component';
 import { AddChangeCourseComponent } from '../master-other-requests/change-course/diag/add-change-course/add-change-course.component';
 import { AddCancelCourseRequestComponent } from './cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component';
 import { AcademicprocsModule } from '../academicprocs/academicprocs.module';
-
-
+import{ExamObjectionComponent} from './exam-objection/exam-objection.component';
+import{AddObjectExamComponent} from './exam-objection/diag/add-object-exam/add-object-exam.component';
+import { from } from 'rxjs';
+import { MatCheckboxModule } from '@angular/material';
 @NgModule({
   declarations: [AddWithdrawalRequestComponent
     ,UniversityWithdrawalComponent
@@ -35,16 +37,19 @@ import { AcademicprocsModule } from '../academicprocs/academicprocs.module';
     ,StudyPostponeComponent,
     AddStudyPostponeComponent,
     ReEnrollComponent,
-
-    AddReEnrollComponent,
+  AddReEnrollComponent,
     CancelCourseComponent,
-    AddCancelCourseRequestComponent
+    AddCancelCourseRequestComponent,
+    ExamObjectionComponent,
+    AddObjectExamComponent,
   ],
   entryComponents:[AddWithdrawalRequestComponent,
     AddTermExecuseComponent,
     AddStudyPostponeComponent,
     AddReEnrollComponent,
     AddCancelCourseRequestComponent
+    ,AddObjectExamComponent,
+
   ],
   imports: [
     CommonModule,
@@ -56,6 +61,8 @@ import { AcademicprocsModule } from '../academicprocs/academicprocs.module';
     MatDialogModule,
     BrowserAnimationsModule,
     AcademicprocsModule,
+    MatCheckboxModule,
+
 
     ToastrModule.forRoot(),
 

@@ -26,7 +26,7 @@ export class ReEnrollComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading=true;
-    this.reEnroll = {proof: '', reason: '', has_proof: '1'};
+    this.reEnroll = {proof: '', reason: '', has_proof: ''};
     this.acadmicProc.getِgetRequests().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;
