@@ -25,7 +25,7 @@ export class ChangeCourseComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading = true;
-    this.changecourse = {major: '', mobile: '',reason:'',outside:'',bacholar_copy:''};
+    this.changecourse = {major: '', mobile: '',reason:'',outside:'',bacholar_copy:'',academic_record:''};
     this.acadmicProc.getRequests().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;

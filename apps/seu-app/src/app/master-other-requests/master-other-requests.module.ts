@@ -22,13 +22,14 @@ import { PersonalIDComponent } from './personal-id/personal-id.component';
 import { AddPersonalIdComponent } from './personal-id/diag/add-personal-id/add-personal-id.component';
 import { PersonalIDService } from './services/personal-id.service';
 import { ToastrModule } from 'ngx-toastr';
+import { GraduateProfileComponent } from './graduate-profile/graduate-profile.component';
 
 
 @NgModule({
 
   declarations: [AbsenceQueryComponent, ChangeBranchComponent, AddChangeBranchComponent,
     ChangeCourseComponent, PersonalIDComponent,
-    AddChangeBranchComponent, AddChangeCourseComponent, AddPersonalIdComponent],
+    AddChangeBranchComponent, AddChangeCourseComponent, AddPersonalIdComponent,GraduateProfileComponent],
   entryComponents: [AddChangeBranchComponent, AddChangeCourseComponent, AddPersonalIdComponent],
   imports: [
     CommonModule,
@@ -40,7 +41,7 @@ import { ToastrModule } from 'ngx-toastr';
     MatDialogModule,
     BrowserAnimationsModule,
 
-    MatCheckboxModule,
+    MatCheckboxModule
   ],
   providers: [AbseneQueryService, ChangeBranchService, ChangeCourseService, PersonalIDService]
 

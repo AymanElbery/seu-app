@@ -14,17 +14,33 @@ export class AddCancelCourseRequestComponent implements OnInit {
 
   cancelCousre: courseCancel;
   reqData: any;
+<<<<<<< HEAD
 msgs: any;
 private imageSrc = '';
 
   constructor( @Inject(MAT_DIALOG_DATA) public data,
                public dialogRef: MatDialogRef<AddCancelCourseRequestComponent>,
                private toastr: ToastrService, private acadmicProc: CancelCourseService ) { }
+=======
+  msgs: any;
+  approve:boolean;
+  private imageSrc = '';
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddCancelCourseRequestComponent>,
+    private toastr: ToastrService, private acadmicProc: CancelCourseService) { }
+>>>>>>> ae4aec55228952faa71c2f3b82ef78ff0020417d
 
   ngOnInit() {
     this.cancelCousre = {course_number:'', agreement: ''};
 
     this.reqData = this.acadmicProc.reqData;
+<<<<<<< HEAD
+=======
+
+    this.approve=false;
+   //console.log(this.reqData.notes);
+  }
+>>>>>>> ae4aec55228952faa71c2f3b82ef78ff0020417d
 
   }
   

@@ -2576,7 +2576,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n\r\n  <div class=\"modal-header\" dir=\"rtl\">\r\n    <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">\r\n      الاعتذار عن المحاضره\r\n    </h5>\r\n\r\n  </div>\r\n  <div class=\"modal-body\" style=\" direction: rtl;\">\r\n    <P class=\"text-center\">\r\n      تنبيه: يسمح للطالب إلغاء أو تعديل الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.\r\n      <br />\r\n      الأعذار المقبولة للتقدم للاختبار البديل هي:\r\n      <br />\r\n      1. شهادة إقامة في المستشفى.\r\n      <br />\r\n      2. وفاة أحد الأقارب من الدرجة الأولى.\r\n      <br />\r\n      3. الاصابة بمرض معدٍ.\r\n      <br />\r\n      4. حالات قاهرة تقدرها الجامعة.\r\n    </P>\r\n    <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n      <br />\r\n      <div class=\"form-group\">\r\n\r\n        <select name=\"week\" #week=\"ngModel\" [(ngModel)]=\"lectureExecuse.week\" class=\"form-control\"\r\n          [class.is-invalid]=\" lectureExecuse.week==''\">\r\n          <option value=\"\">الاسبوع </option>\r\n          <option *ngFor=\"let item of reqData.weeks_list\" value=\"{{item.id}}\">{{item.value}}</option>\r\n        </select>\r\n      </div>\r\n      <br />\r\n      <div class=\"form-group\">\r\n\r\n        <select name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"lectureExecuse.reason\" class=\"form-control\"\r\n          [class.is-invalid]=\" lectureExecuse.reason==''\">\r\n          <option value=\"\">العذر </option>\r\n          <option *ngFor=\"let item of reqData.text_list\" value=\"{{item.text1}}\">{{item.text1}}</option>\r\n        </select>\r\n      </div>\r\n      <br />\r\n      <div class=\"form-group\">\r\n        <select name=\"type\" #type=\"ngModel\" [(ngModel)]=\"lectureExecuse.type\" class=\"form-control\"\r\n          [class.is-invalid]=\" lectureExecuse.reason==''\">\r\n          <option value=\"\">نوع المحاضره </option>\r\n          <option *ngFor=\"let item of reqData.lectures_type\" value=\"{{item.id}}\">{{item.value}}</option>\r\n        </select>\r\n      </div><br />\r\n      <div class=\"form-group\" dir=\"rtl\"> التاريخ :\r\n        <input style=\"direction: rtl;\" class=\"form-control\" name=\"date\" #date=\"ngModel\"\r\n          [(ngModel)]=\"lectureExecuse.date\" type=\"date\" style=\"direction: rtl;text-align:right\">\r\n      </div>\r\n      <br />\r\n      <table style=\"text-align: center\" class=\"table\">\r\n        <thead>\r\n          <tr>\r\n            <th scope=\"col\">crn </th>\r\n\r\n            <th scope=\"col\">اسم المقرر </th>\r\n\r\n\r\n            <th scope=\"col\"> </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.schedules;let i=index;\">\r\n            <td>{{it.CRN}}</td>\r\n\r\n            <td>{{it.CRSE_TITLE}}</td>\r\n\r\n\r\n\r\n\r\n\r\n\r\n            <td>\r\n              <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event,i)\" #chkCourse\r\n                id=\"defaultUnchecked\">\r\n            </td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n      <div class=\"input-group\">\r\n        <div class=\"input-group-prepend\">\r\n          <div class=\"input-group-text\">ملف </div>\r\n        </div>\r\n        <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n      </div>\r\n\r\n      <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n        <button type=\"button\" (click)=\"closeDiag()\" class=\"btn btn-outline-dark ml-1\"><i class=\"fa fa-close\"></i>\r\n          الغاء</button>\r\n\r\n        <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n\r\n</mat-dialog-content>"
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n\r\n  <div class=\"modal-header\" dir=\"rtl\">\r\n    <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">\r\n      الاعتذار عن المحاضره\r\n    </h5>\r\n\r\n  </div>\r\n  <div class=\"modal-body\" style=\" direction: rtl;\">\r\n    <P class=\"text-center\">\r\n      تنبيه: يسمح للطالب إلغاء أو تعديل الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.\r\n      <br />\r\n      الأعذار المقبولة للتقدم للاختبار البديل هي:\r\n      <br />\r\n      1. شهادة إقامة في المستشفى.\r\n      <br />\r\n      2. وفاة أحد الأقارب من الدرجة الأولى.\r\n      <br />\r\n      3. الاصابة بمرض معدٍ.\r\n      <br />\r\n      4. حالات قاهرة تقدرها الجامعة.\r\n    </P>\r\n    <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n      <br />\r\n      <div class=\"form-group\">\r\n\r\n        <select name=\"week\" #week=\"ngModel\" [(ngModel)]=\"lectureExecuse.week\" class=\"form-control\"\r\n          [class.is-invalid]=\" lectureExecuse.week==''\" (change)=\"weekChange()\">\r\n          <option value=\"\">الاسبوع </option>\r\n          <option *ngFor=\"let item of reqData.weeks_list\" value=\"{{item.id}}\">{{item.value}}</option>\r\n        </select>\r\n      </div>\r\n      <br />\r\n      <div class=\"form-group\">\r\n\r\n        <select name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"lectureExecuse.reason\" class=\"form-control\"\r\n          [class.is-invalid]=\" lectureExecuse.reason==''\">\r\n          <option value=\"\">العذر </option>\r\n          <option *ngFor=\"let item of reqData.text_list\" value=\"{{item.text1}}\">{{item.text1}}</option>\r\n        </select>\r\n      </div>\r\n      <br />\r\n      <div class=\"form-group\">\r\n        <select name=\"type\" #type=\"ngModel\" [(ngModel)]=\"lectureExecuse.type\" class=\"form-control\"\r\n          [class.is-invalid]=\" lectureExecuse.reason==''\">\r\n          <option value=\"\">نوع المحاضره </option>\r\n          <option *ngFor=\"let item of reqData.lectures_type\" value=\"{{item.id}}\">{{item.value}}</option>\r\n        </select>\r\n      </div><br />\r\n\r\n      <div class=\"form-group\">\r\n        <select name=\"date\" #type=\"ngModel\" [(ngModel)]=\"lectureExecuse.date\" class=\"form-control\"\r\n          [class.is-invalid]=\" lectureExecuse.date==''\">\r\n          <option value=\"\">التاريخ </option>\r\n          <option *ngFor=\"let item of weeksDatesList\" value=\"{{item}}\">{{item}}</option>\r\n        </select>\r\n      </div><br />\r\n      <!--\r\n      <div class=\"form-group\" dir=\"rtl\"> التاريخ :\r\n\r\n        <input style=\"direction: rtl;\" class=\"form-control\" name=\"date\" #date=\"ngModel\"\r\n          [(ngModel)]=\"lectureExecuse.date\" type=\"date\" style=\"direction: rtl;text-align:right\">\r\n      </div>\r\n    \r\n      <br />  -->\r\n      <table style=\"text-align: center\" class=\"table\">\r\n        <thead>\r\n          <tr>\r\n            <th scope=\"col\">crn </th>\r\n\r\n            <th scope=\"col\">اسم المقرر </th>\r\n\r\n\r\n            <th scope=\"col\"> </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.schedules;let i=index;\">\r\n            <td>{{it.CRN}}</td>\r\n\r\n            <td>{{it.CRSE_TITLE}}</td>\r\n\r\n\r\n\r\n\r\n\r\n\r\n            <td>\r\n              <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it,$event,i)\" #chkCourse\r\n                id=\"defaultUnchecked\">\r\n            </td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n      <div class=\"input-group\">\r\n        <div class=\"input-group-prepend\">\r\n          <div class=\"input-group-text\">ملف </div>\r\n        </div>\r\n        <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n      </div>\r\n\r\n      <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n        <button type=\"button\" (click)=\"closeDiag()\" class=\"btn btn-outline-dark ml-1\"><i class=\"fa fa-close\"></i>\r\n          الغاء</button>\r\n\r\n        <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n      </div>\r\n    </form>\r\n  </div>\r\n\r\n\r\n</mat-dialog-content>"
 
 /***/ }),
 
@@ -2609,7 +2609,8 @@ var AddLecturesExecusesComponent = /** @class */ (function () {
         this.imageSrc = '';
     }
     AddLecturesExecusesComponent.prototype.ngOnInit = function () {
-        this.lectureExecuse = { courses: [], attachment: '', reason: '', date: '', type: '', week: ''
+        this.lectureExecuse = {
+            courses: [], attachment: '', reason: '', date: '', type: '', week: ''
         };
         this.reqData = this.acadmicProc.reqData;
         console.log(this.reqData);
@@ -2667,6 +2668,16 @@ var AddLecturesExecusesComponent = /** @class */ (function () {
     };
     AddLecturesExecusesComponent.prototype.closeDiag = function () {
         this.dialogRef.close();
+    };
+    AddLecturesExecusesComponent.prototype.weekChange = function () {
+        this.weeksDatesList = [];
+        this.lectureExecuse.date = '';
+        for (var _i = 0, _a = this.reqData.weeks_list; _i < _a.length; _i++) {
+            var item = _a[_i];
+            if (item.id == this.lectureExecuse.week) {
+                this.weeksDatesList = item.week_dates;
+            }
+        }
     };
     AddLecturesExecusesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -4748,7 +4759,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الاعتذار عن الفصل الصيفي</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الاعتذار عن الفصل الصيفي</p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n\r\n\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n\r\n\r\n            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n  <section class=\"service-single\">\r\n\r\n    <div class=\"container\">\r\n      <h3> الاعتذار عن الفصل الصيفي</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> الاعتذار عن الفصل الصيفي</p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                &nbsp; &nbsp; &nbsp; &nbsp;\r\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\r\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\r\n            </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  \r\n  <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n\r\n\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #e6e6e6\">\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n\r\n\r\n            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -8516,6 +8527,218 @@ var LecturesAbsenceModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/master-academic-requests/cancel-course/cancel-course.component.css":
+/*!************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/cancel-course/cancel-course.component.css ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1hY2FkZW1pYy1yZXF1ZXN0cy9jYW5jZWwtY291cnNlL2NhbmNlbC1jb3Vyc2UuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/cancel-course/cancel-course.component.html":
+/*!*************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/cancel-course/cancel-course.component.html ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\n  <section class=\"service-single\">\n\n    <div class=\"container\">\n      <h3> حذف مقرر </h3>\n      <div class=\"row\">\n        <div class=\" col-md-5\">\n          <p> حذف مقرر</p>\n        </div>\n        <!-- <div class=\" col-md-6 descr\">\n              <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\n                &nbsp; &nbsp; &nbsp; &nbsp;\n                <a href=\"#\"><i class=\"ik ik-download\"></i> </a>\n                <a href=\"#\"><i class=\"ik ik-film\"></i></a>\n            </div> -->\n      </div>\n    </div>\n  </section>\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\n    <div class=\"state\">\n\n      <h5> جاري تحميل البيانات .....................</h5>\n\n      <mat-spinner *ngIf=\"isLoading\"\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\n      </mat-spinner>\n\n    </div>\n  </div>\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\n    <div style=\"text-align: right\" *ngFor=\"let msg of msgs\"\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\n      role=\"alert\">\n      {{msg.body}}!\n    </div>\n  </div>\n  <div *ngIf=\"msg!=null && !isLoading \" style=\"text-align: right\"\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\n    role=\"alert\">\n    {{msg.body}}!\n  </div>\n  <!-- <div style=\"direction: ltr;text-align: center\">\n  \n  <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\n  اضافة طلب\n</button>\n<br/>\n<br/>\n\n</div> -->\n  <div class=\"widget\" *ngIf=\"!isLoading\">\n    <div class=\"widget-header\">\n\n\n      <h3 class=\"widget-title\"> الطلبات السابقة\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\n          اضافة طلب\n        </button>\n\n      </h3>\n    </div>\n    <div class=\"table-responsive\">\n      <table class=\"table table-striped table-bordered\">\n        <thead style=\"background: #e6e6e6\">\n          <tr>\n            <th scope=\"col\">رقم الطلب</th>\n            <th scope=\"col\">كود الكورس</th>\n            <th scope=\"col\">إسم الكورس </th>\n            <th scope=\"col\"> تاريخ الموافقة</th>\n\n            <th scope=\"col\">تاريخ الطلب</th>\n            <th scope=\"col\">حالة الطلب</th>\n            <!-- <th scope=\"col\"> طباعة الطلب</th>-->\n            <th scope=\"col\"> حذف الطلب </th>\n\n          </tr>\n        </thead>\n        <tbody>\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\n            <td>{{it.request_number}}</td>\n            <td>{{it.course_id}}</td>\n            <td>{{it.course_title}}</td>\n            <td>{{it.approval_date}}</td>\n\n            <td>{{it.insert_date}}</td>\n            <td>{{it.status}}</td>\n            <!--   <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\n                  class=\"glyphicon glyphicon-print\"></span>\n                Print</a></td>\n         -->\n            <td *ngIf='it.deletable'><button\n                [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\"\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\n                   <!-- <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>-->\n                </i> </button></td>\n\n            <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\n\n          </tr>\n\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/cancel-course/cancel-course.component.ts":
+/*!***********************************************************************************!*\
+  !*** ./src/app/master-academic-requests/cancel-course/cancel-course.component.ts ***!
+  \***********************************************************************************/
+/*! exports provided: CancelCourseComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CancelCourseComponent", function() { return CancelCourseComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services_cancel_course_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/cancel-course.service */ "./src/app/master-academic-requests/services/cancel-course.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _diag_add_cancel_course_request_add_cancel_course_request_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-cancel-course-request/add-cancel-course-request.component */ "./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.ts");
+
+
+
+
+
+
+var CancelCourseComponent = /** @class */ (function () {
+    function CancelCourseComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.isLoading = false;
+    }
+    CancelCourseComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.isLoading = true;
+        this.cancelCousre = { courses: null, agreement: 1 };
+        this.acadmicProc.getRequest().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+            _this.isLoading = false;
+            // console.log(this.reqData.requests);
+        });
+    };
+    CancelCourseComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        dialogConfig.height = '80%';
+        /* dialogConfig.direction = "rtl";
+         dialogConfig.position = { top: '100px', left: '25px' };*/
+        this.dialog.open(_diag_add_cancel_course_request_add_cancel_course_request_component__WEBPACK_IMPORTED_MODULE_5__["AddCancelCourseRequestComponent"], dialogConfig);
+    };
+    CancelCourseComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    CancelCourseComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    CancelCourseComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    CancelCourseComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status === 1) {
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+                }
+            });
+        }
+    };
+    CancelCourseComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    CancelCourseComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-cancel-course',
+            template: __webpack_require__(/*! ./cancel-course.component.html */ "./src/app/master-academic-requests/cancel-course/cancel-course.component.html"),
+            styles: [__webpack_require__(/*! ./cancel-course.component.css */ "./src/app/master-academic-requests/cancel-course/cancel-course.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_cancel_course_service__WEBPACK_IMPORTED_MODULE_2__["CancelCourseService"]])
+    ], CancelCourseComponent);
+    return CancelCourseComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.css":
+/*!*******************************************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.css ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1hY2FkZW1pYy1yZXF1ZXN0cy9jYW5jZWwtY291cnNlL2RpYWcvYWRkLWNhbmNlbC1jb3Vyc2UtcmVxdWVzdC9hZGQtY2FuY2VsLWNvdXJzZS1yZXF1ZXN0LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.html":
+/*!********************************************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.html ***!
+  \********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\" style=\"padding-top:0\">\r\n\r\n  <div class=\"container\">\r\n    <mat-dialog-content>\r\n\r\n      <div class=\"widget\">\r\n        <div class=\"widget-header\">\r\n          <h3 class=\"widget-title\">الغاء مقرر </h3>\r\n        </div>\r\n\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n\r\n          <p style=\"text-align: center;\">\r\n            {{reqData.notes[0].txt1}}<br />\r\n            {{reqData.notes[1].txt2}}<br />\r\n            {{reqData.notes[2].txt3}}<br />\r\n            {{reqData.notes[3].txt4}}<br />\r\n            {{reqData.notes[4].txt5}}<br />\r\n            {{reqData.notes[5].txt6}}<br />\r\n          </p>\r\n          <table dir=\"rtl\" style=\"text-align: center\" class=\"table\">\r\n            <thead>\r\n              <tr>\r\n                <th scope=\"col\"> اختر</th>\r\n                <th scope=\"col\"> CRN </th>\r\n                <th scope=\"col\"> رمز المقرر</th>\r\n                <th scope=\"col\">اسم المقرر </th>\r\n                <th scope=\"col\">عدد الساعات </th>\r\n\r\n\r\n              </tr>\r\n            </thead>\r\n            <tbody>\r\n              <tr *ngFor=\"let it of reqData.courses;let i=index;\">\r\n\r\n                <td>\r\n                  <input type=\"radio\" name=\"chkCourse\" (change)=\"changeStatus(it.CRN,$event,i)\" value=\"it.CRN\">\r\n                  <!--#defaultUnchecked=\"ngModel\" -->\r\n                  <!--  <input type=\"checkbox\" name=\"chkCourse\" (change)=\"changeStatus(it.CRES_CODE,$event,i)\" #chkCourse\r\n                    id=\"defaultUnchecked\">-->\r\n                </td>\r\n                <td>{{it.CRN}}</td>\r\n                <td>{{it.CRES_CODE}}</td>\r\n                <td>{{it.CRSE_TITLE}}</td>\r\n                <td>{{it.CREDIT_HR}}</td>\r\n\r\n\r\n\r\n\r\n              </tr>\r\n\r\n            </tbody>\r\n          </table>\r\n          <input type=\"checkbox\" class=\"checkbox\" style=\"height: 20px;width:20px;\" #Approve=\"ngModel\"\r\n          [(ngModel)]=\"approve\" name=\"Approve\">\r\n          <h5>{{reqData.notes[6].txt7}}</h5>\r\n\r\n          <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n            <button type=\"button\" (click)=\"closeDiag()\" class=\"btn btn-outline-dark ml-1\"><i class=\"fa fa-close\"></i>\r\n              الغاء</button>\r\n\r\n            <button [disabled]=\"!approve\" type=\"submit\" class=\"btn btn-dark\"><i\r\n                class=\"fa fa-database\"></i> حفظ</button>\r\n          </div>\r\n        </form>\r\n      </div>\r\n    </mat-dialog-content>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.ts":
+/*!******************************************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.ts ***!
+  \******************************************************************************************************************************/
+/*! exports provided: AddCancelCourseRequestComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddCancelCourseRequestComponent", function() { return AddCancelCourseRequestComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_master_academic_requests_services_cancel_course_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/master-academic-requests/services/cancel-course.service */ "./src/app/master-academic-requests/services/cancel-course.service.ts");
+
+
+
+
+
+var AddCancelCourseRequestComponent = /** @class */ (function () {
+    function AddCancelCourseRequestComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.imageSrc = '';
+    }
+    AddCancelCourseRequestComponent.prototype.ngOnInit = function () {
+        this.cancelCousre = { course_number: 0, agreement: 1 };
+        this.reqData = this.acadmicProc.reqData;
+        this.approve = false;
+        //console.log(this.reqData.notes);
+    };
+    AddCancelCourseRequestComponent.prototype.changeStatus = function (id, e, i) {
+        this.cancelCousre.course_number = id;
+    };
+    AddCancelCourseRequestComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        console.log(data);
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddCancelCourseRequestComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.cancelCousre);
+        this.dialogRef.close();
+    };
+    AddCancelCourseRequestComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddCancelCourseRequestComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-cancel-course-request',
+            template: __webpack_require__(/*! ./add-cancel-course-request.component.html */ "./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.html"),
+            styles: [__webpack_require__(/*! ./add-cancel-course-request.component.css */ "./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_master_academic_requests_services_cancel_course_service__WEBPACK_IMPORTED_MODULE_4__["CancelCourseService"]])
+    ], AddCancelCourseRequestComponent);
+    return AddCancelCourseRequestComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/master-academic-requests/master-academic-requests-routing.module.ts":
 /*!*************************************************************************************!*\
   !*** ./src/app/master-academic-requests/master-academic-requests-routing.module.ts ***!
@@ -8531,6 +8754,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _university_withdrawal_university_withdrawal_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./university-withdrawal/university-withdrawal.component */ "./src/app/master-academic-requests/university-withdrawal/university-withdrawal.component.ts");
 /* harmony import */ var _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./term-execuse/term-execuse.component */ "./src/app/master-academic-requests/term-execuse/term-execuse.component.ts");
+/* harmony import */ var _study_postpone_study_postpone_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./study-postpone/study-postpone.component */ "./src/app/master-academic-requests/study-postpone/study-postpone.component.ts");
+/* harmony import */ var _re_enroll_re_enroll_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./re-enroll/re-enroll.component */ "./src/app/master-academic-requests/re-enroll/re-enroll.component.ts");
+/* harmony import */ var _cancel_course_cancel_course_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./cancel-course/cancel-course.component */ "./src/app/master-academic-requests/cancel-course/cancel-course.component.ts");
+
+
+
 
 
 
@@ -8538,11 +8767,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [
     { path: 'withdrawal', component: _university_withdrawal_university_withdrawal_component__WEBPACK_IMPORTED_MODULE_3__["UniversityWithdrawalComponent"] },
+    { path: 'studypostpone', component: _study_postpone_study_postpone_component__WEBPACK_IMPORTED_MODULE_5__["StudyPostponeComponent"] },
+    { path: 'reEnroll', component: _re_enroll_re_enroll_component__WEBPACK_IMPORTED_MODULE_6__["ReEnrollComponent"] },
     {
         path: 'academicrequests',
         children: [
             { path: 'withdrawal', component: _university_withdrawal_university_withdrawal_component__WEBPACK_IMPORTED_MODULE_3__["UniversityWithdrawalComponent"] },
-            { path: 'termexecuse', component: _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_4__["TermExecuseComponent"] }
+            { path: 'termexecuse', component: _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_4__["TermExecuseComponent"] },
+            { path: 'studypostpone', component: _study_postpone_study_postpone_component__WEBPACK_IMPORTED_MODULE_5__["StudyPostponeComponent"] },
+            { path: 'reEnroll', component: _re_enroll_re_enroll_component__WEBPACK_IMPORTED_MODULE_6__["ReEnrollComponent"] },
+            { path: 'cancelcourse', component: _cancel_course_cancel_course_component__WEBPACK_IMPORTED_MODULE_7__["CancelCourseComponent"] },
         ]
     }
 ];
@@ -8588,6 +8822,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./term-execuse/term-execuse.component */ "./src/app/master-academic-requests/term-execuse/term-execuse.component.ts");
 /* harmony import */ var _term_execuse_diag_add_term_execuse_add_term_execuse_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./term-execuse/diag/add-term-execuse/add-term-execuse.component */ "./src/app/master-academic-requests/term-execuse/diag/add-term-execuse/add-term-execuse.component.ts");
 /* harmony import */ var _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./services/term-execuse.service */ "./src/app/master-academic-requests/services/term-execuse.service.ts");
+/* harmony import */ var _study_postpone_study_postpone_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./study-postpone/study-postpone.component */ "./src/app/master-academic-requests/study-postpone/study-postpone.component.ts");
+/* harmony import */ var _services_study_postpone_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/study-postpone.service */ "./src/app/master-academic-requests/services/study-postpone.service.ts");
+/* harmony import */ var _study_postpone_diag_add_study_postpone_add_study_postpone_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./study-postpone/diag/add-study-postpone/add-study-postpone.component */ "./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.ts");
+/* harmony import */ var _re_enroll_re_enroll_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./re-enroll/re-enroll.component */ "./src/app/master-academic-requests/re-enroll/re-enroll.component.ts");
+/* harmony import */ var _re_enroll_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./re-enroll/diag/add-re-enroll/add-re-enroll.component */ "./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.ts");
+/* harmony import */ var _services_re_enroll_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./services/re-enroll.service */ "./src/app/master-academic-requests/services/re-enroll.service.ts");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _cancel_course_cancel_course_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./cancel-course/cancel-course.component */ "./src/app/master-academic-requests/cancel-course/cancel-course.component.ts");
+/* harmony import */ var _cancel_course_diag_add_cancel_course_request_add_cancel_course_request_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component */ "./src/app/master-academic-requests/cancel-course/diag/add-cancel-course-request/add-cancel-course-request.component.ts");
+/* harmony import */ var _academicprocs_academicprocs_module__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../academicprocs/academicprocs.module */ "./src/app/academicprocs/academicprocs.module.ts");
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8612,10 +8866,19 @@ var MasterAcademicRequestsModule = /** @class */ (function () {
             declarations: [_university_withdrawal_diag_add_withdrawal_request_add_withdrawal_request_component__WEBPACK_IMPORTED_MODULE_11__["AddWithdrawalRequestComponent"],
                 _university_withdrawal_university_withdrawal_component__WEBPACK_IMPORTED_MODULE_9__["UniversityWithdrawalComponent"],
                 _term_execuse_diag_add_term_execuse_add_term_execuse_component__WEBPACK_IMPORTED_MODULE_14__["AddTermExecuseComponent"],
-                _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_13__["TermExecuseComponent"]
+                _term_execuse_term_execuse_component__WEBPACK_IMPORTED_MODULE_13__["TermExecuseComponent"],
+                _study_postpone_study_postpone_component__WEBPACK_IMPORTED_MODULE_16__["StudyPostponeComponent"],
+                _study_postpone_diag_add_study_postpone_add_study_postpone_component__WEBPACK_IMPORTED_MODULE_18__["AddStudyPostponeComponent"],
+                _re_enroll_re_enroll_component__WEBPACK_IMPORTED_MODULE_19__["ReEnrollComponent"],
+                _re_enroll_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_20__["AddReEnrollComponent"],
+                _cancel_course_cancel_course_component__WEBPACK_IMPORTED_MODULE_23__["CancelCourseComponent"],
+                _cancel_course_diag_add_cancel_course_request_add_cancel_course_request_component__WEBPACK_IMPORTED_MODULE_24__["AddCancelCourseRequestComponent"]
             ],
             entryComponents: [_university_withdrawal_diag_add_withdrawal_request_add_withdrawal_request_component__WEBPACK_IMPORTED_MODULE_11__["AddWithdrawalRequestComponent"],
-                _term_execuse_diag_add_term_execuse_add_term_execuse_component__WEBPACK_IMPORTED_MODULE_14__["AddTermExecuseComponent"]
+                _term_execuse_diag_add_term_execuse_add_term_execuse_component__WEBPACK_IMPORTED_MODULE_14__["AddTermExecuseComponent"],
+                _study_postpone_diag_add_study_postpone_add_study_postpone_component__WEBPACK_IMPORTED_MODULE_18__["AddStudyPostponeComponent"],
+                _re_enroll_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_20__["AddReEnrollComponent"],
+                _cancel_course_diag_add_cancel_course_request_add_cancel_course_request_component__WEBPACK_IMPORTED_MODULE_24__["AddCancelCourseRequestComponent"]
             ],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -8625,14 +8888,405 @@ var MasterAcademicRequestsModule = /** @class */ (function () {
                 _angular_material_datepicker__WEBPACK_IMPORTED_MODULE_6__["MatDatepickerModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
                 _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_3__["BrowserAnimationsModule"],
+                _academicprocs_academicprocs_module__WEBPACK_IMPORTED_MODULE_25__["AcademicprocsModule"],
+                ngx_toastr__WEBPACK_IMPORTED_MODULE_22__["ToastrModule"].forRoot(),
             ],
             providers: [_services_university_withdrawal_service__WEBPACK_IMPORTED_MODULE_12__["UniversityWithdrawalService"],
-                _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_15__["TermExecuseService"]
+                _services_term_execuse_service__WEBPACK_IMPORTED_MODULE_15__["TermExecuseService"], _services_study_postpone_service__WEBPACK_IMPORTED_MODULE_17__["StudyPostponeService"], _services_re_enroll_service__WEBPACK_IMPORTED_MODULE_21__["ReEnrollService"],
             ]
         })
     ], MasterAcademicRequestsModule);
     return MasterAcademicRequestsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.css":
+/*!***************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.css ***!
+  \***************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1hY2FkZW1pYy1yZXF1ZXN0cy9yZS1lbnJvbGwvZGlhZy9hZGQtcmUtZW5yb2xsL2FkZC1yZS1lbnJvbGwuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.html ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content>\r\n  <div class=\"modal-dialog\" role=\"document\" style=\"direction: rtl\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب اعادة قيد   </h5>\r\n          \r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <P class=\"text-center\">  </P>\r\n        <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\">\r\n      \r\n        <div class=\"form-row\">\r\n            <div class=\"form-group col-md-12\">\r\n              <div class=\"input-group\">\r\n                <div class=\"input-group-prepend\">\r\n                  <div class=\"input-group-text\"> السبب</div>\r\n                </div>\r\n                <input name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"reEnroll.reason\" class=\"form-control\" >\r\n              </div>\r\n            </div>\r\n           \r\n          </div>\r\n          \r\n          <div class=\"image-upload\">\r\n              <input name=\"imageUrl\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n          </div> \r\n     <br/>\r\n         \r\n        <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n\r\n          <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n        </div>\r\n      </form>\r\n      </div>\r\n  </div>\r\n      \r\n   </div>\r\n</mat-dialog-content>"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.ts":
+/*!**************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.ts ***!
+  \**************************************************************************************************/
+/*! exports provided: AddReEnrollComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddReEnrollComponent", function() { return AddReEnrollComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_master_academic_requests_services_re_enroll_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/master-academic-requests/services/re-enroll.service */ "./src/app/master-academic-requests/services/re-enroll.service.ts");
+
+
+
+
+
+var AddReEnrollComponent = /** @class */ (function () {
+    function AddReEnrollComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+    }
+    AddReEnrollComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.reEnroll = { proof: '', reason: '', has_proof: '1' };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+        });
+    };
+    AddReEnrollComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddReEnrollComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.reEnroll);
+        console.log(this.reEnroll);
+        this.dialogRef.close();
+    };
+    AddReEnrollComponent.prototype.handleInputChange = function (e) {
+        var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+        var pattern = /image-*/;
+        var reader = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsDataURL(file);
+    };
+    AddReEnrollComponent.prototype._handleReaderLoaded = function (e) {
+        var reader = e.target;
+        this.reEnroll.proof = reader.result;
+        console.log(this.reEnroll.proof);
+    };
+    AddReEnrollComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    AddReEnrollComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.toastr.success('', res.messages.body);
+            });
+            this.acadmicProc.reqData.reqs.splice(index, 1);
+        }
+    };
+    AddReEnrollComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    AddReEnrollComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddReEnrollComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-re-enroll',
+            template: __webpack_require__(/*! ./add-re-enroll.component.html */ "./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.html"),
+            styles: [__webpack_require__(/*! ./add-re-enroll.component.css */ "./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_master_academic_requests_services_re_enroll_service__WEBPACK_IMPORTED_MODULE_4__["ReEnrollService"]])
+    ], AddReEnrollComponent);
+    return AddReEnrollComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/re-enroll/re-enroll.component.css":
+/*!****************************************************************************!*\
+  !*** ./src/app/master-academic-requests/re-enroll/re-enroll.component.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1hY2FkZW1pYy1yZXF1ZXN0cy9yZS1lbnJvbGwvcmUtZW5yb2xsLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/re-enroll/re-enroll.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/master-academic-requests/re-enroll/re-enroll.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\">\r\n    <section class=\"service-single\">\r\n      <div class=\"container\">\r\n        <h3>   طلب اعادة القيد </h3>\r\n        <div class=\"row\">\r\n          <div class=\" col-md-5\">\r\n            <p>   طلب اعادة القيد  </p>\r\n          </div>\r\n          <!-- <div class=\" col-md-6 descr\">\r\n                    <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                      &nbsp; &nbsp; &nbsp; &nbsp;\r\n                      \r\n                  </div> -->\r\n        </div>\r\n      </div>\r\n    </section>\r\n    <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n      <div class=\"state\">\r\n  \r\n        <h5> جاري تحميل البيانات .....................</h5>\r\n  \r\n        <mat-spinner *ngIf=\"isLoading\"\r\n          style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n        </mat-spinner>\r\n  \r\n      </div>\r\n    </div>\r\n    <div class=\"ser-state\" *ngIf=\"isLoading\">\r\n      <div *ngFor=\"let msg of msgs\"\r\n        [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n        role=\"alert\">\r\n        {{msg.body}}!\r\n      </div>\r\n    </div>\r\n    <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n    <!-- <div style=\"direction: ltr;text-align: center\">\r\n    <br/>\r\n    <br/>\r\n    <button *ngIf=\"reqData.can_add_new_request\"  type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button>\r\n  <br/>\r\n  <br/>\r\n  \r\n  </div> -->\r\n    <div class=\"widget\" *ngIf=\"!isLoading\">\r\n      <div class=\"widget-header\">\r\n  \r\n  \r\n        <h3 class=\"widget-title\"> الطلبات السابقة\r\n          <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n            اضافة طلب\r\n          </button>\r\n  \r\n        </h3>\r\n      </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> طباعة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.requests;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td><a class=\"btn btn-primary\" [href]=\"print(it.request_number)\"><span\r\n                  class=\"glyphicon glyphicon-print\"></span>\r\n                Print</a></td>\r\n\r\n            <!-- <td *ngIf='it.deletable'><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0' class=\"btn btn-sm btn-danger\"\r\n                style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                  <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>\r\n                </i> </button></td>\r\n\r\n                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td> -->\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n\r\n\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/re-enroll/re-enroll.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/master-academic-requests/re-enroll/re-enroll.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: ReEnrollComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReEnrollComponent", function() { return ReEnrollComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_master_academic_requests_services_re_enroll_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/master-academic-requests/services/re-enroll.service */ "./src/app/master-academic-requests/services/re-enroll.service.ts");
+/* harmony import */ var src_app_master_academic_requests_re_enroll_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component */ "./src/app/master-academic-requests/re-enroll/diag/add-re-enroll/add-re-enroll.component.ts");
+
+
+
+
+
+
+var ReEnrollComponent = /** @class */ (function () {
+    function ReEnrollComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.isLoading = false;
+    }
+    ReEnrollComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.isLoading = true;
+        this.reEnroll = { proof: '', reason: '', has_proof: '1' };
+        this.acadmicProc.getِgetRequests().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+            _this.isLoading = false;
+        });
+    };
+    ReEnrollComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(src_app_master_academic_requests_re_enroll_diag_add_re_enroll_add_re_enroll_component__WEBPACK_IMPORTED_MODULE_5__["AddReEnrollComponent"], dialogConfig);
+    };
+    ReEnrollComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    ReEnrollComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    ReEnrollComponent.prototype.print = function (req) {
+        return this.acadmicProc.Download(req);
+    };
+    ReEnrollComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status == 1)
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+            });
+        }
+    };
+    ReEnrollComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    ReEnrollComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-re-enroll',
+            template: __webpack_require__(/*! ./re-enroll.component.html */ "./src/app/master-academic-requests/re-enroll/re-enroll.component.html"),
+            styles: [__webpack_require__(/*! ./re-enroll.component.css */ "./src/app/master-academic-requests/re-enroll/re-enroll.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_master_academic_requests_services_re_enroll_service__WEBPACK_IMPORTED_MODULE_4__["ReEnrollService"]])
+    ], ReEnrollComponent);
+    return ReEnrollComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/services/cancel-course.service.ts":
+/*!****************************************************************************!*\
+  !*** ./src/app/master-academic-requests/services/cancel-course.service.ts ***!
+  \****************************************************************************/
+/*! exports provided: CancelCourseService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CancelCourseService", function() { return CancelCourseService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var CancelCourseService = /** @class */ (function () {
+    function CancelCourseService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+        this.configService.baseUrl = 'stdsUnivapi';
+    }
+    CancelCourseService.prototype.getRequest = function () {
+        return this.httRequest.GetRequest('course_cancel_service').toPromise();
+    };
+    CancelCourseService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('course_cancel_service/insert', data).toPromise();
+    };
+    CancelCourseService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('course_cancel_service/remove/' + id).toPromise();
+    };
+    CancelCourseService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req;
+    };
+    CancelCourseService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/crse_cancel/download?Lang=en';
+    };
+    CancelCourseService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], CancelCourseService);
+    return CancelCourseService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/services/re-enroll.service.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/master-academic-requests/services/re-enroll.service.ts ***!
+  \************************************************************************/
+/*! exports provided: ReEnrollService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReEnrollService", function() { return ReEnrollService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var ReEnrollService = /** @class */ (function () {
+    function ReEnrollService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+        this.configService.baseUrl = "stdsUnivapi";
+    }
+    ReEnrollService.prototype.getِgetRequests = function () {
+        return this.httRequest.GetRequest('return_service').toPromise();
+    };
+    ReEnrollService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('return_service/insert ', data).toPromise();
+    };
+    ReEnrollService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('return_service/remove/' + id).toPromise();
+    };
+    ReEnrollService.prototype.Download = function (req) {
+        return this.configService.getApiURI() + '/return_service/download/return_request/' + req;
+    };
+    ReEnrollService.prototype.DownloadEng = function () {
+        return this.configService.getApiURI() + '/return_service/download?Lang=en';
+    };
+    ReEnrollService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], ReEnrollService);
+    return ReEnrollService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/services/study-postpone.service.ts":
+/*!*****************************************************************************!*\
+  !*** ./src/app/master-academic-requests/services/study-postpone.service.ts ***!
+  \*****************************************************************************/
+/*! exports provided: StudyPostponeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudyPostponeService", function() { return StudyPostponeService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services/config.service */ "./src/app/shared/services/config.service.ts");
+/* harmony import */ var src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/shared/services/http-request.service */ "./src/app/shared/services/http-request.service.ts");
+
+
+
+
+var StudyPostponeService = /** @class */ (function () {
+    function StudyPostponeService(configService, httRequest) {
+        this.configService = configService;
+        this.httRequest = httRequest;
+        this.configService.baseUrl = 'stdsUnivapi';
+    }
+    StudyPostponeService.prototype.getRequest = function () {
+        return this.httRequest.GetRequest('postpone_service').toPromise();
+    };
+    StudyPostponeService.prototype.AddRequest = function (data) {
+        return this.httRequest.postRequest('postpone_service/insert', data).toPromise();
+    };
+    StudyPostponeService.prototype.deleteReq = function (id) {
+        return this.httRequest.GetRequest('postpone_service /remove/' + id).toPromise();
+    };
+    StudyPostponeService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
+    ], StudyPostponeService);
+    return StudyPostponeService;
 }());
 
 
@@ -8731,6 +9385,207 @@ var UniversityWithdrawalService = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_shared_services_config_service__WEBPACK_IMPORTED_MODULE_2__["ConfigService"], src_app_shared_services_http_request_service__WEBPACK_IMPORTED_MODULE_3__["HttpRequestService"]])
     ], UniversityWithdrawalService);
     return UniversityWithdrawalService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.css":
+/*!******************************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.css ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1hY2FkZW1pYy1yZXF1ZXN0cy9zdHVkeS1wb3N0cG9uZS9kaWFnL2FkZC1zdHVkeS1wb3N0cG9uZS9hZGQtc3R1ZHktcG9zdHBvbmUuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.html":
+/*!*******************************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.html ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content dir=\"rtl\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\">   طلب تأجيل الدراسة  </h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n              <h6 style=\"text-align: center\">تنبيه:يسمح للطالب بالغاء الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.</h6> \r\n               <br>\r\n               <h6 style=\"color: black ; font-size: 12px\" class=\"modal-title\">أرغب فى تأجيل الدراسة اعتبارا من {{reqData.cur_term}}</h6>                                           \r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n              <section  class=\"ser-state\">\r\n                  <div class=\"container\">\r\n                       <div class=\"row ser-block\"> \r\n                            <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">                               \r\n                                <h6> مدة التأجيل (بالفصول) </h6>\r\n                                  <select name=\"num_terms\" #num_terms=\"ngModel\" [(ngModel)]=\"postpone.num_terms\" class=\"form-control\" \r\n                                  [class.is-invalid]=\"postpone.num_terms==''\">                                \r\n                                    <option *ngFor=\"let item of reqData.terms\" value=\"{{item.id}}\">{{item.value}}</option>\r\n                                  </select>                              \r\n                               </div>\r\n                               <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                          </div>\r\n\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                        <div class=\"state\">\r\n                          <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>                               \r\n                          <input name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"postpone.mobile\" class=\"form-control\" >\r\n                        </div>\r\n                          <div class=\"progress progress-sm\">\r\n                              <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                          </div>\r\n                       </div>                     \r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                                <div class=\"state\">\r\n                                   <h6> سبب التحويل </h6>\r\n                                   <textarea name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"postpone.reason\" class=\"form-control\" >\r\n                                     </textarea>\r\n                                    </div>\r\n                                     <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                        </div>\r\n\r\n                                  <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                           </div>\r\n                           \r\n                    </div>\r\n                \r\n               </section>\r\n               <div style=\"margin-top: 10px;\">\r\n                  <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                   <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                  </div>\r\n             </div>\r\n              </div>\r\n  \r\n         \r\n        </form>\r\n  \r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.ts":
+/*!*****************************************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.ts ***!
+  \*****************************************************************************************************************/
+/*! exports provided: AddStudyPostponeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddStudyPostponeComponent", function() { return AddStudyPostponeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var src_app_master_academic_requests_services_study_postpone_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/master-academic-requests/services/study-postpone.service */ "./src/app/master-academic-requests/services/study-postpone.service.ts");
+
+
+
+
+
+var AddStudyPostponeComponent = /** @class */ (function () {
+    function AddStudyPostponeComponent(data, dialogRef, toastr, acadmicProc) {
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.imageSrc = '';
+    }
+    AddStudyPostponeComponent.prototype.ngOnInit = function () {
+        this.postpone = { mobile: '', num_terms: '', reason: '' };
+        this.reqData = this.acadmicProc.reqData;
+    };
+    AddStudyPostponeComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        console.log(data);
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.msgs = res.messages;
+            _this.msgs.forEach(function (element) {
+                _this.toastr.success('', element.body);
+            });
+        });
+    };
+    AddStudyPostponeComponent.prototype.onSubmit = function (form) {
+        this.addRequest(this.postpone);
+        this.dialogRef.close();
+    };
+    AddStudyPostponeComponent.prototype.closeDiag = function () {
+        this.dialogRef.close();
+    };
+    AddStudyPostponeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-add-study-postpone',
+            template: __webpack_require__(/*! ./add-study-postpone.component.html */ "./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.html"),
+            styles: [__webpack_require__(/*! ./add-study-postpone.component.css */ "./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [Object, _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], src_app_master_academic_requests_services_study_postpone_service__WEBPACK_IMPORTED_MODULE_4__["StudyPostponeService"]])
+    ], AddStudyPostponeComponent);
+    return AddStudyPostponeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/study-postpone/study-postpone.component.css":
+/*!**************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/study-postpone/study-postpone.component.css ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21hc3Rlci1hY2FkZW1pYy1yZXF1ZXN0cy9zdHVkeS1wb3N0cG9uZS9zdHVkeS1wb3N0cG9uZS5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/study-postpone/study-postpone.component.html":
+/*!***************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/study-postpone/study-postpone.component.html ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3>   طلب تأجيل الدراسة </h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p>   طلب تأجيل الدراسة </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12  \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\"\r\n      [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n      role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\"\r\n    [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\"\r\n    role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n  <br/>\r\n  <br/>\r\n  <button *ngIf=\"reqData.can_add_new_request\"  type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n  اضافة طلب\r\n</button>\r\n<br/>\r\n<br/>\r\n\r\n</div> -->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td *ngIf='it.deletable'><button\r\n              [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\"\r\n              style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                 <!-- <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>-->\r\n              </i> </button></td>\r\n\r\n          <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr>\r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/master-academic-requests/study-postpone/study-postpone.component.ts":
+/*!*************************************************************************************!*\
+  !*** ./src/app/master-academic-requests/study-postpone/study-postpone.component.ts ***!
+  \*************************************************************************************/
+/*! exports provided: StudyPostponeComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudyPostponeComponent", function() { return StudyPostponeComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/fesm5/ngx-toastr.js");
+/* harmony import */ var _services_study_postpone_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/study-postpone.service */ "./src/app/master-academic-requests/services/study-postpone.service.ts");
+/* harmony import */ var _diag_add_study_postpone_add_study_postpone_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./diag/add-study-postpone/add-study-postpone.component */ "./src/app/master-academic-requests/study-postpone/diag/add-study-postpone/add-study-postpone.component.ts");
+
+
+
+
+
+
+var StudyPostponeComponent = /** @class */ (function () {
+    function StudyPostponeComponent(dialog, toastr, acadmicProc) {
+        this.dialog = dialog;
+        this.toastr = toastr;
+        this.acadmicProc = acadmicProc;
+        this.isLoading = false;
+    }
+    StudyPostponeComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.isLoading = true;
+        this.studypostpone = { num_terms: '', reason: '', mobile: '' };
+        this.acadmicProc.getRequest().then(function (res) {
+            _this.acadmicProc.reqData = res.data;
+            _this.acadmicProc.msgs = res.messages;
+            _this.reqData = _this.acadmicProc.reqData;
+            _this.msgs = _this.acadmicProc.msgs;
+            _this.isLoading = false;
+            // console.log(this.reqData.requests);
+        });
+    };
+    StudyPostponeComponent.prototype.openDialoge = function () {
+        var dialogConfig = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogConfig"]();
+        dialogConfig.autoFocus = true;
+        dialogConfig.disableClose = true;
+        dialogConfig.width = '50%';
+        this.dialog.open(_diag_add_study_postpone_add_study_postpone_component__WEBPACK_IMPORTED_MODULE_5__["AddStudyPostponeComponent"], dialogConfig);
+    };
+    StudyPostponeComponent.prototype.addRequest = function (data) {
+        var _this = this;
+        this.acadmicProc.AddRequest(data).then(function (res) {
+            _this.acadmicProc.msgs = res.messages;
+        });
+    };
+    StudyPostponeComponent.prototype.onSubmit = function (form) {
+        this.addRequest(form.value);
+    };
+    StudyPostponeComponent.prototype.delete = function (id, index) {
+        var _this = this;
+        if (confirm('هل انت متأكد')) {
+            this.acadmicProc.deleteReq(id).then(function (res) {
+                _this.msgs = res.messages;
+                _this.status = res.status;
+                _this.msgs.forEach(function (element) {
+                    _this.toastr.success('', element.body);
+                });
+                if (_this.status === 1) {
+                    _this.acadmicProc.reqData.requests.splice(index, 1);
+                }
+            });
+        }
+    };
+    StudyPostponeComponent.prototype.call = function (hr) {
+        return Math.floor(Math.random() * 10) + hr;
+    };
+    StudyPostponeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-study-postpone',
+            template: __webpack_require__(/*! ./study-postpone.component.html */ "./src/app/master-academic-requests/study-postpone/study-postpone.component.html"),
+            styles: [__webpack_require__(/*! ./study-postpone.component.css */ "./src/app/master-academic-requests/study-postpone/study-postpone.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"], ngx_toastr__WEBPACK_IMPORTED_MODULE_3__["ToastrService"], _services_study_postpone_service__WEBPACK_IMPORTED_MODULE_4__["StudyPostponeService"]])
+    ], StudyPostponeComponent);
+    return StudyPostponeComponent;
 }());
 
 
@@ -9543,7 +10398,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> تغيير التخصص</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> تغيير التخصص </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12 \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button> \r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>-->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\"> التخصص الحالي</th>\r\n            <th scope=\"col\"> التخصص المطلوب</th>\r\n\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n     <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n\r\n\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.CURR_PROG}}</td>\r\n            <td>{{it.REQ_PROG}}</td>\r\n\r\n\r\n            <td><button [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\" style=\"color: white\"\r\n                (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\"></i> </button></td>\r\n\r\n          </tr> \r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n  </div>"
+module.exports = "<div class=\"main-content\">\r\n  <section class=\"service-single\">\r\n    <div class=\"container\">\r\n      <h3> تغيير التخصص</h3>\r\n      <div class=\"row\">\r\n        <div class=\" col-md-5\">\r\n          <p> تغيير التخصص </p>\r\n        </div>\r\n        <!-- <div class=\" col-md-6 descr\">\r\n                  <span>مدة الإنجاز : <span class=\"badge\">3 يوم</span> </span>\r\n                    &nbsp; &nbsp; &nbsp; &nbsp;\r\n                    \r\n                </div> -->\r\n      </div>\r\n    </div>\r\n  </section>\r\n\r\n  <div *ngIf=\"isLoading\" class=\" stu-name col-md-4 col-sm-12 \">\r\n    <div class=\"state\">\r\n\r\n      <h5> جاري تحميل البيانات .....................</h5>\r\n\r\n      <mat-spinner *ngIf=\"isLoading\"\r\n        style=\"position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;\">\r\n      </mat-spinner>\r\n\r\n    </div>\r\n  </div>\r\n  <div class=\"ser-state\" *ngIf=\"!isLoading\">\r\n    <div *ngFor=\"let msg of msgs\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n      {{msg.body}}!\r\n    </div>\r\n  </div>\r\n  <div *ngIf=\"msg!=null && !isLoading\" style=\"text-align: right\" [ngClass]=\"msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))\" role=\"alert\">\r\n    {{msg.body}}!\r\n  </div>\r\n  <!-- <div style=\"direction: ltr;text-align: center\">\r\n    \r\n    <button *ngIf=\"reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\"  (click)=\"openDialoge()\">\r\n    اضافة طلب\r\n  </button> \r\n  <br/>\r\n  <br/>\r\n  \r\n  </div>-->\r\n  <div class=\"widget\" *ngIf=\"!isLoading\">\r\n    <div class=\"widget-header\">\r\n\r\n\r\n      <h3 class=\"widget-title\"> الطلبات السابقة\r\n        <button *ngIf=\"!reqData.can_add_new_request\" type=\"button\" class=\"btn btn-primary\" (click)=\"openDialoge()\">\r\n          اضافة طلب\r\n        </button>\r\n\r\n      </h3>\r\n    </div>\r\n    <div class=\"table-responsive\">\r\n      <table class=\"table table-striped table-bordered\">\r\n        <thead style=\"background: #ebecf0\">\r\n\r\n          <tr>\r\n            <th scope=\"col\">رقم الطلب</th>\r\n            <th scope=\"col\"> التخصص </th>\r\n            <th scope=\"col\">حالة الطلب</th>\r\n            <th scope=\"col\">تاريخ الطلب</th>\r\n            <th scope=\"col\">  تاريخ الموافقة </th>\r\n            <th scope=\"col\"> حذف الطلب </th>\r\n\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n     <tr *ngFor=\"let it of reqData.reqs;let i=index;\">\r\n            <td>{{it.request_number}}</td>\r\n            <td>{{it.MAJOR_TITLE}}</td>\r\n            <td>{{it.status}}</td>\r\n            <td>{{it.insert_date}}</td>\r\n            <td>{{it.APPROVAL_DATE}}</td>\r\n\r\n\r\n            <td *ngIf='it.deletable'><button\r\n              [disabled]='!it.deletable' class=\"btn btn-sm btn-danger\"\r\n              style=\"color: white\" (click)=\"delete(it.request_number,i)\"><i class=\"fa fa-trash\">\r\n                 <!-- <app-timer [hr]=\"it.time_to_delete_per_hour\"></app-timer>-->\r\n              </i> </button></td>\r\n\r\n          <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>\r\n\r\n          </tr> \r\n\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>\r\n  </div>"
 
 /***/ }),
 
@@ -9579,7 +10434,7 @@ var ChangeCourseComponent = /** @class */ (function () {
     ChangeCourseComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.isLoading = true;
-        this.changecourse = { major: '', mobile: '', reason: '', outside: '', bacholar_copy: '' };
+        this.changecourse = { major: '', mobile: '', reason: '', outside: '', bacholar_copy: '', academic_record: '' };
         this.acadmicProc.getRequests().then(function (res) {
             _this.acadmicProc.reqData = res.data;
             _this.acadmicProc.msgs = res.messages;
@@ -9657,7 +10512,11 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<!-- Modal -->\r\n<mat-dialog-content dir=\"rtl\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب  تغيير البرنامج </h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n              <section  class=\"ser-state\">\r\n                  <div class=\"container\">\r\n                       <div class=\"row ser-block\">\r\n                        <div class=\"col-md-12 col-sm-12\">\r\n                          <div class=\"state\">\r\n                              <h6>اختيار التخصص المطلوب  </h6>\r\n                              <select name=\"major\" #major=\"ngModel\" [(ngModel)]=\"course.major\" class=\"form-control\" \r\n                              [class.is-invalid]=\"course.major==''\">\r\n\r\n                                <option *ngFor=\"let item of reqData.majors\" value=\"{{item.key}}\">{{item.value}}</option>\r\n                              </select>                              \r\n                           </div>\r\n                           <div class=\"progress progress-sm\">\r\n                            <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                        <div class=\"state\">\r\n                          <h6> رقم الجوال </h6>                               \r\n                          <input name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"course.mobile\" class=\"form-control\" >\r\n                        </div>\r\n                          <div class=\"progress progress-sm\">\r\n                              <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                          </div>\r\n                  </div>                        \r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                                <div class=\"state\">\r\n                                   <h6> سبب التحويل </h6>\r\n                                   <textarea name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"course.reason\" class=\"form-control\" >\r\n                                     </textarea>\r\n                                     <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                                </div>\r\n                          </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <mat-checkbox #test>\r\n                                  <h6>  هل حصلت على الشهادة بالخارج ؟  </h6>  \r\n\r\n                              </mat-checkbox>\r\n                                                           \r\n                                  </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>  \r\n                          <div class=\"col-md-12 col-sm-12\" *ngIf=\"test.checked\">\r\n                            <div class=\"state\">\r\n                              <h6 > رفع الوثائق التي تثبت حصولك على الشهادة بالخارج </h6>\r\n                              <div class=\"custom-file\">\r\n                                  <input  name=\"attachment\"  id=\"attachment\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n                                  <label  for=\"attachment\"  class=\"custom-file-label \">\r\n                                  </label> \r\n                                </div>\r\n                              </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                     \r\n                         </div>\r\n                    \r\n                           </div>\r\n                           \r\n                    </div>\r\n                \r\n               </section>\r\n               <div style=\"margin-top: 10px;\">\r\n                  <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                   <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                  </div>\r\n             </div>\r\n              </div>\r\n  \r\n         \r\n        </form>\r\n  \r\n\r\n\r\n"
+=======
+module.exports = "<!-- Modal -->\r\n<mat-dialog-content dir=\"rtl\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <h5 style=\"text-align: center\" class=\"modal-title \" id=\"exampleModalLabel\"> طلب  تغيير البرنامج </h5>\r\n        \r\n      </div>\r\n      <div class=\"modal-body\">\r\n          <form #form=\"ngForm\" autocomplete=\"off\" (submit)=\"onSubmit(form)\" class=\"mt-20\">\r\n              <div class=\"main-content\" style=\"padding-top:0;\">\r\n              <section  class=\"ser-state\">\r\n                  <div class=\"container\">\r\n                       <div class=\"row ser-block\">\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                              <div class=\"state\">                               \r\n                                <h6> اختر التخصص المطلوب </h6>\r\n                                  <select name=\"major\" #major=\"ngModel\" [(ngModel)]=\"course.major\" class=\"form-control\" \r\n                                  [class.is-invalid]=\"course.major==''\">                                \r\n                                    <option *ngFor=\"let item of reqData.majors\" value=\"{{item.key}}\">{{item.value}}</option>\r\n                                  </select>                              \r\n                               </div>\r\n                               <div class=\"progress progress-sm\">\r\n                                <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                            </div>\r\n                          </div>\r\n                      <div class=\"col-md-12 col-sm-12\">\r\n                        <div class=\"state\">\r\n                          <h6> رقم الجوال </h6>                               \r\n                          <input name=\"mobile\" #mobile=\"ngModel\" [(ngModel)]=\"course.mobile\" class=\"form-control\" >\r\n                        </div>\r\n                          <div class=\"progress progress-sm\">\r\n                              <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                          </div>\r\n                  </div>                        \r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                                <div class=\"state\">\r\n                                   <h6> سبب التحويل </h6>\r\n                                   <textarea name=\"reason\" #reason=\"ngModel\" [(ngModel)]=\"course.reason\" class=\"form-control\" >\r\n                                     </textarea>\r\n                                     <div class=\"progress progress-sm\">\r\n                                      <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                                  </div>\r\n                                </div>\r\n                          </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <h6 >       السجل الأكاديمي</h6>\r\n                              <div class=\"custom-file\">\r\n                                  <input  name=\"attachment\"  id=\"attachment\" type=\"file\" accept=\"*/*\" (change)=\"handleacadinputChange($event)\" />\r\n                                  <label  for=\"attachment\"  class=\"custom-file-label \">\r\n                                  </label> \r\n                                </div>\r\n                              </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                     \r\n                         </div>\r\n                         <div class=\"progress progress-sm\">\r\n                            <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                        </div>\r\n                          <div class=\"col-md-12 col-sm-12\">\r\n                            <div class=\"state\">\r\n                              <mat-checkbox #outside name=\"course.outside \"  [(ngModel)]=\"course.outside\" >\r\n                                  <h6>  هل حصلت على البكالوريس من خارج المملكة ؟  </h6>  \r\n\r\n                              </mat-checkbox>\r\n                                                           \r\n                                  </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                      </div>  \r\n                          <div class=\"col-md-12 col-sm-12\" *ngIf=\"outside.checked\">\r\n                            <div class=\"state\">\r\n                              <h6 > معادلة شهادة البكالوريس للوثائق من خارج المملكة</h6>\r\n                              <div class=\"custom-file\">\r\n                                  <input  name=\"attachment\"  id=\"attachment\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n                                  <label  for=\"attachment\"  class=\"custom-file-label \">\r\n                                  </label> \r\n                                </div>\r\n                              </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                     \r\n                         </div>\r\n                         <div class=\"col-md-12 col-sm-12\" *ngIf=\"!outside.checked\">\r\n                            <div class=\"state\">\r\n                              <h6 > وثيقة البكالوريس </h6>\r\n                              <div class=\"custom-file\">\r\n                                  <input  name=\"attachment\"  id=\"attachment\" type=\"file\" accept=\"*/*\" (change)=\"handleInputChange($event)\" />\r\n                                  <label  for=\"attachment\"  class=\"custom-file-label \">\r\n                                  </label> \r\n                                </div>\r\n                              </div>\r\n                              <div class=\"progress progress-sm\">\r\n                                  <div class=\"progress-bar bg-info\" style=\"width: 15%;\"></div>\r\n                              </div>\r\n                     \r\n                         </div>\r\n                    \r\n                    \r\n                           </div>\r\n                           \r\n                    </div>\r\n                \r\n               </section>\r\n               <div style=\"margin-top: 10px;\">\r\n                  <div class=\"btn-group\" style=\"direction: ltr\" role=\"group\" aria-label=\"Basic example\">\r\n                    <button type=\"button\" (click)=\"closeDiag()\"  class=\"btn btn-outline-dark ml-1\" ><i class=\"fa fa-close\"></i> الغاء</button>\r\n                   <button type=\"submit\" class=\"btn btn-dark\"><i class=\"fa fa-database\"></i> حفظ</button>\r\n                  </div>\r\n             </div>\r\n              </div>\r\n  \r\n         \r\n        </form>\r\n  \r\n\r\n\r\n"
+>>>>>>> ae4aec55228952faa71c2f3b82ef78ff0020417d
 
 /***/ }),
 
@@ -9690,7 +10549,7 @@ var AddChangeCourseComponent = /** @class */ (function () {
     }
     AddChangeCourseComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.course = { major: '', mobile: '', reason: '', outside: '', bacholar_copy: '' };
+        this.course = { major: '', mobile: '', reason: '', outside: '', bacholar_copy: '', academic_record: '' };
         this.acadmicProc.getRequests().then(function (res) {
             _this.acadmicProc.reqData = res.data;
             _this.acadmicProc.msgs = res.messages;
@@ -9711,6 +10570,7 @@ var AddChangeCourseComponent = /** @class */ (function () {
         this.addRequest(this.course);
         console.log(this.course);
         this.dialogRef.close();
+        console.log(this.course);
     };
     AddChangeCourseComponent.prototype.handleInputChange = function (e) {
         var file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -9727,6 +10587,22 @@ var AddChangeCourseComponent = /** @class */ (function () {
     AddChangeCourseComponent.prototype._handleReaderLoaded = function (e) {
         var reader = e.target;
         this.course.bacholar_copy = reader.result;
+    };
+    AddChangeCourseComponent.prototype.handleacadinputChange = function (i) {
+        var file = i.dataTransfer ? i.dataTransfer.files[0] : i.target.files[0];
+        var pattern = /pdf-*/;
+        var reder = new FileReader();
+        /* if (!file.type.match(pattern)) {
+          alert('invalid format');
+          return;
+        }
+         */
+        reder.onload = this._handleReaderLoaded.bind(this);
+        reder.readAsDataURL(file);
+    };
+    AddChangeCourseComponent.prototype._handleRederLoaded = function (i) {
+        var reder = i.target;
+        this.course.academic_record = reder.result;
     };
     AddChangeCourseComponent.prototype.delete = function (id, index) {
         var _this = this;
@@ -11185,7 +12061,11 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<div class=\"app-sidebar colored\">\r\n  <div class=\"sidebar-header\">\r\n      <a id=\"sidebarClose\" class=\"nav-close\"><i class=\"ik ik-x\"></i></a>\r\n       <a class=\"header-brand\" href=\"#\">\r\n          <div class=\"logo-img\">\r\n             <img src=\"assets/images/logo-ar.png\" class=\"header-brand-img\" alt=\"lavalite\"> \r\n          </div>\r\n      </a>\r\n  </div>\r\n  <div class=\"sidebar-header\">\r\n      <select  name=\"menuType\" [(ngModel)]=\"menuType\" #t  class=\"form-control\"  style=\"color: #1c2172;direction: rtl;\" id=\"exampleFormControlSelect1\">\r\n          <option value=\"1\">خدمات البكالوريوس</option>\r\n          <option value=\"2\">خدمات الماجستير</option>\r\n         \r\n        </select>      \r\n  </div>\r\n  \r\n  <div class=\"sidebar-content\">\r\n      <div class=\"nav-container\">\r\n          <nav id=\"main-menu-navigation\" class=\"navigation-main\">\r\n                   <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>مصادر التعلم</span> <i class=\"ik ik-book-open\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 1</a>\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 2</a>\r\n                       <a href=\"#\" class=\"menu-item\">خدمة 3 </a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>بيانات الطالب </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstddata/academicstatus\">الحالة الأكاديمية</a>\r\n\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstddata/academicrecord\">السجل الأكاديمي</a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> طباعة الشهادات  </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/idcertificate\">شهادة التعريف</a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/examattendacecertificate\">شهادة حضور الإختبار</a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/examattendacecertificateapp\"> شهادة إثبات حضور الإختبار </a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الطلبات الأكاديمية   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/academicrequests/withdrawal\">طلب إنسحاب من الجامعة</a>\r\n                      <a href=\"#\" class=\"menu-item\"  >طلب تأجيل الدراسة</a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/academicrequests/termexecuse\"> طلب حذف المقررات (الإعتذار عن الفصل  ) </a>\r\n                       <a href=\"#\" class=\"menu-item\">الاعتراض على نتيجة الاختبار النهائي</a>\r\n                       <a href=\"#\" class=\"menu-item\">حذف مقرر</a>\r\n                       <a href=\"#\" class=\"menu-item\">طلب إعادة قيد</a>\r\n                       <a href=\"#\" class=\"menu-item\">رفع الأعذار للاختبارات</a>\r\n                 \r\n                       <a href=\"#\" class=\"menu-item\">رفع الأعذار للمحاضرات</a>\r\n\r\n                      </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الشؤون المالية   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\">سداد الرسوم</a>\r\n                     \r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> طلبات أخرى   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/otherrequests/changebranch\">تحويل إلى فرع آخر</a>\r\n<<<<<<< HEAD\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/otherrequests/changecourse\">تحويل إلى برنامج آخر</a>\r\n                       <a href=\"#\" class=\"menu-item\"> طلب البطاقة الجامعية  </a>\r\n=======\r\n                      <a href=\"#\" class=\"menu-item\">تحويل إلى برنامج آخر</a>\r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/otherrequests/personalid\"> طلب البطاقة الجامعية  </a>\r\n>>>>>>> 090a49ed99df921684352d6e5945f50a142175a8\r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/otherrequests/absencequery\">الاستعلام عن الغيابات</a>\r\n                       <a href=\"#\" class=\"menu-item\">معلومات الخريج</a>\r\n                      \r\n                  </div>\r\n              </div>\r\n                 <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الشئون الأكاديمية</span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a>\r\n                      <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/certificate\">  شهادة تعريف</a>\r\n                      <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/record\"> السجل الاكاديمي</a> \r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/graduationstatment\">  إفادة خريج</a>\r\n                  </div>\r\n              </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الإجراءات الأكاديمية</span> <i class=\"ik ik-layers\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <!--  <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/terminate\">الانسحاب من الجامعة   </a>-->\r\n                        <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/withdrawuniv\">الانسحاب من الجامعة   </a>\r\n                        \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/postpone\"> تأجيل الفصل الدراسي\r\n                       </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/execuse\"> الاعتذار عن الفصل دراسي </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/summer\"> الاعتذار عن الفصل الصيفي     </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/reenrol\">  اعادة قيد </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/cancelcourse\"> الانسحاب من مقرر     </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/equalize\"> معادلة المقررات    </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/eequalize\"> معادلة اللغة الانجليزية </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changemajor\"> تغيير التخصص </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changerequest\">تغيير الفرع </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/lecexecuse\">رفع الاعذار للمحاضرات</a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/objectexam\"> الاعتراض على نتيجة الاختبار النهائي </a> \r\n\r\n                       <a href=\"#\" class=\"menu-item\"   routerLink=\"/procedures/lectabs\">   الاستعلام عن الغيايات  </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/visitorstudent\"> طلب الدراسة كطالب زائر     </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/terminate\"> طلب فصل استثنائي   </a>\r\n\r\n\r\n                      \r\n                       <!-- <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/examexcuse\"> تقديم الأعذار للمتغيبين عن الاختبارات   </a> -->\r\n\r\n\r\n                       \r\n\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                    <a href=\"javascript:void(0)\"><span> تسجيل المقررات </span> <i class=\"ik ik-dollar-sign\"></i></a>\r\n                    <div class=\"submenu-content\">\r\n                            <a href=\"#\" class=\"menu-item\" routerLink=\"/registercourses/registerwishes\"> رغبات التسجيل للمستجدين     </a>\r\n                            <a href=\"#\" class=\"menu-item\" routerLink=\"/registercourses/reghelper\"> مساعد التسجيل     </a>\r\n\r\n                        </div>\r\n              </div>\r\n             \r\n            \r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>  الشؤون المالية </span> <i class=\"ik ik-dollar-sign\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/finance/fees\">  افادة بالرسوم الدراسية </a> \r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/finance/feesexception\"> الإعفاء من الرسوم الدراسية </a>\r\n\r\n                  </div>\r\n              </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"><span> شؤون الإختبارات </span> <i class=\"ik ik-trending-down\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                     <!-- <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attend\">  جداول الاختبارات   </a> -->\r\n                     <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/\"> شهادة  حضور الاختبارات    </a> \r\n                     <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attendapp\"> شهادة اثبات حضور الاختبارات    </a> \r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/examexcuse\"> رفع الاعذار للاختبارات  </a> \r\n\r\n                  </div>\r\n                \r\n           \r\n                </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                        <a href=\"javascript:void(0)\"><span> طلبات أخرى   </span> <i class=\"ik ik-user\"></i></a>\r\n                        <div class=\"submenu-content\">\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/medicalreport\"> طلب تقرير طبي  </a>\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/universitycard\">  طلب البطاقة الجامعية     </a>\r\n                             <!--   <a href=\"#\" class=\"menu-item\" routerLink=\"/other/missingcard\">طلب بطاقة جامعية بدل فاقد </a>\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/training\"> طلب التدريب الميداني  </a>-->\r\n\r\n                            </div>\r\n                </div>\r\n                <!-- <div class=\"nav-lavel\">  </div> -->\r\n               <div class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"> <span class=\"badge badge-danger\">11</span><span>خدمات عامة </span>\r\n                     <i class=\"ik ik-align-right\"></i> </a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\"> نظام BlackBoard  <i class=\"ik ik-bold\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> البريد الإلكتروني      <i class=\"ik ik-mail\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> إدارة المصادر المعرفية  <i class=\"ik ik-book-open\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> المنتدي           <i class=\"ik ik-message-square\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> التقويم الدراسي       <i class=\"ik ik-calendar\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">تعليمات الأنظمة التعليمية <i class=\"ik ik-clipboard\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">دعم الدخول الموحد     <i class=\"ik ik-users\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">نظام دعم           <i class=\"ik ik-settings\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> تحديث بيانات        <i class=\"ik ik-link\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">الحقوق الطلابية        <i class=\"ik ik-command\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> خدمات نظام معلومات الطلبة   <i class=\"ik ik-tablet\"></i> </a>\r\n                  </div>\r\n              </div>\r\n         \r\n                  <div class=\"nav-lavel\"> </div>\r\n                    <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"  ><span>  إرشادات عامة  </span> <i class=\"ik ik-alert-circle\"></i>\r\n                   </a>\r\n                   </div>\r\n                  <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"><span>استفسارات  </span> <i class=\"ik ik-settings\"></i>\r\n                    </a>\r\n                  </div>\r\n           \r\n          </nav>\r\n      </div>\r\n  </div>\r\n</div>"
+=======
+module.exports = "<div class=\"app-sidebar colored\">\r\n  <div class=\"sidebar-header\">\r\n      <a id=\"sidebarClose\" class=\"nav-close\"><i class=\"ik ik-x\"></i></a>\r\n       <a class=\"header-brand\" href=\"#\">\r\n          <div class=\"logo-img\">\r\n             <img src=\"assets/images/logo-ar.png\" class=\"header-brand-img\" alt=\"lavalite\"> \r\n          </div>\r\n      </a>\r\n  </div>\r\n  <div class=\"sidebar-header\">\r\n      <select  name=\"menuType\" [(ngModel)]=\"menuType\" #t  class=\"form-control\"  style=\"color: #1c2172;direction: rtl;\" id=\"exampleFormControlSelect1\">\r\n          <option value=\"1\">خدمات البكالوريوس</option>\r\n          <option value=\"2\">خدمات الماجستير</option>\r\n         \r\n        </select>      \r\n  </div>\r\n  \r\n  <div class=\"sidebar-content\">\r\n      <div class=\"nav-container\">\r\n          <nav id=\"main-menu-navigation\" class=\"navigation-main\">\r\n                   <div class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>مصادر التعلم</span> <i class=\"ik ik-book-open\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 1</a>\r\n                      <a href=\"#\" class=\"menu-item\">خدمة 2</a>\r\n                       <a href=\"#\" class=\"menu-item\">خدمة 3 </a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>بيانات الطالب </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstddata/academicstatus\">الحالة الأكاديمية</a>\r\n\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstddata/academicrecord\">السجل الأكاديمي</a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> طباعة الشهادات  </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/idcertificate\">شهادة التعريف</a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/examattendacecertificate\">شهادة حضور الإختبار</a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/masterstdcertificate/examattendacecertificateapp\"> شهادة إثبات حضور الإختبار </a>\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الطلبات الأكاديمية   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/academicrequests/withdrawal\">طلب إنسحاب من الجامعة</a>\r\n                      <a href=\"#\" class=\"menu-item\"   routerLink=\"/academicrequests/studypostpone\">طلب تأجيل الدراسة</a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/academicrequests/termexecuse\"> طلب حذف المقررات (الإعتذار عن الفصل  ) </a>\r\n                       <a href=\"#\" class=\"menu-item\" >الاعتراض على نتيجة الاختبار النهائي</a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/academicrequests/cancelcourse\">حذف مقرر</a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/academicrequests/reEnroll\">طلب إعادة قيد</a>\r\n                       <a href=\"#\" class=\"menu-item\">رفع الأعذار للاختبارات</a>\r\n                 \r\n                       <a href=\"#\" class=\"menu-item\">رفع الأعذار للمحاضرات</a>\r\n\r\n                      </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الشؤون المالية   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\">سداد الرسوم</a>\r\n                     \r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==2\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> طلبات أخرى   </span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/otherrequests/changebranch\">تحويل إلى فرع آخر</a>\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/otherrequests/changecourse\">تحويل إلى برنامج آخر</a>\r\n                       <a href=\"#\" class=\"menu-item\"> طلب البطاقة الجامعية  </a>\r\n                      <a href=\"#\" class=\"menu-item\">تحويل إلى برنامج آخر</a>      \r\n                      <a href=\"#\" class=\"menu-item\"routerLink=\"/otherrequests/changecourse\" >تحويل إلى برنامج آخر</a>\r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/otherrequests/personalid\"> طلب البطاقة الجامعية  </a>\r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/otherrequests/absencequery\">الاستعلام عن الغيابات</a>\r\n                       <a href=\"#\" class=\"menu-item\">معلومات الخريج</a>\r\n                      \r\n                  </div>\r\n              </div>\r\n                 <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الشئون الأكاديمية</span> <i class=\"ik ik-user\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/academicaff/status\">الحالة الاكاديمية</a>\r\n                      <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/certificate\">  شهادة تعريف</a>\r\n                      <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/record\"> السجل الاكاديمي</a> \r\n                       <a href=\"#\" class=\"menu-item\"  routerLink=\"/academicaff/graduationstatment\">  إفادة خريج</a>\r\n                  </div>\r\n              </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span> الإجراءات الأكاديمية</span> <i class=\"ik ik-layers\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <!--  <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/terminate\">الانسحاب من الجامعة   </a>-->\r\n                        <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/withdrawuniv\">الانسحاب من الجامعة   </a>\r\n                        \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/postpone\"> تأجيل الفصل الدراسي\r\n                       </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/execuse\"> الاعتذار عن الفصل دراسي </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/summer\"> الاعتذار عن الفصل الصيفي     </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/reenrol\">  اعادة قيد </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/cancelcourse\"> الانسحاب من مقرر     </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/equalize\"> معادلة المقررات    </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/eequalize\"> معادلة اللغة الانجليزية </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changemajor\"> تغيير التخصص </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/changerequest\">تغيير الفرع </a>\r\n\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/lecexecuse\">رفع الاعذار للمحاضرات</a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/objectexam\"> الاعتراض على نتيجة الاختبار النهائي </a> \r\n\r\n                       <a href=\"#\" class=\"menu-item\"   routerLink=\"/procedures/lectabs\">   الاستعلام عن الغيايات  </a> \r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/visitorstudent\"> طلب الدراسة كطالب زائر     </a>\r\n                       <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/terminate\"> طلب فصل استثنائي   </a>\r\n\r\n\r\n                      \r\n                       <!-- <a href=\"#\" class=\"menu-item\" routerLink=\"/procedures/examexcuse\"> تقديم الأعذار للمتغيبين عن الاختبارات   </a> -->\r\n\r\n\r\n                       \r\n\r\n                  </div>\r\n              </div>\r\n              <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                    <a href=\"javascript:void(0)\"><span> تسجيل المقررات </span> <i class=\"ik ik-dollar-sign\"></i></a>\r\n                    <div class=\"submenu-content\">\r\n                            <a href=\"#\" class=\"menu-item\" routerLink=\"/registercourses/registerwishes\"> رغبات التسجيل للمستجدين     </a>\r\n                            <a href=\"#\" class=\"menu-item\" routerLink=\"/registercourses/reghelper\"> مساعد التسجيل     </a>\r\n\r\n                        </div>\r\n              </div>\r\n             \r\n            \r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                  <a href=\"javascript:void(0)\"><span>  الشؤون المالية </span> <i class=\"ik ik-dollar-sign\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/finance/fees\">  افادة بالرسوم الدراسية </a> \r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/finance/feesexception\"> الإعفاء من الرسوم الدراسية </a>\r\n\r\n                  </div>\r\n              </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"><span> شؤون الإختبارات </span> <i class=\"ik ik-trending-down\"></i></a>\r\n                  <div class=\"submenu-content\">\r\n                     <!-- <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attend\">  جداول الاختبارات   </a> -->\r\n                     <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/\"> شهادة  حضور الاختبارات    </a> \r\n                     <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/attendapp\"> شهادة اثبات حضور الاختبارات    </a> \r\n                      <a href=\"#\" class=\"menu-item\" routerLink=\"/exams/examexcuse\"> رفع الاعذار للاختبارات  </a> \r\n\r\n                  </div>\r\n                \r\n           \r\n                </div>\r\n                <div *ngIf=\"menuType==1\" class=\"nav-item has-sub \">\r\n                        <a href=\"javascript:void(0)\"><span> طلبات أخرى   </span> <i class=\"ik ik-user\"></i></a>\r\n                        <div class=\"submenu-content\">\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/medicalreport\"> طلب تقرير طبي  </a>\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/universitycard\">  طلب البطاقة الجامعية     </a>\r\n                             <!--   <a href=\"#\" class=\"menu-item\" routerLink=\"/other/missingcard\">طلب بطاقة جامعية بدل فاقد </a>\r\n                                <a href=\"#\" class=\"menu-item\" routerLink=\"/other/training\"> طلب التدريب الميداني  </a>-->\r\n\r\n                            </div>\r\n                </div>\r\n                <!-- <div class=\"nav-lavel\">  </div> -->\r\n               <div class=\"nav-item has-sub \">\r\n                 <a href=\"javascript:void(0)\"> <span class=\"badge badge-danger\">11</span><span>خدمات عامة </span>\r\n                     <i class=\"ik ik-align-right\"></i> </a>\r\n                  <div class=\"submenu-content\">\r\n                      <a href=\"#\" class=\"menu-item\"> نظام BlackBoard  <i class=\"ik ik-bold\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> البريد الإلكتروني      <i class=\"ik ik-mail\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> إدارة المصادر المعرفية  <i class=\"ik ik-book-open\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> المنتدي           <i class=\"ik ik-message-square\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> التقويم الدراسي       <i class=\"ik ik-calendar\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">تعليمات الأنظمة التعليمية <i class=\"ik ik-clipboard\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">دعم الدخول الموحد     <i class=\"ik ik-users\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">نظام دعم           <i class=\"ik ik-settings\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> تحديث بيانات        <i class=\"ik ik-link\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\">الحقوق الطلابية        <i class=\"ik ik-command\"></i> </a>\r\n                      <a href=\"#\" class=\"menu-item\"> خدمات نظام معلومات الطلبة   <i class=\"ik ik-tablet\"></i> </a>\r\n                  </div>\r\n              </div>\r\n         \r\n                  <div class=\"nav-lavel\"> </div>\r\n                    <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"  ><span>  إرشادات عامة  </span> <i class=\"ik ik-alert-circle\"></i>\r\n                   </a>\r\n                   </div>\r\n                  <div class=\"nav-item\">\r\n                    <a class=\"nav-link\"><span>استفسارات  </span> <i class=\"ik ik-settings\"></i>\r\n                    </a>\r\n                  </div>\r\n           \r\n          </nav>\r\n      </div>\r\n  </div>\r\n</div>"
+>>>>>>> ae4aec55228952faa71c2f3b82ef78ff0020417d
 
 /***/ }),
 

@@ -42,6 +42,9 @@ export class CancelCourseComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
+    dialogConfig.height = '80%';
+   /* dialogConfig.direction = "rtl";
+    dialogConfig.position = { top: '100px', left: '25px' };*/
 
     this.dialog.open(AddCancelCourseRequestComponent, dialogConfig);
   }
