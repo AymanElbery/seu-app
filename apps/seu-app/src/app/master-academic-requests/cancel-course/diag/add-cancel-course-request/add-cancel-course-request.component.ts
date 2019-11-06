@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 import { ToastrService } from 'ngx-toastr';
-import { CancelCourseService } from '../../../services/cancel-course.service';
+import { CancelCourseService } from 'src/app/master-academic-requests/services/cancel-course.service';
 import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
 import { NgForm } from '@angular/forms';
 import { CancelCousreMaster } from 'src/app/shared/models/cancel-cousre-master';
@@ -58,4 +58,3 @@ export class AddCancelCourseRequestComponent implements OnInit {
   }
 
 }
-
