@@ -117,9 +117,9 @@
 
 
   </div>
-  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" *ngIf="!isLoading">
-    <section class="ser-state">
-      <div class="widget">
+  <form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" *ngIf="!isLoading">
+    <section  class="ser-state">
+      <div *ngIf="!reqData.can_add_new_request" class="widget">
         <div class="widget-header">
 
           <h3 class="widget-title"> اختر الرغبات</h3>
@@ -127,7 +127,7 @@
 
         <div class="container">
           <div class="row ser-block">
-            <div class=" col-md-4 col-sm-12">
+            <div  *ngIf="reqData.requests.length != 0" class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>هل ترغب ب يومين (يبدأ من 5 مساء) </h6>
                 <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #TowDaya="ngModel"
