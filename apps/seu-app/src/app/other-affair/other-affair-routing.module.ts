@@ -8,6 +8,7 @@ import {AddTrainingRequestComponent} from './training-request/diag/add-training-
 import {TrainingRequestService} from './services/training-request.service';
 
 import { from } from 'rxjs';
+import { StudentInfoComponent } from './student-info/student-info.component';
 const routes: Routes = [ { path: 'other', component:MedicalReportComponent  },
 {
   path: 'other',
@@ -15,7 +16,9 @@ const routes: Routes = [ { path: 'other', component:MedicalReportComponent  },
   { path: 'medicalreport',  component:MedicalReportComponent  },
   { path: 'universitycard',  component:UnivCardComponent  },
   { path: 'missingcard',  component:MissingCardComponent  },
-  { path :'training' ,component:TrainingRequestComponent}
+  { path :'training' ,component:TrainingRequestComponent},
+  { path :'studentinfo' ,component:StudentInfoComponent}
+
 
   ]
 }

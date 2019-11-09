@@ -58,7 +58,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>الجنسية </h6>
-                <h5>{{{reqData.citizin}} </h5>
+                <h5>{{reqData.citizin}} </h5>
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -70,7 +70,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>المؤهل </h6>
-                <h5>{{student.std_adm_term_label}} </h5>
+                <h5>{{reqData.degree}}</h5>
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -79,7 +79,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>الكلية </h6>
-                <h5>{{student.current_acadimic_status_label}} </h5>
+                <h5>{{reqData.faculty}} </h5>
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -88,7 +88,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>التخصص </h6>
-                <h5>{{student.final_graduation_GPA}} </h5>
+                <h5>{{reqData.major}}  </h5>
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -100,7 +100,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>الفرع</h6>
-                <h5> {{student.acadimic_position_label}}</h5>
+                <h5> {{reqData.branch}}</h5>
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -109,19 +109,20 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>المعدل </h6>
-                <h5>{{student.std_fees}} </h5>
+                <h5>{{reqData.gpa}} </h5>
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info" style="width: 15%;"></div>
               </div>
             </div>
           </div>
-        </div>
+       
         <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الاسم باللغة العربية</h6>
-                <h5> {{student.acadimic_position_label}}</h5>
+              <h6>الاسم باللغة العربية</h6>
+                <!-- <h3>{{reqData.user.NAME_EN}}</h3> -->
+              <!-- <input type="text" name="name_ar" [(ngModel)]="studentInfo.name_ar" value="{{reqData.user.NAME_AR}}" />  -->
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -130,7 +131,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>الاسم باللغة الانجليزية </h6>
-                <h5>{{student.std_fees}} </h5>
+                <!-- <h5>{{student.std_fees}} </h5> -->
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -141,7 +142,7 @@
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
                   <h6>البريد الالكتروني</h6>
-                  <h5> {{student.acadimic_position_label}}</h5>
+                  <h5> </h5>
                 </div>
                 <div class="progress progress-sm">
                   <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -150,7 +151,7 @@
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
                   <h6>رقم الهاتف الجوال </h6>
-                  <h5>{{student.std_fees}} </h5>
+                  <h5> </h5>
                 </div>
                 <div class="progress progress-sm">
                   <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -159,17 +160,18 @@
               <div class=" col-md-4 col-sm-12">
                   <div class="state">
                     <h6>فصل التخرج </h6>
-                    <h5>{{student.std_fees}} </h5>
+                    <h5> </h5>
                   </div>
                   <div class="progress progress-sm">
                     <div class="progress-bar bg-info" style="width: 15%;"></div>
                   </div>
                 </div>
             </div>
+          </div>
+            </section>
         </div>
-      </section>
   
-    </div>
+   
     <!-- <section class="ser-state" *ngIf="!isLoading">
     
       <div class="container">
@@ -299,10 +301,12 @@
   
         </div>
       </div>
-    </section> -->
+    </section>  -->
     <!-- <div style="text-align: center" class="prin" *ngIf="!isLoading">
       <a class="btn" href="{{arabicPrint}}">عربي <i class="ik ik-save"></i> </a>
       <a class="btn" href="{{EngPrint}}"> <i class="ik ik-save"></i> English </a>
-    </div> -->
+    </div>  -->
   
   </div>
+
+  
