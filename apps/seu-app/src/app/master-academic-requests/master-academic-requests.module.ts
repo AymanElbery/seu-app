@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -31,6 +30,7 @@ import { ExamsExecusesComponent } from './exams-execuses/exams-execuses.componen
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
 import { AddExamExecuseComponent } from './exams-execuses/diag/add-exam-execuse/add-exam-execuse.component';
+import { MatDialogModule, MatCheckboxModule } from '@angular/material';
 
 
 @NgModule({
@@ -70,10 +70,10 @@ import { AddExamExecuseComponent } from './exams-execuses/diag/add-exam-execuse/
     MatNativeDateModule,
     MatDatepickerModule,
     FormsModule,
-    MatDialogModule,
     BrowserAnimationsModule,
-
     ToastrModule.forRoot(),
+    MatDialogModule,
+    MatCheckboxModule,
 
   ],
   providers:[UniversityWithdrawalService,

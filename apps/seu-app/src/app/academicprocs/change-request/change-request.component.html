@@ -79,6 +79,7 @@
             <td>{{it.APPROVAL_DATE}} </td>
             <td>{{it.status}}</td>
 
+         
 
             <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
               (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>

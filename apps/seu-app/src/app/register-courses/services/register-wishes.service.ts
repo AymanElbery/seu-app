@@ -13,7 +13,7 @@ export class RegisterWishesService {
   }
   getِgetRequests() {
     //?std_id=S180105049
-    return this.httRequest.GetRequest('register_wishes_service?std_id=S190000060').toPromise();
+    return this.httRequest.GetRequest('register_wishes_service').toPromise();
   }
 
   deleteReq(id) {

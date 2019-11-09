@@ -53,7 +53,7 @@
 
 
       <h3 class="widget-title"> الطلبات السابقة
-        <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+        <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openAddDialoge()">
           اضافة طلب
         </button>
 
@@ -80,7 +80,7 @@
                 Print</a></td>
          -->
          <td>
-            <button  type="button" class="btn btn-primary" (click)="openDialoge()">
+            <button  type="button" class="btn btn-primary" (click)="openDialoge(it.request_number)">
                 <i class="fa fa-eye" style="font-size:24px">
                    
                  </i>

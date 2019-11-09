@@ -23,7 +23,7 @@ export class GraduateProfileDetailComponent implements OnInit {
     public dialogRef: MatDialogRef<GraduateProfileDetailComponent>,
     private toastr: ToastrService, private gradService: GraduateProfileService) { }
   ngOnInit() {
-    //  this.STD_NAME_EN="ffffffffffff";
+
     this.stdinfo = {
       EMPLOYER_EMAIL: '',
       EMPLOYER_JOB_TITLE: '',
@@ -71,7 +71,7 @@ export class GraduateProfileDetailComponent implements OnInit {
           this.stdinfo.STD_GENDER = 'ذكر'
         else if (this.stdinfo.STD_GENDER == 'F')
           this.stdinfo.STD_GENDER = 'أنثي'
-        console.log(this.stdinfo);
+       // console.log(this.stdinfo);
         this.isLoading = false;
 
       }

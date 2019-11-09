@@ -63,6 +63,7 @@ import { from } from 'rxjs';
 import {AbsenceQueryComponent} from './absence-query/absence-query.component';
 import {LectureAbsQueryService} from './services/lecture-abs-query.service';
 import { TimerModule } from '../shared/components/timer/timer.module';
+import { MatCheckboxModule } from '@angular/material';
 @NgModule({
   declarations: [PostponeRequestComponent
     , ExecuseRequestComponent,
@@ -139,7 +140,8 @@ import { TimerModule } from '../shared/components/timer/timer.module';
      MatNativeDateModule,
      MatProgressSpinnerModule,
     ToastrModule.forRoot(),
-    TimerModule
+    TimerModule,
+
   ],
   providers: [WithdrawFromUnivService,
      TermPostponeService,
@@ -154,6 +156,7 @@ import { TimerModule } from '../shared/components/timer/timer.module';
       UvnivCardService,
       TerminationService,
       MissingUnivCardService,
+      MatCheckboxModule,
   ]
 
 })
