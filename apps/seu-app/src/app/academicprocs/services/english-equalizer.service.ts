@@ -15,19 +15,19 @@ export class EnglishEqualizerService {
 
   getِgetRequests() {
 
-   return this.httRequest.GetRequest('english_certificates_service?std_id=S120000101').toPromise();
+   return this.httRequest.GetRequest('english_certificates_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('english_certificates_service/insert?std_id=S120000101', data).toPromise();
+      return this.httRequest.postRequest('english_certificates_service/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('english_certificates_service/remove/' + id + '?std_id=S120000101').toPromise();
+    return this.httRequest.GetRequest('english_certificates_service/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
 
-    return this.configService.getApiURI() + '/english_certificates_service/download/english_certificates/' + req + '?std_id=S160239561';
+    return this.configService.getApiURI() + '/english_certificates_service/download/english_certificates/' + req ;
    }
    DownloadEng() {
 
