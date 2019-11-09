@@ -14,18 +14,18 @@ export class StudentInfoService {
                     this.configService.baseUrl = "stdservicesapi";
 			  }
   getِRequests() {
-    return this.httRequest.GetRequest('/student_info_service ').toPromise();
+    return this.httRequest.GetRequest('student_info_service').toPromise();
    }
    AddRequest(data) {
-       return this.httRequest.postRequest('/student_info_service/insert', data).toPromise();
+       return this.httRequest.postRequest('student_info_service/update', data).toPromise();
    }
    DownloadPhoto() {
 
-    return this.configService.getApiURI() + '/student_info_service/download/photo';
+    return this.configService.getApiURI() + 'student_info_service/download/photo';
    }
    DownloadCv() {
 
-    return this.configService.getApiURI() + '/student_info_service/download/cv';
+    return this.configService.getApiURI() + 'student_info_service/download/cv';
    }
 }
 

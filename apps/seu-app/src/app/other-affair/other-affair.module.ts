@@ -18,6 +18,7 @@ import {MissingUnivCardService} from './services/missing-univ-card.service';
 import {TrainingRequestComponent} from './training-request/training-request.component';
 import {AddTrainingRequestComponent} from './training-request/diag/add-training-request/add-training-request.component';
 import {TrainingRequestService} from './services/training-request.service';
+import { StudentInfoComponent } from './student-info/student-info.component';
 
 @NgModule({
 
@@ -28,7 +29,8 @@ import {TrainingRequestService} from './services/training-request.service';
     AddBankReceiptComponent,
     AddMissingCardDataComponent,
     TrainingRequestComponent,
-    AddTrainingRequestComponent
+    AddTrainingRequestComponent,
+    StudentInfoComponent
 
   ],
   entryComponents:[ AddBankReceiptComponent,
