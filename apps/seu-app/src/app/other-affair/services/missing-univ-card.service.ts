@@ -9,7 +9,6 @@ export class MissingUnivCardService {
 
   reqData;
   msgs;
-  reqNo;
  	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
                     this.configService.baseUrl = "stdservicesapi";
 			  }
