@@ -48,7 +48,7 @@
 
 
       <h3 class="widget-title"> الطلبات السابقة
-        <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
           اضافة طلب
         </button>
 
@@ -78,13 +78,11 @@
             <td>{{it.APPROVAL_DATE}}</td>
 
 
-            <td *ngIf='it.deletable'><button
-              [disabled]='!it.deletable' class="btn btn-sm btn-danger"
-              style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
-                 <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
-              </i> </button></td>
-
-          <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
+              (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
+    
+              <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+    
 
           </tr> 
 
