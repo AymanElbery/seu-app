@@ -119,7 +119,7 @@
   </div>
   <form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" *ngIf="!isLoading">
     <section  class="ser-state">
-      <div *ngIf="!reqData.can_add_new_request" class="widget">
+      <div *ngIf="reqData.can_add_new_request" class="widget">
         <div class="widget-header">
 
           <h3 class="widget-title"> اختر الرغبات</h3>
@@ -127,10 +127,10 @@
 
         <div class="container">
           <div class="row ser-block">
-            <div  *ngIf="reqData.requests.length != 0" class=" col-md-4 col-sm-12">
+            <div  *ngIf="reqData.requests.length == 0" class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>هل ترغب ب يومين (يبدأ من 5 مساء) </h6>
-                <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #TowDaya="ngModel"
+                <input  [disabled]="registerWishes.wish != ''" type="checkbox" class="checkbox" style="height: 20px;width:20px;" #TowDaya="ngModel"
                   [(ngModel)]="registerWishes.tow_days" name="TowDaya" ng-true-value=0 ng-false-value=1>
               </div>
 
@@ -138,7 +138,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>الأيام و الفترات المتاحة </h6>
-                <select required class="form-control" #Wishes="ngModel" [(ngModel)]="registerWishes.wish" name="Wishes"
+                <select  [disabled]="registerWishes.tow_days != ''"  class="form-control" #Wishes="ngModel" [(ngModel)]="registerWishes.wish" name="Wishes"
                   [class.is-invalid]="registerWishes.wish == ''">
                   <option value=''>اختر الفترة المتاحة</option>
                   <option *ngFor="let wish of reqData.wishes_list" [value]="wish.id">{{wish.value}}</option>
@@ -148,10 +148,10 @@
 
             </div>
 
-            <div class=" col-md-4 col-sm-12">
+            <div *ngIf="reqData.can_add_new_request" class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6> <br /> </h6>
-                <button [disabled]="!reqData.can_add_new_request" type="submit" class="btn btn-dark"><i
+                <button   type="submit" class="btn btn-dark"><i
                     class="fa fa-database"></i> ارسال الطلب</button>
 
               </div>
