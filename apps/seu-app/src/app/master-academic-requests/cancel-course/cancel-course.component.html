@@ -88,13 +88,10 @@
                   class="glyphicon glyphicon-print"></span>
                 Print</a></td>
          -->
-            <td *ngIf='it.deletable'><button
-                [disabled]='!it.deletable' class="btn btn-sm btn-danger"
-                style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
-                   <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
-                </i> </button></td>
+         <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
+          (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
 
-            <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+          <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
 
           </tr>
 
