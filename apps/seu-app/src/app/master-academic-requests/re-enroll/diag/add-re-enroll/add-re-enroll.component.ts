@@ -21,7 +21,7 @@ export class AddReEnrollComponent implements OnInit {
                private toastr: ToastrService,  private acadmicProc: ReEnrollService) { }
 
   ngOnInit() {
-    this.reEnroll = {proof: '', reason: '', has_proof: '1'};
+    this.reEnroll = {proof: '', reason: '', has_proof: ''};
     this.acadmicProc.getِgetRequests().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;
@@ -42,20 +42,30 @@ export class AddReEnrollComponent implements OnInit {
       this.acadmicProc.msgs = (res as any).messages;
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
+        console.log(this.reEnroll.reason);
 
         });
     });
 
   }
   onSubmit(form: NgForm) {
-this.addRequest(this.reEnroll);
-console.log(this.reEnroll);
-this.dialogRef.close();
-
+    if(this.reEnroll.has_proof.toString()=="true")
+    {
+      this.reEnroll.has_proof="1"
+    }
+    else
+    {
+      this.reEnroll.has_proof="0"
+    }
+   
+      this.addRequest(this.reEnroll);
+      this.dialogRef.close();
+      console.log(this.reEnroll);
   }
+
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-    const pattern = /image-*/;
+    const pattern = /pdf-*/;
     const reader = new FileReader();
     /* if (!file.type.match(pattern)) {
       alert('invalid format');
@@ -68,7 +78,7 @@ this.dialogRef.close();
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.reEnroll.proof = reader.result;
-    console.log(this.reEnroll.proof);
+
   }
 
   print(req) {

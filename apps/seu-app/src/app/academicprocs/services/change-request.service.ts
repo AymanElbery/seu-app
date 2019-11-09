@@ -15,13 +15,13 @@ export class ChangeRequestService {
 
   getِgetRequests() {
 
-   return this.httRequest.GetRequest('change_camp_service?std_id=S120000101').toPromise();
+   return this.httRequest.GetRequest('change_camp_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('change_camp_service/insert?std_id=S120000101', data).toPromise();
+      return this.httRequest.postRequest('change_camp_service/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('change_camp_service/remove/' + id + '?std_id=S120000101').toPromise();
+    return this.httRequest.GetRequest('change_camp_service/remove/' + id ).toPromise();
 
   }
 

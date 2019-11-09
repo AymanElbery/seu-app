@@ -97,8 +97,10 @@
   
               <td>{{it.status}}</td>
   
-              <td><button  class="btn btn-sm btn-danger" style="color: white"
+              <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
+
+                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
 
               <td><a class="btn btn-primary" [href]="print(it.request_number)"><span
                     class="glyphicon glyphicon-print"></span>
