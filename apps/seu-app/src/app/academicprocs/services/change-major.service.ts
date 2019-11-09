@@ -16,7 +16,7 @@ constructor(private configService: ConfigService, private httRequest: HttpReques
 }
 
   getِgetRequests() {
-//?std_id=S120000101
+
    return this.httRequest.GetRequest('change_major_service').toPromise();
   }
   AddRequest(data) {

@@ -151,7 +151,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6> <br /> </h6>
-                <button [disabled]="reqData.can_add_new_request" type="submit" class="btn btn-dark"><i
+                <button [disabled]="!reqData.can_add_new_request" type="submit" class="btn btn-dark"><i
                     class="fa fa-database"></i> ارسال الطلب</button>
 
               </div>
@@ -196,10 +196,14 @@
 
             <td>{{it.duration}}</td>
             <td>{{it.insert_date}}</td>
+            
+            <td *ngIf='it.deletable'><button
+              [disabled]='!it.deletable' class="btn btn-sm btn-danger"
+              style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
+                 <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
+              </i> </button></td>
 
-            <td><button class="btn btn-sm btn-danger" style="color: white" (click)="delete(it.request_number,i)"><i
-                  class="fa fa-trash"></i> </button></td>
-            <!--[disabled]='!it.deletable'-->
+          <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
           </tr>
 
         </tbody>
