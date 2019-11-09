@@ -64,6 +64,7 @@
             <th scope="col">تاريخ الرد</th>
 
             <th scope="col">حالة الطلب</th>
+            <th scope="col">حذف الطلب</th>
             <th scope="col"> طباعه</th>
 
           </tr>
@@ -77,6 +78,14 @@
 
             <td>{{it.approval_date}}</td>
             <td>{{it.status}}</td>
+
+            <td *ngIf='it.deletable'><button
+              [disabled]='!it.deletable' class="btn btn-sm btn-danger"
+              style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
+                 <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
+              </i> </button></td>
+
+          <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
 
             <td><a class="btn btn-primary" [href]="print(it.request_number)"><span
                   class="glyphicon glyphicon-print"></span>

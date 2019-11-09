@@ -24,6 +24,7 @@ import { PersonalIDService } from './services/personal-id.service';
 import { ToastrModule } from 'ngx-toastr';
 import { GraduateProfileComponent } from './graduate-profile/graduate-profile.component';
 import { GraduateProfileDetailComponent } from './graduate-profile/diag/graduate-profile-detail/graduate-profile-detail.component';
+import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduate-profile/add-graduate-profile.component';
 
 
 @NgModule({
@@ -31,9 +32,9 @@ import { GraduateProfileDetailComponent } from './graduate-profile/diag/graduate
   declarations: [AbsenceQueryComponent, ChangeBranchComponent, AddChangeBranchComponent,
     ChangeCourseComponent, PersonalIDComponent,
     AddChangeBranchComponent, AddChangeCourseComponent, 
-    AddPersonalIdComponent, GraduateProfileComponent,GraduateProfileDetailComponent],
+    AddPersonalIdComponent, GraduateProfileComponent,GraduateProfileDetailComponent,AddGraduateProfileComponent],
   entryComponents: [AddChangeBranchComponent, AddChangeCourseComponent,
-     AddPersonalIdComponent,GraduateProfileDetailComponent],
+     AddPersonalIdComponent,GraduateProfileDetailComponent,AddGraduateProfileComponent],
   imports: [
     CommonModule,
     MasterOtherRequestsRoutingModule,

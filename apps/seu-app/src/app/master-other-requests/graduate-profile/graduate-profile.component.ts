@@ -3,6 +3,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
 import { GraduateProfileService } from '../services/graduate-profile.service';
 import { GraduateProfileDetailComponent } from './diag/graduate-profile-detail/graduate-profile-detail.component';
+import { AddGraduateProfileComponent } from './diag/add-graduate-profile/add-graduate-profile.component';
 
 @Component({
   selector: 'app-graduate-profile',
@@ -34,7 +35,8 @@ export class GraduateProfileComponent implements OnInit {
     );
   }
 
-  openDialoge() {
+  openDialoge(request_number) {
+    //request_number = 0;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
@@ -43,7 +45,22 @@ export class GraduateProfileComponent implements OnInit {
     dialogConfig.direction = "rtl";
     dialogConfig.position = { top: '80px', left: '20px' };
 
+    this.gradProfServ.request_number = request_number;
     this.dialog.open(GraduateProfileDetailComponent, dialogConfig);
+  }
+
+  openAddDialoge() {
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = '95%';
+    dialogConfig.height = '85%';
+    dialogConfig.direction = "rtl";
+    dialogConfig.position = { top: '80px', left: '20px' };
+
+
+    this.dialog.open(AddGraduateProfileComponent, dialogConfig);
   }
 
 }

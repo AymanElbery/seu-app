@@ -1,0 +1,385 @@
+<mat-dialog-content style="height: 2500px">
+
+
+
+  <!--<div class="widget-header">
+                <h3 class="widget-title"> تسجيل طلب</h3>
+              </div>
+            -->
+
+  <div *ngIf="isLoading" class=" stu-name col-md-4 col-sm-12  ">
+    <div class="state">
+
+      <h5> جاري تحميل البيانات .....................</h5>
+
+      <mat-spinner *ngIf="isLoading"
+        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+      </mat-spinner>
+
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading" class="widget">
+    <div class="widget-header">
+      <h3 class="widget-title">المعلومات الشخصية للخريج</h3>
+    </div>
+
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+
+      <section class="ser-state">
+        <div class="container">
+
+          <div class="row ser-block">
+
+
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6>الإسم الرباعي باللغة العربية كما هو في بطاقة الأحوال </h6>
+
+
+                <input required name="name_ar" #name_ar="ngModel" [(ngModel)]="stdinfo.name_ar" class="form-control"
+                  [class.is-invalid]="stdinfo.name_ar==''">
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6>الإسم الرباعي باللغة الإنجليزية كما هو بالجواز </h6>
+
+
+                <input required name="name_en" #name_en="ngModel" [(ngModel)]="stdinfo.name_en" class="form-control"
+                  [class.is-invalid]="stdinfo.name_en==''">
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6>الجنس </h6>
+                <h5>{{reqData.stdinfo.gender}} </h5>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+          <div class="row ser-block">
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6>الجنسية </h6>
+                <h5>{{reqData.stdinfo.nationality}} </h5>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6>الدرجة العلمية </h6>
+                <h5>{{reqData.stdinfo.grade_level}} </h5>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6>التخصص </h6>
+                <h5>{{reqData.stdinfo.major}} </h5>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row ser-block">
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6>الفرع </h6>
+                <h5>{{reqData.stdinfo.branch}} </h5>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6> المعدل </h6>
+                <h5>{{reqData.stdinfo.gpa}} </h5>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6>رقم الجوال </h6>
+
+                <input required name="mobile" #mobile="ngModel" [(ngModel)]="stdinfo.mobile" class="form-control"
+                  [class.is-invalid]="stdinfo.mobile==''">
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <div class="row ser-block">
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6>البريد الإلكتروني الشخصي </h6>
+
+                <input required name="email" #email="ngModel" [(ngModel)]="stdinfo.email" class="form-control"
+                  [class.is-invalid]="stdinfo.email==''">
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6> البريد الجامعي </h6>
+                <h5>{{reqData.stdinfo.university_email}} </h5>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6> صورة شخصية 4*6 للطلاب فقط </h6>
+
+
+                <input required class="form-control" name="image" id="image" type="file" accept="*/*"
+                  (change)="handleInputChange($event,'image')" [class.is-invalid]="stdinfo.image == ''" />
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+
+          </div>
+
+
+          <div class="row ser-block">
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6> السيرة الذاتية </h6>
+                <h5>{{stdinfo.STD_RESUME}} </h5>
+                <input required class="form-control" name="cv" id="cv" type="file" accept="*/*"
+                  (change)="handleInputChange($event,'cv')" [class.is-invalid]="stdinfo.cv == ''" />
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+            <div class=" col-md-4 col-sm-12">
+              <div class="state">
+                <h6> الحالة الوظيفية </h6>
+                <select required name="job_status" #job_status="ngModel" [(ngModel)]="stdinfo.job_status"
+                  class="form-control" [class.is-invalid]="!isValid && stdinfo.job_status==''">
+
+                  <option *ngFor="let item of reqData.job_status" value="{{item.id}}">{{item.value}}</option>
+                </select>
+
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info" style="width: 15%;"></div>
+              </div>
+            </div>
+
+          </div>
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title">بيانات العمل إن وجد</h3>
+            </div>
+            <div class="row ser-block">
+
+              <div class=" col-md-4 col-sm-12">
+                <div class="state">
+                  <h6> قطاع التوظيف </h6>
+                  <select name="job_sector" #job_sector="ngModel" [(ngModel)]="stdinfo.job_sector" class="form-control">
+
+                    <option *ngFor="let item of reqData.job_sector" value="{{item.id}}">{{item.value}}</option>
+                  </select>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-4 col-sm-12">
+                <div class="state">
+                  <h6> سنة التوظيف </h6>
+
+                  <input name="year_job" #year_job="ngModel" [(ngModel)]="stdinfo.year_job" class="form-control">
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-4 col-sm-12">
+                <div class="state">
+                  <h6> جهة العمل </h6>
+
+                  <input name="job_com" #job_com="ngModel" [(ngModel)]="stdinfo.job_com" class="form-control">
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="row ser-block">
+
+              <div class=" col-md-4 col-sm-12">
+                <div class="state">
+                  <h6> هل حصلت على الترقية أثناء الدراسة </h6>
+
+                  <select name="job_promo" #job_promo="ngModel" [(ngModel)]="stdinfo.job_promo" class="form-control">
+
+                    <option *ngFor="let item of reqData.job_promo" value="{{item.id}}">{{item.value}}</option>
+                  </select>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-4 col-sm-12">
+                <div class="state">
+                  <h6> سنة الحصول على الترقية </h6>
+
+                  <input name="job_promo_year" #job_promo_year="ngModel" [(ngModel)]="stdinfo.job_promo_year"
+                    class="form-control">
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-4 col-sm-12">
+                <div class="state">
+                  <h6> مقر العمل </h6>
+
+                  <select name="job_loc" #job_loc="ngModel" [(ngModel)]="stdinfo.job_loc" class="form-control">
+                    <option value="">اختر مقر العمل</option>
+                    <option *ngFor="let item of reqData.cities" value="{{item.ID}}">{{item.NAME}}</option>
+                  </select>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title">بيانات رب العمل إن وجد</h3>
+            </div>
+            <div class="row ser-block">
+
+              <div class=" col-md-3 col-sm-12">
+                <div class="state">
+                  <h6> الإسم </h6>
+
+                  <input name="employer_name" #EMPLOYER_NAME="ngModel" [(ngModel)]="stdinfo.employer_name"
+                    class="form-control">
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-3 col-sm-12">
+                <div class="state">
+                  <h6> المسمى الوظيفي </h6>
+
+                  <input name="employer_job_title" #employer_job_title="ngModel"
+                    [(ngModel)]="stdinfo.employer_job_title" class="form-control">
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-3 col-sm-12">
+                <div class="state">
+                  <h6> رقم الجوال </h6>
+
+                  <input name="employer_phone" #employer_phone="ngModel" [(ngModel)]="stdinfo.employer_phone"
+                    class="form-control">
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-3 col-sm-12">
+                <div class="state">
+                  <h6> البريد الإلكتروني </h6>
+
+                  <input name="employer_email" #employer_email="ngModel" [(ngModel)]="stdinfo.employer_email"
+                    class="form-control">
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+      <div class="modal-body">
+        <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+            الغاء</button>
+
+          <button [disabled]="form.invalid " type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            حفظ</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+</mat-dialog-content>
