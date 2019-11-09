@@ -17,11 +17,16 @@ export class RegisterWishesComponent implements OnInit {
   status;
   isLoading = false;
 
+
   constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: RegisterWishesService) { }
-  
+
   ngOnInit() {
-    this.isLoading=true;
-    this.registerWishes = { tow_days:0,wish:'' };
+    this.getServiceRequest();
+  }
+
+  getServiceRequest() {
+    this.isLoading = true;
+    this.registerWishes = { tow_days: 0, wish: '' };
 
     this.acadmicProc.getِgetRequests().then(
       res => {
@@ -29,7 +34,7 @@ export class RegisterWishesComponent implements OnInit {
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
-        this.isLoading=false;
+        this.isLoading = false;
 
       }
     );
@@ -60,16 +65,17 @@ export class RegisterWishesComponent implements OnInit {
   onSubmit(form: NgForm) {
 
     this.addRequest(this.registerWishes);
+    this.getServiceRequest();
   }
 
   addRequest(data: any) {
     //console.log(data);
-    
+
     this.acadmicProc.AddRequest(data).then(res => {
-       let msgss = (res as any).messages;
+      let msgss = (res as any).messages;
       msgss.forEach((element: any) => {
         this.toastr.success('', element.body);
-        this.registerWishes = { tow_days:0,wish:'' };
+        this.registerWishes = { tow_days: 0, wish: '' };
 
       });
     });
