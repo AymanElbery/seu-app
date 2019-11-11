@@ -25,7 +25,7 @@ export class StudentInfoComponent implements OnInit {
       res => {
     this.reqData =    (res as any).data;
     this.isLoading=false;
-     this.studentInfo.name_ar=this.reqData.user.NAME_AR;
+    //  this.studentInfo.name_ar=this.reqData.user.NAME_AR;
      console.log(this.reqData);
       }
     );
