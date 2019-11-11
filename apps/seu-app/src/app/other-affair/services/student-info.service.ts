@@ -17,15 +17,17 @@ export class StudentInfoService {
     return this.httRequest.GetRequest('student_info_service').toPromise();
    }
    AddRequest(data) {
+     alert(1)
+     console.log(data)
        return this.httRequest.postRequest('student_info_service/update', data).toPromise();
    }
    DownloadPhoto() {
 
-    return this.configService.getApiURI() + 'student_info_service/download/photo';
+    return this.configService.getApiURI() + '/student_info_service/download/photo';
    }
    DownloadCv() {
 
-    return this.configService.getApiURI() + 'student_info_service/download/cv';
+    return this.configService.getApiURI() + '/student_info_service/download/cv';
    }
 }
 
