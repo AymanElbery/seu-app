@@ -1,21 +1,22 @@
 export interface StudentInformation
 {
 
-    name_ar:String;
-    name_en:String;
-    graduation_term:String;
-    email:String;
-    phone:string;
-    job_status:any;
-    job_location:string;
-    job_title:string;
-    job_title2:String;
-    email2:String;
-    phone2:String;
-    job_name:String;
-    job_type:string;
-    job_time:String;
-    job_year:string;
-    work_city:String;
-    photo:String;
+    NAME_AR:string;
+    NAME_EN:string;
+    GRADUATION_TERM:string;
+    EMAIL:string;
+    PHONE:string;
+    JOB_STATUS:string;
+    JOB_LOCATION:string;
+    JOB_TITLE:string;
+    JOB_TITLE2:string;
+    EMAIL2:string;
+    PHONE2:string;
+    JOB_NAME:string;
+    JOB_TYPE:string;
+    JOB_TIME:string;
+    JOB_YEAR:string;
+    WORK_CITY:string;
+    PHOTO:string;
+    CV:string;
 }
