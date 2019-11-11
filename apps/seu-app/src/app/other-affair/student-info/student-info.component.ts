@@ -13,6 +13,7 @@ import { StudentInformationData } from 'src/app/shared/models/student-informatio
 export class StudentInfoComponent implements OnInit {
 
   reqData;
+  msgs;
   cvDownload: string;
   photoDownload: string;
   studentInfo: StudentInformation;
@@ -34,7 +35,7 @@ export class StudentInfoComponent implements OnInit {
         JOB_STATUS: '',
         JOB_LOCATION: '',
         JOB_TITLE: '',
-        JOB_TITLE2: '',
+        JOB_TILE2: '',
         EMAIL2: '',
         PHONE2: '',
         JOB_NAME: '',
@@ -72,11 +73,10 @@ export class StudentInfoComponent implements OnInit {
     this.academicService.getِRequests().then(
       res => {
         this.reqData = (res as any).data;
+        this.msgs=(res as any).messages;
         this.isLoading = false;
         this.studentInfo = this.reqData.user;
-        /*  console.log(this.studentInfo);
-          console.log(this.reqData.user);
-          alert(this.studentInfo.NAME_AR )*/
+      
 
         this.stdData.name_ar = this.studentInfo.NAME_AR;
         this.stdData.name_en = this.studentInfo.NAME_EN;
@@ -86,7 +86,7 @@ export class StudentInfoComponent implements OnInit {
         this.stdData.job_status = this.studentInfo.JOB_STATUS;
         this.stdData.job_location = this.studentInfo.JOB_LOCATION;
         this.stdData.job_title = this.studentInfo.JOB_TITLE;
-        this.stdData.job_title2 = this.studentInfo.JOB_TITLE2;
+        this.stdData.job_title2 = this.studentInfo.JOB_TILE2;
         this.stdData.email2 = this.studentInfo.EMAIL2;
         this.stdData.phone2 = this.studentInfo.PHONE2;
         this.stdData.job_name = this.studentInfo.JOB_NAME;
@@ -99,11 +99,11 @@ export class StudentInfoComponent implements OnInit {
     );
     this.cvDownload = this.academicService.DownloadCv();
     this.photoDownload = this.academicService.DownloadPhoto();
-
   }
   addRequest(data) {
     this.academicService.AddRequest(data).then(res => {
       this.academicService.msgs = (res as any).messages;
+      this.msgs=this.academicService.msgs;
 
     });
   }

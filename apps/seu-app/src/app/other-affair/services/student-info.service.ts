@@ -23,11 +23,11 @@ export class StudentInfoService {
    }
    DownloadPhoto() {
 
-    return this.configService.getApiURI() + 'student_info_service/download/photo';
+    return this.configService.getApiURI() + '/student_info_service/download/photo';
    }
    DownloadCv() {
 
-    return this.configService.getApiURI() + 'student_info_service/download/cv';
+    return this.configService.getApiURI() + '/student_info_service/download/cv';
    }
 }
 

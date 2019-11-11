@@ -9,7 +9,7 @@ export interface StudentInformation
     JOB_STATUS:string;
     JOB_LOCATION:string;
     JOB_TITLE:string;
-    JOB_TITLE2:string;
+    JOB_TILE2:string;
     EMAIL2:string;
     PHONE2:string;
     JOB_NAME:string;
