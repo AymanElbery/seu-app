@@ -63,7 +63,7 @@ export class AddChangeCourseComponent implements OnInit {
     this.addRequest(this.course);
     this.dialogRef.close();
     console.log(this.course);
-    alert(this.course.outside);
+   // alert(this.course.outside);
 
   }
   
