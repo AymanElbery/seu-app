@@ -47,7 +47,7 @@
                             <div class="state">
                               <h6 >       السجل الأكاديمي</h6>
                               <div class="custom-file">
-                                  <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleacadinputChange($event)" />
+                                  <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChange($event)" />
                                   <label  for="attachment"  class="custom-file-label ">
                                   </label> 
                                 </div>
@@ -57,12 +57,23 @@
                               </div>
                      
                          </div>
-                         <div class="progress progress-sm">
-                            <div class="progress-bar bg-info" style="width: 15%;"></div>
-                        </div>
+                         <div class="col-md-12 col-sm-12">
+                          <div class="state">
+                            <h6 > وثيقة البكالوريوس </h6>
+                            <div class="custom-file">
+                                <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChangeCopy($event)" />
+                                <label  for="attachment"  class="custom-file-label ">
+                                </label> 
+                              </div>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                   
+                       </div>
                           <div class="col-md-12 col-sm-12">
                             <div class="state">
-                              <mat-checkbox #outside name="course.outside "  [(ngModel)]="course.outside" >
+                              <mat-checkbox #testcheck>
                                   <h6>  هل حصلت على البكالوريس من خارج المملكة ؟  </h6>  
 
                               </mat-checkbox>
@@ -72,11 +83,11 @@
                                   <div class="progress-bar bg-info" style="width: 15%;"></div>
                               </div>
                       </div>  
-                          <div class="col-md-12 col-sm-12" *ngIf="outside.checked">
+                          <div class="col-md-12 col-sm-12" *ngIf="testcheck.checked">
                             <div class="state">
                               <h6 > معادلة شهادة البكالوريس للوثائق من خارج المملكة</h6>
                               <div class="custom-file">
-                                  <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChange($event)" />
+                                  <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChangeOut($event)" />
                                   <label  for="attachment"  class="custom-file-label ">
                                   </label> 
                                 </div>
@@ -86,20 +97,7 @@
                               </div>
                      
                          </div>
-                         <div class="col-md-12 col-sm-12" *ngIf="!outside.checked">
-                            <div class="state">
-                              <h6 > وثيقة البكالوريس </h6>
-                              <div class="custom-file">
-                                  <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChange($event)" />
-                                  <label  for="attachment"  class="custom-file-label ">
-                                  </label> 
-                                </div>
-                              </div>
-                              <div class="progress progress-sm">
-                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
-                              </div>
-                     
-                         </div>
+                       
                     
                     
                            </div>

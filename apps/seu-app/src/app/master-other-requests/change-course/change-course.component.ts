@@ -13,32 +13,27 @@ import { NgForm } from '@angular/forms';
 })
 export class ChangeCourseComponent implements OnInit {
 
- 
-  printAR;
   changecourse: changeCourse;
   reqData;
   msgs;
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ChangeCourseService) { }
+  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc:ChangeCourseService) { }
 
   ngOnInit() {
-    this.isLoading = true;
-    this.changecourse = {major: '', mobile: '',reason:'',outside:'',bacholar_copy:'',academic_record:''};
+    this.isLoading=true;
+    this.changecourse = {bacholar_copy:'',major:'',mobile:'',reason:'',academic_record:'',outside:''};
     this.acadmicProc.getRequests().then(
       res => {
     this.acadmicProc.reqData =    (res as any).data;
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
-    this.isLoading = false;
-    console.log(this.acadmicProc.reqData);
-
-
+    this.isLoading=false;
+    // console.log(this.reqData.requests);
       }
     );
-
   }
 
   openDialoge() {
@@ -48,7 +43,6 @@ export class ChangeCourseComponent implements OnInit {
     dialogConfig.width = '50%';
 
     this.dialog.open(AddChangeCourseComponent, dialogConfig);
-  
   }
 
   addRequest(data) {
@@ -57,31 +51,25 @@ export class ChangeCourseComponent implements OnInit {
         });
   }
   onSubmit(form: NgForm) {
-this.addRequest(form.value);
-
-
+      this.addRequest(form.value);
   }
 
-
+ 
   delete(id, index) {
     if ( confirm('هل انت متأكد')) {
     this.acadmicProc.deleteReq(id).then(res => {
-      console.log(id);
-      this.msgs =   (res as any).messages;
+       this.msgs =   (res as any).messages;
+     this.status =   (res as any).status;
 
-      this.status =   (res as any).status;
-
-      this.msgs.forEach((element: any) => {
+       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
 
-        });
-      if (this.status === 1) {
-          this.acadmicProc.reqData.requests.splice(index, 1);
-        }
-    });
+       });
+     if (this.status === 1) {
+        this.acadmicProc.reqData.requests.splice(index, 1);
+      }   });
   }
-
-}
+ }
 call(hr) {
 return  Math.floor(Math.random() * 10) + hr ;
 

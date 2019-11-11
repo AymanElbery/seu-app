@@ -5,4 +5,5 @@ export interface changeCourse{
     outside:string;
     bacholar_copy:string;
     academic_record:string;
+    
 }

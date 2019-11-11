@@ -1,12 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AddChangeMajorComponent } from 'src/app/academicprocs/change-major/diag/add-change-major/add-change-major.component';
 import { ToastrService } from 'ngx-toastr';
-import { ChangeMajorService } from 'src/app/academicprocs/services/change-major.service';
 import { NgForm } from '@angular/forms';
 import { ChangeCourseService } from 'src/app/master-other-requests/services/change-course.service';
 import { changeCourse } from 'src/app/shared/models/change-course';
-import { $ } from 'protractor';
 
 @Component({
   selector: 'app-add-change-course',
@@ -54,18 +51,19 @@ export class AddChangeCourseComponent implements OnInit {
 
   }
   onSubmit(form: NgForm) {
-  if(this.course.outside.toString()=="true")
-  {
-    this.course.outside="1"
-  }
-  else
-  {
-    this.course.outside="0"
-  }
+  // if(this.course.outside.toString()=="true")
+  // {
+  //   this.course.outside="1"
+  // }
+  // else
+  // {
+  //   this.course.outside="0"
+  // }
  
     this.addRequest(this.course);
     this.dialogRef.close();
     console.log(this.course);
+    alert(this.course.outside);
 
   }
   
@@ -84,28 +82,48 @@ export class AddChangeCourseComponent implements OnInit {
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    this.course.bacholar_copy = reader.result;
+    this.course.academic_record = reader.result;
 
   }
 
-  
-  handleacadinputChange(i) {
-    const file = i.dataTransfer ? i.dataTransfer.files[0] : i.target.files[0];
+  handleInputChangeCopy(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const pattern = /pdf-*/;
-    const reder = new FileReader();
+    const reader = new FileReader();
     /* if (!file.type.match(pattern)) {
       alert('invalid format');
       return;
     }
      */
-    reder.onload = this._handleReaderLoaded.bind(this);
-    reder.readAsDataURL(file);
+    reader.onload = this._handleReaderLoadedcopy.bind(this);
+    reader.readAsDataURL(file);
   }
-  _handleRederLoaded(i) {
-    const reder = i.target;
-    this.course.academic_record = reder.result;
+  _handleReaderLoadedcopy(e) {
+    const reader = e.target;
+    this.course.bacholar_copy = reader.result;
 
   }
+  
+
+  handleInputChangeOut(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    const pattern = /pdf-*/;
+    const reader = new FileReader();
+    /* if (!file.type.match(pattern)) {
+      alert('invalid format');
+      return;
+    }
+     */
+    reader.onload = this._handleReaderLoadedOut.bind(this);
+    reader.readAsDataURL(file);
+  }
+  _handleReaderLoadedOut(e) {
+    const reader = e.target;
+    this.course.outside = reader.result;
+
+  }
+ 
+  
 
   delete(id, index) {
     if ( confirm('هل انت متأكد')) {
