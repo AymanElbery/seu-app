@@ -19,6 +19,7 @@ import {TrainingRequestComponent} from './training-request/training-request.comp
 import {AddTrainingRequestComponent} from './training-request/diag/add-training-request/add-training-request.component';
 import {TrainingRequestService} from './services/training-request.service';
 import { StudentInfoComponent } from './student-info/student-info.component';
+import { MatCheckboxModule } from '@angular/material';
 
 @NgModule({
 
@@ -44,7 +45,8 @@ import { StudentInfoComponent } from './student-info/student-info.component';
     FormsModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    ToastrModule.forRoot() 
+    ToastrModule.forRoot() ,
+    MatCheckboxModule
   ],
   providers: [MedicalReportService,
     UvnivCardService,

@@ -373,11 +373,12 @@
               <div class="row  ser-block" style="margin-top: 20px;" >
                   <div class=" col-md-12 col-sm-12" style="margin-top: 10px;">
                     <div class="state">
-                        <div class="form-check">
                        
-                   <input type="checkbox"  class="form-check-input" id="cb"/> 
-                   <label class="form-check-label" for="cb" >اقر بصحة المعلومات المدخلة ,حيث سيتم  طباعة وثيقة التخرج حسب المعلومات التي قمت بإدخالها </label> 
-                   </div>
+                  
+                            <mat-checkbox #outside >&nbsp;
+                            <label class="form-check-label">اقر بصحة المعلومات المدخلة ,حيث سيتم  طباعة وثيقة التخرج حسب المعلومات التي قمت بإدخالها </label> 
+                            </mat-checkbox>
+            
                     </div>
                     <div class="progress progress-sm">
                       <div class="progress-bar bg-info" style="width: 15%;"></div>
@@ -388,11 +389,11 @@
                 </div>
         </div>
 </section>
-    <div class="modal-body">
-      <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+    <div class="modal-body" *ngIf="outside.checked" >
+      <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example" >
    
 
-        <button *ngIf="reqData.can_update_data" [disabled]="form.invalid " type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+        <button *ngIf="reqData.can_update_data" [disabled]="form.invalid " type="submit" class="btn btn-dark"  ><i class="fa fa-database"></i>
           حفظ</button>
       </div>
     </div>
