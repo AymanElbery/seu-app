@@ -13,13 +13,19 @@ export class ChangeCourseService {
     this.configService.baseUrl = "stdsUnivapi";
   }
   getRequests() {
+    this.configService.baseUrl = "stdsUnivapi";
+
 
     return this.httRequest.GetRequest('change_major_service').toPromise();
    }
    AddRequest(data) {
+    this.configService.baseUrl = "stdsUnivapi";
+
        return this.httRequest.GetRequest('change_major_service/insert').toPromise();
    }
    deleteReq(id) {
+    this.configService.baseUrl = "stdsUnivapi";
+
      return this.httRequest.GetRequest('change_major_service/remove' + id ).toPromise();
  
    }

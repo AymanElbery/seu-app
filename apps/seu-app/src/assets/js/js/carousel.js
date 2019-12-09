@@ -1,4 +1,35 @@
-$(document).ready(function() {
+function LoadCrsAds()
+{
+	setTimeout(function() {
+  
+  
+    $('.advertise').owlCarousel({
+    loop:true,
+    autoplay:true,
+    margin:10,
+          animateOut: 'slideOutDown',
+    animateIn: 'flipInX',
+    dotsContainer: $(".advertise").parents(".owl-container").find(".slider-dot-container"),
+    rtl:true,
+    
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+     
+},500);
+}
+function LoadCrsNews()
+{
+	setTimeout(function() {
   $().owlCarousel && ($(".owl-carousel.basic").length > 0 && $(".owl-carousel.basic").owlCarousel({
       margin: 30,
       rtl:true,
@@ -30,27 +61,8 @@ $(document).ready(function() {
       e.preventDefault(), $($(this).parents(".owl-container").find(".owl-carousel")).owlCarousel().trigger("next.owl.carousel", [300])
   }));
   
-    
-    $('.advertise').owlCarousel({
-    loop:true,
-    autoplay:true,
-    margin:10,
-          animateOut: 'slideOutDown',
-    animateIn: 'flipInX',
-    dotsContainer: $(".advertise").parents(".owl-container").find(".slider-dot-container"),
-    rtl:true,
-    
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-})
+  
      
-});
+},500);
+	
+}

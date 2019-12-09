@@ -13,15 +13,18 @@ export class TuitionFeesService {
 
 
   getِTuitionFeez() {
+    this.configService.baseUrl = 'stdservicesapi';
 
    return this.httRequest.GetRequest('fees_stmt_request_service').toPromise();
   }
 
    Download() {
+    this.configService.baseUrl = 'stdservicesapi';
 
     return this.configService.getApiURI() + '/fees_stmt_request_service/download';
    }
    DownloadEng() {
+    this.configService.baseUrl = 'stdservicesapi';
 
     return this.configService.getApiURI() + '/fees_stmt_request_service/download?Lang=en';
    }

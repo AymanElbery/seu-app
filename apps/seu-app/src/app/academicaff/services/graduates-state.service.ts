@@ -13,15 +13,23 @@ export class GraduatesStateService {
 
   getStatement() {
 
+    this.configService.baseUrl = 'stdservicesapi';
+
     
-    return this.httRequest.GetRequest('/graduation_statement/statement?std_id=S190268809').toPromise();
+    return this.httRequest.GetRequest('/graduation_statement/statement').toPromise();
    }
    DownloadStatement() {
+    this.configService.baseUrl = 'stdservicesapi';
 
-    return this.configService.getApiURI() + '/graduation_statement/get_statement_print';
+    const sid =   this.configService.getSid();
+
+    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?sid='+sid;
    }
    DownloadEngStatement() {
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?Lang=en';
+
+    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?Lang=en&sid='+sid;
    }
 }

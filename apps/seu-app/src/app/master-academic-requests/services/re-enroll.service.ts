@@ -13,19 +13,28 @@ export class ReEnrollService {
                     this.configService.baseUrl = "stdsUnivapi";
         }
   getِgetRequests() {
-    
+    this.configService.baseUrl = 'stdsUnivapi';
+
    return this.httRequest.GetRequest('return_service').toPromise();
   }
   AddRequest(data) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
       return this.httRequest.postRequest('return_service/insert ', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.GetRequest('return_service/remove/' + id ).toPromise();
   }
    Download(req) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.configService.getApiURI() + '/return_service/download/return_request/' + req ;
    }
    DownloadEng() {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.configService.getApiURI() + '/return_service/download?Lang=en';
    }
 }

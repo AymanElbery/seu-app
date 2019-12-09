@@ -14,6 +14,9 @@ const routes: Routes = [
   ]
 }
 , { path: '', component: HomeComponent }
+ , { path: 'home/:t', component: HomeComponent }
+ , { path: 'homebsc', component: HomeComponent }
+ , { path: 'homemsc', component: HomeComponent }
 
 
 ];

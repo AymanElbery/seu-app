@@ -8,46 +8,42 @@ import { AppStorageService } from './app-storage.service';
 })
 export class UserManagerService {
 
+  // tslint:disable-next-line: variable-name
   private _authNavStatusSource = new BehaviorSubject<boolean>(false);
   // Observable navItem stream
   authNavStatus$ = this._authNavStatusSource.asObservable();
-  constructor(private configService:ConfigService,private appStore:AppStorageService) { }
+  constructor(private configService: ConfigService, private appStore: AppStorageService) { }
 
-  logout()
-  {
+  logout() {
     this.appStore.removeItem('auth_token');
     this._authNavStatusSource.next(false);
   }
 
-  saveToken(token)
-  {
-  
+  saveToken(token) {
 
 
-    this.appStore.setItem(this.configService.getToken(),token);
+
+    this.appStore.setItem(this.configService.getToken(), token);
 
 
   }
-  
-  getApp()
-  {
+
+  getApp() {
     return this.appStore.getItem(this.configService.getToken());
   }
 
-  IsLoggedIn()
-  {
-    let IsLoggedIn=false;
-    
-    this.authNavStatus$.subscribe(x=> IsLoggedIn=x);
+  IsLoggedIn() {
+    let IsLoggedIn = false;
 
-return IsLoggedIn;
+    this.authNavStatus$.subscribe(x => IsLoggedIn = x);
+
+    return IsLoggedIn;
   }
-  
-  login()
-  {
-   
+
+  login() {
+
     this._authNavStatusSource.next(true);
-    
+
 
   }
 }

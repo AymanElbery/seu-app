@@ -14,14 +14,20 @@ export class ExamAttendanceCertificateService {
     this.configService.baseUrl = "stdsUnivapi";
   }
   getRequest() {
+    this.configService.baseUrl = "stdsUnivapi";
+
     // ?std_id=S180105049
     return this.httRequest.GetRequest('attendance_service').toPromise();
   }
   Download(type:string) {
 
+    this.configService.baseUrl = "stdsUnivapi";
+
     return this.configService.getApiURI() + '/attendance_service/download/'+type;
    }
    DownloadEng(type:string) {
+    this.configService.baseUrl = "stdsUnivapi";
+
 
     return this.configService.getApiURI() + '/attendance_service/download/'+type+'?Lang=en';
    }

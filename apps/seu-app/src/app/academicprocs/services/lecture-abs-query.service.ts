@@ -7,22 +7,31 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
 })
 export class LectureAbsQueryService {
 
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
-			  }
+constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = 'stdservicesapi';
+}
 
 
   getِAbsemceQuery() {
+    this.configService.baseUrl = 'stdservicesapi';
 
-   return this.httRequest.GetRequest('absent_service?std_id=S180105049 ').toPromise();
+
+   return this.httRequest.GetRequest('absent_service').toPromise();
   }
 
    Download() {
 
-    return this.configService.getApiURI() + '/absent_service/download';
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid =   this.configService.getSid();
+
+
+    return this.configService.getApiURI() + '/absent_service/download?sid='+sid;
    }
    DownloadEng() {
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/absent_service/download?Lang=en';
+
+    return this.configService.getApiURI() + '/absent_service/download?Lang=en&sid='+sid;
    }
 }

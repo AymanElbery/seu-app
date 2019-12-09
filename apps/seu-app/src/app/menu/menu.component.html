@@ -7,10 +7,12 @@
           </div>
       </a>
   </div>
-  <div class="sidebar-header">
-      <select  name="menuType" [(ngModel)]="menuType" #t  class="form-control"  style="color: #1c2172;direction: rtl;" id="exampleFormControlSelect1">
-          <option value="1">خدمات البكالوريوس</option>
+  <div class="sidebar-header" [hidden]="!showServices">
+      <select [disabled]="!acStd" (change)="onChange(t.value)"    name="menuType" [(ngModel)]="menuType" #t  class="form-control"  style="color: #1c2172;direction: rtl;" id="exampleFormControlSelect1">
+        <option value="0"> دخول عادي</option> 
+        <option value="1">خدمات البكالوريوس</option>
           <option value="2">خدمات الماجستير</option>
+
          
         </select>      
   </div>
@@ -18,15 +20,8 @@
   <div class="sidebar-content">
       <div class="nav-container">
           <nav id="main-menu-navigation" class="navigation-main">
-                   <div class="nav-item has-sub ">
-                  <a href="javascript:void(0)"><span>مصادر التعلم</span> <i class="ik ik-book-open"></i></a>
-                  <div class="submenu-content">
-                      <a href="#" class="menu-item">الدخول للبلاك بورد</a>
-                      <a href="#" class="menu-item"> الفيديوهات التعليمية للبلاك بورد</a>
-                       <a href="#" class="menu-item"> تعليمات استخدام البلاك بورد </a>
-                  </div>
-              </div>
-              <div *ngIf="menuType==2" class="nav-item has-sub ">
+              
+              <div *ngIf="menuType==2&&showServices" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span>بيانات الطالب </span> <i class="ik ik-user"></i></a>
                   <div class="submenu-content">
 
@@ -35,7 +30,7 @@
                       <a href="#" class="menu-item" routerLink="/masterstddata/academicrecord">السجل الأكاديمي</a>
                   </div>
               </div>
-              <div *ngIf="menuType==2" class="nav-item has-sub ">
+              <div *ngIf="menuType==2&&showServices" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span> طباعة الشهادات  </span> <i class="ik ik-user"></i></a>
                   <div class="submenu-content">
                       <a href="#" class="menu-item" routerLink="/masterstdcertificate/idcertificate">شهادة التعريف</a>
@@ -43,7 +38,7 @@
                       <a href="#" class="menu-item" routerLink="/masterstdcertificate/examattendacecertificateapp"> شهادة إثبات حضور الإختبار </a>
                   </div>
               </div>
-              <div *ngIf="menuType==2" class="nav-item has-sub ">
+              <div *ngIf="menuType==2&&showServices" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span> الطلبات الأكاديمية   </span> <i class="ik ik-user"></i></a>
                   <div class="submenu-content">
 
@@ -62,14 +57,14 @@
 
                       </div>
               </div>
-              <div *ngIf="menuType==2" class="nav-item has-sub ">
+              <div *ngIf="menuType==2&&showServices" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span> الشؤون المالية   </span> <i class="ik ik-user"></i></a>
                   <div class="submenu-content">
-                      <a href="#" class="menu-item">سداد الرسوم</a>
-                     
+                      <a href=""  routerLink="/mfiniance/payment" class="menu-item">سداد الرسوم</a>
+                      
                   </div>
               </div>
-              <div *ngIf="menuType==2" class="nav-item has-sub ">
+              <div *ngIf="menuType==2&&showServices" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span> طلبات أخرى   </span> <i class="ik ik-user"></i></a>
                   <div class="submenu-content">
                       <a href="#" class="menu-item" routerLink="/otherrequests/changebranch">تحويل إلى فرع آخر</a>
@@ -83,7 +78,7 @@
                        
                   </div>
               </div>
-                 <div *ngIf="menuType==1" class="nav-item has-sub ">
+                 <div *ngIf="menuType==1&&showServices" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span> الشئون الأكاديمية</span> <i class="ik ik-user"></i></a>
                   <div class="submenu-content">
                       <a href="#" class="menu-item" routerLink="/academicaff/status">الحالة الاكاديمية</a>
@@ -92,7 +87,7 @@
                        <a href="#" class="menu-item"  routerLink="/academicaff/graduationstatment">  إفادة خريج</a>
                   </div>
               </div>
-                <div *ngIf="menuType==1" class="nav-item has-sub ">
+                <div *ngIf="menuType==1 && showServices" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span> الإجراءات الأكاديمية</span> <i class="ik ik-layers"></i></a>
                   <div class="submenu-content">
                       <!--  <a href="#" class="menu-item" routerLink="/procedures/terminate">الانسحاب من الجامعة   </a>-->
@@ -128,7 +123,7 @@
 
                   </div>
               </div>
-              <div *ngIf="menuType==1" class="nav-item has-sub ">
+              <div *ngIf="menuType==1 && showServices" class="nav-item has-sub ">
                     <a href="javascript:void(0)"><span> تسجيل المقررات </span> <i class="ik ik-dollar-sign"></i></a>
                     <div class="submenu-content">
                             <a href="#" class="menu-item" routerLink="/registercourses/registerwishes"> رغبات التسجيل للمستجدين     </a>
@@ -138,15 +133,17 @@
               </div>
              
             
-                <div *ngIf="menuType==1" class="nav-item has-sub ">
+                <div *ngIf="menuType==1 &&showServices" class="nav-item has-sub ">
                   <a href="javascript:void(0)"><span>  الشؤون المالية </span> <i class="ik ik-dollar-sign"></i></a>
                   <div class="submenu-content">
                       <a href="#" class="menu-item" routerLink="/finance/fees">  افادة بالرسوم الدراسية </a> 
                       <a href="#" class="menu-item" routerLink="/finance/feesexception"> الإعفاء من الرسوم الدراسية </a>
+                      <a href="#" class="menu-item" routerLink="/finance/stdpay">  سداد الرسوم   </a>
 
+                      
                   </div>
               </div>
-                <div *ngIf="menuType==1" class="nav-item has-sub ">
+                <div *ngIf="menuType==1 &&showServices" class="nav-item has-sub ">
                  <a href="javascript:void(0)"><span> شؤون الإختبارات </span> <i class="ik ik-trending-down"></i></a>
                   <div class="submenu-content">
                      <!-- <a href="#" class="menu-item" routerLink="/exams/attend">  جداول الاختبارات   </a> -->
@@ -158,7 +155,7 @@
                 
            
                 </div>
-                <div *ngIf="menuType==1" class="nav-item has-sub ">
+                <div *ngIf="menuType==1 && showServices" class="nav-item has-sub ">
                         <a href="javascript:void(0)"><span> طلبات أخرى   </span> <i class="ik ik-user"></i></a>
                         <div class="submenu-content">
                                 <a href="#" class="menu-item" routerLink="/other/medicalreport"> طلب تقرير طبي  </a>
@@ -170,23 +167,49 @@
                             </div>
                 </div>
                 <!-- <div class="nav-lavel">  </div> -->
-               <div class="nav-item has-sub ">
-                 <a href="javascript:void(0)"> <span class="badge badge-danger">11</span><span>خدمات عامة </span>
+               <div *ngIf="userService.userData.activeRole=='Employee'" class="nav-item has-sub open">
+                 <a href="javascript:void(0)"> <span>خدمات عامة </span>
                      <i class="ik ik-align-right"></i> </a>
                   <div class="submenu-content">
                       <a href="#" class="menu-item"> نظام BlackBoard  <i class="ik ik-bold"></i> </a>
-                      <a href="#" class="menu-item"> البريد الإلكتروني      <i class="ik ik-mail"></i> </a>
-                      <a href="#" class="menu-item"> إدارة المصادر المعرفية  <i class="ik ik-book-open"></i> </a>
-                      <a href="#" class="menu-item"> المنتدي           <i class="ik ik-message-square"></i> </a>
-                      <a href="#" class="menu-item"> التقويم الدراسي       <i class="ik ik-calendar"></i> </a>
-                      <a href="#" class="menu-item">تعليمات الأنظمة التعليمية <i class="ik ik-clipboard"></i> </a>
-                      <a href="#" class="menu-item">دعم الدخول الموحد     <i class="ik ik-users"></i> </a>
-                      <a href="#" class="menu-item">نظام دعم           <i class="ik ik-settings"></i> </a>
-                      <a href="#" class="menu-item"> تحديث بيانات        <i class="ik ik-link"></i> </a>
-                      <a href="#" class="menu-item">الحقوق الطلابية        <i class="ik ik-command"></i> </a>
-                      <a href="#" class="menu-item"> خدمات نظام معلومات الطلبة   <i class="ik ik-tablet"></i> </a>
+                      <a href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item"> البريد الإلكتروني      <i class="ik ik-mail"></i> </a>
+                      <a href="https://wafi.seu.edu.sa/seu/casLogin" class="menu-item"> نظام الوافي           <i class="ik ik-message-square"></i> </a>
+                      <a href="http://hadir.seu.edu.sa/" class="menu-item">  الحضور والانصراف       <i class="ik ik-calendar"></i> </a>
+                      <a href="https://sd.seu.edu.sa" class="menu-item">نظام دعم           <i class="ik ik-settings"></i> </a>
+                      <a href="https://bannadmin.seu.edu.sa/applicationNavigator" class="menu-item">    نظام البانر   <i class="ik ik-tablet"></i> </a>
                   </div>
               </div>
+
+              <div *ngIf="userService.userData.activeRole=='Instructor'" class="nav-item has-sub open">
+                <a href="javascript:void(0)"> <span>خدمات عامة </span>
+                    <i class="ik ik-align-right"></i> </a>
+                 <div class="submenu-content">
+                     <a href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab" class="menu-item"> نظام BlackBoard  <i class="ik ik-bold"></i> </a>
+                     <a href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item"> البريد الإلكتروني      <i class="ik ik-mail"></i> </a>
+                     <a href="https://wafi.seu.edu.sa/seu/casLogin" class="menu-item"> إدارة المصادر المعرفية  <i class="ik ik-book-open"></i> </a>
+                     <a href="https://saudieu-analytics.blackboard.com/default.aspx" class="menu-item"> تقارير   BlackBoard         <i class="ik ik-message-square"></i> </a>
+                     <a href="https://seu.edu.sa/sites/ar/Calendar/Pages/Academic_Calendar.aspx" class="menu-item"> التقويم الدراسي       <i class="ik ik-calendar"></i> </a>
+                     <a href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx" class="menu-item">تعليمات الأنظمة التعليمية <i class="ik ik-clipboard"></i> </a>
+                     <a href="https://sd.seu.edu.sa" class="menu-item">نظام دعم           <i class="ik ik-settings"></i> </a>
+                     <a href="http://hadir.seu.edu.sa/" class="menu-item">  الحضور والانصراف للطلبة     <i class="ik ik-watch"></i>
+                     </a>
+                 </div>
+             </div>
+
+
+             <div *ngIf="userService.userData.activeRole=='Student'" class="nav-item has-sub">
+                <a href="javascript:void(0)"> <span>خدمات عامة </span>
+                    <i class="ik ik-align-right"></i> </a>
+                 <div class="submenu-content">
+                     <a href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab" class="menu-item"> نظام BlackBoard  <i class="ik ik-bold"></i> </a>
+                     <a href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item"> البريد الإلكتروني      <i class="ik ik-mail"></i> </a>
+                     <a href="https://seu.edu.sa/sites/ar/Calendar/Pages/Academic_Calendar.aspx" class="menu-item"> التقويم الدراسي       <i class="ik ik-calendar"></i> </a>
+                     <a href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx" class="menu-item">تعليمات الأنظمة التعليمية <i class="ik ik-clipboard"></i> </a>
+                     <a href="http://seuapps.seu.edu.sa/StudentRightsUnit/Home" class="menu-item">الحقوق الطلابية        <i class="ik ik-command"></i> </a>
+                     <a href="https://www.seu.edu.sa/sites/ar/Pages/BannerServices.aspx" class="menu-item"> خدمات نظام معلومات الطلبة   <i class="ik ik-tablet"></i> </a>
+                 </div>
+             </div>
+
 <!--          
                   <div class="nav-lavel"> </div> -->
                     <!-- <div class="nav-item">

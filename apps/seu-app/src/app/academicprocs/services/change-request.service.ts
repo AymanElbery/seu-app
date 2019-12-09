@@ -14,13 +14,19 @@ export class ChangeRequestService {
 			  }
 
   getِgetRequests() {
+    this.configService.baseUrl = 'stdservicesapi';
+
 
    return this.httRequest.GetRequest('change_camp_service').toPromise();
   }
   AddRequest(data) {
+    this.configService.baseUrl = 'stdservicesapi';
+
       return this.httRequest.postRequest('change_camp_service/insert', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdservicesapi';
+
     return this.httRequest.GetRequest('change_camp_service/remove/' + id ).toPromise();
 
   }

@@ -16,22 +16,30 @@ export class GraduateProfileService {
     this.configService.baseUrl = "stdsUnivapi";
   }
   getRequest() {
+    this.configService.baseUrl = "stdsUnivapi";
+
     
     return this.httRequest.GetRequest('grade_info_service').toPromise();
   }
 
   getDetails() {
+    this.configService.baseUrl = "stdsUnivapi";
+
     
     return this.httRequest.GetRequest('grade_info_service/details/'+this.request_number).toPromise();
   }
 
 
   deleteReq(id) {
+    this.configService.baseUrl = "stdsUnivapi";
+
     return this.httRequest.GetRequest('grade_info_service/remove/' + id ).toPromise();
 
   }
 
   AddRequest(data) {
+    this.configService.baseUrl = "stdsUnivapi";
+
     return this.httRequest.postRequest('grade_info_service/insert', data).toPromise();
 }
 }

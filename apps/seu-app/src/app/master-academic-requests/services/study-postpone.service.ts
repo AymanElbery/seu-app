@@ -13,13 +13,19 @@ export class StudyPostponeService {
     this.configService.baseUrl = 'stdsUnivapi';
   }
   getRequest() {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     
     return this.httRequest.GetRequest('postpone_service').toPromise();
   }
   AddRequest(data) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.postRequest('postpone_service/insert', data).toPromise();
 }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.GetRequest('postpone_service /remove/' + id ).toPromise();
 
   }

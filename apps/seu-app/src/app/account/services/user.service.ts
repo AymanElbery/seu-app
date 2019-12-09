@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../../shared/services/config.service';
-import { Http, Response,Headers, RequestOptions } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { UserRegistration } from '../../shared/models/user.registration.interface';
 import {Observable, throwError} from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { HttpRequestService } from '../../shared/services/http-request.service';
 import { BaseService } from '../../shared/services/base.service';
 import { UserManagerService } from '../../shared/services/user-manager.service';
+import { UserData } from 'src/app/shared/models/user-data';
 
 
 
@@ -15,18 +16,34 @@ import { UserManagerService } from '../../shared/services/user-manager.service';
   providedIn: 'root'
 })
 export class UserService extends BaseService {
-baseUrl:string='';
-logedIn:boolean=false;
-  constructor(private configService: ConfigService,private httRequest:HttpRequestService) {
+baseUrl = '';
+logedIn = false;
+data;
+name;
+menuType = 1;
+acStd = false;
+showServices = false;
+userData: UserData;
+userDataLoaded: boolean;
+newsData;
+eventsData;
+adsData;
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
 
     super();
-    this.baseUrl=configService.getApiURI();
+    this.configService.baseUrl = 'stdservicesapi';
+    // tslint:disable-next-line: max-line-length
+    this.userData = {act_as_student: false, activeRole: '', camp: '', coll: '', id: '', level: '', major: '', name_ar: '', name_en: '', role: '', sex: '', ssn: '', stdName: '', student_details: {name_en: '', ssn: '', sex: '', name_ar: '', major: '', camp: '', coll: '', id: '', level: ''}, username: ''};
+    this.newsData = [];
+    this.eventsData = [];
+    this.adsData = [];
    }
-   
-   addUser(username:string, email: string, password: string, firstName: string, lastName: string,location: string) {
-    
-    let body = {username, email, password, firstName, lastName,location };
-    return this.httRequest.postRequest('accounts',body).pipe(map((res: any)=>res),catchError(err=>{console.error(err);return throwError(err)}));
+
+   addUser(username: string, email: string, password: string, firstName: string, lastName: string, location: string) {
+
+    const body = {username, email, password, firstName, lastName, location };
+    return this.httRequest.postRequest('accounts', body)
+    .pipe(map((res: any) => res), catchError(err => {console.error(err); return throwError(err); }));
   }
 
 
@@ -36,9 +53,30 @@ logedIn:boolean=false;
       (
        'auth/login',
       { userName, password }
-      ).pipe(map((res: any)=> res),catchError(err=>{ console.error(err);return err;}));
-     
-      
-     
+      ).pipe(map((res: any) => res), catchError(err => { console.error(err); return err; }));
+
+
+
   }
+
+
+   async loadUserData() {
+    this.configService.baseUrl = 'stdservicesapi';
+
+    console.log('log ueer data');
+    if (this.userDataLoaded !== true) {
+   return this.httRequest.GetRequest('user').toPromise().then(res => {
+  this.userData = (res as any).data;
+  this.userData.activeRole = this.userData.role;
+
+  console.log('loadUserData' + this.userData);
+  this.userDataLoaded = true;
+   });
+  }
+
+  }
+   loadUserDetailsData() {
+    console.log('user details  data');
+    return this.httRequest.GetRequest('user').toPromise();
+ }
 }

@@ -13,14 +13,24 @@ export class CertificateIDService {
 
   getCertificateID() {
 
+    this.configService.baseUrl = 'stdservicesapi';
+
     return this.httRequest.GetRequest('/identification_crse/get_identification').toPromise();
    }
    DownloadCertificate() {
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/identification_crse/get_identification_print';
+
+    this.configService.baseUrl = 'stdservicesapi';
+
+    return this.configService.getApiURI() + '/identification_crse/get_identification_print?sid='+sid;
    }
    DownloadEngCertificate() {
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/identification_crse/get_identification_print?Lang=en';
+
+    this.configService.baseUrl = 'stdservicesapi';
+
+    return this.configService.getApiURI() + '/identification_crse/get_identification_print?Lang=en&sid='+sid;
    }
 }

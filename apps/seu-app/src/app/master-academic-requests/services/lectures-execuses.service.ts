@@ -13,22 +13,32 @@ export class LecturesExecusesService {
     this.configService.baseUrl = 'stdsUnivapi';
   }
   getRequests() {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     //?std_id=S180105049
     return this.httRequest.GetRequest('lecture_excuse_service').toPromise();
   }
   AddRequest(data) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.postRequest('lecture_excuse_service/insert', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.GetRequest('lecture_excuse_service/remove/' + id).toPromise();
 
   }
 
   Download(req) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
 
     return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req;
   }
   DownloadEng() {
+    this.configService.baseUrl = 'stdsUnivapi';
+
 
     return this.configService.getApiURI() + '/lecture_excuse_service/download?Lang=en';
   }

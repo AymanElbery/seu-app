@@ -14,6 +14,8 @@ export class AbseneQueryService {
   }
 
   getRequests() {
+    this.configService.baseUrl = "stdsUnivapi";
+
 
     return this.httRequest.GetRequest('absent_service').toPromise();
    }

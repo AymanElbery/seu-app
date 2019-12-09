@@ -14,12 +14,18 @@ export class PersonalIDService {
   }
   getِgetRequests() {
 
+    this.configService.baseUrl = "stdsUnivapi";
+
     return this.httRequest.GetRequest('card_university_service').toPromise();
    }
    AddRequest(data) {
+    this.configService.baseUrl = "stdsUnivapi";
+
        return this.httRequest.postRequest('card_university_service/insert', data).toPromise();
    }
    deleteReq(id) {
+    this.configService.baseUrl = "stdsUnivapi";
+
      return this.httRequest.GetRequest('card_university_service/remove/' + id ).toPromise();
  
    }

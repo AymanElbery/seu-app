@@ -13,9 +13,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StudentPaymentComponent } from './student-payment/student-payment.component';
 
 @NgModule({
-  declarations: [TuitionFeesStatComponent,FeesExceptionComponent,AddFeesExceptionComponent],
+  declarations: [TuitionFeesStatComponent,FeesExceptionComponent,AddFeesExceptionComponent, StudentPaymentComponent],
   imports: [
     CommonModule,
     FinanceAffairRoutingModule,

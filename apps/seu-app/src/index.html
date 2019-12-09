@@ -23,14 +23,48 @@
  
 </head>
 <body>
+    <script>
+        window.addEventListener("message", messageHandler, false);
+        function redirect(){
+        window.location.href="https://seuapps.seu.edu.sa/sso/login-sst.php";  
+        }
+        var sid = "";
+        function messageHandler(event) {
+          const { action, key, value } = event.data;
+          if(action == 'returnData'){
+            console.log('event');
+            console.log(event );
+          console.log(key + ":"+value);
+          sid =value;
+          if(!value){
+          redirect();
+          }
+          }
+        }
+        function readInfo(){
+        const iframe = document.getElementById('sso-login');
+        iframe.contentWindow.postMessage({action: 'get',key: 'sid'},'*');
+        setTimeout(function(){
+          console.log(sid +'sid');
+          localStorage.setItem('sid',sid);
+
+        if(!sid){
+        redirect();
+        }
+        },500);
+        };
+        
+        </script>
+  
+  <iframe style="display:none;" src="https://seuapps.seu.edu.sa/sso/landing.php" id="sso-login" onload="readInfo()"></iframe>
+
   <app-root></app-root>
   <script src="assets/js/js/jquery-3.3.1.min.js"></script>
       
  <script src="assets/js/js/popper.min.js"></script>
  <script src="assets/js/js/bootstrap.min.js"></script>
  <script src="assets/js/js/perfect-scrollbar.min.js"></script>
- <script src="assets/js/js/owl.carousel.min.js"></script>
- <script src="assets/js/js/carousel.js"></script>
+
  <script src="assets/js/js/service.js"></script>
  <script src="assets/js/tippy.js"></script>
  <script src="assets/js/main-2.js"></script>
@@ -48,7 +82,10 @@
             return container;
           } }); 
         </script>
-    
+
+
+<script  src="assets/js/js/owl.carousel.min.js"></script>
+<script src="assets/js/js/carousel.js"></script>
 </body>
 
 </html>

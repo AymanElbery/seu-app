@@ -13,13 +13,19 @@ export class TermExecuseService {
     this.configService.baseUrl = 'stdsUnivapi';
   }
   getRequest() {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     
     return this.httRequest.GetRequest('execuse_service').toPromise();
   }
   AddRequest(data) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.postRequest('execuse_service/insert', data).toPromise();
 }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.GetRequest('execuse_service/remove/' + id ).toPromise();
 
   }

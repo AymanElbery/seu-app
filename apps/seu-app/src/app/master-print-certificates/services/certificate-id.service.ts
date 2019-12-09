@@ -13,14 +13,20 @@ export class CertificateIDService {
     this.configService.baseUrl = 'stdsUnivapi';
   }
   getRequest() {
+    this.configService.baseUrl = "stdsUnivapi";
+
     // ?std_id=S180105049
     return this.httRequest.GetRequest('identification_certificate').toPromise();
   }
   Download() {
 
+    this.configService.baseUrl = "stdsUnivapi";
+
     return this.configService.getApiURI() + '/identification_certificate/download';
    }
    DownloadEng() {
+    this.configService.baseUrl = "stdsUnivapi";
+
 
     return this.configService.getApiURI() + '/identification_certificate/download?Lang=en';
    }

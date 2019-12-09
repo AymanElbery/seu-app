@@ -9,19 +9,22 @@ export class ExamExcuseService {
 
   reqData;
   msgs;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
-			  }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = 'stdservicesapi';
+  }
 
   getِgetRequests() {
+    this.configService.baseUrl = 'stdservicesapi';
 
-   return this.httRequest.GetRequest('exam_excuse_service?std_id=S190000060').toPromise();
+   return this.httRequest.GetRequest('exam_excuse_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('exam_excuse_service/insert?std_id=S190000060', data).toPromise();
+    this.configService.baseUrl = 'stdservicesapi';
+      return this.httRequest.postRequest('exam_excuse_service/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('exam_excuse_service/remove/' + id + '?std_id=S190000060').toPromise();
+    this.configService.baseUrl = 'stdservicesapi';
+    return this.httRequest.GetRequest('exam_excuse_service/remove/' + id + '').toPromise();
 
   }
 }

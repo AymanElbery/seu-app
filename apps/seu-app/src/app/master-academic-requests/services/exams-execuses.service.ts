@@ -13,13 +13,19 @@ export class ExamsExecusesService {
     this.configService.baseUrl = 'stdsUnivapi';
   }
   getRequest() {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     
     return this.httRequest.GetRequest('exam_excuse_service').toPromise();
   }
   AddRequest(data) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.postRequest('exam_excuse_service/insert', data).toPromise();
 }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.GetRequest('exam_excuse_service/remove/' + id ).toPromise();
   }
 }

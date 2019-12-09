@@ -11,16 +11,25 @@ constructor(private configService: ConfigService, private httRequest: HttpReques
                     this.configService.baseUrl = 'stdservicesapi'; }
 
   getِAcademicRecord() {
+    this.configService.baseUrl = 'stdservicesapi';
 
-   return this.httRequest.GetRequest('academic_record_service/get_academic_record').toPromise();
+    return this.httRequest.GetRequest('academic_record_service/get_academic_record').toPromise();
   }
 
    Download() {
 
-    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print';
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid =   this.configService.getSid();
+
+
+    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?sid=' + sid;
    }
    DownloadEng() {
 
-    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?Lang=en';
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid =   this.configService.getSid();
+
+
+    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?Lang=en&sid='+sid;
    }
 }

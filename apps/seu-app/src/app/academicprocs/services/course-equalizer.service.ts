@@ -10,26 +10,37 @@ export class CourseEqualizerService {
   reqData;
   msgs;
  	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
+                    this.configService.baseUrl = 'stdservicesapi';
 			  }
 
   getِgetRequests() {
+    this.configService.baseUrl = 'stdservicesapi';
 
-   return this.httRequest.GetRequest('course_transfer_service').toPromise();
+
+    return this.httRequest.GetRequest('course_transfer_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('course_transfer_service/insert', data).toPromise();
+    this.configService.baseUrl = 'stdservicesapi';
+
+    return this.httRequest.postRequest('course_transfer_service/insert', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdservicesapi';
+
     return this.httRequest.GetRequest('course_transfer_service/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
+    this.configService.baseUrl = 'stdservicesapi';
 
-    return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req ;
+    const sid =   this.configService.getSid();
+
+    return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req + '?sid=' + sid ;
    }
    DownloadEng() {
+    this.configService.baseUrl = 'stdservicesapi';
+
 
     return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
    }

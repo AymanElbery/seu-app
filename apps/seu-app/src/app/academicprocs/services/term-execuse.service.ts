@@ -9,27 +9,38 @@ export class TermExecuseService {
 
   reqData;
   msgs;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
-			  }
+ constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+                    this.configService.baseUrl = 'stdservicesapi';
+ }
 
   getِgetRequests() {
-//?std_id=S120000101
-   return this.httRequest.GetRequest('execuse_service').toPromise();
+// ?std_id=S120000101
+this.configService.baseUrl = 'stdservicesapi';
+
+return this.httRequest.GetRequest('execuse_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('execuse_service/insert', data).toPromise();
+    this.configService.baseUrl = 'stdservicesapi';
+
+    return this.httRequest.postRequest('execuse_service/insert', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdservicesapi';
+
     return this.httRequest.GetRequest('execuse_service/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
+    this.configService.baseUrl = 'stdservicesapi';
 
-    return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req ;
+    const sid =   this.configService.getSid();
+
+    return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req  + '?sid=' + sid;
    }
    DownloadEng() {
+    this.configService.baseUrl = 'stdservicesapi';
+
 
     return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
    }

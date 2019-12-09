@@ -12,19 +12,29 @@ export class CancelCourseService {
     this.configService.baseUrl = 'stdsUnivapi';
   }
   getRequest() {
-    
+    this.configService.baseUrl = 'stdsUnivapi';
+
+
     return this.httRequest.GetRequest('course_cancel_service').toPromise();
   }
   AddRequest(data) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.postRequest('course_cancel_service/insert', data).toPromise();
 }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.httRequest.GetRequest('course_cancel_service/remove/' + id ).toPromise();
   }
   Download(req) {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req ;
    }
    DownloadEng() {
+    this.configService.baseUrl = 'stdsUnivapi';
+
     return this.configService.getApiURI() + '/crse_cancel/download?Lang=en';
    }
 }

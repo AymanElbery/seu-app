@@ -19,12 +19,18 @@ export class ObjectExamService {
   }
   getgetRequests() {
 
+    this.configService.baseUrl = 'stdservicesapi';
+
     return this.httRequest.GetRequest('exam_objections_service').toPromise();
    }
   AddRequest(data) {
+    this.configService.baseUrl = 'stdservicesapi';
+
       return this.httRequest.postRequest('exam_objections_service/insert?', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdservicesapi';
+
     return this.httRequest.GetRequest('exam_objections_service/remove/' + id).toPromise();
 
   }

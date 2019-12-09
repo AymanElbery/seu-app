@@ -37,6 +37,8 @@ import { MasterOtherRequestsModule } from './master-other-requests/master-other-
 import { MasterPrintCertificatesModule } from './master-print-certificates/master-print-certificates.module';
 import { MasterStudentDataModule } from './master-student-data/master-student-data.module';
 import { TimerModule } from './shared/components/timer/timer.module';
+import { HomeService } from './rootservices/home.service';
+import { UserService } from './account/services/user.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { TimerModule } from './shared/components/timer/timer.module';
     FooterComponent,
     MenuComponent,
     PageHeaderComponent
-    
+
   ],
   imports: [
     BrowserModule,
@@ -71,15 +73,17 @@ import { TimerModule } from './shared/components/timer/timer.module';
     , MasterOtherRequestsModule
     , MasterPrintCertificatesModule
     , MasterStudentDataModule
-    ,TimerModule
-    
+    , TimerModule
+
 
   ],
   providers: [ConfigService,
     HttpRequestService
     , UserManagerService
     , AppStorageService
-    , PrintService],
+    ,UserService
+    , PrintService
+    , HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

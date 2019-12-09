@@ -11,26 +11,38 @@ export class TermPostponeService {
   reqData;
   msgs;
  	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
+                    this.configService.baseUrl = 'stdservicesapi';
 			  }
 
   getِgetRequests() {
-//?std_id=S120000101
-   return this.httRequest.GetRequest('postpone_service').toPromise();
+// ?std_id=S120000101
+this.configService.baseUrl = 'stdservicesapi';
+
+return this.httRequest.GetRequest('postpone_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('postpone_service/insert', data).toPromise();
+    this.configService.baseUrl = 'stdservicesapi';
+
+    return this.httRequest.postRequest('postpone_service/insert', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdservicesapi';
+
     return this.httRequest.GetRequest('postpone_service/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/postpone_service/download/postpone/' + req ;
+
+
+    return this.configService.getApiURI() + '/postpone_service/download/postpone/' + req + '?sid=' + sid ;
    }
    DownloadEng() {
+    this.configService.baseUrl = 'stdservicesapi';
+
 
     return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
    }

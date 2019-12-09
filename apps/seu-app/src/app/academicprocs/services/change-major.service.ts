@@ -16,22 +16,35 @@ constructor(private configService: ConfigService, private httRequest: HttpReques
 }
 
   getِgetRequests() {
+    this.configService.baseUrl = 'stdservicesapi';
 
-   return this.httRequest.GetRequest('change_major_service').toPromise();
+
+    return this.httRequest.GetRequest('change_major_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('change_major_service/insert', data).toPromise();
+    this.configService.baseUrl = 'stdservicesapi';
+
+    return this.httRequest.postRequest('change_major_service/insert', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = 'stdservicesapi';
+
     return this.httRequest.GetRequest('change_major_service/remove/' + id ).toPromise();
 
   }
 
    Download(req) {
 
-    return this.configService.getApiURI() + '/return_service/download/return_request/' + req ;
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid =   this.configService.getSid();
+
+    return this.configService.getApiURI() + '/return_service/download/return_request/' + req +'?sid='+sid;
    }
    DownloadEng() {
+    const sid =   this.configService.getSid();
+
+    this.configService.baseUrl = 'stdservicesapi';
+
 
     return this.configService.getApiURI() + '/return_service/download?Lang=en';
    }

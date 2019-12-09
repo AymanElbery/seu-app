@@ -8,9 +8,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { MasterFinanceAffairRoutingModule } from './master-finance-affair-routing.module';
+import { MasterPaymentComponent } from './master-payment/master-payment.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [MasterPaymentComponent],
   imports: [
     CommonModule,
     MasterFinanceAffairRoutingModule,

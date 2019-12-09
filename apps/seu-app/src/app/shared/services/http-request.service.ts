@@ -12,11 +12,16 @@ export class HttpRequestService {
 
 
   private createRequestHeader() {
+    const sid = localStorage.getItem('sid');
+
     // set headers here e.g.
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Session-ID': sid
+
     });
 
+    console.log(headers);
     return headers;
   }
 
@@ -33,7 +38,7 @@ export class HttpRequestService {
   GetRequest(path: string) {
 
     const url = this.configService.getApiURI() + '/' + path;
-    console.log(url);
+    console.log('url:' + url);
     //  let headers= new Headers();
     // headers.append('Content-Type', 'application/json');
     const headers = this.createRequestHeader();
@@ -47,9 +52,10 @@ export class HttpRequestService {
     //  let headers= new Headers();
     // headers.append('Content-Type', 'application/json');
     const headers = this.createRequestHeader();
+    const authToken = localStorage.getItem('sid');
 
     // let options = new RequestOptions({ headers: headers });
-    return this.http.post(url, { headers });
+    return this.http.get(url, { headers });
   }
   GetAuthRequest(path: string) {
 
@@ -78,7 +84,7 @@ export class HttpRequestService {
     /* if (body == null)
        return this.http.post(url, { headers });
      else*/
-     console.log(body);
+    console.log(body);
     return this.http.post(url, JSON.stringify(body), { headers });
   }
   postAuthRequest(path: string, body: any) {
