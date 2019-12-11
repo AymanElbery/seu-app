@@ -10,23 +10,23 @@ export class PersonalIDService {
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-    this.configService.baseUrl = "stdsUnivapi";
+    this.configService.baseUrl = 'stdsUnivapi';
   }
   getِgetRequests() {
 
-    this.configService.baseUrl = "stdsUnivapi";
+    this.configService.baseUrl = 'stdsUnivapi';
 
     return this.httRequest.GetRequest('card_university_service').toPromise();
    }
    AddRequest(data) {
-    this.configService.baseUrl = "stdsUnivapi";
+    this.configService.baseUrl = 'stdsUnivapi';
 
-       return this.httRequest.postRequest('card_university_service/insert', data).toPromise();
+    return this.httRequest.postRequest('card_university_service/insert', data).toPromise();
    }
    deleteReq(id) {
-    this.configService.baseUrl = "stdsUnivapi";
+    this.configService.baseUrl = 'stdsUnivapi';
 
-     return this.httRequest.GetRequest('card_university_service/remove/' + id ).toPromise();
- 
+    return this.httRequest.GetRequest('card_university_service/remove/' + id ).toPromise();
+
    }
 }

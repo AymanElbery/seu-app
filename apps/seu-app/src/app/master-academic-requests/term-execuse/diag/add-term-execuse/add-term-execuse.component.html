@@ -21,7 +21,7 @@
                                      <h6> عدد الفصول الدراسية التي تود الااعتذار عنها </h6>
                                     
                                      <select name="num_terms" #num_terms="ngModel" [(ngModel)]="termExecuse.num_terms" class="form-control" 
-                                     [class.is-invalid]="mj.major==''">
+                                     >
                                        <option value="">اختر عدد الفصول الدراسية</option>
                                        <option *ngFor="let item of reqData.terms" value="{{item.id}}">{{item.value}}</option>
                                      </select>

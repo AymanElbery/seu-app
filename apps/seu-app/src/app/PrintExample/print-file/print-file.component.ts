@@ -13,7 +13,7 @@ export class PrintFileComponent implements OnInit {
   dataDetails: Promise<any>[];
 
   constructor(route: ActivatedRoute,
-              private printService: PrintService) {
+              public printService: PrintService) {
 alert('p');
 console.log(route.snapshot.params.paramData);
 this.paramIds = route.snapshot.params.paramData

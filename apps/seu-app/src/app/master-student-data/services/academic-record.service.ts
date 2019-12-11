@@ -13,7 +13,7 @@ export class AcademicRecordService {
     this.configService.baseUrl = 'stdsUnivapi';
   }
   getRecord() {
-    this.configService.baseUrl = "stdsUnivapi";
+    this.configService.baseUrl = 'stdsUnivapi';
 
 
     return this.httRequest.GetRequest('academic_record_service').toPromise();
@@ -21,17 +21,17 @@ export class AcademicRecordService {
 
     Download() {
 
-      this.configService.baseUrl = "stdsUnivapi";
+      this.configService.baseUrl = 'stdsUnivapi';
       const sid =   this.configService.getSid();
 
 
-     return this.configService.getApiURI() + 'academic_record_service/download?Lang=ar&sid='+sid;
+      return this.configService.getApiURI() + 'academic_record_service/download?Lang=ar&sid=' + sid;
     }
     DownloadEng() {
-      this.configService.baseUrl = "stdsUnivapi";
+      this.configService.baseUrl = 'stdsUnivapi';
       const sid =   this.configService.getSid();
 
 
-     return this.configService.getApiURI() + 'academic_record_service/download?Lang=en&sid='+sid;
+      return this.configService.getApiURI() + 'academic_record_service/download?Lang=en&sid=' + sid;
     }
 }

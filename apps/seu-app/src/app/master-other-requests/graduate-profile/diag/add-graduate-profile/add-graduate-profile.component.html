@@ -7,18 +7,18 @@
               </div>
             -->
 
-  <div *ngIf="isLoading" class=" loading-indicator  ">
+  <div  class=" loading-indicator  ">
     <div class="state">
 
 
-      <mat-spinner *ngIf="isLoading"
+      <mat-spinner 
         style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
       </mat-spinner>
 
     </div>
   </div>
 
-  <div *ngIf="!isLoading" class="widget">
+  <div  class="widget">
     <div class="widget-header">
       <h3 class="widget-title">المعلومات الشخصية للخريج</h3>
     </div>
@@ -205,7 +205,7 @@
               <div class="state">
                 <h6> الحالة الوظيفية </h6>
                 <select required name="job_status" #job_status="ngModel" [(ngModel)]="stdinfo.job_status"
-                  class="form-control" [class.is-invalid]="!isValid && stdinfo.job_status==''">
+                  class="form-control" [class.is-invalid]=" stdinfo.job_status==''">
 
                   <option *ngFor="let item of reqData.job_status" value="{{item.id}}">{{item.value}}</option>
                 </select>

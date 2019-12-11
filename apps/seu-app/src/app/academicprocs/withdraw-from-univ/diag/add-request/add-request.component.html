@@ -18,7 +18,7 @@
             <h6>الفرع </h6>
 
             <select required name="branch" #BranchID="ngModel" [(ngModel)]="withdraw.branch" class="form-control"
-              [class.is-invalid]="!isValid && withdraw.branch==0">
+              [class.is-invalid]=" withdraw.branch==''">
               <option value="">اختر اقرب فرع</option>
               <option *ngFor="let item of reqData.branches" value="{{item.id}}">{{item.name}}</option>
             </select>

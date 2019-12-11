@@ -27,7 +27,6 @@ import { PrintService } from './shared/services/print.service';
 import { PrintLayoutComponent } from './PrintExample/print-layout/print-layout.component';
 import { PrintFileComponent } from './PrintExample/print-file/print-file.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { HrMinuteDirective } from './shared/directives/hr-minute.directive';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageHeaderComponent } from './page-header/page-header.component';

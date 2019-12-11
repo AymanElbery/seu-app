@@ -8,7 +8,7 @@
           
         </div>
         <div class="modal-body">
-            <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
+            <form #form="ngForm" autocomplete="off" (submit)="onSubmit()" class="mt-20">
                 <div class="main-content" style="padding-top:0;">
                 <section  class="ser-state">
                     <div class="container">
@@ -61,7 +61,7 @@
                             <div class="state">
                               <h6> اسم البنك </h6>                               
                               <select name="bank" #BankID="ngModel" [(ngModel)]="exam.bank"  class="form-control" 
-                              [class.is-invalid]="exam.bank==''">                                
+                              [class.is-invalid]="exam.bank==0">                                
                                 <option *ngFor="let item of reqData.bank_names" value="{{item.id}}">{{item.value}}</option>
                               </select>                              
                                </div>

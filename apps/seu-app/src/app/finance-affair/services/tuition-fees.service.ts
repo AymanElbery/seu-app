@@ -8,24 +8,26 @@ import { HttpRequestService } from '../../shared/services/http-request.service';
 export class TuitionFeesService {
 
  	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
+                    this.configService.baseUrl = 'stdservicesapi';
 			  }
 
 
   getِTuitionFeez() {
     this.configService.baseUrl = 'stdservicesapi';
 
-   return this.httRequest.GetRequest('fees_stmt_request_service').toPromise();
+    return this.httRequest.GetRequest('fees_stmt_request_service').toPromise();
   }
 
    Download() {
     this.configService.baseUrl = 'stdservicesapi';
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/fees_stmt_request_service/download';
+    return this.configService.getApiURI() + '/fees_stmt_request_service/download?sid=' + sid;
    }
    DownloadEng() {
     this.configService.baseUrl = 'stdservicesapi';
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/fees_stmt_request_service/download?Lang=en';
+    return this.configService.getApiURI() + '/fees_stmt_request_service/download?Lang=en&sid=' + sid;
    }
 }

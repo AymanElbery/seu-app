@@ -33,7 +33,11 @@ adsData;
     super();
     this.configService.baseUrl = 'stdservicesapi';
     // tslint:disable-next-line: max-line-length
-    this.userData = {act_as_student: false, activeRole: '', camp: '', coll: '', id: '', level: '', major: '', name_ar: '', name_en: '', role: '', sex: '', ssn: '', stdName: '', student_details: {name_en: '', ssn: '', sex: '', name_ar: '', major: '', camp: '', coll: '', id: '', level: ''}, username: ''};
+    this.userData = {act_as_student: false, activeRole: '', camp: '', coll: '', id: '', level: '', major: '', name_ar: '', name_en: '', role: '', sex: '', ssn: '', stdName: '',
+     student_details: {name_en: '', ssn: '', sex: '', name_ar: '', major: '', camp: '', coll: '', id: '', level: ''}, 
+    username: '', 
+    student_details_gr:{name_en: '', ssn: '', sex: '', name_ar: '', major: '', camp: '', coll: '', id: '', level: ''}
+  };
     this.newsData = [];
     this.eventsData = [];
     this.adsData = [];

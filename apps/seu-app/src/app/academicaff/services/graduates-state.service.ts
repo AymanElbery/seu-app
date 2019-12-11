@@ -8,14 +8,14 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
 export class GraduatesStateService {
 
  	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
+                    this.configService.baseUrl = 'stdservicesapi';
 			  }
 
   getStatement() {
 
     this.configService.baseUrl = 'stdservicesapi';
 
-    
+
     return this.httRequest.GetRequest('/graduation_statement/statement').toPromise();
    }
    DownloadStatement() {
@@ -23,13 +23,13 @@ export class GraduatesStateService {
 
     const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?sid='+sid;
+    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?sid=' + sid;
    }
    DownloadEngStatement() {
     this.configService.baseUrl = 'stdservicesapi';
     const sid =   this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?Lang=en&sid='+sid;
+    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?Lang=en&sid=' + sid;
    }
 }

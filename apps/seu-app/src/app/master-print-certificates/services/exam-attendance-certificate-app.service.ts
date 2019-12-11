@@ -22,13 +22,15 @@ export class ExamAttendanceCertificateAppService {
   Download(type:string) {
     this.configService.baseUrl = "stdsUnivapi";
 
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/proof_attendance_service/download/'+type;
+    return this.configService.getApiURI() + '/proof_attendance_service/download/'+type+'?sid='+sid;
    }
    DownloadEng(type:string) {
     this.configService.baseUrl = "stdsUnivapi";
+    const sid =   this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/proof_attendance_service/download/'+type+'?Lang=en';
+    return this.configService.getApiURI() + '/proof_attendance_service/download/'+type+'?Lang=en&sid='+sid;
    }
 }

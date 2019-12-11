@@ -26,7 +26,7 @@
 
     </div>
   </div>
-  <div *ngIf="status==0 && !isLoading" class="alert alert-primary text-center" role="alert">
+  <div *ngIf=" !isLoading" class="alert alert-primary text-center" role="alert">
     {{reqData.messages}}
   </div>
   <section class="ser-state" *ngIf="!isLoading">

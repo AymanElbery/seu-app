@@ -38,7 +38,7 @@ constructor(private configService: ConfigService, private httRequest: HttpReques
     this.configService.baseUrl = 'stdservicesapi';
     const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/return_service/download/return_request/' + req +'?sid='+sid;
+    return this.configService.getApiURI() + '/return_service/download/return_request/' + req + '?sid=' + sid;
    }
    DownloadEng() {
     const sid =   this.configService.getSid();

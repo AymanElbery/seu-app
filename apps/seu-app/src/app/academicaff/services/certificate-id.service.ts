@@ -7,8 +7,9 @@ import { HttpRequestService } from '../../shared/services/http-request.service';
 })
 export class CertificateIDService {
 
+ 	  // tslint:disable-next-line: indent
  	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
+                    this.configService.baseUrl = 'stdservicesapi';
 			  }
 
   getCertificateID() {
@@ -23,7 +24,7 @@ export class CertificateIDService {
 
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.configService.getApiURI() + '/identification_crse/get_identification_print?sid='+sid;
+    return this.configService.getApiURI() + '/identification_crse/get_identification_print?sid=' + sid;
    }
    DownloadEngCertificate() {
     const sid =   this.configService.getSid();
@@ -31,6 +32,6 @@ export class CertificateIDService {
 
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.configService.getApiURI() + '/identification_crse/get_identification_print?Lang=en&sid='+sid;
+    return this.configService.getApiURI() + '/identification_crse/get_identification_print?Lang=en&sid=' + sid;
    }
 }

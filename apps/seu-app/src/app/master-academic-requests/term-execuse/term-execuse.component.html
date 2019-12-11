@@ -33,11 +33,8 @@
         {{msg.body}}!
       </div>
     </div>
-    <div *ngIf="msg!=null && !isLoading " style="text-align: right"
-      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
-      role="alert">
-      {{msg.body}}!
-    </div>
+ 
+
     <!-- <div style="direction: ltr;text-align: center">
     
     <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">

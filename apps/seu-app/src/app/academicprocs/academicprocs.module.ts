@@ -17,7 +17,6 @@ import { AddRequestComponent } from './withdraw-from-univ/diag/add-request/add-r
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ToastrModule } from 'ngx-toastr';
-import { HrMinuteDirective } from '../shared/directives/hr-minute.directive';
 import { TimerComponent } from '../shared/components/timer/timer.component';
 import { TermPostponeService } from './services/term-postpone.service';
 import { AddPostponeComponent } from './postpone-request/diag/add-postpone/add-postpone.component';

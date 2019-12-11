@@ -25,7 +25,7 @@ private imageSrc = '';
                private toastr: ToastrService, private acadmicProc: EnglishEqualizerService ) { }
 
   ngOnInit() {
-    this.englishEqual = {tests: [], attachment: '', ENG_TESTS: []};
+    this.englishEqual = {tests: [], attachment: '', ENG_TESTS: [],notes:{},crse_transfer_grades:[]};
 
     this.reqData = this.acadmicProc.reqData;
 

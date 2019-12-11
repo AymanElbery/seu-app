@@ -18,12 +18,12 @@ export class AddGraduateProfileComponent implements OnInit {
   stdinfo: StudentData;
   fileType;
 
-  //isLoading = false;
+  // isLoading = false;
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<AddGraduateProfileComponent>,
-    private toastr: ToastrService, private gradService: GraduateProfileService) { }
+              public dialogRef: MatDialogRef<AddGraduateProfileComponent>,
+              private toastr: ToastrService, private gradService: GraduateProfileService) { }
 
   ngOnInit() {
     this.stdinfo = {
@@ -37,17 +37,18 @@ export class AddGraduateProfileComponent implements OnInit {
       job_com: '',
       job_promo: '',
       job_promo_year: '',
-      job_loc:'',
+      job_loc: '',
       employer_name: '',
       employer_job_title: '',
       employer_phone: '',
       employer_email: '',
       image: '',
       cv: '',
-  }
-  
-   
-    //this.isLoading = true;
+      STD_RESUME: ''
+  };
+
+
+    // this.isLoading = true;
 
     this.reqData = this.gradService.reqData;
 
@@ -89,11 +90,13 @@ export class AddGraduateProfileComponent implements OnInit {
     console.log(this.fileType);
     console.log(e);
 
-    if (this.fileType == 'image')
+    // tslint:disable-next-line: triple-equals
+    if (this.fileType == 'image') {
       this.stdinfo.image = reader.result;
-    else if (this.fileType == 'cv')
+    } else if (this.fileType == 'cv') {
       this.stdinfo.cv = reader.result;
-    
+         }
+
 
   }
 

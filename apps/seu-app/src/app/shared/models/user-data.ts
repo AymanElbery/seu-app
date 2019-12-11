@@ -12,6 +12,8 @@ export interface UserData {
     ssn: string;
     camp: string;
     student_details: StudentDetails;
+    student_details_gr: StudentDetails;
+
     username: string;
     role: string;
     act_as_student: boolean;

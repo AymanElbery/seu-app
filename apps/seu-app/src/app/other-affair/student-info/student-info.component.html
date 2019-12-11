@@ -34,11 +34,7 @@
         {{msg.body}}!
       </div>
     </div>
-    <div *ngIf="msg!=null && !isLoading" style="text-align: right"
-      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
-      role="alert">
-      {{msg.body}}!
-    </div>
+  <br/>
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
       <h3 class="widget-title">بيانات الطالب / الطالبة</h3>

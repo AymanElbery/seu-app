@@ -29,11 +29,14 @@ export class ReEnrollService {
   }
    Download(req) {
     this.configService.baseUrl = 'stdsUnivapi';
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/return_service/download/return_request/' + req ;
+
+    return this.configService.getApiURI() + '/return_service/download/return_request/' + req  +'?sid='+sid;
    }
    DownloadEng() {
     this.configService.baseUrl = 'stdsUnivapi';
+    const sid =   this.configService.getSid();
 
     return this.configService.getApiURI() + '/return_service/download?Lang=en';
    }

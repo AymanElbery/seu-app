@@ -16,11 +16,11 @@ export class ExamExcuseService {
   getِgetRequests() {
     this.configService.baseUrl = 'stdservicesapi';
 
-   return this.httRequest.GetRequest('exam_excuse_service').toPromise();
+    return this.httRequest.GetRequest('exam_excuse_service').toPromise();
   }
   AddRequest(data) {
     this.configService.baseUrl = 'stdservicesapi';
-      return this.httRequest.postRequest('exam_excuse_service/insert', data).toPromise();
+    return this.httRequest.postRequest('exam_excuse_service/insert', data).toPromise();
   }
   deleteReq(id) {
     this.configService.baseUrl = 'stdservicesapi';

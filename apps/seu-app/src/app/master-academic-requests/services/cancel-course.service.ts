@@ -29,11 +29,15 @@ export class CancelCourseService {
   }
   Download(req) {
     this.configService.baseUrl = 'stdsUnivapi';
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req ;
+
+    return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req +'?sid='+sid;
    }
    DownloadEng() {
     this.configService.baseUrl = 'stdsUnivapi';
+    const sid =   this.configService.getSid();
+
 
     return this.configService.getApiURI() + '/crse_cancel/download?Lang=en';
    }

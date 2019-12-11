@@ -10,7 +10,7 @@ import { UserService } from '../account/services/user.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit , OnDestroy {
-  constructor(private userManager: UserManagerService, private userService: UserService) {
+  constructor(private userManager: UserManagerService, public userService: UserService) {
 
 
   }

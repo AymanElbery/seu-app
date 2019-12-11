@@ -36,11 +36,7 @@
       {{msg.body}}!
     </div>
   </div>
-  <div *ngIf="msg!=null && !isLoading" style="text-align: right"
-    [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
-    role="alert">
-    {{msg.body}}!
-  </div>
+
   <section class="ser-state" *ngIf="!isLoading">
     <nav>
       <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">

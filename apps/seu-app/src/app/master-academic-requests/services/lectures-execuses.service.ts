@@ -33,8 +33,9 @@ export class LecturesExecusesService {
   Download(req) {
     this.configService.baseUrl = 'stdsUnivapi';
 
+    const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req;
+    return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req+'?sid='+sid;
   }
   DownloadEng() {
     this.configService.baseUrl = 'stdsUnivapi';

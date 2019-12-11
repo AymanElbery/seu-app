@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   menuType = 1;
   acStd = false;
   showServices = false;
-  constructor(private userService: UserService, private router: Router) {
+  constructor(public userService: UserService, private router: Router) {
   }
 
 
@@ -82,9 +82,9 @@ export class MenuComponent implements OnInit {
       // tslint:disable-next-line: triple-equals
     } else if (e == 2) {
       this.userService.userData.activeRole = ApiUserRoles.Student;
-      this.userService.userData.coll = this.userService.userData.student_details.coll;
-      this.userService.userData.level = 'GR';
-      this.userService.userData.camp = this.userService.userData.student_details.camp;
+      this.userService.userData.coll = this.userService.userData.student_details_gr.coll;
+      this.userService.userData.level = this.userService.userData.student_details_gr.level;
+      this.userService.userData.camp = this.userService.userData.student_details_gr.camp;
       this.router.navigateByUrl('/home/msc');
 
 

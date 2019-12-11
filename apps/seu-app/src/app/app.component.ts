@@ -9,7 +9,7 @@ import { PrintService } from './shared/services/print.service';
 export class AppComponent {
   title = 'seu-app';
   print: PrintService;
-  constructor(private printService: PrintService) {
+  constructor(public printService: PrintService) {
 this.print = printService;
 
    }

@@ -28,7 +28,7 @@ private imageSrc = '';
        messages: [],
        univ_list_arr: [],
        PREV_UNIV: 0,
-       DESC_CRSE_FILE: '', TRANSCRIPT_FILE: ''};
+       DESC_CRSE_FILE: '', TRANSCRIPT_FILE: '', notes: ''};
     this.reqData = this.acadmicProc.reqData as CourseEqual ;
 
   }
@@ -39,10 +39,10 @@ private imageSrc = '';
       this.curseEqual.courses.push(it);
       console.log(this.curseEqual.courses[0]);
     } else {
-      for(let i = 0 ; i<this.curseEqual.courses.length;i++)
-      {
-        if(this.curseEqual.courses[i].TRNS_CRSE ==it.TRNS_CRSE)
+      for (let i = 0 ; i < this.curseEqual.courses.length; i++) {
+        if (this.curseEqual.courses[i].TRNS_CRSE == it.TRNS_CRSE) {
           this.curseEqual.courses.splice(i, 1);
+        }
 
       }
     }
