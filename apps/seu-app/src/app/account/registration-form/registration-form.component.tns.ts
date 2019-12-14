@@ -24,9 +24,9 @@ export class RegistrationFormComponent implements OnInit {
    
    
   dialogs.alert(this.userdata.firstName).then(()=> {
-    console.log("Dialog closed!");
+    //console.log("Dialog closed!");
 });
-         console.log(this.userdata.firstName);
+         //console.log(this.userdata.firstName);
         this.userService.addUser(this.userdata.username ,this.userdata.email,this.userdata.password,this.userdata.firstName,this.userdata.lastName,this.userdata.address)
                   .pipe( finalize(()=>{this.isRequesting=false;}))
                   .subscribe(
@@ -50,7 +50,7 @@ export class RegistrationFormComponent implements OnInit {
   {
 msgs.forEach(element => {
   dialogs.alert(element.body).then(()=> {
-    console.log("Dialog closed!");
+    //console.log("Dialog closed!");
 });
 });
 

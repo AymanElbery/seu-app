@@ -29,9 +29,9 @@ msgs: any;
 
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(  res => {
-      console.log(data);
+      //console.log(data);
       this.msgs =   (res as any).messages;
-      console.log(this.msgs);
+      //console.log(this.msgs);
       this.msgs.forEach((element: any) => {
     this.toastr.success('', element.body);
 

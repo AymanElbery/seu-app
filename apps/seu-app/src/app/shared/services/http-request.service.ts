@@ -21,7 +21,7 @@ export class HttpRequestService {
 
     });
 
-    console.log(headers);
+    ////console.log(headers);
     return headers;
   }
 
@@ -38,7 +38,7 @@ export class HttpRequestService {
   GetRequest(path: string) {
 
     const url = this.configService.getApiURI() + '/' + path;
-    console.log('url:' + url);
+    ////console.log('url:' + url);
     //  let headers= new Headers();
     // headers.append('Content-Type', 'application/json');
     const headers = this.createRequestHeader();
@@ -84,7 +84,7 @@ export class HttpRequestService {
     /* if (body == null)
        return this.http.post(url, { headers });
      else*/
-    console.log(body);
+    ////console.log(body);
     return this.http.post(url, JSON.stringify(body), { headers });
   }
   postAuthRequest(path: string, body: any) {

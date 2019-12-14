@@ -34,7 +34,7 @@ private imageSrc = '';
 
         this.camps = this.acadmicProc.reqData.camps;
         this.msgs = this.acadmicProc.msgs;
-        //console.log(this.camps);
+        ////console.log(this.camps);
         //this.canAdd = this.reqData.can_add_new_request;
           }
         );
@@ -42,7 +42,7 @@ private imageSrc = '';
       }
 
   addRequest(data: any) {
-    //console.log(data);
+    ////console.log(data);
     this.acadmicProc.AddRequest(data).then(  res => {
    this.msgs =   (res as any).messages;
    this.msgs.forEach((element: any) => {
@@ -62,7 +62,7 @@ private imageSrc = '';
     /*let dropDown;
     dropDown = document.getElementById("selected_id") as HTMLSelectElement;
     let selectedItem =dropDown[dropDown.selectedIndex];
-    //console.log(selectedItem.innerHTML  + "" + selectedItem.value);
+    ////console.log(selectedItem.innerHTML  + "" + selectedItem.value);
     this.changeRequest.camp.push({key:selectedItem.innerHTML,value:selectedItem.value});*/
     /*if(this.changeRequest.camp.length == 0)
       return;*/

@@ -39,7 +39,7 @@ export class LoginFormComponent implements OnInit {
         finalize(() => this.isRequesting = false))
         .subscribe(
         result => {       
-          console.log(result);  
+          //console.log(result);  
           if (result.status==1) {
              this.router.navigate(['/dashboard/home']);  
              this.userManger.saveToken(result.data);

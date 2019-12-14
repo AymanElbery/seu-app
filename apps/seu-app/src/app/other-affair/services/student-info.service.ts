@@ -18,7 +18,7 @@ export class StudentInfoService {
    }
    AddRequest(data) {
      alert(1)
-     console.log(data)
+     //console.log(data)
        return this.httRequest.postRequest('student_info_service/update', data).toPromise();
    }
    DownloadPhoto() {

@@ -27,7 +27,7 @@ export class FeesExceptionService {
 
   AddRequest(data) {
     this.configService.baseUrl = 'stdservicesapi';
-console.log(data);
+//console.log(data);
     return this.httRequest.postRequest('fees_exception_service/insert', data).toPromise();
   }
 }

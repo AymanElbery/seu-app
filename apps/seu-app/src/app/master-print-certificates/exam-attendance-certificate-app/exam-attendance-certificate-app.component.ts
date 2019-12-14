@@ -31,7 +31,7 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
         this.reqData = this.printCertificate.reqData;
         this.msgs = this.printCertificate.msgs;
         this.isLoading = false;
-        console.log(this.reqData);
+        //console.log(this.reqData);
       });
 
       this.arabicPrintTermWithSchedule=this.printCertificate.Download("Term_Exam_With_Schedule");

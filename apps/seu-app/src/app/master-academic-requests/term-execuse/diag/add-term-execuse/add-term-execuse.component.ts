@@ -36,7 +36,7 @@ export class AddTermExecuseComponent implements OnInit {
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(  res => {
       this.msgs =   (res as any).messages;
-      console.log(this.msgs);
+      //console.log(this.msgs);
       this.msgs.forEach((element: any) => {
        this.toastr.success('', element.body);
 
@@ -48,7 +48,7 @@ export class AddTermExecuseComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     this.addRequest(this.termExecuse);
-    console.log(this.termExecuse);
+    //console.log(this.termExecuse);
     this.dialogRef.close();
 
   }

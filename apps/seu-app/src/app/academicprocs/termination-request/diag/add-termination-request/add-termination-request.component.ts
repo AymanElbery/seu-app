@@ -51,7 +51,7 @@ export class AddTerminationRequestComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
 this.addRequest(this.termination);
-console.log(this.termination);
+//console.log(this.termination);
 this.dialogRef.close();
 
   }
@@ -70,7 +70,7 @@ this.dialogRef.close();
   // _handleReaderLoaded(e) {
   //   const reader = e.target;
   //   this.reEnroll.proof = reader.result;
-  //   console.log(this.reEnroll.proof);
+  //   //console.log(this.reEnroll.proof);
   // }
 
   print(req) {

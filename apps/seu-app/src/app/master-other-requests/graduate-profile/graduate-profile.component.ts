@@ -30,7 +30,7 @@ export class GraduateProfileComponent implements OnInit {
         this.reqData = this.gradProfServ.reqData;
         this.msgs = this.gradProfServ.msgs;
         this.isLoading = false;
-        // console.log(this.reqData.requests);
+        // //console.log(this.reqData.requests);
       }
     );
   }

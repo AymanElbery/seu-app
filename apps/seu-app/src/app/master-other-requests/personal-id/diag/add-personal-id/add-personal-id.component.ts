@@ -49,7 +49,7 @@ export class AddPersonalIdComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
 this.addRequest(this.card);
-console.log(this.card);
+//console.log(this.card);
 this.dialogRef.close();
 
   }
@@ -68,7 +68,7 @@ this.dialogRef.close();
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.card.photo = reader.result;
-    // console.log(this.card.photo);
+    // //console.log(this.card.photo);
   }
   handleInputChangeFile(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -85,7 +85,7 @@ this.dialogRef.close();
   _handleReaderLoadedFile(e) {
     const reader = e.target;
     this.card.ssn_file = reader.result;
-    // console.log(this.card.photo);
+    // //console.log(this.card.photo);
   }
 
 

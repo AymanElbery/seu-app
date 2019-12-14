@@ -15,7 +15,7 @@ export class PrintFileComponent implements OnInit {
   constructor(route: ActivatedRoute,
               public printService: PrintService) {
 alert('p');
-console.log(route.snapshot.params.paramData);
+//console.log(route.snapshot.params.paramData);
 this.paramIds = route.snapshot.params.paramData
       .split(',');
 

@@ -34,10 +34,10 @@ private imageSrc = '';
   }
   changeStatus(it, e) {
     if (e.target.checked) {
-      console.log(it);
+      ////console.log(it);
       it.TRNS_CRSE = it.CRSE_PK;
       this.curseEqual.courses.push(it);
-      console.log(this.curseEqual.courses[0]);
+      ////console.log(this.curseEqual.courses[0]);
     } else {
       for (let i = 0 ; i < this.curseEqual.courses.length; i++) {
         if (this.curseEqual.courses[i].TRNS_CRSE == it.TRNS_CRSE) {
@@ -46,7 +46,7 @@ private imageSrc = '';
 
       }
     }
-    console.log(this.curseEqual.courses);
+    ////console.log(this.curseEqual.courses);
 
   }
   handleInputChange(e) {
@@ -59,7 +59,7 @@ private imageSrc = '';
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.curseEqual.DESC_CRSE_FILE = reader.result;
-    console.log(this.curseEqual.DESC_CRSE_FILE);
+    ////console.log(this.curseEqual.DESC_CRSE_FILE);
   }
   handleInputChange2(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -73,7 +73,7 @@ private imageSrc = '';
     const reader = e.target;
     this.curseEqual.TRANSCRIPT_FILE = reader.result;
 
-    console.log(this.curseEqual.TRANSCRIPT_FILE);
+    ////console.log(this.curseEqual.TRANSCRIPT_FILE);
   }
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(  res => {
@@ -90,7 +90,7 @@ private imageSrc = '';
   onSubmit(form: NgForm) {
 
 this.addRequest(this.curseEqual);
-console.log(this.curseEqual);
+////console.log(this.curseEqual);
 this.dialogRef.close();
 
   }

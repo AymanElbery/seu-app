@@ -48,7 +48,7 @@ export class AddChangeMajorComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
 this.addRequest(this.mj);
-console.log(this.mj);
+////console.log(this.mj);
 this.dialogRef.close();
 
   }

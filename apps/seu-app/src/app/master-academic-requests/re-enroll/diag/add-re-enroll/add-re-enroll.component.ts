@@ -42,7 +42,7 @@ export class AddReEnrollComponent implements OnInit {
       this.acadmicProc.msgs = (res as any).messages;
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
-        console.log(this.reEnroll.reason);
+        //console.log(this.reEnroll.reason);
 
         });
     });
@@ -60,7 +60,7 @@ export class AddReEnrollComponent implements OnInit {
    
       this.addRequest(this.reEnroll);
       this.dialogRef.close();
-      console.log(this.reEnroll);
+      //console.log(this.reEnroll);
   }
 
   handleInputChange(e) {

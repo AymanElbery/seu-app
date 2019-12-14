@@ -27,7 +27,7 @@ export class AddStudyPostponeComponent implements OnInit {
 
 
   addRequest(data: any) {
-    console.log(data);
+    //console.log(data);
     this.acadmicProc.AddRequest(data).then(res => {
       this.msgs = (res as any).messages;
       this.msgs.forEach((element: any) => {

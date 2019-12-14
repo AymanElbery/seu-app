@@ -28,7 +28,7 @@ export class AddChangeBranchComponent implements OnInit {
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
 
-      console.log(this.reqData);
+      //console.log(this.reqData);
 
   }
     );
@@ -48,7 +48,7 @@ export class AddChangeBranchComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
 this.addRequest(this.branch);
-console.log(this.branch);
+//console.log(this.branch);
 this.dialogRef.close();
 
   }

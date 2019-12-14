@@ -33,9 +33,9 @@ export class ChangeRequestComponent implements OnInit {
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
     this.isLoading=false;
-    //console.log(this.reqData.reqs);
+    ////console.log(this.reqData.reqs);
 
-    //console.log(this.reqData);
+    ////console.log(this.reqData);
     //this.canAdd = this.reqData.can_add_new_request;
       }
     );
@@ -64,7 +64,7 @@ this.addRequest(form.value);
 
   
   delete(id, index) {
-   // console.log(id);
+   // //console.log(id);
 
     if ( confirm('هل انت متأكد')) {
     this.acadmicProc.deleteReq(id).then(res => {

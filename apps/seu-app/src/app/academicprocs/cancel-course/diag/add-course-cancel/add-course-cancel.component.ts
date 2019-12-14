@@ -34,14 +34,14 @@ private imageSrc = '';
     if (e.target.checked) {
       const selCouse = {value: id};
       this.cancelCousre.courses.push(selCouse);
-      console.log(this.cancelCousre.courses);
+      ////console.log(this.cancelCousre.courses);
     } else {
       this.cancelCousre.courses.splice(i, 1);
     }
   }
 
   addRequest(data: any) {
-    console.log(data);
+    ////console.log(data);
     this.acadmicProc.AddRequest(data).then(  res => {
    this.msgs =   (res as any).messages;
    this.msgs.forEach((element: any) => {

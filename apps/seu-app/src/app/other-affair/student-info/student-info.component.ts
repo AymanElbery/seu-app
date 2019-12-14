@@ -125,9 +125,9 @@ export class StudentInfoComponent implements OnInit {
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    /*console.log('_reader ');
-    console.log(this.fileType);
-    console.log(e);*/
+    /*//console.log('_reader ');
+    //console.log(this.fileType);
+    //console.log(e);*/
 
     if (this.fileType == 'image')
       this.stdData.photo = reader.result;

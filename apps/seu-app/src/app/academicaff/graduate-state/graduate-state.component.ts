@@ -26,7 +26,7 @@ export class GraduateStateComponent implements OnInit {
         this.msgs = (res as any).messages;
         this.isLoading = false;
 
-        console.log(this.graduateData.length);
+        ////console.log(this.graduateData.length);
       }
     );
   }

@@ -35,7 +35,7 @@ export class WithdrawFromUnivComponent implements OnInit {
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
     this.isLoading=false;
-    //console.log(this.reqData.reqs);
+    ////console.log(this.reqData.reqs);
       }
     );
   }

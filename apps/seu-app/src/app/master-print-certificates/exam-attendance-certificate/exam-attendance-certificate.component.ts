@@ -47,7 +47,7 @@ export class ExamAttendanceCertificateComponent implements OnInit {
       //   this.isFinal_Exam_With_Schedule=true;
 
       //  }
-        console.log(this.reqData);
+        //console.log(this.reqData);
 
 
     });

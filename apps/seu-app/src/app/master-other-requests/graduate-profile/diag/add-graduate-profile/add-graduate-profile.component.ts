@@ -56,7 +56,7 @@ export class AddGraduateProfileComponent implements OnInit {
   }
 
   addRequest(data: any) {
-    console.log(data);
+    //console.log(data);
     this.gradService.AddRequest(data).then(res => {
       this.msgs = (res as any).messages;
       this.msgs.forEach((element: any) => {
@@ -76,8 +76,8 @@ export class AddGraduateProfileComponent implements OnInit {
 
   handleInputChange(e, fileType) {
     this.fileType = fileType;
-    console.log('handleInputChange ');
-    console.log(this.fileType);
+    //console.log('handleInputChange ');
+    //console.log(this.fileType);
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const pattern = /pdf-*/;
     const reader = new FileReader();
@@ -86,9 +86,9 @@ export class AddGraduateProfileComponent implements OnInit {
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    console.log('_reader ');
-    console.log(this.fileType);
-    console.log(e);
+    //console.log('_reader ');
+    //console.log(this.fileType);
+    //console.log(e);
 
     // tslint:disable-next-line: triple-equals
     if (this.fileType == 'image') {

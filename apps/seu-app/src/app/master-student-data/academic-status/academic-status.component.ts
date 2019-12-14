@@ -24,7 +24,7 @@ export class AcademicStatusComponent implements OnInit {
         this.reqData = this.stdData.reqData;
         this.msgs = this.stdData.msgs;
         this.isLoading=false;
-        console.log(this.reqData);
+        //console.log(this.reqData);
       }
     );
   }

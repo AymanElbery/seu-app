@@ -26,7 +26,7 @@ reqData;
     this.lectureExecuse = {courses: [], attachment: '', reason: '', date: '', type: '', week: ''
     };
     this.reqData = this.acadmicProc.reqData  ;
-    console.log(this.reqData);
+    //console.log(this.reqData);
 
   }
   changeStatus(it, e) {
@@ -34,14 +34,14 @@ reqData;
       this.lectureExecuse.courses.push({CRSE: it.CRN});
     } else {
       for (let i = 0 ; i < this.lectureExecuse.courses.length; i++) {
-        console.log(this.lectureExecuse.courses[i]);
-        console.log(it.CRN);
+        //console.log(this.lectureExecuse.courses[i]);
+        //console.log(it.CRN);
         if (this.lectureExecuse.courses[i].CRSE === it.CRN) {
           this.lectureExecuse.courses.splice(i, 1);
         }
 
       }    }
-    console.log(this.lectureExecuse.courses);
+    //console.log(this.lectureExecuse.courses);
 
   }
   handleInputChange(e) {
@@ -53,7 +53,7 @@ reqData;
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.lectureExecuse.attachment = reader.result;
-    console.log(this.lectureExecuse.attachment);
+    //console.log(this.lectureExecuse.attachment);
   }
   handleInputChange2(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -64,7 +64,7 @@ reqData;
   _handleReaderLoaded2(e) {
     const reader = e.target;
     this.lectureExecuse.attachment = reader.result;
-    console.log(this.lectureExecuse.attachment);
+    //console.log(this.lectureExecuse.attachment);
   }
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(  res => {
@@ -81,7 +81,7 @@ reqData;
   onSubmit(form: NgForm) {
 
 this.addRequest(this.lectureExecuse);
-console.log(this.lectureExecuse);
+//console.log(this.lectureExecuse);
 this.dialogRef.close();
 
   }

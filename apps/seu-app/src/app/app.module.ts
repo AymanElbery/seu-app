@@ -38,6 +38,7 @@ import { MasterStudentDataModule } from './master-student-data/master-student-da
 import { TimerModule } from './shared/components/timer/timer.module';
 import { HomeService } from './rootservices/home.service';
 import { UserService } from './account/services/user.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -73,8 +74,7 @@ import { UserService } from './account/services/user.service';
     , MasterPrintCertificatesModule
     , MasterStudentDataModule
     , TimerModule
-
-
+    , MatProgressSpinnerModule
   ],
   providers: [ConfigService,
     HttpRequestService

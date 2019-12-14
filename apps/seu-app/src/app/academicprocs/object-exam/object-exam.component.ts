@@ -29,8 +29,8 @@ export class ObjectExamComponent implements OnInit {
     this.acadmicProc.msgs = (res as any).messages;
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
-    console.log(this.reqData.banks.CRN);
-    console.log((res as any).status);
+    //console.log(this.reqData.banks.CRN);
+    //console.log((res as any).status);
     this.isLoading=false;
       }
     )}
@@ -57,15 +57,15 @@ export class ObjectExamComponent implements OnInit {
   
     */
     delete(id, index) {
-     // console.log(id);
+     // //console.log(id);
   
       if ( confirm('هل انت متأكد')) {
       this.acadmicProc.deleteReq(id).then(res => {
        
-  //console.log((res as any).status);
+  ////console.log((res as any).status);
   this.msgs =   (res as any).messages;
   this.status =   (res as any).status;
-  //console.log(this.status);
+  ////console.log(this.status);
 
   this.msgs.forEach((element: any) => {
     this.toastr.success('', element.body);
@@ -74,7 +74,7 @@ export class ObjectExamComponent implements OnInit {
     if(this.status == 1)
         this.acadmicProc.reqData.requests.splice(index, 1);
       });
-      //console.log(this.status);
+      ////console.log(this.status);
       
   
     }

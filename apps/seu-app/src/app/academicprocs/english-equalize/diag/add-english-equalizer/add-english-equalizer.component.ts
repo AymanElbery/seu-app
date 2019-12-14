@@ -34,7 +34,7 @@ private imageSrc = '';
     if (e.target.checked) {
       it.test = it.TEST_PK;
       this.englishEqual.tests.push(it);
-      console.log(this.englishEqual.tests);
+      ////console.log(this.englishEqual.tests);
     } else {
       for(let i = 0 ; i<this.englishEqual.tests.length;i++)
       {
@@ -43,12 +43,12 @@ private imageSrc = '';
 
       }
     }
-    //console.log(this.englishEqual.tests);
+    ////console.log(this.englishEqual.tests);
 
   }
 
   addRequest(data: any) {
-    console.log(data);
+    ////console.log(data);
     this.acadmicProc.AddRequest(data).then(  res => {
    this.msgs =   (res as any).messages;
    this.msgs.forEach((element: any) => {
@@ -84,7 +84,7 @@ this.dialogRef.close();
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.englishEqual.attachment = reader.result;
-    console.log(this.englishEqual.attachment);
+    ////console.log(this.englishEqual.attachment);
   }
 
 }

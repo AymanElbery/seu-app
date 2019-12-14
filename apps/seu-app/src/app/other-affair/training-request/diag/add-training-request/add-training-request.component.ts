@@ -42,14 +42,14 @@ export class AddTrainingRequestComponent implements OnInit {
       this.acadmicProc.msgs = (res as any).messages;
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
-        console.log( this.msgs);
+        //console.log( this.msgs);
         });
     });
 
   }
   onSubmit(form: NgForm) {
 this.addRequest(this.training);
-console.log(this.training);
+//console.log(this.training);
 this.dialogRef.close();
 
   }
@@ -68,7 +68,7 @@ this.dialogRef.close();
   // _handleReaderLoaded(e) {
   //   const reader = e.target;
   //   this.reEnroll.proof = reader.result;
-  //   console.log(this.reEnroll.proof);
+  //   //console.log(this.reEnroll.proof);
   // }
 
   print(req) {

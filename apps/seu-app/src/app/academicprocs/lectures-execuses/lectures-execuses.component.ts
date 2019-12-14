@@ -27,7 +27,7 @@ export class LecturesExecusesComponent implements OnInit {
     this.lectureExecuse = {attachment: '', courses: [], date: '', reason: '', type: '', week: ''};
     this.acadmicProc.getRequests().then(
       res => {
-        console.log(res);
+        //console.log(res);
         this.acadmicProc.reqData =    (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;

@@ -39,7 +39,7 @@ private imageSrc = '';
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.withdraw.bankimage = reader.result;
-    console.log(this.withdraw.bankimage);
+    //console.log(this.withdraw.bankimage);
   }
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(  res => {

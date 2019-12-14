@@ -32,7 +32,7 @@ export class PersonalIDComponent implements OnInit {
     this.msgs = this.univCard.msgs;
     var key=this.reqData;
     this.isLoading=false;
-   console.log(this.reqData);
+   //console.log(this.reqData);
       }
     );
   }

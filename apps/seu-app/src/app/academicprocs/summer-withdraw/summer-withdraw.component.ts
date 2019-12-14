@@ -33,7 +33,7 @@ export class SummerWithdrawComponent implements OnInit {
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-        //console.log(this.reqData.reqs[0].time_to_delete_per_hour);
+        ////console.log(this.reqData.reqs[0].time_to_delete_per_hour);
       }
     );
   }

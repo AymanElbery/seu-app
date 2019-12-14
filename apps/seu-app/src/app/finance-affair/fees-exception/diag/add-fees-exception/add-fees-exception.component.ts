@@ -61,7 +61,7 @@ export class AddFeesExceptionComponent implements OnInit {
 
 
   addRequest(data: any) {
-    //console.log(data);
+    ////console.log(data);
     this.isLoading = true;
     this.acadmicProc.AddRequest(data).then(res => {
       this.msgs = (res as any).messages;
@@ -76,8 +76,8 @@ export class AddFeesExceptionComponent implements OnInit {
 
   handleInputChange(e, fileType) {
     this.fileType = fileType;
-    console.log('handleInputChange ');
-    console.log(this.fileType);
+    //console.log('handleInputChange ');
+    //console.log(this.fileType);
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const pattern = /pdf-*/;
     const reader = new FileReader();
@@ -86,9 +86,9 @@ export class AddFeesExceptionComponent implements OnInit {
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    console.log('_reader ');
-    console.log(this.fileType);
-    console.log(e);
+    //console.log('_reader ');
+    //console.log(this.fileType);
+    //console.log(e);
 
     if (this.fileType == 'bank_card')
       this.feesException.bank_card = reader.result;
@@ -112,7 +112,7 @@ export class AddFeesExceptionComponent implements OnInit {
       this.feesException.account_relative = '';
     }
 
-    console.log(p);
+    //console.log(p);
   }
 
   exceptionTypeChange(p) {

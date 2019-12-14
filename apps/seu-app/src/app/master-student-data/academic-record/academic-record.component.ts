@@ -19,7 +19,7 @@ export class AcademicRecordComponent implements OnInit {
      this.isLoading = true;
      this.academicService.getRecord().then(
       res => {
-        console.log(res);
+        //console.log(res);
         this.recoredData =    (res as any).data;
         this.isLoading = false;
       }

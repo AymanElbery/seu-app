@@ -31,7 +31,7 @@ export class ChangeCourseComponent implements OnInit {
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
     this.isLoading=false;
-    // console.log(this.reqData.requests);
+    // //console.log(this.reqData.requests);
       }
     );
   }

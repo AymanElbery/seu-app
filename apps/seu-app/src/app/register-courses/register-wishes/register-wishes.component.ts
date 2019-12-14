@@ -43,7 +43,7 @@ export class RegisterWishesComponent implements OnInit {
   delete(id, index) {
     if (confirm('هل انت متأكد')) {
       this.acadmicProc.deleteReq(id).then(res => {
-        console.log(id);
+        //console.log(id);
         let messages = (res as any).messages;
 
         this.status = (res as any).status;
@@ -69,7 +69,7 @@ export class RegisterWishesComponent implements OnInit {
   }
 
   addRequest(data: any) {
-    //console.log(data);
+    ////console.log(data);
 
     this.acadmicProc.AddRequest(data).then(res => {
       let msgss = (res as any).messages;

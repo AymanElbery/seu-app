@@ -47,7 +47,7 @@ export class AddRegisterationHelperComponent implements OnInit {
 
 
   addRequest(data: any) {
-    //console.log(data);
+    ////console.log(data);
     this.isLoading = true;
     this.acadmicProc.AddRequest(data).then(res => {
       this.msgs = (res as any).messages;

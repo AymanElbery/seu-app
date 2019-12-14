@@ -30,7 +30,7 @@ export class RegisterWishesService {
     this.configService.baseUrl = 'stdservicesapi';
 
 
-    console.log(data);
+    //console.log(data);
     return this.httRequest.postRequest('register_wishes_service/insert', data).toPromise();
   }
 }

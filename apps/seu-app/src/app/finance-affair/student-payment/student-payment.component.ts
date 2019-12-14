@@ -17,7 +17,7 @@ export class StudentPaymentComponent implements OnInit {
   ngOnInit() {
     this.sid = localStorage.getItem('sid');
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url + this.sid);
-    console.log(this.urlSafe);
+    //console.log(this.urlSafe);
   }
 
 }

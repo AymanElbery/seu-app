@@ -28,7 +28,7 @@ export class AddCancelCourseRequestComponent implements OnInit {
     this.reqData = this.acadmicProc.reqData;
 
     this.approve=false;
-   //console.log(this.reqData.notes);
+   ////console.log(this.reqData.notes);
   }
 
   changeStatus(id, e, i) {
@@ -36,7 +36,7 @@ export class AddCancelCourseRequestComponent implements OnInit {
   }
 
   addRequest(data: any) {
-    console.log(data);
+    //console.log(data);
     this.acadmicProc.AddRequest(data).then(res => {
       this.msgs = (res as any).messages;
       this.msgs.forEach((element: any) => {

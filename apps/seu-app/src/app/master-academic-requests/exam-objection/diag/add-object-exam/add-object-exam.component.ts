@@ -39,7 +39,7 @@ msgs: any;
 
         //this.canAdd = this.reqData.can_add_new_request;
         //this.exams=this.reqData.exams;
-        //console.log(this.reqData.banks[0]);
+        ////console.log(this.reqData.banks[0]);
       }
         );
     
@@ -54,7 +54,7 @@ msgs: any;
     this.toastr.success('', element.body);
 
     });
-    console.log(res);
+    //console.log(res);
         });
 
     //this.cmp = {camp:''};
@@ -66,14 +66,14 @@ msgs: any;
     /*let dropDown;
     dropDown = document.getElementById("selected_id") as HTMLSelectElement;
     let selectedItem =dropDown[dropDown.selectedIndex];
-    //console.log(selectedItem.innerHTML  + "" + selectedItem.value);
+    ////console.log(selectedItem.innerHTML  + "" + selectedItem.value);
     this.changeRequest.camp.push({key:selectedItem.innerHTML,value:selectedItem.value});*/
     /*if(this.changeRequest.camp.length == 0)
       return;*/
     //this.exam.fees_amount="200";
     //this.exam.account_number="4444-uu-df";
     this.addRequest(this.exam);
-    console.log(this.msgs);
+    //console.log(this.msgs);
     this.dialogRef.close();
 
   }
@@ -83,15 +83,15 @@ msgs: any;
 
   changeStatus(item,e)
   {
-   //console.log(index);
+   ////console.log(index);
     if (e.target.checked) {
-      console.log(item);
+      //console.log(item);
       //let teacherName = item.teacher;
       this.exam.courses.push({CRSE:parseInt(item.CRN),teacher:item.teacher});
       
     } else {
      // let id = e.target.getAttribute('data-CheckBoxId');
-      //console.log(e.target);
+      ////console.log(e.target);
       for(let i = 0 ; i<this.exam.courses.length;i++)
       {
         if(this.exam.courses[i].CRSE ==item.CRN)
@@ -99,9 +99,9 @@ msgs: any;
 
       }
       //this.exam.courses.splice(index, 1);
-      //console.log(22);
+      ////console.log(22);
     }
-   // console.log(this.exam.courses);
+   // //console.log(this.exam.courses);
 
   }
 
@@ -115,7 +115,7 @@ msgs: any;
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.exam.attachment = reader.result;
-    console.log(this.exam.attachment);
+    //console.log(this.exam.attachment);
   }
 
 

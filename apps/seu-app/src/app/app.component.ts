@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { PrintService } from './shared/services/print.service';
+import { ConfigService } from './shared/services/config.service';
+import { UserService } from './account/services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +11,21 @@ import { PrintService } from './shared/services/print.service';
 export class AppComponent {
   title = 'seu-app';
   print: PrintService;
-  constructor(public printService: PrintService) {
-this.print = printService;
+  sessionloaded:boolean=false;
+  constructor(public printService: PrintService, public configService: ConfigService, public userService: UserService) {
+    this.print = printService;
+    this.getSession();
+  }
 
-   }
-
+  getSession() {
+    let sid = this.configService.getSid();
+    if (!sid) {
+      setTimeout(this.getSession, 500);
+      return;
+    }
+    //console.log("LOAD USER DATAT ATATTTATATT==============================================================");
+    this.userService.loadUserData().then(res => {
+      this.sessionloaded = true;
+    });
+  }
 }

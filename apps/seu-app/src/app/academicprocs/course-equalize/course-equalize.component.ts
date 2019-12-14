@@ -29,13 +29,13 @@ export class CourseEqualizeComponent implements OnInit {
 this.reason = '';
 this.acadmicProc.getِgetRequests().then(
       res => {
-        console.log(res);
+        ////console.log(res);
         this.acadmicProc.reqData =    (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading=false;
-        // console.log(this.reqData.reqs);
+        // //console.log(this.reqData.reqs);
       }
     );
   }

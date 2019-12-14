@@ -41,7 +41,7 @@ export class LoginFormComponent implements OnInit {
         finalize(() => this.isRequesting = false))
         .subscribe(
         result => {       
-          console.log(result.data);  
+          //console.log(result.data);  
           if (result.status==1) {
 
             
@@ -55,7 +55,7 @@ export class LoginFormComponent implements OnInit {
           else
           {
             dialogs.alert('Invalid username or password').then(()=> {
-              console.log("Dialog!");
+              //console.log("Dialog!");
               });
             if(result.messages)
             {
@@ -64,7 +64,7 @@ export class LoginFormComponent implements OnInit {
           }
         },
         error => { this.errors = error;dialogs.alert(error).then(()=> {
-          console.log("Dialog closed!");
+          //console.log("Dialog closed!");
           });});
     
   } 

@@ -29,7 +29,7 @@ export class AddWithdrawalRequestComponent implements OnInit {
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(  res => {
       this.msgs =   (res as any).messages;
-      console.log(this.msgs);
+      //console.log(this.msgs);
       this.msgs.forEach((element: any) => {
        this.toastr.success('', element.body);
 
@@ -41,7 +41,7 @@ export class AddWithdrawalRequestComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     this.addRequest(this.withdrawalReq);
-    console.log(this.withdrawalReq);
+    //console.log(this.withdrawalReq);
     this.dialogRef.close();
 
   }

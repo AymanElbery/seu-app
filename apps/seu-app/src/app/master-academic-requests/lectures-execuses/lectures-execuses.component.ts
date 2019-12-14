@@ -32,7 +32,7 @@ export class LecturesExecusesComponent implements OnInit {
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-        console.log( this.reqData);
+        //console.log( this.reqData);
       }
     );
   }
@@ -67,7 +67,7 @@ return    this.acadmicProc.Download(req);
     if ( confirm('هل انت متأكد')) {
     this.acadmicProc.deleteReq(id).then(res => {
       this.toastr.success('', (res as any).messages.body);
-        console.log(res);
+        //console.log(res);
     });
     this.acadmicProc.reqData.reqs.splice(index, 1);
 

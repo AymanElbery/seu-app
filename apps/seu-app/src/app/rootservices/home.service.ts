@@ -15,14 +15,14 @@ export class HomeService {
   async getNews(target, studentType, college, Branch) {
     this.configService.useCmsURI();
     const serviceParam = this.getServiceParams(target, studentType, college, Branch);
-    console.log('strart ' + this.configService.getApiURI());
-    console.log(serviceParam);
+    //console.log('strart ' + this.configService.getApiURI());
+    //console.log(serviceParam);
     const request = this.httRequest.GetRequest('News?' + serviceParam + '&lang=ar').toPromise();
     // tslint:disable-next-line: max-line-length
     // const request = this.httRequest.GetFullUrlRequest('http://64.202.186.104:86/umbraco/Surface/StudentServices/News?target=students&studentType=UG&college=BU&branch=01F&lang=ar').toPromise();
-    console.log(this.configService.getApiURI());
+    //console.log(this.configService.getApiURI());
     this.configService.EndCmsURI();
-    console.log('end ' + this.configService.getApiURI());
+    //console.log('end ' + this.configService.getApiURI());
 
     return request;
   }
@@ -44,27 +44,27 @@ export class HomeService {
   async getAds(target, studentType, college, Branch) {
     this.configService.useCmsURI();
 
-    console.log('strart ' + this.configService.getApiURI());
+    //console.log('strart ' + this.configService.getApiURI());
 
     const serviceParam = this.getServiceParams(target, studentType, college, Branch);
 
     const request = this.httRequest.GetRequest('Advertisement?' + serviceParam + '&lang=ar').toPromise();
 
-    console.log(this.configService.getApiURI());
+    //console.log(this.configService.getApiURI());
     this.configService.EndCmsURI();
-    console.log('end ' + this.configService.getApiURI());
+    //console.log('end ' + this.configService.getApiURI());
 
     return request;
   }
   async getEvents(target, studentType, college, Branch) {
     this.configService.useCmsURI();
     const serviceParam = this.getServiceParams(target, studentType, college, Branch);
-    console.log('strart ' + this.configService.getApiURI());
-    console.log(serviceParam);
+    ////console.log('strart ' + this.configService.getApiURI());
+    ////console.log(serviceParam);
     const request = this.httRequest.GetRequest('Events?' + serviceParam + '&lang=ar').toPromise();
-    console.log(this.configService.getApiURI());
+    ////console.log(this.configService.getApiURI());
     this.configService.EndCmsURI();
-    console.log('end ' + this.configService.getApiURI());
+    ////console.log('end ' + this.configService.getApiURI());
 
     return request;
   }

@@ -52,7 +52,7 @@ export class AddReEnrollComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
 this.addRequest(this.reEnroll);
-console.log(this.reEnroll);
+//console.log(this.reEnroll);
 this.dialogRef.close();
 
   }
@@ -71,7 +71,7 @@ this.dialogRef.close();
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.reEnroll.proof = reader.result;
-    console.log(this.reEnroll.proof);
+    //console.log(this.reEnroll.proof);
   }
 
   print(req) {

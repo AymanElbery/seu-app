@@ -29,11 +29,11 @@ export class NewsDetailsComponent implements OnInit {
         }
         this.sub = this.route.params.subscribe(params => {
       this.id = +params.id;
-      console.log(params);
-      console.log(this.id);
-      console.log(this.homeservice.reqData);
+      //console.log(params);
+      //console.log(this.id);
+      //console.log(this.homeservice.reqData);
       this.newsDetails = this.homeservice.reqData[this.id];
-      console.log(this.newsDetails);
+      //console.log(this.newsDetails);
 
   });
   }

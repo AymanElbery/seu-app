@@ -34,7 +34,7 @@ export class FeesExceptionComponent implements OnInit {
   delete(id, index) {
     if (confirm('هل انت متأكد')) {
       this.acadmicProc.deleteReq(id).then(res => {
-        console.log(id);
+        //console.log(id);
         this.msgs = (res as any).messages;
 
         this.status = (res as any).status;

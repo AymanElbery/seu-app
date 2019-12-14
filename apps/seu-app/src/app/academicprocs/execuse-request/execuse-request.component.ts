@@ -31,7 +31,7 @@ this.acadmicProc.getِgetRequests().then(
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
     this.isLoading=false;
-    //console.log(this.reqData.reqs);
+    ////console.log(this.reqData.reqs);
         
       }
     );
@@ -72,7 +72,7 @@ return    this.acadmicProc.Download(req);
       this.msgs.forEach((element: any) => {
         this.toastr.success('', element.body);
         });
-        //console.log( this.status);
+        ////console.log( this.status);
 
         if(this.status == 1)
           this.acadmicProc.reqData.requests.splice(index, 1);

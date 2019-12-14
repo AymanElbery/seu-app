@@ -20,7 +20,7 @@ export class CertificateIDComponent implements OnInit {
     this.isLoading = true;
     this.stdData.getRequest().then(
       res => {
-        console.log(this.reqData);
+        //console.log(this.reqData);
         this.stdData.reqData = (res as any).data;
         this.stdData.msgs = (res as any).messages;
         this.reqData = this.stdData.reqData;

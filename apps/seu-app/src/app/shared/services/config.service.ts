@@ -27,9 +27,9 @@ export class ConfigService {
   }
 
   useCmsURI() {
-    console.log('use 1' + this._apiURI);
+    ////console.log('use 1' + this._apiURI);
     this._apiURI = this.cmsURI;
-    console.log('use 2' + this._apiURI);
+    ////console.log('use 2' + this._apiURI);
   }
 
   EndCmsURI() {
@@ -44,7 +44,7 @@ export class ConfigService {
 
   getApiURI() {
       return this._apiURI + this.baseUrl;
-      console.log('getApiURI' + this._apiURI);
+      ////console.log('getApiURI' + this._apiURI);
 
   }
 

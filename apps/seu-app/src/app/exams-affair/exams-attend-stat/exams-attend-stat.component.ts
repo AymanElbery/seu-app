@@ -45,16 +45,16 @@ export class ExamsAttendStatComponent implements OnInit {
           alert(1);
 
 
-        console.log(this.test);
+        //console.log(this.test);
 
-        console.log(this.eaData.Term_Exam_With_Schedule.labels);
+        //console.log(this.eaData.Term_Exam_With_Schedule.labels);
 
-        console.log(this.termScheduleMsgs);
-        console.log(this.termScheduleMsgs.length);
-        console.log(this.termMsgs);
+        //console.log(this.termScheduleMsgs);
+        //console.log(this.termScheduleMsgs.length);
+        //console.log(this.termMsgs);
 
-        console.log(this.finalScheduleMsgs);
-        console.log(this.finalMsgs);*/
+        //console.log(this.finalScheduleMsgs);
+        //console.log(this.finalMsgs);*/
       }
     );
     this.finalschedule = this.academicService.Print_Final_Exam_With_Schedule();

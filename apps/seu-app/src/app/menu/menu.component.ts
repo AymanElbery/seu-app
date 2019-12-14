@@ -18,28 +18,28 @@ export class MenuComponent implements OnInit {
 
   fillmenu() {
 
-    console.log('userService.userData.level');
-    console.log('userService.userData.level : ' + this.userService.userData.level);
+    //console.log('userService.userData.level');
+    //console.log('userService.userData.level : ' + this.userService.userData.level);
     this.acStd = false;
     if (!this.userService.userData.act_as_student && this.userService.userData.level === 'UG') {
-      console.log('level ug');
+      //console.log('level ug');
       this.menuType = 1;
       this.showServices = true;
 
     } else if (!this.userService.userData.act_as_student && this.userService.userData.level === 'GR') {
-      console.log('level GR');
+      //console.log('level GR');
 
       this.menuType = 2;
       this.showServices = true;
     } else {
       this.menuType = 0;
-      console.log('else');
-      console.log(this.userService.userData.act_as_student);
+      //console.log('else');
+      //console.log(this.userService.userData.act_as_student);
       if (this.userService.userData.act_as_student) {
 
         this.acStd = this.userService.userData.act_as_student;
         this.showServices = this.acStd;
-        console.log('ac as ' + this.acStd);
+        //console.log('ac as ' + this.acStd);
       } else {
         this.acStd = false;
         this.showServices = false;
@@ -50,10 +50,11 @@ export class MenuComponent implements OnInit {
     }
   }
   ngOnInit() {
-    console.log('menu suer data');
-    this.userService.loadUserData().then(res => {
-      console.log('fill menu');
-      this.fillmenu();
+    //console.log('menu suer data');
+    this.userService.userDataSubject.subscribe(res => {
+      //console.log('fill menu');
+      if (res)
+        this.fillmenu();
 
     });
 
@@ -62,7 +63,7 @@ export class MenuComponent implements OnInit {
   onChange(e) {
     // tslint:disable-next-line: triple-equals
     if (e == 0) {
-      console.log('change me not allow');
+      //console.log('change me not allow');
       if (this.userService.userData.act_as_student === true) {
         this.userService.userData.activeRole = this.userService.userData.role;
         this.userService.userData.coll = '';
