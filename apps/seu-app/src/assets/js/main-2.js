@@ -38,10 +38,10 @@
 	});
 
 	/*--/ Star Counter /--*/
-	$('.counter').counterUp({
-		delay: 15,
-		time: 7000
-	});
+	// $('.counter').counterUp({
+	// 	delay: 15,
+	// 	time: 7000
+	// });
 
 	/*--/ Star Scrolling nav /--*/
 	$('a.js-scroll[href*="#"]:not([href="#"])').on("click", function () {

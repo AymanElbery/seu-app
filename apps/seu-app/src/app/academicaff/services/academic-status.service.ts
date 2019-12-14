@@ -36,6 +36,6 @@ export class AcademicStatusService {
    DownloadEngStatus(code) {
     this.configService.baseUrl = 'stdservicesapi';
     const sid =   this.configService.getSid();
-    return this.configService.getApiURI() + '/academic_status/academic_status_print?Lang=en&TermCode' + code + '&sid=' + sid;
+    return this.configService.getApiURI() + '/academic_status/academic_status_print?Lang=en&TermCode=' + code + '&sid=' + sid;
    }
 }
