@@ -7,17 +7,18 @@
           </div>
       </a>
   </div>
-  <div class="sidebar-header" [hidden]="!showServices">
-      <select [disabled]="!acStd" (change)="onChange(t.value)"    name="menuType" [(ngModel)]="menuType" #t  class="form-control"  style="color: #1c2172;direction: rtl;" id="exampleFormControlSelect1">
-        <option value="0"> دخول عادي</option> 
-        <option value="1">خدمات البكالوريوس</option>
-          <option value="2">خدمات الماجستير</option>
-
-         
-        </select>      
-  </div>
+ 
   
   <div class="sidebar-content">
+    <div class="sidebar-header" [hidden]="!showServices">
+        <select [disabled]="!acStd" (change)="onChange(t.value)"    name="menuType" [(ngModel)]="menuType" #t  class="form-control"  style="color: #1c2172;direction: rtl;" id="exampleFormControlSelect1">
+          <option value="0"> دخول عادي</option> 
+          <option value="1">خدمات البكالوريوس</option>
+            <option value="2">خدمات الماجستير</option>
+  
+           
+          </select>      
+    </div>
       <div class="nav-container">
           <nav id="main-menu-navigation" class="navigation-main">
               

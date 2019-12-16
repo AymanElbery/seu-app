@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>seu-app</title>
+  <title>الخدمات الإلكترونية - الجامعة السعودية الإلكترونية</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="assets/css/bootstrap4/bootstrap.min.css">
@@ -12,80 +12,56 @@
   <link rel="stylesheet" href="assets/css/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="assets/css/icon-kit/css/iconkit.min.css">
   <link rel="stylesheet" href="assets/css/ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="assets/css/perfect-scrollbar.css">
+  <!-- <link rel="stylesheet" href="assets/css/perfect-scrollbar.css">-->
   <link href="assets/css/animate.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/owl/owl.carousel.min.css">
   <link rel="stylesheet" href="assets/css/owl/owl.theme.default.min.css">
   <link href="assets/css/progress-wizard.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/theme-service.css">
   <link rel="stylesheet" href="assets/css/style-service.css">
- <link href="assets/css/style.css" rel="stylesheet">
- 
-<link rel="stylesheet" href="styles.affafaa5a36042aa1b0e.css"></head>
-<body>
-    <script>
-        window.addEventListener("message", messageHandler, false);
-        function redirect(){
-        window.location.href="https://seuapps.seu.edu.sa/sso/login-ss.php";  
-        }
-        var sid = "";
-        function messageHandler(event) {
-          const { action, key, value } = event.data;
-          if(action == 'returnData'){
-            console.log('event');
-            console.log(event );
-          console.log(key + ":"+value);
-          sid =value;
-          if(!value){
-          redirect();
-          }
-          }
-        }
-        function readInfo(){
-        const iframe = document.getElementById('sso-login');
-        iframe.contentWindow.postMessage({action: 'get',key: 'sid'},'*');
-        setTimeout(function(){
-          console.log(sid +'sid');
-          localStorage.setItem('sid',sid);
+  <link href="assets/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.543c728df4efd3b336fa.css"></head>
 
-        if(!sid){
-        redirect();
+<body>
+  <script>
+    window.addEventListener("message", messageHandler, false);
+    function redirect() {
+      window.location.href = "https://seuapps.seu.edu.sa/sso/login-ss.php";
+    }
+    var sid = "";
+    function messageHandler(event) {
+      const { action, key, value } = event.data;
+      if (action == 'returnData') {
+        sid = value;
+        if (!value) {
+          redirect();
         }
-        },500);
-        };
-        
-        </script>
-  
-  <iframe style="display:none;" src="https://seuapps.seu.edu.sa/sso/landing.php" id="sso-login" onload="readInfo()"></iframe>
+      }
+    }
+    function readInfo() {
+      const iframe = document.getElementById('sso-login');
+      iframe.contentWindow.postMessage({ action: 'get', key: 'sid' }, '*');
+      setTimeout(function () {
+        localStorage.setItem('sid', sid);
+        if (!sid) {
+          redirect();
+        }
+      }, 5000);
+    };
+  </script>
+  <iframe style="display:none;" src="https://seuapps.seu.edu.sa/sso/landing.php" id="sso-login"
+    onload="readInfo()"></iframe>
 
   <app-root></app-root>
   <script src="assets/js/js/jquery-3.3.1.min.js"></script>
-      
- <script src="assets/js/js/popper.min.js"></script>
- <script src="assets/js/js/bootstrap.min.js"></script>
- <script src="assets/js/js/perfect-scrollbar.min.js"></script>
+  <script src="assets/js/js/popper.min.js"></script>
+  <script src="assets/js/js/bootstrap.min.js"></script>
+  <!--<script src="assets/js/js/perfect-scrollbar.min.js"></script>-->
+  <script src="assets/js/js/service.js"></script>
+  <script src="assets/js/main-2.js"></script>
 
- <script src="assets/js/js/service.js"></script>
- <script src="assets/js/tippy.js"></script>
- <script src="assets/js/main-2.js"></script>
-   
-        <script>
-            tippy('button', {
-            interactive: true,
-            duration: 500,
-            content(reference) {
-            const id = reference.getAttribute('data-template');
-            const container = document.createElement('div');
-            const linkedTemplate = document.getElementById(id);
-            const node = document.importNode(linkedTemplate.content, true);
-            container.appendChild(node);
-            return container;
-          } }); 
-        </script>
-
-
-<script  src="assets/js/js/owl.carousel.min.js"></script>
-<script src="assets/js/js/carousel.js"></script>
-<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="es2015-polyfills.8324bb31dd8aa5f2460c.js" nomodule></script><script type="text/javascript" src="polyfills.8bbb231b43165d65d357.js"></script><script type="text/javascript" src="main.a97e53f3284f44bce826.js"></script></body>
+  <script src="assets/js/js/owl.carousel.min.js"></script>
+  <script src="assets/js/js/carousel.js"></script>
+<script type="text/javascript" src="runtime.26209474bfa8dc87a77c.js"></script><script type="text/javascript" src="es2015-polyfills.1e04665e16f944715fd2.js" nomodule></script><script type="text/javascript" src="polyfills.8bbb231b43165d65d357.js"></script><script type="text/javascript" src="main.e62966f0df9776eb3a55.js"></script></body>
 
 </html>

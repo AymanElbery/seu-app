@@ -11,19 +11,19 @@ import { UserService } from './account/services/user.service';
 export class AppComponent {
   title = 'seu-app';
   print: PrintService;
-  sessionloaded:boolean=false;
+  sessionloaded = false;
   constructor(public printService: PrintService, public configService: ConfigService, public userService: UserService) {
     this.print = printService;
     this.getSession();
   }
 
   getSession() {
-    let sid = this.configService.getSid();
+    const sid = this.configService.getSid();
     if (!sid) {
       setTimeout(this.getSession, 500);
       return;
     }
-    //console.log("LOAD USER DATAT ATATTTATATT==============================================================");
+    // console.log("LOAD USER DATAT ATATTTATATT==============================================================");
     this.userService.loadUserData().then(res => {
       this.sessionloaded = true;
     });
