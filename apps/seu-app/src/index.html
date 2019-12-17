@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>الخدمات الإلكترونية - الجامعة السعودية الإلكترونية</title>
@@ -35,22 +34,8 @@
   <script src="assets/js/js/bootstrap.min.js"></script>
   <script src="assets/js/js/perfect-scrollbar.min.js"></script>
   <script src="assets/js/js/service.js"></script>
-  <script src="assets/js/tippy.js"></script>
   <script src="assets/js/main-2.js"></script>
-  <script>
-    tippy('button', {
-      interactive: true,
-      duration: 500,
-      content(reference) {
-        const id = reference.getAttribute('data-template');
-        const container = document.createElement('div');
-        const linkedTemplate = document.getElementById(id);
-        const node = document.importNode(linkedTemplate.content, true);
-        container.appendChild(node);
-        return container;
-      }
-    }); 
-  </script>
+
   <script src="assets/js/js/owl.carousel.min.js"></script>
   <script src="assets/js/js/carousel.js"></script>
 </body>

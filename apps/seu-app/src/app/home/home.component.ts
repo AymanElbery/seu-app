@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
     //console.log(this.userService.userData);
     //console.log('intial');
     this.userService.userDataSubject.subscribe(res => {
-      //console.log('start loadUserDetailsData ');
+      console.log('start loadUserDetailsData ');
       if (res)
         this.LoadData();
     });

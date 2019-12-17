@@ -16,20 +16,19 @@ export class ConfigService {
   private _tokenName: string;
   constructor() {
     this._apiURI = 'https://seuapps.seu.edu.sa/';
-    this.cmsURI  = 'http://64.202.186.104:86/umbraco/Surface/';
+    this.cmsURI  = 'http://beta.seu.edu.sa/umbraco/Surface/';
     this.stdapi  =   'https://seuapps.seu.edu.sa/';
     this._tokenName = 'auth_token';
 
   }
-  getSid()
-  {
+  getSid() {
  return   localStorage.getItem('sid');
   }
 
   useCmsURI() {
-    ////console.log('use 1' + this._apiURI);
+    //// console.log('use 1' + this._apiURI);
     this._apiURI = this.cmsURI;
-    ////console.log('use 2' + this._apiURI);
+    //// console.log('use 2' + this._apiURI);
   }
 
   EndCmsURI() {
@@ -44,7 +43,7 @@ export class ConfigService {
 
   getApiURI() {
       return this._apiURI + this.baseUrl;
-      ////console.log('getApiURI' + this._apiURI);
+      //// console.log('getApiURI' + this._apiURI);
 
   }
 

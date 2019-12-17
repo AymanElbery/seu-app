@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   sessionloaded: boolean = false;
   constructor(public printService: PrintService, public configService: ConfigService, public userService: UserService, private http: HttpClient) {
     this.print = printService;
-    console.log(this.sessionloaded);
   }
   ngOnInit() {
     this.userService.userDataSubject.subscribe(res => {
