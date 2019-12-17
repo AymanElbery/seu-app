@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { BlankComponent } from './home/blank.component';
+
 import { PrintLayoutComponent } from './PrintExample/print-layout/print-layout.component';
 import { PrintFileComponent } from './PrintExample/print-file/print-file.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -8,22 +10,14 @@ import { UGGuard } from './guards/ug.guard';
 import { GRGuard } from './guards/gr.guard';
 
 const routes: Routes = [
-
-  {
-    path: 'print',
-    outlet: 'print',
-    component: PrintLayoutComponent,
-    children: [
-      { path: 'print-file/:paramData', component: PrintFileComponent },
-    ]
-  },
   {
     path: '',
-    canActivateChild: [AuthGuard],
+    component: BlankComponent,
     children: [
       { path: '', component: HomeComponent },
+      { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'home/:t', component: HomeComponent },
-
       { path: 'academicaff', loadChildren: './academicaff/academicaff.module#AcademicaffModule', canLoad: [UGGuard] },
       { path: 'procedures', loadChildren: './academicprocs/academicprocs.module#AcademicprocsModule', canLoad: [UGGuard] },
       { path: 'registercourses', loadChildren: './register-courses/register-courses.module#RegisterCoursesModule', canLoad: [UGGuard] },
@@ -37,8 +31,14 @@ const routes: Routes = [
       { path: 'masterstddata', loadChildren: './master-student-data/master-student-data.module#MasterStudentDataModule', canLoad: [GRGuard] },
     ]
   },
-  { path: 'homebsc', component: HomeComponent },
-  { path: 'homemsc', component: HomeComponent }
+  {
+    path: 'print',
+    outlet: 'print',
+    component: PrintLayoutComponent,
+    children: [
+      { path: 'print-file/:paramData', component: PrintFileComponent },
+    ]
+  }
 ];
 
 @NgModule({

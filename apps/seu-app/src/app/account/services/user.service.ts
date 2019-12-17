@@ -69,7 +69,7 @@ export class UserService extends BaseService {
   }
 
 
-  async loadUserData() {
+  loadUserData() {
     this.configService.baseUrl = 'stdservicesapi';
 
     //console.log('log ueer data-----------------------------------------------------------------------------------');
@@ -78,7 +78,6 @@ export class UserService extends BaseService {
         this.userData = (res as any).data;
         this.userData.activeRole = this.userData.role;
 
-        console.log('loadUserData' + this.userData);
         this.userDataLoaded = true;
         this.userDataSubject.next(this.userData);
         return this.userData;

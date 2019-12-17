@@ -16,13 +16,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   subscription: Subscription;
   isNavbarCollapsed;
-  userData;
+  userData: any = {};
   status = false;
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 
   logout() {
     this.userManager.logout();

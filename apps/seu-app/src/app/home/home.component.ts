@@ -15,25 +15,16 @@ declare function LoadCrsNews(): any;
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public printService: PrintService, public homeService: HomeService
-    , public userService: UserService, private router: Router) {
+  constructor(public printService: PrintService, public homeService: HomeService, public userService: UserService, private router: Router) {
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
-
       return false;
-
     };
-
     this.mySubscription = this.router.events.subscribe((event) => {
-
       if (event instanceof NavigationEnd) {
-
         //     // Trick the Router into believing it's last link wasn't previously loaded
-
         this.router.navigated = false;
-
       }
-
     });
   }
   // newsData;
@@ -51,7 +42,6 @@ export class HomeComponent implements OnInit {
     //console.log(this.userService.userData);
     //console.log('intial');
     this.userService.userDataSubject.subscribe(res => {
-      console.log('start loadUserDetailsData ');
       if (res)
         this.LoadData();
     });
@@ -81,7 +71,7 @@ export class HomeComponent implements OnInit {
         //console.log(res);
         this.userService.newsData = (res as any).Data;
         //console.log(this.userService.newsData.length);
-        this.newsLen = this.userService.newsData.length;
+        this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
         //console.log(this.userService.newsData);
         this.homeService.reqData = this.userService.newsData;
         LoadCrsNews();
@@ -99,7 +89,7 @@ export class HomeComponent implements OnInit {
         //console.log(res);
         this.userService.newsData = (res as any).Data;
         //console.log(this.userService.newsData.length);
-        this.newsLen = this.userService.newsData.length;
+        this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
         //console.log(this.userService.newsData);
         this.homeService.reqData = this.userService.newsData;
         LoadCrsNews();
@@ -116,7 +106,7 @@ export class HomeComponent implements OnInit {
         //console.log(res);
         this.userService.newsData = (res as any).Data;
         //console.log(this.userService.newsData.length);
-        this.newsLen = this.userService.newsData.length;
+        this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
         //console.log(this.userService.newsData);
         this.homeService.reqData = this.userService.newsData;
         LoadCrsNews();

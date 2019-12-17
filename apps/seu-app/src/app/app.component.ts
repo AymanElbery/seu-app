@@ -19,8 +19,11 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     this.userService.userDataSubject.subscribe(res => {
-      this.sessionloaded = true;
-      document.getElementById('bodyloading').remove();
+      if (res != null) {
+        this.sessionloaded = true;
+        console.log("LOADED YA KOTCH");
+        document.getElementById('bodyloading') ? document.getElementById('bodyloading').remove() : '';
+      }
     });
   }
 }
