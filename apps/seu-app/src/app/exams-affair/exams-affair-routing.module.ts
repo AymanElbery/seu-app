@@ -3,9 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { ExamsAttendStatComponent } from './exams-attend-stat/exams-attend-stat.component';
 import { ExamsAttendAppComponent } from './exams-attend-app/exams-attend-app.component';
 import {ExamExcuseComponent} from './exam-excuse/exam-excuse.component';
-const routes: Routes = [{ path: 'exams', component: ExamsAttendStatComponent },
+const routes: Routes = [{ path: '', component: ExamsAttendStatComponent },
 {
-  path: 'exams',
+  path: '',
   children: [
   { path: 'attend',  component: ExamsAttendStatComponent },
   { path: 'attendapp',  component: ExamsAttendAppComponent },

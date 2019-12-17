@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MasterPaymentComponent } from './master-payment/master-payment.component';
 
-const routes: Routes = [{ path: 'mfiniance', component: MasterPaymentComponent },
+const routes: Routes = [{ path: '', component: MasterPaymentComponent },
 {
-  path: 'mfiniance',
+  path: '',
   children: [
   { path: 'payment',  component: MasterPaymentComponent },
 

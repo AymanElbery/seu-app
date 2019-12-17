@@ -13,33 +13,33 @@ import { ChangeRequestComponent } from './change-request/change-request.componen
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
 import { ObjectExamComponent } from './object-exam/object-exam.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
-import {TerminationRequestComponent} from './termination-request/termination-request.component';
+import { TerminationRequestComponent } from './termination-request/termination-request.component';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
-import {AbsenceQueryComponent} from './absence-query/absence-query.component';
+import { AbsenceQueryComponent } from './absence-query/absence-query.component';
 
-const routes: Routes = [{ path: 'procedures', component: WithdrawFromUnivComponent },
+const routes: Routes = [{ path: '', component: WithdrawFromUnivComponent },
 {
-  path: 'procedures',
+  path: '',
   children: [
-  { path: 'withdrawuniv',  component: WithdrawFromUnivComponent },
-  { path: 'postpone',  component: PostponeRequestComponent },
-  { path: 'summer',  component: SummerWithdrawComponent },
-  { path: 'cancelcourse',  component: CancelCourseComponent },
-  { path: 'execuse',  component: ExecuseRequestComponent },
-  { path: 'equalize',  component: CourseEqualizeComponent },
-  { path: 'eequalize',  component: EnglishEqualizeComponent },
-  { path: 'reenrol',  component: ReEenrollmentComponent },
-  { path: 'changemajor',  component: ChangeMajorComponent },
-  { path: 'changerequest',  component: ChangeRequestComponent },
-  { path: 'objectexam',  component: ObjectExamComponent },
-  { path: 'lecexecuse',  component: LecturesExecusesComponent },
-  { path:'terminate' ,component:TerminationRequestComponent},
-  { path: 'visitorstudent',  component: VisitorStudentComponent },
-  { path:"lectabs" ,component:AbsenceQueryComponent}
+    { path: 'withdrawuniv', component: WithdrawFromUnivComponent },
+    { path: 'postpone', component: PostponeRequestComponent },
+    { path: 'summer', component: SummerWithdrawComponent },
+    { path: 'cancelcourse', component: CancelCourseComponent },
+    { path: 'execuse', component: ExecuseRequestComponent },
+    { path: 'equalize', component: CourseEqualizeComponent },
+    { path: 'eequalize', component: EnglishEqualizeComponent },
+    { path: 'reenrol', component: ReEenrollmentComponent },
+    { path: 'changemajor', component: ChangeMajorComponent },
+    { path: 'changerequest', component: ChangeRequestComponent },
+    { path: 'objectexam', component: ObjectExamComponent },
+    { path: 'lecexecuse', component: LecturesExecusesComponent },
+    { path: 'terminate', component: TerminationRequestComponent },
+    { path: 'visitorstudent', component: VisitorStudentComponent },
+    { path: "lectabs", component: AbsenceQueryComponent }
 
-  
 
- ]
+
+  ]
 }];
 
 @NgModule({

@@ -51,7 +51,11 @@ export class UserService extends BaseService {
       .pipe(map((res: any) => res), catchError(err => { console.error(err); return throwError(err); }));
   }
 
-
+  relogin(){
+    console.log("RELOGIN");
+    localStorage.removeItem('sid');
+    window.location.href = "https://seuapps.seu.edu.sa/sso/login-ss.php";
+  }
   login(userName, password) {
     //console.log('ser');
     return this.httRequest.postRequest

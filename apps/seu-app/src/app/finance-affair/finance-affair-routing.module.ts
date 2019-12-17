@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TuitionFeesStatComponent } from './tuition-fees-stat/tuition-fees-stat.component';
-import {FeesExceptionComponent} from './fees-exception/fees-exception.component';
+import { FeesExceptionComponent } from './fees-exception/fees-exception.component';
 import { StudentPaymentComponent } from './student-payment/student-payment.component';
 
 const routes: Routes = [
-  { path: 'finance', component: TuitionFeesStatComponent },
+  { path: '', component: TuitionFeesStatComponent },
   {
-    path: 'finance',
+    path: '',
     children: [
-    { path: 'fees',  component: TuitionFeesStatComponent },
-    { path: 'feesexception', component: FeesExceptionComponent},
-    { path: 'stdpay', component: StudentPaymentComponent}
+      { path: 'fees', component: TuitionFeesStatComponent },
+      { path: 'feesexception', component: FeesExceptionComponent },
+      { path: 'stdpay', component: StudentPaymentComponent }
 
 
-   ]
+    ]
   }
 ];
 

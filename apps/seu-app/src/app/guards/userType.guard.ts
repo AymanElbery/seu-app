@@ -3,14 +3,13 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Rout
 import { Observable } from 'rxjs';
 import { UserManagerService } from '../shared/services/user-manager.service';
 import { UserService } from '../account/services/user.service';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
+export class UserTypeGuard implements CanActivate, CanActivateChild, CanLoad {
 
-  constructor(private router: Router, private userService: UserService, private http: HttpClient) {
+  constructor(protected router: Router, protected userService: UserService) {
 
   }
   canActivate(): boolean | Observable<boolean> {
@@ -22,21 +21,20 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   canLoad(): boolean | Observable<boolean> {
     return this.isLoggedIn();
   }
-
+  getLoginAsType() {
+    return ''
+  }
+  checkGuardRole() {
+    return false;
+  }
   isLoggedIn() {
-    if (this.userService.userDataLoaded) {
+    if(this.checkGuardRole()){
       return true;
     }
-    this.http.jsonp('https://seuapps.seu.edu.sa/sso/sess.php', "callback").subscribe(
-      res => {
-        localStorage.setItem('sid', res['sid']);
-        this.userService.loadUserData();
-        return true;
-      },
-      error => {
-        this.userService.relogin();
-        return false;
-      });
+    if (this.userService.userData.activeRole == this.getLoginAsType() || this.userService.userData.act_as_student) {
+      return true;
+    }
+    return false;
   }
 
 }

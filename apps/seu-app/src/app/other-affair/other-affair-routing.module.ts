@@ -9,9 +9,9 @@ import {TrainingRequestService} from './services/training-request.service';
 
 import { from } from 'rxjs';
 import { StudentInfoComponent } from './student-info/student-info.component';
-const routes: Routes = [ { path: 'other', component:MedicalReportComponent  },
+const routes: Routes = [ { path: '', component:MedicalReportComponent  },
 {
-  path: 'other',
+  path: '',
   children: [
   { path: 'medicalreport',  component:MedicalReportComponent  },
   { path: 'universitycard',  component:UnivCardComponent  },

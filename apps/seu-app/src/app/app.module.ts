@@ -38,6 +38,7 @@ import { MasterStudentDataModule } from './master-student-data/master-student-da
 import { TimerModule } from './shared/components/timer/timer.module';
 import { HomeService } from './rootservices/home.service';
 import { UserService } from './account/services/user.service';
+import {  HttpClientJsonpModule } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
@@ -57,24 +58,25 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     BrowserModule,
     AngularFontAwesomeModule,
     HttpClientModule,
+    HttpClientJsonpModule,
     AppRoutingModule,
     AccountModule
     , DashboardModule
     , FormsModule
-    , AcademicprocsModule
-    , AcademicaffModule
-    , RegisterCoursesModule
-    , LecturesAbsenceModule
-    , FinanceAffairModule
-    , ExamsAffairModule
-    , OtherAffairModule
-    , MasterAcademicRequestsModule
-    , MasterFinanceAffairModule
-    , MasterOtherRequestsModule
-    , MasterPrintCertificatesModule
-    , MasterStudentDataModule
+    //, AcademicprocsModule --lazy loaded
+    //, AcademicaffModule  -- lazy loaded
+    //, RegisterCoursesModule --lazy loaded
+    //, LecturesAbsenceModule  -- empty module :)
+    //, FinanceAffairModule
+    //, ExamsAffairModule
+    //, OtherAffairModule
+    //, MasterAcademicRequestsModule
+    //, MasterFinanceAffairModule
+    //, MasterOtherRequestsModule
+    //, MasterPrintCertificatesModule
+    //, MasterStudentDataModule
     , TimerModule
-    , MatProgressSpinnerModule
+    ,MatProgressSpinnerModule
   ],
   providers: [ConfigService,
     HttpRequestService
