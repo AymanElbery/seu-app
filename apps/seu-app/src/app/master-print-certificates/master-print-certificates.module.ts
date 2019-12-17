@@ -28,7 +28,7 @@ import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certifi
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    //BrowserAnimationsModule
   ],
   
   providers:[CertificateIDService,

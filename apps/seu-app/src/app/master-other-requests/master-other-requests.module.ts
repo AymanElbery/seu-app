@@ -43,7 +43,7 @@ import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduat
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule,
+    //BrowserAnimationsModule,
 
     MatCheckboxModule
   ],
