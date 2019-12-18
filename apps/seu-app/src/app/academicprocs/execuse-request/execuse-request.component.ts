@@ -19,8 +19,8 @@ export class ExecuseRequestComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: TermExecuseService) { }
-
+  constructor(public dialog: MatDialog,   private acadmicProc: TermExecuseService) { }
+//private toastr: ToastrService,
   ngOnInit() {
     this.isLoading=true;
 this.reason = '';
@@ -42,7 +42,6 @@ this.acadmicProc.getِgetRequests().then(
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
-
     this.dialog.open(AddExecuseTermComponent, dialogConfig);
   }
 
@@ -70,7 +69,7 @@ return    this.acadmicProc.Download(req);
       this.status =   (res as any).status;
 
       this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
+        //this.toastr.success('', element.body);
         });
         ////console.log( this.status);
 

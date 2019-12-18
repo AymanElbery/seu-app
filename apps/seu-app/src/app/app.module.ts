@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ import { HomeService } from './rootservices/home.service';
 import { UserService } from './account/services/user.service';
 import {  HttpClientJsonpModule } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFontAwesomeModule,
     HttpClientModule,
     HttpClientJsonpModule,
@@ -64,6 +67,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     AccountModule
     , DashboardModule
     , FormsModule
+    ,    ToastrModule.forRoot()
+
     //, AcademicprocsModule --lazy loaded
     //, AcademicaffModule  -- lazy loaded
     //, RegisterCoursesModule --lazy loaded

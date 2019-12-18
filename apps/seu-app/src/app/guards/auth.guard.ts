@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
     return this.isLoggedIn();
   }
   canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> {
-    console.log("canActivateChild");
+    //console.log("canActivateChild");
     return this.isLoggedIn();
   }
   canLoad(): boolean | Observable<boolean> {
@@ -26,19 +26,19 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   isLoggedIn() {
     if (this.userService.userDataLoaded) {
-      console.log("isLoggedIn  true");
+      //console.log("isLoggedIn  true");
       return true;
     }
     this.http.jsonp('https://seuapps.seu.edu.sa/sso/sess.php', "callback").subscribe(
       res => {
         localStorage.setItem('sid', res['sid']);
         this.userService.loadUserData();
-        console.log("isLoggedIn  true 222222");
+        //console.log("isLoggedIn  true 222222");
         return true;
       },
       error => {
         this.userService.relogin();
-        console.log("isLoggedIn  false");
+        //console.log("isLoggedIn  false");
         return false;
       });
   }

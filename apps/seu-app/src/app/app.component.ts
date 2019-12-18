@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
     this.userService.userDataSubject.subscribe(res => {
       if (res != null) {
         this.sessionloaded = true;
-        console.log("LOADED YA KOTCH");
         document.getElementById('bodyloading') ? document.getElementById('bodyloading').remove() : '';
       }
     });

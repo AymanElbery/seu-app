@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { AcademicprocsRoutingModule } from './academicprocs-routing.module';
 import { PostponeRequestComponent } from './postpone-request/postpone-request.component';
 import { ExecuseRequestComponent } from './execuse-request/execuse-request.component';
@@ -138,7 +138,6 @@ import { MatCheckboxModule } from '@angular/material';
     MatDatepickerModule,
     MatNativeDateModule,
     MatProgressSpinnerModule,
-    ToastrModule.forRoot(),
     TimerModule,
 
   ],
