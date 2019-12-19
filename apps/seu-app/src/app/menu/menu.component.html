@@ -10,15 +10,15 @@
  
   
   <div class="sidebar-content">
-    <div class="sidebar-header" [hidden]="!showServices">
-        <select [disabled]="!acStd" (change)="onChange(t.value)"    name="menuType" [(ngModel)]="menuType" #t  class="form-control"  style="color: #1c2172;direction: rtl;" id="exampleFormControlSelect1">
-          <option value="0"> دخول عادي</option> 
+     <div *ngIf="acStd" class="sidebar-header" [hidden]="!showServices">
+        <select (change)="onChange(t.value)"    name="menuType" [(ngModel)]="menuType" #t  class="form-control"  style="color: #1c2172;direction: rtl;" id="exampleFormControlSelect1">
+          <option value="0"> خدماتي</option> 
           <option value="1">خدمات البكالوريوس</option>
             <option value="2">خدمات الماجستير</option>
   
            
           </select>      
-    </div>
+    </div> 
       <div class="nav-container">
           <nav id="main-menu-navigation" class="navigation-main">
               
@@ -214,6 +214,17 @@
                      <a target="_blank" href="https://bannservices.seu.edu.sa/StudentRegistrationSsb" class="menu-item">  تسجيل المقررات<i class="ik ik-tablet"></i> </a>
                  </div>
              </div>
+
+<!--
+             <div *ngIf="userService.userData.act_as_student" class="nav-item has-sub">
+                <a href="javascript:void(0)"> <span>الأنظمة </span>
+                    <i class="ik ik-align-right"></i> </a>
+                 <div class="submenu-content">
+                    <a href="javascript:;" (click)="redirectTo(0)" class="menu-item" *ngIf="showMySystem">خدماتي<i class="ik ik-bold"></i> </a>
+                    <a href="javascript:;" (click)="redirectTo(1)" class="menu-item"> خدمات بكالريوس  <i class="ik ik-bold"></i> </a>
+                    <a href="javascript:;" (click)="redirectTo(2)" class="menu-item"> خدمات ماجستير<i class="ik ik-bold"></i> </a>
+                 </div>
+             </div> -->
 
 <!--          
                   <div class="nav-lavel"> </div> -->

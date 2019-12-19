@@ -34,8 +34,7 @@
     </div>
   </div>
 
-
-  <div class="widget" *ngIf="!isLoading && graduateData.length > 0">
+  <div class="widget" *ngIf="!isLoading && graduateData.values">
  
 
     <h6 class="display-6 text-center" *ngIf="!isLoading">
@@ -145,7 +144,7 @@
       </div>
     </section>
   </div>
-  <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading && graduateData.length > 0">
+  <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading && graduateData.values">
 
     <div class="row">
 

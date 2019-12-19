@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  showMySystem = false;
   menuType = 1;
   acStd = false;
   showServices = false;
@@ -17,11 +18,13 @@ export class MenuComponent implements OnInit {
 
 
   fillmenu() {
-
+    if (this.userService.userData.role == 'Employee' || this.userService.userData.role == 'Instructor') {
+      this.showMySystem = true;
+    }
     //console.log('userService.userData.level');
     //console.log('userService.userData.level : ' + this.userService.userData.level);
     this.acStd = false;
-    if (!this.userService.userData.act_as_student && this.userService.userData.level === 'UG') {
+    if (this.userService.userData.activeRole == 'Student' && this.userService.userData.level === 'UG') {
       //console.log('level ug');
       this.menuType = 1;
       this.showServices = true;
@@ -58,6 +61,11 @@ export class MenuComponent implements OnInit {
 
     });
 
+  }
+
+  redirectTo(status){
+    this.onChange(status);
+    this.fillmenu();
   }
 
   onChange(e) {
