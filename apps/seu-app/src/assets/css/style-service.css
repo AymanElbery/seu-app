@@ -87,10 +87,7 @@ body {
   border: 1px solid #eaeaea;
   padding: 0 10px;
   background-color: #fff;
-  font-size: 11px;
   border-radius: 4px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 4px;
 }
 
 .btn {
@@ -678,7 +675,7 @@ div.pub-ser2 {
 
 .service-single:before {
   content: "";
-  background-image: linear-gradient(-90deg, rgba(6, 12, 34, .9), rgba(6, 12, 34, 0.8));
+  /* background-image: linear-gradient(-90deg, rgba(6, 12, 34, .9), rgba(6, 12, 34, 0.8)); */
   position: absolute;
   bottom: 0;
   top: 0;
@@ -692,7 +689,7 @@ div.pub-ser2 {
 }
 
 .service-single h3 {
-  color: #fff;
+  color: #26226a;
   /* font-size: 17px; */
   position: relative;
   line-height: 1.7;
@@ -794,10 +791,6 @@ select.form-control {
   margin-bottom: 0
 }
 
-.form-control {
-  border: 1px solid #e6e6e6;
-}
-
 .descr {
   text-align: left
 }
@@ -886,4 +879,31 @@ select.form-control {
 
 .text-eng {
   font-family: 'Open Sans', sans-serif;
+}
+
+.modal-header {
+  padding: 20px 30px;
+  border-bottom: 2px solid #f28d1d;
+  position: relative;
+  background: #fcfcfc;
+  color: #1c2172;
+  border-radius: 8px 8px 0 0;
+}
+
+.mat-dialog-container {
+  border-radius: 15px !important;
+  padding: 0 !important;
+}
+
+.modal-dialog {
+  max-width: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.mat-dialog-content {
+  display: flex;
+  justify-content: stretch;
+  margin: 0 !important;
+  padding: 0 !important;
 }

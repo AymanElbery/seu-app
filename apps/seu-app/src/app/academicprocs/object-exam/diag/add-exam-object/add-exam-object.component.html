@@ -1,100 +1,106 @@
 <mat-dialog-content style="direction: rtl;">
 
 
-  <div class="modal-header" >
-    <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">    اضافة اعتراض على احد الاختبارات </h5>
+  <div class="modal-header">
+    <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> اضافة اعتراض على احد الاختبارات </h5>
 
   </div>
-  <form #form="ngForm" autocomplete="off" (submit)="onSubmit()">
   <div class="modal-body">
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit()">
 
-    <p style="text-align:center" >اختيار المنهج</p>
+      <p style="text-align:center">اختيار المنهج</p>
 
-    <div class="table-responsive">
+      <div class="table-responsive">
 
 
-      <table class="table table-striped table-bordered">
+        <table class="table table-striped table-bordered">
           <thead>
-        <tr>
-          <th scope="col">اسم المنهج </th>
-          <th scope="col">اسم المعلم  </th>
+            <tr>
+              <th scope="col">اسم المنهج </th>
+              <th scope="col">اسم المعلم </th>
 
-          <th scope="col">   </th>
+              <th scope="col"> </th>
 
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let it of exam.exams;let i=index;">
-          <td>{{it.CRSE_TITLE}}</td>
-
-
-          <td>    <input    name="teacherName"  class="form-control col-md-6"  #TeacherID="ngModel" [(ngModel)]="it.teacher"  name="Teacher" >
-          </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let it of exam.exams;let i=index;">
+              <td>{{it.CRSE_TITLE}}</td>
 
 
+              <td> <input name="teacherName" class="form-control col-md-6" #TeacherID="ngModel" [(ngModel)]="it.teacher"
+                  name="Teacher">
+              </td>
 
 
-          <td>
-              <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event)" #chkCourse  >
-         </td>
 
-        </tr>
 
-      </tbody>
-    </table></div>
+              <td>
+                <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event)" #chkCourse>
+              </td>
 
-    <select class="form-control" #BankID="ngModel" [(ngModel)]="exam.bank"  name="Bank" [class.is-invalid]="exam.bank == -1">
-      <option value=-1>اختر  البنك</option>
-      <option *ngFor="let bank of reqData.banks" [value]="bank.id">{{bank.value}}</option>
-    </select>
+            </tr>
 
-    <br>
-
-    <div class="form-row">
-      <div class="form-group col-md-12">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text"> أسباب الاعتراض</div>
-          </div>
-          <input name="reason" #reason="ngModel" [(ngModel)]="exam.reason" class="form-control" >
-        </div>
-        <br>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text"> رقم الحساب</div>
-          </div>
-          <input   #accountNumber="ngModel" name="accountNumber" [(ngModel)]="exam.account_number"  class="form-control" type="text" >
-        </div>
-        <br>
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <div class="input-group-text"> الضريبة</div>
-          </div>
-          <input   #feesAmount="ngModel" name="feesAmount" [(ngModel)]="exam.fees_amount" class="form-control"  type="text" >
-        </div>
+          </tbody>
+        </table>
       </div>
 
-    </div>
+      <select class="form-control" #BankID="ngModel" [(ngModel)]="exam.bank" name="Bank"
+        [class.is-invalid]="exam.bank == -1">
+        <option value=-1>اختر البنك</option>
+        <option *ngFor="let bank of reqData.banks" [value]="bank.id">{{bank.value}}</option>
+      </select>
 
-    <!-- <select class="form-control" #bankIDD="ngModel" [(ngModel)]="exam.bank"  name="Bank" [class.is-invalid]="exam.bank == ''">
+      <br>
+
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text"> أسباب الاعتراض</div>
+            </div>
+            <input name="reason" #reason="ngModel" [(ngModel)]="exam.reason" class="form-control">
+          </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text"> رقم الحساب</div>
+            </div>
+            <input #accountNumber="ngModel" name="accountNumber" [(ngModel)]="exam.account_number" class="form-control"
+              type="text">
+          </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text"> الضريبة</div>
+            </div>
+            <input #feesAmount="ngModel" name="feesAmount" [(ngModel)]="exam.fees_amount" class="form-control"
+              type="text">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <select class="form-control" #bankIDD="ngModel" [(ngModel)]="exam.bank"  name="Bank" [class.is-invalid]="exam.bank == ''">
       <option value=''>اختر  البنك</option>
       <option *ngFor="let bank of reqData.banks" [value]="bank.key">{{bank.value}}</option>
     </select> -->
 
 
 
-    <br>
-        <div class="image-upload">
-            <input name="Url" type="file" accept="*/*" (change)="handleInputChange($event)" />
-        </div>
-
-      <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-                  <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
-
-        <button  type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+      <br>
+      <div class="image-upload">
+        <input name="Url" type="file" accept="*/*" (change)="handleInputChange($event)" />
       </div>
+
+      <div class="modal-footer">
+        <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+          الغاء</button>
+
+        <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
       </div>
     </form>
+  </div>
 
 
 

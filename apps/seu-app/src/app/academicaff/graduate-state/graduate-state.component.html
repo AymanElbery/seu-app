@@ -35,7 +35,7 @@
   </div>
 
   <div class="widget" *ngIf="!isLoading && graduateData.values">
- 
+
 
     <h6 class="display-6 text-center" *ngIf="!isLoading">
       {{graduateData.labels.date}}:{{graduateData.values.date}}</h6>
@@ -162,13 +162,10 @@
       </p>
     </div>
   </div>
-  <div class="btn-group btn-group-justified col-md-12 " *ngIf="!isLoading && graduateData.length > 0">
-    <div class="col-md-4"></div>
-    <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
+  <div class="prin text-center" *ngIf="!isLoading && graduateData.length > 0">
+    <a class="btn btn-primary" href="{{arabicPrint}}"><span class="ik ik-printer"></span>
       طباعة</a>
-    <a class="btn btn-primary" href="{{EngPrint}}"><span class="glyphicon glyphicon-print"></span>
+    <a class="btn btn-primary" href="{{EngPrint}}"><span class="ik ik-printer"></span>
       Print</a>
-    <div class="col-md-4"></div>
-
   </div>
 </div>

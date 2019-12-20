@@ -9,7 +9,7 @@
         <!-- <div class=" col-md-6 descr">
                   <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                     &nbsp; &nbsp; &nbsp; &nbsp;
-                    
+
                 </div> -->
       </div>
     </div>
@@ -75,7 +75,7 @@
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
             <td><a class="btn btn-primary" [href]="print(it.request_number)"><span
-                  class="glyphicon glyphicon-print"></span>
+                  class="ik ik-printer"></span>
                 Print</a></td>
 
             <td *ngIf='it.deletable'><button [disabled]='it.deletable || it.time_to_delete_per_hour<=0' class="btn btn-sm btn-danger"
