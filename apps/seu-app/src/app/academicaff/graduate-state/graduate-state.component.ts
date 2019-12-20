@@ -23,6 +23,7 @@ export class GraduateStateComponent implements OnInit {
     this.graduateStateSer.getStatement().then(
       (res) => {
       this.graduateData = (res as any).data;
+      console.log("graduateData",this.graduateData);
         this.msgs = (res as any).messages;
         this.isLoading = false;
 
