@@ -1,4 +1,4 @@
-<div class="main-content" style="padding-top:0">
+<div class="main-content">
   <section class="service-single">
 
     <div class="container">
@@ -35,7 +35,7 @@
   </div>
 <br/>
   <!-- <div style="direction: ltr;text-align: center">
-  
+
   <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
   اضافة طلب
 </button>
@@ -56,7 +56,7 @@
     </div>
     <div class="table-responsive">
       <table class="table table-striped table-bordered">
-        <thead style="background: #e6e6e6">
+        <thead>
           <tr>
             <th scope="col">رقم الطلب</th>
 
@@ -80,9 +80,9 @@
 
                 <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
                   (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
-        
+
                   <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
-        
+
           </tr>
 
         </tbody>

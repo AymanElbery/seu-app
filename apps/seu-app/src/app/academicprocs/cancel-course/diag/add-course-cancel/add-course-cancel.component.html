@@ -1,25 +1,25 @@
 <mat-dialog-content dir="rtl">
     <div class="modal-content">
         <div class="modal-header">
-       
+
           <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">  الغاء مقرر</h5>
-          
+
         </div>
         <div class="modal-body">
       <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-          <div class="main-content" style="padding-top:0;">
+          <div  class="main-content">
               <P class="text-center">
                   <span style="font-weight: bold; font-size: 15px;color: red;" > {{reqData.notes.txt1}}    </span>
                    <br />
-                   {{reqData.notes.txt2}} 
-            
+                   {{reqData.notes.txt2}}
+
                     <br />
                     {{reqData.notes.txt3}}
-            
+
                     <br />
                     {{reqData.notes.txt4}}
-            
-                   
+
+
                   </P>
               <section  class="ser-state">
                   <div class="container">
@@ -34,33 +34,33 @@
                                         <th scope="col"> رمز المقرر</th>
                                         <th scope="col">عدد الساعات </th>
                                         <th scope="col">   </th>
-                                  
+
                                       </tr>
                                     </thead>
                                     <tbody>
                                       <tr *ngFor="let it of reqData.RegisteredCourses;let i=index;">
                                         <td>{{it.CRSE_TITLE}}</td>
-                                      
-                                  
+
+
                                         <td>{{it.CRES_CODE}}</td>
                                         <td>{{it.CREDIT_HR}}</td>
-                                    
-                                  
+
+
                                         <td>
                                             <input type="checkbox" name="chkCourse" (change)="changeStatus(it.CRES_CODE,$event,i)" #chkCourse  id="defaultUnchecked">
                                       </td>
-                                  
+
                                       </tr>
-                                      
+
                                     </tbody>
                                   </table>
                               </div>
                                 <div class="progress progress-sm">
-                                    <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                    <div class="progress-bar bg-info"></div>
                                 </div>
                          </div>
 
-       
+
                       </div>
                        <div style="margin-top: 10px;">
                         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
@@ -76,4 +76,3 @@
       </div>
     </div>
   </mat-dialog-content>
- 

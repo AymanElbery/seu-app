@@ -1,246 +1,260 @@
-<div class="main-content" style="padding-top:0;">
-                    
-    <section class="service-single">
-            <div class="container">
-                    <h3>الاستعلام عن الغيابات  </h3>
-                 <div class="row">
-                    <div class=" col-md-5">
-                      <p>الاستعلام عن الغيابات </p>
-                     </div>
-                    <!-- <div class=" col-md-6 descr">
+<div class="main-content">
+
+  <section class="service-single">
+    <div class="container">
+      <h3>الاستعلام عن الغيابات </h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p>الاستعلام عن الغيابات </p>
+        </div>
+        <!-- <div class=" col-md-6 descr">
                       <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                         &nbsp; &nbsp; &nbsp; &nbsp;
                         <a href="#"><i class="ik ik-download"></i> </a>
                         <a href="#"><i class="ik ik-film"></i></a>
                     </div> -->
-                </div>
-                </div>
-         </section>
-     <div *ngIf="isLoading" class=" loading-indicator ">
-          <div class="state">
-  
-  
-  <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
-  
-          </div> </div> 
-    <div *ngIf="status==0 && !isLoading"  class="alert alert-primary text-center" role="alert" >
-        {{absData.messages}} 
       </div>
-     <section  class="ser-state" *ngIf="!isLoading">
-        <nav>          
-        <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">
-                  <a class="nav-link nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One" aria-selected="true">
-                      نسبة غياب المحاضرات الكلية
+    </div>
+  </section>
+  <div *ngIf="isLoading" class=" loading-indicator ">
+    <div class="state">
 
-                  </a>
-              
-                  <a class="nav-item nav-link " id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two" aria-selected="false">
-                      نسبة غياب المحاضرات التقليدية
+
+      <mat-spinner *ngIf="isLoading"
+        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+      </mat-spinner>
+
+    </div>
+  </div>
+  <div *ngIf="status==0 && !isLoading" class="alert alert-primary text-center" role="alert">
+    {{absData.messages}}
+  </div>
+  <section class="ser-state" *ngIf="!isLoading">
+    <nav>
+      <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">
+        <a class="nav-link nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One"
+          aria-selected="true">
+          نسبة غياب المحاضرات الكلية
 
         </a>
-              
-              
-                  <a class="nav-item  nav-link " id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three" aria-selected="false">
-                      نسبة غياب المحاضرات الافتراضيه
+
+        <a class="nav-item nav-link " id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two"
+          aria-selected="false">
+          نسبة غياب المحاضرات التقليدية
+
         </a>
-              
-             
-            </div>
-        
-          </nav> 
-          <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="one" >
-              <div class="widget">
-                  <div class="widget-header" style="padding: 5px 0" >
-                 <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
-                 </div>
-                          <div class="table-responsive">
-                              <table *ngIf="absData.absent_percentage_total.length>0;else array1" class="table table-striped table-bordered">
-                        <thead style="background: #ebecf0">
-              
-              
-                 
-                    <tr>
-                      <th scope="col">CRN </th>
-                      <th scope="col">كود المقرر</th>
-                      <th scope="col">اسم المقرر</th>
-                      <th scope="col">نسبة الغباب</th>
 
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let it of absData.absent_percentage_total">
-                      <td >{{it.CRN}}</td>
-                      <td >{{it.CRES_CODE}}</td>
-                      <td>{{it.CRSE_TITLE}}</td>
-                      <td>{{it.ABSENT_PERCENTAGE_TOTAL}}</td>
-                    </tr>
-                   
-                  </tbody>
-                </table></div>
-                <br> <ng-template #array1>
-                
-                    <div class="row">
-                        <div  class="col-md-1"></div>
-                        <div class="col-md-10">
-                          <div class="form-group">
-                            
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text"><b>نسبة غياب المحاضرات الكلية  </b> </div>
-                              </div>
-                              <input  value="0"  class="form-control" readonly>
-                            </div>
-                          </div>   
-                        </div>
-                        
-                         <div  class="col-md-1"></div>
-                      
-                      </div>
-         
-               </ng-template>
-           
-        
-         
-        </div></div>
-            <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
-                <div class="widget">
-                    <div class="widget-header" style="padding: 5px 0" >
-                   <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
-                   </div>
-                            <div class="table-responsive">
-                   
 
-              <table  *ngIf="absData.absent_percentage_actual_lectures.length>=0;else emptyArr2" class="table table-striped table-bordered">
-                  <thead  style="background: #ebecf0">
-                      <tr>
-                        <th scope="col">CRN </th>
-                        <th scope="col">كود المقرر</th>
-                        <th scope="col">اسم المقرر</th>
-                        <th scope="col">نسبة الغباب</th>
-  
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let it of absData.absent_percentage_actual_lectures">
-                        <td >{{it.CRN}}</td>
-                        <td >{{it.CRES_CODE}}</td>
-                        <td>{{it.CRSE_TITLE}}</td>
-                        <td>{{it.ABSENT_PERCENTAGE_FTF}}</td>
-                      </tr>
-                     
-                    </tbody>
-             
-                </table>
-                            </div>
-                <ng-template #emptyArr2>
-                <div  class="row">
-                    <div  class="col-md-1"></div>
-                    <div class="col-md-10">
-                      <div class="form-group">
-                        
-                        <div class="input-group">
-                          <div class="input-group-prepend">
-                            <div class="input-group-text"><b>نسبة غياب المحاضرات التقليدية  </b> </div>
-                          </div>
-                          <input  value="0"  class="form-control" readonly>
-                        </div>
-                      </div>   
-                    </div>
-                    
-                     <div  class="col-md-1"></div>
-                  
-                  </div>
-                </ng-template></div>
-                      
-         </div>
-            <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
-                <div class="widget">
-                    <div class="widget-header" style="padding: 5px 0" >
-                   <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
-                   </div>
-                   
-               <div class="table-responsive"> 
-                <table  class="table table-striped table-bordered" *ngIf="absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3">
-                    <thead style="background: #ebecf0">
-                        <tr >
-                          <th scope="col">CRN </th>
-                          <th scope="col">كود المقرر</th>
-                          <th scope="col">اسم المقرر</th>
-                          <th scope="col">نسبة الغباب</th>
-    
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let it of absData.absent_percentage_virtual_lectures">
-                          <td >{{it.CRN}}</td>
-                          <td >{{it.CRES_CODE}}</td>
-                          <td>{{it.CRSE_TITLE}}</td>
-                          <td>{{it.ABSENT_PERCENTAGE_VERT}}</td>
-                        </tr>
-                       
-                      </tbody>
-                               </table></div>
-                  <br>
-                  <ng-template  #emptyArr3>
-                      <div class="row">
-                          <div  class="col-md-1"></div>
-                          <div class="col-md-10">
-                            <div class="form-group">
-                              
-                              <div class="input-group">
-                                <div class="input-group-prepend">
-                                  <div class="input-group-text"><b>نسبة غياب المحاضرات الافتراضيه  </b> </div>
-                                </div>
-                                <input  value="{{absData.absent_percentage_virtual_lectures}}"  class="form-control" readonly>
-                              </div>
-                            </div>   
-                          </div>
-                          
-                           <div  class="col-md-1"></div>
-                        
-                        </div>
-                  </ng-template>
-                </div>
-                </div>
+        <a class="nav-item  nav-link " id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three"
+          aria-selected="false">
+          نسبة غياب المحاضرات الافتراضيه
+        </a>
+
+
+      </div>
+
+    </nav>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="one">
+        <div class="widget">
+          <div class="widget-header">
+            <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
           </div>
-      </section>
-      <div class="widget"  *ngIf="!isLoading">
-                  <div class="widget-header" style="padding: 5px 0" >
-                 <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
-                 </div>
-                          <div class="table-responsive">
-                        <table class="table table-striped table-bordered">
-                        <thead style="background: #ebecf0">
+          <div class="table-responsive">
+            <table *ngIf="absData.absent_percentage_total.length>0;else array1"
+              class="table table-striped table-bordered">
+              <thead>
+
+
+
                 <tr>
-                  <th scope="col">رمز المقرر </th>
+                  <th scope="col">CRN </th>
+                  <th scope="col">كود المقرر</th>
                   <th scope="col">اسم المقرر</th>
-                  <th scope="col">نوع المحاضره</th>
-                  <th scope="col">حالة الحضور</th>
+                  <th scope="col">نسبة الغباب</th>
 
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let it of absData.lectures">
-                  <td >{{it.CODE}}</td>
-                  <td>{{it.TITLE}}</td>
-                  <td>{{it.TYPE}}</td>
-                  <td>{{it.STATUS}}</td>
+                <tr *ngFor="let it of absData.absent_percentage_total">
+                  <td>{{it.CRN}}</td>
+                  <td>{{it.CRES_CODE}}</td>
+                  <td>{{it.CRSE_TITLE}}</td>
+                  <td>{{it.ABSENT_PERCENTAGE_TOTAL}}</td>
                 </tr>
-               
+
               </tbody>
             </table>
-
-      
-       </div>
-      </div>
-      <div  class="btn-group btn-group-justified col-md-12 " *ngIf="!isLoading">
-                <div class="col-md-4"></div>
-                <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
-                  طباعة</a>
-                <a class="btn btn-primary" href="{{EngPrint}}"><span class="glyphicon glyphicon-print"></span>
-                  Print</a>
-                <div class="col-md-4"></div>
-              
           </div>
+          <br>
+          <ng-template #array1>
+
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                <div class="form-group">
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><b>نسبة غياب المحاضرات الكلية </b> </div>
+                    </div>
+                    <input value="0" class="form-control" readonly>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-1"></div>
+
+            </div>
+
+          </ng-template>
+
+
+
+        </div>
+      </div>
+      <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+        <div class="widget">
+          <div class="widget-header">
+            <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
+          </div>
+          <div class="table-responsive">
+
+
+            <table *ngIf="absData.absent_percentage_actual_lectures.length>=0;else emptyArr2"
+              class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">CRN </th>
+                  <th scope="col">كود المقرر</th>
+                  <th scope="col">اسم المقرر</th>
+                  <th scope="col">نسبة الغباب</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let it of absData.absent_percentage_actual_lectures">
+                  <td>{{it.CRN}}</td>
+                  <td>{{it.CRES_CODE}}</td>
+                  <td>{{it.CRSE_TITLE}}</td>
+                  <td>{{it.ABSENT_PERCENTAGE_FTF}}</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+          </div>
+          <ng-template #emptyArr2>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                <div class="form-group">
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><b>نسبة غياب المحاضرات التقليدية </b> </div>
+                    </div>
+                    <input value="0" class="form-control" readonly>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-1"></div>
+
+            </div>
+          </ng-template>
+        </div>
+
+      </div>
+      <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
+        <div class="widget">
+          <div class="widget-header">
+            <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered"
+              *ngIf="absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3">
+              <thead>
+                <tr>
+                  <th scope="col">CRN </th>
+                  <th scope="col">كود المقرر</th>
+                  <th scope="col">اسم المقرر</th>
+                  <th scope="col">نسبة الغباب</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let it of absData.absent_percentage_virtual_lectures">
+                  <td>{{it.CRN}}</td>
+                  <td>{{it.CRES_CODE}}</td>
+                  <td>{{it.CRSE_TITLE}}</td>
+                  <td>{{it.ABSENT_PERCENTAGE_VERT}}</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <br>
+          <ng-template #emptyArr3>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                <div class="form-group">
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><b>نسبة غياب المحاضرات الافتراضيه </b> </div>
+                    </div>
+                    <input value="{{absData.absent_percentage_virtual_lectures}}" class="form-control" readonly>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-1"></div>
+
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+      <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">رمز المقرر </th>
+            <th scope="col">اسم المقرر</th>
+            <th scope="col">نوع المحاضره</th>
+            <th scope="col">حالة الحضور</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let it of absData.lectures">
+            <td>{{it.CODE}}</td>
+            <td>{{it.TITLE}}</td>
+            <td>{{it.TYPE}}</td>
+            <td>{{it.STATUS}}</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+  <div class="btn-group btn-group-justified col-md-12 " *ngIf="!isLoading">
+    <div class="col-md-4"></div>
+    <a class="btn btn-primary" href="{{arabicPrint}}"><span class="glyphicon glyphicon-print"></span>
+      طباعة</a>
+    <a class="btn btn-primary" href="{{EngPrint}}"><span class="glyphicon glyphicon-print"></span>
+      Print</a>
+    <div class="col-md-4"></div>
+
+  </div>
 </div>

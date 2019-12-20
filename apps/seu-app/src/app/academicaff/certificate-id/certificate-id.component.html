@@ -16,9 +16,9 @@
 
  {{certificateDetails.labels.txt5}}   {{certificateDetails.values.term}}
 
- {{certificateDetails.labels.txt6}}  
+ {{certificateDetails.labels.txt6}}
 
- {{certificateDetails.labels.txt7}}  
+ {{certificateDetails.labels.txt7}}
  <br/>
  <br/>
 
@@ -40,11 +40,11 @@
           <td>{{item.CRSE_DAY}}</td>
           <td>{{item.CRSE_TIME}}</td>
         </tr>
-       
+
       </tbody>
     </table>  </div>
     <br/>
-    
+
 
 </ng-template>
 
@@ -55,15 +55,15 @@
 </ng-template>
 <br/><br/>
 {{certificateDetails.labels.txt9}}  <br/>
-{{certificateDetails.labels.txt10}}  
+{{certificateDetails.labels.txt10}}
 <br/><br/>
 <b>
-{{certificateDetails.labels.txt11}}  
+{{certificateDetails.labels.txt11}}
 </b>
-{{certificateDetails.labels.txt12}}  
+{{certificateDetails.labels.txt12}}
 <br/>
 <br/>
-{{certificateDetails.labels.txt13}}  
+{{certificateDetails.labels.txt13}}
 
 
 
@@ -84,8 +84,8 @@
   </div>
 </div>
  -->
-<div class="main-content" style="padding-top:0;">
-                    
+<div  class="main-content">
+
   <section class="service-single">
       <div class="container">
               <h3>شهادة تعريف</h3>
@@ -106,9 +106,9 @@
         <div class="state">
 
 
-<mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> 
+<mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner>
 
-        </div> </div>             
+        </div> </div>
   <section  class="ser-state" *ngIf="!isLoading">
       <div class="container">
            <div class="row ser-block">
@@ -118,7 +118,7 @@
                        <h5> {{certificateDetails.values.date}}</h5>
                     </div>
                       <div class="progress progress-sm">
-                          <div class="progress-bar bg-info" style="width: 15%;"></div>
+                          <div class="progress-bar bg-info"></div>
                       </div>
               </div>
                <div class=" col-md-6 col-sm-12">
@@ -127,10 +127,10 @@
                        <h5>{{certificateDetails.values.ssn}}</h5>
                     </div>
                       <div class="progress progress-sm">
-                          <div class="progress-bar bg-info" style="width: 15%;"></div>
+                          <div class="progress-bar bg-info"></div>
                       </div>
               </div>
-              
+
           </div>
        </div>
    </section>
@@ -141,27 +141,27 @@
                  <p>
                 {{certificateDetails.labels.txt1}}   {{certificateDetails.values.std_name}}
                 {{certificateDetails.labels.txt2}}   {{certificateDetails.values.std_id}}
-               
+
                 {{certificateDetails.labels.txt3}}   {{certificateDetails.values.coll}}
-               
+
                 {{certificateDetails.labels.txt4}}   {{certificateDetails.values.major}}
                 <br/>
-               
-               
+
+
                 {{certificateDetails.labels.txt5}}   {{certificateDetails.values.term}}
-               
-                {{certificateDetails.labels.txt6}}  
-               
-                {{certificateDetails.labels.txt7}}  
-              
+
+                {{certificateDetails.labels.txt6}}
+
+                {{certificateDetails.labels.txt7}}
+
                    </p>
               </div>
             </div>
    <ng-template [ngIf]="lectures !=null" [ngIfElse]="NoLec">
-                 
+
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered">
-                        <thead style="background: #e6e6e6">
+                        <thead>
                         <tr>
                           <th scope="col">{{certificateDetails.labels.crn}}</th>
                           <th scope="col">{{certificateDetails.labels.course_title}}</th>
@@ -177,14 +177,14 @@
                           <td style="direction: ltr">({{toHTML(item.CRSE_TIME)}})</td>
 
                         </tr>
-                       
+
                       </tbody>
                     </table>  </div>
                 </ng-template>
                 <div class="jumbotron jumbtron-fluid"  *ngIf="!isLoading" >
 
                     <div class="row">
-                 
+
                        <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
                         <ng-template #NoLec>
                             <div>
@@ -192,27 +192,27 @@
                             </div>
                           </ng-template>
                           {{certificateDetails.labels.txt9}}  <br/>
-                          {{certificateDetails.labels.txt10}}  
+                          {{certificateDetails.labels.txt10}}
                           <br/>
                           <br/>
                           <b>
-                          {{certificateDetails.labels.txt11}}  
+                          {{certificateDetails.labels.txt11}}
                           </b>
-                          {{certificateDetails.labels.txt12}}  
+                          {{certificateDetails.labels.txt12}}
                            <br/>
                          <!-- <br/> -->
-                          {{certificateDetails.labels.txt13}}  
-                          
-                          
+                          {{certificateDetails.labels.txt13}}
+
+
                       </p>
                       </div>
             </div>
-                
-                
+
+
        <!-- </div> -->
-   </section>        
+   </section>
     <div style="text-align: center" class="prin" *ngIf="!isLoading">
       <a class="btn" href="{{arabicPrint}}">عربي <i class="ik ik-save"></i> </a>
       <a class="btn" href="{{EngPrint}}"> <i class="ik ik-save"></i> English </a>
-     </div>              
+     </div>
 </div>
