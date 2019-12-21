@@ -4,6 +4,7 @@ import { UnivWithdraw } from 'src/app/shared/models/univ-withdraw';
 import { WithdrawFromUnivService } from 'src/app/academicprocs/services/withdraw-from-univ.service';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
 import { ToastrService } from 'ngx-toastr';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-request',
@@ -13,15 +14,15 @@ import { ToastrService } from 'ngx-toastr';
 export class AddRequestComponent implements OnInit {
   withdraw: UnivWithdraw;
   reqData: any;
-msgs: any;
-private imageSrc = '';
-
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddRequestComponent>,
-               private toastr: ToastrService, private acadmicProc: WithdrawFromUnivService ) { }
+  msgs: any;
+  private imageSrc = '';
+  requesting = false;
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddRequestComponent>,
+    private toastr: AppToasterService, private acadmicProc: WithdrawFromUnivService) { }
 
   ngOnInit() {
-    this.withdraw = {FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile : null, bankimage : '', BANKID: 0};
+    this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
     this.reqData = this.acadmicProc.reqData;
 
   }
@@ -42,21 +43,24 @@ private imageSrc = '';
     //console.log(this.withdraw.bankimage);
   }
   addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-   this.msgs =   (res as any).messages;
-   this.msgs.forEach((element: any) => {
-    this.toastr.success('', element.body);
-
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
     });
-        });
 
 
 
   }
   onSubmit(form: NgForm) {
-this.addRequest(form.value);
-this.dialogRef.close();
-
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
+    this.addRequest(form.value);
   }
   closeDiag() {
     this.dialogRef.close();

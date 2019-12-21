@@ -6,6 +6,7 @@ import { AddPostponeComponent } from '../postpone-request/diag/add-postpone/add-
 import { NgForm } from '@angular/forms';
 import { SummerWithdrawService } from '../services/summer-withdraw.service';
 import { AddSummerWithdrawComponent } from './diag/add-summer-withdraw/add-summer-withdraw.component';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-summer-withdraw',
@@ -21,11 +22,14 @@ export class SummerWithdrawComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: SummerWithdrawService) { }
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: SummerWithdrawService) { }
 
   ngOnInit() {
     this.isLoading = true;
     this.reason = '';
+    this.getRequests();
+  }
+  getRequests() {
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
@@ -38,54 +42,41 @@ export class SummerWithdrawComponent implements OnInit {
     );
   }
 
-
   openDialoge() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
 
-    this.dialog.open(AddSummerWithdrawComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(res => {
-      this.acadmicProc.msgs = (res as any).messages;
+    let dialogref = this.dialog.open(AddSummerWithdrawComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
     });
-  }
-
-  onSubmit(form: NgForm) {
-
-    this.addRequest(form.value);
-
-
   }
 
   print(req) {
     return this.acadmicProc.Download(req);
 
   }
-
+  deleting = false;
   delete(id, index) {
-    if (confirm('هل انت متأكد')) {
+    if (confirm('هل انت متأكد؟')) {
+      this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
-        this.msgs = (res as any).messages;
-
-        this.status = (res as any).status;
-
-        this.msgs.forEach((element: any) => {
-          this.toastr.success('', element.body);
-
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
+        }
+        this.deleting = false;
+      }
+        , err => {
+          this.toastr.tryagain();
+          this.deleting = false;
         });
-        if (this.status == 1)
-          this.acadmicProc.reqData.reqs.splice(index, 1);
-      });
-
     }
 
   }
-  deleteReq(id: any) {
-    throw new Error('Method not implemented.');
-  }
-
 }

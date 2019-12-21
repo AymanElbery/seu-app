@@ -6,42 +6,42 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class WithdrawFromUnivService {
-
+  newreqs = false;
   reqData;
   msgs;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
-			  }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = "stdservicesapi";
+  }
 
   getِgetRequests() {
-//?std_id=S120000101
-this.configService.baseUrl = 'stdservicesapi';
+    //?std_id=S120000101
+    this.configService.baseUrl = 'stdservicesapi';
 
-   return this.httRequest.GetRequest('withdraw_service').toPromise();
+    return this.httRequest.GetRequest('withdraw_service').toPromise();
   }
   AddRequest(data) {
     this.configService.baseUrl = 'stdservicesapi';
 
-      return this.httRequest.postRequest('withdraw_service/insert', data).toPromise();
+    return this.httRequest.postRequest('withdraw_service/insert', data).toPromise();
   }
   deleteReq(id) {
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.httRequest.GetRequest('withdraw_service/remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('withdraw_service/remove/' + id).toPromise();
 
   }
 
-   Download(req) {
+  Download(req) {
     this.configService.baseUrl = 'stdservicesapi';
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/withdraw_service/download/' + req +'?sid'+sid;
-   }
-   DownloadEng() {
+    return this.configService.getApiURI() + '/withdraw_service/download/' + req + '?sid=' + sid;
+  }
+  DownloadEng() {
     this.configService.baseUrl = 'stdservicesapi';
 
 
     return this.configService.getApiURI() + '/fees_stmt_request_service/download?Lang=en';
-   }
+  }
 }
