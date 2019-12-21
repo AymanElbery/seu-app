@@ -42,9 +42,6 @@ export class AddSummerWithdrawComponent implements OnInit {
         this.toastr.tryagain();
         this.requesting = false;
       });
-
-
-
   }
   onSubmit(form: NgForm) {
     if (this.requesting) {

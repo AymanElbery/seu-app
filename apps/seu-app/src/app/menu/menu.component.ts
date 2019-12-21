@@ -24,11 +24,11 @@ export class MenuComponent implements OnInit {
     //console.log('userService.userData.level',this.userService.userData.level);
     //console.log('userService.userData.level : ' + this.userService.userData.level);
     this.acStd = this.userService.userData.act_as_student;
-    if (this.userService.userData.act_as_student && this.userService.userData.level === 'UG') {
+    if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'UG') {
       //console.log('level ug');
       this.menuType = 1;
       this.showServices = true;
-    } else if (this.userService.userData.act_as_student && this.userService.userData.level === 'GR') {
+    } else if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'GR') {
       //console.log('level GR');
       this.menuType = 2;
       this.showServices = true;

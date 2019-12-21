@@ -5,6 +5,7 @@ import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA, MatDialogRef } from '@angu
 import { ToastrService } from 'ngx-toastr';
 import { AddCourseCancelComponent } from 'src/app/academicprocs/cancel-course/diag/add-course-cancel/add-course-cancel.component';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-re-enroll',
@@ -19,43 +20,46 @@ export class AddReEnrollComponent implements OnInit {
   reEnroll: ReEnroll;
   reqData;
   msgs;
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddReEnrollComponent>,
-               private toastr: ToastrService,  private acadmicProc: ReEnrollService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddReEnrollComponent>,
+    private toastr: AppToasterService, private acadmicProc: ReEnrollService) { }
 
   ngOnInit() {
-    this.reEnroll = {proof: '', reason: '', has_proof: '1'};
+    this.reEnroll = { proof: '', reason: '', has_proof: '1' };
     this.acadmicProc.getِgetRequests().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
 
-
-
-  }
+      }
     );
   }
 
-
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
-        });
-    });
-
+  requesting = false;
+  addRequest(data: any) {
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
+      });
   }
   onSubmit(form: NgForm) {
-this.addRequest(this.reEnroll);
-//console.log(this.reEnroll);
-this.dialogRef.close();
-
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
+    this.addRequest(this.reEnroll);
   }
+
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const pattern = /image-*/;
@@ -71,30 +75,30 @@ this.dialogRef.close();
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.reEnroll.proof = reader.result;
-    //console.log(this.reEnroll.proof);
+    console.log(this.reEnroll.proof);
   }
 
   print(req) {
-return    this.acadmicProc.Download(req);
+    return this.acadmicProc.Download(req);
 
   }
   delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
+    if (confirm('هل انت متأكد')) {
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.success('', (res as any).messages.body);
 
-    });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
+      });
+      this.acadmicProc.reqData.reqs.splice(index, 1);
+
+    }
 
   }
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
 
-}
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
+  }
+  closeDiag() {
 
-}
-closeDiag() {
-
-  this.dialogRef.close();
-}
+    this.dialogRef.close();
+  }
 }
