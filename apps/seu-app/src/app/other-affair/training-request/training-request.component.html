@@ -32,13 +32,13 @@
   </div>
  <br/>
   <!-- <div style="direction: ltr;text-align: center">
-        
+
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
         اضافة طلب
       </button>
       <br/>
       <br/>
-      
+
       </div> -->
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
@@ -51,7 +51,7 @@
     </div>
     <div class="table-responsive">
       <table class="table table-striped table-bordered">
-        <thead style="background: #ebecf0">
+        <thead>
 
           <tr>
             <th scope="col">اسم الجهة</th>
@@ -70,7 +70,7 @@
 
 
             <td><a class="btn btn-primary" [href]="print(it.request_number)"><span
-                  class="glyphicon glyphicon-print"></span>
+                  class="ik ik-printer"></span>
                 Print</a></td>
 
             <!-- <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'  class="btn btn-sm btn-danger" style="color: white"  (click)="delete(it.request_number,i)"><i  class="fa fa-trash"><app-timer [hr]="it.time_to_delete_per_hour"></app-timer></i> </button></td>  -->

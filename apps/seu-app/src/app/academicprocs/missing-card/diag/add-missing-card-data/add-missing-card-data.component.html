@@ -4,7 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5  class="modal-title  " id="exampleModalLabel">    طلب بطاقة جامعية بدل فاقد  </h5>
-          
+
       </div>
       <div class="modal-body">
         <P class="text-center">  </P>
@@ -20,7 +20,7 @@
               </ul>
         </div>
         <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
-            <div class="main-content" style="padding-top:0;">
+            <div  class="main-content">
             <section  class="ser-state">
                 <div class="container">
                      <div class="row ser-block">
@@ -30,7 +30,7 @@
                                  <input name="name" #name="ngModel" [(ngModel)]="card.name" class="form-control" >
                               </div>
                                 <div class="progress progress-sm">
-                                    <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                    <div class="progress-bar bg-info"></div>
                                 </div>
                          </div>
                           <div class="col-md-12 col-sm-12">
@@ -39,7 +39,7 @@
                                 <input name="ssn" #ssn="ngModel" [(ngModel)]="card.ssn" class="form-control" >
                               </div>
                                 <div class="progress progress-sm">
-                                    <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                    <div class="progress-bar bg-info"></div>
                                 </div>
                         </div>
                         <div class="col-md-12 col-sm-12">
@@ -48,46 +48,46 @@
                               <input name="phone" #phone="ngModel" [(ngModel)]="card.phone" class="form-control" >
                             </div>
                               <div class="progress progress-sm">
-                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  <div class="progress-bar bg-info"></div>
                               </div>
                       </div>
                         <div class="col-md-12 col-sm-12">
                             <div class="state">
                               <h6>المرحلة الدراسية</h6>
-                                      <select name="level" #level="ngModel" [(ngModel)]="card.level" class="form-control" 
+                                      <select name="level" #level="ngModel" [(ngModel)]="card.level" class="form-control"
                           [class.is-invalid]="card.level==''">
-                            <option value="">اختر المرحلة الدراسية</option> 
+                            <option value="">اختر المرحلة الدراسية</option>
                             <option *ngFor="let item of reqData.levels" value="{{item.id}}">{{item.value}}</option>
                           </select>
                             </div>
                               <div class="progress progress-sm">
-                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  <div class="progress-bar bg-info"></div>
                               </div>
                       </div>
                         <div class="col-md-12 col-sm-12">
                             <div class="state">
                               <h6> فترة الدراسة </h6>
-                              <select name="time" #time="ngModel" [(ngModel)]="card.time" class="form-control" 
+                              <select name="time" #time="ngModel" [(ngModel)]="card.time" class="form-control"
                               [class.is-invalid]="card.time==''">
                                 <option value="">اختر فترة الدراسة</option>
                                 <option *ngFor="let item of reqData.times" value="{{item.id}}">{{item.value}}</option>
                               </select>
                             </div>
                               <div class="progress progress-sm">
-                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  <div class="progress-bar bg-info"></div>
                               </div>
                       </div>
                         <div class="col-md-12 col-sm-12">
                             <div class="state">
                               <h6>اليوم </h6>
-                              <select name="day" #time="ngModel" [(ngModel)]="card.day" class="form-control" 
+                              <select name="day" #time="ngModel" [(ngModel)]="card.day" class="form-control"
                               [class.is-invalid]="card.day==''">
                                 <option value="">اختر اليوم </option>
                                 <option *ngFor="let item of reqData.days" value="{{item.id}}">{{item.value}}</option>
                               </select>
                             </div>
                               <div class="progress progress-sm">
-                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  <div class="progress-bar bg-info"></div>
                               </div>
                       </div>
                         <div class="col-md-12 col-sm-12">
@@ -100,7 +100,7 @@
                                 </div>
                             </div>
                               <div class="progress progress-sm">
-                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  <div class="progress-bar bg-info"></div>
                               </div>
                       </div>
                       <div class="col-md-12 col-sm-12">
@@ -109,14 +109,14 @@
                             <div class="custom-file">
                                 <input name="ssn_file"  type="file" accept="*/*" (change)="handleInputChangeFile($event)" class="custom-file-input" />
                                  <label  for="customFileLang"  class="custom-file-label ">
-                                 </label> 
+                                 </label>
                               </div>
                             </div>
-                             
+
                             <div class="progress progress-sm">
-                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                <div class="progress-bar bg-info"></div>
                             </div>
-                    
+
                      </div>
                   </div>
                 </div>
@@ -129,14 +129,14 @@
            </div>
             </div>
 
-       
+
       </form>
 
-    
+
 
 
       </div>
   </div>
-      
+
    </div>
 </mat-dialog-content>

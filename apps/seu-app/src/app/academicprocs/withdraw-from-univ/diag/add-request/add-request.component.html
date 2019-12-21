@@ -3,58 +3,70 @@
 
 
 
+  <div class="modal-dialog" role="document" dir="rtl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب انسحاب من الجامعه</h5>
 
-
-  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-
-    <div class="widget">
-      <div class="widget-header">
-        <h3 class="widget-title">طلب انسحاب من الجامعه</h3>
       </div>
+      <div class="modal-body">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
 
-      <div class="row ser-block">
-        <div class=" col-md-12 col-sm-12">
-          <div class="state">
-            <h6>الفرع </h6>
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>الفرع </h6>
 
-            <select required name="branch" #BranchID="ngModel" [(ngModel)]="withdraw.branch" class="form-control"
-              [class.is-invalid]=" withdraw.branch==''">
-              <option value="">اختر اقرب فرع</option>
-              <option *ngFor="let item of reqData.branches" value="{{item.id}}">{{item.name}}</option>
-            </select>
+                <select required name="branch" #BranchID="ngModel" [(ngModel)]="withdraw.branch" class="form-control"
+                  [class.is-invalid]=" withdraw.branch==''">
+                  <option value="">اختر اقرب فرع</option>
+                  <option *ngFor="let item of reqData.branches" value="{{item.id}}">{{item.name}}</option>
+                </select>
 
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="row ser-block">
-        <div class=" col-md-12 col-sm-12">
-          <div class="state">
-            <h6>رقم الهاتف </h6>
-            <input required name="mobile" #mobile="ngModel" [(ngModel)]="withdraw.mobile" class="form-control"
-              [class.is-invalid]="withdraw.mobile==null">
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>رقم الهاتف </h6>
+                <input required name="mobile" #mobile="ngModel" [(ngModel)]="withdraw.mobile" class="form-control"
+                  [class.is-invalid]="withdraw.mobile==null">
 
 
-          </div>
+              </div>
 
-        </div>
-      </div>
-
-
-      <div class="row ser-block">
-        <div class=" col-md-12 col-sm-12">
-          <div class="state">
-            <h6>البريد الإلكتروني </h6>
-            <input email required type="email" name="email" #email="ngModel" [(ngModel)]="withdraw.email"
-              class="form-control" [class.is-invalid]="withdraw.email==''">
+            </div>
           </div>
 
-        </div>
+
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>البريد الإلكتروني </h6>
+                <input email required type="email" name="email" #email="ngModel" [(ngModel)]="withdraw.email"
+                  class="form-control" [class.is-invalid]="withdraw.email==''">
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+              الغاء</button>
+
+            <button [disabled]="form.invalid" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+              حفظ</button>
+          </div>
+        </form>
+
+
       </div>
-
-
     </div>
 
-    <!-- <div *ngIf="reqData.display_bank_account">
+  </div>
+
+
+  <!-- <div *ngIf="reqData.display_bank_account">
             <div class="form-row">
               <div class="form-group col-md-12">
                 <div class="input-group">
@@ -81,13 +93,7 @@
 
           </div>
         -->
-    <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-      <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
-        الغاء</button>
 
-      <button [disabled]="form.invalid" type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
-    </div>
-  </form>
 
 
 
