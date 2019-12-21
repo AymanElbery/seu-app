@@ -48,7 +48,7 @@ export class NotificationsService {
     this.getList(this.userService.getActiveRoleDetails().username);
     setTimeout(() => {
       this.reload();
-    }, 1000);
+    }, 60000);
   }
 
   getList(username) {
