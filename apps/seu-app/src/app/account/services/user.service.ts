@@ -51,7 +51,7 @@ export class UserService extends BaseService {
       .pipe(map((res: any) => res), catchError(err => { console.error(err); return throwError(err); }));
   }
 
-  relogin(){
+  relogin() {
     console.log("RELOGIN");
     localStorage.removeItem('sid');
     window.location.href = "https://seuapps.seu.edu.sa/sso/login-ss.php";
@@ -79,7 +79,7 @@ export class UserService extends BaseService {
         this.userData.activeRole = this.userData.role;
 
         this.userDataLoaded = true;
-        this.userDataSubject.next(this.userData);
+        this.pushUserDataChanges();
         return this.userData;
       });
     }
@@ -88,5 +88,22 @@ export class UserService extends BaseService {
   loadUserDetailsData() {
     //console.log('user details  data');
     return this.httRequest.GetRequest('user').toPromise();
+  }
+  pushUserDataChanges() {
+    this.userDataSubject.next(this.userData);
+  }
+
+  getActiveRoleDetails() {
+    let data;
+    if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'UG') {
+      data = JSON.parse(JSON.stringify(this.userData.student_details));
+      data['username'] = data['id'];
+    } else if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'GR') {
+      data = JSON.parse(JSON.stringify(this.userData.student_details_gr));
+      data['username'] = data['id'];
+    } else {
+      data = JSON.parse(JSON.stringify(this.userData));
+    }
+    return data;
   }
 }
