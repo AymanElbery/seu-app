@@ -11,21 +11,21 @@ import { Router } from '@angular/router';
 export class NotificationsService {
 
   private NOTIFICAATIONSETTINGS = {
-    withdrawuniv: { path: 'procedures/withdrawuniv' },
-    postpone: { path: 'procedures/postpone' },
-    summer: { path: 'procedures/summer' },
-    cancelcourse: { path: 'procedures/cancelcourse' },
-    execuse: { path: 'procedures/execuse' },
-    equalize: { path: 'procedures/equalize' },
-    eequalize: { path: 'procedures/eequalize' },
-    reenrol: { path: 'procedures/reenrol' },
+    WITHDRAW_REQUEST: { path: '/procedures/withdrawuniv' },
+    POSTPHONE_REQUEST: { path: '/procedures/postpone' },
+    SUMMER_WITHDRAW: { path: '/procedures/summer' },
+    CANCEL_COURSE: { path: '/procedures/cancelcourse' },
+    EXCUSE_REQUEST: { path: '/procedures/execuse' },
+    RETURN_REQUEST: { path: '/procedures/reenrol' },
     CHANGE_MAJOR: { path: '/procedures/changemajor' },
-    changerequest: { path: '/procedures/changerequest' },
+    CHANGE_CAMP: { path: '/procedures/changerequest' },
     objectexam: { path: '/procedures/objectexam' },
     lecexecuse: { path: '/procedures/lecexecuse' },
     terminate: { path: '/procedures/terminate' },
     visitorstudent: { path: '/procedures/visitorstudent' },
-    lectabs: { path: "/procedures/lectabs" }
+    lectabs: { path: "/procedures/lectabs" },
+    equalize: { path: '/procedures/equalize' },
+    eequalize: { path: '/procedures/eequalize' }
   }
 
   notsURL = "https://apps.seu.edu.sa/api/api/notifications/";
