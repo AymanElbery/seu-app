@@ -50,7 +50,11 @@ export class AddRequestComponent implements OnInit {
         this.dialogRef.close();
       }
       this.requesting = false;
-    });
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
+      });
 
 
 

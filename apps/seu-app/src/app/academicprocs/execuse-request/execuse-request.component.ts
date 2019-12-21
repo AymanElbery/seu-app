@@ -36,6 +36,11 @@ export class ExecuseRequestComponent implements OnInit {
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }

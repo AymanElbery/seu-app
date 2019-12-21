@@ -8,7 +8,7 @@ export class AppToasterService {
 
   constructor(private toastr: ToastrService) { }
   tryagain(){
-    this.push([{type:'error',body:'حاول مرة أخري'}]);
+    this.push([{type:'error',body:'خطأ: حاول مرة أخري'}]);
   }
   push(messages) {
 
