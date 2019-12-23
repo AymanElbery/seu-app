@@ -29,6 +29,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-size: 12px;
 
 }
 
@@ -36,7 +37,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-family: fontreg;
   position: relative;
-  font-size: 14px;
+
   line-height: 24px;
   color: #222;
 }
@@ -1186,9 +1187,9 @@ a.join-class {
   margin: 29px 0px 31px;
 }
 
-.class-content p {
+/* .class-content p {
   font-size: 15px;
-}
+} */
 
 .class-content i {
   color: #1c2172;
@@ -1586,7 +1587,7 @@ a.join-class {
 }
 
 .testimonial-two .tst2-content p {
-  font-size: 15px;
+  /* font-size: 15px; */
   color: #e2dddd;
 }
 
@@ -1736,7 +1737,7 @@ a.join-class {
 
 
 #footer .footer-top .footer-info p {
-  font-size: 14px;
+  /* font-size: 14px; */
   line-height: 24px;
   margin-bottom: 0;
   color: #fff;
@@ -1837,9 +1838,9 @@ a.join-class {
     font-size: 34px;
   }
 
-  #intro p {
+  /* #intro p {
     font-size: 16px;
-  }
+  } */
 
   nav.navbar .navbar-brand img.logo {
     width: 90%;
@@ -2388,7 +2389,7 @@ a.join-class {
 
 .student-box p {
   color: #1c2172;
-  font-size: 16px;
+  /* font-size: 16px; */
   margin-bottom: 30px;
 }
 

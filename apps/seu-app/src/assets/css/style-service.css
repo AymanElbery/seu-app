@@ -12,10 +12,6 @@ body {
   font-size: 12px;
 }
 
-.widget .widget-header .widget-title {
-  font-size: 18px;
-}
-
 .widget {
   overflow: visible;
   margin-top: -10px;
@@ -640,7 +636,6 @@ div.pub-ser2 {
 }
 
 .new-ser a {
-  font-size: 14px;
   color: #1c2172
 }
 
@@ -653,9 +648,9 @@ div.pub-ser2 {
 }
 
 .wrapper .page-wrap .footer {
-  padding: 15px 0px;
+  padding: 10px 240px 10px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
-  font-size: 13px;
+  font-size: 10px;
   text-align: center;
 }
 
@@ -906,4 +901,10 @@ select.form-control {
   justify-content: stretch;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+h6.news-title {
+  font-size: 1rem;
+  line-height: 25px;
+  margin-bottom: 5px;
 }
