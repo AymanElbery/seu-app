@@ -6,12 +6,13 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class CourseEqualizerService {
+  newreqs = false;
 
   reqData;
   msgs;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = 'stdservicesapi';
-			  }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = 'stdservicesapi';
+  }
 
   getِgetRequests() {
     this.configService.baseUrl = 'stdservicesapi';
@@ -27,21 +28,21 @@ export class CourseEqualizerService {
   deleteReq(id) {
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.httRequest.GetRequest('course_transfer_service/remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('course_transfer_service/remove/' + id).toPromise();
 
   }
 
-   Download(req) {
+  Download(req) {
     this.configService.baseUrl = 'stdservicesapi';
 
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
-    return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req + '?sid=' + sid ;
-   }
-   DownloadEng() {
+    return this.configService.getApiURI() + '/course_transfer_service/download/crse_transfer/' + req + '?sid=' + sid;
+  }
+  DownloadEng() {
     this.configService.baseUrl = 'stdservicesapi';
 
 
     return this.configService.getApiURI() + '/postpone_service/download?Lang=en';
-   }
+  }
 }
