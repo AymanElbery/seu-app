@@ -20,7 +20,7 @@ import { MasterPaymentComponent } from './master-payment/master-payment.componen
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    //BrowserAnimationsModule
   ]
 })
 export class MasterFinanceAffairModule { }

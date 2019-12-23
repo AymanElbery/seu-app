@@ -6,12 +6,12 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class ChangeRequestService {
-
+  newreqs = false;
   reqData;
   msgs;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = 'stdservicesapi';
-			  }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = 'stdservicesapi';
+  }
 
   getِgetRequests() {
     this.configService.baseUrl = 'stdservicesapi';
@@ -27,7 +27,7 @@ export class ChangeRequestService {
   deleteReq(id) {
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.httRequest.GetRequest('change_camp_service/remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('change_camp_service/remove/' + id).toPromise();
 
   }
 

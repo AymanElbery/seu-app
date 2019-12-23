@@ -70,7 +70,6 @@ import { MatDialogModule, MatCheckboxModule } from '@angular/material';
     MatNativeDateModule,
     MatDatepickerModule,
     FormsModule,
-    BrowserAnimationsModule,
     ToastrModule.forRoot(),
     MatDialogModule,
     MatCheckboxModule,

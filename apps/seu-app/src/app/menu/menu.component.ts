@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  showMySystem = false;
   menuType = 1;
   acStd = false;
   showServices = false;
@@ -17,36 +18,33 @@ export class MenuComponent implements OnInit {
 
 
   fillmenu() {
-
-    //console.log('userService.userData.level');
+    /*if (this.userService.userData.role == 'Employee' || this.userService.userData.role == 'Instructor') {
+      this.showMySystem = true;
+    }*/
+    //console.log('userService.userData.level',this.userService.userData.level);
     //console.log('userService.userData.level : ' + this.userService.userData.level);
-    this.acStd = false;
-    if (!this.userService.userData.act_as_student && this.userService.userData.level === 'UG') {
+    this.acStd = this.userService.userData.act_as_student;
+    if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'UG') {
       //console.log('level ug');
       this.menuType = 1;
       this.showServices = true;
-
-    } else if (!this.userService.userData.act_as_student && this.userService.userData.level === 'GR') {
+    } else if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'GR') {
       //console.log('level GR');
-
       this.menuType = 2;
       this.showServices = true;
     } else {
       this.menuType = 0;
+      this.showServices = this.userService.userData.act_as_student;
       //console.log('else');
       //console.log(this.userService.userData.act_as_student);
-      if (this.userService.userData.act_as_student) {
-
+      /*if (this.userService.userData.act_as_student) {
         this.acStd = this.userService.userData.act_as_student;
         this.showServices = this.acStd;
         //console.log('ac as ' + this.acStd);
       } else {
         this.acStd = false;
         this.showServices = false;
-
-
-
-      }
+      }*/
     }
   }
   ngOnInit() {
@@ -58,6 +56,11 @@ export class MenuComponent implements OnInit {
 
     });
 
+  }
+
+  redirectTo(status) {
+    this.onChange(status);
+    this.fillmenu();
   }
 
   onChange(e) {
@@ -87,8 +90,7 @@ export class MenuComponent implements OnInit {
       this.userService.userData.level = this.userService.userData.student_details_gr.level;
       this.userService.userData.camp = this.userService.userData.student_details_gr.camp;
       this.router.navigateByUrl('/home/msc');
-
-
     }
+    this.userService.pushUserDataChanges();
   }
 }

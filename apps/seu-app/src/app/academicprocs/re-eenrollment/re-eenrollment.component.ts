@@ -6,6 +6,7 @@ import { ReEnrollService } from '../services/re-enroll.service';
 import { AddCourseCancelComponent } from '../cancel-course/diag/add-course-cancel/add-course-cancel.component';
 import { NgForm } from '@angular/forms';
 import { AddReEnrollComponent } from './diag/add-re-enroll/add-re-enroll.component';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-re-eenrollment',
@@ -13,9 +14,6 @@ import { AddReEnrollComponent } from './diag/add-re-enroll/add-re-enroll.compone
   styleUrls: ['./re-eenrollment.component.css']
 })
 export class ReEenrollmentComponent implements OnInit {
-
-
-
   printAR;
   reEnroll: ReEnroll;
   reqData;
@@ -23,18 +21,29 @@ export class ReEenrollmentComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ReEnrollService) { }
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ReEnrollService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-    this.reEnroll = {proof: '', reason: '', has_proof: '1'};
+    this.isLoading = true;
+    this.reEnroll = { proof: '', reason: '', has_proof: '1' };
+    this.getRequests();
+  }
+
+
+  getRequests() {
+    this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-    this.isLoading=false;
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
@@ -45,46 +54,39 @@ export class ReEenrollmentComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
 
-    this.dialog.open(AddReEnrollComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-        });
-  }
-  onSubmit(form: NgForm) {
-this.addRequest(form.value);
-
-
+    let dialogref = this.dialog.open(AddReEnrollComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
+    });
   }
 
   print(req) {
-return    this.acadmicProc.Download(req);
+    return this.acadmicProc.Download(req);
 
   }
+  deleting = false;
   delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.msgs =   (res as any).messages;
-
-      this.status =   (res as any).status;
-
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-    
+    if (confirm('هل انت متأكد؟')) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
+        }
+        this.deleting = false;
+      }
+        , err => {
+          this.toastr.tryagain();
+          this.deleting = false;
         });
-        if(this.status == 1)
-          this.acadmicProc.reqData.requests.splice(index, 1);
-    });
-
+    }
   }
 
-}
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
-
-}
-
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
+  }
 
 }

@@ -7,7 +7,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
 })
 export class LectureExecuseServiceService {
 
-
+  newreqs = false;
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {

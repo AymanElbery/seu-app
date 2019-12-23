@@ -4,39 +4,40 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب تأجيل من الجامعه</h5>
-        
+
       </div>
       <div class="modal-body">
-        <P class="text-center">  </P>
+        <P class="text-center"> </P>
         <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-          
-    
-        
-         
-       
-        <div class="form-row">
+
+
+
+
+
+          <div class="form-row">
             <div class="form-group col-md-12">
               <div class="input-group">
                 <div class="input-group-prepend">
                   <div class="input-group-text"> السبب</div>
                 </div>
-                <input name="reason" #reason="ngModel" [(ngModel)]="postpone.reason" class="form-control" >
+                <input name="reason" #reason="ngModel" [(ngModel)]="postpone.reason" class="form-control">
               </div>
             </div>
-           
-          </div>
-          
-            
-     
-         
-        <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-                    <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
 
-          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
-        </div>
-      </form>
+          </div>
+
+
+
+
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+              الغاء</button>
+
+            <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+          </div>
+        </form>
       </div>
+    </div>
+
   </div>
-      
-   </div>
 </mat-dialog-content>

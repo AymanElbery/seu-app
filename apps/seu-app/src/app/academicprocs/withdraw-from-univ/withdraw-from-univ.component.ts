@@ -6,6 +6,9 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddRequestComponent } from './diag/add-request/add-request.component';
 import { ToastrService } from 'ngx-toastr';
 import { DOCUMENT } from '@angular/common';
+import { callLifecycleHooksChildrenFirst } from '@angular/core/src/view/provider';
+import { HttpRequest } from '@angular/common/http';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 
 @Component({
@@ -20,20 +23,29 @@ export class WithdrawFromUnivComponent implements OnInit {
   reqData;
   msgs;
   status;
-  isLoading = false;
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: WithdrawFromUnivService) { }
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: WithdrawFromUnivService) { }
 
   ngOnInit() {
     this.isLoading = true;
-    this.withdraw = {FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile : null, bankimage : '', BANKID: 0};
+    this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
+    this.getRequests();
+  }
+
+  isLoading = false;
+  getRequests() {
+    this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-    this.isLoading=false;
-    ////console.log(this.reqData.reqs);
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
@@ -43,47 +55,42 @@ export class WithdrawFromUnivComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
-    dialogConfig.direction="rtl";
+    dialogConfig.direction = "rtl";
 
-    this.dialog.open(AddRequestComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-        });
-  }
-  onSubmit(form: NgForm) {
-this.addRequest(form.value);
-
-
-  }
-
-  print(req) {
-return    this.acadmicProc.Download(req);
-
-  }
-  delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.msgs =   (res as any).messages;
-
-      this.status =   (res as any).status;
-
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-    
-        });
-        if(this.status == 1)
-          this.acadmicProc.reqData.requests.splice(index, 1);
+    let dialogref = this.dialog.open(AddRequestComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
     });
   }
 
-}
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
+  print(req) {
+    return this.acadmicProc.Download(req);
 
-}
+  }
+  deleting = false;
+  delete(id, index) {
+    if (confirm('هل انت متأكد؟')) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
+        }
+        this.deleting = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }
+
+  }
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
+
+  }
 
 
 }

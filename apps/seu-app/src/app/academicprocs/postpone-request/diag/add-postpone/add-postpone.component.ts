@@ -5,6 +5,7 @@ import { TermPostponeService } from 'src/app/academicprocs/services/term-postpon
 import { AddRequestComponent } from 'src/app/academicprocs/withdraw-from-univ/diag/add-request/add-request.component';
 import { ToastrService } from 'ngx-toastr';
 import { Postpone } from 'src/app/shared/models/postpone';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-postpone',
@@ -15,37 +16,39 @@ export class AddPostponeComponent implements OnInit {
 
   postpone: Postpone;
   reqData: any;
-msgs: any;
-private imageSrc = '';
+  msgs: any;
+  private imageSrc = '';
 
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddPostponeComponent>,
-               private toastr: ToastrService, private acadmicProc: TermPostponeService ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddPostponeComponent>,
+    private toastr: AppToasterService, private acadmicProc: TermPostponeService) { }
 
   ngOnInit() {
-    this.postpone = { reason: ''};
+    this.postpone = { reason: '' };
     this.reqData = this.acadmicProc.reqData;
 
   }
-
+  requesting = false;
   addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      //console.log(data);
-      this.msgs =   (res as any).messages;
-      //console.log(this.msgs);
-      this.msgs.forEach((element: any) => {
-    this.toastr.success('', element.body);
-
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+    err => {
+      this.toastr.tryagain();
+      this.requesting = false;
     });
-        });
-
-
-
   }
   onSubmit(form: NgForm) {
-this.addRequest(form.value);
-this.dialogRef.close();
-
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
+    this.addRequest(form.value);
   }
   closeDiag() {
     this.dialogRef.close();

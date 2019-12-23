@@ -6,7 +6,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class TermExecuseService {
-
+  newreqs = false;
   reqData;
   msgs;
  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {

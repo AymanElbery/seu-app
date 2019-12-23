@@ -24,7 +24,7 @@ import { AcademicRecordService } from './services/academic-record.service';
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    //BrowserAnimationsModule
   ],
   providers: [AcademicStatusService, AcademicRecordService]
 })

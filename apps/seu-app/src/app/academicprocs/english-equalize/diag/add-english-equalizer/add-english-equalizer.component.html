@@ -1,31 +1,31 @@
 <mat-dialog-content dir="rtl">
-   
+
     <div class="modal-dialog" role="document"style="direction: rtl;">
         <div class="modal-content">
         <div class="modal-header">
           <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">      طلب معادلة اللغه الانجليزيه </h5>
-          
+
         </div>
         <div class="modal-body">
         <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-          <div class="main-content" style="padding-top:0;">
+          <div  class="main-content">
             <P class="text-center">
               <span style="font-weight: bold; font-size: 15px;" >{{reqData.notes.txt1}} </span>
                <br />
-               {{reqData.notes.txt2}} : 
-        
+               {{reqData.notes.txt2}} :
+
                 <br />
                 {{reqData.notes.txt3}}
-        
+
                 <br />
                 {{reqData.notes.txt4}}
-        
+
                 <br />
                 {{reqData.notes.txt5}}
                 <br />
                 {{reqData.notes.txt6}}
                 <br />
-               
+
                 {{reqData.notes.txt11}}
               </P>
               <table style="text-align: center" class="table table-bordered">
@@ -69,48 +69,48 @@
                                     <tr>
                                       <th scope="col">اسم الاختبار </th>
                                       <th scope="col">الدرجه  </th>
-                    
+
                                       <th scope="col">   </th>
-                                
+
                                     </tr>
                                   </thead>
                                   <tbody>
                                     <tr *ngFor="let it of reqData.ENG_TESTS;let i=index;">
                                       <td>{{it.TEST_TITLE}}</td>
-                                     
-                                
+
+
                                       <td>    <input   #score="ngModel" name="score" [(ngModel)]="it.score"  class="form-control col-md-10" min="1" max="10" type="number" value="1" id="example-number-input"/>
                                       </td>
-                                     
-                                    
-                                      
-                                
+
+
+
+
                                       <td>
                                           <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event)" #chkCourse  id="defaultUnchecked">
                                      </td>
-                                
+
                                     </tr>
-                                    
+
                                   </tbody>
-                                </table> 
+                                </table>
                              </div>
-                            
+
                               <div class="progress progress-sm">
-                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  <div class="progress-bar bg-info"></div>
                               </div>
                             </div>
 
                        <div class="col-md-12 col-sm-12">
                           <div class="state">
-                         <h6>صورة الشهادة </h6> 
+                         <h6>صورة الشهادة </h6>
                              <div class="custom-file">
                                   <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)"  id="customFileLang"  class="custom-file-input"/>
                                   <label  for="customFileLang"  class="custom-file-label ">
-                              </label> 
+                              </label>
                               </div>
                           </div>
                             <div class="progress progress-sm">
-                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                <div class="progress-bar bg-info"></div>
                             </div>
                      </div>
                     </div>
@@ -119,21 +119,21 @@
               <!-- <div class="image-upload">
                   <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)" />
               </div>  -->
-              <div style="margin-top: 10px;"> 
+              <div style="margin-top: 10px;">
                 <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
                   <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
                   <button  type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
                </div>
             </div>
-           
+
             </div>
           </form>
           </div>
-          
+
         </div>
 
      </div>
-    
-          
-    
+
+
+
     </mat-dialog-content>

@@ -1,79 +1,78 @@
 <mat-dialog-content dir="rtl">
-    <div class="modal-content">
-        <div class="modal-header">
-       
-          <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">  الغاء مقرر</h5>
-          
-        </div>
-        <div class="modal-body">
-      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-          <div class="main-content" style="padding-top:0;">
-              <P class="text-center">
-                  <span style="font-weight: bold; font-size: 15px;color: red;" > {{reqData.notes.txt1}}    </span>
-                   <br />
-                   {{reqData.notes.txt2}} 
-            
-                    <br />
-                    {{reqData.notes.txt3}}
-            
-                    <br />
-                    {{reqData.notes.txt4}}
-            
-                   
-                  </P>
-              <section  class="ser-state">
-                  <div class="container">
-                       <div class="row ser-block">
-                          <div class="col-md-12 col-sm-12">
-                              <div class="state">
-                                 <h6>حدد المقرر  </h6>
-                                 <table dir="rtl" style="text-align: center" class="table">
-                                    <thead>
-                                      <tr>
-                                        <th scope="col">اسم المقرر </th>
-                                        <th scope="col"> رمز المقرر</th>
-                                        <th scope="col">عدد الساعات </th>
-                                        <th scope="col">   </th>
-                                  
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr *ngFor="let it of reqData.RegisteredCourses;let i=index;">
-                                        <td>{{it.CRSE_TITLE}}</td>
-                                      
-                                  
-                                        <td>{{it.CRES_CODE}}</td>
-                                        <td>{{it.CREDIT_HR}}</td>
-                                    
-                                  
-                                        <td>
-                                            <input type="checkbox" name="chkCourse" (change)="changeStatus(it.CRES_CODE,$event,i)" #chkCourse  id="defaultUnchecked">
-                                      </td>
-                                  
-                                      </tr>
-                                      
-                                    </tbody>
-                                  </table>
-                              </div>
-                                <div class="progress progress-sm">
-                                    <div class="progress-bar bg-info" style="width: 15%;"></div>
-                                </div>
-                         </div>
+  <div class="modal-content">
+    <div class="modal-header">
 
-       
-                      </div>
-                       <div style="margin-top: 10px;">
-                        <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-                                    <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> الغاء مقرر</h5>
 
-                              <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
-                                </div>
-                      </div>
-                  </div>
-                  </section>
-                </div>
-      </form>
-      </div>
     </div>
-  </mat-dialog-content>
- 
+    <div class="modal-body">
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="main-content">
+          <P class="text-center">
+            <span style="font-weight: bold; font-size: 15px;color: red;"> {{reqData.notes.txt1}} </span>
+            <br />
+            {{reqData.notes.txt2}}
+
+            <br />
+            {{reqData.notes.txt3}}
+
+            <br />
+            {{reqData.notes.txt4}}
+
+
+          </P>
+          <section class="ser-state">
+            <div class="row ser-block">
+              <div class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>حدد المقرر </h6>
+                  <table dir="rtl" style="text-align: center" class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">اسم المقرر </th>
+                        <th scope="col"> رمز المقرر</th>
+                        <th scope="col">عدد الساعات </th>
+                        <th scope="col"> </th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let it of reqData.RegisteredCourses;let i=index;">
+                        <td>{{it.CRSE_TITLE}}</td>
+
+
+                        <td>{{it.CRES_CODE}}</td>
+                        <td>{{it.CREDIT_HR}}</td>
+
+
+                        <td>
+                          <input type="checkbox" name="chkCourse" (change)="changeStatus(it.CRN,$event,i)"
+                            #chkCourse id="defaultUnchecked">
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+
+            </div>
+
+
+          </section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+            الغاء</button>
+
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

@@ -9,10 +9,10 @@ export class VisitorStudentService {
   reqData;
   msgs;
 
-
+  newreqs = false;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = 'stdservicesapi';
-}
+    this.configService.baseUrl = 'stdservicesapi';
+  }
 
   getِgetRequests() {
     // ?std_id=S180105049
@@ -43,9 +43,9 @@ export class VisitorStudentService {
 
   Download(req) {
     this.configService.baseUrl = 'stdservicesapi';
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/visitor_student_service/download/' + req + '?sid=' + sid ;
+    return this.configService.getApiURI() + '/visitor_student_service/download/' + req + '?sid=' + sid;
   }
 }

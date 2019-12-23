@@ -6,7 +6,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class ReEnrollService {
-
+  newreqs=false;
   reqData;
   msgs;
 

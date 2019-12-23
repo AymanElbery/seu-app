@@ -4,6 +4,7 @@ import { CourseEqualizerService } from 'src/app/academicprocs/services/course-eq
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-course-equalize',
@@ -15,21 +16,23 @@ export class AddCourseEqualizeComponent implements OnInit {
   curseEqual: CourseEqual;
   reqData: CourseEqual;
   msgs: any;
-private imageSrc = '';
+  private imageSrc = '';
 
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddCourseEqualizeComponent>,
-               private toastr: ToastrService, private acadmicProc: CourseEqualizerService ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddCourseEqualizeComponent>,
+    private toastr: AppToasterService, private acadmicProc: CourseEqualizerService) { }
 
   ngOnInit() {
-    this.curseEqual = {courses: [],
+    this.curseEqual = {
+      courses: [],
       can_add_new_request: false,
-       course_list: [],
-       messages: [],
-       univ_list_arr: [],
-       PREV_UNIV: 0,
-       DESC_CRSE_FILE: '', TRANSCRIPT_FILE: '', notes: ''};
-    this.reqData = this.acadmicProc.reqData as CourseEqual ;
+      course_list: [],
+      messages: [],
+      univ_list_arr: [],
+      PREV_UNIV: 0,
+      DESC_CRSE_FILE: '', TRANSCRIPT_FILE: '', notes: ''
+    };
+    this.reqData = this.acadmicProc.reqData as CourseEqual;
 
   }
   changeStatus(it, e) {
@@ -39,7 +42,7 @@ private imageSrc = '';
       this.curseEqual.courses.push(it);
       ////console.log(this.curseEqual.courses[0]);
     } else {
-      for (let i = 0 ; i < this.curseEqual.courses.length; i++) {
+      for (let i = 0; i < this.curseEqual.courses.length; i++) {
         if (this.curseEqual.courses[i].TRNS_CRSE == it.TRNS_CRSE) {
           this.curseEqual.courses.splice(i, 1);
         }
@@ -75,24 +78,29 @@ private imageSrc = '';
 
     ////console.log(this.curseEqual.TRANSCRIPT_FILE);
   }
+
+  requesting = false;
   addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-   this.msgs =   (res as any).messages;
-   this.msgs.forEach((element: any) => {
-    this.toastr.success('', element.body);
-
-    });
-        });
-
-
-
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
+      });
   }
   onSubmit(form: NgForm) {
+    if (this.requesting) {
+      return false;
+    }
 
-this.addRequest(this.curseEqual);
-////console.log(this.curseEqual);
-this.dialogRef.close();
-
+    this.requesting = true;
+    this.addRequest(this.curseEqual);
   }
   closeDiag() {
     this.dialogRef.close();

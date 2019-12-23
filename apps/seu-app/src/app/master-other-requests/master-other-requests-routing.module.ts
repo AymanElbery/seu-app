@@ -8,9 +8,9 @@ import { GraduateProfileComponent } from './graduate-profile/graduate-profile.co
 
 
 
-const routes: Routes = [{ path: 'otherrequests', component: AbsenceQueryComponent },
+const routes: Routes = [{ path: '', component: AbsenceQueryComponent },
 {
-  path: 'otherrequests',
+  path: '',
   children: [
   { path: 'absencequery',  component: AbsenceQueryComponent },
   { path: 'changebranch',  component: ChangeBranchComponent },
