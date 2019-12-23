@@ -6,8 +6,6 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddRequestComponent } from './diag/add-request/add-request.component';
 import { ToastrService } from 'ngx-toastr';
 import { DOCUMENT } from '@angular/common';
-import { callLifecycleHooksChildrenFirst } from '@angular/core/src/view/provider';
-import { HttpRequest } from '@angular/common/http';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 
