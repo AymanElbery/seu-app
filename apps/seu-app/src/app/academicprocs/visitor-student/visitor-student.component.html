@@ -73,7 +73,7 @@
             <td><a class="btn btn-sm btn-primary" style="color: white" [href]="printRequest(it.request_number)"><i
                   class="fa fa-print"></i> </a></td>
                   <td *ngIf='it.deletable'><button
-                    [disabled]='!it.deletable' class="btn btn-sm btn-danger"
+                    [disabled]='deleting' class="btn btn-sm btn-danger"
                     style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
                        <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
                     </i> </button></td>

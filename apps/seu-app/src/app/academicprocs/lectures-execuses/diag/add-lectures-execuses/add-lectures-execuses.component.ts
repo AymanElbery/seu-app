@@ -5,6 +5,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { CourseEqual } from 'src/app/shared/models/course-equal';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-lectures-execuses',
@@ -15,32 +16,34 @@ export class AddLecturesExecusesComponent implements OnInit {
 
   lectureExecuse: LectureExecuse;
   msgs: any;
-private imageSrc = '';
-reqData;
+  private imageSrc = '';
+  reqData;
 
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddLecturesExecusesComponent>,
-               private toastr: ToastrService, private acadmicProc: LectureExecuseServiceService ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddLecturesExecusesComponent>,
+    private toastr: AppToasterService, private acadmicProc: LectureExecuseServiceService) { }
 
   ngOnInit() {
-    this.lectureExecuse = {courses: [], attachment: '', reason: '', date: '', type: '', week: ''
+    this.lectureExecuse = {
+      courses: [], attachment: '', reason: '', date: '', type: '', week: '1'
     };
-    this.reqData = this.acadmicProc.reqData  ;
+    this.reqData = this.acadmicProc.reqData;
     //console.log(this.reqData);
 
   }
   changeStatus(it, e) {
     if (e.target.checked) {
-      this.lectureExecuse.courses.push({CRSE: it.CRN});
+      this.lectureExecuse.courses.push({ CRSE: it.CRN });
     } else {
-      for (let i = 0 ; i < this.lectureExecuse.courses.length; i++) {
+      for (let i = 0; i < this.lectureExecuse.courses.length; i++) {
         //console.log(this.lectureExecuse.courses[i]);
         //console.log(it.CRN);
         if (this.lectureExecuse.courses[i].CRSE === it.CRN) {
           this.lectureExecuse.courses.splice(i, 1);
         }
 
-      }    }
+      }
+    }
     //console.log(this.lectureExecuse.courses);
 
   }
@@ -66,25 +69,31 @@ reqData;
     this.lectureExecuse.attachment = reader.result;
     //console.log(this.lectureExecuse.attachment);
   }
+
+  requesting = false;
   addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-   this.msgs =   (res as any).messages;
-   this.msgs.forEach((element: any) => {
-    this.toastr.success('', element.body);
-
-    });
-        });
-
-
-
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
+      });
   }
   onSubmit(form: NgForm) {
+    if (this.requesting) {
+      return false;
+    }
 
-this.addRequest(this.lectureExecuse);
-//console.log(this.lectureExecuse);
-this.dialogRef.close();
-
+    this.requesting = true;
+    this.addRequest(this.lectureExecuse);
   }
+
   closeDiag() {
     this.dialogRef.close();
   }

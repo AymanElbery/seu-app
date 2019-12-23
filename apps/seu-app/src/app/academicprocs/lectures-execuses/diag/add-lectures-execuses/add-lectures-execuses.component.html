@@ -70,7 +70,6 @@
                       <h6> اختر نوع المحاضرة </h6>
                       <select name="type" #type="ngModel" [(ngModel)]="lectureExecuse.type" class="form-control"
                         [class.is-invalid]=" lectureExecuse.reason==''">
-                        <option value="">نوع المحاضره </option>
                         <option *ngFor="let item of reqData.lectures_type" value="{{item.id}}">{{item.value}}</option>
                       </select>
                     </div>
@@ -83,7 +82,6 @@
                       <h6> اختر الاسبوع </h6>
                       <select name="week" #week="ngModel" [(ngModel)]="lectureExecuse.week" class="form-control"
                         [class.is-invalid]=" lectureExecuse.week==''">
-                        <option value="">الاسبوع </option>
                         <option *ngFor="let item of reqData.weeks_list" value="{{item.id}}">{{item.value}}</option>
                       </select>
                     </div>
@@ -93,12 +91,13 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>سبب التغيب </h6>
-                      <select name="reason" #reason="ngModel" [(ngModel)]="lectureExecuse.reason" class="form-control"
-                        [class.is-invalid]=" lectureExecuse.reason==''">
-                        <option value="">العذر </option>
-                        <option *ngFor="let item of reqData.text_list" value="{{item.text1}}">{{item.text1}}</option>
+                      <h6> حدد التاريخ </h6>
+                      <select name="date" #date="ngModel" [(ngModel)]="lectureExecuse.date" class="form-control"
+                        [class.is-invalid]=" lectureExecuse.date==''">
+                        <option *ngFor="let item of reqData.weeks_dates[lectureExecuse.week]" value="{{item}}">{{item}}</option>
                       </select>
+                      <!-- <input style="direction: rtl;" class="form-control" name="date" #date="ngModel"
+                        [(ngModel)]="lectureExecuse.date" type="date" style="direction: rtl;text-align:right"> -->
                     </div>
                     <div class="progress progress-sm">
                       <div class="progress-bar bg-info"></div>
@@ -106,14 +105,20 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> حدد التاريخ </h6>
-                      <input style="direction: rtl;" class="form-control" name="date" #date="ngModel"
-                        [(ngModel)]="lectureExecuse.date" type="date" style="direction: rtl;text-align:right">
+                      <h6>سبب التغيب </h6>
+                      <textarea name="reason" #reason="ngModel" [(ngModel)]="lectureExecuse.reason"
+                        class="form-control"></textarea>
+                      <!-- <select name="reason" #reason="ngModel" [(ngModel)]="lectureExecuse.reason" class="form-control"
+                        [class.is-invalid]=" lectureExecuse.reason==''">
+                        <option value="">العذر </option>
+                        <option *ngFor="let item of reqData.text_list" value="{{item.text1}}">{{item.text1}}</option>
+                      </select> -->
                     </div>
                     <div class="progress progress-sm">
                       <div class="progress-bar bg-info"></div>
                     </div>
                   </div>
+
 
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
