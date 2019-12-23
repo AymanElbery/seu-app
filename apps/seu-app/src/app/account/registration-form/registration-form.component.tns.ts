@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
-import {HttpErrorResponse} from '@angular/common/http'
+import {HttpErrorResponse} from '@angular/common/http';
 import { finalize } from 'rxjs/operators';
 import { UserRegistration } from '../../shared/models/user.registration.interface';
-import * as dialogs from "tns-core-modules/ui/dialogs";
+import * as dialogs from 'tns-core-modules/ui/dialogs';
 
 @Component({
   selector: 'app-registration-form',
@@ -12,45 +12,44 @@ import * as dialogs from "tns-core-modules/ui/dialogs";
   styleUrls: ['./registration-form.component.tns.css']
 })
 export class RegistrationFormComponent implements OnInit {
-  errors: string;  
+  errors: string;
   isRequesting: boolean;
-  submitted: boolean = false;
-  constructor(private userService: UserService,private router: Router) { }
+  submitted = false;
+  constructor(private userService: UserService, private router: Router) { }
 
-  userdata:UserRegistration={email:'',firstName:'',lastName:'',password:'',address:'',username:''}
+  userdata: UserRegistration = {email: '', firstName: '', lastName: '', password: '', address: '', username: ''};
   ngOnInit() {
   }
   registerUser() {
-   
-   
-  dialogs.alert(this.userdata.firstName).then(()=> {
-    //console.log("Dialog closed!");
+
+
+  dialogs.alert(this.userdata.firstName).then(() => {
+    // console.log("Dialog closed!");
 });
-         //console.log(this.userdata.firstName);
-        this.userService.addUser(this.userdata.username ,this.userdata.email,this.userdata.password,this.userdata.firstName,this.userdata.lastName,this.userdata.address)
-                  .pipe( finalize(()=>{this.isRequesting=false;}))
+         // console.log(this.userdata.firstName);
+  // tslint:disable-next-line: max-line-length
+  this.userService.addUser(this.userdata.username , this.userdata.email, this.userdata.password, this.userdata.firstName, this.userdata.lastName, this.userdata.address)
+                  .pipe( finalize(() => {this.isRequesting = false; }))
                   .subscribe(
-                    result  => {if(result){
-                      
+                    result  => {if (result) {
+
                       this.ShowMessages(result.messages);
                     }},
-                   ( error) =>{ 
-                         
-                  
-                                       
-                      
-                    ;})
-         
- } 
+                   ( error) => {
 
- ShowMessages(msgs)
- {
 
-  if(msgs)
-  {
+
+
+                    });
+
+ }
+
+ ShowMessages(msgs) {
+
+  if (msgs) {
 msgs.forEach(element => {
-  dialogs.alert(element.body).then(()=> {
-    //console.log("Dialog closed!");
+  dialogs.alert(element.body).then(() => {
+    // console.log("Dialog closed!");
 });
 });
 

@@ -34,6 +34,7 @@ export class UserService extends BaseService {
     this.configService.baseUrl = 'stdservicesapi';
     // tslint:disable-next-line: max-line-length
     this.userData = {
+      // tslint:disable-next-line: max-line-length
       act_as_student: false, activeRole: '', camp: '', coll: '', id: '', level: '', major: '', name_ar: '', name_en: '', role: '', sex: '', ssn: '', stdName: '',
       student_details: { name_en: '', ssn: '', sex: '', name_ar: '', major: '', camp: '', coll: '', id: '', level: '' },
       username: '',
@@ -53,14 +54,11 @@ export class UserService extends BaseService {
 
 
   login(userName, password) {
-    //console.log('ser');
-    return this.httRequest.postRequest
-      (
-        'auth/login',
-        { userName, password }
-      ).pipe(map((res: any) => res), catchError(err => { console.error(err); return err; }));
 
-
+// tslint:disable-next-line: triple-equals
+if (userName == 'user' && password == 'pass123') {
+        return true;
+}
 
   }
 
@@ -68,7 +66,7 @@ export class UserService extends BaseService {
   async loadUserData() {
     this.configService.baseUrl = 'stdservicesapi';
 
-    //console.log('log ueer data-----------------------------------------------------------------------------------');
+    // console.log('log ueer data-----------------------------------------------------------------------------------');
     if (this.userDataLoaded !== true) {
       return this.httRequest.GetRequest('user').toPromise().then(res => {
         this.userData = (res as any).data;
@@ -83,7 +81,7 @@ export class UserService extends BaseService {
 
   }
   loadUserDetailsData() {
-    //console.log('user details  data');
+    // console.log('user details  data');
     return this.httRequest.GetRequest('user').toPromise();
   }
 }

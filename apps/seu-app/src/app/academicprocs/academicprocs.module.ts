@@ -96,19 +96,13 @@ import { MatCheckboxModule } from '@angular/material';
            TerminationRequestComponent,
            AddTerminationRequestComponent,
            VisitorStudentComponent,
-        
            AddMissingCardDataComponent,
            MissingCardComponent,
            AddBankReceiptComponent,
            AddVisitorStudentComponent,
         AbsenceQueryComponent
 
-           
-           
 ],
-          
-
-
      entryComponents: [AddRequestComponent,
        AddPostponeComponent,
         AddSummerWithdrawComponent,

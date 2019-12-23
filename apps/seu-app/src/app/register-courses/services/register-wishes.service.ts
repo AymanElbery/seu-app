@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpRequestService } from 'src/app/shared/services/http-request.service';
+import { HttpRequestService } from '../../shared/services/http-request.service';
 import { ConfigService } from 'src/app/shared/services/config.service';
 
 @Injectable({
