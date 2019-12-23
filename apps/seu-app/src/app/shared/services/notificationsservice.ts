@@ -45,7 +45,12 @@ export class NotificationsService {
     this.notesList = [];
   }
   reload() {
-    this.getList(this.userService.getActiveRoleDetails().username);
+    const udata = this.userService.getActiveRoleDetails();
+    let username = udata.username;
+    if(udata.role == "Student"){
+      username = username.substr(1);
+    }
+    this.getList(username);
     setTimeout(() => {
       this.reload();
     }, 60000);

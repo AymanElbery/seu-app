@@ -150,8 +150,10 @@
           <a class="nav-link dropdown-toggle" href="#" id="notiDropdown" data-toggle="dropdown">
             <i class="ik ik-bell"></i><span class="badge bg-danger">{{notifications.notesList.length}}</span></a>
           <div class="dropdown-menu dropdown-menu-right notification-dropdown">
-            <h4 class="header">الإشعارات</h4>
-            <div class="notifications-wrap">
+            
+            <h4 *ngIf="notifications.notesList.length" class="header">الإشعارات</h4>
+            <h4 *ngIf="!notifications.notesList.length" class="header">لا يوجد اشعارات</h4>
+            <div *ngIf="notifications.notesList.length" class="notifications-wrap">
               <a href="javascript:;" (click)="notifications.redirect(not)" class="media"
                 *ngFor="let not of notifications.notesList">
                 <!--<span class="d-flex"><i class="ik ik-check"></i> </span>-->
@@ -164,8 +166,6 @@
             <!-- <div class="footer"><a href="">كل الإشعارات</a></div>-->
           </div>
         </div>
-
-
         <div class="dropdown align-items-right dir-rtl">
           <a class="dropdown-toggle pub-ser" href="#" id="userDropdown" data-toggle="dropdown">
             <img class="avatar" src="assets/images/avatar.png" alt=""> <span> <bdi>مرحبا :

@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { VisitorStudentService } from 'src/app/academicprocs/services/visitor-student.service';
 import { VisitorStudent } from 'src/app/shared/models/visitor-student';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-visitor-student',
@@ -25,7 +26,7 @@ export class AddVisitorStudentComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddVisitorStudentComponent>,
-    private toastr: ToastrService, private acadmicProc: VisitorStudentService) { }
+    private toastr: AppToasterService, private acadmicProc: VisitorStudentService) { }
 
   ngOnInit() {
     this.approves={approve:false};
@@ -38,34 +39,34 @@ export class AddVisitorStudentComponent implements OnInit {
     this.coursesList = this.acadmicProc.reqData.courses_list;
   }
 
-  onSubmit(form: NgForm) {
-
-    this.addRequest(this.visitorStudent);
-    this.dialogRef.close();
-
-  }
   closeDiag() {
     this.dialogRef.close();
   }
 
 
+  
+  requesting = false;
   addRequest(data: any) {
-    ////console.log(data);
-    this.isLoading = true;
     this.acadmicProc.AddRequest(data).then(res => {
-      this.msgs = (res as any).messages;
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
       });
+  }
+  onSubmit(form: NgForm) {
+    if (this.requesting) {
+      return false;
+    }
 
-      this.isLoading = false;
-    });
-
-
-
-    //this.cmp = {camp:''};
-
+    this.requesting = true;
+    this.addRequest(this.visitorStudent);
   }
 
   handleInputChange(e) {
