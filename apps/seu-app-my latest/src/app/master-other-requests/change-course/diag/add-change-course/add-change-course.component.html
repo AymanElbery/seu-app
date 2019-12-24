@@ -1,0 +1,120 @@
+<!-- Modal -->
+<mat-dialog-content dir="rtl">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب  تغيير البرنامج </h5>
+        
+      </div>
+      <div class="modal-body">
+          <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
+              <div class="main-content" style="padding-top:0;">
+              <section  class="ser-state">
+                  <div class="container">
+                       <div class="row ser-block">
+                          <div class="col-md-12 col-sm-12">
+                              <div class="state">                               
+                                <h6> اختر التخصص المطلوب </h6>
+                                  <select name="major" #major="ngModel" [(ngModel)]="course.major" class="form-control" 
+                                  [class.is-invalid]="course.major==''">                                
+                                    <option *ngFor="let item of reqData.majors" value="{{item.key}}">{{item.value}}</option>
+                                  </select>                              
+                               </div>
+                               <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                          </div>
+                      <div class="col-md-12 col-sm-12">
+                        <div class="state">
+                          <h6> رقم الجوال </h6>                               
+                          <input name="mobile" #mobile="ngModel" [(ngModel)]="course.mobile" class="form-control" >
+                        </div>
+                          <div class="progress progress-sm">
+                              <div class="progress-bar bg-info" style="width: 15%;"></div>
+                          </div>
+                  </div>                        
+                          <div class="col-md-12 col-sm-12">
+                                <div class="state">
+                                   <h6> سبب التحويل </h6>
+                                   <textarea name="reason" #reason="ngModel" [(ngModel)]="course.reason" class="form-control" >
+                                     </textarea>
+                                     <div class="progress progress-sm">
+                                      <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  </div>
+                                </div>
+                          </div>
+                          <div class="col-md-12 col-sm-12">
+                            <div class="state">
+                              <h6 >       السجل الأكاديمي</h6>
+                              <div class="custom-file">
+                                  <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChange($event)" />
+                                  <label  for="attachment"  class="custom-file-label ">
+                                  </label> 
+                                </div>
+                              </div>
+                              <div class="progress progress-sm">
+                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                              </div>
+                     
+                         </div>
+                         <div class="col-md-12 col-sm-12">
+                          <div class="state">
+                            <h6 > وثيقة البكالوريوس </h6>
+                            <div class="custom-file">
+                                <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChangeCopy($event)" />
+                                <label  for="attachment"  class="custom-file-label ">
+                                </label> 
+                              </div>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info" style="width: 15%;"></div>
+                            </div>
+                   
+                       </div>
+                          <div class="col-md-12 col-sm-12">
+                            <div class="state">
+                              <mat-checkbox #testcheck>
+                                  <h6>  هل حصلت على البكالوريس من خارج المملكة ؟  </h6>  
+
+                              </mat-checkbox>
+                                                           
+                                  </div>
+                              <div class="progress progress-sm">
+                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                              </div>
+                      </div>  
+                          <div class="col-md-12 col-sm-12" *ngIf="testcheck.checked">
+                            <div class="state">
+                              <h6 > معادلة شهادة البكالوريس للوثائق من خارج المملكة</h6>
+                              <div class="custom-file">
+                                  <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChangeOut($event)" />
+                                  <label  for="attachment"  class="custom-file-label ">
+                                  </label> 
+                                </div>
+                              </div>
+                              <div class="progress progress-sm">
+                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                              </div>
+                     
+                         </div>
+                       
+                    
+                    
+                           </div>
+                           
+                    </div>
+                
+               </section>
+               <div style="margin-top: 10px;">
+                  <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+                    <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+                   <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                  </div>
+             </div>
+              </div>
+  
+         
+        </form>
+  
+
+

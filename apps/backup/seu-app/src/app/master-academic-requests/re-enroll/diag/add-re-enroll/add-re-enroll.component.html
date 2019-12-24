@@ -1,0 +1,75 @@
+    <!-- Modal -->
+<mat-dialog-content dir="rtl">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب اعادة القيد </h5>
+        
+      </div>
+      <div class="modal-body">
+          <h6 style="text-align: center">تنبيه:يسمح للطالب بالغاء الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.</h6>    
+          <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
+              <div class="main-content" style="padding-top:0;">
+              <section  class="ser-state">
+                  <div class="container">
+                       <div class="row ser-block">                          
+                          <div class="col-md-12 col-sm-12">
+                                <div class="state">
+                                  <h6>  ماالسبب فى انقطاعك عن الدراسة؟ </h6>
+                                   <textarea name="reason" #reason="ngModel" [(ngModel)]="reEnroll.reason" class="form-control" >
+                                     </textarea>
+                                     <div class="progress progress-sm">
+                                      <div class="progress-bar bg-info" style="width: 15%;"></div>
+                                  </div>
+                                </div>
+                          </div>
+                          <div class="col-md-12 col-sm-12">
+                            <div class="state">
+                              <mat-checkbox #has_proof name="reEnroll.has_proof "  [(ngModel)]="reEnroll.has_proof" >
+                                <h6> هل لديك اثبات؟ </h6>  
+
+                              </mat-checkbox>
+                                                           
+                                  </div>
+                              <div class="progress progress-sm">
+                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                              </div>
+                      </div>  
+                          <div class="col-md-12 col-sm-12" *ngIf="has_proof.checked">
+                            <div class="state">
+                              <h6 > رفع ملف الاثبات(النظام يقبل ملفات PDF ,والايزيد حجم الملف عن 5 ميجابايت)</h6>
+                             <div class="custom-file">
+                                  <input  name="attachment"  id="attachment" type="file" accept="*/*" (change)="handleInputChange($event)" />
+                                  <label  for="attachment"  class="custom-file-label ">
+                                  </label> 
+                                </div>
+                              </div>
+                              <div class="progress progress-sm">
+                                  <div class="progress-bar bg-info" style="width: 15%;"></div>
+                              </div>
+                     
+                         </div>
+                    
+                    
+                           </div>
+                           
+                    </div>
+                
+               </section>
+               <div style="margin-top: 10px;">
+                  <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+                    <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+                   <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                  </div>
+             </div>
+              </div>
+  
+         
+        </form>
+  
+
+
+
+  
+
+
