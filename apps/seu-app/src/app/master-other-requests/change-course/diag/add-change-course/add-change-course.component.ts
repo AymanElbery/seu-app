@@ -8,7 +8,7 @@ import { changeCourse } from 'src/app/shared/models/change-course';
 @Component({
   selector: 'app-add-change-course',
   templateUrl: './add-change-course.component.html',
-  styleUrls: ['./add-change-course.component.css']
+  styleUrls: ['./add-change-course.component.scss']
 })
 export class AddChangeCourseComponent implements OnInit {
 

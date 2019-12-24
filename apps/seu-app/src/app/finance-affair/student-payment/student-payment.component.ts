@@ -4,7 +4,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-student-payment',
   templateUrl: './student-payment.component.html',
-  styleUrls: ['./student-payment.component.css']
+  styleUrls: ['./student-payment.component.scss']
 })
 export class StudentPaymentComponent implements OnInit {
   @Input()

@@ -1,5 +1,5 @@
 html {
-  font-family: 'Changa', sans-serif;
+  /* font-family: 'Changa', sans-serif; */
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -123,7 +123,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'Changa', monospace;
+  /* font-family: 'Changa', monospace; */
   font-size: 1em;
 }
 
@@ -4854,7 +4854,7 @@ select.form-control {
   -moz-appearance: none;
   appearance: none;
   padding-right: 20px;
-  background-image: url("../img/down-arrow.svg");
+  background-image: url("/assets/images/about-page.jpg");
   background-position: center right 15px;
   background-repeat: no-repeat;
   -webkit-background-size: 10px;
@@ -7207,7 +7207,7 @@ body {
   font-size: .8rem;
   line-height: 1.5;
   font-weight: 600;
-  font-family: 'Changa', sans-serif;
+  /* font-family: 'Changa', sans-serif; */
 }
 
 /* p {
@@ -8331,10 +8331,7 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: end;
-  -moz-justify-content: end;
-  -ms-justify-content: end;
-  justify-content: end;
+  justify-content: flex-end;
   -ms-flex-pack: end;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
@@ -8436,8 +8433,6 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
   align-items: flex-end;
   margin: auto 1.5em;
   -webkit-box-ordinal-group: 2;

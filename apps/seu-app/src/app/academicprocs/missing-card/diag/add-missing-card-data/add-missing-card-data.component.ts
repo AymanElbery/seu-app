@@ -8,7 +8,7 @@ import { MissingUnivCardService } from 'src/app/other-affair/services/missing-un
 @Component({
   selector: 'app-add-missing-card-data',
   templateUrl: './add-missing-card-data.component.html',
-  styleUrls: ['./add-missing-card-data.component.css']
+  styleUrls: ['./add-missing-card-data.component.scss']
 })
 export class AddMissingCardDataComponent implements OnInit {
 

@@ -4,7 +4,7 @@ import { MedicalReportService } from '../services/medical-report.service';
 @Component({
   selector: 'app-medical-report',
   templateUrl: './medical-report.component.html',
-  styleUrls: ['./medical-report.component.css']
+  styleUrls: ['./medical-report.component.scss']
 })
 export class MedicalReportComponent implements OnInit {
 

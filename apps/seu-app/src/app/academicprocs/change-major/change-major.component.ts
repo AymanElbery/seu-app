@@ -10,7 +10,7 @@ import { AddChangeMajorComponent } from './diag/add-change-major/add-change-majo
 @Component({
   selector: 'app-change-major',
   templateUrl: './change-major.component.html',
-  styleUrls: ['./change-major.component.css']
+  styleUrls: ['./change-major.component.scss']
 })
 export class ChangeMajorComponent implements OnInit {
 

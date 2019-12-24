@@ -4,7 +4,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-master-payment',
   templateUrl: './master-payment.component.html',
-  styleUrls: ['./master-payment.component.css']
+  styleUrls: ['./master-payment.component.scss']
 })
 export class MasterPaymentComponent implements OnInit {
 

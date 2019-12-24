@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-termination-request',
   templateUrl: './termination-request.component.html',
-  styleUrls: ['./termination-request.component.css']
+  styleUrls: ['./termination-request.component.scss']
 })
 export class TerminationRequestComponent implements OnInit {
 

@@ -14,7 +14,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-withdraw-from-univ',
   templateUrl: './withdraw-from-univ.component.html',
-  styleUrls: ['./withdraw-from-univ.component.css']
+  styleUrls: ['./withdraw-from-univ.component.scss']
 })
 export class WithdrawFromUnivComponent implements OnInit {
 

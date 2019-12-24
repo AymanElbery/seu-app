@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-visitor-student',
   templateUrl: './add-visitor-student.component.html',
-  styleUrls: ['./add-visitor-student.component.css']
+  styleUrls: ['./add-visitor-student.component.scss']
 })
 export class AddVisitorStudentComponent implements OnInit {
 

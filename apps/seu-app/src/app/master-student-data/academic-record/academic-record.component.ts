@@ -4,7 +4,7 @@ import { AcademicRecordService } from '../services/academic-record.service';
 @Component({
   selector: 'app-academic-record',
   templateUrl: './academic-record.component.html',
-  styleUrls: ['./academic-record.component.css']
+  styleUrls: ['./academic-record.component.scss']
 })
 export class AcademicRecordComponent implements OnInit {
 

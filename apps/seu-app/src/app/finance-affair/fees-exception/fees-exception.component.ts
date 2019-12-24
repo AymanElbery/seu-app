@@ -7,7 +7,7 @@ import { AddFeesExceptionComponent } from './diag/add-fees-exception/add-fees-ex
 @Component({
   selector: 'app-fees-exception',
   templateUrl: './fees-exception.component.html',
-  styleUrls: ['./fees-exception.component.css']
+  styleUrls: ['./fees-exception.component.scss']
 })
 export class FeesExceptionComponent implements OnInit {
   reqData;

@@ -10,7 +10,7 @@ import { CancelCousreMaster } from 'src/app/shared/models/cancel-cousre-master';
 @Component({
   selector: 'app-add-cancel-course-request',
   templateUrl: './add-cancel-course-request.component.html',
-  styleUrls: ['./add-cancel-course-request.component.css']
+  styleUrls: ['./add-cancel-course-request.component.scss']
 })
 export class AddCancelCourseRequestComponent implements OnInit {
   cancelCousre: CancelCousreMaster;

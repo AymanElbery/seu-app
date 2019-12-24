@@ -11,7 +11,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-summer-withdraw',
   templateUrl: './summer-withdraw.component.html',
-  styleUrls: ['./summer-withdraw.component.css']
+  styleUrls: ['./summer-withdraw.component.scss']
 })
 export class SummerWithdrawComponent implements OnInit {
 

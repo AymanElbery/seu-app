@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-fees-exception',
   templateUrl: './add-fees-exception.component.html',
-  styleUrls: ['./add-fees-exception.component.css']
+  styleUrls: ['./add-fees-exception.component.scss']
 })
 export class AddFeesExceptionComponent implements OnInit {
 

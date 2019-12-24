@@ -10,7 +10,7 @@ import { MissingUnivCardService } from '../../other-affair/services/missing-univ
 @Component({
   selector: 'app-univ-card',
   templateUrl: './univ-card.component.html',
-  styleUrls: ['./univ-card.component.css']
+  styleUrls: ['./univ-card.component.scss']
 })
 export class UnivCardComponent implements OnInit {
 

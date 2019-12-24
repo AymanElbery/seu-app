@@ -9,7 +9,7 @@ import { AddRequestChangeComponent } from './diag/add-request-change/add-request
 @Component({
   selector: 'app-change-request',
   templateUrl: './change-request.component.html',
-  styleUrls: ['./change-request.component.css']
+  styleUrls: ['./change-request.component.scss']
 })
 export class ChangeRequestComponent implements OnInit {
 

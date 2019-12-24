@@ -10,7 +10,7 @@ import { LectureExecuse } from 'src/app/shared/models/lecture-execuse';
 @Component({
   selector: 'app-lectures-execuses',
   templateUrl: './lectures-execuses.component.html',
-  styleUrls: ['./lectures-execuses.component.css']
+  styleUrls: ['./lectures-execuses.component.scss']
 })
 export class LecturesExecusesComponent implements OnInit {
 

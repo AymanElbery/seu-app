@@ -9,7 +9,7 @@ import * as dialogs from "tns-core-modules/ui/dialogs";
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.tns.html',
-  styleUrls: ['./registration-form.component.tns.css']
+  styleUrls: ['./registration-form.component.tns.scss']
 })
 export class RegistrationFormComponent implements OnInit {
   errors: string;  

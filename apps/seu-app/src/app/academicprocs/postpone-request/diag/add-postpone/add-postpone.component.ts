@@ -10,7 +10,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-add-postpone',
   templateUrl: './add-postpone.component.html',
-  styleUrls: ['./add-postpone.component.css']
+  styleUrls: ['./add-postpone.component.scss']
 })
 export class AddPostponeComponent implements OnInit {
 

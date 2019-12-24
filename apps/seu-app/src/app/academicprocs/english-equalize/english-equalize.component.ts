@@ -9,7 +9,7 @@ import { AddEnglishEqualizerComponent } from './diag/add-english-equalizer/add-e
 @Component({
   selector: 'app-english-equalize',
   templateUrl: './english-equalize.component.html',
-  styleUrls: ['./english-equalize.component.css']
+  styleUrls: ['./english-equalize.component.scss']
 })
 export class EnglishEqualizeComponent implements OnInit {
 

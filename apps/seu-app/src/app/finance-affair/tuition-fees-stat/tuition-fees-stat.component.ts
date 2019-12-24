@@ -4,7 +4,7 @@ import { TuitionFeesService } from '../services/tuition-fees.service';
 @Component({
   selector: 'app-tuition-fees-stat',
   templateUrl: './tuition-fees-stat.component.html',
-  styleUrls: ['./tuition-fees-stat.component.css']
+  styleUrls: ['./tuition-fees-stat.component.scss']
 })
 export class TuitionFeesStatComponent implements OnInit {
 

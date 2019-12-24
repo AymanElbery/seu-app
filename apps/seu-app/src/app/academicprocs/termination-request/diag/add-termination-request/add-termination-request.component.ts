@@ -9,7 +9,7 @@ import { from } from 'rxjs';
 @Component({
   selector: 'app-add-termination-request',
   templateUrl: './add-termination-request.component.html',
-  styleUrls: ['./add-termination-request.component.css']
+  styleUrls: ['./add-termination-request.component.scss']
 })
 export class AddTerminationRequestComponent implements OnInit {
 

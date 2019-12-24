@@ -9,7 +9,7 @@ import { AddCancelCourseRequestComponent } from './diag/add-cancel-course-reques
 @Component({
   selector: 'app-cancel-course',
   templateUrl: './cancel-course.component.html',
-  styleUrls: ['./cancel-course.component.css']
+  styleUrls: ['./cancel-course.component.scss']
 })
 export class CancelCourseComponent implements OnInit {
   printAR;

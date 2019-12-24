@@ -8,7 +8,7 @@ import { missingCard } from 'src/app/shared/models/missing-card';
 @Component({
   selector: 'app-add-bank-receipt',
   templateUrl: './add-bank-receipt.component.html',
-  styleUrls: ['./add-bank-receipt.component.css']
+  styleUrls: ['./add-bank-receipt.component.scss']
 })
 export class AddBankReceiptComponent implements OnInit {
 

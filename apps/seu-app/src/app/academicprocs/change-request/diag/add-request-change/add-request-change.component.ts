@@ -8,7 +8,7 @@ import { ChangeRequestService } from 'src/app/academicprocs/services/change-requ
 @Component({
   selector: 'app-add-request-change',
   templateUrl: './add-request-change.component.html',
-  styleUrls: ['./add-request-change.component.css']
+  styleUrls: ['./add-request-change.component.scss']
 })
 export class AddRequestChangeComponent implements OnInit {
 

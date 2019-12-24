@@ -9,7 +9,7 @@ import { StudentData } from 'src/app/shared/models/student-data';
 @Component({
   selector: 'app-add-graduate-profile',
   templateUrl: './add-graduate-profile.component.html',
-  styleUrls: ['./add-graduate-profile.component.css']
+  styleUrls: ['./add-graduate-profile.component.scss']
 })
 export class AddGraduateProfileComponent implements OnInit {
 

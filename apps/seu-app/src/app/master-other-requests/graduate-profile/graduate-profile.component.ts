@@ -8,7 +8,7 @@ import { AddGraduateProfileComponent } from './diag/add-graduate-profile/add-gra
 @Component({
   selector: 'app-graduate-profile',
   templateUrl: './graduate-profile.component.html',
-  styleUrls: ['./graduate-profile.component.css']
+  styleUrls: ['./graduate-profile.component.scss']
 })
 export class GraduateProfileComponent implements OnInit {
 

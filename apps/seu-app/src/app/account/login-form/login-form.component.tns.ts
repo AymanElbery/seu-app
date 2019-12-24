@@ -10,7 +10,7 @@ import * as dialogs from "tns-core-modules/ui/dialogs";
 @Component({
   selector: "app-login-form",
   templateUrl: "./login-form.component.tns.html",
-  styleUrls: ["./login-form.component.tns.css"]
+  styleUrls: ["./login-form.component.tns.scss"]
 })
 export class LoginFormComponent implements OnInit {
   private subscription: Subscription;

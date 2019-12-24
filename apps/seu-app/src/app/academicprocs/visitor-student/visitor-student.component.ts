@@ -7,7 +7,7 @@ import { AddVisitorStudentComponent } from "./diag/add-visitor-student/add-visit
 @Component({
   selector: "app-visitor-student",
   templateUrl: "./visitor-student.component.html",
-  styleUrls: ["./visitor-student.component.css"]
+  styleUrls: ["./visitor-student.component.scss"]
 })
 export class VisitorStudentComponent implements OnInit {
   reqData;
