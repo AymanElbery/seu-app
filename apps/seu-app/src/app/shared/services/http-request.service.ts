@@ -12,7 +12,9 @@ export class HttpRequestService {
 
 
   private createRequestHeader() {
+    //const sid = localStorage.getItem('sid');
     const sid = localStorage.getItem('sid');
+
 
     // set headers here e.g.
     const headers = new HttpHeaders({

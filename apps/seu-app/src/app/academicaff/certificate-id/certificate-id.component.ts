@@ -5,7 +5,7 @@ import { CertificateIDService } from '../services/certificate-id.service';
 @Component({
   selector: 'app-certificate-id',
   templateUrl: './certificate-id.component.html',
-  styleUrls: ['./certificate-id.component.css']
+  styleUrls: ['./certificate-id.component.css'],
 })
 export class CertificateIDComponent implements OnInit {
 

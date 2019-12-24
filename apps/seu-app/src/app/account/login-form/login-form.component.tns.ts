@@ -32,7 +32,7 @@ export class LoginFormComponent implements OnInit {
         this.credentials.email = param["email"];
       }
     );
-    this.userManger.logout();
+   // this.userManger.logout();
   }
 
   login(value: Credentials) {
@@ -68,7 +68,18 @@ export class LoginFormComponent implements OnInit {
         }
       );
   }
+  viewCertificate(){
+    this.router.navigate(["/academicaff/certificate"]);
+  }
 
+  items=[
+    {
+      id:123,
+      subject:"English Skills",
+      day:"sunday",
+      time:"(4:00 pm → 5:50 pm)"	
+    }
+  ]
   ngOnInit() {}
   ngOnDestroy() {
     // prevent memory leak by unsubscribing

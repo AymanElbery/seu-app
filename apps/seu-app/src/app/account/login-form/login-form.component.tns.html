@@ -1,4 +1,4 @@
-<ActionBar title="Login "></ActionBar>
+<!--<ActionBar title="Login "></ActionBar>
 <GridLayout backgroundColor="#CCCCCC">
     <ScrollView>
 <StackLayout  class="form" margin="10" verticalAlignment="center" backgroundColor="#FFFFFF" padding="5">
@@ -18,4 +18,37 @@
   </StackLayout>
 
   <Button text="Log In" (tap)="login(credentials)"  class="btn btn-primary"></Button>
-</StackLayout></ScrollView></GridLayout>
+  <Button text="Identity Certificate" (tap)="viewCertificate()"></Button>
+
+</StackLayout></ScrollView></GridLayout>-->
+
+<ActionBar title="فاطمة مهدى على" ></ActionBar>
+
+<StackLayout>
+  <label class="mainTitle" text="شهادة تعريف"></label>
+  <label class="subTitle" text="شهادة تعريف"></label>
+
+  <GridLayout columns="100,auto" rows="50,auto">
+    <Label text="CRN" row="0" col="0"></Label>
+    <Label text="اسم المقرر" row="0" col="1"></Label>
+    <Label text="اليوم" row="0" col="2" ></Label>
+    <Label text=" الوقت" row="0" col="3"></Label>
+</GridLayout>
+  <StackLayout orientation="horizontal" style="padding: 0 10;">
+          <Label text="CRN" width="25%"></Label>
+          <Label text="اسم المقرر" width="25%"></Label>
+          <Label text="اليوم" width="25%"></Label>
+          <Label text="الوقت" width="25%"></Label>
+  </StackLayout>
+
+  <ListView [items]="items" class="list-group" height="150">
+    <ng-template let-item="item">
+      <StackLayout orientation="horizontal" style="padding: 0 10;margin-top: 10;">
+            <Label [text]="item.id" class="list-group-item" width="25%"></Label>
+            <Label [text]="item.subject" class="list-group-item" width="25%"></Label>
+            <Label [text]="item.day" class="list-group-item" width="25%"></Label>
+            <Label [text]="item.time" class="list-group-item" width="25%"></Label>
+        </StackLayout>
+    </ng-template>
+</ListView>
+</StackLayout>

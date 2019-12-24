@@ -3,3 +3,19 @@ Add your NativeScript specific styles here.
 To learn more about styling in NativeScript see:
 https://docs.nativescript.org/angular/ui/styling
 */
+.mainTitle{
+    background-color: navy;
+     color: oldlace;
+     padding: 10;
+     font-size: 20;
+     font-weight: bold;
+     height: 20;
+}
+.subTitle{
+    padding: 10;
+    background-color: navy;
+    color: orange;
+}
+.row{
+    width:"25%";
+}
