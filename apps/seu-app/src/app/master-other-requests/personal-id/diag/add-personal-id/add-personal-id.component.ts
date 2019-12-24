@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-personal-id',
   templateUrl: './add-personal-id.component.html',
-  styleUrls: ['./add-personal-id.component.css']
+  styleUrls: ['./add-personal-id.component.scss']
 })
 export class AddPersonalIdComponent implements OnInit {
 

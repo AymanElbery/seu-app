@@ -5,7 +5,7 @@ import { PrintService } from 'src/app/shared/services/print.service';
 @Component({
   selector: 'app-print-file',
   templateUrl: './print-file.component.html',
-  styleUrls: ['./print-file.component.css']
+  styleUrls: ['./print-file.component.scss']
 })
 export class PrintFileComponent implements OnInit {
 

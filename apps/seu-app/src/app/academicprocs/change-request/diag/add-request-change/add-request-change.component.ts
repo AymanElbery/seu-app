@@ -9,7 +9,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-add-request-change',
   templateUrl: './add-request-change.component.html',
-  styleUrls: ['./add-request-change.component.css']
+  styleUrls: ['./add-request-change.component.scss']
 })
 export class AddRequestChangeComponent implements OnInit {
 

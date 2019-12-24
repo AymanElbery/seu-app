@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-academic-status',
   templateUrl: './academic-status.component.html',
-  styleUrls: ['./academic-status.component.css']
+  styleUrls: ['./academic-status.component.scss']
 })
 export class AcademicStatusComponent implements OnInit {
 

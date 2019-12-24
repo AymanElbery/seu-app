@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-change-course',
   templateUrl: './change-course.component.html',
-  styleUrls: ['./change-course.component.css']
+  styleUrls: ['./change-course.component.scss']
 })
 export class ChangeCourseComponent implements OnInit {
 

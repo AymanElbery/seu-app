@@ -11,7 +11,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-postpone-request',
   templateUrl: './postpone-request.component.html',
-  styleUrls: ['./postpone-request.component.css']
+  styleUrls: ['./postpone-request.component.scss']
 })
 export class PostponeRequestComponent implements OnInit {
 

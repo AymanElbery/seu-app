@@ -9,7 +9,7 @@ import { AddExamObjectComponent } from './diag/add-exam-object/add-exam-object.c
 @Component({
   selector: 'app-object-exam',
   templateUrl: './object-exam.component.html',
-  styleUrls: ['./object-exam.component.css']
+  styleUrls: ['./object-exam.component.scss']
 })
 export class ObjectExamComponent implements OnInit {
 

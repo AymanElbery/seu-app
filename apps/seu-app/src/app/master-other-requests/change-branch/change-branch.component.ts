@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-change-branch',
   templateUrl: './change-branch.component.html',
-  styleUrls: ['./change-branch.component.css']
+  styleUrls: ['./change-branch.component.scss']
 })
 export class ChangeBranchComponent implements OnInit {
   

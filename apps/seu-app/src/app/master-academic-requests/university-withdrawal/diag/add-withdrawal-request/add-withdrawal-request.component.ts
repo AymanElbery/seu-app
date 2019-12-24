@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-withdrawal-request',
   templateUrl: './add-withdrawal-request.component.html',
-  styleUrls: ['./add-withdrawal-request.component.css']
+  styleUrls: ['./add-withdrawal-request.component.scss']
 })
 export class AddWithdrawalRequestComponent implements OnInit {
 

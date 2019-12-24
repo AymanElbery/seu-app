@@ -7,7 +7,7 @@ import * as app from 'tns-core-modules/application';
 @Component({
   selector: 'app-graduate-state',
   templateUrl: './graduate-state.component.html',
-  styleUrls: ['./graduate-state.component.css']
+  styleUrls: ['./graduate-state.component.scss']
 })
 export class GraduateStateComponent implements OnInit {
 

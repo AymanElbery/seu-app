@@ -8,7 +8,7 @@ import {ExamsExecusesService} from '../../../services/exams-execuses.service';
 @Component({
   selector: 'app-add-exam-execuse',
   templateUrl: './add-exam-execuse.component.html',
-  styleUrls: ['./add-exam-execuse.component.css']
+  styleUrls: ['./add-exam-execuse.component.scss']
 })
 export class AddExamExecuseComponent implements OnInit {
 

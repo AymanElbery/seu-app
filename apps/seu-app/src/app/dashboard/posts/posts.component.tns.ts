@@ -9,7 +9,7 @@ import { SetupItemViewArgs } from "nativescript-angular/directives";
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.tns.html',
-  styleUrls: ['./posts.component.tns.css']
+  styleUrls: ['./posts.component.tns.scss']
 })
 export class PostsComponent implements OnInit {
 

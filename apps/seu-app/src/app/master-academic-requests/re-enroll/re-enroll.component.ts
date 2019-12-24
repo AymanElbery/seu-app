@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-re-enroll',
   templateUrl: './re-enroll.component.html',
-  styleUrls: ['./re-enroll.component.css']
+  styleUrls: ['./re-enroll.component.scss']
 })
 export class ReEnrollComponent implements OnInit {
 

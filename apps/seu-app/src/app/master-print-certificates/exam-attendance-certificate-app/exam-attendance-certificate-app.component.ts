@@ -4,7 +4,7 @@ import { ExamAttendanceCertificateAppService } from '../services/exam-attendance
 @Component({
   selector: 'app-exam-attendance-certificate-app',
   templateUrl: './exam-attendance-certificate-app.component.html',
-  styleUrls: ['./exam-attendance-certificate-app.component.css']
+  styleUrls: ['./exam-attendance-certificate-app.component.scss']
 })
 export class ExamAttendanceCertificateAppComponent implements OnInit {
 

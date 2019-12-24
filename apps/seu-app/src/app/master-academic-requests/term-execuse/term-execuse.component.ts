@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-term-execuse',
   templateUrl: './term-execuse.component.html',
-  styleUrls: ['./term-execuse.component.css']
+  styleUrls: ['./term-execuse.component.scss']
 })
 export class TermExecuseComponent implements OnInit {
 

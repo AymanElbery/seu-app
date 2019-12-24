@@ -5,7 +5,7 @@ import { from } from 'rxjs';
 @Component({
   selector: 'app-exam-attendance-certificate',
   templateUrl: './exam-attendance-certificate.component.html',
-  styleUrls: ['./exam-attendance-certificate.component.css']
+  styleUrls: ['./exam-attendance-certificate.component.scss']
 })
 export class ExamAttendanceCertificateComponent implements OnInit {
 

@@ -8,7 +8,7 @@ import { changeBranch } from 'src/app/shared/models/change-branch';
 @Component({
   selector: 'app-add-change-branch',
   templateUrl: './add-change-branch.component.html',
-  styleUrls: ['./add-change-branch.component.css']
+  styleUrls: ['./add-change-branch.component.scss']
 })
 export class AddChangeBranchComponent implements OnInit {
   printAR;

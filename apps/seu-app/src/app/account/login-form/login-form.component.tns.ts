@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Credentials } from '../../shared/models/credentials.interface';
 import { Subscription } from 'rxjs';
 import { UserService } from '../services/user.service';
@@ -10,9 +10,9 @@ import * as dialogs from 'tns-core-modules/ui/dialogs';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.tns.html',
-  styleUrls: ['./login-form.component.tns.css']
+  styleUrls: ['./login-form.component.tns.scss']
 })
-export class LoginFormComponent implements OnInit , OnDestroy {
+export class LoginFormComponent implements OnInit {
   private subscription: Subscription;
 
   brandNew: boolean;
@@ -32,7 +32,7 @@ export class LoginFormComponent implements OnInit , OnDestroy {
         this.credentials.email = param.email;
       }
     );
-   // this.userManger.logout();
+    // this.userManger.logout();
   }
 
   login(value: Credentials) {
@@ -40,21 +40,20 @@ export class LoginFormComponent implements OnInit , OnDestroy {
     this.isRequesting = true;
     this.errors = '';
     this.router.navigate(['/home']);
-   /**  this.userService
-      // tslint:disable-next-line: jsdoc-format
+   /*  this.userService
       .login(value.email, value.password)
       .pipe(finalize(() => (this.isRequesting = false)))
       .subscribe(
         result => {
-          // console.log(result.data);
+          //console.log(result.data);
           if (result.status == 1) {
             this.userManger.saveToken(result.data);
 
             this.userManger.login();
-            this.router.navigate(['/dashboard/home']);
+            this.router.navigate(["/dashboard/home"]);
           } else {
-            dialogs.alert('Invalid username or password').then(() => {
-              // console.log("Dialog!");
+            dialogs.alert("Invalid username or password").then(() => {
+              //console.log("Dialog!");
             });
             if (result.messages) {
               this.errors = result.messages[0].body;
@@ -64,10 +63,10 @@ export class LoginFormComponent implements OnInit , OnDestroy {
         error => {
           this.errors = error;
           dialogs.alert(error).then(() => {
-            // console.log("Dialog closed!");
+            //console.log("Dialog closed!");
           });
         }
-      );*/
+      ); */
   }
 
   ngOnInit() {}

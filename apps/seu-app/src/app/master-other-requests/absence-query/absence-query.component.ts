@@ -4,7 +4,7 @@ import { AbseneQueryService } from '../services/absene-query.service';
 @Component({
   selector: 'app-absence-query',
   templateUrl: './absence-query.component.html',
-  styleUrls: ['./absence-query.component.css']
+  styleUrls: ['./absence-query.component.scss']
 })
 export class AbsenceQueryComponent implements OnInit {
   isLoading:boolean=false;

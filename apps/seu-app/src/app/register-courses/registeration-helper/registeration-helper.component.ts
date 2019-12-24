@@ -8,7 +8,7 @@ import { AddRegisterationHelperComponent } from './diag/add-registeration-helper
 @Component({
   selector: 'app-registeration-helper',
   templateUrl: './registeration-helper.component.html',
-  styleUrls: ['./registeration-helper.component.css']
+  styleUrls: ['./registeration-helper.component.scss']
 })
 export class RegisterationHelperComponent implements OnInit {
 

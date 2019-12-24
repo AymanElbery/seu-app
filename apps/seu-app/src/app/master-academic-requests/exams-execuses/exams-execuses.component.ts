@@ -7,7 +7,7 @@ import { AddExamExecuseComponent } from './diag/add-exam-execuse/add-exam-execus
 @Component({
   selector: 'app-exams-execuses',
   templateUrl: './exams-execuses.component.html',
-  styleUrls: ['./exams-execuses.component.css']
+  styleUrls: ['./exams-execuses.component.scss']
 })
 export class ExamsExecusesComponent implements OnInit {
 

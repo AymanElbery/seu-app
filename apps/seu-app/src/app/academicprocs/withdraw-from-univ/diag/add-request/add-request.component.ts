@@ -9,7 +9,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-add-request',
   templateUrl: './add-request.component.html',
-  styleUrls: ['./add-request.component.css']
+  styleUrls: ['./add-request.component.scss']
 })
 export class AddRequestComponent implements OnInit {
   withdraw: UnivWithdraw;

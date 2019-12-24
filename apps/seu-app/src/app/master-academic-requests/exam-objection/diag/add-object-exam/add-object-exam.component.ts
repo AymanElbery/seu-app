@@ -7,7 +7,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-add-object-exam',
   templateUrl: './add-object-exam.component.html',
-  styleUrls: ['./add-object-exam.component.css']
+  styleUrls: ['./add-object-exam.component.scss']
 })
 export class AddObjectExamComponent implements OnInit {
 

@@ -8,7 +8,7 @@ import {AddExamExcuseComponent} from './diag/add-exam-excuse/add-exam-excuse.com
 @Component({
   selector: 'app-exam-excuse',
   templateUrl: './exam-excuse.component.html',
-  styleUrls: ['./exam-excuse.component.css']
+  styleUrls: ['./exam-excuse.component.scss']
 })
 export class ExamExcuseComponent implements OnInit {
 

@@ -12,7 +12,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-add-english-equalizer',
   templateUrl: './add-english-equalizer.component.html',
-  styleUrls: ['./add-english-equalizer.component.css']
+  styleUrls: ['./add-english-equalizer.component.scss']
 })
 export class AddEnglishEqualizerComponent implements OnInit {
 

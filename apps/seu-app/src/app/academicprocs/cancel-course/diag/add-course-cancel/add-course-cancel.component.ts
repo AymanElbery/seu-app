@@ -12,7 +12,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-add-course-cancel',
   templateUrl: './add-course-cancel.component.html',
-  styleUrls: ['./add-course-cancel.component.css']
+  styleUrls: ['./add-course-cancel.component.scss']
 })
 export class AddCourseCancelComponent implements OnInit {
 

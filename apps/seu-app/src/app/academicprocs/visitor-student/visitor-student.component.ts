@@ -8,7 +8,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: "app-visitor-student",
   templateUrl: "./visitor-student.component.html",
-  styleUrls: ["./visitor-student.component.css"]
+  styleUrls: ["./visitor-student.component.scss"]
 })
 export class VisitorStudentComponent implements OnInit {
   reqData;
