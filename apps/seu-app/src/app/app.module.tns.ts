@@ -18,12 +18,8 @@ import { AccountModule } from './account/account.module.tns';
 import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
 import { AcademicaffModule } from './academicaff/academicaff.module.tns';
 
-import { registerElement } from 'nativescript-angular/element-registry';
 
-registerElement(
-  'RGridLayout',
-  () => require('@nativescript-rtl/ui').GridLayout
-);
+
 @NgModule({
   declarations: [
     AppComponent,
