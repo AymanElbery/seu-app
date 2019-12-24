@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GraduatesStateService } from '../services/graduates-state.service';
+import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import * as app from 'tns-core-modules/application';
+
 
 @Component({
   selector: 'app-graduate-state',
@@ -15,6 +18,10 @@ export class GraduateStateComponent implements OnInit {
   msgs;
   constructor(private graduateStateSer: GraduatesStateService) { }
 
+  onDrawerButtonTap(): void {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.showDrawer();
+}
   ngOnInit() {
     this.isLoading = true;
     this.arabicPrint = this.graduateStateSer.DownloadStatement();
@@ -23,10 +30,10 @@ export class GraduateStateComponent implements OnInit {
     this.graduateStateSer.getStatement().then(
       (res) => {
       this.graduateData = (res as any).data;
-        this.msgs = (res as any).messages;
-        this.isLoading = false;
+      this.msgs = (res as any).messages;
+      this.isLoading = false;
 
-        ////console.log(this.graduateData.length);
+        //// console.log(this.graduateData.length);
       }
     );
   }

@@ -16,6 +16,7 @@ import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 import { HomeComponent } from './home/home.component.tns';
 import { AccountModule } from './account/account.module.tns';
 import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
+import { AcademicaffModule } from './academicaff/academicaff.module.tns';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angul
   imports: [
     NativeScriptModule,
     AppRoutingModule,
+    AcademicaffModule,
     NativeScriptHttpClientModule,
     NativeScriptFormsModule,
     AccountModule,
