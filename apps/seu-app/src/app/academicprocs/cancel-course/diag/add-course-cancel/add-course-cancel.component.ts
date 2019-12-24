@@ -38,7 +38,6 @@ export class AddCourseCancelComponent implements OnInit {
       if (index != -1)
         this.cancelCousre.courses.splice(index, 1);
     }
-    console.log(this.cancelCousre.courses);
   }
 
   requesting = false;

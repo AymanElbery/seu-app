@@ -18,49 +18,29 @@ export class LoginFormComponent implements OnInit {
   brandNew: boolean;
   errors: string;
   isRequesting: boolean;
-  submitted: boolean = false;
+  submitted = false;
   credentials: Credentials = { email: '', password: '' };
-  constructor(private userService: UserService,private userManger:UserManagerService, private router: Router,private activatedRoute: ActivatedRoute) {
+  // tslint:disable-next-line: max-line-length
+  constructor(private userService: UserService, private userManger: UserManagerService, private router: Router, private activatedRoute: ActivatedRoute) {
 
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
-         this.brandNew = param['brandNew'];   
-         this.credentials.email = param['email'];         
-      }); 
-    
+         this.brandNew = param.brandNew;
+         this.credentials.email = param.email;
+      });
+
    }
 
    login({ value, valid }: { value: Credentials, valid: boolean }) {
     this.submitted = true;
     this.isRequesting = true;
-    this.errors='';
-    if (valid) {
-      this.userService.login(value.email, value.password).pipe(
-        finalize(() => this.isRequesting = false))
-        .subscribe(
-        result => {       
-          //console.log(result);  
-          if (result.status==1) {
-             this.router.navigate(['/dashboard/home']);  
-             this.userManger.saveToken(result.data);
-             this.userManger.login();
+    this.errors = '';
 
-             
-          }
-          else
-          {
-            if(result.messages)
-            {
-            this.errors=result.messages[0].body;
-            }
-          }
-        },
-        error => this.errors = error);
-    }
-  } 
+  }
 
   ngOnInit() {
   }
+  // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {
     // prevent memory leak by unsubscribing
     this.subscription.unsubscribe();

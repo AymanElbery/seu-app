@@ -16,8 +16,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
-  declarations: [RegisterWishesComponent,RegisterationHelperComponent,AddRegisterationHelperComponent],
-  entryComponents:[AddRegisterationHelperComponent],
+  declarations: [RegisterWishesComponent, RegisterationHelperComponent, AddRegisterationHelperComponent],
+  entryComponents: [AddRegisterationHelperComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -28,6 +28,6 @@ import { MatNativeDateModule } from '@angular/material/core';
      MatNativeDateModule,
     ToastrModule.forRoot()
   ],
-  providers:[RegisterWishesService,RegistrationHelperService]
+  providers: [RegisterWishesService, RegistrationHelperService]
 })
 export class RegisterCoursesModule { }

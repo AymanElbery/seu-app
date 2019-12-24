@@ -6,6 +6,7 @@ import { AddPostponeComponent } from '../postpone-request/diag/add-postpone/add-
 import { NgForm } from '@angular/forms';
 import { AddCourseCancelComponent } from '../cancel-course/diag/add-course-cancel/add-course-cancel.component';
 import { AddCourseEqualizeComponent } from './diag/add-course-equalize/add-course-equalize.component';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-course-equalize',
@@ -22,19 +23,23 @@ export class CourseEqualizeComponent implements OnInit {
   isLoading = false;
 
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: CourseEqualizerService) { }
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: CourseEqualizerService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-this.reason = '';
-this.acadmicProc.getِgetRequests().then(
+    this.isLoading = true;
+    this.reason = '';
+    this.getRequests();
+  }
+  getRequests() {
+
+    this.acadmicProc.getِgetRequests().then(
       res => {
         ////console.log(res);
-        this.acadmicProc.reqData =    (res as any).data;
+        this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
-        this.isLoading=false;
+        this.isLoading = false;
         // //console.log(this.reqData.reqs);
       }
     );
@@ -47,42 +52,35 @@ this.acadmicProc.getِgetRequests().then(
     dialogConfig.width = '60%';
 
 
-    this.dialog.open(AddCourseEqualizeComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-        });
-  }
-  onSubmit(form: NgForm) {
-
-this.addRequest(form.value);
-
-
-  }
-
-  print(req) {
-return    this.acadmicProc.Download(req);
-
-  }
-  delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.msgs =   (res as any).messages;
-
-      this.status =   (res as any).status;
-
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
-        });
-      if (this.status === 1) {
-          this.acadmicProc.reqData.requests.splice(index, 1);
-        }
+    let dialogref = this.dialog.open(AddCourseEqualizeComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
     });
   }
 
-}
+  print(req) {
+    return this.acadmicProc.Download(req);
+
+  }
+  deleting = false;
+  delete(id, index) {
+    if (confirm('هل انت متأكد؟')) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
+        }
+        this.deleting = false;
+      }
+        , err => {
+          this.toastr.tryagain();
+          this.deleting = false;
+        });
+    }
+  }
 
 }

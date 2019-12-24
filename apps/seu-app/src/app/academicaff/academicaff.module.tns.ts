@@ -2,12 +2,10 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { AcademicaffRoutingModule } from './academicaff-routing.module';
 import { NativeScriptCommonModule } from 'nativescript-angular/common';
-import { AcademicStatusComponent } from './academic-status/academic-status.component';
-import { CertificateIDComponent } from './certificate-id/certificate-id.component';
-import { AcademicRecordComponent } from './academic-record/academic-record.component';
 
 @NgModule({
-  declarations: [ AcademicStatusComponent, CertificateIDComponent, AcademicRecordComponent],
+  declarations: [
+    ],
   imports: [
     AcademicaffRoutingModule,
     NativeScriptCommonModule

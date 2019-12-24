@@ -4,7 +4,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { termExecuse } from 'src/app/shared/models/term-execue';
 import { AddTermExecuseComponent } from './diag/add-term-execuse/add-term-execuse.component';
-import { NgForm } from '@angular/forms/src/directives/ng_form';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-term-execuse',

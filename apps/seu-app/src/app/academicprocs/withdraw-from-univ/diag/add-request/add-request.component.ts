@@ -2,8 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UnivWithdraw } from 'src/app/shared/models/univ-withdraw';
 import { WithdrawFromUnivService } from 'src/app/academicprocs/services/withdraw-from-univ.service';
-import { NgForm } from '@angular/forms/src/directives/ng_form';
 import { ToastrService } from 'ngx-toastr';
+import { NgForm } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({

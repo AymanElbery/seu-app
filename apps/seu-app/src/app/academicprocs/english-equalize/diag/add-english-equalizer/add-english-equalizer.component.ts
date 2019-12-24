@@ -7,6 +7,7 @@ import { CancelCourseService } from 'src/app/academicprocs/services/cancel-cours
 import { NgForm } from '@angular/forms';
 import { EnglishEqualizerService } from 'src/app/academicprocs/services/english-equalizer.service';
 import { EnglishEqual } from 'src/app/shared/models/english-equal';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-english-equalizer',
@@ -17,15 +18,15 @@ export class AddEnglishEqualizerComponent implements OnInit {
 
   englishEqual: EnglishEqual;
   reqData: EnglishEqual;
-msgs: any;
-private imageSrc = '';
+  msgs: any;
+  private imageSrc = '';
 
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddEnglishEqualizerComponent>,
-               private toastr: ToastrService, private acadmicProc: EnglishEqualizerService ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddEnglishEqualizerComponent>,
+    private toastr: AppToasterService, private acadmicProc: EnglishEqualizerService) { }
 
   ngOnInit() {
-    this.englishEqual = {tests: [], attachment: '', ENG_TESTS: [],notes:{},crse_transfer_grades:[]};
+    this.englishEqual = { tests: [], attachment: '', ENG_TESTS: [], notes: {}, crse_transfer_grades: [] };
 
     this.reqData = this.acadmicProc.reqData;
 
@@ -36,35 +37,37 @@ private imageSrc = '';
       this.englishEqual.tests.push(it);
       ////console.log(this.englishEqual.tests);
     } else {
-      for(let i = 0 ; i<this.englishEqual.tests.length;i++)
-      {
-        if(this.englishEqual.tests[i].test ==it.test)
+      for (let i = 0; i < this.englishEqual.tests.length; i++) {
+        if (this.englishEqual.tests[i].test == it.test)
           this.englishEqual.tests.splice(i, 1);
-
       }
     }
     ////console.log(this.englishEqual.tests);
 
   }
 
+  requesting = false;
   addRequest(data: any) {
-    ////console.log(data);
-    this.acadmicProc.AddRequest(data).then(  res => {
-   this.msgs =   (res as any).messages;
-   this.msgs.forEach((element: any) => {
-    this.toastr.success('', element.body);
-
-    });
-        });
-
-
-
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
+      });
   }
-
   onSubmit(form: NgForm) {
-this.addRequest(this.englishEqual);
-this.dialogRef.close();
+    if (this.requesting) {
+      return false;
+    }
 
+    this.requesting = true;
+    this.addRequest(this.englishEqual);
   }
   closeDiag() {
     this.dialogRef.close();

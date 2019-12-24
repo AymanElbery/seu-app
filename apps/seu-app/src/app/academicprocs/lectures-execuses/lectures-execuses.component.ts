@@ -6,6 +6,7 @@ import { AddCourseEqualizeComponent } from '../course-equalize/diag/add-course-e
 import { NgForm } from '@angular/forms';
 import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
 import { LectureExecuse } from 'src/app/shared/models/lecture-execuse';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-lectures-execuses',
@@ -20,15 +21,18 @@ export class LecturesExecusesComponent implements OnInit {
   msgs;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: LectureExecuseServiceService) { }
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: LectureExecuseServiceService) { }
 
   ngOnInit() {
     this.isLoading = true;
-    this.lectureExecuse = {attachment: '', courses: [], date: '', reason: '', type: '', week: ''};
+    this.lectureExecuse = { attachment: '', courses: [], date: '', reason: '', type: '', week: '' };
+    this.getRequests();
+  }
+  getRequests() {
     this.acadmicProc.getRequests().then(
       res => {
         //console.log(res);
-        this.acadmicProc.reqData =    (res as any).data;
+        this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
@@ -44,35 +48,35 @@ export class LecturesExecusesComponent implements OnInit {
     dialogConfig.width = '60%';
 
 
-    this.dialog.open(AddLecturesExecusesComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-        });
-  }
-  onSubmit(form: NgForm) {
-
-this.addRequest(form.value);
-
-
+    let dialogref =  this.dialog.open(AddLecturesExecusesComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
+    });
   }
 
   print(req) {
-return    this.acadmicProc.Download(req);
+    return this.acadmicProc.Download(req);
 
   }
+  deleting = false;
   delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
-
-    });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
-
+    if (confirm('هل انت متأكد؟')) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.requests.splice(index, 1);
+        }
+        this.deleting = false;
+      }
+        , err => {
+          this.toastr.tryagain();
+          this.deleting = false;
+        });
+    }
   }
-
-}
 
 }
