@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { RouterExtensions } from 'nativescript-angular/router';
-import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from 'nativescript-ui-sidedrawer';
+import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import { filter } from 'rxjs/operators';
 import * as app from 'tns-core-modules/application';
 
@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
         this.router.events
         .pipe(filter((event: any) => event instanceof NavigationEnd))
         .subscribe((event: NavigationEnd) => this._activatedUrl = event.urlAfterRedirects);
+        const draw =   app.getRootView() as RadSideDrawer;
+        draw.drawerLocation = SideDrawerLocation.Right;
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {

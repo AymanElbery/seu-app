@@ -3,7 +3,8 @@ RadSideDrawer is a UI component part of the Progress NativeScript UI set of comp
 Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
 https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawer/getting-started
 -->
-<RadSideDrawer [drawerTransition]="sideDrawerTransition">
+
+<RadSideDrawer style="direction: rtl;text-align: right;" drawerLocation="SideDrawerLocation.Right"   [drawerTransition]="sideDrawerTransition">
     <GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content">
         <StackLayout row="0" class="nt-drawer__header">
             <Image class="nt-drawer__header-image fas t-36" src="font://&#xf2bd;"></Image>
@@ -14,27 +15,27 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
         <ScrollView row="1" class="nt-drawer__body">
             <StackLayout>
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
-                    <Label col="0" text="&#xf015;" class="nt-icon fas"></Label>
-                    <Label col="1" text="Home" class="p-r-10"></Label>
-                    
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/academicaff/graduationstatment')" (tap)="onNavItemTap('/academicaff/graduationstatment')">
-                    <Label col="0" text="" class="nt-icon "></Label>
-
-                    <Label col="1" text="افادة خريج &#xf1ea; " class="p-r-10"></Label>
+                    <Label col="0" text="Home" class="p-r-10"></Label>
+                    <Label col="1"  text="&#xf015;" style="text-align: right;float: right;direction: rtl;" class="nt-icon fas"></Label>
 
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/search')" (tap)="onNavItemTap('/search')">
-                    <Label col="0" text="&#xf002;" class="nt-icon fas"></Label>
-                    <Label col="1" text="Search" class="p-r-10"></Label>
+                <GridLayout style="direction: rtl;" columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/academicaff/graduationstatment')" (tap)="onNavItemTap('/academicaff/graduationstatment')">
+
+                    <Label col="0" text="افادة خريج " class="p-r-10"></Label>
+                    <Label col="1" text=" &#xf1ea;" class="nt-icon fas"></Label>
+
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/featured')" (tap)="onNavItemTap('/featured')">
+                <GridLayout  style="text-align: right;direction: rtl;" columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/search')" (tap)="onNavItemTap('/search')">
+                    <Label col="1" text="&#xf002;" class="nt-icon fas"></Label>
+                    <Label col="0" text="Search" class="p-r-10"></Label>
+                </GridLayout >
+
+                <RGridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/featured')" (tap)="onNavItemTap('/featured')">
                     <Label col="0" text="&#xf005;" class="nt-icon fas"></Label>
                     <Label col="1" text="Featured" class="p-r-10"></Label>
-                </GridLayout>
+                </RGridLayout>
     
                 <StackLayout class="hr"></StackLayout>
 
