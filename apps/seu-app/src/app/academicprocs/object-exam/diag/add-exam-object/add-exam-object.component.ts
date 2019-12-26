@@ -82,7 +82,6 @@ export class AddExamObjectComponent implements OnInit {
     if (checked) {
       this.exam.courses.push({ CRSE: parseInt(item.CRN), teacher: item.teacher });
     }
-    console.log(this.exam.courses);
   }
 
   handleInputChange(e) {
