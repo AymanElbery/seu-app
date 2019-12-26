@@ -3,7 +3,8 @@ import { universityCard } from 'src/app/shared/models/university-card';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
-import {UvnivCardService} from '../../../services/univ-card.service';
+import { UvnivCardService } from '../../../services/univ-card.service';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-univ-card',
@@ -16,43 +17,45 @@ export class AddUnivCardComponent implements OnInit {
   card: universityCard;
   reqData;
   msgs;
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddUnivCardComponent>,
-               private toastr: ToastrService,  private univCard: UvnivCardService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddUnivCardComponent>,
+    private toastr: AppToasterService, private univCard: UvnivCardService) { }
 
   ngOnInit() {
-    this.card = {name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: ''};
+    this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
     this.univCard.getِgetRequests().then(
       res => {
-    this.univCard.reqData =    (res as any).data;
-    this.univCard.msgs = (res as any).messages;
-    this.reqData = this.univCard.reqData;
-    this.msgs = this.univCard.msgs;
-
-
-
-  }
+        this.univCard.reqData = (res as any).data;
+        this.univCard.msgs = (res as any).messages;
+        this.reqData = this.univCard.reqData;
+        this.msgs = this.univCard.msgs;
+      }
     );
   }
 
 
-
-  addRequest(data) {
-    this.univCard.AddRequest(data).then(  res => {
-      this.univCard.msgs = (res as any).messages;
-      this.msgs = this.univCard.msgs;
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
-        });
-    });
-
+  requesting = false;
+  addRequest(data: any) {
+    this.univCard.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.univCard.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
+      });
   }
   onSubmit(form: NgForm) {
-this.addRequest(this.card);
-//console.log(this.card);
-this.dialogRef.close();
+    if (this.requesting) {
+      return false;
+    }
 
+    this.requesting = true;
+    this.addRequest(this.card);
   }
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -80,7 +83,7 @@ this.dialogRef.close();
       return;
     }
      */
-    reader.onload = this. _handleReaderLoadedFile.bind(this);
+    reader.onload = this._handleReaderLoadedFile.bind(this);
     reader.readAsDataURL(file);
   }
   _handleReaderLoadedFile(e) {
@@ -90,27 +93,17 @@ this.dialogRef.close();
   }
 
 
-//   print(req) {
-// return    this.univCard.Download(req);
+  //   print(req) {
+  // return    this.univCard.Download(req);
 
-//   }
-  delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.univCard.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
+  //   }
 
-    });
-    this.univCard.reqData.reqs.splice(index, 1);
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
 
   }
-
-}
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
-
-}
-closeDiag() {
-  this.dialogRef.close();
-}
+  closeDiag() {
+    this.dialogRef.close();
+  }
 
 }

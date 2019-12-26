@@ -4,6 +4,7 @@ import { StudentInfoService } from '../services/student-info.service';
 import { NgForm } from '@angular/forms';
 import { StudentInformation } from 'src/app/shared/models/student-information';
 import { StudentInformationData } from 'src/app/shared/models/student-information-data';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-student-info',
@@ -21,62 +22,62 @@ export class StudentInfoComponent implements OnInit {
   isLoading = false;
   fileType;
 
-  constructor(private academicService: StudentInfoService) { }
+  constructor(private academicService: StudentInfoService, private toastr: AppToasterService) { }
 
   ngOnInit() {
     this.studentInfo =
-      {
+    {
 
-        NAME_AR: '',
-        NAME_EN: '',
-        GRADUATION_TERM: '',
-        EMAIL: '',
-        PHONE: '',
-        JOB_STATUS: '',
-        JOB_LOCATION: '',
-        JOB_TITLE: '',
-        JOB_TILE2: '',
-        EMAIL2: '',
-        PHONE2: '',
-        JOB_NAME: '',
-        JOB_TYPE: '',
-        JOB_TIME: '',
-        JOB_YEAR: '',
-        WORK_CITY: '',
-        PHOTO: '',
-        CV: ''
-      }
+      NAME_AR: '',
+      NAME_EN: '',
+      GRADUATION_TERM: '',
+      EMAIL: '',
+      PHONE: '',
+      JOB_STATUS: '',
+      JOB_LOCATION: '',
+      JOB_TITLE: '',
+      JOB_TILE2: '',
+      EMAIL2: '',
+      PHONE2: '',
+      JOB_NAME: '',
+      JOB_TYPE: '',
+      JOB_TIME: '',
+      JOB_YEAR: '',
+      WORK_CITY: '',
+      PHOTO: '',
+      CV: ''
+    }
 
     this.stdData =
-      {
+    {
 
-        name_ar: '',
-        name_en: '',
-        graduation_term: '',
-        email: '',
-        phone: '',
-        job_status: '',
-        job_location: '',
-        job_title: '',
-        job_title2: '',
-        email2: '',
-        phone2: '',
-        job_name: '',
-        job_type: '',
-        job_time: '',
-        job_year: '',
-        work_city: '',
-        photo: '',
-        cv: ''
-      }
+      name_ar: '',
+      name_en: '',
+      graduation_term: '',
+      email: '',
+      phone: '',
+      job_status: '',
+      job_location: '',
+      job_title: '',
+      job_title2: '',
+      email2: '',
+      phone2: '',
+      job_name: '',
+      job_type: '',
+      job_time: '',
+      job_year: '',
+      work_city: '',
+      photo: '',
+      cv: ''
+    }
     this.isLoading = true;
     this.academicService.getِRequests().then(
       res => {
         this.reqData = (res as any).data;
-        this.msgs=(res as any).messages;
+        this.msgs = (res as any).messages;
         this.isLoading = false;
         this.studentInfo = this.reqData.user;
-      
+
 
         this.stdData.name_ar = this.studentInfo.NAME_AR;
         this.stdData.name_en = this.studentInfo.NAME_EN;
@@ -103,15 +104,16 @@ export class StudentInfoComponent implements OnInit {
   addRequest(data) {
     this.academicService.AddRequest(data).then(res => {
       this.academicService.msgs = (res as any).messages;
-      this.msgs=this.academicService.msgs;
-
+      this.msgs = this.academicService.msgs;
+      this.reqData.can_update_data = !res['status'];
     });
   }
+  requesting = false;
   onSubmit(form: NgForm) {
-   
-    this.addRequest(form.value);
-
-
+    if (this.requesting) {
+      return false;
+    }
+    this.addRequest(this.stdData);
   }
 
   handleInputChange(e, fileType) {

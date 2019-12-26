@@ -188,7 +188,7 @@
               <h6> صورة شخصية 4*6 للطلاب فقط </h6>
               <input required class="form-control" name="image" id="image" type="file" accept="*/*"
                 (change)="handleInputChange($event,'image')"  />
-               <h6> <a href="{{photoDownload}}" > تحميل</a></h6>
+               <h6 *ngIf="photoDownload"> <a  href="{{photoDownload}}" > تحميل</a></h6>
             </div>
             <div class="progress progress-sm">
               <div class="progress-bar bg-info"></div>
@@ -199,7 +199,7 @@
               <h6> السيرة الذاتية </h6>
               <input required class="form-control" name="cv" id="cv" type="file" accept="*/*"
                 (change)="handleInputChange($event,'cv')"  />
-                <h6> <a href="{{cvDownload}}" > تحميل</a></h6>
+                <h6 *ngIf="cvDownload"> <a href="{{cvDownload}}" > تحميل</a></h6>
             </div>
             <div class="progress progress-sm">
               <div class="progress-bar bg-info"></div>
@@ -365,7 +365,7 @@
 
               </div>
 
-              <div class="row  ser-block" style="margin-top: 20px;" >
+              <div *ngIf="true || reqData.can_update_data" class="row  ser-block" style="margin-top: 20px;" >
                   <div class=" col-md-12 col-sm-12" style="margin-top: 10px;">
                     <div class="state">
 
@@ -388,7 +388,7 @@
       <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example" >
 
 
-        <button *ngIf="reqData.can_update_data" [disabled]="form.invalid " type="submit" class="btn btn-dark"  ><i class="fa fa-database"></i>
+        <button *ngIf="true || !requesting || reqData.can_update_data" [disabled]="form.invalid " type="submit" class="btn btn-dark"  ><i class="fa fa-database"></i>
           حفظ</button>
       </div>
     </div>
