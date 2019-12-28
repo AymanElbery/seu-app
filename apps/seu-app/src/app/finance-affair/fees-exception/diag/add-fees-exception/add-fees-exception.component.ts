@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { FeesExceptionService } from 'src/app/finance-affair/services/fees-exception.service';
 import { FeesException } from 'src/app/shared/models/fees-exception';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-fees-exception',
@@ -30,7 +31,7 @@ export class AddFeesExceptionComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddFeesExceptionComponent>,
-    private toastr: ToastrService, private acadmicProc: FeesExceptionService) { }
+    private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
 
   ngOnInit() {
     this.feesException = {
@@ -49,29 +50,31 @@ export class AddFeesExceptionComponent implements OnInit {
 
   }
 
-  onSubmit(form: NgForm) {
-
-    this.addRequest(this.feesException);
-    this.dialogRef.close();
-
-  }
   closeDiag() {
     this.dialogRef.close();
   }
 
-
+  requesting = false;
   addRequest(data: any) {
-    ////console.log(data);
-    this.isLoading = true;
     this.acadmicProc.AddRequest(data).then(res => {
-      this.msgs = (res as any).messages;
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
       });
-
-      this.isLoading = false;
-    });
+  }
+  onSubmit(form: NgForm) {
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
+    this.addRequest(this.feesException);
   }
 
   handleInputChange(e, fileType) {
@@ -79,7 +82,6 @@ export class AddFeesExceptionComponent implements OnInit {
     //console.log('handleInputChange ');
     //console.log(this.fileType);
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-    const pattern = /pdf-*/;
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
@@ -117,24 +119,24 @@ export class AddFeesExceptionComponent implements OnInit {
 
   exceptionTypeChange(p) {
 
-    this.feesException.association = '';
+    // this.feesException.association = '';
 
-    this.feesException.account_name = '';
-    this.feesException.email = '';
-    this.feesException.bank = '';
-    this.feesException.account_id = '';
-    this.feesException.account_relative = '';
-    this.feesException.iban = '';
-    this.feesException.bank_card = '';
-    this.accountOwner = '';
+    // this.feesException.account_name = '';
+    // this.feesException.email = '';
+    // this.feesException.bank = '';
+    // this.feesException.account_id = '';
+    // this.feesException.account_relative = '';
+    // this.feesException.iban = '';
+    // this.feesException.bank_card = '';
+    // this.accountOwner = '';
 
 
-    this.feesException.proof_status = '';
-    this.feesException.insurance_card = '';
-    this.feesException.id_card = '';
-    this.feesException.work_status = '';
-    this.feesException.letter = '';
-    this.feesException.mco_id_card = '';
+    // this.feesException.proof_status = '';
+    // this.feesException.insurance_card = '';
+    // this.feesException.id_card = '';
+    // this.feesException.work_status = '';
+    // this.feesException.letter = '';
+    // this.feesException.mco_id_card = '';
 
   }
 

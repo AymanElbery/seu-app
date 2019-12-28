@@ -8,9 +8,10 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
 export class FeesExceptionService {
   reqData;
   msgs;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
-			  }
+  newreqs = false;
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = "stdservicesapi";
+  }
 
   getِgetRequests() {
     this.configService.baseUrl = 'stdservicesapi';
@@ -21,13 +22,13 @@ export class FeesExceptionService {
   deleteReq(id) {
     this.configService.baseUrl = 'stdservicesapi';
     //+ '?std_id=S120000101'
-    return this.httRequest.GetRequest('registeration_helper_service/cancel/' + id).toPromise();
+    return this.httRequest.GetRequest('fees_exception_service/remove/' + id).toPromise();
 
   }
 
   AddRequest(data) {
     this.configService.baseUrl = 'stdservicesapi';
-//console.log(data);
+    //console.log(data);
     return this.httRequest.postRequest('fees_exception_service/insert', data).toPromise();
   }
 }
