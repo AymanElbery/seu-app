@@ -73,18 +73,18 @@ import { ExternalLinkDirective } from './shared/services/external-link.directive
     , FormsModule
     , ToastrModule.forRoot()
 
-    //, AcademicprocsModule --lazy loaded
-    //, AcademicaffModule  -- lazy loaded
-    //, RegisterCoursesModule --lazy loaded
-    //, LecturesAbsenceModule  -- empty module :)
-    //, FinanceAffairModule
-    //, ExamsAffairModule
-    //, OtherAffairModule
-    //, MasterAcademicRequestsModule
-    //, MasterFinanceAffairModule
-    //, MasterOtherRequestsModule
-    //, MasterPrintCertificatesModule
-    //, MasterStudentDataModule
+    // , AcademicprocsModule --lazy loaded
+    // , AcademicaffModule  -- lazy loaded
+    // , RegisterCoursesModule --lazy loaded
+    // , LecturesAbsenceModule  -- empty module :)
+    // , FinanceAffairModule
+    // , ExamsAffairModule
+    // , OtherAffairModule
+    // , MasterAcademicRequestsModule
+    // , MasterFinanceAffairModule
+    // , MasterOtherRequestsModule
+    // , MasterPrintCertificatesModule
+    // , MasterStudentDataModule
     , TimerModule
     , MatProgressSpinnerModule
   ],

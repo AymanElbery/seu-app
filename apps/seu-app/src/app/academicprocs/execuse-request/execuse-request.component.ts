@@ -10,7 +10,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-execuse-request',
   templateUrl: './execuse-request.component.html',
-  styleUrls: ['./execuse-request.component.css']
+  styleUrls: ['./execuse-request.component.scss']
 })
 export class ExecuseRequestComponent implements OnInit {
 

@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-add-study-postpone',
   templateUrl: './add-study-postpone.component.html',
-  styleUrls: ['./add-study-postpone.component.css']
+  styleUrls: ['./add-study-postpone.component.scss']
 })
 export class AddStudyPostponeComponent implements OnInit {
   postpone:studyPostpone ;

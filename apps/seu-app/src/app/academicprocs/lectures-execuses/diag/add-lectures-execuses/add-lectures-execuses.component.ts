@@ -10,7 +10,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-add-lectures-execuses',
   templateUrl: './add-lectures-execuses.component.html',
-  styleUrls: ['./add-lectures-execuses.component.css']
+  styleUrls: ['./add-lectures-execuses.component.scss']
 })
 export class AddLecturesExecusesComponent implements OnInit {
 

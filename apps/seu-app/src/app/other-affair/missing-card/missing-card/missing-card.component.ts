@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-missing-card',
   templateUrl: './missing-card.component.html',
-  styleUrls: ['./missing-card.component.css']
+  styleUrls: ['./missing-card.component.scss']
 })
 export class MissingCardComponent implements OnInit {
 

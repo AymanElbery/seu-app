@@ -8,7 +8,7 @@ import {UvnivCardService} from '../../../services/univ-card.service';
 @Component({
   selector: 'app-add-univ-card',
   templateUrl: './add-univ-card.component.html',
-  styleUrls: ['./add-univ-card.component.css']
+  styleUrls: ['./add-univ-card.component.scss']
 })
 export class AddUnivCardComponent implements OnInit {
 

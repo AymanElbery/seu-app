@@ -9,7 +9,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-add-course-equalize',
   templateUrl: './add-course-equalize.component.html',
-  styleUrls: ['./add-course-equalize.component.css']
+  styleUrls: ['./add-course-equalize.component.scss']
 })
 export class AddCourseEqualizeComponent implements OnInit {
 

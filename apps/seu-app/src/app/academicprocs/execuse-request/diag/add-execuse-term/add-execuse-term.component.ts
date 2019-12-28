@@ -11,7 +11,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-add-execuse-term',
   templateUrl: './add-execuse-term.component.html',
-  styleUrls: ['./add-execuse-term.component.css']
+  styleUrls: ['./add-execuse-term.component.scss']
 })
 export class AddExecuseTermComponent implements OnInit {
 

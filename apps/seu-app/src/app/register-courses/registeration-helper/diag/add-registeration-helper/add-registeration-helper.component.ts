@@ -8,7 +8,7 @@ import { RegisterationHelper } from 'src/app/shared/models/registeration-helper'
 @Component({
   selector: 'app-add-registeration-helper',
   templateUrl: './add-registeration-helper.component.html',
-  styleUrls: ['./add-registeration-helper.component.css']
+  styleUrls: ['./add-registeration-helper.component.scss']
 })
 export class AddRegisterationHelperComponent implements OnInit {
 

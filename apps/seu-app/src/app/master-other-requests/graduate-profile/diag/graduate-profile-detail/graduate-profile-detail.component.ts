@@ -7,7 +7,7 @@ import { StudentInfo } from 'src/app/shared/models/student-info';
 @Component({
   selector: 'app-graduate-profile-detail',
   templateUrl: './graduate-profile-detail.component.html',
-  styleUrls: ['./graduate-profile-detail.component.css']
+  styleUrls: ['./graduate-profile-detail.component.scss']
 })
 export class GraduateProfileDetailComponent implements OnInit {
 

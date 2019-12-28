@@ -11,7 +11,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-course-equalize',
   templateUrl: './course-equalize.component.html',
-  styleUrls: ['./course-equalize.component.css']
+  styleUrls: ['./course-equalize.component.scss']
 })
 export class CourseEqualizeComponent implements OnInit {
 

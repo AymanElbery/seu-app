@@ -8,7 +8,7 @@ import {TermExecuseService} from '../../../services/term-execuse.service';
 @Component({
   selector: 'app-add-term-execuse',
   templateUrl: './add-term-execuse.component.html',
-  styleUrls: ['./add-term-execuse.component.css']
+  styleUrls: ['./add-term-execuse.component.scss']
 })
 export class AddTermExecuseComponent implements OnInit {
 

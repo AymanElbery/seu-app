@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-register-wishes',
   templateUrl: './register-wishes.component.html',
-  styleUrls: ['./register-wishes.component.css']
+  styleUrls: ['./register-wishes.component.scss']
 })
 export class RegisterWishesComponent implements OnInit {
   registerWishes: RegisterWishes;

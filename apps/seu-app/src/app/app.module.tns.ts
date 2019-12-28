@@ -28,6 +28,7 @@ import { AcademicaffModule } from './academicaff/academicaff.module.tns';
   imports: [
     NativeScriptModule,
     AppRoutingModule,
+    AcademicaffModule,
     NativeScriptHttpClientModule,
     NativeScriptFormsModule,
     AccountModule,

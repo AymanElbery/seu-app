@@ -5,7 +5,7 @@ import { ExamAttendanceService } from '../services/exam-attendance.service';
 @Component({
   selector: 'app-exams-attend-stat',
   templateUrl: './exams-attend-stat.component.html',
-  styleUrls: ['./exams-attend-stat.component.css']
+  styleUrls: ['./exams-attend-stat.component.scss']
 })
 export class ExamsAttendStatComponent implements OnInit {
 

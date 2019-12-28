@@ -4,7 +4,7 @@ import { ExamsAttendAppService } from '../services/exams-attend-app.service';
 @Component({
   selector: 'app-exams-attend-app',
   templateUrl: './exams-attend-app.component.html',
-  styleUrls: ['./exams-attend-app.component.css']
+  styleUrls: ['./exams-attend-app.component.scss']
 })
 export class ExamsAttendAppComponent implements OnInit {
 

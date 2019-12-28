@@ -11,7 +11,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-lectures-execuses',
   templateUrl: './lectures-execuses.component.html',
-  styleUrls: ['./lectures-execuses.component.css']
+  styleUrls: ['./lectures-execuses.component.scss']
 })
 export class LecturesExecusesComponent implements OnInit {
 

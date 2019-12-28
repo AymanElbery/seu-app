@@ -10,7 +10,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-english-equalize',
   templateUrl: './english-equalize.component.html',
-  styleUrls: ['./english-equalize.component.css']
+  styleUrls: ['./english-equalize.component.scss']
 })
 export class EnglishEqualizeComponent implements OnInit {
 

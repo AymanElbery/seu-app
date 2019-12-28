@@ -10,7 +10,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-exam-objection',
   templateUrl: './exam-objection.component.html',
-  styleUrls: ['./exam-objection.component.css']
+  styleUrls: ['./exam-objection.component.scss']
 })
 export class ExamObjectionComponent implements OnInit {
 

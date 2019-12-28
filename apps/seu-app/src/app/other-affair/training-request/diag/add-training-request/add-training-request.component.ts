@@ -8,7 +8,7 @@ import {training} from '../../../../shared/models/training';
 @Component({
   selector: 'app-add-training-request',
   templateUrl: './add-training-request.component.html',
-  styleUrls: ['./add-training-request.component.css']
+  styleUrls: ['./add-training-request.component.scss']
 })
 export class AddTrainingRequestComponent implements OnInit {
 

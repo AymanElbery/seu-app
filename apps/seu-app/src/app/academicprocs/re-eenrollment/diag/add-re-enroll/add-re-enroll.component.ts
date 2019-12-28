@@ -10,7 +10,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-add-re-enroll',
   templateUrl: './add-re-enroll.component.html',
-  styleUrls: ['./add-re-enroll.component.css']
+  styleUrls: ['./add-re-enroll.component.scss']
 })
 export class AddReEnrollComponent implements OnInit {
 

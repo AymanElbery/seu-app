@@ -10,7 +10,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-cancel-course',
   templateUrl: './cancel-course.component.html',
-  styleUrls: ['./cancel-course.component.css']
+  styleUrls: ['./cancel-course.component.scss']
 })
 export class CancelCourseComponent implements OnInit {
 

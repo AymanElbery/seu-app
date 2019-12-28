@@ -11,7 +11,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-re-eenrollment',
   templateUrl: './re-eenrollment.component.html',
-  styleUrls: ['./re-eenrollment.component.css']
+  styleUrls: ['./re-eenrollment.component.scss']
 })
 export class ReEenrollmentComponent implements OnInit {
   printAR;

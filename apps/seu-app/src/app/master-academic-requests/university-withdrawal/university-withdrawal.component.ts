@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-university-withdrawal',
   templateUrl: './university-withdrawal.component.html',
-  styleUrls: ['./university-withdrawal.component.css']
+  styleUrls: ['./university-withdrawal.component.scss']
 })
 export class UniversityWithdrawalComponent implements OnInit {
 

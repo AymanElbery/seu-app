@@ -8,7 +8,7 @@ import { ObjectExam } from 'src/app/shared/models/object-exam';
 @Component({
   selector: 'app-add-exam-object',
   templateUrl: './add-exam-object.component.html',
-  styleUrls: ['./add-exam-object.component.css']
+  styleUrls: ['./add-exam-object.component.scss']
 })
 export class AddExamObjectComponent implements OnInit {
 

@@ -8,7 +8,7 @@ import { StudentInformationData } from 'src/app/shared/models/student-informatio
 @Component({
   selector: 'app-student-info',
   templateUrl: './student-info.component.html',
-  styleUrls: ['./student-info.component.css']
+  styleUrls: ['./student-info.component.scss']
 })
 export class StudentInfoComponent implements OnInit {
 

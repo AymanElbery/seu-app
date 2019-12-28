@@ -7,7 +7,7 @@ import {ExamExcuseService} from '../../../services/exam-excuse.service';
 @Component({
   selector: 'app-add-exam-excuse',
   templateUrl: './add-exam-excuse.component.html',
-  styleUrls: ['./add-exam-excuse.component.css']
+  styleUrls: ['./add-exam-excuse.component.scss']
 })
 export class AddExamExcuseComponent implements OnInit {
 

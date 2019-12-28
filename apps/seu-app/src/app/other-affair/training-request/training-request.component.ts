@@ -9,7 +9,7 @@ import {AddTrainingRequestComponent} from '../training-request/diag/add-training
 @Component({
   selector: 'app-training-request',
   templateUrl: './training-request.component.html',
-  styleUrls: ['./training-request.component.css']
+  styleUrls: ['./training-request.component.scss']
 })
 export class TrainingRequestComponent implements OnInit {
 

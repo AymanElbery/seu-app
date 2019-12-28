@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'fontreg';
-  src: url('../fonts/DroidArabicKufi.eot?#iefix') format('embedded-opentype'), url('../fonts/DroidArabicKufi.woff') format('woff'), url('../fonts/DroidArabicKufi.ttf') format('truetype');
+  src: url('assets/fonts/DroidArabicKufi.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi.woff') format('woff'), url('assets/fonts/DroidArabicKufi.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'fontbold';
-  src: url('../fonts/DroidArabicKufi-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/DroidArabicKufi-Bold.woff') format('woff'), url('../fonts/DroidArabicKufi-Bold.ttf') format('truetype');
+  src: url('assets/fonts/DroidArabicKufi-Bold.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi-Bold.woff') format('woff'), url('assets/fonts/DroidArabicKufi-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'fontlight';
-  src: url('DroidArabicKufi.eot?#iefix') format('embedded-opentype'), url('../fonts/DroidArabicKufi.woff') format('woff'), url('../fonts/DroidArabicKufi.ttf') format('truetype');
+  src: url('DroidArabicKufi.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi.woff') format('woff'), url('assets/fonts/DroidArabicKufi.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -1255,7 +1255,6 @@ a.join-class {
   background: #fff;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
-   !important;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   margin-bottom: 30px;
@@ -2629,7 +2628,6 @@ a:focus {
   background: #fff;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
-   !important;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   margin-bottom: 30px;
@@ -2809,7 +2807,6 @@ a:focus {
   z-index: 9999;
   border: px solid #f28d1e;
   -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
-   !important;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.4);
   -webkit-transition: all 0.7s ease 0s;
   -o-transition: all 0.7s ease 0s;

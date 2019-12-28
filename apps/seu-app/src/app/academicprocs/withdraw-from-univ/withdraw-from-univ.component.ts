@@ -12,24 +12,25 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 @Component({
   selector: 'app-withdraw-from-univ',
   templateUrl: './withdraw-from-univ.component.html',
-  styleUrls: ['./withdraw-from-univ.component.css']
+  styleUrls: ['./withdraw-from-univ.component.scss']
 })
 export class WithdrawFromUnivComponent implements OnInit {
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: WithdrawFromUnivService) { }
 
   printAR;
   withdraw: UnivWithdraw;
   reqData;
   msgs;
   status;
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: WithdrawFromUnivService) { }
+
+  isLoading = false;
+  deleting = false;
 
   ngOnInit() {
     this.isLoading = true;
     this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
     this.getRequests();
   }
-
-  isLoading = false;
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
@@ -53,9 +54,9 @@ export class WithdrawFromUnivComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
-    dialogConfig.direction = "rtl";
+    dialogConfig.direction = 'rtl';
 
-    let dialogref = this.dialog.open(AddRequestComponent, dialogConfig);
+    const dialogref = this.dialog.open(AddRequestComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (this.acadmicProc.newreqs) {
         this.getRequests();
@@ -68,7 +69,6 @@ export class WithdrawFromUnivComponent implements OnInit {
     return this.acadmicProc.Download(req);
 
   }
-  deleting = false;
   delete(id, index) {
     if (confirm('هل انت متأكد؟')) {
       this.deleting = true;
