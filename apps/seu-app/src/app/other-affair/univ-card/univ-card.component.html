@@ -69,7 +69,7 @@
             <td>{{it.INSRT_DATE}}</td>
             <td>{{it.status}}</td>
 
-            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
+            <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.id,i)"><i class="fa fa-trash"></i> </button></td>
 
                 <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>

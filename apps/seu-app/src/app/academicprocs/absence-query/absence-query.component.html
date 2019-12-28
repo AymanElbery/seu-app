@@ -32,21 +32,21 @@
   <section class="ser-state" *ngIf="!isLoading">
     <nav>
       <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">
-        <a class="nav-link nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One"
-          aria-selected="true">
+        <a class="nav-link nav-link active" (click)="selectedTab(1)" id="one-tab" data-toggle="tab" href="#one"
+          role="tab" aria-controls="One" aria-selected="true">
           نسبة غياب المحاضرات الكلية
 
         </a>
 
-        <a class="nav-item nav-link " id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two"
-          aria-selected="false">
+        <a class="nav-item nav-link " (click)="selectedTab(1)" id="two-tab" data-toggle="tab" href="#two" role="tab"
+          aria-controls="Two" aria-selected="false">
           نسبة غياب المحاضرات التقليدية
 
         </a>
 
 
-        <a class="nav-item  nav-link " id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three"
-          aria-selected="false">
+        <a class="nav-item  nav-link " (click)="selectedTab(1)" id="three-tab" data-toggle="tab" href="#three"
+          role="tab" aria-controls="Three" aria-selected="false">
           نسبة غياب المحاضرات الافتراضيه
         </a>
 
@@ -71,6 +71,7 @@
                   <th scope="col">CRN </th>
                   <th scope="col">كود المقرر</th>
                   <th scope="col">اسم المقرر</th>
+                  <th scope="col">العدد </th>
                   <th scope="col">نسبة الغباب</th>
 
                 </tr>
@@ -80,6 +81,8 @@
                   <td>{{it.CRN}}</td>
                   <td>{{it.CRES_CODE}}</td>
                   <td>{{it.CRSE_TITLE}}</td>
+                  <td>{{it.ABSCOUNT}}</td>
+
                   <td>{{it.ABSENT_PERCENTAGE_TOTAL}}</td>
                 </tr>
 
@@ -128,6 +131,8 @@
                   <th scope="col">CRN </th>
                   <th scope="col">كود المقرر</th>
                   <th scope="col">اسم المقرر</th>
+                  <th scope="col">العدد </th>
+
                   <th scope="col">نسبة الغباب</th>
 
                 </tr>
@@ -137,6 +142,8 @@
                   <td>{{it.CRN}}</td>
                   <td>{{it.CRES_CODE}}</td>
                   <td>{{it.CRSE_TITLE}}</td>
+                  <td>{{it.ABSCOUNT}}</td>
+
                   <td>{{it.ABSENT_PERCENTAGE_FTF}}</td>
                 </tr>
 
@@ -180,6 +187,8 @@
                   <th scope="col">CRN </th>
                   <th scope="col">كود المقرر</th>
                   <th scope="col">اسم المقرر</th>
+                  <th scope="col">العدد </th>
+
                   <th scope="col">نسبة الغباب</th>
 
                 </tr>
@@ -189,6 +198,7 @@
                   <td>{{it.CRN}}</td>
                   <td>{{it.CRES_CODE}}</td>
                   <td>{{it.CRSE_TITLE}}</td>
+                  <td>{{it.ABSCOUNT}}</td>
                   <td>{{it.ABSENT_PERCENTAGE_VERT}}</td>
                 </tr>
 
@@ -230,19 +240,23 @@
             <th scope="col">رمز المقرر </th>
             <th scope="col">اسم المقرر</th>
             <th scope="col">نوع المحاضره</th>
+            <th scope="col">الأسبوع</th>
+            <th scope="col">اليوم</th>
             <th scope="col">حالة الحضور</th>
 
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let it of absData.lectures">
-            <td>{{it.CODE}}</td>
-            <td>{{it.TITLE}}</td>
-            <td>{{it.TYPE}}</td>
-            <td>{{it.STATUS}}</td>
-          </tr>
-
-        </tbody>
+          <ng-container *ngFor="let it of absData.lectures">
+            <tr>
+              <td>{{it.CODE}}</td>
+              <td>{{it.TITLE}}</td>
+              <td>{{it.TYPE}}</td>
+              <td>{{it.WEEK_ID}}</td>
+              <td>{{it.DAY}}</td>
+              <td>{{it.STATUS}}</td>
+            </tr>
+          </ng-container>
       </table>
 
 

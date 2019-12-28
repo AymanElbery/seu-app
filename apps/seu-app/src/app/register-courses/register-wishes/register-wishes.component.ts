@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { RegisterWishesService } from '../services/register-wishes.service';
 import { RegisterWishes } from 'src/app/shared/models/register-wishes';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-register-wishes',
@@ -18,7 +19,7 @@ export class RegisterWishesComponent implements OnInit {
   isLoading = false;
 
 
-  constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: RegisterWishesService) { }
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: RegisterWishesService) { }
 
   ngOnInit() {
     this.getServiceRequest();
@@ -27,7 +28,6 @@ export class RegisterWishesComponent implements OnInit {
   getServiceRequest() {
     this.isLoading = true;
     this.registerWishes = { tow_days: 0, wish: '' };
-
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
@@ -40,21 +40,18 @@ export class RegisterWishesComponent implements OnInit {
     );
   }
 
+  deleting = false;
   delete(id, index) {
     if (confirm('هل انت متأكد')) {
+      this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
-        //console.log(id);
         let messages = (res as any).messages;
-
         this.status = (res as any).status;
-
-        messages.forEach((element: any) => {
-          this.toastr.success('', element.body);
-
-        });
+        this.toastr.push(messages);
         if (this.status == 1) {
           this.acadmicProc.reqData.requests.splice(index, 1);
         }
+        this.deleting = false;
       });
     }
 
@@ -63,27 +60,23 @@ export class RegisterWishesComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-
     this.addRequest(this.registerWishes);
-    this.getServiceRequest();
   }
 
+  requesting = false;
   addRequest(data: any) {
-    ////console.log(data);
-
     this.acadmicProc.AddRequest(data).then(res => {
-      let msgss = (res as any).messages;
-      msgss.forEach((element: any) => {
-        this.toastr.success('', element.body);
+      this.toastr.push((res as any).messages);
+      this.requesting = false;
+      if (res['status']) {
+        this.getServiceRequest();
         this.registerWishes = { tow_days: 0, wish: '' };
-
+      }
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
       });
-    });
-
-
-
-    //this.cmp = {camp:''};
-
   }
 
 }

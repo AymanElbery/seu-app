@@ -21,17 +21,21 @@ export class AbsenceQueryComponent implements OnInit {
 
     this.academicService.getِAbsemceQuery().then(
       res => {
-    this.absData =    (res as any).data;
-    ////console.log(this.absData.absent_percentage_total);
-    this.status = (res as any).status;
-    this.isLoading=false;
+        this.absData = (res as any).data;
+        ////console.log(this.absData.absent_percentage_total);
+        this.status = (res as any).status;
+        this.isLoading = false;
       }
     );
-    this.arabicPrint =   this.academicService.Download();
+    this.arabicPrint = this.academicService.Download();
     this.EngPrint = this.academicService.DownloadEng();
   }
   toHTML(input): any {
     return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
-}
+  }
+  currentTab = 1;
+  selectedTab(id) {
+    this.currentTab = id;
+  }
 
 }

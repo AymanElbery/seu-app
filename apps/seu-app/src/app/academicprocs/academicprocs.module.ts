@@ -127,7 +127,7 @@ import { MatCheckboxModule } from '@angular/material';
     CommonModule,
     AcademicprocsRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,
+    //BrowserAnimationsModule,
     MatDialogModule,
     MatDatepickerModule,
      MatNativeDateModule,

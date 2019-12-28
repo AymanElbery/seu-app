@@ -17,12 +17,13 @@ export class MedicalReportService {
    return this.httRequest.GetRequest('medical_report_service').toPromise();
   }
 
-   Download() {
 
-    return this.configService.getApiURI() + '/medical_report_service/download';
+   Download() {
+    const sid =   this.configService.getSid();
+    return this.configService.getApiURI() + '/medical_report_service/download?sid=' + sid;
    }
    DownloadEng() {
-
-    return this.configService.getApiURI() + '/medical_report_service/download?Lang=en';
+    const sid =   this.configService.getSid();
+    return this.configService.getApiURI() + '/medical_report_service/download?Lang=en&sid=' + sid;
    }
 }
