@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
+import { GlobalBaseService } from '../shared/services/global-base.service';
 
 @Component({
     selector: 'app-home',
@@ -8,7 +9,7 @@ import * as app from 'tns-core-modules/application';
 })
 export class HomeComponent implements OnInit {
 
-    constructor() {
+    constructor(  private  globalService: GlobalBaseService) {
         // Use the component constructor to inject providers.
     }
 

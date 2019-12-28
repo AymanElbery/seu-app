@@ -17,6 +17,8 @@ import { HomeComponent } from './home/home.component.tns';
 import { AccountModule } from './account/account.module.tns';
 import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular';
 import { AcademicaffModule } from './academicaff/academicaff.module.tns';
+import { GlobalService } from './shared/services/global.service.tns';
+import { GlobalBaseService } from './shared/services/global-base.service';
 
 
 
@@ -35,7 +37,8 @@ import { AcademicaffModule } from './academicaff/academicaff.module.tns';
     AccountModule,
     NativeScriptUISideDrawerModule,
   ],
-  providers: [ConfigService, HttpRequestService, UserManagerService
+  providers: [ConfigService, HttpRequestService, UserManagerService,
+    {provide: GlobalBaseService, useClass: GlobalService}
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]

@@ -13,35 +13,73 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
         </StackLayout>
     
         <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;">
-            <StackLayout >
+             <StackLayout >
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
-                    <Label col="0" text="Home" class="p-r-10"></Label>
-                    <Label col="1"  text="&#xf015;" style="text-align: right;float: right;direction: rtl;" class="nt-icon fas"></Label>
+                    <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
 
                 </GridLayout>
-
-                <GridLayout style="direction: rtl;text-align: right;" columns="auto, 1" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/academicaff/graduationstatment')" (tap)="onNavItemTap('/academicaff/graduationstatment')">
-
-                    <Label col="0" text=" خريج " class="p-r-10"></Label>
-
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
+                    <Label col="1" text="الاعدادات" style="text-align: left;padding-right: 150px;font-size: medium;" ></Label>
+                    <Label col="1"  text="&#xf013;"   class=" fas ysRootMenuIcon"></Label>
 
                 </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
+                    <Label col="1" text="تواصل معنا" class="ysRootMenuItem" ></Label>
+                    <Label col="1"  text="&#xf095;"   class="fas ysRootMenuIcon"></Label>
 
-                <GridLayout  style="text-align: right;direction: rtl;" columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/search')" (tap)="onNavItemTap('/search')">
-                    <Label col="1" text="- &#xf002;" class="nt-icon fas"></Label>
-                    <Label col="0" text="Search" class=""></Label>
-                </GridLayout >
-
-                <GridLayout  columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/featured')" (tap)="onNavItemTap('/featured')">
-                    <Label style="text-align: right;;padding-right: 20px;" col="1" text="&#xf005; " class=" fas"></Label>
-                    <Label style="text-align: left;" col="1" text="   بيانات " class="p-r-10"></Label>
                 </GridLayout>
-    
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
+                    <Label col="1" text="شكاوي ومقترحات" class="ysRootMenuItem" ></Label>
+                    <Label col="1"  text="&#xf0e0;"   class="fas ysRootMenuIcon"></Label>
+
+                </GridLayout>
+                
                 <StackLayout class="hr"></StackLayout>
 
+
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  >
+                    <Label col="1"  text="القائمة الجانبية" class="ysMenuHeader"  ></Label>
+                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
+
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/home')">
+                    <Label col="1" text="طلب خدمة" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
-                    <Label col="0" text="&#xf013;" class="nt-icon fas"></Label>
-                    <Label col="1" text="Settings" class="p-r-10"></Label>
+                    <Label col="1" text="طلب خدمة" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
+                    <Label col="1" text="طلب خدمة" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                <StackLayout class="hr"></StackLayout>
+
+
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  >
+                    <Label col="1"  text="القائمة الجانبية" class="ysMenuHeader"  ></Label>
+                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
+
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/home')">
+                    <Label col="1" text="طلب خدمة" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
+                    <Label col="1" text="طلب خدمة" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
+                    <Label col="1" text="طلب خدمة" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
                 </GridLayout>
             </StackLayout>
         </ScrollView>
