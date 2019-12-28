@@ -116,8 +116,8 @@
 
 
   </div>
-  <form  #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" *ngIf="!isLoading">
-    <section  class="ser-state">
+  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" *ngIf="!isLoading">
+    <section class="ser-state">
       <div *ngIf="reqData.can_add_new_request" class="widget">
         <div class="widget-header">
 
@@ -126,19 +126,20 @@
 
         <div class="container">
           <div class="row ser-block">
-            <div  *ngIf="reqData.requests.length == 0" class=" col-md-4 col-sm-12">
+            <div *ngIf="reqData.requests.length == 0" class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>هل ترغب ب يومين (يبدأ من 5 مساء) </h6>
-                <input  [disabled]="registerWishes.wish != ''" type="checkbox" class="checkbox" style="height: 20px;width:20px;" #TowDaya="ngModel"
-                  [(ngModel)]="registerWishes.tow_days" name="TowDaya" ng-true-value=0 ng-false-value=1>
+                <input [disabled]="registerWishes.wish != ''" type="checkbox" class="checkbox"
+                  style="height: 20px;width:20px;" #TowDaya="ngModel" [(ngModel)]="registerWishes.tow_days"
+                  name="TowDaya" ng-true-value=0 ng-false-value=1>
               </div>
 
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>الأيام و الفترات المتاحة </h6>
-                <select  [disabled]="registerWishes.tow_days != ''"  class="form-control" #Wishes="ngModel" [(ngModel)]="registerWishes.wish" name="Wishes"
-                  [class.is-invalid]="registerWishes.wish == ''">
+                <select [disabled]="registerWishes.tow_days != ''" class="form-control" #Wishes="ngModel"
+                  [(ngModel)]="registerWishes.wish" name="Wishes" [class.is-invalid]="registerWishes.wish == ''">
                   <option value=''>اختر الفترة المتاحة</option>
                   <option *ngFor="let wish of reqData.wishes_list" [value]="wish.id">{{wish.value}}</option>
                 </select>
@@ -150,8 +151,8 @@
             <div *ngIf="reqData.can_add_new_request" class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6> <br /> </h6>
-                <button   type="submit" class="btn btn-dark"><i
-                    class="fa fa-database"></i> ارسال الطلب</button>
+                <button type="submit" [disabled]="requesting" class="btn btn-dark"><i class="fa fa-database"></i> ارسال
+                  الطلب</button>
 
               </div>
               <!--  <div class="progress progress-sm">
@@ -196,15 +197,11 @@
             <td>{{it.duration}}</td>
             <td>{{it.insert_date}}</td>
 
-            <td *ngIf='it.deletable'><button
-              [disabled]='!it.deletable' class="btn btn-sm btn-danger"
-              style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
-                 <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
-              </i> </button></td>
-
-          <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+            <td><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
+                (click)="delete(it.request_number,i)"><i class="fa fa-trash">
+                  <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
+                </i> </button></td>
           </tr>
-
         </tbody>
       </table>
     </div>

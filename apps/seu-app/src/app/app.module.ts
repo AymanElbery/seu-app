@@ -45,6 +45,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { DownloadPrintDirective } from './shared/services/download.directive';
 import { ExternalLinkDirective } from './shared/services/external-link.directive';
+import { GlobalService } from './shared/services/global.service';
+import { GlobalBaseService } from './shared/services/global-base.service';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,8 @@ import { ExternalLinkDirective } from './shared/services/external-link.directive
     , MatProgressSpinnerModule
   ],
   providers: [ConfigService,
-    HttpRequestService
+    HttpRequestService,
+    {provide: GlobalBaseService, useClass: GlobalService}
     , UserManagerService
     , AppStorageService
     , UserService

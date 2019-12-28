@@ -6,7 +6,7 @@
 
   </div>
   <div class="modal-body">
-    <form #form="ngForm" autocomplete="off" (submit)="onSubmit()">
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
 
       <p style="text-align:center">اختيار المنهج</p>
 
@@ -27,8 +27,7 @@
             <tr *ngFor="let it of exam.exams;let i=index;">
               <td>{{it.CRSE_TITLE}}</td>
 
-
-              <td> <input name="teacherName" class="form-control col-md-6" #TeacherID="ngModel" [(ngModel)]="it.teacher"
+              <td> <input name="teacherName"  (change)="changeStatus(it,true)" class="form-control col-md-6" #TeacherID="ngModel" [(ngModel)]="it.teacher"
                   name="Teacher">
               </td>
 
@@ -36,7 +35,7 @@
 
 
               <td>
-                <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event)" #chkCourse>
+                <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event.target.checked)" #chkCourse>
               </td>
 
             </tr>
@@ -45,11 +44,6 @@
         </table>
       </div>
 
-      <select class="form-control" #BankID="ngModel" [(ngModel)]="exam.bank" name="Bank"
-        [class.is-invalid]="exam.bank == -1">
-        <option value=-1>اختر البنك</option>
-        <option *ngFor="let bank of reqData.banks" [value]="bank.id">{{bank.value}}</option>
-      </select>
 
       <br>
 
@@ -57,26 +51,49 @@
         <div class="form-group col-md-12">
           <div class="input-group">
             <div class="input-group-prepend">
-              <div class="input-group-text"> أسباب الاعتراض</div>
+              <div class="input-group-text"> البنك</div>
             </div>
-            <input name="reason" #reason="ngModel" [(ngModel)]="exam.reason" class="form-control">
+            <select class="form-control" #BankID="ngModel" [(ngModel)]="exam.bank" name="Bank"
+              [class.is-invalid]="exam.bank == -1">
+              <option *ngFor="let bank of reqData.banks" [value]="bank.id">{{bank.value}}</option>
+            </select>
           </div>
           <br>
           <div class="input-group">
             <div class="input-group-prepend">
               <div class="input-group-text"> رقم الحساب</div>
             </div>
-            <input #accountNumber="ngModel" name="accountNumber" [(ngModel)]="exam.account_number" class="form-control"
-              type="text">
+            <select class="form-control" #accountNumber="ngModel" [(ngModel)]="exam.account_number" name="accountNumber"
+              [class.is-invalid]="!exam.fees_amount">
+              <option value="1">SA2315000999222200220034</option>
+            </select>
+
+            <!-- <input #accountNumber="ngModel" name="accountNumber" [(ngModel)]="exam.account_number" class="form-control"
+              type="text"> -->
           </div>
           <br>
           <div class="input-group">
             <div class="input-group-prepend">
-              <div class="input-group-text"> الضريبة</div>
+              <div class="input-group-text"> المبلغ الذى تم إيداعه: </div>
             </div>
-            <input #feesAmount="ngModel" name="feesAmount" [(ngModel)]="exam.fees_amount" class="form-control"
-              type="text">
+            <select class="form-control" #feesAmount="ngModel" [(ngModel)]="exam.fees_amount" name="feesAmount"
+              [class.is-invalid]="!exam.fees_amount">
+              <option value="500">500 RS</option>
+              <option value="1000">1000 RS</option>
+              <option value="1500">1500 RS</option>
+            </select>
+
+            <!-- <input #feesAmount="ngModel" name="feesAmount" [(ngModel)]="exam.fees_amount" class="form-control"
+              type="text"> -->
           </div>
+          <br>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text"> أسباب الاعتراض</div>
+            </div>
+            <input name="reason" #reason="ngModel" [(ngModel)]="exam.reason" class="form-control">
+          </div>
+          <br>
         </div>
 
       </div>

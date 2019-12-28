@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { RouterExtensions } from 'nativescript-angular/router';
-import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition } from 'nativescript-ui-sidedrawer';
+import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import { filter } from 'rxjs/operators';
 import * as app from 'tns-core-modules/application';
+import { GlobalBaseService } from './shared/services/global-base.service';
 
 @Component({
     selector: 'app-root',
@@ -15,17 +16,20 @@ export class AppComponent implements OnInit {
     // tslint:disable-next-line: variable-name
     private _sideDrawerTransition: DrawerTransitionBase;
 
-    constructor(private router: Router, private routerExtensions: RouterExtensions) {
+    constructor(private router: Router, private routerExtensions: RouterExtensions,    private  globalService: GlobalBaseService ) {
         // Use the component constructor to inject services.
     }
 
     ngOnInit(): void {
+
         this._activatedUrl = '/home';
         this._sideDrawerTransition = new SlideInOnTopTransition();
 
         this.router.events
         .pipe(filter((event: any) => event instanceof NavigationEnd))
         .subscribe((event: NavigationEnd) => this._activatedUrl = event.urlAfterRedirects);
+        const draw =   app.getRootView() as RadSideDrawer;
+     //   draw.drawerLocation = SideDrawerLocation.Right;
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {

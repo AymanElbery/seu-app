@@ -2,29 +2,32 @@ import { Injectable } from '@angular/core';
 import { ConfigService } from './config.service';
 import { config } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { GlobalBaseService } from './global-base.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpRequestService {
 
-  constructor(private http: HttpClient, private configService: ConfigService) { }
+
+  constructor(private http: HttpClient, private configService: ConfigService, private globalService: GlobalBaseService) { }
 
 
   private createRequestHeader() {
-    //const sid = localStorage.getItem('sid');
-    const sid = "ZDBkNmM3MWQtMzAxZS00YmNiLTgyOTctMTA4NDJkZDliYmVmfFNCdmF4L2JBSlA4Y3JRSnk5dUhxRlhaVGl4dz0=";
 
-
+   // const sid = localStorage.getItem('sid');
+     const sid = this.globalService.getSID();
+     console.log(sid);
     // set headers here e.g.
-    const headers = new HttpHeaders({
+
+     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Session-ID': sid
 
     });
 
-    ////console.log(headers);
-    return headers;
+    //// console.log(headers);
+     return headers;
   }
 
   private createAuthRequestHeader(toekn) {
@@ -40,7 +43,7 @@ export class HttpRequestService {
   GetRequest(path: string) {
 
     const url = this.configService.getApiURI() + '/' + path;
-    ////console.log('url:' + url);
+    //// console.log('url:' + url);
     //  let headers= new Headers();
     // headers.append('Content-Type', 'application/json');
     const headers = this.createRequestHeader();
@@ -86,7 +89,7 @@ export class HttpRequestService {
     /* if (body == null)
        return this.http.post(url, { headers });
      else*/
-    ////console.log(body);
+    //// console.log(body);
     return this.http.post(url, JSON.stringify(body), { headers });
   }
   postAuthRequest(path: string, body: any) {
