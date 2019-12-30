@@ -8,7 +8,7 @@ import { UserManagerService } from '../../shared/services/user-manager.service';
 import * as dialogs from 'tns-core-modules/ui/dialogs';
 
 @Component({
-  selector: 'app-login-form',
+   selector: 'app-login-form',
   templateUrl: './login-form.component.tns.html',
   styleUrls: ['./login-form.component.tns.scss']
 })
@@ -28,10 +28,12 @@ export class LoginFormComponent implements OnInit {
   ) {
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
+     
         this.brandNew = param.brandNew;
         this.credentials.email = param.email;
       }
     );
+   // this.userManger.logout();
     // this.userManger.logout();
   }
 
