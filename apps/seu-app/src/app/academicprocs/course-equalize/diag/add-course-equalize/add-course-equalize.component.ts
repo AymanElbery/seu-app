@@ -49,7 +49,7 @@ export class AddCourseEqualizeComponent implements OnInit {
 
       }
     }
-    ////console.log(this.curseEqual.courses);
+    //console.log(this.curseEqual.courses);
 
   }
   handleInputChange(e) {

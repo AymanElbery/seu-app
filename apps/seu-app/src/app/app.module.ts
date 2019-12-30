@@ -48,6 +48,7 @@ import { ExternalLinkDirective } from "./shared/services/external-link.directive
 import { GlobalService } from "./shared/services/global.service";
 import { GlobalBaseService } from "./shared/services/global-base.service";
 import { OwlModule } from "ngx-owl-carousel";
+import { AppTransModule } from "./app.trans.module";
 
 @NgModule({
   declarations: [
@@ -70,26 +71,15 @@ import { OwlModule } from "ngx-owl-carousel";
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
     OwlModule,
+    AppTransModule,
     HttpClientModule,
     HttpClientJsonpModule,
     AppRoutingModule,
     AccountModule,
     DashboardModule,
     FormsModule,
-    OwlModule,
     ToastrModule.forRoot(),
-    // , AcademicprocsModule --lazy loaded
-    // , AcademicaffModule  -- lazy loaded
-    // , RegisterCoursesModule --lazy loaded
-    // , LecturesAbsenceModule  -- empty module :)
-    // , FinanceAffairModule
-    // , ExamsAffairModule
-    // , OtherAffairModule
-    // , MasterAcademicRequestsModule
-    // , MasterFinanceAffairModule
-    // , MasterOtherRequestsModule
-    // , MasterPrintCertificatesModule
-    // , MasterStudentDataModule
+    ,
     TimerModule,
     MatProgressSpinnerModule
   ],

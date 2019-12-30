@@ -1,18 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { PrintService } from "../shared/services/print.service";
-import { HomeService } from "../rootservices/home.service";
-import { UserService } from "../account/services/user.service";
-import { ApiUserRoles } from "../shared/models/StaticData/api-user-roles";
-import { CMSUserRoles } from "../shared/models/StaticData/cmsuser-roles";
-import { NavigationEnd, Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { PrintService } from '../shared/services/print.service';
+import { HomeService } from '../rootservices/home.service';
+import { UserService } from '../account/services/user.service';
+import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
+import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
+import { NavigationEnd, Router } from '@angular/router';
 
 declare function LoadCrsAds(): any;
 declare function OWLmoveDotsToNav(): any;
 // declare function LoadCrsNews(): any;
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   SlideOptions = {
@@ -59,17 +59,17 @@ export class HomeComponent implements OnInit {
   mySubscription: any;
 
   ngOnInit() {
-    //console.log('home');
-    //console.log(this.userService.userData);
-    //console.log('intial');
+    // console.log('home');
+    // console.log(this.userService.userData);
+    // console.log('intial');
     this.userService.userDataSubject.subscribe(res => {
-      if (res) this.LoadData();
+      if (res) { this.LoadData(); }
     });
   }
 
   LoadNews() {
-    //console.log('LoadNews');
-    //console.log('user is ' + this.userService.userData);
+    // console.log('LoadNews');
+    // console.log('user is ' + this.userService.userData);
     // tslint:disable-next-line: triple-equals
     if (this.userService.userData.activeRole === ApiUserRoles.Student) {
       return this.loadStudentNews();
@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
     }
   }
   private loadStudentNews() {
-    //console.log('loadStudentNews :' + CMSUserRoles.Student);
+    // console.log('loadStudentNews :' + CMSUserRoles.Student);
     return this.homeService
       .getNews(
         CMSUserRoles.Student,
@@ -100,7 +100,7 @@ export class HomeComponent implements OnInit {
       });
   }
   private loadEmployessNews() {
-    //console.log('loadEmployessNews :' + CMSUserRoles.Employee);
+    // console.log('loadEmployessNews :' + CMSUserRoles.Employee);
 
     return this.homeService
       .getNews(
@@ -110,13 +110,13 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.newsData = (res as any).Data;
-        //console.log(this.userService.newsData.length);
+        // console.log(this.userService.newsData.length);
         this.newsLen = this.userService.newsData
           ? this.userService.newsData.length
           : 0;
-        //console.log(this.userService.newsData);
+        // console.log(this.userService.newsData);
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
@@ -132,13 +132,13 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.newsData = (res as any).Data;
-        //console.log(this.userService.newsData.length);
+        // console.log(this.userService.newsData.length);
         this.newsLen = this.userService.newsData
           ? this.userService.newsData.length
           : 0;
-        //console.log(this.userService.newsData);
+        // console.log(this.userService.newsData);
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
@@ -163,10 +163,10 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.eventsData = (res as any).Data;
-        //console.log(this.userService.eventsData.length);
-        //console.log(this.userService.eventsData);
+        // console.log(this.userService.eventsData.length);
+        // console.log(this.userService.eventsData);
         this.eventsLoaded = true;
       });
   }
@@ -180,10 +180,10 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.eventsData = (res as any).Data;
-        //console.log(this.userService.eventsData.length);
-        //console.log(this.userService.eventsData);
+        // console.log(this.userService.eventsData.length);
+        // console.log(this.userService.eventsData);
         this.eventsLoaded = true;
       });
   }
@@ -196,10 +196,10 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.eventsData = (res as any).Data;
-        //console.log(this.userService.eventsData.length);
-        //console.log(this.userService.eventsData);
+        // console.log(this.userService.eventsData.length);
+        // console.log(this.userService.eventsData);
         this.eventsLoaded = true;
       });
   }
@@ -223,11 +223,11 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.adsData = (res as any).Data;
-        //console.log(this.userService.adsData.length);
+        // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
-        //console.log(this.userService.adsData);
+        // console.log(this.userService.adsData);
         LoadCrsAds();
         this.adsLoaded = true;
       });
@@ -241,11 +241,11 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.adsData = (res as any).Data;
-        //console.log(this.userService.adsData.length);
+        // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
-        //console.log(this.userService.adsData);
+        // console.log(this.userService.adsData);
         LoadCrsAds();
         this.adsLoaded = true;
       });
@@ -259,11 +259,11 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.adsData = (res as any).Data;
-        //console.log(this.userService.adsData.length);
+        // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
-        //console.log(this.userService.adsData);
+        // console.log(this.userService.adsData);
         LoadCrsAds();
         this.adsLoaded = true;
       });
@@ -276,9 +276,9 @@ export class HomeComponent implements OnInit {
   }
 
   onPrintFile() {
-    alert("start");
-    const paramsData = ["101", "102"];
-    alert("1");
-    this.printService.printDocument("print-file", paramsData);
+    alert('start');
+    const paramsData = ['101', '102'];
+    alert('1');
+    this.printService.printDocument('print-file', paramsData);
   }
 }

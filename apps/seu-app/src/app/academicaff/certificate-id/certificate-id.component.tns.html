@@ -2,37 +2,39 @@
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+
     -->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
     <!-- 
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
+    <ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()">
     </ActionItem>
-    <Label text="شهادة تعريف"></Label>
+    <Label  text="شهادة تعريف"></Label>
+
 </ActionBar>
 
+<ScrollView>
 
-  <GridLayout rows="auto,auto,200,auto,auto">
+  <GridLayout *ngIf="!isLoading"  rows="auto,auto,200,auto,auto">
+    
+    <FlexboxLayout   row="0" flexDirection="row-reverse" justifyContent="space-around" class="firstBox">
 
-    <FlexboxLayout row="0" flexDirection="row-reverse" justifyContent="space-around" class="firstBox">
-
-      <FlexboxLayout flexDirection="column">
+      <FlexboxLayout   flexDirection="column">
         <Label [text]="certificateDetails.labels.date" class="header"></Label>
         <Label [text]="certificateDetails.values.date" class="content"></Label>
       </FlexboxLayout>
 
-      <FlexboxLayout flexDirection="column">
+      <FlexboxLayout   flexDirection="column">
         <Label [text]="certificateDetails.labels.ssn" class="header"></Label>
         <Label [text]="certificateDetails.values.ssn" class="content"></Label>
       </FlexboxLayout>
 
     </FlexboxLayout>
 
-    <FlexboxLayout row="1" flexDirection="row-reverse" class="firstParagraph" flexWrap="wrap">
+    <FlexboxLayout  row="1" flexDirection="row-reverse" class="firstParagraph" flexWrap="wrap">
       <label  [text]="certificateDetails.labels.txt1"></label>
       <label  [text]="certificateDetails.values.std_name"></label>
       <label  [text]="certificateDetails.labels.txt2"></label>
@@ -47,7 +49,7 @@
       <label  [text]="certificateDetails.labels.txt7"></label>
     </FlexboxLayout>
 
-    <FlexboxLayout row="2" justifyContent="space-around" flexDirection="column">
+    <FlexboxLayout  row="2" justifyContent="space-around" flexDirection="column">
       <FlexboxLayout class="tableHeading">
         <Label [text]="certificateDetails.labels.crn" class="narrowColumn"></Label>
         <Label [text]="certificateDetails.labels.course_title" class="wideColumn"></Label>
@@ -55,7 +57,7 @@
         <Label [text]="certificateDetails.labels.time" class="wideColumn"></Label>
       </FlexboxLayout>
 
-      <ListView [items]="lectures" *ngIf="lectures" height="150">
+      <ListView  [items]="lectures" *ngIf="lectures" height="150">
         <ScrollView>
           <ng-template let-item="item">
             <FlexboxLayout justifyContent="space-around" flexWrap="nowrap">
@@ -69,7 +71,7 @@
       </ListView>
     </FlexboxLayout>
 
-    <FlexboxLayout row="3" flexDirection="row-reverse" flexWrap="wrap" class="closingParagraph">
+    <FlexboxLayout  row="3" flexDirection="row-reverse" flexWrap="wrap" class="closingParagraph">
       <label  [text]="certificateDetails.labels.txt9"></label>
       <label  [text]="certificateDetails.labels.txt10"></label>
       <label  [text]="certificateDetails.labels.txt11"></label>
@@ -77,9 +79,26 @@
       <label  [text]="certificateDetails.labels.txt13"></label>
     </FlexboxLayout>
 
-    <FlexboxLayout row="4" flexDirection="row-reverse" alignItems="center" class="buttonsLayout">
+    
+    <FlexboxLayout  row="4" flexDirection="row-reverse" alignItems="center" class="buttonsLayout">
+    </FlexboxLayout>
+    <FlexboxLayout  row="4" flexDirection="row-reverse" alignItems="center" class="buttonsLayout">
       <Button text="عربى" class="my-button"  (tap)="onArabicPrint()" ></Button>
       <Button text="English" class="my-button"  (tap)="onEnglishPrint()"></Button>
     </FlexboxLayout>
   </GridLayout>
+  
+   <GridLayout  *ngIf="isLoading">
+     <StackLayout class="form" verticalAlignment="center">
+      <StackLayout  margin="10" >
+        <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
+    </StackLayout>
+        <StackLayout>
+      <ActivityIndicator *ngIf="isLoading" width="200" height="200" [busy]="isLoading" ></ActivityIndicator>
 
+        </StackLayout>
+
+     </StackLayout>
+
+ </GridLayout>
+</ScrollView>

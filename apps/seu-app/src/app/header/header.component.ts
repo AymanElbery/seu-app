@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { UserServiceService } from '../shared/user-service.service';
 import { UserService } from '../account/services/user.service';
 import { NotificationsService } from '../shared/services/notificationsservice';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { NotificationsService } from '../shared/services/notificationsservice';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-  constructor(private userManager: UserManagerService, public userService: UserService, public notifications: NotificationsService) {
+  constructor(private userManager: UserManagerService, public userService: UserService, public notifications: NotificationsService, private translate: TranslateService) {
 
 
   }
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isNavbarCollapsed;
   userData: any = {};
   status = false;
-
+  currLang;
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
@@ -28,7 +29,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.userManager.logout();
 
   }
+  useLang(code) {
+    this.currLang = code;
+    this.translate.use(code);
+  }
   ngOnInit() {
+    this.currLang = this.translate.currentLang;
     //console.log('header user data');
     this.userService.userDataSubject.
       subscribe(res => {

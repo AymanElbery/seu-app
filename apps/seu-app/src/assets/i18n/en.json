@@ -1,0 +1,10 @@
+{
+    "general": {
+        "print": ""
+    },
+    "menu": {
+        "myservices": "My Services",
+        "ugservices": "Undergradulate",
+        "grservices": "Master"
+    }
+}

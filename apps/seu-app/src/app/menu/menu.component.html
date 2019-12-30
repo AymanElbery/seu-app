@@ -13,9 +13,9 @@
     <div *ngIf="acStd" class="sidebar-header" [hidden]="!showServices">
       <select (change)="onChange(t.value)" name="menuType" [(ngModel)]="menuType" #t class="form-control"
         style="color: #1c2172;direction: rtl;" id="exampleFormControlSelect1">
-        <option value="0"> خدماتي</option>
-        <option value="1">خدمات البكالوريوس</option>
-        <option value="2">خدمات الماجستير</option>
+        <option value="0"> {{'menu.myservices' | translate}}</option>
+        <option value="1">{{'menu.ugservices'| translate}}</option>
+        <option value="2">{{'menu.grservices'| translate}}</option>
 
 
       </select>
