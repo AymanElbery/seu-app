@@ -1,38 +1,3 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "assets/css/fontawesome-free/css/all.min.css";
-@import "assets/css/icon-kit/css/iconkit.css";
-// @import "assets/css/ionicons/css/ionicons.min.css";
-$ionicons-font-path: "~ionicons/dist/fonts";
-@import "~ionicons/dist/scss/ionicons.scss";
-@import "assets/css/perfect-scrollbar.css";
-@import "assets/css/animate.css";
-@import "assets/css/owl/owl.carousel.min.css";
-@import "assets/css/owl/owl.theme.default.min.css";
-@import "assets/css/progress-wizard.min.css";
-@import "assets/css/bootstrap4/bootstrap-rtl.css";
-@import "assets/css/theme-service.css";
-@import "assets/css/style-service.css";
-
-@font-face {
-  font-family: 'fontreg';
-  src: url('assets/fonts/DroidArabicKufi.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi.woff') format('woff'), url('assets/fonts/DroidArabicKufi.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'fontbold';
-  src: url('assets/fonts/DroidArabicKufi-Bold.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi-Bold.woff') format('woff'), url('assets/fonts/DroidArabicKufi-Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'fontlight';
-  src: url('assets/fonts/DroidArabicKufi.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi.woff') format('woff'), url('assets/fonts/DroidArabicKufi.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 //colors
 $color_log_cabin_approx: #222;
 $color_mine_shaft_approx: #303030;
@@ -92,6 +57,44 @@ $color_black_pearl_60_approx: rgba(6, 12, 34, 0.6);
 $color_black_pearl_40_approx: rgba(6, 12, 34, 0.4);
 $seashell: #f1f1f1;
 $color_alabaster_approx: #fbfbfb;
+
+//Imports
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "assets/css/fontawesome-free/css/all.min.css";
+@import "assets/css/icon-kit/css/iconkit.css";
+// @import "assets/css/ionicons/css/ionicons.min.css";
+$ionicons-font-path: "~ionicons/dist/fonts";
+// @import "~ionicons/dist/scss/ionicons.scss";
+@import "assets/css/perfect-scrollbar.css";
+@import "assets/css/animate.css";
+@import "assets/css/owl/owl.carousel.min.css";
+@import "assets/css/owl/owl.theme.default.min.css";
+@import "assets/css/progress-wizard.min.css";
+@import "assets/css/bootstrap4/bootstrap-rtl.css";
+@import "assets/css/theme-service.css";
+@import "assets/css/style-service";
+
+@font-face {
+  font-family: 'fontreg';
+  src: url('assets/fonts/DroidArabicKufi.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi.woff') format('woff'), url('assets/fonts/DroidArabicKufi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fontbold';
+  src: url('assets/fonts/DroidArabicKufi-Bold.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi-Bold.woff') format('woff'), url('assets/fonts/DroidArabicKufi-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fontlight';
+  src: url('assets/fonts/DroidArabicKufi.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi.woff') format('woff'), url('assets/fonts/DroidArabicKufi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 html {
 	width: 100%;
@@ -3128,4 +3131,52 @@ ul.cart-list > li {
 	&:nth-of-type(odd) {
 		background-color: transparent;
 	}
+}
+// .carousel-item {
+//   float: right;
+//   margin: 0;
+// }
+
+.owl-theme {
+	.owl-nav {
+		display: flex;
+		[class*=owl-] {
+			background: transparent !important;
+			padding: 0 !important;
+			&:hover {
+				background: transparent !important;
+				color: inherit !important;
+			}
+		}
+		button {
+			flex: 1;
+			text-align: left;
+			font-size: 20px !important;
+		}
+		.owl-dots {
+			order: 1;
+		}
+		.owl-next {
+			order: 2;
+			text-align: right;
+		}
+	}
+	.owl-dots .owl-dot span {
+		margin: 0 !important;
+	}
+}
+.owl-content {
+  position: relative;
+  p {
+    position: absolute;
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%);
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    padding: 30px 20px 10px;
+    color: #fff;
+    margin: 0;
+    font-weight: 600;
+  }
+
 }
