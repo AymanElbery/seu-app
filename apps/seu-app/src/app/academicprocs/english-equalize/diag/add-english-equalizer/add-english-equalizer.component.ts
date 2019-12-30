@@ -42,7 +42,7 @@ export class AddEnglishEqualizerComponent implements OnInit {
           this.englishEqual.tests.splice(i, 1);
       }
     }
-    ////console.log(this.englishEqual.tests);
+    console.log(this.englishEqual.tests);
 
   }
 

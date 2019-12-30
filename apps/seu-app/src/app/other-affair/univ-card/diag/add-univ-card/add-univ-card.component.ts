@@ -22,7 +22,7 @@ export class AddUnivCardComponent implements OnInit {
     private toastr: AppToasterService, private univCard: UvnivCardService) { }
 
   ngOnInit() {
-    this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
+    this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: 'UG', photo: '', ssn_file: '' };
     this.univCard.getِgetRequests().then(
       res => {
         this.univCard.reqData = (res as any).data;

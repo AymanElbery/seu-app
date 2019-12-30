@@ -1,0 +1,16 @@
+{
+    "general": {
+        "print": ""
+    },
+    "menu": {
+        "myservices": "خدماتي",
+        "ugservices": "خدمات البكالوريوس",
+        "grservices": "خدمات الماجستير"
+    },
+    "services": {
+        "academic_status": {
+            "title": "الحالة الأكاديمية",
+            "desc": "الحالة الأكاديمية"
+        }
+    }
+}

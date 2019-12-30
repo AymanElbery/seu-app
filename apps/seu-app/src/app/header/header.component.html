@@ -116,9 +116,11 @@
         </div>
 
         <div class="d-none d-sm-block">
-          <!--  <a href="#" class="social" style="font-size: 20px; font-weight: 400"> E  </a>
-               <a href="#" class="social"  style="font-size: 20px; margin-top: -6px; display: none"> ع</a>
-               -->
+          <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
+            style="font-size: 20px; font-weight: 400"> E
+          </a>
+          <a href="javascript:;" *ngIf="currLang == 'en'" (click)="useLang('ar')" class="social"
+            style="font-size: 20px; margin-top: -6px;"> ع</a>
         </div>
 
 
@@ -150,7 +152,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="notiDropdown" data-toggle="dropdown">
             <i class="ik ik-bell"></i><span class="badge bg-danger">{{notifications.notesList.length}}</span></a>
           <div class="dropdown-menu dropdown-menu-right notification-dropdown">
-            
+
             <h4 *ngIf="notifications.notesList.length" class="header">الإشعارات</h4>
             <h4 *ngIf="!notifications.notesList.length" class="header">لا يوجد اشعارات</h4>
             <div *ngIf="notifications.notesList.length" class="notifications-wrap">
