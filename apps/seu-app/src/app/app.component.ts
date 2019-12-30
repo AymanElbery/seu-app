@@ -4,6 +4,7 @@ import { ConfigService } from "./shared/services/config.service";
 import { UserService } from "./account/services/user.service";
 import { HttpClient } from "@angular/common/http";
 import { Jsonp } from "@angular/http";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: "app-root",
@@ -18,9 +19,14 @@ export class AppComponent implements OnInit {
     public printService: PrintService,
     public configService: ConfigService,
     public userService: UserService,
-    private http: HttpClient
+    private http: HttpClient,
+    translate: TranslateService
   ) {
     this.print = printService;
+    translate.addLangs(['ar','en']);
+    translate.setDefaultLang('ar');
+    translate.use('ar');
+
   }
   ngOnInit() {
     this.userService.userDataSubject.subscribe(res => {
