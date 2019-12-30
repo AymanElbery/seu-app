@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UvnivCardService {
+  newreqs = false;
   reqData;
   msgs;
  	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {

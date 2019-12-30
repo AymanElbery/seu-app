@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GraduatesStateService } from '../services/graduates-state.service';
 
+
 @Component({
   selector: 'app-graduate-state',
   templateUrl: './graduate-state.component.html',
@@ -23,10 +24,10 @@ export class GraduateStateComponent implements OnInit {
     this.graduateStateSer.getStatement().then(
       (res) => {
       this.graduateData = (res as any).data;
-        this.msgs = (res as any).messages;
-        this.isLoading = false;
+      this.msgs = (res as any).messages;
+      this.isLoading = false;
 
-        ////console.log(this.graduateData.length);
+        //// console.log(this.graduateData.length);
       }
     );
   }

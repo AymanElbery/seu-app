@@ -1,16 +1,16 @@
-import { Component, OnInit } from "@angular/core";
-import { Credentials } from "../../shared/models/credentials.interface";
-import { Subscription } from "rxjs";
-import { UserService } from "../services/user.service";
-import { Router, ActivatedRoute } from "@angular/router";
-import { finalize } from "rxjs/operators";
-import { UserManagerService } from "../../shared/services/user-manager.service";
-import * as dialogs from "tns-core-modules/ui/dialogs";
+import { Component, OnInit } from '@angular/core';
+import { Credentials } from '../../shared/models/credentials.interface';
+import { Subscription } from 'rxjs';
+import { UserService } from '../services/user.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { finalize } from 'rxjs/operators';
+import { UserManagerService } from '../../shared/services/user-manager.service';
+import * as dialogs from 'tns-core-modules/ui/dialogs';
 
 @Component({
-  selector: "app-login-form",
-  templateUrl: "./login-form.component.tns.html",
-  styleUrls: ["./login-form.component.tns.scss"]
+   selector: 'app-login-form',
+  templateUrl: './login-form.component.tns.html',
+  styleUrls: ['./login-form.component.tns.scss']
 })
 export class LoginFormComponent implements OnInit {
   private subscription: Subscription;
@@ -18,8 +18,8 @@ export class LoginFormComponent implements OnInit {
   brandNew: boolean;
   errors: string;
   isRequesting: boolean;
-  submitted: boolean = false;
-  credentials: Credentials = { email: "", password: "" };
+  submitted = false;
+  credentials: Credentials = { email: '', password: '' };
   constructor(
     private userService: UserService,
     private userManger: UserManagerService,
@@ -28,19 +28,21 @@ export class LoginFormComponent implements OnInit {
   ) {
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
-        this.brandNew = param["brandNew"];
-        this.credentials.email = param["email"];
+     
+        this.brandNew = param.brandNew;
+        this.credentials.email = param.email;
       }
     );
-    this.userManger.logout();
+   // this.userManger.logout();
+    // this.userManger.logout();
   }
 
   login(value: Credentials) {
     this.submitted = true;
     this.isRequesting = true;
-    this.errors = "";
-
-    this.userService
+    this.errors = '';
+    this.router.navigate(['/home']);
+   /*  this.userService
       .login(value.email, value.password)
       .pipe(finalize(() => (this.isRequesting = false)))
       .subscribe(
@@ -66,7 +68,7 @@ export class LoginFormComponent implements OnInit {
             //console.log("Dialog closed!");
           });
         }
-      );
+      ); */
   }
 
   ngOnInit() {}

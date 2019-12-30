@@ -6,11 +6,11 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class ExamExcuseService {
-
+  newreqs = false;
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = 'stdservicesapi';
+    this.configService.baseUrl = 'stdservicesapi';
   }
 
   getِgetRequests() {

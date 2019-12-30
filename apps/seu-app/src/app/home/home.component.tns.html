@@ -1,54 +1,23 @@
-<!--StackLayout>
-  
-
-  <Button class="btn btn-primary btn-active" id="button" text="Login!" [nsRouterLink]="['/login']" ></Button>
-
-  <Button class="btn btn-primary btn-active" [nsRouterLink]="['/register']" id="btn" text="register!" ></Button>
-
-  <Label text="This is Preview application" textWrap="true"></Label>
-</StackLayout-->
-
-<!--
-Original Web template:
-
-<main role="main">
-   <br/><br/><br/>
-    <div class="container">dd</div></main>
-
+<ActionBar >
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!--
+    <NavigationButton ios.position="right" android.position="right" ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
 -->
-<!--
-RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
-Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
-https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawer/getting-started
--->
-<ActionBar title="Home "></ActionBar>
-<RadSideDrawer tkExampleTitle>
-    <GridLayout tkDrawerContent rows="56, *" class="sideStackLayout">
-        <StackLayout row="0" class="nt-drawer__header">
-            <Image class="nt-drawer__header-image fas t-36" src="font://&#xf2bd;"></Image>
-            <Label class="nt-drawer__header-brand" text="User Name"></Label>
-            <Label class="nt-drawer__header-footnote" text="username@mail.com"></Label>
-        </StackLayout>
-        <ScrollView row="1">
-            <StackLayout class="sideStackLayout">
-                <GridLayout columns="auto, *" class="nt-drawer__list-item">
-                    <Label col="0" text="&#xf005;" class="nt-icon fas"></Label>
-                    <Label col="1" text="Featured" class="p-r-10"></Label>
-                </GridLayout>
-                <Label text="Primary" class="sideLabel sideLightGrayLabel"></Label>
-                <Label col="0" text="&#xf005;" class="nt-icon fas"></Label>
-                <Label text="Promotions" class="sideLabel"></Label>
-                <Label text="Labels" class="sideLabel sideLightGrayLabel"></Label>
-                <Label text="Important" class="sideLabel"></Label>
-                <Label text="Starred" class="sideLabel"></Label>
-                <Label text="Sent Mail" class="sideLabel"></Label>
-                <Label text="Drafts" class="sideLabel"></Label>
-                <Label text="Close Drawer" color="lightgray" padding="10" style="horizontal-align: center" (tap)="onCloseDrawerTap()"></Label>
-            </StackLayout>
-        </ScrollView>
-    </GridLayout>
-    <StackLayout tkMainContent>
-        <Label [text]="mainContentText" textWrap="true" class="drawerContentText"></Label>
-        <Button text="OPEN DRAWER" (tap)="openDrawer()" class="drawerContentButton"></Button>
-    </StackLayout>
-</RadSideDrawer>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
+        ios.position="left"  android.position="right">
+    </ActionItem>
+    <Label text="Home"></Label>
+</ActionBar>
+
+<GridLayout style="direction: rtl;" class="page__content">
+    <Label class="page__content-icon fas" text="&#xf015;"></Label>
+    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
+</GridLayout>

@@ -1,0 +1,21 @@
+<ActionBar title="Login "></ActionBar>
+<GridLayout backgroundColor="#CCCCCC">
+    <ScrollView>
+<StackLayout  class="form" margin="10" verticalAlignment="center" backgroundColor="#FFFFFF" padding="5">
+  <StackLayout  margin="10" >
+      <Image src="../../app/shared/logo.png" stretch="none" class="img-rounded p-l-15 p-r-15 p-t-15"></Image>
+      
+
+  </StackLayout>
+
+  <StackLayout class="input-field">
+    <TextField hint="Enter UserName" [(ngModel)]="credentials.email" class="input"></TextField>
+
+  </StackLayout>
+
+  <StackLayout class="input-field">
+    <TextField hint="Enter Password" secure="true" [(ngModel)]="credentials.password" class="input"></TextField>
+  </StackLayout>
+
+  <Button text="Log In" (tap)="login(credentials)"  class="btn btn-primary"></Button>
+</StackLayout></ScrollView></GridLayout>

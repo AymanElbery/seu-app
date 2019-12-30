@@ -4,6 +4,7 @@ import { ObjectExamService } from '../services/object-exam.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { AddExamObjectComponent } from './diag/add-exam-object/add-exam-object.component';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 
 @Component({
@@ -19,67 +20,53 @@ export class ObjectExamComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ObjectExamService) { }
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ObjectExamService) { }
 
   ngOnInit() {
-    this.isLoading=true;
+    this.getRequests();
+  }
+  getRequests() {
+    this.isLoading = true;
     this.acadmicProc.getRequests().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-    //console.log(this.reqData.banks.CRN);
-    //console.log((res as any).status);
-    this.isLoading=false;
-      }
-    )}
-
-    openDialoge() {
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.autoFocus = true;
-      dialogConfig.disableClose = true;
-      dialogConfig.width = '50%';
-  
-      this.dialog.open(AddExamObjectComponent, dialogConfig);
-    }
-  
-    /* addRequest(data) {
-      this.acadmicProc.AddRequest(data).then(  res => {
+        this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
-          });
-    } 
-    onSubmit(form: NgForm) {
-  this.addRequest(form.value);
-  
-  
-    }
-  
-    */
-    delete(id, index) {
-     // //console.log(id);
-  
-      if ( confirm('هل انت متأكد')) {
-      this.acadmicProc.deleteReq(id).then(res => {
-       
-  ////console.log((res as any).status);
-  this.msgs =   (res as any).messages;
-  this.status =   (res as any).status;
-  ////console.log(this.status);
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+      }
+    )
+  }
+  openDialoge() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = '50%';
 
-  this.msgs.forEach((element: any) => {
-    this.toastr.success('', element.body);
-
+    let dialogref = this.dialog.open(AddExamObjectComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
     });
-    if(this.status == 1)
-        this.acadmicProc.reqData.requests.splice(index, 1);
-      });
-      ////console.log(this.status);
-      
-  
+  }
+
+  deleting = false;
+  delete(id, index) {
+    if (confirm('هل انت متأكد؟')) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.requests.splice(index, 1);
+        }
+        this.deleting = false;
+      }
+        , err => {
+          this.toastr.tryagain();
+          this.deleting = false;
+        });
     }
-  
   }
-  }
-
-
+}

@@ -15,14 +15,15 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class SummerWithdrawComponent implements OnInit {
 
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: SummerWithdrawService) { }
+
   printAR;
   reason: string;
   reqData;
   msgs;
   status;
   isLoading = false;
-
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: SummerWithdrawService) { }
+  deleting = false;
 
   ngOnInit() {
     this.isLoading = true;
@@ -37,7 +38,7 @@ export class SummerWithdrawComponent implements OnInit {
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-        ////console.log(this.reqData.reqs[0].time_to_delete_per_hour);
+        //// console.log(this.reqData.reqs[0].time_to_delete_per_hour);
       }, err => {
         this.reqData = [];
         this.msgs = [];
@@ -53,7 +54,7 @@ export class SummerWithdrawComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
 
-    let dialogref = this.dialog.open(AddSummerWithdrawComponent, dialogConfig);
+    const dialogref = this.dialog.open(AddSummerWithdrawComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (this.acadmicProc.newreqs) {
         this.getRequests();
@@ -66,12 +67,12 @@ export class SummerWithdrawComponent implements OnInit {
     return this.acadmicProc.Download(req);
 
   }
-  deleting = false;
   delete(id, index) {
     if (confirm('هل انت متأكد؟')) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
+        // tslint:disable-next-line: triple-equals
         if ((res as any).status == 1) {
           this.reqData.reqs.splice(index, 1);
         }

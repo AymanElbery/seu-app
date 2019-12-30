@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
-import { ConfigService } from 'src/app/shared/services/config.service';
-import { HttpRequestService } from 'src/app/shared/services/http-request.service';
+import { ConfigService } from '../../shared/services/config.service';
+import { HttpRequestService } from '../../shared/services/http-request.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GraduatesStateService {
 
+ 	  // tslint:disable-next-line: indent
  	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
                     this.configService.baseUrl = 'stdservicesapi';
+			  // tslint:disable-next-line: indent
+			  // tslint:disable-next-line: indent
 			  }
 
   getStatement() {

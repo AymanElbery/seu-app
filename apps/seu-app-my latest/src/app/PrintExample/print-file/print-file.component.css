@@ -1,0 +1,15 @@
+.printDiv {
+    page-break-after: always;
+   
+  
+  }
+  div {color:red}
+  .printDiv:last-child {
+    page-break-after: avoid;
+  }
+
+  
+  
+
+  
+  

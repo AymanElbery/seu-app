@@ -1,0 +1,93 @@
+<div class="main-content">
+  <section class="service-single mb-10">
+    <div class="container">
+      <h3> تغيير الفرع</h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p> تغيير الفرع </p>
+        </div>
+        <!-- <div class=" col-md-6 descr">
+                  <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    
+                </div> -->
+      </div>
+    </div>
+  </section>
+  <div *ngIf="isLoading" class=" loading-indicator  ">
+    <div class="state">
+
+
+      <mat-spinner *ngIf="isLoading"
+        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+      </mat-spinner>
+
+    </div>
+  </div>
+
+  <div class="ser-state" *ngIf="!isLoading">
+    <div style="text-align: right" *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}!
+    </div>
+  </div>
+  <!-- <div style="direction: ltr;text-align: center">
+  
+  <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+  اضافة طلب
+</button>
+<br/>
+<br/>
+
+</div> -->
+  <div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+
+
+      <h3 class="widget-title"> الطلبات السابقة
+        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+          اضافة طلب
+        </button>
+
+      </h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead style="background: #ebecf0">
+
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">الفرع المطلوب</th>
+
+            <th scope="col">تاريخ انشاء الطلب</th>
+
+            <th scope="col">تاريخ الرد</th>
+            <th scope="col">حالة الطلب</th>
+            <th scope="col">الاجراء</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let it of reqData.reqs;let i=index;">
+            <td>{{i+1}}</td>
+            <td>{{it.CAMP_TITLE}}</td>
+            <td>{{it.insert_date}}</td>
+
+
+            <td>{{it.APPROVAL_DATE}} </td>
+            <td>{{it.status}}</td>
+
+         
+
+            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
+              (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
+
+              <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -19,7 +19,8 @@ export class CertificateIDService {
     return this.httRequest.GetRequest('/identification_crse/get_identification').toPromise();
    }
    DownloadCertificate() {
-    const sid =   this.configService.getSid();
+   // const sid =   this.configService.getSid();
+    const sid="ZDBkNmM3MWQtMzAxZS00YmNiLTgyOTctMTA4NDJkZDliYmVmfFNCdmF4L2JBSlA4Y3JRSnk5dUhxRlhaVGl4dz0="
 
 
     this.configService.baseUrl = 'stdservicesapi';
@@ -28,6 +29,7 @@ export class CertificateIDService {
    }
    DownloadEngCertificate() {
     const sid =   this.configService.getSid();
+    //const sid="ZDBkNmM3MWQtMzAxZS00YmNiLTgyOTctMTA4NDJkZDliYmVmfFNCdmF4L2JBSlA4Y3JRSnk5dUhxRlhaVGl4dz0="
 
 
     this.configService.baseUrl = 'stdservicesapi';
