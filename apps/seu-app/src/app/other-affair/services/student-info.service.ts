@@ -10,24 +10,20 @@ export class StudentInfoService {
   reqData;
   msgs;
   reqNo;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
-			  }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = "stdservicesapi";
+  }
   getِRequests() {
     return this.httRequest.GetRequest('student_info_service').toPromise();
-   }
-   AddRequest(data) {
-     alert(1)
-     //console.log(data)
-       return this.httRequest.postRequest('student_info_service/update', data).toPromise();
-   }
-   DownloadPhoto() {
-
-    return this.configService.getApiURI() + '/student_info_service/download/photo';
-   }
-   DownloadCv() {
-
-    return this.configService.getApiURI() + '/student_info_service/download/cv';
-   }
+  }
+  AddRequest(data) {
+    return this.httRequest.postRequest('student_info_service/update', data).toPromise();
+  }
+  DownloadPhoto() {
+    return this.configService.getApiURI() + '/student_info_service/download/photo?sid=' + this.configService.getSid();
+  }
+  DownloadCv() {
+    return this.configService.getApiURI() + '/student_info_service/download/cv?sid=' + this.configService.getSid();
+  }
 }
 
