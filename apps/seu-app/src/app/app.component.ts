@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import { Component, OnInit } from "@angular/core";
-import { PrintService } from "./shared/services/print.service";
-import { ConfigService } from "./shared/services/config.service";
-import { UserService } from "./account/services/user.service";
-import { HttpClient } from "@angular/common/http";
-import { Jsonp } from "@angular/http";
-import { TranslateService } from '@ngx-translate/core';
-=======
 import { Component, OnInit } from '@angular/core';
 import { PrintService } from './shared/services/print.service';
 import { ConfigService } from './shared/services/config.service';
@@ -15,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { Jsonp } from '@angular/http';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { GlobalService } from './shared/services/global.service';
->>>>>>> 9d4eff6e6e940982eba93b22b47bce49abe388fd
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',

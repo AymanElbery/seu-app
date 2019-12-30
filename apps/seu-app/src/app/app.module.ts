@@ -45,14 +45,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ToastrModule } from 'ngx-toastr';
 import { DownloadPrintDirective } from './shared/services/download.directive';
 import { ExternalLinkDirective } from './shared/services/external-link.directive';
-<<<<<<< HEAD
-import { AppTransModule } from './app.trans.module';
-=======
 import { GlobalService } from './shared/services/global.service';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { OwlModule } from "ngx-owl-carousel";
+import { AppTransModule } from './app.trans.module';
 
->>>>>>> 9d4eff6e6e940982eba93b22b47bce49abe388fd
 
 @NgModule({
   declarations: [
