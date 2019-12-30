@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
 import { Jsonp } from '@angular/http';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { GlobalService } from './shared/services/global.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -22,17 +21,12 @@ export class AppComponent implements OnInit {
     public configService: ConfigService,
     public userService: UserService,
     private http: HttpClient,
-    private globalService: GlobalBaseService,
-    private translate: TranslateService
+    private  globalService: GlobalBaseService
   ) {
     this.print = printService;
-    translate.addLangs(['ar', 'en']);
-    translate.setDefaultLang('ar');
-    translate.use('ar');
-
   }
   ngOnInit() {
-    // alert(this.globalService.getSID());
+   // alert(this.globalService.getSID());
     this.userService.userDataSubject.subscribe(res => {
       if (res != null) {
         this.sessionloaded = true;

@@ -1,18 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { PrintService } from "../shared/services/print.service";
-import { HomeService } from "../rootservices/home.service";
-import { UserService } from "../account/services/user.service";
-import { ApiUserRoles } from "../shared/models/StaticData/api-user-roles";
-import { CMSUserRoles } from "../shared/models/StaticData/cmsuser-roles";
-import { NavigationEnd, Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { PrintService } from '../shared/services/print.service';
+import { HomeService } from '../rootservices/home.service';
+import { UserService } from '../account/services/user.service';
+import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
+import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
+import { NavigationEnd, Router } from '@angular/router';
 
 declare function LoadCrsAds(): any;
 declare function OWLmoveDotsToNav(): any;
 // declare function LoadCrsNews(): any;
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   SlideOptions = {
@@ -63,13 +63,7 @@ export class HomeComponent implements OnInit {
     // console.log(this.userService.userData);
     // console.log('intial');
     this.userService.userDataSubject.subscribe(res => {
-<<<<<<< HEAD
-      if (res) {
-        this.LoadData();
-      }
-=======
-      if (res) this.LoadData();
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
+      if (res) { this.LoadData(); }
     });
   }
 
@@ -86,20 +80,7 @@ export class HomeComponent implements OnInit {
     }
   }
   private loadStudentNews() {
-<<<<<<< HEAD
     // console.log('loadStudentNews :' + CMSUserRoles.Student);
-    return this.homeService.getNews(CMSUserRoles.Student,
-      this.userService.userData.level,
-      this.userService.userData.coll,
-      this.userService.userData.camp).
-      then(res => {
-        // console.log(res);
-        this.userService.newsData = (res as any).Data;
-        // console.log(this.userService.newsData.length);
-        this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
-        // console.log(this.userService.newsData);
-=======
-    //console.log('loadStudentNews :' + CMSUserRoles.Student);
     return this.homeService
       .getNews(
         CMSUserRoles.Student,
@@ -112,7 +93,6 @@ export class HomeComponent implements OnInit {
         this.newsLen = this.userService.newsData
           ? this.userService.newsData.length
           : 0;
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
@@ -122,18 +102,6 @@ export class HomeComponent implements OnInit {
   private loadEmployessNews() {
     // console.log('loadEmployessNews :' + CMSUserRoles.Employee);
 
-<<<<<<< HEAD
-    return this.homeService.getNews(CMSUserRoles.Employee,
-      this.userService.userData.level,
-      this.userService.userData.coll,
-      this.userService.userData.camp).
-      then(res => {
-        // console.log(res);
-        this.userService.newsData = (res as any).Data;
-        // console.log(this.userService.newsData.length);
-        this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
-        // console.log(this.userService.newsData);
-=======
     return this.homeService
       .getNews(
         CMSUserRoles.Employee,
@@ -142,14 +110,13 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.newsData = (res as any).Data;
-        //console.log(this.userService.newsData.length);
+        // console.log(this.userService.newsData.length);
         this.newsLen = this.userService.newsData
           ? this.userService.newsData.length
           : 0;
-        //console.log(this.userService.newsData);
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
+        // console.log(this.userService.newsData);
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
@@ -157,18 +124,6 @@ export class HomeComponent implements OnInit {
   }
 
   private loadStaffNews() {
-<<<<<<< HEAD
-    return this.homeService.getNews(CMSUserRoles.Staff,
-      this.userService.userData.level,
-      this.userService.userData.coll,
-      this.userService.userData.camp).
-      then(res => {
-        // console.log(res);
-        this.userService.newsData = (res as any).Data;
-        // console.log(this.userService.newsData.length);
-        this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
-        // console.log(this.userService.newsData);
-=======
     return this.homeService
       .getNews(
         CMSUserRoles.Staff,
@@ -177,14 +132,13 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.newsData = (res as any).Data;
-        //console.log(this.userService.newsData.length);
+        // console.log(this.userService.newsData.length);
         this.newsLen = this.userService.newsData
           ? this.userService.newsData.length
           : 0;
-        //console.log(this.userService.newsData);
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
+        // console.log(this.userService.newsData);
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
@@ -201,14 +155,6 @@ export class HomeComponent implements OnInit {
   }
 
   private loadStudentsEvents() {
-<<<<<<< HEAD
-    return this.homeService.getEvents(CMSUserRoles.Student,
-      this.userService.userData.level,
-      this.userService.userData.coll,
-      this.userService.userData.camp).
-      then(res => {
-        // console.log(res);
-=======
     return this.homeService
       .getEvents(
         CMSUserRoles.Student,
@@ -217,8 +163,7 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
+        // console.log(res);
         this.userService.eventsData = (res as any).Data;
         // console.log(this.userService.eventsData.length);
         // console.log(this.userService.eventsData);
@@ -227,14 +172,6 @@ export class HomeComponent implements OnInit {
   }
 
   private loadEmployeesEvents() {
-<<<<<<< HEAD
-    return this.homeService.getEvents(CMSUserRoles.Employee,
-      this.userService.userData.level,
-      this.userService.userData.coll,
-      this.userService.userData.camp).
-      then(res => {
-        // console.log(res);
-=======
     return this.homeService
       .getEvents(
         CMSUserRoles.Employee,
@@ -243,8 +180,7 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
+        // console.log(res);
         this.userService.eventsData = (res as any).Data;
         // console.log(this.userService.eventsData.length);
         // console.log(this.userService.eventsData);
@@ -252,14 +188,6 @@ export class HomeComponent implements OnInit {
       });
   }
   private loadStaffEvents() {
-<<<<<<< HEAD
-    return this.homeService.getEvents(CMSUserRoles.Staff,
-      this.userService.userData.level,
-      this.userService.userData.coll,
-      this.userService.userData.camp).
-      then(res => {
-        // console.log(res);
-=======
     return this.homeService
       .getEvents(
         CMSUserRoles.Staff,
@@ -268,8 +196,7 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
+        // console.log(res);
         this.userService.eventsData = (res as any).Data;
         // console.log(this.userService.eventsData.length);
         // console.log(this.userService.eventsData);
@@ -288,14 +215,6 @@ export class HomeComponent implements OnInit {
   }
 
   private loadStudentAds() {
-<<<<<<< HEAD
-    return this.homeService.getAds(CMSUserRoles.Student,
-      this.userService.userData.level,
-      this.userService.userData.coll,
-      this.userService.userData.camp).
-      then(res => {
-        // console.log(res);
-=======
     return this.homeService
       .getAds(
         CMSUserRoles.Student,
@@ -304,8 +223,7 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
+        // console.log(res);
         this.userService.adsData = (res as any).Data;
         // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
@@ -315,14 +233,6 @@ export class HomeComponent implements OnInit {
       });
   }
   private loadEmployeesAds() {
-<<<<<<< HEAD
-    return this.homeService.getAds(CMSUserRoles.Employee,
-      this.userService.userData.level,
-      this.userService.userData.coll,
-      this.userService.userData.camp).
-      then(res => {
-        // console.log(res);
-=======
     return this.homeService
       .getAds(
         CMSUserRoles.Employee,
@@ -331,8 +241,7 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
+        // console.log(res);
         this.userService.adsData = (res as any).Data;
         // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
@@ -342,14 +251,6 @@ export class HomeComponent implements OnInit {
       });
   }
   private loadStuffAds() {
-<<<<<<< HEAD
-    return this.homeService.getAds(CMSUserRoles.Staff,
-      this.userService.userData.level,
-      this.userService.userData.coll,
-      this.userService.userData.camp).
-      then(res => {
-        // console.log(res);
-=======
     return this.homeService
       .getAds(
         CMSUserRoles.Staff,
@@ -358,8 +259,7 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
->>>>>>> b2811b95ac50be6fa456e6faec55e7f9449a580c
+        // console.log(res);
         this.userService.adsData = (res as any).Data;
         // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
@@ -376,9 +276,9 @@ export class HomeComponent implements OnInit {
   }
 
   onPrintFile() {
-    alert("start");
-    const paramsData = ["101", "102"];
-    alert("1");
-    this.printService.printDocument("print-file", paramsData);
+    alert('start');
+    const paramsData = ['101', '102'];
+    alert('1');
+    this.printService.printDocument('print-file', paramsData);
   }
 }
