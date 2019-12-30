@@ -2,22 +2,158 @@
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-    -->
-    <!--
-    <NavigationButton ios.position="right" android.position="right" ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+
 -->
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
-        ios.position="left"  android.position="right">
-    </ActionItem>
-    <Label text="Home"></Label>
+    
+
+   
+<ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
+        ios.position="left" >
+    </ActionItem>    
+
+    
+    <Label text="الجامعه الالكترونية"></Label>
 </ActionBar>
 
 <GridLayout style="direction: rtl;" class="page__content">
-    <Label class="page__content-icon fas" text="&#xf015;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
+    <BottomNavigation selectedIndex="3">
+
+        <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
+        <TabStrip>
+            <TabStripItem>
+                <Label text="خدمات عامه"></Label>
+                <Image src="font://&#xf19c;" class="fas t-36"></Image>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="الفعاليات"></Label>
+                <Image src="font://&#xf073;" class="fas t-36"></Image>
+            </TabStripItem>
+            <TabStripItem class="special">
+                <Label text="الاخبار"></Label>
+                <Image src="font://&#xf1ea;" class="fas t-36"></Image>
+            </TabStripItem>
+            <TabStripItem class="special">
+                <Label text="الاعلانات"></Label>
+                <Image src="font://&#xf26c;" class="fas t-36"></Image>
+            </TabStripItem>
+        </TabStrip>
+    
+        <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
+        <TabContentItem>
+            
+            <GridLayout>
+                <StackLayout>
+                                <StackLayout  style="margin: 5;background-color: black;" >
+                <Label style="color: white;"  class="h2 text-center" text="الخدمات العامه"></Label>
+            </StackLayout>
+         
+            
+                <StackLayout>
+</StackLayout>
+                </StackLayout>
+
+                
+                </GridLayout>
+        
+
+           </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+               
+                                <StackLayout  style="margin: 5;background-color: black;" >
+                <Label style="color: white;"  class="h2 text-center" text="الفعاليات"></Label>
+            </StackLayout>
+            <ScrollView>
+                <StackLayout   class="list-group-item" style="border: lightgray;"  *ngFor="let event of userService.eventsData"   margin="20">
+                    <GridLayout columns="auto, *" >
+                        <Label  textWrap="true" col="1" row="0" style="padding-right: 50px;font-weight: 900;color: red;font-size:12px" horizontalAlignment="right" text="{{event.date}} " ></Label>
+                        <Label  textWrap="true" col="1" row="2" style="padding-right: 300px;font-weight: 900;font-size:12px;" horizontalAlignment="right" text="{{event.title}} " ></Label>
+
+                        <Label col="1" horizontalAlignment="right"   text="&#xf073;" class="fas t-15"></Label>
+
+                    </GridLayout>
+
+                    <StackLayout class="hr"></StackLayout>
+                    
+  
+                    <StackLayout>
+                        
+                    
+                    </StackLayout>    
+                     
+                  </StackLayout>       
+                
+                </ScrollView>
+                
+                </GridLayout>
+        
+        </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+                <StackLayout>
+                                <StackLayout  style="margin: 5;background-color: black;" >
+                <Label style="color: white;" class="h2 text-center" text="الاخبـــــار"></Label>
+            </StackLayout>
+         
+                <StackLayout    class="list-group-item" style="background-color:whitesmoke;border-style: solid;border-color: black;border-width: thin;"  *ngFor="let news of userService.newsData"   margin="20">
+
+                    <GridLayout rows="auto" columns="*">
+                        <Label row="0" style="padding-right: 10px;" horizontalAlignment="right" text="{{news.date}}" class="right"></Label>
+                      </GridLayout>
+                    <Image  height="100" stretch="aspectFill" row="0"  src="{{'data:image/jpg;base64,' + news.image}}"></Image>
+                
+                    
+
+                    <Label textWrap="true" style="font-weight: 900;padding: 15px;" text="{{news.title}}"></Label>
+
+  
+                    
+                      
+  
+                    
+                       
+                    <StackLayout class="hr"></StackLayout>    
+
+                  </StackLayout>   
+                
+                </StackLayout>
+
+                
+                </GridLayout>
+        
+        </TabContentItem>
+        <TabContentItem>
+            <GridLayout>
+                <StackLayout>
+                                <StackLayout   style="margin: 5;background-color:black;" >
+
+                <Label style="color: white;"    class="h2 text-center " text="   الاعـــــــلانات  "></Label>
+
+            </StackLayout>
+         
+                <StackLayout   class="list-group-item" style="border: lightgray;"  *ngFor="let nw of userService.adsData"   margin="20">
+
+                    <Image  height="100" stretch="aspectFill" row="0"  src="{{'data:image/jpg;base64,' + nw.image}}"></Image>
+                
+
+                    <StackLayout class="hr"></StackLayout>
+  
+                    <StackLayout>
+                        
+                    
+                    </StackLayout>    
+                     
+                  </StackLayout>       
+                
+                </StackLayout>
+
+                
+                </GridLayout>
+        
+        </TabContentItem>
+    
+    </BottomNavigation>
+    
+    
 </GridLayout>
