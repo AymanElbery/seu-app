@@ -79,7 +79,6 @@ import { AppTransModule } from "./app.trans.module";
     DashboardModule,
     FormsModule,
     ToastrModule.forRoot(),
-    ,
     TimerModule,
     MatProgressSpinnerModule
   ],

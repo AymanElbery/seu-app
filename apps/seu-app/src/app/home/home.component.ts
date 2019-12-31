@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { PrintService } from '../shared/services/print.service';
-import { HomeService } from '../rootservices/home.service';
-import { UserService } from '../account/services/user.service';
-import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
-import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
-import { NavigationEnd, Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { PrintService } from "../shared/services/print.service";
+import { HomeService } from "../rootservices/home.service";
+import { UserService } from "../account/services/user.service";
+import { ApiUserRoles } from "../shared/models/StaticData/api-user-roles";
+import { CMSUserRoles } from "../shared/models/StaticData/cmsuser-roles";
+import { NavigationEnd, Router } from "@angular/router";
 
-declare function LoadCrsAds(): any;
-declare function OWLmoveDotsToNav(): any;
+// declare function LoadCrsAds(): any;
+// declare function OWLmoveDotsToNav(): any;
 // declare function LoadCrsNews(): any;
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: "app-home",
+  templateUrl: "./home.component.html",
+  styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
   SlideOptions = {
@@ -63,7 +63,18 @@ export class HomeComponent implements OnInit {
     // console.log(this.userService.userData);
     // console.log('intial');
     this.userService.userDataSubject.subscribe(res => {
-      if (res) { this.LoadData(); }
+      if (res) {
+        this.LoadData();
+      }
+    });
+  }
+
+  OWLmoveDotsToNav() {
+    const owlCarousel = document.getElementsByClassName("owl-carousel");
+    [].forEach.call(owlCarousel, (el, index) => {
+      const dots = el.querySelector(".owl-dots");
+      const nav = el.querySelector(".owl-nav");
+      nav.appendChild(dots);
     });
   }
 
@@ -96,7 +107,7 @@ export class HomeComponent implements OnInit {
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
-        OWLmoveDotsToNav();
+        // this.OWLmoveDotsToNav();
       });
   }
   private loadEmployessNews() {
@@ -120,6 +131,7 @@ export class HomeComponent implements OnInit {
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
+        // this.OWLmoveDotsToNav();
       });
   }
 
@@ -142,6 +154,7 @@ export class HomeComponent implements OnInit {
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
+        // this.OWLmoveDotsToNav();
       });
   }
   LoadEvents() {
@@ -228,7 +241,7 @@ export class HomeComponent implements OnInit {
         // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
         // console.log(this.userService.adsData);
-        LoadCrsAds();
+        // LoadCrsAds();
         this.adsLoaded = true;
       });
   }
@@ -246,7 +259,7 @@ export class HomeComponent implements OnInit {
         // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
         // console.log(this.userService.adsData);
-        LoadCrsAds();
+        // LoadCrsAds();
         this.adsLoaded = true;
       });
   }
@@ -264,21 +277,22 @@ export class HomeComponent implements OnInit {
         // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
         // console.log(this.userService.adsData);
-        LoadCrsAds();
+        // LoadCrsAds();
         this.adsLoaded = true;
       });
   }
 
   LoadData() {
-    this.LoadNews();
-    this.LoadAds();
-    this.LoadEvents();
+    this.LoadNews()
+      .then(() => this.LoadAds())
+      .then(() => this.LoadEvents())
+      .then(() => this.OWLmoveDotsToNav());
   }
 
   onPrintFile() {
-    alert('start');
-    const paramsData = ['101', '102'];
-    alert('1');
-    this.printService.printDocument('print-file', paramsData);
+    alert("start");
+    const paramsData = ["101", "102"];
+    alert("1");
+    this.printService.printDocument("print-file", paramsData);
   }
 }
