@@ -14,7 +14,7 @@ export class DownloadPrintDirective {
     }
 
     constructor(el: ElementRef) {
-        alert('aaa');
-        console.log("YYYYY");
+        //alert('aaa');
+        //console.log("YYYYY");
     }
 }

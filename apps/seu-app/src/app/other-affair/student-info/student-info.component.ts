@@ -5,11 +5,15 @@ import { NgForm } from '@angular/forms';
 import { StudentInformation } from 'src/app/shared/models/student-information';
 import { StudentInformationData } from 'src/app/shared/models/student-information-data';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { MAT_CHECKBOX_CLICK_ACTION } from '@angular/material';
 
 @Component({
   selector: 'app-student-info',
   templateUrl: './student-info.component.html',
-  styleUrls: ['./student-info.component.scss']
+  styleUrls: ['./student-info.component.scss'],
+  providers: [
+    { provide: MAT_CHECKBOX_CLICK_ACTION, useValue: 'check' }
+  ]
 })
 export class StudentInfoComponent implements OnInit {
 
@@ -70,15 +74,15 @@ export class StudentInfoComponent implements OnInit {
       photo: '',
       cv: ''
     }
+    this.getData();
+  }
+  getData() {
     this.isLoading = true;
     this.academicService.getِRequests().then(
       res => {
         this.reqData = (res as any).data;
         this.msgs = (res as any).messages;
-        this.isLoading = false;
         this.studentInfo = this.reqData.user;
-
-
         this.stdData.name_ar = this.studentInfo.NAME_AR;
         this.stdData.name_en = this.studentInfo.NAME_EN;
         this.stdData.graduation_term = this.studentInfo.GRADUATION_TERM;
@@ -95,7 +99,7 @@ export class StudentInfoComponent implements OnInit {
         this.stdData.job_time = this.studentInfo.JOB_TIME;
         this.stdData.job_year = this.studentInfo.JOB_YEAR;
         this.stdData.work_city = this.studentInfo.WORK_CITY;
-
+        this.isLoading = false;
       }
     );
     this.cvDownload = this.academicService.DownloadCv();
@@ -105,7 +109,11 @@ export class StudentInfoComponent implements OnInit {
     this.academicService.AddRequest(data).then(res => {
       this.academicService.msgs = (res as any).messages;
       this.msgs = this.academicService.msgs;
-      this.reqData.can_update_data = !res['status'];
+      this.toastr.push(this.msgs);
+      if (res['status']) {
+        this.getData();
+      }
+
     });
   }
   requesting = false;

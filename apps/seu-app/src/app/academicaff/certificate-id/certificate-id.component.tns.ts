@@ -5,6 +5,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { HttpClient } from '@angular/common/http';
 import * as utils from "tns-core-modules/utils/utils";
+import { CertificateDetails } from 'src/app/shared/models/certificate-details';
 
 @Component({
   selector: 'app-certificate-id',
@@ -15,7 +16,7 @@ import * as utils from "tns-core-modules/utils/utils";
 export class CertificateIDComponent implements OnInit {
 
   constructor(private certificateIDService: CertificateIDService,private route:HttpClient) { }
-  certificateDetails;
+  certificateDetails:CertificateDetails;
   arabicPrint: string;
   EngPrint: string;
 

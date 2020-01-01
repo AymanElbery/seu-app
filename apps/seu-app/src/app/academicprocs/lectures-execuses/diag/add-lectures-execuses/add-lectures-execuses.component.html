@@ -52,8 +52,7 @@
                             <td>{{it.CRN}}</td>
                             <td>{{it.CRSE_TITLE}}</td>
                             <td>
-                              <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event,i)" #chkCourse
-                                id="defaultUnchecked">
+                              <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event,i)" #chkCourse>
                             </td>
 
                           </tr>
@@ -94,7 +93,9 @@
                       <h6> حدد التاريخ </h6>
                       <select name="date" #date="ngModel" [(ngModel)]="lectureExecuse.date" class="form-control"
                         [class.is-invalid]=" lectureExecuse.date==''">
-                        <option *ngFor="let item of reqData.weeks_dates[lectureExecuse.week]" value="{{item}}">{{item}}</option>
+                        <option></option>
+                        <option *ngFor="let item of reqData.weeks_dates[lectureExecuse.week]" value="{{item}}">{{item}}
+                        </option>
                       </select>
                       <!-- <input style="direction: rtl;" class="form-control" name="date" #date="ngModel"
                         [(ngModel)]="lectureExecuse.date" type="date" style="direction: rtl;text-align:right"> -->

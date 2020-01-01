@@ -28,8 +28,9 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "@nativescript-rtl/ui": "^0.1.2",
-    "@nativescript/schematics": "^0.4.0",
     "@nativescript/theme": "~2.2.1",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.3.1",
     "buble": "^0.19.8",
@@ -41,6 +42,7 @@
     "nativescript-localstorage": "^2.0.0",
     "nativescript-ui-listview": "^8.0.1",
     "nativescript-ui-sidedrawer": "~8.0.0",
+    "ngx-owl-carousel": "^2.0.7",
     "ngx-toastr": "^10.2.0",
     "popper.js": "^1.15.0",
     "reflect-metadata": "~0.1.12",
@@ -66,11 +68,11 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "nativescript-dev-webpack": "~1.4.0",
+    "node-sass": "^4.13.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.5.3",
-    "node-sass": "^4.7.1"
+    "typescript": "~3.5.3"
   },
   "nativescript": {
     "id": "org.nativescript.ngsample",

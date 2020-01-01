@@ -15,21 +15,38 @@ export class AcademicRecordComponent implements OnInit {
 
   termsStatic=[
     {"Term":"الاول","Year":"2018","Major":"الحوسبة والمعلوماتية","Status":"منتظم",
-    "courses":{
+    "courses":[{
       "ID":"205030",
       "CRSE_TITLE":"اتصالات",
-      "GRADE_TITLE":"",
-      "HRS":"",
-      "Points":""
-    }},
-    {"Term":"الثانى","Year":"2020","Major":"الحوسبة والمعلوماتية","Status":"منتظم",
-    "courses":{
+      "GRADE_TITLE":"الاولى",
+      "HRS":"50",
+      "Points":"100"
+    },
+    {
       "ID":"2041070",
-      "CRSE_TITLE":"",
-      "GRADE_TITLE":"",
-      "HRS":"",
-      "Points":""
+      "CRSE_TITLE":"علوم حاسب",
+      "GRADE_TITLE":"الثانية",
+      "HRS":"40",
+      "Points":"120"
     }
+  ]},
+    {"Term":"الثانى","Year":"2020","Major":"الحوسبة والمعلوماتية","Status":"منتظم",
+    "courses":[{
+      "ID":"2041070",
+      "CRSE_TITLE":"علوم حاسب",
+      "GRADE_TITLE":"الثانية",
+      "HRS":"40",
+      "Points":"120"
+    },
+    {
+      "ID":"205030",
+      "CRSE_TITLE":"اتصالات",
+      "GRADE_TITLE":"الاولى",
+      "HRS":"50",
+      "Points":"100"
+    }
+
+  ]
   }
 
   ];

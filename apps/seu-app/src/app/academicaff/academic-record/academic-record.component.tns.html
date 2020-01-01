@@ -97,7 +97,7 @@
                         <label text="النقاط" class="h1"></label>
                     </FlexboxLayout>
 
-                    <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of termsStatic.courses" flexDirection="row-reverse" class="dataLabel">
+                    <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of item.courses"  flexDirection="row-reverse" class="dataLabel">
                         <Label [text]="item.ID" class="narrowColumn"></Label>
                         <Label [text]="item.CRSE_TITLE" class="wideColumn"></Label>
                         <Label [text]="item.GRADE_TITLE" class="narrowColumn"></Label>

@@ -1,20 +1,20 @@
-import { Injectable } from "@angular/core";
-import { ConfigService } from "../../shared/services/config.service";
-import { Http, Response, Headers, RequestOptions } from "@angular/http";
-import { UserRegistration } from "../../shared/models/user.registration.interface";
-import { Observable, throwError } from "rxjs";
-import { map, catchError } from "rxjs/operators";
-import { HttpRequestService } from "../../shared/services/http-request.service";
-import { BaseService } from "../../shared/services/base.service";
-import { UserManagerService } from "../../shared/services/user-manager.service";
-import { UserData } from "src/app/shared/models/user-data";
-import { BehaviorSubject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { ConfigService } from '../../shared/services/config.service';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { UserRegistration } from '../../shared/models/user.registration.interface';
+import { Observable, throwError } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
+import { HttpRequestService } from '../../shared/services/http-request.service';
+import { BaseService } from '../../shared/services/base.service';
+import { UserManagerService } from '../../shared/services/user-manager.service';
+import { UserData } from 'src/app/shared/models/user-data';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class UserService extends BaseService {
-  baseUrl = "";
+  baseUrl = '';
   logedIn = false;
   data;
   name;
@@ -32,44 +32,44 @@ export class UserService extends BaseService {
     private httRequest: HttpRequestService
   ) {
     super();
-    this.configService.baseUrl = "stdservicesapi";
+    this.configService.baseUrl = 'stdservicesapi';
     // tslint:disable-next-line: max-line-length
     this.userData = {
       act_as_student: false,
-      activeRole: "",
-      camp: "",
-      coll: "",
-      id: "",
-      level: "",
-      major: "",
-      name_ar: "",
-      name_en: "",
-      role: "",
-      sex: "",
-      ssn: "",
-      stdName: "",
+      activeRole: '',
+      camp: '',
+      coll: '',
+      id: '',
+      level: '',
+      major: '',
+      name_ar: '',
+      name_en: '',
+      role: '',
+      sex: '',
+      ssn: '',
+      stdName: '',
       student_details: {
-        name_en: "",
-        ssn: "",
-        sex: "",
-        name_ar: "",
-        major: "",
-        camp: "",
-        coll: "",
-        id: "",
-        level: ""
+        name_en: '',
+        ssn: '',
+        sex: '',
+        name_ar: '',
+        major: '',
+        camp: '',
+        coll: '',
+        id: '',
+        level: ''
       },
-      username: "",
+      username: '',
       student_details_gr: {
-        name_en: "",
-        ssn: "",
-        sex: "",
-        name_ar: "",
-        major: "",
-        camp: "",
-        coll: "",
-        id: "",
-        level: ""
+        name_en: '',
+        ssn: '',
+        sex: '',
+        name_ar: '',
+        major: '',
+        camp: '',
+        coll: '',
+        id: '',
+        level: ''
       }
     };
     this.newsData = [];
@@ -86,7 +86,7 @@ export class UserService extends BaseService {
     location: string
   ) {
     const body = { username, email, password, firstName, lastName, location };
-    return this.httRequest.postRequest("accounts", body).pipe(
+    return this.httRequest.postRequest('accounts', body).pipe(
       map((res: any) => res),
       catchError(err => {
         console.error(err);
@@ -96,14 +96,14 @@ export class UserService extends BaseService {
   }
 
   relogin() {
-    console.log("RELOGIN");
-    localStorage.removeItem("sid");
-    window.location.href = "https://seuapps.seu.edu.sa/sso/login-ss.php";
+    console.log('RELOGIN');
+    localStorage.removeItem('sid');
+    window.location.href = 'https://seuapps.seu.edu.sa/sso/login-ss.php';
   }
   login(userName, password) {
-    //console.log('ser');
+    // console.log('ser');
     return this.httRequest
-      .postRequest("auth/login", { userName, password })
+      .postRequest('auth/login', { userName, password })
       .pipe(
         map((res: any) => res),
         catchError(err => {
@@ -114,15 +114,16 @@ export class UserService extends BaseService {
   }
 
   loadUserData() {
-    this.configService.baseUrl = "stdservicesapi";
+    this.configService.baseUrl = 'stdservicesapi';
 
-    //console.log('log ueer data-----------------------------------------------------------------------------------');
+    // console.log('log ueer data-----------------------------------------------------------------------------------');
     if (this.userDataLoaded !== true) {
       return this.httRequest
-        .GetRequest("user")
+        .GetRequest('user')
         .toPromise()
         .then(res => {
           this.userData = (res as any).data;
+          console.log('userdata:'+this.userData);
           this.userData.activeRole = this.userData.role;
           this.userDataLoaded = true;
           this.pushUserDataChanges();
@@ -131,8 +132,8 @@ export class UserService extends BaseService {
     }
   }
   loadUserDetailsData() {
-    //console.log('user details  data');
-    return this.httRequest.GetRequest("user").toPromise();
+    // console.log('user details  data');
+    return this.httRequest.GetRequest('user').toPromise();
   }
   pushUserDataChanges() {
     this.userDataSubject.next(this.userData);
@@ -142,10 +143,10 @@ export class UserService extends BaseService {
     let data;
     if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'UG') {
       data = JSON.parse(JSON.stringify(this.userData.student_details));
-      data['username'] = data['id'];
+      data.username = data.id;
     } else if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'GR') {
       data = JSON.parse(JSON.stringify(this.userData.student_details_gr));
-      data['username'] = data['id'];
+      data.username = data.id;
     } else {
       data = JSON.parse(JSON.stringify(this.userData));
     }
