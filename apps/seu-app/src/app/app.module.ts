@@ -79,9 +79,9 @@ import { AppTransModule } from './app.trans.module';
     AccountModule,
     DashboardModule,
     FormsModule,
-    ToastrModule.forRoot(),
-     TimerModule,
-     MatProgressSpinnerModule
+    ToastrModule.forRoot()
+    , TimerModule
+    , MatProgressSpinnerModule
   ],
   providers: [ConfigService,
     HttpRequestService,

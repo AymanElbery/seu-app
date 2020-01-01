@@ -60,12 +60,28 @@
            </TabContentItem>
         <TabContentItem>
             <GridLayout>
-               
+
+               <StackLayout>
                                 <StackLayout  style="margin: 5;background-color: black;" >
                 <Label style="color: white;"  class="h2 text-center" text="الفعاليات"></Label>
             </StackLayout>
             <ScrollView>
-                <StackLayout   class="list-group-item" style="border: lightgray;"  *ngFor="let event of userService.eventsData"   margin="20">
+                <StackLayout>
+                    <GridLayout  *ngIf="!eventsLoaded">
+
+                        <StackLayout class="form" verticalAlignment="center">
+                         <StackLayout  margin="10" >
+                           <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
+                       </StackLayout>
+                           <StackLayout>
+                         <ActivityIndicator *ngIf="!eventsLoaded" width="200" height="200" [busy]="!eventsLoaded" ></ActivityIndicator>
+                   
+                           </StackLayout>
+                   
+                        </StackLayout>
+                   
+                    </GridLayout>
+                              <StackLayout   class="list-group-item"   *ngFor="let event of userService.eventsData"   margin="10">
                     <GridLayout columns="auto, *" >
                         <Label  textWrap="true" col="1" row="0" style="padding-right: 50px;font-weight: 900;color: red;font-size:12px" horizontalAlignment="right" text="{{event.date}} " ></Label>
                         <Label  textWrap="true" col="1" row="2" style="padding-right: 300px;font-weight: 900;font-size:12px;" horizontalAlignment="right" text="{{event.title}} " ></Label>
@@ -77,38 +93,67 @@
                     <StackLayout class="hr"></StackLayout>
                     
   
-                    <StackLayout>
                         
-                    
-                    </StackLayout>    
                      
-                  </StackLayout>       
-                
+                  </StackLayout>  
+                </StackLayout>     
                 </ScrollView>
+
+                </StackLayout>
                 
                 </GridLayout>
         
         </TabContentItem>
         <TabContentItem>
+             
             <GridLayout>
+
                 <StackLayout>
                                 <StackLayout  style="margin: 5;background-color: black;" >
                 <Label style="color: white;" class="h2 text-center" text="الاخبـــــار"></Label>
             </StackLayout>
-         
-                <StackLayout    class="list-group-item" style="background-color:whitesmoke;border-style: solid;border-color: black;border-width: thin;"  *ngFor="let news of userService.newsData"   margin="20">
+            <ScrollView> 
 
-                    <GridLayout rows="auto" columns="*">
-                        <Label row="0" style="padding-right: 10px;" horizontalAlignment="right" text="{{news.date}}" class="right"></Label>
-                      </GridLayout>
+            <StackLayout>
+                
+                <GridLayout  *ngIf="!newsLoaded">
+
+                    <StackLayout class="form" verticalAlignment="center">
+                     <StackLayout  margin="10" >
+                       <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
+                   </StackLayout>
+                       <StackLayout>
+                     <ActivityIndicator *ngIf="!newsLoaded" width="200" height="200" [busy]="!newsLoaded" ></ActivityIndicator>
+               
+                       </StackLayout>
+               
+                    </StackLayout>
+               
+                </GridLayout>
+                <StackLayout    class="list-group-item" style="background-color:whitesmoke;"  *ngFor="let news of userService.newsData"   margin="5">
+
+                  
                     <Image  height="100" stretch="aspectFill" row="0"  src="{{'data:image/jpg;base64,' + news.image}}"></Image>
                 
                     
 
-                    <Label textWrap="true" style="font-weight: 900;padding: 15px;" text="{{news.title}}"></Label>
+
+  
+                    
+                    <GridLayout columns="auto, *" >
+                        <Label  textWrap="true" col="1" row="0" style="padding-right: 5px;color: red;font-size:10px" horizontalAlignment="right" text="{{news.date}} " ></Label>
+                        <Label  textWrap="true" col="1" row="2" style="padding-right: 200px;font-weight: 900;font-size:12px;" horizontalAlignment="right" text="{{news.title}} " ></Label>
+
+
+                    </GridLayout>
+  
+                    
+                       
+                    <StackLayout class="hr"></StackLayout>    
 
                   </StackLayout>   
-                
+                </StackLayout>
+            </ScrollView>
                 </StackLayout>
 
                 
@@ -123,21 +168,37 @@
                 <Label style="color: white;"    class="h2 text-center " text="   الاعـــــــلانات  "></Label>
 
             </StackLayout>
-         
-                <StackLayout   class="list-group-item" style="border: lightgray;"  *ngFor="let nw of userService.adsData"   margin="20">
+            <ScrollView>
+            <StackLayout >
+<GridLayout  *ngIf="!adsLoaded">
+                    
+                    <StackLayout class="form" verticalAlignment="center">
+                     <StackLayout  margin="10" >
+                       <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
+                   </StackLayout>
+                       <StackLayout>
+                     <ActivityIndicator *ngIf="!adsLoaded" width="200" height="200" [busy]="!adsLoaded" ></ActivityIndicator>
+               
+                       </StackLayout>
+               
+                    </StackLayout>
+               
+                </GridLayout>
+                <StackLayout   class="list-group-item" style="background-color:whitesmoke;"  *ngFor="let nw of userService.adsData"   margin="5">
 
                     <Image  height="100" stretch="aspectFill" row="0"  src="{{'data:image/jpg;base64,' + nw.image}}"></Image>
-                
+                    <Label textWrap="true" style="font-weight: 900;padding: 5px;" text="{{nw.title}}"></Label>
+
 
                     <StackLayout class="hr"></StackLayout>
   
                     <StackLayout>
-                        
+                    </StackLayout> 
                     
                     </StackLayout>    
                      
                   </StackLayout>       
-                
+                </ScrollView>
                 </StackLayout>
 
                 

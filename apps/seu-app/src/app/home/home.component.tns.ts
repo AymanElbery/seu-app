@@ -38,6 +38,9 @@ export class HomeComponent implements OnInit {
       adsLoaded;
       eventsLoaded;
       mySubscription: any;
+      isNewsLoading;
+      isAdsLoading;
+      isEventLoading;
 
 
 
@@ -46,6 +49,7 @@ export class HomeComponent implements OnInit {
       console.log('user is ' + this.userService.userData);
         // tslint:disable-next-line: triple-equals
       console.log(this.userService.userData);
+      console.log(this.userService.userData.activeRole + 'ActiveRule');
       if (this.userService.userData.activeRole === ApiUserRoles.Student) {
           return this.loadStudentNews();
         } else if (this.userService.userData.activeRole === ApiUserRoles.Emplpyee) {
@@ -64,7 +68,7 @@ export class HomeComponent implements OnInit {
           then(res => {
             // console.log(res);
             this.userService.newsData = (res as any).Data;
-            alert(this.userService.newsData);
+         //   alert(this.userService.newsData);
             this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
             // console.log(this.userService.newsData);
             this.homeService.reqData = this.userService.newsData;
@@ -238,15 +242,14 @@ this.LoadAds();
         // Init your component properties here.
         sideDrawer.drawerLocation = SideDrawerLocation.Right;
         console.log('test');
-      
+
         this.userService.userDataSubject.subscribe(res => {
-          console.log(res);
-          console.log('000000000');
+      
           if (res) {
-            console.log('11111111');
             this.LoadData();
           }
         });
+
     }
 
     onDrawerButtonTap(): void {

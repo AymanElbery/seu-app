@@ -58,7 +58,7 @@
       </FlexboxLayout>
 
       <ListView  [items]="lectures" *ngIf="lectures" height="150">
-        <ScrollView>
+        
           <ng-template let-item="item">
             <FlexboxLayout justifyContent="space-around" flexWrap="nowrap">
               <Label [text]="item.CRN"  class="narrowColumn dataLabel"></Label>
@@ -67,7 +67,7 @@
               <Label [text]="toHTML(item.CRSE_TIME)"  class="wideColumn dataLabel"></Label>
             </FlexboxLayout>
           </ng-template>
-        </ScrollView>
+        
       </ListView>
     </FlexboxLayout>
 
