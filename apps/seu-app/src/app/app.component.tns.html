@@ -19,16 +19,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
 
                 </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
-                    <Label col="1" text="الاعدادات" style="text-align: left;padding-right: 150px;font-size: medium;" ></Label>
-                    <Label col="1"  text="&#xf013;"   class=" fas ysRootMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
-                    <Label col="1" text="تواصل معنا" class="ysRootMenuItem" ></Label>
-                    <Label col="1"  text="&#xf095;"   class="fas ysRootMenuIcon"></Label>
-
-                </GridLayout>
+               
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
                     <Label col="1" text="شكاوي ومقترحات" class="ysRootMenuItem" ></Label>
                     <Label col="1"  text="&#xf0e0;"   class="fas ysRootMenuIcon"></Label>
@@ -43,27 +34,27 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
 
                 </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/status')">
+                    <Label col="1" text=" الحالة الاكاديمية" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
                 <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/certificate')">
                     <Label col="1" text=" شهادة تعريف" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+                    <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/academicaff/graduationstatment')" (tap)="onNavItemTap('/academicaff/graduationstatment')">
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/record')">
+                    <Label col="1" text=" السجل الاكاديمى" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/graduationstatment')">
                     <Label col="1" text="افادة خريج" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+                    <Label col="1"  text="&#xf19d;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/academicaff/status')" (tap)="onNavItemTap('/academicaff/status')">
-                    <Label col="1" text="الحالة الاكاديمية" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/academicaff/record')" (tap)="onNavItemTap('/academicaff/record')">
-                    <Label col="1" text="السجل الاكاديمي" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
+               
                 <StackLayout class="hr"></StackLayout>
 
 

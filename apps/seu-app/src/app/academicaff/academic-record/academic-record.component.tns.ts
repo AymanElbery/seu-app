@@ -18,14 +18,14 @@ export class AcademicRecordComponent implements OnInit {
     "courses":[{
       "ID":"205030",
       "CRSE_TITLE":"اتصالات",
-      "GRADE_TITLE":"الاولى",
+      "GRADE_TITLE":"جيد جدا",
       "HRS":"50",
       "Points":"100"
     },
     {
       "ID":"2041070",
       "CRSE_TITLE":"علوم حاسب",
-      "GRADE_TITLE":"الثانية",
+      "GRADE_TITLE":"مقبول",
       "HRS":"40",
       "Points":"120"
     }
@@ -34,14 +34,14 @@ export class AcademicRecordComponent implements OnInit {
     "courses":[{
       "ID":"2041070",
       "CRSE_TITLE":"علوم حاسب",
-      "GRADE_TITLE":"الثانية",
+      "GRADE_TITLE":"مقبول",
       "HRS":"40",
       "Points":"120"
     },
     {
       "ID":"205030",
       "CRSE_TITLE":"اتصالات",
-      "GRADE_TITLE":"الاولى",
+      "GRADE_TITLE":"جيد",
       "HRS":"50",
       "Points":"100"
     }
