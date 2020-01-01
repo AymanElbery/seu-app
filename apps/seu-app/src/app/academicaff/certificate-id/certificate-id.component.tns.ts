@@ -22,13 +22,11 @@ export class CertificateIDComponent implements OnInit {
   lectures: Lecture[];
   isLoading = false;
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-
-    // Init your component properties here.
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
     this.isLoading = true;
-     this.arabicPrint = this.certificateIDService.DownloadCertificate();
-    // this.EngPrint = this.certificateIDService.DownloadEngCertificate();
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.drawerLocation = SideDrawerLocation.Right;
+    this.arabicPrint = this.certificateIDService.DownloadCertificate();
+    this.EngPrint = this.certificateIDService.DownloadEngCertificate();
     this.certificateIDService.getCertificateID().then(
       (res) => {
         this.certificateDetails = ((res) as any).data;
@@ -49,6 +47,6 @@ export class CertificateIDComponent implements OnInit {
     utils.openUrl(this.arabicPrint);
   }
   onEnglishPrint(){
-
+    utils.openUrl(this.EngPrint);
   }
 }

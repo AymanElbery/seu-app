@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { ConfigService } from 'src/app/shared/services/config.service';
-import { HttpRequestService } from 'src/app/shared/services/http-request.service';
+import { HttpRequestService } from '../../shared/services/http-request.service';
 import { ResponseContentType } from '@angular/http';
 import { map } from 'rxjs/operators';
+import { ConfigService } from '../../shared/services/config.service';
 
 @Injectable({
   providedIn: 'root'

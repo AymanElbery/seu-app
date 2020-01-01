@@ -1,32 +1,51 @@
 .wideColumn{
     width: 35%;
+    margin-right: 15;
 }
 
 .narrowColumn{
     width:15%;
+    margin-right: 15;
+
 }
 
 .tableHeading{
     background-color: lightgray;
+    padding:10;
+    border-radius: 8;
+    border-width: 1;
+    border-color: gray;
+    font-size: 16;
+    color: navy;
+    height: 50;
     text-align: center;
-    padding: 10 0;
 }
 
 .header{
     color: orange;
+    font-size: 16;
 }
 
 .content{
     color:navy;
     text-align: right;
+    font-size: 14;
 }
 .dataLabel{
-    font-size: 13;
+    font-size: 14;
+    padding:10;
+    margin-bottom: 15;
+    border-bottom-width: 1;
+    border-color: lightgray;
+    text-align: center;
 }
 
 .firstBox{
     background-color: lightgray;
     border-bottom: 1;
+    border-radius: 8;
+    border-width: 1;
+    border-color: gray;
 }
 .firstParagraph{
     margin-top: 10;
@@ -37,12 +56,15 @@
     margin-top: 10;
     padding: 15;
     background-color: lightgray;
+    border-radius: 8;
+    border-width: 1;
+    font-size: 14;
+
 }
 
 GridLayout{
-    padding: 10;
+    padding: 20;
 }
-
 .my-button {
     background-color: navy;
     border-color: navy;
@@ -61,8 +83,6 @@ GridLayout{
     font-size: 14;
     font-weight: bold;
 }
-
 .buttonsLayout{
-    margin-right: 25%;
     margin-top: 10;
 }

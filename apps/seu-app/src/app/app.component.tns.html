@@ -48,13 +48,19 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
-                    <Label col="1" text="طلب خدمة" class="ysMenuItem" ></Label>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/academicaff/graduationstatment')" (tap)="onNavItemTap('/academicaff/graduationstatment')">
+                    <Label col="1" text="افادة خريج" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
-                    <Label col="1" text="طلب خدمة" class="ysMenuItem" ></Label>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/academicaff/status')" (tap)="onNavItemTap('/academicaff/status')">
+                    <Label col="1" text="الحالة الاكاديمية" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/academicaff/record')" (tap)="onNavItemTap('/academicaff/record')">
+                    <Label col="1" text="السجل الاكاديمي" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
