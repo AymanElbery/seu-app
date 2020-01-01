@@ -47,7 +47,7 @@ import { DownloadPrintDirective } from './shared/services/download.directive';
 import { ExternalLinkDirective } from './shared/services/external-link.directive';
 import { GlobalService } from './shared/services/global.service';
 import { GlobalBaseService } from './shared/services/global-base.service';
-import { OwlModule } from 'ngx-owl-carousel';
+import { OwlModule } from "ngx-owl-carousel";
 import { AppTransModule } from './app.trans.module';
 
 
@@ -79,7 +79,7 @@ import { AppTransModule } from './app.trans.module';
     AccountModule,
     DashboardModule,
     FormsModule,
-    ToastrModule.forRoot()
+ToastrModule.forRoot()
     , TimerModule
     , MatProgressSpinnerModule
   ],
