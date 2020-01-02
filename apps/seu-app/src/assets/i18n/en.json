@@ -1,6 +1,7 @@
 {
     "general": {
-        "print": ""
+        "print": "Print",
+        "delete_confirm": "Are you sure?"
     },
     "menu": {
         "myservices": "My Services",

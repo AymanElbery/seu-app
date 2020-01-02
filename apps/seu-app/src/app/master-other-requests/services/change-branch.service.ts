@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from 'src/app/shared/services/config.service';
 import { HttpRequestService } from 'src/app/shared/services/http-request.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChangeBranchService {
-
+  newreqs = false;
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
@@ -16,19 +17,19 @@ export class ChangeBranchService {
     this.configService.baseUrl = "stdsUnivapi";
 
 
-   return this.httRequest.GetRequest('change_camp_service').toPromise();
+    return this.httRequest.GetRequest('change_camp_service').toPromise();
   }
   AddRequest(data) {
     this.configService.baseUrl = "stdsUnivapi";
 
-      return this.httRequest.postRequest('change_camp_service/insert', data).toPromise();
+    return this.httRequest.postRequest('change_camp_service/insert', data).toPromise();
   }
   deleteReq(id) {
     this.configService.baseUrl = "stdsUnivapi";
 
-    return this.httRequest.GetRequest('change_camp_service/remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('change_camp_service/remove/' + id).toPromise();
 
   }
 
-   
+
 }
