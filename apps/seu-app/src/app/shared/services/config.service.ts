@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
+import { GlobalBaseService } from './global-base.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConfigService {
-
 
   // tslint:disable-next-line: variable-name
   private _apiURI: string;
@@ -14,7 +14,7 @@ export class ConfigService {
 
   // tslint:disable-next-line: variable-name
   private _tokenName: string;
-  constructor() {
+  constructor(private globalBaseService:GlobalBaseService) {
     this._apiURI = 'https://seuapps.seu.edu.sa/';
     this.cmsURI  = 'http://beta.seu.edu.sa/umbraco/Surface/';
     this.stdapi  =   'https://seuapps.seu.edu.sa/';
@@ -22,7 +22,7 @@ export class ConfigService {
 
   }
   getSid() {
- return   localStorage.getItem('sid');
+    return   this.globalBaseService.getSID();
   }
 
   useCmsURI() {
