@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { GraduateProfileService } from 'src/app/master-other-requests/services/graduate-profile.service';
 import { NgForm } from '@angular/forms';
 import { StudentData } from 'src/app/shared/models/student-data';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-graduate-profile',
@@ -22,8 +23,8 @@ export class AddGraduateProfileComponent implements OnInit {
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
-              public dialogRef: MatDialogRef<AddGraduateProfileComponent>,
-              private toastr: ToastrService, private gradService: GraduateProfileService) { }
+    public dialogRef: MatDialogRef<AddGraduateProfileComponent>,
+    private toastr: AppToasterService, private gradService: GraduateProfileService) { }
 
   ngOnInit() {
     this.stdinfo = {
@@ -45,7 +46,7 @@ export class AddGraduateProfileComponent implements OnInit {
       image: '',
       cv: '',
       STD_RESUME: ''
-  };
+    };
 
 
     // this.isLoading = true;
@@ -55,19 +56,28 @@ export class AddGraduateProfileComponent implements OnInit {
 
   }
 
-  addRequest(data: any) {
-    //console.log(data);
-    this.gradService.AddRequest(data).then(res => {
-      this.msgs = (res as any).messages;
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
 
+  addRequest(data: any) {
+    this.gradService.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.gradService.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
       });
-    });
   }
+  requesting = false;
   onSubmit(form: NgForm) {
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
     this.addRequest(this.stdinfo);
-    this.dialogRef.close();
 
   }
   closeDiag() {
@@ -95,7 +105,7 @@ export class AddGraduateProfileComponent implements OnInit {
       this.stdinfo.image = reader.result;
     } else if (this.fileType == 'cv') {
       this.stdinfo.cv = reader.result;
-         }
+    }
 
 
   }

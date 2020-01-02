@@ -60,26 +60,19 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">الفرع المطلوب</th>
-
             <th scope="col">تاريخ انشاء الطلب</th>
-
             <th scope="col">تاريخ الرد</th>
             <th scope="col">حالة الطلب</th>
             <th scope="col">الاجراء</th>
-
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let it of reqData.reqs;let i=index;">
             <td>{{it.request_number}}</td>
-            <td>{{it.camp}}</td>
             <td>{{it.CAMP_TITLE}}</td>
             <td>{{it.insert_date}}</td>
-
-
             <td>{{it.APPROVAL_DATE}} </td>
             <td>{{it.status}}</td>
-
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
             <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>

@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { ChangeCourseService } from '../services/change-course.service';
 import { AddChangeCourseComponent } from './diag/add-change-course/add-change-course.component';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-course',
@@ -19,19 +21,28 @@ export class ChangeCourseComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc:ChangeCourseService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ChangeCourseService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-    this.changecourse = {bacholar_copy:'',major:'',mobile:'',reason:'',academic_record:'',outside:''};
+    this.changecourse = { bacholar_copy: '', major: '', mobile: '', reason: '', academic_record: '', outside: '' };
+    this.getRequests();
+  }
+
+  getRequests() {
+    this.isLoading = true;
     this.acadmicProc.getRequests().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-    this.isLoading=false;
-    // //console.log(this.reqData.requests);
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+        //console.log(this.reqData);
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
@@ -42,37 +53,34 @@ export class ChangeCourseComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
 
-    this.dialog.open(AddChangeCourseComponent, dialogConfig);
+    let dialogref = this.dialog.open(AddChangeCourseComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
+    });
   }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-        });
-  }
-  onSubmit(form: NgForm) {
-      this.addRequest(form.value);
-  }
-
- 
+  deleting = false;
   delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-       this.msgs =   (res as any).messages;
-     this.status =   (res as any).status;
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
+        }
+        this.deleting = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }
 
-       this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
-       });
-     if (this.status === 1) {
-        this.acadmicProc.reqData.requests.splice(index, 1);
-      }   });
   }
- }
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
 
-}
+  }
 
 }
