@@ -7743,6 +7743,9 @@ iframe {
   //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
 
+  right: 0;
+  left: auto !important;
+
   .dropdown-item {
     background-color: #ffffff;
     padding: 8px 15px;
@@ -8454,7 +8457,7 @@ iframe {
       padding-right: 240px;
       //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
       transition: all 0.3s ease;
-      direction: rtl;
+      // direction: rtl;
 
       .page-header {
         margin-bottom: 30px;
@@ -9317,7 +9320,6 @@ iframe {
       }
 
       i.update-icon {
-        margin-right: 4px;
         margin-right: 19px;
       }
 

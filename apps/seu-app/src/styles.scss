@@ -105,16 +105,7 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 }
 
 
-html {
-	width: 100%;
-	height: auto;
-	margin: 0;
-	padding: 0;
-	overflow-x: hidden;
-	font-size: 12px;
-	text-align: right;
-}
-body {
+html, body {
 	width: 100%;
 	height: auto;
 	margin: 0;
@@ -122,6 +113,9 @@ body {
 	overflow-x: hidden;
 	font-size: 12px;
   text-align: right;
+  direction: rtl;
+}
+body {
   font-weight: 600;
 	font-family: fontreg;
 	position: relative;
@@ -398,22 +392,7 @@ nav {
 						}
 					}
 					.dropdown-menu {
-						h1 {
-							color: $white;
-						}
-						h2 {
-							color: $white;
-						}
-						h3 {
-							color: $white;
-						}
-						h4 {
-							color: $white;
-						}
-						h5 {
-							color: $white;
-						}
-						h6 {
+						h1, h2, h3, h4, h5, h6 {
 							color: $white;
 						}
 					}
@@ -696,9 +675,9 @@ nav {
 		}
 	}
 }
-.dropdown-menu {
-	text-align: right;
-}
+// .dropdown-menu {
+// 	text-align: right;
+// }
 .dropdown-toggle::after {
 	display: none;
 }
