@@ -5,6 +5,8 @@ import { changeBranch } from 'src/app/shared/models/change-branch';
 import { ChangeBranchService } from '../services/change-branch.service';
 import { AddChangeBranchComponent } from './diag/add-change-branch/add-change-branch.component';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-branch',
@@ -12,7 +14,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./change-branch.component.scss']
 })
 export class ChangeBranchComponent implements OnInit {
-  
+
   printAR;
   changeBranch: changeBranch;
   reqData;
@@ -20,23 +22,30 @@ export class ChangeBranchComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: ChangeBranchService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ChangeBranchService) { }
 
   ngOnInit() {
+    this.changeBranch = { camp: "", reason: "", mobile: "" };
+    this.getRequests();
+  }
+
+  getRequests() {
     this.isLoading = true;
-    this.changeBranch = {camp:"",reason:"",mobile:""};
     this.acadmicProc.getِgetRequests().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-    this.isLoading = false;
-    //console.log(this.reqData);
-
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+        //console.log(this.reqData);
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
-
   }
 
   openDialoge() {
@@ -45,43 +54,36 @@ export class ChangeBranchComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
 
-    this.dialog.open(AddChangeBranchComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-        });
-  }
-  onSubmit(form: NgForm) {
-this.addRequest(form.value);
-
-
-  }
-
-  delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      //console.log(id);
-      this.msgs =   (res as any).messages;
-
-      this.status =   (res as any).status;
-
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
-        });
-      if (this.status === 1) {
-          this.acadmicProc.reqData.requests.splice(index, 1);
-        }
+    let dialogref = this.dialog.open(AddChangeBranchComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
     });
   }
 
-}
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
+  deleting = false;
+  delete(id, index) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
+        }
+        this.deleting = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }
 
-}
+  }
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
+
+  }
 
 }
 

@@ -7,6 +7,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
 })
 export class PersonalIDService {
 
+  newreqs = false;
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
@@ -17,16 +18,16 @@ export class PersonalIDService {
     this.configService.baseUrl = 'stdsUnivapi';
 
     return this.httRequest.GetRequest('card_university_service').toPromise();
-   }
-   AddRequest(data) {
+  }
+  AddRequest(data) {
     this.configService.baseUrl = 'stdsUnivapi';
 
     return this.httRequest.postRequest('card_university_service/insert', data).toPromise();
-   }
-   deleteReq(id) {
+  }
+  deleteReq(id) {
     this.configService.baseUrl = 'stdsUnivapi';
 
-    return this.httRequest.GetRequest('card_university_service/remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('card_university_service/remove/' + id).toPromise();
 
-   }
+  }
 }
