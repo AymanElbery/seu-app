@@ -6,8 +6,8 @@ import { ApiUserRoles } from "../shared/models/StaticData/api-user-roles";
 import { CMSUserRoles } from "../shared/models/StaticData/cmsuser-roles";
 import { NavigationEnd, Router } from "@angular/router";
 
-declare function LoadCrsAds(): any;
-declare function OWLmoveDotsToNav(): any;
+// declare function LoadCrsAds(): any;
+// declare function OWLmoveDotsToNav(): any;
 // declare function LoadCrsNews(): any;
 @Component({
   selector: "app-home",
@@ -59,17 +59,28 @@ export class HomeComponent implements OnInit {
   mySubscription: any;
 
   ngOnInit() {
-    //console.log('home');
-    //console.log(this.userService.userData);
-    //console.log('intial');
+    // console.log('home');
+    // console.log(this.userService.userData);
+    // console.log('intial');
     this.userService.userDataSubject.subscribe(res => {
-      if (res) this.LoadData();
+      if (res) {
+        this.LoadData();
+      }
+    });
+  }
+
+  OWLmoveDotsToNav() {
+    const owlCarousel = document.getElementsByClassName("owl-carousel");
+    [].forEach.call(owlCarousel, (el, index) => {
+      const dots = el.querySelector(".owl-dots");
+      const nav = el.querySelector(".owl-nav");
+      nav.appendChild(dots);
     });
   }
 
   LoadNews() {
-    //console.log('LoadNews');
-    //console.log('user is ' + this.userService.userData);
+    // console.log('LoadNews');
+    // console.log('user is ' + this.userService.userData);
     // tslint:disable-next-line: triple-equals
     if (this.userService.userData.activeRole === ApiUserRoles.Student) {
       return this.loadStudentNews();
@@ -80,7 +91,7 @@ export class HomeComponent implements OnInit {
     }
   }
   private loadStudentNews() {
-    //console.log('loadStudentNews :' + CMSUserRoles.Student);
+    // console.log('loadStudentNews :' + CMSUserRoles.Student);
     return this.homeService
       .getNews(
         CMSUserRoles.Student,
@@ -96,11 +107,11 @@ export class HomeComponent implements OnInit {
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
-        OWLmoveDotsToNav();
+        // this.OWLmoveDotsToNav();
       });
   }
   private loadEmployessNews() {
-    //console.log('loadEmployessNews :' + CMSUserRoles.Employee);
+    // console.log('loadEmployessNews :' + CMSUserRoles.Employee);
 
     return this.homeService
       .getNews(
@@ -110,16 +121,17 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.newsData = (res as any).Data;
-        //console.log(this.userService.newsData.length);
+        // console.log(this.userService.newsData.length);
         this.newsLen = this.userService.newsData
           ? this.userService.newsData.length
           : 0;
-        //console.log(this.userService.newsData);
+        // console.log(this.userService.newsData);
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
+        // this.OWLmoveDotsToNav();
       });
   }
 
@@ -132,16 +144,17 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.newsData = (res as any).Data;
-        //console.log(this.userService.newsData.length);
+        // console.log(this.userService.newsData.length);
         this.newsLen = this.userService.newsData
           ? this.userService.newsData.length
           : 0;
-        //console.log(this.userService.newsData);
+        // console.log(this.userService.newsData);
         this.homeService.reqData = this.userService.newsData;
         // LoadCrsNews();
         this.newsLoaded = true;
+        // this.OWLmoveDotsToNav();
       });
   }
   LoadEvents() {
@@ -163,10 +176,10 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.eventsData = (res as any).Data;
-        //console.log(this.userService.eventsData.length);
-        //console.log(this.userService.eventsData);
+        // console.log(this.userService.eventsData.length);
+        // console.log(this.userService.eventsData);
         this.eventsLoaded = true;
       });
   }
@@ -180,10 +193,10 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.eventsData = (res as any).Data;
-        //console.log(this.userService.eventsData.length);
-        //console.log(this.userService.eventsData);
+        // console.log(this.userService.eventsData.length);
+        // console.log(this.userService.eventsData);
         this.eventsLoaded = true;
       });
   }
@@ -196,10 +209,10 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.eventsData = (res as any).Data;
-        //console.log(this.userService.eventsData.length);
-        //console.log(this.userService.eventsData);
+        // console.log(this.userService.eventsData.length);
+        // console.log(this.userService.eventsData);
         this.eventsLoaded = true;
       });
   }
@@ -223,12 +236,12 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.adsData = (res as any).Data;
-        //console.log(this.userService.adsData.length);
+        // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
-        //console.log(this.userService.adsData);
-        LoadCrsAds();
+        // console.log(this.userService.adsData);
+        // LoadCrsAds();
         this.adsLoaded = true;
       });
   }
@@ -241,12 +254,12 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.adsData = (res as any).Data;
-        //console.log(this.userService.adsData.length);
+        // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
-        //console.log(this.userService.adsData);
-        LoadCrsAds();
+        // console.log(this.userService.adsData);
+        // LoadCrsAds();
         this.adsLoaded = true;
       });
   }
@@ -259,20 +272,21 @@ export class HomeComponent implements OnInit {
         this.userService.userData.camp
       )
       .then(res => {
-        //console.log(res);
+        // console.log(res);
         this.userService.adsData = (res as any).Data;
-        //console.log(this.userService.adsData.length);
+        // console.log(this.userService.adsData.length);
         this.newsLen = this.userService.adsData.length;
-        //console.log(this.userService.adsData);
-        LoadCrsAds();
+        // console.log(this.userService.adsData);
+        // LoadCrsAds();
         this.adsLoaded = true;
       });
   }
 
   LoadData() {
-    this.LoadNews();
-    this.LoadAds();
-    this.LoadEvents();
+    this.LoadNews()
+      .then(() => this.LoadAds())
+      .then(() => this.LoadEvents())
+      .then(() => this.OWLmoveDotsToNav());
   }
 
   onPrintFile() {

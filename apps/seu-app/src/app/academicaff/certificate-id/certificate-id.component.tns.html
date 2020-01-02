@@ -15,8 +15,8 @@
     <Label text="شهادة تعريف"></Label>
 </ActionBar>
 
-
-  <GridLayout rows="auto,auto,200,auto,auto">
+<ScrollView>
+  <GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading">
 
     <FlexboxLayout row="0" flexDirection="row-reverse" justifyContent="space-around" class="firstBox">
 
@@ -47,26 +47,21 @@
       <label  [text]="certificateDetails.labels.txt7"></label>
     </FlexboxLayout>
 
-    <FlexboxLayout row="2" justifyContent="space-around" flexDirection="column">
-      <FlexboxLayout class="tableHeading">
+    <FlexboxLayout row="2" justifyContent="center" flexDirection="column">
+      <FlexboxLayout class="tableHeading" justifyContent="space-between" flexWrap="nowrap" flexDirection="row-reverse">
         <Label [text]="certificateDetails.labels.crn" class="narrowColumn"></Label>
         <Label [text]="certificateDetails.labels.course_title" class="wideColumn"></Label>
         <Label [text]="certificateDetails.labels.day_and_date" class="narrowColumn"></Label>
         <Label [text]="certificateDetails.labels.time" class="wideColumn"></Label>
       </FlexboxLayout>
 
-      <ListView [items]="lectures" *ngIf="lectures" height="150">
-        <ScrollView>
-          <ng-template let-item="item">
-            <FlexboxLayout justifyContent="space-around" flexWrap="nowrap">
-              <Label [text]="item.CRN"  class="narrowColumn dataLabel"></Label>
-              <Label [text]="item.CRSE_TITLE"   class="wideColumn dataLabel"></Label>
-              <Label [text]="item.CRSE_DAY" class="narrowColumn dataLabel"></Label>
-              <Label [text]="toHTML(item.CRSE_TIME)"  class="wideColumn dataLabel"></Label>
-            </FlexboxLayout>
-          </ng-template>
-        </ScrollView>
-      </ListView>
+     
+      <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of lectures" flexDirection="row-reverse" class="dataLabel">
+        <Label [text]="item.CRN" class="narrowColumn"></Label>
+        <Label [text]="item.CRSE_TITLE" class="wideColumn"></Label>
+        <Label [text]="item.CRSE_DAY" class="narrowColumn"></Label>
+        <Label [text]="toHTML(item.CRSE_TIME)" class="wideColumn"></Label>
+      </FlexboxLayout>
     </FlexboxLayout>
 
     <FlexboxLayout row="3" flexDirection="row-reverse" flexWrap="wrap" class="closingParagraph">
@@ -77,9 +72,12 @@
       <label  [text]="certificateDetails.labels.txt13"></label>
     </FlexboxLayout>
 
-    <FlexboxLayout row="4" flexDirection="row-reverse" alignItems="center" class="buttonsLayout">
+    <FlexboxLayout row="4" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
       <Button text="عربى" class="my-button"  (tap)="onArabicPrint()" ></Button>
       <Button text="English" class="my-button"  (tap)="onEnglishPrint()"></Button>
     </FlexboxLayout>
   </GridLayout>
-
+  <FlexboxLayout row="3" justifyContent="center">
+    <ActivityIndicator [busy]="isLoading" color="navy"></ActivityIndicator>
+  </FlexboxLayout>
+</ScrollView>

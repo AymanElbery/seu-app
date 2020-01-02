@@ -5,6 +5,7 @@ import { DrawerTransitionBase, RadSideDrawer, SlideInOnTopTransition, SideDrawer
 import { filter } from 'rxjs/operators';
 import * as app from 'tns-core-modules/application';
 import { GlobalBaseService } from './shared/services/global-base.service';
+import { UserService } from './account/services/user.service';
 
 @Component({
     selector: 'app-root',
@@ -16,11 +17,21 @@ export class AppComponent implements OnInit {
     // tslint:disable-next-line: variable-name
     private _sideDrawerTransition: DrawerTransitionBase;
 
-    constructor(private router: Router, private routerExtensions: RouterExtensions,    private  globalService: GlobalBaseService ) {
+    constructor( public userService: UserService,
+                 private router: Router, private routerExtensions: RouterExtensions,    private  globalService: GlobalBaseService ) {
         // Use the component constructor to inject services.
     }
 
     ngOnInit(): void {
+
+        this.userService.loadUserData().then(res => {
+                if (this.userService.userData.activeRole === '') {
+                this.userService.loadUserData();
+                }
+            }
+            );
+
+
 
         this._activatedUrl = '/home';
         this._sideDrawerTransition = new SlideInOnTopTransition();
