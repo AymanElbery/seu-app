@@ -1,15 +1,16 @@
 <ActionBar>
     <!-- 
+          <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
     -->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
     <!-- 
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
     <Label text="شهادة تعريف"></Label>
@@ -78,6 +79,9 @@
     </FlexboxLayout>
   </GridLayout>
   <FlexboxLayout row="3" justifyContent="center">
+    <StackLayout  margin="10" >
+      <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
+  </StackLayout>
     <ActivityIndicator [busy]="isLoading" color="navy"></ActivityIndicator>
   </FlexboxLayout>
 </ScrollView>
