@@ -4,19 +4,19 @@ import { CertificateIDService } from '../services/certificate-id.service';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { HttpClient } from '@angular/common/http';
-import * as utils from "tns-core-modules/utils/utils";
+import * as utils from 'tns-core-modules/utils/utils';
 import { CertificateDetails } from 'src/app/shared/models/certificate-details';
 
 @Component({
   selector: 'app-certificate-id',
   templateUrl: './certificate-id.component.tns.html',
   styleUrls: ['./certificate-id.component.tns.scss'],
-  moduleId:module.id
+  moduleId: module.id
 })
 export class CertificateIDComponent implements OnInit {
 
-  constructor(private certificateIDService: CertificateIDService,private route:HttpClient) { }
-  certificateDetails:CertificateDetails;
+  constructor(private certificateIDService: CertificateIDService, private route: HttpClient) { }
+  certificateDetails: CertificateDetails;
   arabicPrint: string;
   EngPrint: string;
 
@@ -37,17 +37,17 @@ export class CertificateIDComponent implements OnInit {
     );
   }
   toHTML(input): any {
-    return input.replace("&rarr;", "->");
+    return input.replace('&rarr;', '->');
   }
 
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
-  onArabicPrint(){
+  onArabicPrint() {
     utils.openUrl(this.arabicPrint);
   }
-  onEnglishPrint(){
+  onEnglishPrint() {
     utils.openUrl(this.EngPrint);
   }
 }
