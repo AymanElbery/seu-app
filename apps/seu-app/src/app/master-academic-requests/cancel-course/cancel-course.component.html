@@ -33,7 +33,7 @@
       {{msg.body}}!
     </div>
   </div>
-<br/>
+  <br />
   <!-- <div style="direction: ltr;text-align: center">
 
   <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
@@ -83,10 +83,10 @@
                   class="ik ik-printer"></span>
                 Print</a></td>
          -->
-         <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
-          (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
+            <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
+                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
 
-          <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+            <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
 
           </tr>
 

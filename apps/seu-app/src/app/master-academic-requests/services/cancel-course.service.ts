@@ -6,6 +6,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class CancelCourseService {
+  newreqs = false;
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
@@ -21,24 +22,24 @@ export class CancelCourseService {
     this.configService.baseUrl = 'stdsUnivapi';
 
     return this.httRequest.postRequest('course_cancel_service/insert', data).toPromise();
-}
+  }
   deleteReq(id) {
     this.configService.baseUrl = 'stdsUnivapi';
 
-    return this.httRequest.GetRequest('course_cancel_service/remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('course_cancel_service/remove/' + id).toPromise();
   }
   Download(req) {
     this.configService.baseUrl = 'stdsUnivapi';
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req +'?sid='+sid;
-   }
-   DownloadEng() {
+    return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req + '?sid=' + sid;
+  }
+  DownloadEng() {
     this.configService.baseUrl = 'stdsUnivapi';
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
 
     return this.configService.getApiURI() + '/crse_cancel/download?Lang=en';
-   }
+  }
 }

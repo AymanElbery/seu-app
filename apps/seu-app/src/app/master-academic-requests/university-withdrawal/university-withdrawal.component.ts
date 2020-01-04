@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { UniversityWithdrawalService } from '../services/university-withdrawal.service';
 import { AddWithdrawalRequestComponent } from './diag/add-withdrawal-request/add-withdrawal-request.component';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-university-withdrawal',
@@ -20,64 +22,69 @@ export class UniversityWithdrawalComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc:UniversityWithdrawalService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: UniversityWithdrawalService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-    this.withdrawalRequest = {email: "", mobile: ""};
+    this.withdrawalRequest = { email: "", mobile: "" };
+    this.getRequests();
+  }
+
+  getRequests() {
+    this.isLoading = true;
     this.acadmicProc.getRequest().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-    this.isLoading=false;
-    // //console.log(this.reqData.requests);
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+        // //console.log(this.reqData.requests);
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
-
   openDialoge() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
 
-    this.dialog.open(AddWithdrawalRequestComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-        });
-  }
-  onSubmit(form: NgForm) {
-this.addRequest(form.value);
-
-
+    const dialogref = this.dialog.open(AddWithdrawalRequestComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
+    });
   }
 
   print(req) {
-      return  this.acadmicProc.Download(req);
+    return this.acadmicProc.Download(req);
   }
+  deleting = false;
   delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-       this.msgs =   (res as any).messages;
-     this.status =   (res as any).status;
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
+        }
+        this.deleting = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }
 
-       this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
-       });
-     if (this.status === 1) {
-        this.acadmicProc.reqData.requests.splice(index, 1);
-      }   });
   }
- }
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
 
-}
+  }
 
 }

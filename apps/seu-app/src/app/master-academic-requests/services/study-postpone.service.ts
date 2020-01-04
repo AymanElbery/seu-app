@@ -6,7 +6,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class StudyPostponeService {
-
+  newreqs = false;
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
@@ -15,18 +15,18 @@ export class StudyPostponeService {
   getRequest() {
     this.configService.baseUrl = 'stdsUnivapi';
 
-    
+
     return this.httRequest.GetRequest('postpone_service').toPromise();
   }
   AddRequest(data) {
     this.configService.baseUrl = 'stdsUnivapi';
 
     return this.httRequest.postRequest('postpone_service/insert', data).toPromise();
-}
+  }
   deleteReq(id) {
     this.configService.baseUrl = 'stdsUnivapi';
 
-    return this.httRequest.GetRequest('postpone_service /remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('postpone_service /remove/' + id).toPromise();
 
   }
 }

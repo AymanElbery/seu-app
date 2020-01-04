@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {UniversityWithdrawalComponent} from './university-withdrawal/university-withdrawal.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { UniversityWithdrawalComponent } from './university-withdrawal/university-withdrawal.component';
 import { MasterAcademicRequestsRoutingModule } from './master-academic-requests-routing.module';
-import {AddWithdrawalRequestComponent} from './university-withdrawal/diag/add-withdrawal-request/add-withdrawal-request.component';
-import {UniversityWithdrawalService} from './services/university-withdrawal.service';
-import {TermExecuseComponent} from './term-execuse/term-execuse.component';
-import {AddTermExecuseComponent} from './term-execuse/diag/add-term-execuse/add-term-execuse.component';
-import {TermExecuseService} from './services/term-execuse.service';
-import {StudyPostponeComponent} from './study-postpone/study-postpone.component';
-import {StudyPostponeService} from './services/study-postpone.service';
-import{AddStudyPostponeComponent} from './study-postpone/diag/add-study-postpone/add-study-postpone.component';
-import{ReEnrollComponent} from './re-enroll/re-enroll.component';
-import{AddReEnrollComponent} from './re-enroll/diag/add-re-enroll/add-re-enroll.component';
-import{ReEnrollService} from './services/re-enroll.service';
+import { AddWithdrawalRequestComponent } from './university-withdrawal/diag/add-withdrawal-request/add-withdrawal-request.component';
+import { UniversityWithdrawalService } from './services/university-withdrawal.service';
+import { TermExecuseComponent } from './term-execuse/term-execuse.component';
+import { AddTermExecuseComponent } from './term-execuse/diag/add-term-execuse/add-term-execuse.component';
+import { TermExecuseService } from './services/term-execuse.service';
+import { StudyPostponeComponent } from './study-postpone/study-postpone.component';
+import { StudyPostponeService } from './services/study-postpone.service';
+import { AddStudyPostponeComponent } from './study-postpone/diag/add-study-postpone/add-study-postpone.component';
+import { ReEnrollComponent } from './re-enroll/re-enroll.component';
+import { AddReEnrollComponent } from './re-enroll/diag/add-re-enroll/add-re-enroll.component';
+import { ReEnrollService } from './services/re-enroll.service';
 import { ToastrModule } from 'ngx-toastr';
 
 import { CancelCourseComponent } from './cancel-course/cancel-course.component';
@@ -31,14 +31,15 @@ import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
 import { AddExamExecuseComponent } from './exams-execuses/diag/add-exam-execuse/add-exam-execuse.component';
 import { MatDialogModule, MatCheckboxModule } from '@angular/material';
+import { AppLazyTransModule } from '../app.lazytrans.module';
 
 
 @NgModule({
   declarations: [AddWithdrawalRequestComponent
-    ,UniversityWithdrawalComponent
-    ,AddTermExecuseComponent
-    ,TermExecuseComponent
-    ,StudyPostponeComponent,
+    , UniversityWithdrawalComponent
+    , AddTermExecuseComponent
+    , TermExecuseComponent
+    , StudyPostponeComponent,
     AddStudyPostponeComponent,
     ReEnrollComponent,
     AddReEnrollComponent,
@@ -54,7 +55,7 @@ import { MatDialogModule, MatCheckboxModule } from '@angular/material';
 
 
   ],
-  entryComponents:[AddWithdrawalRequestComponent,
+  entryComponents: [AddWithdrawalRequestComponent,
     AddTermExecuseComponent,
     AddStudyPostponeComponent,
     AddReEnrollComponent,
@@ -73,10 +74,10 @@ import { MatDialogModule, MatCheckboxModule } from '@angular/material';
     ToastrModule.forRoot(),
     MatDialogModule,
     MatCheckboxModule,
-
+    AppLazyTransModule
   ],
-  providers:[UniversityWithdrawalService,
-    TermExecuseService,StudyPostponeService,ReEnrollService,
+  providers: [UniversityWithdrawalService,
+    TermExecuseService, StudyPostponeService, ReEnrollService,
   ]
 })
 export class MasterAcademicRequestsModule { }
