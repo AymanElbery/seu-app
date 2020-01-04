@@ -1,18 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { PrintService } from "../shared/services/print.service";
-import { HomeService } from "../rootservices/home.service";
-import { UserService } from "../account/services/user.service";
-import { ApiUserRoles } from "../shared/models/StaticData/api-user-roles";
-import { CMSUserRoles } from "../shared/models/StaticData/cmsuser-roles";
-import { NavigationEnd, Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { PrintService } from '../shared/services/print.service';
+import { HomeService } from '../rootservices/home.service';
+import { UserService } from '../account/services/user.service';
+import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
+import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
+import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 // declare function LoadCrsAds(): any;
 // declare function OWLmoveDotsToNav(): any;
 // declare function LoadCrsNews(): any;
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   SlideOptions = {
@@ -36,7 +37,8 @@ export class HomeComponent implements OnInit {
     public printService: PrintService,
     public homeService: HomeService,
     public userService: UserService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function() {
@@ -67,13 +69,18 @@ export class HomeComponent implements OnInit {
         this.LoadData();
       }
     });
+    this.translate.onLangChange.subscribe(() => {
+      if (this.userService.userDataLoaded) {
+        this.LoadData();
+      }
+    });
   }
 
   OWLmoveDotsToNav() {
-    const owlCarousel = document.getElementsByClassName("owl-carousel");
+    const owlCarousel = document.getElementsByClassName('owl-carousel');
     [].forEach.call(owlCarousel, (el, index) => {
-      const dots = el.querySelector(".owl-dots");
-      const nav = el.querySelector(".owl-nav");
+      const dots = el.querySelector('.owl-dots');
+      const nav = el.querySelector('.owl-nav');
       nav.appendChild(dots);
     });
   }
@@ -290,9 +297,9 @@ export class HomeComponent implements OnInit {
   }
 
   onPrintFile() {
-    alert("start");
-    const paramsData = ["101", "102"];
-    alert("1");
-    this.printService.printDocument("print-file", paramsData);
+    alert('start');
+    const paramsData = ['101', '102'];
+    alert('1');
+    this.printService.printDocument('print-file', paramsData);
   }
 }

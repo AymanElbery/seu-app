@@ -6,7 +6,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class TermExecuseService {
-
+  newreqs = false;
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
@@ -15,18 +15,18 @@ export class TermExecuseService {
   getRequest() {
     this.configService.baseUrl = 'stdsUnivapi';
 
-    
+
     return this.httRequest.GetRequest('execuse_service').toPromise();
   }
   AddRequest(data) {
     this.configService.baseUrl = 'stdsUnivapi';
 
     return this.httRequest.postRequest('execuse_service/insert', data).toPromise();
-}
+  }
   deleteReq(id) {
     this.configService.baseUrl = 'stdsUnivapi';
 
-    return this.httRequest.GetRequest('execuse_service/remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('execuse_service/remove/' + id).toPromise();
 
   }
 }

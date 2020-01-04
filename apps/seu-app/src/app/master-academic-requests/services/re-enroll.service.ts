@@ -6,38 +6,38 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class ReEnrollService {
-
+  newreqs = false;
   reqData;
   msgs;
-    constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdsUnivapi";
-        }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = "stdsUnivapi";
+  }
   getِgetRequests() {
     this.configService.baseUrl = 'stdsUnivapi';
 
-   return this.httRequest.GetRequest('return_service').toPromise();
+    return this.httRequest.GetRequest('return_service').toPromise();
   }
   AddRequest(data) {
     this.configService.baseUrl = 'stdsUnivapi';
 
-      return this.httRequest.postRequest('return_service/insert ', data).toPromise();
+    return this.httRequest.postRequest('return_service/insert ', data).toPromise();
   }
   deleteReq(id) {
     this.configService.baseUrl = 'stdsUnivapi';
 
-    return this.httRequest.GetRequest('return_service/remove/' + id ).toPromise();
+    return this.httRequest.GetRequest('return_service/remove/' + id).toPromise();
   }
-   Download(req) {
+  Download(req) {
     this.configService.baseUrl = 'stdsUnivapi';
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/return_service/download/return_request/' + req  +'?sid='+sid;
-   }
-   DownloadEng() {
+    return this.configService.getApiURI() + '/return_service/download/return_request/' + req + '?sid=' + sid;
+  }
+  DownloadEng() {
     this.configService.baseUrl = 'stdsUnivapi';
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
     return this.configService.getApiURI() + '/return_service/download?Lang=en';
-   }
+  }
 }

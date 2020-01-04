@@ -103,9 +103,7 @@ export class HomeComponent implements OnInit {
           then(res => {
             // console.log(res);
             this.userService.newsData = (res as any).Data;
-            // console.log(this.userService.newsData.length);
             this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
-            // console.log(this.userService.newsData);
             this.homeService.reqData = this.userService.newsData;
 
             this.newsLoaded = true;
@@ -244,7 +242,7 @@ this.LoadAds();
         console.log('test');
 
         this.userService.userDataSubject.subscribe(res => {
-      
+
           if (res) {
             this.LoadData();
           }

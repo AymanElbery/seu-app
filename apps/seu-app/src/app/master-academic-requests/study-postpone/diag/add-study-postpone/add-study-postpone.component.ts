@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { StudyPostponeService } from 'src/app/master-academic-requests/services/study-postpone.service';
 import { studyPostpone } from 'src/app/shared/models/study-postpone';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-study-postpone',
@@ -11,38 +12,41 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./add-study-postpone.component.scss']
 })
 export class AddStudyPostponeComponent implements OnInit {
-  postpone:studyPostpone ;
+  postpone: studyPostpone;
   reqData: any;
   msgs: any;
   private imageSrc = '';
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddStudyPostponeComponent>,
-    private toastr: ToastrService, private acadmicProc: StudyPostponeService) { }
+    private toastr: AppToasterService, private acadmicProc: StudyPostponeService) { }
 
   ngOnInit() {
-    this.postpone = { mobile:'',num_terms:'',reason:''};
+    this.postpone = { mobile: '', num_terms: '', reason: '' };
 
     this.reqData = this.acadmicProc.reqData;
   }
 
-
+  requesting = false;
   addRequest(data: any) {
-    //console.log(data);
     this.acadmicProc.AddRequest(data).then(res => {
-      this.msgs = (res as any).messages;
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
       });
-    });
-
-
-
   }
   onSubmit(form: NgForm) {
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
     this.addRequest(this.postpone);
-    this.dialogRef.close();
-
   }
   closeDiag() {
     this.dialogRef.close();

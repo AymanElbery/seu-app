@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { UniversityWithdrawalService } from 'src/app/master-academic-requests/services/university-withdrawal.service';
 import { masterWithdrawal } from 'src/app/shared/models/master-withdrawal';
 import { NgForm } from '@angular/forms';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-withdrawal-request',
@@ -16,34 +17,37 @@ export class AddWithdrawalRequestComponent implements OnInit {
   reqData: any;
   msgs: any;
 
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddWithdrawalRequestComponent>,
-               private toastr: ToastrService, private acadmicProc: UniversityWithdrawalService ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddWithdrawalRequestComponent>,
+    private toastr: AppToasterService, private acadmicProc: UniversityWithdrawalService) { }
 
   ngOnInit() {
-    this.withdrawalReq = { email: '',mobile:''};
+    this.withdrawalReq = { email: '', mobile: '' };
     this.reqData = this.acadmicProc.reqData;
 
   }
 
   addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.msgs =   (res as any).messages;
-      //console.log(this.msgs);
-      this.msgs.forEach((element: any) => {
-       this.toastr.success('', element.body);
-
-    });
-        });
-
-
-
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
+      });
   }
+  requesting = false;
   onSubmit(form: NgForm) {
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
     this.addRequest(this.withdrawalReq);
-    //console.log(this.withdrawalReq);
-    this.dialogRef.close();
-
   }
   closeDiag() {
     this.dialogRef.close();
