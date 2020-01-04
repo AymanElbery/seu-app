@@ -75,3 +75,13 @@ select.form-control,
   left: 0;
   right: auto;
 }
+
+.widget .widget-header .widget-title .btn {
+  float: right;
+}
+
+.widget .widget-header .widget-title .btn .ik {
+  float: left;
+  margin-left: 0;
+  margin-right: 5px;
+}
