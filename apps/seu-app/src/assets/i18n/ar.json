@@ -1,6 +1,7 @@
 {
     "general": {
-        "print": ""
+        "print": "طباعة",
+        "delete_confirm": "هل انت متأكد؟"
     },
     "menu": {
         "myservices": "خدماتي",

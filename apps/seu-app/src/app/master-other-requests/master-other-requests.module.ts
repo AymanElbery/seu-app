@@ -25,16 +25,17 @@ import { ToastrModule } from 'ngx-toastr';
 import { GraduateProfileComponent } from './graduate-profile/graduate-profile.component';
 import { GraduateProfileDetailComponent } from './graduate-profile/diag/graduate-profile-detail/graduate-profile-detail.component';
 import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduate-profile/add-graduate-profile.component';
+import { AppLazyTransModule } from '../app.lazytrans.module';
 
 
 @NgModule({
 
   declarations: [AbsenceQueryComponent, ChangeBranchComponent, AddChangeBranchComponent,
     ChangeCourseComponent, PersonalIDComponent,
-    AddChangeBranchComponent, AddChangeCourseComponent, 
-    AddPersonalIdComponent, GraduateProfileComponent,GraduateProfileDetailComponent,AddGraduateProfileComponent],
+    AddChangeBranchComponent, AddChangeCourseComponent,
+    AddPersonalIdComponent, GraduateProfileComponent, GraduateProfileDetailComponent, AddGraduateProfileComponent],
   entryComponents: [AddChangeBranchComponent, AddChangeCourseComponent,
-     AddPersonalIdComponent,GraduateProfileDetailComponent,AddGraduateProfileComponent],
+    AddPersonalIdComponent, GraduateProfileDetailComponent, AddGraduateProfileComponent],
   imports: [
     CommonModule,
     MasterOtherRequestsRoutingModule,
@@ -45,7 +46,8 @@ import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduat
     MatDialogModule,
     //BrowserAnimationsModule,
 
-    MatCheckboxModule
+    MatCheckboxModule,
+    AppLazyTransModule
   ],
   providers: [AbseneQueryService, ChangeBranchService, ChangeCourseService, PersonalIDService]
 
