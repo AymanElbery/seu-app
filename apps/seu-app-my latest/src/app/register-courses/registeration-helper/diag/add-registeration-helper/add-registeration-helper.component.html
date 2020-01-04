@@ -1,7 +1,7 @@
 <mat-dialog-content style="height: 2500px">
 
 
-    <mat-spinner *ngIf="isLoading"
+  <mat-spinner *ngIf="isLoading"
     style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
   </mat-spinner>
 
@@ -25,7 +25,7 @@
                 </select>
 
               </div>
-           
+
             </div>
             <div class=" col-md-6 col-sm-12">
               <div class="state">
@@ -37,7 +37,7 @@
                   <option *ngFor="let course of courses" [value]="course.CRS_CODE">{{course.CRSE_TITLE}}</option>
                 </select>
               </div>
-      
+
             </div>
 
           </div>
@@ -52,7 +52,7 @@
                   <option *ngFor="let dept of departments" [value]="dept.CRN">{{dept.BLDG_DESC}}</option>
                 </select>
               </div>
-           
+
             </div>
             <div class=" col-md-6 col-sm-12">
               <div class="state">
@@ -62,7 +62,7 @@
                   <option *ngFor="let msg of errorMessages" [value]="msg.id">{{msg.value}}</option>
                 </select>
               </div>
-        
+
             </div>
 
           </div>
@@ -75,7 +75,7 @@
                   [(ngModel)]="registerationHelper.comment" #NotesID="ngModel" name="NotesID" required></textarea>
 
               </div>
-           
+
             </div>
 
           </div>
@@ -84,7 +84,7 @@
 
       <div class="modal-body">
         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-          <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
             الغاء</button>
 
           <button [disabled]="form.invalid" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>

@@ -70,3 +70,8 @@ select.form-control,
 .modal-dialog {
   direction: ltr !important;
 }
+
+.wrapper .page-wrap .app-sidebar .sidebar-content .nav-container .navigation-main .nav-item.open::after {
+  left: 0;
+  right: auto;
+}
