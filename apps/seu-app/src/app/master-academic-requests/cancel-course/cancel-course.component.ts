@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { NgForm } from '@angular/forms';
 import { AddCancelCourseRequestComponent } from './diag/add-cancel-course-request/add-cancel-course-request.component';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cancel-course',
@@ -18,11 +20,14 @@ export class CancelCourseComponent implements OnInit {
   msgs;
   status;
   isLoading = false;
-  constructor(public dialog: MatDialog, private toastr: ToastrService, private acadmicProc: CancelCourseService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: CancelCourseService) { }
 
   ngOnInit() {
-    this.isLoading = true;
     this.cancelCousre = { courses: null, agreement: 1 };
+    this.getRequests();
+  }
+  getRequests() {
+    this.isLoading = true;
     this.acadmicProc.getRequest().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
@@ -30,55 +35,52 @@ export class CancelCourseComponent implements OnInit {
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-        // //console.log(this.reqData.requests);
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
-
   openDialoge() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
     dialogConfig.height = '80%';
-   /* dialogConfig.direction = "rtl";
-    dialogConfig.position = { top: '100px', left: '25px' };*/
+    /* dialogConfig.direction = "rtl";
+     dialogConfig.position = { top: '100px', left: '25px' };*/
 
-    this.dialog.open(AddCancelCourseRequestComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(res => {
-      this.acadmicProc.msgs = (res as any).messages;
+    const dialogref = this.dialog.open(AddCancelCourseRequestComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
     });
   }
-  onSubmit(form: NgForm) {
-    this.addRequest(form.value);
 
-
-  }
 
   print(req) {
     return this.acadmicProc.Download(req);
 
   }
+  deleting = false;
   delete(id, index) {
-    if (confirm('هل انت متأكد')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
-        this.msgs = (res as any).messages;
-        this.status = (res as any).status;
-
-        this.msgs.forEach((element: any) => {
-          this.toastr.success('', element.body);
-
-        });
-        if (this.status === 1) {
-          this.acadmicProc.reqData.requests.splice(index, 1);
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
         }
+        this.deleting = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
       });
-
     }
-
   }
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;

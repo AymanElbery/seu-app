@@ -6,6 +6,8 @@ import { StudyPostponeService } from '../services/study-postpone.service';
 import { studyPostpone } from 'src/app/shared/models/study-postpone';
 import { AddStudyPostponeComponent } from './diag/add-study-postpone/add-study-postpone.component';
 import { NgForm } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-study-postpone',
@@ -14,26 +16,33 @@ import { NgForm } from '@angular/forms';
 })
 export class StudyPostponeComponent implements OnInit {
 
- 
+
   studypostpone: studyPostpone;
   reqData;
   msgs;
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc:StudyPostponeService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: StudyPostponeService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-    this.studypostpone = {num_terms: '', reason: '',mobile:''};
+    this.studypostpone = { num_terms: '', reason: '', mobile: '' };
+    this.getRequests();
+  }
+  getRequests() {
+    this.isLoading = true;
     this.acadmicProc.getRequest().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-    this.isLoading=false;
-    // //console.log(this.reqData.requests);
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
@@ -44,37 +53,35 @@ export class StudyPostponeComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
 
-    this.dialog.open(AddStudyPostponeComponent, dialogConfig);
+    const dialogref = this.dialog.open(AddStudyPostponeComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
+    });
   }
 
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-        });
-  }
-  onSubmit(form: NgForm) {
-      this.addRequest(form.value);
-  }
-
- 
+  deleting = false;
   delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-       this.msgs =   (res as any).messages;
-     this.status =   (res as any).status;
-
-       this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
-       });
-     if (this.status === 1) {
-        this.acadmicProc.reqData.requests.splice(index, 1);
-      }   });
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
+        }
+        this.deleting = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }
   }
- }
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
 
-}
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
+
+  }
 
 }

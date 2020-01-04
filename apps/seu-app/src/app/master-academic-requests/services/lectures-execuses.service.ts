@@ -6,7 +6,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class LecturesExecusesService {
-
+  newreqs = false;
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
@@ -33,9 +33,9 @@ export class LecturesExecusesService {
   Download(req) {
     this.configService.baseUrl = 'stdsUnivapi';
 
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
-    return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req+'?sid='+sid;
+    return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req + '?sid=' + sid;
   }
   DownloadEng() {
     this.configService.baseUrl = 'stdsUnivapi';

@@ -5,6 +5,7 @@ import { UserService } from "../account/services/user.service";
 import { ApiUserRoles } from "../shared/models/StaticData/api-user-roles";
 import { CMSUserRoles } from "../shared/models/StaticData/cmsuser-roles";
 import { NavigationEnd, Router } from "@angular/router";
+import { TranslateService } from '@ngx-translate/core';
 
 // declare function LoadCrsAds(): any;
 // declare function OWLmoveDotsToNav(): any;
@@ -36,10 +37,11 @@ export class HomeComponent implements OnInit {
     public printService: PrintService,
     public homeService: HomeService,
     public userService: UserService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
   ) {
     // tslint:disable-next-line: only-arrow-functions
-    this.router.routeReuseStrategy.shouldReuseRoute = function() {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
     this.mySubscription = this.router.events.subscribe(event => {
@@ -66,6 +68,10 @@ export class HomeComponent implements OnInit {
       if (res) {
         this.LoadData();
       }
+    });
+    this.translate.onLangChange.subscribe(() => {
+      if (this.userService.userDataLoaded)
+        this.LoadData();
     });
   }
 

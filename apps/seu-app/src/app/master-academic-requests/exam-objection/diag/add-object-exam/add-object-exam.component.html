@@ -28,10 +28,10 @@
                                       <tbody>
                                         <tr *ngFor="let it of exam.exams;let i=index;">
                                           <td>{{it.CRSE_TITLE}}</td>
-                                          <td>    <input    name="teacherName"  class="form-control col-md-6"  #TeacherID="ngModel" [(ngModel)]="it.teacher"  name="Teacher" >
+                                          <td>    <input    name="teacherName"  class="form-control col-md-6"  #TeacherID="ngModel" (change)="changeStatus(it,$event)" [(ngModel)]="it.teacher"  name="Teacher" >
                                           </td>
                                           <td>
-                                              <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event)" #chkCourse  >
+                                              <input type="checkbox" name="chkCourse"  [(ngModel)]="it.checekd" (change)="changeStatus(it,$event)" #chkCourse  >
                                          </td>
 
                                         </tr>

@@ -3,8 +3,10 @@ import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-l
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
 import { LectureExecuse } from 'src/app/shared/models/lecture-execuse';
-import {LecturesExecusesService} from '../services/lectures-execuses.service';
+import { LecturesExecusesService } from '../services/lectures-execuses.service';
 import { NgForm } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-lectures-execuses',
@@ -19,20 +21,25 @@ export class LecturesExecusesComponent implements OnInit {
   msgs;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: LecturesExecusesService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: LecturesExecusesService) { }
 
   ngOnInit() {
+    this.getRequests();
+  }
+  getRequests() {
     this.isLoading = true;
-    this.lectureExecuse = {attachment: '', courses: [], date: '', reason: '', type: '', week: ''};
     this.acadmicProc.getRequests().then(
       res => {
-       
-        this.acadmicProc.reqData =    (res as any).data;
+        this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-        //console.log( this.reqData);
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
@@ -43,37 +50,33 @@ export class LecturesExecusesComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = '60%';
 
-
-    this.dialog.open(AddLecturesExecusesComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-        });
-  }
-  onSubmit(form: NgForm) {
-
-this.addRequest(form.value);
-
-
-  }
-
-  print(req) {
-return    this.acadmicProc.Download(req);
-
-  }
-  delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
-        //console.log(res);
+    const dialogref = this.dialog.open(AddLecturesExecusesComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
     });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
+  }
+  print(req) {
+    return this.acadmicProc.Download(req);
 
   }
 
-}
-
-
+  deleting = false;
+  delete(id, index) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.requests.splice(index, 1);
+        }
+        this.deleting = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }
+  }
 }

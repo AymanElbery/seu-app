@@ -11,12 +11,12 @@
         <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
 
           <p style="text-align: center;">
-            {{reqData.notes[0].txt1}}<br />
-            {{reqData.notes[1].txt2}}<br />
-            {{reqData.notes[2].txt3}}<br />
-            {{reqData.notes[3].txt4}}<br />
-            {{reqData.notes[4].txt5}}<br />
-            {{reqData.notes[5].txt6}}<br />
+            {{reqData.notes.text1}}<br />
+            {{reqData.notes.text2}}<br />
+            {{reqData.notes.text3}}<br />
+            {{reqData.notes.text4}}<br />
+            {{reqData.notes.text5}}<br />
+            {{reqData.notes.text6}}<br />
           </p>
           <table dir="rtl" style="text-align: center" class="table">
             <thead>
@@ -52,15 +52,14 @@
             </tbody>
           </table>
           <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel"
-          [(ngModel)]="approve" name="Approve">
-          <h5>{{reqData.notes[6].txt7}}</h5>
+            [(ngModel)]="approve" name="Approve">
+          <h5>{{reqData.notes.agrement}}</h5>
 
           <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
             <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
               الغاء</button>
 
-            <button [disabled]="!approve" type="submit" class="btn btn-dark"><i
-                class="fa fa-database"></i> حفظ</button>
+            <button [disabled]="!approve" type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
           </div>
         </form>
       </div>

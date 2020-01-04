@@ -27,7 +27,7 @@
             <tr *ngFor="let it of exam.exams;let i=index;">
               <td>{{it.CRSE_TITLE}}</td>
 
-              <td> <input name="teacherName"  (change)="changeStatus(it,true)" class="form-control col-md-6" #TeacherID="ngModel" [(ngModel)]="it.teacher"
+              <td> <input name="teacherName"  (change)="changeStatus(it)" class="form-control col-md-6" #TeacherID="ngModel" [(ngModel)]="it.teacher" 
                   name="Teacher">
               </td>
 
@@ -35,7 +35,7 @@
 
 
               <td>
-                <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event.target.checked)" #chkCourse>
+                <input type="checkbox" [(ngModel)]="it.checked" name="chkCourse" (change)="changeStatus(it)" #chkCourse>
               </td>
 
             </tr>
