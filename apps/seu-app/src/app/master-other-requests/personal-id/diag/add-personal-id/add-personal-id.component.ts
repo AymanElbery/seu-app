@@ -93,18 +93,6 @@ export class AddPersonalIdComponent implements OnInit {
   }
 
 
-
-  delete(id, index) {
-    if (confirm('هل انت متأكد')) {
-      this.univCard.deleteReq(id).then(res => {
-        this.toastr.success('', (res as any).messages.body);
-
-      });
-      this.univCard.reqData.reqs.splice(index, 1);
-
-    }
-
-  }
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;
 
