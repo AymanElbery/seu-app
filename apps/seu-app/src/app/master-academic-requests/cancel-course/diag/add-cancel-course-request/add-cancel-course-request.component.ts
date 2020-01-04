@@ -6,6 +6,7 @@ import { CancelCourseService } from 'src/app/master-academic-requests/services/c
 import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
 import { NgForm } from '@angular/forms';
 import { CancelCousreMaster } from 'src/app/shared/models/cancel-cousre-master';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-cancel-course-request',
@@ -16,43 +17,48 @@ export class AddCancelCourseRequestComponent implements OnInit {
   cancelCousre: CancelCousreMaster;
   reqData: any;
   msgs: any;
-  approve:boolean;
+  approve: boolean;
   private imageSrc = '';
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddCancelCourseRequestComponent>,
-    private toastr: ToastrService, private acadmicProc: CancelCourseService) { }
+    private toastr: AppToasterService, private acadmicProc: CancelCourseService) { }
 
   ngOnInit() {
     this.cancelCousre = { course_number: 0, agreement: 1 };
 
     this.reqData = this.acadmicProc.reqData;
 
-    this.approve=false;
-   ////console.log(this.reqData.notes);
+    this.approve = false;
+    console.log(this.reqData.notes);
   }
 
   changeStatus(id, e, i) {
-    this.cancelCousre.course_number=id;
+    this.cancelCousre.course_number = id;
   }
 
+  requesting = false;
   addRequest(data: any) {
-    //console.log(data);
     this.acadmicProc.AddRequest(data).then(res => {
-      this.msgs = (res as any).messages;
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
       });
-    });
-
-
-
   }
   onSubmit(form: NgForm) {
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
     this.addRequest(this.cancelCousre);
-    this.dialogRef.close();
-
   }
+
   closeDiag() {
     this.dialogRef.close();
   }

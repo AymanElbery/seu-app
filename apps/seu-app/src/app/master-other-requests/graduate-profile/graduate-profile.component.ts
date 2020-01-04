@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 import { GraduateProfileService } from '../services/graduate-profile.service';
 import { GraduateProfileDetailComponent } from './diag/graduate-profile-detail/graduate-profile-detail.component';
 import { AddGraduateProfileComponent } from './diag/add-graduate-profile/add-graduate-profile.component';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-graduate-profile',
@@ -17,10 +18,12 @@ export class GraduateProfileComponent implements OnInit {
   msgs;
   status;
   isLoading = false;
-  constructor(public dialog: MatDialog, private toastr: ToastrService, private gradProfServ: GraduateProfileService) { }
-
-
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private gradProfServ: GraduateProfileService) { }
   ngOnInit() {
+    this.getRequests();
+  }
+
+  getRequests() {
     this.isLoading = true;
 
     this.gradProfServ.getRequest().then(
@@ -31,6 +34,11 @@ export class GraduateProfileComponent implements OnInit {
         this.msgs = this.gradProfServ.msgs;
         this.isLoading = false;
         // //console.log(this.reqData.requests);
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
@@ -46,6 +54,7 @@ export class GraduateProfileComponent implements OnInit {
     dialogConfig.position = { top: '80px', left: '20px' };
 
     this.gradProfServ.request_number = request_number;
+
     this.dialog.open(GraduateProfileDetailComponent, dialogConfig);
   }
 
@@ -60,7 +69,13 @@ export class GraduateProfileComponent implements OnInit {
     dialogConfig.position = { top: '80px', left: '20px' };
 
 
-    this.dialog.open(AddGraduateProfileComponent, dialogConfig);
+    let dialogref = this.dialog.open(AddGraduateProfileComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.gradProfServ.newreqs) {
+        this.getRequests();
+        this.gradProfServ.newreqs = false;
+      }
+    });
   }
 
 }

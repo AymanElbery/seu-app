@@ -3,7 +3,8 @@ import { NgForm } from '@angular/forms';
 import { examExcuse } from 'src/app/shared/models/exam_excuse';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
-import {ExamsExecusesService} from '../../../services/exams-execuses.service';
+import { ExamsExecusesService } from '../../../services/exams-execuses.service';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-exam-execuse',
@@ -14,47 +15,52 @@ export class AddExamExecuseComponent implements OnInit {
 
   examExcuse: examExcuse;
   reqData;
-msgs: any;
+  msgs: any;
 
 
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddExamExecuseComponent>,
-               private toastr: ToastrService, private acadmicProc: ExamsExecusesService ) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddExamExecuseComponent>,
+    private toastr: AppToasterService, private acadmicProc: ExamsExecusesService) { }
 
   ngOnInit() {
-    this.examExcuse = {courses:[], reason: '', type:'',attachment:''};
+    this.examExcuse = { courses: [], reason: '', type: '', attachment: '' };
     this.reqData = this.acadmicProc.reqData;
 
   }
   changeStatus(it, e) {
     if (e.target.checked) {
-    
-      this.examExcuse.courses.push({CRSE:it.CRN});
-   
+
+      this.examExcuse.courses.push({ CRSE: it.CRN });
+
     }
-    
+
 
   }
 
+
+  requesting = false;
   addRequest(data: any) {
-   
-    this.acadmicProc.AddRequest(data).then(  res => {
-    this.msgs =   (res as any).messages;
-    this.msgs.forEach((element: any) => {
-    this.toastr.success('', element.body);
-
-    });
-        });
-
-
-
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
+      });
   }
-
   onSubmit(form: NgForm) {
-this.addRequest(this.examExcuse);
-this.dialogRef.close();
-
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
+    this.addRequest(this.examExcuse);
   }
+
   closeDiag() {
     this.dialogRef.close();
   }

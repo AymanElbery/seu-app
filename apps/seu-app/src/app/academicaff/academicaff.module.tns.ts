@@ -6,10 +6,10 @@ import { CertificateIDComponent } from './certificate-id/certificate-id.componen
 import * as app from 'tns-core-modules/application';
 import { GraduateStateComponent } from './graduate-state/graduate-state.component.tns';
 import { AcademicStatusComponent } from './academic-status/academic-status.component.tns';
-import { DropDownModule } from "nativescript-drop-down/angular";
+import { DropDownModule } from 'nativescript-drop-down/angular';
 import { from } from 'rxjs';
 import { AcademicRecordComponent } from './academic-record/academic-record.component.tns';
-import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 
 @NgModule({
   declarations: [
@@ -27,5 +27,5 @@ import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class 
+export class
 AcademicaffModule { }

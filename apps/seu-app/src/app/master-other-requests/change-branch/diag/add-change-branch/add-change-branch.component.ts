@@ -4,6 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { ChangeBranchService } from 'src/app/master-other-requests/services/change-branch.service';
 import { changeBranch } from 'src/app/shared/models/change-branch';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-change-branch',
@@ -15,62 +16,59 @@ export class AddChangeBranchComponent implements OnInit {
   branch: changeBranch;
   reqData;
   msgs;
-  constructor( @Inject(MAT_DIALOG_DATA) public data,
-               public dialogRef: MatDialogRef<AddChangeBranchComponent>,
-               private toastr: ToastrService,  private acadmicProc: ChangeBranchService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddChangeBranchComponent>,
+    private toastr: AppToasterService, private acadmicProc: ChangeBranchService) { }
 
   ngOnInit() {
-    this.branch = {camp: '',reason:'',mobile:''};
+    this.branch = { camp: '', reason: '', mobile: '' };
     this.acadmicProc.getِgetRequests().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
 
-      //console.log(this.reqData);
+        //console.log(this.reqData);
 
-  }
+      }
     );
   }
 
 
 
   addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-
-        });
-    });
-
+    this.acadmicProc.AddRequest(data).then(res => {
+      this.toastr.push((res as any).messages);
+      if (res['status']) {
+        this.acadmicProc.newreqs = true;
+        this.dialogRef.close();
+      }
+      this.requesting = false;
+    },
+      err => {
+        this.toastr.tryagain();
+        this.requesting = false;
+      });
   }
+
+  requesting = false;
   onSubmit(form: NgForm) {
-this.addRequest(this.branch);
-//console.log(this.branch);
-this.dialogRef.close();
-
+    if (this.requesting) {
+      return false;
+    }
+    this.requesting = true;
+    this.addRequest(this.branch);
+    //console.log(this.branch);
   }
 
-  delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.toastr.success('', (res as any).messages.body);
-
-    });
-    this.acadmicProc.reqData.reqs.splice(index, 1);
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
 
   }
-
-}
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
-
-}
-closeDiag() {
-  this.dialogRef.close();
-}
+  closeDiag() {
+    this.dialogRef.close();
+  }
 }
 
 

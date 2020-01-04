@@ -16,6 +16,7 @@ import {ExamExcuseService} from './services/exam-excuse.service';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule } from 'ngx-toastr';
+import { AppLazyTransModule } from '../app.lazytrans.module';
 
 @NgModule({
   declarations: [ExamsScheduleComponent,
@@ -27,15 +28,16 @@ import { ToastrModule } from 'ngx-toastr';
       AddExamExcuseComponent
 
     ],
-    entryComponents:[AddExamExcuseComponent],
+    entryComponents: [AddExamExcuseComponent],
   imports: [
     CommonModule,
     ExamsAffairRoutingModule,
     FormsModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    ToastrModule.forRoot() 
+    ToastrModule.forRoot() ,
+    AppLazyTransModule
   ],
-  providers: [ExamAttendanceService, ExamsAttendAppService,ExamExcuseService]
+  providers: [ExamAttendanceService, ExamsAttendAppService, ExamExcuseService]
 })
 export class ExamsAffairModule { }

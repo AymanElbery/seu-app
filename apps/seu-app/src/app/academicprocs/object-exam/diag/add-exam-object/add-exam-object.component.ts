@@ -31,19 +31,20 @@ export class AddExamObjectComponent implements OnInit {
     //this.changeRequest = {camp: []};
     //this.exam = {camp:''};
     this.exam = { courses: [], exams: [], bank: -1, reason: "", account_number: "", fees_amount: "", attachment: "" };
-    this.acadmicProc.getgetRequests().then(
-      res => {
-        this.acadmicProc.reqData = (res as any).data;
-        this.acadmicProc.msgs = (res as any).messages;
-        this.reqData = this.acadmicProc.reqData;
-        this.msgs = this.acadmicProc.msgs;
-        this.exam.exams = this.acadmicProc.reqData.exams;
+    this.reqData = this.acadmicProc.reqData;
+    this.msgs = this.acadmicProc.msgs;
+    this.exam.exams = this.acadmicProc.reqData.exams;
 
-        //this.canAdd = this.reqData.can_add_new_request;
-        //this.exams=this.reqData.exams;
-        ////console.log(this.reqData.banks[0]);
-      }
-    );
+    // this.acadmicProc.getgetRequests().then(
+    //   res => {
+    //     this.acadmicProc.reqData = (res as any).data;
+    //     this.acadmicProc.msgs = (res as any).messages;
+
+    //     //this.canAdd = this.reqData.can_add_new_request;
+    //     //this.exams=this.reqData.exams;
+    //     ////console.log(this.reqData.banks[0]);
+    //   }
+    // );
 
   }
 
@@ -74,12 +75,12 @@ export class AddExamObjectComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  changeStatus(item, checked) {
+  changeStatus(item) {
     for (let i = 0; i < this.exam.courses.length; i++) {
       if (this.exam.courses[i].CRSE == item.CRN)
         this.exam.courses.splice(i, 1);
     }
-    if (checked) {
+    if (item.checked) {
       this.exam.courses.push({ CRSE: parseInt(item.CRN), teacher: item.teacher });
     }
   }

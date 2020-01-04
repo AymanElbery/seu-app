@@ -71,20 +71,20 @@ export class GraduateProfileDetailComponent implements OnInit {
           this.stdinfo.STD_GENDER = 'ذكر'
         else if (this.stdinfo.STD_GENDER == 'F')
           this.stdinfo.STD_GENDER = 'أنثي'
-       // //console.log(this.stdinfo);
+        // //console.log(this.stdinfo);
         this.isLoading = false;
 
       }
     );
 
-    
+
   }
 
- /* onSubmit(form: NgForm) {
-    this.addRequest(this.cancelCousre);
-    this.dialogRef.close();
-
-  }*/
+  /* onSubmit(form: NgForm) {
+     this.addRequest(this.cancelCousre);
+     this.dialogRef.close();
+ 
+   }*/
   closeDiag() {
     this.dialogRef.close();
   }

@@ -14,8 +14,8 @@ import { WithdrawFromUnivService } from './services/withdraw-from-univ.service';
 import { FormsModule } from '@angular/forms';
 import { AddRequestComponent } from './withdraw-from-univ/diag/add-request/add-request.component';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule } from 'ngx-toastr';
 import { TimerComponent } from '../shared/components/timer/timer.component';
 import { TermPostponeService } from './services/term-postpone.service';
@@ -43,85 +43,86 @@ import { ObjectExamComponent } from './object-exam/object-exam.component';
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
 import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-exam-object.component';
 import { LectureExecuseServiceService } from './services/lecture-execuse-service.service';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import {UnivCardComponent} from './univ-card/univ-card.component';
-import {AddUnivCardComponent} from './univ-card/diag/add-univ-card/add-univ-card.component';
-import {UvnivCardService} from '../other-affair/services/univ-card.service';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {TerminationRequestComponent} from './termination-request/termination-request.component';
-import {AddTerminationRequestComponent} from './termination-request/diag/add-termination-request/add-termination-request.component';
+import { UnivCardComponent } from './univ-card/univ-card.component';
+import { AddUnivCardComponent } from './univ-card/diag/add-univ-card/add-univ-card.component';
+import { UvnivCardService } from '../other-affair/services/univ-card.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TerminationRequestComponent } from './termination-request/termination-request.component';
+import { AddTerminationRequestComponent } from './termination-request/diag/add-termination-request/add-termination-request.component';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
 import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component';
-import {TerminationService} from './services/termination.service';
-import {MissingCardComponent} from './missing-card/missing-card/missing-card.component';
-import {AddBankReceiptComponent} from './missing-card/diag/add-bank-receipt/add-bank-receipt.component';
-import {AddMissingCardDataComponent} from './missing-card/diag/add-missing-card-data/add-missing-card-data.component';
-import {MissingUnivCardService} from '../other-affair/services/missing-univ-card.service';
+import { TerminationService } from './services/termination.service';
+import { MissingCardComponent } from './missing-card/missing-card/missing-card.component';
+import { AddBankReceiptComponent } from './missing-card/diag/add-bank-receipt/add-bank-receipt.component';
+import { AddMissingCardDataComponent } from './missing-card/diag/add-missing-card-data/add-missing-card-data.component';
+import { MissingUnivCardService } from '../other-affair/services/missing-univ-card.service';
 import { from } from 'rxjs';
-import {AbsenceQueryComponent} from './absence-query/absence-query.component';
-import {LectureAbsQueryService} from './services/lecture-abs-query.service';
+import { AbsenceQueryComponent } from './absence-query/absence-query.component';
+import { LectureAbsQueryService } from './services/lecture-abs-query.service';
 import { TimerModule } from '../shared/components/timer/timer.module';
 import { MatCheckboxModule } from '@angular/material';
+import { AppLazyTransModule } from '../app.lazytrans.module';
 @NgModule({
   declarations: [PostponeRequestComponent
     , ExecuseRequestComponent,
     SummerWithdrawComponent,
-     ReEenrollmentComponent,
-      ExceptSemesterComponent,
-      ChangeRequestComponent,
-      CancelCourseComponent,
-       WithdrawFromUnivComponent,
-       AddRequestComponent,
-        AddPostponeComponent,
-         AddSummerWithdrawComponent,
-           AddCourseCancelComponent,
-           AddExecuseTermComponent,
-           CourseEqualizeComponent,
-           AddCourseEqualizeComponent,
-           EnglishEqualizeComponent,
-           AddEnglishEqualizerComponent,
-           AddReEnrollComponent,
-           ChangeMajorComponent,
-           AddChangeMajorComponent,
-           AddRequestChangeComponent,
-           LecturesExecusesComponent,
-           ObjectExamComponent,
-           AddLecturesExecusesComponent,
-           AddExamObjectComponent,
-           UnivCardComponent,
-           AddUnivCardComponent,
-           AddUnivCardComponent,
-           AddUnivCardComponent,
-           TerminationRequestComponent,
-           AddTerminationRequestComponent,
-           VisitorStudentComponent,
-           AddMissingCardDataComponent,
-           MissingCardComponent,
-           AddBankReceiptComponent,
-           AddVisitorStudentComponent,
-        AbsenceQueryComponent
+    ReEenrollmentComponent,
+    ExceptSemesterComponent,
+    ChangeRequestComponent,
+    CancelCourseComponent,
+    WithdrawFromUnivComponent,
+    AddRequestComponent,
+    AddPostponeComponent,
+    AddSummerWithdrawComponent,
+    AddCourseCancelComponent,
+    AddExecuseTermComponent,
+    CourseEqualizeComponent,
+    AddCourseEqualizeComponent,
+    EnglishEqualizeComponent,
+    AddEnglishEqualizerComponent,
+    AddReEnrollComponent,
+    ChangeMajorComponent,
+    AddChangeMajorComponent,
+    AddRequestChangeComponent,
+    LecturesExecusesComponent,
+    ObjectExamComponent,
+    AddLecturesExecusesComponent,
+    AddExamObjectComponent,
+    UnivCardComponent,
+    AddUnivCardComponent,
+    AddUnivCardComponent,
+    AddUnivCardComponent,
+    TerminationRequestComponent,
+    AddTerminationRequestComponent,
+    VisitorStudentComponent,
+    AddMissingCardDataComponent,
+    MissingCardComponent,
+    AddBankReceiptComponent,
+    AddVisitorStudentComponent,
+    AbsenceQueryComponent
 
-],
-     entryComponents: [AddRequestComponent,
-       AddPostponeComponent,
-        AddSummerWithdrawComponent,
-        AddCourseCancelComponent,
-         AddExecuseTermComponent,
-         AddCourseEqualizeComponent,
-         AddEnglishEqualizerComponent,
-         AddReEnrollComponent,
-         AddChangeMajorComponent,
-         AddRequestChangeComponent,
-         AddLecturesExecusesComponent,
-         AddExamObjectComponent,
-        AddUnivCardComponent,
-        AddTerminationRequestComponent,
-        AddBankReceiptComponent,
-        AddMissingCardDataComponent,
-        AddVisitorStudentComponent,
+  ],
+  entryComponents: [AddRequestComponent,
+    AddPostponeComponent,
+    AddSummerWithdrawComponent,
+    AddCourseCancelComponent,
+    AddExecuseTermComponent,
+    AddCourseEqualizeComponent,
+    AddEnglishEqualizerComponent,
+    AddReEnrollComponent,
+    AddChangeMajorComponent,
+    AddRequestChangeComponent,
+    AddLecturesExecusesComponent,
+    AddExamObjectComponent,
+    AddUnivCardComponent,
+    AddTerminationRequestComponent,
+    AddBankReceiptComponent,
+    AddMissingCardDataComponent,
+    AddVisitorStudentComponent,
 
-      ],
+  ],
 
   imports: [
     CommonModule,
@@ -130,26 +131,26 @@ import { MatCheckboxModule } from '@angular/material';
     //BrowserAnimationsModule,
     MatDialogModule,
     MatDatepickerModule,
-     MatNativeDateModule,
-     MatProgressSpinnerModule,
+    MatNativeDateModule,
+    MatProgressSpinnerModule,
     ToastrModule.forRoot(),
     TimerModule,
-
+    AppLazyTransModule
   ],
   providers: [WithdrawFromUnivService,
-     TermPostponeService,
-      SummerWithdrawService,
-      CancelCourseService,
-      TermExecuseService,
-      CourseEqualizerService,
-      EnglishEqualizerService,
-      ReEnrollService,
-      ChangeMajorService,
-      LectureExecuseServiceService,
-      UvnivCardService,
-      TerminationService,
-      MissingUnivCardService,
-      MatCheckboxModule,
+    TermPostponeService,
+    SummerWithdrawService,
+    CancelCourseService,
+    TermExecuseService,
+    CourseEqualizerService,
+    EnglishEqualizerService,
+    ReEnrollService,
+    ChangeMajorService,
+    LectureExecuseServiceService,
+    UvnivCardService,
+    TerminationService,
+    MissingUnivCardService,
+    MatCheckboxModule,
   ]
 
 })

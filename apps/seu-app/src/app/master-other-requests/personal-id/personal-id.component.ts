@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { PersonalIDService } from '../services/personal-id.service';
 import { AddPersonalIdComponent } from './diag/add-personal-id/add-personal-id.component';
 import { NgForm } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-personal-id',
@@ -13,26 +15,44 @@ import { NgForm } from '@angular/forms';
 })
 export class PersonalIDComponent implements OnInit {
 
-  card:universityCard;
+  card: universityCard;
   reqData;
   msgs;
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog, public receiptDiag:MatDialog ,private toastr: ToastrService, private univCard: PersonalIDService ) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, public receiptDiag: MatDialog, private toastr: AppToasterService, private univCard: PersonalIDService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-    this.card = {name: '', phone: '', ssn: '',day:'',time:'',level:'',photo:'',ssn_file:''};
+    this.isLoading = true;
+    this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
     this.univCard.getِgetRequests().then(
       res => {
-    this.univCard.reqData =    (res as any).data;
-    this.univCard.msgs = (res as any).messages;
-    this.reqData = this.univCard.reqData;
-    this.msgs = this.univCard.msgs;
-    var key=this.reqData;
-    this.isLoading=false;
-   //console.log(this.reqData);
+        this.univCard.reqData = (res as any).data;
+        this.univCard.msgs = (res as any).messages;
+        this.reqData = this.univCard.reqData;
+        this.msgs = this.univCard.msgs;
+        var key = this.reqData;
+        this.isLoading = false;
+        //console.log(this.reqData);
+      }
+    );
+  }
+  getRequests() {
+    this.isLoading = true;
+    this.univCard.getِgetRequests().then(
+      res => {
+        this.univCard.reqData = (res as any).data;
+        this.univCard.msgs = (res as any).messages;
+        this.reqData = this.univCard.reqData;
+        this.msgs = this.univCard.msgs;
+        var key = this.reqData;
+        this.isLoading = false;
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
@@ -43,44 +63,37 @@ export class PersonalIDComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.width = '50%';
 
-    this.dialog.open(AddPersonalIdComponent, dialogConfig);
-  }
- 
-
-  addRequest(data) {
-    this.univCard.AddRequest(data).then(  res => {
-      this.univCard.msgs = (res as any).messages;
-      alert(this.univCard.msgs[0]);
-        });
-  }
-  onSubmit(form: NgForm) {
-this.addRequest(form.value);
-
-
-  }
-
-  delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.univCard.deleteReq(id).then(res => {
-      this.msgs =   (res as any).messages;
-
-      this.status =   (res as any).status;
-
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-    
-        });
-        //  if(this.status == 1)
-        //       this.univCard.reqData.requests.splice(index, 1);
+    let dialogref = this.dialog.open(AddPersonalIdComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.univCard.newreqs) {
+        this.getRequests();
+        this.univCard.newreqs = false;
+      }
     });
+  }
+
+  deleting = false;
+  delete(id, index) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
+      this.univCard.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.requests.splice(index, 1);
+        }
+        this.deleting = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }
 
   }
 
-}
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
 
-}
+  }
 
 
 }
