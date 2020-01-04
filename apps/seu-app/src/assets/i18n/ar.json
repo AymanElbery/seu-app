@@ -2,7 +2,8 @@
     "general": {
         "print": "طباعة",
         "delete_confirm": "هل انت متأكد؟",
-        "req_no":"رقم الطلب"
+        "req_no":"رقم الطلب",
+        "pre_requesr":"عرض الطلبات السابقة"
     },
     "menu": {
         "myservices": "خدماتي",
