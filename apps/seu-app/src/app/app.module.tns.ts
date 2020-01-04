@@ -19,6 +19,7 @@ import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angul
 import { AcademicaffModule } from './academicaff/academicaff.module.tns';
 import { GlobalService } from './shared/services/global.service.tns';
 import { GlobalBaseService } from './shared/services/global-base.service';
+import { AcademicprocsModule } from './academicprocs/academicprocs.module.tns';
 
 
 
@@ -35,6 +36,7 @@ import { GlobalBaseService } from './shared/services/global-base.service';
     NativeScriptHttpClientModule,
     NativeScriptFormsModule,
     AccountModule,
+    AcademicprocsModule,
     NativeScriptUISideDrawerModule
    
   ],

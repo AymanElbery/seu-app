@@ -1,1 +1,56 @@
-<Button text="withdraw-from-univ works!" class="btn btn-primary"></Button>
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label text="طلب الانسحاب من الجامعه"></Label>
+</ActionBar>
+
+<FlexboxLayout justifyContent="center" flexDirection="column">
+
+    <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+        <ListView [items]="msgs">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" [ngClass]="item.type == 'info' ? 'alert alert-info' : (item.type == 'error' ? 'alert alert-danger' : (item.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading">
+        <Label text="طلبات سابقة"></Label>
+        <Button text="اضافة طلب" *ngIf="reqData.can_add_new_request"></Button>
+    </FlexboxLayout>
+    <FlexboxLayout flexDirection="row-reverse">
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="h1 tableColum"> 
+        <label text="رقم الطلب"></label>
+        <label text="الفصل الدراسه"></label>
+        <label text="طباعة الافاده"></label>
+        <label text="تاريخ الطلب"></label>
+        <label text="حالة الطلب"></label>
+        <label text="طباعة الطلب"></label>
+        <label text="حذف الطلب"></label>
+    </FlexboxLayout>
+
+    <FlexboxLayout alignItems="flex-start" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="column" class="h2 tableColumn">
+        <Label [text]="item.request_number" class="h2 tableColumn"></Label>
+        <Label [text]="item.term" ></Label>
+        <Label text="Print Resp"></Label>
+        <Label [text]="item.insert_date"></Label>
+        <Label [text]="item.status"></Label>
+        <Button text="Print" (tap)="print(item.request_number)"></Button>
+        <Label *ngIf='item.deletable' text="&#xf014;" (tap)="delete(item.request_number,i)"></Label>
+    </FlexboxLayout>
+</FlexboxLayout>
+
+</FlexboxLayout>
