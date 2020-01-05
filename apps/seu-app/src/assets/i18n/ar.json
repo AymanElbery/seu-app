@@ -151,6 +151,22 @@
             "desc":"الاعتذار عن فصل دراسي",
             "execuse_req":"طلب الاعتذار عن الفصل الدراسي",
             "cause":"السبب"
+        },
+        "lecture_execuse":{
+            "title":"رفع الاعذار للمحاضرات",
+            "desc":"رفع الاعذار للمحاضرات",
+            "create_req":"انشاء الطلب",
+            "absence_date":"تاريخ الغياب",
+            "absence_week":"اسبوع الغياب",
+            "lecture_type":"نوع المحاضره",
+            "execuse_file":"ملف العذر",
+            "define_courses_names":" حدد اسماء المقررات ",
+            "choose_lec_type":"اختر نوع المحاضرة",
+            "choose_week":"اختر الاسبوع",
+            "define_date":"حدد التاريخ",
+            "absence_cause":"سبب التغيب",
+            "file":"ملف"
+
         }
         
        
