@@ -173,8 +173,33 @@
 
 
 
-        }
+        },
+        "finance": {
+            "doyou":" do you want",
+            "choose": "  choose   ",
+            "cat": "      execmption category    ",
+            "sc": " scence of status approve  ",
+            "wletter": " hr letter   ",
+            "gid": " grantee id   ",
+            "id": " ID   ",
+            "assletter": "  association letter  ",
+            "bank": "   Bank    ",
+            "iban": "Iban    ",
+            "bankid": "Bank ID Copy   ",
+            "accname": "Account Owner Name    ",
+            "email": "Email ",
+            "accno": "Acount No ",
+            "areu":"     Are you bank account owner ",
+
+            "rel":"   relative  ",
+            "agree":"   I certify that all data entered in the form are accurate and accurate that the error in it is a reason for delaying the return of tuition fees   ",
+            "save":"   Save   ",
+            "cancel":"   Cancel    ",
+            "feeexe":"     tuition fees execmption      ",
+            "feepay":"    tuition fees payment        ",
+            "feepayst":"      tuition fees execmption  statment        "
         
        
     }
+}
 }

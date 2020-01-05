@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentPaymentComponent } from './student-payment/student-payment.component';
+import { AppLazyTransModule } from '../app.lazytrans.module';
 
 @NgModule({
   declarations: [TuitionFeesStatComponent,FeesExceptionComponent,AddFeesExceptionComponent, StudentPaymentComponent],
@@ -23,7 +24,8 @@ import { StudentPaymentComponent } from './student-payment/student-payment.compo
     FormsModule,
     MatDialogModule,
     MatProgressSpinnerModule,
-    ToastrModule.forRoot() 
+    ToastrModule.forRoot() ,
+    AppLazyTransModule
 
 
     
