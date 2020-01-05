@@ -18,11 +18,11 @@
         <div class="row ser-block">
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>هل ترغب ب </h6>
+              <h6>  {{"services.finance.doyou" | translate}} </h6>
               <select required class="form-control" #exceptionType="ngModel" [(ngModel)]="feesException.exception_type"
                 name="exceptionType" [class.is-invalid]="feesException.exception_type == ''" #t
                 (change)="exceptionTypeChange(t.value)">
-                <option value=''>اختر </option>
+                <option value=''> {{"services.finance.choose" | translate}} </option>
                 <option *ngFor="let e of exceptionTypeList" [value]="e.id">{{e.value}}</option>
               </select>
             </div>
@@ -30,11 +30,11 @@
 
           <div class="col-md-8 col-sm-12">
             <div class="state">
-              <h6> الفئة التي تنتمي إليها من أجل الحصول على إعفاء</h6>
+              <h6> {{"services.finance.cat" | translate}}</h6>
               <select required class="form-control" #association="ngModel" [(ngModel)]="feesException.association"
                 name="association" [class.is-invalid]="feesException.association == ''" #t
                 (change)="associationChange(t.value)">
-                <option value=''>اختر </option>
+                <option value=''> {{"services.finance.choose" | translate}} </option>
                 <option *ngFor="let e of associationsList" [value]="e.id">{{e.value}}</option>
               </select>
             </div>
@@ -47,7 +47,7 @@
         <div class="row ser-block">
           <div *ngIf="feesException.association=='0'" class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>مشهد إثبات الحالة </h6>
+              <h6>   {{"services.finance.sc" | translate}} </h6>
               <input required class="form-control" name="proofStatusAtt" id="proofStatusAtt" type="file" accept="*/*"
                 (change)="handleInputChange($event,'proof_status')"
                 [class.is-invalid]="feesException.proof_status == ''" />
@@ -56,7 +56,7 @@
 
           <div *ngIf="feesException.association=='0'" class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>بطاقة الضمان </h6>
+              <h6>  {{"services.finance.gid" | translate}} </h6>
               <input required class="form-control" name="insuranceAtt" id="insuranceAtt" type="file" accept="*/*"
                 (change)="handleInputChange($event,'insurance_card')"
                 [class.is-invalid]="feesException.insurance_card == ''" />
@@ -65,7 +65,7 @@
 
           <div *ngIf="feesException.association=='0'" class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>الهوية أو البطاقة العائلية </h6>
+              <h6>    {{"services.finance.gid" | translate}} </h6>
               <input required class="form-control" name="idCardAtt" id="idCardAtt" type="file" accept="*/*"
                 (change)="handleInputChange($event,'id_card')" [class.is-invalid]="feesException.id_card == ''" />
             </div>
@@ -74,7 +74,7 @@
 
           <div *ngIf="feesException.association=='1'" class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>خطاب من جهة العمل </h6>
+              <h6>    {{"services.finance.wletter" | translate}} </h6>
               <input required class="form-control" name="workStatusAtt" id="workStatusAtt" type="file" accept="*/*"
                 (change)="handleInputChange($event,'work_status')"
                 [class.is-invalid]="feesException.work_status == ''" />
@@ -83,7 +83,7 @@
 
           <div *ngIf="feesException.association=='2'" class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>خطاب من الجمعية </h6>
+              <h6>  {{"services.finance.assletter" | translate}}  </h6>
               <input required class="form-control" name="letterAtt" id="letterAtt" type="file" accept="*/*"
                 (change)="handleInputChange($event,'letter')" [class.is-invalid]="feesException.letter == ''" />
             </div>
@@ -91,7 +91,7 @@
 
           <div *ngIf="feesException.association=='2'" class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>الهوية أو البطاقة العائلية </h6>
+              <h6>    {{"services.finance.id" | translate}} </h6>
               <input required class="form-control" name="mcoIdCardAtt" id="mcoIdCardAtt" type="file" accept="*/*"
                 (change)="handleInputChange($event,'mco_id_card')"
                 [class.is-invalid]="feesException.mco_id_card == ''" />
@@ -105,10 +105,10 @@
         <div *ngIf="feesException.exception_type=='1'" class="row ser-block">
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>إسم البنك</h6>
+              <h6>  {{"services.finance.bank" | translate}}</h6>
               <select required class="form-control" #bank="ngModel" [(ngModel)]="feesException.bank" name="bank"
                 [class.is-invalid]="feesException.bank == ''">
-                <option value=''>اختر </option>
+                <option value=''> {{"services.finance.choose" | translate}} </option>
                 <option *ngFor="let e of banksList" [value]="e.BANK_PK">{{e.BANK_TITLE}}</option>
               </select>
             </div>
@@ -116,7 +116,7 @@
 
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>رقم الأيبان </h6>
+              <h6> {{"services.finance.iban" | translate}}  </h6>
               <input type="text" required class="form-control" #Iban="ngModel" [(ngModel)]="feesException.iban"
                 name="Iban" [class.is-invalid]="feesException.iban == ''">
             </div>
@@ -124,7 +124,7 @@
 
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>صورة البطاقة البنكية </h6>
+              <h6>   {{"services.finance.bankid" | translate}} </h6>
               <input name="bankCardAtt" id="bankCardAtt" type="file" accept="*/*"
                 (change)="handleInputChange($event,'bank_card')" />
             </div>
@@ -134,7 +134,7 @@
         <div *ngIf="feesException.exception_type=='1'" class="row ser-block">
           <div *ngIf="feesException.exception_type=='1'" class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>اسم صاحب الحساب رباعي </h6>
+              <h6>    {{"services.finance.accname" | translate}} </h6>
               <input type="text" required class="form-control" #AccountName="ngModel"
                 [(ngModel)]="feesException.account_name" name="AccountName"
                 [class.is-invalid]="feesException.account_name == ''">
@@ -143,7 +143,7 @@
 
           <div *ngIf="feesException.exception_type=='1'" class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>البريد الإلكتروني </h6>
+              <h6>  {{"services.finance.email" | translate}} </h6>
               <input type="email" required class="form-control" #Email="ngModel" [(ngModel)]="feesException.email"
                 name="Email" [class.is-invalid]="feesException.email == ''">
             </div>
@@ -151,7 +151,7 @@
 
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>رقم الحساب </h6>
+              <h6> {{"services.finance.accno" | translate}}  </h6>
               <input type="text" required class="form-control" #AccountId="ngModel"
                 [(ngModel)]="feesException.account_id" name="AccountId"
                 [class.is-invalid]="feesException.account_id == ''">
@@ -174,10 +174,10 @@
 -->
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>هل أنت صاحب الحساب البنكي؟</h6>
+              <h6>     {{"services.finance.areu" | translate}}</h6>
               <select required class="form-control" #accountOwner1="ngModel" [(ngModel)]="accountOwner"
                 name="accountOwner1" [class.is-invalid]="accountOwner == ''" #p (change)="ownerChange(p.value)">
-                <option value=''>اختر </option>
+                <option value=''> {{"services.finance.choose" | translate}} </option>
                 <option *ngFor="let e of haveAccountList" [value]="e.id">{{e.value}}</option>
               </select>
             </div>
@@ -188,12 +188,12 @@
 
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>صلة القرابة</h6>
+              <h6> {{"services.finance.rel" | translate}} </h6>
               <select required class="form-control" #accountRelative="ngModel"
                 [(ngModel)]="feesException.account_relative" name="accountRelative"
                 [class.is-invalid]="feesException.account_relative == '' && accountOwner=='0'"
                 [disabled]="accountOwner=='1' || accountOwner==''">
-                <option value=''>اختر </option>
+                <option value=''> {{"services.finance.choose" | translate}} </option>
                 <option *ngFor="let e of accountRelativeList" [value]="e.id">{{e.value}}</option>
               </select>
             </div>
@@ -207,8 +207,7 @@
         <div class="row  ser-block">
           <div class=" col-md-12 col-sm-12">
             <div class="state">
-              <h6>أقر بأن كافة البيانات المدخلة في النموذج صحيحة و دقيقة أن الخطأ فيها سببا في تأخير إعادة الرسوم
-                الدراسية</h6>
+              <h6> {{"services.finance.agree" | translate}}</h6>
               <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #ApproveCheck="ngModel"
                 [(ngModel)]="approve" name="ApproveCheck">
             </div>
@@ -220,11 +219,11 @@
     <div class="modal-body">
       <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
         <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-          الغاء</button>
+          {{"services.finance.cancel" | translate}}</button>
 
         <button [disabled]="(form.invalid || !approve)" type="submit" class="btn btn-dark"><i
             class="fa fa-database"></i>
-          حفظ</button>
+            {{"services.finance.save" | translate}}</button>
       </div>
     </div>
   </form>
