@@ -128,7 +128,7 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     CommonModule,
     AcademicprocsRoutingModule,
     FormsModule,
-    //BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     MatDialogModule,
     MatDatepickerModule,
     MatNativeDateModule,

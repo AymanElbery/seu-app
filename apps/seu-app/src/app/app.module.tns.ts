@@ -36,9 +36,9 @@ import { GlobalBaseService } from './shared/services/global-base.service';
     NativeScriptFormsModule,
     AccountModule,
     NativeScriptUISideDrawerModule
-   
+
   ],
-  
+
   providers: [ConfigService, HttpRequestService, UserManagerService,
     {provide: GlobalBaseService, useClass: GlobalService}
   ],
