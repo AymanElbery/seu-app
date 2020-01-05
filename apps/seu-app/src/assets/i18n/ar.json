@@ -136,6 +136,15 @@
             "course_desc":"وصف المقرر",
             "record_image":"صورة السجل",
             "alert":"تنبيه:"
+        },
+        "english-equalize":{
+            "title":"معادلة اللغه الانجليزيه",
+            "desc":"معادلة اللغه الانجليزيه",
+            "reply_date":"تاريخ الرد",
+            "equalize_english_req":"طلب معادلة اللغه الانجليزيه",
+            "choose_exam_degree":"اختر الاختبار وحدد الدرجة",
+            "exam_name":"اسم الاختبار",
+            "certificate_image":"صورة الشهادة"
         }
         
        
