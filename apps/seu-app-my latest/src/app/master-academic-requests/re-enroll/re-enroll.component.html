@@ -9,19 +9,19 @@
           <!-- <div class=" col-md-6 descr">
                     <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                       &nbsp; &nbsp; &nbsp; &nbsp;
-                      
+
                   </div> -->
         </div>
       </div>
     </section>
     <div *ngIf="isLoading" class=" loading-indicator  ">
       <div class="state">
-  
-  
+
+
         <mat-spinner *ngIf="isLoading"
           style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
         </mat-spinner>
-  
+
       </div>
     </div>
     <div class="ser-state" *ngIf="isLoading">
@@ -36,21 +36,21 @@
     <br/>
     <br/>
     <button *ngIf="reqData.can_add_new_request"  type="button" class="btn btn-primary"  (click)="openDialoge()">
-    اضافة طلب
+    اضافة طلب <i class="ik ik-plus"></i>
   </button>
   <br/>
   <br/>
-  
+
   </div> -->
     <div class="widget" *ngIf="!isLoading">
       <div class="widget-header">
-  
-  
+
+
         <h3 class="widget-title"> الطلبات السابقة
           <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-            اضافة طلب
+            اضافة طلب <i class="ik ik-plus"></i>
           </button>
-  
+
         </h3>
       </div>
     <div class="table-responsive">
@@ -79,9 +79,9 @@
 
           <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
             (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
-  
+
             <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
-  
+
 
 
           </tr>

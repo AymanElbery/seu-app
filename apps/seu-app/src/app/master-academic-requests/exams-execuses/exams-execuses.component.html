@@ -31,20 +31,20 @@
   </div>
 
   <!-- <div style="direction: ltr;text-align: center">
-      
+
       <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
-      اضافة طلب
+      اضافة طلب <i class="ik ik-plus"></i>
     </button>
     <br/>
     <br/>
-    
+
     </div> -->
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
       <h3 class="widget-title"> الطلبات السابقة
 
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب
+          اضافة طلب <i class="ik ik-plus"></i>
         </button>
       </h3>
     </div>
@@ -72,7 +72,7 @@
             <td>{{it.admin_date}}</td>
             <td>{{it.status}}</td>
 
-            <!-- 
+            <!--
             <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
               (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
 

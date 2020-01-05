@@ -275,54 +275,54 @@
           </div>
 
           <div class="widget">
-              <div class="widget-header">
-                <h3 class="widget-title">بيانات رب العمل إن وجد</h3>
-              </div>
-          <div class="row ser-block">
-
-            <div class=" col-md-3 col-sm-12">
-              <div class="state">
-                <h6> الإسم </h6>
-                <h5>{{stdinfo.EMPLOYER_NAME}} </h5>
-              </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
+            <div class="widget-header">
+              <h3 class="widget-title">بيانات رب العمل إن وجد</h3>
             </div>
+            <div class="row ser-block">
 
-            <div class=" col-md-3 col-sm-12">
-              <div class="state">
-                <h6> المسمى الوظيفي </h6>
-                <h5>{{stdinfo.EMPLOYER_JOB_TITLE}} </h5>
+              <div class=" col-md-3 col-sm-12">
+                <div class="state">
+                  <h6> الإسم </h6>
+                  <h5>{{stdinfo.EMPLOYER_NAME}} </h5>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
               </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
+
+              <div class=" col-md-3 col-sm-12">
+                <div class="state">
+                  <h6> المسمى الوظيفي </h6>
+                  <h5>{{stdinfo.EMPLOYER_JOB_TITLE}} </h5>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
               </div>
+
+              <div class=" col-md-3 col-sm-12">
+                <div class="state">
+                  <h6> رقم الجوال </h6>
+                  <h5>{{stdinfo.EMPLOYER_PHONE}} </h5>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-3 col-sm-12">
+                <div class="state">
+                  <h6> البريد الإلكتروني </h6>
+                  <h5>{{stdinfo.EMPLOYER_EMAIL}} </h5>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+
             </div>
-
-            <div class=" col-md-3 col-sm-12">
-              <div class="state">
-                <h6> رقم الجوال </h6>
-                <h5>{{stdinfo.EMPLOYER_PHONE}} </h5>
-              </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-
-            <div class=" col-md-3 col-sm-12">
-              <div class="state">
-                <h6> البريد الإلكتروني </h6>
-                <h5>{{stdinfo.EMPLOYER_EMAIL}} </h5>
-              </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-
-
           </div>
-        </div>
 
 
         </div>
@@ -330,7 +330,7 @@
 
       <div class="modal-body">
         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-          <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
             الغاء</button>
 
           <!-- <button [disabled]="(form.invalid || !approves.approve)" type="submit" class="btn btn-dark"><i

@@ -60,12 +60,10 @@ $color_alabaster_approx: #fbfbfb;
 
 //Imports
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-// @import "assets/css/fontawesome-free/css/all.min.css";
 @import "assets/css/icon-kit/css/iconkit.css";
-// @import "assets/css/ionicons/css/ionicons.min.css";
 $ionicons-font-path: "~ionicons/dist/fonts";
-// @import "~ionicons/dist/scss/ionicons.scss";
-@import "assets/css/perfect-scrollbar.css";
+@import "~ionicons/dist/scss/ionicons.scss";
+// @import "assets/css/perfect-scrollbar.css";
 @import "assets/css/animate.css";
 
 $owl-image-path: "~owl.carousel/src/img/";
@@ -76,8 +74,6 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 @import "~@fortawesome/fontawesome-free/scss/regular";
 @import "~@fortawesome/fontawesome-free/scss/brands";
-// @import "assets/css/owl/owl.carousel.min.css";
-// @import "assets/css/owl/owl.theme.default.min.css";
 @import "assets/css/progress-wizard.min.css";
 @import "assets/css/bootstrap4/bootstrap-rtl.css";
 @import "assets/css/theme-service";
@@ -3168,4 +3164,51 @@ ul.cart-list > li {
     font-weight: 600;
   }
 
+}
+form .state {
+  box-shadow: none;
+}
+.btn {
+  padding: 8px 15px 30px;
+  font-size: 14px;
+  font-weight: 600;
+  height: 30px;
+  transition: 0.3s ease-in-out;
+  background-color: #f28d1e;
+  border: 1px solid #f28d1e;
+  color: #fff;
+  border-radius: 50px;
+  &.btn-outline {
+    background: transparent;
+    color: #777;
+    border-color: #c5c5c5;
+    opacity: 1;
+    transition: all ease-in-out 0.2s;
+    .ik {
+      transition: all ease-in-out 0.2s;
+      display: inline-block;
+    }
+    &:hover {
+      background: transparent;
+    color: #777;
+    border-color: #c5c5c5;
+      .ik {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .badge {
+    padding: 2px 6px;
+  }
+
+  i {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    transition: 0.3s ease-in-out;
+    border: 1px solid #1c2172;
+    background-color: #1c2172;
+  }
 }

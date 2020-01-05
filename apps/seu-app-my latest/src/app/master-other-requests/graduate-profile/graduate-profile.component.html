@@ -33,11 +33,11 @@
       {{msg.body}}!
     </div>
   </div>
- 
+
   <!-- <div style="direction: ltr;text-align: center">
-  
+
   <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
-  اضافة طلب
+  اضافة طلب <i class="ik ik-plus"></i>
 </button>
 <br/>
 <br/>
@@ -49,7 +49,7 @@
 
       <h3 class="widget-title"> الطلبات السابقة
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openAddDialoge()">
-          اضافة طلب
+          اضافة طلب <i class="ik ik-plus"></i>
         </button>
 
       </h3>
@@ -69,7 +69,7 @@
           <tr *ngFor="let it of reqData.reqs;let i=index;">
             <td>{{it.request_number}}</td>
             <td>{{it.INSERT_DATE}}</td>
-           
+
             <!--   <td><a class="btn btn-primary" [href]="print(it.request_number)"><span
                   class="glyphicon glyphicon-print"></span>
                 Print</a></td>
@@ -77,9 +77,9 @@
          <td>
             <button  type="button" class="btn btn-primary" (click)="openDialoge(it.request_number)">
                 <i class="fa fa-eye" style="font-size:24px">
-                   
+
                  </i>
-   
+
          </button>
          </td>
             <td *ngIf='it.deletable'><button
@@ -90,7 +90,7 @@
 
             <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
 
-       
+
 
           </tr>
 

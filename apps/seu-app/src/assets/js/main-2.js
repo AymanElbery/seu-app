@@ -26,7 +26,9 @@
     }
   });
   $('.back-to-top').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1500, 'easeInOutExpo');
     return false;
   });
 
@@ -129,7 +131,7 @@
   //           overlayColor: 'rgba(6, 12, 34, 0.85)',
   //           closeBackground: '',
   //           closeColor: '#fff' ,
-  //          framewidth: '800px',     
+  //          framewidth: '800px',
   //         frameheight: '600px',
   //             spinner :'cube-grid'
   // });
@@ -141,7 +143,7 @@
   //           overlayColor: 'rgba(6, 12, 34, 0.85)',
   //           closeBackground: '',
   //           closeColor: '#fff' ,
-  //          framewidth: '90%',     
+  //          framewidth: '90%',
   //             spinner :'cube-grid'
   // });
 
@@ -154,6 +156,13 @@
   Swiper slider Activation
   ==================================*/
   // classes-carousel
+  // new PerfectScrollbar('.sidebar-content', {
+  //   wheelSpeed: 10,
+  //   wheelPropagation: !0,
+  //   minScrollbarLength: 5
+  // });
+
+
   function classes_carousel() {
     var mySwiper = new Swiper('.classes-carousel', {
       speed: 400,
