@@ -63,7 +63,10 @@
             "non_cancelable_request":"Can't Delete Request"
         },
         "save":"Save",
-        "cancel":"Cancel"
+        "cancel":"Cancel",
+        "count":"Count",
+        "college":"College",
+        "language":"Language"
 
     },
     "menu": {
@@ -101,6 +104,41 @@
             "desc":"Course Withdrawal",
             "course_cancellation":"Cancel Course",
             "course_define":"Define Course"
+        },
+        "change_major":{
+            "title":"Change Major",
+            "desc":"Change Major",
+            "current_major":"Current Major",
+            "required_major":"Required Major",
+            "choose_major":"Choose Major",
+            "change_major_req":"Change Major Request",
+            "alert":"Alert:",
+            "alert_content":"Chance for changing Major is available only onece during studying in university",
+            "major_cancellation_validity":"Student can cancel this request during 48 hours starting from applying to the request"
+        },
+        "change_branch":{
+            "title":"Change Branch",
+            "desc":"Change Branch",
+            "required_branch":"Required Branch",
+            "reply_date":"Reply Date",
+            "procedure":"Procedure",
+            "change_branch_req":"Change Branch Request",
+            "choose_branch":"Choosr Branch",
+            "alert":"Alert:",
+            "alert_content":"فى هذه الفترة يتم استقبال الطلبات والتنفيذ بمشيئة الله بعد ظهور نتائج الاختبارات النهائية",
+            "branch_cancellation_validity":"يسمح للطالب الغاء الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط."
+
+        },
+        "course-equalize":{
+            "title":"Courses Equalize",
+            "desc":"Courses Equalize",
+            "reply":"Reply",
+            "reply_date":"Reply Date",
+            "choose_college":"Choose College",
+            "choose_course_lang_hours_grade":"Choose Course,Hours,Degree and Language",
+            "course_desc":"Course Description",
+            "record_image":"Record Picture",
+            "alert":"Alert:"
         }
         
        

@@ -62,7 +62,9 @@
         },
         "save":"حفظ",
         "cancel":"الغاء",
-        "count":"العدد"
+        "count":"العدد",
+        "college":"الجامعة",
+        "language":"اللغة"
     },
     "menu": {
         "myservices": "خدماتي",
@@ -115,7 +117,55 @@
         "change_branch":{
             "title":"تغيير الفرع",
             "desc":"تغيير الفرع",
-            "required_branch":""
+            "required_branch":"الفرع المطلوب",
+            "reply_date":"تاريخ الرد",
+            "procedure":"الاجراء",
+            "change_branch_req":"طلب  تغير الفرع",
+            "choose_branch":"اختر  الفرع",
+            "alert":"تنبيه:",
+            "alert_content":"فى هذه الفترة يتم استقبال الطلبات والتنفيذ بمشيئة الله بعد ظهور نتائج الاختبارات النهائية",
+            "branch_cancellation_validity":"يسمح للطالب الغاء الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط."
+        },
+        "course-equalize":{
+            "title":"معادلة المقررات",
+            "desc":"معادلة المقررات",
+            "reply":"الرد",
+            "reply_date":"تاريخ الرد",
+            "choose_college":"اختر الجامعه",
+            "choose_course_lang_hours_grade":"اختر المقرر وحدد عدد الساعات والدرجة واللغة",
+            "course_desc":"وصف المقرر",
+            "record_image":"صورة السجل",
+            "alert":"تنبيه:"
+        },
+        "english-equalize":{
+            "title":"معادلة اللغه الانجليزيه",
+            "desc":"معادلة اللغه الانجليزيه",
+            "reply_date":"تاريخ الرد",
+            "equalize_english_req":"طلب معادلة اللغه الانجليزيه",
+            "choose_exam_degree":"اختر الاختبار وحدد الدرجة",
+            "exam_name":"اسم الاختبار",
+            "certificate_image":"صورة الشهادة"
+        },
+        "excuse_request":{
+            "title":"الاعتذار عن فصل دراسي",
+            "desc":"الاعتذار عن فصل دراسي",
+            "execuse_req":"طلب الاعتذار عن الفصل الدراسي",
+            "cause":"السبب"
+        },
+        "lecture_execuse":{
+            "title":"رفع الاعذار للمحاضرات",
+            "desc":"رفع الاعذار للمحاضرات",
+            "create_req":"انشاء الطلب",
+            "absence_date":"تاريخ الغياب",
+            "absence_week":"اسبوع الغياب",
+            "lecture_type":"نوع المحاضره",
+            "execuse_file":"ملف العذر",
+            "define_courses_names":" حدد اسماء المقررات ",
+            "choose_lec_type":"اختر نوع المحاضرة",
+            "choose_week":"اختر الاسبوع",
+            "define_date":"حدد التاريخ",
+            "absence_cause":"سبب التغيب",
+            "file":"ملف"
 
         }
         
