@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب  تغير التخصص </h5>
+          <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.change_major.change_major_req"|translate}}</h5>
 
         </div>
         <div class="modal-body">
@@ -14,10 +14,9 @@
           <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
               <div  class="main-content">
                   <P class="text-center">
-                      <span style="font-weight: bold; font-size: 15px;color: red;" >تنبيه:   </span>
-                      سيتم اتاحة الفرصة لتغيير التخصص مرة واحدة خلال الدراسة في الجامعة.
-                       <br />
-                      يسمح للطالب بالغاء الطالب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.
+                      <span style="font-weight: bold; font-size: 15px;color: red;" >{{"services.change_major.alert"|translate}}</span>
+                      {{"services.change_major.alert_content"|translate}}<br />
+                      {{"services.change_major.major_cancellation_validity"|translate}}
 
                       </P>
               <section  class="ser-state">
@@ -26,10 +25,10 @@
 
                                 <div class="col-md-12 col-sm-12">
                                     <div class="state">
-                                      <h6>اختر التخصص</h6>
+                                      <h6>{{"services.change_major.choose_major"|translate}}</h6>
                                       <select name="major" #BranchID="ngModel" [(ngModel)]="mj.major" class="form-control"
                                       [class.is-invalid]="mj.major==''">
-                                        <option value="">اختر  التخصص</option>
+                                        <option value="">{{"services.change_major.choose_major"|translate}}</option>
                                         <option *ngFor="let item of reqData.majors" value="{{item.MAJOR_PK}}">{{item.MAJOR_TITLE}}</option>
                                       </select>
                                         </div>
@@ -46,9 +45,9 @@
 
                 <div style="margin-top: 10px;">
                     <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-                                <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i> الغاء</button>
+                                <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i>{{"general.cancel"|translate}}</button>
 
-                      <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                      <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"general.save"|translate}}</button>
                     </div>
               </div>
             </div>

@@ -2,10 +2,10 @@
 
   <section class="service-single">
     <div class="container">
-      <h3>الاستعلام عن الغيابات </h3>
+      <h3>{{"services.absence_quyery.title" |translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
-          <p>الاستعلام عن الغيابات </p>
+          <p>{{"services.absence_quyery.title" |translate}}</p>
         </div>
         <!-- <div class=" col-md-6 descr">
                       <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -34,21 +34,18 @@
       <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">
         <a class="nav-link nav-link active" (click)="selectedTab(1)" id="one-tab" data-toggle="tab" href="#one"
           role="tab" aria-controls="One" aria-selected="true">
-          نسبة غياب المحاضرات الكلية
-
+          {{"services.absence_quyery.all_lecs_asebsence_percent" |translate}}
         </a>
 
         <a class="nav-item nav-link " (click)="selectedTab(1)" id="two-tab" data-toggle="tab" href="#two" role="tab"
           aria-controls="Two" aria-selected="false">
-          نسبة غياب المحاضرات التقليدية
-
+          {{"services.absence_quyery.traditional_lecs_asebsence_percent" |translate}}
         </a>
 
 
         <a class="nav-item  nav-link " (click)="selectedTab(1)" id="three-tab" data-toggle="tab" href="#three"
           role="tab" aria-controls="Three" aria-selected="false">
-          نسبة غياب المحاضرات الافتراضيه
-        </a>
+          {{"services.absence_quyery.virtual_lecs_asebsence_percent" |translate}}</a>
 
 
       </div>
@@ -58,7 +55,7 @@
       <div class="tab-pane fade show active" id="one">
         <div class="widget">
           <div class="widget-header">
-            <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
+            <h3 class="widget-title" style="font-size:14px;">{{"general.lectures" |translate}} </h3>
           </div>
           <div class="table-responsive">
             <table *ngIf="absData.absent_percentage_total.length>0;else array1"
@@ -68,11 +65,11 @@
 
 
                 <tr>
-                  <th scope="col">CRN </th>
-                  <th scope="col">كود المقرر</th>
-                  <th scope="col">اسم المقرر</th>
-                  <th scope="col">العدد </th>
-                  <th scope="col">نسبة الغباب</th>
+                  <th scope="col">{{"general.crn" | translate}}</th>
+                  <th scope="col">{{"general.course_code" | translate}}</th>
+                  <th scope="col">{{"general.course_name" | translate}}</th>
+                  <th scope="col">{{"general.count" | translate}}</th>
+                  <th scope="col">{{"general.absence_percent" |translate}}</th>
 
                 </tr>
               </thead>
@@ -99,7 +96,7 @@
 
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <div class="input-group-text"><b>نسبة غياب المحاضرات الكلية </b> </div>
+                      <div class="input-group-text"><b>{{"services.absence_quyery.all_lecs_asebsence_percent" |translate}}</b> </div>
                     </div>
                     <input value="0" class="form-control" readonly>
                   </div>
@@ -119,7 +116,7 @@
       <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
         <div class="widget">
           <div class="widget-header">
-            <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
+            <h3 class="widget-title" style="font-size:14px;">{{"general.lectures" |translate}}</h3>
           </div>
           <div class="table-responsive">
 
@@ -128,12 +125,12 @@
               class="table table-striped table-bordered">
               <thead>
                 <tr>
-                  <th scope="col">CRN </th>
-                  <th scope="col">كود المقرر</th>
-                  <th scope="col">اسم المقرر</th>
-                  <th scope="col">العدد </th>
+                  <th scope="col">{{"general.crn" | translate}} </th>
+                  <th scope="col">{{"general.course_code" | translate}}</th>
+                  <th scope="col">{{"general.course_name" | translate}}</th>
+                  <th scope="col">{{"general.count" | translate}}</th>
 
-                  <th scope="col">نسبة الغباب</th>
+                  <th scope="col">{{"general.absence_percent" |translate}}</th>
 
                 </tr>
               </thead>
@@ -159,7 +156,7 @@
 
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <div class="input-group-text"><b>نسبة غياب المحاضرات التقليدية </b> </div>
+                      <div class="input-group-text"><b>{{"services.absence_quyery.traditional_lecs_asebsence_percent" |translate}}</b> </div>
                     </div>
                     <input value="0" class="form-control" readonly>
                   </div>
@@ -176,7 +173,7 @@
       <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
         <div class="widget">
           <div class="widget-header">
-            <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
+            <h3 class="widget-title" style="font-size:14px;">{{"general.lectures" |translate}} </h3>
           </div>
 
           <div class="table-responsive">
@@ -184,12 +181,12 @@
               *ngIf="absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3">
               <thead>
                 <tr>
-                  <th scope="col">CRN </th>
-                  <th scope="col">كود المقرر</th>
-                  <th scope="col">اسم المقرر</th>
-                  <th scope="col">العدد </th>
+                  <th scope="col">{{"general.crn" | translate}} </th>
+                  <th scope="col">{{"general.course_code" | translate}}</th>
+                  <th scope="col">{{"general.course_name" | translate}}</th>
+                  <th scope="col">{{"general.count" | translate}}</th>
 
-                  <th scope="col">نسبة الغباب</th>
+                  <th scope="col">{{"general.absence_percent" |translate}}</th>
 
                 </tr>
               </thead>
@@ -214,7 +211,7 @@
 
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <div class="input-group-text"><b>نسبة غياب المحاضرات الافتراضيه </b> </div>
+                      <div class="input-group-text"><b>{{"services.absence_quyery.virtual_lecs_asebsence_percent" |translate}}</b> </div>
                     </div>
                     <input value="{{absData.absent_percentage_virtual_lectures}}" class="form-control" readonly>
                   </div>
@@ -231,18 +228,18 @@
   </section>
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
-      <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
+      <h3 class="widget-title" style="font-size:14px;">{{"general.lectures" |translate}} </h3>
     </div>
     <div class="table-responsive">
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <th scope="col">رمز المقرر </th>
-            <th scope="col">اسم المقرر</th>
-            <th scope="col">نوع المحاضره</th>
-            <th scope="col">الأسبوع</th>
-            <th scope="col">اليوم</th>
-            <th scope="col">حالة الحضور</th>
+            <th scope="col">{{"general.course_code" | translate}}</th>
+            <th scope="col">{{"general.course_name" | translate}}</th>
+            <th scope="col">{{"general.lecture_type" | translate}}</th>
+            <th scope="col">{{"general.week" | translate}}</th>
+            <th scope="col">{{"general.day" | translate}}</th>
+            <th scope="col">{{"services.absence_quyery.attendance_status" | translate}}</th>
 
           </tr>
         </thead>
@@ -264,8 +261,8 @@
   </div>
   <div class="prin text-center " *ngIf="!isLoading">
     <a class="btn btn-primary" href="{{arabicPrint}}"><span class="ik ik-printer"></span>
-      طباعة</a>
+      {{"general.ar_print"|translate}}</a>
     <a class="btn btn-primary" href="{{EngPrint}}"><span class="ik ik-printer"></span>
-      Print</a>
+      {{"general.en_print"|translate}}</a>
   </div>
 </div>

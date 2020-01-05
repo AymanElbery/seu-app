@@ -1,10 +1,10 @@
 <div class="main-content">
   <section class="service-single">
     <div class="container">
-      <h3> تغيير التخصص</h3>
+      <h3>{{"services.change_major.title"|translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
-          <p> تغيير التخصص </p>
+          <p>{{"services.change_major.desc"|translate}}</p>
         </div>
         <!-- <div class=" col-md-6 descr">
                   <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -44,9 +44,9 @@
     <div class="widget-header">
 
 
-      <h3 class="widget-title"> الطلبات السابقة
+      <h3 class="widget-title"> {{"general.request.pre_requests"| translate}}
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب
+          {{"general.request.add_request"| translate}}
         </button>
 
       </h3>
@@ -56,13 +56,13 @@
         <thead>
 
           <tr>
-            <th scope="col">رقم الطلب</th>
+            <th scope="col">{{"general.request.req_no"| translate}}</th>
 
-            <th scope="col">تاريخ الطلب</th>
-            <th scope="col"> التخصص الحالي</th>
-            <th scope="col"> التخصص المطلوب</th>
+            <th scope="col">{{"general.request.req_date"| translate}}</th>
+            <th scope="col">{{"services.change_major.current_major"|translate}}</th>
+            <th scope="col">{{"services.change_major.required_major"|translate}}</th>
 
-            <th scope="col"> حذف الطلب </th>
+            <th scope="col">{{"general.request.req_delete"| translate}}</th>
 
           </tr>
         </thead>
@@ -79,7 +79,7 @@
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
 
-                <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+                <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"| translate}}</td>
 
           </tr>
 

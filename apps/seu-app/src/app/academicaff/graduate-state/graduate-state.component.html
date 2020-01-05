@@ -1,10 +1,10 @@
 <div class="main-content">
   <section class="service-single">
     <div class="container">
-      <h3> افادة خريج </h3>
+      <h3>{{"services.graduate_state.title"| translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
-          <p> افادة خريج </p>
+          <p> {{"services.graduate_state.desc"| translate}}</p>
         </div>
         <!-- <div class=" col-md-6 descr">
                   <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -42,7 +42,7 @@
 
 
     <div class="widget-header">
-      <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
+      <h3 class="widget-title">{{"general.student_data" | translate}}</h3>
     </div>
     <section class="ser-state" *ngIf="!isLoading">
       <div class="container">
@@ -67,7 +67,7 @@
           </div>
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6> رقم الطالب او الطالبة </h6>
+              <h6> {{"general.student_id" |translate}}</h6>
               <h5>{{graduateData.values.std_id}}</h5>
             </div>
             <div class="progress progress-sm">
@@ -122,7 +122,7 @@
           </div>
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6> المرحله </h6>
+              <h6>{{"general.stage" | translate}}</h6>
               <h5>{{graduateData.values.level}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -131,7 +131,7 @@
           </div>
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6> المدينة </h6>
+              <h6>{{"general.city" | translate}}</h6>
               <h5>{{graduateData.values.city}}</h5>
             </div>
             <div class="progress progress-sm">
@@ -164,8 +164,8 @@
   </div>
   <div class="prin text-center" *ngIf="!isLoading && graduateData.length > 0">
     <a class="btn btn-primary" href="{{arabicPrint}}"><span class="ik ik-printer"></span>
-      طباعة</a>
+      {{"general.ar_print" | translate}}</a>
     <a class="btn btn-primary" href="{{EngPrint}}"><span class="ik ik-printer"></span>
-      Print</a>
+      {{"general.en_print" | translate}}</a>
   </div>
 </div>
