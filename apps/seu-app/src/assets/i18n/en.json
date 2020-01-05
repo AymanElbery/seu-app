@@ -54,6 +54,11 @@
         "day":"Day",
         "request":{
             "add_request":"Add Request",
+            "cname":"Course ",
+            "res_date": "Response data   ",
+            "day": "day   ",
+            "time": "time   ",
+            "att": "attendance   ",
             "req_date":"Request Date",
             "req_status":"Request Status",
             "req_print":"Print Request",
