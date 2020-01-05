@@ -2,7 +2,7 @@
   <div class="modal-content">
     <div class="modal-header">
 
-      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> الغاء مقرر</h5>
+      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.cancel_course.course_cancellation"|translate}}</h5>
 
     </div>
     <div class="modal-body">
@@ -25,13 +25,13 @@
             <div class="row ser-block">
               <div class="col-md-12 col-sm-12">
                 <div class="state">
-                  <h6>حدد المقرر </h6>
+                  <h6>{{"services.cancel_course.course_define"|translate}}</h6>
                   <table dir="rtl" style="text-align: center" class="table">
                     <thead>
                       <tr>
-                        <th scope="col">اسم المقرر </th>
-                        <th scope="col"> رمز المقرر</th>
-                        <th scope="col">عدد الساعات </th>
+                        <th scope="col">{{"general.course_name"|translate}}</th>
+                        <th scope="col">{{"general.course_code"|translate}}</th>
+                        <th scope="col">{{"general.course_hours"|translate}}</th>
                         <th scope="col"> </th>
 
                       </tr>
@@ -46,8 +46,9 @@
 
 
                         <td>
-                          <input type="checkbox" name="chkCourse" (change)="changeStatus(it.CRN,$event,i)"
-                            #chkCourse id="defaultUnchecked">
+
+                          <input type="checkbox" name="chkCourse" (change)="changeStatus(it.CRN,$event,i)" #chkCourse
+                            id="defaultUnchecked">
                         </td>
 
                       </tr>
@@ -67,10 +68,11 @@
           </section>
         </div>
         <div class="modal-footer">
-          <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
-            الغاء</button>
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
 
-          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
         </div>
       </form>
     </div>

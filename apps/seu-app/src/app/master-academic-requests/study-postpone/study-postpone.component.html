@@ -9,7 +9,7 @@
         <!-- <div class=" col-md-6 descr">
                   <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                     &nbsp; &nbsp; &nbsp; &nbsp;
-                    
+
                 </div> -->
       </div>
     </div>
@@ -36,7 +36,7 @@
   <br/>
   <br/>
   <button *ngIf="reqData.can_add_new_request"  type="button" class="btn btn-primary"  (click)="openDialoge()">
-  اضافة طلب
+  اضافة طلب <i class="ik ik-plus"></i>
 </button>
 <br/>
 <br/>
@@ -48,7 +48,7 @@
 
       <h3 class="widget-title"> الطلبات السابقة
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب
+          اضافة طلب <i class="ik ik-plus"></i>
         </button>
 
       </h3>
@@ -70,12 +70,12 @@
             <td>{{it.request_number}}</td>
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
-            
+
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
               (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
-    
+
               <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
-    
+
 
           </tr>
 

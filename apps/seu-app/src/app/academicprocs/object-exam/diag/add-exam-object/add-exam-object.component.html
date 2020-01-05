@@ -27,8 +27,8 @@
             <tr *ngFor="let it of exam.exams;let i=index;">
               <td>{{it.CRSE_TITLE}}</td>
 
-              <td> <input name="teacherName"  (change)="changeStatus(it)" class="form-control col-md-6" #TeacherID="ngModel" [(ngModel)]="it.teacher" 
-                  name="Teacher">
+              <td> <input name="teacherName" (change)="changeStatus(it)" class="form-control col-md-6"
+                  #TeacherID="ngModel" [(ngModel)]="it.teacher" name="Teacher">
               </td>
 
 
@@ -111,7 +111,7 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+        <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
           الغاء</button>
 
         <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>

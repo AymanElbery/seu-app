@@ -33,11 +33,11 @@
       {{msg.body}}!
     </div>
   </div>
-  
+
   <!-- <div style="direction: ltr;text-align: center">
-  
+
   <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
-  اضافة طلب
+  اضافة طلب <i class="ik ik-plus"></i>
 </button>
 <br/>
 <br/>
@@ -49,7 +49,7 @@
 
       <h3 class="widget-title"> الطلبات السابقة
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب
+          اضافة طلب <i class="ik ik-plus"></i>
         </button>
 
       </h3>
@@ -83,7 +83,7 @@
                   style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
                      <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
                   </i> </button></td>
-    
+
               <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
           </tr>
 

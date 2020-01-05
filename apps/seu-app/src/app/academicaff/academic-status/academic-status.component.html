@@ -30,7 +30,7 @@
   </div>
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
-      <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
+      <h3 class="widget-title">{{"general.student_data" | translate}}</h3>
     </div>
     <section class="ser-state">
       <div class="container">
@@ -38,7 +38,7 @@
         <div class="row ser-block">
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>اسم الطالب / الطالبة </h6>
+              <h6>{{"general.female_or_male_name" | translate}}</h6>
               <h5>{{student.name}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -47,7 +47,7 @@
           </div>
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>الرقم الجامعي </h6>
+              <h6>{{"general.student_id" | translate}}</h6>
               <h5>{{student.std_id}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -56,7 +56,7 @@
           </div>
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>رقم الهوية </h6>
+              <h6>{{"general.ssn" | translate}}</h6>
               <h5>{{student.ssn}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -68,7 +68,7 @@
         <div class="row ser-block">
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>فصل القبول </h6>
+              <h6>{{"general.acceptance_term" | translate}}</h6>
               <h5>{{student.std_adm_term_label}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -77,7 +77,7 @@
           </div>
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>الحالة الأكاديمية الحالية </h6>
+              <h6>{{"general.current_academic_status" | translate}}</h6>
               <h5>{{student.current_acadimic_status_label}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -86,7 +86,7 @@
           </div>
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>المعدل التراكمي النهائي </h6>
+              <h6>{{"general.graduation_gpa" | translate}} </h6>
               <h5>{{student.final_graduation_GPA}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -98,7 +98,7 @@
         <div class="row  ser-block">
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>الوضع الأكاديمي</h6>
+              <h6>{{"general.academic_position" | translate}}</h6>
               <h5> {{student.acadimic_position_label}}</h5>
             </div>
             <div class="progress progress-sm">
@@ -107,7 +107,7 @@
           </div>
           <div class=" col-md-4 col-sm-12">
             <div class="state">
-              <h6>الرسوم الدراسية </h6>
+              <h6>{{"general.fees" | translate}}</h6>
               <h5>{{student.std_fees}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -126,12 +126,11 @@
         <div class="widget-header">
           <div class="row">
             <div class="col-md-6">
-              <h3 class="widget-title" style="font-size:12px;text-align: right">الحالة الأكاديمية للطالب خلال الفصول
-                الدراسية </h3>
+              <h3 class="widget-title" style="font-size:12px;text-align: right">{{"general.academic_status_through_terms" | translate}}</h3>
             </div>
             <div class="col-md-6">
               <div class="form-group row">
-                <label for="" class="col-sm-3 col-form-label">الفصل الدراسي </label>
+                <label for="" class="col-sm-3 col-form-label">{{"general.term" | translate}}</label>
                 <div class="col-sm-9">
 
                   <select name="trems" [(ngModel)]="selectedSems" #t (change)="getTrmsDetails(t.value)"
@@ -146,7 +145,7 @@
         <div *ngIf="isLoadingTerm" class=" loading-indicator ">
           <div class="state">
 
-            <h5> جاري تحميل البيانات .....................</h5>
+            <h5>{{"general.loading" | translate}}</h5>
 
             <mat-spinner *ngIf="isLoadingTerm"
               style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
@@ -157,7 +156,7 @@
         <div class="row ser-block" *ngIf="!isLoadingTerm">
           <div class="col-md-4 col-sm-12 ">
             <div class="state">
-              <h6>الكلية</h6>
+              <h6>{{"general.faculty" | translate}}</h6>
               <h5> {{studentTermDetails.COLL_CODE}} </h5>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -166,7 +165,7 @@
           </div>
           <div class=" col-md-4 col-sm-12 ">
             <div class="state">
-              <h6>التخصص</h6>
+              <h6>{{"general.major" | translate}}</h6>
               <h5> {{studentTermDetails.MAJR_code}}</h5>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -175,7 +174,7 @@
           </div>
           <div class=" col-md-4 col-sm-12 ">
             <div class="state">
-              <h6>الفرع</h6>
+              <h6>{{"general.branch" | translate}}</h6>
               <h5> {{studentTermDetails.CAMP_code}}</h5>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -187,7 +186,7 @@
         <div class="row ser-block" *ngIf="!isLoadingTerm">
           <div class="col-md-4 col-sm-12 ">
             <div class="state">
-              <h6>المعدل التراكمي </h6>
+              <h6>{{"general.gpa" | translate}}</h6>
               <h5>{{studentTermDetails.gba}}</h5>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -196,7 +195,7 @@
           </div>
           <div class=" col-md-4 col-sm-12 ">
             <div class="state">
-              <h6>حالة التسجيل </h6>
+              <h6>{{"general.regestration_status" | translate}}</h6>
               <h5> {{studentTermDetails.RegisterationStatus}}</h5>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -205,7 +204,7 @@
           </div>
           <div class=" col-md-4 col-sm-12 ">
             <div class="state">
-              <h6>المستوي الدراسي</h6>
+              <h6>{{"general.level" | translate}}</h6>
               <h5>{{studentTermDetails.study_level}} </h5>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -218,7 +217,7 @@
         <div class="row ser-block" *ngIf="!isLoadingTerm">
           <div class="col-md-4 col-sm-12 ">
             <div class="state">
-              <h6>الحالة الأكاديمية</h6>
+              <h6>{{"services.academic_status.title" | translate}}</h6>
               <h5>{{studentTermDetails.acadimic_status}} </h5>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -227,7 +226,7 @@
           </div>
           <div class=" col-md-4 col-sm-12 ">
             <div class="state">
-              <h6>الوضع الأكاديمي </h6>
+              <h6>{{"general.academic_position" | translate}}</h6>
               <h5>{{studentTermDetails.ACADIMICPOSITION}}</h5>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -236,7 +235,7 @@
           </div>
           <div class=" col-md-4 col-sm-12 ">
             <div class="state">
-              <h6>المرحلة الدراسية</h6>
+              <h6>{{"general.stage" | translate}}</h6>
               <h5> {{studentTermDetails.STD_UGGR}}</h5>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -250,8 +249,8 @@
     </div>
   </section>
   <div style="text-align: center" class="prin" *ngIf="!isLoading">
-    <a class="btn" downloadpdf href="{{arabicPrint}}">عربي <i class="ik ik-save"></i> </a>
-    <a class="btn" downloadpdf href="{{EngPrint}}"> <i class="ik ik-save"></i> English </a>
+    <a class="btn" downloadpdf href="{{arabicPrint}}">{{"general.ar_language" | translate}} <i class="ik ik-save"></i> </a>
+    <a class="btn" downloadpdf href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_language" | translate}} </a>
   </div>
 
 </div>

@@ -21,7 +21,7 @@
 
         <ActivityIndicator [busy]="isLoading" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
-        <FlexboxLayout justifyContent="center" *ngIf="!isLoading" class="h2">
+        <FlexboxLayout justifyContent="center" *ngIf="!isLoading" class="h1">
             <label [text]="recoredData.student_name"></label>
             <label text="اسم الطالب : "></label>
         </FlexboxLayout>
@@ -51,7 +51,7 @@
             <label [text]="recoredData.status" class="h2"></label>
         </FlexboxLayout>
 
-        <RadListView *ngIf="!isLoading" [items]="termsStatic" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
+        <RadListView *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
             <ng-template let-item="item">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between" class="list-group">
                     <Label  text="&#xf0dd;"  class="fas"></Label>
@@ -76,7 +76,7 @@
                             <Label [text]="item.Year"></Label>
                         </FlexboxLayout>
                     </FlexboxLayout>
-                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="list-group-item"> 
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="list-group-item table-header"> 
                         <label text="الفصل" class="h1"></label>
                         <label text="العام" class="h1"></label>
                         <label text="التخصص" class="h1"></label>
@@ -90,119 +90,52 @@
                         <label [text]="item.Status" class="h2"></label>
                     </FlexboxLayout>
 
-                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="list-group-item"> 
-                        <label text="رمز المقرر" class="h1"></label>
-                        <label text="اسم المقرر" class="h1"></label>
-                        <label text="التقدير" class="h1"></label>
-                        <label text="الساعات" class="h1"></label>
-                        <label text="النقاط" class="h1"></label>
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="list-group-item table-header"> 
+                        <label text="رمز المقرر" class="h1 narrowColumn"></label>
+                        <label text="اسم المقرر" class="h1 wideColumn"></label>
+                        <label text="التقدير" class="h1 narrowColumn"></label>
+                        <label text="الساعات" class="h1 narrowColumn"></label>
+                        <label text="النقاط" class="h1 narrowColumn"></label>
                     </FlexboxLayout>
 
                     <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of item.courses"  flexDirection="row-reverse" class="dataLabel list-group-item h2">
-                        <Label [text]="item.ID" class="narrowColumn"></Label>
-                        <Label [text]="item.CRSE_TITLE" class="wideColumn"></Label>
-                        <Label [text]="item.GRADE_TITLE" class="narrowColumn"></Label>
-                        <Label [text]="item.HRS" class="wideColumn"></Label>
-                        <Label [text]="item.Points" class="wideColumn"></Label>
-                      </FlexboxLayout>
+                        <Label [text]="item.ID" class="h2 narrowColumn"></Label>
+                        <Label [text]="item.CRSE_TITLE" class="h2 wideColumn"></Label>
+                        <Label [text]="item.GRADE_TITLE" class="h2 narrowColumn"></Label>
+                        <Label [text]="item.HRS" class="h2 narrowColumn"></Label>
+                        <Label [text]="item.Points" class="h2 narrowColumn"></Label>
+                    </FlexboxLayout>
+
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="list-group-item table-header"> 
+                        <label text="ساعات" class="h1"></label>
+                        <label text="مسجلة" class="h1"></label>
+                        <label text="نجاح" class="h1"></label>
+                        <label text="مكتسبة" class="h1"></label>
+                        <label text="النقاط" class="h1"></label>
+                        <label text="المعدل" class="h1"></label>
+                    </FlexboxLayout>
+
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="list-group-item">
+                        <label text="فصلى" class="h2"></label>
+                        <label [text]="item.registredHours" class="h2"></label>
+                        <label [text]="item.gpa_hours" class="h2"></label>
+                        <label [text]="item.earned_hours" class="h2"></label>
+                        <label [text]="item.quality_points" class="h2"></label>
+                        <label [text]="item.gpa" class="h2"></label>
+                    </FlexboxLayout>
+
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="list-group-item">
+                        <label text="تراكمي" class="h2"></label>
+                        <label [text]="item.TotalregistredHours" class="h2"></label>
+                        <label [text]="item.total_gpa_hours" class="h2"></label>
+                        <label [text]="item.total_earned_hours" class="h2"></label>
+                        <label [text]="item.total_quality_points" class="h2"></label>
+                        <label [text]="item.total_gpa" class="h2"></label>
+                    </FlexboxLayout>  
                 </FlexboxLayout> 
             </ng-template>
-
         </RadListView>
 
-        <!--<FlexboxLayout *ngIf="!isLoading && graduateData.labels" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
-            <label [text]="graduateData.labels.GPA" class="h1"></label>
-            <label text="المرحله" class="h1"></label>
-            <label text="المدينة" class="h1"></label>
-        </FlexboxLayout>
-
-        <FlexboxLayout *ngIf="!isLoading && graduateData.values" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
-            <label [text]="graduateData.values.final_graduation_GPA" class="h2"></label>
-            <label [text]="graduateData.values.level" class="h2"></label>
-            <label [text]="graduateData.values.city" class="h2"></label>
-        </FlexboxLayout>
-
-        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && graduateData.values && graduateData.labels" class="pargraph h2">
-            <Label [text]="graduateData.labels.txt1"></Label>
-            <Label [text]="graduateData.values.term"></Label>
-            <Label [text]="graduateData.labels.txt2"></Label>
-            <Label [text]="graduateData.values.final_graduation_GPA"></Label>
-            <Label [text]="graduateData.labels.txt3"></Label>
-            <Label [text]="graduateData.labels.txt4"></Label>
-        </FlexboxLayout>
-
-        <FlexboxLayout flexDirection="column" *ngIf="!isLoading && graduateData.labels">
-            <Label text="ملحوظة" class="note"></Label>
-            <Label [text]="graduateData.labels.txt5" class="h2"></Label>
-            <Label [text]="graduateData.labels.txt6" class="h2"></Label>
-        </FlexboxLayout>         -->
-
-            <!--
-
-            <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading &&msgs.length>0">
-                <ListView [items]="msgs">
-                    <ng-template let-item="item">
-                        <Label verticalAlignment="center" [text]="item.body" [ngClass]="item.type == 'info' ? 'alert alert-info' : (item.type == 'error' ? 'alert alert-danger' : (item.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"></Label>
-                    </ng-template>
-                </ListView>
-            </FlexboxLayout>
-            
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="center" flexWrap="wrap" class="h1">
-                <label text="تاريخ اصدار الافادة:"></label>
-                <label text="12/08/2005"></label>
-            </FlexboxLayout>
-
-            <FlexboxLayout justifyContent="center" class="h2">
-                <label text="بيانات الطالب/الطالبة" class="h2"></label>
-            </FlexboxLayout>
-
-                <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark"> 
-                    <label text="اسم الطالب/الطالبة" class="h1"></label>
-                    <label text="الكلية" class="h1"></label>
-                    <label text="رقم الطالب/الطالبة" class="h1"></label>
-                </FlexboxLayout>
-
-                <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="table-row">
-                    <label text="فاطمة على ال فردان" class="h2"></label>
-                    <label text="الحوسبة والمعلوماتية" class="h2"></label>
-                    <label text="120000101" class="h2"></label>
-                </FlexboxLayout>
-
-                <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark" >
-                    <label text="السجل المدنى"  class="h1"></label>
-                    <label text="التخصص" class="h1"></label>
-                    <label text="الفرع" class="h1"></label>
-                </FlexboxLayout>
-
-                <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="table-row" >
-                    <label text="1059357408" class="h2"></label>
-                    <label text="تقنية المعلومات" class="h2"></label>
-                    <label text="الرياض طلاب" class="h2"></label>
-                </FlexboxLayout>
-
-                <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
-                    <label text="المعدل التراكمى" class="h1"></label>
-                    <label text="المرحله" class="h1"></label>
-                    <label text="المدينة" class="h1"></label>
-                </FlexboxLayout>
-
-                <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="table-row" >
-                    <label text="م3.25من4" class="h2"></label>
-                    <label text="البكالوريوس" class="h2"></label>
-                    <label text="الرياض" class="h2"></label>
-                </FlexboxLayout>
-
-                <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" class="pargraph h2">
-                    <Label text="تفيد عمادة القبول وشؤون الطلاب"></Label>
-                    <Label text="أن الطالب اعلاه تخرج من الجامعة"></Label>
-                    <Label text="خلال الفصل الدراسى الاول1437/1438ه"></Label>
-                    <Label text="ومعدله التراكمى3.25من4"></Label>
-                    <Label text="وقد منح هذه الافادة بناء على طلبه دون أدنى مسئولية"></Label>
-                    <Label text="على الجامعه والله الموفق "></Label>
-                </FlexboxLayout>
-                    <Label text="ملحوظة" class="note"></Label>
-                    <Label text="صالحة لمدة شهر من تاريخ اصدار هذه الافادة" class="h2"></Label>
-                    <Label text="يفضل طباعة الافادة من طابعه ملونة" class="h2"></Label>-->
         <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
             <Button text="عربى" class="my-button"  (tap)="onArabicPrint()" ></Button>
             <Button text="English" class="my-button"  (tap)="onEnglishPrint()"></Button>

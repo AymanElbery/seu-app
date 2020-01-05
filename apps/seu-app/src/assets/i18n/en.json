@@ -1,11 +1,108 @@
 {
     "general": {
         "print": "Print",
-        "delete_confirm": "Are you sure?"
+        "delete_confirm": "Are you sure?",
+        "req_no":"Request Number",
+        "pre_requesr":"Show Previous Requests",
+        "student_name":"Student Name: ",
+        "faculty":"Faculty",
+        "major":"Major",
+        "student_id":"Student ID",
+        "ssn":"SSN",
+        "grade":"Grade",
+        "student_status":"Student Status",
+        "term":"Term",
+        "for_year":"For Year",
+        "year":"Year",
+        "status":"Status",
+        "course_code":"Course Code",
+        "course_name":"Course Name",
+        "course_hours":"Hours",
+        "points":"Points",
+        "rating":"Grade",
+        "hours":"Hours",
+        "recorded":"Recorded",
+        "success":"Success",
+        "earned":"Earned",
+        "average":"Average",
+        "quarterly":"Term",
+        "cumulative":"Cumulative",
+        "ar_language":"Arabic",
+        "en_language":"English",
+        "student_data":"Student Data",
+        "female_or_male_name":"Student Name",
+        "acceptance_term":"Acceptance Term",
+        "current_academic_status":"Current Academic Status",
+        "graduation_gpa":"Final GPA",
+        "academic_position":"Academic Position",
+        "fees":"Fees",
+        "academic_status_through_terms":"Student's Academic Status Through Terms",
+        "loading":"Loading .....................",
+        "branch":"Branch",
+        "gpa":"GPA",
+        "regestration_status":"Registration Status",
+        "level":"Level",
+        "stage":"Stage",
+        "city":"City",
+        "ar_print":"طباعة",
+        "en_print":"Print",
+        "crn":"CRN",
+        "absence_percent":"Absence Percentage",
+        "lectures":"Lectures",
+        "lecture_type":"Lecture Type",
+        "week":"Week",
+        "day":"Day",
+        "request":{
+            "add_request":"Add Request",
+            "req_date":"Request Date",
+            "req_status":"Request Status",
+            "req_print":"Print Request",
+            "req_delete":"Delete Request",
+            "req_no":"Request Number",
+            "pre_requests":"Show Previous Requests",
+            "non_cancelable_request":"Can't Delete Request"
+        },
+        "save":"Save",
+        "cancel":"Cancel"
+
     },
     "menu": {
         "myservices": "My Services",
         "ugservices": "Undergradulate",
         "grservices": "Master"
+    },
+    "services": {
+        "academic_status": {
+            "title": "Academic Status",
+            "desc": "Academic Status"
+        },
+        "academic_record":{
+            "title": "Academic Record",
+            "desc": "Academic Record"
+        },
+        "certificate_id":{
+            "title":"Certificate ID",
+            "desc":"Certificate ID"
+        },
+        "graduate_state":{
+            "title":"Graduate state",
+            "desc":"Graduate State"
+        },
+        "absence_quyery":{
+            "title":"Absence Enquiry",
+            "desc":"Absence Enquiry",
+            "all_lecs_asebsence_percent":"All Lectures Absence Percentage",
+            "traditional_lecs_asebsence_percent":"Traditional Lectures Absence Percentage",
+            "virtual_lecs_asebsence_percent":"Virtual Lectures Absence Percentage",
+            "attendance_status":"Attendance Status"
+        },
+        "cancel_course":{
+            "title":"Course Withdrawal",
+            "desc":"Course Withdrawal",
+            "course_cancellation":"Cancel Course",
+            "course_define":"Define Course"
+        }
+        
+       
     }
 }

@@ -1,72 +1,88 @@
-html,
-body {
+html، body {
   direction: ltr !important;
   text-align: left;
 }
-
-.wrapper .page-wrap .main-content,
-.wrapper .header-top,
-.wrapper .page-wrap .footer {
-  padding-left: 240px;
-  padding-right: 0;
+.wrapper {
+  .page-wrap {
+    .main-content {
+      padding-left: 240px;
+      padding-right: 0;
+    }
+    .footer {
+      padding-left: 240px;
+      padding-right: 0;
+    }
+    .app-sidebar {
+      right: auto;
+      left: 0;
+      .sidebar-content .nav-container .navigation-main .nav-item {
+        &.has-sub {
+          a::before {
+            right: 10px;
+            left: auto;
+            transform: rotate(0deg);
+          }
+          .submenu-content .menu-item {
+            padding-left: 34px;
+            padding-right: 5px;
+          }
+        }
+        &.open::after {
+          left: 0;
+          right: auto;
+        }
+        &.open a::before {
+          transform: rotate(90deg);
+        }
+        a i {
+          margin-right: 10px;
+          margin-left: 0;
+        }
+      }
+      &.colored .sidebar-content .nav-container .navigation-main .nav-item a {
+        direction: rtl;
+      }
+    }
+  }
+  .header-top {
+    padding-left: 240px;
+    padding-right: 0;
+  }
 }
-
-.wrapper .page-wrap .app-sidebar {
-  right: auto;
-  left: 0;
-}
-
-.latest-update-card .card-block .latest-update-box:after {
-
-  left: 19px;
-  right: auto;
-}
-
-.latest-update-card .card-block .latest-update-box .update-meta i.update-icon {
-  margin-right: 0;
-  margin-left: 19px;
-}
-
 .dropdown-item {
   text-align: left;
 }
-
 .dropdown-menu {
   left: 0;
   right: auto !important;
   text-align: left;
 }
-
-.wrapper .page-wrap .app-sidebar .sidebar-content .nav-container .navigation-main .nav-item.has-sub a::before {
-  right: 10px;
-  left: auto;
-  transform: rotate(0deg);
-}
-
-.wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item a {
-  direction: rtl;
-}
-
-.wrapper .page-wrap .app-sidebar .sidebar-content .nav-container .navigation-main .nav-item.open a::before {
-  transform: rotate(90deg);
-}
-
-.wrapper .page-wrap .app-sidebar .sidebar-content .nav-container .navigation-main .nav-item a i {
-  margin-right: 10px;
-  margin-left: 0px;
-}
-
-.wrapper .page-wrap .app-sidebar .sidebar-content .nav-container .navigation-main .nav-item.has-sub .submenu-content .menu-item {
-  padding-left: 34px;
-  padding-right: 5px;
-}
-
-select.form-control,
 .form-control {
   background-position: center right 15px;
   direction: ltr !important;
 }
-
 .modal-dialog {
   direction: ltr !important;
+}
+.latest-update-card .card-block .latest-update-box {
+  &:after {
+    left: 19px;
+    right: auto;
+  }
+  .update-meta i.update-icon {
+    margin-right: 0;
+    margin-left: 19px;
+  }
+}
+select.form-control {
+  background-position: center right 15px;
+  direction: ltr !important;
+}
+.widget .widget-header .widget-title .btn {
+  float: right;
+  .ik {
+    float: left;
+    margin-left: 0;
+    margin-right: 5px;
+  }
 }

@@ -4,6 +4,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
+import * as utils from "tns-core-modules/utils/utils";
 declare var UIView, NSMutableArray, NSIndexPath;
 
 @Component({
@@ -12,45 +13,7 @@ declare var UIView, NSMutableArray, NSIndexPath;
   styleUrls: ['./academic-record.component.tns.scss']
 })
 export class AcademicRecordComponent implements OnInit {
-
-  termsStatic=[
-    {"Term":"الاول","Year":"2018","Major":"الحوسبة والمعلوماتية","Status":"منتظم",
-    "courses":[{
-      "ID":"205030",
-      "CRSE_TITLE":"اتصالات",
-      "GRADE_TITLE":"جيد جدا",
-      "HRS":"50",
-      "Points":"100"
-    },
-    {
-      "ID":"2041070",
-      "CRSE_TITLE":"علوم حاسب",
-      "GRADE_TITLE":"مقبول",
-      "HRS":"40",
-      "Points":"120"
-    }
-  ]},
-    {"Term":"الثانى","Year":"2020","Major":"الحوسبة والمعلوماتية","Status":"منتظم",
-    "courses":[{
-      "ID":"2041070",
-      "CRSE_TITLE":"علوم حاسب",
-      "GRADE_TITLE":"مقبول",
-      "HRS":"40",
-      "Points":"120"
-    },
-    {
-      "ID":"205030",
-      "CRSE_TITLE":"اتصالات",
-      "GRADE_TITLE":"جيد",
-      "HRS":"50",
-      "Points":"100"
-    }
-
-  ]
-  }
-
-  ];
-
+  
   templateSelector(item: any, index: number, items: any): string {
     return item.expanded ? "expanded" : "default";
 }
@@ -98,5 +61,11 @@ onItemTap(event: ListViewEventData) {
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
+  }
+  onArabicPrint(){
+    utils.openUrl(this.arabicPrint);
+  }
+  onEnglishPrint(){
+    utils.openUrl(this.EngPrint);
   }
 }

@@ -36,7 +36,7 @@
                 </select>
 
               </div>
-         
+
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
@@ -47,7 +47,7 @@
                   <option *ngFor="let t of termList" [value]="t.id">{{t.value}}</option>
                 </select>
               </div>
-           
+
             </div>
 
             <div class=" col-md-4 col-sm-12">
@@ -59,7 +59,7 @@
                   <option *ngFor="let y of yearList" [value]="y.id">{{y.value}}</option>
                 </select>
               </div>
-          
+
             </div>
 
           </div>
@@ -79,7 +79,7 @@
                   [class.is-invalid]="visitorStudent.course_name == ''">
 
               </div>
-        
+
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
@@ -89,7 +89,7 @@
                   [class.is-invalid]="visitorStudent.course_symbol == ''">
 
               </div>
-             
+
             </div>
 
             <div class=" col-md-4 col-sm-12">
@@ -100,7 +100,7 @@
                   [class.is-invalid]="visitorStudent.course_code == ''">
 
               </div>
-      
+
             </div>
 
           </div>
@@ -113,7 +113,7 @@
 
 
               </div>
-        
+
             </div>
 
             <div class=" col-md-8 col-sm-12">
@@ -124,7 +124,7 @@
                 <h6>الرجاء رفع ملف توصيف المقرر في ملف من نوع PNG,JIF,JPG,MicrosoftWord,PDF أو BMP حجم الملف يجب ألا
                   يزيد عن 5 ميجا بايت</h6>
               </div>
-             
+
             </div>
 
           </div>
@@ -146,58 +146,59 @@
 
 
               </div>
-         
+
             </div>
 
           </div>
         </div>
         <div class="widget">
-            <div class="widget-header">
-              <h3 class="widget-title">إقرار و تعهد</h3>
-            </div>
-            <div class="row  ser-block">
-              <div class=" col-md-12 col-sm-12">
-                <div class="state">
-                    <h6>{{reqData.notes.nots}}</h6>
-                    <h6>1- {{reqData.notes.txt1}}</h6>
-                    <h6>2- {{reqData.notes.txt2}}</h6>
-                    <h6>3- {{reqData.notes.txt3}}</h6>
-                    <h6>4- {{reqData.notes.txt4}}</h6>
-                    <h6>5- {{reqData.notes.txt5}}</h6>
-
-              
-  
-  
-                </div>
-                
-              </div>
-  
-            </div>
-            <div class="row  ser-block">
-                <div class=" col-md-12 col-sm-12">
-                  <div class="state">
-                      <h6>أوافق</h6>
-                      <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel" [(ngModel)]="approves.approve"
-                      name="Approve"  >
-    
-    
-                  </div>
-                  
-                </div>
-    
-              </div>
-            
+          <div class="widget-header">
+            <h3 class="widget-title">إقرار و تعهد</h3>
           </div>
+          <div class="row  ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{reqData.notes.nots}}</h6>
+                <h6>1- {{reqData.notes.txt1}}</h6>
+                <h6>2- {{reqData.notes.txt2}}</h6>
+                <h6>3- {{reqData.notes.txt3}}</h6>
+                <h6>4- {{reqData.notes.txt4}}</h6>
+                <h6>5- {{reqData.notes.txt5}}</h6>
+
+
+
+
+              </div>
+
+            </div>
+
+          </div>
+          <div class="row  ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>أوافق</h6>
+                <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel"
+                  [(ngModel)]="approves.approve" name="Approve">
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </div>
     </section>
 
     <div class="modal-body">
       <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-        <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+        <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
           الغاء</button>
-          
-        <button [disabled]="(form.invalid || !approves.approve)" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+
+        <button [disabled]="(form.invalid || !approves.approve)" type="submit" class="btn btn-dark"><i
+            class="fa fa-database"></i>
           حفظ</button>
       </div>
     </div>

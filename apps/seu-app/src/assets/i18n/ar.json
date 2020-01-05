@@ -2,8 +2,67 @@
     "general": {
         "print": "طباعة",
         "delete_confirm": "هل انت متأكد؟",
-        "req_no":"رقم الطلب",
-        "pre_requesr":"عرض الطلبات السابقة"
+        "student_name":"اسم الطالب : ",
+        "faculty":"الكلية",
+        "major":"التخصص",
+        "student_id":"الرقم الجامعى",
+        "ssn":"رقم الهوية",
+        "grade":"الدرجة",
+        "student_status":"حالة الطالب",
+        "term":"الفصل",
+        "for_year":"لسنة",
+        "year":"العام",
+        "status":"الحالة",
+        "course_code":"رمز المقرر",
+        "course_name":"اسم المقرر",
+        "course_hours":"الساعات",
+        "points":"النقاط",
+        "rating":"التقدير",
+        "hours":"ساعات",
+        "recorded":"مسجلة",
+        "success":"نجاح",
+        "earned":"مكتسبة",
+        "average":"المعدل",
+        "quarterly":"فصلى",
+        "cumulative":"تراكمى",
+        "ar_language":"عربى",
+        "en_language":"English",
+        "student_data":"بيانات الطالب / الطالبة",
+        "female_or_male_name":"اسم الطالب / الطالبة",
+        "acceptance_term":"فصل القبول",
+        "current_academic_status":"الحالة الأكاديمية الحالية",
+        "graduation_gpa":"المعدل التراكمي النهائي",
+        "academic_position":"الوضع الأكاديمي",
+        "fees":"الرسوم الدراسية",
+        "academic_status_through_terms":"الحالة الأكاديمية للطالب خلال الفصول الدراسية",
+        "loading":"جاري تحميل البيانات .....................",
+        "branch":"الفرع",
+        "gpa":"المعدل التراكمي",
+        "regestration_status":"حالة التسجيل",
+        "level":"المستوي الدراسي",
+        "stage":"المرحلة",
+        "city":"المدينة",
+        "ar_print":"طباعة",
+        "en_print":"Print",
+        "crn":"CRN",
+        "absence_percent":"نسبة الغياب",
+        "lectures":"المحاضرات",
+        "lecture_type":"نوع المحاضرة",
+        "week":"الاسبوع",
+        "day":"اليوم",
+        "request":{
+            "add_request":"اضافة طلب",
+            "req_date":"تاريخ الطلب",
+            "req_status":"حالة الطلب",
+            "req_print":"طباعة الطلب",
+            "req_delete":"حذف الطلب",
+            "req_no":"رقم الطلب",
+            "pre_requests":"عرض الطلبات السابقة",
+            "non_cancelable_request":"لا يمكن إلغاء الطلب"
+        },
+        "save":"حفظ",
+        "cancel":"الغاء",
+        "count":"العدد"
     },
     "menu": {
         "myservices": "خدماتي",
@@ -14,6 +73,50 @@
         "academic_status": {
             "title": "الحالة الأكاديمية",
             "desc": "الحالة الأكاديمية"
+        },
+        "academic_record":{
+            "title": "السجل الأكاديمي",
+            "desc": "السجل الأكاديمي"
+        },
+        "certificate_id":{
+            "title":"شهادة تعريف",
+            "desc":"شهادة تعريف"
+        },
+        "graduate_state":{
+            "title":"افادة خريج",
+            "desc":"افادة خريج"
+        },
+        "absence_quyery":{
+            "title":"الاستعلام عن الغيابات",
+            "desc":"الاستعلام عن الغيابات",
+            "all_lecs_asebsence_percent":"نسبة غياب المحاضرات الكلية",
+            "traditional_lecs_asebsence_percent":"نسبة غياب المحاضرات التقليدية",
+            "virtual_lecs_asebsence_percent":"نسبة غياب المحاضرات الافتراضيه",
+            "attendance_status":"حالة الحضور"
+
+        },
+        "cancel_course":{
+            "title":"الانسحاب من المقرر",
+            "desc":"الانسحاب من المقرر",
+            "course_cancellation":"الغاء مقرر",
+            "course_define":"حدد المقرر"
+        },
+        "change_major":{
+            "title":"تغيير التخصص",
+            "desc":"تغيير التخصص",
+            "current_major":"التخصص الحالي",
+            "required_major":"التخصص المطلوب",
+            "choose_major":"اختر  التخصص",
+            "change_major_req":"طلب  تغير التخصص",
+            "alert":"تنبيه:",
+            "alert_content":"سيتم اتاحة الفرصة لتغيير التخصص مرة واحدة خلال الدراسة فى الجامعة",
+            "major_cancellation_validity":"يسمح للطالب بالغاء الطالب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط."
+        },
+        "change_branch":{
+            "title":"تغيير الفرع",
+            "desc":"تغيير الفرع",
+            "required_branch":""
+
         }
         
        
