@@ -33,6 +33,8 @@ export class HomeComponent implements OnInit {
   };
   // CarouselOptions = { items: 3, dots: true, nav: true };
 
+
+
   constructor(
     public printService: PrintService,
     public homeService: HomeService,

@@ -1,0 +1,65 @@
+<mat-dialog-content dir="rtl">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> الانسحاب من الجامعة</h5>
+
+    </div>
+    <div class="modal-body">
+      <P class="text-center">
+        <span style="color: red;">تنبيه:</span> يسمح للطالب إلغاء أو تعديل الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب
+        فقط.
+        أرغب في سحب ملفي نهائياً من الجامعة وليس لي الحق المطالبة باعادة قبولي مرة اخرى كما لا يحق لي المطالبة باسترداد
+        كامل او جزء من الرسوم
+        الدراسية التي قمت بسدادها للجامعة في حالة تجاوز تاريخ انسحابي التاريخ المحدد للانسحاب
+        الذي اعلنته الجامعة
+
+      </P>
+      <!-- <P class="text-center">---  </P> -->
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="main-content">
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6> رقم الجوال (05xxxxxxxx) </h6>
+                    <input name="mobile" type="text" #mobile="ngModel" [(ngModel)]="withdrawalReq.mobile"
+                      class="form-control" />
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6> البريد الالكتروني (غير الجامعي) </h6>
+                    <input name="email" type="text" #email="ngModel" [(ngModel)]="withdrawalReq.email"
+                      class="form-control" />
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+
+
+
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+              الغاء</button>
+
+            <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</mat-dialog-content>
