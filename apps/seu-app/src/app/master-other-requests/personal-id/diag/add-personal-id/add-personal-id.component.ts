@@ -13,13 +13,15 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   styleUrls: ['./add-personal-id.component.scss']
 })
 export class AddPersonalIdComponent implements OnInit {
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+              public dialogRef: MatDialogRef<AddUnivCardComponent>,
+              private toastr: AppToasterService, private univCard: PersonalIDService) { }
 
   card: universityCard;
   reqData;
   msgs;
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<AddUnivCardComponent>,
-    private toastr: AppToasterService, private univCard: PersonalIDService) { }
+
+  requesting = false;
 
   ngOnInit() {
     this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: 'GR', photo: '', ssn_file: '' };
@@ -32,12 +34,10 @@ export class AddPersonalIdComponent implements OnInit {
       }
     );
   }
-
-  requesting = false;
   addRequest(data: any) {
     this.univCard.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
-      if (res['status']) {
+      if (res.status) {
         this.univCard.newreqs = true;
         this.dialogRef.close();
       }

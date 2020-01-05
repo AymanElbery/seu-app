@@ -21,22 +21,26 @@ export class MenuComponent implements OnInit {
     /*if (this.userService.userData.role == 'Employee' || this.userService.userData.role == 'Instructor') {
       this.showMySystem = true;
     }*/
-    //console.log('userService.userData.level',this.userService.userData.level);
-    //console.log('userService.userData.level : ' + this.userService.userData.level);
+    // console.log('userService.userData.level',this.userService.userData.level);
+    // console.log('userService.userData.level : ' + this.userService.userData.level);
     this.acStd = this.userService.userData.act_as_student;
+    // tslint:disable-next-line: triple-equals
+    // tslint:disable-next-line: max-line-length
+    // tslint:disable-next-line: triple-equals
+    // tslint:disable-next-line: max-line-length
     if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'UG') {
-      //console.log('level ug');
+      // console.log('level ug');
       this.menuType = 1;
       this.showServices = true;
     } else if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'GR') {
-      //console.log('level GR');
+      // console.log('level GR');
       this.menuType = 2;
       this.showServices = true;
     } else {
       this.menuType = 0;
       this.showServices = this.userService.userData.act_as_student;
-      //console.log('else');
-      //console.log(this.userService.userData.act_as_student);
+      // console.log('else');
+      // console.log(this.userService.userData.act_as_student);
       /*if (this.userService.userData.act_as_student) {
         this.acStd = this.userService.userData.act_as_student;
         this.showServices = this.acStd;
@@ -48,11 +52,12 @@ export class MenuComponent implements OnInit {
     }
   }
   ngOnInit() {
-    //console.log('menu suer data');
+    // console.log('menu suer data');
     this.userService.userDataSubject.subscribe(res => {
-      //console.log('fill menu');
-      if (res)
+      // console.log('fill menu');
+      if (res) {
         this.fillmenu();
+      }
 
     });
 
@@ -66,7 +71,7 @@ export class MenuComponent implements OnInit {
   onChange(e) {
     // tslint:disable-next-line: triple-equals
     if (e == 0) {
-      //console.log('change me not allow');
+      // console.log('change me not allow');
       if (this.userService.userData.act_as_student === true) {
         this.userService.userData.activeRole = this.userService.userData.role;
         this.userService.userData.coll = '';

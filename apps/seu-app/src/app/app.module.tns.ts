@@ -38,9 +38,9 @@ import { AcademicprocsModule } from './academicprocs/academicprocs.module.tns';
     AccountModule,
     AcademicprocsModule,
     NativeScriptUISideDrawerModule
-   
+
   ],
-  
+
   providers: [ConfigService, HttpRequestService, UserManagerService,
     {provide: GlobalBaseService, useClass: GlobalService}
   ],
