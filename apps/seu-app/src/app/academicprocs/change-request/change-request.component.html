@@ -45,7 +45,7 @@
     <div class="widget-header">
 
 
-      <h3 class="widget-title"> الطلبات السابقة
+      <h3 class="widget-title">{{"general.request.pre_requests"|translate}}
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
          {{"general.request.add_request"|translate}}
         </button>
@@ -58,13 +58,13 @@
 
           <tr>
             <th scope="col">#</th>
-            <th scope="col">الفرع المطلوب</th>
+            <th scope="col">{{"services.change_branch.required_branch"|translate}}</th>
 
-            <th scope="col">تاريخ انشاء الطلب</th>
+            <th scope="col">{{"general.request.req_date" |translate}}</th>
 
-            <th scope="col">تاريخ الرد</th>
-            <th scope="col">حالة الطلب</th>
-            <th scope="col">الاجراء</th>
+            <th scope="col">{{"services.change_branch.reply_date"|translate}}</th>
+            <th scope="col">{{"general.request.req_status" |translate}}</th>
+            <th scope="col">{{"services.change_branch.procedure"|translate}}</th>
 
           </tr>
         </thead>
@@ -83,7 +83,7 @@
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
 
-            <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+            <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request" |translate}}</td>
           </tr>
 
         </tbody>
