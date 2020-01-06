@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document" style="direction: rtl;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title  " id="exampleModalLabel"> رفع وصل العملية البنكية لبدل البطاقة الجامعية </h5>
+        <h5 class="modal-title  " id="exampleModalLabel">{{"services.missing_card.upload_bank_receipt_for_missing_card"|translate}}</h5>
 
       </div>
       <div class="modal-body">
@@ -15,7 +15,7 @@
                 <div class="row ser-block">
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>وصل العملية البنكية </h6>
+                      <h6>{{"services.missing_card.bank_receipt"|translate}}</h6>
                       <div class="custom-file">
                         <input name="receipt" type="file" accept="*/*" (change)="handleInputChange($event)"
                           class="custom-file-input" />
@@ -36,8 +36,8 @@
             <div style="margin-top: 10px;">
               <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
                 <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                  الغاء</button>
-                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                  {{"general.cancel"|translate}}</button>
+                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
               </div>
             </div>
           </div>
