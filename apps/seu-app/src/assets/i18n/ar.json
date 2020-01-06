@@ -353,7 +353,8 @@
             "bank":"البنك",
             "account_no":"رقم الحساب",
             "deposite":"المبلغ الذى تم إيداعه:",
-            "reasons":"أسباب الاعتراض"
+            "reasons":"أسباب الاعتراض",
+            "upload_deposite":"رفع وصل الايداع"
         },
         "postpone_request":{
             "title":"تأجيل الفصل الدراسي",

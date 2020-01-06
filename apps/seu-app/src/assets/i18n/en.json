@@ -265,11 +265,13 @@
         "add_objection":"Add Objection For One Exam",
         "choose_curriculum":"Choose Curriculum",
         "curriculum_name":"Curriculum Name",
-        "teacher_name":"Teacher Name",
+        "teacher_name":"Professor Name",
         "bank":"Bank",
         "account_no":"Account Number",
         "deposite":"Deposited Money:",
-        "reasons":"Objection Reasons"
+        "reasons":"Objection Reasons",
+        "upload_deposite":"Upload Deposite Receipt"
+
     },
     "postpone_request":{
         "title":"Term Postpone",
@@ -336,8 +338,8 @@
         "e-mail":"E-mail Address"
     },
     "master_cancel_course":{
-        "title":"Delete Course",
-        "desc":"Delete Course",
+        "title":"Cancel Course",
+        "desc":"Cancel Course",
         "acceptance_date":"Acceptance Date"
     }
     
