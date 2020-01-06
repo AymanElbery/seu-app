@@ -457,6 +457,11 @@
         "choose_count":"Choose Number Of Terms",
         "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
         "reason":"Execuse Reason"
+    },
+    "master_payment":{
+        "title":"Fees Pay",
+        "desc":"Fees Pay"
+
     }
     
 }
