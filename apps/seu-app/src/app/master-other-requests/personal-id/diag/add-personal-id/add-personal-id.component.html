@@ -2,20 +2,20 @@
   <div class="modal-dialog" role="document" style="direction: rtl;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title  " id="exampleModalLabel"> طلب بطاقة جامعية </h5>
+        <h5 class="modal-title  " id="exampleModalLabel">   {{"services.univ_card.title"|translate}} </h5>
 
       </div>
       <div class="modal-body">
         <P class="text-center"> </P>
         <div>
-          <h6>شروط تقديم الطلب </h6>
+          <h6>  {{"services.missing_card.req_requisites"|translate}} </h6>
           <ul class="list-group" style="font-size: 12px;">
-            <li class="list-group-item list-group-item-info">:رفع صورة شخصية للمتقدم على ان تكون</li>
-            <li class="list-group-item list-group-item-info">مقاس الصورة 4*6</li>
-            <li class="list-group-item list-group-item-info">ملونة وبخلفية بيضاء</li>
-            <li class="list-group-item list-group-item-info">للطالبات : يجب ان تكون الطالبة محجبة</li>
-            <li class="list-group-item list-group-item-info">يجب ان تكون الصورة ذات جودة عالية</li>
-            <li class="list-group-item list-group-item-info">لن يتم استخراج بطاقة جامعية من غير صورة شخصية</li>
+            <li class="list-group-item list-group-item-info">{{"services.missing_card.upload_pic"|translate}} </li>
+            <li class="list-group-item list-group-item-info">  {{"services.missing_card.pic_size"|translate}}</li>
+            <li class="list-group-item list-group-item-info">  {{"services.missing_card.pic_color"|translate}}</li>
+            <li class="list-group-item list-group-item-info"> {{"services.missing_card.pic_for_females"|translate}}     </li>
+            <li class="list-group-item list-group-item-info">      {{"services.missing_card.pic_quality"|translate}}</li>
+            <li class="list-group-item list-group-item-info">     {{"services.missing_card.pic_warning"|translate}}   </li>
           </ul>
         </div>
         <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
@@ -25,7 +25,7 @@
                 <div class="row ser-block">
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>اسم الطالب / الطالبة </h6>
+                      <h6> {{"general.female_or_male_name"|translate}}  </h6>
                       <input name="name" #name="ngModel" [(ngModel)]="card.name" class="form-control">
                     </div>
                     <div class="progress progress-sm">
@@ -34,7 +34,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>رقم بطاقة الهوية الوطنية او ما يقوم مقامها</h6>
+                      <h6>{{"services.missing_card.ssn_or_equal"|translate}}</h6>
                       <input name="ssn" #ssn="ngModel" [(ngModel)]="card.ssn" class="form-control">
                     </div>
                     <div class="progress progress-sm">
@@ -43,7 +43,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>رقم الجوال </h6>
+                      <h6>{{"services.missing_card.mobile_no"|translate}}  </h6>
                       <input name="phone" #phone="ngModel" [(ngModel)]="card.phone" class="form-control">
                     </div>
                     <div class="progress progress-sm">
@@ -65,10 +65,10 @@
                         </div> -->
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> فترة الدراسة </h6>
+                      <h6> {{"services.missing_card.period"|translate}}  </h6>
                       <select name="time" #time="ngModel" [(ngModel)]="card.time" class="form-control"
                         [class.is-invalid]="card.time==''">
-                        <option value="">اختر فترة الدراسة</option>
+                        <option value="">{{"services.missing_card.choose_period"|translate}}  </option>
                         <option *ngFor="let item of reqData.times" value="{{item.id}}">{{item.value}}</option>
                       </select>
                     </div>
@@ -78,10 +78,10 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>اليوم </h6>
+                      <h6>{{"general.day"|translate}} </h6>
                       <select name="day" #time="ngModel" [(ngModel)]="card.day" class="form-control"
                         [class.is-invalid]="card.day==''">
-                        <option value="">اختر اليوم </option>
+                        <option value="">{{"services.missing_card.choose_day"|translate}}  </option>
                         <option *ngFor="let item of reqData.days" value="{{item.id}}">{{item.value}}</option>
                       </select>
                     </div>
@@ -91,12 +91,12 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> اضف صورة شخصية </h6>
+                      <h6>   {{"services.missing_card.add_personal_pic"|translate}} </h6>
                       <div class="custom-file">
                         <input name="photo" type="file" accept="*/*" (change)="handleInputChange($event)"
                           class="custom-file-input" id="customFileLangHTML" />
                         <label class="custom-file-label" for="customFileLangHTML">
-                          اضف صورة</label>
+                          {{"services.missing_card.add_pic"|translate}} </label>
                       </div>
                     </div>
                     <div class="progress progress-sm">
@@ -105,7 +105,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> اضف صورة الهوية </h6>
+                      <h6> {{"services.missing_card.add_ssn_pic"|translate}}   </h6>
                       <div class="custom-file">
                         <input name="ssn_file" type="file" accept="*/*" (change)="handleInputChangeFile($event)"
                           class="custom-file-input" />
@@ -125,8 +125,8 @@
             <div style="margin-top: 10px;">
               <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
                 <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                  الغاء</button>
-                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                  {{"general.cancel"|translate}}</button>
+                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
               </div>
             </div>
           </div>
