@@ -1,0 +1,180 @@
+<!-- Modal -->
+<mat-dialog-content dir="rtl">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> معادلة مقررات</h5>
+
+    </div>
+    <div class="modal-body">
+      <!-- <P class="text-center">---  </P> -->
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="main-content">
+          <P class="text-center">
+            <span style="font-weight: bold; font-size: 15px;color: red;">تنبيه: </span>{{reqData.notes.txt1}}
+            <br />
+            {{reqData.notes.txt2}}
+
+            <br />
+            {{reqData.notes.txt3}}
+
+            <br />
+            {{reqData.notes.txt4}}
+
+            <br />
+            {{reqData.notes.txt5}}
+            <br />
+            {{reqData.notes.txt6}}
+            <br />
+            {{reqData.notes.txt7}}
+
+            <br />
+            {{reqData.notes.txt8}}
+            <br />
+            {{reqData.notes.txt9}}
+            <br />
+            {{reqData.notes.txt10}}
+            <br />
+
+            {{reqData.notes.txt11}}
+          </P>
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6> اختر الجامعه </h6>
+                    <div class="form-group">
+
+                      <select name="PREV_UNIV" #PREV_UNIV="ngModel" [(ngModel)]="curseEqual.PREV_UNIV"
+                        class="form-control" [class.is-invalid]=" curseEqual.PREV_UNIV==0">
+                        <option value="0">الجامعه </option>
+                        <option *ngFor="let item of reqData.univ_list_arr" value="{{item.UN_ID}}">{{item.UN_NAME}}
+                        </option>
+                      </select>
+                      <br />
+                    </div>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>اختر المقرر وحدد عدد الساعات والدرجة واللغة</h6>
+                    <table style="text-align: center" class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">اسم المقرر </th>
+                          <th scope="col">عدد الساعات </th>
+                          <th scope="col">الدرجه </th>
+                          <th scope="col">اللغه </th>
+
+                          <th scope="col"> </th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let it of reqData.course_list;let i=index;">
+                          <td>{{it.CRSE_TITLE}}</td>
+
+
+                          <td>
+                            <select class="custom-select  col-md-12" #TRNS_HRS="ngModel" name="TRNS_HRS"
+                              [(ngModel)]="it.TRNS_HRS">
+                              <option *ngFor="let g of reqData.hourse_list" [value]="g.value">{{g.value}}</option>
+
+                            </select>
+
+                          </td>
+                          <td>
+                            <select class="custom-select  col-md-12" #TRNS_GRADE="ngModel" name="TRNS_GRADE"
+                              [(ngModel)]="it.TRNS_GRADE">
+                              <option *ngFor="let g of reqData.grade_list" [value]="g.value">{{g.value}}</option>
+                            </select>
+
+                          </td>
+                          <td>
+                            <select class="custom-select  col-md-12" #TRNS_LANG="ngModel" name="TRNS_LANG"
+                              [(ngModel)]="it.TRNS_LANG">
+                              <option selected value="1">عربي</option>
+                              <option value="2">ENG</option>
+                            </select>
+                          </td>
+
+
+                          <td>
+                            <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event)" #chkCourse>
+                          </td>
+
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>وصف المقرر </h6>
+                    <div class="custom-file">
+                      <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)"
+                        id="customFile" class="custom-file-input" />
+                      <label for="customFile" class="custom-file-label ">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>صورة السجل </h6>
+                    <div class="custom-file">
+                      <input name="imageUrl2" type="file" accept="*/*" (change)="handleInputChange2($event)"
+                        id="customFileLang" class="custom-file-input" />
+                      <label for="customFileLang" class="custom-file-label ">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+
+          <!-- <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">وصف المقرر </div>
+                </div>
+                <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)" />
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">صورة السجل </div>
+                </div>
+                <input name="imageUrl2" type="file" accept="*/*" (change)="handleInputChange2($event)" />
+            </div>  -->
+          <div style="margin-top: 10px;">
+            <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+              <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="fa fa-close"></i>
+                الغاء</button>
+
+              <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</mat-dialog-content>

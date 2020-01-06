@@ -6,10 +6,10 @@
 
   <section class="service-single">
     <div class="container">
-      <h3> الإعفاء من الرسوم الدراسية</h3>
+      <h3>   {{"services.finance.feeexe" | translate}}  </h3>
       <div class="row">
         <div class=" col-md-5">
-          <p> الإعفاء من الرسوم الدراسية </p>
+          <p>   {{"services.finance.feeexe" | translate}}    </p>
         </div>
         <!-- <div class=" col-md-6 descr">
           <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -40,9 +40,9 @@
     <div class="widget-header">
 
 
-      <h3 class="widget-title"> الطلبات السابقة
+      <h3 class="widget-title">  {{"general.request.pre_requests" | translate}} 
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب <i class="ik ik-plus"></i>
+          {{"general.request.add_request" | translate}}  <i class="ik ik-plus"></i>
         </button>
 
       </h3>
@@ -52,11 +52,11 @@
         <thead>
 
           <tr>
-            <th scope="col">رقم الطلب</th>
-            <th scope="col">تاريخ الطلب</th>
-            <th scope="col"> الحالة</th>
-            <th scope="col"> سبب الرفض</th>
-            <th scope="col"> إلغاء الطلب</th>
+            <th scope="col">   {{"general.request.add_request" | translate}}</th>
+            <th scope="col">  {{"general.request.req_date" | translate}}</th>
+            <th scope="col">   {{"general.request.req_status" | translate}}</th>
+            <th scope="col">  {{"general.request.rejectrs" | translate}}</th>
+            <th scope="col">   {{"general.request.req_delete" | translate}} </th>
           </tr>
         </thead>
         <tbody>
@@ -71,7 +71,7 @@
 
             </td>
 
-            <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+            <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request" | translate}}   </td>
 
           </tr>
 

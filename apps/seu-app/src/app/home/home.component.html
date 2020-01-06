@@ -6,7 +6,7 @@
           <div class="widget-header">
             <h3 class="widget-title">
 
-              <i class="ik ik-bar-chart-2"></i> الاخبار <i *ngIf="!newsLoaded" class="fas fa-spinner fa-spin"> </i></h3>
+              <i class="ik ik-bar-chart-2"></i> {{"menu.News" | translate}} <i *ngIf="!newsLoaded" class="fas fa-spinner fa-spin"> </i></h3>
           </div>
 
           <div class="widget-body">
@@ -39,7 +39,7 @@
           <div class="widget-header">
 
 
-            <h3 class="widget-title"> <i class="ik ik-image"></i> إعلاناتي <i *ngIf="!adsLoaded"
+            <h3 class="widget-title"> <i class="ik ik-image"></i> {{"menu.ADS" | translate}} <i *ngIf="!adsLoaded"
                 class="fas fa-spinner fa-spin"> </i></h3>
           </div>
           <div class="widget-body">
@@ -79,7 +79,7 @@
             <div class="widget-header">
 
 
-              <h3 class="widget-title"> <i class="ik ik-calendar"></i> فعالياتي <i *ngIf="!eventsLoaded"
+              <h3 class="widget-title"> <i class="ik ik-calendar"></i> {{"menu.Events" | translate}} <i *ngIf="!eventsLoaded"
                   class="fas fa-spinner fa-spin"> </i></h3>
             </div>
             <div class="card-block">
@@ -107,39 +107,39 @@
         <div class="widget">
           <div class="card">
             <div class="widget-header">
-              <h3 class="widget-title"> <i class="ik ik-book-open"></i> خدمات عامة</h3>
+              <h3 class="widget-title"> <i class="ik ik-book-open"></i> {{"menu.PublicServices" | translate}} </h3>
             </div>
             <div *ngIf="userService.userData.activeRole=='Employee'" class="card-body" style="padding: 0 15px">
               <div class="row">
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-bold"></i>
-                  <p><a target="_blank" href="https://wafi.seu.edu.sa/seu/casLogin">نظام الوافي </a>
+                  <p><a target="_blank" href="https://wafi.seu.edu.sa/seu/casLogin">{{"menu.ALWAFI" | translate}}  </a>
                   </p>
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-mail"></i>
-                  <p><a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">البريد
-                      الإلكتروني </a></p>
+                  <p><a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
+                    {{"menu.email" | translate}}  </a></p>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-6 new-ser">
                   <i class="ik .ik-watch"></i>
-                  <p><a target="_blank" href="http://hadir.seu.edu.sa/">الحضور والانصراف </a></p>
+                  <p><a target="_blank" href="http://hadir.seu.edu.sa/">{{"menu.Attednace" | translate}}   </a></p>
                 </div>
 
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-settings"></i>
-                  <p><a target="_blank" href="https://sd.seu.edu.sa">نظام دعم </a></p>
+                  <p><a target="_blank" href="https://sd.seu.edu.sa">{{"menu.Support" | translate}}   </a></p>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-12 new-ser">
                   <i class="ik ik-tablet"></i>
-                  <p><a target="_blank" href="https://bannadmin.seu.edu.sa/applicationNavigator"> نظام
-                      البانر </a></p>
+                  <p><a target="_blank" href="https://bannadmin.seu.edu.sa/applicationNavigator"> 
+                    {{"menu.BANNER" | translate}}  </a></p>
                 </div>
               </div>
             </div>
@@ -148,12 +148,12 @@
               <div class="row">
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-globe"></i>
-                  <p><a target="_blank" href="https://wafi.seu.edu.sa/seu/casLogin">نظام الوافي </a></p>
+                  <p><a target="_blank" href="https://wafi.seu.edu.sa/seu/casLogin">{{"menu.ALWAFI" | translate}}   </a></p>
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-mail"></i>
-                  <p><a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">البريد
-                      الإلكتروني </a></p>
+                  <p><a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
+                    {{"menu.email" | translate}}  </a></p>
                 </div>
               </div>
 
@@ -169,7 +169,7 @@
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-list"></i>
                   <p><a target="_blank" href="https://saudieu-analytics.blackboard.com/default.aspx">
-                      تقارير البلاك بورد </a></p>
+                    {{"menu.BBREPORTS" | translate}}  </a></p>
                 </div>
               </div>
 
@@ -180,36 +180,37 @@
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-clipboard"></i>
                   <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx">
-                      تعليمات الأنظمة التعليمية </a></p>
+                    {{"menu.EDUSYSTEMS" | translate}}    </a></p>
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-calendar"></i>
-                  <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Calendar/Pages/Academic_Calendar.aspx">التقويم
-                      الدراسي </a></p>
+                  <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Calendar/Pages/Academic_Calendar.aspx">
+                    {{"menu.CAL}}" | translate}}  </a></p>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-watch"></i>
-                  <p><a target="_blank" href="http://hadir.seu.edu.sa/"> متابعة حضور وانصراف الطلاب
+                  <p><a target="_blank" href="http://hadir.seu.edu.sa/"> 
+                    {{"menu.Attednace" | translate}}    
                     </a></p>
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-repeat"></i>
-                  <p><a target="_blank" href="http://seuapps.seu.edu.sa/teaching-load"> بدل التعليم
-                      الجامعي </a></p>
+                  <p><a target="_blank" href="http://seuapps.seu.edu.sa/teaching-load">  
+                    {{"menu.BADAL" | translate}}    </a></p>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-settings"></i>
-                  <p><a target="_blank" href="https://sd.seu.edu.sa">نظام دعم </a></p>
+                  <p><a target="_blank" href="https://sd.seu.edu.sa"> {{"menu.Support" | translate}}   </a></p>
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-book-open"></i>
-                  <p><a target="_blank" href="https://rtms.seu.edu.sa/">بوابة عمادة البحث العلمي
-                      الالكترونيه </a></p>
+                  <p><a target="_blank" href="https://rtms.seu.edu.sa/">   
+                    {{"menu.BAWABA" | translate}}    </a></p>
                 </div>
               </div>
 
@@ -217,13 +218,13 @@
               <div class="row">
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-tablet"></i>
-                  <p><a target="_blank" href="https://bannservices.seu.edu.sa/FacultySelfService/"> خدمات نظام البانر
+                  <p><a target="_blank" href="https://bannservices.seu.edu.sa/FacultySelfService/">    {{"menu.BANNER" | translate}}
                     </a></p>
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-tablet"></i>
                   <p><a target="_blank" href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement">
-                      إدارة الأحداث والمناسبات</a></p>
+                    {{"menu.EVENTSMANAGE" | translate}}</a></p>
                 </div>
               </div>
 
@@ -234,13 +235,15 @@
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-user"></i>
                   <p>
-                    <a target="_blank" href="https://bannservices.seu.edu.sa/StudentSelfService"> الخدمات الذاتية
-                      للطلبة</a>
+                    <a target="_blank" href="https://bannservices.seu.edu.sa/StudentSelfService"> 
+                      {{"menu.StdSRV" | translate}} 
+                      </a>
                   </p>
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-book"></i>
-                  <p><a target="_blank" href="https://bannservices.seu.edu.sa/StudentRegistrationSsb"> تسجيل المقررات
+                  <p><a target="_blank" href="https://bannservices.seu.edu.sa/StudentRegistrationSsb"> 
+                    {{"menu.RESGISTERCOURSES" | translate}} 
                     </a></p>
                 </div>
               </div>
@@ -249,13 +252,13 @@
                   <i class="ik ik-briefcase"></i>
                   <p>
                     <a target="_blank" href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement">
-                      إدارة الأحداث والمناسبات</a>
+                      {{"menu.EVENTSMANAGE" | translate}}    </a>
                   </p>
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-mail"></i>
-                  <p><a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">البريد
-                      الإلكتروني </a></p>
+                  <p><a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
+                    {{"menu.email" | translate}}  </a></p>
                 </div>
               </div>
 
@@ -270,8 +273,10 @@
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-user-check"></i>
-                  <p><a target="_blank" href="http://seuapps.seu.edu.sa/StudentRightsUnit/Home">الحقوق
-                      الطلابية </a></p>
+                  <p><a target="_blank" href="http://seuapps.seu.edu.sa/StudentRightsUnit/Home">
+                   {{"menu.StdLaw" | translate}}     
+                  
+                  </a></p>
                 </div>
               </div>
 
@@ -282,12 +287,12 @@
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-clipboard"></i>
                   <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx">
-                      تعليمات الأنظمة التعليمية </a></p>
+                    {{"menu.EDUSYSTEMS" | translate}}    </a></p>
                 </div>
                 <div class="col-md-6 new-ser">
                   <i class="ik ik-calendar"></i>
-                  <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Calendar/Pages/Academic_Calendar.aspx">التقويم
-                      الدراسي </a></p>
+                  <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Calendar/Pages/Academic_Calendar.aspx">
+                    {{"menu.CAL" | translate}}  </a></p>
                 </div>
               </div>
             </div>

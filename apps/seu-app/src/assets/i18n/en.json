@@ -54,13 +54,20 @@
         "day":"Day",
         "request":{
             "add_request":"Add Request",
+            "cname":"Course ",
+            "res_date": "Response data   ",
+            "day": "day   ",
+            "time": "time   ",
+            "att": "attendance   ",
             "req_date":"Request Date",
             "req_status":"Request Status",
             "req_print":"Print Request",
             "req_delete":"Delete Request",
             "req_no":"Request Number",
             "pre_requests":"Show Previous Requests",
-            "non_cancelable_request":"Can't Delete Request"
+            "non_cancelable_request":"Can't Delete Request",
+            "rejectrs": "reject reason    "
+
         },
         "save":"Save",
         "cancel":"Cancel",
@@ -196,7 +203,60 @@
             "upload_bank_receipt_for_missing_card":"Upload Bank Receipt For Lost Card Replacment",
             "bank_receipt":"Bank Receipt"
         }
+        },
+        "exam": {
+            "execreq":" upload exam execuses",
+            "exec": "  upload exam execuses requests   ",
+            "choosecourse": "choose course   ",
+            "coursename": "course name  ",
+            "courseno": "course no  ",
+            "cet": "  choose exam type ",
+            "et": " exam type",
+            "raexam": "  absence reason",
+            "cfiles": "    execuse files    ",
+            "save": "ٍSave  ",
+            "cancel": "Cancel ",
+            
+            "absence_cause": " abasenc reasin",
+            "file": "file",
+            "tt":"     term exam with table ",
+
+            "tnt":"     term exam without table ",
+            "ft":"     final exam with table",
+            "fnt":"   final exam without table   ",
+            "uno":"   universty no    ",
+            "certatt":"  Exam Attednace Cerificate      "
+
+
+
+
+        },
+        "finance": {
+            "doyou":" do you want",
+            "choose": "  choose   ",
+            "cat": "      execmption category    ",
+            "sc": " scence of status approve  ",
+            "wletter": " hr letter   ",
+            "gid": " grantee id   ",
+            "id": " ID   ",
+            "assletter": "  association letter  ",
+            "bank": "   Bank    ",
+            "iban": "Iban    ",
+            "bankid": "Bank ID Copy   ",
+            "accname": "Account Owner Name    ",
+            "email": "Email ",
+            "accno": "Acount No ",
+            "areu":"     Are you bank account owner ",
+
+            "rel":"   relative  ",
+            "agree":"   I certify that all data entered in the form are accurate and accurate that the error in it is a reason for delaying the return of tuition fees   ",
+            "save":"   Save   ",
+            "cancel":"   Cancel    ",
+            "feeexe":"     tuition fees execmption      ",
+            "feepay":"    tuition fees payment        ",
+            "feepayst":"      tuition fees execmption  statment        "
         
        
     }
+}
 }
