@@ -472,6 +472,10 @@
         "title":"Fees Pay",
         "desc":"Fees Pay"
 
+    },
+    "medical_report":{
+        "title":"Medical Report Request",
+        "desc":"Medical Report Request"
     }
     
 }
