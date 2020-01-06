@@ -201,7 +201,15 @@
             "change_major_req":"Change Major Request",
             "alert":"Alert:",
             "alert_content":"Chance for changing Major is available only onece during studying in university",
-            "major_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
+            "major_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request",
+            "accept_date":"Acceptance Date",
+            "mobile":"Mobile Phone",
+            "change_reason":"Change Reason",
+            "record":"Academic Record",
+            "doc":"BSC Document",
+            "out_kingdom":"Did You Have BSC Outside Kingdom?",
+            "equalize":"Equalize BSC Certificate from Outside Kingdom",
+            "program_change":"Change Programm Request"
         },
         "change_branch":{
             "title":"Change Branch",
