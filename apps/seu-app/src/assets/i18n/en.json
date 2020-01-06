@@ -436,9 +436,7 @@
         "phone_no":"Phone Number",
         "e-mail":"E-mail Address",
         "alert":"Alert:",
-        "alert_content":"Student can cancel this request only during 48 hours starting from applying to the request.I Want to 
-            Withdraw My File utterlyand I have no right to ask for re-enrollment as well as asking for fees that i paid for
-            univerity in case of my withdrawal date has exceeded the univerity one",
+        "alert_content":"Student can cancel this request only during 48 hours starting from applying to the request.I Want to  Withdraw My File utterlyand I have no right to ask for re-enrollment as well as asking for fees that i paid for  univerity in case of my withdrawal date has exceeded the univerity one",
         "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
         "personal_mail":"E-mail Address(Non Academic)"
     },
