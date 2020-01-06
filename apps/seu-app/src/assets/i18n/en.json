@@ -441,6 +441,16 @@
         "choose_exam_type":"Choose Exam Type",
         "absence_reason":"Reasons For Exam Absence",
         "upload_proof":"Upload Files that Prove Your Exam Absence's Reasons"
+    },
+    "term_execuse_master":{
+        "title":"Cancel Courses Request(Term Execuse)",
+        "desc":"Cancel Courses Request(Term Execuse)",
+        "alert":"Student can cancel this request only during 48 hours starting from applying to the request",
+        "desire":"I want to Cancel Studying Starting From First Term for 1440/1441 Year",
+        "count":"Number Of Cancelled Terms",
+        "choose_count":"Choose Number Of Terms",
+        "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
+        "reason":"Execuse Reason"
     }
     
 }
