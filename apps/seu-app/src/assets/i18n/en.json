@@ -286,7 +286,9 @@
         "re-enroll_request":"Re-enrollment Request",
         "alert":"Alert:Student can cancel this request only during 48 hours starting from applying to the request",
         "cause":"What are The Reasons for Your Absence?",
-        "file":"Upload Proof File(System Accept PDF Files with Size Less Than 5MB)"
+        "file":"Upload Proof File(System Accept PDF Files with Size Less Than 5MB)",
+        "prove":"Do you Have a Proof?"
+
     },
     "summer_withdraw":{
         "title":"Excuse for Summer Term",
