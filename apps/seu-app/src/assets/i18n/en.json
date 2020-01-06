@@ -213,7 +213,9 @@
             "choose_branch":"Choosr Branch",
             "alert":"Alert:",
             "alert_content":"Requests are accepted during this period and action will be taken after announcing final exams grades",
-            "branch_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
+            "branch_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request",
+            "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
+            "reason":"Reason For Change"
 
         },
         "course-equalize":{

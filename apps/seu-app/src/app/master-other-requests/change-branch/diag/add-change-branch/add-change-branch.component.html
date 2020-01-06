@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب تغيير الفرع </h5>
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.change_branch.change_branch_req"|translate}}</h5>
 
       </div>
       <div class="modal-body">
@@ -14,7 +14,7 @@
                 <div class="row ser-block">
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>اختيار الفرع المطلوب </h6>
+                      <h6>{{"services.change_branch.choose_branch"|translate}}</h6>
                       <select name="camp" #camp="ngModel" [(ngModel)]="branch.camp" class="form-control"
                         [class.is-invalid]="branch.camp==''">
 
@@ -27,7 +27,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>رقم الجوال (مثال 05xxxxxxxx) : </h6>
+                      <h6>{{"services.change_branch.mobile"|translate}}</h6>
                       <input name="mobile" #mobile="ngModel" [(ngModel)]="branch.mobile" class="form-control">
                     </div>
                     <div class="progress progress-sm">
@@ -36,7 +36,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> سبب التحويل </h6>
+                      <h6>{{"services.change_branch.reason"|translate}}</h6>
                       <textarea name="reason" #reason="ngModel" [(ngModel)]="branch.reason" class="form-control">
                                      </textarea>
                     </div>
@@ -57,8 +57,8 @@
             <div style="margin-top: 10px;">
               <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
                 <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                  الغاء</button>
-                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                  {{"general.cancel"|translate}}</button>
+                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
               </div>
             </div>
           </div>
