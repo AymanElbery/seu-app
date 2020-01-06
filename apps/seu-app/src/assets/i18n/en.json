@@ -1,6 +1,7 @@
 {
     "general": {
         "print": "Print",
+        "note": "note",
         "delete_confirm": "Are you sure?",
         "req_no":"Request Number",
         "pre_requesr":"Show Previous Requests",
@@ -207,6 +208,7 @@
         },
         "exam": {
             "execreq":" upload exam execuses",
+            "sch":" exam schedule",
             "exec": "  upload exam execuses requests   ",
             "choosecourse": "choose course   ",
             "coursename": "course name  ",
@@ -278,7 +280,12 @@
         "title":"Term Postpone",
         "desc":"Term Postpone",
         "postpone_req":"College Postpone Request",
-        "cause":"Reason"
+        "cause":"Reason",
+        "alert":"Alert:Student can cancel this request only during 48 hours starting from applying to the request",
+        "desire":"I want to Postpone Studying Starting From",
+        "period":"Postpone Period(in Terms)",
+        "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
+        "reason":"Reason"
     },
     "re-enrollment":{
         "title":"Re-enrollment",
