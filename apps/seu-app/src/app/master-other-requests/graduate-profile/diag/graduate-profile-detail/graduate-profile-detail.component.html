@@ -20,7 +20,7 @@
 
   <div *ngIf="!isLoading" class="widget">
     <div class="widget-header">
-      <h3 class="widget-title">المعلومات الشخصية للخريج</h3>
+      <h3 class="widget-title"> {{services.graduate.graduatedata}}</h3>
     </div>
 
     <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
@@ -35,7 +35,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الإسم الرباعي باللغة العربية كما هو في بطاقة الأحوال </h6>
+                <h6>  {{"services.graduate.fullname"|translate}}  </h6>
                 <h5>{{stdinfo.STD_NAME_AR}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -45,7 +45,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الإسم الرباعي باللغة الإنجليزية كما هو بالجواز </h6>
+                <h6>    {{"services.graduate.fullnameeng"|translate}}   </h6>
                 <h5>{{stdinfo.STD_NAME_EN}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -55,7 +55,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الجنس </h6>
+                <h6>{{"services.graduate.gender"|translate}} </h6>
                 <h5>{{stdinfo.STD_GENDER}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -72,7 +72,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الجنسية </h6>
+                <h6>{{"services.graduate.nationality"|translate}} </h6>
                 <h5>{{stdinfo.STD_NATIONALITY}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -82,7 +82,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الدرجة العلمية </h6>
+                <h6>{{"services.graduate.scdegree"|translate}}  </h6>
                 <h5>{{stdinfo.PROGRAM_TYPE}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -92,7 +92,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>التخصص </h6>
+                <h6>{{"services.graduate.major"|translate}} </h6>
                 <h5>{{stdinfo.STD_MAJOR_DESC}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -106,7 +106,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الفرع </h6>
+                <h6>{{"services.graduate.branch"|translate}} </h6>
                 <h5>{{stdinfo.STD_CAMP}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -116,7 +116,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> المعدل </h6>
+                <h6>  {{"services.graduate.rate"|translate}} </h6>
                 <h5>{{stdinfo.STD_GPA}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -126,7 +126,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>رقم الجوال </h6>
+                <h6>{{"services.graduate.mobileno"|translate}}  </h6>
                 <h5>{{stdinfo.MOBILE_NUM}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -142,7 +142,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>البريد الإلكتروني الشخصي </h6>
+                <h6> {{"services.graduate.email"|translate}}  </h6>
                 <h5>{{stdinfo.PERSONAL_EMAIL}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -152,7 +152,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> البريد الجامعي </h6>
+                <h6> {{"services.graduate.uemail"|translate}}  </h6>
                 <h5>{{stdinfo.STD_EMAIL}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -162,7 +162,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> صورة شخصية 4*6 للطلاب فقط </h6>
+                <h6> {{"services.graduate.stdpic"|translate}}   </h6>
                 <h5>{{stdinfo.STD_PIC}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -178,7 +178,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> السيرة الذاتية </h6>
+                <h6> {{"services.graduate.CV"|translate}}  </h6>
                 <h5>{{stdinfo.STD_RESUME}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -188,7 +188,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> الحالة الوظيفية </h6>
+                <h6>  {{"services.graduate.cjob"|translate}}  </h6>
                 <h5>{{stdinfo.JOB_STATUS}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -202,13 +202,13 @@
           </div>
           <div class="widget">
             <div class="widget-header">
-              <h3 class="widget-title">بيانات العمل إن وجد</h3>
+              <h3 class="widget-title">  {{"services.graduate.jondes"|translate}} </h3>
             </div>
             <div class="row ser-block">
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> قطاع التوظيف </h6>
+                  <h6> {{"services.graduate.empsector"|translate}}  </h6>
                   <h5>{{stdinfo.JOB_SECTOR}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -218,7 +218,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> سنة التوظيف </h6>
+                  <h6> {{"services.graduate.jobyear"|translate}}  </h6>
                   <h5>{{stdinfo.YEAR_JOB}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -228,7 +228,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> جهة العمل </h6>
+                  <h6> {{"services.graduate.jobcom"|translate}}  </h6>
                   <h5>{{stdinfo.JOB_COM}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -243,7 +243,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> هل حصلت على الترقية أثناء الدراسة </h6>
+                  <h6>   {{"services.graduate.upgrade"|translate}}     </h6>
                   <h5>{{stdinfo.JOB_PROMO}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -253,7 +253,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> سنة الحصول على الترقية </h6>
+                  <h6> {{"services.graduate.upgradeyr"|translate}}   </h6>
                   <h5>{{stdinfo.JOB_PROMO_YEAR}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -263,7 +263,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> مقر العمل </h6>
+                  <h6> {{"services.graduate.jobplace"|translate}}  </h6>
                   <h5>{{stdinfo.JOB_LOC}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -276,13 +276,13 @@
 
           <div class="widget">
             <div class="widget-header">
-              <h3 class="widget-title">بيانات رب العمل إن وجد</h3>
+              <h3 class="widget-title">   {{"services.graduate.jobownerdata"|translate}} </h3>
             </div>
             <div class="row ser-block">
 
               <div class=" col-md-3 col-sm-12">
                 <div class="state">
-                  <h6> الإسم </h6>
+                  <h6> {{"services.graduate.oname"|translate}} </h6>
                   <h5>{{stdinfo.EMPLOYER_NAME}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -292,7 +292,7 @@
 
               <div class=" col-md-3 col-sm-12">
                 <div class="state">
-                  <h6> المسمى الوظيفي </h6>
+                  <h6> {{"services.graduate.ojob"|translate}}  </h6>
                   <h5>{{stdinfo.EMPLOYER_JOB_TITLE}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -302,7 +302,7 @@
 
               <div class=" col-md-3 col-sm-12">
                 <div class="state">
-                  <h6> رقم الجوال </h6>
+                  <h6> {{"services.graduate.mobileno"|translate}}  </h6>
                   <h5>{{stdinfo.EMPLOYER_PHONE}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -312,7 +312,7 @@
 
               <div class=" col-md-3 col-sm-12">
                 <div class="state">
-                  <h6> البريد الإلكتروني </h6>
+                  <h6> {{"services.graduate.email"|translate}}  </h6>
                   <h5>{{stdinfo.EMPLOYER_EMAIL}} </h5>
                 </div>
                 <div class="progress progress-sm">
@@ -331,7 +331,7 @@
       <div class="modal-body">
         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
           <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-            الغاء</button>
+            {{"services.cancel"|translate}}</button>
 
           <!-- <button [disabled]="(form.invalid || !approves.approve)" type="submit" class="btn btn-dark"><i
               class="fa fa-database"></i>
