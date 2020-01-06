@@ -4,7 +4,7 @@
   <div class="modal-dialog" role="document" style="direction: rtl;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> الاعتذار عن المحاضرة
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.lecture_execuse.title"|translate}}
         </h5>
       </div>
       <div class="modal-body" style=" direction: rtl;">
@@ -34,13 +34,13 @@
                 <div class="row ser-block">
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> حدد اسماء المقررات </h6>
+                      <h6>{{"services.lecture_execuse.define_courses_names"|translate}}</h6>
                       <table style="text-align: center" class="table">
                         <thead>
                           <tr>
-                            <th scope="col">crn </th>
+                            <th scope="col">{{"general.crn"|translate}}</th>
 
-                            <th scope="col">اسم المقرر </th>
+                            <th scope="col">{{"general.course_name"|translate}}</th>
 
 
                             <th scope="col"> </th>
@@ -66,7 +66,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> اختر نوع المحاضرة </h6>
+                      <h6>{{"services.lecture_execuse.choose_lec_type"|translate}}</h6>
                       <select name="type" #type="ngModel" [(ngModel)]="lectureExecuse.type" class="form-control"
                         [class.is-invalid]=" lectureExecuse.reason==''">
                         <option *ngFor="let item of reqData.lectures_type" value="{{item.id}}">{{item.value}}</option>
@@ -78,7 +78,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> اختر الاسبوع </h6>
+                      <h6> {{"services.lecture_execuse.choose_week"|translate}}</h6>
                       <select name="week" #week="ngModel" [(ngModel)]="lectureExecuse.week" class="form-control"
                         [class.is-invalid]=" lectureExecuse.week==''">
                         <option *ngFor="let item of reqData.weeks_list" value="{{item.id}}">{{item.value}}</option>
@@ -90,7 +90,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> حدد التاريخ </h6>
+                      <h6>{{"services.lecture_execuse.define_date"|translate}}</h6>
                       <select name="date" #date="ngModel" [(ngModel)]="lectureExecuse.date" class="form-control"
                         [class.is-invalid]=" lectureExecuse.date==''">
                         <option></option>
@@ -106,7 +106,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>سبب التغيب </h6>
+                      <h6>{{"services.lecture_execuse.absence_cause"|translate}}</h6>
                       <textarea name="reason" #reason="ngModel" [(ngModel)]="lectureExecuse.reason"
                         class="form-control"></textarea>
                       <!-- <select name="reason" #reason="ngModel" [(ngModel)]="lectureExecuse.reason" class="form-control"
@@ -123,7 +123,7 @@
 
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> ملف </h6>
+                      <h6>{{"services.lecture_execuse.file"|translate}}</h6>
                       <div class="custom-file">
                         <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)"
                           id="imageUrl" />
@@ -147,9 +147,9 @@
           </div>
           <div class="modal-footer">
             <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-              الغاء</button>
+              {{"general.cancel"|translate}}</button>
 
-            <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+            <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"general.save"|translate}}</button>
           </div>
         </form>
       </div>

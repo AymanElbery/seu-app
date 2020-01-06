@@ -22,8 +22,8 @@ export class AddRegisterationHelperComponent implements OnInit {
   isLoading = false;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<AddRegisterationHelperComponent>,
-    private toastr: ToastrService, private acadmicProc: RegistrationHelperService) { }
+              public dialogRef: MatDialogRef<AddRegisterationHelperComponent>,
+              private toastr: ToastrService, private acadmicProc: RegistrationHelperService) { }
 
   ngOnInit() {
 
@@ -47,7 +47,7 @@ export class AddRegisterationHelperComponent implements OnInit {
 
 
   addRequest(data: any) {
-    ////console.log(data);
+    //// console.log(data);
     this.isLoading = true;
     this.acadmicProc.AddRequest(data).then(res => {
       this.msgs = (res as any).messages;
@@ -61,7 +61,7 @@ export class AddRegisterationHelperComponent implements OnInit {
 
 
 
-    //this.cmp = {camp:''};
+    // this.cmp = {camp:''};
 
   }
 
@@ -71,8 +71,7 @@ export class AddRegisterationHelperComponent implements OnInit {
     if (collegeId == '') {
       this.departments = [];
       this.courses = [];
-    }
-    else {
+    } else {
       this.isLoading = true;
       this.acadmicProc.getِgetCourse(collegeId).then(
         res => {
@@ -89,8 +88,7 @@ export class AddRegisterationHelperComponent implements OnInit {
     this.registerationHelper.department = '';
     if (courseId == '') {
       this.departments = [];
-    }
-    else {
+    } else {
       this.isLoading = true;
       this.acadmicProc.getِgetDepartments(courseId).then(
         res => {

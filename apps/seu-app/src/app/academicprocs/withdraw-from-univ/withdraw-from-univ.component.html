@@ -4,10 +4,10 @@
 
   <section class="service-single">
     <div class="container">
-      <h3> طلب الإنسحاب من الجامعة</h3>
+      <h3> {{"services.withdrow_univ.title"|translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
-          <p> طلب الإنسحاب من الجامعة </p>
+          <p> {{"services.withdrow_univ.desc"|translate}}</p>
         </div>
         <!-- <div class=" col-md-6 descr">
             <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -39,10 +39,10 @@
 
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
-      <h3 class="widget-title">طلبات سابقة
+      <h3 class="widget-title">{{"general.request.pre_requests"|translate}}
 
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب <i class="ik ik-plus"></i>
+          {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>
     </div>
@@ -51,14 +51,14 @@
         <thead>
 
           <tr>
-            <th scope="col">رقم الطلب</th>
-            <th scope="col">الفصل الدراسه </th>
-            <th scope="col">طباعة الافاده </th>
+            <th scope="col">{{"general.request.req_no"|translate}}</th>
+            <th scope="col">{{"services.withdrow_univ.فثقة"|translate}}</th>
+            <th scope="col">{{"services.withdrow_univ.state_print"|translate}}</th>
 
-            <th scope="col">تاريخ الطلب</th>
-            <th scope="col">حالة الطلب</th>
-            <th scope="col"> طباعة الطلب</th>
-            <th scope="col"> حذف الطلب </th>
+            <th scope="col">{{"general.request.req_date"|translate}}</th>
+            <th scope="col">{{"general.request.req_status"|translate}}</th>
+            <th scope="col"> {{"general.request.req_print"|translate}}</th>
+            <th scope="col"> {{"general.request.req_delete"|translate}}</th>
 
 
 
@@ -81,7 +81,7 @@
                   <!--<app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
                 </i> </button></td>
 
-            <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+            <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"|translate}}</td>
 
           </tr>
 

@@ -123,7 +123,7 @@ export class UserService extends BaseService {
         .toPromise()
         .then(res => {
           this.userData = (res as any).data;
-          //console.log('userdata:'+this.userData);
+          // console.log('userdata:'+this.userData);
           this.userData.activeRole = this.userData.role;
           this.userDataLoaded = true;
           this.pushUserDataChanges();
@@ -141,9 +141,11 @@ export class UserService extends BaseService {
 
   getActiveRoleDetails() {
     let data;
+    // tslint:disable-next-line: triple-equals
     if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'UG') {
       data = JSON.parse(JSON.stringify(this.userData.student_details));
       data.username = data.id;
+    // tslint:disable-next-line: triple-equals
     } else if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'GR') {
       data = JSON.parse(JSON.stringify(this.userData.student_details_gr));
       data.username = data.id;

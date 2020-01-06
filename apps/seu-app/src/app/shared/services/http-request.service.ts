@@ -17,8 +17,6 @@ export class HttpRequestService {
 
    // const sid = localStorage.getItem('sid');
      const sid = this.globalService.getSID();
-     //console.log(sid);
-    // set headers here e.g.
 
      const headers = new HttpHeaders({
       'Content-Type': 'application/json',

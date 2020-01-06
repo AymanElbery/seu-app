@@ -1,0 +1,41 @@
+<div class="main-content">
+  
+<div class="widget">
+ 
+
+    
+
+   
+    <div  class="widget-header"> 
+       
+       
+      <h3 class="widget-title">   {{newsDetails.title}}</h3>
+    
+    
+    </div>
+    <div class="row"> <div class="col-md-3"><a  [routerLink]="['/']" ><i class="fas fa-arrow-right"></i> الرئيسية
+    </a>  </div></div>
+    <section class="ser-state" >
+        
+      <div class="container">
+         
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <img  width="100%"src="{{'data:image/jpg;base64,' + newsDetails.image}}" alt="{{newsDetails.title}}" class="img-thumbnail">
+            </div> <div cass="col-md-1"></div>
+
+            </div>
+            <div>
+              <p>
+                <br/>
+                {{toHTML(newsDetails.article)}}
+                </p>
+            </div>
+      
+
+
+      </div>
+    </section>
+  </div>
+</div>

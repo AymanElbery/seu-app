@@ -1,0 +1,46 @@
+<ActionBar title="Login "></ActionBar>
+<GridLayout>
+    
+      
+
+        
+        <ScrollView>
+          <StackLayout>  
+            <StackLayout  margin="20"    >
+
+              <Image  src="~/images/logo.png"></Image>
+          
+            </StackLayout>
+<StackLayout  class="form" margin="10" verticalAlignment="center" backgroundColor="#FFFFFF" padding="5">
+
+  
+  
+  
+  <StackLayout    margin="20" >
+
+
+  </StackLayout>
+  <StackLayout   margin="10" >
+    
+
+   </StackLayout>
+  
+  <StackLayout  margin="10" >
+      <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
+      
+
+  </StackLayout>
+
+  <StackLayout class="input-field">
+    <TextField hint="Enter UserName" [(ngModel)]="credentials.email" class="input"></TextField>
+
+  </StackLayout>
+
+  <StackLayout class="input-field">
+    <TextField hint="Enter Password" secure="true" [(ngModel)]="credentials.password" class="input"></TextField>
+  </StackLayout>
+
+  <Button text="Log In" (tap)="login(credentials)"  class="-primary -rounded-sm"></Button>
+</StackLayout>
+ </StackLayout>
+</ScrollView></GridLayout>

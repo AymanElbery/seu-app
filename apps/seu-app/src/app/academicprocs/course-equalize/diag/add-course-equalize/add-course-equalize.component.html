@@ -3,7 +3,7 @@
   <div class="modal-content">
     <div class="modal-header">
 
-      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> معادلة مقررات</h5>
+      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.course-equalize.title"|translate}}</h5>
 
     </div>
     <div class="modal-body">
@@ -11,7 +11,7 @@
       <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
         <div class="main-content">
           <P class="text-center">
-            <span style="font-weight: bold; font-size: 15px;color: red;">تنبيه: </span>{{reqData.notes.txt1}}
+            <span style="font-weight: bold; font-size: 15px;color: red;">{{"services.course-equalize.alert"|translate}}</span>{{reqData.notes.txt1}}
             <br />
             {{reqData.notes.txt2}}
 
@@ -43,12 +43,12 @@
               <div class="row ser-block">
                 <div class="col-md-12 col-sm-12">
                   <div class="state">
-                    <h6> اختر الجامعه </h6>
+                    <h6> {{"services.course-equalize.choose_college"|translate}}</h6>
                     <div class="form-group">
 
                       <select name="PREV_UNIV" #PREV_UNIV="ngModel" [(ngModel)]="curseEqual.PREV_UNIV"
                         class="form-control" [class.is-invalid]=" curseEqual.PREV_UNIV==0">
-                        <option value="0">الجامعه </option>
+                        <option value="0">{{"general.college"|translate}} </option>
                         <option *ngFor="let item of reqData.univ_list_arr" value="{{item.UN_ID}}">{{item.UN_NAME}}
                         </option>
                       </select>
@@ -61,14 +61,14 @@
                 </div>
                 <div class="col-md-12 col-sm-12">
                   <div class="state">
-                    <h6>اختر المقرر وحدد عدد الساعات والدرجة واللغة</h6>
+                    <h6>{{"services.course-equalize.choose_course_lang_hours_grade"|translate}}</h6>
                     <table style="text-align: center" class="table">
                       <thead>
                         <tr>
-                          <th scope="col">اسم المقرر </th>
-                          <th scope="col">عدد الساعات </th>
-                          <th scope="col">الدرجه </th>
-                          <th scope="col">اللغه </th>
+                          <th scope="col">{{"general.course_name"|translate}}</th>
+                          <th scope="col">{{"general.course_hours"|translate}}</th>
+                          <th scope="col">{{"general.grade"|translate}}</th>
+                          <th scope="col">{{"general.language"|translate}} </th>
 
                           <th scope="col"> </th>
 
@@ -97,8 +97,8 @@
                           <td>
                             <select class="custom-select  col-md-12" #TRNS_LANG="ngModel" name="TRNS_LANG"
                               [(ngModel)]="it.TRNS_LANG">
-                              <option selected value="1">عربي</option>
-                              <option value="2">ENG</option>
+                              <option selected value="1">{{"general.ar_language"|translate}}</option>
+                              <option value="2">{{"general.en_language"|translate}}</option>
                             </select>
                           </td>
 
@@ -118,7 +118,7 @@
                 </div>
                 <div class="col-md-12 col-sm-12">
                   <div class="state">
-                    <h6>وصف المقرر </h6>
+                    <h6>{{"services.course-equalize.course_desc"|translate}}</h6>
                     <div class="custom-file">
                       <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)"
                         id="customFile" class="custom-file-input" />
@@ -132,7 +132,7 @@
                 </div>
                 <div class="col-md-12 col-sm-12">
                   <div class="state">
-                    <h6>صورة السجل </h6>
+                    <h6>{{"services.course-equalize.record_image"|translate}}</h6>
                     <div class="custom-file">
                       <input name="imageUrl2" type="file" accept="*/*" (change)="handleInputChange2($event)"
                         id="customFileLang" class="custom-file-input" />
@@ -165,9 +165,9 @@
           <div style="margin-top: 10px;">
             <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
               <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                الغاء</button>
+                {{"general.cancel"|translate}}</button>
 
-              <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+              <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"general.save"|translate}}</button>
             </div>
           </div>
 

@@ -11,33 +11,33 @@
                 <span style="font-weight: bold; font-size: 15px;color: red;" >تنبيه:   </span>{{reqData.notes.txt1}}
 
                </P> -->
-        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-          <div class="main-content">
-            <P class="text-center">
-              <span style="font-weight: bold; font-size: 15px;color: red;">تنبيه: </span>
+
+          <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+              <div  class="main-content">
+                  <P class="text-center">
+                      <span style="font-weight: bold; font-size: 15px;color: red;" >{{"services.change_major.alert"|translate}}</span>
               سيتم اتاحة الفرصة لتغيير التخصص مرة واحدة خلال الدراسة في الجامعة.
-              <br />
-              يسمح للطالب بالغاء الطالب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط.
+                      {{"services.change_major.alert_content"|translate}}<br />
+                      {{"services.change_major.major_cancellation_validity"|translate}}
 
             </P>
             <section class="ser-state">
               <div class="container">
                 <div class="row ser-block">
 
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6>اختر التخصص</h6>
-                      <select name="major" #BranchID="ngModel" [(ngModel)]="mj.major" class="form-control"
-                        [class.is-invalid]="mj.major==''">
-                        <option value="">اختر التخصص</option>
-                        <option *ngFor="let item of reqData.majors" value="{{item.MAJOR_PK}}">{{item.MAJOR_TITLE}}
-                        </option>
-                      </select>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="state">
+                                      <h6>{{"services.change_major.choose_major"|translate}}</h6>
+                                      <select name="major" #BranchID="ngModel" [(ngModel)]="mj.major" class="form-control"
+                                      [class.is-invalid]="mj.major==''">
+                                        <option value="">{{"services.change_major.choose_major"|translate}}</option>
+                                        <option *ngFor="let item of reqData.majors" value="{{item.MAJOR_PK}}">{{item.MAJOR_TITLE}}</option>
+                                      </select>
+                                        </div>
+                                      <div class="progress progress-sm">
+                                          <div class="progress-bar bg-info"></div>
+                                      </div>
+                              </div>
 
 
                 </div>
@@ -45,18 +45,21 @@
             </section>
 
 
-            <div style="margin-top: 10px;">
-              <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-                <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                  الغاء</button>
 
-                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                <div style="margin-top: 10px;">
+                    <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+                                <button type="button" (click)="closeDiag()"  class="btn btn-outline-dark ml-1" ><i class="fa fa-close"></i>{{"general.cancel"|translate}}</button>
+
+                      <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"general.save"|translate}}</button>
+                    </div>
               </div>
             </div>
           </div>
         </form>
       </div>
 
+
     </div>
+
   </div>
 </mat-dialog-content>

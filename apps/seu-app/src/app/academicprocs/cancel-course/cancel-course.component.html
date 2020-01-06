@@ -2,10 +2,12 @@
   <section class="service-single">
 
     <div class="container">
-      <h3> الانسحاب من مقرر </h3>
+     
+      <h3>{{"services.cancel_course.title"|translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
-          <p> الانسحاب من مقرر</p>
+        
+          <p>{{"services.cancel_course.desc"|translate}}</p>
         </div>
         <!-- <div class=" col-md-6 descr">
               <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -37,6 +39,7 @@
   <!-- <div style="direction: ltr;text-align: center">
 
   <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
+
   اضافة طلب <i class="ik ik-plus"></i>
 </button>
 <br/>
@@ -47,9 +50,11 @@
     <div class="widget-header">
 
 
-      <h3 class="widget-title"> الطلبات السابقة
+
+      <h3 class="widget-title">{{"general.request.pre_requests"| translate}}
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب <i class="ik ik-plus"></i>
+
+          {{"general.request.add_request"| translate}}
         </button>
 
       </h3>
@@ -58,12 +63,14 @@
       <table class="table table-striped table-bordered">
         <thead>
           <tr>
-            <th scope="col">رقم الطلب</th>
 
-            <th scope="col">تاريخ الطلب</th>
-            <th scope="col">حالة الطلب</th>
-            <th scope="col"> طباعة الطلب</th>
-            <th scope="col"> حذف الطلب </th>
+            <th scope="col"> {{"general.request.req_no"| translate}}</th>
+
+           
+            <th scope="col">{{"general.request.req_date"| translate}}</th>
+            <th scope="col">{{"general.request.req_status"| translate}}</th>
+            <th scope="col">{{"general.request.req_print"| translate}}</th>
+            <th scope="col">{{"general.request.req_delete"| translate}}</th>
 
           </tr>
         </thead>
@@ -84,7 +91,8 @@
                      <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
                   </i> </button></td>
 
-              <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+
+              <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"| translate}}</td>
           </tr>
 
         </tbody>
