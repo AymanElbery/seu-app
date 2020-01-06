@@ -6,10 +6,10 @@
 
   <section class="service-single">
     <div class="container">
-      <h3> الحالة الأكاديمية </h3>
+      <h3> {{"services.academic_record.title" | translate}}  </h3>
       <div class="row">
         <div class=" col-md-5">
-          <p> الحالة الأكاديمية </p>
+          <p> {{"services.academic_record.title" | translate}}  </p>
         </div>
         <!-- <div class=" col-md-6 descr">
           <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -39,7 +39,7 @@
 
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
-      <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
+      <h3 class="widget-title">  {{"general.student_data" | translate}} </h3>
     </div>
 
 
@@ -48,7 +48,7 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>اسم الطالب / الطالبة </h6>
+              <h6>  {{"general.female_or_male_name" | translate}}  </h6>
               <h5>{{reqData.name}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -57,7 +57,7 @@
           </div>
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>رقم الطالب / الطالبة </h6>
+              <h6>  {{"general.student_id" | translate}}  </h6>
               <h5>{{reqData.std_id}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -70,7 +70,7 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>الكلية </h6>
+              <h6>{{"general.faculty" | translate}} </h6>
               <h5>{{reqData.colledge}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -79,7 +79,7 @@
           </div>
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>التخصص </h6>
+              <h6>{{"general.major" | translate}} </h6>
               <h5>{{reqData.major}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -93,7 +93,7 @@
 
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6> الفرع </h6>
+              <h6> {{"general.branch" | translate}} </h6>
               <h5>{{reqData.branch}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -103,7 +103,7 @@
 
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>الحالة الأكاديمية </h6>
+              <h6>{{"services.academic_status.title" | translate}}  </h6>
               <h5>{{reqData.academic_status}} </h5>
             </div>
             <div class="progress progress-sm">
