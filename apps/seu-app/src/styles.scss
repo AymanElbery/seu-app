@@ -2301,6 +2301,7 @@ nav {
 	top: -35px;
 	right: 90%;
 }
+
 .progress-indicator {
 	&.custom-complex > li {
 		font-size: 13px;
@@ -3211,4 +3212,12 @@ form .state {
     border: 1px solid #1c2172;
     background-color: #1c2172;
   }
+}
+form {
+  .progress {
+    height: 0;
+  }
+}
+.custom-file-label::after {
+  right: auto;
 }

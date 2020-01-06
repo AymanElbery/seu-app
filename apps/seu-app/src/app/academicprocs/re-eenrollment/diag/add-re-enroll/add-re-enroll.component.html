@@ -2,7 +2,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.re-enrollment.re-enroll_request"|translate}}</h5>
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.re-enrollment.re-enroll_request"|translate}}</h5>
 
       </div>
       <div class="modal-body">
@@ -22,13 +23,24 @@
                       </div>
                     </div>
                   </div>
+
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
                       <h6> {{"services.re-enrollment.file"|translate}}</h6>
 
-                      <div class="image-upload">
-                        <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)" />
+
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                          <input type="file" accept="*/*" name="imageUrl" class="custom-file-input"
+                            id="inputGroupFile01" (change)="handleInputChange($event)">
+                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                        </div>
                       </div>
+
+
                     </div>
                     <div class="progress progress-sm">
                       <div class="progress-bar bg-info"></div>
@@ -46,7 +58,8 @@
               <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
                 <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
                   {{"general.cancel"|translate}}</button>
-                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"general.save"|translate}}</button>
+                <button type="submit" class="btn btn-dark"><i
+                    class="fa fa-database"></i>{{"general.save"|translate}}</button>
               </div>
             </div>
           </div>
