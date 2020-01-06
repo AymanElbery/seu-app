@@ -20,7 +20,7 @@
 
   <div class="widget">
     <div class="widget-header">
-      <h3 class="widget-title">المعلومات الشخصية للخريج</h3>
+      <h3 class="widget-title">  {{"services.graduate.graduatedata"|translate}} </h3>
     </div>
 
     <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
@@ -35,7 +35,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الإسم الرباعي باللغة العربية كما هو في بطاقة الأحوال </h6>
+                <h6>      {{"services.graduate.fullname"|translate}} </h6>
 
 
                 <input required name="name_ar" #name_ar="ngModel" [(ngModel)]="stdinfo.name_ar" class="form-control"
@@ -48,7 +48,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الإسم الرباعي باللغة الإنجليزية كما هو بالجواز </h6>
+                <h6> {{"services.graduate.fullnameeng"|translate}} </h6>
 
 
                 <input required name="name_en" #name_en="ngModel" [(ngModel)]="stdinfo.name_en" class="form-control"
@@ -61,7 +61,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الجنس </h6>
+                <h6>{{"services.graduate.gender"|translate}} </h6>
                 <h5>{{reqData.stdinfo.gender}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -78,7 +78,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الجنسية </h6>
+                <h6>{{"services.graduate.nationality"|translate}} </h6>
                 <h5>{{reqData.stdinfo.nationality}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -88,7 +88,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الدرجة العلمية </h6>
+                <h6>{{"services.graduate.scdegree"|translate}}  </h6>
                 <h5>{{reqData.stdinfo.grade_level}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -98,7 +98,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>التخصص </h6>
+                <h6>{{"services.graduate.major"|translate}} </h6>
                 <h5>{{reqData.stdinfo.major}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -112,7 +112,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>الفرع </h6>
+                <h6>{{"services.graduate.branch"|translate}} </h6>
                 <h5>{{reqData.stdinfo.branch}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -122,7 +122,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> المعدل </h6>
+                <h6> {{"services.graduate.rate"|translate}} </h6>
                 <h5>{{reqData.stdinfo.gpa}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -132,7 +132,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>رقم الجوال </h6>
+                <h6>{{"services.graduate.mobileno"|translate}}  </h6>
 
                 <input required name="mobile" #mobile="ngModel" [(ngModel)]="stdinfo.mobile" class="form-control"
                   [class.is-invalid]="stdinfo.mobile==''">
@@ -150,7 +150,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>البريد الإلكتروني الشخصي </h6>
+                <h6>  {{"services.graduate.email"|translate}}  </h6>
 
                 <input required name="email" #email="ngModel" [(ngModel)]="stdinfo.email" class="form-control"
                   [class.is-invalid]="stdinfo.email==''">
@@ -162,7 +162,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> البريد الجامعي </h6>
+                <h6> {{"services.graduate.uemail"|translate}}  </h6>
                 <h5>{{reqData.stdinfo.university_email}} </h5>
               </div>
               <div class="progress progress-sm">
@@ -172,7 +172,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> صورة شخصية 4*6 للطلاب فقط </h6>
+                <h6> {{"services.graduate.stdpic"|translate}}   </h6>
 
 
                 <input required class="form-control" name="image" id="image" type="file" accept="*/*"
@@ -191,7 +191,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> السيرة الذاتية </h6>
+                <h6>  {{"services.graduate.CV"|translate}} </h6>
                 <h5>{{stdinfo.STD_RESUME}} </h5>
                 <input required class="form-control" name="cv" id="cv" type="file" accept="*/*"
                   (change)="handleInputChange($event,'cv')" [class.is-invalid]="stdinfo.cv == ''" />
@@ -203,7 +203,7 @@
 
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> الحالة الوظيفية </h6>
+                <h6>   {{"services.graduate.cjob"|translate}} </h6>
                 <select required name="job_status" #job_status="ngModel" [(ngModel)]="stdinfo.job_status"
                   class="form-control" [class.is-invalid]=" stdinfo.job_status==''">
 
@@ -219,13 +219,13 @@
           </div>
           <div class="widget">
             <div class="widget-header">
-              <h3 class="widget-title">بيانات العمل إن وجد</h3>
+              <h3 class="widget-title">  {{"services.graduate.jondes"|translate}} </h3>
             </div>
             <div class="row ser-block">
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> قطاع التوظيف </h6>
+                  <h6>  {{"services.graduate.empsector"|translate}}  </h6>
                   <select name="job_sector" #job_sector="ngModel" [(ngModel)]="stdinfo.job_sector" class="form-control">
 
                     <option *ngFor="let item of reqData.job_sector" value="{{item.id}}">{{item.value}}</option>
@@ -238,7 +238,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> سنة التوظيف </h6>
+                  <h6> {{"services.graduate.jobyear"|translate}}  </h6>
 
                   <input name="year_job" #year_job="ngModel" [(ngModel)]="stdinfo.year_job" class="form-control">
                 </div>
@@ -249,7 +249,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> جهة العمل </h6>
+                  <h6> {{"services.graduate.jobcom"|translate}}   </h6>
 
                   <input name="job_com" #job_com="ngModel" [(ngModel)]="stdinfo.job_com" class="form-control">
                 </div>
@@ -265,7 +265,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> هل حصلت على الترقية أثناء الدراسة </h6>
+                  <h6>       {{"services.graduate.upgrade"|translate}} </h6>
 
                   <select name="job_promo" #job_promo="ngModel" [(ngModel)]="stdinfo.job_promo" class="form-control">
 
@@ -279,7 +279,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> سنة الحصول على الترقية </h6>
+                  <h6>  {{"services.graduate.upgradeyr"|translate}}    </h6>
 
                   <input name="job_promo_year" #job_promo_year="ngModel" [(ngModel)]="stdinfo.job_promo_year"
                     class="form-control">
@@ -291,10 +291,10 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6> مقر العمل </h6>
+                  <h6>  {{"services.graduate.jobplace"|translate}}  </h6>
 
                   <select name="job_loc" #job_loc="ngModel" [(ngModel)]="stdinfo.job_loc" class="form-control">
-                    <option value="">اختر مقر العمل</option>
+                    <option value=""> {{"services.graduate.jobplace"|translate}} </option>
                     <option *ngFor="let item of reqData.cities" value="{{item.ID}}">{{item.NAME}}</option>
                   </select>
                 </div>
@@ -308,13 +308,13 @@
 
           <div class="widget">
             <div class="widget-header">
-              <h3 class="widget-title">بيانات رب العمل إن وجد</h3>
+              <h3 class="widget-title">   {{"services.graduate.jobownerdata"|translate}} </h3>
             </div>
             <div class="row ser-block">
 
               <div class=" col-md-3 col-sm-12">
                 <div class="state">
-                  <h6> الإسم </h6>
+                  <h6>  {{"services.graduate.oname"|translate}} </h6>
 
                   <input name="employer_name" #EMPLOYER_NAME="ngModel" [(ngModel)]="stdinfo.employer_name"
                     class="form-control">
@@ -326,7 +326,7 @@
 
               <div class=" col-md-3 col-sm-12">
                 <div class="state">
-                  <h6> المسمى الوظيفي </h6>
+                  <h6>  {{"services.graduate.ojob"|translate}} </h6>
 
                   <input name="employer_job_title" #employer_job_title="ngModel"
                     [(ngModel)]="stdinfo.employer_job_title" class="form-control">
@@ -338,7 +338,7 @@
 
               <div class=" col-md-3 col-sm-12">
                 <div class="state">
-                  <h6> رقم الجوال </h6>
+                  <h6> {{"services.graduate.mobileno"|translate}}  </h6>
 
                   <input name="employer_phone" #employer_phone="ngModel" [(ngModel)]="stdinfo.employer_phone"
                     class="form-control">
@@ -350,7 +350,7 @@
 
               <div class=" col-md-3 col-sm-12">
                 <div class="state">
-                  <h6> البريد الإلكتروني </h6>
+                  <h6>  {{"services.graduate.email"|translate}} </h6>
 
                   <input name="employer_email" #employer_email="ngModel" [(ngModel)]="stdinfo.employer_email"
                     class="form-control">
@@ -371,10 +371,10 @@
       <div class="modal-body">
         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
           <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-            الغاء</button>
+            {{"services.cancel"|translate}}</button>
 
           <button [disabled]="form.invalid " type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
-            حفظ</button>
+            {{"services.save"|translate}}</button>
         </div>
       </div>
 
