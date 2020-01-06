@@ -505,6 +505,46 @@
     "medical_report":{
         "title":"Medical Report Request",
         "desc":"Medical Report Request"
+    },
+    "student_info":{
+        "title":"Graduate Data",
+        "desc":"Graduate Data",
+        "sex":"Sex",
+        "nationality":"Nationality",
+        "qualification":"Qualification",
+        "ar_name":"Name In Arabic",
+        "en_name":"Name In English",
+        "phone_no":"Mobile Number",
+        "grad_term":"Graduation Term",
+        "choose_grad_term":" اختر فصل التخرج",
+        "cv":"السيرة الذاتية",
+        "pic":"صورة شخصية 4*6 للطلاب فقط",
+        "job_status":"الحالة الوظيفية",
+        "choose_job_status":"اختر الحالة الوظيفية",
+        "sector":"قطاع التوظيف",
+        "choose_sector":"اختر قطاع التوظيف",
+        "before_or_after":"بعد أو قبل الدراسة ",
+        "job_year":"سنة الوظيفة",
+        "job_side":"جهة الوظيفة",
+        "job_title":"المسمى الوظيفي",
+        "work_address":"مقر العمل",
+        "choose_work_address":"اختر مقر العمل",
+        "employer":"بيانات رب العمل ان وجد :",
+        "obligation":"اقر بصحة المعلومات المدخلة ,حيث سيتم طباعة وثيقة التخرج حسب المعلوماتالتي قمت بإدخالها"
+    },
+    "training_request":{
+        "title":"طلب التدريب الميداني",
+        "desc":"طلب التدريب الميداني",
+        "destination":"اسم الجهة",
+        "condition":"القبول مشروط باجتيازك لـ 86 ساعة علماً بأنه لن تتمكن من التدريب ويعتبر تسجيلك في التدريب ملغي الاباجتياز 86 ساعة وفي حال عدم اجتيازك لـ 86 ساعة",
+        "text":"يقوم الطالب بتعبئة خطاب التدريب ونماذج التسجيل للتدريب العملي(",
+        "info":" ونموذج معلومات الطالب(",
+        "here":"من هنا",
+        "training_mail":"بعد الانتهاء من تعبئة النماذج وختمها أمل إعادة ارسالها علي البريد الالكتروني الخاص بالتدريب الصيفي cci.spt@seu.edu.sa ",
+        "alert":"تنبيه",
+        "alert_content":":يرجى قراءة الشروط الخاصة بقبول طلبك للتدريب الميداني .. القبول مشروط باجتيازك لـ 86 ساعة علماً بأنه لن تتمكن من التدريب ويعتبر تسجيلك في التدريب ملغي في حالة عدم اجتيازهم",
+        "destination_letter":"اسم الجهة التي تود توجيه الخطاب لها ",
+        "practical_train":"طلب التدريب الميداني والعملي"
     }
     
 }
