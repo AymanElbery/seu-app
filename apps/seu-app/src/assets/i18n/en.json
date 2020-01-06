@@ -114,7 +114,7 @@
             "change_major_req":"Change Major Request",
             "alert":"Alert:",
             "alert_content":"Chance for changing Major is available only onece during studying in university",
-            "major_cancellation_validity":"Student can cancel this request during 48 hours starting from applying to the request"
+            "major_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
         },
         "change_branch":{
             "title":"Change Branch",
@@ -125,8 +125,8 @@
             "change_branch_req":"Change Branch Request",
             "choose_branch":"Choosr Branch",
             "alert":"Alert:",
-            "alert_content":"فى هذه الفترة يتم استقبال الطلبات والتنفيذ بمشيئة الله بعد ظهور نتائج الاختبارات النهائية",
-            "branch_cancellation_validity":"يسمح للطالب الغاء الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط."
+            "alert_content":"Requests are accepted during this period and action will be taken after announcing final exams grades",
+            "branch_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
 
         },
         "course-equalize":{
@@ -139,6 +139,62 @@
             "course_desc":"Course Description",
             "record_image":"Record Picture",
             "alert":"Alert:"
+        },
+        "english-equalize":{
+            "title":"English Equalize",
+            "desc":"English Equalize",
+            "reply_date":"Reply Date",
+            "equalize_english_req":"English Equalize Request",
+            "choose_exam_degree":"Choose Exam and Grade",
+            "exam_name":"Exam Name",
+            "certificate_image":"Certificate Picture"
+        },
+        "excuse_request":{
+            "title":"Execuse for a Term",
+            "desc":"Execuse for a Term",
+            "execuse_req":"Execuse for a Term Request",
+            "cause":"Cause"
+        },
+        "lecture_execuse":{
+            "title":"Lectures' Execuses",
+            "desc":"Lectures' Execuses",
+            "create_req":"Create Request",
+            "absence_date":"Absence Date",
+            "absence_week":"Absence Week",
+            "lecture_type":"Lectrure Type",
+            "execuse_file":"Excuse File",
+            "define_courses_names":"Define Courses Names",
+            "choose_lec_type":"Choose Lecture Type",
+            "choose_week":"Choose Week",
+            "define_date":"Define Date",
+            "absence_cause":"Absence Cause",
+            "file":"File"
+        },
+        "missing_card":{
+            "title":"Lost Card Replacment Request",
+            "desc":"Lost Card Replacment Request",
+            "required":"Required",
+            "upload_bank_receipt":"Upload Bank Receipt",
+            "upload_receipt":"Upload Receipt",
+            "req_requisites":"PreRequisites",
+            "upload_pic":"Uploaded Personal Picture Has To be:",
+            "pic_size":"Of Size 6*4",
+            "pic_color":"Colored With White Background",
+            "pic_for_females":"For Female Students:Student Must Be Veiled",
+            "pic_quality":"Picture Must Be in High Quality",
+            "pic_warning":"Card Won't be availabe without Personal Picture",
+            "ssn_or_equal":"SSN Number Or Replacement",
+            "mobile_no":"Mobile Phone",
+            "choose_stage":"Choose Grade",
+            "stage":"Grade",
+            "choose_period":"Choose Period",
+            "period":"Period",
+            "choose_day":"Choose Day",
+            "add_personal_pic":"Add Personal Picture",
+            "add_pic":"Add Picture",
+            "add_ssn_pic":"Add SSN Picture",
+            "upload_bank_receipt_for_missing_card":"Upload Bank Receipt For Lost Card Replacment",
+            "bank_receipt":"Bank Receipt"
         }
         
        
