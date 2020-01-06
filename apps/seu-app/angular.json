@@ -42,7 +42,6 @@
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/popper.js/dist/umd/popper.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.js",
-              // "src/assets/js/js/perfect-scrollbar.min.js",
               "src/assets/js/js/service.js",
               "src/assets/js/main-2.js",
               "./node_modules/owl.carousel/dist/owl.carousel.js"

@@ -67,7 +67,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6>{{"services.missing_card.period|translate}} </h6>
+                      <h6>{{"services.missing_card.period"|translate}} </h6>
                       <select name="time" #time="ngModel" [(ngModel)]="card.time" class="form-control"
                         [class.is-invalid]="card.time==''">
                         <option value="">{{"services.missing_card.choose_period"|translate}}</option>
