@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document" style="direction: rtl;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب رفع اللأعذار للإختبارات
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.master_exam_excuse.execuse_req"|translate}}
         </h5>
 
       </div>
@@ -22,13 +22,13 @@
                 <div class="row ser-block">
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> اختر المقرر </h6>
+                      <h6>{{"services.master_exam_excuse.choose_course"|translate}}</h6>
                       <table style="text-align: center" class="table">
                         <thead style="font-size: 15px;">
                           <tr>
-                            <th scope="col">اسم المقرر </th>
+                            <th scope="col">{{"general.course_name"|translate}}</th>
 
-                            <th scope="col"> رقم المقرر </th>
+                            <th scope="col"> {{"general.course_code"|translate}}</th>
                             <th scope="col"> </th>
                             <th scope="col"> # </th>
 
@@ -57,10 +57,10 @@
 
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> اختر نوع الاختبار </h6>
+                      <h6>{{"services.master_exam_excuse.choose_exam_type"|translate}}</h6>
                       <select name="type" #time="ngModel" [(ngModel)]="examExcuse.type" class="form-control"
                         [class.is-invalid]="examExcuse.type==''">
-                        <option value="">نوع الاختبار</option>
+                        <option value="">{{"services.master_exam_excuse.exam_type"|translate}}</option>
                         <option *ngFor="let item of reqData.exams_type" value="{{item.id}}">{{item.value}}</option>
                       </select>
                     </div>
@@ -70,7 +70,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> سبب التغيب عن الاختبار </h6>
+                      <h6>{{"services.master_exam_excuse.absence_reason"|translate}} </h6>
                       <textarea name="reason" class="form-control" #reason="ngModel"
                         [(ngModel)]="examExcuse.reason"></textarea>
                     </div>
@@ -80,7 +80,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> رفع الوثائق التي تثبت سبب تغيبك عن الاختبار </h6>
+                      <h6>{{"services.master_exam_excuse.upload_proof"|translate}}</h6>
                       <div class="custom-file">
                         <input name="attachment" id="attachment" type="file" accept="*/*"
                           (change)="handleInputChange($event)" />
@@ -96,8 +96,8 @@
                   <div style="margin-top: 15px;">
                     <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
                       <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                        الغاء</button>
-                      <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                        {{"general.cancel"|translate}}</button>
+                      <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
                     </div>
                   </div>
 

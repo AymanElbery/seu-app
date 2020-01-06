@@ -160,7 +160,7 @@
             "title":"Execuse for a Term",
             "desc":"Execuse for a Term",
             "execuse_req":"Execuse for a Term Request",
-            "cause":"Cause"
+            "cause":"Reason"
         },
         "lecture_execuse":{
             "title":"Lectures' Execuses",
@@ -174,7 +174,7 @@
             "choose_lec_type":"Choose Lecture Type",
             "choose_week":"Choose Week",
             "define_date":"Define Date",
-            "absence_cause":"Absence Cause",
+            "absence_cause":"Absence Reason",
             "file":"File"
         },
         "missing_card":{
@@ -265,17 +265,19 @@
         "add_objection":"Add Objection For One Exam",
         "choose_curriculum":"Choose Curriculum",
         "curriculum_name":"Curriculum Name",
-        "teacher_name":"Teacher Name",
+        "teacher_name":"Professor Name",
         "bank":"Bank",
         "account_no":"Account Number",
         "deposite":"Deposited Money:",
-        "reasons":"Objection Reasons"
+        "reasons":"Objection Reasons",
+        "upload_deposite":"Upload Deposite Receipt"
+
     },
     "postpone_request":{
         "title":"Term Postpone",
         "desc":"Term Postpone",
         "postpone_req":"College Postpone Request",
-        "cause":"Cause"
+        "cause":"Reason"
     },
     "re-enrollment":{
         "title":"Re-enrollment",
@@ -297,7 +299,7 @@
         "termination_req":"Exceptional Termination Request",
         "alert":"Alert:",
         "alert_content":"Student can cancel this request only during 48 hours starting from applying to the request",
-        "cause":"What is The Cause?"
+        "cause":"What is The Reason?"
     },
     "univ_card":{
         "title":"University Card Request",
@@ -334,6 +336,22 @@
         "choose_branch":"Choose The Nearest Branch",
         "phone_no":"Phone Number",
         "e-mail":"E-mail Address"
+    },
+    "master_cancel_course":{
+        "title":"Cancel Course",
+        "desc":"Cancel Course",
+        "acceptance_date":"Acceptance Date"
+    },
+    "master_exam_excuse":{
+        "title":"Excuses For Exams",
+        "desc":"Excuses For Exams",
+        "reply_date":"Reply Date",
+        "execuse_req":"Excuses For Exams Request",
+        "choose_course":"Choose Course",
+        "exam_type":"Exam Type",
+        "choose_exam_type":"Choose Exam Type",
+        "absence_reason":"Reasons For Exam Absence",
+        "upload_proof":"Upload Files that Prove Your Exam Absence's Reasons"
     }
     
 }
