@@ -121,7 +121,7 @@
             "change_major_req":"Change Major Request",
             "alert":"Alert:",
             "alert_content":"Chance for changing Major is available only onece during studying in university",
-            "major_cancellation_validity":"Student can cancel this request during 48 hours starting from applying to the request"
+            "major_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
         },
         "change_branch":{
             "title":"Change Branch",
@@ -132,8 +132,8 @@
             "change_branch_req":"Change Branch Request",
             "choose_branch":"Choosr Branch",
             "alert":"Alert:",
-            "alert_content":"فى هذه الفترة يتم استقبال الطلبات والتنفيذ بمشيئة الله بعد ظهور نتائج الاختبارات النهائية",
-            "branch_cancellation_validity":"يسمح للطالب الغاء الطلب خلال فترة 48 ساعة من تاريخ تقديم الطلب فقط."
+            "alert_content":"Requests are accepted during this period and action will be taken after announcing final exams grades",
+            "branch_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
 
         },
         "course-equalize":{
@@ -146,6 +146,64 @@
             "course_desc":"Course Description",
             "record_image":"Record Picture",
             "alert":"Alert:"
+        },
+        "english-equalize":{
+            "title":"English Equalize",
+            "desc":"English Equalize",
+            "reply_date":"Reply Date",
+            "equalize_english_req":"English Equalize Request",
+            "choose_exam_degree":"Choose Exam and Grade",
+            "exam_name":"Exam Name",
+            "certificate_image":"Certificate Picture"
+        },
+        "excuse_request":{
+            "title":"Execuse for a Term",
+            "desc":"Execuse for a Term",
+            "execuse_req":"Execuse for a Term Request",
+            "cause":"Reason"
+        },
+        "lecture_execuse":{
+            "title":"Lectures' Execuses",
+            "desc":"Lectures' Execuses",
+            "create_req":"Create Request",
+            "absence_date":"Absence Date",
+            "absence_week":"Absence Week",
+            "lecture_type":"Lectrure Type",
+            "execuse_file":"Excuse File",
+            "define_courses_names":"Define Courses Names",
+            "choose_lec_type":"Choose Lecture Type",
+            "choose_week":"Choose Week",
+            "define_date":"Define Date",
+            "absence_cause":"Absence Reason",
+            "file":"File",
+            "file_size":"Upload Files that Prove Your Absence's Reasons in One PDF File With Size Less than 5MB"
+        },
+        "missing_card":{
+            "title":"Lost Card Replacment Request",
+            "desc":"Lost Card Replacment Request",
+            "required":"Required",
+            "upload_bank_receipt":"Upload Bank Receipt",
+            "upload_receipt":"Upload Receipt",
+            "req_requisites":"PreRequisites",
+            "upload_pic":"Uploaded Personal Picture Has To be:",
+            "pic_size":"Of Size 6*4",
+            "pic_color":"Colored With White Background",
+            "pic_for_females":"For Female Students:Student Must Be Veiled",
+            "pic_quality":"Picture Must Be in High Quality",
+            "pic_warning":"Card Won't be availabe without Personal Picture",
+            "ssn_or_equal":"SSN Number Or Replacement",
+            "mobile_no":"Mobile Phone",
+            "choose_stage":"Choose Grade",
+            "stage":"Grade",
+            "choose_period":"Choose Period",
+            "period":"Period",
+            "choose_day":"Choose Day",
+            "add_personal_pic":"Add Personal Picture",
+            "add_pic":"Add Picture",
+            "add_ssn_pic":"Add SSN Picture",
+            "upload_bank_receipt_for_missing_card":"Upload Bank Receipt For Lost Card Replacment",
+            "bank_receipt":"Bank Receipt"
+        }
         },
         "exam": {
             "execreq":" upload exam execuses",
@@ -200,6 +258,103 @@
             "feepayst":"      tuition fees execmption  statment        "
         
        
+    },
+    "object_exam": {
+        "title":"Final Exam Result Objection",
+        "desc":"Final Exam Result Objection",
+        "procedure": "Procedure",
+        "add_objection":"Add Objection For One Exam",
+        "choose_curriculum":"Choose Curriculum",
+        "curriculum_name":"Curriculum Name",
+        "teacher_name":"Professor Name",
+        "bank":"Bank",
+        "account_no":"Account Number",
+        "deposite":"Deposited Money:",
+        "reasons":"Objection Reasons",
+        "upload_deposite":"Upload Deposite Receipt"
+
+    },
+    "postpone_request":{
+        "title":"Term Postpone",
+        "desc":"Term Postpone",
+        "postpone_req":"College Postpone Request",
+        "cause":"Reason"
+    },
+    "re-enrollment":{
+        "title":"Re-enrollment",
+        "desc":"Re-enrollment",
+        "re-enroll_request":"Re-enrollment Request",
+        "alert":"Alert:Student can cancel this request only during 48 hours starting from applying to the request",
+        "cause":"What are The Reasons for Your Absence?",
+        "file":"Upload Proof File(System Accept PDF Files with Size Less Than 5MB)",
+        "prove":"Do you Have a Proof?"
+
+    },
+    "summer_withdraw":{
+        "title":"Excuse for Summer Term",
+        "desc":"Excuse for Summer Term",
+        "alert":"Alert:Your Excuse for Summer Term Means you are withdrawed from recorded courses"
+
+    },
+    "termination-withdraw":{
+        "title":"College Withdrawal",
+        "desc":"College Withdrawal",
+        "termination_req":"Exceptional Termination Request",
+        "alert":"Alert:",
+        "alert_content":"Student can cancel this request only during 48 hours starting from applying to the request",
+        "cause":"What is The Reason?"
+    },
+    "univ_card":{
+        "title":"University Card Request",
+        "desc":"University Card Request"
+    },
+    "visitor_student":{
+        "title":"Studying As Visitor Student Request",
+        "desc":"Studying As Visitor Student Request",
+        "procedure":"Procedure",
+        "college_info":"College Information",
+        "desired_college":"Desired College Name",
+        "choose_college":"Choose College",
+        "term":"Term",
+        "choose_term":"Choose Term",
+        "academic_year":"Academic Year",
+        "choose_academic_year":"Choose Academic Year",
+        "course_info":"Desired Course to Study Outside University Information",
+        "course_alpha_code":"Course Alphabetical Code",
+        "course_number_code":"Course Numerical Code",
+        "course_hours":"Course Hours",
+        "upload_course_desc":"Upload Course Description File",
+        "file_size":"Pleas Upload Course Description File in One of These Formats PNG,JIF,JPG,MicrosoftWord,PDF,BMP File Size Mustn't Excced 5MB",
+        "equivalent_course":"Information About Equivalent Course In University",
+        "choose_subject":"Choose Subject",
+        "commitment":"Obligation",
+        "accept":"I Accept"
+    },
+    "withdrow_univ":{
+        "title":"Withdrawal From University Request",
+        "desc":"Withdrawal From University Request",
+        "term":"Term",
+        "state_print":"Prinrt State",
+        "branch":"Branch",
+        "choose_branch":"Choose The Nearest Branch",
+        "phone_no":"Phone Number",
+        "e-mail":"E-mail Address"
+    },
+    "master_cancel_course":{
+        "title":"Cancel Course",
+        "desc":"Cancel Course",
+        "acceptance_date":"Acceptance Date"
+    },
+    "master_exam_excuse":{
+        "title":"Excuses For Exams",
+        "desc":"Excuses For Exams",
+        "reply_date":"Reply Date",
+        "execuse_req":"Excuses For Exams Request",
+        "choose_course":"Choose Course",
+        "exam_type":"Exam Type",
+        "choose_exam_type":"Choose Exam Type",
+        "absence_reason":"Reasons For Exam Absence",
+        "upload_proof":"Upload Files that Prove Your Exam Absence's Reasons"
     }
-}
+    
 }

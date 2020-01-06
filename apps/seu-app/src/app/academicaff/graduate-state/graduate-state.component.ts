@@ -14,29 +14,19 @@ export class GraduateStateComponent implements OnInit {
   EngPrint: string;
   isLoading = false;
   msgs;
-  constructor(private graduateStateSer: GraduatesStateService) { 
-    alert(this.isLoading);
-    alert("constructor");
-
+  constructor(private graduateStateSer: GraduatesStateService) {
 
   }
 
   ngOnInit() {
-    alert(this.isLoading);
-
     this.isLoading = true;
     this.arabicPrint = this.graduateStateSer.DownloadStatement();
     this.EngPrint = this.graduateStateSer.DownloadEngStatement();
-    alert(this.isLoading);
     this.graduateStateSer.getStatement().then(
       (res) => {
-      this.graduateData = (res as any).data;
-      this.msgs = (res as any).messages;
-      alert(this.isLoading);
-
-      this.isLoading = false;
-      alert(this.isLoading);
-
+        this.graduateData = (res as any).data;
+        this.msgs = (res as any).messages;
+        this.isLoading = false;
         //// console.log(this.graduateData.length);
       }
     );

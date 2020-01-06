@@ -1,10 +1,10 @@
 <div class="main-content">
   <section _ngcontent-fpr-c11="" class="service-single ">
     <div _ngcontent-fpr-c11="" class="container">
-      <h3 _ngcontent-fpr-c11=""> طلب البطاقة الجامعية </h3>
+      <h3 _ngcontent-fpr-c11=""> {{"services.univ_card.title"|translate}} </h3>
       <div _ngcontent-fpr-c11="" class="row">
         <div _ngcontent-fpr-c11="" class=" col-md-5">
-          <p _ngcontent-fpr-c11="">طلب البطاقة الجامعية </p>
+          <p _ngcontent-fpr-c11="">{{"services.univ_card.desc"|translate}}</p>
         </div>
         <!-- <div _ngcontent-fpr-c11="" class=" col-md-6 descr">
         <span _ngcontent-fpr-c11="">مدة الإنجاز : <span _ngcontent-fpr-c11="" class="badge">3 يوم</span></span> &nbsp; &nbsp; &nbsp; &nbsp; <a _ngcontent-fpr-c11="" href="https://seuapps.seu.edu.sa/stdservicesapi/academic_status/academic_status_print?TermCode201610"><i _ngcontent-fpr-c11="" class="ik ik-download"></i></a><a _ngcontent-fpr-c11="" href="#"><i _ngcontent-fpr-c11="" class="ik ik-film"></i></a>
@@ -41,10 +41,10 @@
     </div> -->
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
-      <h3 class="widget-title"> الطلبات السابقة
+      <h3 class="widget-title"> {{"general.request.pre_requests"|translate}}
 
         <button *ngIf="!reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب <i class="ik ik-plus"></i>
+          {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>
     </div>
@@ -54,12 +54,12 @@
         <thead>
 
           <tr>
-            <th scope="col">رقم الطلب</th>
+            <th scope="col">{{"general.request.req_no"|translate}}</th>
 
-            <th scope="col">تاريخ الطلب</th>
-            <th scope="col"> حالة الطلب</th>
+            <th scope="col">{{"general.request.req_date"|translate}}</th>
+            <th scope="col">{{"general.request.req_status"|translate}}</th>
 
-            <th scope="col"> حذف الطلب </th>
+            <th scope="col">{{"general.request.req_delete"|translate}}</th>
 
           </tr>
         </thead>
