@@ -6,7 +6,7 @@
   <div class="modal-dialog" role="document" dir="rtl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب انسحاب من الجامعه</h5>
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> {{"services.withdrow_univ.title"|translate}}</h5>
 
       </div>
       <div class="modal-body">
@@ -15,11 +15,11 @@
           <div class="row ser-block">
             <div class=" col-md-12 col-sm-12">
               <div class="state">
-                <h6>الفرع </h6>
+                <h6>{{"services.withdrow_univ.branch"|translate}} </h6>
 
                 <select required name="branch" #BranchID="ngModel" [(ngModel)]="withdraw.branch" class="form-control"
                   [class.is-invalid]=" withdraw.branch==''">
-                  <option value="">اختر اقرب فرع</option>
+                  <option value="">{{"services.withdrow_univ.choose_branch"|translate}} </option>
                   <option *ngFor="let item of reqData.branches" value="{{item.id}}">{{item.name}}</option>
                 </select>
 
@@ -29,7 +29,7 @@
           <div class="row ser-block">
             <div class=" col-md-12 col-sm-12">
               <div class="state">
-                <h6>رقم الهاتف </h6>
+                <h6>{{"services.withdrow_univ.phone_no"|translate}} </h6>
                 <input required name="mobile" #mobile="ngModel" [(ngModel)]="withdraw.mobile" class="form-control"
                   [class.is-invalid]="withdraw.mobile==null">
 
@@ -43,7 +43,7 @@
           <div class="row ser-block">
             <div class=" col-md-12 col-sm-12">
               <div class="state">
-                <h6>البريد الإلكتروني </h6>
+                <h6>{{"services.withdrow_univ.e-mail"|translate}} </h6>
                 <input email required type="email" name="email" #email="ngModel" [(ngModel)]="withdraw.email"
                   class="form-control" [class.is-invalid]="withdraw.email==''">
               </div>
@@ -52,11 +52,11 @@
           </div>
           <div class="modal-footer">
             <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-              الغاء</button>
+              {{"general.cancel"|translate}}</button>
 
             <button [disabled]="form.invalid || requesting" type="submit" class="btn btn-dark"><i
                 class="fa fa-database"></i>
-              حفظ</button>
+                {{"general.save"|translate}}</button>
           </div>
         </form>
 
