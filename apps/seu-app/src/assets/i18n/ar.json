@@ -420,6 +420,11 @@
             "choose_branch":"اختر اقرب فرع",
             "phone_no":"رقم الهاتف",
             "e-mail":"البريد الإلكتروني"
+        },
+        "master_cancel_course":{
+            "title":"حذف مقرر",
+            "desc":"حذف مقرر",
+            "acceptance_date":"تاريخ الموافقة"
         }
         
     }

@@ -334,6 +334,11 @@
         "choose_branch":"Choose The Nearest Branch",
         "phone_no":"Phone Number",
         "e-mail":"E-mail Address"
+    },
+    "master_cancel_course":{
+        "title":"Delete Course",
+        "desc":"Delete Course",
+        "acceptance_date":"Acceptance Date"
     }
     
 }
