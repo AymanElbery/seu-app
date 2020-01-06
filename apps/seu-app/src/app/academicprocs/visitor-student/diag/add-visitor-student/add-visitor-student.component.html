@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document" dir="rtl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> إضافة طلب</h5>
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"general.request.add_request"|translate}}</h5>
 
       </div>
       <div class="modal-body">
@@ -11,15 +11,15 @@
 
           <div class="widget">
             <div class="widget-header">
-              <h3 class="widget-title">معلومات الجامعة</h3>
+              <h3 class="widget-title">{{"services.visitor_student.college_info"|translate}}</h3>
             </div>
             <div class="row ser-block">
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6>إسم الجامعة المراد الدراسة بها </h6>
+                  <h6>{{"services.visitor_student.desired_college"|translate}} </h6>
                   <select required class="form-control" #UniversityID="ngModel" [(ngModel)]="visitorStudent.university"
                     name="UniversityID" [class.is-invalid]="visitorStudent.university == ''">
-                    <option value=''>اختر الجامعة</option>
+                    <option value=''>{{"services.visitor_student.choose_college"|translate}}</option>
                     <option *ngFor="let un of universitiesList" [value]="un.UN_ID">{{un.UN_NAME}}</option>
                   </select>
 
@@ -28,10 +28,10 @@
               </div>
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6>الفصل الدراسي </h6>
+                  <h6>{{"services.visitor_student.term"|translate}} </h6>
                   <select required class="form-control" #TermID="ngModel" [(ngModel)]="visitorStudent.term"
                     name="TermID" [class.is-invalid]="visitorStudent.term == ''">
-                    <option value=''>اختر الفصل الدراسي</option>
+                    <option value=''>{{"services.visitor_student.choose_term"|translate}}</option>
                     <option *ngFor="let t of termList" [value]="t.id">{{t.value}}</option>
                   </select>
                 </div>
@@ -40,10 +40,10 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6>العام الجامعي </h6>
+                  <h6>{{"services.visitor_student.academic_year"|translate}}</h6>
                   <select required class="form-control" #YearID="ngModel" [(ngModel)]="visitorStudent.year"
                     name="YearID" [class.is-invalid]="visitorStudent.year == ''">
-                    <option value=''>اختر العام الجامعي</option>
+                    <option value=''>{{"services.visitor_student.choose_academic_year"|translate}}</option>
                     <option *ngFor="let y of yearList" [value]="y.id">{{y.value}}</option>
                   </select>
                 </div>
@@ -56,12 +56,12 @@
 
           <div class="widget">
             <div class="widget-header">
-              <h3 class="widget-title">معلومات المقرر المراد دراسته خارج الجامعة</h3>
+              <h3 class="widget-title">{{"services.visitor_student.course_info"|translate}}</h3>
             </div>
             <div class="row ser-block">
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6>إسم المقرر </h6>
+                  <h6>{{"general.course_name"|translate}}</h6>
                   <input type="text" required class="form-control" #CourseName="ngModel"
                     [(ngModel)]="visitorStudent.course_name" name="CourseName"
                     [class.is-invalid]="visitorStudent.course_name == ''">
@@ -71,7 +71,7 @@
               </div>
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6>رمز المقرر الحرفي</h6>
+                  <h6>{{"services.visitor_student.course_alpha_code"|translate}}</h6>
                   <input type="text" required class="form-control" #CourseSymbol="ngModel"
                     [(ngModel)]="visitorStudent.course_symbol" name="CourseSymbol"
                     [class.is-invalid]="visitorStudent.course_symbol == ''">
@@ -82,7 +82,7 @@
 
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6>رمز المقرر الرقمي</h6>
+                  <h6>{{"services.visitor_student.course_number_code"|translate}}</h6>
                   <input type="text" required class="form-control" #CourseCode="ngModel"
                     [(ngModel)]="visitorStudent.course_code" name="CourseCode"
                     [class.is-invalid]="visitorStudent.course_code == ''">
@@ -95,7 +95,7 @@
             <div class="row  ser-block">
               <div class=" col-md-4 col-sm-12">
                 <div class="state">
-                  <h6>عدد ساعات المقرر</h6>
+                  <h6>{{"services.visitor_student.course_hours"|translate}}</h6>
                   <input type="text" required class="form-control" #CourseHours="ngModel"
                     [(ngModel)]="visitorStudent.hours" name="CourseHours"
                     [class.is-invalid]="visitorStudent.hours == 0">
@@ -107,12 +107,10 @@
 
               <div class=" col-md-8 col-sm-12">
                 <div class="state">
-                  <h6>رفع ملف توصيف المقرر</h6>
+                  <h6>{{"services.visitor_student.upload_course_desc"|translate}}</h6>
                   <input name="attachment" id="attachment" type="file" accept="*/*"
                     (change)="handleInputChange($event)" />
-                  <h6>الرجاء رفع ملف توصيف المقرر في ملف من نوع PNG,JIF,JPG,MicrosoftWord,PDF أو BMP حجم الملف يجب
-                    ألا
-                    يزيد عن 5 ميجا بايت</h6>
+                  <h6>{{"services.visitor_student.file_size"|translate}}</h6>
                 </div>
 
               </div>
@@ -122,15 +120,15 @@
 
           <div class="widget">
             <div class="widget-header">
-              <h3 class="widget-title">معلومات خاصة للمقرر المكافئ في الجامعة</h3>
+              <h3 class="widget-title">{{"services.visitor_student.equivalent_course"|translate}}</h3>
             </div>
             <div class="row  ser-block">
               <div class=" col-md-6 col-sm-12">
                 <div class="state">
-                  <h6>إختر المادة</h6>
+                  <h6>{{"services.visitor_student.choose_subject"|translate}}</h6>
                   <select required class="form-control" #CourseID="ngModel" [(ngModel)]="visitorStudent.course_equal"
                     name="CourseID" [class.is-invalid]="visitorStudent.course_equal == ''">
-                    <option value=''>اختر المادة</option>
+                    <option value=''>{{"services.visitor_student.choose_subject"|translate}}</option>
                     <option *ngFor="let c of coursesList" [value]="c.id">{{c.value}}</option>
                   </select>
 
@@ -144,7 +142,7 @@
 
           <div class="widget">
             <div class="widget-header">
-              <h3 class="widget-title">إقرار و تعهد</h3>
+              <h3 class="widget-title">{{"services.visitor_student.commitment"|translate}}</h3>
             </div>
             <div class="row  ser-block">
               <div class=" col-md-12 col-sm-12">
@@ -167,7 +165,7 @@
             <div class="row  ser-block">
               <div class=" col-md-12 col-sm-12">
                 <div class="state">
-                  <h6>أوافق</h6>
+                  <h6>{{"services.visitor_student.accept"|translate}}</h6>
                   <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel"
                     [(ngModel)]="approves.approve" name="Approve">
 
@@ -183,11 +181,11 @@
 
           <div class="modal-footer">
             <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-              الغاء</button>
+              {{"general.cancel"|translate}}</button>
 
             <button [disabled]="(form.invalid || !approves.approve)" type="submit" class="btn btn-dark"><i
                 class="fa fa-database"></i>
-              حفظ</button>
+                {{"general.save"|translate}}</button>
           </div>
         </form>
 

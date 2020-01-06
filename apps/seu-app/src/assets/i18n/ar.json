@@ -386,6 +386,30 @@
         "univ_card":{
             "title":"طلب البطاقة الجامعية",
             "desc":"طلب البطاقة الجامعية"
+        },
+        "visitor_student":{
+            "title":"طلب الدراسة كطالب زائر",
+            "desc":"طلب الدراسة كطالب زائر",
+            "procedure":"الإجراء",
+            "college_info":"معلومات الجامعة",
+            "desired_college":"إسم الجامعة المراد الدراسة بها",
+            "choose_college":"اختر الجامعه",
+            "term":"الفصل الدراسي",
+            "choose_term":"اختر الفصل الدراسي",
+            "academic_year":"العام الجامعي",
+            "choose_academic_year":"اختر العام الجامعي",
+            "course_info":"معلومات المقرر المراد دراسته خارج الجامعة",
+            "course_alpha_code":"رمز المقرر الحرفي",
+            "course_number_code":"رمز المقرر الرقمى",
+            "course_hours":"عدد ساعات المقرر",
+            "upload_course_desc":"رفع ملف توصيف المقرر",
+            "file_size":"الرجاء رفع ملف توصيف المقرر في ملف من نوع PNG,JIF,JPG,MicrosoftWord,PDF أو BMP حجم الملف يجب
+            ألا
+            يزيد عن 5 ميجا بايت",
+            "equivalent_course":"معلومات خاصة للمقرر المكافئ في الجامعة",
+            "choose_subject":"اختر المادة",
+            "commitment":"إقرار و تعهد",
+            "accept":"أوافق"
         }
         
     }
