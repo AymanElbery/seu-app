@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> طلب تغيير البرنامج </h5>
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.change_major.program_change"|translate}}</h5>
 
       </div>
       <div class="modal-body">
@@ -14,7 +14,7 @@
                 <div class="row ser-block">
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> اختر التخصص المطلوب </h6>
+                      <h6>{{"services.change_major.required_major"|translate}}</h6>
                       <select name="major" #major="ngModel" [(ngModel)]="course.major" class="form-control"
                         [class.is-invalid]="course.major==''">
                         <option *ngFor="let item of reqData.majors" value="{{item.key}}">{{item.value}}</option>
@@ -26,7 +26,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> رقم الجوال </h6>
+                      <h6>{{"services.change_major.mobile"|translate}}</h6>
                       <input name="mobile" #mobile="ngModel" [(ngModel)]="course.mobile" class="form-control">
                     </div>
                     <div class="progress progress-sm">
@@ -35,7 +35,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> سبب التحويل </h6>
+                      <h6>{{"services.change_major.change_reason"|translate}}</h6>
                       <textarea name="reason" #reason="ngModel" [(ngModel)]="course.reason" class="form-control">
                                      </textarea>
                       <div class="progress progress-sm">
@@ -45,7 +45,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> السجل الأكاديمي</h6>
+                      <h6>{{"services.change_major.record"|translate}}</h6>
                       <div class="custom-file">
                         <input name="attachment" id="attachment" type="file" accept="*/*"
                           (change)="handleInputChange($event)" />
@@ -60,7 +60,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
-                      <h6> وثيقة البكالوريوس </h6>
+                      <h6>{{"services.change_major.doc"|translate}}</h6>
                       <div class="custom-file">
                         <input name="attachment2" id="attachment2" type="file" accept="*/*"
                           (change)="handleInputChangeCopy($event)" />
@@ -76,7 +76,7 @@
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
                       <mat-checkbox (change)=changeOutside($event) #testcheck>
-                        <h6> هل حصلت على البكالوريس من خارج المملكة ؟ </h6>
+                        <h6> {{"services.change_major.out_kingdom"|translate}}</h6>
 
                       </mat-checkbox>
 
@@ -87,7 +87,7 @@
                   </div>
                   <div class="col-md-12 col-sm-12" *ngIf="testcheck.checked">
                     <div class="state">
-                      <h6> معادلة شهادة البكالوريس للوثائق من خارج المملكة</h6>
+                      <h6>{{"services.change_major.equalize"|translate}} </h6>
                       <div class="custom-file">
                         <input name="attachment" id="attachment" type="file" accept="*/*"
                           (change)="handleInputChangeOut($event)" />
@@ -111,8 +111,8 @@
             <div style="margin-top: 10px;">
               <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
                 <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i
-                    class="ik ik-x"></i> الغاء</button>
-                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> حفظ</button>
+                    class="ik ik-x"></i> {{"general.cancel"|translate}}</button>
+                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
               </div>
             </div>
           </div>

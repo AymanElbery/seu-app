@@ -201,7 +201,15 @@
             "change_major_req":"Change Major Request",
             "alert":"Alert:",
             "alert_content":"Chance for changing Major is available only onece during studying in university",
-            "major_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
+            "major_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request",
+            "accept_date":"Acceptance Date",
+            "mobile":"Mobile Phone",
+            "change_reason":"Change Reason",
+            "record":"Academic Record",
+            "doc":"BSC Document",
+            "out_kingdom":"Did You Have BSC Outside Kingdom?",
+            "equalize":"Equalize BSC Certificate from Outside Kingdom",
+            "program_change":"Change Programm Request"
         },
         "change_branch":{
             "title":"Change Branch",
@@ -213,7 +221,9 @@
             "choose_branch":"Choosr Branch",
             "alert":"Alert:",
             "alert_content":"Requests are accepted during this period and action will be taken after announcing final exams grades",
-            "branch_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
+            "branch_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request",
+            "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
+            "reason":"Reason For Change"
 
         },
         "course-equalize":{
@@ -424,7 +434,13 @@
         "branch":"Branch",
         "choose_branch":"Choose The Nearest Branch",
         "phone_no":"Phone Number",
-        "e-mail":"E-mail Address"
+        "e-mail":"E-mail Address",
+        "alert":"Alert:",
+        "alert_content":"Student can cancel this request only during 48 hours starting from applying to the request.I Want to 
+            Withdraw My File utterlyand I have no right to ask for re-enrollment as well as asking for fees that i paid for
+            univerity in case of my withdrawal date has exceeded the univerity one",
+        "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
+        "personal_mail":"E-mail Address(Non Academic)"
     },
     "master_cancel_course":{
         "title":"Cancel Course",
@@ -451,6 +467,15 @@
         "choose_count":"Choose Number Of Terms",
         "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
         "reason":"Execuse Reason"
+    },
+    "master_payment":{
+        "title":"Fees Pay",
+        "desc":"Fees Pay"
+
+    },
+    "medical_report":{
+        "title":"Medical Report Request",
+        "desc":"Medical Report Request"
     }
     
 }
