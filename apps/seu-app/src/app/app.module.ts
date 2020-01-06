@@ -49,6 +49,7 @@ import { GlobalService } from './shared/services/global.service';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { OwlModule } from 'ngx-owl-carousel';
 import { AppTransModule } from './app.trans.module';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 
 
 @NgModule({
@@ -91,6 +92,8 @@ import { AppTransModule } from './app.trans.module';
     , UserService
     , PrintService
     , HomeService
+    ,{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+
   ],
   exports: [DownloadPrintDirective, ExternalLinkDirective],
   bootstrap: [AppComponent]
