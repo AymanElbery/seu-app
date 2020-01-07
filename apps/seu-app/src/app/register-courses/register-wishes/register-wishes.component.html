@@ -6,10 +6,10 @@
 
   <section class="service-single">
     <div class="container">
-      <h3> رغبات التسجيل للمستجدين</h3>
+      <h3>   {{"menu.registerwishesnew"|translate}}  </h3>
       <div class="row">
         <div class=" col-md-5">
-          <p>رغبات التسجيل للمستجدين </p>
+          <p>{{"menu.registerwishesnew"|translate}}   </p>
         </div>
         <!-- <div class=" col-md-6 descr">
           <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -40,7 +40,7 @@
 
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
-      <h3 class="widget-title">بيانات الطالب / الطالبة</h3>
+      <h3 class="widget-title">  {{"general.student_data"|translate}} </h3>
     </div>
 
 
@@ -49,7 +49,7 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>اسم الطالب / الطالبة </h6>
+              <h6> {{"general.female_or_male_name"|translate}}  </h6>
               <h5>{{reqData.student_name}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -58,7 +58,7 @@
           </div>
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>رقم الطالب / الطالبة </h6>
+              <h6>{{"general.student_id"|translate}}  </h6>
               <h5>{{reqData.student_id}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -71,7 +71,7 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>الكلية </h6>
+              <h6>{{"general.faculty"|translate}} </h6>
               <h5>{{reqData.colledge}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -80,7 +80,7 @@
           </div>
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>التخصص </h6>
+              <h6>{{"general.major"|translate}} </h6>
               <h5>{{reqData.major}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -93,7 +93,7 @@
         <div class="row  ser-block">
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>الحالة الأكاديمية </h6>
+              <h6>{{"menu.academicstatus"|translate}}  </h6>
               <h5>{{reqData.academic_status}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -102,7 +102,7 @@
           </div>
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>فرع الدراسة </h6>
+              <h6>{{"general.branch"|translate}}   </h6>
               <h5>{{reqData.branch}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -151,8 +151,10 @@
             <div *ngIf="reqData.can_add_new_request" class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6> <br /> </h6>
-                <button type="submit" [disabled]="requesting" class="btn btn-dark"><i class="fa fa-database"></i> ارسال
-                  الطلب</button>
+                <button type="submit" [disabled]="requesting" class="btn btn-dark"><i class="fa fa-database"></i> 
+                  ارسال
+                  الطلب
+                </button>
 
               </div>
               <!--  <div class="progress progress-sm">

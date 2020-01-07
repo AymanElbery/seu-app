@@ -2,10 +2,10 @@
 
   <section _ngcontent-fpr-c11="" class="service-single ">
     <div _ngcontent-fpr-c11="" class="container">
-      <h3 _ngcontent-fpr-c11=""> طلب التدريب الميداني </h3>
+      <h3 _ngcontent-fpr-c11=""> {{"services.training_request.title"|translate}} </h3>
       <div _ngcontent-fpr-c11="" class="row">
         <div _ngcontent-fpr-c11="" class=" col-md-5">
-          <p _ngcontent-fpr-c11=""> طلب التدريب الميداني </p>
+          <p _ngcontent-fpr-c11=""> {{"services.training_request.desc"|translate}} </p>
         </div>
       </div>
     </div>
@@ -39,10 +39,9 @@
       </div> -->
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
-      <h3 class="widget-title"> الطلبات السابقة
-
+      <h3 class="widget-title"> {{"general.request.pre_requests"|translate}}
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب <i class="ik ik-plus"></i>
+          {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>
     </div>
@@ -51,11 +50,11 @@
         <thead>
 
           <tr>
-            <th scope="col">اسم الجهة</th>
-            <th scope="col">تاريخ الطلب</th>
-            <th scope="col">حالة الطلب</th>
-            <th scope="col"> طباعة الطلب</th>
-            <th scope="col"> حذف الطلب </th>
+            <th scope="col">{{"services.training_request.destination"|translate}}</th>
+            <th scope="col">{{"general.request.req_date"|translate}}</th>
+            <th scope="col">{{"general.request.req_status"|translate}}</th>
+            <th scope="col">{{"general.request.req_print"|translate}}</th>
+            <th scope="col">{{"general.request.req_delete"|translate}}</th>
 
           </tr>
         </thead>
@@ -90,17 +89,14 @@
       <div class="row">
         <ul>
           <ol>
-            <li>القبول مشروط باجتيازك لـ 86 ساعة علماً بأنه لن تتمكن من التدريب ويعتبر تسجيلك في التدريب ملغي الا
-              باجتياز 86 ساعة وفي حال عدم اجتيازك لـ 86 ساعة</li>
-            <li>
-              يقوم الطالب بتعبئة خطاب التدريب ونماذج التسجيل للتدريب العملي
-              ( <a href="#">بالعربي</a> و
-              <a href="#">English</a>)
-              ونموذج معلومات الطالب
-              ( <a href="#">من هنا </a>) </li>
+            <li>{{"services.training_request.condition"|translate}}</li>
+            <li>{{"services.training_request.text"|translate}}
+               <a href="#">{{"general.ar_language"}}</a>
+              <a href="#">{{"general.en_language"}}</a>
+          {{"services.training_request.info"|translate}}
+              <a href="#"> {{"services.training_request.here"|translate}}</a>) </li>
 
-            <li> بعد الانتهاء من تعبئة النماذج وختمها أمل إعادة ارسالها علي البريد الالكتروني الخاص بالتدريب الصيفي
-              cci.spt@seu.edu.sa </li>
+            <li> {{"services.training_request.training_mail"|translate}} </li>
           </ol>
         </ul>
       </div>

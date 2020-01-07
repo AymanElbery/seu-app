@@ -8,7 +8,7 @@
   <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
     <div class="widget">
       <div class="widget-header">
-        <h3 class="widget-title"> تسجيل طلب</h3>
+        <h3 class="widget-title">   {{"services.reg.addreq"|translate}}</h3>
       </div>
 
       <section class="ser-state">
@@ -16,7 +16,7 @@
           <div class="row ser-block">
             <div class=" col-md-6 col-sm-12">
               <div class="state">
-                <h6>الكلية </h6>
+                <h6>{{"general.faculty"|translate}} </h6>
                 <select required class="form-control" #CollegeID="ngModel" [(ngModel)]="registerationHelper.colledge"
                   name="College" [class.is-invalid]="registerationHelper.colledge == ''" #t
                   (change)="collegeCourses(t.value)">
@@ -29,11 +29,11 @@
             </div>
             <div class=" col-md-6 col-sm-12">
               <div class="state">
-                <h6>المقررات </h6>
+                <h6>{{"services.reg.course"|translate}} </h6>
                 <select required class="form-control" #CourseID="ngModel" [(ngModel)]="registerationHelper.course"
                   name="CourseID" [class.is-invalid]="registerationHelper.course == ''" #c
                   (change)="courseDepartments(c.value)">
-                  <option value=''>اختر المقرر</option>
+                  <option value=''>{{"services.reg.course"|translate}} </option>
                   <option *ngFor="let course of courses" [value]="course.CRS_CODE">{{course.CRSE_TITLE}}</option>
                 </select>
               </div>
@@ -45,10 +45,10 @@
           <div class="row ser-block">
             <div class=" col-md-6 col-sm-12">
               <div class="state">
-                <h6>الشعب </h6>
+                <h6>{{"services.reg.depart"|translate}} </h6>
                 <select required class="form-control" #DeptID="ngModel" [(ngModel)]="registerationHelper.department"
                   name="DeptID" [class.is-invalid]="registerationHelper.department == ''">
-                  <option value=''>اختر الشعبة</option>
+                  <option value=''>{{"services.reg.depart"|translate}} </option>
                   <option *ngFor="let dept of departments" [value]="dept.CRN">{{dept.BLDG_DESC}}</option>
                 </select>
               </div>
@@ -56,7 +56,7 @@
             </div>
             <div class=" col-md-6 col-sm-12">
               <div class="state">
-                <h6>رسالة الخطأ </h6>
+                <h6>{{"services.reg.errmsg"|translate}}  </h6>
                 <select required class="form-control" #ErrorMsgID="ngModel" [(ngModel)]="registerationHelper.message"
                   name="ErrorMsgID" [class.is-invalid]="registerationHelper.message == ''">
                   <option *ngFor="let msg of errorMessages" [value]="msg.id">{{msg.value}}</option>
@@ -70,7 +70,7 @@
           <div class="row  ser-block">
             <div class=" col-md-12 col-sm-12">
               <div class="state">
-                <h6>ملاحظات </h6>
+                <h6>{{"services.reg.notes"|translate}} </h6>
                 <textarea [class.is-invalid]="form.invalid" type="text" class="form-control"
                   [(ngModel)]="registerationHelper.comment" #NotesID="ngModel" name="NotesID" required></textarea>
 
@@ -85,10 +85,10 @@
       <div class="modal-body">
         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
           <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-            الغاء</button>
+            {{"general.cancel"|translate}}</button>
 
           <button [disabled]="form.invalid" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
-            حفظ</button>
+            {{"general.save"|translate}}</button>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 {
     "general": {
         "print": "Print",
+        "note": "note",
         "delete_confirm": "Are you sure?",
         "req_no":"Request Number",
         "pre_requesr":"Show Previous Requests",
@@ -79,7 +80,86 @@
     "menu": {
         "myservices": "My Services",
         "ugservices": "Undergradulate",
-        "grservices": "Master"
+        "grservices": "Master",
+        "userData": "Student data",
+        "academic_status":  "Academic status",
+        "termexecuse": "Cancel course  ",
+        "studypostpone": "Study postpone  ",
+        "withdrawal": "Withdraw from university ",
+        "acrequests": "Academic request",
+        "examattendacecertificateapp": "Exam Attendace  Approval",
+        "examattendacecertificate": " Exam attendance Certificate",
+        "idcertificate": " Certificate ID",
+        "printCert": "Print certificate ",
+        "academicrecord": "Academic record",
+        "academicstatus": "Academic status ",
+        "payment": "Fees payment ",
+        "financeaff": " Finiance affair",
+        "otherrequests": " Other requests",
+        "changebranch": "Change branch ",
+        "changecourse": "Chnage major ",
+        "personalid": "University ID ",
+        "absencequery": " Absence Query ",
+        "graduateprofile": " Graduate Profile",
+        "affairs": "Academic affairs ",
+        "status": "Academic status ",
+        "certificate": "Certificate ID ",
+        "record": "Academic record ",
+        "graduationstatment": "Graduate statement ",
+        "procedures": "Academic procedure ",
+        "withdrawuniv": "Withdraw from university  ",
+        "execuse": " Term postpone",
+        "summer": "  withdraw  from summer course",
+        "reenrol": "re enroll ",
+        "cancelcourse": "Cancel course ",
+        "equalize": "Course equalize ",
+        "eequalize": "English equalize   ",
+        "changemajor": "change major ",
+        "changerequest": "chnage branch ",
+        "lecexecuse": "lectures execuses  ",
+        "examsexecuses": "upload exam execuses  ",
+        "objectexam": "  finial exam result objection",
+        "lectabs": " Absence query ",
+        "visitorstudent": "   vistor student requet",
+        "registerwishes": " register courses",
+        "registerwishesnew": "righer courses wishes  ",
+        "fees": "  fees payment statement",
+        "feesexception": "Tuuition fees excemption   ",
+        "FEEPAY": "fees payment ",
+        "EXAMAFF": "Exam affairs ",
+        "EXAMATT": "Exam Certificate  ",
+        "EXAMAPP": "Exam attendance approve   ",
+        "EXAMEXEC": "upload exam execuses  ",
+        "OTHERREQ": " Other requests",
+        "MED": "  Medical report",
+        "UID": "  University ID",
+        "GRADUATEINFO": "Graduate profile ",
+        "PublicServices": "Public services ",
+         "email":"Email ",
+         "ALWAFI":" Alwafi",
+         "Attednace":"Attendace ",
+         "Support":" Support",
+         "BANNER":"Banner",
+          "SYSTEM":"System",
+          "CAL":" Eduaction calender",
+          "EVENTSMANAGE":"  Events manegment",
+          "RESGISTERCOURSES":"Register wishes ",
+          "EDUSYSTEMS":" Eduaction systems insturctions ",
+           "StdLaw":"Student rights ",
+           "StdSRV":"Students self service   ",
+           "KnowMng":" Knowlege source managment   ",
+           "Reports":"Reports     ",
+           "News":"News     ",
+           "ADS":"Ads",
+           "Events":"Events",
+           "BBREPORTS":" Black Board Reports",
+           "BADAL":" University education allowance",
+           "BAWABA":"Deanship of the Scientific Research Electronic Portal",
+           "hello":"hello",
+           "logout":"log out ",
+           "not":"notifications ",
+           "notfound":"not found "
+
     },
     "services": {
         "academic_status": {
@@ -121,7 +201,15 @@
             "change_major_req":"Change Major Request",
             "alert":"Alert:",
             "alert_content":"Chance for changing Major is available only onece during studying in university",
-            "major_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
+            "major_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request",
+            "accept_date":"Acceptance Date",
+            "mobile":"Mobile Phone",
+            "change_reason":"Change Reason",
+            "record":"Academic Record",
+            "doc":"BSC Document",
+            "out_kingdom":"Did You Have BSC Outside Kingdom?",
+            "equalize":"Equalize BSC Certificate from Outside Kingdom",
+            "program_change":"Change Programm Request"
         },
         "change_branch":{
             "title":"Change Branch",
@@ -133,7 +221,9 @@
             "choose_branch":"Choosr Branch",
             "alert":"Alert:",
             "alert_content":"Requests are accepted during this period and action will be taken after announcing final exams grades",
-            "branch_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request"
+            "branch_cancellation_validity":"Student can cancel this request only during 48 hours starting from applying to the request",
+            "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
+            "reason":"Reason For Change"
 
         },
         "course-equalize":{
@@ -175,7 +265,8 @@
             "choose_week":"Choose Week",
             "define_date":"Define Date",
             "absence_cause":"Absence Reason",
-            "file":"File"
+            "file":"File",
+            "file_size":"Upload Files that Prove Your Absence's Reasons in One PDF File With Size Less than 5MB"
         },
         "missing_card":{
             "title":"Lost Card Replacment Request",
@@ -206,6 +297,7 @@
         },
         "exam": {
             "execreq":" upload exam execuses",
+            "sch":" exam schedule",
             "exec": "  upload exam execuses requests   ",
             "choosecourse": "choose course   ",
             "coursename": "course name  ",
@@ -277,7 +369,12 @@
         "title":"Term Postpone",
         "desc":"Term Postpone",
         "postpone_req":"College Postpone Request",
-        "cause":"Reason"
+        "cause":"Reason",
+        "alert":"Alert:Student can cancel this request only during 48 hours starting from applying to the request",
+        "desire":"I want to Postpone Studying Starting From",
+        "period":"Postpone Period(in Terms)",
+        "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
+        "reason":"Reason"
     },
     "re-enrollment":{
         "title":"Re-enrollment",
@@ -285,7 +382,9 @@
         "re-enroll_request":"Re-enrollment Request",
         "alert":"Alert:Student can cancel this request only during 48 hours starting from applying to the request",
         "cause":"What are The Reasons for Your Absence?",
-        "file":"Upload Proof File(System Accept PDF Files with Size Less Than 5MB)"
+        "file":"Upload Proof File(System Accept PDF Files with Size Less Than 5MB)",
+        "prove":"Do you Have a Proof?"
+
     },
     "summer_withdraw":{
         "title":"Excuse for Summer Term",
@@ -335,7 +434,11 @@
         "branch":"Branch",
         "choose_branch":"Choose The Nearest Branch",
         "phone_no":"Phone Number",
-        "e-mail":"E-mail Address"
+        "e-mail":"E-mail Address",
+        "alert":"Alert:",
+        "alert_content":"Student can cancel this request only during 48 hours starting from applying to the request.I Want to  Withdraw My File utterlyand I have no right to ask for re-enrollment as well as asking for fees that i paid for  univerity in case of my withdrawal date has exceeded the univerity one",
+        "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
+        "personal_mail":"E-mail Address(Non Academic)"
     },
     "master_cancel_course":{
         "title":"Cancel Course",
@@ -352,6 +455,121 @@
         "choose_exam_type":"Choose Exam Type",
         "absence_reason":"Reasons For Exam Absence",
         "upload_proof":"Upload Files that Prove Your Exam Absence's Reasons"
+    },
+    "term_execuse_master":{
+        "title":"Cancel Courses Request(Term Execuse)",
+        "desc":"Cancel Courses Request(Term Execuse)",
+        "alert":"Student can cancel this request only during 48 hours starting from applying to the request",
+        "desire":"I want to Cancel Studying Starting From First Term for 1440/1441 Year",
+        "count":"Number Of Cancelled Terms",
+        "choose_count":"Choose Number Of Terms",
+        "mobile":"Mobile Number:(Ex:05xxxxxxxx)",
+        "reason":"Execuse Reason"
+    },
+    "master_payment":{
+        "title":"Fees Pay",
+        "desc":"Fees Pay"
+
+    },
+    "graduate":
+    {
+        "fullname":"الإسم الرباعي باللغة العربية كما هو في بطاقة الأحوال",
+        "graduatedata":"المعلومات الشخصية للخريج",
+        "fullnameeng":"الاسم رباعي باللعه الانجليزية كما بالجواز",
+        "gender":"الجنس",
+        "nationality":"الجنسية",
+        "scdegree":"الدرجه العلميه",
+         "gpersonal":"المعلومات الشخصية للخريج",
+          "major":"التخصص",
+        "branch":"الفرع",
+        "rate":"المعدل",
+        "mobileno":"رقم الجوال",
+        "uemail":" البريد الجامعي",
+        "stdpic":"صورة شخصية 4*6 للطلاب فقط",
+        "CV":"السيرة الذاتية",
+         "cjob":"الحالة الوظيفية",
+        "jondes":"بيان العمل ان وجد",
+        "empsector":"قطاع التوظيف ",
+        "jobyear":" سنة التوظيف",
+        "jobcom":"جهة العمل",
+        "upgrade":"هل حصلت على الترقية أثناء الدراسة ",
+        "upgradeyr":"سنة الحصول على الترقية",
+        "jobplace":"مقر العمل",
+        "jobownerdata":"بيانات رب العمل إن وجد",
+        "oname":"الاسم",
+         "ojob":"المسمى الوظيفي",
+        "omobile":"الجوال",
+        "email":"البريد الالكتروني"
+
+    },
+    "medical_report":{
+        "title":"Medical Report Request",
+        "desc":"Medical Report Request"
+    },
+    "student_info":{
+        "title":"Graduate Data",
+        "desc":"Graduate Data",
+        "sex":"Sex",
+        "nationality":"Nationality",
+        "qualification":"Qualification",
+        "ar_name":"Name In Arabic",
+        "en_name":"Name In English",
+        "phone_no":"Mobile Number",
+        "grad_term":"Graduation Term",
+        "choose_grad_term":" choose graduate term",
+        "cv":" CV",
+        "pic":" Personal pic for student 4*6  ",
+        "job_status":"job status ",
+        "choose_job_status":" choose job status",
+        "sector":" employment sector",
+        "choose_sector":"choose employment sector  ",
+        "before_or_after":"befor and after study    ",
+        "job_year":"employment year ",
+        "job_side":"employment side ",
+        "job_title":"job title ",
+        "work_address":"work address ",
+        "choose_work_address":"choose work adress  ",
+        "employer":"  Job owner data  :",
+        "obligation":"Confirm that the information entered is correct, as the graduation document will be printed according to the information you entered"
+    },
+    "training_request":{
+        "title":"Field training request",
+        "desc":"Field training request  ",
+        "destination":"destination ",
+        "condition":"Admission is conditional on your passing for 86 hours, knowing that you will not be able to train. Your registration in training is considered canceled for 86 hours and if you do not pass 86 hours",
+        "text":"The student will complete the training letter and registration forms for practical training",
+        "info":"  Student data form",
+        "here":"from here ",
+        "training_mail":"After completing filling out the forms and hoping to re-send them to the summer training email cci.spt@seu.edu.sa",
+        "alert":"alert",
+        "alert_content":"Please read the conditions for accepting your request for field training .. Admission is conditional on your passing for 86 hours, knowing that you will not be able to train and your registration for training is considered canceled if they do not pass. ",
+         "destination_letter":"The name of the entity you wish to address the letter to ",
+        "practical_train":"Field and practical training request"
+    },
+    "reg":{
+        "choosewishe":"choose wishes ",
+"doyou25":"do you want 2 days start from 5 pm",
+"perioddays":" day and rest periods",
+"sendrequest":"send request ",
+"rwishes":"your wishes",
+"orderwishes":"order wishes ",
+"dayperiod":" day and period ",
+"orderdate":"request date ",
+"cancelorder":"cancel requet ",
+"helpreg":"help register ",
+"sch":"study schedule ",
+"course":"Course",
+"day":"day",
+"time":"time",
+"errmsg":" error message",
+"reqdate":"request date ",
+"status":"status",
+"notes":"notes",
+"cancel":"cancel request ",
+"cantcancel":"  can not be deleted",
+"depart":"departments",
+"addreq":"register request "
+
     }
     
 }

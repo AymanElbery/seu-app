@@ -2,10 +2,10 @@
   <section class="service-single">
 
     <div class="container">
-      <h3> رفع الاعذار للمحاضرات </h3>
+      <h3>{{"services.lecture_execuse.title"|translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
-          <p> رفع الاعذار للمحاضرات </p>
+          <p>{{"services.lecture_execuse.desc"|translate}}</p>
         </div>
         <!-- <div class=" col-md-6 descr">
                 <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -48,9 +48,9 @@
     <div class="widget-header">
 
 
-      <h3 class="widget-title"> الطلبات السابقة
+      <h3 class="widget-title">{{"general.request.pre_requests"|translate}}
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          اضافة طلب <i class="ik ik-plus"></i>
+          {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
         </button>
 
       </h3>
@@ -60,18 +60,18 @@
         <thead>
           <tr>
           <tr>
-            <th scope="col">رقم الطلب</th>
+            <th scope="col">{{"general.request.req_no"|translate}}</th>
 
-            <th scope="col"> CRN</th>
-            <th scope="col"> المقرر </th>
-            <th scope="col"> انشاء الطلب </th>
-            <th scope="col"> تاريخ الغياب </th>
+            <th scope="col"> {{"general.crn"|translate}}</th>
+            <th scope="col"> {{"general.course_name"|translate}} </th>
+            <th scope="col">{{"services.lecture_execuse.create_req"|translate}}</th>
+            <th scope="col">{{"services.lecture_execuse.absence_date"|translate}}</th>
 
-            <th scope="col"> اسبوع الغياب</th>
-            <th scope="col"> نوع المحاضره</th>
-            <th scope="col"> حالة الطلب </th>
+            <th scope="col">{{"services.lecture_execuse.absence_week"|translate}}</th>
+            <th scope="col">{{"services.lecture_execuse.lecture_type"|translate}}</th>
+            <th scope="col"> {{"general.request.req_status"|translate}}</th>
             <!-- <th scope="col"> حذف الطلب </th> -->
-            <th scope="col"> ملف العذر </th>
+            <th scope="col">{{"services.lecture_execuse.execuse_file"|translate}}</th>
 
 
           </tr>
@@ -98,7 +98,7 @@
             <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
  -->
             <td><a class="btn btn-primary" [href]="print(it.request_number)"><span class="ik ik-printer"></span>
-                Print</a></td>
+              {{"general.en_print"|translate}}</a></td>
 
 
           </tr>
