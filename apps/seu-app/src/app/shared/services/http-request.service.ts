@@ -3,6 +3,7 @@ import { ConfigService } from './config.service';
 import { config } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalBaseService } from './global-base.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root',
@@ -10,22 +11,22 @@ import { GlobalBaseService } from './global-base.service';
 export class HttpRequestService {
 
 
-  constructor(private http: HttpClient, private configService: ConfigService, private globalService: GlobalBaseService) { }
+  constructor(private translate: TranslateService, private http: HttpClient, private configService: ConfigService, private globalService: GlobalBaseService) { }
 
 
   private createRequestHeader() {
 
-   // const sid = localStorage.getItem('sid');
-     const sid = this.globalService.getSID();
+    // const sid = localStorage.getItem('sid');
+    const sid = this.globalService.getSID();
 
-     const headers = new HttpHeaders({
+    const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Session-ID': sid
 
     });
 
     //// console.log(headers);
-     return headers;
+    return headers;
   }
 
   private createAuthRequestHeader(toekn) {
@@ -38,15 +39,19 @@ export class HttpRequestService {
     return headers;
   }
 
-  GetRequest(path: string) {
-
-    const url = this.configService.getApiURI() + '/' + path;
+  GetRequest(path: string,addlng=true) {
+    let url = this.configService.getApiURI() + '/' + path;
+    if(addlng){
+      let langString = (path.indexOf("?") == -1 ? "?" : "&") + 'lang=' + this.translate.currentLang;
+      url += langString;
+    }
     //// console.log('url:' + url);
     //  let headers= new Headers();
     // headers.append('Content-Type', 'application/json');
     const headers = this.createRequestHeader();
 
     // let options = new RequestOptions({ headers: headers });
+
     return this.http.get(url, { headers });
   }
   GetFullUrlRequest(path: string) {
