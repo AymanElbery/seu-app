@@ -3,128 +3,129 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.object_exam.add_objection"|translate}}
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.object_exam.add_objection"|translate}}
         </h5>
-
       </div>
-      <div class="modal-body">
-        <form #form="ngForm" autocomplete="off" (submit)="onSubmit()" class="mt-20">
-          <div class="main-content">
-            <section class="ser-state">
-              <div class="container">
-                <div class="row ser-block">
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6>{{"services.object_exam.choose_curriculum"|translate}}</h6>
-                      <div class="table-responsive">
-                        <table class="table table-striped table-bordered">
-                          <thead>
-                            <tr>
-                              <th scope="col">{{"services.object_exam.curriculum_name"|translate}}</th>
-                              <th scope="col">{{"services.object_exam.teacher_name"|translate}}</th>
-                              <th scope="col"> </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr *ngFor="let it of exam.exams;let i=index;">
-                              <td>{{it.CRSE_TITLE}}</td>
-                              <td> <input name="teacherName" class="form-control col-md-6" #TeacherID="ngModel"
-                                  (change)="changeStatus(it,$event)" [(ngModel)]="it.teacher" name="Teacher">
-                              </td>
-                              <td>
-                                <input type="checkbox" name="chkCourse" [(ngModel)]="it.checekd"
-                                  (change)="changeStatus(it,$event)" #chkCourse>
-                              </td>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit()" class="mt-20">
+        <div class="modal-body">
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.object_exam.choose_curriculum"|translate}}</h6>
+                    <div class="table-responsive">
+                      <table class="table table-striped table-bordered">
+                        <thead>
+                          <tr>
+                            <th scope="col">{{"services.object_exam.curriculum_name"|translate}}</th>
+                            <th scope="col">{{"services.object_exam.teacher_name"|translate}}</th>
+                            <th scope="col"> </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let it of exam.exams;let i=index;">
+                            <td>{{it.CRSE_TITLE}}</td>
+                            <td> <input name="teacherName" class="form-control col-md-6" #TeacherID="ngModel"
+                                (change)="changeStatus(it,$event)" [(ngModel)]="it.teacher" name="Teacher">
+                            </td>
+                            <td>
+                              <input type="checkbox" name="chkCourse" [(ngModel)]="it.checekd"
+                                (change)="changeStatus(it,$event)" #chkCourse>
+                            </td>
 
-                            </tr>
+                          </tr>
 
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
-
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6> {{"services.object_exam.deposite"|translate}} </h6>
-                      <select name="feesAmount" #feesAmount="ngModel" [(ngModel)]="exam.fees_amount"
-                        class="form-control" [class.is-invalid]="exam.fees_amount==''">
-                        <option *ngFor="let item of reqData.amounts" value="{{item.id}}">{{item.value}}</option>
-                      </select>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6> {{"services.object_exam.bank"|translate}}</h6>
-                      <select name="bank" #BankID="ngModel" [(ngModel)]="exam.bank" class="form-control"
-                        [class.is-invalid]="exam.bank==0">
-                        <option *ngFor="let item of reqData.bank_names" value="{{item.id}}">{{item.value}}</option>
-                      </select>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6> {{"services.object_exam.account_no"|translate}}</h6>
-                      <select name="account_number" [(ngModel)]="exam.account_number" class="form-control"
-                        [class.is-invalid]="exam.account_number==''">
-                        <option *ngFor="let item of reqData.bank_accounts" value="{{item.id}}">{{item.value}}</option>
-                      </select>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6> {{"services.object_exam.reasons"|translate}}</h6>
-                      <textarea name="reason" #reason="ngModel" [(ngModel)]="exam.reason" class="form-control">
-                                       </textarea>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
-
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6>{{"services.object_exam.upload_deposite"|translate}}</h6>
-                      <div class="image-upload">
-                        <input name="Url" type="file" accept="*/*" (change)="handleInputChange($event)" />
-                      </div>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
-
                   <div class="progress progress-sm">
                     <div class="progress-bar bg-info"></div>
                   </div>
                 </div>
 
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6> {{"services.object_exam.deposite"|translate}} </h6>
+                    <select name="feesAmount" #feesAmount="ngModel" [(ngModel)]="exam.fees_amount" class="form-control"
+                      [class.is-invalid]="exam.fees_amount==''">
+                      <option *ngFor="let item of reqData.amounts" value="{{item.id}}">{{item.value}}</option>
+                    </select>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6> {{"services.object_exam.bank"|translate}}</h6>
+                    <select name="bank" #BankID="ngModel" [(ngModel)]="exam.bank" class="form-control"
+                      [class.is-invalid]="exam.bank==0">
+                      <option *ngFor="let item of reqData.bank_names" value="{{item.id}}">{{item.value}}</option>
+                    </select>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6> {{"services.object_exam.account_no"|translate}}</h6>
+                    <select name="account_number" [(ngModel)]="exam.account_number" class="form-control"
+                      [class.is-invalid]="exam.account_number==''">
+                      <option *ngFor="let item of reqData.bank_accounts" value="{{item.id}}">{{item.value}}</option>
+                    </select>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6> {{"services.object_exam.reasons"|translate}}</h6>
+                    <textarea name="reason" #reason="ngModel" [(ngModel)]="exam.reason" class="form-control">
+                                       </textarea>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.object_exam.upload_deposite"|translate}}</h6>
+                    <div class="image-upload">
+                      <input name="Url" type="file" accept="*/*" (change)="handleInputChange($event)" />
+                    </div>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
               </div>
 
-            </section>
-            <div style="margin-top: 10px;">
-              <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-                <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                  {{"general.cancel"|translate}}</button>
-                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
-              </div>
             </div>
-          </div>
 
+          </section>
 
-        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

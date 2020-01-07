@@ -1,74 +1,70 @@
 <!-- Modal -->
-<mat-dialog-content dir="rtl">
+<mat-dialog-content>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.postpone_request.postpone_req"|translate}}</h5>
-
+        <h5 class="modal-title " id="exampleModalLabel">{{"services.postpone_request.postpone_req"|translate}}</h5>
       </div>
-      <div class="modal-body">
-        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
           <h6 style="text-align: center">{{"services.postpone_request.alert"|translate}}</h6>
           <br>
-          <h6 style="color: black ; font-size: 12px" class="modal-title">{{"services.postpone_request.desire"|translate}}
+          <h6 style="color: black ; font-size: 12px" class="modal-title">
+            {{"services.postpone_request.desire"|translate}}
             {{reqData.cur_term}}</h6>
-          <div class="main-content">
-            <section class="ser-state">
-              <div class="container">
-                <div class="row ser-block">
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6>{{"services.postpone_request.period"|translate}}  </h6>
-                      <select name="num_terms" #num_terms="ngModel" [(ngModel)]="postpone.num_terms"
-                        class="form-control" [class.is-invalid]="postpone.num_terms==''">
-                        <option *ngFor="let item of reqData.terms" value="{{item.id}}">{{item.value}}</option>
-                      </select>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.postpone_request.period"|translate}} </h6>
+                    <select name="num_terms" #num_terms="ngModel" [(ngModel)]="postpone.num_terms" class="form-control"
+                      [class.is-invalid]="postpone.num_terms==''">
+                      <option *ngFor="let item of reqData.terms" value="{{item.id}}">{{item.value}}</option>
+                    </select>
                   </div>
-
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6>{{"services.postpone_request.mobile"|translate}}</h6>
-                      <input name="mobile" #mobile="ngModel" [(ngModel)]="postpone.mobile" class="form-control">
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6>{{"services.postpone_request.reason"|translate}}</h6>
-                      <textarea name="reason" #reason="ngModel" [(ngModel)]="postpone.reason" class="form-control">
-                                     </textarea>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
-
                   <div class="progress progress-sm">
                     <div class="progress-bar bg-info"></div>
                   </div>
                 </div>
 
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.postpone_request.mobile"|translate}}</h6>
+                    <input name="mobile" #mobile="ngModel" [(ngModel)]="postpone.mobile" class="form-control">
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.postpone_request.reason"|translate}}</h6>
+                    <textarea name="reason" #reason="ngModel" [(ngModel)]="postpone.reason" class="form-control">
+                                     </textarea>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
               </div>
 
-            </section>
-            <div style="margin-top: 10px;">
-              <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-                <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                  {{"general.cancel"|translate}}</button>
-                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
-              </div>
             </div>
-          </div>
 
+          </section>
 
-        </form>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+      </form>
     </div>
   </div>
-</mat-dialog-content>
+</mat-dialog-content

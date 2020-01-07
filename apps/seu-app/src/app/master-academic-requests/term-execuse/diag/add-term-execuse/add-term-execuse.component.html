@@ -1,18 +1,16 @@
-<mat-dialog-content dir="rtl">
-  <div class="modal-content">
-    <div class="modal-header">
-
-      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.term_execuse_master.title"}}
-      </h5>
-
-    </div>
-    <div class="modal-body">
-      <P class="text-center">
-        <span style="color: red;">تنبيه:</span> {{"services.term_execuse_master.alert"}}
-        {{"services.term_execuse_master.desire"}}      </P>
-
+<mat-dialog-content>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.term_execuse_master.title"}}
+        </h5>
+      </div>
       <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-        <div class="main-content">
+        <div class="modal-body">
+          <P class="text-center">
+            <span style="color: red;">تنبيه:</span> {{"services.term_execuse_master.alert"}}
+            {{"services.term_execuse_master.desire"}} </P>
           <section class="ser-state">
             <div class="container">
               <div class="row ser-block">
@@ -65,14 +63,15 @@
 
 
 
-          <div style="margin-top: 10px;">
-            <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-              <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
 
-              <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
-            </div>
-          </div>
 
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i
+              class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
+
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
         </div>
       </form>
     </div>

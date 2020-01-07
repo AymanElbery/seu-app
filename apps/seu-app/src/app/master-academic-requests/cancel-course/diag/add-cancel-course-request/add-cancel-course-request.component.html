@@ -1,15 +1,15 @@
-<div class="main-content">
+<mat-dialog-content>
 
-  <div class="container">
-    <mat-dialog-content>
+  <div class="modal-dialog" role="document" style="direction: rtl;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.master_cancel_course.title"|translate}}
+        </h5>
 
-      <div class="widget">
-        <div class="widget-header">
-          <h3 class="widget-title">{{"services.master_cancel_course.title"|translate}}</h3>
-        </div>
-
-        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-
+      </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
           <p style="text-align: center;">
             {{reqData.notes.text1}}<br />
             {{reqData.notes.text2}}<br />
@@ -23,7 +23,7 @@
               <tr>
                 <th scope="col"> اختر</th>
                 <th scope="col"> {{"general.crn"|translate}} </th>
-                <th scope="col">  {{"general.course_code"|translate}}</th>
+                <th scope="col"> {{"general.course_code"|translate}}</th>
                 <th scope="col"> {{"general.course_name"|translate}}</th>
                 <th scope="col"> {{"general.hours"|translate}}</th>
 
@@ -32,37 +32,30 @@
             </thead>
             <tbody>
               <tr *ngFor="let it of reqData.courses;let i=index;">
-
                 <td>
                   <input type="radio" name="chkCourse" (change)="changeStatus(it.CRN,$event,i)" value="it.CRN">
-                  <!--#defaultUnchecked="ngModel" -->
-                  <!--  <input type="checkbox" name="chkCourse" (change)="changeStatus(it.CRES_CODE,$event,i)" #chkCourse
-                    id="defaultUnchecked">-->
                 </td>
                 <td>{{it.CRN}}</td>
                 <td>{{it.CRES_CODE}}</td>
                 <td>{{it.CRSE_TITLE}}</td>
                 <td>{{it.CREDIT_HR}}</td>
-
-
-
-
               </tr>
-
             </tbody>
           </table>
           <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel"
             [(ngModel)]="approve" name="Approve">
           <h5>{{reqData.notes.agrement}}</h5>
 
-          <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-              {{"general.cancel"|translate}}</button>
+        </div>
 
-            <button [disabled]="!approve" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>  {{"general.save"|translate}}</button>
-          </div>
-        </form>
-      </div>
-    </mat-dialog-content>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+
+          <button [disabled]="!approve" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
+</mat-dialog-content>

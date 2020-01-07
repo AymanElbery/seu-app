@@ -7,37 +7,22 @@
           {{"services.summer_withdraw.title"|translate}}</h5>
 
       </div>
-      <div class="modal-body">
-        <P class="text-center"> </P>
-        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
 
+          <h5>
+            {{"services.summer_withdraw.alert"|translate}}
+          </h5>
 
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i
+              class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
 
-
-
-          <div class="form-row">
-            <div class="form-group col-md-12">
-              <div class="input-group">
-                <h5>
-                  {{"services.summer_withdraw.alert"|translate}}
-                </h5>
-              </div>
-            </div>
-
-          </div>
-
-
-
-
-          <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i
-                class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
-
-            <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
-              {{"general.save"|translate}}</button>
-          </div>
-        </form>
-      </div>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+      </form>
     </div>
 
   </div>
