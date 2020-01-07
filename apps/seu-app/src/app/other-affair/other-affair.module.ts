@@ -20,6 +20,7 @@ import {AddTrainingRequestComponent} from './training-request/diag/add-training-
 import {TrainingRequestService} from './services/training-request.service';
 import { StudentInfoComponent } from './student-info/student-info.component';
 import { MatCheckboxModule } from '@angular/material';
+import { AppLazyTransModule } from '../app.lazytrans.module';
 
 @NgModule({
 
@@ -46,7 +47,8 @@ import { MatCheckboxModule } from '@angular/material';
     MatDialogModule,
     MatProgressSpinnerModule,
     ToastrModule.forRoot() ,
-    MatCheckboxModule
+    MatCheckboxModule,
+    AppLazyTransModule
   ],
   providers: [MedicalReportService,
     UvnivCardService,
