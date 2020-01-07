@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { UserService } from 'src/app/account/services/user.service';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class NotificationsService {
     eequalize: { path: '/procedures/eequalize' }
   }
 
-  notsURL = "https://apps.seu.edu.sa/api/api/notifications/";
+  notsURL = environment.baselink + environment.servicesprefix + "/rest/notifications/";
   auth = `Basic ${window.btoa('nots:N0t!fic@ti0n$')}`;
   notesList = [];
 
@@ -47,7 +48,7 @@ export class NotificationsService {
   reload() {
     const udata = this.userService.getActiveRoleDetails();
     let username = udata.username;
-    if(udata.role == "Student"){
+    if (udata.role == "Student") {
       username = username.substr(1);
     }
     this.getList(username);

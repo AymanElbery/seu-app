@@ -98,7 +98,7 @@ export class UserService extends BaseService {
 
   relogin() {
     localStorage.removeItem('sid');
-    window.location.href = environment.ssolink + '/login-ss.php';
+    window.location.href = environment.ssolink + '/' + environment.loginpage;
   }
   login(userName, password) {
     // console.log('ser');

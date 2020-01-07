@@ -5,9 +5,10 @@
 export const environment = {
   production: false,
   cmslink: "http://beta.seu.edu.sa/umbraco/Surface/",
-  baselink: "https://seuapps.seu.edu.sa/", //newservices/
-  ssolink: "https://seuapps.seu.edu.sa/sso/", //newservices/
-  servicesprefix: "" //api-test
+  baselink: "https://seuapps.seu.edu.sa/newservices/", //newservices/
+  ssolink: "https://seuapps.seu.edu.sa/newservices/sso/", //newservices/
+  servicesprefix: "api-test", //api-test
+  loginpage:"login-sst.php"
 };
 
 /*
