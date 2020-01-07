@@ -53,7 +53,7 @@ export class WithdrawFromUnivComponent implements OnInit {
   openDialoge() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
     dialogConfig.direction = 'rtl';
 

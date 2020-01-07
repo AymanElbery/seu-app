@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AcademicStatusService } from '../services/academic-status.service';
-import { FormsModule } from '@angular/forms';
+import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-academic-status',
   templateUrl: './academic-status.component.html',
@@ -42,7 +42,6 @@ export class AcademicStatusComponent implements OnInit {
     this.isLoadingTerm = true;
     this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
     this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
-    
     this.academicStatusService.getStaudentTermDetails(parseInt(val, 10)).then(
       (res) => {
         this.studentTermDetails = (res as any).data.STD_TermDetails;
@@ -54,7 +53,6 @@ export class AcademicStatusComponent implements OnInit {
 
 
   downlaodFile() {
-    window.open('http://seuapps.seu.edu.sa/stdservicesapi/academic_status/academic_status_print', 'MsgWindow', 'width=200,height=100');
-
+    window.open(environment.baselink + environment.servicesprefix + '/stdservicesapi/academic_status/academic_status_print', 'MsgWindow', 'width=200,height=100');
   }
 }

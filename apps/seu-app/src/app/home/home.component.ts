@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
     private translate: TranslateService
   ) {
     // tslint:disable-next-line: only-arrow-functions
-    this.router.routeReuseStrategy.shouldReuseRoute = function() {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
     this.mySubscription = this.router.events.subscribe(event => {

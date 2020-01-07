@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { UserManagerService } from '../shared/services/user-manager.service';
 import { UserService } from '../account/services/user.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -26,19 +27,16 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   isLoggedIn() {
     if (this.userService.userDataLoaded) {
-      //console.log("isLoggedIn  true");
       return true;
     }
-    this.http.jsonp('https://seuapps.seu.edu.sa/sso/sess.php', "callback").subscribe(
+    this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
       res => {
         localStorage.setItem('sid', res['sid']);
         this.userService.loadUserData();
-        //console.log("isLoggedIn  true 222222");
         return true;
       },
       error => {
         this.userService.relogin();
-        //console.log("isLoggedIn  false");
         return false;
       });
   }

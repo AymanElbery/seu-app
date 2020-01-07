@@ -33,7 +33,7 @@ export class HomeService {
     if (target === 'students') {
       params = 'target=' + target + '&studentType=' + studentType + '&college=' + college + '&branch=' + Branch;
     }
-    if (target === 'staff') {
+    if (target === 'Staff') {
       params = 'target=' + target + '&college=' + college + '&branch=' + Branch;
     }
     if (target === 'employee') {

@@ -43,7 +43,7 @@ export class EnglishEqualizeComponent implements OnInit {
   openDialoge() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.width = '60%';
 
     let dialogref = this.dialog.open(AddEnglishEqualizerComponent, dialogConfig);

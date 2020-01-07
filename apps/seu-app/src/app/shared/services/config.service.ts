@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GlobalBaseService } from './global-base.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,20 +10,20 @@ export class ConfigService {
   // tslint:disable-next-line: variable-name
   private _apiURI: string;
   baseUrl: string;
-  private  cmsURI: string;
-  private  stdapi: string;
+  private cmsURI: string;
+  private stdapi: string;
 
   // tslint:disable-next-line: variable-name
   private _tokenName: string;
-  constructor(private globalBaseService:GlobalBaseService) {
-    this._apiURI = 'https://seuapps.seu.edu.sa/';
-    this.cmsURI  = 'http://beta.seu.edu.sa/umbraco/Surface/';
-    this.stdapi  =   'https://seuapps.seu.edu.sa/';
-    this._tokenName = 'auth_token';
+  constructor(private globalBaseService: GlobalBaseService) {
+    this._apiURI = environment.baselink + environment.servicesprefix + '/';
+    this.stdapi = environment.baselink + environment.servicesprefix + '/';
+    this.cmsURI = environment.cmslink;
 
+    this._tokenName = 'auth_token';
   }
   getSid() {
-    return   this.globalBaseService.getSID();
+    return this.globalBaseService.getSID();
   }
 
   useCmsURI() {
@@ -42,8 +43,8 @@ export class ConfigService {
   }
 
   getApiURI() {
-      return this._apiURI + this.baseUrl;
-      //// console.log('getApiURI' + this._apiURI);
+    return this._apiURI + this.baseUrl;
+    //// console.log('getApiURI' + this._apiURI);
 
   }
 

@@ -9,6 +9,7 @@ import { BaseService } from '../../shared/services/base.service';
 import { UserManagerService } from '../../shared/services/user-manager.service';
 import { UserData } from 'src/app/shared/models/user-data';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -96,9 +97,8 @@ export class UserService extends BaseService {
   }
 
   relogin() {
-    console.log('RELOGIN');
     localStorage.removeItem('sid');
-    window.location.href = 'https://seuapps.seu.edu.sa/sso/login-ss.php';
+    window.location.href = environment.ssolink + '/login-ss.php';
   }
   login(userName, password) {
     // console.log('ser');
@@ -145,7 +145,7 @@ export class UserService extends BaseService {
     if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'UG') {
       data = JSON.parse(JSON.stringify(this.userData.student_details));
       data.username = data.id;
-    // tslint:disable-next-line: triple-equals
+      // tslint:disable-next-line: triple-equals
     } else if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'GR') {
       data = JSON.parse(JSON.stringify(this.userData.student_details_gr));
       data.username = data.id;

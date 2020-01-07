@@ -47,7 +47,7 @@ export class GraduateProfileComponent implements OnInit {
     //request_number = 0;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.width = '95%';
     dialogConfig.height = '85%';
     dialogConfig.direction = "rtl";
@@ -62,7 +62,7 @@ export class GraduateProfileComponent implements OnInit {
 
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.width = '95%';
     dialogConfig.height = '85%';
     dialogConfig.direction = "rtl";

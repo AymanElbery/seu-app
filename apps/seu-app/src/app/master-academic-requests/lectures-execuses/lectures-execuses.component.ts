@@ -47,7 +47,7 @@ export class LecturesExecusesComponent implements OnInit {
   openDialoge() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = true;
+    dialogConfig.disableClose = false;
     dialogConfig.width = '60%';
 
     const dialogref = this.dialog.open(AddLecturesExecusesComponent, dialogConfig);
