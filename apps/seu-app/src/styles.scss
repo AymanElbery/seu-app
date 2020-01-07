@@ -3191,8 +3191,8 @@ form .state {
     }
     &:hover {
       background: transparent;
-    color: #777;
-    border-color: #c5c5c5;
+      color: #777;
+      border-color: #c5c5c5;
       .ik {
         transform: rotate(-90deg);
       }
@@ -3204,7 +3204,7 @@ form .state {
   }
 
   i {
-    margin-right: 5px;
+    margin-left: 5px;
   }
 
   &:hover {

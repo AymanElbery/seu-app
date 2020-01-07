@@ -3,17 +3,13 @@
   <div class="modal-dialog" role="document" style="direction: rtl;">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.excuse_request.execuse_req"|translate}}</h5>
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.excuse_request.execuse_req"|translate}}</h5>
 
       </div>
-      <div class="modal-body">
-        <P class="text-center"> </P>
-        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
 
-
-
-
-
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
           <div class="form-row">
             <div class="form-group col-md-12">
               <div class="input-group">
@@ -25,18 +21,15 @@
             </div>
 
           </div>
-
-
-
-
-          <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i
+                class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
 
             <button [disabled]="form.invalid" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
               {{"general.save"|translate}}</button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
 
   </div>

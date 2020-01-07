@@ -1,98 +1,97 @@
-<mat-dialog-content style="height: 2500px">
+<mat-dialog-content>
 
-
-  <mat-spinner *ngIf="isLoading"
-    style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-  </mat-spinner>
-
-  <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-    <div class="widget">
-      <div class="widget-header">
-        <h3 class="widget-title">   {{"services.reg.addreq"|translate}}</h3>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{"services.reg.addreq"|translate}}
+        </h5>
       </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
 
-      <section class="ser-state">
-        <div class="container">
-          <div class="row ser-block">
-            <div class=" col-md-6 col-sm-12">
-              <div class="state">
-                <h6>{{"general.faculty"|translate}} </h6>
-                <select required class="form-control" #CollegeID="ngModel" [(ngModel)]="registerationHelper.colledge"
-                  name="College" [class.is-invalid]="registerationHelper.colledge == ''" #t
-                  (change)="collegeCourses(t.value)">
 
-                  <option *ngFor="let coll of colleges" [value]="coll.id">{{coll.value}}</option>
-                </select>
+        <div class="modal-body">
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class=" col-md-6 col-sm-12">
+                  <div class="state">
+                    <h6>{{"general.faculty"|translate}} </h6>
+                    <select required class="form-control" #CollegeID="ngModel"
+                      [(ngModel)]="registerationHelper.colledge" name="College"
+                      [class.is-invalid]="registerationHelper.colledge == ''" #t (change)="collegeCourses(t.value)">
 
-              </div>
+                      <option *ngFor="let coll of colleges" [value]="coll.id">{{coll.value}}</option>
+                    </select>
 
-            </div>
-            <div class=" col-md-6 col-sm-12">
-              <div class="state">
-                <h6>{{"services.reg.course"|translate}} </h6>
-                <select required class="form-control" #CourseID="ngModel" [(ngModel)]="registerationHelper.course"
-                  name="CourseID" [class.is-invalid]="registerationHelper.course == ''" #c
-                  (change)="courseDepartments(c.value)">
-                  <option value=''>{{"services.reg.course"|translate}} </option>
-                  <option *ngFor="let course of courses" [value]="course.CRS_CODE">{{course.CRSE_TITLE}}</option>
-                </select>
-              </div>
+                  </div>
 
-            </div>
+                </div>
+                <div class=" col-md-6 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.reg.course"|translate}} </h6>
+                    <select required class="form-control" #CourseID="ngModel" [(ngModel)]="registerationHelper.course"
+                      name="CourseID" [class.is-invalid]="registerationHelper.course == ''" #c
+                      (change)="courseDepartments(c.value)">
+                      <option value=''>{{"services.reg.course"|translate}} </option>
+                      <option *ngFor="let course of courses" [value]="course.CRS_CODE">{{course.CRSE_TITLE}}</option>
+                    </select>
+                  </div>
 
-          </div>
-
-          <div class="row ser-block">
-            <div class=" col-md-6 col-sm-12">
-              <div class="state">
-                <h6>{{"services.reg.depart"|translate}} </h6>
-                <select required class="form-control" #DeptID="ngModel" [(ngModel)]="registerationHelper.department"
-                  name="DeptID" [class.is-invalid]="registerationHelper.department == ''">
-                  <option value=''>{{"services.reg.depart"|translate}} </option>
-                  <option *ngFor="let dept of departments" [value]="dept.CRN">{{dept.BLDG_DESC}}</option>
-                </select>
-              </div>
-
-            </div>
-            <div class=" col-md-6 col-sm-12">
-              <div class="state">
-                <h6>{{"services.reg.errmsg"|translate}}  </h6>
-                <select required class="form-control" #ErrorMsgID="ngModel" [(ngModel)]="registerationHelper.message"
-                  name="ErrorMsgID" [class.is-invalid]="registerationHelper.message == ''">
-                  <option *ngFor="let msg of errorMessages" [value]="msg.id">{{msg.value}}</option>
-                </select>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="row  ser-block">
-            <div class=" col-md-12 col-sm-12">
-              <div class="state">
-                <h6>{{"services.reg.notes"|translate}} </h6>
-                <textarea [class.is-invalid]="form.invalid" type="text" class="form-control"
-                  [(ngModel)]="registerationHelper.comment" #NotesID="ngModel" name="NotesID" required></textarea>
+                </div>
 
               </div>
 
-            </div>
+              <div class="row ser-block">
+                <div class=" col-md-6 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.reg.depart"|translate}} </h6>
+                    <select required class="form-control" #DeptID="ngModel" [(ngModel)]="registerationHelper.department"
+                      name="DeptID" [class.is-invalid]="registerationHelper.department == ''">
+                      <option value=''>{{"services.reg.depart"|translate}} </option>
+                      <option *ngFor="let dept of departments" [value]="dept.CRN">{{dept.BLDG_DESC}}</option>
+                    </select>
+                  </div>
 
-          </div>
+                </div>
+                <div class=" col-md-6 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.reg.errmsg"|translate}} </h6>
+                    <select required class="form-control" #ErrorMsgID="ngModel"
+                      [(ngModel)]="registerationHelper.message" name="ErrorMsgID"
+                      [class.is-invalid]="registerationHelper.message == ''">
+                      <option *ngFor="let msg of errorMessages" [value]="msg.id">{{msg.value}}</option>
+                    </select>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="row  ser-block">
+                <div class=" col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.reg.notes"|translate}} </h6>
+                    <textarea [class.is-invalid]="form.invalid" type="text" class="form-control"
+                      [(ngModel)]="registerationHelper.comment" #NotesID="ngModel" name="NotesID" required></textarea>
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-
-      <div class="modal-body">
-        <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
+        <div class="modal-footer">
           <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
             {{"general.cancel"|translate}}</button>
 
           <button [disabled]="form.invalid" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
             {{"general.save"|translate}}</button>
         </div>
-      </div>
+
+      </form>
+
     </div>
-  </form>
-
-
+  </div>
 </mat-dialog-content>

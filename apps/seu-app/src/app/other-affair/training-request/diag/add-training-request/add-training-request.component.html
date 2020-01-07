@@ -1,52 +1,43 @@
 <mat-dialog-content>
-  <div class="modal-dialog" role="document" style="direction: rtl;">
+  <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title  " id="exampleModalLabel">{{"services.training_request.practical_train"|translate}}</h5>
-
+        <h5 class="modal-title" id="exampleModalLabel">{{"services.training_request.practical_train"|translate}}</h5>
       </div>
-      <div class="modal-body">
-        <P class="text-center"> </P>
-        <div>
-          <p><span style="color:red">{{"services.training_request.alert"|translate}}</span>{{"services.training_request.alert_content"|translate}}  </p>
-        </div>
-        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
-          <div class="main-content">
-            <section class="ser-state">
-              <div class="container">
-                <div class="row ser-block">
-                  <div class="col-md-12 col-sm-12">
-                    <div class="state">
-                      <h6>{{"services.training_request.destination_letter"|translate}}</h6>
-                      <textarea name="organization" #organization="ngModel" [(ngModel)]="training.organization"
-                        class="form-control">
-                                     </textarea>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+          <p><span
+              style="color:red">{{"services.training_request.alert"|translate}}</span>{{"services.training_request.alert_content"|translate}}
+          </p>
 
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.training_request.destination_letter"|translate}}</h6>
+                    <textarea name="organization" #organization="ngModel" [(ngModel)]="training.organization"
+                      class="form-control">
+                                     </textarea>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
                 </div>
-              </div>
-            </section>
-            <div style="margin-top: 10px;">
-              <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-                <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                  {{"general.cancel"|translate}}</button>
-                <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
+
               </div>
             </div>
-          </div>
+          </section>
 
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
 
-        </form>
-
-
-
-
-      </div>
+      </form>
     </div>
-
   </div>
 </mat-dialog-content>

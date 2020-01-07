@@ -2,19 +2,23 @@ html، body {
   direction: ltr !important;
   text-align: left;
 }
+
 .wrapper {
   .page-wrap {
     .main-content {
       padding-left: 240px;
       padding-right: 0;
     }
+
     .footer {
       padding-left: 240px;
       padding-right: 0;
     }
+
     .app-sidebar {
       right: auto;
       left: 0;
+
       .sidebar-content .nav-container .navigation-main .nav-item {
         &.has-sub {
           a::before {
@@ -22,67 +26,87 @@ html، body {
             left: auto;
             transform: rotate(0deg);
           }
+
           .submenu-content .menu-item {
             padding-left: 34px;
             padding-right: 5px;
           }
         }
+
         &.open::after {
           left: 0;
           right: auto;
         }
+
         &.open a::before {
           transform: rotate(90deg);
         }
+
         a i {
           margin-right: 10px;
           margin-left: 0;
         }
       }
+
       &.colored .sidebar-content .nav-container .navigation-main .nav-item a {
         direction: rtl;
       }
     }
   }
+
   .header-top {
     padding-left: 240px;
     padding-right: 0;
   }
 }
+
 .dropdown-item {
   text-align: left;
 }
+
 .dropdown-menu {
   left: 0;
   right: auto !important;
   text-align: left;
 }
+
 .form-control {
   background-position: center right 15px;
   direction: ltr !important;
 }
+
 .modal-dialog {
   direction: ltr !important;
 }
+
 .latest-update-card .card-block .latest-update-box {
   &:after {
     left: 19px;
     right: auto;
   }
+
   .update-meta i.update-icon {
     margin-right: 0;
     margin-left: 19px;
   }
 }
+
 select.form-control {
   background-position: center right 15px;
   direction: ltr !important;
 }
+
 .widget .widget-header .widget-title .btn {
   float: right;
+
   .ik {
     float: left;
     margin-left: 0;
     margin-right: 5px;
   }
+}
+
+.btn i {
+  margin-right: 5px;
+  // margin-left: 5px;
 }
