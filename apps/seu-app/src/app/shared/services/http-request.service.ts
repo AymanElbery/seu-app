@@ -11,7 +11,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class HttpRequestService {
 
 
-  constructor(private translate: TranslateService, private http: HttpClient, private configService: ConfigService, private globalService: GlobalBaseService) { }
+  constructor(private translate: TranslateService,
+              private http: HttpClient,
+              private configService: ConfigService,
+              private globalService: GlobalBaseService) { }
 
 
   private createRequestHeader() {
@@ -39,10 +42,10 @@ export class HttpRequestService {
     return headers;
   }
 
-  GetRequest(path: string,addlng=true) {
+  GetRequest(path: string, addlng= true) {
     let url = this.configService.getApiURI() + '/' + path;
-    if(addlng){
-      let langString = (path.indexOf("?") == -1 ? "?" : "&") + 'lang=' + this.translate.currentLang;
+    if (addlng) {
+      const langString = (path.indexOf('?') == -1 ? '?' : '&') + 'lang=' + this.translate.currentLang;
       url += langString;
     }
     //// console.log('url:' + url);
