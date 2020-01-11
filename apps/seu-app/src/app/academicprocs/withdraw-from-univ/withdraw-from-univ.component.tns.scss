@@ -48,10 +48,36 @@
     border-width: 1;
     border-color: gray;
     border-radius: 8;
-
 }
-
 .tableColumn{
-    min-width: 50%;
+    margin-left: 20;
     text-align: center;
+    //width: 10%;
+}
+.my-button {
+    border-color: chocolate;
+    border-radius: 20;
+    border-width: 1;
+    font-size: 14;
+    font-weight: bold;
+    height: 30;
+}
+.orange-button{
+    border-color: chocolate;
+    background-color: chocolate;
+    color: white;
+    border-radius: 25;
+    border-width: 1;
+    font-size: 14;
+    font-weight: bold;
+    height: 30;
+}
+.my-button:active {
+    background-color: whitesmoke;
+    border-color: navy;
+    border-radius: 10;
+    border-width: 1;
+    color: navy;
+    font-size: 14;
+    font-weight: bold;
 }

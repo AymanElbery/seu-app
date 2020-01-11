@@ -1,1 +1,32 @@
-/* Add mobile styles for the component here.  */
+.header{
+    margin-bottom: 10;
+    color: navy;
+    font-weight: bold;
+    font-size: 16;
+    border-bottom-color: chocolate;
+    border-bottom-width: 1;
+    padding-bottom: 10;
+}
+
+.my-button {
+    border-radius: 20;
+    border-width: 1;
+    color: whitesmoke;
+    font-size: 14;
+    font-weight: bold;
+    width: 50%;
+    margin-top: 20;
+}
+.save-button{
+    background-color: chocolate;
+    border-color: chocolate;
+}
+.cancel-button{
+    background-color: gray;
+
+}
+.font{
+    font-weight: bold;
+    font-size: 14;
+
+}

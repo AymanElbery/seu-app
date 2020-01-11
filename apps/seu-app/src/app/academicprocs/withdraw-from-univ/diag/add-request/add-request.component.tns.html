@@ -1,1 +1,22 @@
-<Button text="add-request works!" class="btn btn-primary"></Button>
+<FlexboxLayout  flexDirection="column" style="padding: 20;">
+    <Label text="طلب الإنسحاب من الجامعة" class="header"></Label>
+    <DropDown required
+        [items]="dropDownBranches"
+        (selectedIndexChanged)="getbranch($event)"
+        [(ngModel)]="selectedIndex"
+        hint="اختر اقرب فرع"
+        itemsTextAlignment="left"
+        #branch="ngModel"
+        style="padding-right: 20;"
+        class="font"
+    >
+    </DropDown>
+    <TextField [(ngModel)]="withdraw.mobile" style="margin-bottom: 10;" hint="رقم الهاتف" keyboardType="phone" required #mobile="ngModel"></TextField>
+    <TextField [(ngModel)]="withdraw.email"  hint="البريد الإلكتروني" keyboardType="email" required #mail="ngModel"></TextField>
+    
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
+        <Button text="حفظ" (tap)="onSubmit()" [isEnabled]="mobile.valid && mail.valid && branch.valid" class="my-button save-button"></Button>
+        <Button text="الغاء" (tap)="closeDiag()" class="my-button cancel-button"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>
