@@ -6,6 +6,9 @@ import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/com
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import * as Toast from 'nativescript-toast';
+import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
+import * as app from 'tns-core-modules/application';
+
 
 @Component({
   selector: 'app-withdraw-from-univ',
@@ -27,7 +30,9 @@ export class WithdrawFromUnivComponent implements OnInit {
     private _vcRef: ViewContainerRef,private acadmicProc: WithdrawFromUnivService) { }
 
   ngOnInit() {
-    
+
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.drawerLocation = SideDrawerLocation.Right;  
     this.isLoading = true;
     this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
     this.getRequests();
@@ -96,7 +101,11 @@ export class WithdrawFromUnivComponent implements OnInit {
     }
       
 });
-
+}
+  
+  onDrawerButtonTap(): void {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.showDrawer();
   }
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;
