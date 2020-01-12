@@ -91,16 +91,19 @@
                     </FlexboxLayout>
 
                     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="list-group-item table-header"> 
-                        <label text="رمز المقرر" class="h1 narrowColumn"></label>
-                        <label text="اسم المقرر" class="h1 wideColumn"></label>
+                      <!--  <label text="رمز المقرر" class="h1 narrowColumn"></label>
+                        <label text="اسم المقرر" class="h1 wideColumn"></label>-->
+                        <label text="اسم المقرر/الرمز" class="h1 wideColumn"></label>
                         <label text="التقدير" class="h1 narrowColumn"></label>
                         <label text="الساعات" class="h1 narrowColumn"></label>
                         <label text="النقاط" class="h1 narrowColumn"></label>
                     </FlexboxLayout>
 
-                    <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of item.courses"  flexDirection="row-reverse" class="dataLabel list-group-item h2">
-                        <Label [text]="item.ID" class="h2 narrowColumn"></Label>
-                        <Label [text]="item.CRSE_TITLE" class="h2 wideColumn"></Label>
+                    <FlexboxLayout justifyContent="space-between" alignItems="center" flexWrap="nowrap" *ngFor="let item of item.courses"  flexDirection="row-reverse" class="dataLabel list-group-item h2">
+                        <FlexboxLayout  flexDirection="column">
+                            <Label [text]="item.CRSE_TITLE" class="h2 wideColumn"></Label>
+                            <Label [text]="item.ID" class="h2 narrowColumn"></Label>
+                        </FlexboxLayout>
                         <Label [text]="item.GRADE_TITLE" class="h2 narrowColumn"></Label>
                         <Label [text]="item.HRS" class="h2 narrowColumn"></Label>
                         <Label [text]="item.Points" class="h2 narrowColumn"></Label>
