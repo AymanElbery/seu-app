@@ -1,1 +1,55 @@
-<Button text="postpone-request works!" class="btn btn-primary"></Button>
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label text="تأجيل الفصل الدراسي"></Label>
+</ActionBar>
+
+<FlexboxLayout flexDirection="column" style="padding: 15;">
+
+    <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+        <ListView [items]="msgs">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" [ngClass]="item.type == 'info' ? 'alert alert-info' : (item.type == 'error' ? 'alert alert-danger' : (item.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" class="h1" justifyContent="space-between">
+        <Label text="طلبات سابقة"></Label>
+        <Button text="اضافة طلب" *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="my-button"></Button>
+    </FlexboxLayout>
+    <ScrollView orientation="horizontal" *ngIf="!isLoading">
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start">
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="h1 table-row-dark"> 
+                <label text="رقم الطلب"></label>
+                <label text="تاريخ/حالة الطلب"></label>
+                <label text="طباعة الطلب"></label>
+                <label text="حذف الطلب" ></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="row-reverse" class="h2 table-row">
+                <Label [text]="item.request_number"    ></Label>
+                <FlexboxLayout alignItems="center" flexDirection="column" justifyContent="space-between">
+                    <Label [text]="item.insert_date"   ></Label>
+                    <Label [text]="item.status"   ></Label>
+                </FlexboxLayout>
+                <Button text="Print" (tap)="print(item.request_number)" class="orange-button"></Button>
+                <Button *ngIf='item.deletable' [disabled]='deleting' text="حذف" (tap)="delete(item.request_number,i)" class="orange-button"></Button>
+                <Label *ngIf='!item.deletable' text="لا يمكن إلغاء الطلب"   ></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+    </ScrollView>
+
+</FlexboxLayout>

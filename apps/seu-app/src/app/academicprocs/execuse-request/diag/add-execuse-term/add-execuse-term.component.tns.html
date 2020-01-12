@@ -1,1 +1,12 @@
-<Button text="add-execuse-term works!" class="btn btn-primary"></Button>
+<FlexboxLayout  flexDirection="column" style="padding: 20;">
+    <Label text="طلب الاعتذار عن الفصل الدراسي" class="header"></Label>
+
+        <Label text="السبب" class="font"></Label>
+        <TextField [(ngModel)]="postpone.reason" #reason="ngModel" required></TextField>
+    
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
+        <Button text="حفظ" (tap)="onSubmit()" class="my-button save-button" [isEnabled]="reason.valid"></Button>
+        <Button text="الغاء" (tap)="closeDiag()" class="my-button cancel-button"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

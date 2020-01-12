@@ -22,17 +22,20 @@ export class AddChangeBranchComponent implements OnInit {
 
   ngOnInit() {
     this.branch = { camp: '', reason: '', mobile: '' };
-    this.acadmicProc.getِgetRequests().then(
-      res => {
-        this.acadmicProc.reqData = (res as any).data;
-        this.acadmicProc.msgs = (res as any).messages;
-        this.reqData = this.acadmicProc.reqData;
-        this.msgs = this.acadmicProc.msgs;
+    this.reqData = this.acadmicProc.reqData;
+    this.msgs = this.acadmicProc.msgs;
 
-        //console.log(this.reqData);
+    // this.acadmicProc.getِgetRequests().then(
+    //   res => {
+    //     this.acadmicProc.reqData = (res as any).data;
+    //     this.acadmicProc.msgs = (res as any).messages;
+    //     this.reqData = this.acadmicProc.reqData;
+    //     this.msgs = this.acadmicProc.msgs;
 
-      }
-    );
+    //     //console.log(this.reqData);
+
+    //   }
+    // );
   }
 
 

@@ -3,24 +3,24 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
-          {{"services.term_execuse_master.title"}}
+          {{"services.term_execuse_master.title"|translate}}
         </h5>
       </div>
       <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
         <div class="modal-body">
           <P class="text-center">
-            <span style="color: red;">تنبيه:</span> {{"services.term_execuse_master.alert"}}
-            {{"services.term_execuse_master.desire"}} </P>
+            <span style="color: red;">تنبيه:</span> {{"services.term_execuse_master.alert"|translate}}
+            {{"services.term_execuse_master.desire"|translate}} </P>
           <section class="ser-state">
             <div class="container">
               <div class="row ser-block">
                 <div class="col-md-12 col-sm-12">
                   <div class="state">
-                    <h6> {{"services.term_execuse_master.count"}} </h6>
+                    <h6> {{"services.term_execuse_master.count"|translate}} </h6>
 
                     <select name="num_terms" #num_terms="ngModel" [(ngModel)]="termExecuse.num_terms"
                       class="form-control">
-                      <option value="">{{"services.term_execuse_master.choose_count"}}</option>
+                      <option value="">{{"services.term_execuse_master.choose_count"|translate}}</option>
                       <option *ngFor="let item of reqData.terms" value="{{item.id}}">{{item.value}}</option>
                     </select>
 
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-12 col-sm-12">
                   <div class="state">
-                    <h6>{{"services.term_execuse_master.mobile"}}</h6>
+                    <h6>{{"services.term_execuse_master.mobile"|translate}}</h6>
 
                     <input name="mobile" type="text" #mobile="ngModel" [(ngModel)]="termExecuse.mobile"
                       class="form-control" />
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-md-12 col-sm-12">
                   <div class="state">
-                    <h6>{{"services.term_execuse_master.reason"}}</h6>
+                    <h6>{{"services.term_execuse_master.reason"|translate}}</h6>
 
                     <textarea name="reason" type="text" #reason="ngModel" [(ngModel)]="termExecuse.reason"
                       class="form-control">

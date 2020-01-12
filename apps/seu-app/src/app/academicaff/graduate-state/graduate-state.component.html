@@ -34,9 +34,7 @@
     </div>
   </div>
 
-  <div class="widget" *ngIf="!isLoading && graduateData.values">
-
-
+  <div class="widget" *ngIf="!isLoading && allowed">
     <h6 class="display-6 text-center" *ngIf="!isLoading">
       {{graduateData.labels.date}}:{{graduateData.values.date}}</h6>
 
@@ -144,7 +142,7 @@
       </div>
     </section>
   </div>
-  <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading && graduateData.values">
+  <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading && allowed">
 
     <div class="row">
 
@@ -162,7 +160,7 @@
       </p>
     </div>
   </div>
-  <div class="prin text-center" *ngIf="!isLoading && graduateData.length > 0">
+  <div class="prin text-center" *ngIf="!isLoading && allowed">
     <a class="btn btn-primary" href="{{arabicPrint}}"><span class="ik ik-printer"></span>
       {{"general.ar_print" | translate}}</a>
     <a class="btn btn-primary" href="{{EngPrint}}"><span class="ik ik-printer"></span>

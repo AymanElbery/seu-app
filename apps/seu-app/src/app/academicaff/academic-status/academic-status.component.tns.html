@@ -26,37 +26,46 @@
             <label text="بيانات الطالب/الطالبة"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row-dark">
             <label text="اسم الطالب / الطالبة" class="h1"></label>
             <label text="الرقم الجامعي" class="h1"></label>
             <label text="رقم الهوية" class="h1"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
+        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row">
             <label [text]="student.name" class="h2"></label>
             <label [text]="student.std_id" class="h2"></label>
             <label [text]="student.ssn" class="h2"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
+        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row-dark">
             <label text="فصل القبول" class="h1"></label>
-            <label text="الحالة الأكاديمية الحالية" class="h1"></label>
-            <label text="المعدل التراكمي النهائي" class="h1"></label>
+            <FlexboxLayout flexDirection="column" alignItems="center">
+                <label text="الحالة الأكاديمية" class="h1"></label>
+                <label text="الحالية" class="h1"></label>
+            </FlexboxLayout>
+            <FlexboxLayout flexDirection="column" alignItems="center">
+                <label text="المعدل التراكمي" class="h1"></label>
+                <label text="النهائي" class="h1"></label>
+            </FlexboxLayout>
         </FlexboxLayout>
 
-        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
-            <label [text]="student.std_adm_term_label" class="h2"></label>
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row">
+            <FlexboxLayout flexDirection="column" alignItems="center">
+                <label [text]="acceptanceTerm" class="h2"></label>
+                <label [text]="acceptanceYear" class="h2"></label>
+            </FlexboxLayout>
             <label [text]="student.current_acadimic_status_label" class="h2"></label>
             <label [text]="student.final_graduation_GPA" class="h2"></label>
         </FlexboxLayout>
 
 
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
+        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row-dark">
             <label text="الوضع الأكاديمي" class="h1"></label>
             <label text="الرسوم الدراسية" class="h1"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
+        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row" alignItems="center">
             <label [text]="student.acadimic_position_label" class="h2"></label>
             <label [text]="student.std_fees" class="h2"></label>
         </FlexboxLayout>
@@ -75,37 +84,37 @@
 
         <ActivityIndicator [busy]="isLoadingTerm && !isLoading" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
         
-        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
+        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row-dark">
             <label text="الكلية" class="h1"></label>
             <label text="التخصص" class="h1"></label>
             <label text="الفرع" class="h1"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
+        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row">
             <label [text]="studentTermDetails.COLL_CODE" class="h2"></label>
             <label [text]="studentTermDetails.MAJR_code" class="h2"></label>
             <label [text]="studentTermDetails.CAMP_code" class="h2"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
+        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row-dark">
             <label text="المعدل التراكمي" class="h1"></label>
             <label text="حالة التسجيل" class="h1"></label>
             <label text="المستوي الدراسي" class="h1"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
+        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row">
             <label [text]="studentTermDetails.gba" class="h2"></label>
             <label [text]="studentTermDetails.RegisterationStatus" class="h2"></label>
             <label [text]="studentTermDetails.study_level" class="h2"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
+        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row-dark">
             <label text="الحالة الأكاديمية" class="h1"></label>
             <label text="الوضع الأكاديمي" class="h1"></label>
             <label text="المرحلة الدراسية" class="h1"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
+        <FlexboxLayout *ngIf="!isLoadingTerm" flexDirection="row-reverse" alignItems="center" justifyContent="space-between" class="table-row">
             <label [text]="studentTermDetails.acadimic_status" class="h2"></label>
             <label [text]="studentTermDetails.ACADIMICPOSITION" class="h2"></label>
             <label [text]="studentTermDetails.STD_UGGR" class="h2"></label>
