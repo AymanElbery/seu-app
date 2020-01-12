@@ -1,11 +1,11 @@
 .wideColumn{
-    width: 35%;
-    margin-right: 15;
+   width: 42%;
+ //   margin-right: 15;
 }
 
 .narrowColumn{
     width:15%;
-    margin-right: 15;
+ //   margin-right: 15;
 
 }
 
@@ -19,30 +19,28 @@
     color: navy;
     height: 50;
     text-align: center;
-    font-weight: bold;
+   // font-weight: bold;
 
 }
 
 .header{
     color: orange;
     font-size: 16;
-    font-weight: bold;
 }
 
 .content{
     color:navy;
     text-align: right;
     font-size: 14;
-    font-weight: bold;
 }
 .dataLabel{
     font-size: 14;
-    padding:15;
-    margin-bottom: 15;
-    border-bottom-width: 1;
+    padding:10;
+    //margin-bottom: 15;
+    border-width: 1;
+    border-top-width: 0;
     border-color: lightgray;
-    text-align: center;
-    font-weight: bold;
+   // text-align: center;
 }
 
 .firstBox{
@@ -56,7 +54,7 @@
     margin-top: 10;
     padding: 15;
     font-size: 14;
-    font-weight: bold;
+//    font-weight: bold;
 }
 .closingParagraph{
     margin-top: 10;
@@ -65,7 +63,7 @@
     border-radius: 8;
     border-width: 1;
     font-size: 14;
-    font-weight: bold;
+  //  font-weight: bold;
 }
 
 GridLayout{
@@ -78,7 +76,7 @@ GridLayout{
     border-width: 1;
     color: whitesmoke;
     font-size: 14;
-    font-weight: bold;
+ //   font-weight: bold;
 }
 .my-button:active {
     background-color: whitesmoke;
@@ -87,7 +85,7 @@ GridLayout{
     border-width: 1;
     color: navy;
     font-size: 14;
-    font-weight: bold;
+  //  font-weight: bold;
 }
 .buttonsLayout{
     margin-top: 10;
