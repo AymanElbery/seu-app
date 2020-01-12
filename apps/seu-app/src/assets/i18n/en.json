@@ -1,10 +1,13 @@
 {
     "general": {
         "print": "Print",
+
         "note": "note",
         "delete_confirm": "Are you sure?",
         "req_no": "Request Number",
         "pre_requesr": "Show Previous Requests",
+        "pre_requests": "Show Previous Requests",
+
         "student_name": "Student Name: ",
         "faculty": "Faculty",
         "major": "Major",
@@ -292,6 +295,7 @@
         }
     },
     "exam": {
+        "caa":"Certifiacte Exam Attednace Approve",
         "execreq": " upload exam execuses",
         "sch": " exam schedule",
         "exec": "  upload exam execuses requests   ",
@@ -300,6 +304,8 @@
         "courseno": "course no  ",
         "cet": "  choose exam type ",
         "et": " exam type",
+        "define_date": "choose date ",
+
         "raexam": "  absence reason",
         "cfiles": "    execuse files    ",
         "save": "ٍSave  ",
@@ -312,6 +318,7 @@
         "fnt": "   final exam without table   ",
         "uno": "   universty no    ",
         "certatt": "  Exam Attednace Cerificate      "
+
     },
     "finance": {
         "doyou": " do you want",
@@ -455,33 +462,33 @@
         "desc": "Fees Pay"
     },
     "graduate": {
-        "fullname": "الإسم الرباعي باللغة العربية كما هو في بطاقة الأحوال",
-        "graduatedata": "المعلومات الشخصية للخريج",
-        "fullnameeng": "الاسم رباعي باللعه الانجليزية كما بالجواز",
-        "gender": "الجنس",
-        "nationality": "الجنسية",
-        "scdegree": "الدرجه العلميه",
-        "gpersonal": "المعلومات الشخصية للخريج",
-        "major": "التخصص",
-        "branch": "الفرع",
-        "rate": "المعدل",
-        "mobileno": "رقم الجوال",
-        "uemail": " البريد الجامعي",
-        "stdpic": "صورة شخصية 4*6 للطلاب فقط",
-        "CV": "السيرة الذاتية",
-        "cjob": "الحالة الوظيفية",
-        "jondes": "بيان العمل ان وجد",
-        "empsector": "قطاع التوظيف ",
-        "jobyear": " سنة التوظيف",
+        "fullname": " Full name as in ID",
+        "graduatedata": " Personal Information for graduate",
+        "fullnameeng": "Full name in passport in English",
+        "gender": "Gender",
+        "nationality": "nationality",
+        "scdegree": "Scence Degree",
+        "gpersonal": "  Personal Info for graduate",
+        "major": "major",
+        "branch": "branch",
+        "rate": "rate",
+        "mobileno": "mobile no ",
+        "uemail": " email ",
+        "stdpic": "Personal pic for student 4*6",
+        "CV": "CV",
+        "cjob": " Work status",
+        "jondes": "  Job details  if exists ",
+        "empsector": "employement sector  ",
+        "jobyear": " job year ",
         "jobcom": "جهة العمل",
-        "upgrade": "هل حصلت على الترقية أثناء الدراسة ",
-        "upgradeyr": "سنة الحصول على الترقية",
-        "jobplace": "مقر العمل",
-        "jobownerdata": "بيانات رب العمل إن وجد",
-        "oname": "الاسم",
-        "ojob": "المسمى الوظيفي",
-        "omobile": "الجوال",
-        "email": "البريد الالكتروني"
+        "upgrade": "do you got the upgrade ",
+        "upgradeyr": "upgrade year   ",
+        "jobplace": "job palace ",
+        "jobownerdata": "  Job owner details if exists ",
+        "oname": "name",
+        "ojob": " Job title",
+        "omobile": "mobile",
+        "email": "email "
     },
     "medical_report": {
         "title": "Medical Report Request",
