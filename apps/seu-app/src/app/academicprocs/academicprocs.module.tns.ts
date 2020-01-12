@@ -8,6 +8,8 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { DropDownModule } from 'nativescript-drop-down/angular';
 import { PostponeRequestComponent } from './postpone-request/postpone-request.component.tns';
 import { AddPostponeComponent } from './postpone-request/diag/add-postpone/add-postpone.component.tns';
+import { ExecuseRequestComponent } from './execuse-request/execuse-request.component.tns';
+import { AddExecuseTermComponent } from './execuse-request/diag/add-execuse-term/add-execuse-term.component.tns';
 
 
 @NgModule({
@@ -23,12 +25,16 @@ import { AddPostponeComponent } from './postpone-request/diag/add-postpone/add-p
     WithdrawFromUnivComponent,
     AddRequestComponent,
     PostponeRequestComponent,
-    AddPostponeComponent
+    AddPostponeComponent,
+    ExecuseRequestComponent,
+    AddExecuseTermComponent
+
 
   ],
   entryComponents: [
     AddRequestComponent,
-    AddPostponeComponent
+    AddPostponeComponent,
+    AddExecuseTermComponent
   ],
 
 })

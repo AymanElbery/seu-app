@@ -47,9 +47,7 @@ export class AddPostponeComponent implements OnInit {
       return false;
     }
     this.requesting = true;
-    this.addRequest({
-        cause:this.postpone.reason
-    });
+    this.addRequest(this.postpone);
   }
   closeDiag() {
     this._params.closeCallback();
