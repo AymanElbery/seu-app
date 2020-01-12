@@ -1,10 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { UnivWithdraw } from 'src/app/shared/models/univ-withdraw';
-import { WithdrawFromUnivService } from 'src/app/academicprocs/services/withdraw-from-univ.service';
+import { UnivWithdraw } from '../../../../shared/models/univ-withdraw';
+import { WithdrawFromUnivService } from '../../../../academicprocs/services/withdraw-from-univ.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
-import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-request',
@@ -18,8 +18,9 @@ export class AddRequestComponent implements OnInit {
   private imageSrc = '';
   requesting = false;
   constructor(@Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<AddRequestComponent>,
-    private toastr: AppToasterService, private acadmicProc: WithdrawFromUnivService) { }
+              public dialogRef: MatDialogRef<AddRequestComponent>,
+              private toastr: AppToasterService,
+              private acadmicProc: WithdrawFromUnivService) { }
 
   ngOnInit() {
     this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
@@ -40,12 +41,12 @@ export class AddRequestComponent implements OnInit {
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.withdraw.bankimage = reader.result;
-    //console.log(this.withdraw.bankimage);
+    // console.log(this.withdraw.bankimage);
   }
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
-      if (res['status']) {
+      if ((res as any).status) {
         this.acadmicProc.newreqs = true;
         this.dialogRef.close();
       }

@@ -6,7 +6,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddRequestComponent } from './diag/add-request/add-request.component';
 import { ToastrService } from 'ngx-toastr';
 import { DOCUMENT } from '@angular/common';
-import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { AppToasterService } from '../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 
 
@@ -16,7 +16,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./withdraw-from-univ.component.scss']
 })
 export class WithdrawFromUnivComponent implements OnInit {
-  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: WithdrawFromUnivService) { }
+  constructor(private translate: TranslateService,
+              public dialog: MatDialog,
+              private toastr: AppToasterService,
+              private acadmicProc: WithdrawFromUnivService) { }
 
   printAR;
   withdraw: UnivWithdraw;
@@ -75,6 +78,7 @@ export class WithdrawFromUnivComponent implements OnInit {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
+        // tslint:disable-next-line: triple-equals
         if ((res as any).status == 1) {
           this.reqData.reqs.splice(index, 1);
         }

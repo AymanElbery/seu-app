@@ -20,6 +20,7 @@ import { AcademicaffModule } from './academicaff/academicaff.module.tns';
 import { GlobalService } from './shared/services/global.service.tns';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { AcademicprocsModule } from './academicprocs/academicprocs.module.tns';
+import { AppTransModule } from './app.trans.module';
 
 
 
@@ -37,7 +38,8 @@ import { AcademicprocsModule } from './academicprocs/academicprocs.module.tns';
     NativeScriptFormsModule,
     AccountModule,
     AcademicprocsModule,
-    NativeScriptUISideDrawerModule
+    NativeScriptUISideDrawerModule,
+    AppTransModule
 
   ],
 

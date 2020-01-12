@@ -22,22 +22,8 @@ export class AcademicStatusComponent implements OnInit {
   EngPrint: string;
   isLoading = false;
   isLoadingTerm = false;
-  studentTermsDropDownStatic=new ValueList([
-    {
-      display:"الترم الاول",
-      value:1
-    },
-    {
-      display:"الترم الثانى",
-      value:2
-    },
-    {
-      display:"الترم الثالث",
-      value:3
-    }
-  ]);
   studentTermsDropDown;
-  terms:ValueItem<number>[];
+  terms:ValueItem<number>[]=[];
 
   constructor(private academicStatusService: AcademicStatusService) { }
 
@@ -50,7 +36,6 @@ export class AcademicStatusComponent implements OnInit {
     this.academicStatusService.getStaudentStatus().then((res) => {
       this.student = (res as any).data.student;
       this.studentTerms = (res as any).data.STD_TERMS;
-      this.studentTermsDropDown=new ValueList(this.terms);
       for(let i=0;i<this.studentTerms.length;i++){
         this.terms.push(
           {
@@ -59,6 +44,8 @@ export class AcademicStatusComponent implements OnInit {
           }
         );
       }
+      this.studentTermsDropDown=new ValueList(this.terms);
+
       this.studentTermDetails = (res as any).data.STD_TermDetails;
       this.selectedSems = this.studentTerms[0].TERM_CODE;
       this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);

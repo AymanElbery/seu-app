@@ -1,1 +1,12 @@
-<Button text="add-postpone works!" class="btn btn-primary"></Button>
+<FlexboxLayout  flexDirection="column" style="padding: 20;">
+    <Label text="طلب تأجيل الدراسة" class="header"></Label>
+
+        <Label text="السبب" class="font"></Label>
+        <TextField [(ngModel)]="postpone.reason" #reason="ngModel"></TextField>
+    
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
+        <Button text="حفظ" (tap)="onSubmit()" class="my-button save-button"></Button>
+        <Button text="الغاء" (tap)="closeDiag()" class="my-button cancel-button"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>
