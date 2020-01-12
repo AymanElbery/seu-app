@@ -290,7 +290,9 @@
             "fnt": "   final exam without table   ",
             "uno": "   universty no    ",
             "certatt": "  Exam Attednace Cerificate      ",
-            "define_date": "حدد التاريخ"
+            "define_date": "حدد التاريخ",
+            "caa":"شهادة اثبات حضور اختبارات",
+            "caadesc":"شهادة اثبات حضور اختبارات"
         },
         "graduate": {
             "fullname": "الإسم الرباعي باللغة العربية كما هو في بطاقة الأحوال",
