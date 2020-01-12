@@ -22,14 +22,16 @@ export class AddChangeMajorComponent implements OnInit {
 
   ngOnInit() {
     this.mj = { major: '' };
-    this.acadmicProc.getِgetRequests().then(
-      res => {
-        this.acadmicProc.reqData = (res as any).data;
-        this.acadmicProc.msgs = (res as any).messages;
-        this.reqData = this.acadmicProc.reqData;
-        this.msgs = this.acadmicProc.msgs;
-      }
-    );
+    this.reqData = this.acadmicProc.reqData;
+    this.msgs = this.acadmicProc.msgs;
+
+    // this.acadmicProc.getِgetRequests().then(
+    //   res => {
+    //     this.acadmicProc.reqData = (res as any).data;
+    //     this.acadmicProc.msgs = (res as any).messages;
+
+    //   }
+    // );
   }
 
   requesting = false;
@@ -76,7 +78,7 @@ export class AddChangeMajorComponent implements OnInit {
     return this.acadmicProc.Download(req);
 
   }
-  
+
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;
 
