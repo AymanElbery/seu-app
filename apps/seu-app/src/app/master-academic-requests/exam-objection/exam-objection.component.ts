@@ -51,7 +51,6 @@ export class ExamObjectionComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    dialogConfig.height = '80%';
     /* dialogConfig.direction = "rtl";
      dialogConfig.position = { top: '100px', left: '25px' };*/
 

@@ -26,14 +26,14 @@ export class AddChangeCourseComponent implements OnInit {
     this.course = { major: '', mobile: '', reason: '', outside: '', bacholar_copy: '', academic_record: '' };
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
-    this.acadmicProc.getRequests().then(
-      res => {
-        this.acadmicProc.reqData = (res as any).data;
-        this.acadmicProc.msgs = (res as any).messages;
-        this.reqData = this.acadmicProc.reqData;
-        this.msgs = this.acadmicProc.msgs;
-      }
-    );
+    // this.acadmicProc.getRequests().then(
+    //   res => {
+    //     this.acadmicProc.reqData = (res as any).data;
+    //     this.acadmicProc.msgs = (res as any).messages;
+    //     this.reqData = this.acadmicProc.reqData;
+    //     this.msgs = this.acadmicProc.msgs;
+    //   }
+    // );
   }
 
   addRequest(data) {
