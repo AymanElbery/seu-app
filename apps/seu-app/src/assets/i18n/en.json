@@ -53,6 +53,7 @@
         "lecture_type": "Lecture Type",
         "week": "Week",
         "day": "Day",
+        "home": "Home",
         "request": {
             "add_request": "Add Request",
             "cname": "Course ",
