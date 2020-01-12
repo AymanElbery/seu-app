@@ -46,7 +46,9 @@
           </div>
         </div>
 
-        <div class="d-none d-sm-block">
+        <div class="d-none d-sm-block" *ngIf="environment.production">
+          <a href="#" routerLink="/" class="social"
+            style="margin-top: -6px;">{{"general.home" | translate}}</a>
           <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
             style="font-size: 20px; font-weight: 400"> E
           </a>

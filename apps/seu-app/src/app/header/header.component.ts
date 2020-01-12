@@ -6,6 +6,7 @@ import { UserServiceService } from '../shared/user-service.service';
 import { UserService } from '../account/services/user.service';
 import { NotificationsService } from '../shared/services/notificationsservice';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -18,12 +19,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public userService: UserService,
     public notifications: NotificationsService,
     private translate: TranslateService
-  ) {}
+  ) {
+    this.environment = environment;
+  }
   subscription: Subscription;
   isNavbarCollapsed;
   userData: any = {};
   status = false;
   currLang;
+  environment;
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
@@ -40,7 +44,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
           document.getElementById('html').setAttribute('lang', code);
           document.getElementById('html').setAttribute('dir', 'ltr');
         })
-        .catch(() => {});
+        .catch(() => { });
     } else {
       document.getElementById('html').setAttribute('lang', code);
       document.getElementById('html').setAttribute('dir', 'rtl');

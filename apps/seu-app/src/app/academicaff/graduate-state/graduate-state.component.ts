@@ -17,17 +17,18 @@ export class GraduateStateComponent implements OnInit {
   constructor(private graduateStateSer: GraduatesStateService) {
 
   }
-
+  allowed = false;
   ngOnInit() {
     this.isLoading = true;
     this.arabicPrint = this.graduateStateSer.DownloadStatement();
     this.EngPrint = this.graduateStateSer.DownloadEngStatement();
     this.graduateStateSer.getStatement().then(
       (res) => {
-        this.graduateData = (res as any).data;
-        this.msgs = (res as any).messages;
+        this.graduateData = res['data'];
+        this.msgs = res['messages'];
+
+        this.allowed = (this.graduateData.keys.length) ? true : false;
         this.isLoading = false;
-        //// console.log(this.graduateData.length);
       }
     );
   }
