@@ -1,40 +1,36 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { TermPostponeService } from '../services/term-postpone.service';
+import { TermExecuseService } from '../services/term-execuse.service';
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
-import { AddPostponeComponent } from './diag/add-postpone/add-postpone.component.tns';
+import { AddExecuseTermComponent } from './diag/add-execuse-term/add-execuse-term.component.tns';
 import { AppToasterService } from '../../shared/services/app-toaster.tns';
 
-
 @Component({
-  selector: 'app-postpone-request',
-  templateUrl: './postpone-request.component.tns.html',
-  styleUrls: ['./postpone-request.component.tns.scss']
+  selector: 'app-execuse-request',
+  templateUrl: './execuse-request.component.tns.html',
+  styleUrls: ['./execuse-request.component.tns.scss']
 })
-export class PostponeRequestComponent implements OnInit {
+export class ExecuseRequestComponent implements OnInit {
 
-  printAR;
   reason: string;
   reqData;
   msgs;
   status;
+  isLoading = false;
 
   constructor(private _modalService: ModalDialogService,
-    private _vcRef: ViewContainerRef,private acadmicProc: TermPostponeService,private toastr: AppToasterService) { }
-
+    private _vcRef: ViewContainerRef,private acadmicProc: TermExecuseService,private toastr: AppToasterService) { }
+    
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;  
+    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.isLoading = true;
     this.reason = '';
     this.getRequests();
   }
-
-
-  isLoading = false;
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
@@ -47,7 +43,7 @@ export class PostponeRequestComponent implements OnInit {
       }, err => {
         this.reqData = [];
         this.msgs = [];
-        this.toastr.tryagain();
+         this.toastr.tryagain();
         this.isLoading = false;
       }
     );
@@ -59,7 +55,7 @@ export class PostponeRequestComponent implements OnInit {
         fullscreen: false,
     };
 
-    this._modalService.showModal(AddPostponeComponent, options)
+    this._modalService.showModal(AddExecuseTermComponent, options)
         .then( result => {
         if (this.acadmicProc.newreqs) {
           this.getRequests();
@@ -74,12 +70,12 @@ export class PostponeRequestComponent implements OnInit {
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-      title: "هل انت متأكد؟",
-      message: "",
-      okButtonText: "OK",
-      cancelButtonText: 'Cancel'
-  }).then((result:boolean) => {
-    if (result) {
+        title: "هل انت متأكد؟",
+        message: "",
+        okButtonText: "OK",
+        cancelButtonText: 'Cancel'
+    }).then((result:boolean) => {
+      if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
@@ -89,14 +85,12 @@ export class PostponeRequestComponent implements OnInit {
         this.deleting = false;
       }
         , err => {
-          this.toastr.tryagain();
-          this.deleting = false;
+            this.toastr.tryagain();
+            this.deleting = false;
         });
     }
-  })
-
+});
   }
-    
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();

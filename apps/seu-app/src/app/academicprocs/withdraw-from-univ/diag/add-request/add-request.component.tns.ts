@@ -3,7 +3,7 @@ import { UnivWithdraw } from '../../../../../app/shared/models/univ-withdraw';
 import { WithdrawFromUnivService } from '../../../../academicprocs/services/withdraw-from-univ.service';
 import { ValueList } from 'nativescript-drop-down';
 import { ModalDialogParams } from "nativescript-angular/modal-dialog";
-import * as Toast from 'nativescript-toast';
+import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
 
 @Component({
   selector: 'app-add-request',
@@ -20,7 +20,7 @@ export class AddRequestComponent implements OnInit {
   dropDownBranches;
   selectedIndex;
   constructor(
-    private acadmicProc: WithdrawFromUnivService,private _params: ModalDialogParams) { }
+    private acadmicProc: WithdrawFromUnivService,private _params: ModalDialogParams,private toastr: AppToasterService) { }
     
 
   ngOnInit() {
@@ -40,8 +40,7 @@ export class AddRequestComponent implements OnInit {
   
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(res => {
-      var toast = Toast.makeText((res as any).messages[0].body);
-      toast.show();
+      this.toastr.push((res as any).messages);
       if (res['status']) {
         this.acadmicProc.newreqs = true;
         this.closeDiag();
@@ -49,8 +48,7 @@ export class AddRequestComponent implements OnInit {
       this.requesting = false;
     },
       err => {
-        var toast = Toast.makeText("خطأ: حاول مرة أخري");
-        toast.show();
+        this.toastr.tryagain();
         this.requesting = false;
       });
 

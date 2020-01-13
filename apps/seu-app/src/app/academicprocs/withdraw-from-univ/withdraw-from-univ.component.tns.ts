@@ -5,9 +5,9 @@ import { AddRequestComponent } from './diag/add-request/add-request.component.tn
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
-import * as Toast from 'nativescript-toast';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
+import { AppToasterService } from '../../shared/services/app-toaster.tns';
 
 
 @Component({
@@ -27,7 +27,8 @@ export class WithdrawFromUnivComponent implements OnInit {
   deleting = false;
   constructor(
     private _modalService: ModalDialogService,
-    private _vcRef: ViewContainerRef,private acadmicProc: WithdrawFromUnivService) { }
+    private _vcRef: ViewContainerRef,private acadmicProc: WithdrawFromUnivService,
+    private toastr: AppToasterService) { }
 
   ngOnInit() {
 
@@ -65,8 +66,7 @@ export class WithdrawFromUnivComponent implements OnInit {
       }, err => {
         this.reqData = [];
         this.msgs = [];
-        var toast = Toast.makeText("خطأ: حاول مرة أخري");
-        toast.show();
+        this.toastr.tryagain();
         this.isLoading = false;
 
       }
@@ -87,15 +87,13 @@ export class WithdrawFromUnivComponent implements OnInit {
     if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
-        var toast = Toast.makeText((res as any).messages[0].body);
-        toast.show();
+        this.toastr.push((res as any).messages);
         if ((res as any).status == 1) {
           this.reqData.reqs.splice(index, 1);
         }
         this.deleting = false;
       }, err => {
-        var toast = Toast.makeText("خطأ: حاول مرة أخري");
-        toast.show();
+        this.toastr.tryagain();
         this.deleting = false;
       });
     }

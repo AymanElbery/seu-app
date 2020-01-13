@@ -1,1 +1,11 @@
-<Button text="add-summer-withdraw works!" class="btn btn-primary"></Button>
+<FlexboxLayout  flexDirection="column" style="padding: 20;">
+    <Label text="الاعتذار عن الفصل الصيفي" class="header"></Label>
+
+    <Label textWrap="true" text=" تنبيه: إعتذارك عن الفصل الصيفي يعني إنسحابك من المقرارات المسجلة" class="font"></Label>
+    
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
+        <Button text="حفظ" (tap)="onSubmit()" class="my-button save-button"></Button>
+        <Button text="الغاء" (tap)="closeDiag()" class="my-button cancel-button"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

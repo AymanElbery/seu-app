@@ -1,42 +1,42 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { TermPostponeService } from '../services/term-postpone.service';
+import { SummerWithdrawService } from '../services/summer-withdraw.service';
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
+import * as Toast from 'nativescript-toast';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
-import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
-import { AddPostponeComponent } from './diag/add-postpone/add-postpone.component.tns';
+import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common'; 
 import { AppToasterService } from '../../shared/services/app-toaster.tns';
-
+import { AddSummerWithdrawComponent } from './diag/add-summer-withdraw/add-summer-withdraw.component.tns';
 
 @Component({
-  selector: 'app-postpone-request',
-  templateUrl: './postpone-request.component.tns.html',
-  styleUrls: ['./postpone-request.component.tns.scss']
+  selector: 'app-summer-withdraw',
+  templateUrl: './summer-withdraw.component.tns.html',
+  styleUrls: ['./summer-withdraw.component.tns.scss']
 })
-export class PostponeRequestComponent implements OnInit {
+export class SummerWithdrawComponent implements OnInit {
+
+  constructor(private _modalService: ModalDialogService,
+    private _vcRef: ViewContainerRef,
+    private acadmicProc: SummerWithdrawService,
+    private toaster:AppToasterService) { }
 
   printAR;
   reason: string;
   reqData;
   msgs;
   status;
-
-  constructor(private _modalService: ModalDialogService,
-    private _vcRef: ViewContainerRef,private acadmicProc: TermPostponeService,private toastr: AppToasterService) { }
+  isLoading = false;
+  deleting = false;
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;  
+    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.isLoading = true;
     this.reason = '';
     this.getRequests();
   }
-
-
-  isLoading = false;
   getRequests() {
-    this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
@@ -47,11 +47,12 @@ export class PostponeRequestComponent implements OnInit {
       }, err => {
         this.reqData = [];
         this.msgs = [];
-        this.toastr.tryagain();
+        this.toaster.tryagain();
         this.isLoading = false;
       }
     );
   }
+
   onTap(): void {
     const options: ModalDialogOptions = {
         viewContainerRef: this._vcRef,
@@ -59,7 +60,7 @@ export class PostponeRequestComponent implements OnInit {
         fullscreen: false,
     };
 
-    this._modalService.showModal(AddPostponeComponent, options)
+    this._modalService.showModal(AddSummerWithdrawComponent, options)
         .then( result => {
         if (this.acadmicProc.newreqs) {
           this.getRequests();
@@ -71,35 +72,32 @@ export class PostponeRequestComponent implements OnInit {
   print(req) {
     utils.openUrl(this.acadmicProc.Download(req));
   }
-  deleting = false;
   delete(id, index) {
     dialogs.confirm({
-      title: "هل انت متأكد؟",
-      message: "",
-      okButtonText: "OK",
-      cancelButtonText: 'Cancel'
-  }).then((result:boolean) => {
-    if (result) {
+        title: "هل انت متأكد؟",
+        message: "",
+        okButtonText: "OK",
+        cancelButtonText: 'Cancel'
+    }).then((result:boolean) => {
+      if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
-        this.toastr.push((res as any).messages);
+        this.toaster.push((res as any).messages);
+
         if ((res as any).status == 1) {
           this.reqData.reqs.splice(index, 1);
         }
         this.deleting = false;
       }
         , err => {
-          this.toastr.tryagain();
-          this.deleting = false;
+            this.toaster.tryagain();
+            this.deleting = false;
         });
-    }
-  })
-
+    }});
   }
-    
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
-
 }
+

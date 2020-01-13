@@ -71,7 +71,7 @@
         </FlexboxLayout>
     
         <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between">
-            <label text="الحالة الأكاديمية للطالب خلال الفصول الدراسية" class="h2" style="margin-top: 15;"></label>
+            <label text="الحالة الأكاديمية للطالب خلال الفصول الدراسية" class="h2" style="margin-top: 15;" textWrap="true" ></label>
             <DropDown
                   [items]="studentTermsDropDown"
                   (selectedIndexChanged)="getTrmsDetails($event)"

@@ -77,7 +77,14 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/execuse')" (tap)="onNavItemTap('/procedures/execuse')">
                     <Label col="1" text="الاعتذار عن فصل دراسي" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/summer')" (tap)="onNavItemTap('/procedures/summer')">
+                    <Label col="1" text="الاعتذار عن الفصل الصيفي" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/reenrol')" (tap)="onNavItemTap('/procedures/reenrol')">
+                    <Label col="1" text="اعادة قيد" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
                 </GridLayout>
             </StackLayout>
         </ScrollView>

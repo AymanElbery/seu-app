@@ -10,6 +10,10 @@ import { PostponeRequestComponent } from './postpone-request/postpone-request.co
 import { AddPostponeComponent } from './postpone-request/diag/add-postpone/add-postpone.component.tns';
 import { ExecuseRequestComponent } from './execuse-request/execuse-request.component.tns';
 import { AddExecuseTermComponent } from './execuse-request/diag/add-execuse-term/add-execuse-term.component.tns';
+import { SummerWithdrawComponent } from './summer-withdraw/summer-withdraw.component.tns';
+import { AddSummerWithdrawComponent } from './summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.tns';
+import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component.tns';
+import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re-enroll.component.tns';
 
 
 @NgModule({
@@ -27,14 +31,18 @@ import { AddExecuseTermComponent } from './execuse-request/diag/add-execuse-term
     PostponeRequestComponent,
     AddPostponeComponent,
     ExecuseRequestComponent,
-    AddExecuseTermComponent
-
-
+    AddExecuseTermComponent,
+    SummerWithdrawComponent,
+    AddSummerWithdrawComponent,
+    ReEenrollmentComponent,
+    AddReEnrollComponent
   ],
   entryComponents: [
     AddRequestComponent,
     AddPostponeComponent,
-    AddExecuseTermComponent
+    AddExecuseTermComponent,
+    AddSummerWithdrawComponent,
+    AddReEnrollComponent
   ],
 
 })
