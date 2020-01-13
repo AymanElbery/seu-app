@@ -40,7 +40,7 @@
     <TextField hint="Enter Password" secure="true" [(ngModel)]="credentials.password" class="input"></TextField>
   </StackLayout>
 
-  <Button text="Log In" (tap)="login(credentials)"  class="-primary -rounded-sm"></Button>
+  <Button text="{{'general.login' | translate}}" (tap)="login(credentials)"  class="-primary -rounded-sm"></Button>
 </StackLayout>
  </StackLayout>
 </ScrollView></GridLayout>

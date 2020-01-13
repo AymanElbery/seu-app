@@ -12,14 +12,18 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   styleUrls: ['./register-wishes.component.scss']
 })
 export class RegisterWishesComponent implements OnInit {
+
+
+  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: RegisterWishesService) { }
   registerWishes: RegisterWishes;
   reqData;
   msgs;
   status;
   isLoading = false;
 
+  deleting = false;
 
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: RegisterWishesService) { }
+  requesting = false;
 
   ngOnInit() {
     this.getServiceRequest();
@@ -39,13 +43,11 @@ export class RegisterWishesComponent implements OnInit {
       }
     );
   }
-
-  deleting = false;
   delete(id, index) {
     if (confirm('هل انت متأكد')) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
-        let messages = (res as any).messages;
+        const messages = (res as any).messages;
         this.status = (res as any).status;
         this.toastr.push(messages);
         if (this.status == 1) {
@@ -62,13 +64,11 @@ export class RegisterWishesComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.addRequest(this.registerWishes);
   }
-
-  requesting = false;
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
       this.requesting = false;
-      if (res['status']) {
+      if ((res as any).status) {
         this.getServiceRequest();
         this.registerWishes = { tow_days: 0, wish: '' };
       }

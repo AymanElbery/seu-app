@@ -6,6 +6,7 @@ import { filter } from 'rxjs/operators';
 import * as app from 'tns-core-modules/application';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { UserService } from './account/services/user.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-root',
@@ -17,9 +18,14 @@ export class AppComponent implements OnInit {
     // tslint:disable-next-line: variable-name
     private _sideDrawerTransition: DrawerTransitionBase;
 
-    constructor( public userService: UserService,
-                 private router: Router, private routerExtensions: RouterExtensions,    private  globalService: GlobalBaseService ) {
+    constructor(    private translate: TranslateService,
+                    public userService: UserService,
+                    private router: Router, private routerExtensions: RouterExtensions,    private  globalService: GlobalBaseService ) {
         // Use the component constructor to inject services.
+        translate.addLangs(['ar', 'en']);
+        translate.setDefaultLang('ar');
+        translate.use('ar');
+
     }
 
     ngOnInit(): void {

@@ -7,13 +7,13 @@ import { Injectable } from '@angular/core';
 })
 export class AppToasterService {
 
-  tryagain(){
-    var toast = Toast.makeText("خطأ: حاول مرة أخري");
+  tryagain() {
+    const toast = Toast.makeText('خطأ: حاول مرة أخري');
     toast.show();
   }
   push(messages) {
-    for(let i=0;i<messages.length;i++){
-        var toast = Toast.makeText(messages[i].body);
+    for (let i = 0; i < messages.length; i++) {
+        const toast = Toast.makeText(messages[i].body);
         toast.show();
       }
 

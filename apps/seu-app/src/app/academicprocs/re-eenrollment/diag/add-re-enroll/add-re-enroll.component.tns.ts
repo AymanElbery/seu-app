@@ -1,31 +1,34 @@
-import { Component, OnInit, Inject } from "@angular/core";
-import { ReEnroll } from "../../../../shared/models/re-enroll";
-import { ReEnrollService } from "../../../services/re-enroll.service";
-import { NgForm } from "@angular/forms";
+import { Component, OnInit, Inject } from '@angular/core';
+import { ReEnroll } from '../../../../shared/models/re-enroll';
+import { ReEnrollService } from '../../../services/re-enroll.service';
+import { NgForm } from '@angular/forms';
 import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
 import { ModalDialogParams } from 'nativescript-angular/common';
 import {FilePickerOptions, Mediafilepicker } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
 declare const kUTTypePDF;
- 
+
 @Component({
-  selector: "app-add-re-enroll",
-  templateUrl: "./add-re-enroll.component.tns.html",
-  styleUrls: ["./add-re-enroll.component.tns.scss"]
+  selector: 'app-add-re-enroll',
+  templateUrl: './add-re-enroll.component.tns.html',
+  styleUrls: ['./add-re-enroll.component.tns.scss']
 })
 export class AddReEnrollComponent implements OnInit {
-  printAR;
-  reEnroll: ReEnroll;
-  reqData;
-  msgs;
   constructor(
+    // tslint:disable-next-line: variable-name
     private _params: ModalDialogParams,
     private toastr: AppToasterService,
     private acadmicProc: ReEnrollService,
   ) {}
+  printAR;
+  reEnroll: ReEnroll;
+  reqData;
+  msgs;
+
+  requesting = false;
 
   ngOnInit() {
-    this.reEnroll = { proof: "", reason: "", has_proof: "1" };
+    this.reEnroll = { proof: '', reason: '', has_proof: '1' };
     this.acadmicProc.getِgetRequests().then(res => {
       this.acadmicProc.reqData = (res as any).data;
       this.acadmicProc.msgs = (res as any).messages;
@@ -33,13 +36,11 @@ export class AddReEnrollComponent implements OnInit {
       this.msgs = this.acadmicProc.msgs;
     });
   }
-
-  requesting = false;
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(
       res => {
         this.toastr.push((res as any).messages);
-        if (res["status"]) {
+        if ((res as any).status) {
           this.acadmicProc.newreqs = true;
           this.closeDiag();
         }
@@ -71,7 +72,7 @@ export class AddReEnrollComponent implements OnInit {
     // console.log(e.target.files[0].name);
     // console.log(e.target.files.name);
 
-    //let thisVal = this.val();
+    // let thisVal = this.val();
     /* if (!file.type.match(pattern)) {
       alert('invalid format');
       return;
@@ -107,31 +108,33 @@ export class AddReEnrollComponent implements OnInit {
       extensions = ['pdf'];
   }
 
-  let options: FilePickerOptions = {
+  const options: FilePickerOptions = {
       android: {
-          extensions: extensions,
+          extensions,
           maxNumberFiles: 1
       },
       ios: {
-          extensions: extensions,
+          extensions,
           multipleSelection: false,
         //  hostView: this._hostView
       }
   };
 
-  let mediafilepicker = new Mediafilepicker();
+  const mediafilepicker = new Mediafilepicker();
   mediafilepicker.openFilePicker(options);
 
-  mediafilepicker.on("getFiles", function (res) {
+  // tslint:disable-next-line: only-arrow-functions
+  mediafilepicker.on('getFiles', function(res) {
 
-      let results = res.object.get('results');
+      const results = res.object.get('results');
       console.dir(results);
 
       if (results) {
 
+          // tslint:disable-next-line: prefer-for-of
           for (let i = 0; i < results.length; i++) {
 
-              let result = results[i];
+              const result = results[i];
               console.log(result.file);
 
           }
@@ -139,13 +142,15 @@ export class AddReEnrollComponent implements OnInit {
 
   });
 
-  mediafilepicker.on("error", function (res) {
-      let msg = res.object.get('msg');
+  // tslint:disable-next-line: only-arrow-functions
+  mediafilepicker.on('error', function(res) {
+      const msg = res.object.get('msg');
       console.log(msg);
   });
 
-  mediafilepicker.on("cancel", function (res) {
-      let msg = res.object.get('msg');
+  // tslint:disable-next-line: only-arrow-functions
+  mediafilepicker.on('cancel', function(res) {
+      const msg = res.object.get('msg');
       console.log(msg);
   });
 }
