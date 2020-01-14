@@ -1,25 +1,27 @@
-import { Component, OnInit } from "@angular/core";
-import { MatDialog, MatDialogConfig } from "@angular/material/dialog";
-import { ToastrService } from "ngx-toastr";
-import { VisitorStudentService } from "../services/visitor-student.service";
-import { AddVisitorStudentComponent } from "./diag/add-visitor-student/add-visitor-student.component";
+import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
+import { VisitorStudentService } from '../services/visitor-student.service';
+import { AddVisitorStudentComponent } from './diag/add-visitor-student/add-visitor-student.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
-  selector: "app-visitor-student",
-  templateUrl: "./visitor-student.component.html",
-  styleUrls: ["./visitor-student.component.scss"]
+  selector: 'app-visitor-student',
+  templateUrl: './visitor-student.component.html',
+  styleUrls: ['./visitor-student.component.scss']
 })
 export class VisitorStudentComponent implements OnInit {
-  reqData;
-  msgs;
-  status;
-  isLoading = false;
   constructor(
     public dialog: MatDialog,
     private toastr: AppToasterService,
     private acadmicProc: VisitorStudentService
   ) { }
+  reqData;
+  msgs;
+  status;
+  isLoading = false;
+
+  deleting = false;
 
   ngOnInit() {
     this.getRequests();
@@ -35,8 +37,6 @@ export class VisitorStudentComponent implements OnInit {
       this.isLoading = false;
     });
   }
-
-  deleting = false;
   delete(id, index) {
     if (confirm('هل انت متأكد؟')) {
       this.deleting = true;
@@ -62,7 +62,7 @@ export class VisitorStudentComponent implements OnInit {
     // dialogConfig.height = '80%';
     // dialogConfig.direction = "rtl";
     // dialogConfig.position = { top: '100px', left: '25px' };
-    let dialogref = this.dialog.open(AddVisitorStudentComponent, dialogConfig);
+    const dialogref = this.dialog.open(AddVisitorStudentComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (this.acadmicProc.newreqs) {
         this.getRequests();

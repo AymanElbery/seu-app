@@ -10,7 +10,7 @@ import { DropDownModule } from 'nativescript-drop-down/angular';
 import { from } from 'rxjs';
 import { AcademicRecordComponent } from './academic-record/academic-record.component.tns';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
-import { NativeScriptLocalizeModule } from "nativescript-localize/angular";
+import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 
 @NgModule({
   declarations: [

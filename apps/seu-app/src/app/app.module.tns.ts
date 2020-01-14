@@ -20,7 +20,9 @@ import { AcademicaffModule } from './academicaff/academicaff.module.tns';
 import { GlobalService } from './shared/services/global.service.tns';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { AcademicprocsModule } from './academicprocs/academicprocs.module.tns';
-import { AppTransModule } from './app.trans.module';
+import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
+import { AppTransModule } from './app.trans.module.tns';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -31,6 +33,7 @@ import { AppTransModule } from './app.trans.module';
     HomeComponent
   ],
   imports: [
+    AppTransModule,
     NativeScriptModule,
     AppRoutingModule,
     AcademicaffModule,
@@ -40,6 +43,7 @@ import { AppTransModule } from './app.trans.module';
     AcademicprocsModule,
     NativeScriptUISideDrawerModule,
     AppTransModule
+
 
   ],
 

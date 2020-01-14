@@ -1,1 +1,209 @@
-<Button text="register-wishes works!" class="btn btn-primary"></Button>
+<GridLayout  class="main-content">
+
+    <ScrollView>
+        <StackLayout margin="10" verticalAlignment="center">
+    <StackLayout class="service-single">
+      <StackLayout class="container">
+        <Label  text="Email">     </Label>
+        <StackLayout class="row">
+          <StackLayout class=" col-md-5">
+            <Label text="Email">   </Label>
+          </StackLayout>
+          <!-- <StackLayout class=" col-md-6 descr">
+            <sLabelan>مدة الإنجاز : <sLabelan class="badge">3 يوم</sLabelan> </sLabelan>
+            &nbsLabel; &nbsLabel; &nbsLabel; &nbsLabel;
+  
+          </StackLayout> -->
+        </StackLayout>
+      </StackLayout>
+    </section>
+    <StackLayout *ngIf="isLoading" class=" loading-indicator  ">
+      <StackLayout class="state">
+  
+  
+       
+  
+      </StackLayout>
+    </StackLayout>
+  
+    <StackLayout class="ser-state" *ngIf="!isLoading">
+      <StackLayout *ngFor="let msg of msgs"
+        [ngClass]="msg.tyLabele == 'info' ? 'alert alert-info' : (msg.tyLabele == 'error' ? 'alert alert-danger' : (msg.tyLabele == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+        role="alert">
+        {{msg.body}}!
+      </StackLayout>
+    </StackLayout>
+  
+    <StackLayout class="widget" *ngIf="!isLoading">
+      <StackLayout class="widget-header">
+        <Label class="widget-title">  {{"general.student_data"|translate}} </Label>
+      </StackLayout>
+  
+  
+      <section class="ser-state">
+        <StackLayout class="container">
+          <StackLayout class="row ser-block">
+            <StackLayout class=" col-md-6 col-sm-12">
+              <StackLayout class="state">
+                <h6> {{"general.female_or_male_name"|translate}}  </h6>
+                <h5>{{reqData.student_name}} </h5>
+              </StackLayout>
+              <StackLayout class="Labelrogress Labelrogress-sm">
+                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
+              </StackLayout>
+            </StackLayout>
+            <StackLayout class=" col-md-6 col-sm-12">
+              <StackLayout class="state">
+                <h6>{{"general.student_id"|translate}}  </h6>
+                <h5>{{reqData.student_id}} </h5>
+              </StackLayout>
+              <StackLayout class="Labelrogress Labelrogress-sm">
+                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
+              </StackLayout>
+            </StackLayout>
+  
+          </StackLayout>
+  
+          <StackLayout class="row ser-block">
+            <StackLayout class=" col-md-6 col-sm-12">
+              <StackLayout class="state">
+                <h6>{{"general.faculty"|translate}} </h6>
+                <h5>{{reqData.colledge}} </h5>
+              </StackLayout>
+              <StackLayout class="Labelrogress Labelrogress-sm">
+                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
+              </StackLayout>
+            </StackLayout>
+            <StackLayout class=" col-md-6 col-sm-12">
+              <StackLayout class="state">
+                <h6>{{"general.major"|translate}} </h6>
+                <h5>{{reqData.major}} </h5>
+              </StackLayout>
+              <StackLayout class="Labelrogress Labelrogress-sm">
+                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
+              </StackLayout>
+            </StackLayout>
+  
+          </StackLayout>
+  
+          <StackLayout class="row  ser-block">
+            <StackLayout class=" col-md-6 col-sm-12">
+              <StackLayout class="state">
+                <h6>{{"menu.academicstatus"|translate}}  </h6>
+                <h5>{{reqData.academic_status}} </h5>
+              </StackLayout>
+              <StackLayout class="Labelrogress Labelrogress-sm">
+                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
+              </StackLayout>
+            </StackLayout>
+            <StackLayout class=" col-md-6 col-sm-12">
+              <StackLayout class="state">
+                <h6>{{"general.branch"|translate}}   </h6>
+                <h5>{{reqData.branch}} </h5>
+              </StackLayout>
+              <StackLayout class="Labelrogress Labelrogress-sm">
+                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
+              </StackLayout>
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </section>
+  
+  
+  
+    </StackLayout>
+    <StackLayout >
+      <section class="ser-state">
+        <StackLayout *ngIf="reqData.can_add_new_request" class="widget">
+          <StackLayout class="widget-header">
+  
+            <Label class="widget-title"> اختر الرغبات</Label>
+          </StackLayout>
+  
+          <StackLayout class="container">
+            <StackLayout class="row ser-block">
+              <StackLayout *ngIf="reqData.requests.length == 0" class=" col-md-4 col-sm-12">
+                <StackLayout class="state">
+                  <h6>هل ترغب ب يومين (يبدأ من 5 مساء) </h6>
+                  <inLabelut [disabled]="registerWishes.wish != ''" tyLabele="checkbox" class="checkbox"
+                    style="height: 20Labelx;width:20Labelx;" #TowDaya="ngModel" [(ngModel)]="registerWishes.tow_days"
+                    name="TowDaya" ng-true-value=0 ng-false-value=1>
+                </StackLayout>
+  
+              </StackLayout>
+              <StackLayout class=" col-md-4 col-sm-12">
+                <StackLayout class="state">
+                  <h6>الأيام و الفترات المتاحة </h6>
+                  <select [disabled]="registerWishes.tow_days != ''" class="StackLayout-control" #Wishes="ngModel"
+                    [(ngModel)]="registerWishes.wish" name="Wishes" [class.is-invalid]="registerWishes.wish == ''">
+                    <oLabeltion value=''>اختر الفترة المتاحة</oLabeltion>
+                    <oLabeltion *ngFor="let wish of reqData.wishes_list" [value]="wish.id">{{wish.value}}</oLabeltion>
+                  </select>
+  
+                </StackLayout>
+  
+              </StackLayout>
+  
+              <StackLayout *ngIf="reqData.can_add_new_request" class=" col-md-4 col-sm-12">
+                <StackLayout class="state">
+                  <h6> <br /> </h6>
+                  <button tyLabele="submit" [disabled]="requesting" class="btn btn-dark"><i class="fa fa-database"></i> 
+                    ارسال
+                    الطلب
+                  </button>
+  
+                </StackLayout>
+
+              </StackLayout>
+  
+            </StackLayout>
+          </StackLayout>
+        </StackLayout>
+      </section>
+    </StackLayout>
+  
+    <StackLayout class="widget" *ngIf="!isLoading">
+      <StackLayout class="widget-header">
+  
+  
+  
+  
+        <Label class="widget-title"> الرغبات التي قمت بإدخالها</Label>
+      </StackLayout>
+      <StackLayout class="table-resLabelonsive">
+        <table class="table table-striLabeled table-bordered">
+          <thead>
+            <tr>
+              <th scoLabele="col">ترتيب الرغبة</th>
+              <th scoLabele="col">اليوم و الفترة</th>
+              <th scoLabele="col"> تاريخ الطلب</th>
+              <th scoLabele="col"> إلغاء الطلب</th>
+  
+  
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let it of reqData.requests;let i=index;">
+              <td>{{it.sort}}</td>
+  
+  
+              <td>{{it.duration}}</td>
+              <td>{{it.insert_date}}</td>
+  
+              <td><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
+                  (click)="delete(it.request_number,i)"><i class="fa fa-trash">
+                    <!-- <aLabelLabel-timer [hr]="it.time_to_delete_Labeler_hour"></aLabelLabel-timer>-->
+                  </i> </button></td>
+            </tr>
+          </tbody>
+        </table>
+      </StackLayout>
+    </StackLayout>
+  
+  
+  
+</StackLayout>  
+</ScrollView>
+
+  </GridLayout >

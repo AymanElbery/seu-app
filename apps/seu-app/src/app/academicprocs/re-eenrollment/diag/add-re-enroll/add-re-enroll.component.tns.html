@@ -6,12 +6,12 @@
     <Label text="ماالسبب فى انقطاعك عن الدراسة؟" class="font" textWrap="true"
      style="color: chocolate; margin-top:10 ;"></Label>
 
-    <TextView style="border-color: gray;border-width: 1;"
+    <TextView style="border-color: gray;border-width: 1; padding:10;"
     #reason="ngModel" [(ngModel)]="reEnroll.reason">
     </TextView>
     <Label text="رفع ملف الاثبات(النظام يقبل ملفات PDF ,والايزيد حجم الملف عن 5 ميجابايت)"
      class="font" textWrap="true" style="color: chocolate;"></Label>
-    <Button text="Browse" (tap)="openCustomFilesPicker()"></Button>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker()" ></Button>
     <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
         <Button text="حفظ" (tap)="onSubmit()" class="my-button save-button" [isEnabled]="reason.valid"></Button>
         <Button text="الغاء" (tap)="closeDiag()" class="my-button cancel-button"></Button>
