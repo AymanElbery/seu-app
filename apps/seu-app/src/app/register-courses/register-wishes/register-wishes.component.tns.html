@@ -45,8 +45,8 @@
           <StackLayout class="row ser-block">
             <StackLayout class=" col-md-6 col-sm-12">
               <StackLayout class="state">
-                <h6> {{"general.female_or_male_name"|translate}}  </h6>
-                <h5>{{reqData.student_name}} </h5>
+                <label> {{"general.female_or_male_name"|translate}}  </label>
+                <label>{{reqData.student_name}} </label>
               </StackLayout>
               <StackLayout class="Labelrogress Labelrogress-sm">
                 <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
@@ -54,8 +54,8 @@
             </StackLayout>
             <StackLayout class=" col-md-6 col-sm-12">
               <StackLayout class="state">
-                <h6>{{"general.student_id"|translate}}  </h6>
-                <h5>{{reqData.student_id}} </h5>
+                <label text="{{"general.student_id"|translate}}">  </label>
+                <label>{{reqData.student_id}} </label>
               </StackLayout>
               <StackLayout class="Labelrogress Labelrogress-sm">
                 <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
@@ -67,8 +67,8 @@
           <StackLayout class="row ser-block">
             <StackLayout class=" col-md-6 col-sm-12">
               <StackLayout class="state">
-                <h6>{{"general.faculty"|translate}} </h6>
-                <h5>{{reqData.colledge}} </h5>
+                <label>{{"general.faculty"|translate}} </label>
+                <label>{{reqData.colledge}} </label>
               </StackLayout>
               <StackLayout class="Labelrogress Labelrogress-sm">
                 <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
@@ -76,8 +76,8 @@
             </StackLayout>
             <StackLayout class=" col-md-6 col-sm-12">
               <StackLayout class="state">
-                <h6>{{"general.major"|translate}} </h6>
-                <h5>{{reqData.major}} </h5>
+                <label>{{"general.major"|translate}} </label>
+                <label>{{reqData.major}} </label>
               </StackLayout>
               <StackLayout class="Labelrogress Labelrogress-sm">
                 <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
@@ -89,8 +89,8 @@
           <StackLayout class="row  ser-block">
             <StackLayout class=" col-md-6 col-sm-12">
               <StackLayout class="state">
-                <h6>{{"menu.academicstatus"|translate}}  </h6>
-                <h5>{{reqData.academic_status}} </h5>
+                <label>{{"menu.academicstatus"|translate}}  </label>
+                <label>{{reqData.academic_status}} </label>
               </StackLayout>
               <StackLayout class="Labelrogress Labelrogress-sm">
                 <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
@@ -98,8 +98,8 @@
             </StackLayout>
             <StackLayout class=" col-md-6 col-sm-12">
               <StackLayout class="state">
-                <h6>{{"general.branch"|translate}}   </h6>
-                <h5>{{reqData.branch}} </h5>
+                <label>{{"general.branch"|translate}}   </label>
+                <label>{{reqData.branch}} </label>
               </StackLayout>
               <StackLayout class="Labelrogress Labelrogress-sm">
                 <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
@@ -124,7 +124,7 @@
             <StackLayout class="row ser-block">
               <StackLayout *ngIf="reqData.requests.length == 0" class=" col-md-4 col-sm-12">
                 <StackLayout class="state">
-                  <h6>هل ترغب ب يومين (يبدأ من 5 مساء) </h6>
+                  <label>هل ترغب ب يومين (يبدأ من 5 مساء) </label>
                   <inLabelut [disabled]="registerWishes.wish != ''" tyLabele="checkbox" class="checkbox"
                     style="height: 20Labelx;width:20Labelx;" #TowDaya="ngModel" [(ngModel)]="registerWishes.tow_days"
                     name="TowDaya" ng-true-value=0 ng-false-value=1>
@@ -133,7 +133,7 @@
               </StackLayout>
               <StackLayout class=" col-md-4 col-sm-12">
                 <StackLayout class="state">
-                  <h6>الأيام و الفترات المتاحة </h6>
+                  <label>الأيام و الفترات المتاحة </label>
                   <select [disabled]="registerWishes.tow_days != ''" class="StackLayout-control" #Wishes="ngModel"
                     [(ngModel)]="registerWishes.wish" name="Wishes" [class.is-invalid]="registerWishes.wish == ''">
                     <oLabeltion value=''>اختر الفترة المتاحة</oLabeltion>
@@ -146,7 +146,7 @@
   
               <StackLayout *ngIf="reqData.can_add_new_request" class=" col-md-4 col-sm-12">
                 <StackLayout class="state">
-                  <h6> <br /> </h6>
+                  <label> <br /> </label>
                   <button tyLabele="submit" [disabled]="requesting" class="btn btn-dark"><i class="fa fa-database"></i> 
                     ارسال
                     الطلب

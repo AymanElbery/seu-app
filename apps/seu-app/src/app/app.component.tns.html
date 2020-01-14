@@ -86,6 +86,21 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1" text="اعادة قيد" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
                 </GridLayout>
+                <StackLayout class="hr"></StackLayout>
+
+
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  >
+                    <Label col="1"  text=" تسجيل المقررات " class="ysMenuHeader"  ></Label>
+                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
+
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/registercourses/registerwishes')">
+                    <Label col="1" text="  رغبات التسجيل للمستجدين" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                
+               
             </StackLayout>
         </ScrollView>
     </GridLayout>

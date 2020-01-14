@@ -23,6 +23,7 @@ import { AcademicprocsModule } from './academicprocs/academicprocs.module.tns';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { AppTransModule } from './app.trans.module.tns';
 import { TranslateModule } from '@ngx-translate/core';
+import { RegisterCoursesModule } from './register-courses/register-courses.module.tns';
 
 
 
@@ -40,6 +41,7 @@ import { TranslateModule } from '@ngx-translate/core';
     NativeScriptHttpClientModule,
     NativeScriptFormsModule,
     AccountModule,
+    RegisterCoursesModule,
     AcademicprocsModule,
     NativeScriptUISideDrawerModule,
     AppTransModule
