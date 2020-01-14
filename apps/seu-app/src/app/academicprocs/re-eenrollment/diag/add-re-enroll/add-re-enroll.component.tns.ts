@@ -1,13 +1,20 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { ReEnroll } from "../../../../shared/models/re-enroll";
 import { ReEnrollService } from "../../../services/re-enroll.service";
-import { NgForm } from "@angular/forms";
 import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
 import { ModalDialogParams } from 'nativescript-angular/common';
 import {FilePickerOptions, Mediafilepicker } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
+import { File } from "tns-core-modules/file-system";
+
+
 declare const kUTTypePDF;
- 
+declare var NSString: any;
+declare var NSUTF8StringEncoding: any;
+declare var java: any;
+declare var android: any;
+var filePath:string=null;
+
 @Component({
   selector: "app-add-re-enroll",
   templateUrl: "./add-re-enroll.component.tns.html",
@@ -15,9 +22,10 @@ declare const kUTTypePDF;
 })
 export class AddReEnrollComponent implements OnInit {
   printAR;
-  reEnroll: ReEnroll;
   reqData;
   msgs;
+  reEnroll:ReEnroll={ proof: "", reason: "", has_proof: "1" };
+
   constructor(
     private _params: ModalDialogParams,
     private toastr: AppToasterService,
@@ -25,7 +33,6 @@ export class AddReEnrollComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.reEnroll = { proof: "", reason: "", has_proof: "1" };
     this.acadmicProc.getِgetRequests().then(res => {
       this.acadmicProc.reqData = (res as any).data;
       this.acadmicProc.msgs = (res as any).messages;
@@ -33,10 +40,13 @@ export class AddReEnrollComponent implements OnInit {
       this.msgs = this.acadmicProc.msgs;
     });
   }
-
+  get fileName(){
+    return filePath != null ? File.fromPath(filePath).name : "Browse";
+  }
   requesting = false;
   addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(
+
+   this.acadmicProc.AddRequest(data).then(
       res => {
         this.toastr.push((res as any).messages);
         if (res["status"]) {
@@ -51,41 +61,16 @@ export class AddReEnrollComponent implements OnInit {
       }
     );
   }
+
   onSubmit() {
     if (this.requesting) {
       return false;
     }
     this.requesting = true;
+    this.reEnroll.proof=this.convertToBase64()
     this.addRequest(this.reEnroll);
   }
-
-  handleInputChange(e) {
-    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-    const pattern = /image-*/;
-    const reader = new FileReader();
-
-    e.target.nextSibling.innerHTML = e.target.files[0].name;
-
-    // console.log(e);
-    // console.log(e.target.nextSibling.innerHTML);
-    // console.log(e.target.files[0].name);
-    // console.log(e.target.files.name);
-
-    //let thisVal = this.val();
-    /* if (!file.type.match(pattern)) {
-      alert('invalid format');
-      return;
-    }
-     */
-    reader.onload = this._handleReaderLoaded.bind(this);
-    reader.readAsDataURL(file);
-  }
-  _handleReaderLoaded(e) {
-    const reader = e.target;
-    this.reEnroll.proof = reader.result;
-    console.log(this.reEnroll.proof);
-  }
-
+  
   print(req) {
     return this.acadmicProc.Download(req);
   }
@@ -99,44 +84,39 @@ export class AddReEnrollComponent implements OnInit {
   }
 
  public openCustomFilesPicker() {
-  let extensions = [];
+    var extensions = [];
+    if (app.ios) {
+        extensions = [kUTTypePDF];
+    } else {
+        extensions = ['pdf'];
+    }
 
-  if (app.ios) {
-      extensions = [kUTTypePDF];
-  } else {
-      extensions = ['pdf'];
-  }
+    let options: FilePickerOptions = {
+        android: {
+            extensions: extensions,
+            maxNumberFiles: 1
+        },
+        ios: {
+            extensions: extensions,
+            multipleSelection: false,
+          //  hostView: this._hostView
+        }
+    };
 
-  let options: FilePickerOptions = {
-      android: {
-          extensions: extensions,
-          maxNumberFiles: 1
-      },
-      ios: {
-          extensions: extensions,
-          multipleSelection: false,
-        //  hostView: this._hostView
-      }
-  };
+    let mediafilepicker = new Mediafilepicker();
+    mediafilepicker.openFilePicker(options);
 
-  let mediafilepicker = new Mediafilepicker();
-  mediafilepicker.openFilePicker(options);
+    mediafilepicker.on("getFiles", function (res) {
 
-  mediafilepicker.on("getFiles", function (res) {
+        let results = res.object.get('results');
+        if (results) {
 
-      let results = res.object.get('results');
-      console.dir(results);
+            for (let i = 0; i < results.length; i++) {//only upload one file
 
-      if (results) {
-
-          for (let i = 0; i < results.length; i++) {
-
-              let result = results[i];
-              console.log(result.file);
-
-          }
-      }
-
+                let result = results[i];
+                filePath=result.file;
+            }
+        }
   });
 
   mediafilepicker.on("error", function (res) {
@@ -148,6 +128,22 @@ export class AddReEnrollComponent implements OnInit {
       let msg = res.object.get('msg');
       console.log(msg);
   });
+}
+
+convertToBase64(){
+  let base64String:string;
+  let file: File = File.fromPath(filePath);
+  if (app.ios) {
+    let text = NSString.stringWithString(file.readSync());
+    let data = text.dataUsingEncoding(NSUTF8StringEncoding);
+    base64String= data.base64EncodedStringWithOptions(0);
+  } else {
+    let text = new java.lang.String(file.readSync());
+    let data = text.getBytes("UTF-8");
+    base64String= android.util.Base64.encodeToString(data, android.util.Base64.DEFAULT);
+
+  }
+  return base64String;
 }
 
 }
