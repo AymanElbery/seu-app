@@ -48,8 +48,9 @@
                 <Label text="Print Resp" class="tableColumn"></Label>
                 <Label [text]="item.insert_date" class="tableColumn"></Label>
                 <Label [text]="item.status" class="tableColumn"></Label>
-                <Button text="Print" (tap)="print(item.request_number)" class="tableColumn orange-button"></Button>
-                <Button *ngIf='item.deletable' [disabled]='deleting' text="حذف" (tap)="delete(item.request_number,i)" class="tableColumn orange-button"></Button>
+                <Button (tap)="print(item.request_number)" class="tableColumn orange-button fas -rounded-sm" text="&#xf02f;">
+                </Button>
+                <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="tableColumn orange-button fas -rounded-sm"></Button>
                 <Label *ngIf='!item.deletable' text="لا يمكن إلغاء الطلب" class="tableColumn"></Label>
             </FlexboxLayout>
         </FlexboxLayout>

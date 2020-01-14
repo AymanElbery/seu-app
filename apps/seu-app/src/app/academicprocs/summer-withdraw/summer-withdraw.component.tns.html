@@ -44,7 +44,7 @@
                     <Label [text]="item.insert_date"  ></Label>
                     <Label [text]="item.status" ></Label>
                 </FlexboxLayout>
-                <Button *ngIf='item.deletable' [disabled]='deleting' text="حذف" (tap)="delete(item.request_number,i)" class="  orange-button"></Button>
+                <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas orange-button -rounded-sm"></Button>
                 <Label *ngIf='!item.deletable' text="لا يمكن إلغاء الطلب"  ></Label>
             </FlexboxLayout>
         </FlexboxLayout>

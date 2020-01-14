@@ -30,8 +30,8 @@
         <Label text="طلبات سابقة"></Label>
         <Button text="اضافة طلب" *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="my-button"></Button>
     </FlexboxLayout>
-    <ScrollView orientation="horizontal" *ngIf="!isLoading">
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start">
+    
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="h1 table-row-dark"> 
                 <label text="رقم الطلب"></label>
                 <label text="تاريخ/حالة الطلب"></label>
@@ -45,11 +45,10 @@
                     <Label [text]="item.insert_date"   ></Label>
                     <Label [text]="item.status"   ></Label>
                 </FlexboxLayout>
-                <Button text="Print" (tap)="print(item.request_number)" class="orange-button"></Button>
-                <Button *ngIf='item.deletable' [disabled]='deleting' text="حذف" (tap)="delete(item.request_number,i)" class="orange-button"></Button>
+                <Button text="&#xf02f;" (tap)="print(item.request_number)" class="orange-button fas -rounded-sm"></Button>
+                <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="orange-button fas -rounded-sm"></Button>
                 <Label *ngIf='!item.deletable' text="لا يمكن إلغاء الطلب"   ></Label>
             </FlexboxLayout>
         </FlexboxLayout>
-    </ScrollView>
 
 </FlexboxLayout>
