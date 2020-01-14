@@ -12,7 +12,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
             <Label class="nt-drawer__header-footnote" text="username@mail.com"></Label>
         </StackLayout>
     
-        <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;">
+        <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;" height="auto">
              <StackLayout >
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
                     <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label>

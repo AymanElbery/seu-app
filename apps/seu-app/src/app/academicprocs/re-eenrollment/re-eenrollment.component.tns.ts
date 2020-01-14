@@ -29,6 +29,8 @@ export class ReEenrollmentComponent implements OnInit {
     private acadmicProc: ReEnrollService) { }
 
   ngOnInit() {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.isLoading = true;
     this.reEnroll = { proof: '', reason: '', has_proof: '1' };
     this.getRequests();
