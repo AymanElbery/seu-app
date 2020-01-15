@@ -8,6 +8,8 @@ import { SummerWithdrawComponent } from './summer-withdraw/summer-withdraw.compo
 import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component.tns';
 import { CancelCourseComponent } from './cancel-course/cancel-course.component.tns';
 import { AddCourseCancelComponent } from './cancel-course/diag/add-course-cancel/add-course-cancel.component.tns';
+import { CourseEqualizeComponent } from './course-equalize/course-equalize.component.tns';
+import { AddCourseEqualizeComponent } from './course-equalize/diag/add-course-equalize/add-course-equalize.component.tns';
 
 const routes: Routes = [
   { path: '', component: WithdrawFromUnivComponent },
@@ -20,9 +22,9 @@ const routes: Routes = [
       { path: 'summer', component: SummerWithdrawComponent },
       { path: 'reenrol', component: ReEenrollmentComponent },
       { path: 'cancelcourse', component: CancelCourseComponent },
-      {path:'addcancelcourse',component:AddCourseCancelComponent}
-
-
+      { path:'addcancelcourse',component:AddCourseCancelComponent},
+      { path: 'equalize', component: CourseEqualizeComponent },
+      { path:'addequalize',component:AddCourseEqualizeComponent},
 
   ]}
 ];
