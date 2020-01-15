@@ -121,14 +121,14 @@
       <div *ngIf="reqData.can_add_new_request" class="widget">
         <div class="widget-header">
 
-          <h3 class="widget-title"> اختر الرغبات</h3>
+          <h3 class="widget-title"> {{"services.reg.choosewishe"|translate}} </h3>
         </div>
 
         <div class="container">
           <div class="row ser-block">
             <div *ngIf="reqData.requests.length == 0" class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>هل ترغب ب يومين (يبدأ من 5 مساء) </h6>
+                <h6> {{"services.reg.doyou25"|translate}} </h6>
                 <input [disabled]="registerWishes.wish != ''" type="checkbox" class="checkbox"
                   style="height: 20px;width:20px;" #TowDaya="ngModel" [(ngModel)]="registerWishes.tow_days"
                   name="TowDaya" ng-true-value=0 ng-false-value=1>
