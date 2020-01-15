@@ -3,6 +3,7 @@ import { CourseEqual } from '../../../../shared/models/course-equal';
 import { CourseEqualizerService } from '../../../services/course-equalizer.service';
 import { NgForm } from '@angular/forms';
 import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 
 @Component({
   selector: 'app-add-course-equalize',
@@ -15,6 +16,8 @@ export class AddCourseEqualizeComponent implements OnInit {
   reqData: CourseEqual;
   msgs: any;
   private imageSrc = '';
+  univs:ValueItem<number>[] = [];
+  univsDropDown;
 
   constructor(
     private toastr: AppToasterService, private acadmicProc: CourseEqualizerService) { }
@@ -30,6 +33,15 @@ export class AddCourseEqualizeComponent implements OnInit {
       DESC_CRSE_FILE: '', TRANSCRIPT_FILE: '', notes: ''
     };
     this.reqData = this.acadmicProc.reqData as CourseEqual;
+    for (let i = 0; i < this.curseEqual.univ_list_arr.length; i++) {
+      this.univs.push(
+        {
+          value: this.curseEqual.univ_list_arr[i].UN_ID,
+          display: this.curseEqual.univ_list_arr[i].UN_NAME
+        }
+      );
+    }
+    this.univsDropDown = new ValueList(this.univs);
 
   }
   changeStatus(it, e) {
@@ -102,6 +114,8 @@ export class AddCourseEqualizeComponent implements OnInit {
   closeDiag() {
    // this.dialogRef.close();
   }
-
-
+  getUniv(val: SelectedIndexChangedEventData) {
+    const code = this.univsDropDown.getValue(val.newIndex);
+    this.curseEqual.PREV_UNIV=code;
+  }
 }

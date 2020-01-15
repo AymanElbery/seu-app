@@ -1,1 +1,55 @@
-<Button text="add-course-equalize works!" class="btn btn-primary"></Button>
+<ActionBar title="معادلة المقررات">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem text="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
+</ActionBar>
+<FlexboxLayout flexDirection="column" style="padding: 15;">
+
+    <Label text="تنبيه:" style="color: chocolate; font-weight: bold;"></Label>
+    <Label [text]="reqData.notes.txt2"></Label>
+    <Label [text]="reqData.notes.txt3"></Label>
+    <Label [text]="reqData.notes.txt4" textWrap="true"></Label>
+    <Label [text]="reqData.notes.txt5" textWrap="true"></Label>
+    <Label [text]="reqData.notes.txt6" textWrap="true"></Label>
+    <Label [text]="reqData.notes.txt7" textWrap="true"></Label>
+    <Label [text]="reqData.notes.txt8" textWrap="true"></Label>
+    <Label [text]="reqData.notes.txt9" textWrap="true"></Label>
+    <Label [text]="reqData.notes.txt10" textWrap="true"></Label>
+    <Label [text]="reqData.notes.txt11" textWrap="true"></Label>
+
+    <Label text="اختر الجامعه" style="color: chocolate; font-weight: bold;"></Label>
+    <DropDown
+    [items]="univsDropDown"
+    (selectedIndexChanged)="getUniv($event)"
+    hint="الجامعة"
+    itemsTextAlignment="right"
+    >
+    </DropDown>
+    <Label text="اختر المقرر وحدد عدد الساعات والدرجة واللغة" style="color: chocolate; font-weight: bold;"></Label>
+
+    <FlexboxLayout flexDirection="column" justifyContent="space-between">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark header"> 
+            <label text="اسم المقرر"></label>
+            <label text="الساعات"></label>
+            <label text="الدرجة"></label>
+            <label text="اللغة"></label>
+            <label text="&#xf00c;" class="fas"></label>
+        </FlexboxLayout>
+
+        <!--<FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.RegisteredCourses;let i=index;" flexDirection="row-reverse" class="table-row">
+            <Label [text]="item.CRSE_TITLE"></Label>
+            <Label [text]="item.CRES_CODE"  ></Label>
+            <Label [text]="item.CREDIT_HR" ></Label>
+            <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event,i)" checked="false"></CheckBox>
+        </FlexboxLayout>-->
+    </FlexboxLayout>
+</FlexboxLayout>
