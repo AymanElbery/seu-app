@@ -14,6 +14,10 @@ import { SummerWithdrawComponent } from './summer-withdraw/summer-withdraw.compo
 import { AddSummerWithdrawComponent } from './summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.tns';
 import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component.tns';
 import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re-enroll.component.tns';
+import { CancelCourseComponent } from './cancel-course/cancel-course.component.tns';
+import { AddCourseCancelComponent } from './cancel-course/diag/add-course-cancel/add-course-cancel.component.tns';
+import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
+import { TNSCheckBoxModule } from '@nstudio/nativescript-checkbox/angular';
 
 
 @NgModule({
@@ -22,7 +26,9 @@ import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re
     AcademicprocsRoutingModule,
     NativeScriptCommonModule,
     NativeScriptFormsModule,
-    DropDownModule
+    DropDownModule,
+    NativeScriptLocalizeModule,
+    TNSCheckBoxModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
@@ -35,7 +41,9 @@ import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re
     SummerWithdrawComponent,
     AddSummerWithdrawComponent,
     ReEenrollmentComponent,
-    AddReEnrollComponent
+    AddReEnrollComponent,
+    CancelCourseComponent,
+    AddCourseCancelComponent
   ],
   entryComponents: [
     AddRequestComponent,

@@ -86,6 +86,14 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1" text="اعادة قيد" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
                 </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/cancelcourse')" (tap)="onNavItemTap('/procedures/cancelcourse')">
+                    <Label col="1" text="حذف مقرر" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/equalize')" (tap)="onNavItemTap('/procedures/equalize')">
+                    <Label col="1" text="معادلة المقررات" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+                </GridLayout>
                 <StackLayout class="hr"></StackLayout>
 
 
