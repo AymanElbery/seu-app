@@ -3,8 +3,8 @@ import { AcademicStatusService } from '../services/academic-status.service';
 import { FormsModule } from '@angular/forms';
 import * as app from 'tns-core-modules/application';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
-import * as utils from "tns-core-modules/utils/utils";
-import { ValueList, ValueItem, SelectedIndexChangedEventData } from "nativescript-drop-down";
+import * as utils from 'tns-core-modules/utils/utils';
+import { ValueList, ValueItem, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class AcademicStatusComponent implements OnInit {
   isLoading = false;
   isLoadingTerm = false;
   studentTermsDropDown;
-  terms:ValueItem<number>[]=[];
+  terms: ValueItem<number>[] = [];
   acceptanceTerm;
   acceptanceYear: any;
   constructor(private academicStatusService: AcademicStatusService) { }
@@ -36,19 +36,19 @@ export class AcademicStatusComponent implements OnInit {
     this.isLoadingTerm = true;
     this.academicStatusService.getStaudentStatus().then((res) => {
       this.student = (res as any).data.student;
-      this.acceptanceTerm= this.student.std_adm_term_label.match(/[^0-9\/م]/g).join('');
-      this.acceptanceYear=this.student.std_adm_term_label.match(/[0-9\/[0-9]/g).join('');
+      this.acceptanceTerm = this.student.std_adm_term_label.match(/[^0-9\/م]/g).join('');
+      this.acceptanceYear = this.student.std_adm_term_label.match(/[0-9\/[0-9]/g).join('');
       console.log(this.acceptanceYear);
       this.studentTerms = (res as any).data.STD_TERMS;
-      for(let i=0;i<this.studentTerms.length;i++){
+      for (let i = 0; i < this.studentTerms.length; i++) {
         this.terms.push(
           {
-            value:this.studentTerms[i].TERM_CODE,
-            display:this.studentTerms[i].TERM_DESC
+            value: this.studentTerms[i].TERM_CODE,
+            display: this.studentTerms[i].TERM_DESC
           }
         );
       }
-      this.studentTermsDropDown=new ValueList(this.terms);
+      this.studentTermsDropDown = new ValueList(this.terms);
 
       this.studentTermDetails = (res as any).data.STD_TermDetails;
       this.selectedSems = this.studentTerms[0].TERM_CODE;
@@ -57,15 +57,15 @@ export class AcademicStatusComponent implements OnInit {
       this.isLoading = false;
       this.isLoadingTerm = false;
     });
-    
+
   }
 
-  getTrmsDetails(val:SelectedIndexChangedEventData) {
-    let code=this.studentTermsDropDown.getValue(val.newIndex);
+  getTrmsDetails(val: SelectedIndexChangedEventData) {
+    const code = this.studentTermsDropDown.getValue(val.newIndex);
     this.isLoadingTerm = true;
     this.arabicPrint = this.academicStatusService.DownloadStatus(code);
     this.EngPrint = this.academicStatusService.DownloadEngStatus(code);
-    
+
     this.academicStatusService.getStaudentTermDetails(code).then(
       (res) => {
         this.studentTermDetails = (res as any).data.STD_TermDetails;
@@ -79,10 +79,10 @@ export class AcademicStatusComponent implements OnInit {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
-  onArabicPrint(){
+  onArabicPrint() {
     utils.openUrl(this.arabicPrint);
   }
-  onEnglishPrint(){
+  onEnglishPrint() {
     utils.openUrl(this.EngPrint);
   }
 }

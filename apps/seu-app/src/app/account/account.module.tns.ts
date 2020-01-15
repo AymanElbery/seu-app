@@ -12,7 +12,7 @@ import { AppTransModule } from '../app.trans.module.tns';
 @NgModule({
   declarations: [LoginFormComponent, RegistrationFormComponent],
   imports: [
-    NativeScriptCommonModule,AccountRoutingModule,NativeScriptFormsModule,AppTransModule
+    NativeScriptCommonModule, AccountRoutingModule, NativeScriptFormsModule, AppTransModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [UserService]

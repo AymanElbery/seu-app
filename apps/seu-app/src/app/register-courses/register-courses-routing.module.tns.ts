@@ -4,9 +4,9 @@ import { NativeScriptRouterModule } from 'nativescript-angular/router';
 import { RegisterWishesComponent } from './register-wishes/register-wishes.component.tns';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component.tns';
 
-const routes: Routes = [{ path: '', component: RegisterWishesComponent },
+const routes: Routes = [{ path: 'registercourses', component: RegisterWishesComponent },
 {
-  path: '',
+  path: 'registercourses',
   children: [
   { path: 'registerwishes',  component: RegisterWishesComponent },
   { path: 'reghelper',  component: RegisterationHelperComponent }
