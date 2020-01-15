@@ -30,7 +30,7 @@
         <Label text="طلبات سابقة"></Label>
         <Button text="اضافة طلب" *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="my-button"></Button>
     </FlexboxLayout>
-    
+    <!--*ngIf="reqData.can_add_new_request"-->
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="h1 table-row-dark"> 
                 <label text="رقم الطلب"></label>
