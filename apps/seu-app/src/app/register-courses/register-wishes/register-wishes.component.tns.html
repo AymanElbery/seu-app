@@ -1,209 +1,58 @@
-<GridLayout  class="main-content">
+<ActionBar>
+  <!-- 
+          <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
 
-    <ScrollView>
-        <StackLayout margin="10" verticalAlignment="center">
-    <StackLayout class="service-single">
-      <StackLayout class="container">
-        <Label  text="Email">     </Label>
-        <StackLayout class="row">
-          <StackLayout class=" col-md-5">
-            <Label text="Email">   </Label>
-          </StackLayout>
-          <!-- <StackLayout class=" col-md-6 descr">
-            <sLabelan>مدة الإنجاز : <sLabelan class="badge">3 يوم</sLabelan> </sLabelan>
-            &nbsLabel; &nbsLabel; &nbsLabel; &nbsLabel;
-  
-          </StackLayout> -->
-        </StackLayout>
-      </StackLayout>
-    </section>
-    <StackLayout *ngIf="isLoading" class=" loading-indicator  ">
-      <StackLayout class="state">
-  
-  
-       
-  
-      </StackLayout>
-    </StackLayout>
-  
-    <StackLayout class="ser-state" *ngIf="!isLoading">
-      <StackLayout *ngFor="let msg of msgs"
-        [ngClass]="msg.tyLabele == 'info' ? 'alert alert-info' : (msg.tyLabele == 'error' ? 'alert alert-danger' : (msg.tyLabele == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
-        role="alert">
-        {{msg.body}}!
-      </StackLayout>
-    </StackLayout>
-  
-    <StackLayout class="widget" *ngIf="!isLoading">
-      <StackLayout class="widget-header">
-        <Label class="widget-title">  {{"general.student_data"|translate}} </Label>
-      </StackLayout>
-  
-  
-      <section class="ser-state">
-        <StackLayout class="container">
-          <StackLayout class="row ser-block">
-            <StackLayout class=" col-md-6 col-sm-12">
-              <StackLayout class="state">
-                <label> {{"general.female_or_male_name"|translate}}  </label>
-                <label>{{reqData.student_name}} </label>
-              </StackLayout>
-              <StackLayout class="Labelrogress Labelrogress-sm">
-                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
-              </StackLayout>
-            </StackLayout>
-            <StackLayout class=" col-md-6 col-sm-12">
-              <StackLayout class="state">
-                <label text="{{"general.student_id"|translate}}">  </label>
-                <label>{{reqData.student_id}} </label>
-              </StackLayout>
-              <StackLayout class="Labelrogress Labelrogress-sm">
-                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
-              </StackLayout>
-            </StackLayout>
-  
-          </StackLayout>
-  
-          <StackLayout class="row ser-block">
-            <StackLayout class=" col-md-6 col-sm-12">
-              <StackLayout class="state">
-                <label>{{"general.faculty"|translate}} </label>
-                <label>{{reqData.colledge}} </label>
-              </StackLayout>
-              <StackLayout class="Labelrogress Labelrogress-sm">
-                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
-              </StackLayout>
-            </StackLayout>
-            <StackLayout class=" col-md-6 col-sm-12">
-              <StackLayout class="state">
-                <label>{{"general.major"|translate}} </label>
-                <label>{{reqData.major}} </label>
-              </StackLayout>
-              <StackLayout class="Labelrogress Labelrogress-sm">
-                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
-              </StackLayout>
-            </StackLayout>
-  
-          </StackLayout>
-  
-          <StackLayout class="row  ser-block">
-            <StackLayout class=" col-md-6 col-sm-12">
-              <StackLayout class="state">
-                <label>{{"menu.academicstatus"|translate}}  </label>
-                <label>{{reqData.academic_status}} </label>
-              </StackLayout>
-              <StackLayout class="Labelrogress Labelrogress-sm">
-                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
-              </StackLayout>
-            </StackLayout>
-            <StackLayout class=" col-md-6 col-sm-12">
-              <StackLayout class="state">
-                <label>{{"general.branch"|translate}}   </label>
-                <label>{{reqData.branch}} </label>
-              </StackLayout>
-              <StackLayout class="Labelrogress Labelrogress-sm">
-                <StackLayout class="Labelrogress-bar bg-info"></StackLayout>
-              </StackLayout>
-            </StackLayout>
-          </StackLayout>
-        </StackLayout>
-      </section>
-  
-  
-  
-    </StackLayout>
-    <StackLayout >
-      <section class="ser-state">
-        <StackLayout *ngIf="reqData.can_add_new_request" class="widget">
-          <StackLayout class="widget-header">
-  
-            <Label class="widget-title"> اختر الرغبات</Label>
-          </StackLayout>
-  
-          <StackLayout class="container">
-            <StackLayout class="row ser-block">
-              <StackLayout *ngIf="reqData.requests.length == 0" class=" col-md-4 col-sm-12">
-                <StackLayout class="state">
-                  <label>هل ترغب ب يومين (يبدأ من 5 مساء) </label>
-                  <inLabelut [disabled]="registerWishes.wish != ''" tyLabele="checkbox" class="checkbox"
-                    style="height: 20Labelx;width:20Labelx;" #TowDaya="ngModel" [(ngModel)]="registerWishes.tow_days"
-                    name="TowDaya" ng-true-value=0 ng-false-value=1>
-                </StackLayout>
-  
-              </StackLayout>
-              <StackLayout class=" col-md-4 col-sm-12">
-                <StackLayout class="state">
-                  <label>الأيام و الفترات المتاحة </label>
-                  <select [disabled]="registerWishes.tow_days != ''" class="StackLayout-control" #Wishes="ngModel"
-                    [(ngModel)]="registerWishes.wish" name="Wishes" [class.is-invalid]="registerWishes.wish == ''">
-                    <oLabeltion value=''>اختر الفترة المتاحة</oLabeltion>
-                    <oLabeltion *ngFor="let wish of reqData.wishes_list" [value]="wish.id">{{wish.value}}</oLabeltion>
-                  </select>
-  
-                </StackLayout>
-  
-              </StackLayout>
-  
-              <StackLayout *ngIf="reqData.can_add_new_request" class=" col-md-4 col-sm-12">
-                <StackLayout class="state">
-                  <label> <br /> </label>
-                  <button tyLabele="submit" [disabled]="requesting" class="btn btn-dark"><i class="fa fa-database"></i> 
-                    ارسال
-                    الطلب
-                  </button>
-  
-                </StackLayout>
+  Use the NavigationButton as a side-drawer button in Android
+  because ActionItems are shown on the right side of the ActionBar
+  -->
+  <!-- 
+  Use the ActionItem for IOS with position set to left. Using the
+  NavigationButton as a side-drawer button in iOS is not possible,
+  because its function is to always navigate back in the application.
+  -->
+  <ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
+      ios.position="left">
+  </ActionItem>
+  <Label text=" {{'menu.registerwishesnew' |translate}}"></Label>
 
-              </StackLayout>
+</ActionBar>
+
+<ScrollView>
+  <StackLayout>
+    <StackLayout class="ysMsg" *ngFor="let msg of msgs">
+<label   text="{{msg.body}} !" class="alert alert-info">  </label>
+</StackLayout>
+
+<StackLayout>
+  <GridLayout  class="ysBox" rows="auto,auto,auto" columns="*,100">
+
+    <Label row="0" column="1" style="font-weight: 800;" text="{{'general.female_or_male_name'|translate}} :"></Label>
+    <Label row="0"  column="0" text="{{reqData.student_name}}"></Label>
+
+    <Label row="1" column="1" style="font-weight: 800;" text="{{'general.faculty'|translate}} :"></Label>
+    <Label row="1"  column="0" text="{{reqData.colledge}}"></Label>
+
+    <Label row="2" column="1" style="font-weight: 800;" text="{{'general.major'|translate}} :"></Label>
+    <Label row="2"  column="0" text="{{reqData.major}}"></Label>
+  </GridLayout>
+</StackLayout>
+<StackLayout>
+  <GridLayout  class="ysBox" rows="auto,auto,auto" columns="*,100">
+
+
+    <Label row="0" colSpan="2" style="font-size:16px;font-weight: 800;text-align: center;background-color: #6189f4;color: white;"  text="{{'services.reg.choosewishe'|translate}}"></Label>
+
+    <Label row="1" column="1" style="font-weight: 800;" text="{{'general.faculty'|translate}} :"></Label>
+    <Label row="1"  column="0" text="{{reqData.colledge}}"></Label>
+
+    <Label row="2" column="1" style="font-weight: 800;" text="{{'general.major'|translate}} :"></Label>
+    <Label row="2"  column="0" text="{{reqData.major}}"></Label>
+  </GridLayout>
+
+</StackLayout>
+<StackLayout>
   
-            </StackLayout>
-          </StackLayout>
-        </StackLayout>
-      </section>
-    </StackLayout>
-  
-    <StackLayout class="widget" *ngIf="!isLoading">
-      <StackLayout class="widget-header">
-  
-  
-  
-  
-        <Label class="widget-title"> الرغبات التي قمت بإدخالها</Label>
-      </StackLayout>
-      <StackLayout class="table-resLabelonsive">
-        <table class="table table-striLabeled table-bordered">
-          <thead>
-            <tr>
-              <th scoLabele="col">ترتيب الرغبة</th>
-              <th scoLabele="col">اليوم و الفترة</th>
-              <th scoLabele="col"> تاريخ الطلب</th>
-              <th scoLabele="col"> إلغاء الطلب</th>
-  
-  
-  
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let it of reqData.requests;let i=index;">
-              <td>{{it.sort}}</td>
-  
-  
-              <td>{{it.duration}}</td>
-              <td>{{it.insert_date}}</td>
-  
-              <td><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
-                  (click)="delete(it.request_number,i)"><i class="fa fa-trash">
-                    <!-- <aLabelLabel-timer [hr]="it.time_to_delete_Labeler_hour"></aLabelLabel-timer>-->
-                  </i> </button></td>
-            </tr>
-          </tbody>
-        </table>
-      </StackLayout>
-    </StackLayout>
-  
-  
-  
-</StackLayout>  
+</StackLayout>
+</StackLayout>
+
 </ScrollView>
-
-  </GridLayout >

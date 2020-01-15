@@ -2,8 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { RegistrationHelperService } from 'src/app/register-courses/services/registration-helper.service';
-import { RegisterationHelper } from 'src/app/shared/models/registeration-helper';
+import { RegistrationHelperService } from '../../../../register-courses/services/registration-helper.service';
+import { RegisterationHelper } from '../../../../shared/models/registeration-helper';
 
 @Component({
   selector: 'app-add-registeration-helper',

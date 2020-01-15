@@ -21,6 +21,32 @@
     color:gray;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;padding-top: 0px;margin-top: 0px;font-weight:600; text-align: left;padding-right: 100px;font-size:15px;
 }
+
+.ysBox{
+    margin-left: 20;
+    margin-right: 20;
+    background-color: white;
+    border-bottom: 1;
+    border-radius: 10;
+    border-width: 1;
+    padding: 20px;
+    border-color: #6189f4;
+    color: #6189f4;
+    margin-top: 20;
+}
+.ysMsg{
+    margin-top: 20;
+    margin-left: 20;
+    margin-right: 20;
+    background-color:whitesmoke;
+    border-bottom: 1;
+    border-radius: 1;
+    border-width: 1;
+    padding: 20px;
+    border-color: #CCE5FF;
+    color:gray;
+}
+
 .ysRootMenuItem{
     text-align: left;padding-right: 150px;font-size: medium;
 }
