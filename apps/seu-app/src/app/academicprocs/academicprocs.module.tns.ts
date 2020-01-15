@@ -14,6 +14,7 @@ import { SummerWithdrawComponent } from './summer-withdraw/summer-withdraw.compo
 import { AddSummerWithdrawComponent } from './summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component.tns';
 import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component.tns';
 import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re-enroll.component.tns';
+import { CancelCourseComponent } from './cancel-course/cancel-course.component.tns';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re
     SummerWithdrawComponent,
     AddSummerWithdrawComponent,
     ReEenrollmentComponent,
-    AddReEnrollComponent
+    AddReEnrollComponent,
+    CancelCourseComponent
   ],
   entryComponents: [
     AddRequestComponent,
