@@ -7,6 +7,11 @@ import { AppToasterService } from '../../shared/services/app-toaster';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as utils from 'tns-core-modules/utils/utils';
 import * as app from 'tns-core-modules/application';
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { ValueList } from 'nativescript-drop-down';
+
 
 @Component({
   selector: 'app-register-wishes',
@@ -21,16 +26,22 @@ export class RegisterWishesComponent implements OnInit {
   reqData;
   msgs;
   status;
+  itemSource;
   isLoading = false;
 
   deleting = false;
 
   requesting = false;
-
+  data: Observable< { toggle: boolean }>;
   ngOnInit() {
-    this.getServiceRequest();
+
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
+    // tslint:disable-next-line: deprecation
+    this.data = of({toggle: false}).pipe(delay(500));
+    this.getServiceRequest();
+
+
   }
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -46,19 +57,29 @@ export class RegisterWishesComponent implements OnInit {
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
+        console.log('wishes');
+
+        console.log( this.reqData.wishes_list);
+        this.itemSource = new ValueList<string>();
+       
+        this.reqData.wishes_list.forEach(element => {
+          this.itemSource.push({value: element.id, display: element.value});
+          
+        });
         console.log('msgs');
         console.log( this.msgs);
         this.isLoading = false;
-
       }
     );
 
-
-
   }
+
+
+
   delete(id, index) {
     if (confirm('هل انت متأكد')) {
       this.deleting = true;
+
       this.acadmicProc.deleteReq(id).then(res => {
         const messages = (res as any).messages;
         this.status = (res as any).status;
@@ -77,8 +98,14 @@ export class RegisterWishesComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.addRequest(this.registerWishes);
   }
+  onChange(e, r) {
+
+  r.tow_days = e;
+  }
   addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(res => {
+
+
+      this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
       this.requesting = false;
       if ((res as any).status) {
