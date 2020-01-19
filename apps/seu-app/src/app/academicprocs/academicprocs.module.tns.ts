@@ -21,6 +21,8 @@ import { TNSCheckBoxModule } from '@nstudio/nativescript-checkbox/angular';
 import { AddCourseEqualizeComponent } from './course-equalize/diag/add-course-equalize/add-course-equalize.component.tns';
 import { CourseEqualizeComponent } from './course-equalize/course-equalize.component.tns';
 import { AppTransModule } from '../app.trans.module.tns';
+import { EnglishEqualizeComponent } from './english-equalize/english-equalize.component.tns';
+import { AddEnglishEqualizerComponent } from './english-equalize/diag/add-english-equalizer/add-english-equalizer.component.tns';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { AppTransModule } from '../app.trans.module.tns';
     CancelCourseComponent,
     AddCourseCancelComponent,
     CourseEqualizeComponent,
-    AddCourseEqualizeComponent
+    AddCourseEqualizeComponent,
+    EnglishEqualizeComponent,
+    AddEnglishEqualizerComponent
   ],
   entryComponents: [
     AddRequestComponent,

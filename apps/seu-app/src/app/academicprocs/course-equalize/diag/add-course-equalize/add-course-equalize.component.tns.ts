@@ -136,10 +136,7 @@ export class AddCourseEqualizeComponent implements OnInit {
 
     this.requesting = true;
     this.curseEqual.DESC_CRSE_FILE =this.convertToBase64(filePath);
-    alert("ADDD REQUESTTTTTTTT 1");
-
     this.curseEqual.TRANSCRIPT_FILE=this.convertToBase64(imgPath);
-    alert("ADDD REQUESTTTTTTTT 2");
     this.addRequest(this.curseEqual);
   }
 

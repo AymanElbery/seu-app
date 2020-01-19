@@ -70,6 +70,7 @@
             "req_delete": "Delete Request",
             "req_no": "Request Number",
             "pre_requests": "Show Previous Requests",
+            "date_and_status":"Request Date/Status",
             "non_cancelable_request": "Can't Delete Request",
             "rejectrs": "reject reason    "
         },

@@ -71,7 +71,7 @@
             "rejectrs": "سبب الرفض   ",
             "pre_requesr": " الطلبات السابقة",
             "pre_requests": "عرض الطلبات السابقة",
-
+            "date_and_status":"تاريخ/حالة الطلب",
             "non_cancelable_request": "لا يمكن إلغاء الطلب",
             "req_type": "نوع الطلب"
         },
