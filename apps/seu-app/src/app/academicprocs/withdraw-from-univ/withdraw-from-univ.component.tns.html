@@ -36,22 +36,25 @@
                 <label text="رقم الطلب" class="tableColumn"></label>
                 <label text="الفصل الدراسى" class="tableColumn"></label>
                 <label text="طباعة الافاده" class="tableColumn"></label>
-                <label text="تاريخ الطلب" class="tableColumn"></label>
-                <label text="حالة الطلب" class="tableColumn"></label>
-                <label text="طباعة الطلب" class="tableColumn"></label>
-                <label text="حذف الطلب" class="tableColumn"></label>
+                <label text="تاريخ/حالة الطلب" class="tableColumn"></label>
+                <label text="طباعة/حذف الطلب"></label>
             </FlexboxLayout>
 
             <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="row-reverse" class="h2 table-row">
                 <Label [text]="item.request_number" class="tableColumn"></Label>
-                <Label [text]="item.term" class="tableColumn"></Label>
+                <Label [text]="item.term" class="tableColumn" textWrap="true" style="width: 20%;"></Label>
                 <Label text="Print Resp" class="tableColumn"></Label>
-                <Label [text]="item.insert_date" class="tableColumn"></Label>
-                <Label [text]="item.status" class="tableColumn"></Label>
-                <Button (tap)="print(item.request_number)" class="tableColumn orange-button fas -rounded-sm" text="&#xf02f;">
-                </Button>
-                <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="tableColumn orange-button fas -rounded-sm"></Button>
-                <Label *ngIf='!item.deletable' text="لا يمكن إلغاء الطلب" class="tableColumn"></Label>
+                <FlexboxLayout alignItems="center" flexWrap="nowrap" flexDirection="column">
+                    <Label [text]="item.insert_date"></Label>
+                    <Label [text]="item.status"></Label>
+                </FlexboxLayout>
+                <FlexboxLayout alignItems="center" flexWrap="nowrap" flexDirection="column">
+                    <Button (tap)="print(item.request_number)" class="orange-button fas -rounded-sm" text="&#xf02f;">
+                    </Button>
+                    <label text="/"></label>
+                    <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="orange-button fas -rounded-sm"></Button>
+                    <Label *ngIf='!item.deletable' text="لا يمكن إلغاء الطلب"></Label>
+                </FlexboxLayout>
             </FlexboxLayout>
         </FlexboxLayout>
     </ScrollView>

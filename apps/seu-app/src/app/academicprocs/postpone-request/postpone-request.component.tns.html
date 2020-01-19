@@ -14,6 +14,7 @@
     <Label text="تأجيل الفصل الدراسي"></Label>
 </ActionBar>
 
+<ScrollView>
 <FlexboxLayout flexDirection="column" style="padding: 15;">
 
     <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
@@ -35,8 +36,7 @@
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="h1 table-row-dark"> 
                 <label text="رقم الطلب"></label>
                 <label text="تاريخ/حالة الطلب"></label>
-                <label text="طباعة الطلب"></label>
-                <label text="حذف الطلب" ></label>
+                <label text="طباعة/حذف الطلب"></label>
             </FlexboxLayout>
 
             <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="row-reverse" class="h2 table-row">
@@ -45,10 +45,14 @@
                     <Label [text]="item.insert_date"   ></Label>
                     <Label [text]="item.status"   ></Label>
                 </FlexboxLayout>
-                <Button text="&#xf02f;" (tap)="print(item.request_number)" class="orange-button fas -rounded-sm"></Button>
-                <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="orange-button fas -rounded-sm"></Button>
-                <Label *ngIf='!item.deletable' text="لا يمكن إلغاء الطلب"   ></Label>
+                <FlexboxLayout alignItems="center" flexWrap="nowrap" flexDirection="column">
+                    <Button text="&#xf02f;" (tap)="print(item.request_number)" class="orange-button fas -rounded-sm"></Button>
+                    <label text="/"></label>
+                    <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="orange-button fas -rounded-sm"></Button>
+                    <Label *ngIf='!item.deletable' text="لا يمكن إلغاء الطلب"></Label>
+                </FlexboxLayout>
             </FlexboxLayout>
         </FlexboxLayout>
 
 </FlexboxLayout>
+</ScrollView>

@@ -18,6 +18,9 @@ import { CancelCourseComponent } from './cancel-course/cancel-course.component.t
 import { AddCourseCancelComponent } from './cancel-course/diag/add-course-cancel/add-course-cancel.component.tns';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { TNSCheckBoxModule } from '@nstudio/nativescript-checkbox/angular';
+import { AddCourseEqualizeComponent } from './course-equalize/diag/add-course-equalize/add-course-equalize.component.tns';
+import { CourseEqualizeComponent } from './course-equalize/course-equalize.component.tns';
+import { AppTransModule } from '../app.trans.module.tns';
 
 
 @NgModule({
@@ -28,7 +31,9 @@ import { TNSCheckBoxModule } from '@nstudio/nativescript-checkbox/angular';
     NativeScriptFormsModule,
     DropDownModule,
     NativeScriptLocalizeModule,
-    TNSCheckBoxModule
+    TNSCheckBoxModule,
+    AppTransModule
+
   ],
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
@@ -43,7 +48,9 @@ import { TNSCheckBoxModule } from '@nstudio/nativescript-checkbox/angular';
     ReEenrollmentComponent,
     AddReEnrollComponent,
     CancelCourseComponent,
-    AddCourseCancelComponent
+    AddCourseCancelComponent,
+    CourseEqualizeComponent,
+    AddCourseEqualizeComponent
   ],
   entryComponents: [
     AddRequestComponent,

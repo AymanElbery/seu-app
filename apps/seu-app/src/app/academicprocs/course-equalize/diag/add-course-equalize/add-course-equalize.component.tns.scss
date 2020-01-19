@@ -1,1 +1,49 @@
-/* Add mobile styles for the component here.  */
+DropDown{
+    padding: 5;
+}
+.wrap{
+    border-width: 1;
+    border-radius: 15;
+    border-color: gray;
+    margin : 10 0;
+    padding: 10;
+}
+.univ-dropdown{
+    border-width: 1;
+    border-color: gray;
+    margin-bottom: 10;
+}
+.hours-dropdown{
+
+    width: 15%;
+}
+.grade-dropdown{
+    
+    width: 15%;
+
+}
+.lang-dropdown{
+    width: 25%;
+}
+.title{
+    width: 35%;
+}
+
+.table-row-dark{
+    background-color: lightgray;
+    padding: 10;
+    border-width: 1;
+    border-color: gray;
+    border-radius: 8;
+    margin-top: 10;
+}
+.table-row{
+    padding: 10;
+    border-width: 1;
+    border-color: gray;
+    border-radius: 8;
+}
+Button{
+    border-width: 1;
+    border-color: gray;
+}

@@ -30,7 +30,10 @@ export class AddCourseEqualizeComponent implements OnInit {
       messages: [],
       univ_list_arr: [],
       PREV_UNIV: 0,
-      DESC_CRSE_FILE: '', TRANSCRIPT_FILE: '', notes: ''
+      DESC_CRSE_FILE: '', TRANSCRIPT_FILE: '', notes: '',
+      hourse_list:[],
+      grade_list:[]
+
     };
     this.reqData = this.acadmicProc.reqData as CourseEqual;
 

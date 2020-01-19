@@ -8,4 +8,6 @@ export interface CourseEqual {
     DESC_CRSE_FILE: string;
     TRANSCRIPT_FILE: string;
     notes: any;
+    hourse_list:any[];
+    grade_list:any[];
 }
