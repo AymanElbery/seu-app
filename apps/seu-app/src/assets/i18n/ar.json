@@ -543,7 +543,7 @@
             "perioddays": "الأيام و الفترات المتاحة",
             "sendrequest": "ارسال طالب",
             "rwishes": "الرغبات التي قمت بإدخالها",
-            "orderwishes": "ترتيب الرغبة",
+            "orderwishes": "الترتيب ",
             "dayperiod": "اليوم و الفترة",
             "orderdate": "تاريخ الطلب",
             "cancelorder": "الغاء الطلب",
@@ -557,7 +557,7 @@
             "status": "لحالة",
             "notes": "ملاحظات",
             "cancel": "الغاء الطلب",
-            "cantcancel": "لايمكن الغاء الطلب",
+            "cantcancel": "لايمكن الالغاء ",
             "depart": "الشعب",
             "addreq": "تسجيل طلب"
         }
