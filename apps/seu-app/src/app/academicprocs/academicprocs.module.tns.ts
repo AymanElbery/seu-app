@@ -20,6 +20,7 @@ import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { TNSCheckBoxModule } from '@nstudio/nativescript-checkbox/angular';
 import { AddCourseEqualizeComponent } from './course-equalize/diag/add-course-equalize/add-course-equalize.component.tns';
 import { CourseEqualizeComponent } from './course-equalize/course-equalize.component.tns';
+import { AppTransModule } from '../app.trans.module.tns';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { CourseEqualizeComponent } from './course-equalize/course-equalize.compo
     NativeScriptFormsModule,
     DropDownModule,
     NativeScriptLocalizeModule,
-    TNSCheckBoxModule
+    TNSCheckBoxModule,
+    AppTransModule
+
   ],
   schemas: [NO_ERRORS_SCHEMA],
   declarations: [
