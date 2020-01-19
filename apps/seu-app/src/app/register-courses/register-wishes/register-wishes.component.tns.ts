@@ -20,6 +20,16 @@ import { ValueList } from 'nativescript-drop-down';
 })
 export class RegisterWishesComponent implements OnInit {
 
+  standings: any[] = [{
+    p1: 'P',
+    team: 'Team',
+    z: 'Z',
+    v: 'V',
+    r: 'R',
+    p2: 'P',
+    s: 'S',
+    b: 'B'
+}];
 
   constructor( private toastr: AppToasterService, private acadmicProc: RegisterWishesService) { }
   registerWishes: RegisterWishes;
@@ -42,6 +52,9 @@ export class RegisterWishesComponent implements OnInit {
     this.getServiceRequest();
 
 
+
+
+
   }
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -50,7 +63,7 @@ export class RegisterWishesComponent implements OnInit {
   getServiceRequest() {
     this.isLoading = true;
     console.log('load data');
-    this.registerWishes = { tow_days: 0, wish: '' };
+    this.registerWishes = { tow_days: false, wish: '' };
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
@@ -61,10 +74,10 @@ export class RegisterWishesComponent implements OnInit {
 
         console.log( this.reqData.wishes_list);
         this.itemSource = new ValueList<string>();
-       
+
         this.reqData.wishes_list.forEach(element => {
           this.itemSource.push({value: element.id, display: element.value});
-          
+
         });
         console.log('msgs');
         console.log( this.msgs);
@@ -84,6 +97,7 @@ export class RegisterWishesComponent implements OnInit {
         const messages = (res as any).messages;
         this.status = (res as any).status;
         this.toastr.push(messages);
+        // tslint:disable-next-line: triple-equals
         if (this.status == 1) {
           this.acadmicProc.reqData.requests.splice(index, 1);
         }
@@ -100,7 +114,13 @@ export class RegisterWishesComponent implements OnInit {
   }
   onChange(e, r) {
 
-  r.tow_days = e;
+    if (e as boolean) {
+      r.tow_days = true ;
+    } else {
+    r.tow_days = false;
+  }
+
+
   }
   addRequest(data: any) {
 
@@ -110,7 +130,7 @@ export class RegisterWishesComponent implements OnInit {
       this.requesting = false;
       if ((res as any).status) {
         this.getServiceRequest();
-        this.registerWishes = { tow_days: 0, wish: '' };
+        this.registerWishes = { tow_days: false, wish: '' };
       }
     },
       err => {

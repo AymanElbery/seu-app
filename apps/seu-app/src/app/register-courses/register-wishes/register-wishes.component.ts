@@ -31,7 +31,7 @@ export class RegisterWishesComponent implements OnInit {
 
   getServiceRequest() {
     this.isLoading = true;
-    this.registerWishes = { tow_days: 0, wish: '' };
+    this.registerWishes = { tow_days: false, wish: '' };
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
@@ -70,7 +70,7 @@ export class RegisterWishesComponent implements OnInit {
       this.requesting = false;
       if ((res as any).status) {
         this.getServiceRequest();
-        this.registerWishes = { tow_days: 0, wish: '' };
+        this.registerWishes = { tow_days: false, wish: '' };
       }
     },
       err => {
