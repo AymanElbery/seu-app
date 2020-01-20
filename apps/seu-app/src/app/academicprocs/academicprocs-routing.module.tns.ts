@@ -12,6 +12,7 @@ import { CourseEqualizeComponent } from './course-equalize/course-equalize.compo
 import { AddCourseEqualizeComponent } from './course-equalize/diag/add-course-equalize/add-course-equalize.component.tns';
 import { EnglishEqualizeComponent } from './english-equalize/english-equalize.component.tns';
 import { AddEnglishEqualizerComponent } from './english-equalize/diag/add-english-equalizer/add-english-equalizer.component.tns';
+import { ChangeMajorComponent } from './change-major/change-major.component.tns';
 
 const routes: Routes = [
   { path: '', component: WithdrawFromUnivComponent },
@@ -29,7 +30,7 @@ const routes: Routes = [
       { path:'addequalize',component:AddCourseEqualizeComponent},
       { path: 'eequalize', component: EnglishEqualizeComponent },
       { path: 'addeequalize', component: AddEnglishEqualizerComponent },
-
+      { path: 'changemajor', component: ChangeMajorComponent },
 
 
   ]}

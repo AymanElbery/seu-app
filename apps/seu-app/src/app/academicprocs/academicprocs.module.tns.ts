@@ -23,6 +23,8 @@ import { CourseEqualizeComponent } from './course-equalize/course-equalize.compo
 import { AppTransModule } from '../app.trans.module.tns';
 import { EnglishEqualizeComponent } from './english-equalize/english-equalize.component.tns';
 import { AddEnglishEqualizerComponent } from './english-equalize/diag/add-english-equalizer/add-english-equalizer.component.tns';
+import { ChangeMajorComponent } from './change-major/change-major.component.tns';
+import { AddChangeMajorComponent } from './change-major/diag/add-change-major/add-change-major.component.tns';
 
 
 @NgModule({
@@ -54,14 +56,17 @@ import { AddEnglishEqualizerComponent } from './english-equalize/diag/add-englis
     CourseEqualizeComponent,
     AddCourseEqualizeComponent,
     EnglishEqualizeComponent,
-    AddEnglishEqualizerComponent
+    AddEnglishEqualizerComponent,
+    ChangeMajorComponent,
+    AddChangeMajorComponent
   ],
   entryComponents: [
     AddRequestComponent,
     AddPostponeComponent,
     AddExecuseTermComponent,
     AddSummerWithdrawComponent,
-    AddReEnrollComponent
+    AddReEnrollComponent,
+    AddChangeMajorComponent
   ],
 
 })
