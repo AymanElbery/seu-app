@@ -1,1 +1,22 @@
-<Button text="add-change-major works!" class="btn btn-primary"></Button>
+<FlexboxLayout  flexDirection="column" style="padding: 20;">
+    <Label text='{{"services.change_major.change_major_req"|translate}}' class="header"></Label>
+
+        <Label text='{{"services.change_major.alert"|translate}}' textWrap="true"></Label>
+        <Label text='{{"services.change_major.alert_content"|translate}}' textWrap="true"></Label>
+        <Label text='{{"services.change_major.major_cancellation_validity"|translate}}' textWrap="true"></Label>
+
+    <Label text='{{"services.change_major.choose_major"|translate}}'></Label>
+    <DropDown
+    [items]="majorsDropDown"
+    (selectedIndexChanged)="getmajor($event)"
+    hint='{{"services.change_major.choose_major"|translate}}'
+    itemsTextAlignment="left"
+    >
+    </DropDown>
+    
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="my-button save-button"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="my-button cancel-button"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

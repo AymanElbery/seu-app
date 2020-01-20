@@ -1,9 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ChangeMajorService } from 'src/app/academicprocs/services/change-major.service';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr';
-import { NgForm } from '@angular/forms';
-import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { ChangeMajorService } from '../../../services/change-major.service';
+import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { ModalDialogParams } from 'nativescript-angular/common';
+import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 
 @Component({
   selector: 'app-add-change-major',
@@ -16,22 +15,26 @@ export class AddChangeMajorComponent implements OnInit {
   mj: { major };
   reqData;
   msgs;
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<AddChangeMajorComponent>,
+  majors:ValueItem<number>[] = [];
+  majorsDropDown;
+
+  constructor(private _params: ModalDialogParams,
     private toastr: AppToasterService, private acadmicProc: ChangeMajorService) { }
 
   ngOnInit() {
     this.mj = { major: '' };
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
+    for (let i = 0; i < this.reqData.majors.length; i++) {
+      this.majors.push(
+        {
+          value: this.reqData.majors[i].MAJOR_PK,
+          display: this.reqData.majors[i].MAJOR_TITLE
+        }
+      );
+    }
+    this.majorsDropDown = new ValueList(this.majors);
 
-    // this.acadmicProc.getِgetRequests().then(
-    //   res => {
-    //     this.acadmicProc.reqData = (res as any).data;
-    //     this.acadmicProc.msgs = (res as any).messages;
-
-    //   }
-    // );
   }
 
   requesting = false;
@@ -40,7 +43,7 @@ export class AddChangeMajorComponent implements OnInit {
       this.toastr.push((res as any).messages);
       if (res['status']) {
         this.acadmicProc.newreqs = true;
-        this.dialogRef.close();
+        this.closeDiag();
       }
       this.requesting = false;
     },
@@ -49,29 +52,12 @@ export class AddChangeMajorComponent implements OnInit {
         this.requesting = false;
       });
   }
-  onSubmit(form: NgForm) {
+  onSubmit() {
     if (this.requesting) {
       return false;
     }
     this.requesting = true;
     this.addRequest(this.mj);
-  }
-
-  handleInputChange(e) {
-    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-    const pattern = /image-*/;
-    const reader = new FileReader();
-    /* if (!file.type.match(pattern)) {
-      alert('invalid format');
-      return;
-    }
-     */
-    reader.onload = this._handleReaderLoaded.bind(this);
-    reader.readAsDataURL(file);
-  }
-  _handleReaderLoaded(e) {
-    const reader = e.target;
-
   }
 
   print(req) {
@@ -84,7 +70,11 @@ export class AddChangeMajorComponent implements OnInit {
 
   }
   closeDiag() {
-    this.dialogRef.close();
+    this._params.closeCallback();
+  }
+  getmajor(val: SelectedIndexChangedEventData) {
+    const code = this.majorsDropDown.getValue(val.newIndex);
+    this.mj.major=code;
   }
 }
-//
+

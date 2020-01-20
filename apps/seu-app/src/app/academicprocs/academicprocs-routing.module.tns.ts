@@ -10,6 +10,9 @@ import { CancelCourseComponent } from './cancel-course/cancel-course.component.t
 import { AddCourseCancelComponent } from './cancel-course/diag/add-course-cancel/add-course-cancel.component.tns';
 import { CourseEqualizeComponent } from './course-equalize/course-equalize.component.tns';
 import { AddCourseEqualizeComponent } from './course-equalize/diag/add-course-equalize/add-course-equalize.component.tns';
+import { EnglishEqualizeComponent } from './english-equalize/english-equalize.component.tns';
+import { AddEnglishEqualizerComponent } from './english-equalize/diag/add-english-equalizer/add-english-equalizer.component.tns';
+import { ChangeMajorComponent } from './change-major/change-major.component.tns';
 
 const routes: Routes = [
   { path: '', component: WithdrawFromUnivComponent },
@@ -25,6 +28,10 @@ const routes: Routes = [
       { path:'addcancelcourse',component:AddCourseCancelComponent},
       { path: 'equalize', component: CourseEqualizeComponent },
       { path:'addequalize',component:AddCourseEqualizeComponent},
+      { path: 'eequalize', component: EnglishEqualizeComponent },
+      { path: 'addeequalize', component: AddEnglishEqualizerComponent },
+      { path: 'changemajor', component: ChangeMajorComponent },
+
 
   ]}
 ];
