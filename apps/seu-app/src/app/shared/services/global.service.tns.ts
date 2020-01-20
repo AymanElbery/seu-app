@@ -10,7 +10,8 @@ export class GlobalService extends GlobalBaseService {
     super();
   }
 
+
   getSID() {
-    return 'MDljYzRhODAtOGM5Ni00ZjRjLTgyODItYzQ1YmUzODY4N2Y3fFNCdmF4L2JBSlA4Y3JRSnk5dUhxRlhaVGl4dz0='; 
+    return 'MTc3M2MxYzMtZDI5Ni00NjQzLWE1YjUtMTViOGM0YmI2YTQwfFNCdmF4L2JBSlA4Y3JRSnk5dUhxRlhaVGl4dz0=';
  }
 }

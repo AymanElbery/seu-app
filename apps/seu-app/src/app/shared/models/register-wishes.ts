@@ -1,7 +1,7 @@
 export interface RegisterWishes {
 
 
-    tow_days: boolean ;
+    tow_days ;
     wish ;
 
 }

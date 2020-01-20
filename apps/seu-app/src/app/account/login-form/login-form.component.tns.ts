@@ -28,7 +28,7 @@ export class LoginFormComponent implements OnInit {
   ) {
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
-     
+
         this.brandNew = param.brandNew;
         this.credentials.email = param.email;
       }
@@ -41,6 +41,13 @@ export class LoginFormComponent implements OnInit {
     this.submitted = true;
     this.isRequesting = true;
     this.errors = '';
+
+    this.userService.loadUserData().then(res => {
+      if (this.userService.userData.activeRole === '') {
+      this.userService.loadUserData();
+      }
+  }
+  );
     this.router.navigate(['/home']);
    /*  this.userService
       .login(value.email, value.password)
@@ -72,6 +79,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   ngOnInit() {}
+  // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {
     // prevent memory leak by unsubscribing
     this.subscription.unsubscribe();

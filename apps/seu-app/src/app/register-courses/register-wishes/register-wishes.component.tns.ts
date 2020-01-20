@@ -10,7 +10,9 @@ import * as app from 'tns-core-modules/application';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { ValueList } from 'nativescript-drop-down';
+import { ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
+import { ThrowStmt } from '@angular/compiler';
+import { Wishes } from 'src/app/shared/models/wishes';
 
 
 @Component({
@@ -29,11 +31,16 @@ export class RegisterWishesComponent implements OnInit {
     p2: 'P',
     s: 'S',
     b: 'B'
-}];
+  }];
+  wSelectedIndex;
+  constructor(private toastr: AppToasterService, private acadmicProc: RegisterWishesService) {
 
-  constructor( private toastr: AppToasterService, private acadmicProc: RegisterWishesService) { }
+    this.registerWishes = { tow_days: 0, wish: '' };
+    //  this.registerWishes.tow_days=false;
+    this.reqData = {colledge: '', major: '', requests: [], student_name: '', wishes_list: []};
+  }
   registerWishes: RegisterWishes;
-  reqData;
+  reqData: Wishes;
   msgs;
   status;
   itemSource;
@@ -42,13 +49,14 @@ export class RegisterWishesComponent implements OnInit {
   deleting = false;
 
   requesting = false;
-  data: Observable< { toggle: boolean }>;
+  data: Observable<{ toggle: boolean }>;
   ngOnInit() {
 
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    const sideDrawer = app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
     // tslint:disable-next-line: deprecation
-    this.data = of({toggle: false}).pipe(delay(500));
+    this.data = of({ toggle: false }).pipe(delay(500));
+    this.itemSource = new ValueList<any>();
     this.getServiceRequest();
 
 
@@ -57,13 +65,12 @@ export class RegisterWishesComponent implements OnInit {
 
   }
   onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    const sideDrawer = app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
   getServiceRequest() {
     this.isLoading = true;
     console.log('load data');
-    this.registerWishes = { tow_days: false, wish: '' };
     this.acadmicProc.getِgetRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
@@ -71,28 +78,27 @@ export class RegisterWishesComponent implements OnInit {
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         console.log('wishes');
-
-        console.log( this.reqData.wishes_list);
-        this.itemSource = new ValueList<string>();
-
+        console.log(this.reqData.wishes_list);
+        this.itemSource = new ValueList();
         this.reqData.wishes_list.forEach(element => {
-          this.itemSource.push({value: element.id, display: element.value});
-
+          this.itemSource.push({ value: element.id, display: element.value });
         });
+        this.registerWishes = { tow_days: 0, wish: '' };
+
         console.log('msgs');
-        console.log( this.msgs);
+        console.log(this.msgs);
         this.isLoading = false;
       }
     );
-
   }
 
 
 
   delete(id, index) {
+
     if (confirm('هل انت متأكد')) {
       this.deleting = true;
-
+      this.isLoading = true;
       this.acadmicProc.deleteReq(id).then(res => {
         const messages = (res as any).messages;
         this.status = (res as any).status;
@@ -102,6 +108,7 @@ export class RegisterWishesComponent implements OnInit {
           this.acadmicProc.reqData.requests.splice(index, 1);
         }
         this.deleting = false;
+        this.isLoading = false;
       });
     }
 
@@ -112,30 +119,45 @@ export class RegisterWishesComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.addRequest(this.registerWishes);
   }
-  onChange(e, r) {
+  selItem(e: SelectedIndexChangedEventData) {
+    console.log('index' + e.newIndex);
+    const x = this.itemSource.getValue(e.newIndex);
+    console.log(x);
+    this.registerWishes.wish = x as string;
+    console.log('wish data' + x);
 
-    if (e as boolean) {
-      r.tow_days = true ;
-    } else {
-    r.tow_days = false;
+    console.log(this.registerWishes);
+
   }
+  onChange(e) {
+    this.registerWishes = { tow_days: 0, wish: '' };
+
+    if (e) {
+      this.registerWishes.tow_days = 1;
+    } else {
+      this.registerWishes.tow_days = 0;
+    }
 
 
   }
   addRequest(data: any) {
-
-
-      this.acadmicProc.AddRequest(data).then(res => {
+    this.isLoading = true;
+    this.registerWishes = this.itemSource.getValue(this.wSelectedIndex);
+    this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
       this.requesting = false;
       if ((res as any).status) {
         this.getServiceRequest();
-        this.registerWishes = { tow_days: false, wish: '' };
+        this.registerWishes = { tow_days: 0, wish: '' };
       }
+      this.isLoading = false;
     },
       err => {
         this.toastr.tryagain();
         this.requesting = false;
+        this.isLoading = false;
+        this.registerWishes = { tow_days: 0, wish: '' };
+
       });
   }
 

@@ -40,6 +40,7 @@ export class AcademicStatusComponent implements OnInit {
       this.acceptanceYear = this.student.std_adm_term_label.match(/[0-9\/[0-9]/g).join('');
       console.log(this.acceptanceYear);
       this.studentTerms = (res as any).data.STD_TERMS;
+      // tslint:disable-next-line: prefer-for-of
       for (let i = 0; i < this.studentTerms.length; i++) {
         this.terms.push(
           {

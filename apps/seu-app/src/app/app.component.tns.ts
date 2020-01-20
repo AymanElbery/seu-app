@@ -30,15 +30,6 @@ export class AppComponent implements OnInit {
 
     ngOnInit(): void {
 
-        this.userService.loadUserData().then(res => {
-                if (this.userService.userData.activeRole === '') {
-                this.userService.loadUserData();
-                }
-            }
-            );
-
-
-
         this._activatedUrl = '/home';
         this._sideDrawerTransition = new SlideInOnTopTransition();
 
