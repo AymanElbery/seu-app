@@ -6,7 +6,7 @@ import * as Toast from 'nativescript-toast';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common'; 
-import { AppToasterService } from '../../shared/services/app-toaster';
+import { AppToasterService } from '../../shared/services/app-toaster.tns';
 import { AddSummerWithdrawComponent } from './diag/add-summer-withdraw/add-summer-withdraw.component.tns';
 
 @Component({
