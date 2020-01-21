@@ -7,9 +7,9 @@
   <section class="service-single">
     <div class="container">
       <h3> {{"menu.registerwishesnew"|translate}} </h3>
-      <div class="row">
+
         <div class=" col-md-5">
-          <p>{{"menu.registerwishesnew"|translate}} </p>
+     
         </div>
         <!-- <div class=" col-md-6 descr">
           <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
@@ -40,7 +40,7 @@
 
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
-      <h3 class="widget-title"> {{"general.student_data"|translate}} </h3>
+
     </div>
 
 
@@ -49,7 +49,7 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6> {{"general.female_or_male_name"|translate}} </h6>
+          
               <h5>{{reqData.student_name}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -58,7 +58,7 @@
           </div>
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>{{"general.student_id"|translate}} </h6>
+            
               <h5>{{reqData.student_id}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -93,7 +93,7 @@
         <div class="row  ser-block">
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>{{"menu.academicstatus"|translate}} </h6>
+ 
               <h5>{{reqData.academic_status}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -102,7 +102,7 @@
           </div>
           <div class=" col-md-6 col-sm-12">
             <div class="state">
-              <h6>{{"general.branch"|translate}} </h6>
+          
               <h5>{{reqData.branch}} </h5>
             </div>
             <div class="progress progress-sm">
@@ -137,9 +137,11 @@
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> {{'services.reg.perioddays'|translate}}  </h6>choosewishe
+                
+                <h6> {{'services.reg.perioddays'|translate}}  </h6>
                 <select [disabled]="registerWishes.tow_days != ''" class="form-control" #Wishes="ngModel"
                   [(ngModel)]="registerWishes.wish" name="Wishes" [class.is-invalid]="registerWishes.wish == ''">
+          
                   <option value=''>  {{'services.reg.choosewishe'|translate}} </option>
                   <option *ngFor="let wish of reqData.wishes_list" [value]="wish.id">{{wish.value}}</option>
                 </select>
@@ -151,7 +153,9 @@
             <div *ngIf="reqData.can_add_new_request" class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6> <br /> </h6>
-                <button type="submit" [disabled]="requesting" class="btn btn-dark"><i class="fa fa-database"></i>
+               
+                <button type="submit" [disabled]="requesting" class="btn btn-dark"><i class="fa fa-database"></i> 
+                 
                   {{'services.reg.sendrequest'|translate}}
                 </button>
 
@@ -184,7 +188,7 @@
 
             <th scope="col">{{'services.reg.dayperiod' | translate}}</th>
             <th scope="col"> {{'services.reg.orderdate' | translate}}</th>
-            <th scope="col"> {{'services.reg.cancel' | translate}}</th>
+           
 
 
 

@@ -25,6 +25,10 @@ import { EnglishEqualizeComponent } from './english-equalize/english-equalize.co
 import { AddEnglishEqualizerComponent } from './english-equalize/diag/add-english-equalizer/add-english-equalizer.component.tns';
 import { ChangeMajorComponent } from './change-major/change-major.component.tns';
 import { AddChangeMajorComponent } from './change-major/diag/add-change-major/add-change-major.component.tns';
+import { ChangeRequestComponent } from './change-request/change-request.component.tns';
+import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component.tns';
+import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component.tns';
+import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.tns';
 
 
 @NgModule({
@@ -58,7 +62,11 @@ import { AddChangeMajorComponent } from './change-major/diag/add-change-major/ad
     EnglishEqualizeComponent,
     AddEnglishEqualizerComponent,
     ChangeMajorComponent,
-    AddChangeMajorComponent
+    AddChangeMajorComponent,
+    ChangeRequestComponent,
+    AddRequestChangeComponent,
+    LecturesExecusesComponent,
+    AddLecturesExecusesComponent
   ],
   entryComponents: [
     AddRequestComponent,
@@ -66,7 +74,8 @@ import { AddChangeMajorComponent } from './change-major/diag/add-change-major/ad
     AddExecuseTermComponent,
     AddSummerWithdrawComponent,
     AddReEnrollComponent,
-    AddChangeMajorComponent
+    AddChangeMajorComponent,
+    AddRequestChangeComponent
   ],
 
 })

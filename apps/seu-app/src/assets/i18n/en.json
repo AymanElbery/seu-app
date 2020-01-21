@@ -72,13 +72,17 @@
             "pre_requests": "Show Previous Requests",
             "date_and_status":"Request Date/Status",
             "non_cancelable_request": "Can't Delete Request",
-            "rejectrs": "reject reason    "
+            "rejectrs": "reject reason    ",
+            "delete_print_req":"Print/Delete Request"
+
         },
         "save": "Save",
         "cancel": "Cancel",
         "count": "Count",
         "college": "College",
-        "language": "Language"
+        "language": "Language",
+        "course_code_name":"Course Name/Code"
+
     },
     "menu": {
         "myservices": "My Services",

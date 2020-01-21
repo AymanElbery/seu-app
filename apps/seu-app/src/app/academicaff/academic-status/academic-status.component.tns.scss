@@ -1,16 +1,5 @@
-.h1{
-    font-size: 12;
-    color: navy;
- //   font-weight: bold;
- //   margin-left: 25;
-}
 
-.h2{
-    font-size: 12;
- //   font-weight: bold;
- //   margin-left: 25;
-}
-
+/*
 .table-row{
     padding: 10;
     border-width: 1;
@@ -29,7 +18,7 @@
 }
 DropDown{
     width: 50%;
-    color: chocolate;
+  //  color: chocolate;
     margin-top: 10;
     font-size: 12;
    // font-weight: bold;
@@ -55,4 +44,13 @@ DropDown{
     color: navy;
     font-size: 12;
   //  font-weight: bold;
+}
+*/
+DropDown{
+    width: 60%;
+    margin-top: 10;
+    padding: 10;
+}
+.wrap{
+    color: #6189f4;
 }

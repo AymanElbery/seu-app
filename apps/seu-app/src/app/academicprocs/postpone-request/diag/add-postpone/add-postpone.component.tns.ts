@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { TermPostponeService } from '../../../services/term-postpone.service';
 import { Postpone } from 'src/app/shared/models/postpone';
 import { ModalDialogParams } from 'nativescript-angular/common';
-import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-postpone',

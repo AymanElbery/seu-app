@@ -1,1 +1,22 @@
-<Button text="add-request-change works!" class="btn btn-primary"></Button>
+<FlexboxLayout  flexDirection="column" style="padding: 20;">
+    <Label text='{{"services.change_branch.change_branch_req"|translate}}' class="header"></Label>
+
+        <Label text='{{"services.change_branch.alert"|translate}}' textWrap="true"></Label>
+        <Label text='{{"services.change_branch.alert_content"|translate}}' textWrap="true"></Label>
+        <Label text='{{"services.change_branch.branch_cancellation_validity"|translate}}' textWrap="true"></Label>
+
+    <Label text='{{"services.change_branch.choose_branch"|translate}}'></Label>
+    <DropDown
+    [items]="branchesDropDown"
+    (selectedIndexChanged)="getBranch($event)"
+    hint='{{"services.change_branch.choose_branch"|translate}}'
+    itemsTextAlignment="left"
+    >
+    </DropDown>
+    
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="my-button save-button"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="my-button cancel-button"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

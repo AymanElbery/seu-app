@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ChangeMajorService } from '../../../services/change-major.service';
-import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { ModalDialogParams } from 'nativescript-angular/common';
 import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 

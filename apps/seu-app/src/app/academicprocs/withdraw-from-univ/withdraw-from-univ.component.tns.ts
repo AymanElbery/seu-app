@@ -7,7 +7,7 @@ import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
-import { AppToasterService } from '../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../shared/services/app-toaster';
 
 
 @Component({

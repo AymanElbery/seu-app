@@ -6,7 +6,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddExecuseTermComponent } from './diag/add-execuse-term/add-execuse-term.component.tns';
-import { AppToasterService } from '../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-execuse-request',

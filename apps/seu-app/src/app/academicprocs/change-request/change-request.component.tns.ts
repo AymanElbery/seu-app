@@ -1,40 +1,44 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { TermPostponeService } from '../services/term-postpone.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
+import { NgForm } from '@angular/forms';
+import { ChangeRequestService } from '../services/change-request.service';
+import { AppToasterService } from '../../shared/services/app-toaster';
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
-import { AddPostponeComponent } from './diag/add-postpone/add-postpone.component.tns';
-import { AppToasterService } from '../../shared/services/app-toaster';
-
+import { AddRequestChangeComponent } from './diag/add-request-change/add-request-change.component.tns';
 
 @Component({
-  selector: 'app-postpone-request',
-  templateUrl: './postpone-request.component.tns.html',
-  styleUrls: ['./postpone-request.component.tns.scss']
+  selector: 'app-change-request',
+  templateUrl: './change-request.component.tns.html',
+  styleUrls: ['./change-request.component.tns.scss']
 })
-export class PostponeRequestComponent implements OnInit {
+export class ChangeRequestComponent implements OnInit {
 
-  printAR;
-  reason: string;
+  //printAR;
+  //changeRequest: ChangeRequest;
   reqData;
   msgs;
   status;
+  isLoading = false;
 
+  //canAdd:boolean;
   constructor(private _modalService: ModalDialogService,
-    private _vcRef: ViewContainerRef,private acadmicProc: TermPostponeService,private toastr: AppToasterService) { }
+    private _vcRef: ViewContainerRef,
+      private toastr: AppToasterService, 
+    private acadmicProc: ChangeRequestService) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;  
+    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.isLoading = true;
-    this.reason = '';
     this.getRequests();
   }
 
 
-  isLoading = false;
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
@@ -59,7 +63,7 @@ export class PostponeRequestComponent implements OnInit {
         fullscreen: false,
     };
 
-    this._modalService.showModal(AddPostponeComponent, options)
+    this._modalService.showModal(AddRequestChangeComponent, options)
         .then( result => {
         if (this.acadmicProc.newreqs) {
           this.getRequests();
@@ -68,18 +72,15 @@ export class PostponeRequestComponent implements OnInit {
     });
 }
 
-  print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
-  }
   deleting = false;
   delete(id, index) {
-    dialogs.confirm({
-      title: "هل انت متأكد؟",
-      message: "",
-      okButtonText: "OK",
-      cancelButtonText: 'Cancel'
-  }).then((result:boolean) => {
-    if (result) {
+        dialogs.confirm({
+            title: "هل انت متأكد؟",
+            message: "",
+            okButtonText: "OK",
+            cancelButtonText: 'Cancel'
+        }).then((result:boolean) => {
+          if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
@@ -92,14 +93,10 @@ export class PostponeRequestComponent implements OnInit {
           this.toastr.tryagain();
           this.deleting = false;
         });
-    }
-  })
-
+    }});
   }
-    
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
-
 }

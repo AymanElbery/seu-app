@@ -1,22 +1,22 @@
 <FlexboxLayout  flexDirection="column" style="padding: 20;">
-    <Label text="طلب الإنسحاب من الجامعة" class="header"></Label>
+    <Label text='{{"services.withdrow_univ.title"|translate}}' class="header"></Label>
     <DropDown required
         [items]="dropDownBranches"
         (selectedIndexChanged)="getbranch($event)"
         [(ngModel)]="selectedIndex"
-        hint="اختر اقرب فرع"
+        hint='{{"services.withdrow_univ.choose_branch"|translate}}'
         itemsTextAlignment="left"
         #branch="ngModel"
         style="padding-right: 20;"
         class="font"
     >
     </DropDown>
-    <TextField [(ngModel)]="withdraw.mobile" style="margin-bottom: 10;" hint="رقم الهاتف" keyboardType="phone" required #mobile="ngModel"></TextField>
-    <TextField [(ngModel)]="withdraw.email"  hint="البريد الإلكتروني" keyboardType="email" required #mail="ngModel"></TextField>
+    <TextField [(ngModel)]="withdraw.mobile" style="margin-bottom: 10;" hint='{{"services.withdrow_univ.phone_no"|translate}}' keyboardType="phone" required #mobile="ngModel"></TextField>
+    <TextField [(ngModel)]="withdraw.email"  hint='{{"services.withdrow_univ.e-mail"|translate}}' keyboardType="email" required #mail="ngModel"></TextField>
     
     <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
-        <Button text="حفظ" (tap)="onSubmit()" [isEnabled]="mobile.valid && mail.valid && branch.valid" class="my-button save-button"></Button>
-        <Button text="الغاء" (tap)="closeDiag()" class="my-button cancel-button"></Button>
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" [isEnabled]="mobile.valid && mail.valid && branch.valid" class="-primary -rounded-sm" style="width: 50%;"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="-primary -rounded-sm" style="width: 50%;"></Button>
     </FlexboxLayout>
 
 </FlexboxLayout>

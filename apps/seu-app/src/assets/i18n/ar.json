@@ -73,14 +73,16 @@
             "pre_requests": "عرض الطلبات السابقة",
             "date_and_status":"تاريخ/حالة الطلب",
             "non_cancelable_request": "لا يمكن إلغاء الطلب",
-            "req_type": "نوع الطلب"
+            "req_type": "نوع الطلب",
+            "delete_print_req":"طباعة/حذف الطلب"
         },
         "save": "حفظ",
         "cancel": "الغاء",
         "count": "العدد",
         "college": "الجامعة",
         "language": "اللغة",
-        "email": "البريد الالكتروني"
+        "email": "البريد الالكتروني",
+        "course_code_name":"اسم المقرر/الرمز"
     },
     "menu": {
         "myservices": "خدماتي",
