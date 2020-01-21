@@ -11,6 +11,7 @@ import { from } from 'rxjs';
 import { AcademicRecordComponent } from './academic-record/academic-record.component.tns';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
+import { AppTransModule } from '../app.trans.module.tns';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
     DropDownModule,
     NativeScriptFormsModule,
     NativeScriptUIListViewModule,
-    NativeScriptLocalizeModule
+    NativeScriptLocalizeModule,
+    AppTransModule
+
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })
