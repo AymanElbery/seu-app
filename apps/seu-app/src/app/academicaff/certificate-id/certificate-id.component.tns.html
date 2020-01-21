@@ -19,21 +19,21 @@
 <ScrollView>
 <GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading">
 
-  <FlexboxLayout row="0" flexDirection="row-reverse" justifyContent="space-around" class="firstBox">
+  <StackLayout row="0" *ngIf="!isLoading">
+    <GridLayout  class="ysBox" rows="auto,auto" columns="*,150">
+  
+  
+      <Label row="0" column="1" style="font-weight: 800;" text="{{certificateDetails.labels.date}}"></Label>
+      <Label row="0"  column="0" text="{{certificateDetails.values.date}}" style="text-align: right;"></Label>
+  
+      <Label row="1" column="1" style="font-weight: 800;" text="{{certificateDetails.labels.ssn}}"></Label>
+      <Label row="1"  column="0" text="{{certificateDetails.values.ssn}}" style="text-align: right;"></Label>
 
-    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
-      <Label [text]="certificateDetails.labels.date" class="header"></Label>
-      <Label [text]="certificateDetails.values.date" class="content"></Label>
-    </FlexboxLayout>
+    </GridLayout>
+  </StackLayout>
 
-    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
-      <Label [text]="certificateDetails.labels.ssn" class="header"></Label>
-      <Label [text]="certificateDetails.values.ssn" class="content"></Label>
-    </FlexboxLayout>
 
-  </FlexboxLayout>
-
-  <FlexboxLayout row="1" flexDirection="row-reverse" class="firstParagraph" flexWrap="wrap" *ngIf="!isLoading">
+  <FlexboxLayout row="1" flexDirection="row-reverse" class="paragraph" flexWrap="wrap" *ngIf="!isLoading">
     <label  [text]="certificateDetails.labels.txt1"></label>
     <label  [text]="certificateDetails.values.std_name"></label>
     <label  [text]="certificateDetails.labels.txt2"></label>
@@ -49,7 +49,8 @@
   </FlexboxLayout>
 
   <ng-template [ngIf]="lectures !=null" [ngIfElse]="NoLec">
-    <FlexboxLayout row="2" justifyContent="space-between" flexDirection="column">
+    <StackLayout  class="ysBox" row="2">
+    <FlexboxLayout  justifyContent="space-between" flexDirection="column">
     <FlexboxLayout class="throw" justifyContent="space-between" flexWrap="nowrap" flexDirection="row-reverse">
       <FlexboxLayout >
         <Label [text]="certificateDetails.labels.crn"></Label>
@@ -61,7 +62,7 @@
     </FlexboxLayout>
 
    
-    <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of lectures" flexDirection="row-reverse" class="dataLabel">
+    <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of lectures" flexDirection="row-reverse" class="trow">
       <FlexboxLayout flexDirection="column" alignItems="center" class="wideColumn" style="margin-left: 15;">
         <Label [text]="item.CRSE_TITLE"></Label>
         <Label [text]="item.CRN"></Label>
@@ -70,15 +71,16 @@
       <Label [text]="toHTML(item.CRSE_TIME)" class="wideColumn"></Label>
     </FlexboxLayout>
   </FlexboxLayout>
+</StackLayout>
 </ng-template>
 
 <ng-template #NoLec>  
-  <FlexboxLayout row="2" flexDirection="row-reverse" flexWrap="wrap" class="closingParagraph" *ngIf="!isLoading">
+  <FlexboxLayout row="2" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
       <label  [text]="certificateDetails.labels.txt8"></label>
   </FlexboxLayout>
 </ng-template>
 
-  <FlexboxLayout row="3" flexDirection="row-reverse" flexWrap="wrap" class="closingParagraph" *ngIf="!isLoading">
+  <FlexboxLayout row="3" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
     <label  [text]="certificateDetails.labels.txt9" textWrap="true"></label>
     <label  [text]="certificateDetails.labels.txt10"></label>
     <label  [text]="certificateDetails.labels.txt11"></label>
@@ -86,15 +88,15 @@
     <label  [text]="certificateDetails.labels.txt13"></label>
   </FlexboxLayout>
 
-  <FlexboxLayout row="4" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout" *ngIf="!isLoading">
-    <Button text="عربى" class="my-button"  (tap)="onArabicPrint()" ></Button>
-    <Button text="English" class="my-button"  (tap)="onEnglishPrint()"></Button>
+  <FlexboxLayout row="4" flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
+    <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
+    <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
   </FlexboxLayout>
 </GridLayout>
 <FlexboxLayout row="3" justifyContent="center">
   <StackLayout  margin="10" >
     <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
 </StackLayout>
-  <ActivityIndicator [busy]="isLoading" color="navy"></ActivityIndicator>
+  <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 </FlexboxLayout>
 </ScrollView>
