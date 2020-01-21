@@ -12,67 +12,52 @@
     <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label text="افادة خريج"></Label>
+    <Label text='{{"services.graduate_state.title"| translate}}'></Label>
 </ActionBar>
 <ScrollView>
-    <FlexboxLayout  flexDirection="column" style="padding: 20;">
+    <FlexboxLayout  flexDirection="column">
     
         <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
             <ListView [items]="msgs">
                 <ng-template let-item="item">
-                    <Label verticalAlignment="center" [text]="item.body" [ngClass]="item.type == 'info' ? 'alert alert-info' : (item.type == 'error' ? 'alert alert-danger' : (item.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"></Label>
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
                 </ng-template>
             </ListView>
         </FlexboxLayout>
 
-        <FlexboxLayout *ngIf="!isLoading && graduateData.values && graduateData.labels" flexDirection="row-reverse" justifyContent="center" class="h1">
-            <label [text]="graduateData.labels.date"></label>
-            <label [text]="graduateData.values.date"></label>
-        </FlexboxLayout>
+        <StackLayout *ngIf="!isLoading && graduateData.values && graduateData.labels">
+            <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+          
+              <Label row="0" colSpan="2"  class="ysHBox"  text="{{graduateData.labels.date}}{{graduateData.values.date}}"></Label>
+              <Label row="1" colSpan="2"  class="ysHBox"  text="{{'general.student_data'|translate}}"></Label>
+                
+              <Label row="2" column="1" style="font-weight: 800;" text="{{graduateData.labels.student_name}} :"></Label>
+              <Label row="2"  column="0" text="{{graduateData.values.student_name}}"></Label>
+          
+              <Label row="3" column="1" style="font-weight: 800;" text="{{graduateData.labels.college}}} :"></Label>
+              <Label row="3"  column="0" text="{{graduateData.values.coll}}"></Label>
+          
+              <Label row="4" column="1" style="font-weight: 800;" text='{{"general.student_id" |translate}} :'></Label>
+              <Label row="4"  column="0" text='{{graduateData.values.std_id}}' style="text-align: right;"></Label>
 
-        <FlexboxLayout justifyContent="center" *ngIf="!isLoading && graduateData.values" class="h2">
-            <label text="بيانات الطالب/الطالبة"></label>
-        </FlexboxLayout>
+              <Label row="5" column="1" style="font-weight: 800;" text='{{graduateData.labels.ssn}} :'></Label>
+              <Label row="5"  column="0" text="{{graduateData.values.ssn}}" style="text-align: right;"></Label>
 
+              <Label row="6" column="1" style="font-weight: 800;" text='{{graduateData.labels.major}} :'></Label>
+              <Label row="6"  column="0" text="{{graduateData.values.major}}"></Label>
+              
+              <Label row="7" column="1" style="font-weight: 800;" text='{{graduateData.labels.branch}} :'></Label>
+              <Label row="7"  column="0" text="{{graduateData.values.branch}}"></Label>
 
-        <FlexboxLayout  *ngIf="!isLoading && graduateData.labels" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
-            <label [text]="graduateData.labels.student_name" class="h1"></label>
-            <label [text]="graduateData.labels.college" class="h1"></label>
-            <label text="رقم الطالب/الطالبة" class="h1"></label>
-        </FlexboxLayout>
+              <Label row="8" column="1" style="font-weight: 800;" text='{{graduateData.labels.GPA}} :'></Label>
+              <Label row="8"  column="0" text="{{graduateData.values.final_graduation_GPA}}" style="text-align: right;"></Label>
 
-        <FlexboxLayout *ngIf="!isLoading && graduateData.values" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
-            <label [text]="graduateData.values.student_name" class="h2"></label>
-            <label [text]="graduateData.values.coll" class="h2"></label>
-            <label [text]="graduateData.values.std_id" class="h2"></label>
-        </FlexboxLayout>
+              <Label row="9" column="1" style="font-weight: 800;" text='{{"general.stage" | translate}} :'></Label>
+              <Label row="9"  column="0" text="{{graduateData.values.level}}"></Label>
+            </GridLayout>
+          </StackLayout>
 
-        <FlexboxLayout *ngIf="!isLoading && graduateData.labels" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
-            <label [text]="graduateData.labels.ssn" class="h1"></label>
-            <label [text]="graduateData.labels.major" class="h1"></label>
-            <label [text]="graduateData.labels.branch" class="h1"></label>
-        </FlexboxLayout>
-
-        <FlexboxLayout  *ngIf="!isLoading && graduateData.values" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
-            <label [text]="graduateData.values.ssn" class="h2"></label>
-            <label [text]="graduateData.values.major" class="h2"></label>
-            <label [text]="graduateData.values.branch" class="h2"></label>
-        </FlexboxLayout>
-
-
-        <FlexboxLayout *ngIf="!isLoading && graduateData.labels" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
-            <label [text]="graduateData.labels.GPA" class="h1"></label>
-            <label text="المرحله" class="h1"></label>
-            <label text="المدينة" class="h1"></label>
-        </FlexboxLayout>
-
-        <FlexboxLayout *ngIf="!isLoading && graduateData.values" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
-            <label [text]="graduateData.values.final_graduation_GPA" class="h2"></label>
-            <label [text]="graduateData.values.level" class="h2"></label>
-            <label [text]="graduateData.values.city" class="h2"></label>
-        </FlexboxLayout>
-
-        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && graduateData.values && graduateData.labels" class="pargraph h2">
+        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && graduateData.values && graduateData.labels && allowed" class="pargraph">
             <Label [text]="graduateData.labels.txt1"></Label>
             <Label [text]="graduateData.values.term"></Label>
             <Label [text]="graduateData.labels.txt2"></Label>
@@ -81,10 +66,10 @@
             <Label [text]="graduateData.labels.txt4"></Label>
         </FlexboxLayout>
 
-        <FlexboxLayout flexDirection="column" *ngIf="!isLoading && graduateData.labels">
-            <Label text="ملحوظة" class="note"></Label>
-            <Label [text]="graduateData.labels.txt5" class="h2"></Label>
-            <Label [text]="graduateData.labels.txt6" class="h2"></Label>
+        <FlexboxLayout flexDirection="column" *ngIf="!isLoading && graduateData.labels && allowed" style="color: #6189f4;">
+            <Label text='{{"general.note"|translate}}' class="note"></Label>
+            <Label [text]="graduateData.labels.txt5"></Label>
+            <Label [text]="graduateData.labels.txt6"></Label>
         </FlexboxLayout>         
 
             <!--
@@ -153,12 +138,12 @@
                     <Label text="ملحوظة" class="note"></Label>
                     <Label text="صالحة لمدة شهر من تاريخ اصدار هذه الافادة" class="h2"></Label>
                     <Label text="يفضل طباعة الافادة من طابعه ملونة" class="h2"></Label>-->
-        <FlexboxLayout  *ngIf="!isLoading && graduateData.length >0" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
-            <Button text="عربى" class="my-button"  (tap)="onArabicPrint()" ></Button>
-            <Button text="English" class="my-button"  (tap)="onEnglishPrint()"></Button>
+        <FlexboxLayout  *ngIf="!isLoading && allowed && graduateData.length >0" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
+            <Button text='{{"general.ar_print" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
+            <Button text='{{"general.en_print" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
         </FlexboxLayout>
 
-        <ActivityIndicator [busy]="isLoading" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
             
     </FlexboxLayout>
 </ScrollView>
