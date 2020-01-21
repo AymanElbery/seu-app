@@ -34,12 +34,22 @@
     <Label row="2" column="1" style="font-weight: 800;" text="{{'general.faculty'|translate}} :"></Label>
     <Label row="2"  column="0" text="{{reqData.colledge}}"></Label>
 
-    <Label row="3" column="1" style="font-weight: 800;" text="{{'general.major'|translate}} :"></Label>
-    <Label row="4"  column="0" text="{{reqData.major}}"></Label>
-  </GridLayout>
-</StackLayout>
-<StackLayout>
-  <GridLayout   class="ysBox" rows="auto,auto,auto,auto" columns="*,180">
+        <Label row="3" column="1" style="font-weight: 800;" text="{{'general.major'|translate}} :"></Label>
+        <Label row="3" column="0" text="{{reqData.major}}"></Label>
+      </GridLayout>
+    </StackLayout>
+    <StackLayout>
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto" columns="*,180">
+        <Label row="0" colSpan="2" class="ysHBox" text="{{'services.reg.choosewishe'|translate}}"></Label>
+        <Label row="1" column="1" style="font-weight: 800;" text="{{'services.reg.doyou25'|translate}} :"></Label>
+        <Switch #sw style="margin:0px;padding: 0px;" (checkedChange)="onChange(sw.checked)" row="1" column="0"></Switch>
+        <Label row="2" column="1" style="font-weight: 800;" text="{{'services.reg.perioddays'|translate}} :"></Label>
+        <DropDown [isEnabled]="registerWishes.tow_days==0" row="2" style="font-weight: 700;" [items]="itemSource"
+          hint="{{'services.reg.choosewishe'|translate}}  " itemsTextAlignment="center" (selectedIndexChanged)="selItem($event)"></DropDown>
+        <Button [isEnabled]="!isLoading" row="3" text="{{'general.request.add_request' | translate}}"
+          (tap)="addRequest(registerWishes);" class="-primary -rounded-sm"></Button>
+      </GridLayout>
+    </StackLayout>
 
     <Label  row="0" colSpan="2"  class="ysHBox"  text="{{'services.reg.choosewishe'|translate}}"></Label>
     <Label row="1" column="1" style="font-weight: 800;" text="{{'services.reg.doyou25'|translate}} :"></Label>
@@ -50,33 +60,31 @@
   </GridLayout>
 </StackLayout>
 
-<StackLayout class="ysTBox">
-  <ScrollView orientation="horizontal" >
+    <StackLayout class="ysBox">
+      <Label colSpan="2" class="ysHBox" text="{{'general.request.pre_requesr'|translate}}"></Label>
+      <ScrollView orientation="horizontal">
+        <StackLayout>
+          <StackLayout>
+            <GridLayout columns="50, 130, 80, 50" class="throw">
+              <Label textAlignment="center" col="3" text="{{'services.reg.orderwishes' | translate}}"></Label>
+              <Label textAlignment="center" col="2" text="{{'services.reg.dayperiod' | translate}}"></Label>
+              <Label textAlignment="center" col="1" text="{{'services.reg.orderdate' | translate}}"></Label>
+              <Label textAlignment="center" col="0" text="-"></Label>
+            </GridLayout>
 
-  <StackLayout>
-<StackLayout>
-  <GridLayout   columns="50, 130, 80, 50" class="throw" >
-    <Label textAlignment="center" col="3" text="{{'services.reg.orderwishes' | translate}}"></Label>
-    <Label textAlignment="center" col="2" text="{{'services.reg.dayperiod' | translate}}"></Label>
-    <Label textAlignment="center" col="1" text="{{'services.reg.orderdate' | translate}}"></Label>
-    <Label textAlignment="center" col="0" text="-"></Label>
-  </GridLayout>
-</StackLayout>
-      <StackLayout>  
-       <GridLayout *ngFor="let item of reqData.requests" columns="50, 130, 80, 50" class="trow" >
+          </StackLayout>
+          <StackLayout>
+            <GridLayout *ngFor="let item of reqData.requests" columns="50, 130, 80, 50" class="trow">
+              <Label textAlignment="center" col="3" [text]="item.sort"></Label>
+              <Label textAlignment="center" col="2" [text]="item.duration"></Label>
+              <Label textAlignment="center" col="1" [text]="item.insert_date"></Label>
+              <Label textAlignment="center" col="0" *ngIf='!item.deletable' [disabled]='deleting' text="&#xf1f8;"
+                (tap)="delete(item.request_number,i)" class="fas"></Label>
+              <Label textAlignment="center" col="0" *ngIf='item.deletable'
+                text="{{'services.reg.cantcancel' | translate}}"></Label>
+            </GridLayout>
+          </StackLayout>
 
-        <Label textAlignment="center" col="3" [text]="item.sort"></Label>
-        <Label textAlignment="center" col="2" [text]="item.duration"></Label>
-        <Label textAlignment="center" col="1" [text]="item.insert_date"></Label>
-        <Button col="0" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas -rounded-sm orange-button"></Button>
-        <Label col="0" *ngIf='!item.deletable' text="{{'services.reg.cantcancel' | translate}}"  ></Label>  
-          </GridLayout>
-      
-      </StackLayout>
-   
-  </StackLayout>
-</ScrollView>
-</StackLayout>
+        </StackLayout>
+      </ScrollView>
 
-</StackLayout>
-</ScrollView>

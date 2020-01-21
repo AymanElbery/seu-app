@@ -1,1 +1,73 @@
-<Button text="tuition-fees-stat works!" class="btn btn-primary"></Button>
+<ActionBar>
+    <!-- 
+            <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+  
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text=" {{'services.finance.feepayst' | translate}}"></Label>
+
+</ActionBar>
+
+<ScrollView>
+    <StackLayout>
+        <GridLayout *ngIf="isLoading">
+
+            <StackLayout class="form" verticalAlignment="center">
+
+                <StackLayout>
+                    <ActivityIndicator *ngIf="isLoading" width="50" height="50" [busy]="isLoading"></ActivityIndicator>
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </GridLayout>
+
+
+        <StackLayout>
+            <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,100">
+
+                <Label row="0" colSpan="2" class="ysHBox" text="{{'menu.userData'|translate}}"></Label>
+
+                <Label row="1" column="1" style="font-weight: 800;"
+                    text="{{'general.female_or_male_name'|translate}} :"></Label>
+                <Label row="1" column="0" text="{{feesData.values.std_name}}"></Label>
+
+                <Label row="2" column="1" style="font-weight: 800;" text="{{'general.student_id'|translate}} :"></Label>
+                <Label horizontalAlignment="right" row="2" column="0" text="{{feesData.values.std_id}}"></Label>
+
+                <Label row="3" column="1" style="font-weight: 800;" text="{{'general.ssn'|translate}} :"></Label>
+                <Label  horizontalAlignment="right" row="3" column="0" text="{{feesData.values.ssn}}"></Label>
+
+                <Label row="4" column="1" style="font-weight: 800;" text="{{'general.faculty'|translate}}  :"></Label>
+                <Label row="4" column="0" text="{{feesData.values.coll}}"></Label>
+
+                <Label row="5" column="1" style="font-weight: 800;" text="{{'general.major'|translate}}  :"></Label>
+                <Label row="5" column="0" text="{{feesData.values.major}}"></Label>
+
+                <Label row="6" column="1" style="font-weight: 800;" text="{{'general.level'|translate}}  :"></Label>
+                <Label row="6" column="0" text="{{feesData.values.level}}"></Label>
+            </GridLayout>
+        </StackLayout>
+
+
+        <StackLayout class="ysBox">
+            <label textWrap="true"   text=" {{feesData.labels.txt1}} {{feesData.values.term}} {{feesData.labels.txt2}} {{feesData.values.final_graduation_GPA}}  {{feesData.labels.txt7}} {{feesData.labels.txt3}} {{feesData.values.total}} {{feesData.labels.txt4}}">
+            </label>
+            <label text="{{feesData.labels.txt5}}"></label>
+            <label text="{{feesData.labels.txt6}}"></label>
+        </StackLayout>
+        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
+            <Button text="عربى" class="my-button"  (tap)="onArabicPrint()" ></Button>
+            <Button text="English" class="my-button"  (tap)="onEnglishPrint()"></Button>
+        </FlexboxLayout>   
+    </StackLayout>
+</ScrollView>

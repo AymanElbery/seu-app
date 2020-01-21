@@ -24,6 +24,7 @@ import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { AppTransModule } from './app.trans.module.tns';
 import { TranslateModule } from '@ngx-translate/core';
 import { RegisterCoursesModule } from './register-courses/register-courses.module.tns';
+import { FinanceAffairModule } from './finance-affair/finance-affair.module.tns';
 
 
 
@@ -44,7 +45,8 @@ import { RegisterCoursesModule } from './register-courses/register-courses.modul
     RegisterCoursesModule,
     AcademicprocsModule,
     NativeScriptUISideDrawerModule,
-    AppTransModule
+    AppTransModule,
+    FinanceAffairModule
 
 
   ],
