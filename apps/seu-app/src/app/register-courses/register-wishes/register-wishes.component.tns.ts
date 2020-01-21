@@ -52,15 +52,15 @@ export class RegisterWishesComponent implements OnInit {
   data: Observable<{ toggle: boolean }>;
   ngOnInit() {
 
-    const sideDrawer = app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
+    
     // tslint:disable-next-line: deprecation
     this.data = of({ toggle: false }).pipe(delay(500));
     this.itemSource = new ValueList<any>();
     this.getServiceRequest();
 
 
-
+    const sideDrawer = app.getRootView() as RadSideDrawer;
+    sideDrawer.drawerLocation = SideDrawerLocation.Right;
 
 
   }

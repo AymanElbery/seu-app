@@ -6,15 +6,15 @@ import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescrip
 import { RouterExtensions } from 'nativescript-angular/router';
 import { FilePickerOptions, Mediafilepicker, ImagePickerOptions } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
-import { File } from "tns-core-modules/file-system";
+import { File } from 'tns-core-modules/file-system';
 
 declare const kUTTypePDF;
 declare var NSString: any;
 declare var NSUTF8StringEncoding: any;
 declare var java: any;
 declare var android: any;
-var filePath:string=null;
-var imgPath:string=null;
+let filePath: string = null;
+let imgPath: string = null;
 
 
 @Component({
@@ -23,6 +23,18 @@ var imgPath:string=null;
   styleUrls: ['./add-course-equalize.component.tns.scss']
 })
 export class AddCourseEqualizeComponent implements OnInit {
+;
+
+  constructor(
+    private toastr: AppToasterService, 
+    private acadmicProc: CourseEqualizerService,
+    private routerExtensions: RouterExtensions) { }
+  get fileName(){
+    return filePath != null ? File.fromPath(filePath).name : "Browse";
+  }
+  get imageName(){
+    return imgPath != null ? File.fromPath(imgPath).name : "Browse";
+  }
 
   curseEqual: CourseEqual;
   reqData: CourseEqual;
@@ -44,12 +56,7 @@ export class AddCourseEqualizeComponent implements OnInit {
   univsDropDown;
   hoursDropDown;
   gradesDropDown;
-  langsDropDown=new ValueList(this.langs);;
-
-  constructor(
-    private toastr: AppToasterService, 
-    private acadmicProc: CourseEqualizerService,
-    private routerExtensions: RouterExtensions) { }
+  langsDropDown=new ValueList(this.langs);  requesting = false;
 
   ngOnInit() {
     this.curseEqual = {
@@ -110,7 +117,6 @@ export class AddCourseEqualizeComponent implements OnInit {
   goBack() {
     this.routerExtensions.backToPreviousPage();
 }
-  requesting = false;
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(res => {
       alert(res);
@@ -222,12 +228,6 @@ export class AddCourseEqualizeComponent implements OnInit {
 
     }
     return base64String;
-  }
-  get fileName(){
-    return filePath != null ? File.fromPath(filePath).name : "Browse";
-  }
-  get imageName(){
-    return imgPath != null ? File.fromPath(imgPath).name : "Browse";
   }
 
 }

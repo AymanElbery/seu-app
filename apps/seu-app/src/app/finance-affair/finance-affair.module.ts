@@ -27,7 +27,6 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     ToastrModule.forRoot() ,
     AppLazyTransModule
 
-
     
   ],
   entryComponents: [AddFeesExceptionComponent],
