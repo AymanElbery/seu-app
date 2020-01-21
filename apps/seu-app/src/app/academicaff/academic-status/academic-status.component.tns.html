@@ -20,8 +20,7 @@
 <ScrollView>
     <FlexboxLayout  flexDirection="column"  class="wrap">
 
-        <ActivityIndicator [busy]="isLoading" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
-
+        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
         <StackLayout *ngIf="!isLoading">
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
           
@@ -35,13 +34,10 @@
           
               <Label row="3" column="1" style="font-weight: 800;" text="{{'general.ssn'|translate}} :"></Label>
               <Label row="3"  column="0" text="{{student.ssn}}" style="text-align: right;"></Label>
-
               <Label row="4" column="1" style="font-weight: 800;" text='{{"general.acceptance_term" | translate}} :'></Label>
               <Label row="4"  column="0" text="{{student.std_adm_term_label}}"></Label>
-
               <Label row="5" column="1" style="font-weight: 800;" text='{{"general.current_academic_status" | translate}} :'></Label>
               <Label row="5"  column="0" text="{{student.current_acadimic_status_label}}"></Label>
-
               <Label row="6" column="1" style="font-weight: 800;" text='{{"general.graduation_gpa" | translate}} :'></Label>
               <Label row="6"  column="0" text="{{student.final_graduation_GPA}}" style="text-align: right;"></Label>
               
@@ -53,7 +49,6 @@
             </GridLayout>
           </StackLayout>
 
-    
         <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" style="margin:0 20 0;">
             <label text='{{"general.academic_status_through_terms" | translate}}'   style="margin-top: 15;font-weight: 800;" textWrap="true" ></label>
             <DropDown
@@ -66,8 +61,8 @@
             </DropDown>
         </FlexboxLayout>
 
-        <ActivityIndicator [busy]="isLoadingTerm && !isLoading" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
-        
+        <ActivityIndicator [busy]="isLoadingTerm && !isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
         <StackLayout *ngIf="!isLoadingTerm">
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                     
@@ -113,6 +108,7 @@
     <FlexboxLayout  flexDirection="column" style="padding: 20;">   
            <ActivityIndicator [busy]="isLoading" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
+
             <FlexboxLayout justifyContent="center"  >
                 <label text="بيانات الطالب/الطالبة"></label>
             </FlexboxLayout>
@@ -153,6 +149,7 @@
 
             
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between">
+
             <label text="الحالة الأكاديمية للطالب خلال الفصول الدراسية"   style="margin-top: 15;"></label>
             <DropDown
                   [items]="studentTermsDropDownStatic"
@@ -164,7 +161,6 @@
             </DropDown>
         </FlexboxLayout>
         <ActivityIndicator [busy]="isLoadingTerm" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
-        
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw">
             <label text="الكلية"  ></label>
             <label text="التخصص"  ></label>

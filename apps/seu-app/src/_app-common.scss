@@ -39,10 +39,12 @@
 .ysTBox{
     margin-left: 20;
     margin-right: 20;
+    margin-top: 20;
     background-color: white;
     border-bottom: 1;
     border-radius: 10;
     border-width: 1;
+    z-index: 1000;
     border-color: #6189f4;
     color: #6189f4;
     margin-top: 20;
@@ -64,10 +66,7 @@
 
    
     background-color:white;
-    border-bottom: 1;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
+   
     padding: 20px;
     font-size: 10px;
     border-color: #6189f4;
@@ -75,13 +74,11 @@
 .throw
 {
 
-    background-color:white;
-    border-radius: 10;
-    border-width: 1;;
-    margin-left: 1px;
-    margin-right: 1px;
+    border-width: 0,0,1,0;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 1px;
-
+    z-index: -10000;
     padding: 20px;
     font-size: 12px;
     font-weight: 800;
