@@ -73,7 +73,8 @@
             "pre_requests": "عرض الطلبات السابقة",
             "date_and_status":"تاريخ/حالة الطلب",
             "non_cancelable_request": "لا يمكن إلغاء الطلب",
-            "req_type": "نوع الطلب"
+            "req_type": "نوع الطلب",
+            "delete_print_req":"طباعة/حذف الطلب"
         },
         "save": "حفظ",
         "cancel": "الغاء",

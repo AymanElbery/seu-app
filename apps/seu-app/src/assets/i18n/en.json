@@ -72,7 +72,9 @@
             "pre_requests": "Show Previous Requests",
             "date_and_status":"Request Date/Status",
             "non_cancelable_request": "Can't Delete Request",
-            "rejectrs": "reject reason    "
+            "rejectrs": "reject reason    ",
+            "delete_print_req":"Print/Delete Request"
+
         },
         "save": "Save",
         "cancel": "Cancel",
