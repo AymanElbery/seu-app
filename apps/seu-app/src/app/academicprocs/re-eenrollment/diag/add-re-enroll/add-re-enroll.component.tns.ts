@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { ReEnroll } from "../../../../shared/models/re-enroll";
 import { ReEnrollService } from "../../../services/re-enroll.service";
-import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { ModalDialogParams } from 'nativescript-angular/common';
 import {FilePickerOptions, Mediafilepicker } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ChangeMajorService } from '../services/change-major.service';
 import { CancelCousre } from '../../shared/models/cancel-cousre';
-import { AppToasterService } from '../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../shared/services/app-toaster';
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
@@ -105,5 +105,8 @@ export class ChangeMajorComponent implements OnInit {
     return Math.floor(Math.random() * 10) + hr;
 
   }
-
+  onDrawerButtonTap(): void {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.showDrawer();
+  }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Postpone } from 'src/app/shared/models/postpone';
 import { TermExecuseService } from '../../../services/term-execuse.service';
 import { ModalDialogParams } from 'nativescript-angular/common';
-import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-execuse-term',

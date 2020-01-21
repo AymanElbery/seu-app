@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Postpone } from 'src/app/shared/models/postpone';
 import { SummerWithdrawService } from '../../../services/summer-withdraw.service';
 import { ModalDialogParams } from 'nativescript-angular/common';
-import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-summer-withdraw',

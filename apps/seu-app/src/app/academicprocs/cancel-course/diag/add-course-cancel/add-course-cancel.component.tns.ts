@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { CancelCourseService } from '../../../services/cancel-course.service';
 import { CancelCousre } from '../../../../shared/models/cancel-cousre';
-import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({

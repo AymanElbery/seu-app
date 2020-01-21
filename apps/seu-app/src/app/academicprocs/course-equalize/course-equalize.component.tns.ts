@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseEqualizerService } from '../services/course-equalizer.service';
-import { AppToasterService } from '../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../shared/services/app-toaster';
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RouterExtensions } from 'nativescript-angular/router';

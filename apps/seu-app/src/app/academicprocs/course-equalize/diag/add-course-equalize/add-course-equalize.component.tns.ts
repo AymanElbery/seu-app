@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { CourseEqual } from '../../../../shared/models/course-equal';
 import { CourseEqualizerService } from '../../../services/course-equalizer.service';
-import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { FilePickerOptions, Mediafilepicker, ImagePickerOptions } from 'nativescript-mediafilepicker';

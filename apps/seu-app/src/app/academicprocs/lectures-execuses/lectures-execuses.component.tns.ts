@@ -1,75 +1,52 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ReEnroll } from 'src/app/shared/models/re-enroll';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ReEnrollService } from '../services/re-enroll.service';
+import { Component, OnInit } from '@angular/core';
+import { LectureExecuseServiceService } from '../services/lecture-execuse-service.service';
+import { LectureExecuse } from '../../shared/models/lecture-execuse';
 import { AppToasterService } from '../../shared/services/app-toaster';
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
+import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
-import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
-import { AddReEnrollComponent } from './diag/add-re-enroll/add-re-enroll.component.tns';
+
 
 @Component({
-  selector: 'app-re-eenrollment',
-  templateUrl: './re-eenrollment.component.tns.html',
-  styleUrls: ['./re-eenrollment.component.tns.scss']
+  selector: 'app-lectures-execuses',
+  templateUrl: './lectures-execuses.component.tns.html',
+  styleUrls: ['./lectures-execuses.component.tns.scss']
 })
-export class ReEenrollmentComponent implements OnInit {
+export class LecturesExecusesComponent implements OnInit {
+
   printAR;
-  reEnroll: ReEnroll;
+  lectureExecuse: LectureExecuse;
   reqData;
   msgs;
-  status;
   isLoading = false;
 
-  constructor(private _modalService: ModalDialogService,
-    private _vcRef: ViewContainerRef,
+  constructor(private routerExtensions: RouterExtensions, 
     private toastr: AppToasterService, 
-    private acadmicProc: ReEnrollService) { }
+    private acadmicProc: LectureExecuseServiceService) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.isLoading = true;
-    this.reEnroll = { proof: '', reason: '', has_proof: '1' };
+    this.lectureExecuse = { attachment: '', courses: [], date: '', reason: '', type: '', week: '' };
     this.getRequests();
   }
-
-
   getRequests() {
-    this.isLoading = true;
-    this.acadmicProc.getِgetRequests().then(
+    this.acadmicProc.getRequests().then(
       res => {
+        //console.log(res);
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-      }, err => {
-        this.reqData = [];
-        this.msgs = [];
-        this.toastr.tryagain();
-        this.isLoading = false;
       }
     );
   }
 
-  onTap(): void {
-    const options: ModalDialogOptions = {
-        viewContainerRef: this._vcRef,
-        context: {},
-        fullscreen: false,
-    };
 
-    this._modalService.showModal(AddReEnrollComponent, options)
-        .then( result => {
-        if (this.acadmicProc.newreqs) {
-          this.getRequests();
-          this.acadmicProc.newreqs = false;
-        }
-    });
-}
 
   print(req) {
     utils.openUrl(this.acadmicProc.Download(req));
@@ -88,7 +65,7 @@ export class ReEenrollmentComponent implements OnInit {
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
         if ((res as any).status == 1) {
-          this.reqData.reqs.splice(index, 1);
+          this.reqData.requests.splice(index, 1);
         }
         this.deleting = false;
       }
@@ -96,17 +73,18 @@ export class ReEenrollmentComponent implements OnInit {
           this.toastr.tryagain();
           this.deleting = false;
         });
-    }}) 
- }
-
-  call(hr) {
-    return Math.floor(Math.random() * 10) + hr;
+    }});
   }
-
+  onTap(){
+    this.routerExtensions.navigate(['/procedures/addlecexecuse'], {
+      transition: {
+          name: 'fade'
+      }
+  });
+  }
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
-
 
 }

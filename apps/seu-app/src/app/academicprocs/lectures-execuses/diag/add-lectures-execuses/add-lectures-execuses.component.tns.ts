@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { EnglishEqualizerService } from '../../../services/english-equalizer.service';
-import { EnglishEqual } from '../../../../shared/models/english-equal';
+import { Component, OnInit, Inject } from '@angular/core';
+import { LectureExecuse } from '../../../../shared/models/lecture-execuse';
+import { LectureExecuseServiceService } from '../../../services/lecture-execuse-service.service';
 import { AppToasterService } from '../../../../shared/services/app-toaster';
+import { RouterExtensions } from 'nativescript-angular/router';
+
+import { FilePickerOptions, Mediafilepicker, ImagePickerOptions } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
 import { File } from "tns-core-modules/file-system";
-import { Mediafilepicker, FilePickerOptions } from 'nativescript-mediafilepicker';
-import { RouterExtensions } from 'nativescript-angular/router';
+import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 
 declare const kUTTypePDF;
 declare var NSString: any;
@@ -16,58 +18,79 @@ var filePath:string=null;
 var imgPath:string=null;
 
 @Component({
-  selector: 'app-add-english-equalizer',
-  templateUrl: './add-english-equalizer.component.tns.html',
-  styleUrls: ['./add-english-equalizer.component.tns.scss']
+  selector: 'app-add-lectures-execuses',
+  templateUrl: './add-lectures-execuses.component.tns.html',
+  styleUrls: ['./add-lectures-execuses.component.tns.scss']
 })
-export class AddEnglishEqualizerComponent implements OnInit {
+export class AddLecturesExecusesComponent implements OnInit {
 
-  englishEqual: EnglishEqual;
-  reqData: EnglishEqual;
+  lectureExecuse: LectureExecuse;
   msgs: any;
   private imageSrc = '';
-
-  constructor(
-    private toastr: AppToasterService, 
-    private acadmicProc: EnglishEqualizerService,
-    private routerExtensions: RouterExtensions) { }
+  reqData;
+  univs:ValueItem<number>[] = [];
+  weeks:ValueItem<number>[] = [];
+  lecs:ValueItem<number>[] = [];
+  univsDropDown;
+  weeksDropDown;
+  lecsDropDown;
+  
+  constructor(private routerExtensions: RouterExtensions,
+    private toastr: AppToasterService, private acadmicProc: LectureExecuseServiceService) { }
 
   ngOnInit() {
-    this.englishEqual = { tests: [], attachment: '', ENG_TESTS: [], notes: {}, crse_transfer_grades: [] };
-
+    this.lectureExecuse = {
+      courses: [], attachment: '', reason: '', date: '', type: '', week: '1'
+    };
     this.reqData = this.acadmicProc.reqData;
+
+    for (let i = 0; i < this.reqData.lectures_type.length; i++) {
+      this.lecs.push(
+        {
+          value: this.reqData.lectures_type[i].id,
+          display: this.reqData.lectures_type[i].value
+        }
+      );
+    }
+
+    this.lecsDropDown = new ValueList(this.lecs);
+
+    for (let i = 0; i < this.reqData.weeks_list.length; i++) {
+      this.weeks.push(
+        {
+          value: this.reqData.weeks_list[i].id,
+          display: this.reqData.weeks_list[i].value
+        }
+      );
+    }
+    this.weeksDropDown = new ValueList(this.weeks);
+
   }
   changeStatus(it, e) {
     if (e.value) {
-      it.test = it.TEST_PK;
-      this.englishEqual.tests.push(it);
-      ////console.log(this.englishEqual.tests);
+      this.lectureExecuse.courses.push({ CRSE: it.CRN });
     } else {
-      for (let i = 0; i < this.englishEqual.tests.length; i++) {
-        if (this.englishEqual.tests[i].test == it.test)
-          this.englishEqual.tests.splice(i, 1);
+      for (let i = 0; i < this.lectureExecuse.courses.length; i++) {
+        if (this.lectureExecuse.courses[i].CRSE === it.CRN) {
+          this.lectureExecuse.courses.splice(i, 1);
+        }
       }
     }
-    console.log(this.englishEqual.tests);
 
   }
+ 
 
   requesting = false;
   addRequest(data: any) {
-    alert("sending");
     this.acadmicProc.AddRequest(data).then(res => {
-      alert(res);
-
       this.toastr.push((res as any).messages);
       if (res['status']) {
         this.acadmicProc.newreqs = true;
-        this.routerExtensions.navigate(['/procedures/eequalize']);
+        this.routerExtensions.navigate(['/procedures/lecexecuse']);
       }
       this.requesting = false;
     },
       err => {
-        alert(err);
-
         this.toastr.tryagain();
         this.requesting = false;
       });
@@ -77,13 +100,10 @@ export class AddEnglishEqualizerComponent implements OnInit {
       return false;
     }
 
-    alert("submittinggg");
-
     this.requesting = true;
-    this.englishEqual.attachment=this.convertToBase64(imgPath);
-    this.addRequest(this.englishEqual);
+    this.addRequest(this.lectureExecuse);
   }
- 
+
   public openCustomFilesPicker(type:string) {
     var extensions = [];
     if (app.ios) {
@@ -150,10 +170,23 @@ export class AddEnglishEqualizerComponent implements OnInit {
     }
     return base64String;
   }
+  get fileName(){
+    return filePath != null ? File.fromPath(filePath).name : "Browse";
+  }
   get imageName(){
     return imgPath != null ? File.fromPath(imgPath).name : "Browse";
   }
   goBack() {
     this.routerExtensions.backToPreviousPage();
+}
+
+
+getLec(val: SelectedIndexChangedEventData) {
+  const code = this.lecsDropDown.getValue(val.newIndex);
+  this.lectureExecuse.type=code;
+}
+getWeek(val: SelectedIndexChangedEventData) {
+  const code = this.weeksDropDown.getValue(val.newIndex);
+  this.lectureExecuse.week=code;
 }
 }

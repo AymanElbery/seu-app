@@ -1,1 +1,66 @@
-<Button text="add-lectures-execuses works!" class="btn btn-primary"></Button>
+<ActionBar title='{{"services.lecture_execuse.title"|translate}}'>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
+</ActionBar>
+<ScrollView>
+<FlexboxLayout flexDirection="column" style="padding: 15;">
+
+    <StackLayout class="wrap">
+        <Label [text]="reqData.text_list[0].text1"></Label>
+        <Label [text]="reqData.text_list[1].text1"></Label>
+        <Label [text]="reqData.text_list[2].text1" textWrap="true"></Label>
+        <Label [text]="reqData.text_list[3].text1" textWrap="true"></Label>
+        <Label [text]="reqData.text_list[4].text1" textWrap="true"></Label>
+    </StackLayout>
+
+    <Label text='{{"services.lecture_execuse.define_courses_names"|translate}}' style="color: chocolate; font-weight: bold;"></Label>
+    <FlexboxLayout flexDirection="column" justifyContent="space-between">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark"> 
+            <label text='{{"general.crn"|translate}}'></label>
+            <label text='{{"general.course_name"|translate}}'></label>
+            <label text="&#xf00c;" class="fas"></label>
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="table-row" *ngFor="let item of reqData.schedules;let i=index;"> 
+            <label [text]="item.CRN"></label>
+            <label  [text]="item.CRSE_TITLE"></label>
+            <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
+        </FlexboxLayout>
+    </FlexboxLayout>
+
+    <Label text='{{"services.lecture_execuse.choose_lec_type"|translate}}' style="color: chocolate; font-weight: bold;"></Label>
+
+    <DropDown
+    [items]="lecsDropDown"
+    (selectedIndexChanged)="getLec($event)"
+    hint='{{"services.lecture_execuse.choose_lec_type"|translate}}'
+    itemsTextAlignment="left"
+    >
+    </DropDown>
+
+    <Label text='{{"services.lecture_execuse.choose_week"|translate}}' style="color: chocolate; font-weight: bold;"></Label>
+    <DropDown
+    [items]="weeksDropDown"
+    (selectedIndexChanged)="getWeek($event)"
+    hint='{{"services.lecture_execuse.choose_week"|translate}}'
+    itemsTextAlignment="left"
+    >
+    </DropDown>
+   
+    <Label text='{{"services.course-equalize.course_desc"|translate}}' textWrap="true" style="color: chocolate;"></Label>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" ></Button>
+   
+    <Label text='{{"services.course-equalize.record_image"|translate}}' textWrap="true" style="color: chocolate;"></Label>
+    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" ></Button>
+
+</FlexboxLayout>
+</ScrollView>

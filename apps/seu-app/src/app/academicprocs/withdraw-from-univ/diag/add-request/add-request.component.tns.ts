@@ -3,7 +3,7 @@ import { UnivWithdraw } from '../../../../../app/shared/models/univ-withdraw';
 import { WithdrawFromUnivService } from '../../../../academicprocs/services/withdraw-from-univ.service';
 import { ValueList } from 'nativescript-drop-down';
 import { ModalDialogParams } from "nativescript-angular/modal-dialog";
-import { AppToasterService } from '../../../../shared/services/app-toaster.tns';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-request',

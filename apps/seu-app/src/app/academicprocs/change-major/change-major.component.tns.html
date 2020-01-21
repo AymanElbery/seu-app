@@ -28,7 +28,7 @@
 
     <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" class="h1" justifyContent="space-between">
         <Label text='{{"general.request.pre_requests"| translate}}'></Label>
-        <Button text='{{"general.request.add_request"| translate}}' (tap)="onTap()" class="my-button"></Button>
+        <Button text='{{"general.request.add_request"| translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="my-button"></Button>
     </FlexboxLayout>
     
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading">
