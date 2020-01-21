@@ -13,135 +13,127 @@
     <ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label text="{{'services.academic_record.title' | L}}"></Label>
+    <Label text='{{"services.academic_record.title" | translate}}'></Label>
 </ActionBar>
 
 <ScrollView>
-    <FlexboxLayout  flexDirection="column" style="padding: 20;">
+    <FlexboxLayout flexDirection="column">
 
-        <ActivityIndicator [busy]="isLoading" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+        <StackLayout *ngIf="!isLoading">
+            <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+          
+              <Label row="0" colSpan="2"  class="ysHBox"  text='{{"general.student_name" | translate}} {{recoredData.student_name}}'></Label>
+          
+              <Label row="1" column="1" style="font-weight: 800;" text='{{"general.faculty" | translate}} :'></Label>
+              <Label row="1"  column="0" text="{{recoredData.coll}}"></Label>
+          
+              <Label row="2" column="1" style="font-weight: 800;" text='{{"general.major" | translate}} :'></Label>
+              <Label row="2"  column="0" text="{{recoredData.major}}"></Label>
+          
+              <Label row="3" column="1" style="font-weight: 800;" text='{{"general.student_id" | translate}} :'></Label>
+              <Label row="3"  column="0" text="{{recoredData.std_id}}" style="text-align: right;"></Label>
 
-        <FlexboxLayout justifyContent="center" *ngIf="!isLoading" class="h1">
-            <label [text]="recoredData.student_name"></label>
-            <label text="اسم الطالب : "></label>
-        </FlexboxLayout>
+              <Label row="4" column="1" style="font-weight: 800;" text='{{"general.ssn" | translate}} :'></Label>
+              <Label row="4"  column="0" text="{{recoredData.ssn}}"  style="text-align: right;"></Label>
 
+              <Label row="5" column="1" style="font-weight: 800;" text='{{"general.grade" | translate}} :'></Label>
+              <Label row="5"  column="0" text="{{recoredData.grade}}"></Label>
 
-        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
-            <label text="الكلية" class="h1"></label>
-            <label text="التخصص" class="h1"></label>
-            <label text="الرقم الجامعي" class="h1"></label>
-        </FlexboxLayout>
+              <Label row="6" column="1" style="font-weight: 800;" text='{{"general.student_status" | translate}} :'></Label>
+              <Label row="6"  column="0" text="{{recoredData.status}}"></Label>
+            </GridLayout>
+          </StackLayout>
 
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row">
-            <label [text]="recoredData.coll" class="h2"></label>
-            <label [text]="recoredData.major" class="h2"></label>
-            <label [text]="recoredData.std_id" class="h2"></label>
-        </FlexboxLayout>
-
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark">
-            <label text="رقم الهوية" class="h1"></label>
-            <label text="الدرجة" class="h1"></label>
-            <label text="حالة الطالب" class="h1"></label>
-        </FlexboxLayout>
-
-        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" class="table-row separator">
-            <label [text]="recoredData.ssn" class="h2"></label>
-            <label [text]="recoredData.grade" class="h2"></label>
-            <label [text]="recoredData.status" class="h2"></label>
-        </FlexboxLayout>
-
-        <RadListView *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
+        <RadListView *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
             <ng-template let-item="item">
-                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="list-group">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="throw">
                     <Label  text="&#xf0dd;"  class="fas"></Label>
                     <FlexboxLayout flexDirection="row-reverse">
-                        <Label text="الفصل"></Label>
+                        <Label text='{{"general.term" | translate}}'></Label>
                         <Label [text]="item.Term"></Label>
-                        <Label text="لسنة"></Label>
+                        <Label text='{{"general.for_year" | translate}}'></Label>
                         <Label [text]="item.Year"></Label>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </ng-template>
 
             <ng-template tkTemplateKey="expanded" let-item="item">
-                <FlexboxLayout flexDirection="column" >
-                    <FlexboxLayout flexDirection="row" justifyContent="space-between" class="list-group">
+                <FlexboxLayout flexDirection="column">
+                    <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHBox">
                         <Label  text="&#xf0de;"  class="fas"></Label>
 
                         <FlexboxLayout flexDirection="row-reverse">
-                            <Label text="الفصل"></Label>
+                            <Label text='{{"general.term" | translate}}'></Label>
                             <Label [text]="item.Term"></Label>
-                            <Label text="لسنة"></Label>
+                            <Label text='{{"general.for_year" | translate}}'></Label>
                             <Label [text]="item.Year"></Label>
                         </FlexboxLayout>
                     </FlexboxLayout>
-                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="list-group-item table-header"> 
-                        <label text="الفصل" class="h1"></label>
-                        <label text="العام" class="h1"></label>
-                        <label text="التخصص" class="h1"></label>
-                        <label text="الحالة" class="h1"></label>
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
+                        <label text='{{"general.term" | translate}}'></label>
+                        <label text='{{"general.year" | translate}}'></label>
+                        <label text='{{"general.major" | translate}}'></label>
+                        <label text='{{"general.status" | translate}}'></label>
                     </FlexboxLayout>
             
-                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="list-group-item">
-                        <label [text]="item.Term" class="h2"></label>
-                        <label [text]="item.Year" class="h2"></label>
-                        <label [text]="item.Major" class="h2"></label>
-                        <label [text]="item.Status" class="h2"></label>
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="trow">
+                        <label [text]="item.Term"></label>
+                        <label [text]="item.Year"></label>
+                        <label [text]="item.Major"></label>
+                        <label [text]="item.Status"></label>
                     </FlexboxLayout>
 
-                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="list-group-item table-header"> 
-                      <!--  <label text="رمز المقرر" class="h1 narrowColumn"></label>
-                        <label text="اسم المقرر" class="h1 wideColumn"></label>-->
-                        <label text="اسم المقرر/الرمز" class="h1 wideColumn"></label>
-                        <label text="التقدير" class="h1 narrowColumn"></label>
-                        <label text="الساعات" class="h1 narrowColumn"></label>
-                        <label text="النقاط" class="h1 narrowColumn"></label>
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
+                        <label text='{{"general.course_code_name" | translate}}' class="wideColumn"></label>
+                        <label text='{{"general.rating" | translate}}' class="narrowColumn"></label>
+                        <label text='{{"general.course_hours" | translate}}' class="narrowColumn"></label>
+                        <label text='{{"general.points" | translate}}' class="narrowColumn"></label>
                     </FlexboxLayout>
 
-                    <FlexboxLayout justifyContent="space-between" alignItems="center" flexWrap="nowrap" *ngFor="let item of item.courses"  flexDirection="row-reverse" class="dataLabel list-group-item h2">
+                    <FlexboxLayout justifyContent="space-between" alignItems="center" flexWrap="nowrap" *ngFor="let item of item.courses"  flexDirection="row-reverse">
                         <FlexboxLayout  flexDirection="column">
-                            <Label [text]="item.CRSE_TITLE" class="h2 wideColumn"></Label>
-                            <Label [text]="item.ID" class="h2 narrowColumn"></Label>
+                            <Label [text]="item.CRSE_TITLE" class="wideColumn"></Label>
+                            <Label [text]="item.ID" class="narrowColumn"></Label>
                         </FlexboxLayout>
-                        <Label [text]="item.GRADE_TITLE" class="h2 narrowColumn"></Label>
-                        <Label [text]="item.HRS" class="h2 narrowColumn"></Label>
-                        <Label [text]="item.Points" class="h2 narrowColumn"></Label>
+                        <Label [text]="item.GRADE_TITLE" class="narrowColumn"></Label>
+                        <Label [text]="item.HRS" class="narrowColumn"></Label>
+                        <Label [text]="item.Points" class="narrowColumn"></Label>
                     </FlexboxLayout>
 
-                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="list-group-item table-header"> 
-                        <label text="ساعات" class="h1"></label>
-                        <label text="مسجلة" class="h1"></label>
-                        <label text="نجاح" class="h1"></label>
-                        <label text="مكتسبة" class="h1"></label>
-                        <label text="النقاط" class="h1"></label>
-                        <label text="المعدل" class="h1"></label>
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
+                        <label text='{{"general.hours" | translate}}'></label>
+                        <label text='{{"general.recorded" | translate}}'></label>
+                        <label text='{{"general.success" | translate}}'></label>
+                        <label text='{{"general.earned" | translate}}'></label>
+                        <label text='{{"general.points" | translate}}'></label>
+                        <label text='{{"general.average" | translate}}'></label>
                     </FlexboxLayout>
 
-                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="list-group-item">
-                        <label text="فصلى" class="h2"></label>
-                        <label [text]="item.registredHours" class="h2"></label>
-                        <label [text]="item.gpa_hours" class="h2"></label>
-                        <label [text]="item.earned_hours" class="h2"></label>
-                        <label [text]="item.quality_points" class="h2"></label>
-                        <label [text]="item.gpa" class="h2"></label>
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between">
+                        <label text='{{"general.quarterly" | translate}}'></label>
+                        <label [text]="item.registredHours"  ></label>
+                        <label [text]="item.gpa_hours"  ></label>
+                        <label [text]="item.earned_hours"  ></label>
+                        <label [text]="item.quality_points"  ></label>
+                        <label [text]="item.gpa"  ></label>
                     </FlexboxLayout>
 
-                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="list-group-item">
-                        <label text="تراكمي" class="h2"></label>
-                        <label [text]="item.TotalregistredHours" class="h2"></label>
-                        <label [text]="item.total_gpa_hours" class="h2"></label>
-                        <label [text]="item.total_earned_hours" class="h2"></label>
-                        <label [text]="item.total_quality_points" class="h2"></label>
-                        <label [text]="item.total_gpa" class="h2"></label>
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between">
+                        <label text='{{"general.cumulative" | translate}}'></label>
+                        <label [text]="item.TotalregistredHours"  ></label>
+                        <label [text]="item.total_gpa_hours"  ></label>
+                        <label [text]="item.total_earned_hours"  ></label>
+                        <label [text]="item.total_quality_points"  ></label>
+                        <label [text]="item.total_gpa"  ></label>
                     </FlexboxLayout>  
                 </FlexboxLayout> 
             </ng-template>
         </RadListView>
 
-        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
-            <Button text="عربى" class="my-button"  (tap)="onArabicPrint()" ></Button>
-            <Button text="English" class="my-button"  (tap)="onEnglishPrint()"></Button>
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <Button text='{{"general.ar_language" | translate}}' (tap)="onArabicPrint()" class="-primary -rounded-sm"></Button>
+            <Button text='{{"general.en_language" | translate}}' (tap)="onEnglishPrint()" class="-primary -rounded-sm"></Button>
         </FlexboxLayout>
             
     </FlexboxLayout>
