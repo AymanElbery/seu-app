@@ -6,9 +6,10 @@ import { TuitionFeesStatComponent } from './tuition-fees-stat/tuition-fees-stat.
 import { StudentPaymentComponent } from './student-payment/student-payment.component.tns';
 import { AppTransModule } from '../app.trans.module.tns';
 import { FeesExceptionComponent } from './fees-exception/fees-exception.component.tns';
+import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-exception/add-fees-exception.component.tns';
 
 @NgModule({
-  declarations: [TuitionFeesStatComponent, StudentPaymentComponent, FeesExceptionComponent],
+  declarations: [TuitionFeesStatComponent, AddFeesExceptionComponent,StudentPaymentComponent, FeesExceptionComponent],
   imports: [
     FinanceAffairRoutingModule,
     NativeScriptCommonModule,

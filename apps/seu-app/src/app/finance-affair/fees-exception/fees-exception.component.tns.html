@@ -1,1 +1,73 @@
-<Button text="fees-exception works!" class="btn btn-primary"></Button>
+<ActionBar>
+    <!-- 
+            <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+  
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    
+        <NavigationButton ios:visibility="collapsed" text="add" android.systemIcon="ic_menu_add" (tap)="add()"></NavigationButton>
+   
+    
+        <ActionItem android:visibility="collapsed" ios.systemIcon="4" ios.position="left" (tap)="add()"  ></ActionItem>
+    
+    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+    <Label text="{{'services.finance.feeexe' | translate}} "></Label>
+
+
+</ActionBar>
+
+<ScrollView>
+
+    <StackLayout>
+        <StackLayout *ngIf="isLoading">
+            <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center"
+                horizontalAlignment="center"></ActivityIndicator>
+        </StackLayout>
+        <StackLayout class="ysMsg" *ngFor="let msg of msgs">
+            <label text="{{msg.body}} !" class="alert alert-info"> </label>
+        </StackLayout>
+
+        <StackLayout class="ysBox">
+
+            <Label colSpan="2" class="ysHBox" text="{{'general.request.pre_requesr'|translate}}"></Label>
+            <ScrollView orientation="horizontal">
+                <StackLayout>
+                    <StackLayout>
+                        <GridLayout columns="50, 80, 80, 80,40" class="throw">
+                            <Label textAlignment="center" col="4" text=" #"></Label>
+                            <Label textAlignment="center" col="3"
+                                text=" {{'general.request.req_date' | translate}}"></Label>
+                            <Label textAlignment="center" col="2"
+                                text="{{'general.request.req_status' | translate}}"></Label>
+                            <Label textAlignment="center" col="1"
+                                text="{{'general.request.rejectrs' | translate}}"></Label>
+                            <Label textAlignment="center" col="0" text="-"></Label>
+                        </GridLayout>
+
+                    </StackLayout>
+
+                    <StackLayout>
+                        <GridLayout *ngFor="let item of reqData.requests" columns="50, 80, 80, 80,40" class="trow">
+                            <Label textAlignment="center" col="4" [text]="item.request_number"></Label>
+
+                            <Label textAlignment="center" col="3" [text]="item.insert_date"></Label>
+                            <Label textAlignment="center" col="2" [text]="item.status"></Label>
+                            <Label textAlignment="center" col="1" [text]="item.rejection_reason"></Label>
+                            <Label textAlignment="center" col="0" *ngIf='!item.deletable' [disabled]='deleting'
+                                text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas"></Label>
+                            <Label textAlignment="center" col="0" *ngIf='item.deletable'
+                                text="{{'services.reg.cantcancel' | translate}}"></Label>
+                        </GridLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </StackLayout>
+</ScrollView>

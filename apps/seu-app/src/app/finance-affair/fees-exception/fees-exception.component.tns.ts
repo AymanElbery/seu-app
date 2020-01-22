@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { FeesExceptionService } from '../services/fees-exception.service';
 import { AddFeesExceptionComponent } from './diag/add-fees-exception/add-fees-exception.component';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
+import * as app from 'tns-core-modules/application';
+import { BaseData } from 'src/app/shared/models/base-data';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-fees-exception',
@@ -11,16 +15,26 @@ import { AppToasterService } from '../../shared/services/app-toaster';
   styleUrls: ['./fees-exception.component.scss']
 })
 export class FeesExceptionComponent implements OnInit {
-  reqData;
+
+  constructor(    private router: Router,    private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
+  reqData: BaseData;
   msgs;
   status;
   isLoading = false;
 
-
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
+  deleting = false;
 
   ngOnInit() {
+    this.reqData = {requests: []};
     this.getRequests();
+    const sideDrawer = app.getRootView() as RadSideDrawer;
+    sideDrawer.drawerLocation = SideDrawerLocation.Right;
+
+
+  }
+  onDrawerButtonTap(): void {
+    const sideDrawer = app.getRootView() as RadSideDrawer;
+    sideDrawer.showDrawer();
   }
   getRequests() {
     this.isLoading = true;
@@ -34,13 +48,12 @@ export class FeesExceptionComponent implements OnInit {
       }
     );
   }
-
-  deleting = false;
   delete(id, index) {
     if (confirm('هل انت متأكد')) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
+        // tslint:disable-next-line: triple-equals
         if ((res as any).status == 1) {
           this.reqData.requests.splice(index, 1);
         }
@@ -53,22 +66,11 @@ export class FeesExceptionComponent implements OnInit {
     }
 
   }
+add() {
+  this.router.navigate(['/finance/addfe']);
 
-  openDialoge() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = '80%';
-    dialogConfig.position = { top: '100px', left: '25px' };
-    dialogConfig.direction = 'rtl';
 
-    let dialogref = this.dialog.open(AddFeesExceptionComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {
-      if (this.acadmicProc.newreqs) {
-        this.getRequests();
-        this.acadmicProc.newreqs = false;
-      }
-    });
-  }
+}
+
 
 }
