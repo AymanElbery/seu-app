@@ -15,48 +15,51 @@
 </ActionBar>
 <ScrollView >
 
-<FlexboxLayout flexDirection="column" style="padding: 15;">
+<FlexboxLayout flexDirection="column">
 
     <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
 
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
             <ng-template let-item="item">
-                <Label verticalAlignment="center" [text]="item.body" [ngClass]="item.type == 'info' ? 'alert alert-info' : (item.type == 'error' ? 'alert alert-danger' : (item.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"></Label>
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
             </ng-template>
         </ListView>
     </FlexboxLayout>
 
-    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" class="h1" justifyContent="space-between">
-        <Label text='{{"general.request.pre_requests"|translate}}'></Label>
-        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="my-button"></Button>
+    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between" style="margin-right:20;">
+        <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
+        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
     <ScrollView orientation="horizontal" *ngIf="!isLoading">
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="h1 table-row-dark"> 
-                <label text='{{"general.request.req_no"|translate}}' class="tableColumn"></label>
-                <label text='{{"general.course_name"|translate}}/{{"general.crn"|translate}}' class="tableColumn"></label>
-                <label text='{{"services.lecture_execuse.absence_date"|translate}}' class="tableColumn"></label>
-                <label text='{{"services.lecture_execuse.absence_week"|translate}}'></label>
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox">
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+                <label text='{{"general.request.req_no"|translate}}'></label>
+                <label text='{{"general.course_name"|translate}}/{{"general.crn"|translate}}'></label>
+                <label text='{{"services.lecture_execuse.absence_date_week"|translate}}' ></label>
                 <label text='{{"services.lecture_execuse.lecture_type"|translate}}'></label>
                 <label text='{{"general.request.date_and_status"|translate}}'></label>
                 <label text='{{"services.lecture_execuse.execuse_file"|translate}}'></label>
             </FlexboxLayout>
 
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.requests;let i=index;" flexDirection="row-reverse" class="h2 table-row">
-                <Label [text]="item.request_number" class="tableColumn"></Label>
+            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.requests;let i=index;" flexDirection="row-reverse"
+             class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
+
+                <Label [text]="item.request_number" style="text-align: center; width:12% ;"></Label>
                 <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column" style="width: 25%;">
                     <Label [text]="item.courseId"></Label>
                     <Label [text]="item.course_title" textWrap="true" style="text-align: center;"></Label>
                 </FlexboxLayout>
-                <Label [text]="item.absance_date" class="tableColumn" style="text-align: center; width:15% ;"></Label>
-                <Label [text]="item.week" class="tableColumn"></Label>
-                <Label [text]="item.class_type" class="tableColumn"></Label>
-                <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column">
+                <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column"  style="text-align: center; width:20% ;">
+                    <Label [text]="item.absance_date"></Label>
+                    <Label [text]="item.week"></Label>
+                </FlexboxLayout>
+                <Label [text]="item.class_type" style="text-align: center; width:12% ;" ></Label>
+                <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column"  style="text-align: center; width:20% ;">
                     <Label [text]="item.status"  ></Label>
                     <Label [text]="item.insert_date" textWrap="true" ></Label>
                 </FlexboxLayout>
-                <Button (tap)="print(item.request_number)" class="orange-button fas -rounded-sm" text="&#xf02f;"></Button>
+                <Button (tap)="print(item.request_number)" class="blue-button fas -rounded-sm" text="&#xf02f;"></Button>
                    
 
             </FlexboxLayout>

@@ -13,9 +13,9 @@
 
 </ActionBar>
 <ScrollView>
-<FlexboxLayout flexDirection="column" style="padding: 15;">
+<FlexboxLayout flexDirection="column">
 
-    <StackLayout class="wrap">
+    <StackLayout class="ysBox" style="margin-bottom: 20;">
         <Label [text]="reqData.text_list[0].text1"></Label>
         <Label [text]="reqData.text_list[1].text1"></Label>
         <Label [text]="reqData.text_list[2].text1" textWrap="true"></Label>
@@ -23,44 +23,57 @@
         <Label [text]="reqData.text_list[4].text1" textWrap="true"></Label>
     </StackLayout>
 
-    <Label text='{{"services.lecture_execuse.define_courses_names"|translate}}' style="color: chocolate; font-weight: bold;"></Label>
-    <FlexboxLayout flexDirection="column" justifyContent="space-between">
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark"> 
+    <Label text='{{"services.lecture_execuse.define_courses_names"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;"></Label>
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
             <label text='{{"general.crn"|translate}}'></label>
             <label text='{{"general.course_name"|translate}}'></label>
             <label text="&#xf00c;" class="fas"></label>
         </FlexboxLayout>
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="table-row" *ngFor="let item of reqData.schedules;let i=index;"> 
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" *ngFor="let item of reqData.schedules;let i=index;"
+         class="trow" [ngStyle]="{'border-bottom-width':i === reqData.schedules.length-1 ? '0' : '1' }"> 
             <label [text]="item.CRN"></label>
             <label  [text]="item.CRSE_TITLE"></label>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
         </FlexboxLayout>
     </FlexboxLayout>
 
-    <Label text='{{"services.lecture_execuse.choose_lec_type"|translate}}' style="color: chocolate; font-weight: bold;"></Label>
+    <StackLayout style="margin:20 20;">
+        <Label text='{{"services.lecture_execuse.choose_lec_type"|translate}}' style="color: #6189f4; font-weight: 800;"></Label>
 
-    <DropDown
-    [items]="lecsDropDown"
-    (selectedIndexChanged)="getLec($event)"
-    hint='{{"services.lecture_execuse.choose_lec_type"|translate}}'
-    itemsTextAlignment="left"
-    >
-    </DropDown>
+        <DropDown
+        [items]="lecsDropDown"
+        (selectedIndexChanged)="getLec($event)"
+        hint='{{"services.lecture_execuse.choose_lec_type"|translate}}'
+        itemsTextAlignment="left"
+        itemsPadding="5"
+        >
+        </DropDown>
+    </StackLayout>
 
-    <Label text='{{"services.lecture_execuse.choose_week"|translate}}' style="color: chocolate; font-weight: bold;"></Label>
-    <DropDown
-    [items]="weeksDropDown"
-    (selectedIndexChanged)="getWeek($event)"
-    hint='{{"services.lecture_execuse.choose_week"|translate}}'
-    itemsTextAlignment="left"
-    >
-    </DropDown>
+    <StackLayout style="margin:0 20 20;">
+        <Label text='{{"services.lecture_execuse.choose_week"|translate}}' style="color: #6189f4; font-weight: 800;"></Label>
+        <DropDown
+        [items]="weeksDropDown"
+        (selectedIndexChanged)="getWeek($event)"
+        hint='{{"services.lecture_execuse.choose_week"|translate}}'
+        itemsTextAlignment="left"
+        itemsPadding="5"
+        >
+        </DropDown>
+    </StackLayout>
+
+    <Label text='{{"services.lecture_execuse.absence_cause"|translate}}' textWrap="true"
+    style="color: #6189f4;; margin-right:20 ;"></Label>
+
+    <TextView style="border-color: gray;border-width: 1; padding:10;"
+        #reason="ngModel" [(ngModel)]="lectureExecuse.reason" required>
+    </TextView>
+    <Label text='{{"services.course-equalize.course_desc"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;"></Label>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="-primary"></Button>
    
-    <Label text='{{"services.course-equalize.course_desc"|translate}}' textWrap="true" style="color: chocolate;"></Label>
-    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" ></Button>
-   
-    <Label text='{{"services.course-equalize.record_image"|translate}}' textWrap="true" style="color: chocolate;"></Label>
-    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" ></Button>
+    <Label text='{{"services.course-equalize.record_image"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;"></Label>
+    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary" ></Button>
 
 </FlexboxLayout>
 </ScrollView>

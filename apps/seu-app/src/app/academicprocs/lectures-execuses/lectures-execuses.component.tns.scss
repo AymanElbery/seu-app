@@ -1,75 +1,10 @@
-.alert{
-    padding: 10;
-    font-size: 12;
-    border-radius: 5;
-    height: 50;
-}
-
-.alert-danger{
-    color: rgb(155, 44, 44);
-    background-color: rgb(252, 147, 135);
-}
-
-.alert-info{
-    color: rgb(63, 17, 231);
-    background-color: rgb(189, 186, 236);
-}
-
-.alert-success{
-    color: rgb(6, 126, 70);
-    background-color: rgb(151, 219, 141);
-}
-.alert-warning{
-    color: rgb(162, 165, 5);
-    background-color: rgb(229, 235, 144);
-}
-.h1{
-    font-size: 14;
-    color: navy;
-}
-
-.h2{
-    font-size: 12;
-}
-
-.table-row{
-    padding: 10;
-    border-width: 1;
-    border-color: gray;
-    border-radius: 8;
-}
-
-.table-row-dark{
-    background-color: lightgray;
-    padding: 10;
-    padding: 10;
-    border-width: 1;
-    border-color: gray;
-    border-radius: 8;
-}
-
-.my-button {
-    border-color: chocolate;
-    border-radius: 20;
-    border-width: 1;
-    font-size: 12;
-    height: 30;
-}
-.orange-button{
-    border-color: chocolate;
-    background-color: chocolate;
+.blue-button{
+    border-color:#6189f4 ;
+    background-color: #6189f4;
     color: white;
     border-radius: 100%;
     border-width: 1;
     font-size: 14;
     font-weight: bold;
     width: 20;
-}
-.my-button:active {
-    background-color: whitesmoke;
-    border-color: navy;
-    border-radius: 10;
-    border-width: 1;
-    color: navy;
-    font-size: 12;
 }
