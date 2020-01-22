@@ -30,7 +30,7 @@
         <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
-    <ScrollView orientation="horizontal">
+    <ScrollView orientation="horizontal" *ngIf="!isLoading">
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
                 <label text='{{"general.request.req_no"|translate}}' class="tableColumn"></label>
@@ -40,7 +40,7 @@
                 <label text='{{"general.request.delete_print_req"|translate}}'></label>
             </FlexboxLayout>
 
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="row-reverse" class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
+            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="row-reverse" class="trow" [ngStyle]="{'border-bottom-width':i === reqData.reqs.length-1 ? '0' : '1' }">
                 <Label [text]="item.request_number" class="tableColumn"></Label>
                 <Label [text]="item.term" class="tableColumn" textWrap="true" style="width: 20%;"></Label>
                 <Label text="Print Resp" class="tableColumn"></Label>
