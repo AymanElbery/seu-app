@@ -216,7 +216,13 @@ export class AddCourseEqualizeComponent implements OnInit {
 
   convertToBase64(filePath:string){
     let base64String:string;
-    let file: File = File.fromPath(filePath);
+    let file: File;
+    if(filePath!=null){
+     file= File.fromPath(filePath);
+    }else{
+      return;
+    }
+    
     if (app.ios) {
       let text = NSString.stringWithString(file.readSync());
       let data = text.dataUsingEncoding(NSUTF8StringEncoding);
