@@ -271,7 +271,9 @@
             "define_date": "Define Date",
             "absence_cause": "Absence Reason",
             "file": "File",
-            "file_size": "Upload Files that Prove Your Absence's Reasons in One PDF File With Size Less than 5MB"
+            "file_size": "Upload Files that Prove Your Absence's Reasons in One PDF File With Size Less than 5MB",
+            "absence_date_week":"Absence Date/Week"
+
         },
         "missing_card": {
             "title": "Lost Card Replacment Request",
