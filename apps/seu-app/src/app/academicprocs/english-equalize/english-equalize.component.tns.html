@@ -15,38 +15,39 @@
 </ActionBar>
 
 <ScrollView>
-<FlexboxLayout flexDirection="column" style="padding: 15;">
+<FlexboxLayout flexDirection="column">
 
-    <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
             <ng-template let-item="item">
-                <Label verticalAlignment="center" [text]="item.body" [ngClass]="item.type == 'info' ? 'alert alert-info' : (item.type == 'error' ? 'alert alert-danger' : (item.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"></Label>
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
             </ng-template>
         </ListView>
     </FlexboxLayout>
 
-    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" class="h1" justifyContent="space-between">
-        <Label text='{{"general.request.pre_requests"|translate}}'></Label>
-        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="my-button"></Button>
+    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between" style="margin-right:20;">
+        <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
+        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="h1 table-row-dark"> 
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading" class="ysBox">
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
                 <label text='{{"general.request.req_no"|translate}}'  ></label>
                 <label text='{{"general.request.date_and_status"|translate}}'  ></label>
                 <label text='{{"services.english-equalize.reply_date"|translate}}'  ></label>
                 <label text='{{"general.ar_print"|translate}}'></label>
             </FlexboxLayout>
 
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.requests;let i=index;" flexDirection="row-reverse" class="table-row">
+            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.requests;let i=index;" flexDirection="row-reverse"
+            class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
                 <Label [text]="item.request_number"  ></Label>
                 <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column">
                     <Label [text]="item.insert_date"></Label>
                     <Label [text]="item.status"></Label>
                 </FlexboxLayout>
                 <Label [text]="item.approval_date"  ></Label>
-                <Button (tap)="print(item.request_number)" class="orange-button fas -rounded-sm" text="&#xf02f;"></Button>
+                <Button (tap)="print(item.request_number)" class="blue-button fas -rounded-sm" text="&#xf02f;"></Button>
             </FlexboxLayout>
         </FlexboxLayout>
 </FlexboxLayout>

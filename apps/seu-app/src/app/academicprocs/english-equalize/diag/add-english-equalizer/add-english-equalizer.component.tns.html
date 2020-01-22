@@ -13,10 +13,10 @@
 
 </ActionBar>
 <ScrollView>
-<FlexboxLayout flexDirection="column" style="padding: 15;">
+<FlexboxLayout flexDirection="column">
 
-    <StackLayout class="wrap">
-        <Label [text]='reqData.notes.txt1' style="color: chocolate; font-weight: bold;" textWrap="true"></Label>
+    <StackLayout class="ysBox" style="margin-bottom: 10;">
+        <Label [text]='reqData.notes.txt1' style="font-weight: bold;" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt2" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt3" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt4" textWrap="true"></Label>
@@ -35,24 +35,25 @@
         <Label [text]="reqData.notes.txt10" textWrap="true"></Label>
     </StackLayout>
 
-    <Label text='{{"services.english-equalize.choose_exam_degree"|translate}}' style="color: chocolate; font-weight: bold;"></Label>
+    <Label text='{{"services.english-equalize.choose_exam_degree"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;"></Label>
 
-    <FlexboxLayout flexDirection="column" justifyContent="space-between">
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="table-row-dark"> 
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
             <label text='{{"services.english-equalize.exam_name"|translate}}'></label>
             <label text='{{"general.grade"|translate}}'></label>
             <label text="&#xf00c;" class="fas"></label>
         </FlexboxLayout>
 
-        <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.ENG_TESTS;let i=index;" flexDirection="row-reverse" class="table-row"> 
+        <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.ENG_TESTS;let i=index;" flexDirection="row-reverse" 
+        class="trow" [ngStyle]="{'border-bottom-width':i === reqData.ENG_TESTS.length-1 ? '0' : '1' }"> 
             <Label [text]="item.TEST_TITLE" textWrap="true" class="title"></Label>
-            <TextField keyboardType="number" name="score" [(ngModel)]="item.score"></TextField>
+            <TextField keyboardType="number" name="score" [(ngModel)]="item.score" style="width:8%;"></TextField>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
         </FlexboxLayout>
     </FlexboxLayout>
     
-    <Label text='{{"services.english-equalize.certificate_image"|translate}}' textWrap="true" style="color: chocolate; margin-top: 10;"></Label>
-    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" ></Button>
+    <Label text='{{"services.english-equalize.certificate_image"|translate}}' textWrap="true" style="color: #6189f4; margin-top: 10;margin-right: 20;"></Label>
+    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary"></Button>
 
 </FlexboxLayout>
 </ScrollView>
