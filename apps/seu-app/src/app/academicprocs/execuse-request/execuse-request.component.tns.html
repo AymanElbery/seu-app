@@ -38,7 +38,7 @@
                 <label text='{{"general.request.delete_print_req"|translate}}'></label>
             </FlexboxLayout>
 
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="row-reverse" class="trow">
+            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="row-reverse" class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
                 <Label [text]="item.request_number"></Label>
                 <FlexboxLayout alignItems="center" flexDirection="column">
                     <Label [text]="item.insert_date"  ></Label>
