@@ -4,6 +4,7 @@ import { NativeScriptRouterModule } from 'nativescript-angular/router';
 import { TuitionFeesStatComponent } from './tuition-fees-stat/tuition-fees-stat.component.tns';
 import { FeesExceptionComponent } from './fees-exception/fees-exception.component.tns';
 import { StudentPaymentComponent } from './student-payment/student-payment.component.tns';
+import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-exception/add-fees-exception.component.tns';
 
 const routes: Routes = [
   { path: 'finance', component: TuitionFeesStatComponent },
@@ -12,6 +13,8 @@ const routes: Routes = [
     children: [
       { path: 'fees', component: TuitionFeesStatComponent },
       { path: 'feesexception', component: FeesExceptionComponent },
+      { path: 'addfe', component: AddFeesExceptionComponent },
+
       { path: 'stdpay', component: StudentPaymentComponent }
 
 
