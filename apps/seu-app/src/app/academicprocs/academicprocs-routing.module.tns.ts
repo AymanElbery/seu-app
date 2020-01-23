@@ -16,6 +16,8 @@ import { ChangeMajorComponent } from './change-major/change-major.component.tns'
 import { ChangeRequestComponent } from './change-request/change-request.component.tns';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component.tns';
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.tns';
+import { ObjectExamComponent } from './object-exam/object-exam.component.tns';
+import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-exam-object.component.tns';
 
 const routes: Routes = [
   { path: '', component: WithdrawFromUnivComponent },
@@ -37,6 +39,9 @@ const routes: Routes = [
       { path: 'changerequest', component: ChangeRequestComponent },
       { path: 'lecexecuse', component: LecturesExecusesComponent },
       { path: 'addlecexecuse', component: AddLecturesExecusesComponent },
+      { path: 'objectexam', component: ObjectExamComponent },
+      { path: 'addobjectexam', component: AddExamObjectComponent },
+
 
 
 

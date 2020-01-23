@@ -56,7 +56,8 @@ export class AddCourseEqualizeComponent implements OnInit {
   univsDropDown;
   hoursDropDown;
   gradesDropDown;
-  langsDropDown=new ValueList(this.langs);  requesting = false;
+  langsDropDown=new ValueList(this.langs);
+  requesting = false;
 
   ngOnInit() {
     this.curseEqual = {
@@ -122,18 +123,16 @@ export class AddCourseEqualizeComponent implements OnInit {
       alert(res);
       this.toastr.push((res as any).messages);
       if (res['status']) {
-        console.log("resultttttttttttt",res);
         this.acadmicProc.newreqs = true;
         this.routerExtensions.navigate(['/procedures/equalize']);
       }
       this.requesting = false;
     },
       err => {
-        alert(err);
         this.toastr.tryagain();
         this.requesting = false;
 
-      }).catch(reson=>alert(reson));
+      });
   }
   onSubmit() {
     if (this.requesting) {
