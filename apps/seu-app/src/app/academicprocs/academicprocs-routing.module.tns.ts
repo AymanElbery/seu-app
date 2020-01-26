@@ -19,6 +19,8 @@ import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectu
 import { ObjectExamComponent } from './object-exam/object-exam.component.tns';
 import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-exam-object.component.tns';
 import { AbsenceQueryComponent } from './absence-query/absence-query.component.tns';
+import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component.tns';
+import { VisitorStudentComponent } from './visitor-student/visitor-student.component.tns';
 
 const routes: Routes = [
   { path: '', component: WithdrawFromUnivComponent },
@@ -42,7 +44,11 @@ const routes: Routes = [
       { path: 'addlecexecuse', component: AddLecturesExecusesComponent },
       { path: 'objectexam', component: ObjectExamComponent },
       { path: 'addobjectexam', component: AddExamObjectComponent },
-      { path: "lectabs", component: AbsenceQueryComponent }
+      { path: "lectabs", component: AbsenceQueryComponent },
+      { path: 'visitorstudent', component: VisitorStudentComponent },
+      { path: 'addvisitorstudent', component: AddVisitorStudentComponent },
+
+
 
 
 

@@ -32,6 +32,8 @@ import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectu
 import { ObjectExamComponent } from './object-exam/object-exam.component.tns';
 import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-exam-object.component.tns';
 import { AbsenceQueryComponent } from './absence-query/absence-query.component.tns';
+import { VisitorStudentComponent } from './visitor-student/visitor-student.component.tns';
+import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component.tns';
 
 
 @NgModule({
@@ -72,7 +74,9 @@ import { AbsenceQueryComponent } from './absence-query/absence-query.component.t
     AddLecturesExecusesComponent,
     ObjectExamComponent,
     AddExamObjectComponent,
-    AbsenceQueryComponent
+    AbsenceQueryComponent,
+    VisitorStudentComponent,
+    AddVisitorStudentComponent
   ],
   entryComponents: [
     AddRequestComponent,

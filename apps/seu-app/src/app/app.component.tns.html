@@ -116,6 +116,10 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1" text="الاستعلام عن الغيابات" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
                 </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/visitorstudent')" (tap)="onNavItemTap('/procedures/visitorstudent')">
+                    <Label col="1" text="طلب الدراسة كطالب زائر" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+                </GridLayout>
                 <StackLayout class="hr"></StackLayout>
 
 
