@@ -25,6 +25,7 @@ import { AppTransModule } from './app.trans.module.tns';
 import { TranslateModule } from '@ngx-translate/core';
 import { RegisterCoursesModule } from './register-courses/register-courses.module.tns';
 import { FinanceAffairModule } from './finance-affair/finance-affair.module.tns';
+import { ExamsAffairModule } from './exams-affair/exams-affair.module.tns';
 
 
 
@@ -46,7 +47,8 @@ import { FinanceAffairModule } from './finance-affair/finance-affair.module.tns'
     AcademicprocsModule,
     NativeScriptUISideDrawerModule,
     AppTransModule,
-    FinanceAffairModule
+    FinanceAffairModule,
+    ExamsAffairModule
 
 
   ],
