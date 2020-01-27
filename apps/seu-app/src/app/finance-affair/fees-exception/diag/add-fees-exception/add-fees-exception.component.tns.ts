@@ -128,14 +128,19 @@ export class AddFeesExceptionComponent implements OnInit {
     // tslint:disable-next-line: triple-equals
     if (this.fileType == 'bank_card') {
       this.feesException.bank_card = reader.result;
+    // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'proof_status') {
       this.feesException.proof_status = reader.result;
+    // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'insurance_card') {
       this.feesException.insurance_card = reader.result;
+    // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'id_card') {
       this.feesException.id_card = reader.result;
+    // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'work_status') {
       this.feesException.work_status = reader.result;
+    // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'letter') {
       this.feesException.letter = reader.result;
     } else if (this.fileType == 'mco_id_card') {
