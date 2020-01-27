@@ -125,6 +125,7 @@ export class AddFeesExceptionComponent implements OnInit {
     // console.log(this.fileType);
     // console.log(e);
 
+    // tslint:disable-next-line: triple-equals
     if (this.fileType == 'bank_card') {
       this.feesException.bank_card = reader.result;
     } else if (this.fileType == 'proof_status') {
