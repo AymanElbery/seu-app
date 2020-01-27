@@ -47,7 +47,7 @@
         <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.ENG_TESTS;let i=index;" flexDirection="row-reverse" 
         class="trow" [ngStyle]="{'border-bottom-width':i === reqData.ENG_TESTS.length-1 ? '0' : '1' }"> 
             <Label [text]="item.TEST_TITLE" textWrap="true" class="title"></Label>
-            <TextField keyboardType="number" name="score" [(ngModel)]="item.score" style="width:8%;"></TextField>
+            <TextField keyboardType="number" name="score" [(ngModel)]="item.score" style="border-width: 1;width: 10%;margin-top: 20;"></TextField>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
         </FlexboxLayout>
     </FlexboxLayout>

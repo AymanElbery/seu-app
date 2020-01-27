@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr';
 import { VisitorStudentService } from '../services/visitor-student.service';
-import { AddVisitorStudentComponent } from './diag/add-visitor-student/add-visitor-student.component';
-import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { AppToasterService } from '../../shared/services/app-toaster';
+import* as dialogs from "tns-core-modules/ui/dialogs";
+import { RouterExtensions } from 'nativescript-angular/router';
+import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
+import * as app from 'tns-core-modules/application';
+import * as utils from "tns-core-modules/utils/utils";
 
 @Component({
   selector: 'app-visitor-student',
   templateUrl: './visitor-student.component.tns.html',
-  styleUrls: ['./visitor-student.component.scss']
+  styleUrls: ['./visitor-student.component.tns.scss']
 })
 export class VisitorStudentComponent implements OnInit {
   constructor(
-    public dialog: MatDialog,
     private toastr: AppToasterService,
-    private acadmicProc: VisitorStudentService
+    private acadmicProc: VisitorStudentService,
+    private routerExtensions: RouterExtensions
   ) { }
   reqData;
   msgs;
@@ -24,6 +26,8 @@ export class VisitorStudentComponent implements OnInit {
   deleting = false;
 
   ngOnInit() {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.getRequests();
   }
 
@@ -38,7 +42,13 @@ export class VisitorStudentComponent implements OnInit {
     });
   }
   delete(id, index) {
-    if (confirm('هل انت متأكد؟')) {
+    dialogs.confirm({
+        title: "هل انت متأكد؟",
+        message: "",
+        okButtonText: "OK",
+        cancelButtonText: 'Cancel'
+    }).then((result:boolean) => {
+      if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
@@ -51,28 +61,24 @@ export class VisitorStudentComponent implements OnInit {
           this.toastr.tryagain();
           this.deleting = false;
         });
-    }
+    }});
   }
 
-  openDialoge() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = '65%';
-    // dialogConfig.height = '80%';
-    // dialogConfig.direction = "rtl";
-    // dialogConfig.position = { top: '100px', left: '25px' };
-    const dialogref = this.dialog.open(AddVisitorStudentComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {
-      if (this.acadmicProc.newreqs) {
-        this.getRequests();
-        this.acadmicProc.newreqs = false;
+  onTap(){
+    this.routerExtensions.navigate(['/procedures/addvisitorstudent'], {
+      transition: {
+          name: 'fade'
       }
-    });
+  });
+  }
+  onDrawerButtonTap(): void {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.showDrawer();
   }
 
 
   printRequest(requestNbr) {
-    return this.acadmicProc.Download(requestNbr);
+    utils.openUrl(this.acadmicProc.Download(requestNbr));
+
   }
 }
