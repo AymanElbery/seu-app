@@ -9,7 +9,7 @@
     because its function is to always navigate back in the application.
     -->
     <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
-    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()" isEnabled="false"></ActionItem>
+    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
 </ActionBar>
     <ScrollView>
     <FlexboxLayout *ngIf="!isLoading" flexDirection="column">

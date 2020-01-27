@@ -18,10 +18,10 @@
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 </StackLayout>
 
-<TabView height="100%" *ngIf="!isLoading">
-	<StackLayout *tabItem='{title: "x"}' class="ysBox">
+<TabView selectedIndex="2" *ngIf="!isLoading">
+	<StackLayout *tabItem='{title: firstTabTitle}' class="ysBox">
         <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start"  *ngIf="absData.absent_percentage_total.length>0;else array1">
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start"  *ngIf="absData&&absData.absent_percentage_total.length>0;else array1">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
                 <label text='{{"general.crn" | translate}}'></label>
                 <label text='{{"general.course_code" | translate}}'></label>
@@ -42,11 +42,11 @@
         </FlexboxLayout>
         <ng-template #array1>
             <Label text='{{"services.absence_quyery.all_lecs_asebsence_percent" |translate}}' class="trow"></Label>
-            <TextField text='0' readOnly="true"></TextField>
+            <TextField text='0' editable= "false"></TextField>
         </ng-template>
 
 	</StackLayout>
-	<StackLayout *tabItem='{title: "y"}' class="ysBox">
+	<StackLayout *tabItem='{title: secondTabTitle}' class="ysBox">
         <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="absData.absent_percentage_actual_lectures.length>=0;else emptyArr2">           
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
@@ -69,9 +69,10 @@
         </FlexboxLayout>
         <ng-template #emptyArr2>
             <Label text='{{"services.absence_quyery.traditional_lecs_asebsence_percent" |translate}}'></Label>
+            <TextField text='0' editable= "false"></TextField>
         </ng-template>
 	</StackLayout>
-	<StackLayout *tabItem='{title: "z"}' class="ysBox">
+	<StackLayout *tabItem='{title: thirdTabTitle}' class="ysBox">
         <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading&&absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3">           
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
