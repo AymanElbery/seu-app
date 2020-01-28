@@ -115,5 +115,6 @@ export class ExamsAttendStatComponent implements OnInit {
   }
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.showDrawer();
   }
 }
