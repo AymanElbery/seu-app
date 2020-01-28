@@ -159,6 +159,18 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
 
                 </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/exams/attend')">
+                    <Label col="1" text="شهادة حضور اختبارات" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/exams/attendapp')">
+                    <Label col="1" text="شهادة اثبات حضور اختبارات" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
                 <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/exams/examexcuse')">
                     <Label col="1" text="رفع الاعذار للاختبارات" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
