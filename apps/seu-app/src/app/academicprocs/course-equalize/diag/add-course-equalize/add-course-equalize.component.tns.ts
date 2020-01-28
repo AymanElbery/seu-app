@@ -23,40 +23,40 @@ let imgPath: string = null;
   styleUrls: ['./add-course-equalize.component.tns.scss']
 })
 export class AddCourseEqualizeComponent implements OnInit {
-;
+
 
   constructor(
-    private toastr: AppToasterService, 
+    private toastr: AppToasterService,
     private acadmicProc: CourseEqualizerService,
     private routerExtensions: RouterExtensions) { }
-  get fileName(){
-    return filePath != null ? File.fromPath(filePath).name : "Browse";
+  get fileName() {
+    return filePath != null ? File.fromPath(filePath).name : 'Browse';
   }
-  get imageName(){
-    return imgPath != null ? File.fromPath(imgPath).name : "Browse";
+  get imageName() {
+    return imgPath != null ? File.fromPath(imgPath).name : 'Browse';
   }
 
   curseEqual: CourseEqual;
   reqData: CourseEqual;
   msgs: any;
   private imageSrc = '';
-  univs:ValueItem<number>[] = [];
-  hours:ValueItem<number>[] = [];
-  grades:ValueItem<number>[] = [];
-  langs:ValueItem<number>[] = [
+  univs: ValueItem<number>[] = [];
+  hours: ValueItem<number>[] = [];
+  grades: ValueItem<number>[] = [];
+  langs: ValueItem<number>[] = [
     {
-      "value":1,
-      "display":"عربى"
+      value: 1,
+      display: 'عربى'
   },
     {
-      "value":2,
-      "display":"English"
+      value: 2,
+      display: 'English'
     }
   ];
   univsDropDown;
   hoursDropDown;
   gradesDropDown;
-  langsDropDown=new ValueList(this.langs);
+  langsDropDown = new ValueList(this.langs);
   requesting = false;
 
   ngOnInit() {
@@ -68,10 +68,11 @@ export class AddCourseEqualizeComponent implements OnInit {
       univ_list_arr: [],
       PREV_UNIV: 0,
       DESC_CRSE_FILE: '', TRANSCRIPT_FILE: '', notes: '',
-      hourse_list:[],
-      grade_list:[]
+      hourse_list: [],
+      grade_list: []
     };
     this.reqData = this.acadmicProc.reqData as CourseEqual;
+    // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < this.reqData.univ_list_arr.length; i++) {
       this.univs.push(
         {
@@ -122,7 +123,7 @@ export class AddCourseEqualizeComponent implements OnInit {
     this.acadmicProc.AddRequest(data).then(res => {
       alert(res);
       this.toastr.push((res as any).messages);
-      if (res['status']) {
+      if ((res as any).status) {
         this.acadmicProc.newreqs = true;
         this.routerExtensions.navigate(['/procedures/equalize']);
       }
@@ -140,96 +141,98 @@ export class AddCourseEqualizeComponent implements OnInit {
     }
 
     this.requesting = true;
-    this.curseEqual.DESC_CRSE_FILE =this.convertToBase64(filePath);
-    this.curseEqual.TRANSCRIPT_FILE=this.convertToBase64(imgPath);
+    this.curseEqual.DESC_CRSE_FILE = this.convertToBase64(filePath);
+    this.curseEqual.TRANSCRIPT_FILE = this.convertToBase64(imgPath);
     this.addRequest(this.curseEqual);
   }
 
   getUniv(val: SelectedIndexChangedEventData) {
     const code = this.univsDropDown.getValue(val.newIndex);
-    this.curseEqual.PREV_UNIV=code;
+    this.curseEqual.PREV_UNIV = code;
   }
-  getGrade(val: SelectedIndexChangedEventData,index:number) {
+  getGrade(val: SelectedIndexChangedEventData, index: number) {
     const code = this.gradesDropDown.getValue(val.newIndex);
-    this.reqData.course_list[index].TRNS_GRADE=code;
+    this.reqData.course_list[index].TRNS_GRADE = code;
   }
-  getHour(val: SelectedIndexChangedEventData,index:number) {
+  getHour(val: SelectedIndexChangedEventData, index: number) {
     const code = this.hoursDropDown.getValue(val.newIndex);
-    this.reqData.course_list[index].TRNS_HRS=code;
+    this.reqData.course_list[index].TRNS_HRS = code;
   }
-  getLang(val: SelectedIndexChangedEventData,index:number) {
+  getLang(val: SelectedIndexChangedEventData, index: number) {
     const code = this.langsDropDown.getValue(val.newIndex);
-    this.reqData.course_list[index].TRNS_LANG=code;
+    this.reqData.course_list[index].TRNS_LANG = code;
   }
- 
-  public openCustomFilesPicker(type:string) {
-    var extensions = [];
+
+  public openCustomFilesPicker(type: string) {
+    let extensions = [];
     if (app.ios) {
         extensions = [kUTTypePDF];
     } else {
-        extensions = ['pdf','png','jpeg'];
+        extensions = ['pdf', 'png', 'jpeg'];
     }
 
-    let options: FilePickerOptions = {
+    const options: FilePickerOptions = {
         android: {
-            extensions: extensions,
+            extensions,
             maxNumberFiles: 1
         },
         ios: {
-            extensions: extensions,
+            extensions,
             multipleSelection: false,
           //  hostView: this._hostView
         }
     };
 
-    let mediafilepicker = new Mediafilepicker();
+    const mediafilepicker = new Mediafilepicker();
     mediafilepicker.openFilePicker(options);
 
-    mediafilepicker.on("getFiles", function (res) {
+    // tslint:disable-next-line: only-arrow-functions
+    mediafilepicker.on('getFiles', function(res) {
 
-        let results = res.object.get('results');
+        const results = res.object.get('results');
         if (results) {
 
-            for (let i = 0; i < results.length; i++) {//only upload one file
+            // tslint:disable-next-line: prefer-for-of
+            for (let i = 0; i < results.length; i++) {// only upload one file
 
-                let result = results[i];
-                if(type==='file'){
-                  filePath=result.file;
-                }else{
-                  imgPath=result.file;
+                const result = results[i];
+                if (type === 'file') {
+                  filePath = result.file;
+                } else {
+                  imgPath = result.file;
                 }
             }
         }
   });
 
-  mediafilepicker.on("error", function (res) {
-      let msg = res.object.get('msg');
+    mediafilepicker.on('error', function(res) {
+      const msg = res.object.get('msg');
       console.log(msg);
   });
 
-  mediafilepicker.on("cancel", function (res) {
-      let msg = res.object.get('msg');
+    mediafilepicker.on('cancel', function(res) {
+      const msg = res.object.get('msg');
       console.log(msg);
   });
 }
 
-  convertToBase64(filePath:string){
-    let base64String:string;
+  convertToBase64(filePath: string) {
+    let base64String: string;
     let file: File;
-    if(filePath!=null){
-     file= File.fromPath(filePath);
-    }else{
+    if (filePath != null) {
+     file = File.fromPath(filePath);
+    } else {
       return;
     }
-    
+
     if (app.ios) {
-      let text = NSString.stringWithString(file.readSync());
-      let data = text.dataUsingEncoding(NSUTF8StringEncoding);
-      base64String= data.base64EncodedStringWithOptions(0);
+      const text = NSString.stringWithString(file.readSync());
+      const data = text.dataUsingEncoding(NSUTF8StringEncoding);
+      base64String = data.base64EncodedStringWithOptions(0);
     } else {
-      let text = new java.lang.String(file.readSync());
-      let data = text.getBytes("UTF-8");
-      base64String= android.util.Base64.encodeToString(data, android.util.Base64.DEFAULT);
+      const text = new java.lang.String(file.readSync());
+      const data = text.getBytes('UTF-8');
+      base64String = android.util.Base64.encodeToString(data, android.util.Base64.DEFAULT);
 
     }
     return base64String;

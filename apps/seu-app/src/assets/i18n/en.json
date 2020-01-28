@@ -57,6 +57,7 @@
         "lecture_type": "Lecture Type",
         "week": "Week",
         "day": "Day",
+        "choosefile":"Choose file ...... ",
         "request": {
             "add_request": "Add Request",
             "cname": "Course ",
@@ -335,6 +336,7 @@
         "sc": " scence of status approve  ",
         "wletter": " hr letter   ",
         "gid": " grantee id   ",
+        "cid": " Cedit Card ID   ",
         "id": " ID   ",
         "assletter": "  association letter  ",
         "bank": "   Bank    ",
