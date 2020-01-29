@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { VisitorStudentService } from '../../../services/visitor-student.service';
 import { VisitorStudent } from '../../../../shared/models/visitor-student';
-import { NgForm } from '@angular/forms';
 import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 import { RouterExtensions } from 'nativescript-angular/router';
@@ -117,7 +116,7 @@ export class AddVisitorStudentComponent implements OnInit {
         this.requesting = false;
       });
   }
-  onSubmit(form: NgForm) {
+  onSubmit() {
     if (this.requesting) {
       return false;
     }
