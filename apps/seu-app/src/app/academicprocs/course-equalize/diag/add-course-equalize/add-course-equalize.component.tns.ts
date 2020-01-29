@@ -85,7 +85,7 @@ export class AddCourseEqualizeComponent implements OnInit {
       this.hours.push(
         {
           value: this.reqData.hourse_list[i].value,
-          display: this.reqData.hourse_list[i].value
+          display: this.reqData.hourse_list[i].value.toString()
         }
       );
     }
@@ -93,7 +93,7 @@ export class AddCourseEqualizeComponent implements OnInit {
       this.grades.push(
         {
           value: this.reqData.grade_list[i].value,
-          display: this.reqData.grade_list[i].value
+          display: this.reqData.grade_list[i].value.toString()
         }
       );
     }
@@ -121,7 +121,6 @@ export class AddCourseEqualizeComponent implements OnInit {
 }
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(res => {
-      alert(res);
       this.toastr.push((res as any).messages);
       if ((res as any).status) {
         this.acadmicProc.newreqs = true;
@@ -224,15 +223,12 @@ export class AddCourseEqualizeComponent implements OnInit {
     } else {
       return;
     }
+    let data = file.readSync();
 
     if (app.ios) {
-      const text = NSString.stringWithString(file.readSync());
-      const data = text.dataUsingEncoding(NSUTF8StringEncoding);
       base64String = data.base64EncodedStringWithOptions(0);
     } else {
-      const text = new java.lang.String(file.readSync());
-      const data = text.getBytes('UTF-8');
-      base64String = android.util.Base64.encodeToString(data, android.util.Base64.DEFAULT);
+      base64String = android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
 
     }
     return base64String;
