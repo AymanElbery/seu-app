@@ -1,16 +1,17 @@
 <ActionBar style="color: white;">
-   
+
     <NavigationButton style="color: white;background-color: white;" (tap)="goBack()" text="Go Back"
         android.systemIcon="ic_menu_back">
     </NavigationButton>
-
     <ActionItem style="color: white;background-color: white;" ios.systemIcon="9" android.systemIcon="ic_menu_save"
         (tap)="addRequest()" ios.position="right">
     </ActionItem>
     <Label text="{{'general.request.add_request' | translate}} "></Label>
-
 </ActionBar>
 <ScrollView>
+
+
+
     <StackLayout margin="10">
         <StackLayout class="form ysBox" padding="15">
             <StackLayout class="input-field">
@@ -30,8 +31,6 @@
             </StackLayout>
 
         </StackLayout>
-
-
         <StackLayout *ngIf="feesException.association=='0'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
                 <Label text="{{'services.finance.sc' | translate}}" class="label font-weight-bold m-b-5"></Label>
@@ -51,46 +50,91 @@
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
         </StackLayout>
-
         <StackLayout *ngIf="feesException.association=='1'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
                 <Label text="{{'services.finance.wletter' | translate}}" class="label font-weight-bold m-b-5"></Label>
 
-                <Button [text]="scText" (tap)="openCustomFilesPicker('w')" class="-primary"></Button>
+                <Button [text]="wText" (tap)="openCustomFilesPicker('w')" class="-primary"></Button>
 
                 <StackLayout class="hr"></StackLayout>
-            </StackLayout>       
+            </StackLayout>
         </StackLayout>
 
 
         <StackLayout *ngIf="feesException.association=='2'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
                 <Label text="{{'services.finance.assletter' | translate}}" class="label font-weight-bold m-b-5"></Label>
-
-                <Button [text]="scText" (tap)="openCustomFilesPicker('ass')" class="-primary"></Button>
-
+                <Button [text]="assText" (tap)="openCustomFilesPicker('ass')" class="-primary"></Button>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
             <StackLayout class="input-field">
                 <Label text="{{'services.finance.id' | translate}}" class="label font-weight-bold m-b-5"></Label>
 
-                <Button [text]="scText" (tap)="openCustomFilesPicker('id')" class="-primary"></Button>
+                <Button [text]="idText" (tap)="openCustomFilesPicker('id')" class="-primary"></Button>
 
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
 
-            
+
         </StackLayout>
 
-
-
-        <StackLayout class="form ysBox" padding="15">
+        <StackLayout *ngIf="feesException.exception_type=='1'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
-            <CheckBox #chkCourse (checkedChange)="changeStatus($event)" checked="false"></CheckBox>
+                <Label text="{{'services.finance.bank' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <DropDown class="input" style="font-weight: 700;" [items]="itemBankSource"
+                    hint="{{'services.finance.choose' | translate}}" itemsTextAlignment="center"
+                    (selectedIndexChanged)="bankChange($event)"></DropDown>
+                <StackLayout class="hr"></StackLayout>
+            </StackLayout>
+
+
+            <StackLayout class="input-field">
+                <Label text="{{'services.finance.iban' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <TextField class="input" [(ngModel)]="feesException.iban"></TextField>
+
+                <StackLayout class="hr"></StackLayout>
+            </StackLayout>
+            <StackLayout class="input-field">
+                <Label text="{{'services.finance.bankid' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Button [text]="cbText" (tap)="openCustomFilesPicker('bank_card')" class="-primary"></Button>
+                <StackLayout class="hr"></StackLayout>
+            </StackLayout>
+            <StackLayout class="input-field">
+                <Label text="{{'services.finance.accname' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <TextField class="input" [(ngModel)]="feesException.account_name"></TextField>
+                <StackLayout class="hr"></StackLayout>
+            </StackLayout>
+
+
+
+            <StackLayout class="input-field">
+                <Label text="{{'services.finance.email' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <TextField class="input" [(ngModel)]="feesException.email"></TextField>
+
+                <StackLayout class="hr"></StackLayout>
+            </StackLayout>
+
+            <StackLayout class="input-field">
+                <Label text="{{'services.finance.accno' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <TextField class="input" [(ngModel)]="feesException.account_id"></TextField>
+                <StackLayout class="hr"></StackLayout>
+            </StackLayout>
+            <StackLayout class="input-field">
+                <Label text="{{'services.finance.areu' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <DropDown class="input" style="font-weight: 700;" [items]="itemAccountSource"
+                    hint="{{'services.finance.choose' | translate}}" itemsTextAlignment="center"
+                    (selectedIndexChanged)="bankChange($event)"></DropDown>
+                <StackLayout class="hr"></StackLayout>
             </StackLayout>
         </StackLayout>
 
 
-
+        <StackLayout class="form ysBox" padding="15">
+            <StackLayout class="input-field">
+                <Label textWrap="true" text="{{'services.finance.agree' | translate}}"
+                    class="label font-weight-bold m-b-5"></Label>
+                <CheckBox #chkCourse (checkedChange)="changeStatus($event)" checked="false"></CheckBox>
+            </StackLayout>
+        </StackLayout>
     </StackLayout>
 </ScrollView>

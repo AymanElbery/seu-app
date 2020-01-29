@@ -84,10 +84,12 @@ export class AddFeesExceptionComponent implements OnInit {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
+    
     reader.readAsDataURL(file);
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
+    
     // console.log('_reader ');
     // console.log(this.fileType);
     // console.log(e);
@@ -149,7 +151,7 @@ export class AddFeesExceptionComponent implements OnInit {
     this.feesException.letter = '';
     this.feesException.mco_id_card = '';
     this.feesException.id_card = '';
-    this.feesException.association =;
+    this.feesException.association ='';
 
   }
 
