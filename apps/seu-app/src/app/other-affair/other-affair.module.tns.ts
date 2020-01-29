@@ -6,13 +6,15 @@ import { UnivCardComponent } from './univ-card/univ-card.component.tns';
 import { AddUnivCardComponent } from './univ-card/diag/add-univ-card/add-univ-card.component.tns';
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { OtherAffairRoutingModule } from './other-affair-routing.module.tns';
+import { StudentInfoComponent } from './student-info/student-info.component.tns';
 
 
 @NgModule({
   declarations: [
     MedicalReportComponent,
     UnivCardComponent,
-    AddUnivCardComponent
+    AddUnivCardComponent,
+    StudentInfoComponent
   ],
   imports: [
     OtherAffairRoutingModule,
