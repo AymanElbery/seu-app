@@ -177,14 +177,12 @@ convertToBase64(filePath:string){
     return;
   }
   
+  let data = file.readSync();
+
   if (app.ios) {
-    let text = NSString.stringWithString(file.readSync());
-    let data = text.dataUsingEncoding(NSUTF8StringEncoding);
     base64String= data.base64EncodedStringWithOptions(0);
   } else {
-    let text = new java.lang.String(file.readSync());
-    let data = text.getBytes("UTF-8");
-    base64String= android.util.Base64.encodeToString(data, android.util.Base64.DEFAULT);
+    base64String= android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
 
   }
   return base64String;

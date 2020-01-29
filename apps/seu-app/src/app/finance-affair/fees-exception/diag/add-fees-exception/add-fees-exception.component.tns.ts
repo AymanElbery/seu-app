@@ -7,9 +7,28 @@ import { NgForm } from '@angular/forms';
 import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { topmost, Frame } from 'tns-core-modules/ui/frame';
 import { ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
-import { FilePickerOptions } from 'nativescript-mediafilepicker/mediafilepicker.common';
-import { Mediafilepicker } from 'nativescript-mediafilepicker';
-import { android } from 'tns-core-modules/application/application';
+import { FilePickerOptions, Mediafilepicker, ImagePickerOptions } from 'nativescript-mediafilepicker';
+import * as app from 'tns-core-modules/application';
+import { File } from 'tns-core-modules/file-system';
+import { toBase64String } from '@angular/compiler/src/output/source_map';
+import { TranslateService } from '@ngx-translate/core';
+import { ThrowStmt } from '@angular/compiler';
+
+declare const kUTTypePDF;
+declare var NSString: any;
+declare var NSUTF8StringEncoding: any;
+declare var java: any;
+declare var android: any;
+let filePath: string = null;
+let scPath: string = null;
+let gidPath: string = null;
+let cidPath: string = null;
+let wPath: string = null;
+let assidPath: string = null;
+let idPath: string = null;
+const imgPath: string = null;
+
+
 
 @Component({
   selector: 'app-add-fees-exception',
@@ -20,11 +39,15 @@ export class AddFeesExceptionComponent implements OnInit {
 
 
   constructor(
-    private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
+    private toastr: AppToasterService, private acadmicProc: FeesExceptionService, private trns: TranslateService ) { }
 
   feesException: FeesException;
   reqData: any;
   msgs: any;
+  gidText: any;
+  cidText: any;
+
+
 
 
   banksList: any;
@@ -46,6 +69,7 @@ export class AddFeesExceptionComponent implements OnInit {
   fileType: string;
   approve: false;
   requesting = false;
+  scText;
 
   ngOnInit() {
     this.feesException = {
@@ -54,6 +78,10 @@ export class AddFeesExceptionComponent implements OnInit {
       insurance_card: '', id_card: '', letter: '', mco_id_card: '', bank_card: ''
     };
 
+    this.scText =  this.trns.instant('general.choosefile');
+    this.gidText =  this.trns.instant('general.choosefile');
+    this.cidText =  this.trns.instant('general.choosefile');
+    console.log(this.scText);
     this.itemAccountSource = new ValueList<any>();
     this.itemBankSource = new ValueList<any>();
 
@@ -89,8 +117,19 @@ export class AddFeesExceptionComponent implements OnInit {
     });
 
   }
-  addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(res => {
+
+  changeStatus(e) {
+
+
+  }
+  addRequest() {
+  this.feesException.proof_status =  this.convertToBase64(scPath);
+  this.feesException.insurance_card =   this.convertToBase64(gidPath);
+  this.feesException.id_card =  this.convertToBase64(cidPath);
+  this.feesException.letter=this.convertToBase64(assidPath);
+  this.feesException.mco_id_card=this.convertToBase64(idPath);
+  this.feesException.work_status=this.convertToBase64(wPath);
+  this.acadmicProc.AddRequest(this.feesException).then(res => {
       this.toastr.push((res as any).messages);
       if ((res as any).status) {
         this.acadmicProc.newreqs = true;
@@ -107,7 +146,7 @@ export class AddFeesExceptionComponent implements OnInit {
       return false;
     }
     this.requesting = true;
-    this.addRequest(this.feesException);
+   // this.addRequest(this.feesException);
   }
 
   handleInputChange(e, fileType) {
@@ -160,7 +199,7 @@ export class AddFeesExceptionComponent implements OnInit {
   exceptionTypeChange(e: SelectedIndexChangedEventData) {
 
     this.feesException.exception_type = this.itemTypeSource.getValue(e.newIndex);
-    alert(this.feesException.exception_type);
+
     // this.feesException.association = '';
 
     // this.feesException.account_name = '';
@@ -194,9 +233,9 @@ export class AddFeesExceptionComponent implements OnInit {
 
   }
   public openCustomFilesPicker(type: string) {
-  
-  
-  /*  let extensions = [];
+
+
+    let extensions = [];
     if (app.ios) {
         extensions = [kUTTypePDF];
     } else {
@@ -215,6 +254,7 @@ export class AddFeesExceptionComponent implements OnInit {
         }
     };
 
+
     const mediafilepicker = new Mediafilepicker();
     mediafilepicker.openFilePicker(options);
 
@@ -222,18 +262,33 @@ export class AddFeesExceptionComponent implements OnInit {
     mediafilepicker.on('getFiles', function(res) {
 
         const results = res.object.get('results');
+        console.log(results);
+
         if (results) {
 
             // tslint:disable-next-line: prefer-for-of
             for (let i = 0; i < results.length; i++) {// only upload one file
 
                 const result = results[i];
-                if (type === 'file') {
-                  filePath = result.file;
-                } else {
-                  imgPath = result.file;
-                }
+                filePath = result.file;
+                console.log(filePath);
+                if (type == 'sc') {
+                   scPath = filePath;
+                } else if (type == 'gid') {
+                   gidPath = filePath;
+                 } else if (type == 'cid') {
+                   cidPath = filePath;
+                 } else if (type == 'w') {
+                   wPath = filePath;
+                 } else if (type == 'ass') {
+                   assidPath = filePath;
+                 } else if (type == 'id') {
+                   idPath = filePath;
+                 }
+
+
             }
+
         }
   });
 
@@ -250,27 +305,27 @@ export class AddFeesExceptionComponent implements OnInit {
   });
 }
 
-  convertToBase64(filePath: string) {
+  convertToBase64(path) {
     let base64String: string;
     let file: File;
-    if (filePath != null) {
-     file = File.fromPath(filePath);
+    if (path != null) {
+     file = File.fromPath(path);
     } else {
       return;
     }
 
-    if (app.ios) {
-      const text = NSString.stringWithString(file.readSync());
-      const data = text.dataUsingEncoding(NSUTF8StringEncoding);
-      base64String = data.base64EncodedStringWithOptions(0);
-    } else {
-      const text = new java.lang.String(file.readSync());
-      const data = text.getBytes('UTF-8');
-      base64String = android.util.Base64.encodeToString(data, android.util.Base64.DEFAULT);
-
-    }
-    return base64String;*/
+    base64String = this.getBase64String(file);
+    console.log(base64String);
+    return base64String;
   }
+  getBase64String(file: File) {
+    const data = file.readSync();
+    if (app.ios) {
+        return data.base64EncodedStringWithOptions(0);
+    } else {
+        return android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
+    }
+}
   goBack() {
     // tslint:disable-next-line: deprecation
     // topmost().goBack();
