@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
+import { CancelCousre } from '../../shared/models/cancel-cousre';
 import { CancelCourseService } from '../services/cancel-course.service';
 import { AppToasterService } from '../../shared/services/app-toaster';
 import * as utils from "tns-core-modules/utils/utils";
@@ -39,7 +39,7 @@ export class CancelCourseComponent implements OnInit {
 
   getRequests() {
     this.isLoading = true;
-    this.acadmicProc.getِgetRequests().then(
+    this.acadmicProc.getRequest().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
@@ -89,7 +89,7 @@ export class CancelCourseComponent implements OnInit {
   }
 
   onTap(){
-    this.routerExtensions.navigate(['/procedures/addcancelcourse'], {
+    this.routerExtensions.navigate(['/academicrequests/addcancelcourse'], {
       transition: {
           name: 'fade'
       }

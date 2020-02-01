@@ -63,7 +63,7 @@ export class AddExamExcuseComponent implements OnInit {
 
 getCet(val: SelectedIndexChangedEventData) {
   const code = this.cetsDropDown.getValue(val.newIndex);
-  this.reqData.exams_type=code;
+  this.examExcuse.type=code;
 }
 
   requesting = false;

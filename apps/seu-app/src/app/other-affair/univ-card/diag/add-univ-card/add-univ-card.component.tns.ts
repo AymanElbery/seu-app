@@ -47,6 +47,7 @@ export class  AddUnivCardComponent implements OnInit {
         this.msgs = this.univCard.msgs;
       }
     );
+    console.log("ndffffffffffffffffff",this.reqData);
 
     for (let i = 0; i < this.reqData.times.length; i++) {
         this.times.push(

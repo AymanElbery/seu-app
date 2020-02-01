@@ -1,1 +1,78 @@
-<Button text="add-object-exam works!" class="btn btn-primary"></Button>
+<ActionBar title='{{"services.object_exam.add_objection"|translate}}'>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
+</ActionBar>
+<ScrollView>
+<FlexboxLayout flexDirection="column">
+
+    <Label text='{{"services.object_exam.choose_curriculum"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;margin-top: 10;"></Label>
+
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+            <label text='{{"services.object_exam.curriculum_name"|translate}}'></label>
+            <label text='{{"services.object_exam.teacher_name"|translate}}'></label>
+            <label text="&#xf00c;" class="fas"></label>
+        </FlexboxLayout>
+
+        <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of exam.exams;let i=index;" flexDirection="row-reverse" 
+            class="trow" [ngStyle]="{'border-bottom-width':i === exam.exams.length-1 ? '0' : '1' }">
+            <Label [text]="item.CRSE_TITLE" textWrap="true"></Label>
+            <TextField #TeacherID="ngModel" [(ngModel)]="item.teacher" style="border-width: 1;width: 30%;margin-top: 20;"></TextField>
+            <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
+        </FlexboxLayout>
+    </FlexboxLayout>
+
+    <StackLayout style="color: #6189f4; margin-right: 20;margin-top: 10;" class="ysBox">
+        <Label text='{{"services.object_exam.bank"|translate}}' style="font-weight: 800;"></Label>
+        <DropDown
+        [items]="banksDropDown"
+        (selectedIndexChanged)="getBank($event)"
+        itemsTextAlignment="left"
+        itemsPadding="5"
+        hint='{{"services.object_exam.bank"|translate}}'
+        >
+        </DropDown>
+
+        <Label text='{{"services.object_exam.account_no"|translate}}' style="font-weight: 800;margin-top: 10;"></Label>
+        <DropDown
+        [items]="accountNoDropDown"
+        (selectedIndexChanged)="getAccountNo($event)"
+        itemsTextAlignment="right"
+        itemsPadding="5"
+        hint='{{"services.object_exam.account_no"|translate}}'
+        >
+        </DropDown>
+    
+        
+        <Label text='{{"services.object_exam.deposite"|translate}}' style="font-weight: 800;margin-top: 10;"></Label>
+        <DropDown
+        [items]="feesDropDown"
+        (selectedIndexChanged)="getFees($event)"
+        itemsTextAlignment="right"
+        itemsPadding="5"
+        hint='{{"services.object_exam.deposite"|translate}}'
+        >
+        </DropDown>
+    </StackLayout>
+
+    <Label text='{{"services.object_exam.reasons"|translate}}' textWrap="true" style="font-weight: 800;margin-right: 20;;margin-top: 20;color: #6189f4;"></Label>
+    
+    <TextView style="padding:10;margin:0 20;" class="ysBox"
+    #reason="ngModel" [(ngModel)]="exam.reason" required>
+    </TextView>
+   
+    <Label text='{{"services.object_exam.upload_deposite"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;margin-top:20 ;"></Label>
+    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary"></Button>
+
+</FlexboxLayout>
+</ScrollView>

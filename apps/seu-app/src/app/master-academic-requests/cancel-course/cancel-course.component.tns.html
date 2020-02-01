@@ -1,1 +1,61 @@
-<Button text="cancel-course works!" class="btn btn-primary"></Button>
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label text='{{"services.master_cancel_course.title"|translate}}'></Label>
+</ActionBar>
+<ScrollView>
+<FlexboxLayout flexDirection="column">
+
+    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+        <ListView [items]="msgs">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between" style="margin-right:20;">
+        <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
+        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
+    </FlexboxLayout>
+    <!--*ngIf="reqData.can_add_new_request"-->
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading" class="ysBox">
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+                <label text='{{"general.request.req_no"|translate}}'></label>
+                <label text='{{"general.course_code"|translate}}'></label>
+                <label text='{{"general.course_name"|translate}}'></label>
+                <label text='{{"services.master_cancel_course.acceptance_date"|translate}}'></label>
+                <label text='{{"general.request.date_and_status"|translate}}'></label>
+                <label text='{{"general.request.req_delete"|translate}}'></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="row-reverse" 
+            class="trow" [ngStyle]="{'border-bottom-width':i === reqData.reqs.length-1 ? '0' : '1' }">
+                <Label [text]="item.request_number"></Label>
+                <Label [text]="item.course_id"></Label>
+                <Label [text]="item.course_title"></Label>
+                <Label [text]="item.approval_date"></Label>
+                <FlexboxLayout alignItems="center" flexDirection="column">
+                    <Label [text]="item.insert_date"  ></Label>
+                    <Label [text]="item.status" ></Label>
+                </FlexboxLayout>
+    
+                <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas -rounded-sm blue-button"></Button>
+                <Label *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}'></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+
+</FlexboxLayout>
+</ScrollView>

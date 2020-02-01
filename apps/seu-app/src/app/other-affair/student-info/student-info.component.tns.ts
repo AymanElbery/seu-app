@@ -91,7 +91,7 @@ export class StudentInfoComponent implements OnInit {
       cv: ''
     }
  
-    //this.getData();
+    this.getData();
 
     
     for (let i = 0; i < this.reqData.job_status.length; i++) {
@@ -103,7 +103,7 @@ export class StudentInfoComponent implements OnInit {
         );
       }
     for (let i = 0; i < this.reqData.job_type.length; i++) {
-        this.terms.push(
+        this.sectors.push(
           {
             value: this.reqData.job_type[i].id,
             display: this.reqData.job_type[i].value
@@ -127,7 +127,7 @@ export class StudentInfoComponent implements OnInit {
         );
       }
     for (let i = 0; i < this.reqData.cities.length; i++) {
-        this.terms.push(
+        this.locations.push(
           {
             value: this.reqData.cities[i].id,
             display: this.reqData.cities[i].value
@@ -135,6 +135,7 @@ export class StudentInfoComponent implements OnInit {
         );
       }
       this.statusDropDown = new ValueList(this.status);
+      console.log("ndffffffffffffffffff",this.reqData);
       this.termsDropDown = new ValueList(this.terms);
       this.periodsDropDown = new ValueList(this.period);
       this.sectorsDropDown = new ValueList(this.sectors);

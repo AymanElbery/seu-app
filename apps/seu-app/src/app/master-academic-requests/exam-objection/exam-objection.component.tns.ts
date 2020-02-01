@@ -1,52 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
-import { CancelCourseService } from '../services/cancel-course.service';
+import { ExamObjectionService } from '../../master-academic-requests/services/exam-objection.service';
+import { ObjectExam } from '../../shared/models/object-exam';
 import { AppToasterService } from '../../shared/services/app-toaster';
-import * as utils from "tns-core-modules/utils/utils";
-import* as dialogs from "tns-core-modules/ui/dialogs";
+import { TranslateService } from '@ngx-translate/core';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
-import { TranslateService } from '@ngx-translate/core';
-
+import* as dialogs from "tns-core-modules/ui/dialogs";
 
 @Component({
-  selector: 'app-cancel-course',
-  templateUrl: './cancel-course.component.tns.html',
-  styleUrls: ['./cancel-course.component.tns.scss']
+  selector: 'app-exam-objection',
+  templateUrl: './exam-objection.component.tns.html',
+  styleUrls: ['./exam-objection.component.tns.scss']
 })
-export class CancelCourseComponent implements OnInit {
-
+export class ExamObjectionComponent implements OnInit {
 
   printAR;
-  cancelCousre: CancelCousre;
+  objectexam: ObjectExam;
   reqData;
   msgs;
   status;
   isLoading = false;
-
-  constructor(private toastr: AppToasterService, private acadmicProc: CancelCourseService,
-    private routerExtensions: RouterExtensions,private translate: TranslateService) { }
+  constructor(private translate: TranslateService, private toastr: AppToasterService,
+     private acadmicProc: ExamObjectionService,private routerExtensions: RouterExtensions) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right; 
-    this.isLoading = true;
-    this.cancelCousre = { courses: null, agreement: 1 };
+    this.objectexam = { courses: [], exams: [], reason: '', bank: -1, account_number: '', fees_amount: '', attachment: '' };
     this.getRequests();
   }
-
-
   getRequests() {
     this.isLoading = true;
-    this.acadmicProc.getِgetRequests().then(
+    this.acadmicProc.getRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-        console.log(this.msgs);
       }, err => {
         this.reqData = [];
         this.msgs = [];
@@ -56,19 +48,15 @@ export class CancelCourseComponent implements OnInit {
     );
   }
 
-  print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
-  }
-
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-      title: this.translate.instant('general.delete_confirm'),
-      message: "",
-      okButtonText: "OK",
-      cancelButtonText: 'Cancel'
-  }).then((result:boolean) => {
-    if (result) {
+        title: this.translate.instant('general.delete_confirm'),
+        message: "",
+        okButtonText: "OK",
+        cancelButtonText: 'Cancel'
+    }).then((result:boolean) => {
+      if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
@@ -81,15 +69,15 @@ export class CancelCourseComponent implements OnInit {
           this.toastr.tryagain();
           this.deleting = false;
         });
-      }});
+    }});
   }
 
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;
-  }
 
+  }
   onTap(){
-    this.routerExtensions.navigate(['/procedures/addcancelcourse'], {
+    this.routerExtensions.navigate(['/academicrequests/addobjectexam'], {
       transition: {
           name: 'fade'
       }
@@ -99,4 +87,7 @@ export class CancelCourseComponent implements OnInit {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
+
 }
+
+
