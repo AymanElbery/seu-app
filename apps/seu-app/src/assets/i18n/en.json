@@ -84,7 +84,8 @@
         "count": "Count",
         "college": "College",
         "language": "Language",
-        "course_code_name":"Course Name/Code"
+        "course_code_name":"Course Name/Code",
+        "choose":"Choose"
 
     },
     "menu": {

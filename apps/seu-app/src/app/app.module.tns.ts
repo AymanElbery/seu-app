@@ -27,6 +27,7 @@ import { RegisterCoursesModule } from './register-courses/register-courses.modul
 import { FinanceAffairModule } from './finance-affair/finance-affair.module.tns';
 import { ExamsAffairModule } from './exams-affair/exams-affair.module.tns';
 import { OtherAffairModule } from './other-affair/other-affair.module.tns';
+import { MasterAcademicRequestsModule } from './master-academic-requests/master-academic-requests.module.tns';
 
 
 
@@ -50,7 +51,8 @@ import { OtherAffairModule } from './other-affair/other-affair.module.tns';
     AppTransModule,
     FinanceAffairModule,
     ExamsAffairModule,
-    OtherAffairModule
+    OtherAffairModule,
+    MasterAcademicRequestsModule
 
   ],
 

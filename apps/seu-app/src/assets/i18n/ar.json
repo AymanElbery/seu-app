@@ -84,7 +84,8 @@
         "college": "الجامعة",
         "language": "اللغة",
         "email": "البريد الالكتروني",
-        "course_code_name":"اسم المقرر/الرمز"
+        "course_code_name":"اسم المقرر/الرمز",
+        "choose":"اختر"
     },
     "menu": {
         "myservices": "خدماتي",
