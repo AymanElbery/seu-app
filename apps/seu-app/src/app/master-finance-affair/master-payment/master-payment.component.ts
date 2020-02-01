@@ -7,7 +7,6 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./master-payment.component.scss']
 })
 export class MasterPaymentComponent implements OnInit {
-
   @Input()
   url = 'https://apps.seu.edu.sa/fees/gr/index?sid=';
   urlSafe: SafeResourceUrl;
@@ -18,7 +17,7 @@ export class MasterPaymentComponent implements OnInit {
   ngOnInit() {
     this.sid = localStorage.getItem('sid');
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url + this.sid);
-    //console.log(this.urlSafe);
+    // console.log(this.urlSafe);
   }
 
 }
