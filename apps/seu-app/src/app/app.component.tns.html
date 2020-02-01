@@ -223,7 +223,12 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
+                
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/record')">
+                    <Label col="1" text=" السجل الاكاديمى" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
 
+                </GridLayout>
                 <StackLayout class="hr"></StackLayout>
 
                 <GridLayout class="ysMenuGridHeader"  columns="auto, *"  >
@@ -237,14 +242,12 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
-               
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/record')">
-                    <Label col="1" text=" السجل الاكاديمى" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/objectexam')">
+                    <Label col="1" text="الاعتراض على نتيجة الاختبار النهائي" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
-                
-               
+ 
                 <StackLayout class="hr"></StackLayout>
 
 
