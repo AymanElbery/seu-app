@@ -9,8 +9,8 @@ const routes: Routes = [
 {
   path: 'masteraff',
   children: [
-  { path: 'stdata',  component: AcademicStatusComponent }
-  { path: 'academicrecord',  component: AcademicRecordComponent }
+  { path: 'stdata',  component: AcademicStatusComponent } ,
+  { path: 'strec',  component: AcademicRecordComponent }
 
  // { path: 'academicrecord',  component: AcademicRecordComponent }
 

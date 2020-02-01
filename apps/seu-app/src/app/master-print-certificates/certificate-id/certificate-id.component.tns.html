@@ -1,1 +1,103 @@
-<Button text="certificate-id works!" class="btn btn-primary"></Button>
+<ActionBar>
+    <!-- 
+          <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+  
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label text='{{"services.certificate_id.title" |translate}}'></Label>
+  </ActionBar>
+  
+  <ScrollView>
+  <GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading">
+  
+    <StackLayout row="0" *ngIf="!isLoading">
+      <GridLayout  class="ysBox" rows="auto,auto" columns="*,150">
+    
+    
+        <Label row="0" column="1" style="font-weight: 800;" text="{{certificateDetails.labels.date}}"></Label>
+        <Label row="0"  column="0" text="{{certificateDetails.values.date}}" style="text-align: right;"></Label>
+    
+        <Label row="1" column="1" style="font-weight: 800;" text="{{certificateDetails.labels.ssn}}"></Label>
+        <Label row="1"  column="0" text="{{certificateDetails.values.ssn}}" style="text-align: right;"></Label>
+  
+      </GridLayout>
+    </StackLayout>
+  
+  
+    <FlexboxLayout row="1" flexDirection="row-reverse" class="paragraph" flexWrap="wrap" *ngIf="!isLoading">
+      <label  [text]="certificateDetails.labels.txt1"></label>
+      <label  [text]="certificateDetails.values.std_name"></label>
+      <label  [text]="certificateDetails.labels.txt2"></label>
+      <label  [text]="certificateDetails.values.std_id"></label>
+      <label  [text]="certificateDetails.labels.txt3"></label>
+      <label  [text]="certificateDetails.values.coll"></label>
+      <label  [text]="certificateDetails.labels.txt4"></label>
+      <label  [text]="certificateDetails.values.major"></label>
+      <label  [text]="certificateDetails.labels.txt5"></label>
+      <label  [text]="certificateDetails.values.term"></label>
+      <label  [text]="certificateDetails.labels.txt6"></label>
+      <label  [text]="certificateDetails.labels.txt7"></label>
+    </FlexboxLayout>
+  
+    <ng-template [ngIf]="lectures !=null" [ngIfElse]="NoLec">
+      <StackLayout  class="ysBox" row="2">
+      <FlexboxLayout  justifyContent="space-between" flexDirection="column">
+      <FlexboxLayout class="throw" justifyContent="space-between" flexWrap="nowrap" flexDirection="row-reverse">
+        <FlexboxLayout >
+          <Label [text]="certificateDetails.labels.crn"></Label>
+          <Label text="/"></Label>
+          <Label [text]="certificateDetails.labels.course_title"></Label>
+        </FlexboxLayout>
+        <Label [text]="certificateDetails.labels.day_and_date"></Label>
+        <Label [text]="certificateDetails.labels.time"></Label>
+      </FlexboxLayout>
+  
+     
+      <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of lectures" flexDirection="row-reverse" class="trow">
+        <FlexboxLayout flexDirection="column" alignItems="center" class="wideColumn" style="margin-left: 15;">
+          <Label [text]="item.CRSE_TITLE"></Label>
+          <Label [text]="item.CRN"></Label>
+        </FlexboxLayout>
+        <Label [text]="item.CRSE_DAY" class="narrowColumn"></Label>
+        <Label [text]="toHTML(item.CRSE_TIME)" class="wideColumn"></Label>
+      </FlexboxLayout>
+    </FlexboxLayout>
+  </StackLayout>
+  </ng-template>
+  
+  <ng-template #NoLec>  
+    <FlexboxLayout row="2" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
+        <label  [text]="certificateDetails.labels.txt8"></label>
+    </FlexboxLayout>
+  </ng-template>
+  
+    <FlexboxLayout row="3" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
+      <label  [text]="certificateDetails.labels.txt9" textWrap="true"></label>
+      <label  [text]="certificateDetails.labels.txt10"></label>
+      <label text="{{general.note" |translate}}"></label>
+      <label  [text]="certificateDetails.labels.txt11"></label>
+      <label  [text]="certificateDetails.labels.txt12"></label>
+    </FlexboxLayout>
+  
+    <FlexboxLayout row="4" flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
+      <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
+      <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
+    </FlexboxLayout>
+  </GridLayout>
+  <FlexboxLayout row="3" justifyContent="center">
+    <StackLayout  margin="10" >
+      <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
+  </StackLayout>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+  </FlexboxLayout>
+  </ScrollView>
+  
