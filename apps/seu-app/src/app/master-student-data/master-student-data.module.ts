@@ -26,7 +26,8 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     FormsModule,
     MatDialogModule,
     AppLazyTransModule
-    //BrowserAnimationsModule
+
+    // BrowserAnimationsModule
   ],
   providers: [AcademicStatusService, AcademicRecordService]
 })

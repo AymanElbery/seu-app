@@ -1,1 +1,62 @@
-<Button text="academic-status works!" class="btn btn-primary"></Button>
+<ActionBar>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+   
+-->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+
+    <Label text='{{"services.academic_status.title" | translate}}'></Label>
+</ActionBar>
+<ScrollView>
+    <FlexboxLayout flexDirection="column" class="wrap">
+        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center">
+        </ActivityIndicator>
+        <StackLayout>
+            <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                <Label row="0" colSpan="2" class="ysHBox" text="{{'general.student_data'|translate}}"></Label>
+                <Label row="1" column="1" style="font-weight: 800;"
+                    text="{{'general.female_or_male_name'|translate}} :"></Label>
+                <Label row="1" column="0" text="{{student.name}}"></Label>
+                <Label row="2" column="1" style="font-weight: 800;" text="{{'general.student_id'|translate}} :"></Label>
+                <Label row="2" column="0" text="{{student.std_id}}" style="text-align: right;"></Label>
+
+                <Label row="3" column="1" style="font-weight: 800;"
+                    text="{{'general.faculty'|translate}} :"></Label>
+                <Label row="3" column="0" text="{{student.colledge}}"></Label>
+              
+
+                <Label row="4" column="1" style="font-weight: 800;"
+                text="{{'general.major'|translate}} :"></Label>
+                <Label row="4" column="0" text="{{student.major}}"></Label>
+
+                <Label row="5" column="1" style="font-weight: 800;"
+                text="{{'general.branch'|translate}} :"></Label>
+                <Label row="5" column="0" text="{{student.branch}}"></Label>
+
+                <Label row="6" column="1" style="font-weight: 800;"
+                    text='{{"services.academic_status.title" | translate}} :'></Label>
+                <Label row="6" column="0" text="{{student.academic_status}}"></Label>
+
+               
+            </GridLayout>
+        </StackLayout>
+
+
+
+
+
+
+
+
+
+
+    </FlexboxLayout>
+</ScrollView>
