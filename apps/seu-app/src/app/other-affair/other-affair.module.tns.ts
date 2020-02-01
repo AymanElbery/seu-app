@@ -7,6 +7,8 @@ import { AddUnivCardComponent } from './univ-card/diag/add-univ-card/add-univ-ca
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { OtherAffairRoutingModule } from './other-affair-routing.module.tns';
 import { StudentInfoComponent } from './student-info/student-info.component.tns';
+import { TrainingRequestComponent } from './training-request/training-request.component.tns';
+import { AddTrainingRequestComponent } from './training-request/diag/add-training-request/add-training-request.component.tns';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { StudentInfoComponent } from './student-info/student-info.component.tns'
     MedicalReportComponent,
     UnivCardComponent,
     AddUnivCardComponent,
-    StudentInfoComponent
+    StudentInfoComponent,
+    TrainingRequestComponent,
+    AddTrainingRequestComponent
   ],
   imports: [
     OtherAffairRoutingModule,
@@ -22,6 +26,9 @@ import { StudentInfoComponent } from './student-info/student-info.component.tns'
     AppTransModule,
     NativeScriptFormsModule
 
+  ],
+  entryComponents:[
+    AddTrainingRequestComponent
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

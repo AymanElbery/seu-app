@@ -202,6 +202,12 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/training')">
+                    <Label col="1" text="طلب التدريب الميداني" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
                
             </StackLayout>
         </ScrollView>

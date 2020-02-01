@@ -5,6 +5,7 @@ import { MedicalReportComponent } from './medical-report/medical-report.componen
 import { UnivCardComponent } from './univ-card/univ-card.component.tns';
 import { AddUnivCardComponent } from './univ-card/diag/add-univ-card/add-univ-card.component.tns';
 import { StudentInfoComponent } from './student-info/student-info.component.tns';
+import { TrainingRequestComponent } from './training-request/training-request.component.tns';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'medicalreport',  component:MedicalReportComponent  },
   { path: 'universitycard',  component:UnivCardComponent  },
   { path: 'adduniversitycard',  component:AddUnivCardComponent  },
-  { path :'studentinfo' ,component:StudentInfoComponent}
+  { path :'studentinfo' ,component:StudentInfoComponent},
+  { path :'training' ,component:TrainingRequestComponent},
 
 
 ]
