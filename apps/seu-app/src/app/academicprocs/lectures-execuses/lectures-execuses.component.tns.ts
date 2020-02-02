@@ -7,6 +7,7 @@ import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -24,7 +25,8 @@ export class LecturesExecusesComponent implements OnInit {
 
   constructor(private routerExtensions: RouterExtensions, 
     private toastr: AppToasterService, 
-    private acadmicProc: LectureExecuseServiceService) { }
+    private acadmicProc: LectureExecuseServiceService,
+    private translate: TranslateService,) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -55,7 +57,7 @@ export class LecturesExecusesComponent implements OnInit {
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-        title: "هل انت متأكد؟",
+        title: this.translate.instant('general.delete_confirm'),
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'
@@ -76,7 +78,7 @@ export class LecturesExecusesComponent implements OnInit {
     }});
   }
   onTap(){
-    this.routerExtensions.navigate(['/procedures/addlecexecuse'], {
+    this.routerExtensions.navigate(['/academicrequests/addlecturesexecuses'], {
       transition: {
           name: 'fade'
       }

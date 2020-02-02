@@ -1,22 +1,23 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ReEnroll } from 'src/app/shared/models/re-enroll';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { ReEnrollService } from '../services/re-enroll.service';
+import { ReEnroll } from '../../shared/models/re-enroll';
+import { ReEnrollService } from '../../master-academic-requests/services/re-enroll.service';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddReEnrollComponent } from './diag/add-re-enroll/add-re-enroll.component.tns';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-re-eenrollment',
-  templateUrl: './re-eenrollment.component.tns.html',
-  styleUrls: ['./re-eenrollment.component.tns.scss']
+  selector: 'app-re-enroll',
+  templateUrl: './re-enroll.component.tns.html',
+  styleUrls: ['./re-enroll.component.tns.scss']
 })
-export class ReEenrollmentComponent implements OnInit {
+export class ReEnrollComponent implements OnInit {
+
+
   printAR;
   reEnroll: ReEnroll;
   reqData;
@@ -24,21 +25,19 @@ export class ReEenrollmentComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(private _modalService: ModalDialogService,
+  constructor(
+    private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,
-    private toastr: AppToasterService, 
-    private acadmicProc: ReEnrollService,
-    private translate: TranslateService,) { }
+    private translate: TranslateService,
+     private toastr: AppToasterService, 
+     private acadmicProc: ReEnrollService) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right; 
-    this.isLoading = true;
-    this.reEnroll = { proof: '', reason: '', has_proof: '1' };
+    this.reEnroll = { proof: '', reason: '', has_proof: '' };
     this.getRequests();
   }
-
-
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
@@ -75,8 +74,8 @@ export class ReEenrollmentComponent implements OnInit {
 
   print(req) {
     utils.openUrl(this.acadmicProc.Download(req));
-
   }
+
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
@@ -90,21 +89,19 @@ export class ReEenrollmentComponent implements OnInit {
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
         if ((res as any).status == 1) {
-          this.reqData.reqs.splice(index, 1);
+          this.reqData.requests.splice(index, 1);
         }
         this.deleting = false;
-      }
-        , err => {
-          this.toastr.tryagain();
-          this.deleting = false;
-        });
-    }}) 
- }
-
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }});
+  }
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;
-  }
 
+  }
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();

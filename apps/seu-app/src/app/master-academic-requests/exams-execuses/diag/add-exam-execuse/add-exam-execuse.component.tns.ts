@@ -1,24 +1,27 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { examExcuse } from '../../../../shared/models/exam_excuse';
-import { ExamExcuseService } from '../../../services/exam-excuse.service';
+import { ExamsExecusesService } from '../../../services/exams-execuses.service';
 import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 import { RouterExtensions } from 'nativescript-angular/router';
 import { FilePickerOptions, Mediafilepicker, ImagePickerOptions } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
-import { File } from 'tns-core-modules/file-system';
-
+import { File } from 'tns-core-modules/file-system'
 declare const kUTTypePDF;
+declare var NSString: any;
+declare var NSUTF8StringEncoding: any;
+declare var java: any;
 declare var android: any;
 let filePath: string = null;
 let imgPath: string = null;
 
 @Component({
-  selector: 'app-add-exam-excuse',
-  templateUrl: './add-exam-excuse.component.tns.html',
-  styleUrls: ['./add-exam-excuse.component.tns.scss']
+  selector: 'app-add-exam-execuse',
+  templateUrl: './add-exam-execuse.component.tns.html',
+  styleUrls: ['./add-exam-execuse.component.tns.scss']
 })
-export class AddExamExcuseComponent implements OnInit {
+export class AddExamExecuseComponent implements OnInit {
 
   examExcuse: examExcuse;
   reqData;
@@ -27,7 +30,7 @@ export class AddExamExcuseComponent implements OnInit {
   cetsDropDown;
 
   constructor(
-    private toastr: AppToasterService, private acadmicProc: ExamExcuseService,
+    private toastr: AppToasterService, private acadmicProc: ExamsExecusesService,
     private routerExtensions: RouterExtensions) { }
 
   ngOnInit() {
@@ -42,26 +45,18 @@ export class AddExamExcuseComponent implements OnInit {
       );
     }
     this.cetsDropDown = new ValueList(this.cets);
+
   }
   changeStatus(it, e) {
     if (e.value) {
+
       this.examExcuse.courses.push({ CRSE: it.CRN });
-    } else {
-      const index = this.examExcuse.courses.findIndex((item) => { return item.CRSE == it.CRN });
-      if (index > -1) {
-        this.examExcuse.courses.splice(index, 1);
-      }
+
     }
+
+
   }
 
-  goBack() {
-    this.routerExtensions.backToPreviousPage();
-}
-
-getCet(val: SelectedIndexChangedEventData) {
-  const code = this.cetsDropDown.getValue(val.newIndex);
-  this.examExcuse.type=code;
-}
 
   requesting = false;
   addRequest(data: any) {
@@ -69,7 +64,7 @@ getCet(val: SelectedIndexChangedEventData) {
       this.toastr.push((res as any).messages);
       if (res['status']) {
         this.acadmicProc.newreqs = true;
-        this.routerExtensions.navigate(['/exams/examexcuse']);
+       // this.dialogRef.close();
       }
       this.requesting = false;
     },
@@ -86,7 +81,6 @@ getCet(val: SelectedIndexChangedEventData) {
     this.requesting = true;
     this.addRequest(this.examExcuse);
   }
- 
   public openCustomFilesPicker(type:string) {
     var extensions = [];
     if (app.ios) {
@@ -160,4 +154,13 @@ getCet(val: SelectedIndexChangedEventData) {
     return filePath != null ? File.fromPath(filePath).name : "Browse";
   }
 
+  goBack() {
+    this.routerExtensions.backToPreviousPage();
 }
+
+getCet(val: SelectedIndexChangedEventData) {
+  const code = this.cetsDropDown.getValue(val.newIndex);
+  this.examExcuse.type=code;
+}
+}
+
