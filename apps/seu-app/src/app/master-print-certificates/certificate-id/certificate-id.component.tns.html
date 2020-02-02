@@ -48,44 +48,43 @@
       <label  [text]="certificateDetails.labels.txt7"></label>
     </FlexboxLayout>
   
-    <ng-template [ngIf]="lectures !=null" [ngIfElse]="NoLec">
       <StackLayout  class="ysBox" row="2">
       <FlexboxLayout  justifyContent="space-between" flexDirection="column">
       <FlexboxLayout class="throw" justifyContent="space-between" flexWrap="nowrap" flexDirection="row-reverse">
         <FlexboxLayout >
-          <Label [text]="certificateDetails.labels.crn"></Label>
+          <Label text="CRN"></Label>
           <Label text="/"></Label>
-          <Label [text]="certificateDetails.labels.course_title"></Label>
+          <Label text="{{'general.request.req_cname' |translate}}"></Label>
         </FlexboxLayout>
-        <Label [text]="certificateDetails.labels.day_and_date"></Label>
-        <Label [text]="certificateDetails.labels.time"></Label>
+        <Label text={{'general.request.day' |translate}}></Label>
+        <Label text={{'general.request.time' |translate}}></Label>
+        <Label text={{'services.lecture_execuse.lecture_type' |translate}}></Label>
+
       </FlexboxLayout>
   
      
       <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of lectures" flexDirection="row-reverse" class="trow">
         <FlexboxLayout flexDirection="column" alignItems="center" class="wideColumn" style="margin-left: 15;">
-          <Label [text]="item.CRSE_TITLE"></Label>
-          <Label [text]="item.CRN"></Label>
+          <Label [text]="item.course_name"></Label>
+          <Label [text]="item.course_id"></Label>
         </FlexboxLayout>
-        <Label [text]="item.CRSE_DAY" class="narrowColumn"></Label>
-        <Label [text]="toHTML(item.CRSE_TIME)" class="wideColumn"></Label>
+        <Label [text]="item.day" class="narrowColumn"></Label>
+        <Label [text]="toHTML(item.time)" class="wideColumn"></Label>
+        <Label [text]="toHTML(item.type)" class="wideColumn"></Label>
+
       </FlexboxLayout>
     </FlexboxLayout>
   </StackLayout>
-  </ng-template>
+ 
   
-  <ng-template #NoLec>  
-    <FlexboxLayout row="2" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
-        <label  [text]="certificateDetails.labels.txt8"></label>
-    </FlexboxLayout>
-  </ng-template>
+  
   
     <FlexboxLayout row="3" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
+      <label  [text]="certificateDetails.labels.txt8" textWrap="true"></label>
       <label  [text]="certificateDetails.labels.txt9" textWrap="true"></label>
-      <label  [text]="certificateDetails.labels.txt10"></label>
-      <label text="{{general.note" |translate}}"></label>
-      <label  [text]="certificateDetails.labels.txt11"></label>
-      <label  [text]="certificateDetails.labels.txt12"></label>
+      <label text="{{'general.note' |translate}}"></label>
+      <label  [text]="certificateDetails.labels.txt11" textWrap="true"></label>
+      <label  [text]="certificateDetails.labels.txt12" textWrap="true"></label>
     </FlexboxLayout>
   
     <FlexboxLayout row="4" flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
