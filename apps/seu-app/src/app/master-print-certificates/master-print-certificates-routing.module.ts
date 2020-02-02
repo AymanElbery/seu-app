@@ -8,9 +8,9 @@ const routes: Routes = [{ path: '', component: CertificateIDComponent },
   path: '',
   children: [
   { path: 'idcertificate',  component: CertificateIDComponent },
-  { path: 'examattendacecertificate', component: ExamAttendanceCertificateComponent},
-  { path: 'examattendacecertificateapp', component: ExamAttendanceCertificateAppComponent}
-
+  { path:'examattendacecertificate', component:ExamAttendanceCertificateComponent},
+  { path:'examattendacecertificateapp', component:ExamAttendanceCertificateAppComponent}
+ 
 
  ]
 }

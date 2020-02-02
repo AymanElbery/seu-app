@@ -3,7 +3,7 @@ import { Routes } from '@angular/router';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 import { CertificateIDComponent } from './certificate-id/certificate-id.component.tns';
 import { ExamAttendanceCertificateComponent } from './exam-attendance-certificate/exam-attendance-certificate.component.tns';
-import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certificate-app/exam-attendance-certificate-app.component.tns';
+import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certificate-app/exam-attendance-certificate-app.component';
 
 const routes: Routes = [{ path: 'cert', component: CertificateIDComponent },
 {

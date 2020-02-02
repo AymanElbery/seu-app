@@ -8,13 +8,29 @@ import { AddCancelCourseRequestComponent } from './cancel-course/diag/add-cancel
 import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { ExamObjectionComponent } from './exam-objection/exam-objection.component.tns';
 import { AddObjectExamComponent } from './exam-objection/diag/add-object-exam/add-object-exam.component.tns';
+import { AddExamExecuseComponent } from './exams-execuses/diag/add-exam-execuse/add-exam-execuse.component.tns';
+import { ExamsExecusesComponent } from './exams-execuses/exams-execuses.component.tns';
+import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component.tns';
+import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.tns';
+import { ReEnrollComponent } from './re-enroll/re-enroll.component.tns';
+import { AddReEnrollComponent } from './re-enroll/diag/add-re-enroll/add-re-enroll.component.tns';
+import { StudyPostponeComponent } from './study-postpone/study-postpone.component.tns';
+import { AddStudyPostponeComponent } from './study-postpone/diag/add-study-postpone/add-study-postpone.component.tns';
 
 @NgModule({
   declarations: [
     CancelCourseComponent,
     AddCancelCourseRequestComponent,
     ExamObjectionComponent,
-    AddObjectExamComponent
+    AddObjectExamComponent,
+    ExamsExecusesComponent,
+    AddExamExecuseComponent,
+    LecturesExecusesComponent,
+    AddLecturesExecusesComponent,
+    ReEnrollComponent,
+    AddReEnrollComponent,
+    StudyPostponeComponent,
+    AddStudyPostponeComponent
   ],
   imports: [
     MasterAcademicRequestsRoutingModule,
@@ -22,6 +38,10 @@ import { AddObjectExamComponent } from './exam-objection/diag/add-object-exam/ad
     NativeScriptFormsModule,
     CommonModule,
     NativeScriptCommonModule
+  ],
+  entryComponents:[
+    AddReEnrollComponent,
+    AddStudyPostponeComponent
   ]
 })
 export class MasterAcademicRequestsModule { }

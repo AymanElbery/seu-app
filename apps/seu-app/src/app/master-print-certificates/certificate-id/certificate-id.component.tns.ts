@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CertificateIDService} from '../services/certificate-id.service';
-import { CertificateDetails } from 'src/app/shared/models/certificate-details';
+import { CertificateDetails } from '../../shared/models/certificate-details';
 import { Lecture } from 'src/app/shared/models/lecture';
 import * as app from 'tns-core-modules/application';
 import { HttpClient } from '@angular/common/http';

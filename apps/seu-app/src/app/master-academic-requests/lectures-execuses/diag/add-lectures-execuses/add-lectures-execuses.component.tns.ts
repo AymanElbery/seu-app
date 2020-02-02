@@ -1,14 +1,12 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LectureExecuse } from '../../../../shared/models/lecture-execuse';
-import { LectureExecuseServiceService } from '../../../services/lecture-execuse-service.service';
+import { LecturesExecusesService } from '../../../services/lectures-execuses.service';
 import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { RouterExtensions } from 'nativescript-angular/router';
-
 import { FilePickerOptions, Mediafilepicker, ImagePickerOptions } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
 import { File } from "tns-core-modules/file-system";
 import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
-
 declare const kUTTypePDF;
 declare var NSString: any;
 declare var NSUTF8StringEncoding: any;
@@ -28,22 +26,20 @@ export class AddLecturesExecusesComponent implements OnInit {
   msgs: any;
   private imageSrc = '';
   reqData;
-  dates:ValueItem<number>[] = [];
   weeks:ValueItem<number>[] = [];
   lecs:ValueItem<number>[] = [];
-  datesDropDown;
   weeksDropDown;
   lecsDropDown;
   
   constructor(private routerExtensions: RouterExtensions,
-    private toastr: AppToasterService, private acadmicProc: LectureExecuseServiceService) { }
+    private toastr: AppToasterService, private acadmicProc: LecturesExecusesService) { }
 
   ngOnInit() {
     this.lectureExecuse = {
-      courses: [], attachment: '', reason: '', date: '', type: '', week: '1'
+      courses: [], attachment: '', reason: '', date: '', type: '', week: ''
     };
     this.reqData = this.acadmicProc.reqData;
-
+    console.log('***************************',this.reqData)
     for (let i = 0; i < this.reqData.lectures_type.length; i++) {
       this.lecs.push(
         {
@@ -65,16 +61,6 @@ export class AddLecturesExecusesComponent implements OnInit {
     }
     this.weeksDropDown = new ValueList(this.weeks);
 
-    for (let i = 0; i < this.reqData.weeks_dates[this.lectureExecuse.week].length; i++) {
-      this.dates.push(
-        {
-          value: this.reqData.weeks_dates[this.lectureExecuse.week][i],
-          display: this.reqData.weeks_dates[this.lectureExecuse.week][i]
-        }
-      );
-    }
-    this.datesDropDown = new ValueList(this.dates);
-
   }
   changeStatus(it, e) {
     if (e.value) {
@@ -84,19 +70,18 @@ export class AddLecturesExecusesComponent implements OnInit {
         if (this.lectureExecuse.courses[i].CRSE === it.CRN) {
           this.lectureExecuse.courses.splice(i, 1);
         }
+
       }
     }
-
   }
- 
-
+  
   requesting = false;
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
       if (res['status']) {
         this.acadmicProc.newreqs = true;
-        this.routerExtensions.navigate(['/procedures/lecexecuse']);
+        this.routerExtensions.navigate(['/academicrequests/lecturesexecuses']);
       }
       this.requesting = false;
     },
@@ -109,7 +94,6 @@ export class AddLecturesExecusesComponent implements OnInit {
     if (this.requesting) {
       return false;
     }
-
     this.lectureExecuse.attachment = this.convertToBase64(filePath);
     this.requesting = true;
     this.addRequest(this.lectureExecuse);
@@ -194,7 +178,6 @@ export class AddLecturesExecusesComponent implements OnInit {
     this.routerExtensions.backToPreviousPage();
 }
 
-
 getLec(val: SelectedIndexChangedEventData) {
   const code = this.lecsDropDown.getValue(val.newIndex);
   this.lectureExecuse.type=code;
@@ -202,9 +185,5 @@ getLec(val: SelectedIndexChangedEventData) {
 getWeek(val: SelectedIndexChangedEventData) {
   const code = this.weeksDropDown.getValue(val.newIndex);
   this.lectureExecuse.week=code;
-}
-getDate(val: SelectedIndexChangedEventData) {
-  const code = this.datesDropDown.getValue(val.newIndex);
-  this.lectureExecuse.date=code;
 }
 }

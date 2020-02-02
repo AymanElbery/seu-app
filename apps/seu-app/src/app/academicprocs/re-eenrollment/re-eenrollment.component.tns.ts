@@ -9,6 +9,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddReEnrollComponent } from './diag/add-re-enroll/add-re-enroll.component.tns';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-re-eenrollment',
@@ -26,7 +27,8 @@ export class ReEenrollmentComponent implements OnInit {
   constructor(private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,
     private toastr: AppToasterService, 
-    private acadmicProc: ReEnrollService) { }
+    private acadmicProc: ReEnrollService,
+    private translate: TranslateService,) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -78,7 +80,7 @@ export class ReEenrollmentComponent implements OnInit {
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-        title: "هل انت متأكد؟",
+        title: this.translate.instant('general.delete_confirm'),
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'

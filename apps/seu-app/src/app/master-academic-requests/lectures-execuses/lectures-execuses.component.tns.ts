@@ -1,29 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { ExamExcuseService } from '../services/exam-excuse.service';
+import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
+import { LectureExecuse } from '../../shared/models/lecture-execuse';
+import { LecturesExecusesService } from '../services/lectures-execuses.service';
+import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-exam-excuse',
-  templateUrl: './exam-excuse.component.tns.html',
-  styleUrls: ['./exam-excuse.component.tns.scss']
+  selector: 'app-lectures-execuses',
+  templateUrl: './lectures-execuses.component.tns.html',
+  styleUrls: ['./lectures-execuses.component.tns.scss']
 })
-export class ExamExcuseComponent implements OnInit {
+export class LecturesExecusesComponent implements OnInit {
 
-
+  printAR;
+  lectureExecuse: LectureExecuse;
   reqData;
   msgs;
-  status;
   isLoading = false;
 
-  constructor(private toastr: AppToasterService,
-     private acadmicProc: ExamExcuseService,
-     private routerExtensions: RouterExtensions,
-     private translate: TranslateService,) { }
+  constructor(private translate: TranslateService, 
+    private toastr: AppToasterService, 
+    private acadmicProc: LecturesExecusesService,
+    private routerExtensions: RouterExtensions) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -32,22 +35,30 @@ export class ExamExcuseComponent implements OnInit {
   }
   getRequests() {
     this.isLoading = true;
-    this.acadmicProc.getِgetRequests().then(
+    this.acadmicProc.getRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
 
+  print(req) {
+    utils.openUrl(this.acadmicProc.Download(req));
+  }
 
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-        title:this.translate.instant('general.delete_confirm'),
+        title: this.translate.instant('general.delete_confirm'),
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'
@@ -60,15 +71,14 @@ export class ExamExcuseComponent implements OnInit {
           this.reqData.requests.splice(index, 1);
         }
         this.deleting = false;
-      }
-        , err => {
-          this.toastr.tryagain();
-          this.deleting = false;
-        });
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
     }});
   }
   onTap(){
-    this.routerExtensions.navigate(['/exams/addexamexcuse'], {
+    this.routerExtensions.navigate(['/procedures/addlecexecuse'], {
       transition: {
           name: 'fade'
       }
@@ -78,4 +88,5 @@ export class ExamExcuseComponent implements OnInit {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
+
 }

@@ -1,44 +1,43 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { TermPostponeService } from '../services/term-postpone.service';
+import { StudyPostponeService } from '../services/study-postpone.service';
+import { studyPostpone } from '../../shared/models/study-postpone';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from '../../shared/services/app-toaster';
 import * as utils from "tns-core-modules/utils/utils";
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
-import { AddPostponeComponent } from './diag/add-postpone/add-postpone.component.tns';
-import { AppToasterService } from '../../shared/services/app-toaster';
-import { TranslateService } from '@ngx-translate/core';
-
+import { AddStudyPostponeComponent } from './diag/add-study-postpone/add-study-postpone.component.tns';
 
 @Component({
-  selector: 'app-postpone-request',
-  templateUrl: './postpone-request.component.tns.html',
-  styleUrls: ['./postpone-request.component.tns.scss']
+  selector: 'app-study-postpone',
+  templateUrl: './study-postpone.component.tns.html',
+  styleUrls: ['./study-postpone.component.tns.scss']
 })
-export class PostponeRequestComponent implements OnInit {
+export class StudyPostponeComponent implements OnInit {
 
-  printAR;
-  reason: string;
+
+  studypostpone: studyPostpone;
   reqData;
   msgs;
   status;
+  isLoading = false;
 
-  constructor(private _modalService: ModalDialogService,private translate: TranslateService,
-    private _vcRef: ViewContainerRef,private acadmicProc: TermPostponeService,private toastr: AppToasterService) { }
+  constructor(
+    private _modalService: ModalDialogService,
+    private _vcRef: ViewContainerRef,
+    private translate: TranslateService, private toastr: AppToasterService, private acadmicProc: StudyPostponeService) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;  
-    this.isLoading = true;
-    this.reason = '';
+    this.studypostpone = { num_terms: '', reason: '', mobile: '' };
     this.getRequests();
   }
-
-
-  isLoading = false;
   getRequests() {
     this.isLoading = true;
-    this.acadmicProc.getِgetRequests().then(
+    this.acadmicProc.getRequest().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
@@ -53,6 +52,7 @@ export class PostponeRequestComponent implements OnInit {
       }
     );
   }
+
   onTap(): void {
     const options: ModalDialogOptions = {
         viewContainerRef: this._vcRef,
@@ -60,7 +60,7 @@ export class PostponeRequestComponent implements OnInit {
         fullscreen: false,
     };
 
-    this._modalService.showModal(AddPostponeComponent, options)
+    this._modalService.showModal(AddStudyPostponeComponent, options)
         .then( result => {
         if (this.acadmicProc.newreqs) {
           this.getRequests();
@@ -68,19 +68,15 @@ export class PostponeRequestComponent implements OnInit {
         }
     });
 }
-
-  print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
-  }
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-      title: this.translate.instant('general.delete_confirm'),
-      message: "",
-      okButtonText: "OK",
-      cancelButtonText: 'Cancel'
-  }).then((result:boolean) => {
-    if (result) {
+        title: this.translate.instant('general.delete_confirm'),
+        message: "",
+        okButtonText: "OK",
+        cancelButtonText: 'Cancel'
+    }).then((result:boolean) => {
+      if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
@@ -88,16 +84,18 @@ export class PostponeRequestComponent implements OnInit {
           this.reqData.reqs.splice(index, 1);
         }
         this.deleting = false;
-      }
-        , err => {
-          this.toastr.tryagain();
-          this.deleting = false;
-        });
-    }
-  })
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }});
+  }
+
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
 
   }
-    
+
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();

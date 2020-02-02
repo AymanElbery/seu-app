@@ -247,7 +247,30 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
 
                 </GridLayout>
- 
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/examsexecuses')">
+                    <Label col="1" text="رفع اللأعذار للإختبارات" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/lecturesexecuses')">
+                    <Label col="1" text="رفع الاعذار للمحاضرات" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/reEnroll')">
+                    <Label col="1" text="اعادة القيد" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/studypostpone')">
+                    <Label col="1" text="طلب تأجيل الدراسة" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
 
 
                 <StackLayout class="hr"></StackLayout>
