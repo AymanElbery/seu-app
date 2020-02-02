@@ -12,7 +12,7 @@ import { AppTransModule } from '../app.trans.module';
 import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certificate-app/exam-attendance-certificate-app.component';
 
 @NgModule({
-  declarations: [CertificateIDComponent,ExamAttendanceCertificateComponent,
+  declarations: [CertificateIDComponent, ExamAttendanceCertificateComponent,
     ExamAttendanceCertificateAppComponent],
   imports: [
     MasterPrintCertificatesRoutingModule,

@@ -7,19 +7,11 @@
         <div class=" col-md-5">
           <p> {{"services.absence_quyery.title" |translate}} </p>
         </div>
-        <!-- <div class=" col-md-6 descr">
-          <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
-          &nbsp; &nbsp; &nbsp; &nbsp;
-          <a href="#"><i class="ik ik-download"></i> </a>
-          <a href="#"><i class="ik ik-film"></i></a>
-        </div> -->
       </div>
     </div>
   </section>
   <div *ngIf="isLoading" class=" loading-indicator ">
     <div class="state">
-
-
       <mat-spinner *ngIf="isLoading"
         style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
       </mat-spinner>
@@ -35,9 +27,7 @@
         <a class="nav-link nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One"
           aria-selected="true">
           {{"services.absence_quyery.all_lecs_asebsence_percent" |translate}}
-
         </a>
-
         <a class="nav-item nav-link " id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two"
           aria-selected="false">
           {{"services.absence_quyery.traditional_lecs_asebsence_percent" |translate}}
@@ -221,8 +211,5 @@
       </div>
     </div>
   </section>
-
-
-
 
 </div>
