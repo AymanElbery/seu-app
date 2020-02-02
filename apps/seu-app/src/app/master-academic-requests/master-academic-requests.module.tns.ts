@@ -14,6 +14,8 @@ import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.tns';
 import { ReEnrollComponent } from './re-enroll/re-enroll.component.tns';
 import { AddReEnrollComponent } from './re-enroll/diag/add-re-enroll/add-re-enroll.component.tns';
+import { StudyPostponeComponent } from './study-postpone/study-postpone.component.tns';
+import { AddStudyPostponeComponent } from './study-postpone/diag/add-study-postpone/add-study-postpone.component.tns';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AddReEnrollComponent } from './re-enroll/diag/add-re-enroll/add-re-enro
     LecturesExecusesComponent,
     AddLecturesExecusesComponent,
     ReEnrollComponent,
-    AddReEnrollComponent
+    AddReEnrollComponent,
+    StudyPostponeComponent,
+    AddStudyPostponeComponent
   ],
   imports: [
     MasterAcademicRequestsRoutingModule,
@@ -36,7 +40,8 @@ import { AddReEnrollComponent } from './re-enroll/diag/add-re-enroll/add-re-enro
     NativeScriptCommonModule
   ],
   entryComponents:[
-    AddReEnrollComponent
+    AddReEnrollComponent,
+    AddStudyPostponeComponent
   ]
 })
 export class MasterAcademicRequestsModule { }
