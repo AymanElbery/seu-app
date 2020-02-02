@@ -28,21 +28,21 @@ export class ExamsAttendStatComponent implements OnInit {
   termScheduleMsgs;
   termMsgs;
 
-  test = {}
+  test = {};
 
-  firstTabTitle:string;
-  secondTabTitle:string;
-  thirdTabTitle:string;
-  forthTabTitle:string;
+  firstTabTitle: string;
+  secondTabTitle: string;
+  thirdTabTitle: string;
+  forthTabTitle: string;
 
 
 
-  constructor(private academicService: ExamAttendanceService,private translate: TranslateService) {
+  constructor(private academicService: ExamAttendanceService, private translate: TranslateService) {
 
-    this.firstTabTitle=this.translate.instant("services.exam.tt");
-    this.secondTabTitle=this.translate.instant("services.exam.tnt");
-    this.thirdTabTitle=this.translate.instant("services.exam.ft");
-    this.forthTabTitle=this.translate.instant("services.exam.fnt");
+    this.firstTabTitle = this.translate.instant('services.exam.tt');
+    this.secondTabTitle = this.translate.instant('services.exam.tnt');
+    this.thirdTabTitle = this.translate.instant('services.exam.ft');
+    this.forthTabTitle = this.translate.instant('services.exam.fnt');
  }
 
   ngOnInit() {
@@ -95,19 +95,19 @@ export class ExamsAttendStatComponent implements OnInit {
   onEnglishPrint() {
     utils.openUrl(this.termScheduleEn);
   }
-  onArabicPrintTerm(){
+  onArabicPrintTerm() {
     utils.openUrl(this.term);
   }
   onEnglishPrintTerm() {
     utils.openUrl(this.termEn);
   }
-  onArabicPrintFinalSced(){
+  onArabicPrintFinalSced() {
     utils.openUrl(this.finalschedule);
   }
   onEnglishPrintFinalSced() {
     utils.openUrl(this.finalscheduleEn);
   }
-  onArabicPrintFinal(){
+  onArabicPrintFinal() {
     utils.openUrl(this.final);
   }
   onEnglishPrintFinal() {
