@@ -248,8 +248,33 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 
                 </GridLayout>
  
+
+
                 <StackLayout class="hr"></StackLayout>
 
+
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  >
+                    <Label col="1"  text=" طباعة الشهادات  " class="ysMenuHeader"  ></Label>
+                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
+
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/cert/id')">
+                    <Label col="1" text="  شهادة التعريف" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/cert/examatt')">
+                    <Label col="1" text="  شهادة حضور اختبارات" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/cert/examattapp')">
+                    <Label col="1" text="  شهادة اثبات حضور اختبارات" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+                <StackLayout class="hr"></StackLayout>
 
                
             </StackLayout>
