@@ -9,9 +9,11 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { AppTransModule } from '../app.trans.module';
+import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certificate-app/exam-attendance-certificate-app.component';
 
 @NgModule({
-  declarations: [CertificateIDComponent,ExamAttendanceCertificateComponent],
+  declarations: [CertificateIDComponent,ExamAttendanceCertificateComponent,
+    ExamAttendanceCertificateAppComponent],
   imports: [
     MasterPrintCertificatesRoutingModule,
     NativeScriptCommonModule,
