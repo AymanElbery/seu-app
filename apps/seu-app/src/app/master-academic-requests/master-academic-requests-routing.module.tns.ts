@@ -12,6 +12,8 @@ import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectu
 import { ReEnrollComponent } from './re-enroll/re-enroll.component.tns';
 import { AddReEnrollComponent } from './re-enroll/diag/add-re-enroll/add-re-enroll.component.tns';
 import { StudyPostponeComponent } from './study-postpone/study-postpone.component.tns';
+import { TermExecuseComponent } from './term-execuse/term-execuse.component.tns';
+import { UniversityWithdrawalComponent } from './university-withdrawal/university-withdrawal.component.tns';
 
 const routes: Routes = [
 
@@ -29,6 +31,9 @@ const routes: Routes = [
       { path: 'reEnroll', component: ReEnrollComponent },
       { path: 'addreEnroll', component: AddReEnrollComponent },
       { path: 'studypostpone', component: StudyPostponeComponent },
+      { path: 'termexecuse', component: TermExecuseComponent },
+      { path: 'withdrawal', component: UniversityWithdrawalComponent },
+
 
 
     ]

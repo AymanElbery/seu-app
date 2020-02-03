@@ -468,7 +468,9 @@
         "count": "Number Of Cancelled Terms",
         "choose_count": "Choose Number Of Terms",
         "mobile": "Mobile Number:(Ex:05xxxxxxxx)",
-        "reason": "Execuse Reason"
+        "reason": "Execuse Reason",
+        "alert_title":"Alert"
+
     },
     "master_payment": {
         "title": "Fees Pay",

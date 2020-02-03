@@ -26,14 +26,14 @@ export class AddStudyPostponeComponent implements OnInit {
     this.postpone = { mobile: '', num_terms: '', reason: '' };
 
     this.reqData = this.acadmicProc.reqData;
-   /* for (let i = 0; i < this.reqData.terms.length; i++) {
+    for (let i = 0; i < this.reqData.terms.length; i++) {
       this.terms.push(
         {
           value: this.reqData.terms[i].id,
           display: this.reqData.terms[i].value
         }
       );
-    }*/
+    }
     this.termsDropDown = new ValueList(this.terms);
   }
 
@@ -62,7 +62,7 @@ export class AddStudyPostponeComponent implements OnInit {
   closeDiag() {
     this._params.closeCallback();
   }
-  getBank(val: SelectedIndexChangedEventData) {
+  getTerm(val: SelectedIndexChangedEventData) {
     const code = this.termsDropDown.getValue(val.newIndex);
     this.postpone.num_terms=code;
   }
