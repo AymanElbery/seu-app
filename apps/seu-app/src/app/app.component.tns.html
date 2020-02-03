@@ -272,6 +272,18 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 
                 </GridLayout>
 
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/termexecuse')">
+                    <Label col="1" text="طلب حذف المقررات (الاعتذار عن الفصل)" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/withdrawal')">
+                    <Label col="1" text="طلب الإنسحاب من الجامعة" class="ysMenuItem" ></Label>
+                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
+
+                </GridLayout>
+
 
                 <StackLayout class="hr"></StackLayout>
 
