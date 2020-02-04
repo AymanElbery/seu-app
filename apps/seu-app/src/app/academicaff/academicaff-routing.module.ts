@@ -5,6 +5,8 @@ import { CertificateIDComponent } from './certificate-id/certificate-id.componen
 import { FormsModule } from '@angular/forms';
 import { AcademicRecordComponent } from './academic-record/academic-record.component';
 import { GraduateStateComponent } from './graduate-state/graduate-state.component';
+import { SkillsRecordService } from './services/skills-record.service';
+import { SkillsRecordComponent } from './skills-record/skills-record.component';
 
 const routes: Routes = [
   { path: '', component: AcademicStatusComponent },
@@ -14,7 +16,9 @@ const routes: Routes = [
       { path: 'status', component: AcademicStatusComponent },
       { path: 'certificate', component: CertificateIDComponent },
       { path: 'record', component: AcademicRecordComponent },
-      { path: 'graduationstatment', component: GraduateStateComponent }
+      { path: 'graduationstatment', component: GraduateStateComponent },
+      { path: 'skills', component: SkillsRecordComponent },
+
     ]
   }
 ];

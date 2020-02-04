@@ -6,6 +6,9 @@ import { ChangeBranchComponent } from './change-branch/change-branch.component.t
 import { ChangeCourseComponent } from './change-course/change-course.component.tns';
 import { PersonalIDComponent } from './personal-id/personal-id.component.tns';
 import { GraduateProfileComponent } from './graduate-profile/graduate-profile.component.tns';
+import { AddPersonalIdComponent } from './personal-id/diag/add-personal-id/add-personal-id.component.tns';
+import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduate-profile/add-graduate-profile.component.tns';
+import { AddChangeCourseComponent } from './change-course/diag/add-change-course/add-change-course.component.tns';
 
 const routes: Routes = [
   { path: 'other', component: AbsenceQueryComponent },
@@ -16,7 +19,12 @@ const routes: Routes = [
   { path: 'changebranch',  component: ChangeBranchComponent },
   {path: 'changecourse', component: ChangeCourseComponent},
   { path: 'personalid',  component: PersonalIDComponent  },
-  { path: 'graduateprofile',  component: GraduateProfileComponent }
+  { path: 'graduateprofile',  component: GraduateProfileComponent },
+  { path: 'addpersonalid',  component: AddPersonalIdComponent  },
+  { path: 'addgraduateprofile',  component: AddGraduateProfileComponent },
+  { path: 'addchangecourse',  component: AddChangeCourseComponent },
+
+
  ]
 }
 

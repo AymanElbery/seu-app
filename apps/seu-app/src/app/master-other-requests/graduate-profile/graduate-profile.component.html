@@ -90,7 +90,7 @@
                    <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
                 </i> </button></td>
 
-            <td *ngIf='!it.deletable'>لا يمكن إلغاء الطلب</td>
+            <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"|translate}}</td>
 
 
 

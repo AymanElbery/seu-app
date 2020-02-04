@@ -32,7 +32,7 @@ export class AddCancelCourseRequestComponent implements OnInit {
     console.log(this.reqData.notes);
   }
 
-  changeStatus(id, e, i) {
+  changeStatus(id) {
     this.cancelCousre.course_number = id;
   }
 

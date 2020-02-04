@@ -1,0 +1,143 @@
+<div class="main-content">
+
+  <section class="service-single">
+    <div class="container">
+      <h3>{{"services.skills_record.title" |translate}}</h3>
+      <div class="row">
+        <div class=" col-md-7">
+          <p style="font-weight: bold;font-size: 14px;text-align: justify;">{{"services.skills_record.desc" |translate}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div *ngIf="isLoading" class=" loading-indicator ">
+    <div class="state">
+      <mat-spinner *ngIf="isLoading"
+        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+      </mat-spinner>
+    </div>
+  </div>
+  <section class="ser-state" *ngIf="!isLoading">
+    <nav>
+      <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">
+        <a class="nav-link nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One"
+          aria-selected="true">
+          {{"services.skills_record.title" |translate}}
+        </a>
+        <a class="nav-item nav-link " id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two"
+          aria-selected="false">
+          {{"services.skills_record.conditions" |translate}}
+        </a>
+        <a class="nav-item  nav-link " id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three"
+          aria-selected="false">
+          {{"services.skills_record.standards" |translate}}
+        </a>
+      </div>
+    </nav>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="one">
+        <div class="widget">
+          <div class="table-responsive">
+            <ng-template [ngIf]="skills.length" [ngIfElse]="NSkills">
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">{{"services.skills_record.skill" |translate}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of skills; let i = index;">
+                      <td>{{i+1}}</td>
+                      <td>{{item.ACT_DESC}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="text-align: center" class="prin" *ngIf="!isLoading">
+                <a class="btn" href="{{arabicPrint}}">{{"general.ar_language"|translate}}<i class="ik ik-save"></i> </a>
+                <a class="btn" href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_language"|translate}} </a>
+              </div>
+            </ng-template>
+            <ng-template #NSkills>
+              <div>
+                <p>{{"services.skills_record.no_skills" |translate}}</p>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade show" id="two">
+        <div class="widget">
+          <div class="widget-header">
+            <h3 class="widget-title" style="font-size:14px;">
+              {{texts.conditions.title}}
+            </h3>
+          </div>
+          <div class="table-responsive">
+            <ol>
+              <li>{{texts.conditions.txt1}}</li>
+              <li>{{texts.conditions.txt2}}</li>
+              <li>{{texts.conditions.txt3}}</li>
+              <li>{{texts.conditions.txt4}}</li>
+              <li>{{texts.conditions.txt5}}</li>
+              <li>{{texts.conditions.txt6}}</li>
+              <li>{{texts.conditions.txt7}}</li>
+              <li>
+                {{texts.conditions.txt8}}
+                <ol>
+                  <li>{{texts.conditions.txt81}}</li>
+                  <li>{{texts.conditions.txt82}}</li>
+                </ol>
+              </li>
+              <li>
+                {{texts.conditions.txt9}}
+                <ol>
+                  <li>{{texts.conditions.txt91}}</li>
+                  <li>{{texts.conditions.txt92}}</li>
+                  <li>{{texts.conditions.txt93}}</li>
+                  <li>{{texts.conditions.txt94}}</li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade show " id="three">
+        <div class="widget">
+          <div class="widget-header">
+            <h3 class="widget-title" style="font-size:14px;">
+              {{texts.standards.title}}
+            </h3>
+          </div>
+          <div class="table-responsive">
+            <ol>
+              <li>{{texts.standards.txt1}}
+                <ol>
+                  <li>{{texts.standards.txt011}}</li>
+                  <li>{{texts.standards.txt012}}</li>
+                </ol>
+              </li>
+              <li>{{texts.standards.txt2}}</li>
+              <li>{{texts.standards.txt3}}</li>
+              <li>{{texts.standards.txt4}}</li>
+              <li>{{texts.standards.txt5}}</li>
+              <li>{{texts.standards.txt6}}</li>
+              <li>{{texts.standards.txt7}}
+                <ol>
+                  <li>{{texts.standards.txt71}}</li>
+                  <li>{{texts.standards.txt72}}</li>
+                </ol>
+              </li>
+              <li>{{texts.standards.txt8}}</li>
+              <li>{{texts.standards.txt9}}</li>
+              <li>{{texts.standards.txt10}}</li>
+              <li>{{texts.standards.txt11}}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

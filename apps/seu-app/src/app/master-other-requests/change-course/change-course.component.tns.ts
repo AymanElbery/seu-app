@@ -108,9 +108,8 @@ export class ChangeCourseComponent implements OnInit {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
- add()
- {
+ add() {
 
-  this.router.navigate(['/finance/addfe']);
+  this.router.navigate(['/other/addchangecourse']);
  }
 }

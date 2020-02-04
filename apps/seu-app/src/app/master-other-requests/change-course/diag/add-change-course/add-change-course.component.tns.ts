@@ -14,8 +14,7 @@ import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescrip
 })
 export class AddChangeCourseComponent implements OnInit {
   // tslint:disable-next-line: variable-name
-  constructor(private _params: ModalDialogParams,
-              private toastr: AppToasterService, private acadmicProc: ChangeCourseService) { }
+  constructor( private toastr: AppToasterService, private acadmicProc: ChangeCourseService) { }
 
   printAR;
   course: changeCourse;
@@ -77,7 +76,6 @@ export class AddChangeCourseComponent implements OnInit {
 
   }
   closeDiag() {
-    this._params.closeCallback();
   }
   getmajor(val: SelectedIndexChangedEventData) {
     const code = this.majorsDropDown.getValue(val.newIndex);

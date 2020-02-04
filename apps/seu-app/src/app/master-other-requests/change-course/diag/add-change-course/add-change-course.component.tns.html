@@ -1,3 +1,13 @@
+<ActionBar style="color: white;">
+
+    <NavigationButton style="color: white;background-color: white;" (tap)="goBack()" text="Go Back"
+        android.systemIcon="ic_menu_back">
+    </NavigationButton>
+    <ActionItem style="color: white;background-color: white;" ios.systemIcon="9" android.systemIcon="ic_menu_save"
+        (tap)="addRequest()" ios.position="right">
+    </ActionItem>
+    <Label text="{{'general.request.add_request' | translate}} "></Label>
+</ActionBar>
 <FlexboxLayout flexDirection="column" style="padding: 20;">
 
     <Label text='{{"services.change_major.change_major_req"|translate}}' class="header"></Label>
@@ -23,5 +33,15 @@
             [isEnabled]="mj.major!=''"></Button>
         <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="-primary" style="width: 50%;"></Button>
     </FlexboxLayout>
+<ActionBar style="color: white;">
 
-</FlexboxLayout>
+    <NavigationButton style="color: white;background-color: white;" (tap)="goBack()" text="Go Back"
+        android.systemIcon="ic_menu_back">
+    </NavigationButton>
+    <ActionItem style="color: white;background-color: white;" ios.systemIcon="9" android.systemIcon="ic_menu_save"
+        (tap)="addRequest()" ios.position="right">
+    </ActionItem>
+    <Label text="{{'general.request.add_request' | translate}} "></Label>
+</ActionBar>
+<
+    /FlexboxLayout>

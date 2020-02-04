@@ -10,8 +10,6 @@ import { ExamObjectionComponent } from './exam-objection/exam-objection.componen
 import { AddObjectExamComponent } from './exam-objection/diag/add-object-exam/add-object-exam.component.tns';
 import { AddExamExecuseComponent } from './exams-execuses/diag/add-exam-execuse/add-exam-execuse.component.tns';
 import { ExamsExecusesComponent } from './exams-execuses/exams-execuses.component.tns';
-import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component.tns';
-import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.tns';
 import { ReEnrollComponent } from './re-enroll/re-enroll.component.tns';
 import { AddReEnrollComponent } from './re-enroll/diag/add-re-enroll/add-re-enroll.component.tns';
 import { StudyPostponeComponent } from './study-postpone/study-postpone.component.tns';
@@ -20,6 +18,9 @@ import { TermExecuseComponent } from './term-execuse/term-execuse.component.tns'
 import { AddTermExecuseComponent } from './term-execuse/diag/add-term-execuse/add-term-execuse.component.tns';
 import { UniversityWithdrawalComponent } from './university-withdrawal/university-withdrawal.component.tns';
 import { AddWithdrawalRequestComponent } from './university-withdrawal/diag/add-withdrawal-request/add-withdrawal-request.component.tns';
+import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component.tns';
+import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.tns';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { AddWithdrawalRequestComponent } from './university-withdrawal/diag/add-
     AppTransModule,
     NativeScriptFormsModule,
     CommonModule,
-    NativeScriptCommonModule
+    NativeScriptCommonModule,
   ],
   entryComponents:[
     AddReEnrollComponent,

@@ -9,6 +9,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { MasterFinanceAffairRoutingModule } from './master-finance-affair-routing.module';
 import { MasterPaymentComponent } from './master-payment/master-payment.component';
+import { AppLazyTransModule } from '../app.lazytrans.module';
 
 @NgModule({
   declarations: [MasterPaymentComponent],
@@ -21,6 +22,7 @@ import { MasterPaymentComponent } from './master-payment/master-payment.componen
     FormsModule,
     MatDialogModule,
     //BrowserAnimationsModule
+    AppLazyTransModule
   ]
 })
 export class MasterFinanceAffairModule { }

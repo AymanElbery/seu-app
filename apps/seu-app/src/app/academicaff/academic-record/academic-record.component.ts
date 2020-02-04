@@ -1,30 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AcademicRecordService } from '../services/academic-record.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-academic-record',
   templateUrl: './academic-record.component.html',
   styleUrls: ['./academic-record.component.scss']
 })
-export class AcademicRecordComponent implements OnInit {
+export class AcademicRecordComponent implements OnInit, OnDestroy {
 
   recoredData;
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
-  constructor(private academicService: AcademicRecordService) { }
+  constructor(private transalte: TranslateService, private academicService: AcademicRecordService) { }
 
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
   ngOnInit() {
+    this.getReqs();
+    this.subscriptions = this.transalte.onLangChange.subscribe(() => {
+      this.getReqs();
+    })
+    this.arabicPrint = this.academicService.Download();
+    this.EngPrint = this.academicService.DownloadEng();
+  }
 
-     this.isLoading = true;
-     this.academicService.getِAcademicRecord().then(
+  getReqs() {
+    this.isLoading = true;
+    this.academicService.getِAcademicRecord().then(
       res => {
-    this.recoredData =    (res as any).data;
-    this.isLoading = false;
+        this.recoredData = (res as any).data;
+        this.isLoading = false;
       }
     );
-     this.arabicPrint =   this.academicService.Download();
-     this.EngPrint = this.academicService.DownloadEng();
   }
 
 }

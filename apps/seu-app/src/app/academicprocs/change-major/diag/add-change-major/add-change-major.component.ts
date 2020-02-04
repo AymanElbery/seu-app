@@ -7,8 +7,8 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-add-change-major',
-  templateUrl: './add-change-major.component.tns.html',
-  styleUrls: ['./add-change-major.component.tns.scss']
+  templateUrl: './add-change-major.component.html',
+  styleUrls: ['./add-change-major.component.scss']
 })
 export class AddChangeMajorComponent implements OnInit {
 
