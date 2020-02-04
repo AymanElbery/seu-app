@@ -52,11 +52,14 @@
         "ar_print": "طباعة",
         "en_print": "Print",
         "crn": "CRN",
+        "agree": " Please,certify that all data is accurate and true   ",
+
         "absence_percent": "Absence Percentage",
         "lectures": "Lectures",
         "lecture_type": "Lecture Type",
         "week": "Week",
         "day": "Day",
+        "choosefile":"Choose file ...... ",
         "request": {
             "add_request": "Add Request",
             "cname": "Course ",
@@ -81,7 +84,8 @@
         "count": "Count",
         "college": "College",
         "language": "Language",
-        "course_code_name":"Course Name/Code"
+        "course_code_name":"Course Name/Code",
+        "choose":"Choose"
 
     },
     "menu": {
@@ -335,6 +339,7 @@
         "sc": " scence of status approve  ",
         "wletter": " hr letter   ",
         "gid": " grantee id   ",
+        "cid": " Cedit Card ID   ",
         "id": " ID   ",
         "assletter": "  association letter  ",
         "bank": "   Bank    ",
@@ -463,7 +468,9 @@
         "count": "Number Of Cancelled Terms",
         "choose_count": "Choose Number Of Terms",
         "mobile": "Mobile Number:(Ex:05xxxxxxxx)",
-        "reason": "Execuse Reason"
+        "reason": "Execuse Reason",
+        "alert_title":"Alert"
+
     },
     "master_payment": {
         "title": "Fees Pay",

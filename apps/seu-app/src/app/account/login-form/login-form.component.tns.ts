@@ -6,7 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { UserManagerService } from '../../shared/services/user-manager.service';
 import * as dialogs from 'tns-core-modules/ui/dialogs';
-
+import * as AppSettings from '@nativescript/core/application-settings';
 @Component({
    selector: 'app-login-form',
   templateUrl: './login-form.component.tns.html',

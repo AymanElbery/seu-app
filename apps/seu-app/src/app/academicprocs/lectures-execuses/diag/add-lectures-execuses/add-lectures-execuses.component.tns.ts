@@ -28,10 +28,10 @@ export class AddLecturesExecusesComponent implements OnInit {
   msgs: any;
   private imageSrc = '';
   reqData;
-  univs:ValueItem<number>[] = [];
+  dates:ValueItem<number>[] = [];
   weeks:ValueItem<number>[] = [];
   lecs:ValueItem<number>[] = [];
-  univsDropDown;
+  datesDropDown;
   weeksDropDown;
   lecsDropDown;
   
@@ -64,6 +64,16 @@ export class AddLecturesExecusesComponent implements OnInit {
       );
     }
     this.weeksDropDown = new ValueList(this.weeks);
+
+    for (let i = 0; i < this.reqData.weeks_dates[this.lectureExecuse.week].length; i++) {
+      this.dates.push(
+        {
+          value: this.reqData.weeks_dates[this.lectureExecuse.week][i],
+          display: this.reqData.weeks_dates[this.lectureExecuse.week][i]
+        }
+      );
+    }
+    this.datesDropDown = new ValueList(this.dates);
 
   }
   changeStatus(it, e) {
@@ -100,6 +110,7 @@ export class AddLecturesExecusesComponent implements OnInit {
       return false;
     }
 
+    this.lectureExecuse.attachment = this.convertToBase64(filePath);
     this.requesting = true;
     this.addRequest(this.lectureExecuse);
   }
@@ -164,14 +175,11 @@ export class AddLecturesExecusesComponent implements OnInit {
     }else{
       return;
     }
+    let data = file.readSync();
     if (app.ios) {
-      let text = NSString.stringWithString(file.readSync());
-      let data = text.dataUsingEncoding(NSUTF8StringEncoding);
       base64String= data.base64EncodedStringWithOptions(0);
     } else {
-      let text = new java.lang.String(file.readSync());
-      let data = text.getBytes("UTF-8");
-      base64String= android.util.Base64.encodeToString(data, android.util.Base64.DEFAULT);
+      base64String= android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
 
     }
     return base64String;
@@ -194,5 +202,9 @@ getLec(val: SelectedIndexChangedEventData) {
 getWeek(val: SelectedIndexChangedEventData) {
   const code = this.weeksDropDown.getValue(val.newIndex);
   this.lectureExecuse.week=code;
+}
+getDate(val: SelectedIndexChangedEventData) {
+  const code = this.datesDropDown.getValue(val.newIndex);
+  this.lectureExecuse.date=code;
 }
 }

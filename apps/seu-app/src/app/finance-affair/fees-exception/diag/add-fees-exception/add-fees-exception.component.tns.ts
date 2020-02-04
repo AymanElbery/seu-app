@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ChangeDetectorRef } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { FeesExceptionService } from '../../../../finance-affair/services/fees-exception.service';
@@ -7,9 +7,29 @@ import { NgForm } from '@angular/forms';
 import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { topmost, Frame } from 'tns-core-modules/ui/frame';
 import { ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
-import { FilePickerOptions } from 'nativescript-mediafilepicker/mediafilepicker.common';
-import { Mediafilepicker } from 'nativescript-mediafilepicker';
-import { android } from 'tns-core-modules/application/application';
+import { FilePickerOptions, Mediafilepicker, ImagePickerOptions } from 'nativescript-mediafilepicker';
+import * as app from 'tns-core-modules/application';
+import { File } from 'tns-core-modules/file-system';
+import { toBase64String } from '@angular/compiler/src/output/source_map';
+import { TranslateService } from '@ngx-translate/core';
+import { ThrowStmt } from '@angular/compiler';
+
+declare const kUTTypePDF;
+declare var NSString: any;
+declare var NSUTF8StringEncoding: any;
+declare var java: any;
+declare var android: any;
+let filePath: string = null;
+let scPath: string = null;
+let gidPath: string = null;
+let cidPath: string = null;
+let wPath: string = null;
+let assidPath: string = null;
+let idPath: string = null;
+const imgPath: string = null;
+let bcPath: string = null;
+
+
 
 @Component({
   selector: 'app-add-fees-exception',
@@ -19,13 +39,19 @@ import { android } from 'tns-core-modules/application/application';
 export class AddFeesExceptionComponent implements OnInit {
 
 
-  constructor(
-    private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
+  constructor(private cdr: ChangeDetectorRef,
+              private toastr: AppToasterService, private acadmicProc: FeesExceptionService, private trns: TranslateService) { }
 
   feesException: FeesException;
   reqData: any;
   msgs: any;
-
+  gidText: any;
+  cidText: any;
+  cbText: any;
+  idText: any;
+  assText: any;
+  wText: any;
+  bcText: any;
 
   banksList: any;
   itemBankSource: any;
@@ -46,6 +72,8 @@ export class AddFeesExceptionComponent implements OnInit {
   fileType: string;
   approve: false;
   requesting = false;
+  scText;
+  agree: boolean;
 
   ngOnInit() {
     this.feesException = {
@@ -53,6 +81,16 @@ export class AddFeesExceptionComponent implements OnInit {
       iban: '', account_id: '', account_relative: '', association: '', work_status: '', proof_status: '',
       insurance_card: '', id_card: '', letter: '', mco_id_card: '', bank_card: ''
     };
+
+    this.scText = this.trns.instant('general.choosefile');
+    this.gidText = this.trns.instant('general.choosefile');
+    this.cidText = this.trns.instant('general.choosefile');
+    this.cbText = this.trns.instant('general.choosefile');
+
+    this.idText = this.trns.instant('general.choosefile');
+    this.wText = this.trns.instant('general.choosefile');
+    this.assText = this.trns.instant('general.choosefile');
+    this.idText = this.trns.instant('general.choosefile');
 
     this.itemAccountSource = new ValueList<any>();
     this.itemBankSource = new ValueList<any>();
@@ -68,7 +106,7 @@ export class AddFeesExceptionComponent implements OnInit {
     this.msgs = this.acadmicProc.msgs;
     this.banksList = this.acadmicProc.reqData.banks;
     this.banksList.forEach(element => {
-      this.itemBankSource.push({ value: element.id, display: element.value });
+      this.itemBankSource.push({ value: element.BANK_PK, display: element.BANK_TITLE });
     });
     this.accountRelativeList = this.acadmicProc.reqData.account_relative;
     this.accountRelativeList.forEach(element => {
@@ -89,8 +127,33 @@ export class AddFeesExceptionComponent implements OnInit {
     });
 
   }
-  addRequest(data: any) {
-    this.acadmicProc.AddRequest(data).then(res => {
+  changeStatus(e) {
+
+    this.agree = e.value;
+
+  }
+  accChangee(e: SelectedIndexChangedEventData) {
+
+   const p = this.itemAccountSource.getValue(e.newIndex);
+   // tslint:disable-next-line: triple-equals
+   if (p == '1') {
+    this.feesException.account_relative = '';
+  }
+  }
+  addRequest() {
+    if (!this.agree) {
+      this.toastr.push([{type: 'info', body: this.trns.instant('general.agree')}]);
+
+      return;
+    }
+    this.feesException.proof_status = this.convertToBase64(scPath);
+    this.feesException.insurance_card = this.convertToBase64(gidPath);
+    this.feesException.id_card = this.convertToBase64(cidPath);
+    this.feesException.letter = this.convertToBase64(assidPath);
+    this.feesException.mco_id_card = this.convertToBase64(idPath);
+    this.feesException.work_status = this.convertToBase64(wPath);
+    this.feesException.bank_card = this.convertToBase64(bcPath);
+    this.acadmicProc.AddRequest(this.feesException).then(res => {
       this.toastr.push((res as any).messages);
       if ((res as any).status) {
         this.acadmicProc.newreqs = true;
@@ -107,7 +170,7 @@ export class AddFeesExceptionComponent implements OnInit {
       return false;
     }
     this.requesting = true;
-    this.addRequest(this.feesException);
+    // this.addRequest(this.feesException);
   }
 
   handleInputChange(e, fileType) {
@@ -118,6 +181,7 @@ export class AddFeesExceptionComponent implements OnInit {
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
+
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
@@ -125,16 +189,22 @@ export class AddFeesExceptionComponent implements OnInit {
     // console.log(this.fileType);
     // console.log(e);
 
+    // tslint:disable-next-line: triple-equals
     if (this.fileType == 'bank_card') {
       this.feesException.bank_card = reader.result;
+      // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'proof_status') {
       this.feesException.proof_status = reader.result;
+      // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'insurance_card') {
       this.feesException.insurance_card = reader.result;
+      // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'id_card') {
       this.feesException.id_card = reader.result;
+      // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'work_status') {
       this.feesException.work_status = reader.result;
+      // tslint:disable-next-line: triple-equals
     } else if (this.fileType == 'letter') {
       this.feesException.letter = reader.result;
     } else if (this.fileType == 'mco_id_card') {
@@ -144,6 +214,7 @@ export class AddFeesExceptionComponent implements OnInit {
   }
 
   ownerChange(p) {
+    // tslint:disable-next-line: triple-equals
     if (p == '1') {
       this.feesException.account_relative = '';
     }
@@ -154,7 +225,7 @@ export class AddFeesExceptionComponent implements OnInit {
   exceptionTypeChange(e: SelectedIndexChangedEventData) {
 
     this.feesException.exception_type = this.itemTypeSource.getValue(e.newIndex);
-    alert(this.feesException.exception_type);
+
     // this.feesException.association = '';
 
     // this.feesException.account_name = '';
@@ -176,6 +247,14 @@ export class AddFeesExceptionComponent implements OnInit {
 
   }
 
+  bankChange(e: SelectedIndexChangedEventData) {
+
+    this.feesException.bank = this.itemBankSource.getValue(e.newIndex);
+  }
+
+
+
+
   assChange(p: SelectedIndexChangedEventData) {
     this.feesException.association = this.itemassociationsSource.getValue(p.newIndex);
     alert(this.feesException.association);
@@ -188,82 +267,127 @@ export class AddFeesExceptionComponent implements OnInit {
 
   }
   public openCustomFilesPicker(type: string) {
-  
-  
-  /*  let extensions = [];
+
+
+    let extensions = [];
     if (app.ios) {
-        extensions = [kUTTypePDF];
+      extensions = [kUTTypePDF];
     } else {
-        extensions = ['pdf', 'png', 'jpeg'];
+      extensions = ['pdf', 'png', 'jpeg'];
     }
 
-    const options: FilePickerOptions = {
-        android: {
-            extensions,
-            maxNumberFiles: 1
-        },
-        ios: {
-            extensions,
-            multipleSelection: false,
-          //  hostView: this._hostView
-        }
+    const options: ImagePickerOptions = {
+      android: {
+        isCaptureMood: false, // if true then camera will open directly.
+        isNeedCamera: true,
+        maxNumberFiles: 1,
+        isNeedFolderList: true
+    }, ios: {
+        isCaptureMood: false, // if true then camera will open directly.
+        maxNumberFiles: 1
+    }
     };
 
+
     const mediafilepicker = new Mediafilepicker();
-    mediafilepicker.openFilePicker(options);
+    mediafilepicker.openImagePicker(options);
+    mediafilepicker.on('getFiles', this.selectFile.bind(this));
 
     // tslint:disable-next-line: only-arrow-functions
     mediafilepicker.on('getFiles', function(res) {
 
-        const results = res.object.get('results');
-        if (results) {
+      const results = res.object.get('results');
+      console.log(results);
+      let selfile = '';
+      if (results) {
+        // tslint:disable-next-line: prefer-for-of
+        for (let i = 0; i < 1; i++) {// only upload one file
+          const result = results[i];
+          filePath = result.file;
 
-            // tslint:disable-next-line: prefer-for-of
-            for (let i = 0; i < results.length; i++) {// only upload one file
+          // console.log(filePath);
+          if (type == 'sc') {
+            scPath = filePath;
+            selfile = scPath.replace(/^.*[\\\/]/, '');
+            this.scText = selfile;
+            // tslint:disable-next-line: triple-equals
+          } else if (type == 'gid') {
+            gidPath = filePath;
+            selfile = gidPath.replace(/^.*[\\\/]/, '');
+            this.gidText = selfile;
+            // tslint:disable-next-line: triple-equals
+          } else if (type == 'cid') {
+            cidPath = filePath;
+            selfile = cidPath.replace(/^.*[\\\/]/, '');
 
-                const result = results[i];
-                if (type === 'file') {
-                  filePath = result.file;
-                } else {
-                  imgPath = result.file;
-                }
-            }
-        }
-  });
+            this.cidText = selfile;
+            // tslint:disable-next-line: triple-equals
+          } else if (type == 'w') {
+            wPath = filePath;
+            selfile = wPath.replace(/^.*[\\\/]/, '');
+
+            this.wText = wPath;
+            // tslint:disable-next-line: triple-equals
+          } else if (type == 'ass') {
+            assidPath = filePath;
+            selfile = assidPath.replace(/^.*[\\\/]/, '');
+
+            this.assText = selfile ;
+            // tslint:disable-next-line: triple-equals
+          } else if (type == 'id') {
+            idPath = filePath;
+            selfile = idPath.replace(/^.*[\\\/]/, '');
+
+            this.idText = selfile;
+          } else if (type == 'bank_card') {
+            bcPath = filePath;
+            selfile = bcPath.replace(/^.*[\\\/]/, '');
+
+            this.cbText = selfile;
+          }
+
+          this.cdr.detectChanges();
+     }
+
+      }
+    }.bind(this));
 
     // tslint:disable-next-line: only-arrow-functions
     mediafilepicker.on('error', function(res) {
       const msg = res.object.get('msg');
       console.log(msg);
-  });
+    });
 
     // tslint:disable-next-line: only-arrow-functions
     mediafilepicker.on('cancel', function(res) {
       const msg = res.object.get('msg');
       console.log(msg);
-  });
-}
+    });
+  }
 
-  convertToBase64(filePath: string) {
+  selectFile(e) {
+
+  }
+  convertToBase64(path) {
     let base64String: string;
     let file: File;
-    if (filePath != null) {
-     file = File.fromPath(filePath);
+    if (path != null) {
+      file = File.fromPath(path);
     } else {
       return;
     }
 
+    base64String = this.getBase64String(file);
+    console.log(base64String);
+    return base64String;
+  }
+  getBase64String(file: File) {
+    const data = file.readSync();
     if (app.ios) {
-      const text = NSString.stringWithString(file.readSync());
-      const data = text.dataUsingEncoding(NSUTF8StringEncoding);
-      base64String = data.base64EncodedStringWithOptions(0);
+      return data.base64EncodedStringWithOptions(0);
     } else {
-      const text = new java.lang.String(file.readSync());
-      const data = text.getBytes('UTF-8');
-      base64String = android.util.Base64.encodeToString(data, android.util.Base64.DEFAULT);
-
+      return android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
     }
-    return base64String;*/
   }
   goBack() {
     // tslint:disable-next-line: deprecation

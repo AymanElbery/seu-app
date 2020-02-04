@@ -12,10 +12,10 @@ export class AcademicStatusComponent implements OnInit {
   msgs;
   status;
   isLoading = false;
-  constructor( private toastr: ToastrService, private stdData: AcademicStatusService) { }
+  constructor(private toastr: ToastrService, private stdData: AcademicStatusService) { }
 
   ngOnInit() {
-    this.isLoading=true;
+    this.isLoading = true;
 
     this.stdData.getRequests().then(
       res => {
@@ -23,8 +23,8 @@ export class AcademicStatusComponent implements OnInit {
         this.stdData.msgs = (res as any).messages;
         this.reqData = this.stdData.reqData;
         this.msgs = this.stdData.msgs;
-        this.isLoading=false;
-        //console.log(this.reqData);
+        this.isLoading = false;
+        // console.log(this.reqData);
       }
     );
   }

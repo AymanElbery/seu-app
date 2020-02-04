@@ -1,1 +1,49 @@
-<Button text="add-cancel-course-request works!" class="btn btn-primary"></Button>
+<ActionBar title='{{"services.master_cancel_course.title"|translate}}'>
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
+</ActionBar>
+<FlexboxLayout flexDirection="column">
+
+    <StackLayout class="paragraph">
+        <Label [text]="reqData.notes.txt1" style="font-weight: 800;"></Label>
+        <Label [text]="reqData.notes.txt2"></Label>
+        <Label [text]="reqData.notes.txt3"></Label>
+        <Label [text]="reqData.notes.txt4" textWrap="true" ></Label>
+        <Label [text]="reqData.notes.txt5" textWrap="true"></Label>
+        <Label [text]="reqData.notes.txt6" textWrap="true" style="margin-bottom: 10;"></Label>
+
+    </StackLayout>
+
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+            <label text='{{"general.choose"|translate}}'></label>
+            <label text='{{"general.crn"|translate}}'></label>
+            <label text='{{"general.course_code"|translate}}'></label>
+            <label text='{{"general.course_name"|translate}}'></label>
+            <label text='{{"general.hours"|translate}}'></label>
+        </FlexboxLayout>
+
+        <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.courses;let i=index;" flexDirection="row-reverse" 
+        class="trow" [ngStyle]="{'border-bottom-width':i === reqData.courses.length-1 ? '0' : '1' }">
+            <CheckBox #chkCourse boxType="circle" name="chkCourse" (checkedChange)="changeStatus(item.CRN,$event,i)" checked="false"></CheckBox>
+            <Label [text]="item.CRN"></Label>
+            <Label [text]="item.CRSE_TITLE"></Label>
+            <Label [text]="item.CRES_CODE"  ></Label>
+            <Label [text]="item.CREDIT_HR" ></Label>
+        </FlexboxLayout>
+    </FlexboxLayout>
+    <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" alignItems="center" style="color: #6189f4;margin:20 20">
+        <CheckBox checked="false"></CheckBox>
+        <Label text='{{reqData.notes.agrement}}' textWrap="true"></Label>
+    </FlexboxLayout>
+</FlexboxLayout>

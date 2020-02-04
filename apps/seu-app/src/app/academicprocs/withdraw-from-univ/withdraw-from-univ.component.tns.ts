@@ -8,6 +8,7 @@ import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class WithdrawFromUnivComponent implements OnInit {
   isLoading = false;
   deleting = false;
   constructor(
+    private translate: TranslateService,
     private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,private acadmicProc: WithdrawFromUnivService,
     private toastr: AppToasterService) { }
@@ -79,7 +81,7 @@ export class WithdrawFromUnivComponent implements OnInit {
   }
   delete(id, index) {
     dialogs.confirm({
-      title: "هل انت متأكد؟",
+      title:this.translate.instant('general.delete_confirm'),
       message: "",
       okButtonText: "OK",
       cancelButtonText: 'Cancel'

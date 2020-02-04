@@ -25,6 +25,12 @@ import { AppTransModule } from './app.trans.module.tns';
 import { TranslateModule } from '@ngx-translate/core';
 import { RegisterCoursesModule } from './register-courses/register-courses.module.tns';
 import { FinanceAffairModule } from './finance-affair/finance-affair.module.tns';
+import { ExamsAffairModule } from './exams-affair/exams-affair.module.tns';
+import { OtherAffairModule } from './other-affair/other-affair.module.tns';
+import { MasterAcademicRequestsModule } from './master-academic-requests/master-academic-requests.module.tns';
+import { MasterStudentDataModule } from './master-student-data/master-student-data.module.tns';
+import { MasterPrintCertificatesModule } from './master-print-certificates/master-print-certificates.module.tns';
+import { MasterOtherRequestsModule } from './master-other-requests/master-other-requests.module.tns';
 
 
 
@@ -46,8 +52,13 @@ import { FinanceAffairModule } from './finance-affair/finance-affair.module.tns'
     AcademicprocsModule,
     NativeScriptUISideDrawerModule,
     AppTransModule,
-    FinanceAffairModule
-
+    FinanceAffairModule,
+    ExamsAffairModule,
+    OtherAffairModule,
+    MasterAcademicRequestsModule,
+    MasterStudentDataModule,
+    MasterPrintCertificatesModule,
+    MasterOtherRequestsModule
 
   ],
 

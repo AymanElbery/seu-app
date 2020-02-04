@@ -63,7 +63,7 @@
 
             <div *ngIf="feesException.association=='0'" class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> {{"services.finance.gid" | translate}} </h6>
+                <h6> {{"services.finance.cid" | translate}} </h6>
                 <input required class="form-control" name="idCardAtt" id="idCardAtt" type="file" accept="*/*"
                   (change)="handleInputChange($event,'id_card')" [class.is-invalid]="feesException.id_card == ''" />
               </div>

@@ -7,6 +7,7 @@ import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddPostponeComponent } from './diag/add-postpone/add-postpone.component.tns';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class PostponeRequestComponent implements OnInit {
   msgs;
   status;
 
-  constructor(private _modalService: ModalDialogService,
+  constructor(private _modalService: ModalDialogService,private translate: TranslateService,
     private _vcRef: ViewContainerRef,private acadmicProc: TermPostponeService,private toastr: AppToasterService) { }
 
   ngOnInit() {
@@ -74,7 +75,7 @@ export class PostponeRequestComponent implements OnInit {
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-      title: "هل انت متأكد؟",
+      title: this.translate.instant('general.delete_confirm'),
       message: "",
       okButtonText: "OK",
       cancelButtonText: 'Cancel'

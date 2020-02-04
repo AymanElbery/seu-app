@@ -13,6 +13,11 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class AddFeesExceptionComponent implements OnInit {
 
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+              public dialogRef: MatDialogRef<AddFeesExceptionComponent>,
+              private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
+
   feesException: FeesException;
   reqData: any;
   msgs: any;
@@ -28,10 +33,7 @@ export class AddFeesExceptionComponent implements OnInit {
   fileType: string;
   approve: false;
 
-
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<AddFeesExceptionComponent>,
-    private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
+  requesting = false;
 
   ngOnInit() {
     this.feesException = {
@@ -53,12 +55,10 @@ export class AddFeesExceptionComponent implements OnInit {
   closeDiag() {
     this.dialogRef.close();
   }
-
-  requesting = false;
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
-      if (res['status']) {
+      if ((res as any).status) {
         this.acadmicProc.newreqs = true;
         this.dialogRef.close();
       }
@@ -79,42 +79,46 @@ export class AddFeesExceptionComponent implements OnInit {
 
   handleInputChange(e, fileType) {
     this.fileType = fileType;
-    //console.log('handleInputChange ');
-    //console.log(this.fileType);
+    // console.log('handleInputChange ');
+    // console.log(this.fileType);
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
+    
     reader.readAsDataURL(file);
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    //console.log('_reader ');
-    //console.log(this.fileType);
-    //console.log(e);
+    
+    // console.log('_reader ');
+    // console.log(this.fileType);
+    // console.log(e);
 
-    if (this.fileType == 'bank_card')
+    if (this.fileType == 'bank_card') {
       this.feesException.bank_card = reader.result;
-    else if (this.fileType == 'proof_status')
+    } else if (this.fileType == 'proof_status') {
       this.feesException.proof_status = reader.result;
-    else if (this.fileType == 'insurance_card')
+         } else if (this.fileType == 'insurance_card') {
       this.feesException.insurance_card = reader.result;
-    else if (this.fileType == 'id_card')
+         } else if (this.fileType == 'id_card') {
       this.feesException.id_card = reader.result;
-    else if (this.fileType == 'work_status')
+         } else if (this.fileType == 'work_status') {
       this.feesException.work_status = reader.result;
-    else if (this.fileType == 'letter')
+         } else if (this.fileType == 'letter') {
       this.feesException.letter = reader.result;
-    else if (this.fileType == 'mco_id_card')
+         } else if (this.fileType == 'mco_id_card') {
       this.feesException.mco_id_card = reader.result;
+         }
 
   }
 
   ownerChange(p) {
+    // tslint:disable-next-line: triple-equals
     if (p == '1') {
       this.feesException.account_relative = '';
     }
 
-    //console.log(p);
+    // console.log(p);
   }
 
   exceptionTypeChange(p) {
@@ -147,6 +151,7 @@ export class AddFeesExceptionComponent implements OnInit {
     this.feesException.letter = '';
     this.feesException.mco_id_card = '';
     this.feesException.id_card = '';
+    this.feesException.association ='';
 
   }
 

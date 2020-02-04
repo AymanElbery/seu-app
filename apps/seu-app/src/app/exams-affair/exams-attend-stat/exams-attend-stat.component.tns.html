@@ -1,1 +1,314 @@
-<Button text="exams-attend-stat works!" class="btn btn-primary"></Button>
+<ActionBar >
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+
+-->
+    
+
+   
+<ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
+        ios.position="left" >
+    </ActionItem>    
+    <Label text='{{"services.exam.certatt" | translate}}'></Label>
+</ActionBar>
+
+<StackLayout>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+    <Label verticalAlignment="center" [text]="absData.messages" class="ysMsg" *ngIf="status==0"></Label>
+</StackLayout>
+
+<TabView selectedIndex="3" *ngIf="!isLoading">
+	<StackLayout *tabItem='{title: firstTabTitle }'>
+
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && termScheduleMsgs.length>0">
+            <ListView [items]="termScheduleMsgs">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="termScheduleMsgs.length == 0">
+            
+            <Label row="0" colSpan="2"  class="ysHBox"  [text]="eaData.Term_Exam_With_Schedule.labels.title"></Label>
+
+             <Label row="1" column="1" text="{{eaData.Term_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" text='{{eaData.Term_Exam_With_Schedule.values.date}}' textWrap="true"
+             style="text-align: right;"
+             ></Label>
+
+            <Label row="2" column="1" text="{{eaData.Term_Exam_With_Schedule.labels.txt1}}" textWrap="true"></Label>
+            <Label row="2" column="0" text="{{eaData.Term_Exam_With_Schedule.values.student_name}}" textWrap="true"></Label>
+
+            <Label row="3" column="1" text="{{eaData.Term_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
+            <Label row="3" column="0" text="{{eaData.Term_Exam_With_Schedule.values.std_id}}" textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="4" column="1" text="{{eaData.Term_Exam_With_Schedule.labels.txt3}}" textWrap="true"></Label>
+            <Label row="4" column="0" text="{{eaData.Term_Exam_With_Schedule.values.coll}}" textWrap="true"></Label>
+
+            <Label row="5" column="1" text="{{eaData.Term_Exam_With_Schedule.labels.txt4}}" textWrap="true"></Label>
+            <Label row="5" column="0" text="{{eaData.Term_Exam_With_Schedule.values.term}}" textWrap="true"></Label>
+
+            <Label row="6" column="1" text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
+            <Label row="6" column="0" text='{{eaData.Term_Exam_With_Schedule.values.std_id}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="7" column="1" text=' {{eaData.Term_Exam_With_Schedule.labels.txt5}}:' textWrap="true"></Label>
+            <Label row="7" column="0" text='{{eaData.Term_Exam_With_Schedule.values.startDay}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="8" column="1" text='{{eaData.Term_Exam_With_Schedule.labels.txt6}}:' textWrap="true"></Label>
+            <Label row="8" column="0" text='{{eaData.Term_Exam_With_Schedule.values.endDay}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+            <Label row="9" text='{{eaData.Term_Exam_With_Schedule.labels.txt7}}'></Label>
+
+        </GridLayout>
+
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="termScheduleMsgs.length == 0">
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+                <label text='{{"general.crn" | translate}}'></label>
+                <label text='{{"general.request.req_cname" | translate}}'></label>
+                <label text='{{"general.request.day" | translate}}'></label>
+                <label text='{{"general.request.time" | translate}}'></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of eaData.Term_Exam_With_Schedule.Term_Schedule" flexDirection="row-reverse" 
+              class="trow" [ngStyle]="{'border-bottom-width':i === eaData.Term_Exam_With_Schedule.Term_Schedule-1 ? '0' : '1' }">
+               
+                <Label [text]="item.CRN"></Label>
+                <Label [text]="item.CRSE_TITLE"  ></Label>
+                <Label [text]="item.CRSE_DAY" ></Label>
+                <Label [text]="item.CRSE_TIME" ></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+
+        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && termScheduleMsgs.length == 0">
+            <Label text="{{eaData.Term_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
+            <Label text="{{eaData.Term_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
+            <Label text="{{eaData.Term_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
+            <Label text="{{eaData.Term_Exam_With_Schedule.labels.txt11}}" textWrap="true"></Label>
+        </FlexboxLayout>
+      
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="termScheduleMsgs.length == 0">
+            <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
+            <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
+        </FlexboxLayout>
+
+    </StackLayout>
+    
+	<StackLayout *tabItem='{title: secondTabTitle}'>
+
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && termMsgs.length>0">
+            <ListView [items]="termMsgs">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="termMsgs == 0">
+            
+            <Label row="0" colSpan="2"  class="ysHBox"  text='{{"eaData.Term_Exam_Without_Schedule.labels.title"}}'></Label>
+
+             <Label row="1" column="1" text="{{eaData.Term_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" text='{{eaData.Term_Exam_Without_Schedule.values.date}}' textWrap="true"
+             style="text-align: right;"
+             ></Label>
+
+            <Label row="2" column="1" text="{{eaData.Term_Exam_Without_Schedule.labels.txt1}}" textWrap="true"></Label>
+            <Label row="2" column="0" text="{{eaData.Term_Exam_Without_Schedule.values.student_name}}" textWrap="true"></Label>
+
+            <Label row="3" column="1" text="{{eaData.Term_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
+            <Label row="3" column="0" text="{{eaData.Term_Exam_Without_Schedule.values.std_id}}" textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="4" column="1" text="{{eaData.Term_Exam_Without_Schedule.labels.txt3}}" textWrap="true"></Label>
+            <Label row="4" column="0" text="{{eaData.Term_Exam_Without_Schedule.values.coll}}" textWrap="true"></Label>
+
+            <Label row="5" column="1" text="{{eaData.Term_Exam_Without_Schedule.labels.txt4}}" textWrap="true"></Label>
+            <Label row="5" column="0" text="{{eaData.Term_Exam_Without_Schedule.values.term}}" textWrap="true"></Label>
+
+            <Label row="6" column="1" text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
+            <Label row="6" column="0" text='{{eaData.Term_Exam_Without_Schedule.values.std_id}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="7" column="1" text=' {{eaData.Term_Exam_Without_Schedule.labels.txt5}}:' textWrap="true"></Label>
+            <Label row="7" column="0" text='{{eaData.Term_Exam_Without_Schedule.values.startDay}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="8" column="1" text='{{eaData.Term_Exam_Without_Schedule.labels.txt6}}:' textWrap="true"></Label>
+            <Label row="8" column="0" text='{{eaData.Term_Exam_Without_Schedule.values.endDay}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+            <FlexboxLayout row="9" textWrap="wrap" flex-direction="row-reverse">
+                <Label  text='{{eaData.Term_Exam_Without_Schedule.labels.txt7}}'></Label>
+                <Label  text='{{eaData.Term_Exam_Without_Schedule.labels.txt8}}'></Label>
+                <Label  text='{{eaData.Term_Exam_Without_Schedule.labels.txt9}}'></Label>
+                <Label  text='{{eaData.Term_Exam_Without_Schedule.labels.txt10}}'></Label>
+                <Label  text='{{eaData.Term_Exam_Without_Schedule.labels.txt11}}'></Label>
+            </FlexboxLayout>
+
+        </GridLayout>
+
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="termMsgs == 0">
+            <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintTerm()" ></Button>
+            <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()"></Button>
+        </FlexboxLayout>
+
+    </StackLayout>
+    
+	<StackLayout *tabItem='{title: thirdTabTitle}'>
+
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && finalScheduleMsgs.length>0">
+            <ListView [items]="finalScheduleMsgs">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="finalScheduleMsgs == 0">
+            
+            <Label row="0" colSpan="2"  class="ysHBox"  [text]="eaData.Final_Exam_With_Schedule.labels.title"></Label>
+
+             <Label row="1" column="1" text="{{eaData.Final_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" text='{{eaData.Final_Exam_With_Schedule.values.date}}' textWrap="true"
+             style="text-align: right;"
+             ></Label>
+
+            <Label row="2" column="1" text="{{eaData.Final_Exam_With_Schedule.labels.txt1}}" textWrap="true"></Label>
+            <Label row="2" column="0" text="{{eaData.Final_Exam_With_Schedule.values.student_name}}" textWrap="true"></Label>
+
+            <Label row="3" column="1" text="{{eaData.Final_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
+            <Label row="3" column="0" text="{{eaData.Final_Exam_With_Schedule.values.std_id}}" textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="4" column="1" text="{{eaData.Final_Exam_With_Schedule.labels.txt3}}" textWrap="true"></Label>
+            <Label row="4" column="0" text="{{eaData.Final_Exam_With_Schedule.values.coll}}" textWrap="true"></Label>
+
+            <Label row="5" column="1" text="{{eaData.Final_Exam_With_Schedule.labels.txt4}}" textWrap="true"></Label>
+            <Label row="5" column="0" text="{{eaData.Final_Exam_With_Schedule.values.term}}" textWrap="true"></Label>
+
+            <Label row="6" column="1" text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
+            <Label row="6" column="0" text='{{eaData.Final_Exam_With_Schedule.values.std_id}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="7" column="1" text=' {{eaData.Final_Exam_With_Schedule.labels.txt5}}:' textWrap="true"></Label>
+            <Label row="7" column="0" text='{{eaData.Final_Exam_With_Schedule.values.startDay}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="8" column="1" text='{{eaData.Final_Exam_With_Schedule.labels.txt6}}:' textWrap="true"></Label>
+            <Label row="8" column="0" text='{{eaData.Final_Exam_With_Schedule.values.endDay}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+            <Label row="9" text='{{eaData.Final_Exam_With_Schedule.labels.txt7}}'></Label>
+
+        </GridLayout>
+
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="finalScheduleMsgs == 0">
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+                <label text='{{"general.crn" | translate}}'></label>
+                <label text='{{"general.request.req_cname" | translate}}'></label>
+                <label text='{{"general.request.day" | translate}}'></label>
+                <label text='{{"general.request.time" | translate}}'></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of eaData.Final_Exam_With_Schedule.Final_Schedule" flexDirection="row-reverse" 
+              class="trow" [ngStyle]="{'border-bottom-width':i === eaData.Final_Exam_With_Schedule.Final_Schedule-1 ? '0' : '1' }">
+               
+                <Label [text]="item.CRN"></Label>
+                <Label [text]="item.CRSE_TITLE"  ></Label>
+                <Label [text]="item.CRSE_DAY" ></Label>
+                <Label [text]="item.CRSE_TIME" ></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+
+        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && finalScheduleMsgs == 0">
+            <Label text="{{eaData.Term_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
+            <Label text="{{eaData.Term_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
+            <Label text="{{eaData.Term_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
+            <Label text="{{eaData.Term_Exam_With_Schedule.labels.txt11}}" textWrap="true"></Label>
+        </FlexboxLayout>
+      
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="finalScheduleMsgs == 0">
+            <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintFinalSced()" ></Button>
+            <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintFinalSced()"></Button>
+        </FlexboxLayout>
+    </StackLayout>
+    
+    <StackLayout *tabItem='{title: forthTabTitle}'>
+
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && finalMsgs.length>0">
+            <ListView [items]="finalMsgs">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="finalMsgs==0">
+            
+            <Label row="0" colSpan="2"  class="ysHBox"  [text]="eaData.Final_Exam_With_Schedule.labels.title"></Label>
+
+             <Label row="1" column="1" text="{{eaData.Final_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" text='{{eaData.Final_Exam_Without_Schedule.values.date}}' textWrap="true"
+             style="text-align: right;"
+             ></Label>
+
+            <Label row="2" column="1" text="{{eaData.Final_Exam_Without_Schedule.labels.txt1}}" textWrap="true"></Label>
+            <Label row="2" column="0" text="{{eaData.Final_Exam_Without_Schedule.values.student_name}}" textWrap="true"></Label>
+
+            <Label row="3" column="1" text="{{eaData.Final_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
+            <Label row="3" column="0" text="{{eaData.Final_Exam_Without_Schedule.values.std_id}}" textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="4" column="1" text="{{eaData.Final_Exam_Without_Schedule.labels.txt3}}" textWrap="true"></Label>
+            <Label row="4" column="0" text="{{eaData.Final_Exam_Without_Schedule.values.coll}}" textWrap="true"></Label>
+
+            <Label row="5" column="1" text="{{eaData.Final_Exam_Without_Schedule.labels.txt4}}" textWrap="true"></Label>
+            <Label row="5" column="0" text="{{eaData.Final_Exam_Without_Schedule.values.term}}" textWrap="true"></Label>
+
+            <Label row="6" column="1" text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
+            <Label row="6" column="0" text='{{eaData.Final_Exam_Without_Schedule.values.std_id}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="7" column="1" text=' {{eaData.Final_Exam_Without_Schedule.labels.txt5}}:' textWrap="true"></Label>
+            <Label row="7" column="0" text='{{eaData.Final_Exam_Without_Schedule.values.startDay}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+
+            <Label row="8" column="1" text='{{eaData.Final_Exam_Without_Schedule.labels.txt6}}:' textWrap="true"></Label>
+            <Label row="8" column="0" text='{{eaData.Final_Exam_Without_Schedule.values.endDay}}' textWrap="true"
+            style="text-align: right;"
+            ></Label>
+            <FlexboxLayout row="9" textWrap="wrap" flex-direction="row-reverse" *ngIf="finalMsgs==0">
+                <Label text='{{eaData.Final_Exam_Without_Schedule.labels.txt7}}'></Label>
+                <Label text="{{eaData.Term_Exam_Without_Schedule.labels.txt8}}" textWrap="true"></Label>
+                <Label text="{{eaData.Term_Exam_Without_Schedule.labels.txt9}}" textWrap="true"></Label>
+                <Label text="{{eaData.Term_Exam_Without_Schedule.labels.txt10}}" textWrap="true"></Label>
+                <Label text="{{eaData.Term_Exam_Without_Schedule.labels.txt11}}" textWrap="true"></Label>
+            </FlexboxLayout>
+        </GridLayout>
+      
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="finalMsgs==0">
+            <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()" ></Button>
+            <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintFinal()"></Button>
+        </FlexboxLayout>
+	</StackLayout>
+</TabView>
+

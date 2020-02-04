@@ -27,7 +27,7 @@
         <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of exam.exams;let i=index;" flexDirection="row-reverse" 
             class="trow" [ngStyle]="{'border-bottom-width':i === exam.exams.length-1 ? '0' : '1' }">
             <Label [text]="item.CRSE_TITLE" textWrap="true"></Label>
-            <TextField #TeacherID="ngModel" [(ngModel)]="item.teacher" style="width: 33%;"></TextField>
+            <TextField #TeacherID="ngModel" [(ngModel)]="item.teacher" style="border-width: 1;width: 30%;margin-top: 20;"></TextField>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
         </FlexboxLayout>
     </FlexboxLayout>

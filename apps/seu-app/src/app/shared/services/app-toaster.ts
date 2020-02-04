@@ -7,16 +7,19 @@ import { ToastrService } from 'ngx-toastr';
 export class AppToasterService {
 
   constructor(private toastr: ToastrService) { }
-  tryagain(){
-    this.push([{type:'error',body:'خطأ: حاول مرة أخري'}]);
+  tryagain() {
+    this.push([{type: 'error', body: 'خطأ: حاول مرة أخري'}]);
   }
+
   push(messages) {
 
     messages.forEach((element: any) => {
-      let type = element.type;
-      let body = element.body;
+      const type = element.type;
+      const body = element.body;
+      // tslint:disable-next-line: triple-equals
       if (type == 'success') {
         this.toastr.success('', body);
+      // tslint:disable-next-line: triple-equals
       } else if (type == 'error') {
         this.toastr.error('', body);
       } else {

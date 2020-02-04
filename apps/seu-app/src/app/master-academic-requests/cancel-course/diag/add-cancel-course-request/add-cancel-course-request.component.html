@@ -40,6 +40,15 @@
                 <td>{{it.CRSE_TITLE}}</td>
                 <td>{{it.CREDIT_HR}}</td>
               </tr>
+              <tr *ngFor="let it of reqData.courses;let i=index;">
+                <td>
+                  <input type="radio" name="chkCourse" (change)="changeStatus(it.CRN,$event,i)" value="it.CRN">
+                </td>
+                <td>{{it.CRN}}</td>
+                <td>{{it.CRES_CODE}}</td>
+                <td>{{it.CRSE_TITLE}}</td>
+                <td>{{it.CREDIT_HR}}</td>
+              </tr>
             </tbody>
           </table>
           <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel"
