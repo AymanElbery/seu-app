@@ -27,8 +27,8 @@
         <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of exam.exams;let i=index;" flexDirection="row-reverse" 
             class="trow" [ngStyle]="{'border-bottom-width':i === exam.exams.length-1 ? '0' : '1' }">
             <Label [text]="item.CRSE_TITLE" textWrap="true"></Label>
-            <TextField #TeacherID="ngModel" [(ngModel)]="item.teacher" style="border-width: 1;width: 30%;margin-top: 20;"></TextField>
-            <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
+            <TextField #TeacherID="ngModel" [(ngModel)]="item.teacher" name="teacherName" style="border-width: 1;width: 30%;margin-top: 20;"></TextField>
+            <CheckBox #chkCourse  (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
         </FlexboxLayout>
     </FlexboxLayout>
 
@@ -47,7 +47,7 @@
         <DropDown
         [items]="accountNoDropDown"
         (selectedIndexChanged)="getAccountNo($event)"
-        itemsTextAlignment="right"
+        itemsTextAlignment="left"
         itemsPadding="5"
         hint='{{"services.object_exam.account_no"|translate}}'
         >
@@ -58,7 +58,7 @@
         <DropDown
         [items]="feesDropDown"
         (selectedIndexChanged)="getFees($event)"
-        itemsTextAlignment="right"
+        itemsTextAlignment="left"
         itemsPadding="5"
         hint='{{"services.object_exam.deposite"|translate}}'
         >
@@ -72,7 +72,7 @@
     </TextView>
    
     <Label text='{{"services.object_exam.upload_deposite"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;margin-top:20 ;"></Label>
-    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary"></Button>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="-primary"></Button>
 
 </FlexboxLayout>
 </ScrollView>

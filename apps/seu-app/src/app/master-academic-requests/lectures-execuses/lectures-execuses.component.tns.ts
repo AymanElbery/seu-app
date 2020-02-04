@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
+import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component.tns';
 import { LectureExecuse } from '../../shared/models/lecture-execuse';
 import { LecturesExecusesService } from '../services/lectures-execuses.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -78,7 +78,7 @@ export class LecturesExecusesComponent implements OnInit {
     }});
   }
   onTap(){
-    this.routerExtensions.navigate(['/procedures/addlecexecuse'], {
+    this.routerExtensions.navigate(['/academicrequests/addlecturesexecuses'], {
       transition: {
           name: 'fade'
       }

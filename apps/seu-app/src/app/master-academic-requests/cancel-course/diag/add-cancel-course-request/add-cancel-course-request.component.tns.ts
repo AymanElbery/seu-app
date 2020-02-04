@@ -15,6 +15,7 @@ export class AddCancelCourseRequestComponent implements OnInit {
   msgs: any;
   approve: boolean;
   private imageSrc = '';
+  radioButtonOptions=[];
   constructor(
     private toastr: AppToasterService, private acadmicProc: CancelCourseService,
     private routerExtensions: RouterExtensions) { }
@@ -25,11 +26,28 @@ export class AddCancelCourseRequestComponent implements OnInit {
     this.reqData = this.acadmicProc.reqData;
 
     this.approve = false;
-    console.log(this.reqData.notes);
+    for(let i=0;i<this.reqData.courses.length;i++){
+      this.radioButtonOptions[i]={"courses":this.reqData.courses[i],"selected":false}
+
+    }
   }
 
-  changeStatus(id, e, i) {
-    this.cancelCousre.course_number = id;
+  changeStatus(item) {
+    item.selected = !item.selected;
+
+    if (!item.selected) {
+      return;
+    }
+
+    // uncheck all other options
+    this.radioButtonOptions.forEach(option => {
+      if (option.courses.CRN !== item.courses.CRN) {
+        option.selected = false;
+      }
+    });
+  
+    this.cancelCousre.course_number = item.courses.CRN;
+
   }
 
   requesting = false;
@@ -55,5 +73,7 @@ export class AddCancelCourseRequestComponent implements OnInit {
     this.addRequest(this.cancelCousre);
   }
 
-
+  goBack() {
+    this.routerExtensions.backToPreviousPage();
+}
 }

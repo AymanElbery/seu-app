@@ -61,14 +61,17 @@ export class AddExamExecuseComponent implements OnInit {
   requesting = false;
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(res => {
+      console.log('ressssssssssssssssssssss',res)
       this.toastr.push((res as any).messages);
       if (res['status']) {
         this.acadmicProc.newreqs = true;
-       // this.dialogRef.close();
+        this.routerExtensions.navigate(['/procedures/examsexecuses']);
       }
       this.requesting = false;
     },
       err => {
+        console.log('errrrrrrrrrrrrrrrrrrrrrrr',err)
+
         this.toastr.tryagain();
         this.requesting = false;
       });
@@ -78,6 +81,7 @@ export class AddExamExecuseComponent implements OnInit {
       return false;
     }
     this.examExcuse.attachment =this.convertToBase64(filePath);
+    
     this.requesting = true;
     this.addRequest(this.examExcuse);
   }

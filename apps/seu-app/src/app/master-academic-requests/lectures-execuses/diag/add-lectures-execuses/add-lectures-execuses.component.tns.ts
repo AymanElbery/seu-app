@@ -39,7 +39,6 @@ export class AddLecturesExecusesComponent implements OnInit {
       courses: [], attachment: '', reason: '', date: '', type: '', week: ''
     };
     this.reqData = this.acadmicProc.reqData;
-    console.log('***************************',this.reqData)
     for (let i = 0; i < this.reqData.lectures_type.length; i++) {
       this.lecs.push(
         {
@@ -51,7 +50,7 @@ export class AddLecturesExecusesComponent implements OnInit {
 
     this.lecsDropDown = new ValueList(this.lecs);
 
-    for (let i = 0; i < this.reqData.weeks_list.length; i++) {
+   for (let i = 0; i < this.reqData.weeks_list.length; i++) {
       this.weeks.push(
         {
           value: this.reqData.weeks_list[i].id,
@@ -86,6 +85,7 @@ export class AddLecturesExecusesComponent implements OnInit {
       this.requesting = false;
     },
       err => {
+        console.log(err);
         this.toastr.tryagain();
         this.requesting = false;
       });
@@ -96,6 +96,7 @@ export class AddLecturesExecusesComponent implements OnInit {
     }
     this.lectureExecuse.attachment = this.convertToBase64(filePath);
     this.requesting = true;
+    console.log(this.lectureExecuse);
     this.addRequest(this.lectureExecuse);
   }
 
