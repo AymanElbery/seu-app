@@ -49,6 +49,7 @@ export class AddObjectExamComponent implements OnInit {
   requesting = false;
   addRequest(data: any) {
     data.bank = parseInt(data.bank);
+    console.log(data);
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
       if (res['status']) {
@@ -60,6 +61,7 @@ export class AddObjectExamComponent implements OnInit {
       err => {
         this.toastr.tryagain();
         this.requesting = false;
+        console.log(err);
       });
   }
   onSubmit() {

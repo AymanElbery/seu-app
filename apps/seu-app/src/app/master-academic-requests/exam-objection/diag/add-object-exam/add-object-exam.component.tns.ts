@@ -40,13 +40,14 @@ export class AddObjectExamComponent implements OnInit {
     private toastr: AppToasterService, private acadmicProc: ExamObjectionService, private routerExtensions: RouterExtensions) { }
 
   ngOnInit() {
-    //this.changeRequest = {camp: []};
-    //this.exam = {camp:''};
     this.exam = { courses: [], exams: [], bank: -1, reason: "", account_number: "", fees_amount: "", attachment: "" };
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
-    this.exam.exams = this.acadmicProc.reqData.exams;
+    this.exam.exams = this.acadmicProc.reqData.exams as (Array<{CRN:string,CRSE_TITLE:string,teacher:string}>);
 
+    this.exam.exams.forEach(element => {
+      element.teacher='';
+    });
     for (let i = 0; i < this.reqData.bank_names.length; i++) {
       this.banks.push(
         {
@@ -86,11 +87,12 @@ export class AddObjectExamComponent implements OnInit {
       this.toastr.push((res as any).messages);
       if (res['status']) {
         this.acadmicProc.newreqs = true;
-        this.routerExtensions.navigate(['/procedures/objectexam']);
+        this.routerExtensions.navigate(['/academicrequests/objectexam']);
       }
       this.requesting = false;
     },
       err => {
+        console.log('errrrrrrrrrrrrrrrr',err)
         this.toastr.tryagain();
         this.requesting = false;
       });
@@ -99,16 +101,20 @@ export class AddObjectExamComponent implements OnInit {
     if (this.requesting) {
       return false;
     }
+    this.exam.attachment = this.convertToBase64(filePath);
     this.requesting = true;
     this.addRequest(this.exam);
+
   }
 
   changeStatus(item, e) {
+    item.checekd=e.value;
     for (let i = 0; i < this.exam.courses.length; i++) {
       if (this.exam.courses[i].CRSE == item.CRN)
         this.exam.courses.splice(i, 1);
     }
     if (item.checekd) {
+      console.log(item);
       this.exam.courses.push({ CRSE: parseInt(item.CRN), teacher: item.teacher });
     }
   }
@@ -120,7 +126,7 @@ public openCustomFilesPicker(type:string) {
   if (app.ios) {
       extensions = [kUTTypePDF];
   } else {
-      extensions = ['png','jpeg'];
+      extensions = ['png','jpeg','pdf'];
   }
 
   let options: FilePickerOptions = {
@@ -198,5 +204,7 @@ getFees(val: SelectedIndexChangedEventData) {
   this.exam.fees_amount=code;
 }
 
-
+get fileName(){
+  return filePath != null ? File.fromPath(filePath).name : "Browse";
+}
 }

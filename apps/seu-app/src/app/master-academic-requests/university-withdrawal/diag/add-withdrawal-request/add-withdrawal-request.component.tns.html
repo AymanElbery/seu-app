@@ -8,7 +8,7 @@
     <TextField #mobile="ngModel" [(ngModel)]="withdrawalReq.mobile" required></TextField>
 
     <Label text='{{"services.withdrow_univ.personal_mail"|translate}}' style="margin-top: 10;"></Label>
-    <TextField [(ngModel)]="withdrawalReq.reason" #reason="ngModel" required></TextField>
+    <TextField [(ngModel)]="withdrawalReq.email" #reason="ngModel" required></TextField>
     
     <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
         <Button text='{{"general.save"|translate}}' (tap)="onSubmit()"  class="-primary -rounded-sm" style="width: 50%;"></Button>
