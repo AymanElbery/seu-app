@@ -56,7 +56,7 @@
         "lecture_type": "Lecture Type",
         "week": "Week",
         "day": "Day",
-        "home": "الرئيسية",
+        "home": "Home",
         "choosefile": "Choose file ...... ",
         "request": {
             "add_request": "Add Request",
@@ -95,7 +95,7 @@
         "userData": "Student data",
         "academic_status": "Academic status",
         "termexecuse": "Cancel course  ",
-        "postpone": "تأجيل الفصل الدراسي",
+        "postpone": "Term Postpone",
         "studypostpone": "Study postpone  ",
         "withdrawal": "Withdraw from university ",
         "acrequests": "Academic request",
@@ -120,7 +120,7 @@
         "graduationstatment": "Graduate statement ",
         "procedures": "Academic procedure ",
         "withdrawuniv": "Withdraw from university  ",
-        "execuse": " Term postpone",
+        "execuse": " Term Execuse",
         "summer": "  withdraw  from summer course",
         "reenrol": "re enroll ",
         "cancelcourse": "Cancel course ",
@@ -172,7 +172,7 @@
         "not": "notifications ",
         "notfound": "not found ",
         "skills_record": "Skills Record",
-        "BLACKBOARD":"Black Board"
+        "BLACKBOARD": "Black Board"
     },
     "services": {
         "academic_status": {
@@ -504,7 +504,6 @@
             "title": "Fees Pay",
             "desc": "Fees Pay"
         },
-        
         "medical_report": {
             "title": "Medical Report Request",
             "desc": "Medical Report Request"
@@ -578,8 +577,8 @@
             "desc": "هو وثيقة رسمية معتمدة من الجامعة تصدرها وحدة السجل المهاري في الجامعة تشمل على كافة الفعاليات من دورات تدريبية، و أنشطة طلابية التي حصل عليها الطالب خلال فترة دراسته الجامعية، وذلك لإثبات قدراته ومهاراته في المجالات الغير الأكاديمية مما يدعم فرص منافسته على الوظائف.",
             "no_skills": "No records",
             "skill": "Skill",
-            "conditions" : "Conditions",
-            "standards":"Standard"
+            "conditions": "Conditions",
+            "standards": "Standard"
         }
     }
 }

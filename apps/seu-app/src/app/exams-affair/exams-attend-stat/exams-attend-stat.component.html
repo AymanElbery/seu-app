@@ -59,7 +59,7 @@
           <div *ngFor="let msg of termScheduleMsgs"
             [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
             role="alert">
-            {{msg.body}}!
+            {{msg.body}}
           </div>
         </div>
         <div class="widget" *ngIf="termScheduleMsgs.length == 0">
@@ -153,7 +153,7 @@
           <div *ngFor="let msg of termMsgs"
             [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
             role="alert">
-            {{msg.body}}!
+            {{msg.body}}
           </div>
         </div>
         <div class="widget" *ngIf="termMsgs == 0">
@@ -213,7 +213,7 @@
           <div *ngFor="let msg of finalScheduleMsgs"
             [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
             role="alert">
-            {{msg.body}}!
+            {{msg.body}}
           </div>
         </div>
         <div class="widget" *ngIf="finalScheduleMsgs == 0">
@@ -307,7 +307,7 @@
           <div *ngFor="let msg of finalMsgs"
             [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
             role="alert">
-            {{msg.body}}!
+            {{msg.body}}
           </div>
         </div>
         <div class="widget" *ngIf="finalMsgs==0">
