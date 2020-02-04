@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { SkillsRecordComponent } from './skills-record/skills-record.component';
 import { AcademicaffRoutingModule } from './academicaff-routing.module';
 import { AcademicStatusComponent } from './academic-status/academic-status.component';
 import { CertificateIDComponent } from './certificate-id/certificate-id.component';
@@ -15,7 +15,7 @@ import { GraduatesStateService } from './services/graduates-state.service';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 @NgModule({
   declarations: [AcademicStatusComponent, CertificateIDComponent, AcademicRecordComponent,
-    GraduateStateComponent
+    GraduateStateComponent, SkillsRecordComponent
   ],
   imports: [
     CommonModule,

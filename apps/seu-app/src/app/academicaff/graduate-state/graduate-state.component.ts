@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GraduatesStateService } from '../services/graduates-state.service';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -7,18 +8,30 @@ import { GraduatesStateService } from '../services/graduates-state.service';
   templateUrl: './graduate-state.component.html',
   styleUrls: ['./graduate-state.component.scss']
 })
-export class GraduateStateComponent implements OnInit {
+export class GraduateStateComponent implements OnInit, OnDestroy {
 
   graduateData;
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
   msgs;
-  constructor(private graduateStateSer: GraduatesStateService) {
+  constructor(private transalte: TranslateService, private graduateStateSer: GraduatesStateService) {
 
   }
-  allowed = false;
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
   ngOnInit() {
+    this.getReqs();
+    this.subscriptions = this.transalte.onLangChange.subscribe(() => {
+      this.getReqs();
+    });
+  }
+  getReqs() {
     this.isLoading = true;
     this.arabicPrint = this.graduateStateSer.DownloadStatement();
     this.EngPrint = this.graduateStateSer.DownloadEngStatement();
@@ -26,11 +39,13 @@ export class GraduateStateComponent implements OnInit {
       (res) => {
         this.graduateData = res['data'];
         this.msgs = res['messages'];
-
         this.allowed = (this.graduateData.keys.length) ? true : false;
         this.isLoading = false;
       }
     );
   }
+
+  allowed = false;
+
 
 }

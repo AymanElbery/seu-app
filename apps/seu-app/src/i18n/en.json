@@ -78,7 +78,8 @@
         "count": "Count",
         "college": "College",
         "language": "Language",
-        "email": "ُEmail"
+        "email": "ُEmail",
+        "course_code_name":"Course Code/Name"
     },
     "menu": {
         "myservices": "My Services",
@@ -162,7 +163,8 @@
         "hello": "hello",
         "logout": "log out ",
         "not": "notifications ",
-        "notfound": "not found "
+        "notfound": "not found ",
+        "student_attendance":"Student Attendance"
     },
     "services": {
         "academic_status": {

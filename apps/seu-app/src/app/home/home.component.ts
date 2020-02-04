@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PrintService } from '../shared/services/print.service';
 import { HomeService } from '../rootservices/home.service';
 import { UserService } from '../account/services/user.service';
@@ -15,7 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   SlideOptions = {
     items: 1,
     loop: true,
@@ -62,6 +62,7 @@ export class HomeComponent implements OnInit {
   eventsLoaded;
   mySubscription: any;
 
+  subscriptions;
   ngOnInit() {
     // console.log('home');
     // console.log(this.userService.userData);
@@ -71,7 +72,7 @@ export class HomeComponent implements OnInit {
         this.LoadData();
       }
     });
-    this.translate.onLangChange.subscribe(() => {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
       if (this.userService.userDataLoaded) {
         this.LoadData();
       }
@@ -298,10 +299,13 @@ export class HomeComponent implements OnInit {
       .then(() => this.OWLmoveDotsToNav());
   }
 
+
   onPrintFile() {
-    alert('start');
     const paramsData = ['101', '102'];
-    alert('1');
     this.printService.printDocument('print-file', paramsData);
+  }
+  ngOnDestroy() {
+    if (this.subscriptions)
+      this.subscriptions.unsubscribe();
   }
 }
