@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AcademicStatusService } from '../services/academic-status.service';
 import { environment } from '../../../environments/environment';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-academic-status',
   templateUrl: './academic-status.component.html',
   styleUrls: ['./academic-status.component.scss']
 })
-export class AcademicStatusComponent implements OnInit {
+export class AcademicStatusComponent implements OnInit, OnDestroy {
 
   student;
   studentTerms;
@@ -18,17 +19,25 @@ export class AcademicStatusComponent implements OnInit {
   isLoadingTerm = false;
 
 
-  constructor(private academicStatusService: AcademicStatusService) { }
-
+  constructor(private transalte: TranslateService, private academicStatusService: AcademicStatusService) { }
+  subscriptions;
   ngOnInit() {
-
+    this.getReqs();
+    this.subscriptions = this.transalte.onLangChange.subscribe(() => {
+      this.getReqs();
+    });
+  }
+  ngOnDestroy() {
+    if (this.subscriptions)
+      this.subscriptions.unsubscribe();
+  }
+  getReqs() {
     this.isLoading = true;
     this.isLoadingTerm = true;
     this.academicStatusService.getStaudentStatus().then((res) => {
       this.student = (res as any).data.student;
       this.studentTerms = (res as any).data.STD_TERMS;
       this.studentTermDetails = (res as any).data.STD_TermDetails;
-      ////console.log(this.studentTermDetails);
       this.selectedSems = this.studentTerms[0].TERM_CODE;
       this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
       this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
@@ -36,6 +45,7 @@ export class AcademicStatusComponent implements OnInit {
       this.isLoadingTerm = false;
     });
   }
+
 
   getTrmsDetails(val) {
 

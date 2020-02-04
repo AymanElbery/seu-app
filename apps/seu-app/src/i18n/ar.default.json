@@ -80,7 +80,6 @@
         "language": "اللغة",
         "email": "البريد الالكتروني",
         "course_code_name":"اسم المقرر/الرمز"
-
     },
     "menu": {
         "myservices": "خدماتي",
@@ -164,7 +163,8 @@
         "hello": "مرحبا",
         "logout": "تسجيل خروج",
         "not": "الاشعارات ",
-        "notfound": "لايوجد "
+        "notfound": "لايوجد ",
+        "student_attendance":"متابعة حضور الطلبة"
     },
     "services": {
         "academic_status": {
