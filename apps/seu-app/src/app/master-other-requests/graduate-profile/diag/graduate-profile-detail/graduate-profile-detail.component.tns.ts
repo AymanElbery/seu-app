@@ -3,11 +3,12 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
 import { GraduateProfileService } from '../../../../master-other-requests/services/graduate-profile.service';
 import { StudentInfo } from '../../../../shared/models/student-info';
+import { ModalDialogParams } from 'nativescript-angular/common';
 
 @Component({
   selector: 'app-graduate-profile-detail',
-  templateUrl: './graduate-profile-detail.component.html',
-  styleUrls: ['./graduate-profile-detail.component.scss']
+  templateUrl: './graduate-profile-detail.component.tns.html',
+  styleUrls: ['./graduate-profile-detail.component.tns.scss']
 })
 export class GraduateProfileDetailComponent implements OnInit {
 
@@ -19,8 +20,7 @@ export class GraduateProfileDetailComponent implements OnInit {
   isLoading = false;
 
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<GraduateProfileDetailComponent>,
+  constructor(private _params: ModalDialogParams,
     private toastr: ToastrService, private gradService: GraduateProfileService) { }
   ngOnInit() {
 
@@ -80,13 +80,8 @@ export class GraduateProfileDetailComponent implements OnInit {
 
   }
 
-  /* onSubmit(form: NgForm) {
-     this.addRequest(this.cancelCousre);
-     this.dialogRef.close();
- 
-   }*/
   closeDiag() {
-    this.dialogRef.close();
+    this._params.closeCallback();
   }
 
 }

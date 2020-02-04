@@ -45,29 +45,28 @@ export class  AddUnivCardComponent implements OnInit {
         this.univCard.msgs = (res as any).messages;
         this.reqData = this.univCard.reqData;
         this.msgs = this.univCard.msgs;
+    for (let i = 0; i < this.reqData.times.length; i++) {
+      this.times.push(
+        {
+          value: this.reqData.times[i].id,
+          display: this.reqData.times[i].value
+        }
+      );
+    }
+    this.timesDropDown = new ValueList(this.times);
+
+    for (let i = 0; i < this.reqData.days.length; i++) {
+      this.days.push(
+        {
+          value: this.reqData.days[i].id,
+          display: this.reqData.days[i].value
+        }
+      );
+    }
+    this.daysDropDown= new ValueList(this.days);
       }
     );
-    console.log("ndffffffffffffffffff",this.reqData);
 
-    for (let i = 0; i < this.reqData.times.length; i++) {
-        this.times.push(
-          {
-            value: this.reqData.times[i].id,
-            display: this.reqData.times[i].value
-          }
-        );
-      }
-      this.timesDropDown = new ValueList(this.times);
-
-      for (let i = 0; i < this.reqData.days.length; i++) {
-        this.days.push(
-          {
-            value: this.reqData.days[i].id,
-            display: this.reqData.days[i].value
-          }
-        );
-      }
-      this.daysDropDown= new ValueList(this.days);
   }
 
 

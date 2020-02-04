@@ -6,6 +6,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-univ-card',
@@ -20,7 +21,9 @@ export class UnivCardComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(private toastr: AppToasterService, private univCard: UvnivCardService,
+  constructor(
+    private translate: TranslateService,
+    private toastr: AppToasterService, private univCard: UvnivCardService,
     private routerExtensions: RouterExtensions) { }
 
   ngOnInit() {
@@ -48,7 +51,7 @@ export class UnivCardComponent implements OnInit {
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-        title: "هل انت متأكد؟",
+        title: this.translate.instant('general.delete_confirm'),
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'
