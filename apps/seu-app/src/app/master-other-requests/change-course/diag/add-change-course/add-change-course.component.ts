@@ -12,15 +12,17 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   styleUrls: ['./add-change-course.component.scss']
 })
 export class AddChangeCourseComponent implements OnInit {
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+              public dialogRef: MatDialogRef<AddChangeCourseComponent>,
+              private toastr: AppToasterService, private acadmicProc: ChangeCourseService) { }
 
   printAR;
   course: changeCourse;
   reqData;
   msgs;
   hiddenfield: true;
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<AddChangeCourseComponent>,
-    private toastr: AppToasterService, private acadmicProc: ChangeCourseService) { }
+
+  requesting = false;
 
   ngOnInit() {
     this.course = { major: '', mobile: '', reason: '', outside: '', bacholar_copy: '', academic_record: '' };
@@ -39,7 +41,7 @@ export class AddChangeCourseComponent implements OnInit {
   addRequest(data) {
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
-      if (res['status']) {
+      if ((res as any).status) {
         this.acadmicProc.newreqs = true;
         this.dialogRef.close();
       }
@@ -50,15 +52,13 @@ export class AddChangeCourseComponent implements OnInit {
         this.requesting = false;
       });
   }
-
-  requesting = false;
   onSubmit(form: NgForm) {
     if (this.requesting) {
       return false;
     }
     this.requesting = true;
     this.addRequest(this.course);
-    //console.log(this.branch);
+    // console.log(this.branch);
   }
 
 

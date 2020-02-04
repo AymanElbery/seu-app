@@ -15,13 +15,15 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ChangeCourseComponent implements OnInit {
 
+  // tslint:disable-next-line: max-line-length
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ChangeCourseService) { }
+
   changecourse: changeCourse;
   reqData;
   msgs;
   status;
   isLoading = false;
-
-  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ChangeCourseService) { }
+  deleting = false;
 
   ngOnInit() {
     this.changecourse = { bacholar_copy: '', major: '', mobile: '', reason: '', academic_record: '', outside: '' };
@@ -37,7 +39,6 @@ export class ChangeCourseComponent implements OnInit {
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-        //console.log(this.reqData);
       }, err => {
         this.reqData = [];
         this.msgs = [];
@@ -53,7 +54,7 @@ export class ChangeCourseComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
 
-    let dialogref = this.dialog.open(AddChangeCourseComponent, dialogConfig);
+    const dialogref = this.dialog.open(AddChangeCourseComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (this.acadmicProc.newreqs) {
         this.getRequests();
@@ -61,12 +62,12 @@ export class ChangeCourseComponent implements OnInit {
       }
     });
   }
-  deleting = false;
   delete(id, index) {
     if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
+        // tslint:disable-next-line: triple-equals
         if ((res as any).status == 1) {
           this.reqData.reqs.splice(index, 1);
         }

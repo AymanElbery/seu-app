@@ -15,6 +15,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ChangeBranchComponent implements OnInit {
 
+  constructor(private translate: TranslateService,
+              public dialog: MatDialog,
+              private toastr: AppToasterService,
+              private acadmicProc: ChangeBranchService) { }
+
   printAR;
   changeBranch: changeBranch;
   reqData;
@@ -22,10 +27,10 @@ export class ChangeBranchComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ChangeBranchService) { }
+  deleting = false;
 
   ngOnInit() {
-    this.changeBranch = { camp: "", reason: "", mobile: "" };
+    this.changeBranch = { camp: '', reason: '', mobile: '' };
     this.getRequests();
   }
 
@@ -38,7 +43,7 @@ export class ChangeBranchComponent implements OnInit {
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-        //console.log(this.reqData);
+        // console.log(this.reqData);
       }, err => {
         this.reqData = [];
         this.msgs = [];
@@ -54,7 +59,7 @@ export class ChangeBranchComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
 
-    let dialogref = this.dialog.open(AddChangeBranchComponent, dialogConfig);
+    const dialogref = this.dialog.open(AddChangeBranchComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (this.acadmicProc.newreqs) {
         this.getRequests();
@@ -62,13 +67,12 @@ export class ChangeBranchComponent implements OnInit {
       }
     });
   }
-
-  deleting = false;
   delete(id, index) {
     if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
+        // tslint:disable-next-line: triple-equals
         if ((res as any).status == 1) {
           this.reqData.reqs.splice(index, 1);
         }

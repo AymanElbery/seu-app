@@ -13,7 +13,7 @@ import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 @Component({
   selector: 'app-change-branch',
-  templateUrl: './change-branch.component.html',
+  templateUrl: './change-branch.component.tns.html',
   styleUrls: ['./change-branch.component.scss']
 })
 export class ChangeBranchComponent implements OnInit {
@@ -37,7 +37,7 @@ export class ChangeBranchComponent implements OnInit {
   deleting = false;
 
 
-  
+
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;
 
@@ -67,7 +67,7 @@ export class ChangeBranchComponent implements OnInit {
       }
     );
   }
- 
+
   // tslint:disable-next-line: adjacent-overload-signatures
   delete(id, index) {
 

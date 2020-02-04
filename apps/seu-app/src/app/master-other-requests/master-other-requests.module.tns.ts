@@ -13,9 +13,10 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { AddChangeBranchComponent } from './change-branch/diag/add-change-branch/add-change-branch.component.tns';
+import { AddChangeCourseComponent } from './change-course/diag/add-change-course/add-change-course.component.tns';
 
 @NgModule({
-  declarations: [AbsenceQueryComponent,
+  declarations: [AbsenceQueryComponent, AddChangeCourseComponent,
     ChangeBranchComponent,
     AddChangeBranchComponent,
     ChangeCourseComponent
@@ -31,8 +32,8 @@ import { AddChangeBranchComponent } from './change-branch/diag/add-change-branch
     AppTransModule
   ]
   ,
-  entryComponents:[
-    AddChangeBranchComponent
+  entryComponents: [
+    AddChangeBranchComponent, AddChangeCourseComponent
   ]
 })
 export class MasterOtherRequestsModule { }
