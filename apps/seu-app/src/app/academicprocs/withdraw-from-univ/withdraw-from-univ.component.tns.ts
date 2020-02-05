@@ -77,7 +77,7 @@ export class WithdrawFromUnivComponent implements OnInit {
 
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    utils.openUrl(this.acadmicProc.print(req));
   }
   delete(id, index) {
     dialogs.confirm({

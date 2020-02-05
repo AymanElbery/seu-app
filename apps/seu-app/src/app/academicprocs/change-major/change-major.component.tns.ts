@@ -17,15 +17,6 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./change-major.component.tns.scss']
 })
 export class ChangeMajorComponent implements OnInit {
-
-  // tslint:disable-next-line: variable-name
-  constructor(private _modalService: ModalDialogService,
-              // tslint:disable-next-line: variable-name
-              private _vcRef: ViewContainerRef,
-              private toastr: AppToasterService, private acadmicProc: ChangeMajorService) { }
-
-
-
   printAR;
   cancelCousre: CancelCousre;
   reqData:RequestData;
@@ -91,7 +82,7 @@ export class ChangeMajorComponent implements OnInit {
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'
-
+      }).then((result:boolean) => {
       if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {

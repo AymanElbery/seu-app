@@ -86,7 +86,7 @@ export class ChangeRequestComponent implements OnInit {
             message: "",
             okButtonText: "OK",
             cancelButtonText: 'Cancel'
-
+          }).then((result:boolean) => {
           if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
@@ -108,3 +108,4 @@ export class ChangeRequestComponent implements OnInit {
     sideDrawer.showDrawer();
   }
 
+}
