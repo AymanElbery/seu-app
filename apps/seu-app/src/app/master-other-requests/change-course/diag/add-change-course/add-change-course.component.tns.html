@@ -4,44 +4,67 @@
         android.systemIcon="ic_menu_back">
     </NavigationButton>
     <ActionItem style="color: white;background-color: white;" ios.systemIcon="9" android.systemIcon="ic_menu_save"
-        (tap)="addRequest()" ios.position="right">
+        (tap)="onSubmit()" ios.position="right">
     </ActionItem>
     <Label text="{{'general.request.add_request' | translate}} "></Label>
 </ActionBar>
-<FlexboxLayout flexDirection="column" style="padding: 20;">
+<ScrollView >
 
     <Label text='{{"services.change_major.change_major_req"|translate}}' class="header"></Label>
     <StackLayout style="color:#6189f4;">
         <Label text='{{"services.change_major.alert"|translate}}' style="font-weight: 800;"></Label>
         <Label text='{{"services.change_major.alert_content"|translate}}' textWrap="true"></Label>
         <Label text='{{"services.change_major.major_cancellation_validity"|translate}}' textWrap="true"></Label>
-
+        <StackLayout class="input-field">
         <Label text='{{"services.change_major.choose_major"|translate}}'
             style="font-weight: 800;margin-top: 10;"></Label>
         <DropDown #dropdown [items]="majorsDropDown" (selectedIndexChanged)="getmajor($event)"
             hint='{{"services.change_major.choose_major"|translate}}' itemsTextAlignment="left" itemsPadding="5"
             required>
         </DropDown>
+        <StackLayout class="hr-light"></StackLayout>
+
+        </StackLayout>
         <StackLayout class="input-field">
             <Label text='{{"services.change_branch.mobile"|translate}}' class="label font-weight-bold m-b-5"></Label>
             <TextField keyboardType="number" class="input" [(ngModel)]="course.mobile"></TextField>
             <StackLayout class="hr-light"></StackLayout>
         </StackLayout>
-    </StackLayout>
-    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
-        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="-primary" style="width: 50%;"
-            [isEnabled]="mj.major!=''"></Button>
-        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="-primary" style="width: 50%;"></Button>
-    </FlexboxLayout>
-<ActionBar style="color: white;">
+        <StackLayout class="input-field">
+            <Label text='{{"services.change_branch.reason"|translate}}' class="label font-weight-bold m-b-5"></Label>
+            <TextField  class="input" [(ngModel)]="course.reason"></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text="{{'services.change_major.record' | translate}}" class="label font-weight-bold m-b-5"></Label>
 
-    <NavigationButton style="color: white;background-color: white;" (tap)="goBack()" text="Go Back"
-        android.systemIcon="ic_menu_back">
-    </NavigationButton>
-    <ActionItem style="color: white;background-color: white;" ios.systemIcon="9" android.systemIcon="ic_menu_save"
-        (tap)="addRequest()" ios.position="right">
-    </ActionItem>
-    <Label text="{{'general.request.add_request' | translate}} "></Label>
-</ActionBar>
-<
-    /FlexboxLayout>
+            <Button [text]="fileTxt0" (tap)="openCustomFilesPicker('1')" class="-primary"></Button>
+
+            <StackLayout class="hr"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text="{{'services.change_major.doc'|translate}}" class="label font-weight-bold m-b-5"></Label>
+
+            <Button [text]="fileTxt1" (tap)="openCustomFilesPicker('2')" class="-primary"></Button>
+
+            <StackLayout class="hr"></StackLayout>
+        </StackLayout>
+        <StackLayout class="form ysBox" padding="15">
+            <StackLayout class="input-field">
+                <Label textWrap="true" text="{{'services.change_major.out_kingdom' | translate}}"
+                    class="label font-weight-bold m-b-5"></Label>
+                <CheckBox #chkCourse (checkedChange)="changeStatus($event)" checked="false"></CheckBox>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout *ngIf="outSide" class="input-field">
+            <Label text="{{'services.change_major.equalize' | translate}}" class="label font-weight-bold m-b-5"></Label>
+
+            <Button [text]="fileTxt2" (tap)="openCustomFilesPicker('3')" class="-primary"></Button>
+
+            <StackLayout class="hr"></StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+   
+
+</ScrollView>
