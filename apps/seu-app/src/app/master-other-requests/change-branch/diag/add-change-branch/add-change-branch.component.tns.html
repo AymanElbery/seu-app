@@ -1,4 +1,4 @@
-<FlexboxLayout  flexDirection="column" style="padding: 20;">
+<FlexboxLayout flexDirection="column" style="padding: 20;">
     <Label text='{{"services.change_branch.change_branch_req"|translate}}' class="header"></Label>
 
     <StackLayout class="font">
@@ -6,19 +6,26 @@
         <Label text='{{"services.change_branch.alert_content"|translate}}' textWrap="true"></Label>
         <Label text='{{"services.change_branch.branch_cancellation_validity"|translate}}' textWrap="true"></Label>
 
-        <Label text='{{"services.change_branch.choose_branch"|translate}}' style="font-weight: 800;margin-top: 10;"></Label>
-        <DropDown
-        [items]="branchesDropDown"
-        (selectedIndexChanged)="getBranch($event)"
-        hint='{{"services.change_branch.choose_branch"|translate}}'
-        itemsTextAlignment="left"
-        itemsPadding="5"
-        >
+        <Label text='{{"services.change_branch.choose_branch"|translate}}'
+            style="font-weight: 800;margin-top: 10;"></Label>
+        <DropDown [items]="branchesDropDown" (selectedIndexChanged)="getBranch($event)"
+            hint='{{"services.change_branch.choose_branch"|translate}}' itemsTextAlignment="center" itemsPadding="5">
         </DropDown>
-    </StackLayout>
 
+        <StackLayout class="input-field">
+            <Label text='{{"services.change_branch.mobile"|translate}}' class="label font-weight-bold m-b-5"></Label>
+            <TextField keyboardType="number" class="input" [(ngModel)]="cmp.mobile"></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text='{{"services.change_branch.reason"|translate}}' class="label font-weight-bold m-b-5"></Label>
+            <TextField class="input" [(ngModel)]="cmp.reason"></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+    </StackLayout>
     <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
-        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="-primary" style="width: 50%;" [isEnabled]="cmp.camp != '' "></Button>
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="-primary" style="width: 50%;"
+            [isEnabled]="cmp.camp != '' "></Button>
         <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="-primary" style="width: 50%;"></Button>
     </FlexboxLayout>
 

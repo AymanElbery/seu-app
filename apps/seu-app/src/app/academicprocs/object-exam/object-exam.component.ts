@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ObjectExamService } from '../services/object-exam.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
 import { AddExamObjectComponent } from './diag/add-exam-object/add-exam-object.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   templateUrl: './object-exam.component.html',
   styleUrls: ['./object-exam.component.scss']
 })
-export class ObjectExamComponent implements OnInit {
+export class ObjectExamComponent implements OnInit, OnDestroy {
 
   //changeRequest: ChangeRequest;
   reqData;
@@ -20,10 +21,23 @@ export class ObjectExamComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ObjectExamService) { }
+  constructor(private translate: TranslateService,public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ObjectExamService) { }
 
   ngOnInit() {
     this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
   }
   getRequests() {
     this.isLoading = true;
@@ -54,7 +68,7 @@ export class ObjectExamComponent implements OnInit {
 
   deleting = false;
   delete(id, index) {
-    if (confirm('هل انت متأكد؟')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);

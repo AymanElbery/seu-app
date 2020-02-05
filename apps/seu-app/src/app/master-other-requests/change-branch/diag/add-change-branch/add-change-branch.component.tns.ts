@@ -38,12 +38,14 @@ export class AddChangeBranchComponent implements OnInit {
 
         this.camps = this.acadmicProc.reqData.camps;
         this.msgs = this.acadmicProc.msgs;
+        console.log(this.acadmicProc.reqData);
+        console.log('BRANCHES:' + this.branches);
         // tslint:disable-next-line: prefer-for-of
         for (let i = 0; i < this.camps.length; i++) {
           this.branches.push(
             {
-              value: this.camps[i].CAMP_CODE,
-              display: this.camps[i].CAMP_DESC
+              value: this.camps[i].key,
+              display: this.camps[i].value
             }
           );
         }
@@ -71,6 +73,7 @@ export class AddChangeBranchComponent implements OnInit {
       return false;
     }
 
+    // tslint:disable-next-line: triple-equals
     if (this.cmp.camp == '') {
       return false;
     }

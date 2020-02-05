@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Credentials } from '../../shared/models/credentials.interface';
 import { Subscription } from 'rxjs';
 import { UserService } from '../services/user.service';
@@ -11,7 +11,7 @@ import { UserManagerService } from '../../shared/services/user-manager.service';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent implements OnInit,OnDestroy {
 
   private subscription: Subscription;
 

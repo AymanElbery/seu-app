@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TermExecuseService } from '../services/term-execuse.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -6,13 +6,14 @@ import { AddPostponeComponent } from '../postpone-request/diag/add-postpone/add-
 import { NgForm } from '@angular/forms';
 import { AddExecuseTermComponent } from './diag/add-execuse-term/add-execuse-term.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-execuse-request',
   templateUrl: './execuse-request.component.html',
   styleUrls: ['./execuse-request.component.scss']
 })
-export class ExecuseRequestComponent implements OnInit {
+export class ExecuseRequestComponent implements OnInit, OnDestroy {
 
   reason: string;
   reqData;
@@ -20,12 +21,25 @@ export class ExecuseRequestComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: TermExecuseService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: TermExecuseService) { }
   //private toastr: ToastrService,
   ngOnInit() {
     this.isLoading = true;
     this.reason = '';
     this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
   }
   getRequests() {
     this.isLoading = true;
@@ -64,7 +78,7 @@ export class ExecuseRequestComponent implements OnInit {
   }
   deleting = false;
   delete(id, index) {
-    if (confirm('هل انت متأكد؟')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);

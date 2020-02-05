@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Credentials } from '../../shared/models/credentials.interface';
 import { Subscription } from 'rxjs';
 import { UserService } from '../services/user.service';
@@ -8,11 +8,11 @@ import { UserManagerService } from '../../shared/services/user-manager.service';
 import * as dialogs from 'tns-core-modules/ui/dialogs';
 import * as AppSettings from '@nativescript/core/application-settings';
 @Component({
-   selector: 'app-login-form',
+  selector: 'app-login-form',
   templateUrl: './login-form.component.tns.html',
   styleUrls: ['./login-form.component.tns.scss']
 })
-export class LoginFormComponent implements OnInit {
+export class LoginFormComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
 
   brandNew: boolean;
@@ -33,7 +33,7 @@ export class LoginFormComponent implements OnInit {
         this.credentials.email = param.email;
       }
     );
-   // this.userManger.logout();
+    // this.userManger.logout();
     // this.userManger.logout();
   }
 
@@ -44,41 +44,41 @@ export class LoginFormComponent implements OnInit {
 
     this.userService.loadUserData().then(res => {
       if (this.userService.userData.activeRole === '') {
-      this.userService.loadUserData();
+        this.userService.loadUserData();
       }
-  }
-  );
+    }
+    );
     this.router.navigate(['/home']);
-   /*  this.userService
-      .login(value.email, value.password)
-      .pipe(finalize(() => (this.isRequesting = false)))
-      .subscribe(
-        result => {
-          //console.log(result.data);
-          if (result.status == 1) {
-            this.userManger.saveToken(result.data);
-
-            this.userManger.login();
-            this.router.navigate(["/dashboard/home"]);
-          } else {
-            dialogs.alert("Invalid username or password").then(() => {
-              //console.log("Dialog!");
-            });
-            if (result.messages) {
-              this.errors = result.messages[0].body;
-            }
-          }
-        },
-        error => {
-          this.errors = error;
-          dialogs.alert(error).then(() => {
-            //console.log("Dialog closed!");
-          });
-        }
-      ); */
+    /*  this.userService
+       .login(value.email, value.password)
+       .pipe(finalize(() => (this.isRequesting = false)))
+       .subscribe(
+         result => {
+           //console.log(result.data);
+           if (result.status == 1) {
+             this.userManger.saveToken(result.data);
+ 
+             this.userManger.login();
+             this.router.navigate(["/dashboard/home"]);
+           } else {
+             dialogs.alert("Invalid username or password").then(() => {
+               //console.log("Dialog!");
+             });
+             if (result.messages) {
+               this.errors = result.messages[0].body;
+             }
+           }
+         },
+         error => {
+           this.errors = error;
+           dialogs.alert(error).then(() => {
+             //console.log("Dialog closed!");
+           });
+         }
+       ); */
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
   // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {
     // prevent memory leak by unsubscribing

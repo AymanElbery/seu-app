@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../../shared/services/config.service';
 import { HttpRequestService } from '../../shared/services/http-request.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,6 @@ export class ChangeRequestService {
 
   getِgetRequests() {
     this.configService.baseUrl = 'stdservicesapi';
-
-
     return this.httRequest.GetRequest('change_camp_service').toPromise();
   }
   AddRequest(data) {

@@ -13,20 +13,25 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { AddChangeBranchComponent } from './change-branch/diag/add-change-branch/add-change-branch.component.tns';
+import { AddChangeCourseComponent } from './change-course/diag/add-change-course/add-change-course.component.tns';
 import { AddPersonalIdComponent } from './personal-id/diag/add-personal-id/add-personal-id.component.tns';
 import { GraduateProfileDetailComponent } from './graduate-profile/diag/graduate-profile-detail/graduate-profile-detail.component.tns';
 import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduate-profile/add-graduate-profile.component.tns';
 
 @NgModule({
-  declarations: [AbsenceQueryComponent,
+
+  declarations: [AbsenceQueryComponent, AddChangeCourseComponent,
     ChangeBranchComponent,
     AddChangeBranchComponent,
     ChangeCourseComponent
     , PersonalIDComponent,
+
     GraduateProfileComponent,
     AddPersonalIdComponent,
     GraduateProfileDetailComponent,
-    AddGraduateProfileComponent
+    AddGraduateProfileComponent,
+
+
   ],
   imports: [
     MasterOtherRequestsRoutingModule,
@@ -36,9 +41,10 @@ import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduat
     NativeScriptUIListViewModule,
     NativeScriptLocalizeModule,
     AppTransModule
-  ]
-  ,
-  entryComponents:[
+  ],
+  entryComponents: [
+    AddChangeBranchComponent,
+    AddChangeBranchComponent,
     AddChangeBranchComponent,
     GraduateProfileDetailComponent
   ]

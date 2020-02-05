@@ -2,8 +2,8 @@ import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ChangeMajorService } from '../services/change-major.service';
 import { CancelCousre } from '../../shared/models/cancel-cousre';
 import { AppToasterService } from '../../shared/services/app-toaster';
-import * as utils from "tns-core-modules/utils/utils";
-import* as dialogs from "tns-core-modules/ui/dialogs";
+import * as utils from 'tns-core-modules/utils/utils';
+import * as dialogs from 'tns-core-modules/ui/dialogs';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
@@ -18,6 +18,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ChangeMajorComponent implements OnInit {
 
+  // tslint:disable-next-line: variable-name
+  constructor(private _modalService: ModalDialogService,
+              // tslint:disable-next-line: variable-name
+              private _vcRef: ViewContainerRef,
+              private toastr: AppToasterService, private acadmicProc: ChangeMajorService) { }
+
 
 
   printAR;
@@ -26,16 +32,16 @@ export class ChangeMajorComponent implements OnInit {
   msgs;
   status;
   isLoading = false;
-
   constructor(private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,
       private toastr: AppToasterService, 
       private acadmicProc: ChangeMajorService,
       private translate: TranslateService) { }
+  deleting = false;
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
+    sideDrawer.drawerLocation = SideDrawerLocation.Right;
     this.isLoading = true;
     this.cancelCousre = { courses: null, agreement: 1 };
     this.getRequests();
@@ -79,19 +85,18 @@ export class ChangeMajorComponent implements OnInit {
   print(req) {
     utils.openUrl(this.acadmicProc.Download(req));
   }
-
-  deleting = false;
   delete(id, index) {
     dialogs.confirm({
         title: this.translate.instant('general.delete_confirm'),
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'
-    }).then((result:boolean) => {
+
       if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
+        // tslint:disable-next-line: triple-equals
         if ((res as any).status == 1) {
           this.reqData.reqs.splice(index, 1);
         }
