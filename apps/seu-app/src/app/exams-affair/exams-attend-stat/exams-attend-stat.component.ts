@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ExamAttendanceService } from '../services/exam-attendance.service';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 // import { threadId } from 'worker_threads';
 
 @Component({
@@ -7,7 +9,7 @@ import { ExamAttendanceService } from '../services/exam-attendance.service';
   templateUrl: './exams-attend-stat.component.html',
   styleUrls: ['./exams-attend-stat.component.scss']
 })
-export class ExamsAttendStatComponent implements OnInit {
+export class ExamsAttendStatComponent implements OnInit, OnDestroy {
 
   eaData;
   finalschedule: string;
@@ -27,36 +29,44 @@ export class ExamsAttendStatComponent implements OnInit {
 
   test = {}
 
-  constructor(private academicService: ExamAttendanceService) { }
+  constructor(private translate: TranslateService, private toastr: AppToasterService, private academicService: ExamAttendanceService) { }
 
   ngOnInit() {
+    this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
+  getRequests() {
     this.isLoading = true;
     this.academicService.getِExamsAttednace().then(
       res => {
         this.eaData = (res as any).data;
-        this.isLoading = false;
 
         this.termScheduleMsgs = this.eaData.Term_Exam_With_Schedule.messages;
         this.termMsgs = this.eaData.Term_Exam_Without_Schedule.messages;
         this.finalScheduleMsgs = this.eaData.Final_Exam_With_Schedule.messages;
         this.finalMsgs = this.eaData.Final_Exam_Without_Schedule.messages;
 
-      /*  if (this.eaData.Term_Exam_With_Schedule.labels)
-          alert(1);
+        this.isLoading = false;
 
-
-        //console.log(this.test);
-
-        //console.log(this.eaData.Term_Exam_With_Schedule.labels);
-
-        //console.log(this.termScheduleMsgs);
-        //console.log(this.termScheduleMsgs.length);
-        //console.log(this.termMsgs);
-
-        //console.log(this.finalScheduleMsgs);
-        //console.log(this.finalMsgs);*/
+      }, err => {
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
+
     this.finalschedule = this.academicService.Print_Final_Exam_With_Schedule();
     this.final = this.academicService.Print_Final_Exam_Without_Schedule();
     this.termSchedule = this.academicService.Print_Term_Exam_With_Schedule();
@@ -65,10 +75,6 @@ export class ExamsAttendStatComponent implements OnInit {
     this.finalEn = this.academicService.Print_Final_Exam_Without_ScheduleEn();
     this.termScheduleEn = this.academicService.Print_Term_Exam_With_ScheduleEn();
     this.termEn = this.academicService.Print_Term_Exam_Without_ScheduleEn();
-
-
-
-
 
   }
   toHTML(input): any {

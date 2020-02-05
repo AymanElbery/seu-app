@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import {TrainingRequestService} from '../services/training-request.service';
-import {training} from '../../shared/models/training';
-import {AddTrainingRequestComponent} from '../training-request/diag/add-training-request/add-training-request.component';
+import { TrainingRequestService } from '../services/training-request.service';
+import { training } from '../../shared/models/training';
+import { AddTrainingRequestComponent } from '../training-request/diag/add-training-request/add-training-request.component';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-training-request',
   templateUrl: './training-request.component.html',
   styleUrls: ['./training-request.component.scss']
 })
-export class TrainingRequestComponent implements OnInit {
+export class TrainingRequestComponent implements OnInit, OnDestroy {
 
   printAR;
   training: training;
@@ -20,20 +22,38 @@ export class TrainingRequestComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog,  private toastr: ToastrService, private acadmicProc: TrainingRequestService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: TrainingRequestService) { }
 
   ngOnInit() {
-    this.isLoading=true;
-    this.training = {organization:''};
+    this.training = { organization: '' };
+    this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
+  getRequests() {
+    this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
       res => {
-    this.acadmicProc.reqData =    (res as any).data;
-    this.acadmicProc.msgs = (res as any).messages;
-    this.reqData = this.acadmicProc.reqData;
-    this.msgs = this.acadmicProc.msgs;
-    this.isLoading=false;
- 
-
+        this.acadmicProc.reqData = (res as any).data;
+        this.acadmicProc.msgs = (res as any).messages;
+        this.reqData = this.acadmicProc.reqData;
+        this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
@@ -44,46 +64,40 @@ export class TrainingRequestComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
 
-    this.dialog.open(AddTrainingRequestComponent, dialogConfig);
-  }
-
-  addRequest(data) {
-    this.acadmicProc.AddRequest(data).then(  res => {
-      this.acadmicProc.msgs = (res as any).messages;
-      
-        });
-  }
-  onSubmit(form: NgForm) {
-this.addRequest(form.value);
-
-
+    let dialogref = this.dialog.open(AddTrainingRequestComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (this.acadmicProc.newreqs) {
+        this.getRequests();
+        this.acadmicProc.newreqs = false;
+      }
+    });
   }
 
   print(req) {
-return this.acadmicProc.Download(req);
+    return this.acadmicProc.Download(req);
 
   }
+  deleting = false;
   delete(id, index) {
-    if ( confirm('هل انت متأكد')) {
-    this.acadmicProc.deleteReq(id).then(res => {
-      this.msgs =   (res as any).messages;
-
-      this.status =   (res as any).status;
-
-      this.msgs.forEach((element: any) => {
-        this.toastr.success('', element.body);
-    
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
+      this.acadmicProc.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.requests.splice(index, 1);
+        }
+        this.deleting = false;
+      }
+        , err => {
+          this.toastr.tryagain();
+          this.deleting = false;
         });
-        if(this.status == 1)
-          this.acadmicProc.reqData.requests.splice(index, 1);
-    });
+    }
 
   }
+  call(hr) {
+    return Math.floor(Math.random() * 10) + hr;
 
-}
-call(hr) {
-return  Math.floor(Math.random() * 10) + hr ;
-
-}
+  }
 
 }

@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ExamExcuseService } from '../services/exam-excuse.service';
 import { AddExamExcuseComponent } from './diag/add-exam-excuse/add-exam-excuse.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-exam-excuse',
@@ -19,11 +20,25 @@ export class ExamExcuseComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ExamExcuseService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ExamExcuseService) { }
 
   ngOnInit() {
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
@@ -32,6 +47,9 @@ export class ExamExcuseComponent implements OnInit {
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
+        this.isLoading = false;
+      }, err => {
+        this.toastr.tryagain();
         this.isLoading = false;
       }
     );
@@ -53,7 +71,7 @@ export class ExamExcuseComponent implements OnInit {
 
   deleting = false;
   delete(id, index) {
-    if (confirm('هل انت متأكد؟')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
