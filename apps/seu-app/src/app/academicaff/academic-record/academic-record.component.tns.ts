@@ -5,6 +5,7 @@ import * as app from 'tns-core-modules/application';
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
 import * as utils from 'tns-core-modules/utils/utils';
+import { RecoredDataModel } from '../../shared/models/RecoredDataModel';
 // tslint:disable-next-line: one-variable-per-declaration
 declare var UIView, NSMutableArray, NSIndexPath;
 
@@ -15,7 +16,7 @@ declare var UIView, NSMutableArray, NSIndexPath;
 })
 export class AcademicRecordComponent implements OnInit {
   constructor(private academicService: AcademicRecordService) { }
-  recoredData;
+  recoredData:RecoredDataModel= {coll:"",grade:"",major:"",ssn:"",status:"",student_name:"",terms:[]};
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;

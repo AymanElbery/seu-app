@@ -6,6 +6,8 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import * as utils from "tns-core-modules/utils/utils";
+import { RequestData } from '../../shared/models/request-data';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-visitor-student',
@@ -16,9 +18,10 @@ export class VisitorStudentComponent implements OnInit {
   constructor(
     private toastr: AppToasterService,
     private acadmicProc: VisitorStudentService,
-    private routerExtensions: RouterExtensions
+    private routerExtensions: RouterExtensions,
+    private translate: TranslateService
   ) { }
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -43,7 +46,7 @@ export class VisitorStudentComponent implements OnInit {
   }
   delete(id, index) {
     dialogs.confirm({
-        title: "هل انت متأكد؟",
+        title: this.translate.instant('general.delete_confirm'),
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'

@@ -9,6 +9,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { AppToasterService } from '../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
+import { RequestData } from '../../shared/models/request-data';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class WithdrawFromUnivComponent implements OnInit {
 
   printAR;
   withdraw: UnivWithdraw;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
 
@@ -66,7 +67,6 @@ export class WithdrawFromUnivComponent implements OnInit {
         this.isLoading = false;
 
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

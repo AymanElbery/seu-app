@@ -8,6 +8,8 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddChangeMajorComponent } from './diag/add-change-major/add-change-major.component.tns';
+import { RequestData } from '../../shared/models/request-data';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-major',
@@ -20,14 +22,16 @@ export class ChangeMajorComponent implements OnInit {
 
   printAR;
   cancelCousre: CancelCousre;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
 
   constructor(private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,
-      private toastr: AppToasterService, private acadmicProc: ChangeMajorService) { }
+      private toastr: AppToasterService, 
+      private acadmicProc: ChangeMajorService,
+      private translate: TranslateService) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -48,7 +52,6 @@ export class ChangeMajorComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;
@@ -80,7 +83,7 @@ export class ChangeMajorComponent implements OnInit {
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-        title: "هل انت متأكد؟",
+        title: this.translate.instant('general.delete_confirm'),
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'

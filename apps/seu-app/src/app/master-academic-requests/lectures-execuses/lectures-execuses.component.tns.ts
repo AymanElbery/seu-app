@@ -9,6 +9,7 @@ import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-lectures-execuses',
@@ -19,7 +20,7 @@ export class LecturesExecusesComponent implements OnInit {
 
   printAR;
   lectureExecuse: LectureExecuse;
-  reqData;
+  reqData:RequestData;
   msgs;
   isLoading = false;
 
@@ -43,7 +44,6 @@ export class LecturesExecusesComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

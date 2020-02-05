@@ -10,6 +10,8 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddRequestChangeComponent } from './diag/add-request-change/add-request-change.component.tns';
+import { RequestData } from '../../shared/models/request-data';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-request',
@@ -18,9 +20,7 @@ import { AddRequestChangeComponent } from './diag/add-request-change/add-request
 })
 export class ChangeRequestComponent implements OnInit {
 
-  //printAR;
-  //changeRequest: ChangeRequest;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -29,7 +29,8 @@ export class ChangeRequestComponent implements OnInit {
   constructor(private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,
       private toastr: AppToasterService, 
-    private acadmicProc: ChangeRequestService) { }
+    private acadmicProc: ChangeRequestService,
+    private translate: TranslateService) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -49,7 +50,6 @@ export class ChangeRequestComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;
@@ -75,7 +75,7 @@ export class ChangeRequestComponent implements OnInit {
   deleting = false;
   delete(id, index) {
         dialogs.confirm({
-            title: "هل انت متأكد؟",
+            title: this.translate.instant('general.delete_confirm'),
             message: "",
             okButtonText: "OK",
             cancelButtonText: 'Cancel'

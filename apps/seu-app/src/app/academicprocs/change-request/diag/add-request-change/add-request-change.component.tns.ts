@@ -1,8 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr';
-import { NgForm } from '@angular/forms';
-import { ChangeRequest } from 'src/app/shared/models/change-request';
 import { ChangeRequestService } from '../../../services/change-request.service';
 import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { ModalDialogParams } from 'nativescript-angular/common';
@@ -17,7 +13,7 @@ export class AddRequestChangeComponent implements OnInit {
 
   //changeRequest: ChangeRequest;
 
-  camps: any;
+  camps: [any];
   cmp: { camp };
   msgs: any;
   private imageSrc = '';

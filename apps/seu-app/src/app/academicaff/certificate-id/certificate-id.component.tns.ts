@@ -16,11 +16,11 @@ import { CertificateDetails } from 'src/app/shared/models/certificate-details';
 export class CertificateIDComponent implements OnInit {
 
   constructor(private certificateIDService: CertificateIDService, private route: HttpClient) { }
-  certificateDetails: CertificateDetails;
+  certificateDetails: CertificateDetails={labels:{},values:{}};
   arabicPrint: string;
   EngPrint: string;
 
-  lectures: Lecture[];
+  lectures: Lecture[]=[ {CRN:"",CRSE_CODE:"",CRSE_DAY:"",CRSE_TIME:"",CRSE_TITLE:"",SSBSECT_CREDIT_HRS:""}];
   isLoading = false;
   ngOnInit() {
     this.isLoading = true;
@@ -37,7 +37,7 @@ export class CertificateIDComponent implements OnInit {
     );
   }
   toHTML(input): any {
-    return input.replace('&rarr;', '->');
+    return input ? input.replace('&rarr;', '->'):"";
   }
 
   onDrawerButtonTap(): void {

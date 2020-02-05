@@ -8,6 +8,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { TranslateService } from '@ngx-translate/core';
+import { RequestData } from '../../shared/models/request-data';
 
 
 @Component({
@@ -19,14 +20,14 @@ export class LecturesExecusesComponent implements OnInit {
 
   printAR;
   lectureExecuse: LectureExecuse;
-  reqData;
+  reqData:RequestData;
   msgs;
   isLoading = false;
 
   constructor(private routerExtensions: RouterExtensions, 
     private toastr: AppToasterService, 
     private acadmicProc: LectureExecuseServiceService,
-    private translate: TranslateService,) { }
+    private translate: TranslateService) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -78,7 +79,7 @@ export class LecturesExecusesComponent implements OnInit {
     }});
   }
   onTap(){
-    this.routerExtensions.navigate(['/academicrequests/addlecturesexecuses'], {
+    this.routerExtensions.navigate(['/procedures/addlecexecuse'], {
       transition: {
           name: 'fade'
       }

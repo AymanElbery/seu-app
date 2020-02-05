@@ -3,6 +3,7 @@ import { GraduatesStateService } from '../services/graduates-state.service';
 import * as utils from "tns-core-modules/utils/utils";
 import * as app from 'tns-core-modules/application';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
+import { GraduateData } from '../../shared/models/graduate-data';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 })
 export class GraduateStateComponent implements OnInit {
 
-  graduateData;
+  graduateData:GraduateData={values:{},labels:{}};
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;

@@ -1,4 +1,4 @@
 export interface CertificateDetails {
-    labels;
-    values;
+    labels:{};
+    values:{};
 }

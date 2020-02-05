@@ -6,6 +6,7 @@ import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application'; 
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-english-equalize',
@@ -16,7 +17,7 @@ export class EnglishEqualizeComponent implements OnInit {
 
   printAR;
   reason: string;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
