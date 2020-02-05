@@ -8,28 +8,33 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()" ios.position="left">
+    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()" ios.position="right">
     </ActionItem>
+
+    <NavigationButton ios:visibility="collapsed" text="add" android.systemIcon="ic_menu_add" (tap)="onTap()">
+    </NavigationButton>
+
+
+    <ActionItem android:visibility="collapsed" ios.systemIcon="4" ios.position="left" (tap)="onTap()"></ActionItem>
+
     <Label text='{{"services.change_branch.title"|translate}}'></Label>
 </ActionBar>
 <ScrollView>
-    <FlexboxLayout flexDirection="column">
-
+    <FlexboxLayout style="margin:0;padding: 0;" flexDirection="column">
         <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
-
-        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs">
-            <ListView [items]="msgs">
+        <FlexboxLayout style="margin-top: 0px;" visibility="{{collapse}}" flexDirection="row-reverse"
+            *ngIf="!isLoading && msgs">
+            <ListView style="margin-top: 0px;" [items]="msgs">
                 <ng-template let-item="item">
-                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+                    <Label [text]="item.body" class="ysMsg"></Label>
                 </ng-template>
             </ListView>
         </FlexboxLayout>
-
-        <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between"
+     <!--    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between"
             style="margin-right:20;">
             <Button text='{{"general.request.add_request"| translate}}' (tap)="onTap()"
                 class="-primary -rounded-sm"></Button>
-        </FlexboxLayout>
+        </FlexboxLayout> -->
 
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading" class="ysBox">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw">

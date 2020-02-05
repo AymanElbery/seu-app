@@ -12,13 +12,15 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   styleUrls: ['./add-change-branch.component.scss']
 })
 export class AddChangeBranchComponent implements OnInit {
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+              public dialogRef: MatDialogRef<AddChangeBranchComponent>,
+              private toastr: AppToasterService, private acadmicProc: ChangeBranchService) { }
   printAR;
   branch: changeBranch;
   reqData;
   msgs;
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<AddChangeBranchComponent>,
-    private toastr: AppToasterService, private acadmicProc: ChangeBranchService) { }
+
+  requesting = false;
 
   ngOnInit() {
     this.branch = { camp: '', reason: '', mobile: '' };
@@ -43,7 +45,7 @@ export class AddChangeBranchComponent implements OnInit {
   addRequest(data) {
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
-      if (res['status']) {
+      if ((res as any).status) {
         this.acadmicProc.newreqs = true;
         this.dialogRef.close();
       }
@@ -54,15 +56,13 @@ export class AddChangeBranchComponent implements OnInit {
         this.requesting = false;
       });
   }
-
-  requesting = false;
   onSubmit(form: NgForm) {
     if (this.requesting) {
       return false;
     }
     this.requesting = true;
     this.addRequest(this.branch);
-    //console.log(this.branch);
+    // console.log(this.branch);
   }
 
   call(hr) {

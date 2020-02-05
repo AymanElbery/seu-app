@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material';
-import { ToastrService } from 'ngx-toastr';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { GraduateProfileService } from '../services/graduate-profile.service';
-import { GraduateProfileDetailComponent } from './diag/graduate-profile-detail/graduate-profile-detail.component.tns';
-import { AddGraduateProfileComponent } from './diag/add-graduate-profile/add-graduate-profile.component.tns';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
+import { GraduateProfileDetailComponent } from './diag/graduate-profile-detail/graduate-profile-detail.component.tns';
+import { RouterExtensions } from 'nativescript-angular/router';
+import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
+import * as app from 'tns-core-modules/application';
 
 @Component({
   selector: 'app-graduate-profile',
-  templateUrl: './graduate-profile.component.html',
-  styleUrls: ['./graduate-profile.component.scss']
+  templateUrl: './graduate-profile.component.tns.html',
+  styleUrls: ['./graduate-profile.component.tns.scss']
 })
 export class GraduateProfileComponent implements OnInit {
 
@@ -18,8 +19,16 @@ export class GraduateProfileComponent implements OnInit {
   msgs;
   status;
   isLoading = false;
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private gradProfServ: GraduateProfileService) { }
+  constructor
+  (
+  private _modalService: ModalDialogService,
+  private _vcRef: ViewContainerRef,
+  private toastr: AppToasterService, 
+  private gradProfServ: GraduateProfileService,
+  private routerExtensions: RouterExtensions) { }
   ngOnInit() {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.getRequests();
   }
 
@@ -43,21 +52,32 @@ export class GraduateProfileComponent implements OnInit {
     );
   }
 
-  openDialoge(request_number) {
-    //request_number = 0;
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = '95%';
-    dialogConfig.height = '85%';
-    dialogConfig.direction = "rtl";
-    dialogConfig.position = { top: '80px', left: '20px' };
+ openDialoge(request_number) {
+  const options: ModalDialogOptions = {
+    viewContainerRef: this._vcRef,
+    context: {},
+    fullscreen: false,
+};
 
     this.gradProfServ.request_number = request_number;
 
-    this.dialog.open(GraduateProfileDetailComponent, dialogConfig);
-  }
+    this._modalService.showModal(GraduateProfileDetailComponent, options)
+  
+    }
 
+    onTap(){
+      this.routerExtensions.navigate(['/other/addgraduateprofile'], {
+        transition: {
+            name: 'fade'
+        }
+    });
+    }
+    onDrawerButtonTap(): void {
+      const sideDrawer =  app.getRootView() as RadSideDrawer;
+      sideDrawer.showDrawer();
+    }
+
+/*
   openAddDialoge() {
 
     const dialogConfig = new MatDialogConfig();
@@ -76,6 +96,6 @@ export class GraduateProfileComponent implements OnInit {
         this.gradProfServ.newreqs = false;
       }
     });
-  }
+  }*/
 
 }

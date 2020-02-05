@@ -205,11 +205,11 @@
              ></TextField>
             </GridLayout>
 
-            <FlexboxLayout *ngIf="reqData.can_update_data" flexDirection="row-reverse" flexWrap="wrap" alignItems="center" style="color: #6189f4;margin:20 20">
+            <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" flexWrap="wrap" alignItems="center" style="color: #6189f4;margin:20 20">
                 <CheckBox checked="false"></CheckBox>
                 <Label text='{{"services.student_info.obligation"|translate}}' textWrap="true"></Label>
             </FlexboxLayout>
-            <Button *ngIf="reqData.can_update_data" text='{{"general.save"|translate}}' (tap)="onSubmit()" class="-primary"></Button>
+            <Button *ngIf="!isLoading" text='{{"general.save"|translate}}' (tap)="onSubmit()" class="-primary"></Button>
 
     </FlexboxLayout>
 

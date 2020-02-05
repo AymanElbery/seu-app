@@ -10,7 +10,7 @@ import { MasterOtherRequestsRoutingModule } from './master-other-requests-routin
 import { AbsenceQueryComponent } from './absence-query/absence-query.component';
 import { AbseneQueryService } from './services/absene-query.service';
 import { ChangeBranchService } from './services/change-branch.service';
-import { ChangeBranchComponent } from './change-branch/change-branch.component'
+import { ChangeBranchComponent } from './change-branch/change-branch.component';
 import { from } from 'rxjs';
 import { AddChangeBranchComponent } from './change-branch/diag/add-change-branch/add-change-branch.component';
 import { ChangeCourseComponent } from './change-course/change-course.component';
@@ -44,7 +44,7 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    //BrowserAnimationsModule,
+    // BrowserAnimationsModule,
 
     MatCheckboxModule,
     AppLazyTransModule

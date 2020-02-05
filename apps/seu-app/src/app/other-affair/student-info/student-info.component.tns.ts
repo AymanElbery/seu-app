@@ -92,54 +92,6 @@ export class StudentInfoComponent implements OnInit {
     }
  
     this.getData();
-
-    
-    for (let i = 0; i < this.reqData.job_status.length; i++) {
-        this.status.push(
-          {
-            value: this.reqData.job_status[i].id,
-            display: this.reqData.job_status[i].value
-          }
-        );
-      }
-    for (let i = 0; i < this.reqData.job_type.length; i++) {
-        this.sectors.push(
-          {
-            value: this.reqData.job_type[i].id,
-            display: this.reqData.job_type[i].value
-          }
-        );
-      }
-    for (let i = 0; i < this.reqData.job_time.length; i++) {
-        this.period.push(
-          {
-            value: this.reqData.job_time[i].id,
-            display: this.reqData.job_time[i].value
-          }
-        );
-      }
-    for (let i = 0; i < this.reqData.terms.length; i++) {
-        this.terms.push(
-          {
-            value: this.reqData.terms[i].id,
-            display: this.reqData.terms[i].value
-          }
-        );
-      }
-    for (let i = 0; i < this.reqData.cities.length; i++) {
-        this.locations.push(
-          {
-            value: this.reqData.cities[i].id,
-            display: this.reqData.cities[i].value
-          }
-        );
-      }
-      this.statusDropDown = new ValueList(this.status);
-      console.log("ndffffffffffffffffff",this.reqData);
-      this.termsDropDown = new ValueList(this.terms);
-      this.periodsDropDown = new ValueList(this.period);
-      this.sectorsDropDown = new ValueList(this.sectors);
-      this.locationsDropDown = new ValueList(this.locations);
   }
   getData() {
     this.isLoading = true;
@@ -165,6 +117,52 @@ export class StudentInfoComponent implements OnInit {
         this.stdData.job_year = this.studentInfo.JOB_YEAR;
         this.stdData.work_city = this.studentInfo.WORK_CITY;
         this.isLoading = false;
+         
+   for (let i = 0; i < this.reqData.job_status.length; i++) {
+    this.status.push(
+      {
+        value: this.reqData.job_status[i].id,
+        display: this.reqData.job_status[i].value
+      }
+    );
+  }
+for (let i = 0; i < this.reqData.job_type.length; i++) {
+    this.sectors.push(
+      {
+        value: this.reqData.job_type[i].id,
+        display: this.reqData.job_type[i].value
+      }
+    );
+  }
+for (let i = 0; i < this.reqData.job_time.length; i++) {
+    this.period.push(
+      {
+        value: this.reqData.job_time[i].id,
+        display: this.reqData.job_time[i].value
+      }
+    );
+  }
+for (let i = 0; i < this.reqData.terms.length; i++) {
+    this.terms.push(
+      {
+        value: this.reqData.terms[i].id,
+        display: this.reqData.terms[i].value
+      }
+    );
+  }
+for (let i = 0; i < this.reqData.cities.length; i++) {
+    this.locations.push(
+      {
+        value: this.reqData.cities[i].id,
+        display: this.reqData.cities[i].value
+      }
+    );
+  }
+  this.statusDropDown = new ValueList(this.status);
+  this.termsDropDown = new ValueList(this.terms);
+  this.periodsDropDown = new ValueList(this.period);
+  this.sectorsDropDown = new ValueList(this.sectors);
+  this.locationsDropDown = new ValueList(this.locations);
       }
     );
     this.cvDownload = this.academicService.DownloadCv();

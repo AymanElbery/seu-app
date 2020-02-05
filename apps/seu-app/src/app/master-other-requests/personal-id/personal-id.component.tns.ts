@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { universityCard } from '../../shared/models/university-card';
-import { ToastrService } from 'ngx-toastr';
 import { PersonalIDService } from '../services/personal-id.service';
-import { AddPersonalIdComponent } from './diag/add-personal-id/add-personal-id.component.tns';
-import { NgForm } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import { RouterExtensions } from 'nativescript-angular/router';
+import* as dialogs from "tns-core-modules/ui/dialogs";
+import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
+import * as app from 'tns-core-modules/application';
 
 @Component({
   selector: 'app-personal-id',
-  templateUrl: './personal-id.component.html',
-  styleUrls: ['./personal-id.component.scss']
+  templateUrl: './personal-id.component.tns.html',
+  styleUrls: ['./personal-id.component.tns.scss']
 })
 export class PersonalIDComponent implements OnInit {
 
@@ -21,9 +21,15 @@ export class PersonalIDComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(private translate: TranslateService, public dialog: MatDialog, public receiptDiag: MatDialog, private toastr: AppToasterService, private univCard: PersonalIDService) { }
+  constructor(
+    private translate: TranslateService,
+    private toastr: AppToasterService, 
+    private univCard: PersonalIDService,
+    private routerExtensions: RouterExtensions) { }
 
   ngOnInit() {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.isLoading = true;
     this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
     this.univCard.getِgetRequests().then(
@@ -57,24 +63,16 @@ export class PersonalIDComponent implements OnInit {
     );
   }
 
-  openDialoge() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = '50%';
-
-    let dialogref = this.dialog.open(AddPersonalIdComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {
-      if (this.univCard.newreqs) {
-        this.getRequests();
-        this.univCard.newreqs = false;
-      }
-    });
-  }
 
   deleting = false;
   delete(id, index) {
-    if (confirm(this.translate.instant('general.delete_confirm'))) {
+    dialogs.confirm({
+      title: this.translate.instant('general.delete_confirm'),
+      message: "",
+      okButtonText: "OK",
+      cancelButtonText: 'Cancel'
+  }).then((result:boolean) => {
+    if (result) {
       this.deleting = true;
       this.univCard.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
@@ -86,13 +84,25 @@ export class PersonalIDComponent implements OnInit {
         this.toastr.tryagain();
         this.deleting = false;
       });
-    }
+    }});
 
   }
 
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;
 
+  }
+
+  onTap(){
+    this.routerExtensions.navigate(['/other/addpersonalid'], {
+      transition: {
+          name: 'fade'
+      }
+  });
+  }
+  onDrawerButtonTap(): void {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.showDrawer();
   }
 
 
