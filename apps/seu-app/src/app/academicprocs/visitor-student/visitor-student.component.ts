@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { VisitorStudentService } from '../services/visitor-student.service';
 import { AddVisitorStudentComponent } from './diag/add-visitor-student/add-visitor-student.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-visitor-student',
   templateUrl: './visitor-student.component.html',
   styleUrls: ['./visitor-student.component.scss']
 })
-export class VisitorStudentComponent implements OnInit {
+export class VisitorStudentComponent implements OnInit, OnDestroy {
   constructor(
-    public dialog: MatDialog,
+    private translate: TranslateService, public dialog: MatDialog,
     private toastr: AppToasterService,
     private acadmicProc: VisitorStudentService
   ) { }
@@ -25,6 +26,19 @@ export class VisitorStudentComponent implements OnInit {
 
   ngOnInit() {
     this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
   }
 
   getRequests() {
@@ -38,7 +52,7 @@ export class VisitorStudentComponent implements OnInit {
     });
   }
   delete(id, index) {
-    if (confirm('هل انت متأكد؟')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
