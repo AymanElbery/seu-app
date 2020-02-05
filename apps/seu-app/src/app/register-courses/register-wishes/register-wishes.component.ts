@@ -1,20 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { RegisterWishesService } from '../services/register-wishes.service';
 import { RegisterWishes } from 'src/app/shared/models/register-wishes';
 import { NgForm } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-wishes',
   templateUrl: './register-wishes.component.html',
   styleUrls: ['./register-wishes.component.scss']
 })
-export class RegisterWishesComponent implements OnInit {
+export class RegisterWishesComponent implements OnInit, OnDestroy {
 
 
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: RegisterWishesService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: RegisterWishesService) { }
   registerWishes: RegisterWishes;
   reqData;
   msgs;
@@ -27,6 +28,19 @@ export class RegisterWishesComponent implements OnInit {
 
   ngOnInit() {
     this.getServiceRequest();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getServiceRequest();
+    });
   }
 
   getServiceRequest() {
@@ -40,11 +54,14 @@ export class RegisterWishesComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
 
+      }, err => {
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
   delete(id, index) {
-    if (confirm('هل انت متأكد')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         const messages = (res as any).messages;

@@ -49,6 +49,9 @@ export class VisitorStudentComponent implements OnInit, OnDestroy {
       this.reqData = this.acadmicProc.reqData;
       this.msgs = this.acadmicProc.msgs;
       this.isLoading = false;
+    }, err => {
+      this.toastr.tryagain();
+      this.isLoading = false;
     });
   }
   delete(id, index) {
