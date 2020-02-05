@@ -23,14 +23,10 @@ export class AddUnivCardComponent implements OnInit {
 
   ngOnInit() {
     this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: 'UG', photo: '', ssn_file: '' };
-    this.univCard.getِgetRequests().then(
-      res => {
-        this.univCard.reqData = (res as any).data;
-        this.univCard.msgs = (res as any).messages;
-        this.reqData = this.univCard.reqData;
-        this.msgs = this.univCard.msgs;
-      }
-    );
+
+    this.reqData = this.univCard.reqData;
+    this.msgs = this.univCard.msgs;
+
   }
 
 

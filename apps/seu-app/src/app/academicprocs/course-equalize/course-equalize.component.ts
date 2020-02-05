@@ -54,6 +54,9 @@ export class CourseEqualizeComponent implements OnInit, OnDestroy {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
         // //console.log(this.reqData.reqs);
+      }, err => {
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }

@@ -6,6 +6,7 @@ import { StudentInformation } from 'src/app/shared/models/student-information';
 import { StudentInformationData } from 'src/app/shared/models/student-information-data';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { MAT_CHECKBOX_CLICK_ACTION } from '@angular/material';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-student-info',
@@ -26,7 +27,7 @@ export class StudentInfoComponent implements OnInit {
   isLoading = false;
   fileType;
 
-  constructor(private academicService: StudentInfoService, private toastr: AppToasterService) { }
+  constructor(private translate: TranslateService, private academicService: StudentInfoService, private toastr: AppToasterService) { }
 
   ngOnInit() {
     this.studentInfo =
@@ -143,9 +144,5 @@ export class StudentInfoComponent implements OnInit {
       this.stdData.photo = reader.result;
     else if (this.fileType == 'cv')
       this.stdData.cv = reader.result;
-
-
   }
-
-
 }
