@@ -33,7 +33,7 @@
     <div *ngFor="let msg of msgs"
       [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
       role="alert">
-      {{msg.body}}!
+      {{msg.body}}
     </div>
   </div>
 
@@ -160,9 +160,9 @@
 
         <div class="prin text-center">
           <a class="btn btn-primary" href="{{arabicPrintTermWithSchedule}}"><span class="ik ik-printer"></span>
-            طباعة</a>
+            {{"general.ar_print" | translate}} </a>
           <a class="btn btn-primary" href="{{EngPrintTermWithSchedule}}"><span class="ik ik-printer"></span>
-            Print</a>
+            {{"general.en_print" | translate}} </a>
 
         </div>
       </div>
@@ -210,11 +210,11 @@
           <div class="row">
             <div style="padding: 5px;">
               <a class="btn btn-primary" href="{{arabicPrintTermWithoutSchedule}}"><span class="ik ik-printer"></span>
-                طباعة</a>
+                {{"general.ar_print" | translate}} </a>
             </div>
             <div style="padding: 5px;">
               <a class="btn btn-primary" href="{{EngPrintTermWithoutSchedule}}"><span class="ik ik-printer"></span>
-                Print</a>
+                {{"general.en_print" | translate}} </a>
             </div>
           </div>
 
@@ -300,11 +300,11 @@
           <div class="row">
             <div style="padding: 5px;">
               <a class="btn btn-primary" href="{{arabicPrintFinalWithSchedule}}"><span class="ik ik-printer"></span>
-                طباعة</a>
+                {{"general.ar_print" | translate}} </a>
             </div>
             <div style="padding: 5px;">
               <a class="btn btn-primary" href="{{EngPrintFinalWithSchedule}}"><span class="ik ik-printer"></span>
-                Print</a>
+                {{"general.en_print" | translate}} </a>
             </div>
           </div>
 
@@ -358,11 +358,11 @@
           <div class="row">
             <div style="padding: 5px;">
               <a class="btn btn-primary" href="{{arabicPrintFinalWithoutSchedule}}"><span class="ik ik-printer"></span>
-                طباعة</a>
+                {{"general.ar_print" | translate}} </a>
             </div>
             <div style="padding: 5px;">
               <a class="btn btn-primary" href="{{EngPrintFinalWithoutSchedule}}"><span class="ik ik-printer"></span>
-                Print</a>
+                {{"general.en_print" | translate}} </a>
             </div>
           </div>
 

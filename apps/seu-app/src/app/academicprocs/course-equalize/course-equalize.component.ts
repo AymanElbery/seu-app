@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CourseEqualizerService } from '../services/course-equalizer.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -7,13 +7,14 @@ import { NgForm } from '@angular/forms';
 import { AddCourseCancelComponent } from '../cancel-course/diag/add-course-cancel/add-course-cancel.component';
 import { AddCourseEqualizeComponent } from './diag/add-course-equalize/add-course-equalize.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-course-equalize',
   templateUrl: './course-equalize.component.html',
   styleUrls: ['./course-equalize.component.scss']
 })
-export class CourseEqualizeComponent implements OnInit {
+export class CourseEqualizeComponent implements OnInit, OnDestroy {
 
   printAR;
   reason: string;
@@ -23,15 +24,27 @@ export class CourseEqualizeComponent implements OnInit {
   isLoading = false;
 
 
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: CourseEqualizerService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: CourseEqualizerService) { }
 
   ngOnInit() {
-    this.isLoading = true;
     this.reason = '';
     this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
   }
   getRequests() {
-
+    this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
       res => {
         ////console.log(res);
@@ -41,6 +54,9 @@ export class CourseEqualizeComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
         // //console.log(this.reqData.reqs);
+      }, err => {
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }
@@ -67,7 +83,7 @@ export class CourseEqualizeComponent implements OnInit {
   }
   deleting = false;
   delete(id, index) {
-    if (confirm('هل انت متأكد؟')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);

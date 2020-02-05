@@ -7,6 +7,7 @@ import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddExecuseTermComponent } from './diag/add-execuse-term/add-execuse-term.component.tns';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-execuse-request',
@@ -16,7 +17,7 @@ import { AppToasterService } from '../../shared/services/app-toaster';
 export class ExecuseRequestComponent implements OnInit {
 
   reason: string;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -41,7 +42,6 @@ export class ExecuseRequestComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
          this.toastr.tryagain();
         this.isLoading = false;

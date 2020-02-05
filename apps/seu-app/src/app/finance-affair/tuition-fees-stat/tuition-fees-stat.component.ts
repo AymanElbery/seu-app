@@ -1,28 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TuitionFeesService } from '../services/tuition-fees.service';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-tuition-fees-stat',
   templateUrl: './tuition-fees-stat.component.html',
   styleUrls: ['./tuition-fees-stat.component.scss']
 })
-export class TuitionFeesStatComponent implements OnInit {
+export class TuitionFeesStatComponent implements OnInit, OnDestroy {
 
   feesData;
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
 
-  constructor(private academicService: TuitionFeesService) { }
+  constructor(private translate: TranslateService, private toastr: AppToasterService, private academicService: TuitionFeesService) { }
   ngOnInit() {
-    this.isLoading=true;
+    this.getServiceRequest();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getServiceRequest();
+    });
+  }
+
+  getServiceRequest() {
+    this.isLoading = true;
     this.academicService.getِTuitionFeez().then(
       res => {
-    this.feesData =    (res as any).data;
-    this.isLoading=false;
+        this.feesData = (res as any).data;
+        this.isLoading = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
-    this.arabicPrint =   this.academicService.Download();
+    this.arabicPrint = this.academicService.Download();
     this.EngPrint = this.academicService.DownloadEng();
   }
 

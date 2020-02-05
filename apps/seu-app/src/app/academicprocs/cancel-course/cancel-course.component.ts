@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -6,13 +6,14 @@ import { NgForm } from '@angular/forms';
 import { CancelCourseService } from '../services/cancel-course.service';
 import { AddCourseCancelComponent } from './diag/add-course-cancel/add-course-cancel.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cancel-course',
   templateUrl: './cancel-course.component.html',
   styleUrls: ['./cancel-course.component.scss']
 })
-export class CancelCourseComponent implements OnInit {
+export class CancelCourseComponent implements OnInit,OnDestroy {
 
 
   printAR;
@@ -22,12 +23,25 @@ export class CancelCourseComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: CancelCourseService) { }
+  constructor(private translate: TranslateService,public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: CancelCourseService) { }
 
   ngOnInit() {
     this.isLoading = true;
     this.cancelCousre = { courses: null, agreement: 1 };
     this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
   }
 
 
@@ -68,7 +82,7 @@ export class CancelCourseComponent implements OnInit {
 
   deleting = false;
   delete(id, index) {
-    if (confirm('هل انت متأكد؟')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);

@@ -8,6 +8,8 @@ import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common'; 
 import { AppToasterService } from '../../shared/services/app-toaster.tns';
 import { AddSummerWithdrawComponent } from './diag/add-summer-withdraw/add-summer-withdraw.component.tns';
+import { TranslateService } from '@ngx-translate/core';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-summer-withdraw',
@@ -19,11 +21,12 @@ export class SummerWithdrawComponent implements OnInit {
   constructor(private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,
     private acadmicProc: SummerWithdrawService,
-    private toaster:AppToasterService) { }
+    private toaster:AppToasterService,
+    private translate: TranslateService) { }
 
   printAR;
   reason: string;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -45,7 +48,6 @@ export class SummerWithdrawComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toaster.tryagain();
         this.isLoading = false;
@@ -74,7 +76,7 @@ export class SummerWithdrawComponent implements OnInit {
   }
   delete(id, index) {
     dialogs.confirm({
-        title: "هل انت متأكد؟",
+        title: this.translate.instant('general.delete_confirm'),
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'

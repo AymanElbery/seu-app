@@ -8,6 +8,7 @@ import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/com
 import { AddPostponeComponent } from './diag/add-postpone/add-postpone.component.tns';
 import { AppToasterService } from '../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
+import { RequestData } from '../../shared/models/request-data';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class PostponeRequestComponent implements OnInit {
 
   printAR;
   reason: string;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
 
@@ -46,7 +47,6 @@ export class PostponeRequestComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

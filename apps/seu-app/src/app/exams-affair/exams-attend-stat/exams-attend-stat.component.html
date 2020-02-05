@@ -59,7 +59,7 @@
           <div *ngFor="let msg of termScheduleMsgs"
             [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
             role="alert">
-            {{msg.body}}!
+            {{msg.body}}
           </div>
         </div>
         <div class="widget" *ngIf="termScheduleMsgs.length == 0">
@@ -144,7 +144,7 @@
           <a class="btn " href="{{termSchedule}}"><span class="ik ik-printer"></span>
             {{"general.print" | translate}}</a>
           <a class="btn " href="{{termScheduleEn}}"><span class="ik ik-printer"></span>
-            Print</a>
+            {{"general.en_print" | translate}} </a>
 
         </div>
       </div>
@@ -153,7 +153,7 @@
           <div *ngFor="let msg of termMsgs"
             [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
             role="alert">
-            {{msg.body}}!
+            {{msg.body}}
           </div>
         </div>
         <div class="widget" *ngIf="termMsgs == 0">
@@ -202,9 +202,9 @@
         <div style="text-align: center" class="prin" *ngIf="termMsgs == 0">
 
           <a class="btn btn-primary" href="{{term}}"><span class="ik ik-printer"></span>
-            طباعة</a>
+            {{"general.ar_print" | translate}} </a>
           <a class="btn btn-primary" href="{{term}}"><span class="ik ik-printer"></span>
-            Print</a>
+            {{"general.en_print" | translate}} </a>
 
         </div>
       </div>
@@ -213,7 +213,7 @@
           <div *ngFor="let msg of finalScheduleMsgs"
             [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
             role="alert">
-            {{msg.body}}!
+            {{msg.body}}
           </div>
         </div>
         <div class="widget" *ngIf="finalScheduleMsgs == 0">
@@ -295,9 +295,9 @@
         <div style="text-align: center" class="prin" *ngIf="finalScheduleMsgs == 0">
 
           <a class="btn btn-primary" href="{{finalschedule}}"><span class="ik ik-printer"></span>
-            طباعة</a>
+            {{"general.ar_print" | translate}} </a>
           <a class="btn btn-primary" href="{{finalscheduleEn}}"><span class="ik ik-printer"></span>
-            Print</a>
+            {{"general.en_print" | translate}} </a>
 
 
         </div>
@@ -307,7 +307,7 @@
           <div *ngFor="let msg of finalMsgs"
             [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
             role="alert">
-            {{msg.body}}!
+            {{msg.body}}
           </div>
         </div>
         <div class="widget" *ngIf="finalMsgs==0">
@@ -352,9 +352,9 @@
         <div style="text-align: center" class="prin" *ngIf="finalMsgs==0">
 
           <a class="btn " href="{{final}}"><span class="ik ik-printer"></span>
-            طباعة</a>
+            {{"general.ar_print" | translate}} </a>
           <a class="btn" href="{{finalEn}}"><span class="ik ik-printer"></span>
-            Print</a>
+            {{"general.en_print" | translate}} </a>
 
 
 

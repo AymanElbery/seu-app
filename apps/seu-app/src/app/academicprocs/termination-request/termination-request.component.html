@@ -23,7 +23,7 @@
     <div *ngFor="let msg of msgs"
       [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
       role="alert">
-      {{msg.body}}!
+      {{msg.body}}
     </div>
   </div>
  <br/>
@@ -68,7 +68,7 @@
 
             <td><a class="btn btn-primary" [href]="print(it.request_number)"><span
                   class="ik ik-printer"></span>
-                Print</a></td>
+                {{"general.en_print" | translate}} </a></td>
 
             <!-- <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'  class="btn btn-sm btn-danger" style="color: white"  (click)="delete(it.request_number,i)"><i  class="fa fa-trash"><app-timer [hr]="it.time_to_delete_per_hour"></app-timer></i> </button></td>  -->
             <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"

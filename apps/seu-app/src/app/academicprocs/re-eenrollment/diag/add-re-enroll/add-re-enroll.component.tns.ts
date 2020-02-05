@@ -9,9 +9,6 @@ import { File } from "tns-core-modules/file-system";
 
 
 declare const kUTTypePDF;
-declare var NSString: any;
-declare var NSUTF8StringEncoding: any;
-declare var java: any;
 declare var android: any;
 var filePath:string=null;
 

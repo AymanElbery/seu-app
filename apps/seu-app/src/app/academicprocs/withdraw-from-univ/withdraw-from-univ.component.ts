@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { WithdrawFromUnivService } from '../services/withdraw-from-univ.service';
 import { UnivWithdraw } from 'src/app/shared/models/univ-withdraw';
 import { NgForm } from '@angular/forms';
@@ -15,11 +15,11 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './withdraw-from-univ.component.html',
   styleUrls: ['./withdraw-from-univ.component.scss']
 })
-export class WithdrawFromUnivComponent implements OnInit {
+export class WithdrawFromUnivComponent implements OnInit, OnDestroy {
   constructor(private translate: TranslateService,
-              public dialog: MatDialog,
-              private toastr: AppToasterService,
-              private acadmicProc: WithdrawFromUnivService) { }
+    public dialog: MatDialog,
+    private toastr: AppToasterService,
+    private acadmicProc: WithdrawFromUnivService) { }
 
   printAR;
   withdraw: UnivWithdraw;
@@ -34,7 +34,21 @@ export class WithdrawFromUnivComponent implements OnInit {
     this.isLoading = true;
     this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
@@ -70,8 +84,10 @@ export class WithdrawFromUnivComponent implements OnInit {
   }
 
   print(req) {
-    return this.acadmicProc.Download(req);
-
+    return this.acadmicProc.print(req);
+  }
+  download(req) {
+    return this.acadmicProc.download(req);
   }
   delete(id, index) {
     if (confirm(this.translate.instant('general.delete_confirm'))) {

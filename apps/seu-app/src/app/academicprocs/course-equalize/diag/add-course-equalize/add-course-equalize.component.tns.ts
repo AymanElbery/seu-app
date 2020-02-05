@@ -7,6 +7,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { FilePickerOptions, Mediafilepicker, ImagePickerOptions } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
 import { File } from 'tns-core-modules/file-system';
+import { TranslateService } from '@ngx-translate/core';
 
 declare const kUTTypePDF;
 declare var NSString: any;
@@ -28,7 +29,8 @@ export class AddCourseEqualizeComponent implements OnInit {
   constructor(
     private toastr: AppToasterService,
     private acadmicProc: CourseEqualizerService,
-    private routerExtensions: RouterExtensions) { }
+    private routerExtensions: RouterExtensions,
+    private translate: TranslateService) { }
   get fileName() {
     return filePath != null ? File.fromPath(filePath).name : 'Browse';
   }
@@ -37,7 +39,13 @@ export class AddCourseEqualizeComponent implements OnInit {
   }
 
   curseEqual: CourseEqual;
-  reqData: CourseEqual;
+  reqData={
+    "notes":[],
+    "course_list":[],
+    "univ_list_arr":[],
+    "hourse_list":[],
+    "grade_list":[],
+  };
   msgs: any;
   private imageSrc = '';
   univs: ValueItem<number>[] = [];
@@ -46,11 +54,11 @@ export class AddCourseEqualizeComponent implements OnInit {
   langs: ValueItem<number>[] = [
     {
       value: 1,
-      display: 'عربى'
+      display: this.translate.instant('general.ar_language')
   },
     {
       value: 2,
-      display: 'English'
+      display: this.translate.instant('general.en_language')
     }
   ];
   univsDropDown;

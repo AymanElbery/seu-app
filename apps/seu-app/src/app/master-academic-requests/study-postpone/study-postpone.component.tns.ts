@@ -9,6 +9,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddStudyPostponeComponent } from './diag/add-study-postpone/add-study-postpone.component.tns';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-study-postpone',
@@ -19,7 +20,7 @@ export class StudyPostponeComponent implements OnInit {
 
 
   studypostpone: studyPostpone;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -45,7 +46,6 @@ export class StudyPostponeComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

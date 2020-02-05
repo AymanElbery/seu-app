@@ -28,7 +28,7 @@
     <div *ngFor="let msg of msgs"
       [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
       role="alert">
-      {{msg.body}}!
+      {{msg.body}}
     </div>
   </div>
   <br />
@@ -74,7 +74,7 @@
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
             <!-- <td><a class="btn btn-primary" [href]="print(it.request_number)"><span class="ik ik-printer"></span>
-                Print</a></td> -->
+                {{"general.en_print" | translate}} </a></td> -->
 
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>

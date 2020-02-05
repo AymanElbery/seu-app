@@ -12,9 +12,9 @@ export class HttpRequestService {
 
 
   constructor(private translate: TranslateService,
-              private http: HttpClient,
-              private configService: ConfigService,
-              private globalService: GlobalBaseService) { }
+    private http: HttpClient,
+    private configService: ConfigService,
+    private globalService: GlobalBaseService) { }
 
 
   private createRequestHeader() {
@@ -42,7 +42,7 @@ export class HttpRequestService {
     return headers;
   }
 
-  GetRequest(path: string, addlng= true) {
+  GetRequest(path: string, addlng = true) {
     let url = this.configService.getApiURI() + '/' + path;
     if (addlng) {
       const langString = (path.indexOf('?') == -1 ? '?' : '&') + 'lang=' + this.translate.currentLang;
@@ -86,9 +86,13 @@ export class HttpRequestService {
     }
   }
 
-  postRequest(path: string, body: any) {
+  postRequest(path: string, body: any, addlng = true) {
 
-    const url = this.configService.getApiURI() + '/' + path;
+    let url = this.configService.getApiURI() + '/' + path;
+    if (addlng) {
+      const langString = (path.indexOf('?') == -1 ? '?' : '&') + 'lang=' + this.translate.currentLang;
+      url += langString;
+    }
     const headers = this.createRequestHeader();
     // headers.append('Content-Type', 'application/json');
     //  let options = new RequestOptions({ headers: headers });

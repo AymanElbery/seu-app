@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LectureExecuseServiceService } from '../services/lecture-execuse-service.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -7,13 +7,14 @@ import { NgForm } from '@angular/forms';
 import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
 import { LectureExecuse } from 'src/app/shared/models/lecture-execuse';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-lectures-execuses',
   templateUrl: './lectures-execuses.component.html',
   styleUrls: ['./lectures-execuses.component.scss']
 })
-export class LecturesExecusesComponent implements OnInit {
+export class LecturesExecusesComponent implements OnInit, OnDestroy {
 
   printAR;
   lectureExecuse: LectureExecuse;
@@ -21,14 +22,27 @@ export class LecturesExecusesComponent implements OnInit {
   msgs;
   isLoading = false;
 
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: LectureExecuseServiceService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: LectureExecuseServiceService) { }
 
   ngOnInit() {
-    this.isLoading = true;
     this.lectureExecuse = { attachment: '', courses: [], date: '', reason: '', type: '', week: '' };
     this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
   }
   getRequests() {
+    this.isLoading = true;
     this.acadmicProc.getRequests().then(
       res => {
         //console.log(res);
@@ -48,7 +62,7 @@ export class LecturesExecusesComponent implements OnInit {
     dialogConfig.width = '60%';
 
 
-    let dialogref =  this.dialog.open(AddLecturesExecusesComponent, dialogConfig);
+    let dialogref = this.dialog.open(AddLecturesExecusesComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (this.acadmicProc.newreqs) {
         this.getRequests();
@@ -63,7 +77,7 @@ export class LecturesExecusesComponent implements OnInit {
   }
   deleting = false;
   delete(id, index) {
-    if (confirm('هل انت متأكد؟')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);

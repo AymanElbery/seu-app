@@ -76,9 +76,9 @@
 <div  class="btn-group btn-group-justified col-md-12 ">
   <div class="col-md-4"></div>
   <a class="btn btn-primary" href="{{arabicPrint}}"><span class="ik ik-printer"></span>
-    طباعة</a>
+    {{"general.ar_print" | translate}} </a>
   <a class="btn btn-primary" href="{{EngPrint}}"><span class="ik ik-printer"></span>
-    Print</a>
+    {{"general.en_print" | translate}} </a>
   <div class="col-md-4"></div>
 
   </div>
@@ -214,8 +214,8 @@
         </div>
       </div>
       <div style="text-align: center" class="prin" *ngIf="!isLoading">
-        <a class="btn" href="{{arabicPrint}}">{{"general.ar_language"|translate}}<i class="ik ik-save"></i> </a>
-        <a class="btn" href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_language"|translate}} </a>
+        <a class="btn" href="{{arabicPrint}}">{{"general.ar_print"|translate}}<i class="ik ik-save"></i> </a>
+        <a class="btn" href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print"|translate}} </a>
       </div>
     </ng-template>
     <!-- </div> -->

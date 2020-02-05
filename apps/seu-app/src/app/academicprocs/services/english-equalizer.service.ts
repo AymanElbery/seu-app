@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../../shared/services/config.service';
 import { HttpRequestService } from '../../shared/services/http-request.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class EnglishEqualizerService {
 
   reqData;
   msgs;
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+  constructor(private translate: TranslateService, private configService: ConfigService, private httRequest: HttpRequestService) {
     this.configService.baseUrl = 'stdservicesapi';
   }
 
@@ -34,16 +35,7 @@ export class EnglishEqualizerService {
 
   Download(req) {
     this.configService.baseUrl = 'stdservicesapi';
-
     const sid = this.configService.getSid();
-
-    return this.configService.getApiURI() + '/english_certificates_service/download/english_certificates/' + req + '?sid=' + sid;
-  }
-  DownloadEng() {
-    this.configService.baseUrl = 'stdservicesapi';
-
-    const sid = this.configService.getSid();
-
-    return this.configService.getApiURI() + '/postpone_service/download?Lang=en&sid=' + sid;
+    return this.configService.getApiURI() + '/english_certificates_service/download/english_certificates/' + req + '?sid=' + sid + '&lang=' + this.translate.currentLang;
   }
 }

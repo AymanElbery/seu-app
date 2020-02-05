@@ -8,6 +8,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddTermExecuseComponent } from './diag/add-term-execuse/add-term-execuse.component.tns';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-term-execuse',
@@ -18,7 +19,7 @@ export class TermExecuseComponent implements OnInit {
 
 
   termExecuse: termExecuse;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -46,7 +47,6 @@ export class TermExecuseComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

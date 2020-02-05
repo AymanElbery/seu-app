@@ -151,8 +151,7 @@ export class AddFeesExceptionComponent implements OnInit {
     this.feesException.letter = '';
     this.feesException.mco_id_card = '';
     this.feesException.id_card = '';
-    this.feesException.association ='';
-
+    //this.feesException.association ='';
   }
 
 

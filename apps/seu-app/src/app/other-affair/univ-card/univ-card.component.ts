@@ -8,6 +8,7 @@ import { AddUnivCardComponent } from './diag/add-univ-card/add-univ-card.compone
 import { missingCard } from 'src/app/shared/models/missing-card';
 import { MissingUnivCardService } from '../services/missing-univ-card.service';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-univ-card',
   templateUrl: './univ-card.component.html',
@@ -21,11 +22,24 @@ export class UnivCardComponent implements OnInit {
   status;
   isLoading = false;
 
-  constructor(public dialog: MatDialog, public receiptDiag: MatDialog, private toastr: AppToasterService, private univCard: UvnivCardService) { }
+  constructor(private translate: TranslateService,public dialog: MatDialog, public receiptDiag: MatDialog, private toastr: AppToasterService, private univCard: UvnivCardService) { }
 
   ngOnInit() {
     this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
     this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
   }
 
   getRequests() {
@@ -60,7 +74,7 @@ export class UnivCardComponent implements OnInit {
 
   deleting = false;
   delete(id, index) {
-    if (confirm('هل انت متأكد؟')) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.univCard.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
