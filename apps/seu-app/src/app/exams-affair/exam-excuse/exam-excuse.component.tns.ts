@@ -6,6 +6,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { TranslateService } from '@ngx-translate/core';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-exam-excuse',
@@ -15,7 +16,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class ExamExcuseComponent implements OnInit {
 
 
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;

@@ -4,6 +4,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import * as utils from 'tns-core-modules/utils/utils';
 import { TranslateService } from '@ngx-translate/core';
+import { AbsData } from '../../shared/models/absence-data';
 
 @Component({
   selector: 'app-absence-query',
@@ -20,7 +21,11 @@ export class AbsenceQueryComponent implements OnInit {
       this.thirdTabTitle = this.translate.instant('services.absence_quyery.virtual_lecs_asebsence_percent');
      }
 
-  absData;
+  absData:AbsData={
+    absent_percentage_actual_lectures:[],
+    absent_percentage_total:[],
+    absent_percentage_virtual_lectures:[]
+  };
   EngPrint: string;
   arabicPrint: string;
   status;
@@ -34,7 +39,6 @@ export class AbsenceQueryComponent implements OnInit {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
     this.isLoading = true;
-
     this.academicService.getِAbsemceQuery().then(
       res => {
         this.absData = (res as any).data;
@@ -47,9 +51,7 @@ export class AbsenceQueryComponent implements OnInit {
     this.EngPrint = this.academicService.DownloadEng();
 
   }
-  toHTML(input): any {
-    return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
-  }
+
   selectedTab(id) {
     this.currentTab = id;
   }

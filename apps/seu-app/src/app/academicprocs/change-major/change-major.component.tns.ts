@@ -8,6 +8,8 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddChangeMajorComponent } from './diag/add-change-major/add-change-major.component.tns';
+import { RequestData } from '../../shared/models/request-data';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-major',
@@ -15,22 +17,17 @@ import { AddChangeMajorComponent } from './diag/add-change-major/add-change-majo
   styleUrls: ['./change-major.component.tns.scss']
 })
 export class ChangeMajorComponent implements OnInit {
-
-  // tslint:disable-next-line: variable-name
-  constructor(private _modalService: ModalDialogService,
-              // tslint:disable-next-line: variable-name
-              private _vcRef: ViewContainerRef,
-              private toastr: AppToasterService, private acadmicProc: ChangeMajorService) { }
-
-
-
   printAR;
   cancelCousre: CancelCousre;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
-
+  constructor(private _modalService: ModalDialogService,
+    private _vcRef: ViewContainerRef,
+      private toastr: AppToasterService, 
+      private acadmicProc: ChangeMajorService,
+      private translate: TranslateService) { }
   deleting = false;
 
   ngOnInit() {
@@ -52,7 +49,6 @@ export class ChangeMajorComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;
@@ -82,11 +78,11 @@ export class ChangeMajorComponent implements OnInit {
   }
   delete(id, index) {
     dialogs.confirm({
-        title: 'هل انت متأكد؟',
-        message: '',
-        okButtonText: 'OK',
+        title: this.translate.instant('general.delete_confirm'),
+        message: "",
+        okButtonText: "OK",
         cancelButtonText: 'Cancel'
-    }).then((result: boolean) => {
+      }).then((result:boolean) => {
       if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {

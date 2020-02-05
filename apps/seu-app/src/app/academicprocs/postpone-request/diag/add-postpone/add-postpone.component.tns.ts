@@ -13,7 +13,7 @@ import { AppToasterService } from '../../../../shared/services/app-toaster';
 export class AddPostponeComponent implements OnInit {
 
   postpone: Postpone;
-  reqData: any;
+ // reqData: any;
   msgs: any;
   private imageSrc = '';
 
@@ -23,7 +23,7 @@ export class AddPostponeComponent implements OnInit {
 
   ngOnInit() {
     this.postpone = { reason: '' };
-    this.reqData = this.acadmicProc.reqData;
+    //this.reqData = this.acadmicProc.reqData;
 
   }
   requesting = false;

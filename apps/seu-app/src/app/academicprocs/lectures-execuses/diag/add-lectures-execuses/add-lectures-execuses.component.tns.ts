@@ -4,15 +4,12 @@ import { LectureExecuseServiceService } from '../../../services/lecture-execuse-
 import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { RouterExtensions } from 'nativescript-angular/router';
 
-import { FilePickerOptions, Mediafilepicker, ImagePickerOptions } from 'nativescript-mediafilepicker';
+import { FilePickerOptions, Mediafilepicker } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
 import { File } from "tns-core-modules/file-system";
 import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 
 declare const kUTTypePDF;
-declare var NSString: any;
-declare var NSUTF8StringEncoding: any;
-declare var java: any;
 declare var android: any;
 var filePath:string=null;
 var imgPath:string=null;
@@ -27,7 +24,13 @@ export class AddLecturesExecusesComponent implements OnInit {
   lectureExecuse: LectureExecuse;
   msgs: any;
   private imageSrc = '';
-  reqData;
+  reqData={
+    "text_list":[],
+    "schedules":[],
+    "lectures_type":[],
+    "weeks_list":[],
+    "weeks_dates":[]
+  };
   dates:ValueItem<number>[] = [];
   weeks:ValueItem<number>[] = [];
   lecs:ValueItem<number>[] = [];
@@ -43,38 +46,40 @@ export class AddLecturesExecusesComponent implements OnInit {
       courses: [], attachment: '', reason: '', date: '', type: '', week: '1'
     };
     this.reqData = this.acadmicProc.reqData;
-
-    for (let i = 0; i < this.reqData.lectures_type.length; i++) {
-      this.lecs.push(
-        {
-          value: this.reqData.lectures_type[i].id,
-          display: this.reqData.lectures_type[i].value
-        }
-      );
+    if(this.reqData){
+      for (let i = 0; i < this.reqData.lectures_type.length; i++) {
+        this.lecs.push(
+          {
+            value: this.reqData.lectures_type[i].id,
+            display: this.reqData.lectures_type[i].value
+          }
+        );
+      }
+  
+      this.lecsDropDown = new ValueList(this.lecs);
+  
+      for (let i = 0; i < this.reqData.weeks_list.length; i++) {
+        this.weeks.push(
+          {
+            value: this.reqData.weeks_list[i].id,
+            display: this.reqData.weeks_list[i].value
+          }
+        );
+      }
+      this.weeksDropDown = new ValueList(this.weeks);
+  
+      for (let i = 0; i < this.reqData.weeks_dates[this.lectureExecuse.week].length; i++) {
+        this.dates.push(
+          {
+            value: this.reqData.weeks_dates[this.lectureExecuse.week][i],
+            display: this.reqData.weeks_dates[this.lectureExecuse.week][i]
+          }
+        );
+      }
+      this.datesDropDown = new ValueList(this.dates);
+  
     }
-
-    this.lecsDropDown = new ValueList(this.lecs);
-
-    for (let i = 0; i < this.reqData.weeks_list.length; i++) {
-      this.weeks.push(
-        {
-          value: this.reqData.weeks_list[i].id,
-          display: this.reqData.weeks_list[i].value
-        }
-      );
-    }
-    this.weeksDropDown = new ValueList(this.weeks);
-
-    for (let i = 0; i < this.reqData.weeks_dates[this.lectureExecuse.week].length; i++) {
-      this.dates.push(
-        {
-          value: this.reqData.weeks_dates[this.lectureExecuse.week][i],
-          display: this.reqData.weeks_dates[this.lectureExecuse.week][i]
-        }
-      );
-    }
-    this.datesDropDown = new ValueList(this.dates);
-
+    
   }
   changeStatus(it, e) {
     if (e.value) {

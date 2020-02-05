@@ -8,6 +8,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { TranslateService } from '@ngx-translate/core';
+import { RequestData } from '../../shared/models/request-data';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class CancelCourseComponent implements OnInit {
 
   printAR;
   cancelCousre: CancelCousre;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -48,7 +49,6 @@ export class CancelCourseComponent implements OnInit {
         this.isLoading = false;
         console.log(this.msgs);
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

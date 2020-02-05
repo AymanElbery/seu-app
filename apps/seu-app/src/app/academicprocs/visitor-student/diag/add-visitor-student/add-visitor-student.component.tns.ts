@@ -24,12 +24,12 @@ let imgPath: string = null;
 export class AddVisitorStudentComponent implements OnInit {
 
   visitorStudent: VisitorStudent
-  reqData: any;
+  reqData: {"notes":[]};
   msgs: any;
-  universitiesList: any;
-  termList: any;
-  yearList: any;
-  coursesList: any;
+  universitiesList: [any];
+  termList: [any];
+  yearList: [any];
+  coursesList: [any];
   isLoading = false;
   approves:{approve};
   univs:ValueItem<number>[] = [];

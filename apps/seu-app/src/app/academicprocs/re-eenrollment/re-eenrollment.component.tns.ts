@@ -10,6 +10,7 @@ import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddReEnrollComponent } from './diag/add-re-enroll/add-re-enroll.component.tns';
 import { TranslateService } from '@ngx-translate/core';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-re-eenrollment',
@@ -19,7 +20,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class ReEenrollmentComponent implements OnInit {
   printAR;
   reEnroll: ReEnroll;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -49,7 +50,6 @@ export class ReEenrollmentComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

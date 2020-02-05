@@ -9,6 +9,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddReEnrollComponent } from './diag/add-re-enroll/add-re-enroll.component.tns';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-re-enroll',
@@ -20,7 +21,7 @@ export class ReEnrollComponent implements OnInit {
 
   printAR;
   reEnroll: ReEnroll;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -48,7 +49,6 @@ export class ReEnrollComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

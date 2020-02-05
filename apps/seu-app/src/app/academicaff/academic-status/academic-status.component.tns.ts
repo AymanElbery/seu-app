@@ -5,6 +5,8 @@ import * as app from 'tns-core-modules/application';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as utils from 'tns-core-modules/utils/utils';
 import { ValueList, ValueItem, SelectedIndexChangedEventData } from 'nativescript-drop-down';
+import { Student } from '../../shared/models/student';
+import { StudentTerms } from '../../shared/models/student-terms';
 
 
 @Component({
@@ -14,9 +16,31 @@ import { ValueList, ValueItem, SelectedIndexChangedEventData } from 'nativescrip
 })
 export class AcademicStatusComponent implements OnInit {
 
-  student;
+  student:Student={
+    acadimic_position:"",
+    acadimic_position_label:"",
+    current_acadimic_status:"",
+    current_acadimic_status_label:"",
+    final_graduation_GPA:"",
+    name:"",
+    ssn:"",
+    std_adm_term_code:"",
+    std_adm_term_label:"",
+    std_fees:"",
+    std_id:""
+};
   studentTerms;
-  studentTermDetails;
+  studentTermDetails:StudentTerms={
+    ACADIMICPOSITION:"",
+    CAMP_code:"",
+    COLL_CODE:"",
+    MAJR_code:"",
+    RegisterationStatus:"",
+    STD_UGGR:"",
+    acadimic_status:"",
+    gba:"",
+    study_level:""
+  };
   selectedSems;
   arabicPrint: string;
   EngPrint: string;

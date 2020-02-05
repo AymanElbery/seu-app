@@ -10,6 +10,8 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { AddRequestChangeComponent } from './diag/add-request-change/add-request-change.component.tns';
+import { RequestData } from '../../shared/models/request-data';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-change-request',
@@ -18,28 +20,24 @@ import { AddRequestChangeComponent } from './diag/add-request-change/add-request
 })
 export class ChangeRequestComponent implements OnInit {
 
-  collapse;
-  // canAdd:boolean;
-  // tslint:disable-next-line: variable-name
-  constructor(private _modalService: ModalDialogService,
-              // tslint:disable-next-line: variable-name
-              private _vcRef: ViewContainerRef,
-              private toastr: AppToasterService,
-              private acadmicProc: ChangeRequestService) { }
 
-  // printAR;
-  // changeRequest: ChangeRequest;
-  reqData;
+  reqData:RequestData;  collapse;
+
   msgs;
   status;
   isLoading = false;
-
   deleting = false;
+  constructor(private _modalService: ModalDialogService,
+    private _vcRef: ViewContainerRef,
+      private toastr: AppToasterService, 
+    private acadmicProc: ChangeRequestService,
+    private translate: TranslateService) { }
 
   ngOnInit() {
     this.collapse = 'collapse';
 
     const sideDrawer =  app.getRootView() as RadSideDrawer;
+
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
     this.isLoading = true;
     this.getRequests();
@@ -60,7 +58,6 @@ export class ChangeRequestComponent implements OnInit {
         }
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;
@@ -84,11 +81,12 @@ export class ChangeRequestComponent implements OnInit {
 }
   delete(id, index) {
         dialogs.confirm({
-            title: 'هل انت متأكد؟',
-            message: '',
-            okButtonText: 'OK',
+
+            title: this.translate.instant('general.delete_confirm'),
+            message: "",
+            okButtonText: "OK",
             cancelButtonText: 'Cancel'
-        }).then((result: boolean) => {
+          }).then((result:boolean) => {
           if (result) {
       this.deleting = true;
       this.acadmicProc.deleteReq(id).then(res => {
@@ -109,4 +107,5 @@ export class ChangeRequestComponent implements OnInit {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.showDrawer();
   }
+
 }

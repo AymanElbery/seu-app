@@ -1,8 +1,8 @@
 export interface Lecture {
-    CRN;
-    CRSE_CODE;
-    CRSE_TITLE;
-    SSBSECT_CREDIT_HRS;
-    CRSE_DAY ;
-    CRSE_TIME;
+    CRN:string;
+    CRSE_CODE:string;
+    CRSE_TITLE:string;
+    SSBSECT_CREDIT_HRS:string;
+    CRSE_DAY:string;
+    CRSE_TIME:string;
 }

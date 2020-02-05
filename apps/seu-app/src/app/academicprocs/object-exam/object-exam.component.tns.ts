@@ -7,6 +7,8 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import* as dialogs from "tns-core-modules/ui/dialogs";
+import { RequestData } from '../../shared/models/request-data';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-object-exam',
@@ -15,14 +17,15 @@ import* as dialogs from "tns-core-modules/ui/dialogs";
 })
 export class ObjectExamComponent implements OnInit {
 
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
 
   constructor(private toastr: AppToasterService,
      private acadmicProc: ObjectExamService,
-     private routerExtensions: RouterExtensions) { }
+     private routerExtensions: RouterExtensions,
+     private translate: TranslateService) { }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -45,7 +48,7 @@ export class ObjectExamComponent implements OnInit {
   deleting = false;
   delete(id, index) {
     dialogs.confirm({
-        title: "هل انت متأكد؟",
+        title: this.translate.instant('general.delete_confirm'),
         message: "",
         okButtonText: "OK",
         cancelButtonText: 'Cancel'
