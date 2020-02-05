@@ -70,7 +70,7 @@
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
             <td><a class="btn btn-primary" [href]="print(it.request_number)"><span class="ik ik-printer"></span>
-                Print</a></td>
+                {{"general.en_print" | translate}} </a></td>
 
             <td *ngIf='it.deletable'><button [disabled]='!it.deletable || deleting' class="btn btn-sm btn-danger"
                 style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
