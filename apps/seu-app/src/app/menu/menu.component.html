@@ -106,41 +106,37 @@
             <a href="#" class="menu-item" routerLink="/academicaff/skills"> {{"menu.skills_record" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/academicaff/certificate"> {{"menu.certificate" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/academicaff/record"> {{"menu.record" | translate}} </a>
-            <a href="#" class="menu-item" routerLink="/academicaff/graduationstatment">
-              {{"menu.graduationstatment" | translate}} </a>
+            <a href="#" class="menu-item" routerLink="/other/universitycard"> {{"menu.UID" | translate}} </a>
+            <!-- <a href="#" class="menu-item" routerLink="/procedures/lectabs"> {{"menu.lectabs" | translate}} </a> -->
+            <a href="#" class="menu-item" routerLink="/procedures/lecexecuse"> {{"menu.lecexecuse" | translate}}</a>
           </div>
         </div>
         <div *ngIf="menuType==1 && showServices" class="nav-item has-sub ">
           <a href="javascript:void(0)"><span> {{"menu.procedures" | translate}} </span> <i class="ik ik-layers"></i></a>
           <div class="submenu-content">
             <!--  <a href="#" class="menu-item" routerLink="/procedures/terminate">الانسحاب من الجامعة   </a>-->
-            <a href="#" class="menu-item" routerLink="/procedures/withdrawuniv"> {{"menu.withdrawuniv" | translate}}
-            </a>
+            
 
             <a href="#" class="menu-item" routerLink="/procedures/postpone"> {{"menu.postpone" | translate}}
             </a>
             <a href="#" class="menu-item" routerLink="/procedures/execuse"> {{"menu.execuse" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/procedures/summer"> {{"menu.summer" | translate}} </a>
 
-            <a href="#" class="menu-item" routerLink="/procedures/reenrol"> {{"menu.reenrol" | translate}} </a>
-            <a href="#" class="menu-item" routerLink="/procedures/cancelcourse"> {{"menu.cancelcourse" | translate}}
-            </a>
-
+            
             <a href="#" class="menu-item" routerLink="/procedures/equalize"> {{"menu.equalize" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/procedures/eequalize"> {{"menu.eequalize" | translate}} </a>
 
             <a href="#" class="menu-item" routerLink="/procedures/changemajor"> {{"menu.changemajor" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/procedures/changerequest"> {{"menu.changerequest" | translate}}
             </a>
-
-            <a href="#" class="menu-item" routerLink="/procedures/lecexecuse"> {{"menu.lecexecuse" | translate}}</a>
-            <a href="#" class="menu-item" routerLink="/procedures/objectexam"> {{"menu.objectexam" | translate}} </a>
-
+            <a href="#" class="menu-item" routerLink="/procedures/cancelcourse"> {{"menu.cancelcourse" | translate}}
+            </a>
+            <a href="#" class="menu-item" routerLink="/procedures/reenrol"> {{"menu.reenrol" | translate}} </a>
 
             <a href="#" class="menu-item" routerLink="/procedures/visitorstudent"> {{"menu.visitorstudent" | translate}}
             </a>
+            <a href="#" class="menu-item" routerLink="/procedures/withdrawuniv"> {{"menu.withdrawuniv" | translate}}</a>
 
-            <!-- <a href="#" class="menu-item" routerLink="/procedures/lectabs"> {{"menu.lectabs" | translate}} </a> -->
             <!-- <a href="#" class="menu-item" routerLink="/procedures/terminate"> طلب فصل استثنائي   </a> -->
             <!-- <a href="#" class="menu-item" routerLink="/procedures/examexcuse"> تقديم الأعذار للمتغيبين عن الاختبارات   </a> -->
 
@@ -177,7 +173,19 @@
             <a href="#" class="menu-item" routerLink="/exams/"> {{"menu.EXAMATT" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/exams/attendapp"> {{"menu.EXAMAPP" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/exams/examexcuse"> {{"menu.EXAMEXEC" | translate}} </a>
+            <a href="#" class="menu-item" routerLink="/procedures/objectexam"> {{"menu.objectexam" | translate}} </a>
+          </div>
 
+
+        </div>
+        <div *ngIf="menuType==1 &&showServices" class="nav-item has-sub ">
+          <a href="javascript:void(0)"><span> {{"menu.GRADUATE" | translate}} </span> <i
+              class="ik ik-layers"></i></a>
+          <div class="submenu-content">
+            <a href="#" class="menu-item" routerLink="/other/studentinfo"> {{"menu.GRADUATEINFO" | translate}} </a>
+
+            <a href="#" class="menu-item" routerLink="/academicaff/graduationstatment">
+              {{"menu.graduationstatment" | translate}} </a>
           </div>
 
 
@@ -186,8 +194,6 @@
           <a href="javascript:void(0)"><span> {{"menu.OTHERREQ" | translate}} </span> <i class="ik ik-package"></i></a>
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/other/medicalreport"> {{"menu.MED" | translate}} </a>
-            <a href="#" class="menu-item" routerLink="/other/universitycard"> {{"menu.UID" | translate}} </a>
-            <a href="#" class="menu-item" routerLink="/other/studentinfo"> {{"menu.GRADUATEINFO" | translate}} </a>
             <!--   <a href="#" class="menu-item" routerLink="/other/missingcard">طلب بطاقة جامعية بدل فاقد </a>
                                 <a href="#" class="menu-item" routerLink="/other/training"> طلب التدريب الميداني  </a>-->
 

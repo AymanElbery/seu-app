@@ -38,6 +38,7 @@
         "current_academic_status": "Current Academic Status",
         "graduation_gpa": "Final GPA",
         "academic_position": "Academic Position",
+        "academic_position_term": "Term Academic Position",
         "fees": "Fees",
         "academic_status_through_terms": "Student's Academic Status Through Terms",
         "loading": "Loading .....................",
@@ -172,7 +173,8 @@
         "not": "notifications ",
         "notfound": "not found ",
         "skills_record": "Skills Record",
-        "BLACKBOARD": "Black Board"
+        "BLACKBOARD": "Black Board",
+        "GRADUATE" : "Graduate affairs"
     },
     "services": {
         "academic_status": {
