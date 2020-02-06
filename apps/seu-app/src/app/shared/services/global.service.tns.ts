@@ -12,5 +12,4 @@ export class GlobalService extends GlobalBaseService {
 
 
   getSID() {
-    return 'MWE0OTNhMDgtZTViNi00OWIwLWIwMDktODJjZjc3YjRjM2NlfHdiSi9aQWRCcUQ1cEFEOGRFSUpBOTBESnpiRT0='; }
-}
+    return 'ZmUyNTY2YTEtOGM0ZC00NWJlLWJmNzEtOWJlNWI4YTg3M2Y0fEZVVlBPb3VQSUNMSnJ3a0NIemVTUk5GUUJrMD0='; }}
