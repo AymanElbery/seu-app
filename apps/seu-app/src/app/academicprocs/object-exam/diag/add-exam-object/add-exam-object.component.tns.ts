@@ -122,7 +122,7 @@ public openCustomFilesPicker(type:string) {
   if (app.ios) {
       extensions = [kUTTypePDF];
   } else {
-      extensions = ['png','jpeg'];
+      extensions = ['png','jpeg','pdf'];
   }
 
   let options: FilePickerOptions = {

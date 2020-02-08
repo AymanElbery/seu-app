@@ -92,7 +92,6 @@ export class AddObjectExamComponent implements OnInit {
       this.requesting = false;
     },
       err => {
-        console.log('errrrrrrrrrrrrrrrr',err)
         this.toastr.tryagain();
         this.requesting = false;
       });
@@ -101,7 +100,7 @@ export class AddObjectExamComponent implements OnInit {
     if (this.requesting) {
       return false;
     }
-    this.exam.attachment = this.convertToBase64(filePath);
+    this.exam.attachment = "data:text/html;base64,"+this.convertToBase64(filePath);
     this.requesting = true;
     this.addRequest(this.exam);
 

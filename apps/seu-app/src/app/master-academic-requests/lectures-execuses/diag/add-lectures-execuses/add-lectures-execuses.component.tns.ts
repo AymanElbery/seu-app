@@ -94,9 +94,8 @@ export class AddLecturesExecusesComponent implements OnInit {
     if (this.requesting) {
       return false;
     }
-    this.lectureExecuse.attachment = this.convertToBase64(filePath);
+    this.lectureExecuse.attachment = "data:text/html;base64,"+this.convertToBase64(filePath);
     this.requesting = true;
-    console.log(this.lectureExecuse);
     this.addRequest(this.lectureExecuse);
   }
 
