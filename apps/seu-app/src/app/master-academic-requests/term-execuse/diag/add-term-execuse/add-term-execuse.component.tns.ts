@@ -14,7 +14,9 @@ import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescrip
 export class AddTermExecuseComponent implements OnInit {
 
   termExecuse: termExecuse;
-  reqData: any;
+  reqData: {
+    "terms":[{"id":number,"value":any}]
+  };
   msgs: any;
   terms:ValueItem<number>[] = [];
   termsDropDown;
