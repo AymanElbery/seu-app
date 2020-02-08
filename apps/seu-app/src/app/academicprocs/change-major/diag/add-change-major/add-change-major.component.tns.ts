@@ -14,7 +14,7 @@ export class AddChangeMajorComponent implements OnInit {
   printAR;
   mj: { major };
   reqData={"majors":[]};
-  msgs;
+  msgs=[];
   majors:ValueItem<number>[] = [];
   majorsDropDown;
 

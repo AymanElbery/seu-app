@@ -24,7 +24,7 @@ let filePath: string = null;
 export class AddExamObjectComponent implements OnInit {
 
 
-  reqData: {"banks":[any]};
+  reqData={"banks":[]};
   exam: ObjectExam;
   msgs: any;
   banks:ValueItem<number>[] = [];
