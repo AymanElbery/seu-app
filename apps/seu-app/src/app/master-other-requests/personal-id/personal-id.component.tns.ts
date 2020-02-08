@@ -7,6 +7,7 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-personal-id',
@@ -16,7 +17,7 @@ import * as app from 'tns-core-modules/application';
 export class PersonalIDComponent implements OnInit {
 
   card: universityCard;
-  reqData;
+  reqData:RequestData;
   msgs;
   status;
   isLoading = false;
@@ -55,7 +56,6 @@ export class PersonalIDComponent implements OnInit {
         var key = this.reqData;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

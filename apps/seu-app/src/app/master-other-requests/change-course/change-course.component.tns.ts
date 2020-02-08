@@ -11,6 +11,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { Router } from '@angular/router';
+import { RequestData } from '../../shared/models/request-data';
 
 @Component({
   selector: 'app-change-course',
@@ -20,7 +21,7 @@ import { Router } from '@angular/router';
 export class ChangeCourseComponent implements OnInit {
 
   changecourse: changeCourse;
-  reqData;
+  reqData:RequestData={can_add_new_request:false,requests:[],reqs:[],notes:[]};
   msgs;
   status;
   isLoading = false;
@@ -48,7 +49,6 @@ export class ChangeCourseComponent implements OnInit {
         this.isLoading = false;
         // console.log(this.reqData);
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         console.log(err);
         this.toastr.tryagain();

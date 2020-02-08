@@ -42,7 +42,7 @@ export class AddChangeCourseComponent implements OnInit {
 
   printAR;
   course: changeCourse;
-  reqData;
+  reqData:{"majors":[{"key":number,"value":any}]};
   msgs;
   hiddenfield: true;
   majors: ValueItem<number>[] = [];

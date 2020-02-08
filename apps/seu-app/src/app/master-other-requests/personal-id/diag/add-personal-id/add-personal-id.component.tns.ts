@@ -9,8 +9,6 @@ import { File } from 'tns-core-modules/file-system';
 import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 
 declare const kUTTypePDF;
-declare var NSString: any;
-declare var NSUTF8StringEncoding: any;
 declare var java: any;
 declare var android: any;
 let filePath: string = null;
@@ -28,7 +26,7 @@ export class AddPersonalIdComponent implements OnInit {
     private routerExtensions: RouterExtensions) { }
 
   card: universityCard;
-  reqData;
+  reqData:{"times":[any],"days":[any]};
   msgs;
   times:ValueItem<number>[] = [];
   days:ValueItem<number>[] = [];
