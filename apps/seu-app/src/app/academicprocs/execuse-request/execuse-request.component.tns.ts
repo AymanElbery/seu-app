@@ -17,8 +17,8 @@ import { RequestData } from '../../shared/models/request-data';
 export class ExecuseRequestComponent implements OnInit {
 
   reason: string;
-  reqData:RequestData;
-  msgs;
+  reqData:RequestData={can_add_new_request:false,requests:[],reqs:[],notes:[]};
+  msgs=[];
   status;
   isLoading = false;
 

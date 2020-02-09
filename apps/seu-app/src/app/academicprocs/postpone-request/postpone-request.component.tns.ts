@@ -20,8 +20,8 @@ export class PostponeRequestComponent implements OnInit {
 
   printAR;
   reason: string;
-  reqData:RequestData;
-  msgs;
+  reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
+  msgs=[];
   status;
 
   constructor(private _modalService: ModalDialogService,private translate: TranslateService,

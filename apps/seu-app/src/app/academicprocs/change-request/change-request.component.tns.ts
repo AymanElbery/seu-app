@@ -21,9 +21,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class ChangeRequestComponent implements OnInit {
 
 
-  reqData:RequestData;  collapse;
-
-  msgs;
+  reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};  
+  collapse;
+  msgs=[];
   status;
   isLoading = false;
   deleting = false;

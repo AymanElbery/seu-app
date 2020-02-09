@@ -12,7 +12,9 @@ import { ValueItem, ValueList, SelectedIndexChangedEventData } from 'nativescrip
 })
 export class AddStudyPostponeComponent implements OnInit {
   postpone: studyPostpone;
-  reqData: any;
+  reqData= {
+    "terms":[{"id":-1,"value":""}],
+    "cur_term":""};
   msgs: any;
   private imageSrc = '';
   terms:ValueItem<number>[] = [];

@@ -14,7 +14,15 @@ declare var UIView, NSMutableArray, NSIndexPath;
 })
 export class AcademicRecordComponent implements OnInit {
   constructor(private academicService: AcademicRecordService) { }
-  recoredData;
+  recoredData={
+    "coll":"",
+    "major":"",
+    "std_id":"",
+    "ssn":"",
+    "grade":"",
+    "status":"",
+    "terms":[],
+  };
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;

@@ -25,7 +25,12 @@ export class AddLecturesExecusesComponent implements OnInit {
   lectureExecuse: LectureExecuse;
   msgs: any;
   private imageSrc = '';
-  reqData;
+  reqData={
+    "weeks_list":[],
+    "lectures_type":[],
+    "notes":[],
+    "schedules":[]
+  };
   weeks:ValueItem<number>[] = [];
   lecs:ValueItem<number>[] = [];
   weeksDropDown;
@@ -94,9 +99,8 @@ export class AddLecturesExecusesComponent implements OnInit {
     if (this.requesting) {
       return false;
     }
-    this.lectureExecuse.attachment = this.convertToBase64(filePath);
+    this.lectureExecuse.attachment = "data:text/html;base64,"+this.convertToBase64(filePath);
     this.requesting = true;
-    console.log(this.lectureExecuse);
     this.addRequest(this.lectureExecuse);
   }
 

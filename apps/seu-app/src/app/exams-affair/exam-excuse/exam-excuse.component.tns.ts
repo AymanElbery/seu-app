@@ -16,8 +16,8 @@ import { RequestData } from '../../shared/models/request-data';
 export class ExamExcuseComponent implements OnInit {
 
 
-  reqData:RequestData;
-  msgs;
+  reqData:RequestData={can_add_new_request:false,notes:[],requests:[],reqs:[]};
+  msgs=[];
   status;
   isLoading = false;
 

@@ -12,7 +12,7 @@ import { AppToasterService } from '../../../../shared/services/app-toaster';
 })
 export class AddRequestComponent implements OnInit {
   withdraw: UnivWithdraw;
-  reqData: {"branches":[any]};
+  reqData= {"branches":[]};
   msgs: any;
   private imageSrc = '';
   requesting = false;

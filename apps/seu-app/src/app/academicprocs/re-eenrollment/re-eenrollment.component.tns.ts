@@ -20,8 +20,8 @@ import { RequestData } from '../../shared/models/request-data';
 export class ReEenrollmentComponent implements OnInit {
   printAR;
   reEnroll: ReEnroll;
-  reqData:RequestData;
-  msgs;
+  reqData:RequestData={can_add_new_request:false,requests:[],reqs:[],notes:[]};
+  msgs=[];
   status;
   isLoading = false;
 

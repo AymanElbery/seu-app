@@ -18,8 +18,8 @@ export class CourseEqualizeComponent implements OnInit {
 
   printAR;
   reason: string;
-  reqData:RequestData;
-  msgs;
+  reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
+  msgs=[];
   status;
   isLoading = false;
 

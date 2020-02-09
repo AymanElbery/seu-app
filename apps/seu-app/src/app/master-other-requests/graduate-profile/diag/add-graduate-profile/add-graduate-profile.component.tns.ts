@@ -1,7 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { StudentInfo } from '../../../../shared/models/student-info';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { ToastrService } from 'ngx-toastr';
 import { GraduateProfileService } from '../../../../master-other-requests/services/graduate-profile.service';
 import { NgForm } from '@angular/forms';
 import { StudentData } from '../../../../shared/models/student-data';
@@ -24,7 +21,13 @@ let imgPath: string = null;
 })
 export class AddGraduateProfileComponent implements OnInit {
 
-  reqData;
+  reqData={
+    "stdinfo":{},
+    "job_status":[],
+    "job_sector":[],
+    "job_promo":[],
+    "cities":[]
+  };
   msgs;
   stdinfo: StudentData;
   fileType;

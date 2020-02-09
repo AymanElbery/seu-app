@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import * as utils from 'tns-core-modules/utils/utils';
-import { RequestData } from '../../shared/models/request-data';
+import { ExamData } from '../../shared/models/exam-data';
 
 @Component({
   selector: 'app-exams-attend-app',
@@ -13,7 +13,11 @@ import { RequestData } from '../../shared/models/request-data';
 })
 export class ExamsAttendAppComponent implements OnInit {
 
-  eaData:RequestData;
+  eaData:ExamData={
+    Final_Exam_With_Schedule:{Final_Schedule:[],labels:{},values:{},messages:[]},
+    Final_Exam_Without_Schedule:{labels:{},values:{},messages:[]},
+    Term_Exam_With_Schedule:{Term_Schedule:[],labels:{},values:{},messages:[]},
+    Term_Exam_Without_Schedule:{labels:{},values:{},messages:[]}};
   finalschedule: string;
   final: string;
   termSchedule: string;

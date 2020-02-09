@@ -20,7 +20,7 @@ var imgPath:string=null;
 export class AddEnglishEqualizerComponent implements OnInit {
 
   englishEqual: EnglishEqual;
-  reqData: EnglishEqual;
+  reqData: EnglishEqual={ tests: [], attachment: '', ENG_TESTS: [], notes: {}, crse_transfer_grades: [] };
   msgs: any;
   private imageSrc = '';
 

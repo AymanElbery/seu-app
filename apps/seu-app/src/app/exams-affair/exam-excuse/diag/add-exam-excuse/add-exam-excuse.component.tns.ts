@@ -21,7 +21,10 @@ let imgPath: string = null;
 export class AddExamExcuseComponent implements OnInit {
 
   examExcuse: examExcuse;
-  reqData;
+  reqData={
+    "schedules":[],
+    "exams_type":[{"id":-1,"value":""}]
+  };
   msgs: any;
   cets:ValueItem<number>[]=[];
   cetsDropDown;

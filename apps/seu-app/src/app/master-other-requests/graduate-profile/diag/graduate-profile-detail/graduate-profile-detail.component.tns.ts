@@ -13,7 +13,7 @@ import { ModalDialogParams } from 'nativescript-angular/common';
 export class GraduateProfileDetailComponent implements OnInit {
 
 
-  reqDataDetail;
+  reqDataDetail={"stdinfo":[]};
   msgsDetail;
   stdinfo: StudentInfo;
   STD_NAME_EN;

@@ -25,7 +25,11 @@ let filePath: string = null;
 export class AddObjectExamComponent implements OnInit {
 
 
-  reqData: any;
+  reqData= {
+    "bank_names":[{"id":-1,"value":""}],
+    "amounts":[{"id":"","value":""}],
+    "bank_accounts":[{"id":"","value":""}]
+    };
   exam: ObjectExam;
   msgs: any;
   banks:ValueItem<number>[] = [];
@@ -92,7 +96,6 @@ export class AddObjectExamComponent implements OnInit {
       this.requesting = false;
     },
       err => {
-        console.log('errrrrrrrrrrrrrrrr',err)
         this.toastr.tryagain();
         this.requesting = false;
       });
@@ -101,7 +104,7 @@ export class AddObjectExamComponent implements OnInit {
     if (this.requesting) {
       return false;
     }
-    this.exam.attachment = this.convertToBase64(filePath);
+    this.exam.attachment = "data:text/html;base64,"+this.convertToBase64(filePath);
     this.requesting = true;
     this.addRequest(this.exam);
 

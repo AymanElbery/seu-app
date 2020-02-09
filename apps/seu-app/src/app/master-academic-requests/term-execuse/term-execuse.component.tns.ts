@@ -19,7 +19,7 @@ export class TermExecuseComponent implements OnInit {
 
 
   termExecuse: termExecuse;
-  reqData:RequestData;
+  reqData:RequestData={can_add_new_request:false,requests:[],reqs:[],notes:[]};
   msgs;
   status;
   isLoading = false;

@@ -12,8 +12,8 @@ import { RouterExtensions } from 'nativescript-angular/router';
 export class AddCourseCancelComponent implements OnInit {
 
   cancelCousre: CancelCousre;
-  reqData: {"notes":[],"RegisteredCourses":[]};
-  msgs: any;
+  reqData = {notes:[],RegisteredCourses:[]};
+  msgs: [];
   private imageSrc = '';
 
   constructor(private toastr: AppToasterService, 

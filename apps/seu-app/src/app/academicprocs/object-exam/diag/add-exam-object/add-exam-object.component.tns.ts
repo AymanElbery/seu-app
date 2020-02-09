@@ -24,7 +24,7 @@ let filePath: string = null;
 export class AddExamObjectComponent implements OnInit {
 
 
-  reqData: {"banks":[any]};
+  reqData={"banks":[]};
   exam: ObjectExam;
   msgs: any;
   banks:ValueItem<number>[] = [];
@@ -122,7 +122,7 @@ public openCustomFilesPicker(type:string) {
   if (app.ios) {
       extensions = [kUTTypePDF];
   } else {
-      extensions = ['png','jpeg'];
+      extensions = ['png','jpeg','pdf'];
   }
 
   let options: FilePickerOptions = {

@@ -11,6 +11,7 @@ import * as dialogs from 'tns-core-modules/ui/dialogs';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
+import { RequestData } from '../../shared/models/request-data';
 @Component({
   selector: 'app-change-branch',
   templateUrl: './change-branch.component.tns.html',
@@ -29,7 +30,7 @@ export class ChangeBranchComponent implements OnInit {
 
   printAR;
   changeBranch: changeBranch;
-  reqData;
+  reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
   msgs;
   status;
   isLoading = false;
@@ -60,7 +61,6 @@ export class ChangeBranchComponent implements OnInit {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

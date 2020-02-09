@@ -8,6 +8,7 @@ import { ChangeRequest } from 'src/app/shared/models/change-request';
 import { AddRequestChangeComponent } from './diag/add-request-change/add-request-change.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
+import { RequestData } from '../../shared/models/request-data';
 @Component({
   selector: 'app-change-request',
   templateUrl: './change-request.component.html',
@@ -17,8 +18,8 @@ export class ChangeRequestComponent implements OnInit,OnDestroy {
 
   //printAR;
   //changeRequest: ChangeRequest;
-  reqData;
-  msgs;
+  reqData:RequestData={can_add_new_request:false,notes:[],requests:[],reqs:[]};
+  msgs=[];
   status;
   isLoading = false;
 
@@ -54,7 +55,6 @@ export class ChangeRequestComponent implements OnInit,OnDestroy {
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
-        this.reqData = [];
         this.msgs = [];
         this.toastr.tryagain();
         this.isLoading = false;

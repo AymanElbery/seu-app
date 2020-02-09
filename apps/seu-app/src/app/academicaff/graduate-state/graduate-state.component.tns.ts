@@ -17,7 +17,7 @@ export class GraduateStateComponent implements OnInit {
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
-  msgs;
+  msgs=[];
   constructor(private graduateStateSer: GraduatesStateService) { }
 
   ngOnInit() {

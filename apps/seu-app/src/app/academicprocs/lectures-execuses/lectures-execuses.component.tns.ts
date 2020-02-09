@@ -20,8 +20,8 @@ export class LecturesExecusesComponent implements OnInit {
 
   printAR;
   lectureExecuse: LectureExecuse;
-  reqData:RequestData;
-  msgs;
+  reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
+  msgs=[];
   isLoading = false;
 
   constructor(private routerExtensions: RouterExtensions, 

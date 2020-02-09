@@ -24,7 +24,7 @@ let imgPath: string = null;
 export class AddVisitorStudentComponent implements OnInit {
 
   visitorStudent: VisitorStudent
-  reqData: {"notes":[]};
+  reqData= {"notes":[]};
   msgs: any;
   universitiesList: [any];
   termList: [any];

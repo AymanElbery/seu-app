@@ -21,7 +21,7 @@ export class ReEnrollComponent implements OnInit {
 
   printAR;
   reEnroll: ReEnroll;
-  reqData:RequestData;
+  reqData:RequestData={can_add_new_request:false,requests:[],reqs:[],notes:[]};
   msgs;
   status;
   isLoading = false;

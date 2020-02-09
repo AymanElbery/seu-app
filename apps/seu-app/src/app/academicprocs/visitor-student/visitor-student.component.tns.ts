@@ -21,7 +21,7 @@ export class VisitorStudentComponent implements OnInit {
     private routerExtensions: RouterExtensions,
     private translate: TranslateService
   ) { }
-  reqData:RequestData;
+  reqData:RequestData={can_add_new_request:false,notes:[],requests:[],reqs:[]};
   msgs;
   status;
   isLoading = false;

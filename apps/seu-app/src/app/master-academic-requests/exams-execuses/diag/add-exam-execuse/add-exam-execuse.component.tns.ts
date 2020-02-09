@@ -24,9 +24,9 @@ let imgPath: string = null;
 export class AddExamExecuseComponent implements OnInit {
 
   examExcuse: examExcuse;
-  reqData;
+  reqData={"exams_type":[{"id":"","value":""}]};
   msgs: any;
-  cets:ValueItem<number>[]=[];
+  cets:ValueItem<string>[]=[];
   cetsDropDown;
 
   constructor(
@@ -65,13 +65,11 @@ export class AddExamExecuseComponent implements OnInit {
       this.toastr.push((res as any).messages);
       if (res['status']) {
         this.acadmicProc.newreqs = true;
-        this.routerExtensions.navigate(['/procedures/examsexecuses']);
+        this.routerExtensions.navigate(['/academicrequests/examsexecuses']);
       }
       this.requesting = false;
     },
       err => {
-        console.log('errrrrrrrrrrrrrrrrrrrrrrr',err)
-
         this.toastr.tryagain();
         this.requesting = false;
       });
@@ -80,7 +78,7 @@ export class AddExamExecuseComponent implements OnInit {
     if (this.requesting) {
       return false;
     }
-    this.examExcuse.attachment =this.convertToBase64(filePath);
+    this.examExcuse.attachment ="data:text/html;base64,"+this.convertToBase64(filePath);
     
     this.requesting = true;
     this.addRequest(this.examExcuse);

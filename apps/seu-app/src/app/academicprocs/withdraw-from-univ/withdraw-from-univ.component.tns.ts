@@ -21,8 +21,8 @@ export class WithdrawFromUnivComponent implements OnInit {
 
   printAR;
   withdraw: UnivWithdraw;
-  reqData:RequestData;
-  msgs;
+  reqData:RequestData={can_add_new_request:false,reqs:[],requests:[],notes:[]};
+  msgs=[];
   status;
 
   isLoading = false;
