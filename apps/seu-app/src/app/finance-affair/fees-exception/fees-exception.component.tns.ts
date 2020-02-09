@@ -17,7 +17,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class FeesExceptionComponent implements OnInit {
 
   constructor(    private router: Router,    private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
-  reqData: BaseData;
+  reqData: BaseData={requests:[]};
   msgs;
   status;
   isLoading = false;

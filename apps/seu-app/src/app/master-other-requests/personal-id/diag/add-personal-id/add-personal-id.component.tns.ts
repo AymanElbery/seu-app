@@ -26,7 +26,7 @@ export class AddPersonalIdComponent implements OnInit {
     private routerExtensions: RouterExtensions) { }
 
   card: universityCard;
-  reqData:{"times":[any],"days":[any]};
+  reqData={"times":[],"days":[]};
   msgs;
   times:ValueItem<number>[] = [];
   days:ValueItem<number>[] = [];

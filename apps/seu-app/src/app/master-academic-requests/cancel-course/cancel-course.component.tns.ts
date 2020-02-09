@@ -21,8 +21,8 @@ export class CancelCourseComponent implements OnInit {
 
   printAR;
   cancelCousre: CancelCousre;
-  reqData:RequestData;
-  msgs;
+  reqData:RequestData={can_add_new_request:false,notes:[],requests:[],reqs:[]};
+  msgs=[];
   status;
   isLoading = false;
 

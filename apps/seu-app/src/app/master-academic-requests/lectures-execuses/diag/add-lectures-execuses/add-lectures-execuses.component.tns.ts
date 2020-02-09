@@ -25,7 +25,12 @@ export class AddLecturesExecusesComponent implements OnInit {
   lectureExecuse: LectureExecuse;
   msgs: any;
   private imageSrc = '';
-  reqData;
+  reqData={
+    "weeks_list":[],
+    "lectures_type":[],
+    "notes":[],
+    "schedules":[]
+  };
   weeks:ValueItem<number>[] = [];
   lecs:ValueItem<number>[] = [];
   weeksDropDown;

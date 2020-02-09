@@ -17,7 +17,7 @@ import { RequestData } from '../../shared/models/request-data';
 export class PersonalIDComponent implements OnInit {
 
   card: universityCard;
-  reqData:RequestData;
+  reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
   msgs;
   status;
   isLoading = false;

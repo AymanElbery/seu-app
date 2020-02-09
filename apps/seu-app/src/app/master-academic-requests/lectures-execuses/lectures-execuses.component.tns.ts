@@ -20,7 +20,7 @@ export class LecturesExecusesComponent implements OnInit {
 
   printAR;
   lectureExecuse: LectureExecuse;
-  reqData:RequestData;
+  reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
   msgs;
   isLoading = false;
 

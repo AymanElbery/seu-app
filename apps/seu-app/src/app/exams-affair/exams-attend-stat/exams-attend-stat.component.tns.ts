@@ -13,7 +13,12 @@ import { ExamData } from '../../shared/models/exam-data';
 })
 export class ExamsAttendStatComponent implements OnInit {
 
-  eaData:ExamData;
+  eaData:ExamData={
+    Final_Exam_With_Schedule:{Final_Schedule:[],labels:{},values:{},messages:[]},
+  Final_Exam_Without_Schedule:{labels:{},values:{},messages:[]},
+  Term_Exam_With_Schedule:{Term_Schedule:[],labels:{},values:{},messages:[]},
+  Term_Exam_Without_Schedule:{labels:{},values:{},messages:[]}};
+  
   finalschedule: string;
   final: string;
   termSchedule: string;

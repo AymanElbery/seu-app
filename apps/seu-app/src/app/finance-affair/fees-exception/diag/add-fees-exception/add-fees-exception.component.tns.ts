@@ -43,7 +43,13 @@ export class AddFeesExceptionComponent implements OnInit {
               private toastr: AppToasterService, private acadmicProc: FeesExceptionService, private trns: TranslateService) { }
 
   feesException: FeesException;
-  reqData: any;
+  reqData= {
+  "banks":[],
+  "account_relative":[],
+  "exception_type":[],
+  "associations":[],
+  "have_account":[]
+};
   msgs: any;
   gidText: any;
   cidText: any;

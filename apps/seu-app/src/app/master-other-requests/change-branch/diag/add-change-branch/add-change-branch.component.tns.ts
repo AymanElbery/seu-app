@@ -19,7 +19,7 @@ export class AddChangeBranchComponent implements OnInit {
 
   // changeRequest: ChangeRequest;
 
-  camps: [{"key":number,"value":any}];
+  camps= [{"key":-1,"value":""}];
   cmp: changeBranch;
   msgs: any;
   private imageSrc = '';

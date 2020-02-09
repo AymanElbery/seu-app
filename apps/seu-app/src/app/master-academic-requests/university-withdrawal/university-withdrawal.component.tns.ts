@@ -20,7 +20,7 @@ export class UniversityWithdrawalComponent implements OnInit {
 
   printAR;
   withdrawalRequest: masterWithdrawal;
-  reqData:RequestData;
+  reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
   msgs;
   status;
   isLoading = false;

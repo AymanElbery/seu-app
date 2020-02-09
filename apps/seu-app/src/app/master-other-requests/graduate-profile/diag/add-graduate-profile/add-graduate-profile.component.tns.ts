@@ -21,12 +21,12 @@ let imgPath: string = null;
 })
 export class AddGraduateProfileComponent implements OnInit {
 
-  reqData:{
+  reqData={
     "stdinfo":{},
-    "job_status":[any],
-    "job_sector":[any],
-    "job_promo":[any],
-    "cities":[any]
+    "job_status":[],
+    "job_sector":[],
+    "job_promo":[],
+    "cities":[]
   };
   msgs;
   stdinfo: StudentData;

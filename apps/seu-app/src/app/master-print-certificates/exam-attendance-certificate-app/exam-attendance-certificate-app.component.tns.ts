@@ -12,7 +12,12 @@ import { ExamData } from '../../shared/models/exam-data';
 })
 export class ExamAttendanceCertificateAppComponent implements OnInit {
 
-  eaData:ExamData;
+  eaData:ExamData={
+    Final_Exam_With_Schedule:{Final_Schedule:[],labels:{},messages:[],values:{}},
+    Final_Exam_Without_Schedule:{labels:{},values:{},messages:[]},
+    Term_Exam_With_Schedule:{labels:{},values:{},messages:[],Term_Schedule:[]},
+    Term_Exam_Without_Schedule:{labels:{},messages:[],values:{}}
+  };
   finalschedule: string;
   final: string;
   termSchedule: string;

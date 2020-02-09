@@ -20,7 +20,7 @@ export class StudyPostponeComponent implements OnInit {
 
 
   studypostpone: studyPostpone;
-  reqData:RequestData;
+  reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
   msgs;
   status;
   isLoading = false;
