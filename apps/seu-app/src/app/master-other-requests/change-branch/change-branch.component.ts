@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { changeBranch } from 'src/app/shared/models/change-branch';
@@ -13,12 +13,12 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './change-branch.component.html',
   styleUrls: ['./change-branch.component.scss']
 })
-export class ChangeBranchComponent implements OnInit {
+export class ChangeBranchComponent implements OnInit, OnDestroy {
 
   constructor(private translate: TranslateService,
-              public dialog: MatDialog,
-              private toastr: AppToasterService,
-              private acadmicProc: ChangeBranchService) { }
+    public dialog: MatDialog,
+    private toastr: AppToasterService,
+    private acadmicProc: ChangeBranchService) { }
 
   printAR;
   changeBranch: changeBranch;
@@ -32,7 +32,21 @@ export class ChangeBranchComponent implements OnInit {
   ngOnInit() {
     this.changeBranch = { camp: '', reason: '', mobile: '' };
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
 
   getRequests() {
     this.isLoading = true;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { changeCourse } from 'src/app/shared/models/change-course';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './change-course.component.html',
   styleUrls: ['./change-course.component.scss']
 })
-export class ChangeCourseComponent implements OnInit {
+export class ChangeCourseComponent implements OnInit, OnDestroy {
 
   // tslint:disable-next-line: max-line-length
   constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ChangeCourseService) { }
@@ -28,6 +28,19 @@ export class ChangeCourseComponent implements OnInit {
   ngOnInit() {
     this.changecourse = { bacholar_copy: '', major: '', mobile: '', reason: '', academic_record: '', outside: '' };
     this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
   }
 
   getRequests() {

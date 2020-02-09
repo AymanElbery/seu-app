@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {CertificateIDService} from '../services/certificate-id.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CertificateIDService } from '../services/certificate-id.service';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-certificate-id',
   templateUrl: './certificate-id.component.html',
   styleUrls: ['./certificate-id.component.scss']
 })
-export class CertificateIDComponent implements OnInit {
+export class CertificateIDComponent implements OnInit, OnDestroy {
   reqData;
   msgs;
   status;
@@ -14,9 +16,22 @@ export class CertificateIDComponent implements OnInit {
   EngPrint: string;
   isLoading = false;
 
-  constructor(private stdData: CertificateIDService) { }
+  constructor(private transalte: TranslateService, private toastr: AppToasterService, private stdData: CertificateIDService) { }
 
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
   ngOnInit() {
+    this.getReqs();
+    this.subscriptions = this.transalte.onLangChange.subscribe(() => {
+      this.getReqs();
+    })
+  }
+
+  getReqs() {
     this.isLoading = true;
     this.stdData.getRequest().then(
       res => {
@@ -27,6 +42,9 @@ export class CertificateIDComponent implements OnInit {
         this.msgs = this.stdData.msgs;
         this.isLoading = false;
 
+      }, err => {
+        this.toastr.tryagain;
+        this.isLoading = false;
       }
     );
     this.arabicPrint = this.stdData.Download();

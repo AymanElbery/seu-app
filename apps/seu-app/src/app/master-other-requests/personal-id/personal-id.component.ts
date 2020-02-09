@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { universityCard } from 'src/app/shared/models/university-card';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +13,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   templateUrl: './personal-id.component.html',
   styleUrls: ['./personal-id.component.scss']
 })
-export class PersonalIDComponent implements OnInit {
+export class PersonalIDComponent implements OnInit, OnDestroy {
 
   card: universityCard;
   reqData;
@@ -24,20 +24,24 @@ export class PersonalIDComponent implements OnInit {
   constructor(private translate: TranslateService, public dialog: MatDialog, public receiptDiag: MatDialog, private toastr: AppToasterService, private univCard: PersonalIDService) { }
 
   ngOnInit() {
-    this.isLoading = true;
     this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
-    this.univCard.getِgetRequests().then(
-      res => {
-        this.univCard.reqData = (res as any).data;
-        this.univCard.msgs = (res as any).messages;
-        this.reqData = this.univCard.reqData;
-        this.msgs = this.univCard.msgs;
-        var key = this.reqData;
-        this.isLoading = false;
-        //console.log(this.reqData);
-      }
-    );
+    this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
+
   getRequests() {
     this.isLoading = true;
     this.univCard.getِgetRequests().then(
