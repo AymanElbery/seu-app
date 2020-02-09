@@ -87,10 +87,12 @@
         "language": "اللغة",
         "email": "البريد الالكتروني",
         "course_code_name": "اسم المقرر/الرمز",
-        "choose": "إختر"
+        "choose": "إختر",
+        "admis_pages": "الصفحات الإدارية",
+        "stds_pages": "نظام ادارة الخدمات الالكترونية"
     },
     "menu": {
-        "myservices": "خدماتي",
+        "myservices": "أنظمتي",
         "ugservices": "خدمات البكالوريوس",
         "grservices": "خدمات الماجستير",
         "userData": "بيانات الطالب",
@@ -147,7 +149,7 @@
         "MED": "طلب تقرير طبي",
         "UID": "طلب البطاقة الجامعية",
         "GRADUATEINFO": "بيانات خريج",
-        "PublicServices": "خدمات عامة",
+        "PublicServices": "أنظمتي",
         "email": "البريد الالكتروني",
         "ALWAFI": "نظام الوافي",
         "Attednace": "الحضور والإنصراف",
