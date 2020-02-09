@@ -8,7 +8,7 @@ export const environment = {
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso/', // newservices/
   servicesprefix: 'api-test', // api-test
-  appsprefix: 'apps-prod', // api-test
+  appsprefix: 'apps-test', // api-test
   loginpage: 'login-sst.php'
 };
 
