@@ -92,18 +92,17 @@
                       <a href="#" class="menu-item">تحويل إلى برنامج آخر</a>
                       <a href="#" class="menu-item"routerLink="/otherrequests/changecourse" >تحويل إلى برنامج آخر</a>-->
             <a href="#" class="menu-item" routerLink="/otherrequests/personalid"> {{"menu.personalid" | translate}} </a>
-            <a href="#" class="menu-item" routerLink="/otherrequests/absencequery"> {{"menu.absencequery" | translate}}
-            </a>
+            <!-- <a href="#" class="menu-item" routerLink="/otherrequests/absencequery"> {{"menu.absencequery" | translate}}
+            </a> -->
             <a href="#" class="menu-item"
               routerLink="/otherrequests/graduateprofile">{{"menu.graduateprofile" | translate}} </a>
-
           </div>
         </div>
         <div *ngIf="menuType==1&&showServices" class="nav-item has-sub ">
           <a href="javascript:void(0)"><span> {{"menu.affairs" | translate}} </span> <i class="ik ik-user"></i></a>
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/academicaff/status"> {{"menu.status" | translate}} </a>
-            <a href="#" class="menu-item" routerLink="/academicaff/skills"> {{"menu.skills_record" | translate}} </a>
+            <!-- <a href="#" class="menu-item" routerLink="/academicaff/skills"> {{"menu.skills_record" | translate}} </a> -->
             <a href="#" class="menu-item" routerLink="/academicaff/certificate"> {{"menu.certificate" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/academicaff/record"> {{"menu.record" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/other/universitycard"> {{"menu.UID" | translate}} </a>
@@ -115,14 +114,14 @@
           <a href="javascript:void(0)"><span> {{"menu.procedures" | translate}} </span> <i class="ik ik-layers"></i></a>
           <div class="submenu-content">
             <!--  <a href="#" class="menu-item" routerLink="/procedures/terminate">الانسحاب من الجامعة   </a>-->
-            
+
 
             <a href="#" class="menu-item" routerLink="/procedures/postpone"> {{"menu.postpone" | translate}}
             </a>
             <a href="#" class="menu-item" routerLink="/procedures/execuse"> {{"menu.execuse" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/procedures/summer"> {{"menu.summer" | translate}} </a>
 
-            
+
             <a href="#" class="menu-item" routerLink="/procedures/equalize"> {{"menu.equalize" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/procedures/eequalize"> {{"menu.eequalize" | translate}} </a>
 
@@ -179,8 +178,7 @@
 
         </div>
         <div *ngIf="menuType==1 &&showServices" class="nav-item has-sub ">
-          <a href="javascript:void(0)"><span> {{"menu.GRADUATE" | translate}} </span> <i
-              class="ik ik-layers"></i></a>
+          <a href="javascript:void(0)"><span> {{"menu.GRADUATE" | translate}} </span> <i class="ik ik-layers"></i></a>
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/other/studentinfo"> {{"menu.GRADUATEINFO" | translate}} </a>
 
@@ -217,6 +215,11 @@
             <a target="_blank" href="https://bannadmin.seu.edu.sa/applicationNavigator" class="menu-item">
               {{"menu.BANNER" | translate}}
               <i class="ik ik-tablet"></i> </a>
+            <a href="#" class="menu-item" routerLink="/admis-pages">{{"general.admis_pages" | translate}}  <i
+              class="ik ik-tablet"></i></a>
+            <a href="#" class="menu-item" routerLink="/stdsnew-pages">
+              {{"general.stds_pages" | translate}} <i
+              class="ik ik-tablet"></i>  </a>
           </div>
         </div>
 

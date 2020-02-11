@@ -1,20 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { AcademicStatusService } from '../services/academic-status.service';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-academic-status',
   templateUrl: './academic-status.component.html',
   styleUrls: ['./academic-status.component.scss']
 })
-export class AcademicStatusComponent implements OnInit {
+export class AcademicStatusComponent implements OnInit, OnDestroy {
   reqData;
   msgs;
   status;
   isLoading = false;
-  constructor(private toastr: ToastrService, private stdData: AcademicStatusService) { }
+  constructor(private transalte: TranslateService, private toastr: AppToasterService, private stdData: AcademicStatusService) { }
 
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
   ngOnInit() {
+    this.getReqs();
+    this.subscriptions = this.transalte.onLangChange.subscribe(() => {
+      this.getReqs();
+    })
+  }
+
+  getReqs() {
     this.isLoading = true;
 
     this.stdData.getRequests().then(
@@ -25,6 +40,9 @@ export class AcademicStatusComponent implements OnInit {
         this.msgs = this.stdData.msgs;
         this.isLoading = false;
         // console.log(this.reqData);
+      }, err => {
+        this.toastr.tryagain;
+        this.isLoading = false;
       }
     );
   }

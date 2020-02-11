@@ -87,7 +87,9 @@
         "language": "Language",
         "email": "Email",
         "course_code_name": "Course Name/Code",
-        "choose": "Choose"
+        "choose": "Choose",
+        "admis_pages": "الصفحات الإدارية",
+        "stds_pages": "نظام ادارة الخدمات الالكترونية"
     },
     "menu": {
         "myservices": "My Services",

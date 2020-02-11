@@ -8,6 +8,8 @@ import { PrintFileComponent } from './PrintExample/print-file/print-file.compone
 import { AuthGuard } from './guards/auth.guard';
 import { UGGuard } from './guards/ug.guard';
 import { GRGuard } from './guards/gr.guard';
+import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
+import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,8 @@ const routes: Routes = [
       { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'home/:t', component: HomeComponent },
+      { path: 'admis-pages', component: AdmisPagesComponent },
+      { path: 'stdsnew-pages', component: StdsPagesComponent },
       {
         path: 'academicaff',
         loadChildren: './academicaff/academicaff.module#AcademicaffModule',

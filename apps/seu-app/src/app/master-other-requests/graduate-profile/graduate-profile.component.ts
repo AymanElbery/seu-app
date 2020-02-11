@@ -1,26 +1,40 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
 import { GraduateProfileService } from '../services/graduate-profile.service';
 import { GraduateProfileDetailComponent } from './diag/graduate-profile-detail/graduate-profile-detail.component';
 import { AddGraduateProfileComponent } from './diag/add-graduate-profile/add-graduate-profile.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-graduate-profile',
   templateUrl: './graduate-profile.component.html',
   styleUrls: ['./graduate-profile.component.scss']
 })
-export class GraduateProfileComponent implements OnInit {
+export class GraduateProfileComponent implements OnInit,OnDestroy {
 
 
   reqData;
   msgs;
   status;
   isLoading = false;
-  constructor(public dialog: MatDialog, private toastr: AppToasterService, private gradProfServ: GraduateProfileService) { }
+  constructor(private translate: TranslateService,public dialog: MatDialog, private toastr: AppToasterService, private gradProfServ: GraduateProfileService) { }
   ngOnInit() {
     this.getRequests();
+    this.subscribeLangChange();
+  }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
   }
 
   getRequests() {

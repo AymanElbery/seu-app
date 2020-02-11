@@ -50,6 +50,8 @@ import { GlobalBaseService } from './shared/services/global-base.service';
 import { OwlModule } from 'ngx-owl-carousel';
 import { AppTransModule } from './app.trans.module';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
+import {AdmisPagesComponent} from './admis-pages/old/admis-pages.component';
+import {StdsPagesComponent} from './admis-pages/stds/stds-pages.component';
 
 
 @NgModule({
@@ -66,7 +68,8 @@ import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
     MenuComponent,
     PageHeaderComponent,
     DownloadPrintDirective,
-    ExternalLinkDirective
+    ExternalLinkDirective,
+    AdmisPagesComponent,StdsPagesComponent
   ],
   imports: [
     BrowserModule,
