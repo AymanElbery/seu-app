@@ -19,8 +19,8 @@
     <Label verticalAlignment="center" [text]="absData.messages" class="ysMsg" *ngIf="status==0"></Label>
 </StackLayout>
 
-<TabView selectedIndex="1" *ngIf="!isLoading">
-	<StackLayout *tabItem='{title: eaData.Term_Exam_With_Schedule.labels.title}'>
+<TabView selectedIndex="3" *ngIf="!isLoading">
+	<StackLayout *tabItem='{title: eaData.Term_Exam_With_Schedule.labels.title}' androidOffscreenTabLimit="1">
         
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
             

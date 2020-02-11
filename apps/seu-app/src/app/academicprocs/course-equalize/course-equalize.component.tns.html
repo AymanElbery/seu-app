@@ -33,10 +33,10 @@
     </FlexboxLayout>
     <ScrollView orientation="horizontal" *ngIf="!isLoading">
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" alignItems="center"> 
                 <label text='{{"general.request.req_no"|translate}}' class="tableColumn"></label>
                 <label text='{{"general.request.date_and_status"|translate}}' class="tableColumn"></label>
-                <label text='{{"services.course-equalize.reply"|translate}}' class="tableColumn"></label>
+                <label text='{{"services.course-equalize.reply"|translate}}'  style="width: 20%;margin-right: 20;" class=""></label>
                 <label text='{{"services.course-equalize.reply_date"|translate}}' class="tableColumn"></label>
                 <label text='{{"general.request.delete_print_req"|translate}}'></label>
             </FlexboxLayout>
@@ -48,7 +48,7 @@
                     <Label [text]="item.insert_date"></Label>
                     <Label [text]="item.status"></Label>
                 </FlexboxLayout>
-                <Label [text]="item.rejection_reason" class="tableColumn"></Label>
+                <Label [text]="item.rejection_reason" class="tableColumn" style="width: 20%;margin-right: 20;text-align: center;" textWrap="true"></Label>
                 <Label [text]="item.approval_date" class="tableColumn"></Label>
 
                 <FlexboxLayout alignItems="center" flexWrap="nowrap" flexDirection="column" justifyContent="flex-end">

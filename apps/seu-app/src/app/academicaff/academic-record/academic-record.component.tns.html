@@ -74,7 +74,7 @@
                     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
                         <label text='{{"general.term" | translate}}'></label>
                         <label text='{{"general.year" | translate}}'></label>
-                        <label text='{{"general.major" | translate}}'></label>
+                        <label text='{{"general.major" | translate}}' style="text-align: right;"></label>
                         <label text='{{"general.status" | translate}}'></label>
                     </FlexboxLayout>
             
@@ -94,7 +94,7 @@
 
                     <FlexboxLayout justifyContent="space-between" alignItems="center" flexWrap="nowrap" *ngFor="let item of item.courses"  flexDirection="row-reverse">
                         <FlexboxLayout  flexDirection="column">
-                            <Label [text]="item.CRSE_TITLE" class="wideColumn"></Label>
+                            <Label [text]="item.CRSE_TITLE" class="wideColumn" textWrap="true"></Label>
                             <Label [text]="item.ID" class="narrowColumn"></Label>
                         </FlexboxLayout>
                         <Label [text]="item.GRADE_TITLE" class="narrowColumn"></Label>

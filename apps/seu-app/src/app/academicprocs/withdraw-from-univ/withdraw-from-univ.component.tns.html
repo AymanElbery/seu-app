@@ -21,7 +21,7 @@
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
             <ng-template let-item="item">
-                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
             </ng-template>
         </ListView>
     </FlexboxLayout>
@@ -32,7 +32,7 @@
     </FlexboxLayout>
     <ScrollView orientation="horizontal" *ngIf="!isLoading">
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" [ngClass]="{'throw_no_border':reqData.reqs.length === 0}"> 
                 <label text='{{"general.request.req_no"|translate}}' class="tableColumn"></label>
                 <label text='{{"services.withdrow_univ.term"|translate}}' class="tableColumn"></label>
                 <label text='{{"services.withdrow_univ.state_print"|translate}}' class="tableColumn"></label>

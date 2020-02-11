@@ -14,7 +14,7 @@
 </ActionBar>
 <FlexboxLayout flexDirection="column">
 
-    <StackLayout class="paragraph">
+    <StackLayout class="ysBox" style="margin-bottom: 20;">
         <Label [text]="reqData.notes.txt1" style="font-weight: 800;"></Label>
         <Label [text]="reqData.notes.txt2"></Label>
         <Label [text]="reqData.notes.txt3"></Label>
@@ -24,7 +24,7 @@
     <Label text='{{"services.cancel_course.course_define"|translate}}' style="color: #6189f4; font-weight: 800;padding-right: 20;"></Label>
     <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-            <label text='{{"general.course_name"|translate}}'></label>
+            <label text='{{"general.course_name"|translate}}' style="width: 35%;"></label>
             <label text='{{"general.course_code"|translate}}'></label>
             <label text='{{"general.course_hours"|translate}}'></label>
             <label text="&#xf00c;" class="fas"></label>
@@ -32,8 +32,8 @@
 
         <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.RegisteredCourses;let i=index;" flexDirection="row-reverse" 
         class="trow" [ngStyle]="{'border-bottom-width':i === reqData.RegisteredCourses.length-1 ? '0' : '1' }">
-            <Label [text]="item.CRSE_TITLE"></Label>
-            <Label [text]="item.CRES_CODE"  ></Label>
+            <Label [text]="item.CRSE_TITLE" style="width: 35%;text-align: center;" textWrap="true"></Label>
+            <Label [text]="item.CRES_CODE"></Label>
             <Label [text]="item.CREDIT_HR" ></Label>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item.CRN,$event,i)" checked="false"></CheckBox>
         </FlexboxLayout>
