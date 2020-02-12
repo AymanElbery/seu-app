@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
 import { CancelCourseService } from '../services/cancel-course.service';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './cancel-course.component.html',
   styleUrls: ['./cancel-course.component.scss']
 })
-export class CancelCourseComponent implements OnInit {
+export class CancelCourseComponent implements OnInit, OnDestroy {
   printAR;
   cancelCousre: CancelCousre;
   reqData;
@@ -25,7 +25,21 @@ export class CancelCourseComponent implements OnInit {
   ngOnInit() {
     this.cancelCousre = { courses: null, agreement: 1 };
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getRequest().then(

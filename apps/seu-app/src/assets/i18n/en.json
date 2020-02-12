@@ -97,7 +97,7 @@
         "grservices": "Master",
         "userData": "Student data",
         "academic_status": "Academic status",
-        "termexecuse": "Cancel course  ",
+        "termexecuse": "Term Excuse",
         "postpone": "Term Postpone",
         "studypostpone": "Study postpone  ",
         "withdrawal": "Withdraw from university ",
@@ -176,7 +176,7 @@
         "notfound": "not found ",
         "skills_record": "Skills Record",
         "BLACKBOARD": "Black Board",
-        "GRADUATE" : "Graduate affairs"
+        "GRADUATE": "Graduate affairs"
     },
     "services": {
         "academic_status": {

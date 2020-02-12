@@ -5,7 +5,9 @@
       <h3>{{"services.skills_record.title" |translate}}</h3>
       <div class="row">
         <div class=" col-md-7">
-          <p style="font-weight: bold;font-size: 14px;text-align: justify;">{{"services.skills_record.desc" |translate}}</p>
+          <p style="font-weight: bold;font-size: 14px;text-align: justify;">
+            <!-- {{"services.skills_record.desc" |translate}} -->
+          </p>
         </div>
       </div>
     </div>
@@ -72,9 +74,18 @@
         <div class="widget">
           <div class="widget-header">
             <h3 class="widget-title" style="font-size:14px;">
+              {{"services.skills_record.title" |translate}}
+            </h3>
+          </div>
+          <div class="table-responsive">
+            {{texts.desc}}
+          </div>
+          <div class="widget-header">
+            <h3 class="widget-title" style="font-size:14px;">
               {{texts.conditions.title}}
             </h3>
           </div>
+
           <div class="table-responsive">
             <ol>
               <li>{{texts.conditions.txt1}}</li>
@@ -89,6 +100,7 @@
                 <ol>
                   <li>{{texts.conditions.txt81}}</li>
                   <li>{{texts.conditions.txt82}}</li>
+                  <li>{{texts.conditions.txt83}}</li>
                 </ol>
               </li>
               <li>

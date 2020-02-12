@@ -14,8 +14,8 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class AddPersonalIdComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data,
-              public dialogRef: MatDialogRef<AddUnivCardComponent>,
-              private toastr: AppToasterService, private univCard: PersonalIDService) { }
+    public dialogRef: MatDialogRef<AddUnivCardComponent>,
+    private toastr: AppToasterService, private univCard: PersonalIDService) { }
 
   card: universityCard;
   reqData;
@@ -25,23 +25,18 @@ export class AddPersonalIdComponent implements OnInit {
 
   ngOnInit() {
     this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: 'GR', photo: '', ssn_file: '' };
-    this.univCard.getِgetRequests().then(
-      res => {
-        this.univCard.reqData = (res as any).data;
-        this.univCard.msgs = (res as any).messages;
-        this.reqData = this.univCard.reqData;
-        this.msgs = this.univCard.msgs;
-      }
-    );
+    this.reqData = this.univCard.reqData;
+    this.msgs = this.univCard.msgs;
+
   }
   addRequest(data: any) {
     this.univCard.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
-  /* comppented error found not status
-      if (res.status) {
-        this.univCard.newreqs = true;
-        this.dialogRef.close();
-      } */
+      /* comppented error found not status
+          if (res.status) {
+            this.univCard.newreqs = true;
+            this.dialogRef.close();
+          } */
       this.requesting = false;
     },
       err => {
