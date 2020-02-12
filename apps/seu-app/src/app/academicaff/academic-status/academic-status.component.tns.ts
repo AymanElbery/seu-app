@@ -29,7 +29,7 @@ export class AcademicStatusComponent implements OnInit {
     std_fees:"",
     std_id:""
 };
-  studentTerms;
+  studentTerms=[];
   studentTermDetails:StudentTerms={
     ACADIMICPOSITION:"",
     CAMP_code:"",

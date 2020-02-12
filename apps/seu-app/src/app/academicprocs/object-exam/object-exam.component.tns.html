@@ -34,17 +34,17 @@
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"
             [ngClass]="{'throw_no_border':reqData.requests.length === 0}"
             > 
-                <label text='{{"general.crn"|translate}}' class="tableColumn"></label>
-                <label text='{{"general.course_name"|translate}}' class="tableColumn"></label>
-                <label text='{{"general.request.date_and_status"|translate}}' class="tableColumn"></label>
-                <label text='{{"services.object_exam.procedure"|translate}}' class="tableColumn"></label>
+                <label text='{{"general.crn"|translate}}'  ></label>
+                <label text='{{"general.course_name"|translate}}'></label>
+                <label text='{{"general.request.date_and_status"|translate}}'  ></label>
+                <label text='{{"services.object_exam.procedure"|translate}}'  ></label>
             </FlexboxLayout>
 
             <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.requests;let i=index;" flexDirection="row-reverse" 
             class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
-                <Label [text]="item.courseId" class="tableColumn"></Label>
-                <Label [text]="item.course_title" class="tableColumn" textWrap="true"></Label>
-                <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column"  class="tableColumn">
+                <Label [text]="item.courseId"></Label>
+                <Label [text]="item.course_title" style="width: 30%;text-align: center;" textWrap="true"></Label>
+                <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column">
                     <Label [text]="item.insert_date" textWrap="true"></Label>
                     <Label [text]="item.status"></Label>
                 </FlexboxLayout>

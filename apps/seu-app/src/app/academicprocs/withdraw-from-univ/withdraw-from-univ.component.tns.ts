@@ -10,7 +10,9 @@ import * as app from 'tns-core-modules/application';
 import { AppToasterService } from '../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { RequestData } from '../../shared/models/request-data';
-
+declare var UIView, NSMutableArray, NSIndexPath;
+import { ListViewEventData } from 'nativescript-ui-listview';
+import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
 
 @Component({
   selector: 'app-withdraw-from-univ',
@@ -65,7 +67,6 @@ export class WithdrawFromUnivComponent implements OnInit {
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-
       }, err => {
         this.msgs = [];
         this.toastr.tryagain();
@@ -112,5 +113,27 @@ export class WithdrawFromUnivComponent implements OnInit {
 
   }
 
+  onItemTap(event: ListViewEventData) {
+    const listView = event.object,
+        rowIndex = event.index,
+        dataItem = event.view.bindingContext;
+
+    dataItem.expanded = !dataItem.expanded;
+    if (isIOS) {
+      // Uncomment the lines below to avoid default animation
+      UIView.animateWithDurationAnimations(0, () => {
+          let indexPaths = NSMutableArray.new();
+          indexPaths.addObject(NSIndexPath.indexPathForRowInSection(rowIndex, event.groupIndex));
+          listView.ios.reloadItemsAtIndexPaths(indexPaths);
+       });
+    }
+
+    if (isAndroid) {
+       listView.androidListView.getAdapter().notifyItemChanged(rowIndex);
+    }
+}
+templateSelector(item: any, index: number, items: any): string {
+  return item.expanded ? 'expanded' : 'default';
+}
 
 }

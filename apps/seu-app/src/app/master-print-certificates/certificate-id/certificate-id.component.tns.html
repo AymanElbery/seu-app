@@ -64,13 +64,13 @@
   
      
       <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of lectures" flexDirection="row-reverse" class="trow">
-        <FlexboxLayout flexDirection="column" alignItems="center" class="wideColumn" style="margin-left: 15;">
-          <Label [text]="item.course_name"></Label>
+        <FlexboxLayout flexDirection="column" alignItems="center" class="wideColumn">
+          <Label [text]="item.course_name" textWrap="true" style="text-align: center;"></Label>
           <Label [text]="item.course_id"></Label>
         </FlexboxLayout>
-        <Label [text]="item.day" class="narrowColumn"></Label>
-        <Label [text]="toHTML(item.time)" class="wideColumn"></Label>
-        <Label [text]="toHTML(item.type)" class="wideColumn"></Label>
+        <Label [text]="item.day" class="narrowColumn" style="text-align: center;"></Label>
+        <Label [text]="toHTML(item.time)" class="wideColumn" textWrap="true" style="margin-left: 25;"></Label>
+        <Label [text]="toHTML(item.type)" class="narrowColumn"></Label>
 
       </FlexboxLayout>
     </FlexboxLayout>

@@ -34,6 +34,7 @@ import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-e
 import { AbsenceQueryComponent } from './absence-query/absence-query.component.tns';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component.tns';
 import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component.tns';
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-s
     DropDownModule,
     NativeScriptLocalizeModule,
     TNSCheckBoxModule,
-    AppTransModule
+    AppTransModule,
+    NativeScriptUIListViewModule 
 
   ],
   schemas: [NO_ERRORS_SCHEMA],

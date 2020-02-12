@@ -20,6 +20,7 @@ import { UniversityWithdrawalComponent } from './university-withdrawal/universit
 import { AddWithdrawalRequestComponent } from './university-withdrawal/diag/add-withdrawal-request/add-withdrawal-request.component.tns';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component.tns';
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component.tns';
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
 
 
 @NgModule({
@@ -47,6 +48,8 @@ import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectu
     NativeScriptFormsModule,
     CommonModule,
     NativeScriptCommonModule,
+    NativeScriptUIListViewModule 
+
   ],
   entryComponents:[
     AddReEnrollComponent,

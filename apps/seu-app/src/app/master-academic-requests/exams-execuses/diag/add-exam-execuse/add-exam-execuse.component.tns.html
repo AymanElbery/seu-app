@@ -28,7 +28,7 @@
         <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.schedules;let i=index;" flexDirection="row-reverse" 
          alignContent="center" class="trow" [ngStyle]="{'border-bottom-width':i === reqData.schedules.length-1 ? '0' : '1' }">
            
-            <Label [text]="item.CRSE_TITLE" textWrap="true" style="width: 35%;"></Label>
+            <Label [text]="item.CRSE_TITLE" textWrap="true" style="width: 30%;text-align: center;"></Label>
             <Label [text]="item.CRN" textWrap="true"></Label>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
             <Label [text]="i+1" textWrap="true"></Label>
@@ -43,7 +43,7 @@
     hint='{{"services.master_exam_excuse.choose_exam_type"|translate}}'
     itemsTextAlignment="left"
     itemsPadding="5"
-    style="margin-right: 20;"
+    style="margin-right: 20;margin-bottom: 20;"
     >
     </DropDown>
 

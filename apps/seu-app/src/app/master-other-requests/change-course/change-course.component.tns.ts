@@ -12,6 +12,9 @@ import * as app from 'tns-core-modules/application';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/common';
 import { Router } from '@angular/router';
 import { RequestData } from '../../shared/models/request-data';
+declare var UIView, NSMutableArray, NSIndexPath;
+import { ListViewEventData } from 'nativescript-ui-listview';
+import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
 
 @Component({
   selector: 'app-change-course',
@@ -112,4 +115,27 @@ export class ChangeCourseComponent implements OnInit {
 
   this.router.navigate(['/other/addchangecourse']);
  }
+
+ onItemTap(event: ListViewEventData) {
+  const listView = event.object,
+      rowIndex = event.index,
+      dataItem = event.view.bindingContext;
+
+  dataItem.expanded = !dataItem.expanded;
+  if (isIOS) {
+    // Uncomment the lines below to avoid default animation
+    UIView.animateWithDurationAnimations(0, () => {
+        let indexPaths = NSMutableArray.new();
+        indexPaths.addObject(NSIndexPath.indexPathForRowInSection(rowIndex, event.groupIndex));
+        listView.ios.reloadItemsAtIndexPaths(indexPaths);
+     });
+  }
+
+  if (isAndroid) {
+     listView.androidListView.getAdapter().notifyItemChanged(rowIndex);
+  }
+}
+templateSelector(item: any, index: number, items: any): string {
+return item.expanded ? 'expanded' : 'default';
+}
 }

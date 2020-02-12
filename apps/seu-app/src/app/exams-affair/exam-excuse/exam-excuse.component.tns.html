@@ -30,33 +30,55 @@
         <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
-    <ScrollView orientation="horizontal" *ngIf="!isLoading">
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-                <label text='{{"general.request.req_no"|translate}}' class="tableColumn"></label>
-                <label text='CRN' class="tableColumn"></label>
-                <label text='{{"general.request.req_cname" | translate}}' class="tableColumn"></label>
-                <label text='{{"general.request.date_and_status"|translate}}' class="tableColumn"></label>
-                <label text='{{"general.request.res_date" | translate}}' class="tableColumn"></label>
-                <label text='{{"general.request.req_delete" | translate}}'></label>
-            </FlexboxLayout>
 
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.requests;let i=index;" flexDirection="row-reverse" 
-            class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
-                <Label [text]="item.request_number" class="tableColumn"></Label>
-                <Label [text]="item.courseId" class="tableColumn"></Label>
-                <Label [text]="item.course_title" class="tableColumn"></Label>
-                <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column">
-                    <Label [text]="item.insert_date"></Label>
-                    <Label [text]="item.status"></Label>
+    <RadListView *ngIf="!isLoading &&reqData.requests.length>0" [items]="reqData.requests" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
+        <ng-template let-item="item">
+            <FlexboxLayout flexDirection="row" justifyContent="space-between" class="throw" 
+            [ngStyle]="{'border-bottom-width':item ===reqData.requests[reqData.requests.length-1] ? '0' : '1' }">
+                <Label  text="&#xf0dd;"  class="fas"></Label>
+                <FlexboxLayout flexDirection="row-reverse">
+                    <Label text='{{item.request_number}}'></Label>
+                    <Label text="{{item.status}}"></Label>
                 </FlexboxLayout>
-                <Label [text]="item.admin_date"></Label>
+            </FlexboxLayout>
+        </ng-template>
 
-                <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="blue-button fas -rounded-sm"></Button>
-                <Label *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}' textWrap="true"></Label>
+        <ng-template tkTemplateKey="expanded" let-item="item">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHBox">
+                    <Label  text="&#xf0de;"  class="fas"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label [text]='item.request_number'></Label>
+                        <Label [text]="item.status"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+
+                <GridLayout rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                          
+                    <Label row="0" column="1" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
+                    <Label row="0"  column="0" text="{{item.request_number}}" style="text-align: right;"></Label>
+                
+                    <Label row="1" column="1" style="font-weight: 800;" text=':CRN' style="text-align: right;"></Label>
+                    <Label row="1"  column="0" text="{{item.courseId}}" style="text-align: right;"></Label>
+                
+                    <Label row="2" column="1" style="font-weight: 800;" text='{{"general.request.req_cname" | translate}} :'></Label>
+                    <Label row="2"  column="0" text="{{item.course_title}}" style="text-align: right;"></Label>
+      
+                    <Label row="3" column="1" style="font-weight: 800;" text='{{"general.request.req_status"|translate}} :'></Label>
+                    <Label row="3"  column="0" text="{{item.status}}"></Label>
+      
+                    <Label row="4" column="1" style="font-weight: 800;" text='{{"general.request.req_date"|translate}} :'></Label>
+                    <Label row="4"  column="0" text="{{item.insert_date}}"  style="text-align: right;"></Label>
+      
+                    <Label row="5" column="1" style="font-weight: 800;" text='{{"general.request.res_date" | translate}} :'></Label>
+                    <Label row="5"  column="0" text="{{item.admin_date}}"  style="text-align: right;"></Label>
+
+                    <Label row="6" column="1" style="font-weight: 800;" text='{{"general.request.req_delete"|translate}} :'></Label>                    
+                    <Button row="6" column="0" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="blue-button fas  -rounded-sm" style="width: 15%;margin-left: 150;"></Button>
+                    <Label row="6" column="0" *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}' textWrap="true"></Label>
+                  </GridLayout>
 
             </FlexboxLayout>
-        </FlexboxLayout>
-    </ScrollView>
-
+        </ng-template>
+    </RadListView>
 </FlexboxLayout>
