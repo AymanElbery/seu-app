@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { masterWithdrawal } from 'src/app/shared/models/master-withdrawal';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './university-withdrawal.component.html',
   styleUrls: ['./university-withdrawal.component.scss']
 })
-export class UniversityWithdrawalComponent implements OnInit {
+export class UniversityWithdrawalComponent implements OnInit,OnDestroy {
 
   printAR;
   withdrawalRequest: masterWithdrawal;
@@ -27,7 +27,21 @@ export class UniversityWithdrawalComponent implements OnInit {
   ngOnInit() {
     this.withdrawalRequest = { email: "", mobile: "" };
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
 
   getRequests() {
     this.isLoading = true;

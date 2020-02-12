@@ -97,7 +97,7 @@
         "grservices": "Master",
         "userData": "Student data",
         "academic_status": "Academic status",
-        "termexecuse": "Cancel course  ",
+        "termexecuse": "Term Excuse",
         "postpone": "Term Postpone",
         "studypostpone": "Study postpone  ",
         "withdrawal": "Withdraw from university ",
@@ -176,7 +176,7 @@
         "notfound": "not found ",
         "skills_record": "Skills Record",
         "BLACKBOARD": "Black Board",
-        "GRADUATE" : "Graduate affairs"
+        "GRADUATE": "Graduate affairs"
     },
     "services": {
         "academic_status": {
@@ -578,8 +578,8 @@
             "addreq": "register request "
         },
         "skills_record": {
-            "title": "Activity Record",
-            "desc": "هو وثيقة رسمية معتمدة من الجامعة تصدرها وحدة السجل المهاري في الجامعة تشمل على كافة الفعاليات من دورات تدريبية، و أنشطة طلابية التي حصل عليها الطالب خلال فترة دراسته الجامعية، وذلك لإثبات قدراته ومهاراته في المجالات الغير الأكاديمية مما يدعم فرص منافسته على الوظائف.",
+            "title": "Skills Record",
+            "desc": "Skills Record",
             "no_skills": "No records",
             "skill": "Skill",
             "conditions": "Conditions",

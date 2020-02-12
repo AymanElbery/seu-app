@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TermExecuseService } from '../services/term-execuse.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +13,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   templateUrl: './term-execuse.component.html',
   styleUrls: ['./term-execuse.component.scss']
 })
-export class TermExecuseComponent implements OnInit {
+export class TermExecuseComponent implements OnInit,OnDestroy {
 
 
   termExecuse: termExecuse;
@@ -27,7 +27,21 @@ export class TermExecuseComponent implements OnInit {
   ngOnInit() {
     this.termExecuse = { reason: '', mobile: '', num_terms: '' };
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getRequest().then(
