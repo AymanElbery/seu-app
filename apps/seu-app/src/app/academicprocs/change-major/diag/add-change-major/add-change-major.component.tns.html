@@ -6,7 +6,7 @@
         <Label text='{{"services.change_major.alert_content"|translate}}' textWrap="true"></Label>
         <Label text='{{"services.change_major.major_cancellation_validity"|translate}}' textWrap="true"></Label>
 
-        <Label text='{{"services.change_major.choose_major"|translate}}' style="font-weight: 800;margin-top: 10;"></Label>
+        <Label text='{{"services.change_major.choose_major"|translate}}' style="font-weight: 800;margin-top:20;"></Label>
         <DropDown
         #dropdown
         [items]="majorsDropDown"
@@ -17,7 +17,7 @@
         required>
         </DropDown>
     </StackLayout>
-    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between" style="margin-top: 20;">
         <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="-primary" style="width: 50%;" [isEnabled]="mj.major!=''"></Button>
         <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="-primary" style="width: 50%;"></Button>
     </FlexboxLayout>

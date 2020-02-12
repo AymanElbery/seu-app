@@ -52,10 +52,10 @@
     <StackLayout  class="ysBox" row="2">
     <FlexboxLayout  justifyContent="space-between" flexDirection="column">
     <FlexboxLayout class="throw" justifyContent="space-between" flexWrap="nowrap" flexDirection="row-reverse">
-      <FlexboxLayout >
+      <FlexboxLayout>
         <Label [text]="certificateDetails.labels.crn"></Label>
         <Label text="/"></Label>
-        <Label [text]="certificateDetails.labels.course_title"></Label>
+        <Label [text]="certificateDetails.labels.course_title" textWrap="true"></Label>
       </FlexboxLayout>
       <Label [text]="certificateDetails.labels.day_and_date"></Label>
       <Label [text]="certificateDetails.labels.time"></Label>

@@ -15,7 +15,7 @@
 <ScrollView>
 <FlexboxLayout flexDirection="column">
 
-    <StackLayout class="ysBox" style="margin-bottom: 10;">
+    <StackLayout class="ysBox" style="margin-bottom: 20;">
         <Label [text]='reqData.notes.txt1' style="font-weight: bold;" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt2" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt3" textWrap="true"></Label>
@@ -52,7 +52,7 @@
         </FlexboxLayout>
     </FlexboxLayout>
     
-    <Label text='{{"services.english-equalize.certificate_image"|translate}}' textWrap="true" style="color: #6189f4; margin-top: 10;margin-right: 20;"></Label>
+    <Label text='{{"services.english-equalize.certificate_image"|translate}}' textWrap="true" style="color: #6189f4; margin-top: 20;margin-right: 20;"></Label>
     <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary"></Button>
 
 </FlexboxLayout>

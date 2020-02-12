@@ -15,9 +15,9 @@
 <ScrollView>
 <FlexboxLayout flexDirection="column">
 
-    <Label text='{{"services.object_exam.choose_curriculum"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;margin-top: 10;"></Label>
+    <Label text='{{"services.object_exam.choose_curriculum"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;margin-top: 20;"></Label>
 
-    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox" style="margin-bottom: 20;">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
             <label text='{{"services.object_exam.curriculum_name"|translate}}'></label>
             <label text='{{"services.object_exam.teacher_name"|translate}}'></label>
@@ -26,8 +26,8 @@
 
         <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of exam.exams;let i=index;" flexDirection="row-reverse" 
             class="trow" [ngStyle]="{'border-bottom-width':i === exam.exams.length-1 ? '0' : '1' }">
-            <Label [text]="item.CRSE_TITLE" textWrap="true"></Label>
-            <TextField #TeacherID="ngModel" [(ngModel)]="item.teacher" style="border-width: 1;width: 30%;margin-top: 20;"></TextField>
+            <Label [text]="item.CRSE_TITLE" textWrap="true" style="width: 30%;text-align: center;"></Label>
+            <TextField #TeacherID="ngModel" [(ngModel)]="item.teacher" style="border-width: 1;width: 45%;margin-top: 20;padding:5;"></TextField>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
         </FlexboxLayout>
     </FlexboxLayout>

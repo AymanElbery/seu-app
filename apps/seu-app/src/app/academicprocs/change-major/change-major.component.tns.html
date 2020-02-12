@@ -32,7 +32,8 @@
     </FlexboxLayout>
     
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading" class="ysBox">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" [ngClass]="{'throw_no_border':reqData.reqs.length === 0}"
+            > 
                 <label text='{{"general.request.req_no"| translate}}'></label>
                 <label text='{{"general.request.req_date"| translate}}'></label>
                 <label text='{{"services.change_major.current_major"|translate}}'></label>

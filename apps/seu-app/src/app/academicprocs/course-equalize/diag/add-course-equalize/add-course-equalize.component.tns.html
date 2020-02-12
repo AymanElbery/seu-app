@@ -14,8 +14,8 @@
 </ActionBar>
 <ScrollView>
 <FlexboxLayout flexDirection="column">
-    <StackLayout class="wrap">
-        <Label text='{{"services.course-equalize.alert"|translate}}' style="color: #6189f4; font-weight: 800;"></Label>
+    <StackLayout class="ysBox" style="margin-bottom: 20;">
+        <Label text='{{"services.course-equalize.alert"|translate}}' style="font-weight: 800;"></Label>
         <Label [text]="reqData.notes.txt2"></Label>
         <Label [text]="reqData.notes.txt3"></Label>
         <Label [text]="reqData.notes.txt4" textWrap="true"></Label>
@@ -34,6 +34,7 @@
     hint='{{"general.college"|translate}}'
     itemsTextAlignment="left"
     class="univ-dropdown"
+    style="margin-bottom: 20;"
     >
     </DropDown>
     <Label text='{{"services.course-equalize.choose_course_lang_hours_grade"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;"></Label>
@@ -84,7 +85,7 @@
     <Label text='{{"services.course-equalize.course_desc"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;margin-top: 20;"></Label>
     <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="-primary"></Button>
    
-    <Label text='{{"services.course-equalize.record_image"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;"></Label>
+    <Label text='{{"services.course-equalize.record_image"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;margin-top: 20;"></Label>
     <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary"></Button>
 
 </FlexboxLayout>

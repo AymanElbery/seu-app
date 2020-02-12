@@ -58,7 +58,7 @@
             <label text="{{feesData.labels.txt5}}"></label>
             <label text="{{feesData.labels.txt6}}"></label>
         </StackLayout>
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
+        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout" style="margin-top: 20;">
             <Button text="عربى" class="my-button" (tap)="onArabicPrint()"></Button>
             <Button text="English" class="my-button" (tap)="onEnglishPrint()"></Button>
         </FlexboxLayout>

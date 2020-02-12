@@ -70,6 +70,7 @@
         (selectedIndexChanged)="getDate($event)"
         itemsTextAlignment="left"
         itemsPadding="5"
+        hint='{{"services.lecture_execuse.define_date"|translate}}'
         >
         </DropDown>
     </StackLayout>
@@ -81,7 +82,7 @@
         #reason="ngModel" [(ngModel)]="lectureExecuse.reason" required>
     </TextView>
 
-    <Label text='{{"services.lecture_execuse.file"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;"></Label>
+    <Label text='{{"services.lecture_execuse.file"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;margin-top: 20;"></Label>
     <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="-primary"></Button>
    
 </FlexboxLayout>
