@@ -268,7 +268,8 @@
             "equalize_english_req": "English Equalize Request",
             "choose_exam_degree": "Choose Exam and Grade",
             "exam_name": "Exam Name",
-            "certificate_image": "Certificate Picture"
+            "certificate_image": "Certificate Picture",
+            "degree":"Degree"
         },
         "excuse_request": {
             "title": "Execuse for a Term",

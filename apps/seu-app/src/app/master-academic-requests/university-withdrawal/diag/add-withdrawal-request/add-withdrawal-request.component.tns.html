@@ -4,13 +4,13 @@
     <Label text='{{"services.withdrow_univ.alert"|translate}}' textWrap="true"></Label>
     <Label text='{{"services.withdrow_univ.alert_content"|translate}}' textWrap="true"></Label>
 
-    <Label text='{{"services.withdrow_univ.mobile"|translate}}' style="margin-top: 10;"></Label>
+    <Label text='{{"services.withdrow_univ.mobile"|translate}}' style="margin-top: 20;margin-right: 20;"></Label>
     <TextField #mobile="ngModel" [(ngModel)]="withdrawalReq.mobile" required></TextField>
 
-    <Label text='{{"services.withdrow_univ.personal_mail"|translate}}' style="margin-top: 10;"></Label>
+    <Label text='{{"services.withdrow_univ.personal_mail"|translate}}' style="margin-top: 20;margin-right: 20;"></Label>
     <TextField [(ngModel)]="withdrawalReq.email" #reason="ngModel" required></TextField>
     
-    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between" style="margin-top: 20;">
         <Button text='{{"general.save"|translate}}' (tap)="onSubmit()"  class="-primary -rounded-sm" style="width: 50%;"></Button>
         <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()"  class="-primary -rounded-sm" style="width: 50%;"></Button>
     </FlexboxLayout>

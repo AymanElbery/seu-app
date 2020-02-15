@@ -268,7 +268,8 @@
             "equalize_english_req": "طلب معادلة اللغه الانجليزية",
             "choose_exam_degree": "إختر الإختبار وحدد الدرجة",
             "exam_name": "اسم الإختبار",
-            "certificate_image": "صورة الشهادة"
+            "certificate_image": "صورة الشهادة",
+            "degree":"الدرجة"
         },
         "excuse_request": {
             "title": "الإعتذار عن فصل دراسي",

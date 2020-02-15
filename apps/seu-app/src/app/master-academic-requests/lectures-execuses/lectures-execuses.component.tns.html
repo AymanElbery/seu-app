@@ -31,40 +31,59 @@
         <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
-    <ScrollView orientation="horizontal" *ngIf="!isLoading">
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-                <label text='{{"general.request.req_no"|translate}}' style="margin-left: 10;"></label>
-                <label text='{{"general.course_name"|translate}}/{{"general.crn"|translate}}'  style="margin-left: 10;"></label>
-                <label text='{{"services.lecture_execuse.absence_date_week"|translate}}'  style="margin-left: 10;"></label>
-                <label text='{{"services.lecture_execuse.lecture_type"|translate}}'  style="margin-left: 10;"></label>
-                <label text='{{"general.request.date_and_status"|translate}}'  style="margin-left: 10;"></label>
-                <label text='{{"services.lecture_execuse.execuse_file"|translate}}'></label>
+
+    <RadListView *ngIf="!isLoading &&reqData.requests.length>0" [items]="reqData.requests" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
+        <ng-template let-item="item">
+            <FlexboxLayout flexDirection="row" justifyContent="space-between" class="throw" 
+            [ngStyle]="{'border-bottom-width':item ===reqData.requests[reqData.requests.length-1] ? '0' : '1' }">
+                <Label  text="&#xf0dd;"  class="fas"></Label>
+                <FlexboxLayout flexDirection="row-reverse">
+                    <Label text='{{item.request_number}}'></Label>
+                    <Label text="{{item.status}}"></Label>
+                </FlexboxLayout>
             </FlexboxLayout>
+        </ng-template>
 
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.requests;let i=index;" flexDirection="row-reverse"
-             class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
+        <ng-template tkTemplateKey="expanded" let-item="item">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHBox">
+                    <Label  text="&#xf0de;"  class="fas"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label [text]='item.request_number'></Label>
+                        <Label [text]="item.status"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
 
-                <Label [text]="item.request_number" style="text-align: center; width:12% ;"></Label>
-                <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column" style="width: 25%;">
-                    <Label [text]="item.courseId"></Label>
-                    <Label [text]="item.course_title" textWrap="true" style="text-align: center;"></Label>
-                </FlexboxLayout>
-                <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column"  style="text-align: center; width:20% ;">
-                    <Label [text]="item.absance_date"></Label>
-                    <Label [text]="item.week"></Label>
-                </FlexboxLayout>
-                <Label [text]="item.class_type" style="text-align: center; width:12% ;" ></Label>
-                <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" flexDirection="column"  style="text-align: center; width:20% ;">
-                    <Label [text]="item.status"  ></Label>
-                    <Label [text]="item.insert_date" textWrap="true" ></Label>
-                </FlexboxLayout>
-                <Button (tap)="print(item.request_number)" class="blue-button fas -rounded-sm" text="&#xf02f;"></Button>
-                   
+                <GridLayout rows="auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                          
+                    <Label row="0" column="1" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
+                    <Label row="0"  column="0" text="{{item.request_number}}" style="text-align: right;"></Label>
+                
+                    <Label row="1" column="1" style="font-weight: 800;" text='{{"general.course_name"|translate}} :'></Label>
+                    <Label row="1"  column="0" text="{{item.course_title}}" style="text-align: right;"></Label>
+                
+                    <Label row="2" column="1" style="font-weight: 800;" text=': {{"general.crn"|translate}}' style="text-align: right;"></Label>
+                    <Label row="2"  column="0" text="{{item.courseId}}" style="text-align: right;"></Label>
+      
+                    <Label row="3" column="1" style="font-weight: 800;" text='{{"general.request.req_status"|translate}} :'></Label>
+                    <Label row="3"  column="0" text="{{item.status}}"></Label>
+      
+                    <Label row="4" column="1" style="font-weight: 800;" text='{{"general.request.req_date"|translate}} :'></Label>
+                    <Label row="4"  column="0" text="{{item.insert_date}}" style="text-align: right;"></Label>
+
+                    <Label row="5" column="1" style="font-weight: 800;" text='{{"services.lecture_execuse.absence_date_week"|translate}} :'></Label>
+                    <Label row="5"  column="0" text="{{item.absance_date}}/{{item.week}}" style="text-align: right;"></Label>
+
+                    <Label row="6" column="1" style="font-weight: 800;" text='{{"services.lecture_execuse.lecture_type"|translate}} :'></Label>
+                    <Label row="6"  column="0" text="{{item.class_type}}"></Label>
+
+                    <Label row="7" column="1" style="font-weight: 800;" text='{{"services.lecture_execuse.execuse_file"|translate}} :'></Label>
+                    <Button row="7" column="0" (tap)="print(item.request_number)" class="blue-button fas -rounded-sm" text="&#xf02f;" style="width: 15%;margin-left: 150;"></Button>
+
+                  </GridLayout>
 
             </FlexboxLayout>
-        </FlexboxLayout>
-    </ScrollView>
-
+        </ng-template>
+    </RadListView>
 </FlexboxLayout>
 </ScrollView>

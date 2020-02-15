@@ -14,13 +14,13 @@
 </ActionBar>
 <FlexboxLayout flexDirection="column">
 
-    <StackLayout class="paragraph">
-        <Label [text]="reqData.notes.text1" style="font-weight: 800;"></Label>
+    <StackLayout class="ysBox" style="margin-bottom: 20;">
+        <Label [text]="reqData.notes.text1" class="ysHBox"></Label>
         <Label [text]="reqData.notes.text2"></Label>
         <Label [text]="reqData.notes.text3"></Label>
         <Label [text]="reqData.notes.text4" textWrap="true" ></Label>
         <Label [text]="reqData.notes.text5" textWrap="true"></Label>
-        <Label [text]="reqData.notes.text6" textWrap="true" style="margin-bottom: 10;"></Label>
+        <Label [text]="reqData.notes.text6" textWrap="true" ></Label>
 
     </StackLayout>
 
@@ -37,9 +37,9 @@
         class="trow" [ngStyle]="{'border-bottom-width':i === radioButtonOptions.length-1 ? '0' : '1' }">
             <CheckBox #elem boxType="circle" (checkedChange)="elem.checked !== item.selected && changeStatus(item)" [checked]="item.selected"></CheckBox>
             <Label [text]="item.courses.CRN"></Label>
-            <Label [text]="item.courses.CRSE_TITLE"></Label>
             <Label [text]="item.courses.CRES_CODE"  ></Label>
-            <Label [text]="item.courses.CREDIT_HR" ></Label>
+            <Label [text]="item.courses.CRSE_TITLE" style="width: 30%;text-align: center;" textWrap="true"></Label>
+            <Label [text]="item.courses.CREDIT_HR"></Label>
         </FlexboxLayout>
     </FlexboxLayout>
     <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" alignItems="center" style="color: #6189f4;margin:20 20">
