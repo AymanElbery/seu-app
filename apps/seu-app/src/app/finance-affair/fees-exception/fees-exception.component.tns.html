@@ -37,10 +37,9 @@
         <StackLayout class="ysBox">
 
             <Label colSpan="2" class="ysHBox" text="{{'general.request.pre_requesr'|translate}}"></Label>
-            <ScrollView orientation="horizontal">
                 <StackLayout>
                     <StackLayout>
-                        <GridLayout columns="50, 80, 80, 80,40" class="throw">
+                        <GridLayout columns="50, 80, 80, 80,40" class="throw" [ngClass]="{'throw_no_border':reqData.requests.length === 0}">
                             <Label textAlignment="center" col="4" text=" #"></Label>
                             <Label textAlignment="center" col="3"
                                 text=" {{'general.request.req_date' | translate}}"></Label>
@@ -67,7 +66,6 @@
                         </GridLayout>
                     </StackLayout>
                 </StackLayout>
-            </ScrollView>
         </StackLayout>
     </StackLayout>
 </ScrollView>

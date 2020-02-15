@@ -7,18 +7,23 @@
         <Label text='{{"services.change_branch.branch_cancellation_validity"|translate}}' textWrap="true"></Label>
 
         <Label text='{{"services.change_branch.choose_branch"|translate}}'
-            style="font-weight: 800;margin-top: 10;"></Label>
+            style="font-weight: 800;margin-top: 10;" style="margin-right: 20;margin-top: 20;"></Label>
         <DropDown [items]="branchesDropDown" (selectedIndexChanged)="getBranch($event)"
-            hint='{{"services.change_branch.choose_branch"|translate}}' itemsTextAlignment="center" itemsPadding="5">
+            hint='{{"services.change_branch.choose_branch"|translate}}'
+             itemsTextAlignment="center" 
+             itemsPadding="5" 
+             style="margin-bottom: 20;margin-right: 20;"
+             itemsTextAlignment="left" 
+             >
         </DropDown>
 
         <StackLayout class="input-field">
-            <Label text='{{"services.change_branch.mobile"|translate}}' class="label font-weight-bold m-b-5"></Label>
+            <Label text='{{"services.change_branch.mobile"|translate}}' class="label font-weight-bold m-b-5" style="margin-right: 20;"></Label>
             <TextField keyboardType="number" class="input" [(ngModel)]="cmp.mobile"></TextField>
             <StackLayout class="hr-light"></StackLayout>
         </StackLayout>
         <StackLayout class="input-field">
-            <Label text='{{"services.change_branch.reason"|translate}}' class="label font-weight-bold m-b-5"></Label>
+            <Label text='{{"services.change_branch.reason"|translate}}' class="label font-weight-bold m-b-5" style="margin-right: 20;"></Label>
             <TextField class="input" [(ngModel)]="cmp.reason"></TextField>
             <StackLayout class="hr-light"></StackLayout>
         </StackLayout>

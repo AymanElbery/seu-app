@@ -36,6 +36,8 @@ export class ChangeCourseComponent implements OnInit {
               private _vcRef: ViewContainerRef, private toastr: AppToasterService, private acadmicProc: ChangeCourseService) { }
 
   ngOnInit() {
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.drawerLocation = SideDrawerLocation.Right;
     this.changecourse = { bacholar_copy: '', major: '', mobile: '', reason: '', academic_record: '', outside: '' };
     this.getRequests();
   }
