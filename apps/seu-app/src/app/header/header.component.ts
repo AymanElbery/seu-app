@@ -63,10 +63,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
       document.head.appendChild(styleElement);
     });
   }
-
-  ngOnInit() {
+  initLang() {
     this.currLang = this.translate.currentLang;
     this.useLang(this.currLang);
+  }
+  ngOnInit() {
+    this.initLang();
+    this.translate.onLangChange.subscribe(() => {
+      this.initLang();
+    });
     // console.log('header user data');
     this.userService.userDataSubject.subscribe(res => {
       if (res) {
