@@ -88,7 +88,7 @@
         "email": "البريد الالكتروني",
         "course_code_name": "اسم المقرر/الرمز",
         "choose": "إختر",
-        "admis_pages": "الصفحات الإدارية",
+        "admis_pages": "الأنظمة الإدارية",
         "stds_pages": "نظام ادارة الخدمات الالكترونية"
     },
     "menu": {
@@ -176,7 +176,15 @@
         "notfound": "لايوجد ",
         "skills_record": "السجل المهاري",
         "BLACKBOARD": "البلاكبورد",
-        "GRADUATE": "شؤون الخريجين"
+        "GRADUATE": "شؤون الخريجين",
+        "admis_pages_jobs": "نظام التوظيف",
+        "admis_pages_sms": "نظام الرسائل",
+        "admis_pages_stds": "طلبات الطلاب",
+        "admis_pages_emp": "طلبات الموظفين",
+        "admis_pages_stats": "الاحصائيات",
+        "admis_pages_reports": "التقارير",
+        "admis_pages_admis": "ادارة الانظمة",
+        "admis_pages_enquiries": "الاستعلامات"
     },
     "services": {
         "academic_status": {

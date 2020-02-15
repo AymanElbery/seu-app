@@ -50,6 +50,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       document.getElementById('html').setAttribute('dir', 'rtl');
       document.getElementById('enStyle').remove();
     }
+    localStorage.setItem('seu-lang', code);
   }
 
   private loadExternalStyles(styleUrl: string) {
@@ -65,6 +66,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.currLang = this.translate.currentLang;
+    this.useLang(this.currLang);
     // console.log('header user data');
     this.userService.userDataSubject.subscribe(res => {
       if (res) {

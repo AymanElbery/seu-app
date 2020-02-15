@@ -10,6 +10,7 @@ import { UserManagerService } from '../../shared/services/user-manager.service';
 import { UserData } from 'src/app/shared/models/user-data';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,8 @@ export class UserService extends BaseService {
   adsData;
   constructor(
     private configService: ConfigService,
-    private httRequest: HttpRequestService
+    private httRequest: HttpRequestService,
+    private http: HttpClient
   ) {
     super();
     this.configService.baseUrl = 'stdservicesapi';
@@ -113,15 +115,25 @@ export class UserService extends BaseService {
       );
   }
 
+  requestUser() {
+    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/user';
+    const auth = `Basic ${window.btoa('sso:s$0$3u2030')}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'sessionid': localStorage.getItem('sid'),
+      'Authorization': auth
+    });
+    return this.http.get(url, { headers }).toPromise();
+  }
+
   loadUserData() {
     this.configService.baseUrl = 'stdservicesapi';
 
     // console.log('log ueer data-----------------------------------------------------------------------------------');
     if (this.userDataLoaded !== true) {
-      return this.httRequest
-        .GetRequest('user')
-        .toPromise()
+      return this.requestUser()
         .then(res => {
+          console.log(res);
           this.userData = (res as any).data;
           // console.log('userdata:'+this.userData);
           this.userData.activeRole = this.userData.role;
@@ -132,8 +144,7 @@ export class UserService extends BaseService {
     }
   }
   loadUserDetailsData() {
-    // console.log('user details  data');
-    return this.httRequest.GetRequest('user').toPromise();
+    return this.requestUser();
   }
   pushUserDataChanges() {
     this.userDataSubject.next(this.userData);
@@ -153,5 +164,19 @@ export class UserService extends BaseService {
       data = JSON.parse(JSON.stringify(this.userData));
     }
     return data;
+  }
+
+  getAdmisPerm() {
+
+    const udata = this.getActiveRoleDetails();
+    let username = udata.username;
+    const notsURL = environment.baselink + environment.servicesprefix + "/rest/admisperm/index";
+    const auth = `Basic ${window.btoa('nots:N0t!fic@ti0n$')}`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'username': username,
+      'Authorization': auth
+    });
+    return this.http.get(notsURL, { headers });
   }
 }

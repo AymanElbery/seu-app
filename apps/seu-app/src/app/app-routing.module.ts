@@ -20,7 +20,7 @@ const routes: Routes = [
       { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'home/:t', component: HomeComponent },
-      { path: 'admis-pages', component: AdmisPagesComponent },
+      { path: 'admis-pages/:cat', component: AdmisPagesComponent },
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       {
         path: 'academicaff',

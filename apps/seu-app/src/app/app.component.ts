@@ -7,6 +7,7 @@ import { Jsonp } from '@angular/http';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { GlobalService } from './shared/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -23,13 +24,29 @@ export class AppComponent implements OnInit {
     public userService: UserService,
     private http: HttpClient,
     private globalService: GlobalBaseService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private route: ActivatedRoute
   ) {
     this.print = printService;
     translate.addLangs(['ar', 'en']);
     translate.setDefaultLang('ar');
-    translate.use('ar');
 
+    this.setLang(localStorage.getItem('seu-lang'));
+    this.route.queryParams
+      .subscribe(params => {
+        if (params.lang) {
+          this.setLang(params.lang);
+        }
+      });
+
+  }
+  setLang(ulang) {
+    let lang = 'ar';
+    if (ulang == 'en' || ulang == 'ar') {
+      lang = ulang;
+    }
+    localStorage.setItem('seu-lang', lang);
+    this.translate.use(lang);
   }
   ngOnInit() {
     // alert(this.globalService.getSID());

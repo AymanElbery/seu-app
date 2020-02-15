@@ -219,11 +219,38 @@
 
             <a class="menu-item" target="_blank" href="https://lms.seu.edu.sa/">{{"menu.BLACKBOARD" | translate}} <i
                 class="ik ik-tablet"></i></a>
-
-            <a href="#" class="menu-item admispages" routerLink="/admis-pages">{{"general.admis_pages" | translate}} <i
-                class="ik ik-tablet"></i></a>
-            <a href="#" class="menu-item admispages" routerLink="/stdsnew-pages">
+          </div>
+        </div>
+        <div *ngIf="showadmis" class="nav-item has-sub">
+          <a href="javascript:void(0)"> <span>{{"general.admis_pages" | translate}} </span>
+            <i class="ik ik-book-open"></i> </a>
+          <div class="submenu-content">
+            <a href="#" *ngIf="admisPage['stds']" class="menu-item admispages" routerLink="/stdsnew-pages">
               {{"general.stds_pages" | translate}} <i class="ik ik-tablet"></i> </a>
+            <a href="#" *ngIf="admisPage[1]" class="menu-item admispages"
+              routerLink="/admis-pages/1">{{"menu.admis_pages_jobs" | translate}}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[2]" class="menu-item admispages"
+              routerLink="/admis-pages/2">{{"menu.admis_pages_sms" | translate}}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[3]" class="menu-item admispages"
+              routerLink="/admis-pages/3">{{"menu.admis_pages_stds" | translate}}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[4]" class="menu-item admispages"
+              routerLink="/admis-pages/4">{{"menu.admis_pages_emp" | translate}}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[5]" class="menu-item admispages"
+              routerLink="/admis-pages/5">{{"menu.admis_pages_stats" | translate}}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[6]" class="menu-item admispages"
+              routerLink="/admis-pages/6">{{"menu.admis_pages_reports" | translate}}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[7]" class="menu-item admispages"
+              routerLink="/admis-pages/7">{{"menu.admis_pages_admis" | translate}}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[8]" class="menu-item admispages"
+              routerLink="/admis-pages/8">{{"menu.admis_pages_enquiries" | translate}}
+              <i class="ik ik-tablet"></i></a>
           </div>
         </div>
 
