@@ -112,10 +112,10 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1" text="الاعتراض على نتيجة الاختبار النهائي" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
                 </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/lectabs')" (tap)="onNavItemTap('/procedures/lectabs')">
+               <!--<GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/lectabs')" (tap)="onNavItemTap('/procedures/lectabs')">
                     <Label col="1" text="الاستعلام عن الغيابات" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
+                </GridLayout>-->
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/visitorstudent')" (tap)="onNavItemTap('/procedures/visitorstudent')">
                     <Label col="1" text="طلب الدراسة كطالب زائر" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
@@ -322,11 +322,11 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
 
                 </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/absencequery')">
+                <!--<GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/absencequery')">
                     <Label col="1" text="   استعلام عن الغياب" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
 
-                </GridLayout>
+                </GridLayout>-->
                 <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/changecourse')">
                     <Label col="1" text="    تغير مقرر" class="ysMenuItem" ></Label>
                     <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
