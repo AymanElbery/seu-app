@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
 import { ExamObjectionService } from 'src/app/master-academic-requests/services/exam-objection.service';
@@ -14,7 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './exam-objection.component.html',
   styleUrls: ['./exam-objection.component.scss']
 })
-export class ExamObjectionComponent implements OnInit {
+export class ExamObjectionComponent implements OnInit,OnDestroy {
 
   printAR;
   objectexam: ObjectExam;
@@ -27,7 +27,21 @@ export class ExamObjectionComponent implements OnInit {
   ngOnInit() {
     this.objectexam = { courses: [], exams: [], reason: '', bank: -1, account_number: '', fees_amount: '', attachment: '' };
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getRequests().then(

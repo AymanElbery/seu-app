@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
 import { ExamsExecusesService } from '../services/exams-execuses.service';
@@ -11,7 +11,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   templateUrl: './exams-execuses.component.html',
   styleUrls: ['./exams-execuses.component.scss']
 })
-export class ExamsExecusesComponent implements OnInit {
+export class ExamsExecusesComponent implements OnInit,OnDestroy {
 
   reqData;
   msgs;
@@ -22,7 +22,21 @@ export class ExamsExecusesComponent implements OnInit {
 
   ngOnInit() {
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getRequest().then(

@@ -67,7 +67,7 @@
       <ScrollView orientation="horizontal">
         <StackLayout>
           <StackLayout>
-            <GridLayout columns="50, 130, 80, 50" class="throw">
+            <GridLayout columns="50, 130, 80, 50" class="throw" [ngClass]="{'throw_no_border':reqData.requests.length === 0}">
               <Label textAlignment="center" col="3" text="{{'services.reg.orderwishes' | translate}}"></Label>
               <Label textAlignment="center" col="2" text="{{'services.reg.dayperiod' | translate}}"></Label>
               <Label textAlignment="center" col="1" text="{{'services.reg.orderdate' | translate}}"></Label>

@@ -23,6 +23,6 @@ export class SkillsRecordService {
   DownloadEN() {
     const sid = this.configService.getSid();
     this.configService.baseUrl = 'stdservicesapi';
-    return this.configService.getApiURI() + '/activities_service/records_print?Lang=en&sid=' + sid;
+    return this.configService.getApiURI() + '/activities_service/records_print?lang=en&sid=' + sid;
   }
 }

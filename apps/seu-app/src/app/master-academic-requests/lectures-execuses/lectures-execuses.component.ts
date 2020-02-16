@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AddLecturesExecusesComponent } from './diag/add-lectures-execuses/add-lectures-execuses.component';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
@@ -13,7 +13,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   templateUrl: './lectures-execuses.component.html',
   styleUrls: ['./lectures-execuses.component.scss']
 })
-export class LecturesExecusesComponent implements OnInit {
+export class LecturesExecusesComponent implements OnInit,OnDestroy {
 
   printAR;
   lectureExecuse: LectureExecuse;
@@ -25,7 +25,21 @@ export class LecturesExecusesComponent implements OnInit {
 
   ngOnInit() {
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getRequests().then(

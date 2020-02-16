@@ -18,112 +18,111 @@
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 </StackLayout>
 
-<TabView selectedIndex="2" *ngIf="!isLoading">
-	<StackLayout *tabItem='{title: firstTabTitle}' class="ysBox">
-        <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start"  *ngIf="absData&&absData.absent_percentage_total.length>0;else array1">
+    <TabView selectedIndex="2" *ngIf="!isLoading">
+        <StackLayout *tabItem='{title: firstTabTitle}'>
+                <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
+                <FlexboxLayout flexDirection="column" justifyContent="flex-start"  *ngIf="absData&&absData.absent_percentage_total.length>0;else array1" class="ysBox">
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+                        <label text='{{"general.crn" | translate}}'></label>
+                        <label text='{{"general.course_code" | translate}}'></label>
+                        <label text='{{"general.course_name" | translate}}'  style="width: 30%;text-align: center;" ></label>
+                        <label text='{{"general.count" | translate}}'  style="width: 15%;text-align: center;" ></label>
+                        <label text='{{"general.absence_percent" |translate}}'></label>
+                    </FlexboxLayout>
+
+                    <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.absent_percentage_total" flexDirection="row-reverse" 
+                    class="trow" [ngStyle]="{'border-bottom-width':item === absData.absent_percentage_total[absData.absent_percentage_total.length-1] ? '0' : '1' }">
+                    
+                        <Label [text]="item.CRN"></Label>
+                        <Label [text]="item.CRES_CODE"  ></Label>
+                        <Label [text]="item.CRSE_TITLE" style="width: 30%;text-align: center;" textWrap="true" ></Label>
+                        <Label [text]="item.ABSCOUNT"  style="width: 15%;text-align: center;"></Label>
+                        <Label [text]="item.ABSENT_PERCENTAGE_TOTAL" ></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <ng-template #array1>
+                    <Label text='{{"services.absence_quyery.all_lecs_asebsence_percent" |translate}}' class="trow"></Label>
+                    <TextField text='0' editable= "false"></TextField>
+                </ng-template>
+
+        </StackLayout>
+        <StackLayout *tabItem='{title: secondTabTitle}'>
+                <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
+                <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="absData.absent_percentage_actual_lectures.length>=0;else emptyArr2"  class="ysBox" >           
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+                        <label text='{{"general.crn" | translate}}'></label>
+                        <label text='{{"general.course_code" | translate}}'></label>
+                        <label text='{{"general.course_name" | translate}}' style="width: 30%;text-align: center;"></label>
+                        <label text='{{"general.count" | translate}}' style="width: 15%;text-align: center;"></label>
+                        <label text='{{"general.absence_percent" |translate}}'></label>
+                    </FlexboxLayout>
+
+                    <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.absent_percentage_actual_lectures" flexDirection="row-reverse" 
+                    class="trow" [ngStyle]="{'border-bottom-width':item === absData.absent_percentage_actual_lectures[absData.absent_percentage_actual_lectures.length-1] ? '0' : '1' }">
+                    
+                        <Label [text]="item.CRN"></Label>
+                        <Label [text]="item.CRES_CODE"  ></Label>
+                        <Label [text]="item.CRSE_TITLE" style="width: 30%;text-align: center;" textWrap="true"></Label>
+                        <Label [text]="item.ABSCOUNT" style="width: 15%;text-align: center;" ></Label>
+                        <Label [text]="item.ABSENT_PERCENTAGE_FTF" ></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <ng-template #emptyArr2>
+                    <Label text='{{"services.absence_quyery.traditional_lecs_asebsence_percent" |translate}}'></Label>
+                    <TextField text='0' editable= "false"></TextField>
+                </ng-template>
+        </StackLayout>
+        <StackLayout *tabItem='{title: thirdTabTitle}'>
+                <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
+                <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading&&absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3" class="ysBox">           
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+                        <label text='{{"general.crn" | translate}}'></label>
+                        <label text='{{"general.course_code" | translate}}'></label>
+                        <label text='{{"general.course_name" | translate}}' style="width: 30%;text-align: center;" textWrap="true"></label>
+                        <label text='{{"general.count" | translate}}' style="width: 15%;text-align: center;"></label>
+                        <label text='{{"general.absence_percent" |translate}}'></label>
+                    </FlexboxLayout>
+                    <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.absent_percentage_virtual_lectures" flexDirection="row-reverse" 
+                    class="trow" [ngStyle]="{'border-bottom-width':item === absData.absent_percentage_virtual_lectures[absData.absent_percentage_virtual_lectures.length-1] ? '0' : '1' }">
+                    
+                        <Label [text]="item.CRN"></Label>
+                        <Label [text]="item.CRES_CODE"  ></Label>
+                        <Label [text]="item.CRSE_TITLE" style="width: 30%;text-align: center;" textWrap="true"></Label>
+                        <Label [text]="item.ABSCOUNT" style="width: 15%;text-align: center;"></Label>
+                        <Label [text]="item.ABSENT_PERCENTAGE_VERT" ></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <ng-template #emptyArr3>
+                    <Label text='{{"services.absence_quyery.virtual_lecs_asebsence_percent" |translate}}'></Label>
+                </ng-template>
+        </StackLayout>
+    </TabView>
+
+    <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox" *ngIf="!isLoading">
+             
+            <label text='{{"general.lectures" | translate}}'></label>
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-                <label text='{{"general.crn" | translate}}'></label>
                 <label text='{{"general.course_code" | translate}}'></label>
                 <label text='{{"general.course_name" | translate}}'></label>
-                <label text='{{"general.count" | translate}}'></label>
-                <label text='{{"general.absence_percent" |translate}}'></label>
+                <label text='{{"general.lecture_type" | translate}}'></label>
+                <label text='{{"general.week" | translate}}'></label>
+                <label text='{{"general.day" | translate}}'></label>
+                <label text='{{"services.absence_quyery.attendance_status" | translate}}'></label>
             </FlexboxLayout>
 
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.absent_percentage_total" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === absData.absent_percentage_total-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRES_CODE"  ></Label>
-                <Label [text]="item.CRSE_TITLE" ></Label>
-                <Label [text]="item.ABSCOUNT" ></Label>
-                <Label [text]="item.ABSENT_PERCENTAGE_TOTAL" ></Label>
+            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.lectures" flexDirection="row-reverse" 
+            class="trow" [ngStyle]="{'border-bottom-width':item ===absData.lectures[absData.lectures.length-1] ? '0' : '1' }">
+            
+                <Label [text]="item.CODE"></Label>
+                <Label [text]="item.TITLE" style="width: 30%;text-align: center;" textWrap="true" ></Label>
+                <Label [text]="item.TYPE" ></Label>
+                <Label [text]="item.WEEK_ID" ></Label>
+                <Label [text]="item.DAY" ></Label>
+                <Label [text]="item.STATUS" ></Label>
             </FlexboxLayout>
-        </FlexboxLayout>
-        <ng-template #array1>
-            <Label text='{{"services.absence_quyery.all_lecs_asebsence_percent" |translate}}' class="trow"></Label>
-            <TextField text='0' editable= "false"></TextField>
-        </ng-template>
-
-	</StackLayout>
-	<StackLayout *tabItem='{title: secondTabTitle}' class="ysBox">
-        <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="absData.absent_percentage_actual_lectures.length>=0;else emptyArr2">           
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-                <label text='{{"general.crn" | translate}}'></label>
-                <label text='{{"general.course_code" | translate}}'></label>
-                <label text='{{"general.course_name" | translate}}'></label>
-                <label text='{{"general.count" | translate}}'></label>
-                <label text='{{"general.absence_percent" |translate}}'></label>
-            </FlexboxLayout>
-
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.absent_percentage_actual_lectures" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === absData.absent_percentage_actual_lectures-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRES_CODE"  ></Label>
-                <Label [text]="item.CRSE_TITLE" ></Label>
-                <Label [text]="item.ABSCOUNT" ></Label>
-                <Label [text]="item.ABSENT_PERCENTAGE_FTF" ></Label>
-            </FlexboxLayout>
-        </FlexboxLayout>
-        <ng-template #emptyArr2>
-            <Label text='{{"services.absence_quyery.traditional_lecs_asebsence_percent" |translate}}'></Label>
-            <TextField text='0' editable= "false"></TextField>
-        </ng-template>
-	</StackLayout>
-	<StackLayout *tabItem='{title: thirdTabTitle}' class="ysBox">
-        <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading&&absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3">           
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-                <label text='{{"general.crn" | translate}}'></label>
-                <label text='{{"general.course_code" | translate}}'></label>
-                <label text='{{"general.course_name" | translate}}'></label>
-                <label text='{{"general.count" | translate}}'></label>
-                <label text='{{"general.absence_percent" |translate}}'></label>
-            </FlexboxLayout>
-
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.absent_percentage_virtual_lectures" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === absData.absent_percentage_virtual_lectures-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRES_CODE"  ></Label>
-                <Label [text]="item.CRSE_TITLE" ></Label>
-                <Label [text]="item.ABSCOUNT" ></Label>
-                <Label [text]="item.ABSENT_PERCENTAGE_VERT" ></Label>
-            </FlexboxLayout>
-        </FlexboxLayout>
-        <ng-template #emptyArr3>
-            <Label text='{{"services.absence_quyery.virtual_lecs_asebsence_percent" |translate}}'></Label>
-        </ng-template>
-	</StackLayout>
-</TabView>
-
-<FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox" *ngIf="!isLoading">
-           
-    <label text='{{"general.lectures" | translate}}'></label>
-    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-        <label text='{{"general.course_code" | translate}}'></label>
-        <label text='{{"general.course_name" | translate}}'></label>
-        <label text='{{"general.lecture_type" | translate}}'></label>
-        <label text='{{"general.week" | translate}}'></label>
-        <label text='{{"general.day" | translate}}'></label>
-        <label text='{{"services.absence_quyery.attendance_status" | translate}}'></label>
     </FlexboxLayout>
 
-    <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.lectures" flexDirection="row-reverse" 
-      class="trow" [ngStyle]="{'border-bottom-width':i ===absData.lectures-1 ? '0' : '1' }">
-       
-        <Label [text]="item.CODE"></Label>
-        <Label [text]="item.TITLE"  ></Label>
-        <Label [text]="item.TYPE" ></Label>
-        <Label [text]="item.WEEK_ID" ></Label>
-        <Label [text]="item.DAY" ></Label>
-        <Label [text]="item.STATUS" ></Label>
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
+        <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
+        <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
     </FlexboxLayout>
-</FlexboxLayout>
-
-<FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
-    <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
-    <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
-</FlexboxLayout>

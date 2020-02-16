@@ -32,7 +32,7 @@
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
         <FlexboxLayout flexDirection="column"  *ngIf="!isLoading" class="ysBox">
-            <FlexboxLayout flexDirection="row-reverse" class="throw" justifyContent="space-between"> 
+            <FlexboxLayout flexDirection="row-reverse" class="throw" justifyContent="space-between" [ngClass]="{'throw_no_border':reqData.requests.length === 0}"> 
                 <label text='{{"general.request.req_no"|translate}}'  ></label>
                 <label text='{{"general.request.date_and_status"|translate}}'></label>
                 <label text='{{"services.english-equalize.reply_date"|translate}}'  ></label>

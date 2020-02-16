@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
 import { TermPostponeService } from 'src/app/academicprocs/services/term-postpone.service';
@@ -14,7 +14,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   templateUrl: './study-postpone.component.html',
   styleUrls: ['./study-postpone.component.scss']
 })
-export class StudyPostponeComponent implements OnInit {
+export class StudyPostponeComponent implements OnInit,OnDestroy {
 
 
   studypostpone: studyPostpone;
@@ -28,7 +28,21 @@ export class StudyPostponeComponent implements OnInit {
   ngOnInit() {
     this.studypostpone = { num_terms: '', reason: '', mobile: '' };
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getRequest().then(

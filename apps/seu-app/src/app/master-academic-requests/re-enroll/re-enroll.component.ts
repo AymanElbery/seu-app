@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ReEnroll } from 'src/app/shared/models/re-enroll';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ToastrService } from 'ngx-toastr';
@@ -14,7 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './re-enroll.component.html',
   styleUrls: ['./re-enroll.component.scss']
 })
-export class ReEnrollComponent implements OnInit {
+export class ReEnrollComponent implements OnInit,OnDestroy {
 
 
   printAR;
@@ -29,7 +29,21 @@ export class ReEnrollComponent implements OnInit {
   ngOnInit() {
     this.reEnroll = { proof: '', reason: '', has_proof: '' };
     this.getRequests();
+    this.subscribeLangChange();
   }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(

@@ -88,7 +88,7 @@
         "email": "Email",
         "course_code_name": "Course Name/Code",
         "choose": "Choose",
-        "admis_pages": "الصفحات الإدارية",
+        "admis_pages": "الأنظمة الإدارية",
         "stds_pages": "نظام ادارة الخدمات الالكترونية"
     },
     "menu": {
@@ -97,7 +97,7 @@
         "grservices": "Master",
         "userData": "Student data",
         "academic_status": "Academic status",
-        "termexecuse": "Cancel course  ",
+        "termexecuse": "Term Excuse",
         "postpone": "Term Postpone",
         "studypostpone": "Study postpone  ",
         "withdrawal": "Withdraw from university ",
@@ -176,7 +176,15 @@
         "notfound": "not found ",
         "skills_record": "Skills Record",
         "BLACKBOARD": "Black Board",
-        "GRADUATE" : "Graduate affairs"
+        "GRADUATE": "Graduate affairs",
+        "admis_pages_jobs": "نظام التوظيف",
+        "admis_pages_sms": "نظام الرسائل",
+        "admis_pages_stds": "طلبات الطلاب",
+        "admis_pages_emp": "طلبات الموظفين",
+        "admis_pages_stats": "الاحصائيات",
+        "admis_pages_reports": "التقارير",
+        "admis_pages_admis": "ادارة الانظمة",
+        "admis_pages_enquiries": "الاستعلامات"
     },
     "services": {
         "academic_status": {
@@ -260,7 +268,8 @@
             "equalize_english_req": "English Equalize Request",
             "choose_exam_degree": "Choose Exam and Grade",
             "exam_name": "Exam Name",
-            "certificate_image": "Certificate Picture"
+            "certificate_image": "Certificate Picture",
+            "degree":"Degree"
         },
         "excuse_request": {
             "title": "Execuse for a Term",
@@ -577,8 +586,8 @@
             "addreq": "register request "
         },
         "skills_record": {
-            "title": "Activity Record",
-            "desc": "هو وثيقة رسمية معتمدة من الجامعة تصدرها وحدة السجل المهاري في الجامعة تشمل على كافة الفعاليات من دورات تدريبية، و أنشطة طلابية التي حصل عليها الطالب خلال فترة دراسته الجامعية، وذلك لإثبات قدراته ومهاراته في المجالات الغير الأكاديمية مما يدعم فرص منافسته على الوظائف.",
+            "title": "Skills Record",
+            "desc": "Skills Record",
             "no_skills": "No records",
             "skill": "Skill",
             "conditions": "Conditions",

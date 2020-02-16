@@ -20,13 +20,22 @@ export class NotificationsService {
     RETURN_REQUEST: { path: '/procedures/reenrol' },
     CHANGE_MAJOR: { path: '/procedures/changemajor' },
     CHANGE_CAMP: { path: '/procedures/changerequest' },
-    objectexam: { path: '/procedures/objectexam' },
-    lecexecuse: { path: '/procedures/lecexecuse' },
-    terminate: { path: '/procedures/terminate' },
-    visitorstudent: { path: '/procedures/visitorstudent' },
-    lectabs: { path: "/procedures/lectabs" },
-    equalize: { path: '/procedures/equalize' },
-    eequalize: { path: '/procedures/eequalize' }
+    // terminate: { path: '/procedures/terminate' },
+    VISITOR_STUDENT: { path: '/procedures/visitorstudent' },
+    COURSES_REQUEST: { path: '/procedures/equalize' },
+    ENGLISH_REQUEST: { path: '/procedures/eequalize' },
+    EXAM_OBJECTION: { path: '/procedures/objectexam', masterPath: '/academicrequests/objectexam' },
+    EXAM_FINAL_EXCUSE: { path: '/exams/examexcuse', masterPath: '/academicrequests/examsexecuses' },
+    EXAM_TERM_EXCUSE: { path: '/exams/examexcuse', masterPath: '/academicrequests/examsexecuses' },
+    LECTURES: { path: '/procedures/lecexecuse', masterPath: '/academicrequests/lecturesexecuses' },
+    CANCEL_COURSE_MASTER: { path: '/academicrequests/cancelcourse' },
+    CHANGE_CAMP_MASTER: { path: '/otherrequests/changebranch' },
+    CHANGE_MAJOR_MASTER: { path: '/otherrequests/changecourse' },
+    RETURN_REQUEST_MASTER: { path: '/academicrequests/reEnroll' },
+    EXCUSE_REQUEST_MASTER: { path: '/academicrequests/termexecuse' },
+    WITHDRAW_REQUEST_MASTER: { path: '/academicrequests/withdrawal' },
+    POSTPHONE_REQUEST_MASTER: { path: '/academicrequests/studypostpone' }
+    //FEES_REFUND_MASTER: { path: '/academicrequests/lecexecuse' },
   }
 
   notsURL = environment.baselink + environment.servicesprefix + "/rest/notifications/";
@@ -87,7 +96,13 @@ export class NotificationsService {
     if (!this.NOTIFICAATIONSETTINGS[note['SERVICECODE']]) {
       return;
     }
-    const path = this.NOTIFICAATIONSETTINGS[note['SERVICECODE']]['path'];
+    let path = this.NOTIFICAATIONSETTINGS[note['SERVICECODE']]['path'];
+    if (this.NOTIFICAATIONSETTINGS[note['SERVICECODE']]['masterPath']) {
+      const udata = this.userService.getActiveRoleDetails();
+      if (udata.level == 'GR') {
+        path = this.NOTIFICAATIONSETTINGS[note['SERVICECODE']]['masterPath'];
+      }
+    }
     this.router.navigateByUrl(path);
   }
 

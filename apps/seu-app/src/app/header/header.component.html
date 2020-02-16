@@ -7,7 +7,7 @@
         <div class="dropdown align-items-right">
           <a class="dropdown-toggle pub-ser" href="#" id="userDropdown" data-toggle="dropdown">
             <img class="avatar" src="assets/images/avatar.png" alt=""> <span> <bdi> {{"menu.hello" | translate}}  :
-                <span class="">{{userData.name_ar}}</span> </bdi></span>
+                <span class="">{{currLang == 'ar' ? userData.name_ar : userData.name_en}}</span> </bdi></span>
             <i class="ik ik-chevron-down"></i>
           </a>
 
