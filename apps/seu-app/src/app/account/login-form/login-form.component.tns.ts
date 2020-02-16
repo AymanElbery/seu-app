@@ -3,10 +3,7 @@ import { Credentials } from '../../shared/models/credentials.interface';
 import { Subscription } from 'rxjs';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { finalize } from 'rxjs/operators';
 import { UserManagerService } from '../../shared/services/user-manager.service';
-import * as dialogs from 'tns-core-modules/ui/dialogs';
-import * as AppSettings from '@nativescript/core/application-settings';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.tns.html',
@@ -22,7 +19,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   credentials: Credentials = { email: '', password: '' };
   constructor(
     private userService: UserService,
-    private userManger: UserManagerService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
@@ -37,18 +33,18 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     // this.userManger.logout();
   }
 
-  login(value: Credentials) {
-    this.submitted = true;
+  login() {
+   /*  this.submitted = true;
     this.isRequesting = true;
     this.errors = '';
 
-    this.userService.loadUserData().then(res => {
+    this.userService.loadUserData().then(() => {
       if (this.userService.userData.activeRole === '') {
         this.userService.loadUserData();
       }
     }
-    );
-    this.router.navigate(['/home']);
+    ); */
+    this.router.navigate(['/land']);
     /*  this.userService
        .login(value.email, value.password)
        .pipe(finalize(() => (this.isRequesting = false)))
@@ -57,7 +53,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
            //console.log(result.data);
            if (result.status == 1) {
              this.userManger.saveToken(result.data);
- 
+
              this.userManger.login();
              this.router.navigate(["/dashboard/home"]);
            } else {
