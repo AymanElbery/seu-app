@@ -16,7 +16,8 @@ export class MenuComponent implements OnInit {
   constructor(public userService: UserService, private router: Router) {
   }
 
-
+  showadmis = false;
+  admisPage = {};
   fillmenu() {
     /*if (this.userService.userData.role == 'Employee' || this.userService.userData.role == 'Instructor') {
       this.showMySystem = true;
@@ -49,6 +50,14 @@ export class MenuComponent implements OnInit {
         this.acStd = false;
         this.showServices = false;
       }*/
+    }
+    this.admisPage = {};
+    this.showadmis = false;
+    if (this.userService.userData.role != 'Student') {
+      this.userService.getAdmisPerm().subscribe(res => {
+        this.admisPage = res['data'];
+        this.showadmis = Object.keys(res["data"]).length ? true : false;
+      });
     }
   }
   ngOnInit() {

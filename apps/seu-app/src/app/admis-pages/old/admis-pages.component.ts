@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 
@@ -12,11 +12,15 @@ export class AdmisPagesComponent implements OnInit {
 
 
   urlSafe;
-  constructor(public sanitizer: DomSanitizer) {
+  cat;
+  constructor(public sanitizer: DomSanitizer, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(environment.baselink + environment.appsprefix + '/admsv-pages/index.php');
+    this.route.paramMap.subscribe(params => {
+      this.cat = params.get("cat")
+    })
+    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(environment.baselink + environment.appsprefix + '/admsv-pages/index.php?cat=' + this.cat);
 
   }
 

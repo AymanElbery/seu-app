@@ -48,8 +48,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
     } else {
       document.getElementById('html').setAttribute('lang', code);
       document.getElementById('html').setAttribute('dir', 'rtl');
-      document.getElementById('enStyle').remove();
+      if (document.getElementById('enStyle'))
+        document.getElementById('enStyle').remove();
     }
+    localStorage.setItem('seu-lang', code);
   }
 
   private loadExternalStyles(styleUrl: string) {
@@ -62,13 +64,20 @@ export class HeaderComponent implements OnInit, OnDestroy {
       document.head.appendChild(styleElement);
     });
   }
-
-  ngOnInit() {
+  initLang() {
     this.currLang = this.translate.currentLang;
+    this.useLang(this.currLang);
+  }
+  ngOnInit() {
+    this.initLang();
+    this.translate.onLangChange.subscribe(() => {
+      this.initLang();
+    });
     // console.log('header user data');
     this.userService.userDataSubject.subscribe(res => {
       if (res) {
         this.userData = this.userService.getActiveRoleDetails();
+        //console.log(this.userData);
         // if (!this.userService.userData.name_ar) {
         //   setTimeout(() => {
         //     window.location.reload();
