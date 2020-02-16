@@ -116,7 +116,7 @@ export class UserService extends BaseService {
   }
 
   requestUser() {
-    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/users';
+    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/user';
     const auth = `Basic ${window.btoa('sso:s$0$3u2030')}`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
