@@ -116,7 +116,7 @@ export class UserService extends BaseService {
   }
 
   requestUser() {
-    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/user';
+    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/users';
     const auth = `Basic ${window.btoa('sso:s$0$3u2030')}`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -127,9 +127,6 @@ export class UserService extends BaseService {
   }
 
   loadUserData() {
-    this.configService.baseUrl = 'stdservicesapi';
-
-    // console.log('log ueer data-----------------------------------------------------------------------------------');
     if (this.userDataLoaded !== true) {
       return this.requestUser()
         .then(res => {
@@ -139,7 +136,16 @@ export class UserService extends BaseService {
           this.userDataLoaded = true;
           this.pushUserDataChanges();
           return this.userData;
-        });
+        },
+          err => {
+            if (localStorage.getItem("userreloaded")) {
+              localStorage.removeItem("userreloaded");
+              window.location.href = "https://seu.edu.sa";
+            } else {
+              localStorage.setItem("userreloaded", "1");
+              this.relogin();
+            }
+          });
     }
   }
   loadUserDetailsData() {
