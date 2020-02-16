@@ -133,7 +133,6 @@ export class UserService extends BaseService {
     if (this.userDataLoaded !== true) {
       return this.requestUser()
         .then(res => {
-          console.log(res);
           this.userData = (res as any).data;
           // console.log('userdata:'+this.userData);
           this.userData.activeRole = this.userData.role;
