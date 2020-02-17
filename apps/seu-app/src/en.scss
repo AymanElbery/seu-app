@@ -111,3 +111,13 @@ select.form-control {
   margin-right: 5px;
   // margin-left: 5px;
 }
+
+.wrapper .page-wrap .app-sidebar.hide-sidebar {
+  transform: translate3d(-100%, 0, 0);
+}
+
+@media (max-width: 576px) {
+  .wrapper .header-top {
+    padding-left: inherit;
+  }
+}

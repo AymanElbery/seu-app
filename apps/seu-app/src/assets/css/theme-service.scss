@@ -1541,6 +1541,10 @@ iframe {
   .w-xs-100 {
     width: 100% !important;
   }
+
+  .sidebar-header {
+    // display: none !important;
+  }
 }
 
 .card {
@@ -7982,7 +7986,6 @@ iframe {
           font-size: 11px;
           font-weight: 800;
           color: #fff;
-          //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
           border-radius: 100px;
         }
       }
@@ -7993,14 +7996,12 @@ iframe {
         width: 30px;
         height: 30px;
         line-height: 30px;
-        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
         border-radius: 50%;
         display: inline-block;
         background: #ced4da no-repeat center/cover;
         position: relative;
         vertical-align: bottom;
         font-size: .875rem;
-        //Instead of the line below you could use @include user-select($select)
         user-select: none;
       }
 
@@ -8012,22 +8013,21 @@ iframe {
         span {
           height: 2px;
           width: 20px;
-          background-color: #4a5361;
+          background-color: #f08b1d;
           display: inline-block;
-          //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
           border-radius: 4px;
           position: absolute;
           top: 14px;
           right: 5px;
         }
 
-        span::before {
+        span::before,
+        span::after {
           content: "";
           height: 2px;
           width: 20px;
-          //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
           border-radius: 4px;
-          background-color: #4a5361;
+          background-color: #f08b1d;
           display: inline-block;
           position: absolute;
           right: 0;
@@ -8035,15 +8035,7 @@ iframe {
         }
 
         span::after {
-          content: "";
-          height: 2px;
-          width: 20px;
-          //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-          border-radius: 4px;
-          background-color: #4a5361;
-          display: inline-block;
-          position: absolute;
-          right: 0;
+          top: auto;
           bottom: -6px;
         }
       }

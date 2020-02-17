@@ -100,9 +100,10 @@
   }
 
   .header-top {
-    background-color: #fff;
+    background-color: #01182a;
     padding-top: 7px;
     padding-bottom: 7px;
+    color: #fff;
 
     .top-menu {
       .avatar {
@@ -111,7 +112,7 @@
       }
 
       .nav-link {
-        color: #000440;
+        color: inherit;
 
         i {
           font-size: 20px;
@@ -122,11 +123,11 @@
         &.notification-dropdown {
           .header {
             font-size: 14px;
-            color: #1c2172;
+            color: inherit;
           }
 
           .footer a {
-            color: #000440;
+            color: inherit;
             font-size: 14px;
           }
         }
@@ -142,19 +143,19 @@
             padding: 0;
             line-height: 40px;
             font-size: 22px;
-            color: #000440;
+            color: inherit;
           }
 
           p {
             font-size: 12px;
-            color: #ffffff;
+            color: inherit;
             margin-bottom: 0;
             padding: 8px 10px;
             background: #1c2172;
           }
 
           ul {
-            color: #1c2172;
+            color: inherit;
             margin-bottom: 0;
             direction: rtl;
             list-style: none;
@@ -170,7 +171,7 @@
       }
 
       .header-search .input-group .input-group-addon {
-        color: #000440;
+        color: inherit;
         padding: 8px 10px 2px 0;
         font-size: 18px;
 
@@ -179,13 +180,18 @@
         }
       }
 
+      a.social {
+        color: inherit;
+
+      }
+
       a.pub-ser {
-        color: #000440;
+        color: inherit;
         line-height: 3.7;
 
         .ik {
           font-size: 16px;
-          color: #000440;
+          color: inherit;
           margin-left: 3px;
         }
       }
