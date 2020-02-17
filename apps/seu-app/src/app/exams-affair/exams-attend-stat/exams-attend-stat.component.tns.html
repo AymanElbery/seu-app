@@ -30,7 +30,7 @@
                 </ListView>
         </FlexboxLayout>
 
-        <ScrollView>
+        <ScrollView height="100%">
             <StackLayout>
                 <StackLayout>
 
@@ -105,7 +105,7 @@
                         <Label text="{{eaData.Term_Exam_With_Schedule.labels.txt11}}" textWrap="true"></Label>
                 </FlexboxLayout>
             </StackLayout>
-            <StackLayout>
+            <StackLayout style="margin-top: 20;">
                 <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="termScheduleMsgs.length == 0">
                         <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
                         <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
@@ -173,7 +173,7 @@
 
         </GridLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="termMsgs == 0">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="termMsgs == 0" style="margin-top: 20;">
             <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintTerm()" ></Button>
             <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()"></Button>
         </FlexboxLayout>
@@ -189,7 +189,7 @@
                 </ng-template>
             </ListView>
         </FlexboxLayout>
-        <ScrollView>
+        <ScrollView height="100%">
             <StackLayout>
                 <StackLayout>
                     <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="finalScheduleMsgs == 0">
@@ -261,7 +261,7 @@
                     </FlexboxLayout>
                 </StackLayout>
 
-                <StackLayout>
+                <StackLayout style="margin-top: 20;">
                     <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="finalScheduleMsgs == 0">
                         <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintFinalSced()" ></Button>
                         <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintFinalSced()"></Button>
@@ -324,7 +324,7 @@
         </FlexboxLayout>
     </GridLayout>
       
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="finalMsgs==0">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="finalMsgs==0" style="margin-top: 20;">
             <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()" ></Button>
             <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintFinal()"></Button>
         </FlexboxLayout>

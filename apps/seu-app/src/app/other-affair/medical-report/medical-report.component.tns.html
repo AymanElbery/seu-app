@@ -52,7 +52,7 @@
             <Label text="{{mrData.labels.txt3}}" textWrap="true"></Label>
         </FlexboxLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading" style="margin-top: 20;">
             <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
             <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
         </FlexboxLayout>

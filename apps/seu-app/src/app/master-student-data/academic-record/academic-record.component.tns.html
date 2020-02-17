@@ -132,7 +132,7 @@
             </ng-template>
         </RadListView>
 
-        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
             <Button text='{{"general.ar_language" | translate}}' (tap)="onArabicPrint()" class="-primary -rounded-sm"></Button>
             <Button text='{{"general.en_language" | translate}}' (tap)="onEnglishPrint()" class="-primary -rounded-sm"></Button>
         </FlexboxLayout>

@@ -21,7 +21,7 @@
 
 <TabView selectedIndex="3" *ngIf="!isLoading">
 	<StackLayout *tabItem='{title: eaData.Term_Exam_With_Schedule.labels.title}'>
-        <ScrollView>
+        <ScrollView height="100%">
             <StackLayout>
                 <StackLayout>
                     <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
@@ -93,7 +93,7 @@
                     </FlexboxLayout>
                 </StackLayout>
 
-                <StackLayout>
+                <StackLayout style="margin-top: 20;">
                     <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
                         <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
                         <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
@@ -147,7 +147,7 @@
 
         </GridLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
             <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintTerm()" ></Button>
             <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()"></Button>
         </FlexboxLayout>
@@ -155,7 +155,7 @@
     </StackLayout>
     
 	<StackLayout *tabItem='{title: thirdTabTitle}'>
-        <ScrollView>
+        <ScrollView height="100%">
         <StackLayout>
                 <StackLayout>
                     <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
@@ -229,7 +229,7 @@
                 </StackLayout>
 
                 <StackLayout>
-                    <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
+                    <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
                         <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintFinalSced()" ></Button>
                         <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintFinalSced()"></Button>
                     </FlexboxLayout>
@@ -282,7 +282,7 @@
             </FlexboxLayout>
         </GridLayout>
       
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
             <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()" ></Button>
             <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintFinal()"></Button>
         </FlexboxLayout>
