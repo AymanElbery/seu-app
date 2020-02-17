@@ -8,14 +8,18 @@ import { HomeService } from '../rootservices/home.service';
 import { NavigationEnd, Router } from '@angular/router';
 import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
+import { registerElement } from 'nativescript-angular/element-registry';
+// Register Custom Elements for Angular
+import { Carousel, CarouselItem } from 'nativescript-carousel';
+
+registerElement('Carousel', () => Carousel);
+registerElement('CarouselItem', () => CarouselItem);
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.tns.html'
 })
 export class HomeComponent implements OnInit {
-
-
     constructor(public printService: PrintService, public homeService: HomeService,
                 public userService: UserService,
                 private router: Router , private globalService: GlobalBaseService) {
@@ -29,7 +33,10 @@ export class HomeComponent implements OnInit {
             this.router.navigated = false;
           }
         });
+
       }
+
+sindex = 1;
       // newsData;
       // eventsData;
       // adsData;
@@ -41,6 +48,8 @@ export class HomeComponent implements OnInit {
       isNewsLoading;
       isAdsLoading;
       isEventLoading;
+
+
 
 
 
@@ -230,6 +239,16 @@ this.LoadNews();
 this.LoadEvents();
 this.LoadAds();
 
+
+
+setInterval(
+  () => {
+    this.sindex = this.sindex + 1;
+    if (this.sindex > 5) {
+      this.sindex = 0;
+    }
+  }, 3000
+);
 
       }
 
