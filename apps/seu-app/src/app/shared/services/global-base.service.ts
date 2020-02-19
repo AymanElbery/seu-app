@@ -3,9 +3,14 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export abstract  class GlobalBaseService {
+export abstract class GlobalBaseService {
 
-  constructor() { }
+  constructor() {
 
-   abstract getSID(): string;
+  }
+  abstract getSID(): string;
+  abstract getItem(key): string;
+  abstract setItem(key, value);
+  abstract relogin();
+
 }

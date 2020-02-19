@@ -4,6 +4,7 @@ import { config } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalBaseService } from './global-base.service';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -63,7 +64,7 @@ export class HttpRequestService {
     //  let headers= new Headers();
     // headers.append('Content-Type', 'application/json');
     const headers = this.createRequestHeader();
-    const authToken = localStorage.getItem('sid');
+    const authToken = this.globalService.getSID();
 
     // let options = new RequestOptions({ headers: headers });
     return this.http.get(url, { headers });
@@ -73,7 +74,7 @@ export class HttpRequestService {
     const url = this.configService.getApiURI() + '/' + path;
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    const authToken = localStorage.getItem(this.configService.getToken());
+    const authToken = this.globalService.getItem(this.configService.getToken());
     if (authToken) {
       const token = JSON.parse(authToken);
       const toeknStr = token.auth_token;
@@ -84,6 +85,19 @@ export class HttpRequestService {
       // let options = new RequestOptions({ headers: headers });
       return this.http.get(url, { headers });
     }
+  }
+  relogin() {
+    this.globalService.relogin();
+  }
+  requestUser() {
+    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/user';
+    const auth = this.getSSOAuth();
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'sessionid': this.globalService.getSID(),
+      'Authorization': auth
+    });
+    return this.http.get(url, { headers });
   }
 
   postRequest(path: string, body: any, addlng = true) {
@@ -107,7 +121,7 @@ export class HttpRequestService {
     const url = this.configService.getApiURI() + '/' + path;
     /// let headers= new Headers();
     //  headers.append('Content-Type', 'application/json');
-    const authToken = localStorage.getItem(this.configService.getToken());
+    const authToken = this.globalService.getItem(this.configService.getToken());
     if (authToken) {
       const token = JSON.parse(authToken);
       const toeknStr = token.auth_token;
@@ -117,4 +131,12 @@ export class HttpRequestService {
       return this.http.post(url, JSON.stringify(body), { headers });
     }
   }
+
+  getNotinficationsAuth() {
+    return `Basic ${window.btoa(environment.notesAuth)}`;
+  }
+  getSSOAuth() {
+    return `Basic ${window.btoa(environment.ssoAuth)}`;
+  }
+
 }

@@ -99,8 +99,7 @@ export class UserService extends BaseService {
   }
 
   relogin() {
-    localStorage.removeItem('sid');
-    window.location.href = environment.ssolink + '/' + environment.loginpage;
+    this.httRequest.relogin();
   }
   login(userName, password) {
     // console.log('ser');
@@ -109,21 +108,13 @@ export class UserService extends BaseService {
       .pipe(
         map((res: any) => res),
         catchError(err => {
-          console.error(err);
           return err;
         })
       );
   }
 
   requestUser() {
-    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/user';
-    const auth = `Basic ${window.btoa('sso:s$0$3u2030')}`;
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'sessionid': localStorage.getItem('sid'),
-      'Authorization': auth
-    });
-    return this.http.get(url, { headers }).toPromise();
+    return this.httRequest.requestUser().toPromise();
   }
 
   loadUserData() {
@@ -138,13 +129,13 @@ export class UserService extends BaseService {
           return this.userData;
         },
           err => {
-            if (localStorage.getItem("userreloaded")) {
-              localStorage.removeItem("userreloaded");
-              window.location.href = "https://seu.edu.sa";
-            } else {
-              localStorage.setItem("userreloaded", "1");
-              this.relogin();
-            }
+            this.relogin();
+            // if (localStorage.getItem("userreloaded")) {
+            //   localStorage.removeItem("userreloaded");
+            //   window.location.href = "https://seu.edu.sa";
+            // } else {
+            //   localStorage.setItem("userreloaded", "1");
+            // }
           });
     }
   }
@@ -172,11 +163,10 @@ export class UserService extends BaseService {
   }
 
   getAdmisPerm() {
-
     const udata = this.getActiveRoleDetails();
     let username = udata.username;
     const notsURL = environment.baselink + environment.servicesprefix + "/rest/admisperm/index";
-    const auth = `Basic ${window.btoa('nots:N0t!fic@ti0n$')}`;
+    const auth = this.httRequest.getNotinficationsAuth();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'username': username,

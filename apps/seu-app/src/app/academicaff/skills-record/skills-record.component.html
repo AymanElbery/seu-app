@@ -46,13 +46,23 @@
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">{{"services.skills_record.skill" |translate}}</th>
+                      <th scope="col">{{"services.skills_record.classification" |translate}}</th>
+                      <th scope="col">{{"services.skills_record.training" |translate}}</th>
+                      <th scope="col">{{"services.skills_record.hours" |translate}}</th>
+                      <th scope="col">{{"services.skills_record.organizer" |translate}}</th>
+                      <th scope="col">{{"services.skills_record.location" |translate}}</th>
+                      <th scope="col">{{"services.skills_record.date" |translate}}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let item of skills; let i = index;">
                       <td>{{i+1}}</td>
-                      <td>{{item.ACT_DESC}}</td>
+                      <td>{{item.CAT_NAME}}</td>
+                      <td>{{item.COURSE_NAME}}</td>
+                      <td>{{item.NO_OF_HOURS}}</td>
+                      <td>{{item.ORGANIZER}}</td>
+                      <td>{{item.LOCATION}}</td>
+                      <td>{{item.TDATE}}</td>
                     </tr>
                   </tbody>
                 </table>
