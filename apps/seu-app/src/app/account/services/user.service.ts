@@ -35,7 +35,7 @@ export class UserService extends BaseService {
     private http: HttpClient
   ) {
     super();
-    this.configService.baseUrl = 'stdservicesapi';
+    this.configService.baseUrl = '';
     // tslint:disable-next-line: max-line-length
     this.userData = {
       act_as_student: false,
@@ -117,6 +117,12 @@ export class UserService extends BaseService {
     return this.httRequest.requestUser().toPromise();
   }
 
+  SignIn(userName, pass) {
+    this.baseUrl = '';
+
+    return   this.httRequest.postAuthRequest('rest/ssosession/login', {user: userName, password: pass, full: 1}).toPromise();
+  }
+
   loadUserData() {
     if (this.userDataLoaded !== true) {
       return this.requestUser()
@@ -164,13 +170,13 @@ export class UserService extends BaseService {
 
   getAdmisPerm() {
     const udata = this.getActiveRoleDetails();
-    let username = udata.username;
-    const notsURL = environment.baselink + environment.servicesprefix + "/rest/admisperm/index";
+    const username = udata.username;
+    const notsURL = environment.baselink + environment.servicesprefix + '/rest/admisperm/index';
     const auth = this.httRequest.getNotinficationsAuth();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'username': username,
-      'Authorization': auth
+      username,
+      Authorization: auth
     });
     return this.http.get(notsURL, { headers });
   }

@@ -4,7 +4,7 @@ import { config } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalBaseService } from './global-base.service';
 import { TranslateService } from '@ngx-translate/core';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +13,9 @@ export class HttpRequestService {
 
 
   constructor(private translate: TranslateService,
-    private http: HttpClient,
-    private configService: ConfigService,
-    private globalService: GlobalBaseService) { }
+              private http: HttpClient,
+              private configService: ConfigService,
+              private globalService: GlobalBaseService) { }
 
 
   private createRequestHeader() {
@@ -46,6 +46,7 @@ export class HttpRequestService {
   GetRequest(path: string, addlng = true) {
     let url = this.configService.getApiURI() + '/' + path;
     if (addlng) {
+      // tslint:disable-next-line: triple-equals
       const langString = (path.indexOf('?') == -1 ? '?' : '&') + 'lang=' + this.translate.currentLang;
       url += langString;
     }
@@ -94,48 +95,63 @@ export class HttpRequestService {
     const auth = this.getSSOAuth();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'sessionid': this.globalService.getSID(),
-      'Authorization': auth
+      sessionid: this.globalService.getSID(),
+      Authorization: auth
     });
     return this.http.get(url, { headers });
   }
+  login(userName, passWord) {
+    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/user';
+    const auth = this.getSSOAuth();
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      sessionid: this.globalService.getSID(),
+      Authorization: auth
+    });
+    return this.http.post(url, { headers });
+  }
+
+  creatAuthHeader() {
+   // alert('hi');
+    const auth = 'Basic ${c3NvOnMkMCQzdTIwMzA=}';
+   // alert(auth);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: auth
+    });
+    return headers;
+  }
+
 
   postRequest(path: string, body: any, addlng = true) {
 
     let url = this.configService.getApiURI() + '/' + path;
     if (addlng) {
+      // tslint:disable-next-line: triple-equals
       const langString = (path.indexOf('?') == -1 ? '?' : '&') + 'lang=' + this.translate.currentLang;
       url += langString;
     }
     const headers = this.createRequestHeader();
-    // headers.append('Content-Type', 'application/json');
-    //  let options = new RequestOptions({ headers: headers });
-    /* if (body == null)
-       return this.http.post(url, { headers });
-     else*/
-    //// console.log(body);
     return this.http.post(url, JSON.stringify(body), { headers });
   }
   postAuthRequest(path: string, body: any) {
 
-    const url = this.configService.getApiURI() + '/' + path;
-    /// let headers= new Headers();
-    //  headers.append('Content-Type', 'application/json');
-    const authToken = this.globalService.getItem(this.configService.getToken());
-    if (authToken) {
-      const token = JSON.parse(authToken);
-      const toeknStr = token.auth_token;
-      const headers = this.createAuthRequestHeader(toeknStr);
-      // headers.append('Authorization', `Bearer ${toeknStr}`);
-      // let options = new RequestOptions({ headers: headers });
-      return this.http.post(url, JSON.stringify(body), { headers });
+    const url = this.configService.getApiURI()  + path;
+   // alert(url);
+
+    const headers = this.creatAuthHeader();
+
+    console.log(headers);
+    return this.http.post(url, JSON.stringify(body), { headers });
     }
-  }
+
 
   getNotinficationsAuth() {
     return `Basic ${window.btoa(environment.notesAuth)}`;
   }
   getSSOAuth() {
+   // alert('10');
+    
     return `Basic ${window.btoa(environment.ssoAuth)}`;
   }
 

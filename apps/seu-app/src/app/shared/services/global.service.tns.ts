@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GlobalBaseService } from './global-base.service';
-
+import * as applicationSettings from 'tns-core-modules/application-settings';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,10 +11,16 @@ export class GlobalService extends GlobalBaseService {
   }
 
   getItem(key): string {
-    return "";
+    return '';
   }
 
-  setItem(key, value) {
+  setItem(key: string, value: string) {
+    applicationSettings.setString(key, value);
+  }
+  setSid(value: string) {
+    applicationSettings.setString('sid', value);
+
+
   }
 
   relogin() {
@@ -22,6 +28,8 @@ export class GlobalService extends GlobalBaseService {
   }
 
   getSID() {
-    return 'ZjE3N2EyMWItMzJlYS00N2Q3LTg2NTMtNGY0NWUxNmIyZjljfFNCdmF4L2JBSlA4Y3JRSnk5dUhxRlhaVGl4dz0=';
+
+    return applicationSettings.getString('sid');
+  //  return 'N2Q4NTI4NWQtYjQzYy00MDYyLTljZGItNjg4MjBlNTJkYTEzfFNCdmF4L2JBSlA4Y3JRSnk5dUhxRlhaVGl4dz0=';
   }
 }
