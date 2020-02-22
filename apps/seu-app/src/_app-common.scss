@@ -129,7 +129,7 @@
         color: const(grey);
         font-size: 20;
         vertical-align: center;
-        horizontal-align: center;
+       
     }
 
     &-icon {
@@ -189,12 +189,7 @@
     font-family: 'Opinion Pro ExtraCondensed', 'Mint_Type_-_Opinion_Pro_ExtraCondensed_Light';
     font-size: 24;
 }
-.center{
-    horizontal-align:center;
-}
-.right{
-    horizontal-align:right;
-}
+
 
 .blue-button{
     border-color:#6189f4 ;
@@ -229,3 +224,10 @@
     border-color: #6189f4;
     color:darkgray;
 }
+
+.nt-drawer__header-brand{color:rgb(219, 151, 4) ; font-weight: 700;}
+.nt-drawer__header-footnote{color:#01021b; font-weight: 700;}
+.img-user{  border-width: 4; border-color: rgb(219, 151, 4);
+}
+.heading{margin: 10;background-color:#e4e4e4; border-radius: 10px 40px 10px 40px; padding: 7px 0;}
+.heading-text{ color: #1c2172; font-weight: 700;}
