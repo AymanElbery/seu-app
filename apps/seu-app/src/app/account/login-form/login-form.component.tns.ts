@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserManagerService } from '../../shared/services/user-manager.service';
+import { GlobalService } from '../../shared/services/global.service.tns';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.tns.html',
@@ -20,7 +21,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   constructor(
     private userService: UserService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private globalSer: GlobalService
   ) {
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
@@ -44,7 +46,31 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       }
     }
     ); */
-    this.router.navigate(['/land']);
+
+    this.userService.SignIn('S190017700', 'K8rBNKFs').then(res => {
+
+      const data = (res as any);
+      if ((res as any).status) {
+         this.globalSer.setSid(data.sid);
+         console.log(data.data);
+         this.userService.userData.activeRole = (data.data.data.role);
+         this.router.navigate(['/land']);
+
+        }
+      }
+    ,
+    err => {
+      alert(err);
+      // if (localStorage.getItem("userreloaded")) {
+      //   localStorage.removeItem("userreloaded");
+      //   window.location.href = "https://seu.edu.sa";
+      // } else {
+      //   localStorage.setItem("userreloaded", "1");
+      // }
+    }
+
+    );
+  //
     /*  this.userService
        .login(value.email, value.password)
        .pipe(finalize(() => (this.isRequesting = false)))

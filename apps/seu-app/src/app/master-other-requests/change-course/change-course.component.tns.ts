@@ -24,7 +24,7 @@ import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
 export class ChangeCourseComponent implements OnInit {
 
   changecourse: changeCourse;
-  reqData:RequestData={can_add_new_request:false,requests:[],reqs:[],notes:[]};
+  reqData: RequestData = {can_add_new_request: false, requests: [], reqs: [], notes: []};
   msgs;
   status;
   isLoading = false;
@@ -127,7 +127,7 @@ export class ChangeCourseComponent implements OnInit {
   if (isIOS) {
     // Uncomment the lines below to avoid default animation
     UIView.animateWithDurationAnimations(0, () => {
-        let indexPaths = NSMutableArray.new();
+        const indexPaths = NSMutableArray.new();
         indexPaths.addObject(NSIndexPath.indexPathForRowInSection(rowIndex, event.groupIndex));
         listView.ios.reloadItemsAtIndexPaths(indexPaths);
      });

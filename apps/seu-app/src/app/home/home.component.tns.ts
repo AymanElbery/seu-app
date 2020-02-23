@@ -259,13 +259,9 @@ setInterval(
         // Init your component properties here.
         sideDrawer.drawerLocation = SideDrawerLocation.Right;
         console.log('test');
+        this.LoadData();
 
-        this.userService.userDataSubject.subscribe(res => {
 
-          if (res) {
-            this.LoadData();
-          }
-        });
 
     }
 
