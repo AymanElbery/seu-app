@@ -89,7 +89,12 @@
         "course_code_name": "اسم المقرر/الرمز",
         "choose": "إختر",
         "admis_pages": "الأنظمة الإدارية",
-        "stds_pages": "نظام ادارة الخدمات الالكترونية"
+        "stds_pages": "نظام ادارة الخدمات الالكترونية",
+        "staff_name":"مدرس المادة",
+        "vitrual":"افتراضية",
+        "class":"حضورية",
+        "total":"إجمالي",
+        "no_absence_registered":"لا توجد غيابات مسجلة"
     },
     "menu": {
         "myservices": "خدماتي",

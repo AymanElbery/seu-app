@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LectureAbsQueryService } from '../services/lecture-abs-query.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-absence-query',
@@ -9,13 +10,14 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AbsenceQueryComponent implements OnInit, OnDestroy {
 
-  absData;
+  reqData;
+  msgs = [];
   EngPrint: string;
   arabicPrint: string;
   status;
   isLoading = false;
 
-  constructor(private translate: TranslateService, private academicService: LectureAbsQueryService) { }
+  constructor(private translate: TranslateService, private toastr: AppToasterService, private academicService: LectureAbsQueryService) { }
 
   ngOnInit() {
     this.getRequests();
@@ -38,20 +40,16 @@ export class AbsenceQueryComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.academicService.getِAbsemceQuery().then(
       res => {
-        this.absData = (res as any).data;
+        this.reqData = (res as any).data;
         this.status = (res as any).status;
+        this.isLoading = false;
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
         this.isLoading = false;
       }
     );
-    this.arabicPrint = this.academicService.Download();
-    this.EngPrint = this.academicService.DownloadEng();
-  }
-  toHTML(input): any {
-    return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
-  }
-  currentTab = 1;
-  selectedTab(id) {
-    this.currentTab = id;
   }
 
 }

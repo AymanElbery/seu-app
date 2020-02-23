@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AbseneQueryService } from '../services/absene-query.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-absence-query',
@@ -11,7 +12,8 @@ export class AbsenceQueryComponent implements OnInit, OnDestroy {
   isLoading: boolean = false;
   reqData;
   msgs;
-  constructor(private translate: TranslateService, private otherReq: AbseneQueryService) { }
+  constructor(private translate: TranslateService, private toastr: AppToasterService,
+    private otherReq: AbseneQueryService) { }
 
   ngOnInit() {
     this.getRequests();
@@ -41,7 +43,12 @@ export class AbsenceQueryComponent implements OnInit, OnDestroy {
         this.reqData = this.otherReq.reqData;
         this.msgs = this.otherReq.msgs;
         this.isLoading = false;
-
+        console.log(this.reqData);
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
       }
     );
   }

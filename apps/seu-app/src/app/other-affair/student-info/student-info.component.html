@@ -358,7 +358,7 @@
 
           </div>
 
-          <div *ngIf="true || reqData.can_update_data" class="row  ser-block" style="margin-top: 20px;">
+          <div *ngIf="reqData.can_update_data" class="row  ser-block" style="margin-top: 20px;">
             <div class=" col-md-12 col-sm-12" style="margin-top: 10px;">
               <div class="state">
                 <mat-checkbox #outside>&nbsp;
@@ -374,7 +374,7 @@
       </section>
       <div class="modal-body">
         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-          <button *ngIf="true || !requesting || reqData.can_update_data" [disabled]="form.invalid " type="submit"
+          <button *ngIf="!requesting || reqData.can_update_data" [disabled]="form.invalid " type="submit"
             class="btn btn-dark"><i class="fa fa-database"></i>
             {{"general.save"|translate}}</button>
         </div>
