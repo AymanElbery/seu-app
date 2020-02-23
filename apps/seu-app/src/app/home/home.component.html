@@ -232,7 +232,22 @@
                 </div> -->
               </div>
             </div>
-
+            
+            <div class="card-body" *ngIf="hasNoRole" style="padding: 0 15px">
+              <div class="row">
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-bold"></i>
+                  <p><a target="_blank"
+                      href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab">نظام
+                      <span class="text-eng">{{"menu.BLACKBOARD" | translate}}</span> </a></p>
+                </div>
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-mail"></i>
+                  <p><a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
+                      {{"menu.email" | translate}} </a></p>
+                </div>
+              </div>
+            </div>
             <div class="card-body" *ngIf="userService.userData.activeRole=='Student'" style="padding: 0 15px">
               <div class="row">
                 <div class="col-md-6 new-ser">

@@ -320,6 +320,19 @@
             <a target="_blank" href="https://bannservices.seu.edu.sa/StudentRegistrationSsb" class="menu-item">
               {{"menu.RESGISTERCOURSES" | translate}} <i class="ik ik-book"></i> </a>
           </div>
+
+        </div><div *ngIf="hasNoRole" class="nav-item has-sub">
+          <a href="javascript:void(0)"> <span>{{"menu.PublicServices" | translate}} </span>
+            <i class="ik ik-book-open"></i> </a>
+          <div class="submenu-content">
+            <a target="_blank"
+              href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
+              class="menu-item"> {{"menu.SYSTEM" | translate}} <span class="text-eng">BlackBoard</span> <i
+                class="ik ik-bold"></i> </a>
+            <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">
+              {{"menu.email" | translate}}
+              <i class="ik ik-mail"></i> </a>
+          </div>
         </div>
 
         <!--

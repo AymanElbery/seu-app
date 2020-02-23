@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   };
   // CarouselOptions = { items: 3, dots: true, nav: true };
 
-
+  hasNoRole = false;
 
   constructor(
     public printService: PrintService,
@@ -89,6 +89,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   LoadNews() {
+    if (this.userService.userData.activeRole != ApiUserRoles.Student && this.userService.userData.activeRole != ApiUserRoles.Emplpyee && this.userService.userData.activeRole != ApiUserRoles.Instructor) {
+      this.hasNoRole = true;
+    } else {
+      this.hasNoRole = false;
+    }
     // console.log('LoadNews');
     // console.log('user is ' + this.userService.userData);
     // tslint:disable-next-line: triple-equals
@@ -99,6 +104,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     } else {
       return this.loadStaffNews();
     }
+
   }
   private loadStudentNews() {
     // console.log('loadStudentNews :' + CMSUserRoles.Student);
