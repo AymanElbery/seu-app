@@ -89,10 +89,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   LoadNews() {
-    if (this.userService.userData.activeRole != ApiUserRoles.Student && this.userService.userData.activeRole != ApiUserRoles.Emplpyee && this.userService.userData.activeRole != ApiUserRoles.Instructor) {
-      this.hasNoRole = true;
-    } else {
+    if (this.userService.userData.activeRole == ApiUserRoles.Student || this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor) {
       this.hasNoRole = false;
+    } else {
+      this.hasNoRole = true;
     }
     // console.log('LoadNews');
     // console.log('user is ' + this.userService.userData);

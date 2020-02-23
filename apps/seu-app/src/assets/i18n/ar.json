@@ -184,7 +184,17 @@
         "admis_pages_stats": "الاحصائيات",
         "admis_pages_reports": "التقارير",
         "admis_pages_admis": "ادارة الانظمة",
-        "admis_pages_enquiries": "الاستعلامات"
+        "admis_pages_enquiries": "الاستعلامات",
+        "Forum": "المنتدي",
+        "knowledgeresources": "إدارة المصادر المعرفية",
+        "DMS": "الاتصالات الادارية",
+        "FacultyRecruitmentSystem": "نظام التعاقد",
+        "QueryDMS": "استعلام عن المعاملة. ",
+        "ERP": "النظام الاداري والمالي",
+        "CouncilsAndCommittees": "نظام إدارة المجالس واللجان",
+        "TeachingLoad": "العبئ التدريسي",
+        "NewAdminPage": "إدارة الخدمات الإلكترونية",
+        "AdminPage": "الصفحة الإدارية"
     },
     "services": {
         "academic_status": {
@@ -269,7 +279,7 @@
             "choose_exam_degree": "إختر الإختبار وحدد الدرجة",
             "exam_name": "اسم الإختبار",
             "certificate_image": "صورة الشهادة",
-            "degree":"الدرجة"
+            "degree": "الدرجة"
         },
         "excuse_request": {
             "title": "الإعتذار عن فصل دراسي",
@@ -593,12 +603,12 @@
             "skill": "المهارة / الدورة",
             "conditions": "التعريف والشروط",
             "standards": "المعايير والضوابط ",
-            "classification" : "المهارة",
-            "training" : "النشاط",
-            "hours" : "الساعات المكتسبة",
-            "organizer" : "الجهة المنظمة",
-            "location" : "مقر إقامتها",
-            "date" : "التاريخ"
+            "classification": "المهارة",
+            "training": "النشاط",
+            "hours": "الساعات المكتسبة",
+            "organizer": "الجهة المنظمة",
+            "location": "مقر إقامتها",
+            "date": "التاريخ"
         }
     }
 }

@@ -59,11 +59,11 @@ export class MenuComponent implements OnInit {
         this.showadmis = Object.keys(res["data"]).length ? true : false;
       });
     }
-
-    if (this.userService.userData.activeRole != ApiUserRoles.Student && this.userService.userData.activeRole != ApiUserRoles.Emplpyee && this.userService.userData.activeRole != ApiUserRoles.Instructor) {
-      this.hasNoRole = true;
-    } else {
+    console.log(this.userService.userData.activeRole);
+    if (this.userService.userData.activeRole == ApiUserRoles.Student || this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor) {
       this.hasNoRole = false;
+    } else {
+      this.hasNoRole = true;
     }
   }
   hasNoRole = false;

@@ -184,7 +184,17 @@
         "admis_pages_stats": "الاحصائيات",
         "admis_pages_reports": "التقارير",
         "admis_pages_admis": "ادارة الانظمة",
-        "admis_pages_enquiries": "الاستعلامات"
+        "admis_pages_enquiries": "الاستعلامات",
+        "Forum": "Forum",
+        "knowledgeresources": "knowledge resources",
+        "DMS": "DMS",
+        "FacultyRecruitmentSystem": "Faculty Recruitment System",
+        "QueryDMS": "Query DMS",
+        "ERP": "ERP",
+        "CouncilsAndCommittees": "Councils and committees management system",
+        "TeachingLoad": "Teaching Load",
+        "NewAdminPage": "New Admin Pages",
+        "AdminPage": "Admin Pages"
     },
     "services": {
         "academic_status": {
