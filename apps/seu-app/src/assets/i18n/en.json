@@ -89,7 +89,12 @@
         "course_code_name": "Course Name/Code",
         "choose": "Choose",
         "admis_pages": "الأنظمة الإدارية",
-        "stds_pages": "نظام ادارة الخدمات الالكترونية"
+        "stds_pages": "نظام ادارة الخدمات الالكترونية",
+        "staff_name":"Staff Name",
+        "vitrual":"Virtual",
+        "class":"Class",
+        "total":"Total",
+        "no_absence_registered":"No Absense registered"
     },
     "menu": {
         "myservices": "My Services",
@@ -184,7 +189,17 @@
         "admis_pages_stats": "الاحصائيات",
         "admis_pages_reports": "التقارير",
         "admis_pages_admis": "ادارة الانظمة",
-        "admis_pages_enquiries": "الاستعلامات"
+        "admis_pages_enquiries": "الاستعلامات",
+        "Forum": "Forum",
+        "knowledgeresources": "knowledge resources",
+        "DMS": "DMS",
+        "FacultyRecruitmentSystem": "Faculty Recruitment System",
+        "QueryDMS": "Query DMS",
+        "ERP": "ERP",
+        "CouncilsAndCommittees": "Councils and committees management system",
+        "TeachingLoad": "Teaching Load",
+        "NewAdminPage": "New Admin Pages",
+        "AdminPage": "Admin Pages"
     },
     "services": {
         "academic_status": {

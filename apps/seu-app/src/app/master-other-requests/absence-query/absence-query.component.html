@@ -18,198 +18,49 @@
 
     </div>
   </div>
-  <div *ngIf=" !isLoading" class="alert alert-primary text-center" role="alert">
-    {{reqData.messages}}
-  </div>
   <section class="ser-state" *ngIf="!isLoading">
-    <nav>
-      <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">
-        <a class="nav-link nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One"
-          aria-selected="true">
-          {{"services.absence_quyery.all_lecs_asebsence_percent" |translate}}
-        </a>
-        <a class="nav-item nav-link " id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two"
-          aria-selected="false">
-          {{"services.absence_quyery.traditional_lecs_asebsence_percent" |translate}}
-
-        </a>
-
-
-        <a class="nav-item  nav-link " id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three"
-          aria-selected="false">
-          {{"services.absence_quyery.virtual_lecs_asebsence_percent" |translate}}
-        </a>
-
-      </div>
-
-    </nav>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="one">
         <div class="widget">
           <div class="widget-header">
-            <h3 class="widget-title" style="font-size:14px;">{{"general.lectures" |translate}} </h3>
+            <h3 class="widget-title" style="font-size:14px;">{{"services.absence_quyery.title" |translate}} </h3>
           </div>
           <div class="table-responsive">
-            <table *ngIf="reqData.absent_percentage_total.length>0;else array1"
-              class="table table-striped table-bordered">
+            <table *ngIf="reqData.length>0;else array1" class="table table-striped table-bordered">
               <thead>
-
-
-
                 <tr>
                   <th scope="col">{{"general.crn" | translate}}</th>
+                  <th scope="col">{{"general.course_code" | translate}}</th>
                   <th scope="col">{{"general.course_name" | translate}}</th>
-                  <th scope="col">{{"general.absence_percent" |translate}}</th>
-
-
+                  <th scope="col">{{"general.staff_name" |translate}}</th>
+                  <th scope="col">{{"general.vitrual" |translate}}</th>
+                  <th scope="col">{{"general.class" |translate}}</th>
+                  <th scope="col">{{"general.total" |translate}}</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let it of reqData.absent_percentage_total">
+                <tr *ngFor="let it of reqData">
                   <td>{{it.CRN}}</td>
-                  <td>{{it.CRES_CODE}}</td>
-                  <!--  <td></td> {{it.CRSE_TITLE}}-->
-                  <td>{{it.ABSENT_PERCENTAGE_TOTAL}}</td>
+                  <td>{{it.CRSE_CODE}}</td>
+                  <td>{{it.CRS_TITLE}}</td>
+                  <td> {{it.STAFF_NAME}}</td>
+                  <td>{{it.VCOUNT}}</td>
+                  <td>{{it.FCOUNT}}</td>
+                  <td>{{it.TOTAL}}</td>
                 </tr>
-
               </tbody>
             </table>
           </div>
           <br>
           <ng-template #array1>
-
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-10">
-                <div class="form-group">
-
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><b>
-                          {{"services.absence_quyery.all_lecs_asebsence_percent" |translate}} </b> </div>
-                    </div>
-                    <input value="0" class="form-control" readonly>
-                  </div>
-                </div>
+            <div class="ser-state" *ngIf="!isLoading">
+              <div style="text-align: right" class="alert alert-success" role="alert">
+                {{"general.no_absence_registered" |translate}}
               </div>
-
-              <div class="col-md-1"></div>
-
-            </div>
-
-          </ng-template>
-
-
-
-        </div>
-      </div>
-      <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
-        <div class="widget">
-          <div class="widget-header">
-            <h3 class="widget-title" style="font-size:14px;">{{"general.lectures" |translate}} </h3>
-          </div>
-          <div class="table-responsive">
-
-
-            <table *ngIf="reqData.absent_percentage_actual_lectures.length>=0;else emptyArr2"
-              class="table table-striped table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">{{"general.crn" | translate}} </th>
-                  <th scope="col">{{"general.course_name" | translate}}</th>
-
-                  <th scope="col">{{"general.absence_percent" |translate}}</th>
-
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let it of reqData.absent_percentage_actual_lectures">
-                  <td>{{it.CRN}}</td>
-                  <td>{{it.CRES_CODE}}</td>
-                  <!--  <td></td>{{it.CRSE_TITLE}}-->
-                  <td>{{it.ABSENT_PERCENTAGE_FTF}}</td>
-                </tr>
-
-              </tbody>
-
-            </table>
-          </div>
-          <ng-template #emptyArr2>
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-10">
-                <div class="form-group">
-
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><b>
-                          {{"services.absence_quyery.traditional_lecs_asebsence_percent" |translate}} </b> </div>
-                    </div>
-                    <input value="0" class="form-control" readonly>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-1"></div>
-
-            </div>
-          </ng-template>
-        </div>
-
-      </div>
-      <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
-        <div class="widget">
-          <div class="widget-header">
-            <h3 class="widget-title" style="font-size:14px;">المحاضرات </h3>
-          </div>
-
-          <div class="table-responsive">
-            <table class="table table-striped table-bordered"
-              *ngIf="reqData.absent_percentage_virtual_lectures.length>=0;else emptyArr3">
-              <thead>
-                <tr>
-                  <th scope="col">{{"general.crn" | translate}} </th>
-                  <th scope="col">{{"general.course_name" | translate}}</th>
-
-                  <th scope="col">{{"general.absence_percent" |translate}}</th>
-
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let it of reqData.absent_percentage_virtual_lectures">
-                  <td>{{it.CRN}}</td>
-                  <td>{{it.CRES_CODE}}</td>
-                  <!--<td></td>{{it.CRSE_TITLE}}-->
-                  <td>{{it.ABSENT_PERCENTAGE_VERT}}</td>
-                </tr>
-
-              </tbody>
-            </table>
-          </div>
-          <br>
-          <ng-template #emptyArr3>
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-10">
-                <div class="form-group">
-
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text"><b>
-                          {{"services.absence_quyery.virtual_lecs_asebsence_percent" |translate}} </b> </div>
-                    </div>
-                    <input value="{{reqData.absent_percentage_virtual_lectures}}" class="form-control" readonly>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-1"></div>
-
             </div>
           </ng-template>
         </div>
       </div>
     </div>
   </section>
-
 </div>

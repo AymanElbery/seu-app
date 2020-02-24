@@ -148,6 +148,70 @@
                       {{"menu.BLACKBOARD" | translate}} </a></p>
                 </div>
               </div>
+
+              <div class="row">
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="http://forum.seu.edu.sa">
+                      {{"menu.Forum" | translate}} </a></p>
+                </div>
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="https://www.seu.edu.sa/kr/">
+                      {{"menu.knowledgeresources" | translate}} </a></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="https://dms.seu.edu.sa/dms">
+                      {{"menu.DMS" | translate}} </a></p>
+                </div>
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="http://stuapp.seu.edu.sa/ContractorsManagement">
+                      {{"menu.FacultyRecruitmentSystem" | translate}} </a></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="https://old.seu.edu.sa/sites/ar/Pages/QueryDMSNew.aspx">
+                      {{"menu.QueryDMS" | translate}} </a></p>
+                </div>
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="http://p-az-erp-app01:9001/forms/frmservlet?config=ERP">
+                      {{"menu.ERP" | translate}} </a></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="https://lijan.seu.edu.sa/lpclient/">
+                      {{"menu.CouncilsAndCommittees" | translate}} </a></p>
+                </div>
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="http://seuapps.seu.edu.sa/teaching-load">
+                      {{"menu.TeachingLoad" | translate}} </a></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="https://seuapps.seu.edu.sa/stdsnew/users/index">
+                      {{"menu.NewAdminPage" | translate}} </a></p>
+                </div>
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-tablet"></i>
+                  <p><a target="_blank" href="http://seuapps.seu.edu.sa/eservices/taqrir_final/login.php">
+                      {{"menu.AdminPage" | translate}} </a></p>
+                </div>
+              </div>
+
+
+
             </div>
 
             <div class="card-body" *ngIf="userService.userData.activeRole=='Instructor'" style="padding: 0 15px">
@@ -233,6 +297,21 @@
               </div>
             </div>
 
+            <div class="card-body" *ngIf="hasNoRole" style="padding: 0 15px">
+              <div class="row">
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-bold"></i>
+                  <p><a target="_blank"
+                      href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab">نظام
+                      <span class="text-eng">{{"menu.BLACKBOARD" | translate}}</span> </a></p>
+                </div>
+                <div class="col-md-6 new-ser">
+                  <i class="ik ik-mail"></i>
+                  <p><a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
+                      {{"menu.email" | translate}} </a></p>
+                </div>
+              </div>
+            </div>
             <div class="card-body" *ngIf="userService.userData.activeRole=='Student'" style="padding: 0 15px">
               <div class="row">
                 <div class="col-md-6 new-ser">
