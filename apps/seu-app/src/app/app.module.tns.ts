@@ -59,8 +59,7 @@ import { MasterOtherRequestsModule } from './master-other-requests/master-other-
     MasterStudentDataModule,
     MasterPrintCertificatesModule,
     MasterOtherRequestsModule
-
-  ],
+    ],
 
   providers: [ConfigService, HttpRequestService, UserManagerService,
     {provide: GlobalBaseService, useClass: GlobalService}

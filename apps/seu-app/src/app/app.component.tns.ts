@@ -17,6 +17,8 @@ export class AppComponent implements OnInit {
     private _activatedUrl: string;
     // tslint:disable-next-line: variable-name
     private _sideDrawerTransition: DrawerTransitionBase;
+    public userName:String="UserName";
+    level: string="";
 
     constructor(    private translate: TranslateService,
                     public userService: UserService,
@@ -25,6 +27,7 @@ export class AppComponent implements OnInit {
         translate.addLangs(['ar', 'en']);
         translate.setDefaultLang('ar');
         translate.use('ar');
+    
 
     }
 
@@ -37,10 +40,15 @@ export class AppComponent implements OnInit {
         .pipe(filter((event: any) => event instanceof NavigationEnd))
         .subscribe((event: NavigationEnd) => this._activatedUrl = event.urlAfterRedirects);
         const draw =   app.getRootView() as RadSideDrawer;
+        this.userService.logedIn=false;
      //   draw.drawerLocation = SideDrawerLocation.Right;
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {
+    
+        this.userName=this.userService.userData.username;
+      
+        this.level=this.userService.userData.student_details.level;
         return this._sideDrawerTransition;
     }
 
@@ -54,8 +62,10 @@ export class AppComponent implements OnInit {
                 name: 'fade'
             }
         });
-
+   
         const sideDrawer =  app.getRootView() as RadSideDrawer;
         sideDrawer.closeDrawer();
+   
     }
+    
 }
