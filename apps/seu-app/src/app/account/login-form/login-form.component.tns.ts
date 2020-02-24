@@ -1,10 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Credentials } from '../../shared/models/credentials.interface';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable, of } from 'rxjs';
 import { UserService } from '../services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserManagerService } from '../../shared/services/user-manager.service';
 import { GlobalService } from '../../shared/services/global.service.tns';
+import { map } from 'rxjs/operators';
+import * as applicationSettings from 'tns-core-modules/application-settings';
+import { ChangeDetectorRef } from '@angular/core';
+
+
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.tns.html',
@@ -18,11 +23,13 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   isRequesting: boolean;
   submitted = false;
   credentials: Credentials = { email: '', password: '' };
+  status;
   constructor(
     private userService: UserService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private globalSer: GlobalService
+    private globalSer: GlobalService,
+    private ref: ChangeDetectorRef
   ) {
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
@@ -47,13 +54,21 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     }
     ); */
 
-    this.userService.SignIn('S190017700', 'K8rBNKFs').then(res => {
-
+    this.userService.SignIn( this.credentials.email, this.credentials.password).then(res => {
+      this.status=(res as any).status;
+      this.status;
       const data = (res as any);
       if ((res as any).status) {
          this.globalSer.setSid(data.sid);
-         console.log(data.data);
          this.userService.userData.activeRole = (data.data.data.role);
+         applicationSettings.setString('user', this.credentials.email);
+         applicationSettings.setString('pass', this.credentials.password);
+         this.userService.logedIn=true;
+         this.userService.userData.student_details.level=data.data.data.student_details.level;
+        this.userService.userData.username=data.data.data.username;
+       // this.ref.markForCheck();
+        //this.ref.detectChanges();
+        
          this.router.navigate(['/land']);
 
         }
@@ -100,7 +115,10 @@ export class LoginFormComponent implements OnInit, OnDestroy {
        ); */
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.credentials.email=applicationSettings.getString('user');
+    this.credentials.password=applicationSettings.getString('pass');
+  }
   // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {
     // prevent memory leak by unsubscribing

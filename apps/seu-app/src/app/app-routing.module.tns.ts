@@ -9,7 +9,7 @@ import { LoginFormComponent } from './account/login-form/login-form.component.tn
 export const routes: Routes = [
   {
     path: '',
-    component: LoginFormComponent,
+    component: LoginFormComponent
 
   },
   {
