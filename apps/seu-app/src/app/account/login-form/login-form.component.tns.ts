@@ -8,6 +8,7 @@ import { GlobalService } from '../../shared/services/global.service.tns';
 import { map } from 'rxjs/operators';
 import * as applicationSettings from 'tns-core-modules/application-settings';
 import { ChangeDetectorRef } from '@angular/core';
+import { AppToasterService } from '../../shared/services/app-toaster';
 
 
 @Component({
@@ -29,7 +30,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private globalSer: GlobalService,
-    private ref: ChangeDetectorRef
+    private ref: ChangeDetectorRef,
+    private toastr: AppToasterService
   ) {
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
@@ -71,11 +73,14 @@ export class LoginFormComponent implements OnInit, OnDestroy {
         
          this.router.navigate(['/land']);
 
+        }else{
+          this.toastr.tryagain();
         }
       }
     ,
     err => {
-      alert(err);
+      this.toastr.tryagain();
+     // alert(err);
       // if (localStorage.getItem("userreloaded")) {
       //   localStorage.removeItem("userreloaded");
       //   window.location.href = "https://seu.edu.sa";

@@ -32,10 +32,10 @@
         </StackLayout>
 
         <StackLayout class="input-field">
-          <TextField hint="Enter UserName" [(ngModel)]="credentials.email" class="input" [class.err]="status===false" required #name></TextField>
+          <TextField hint="Enter UserName" [(ngModel)]="credentials.email" class="input"></TextField>
         </StackLayout>
         <StackLayout class="input-field">
-          <TextField            hint="Enter  password" secure="true" [(ngModel)]="credentials.password" class="input" [class.err]="status===false" required #pass>
+          <TextField            hint="Enter  password" secure="true" [(ngModel)]="credentials.password" class="input">
           </TextField>
         </StackLayout>
         <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="-primary -rounded-sm"></Button>
