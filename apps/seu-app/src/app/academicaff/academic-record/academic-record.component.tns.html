@@ -10,8 +10,8 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
-        ios.position="left">
+   
+    <ActionItem icon="font://&#xf0c9;" class="fas" style="font-size:10; color: #243686;"  (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
     <Label text='{{"services.academic_record.title" | translate}}'></Label>
 </ActionBar>
@@ -25,22 +25,22 @@
           
               <Label row="0" colSpan="2"  class="ysHBox"  text='{{"general.student_name" | translate}} {{recoredData.student_name}}'></Label>
           
-              <Label row="1" column="1" style="font-weight: 800;" text='{{"general.faculty" | translate}} :'></Label>
-              <Label row="1"  column="0" text="{{recoredData.coll}}"></Label>
+              <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.faculty" | translate}} :'></Label>
+              <Label row="1"  column="0" class="ysPBox2"text="{{recoredData.coll}}"></Label>
           
-              <Label row="2" column="1" style="font-weight: 800;" text='{{"general.major" | translate}} :'></Label>
+              <Label row="2" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.major" | translate}} :'></Label>
               <Label row="2"  column="0" text="{{recoredData.major}}"></Label>
           
-              <Label row="3" column="1" style="font-weight: 800;" text='{{"general.student_id" | translate}} :'></Label>
-              <Label row="3"  column="0" text="{{recoredData.std_id}}" style="text-align: right;"></Label>
+              <Label row="3" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.student_id" | translate}} :'></Label>
+              <Label row="3"  column="0"   text="{{recoredData.std_id}}" style="text-align: right;"></Label>
 
-              <Label row="4" column="1" style="font-weight: 800;" text='{{"general.ssn" | translate}} :'></Label>
+              <Label row="4" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.ssn" | translate}} :'></Label>
               <Label row="4"  column="0" text="{{recoredData.ssn}}"  style="text-align: right;"></Label>
 
-              <Label row="5" column="1" style="font-weight: 800;" text='{{"general.grade" | translate}} :'></Label>
+              <Label row="5" column="1"   class="ysPBox" style="font-weight: 800;" text='{{"general.grade" | translate}} :'></Label>
               <Label row="5"  column="0" text="{{recoredData.grade}}"></Label>
 
-              <Label row="6" column="1" style="font-weight: 800;" text='{{"general.student_status" | translate}} :'></Label>
+              <Label row="6" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.student_status" | translate}} :'></Label>
               <Label row="6"  column="0" text="{{recoredData.status}}"></Label>
             </GridLayout>
           </StackLayout>
@@ -133,8 +133,8 @@
         </RadListView>
 
         <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
-            <Button text='{{"general.ar_language" | translate}}' (tap)="onArabicPrint()" class="-primary -rounded-sm"></Button>
-            <Button text='{{"general.en_language" | translate}}' (tap)="onEnglishPrint()" class="-primary -rounded-sm"></Button>
+            <Button class="login-btn" text='{{"general.ar_language" | translate}}' (tap)="onArabicPrint()" class="-primary -rounded-sm"></Button>
+            <Button class="login-btn" text='{{"general.en_language" | translate}}' (tap)="onEnglishPrint()" class="-primary -rounded-sm"></Button>
         </FlexboxLayout>
             
     </FlexboxLayout>

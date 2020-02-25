@@ -32,6 +32,7 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss",
+
               {
                 "input": "src/en.scss",
                 "bundleName": "en-style",

@@ -1,40 +1,51 @@
 @import "~@nativescript/theme/core";
 @import "~@nativescript/theme/blue";
 
+
+  
 // Place any CSS rules you want to apply on both iOS and Android here.
 // This is where the vast majority of your CSS code goes.
 
 // Font icon class
+.fontbold {
+    font-family: 'DroidArabicKufi';
+    font-weight: 600;
+}
 .fab {
     font-family: "Font Awesome 5 Brands", "fa-brands-400";
     font-weight: 400;
 }
-.ysMenuItem
-{
-    text-align: left;padding-right: 200px;font-size: medium;
-}
-.ysMenuIcon
-{
-    text-align: right;;padding-right:100 px;}
-.ysMenuHeader
-{
-    color:gray;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;padding-top: 0px;margin-top: 0px;font-weight:600; text-align: left;padding-right: 100px;font-size:15px;
-}
+
 
 .ysBox{
     margin-left: 20;
     margin-right: 20;
-    background-color: white;
-    border-bottom: 1;
-    border-radius: 10;
-    border-width: 1;
-    padding: 10;
-    border-color: #6189f4;
+    background-color: #f1f1f1;
+    border-radius: 70px 20px 20px 20px;
+    border-width: 0;
+    padding: 0;
     color: #6189f4;
-    margin-top: 20;
+    margin-bottom: 20;
 }
 
+.ysHBox
+{
+    font-size:14px;
+    font-weight: 800;
+    text-align: center;
+    background-image: linear-gradient(135deg,#623292  0%, #243686 100%);
+        color: white;
+    border-radius: 70px 20px 0px 0px;
+    padding: 8px 0;
+
+}
+.ysPBox{
+    padding-right: 20;
+    color: #080b57;
+}
+.ysPBox2{
+    color: #f08b1c;
+}
 
 .ysTBox{
     margin-left: 20;
@@ -85,31 +96,52 @@
     border-color: #6189f4;
     color:darkgray;
 }
-.ysHBox
-{
-    font-size:14px;
-    font-weight: 800;
-    text-align: center;
-    background-color: #6189f4;
-    color: white;
-}
+
 
 .ysRootMenuItem{
-    text-align: left;padding-right: 150px;font-size: medium;
+    text-align: left;padding-right: 120px;font-size: 15px;
+    color: #080b57;
 }
 .ysRootMenuIcon
 {
     text-align: right;;padding-right: 50px;
+    color: rgb(219, 151, 4);
+    font-size: 16px;
+}
+
+.ysMenuHeader
+{
+    color:#fff;
+    padding-top: 0px;
+    margin-top: 0px;
+    font-weight:600; text-align: left;
+    padding-right: 120px;font-size:14px;
 }
 .ysMenuHeaderIcon
 {
-    color:gray;text-align: right;;padding-right: 50px;font-weight:700;
+    color:#f08b1c;text-align: right;;padding-right: 50px;font-weight:600;  font-size: 15px;
+    margin-top: 3;
 }
 .ysMenuGridHeader
 {
-
-    margin-top: 15px;
+    background-image: linear-gradient(135deg,#623292  0%, #243686 100%);
+    margin-top: -25px;
     margin-bottom: 15px;
+    padding: 8 0;
+}
+
+.ysMenuItem
+{
+    text-align: left;padding-right: 160px;font-size: 14px;
+    color: #080b57;
+    
+}
+.ysMenuIcon
+{
+    text-align:right;
+    padding-right:100px;
+    color:#f08b1c;
+
 }
 
 .fas {
@@ -225,9 +257,40 @@
     color:darkgray;
 }
 
-.nt-drawer__header-brand{color:rgb(219, 151, 4) ; font-weight: 700;}
-.nt-drawer__header-footnote{color:#01021b; font-weight: 700;}
-.img-user{  border-width: 4; border-color: rgb(219, 151, 4);
+.nt-drawer__header-brand{color:#080b57 ; font-weight: 700; margin-top: 5;}
+.img-user{  border-bottom-width: 3; border-right-width: 3; border-color: rgb(219, 151, 4); margin-top: 20;
 }
-.heading{margin: 10;background-color:#e4e4e4; border-radius: 10px 40px 10px 40px; padding: 7px 0;}
-.heading-text{ color: #1c2172; font-weight: 700;}
+
+.heading{margin: 10 15;   background-image: linear-gradient(135deg,#623292  0%, #243686 100%);
+     border-radius: 70px 20px 20px 20px; padding: 4px 20 20px ;display: flex;}
+
+.heading-text{ color: #fff; font-weight: 800; font-family: 'DroidArabicKufi'; float: left; vertical-align: middle;}
+.heading-icon{ color: #fff;  float: right; margin-top: -28; }
+
+.slider{margin: 5 15 ;}
+.slid-itme{border-radius: 70px 20px 0px 0px; }
+.label-itme{border-radius: 0px 0px 20px 20px; background-color: rgb(219, 151, 4);color: #fff;
+            text-align: center; padding: 5 3; font-family: 'DroidArabicKufi';font-size:12px;
+}
+.news-item {border-radius: 70px 20px 0px 0px;}
+.label-block{border-radius: 0px 0px 20px 20px; background-color: rgb(219, 151, 4);color: #fff;
+    text-align: center; font-family: 'DroidArabicKufi'; padding: 2 0
+}
+.label-news{padding-right: 10px;color:#01021b;font-size:11px; font-weight: 600;}
+.label-news-title{padding-right: 200px;font-size:12px;}
+.news{margin: 5 15 ;}
+ ActionBar{background-color:#f1f1f1; color:#243686;}
+ ActionBar label{ color:#243686; font-size: 18px; font-family: 'DroidArabicKufi'}
+
+ .login-btn{  background-image: linear-gradient(135deg,#623292  0%, #243686 100%); color: #fff;
+    border-radius: 100px; 
+    font-family: 'DroidArabicKufi'; font-size: 16px;
+}
+TextField{ border-width: 0;
+     color:#243686 ; background-color: #f1f1f1; padding: 16 10;  border-radius: 100px;}
+TextField:focus{ border-width: 5px; border-color: #f08b1c; }
+
+label{font-family: 'DroidArabicKufi'}
+.hr{border-color: #f08b1c;}
+
+
