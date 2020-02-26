@@ -133,8 +133,8 @@
         </RadListView>
 
         <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
-            <Button class="login-btn" text='{{"general.ar_language" | translate}}' (tap)="onArabicPrint()" class="-primary -rounded-sm"></Button>
-            <Button class="login-btn" text='{{"general.en_language" | translate}}' (tap)="onEnglishPrint()" class="-primary -rounded-sm"></Button>
+            <Button class="login-btn" text='{{"general.ar_language" | translate}}' (tap)="onArabicPrint()" ></Button>
+            <Button class="login-btn" text='{{"general.en_language" | translate}}' (tap)="onEnglishPrint()"></Button>
         </FlexboxLayout>
             
     </FlexboxLayout>

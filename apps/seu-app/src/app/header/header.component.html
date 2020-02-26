@@ -84,7 +84,7 @@
           </div>
         </div>
       </div>
-      <div class="mobile-logo d-sm-none w-75">
+      <div class="mobile-logo w-75">
         <img class="" src="assets/images/logo_mobile.png" alt="">
       </div>
 
@@ -96,7 +96,7 @@
           </div>
         </div>
 
-        <div class="d-none d-sm-block" *ngIf="environment.production">
+        <div class="d-none d-sm-block" style="white-space: nowrap;" *ngIf="environment.production">
           <a href="#" routerLink="/" class="social" style="margin-top: -6px;">{{"general.home" | translate}}</a>
           <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
             style="font-size: 20px; font-weight: 400"> E
