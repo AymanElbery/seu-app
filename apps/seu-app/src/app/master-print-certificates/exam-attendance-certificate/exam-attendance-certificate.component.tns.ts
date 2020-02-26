@@ -6,6 +6,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import * as utils from 'tns-core-modules/utils/utils';
 import { ExamData } from '../../shared/models/exam-data';
+import { AppToasterService } from '../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-exam-attendance-certificate',
@@ -13,13 +14,6 @@ import { ExamData } from '../../shared/models/exam-data';
   styleUrls: ['./exam-attendance-certificate.component.scss']
 })
 export class ExamAttendanceCertificateComponent implements OnInit {
-
-  eaData:ExamData={
-    Final_Exam_With_Schedule:{Final_Schedule:[],labels:{},messages:[],values:{}},
-    Final_Exam_Without_Schedule:{labels:{},values:{},messages:[]},
-    Term_Exam_With_Schedule:{labels:{},values:{},messages:[],Term_Schedule:[]},
-    Term_Exam_Without_Schedule:{labels:{},messages:[],values:{}}
-  };
   finalschedule: string;
   final: string;
   termSchedule: string;
@@ -29,11 +23,6 @@ export class ExamAttendanceCertificateComponent implements OnInit {
   termScheduleEn: string;
   termEn: string;
   isLoading = false;
-
-  finalScheduleMsgs;
-  finalMsgs;
-  termScheduleMsgs;
-  termMsgs;
   msgs;
 
   test = {};
@@ -42,7 +31,30 @@ export class ExamAttendanceCertificateComponent implements OnInit {
   secondTabTitle: string;
   thirdTabTitle: string;
   forthTabTitle: string;
-  constructor( private stdData: ExamAttendanceCertificateService, private translate: TranslateService) { }
+  reqData;
+  status;
+  arabicPrintTermWithSchedule: string;
+  EngPrintTermWithSchedule: string;
+  arabicPrintTermWithoutSchedule: string;
+  EngPrintTermWithoutSchedule: string;
+  arabicPrintFinalWithSchedule: string;
+  EngPrintFinalWithSchedule: string;
+  arabicPrintFinalWithoutSchedule: string;
+  EngPrintFinalWithoutSchedule: string;
+
+  // tslint:disable-next-line: variable-name
+  isFinal_Exam_Without_Schedule = false;
+  // tslint:disable-next-line: variable-name
+  isFinal_Exam_With_Schedule = false;
+
+  constructor(private translate: TranslateService, private toastr: AppToasterService, private stdData: ExamAttendanceCertificateService) { }
+
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
 
   ngOnInit() {
     this.firstTabTitle = this.translate.instant('services.exam.tt');
@@ -51,44 +63,41 @@ export class ExamAttendanceCertificateComponent implements OnInit {
     this.forthTabTitle = this.translate.instant('services.exam.fnt');
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
+    this.getReqs();
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getReqs();
+    })
+  
+  }
+  getReqs() {
     this.isLoading = true;
-    this.stdData.getRequest().then(
-      res => {
-        this.eaData = (res as any).data;
+    this.stdData.getRequest().then
+      (res => {
+        this.stdData.reqData = (res as any).data;
+        this.stdData.msgs = (res as any).messages;
+        this.reqData = this.stdData.reqData;
+        console.log("reqdataaaaaaaaaa",this.reqData.Term_Exam_With_Schedule.labels )
+        this.msgs = this.stdData.msgs;
         this.isLoading = false;
 
+        this.arabicPrintTermWithSchedule = this.stdData.Download('Term_Exam_With_Schedule');
+        this.EngPrintTermWithSchedule = this.stdData.DownloadEng('Term_Exam_With_Schedule');
+    
+        this.arabicPrintTermWithoutSchedule = this.stdData.Download('Term_Exam_Without_Schedule');
+        this.EngPrintTermWithoutSchedule = this.stdData.DownloadEng('Term_Exam_Without_Schedule');
+    
+        this.arabicPrintFinalWithSchedule = this.stdData.Download('Final_Exam_With_Schedule');
+        this.EngPrintFinalWithSchedule = this.stdData.DownloadEng('Final_Exam_With_Schedule');
+    
+        this.arabicPrintFinalWithoutSchedule = this.stdData.Download('Final_Exam_Without_Schedule');
+        this.EngPrintFinalWithoutSchedule = this.stdData.DownloadEng('Final_Exam_Without_Schedule');
+      }, err => {
+        this.toastr.tryagain;
+        this.isLoading = false;
+      });
 
-        this.termSchedule = this.stdData.Download('Term_Exam_With_Schedule');
-        this.termScheduleEn = this.stdData.DownloadEng('Term_Exam_With_Schedule');
-        this.msgs = (res as any).msgs;
-
-
-        this.term = this.stdData.Download('Term_Exam_Without_Schedule');
-        this.termEn = this.stdData.DownloadEng('Term_Exam_Without_Schedule');
-
-        this.finalschedule = this.stdData.Download('Final_Exam_With_Schedule');
-        this.finalscheduleEn = this.stdData.DownloadEng('Final_Exam_With_Schedule');
-
-        this.final = this.stdData.Download('Final_Exam_Without_Schedule');
-        this.finalEn = this.stdData.DownloadEng('Final_Exam_Without_Schedule');
-
-      /*  if (this.eaData.Term_Exam_With_Schedule.labels)
-          alert(1);
-
-
-        //console.log(this.test);
-
-        //console.log(this.eaData.Term_Exam_With_Schedule.labels);
-
-        //console.log(this.termScheduleMsgs);
-        //console.log(this.termScheduleMsgs.length);
-        //console.log(this.termMsgs);
-
-        //console.log(this.finalScheduleMsgs);
-        //console.log(this.finalMsgs);*/
-      }
-    );
   }
+  
 
   toHTML(input): any {
     return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
