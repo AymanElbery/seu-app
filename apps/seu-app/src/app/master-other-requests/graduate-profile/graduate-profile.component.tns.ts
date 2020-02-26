@@ -41,6 +41,8 @@ export class GraduateProfileComponent implements OnInit {
         this.gradProfServ.reqData = (res as any).data;
         this.gradProfServ.msgs = (res as any).messages;
         this.reqData = this.gradProfServ.reqData;
+        console.dir("gradddddddd",this.reqData)
+
         this.msgs = this.gradProfServ.msgs;
         this.isLoading = false;
         // //console.log(this.reqData.requests);
