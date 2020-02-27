@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ConfigService } from '../../shared/services/config.service';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { UserRegistration } from '../../shared/models/user.registration.interface';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, Subject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { HttpRequestService } from '../../shared/services/http-request.service';
 import { BaseService } from '../../shared/services/base.service';
@@ -24,8 +24,9 @@ export class UserService extends BaseService {
   acStd = false;
   showServices = false;
   userData: UserData;
-  userDataLoaded: boolean;
+  userDataLoaded: boolean = false;
   userDataSubject = new BehaviorSubject(null);
+  userDataObservable = new Subject();
   newsData;
   eventsData;
   adsData;
@@ -120,7 +121,7 @@ export class UserService extends BaseService {
   SignIn(userName, pass) {
     this.baseUrl = '';
 
-    return   this.httRequest.postAuthRequest('rest/ssosession/login', {user: userName, password: pass, full: 1}).toPromise();
+    return this.httRequest.postAuthRequest('rest/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
   }
 
   loadUserData() {
@@ -149,7 +150,9 @@ export class UserService extends BaseService {
     return this.requestUser();
   }
   pushUserDataChanges() {
+
     this.userDataSubject.next(this.userData);
+    this.userDataObservable.next(this.userData);
   }
 
   getActiveRoleDetails() {

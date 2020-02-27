@@ -8,6 +8,7 @@ import { GlobalBaseService } from './shared/services/global-base.service';
 import { GlobalService } from './shared/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -39,6 +40,14 @@ export class AppComponent implements OnInit {
         }
       });
 
+    this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
+      res => {
+        localStorage.setItem('sid', res['sid']);
+        this.userService.loadUserData();
+      },
+      error => {
+        this.userService.relogin();
+      });
   }
   setLang(ulang) {
     let lang = 'ar';

@@ -9,13 +9,6 @@ import { environment } from '../../environments/environment';
 })
 export class BlankComponent {
   constructor(public userService: UserService, private http: HttpClient) {
-    this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
-      res => {
-        localStorage.setItem('sid', res['sid']);
-        this.userService.loadUserData();
-      },
-      error => {
-        this.userService.relogin();
-      });
+    
   }
 }
