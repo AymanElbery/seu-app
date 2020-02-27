@@ -5,6 +5,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import * as utils from 'tns-core-modules/utils/utils';
 import { ExamData } from '../../shared/models/exam-data';
+
 @Component({
   selector: 'app-exam-attendance-certificate-app',
   templateUrl: './exam-attendance-certificate-app.component.html',
@@ -12,12 +13,7 @@ import { ExamData } from '../../shared/models/exam-data';
 })
 export class ExamAttendanceCertificateAppComponent implements OnInit {
 
-  eaData:ExamData={
-    Final_Exam_With_Schedule:{Final_Schedule:[],labels:{},messages:[],values:{}},
-    Final_Exam_Without_Schedule:{labels:{},values:{},messages:[]},
-    Term_Exam_With_Schedule:{labels:{},values:{},messages:[],Term_Schedule:[]},
-    Term_Exam_Without_Schedule:{labels:{},messages:[],values:{}}
-  };
+
   finalschedule: string;
   final: string;
   termSchedule: string;
@@ -63,13 +59,16 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
     this.isLoading = true;
     this.printCertificate.getRequest().then(
       res => {
-        this.eaData = (res as any).data;
+        this.printCertificate.reqData = (res as any).data;
+        this.printCertificate.msgs = (res as any).messages;
+        this.reqData = this.printCertificate.reqData;
+        console.log("dataaaaaaaaaaaaa",this.reqData.Term_Exam_With_Schedule.labels)
+        this.msgs = this.printCertificate.msgs;
         this.isLoading = false;
 
 
         this.termSchedule = this.printCertificate.Download('Term_Exam_With_Schedule');
         this.termScheduleEn = this.printCertificate.DownloadEng('Term_Exam_With_Schedule');
-        this.msgs = (res as any).msgs;
 
 
         this.term = this.printCertificate.Download('Term_Exam_Without_Schedule');

@@ -120,6 +120,7 @@ export class UserService extends BaseService {
 
   SignIn(userName, pass) {
     this.baseUrl = '';
+    this.configService.baseUrl='';
 
     return this.httRequest.postAuthRequest('rest/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
   }

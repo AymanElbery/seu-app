@@ -26,8 +26,8 @@
         </StackLayout>
 
         <StackLayout margin="10">
-          <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
-
+          <Image class="nt-drawer__header-image far t-36"
+           style="color:#fff; padding: 10; background-image: linear-gradient(135deg,#623292  0%, #243686 100%);" src="font://&#xf007;"></Image>
 
         </StackLayout>
 
@@ -38,7 +38,7 @@
           <TextField            hint="Enter  password" secure="true" [(ngModel)]="credentials.password" class="input">
           </TextField>
         </StackLayout>
-        <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="-primary -rounded-sm"></Button>
+        <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn"></Button>
       </StackLayout>
     </StackLayout>
   </ScrollView>

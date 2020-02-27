@@ -3756,3 +3756,15 @@ form {
   color: #f08b1d !important;
   font-size: 2rem !important;
 }
+
+
+@media (min-width: 576px) {
+  .mobile-logo {
+    text-align: center;
+
+    img {
+      margin-bottom: -50px !important;
+      height: 95px;
+    }
+  }
+}

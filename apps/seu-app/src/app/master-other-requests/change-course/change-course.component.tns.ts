@@ -47,7 +47,7 @@ export class ChangeCourseComponent implements OnInit {
     this.acadmicProc.getRequests().then(
       res => {
         this.acadmicProc.reqData = (res as any).data;
-        console.log('DATA :' + this.acadmicProc.reqData);
+        console.log('DATA :' ,this.acadmicProc.reqData);
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
