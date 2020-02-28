@@ -10,6 +10,7 @@ import { UGGuard } from './guards/ug.guard';
 import { GRGuard } from './guards/gr.guard';
 import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
 import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
+import { PolicyComponent } from './home/policy.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,8 @@ const routes: Routes = [
       { path: 'home/:t', component: HomeComponent },
       { path: 'admis-pages/:cat', component: AdmisPagesComponent },
       { path: 'stdsnew-pages', component: StdsPagesComponent },
+      { path: 'policy', component: PolicyComponent },
+
       {
         path: 'academicaff',
         loadChildren: './academicaff/academicaff.module#AcademicaffModule',

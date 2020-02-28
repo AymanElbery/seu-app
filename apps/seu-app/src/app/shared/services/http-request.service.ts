@@ -140,8 +140,6 @@ export class HttpRequestService {
    // alert(url);
 
     const headers = this.creatAuthHeader();
-
-    console.log(headers);
     return this.http.post(url, JSON.stringify(body), { headers });
     }
 

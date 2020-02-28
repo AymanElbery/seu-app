@@ -90,11 +90,11 @@
         "choose": "Choose",
         "admis_pages": "الأنظمة الإدارية",
         "stds_pages": "نظام ادارة الخدمات الالكترونية",
-        "staff_name":"Staff Name",
-        "vitrual":"Virtual",
-        "class":"Class",
-        "total":"Total",
-        "no_absence_registered":"No Absense registered"
+        "staff_name": "Staff Name",
+        "vitrual": "Virtual",
+        "class": "Class",
+        "total": "Total",
+        "no_absence_registered": "No Absense registered"
     },
     "menu": {
         "myservices": "My Services",
@@ -614,5 +614,14 @@
             "location": "Location",
             "date": "Date"
         }
+    },
+    "policy": {
+        "title": "Conflict Of Interest Policy",
+        "desc": "صاغت الجامعة وثيقة سياسة تعارض المصالح للحفاظ علي ثقة المجتمع وحماية نزاهتها وسمعتها الأكاديمية. هذه الوثيقة تسري علي جميع منسوبيها من موظفين وأعضاء هيئة تدريس وعلي جميع العلاقات القائمة. كما تم تنظيم الإجراءات اللازمة بهذا الخصوص والتي تشمل طريقة الإفصاح عن تعارض المصالح وإحتمالية ظهورها وألية النظر فيها بطريقة تضمن العدالة وعدم الانحياز.",
+        "info_details": "To view the content of the ploicy and related forms",
+        "click_her": "Click her",
+        "no_conflict": "I acknoledge reading and understanding the SEU conflict of interest policy and i hereby declare that i have no conflict  of interestes",
+        "has_conflict": "I acknoledge reading and understanding the SEU conflict of interest policy and i i may have a conflict of interest and i will follow the announced disclouser procedure",
+        "send": "Send"
     }
 }

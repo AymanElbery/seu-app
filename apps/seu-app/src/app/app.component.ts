@@ -7,7 +7,7 @@ import { Jsonp } from '@angular/http';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { GlobalService } from './shared/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -26,7 +26,8 @@ export class AppComponent implements OnInit {
     private http: HttpClient,
     private globalService: GlobalBaseService,
     private translate: TranslateService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.print = printService;
     translate.addLangs(['ar', 'en']);
@@ -66,6 +67,10 @@ export class AppComponent implements OnInit {
           ? document.getElementById('bodyloading').remove()
           // tslint:disable-next-line: no-unused-expression
           : '';
+
+        if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
+          this.router.navigate(['/policy']);
+        }
       }
     });
   }
