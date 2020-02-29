@@ -1,6 +1,0 @@
-User: Portal.db.svc
-Pass: Seu#P0rt@l$DB
-
-
-User:BMCHELPDESK
-Pass:Welcome@123

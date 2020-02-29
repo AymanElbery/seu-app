@@ -59,7 +59,7 @@ export class MenuComponent implements OnInit {
         this.showadmis = Object.keys(res["data"]).length ? true : false;
       });
     }
-    console.log(this.userService.userData.activeRole);
+    //console.log(this.userService.userData.activeRole);
     if (this.userService.userData.activeRole == ApiUserRoles.Student || this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor) {
       this.hasNoRole = false;
     } else {

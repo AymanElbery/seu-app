@@ -25,6 +25,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   submitted = false;
   credentials: Credentials = { email: '', password: '' };
   status;
+  isLoading:boolean;
+  role: string;
   constructor(
     private userService: UserService,
     private router: Router,
@@ -55,30 +57,37 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       }
     }
     ); */
-
+    this.isLoading=true;
     this.userService.SignIn( this.credentials.email, this.credentials.password).then(res => {
       this.status=(res as any).status;
       this.status;
       const data = (res as any);
       if ((res as any).status) {
          this.globalSer.setSid(data.sid);
-         this.userService.userData.activeRole = (data.data.data.role);
+         this.role=this.userService.userData.activeRole = (data.data.data.role);
          applicationSettings.setString('user', this.credentials.email);
          applicationSettings.setString('pass', this.credentials.password);
          this.userService.logedIn=true;
-         this.userService.userData.student_details.level=data.data.data.student_details.level;
+         if(this.role==="Vendor"){
+          this.userService.userData.student_details.level=data.data.data.student_details.level;
+
+         }else if(this.role==="Student"){
+          this.userService.userData.student_details.level=data.data.data.level;
+         }
         this.userService.userData.username=data.data.data.username;
        // this.ref.markForCheck();
         //this.ref.detectChanges();
-        
+        this.isLoading=false;
          this.router.navigate(['/land']);
 
         }else{
+          this.isLoading=false;
           this.toastr.tryagain();
         }
       }
     ,
     err => {
+      this.isLoading=false;
       this.toastr.tryagain();
      // alert(err);
       // if (localStorage.getItem("userreloaded")) {

@@ -7,6 +7,7 @@ import { AcademicRecordComponent } from './academic-record/academic-record.compo
 import { GraduateStateComponent } from './graduate-state/graduate-state.component';
 import { SkillsRecordService } from './services/skills-record.service';
 import { SkillsRecordComponent } from './skills-record/skills-record.component';
+import { UGGuard } from '../guards/ug.guard';
 
 const routes: Routes = [
   { path: '', component: AcademicStatusComponent },
@@ -17,7 +18,7 @@ const routes: Routes = [
       { path: 'certificate', component: CertificateIDComponent },
       { path: 'record', component: AcademicRecordComponent },
       { path: 'graduationstatment', component: GraduateStateComponent },
-      { path: 'skills', component: SkillsRecordComponent },
+      { path: 'skills', component: SkillsRecordComponent, canActivate: [UGGuard] },
 
     ]
   }

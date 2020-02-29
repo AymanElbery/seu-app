@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, CanActivate, Router, CanActivateChild, CanLoad } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { map, take } from 'rxjs/operators';
+
 import { UserManagerService } from '../shared/services/user-manager.service';
 import { UserService } from '../account/services/user.service';
 
@@ -28,7 +30,21 @@ export class UserTypeGuard implements CanActivate, CanActivateChild, CanLoad {
     return false;
   }
   isLoggedIn() {
-    if(this.checkGuardRole()){
+    if (!this.userService.userDataLoaded) {
+      return this.userService.userDataObservable.pipe(
+        map(
+          (res) => {
+            return this.checkUserPerm();
+          }
+        )
+      );
+    } else {
+      return this.checkUserPerm();
+    }
+  }
+
+  checkUserPerm() {
+    if (this.checkGuardRole()) {
       return true;
     }
     if (this.userService.userData.activeRole == this.getLoginAsType() || this.userService.userData.act_as_student) {
