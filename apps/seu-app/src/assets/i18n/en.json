@@ -617,11 +617,11 @@
     },
     "policy": {
         "title": "Conflict Of Interest Policy",
-        "desc": "The Saudi Electronic Universiry (SEU) has defined a Conditions ofInterest Policy to preserve society's trust and to protect its integrity and its academic reputation. This Polcy shall apply on all employees, staff and faculty members, and on all existing relationship. SEU has developed all necessary procedures in this regard, which includes the method for disclosing any conflict of interest and the evaluation processthat will be implemented to ensure non-bias justifiable decisions ",
-        "info_details": "To view the content of the ploicy and related forms",
+        "desc": "The Saudi Electronic University (SEU) has defined a Conditions ofInterest Policy to preserve society's trust and to protect its integrity and its academic reputation. This Policy shall apply on all employees, staff and faculty members, and on all existing relationship. SEU has developed all necessary procedures in this regard, which includes the method for disclosing any conflict of interest and the evaluation process that will be implemented to ensure non-bias justifiable decisions ",
+        "info_details": "To view the content of the policy and related forms",
         "click_her": "Click her",
-        "no_conflict": "I acknoledge reading and understanding the SEU conflict of interest policy and i hereby declare that i have no conflict  of interestes",
-        "has_conflict": "I acknoledge reading and understanding the SEU conflict of interest policy and i i may have a conflict of interest and i will follow the announced disclouser procedure",
+        "no_conflict": "I acknowledge reading and understanding the SEU conflict of interest policy and i hereby declare that i have no conflict  of interests",
+        "has_conflict": "I acknowledge reading and understanding the SEU conflict of interest policy and i i may have a conflict of interest and i will follow the announced disclosure procedure",
         "send": "Send"
     }
 }
