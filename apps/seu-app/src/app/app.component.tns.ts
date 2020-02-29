@@ -55,7 +55,7 @@ export class AppComponent implements OnInit {
 
     get sideDrawerTransition(): DrawerTransitionBase {
     
-        this.userName=this.userService.userData.username;
+        this.userName=this.userService.userData.name_ar;
       
         this.level=this.userService.userData.student_details.level;
         return this._sideDrawerTransition;

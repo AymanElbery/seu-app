@@ -1,4 +1,4 @@
-<ActionBar>
+<ActionBar style="background:#001628;">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
@@ -6,13 +6,17 @@
 
 -->
 
+<StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:75%"></Image>
 
+  </StackLayout>
 
-    <ActionItem icon="font://&#xf0c9;" class="fas" style="font-size:10; color: #243686;"  (tap)="onDrawerButtonTap()" ios.position="left">
+    <ActionItem icon="font://&#xf0c9;" class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
 
   
-    <Label  text="الجامعه الالكترونية"></Label>
+    
 </ActionBar>
 <StackLayout>
     <StackLayout class="heading " style="padding-right: 10px;">
@@ -57,12 +61,9 @@
                     <GridLayout *ngIf="!newsLoaded" >
 
                         <StackLayout class="form" verticalAlignment="center">
+                           
                             <StackLayout>
-                                <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;">
-                                </Image>
-                            </StackLayout>
-                            <StackLayout>
-                                <ActivityIndicator *ngIf="!newsLoaded" width="200" height="200"
+                                <ActivityIndicator *ngIf="!newsLoaded" 
                                     [busy]="!newsLoaded"></ActivityIndicator>
 
                             </StackLayout>

@@ -75,6 +75,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
           this.userService.userData.student_details.level=data.data.data.level;
          }
         this.userService.userData.username=data.data.data.username;
+        this.userService.userData.name_ar=data.data.data.name_ar;
+          console.log(data);
        // this.ref.markForCheck();
         //this.ref.detectChanges();
         this.isLoading=false;
