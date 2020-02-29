@@ -26,7 +26,10 @@
     padding: 0;
     color: #6189f4;
     margin-bottom: 20;
+    position: relative;
 }
+
+
 
 .ysHBox
 {
@@ -42,9 +45,16 @@
 .ysPBox{
     padding-right: 20;
     color: #080b57;
+    position: relative;
+    padding-bottom: 10px;
+    background-color: rgb(226, 226, 226);
+    margin-bottom: 10px;
 }
+
 .ysPBox2{
     color: #f08b1c;
+    padding-right: 20px;
+
 }
 
 .ysTBox{
@@ -282,7 +292,7 @@
  ActionBar{background-color:#f1f1f1; color:#243686;}
  ActionBar label{ color:#243686; font-size: 18px; font-family: 'DroidArabicKufi'}
 
- .login-btn{  background-image: linear-gradient(135deg,#623292  0%, #243686 100%); color: #fff;
+ .login-btn{  background-image: linear-gradient(135deg,#001628  0%, #243686 100%); color: #fff;
     border-radius: 100px; 
     font-family: 'DroidArabicKufi'; font-size: 16px;
 }
