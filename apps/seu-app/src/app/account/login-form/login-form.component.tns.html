@@ -2,9 +2,9 @@
 <GridLayout class="view" style="background:#001628">
 
   <ActionBar  class="view" title=" " style="background:#001628">
-    <StackLayout margin-top="0">
+    <StackLayout margin-top="0" class="animate">
   
-      <Image src="~/images/logo_3d.png" style="width:85%"></Image>
+      <Image src="~/images/logo_3d.png" style="width:85% ;" ></Image>
   
     </StackLayout>
   </ActionBar>
@@ -13,11 +13,11 @@
   <ScrollView>
     <StackLayout >
     
-      <StackLayout class="form" margin="90 10 10 10" verticalAlignment="center" backgroundColor="#FFFFFF" padding="5" style="border-radius: 100px 20px 100px 20px" >
+      <StackLayout class="form animate2"  margin="90 10 10 10" verticalAlignment="center" backgroundColor="#FFFFFF" padding="5" style="border-radius: 100px 20px 100px 20px;" >
 
 
         <StackLayout margin="10">
-          <Image class="nt-drawer__header-image far t-36"
+          <Image class="nt-drawer__header-image far t-36 rota"
            style="color:#fff; padding: 12; background-image: linear-gradient(135deg,#001628  0%, #243686 100%);" src="font://&#xf007;"></Image>
 
         </StackLayout>
@@ -30,7 +30,7 @@
           <TextField            hint="Enter  password" secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
           </TextField>
         </StackLayout>
-        <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn" [isEnabled]="!isLoading"></Button>
+        <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn login-animate" [isEnabled]="!isLoading"></Button>
       </StackLayout>
     </StackLayout>
   </ScrollView>
