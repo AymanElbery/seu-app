@@ -29,7 +29,7 @@
     </StackLayout>
 
     <StackLayout>
-      <GridLayout class="ysBox" rows="auto,auto,auto,auto" columns="*,100">
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto" columns="*,100" *ngIf="reqData.length>0">
 
         <Label row="0" colSpan="2" class="ysHBox" text="{{'menu.userData'|translate}}"></Label>
 
@@ -45,7 +45,7 @@
       </GridLayout>
     </StackLayout>
 
-    <StackLayout>
+    <StackLayout *ngIf="reqData.length>0">
       <GridLayout class="ysBox" rows="auto,auto,auto,auto" columns="*,180">
         <Label row="0" colSpan="2" class="ysHBox" text="{{'services.reg.choosewishe'|translate}}"></Label>
         <Label row="1" column="1" style="font-weight: 800;" text="{{'services.reg.doyou25'|translate}} :"></Label>
@@ -64,7 +64,7 @@
 
     <StackLayout class="ysBox">
       <Label colSpan="2" class="ysHBox" text="{{'general.request.pre_requesr'|translate}}"></Label>
-      <ScrollView orientation="horizontal">
+      <ScrollView orientation="horizontal" *ngIf="reqData.length>0">
         <StackLayout>
           <StackLayout>
             <GridLayout columns="50, 130, 80, 50" class="throw" [ngClass]="{'throw_no_border':reqData.requests.length === 0}">

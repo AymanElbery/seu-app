@@ -40,6 +40,7 @@ export class ExamsAttendStatComponent implements OnInit {
   secondTabTitle: string;
   thirdTabTitle: string;
   forthTabTitle: string;
+  msgs: any;
 
 
 
@@ -60,11 +61,13 @@ export class ExamsAttendStatComponent implements OnInit {
         this.eaData = (res as any).data;
         this.isLoading = false;
 
+        this.msgs=(res as any).messages;
+        if((res as any).data.length> 0 ){
         this.termScheduleMsgs = this.eaData.Term_Exam_With_Schedule.messages;
         this.termMsgs = this.eaData.Term_Exam_Without_Schedule.messages;
         this.finalScheduleMsgs = this.eaData.Final_Exam_With_Schedule.messages;
         this.finalMsgs = this.eaData.Final_Exam_Without_Schedule.messages;
-
+      }
       /*  if (this.eaData.Term_Exam_With_Schedule.labels)
           alert(1);
 

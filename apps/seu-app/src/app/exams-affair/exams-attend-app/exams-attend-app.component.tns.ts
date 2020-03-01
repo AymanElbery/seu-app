@@ -30,6 +30,7 @@ export class ExamsAttendAppComponent implements OnInit {
   secondTabTitle:string;
   thirdTabTitle:string;
   forthTabTitle:string;
+  msgs: any;
 
 
 
@@ -48,6 +49,7 @@ export class ExamsAttendAppComponent implements OnInit {
     this.academicService.getِExamsAttednace('S180105049').then(
       res => {
     this.eaData =    (res as any).data;
+    this.msgs=(res as any).messages;
     this.isLoading=false;
       }
     );
