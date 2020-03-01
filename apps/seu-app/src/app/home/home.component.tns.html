@@ -1,4 +1,4 @@
-<ActionBar>
+<ActionBar style="background:#001628;">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
@@ -6,34 +6,40 @@
 
 -->
 
+<StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:75%"></Image>
 
+  </StackLayout>
 
-    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()" ios.position="left">
+    <ActionItem icon="font://&#xf0c9;" class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
 
-
-    <Label text="الجامعه الالكترونية"></Label>
+  
+    
 </ActionBar>
 <StackLayout>
-    <StackLayout style="margin: 5;background-color:black;">
+    <StackLayout class="heading " style="padding-right: 10px;">
 
-        <Label style="color: white;" class="h3 text-center " text="   الاعـــــــلانات  "></Label>
+        <Label  class="h3 heading-text "  text="   الإعـــــلانـــات  "></Label>
+        <Label   text="&#xf0a1;" class="fas  heading-icon"></Label>
 
     </StackLayout>
-    <GridLayout height="120">
+   
+    <GridLayout height="120" class="slider">
 
 
-        <Carousel selectedPage="{{sindex}}" finite="true" bounce="false" #myCarousel [items]="userService.adsData"
+        <Carousel  selectedPage="{{sindex}}" finite="true" bounce="false" #myCarousel [items]="userService.adsData"
             height="100%" width="100%" color="white" android:indicatorAnimation="slide"
-            android:indicatorAnimation="slide" indicatorColor="#CCC" indicatorOffset="0, -10" showIndicator="true">
+            android:indicatorAnimation="slide" indicatorColor="#243686" indicatorOffset="0, -10" showIndicator="true">
             <CarouselItem *ngFor="let item of userService.adsData" [backgroundColor]="item.color"
-                verticalAlignment="middle">
+                verticalAlignment="middle" class="slid-itme">
                 <GridLayout>
                     <StackLayout>
-                        <Image height="90" stretch="aspectFill" stretch="aspectFill" row="0"
+                        <Image class="slid-itme" height="90" stretch="aspectFill" stretch="aspectFill" row="0"
                             src="{{'data:image/jpg;base64,' + item.image}}"></Image>
-                        <Label textWrap="true" row="1" backgroundColor="#50000000"
-                            style="font-weight: 900;;margin-right:5px;padding: 5px;" text="{{item.title}}"></Label>
+                        <Label class="label-itme" textWrap="true" row="1"
+                            text="{{item.title}}"></Label>
                     </StackLayout>
                 </GridLayout>
             </CarouselItem>
@@ -42,22 +48,22 @@
 
     <GridLayout col="*" style="direction: rtl;" class="page__content">
         <StackLayout>
-            <StackLayout style="margin: 5;background-color: black;">
-                <Label style="color: white;" class="h3 text-center" text="الاخبـــــار"></Label>
-            </StackLayout>
-            <ScrollView>
+            <StackLayout class="heading">
+                <Label  class="h3 Almarai heading-text" text="الأخـــــــبـــــــار"></Label>
+                <Label   text="&#xf1ea;" class="fas  heading-icon"></Label>
 
+
+            </StackLayout>
+            <ScrollView height="100%">
+ 
                 <StackLayout>
 
-                    <GridLayout *ngIf="!newsLoaded">
+                    <GridLayout *ngIf="!newsLoaded" >
 
                         <StackLayout class="form" verticalAlignment="center">
-                            <StackLayout margin="10">
-                                <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;">
-                                </Image>
-                            </StackLayout>
+                           
                             <StackLayout>
-                                <ActivityIndicator *ngIf="!newsLoaded" width="200" height="200"
+                                <ActivityIndicator *ngIf="!newsLoaded" 
                                     [busy]="!newsLoaded"></ActivityIndicator>
 
                             </StackLayout>
@@ -65,11 +71,12 @@
                         </StackLayout>
 
                     </GridLayout>
-                    <StackLayout height="120" class="list-group-item" style="background-color:whitesmoke;"
-                        *ngFor="let news of userService.newsData" margin="5">
+
+                    <StackLayout height="130" class="list-group-item news"
+                        *ngFor="let news of userService.newsData">
 
 
-                        <Image height="100" stretch="aspectFill" row="0"
+                        <Image height="100" stretch="aspectFill" row="0" class="news-item"
                             src="{{'data:image/jpg;base64,' + news.image}}"></Image>
 
 
@@ -77,13 +84,11 @@
 
 
 
-                        <GridLayout columns="auto, *">
+                        <GridLayout columns="auto, *" class="label-block">
                             <Label textWrap="true" col="1" row="0"
-                                style="padding-right: 5px;color: red;font-size:10px"
-                                horizontalAlignment="right" text="{{news.date}} "></Label>
+                                horizontalAlignment="right" text="{{news.date}} " class="label-news"></Label>
                             <Label textWrap="true" col="1" row="2"
-                                style="padding-right: 200px;font-weight: 900;font-size:12px;"
-                                horizontalAlignment="right" text="{{news.title}} "></Label>
+                                horizontalAlignment="right" text="{{news.title}} " class="label-news-title"></Label>
 
 
                         </GridLayout>
@@ -99,4 +104,5 @@
 
 
     </GridLayout>
+   
 </StackLayout>

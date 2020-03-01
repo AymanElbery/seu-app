@@ -25,65 +25,65 @@ const routes: Routes = [
       {
         path: 'academicaff',
         loadChildren: './academicaff/academicaff.module#AcademicaffModule',
-        canLoad: [UGGuard]
+        canActivate: [UGGuard]
       },
       {
         path: 'procedures',
         loadChildren:
           './academicprocs/academicprocs.module#AcademicprocsModule',
-        canLoad: [UGGuard]
+        canActivate: [UGGuard]
       },
       {
         path: 'registercourses',
         loadChildren:
           './register-courses/register-courses.module#RegisterCoursesModule',
-        canLoad: [UGGuard]
+        canActivate: [UGGuard]
       },
       {
         path: 'finance',
         loadChildren:
           './finance-affair/finance-affair.module#FinanceAffairModule',
-        canLoad: [UGGuard]
+        canActivate: [UGGuard]
       },
       {
         path: 'exams',
         loadChildren: './exams-affair/exams-affair.module#ExamsAffairModule',
-        canLoad: [UGGuard]
+        canActivate: [UGGuard]
       },
       {
         path: 'other',
         loadChildren: './other-affair/other-affair.module#OtherAffairModule',
-        canLoad: [UGGuard]
+        canActivate: [UGGuard]
       },
       {
         path: 'academicrequests',
         loadChildren:
           './master-academic-requests/master-academic-requests.module#MasterAcademicRequestsModule',
-        canLoad: [GRGuard]
+        canActivate: [GRGuard]
       },
       {
         path: 'mfiniance',
         loadChildren:
           './master-finance-affair/master-finance-affair.module#MasterFinanceAffairModule',
-        canLoad: [GRGuard]
+        canActivate: [GRGuard]
       },
       {
         path: 'otherrequests',
         loadChildren:
           './master-other-requests/master-other-requests.module#MasterOtherRequestsModule',
-        canLoad: [GRGuard]
+        canActivate: [GRGuard]
       },
       {
         path: 'masterstdcertificate',
         loadChildren:
           './master-print-certificates/master-print-certificates.module#MasterPrintCertificatesModule',
-        canLoad: [GRGuard]
+        canActivate: [GRGuard]
       },
       {
         path: 'masterstddata',
         loadChildren:
           './master-student-data/master-student-data.module#MasterStudentDataModule',
-        canLoad: [GRGuard]
+        canActivate: [GRGuard]
       }
     ]
   },

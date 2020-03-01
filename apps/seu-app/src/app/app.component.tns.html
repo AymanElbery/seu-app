@@ -3,16 +3,15 @@ RadSideDrawer is a UI component part of the Progress NativeScript UI set of comp
 Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
 https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawer/getting-started
 -->
-<RadSideDrawer    [drawerTransition]="sideDrawerTransition" >
-   
-    <GridLayout  tkDrawerContent rows="auto, *" class="nt-drawer__content">
-        <StackLayout row="0" class="nt-drawer__header">
-            <Image class="nt-drawer__header-image fas t-36" src="font://&#xf2bd;"></Image>
-            <Label class="nt-drawer__header-brand" text="{{userName}}"></Label>
+<RadSideDrawer    [drawerTransition]="sideDrawerTransition" gesturesEnabled="true" (loaded)="onLoaded()">
+    <GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content">
+        <StackLayout row="0" class="nt-drawer__header" style="background-color:#f1f1f1;">
+            <Image class="nt-drawer__header-image fas t-36 img-user" src="font://&#xf2bd;"></Image>
+            <Label class="nt-drawer__header-brand" text="{{userName}}  "></Label>
         </StackLayout>
         <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;" height="auto">
              <StackLayout >
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
+                <GridLayout  columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
                     <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
 
@@ -27,7 +26,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 <StackLayout class="hr"></StackLayout>
 
 
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='UG'" >
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='UG'">
                     <Label col="1"  text="الشئون الاكاديمية " class="ysMenuHeader"  ></Label>
                     <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
 
@@ -56,7 +55,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
 
 
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='UG'" >
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='UG'">
                     <Label col="1"  text="الاجراءات الاكاديمية" class="ysMenuHeader"  ></Label>
                     <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
 
@@ -123,7 +122,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
 
 
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='UG'" >
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='UG'"  >
                     <Label col="1"  text=" تسجيل المقررات " class="ysMenuHeader"  ></Label>
                     <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
 
@@ -154,7 +153,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 
                 <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
 
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='UG'">
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='UG'" >
                     <Label col="1"  text="شئون الاختبارات" class="ysMenuHeader"  ></Label>
                     <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
 
@@ -213,7 +212,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
 
 
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='GR'" >
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='GR'">
                     <Label col="1"  text="بيانات الطالب  " class="ysMenuHeader"  ></Label>
                     <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
 
@@ -231,7 +230,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 </GridLayout>
                 <StackLayout class="hr" *ngIf="level==='GR'"></StackLayout>
 
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='GR'">
+                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='GR'" >
                     <Label col="1"  text="الطلبات الاكاديمية للماجستير" class="ysMenuHeader"  ></Label>
                     <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
 
@@ -314,7 +313,6 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 
                 
 
-                <StackLayout class="hr" *ngIf="level==='GR'"></StackLayout>
 
 
                 <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='GR'" >
@@ -351,7 +349,6 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 </GridLayout>
 
                
-                <StackLayout class="hr" *ngIf="level==='GR'"></StackLayout>
                
             </StackLayout>
         </ScrollView>
