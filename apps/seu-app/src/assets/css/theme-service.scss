@@ -7847,14 +7847,14 @@ iframe {
 .wrapper {
   .header-top {
     background-color: #ffffff;
-    z-index: 9;
+    z-index: 12;
     position: relative;
     padding: 15px 0;
     position: fixed;
     top: 0;
     width: 100%;
     right: 0;
-    padding-right: 240px;
+    // padding-right: 240px;
     //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
 
@@ -8194,6 +8194,7 @@ iframe {
       transform: translate3d(0, 0, 0);
       white-space: nowrap;
       visibility: visible;
+      padding-top: 80px;
 
       .sidebar-header {
         display: flex;
