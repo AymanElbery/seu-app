@@ -25,8 +25,9 @@ export class AppComponent implements OnInit {
     // tslint:disable-next-line: variable-name
     private _sideDrawerTransition: DrawerTransitionBase;
     // tslint:disable-next-line: ban-types
-    public userName: String ='UserName';
-    level='';
+    public userName: String = 'UserName';
+    level = '';
+    role = '';
 
     constructor(    private translate: TranslateService,
                     public userService: UserService,
@@ -59,6 +60,8 @@ export class AppComponent implements OnInit {
         this.userName = this.userService.userData.name_ar;
 
         this.level = this.userService.userData.student_details.level;
+        this.role = this.userService.userData.activeRole;
+        console.log('act' + this.role);
         return this._sideDrawerTransition;
     }
 
@@ -102,5 +105,16 @@ export class AppComponent implements OnInit {
 
         }
       }
+
+      onBSC() {
+          this.level = 'UG';
+          this.changeDetectionRef.detectChanges();
+      }
+
+
+      onMSC() {
+        this.level = 'GR';
+        this.changeDetectionRef.detectChanges();
+    }
 
 }

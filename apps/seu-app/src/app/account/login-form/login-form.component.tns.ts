@@ -25,7 +25,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   submitted = false;
   credentials: Credentials = { email: '', password: '' };
   status;
-  isLoading:boolean;
+  isLoading: boolean;
   role: string;
   constructor(
     private userService: UserService,
@@ -57,39 +57,41 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       }
     }
     ); */
-    this.isLoading=true;
+
+
+    this.isLoading = true;
     this.userService.SignIn( this.credentials.email, this.credentials.password).then(res => {
-      this.status=(res as any).status;
-      this.status;
+      this.status = (res as any).status;
       const data = (res as any);
       if ((res as any).status) {
          this.globalSer.setSid(data.sid);
-         this.role=this.userService.userData.activeRole = (data.data.data.role);
+         this.role = this.userService.userData.activeRole = (data.data.data.role);
          applicationSettings.setString('user', this.credentials.email);
          applicationSettings.setString('pass', this.credentials.password);
-         this.userService.logedIn=true;
-         if(this.role==="Vendor"){
-          this.userService.userData.student_details.level=data.data.data.student_details.level;
+         this.userService.logedIn = true;
+         if (this.role === 'Vendor') {
+           console.log('vendor' + data.data.data);
+           this.userService.userData.student_details.level = data.data.data.student_details.level;
 
-         }else if(this.role==="Student"){
-          this.userService.userData.student_details.level=data.data.data.level;
+         } else if (this.role === 'Student') {
+          this.userService.userData.student_details.level = data.data.data.level;
          }
-        this.userService.userData.username=data.data.data.username;
-        this.userService.userData.name_ar=data.data.data.name_ar;
-          console.log(data);
+         this.userService.userData.username = data.data.data.username;
+         this.userService.userData.name_ar = data.data.data.name_ar;
+         console.log(data);
        // this.ref.markForCheck();
-        //this.ref.detectChanges();
-        this.isLoading=false;
+        // this.ref.detectChanges();
+         this.isLoading = false;
          this.router.navigate(['/land']);
 
-        }else{
-          this.isLoading=false;
+        } else {
+          this.isLoading = false;
           this.toastr.tryagain();
         }
       }
     ,
     err => {
-      this.isLoading=false;
+      this.isLoading = false;
       this.toastr.tryagain();
      // alert(err);
       // if (localStorage.getItem("userreloaded")) {
@@ -131,13 +133,15 @@ export class LoginFormComponent implements OnInit, OnDestroy {
        ); */
   }
 
-  ngOnInit() { 
-    this.credentials.email=applicationSettings.getString('user');
-    this.credentials.password=applicationSettings.getString('pass');
+  ngOnInit() {
+    this.credentials.email = applicationSettings.getString('user');
+    this.credentials.password = applicationSettings.getString('pass');
   }
   // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {
     // prevent memory leak by unsubscribing
     this.subscription.unsubscribe();
   }
+
+
 }

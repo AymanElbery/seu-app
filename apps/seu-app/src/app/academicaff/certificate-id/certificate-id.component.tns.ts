@@ -16,11 +16,11 @@ import { CertificateDetails } from 'src/app/shared/models/certificate-details';
 export class CertificateIDComponent implements OnInit {
 
   constructor(private certificateIDService: CertificateIDService, private route: HttpClient) { }
-  certificateDetails: CertificateDetails={labels:{},values:{}};
+  certificateDetails: CertificateDetails = {labels: {}, values: {}};
   arabicPrint: string;
   EngPrint: string;
 
-  lectures: Lecture[]=[ {CRN:"",CRSE_CODE:"",CRSE_DAY:"",CRSE_TIME:"",CRSE_TITLE:"",SSBSECT_CREDIT_HRS:""}];
+  lectures: Lecture[] = [ {CRN: '', CRSE_CODE: '', CRSE_DAY: '', CRSE_TIME: '', CRSE_TITLE: '', SSBSECT_CREDIT_HRS: ''}];
   isLoading = false;
   msgs;
   ngOnInit() {
@@ -31,15 +31,18 @@ export class CertificateIDComponent implements OnInit {
     this.EngPrint = this.certificateIDService.DownloadEngCertificate();
     this.certificateIDService.getCertificateID().then(
       (res) => {
-        this.msgs=((res) as any).messages;
+        console.log('resl' + res);
+        this.msgs = ((res) as any).messages;
+        console.log('msg' + this.msgs);
         this.certificateDetails = ((res) as any).data;
+        console.log('details'+this.certificateDetails);
         this.lectures = (((res) as any).data as any).Lectures;
         this.isLoading = false;
       }
     );
   }
   toHTML(input): any {
-    return input ? input.replace('&rarr;', '->'):"";
+    return input ? input.replace('&rarr;', '->') : '';
   }
 
   onDrawerButtonTap(): void {
