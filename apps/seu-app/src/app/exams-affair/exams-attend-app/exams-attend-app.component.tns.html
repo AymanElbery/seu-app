@@ -14,15 +14,31 @@
     <Label text='{{"services.exam.caa" | translate}}'></Label>
 </ActionBar>
 
+<FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+    <ListView [items]="msgs">
+        <ng-template let-item="item">
+            <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+        </ng-template>
+    </ListView>
+</FlexboxLayout>
+
 <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
-    <Label verticalAlignment="center" [text]="absData.messages" class="ysMsg" *ngIf="status==0"></Label>
 </StackLayout>
 
-<TabView selectedIndex="3" *ngIf="!isLoading">
+<TabView selectedIndex="3" *ngIf="!isLoading && eaData.length">
 	<StackLayout *tabItem='{title: eaData.Term_Exam_With_Schedule.labels.title}'>
+
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && eaData.length>0">
+            <ListView [items]="eaData.Term_Exam_With_Schedule.messages">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
         <ScrollView height="100%">
-            <StackLayout>
+            <StackLayout *ngIf="eaData.length > 0">
                 <StackLayout>
                     <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                         
@@ -104,7 +120,7 @@
     </StackLayout>
     
 	<StackLayout *tabItem='{title: secondTabTitle}'>
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="eaData.length > 0">
             
             <Label row="0" colSpan="2"  class="ysHBox"  text='{{eaData.Term_Exam_Without_Schedule.labels.title}}'></Label>
 
@@ -156,7 +172,7 @@
     
 	<StackLayout *tabItem='{title: thirdTabTitle}'>
         <ScrollView height="100%">
-        <StackLayout>
+        <StackLayout *ngIf="eaData.length > 0">
                 <StackLayout>
                     <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                         
@@ -239,7 +255,7 @@
     </StackLayout>
     
     <StackLayout *tabItem='{title: forthTabTitle}'>
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="eaData.length > 0">
             
             <Label row="0" colSpan="2"  class="ysHBox"  [text]="eaData.Final_Exam_Without_Schedule.labels.title"></Label>
 

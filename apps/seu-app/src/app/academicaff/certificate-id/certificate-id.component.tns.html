@@ -17,7 +17,15 @@
 </ActionBar>
 
 <ScrollView>
-<GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading">
+  <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+    <ListView [items]="msgs">
+        <ng-template let-item="item">
+            <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+        </ng-template>
+    </ListView>
+</FlexboxLayout>
+
+<GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading &&certificateDetails.length>0">
 
   <StackLayout row="0" *ngIf="!isLoading">
     <GridLayout  class="ysBox" rows="auto,auto" columns="*,150">
