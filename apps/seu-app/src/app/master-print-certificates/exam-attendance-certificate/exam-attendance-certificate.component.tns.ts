@@ -104,28 +104,28 @@ export class ExamAttendanceCertificateComponent implements OnInit {
   }
 
   onArabicPrint() {
-    utils.openUrl(this.termSchedule);
+    utils.openUrl(this.arabicPrintTermWithSchedule);
   }
   onEnglishPrint() {
-    utils.openUrl(this.termScheduleEn);
+    utils.openUrl(this.EngPrintTermWithSchedule);
   }
   onArabicPrintTerm() {
-    utils.openUrl(this.term);
+    utils.openUrl(this.arabicPrintTermWithoutSchedule);
   }
   onEnglishPrintTerm() {
-    utils.openUrl(this.termEn);
+    utils.openUrl(this.EngPrintTermWithoutSchedule);
   }
   onArabicPrintFinalSced() {
-    utils.openUrl(this.finalschedule);
+    utils.openUrl(this.arabicPrintFinalWithSchedule);
   }
   onEnglishPrintFinalSced() {
-    utils.openUrl(this.finalscheduleEn);
+    utils.openUrl(this.EngPrintFinalWithSchedule);
   }
   onArabicPrintFinal() {
-    utils.openUrl(this.final);
+    utils.openUrl(this.arabicPrintFinalWithoutSchedule);
   }
   onEnglishPrintFinal() {
-    utils.openUrl(this.finalEn);
+    utils.openUrl(this.EngPrintFinalWithoutSchedule);
   }
   onDrawerButtonTap(): void {
     const sideDrawer =  app.getRootView() as RadSideDrawer;

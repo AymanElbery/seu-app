@@ -14,6 +14,7 @@ export class TuitionFeesStatComponent implements OnInit {
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
+  msgs:[];
 
 
   constructor(private academicService: TuitionFeesService) {
@@ -25,6 +26,7 @@ export class TuitionFeesStatComponent implements OnInit {
       res => {
     this.feesData =    (res as any).data;
     this.isLoading = false;
+    this.msgs=(res as any).messages;
       }
     );
     this.arabicPrint =   this.academicService.Download();

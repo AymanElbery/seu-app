@@ -17,10 +17,11 @@
 </ActionBar>
 
 <ScrollView>
-    <FlexboxLayout flexDirection="column">
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
 
-        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
-        <StackLayout *ngIf="!isLoading">
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading&&recoredData.length>0">
+
+        <StackLayout>
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
           
               <Label row="0" colSpan="2"  class="ysHBox"  text='{{"general.student_name" | translate}} {{recoredData.student_name}}'></Label>

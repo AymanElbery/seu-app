@@ -14,12 +14,19 @@
     <Label text='{{"services.exam.certatt" | translate}}'></Label>
 </ActionBar>
 
+<FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+    <ListView [items]="msgs">
+        <ng-template let-item="item">
+            <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+        </ng-template>
+    </ListView>
+</FlexboxLayout>
+
 <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
-    <Label verticalAlignment="center" [text]="absData.messages" class="ysMsg" *ngIf="status==0"></Label>
 </StackLayout>
 
-<TabView selectedIndex="3" *ngIf="!isLoading">
+<TabView selectedIndex="3" *ngIf="!isLoading && eaData.length>0">
 	<StackLayout *tabItem='{title: firstTabTitle }'>
         
         <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && termScheduleMsgs.length>0">

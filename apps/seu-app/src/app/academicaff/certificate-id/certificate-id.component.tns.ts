@@ -22,6 +22,7 @@ export class CertificateIDComponent implements OnInit {
 
   lectures: Lecture[]=[ {CRN:"",CRSE_CODE:"",CRSE_DAY:"",CRSE_TIME:"",CRSE_TITLE:"",SSBSECT_CREDIT_HRS:""}];
   isLoading = false;
+  msgs;
   ngOnInit() {
     this.isLoading = true;
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -30,6 +31,7 @@ export class CertificateIDComponent implements OnInit {
     this.EngPrint = this.certificateIDService.DownloadEngCertificate();
     this.certificateIDService.getCertificateID().then(
       (res) => {
+        this.msgs=((res) as any).messages;
         this.certificateDetails = ((res) as any).data;
         this.lectures = (((res) as any).data as any).Lectures;
         this.isLoading = false;
