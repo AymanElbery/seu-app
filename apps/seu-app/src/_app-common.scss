@@ -292,7 +292,7 @@
  ActionBar{background-color:#f1f1f1; color:#243686;}
  ActionBar label{ color:#243686; font-size: 18px; font-family: 'DroidArabicKufi'}
 
- .login-btn{  background-image: linear-gradient(135deg,#001628  0%, #243686 100%); color: #fff;
+ .login-btn{  background-color:#001628; color: #fff;
     border-radius: 100px; 
     font-family: 'DroidArabicKufi'; font-size: 16px;
 }
@@ -304,7 +304,7 @@ label{font-family: 'DroidArabicKufi'}
 .hr{border-color: #f08b1c;}
 
 @keyframes example {
-    from { background-color: #02066d; }
+    from { background-color: #010447; }
     to { background-color:#001628; }
 }
 
@@ -312,11 +312,54 @@ label{font-family: 'DroidArabicKufi'}
 
 .view {
     animation-name: example;
-    animation-duration: 3s;
+    animation-duration: 6s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite
  
 }
 
 
+@keyframes grd {
+    from { background-color: #010447; }
+    to { background-color:#001628; }
 
+}
+
+.login-animate{
+    animation-name: grd;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite
+}
+
+
+.animate {
+    animation-name: scale;
+    animation-duration: 3;
+
+}
+@keyframes scale {
+    from { transform: scale(0, 0); }
+    to { transform: scale(1, 1); }
+}
+
+.animate2 {
+    animation-name: scale;
+    animation-duration: 6;
+
+}
+@keyframes scale {
+    from { transform: scale(0, 0); }
+    to { transform: scale(1, 1); }
+}
+
+.rota {
+    animation-name: rotate;
+    animation-duration: 3;
+    animation-iteration-count: 5;
+
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
