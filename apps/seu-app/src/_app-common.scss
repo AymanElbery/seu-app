@@ -303,4 +303,17 @@ TextField:focus{ border-width: 5px; border-color: #f08b1c; }
 label{font-family: 'DroidArabicKufi'}
 .hr{border-color: #f08b1c;}
 
+@keyframes example {
+    from { background-color: #02066d; }
+    to { background-color:#001628; }
+}
+.view {
+    animation-name: example;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite
+ 
+}
+
+
 
