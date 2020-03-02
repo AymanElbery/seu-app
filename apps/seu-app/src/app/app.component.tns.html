@@ -7,7 +7,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
     <GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content">
         <StackLayout row="0" class="nt-drawer__header" style="background-color:#f1f1f1;">
             <Image class="nt-drawer__header-image fas t-36 img-user" src="font://&#xf2bd;"></Image>
-            <Label class="nt-drawer__header-brand" text="{{userName}}  "></Label>
+            <Label class="nt-drawer__header-brand" text="{{userName}}  " textWrap="true"></Label>
         </StackLayout>
         <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;" height="auto">
              <StackLayout >
@@ -26,331 +26,30 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 
                 <StackLayout class="hr"></StackLayout>
 
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='UG'">
-                    <Label col="1"  text="الشئون الاكاديمية " class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/status')" *ngIf="level==='UG'">
-                    <Label col="1" text=" الحالة الاكاديمية" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/certificate')" *ngIf="level==='UG'">
-                    <Label col="1" text=" شهادة تعريف" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/record')" *ngIf="level==='UG'">
-                    <Label col="1" text=" السجل الاكاديمى" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicaff/graduationstatment')" *ngIf="level==='UG'">
-                    <Label col="1" text="افادة خريج" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf19d;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-               
-                <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
-
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='UG'">
-                    <Label col="1"  text="الاجراءات الاكاديمية" class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/procedures/withdrawuniv')" *ngIf="level==='UG'">
-                    <Label col="1" text="الانسحاب من الجامعه" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/postpone')" (tap)="onNavItemTap('/procedures/postpone')" *ngIf="level==='UG'">
-                  
-                    <Label col="1" text="تأجيل الفصل الدراسي" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/execuse')" (tap)="onNavItemTap('/procedures/execuse')" *ngIf="level==='UG'">
-                    <Label col="1" text="الاعتذار عن فصل دراسي" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/summer')" (tap)="onNavItemTap('/procedures/summer')" *ngIf="level==='UG'">
-                    <Label col="1" text="الاعتذار عن الفصل الصيفي" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/reenrol')" (tap)="onNavItemTap('/procedures/reenrol')" *ngIf="level==='UG'">
-                    <Label col="1" text="اعادة قيد" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/cancelcourse')" (tap)="onNavItemTap('/procedures/cancelcourse')" *ngIf="level==='UG'">
-                    <Label col="1" text="حذف مقرر" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/equalize')" (tap)="onNavItemTap('/procedures/equalize')" *ngIf="level==='UG'">
-                    <Label col="1" text="معادلة المقررات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/eequalize')" (tap)="onNavItemTap('/procedures/eequalize')" *ngIf="level==='UG'">
-                    <Label col="1" text="معادلة اللغه الانجليزيه" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/changemajor')" (tap)="onNavItemTap('/procedures/changemajor')" *ngIf="level==='UG'">
-                    <Label col="1" text="تغيير التخصص" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/changerequest')" (tap)="onNavItemTap('/procedures/changerequest')" *ngIf="level==='UG'">
-                    <Label col="1" text="تغيير الفرع" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/lecexecuse')" (tap)="onNavItemTap('/procedures/lecexecuse')" *ngIf="level==='UG'">
-                    <Label col="1" text="رفع الاعذار للمحاضرات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/objectexam')" (tap)="onNavItemTap('/procedures/objectexam')" *ngIf="level==='UG'">
-                    <Label col="1" text="الاعتراض على نتيجة الاختبار النهائي" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-               <!--<GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/lectabs')" (tap)="onNavItemTap('/procedures/lectabs')">
-                    <Label col="1" text="الاستعلام عن الغيابات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>-->
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/procedures/visitorstudent')" (tap)="onNavItemTap('/procedures/visitorstudent')" *ngIf="level==='UG'">
-                    <Label col="1" text="طلب الدراسة كطالب زائر" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-                </GridLayout>
-                <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
-
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='UG'"  >
-                    <Label col="1"  text=" تسجيل المقررات " class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/registercourses/registerwishes')" *ngIf="level==='UG'">
-                    <Label col="1" text="  رغبات التسجيل للمستجدين" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
-
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='UG'">
-                    <Label col="1"  text=" الشئون المالية  " class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/finance/fees')" *ngIf="level==='UG'">
-                    <Label col="1" text="  افادة بالرسوم الدراسيه" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/finance/feesexception')" *ngIf="level==='UG'">
-                    <Label col="1" text="  اعفاء من الرسوم الدراسيه" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='UG'" >
-                    <Label col="1"  text="شئون الاختبارات" class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/exams/attend')" *ngIf="level==='UG'">
-                    <Label col="1" text="شهادة حضور اختبارات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/exams/attendapp')" *ngIf="level==='UG'">
-                    <Label col="1" text="شهادة اثبات حضور اختبارات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/exams/examexcuse')" *ngIf="level==='UG'">
-                    <Label col="1" text="رفع الاعذار للاختبارات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;" class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
-
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='UG'">
-                    <Label col="1"  text="طلبات أخرى" class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/medicalreport')" *ngIf="level==='UG'">
-                    <Label col="1" text="طلب تقرير طبي" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/universitycard')" *ngIf="level==='UG'">
-                    <Label col="1" text="طلب البطاقة الجامعية" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/studentinfo')" *ngIf="level==='UG'">
-                    <Label col="1" text="بيانات خريج" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/training')" *ngIf="level==='UG'">
-                    <Label col="1" text="طلب التدريب الميداني" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-
-                <StackLayout class="hr" *ngIf="level==='UG'"></StackLayout>
-
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *"  *ngIf="level==='GR'">
-                    <Label col="1"  text="بيانات الطالب  " class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/masteraff/stdata')" *ngIf="level==='GR'">
-                    <Label col="1" text=" الحالة الاكاديمية" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/masteraff/strec')" *ngIf="level==='GR'">
-                    <Label col="1" text=" السجل الاكاديمى" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <StackLayout class="hr" *ngIf="level==='GR'"></StackLayout>
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='GR'" >
-                    <Label col="1"  text="الطلبات الاكاديمية للماجستير" class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/cancelcourse')" *ngIf="level==='GR'">
-                    <Label col="1" text="حذف مقرر" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/objectexam')" *ngIf="level==='GR'">
-                    <Label col="1" text="الاعتراض على نتيجة الاختبار النهائي" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/examsexecuses')" *ngIf="level==='GR'">
-                    <Label col="1" text="رفع اللأعذار للإختبارات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/lecturesexecuses')" *ngIf="level==='GR'">
-                    <Label col="1" text="رفع الاعذار للمحاضرات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/reEnroll')" *ngIf="level==='GR'">
-                    <Label col="1" text="اعادة القيد" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/studypostpone')" *ngIf="level==='GR'">
-                    <Label col="1" text="طلب تأجيل الدراسة" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/termexecuse')" *ngIf="level==='GR'">
-                    <Label col="1" text="طلب حذف المقررات (الاعتذار عن الفصل)" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/academicrequests/withdrawal')" *ngIf="level==='GR'">
-                    <Label col="1" text="طلب الإنسحاب من الجامعة" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-
-                <StackLayout class="hr" *ngIf="level==='GR'"></StackLayout>
-
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='GR'" >
-                    <Label col="1"  text=" طباعة الشهادات  " class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/cert/id')" *ngIf="level==='GR'">
-                    <Label col="1" text="  شهادة التعريف" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/cert/examatt')" *ngIf="level==='GR'">
-                    <Label col="1" text="  شهادة حضور اختبارات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/cert/examattapp')" *ngIf="level==='GR'">
-                    <Label col="1" text="  شهادة اثبات حضور اختبارات" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <StackLayout class="hr" *ngIf="level==='GR'"></StackLayout>
-
-
-                
-
-
-
-                <GridLayout class="ysMenuGridHeader"  columns="auto, *" *ngIf="level==='GR'" >
-                    <Label col="1"  text="  طلبات اخرى  " class="ysMenuHeader"  ></Label>
-                    <Label col="1"  text="&#xf100;"  class=" fas ysMenuHeaderIcon"></Label>
-
-                </GridLayout>
-                <!--<GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/absencequery')">
-                    <Label col="1" text="   استعلام عن الغياب" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf015;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>-->
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/changecourse')" *ngIf="level==='GR'">
-                    <Label col="1" text="    تغير مقرر" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/changebranch')" *ngIf="level==='GR'">
-                    <Label col="1" text="    تغير فرع" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/graduateprofile')" *ngIf="level==='GR'">
-                    <Label col="1" text="     بيانات خريج" class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-                <GridLayout columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/other/personalid')" *ngIf="level==='GR'">
-                    <Label col="1" text="    البطاقة الجامعيه " class="ysMenuItem" ></Label>
-                    <Label col="1"  text="&#xf03a;"  class=" fas ysMenuIcon"></Label>
-
-                </GridLayout>
-
-               
-               
+        <RadListView width="100%" *ngIf="!isLoading" [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
+            <ng-template let-item="item">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between">
+                    <Label  text="&#xf0dd;"  class="fas"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label text='{{item.title}}'></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+            </ng-template>
+
+            <ng-template tkTemplateKey="expanded" let-item="item">
+                <FlexboxLayout flexDirection="column">
+                        <FlexboxLayout flexDirection="row" justifyContent="space-between">
+                            <Label  text="&#xf0de;"  class="fas"></Label>
+                            <Label text='{{item.title}}'></Label>
+                        </FlexboxLayout>
+                        <GridLayout *ngFor="let item  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
+                            <Label col="1" text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
+                            <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>
+        
+                        </GridLayout>
+                    </FlexboxLayout>
+            </ng-template>
+        </RadListView>
             </StackLayout>
         </ScrollView>
     </GridLayout>
