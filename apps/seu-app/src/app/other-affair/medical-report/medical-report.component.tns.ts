@@ -15,6 +15,7 @@ export class MedicalReportComponent implements OnInit {
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
+  msgs: any;
 
   constructor(private academicService: MedicalReportService) { }
 
@@ -26,6 +27,7 @@ export class MedicalReportComponent implements OnInit {
       res => {
     this.mrData =    (res as any).data;
     this.isLoading=false;
+    this.msgs=(res as any).messages;
       }
     );
     this.arabicPrint =   this.academicService.Download();

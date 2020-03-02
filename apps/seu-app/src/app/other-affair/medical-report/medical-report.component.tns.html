@@ -19,9 +19,17 @@
 <ScrollView>
     <FlexboxLayout flexDirection="column">
 
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+            <ListView [items]="msgs">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
         <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
             
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="!isLoading">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="!isLoading && mrData.labels">
           
               <Label row="0" colSpan="2"  class="ysHBox"  text='{{"general.student_data"|translate}}'></Label>
           
@@ -44,7 +52,7 @@
               <Label row="6"  column="0" text="{{mrData.values.major}}"></Label>
             </GridLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" class="ysBox"  *ngIf="!isLoading" flexWrap="wrap">
+        <FlexboxLayout flexDirection="row-reverse" class="ysBox"  *ngIf="!isLoading && mrData.labels" flexWrap="wrap">
             <Label text="{{mrData.labels.part1}}" textWrap="true"></Label>
             <Label text="{{mrData.labels.part2}}" textWrap="true"></Label>
             <Label text='{{"general.note"|translate}}' textWrap="true"></Label>
@@ -53,8 +61,8 @@
         </FlexboxLayout>
 
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading" style="margin-top: 20;">
-            <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
-            <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
+            <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" *ngIf="!arabicPrint" ></Button>
+            <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()" *ngIf="!EngPrint"></Button>
         </FlexboxLayout>
     </FlexboxLayout>
 

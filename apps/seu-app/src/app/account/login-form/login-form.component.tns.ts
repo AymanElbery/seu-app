@@ -70,7 +70,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
          applicationSettings.setString('pass', this.credentials.password);
          this.userService.logedIn = true;
          if (this.role === 'Vendor') {
-           console.log('vendor' + data.data.data);
            this.userService.userData.student_details.level = data.data.data.student_details.level;
 
          } else if (this.role === 'Student') {
@@ -78,7 +77,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
          }
          this.userService.userData.username = data.data.data.username;
          this.userService.userData.name_ar = data.data.data.name_ar;
-         console.log(data);
        // this.ref.markForCheck();
         // this.ref.detectChanges();
          this.isLoading = false;
