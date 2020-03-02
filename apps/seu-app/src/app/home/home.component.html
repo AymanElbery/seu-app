@@ -19,11 +19,15 @@
                     [carouselClasses]="['owl-theme', 'sliding']">
                     <div class="item" *ngFor="let news of userService.newsData;index as i">
                       <div style="align-content: center" class="owl-content">
-                        <img style="height: 260px;width:100%" [src]="'data:image/jpg;base64,' + news.image" />
+                        <a [routerLink]="['/dashboard/newsdetail', i]">
+                          <img style="height: 260px;width:100%" [src]="'data:image/jpg;base64,' + news.image" />
+                        </a>
                         <p>
-                          {{news.title}}
-                          <br>
-                          <i class="ik ik-calendar"><span class="text-eng">{{news.date}}</span></i>
+                          <a [routerLink]="['/dashboard/newsdetail', i]">
+                            {{news.title}}
+                            <br>
+                            <i class="ik ik-calendar"><span class="text-eng">{{news.date}}</span></i>
+                          </a>
                         </p>
                       </div>
                     </div>
