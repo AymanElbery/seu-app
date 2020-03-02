@@ -16,7 +16,7 @@ declare var UIView, NSMutableArray, NSIndexPath;
 })
 export class AcademicRecordComponent implements OnInit {
   constructor(private academicService: AcademicRecordService) { }
-  recoredData:RecoredDataModel= {coll:"",grade:"",major:"",ssn:"",status:"",student_name:"",terms:[]};
+  recoredData: RecoredDataModel = {coll:'', grade:'', major:'', ssn:'', status:'', student_name:'', terms: []};
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
@@ -34,7 +34,7 @@ onItemTap(event: ListViewEventData) {
     if (isIOS) {
       // Uncomment the lines below to avoid default animation
       UIView.animateWithDurationAnimations(0, () => {
-          let indexPaths = NSMutableArray.new();
+          const indexPaths = NSMutableArray.new();
           indexPaths.addObject(NSIndexPath.indexPathForRowInSection(rowIndex, event.groupIndex));
           listView.ios.reloadItemsAtIndexPaths(indexPaths);
        });
