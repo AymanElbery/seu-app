@@ -320,7 +320,7 @@ label{font-family: 'DroidArabicKufi'}
 
 
 @keyframes grd {
-    from { background-color: #010447; }
+    from { background-color: #020425; }
     to { background-color:#001628; }
 
 }
@@ -335,17 +335,17 @@ label{font-family: 'DroidArabicKufi'}
 
 .animate {
     animation-name: scale;
-    animation-duration: 3;
+    animation-duration: 2;
 
 }
 @keyframes scale {
-    from { transform: scale(0, 0); }
+    from { transform: scale(0, 1); }
     to { transform: scale(1, 1); }
 }
 
 .animate2 {
     animation-name: scale;
-    animation-duration: 6;
+    animation-duration: 2;
 
 }
 @keyframes scale {

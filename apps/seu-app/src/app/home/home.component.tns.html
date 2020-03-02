@@ -31,7 +31,7 @@
 
         <Carousel  selectedPage="{{sindex}}" finite="true" bounce="false" #myCarousel [items]="userService.adsData"
             height="100%" width="100%" color="white" android:indicatorAnimation="slide"
-            android:indicatorAnimation="slide" indicatorColor="#243686" indicatorOffset="0, -10" showIndicator="true">
+            android:indicatorAnimation="slide" indicatorColorUnselected ="#f08b1c"indicatorColor="#243686" indicatorOffset="0, -10" showIndicator="true">
             <CarouselItem *ngFor="let item of userService.adsData" [backgroundColor]="item.color"
                 verticalAlignment="middle" class="slid-itme">
                 <GridLayout>
