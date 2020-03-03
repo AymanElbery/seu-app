@@ -7,7 +7,7 @@
 
         </div>
         <div class="modal-body" (scroll)="onScroll($event)">
-            <div >
+            <div>
                 <p>
                     {{"policy.desc" | translate}}
                 </p>
@@ -24,18 +24,18 @@
         <div class="modal-footer">
             <div>
                 <label>
-                    <input [(ngModel)]="selection" type="radio" value="1" name="policy" />
+                    <input [disabled]="!allowSelection" [(ngModel)]="selection" type="radio" value="1" name="policy" />
                     {{"policy.no_conflict" | translate}}
                 </label>
             </div>
             <div>
                 <label>
-                    <input [(ngModel)]="selection" type="radio" value="2" name="policy" />
+                    <input [disabled]="!allowSelection" [(ngModel)]="selection" type="radio" value="2" name="policy" />
                     {{"policy.has_conflict" | translate}}
                 </label>
             </div>
             <div>
-                <button type="button" [disabled]="!selection || requesting" (click)="saveChoose()"
+                <button type="button" [disabled]="!allowSelection || !selection || requesting" (click)="saveChoose()"
                     class="btn btn-dark"><i class="fa fa-database"></i>{{"policy.send"|translate}}</button>
             </div>
         </div>

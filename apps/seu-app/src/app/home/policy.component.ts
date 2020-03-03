@@ -26,8 +26,12 @@ export class PolicyComponent implements OnInit, OnDestroy {
     document.getElementById("side-menu").style.display = "block";
 
   }
-  onScroll(e){
-    console.log(e);
+  allowSelection = false;
+  onScroll(e) {
+    //scrollTop + clientHeight = scrollHeight
+    if (parseInt(e.srcElement.scrollTop + e.srcElement.clientHeight) >= (e.srcElement.scrollHeight - 50)) {
+      this.allowSelection = true;
+    }
   }
   saveChoose() {
     const headers = new HttpHeaders({
