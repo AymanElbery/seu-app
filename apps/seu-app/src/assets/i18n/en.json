@@ -646,35 +646,39 @@
             "GuidelinesList": [
                 {
                     "title": "Instruction before exams",
-                    "link": "https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/BeforeExam_en.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam_en.pdf"
                 },
                 {
                     "title": "Instruction during exams",
-                    "link": "https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/DuringExam_en.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam_en.pdf"
                 },
                 {
                     "title": "Technical requirements for operating laptops/tablets: for eExam",
-                    "link": "https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/TechnicalRequirements_en.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements_en.pdf"
                 },
                 {
                     "title": "How to Taking the eExam? (video)",
-                    "link": "https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                    "link": "https://www.youtube.com/watch?v=M1GrtHPTBho&feature=youtu.be"
                 },
                 {
                     "title": "Taking eExam using Desktop/Laptop Computers (Windows & Mac)",
-                    "link": "https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "​Taking eExam using Tablets (iOS & Android)",
-                    "link": "https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "FAQs",
-                    "link": "https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/E-Exams_FAQs_en.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs_en.pdf"
                 },
                 {
-                    "title": "​​How to connect to SEU Wi-Fi?",
-                    "link": "https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/SEUNetwork_En.pdf"
+                    "title": "​​How to connect to SEU Wi-Fi? (windows)",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC_En.pdf"
+                },
+                {
+                    "title": "​​How to connect to SEU Wi-Fi? (Mac)",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN_En.pdf"
                 }
             ]
         }

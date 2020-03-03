@@ -647,34 +647,39 @@
             "GuidelinesList": [
                 {
                     "title": "تعليمات ما قبل الاختبارات",
-                    "link":"https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/BeforeExam.pdf"
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
                 },
                 {
                     "title": "تعليمات أثناء الاختبارات",
-                    "link":"https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/DuringExam.pdf"
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam.pdf"
                 },
                 {
                     "title": "المتطلبات الفنية للأجهزة المحمولة/ اللوحية خاص بالاختبارات الإلكترونية",
-                    "link":"https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/TechnicalRequirements.pdf"
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements.pdf"
                 },
                 {
                     "title": "فيديو تعريفي لكيفية أداء الاختبار الإلكتروني",
-                    "link":"https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                    "link":"https://www.youtube.com/watch?v=uwFhDd1ahkc&feature=youtu.be"
                 },
                 {
                     "title": "الاختبارات الإلكترونية باستخدام أجهزة الحاسوب المكتبية/المحمولة​ (Windows & Mac)",
-                    "link":"https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "​الاختبارات الإلكترونية باستخدام الأجهزة اللوحية (iOS &Android )",
-                    "link":"https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "الأسئلة الشائعة​",
-                    "link":"https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/E-Exams_FAQs.pdf"
-                },{
-                    "title": "كيفية الارتباط بشبكة الجامعة",
-                    "link":"https://old.seu.edu.sa/sites/ar/Services/Documents/ExamsInstructions/SEUNetwork.pdf"
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs.pdf"
+                },
+                {
+                    "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام Mac",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC.pdf"
+                },
+                {
+                    "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام windows",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN.pdf"
                 }
                 
             ]
