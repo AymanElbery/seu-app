@@ -1,48 +1,43 @@
-<div class="main-content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="widget ">
-                    <div class="widget-header">
-                        <h3 class="widget-title">{{"policy.title" | translate}}</h3>
-                    </div>
-                    <div class="widget-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>
-                                    {{"policy.desc" | translate}}
-                                </p>
-                                <p>
+<mat-dialog-content dir="rtl">
+    <div class="modal-content">
+        <div class="modal-header">
 
-                                    {{"policy.info_details" | translate}}
-                                    <a href="/assets/files/policy.pdf"
-                                        target="_blank">{{"policy.click_her" | translate}}</a>
-                                </p>
-                                <p>
-                                    <img src="/assets/files/policy.jpg">
-                                </p>
-                                <div>
-                                    <label>
-                                        <input [(ngModel)]="selection" type="radio" value="1" name="policy" />
-                                        {{"policy.no_conflict" | translate}}
-                                    </label>
-                                </div>
-                                <div>
-                                    <label>
-                                        <input [(ngModel)]="selection" type="radio" value="2" name="policy" />
-                                        {{"policy.has_conflict" | translate}}
-                                    </label>
-                                </div>
-                                <div>
-                                    <button type="button" [disabled]="!selection || requesting" (click)="saveChoose()"
-                                        class="btn btn-dark"><i
-                                            class="fa fa-database"></i>{{"policy.send"|translate}}</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+                {{"policy.title"|translate}}</h5>
+
+        </div>
+        <div class="modal-body" (scroll)="onScroll($event)">
+            <div >
+                <p>
+                    {{"policy.desc" | translate}}
+                </p>
+                <p>
+
+                    {{"policy.info_details" | translate}}
+                    <a href="/assets/files/policy.pdf" target="_blank">{{"policy.click_her" | translate}}</a>
+                </p>
+                <p>
+                    <img src="/assets/files/policy.jpg">
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div>
+                <label>
+                    <input [(ngModel)]="selection" type="radio" value="1" name="policy" />
+                    {{"policy.no_conflict" | translate}}
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input [(ngModel)]="selection" type="radio" value="2" name="policy" />
+                    {{"policy.has_conflict" | translate}}
+                </label>
+            </div>
+            <div>
+                <button type="button" [disabled]="!selection || requesting" (click)="saveChoose()"
+                    class="btn btn-dark"><i class="fa fa-database"></i>{{"policy.send"|translate}}</button>
             </div>
         </div>
     </div>
-</div>
+</mat-dialog-content>

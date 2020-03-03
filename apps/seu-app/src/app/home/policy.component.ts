@@ -26,6 +26,9 @@ export class PolicyComponent implements OnInit, OnDestroy {
     document.getElementById("side-menu").style.display = "block";
 
   }
+  onScroll(e){
+    console.log(e);
+  }
   saveChoose() {
     const headers = new HttpHeaders({
       Authorization: this.reqservice.getSSOAuth(),

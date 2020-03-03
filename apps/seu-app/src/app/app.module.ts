@@ -49,7 +49,7 @@ import { GlobalService } from './shared/services/global.service';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { OwlModule } from 'ngx-owl-carousel';
 import { AppTransModule } from './app.trans.module';
-import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
 import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
 import { PolicyComponent } from './home/policy.component';
@@ -88,6 +88,7 @@ import { PolicyComponent } from './home/policy.component';
     ToastrModule.forRoot()
     , TimerModule
     , MatProgressSpinnerModule
+    ,MatDialogModule
   ],
   providers: [ConfigService,
     HttpRequestService,
@@ -100,6 +101,7 @@ import { PolicyComponent } from './home/policy.component';
     , { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
 
   ],
+  entryComponents: [PolicyComponent],
   exports: [DownloadPrintDirective, ExternalLinkDirective],
   bootstrap: [AppComponent]
 })

@@ -9,6 +9,8 @@ import { GlobalService } from './shared/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { PolicyComponent } from './home/policy.component';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +29,8 @@ export class AppComponent implements OnInit {
     private globalService: GlobalBaseService,
     private translate: TranslateService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {
     this.print = printService;
     translate.addLangs(['ar', 'en']);
@@ -68,8 +71,15 @@ export class AppComponent implements OnInit {
           // tslint:disable-next-line: no-unused-expression
           : '';
 
-        if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
-          this.router.navigate(['/policy']);
+        if (true || (this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
+          //this.router.navigate(['/policy']);
+
+
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.autoFocus = true;
+          dialogConfig.disableClose = true;
+          dialogConfig.width = '50%';
+          this.dialog.open(PolicyComponent, dialogConfig);
         }
       }
     });

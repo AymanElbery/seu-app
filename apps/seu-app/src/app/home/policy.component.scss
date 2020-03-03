@@ -5,3 +5,10 @@
 img {
     width: 100%;
 }
+.modal-footer {
+    display: block;
+}
+.modal-body {
+    max-height: 25vh;
+    overflow: scroll;
+}
