@@ -37,7 +37,7 @@
         <StackLayout class="ysBox">
 
             <Label colSpan="2" class="ysHBox" text="{{'general.request.pre_requesr'|translate}}"></Label>
-                <StackLayout>
+                <StackLayout *ngIf="reqData.requests && reqData.requests.length>0">
                     <StackLayout>
                         <GridLayout columns="50, 80, 80, 80,40" class="throw" [ngClass]="{'throw_no_border':reqData.requests.length === 0}">
                             <Label textAlignment="center" col="4" text=" #"></Label>

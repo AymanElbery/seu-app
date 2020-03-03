@@ -32,7 +32,7 @@
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
 
-    <RadListView *ngIf="!isLoading &&reqData.requests.length>0" [items]="reqData.requests" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
+    <RadListView *ngIf="!isLoading&&reqData.requests &&reqData.requests.length>0" [items]="reqData.requests" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
         <ng-template let-item="item">
             <FlexboxLayout flexDirection="row" justifyContent="space-between" class="throw" 
             [ngStyle]="{'border-bottom-width':item ===reqData.requests[reqData.requests.length-1] ? '0' : '1' }">

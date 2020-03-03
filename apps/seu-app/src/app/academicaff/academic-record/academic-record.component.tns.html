@@ -17,31 +17,40 @@
 </ActionBar>
 
 <ScrollView>
-    <FlexboxLayout flexDirection="column">
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
 
-        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
-        <StackLayout *ngIf="!isLoading">
+    <FlexboxLayout style="margin-top: 20px;" flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+        <ListView [items]="msgs">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
+
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading && recoredData.terms">
+
+        <StackLayout>
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
           
               <Label row="0" colSpan="2"  class="ysHBox"  text='{{"general.student_name" | translate}} {{recoredData.student_name}}'></Label>
           
               <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.faculty" | translate}} :'></Label>
-              <Label row="1"  column="0" class="ysPBox2"text="{{recoredData.coll}}"></Label>
+              <Label row="1"  column="0" class="ysPBox2" text="{{recoredData.coll}}"></Label>
           
               <Label row="2" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.major" | translate}} :'></Label>
-              <Label row="2"  column="0" text="{{recoredData.major}}"></Label>
+              <Label row="2"  column="0" class="ysPBox2" text="{{recoredData.major}}"></Label>
           
               <Label row="3" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.student_id" | translate}} :'></Label>
-              <Label row="3"  column="0"   text="{{recoredData.std_id}}" style="text-align: right;"></Label>
+              <Label row="3"  column="0"   class="ysPBox2"  text="{{recoredData.std_id}}" style="text-align: right;"></Label>
 
               <Label row="4" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.ssn" | translate}} :'></Label>
-              <Label row="4"  column="0" text="{{recoredData.ssn}}"  style="text-align: right;"></Label>
+              <Label row="4"  column="0"  class="ysPBox2" text="{{recoredData.ssn}}"  style="text-align: right;"></Label>
 
               <Label row="5" column="1"   class="ysPBox" style="font-weight: 800;" text='{{"general.grade" | translate}} :'></Label>
-              <Label row="5"  column="0" text="{{recoredData.grade}}"></Label>
+              <Label row="5"  column="0"  class="ysPBox2" text="{{recoredData.grade}}"></Label>
 
               <Label row="6" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.student_status" | translate}} :'></Label>
-              <Label row="6"  column="0" text="{{recoredData.status}}"></Label>
+              <Label row="6"  column="0"  class="ysPBox" text="{{recoredData.status}}"></Label>
             </GridLayout>
           </StackLayout>
 

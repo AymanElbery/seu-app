@@ -32,7 +32,7 @@
     </FlexboxLayout>
 
     
-    <RadListView *ngIf="!isLoading &&reqData.reqs.length>0" [items]="reqData.reqs" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
+    <RadListView *ngIf="!isLoading && reqData.reqs&& reqData.reqs.length>0" [items]="reqData.reqs" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
         <ng-template let-item="item">
             <FlexboxLayout flexDirection="row" justifyContent="space-between" class="throw" 
             [ngStyle]="{'border-bottom-width':item ===reqData.reqs[reqData.reqs.length-1] ? '0' : '1' }">

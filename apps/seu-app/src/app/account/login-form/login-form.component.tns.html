@@ -1,44 +1,36 @@
-<ActionBar title="Login "></ActionBar>
-<GridLayout>
 
+<GridLayout class="view" style="background:#001628">
 
+  <ActionBar  class="view" title=" " style="background:#001628">
+    <StackLayout margin-top="0" class="animate">
+  
+      <Image src="~/images/logo_3d.png" style="width:85% ;" ></Image>
+  
+    </StackLayout>
+  </ActionBar>
 
 
   <ScrollView>
-    <StackLayout>
-      <StackLayout margin="20">
+    <StackLayout >
+    
+      <StackLayout class="form animate2"  margin="90 10 10 10" verticalAlignment="center" backgroundColor="#FFFFFF" padding="5" style="border-radius: 100px 20px 100px 20px;" >
 
-        <Image src="~/images/logo.png"></Image>
-
-      </StackLayout>
-      <StackLayout class="form" margin="10" verticalAlignment="center" backgroundColor="#FFFFFF" padding="5">
-
-
-
-
-        <StackLayout margin="20">
-
-
-        </StackLayout>
-        <StackLayout margin="10">
-
-
-        </StackLayout>
 
         <StackLayout margin="10">
-          <Image class="nt-drawer__header-image far t-36"
-           style="color:#fff; padding: 10; background-image: linear-gradient(135deg,#623292  0%, #243686 100%);" src="font://&#xf007;"></Image>
+          <Image class="nt-drawer__header-image far t-36 rota"
+           style="color:#fff; padding: 12; background-image: linear-gradient(135deg,#001628  0%, #243686 100%);" src="font://&#xf007;"></Image>
 
         </StackLayout>
 
         <StackLayout class="input-field">
-          <TextField hint="Enter UserName" [(ngModel)]="credentials.email" class="input"></TextField>
+          <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+          <TextField hint="Enter UserName" [(ngModel)]="credentials.email" class="input" [editable]="!isLoading"></TextField>
         </StackLayout>
         <StackLayout class="input-field">
-          <TextField            hint="Enter  password" secure="true" [(ngModel)]="credentials.password" class="input">
+          <TextField            hint="Enter  password" secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
           </TextField>
         </StackLayout>
-        <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn"></Button>
+        <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn login-animate" [isEnabled]="!isLoading"></Button>
       </StackLayout>
     </StackLayout>
   </ScrollView>

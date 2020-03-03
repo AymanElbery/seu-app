@@ -31,7 +31,7 @@
         <Button text='{{"general.request.add_request"| translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
     
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading" class="ysBox">
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading && reqData.reqs && reqData.reqs.length>0" class="ysBox">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"
             [ngClass]="{'throw_no_border':reqData.reqs.length === 0}"
             >
