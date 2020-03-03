@@ -33,7 +33,7 @@
        
 
 
-        <StackLayout *ngIf="feesData.length>0">
+        <StackLayout *ngIf="feesData.values&&feesData.values.length>0">
             <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,100">
 
                 <Label row="0" colSpan="2" class="ysHBox" text="{{'menu.userData'|translate}}"></Label>
@@ -59,16 +59,17 @@
             </GridLayout>
         </StackLayout>
 
-        <StackLayout class="ysBox" *ngIf="feesData.length>0">
+        <StackLayout class="ysBox" *ngIf="feesData.labels && feesData.labels.length>0">
             <label textWrap="true"
                 text=" {{feesData.labels.txt1}} {{feesData.values.term}} {{feesData.labels.txt2}} {{feesData.values.final_graduation_GPA}}  {{feesData.labels.txt7}} {{feesData.labels.txt3}} {{feesData.values.total}} {{feesData.labels.txt4}}">
             </label>
             <label text="{{feesData.labels.txt5}}"></label>
             <label text="{{feesData.labels.txt6}}"></label>
+
+            <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout" style="margin-top: 20;">
+                <Button text="عربى" class="my-button" (tap)="onArabicPrint()"></Button>
+                <Button text="English" class="my-button" (tap)="onEnglishPrint()"></Button>
+            </FlexboxLayout>
         </StackLayout>
-        <FlexboxLayout *ngIf="!isLoading && feesData.length>0" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout" style="margin-top: 20;">
-            <Button text="عربى" class="my-button" (tap)="onArabicPrint()"></Button>
-            <Button text="English" class="my-button" (tap)="onEnglishPrint()"></Button>
-        </FlexboxLayout>
     </StackLayout>
 </ScrollView>

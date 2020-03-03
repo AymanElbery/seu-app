@@ -23,6 +23,10 @@ const routes: Routes = [
       { path: 'admis-pages/:cat', component: AdmisPagesComponent },
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       {
+        path: 'instructions',
+        loadChildren: './instructions/instructions.module#InstructionsModule',
+      },
+      {
         path: 'academicaff',
         loadChildren: './academicaff/academicaff.module#AcademicaffModule',
         canActivate: [UGGuard]

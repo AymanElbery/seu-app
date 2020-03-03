@@ -90,11 +90,11 @@
         "choose": "Choose",
         "admis_pages": "الأنظمة الإدارية",
         "stds_pages": "نظام ادارة الخدمات الالكترونية",
-        "staff_name":"Staff Name",
-        "vitrual":"Virtual",
-        "class":"Class",
-        "total":"Total",
-        "no_absence_registered":"No Absense registered"
+        "staff_name": "Staff Name",
+        "vitrual": "Virtual",
+        "class": "Class",
+        "total": "Total",
+        "no_absence_registered": "No Absense registered"
     },
     "menu": {
         "myservices": "My Services",
@@ -165,6 +165,7 @@
         "EVENTSMANAGE": "  Events manegment",
         "RESGISTERCOURSES": "Register wishes ",
         "EDUSYSTEMS": " Eduaction systems insturctions ",
+        "INSTRUCTEXAM": "Electronic Exam Instructions ",
         "StdLaw": "Student rights ",
         "StdSRV": "Students self service   ",
         "KnowMng": " Knowlege source managment   ",
@@ -613,6 +614,73 @@
             "organizer": "Organizer",
             "location": "Location",
             "date": "Date"
+        }
+    },
+    "instructions": {
+        "exams": {
+            "title": "eExam Instructions",
+            "desc": "      The reason behind switching to eExam as an alternative to paper-based testing is that the feedback it provides contributes to exam development, as well as the availability of helpful tools during the exam such as multimedia, calculator and many others.\neExam can measure the outcomes of educational programs and prepare a direct analysis of the students' performance in the exam.",
+            "downloadapps": "Download the eExam Application (SwiftAssess Assessment):",
+            "Device": "Device",
+            "DownloadLink": "Download Link",
+            "apps": [
+                {
+                    "title": "Desktop and Laptop Computers",
+                    "desc": "Download the browser for (Windows & Mac)",
+                    "link": "https://eur01.safelinks.protection.outlook.com/?url=https://gammalearn.sharepoint.com/:f:/s/Operations/Er2Rmx_Fld1EmTkAxJPejkEBTBr6Efg8ofSjtUhtRzwYVQ?e%3DzDyNy6&amp;data=02%7c01%7c%7ce6d26d10d6bf44bedd3508d7691dea15%7c1f00763a1f87473bbba1b6c746af03e4%7c0%7c0%7c637093450070182397&amp;sdata=T6FmnCMZ%2Bav9tW7TUCOGog9mYkZbEIgRDVMLoA%2Bq9%2BU%3D&amp;reserved=0"
+                },
+                {
+                    "title": "Tablet (iPad)",
+                    "desc": "Download the App from AppStore",
+                    "link": "https://apps.apple.com/us/app/swiftassess-assessment-app/id1192994718"
+                },
+                {
+                    "title": "Tablet (Android)",
+                    "desc": "Download the App from GooglePlay",
+                    "link": "https://play.google.com/store/apps/details?id=com.gamalearn.swiftassess&hl=en"
+                }
+            ],
+            "Guidelines": "Guidelines:",
+            "Manual": "Instructions Manual",
+            "Download": "Download",
+            "GuidelinesList": [
+                {
+                    "title": "Instruction before exams",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam_en.pdf"
+                },
+                {
+                    "title": "Instruction during exams",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam_en.pdf"
+                },
+                {
+                    "title": "Technical requirements for operating laptops/tablets: for eExam",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements_en.pdf"
+                },
+                {
+                    "title": "How to Taking the eExam? (video)",
+                    "link": "https://www.youtube.com/watch?v=M1GrtHPTBho&feature=youtu.be"
+                },
+                {
+                    "title": "Taking eExam using Desktop/Laptop Computers (Windows & Mac)",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
+                },
+                {
+                    "title": "​Taking eExam using Tablets (iOS & Android)",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                },
+                {
+                    "title": "FAQs",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs_en.pdf"
+                },
+                {
+                    "title": "​​How to connect to SEU Wi-Fi? (windows)",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC_En.pdf"
+                },
+                {
+                    "title": "​​How to connect to SEU Wi-Fi? (Mac)",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN_En.pdf"
+                }
+            ]
         }
     }
 }

@@ -21,8 +21,21 @@
 <ScrollView>
    
     <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
-
+<!--
     <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+-->
+        
+        
+    <FlexboxLayout style="margin-top: 20px;" flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+        <ListView [items]="msgs">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
+
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading && recoredData.terms">
+
         <StackLayout class="ser-title">
 
             <Label class="ser-name" text='{{"services.academic_record.title" | translate}}'></Label>
@@ -42,7 +55,6 @@
                     </FormattedString>
                 </Button>
             </FlexboxLayout>
-        
         <StackLayout>
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
           
@@ -161,4 +173,5 @@
         </FlexboxLayout>
             
     </FlexboxLayout>
+    
 </ScrollView>

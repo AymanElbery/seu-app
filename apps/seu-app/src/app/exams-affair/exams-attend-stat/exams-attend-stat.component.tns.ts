@@ -63,10 +63,10 @@ export class ExamsAttendStatComponent implements OnInit {
         this.isLoading = false;
 
         this.msgs=(res as any).messages;
-        this.termScheduleMsgs = this.eaData.Term_Exam_With_Schedule.messages;
-        this.termMsgs = this.eaData.Term_Exam_Without_Schedule.messages;
-        this.finalScheduleMsgs = this.eaData.Final_Exam_With_Schedule.messages;
-        this.finalMsgs = this.eaData.Final_Exam_Without_Schedule.messages;
+        this.termScheduleMsgs = this.eaData.Term_Exam_With_Schedule?this.eaData.Term_Exam_With_Schedule.messages:[];
+        this.termMsgs = this.eaData.Term_Exam_Without_Schedule?this.eaData.Term_Exam_Without_Schedule.messages:[];
+        this.finalScheduleMsgs =this.eaData.Final_Exam_With_Schedule? this.eaData.Final_Exam_With_Schedule.messages:[];
+        this.finalMsgs = this.eaData.Final_Exam_Without_Schedule?this.eaData.Final_Exam_Without_Schedule.messages:[];
       /*  if (this.eaData.Term_Exam_With_Schedule.labels)
           alert(1);
 

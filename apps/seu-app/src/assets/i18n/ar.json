@@ -90,11 +90,11 @@
         "choose": "إختر",
         "admis_pages": "الأنظمة الإدارية",
         "stds_pages": "نظام ادارة الخدمات الالكترونية",
-        "staff_name":"مدرس المادة",
-        "vitrual":"افتراضية",
-        "class":"حضورية",
-        "total":"إجمالي",
-        "no_absence_registered":"لا توجد غيابات مسجلة"
+        "staff_name": "مدرس المادة",
+        "vitrual": "افتراضية",
+        "class": "حضورية",
+        "total": "إجمالي",
+        "no_absence_registered": "لا توجد غيابات مسجلة"
     },
     "menu": {
         "myservices": "خدماتي",
@@ -165,6 +165,7 @@
         "EVENTSMANAGE": "إدارة الاحداث والمناسبات",
         "RESGISTERCOURSES": "تسجيل المقررات",
         "EDUSYSTEMS": "تعليمات الانظمة التعليمية",
+        "INSTRUCTEXAM": "تعليمات الاختبارات الإلكترونية",
         "StdLaw": "الحقوق الطلابية",
         "StdSRV": "الخدمات الذاتية للطلبة",
         "KnowMng": "إدارة المصادر المعرفية",
@@ -614,6 +615,74 @@
             "organizer": "الجهة المنظمة",
             "location": "مقر إقامتها",
             "date": "التاريخ"
+        }
+    },
+    "instructions": {
+        "exams": {
+            "title": "تعليمات الاختبارات الإلكترونية",
+            "desc": "     يأتي التحول للاختبارات الإلكترونية لتكون بديلًا عن الاختبارات الورقية نظرًا لما تقدمه من تغذية راجعة تساهم في تطوير الاختبارات، إضافة إلى توافر الأدوات المساعدة أثناء الاختبار مثل الوسائط المتعددة والآلة الحاسبة وغيرها. و يمكن من خلال الاختبارات الإلكترونية قياس مخرجات البرامج الدراسية وإعداد تحليل مباشر عن مستوى أداء الطلبة في الاختبار. ",
+            "downloadapps": "لتنزيل برنامج الاختبارات الإلكترونية (SwiftAssess Assessment):",
+            "Device": "نوع الجهاز المستخدم​",
+            "DownloadLink": "رابط تنزيل البرنامج​",
+            "apps": [
+                {
+                    "title": "جهاز الحاسوب المكتبي/المحمول",
+                    "desc": "رابط تنزيل المتصفح الآمن لأنظمة التشغيل (Windows & Mac)",
+                    "link": "https://eur01.safelinks.protection.outlook.com/?url=https://gammalearn.sharepoint.com/:f:/s/Operations/Er2Rmx_Fld1EmTkAxJPejkEBTBr6Efg8ofSjtUhtRzwYVQ?e%3DzDyNy6&amp;data=02%7c01%7c%7ce6d26d10d6bf44bedd3508d7691dea15%7c1f00763a1f87473bbba1b6c746af03e4%7c0%7c0%7c637093450070182397&amp;sdata=T6FmnCMZ%2Bav9tW7TUCOGog9mYkZbEIgRDVMLoA%2Bq9%2BU%3D&amp;reserved=0"
+                },
+                {
+                    "title": "الجهاز اللوحي (iPad)",
+                    "desc": "رابط تنزيل تطبيق الاختبارات الإلكترونية من (AppStore)",
+                    "link": "https://apps.apple.com/us/app/swiftassess-assessment-app/id1192994718"
+                },
+                {
+                    "title": "الجهاز اللوحي (Android Tablet)",
+                    "desc": "رابط تنزيل تطبيق الاختبارات الإلكترونية من (GooglePlay)",
+                    "link": "https://play.google.com/store/apps/details?id=com.gamalearn.swiftassess&hl=ar"
+                }
+            ],
+            "Guidelines": "الأدلة الإرشادية:",
+            "Manual": "الدليل الإرشادي",
+            "Download": "تحميل",
+            "GuidelinesList": [
+                {
+                    "title": "تعليمات ما قبل الاختبارات",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
+                },
+                {
+                    "title": "تعليمات أثناء الاختبارات",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam.pdf"
+                },
+                {
+                    "title": "المتطلبات الفنية للأجهزة المحمولة/ اللوحية خاص بالاختبارات الإلكترونية",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements.pdf"
+                },
+                {
+                    "title": "فيديو تعريفي لكيفية أداء الاختبار الإلكتروني",
+                    "link":"https://www.youtube.com/watch?v=uwFhDd1ahkc&feature=youtu.be"
+                },
+                {
+                    "title": "الاختبارات الإلكترونية باستخدام أجهزة الحاسوب المكتبية/المحمولة​ (Windows & Mac)",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
+                },
+                {
+                    "title": "​الاختبارات الإلكترونية باستخدام الأجهزة اللوحية (iOS &Android )",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                },
+                {
+                    "title": "الأسئلة الشائعة​",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs.pdf"
+                },
+                {
+                    "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام Mac",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC.pdf"
+                },
+                {
+                    "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام windows",
+                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN.pdf"
+                }
+                
+            ]
         }
     }
 }

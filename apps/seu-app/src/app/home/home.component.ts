@@ -42,7 +42,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     private router: Router,
     private translate: TranslateService
   ) {
-    console.log("HOME");
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -68,18 +67,18 @@ export class HomeComponent implements OnInit, OnDestroy {
     // console.log('home');
     // console.log(this.userService.userData);
     // console.log('intial');
-    console.log("userDataSubject SUBSCRIBE");
+    //console.log("userDataSubject SUBSCRIBE");
     this.userService.userDataSubject.subscribe(res => {
-      console.log("userDataSubject", res);
+      //console.log("userDataSubject", res);
       if (res) {
-        console.log("hhhhhhhhhhhhhhhhhhhhhh", res);
+        //console.log("hhhhhhhhhhhhhhhhhhhhhh", res);
 
         this.LoadData();
       }
     });
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
       if (this.userService.userDataLoaded) {
-        console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLL");
+        //console.log("LLLLLLLLLLLLLLLLLLLLLLLLLLLL");
         this.LoadData();
       }
     });
