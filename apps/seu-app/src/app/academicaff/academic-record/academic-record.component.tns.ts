@@ -15,6 +15,7 @@ declare var UIView, NSMutableArray, NSIndexPath;
   styleUrls: ['./academic-record.component.tns.scss']
 })
 export class AcademicRecordComponent implements OnInit {
+  msgs: any;
   constructor(private academicService: AcademicRecordService) { }
   recoredData: RecoredDataModel = {coll:'', grade:'', major:'', ssn:'', status:'', student_name:'', terms: []};
   arabicPrint: string;
@@ -53,6 +54,8 @@ onItemTap(event: ListViewEventData) {
     this.academicService.getِAcademicRecord().then(
       res => {
     this.recoredData =    (res as any).data;
+    this.msgs=(res as any).messages;
+    console.log("dataaaaaaaa",res);
     this.isLoading = false;
       }
     );

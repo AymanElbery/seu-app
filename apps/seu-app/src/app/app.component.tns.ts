@@ -155,7 +155,7 @@ export class AppComponent implements OnInit {
     "subTitles":[
         {
         "subTitle":"افادة بالرسوم الدراسيه",
-        "route":"/finance/fees'"
+        "route":"/finance/fees"
     },
     {
         "subTitle":"اعفاء من الرسوم الدراسيه",
