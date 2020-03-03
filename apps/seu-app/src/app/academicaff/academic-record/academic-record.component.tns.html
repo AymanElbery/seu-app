@@ -1,26 +1,48 @@
-<ActionBar>
+<ActionBar style="background:#001628; ">
     <!-- 
-            <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-    -->
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-   
-    <ActionItem icon="font://&#xf0c9;" class="fas" style="font-size:10; color: #243686;"  (tap)="onDrawerButtonTap()" ios.position="left">
+  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+
+-->
+<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+
+<StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:75%"></Image>
+
+  </StackLayout>
+
+    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <Label text='{{"services.academic_record.title" | translate}}'></Label>
+
 </ActionBar>
 
 <ScrollView>
+   
     <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
 
     <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+        <StackLayout class="ser-title">
 
+            <Label class="ser-name" text='{{"services.academic_record.title" | translate}}'></Label>
+    
+        </StackLayout>
+            <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+                <Button class=" print-btn " (tap)="onArabicPrint()">
+                    <FormattedString>
+                        <Span text="&#xf02f;" class="fas"></Span>
+                        <Span text=" طباعة"></Span>
+                    </FormattedString>
+                </Button>
+                <Button class=" print-btn " (tap)="onEnglishPrint()">
+                    <FormattedString>
+                        <Span text="&#xf02f;" class="fas"></Span>
+                        <Span text=" Print"></Span>
+                    </FormattedString>
+                </Button>
+            </FlexboxLayout>
+        
         <StackLayout>
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
           
@@ -46,11 +68,11 @@
             </GridLayout>
           </StackLayout>
 
-        <RadListView *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
+        <RadListView *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
             <ng-template let-item="item">
-                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="throw" 
-                [ngStyle]="{'border-bottom-width':item ===recoredData.terms[recoredData.terms.length-1] ? '0' : '1' }">
-                    <Label  text="&#xf0dd;"  class="fas"></Label>
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class=" ysHdrop2" 
+                [ngStyle]="{'border-bottom-width':item ===recoredData.terms[recoredData.terms.length-1] ? '0' : '0' }">
+                    <Label  text="&#xf107;"  class="fas arr-drop"></Label>
                     <FlexboxLayout flexDirection="row-reverse">
                         <Label text='{{"general.term" | translate}}'></Label>
                         <Label [text]="item.Term"></Label>
@@ -62,8 +84,8 @@
 
             <ng-template tkTemplateKey="expanded" let-item="item">
                 <FlexboxLayout flexDirection="column">
-                    <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHBox">
-                        <Label  text="&#xf0de;"  class="fas"></Label>
+                    <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                        <Label  text="&#xf106;"  class="fas arr-drop"></Label>
 
                         <FlexboxLayout flexDirection="row-reverse">
                             <Label text='{{"general.term" | translate}}'></Label>

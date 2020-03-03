@@ -1,10 +1,11 @@
-<ActionBar style="background:#001628;">
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
   <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
 
 -->
+<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
 
 <StackLayout margin-top="0">
   
@@ -12,7 +13,7 @@
 
   </StackLayout>
 
-    <ActionItem icon="font://&#xf0c9;" class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
+    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
 
   
@@ -26,17 +27,17 @@
 
     </StackLayout>
    
-    <GridLayout height="120" class="slider">
+    <GridLayout height="150" class="slider">
 
 
         <Carousel  selectedPage="{{sindex}}" finite="true" bounce="false" #myCarousel [items]="userService.adsData"
             height="100%" width="100%" color="white" android:indicatorAnimation="slide"
-            android:indicatorAnimation="slide" indicatorColorUnselected ="#f08b1c"indicatorColor="#243686" indicatorOffset="0, -10" showIndicator="true">
+            android:indicatorAnimation="slide" indicatorColorUnselected ="#f08b1c"indicatorColor="#243686" indicatorOffset="0, -15" showIndicator="true" >
             <CarouselItem *ngFor="let item of userService.adsData" [backgroundColor]="item.color"
-                verticalAlignment="middle" class="slid-itme">
-                <GridLayout>
+                verticalAlignment="middle" >
+                <GridLayout  >
                     <StackLayout>
-                        <Image class="slid-itme" height="90" stretch="aspectFill" stretch="aspectFill" row="0"
+                        <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
                             src="{{'data:image/jpg;base64,' + item.image}}"></Image>
                         <Label class="label-itme" textWrap="true" row="1"
                             text="{{item.title}}"></Label>
@@ -72,11 +73,11 @@
 
                     </GridLayout>
 
-                    <StackLayout height="130" class="list-group-item news"
+                    <StackLayout height="160" class="list-group-item news"
                         *ngFor="let news of userService.newsData">
 
 
-                        <Image height="100" stretch="aspectFill" row="0" class="news-item"
+                        <Image height="110" stretch="aspectFill" row="0" class="news-item"
                             src="{{'data:image/jpg;base64,' + news.image}}"></Image>
 
 
