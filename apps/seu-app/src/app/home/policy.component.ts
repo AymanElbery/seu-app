@@ -17,7 +17,7 @@ import { MatDialogRef } from '@angular/material';
 export class PolicyComponent implements OnInit, OnDestroy {
   selection;
   requesting = false;
-  constructor(public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService, private translate: TranslateService,
+  constructor(public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService, public translate: TranslateService,
     public dialogRef: MatDialogRef<PolicyComponent>,
   ) {
 

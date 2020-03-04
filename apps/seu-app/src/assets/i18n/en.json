@@ -623,7 +623,8 @@
         "click_her": "Click her",
         "no_conflict": "I acknowledge reading and understanding the SEU conflict of interest policy and i hereby declare that i have no conflict  of interests",
         "has_conflict": "I acknowledge reading and understanding the SEU conflict of interest policy and i i may have a conflict of interest and i will follow the announced disclosure procedure",
-        "send": "Send"
+        "send": "Send",
+        "doc_link":"/assets/files/policy.pdf"
     },
     "instructions": {
         "exams": {
