@@ -6,6 +6,8 @@ import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AppToasterService } from '../shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-policy-home',
@@ -15,8 +17,10 @@ import { AppToasterService } from '../shared/services/app-toaster';
 export class PolicyComponent implements OnInit, OnDestroy {
   selection;
   requesting = false;
-  constructor(public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService
+  constructor(public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService, private translate: TranslateService,
+    public dialogRef: MatDialogRef<PolicyComponent>,
   ) {
+
   }
   ngOnInit() {
     document.getElementById("side-menu").style.display = "none";
@@ -40,7 +44,7 @@ export class PolicyComponent implements OnInit, OnDestroy {
     });
     this.http.post(environment.baselink + environment.servicesprefix + "/rest/policy_acceptance/change_status", { username: this.userService.userData.username, status: this.selection }, { headers }).subscribe(res => {
       if (res['status']) {
-        this.router.navigate(["/"]);
+        this.dialogRef.close();
       } else {
         this.toastr.tryagain();
       }

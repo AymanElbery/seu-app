@@ -1,6 +1,7 @@
 .main-content {
     padding-right: 5px !important;
     padding-left: 5px !important;
+    font-size: 14px;
 }
 img {
     width: 100%;
@@ -9,6 +10,18 @@ img {
     display: block;
 }
 .modal-body {
-    max-height: 25vh;
-    overflow: scroll;
+    max-height: 30vh;
+    overflow-y: scroll;
+}
+.conflict-text {
+    text-align: justify;
+    max-width: 500px;
+    font-weight:normal;
+}
+p {
+    font-weight:normal;
+    margin-bottom: 5px;
+}
+h6 {
+    color: #1c2172;
 }

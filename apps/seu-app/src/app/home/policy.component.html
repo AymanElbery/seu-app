@@ -1,4 +1,4 @@
-<mat-dialog-content dir="rtl">
+<mat-dialog-content dir="{{translate.currentLang == 'ar' ? 'rtl':'ltr'}}">
     <div class="modal-content">
         <div class="modal-header">
 
@@ -13,12 +13,136 @@
                 </p>
                 <p>
 
-                    {{"policy.info_details" | translate}}
-                    <a href="/assets/files/policy.pdf" target="_blank">{{"policy.click_her" | translate}}</a>
+                    <strong> {{"policy.info_details" | translate}}
+                        <a href="/assets/files/policy.pdf" target="_blank">{{"policy.click_her" | translate}}</a>
+                    </strong>
                 </p>
-                <p>
-                    <img src="/assets/files/policy.jpg">
-                </p>
+                <br />
+                <div *ngIf="translate.currentLang == 'ar'">
+                    <h6>سياسة الجامعة السعودية الالكترونية فيما يخص تعارض المصالح</h6>
+                    <span><strong>أولاَ: مقدمة</strong></span>
+                    <p class="conflict-text">دأبت الجامعة السعودية الإلكترونية على تحقيق وتطبيق الشفافية والاستقلالية
+                        والنزاهة عند تقديم
+                        خدماتها التعليمية والعلمية وخدمة المجتمع. وكنتيجة لذلك، فإن موظفي الجامعة وأعضاء هيئة التدريس
+                        مطالبون باتباع النزاهة والمصداقية بما هو في مصلحة الجامعة عند عمل مهامهم المناطة بهم وخصوصاً تلك
+                        التي تتعلق بجهات أو علاقات خارج الجامعة. إن تلك الأعمال أو العلاقات الخارجية يجب ألا تعيق
+                        التزامات موظفي الجامعة أو أعضاء هيئة التدريس تجاه الجامعة السعودية الإلكترونية. كذلك، يجب على
+                        موظفي الجامعة وأعضاء هيئة التدريس أن لا يستغلوا الثقة الممنوحة لهم من الجامعة في الحصول على
+                        منفعة شخصية تكون ضد مصلحة الجامعة. ويجب أن تُبَلَّغ الجهات المسؤولة بالجامعة عن أي واقعة قد تمثل
+                        تعارض المصالح أو تعارض الالتزامات ليتم تقييمها، وفي حال ثبوتها فإنه سيتم التعامل معها حسب البنود
+                        المذكورة بهذه السياسة.
+                    </p>
+                    <span><strong>ثانياً: تعريفات</strong></span>
+                    <p>أ- تعارض المصالح</p>
+                    <p class="conflict-text">يحصل تعارض المصالح عندما تكون جهة أو علاقة خارجية لها: (1) تأثير على تعزيز
+                        المكانة المهنية أو العلمية لأحد موظفي الجامعة وأعضاء هيئة التدريس أو أحد أقاربهم فيما يتعارض مع
+                        مصلحة الجامعة؛ (2) تأثير على حكم مهني أو علمي لأحد موظفي الجامعة وأعضاء هيئة التدريس؛ (3) تأثير
+                        يظهر كتحيز في مجال البحث العلمي؛ (4) تأثير على قرار عضو هيئة التدريس بما يخص التدريس بالجامعة،
+                        شؤون الطلاب، مصادر الجامعة المتاحة، التدريب، أو أي شأن آخر بالجامعة.
+                    </p>
+                    <p>ب- تعارض الالتزامات</p>
+                    <p class="conflict-text">يحصل تعارض الالتزامات عندما تكون جهة أو علاقة خارجية لها: (1) تأثير يؤدي
+                        لعرقلة مهمة الجامعة، أو خدماتها أو بحوثها؛ (2) تأثير على التزامات أي من موظفي الجامعة أو أعضاء
+                        هيئة التدريس تجاه الجامعة السعودية الإلكترونية.
+                    </p>
+                    <span><strong>ثالثاَ: بنود اللائحة</strong></span>
+                    <p>أ- حقوق موظفي الجامعة وأعضاء هيئة التدريس</p>
+                    <p class="conflict-text">موظفي الجامعة وأعضاء هيئة التدريس لديهم الحق في: (1) الانخراط بأنشطة خارجية
+                        أو تكوين علاقات خارجية سواءً كانت مهنية أو شخصية بحيث لا تتعارض مع مصلحة الجامعة أو أنظمة الدولة
+                        ذات العلاقة؛ (2) الاطلاع على سياسات الجامعة واجراءاتها بهذا الخصوص.
+                    </p>
+                    <p>ب- مسؤوليات موظفي الجامعة وأعضاء هيئة التدريس </p>
+                    <p class="conflict-text">موظفي الجامعة وأعضاء هيئة التدريس لديهم المسؤولية في: (1) التصريح للجهة
+                        المسؤولة بالجامعة عن أي شبهة أو واقعة قد تمثل تعارض المصالح أو تعارض الالتزامات؛ (2) حل التعارض
+                        الحاصل باتباع الخطة المقررة من الجهة المسؤولة بالجامعة؛ (3) تجنب استغلال المنصب فيما يتعارض مع
+                        مصلحة الجامعة للتأثير على تعزيز المكانة المهنية أو العلمية لأحد موظفي الجامعة وأعضاء هيئة
+                        التدريس أو أحد أقاربهم؛ (4) استخدام المصادر المتاحة بالجامعة حسبما هو مصرح به من قبل الجهات
+                        المسؤولة بالجامعة.
+                    </p>
+                    <span><strong>رابعاَ: مخالفة بنود هذه السياسة</strong></span>
+                    <p class="conflict-text">إذا قررت الجهة المعنية بالجامعة أن أحد موظفي الجامعة أو أعضاء هيئة التدريس
+                        خالف أي من بنود أو روح هذه السياسة فسيكون عرضة للمسائلة والعقاب، بحسب نظام الدولة المتبع، و الذي
+                        قد يصل لإنهاء الخدمات والفصل من الجامعة. ويعد من المخالفات على سبيل المثال لا الحصر التالي:
+                    </p>
+                    <p>أ‌- عدم التصريح عن أي شبهة أو واقعة تمثل تعارض المصالح أو تعارض الالتزامات.
+                    </p>
+                    <p>ب‌- الاخفاق في حل التعارض الحاصل سوآء تعارض المصالح أو تعارض الالتزامات وذلك باتباع الخطة المقررة
+                        من الجهة المسؤولة بالجامعة.
+                    </p>
+                    <span><strong>خامساً: طريقة الاعتراض </strong></span>
+                    <p class="conflict-text">يحق لموظفي الجامعة وأعضاء هيئة التدريس الاعتراض على أي إتهام موجه لهم يخص
+                        أي شبهة أو واقعة قد تمثل تعارض المصالح أو تعارض الالتزامات بالجامعة السعودية الالكترونية. ويتولى
+                        مكتب سعادة مدير الجامعة، عند اعتراض صاحب العلاقة، متابعة وتقييم الاتهام بالتنسيق مع اللجنة
+                        المختصة للتشاور وأخذ الرأي.
+                    </p>
+
+                </div>
+
+                <div *ngIf="translate.currentLang == 'en'">
+                    <h6>SEU POLICY: Conflict of Interest </h6>
+                    <span><strong>Introduction</strong></span>
+                    <p class="conflict-text">The Saudi Electronic University (SEU) is dedicated to independence,
+                        transparency, and integrity through teaching, research, and community service. Thus, faculty
+                        members and staff are required to act with integrity and honesty in the best interest of the
+                        University when engaging in duties or performing activities with external entities. However,
+                        such duties and activities should not interfere with obligations assigned to faculty members and
+                        staff. Therefore, faculty members and staff should not exploit the trust given by the University
+                        to gain personal influence at the expense of the University. All actual or suspected conflicts
+                        of interest or conflicts of commitment should be reported to the designated SEU officials where
+                        they will be reviewed, and if found apparent, will be managed according to this policy.
+                    </p>
+                    <span><strong>Definitions</strong></span>
+                    <p>I. Conflict of Interest</p>
+                    <p class="conflict-text">A conflict of interest occurs when an external entity or activity has the
+                        possibility of (1) a staff or faculty member giving unfair advantage - in any shape or form - to
+                        friends and family members; (2) forcing an influence on a scientific or professional judgment
+                        made about a staff or faculty member; (3) forcing an influence by being biased on a decision
+                        made with regards to academic research activities; or (4) forcing an influence on a decision
+                        made by a faculty member with regards to teaching, student affairs, university resources,
+                        training, or any other university matters.
+                    </p>
+                    <p>II. Conflict of Commitment </p>
+                    <p class="conflict-text">A conflict of commitment happens when an external entity or activity has
+                        the possibility of (1) interfering with SEU’s mission, service or research; or (2) interfering
+                        with a staff or faculty member's ability to fulfill his/her university responsibilities and
+                        obligations.
+
+                    </p>
+                    <span><strong>Regulations</strong></span>
+                    <p>I. Staff and Faculty Members’ Rights</p>
+                    <p class="conflict-text">Staff and faculty members have the right to (1) professionally or
+                        personally engage in duties or perform activities with external entities provided that they do
+                        not compromise their obligations to the University or conflict with SEU’s best interest or
+                        related government rules and regulations, and (2) have access to SEU’s Conflict of Interest
+                        Policy.
+                    </p>
+                    <p>II. Staff and Faculty Members’ Responsibilities</p>
+                    <p class="conflict-text">Staff and faculty members at SEU are responsible for (1) disclosing
+                        information regarding all actual and suspected conflicts of interest or conflicts of commitment
+                        to SEU’s designated officials; (2) resolving any conflict by adhering to a plan in consultation
+                        with SEU’s designated officials; (3) avoiding the use of their occupational position to give
+                        unfair advantage - in any shape or form - to friends and family members; and (4) using
+                        university resources as authorized by SEU’s designated officials.
+                    </p>
+                    <span><strong>Violations </strong></span>
+                    <p class="conflict-text">If determined by SEU’s designated officials that a faculty member or staff
+                        violated this policy, he/she may be subject to penalties, according to applied government rules
+                        and regulations, including the termination of service at SEU. Violations include, but are not
+                        limited to, the following:
+                    </p>
+                    <p>I. Failing to disclose a situation of actual or suspected conflict of interest or conflict of
+                        commitment.</p>
+                    <p>II. Failing to resolve a conflict by adhering to a plan in consultation with SEU’s designated
+                        officials. </p>
+                    <span><strong>Disputes Mechanism</strong></span>
+                    <p class="conflict-text">
+                        A staff or faculty member has the right to dispute any action related to being involved in an
+                        actual or suspected conflict of interest or conflict of commitment. The office of the
+                        university's rector shall deal with such disputes in consultation with the committee responsible
+                        for handling such cases.
+                    </p>
+
+                </div>
             </div>
         </div>
         <div class="modal-footer">

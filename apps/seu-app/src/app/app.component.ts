@@ -71,14 +71,14 @@ export class AppComponent implements OnInit {
           // tslint:disable-next-line: no-unused-expression
           : '';
 
-        if (true || (this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
+        if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
           //this.router.navigate(['/policy']);
-
 
           const dialogConfig = new MatDialogConfig();
           dialogConfig.autoFocus = true;
           dialogConfig.disableClose = true;
-          dialogConfig.width = '50%';
+          dialogConfig.maxWidth = 550;
+          //dialogConfig.height = '58%';
           this.dialog.open(PolicyComponent, dialogConfig);
         }
       }
