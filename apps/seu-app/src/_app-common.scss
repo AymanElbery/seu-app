@@ -25,7 +25,7 @@
     border-width: 0;
     padding: 0;
     color: #6189f4;
-    margin-bottom: 20;
+    margin: 10 20;
     position: relative;
 }
 
@@ -36,27 +36,55 @@
     font-size:14px;
     font-weight: 800;
     text-align: center;
-    background-image: linear-gradient(135deg,#623292  0%, #243686 100%);
+    background-image: linear-gradient(135deg,#001628  0%, #243686 100%);
         color: white;
     border-radius: 70px 20px 0px 0px;
     padding: 8px 0;
 
 }
 .ysPBox{
-    padding-right: 20;
+    padding-right: 10;
     color: #080b57;
     position: relative;
     padding-bottom: 10px;
     background-color: rgb(226, 226, 226);
     margin-bottom: 10px;
+    font-size: 13px;
 }
 
 .ysPBox2{
     color: #f08b1c;
     padding-right: 20px;
+    font-size: 14px;
+
 
 }
 
+.ysHdrop{
+
+    font-size:14px;
+    font-weight: 800;
+    text-align: center;
+    background-image: linear-gradient(135deg,#001628  0%, #243686 100%);
+        color: white;
+    border-radius: 70px 20px 0px 0px;
+    padding: 8px 0;
+    margin: 5 20;
+    border-bottom-width: 0px!important;
+}
+.arr-drop{ margin-left: 15; margin-top: 4; font-size: 18;}
+.ysHdrop2{
+
+    font-size:14px;
+    font-weight: 800;
+    text-align: center;
+    background: linear-gradient(to right,#f28d1e,#f1c40f);
+        color: white;
+    border-radius: 70px 20px 0px 0px;
+    padding: 8px 0;
+    margin: 5 20;
+    border-bottom-width: 0px!important;
+}
 .ysTBox{
     margin-left: 20;
     margin-right: 20;
@@ -272,15 +300,20 @@
 }
 
 .heading{margin: 10 15;   background-image: linear-gradient(135deg,#001628  0%, #243686 100%);
-     border-radius: 70px 20px 20px 20px; padding: 4px 20 20px ;display: flex;}
+     border-radius: 70px 20px 20px 20px; padding: 4px 20 20px ;}
 
 .heading-text{ color: #fff; font-weight: 800; font-family: 'DroidArabicKufi'; float: left; vertical-align: middle;}
 .heading-icon{ color: #fff;  float: right; margin-top: -28; }
 
+.ser-title{margin: 10 15;   background-image:linear-gradient(135deg,#ccc  0%, #f1f1f1 100%);
+    border-radius: 70px 20px 20px 20px; padding: 4px 0px ; 
+}
+.ser-name{ font-size: 16px; font-weight: bold; color: #010447; text-align: center; }
 .slider{margin: 5 15 ;}
 .slid-itme{border-radius: 70px 20px 0px 0px; }
 .label-itme{border-radius: 0px 0px 20px 20px; background-color: rgb(219, 151, 4);color: #fff;
             text-align: center; padding: 5 3; font-family: 'DroidArabicKufi';font-size:12px;
+            
 }
 .news-item {border-radius: 70px 20px 0px 0px;}
 .label-block{border-radius: 0px 0px 20px 20px; background-color: rgb(219, 151, 4);color: #fff;
@@ -295,6 +328,12 @@
  .login-btn{  background-color:#001628; color: #fff;
     border-radius: 100px; 
     font-family: 'DroidArabicKufi'; font-size: 16px;
+}
+
+.print-btn{  background-image: linear-gradient(135deg,#001628  0%, #243686 100%); color: #fff;
+    border-radius: 20px; 
+    font-family: 'DroidArabicKufi'; font-size: 14px;
+    height: 80px;
 }
 TextField{ border-width: 0;
      color:#243686 ; background-color: #f1f1f1; padding: 16 10;  border-radius: 100px;}
@@ -320,7 +359,7 @@ label{font-family: 'DroidArabicKufi'}
 
 
 @keyframes grd {
-    from { background-color: #010447; }
+    from { background-color: #020425; }
     to { background-color:#001628; }
 
 }
@@ -335,17 +374,17 @@ label{font-family: 'DroidArabicKufi'}
 
 .animate {
     animation-name: scale;
-    animation-duration: 3;
+    animation-duration: 2;
 
 }
 @keyframes scale {
-    from { transform: scale(0, 0); }
+    from { transform: scale(0, 1); }
     to { transform: scale(1, 1); }
 }
 
 .animate2 {
     animation-name: scale;
-    animation-duration: 6;
+    animation-duration: 2;
 
 }
 @keyframes scale {
@@ -362,4 +401,30 @@ label{font-family: 'DroidArabicKufi'}
 @keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+}
+
+.slider {
+    position: relative;
+      transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+      overflow: hidden;
+}
+ .img-box .slid-itme {
+   width: 100%;
+}
+
+  .label-itme {
+    position: absolute;
+   bottom: -80px;
+   left: 0;
+   right: 0;
+    margin-bottom: 0px;
+    color: #fff;
+    width: 100%;
+    padding: 5px 10px;
+      transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+ .label-itme:highlighted {
+     bottom: 0px;
+     background: rgba(132, 201, 4, 0.7);
+      transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
