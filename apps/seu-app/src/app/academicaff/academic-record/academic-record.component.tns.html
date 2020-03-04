@@ -2,11 +2,13 @@
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
 
 -->
-<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
 
+<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" (tap)="onDrawerButtonTap()"></NavigationButton>
+
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
 <StackLayout margin-top="0">
   
     <Image src="~/images/logo_3d.png" style="width:75%"></Image>
@@ -106,6 +108,27 @@
                             <Label [text]="item.Year"></Label>
                         </FlexboxLayout>
                     </FlexboxLayout>
+
+                    <StackLayout>
+                        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                      
+                      
+                          <Label row="1"  column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.term" | translate}}'></Label>
+                          <Label row="1"  column="0" class="ysPBox2" [text]="item.Term"></Label>
+                      
+                          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.year" | translate}}'></Label>
+                          <Label row="2"  column="0" class="ysPBox2" [text]="item.Year" style="margin-right: -20;"></Label>
+                      
+                          <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.major" | translate}}'></Label>
+                          <Label row="3"  column="0"   class="ysPBox2"  [text]="item.Major" style="text-align:right;"></Label>
+            
+                          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.status" | translate}}'></Label>
+                          <Label row="4"  column="0"  class="ysPBox2" [text]="item.Status" ></Label>
+            
+                     
+                        </GridLayout>
+                      </StackLayout>
+
                     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
                         <label text='{{"general.term" | translate}}'></label>
                         <label text='{{"general.year" | translate}}'></label>
@@ -136,6 +159,28 @@
                         <Label [text]="item.HRS" class="narrowColumn"></Label>
                         <Label [text]="item.Points" class="narrowColumn"></Label>
                     </FlexboxLayout>
+
+
+                    <StackLayout>
+                        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of item.courses" >
+                      
+                      
+                          <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.course_code_name" | translate}}'></Label>
+                          <Label row="1"  column="0" class="ysPBox2" [text]="item.CRSE_TITLE" style="text-align: right;"></Label>
+                      
+                          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.rating" | translate}}'></Label>
+                          <Label row="2"  column="0" class="ysPBox2" [text]="item.GRADE_TITLE" style="text-align: right;"></Label>
+                      
+                          <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.course_hours" | translate}}'></Label>
+                          <Label row="3"  column="0"   class="ysPBox2"  [text]="item.HRS" style="text-align:right;"></Label>
+            
+                          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                          <Label row="4"  column="0"  class="ysPBox2"  [text]="item.Points"style="text-align: right;"></Label>
+            
+                     
+                        </GridLayout>
+                      </StackLayout>
+
 
                     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
                         <label text='{{"general.hours" | translate}}'></label>
