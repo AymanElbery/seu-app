@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import * as app from 'tns-core-modules/application';
 import * as utils from 'tns-core-modules/utils/utils';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
+import { AppToasterService } from '../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-absence-query',
@@ -11,45 +12,21 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
   styleUrls: ['./absence-query.component.scss']
 })
 export class AbsenceQueryComponent implements OnInit {
-  isLoading = false;
+  isLoading: boolean = false;
   reqData;
   msgs;
-  constructor(private otherReq: AbseneQueryService, private translate: TranslateService) {
-    this.firstTabTitle = this.translate.instant('services.absence_quyery.all_lecs_asebsence_percent');
-    this.secondTabTitle = this.translate.instant('services.absence_quyery.traditional_lecs_asebsence_percent');
-    this.thirdTabTitle = this.translate.instant('services.absence_quyery.virtual_lecs_asebsence_percent');
-
+  constructor(private translate: TranslateService, private toastr: AppToasterService,
+    private otherReq: AbseneQueryService) {
    }
-
-   absData;
-  EngPrint: string;
-  arabicPrint: string;
-  status;
-  firstTabTitle: string;
-  secondTabTitle: string;
-  thirdTabTitle: string;
-  currentTab = 1;
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
-    this.isLoading = true;
-
-    this.otherReq.getRequests().then(
-      res => {
-        this.absData = (res as any).data;
-        //// console.log(this.absData.absent_percentage_total);
-        this.status = (res as any).status;
-        this.isLoading = false;
-      }
-    );
-
+    this.getRequests();
+    this.subscribeLangChange();
   }
   toHTML(input): any {
     return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
-  }
-  selectedTab(id) {
-    this.currentTab = id;
   }
 
   onDrawerButtonTap(): void {
@@ -57,12 +34,38 @@ export class AbsenceQueryComponent implements OnInit {
     sideDrawer.showDrawer();
 }
 
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.getRequests();
+    });
+  }
 
-onArabicPrint() {
-    utils.openUrl(this.arabicPrint);
+  getRequests() {
+
+    this.isLoading = true;
+
+    this.otherReq.getRequests().then(
+      res => {
+        this.otherReq.reqData = (res as any).data;
+        this.otherReq.msgs = (res as any).messages;
+        this.reqData = this.otherReq.reqData;
+        this.msgs = this.otherReq.msgs;
+        this.isLoading = false;
+        console.log(this.reqData);
+      }, err => {
+        this.reqData = [];
+        this.msgs = [];
+        this.toastr.tryagain();
+        this.isLoading = false;
+      }
+    );
   }
-  onEnglishPrint() {
-    utils.openUrl(this.EngPrint);
-  }
+
 
 }

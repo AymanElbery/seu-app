@@ -9,7 +9,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
             <Image class="nt-drawer__header-image fas t-36 img-user" src="font://&#xf2bd;"></Image>
             <Label class="nt-drawer__header-brand" text="{{userName}}  " textWrap="true"></Label>
         </StackLayout>
-        <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;" height="auto">
+        <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;" height="100%">
              <StackLayout >
                 <GridLayout  columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
                     <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label>

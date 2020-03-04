@@ -30,7 +30,7 @@
         <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox" *ngIf="!isLoading">
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox" *ngIf="reqData.requests && reqData.requests.length>0 &&!isLoading">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"
             [ngClass]="{'throw_no_border':reqData.requests.length === 0}" 
             > 
