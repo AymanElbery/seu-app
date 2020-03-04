@@ -17,7 +17,7 @@
   </ActionBar>
   
   <ScrollView>
-  <GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading">
+  <GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading && certificateDetails.labels">
   
     <StackLayout row="0" *ngIf="!isLoading">
       <GridLayout  class="ysBox" rows="auto,auto" columns="*,150">

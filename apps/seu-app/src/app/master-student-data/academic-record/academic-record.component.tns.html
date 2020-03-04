@@ -45,7 +45,7 @@
             </GridLayout>
           </StackLayout>
 
-        <RadListView *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
+        <RadListView *ngIf="!isLoading && recoredData.terms && recoredData.terms.length>0" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
             <ng-template let-item="item">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between" class="throw" 
                 [ngStyle]="{'border-bottom-width':item ===recoredData.terms[recoredData.terms.length-1] ? '0' : '1' }">
