@@ -1,0 +1,65 @@
+<div class="main-content">
+  <section class="service-single ">
+    <div class="container">
+      <h3> {{"menu.INSTRUCTEXAM" | translate}} </h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p>{{"menu.INSTRUCTEXAM" | translate}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="widget">
+    <div class="widget-header">
+
+
+
+      <h3 class="widget-title">
+        {{"instructions.exams.title" | translate}}
+      </h3>
+      <p>
+        {{"instructions.exams.desc" | translate}}
+
+      </p>
+    </div>
+    <section class="ser-state">
+      <div class="container">
+        <div class="row ser-block">
+          <h6> {{"instructions.exams.downloadapps" | translate}} </h6>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>{{"instructions.exams.Device" | translate}}</th>
+                <th>{{"instructions.exams.DownloadLink" | translate}}</th>
+              </tr>
+            </thead>
+            <tr *ngFor="let app of apps;">
+              <td>{{app.title}}
+                <br />
+                <span>{{app.desc}}</span>
+              </td>
+              <td>
+                <a href="{{app.link}}" target="_blank">{{"instructions.exams.Download" | translate}}</a>
+              </td>
+            </tr>
+          </table>
+          <h6> {{"instructions.exams.Guidelines" | translate}} </h6>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>{{"instructions.exams.Manual" | translate}}</th>
+                <th>{{"instructions.exams.Download" | translate}}</th>
+              </tr>
+            </thead>
+            <tr *ngFor="let guid of guidlines;">
+              <td>{{guid.title}}</td>
+              <td>
+                <a href="{{guid.link}}" target="_blank">{{"instructions.exams.Download" | translate}}</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

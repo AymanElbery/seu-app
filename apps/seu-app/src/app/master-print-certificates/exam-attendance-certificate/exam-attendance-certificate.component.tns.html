@@ -27,7 +27,7 @@
 <TabView selectedIndex="3" *ngIf="!isLoading">
 	<StackLayout *tabItem='{title: firstTabTitle }'>
 
-        <FlexboxLayout flexDirection="row-reverse" *ngIf="reqData.Term_Exam_With_Schedule.messages.length>0">
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="reqData.Term_Exam_With_Schedule &&reqData.Term_Exam_With_Schedule.messages.length>0">
             <ListView [items]="reqData.Term_Exam_With_Schedule.messages">
                 <ng-template let-item="item">
                     <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
@@ -35,7 +35,7 @@
             </ListView>
         </FlexboxLayout>
 
-        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule.labels.length>0">
+        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels.length>0">
 
             <StackLayout>
                 <StackLayout>
@@ -119,7 +119,7 @@
         </FlexboxLayout>
     </StackLayout>
         <StackLayout style="margin-top: 20;">
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" >
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.messages.length==0">
             <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
             <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
         </FlexboxLayout>
@@ -131,7 +131,7 @@
     
 	<StackLayout *tabItem='{title: secondTabTitle}'>
 
-        <FlexboxLayout flexDirection="row-reverse" *ngIf="reqData.Term_Exam_Without_Schedule.messages.length>0">
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="reqData.Term_Exam_Without_Schedule &&reqData.Term_Exam_Without_Schedule.messages.length>0">
             <ListView [items]="reqData.Term_Exam_Without_Schedule.messages">
                 <ng-template let-item="item">
                     <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
@@ -139,7 +139,7 @@
             </ListView>
         </FlexboxLayout>
 
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Term_Exam_Without_Schedule.labels.length>0">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Term_Exam_Without_Schedule &&reqData.Term_Exam_Without_Schedule.labels.length>0">
             
             <Label row="0" colSpan="2"  class="ysHBox"  text='{{"reqData.Term_Exam_Without_Schedule.labels.title"}}'></Label>
 
@@ -185,7 +185,7 @@
         </FlexboxLayout>
         </GridLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="reqData.Term_Exam_Without_Schedule &&reqData.Term_Exam_Without_Schedule.messages.length==0">
             <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintTerm()" ></Button>
             <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()"></Button>
         </FlexboxLayout>
@@ -194,7 +194,7 @@
     
 	<StackLayout *tabItem='{title: thirdTabTitle}'>
 
-        <FlexboxLayout flexDirection="row-reverse" *ngIf="reqData.Final_Exam_Without_Schedule.messages.length>0">
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="reqData.Final_Exam_With_Schedule && reqData.Final_Exam_With_Schedule.messages.length>0">
             <ListView [items]="reqData.Final_Exam_Without_Schedule.messages">
                 <ng-template let-item="item">
                     <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
@@ -202,7 +202,7 @@
             </ListView>
         </FlexboxLayout>
 
-        <ScrollView height="100%" *ngIf="reqData.Final_Exam_With_Schedule.labels.length>0">
+        <ScrollView height="100%" *ngIf="reqData.Final_Exam_With_Schedule &&reqData.Final_Exam_With_Schedule.labels.length>0">
             <StackLayout>
                 <StackLayout>
 
@@ -274,10 +274,10 @@
 
     <StackLayout>
         <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading">
-            <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
-            <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
-            <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
-            <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt11}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt11}}" textWrap="true"></Label>
         </FlexboxLayout>
     </StackLayout>
 
@@ -294,7 +294,7 @@
     
     <StackLayout *tabItem='{title: forthTabTitle}'>
 
-        <FlexboxLayout flexDirection="row-reverse" *ngIf="reqData.Final_Exam_With_Schedule.messages.length>0">
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.messages.length>0">
             <ListView [items]="reqData.Final_Exam_With_Schedule.messages">
                 <ng-template let-item="item">
                     <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
@@ -302,9 +302,9 @@
             </ListView>
         </FlexboxLayout>
        
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Final_Exam_With_Schedule.labels.length>0">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Final_Exam_Without_Schedule &&reqData.Final_Exam_Without_Schedule.labels.length>0">
             
-            <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_With_Schedule.labels.title"></Label>
+            <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_Without_Schedule.labels.title"></Label>
 
              <Label row="1" column="1" text="{{reqData.Final_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
              <Label row="1" column="0" text='{{reqData.Final_Exam_Without_Schedule.values.date}}' textWrap="true"
@@ -347,7 +347,7 @@
             </FlexboxLayout>
         </GridLayout>
       
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.messages.length==0">
             <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()" ></Button>
             <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintFinal()"></Button>
         </FlexboxLayout>

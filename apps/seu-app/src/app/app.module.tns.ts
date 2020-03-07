@@ -31,6 +31,7 @@ import { MasterAcademicRequestsModule } from './master-academic-requests/master-
 import { MasterStudentDataModule } from './master-student-data/master-student-data.module.tns';
 import { MasterPrintCertificatesModule } from './master-print-certificates/master-print-certificates.module.tns';
 import { MasterOtherRequestsModule } from './master-other-requests/master-other-requests.module.tns';
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 
 
 
@@ -58,7 +59,8 @@ import { MasterOtherRequestsModule } from './master-other-requests/master-other-
     MasterAcademicRequestsModule,
     MasterStudentDataModule,
     MasterPrintCertificatesModule,
-    MasterOtherRequestsModule
+    MasterOtherRequestsModule,
+    NativeScriptUIListViewModule
     ],
 
   providers: [ConfigService, HttpRequestService, UserManagerService,
