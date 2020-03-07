@@ -11,18 +11,14 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
         </StackLayout>
         <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;" height="100%">
              <StackLayout >
-                <GridLayout  columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
+                <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/land')">
                     <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
 
                 </GridLayout>
                
 
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
-                    <Label col="1" text="شكاوي ومقترحات" class="ysRootMenuItem" ></Label>
-                    <Label col="1"  text="&#xf0e0;"   class="fas ysRootMenuIcon"></Label>
-
-                </GridLayout>
+               
                 
 
         <RadListView width="100%" *ngIf="!isLoading" [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">

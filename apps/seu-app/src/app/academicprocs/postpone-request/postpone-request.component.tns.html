@@ -40,8 +40,7 @@
         </ListView>
     </FlexboxLayout>
 
-    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between">
-        <Button text='{{"general.request.pre_requests"|translate}}' class="print-btn"></Button>
+    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="center">
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
     </FlexboxLayout>
     

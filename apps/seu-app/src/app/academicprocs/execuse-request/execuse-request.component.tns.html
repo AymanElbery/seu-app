@@ -43,8 +43,7 @@
         </ListView>
     </FlexboxLayout>
 
-    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between"> 
-        <button text='{{"general.request.pre_requests"|translate}}' class="print-btn"></button>
+    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="center"> 
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
     </FlexboxLayout>
     
@@ -78,16 +77,18 @@
             <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.request.req_no"|translate}}'></Label>
             <Label row="1"  column="0" class="ysPBox2" [text]="item.request_number" style="text-align: right;"></Label>
         
-            <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.date_and_status"|translate}}'></Label>
-            <FlexboxLayout  row="2"  column="0" alignItems="center" flexDirection="column" class="ysPBox2">
-                <Label [text]="item.insert_date"  ></Label>
-                <Label [text]="item.status" ></Label>
-            </FlexboxLayout>
-            <!--<Label row="2"  column="0" class="ysPBox2" [text]="item.insert_date"  style="text-align: right;"></Label> -->
-        
-            <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;"   text='{{"general.request.delete_print_req"|translate}}'></Label>
-            <Button  row="3"  column="0"  text="&#xf02f;" (tap)="print(item.request_number)" class="fas blue-button"></Button>
+            <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.req_date"|translate}}'></Label>
+            <Label row="2"  column="0" class="ysPBox2" [text]="item.insert_date" style="text-align: right;"></Label>
+           
+            <Label row="3"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.req_status"|translate}}'></Label>
+            <Label row="3"  column="0" class="ysPBox2" [text]="item.status" ></Label>
 
+            <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"   text='{{"general.request.req_print"|translate}}'></Label>
+            <Button  row="4"  column="0"  text="&#xf02f;" (tap)="print(item.request_number)" class="fas blue-button "></Button>
+             
+            <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"   text='{{"general.request.req_delete"|translate}}'></Label>
+            <Button row="5" column="0" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas  blue-button"></Button>
+            <Label row="5" class="ysPBox2" column="0" *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}'  ></Label>
            
        
           </GridLayout>

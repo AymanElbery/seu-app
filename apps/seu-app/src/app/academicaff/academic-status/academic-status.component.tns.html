@@ -75,9 +75,9 @@
             </GridLayout>
           </StackLayout>
 
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" style="margin:0 20 0;">
-            <label class="yslab-dr" text='{{"general.academic_status_through_terms" | translate}}'   style="margin-top: 15;" textWrap="true" ></label>
-            <DropDown class="dro"
+        <GridLayout *ngIf="!isLoading" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" style="margin: 0 20;">
+            <label  row="1" column="1" class="yslab-dr"  text='{{"general.academic_status_through_terms" | translate}}'   style="margin-top: 15;"  ></label>
+            <DropDown  row="1" column="0" class="dro"
                   [items]="studentTermsDropDown"
                   (selectedIndexChanged)="getTrmsDetails($event)"
                   [(ngModel)]="selectedIndex"
@@ -85,7 +85,7 @@
                   itemsTextAlignment="left"
             >
             </DropDown>
-        </FlexboxLayout>
+        </GridLayout>
 
         <ActivityIndicator [busy]="isLoadingTerm && !isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
