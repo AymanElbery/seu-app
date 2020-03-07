@@ -5,11 +5,15 @@
   <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
 
 -->
-<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" >
+    
+</NavigationButton>
 
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
 <StackLayout margin-top="0">
   
-    <Image src="~/images/logo_3d.png" style="width:75%"></Image>
+    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
 
   </StackLayout>
 
@@ -37,8 +41,12 @@
                 verticalAlignment="middle" >
                 <GridLayout  >
                     <StackLayout>
-                        <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
-                            src="{{'data:image/jpg;base64,' + item.image}}"></Image>
+                        <!-- <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
+                            src="{{'data:image/jpg;base64,' + item.image}}"></Image> -->
+
+
+                            <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
+                            src="{{item.image}}"></Image>
                         <Label class="label-itme" textWrap="true" row="1"
                             text="{{item.title}}"></Label>
                     </StackLayout>
@@ -78,7 +86,7 @@
 
 
                         <Image height="110" stretch="aspectFill" row="0" class="news-item"
-                            src="{{'data:image/jpg;base64,' + news.image}}"></Image>
+                            src="{{news.image}}"></Image>
 
 
 

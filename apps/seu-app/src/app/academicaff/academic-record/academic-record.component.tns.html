@@ -5,13 +5,13 @@
 
 -->
 
-<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" (tap)="onDrawerButtonTap()"></NavigationButton>
+<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
 
 <!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
 -->
 <StackLayout margin-top="0">
   
-    <Image src="~/images/logo_3d.png" style="width:75%"></Image>
+    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
 
   </StackLayout>
 
@@ -38,12 +38,14 @@
 
     <FlexboxLayout flexDirection="column" *ngIf="!isLoading && recoredData.terms">
 
-        <StackLayout class="ser-title">
+        <GridLayout  columns="auto, *" class="serv-title">
+            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+            <Label col="1" text='{{"services.academic_record.title" | translate}}' class="serv-name" ></Label>
+            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        
+        </GridLayout>
 
-            <Label class="ser-name" text='{{"services.academic_record.title" | translate}}'></Label>
-    
-        </StackLayout>
-            <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between">
                 <Button class=" print-btn " (tap)="onArabicPrint()">
                     <FormattedString>
                         <Span text="&#xf02f;" class="fas"></Span>
@@ -78,7 +80,7 @@
               <Label row="5"  column="0"  class="ysPBox2" text="{{recoredData.grade}}"></Label>
 
               <Label row="6" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.student_status" | translate}} :'></Label>
-              <Label row="6"  column="0"  class="ysPBox" text="{{recoredData.status}}"></Label>
+              <Label row="6"  column="0" class="ysPBox2" text="{{recoredData.status}}"></Label>
             </GridLayout>
           </StackLayout>
 
@@ -128,7 +130,7 @@
                      
                         </GridLayout>
                       </StackLayout>
-
+          <!--
                     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
                         <label text='{{"general.term" | translate}}'></label>
                         <label text='{{"general.year" | translate}}'></label>
@@ -160,8 +162,15 @@
                         <Label [text]="item.Points" class="narrowColumn"></Label>
                     </FlexboxLayout>
 
-
+-->
                     <StackLayout>
+
+                        <StackLayout class="ser-title">
+
+                            <Label class="ser-name" text='المقررات'></Label>
+                    
+                        </StackLayout>
+
                         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of item.courses" >
                       
                       
@@ -181,7 +190,7 @@
                         </GridLayout>
                       </StackLayout>
 
-
+<!--
                     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
                         <label text='{{"general.hours" | translate}}'></label>
                         <label text='{{"general.recorded" | translate}}'></label>
@@ -207,16 +216,73 @@
                         <label [text]="item.total_earned_hours"  ></label>
                         <label [text]="item.total_quality_points"  ></label>
                         <label [text]="item.total_gpa"  ></label>
-                    </FlexboxLayout>  
+                    </FlexboxLayout> 
+                    -->
+                  
+
+                    <StackLayout>
+
+                        <StackLayout class="ser-title">
+
+                            <Label class="ser-name" text='الساعات'></Label>
+                    
+                        </StackLayout>
+
+                        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" >
+                      
+                          <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.hours" | translate}}'></Label>
+                          <Label row="1"  column="0" class="ysPBox2" text='{{"general.quarterly" | translate}}'></Label>
+                      
+                          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.recorded" | translate}}'></Label>
+                          <Label row="2"  column="0" class="ysPBox2" [text]="item.registredHours" style="text-align: right;"></Label>
+                      
+                          <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.success" | translate}}'></Label>
+                          <Label row="3"  column="0"   class="ysPBox2"  [text]="item.gpa_hours"  style="text-align:right;"></Label>
+            
+                          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.earned" | translate}}'></Label>
+                          <Label row="4"  column="0"  class="ysPBox2"  [text]="item.earned_hours"  style="text-align: right;"></Label>
+
+                          <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                          <Label row="5"  column="0"  class="ysPBox2"  [text]="item.quality_points"   style="text-align: right;"></Label>
+            
+                          <Label row="6"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.average" | translate}}'></Label>
+                          <Label row="6"  column="0"  class="ysPBox2"  [text]="item.gpa"  style="text-align: right;"></Label>
+                     
+                        </GridLayout>
+                 
+
+                        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" >
+                      
+                          <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.hours" | translate}}'></Label>
+                          <Label row="1"  column="0" class="ysPBox2" text='{{"general.cumulative" | translate}}'></Label>
+                      
+                          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.recorded" | translate}}'></Label>
+                          <Label row="2"  column="0" class="ysPBox2" [text]="item.TotalregistredHours" style="text-align: right;"></Label>
+                      
+                          <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.success" | translate}}'></Label>
+                          <Label row="3"  column="0"   class="ysPBox2"  [text]="item.total_gpa_hours"  style="text-align:right;"></Label>
+            
+                          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.earned" | translate}}'></Label>
+                          <Label row="4"  column="0"  class="ysPBox2"  [text]="item.total_earned_hours"  style="text-align: right;"></Label>
+
+                          <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                          <Label row="5"  column="0"  class="ysPBox2"  [text]="item.total_quality_points"   style="text-align: right;"></Label>
+            
+                          <Label row="6"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.average" | translate}}'></Label>
+                          <Label row="6"  column="0"  class="ysPBox2"  [text]="item.total_gpa"  style="text-align: right;"></Label>
+                     
+                        </GridLayout>
+                      </StackLayout>
+
                 </FlexboxLayout> 
             </ng-template>
         </RadListView>
-
+<!--
         <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
             <Button class="login-btn" text='{{"general.ar_language" | translate}}' (tap)="onArabicPrint()" ></Button>
             <Button class="login-btn" text='{{"general.en_language" | translate}}' (tap)="onEnglishPrint()"></Button>
         </FlexboxLayout>
-            
+            -->
     </FlexboxLayout>
     
 </ScrollView>

@@ -1,22 +1,39 @@
-<ActionBar>
+
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-    -->
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()"
-        ios.position="left">
-    </ActionItem>
-    <Label text='{{"services.excuse_request.title"|translate}}'></Label>
-</ActionBar>
-<ScrollView>
-<FlexboxLayout flexDirection="column">
 
-    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+-->
+
+<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
+
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
+<StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
+
+  </StackLayout>
+
+    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+
+</ActionBar>
+
+<ScrollView>
+
+    <ActivityIndicator [busy]="isLoading" color="#6189f4"  horizontalAlignment="center"></ActivityIndicator>
+
+<FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+
+
+    <GridLayout  columns="auto, *" class="serv-title" >
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"services.excuse_request.title"|translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    
+    </GridLayout>
 
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
@@ -26,11 +43,12 @@
         </ListView>
     </FlexboxLayout>
 
-    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between" style="margin-right:20;"> 
-        <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
-        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
+    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between"> 
+        <button text='{{"general.request.pre_requests"|translate}}' class="print-btn"></button>
+        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
     </FlexboxLayout>
     
+    <!--
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading && reqData.reqs&& reqData.reqs.length>0" class="ysBox">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" [ngClass]="{'throw_no_border':reqData.reqs.length === 0}"> 
                 <label text='{{"general.request.req_no"|translate}}'></label>
@@ -52,6 +70,27 @@
                 </FlexboxLayout>
             </FlexboxLayout>
         </FlexboxLayout>
+-->
+
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of reqData.reqs;let i=index;" >
+                      
+                      
+            <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.request.req_no"|translate}}'></Label>
+            <Label row="1"  column="0" class="ysPBox2" [text]="item.request_number" style="text-align: right;"></Label>
+        
+            <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.date_and_status"|translate}}'></Label>
+            <FlexboxLayout  row="2"  column="0" alignItems="center" flexDirection="column" class="ysPBox2">
+                <Label [text]="item.insert_date"  ></Label>
+                <Label [text]="item.status" ></Label>
+            </FlexboxLayout>
+            <!--<Label row="2"  column="0" class="ysPBox2" [text]="item.insert_date"  style="text-align: right;"></Label> -->
+        
+            <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;"   text='{{"general.request.delete_print_req"|translate}}'></Label>
+            <Button  row="3"  column="0"  text="&#xf02f;" (tap)="print(item.request_number)" class="fas blue-button"></Button>
+
+           
+       
+          </GridLayout>
 
 </FlexboxLayout>
 </ScrollView>
