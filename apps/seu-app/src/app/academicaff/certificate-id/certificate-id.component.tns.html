@@ -92,18 +92,24 @@
         <Label text="/"></Label>
         <Label [text]="certificateDetails.labels.course_title" textWrap="true"></Label>
       </FlexboxLayout>
+      <Label [text]="certificateDetails.labels.roomcode"></Label>
       <Label [text]="certificateDetails.labels.day_and_date"></Label>
       <Label [text]="certificateDetails.labels.time"></Label>
+      <Label [text]="certificateDetails.labels.course_type"></Label>
+
     </FlexboxLayout>
 
    
     <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of lectures" flexDirection="row-reverse" class="trow tabl">
-      <FlexboxLayout flexDirection="column" alignItems="center" class="wideColumn" style="margin-left: 15;">
-        <Label [text]="item.CRSE_TITLE"></Label>
-        <Label [text]="item.CRN"></Label>
+      <FlexboxLayout flexDirection="column" alignItems="center" class="wideColumn" style="width: 30%;">
+        <Label [text]="item.CRSE_TITLE" textWrap="true" style="text-align: center;"></Label>
+        <Label [text]="item.CRN" textWrap="true" style="text-align: center;"></Label>
       </FlexboxLayout>
-      <Label [text]="item.CRSE_DAY" class="narrowColumn"></Label>
-      <Label [text]="toHTML(item.CRSE_TIME)" class="wideColumn"></Label>
+      <Label [text]="item.ROOM_CODE" style="width: 15%;text-align: center;" textWrap="true"></Label>
+      <Label [text]="item.DAYES" style="width: 20%;text-align: center;"></Label>
+      <Label [text]="item.LECT_TIME" style="width: 20%; text-align: center;" textWrap="true"></Label>
+      <Label [text]="item.CRSE_TYPE" style="width: 15%; text-align: center;" textWrap="true"></Label>
+
     </FlexboxLayout>
   </FlexboxLayout>
 </StackLayout>

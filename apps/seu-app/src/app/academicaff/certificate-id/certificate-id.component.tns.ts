@@ -42,6 +42,7 @@ export class CertificateIDComponent implements OnInit {
     );
   }
   toHTML(input): any {
+    console.log("inputttttttttttt",input)
     return input ? input.replace('&rarr;', '->') : '';
   }
 

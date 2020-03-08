@@ -42,7 +42,7 @@
             class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
                 <Label [text]="item.id"></Label>
                 <FlexboxLayout alignItems="center" flexDirection="column">
-                    <Label [text]="item.insert_date"  ></Label>
+                    <Label [text]="item.INSRT_DATE"  ></Label>
                     <Label [text]="item.status" ></Label>
                 </FlexboxLayout>
                 <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas -rounded-sm blue-button"></Button>
