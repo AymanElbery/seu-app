@@ -25,7 +25,7 @@
           <div class="col-md-1"></div>
           <div class="col-md-10">
             <img width="100%"
-              src=" newsDetails.image.startsWith('http')?newsDetails.image:('data:image/jpg;base64,' + newsDetails.image)"
+              [src]="newsDetails.image.startsWith('http')?newsDetails.image:('data:image/jpg;base64,' + newsDetails.image)"
               alt="{{newsDetails.title}}" class="img-thumbnail">
           </div>
           <div cass="col-md-1"></div>
