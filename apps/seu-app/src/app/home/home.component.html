@@ -1,8 +1,8 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div class="col-md-10 offset-md-1">
-    <div class="row">
-      <div class="col-md-6">
+    <div class="   col-md-10 offset-md-1 ">
+    <div class="row justify-content-md-center">
+      <div class=" col-md-6 col-sm-6 col-xs-12">
         <div class="widget ">
           <div class="widget-header">
             <h3 class="widget-title">
@@ -21,7 +21,7 @@
                     <div class="item" *ngFor="let news of userService.newsData;index as i">
                       <div style="align-content: center" class="owl-content">
                         <a [routerLink]="['/dashboard/newsdetail', i]">
-                          <img style="height: 260px;width:100%" [src]="'data:image/jpg;base64,' + news.image" />
+                          <img style="height: 260px;width:100%" [src]="news.image" />
                         </a>
                         <p>
                           <a [routerLink]="['/dashboard/newsdetail', i]">
@@ -40,7 +40,7 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class=" col-md-6 col-sm-6 col-xs-12">
         <div class="widget ">
           <div class="widget-header">
 
@@ -58,7 +58,7 @@
                     [carouselClasses]="['owl-theme', 'sliding']">
                     <div class="item" *ngFor="let ads of userService.adsData">
                       <div style="align-content: center" class="owl-content">
-                        <img style="height: 260px;width:100%" [src]="'data:image/jpg;base64,' + ads.image" />
+                        <img style="height: 260px;width:100%" [src]=" ads.image" />
                         <p>
                           {{ads.title}}
                           <br>
@@ -78,8 +78,8 @@
     </div>
 
 
-    <div class="row">
-      <div class="col-md-6">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="widget">
           <div class="card latest-update-card">
             <div class="widget-header">
@@ -109,7 +109,7 @@
         </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="widget">
           <div class="card">
             <div class="widget-header">
