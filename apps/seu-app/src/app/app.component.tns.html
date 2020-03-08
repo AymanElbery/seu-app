@@ -5,43 +5,42 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 -->
 <RadSideDrawer    [drawerTransition]="sideDrawerTransition" gesturesEnabled="true" (loaded)="onLoaded()">
     <GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content">
-        <StackLayout row="0" class="nt-drawer__header" style="background-color:#f1f1f1;">
+        <StackLayout row="0" class="nt-drawer__header" style="background-color:#f1f1f1; height:180;">
             <Image class="nt-drawer__header-image fas t-36 img-user" src="font://&#xf2bd;"></Image>
             <Label class="nt-drawer__header-brand" text="{{userName}}  " textWrap="true"></Label>
         </StackLayout>
-        <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;" height="auto">
+        <ScrollView row="1" class="nt-drawer__body" style="direction: rtl;" height="100%">
              <StackLayout >
-                <GridLayout  columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/home')" (tap)="onNavItemTap('/home')">
+                <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/land')">
                     <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
 
                 </GridLayout>
                
 
-                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/settings')" (tap)="onNavItemTap('/settings')">
-                    <Label col="1" text="شكاوي ومقترحات" class="ysRootMenuItem" ></Label>
-                    <Label col="1"  text="&#xf0e0;"   class="fas ysRootMenuIcon"></Label>
-
-                </GridLayout>
+               
                 
-                <StackLayout class="hr"></StackLayout>
 
-        <RadListView width="100%" *ngIf="!isLoading" [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
+        <RadListView width="100%" *ngIf="!isLoading" [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">
             <ng-template let-item="item">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between">
-                    <Label  text="&#xf0dd;"  class="fas"></Label>
-                    <FlexboxLayout flexDirection="row-reverse">
-                        <Label text='{{item.title}}'></Label>
-                    </FlexboxLayout>
+                    <GridLayout columns="auto, *" class="ysMenuGridHeader2 ">
+                        <Label col="1" text="&#xf107;" class="fas arr-drop"></Label>
+                        <Label col="1" text='{{item.title}}' class="ysMenuhead"></Label>
+                        <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead"></Label>
+                    </GridLayout>
                 </FlexboxLayout>
             </ng-template>
 
             <ng-template tkTemplateKey="expanded" let-item="item">
                 <FlexboxLayout flexDirection="column">
-                        <FlexboxLayout flexDirection="row" justifyContent="space-between">
-                            <Label  text="&#xf0de;"  class="fas"></Label>
-                            <Label text='{{item.title}}'></Label>
-                        </FlexboxLayout>
+                        <GridLayout columns="auto, *" class="ysMenuGridHeader ">
+                            <Label col="1" text="&#xf106;"  class="fas arr-drop"></Label>
+                            <Label col="1" text='{{item.title}}' class="ysMenuhead"></Label>
+                            <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead"></Label>
+
+                        </GridLayout>
+              
                         <GridLayout *ngFor="let item  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
                             <Label col="1" text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
                             <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>

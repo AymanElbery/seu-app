@@ -1,21 +1,21 @@
-<FlexboxLayout  flexDirection="column" style="padding: 20;">
-    <Label text='{{"services.withdrow_univ.title"|translate}}' class="header"></Label>
+<FlexboxLayout  flexDirection="column" style="padding: 20;" class="pop">
+    <Label text='{{"services.withdrow_univ.title"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
     <DropDown required
         [items]="dropDownBranches"
         [(ngModel)]="selectedIndex"
         hint='{{"services.withdrow_univ.choose_branch"|translate}}'
         itemsTextAlignment="left"
         #branch="ngModel"
-        style="padding: 5;"
-        class="font"
+        style="padding: 5 15; color:#f08b1c;"
+        class="font dro "
     >
     </DropDown>
-    <TextField [(ngModel)]="withdraw.mobile" style="margin-bottom: 20;" hint='{{"services.withdrow_univ.phone_no"|translate}}' keyboardType="phone" required #mobile="ngModel"></TextField>
+    <TextField [(ngModel)]="withdraw.mobile" style="margin-bottom: 20; text-align: right;" hint='{{"services.withdrow_univ.phone_no"|translate}}' keyboardType="phone" required #mobile="ngModel"></TextField>
     <TextField [(ngModel)]="withdraw.email"  hint='{{"services.withdrow_univ.e-mail"|translate}}' keyboardType="email" required #mail="ngModel"></TextField>
     
-    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between" style="margin-top: 20;">
-        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" [isEnabled]="mobile.valid && mail.valid && branch.valid" class="-primary -rounded-sm" style="width: 50%;"></Button>
-        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="-primary -rounded-sm" style="width: 50%;"></Button>
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="center" style="margin-top: 20;">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" [isEnabled]="mobile.valid && mail.valid && branch.valid" class="print-btn" style="width: 44%;"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn" style="width: 44%;"></Button>
     </FlexboxLayout>
 
 </FlexboxLayout>

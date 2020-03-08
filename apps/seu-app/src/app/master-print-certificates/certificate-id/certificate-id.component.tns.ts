@@ -35,6 +35,7 @@ export class CertificateIDComponent implements OnInit {
     this.stdData.getRequest().then(
       (res) => {
         this.certificateDetails = ((res) as any).data;
+        console.log("detailssssssss",this.certificateDetails)
         this.lectures = (((res) as any).data as any).courses;
         this.isLoading = false;
       }

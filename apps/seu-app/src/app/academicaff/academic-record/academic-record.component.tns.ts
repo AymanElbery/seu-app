@@ -6,6 +6,7 @@ import { ListViewEventData } from 'nativescript-ui-listview';
 import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
 import * as utils from 'tns-core-modules/utils/utils';
 import { RecoredDataModel } from '../../shared/models/RecoredDataModel';
+import { ItemsSource } from 'tns-core-modules/ui/list-view/list-view';
 // tslint:disable-next-line: one-variable-per-declaration
 declare var UIView, NSMutableArray, NSIndexPath;
 
@@ -23,6 +24,9 @@ export class AcademicRecordComponent implements OnInit {
   isLoading = false;
 
   templateSelector(item: any, index: number, items: any): string {
+    if(index==0){      
+      return !item.expanded ? 'expanded' : 'default';
+    }
     return item.expanded ? 'expanded' : 'default';
 }
 
@@ -30,7 +34,6 @@ onItemTap(event: ListViewEventData) {
     const listView = event.object,
         rowIndex = event.index,
         dataItem = event.view.bindingContext;
-
     dataItem.expanded = !dataItem.expanded;
     if (isIOS) {
       // Uncomment the lines below to avoid default animation
@@ -55,7 +58,7 @@ onItemTap(event: ListViewEventData) {
       res => {
     this.recoredData =    (res as any).data;
     this.msgs=(res as any).messages;
-    console.log("dataaaaaaaa",res);
+  //  console.log("dataaaaaaaa",res);
     this.isLoading = false;
       }
     );

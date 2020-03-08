@@ -367,6 +367,9 @@ export class AppComponent implements OnInit {
     }
 
     templateSelector(item: any, index: number, items: any): string {
+        if(index==0){      
+            return !item.expanded ? 'expanded' : 'default';
+          }
         return item.expanded ? 'expanded' : 'default';
     }
     

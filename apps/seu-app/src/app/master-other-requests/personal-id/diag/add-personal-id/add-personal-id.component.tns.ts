@@ -74,6 +74,11 @@ export class AddPersonalIdComponent implements OnInit {
         this.univCard.newreqs = true;
         this.dialogRef.close();
       } */
+      this.routerExtensions.navigate(['/other/personalid'], {
+        transition: {
+            name: 'fade'
+        }
+    });
       this.requesting = false;
     },
       err => {
