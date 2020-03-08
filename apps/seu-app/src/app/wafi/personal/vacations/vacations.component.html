@@ -1,0 +1,64 @@
+<div class="main-content">
+
+  
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div class="form-group">
+  
+    {{"wafi.selectvacationtype" | translate}} :  
+    <div  >
+    <select   class="select"  (change)="getempvactions($event.target.value)"  >  
+      <option *ngFor="let vactype of vacationstype"  [selected]="selectvactype == vactype.value"  value={{vactype.value}}>{{vactype.label}} </option>  
+</select>  
+</div>
+
+
+</div>
+<div *ngIf="vacations" >
+<p style="font-size: 16px; font-weight: bold;background-color: #B3D4FB;width:50%;">
+  {{"wafi.VacationBalance" | translate}} :<span style="color:#F9982F;"> {{VacationBalance}} </span>   {{"wafi.VacationReservedBalance" | translate}} : <span style="color:#F9982F;">{{VacationReservedBalance}} </span>     {{"wafi.VacationAbsenceBalance" | translate}} : <span style="color:#F9982F;">{{VacationAbsenceBalance}} </span>
+</p>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+
+      <tr>
+
+        <th scope="col">{{"wafi.period" | translate}}</th>
+        <th scope="col">{{"wafi.description" | translate}}</th>
+        <th scope="col">{{"wafi.startDate" | translate}}</th>
+        <th scope="col">{{"wafi.endDate" | translate}}</th>
+        <th scope="col">{{"wafi.decisionNo" | translate}}</th>
+       
+        <th scope="col">{{"wafi.startDateG" | translate}}</th>
+        <th scope="col">{{"wafi.vacationCode" | translate}}</th>
+       
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vacation of vacations;let i=index;">
+        
+         
+        <td>{{vacation.period}}</td>
+        <td>{{vacation.desc}}</td>
+        <td>{{vacation.startDate}}</td>
+        <td>{{vacation.endDate}}</td>
+         
+        <td>{{vacation.decisionNo}}</td>
+        
+        <td>{{vacation.startDateG}}</td>
+        <td>{{vacation.vacationCode}}</td>
+        
+        
+        
+
+        
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+</div>
+  
+  </div>

@@ -13,6 +13,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { GraduateStateComponent } from './graduate-state/graduate-state.component';
 import { GraduatesStateService } from './services/graduates-state.service';
 import { AppLazyTransModule } from '../app.lazytrans.module';
+import { SeucommonModule } from '../seucommon/seucommon.module';
 @NgModule({
   declarations: [AcademicStatusComponent, CertificateIDComponent, AcademicRecordComponent,
     GraduateStateComponent, SkillsRecordComponent
@@ -22,7 +23,8 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     AcademicaffRoutingModule,
     FormsModule,
     MatProgressSpinnerModule,
-    AppLazyTransModule
+    AppLazyTransModule,
+    SeucommonModule
   ],
   providers: [AcademicStatusService, CertificateIDService, AcademicRecordService, GraduatesStateService]
 })

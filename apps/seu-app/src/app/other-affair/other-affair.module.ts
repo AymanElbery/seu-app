@@ -21,7 +21,7 @@ import {TrainingRequestService} from './services/training-request.service';
 import { StudentInfoComponent } from './student-info/student-info.component';
 import { MatCheckboxModule } from '@angular/material';
 import { AppLazyTransModule } from '../app.lazytrans.module';
-
+import { SeucommonModule } from '../seucommon/seucommon.module';
 @NgModule({
 
   declarations: [MedicalReportComponent,
@@ -33,6 +33,7 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     TrainingRequestComponent,
     AddTrainingRequestComponent,
     StudentInfoComponent
+    
 
   ],
   entryComponents:[ AddBankReceiptComponent,
@@ -48,7 +49,8 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     MatProgressSpinnerModule,
     ToastrModule.forRoot() ,
     MatCheckboxModule,
-    AppLazyTransModule
+    AppLazyTransModule,
+    SeucommonModule
   ],
   providers: [MedicalReportService,
     UvnivCardService,

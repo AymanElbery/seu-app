@@ -375,6 +375,48 @@
               <i class="ik ik-mail"></i> </a>
           </div>
         </div>
+
+        <div></div>
+      
+        <div *ngIf="hasNoRole" class="nav-item has-sub">
+          <h6  class="tab" style="box-sizing: border-box;text-align: justify;margin:15px 0 0 10px;;">
+            <i class="ik ik-book-open"></i> 
+            {{"wafi.wafi" | translate}}</h6>
+          <a href="javascript:void(0)"> <span>{{"wafi.personal" | translate}}  </span>
+            <i class="ik ik-user"></i> </a>
+          <div class="submenu-content">           
+            <a 
+            routerLinkActive="active" [routerLink]="['/wafi/personal']"
+              class="menu-item">  <span class="text-eng">{{"wafi.PersonalInfo" | translate}}</span> <i
+                class="ik ik-user-check"></i> </a>
+          
+          </div>
+
+          <div class="submenu-content">           
+            <a 
+            routerLinkActive="active" [routerLink]="['/wafi/personal/salaries']"
+              class="menu-item">  <span class="text-eng">{{"wafi.Salaries" | translate}}</span> <i
+                class="ik ik-user-check"></i> </a>
+          
+          </div>
+          <div class="submenu-content">           
+            <a 
+            routerLinkActive="active" [routerLink]="['/wafi/personal/vacations']"
+              class="menu-item">  <span class="text-eng">{{"wafi.Vacations" | translate}}</span> <i
+                class="ik ik-user-check"></i> </a>
+          
+          </div>
+
+          <div class="submenu-content">           
+            <a 
+            routerLinkActive="active" [routerLink]="['/wafi/personal/print-report']"
+              class="menu-item">  <span class="text-eng">{{"wafi.print-report" | translate}}</span> <i
+                class="ik ik-calendar"></i> </a>
+          
+          </div>
+
+        </div>
+
         <!--
              <div *ngIf="userService.userData.act_as_student" class="nav-item has-sub">
                 <a href="javascript:void(0)"> <span>الأنظمة </span>

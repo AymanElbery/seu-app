@@ -52,7 +52,7 @@ import { AppTransModule } from './app.trans.module';
 import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import {AdmisPagesComponent} from './admis-pages/old/admis-pages.component';
 import {StdsPagesComponent} from './admis-pages/stds/stds-pages.component';
-
+import {PersonalModule} from './wafi/personal/personal.module';
 
 @NgModule({
   declarations: [
@@ -82,6 +82,7 @@ import {StdsPagesComponent} from './admis-pages/stds/stds-pages.component';
     AppRoutingModule,
     AccountModule,
     DashboardModule,
+    PersonalModule,
     FormsModule,
     ToastrModule.forRoot()
     , TimerModule
