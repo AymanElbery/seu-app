@@ -3458,3 +3458,9 @@ blockquote::after {
 .loading-indicator .state {
   box-shadow: none;
 }
+
+@media (min-width: 1800px){
+.col-md-6 , .col-sm-6 , .col-xs-6 {
+    max-width: 400px !important;
+}
+}

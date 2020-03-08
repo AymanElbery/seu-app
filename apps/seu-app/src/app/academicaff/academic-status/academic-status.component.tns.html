@@ -1,57 +1,83 @@
-<ActionBar>
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-   
--->
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
-        ios.position="left" >
-    </ActionItem> 
 
-    <Label text='{{"services.academic_status.title" | translate}}'></Label>
+-->
+
+<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
+
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
+<StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
+
+  </StackLayout>
+
+    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+
 </ActionBar>
 
 <ScrollView>
-    <FlexboxLayout  flexDirection="column"  class="wrap">
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
-        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+    <FlexboxLayout *ngIf="!isLoading"  flexDirection="column"  class="wrap" >
+
+       
+        <GridLayout  columns="auto, *" class="serv-title">
+            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+            <Label col="1" text='{{"services.academic_status.title" | translate}}' class="serv-name" ></Label>
+            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        </GridLayout>
+
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <Button class=" print-btn " (tap)="onArabicPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" طباعة"></Span>
+                </FormattedString>
+            </Button>
+            <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" Print"></Span>
+                </FormattedString>
+            </Button>
+        </FlexboxLayout>
+        
         <StackLayout *ngIf="!isLoading">
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
           
               <Label row="0" colSpan="2"  class="ysHBox"  text="{{'general.student_data'|translate}}"></Label>
           
-              <Label row="1" column="1" style="font-weight: 800;" text="{{'general.female_or_male_name'|translate}} :"></Label>
-              <Label row="1"  column="0" text="{{student.name}}"></Label>
+              <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{'general.female_or_male_name'|translate}} :"></Label>
+              <Label row="1"  column="0" class="ysPBox2" text="{{student.name}}"></Label>
           
-              <Label row="2" column="1" style="font-weight: 800;" text="{{'general.student_id'|translate}} :"></Label>
-              <Label row="2"  column="0" text="{{student.std_id}}" style="text-align: right;"></Label>
+              <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text="{{'general.student_id'|translate}} :"></Label>
+              <Label row="2"  column="0" class="ysPBox2" text="{{student.std_id}}" style="text-align: right;"></Label>
           
-              <Label row="3" column="1" style="font-weight: 800;" text="{{'general.ssn'|translate}} :"></Label>
-              <Label row="3"  column="0" text="{{student.ssn}}" style="text-align: right;"></Label>
-              <Label row="4" column="1" style="font-weight: 800;" text='{{"general.acceptance_term" | translate}} :'></Label>
-              <Label row="4"  column="0" text="{{student.std_adm_term_label}}"></Label>
-              <Label row="5" column="1" style="font-weight: 800;" text='{{"general.current_academic_status" | translate}} :'></Label>
-              <Label row="5"  column="0" text="{{student.current_acadimic_status_label}}"></Label>
-              <Label row="6" column="1" style="font-weight: 800;" text='{{"general.graduation_gpa" | translate}} :'></Label>
-              <Label row="6"  column="0" text="{{student.final_graduation_GPA}}" style="text-align: right;"></Label>
+              <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text="{{'general.ssn'|translate}} :"></Label>
+              <Label row="3"  column="0" class="ysPBox2" text="{{student.ssn}}" style="text-align: right;"></Label>
+              <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.acceptance_term" | translate}} :'></Label>
+              <Label row="4"  column="0" class="ysPBox2" text="{{student.std_adm_term_label}}"></Label>
+              <Label row="5" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.current_academic_status" | translate}} :'></Label>
+              <Label row="5"  column="0" class="ysPBox2" text="{{student.current_acadimic_status_label}}"></Label>
+              <Label row="6" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.graduation_gpa" | translate}} :'></Label>
+              <Label row="6"  column="0" class="ysPBox2" text="{{student.final_graduation_GPA}}" style="text-align: right;"></Label>
               
-              <Label row="7" column="1" style="font-weight: 800;" text='{{"general.academic_position" | translate}} :'></Label>
-              <Label row="7"  column="0" text="{{student.acadimic_position_label}}"></Label>
+              <Label row="7" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.academic_position" | translate}} :'></Label>
+              <Label row="7"  column="0" class="ysPBox2" text="{{student.acadimic_position_label}}" style="text-align: right;"></Label>
 
-              <Label row="8" column="1" style="font-weight: 800;" text='{{"general.fees" | translate}} :'></Label>
-              <Label row="8"  column="0" text="{{student.std_fees}}"></Label>
+              <Label row="8" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.fees" | translate}} :'></Label>
+              <Label row="8"  column="0" class="ysPBox2" text="{{student.std_fees}}"></Label>
             </GridLayout>
           </StackLayout>
 
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="space-between" style="margin:0 20 0;">
-            <label text='{{"general.academic_status_through_terms" | translate}}'   style="margin-top: 15;font-weight: 800;" textWrap="true" ></label>
-            <DropDown
+        <GridLayout *ngIf="!isLoading" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" style="margin: 0 20;">
+            <label  row="1" column="1" class="yslab-dr"  text='{{"general.academic_status_through_terms" | translate}}'   style="margin-top: 15;"  ></label>
+            <DropDown  row="1" column="0" class="dro"
                   [items]="studentTermsDropDown"
                   (selectedIndexChanged)="getTrmsDetails($event)"
                   [(ngModel)]="selectedIndex"
@@ -59,45 +85,45 @@
                   itemsTextAlignment="left"
             >
             </DropDown>
-        </FlexboxLayout>
+        </GridLayout>
 
         <ActivityIndicator [busy]="isLoadingTerm && !isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
             <GridLayout *ngIf="!isLoadingTerm" class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                     
-              <Label row="0" column="1" style="font-weight: 800;" text='{{"general.faculty" | translate}} :'></Label>
-              <Label row="0"  column="0" text="{{studentTermDetails.COLL_CODE}}"></Label>
+              <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.faculty" | translate}} :'></Label>
+              <Label row="0"  column="0" class="ysPBox2" text="{{studentTermDetails.COLL_CODE}}"></Label>
           
-              <Label row="1" column="1" style="font-weight: 800;" text='{{"general.major" | translate}} :'></Label>
-              <Label row="1"  column="0" text="{{studentTermDetails.MAJR_code}}" style="text-align: right;"></Label>
+              <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.major" | translate}} :'></Label>
+              <Label row="1"  column="0" class="ysPBox2" text="{{studentTermDetails.MAJR_code}}" ></Label>
           
-              <Label row="2" column="1" style="font-weight: 800;" text='{{"general.branch" | translate}} :'></Label>
-              <Label row="2"  column="0" text="{{studentTermDetails.CAMP_code}}"></Label>
+              <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.branch" | translate}} :'></Label>
+              <Label row="2"  column="0" class="ysPBox2" text="{{studentTermDetails.CAMP_code}}"></Label>
 
-              <Label row="3" column="1" style="font-weight: 800;" text='{{"general.gpa" | translate}} :'></Label>
-              <Label row="3"  column="0" text="{{studentTermDetails.gba}}"  style="text-align: right;"></Label>
+              <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.gpa" | translate}} :'></Label>
+              <Label row="3"  column="0" class="ysPBox2" text="{{studentTermDetails.gba}}"  style="text-align: right;"></Label>
 
-              <Label row="4" column="1" style="font-weight: 800;" text='{{"general.regestration_status" | translate}} :'></Label>
-              <Label row="4"  column="0" text="{{studentTermDetails.RegisterationStatus}}"></Label>
+              <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.regestration_status" | translate}} :'></Label>
+              <Label row="4"  column="0" class="ysPBox2" text="{{studentTermDetails.RegisterationStatus}}"></Label>
 
-              <Label row="5" column="1" style="font-weight: 800;" text='{{"general.level" | translate}} :'></Label>
-              <Label row="5"  column="0" text="{{studentTermDetails.study_level}}"></Label>
+              <Label row="5" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.level" | translate}} :'></Label>
+              <Label row="5"  column="0" class="ysPBox2" text="{{studentTermDetails.study_level}}"></Label>
               
-              <Label row="6" column="1" style="font-weight: 800;" text='{{"services.academic_status.title" | translate}} :'></Label>
-              <Label row="6"  column="0" text="{{studentTermDetails.acadimic_status}}"></Label>
+              <Label row="6" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.academic_status.title" | translate}} :'></Label>
+              <Label row="6"  column="0" class="ysPBox2" text="{{studentTermDetails.acadimic_status}}"></Label>
 
-              <Label row="7" column="1" style="font-weight: 800;" text='{{"general.academic_position" | translate}} :'></Label>
-              <Label row="7"  column="0" text="{{studentTermDetails.ACADIMICPOSITION}}"></Label>
+              <Label row="7" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.academic_position" | translate}} :'></Label>
+              <Label row="7"  column="0" class="ysPBox2" text="{{studentTermDetails.ACADIMICPOSITION}}" style="text-align: right;"></Label>
 
-              <Label row="8" column="1" style="font-weight: 800;" text='{{"general.stage" | translate}} :'></Label>
-              <Label row="8"  column="0" text="{{studentTermDetails.STD_UGGR}}"  style="text-align: right;"></Label>
+              <Label row="8" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.stage" | translate}} :'></Label>
+              <Label row="8"  column="0" class="ysPBox2" text="{{studentTermDetails.STD_UGGR}}"  style="text-align: right;"></Label>
             </GridLayout>
-
+<!--
         <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
             <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
             <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
         </FlexboxLayout>   
-
+-->
     </FlexboxLayout>
 </ScrollView>
 

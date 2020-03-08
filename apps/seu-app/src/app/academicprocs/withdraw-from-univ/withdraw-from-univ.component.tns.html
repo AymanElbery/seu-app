@@ -1,22 +1,37 @@
-<ActionBar>
+
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-    -->
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()"
-        ios.position="left">
+
+-->
+
+<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
+
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
+<StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
+
+  </StackLayout>
+
+    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <Label text='{{"services.withdrow_univ.title"|translate}}'></Label>
+
 </ActionBar>
 
-<FlexboxLayout flexDirection="column">
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
 
-    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+<FlexboxLayout flexDirection="column"  *ngIf="!isLoading">
+
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1"  text='{{"services.withdrow_univ.title"|translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    
+    </GridLayout>
 
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
@@ -26,9 +41,10 @@
         </ListView>
     </FlexboxLayout>
 
-    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between" style="margin-right:20;">
-        <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
-        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
+  
+
+    <FlexboxLayout flexDirection="row-reverse" alignItems="center"  *ngIf="!isLoading" justifyContent="center">
+     <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
     </FlexboxLayout>
 
     
@@ -85,3 +101,4 @@
         </ng-template>
     </RadListView>
 </FlexboxLayout>
+</ScrollView>

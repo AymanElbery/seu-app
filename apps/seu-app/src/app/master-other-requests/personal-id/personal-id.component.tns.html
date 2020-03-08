@@ -38,6 +38,7 @@
                 <label text='{{"general.request.req_delete"|translate}}'></label>
             </FlexboxLayout>
 
+         <FlexboxLayout *ngIf="reqData.requests && reqData.requests.length>0">
             <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.requests;let i=index;" flexDirection="row-reverse" 
             class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
                 <Label [text]="item.id"></Label>
@@ -48,6 +49,7 @@
                 <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas -rounded-sm blue-button"></Button>
                 <Label *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}'></Label>
             </FlexboxLayout>
+        </FlexboxLayout>
         </FlexboxLayout>
 
 </FlexboxLayout>

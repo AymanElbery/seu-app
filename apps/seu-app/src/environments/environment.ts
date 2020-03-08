@@ -3,13 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  cmslink: 'https://test.seu.edu.sa/umbraco/Surface/',
-  baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
+  cmslink: 'https://seu.edu.sa/umbraco/Surface/',  baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso/', // newservices/
   servicesprefix: 'api-test', // api-test
   appsprefix: 'apps-test', // api-test
-  loginpage: 'login-sst.php',
+  loginpage: 'login-testl.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
   ssoAuth: 'sso:s$0$3u2030'
 };
