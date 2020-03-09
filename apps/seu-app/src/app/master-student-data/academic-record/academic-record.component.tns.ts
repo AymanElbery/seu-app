@@ -28,6 +28,9 @@ export class AcademicRecordComponent implements OnInit {
   isLoading = false;
 
   templateSelector(item: any, index: number, items: any): string {
+    if(index==0){      
+      return !item.expanded ? 'expanded' : 'default';
+    }
     return item.expanded ? 'expanded' : 'default';
 }
 

@@ -1,23 +1,26 @@
-<ActionBar>
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-    -->
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()"
-        ios.position="left">
+
+-->
+
+<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
+
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
+<StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
+
+  </StackLayout>
+
+    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <Label text='{{"services.withdrow_univ.title"|translate}}'></Label>
+
 </ActionBar>
-
-<FlexboxLayout flexDirection="column">
-
-    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
-
+    <ScrollView>
+        
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
             <ng-template let-item="item">
@@ -26,30 +29,41 @@
         </ListView>
     </FlexboxLayout>
 
-    <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="space-between" style="margin-right:20;">
-        <Label text='{{"general.request.pre_requests"|translate}}' style="color:#6189f4;"></Label>
-        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
-    </FlexboxLayout>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox" *ngIf="!isLoading &&reqData.reqs &&reqData.reqs.length>0">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" [ngClass]="{'throw_no_border':reqData.reqs.length === 0}"> 
-                <label text='{{"general.request.req_no"|translate}}' style="margin-left: 20;"></label>
-                <label text='{{"general.request.date_and_status"|translate}}'  style="margin-left: 20;"></label>
-                <label text='{{"general.request.delete_print_req"|translate}}'  style="margin-left: 20;"></label>
-            </FlexboxLayout>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.reqs;let i=index;" flexDirection="row-reverse" class="trow" [ngStyle]="{'border-bottom-width':i === reqData.reqs.length-1 ? '0' : '1' }">
-                <Label [text]="item.request_number" ></Label>
-                <FlexboxLayout alignItems="center" flexWrap="nowrap" flexDirection="column">
-                    <Label [text]="item.insert_date"></Label>
-                    <Label [text]="item.status"></Label>
-                </FlexboxLayout>
-                <FlexboxLayout alignItems="center" flexWrap="nowrap" flexDirection="column">
-                    <Button (tap)="print(item.request_number)" class="blue-button fas -rounded-sm" text="&#xf02f;">
-                    </Button>
-                    <label text="/"></label>
-                    <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="blue-button fas  -rounded-sm"></Button>
-                    <Label *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}'></Label>
-                </FlexboxLayout>
-            </FlexboxLayout>
+<FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1"  text='{{"services.withdrow_univ.title"|translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    
+    </GridLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" alignItems="center" justifyContent="center">
+        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
+    </FlexboxLayout>
+
+    <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of reqData.reqs;let i=index;" >
+                      
+                      
+        <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.request.req_no"|translate}}'></Label>
+        <Label row="1"  column="0" class="ysPBox2" [text]="item.request_number" style="text-align: right;"></Label>
+    
+        <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.req_date"|translate}}'></Label>
+        <Label row="2"  column="0" class="ysPBox2" [text]="item.insert_date" style="text-align: right;"></Label>
+       
+        <Label row="3"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.req_status"|translate}}'></Label>
+        <Label row="3"  column="0" class="ysPBox2" [text]="item.status" ></Label>
+
+        <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"   text='{{"general.request.req_print"|translate}}'></Label>
+        <Button  row="4"  column="0"  text="&#xf02f;" (tap)="print(item.request_number)" class="fas blue-button "></Button>
+         
+        <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"   text='{{"general.request.req_delete"|translate}}'></Label>
+        <Button row="5" column="0" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas  blue-button"></Button>
+        <Label row="5" class="ysPBox2" column="0" *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}'  ></Label>
+       
+   
+      </GridLayout>
         </FlexboxLayout>
-</FlexboxLayout>
+</ScrollView>

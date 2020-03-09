@@ -1,10 +1,10 @@
-<FlexboxLayout  flexDirection="column" style="padding: 20;">
-    <Label text='{{"services.postpone_request.postpone_req"|translate}}' class="header"></Label>
+<FlexboxLayout  flexDirection="column" style="padding: 20;" class="pop">
+    <Label text='{{"services.postpone_request.postpone_req"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
 
-    <Label text='{{"services.postpone_request.alert"|translate}}' textWrap="true"></Label>
+    <Label text='{{"services.postpone_request.alert"|translate}}' textWrap="true" style="color: #010447;" class="font"></Label>
     <Label text=' {{"services.postpone_request.desire"|translate}}{{reqData.cur_term}}' textWrap="true"></Label>
 
-    <Label text='{{"services.postpone_request.period"|translate}}' style="margin-top: 20;"></Label>
+    <Label text='{{"services.postpone_request.period"|translate}}' style="color: #010447;" class="font"></Label>
     <DropDown
     [items]="termsDropDown"
     (selectedIndexChanged)="getTerm($event)"
@@ -14,15 +14,15 @@
     >
     </DropDown>
 
-    <Label text='{{"services.postpone_request.mobile"|translate}}' style="margin-top: 20;margin-right: 20;"></Label>
+    <Label text='{{"services.postpone_request.mobile"|translate}}' style="color: #010447;" class="font"></Label>
     <TextField #mobile="ngModel" [(ngModel)]="postpone.mobile" required></TextField>
 
-    <Label text='{{"services.postpone_request.reason"|translate}}' style="margin-top: 20;margin-right: 20;"></Label>
+    <Label text='{{"services.postpone_request.reason"|translate}}' style="color: #010447;" class="font"></Label>
     <TextField [(ngModel)]="postpone.reason" #reason="ngModel" required></TextField>
     
     <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between" style="margin-top: 20;">
-        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()"  class="-primary -rounded-sm" style="width: 50%;"></Button>
-        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()"  class="-primary -rounded-sm" style="width: 50%;"></Button>
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()"  class="print-btn" style="width: 44%;"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()"  class="print-btn" style="width: 44%;"></Button>
     </FlexboxLayout>
 
 </FlexboxLayout>
