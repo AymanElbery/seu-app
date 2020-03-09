@@ -60,7 +60,7 @@
     <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="center">
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
     </FlexboxLayout>
-
+<!--
         <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading&& reqData.requests && reqData.requests.length>0" class="ysBox">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" [ngClass]="{'throw_no_border':reqData.requests.length === 0}"> 
                 <label text='{{"general.request.req_no"|translate}}'></label>
@@ -83,8 +83,8 @@
                 </FlexboxLayout>
             </FlexboxLayout>
         </FlexboxLayout>
-
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of reqData.requests;let i=index;">
+-->
+        <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of reqData.requests;let i=index;">
                       
                       
             <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.request.req_no"|translate}}'></Label>
