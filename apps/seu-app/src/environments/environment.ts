@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  cmslink: 'https://test.seu.edu.sa/umbraco/Surface/',
+  production:false,
+  cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso/', // newservices/
   servicesprefix: 'api-test', // api-test
