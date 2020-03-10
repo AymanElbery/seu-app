@@ -3,6 +3,11 @@
   var nav = $('nav');
   var navHeight = nav.outerHeight();
 
+  $(document).on("change", ".custom-file-input", function () {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  });
+
   $('.navbar-toggler').on('click', function () {
     if (!$('#mainNav').hasClass('navbar-reduce')) {
       $('#mainNav').addClass('navbar-reduce');
