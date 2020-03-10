@@ -6,12 +6,12 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { UserService } from './services/user.service';
 import {FormsModule } from '@angular/forms';
-
+import { SeucommonModule } from '../seucommon/seucommon.module';
 @NgModule({
   declarations: [LoginFormComponent, RegistrationFormComponent],
   imports: [
     CommonModule,
-    AccountRoutingModule,FormsModule 
+    AccountRoutingModule,FormsModule,SeucommonModule 
   ],
   providers:[UserService]
 })

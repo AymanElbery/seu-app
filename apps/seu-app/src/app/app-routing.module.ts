@@ -91,7 +91,12 @@ const routes: Routes = [
         loadChildren:
           './master-student-data/master-student-data.module#MasterStudentDataModule',
         canActivate: [GRGuard]
-      }
+      },
+      {
+        path: 'wafi',
+        loadChildren:
+          './wafi/wafi.module#WafiModule'
+              }
     ]
   },
   {

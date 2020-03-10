@@ -625,8 +625,8 @@
         "no_conflict": "أقر بالإطلاع علي سياسة تعارض المصالح الخاصة بالجامعة وليس لدي أي تعارض مصالح.",
         "has_conflict": "أقر بالإطلاع علي سياسة تعارض المصالح الخاصة بالجامعة ولدي احتمالية تعارض مصالح وسوف أتبع الإجراءات المعلنة للإفصاح عنها.",
         "send": "إرسال",
-        "doc_link":"/assets/files/policy.pdf",
-        "notes":"* يرجى الاطلاع على الوثيقة المرفقة بالكامل حتى نهايتها لتفعيل خاصية الاختيار"
+        "doc_link": "/assets/files/policy.pdf",
+        "notes": "* يرجى الاطلاع على الوثيقة المرفقة بالكامل حتى نهايتها لتفعيل خاصية الاختيار"
     },
     "instructions": {
         "exams": {
@@ -658,41 +658,124 @@
             "GuidelinesList": [
                 {
                     "title": "تعليمات ما قبل الاختبارات",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
                 },
                 {
                     "title": "تعليمات أثناء الاختبارات",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam.pdf"
                 },
                 {
                     "title": "المتطلبات الفنية للأجهزة المحمولة/ اللوحية خاص بالاختبارات الإلكترونية",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements.pdf"
                 },
                 {
                     "title": "فيديو تعريفي لكيفية أداء الاختبار الإلكتروني",
-                    "link":"https://www.youtube.com/watch?v=uwFhDd1ahkc&feature=youtu.be"
+                    "link": "https://www.youtube.com/watch?v=uwFhDd1ahkc&feature=youtu.be"
                 },
                 {
                     "title": "الاختبارات الإلكترونية باستخدام أجهزة الحاسوب المكتبية/المحمولة​ (Windows & Mac)",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "​الاختبارات الإلكترونية باستخدام الأجهزة اللوحية (iOS &Android )",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "الأسئلة الشائعة​",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs.pdf"
                 },
                 {
                     "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام Mac",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC.pdf"
                 },
                 {
                     "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام windows",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN.pdf"
                 }
             ]
         }
+    },
+    "wafi": {
+        "wafi": "Wafi",
+        "month": "شهر",
+        "year": "Year",
+        "description": "Description",
+        "amount": "Amount",
+        "monthYear": "Month/Year",
+        "branch": "Branch",
+        "bank": "Bank",
+        "acnountno": "Acount No",
+        "balance": "Balance",
+        "basicsalary": "Basic Salary",
+        "selectyear": "Select Year",
+        "period": "Period",
+        "startDate": "Start Date",
+        "no": "NO",
+        "decisionNo": "DecisionNo",
+        "showPrint": "Show Print",
+        "seq": "Seq",
+        "startDateG": "Start DateG",
+        "vacationCode": "Vacation Code",
+        "endDate": "End Date",
+        "yearCode": "Year Code",
+        "vacationCoverage": "Vacation Coverage",
+        "VacationReservedBalance": "Vacation Reserved Balance",
+        "VacationAbsenceBalance": "Vacation Absence Balance",
+        "salarydetailsselected": "Salary Details Selected Month/Year",
+        "VacationBalance": "Vacation Balance",
+        "personal": "Personal",
+        "PersonalInfo": "Personal Info",
+        "Salaries": "Salaries",
+        "Vacations": "Vacations",
+        "print-report": "Print Report",
+        "EMP_REPORTS_WITHOUT_SALARY": "EMP_REPORTS_WITHOUT_SALARY",
+        "EMP_REPORTS_WITHOUT_SALARY EN": "EMP_REPORTS_WITHOUT_SALARY EN",
+        "EMP_REPORTS_WITH_SALARY": "EMP_REPORTS_WITH_SALARY",
+        "EMP_REPORTS_WITH_SALARY EN": "EMP_REPORTS_WITH_SALARY EN",
+        "EMP_REPORTS_WITH_SALARY_AND_FEES": "EMP_REPORTS_WITH_SALARY_AND_FEES",
+        "EMP_REPORTS_WITH_SALARY_AND_FEES EN": "EMP_REPORTS_WITH_SALARY_AND_FEES EN",
+        "EMP_REPORTS_WITH_SALARY_DTL": "EMP_REPORTS_WITH_SALARY_DTL",
+        "typrhere": "أكتب هنا",
+        "selectvacationtype": " Select Vacation Type",
+        "HousingReaport": "Housing Reaport",
+        "RequestType": "Request Type",
+        "VactionType": "Vaction Type",
+        "Period": "Period",
+        "BeginDate": "Begin Date",
+        "EndDate": "End Date",
+        "Status": "Status",
+        "Details": "Details",
+        "FromCountry-City": "From Country-City",
+        "ToCountry-City": "To Country-City",
+        "Ticket": "Ticket",
+        "RoundTrip": "RoundTrip",
+        "Attendants": "Attendants",
+        "CompensationAmount": "Compensation Amount",
+        "DecisionNo": "DecisionNo",
+        "Task/Direction": "Task/Direction",
+        "FromTime": "DeleFromTimete",
+        "ToTime": "ToTime",
+        "AltrnativeEmployee": "Altrnative Employee",
+        "CompensationandTransport": "Compensation and Transport",
+        "ToCountry": "To Country",
+        "TpCity": "TpCity",
+        "MandateType": "Mandate Type",
+        "CourseType": "Course Type",
+        "Task": "Task",
+        "Direction": "Direction",
+        "scheduleName": "schedule Name",
+        "sideName": "Side Name",
+        "DisclaimerReason": "Disclaimer Reason",
+        "requestApprovalsData": "Request Approvals Data",
+        "StepNo": "Step No",
+        "ApprovedEmployee": "Approved Employee",
+        "DuatyDescription": "Duaty Description",
+        "TransactionDate": "Transaction Date",
+        "Agree/disagree": "Agree/Disagree",
+        "RejecteReasone": "Rejecte Reasone",
+        "RequestDtails": "Request Dtails",
+        "Delete": "Delete",
+        "employee-requests": "Employee-Requests",
+        "requests-lists": "Requests-Lists"
     }
 }
