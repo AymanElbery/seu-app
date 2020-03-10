@@ -20,6 +20,7 @@ getEmpReqdetail(serviceRequestSeq:any,serviceRequestType:any) {
 }
 
 deletetEmpRequest(serviceRequestSeq:any,serviceRequestType:any) { 
+  console.log(serviceRequestSeq,serviceRequestType);
   return this.wafihttRequest.postRequest_obj('emp/delete-service-request',{serviceRequestSeq,serviceRequestType});  
 }
 

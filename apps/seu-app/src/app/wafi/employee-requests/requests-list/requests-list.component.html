@@ -33,7 +33,7 @@
         <td>{{empreqs.requestStatus}}</td>  
        
         <td class="prin" style="color: #fff;"><a  (click)="getreqdetail(i,empreqs.requestSeq,empreqs.requestType)" class="btn">{{"wafi.Details" | translate}} <i class="ik ik-book"></i> </a></td>
-        <td class="prin" style="color: #fff;" *ngIf="empreqs.enableDelete==true"><a  (click)="delete(i,empreqs.requestSeq,empreqs.requestType)" class="btn">{{"wafi.Delete" | translate}} <i class="ik ik-delete"></i> </a></td>
+        <td class="prin" style="color: #fff;" *ngIf="empreqs.enableDelete==true"><a  (click)="delete(empreqs.requestSeq,empreqs.requestType)" class="btn">{{"wafi.Delete" | translate}} <i class="ik ik-delete"></i> </a></td>
      
       </tr>
 

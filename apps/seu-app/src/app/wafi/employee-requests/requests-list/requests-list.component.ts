@@ -39,7 +39,7 @@ export class RequestsListComponent implements OnInit,OnDestroy {
       this.subscription = this.empreqservice.getEmpReqLists().subscribe(empreqs => {
        if (empreqs) {       
          this.emplistrequest = (empreqs as any).data["serviceRequestTable"];;
-         //console.log("emp request",this.emplistrequest);      
+         console.log("emp request",this.emplistrequest);      
          this.isLoading = false;      
        } else {       
        
@@ -62,6 +62,7 @@ export class RequestsListComponent implements OnInit,OnDestroy {
 
        deleting = false;
   delete(requestSeq:any, requestType:any) {
+    console.log(requestSeq,requestType);
     if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.subscriptiondelreq = this.empreqservice.deletetEmpRequest(requestSeq, requestType).subscribe(empreqsdel => {
