@@ -8,6 +8,7 @@ import { HttpRequestService } from '../../shared/services/http-request.service';
 export class TrainingRequestService {
   newreqs = false;
   reqData;
+  instructions = [];
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
     this.configService.baseUrl = "stdservicesapi";

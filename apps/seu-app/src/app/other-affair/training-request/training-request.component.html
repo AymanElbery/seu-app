@@ -27,7 +27,7 @@
       {{msg.body}}
     </div>
   </div>
- <br/>
+  <br />
   <!-- <div style="direction: ltr;text-align: center">
 
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary"  (click)="openDialoge()">
@@ -52,52 +52,44 @@
           <tr>
             <th scope="col">{{"services.training_request.destination"|translate}}</th>
             <th scope="col">{{"general.request.req_date"|translate}}</th>
-            <th scope="col">{{"general.request.req_status"|translate}}</th>
             <th scope="col">{{"general.request.req_print"|translate}}</th>
-            <th scope="col">{{"general.request.req_delete"|translate}}</th>
-
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let it of reqData.reqs;let i=index;">
             <td>{{it.organization_name}}</td>
             <td>{{it.insert_date}}</td>
-            <td>{{it.status}}</td>
 
-
-            <td><a class="btn btn-primary" [href]="print(it.request_number)"><span
-                  class="ik ik-printer"></span>
+            <td><a class="btn btn-primary" [href]="print(it.request_number)"><span class="ik ik-printer"></span>
                 {{"general.print" | translate}} </a></td>
-
-            <!-- <td><button [disabled]='!it.deletable || it.time_to_delete_per_hour<=0'  class="btn btn-sm btn-danger" style="color: white"  (click)="delete(it.request_number,i)"><i  class="fa fa-trash"><app-timer [hr]="it.time_to_delete_per_hour"></app-timer></i> </button></td>  -->
-
-            <td><button [disabled]='!it.deletable' class="btn btn-sm btn-danger" style="color: white"
-                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
-
           </tr>
-
         </tbody>
       </table>
     </div>
     <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading">
       <div class="row mb-10">
-        <!-- <p style="direction: rtl;float: right;text-align: right;padding-right: 50px"> -->
         <div style="margin-top: 15px;">
-          <h3 style="direction: rtl;float: right;text-align: right;padding-right: 50px">تعليمات الطلب </h3>
+          <h3 style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+            {{"services.training_request.instructions"|translate}} </h3>
         </div>
       </div>
       <div class="row">
         <ul>
-          <ol>
-            <li>{{"services.training_request.condition"|translate}}</li>
-            <li>{{"services.training_request.text"|translate}}
-               <a href="#">{{"general.ar_language"|translate}}</a>
-              <a href="#">{{"general.en_language"|translate}}</a>
-          {{"services.training_request.info"|translate}}
-              <a href="#"> {{"services.training_request.here"|translate}}</a>) </li>
+          <li>{{instructions['txt1']}}</li>
+          <li>{{instructions['txt2']}}
+            <ng-container *ngIf="instructions['formAr']">
+              <a [href]="instructions['formAr']">{{"services.training_request.form_ar"|translate}}</a>
+            </ng-container>
+            <ng-container *ngIf="instructions['formEn']">
+              <a [href]="instructions['formEn']">{{"services.training_request.form_en"|translate}}</a>
 
-            <li> {{"services.training_request.training_mail"|translate}} </li>
-          </ol>
+            </ng-container>
+            <ng-container *ngIf="instructions['StudentLink']">
+              <a [href]="instructions['StudentLink']">{{"services.training_request.student_form"|translate}}</a>
+            </ng-container>
+          </li>
+          <li>{{instructions['txt3']}}</li>
+          <li>{{instructions['txt4']}}</li>
         </ul>
       </div>
     </div>
