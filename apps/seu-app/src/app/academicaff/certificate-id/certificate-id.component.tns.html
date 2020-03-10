@@ -84,6 +84,7 @@
   </FlexboxLayout>
 
   <ng-template [ngIf]="lectures !=null" [ngIfElse]="NoLec">
+    <!--
     <StackLayout  class="ysBox" row="2">
     <FlexboxLayout  justifyContent="space-between" flexDirection="column">
     <FlexboxLayout class="throw" justifyContent="space-between" flexWrap="nowrap" flexDirection="row-reverse" [ngClass]="{'throw_no_border':lectures.length === 0}">
@@ -113,6 +114,31 @@
     </FlexboxLayout>
   </FlexboxLayout>
 </StackLayout>
+-->
+<GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of lectures" >
+                      
+                      
+  <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" [text]="certificateDetails.labels.course_title"></Label>
+  <Label row="1"  column="0" class="ysPBox2" [text]="item.CRSE_TITLE" style="text-align: right;"></Label>
+
+  <Label row="2"  column="1"  class="ysPBox" style="font-weight:800; text-align: right;" [text]="certificateDetails.labels.crn"></Label>
+  <Label row="2"  column="0" class="ysPBox2" [text]="item.CRN" style="text-align: right;"></Label>
+ 
+  <Label row="3"  column="1"  class="ysPBox" style="font-weight:800; text-align: right;" [text]="certificateDetails.labels.roomcode" ></Label>
+  <Label row="3"  column="0" class="ysPBox2" [text]="item.ROOM_CODE" style="text-align: right;" ></Label>
+
+  <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"   [text]="certificateDetails.labels.day_and_date"></Label>
+  <Label row="4"  column="0" class="ysPBox2"[text]="item.DAYES" style="text-align: right; margin-right: -10;"></Label>
+   
+  <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"  [text]="certificateDetails.labels.time"></Label>
+  <Label row="5"  column="0" class="ysPBox2"[text]="item.LECT_TIME" style="text-align: right;"></Label>
+
+  <Label row="6"  column="1"  class="ysPBox" style="font-weight: 800; text-align:right;" [text]="certificateDetails.labels.course_type" ></Label>
+  <Label row="6"  column="0" class="ysPBox2" [text]="item.CRSE_TYPE"  ></Label>
+ 
+
+</GridLayout>
+
 </ng-template>
 
 <ng-template #NoLec>  

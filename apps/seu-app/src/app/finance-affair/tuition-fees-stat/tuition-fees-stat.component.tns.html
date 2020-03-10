@@ -25,12 +25,8 @@
         <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
     </StackLayout>
-    <GridLayout  columns="auto, *" class="serv-title">
-        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
-        <Label col="1" text='{{"services.exam.certatt" | translate}}' class="serv-name" ></Label>
-        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+
     
-    </GridLayout>
         <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
             <ng-template let-item="item">
@@ -39,36 +35,45 @@
         </ListView>
     </FlexboxLayout>
     <StackLayout *ngIf="!isLoading">
-       
+        <GridLayout  columns="auto, *" class="serv-title">
+            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+            <Label col="1" text='{{"services.finance.feepayst" | translate}}' class="serv-name" ></Label>
+            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        
+        </GridLayout>
+       <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout" style="margin-top: 20;">
+            <Button text="عربى" class="print-btn" (tap)="onArabicPrint()"></Button>
+            <Button text="English" class="print-btn" (tap)="onEnglishPrint()"></Button>
+        </FlexboxLayout>
 
 
-        <StackLayout *ngIf="feesData.values">
-            <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,100">
+        <StackLayout *ngIf="feesData">
+            <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,100">
 
                 <Label row="0" colSpan="2" class="ysHBox" text="{{'menu.userData'|translate}}"></Label>
 
-                <Label row="1" column="1" style="font-weight: 800;"
+                <Label textWrap="true" class="ysPBox" row="1" column="1" 
                     text="{{'general.female_or_male_name'|translate}} :"></Label>
-                <Label row="1" column="0" text="{{feesData.values.std_name}}"></Label>
+                <Label class="ysPBox2" row="1" column="0" text="{{feesData.values.std_name}}"></Label>
 
-                <Label row="2" column="1" style="font-weight: 800;" text="{{'general.student_id'|translate}} :"></Label>
+                <Label  textWrap="true" class="ysPBox"  row="2" column="1"  text="{{'general.student_id'|translate}} :"></Label>
                 <Label horizontalAlignment="right" row="2" column="0" text="{{feesData.values.std_id}}"></Label>
 
-                <Label row="3" column="1" style="font-weight: 800;" text="{{'general.ssn'|translate}} :"></Label>
+                <Label  textWrap="true" class="ysPBox"  row="3" column="1"  text="{{'general.ssn'|translate}} :"></Label>
                 <Label horizontalAlignment="right" row="3" column="0" text="{{feesData.values.ssn}}"></Label>
 
-                <Label row="4" column="1" style="font-weight: 800;" text="{{'general.faculty'|translate}}  :"></Label>
+                <Label  textWrap="true" class="ysPBox"  row="4" column="1"  text="{{'general.faculty'|translate}}  :"></Label>
                 <Label row="4" column="0" text="{{feesData.values.coll}}"></Label>
 
-                <Label row="5" column="1" style="font-weight: 800;" text="{{'general.major'|translate}}  :"></Label>
+                <Label  textWrap="true" class="ysPBox"  row="5" column="1" style="font-weight: 800;" text="{{'general.major'|translate}}  :"></Label>
                 <Label row="5" column="0" text="{{feesData.values.major}}"></Label>
 
-                <Label row="6" column="1" style="font-weight: 800;" text="{{'general.level'|translate}}  :"></Label>
+                <Label class="ysPBox"  row="6" column="1" style="font-weight: 800;" text="{{'general.level'|translate}}  :"></Label>
                 <Label row="6" column="0" text="{{feesData.values.level}}"></Label>
             </GridLayout>
         </StackLayout>
 
-        <StackLayout class="ysBox" *ngIf="feesData.labels">
+        <StackLayout class="paragraph" *ngIf="feesData">
             <label textWrap="true"
                 text=" {{feesData.labels.txt1}} {{feesData.values.term}} {{feesData.labels.txt2}} {{feesData.values.final_graduation_GPA}}  {{feesData.labels.txt7}} {{feesData.labels.txt3}} {{feesData.values.total}} {{feesData.labels.txt4}}">
             </label>
@@ -76,9 +81,6 @@
             <label text="{{feesData.labels.txt6}}"></label>
         </StackLayout>
         
-        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout" style="margin-top: 20;">
-            <Button text="عربى" class="my-button" (tap)="onArabicPrint()"></Button>
-            <Button text="English" class="my-button" (tap)="onEnglishPrint()"></Button>
-        </FlexboxLayout>
+        
     </StackLayout>
 </ScrollView>

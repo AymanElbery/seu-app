@@ -1,4 +1,5 @@
-<ActionBar title='{{"services.english-equalize.equalize_english_req"|translate}}'>
+
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
@@ -8,15 +9,18 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
-    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
+    <Label text='{{"services.english-equalize.equalize_english_req"|translate}}' class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
 
 </ActionBar>
+
 <ScrollView>
 <FlexboxLayout flexDirection="column">
 
-    <StackLayout class="ysBox" style="margin-bottom: 20;">
-        <Label [text]='reqData.notes.txt1' style="font-weight: bold;" textWrap="true"></Label>
+    <StackLayout class="ysBox paragraph " style="margin-bottom: 20;margin-top: 20px;">
+        <Label [text]='reqData.notes.txt1' style="font-weight: bold; color: #f08b1c;" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt2" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt3" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt4" textWrap="true"></Label>
@@ -35,7 +39,7 @@
         <Label [text]="reqData.notes.txt10" textWrap="true"></Label>
     </StackLayout>
 
-    <Label text='{{"services.english-equalize.choose_exam_degree"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;"></Label>
+    <Label text='{{"services.english-equalize.choose_exam_degree"|translate}}' style="color: #f08b1c; font-weight: 800;margin-right: 20;"></Label>
 
     <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
@@ -45,15 +49,15 @@
         </FlexboxLayout>
 
         <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.ENG_TESTS;let i=index;" flexDirection="row-reverse" 
-        class="trow" [ngStyle]="{'border-bottom-width':i === reqData.ENG_TESTS.length-1 ? '0' : '1' }"> 
+        class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.ENG_TESTS.length-1 ? '0' : '1' }"> 
             <Label [text]="item.TEST_TITLE" textWrap="true" class="title"></Label>
-            <TextField keyboardType="number" name="score" [(ngModel)]="item.score" style="border-width: 1;width: 10%;margin-top: 20;"></TextField>
+            <TextField keyboardType="number" name="score" [(ngModel)]="item.score" style="border-width: 1; width:15%; border-radius:20px; margin-top: 20;"></TextField>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
         </FlexboxLayout>
     </FlexboxLayout>
     
-    <Label text='{{"services.english-equalize.certificate_image"|translate}}' textWrap="true" style="color: #6189f4; margin-top: 20;margin-right: 20;"></Label>
-    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary"></Button>
+    <Label text='{{"services.english-equalize.certificate_image"|translate}}' textWrap="true" style="color: #f08b1c; margin-top: 20;margin-right: 20;"></Label>
+    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="print-btn"></Button>
 
 </FlexboxLayout>
 </ScrollView>

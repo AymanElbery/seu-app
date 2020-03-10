@@ -18,7 +18,7 @@ export class HomeService {
     const serviceParam = this.getServiceParams(target, studentType, college, Branch);
     //console.log('strart ' + this.configService.getApiURI());
     //console.log(serviceParam);
-    const request = this.httRequest.GetRequest('News?' + serviceParam,false).toPromise();
+    const request = this.httRequest.GetRequest('News?' + serviceParam, false).toPromise();
     // tslint:disable-next-line: max-line-length
     // const request = this.httRequest.GetFullUrlRequest('http://64.202.186.104:86/umbraco/Surface/StudentServices/News?target=students&studentType=UG&college=BU&branch=01F&lang=ar').toPromise();
     //console.log(this.configService.getApiURI());
@@ -39,7 +39,8 @@ export class HomeService {
     if (target === 'employee') {
       params = 'target=' + target;
     }
-    params += "&lang=ar";// + this.translate.currentLang;
+    //params += "&lang=ar";// + this.translate.currentLang;
+    params += "&lang=" + this.translate.currentLang;
     return params;
   }
 
@@ -50,7 +51,7 @@ export class HomeService {
 
     const serviceParam = this.getServiceParams(target, studentType, college, Branch);
 
-    const request = this.httRequest.GetRequest('Advertisement?' + serviceParam,false).toPromise();
+    const request = this.httRequest.GetRequest('Advertisement?' + serviceParam, false).toPromise();
 
     //console.log(this.configService.getApiURI());
     this.configService.EndCmsURI();
@@ -63,7 +64,7 @@ export class HomeService {
     const serviceParam = this.getServiceParams(target, studentType, college, Branch);
     ////console.log('strart ' + this.configService.getApiURI());
     ////console.log(serviceParam);
-    const request = this.httRequest.GetRequest('Events?' + serviceParam,false).toPromise();
+    const request = this.httRequest.GetRequest('Events?' + serviceParam, false).toPromise();
     ////console.log(this.configService.getApiURI());
     this.configService.EndCmsURI();
     ////console.log('end ' + this.configService.getApiURI());

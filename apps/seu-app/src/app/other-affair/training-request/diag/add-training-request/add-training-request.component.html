@@ -6,10 +6,10 @@
       </div>
       <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
         <div class="modal-body">
-          <p><span
-              style="color:red">{{"services.training_request.alert"|translate}}</span>{{"services.training_request.alert_content"|translate}}
+          <p><span style="color:red">{{"services.training_request.alert"|translate}}</span>
+            <!--{{"services.training_request.alert_content"|translate}}-->
+            {{reqData.training_request_addmessage}}
           </p>
-
           <section class="ser-state">
             <div class="container">
               <div class="row ser-block">

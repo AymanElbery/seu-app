@@ -121,3 +121,7 @@ select.form-control {
     padding-left: inherit;
   }
 }
+.custom-file-label:after {
+  right: 0;
+  left: auto;
+}
