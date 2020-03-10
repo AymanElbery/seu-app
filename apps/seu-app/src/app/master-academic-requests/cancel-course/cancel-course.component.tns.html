@@ -21,8 +21,9 @@
 </ActionBar>
 
 <ScrollView>
-    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
-
+    <StackLayout>
+        <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+    </StackLayout>
 <FlexboxLayout flexDirection="column" *ngIf="!isLoading" class="wrap">
 
     <GridLayout  columns="auto, *" class="serv-title">

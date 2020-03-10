@@ -1,37 +1,37 @@
-<FlexboxLayout flexDirection="column" style="padding: 20;">
-    <Label text='{{"services.change_branch.change_branch_req"|translate}}' class="header"></Label>
+<FlexboxLayout flexDirection="column" style="padding: 20;" class="pop">
+    <Label text='{{"services.change_branch.change_branch_req"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
 
-    <StackLayout class="font">
+    <StackLayout>
         <Label text='{{"services.change_branch.alert"|translate}}' style="font-weight: 800;"></Label>
         <Label text='{{"services.change_branch.alert_content"|translate}}' textWrap="true"></Label>
         <Label text='{{"services.change_branch.branch_cancellation_validity"|translate}}' textWrap="true"></Label>
 
         <Label text='{{"services.change_branch.choose_branch"|translate}}'
-            style="font-weight: 800;margin-top: 10;" style="margin-right: 20;margin-top: 20;"></Label>
+        style="color:#010447; border-color: #f08b1c;"></Label>
         <DropDown [items]="branchesDropDown" (selectedIndexChanged)="getBranch($event)"
             hint='{{"services.change_branch.choose_branch"|translate}}'
              itemsTextAlignment="center" 
              itemsPadding="5" 
-             style="margin-bottom: 20;margin-right: 20;"
+             style="padding: 5 15; color:#f08b1c;"
              itemsTextAlignment="left" 
+             class="font dro "
+
              >
         </DropDown>
 
         <StackLayout class="input-field">
-            <Label text='{{"services.change_branch.mobile"|translate}}' class="label font-weight-bold m-b-5" style="margin-right: 20;"></Label>
+            <Label text='{{"services.change_branch.mobile"|translate}}' style="color:#010447; border-color: #f08b1c;"></Label>
             <TextField keyboardType="number" class="input" [(ngModel)]="cmp.mobile"></TextField>
-            <StackLayout class="hr-light"></StackLayout>
         </StackLayout>
         <StackLayout class="input-field">
-            <Label text='{{"services.change_branch.reason"|translate}}' class="label font-weight-bold m-b-5" style="margin-right: 20;"></Label>
+            <Label text='{{"services.change_branch.reason"|translate}}' style="color:#010447; border-color: #f08b1c;"></Label>
             <TextField class="input" [(ngModel)]="cmp.reason"></TextField>
-            <StackLayout class="hr-light"></StackLayout>
         </StackLayout>
     </StackLayout>
     <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between">
-        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="-primary" style="width: 50%;"
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn" style="width: 44%;"
             [isEnabled]="cmp.camp != '' "></Button>
-        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="-primary" style="width: 50%;"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn" style="width: 44%;"></Button>
     </FlexboxLayout>
 
 </FlexboxLayout>

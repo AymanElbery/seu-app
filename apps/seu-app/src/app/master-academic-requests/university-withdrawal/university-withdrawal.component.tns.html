@@ -29,8 +29,9 @@
         </ListView>
     </FlexboxLayout>
 
-    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
-
+    <StackLayout>
+        <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+    </StackLayout>
 <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
 
     <GridLayout  columns="auto, *" class="serv-title">

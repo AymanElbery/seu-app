@@ -1,20 +1,31 @@
-<ActionBar >
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-
--->
-    
-
-   
-<ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
-        ios.position="left" >
-    </ActionItem>    
-    <Label text='{{"services.exam.caa" | translate}}'></Label>
+  
+  -->
+  
+  <NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
+  
+  <!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+  -->
+  <StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
+  
+  </StackLayout>
+  
+    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
 </ActionBar>
 
 <StackLayout>
+
+    <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"services.exam.caa" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+      </GridLayout>
 
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
@@ -23,6 +34,10 @@
             </ng-template>
         </ListView>
     </FlexboxLayout>
+
+    <StackLayout>
+        <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+    </StackLayout>
 
 <TabView selectedIndex="3" *ngIf="!isLoading">
 	<StackLayout *tabItem='{title: firstTabTitle }'>

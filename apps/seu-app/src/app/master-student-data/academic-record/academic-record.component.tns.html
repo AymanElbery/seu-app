@@ -21,8 +21,10 @@
 </ActionBar>
 
 <ScrollView>
-    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
-
+    <StackLayout>
+        <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+    </StackLayout>
+    
     <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
         <GridLayout  columns="auto, *" class="serv-title">
             <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
