@@ -18,6 +18,11 @@ const routes: Routes = [
         path: 'personal',
         loadChildren:
           './personal/personal.module#PersonalModule',
+      },
+      {
+        path: 'employee-requests',
+        loadChildren:
+          './employee-requests/employee-requests.module#EmployeeRequestsModule',
       }
     ]
   }
