@@ -624,7 +624,8 @@
         "no_conflict": "I acknowledge reading and understanding the SEU Conflict of Interest Policy and I hereby declare that I have no conflict  of interests.",
         "has_conflict": "I acknowledge reading and understanding the SEU Conflict of Interest Policy and I may have a conflict of interest and I will follow the announced disclosure procedure.",
         "send": "Send",
-        "doc_link":"/assets/files/policy.pdf"
+        "doc_link":"/assets/files/policy.pdf",
+        "notes":"* Scroll down the appended policy to activate the options below."
     },
     "instructions": {
         "exams": {
