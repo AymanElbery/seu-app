@@ -1,33 +1,63 @@
-<ActionBar>
-    <!-- 
-          <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-  
-    Use the NavigationButton as a side-drawer button in Android
-    because ActionItems are shown on the right side of the ActionBar
-    -->
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://menu" (tap)="onDrawerButtonTap()"
-        ios.position="left">
-    </ActionItem>
-    <Label text='{{"services.certificate_id.title" |translate}}'></Label>
-  </ActionBar>
+<ActionBar style="background:#001628; ">
+  <!-- 
+  Use the NavigationButton as a side-drawer button in Android
+  because ActionItems are shown on the right side of the ActionBar
+
+-->
+
+<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
+
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
+<StackLayout margin-top="0">
+
+  <Image src="~/images/logo_3d.png" style="width:80%"></Image>
+
+</StackLayout>
+
+  <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
+  </ActionItem>
+
+</ActionBar>
   
   <ScrollView>
-  <GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading && certificateDetails.labels">
+    <StackLayout>
+      <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
+    </StackLayout>
+
+  <FlexboxLayout  flexDirection="column"  *ngIf="!isLoading">
+    <GridLayout  columns="auto, *" class="serv-title">
+      <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+      <Label col="1" text='{{"services.certificate_id.title" |translate}}' class="serv-name" ></Label>
+      <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    </GridLayout>
+
+    <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+      <Button class=" print-btn " (tap)="onArabicPrint()">
+          <FormattedString>
+              <Span text="&#xf02f;" class="fas"></Span>
+              <Span text=" طباعة"></Span>
+          </FormattedString>
+      </Button>
+      <Button class=" print-btn " (tap)="onEnglishPrint()">
+          <FormattedString>
+              <Span text="&#xf02f;" class="fas"></Span>
+              <Span text=" Print"></Span>
+          </FormattedString>
+      </Button>
+  </FlexboxLayout>
+
+  <GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading">
   
     <StackLayout row="0" *ngIf="!isLoading">
       <GridLayout  class="ysBox" rows="auto,auto" columns="*,150">
     
     
-        <Label row="0" column="1" style="font-weight: 800;" text="{{certificateDetails.labels.date}}"></Label>
-        <Label row="0"  column="0" text="{{certificateDetails.values.date}}" style="text-align: right;"></Label>
+        <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text="{{certificateDetails.labels.date}}"></Label>
+        <Label row="0"  column="0" class="ysPBox2" text="{{certificateDetails.values.date}}" style="text-align: right;"></Label>
     
-        <Label row="1" column="1" style="font-weight: 800;" text="{{certificateDetails.labels.ssn}}"></Label>
-        <Label row="1"  column="0" text="{{certificateDetails.values.ssn}}" style="text-align: right;"></Label>
+        <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{certificateDetails.labels.ssn}}"></Label>
+        <Label row="1"  column="0" class="ysPBox2" text="{{certificateDetails.values.ssn}}" style="text-align: right;"></Label>
   
       </GridLayout>
     </StackLayout>
@@ -49,31 +79,27 @@
     </FlexboxLayout>
   
       <StackLayout  class="ysBox" row="2">
-      <FlexboxLayout  justifyContent="space-between" flexDirection="column">
-      <FlexboxLayout class="throw" justifyContent="space-between" flexWrap="nowrap" flexDirection="row-reverse">
-        <FlexboxLayout >
-          <Label text="CRN"></Label>
-          <Label text="/"></Label>
-          <Label text="{{'general.request.req_cname' |translate}}"></Label>
-        </FlexboxLayout>
-        <Label text="{{'general.request.day' |translate}}"></Label>
-        <Label text="{{'general.request.time' |translate}}"></Label>
-        <Label text="{{'services.lecture_execuse.lecture_type' |translate}}"></Label>
 
-      </FlexboxLayout>
-  
-     
-      <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of lectures" flexDirection="row-reverse" class="trow">
-        <FlexboxLayout flexDirection="column" alignItems="center" class="wideColumn">
-          <Label [text]="item.course_name" textWrap="true" style="text-align: center;"></Label>
-          <Label [text]="item.course_id"></Label>
-        </FlexboxLayout>
-        <Label [text]="item.day" class="narrowColumn" style="text-align: center;"></Label>
-        <Label [text]="toHTML(item.time)" class="wideColumn" textWrap="true" style="margin-left: 25;"></Label>
-        <Label [text]="toHTML(item.type)" class="narrowColumn"></Label>
-
-      </FlexboxLayout>
-    </FlexboxLayout>
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of lectures" >
+                      
+                      
+          <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text="{{'general.request.req_cname' |translate}}"></Label>
+          <Label row="1"  column="0" class="ysPBox2" [text]="item.course_name" style="text-align: right;"></Label>
+        
+          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800; text-align: right;" text="CRN"></Label>
+          <Label row="2"  column="0" class="ysPBox2" [text]="item.course_id" style="text-align: right;"></Label>
+         
+          <Label row="3"  column="1"  class="ysPBox" style="font-weight:800;" text="{{'general.request.day' |translate}}" ></Label>
+          <Label row="3"  column="0" class="ysPBox2" [text]="item.day" style="text-align: right;" ></Label>
+        
+          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;" text="{{'general.request.time' |translate}}"></Label>
+          <Label row="4"  column="0" class="ysPBox2"[text]="item.time" style="text-align: right; margin-right: -10;"></Label>
+        
+          <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;" text="{{'services.lecture_execuse.lecture_type' |translate}}" ></Label>
+          <Label row="5"  column="0" class="ysPBox2" [text]="item.type"  ></Label>
+         
+        
+        </GridLayout>
   </StackLayout>
  
   
@@ -86,17 +112,8 @@
       <label  [text]="certificateDetails.labels.txt11" textWrap="true"></label>
       <label  [text]="certificateDetails.labels.txt12" textWrap="true"></label>
     </FlexboxLayout>
-  
-    <FlexboxLayout row="4" flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
-      <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
-      <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
-    </FlexboxLayout>
+
   </GridLayout>
-  <FlexboxLayout row="3" justifyContent="center">
-    <StackLayout  margin="10" >
-      <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
-  </StackLayout>
-    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
-  </FlexboxLayout>
+</FlexboxLayout>
   </ScrollView>
   
