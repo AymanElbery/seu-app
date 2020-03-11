@@ -335,7 +335,6 @@ export class AppComponent implements OnInit {
     // tslint:disable-next-line: use-life-cycle-interface
     ngAfterContentInit(): void {
         this.drawer = this.drawerComponent.sideDrawer;
-        this.changeDetectionRef.detectChanges();
 
         if (isIOS) {
           // This disables the swipe gesture to open menu
@@ -394,6 +393,13 @@ export class AppComponent implements OnInit {
         if (isAndroid) {
            listView.androidListView.getAdapter().notifyItemChanged(rowIndex);
         }
+    }
+
+    logout()
+    {
+        const sideDrawer =  app.getRootView() as RadSideDrawer;
+        sideDrawer.closeDrawer();
+        this.router.navigate(['/login']);
     }
 
 }
