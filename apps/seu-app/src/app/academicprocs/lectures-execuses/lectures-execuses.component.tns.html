@@ -45,9 +45,9 @@
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
     </FlexboxLayout>
 
-    <RadListView *ngIf="!isLoading&&reqData.requests &&reqData.requests.length>0" [items]="reqData.requests" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="ysBox">
+    <RadListView *ngIf="!isLoading&&reqData.requests &&reqData.requests.length>0" [items]="reqData.requests" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
         <ng-template let-item="item">
-            <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysPBox"
+            <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop2"
             [ngStyle]="{'border-bottom-width':item ===reqData.requests[reqData.requests.length-1] ? '0' : '1' }">
             <Label  text="&#xf107;"  class="fas arr-drop"></Label>
                 <FlexboxLayout flexDirection="row-reverse">
@@ -67,7 +67,7 @@
                     </FlexboxLayout>
                 </FlexboxLayout>
 
-                <GridLayout class="ysBox"  rows="auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                           
                     <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
                     <Label row="0"  column="0" class="ysPBox2" text="{{item.request_number}}" style="text-align: right;"></Label>
@@ -76,7 +76,7 @@
                     <Label row="1"  column="0" class="ysPBox2" text="{{item.course_title}}"></Label>
                 
                     <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.crn"|translate}} :' style="text-align: right;"></Label>
-                    <Label row="2"  column="0" class="ysPBox" text="{{item.courseId}}" style="text-align: right;"></Label>
+                    <Label row="2"  column="0" class="ysPBox2" text="{{item.courseId}}" style="text-align: right;"></Label>
       
                     <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_status"|translate}} :'></Label>
                     <Label row="3"  column="0" class="ysPBox2" text="{{item.status}}"></Label>
