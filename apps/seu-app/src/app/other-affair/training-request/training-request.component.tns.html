@@ -20,11 +20,15 @@
 
 </ActionBar>
 
+<StackLayout>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+</StackLayout>
+
 <ScrollView>    
 
     <FlexboxLayout  class="wrap"  flexDirection="column">
 
-        <GridLayout  columns="auto, *" class="serv-title">
+        <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
             <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
             <Label col="1" text='{{"services.training_request.title" | translate}}' class="serv-name" ></Label>
             <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
@@ -40,7 +44,6 @@
         </FlexboxLayout>
 
       
-        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
       
         <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="center"> 
