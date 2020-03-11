@@ -1,4 +1,4 @@
-<ActionBar title='{{"services.lecture_execuse.title"|translate}}'>
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
@@ -8,22 +8,25 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
-    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
+    <Label text='{{"services.lecture_execuse.title"|translate}}' class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
 
 </ActionBar>
+
 <ScrollView>
 <FlexboxLayout flexDirection="column">
 
-    <StackLayout class="ysBox" style="margin-bottom: 20;">
-        <Label [text]="reqData.notes[0].text1" class="ysHBox"></Label>
+    <StackLayout class="ysBox paragraph" style="margin-bottom: 20;">
+        <Label [text]="reqData.notes[0].text1"></Label>
         <Label [text]="reqData.notes[1].text1"></Label>
         <Label [text]="reqData.notes[2].text1" textWrap="true"></Label>
         <Label [text]="reqData.notes[3].text1" textWrap="true"></Label>
         <Label [text]="reqData.notes[4].text1" textWrap="true"></Label>
     </StackLayout>
 
-    <Label text='{{"services.lecture_execuse.define_courses_names"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;"></Label>
+    <Label text='{{"services.lecture_execuse.define_courses_names"|translate}}' style="color: #f08b1c; font-weight: 800;margin-right: 20;"></Label>
     <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
             <label text='{{"general.crn"|translate}}'></label>
@@ -31,7 +34,7 @@
             <label text="&#xf00c;" class="fas"></label>
         </FlexboxLayout>
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" *ngFor="let item of reqData.schedules;let i=index;"
-         class="trow" [ngStyle]="{'border-bottom-width':i === reqData.schedules.length-1 ? '0' : '1' }"> 
+         class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.schedules.length-1 ? '0' : '1' }"> 
             <label [text]="item.CRN"></label>
             <label  [text]="item.CRSE_TITLE"></label>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
@@ -39,7 +42,7 @@
     </FlexboxLayout>
 
     <StackLayout style="margin:20 20;">
-        <Label text='{{"services.lecture_execuse.choose_lec_type"|translate}}' style="color: #6189f4; font-weight: 800;"></Label>
+        <Label text='{{"services.lecture_execuse.choose_lec_type"|translate}}' style="color: #f08b1c; font-weight: 800;"></Label>
 
         <DropDown
         [items]="lecsDropDown"
@@ -52,7 +55,7 @@
     </StackLayout>
 
     <StackLayout style="margin:0 20 20;">
-        <Label text='{{"services.lecture_execuse.choose_week"|translate}}' style="color: #6189f4; font-weight: 800;"></Label>
+        <Label text='{{"services.lecture_execuse.choose_week"|translate}}' style="color: #f08b1c; font-weight: 800;"></Label>
         <DropDown
         [items]="weeksDropDown"
         (selectedIndexChanged)="getWeek($event)"
@@ -63,21 +66,21 @@
         </DropDown>
     </StackLayout>
 
-    <FlexboxLayout style="margin:0 20;" flexDirection="row-reverse" alignItems="center">
-        <Label text='{{"services.lecture_execuse.define_date"|translate}}' style="color: #6189f4; font-weight: 800;margin-bottom: 10;"></Label>
+    <FlexboxLayout style="margin:0 20;" flexDirection="column">
+        <Label text='{{"services.lecture_execuse.define_date"|translate}}' style="color: #f08b1c; font-weight: 800;"></Label>
         <TextField hint="mm/dd/yyyy" name="date" #date="ngModel"
-        [(ngModel)]="lectureExecuse.date" style="border-width: 1; width: 60%;margin-top: 10;"></TextField>
+        [(ngModel)]="lectureExecuse.date" style="color: #f08b1c; margin-right:20 ;"></TextField>
     </FlexboxLayout>
 
     <Label text='{{"services.lecture_execuse.absence_cause"|translate}}' textWrap="true"
-    style="color: #6189f4;; margin-right:20 ;"></Label>
+    style="color: #f08b1c; margin-right:20 ;"></Label>
 
     <TextView style="border-color: gray;border-width: 1; padding:10;"
         #reason="ngModel" [(ngModel)]="lectureExecuse.reason" required>
     </TextView>
 
-    <Label text='{{"services.lecture_execuse.file_size"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;margin-top: 20;"></Label>
-    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="-primary"></Button>
+    <Label text='{{"services.lecture_execuse.file_size"|translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;margin-top: 20;"></Label>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn"></Button>
    
 </FlexboxLayout>
 </ScrollView>
