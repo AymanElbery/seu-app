@@ -1,4 +1,4 @@
-<ActionBar style="color: white;">
+<ActionBar  style="background:#001628; ">
 
     <NavigationButton style="color: white;background-color: white;" (tap)="goBack()" text="Go Back"
         android.systemIcon="ic_menu_back">
@@ -13,18 +13,18 @@
 
 
     <StackLayout margin="10">
-        <StackLayout class="form ysBox" padding="15">
+        <StackLayout class="form " padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.doyou' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <DropDown class="input" style="font-weight: 700;" [items]="itemTypeSource"
+                <Label  class="ysPBox" text="{{'services.finance.doyou' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <DropDown  class="ysPBox2" class="input" style="font-weight: 700;" [items]="itemTypeSource"
                     hint="{{'services.finance.choose' | translate}}" itemsTextAlignment="center"
                     (selectedIndexChanged)="exceptionTypeChange($event)"></DropDown>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
 
             <StackLayout class="input-field">
-                <Label text=" {{'services.finance.cat' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <DropDown class="input" style="font-weight: 700;" [items]="itemassociationsSource"
+                <Label  class="ysPBox" text=" {{'services.finance.cat' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <DropDown  class="ysPBox2" class="input" style="font-weight: 700;" [items]="itemassociationsSource"
                     hint="{{'services.finance.choose' | translate}}" itemsTextAlignment="center"
                     (selectedIndexChanged)="assChange($event)"></DropDown>
                 <StackLayout class="hr"></StackLayout>
@@ -33,28 +33,28 @@
         </StackLayout>
         <StackLayout *ngIf="feesException.association=='0'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.sc' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label  class="ysPBox" text="{{'services.finance.sc' | translate}}" class="label font-weight-bold m-b-5"></Label>
 
-                <Button [text]="scText" (tap)="openCustomFilesPicker('sc')" class="-primary"></Button>
+                <Button  class="ysPBox2" [text]="scText" (tap)="openCustomFilesPicker('sc')" class="-primary"></Button>
 
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
 
             <StackLayout class="input-field">
-                <Label text=" {{'services.finance.gid' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <Button [text]="gidText" (tap)="openCustomFilesPicker('gid')" class="-primary"></Button>
+                <Label  class="ysPBox" text=" {{'services.finance.gid' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Button  class="ysPBox2" [text]="gidText" (tap)="openCustomFilesPicker('gid')" class="-primary"></Button>
             </StackLayout>
             <StackLayout class="input-field">
-                <Label text=" {{'services.finance.cid' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <Button [text]="cidText" (tap)="openCustomFilesPicker('cid')" class="-primary"></Button>
+                <Label  class="ysPBox" text=" {{'services.finance.cid' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Button  class="ysPBox2" [text]="cidText" (tap)="openCustomFilesPicker('cid')" class="-primary"></Button>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
         </StackLayout>
         <StackLayout *ngIf="feesException.association=='1'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.wletter' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label  class="ysPBox" text="{{'services.finance.wletter' | translate}}" class="label font-weight-bold m-b-5"></Label>
 
-                <Button [text]="wText" (tap)="openCustomFilesPicker('w')" class="-primary"></Button>
+                <Button  class="ysPBox" [text]="wText" (tap)="openCustomFilesPicker('w')" class="-primary"></Button>
 
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
@@ -63,14 +63,14 @@
 
         <StackLayout *ngIf="feesException.association=='2'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.assletter' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <Button [text]="assText" (tap)="openCustomFilesPicker('ass')" class="-primary"></Button>
+                <Label  class="ysPBox" text="{{'services.finance.assletter' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Button  class="ysPBox2" [text]="assText" (tap)="openCustomFilesPicker('ass')" class="-primary"></Button>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.id' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label  class="ysPBox" text="{{'services.finance.id' | translate}}" class="label font-weight-bold m-b-5"></Label>
 
-                <Button [text]="idText" (tap)="openCustomFilesPicker('id')" class="-primary"></Button>
+                <Button  class="ysPBox2" [text]="idText" (tap)="openCustomFilesPicker('id')" class="-primary"></Button>
 
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
@@ -80,12 +80,15 @@
 
         <StackLayout *ngIf="feesException.exception_type=='1'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.bank' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <DropDown class="input" style="font-weight: 700;" [items]="itemBankSource"
+                <Label  class="ysPBox" text="{{'services.finance.bank' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <DropDown  class="ysPBox2 input" style="font-weight: 700;" [items]="itemBankSource"
                     hint="{{'services.finance.choose' | translate}}" itemsTextAlignment="center"
                     (selectedIndexChanged)="bankChange($event)"></DropDown>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
+
+
+
 
 
             <StackLayout class="input-field">

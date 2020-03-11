@@ -1,4 +1,6 @@
-<ActionBar title='{{"general.request.add_request"|translate}}'>
+
+
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
@@ -8,8 +10,11 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
-    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
+    <Label text='{{"general.request.add_request"|translate}}' class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
 </ActionBar>
     <ScrollView>
     <FlexboxLayout *ngIf="!isLoading" flexDirection="column">
@@ -19,9 +24,9 @@
           
               <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.visitor_student.college_info"|translate}}'></Label>
                 
-              <Label row="1" column="1" style="font-weight: 800;" text="{{'services.visitor_student.desired_college'|translate}} :"></Label>
+              <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.desired_college'|translate}} :"></Label>
               <DropDown
-              row="1" column="0"
+              row="1" column="0" class="ysPBox2"
               [items]="univsDropDown"
               (selectedIndexChanged)="getUniv($event)"
               hint='{{"services.visitor_student.choose_college"|translate}}'
@@ -30,9 +35,9 @@
               >
               </DropDown>
           
-              <Label row="2" column="1" style="font-weight: 800;" text="{{'services.visitor_student.term'|translate}} :"></Label>
+              <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.term'|translate}} :"></Label>
               <DropDown
-              row="2" column="0"
+              row="2" column="0" class="ysPBox2"
               [items]="termsDropDown"
               (selectedIndexChanged)="getTerm($event)"
               hint='{{"services.visitor_student.choose_term"|translate}}'
@@ -41,9 +46,9 @@
               >
               </DropDown>
               
-              <Label row="3" column="1" style="font-weight: 800;" text="{{'services.visitor_student.academic_year'|translate}} :"></Label>
+              <Label row="3"  column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.academic_year'|translate}} :"></Label>
               <DropDown
-              row="3" column="0"
+              row="3" column="0" class="ysPBox2"
               [items]="yearsDropDown"
               (selectedIndexChanged)="getYear($event)"
               hint='{{"services.visitor_student.choose_academic_year"|translate}}'
@@ -57,7 +62,7 @@
           
                 <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.visitor_student.course_info"|translate}}'></Label>
                   
-                <Label row="1" column="1" style="font-weight: 800;" text="{{'general.course_name'|translate}} :"></Label>
+                <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{'general.course_name'|translate}} :"></Label>
                 <TextField 
                 row="1" column="0"
                  #CourseName="ngModel"
@@ -65,7 +70,7 @@
                 style="border-width: 1;"
                   ></TextField>
             
-                <Label row="2" column="1" style="font-weight: 800;" text="{{'services.visitor_student.course_alpha_code'|translate}} :"></Label>
+                <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.course_alpha_code'|translate}} :"></Label>
                 <TextField 
                  row="2" column="0"
                  #CourseSymbol="ngModel"
@@ -73,7 +78,7 @@
                  style="border-width: 1;"
                 ></TextField>
                 
-                <Label row="3" column="1" style="font-weight: 800;" text="{{'services.visitor_student.course_number_code'|translate}} :"></Label>
+                <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.course_number_code'|translate}} :"></Label>
                 <TextField 
                 row="3" column="0"
                 #CourseCode="ngModel"
@@ -81,7 +86,7 @@
                 style="border-width: 1;"
                ></TextField>
 
-               <Label row="4" column="1" style="font-weight: 800;" text="{{'services.visitor_student.course_hours'|translate}} :"></Label>
+               <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.course_hours'|translate}} :"></Label>
                 <TextField 
                 row="4" column="0"
                 #CourseHours="ngModel"
@@ -89,10 +94,10 @@
                 style="border-width: 1;"
                ></TextField>
 
-               <Label row="5" column="1" style="font-weight: 800;" text="{{'services.visitor_student.upload_course_desc'|translate}} :"></Label>
-               <Button row="5" column="0" [text]="fileName" (tap)="openCustomFilesPicker('file')" class="-primary"></Button>
+               <Label row="5" column="1" class="ysPBox" text-wrap="true" style="font-weight: 800;" text="{{'services.visitor_student.upload_course_desc'|translate}} :"></Label>
+               <Button row="5" column="0" [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn"></Button>
                
-               <Label row="6" colSpan="2" text="{{'services.visitor_student.file_size'|translate}}" textWrap="true"></Label>
+               <Label row="6" colSpan="2" class="ysPBox" text="{{'services.visitor_student.file_size'|translate}}" textWrap="true"></Label>
  
               </GridLayout>
 
@@ -100,9 +105,9 @@
           
                 <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.visitor_student.equivalent_course"|translate}}'></Label>
                   
-                <Label row="1" column="1" style="font-weight: 800;" text='{{"services.visitor_student.choose_subject"|translate}}'></Label>
+                <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.visitor_student.choose_subject"|translate}}'></Label>
                 <DropDown
-                row="1" column="0"
+                row="1" column="0" class="ysPBox2"
                 [items]="subjectsDropDown"
                 (selectedIndexChanged)="getSubject($event)"
                 hint='{{"services.visitor_student.choose_subject"|translate}}'
@@ -115,9 +120,9 @@
             <FlexboxLayout  class="ysBox" flexDirection="column">
           
                 <Label class="ysHBox"  text='{{"services.visitor_student.commitment"|translate}}'></Label>
-                <Label text="{{reqData.notes.nots}}"></Label>
+                <Label style="color:#f08b1c ; margin-right: 20;" text="{{reqData.notes.nots}}"></Label>
 
-                <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap">
+                <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" class="paragraph ">
                     <Label text="1-{{reqData.notes.txt1}}" textWrap="true"></Label>
                     <Label text="2-{{reqData.notes.txt2}}" textWrap="true"></Label>
                     <Label text="3-{{reqData.notes.txt3}}" textWrap="true"></Label>
@@ -126,9 +131,9 @@
                 </FlexboxLayout>
    
                 <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" alignItems="center">
-                    <Label text='{{"services.visitor_student.accept"|translate}}'></Label>
+                    <Label  style="color:#f08b1c ; margin-right: 20;"  text='{{"services.visitor_student.accept"|translate}}'></Label>
 
-                    <CheckBox checked="false"
+                    <CheckBox checked="false" 
                     #Approve="ngModel" [(ngModel)]="approves.approve" name="Approve"
                     ></CheckBox>
                 </FlexboxLayout>

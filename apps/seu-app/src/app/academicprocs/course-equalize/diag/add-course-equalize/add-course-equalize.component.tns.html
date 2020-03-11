@@ -1,4 +1,5 @@
-<ActionBar title="{{'services.course-equalize.title'|translate}}">
+
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
@@ -8,14 +9,16 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
-    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
+    <Label text="{{'services.course-equalize.title'|translate}}" class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
 
 </ActionBar>
 <ScrollView>
 <FlexboxLayout flexDirection="column">
-    <StackLayout class="ysBox" style="margin-bottom: 20;">
-        <Label text='{{"services.course-equalize.alert"|translate}}' style="font-weight: 800;"></Label>
+    <StackLayout class="ysBox paragraph" style="margin-bottom: 20;">
+        <Label text='{{"services.course-equalize.alert"|translate}}' style="font-weight: 800; color: #f08b1c;"></Label>
         <Label [text]="reqData.notes.txt2"></Label>
         <Label [text]="reqData.notes.txt3"></Label>
         <Label [text]="reqData.notes.txt4" textWrap="true"></Label>
@@ -27,7 +30,7 @@
         <Label [text]="reqData.notes.txt10" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt11" textWrap="true"></Label>
     </StackLayout>
-    <Label text='{{"services.course-equalize.choose_college"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;"></Label>
+    <Label text='{{"services.course-equalize.choose_college"|translate}}' style="color: #f08b1c; font-weight: 800;margin-right: 20;"></Label>
     <DropDown
     [items]="univsDropDown"
     (selectedIndexChanged)="getUniv($event)"
@@ -37,7 +40,7 @@
     style="margin-bottom: 20;"
     >
     </DropDown>
-    <Label text='{{"services.course-equalize.choose_course_lang_hours_grade"|translate}}' style="color: #6189f4; font-weight: 800;margin-right: 20;"></Label>
+    <Label text='{{"services.course-equalize.choose_course_lang_hours_grade"|translate}}' style="color: #f08b1c; font-weight: 800;margin-right: 20;"></Label>
 
     <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
@@ -49,7 +52,7 @@
         </FlexboxLayout>
 
         <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.course_list;let i=index;" flexDirection="row-reverse" 
-        class="trow" [ngStyle]="{'border-bottom-width':i === reqData.course_list.length-1 ? '0' : '1' }">
+        class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.course_list.length-1 ? '0' : '1' }">
            
             <Label [text]="item.CRSE_TITLE" textWrap="true" class="title"></Label>
 
@@ -82,11 +85,11 @@
         </FlexboxLayout>
     </FlexboxLayout>
    
-    <Label text='{{"services.course-equalize.course_desc"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;margin-top: 20;"></Label>
-    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="-primary"></Button>
+    <Label text='{{"services.course-equalize.course_desc"|translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;margin-top: 20;"></Label>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn"></Button>
    
-    <Label text='{{"services.course-equalize.record_image"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;margin-top: 20;"></Label>
-    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary"></Button>
+    <Label text='{{"services.course-equalize.record_image"|translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;margin-top: 20;"></Label>
+    <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="print-btn"></Button>
 
 </FlexboxLayout>
 </ScrollView>
