@@ -18,8 +18,9 @@ declare var android;
 export class DataDownLoadService {
     public database: any;
     downloader: Downloader = new Downloader();
+     csize = new Subject<any>();
     constructor(private globalService: GlobalBaseService) { }
-
+    
 
     /**
     // tslint:disable-next-line: jsdoc-format
@@ -34,6 +35,8 @@ export class DataDownLoadService {
     */
     downloadFile(apiUrl) {
         const subject = new Subject<any>();
+        this.csize.next(0);
+
 
         // Request format for Downlaoder
         //      DownloadOptions {
@@ -97,6 +100,7 @@ export class DataDownLoadService {
                         console.log(`Current Size : ${progressData.currentSize}%`);
                         console.log(`Total Size : ${progressData.totalSize}%`);
                         console.log(`Download Speed in bytes : ${progressData.speed}%`);
+                        this.csize.next(progressData.value);
                     })
                     .then((completed: DownloadEventData) => {
                         console.log(`zip file saved at : ${completed.path}`);

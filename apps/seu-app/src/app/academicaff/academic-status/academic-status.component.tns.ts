@@ -18,30 +18,31 @@ import { Downloader } from 'nativescript-downloader';
 })
 export class AcademicStatusComponent implements OnInit {
 
-  student:Student={
-    acadimic_position:"",
-    acadimic_position_label:"",
-    current_acadimic_status:"",
-    current_acadimic_status_label:"",
-    final_graduation_GPA:"",
-    name:"",
-    ssn:"",
-    std_adm_term_code:"",
-    std_adm_term_label:"",
-    std_fees:"",
-    std_id:""
+  print = 'طباعة';
+  student: Student = {
+    acadimic_position: '',
+    acadimic_position_label: '',
+    current_acadimic_status: '',
+    current_acadimic_status_label: '',
+    final_graduation_GPA: '',
+    name: '',
+    ssn: '',
+    std_adm_term_code: '',
+    std_adm_term_label: '',
+    std_fees: '',
+    std_id: ''
 };
-  studentTerms=[];
-  studentTermDetails:StudentTerms={
-    ACADIMICPOSITION:"",
-    CAMP_code:"",
-    COLL_CODE:"",
-    MAJR_code:"",
-    RegisterationStatus:"",
-    STD_UGGR:"",
-    acadimic_status:"",
-    gba:"",
-    study_level:""
+  studentTerms = [];
+  studentTermDetails: StudentTerms = {
+    ACADIMICPOSITION: '',
+    CAMP_code: '',
+    COLL_CODE: '',
+    MAJR_code: '',
+    RegisterationStatus: '',
+    STD_UGGR: '',
+    acadimic_status: '',
+    gba: '',
+    study_level: ''
   };
   selectedSems;
   arabicPrint: string;
@@ -52,7 +53,7 @@ export class AcademicStatusComponent implements OnInit {
   terms: ValueItem<number>[] = [];
   acceptanceTerm;
   acceptanceYear: any;
-  constructor(private academicStatusService: AcademicStatusService,private downloader :DataDownLoadService) { }
+  constructor(private academicStatusService: AcademicStatusService, private downloader: DataDownLoadService) { }
 
   ngOnInit() {
     Downloader.init();
@@ -108,9 +109,18 @@ export class AcademicStatusComponent implements OnInit {
     sideDrawer.showDrawer();
   }
   onArabicPrint() {
-    console.log("araaaaaaaaaaaabic",this.arabicPrint);
+    console.log('araaaaaaaaaaaabic', this.arabicPrint);
  //   utils.openUrl(this.EngPrint);
+    this.print = 'جاري التحميل';
     this.downloader.downloadFile(this.arabicPrint);
+    console.log('downloiad');
+    this.downloader.csize.subscribe(x => {
+      console.log(x);
+      this.print = x;
+      if (x == '100') {
+      this.print = 'فتح';
+      }
+    });
   }
   onEnglishPrint() {
     utils.openUrl(this.EngPrint);
