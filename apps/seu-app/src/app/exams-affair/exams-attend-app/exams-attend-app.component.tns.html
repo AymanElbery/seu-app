@@ -151,6 +151,7 @@
             <Button text='{{"general.ar_print"|translate}}' class="print-btn"  (tap)="onArabicPrintTerm()" *ngIf="term" ></Button>
             <Button text='{{"general.en_print"|translate}}' class="print-btn"  (tap)="onEnglishPrintTerm()" *ngIf="termEn"></Button>
         </FlexboxLayout>
+        <ScrollView height="100%">
         <GridLayout   rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="eaData.Term_Exam_Without_Schedule.messages.length==0">
             
             <Label row="0" style="color: white;" colSpan="2"  class="ysHBox"  text='{{eaData.Term_Exam_Without_Schedule.labels.title}}'></Label>
@@ -193,7 +194,7 @@
         </FlexboxLayout>
 
         </GridLayout>
-
+    </ScrollView>
        
 
     </StackLayout>
@@ -312,8 +313,8 @@
         </FlexboxLayout>
 
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="final.length==0">
-            <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()"></Button>
-            <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintFinal()"></Button>
+            <Button text='{{"general.ar_print"|translate}}' class="print-btn"  (tap)="onArabicPrintFinal()"></Button>
+            <Button text='{{"general.en_print"|translate}}' class="print-btn"  (tap)="onEnglishPrintFinal()"></Button>
         </FlexboxLayout>
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="eaData.length > 0">
             
@@ -351,7 +352,6 @@
             <Label text="{{eaData.Term_Exam_Without_Schedule.labels.txt11}}" textWrap="true"></Label>
             </FlexboxLayout>
         </GridLayout>
-      
         
 	</StackLayout>
 </TabView>

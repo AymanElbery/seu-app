@@ -6,6 +6,7 @@ import * as applicationSettings from 'tns-core-modules/application-settings';
 })
 export class GlobalService extends GlobalBaseService {
 
+  
   constructor() {
     super();
   }
