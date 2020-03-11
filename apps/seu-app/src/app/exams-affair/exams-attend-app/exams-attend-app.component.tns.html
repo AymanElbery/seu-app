@@ -22,18 +22,23 @@
 
 
 <StackLayout>
-    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 </StackLayout>
-<GridLayout  columns="auto, *" class="serv-title">
+ 
+<!-- <GridLayout  columns="auto, *" class="serv-title">
     <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
     <Label col="1" text='{{"services.exam.caa" | translate}}' class="serv-name" ></Label>
     <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+ 
+</GridLayout> -->
 
-</GridLayout>
-
-<TabView selectedIndex="3" *ngIf="!isLoading">
-	<StackLayout *tabItem='{title: eaData.Term_Exam_With_Schedule.labels.title}'>
-
+<TabView selectedIndex="3" *ngIf="!isLoading"
+  selectedTabTextColor="#f08b1c" 
+tabBackgroundColor="#f1f1f1"
+tabTextColor ="#010447"
+tabTextFontSize="14"
+androidSelectedTabHighlightColor="#010447">
+	<StackLayout *tabItem="{title: eaData.Term_Exam_With_Schedule.labels.title}">
         <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading &&eaData.Term_Exam_With_Schedule.messages.length>0">
             <ListView [items]="eaData.Term_Exam_With_Schedule.messages">
                 <ng-template let-item="item">
@@ -42,7 +47,6 @@
             </ListView>
         </FlexboxLayout>
       
-
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center"  >
             <Button text='{{"general.ar_language" | translate}}' class="print-btn"  (tap)="onArabicPrint()"></Button>
             <Button text='{{"general.en_language" | translate}}' class="print-btn"  (tap)="onEnglishPrint()"></Button>

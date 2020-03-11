@@ -25,6 +25,13 @@
 
 <FlexboxLayout *ngIf="!isLoading" flexDirection="column">
 
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1"  text='{{"services.exam.execreq" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    
+    </GridLayout>
+
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
             <ng-template let-item="item">
@@ -32,12 +39,7 @@
             </ng-template>
         </ListView>
     </FlexboxLayout>
-    <GridLayout  columns="auto, *" class="serv-title">
-        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
-        <Label col="1" text='{{"services.medical_report.title" | translate}}' class="serv-name" ></Label>
-        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
-    
-    </GridLayout>
+  
     <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="center"> 
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
     </FlexboxLayout>
