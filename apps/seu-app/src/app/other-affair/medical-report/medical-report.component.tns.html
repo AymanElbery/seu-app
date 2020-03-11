@@ -42,9 +42,19 @@
         
         </GridLayout>
             
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading  && mrData.labels" style="margin-top: 20;">
-            <Button text='{{"general.ar_language" | translate}}' class="print-btn"  (tap)="onArabicPrint()"></Button>
-            <Button text='{{"general.en_language" | translate}}' class="print-btn"  (tap)="onEnglishPrint()"></Button>
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <Button class=" print-btn " (tap)="onArabicPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" طباعة"></Span>
+                </FormattedString>
+            </Button>
+            <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" Print"></Span>
+                </FormattedString>
+            </Button>
         </FlexboxLayout>
         
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="!isLoading && mrData.labels">
