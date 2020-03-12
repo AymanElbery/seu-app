@@ -1,6 +1,7 @@
 <div class="main-content">
 
-  
+  <service-header title='{{"wafi.Salaries" | translate}}'></service-header>
+
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
   <div class="form-group">
@@ -20,11 +21,12 @@
       <tr>
 
         <th scope="col">{{"wafi.monthYear" | translate}}</th>
-        <th scope="col">{{"wafi.branch" | translate}}</th>
+        <!-- <th scope="col">{{"wafi.branch" | translate}}</th> -->
         <th scope="col">{{"wafi.bank" | translate}}</th>
         <th scope="col">{{"wafi.acnountno" | translate}}</th>
-        <th scope="col">{{"wafi.balance" | translate}}</th>
         <th scope="col">{{"wafi.basicsalary" | translate}}</th>
+        <th scope="col">{{"wafi.balance" | translate}}</th>
+
       </tr>
     </thead>
     <tbody>
@@ -33,12 +35,12 @@
         <td>
           <a  (click)="getsalarydetail(i,salry.month,salry.year)" style="text-decoration:none;cursor: pointer;font-size:14px;color:#0000FF;">{{salry.monthYear}}</a>
          
-        <td>{{salry.branch}}</td>
+        <!-- <td>{{salry.branch}}</td> -->
         <td>{{salry.bank}}</td>
         <td>{{salry.accountNo}}</td>
-        <td>{{salry.balance}}</td>        
         <td>{{salry.basicSalary}}</td>
-        
+        <td>{{salry.balance}}</td>        
+
       </tr>
 
     </tbody>

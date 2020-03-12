@@ -14,31 +14,23 @@
     <Label text='{{"services.exam.caa" | translate}}'></Label>
 </ActionBar>
 
-<FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
-    <ListView [items]="msgs">
-        <ng-template let-item="item">
-            <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
-        </ng-template>
-    </ListView>
-</FlexboxLayout>
-
 <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 </StackLayout>
 
-<TabView selectedIndex="3" *ngIf="!isLoading && eaData.length">
+<TabView selectedIndex="3" *ngIf="!isLoading">
 	<StackLayout *tabItem='{title: eaData.Term_Exam_With_Schedule.labels.title}'>
 
-        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && eaData.length>0">
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading &&eaData.Term_Exam_With_Schedule.messages.length>0">
             <ListView [items]="eaData.Term_Exam_With_Schedule.messages">
                 <ng-template let-item="item">
-                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
                 </ng-template>
             </ListView>
         </FlexboxLayout>
 
         <ScrollView height="100%">
-            <StackLayout *ngIf="eaData.length > 0">
+            <StackLayout *ngIf="eaData.Term_Exam_With_Schedule.messages.length == 0">
                 <StackLayout>
                     <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                         
@@ -120,7 +112,16 @@
     </StackLayout>
     
 	<StackLayout *tabItem='{title: secondTabTitle}'>
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="eaData.length > 0">
+
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && eaData.Term_Exam_Without_Schedule.messages.length>0">
+            <ListView [items]="eaData.Term_Exam_Without_Schedule.messages">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="eaData.Term_Exam_Without_Schedule.messages.length==0">
             
             <Label row="0" colSpan="2"  class="ysHBox"  text='{{eaData.Term_Exam_Without_Schedule.labels.title}}'></Label>
 
@@ -163,14 +164,23 @@
 
         </GridLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
-            <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintTerm()" ></Button>
-            <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()"></Button>
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="eaData.Term_Exam_Without_Schedule.messages.length==0">
+            <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintTerm()" *ngIf="term" ></Button>
+            <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()" *ngIf="termEn"></Button>
         </FlexboxLayout>
 
     </StackLayout>
     
 	<StackLayout *tabItem='{title: thirdTabTitle}'>
+
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading">
+            <ListView [items]="eaData.Final_Exam_With_Schedule.messages">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
         <ScrollView height="100%">
         <StackLayout *ngIf="eaData.length > 0">
                 <StackLayout>
@@ -255,6 +265,15 @@
     </StackLayout>
     
     <StackLayout *tabItem='{title: forthTabTitle}'>
+
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading">
+            <ListView [items]="eaData.Final_Exam_Without_Schedule.messages">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="eaData.length > 0">
             
             <Label row="0" colSpan="2"  class="ysHBox"  [text]="eaData.Final_Exam_Without_Schedule.labels.title"></Label>
@@ -298,8 +317,8 @@
             </FlexboxLayout>
         </GridLayout>
       
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
-            <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()" ></Button>
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="final.length==0">
+            <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()"></Button>
             <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrintFinal()"></Button>
         </FlexboxLayout>
 	</StackLayout>

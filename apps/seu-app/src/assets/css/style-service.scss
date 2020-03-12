@@ -903,3 +903,8 @@ h6.news-title {
   line-height: 25px;
   margin-bottom: 5px;
 }
+@media (min-width: 1800px){
+  .col-md-6 , .col-sm-6 , .col-xs-6 {
+      max-width: 500px !important;
+  }
+  }

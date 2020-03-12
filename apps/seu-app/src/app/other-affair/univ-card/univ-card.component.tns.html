@@ -31,7 +31,7 @@
         <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="-primary -rounded-sm"></Button>
     </FlexboxLayout>
     <!--*ngIf="reqData.can_add_new_request"-->
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading" class="ysBox">
+        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading && reqData.requests && reqData.requests.length>0" class="ysBox">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" [ngClass]="{'throw_no_border':reqData.requests.length === 0}"> 
                 <label text='{{"general.request.req_no"|translate}}'></label>
                 <label text='{{"general.request.date_and_status"|translate}}'></label>
@@ -42,7 +42,7 @@
             class="trow" [ngStyle]="{'border-bottom-width':i === reqData.requests.length-1 ? '0' : '1' }">
                 <Label [text]="item.id"></Label>
                 <FlexboxLayout alignItems="center" flexDirection="column">
-                    <Label [text]="item.insert_date"  ></Label>
+                    <Label [text]="item.INSRT_DATE"  ></Label>
                     <Label [text]="item.status" ></Label>
                 </FlexboxLayout>
                 <Button *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas -rounded-sm blue-button"></Button>

@@ -99,6 +99,7 @@ export class StudentInfoComponent implements OnInit {
       res => {
         this.reqData = (res as any).data;
         this.msgs = (res as any).messages;
+        if(this.reqData.length>0){
         this.studentInfo = this.reqData.user;
         this.stdData.name_ar = this.studentInfo.NAME_AR;
         this.stdData.name_en = this.studentInfo.NAME_EN;
@@ -116,8 +117,8 @@ export class StudentInfoComponent implements OnInit {
         this.stdData.job_time = this.studentInfo.JOB_TIME;
         this.stdData.job_year = this.studentInfo.JOB_YEAR;
         this.stdData.work_city = this.studentInfo.WORK_CITY;
+      }
         this.isLoading = false;
-         
    for (let i = 0; i < this.reqData.job_status.length; i++) {
     this.status.push(
       {

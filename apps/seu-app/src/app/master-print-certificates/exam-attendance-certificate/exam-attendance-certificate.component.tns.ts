@@ -76,7 +76,7 @@ export class ExamAttendanceCertificateComponent implements OnInit {
         this.stdData.reqData = (res as any).data;
         this.stdData.msgs = (res as any).messages;
         this.reqData = this.stdData.reqData;
-        console.log("reqdataaaaaaaaaa",this.reqData.Term_Exam_With_Schedule.labels )
+        console.log("reqdataaaaaaaaaa",this.reqData )
         this.msgs = this.stdData.msgs;
         this.isLoading = false;
 

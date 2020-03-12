@@ -7,8 +7,10 @@ import { Jsonp } from '@angular/http';
 import { GlobalBaseService } from './shared/services/global-base.service';
 import { GlobalService } from './shared/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { PolicyComponent } from './home/policy.component';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +28,9 @@ export class AppComponent implements OnInit {
     private http: HttpClient,
     private globalService: GlobalBaseService,
     private translate: TranslateService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router,
+    public dialog: MatDialog
   ) {
     this.print = printService;
     translate.addLangs(['ar', 'en']);
@@ -42,7 +46,7 @@ export class AppComponent implements OnInit {
 
     this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
       res => {
-        localStorage.setItem('sid', encodeURI(res['sid']));
+        localStorage.setItem('sid', encodeURI(res['csid']));
         this.userService.loadUserData();
       },
       error => {
@@ -66,6 +70,17 @@ export class AppComponent implements OnInit {
           ? document.getElementById('bodyloading').remove()
           // tslint:disable-next-line: no-unused-expression
           : '';
+
+        if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
+          //this.router.navigate(['/policy']);
+
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.autoFocus = true;
+          dialogConfig.disableClose = true;
+          dialogConfig.maxWidth = 550;
+          //dialogConfig.height = '58%';
+          this.dialog.open(PolicyComponent, dialogConfig);
+        }
       }
     });
   }

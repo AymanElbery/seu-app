@@ -80,9 +80,11 @@ export class RegisterWishesComponent implements OnInit {
         console.log('wishes');
         console.log(this.reqData.wishes_list);
         this.itemSource = new ValueList();
+        if(this.reqData.wishes_list){
         this.reqData.wishes_list.forEach(element => {
           this.itemSource.push({ value: element.id, display: element.value });
         });
+      }
         this.registerWishes = { tow_days: 0, wish: '' };
 
         console.log('msgs');

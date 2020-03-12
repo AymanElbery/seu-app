@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { HttpClient } from '@angular/common/http';
-import { Observable ,  Subscription } from 'rxjs';
-import { EmployeeRequestsService } from '../../services/employee-requests.service';  
+import { Observable, Subscription } from 'rxjs';
+import { EmployeeRequestsService } from '../../services/employee-requests.service';
 
 @Component({
   selector: 'app-requests-details',
@@ -13,12 +13,12 @@ export class RequestsDetailsComponent implements OnInit {
   subscription: Subscription;
   reqdetaildata;
   requestApprovalsData;
-  constructor(@Inject(MAT_DIALOG_DATA) public data, public dialogRef: MatDialogRef<RequestsDetailsComponent>,private empreqservice:EmployeeRequestsService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data, public dialogRef: MatDialogRef<RequestsDetailsComponent>, private empreqservice: EmployeeRequestsService) { }
 
   isLoading = true;
   ngOnInit() {
     this.isLoading = true
-    this.subscription =  this.empreqservice.getEmpReqdetail(this.data.requestSeq,this.data.requestType).subscribe(reqdetail => {
+    this.subscription = this.empreqservice.getEmpReqdetail(this.data.requestSeq, this.data.requestType).subscribe(reqdetail => {
       if (reqdetail) {
         this.reqdetaildata = (reqdetail as any).data["currentServiceRequestTable"];
         this.requestApprovalsData = (reqdetail as any).data["requestApprovalsData"];
@@ -26,10 +26,10 @@ export class RequestsDetailsComponent implements OnInit {
         console.log("curent tab data",this.requestApprovalsData);
         this.isLoading = false;
       } else {
-        
+
         //this.messages = [];
       }
-    }); 
+    });
 
   }
 

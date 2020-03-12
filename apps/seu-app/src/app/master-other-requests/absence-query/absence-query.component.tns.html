@@ -1,120 +1,68 @@
-<ActionBar >
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-
--->
-    
-
-   
-<ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
-        ios.position="left" >
-    </ActionItem>    
-    <Label text='{{"services.absence_quyery.title" |translate}}'></Label>
-</ActionBar>
+  
+  -->
+  
+  <NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
+  
+  <!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+  -->
+  <StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
+  
+  </StackLayout>
+  
+    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
+    </ActionItem>
+  
+  </ActionBar>
 
 <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 </StackLayout>
 
-<TabView selectedIndex="2" *ngIf="!isLoading">
-	<StackLayout *tabItem='{title: firstTabTitle}' class="ysBox">
-        <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start"  *ngIf="absData&&absData.absent_percentage_total.length>0;else array1">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-                <label text='{{"general.crn" | translate}}'></label>
-                <label text='{{"general.course_code" | translate}}'></label>
-                <label text='{{"general.absence_percent" |translate}}'></label>
-            </FlexboxLayout>
+<ScrollView>
 
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.absent_percentage_total" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === absData.absent_percentage_total-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRES_CODE"  ></Label>
-                <Label [text]="item.ABSENT_PERCENTAGE_TOTAL" ></Label>
-            </FlexboxLayout>
-        </FlexboxLayout>
+<FlexboxLayout flexDirection="column">
+
+<GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
+    <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+    <Label col="1" text='{{"services.absence_quyery.title" |translate}}' class="serv-name" ></Label>
+    <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+  </GridLayout>
+
+	<StackLayout *ngIf="!isLoading">
+
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of reqData">
+    
+    
+            <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.course_name" | translate}}'></Label>
+            <Label row="0"  column="0" class="ysPBox2" text="{{item.CRS_TITLE}}" style="text-align: right;"></Label>
+        
+            <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.crn" | translate}}' style="text-align: right;"></Label>
+            <Label row="1"  column="0" class="ysPBox2" text="{{item.CRN}}" style="text-align: right;"></Label>
+
+            <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.course_code" | translate}}'></Label>
+            <Label row="2"  column="0" class="ysPBox2" text="{{item.CRSE_CODE}}" style="text-align: right;"></Label>
+
+            <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.vitrual" |translate}}'></Label>
+            <Label row="3"  column="0" class="ysPBox2" text="{{item.VCOUNT}}" style="text-align: right;"></Label>
+
+            <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.class" |translate}}'></Label>
+            <Label row="4"  column="0" class="ysPBox2" text="{{item.FCOUNT}}" style="text-align: right;"></Label>
+
+            <Label row="5" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.total" |translate}}'></Label>
+            <Label row="5"  column="0" class="ysPBox2" text="{{item.TOTAL}}" style="text-align: right;"></Label>
+      
+          </GridLayout>
+
         <ng-template #array1>
-            <Label text='{{"services.absence_quyery.all_lecs_asebsence_percent" |translate}}' class="trow"></Label>
-            <TextField text='0' editable= "false"></TextField>
+            <Label text='{{"general.no_absence_registered" |translate}}' class="trow"></Label>
         </ng-template>
 
 	</StackLayout>
-	<StackLayout *tabItem='{title: secondTabTitle}' class="ysBox">
-        <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="absData.absent_percentage_actual_lectures.length>=0;else emptyArr2">           
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-                <label text='{{"general.crn" | translate}}'></label>
-                <label text='{{"general.course_code" | translate}}'></label>
-                <label text='{{"general.course_name" | translate}}'></label>
-                <label text='{{"general.count" | translate}}'></label>
-                <label text='{{"general.absence_percent" |translate}}'></label>
-            </FlexboxLayout>
-
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.absent_percentage_actual_lectures" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === absData.absent_percentage_actual_lectures-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRES_CODE"></Label>
-                <Label [text]="item.ABSENT_PERCENTAGE_FTF" ></Label>
-            </FlexboxLayout>
-        </FlexboxLayout>
-        <ng-template #emptyArr2>
-            <Label text='{{"services.absence_quyery.traditional_lecs_asebsence_percent" |translate}}'></Label>
-            <TextField text='0' editable= "false"></TextField>
-        </ng-template>
-	</StackLayout>
-	<StackLayout *tabItem='{title: thirdTabTitle}' class="ysBox">
-        <label text='{{"general.lectures" | translate}}' style="font-weight: 800;"></label>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" *ngIf="!isLoading&&absData.absent_percentage_virtual_lectures.length>=0;else emptyArr3">           
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-                <label text='{{"general.crn" | translate}}'></label>
-                <label text='{{"general.course_code" | translate}}'></label>
-          
-                <label text='{{"general.absence_percent" |translate}}'></label>
-            </FlexboxLayout>
-
-            <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.absent_percentage_virtual_lectures" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === absData.absent_percentage_virtual_lectures-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRES_CODE"  ></Label>
-                <Label [text]="item.ABSENT_PERCENTAGE_VERT" ></Label>
-            </FlexboxLayout>
-        </FlexboxLayout>
-        <ng-template #emptyArr3>
-            <Label text='{{"services.absence_quyery.virtual_lecs_asebsence_percent" |translate}}'></Label>
-        </ng-template>
-	</StackLayout>
-</TabView>
-
-<FlexboxLayout flexDirection="column" justifyContent="flex-start" class="ysBox" *ngIf="!isLoading">
-           
-    <label text='{{"general.lectures" | translate}}'></label>
-    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
-        <label text='{{"general.course_code" | translate}}'></label>
-        <label text='{{"general.course_name" | translate}}'></label>
-        <label text='{{"general.lecture_type" | translate}}'></label>
-        <label text='{{"general.week" | translate}}'></label>
-        <label text='{{"general.day" | translate}}'></label>
-        <label text='{{"services.absence_quyery.attendance_status" | translate}}'></label>
-    </FlexboxLayout>
-
-    <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of absData.lectures" flexDirection="row-reverse" 
-      class="trow" [ngStyle]="{'border-bottom-width':i ===absData.lectures-1 ? '0' : '1' }">
-       
-        <Label [text]="item.CODE"></Label>
-        <Label [text]="item.TITLE"  ></Label>
-        <Label [text]="item.TYPE" ></Label>
-        <Label [text]="item.WEEK_ID" ></Label>
-        <Label [text]="item.DAY" ></Label>
-        <Label [text]="item.STATUS" ></Label>
-    </FlexboxLayout>
 </FlexboxLayout>
-
-<FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
-    <Button text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
-    <Button text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
-</FlexboxLayout>
+</ScrollView>

@@ -7,6 +7,8 @@ import * as utils from 'tns-core-modules/utils/utils';
 import { ValueList, ValueItem, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 import { Student } from '../../shared/models/student';
 import { StudentTerms } from '../../shared/models/student-terms';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 
 @Component({
@@ -50,9 +52,10 @@ export class AcademicStatusComponent implements OnInit {
   terms: ValueItem<number>[] = [];
   acceptanceTerm;
   acceptanceYear: any;
-  constructor(private academicStatusService: AcademicStatusService) { }
+  constructor(private academicStatusService: AcademicStatusService,private downloader :DataDownLoadService) { }
 
   ngOnInit() {
+    Downloader.init();
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
 
@@ -105,7 +108,8 @@ export class AcademicStatusComponent implements OnInit {
     sideDrawer.showDrawer();
   }
   onArabicPrint() {
-    utils.openUrl(this.arabicPrint);
+    console.log("araaaaaaaaaaaabic",this.arabicPrint)
+    this.downloader.downloadFile(this.arabicPrint)
   }
   onEnglishPrint() {
     utils.openUrl(this.EngPrint);

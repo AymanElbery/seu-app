@@ -14,7 +14,13 @@ export class EmpGuard extends UserTypeGuard {
     super(router, userService);
   }
   checkGuardRole() {
-    return true;
+    if (this.userService.userData.role == 'Employee') {
+      return true;
+    }
+    if (this.userService.userData.role == 'Instructor') {
+      return true;
+    }
+    return false;
   }
   getLoginAsType() {
     return 'Employee';

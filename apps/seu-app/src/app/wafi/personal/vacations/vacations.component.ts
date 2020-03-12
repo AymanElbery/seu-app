@@ -41,7 +41,7 @@ export class VacationsComponent implements OnInit {
        this.vacationstype = (vactype as any).data;
 
        //this.getempvactions(this.selectvactype?this.selectvactype:-1);
-       console.log("emp vacations",this.vacationstype);      
+       //console.log("emp vacations",this.vacationstype);      
        this.isLoading = false;      
      } else {       
        //this.messages = [];
@@ -52,7 +52,7 @@ export class VacationsComponent implements OnInit {
 
   getempvactions(vacationCode:any){
     this.selectvactype=vacationCode;
-    console.log("ddl val",this.selectvactype);
+    //console.log("ddl val",this.selectvactype);
     this.isLoading = true
     let currentDate = new Date();
 

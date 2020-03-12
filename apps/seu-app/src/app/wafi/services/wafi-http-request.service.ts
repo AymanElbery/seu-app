@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ConfigService } from '../../shared/services/config.service';
-import { config } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GlobalBaseService } from '../../shared/services/global-base.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../environments/environment';
 import { UserService } from 'src/app/account/services/user.service';
-import { Employee } from '../personal/personalinfo/employee';
 
 
 @Injectable({
@@ -31,8 +28,9 @@ export class WafiHttpRequestService {
   apllyBasicParams(obj) {
     obj["authorizationKey"] = "RSUyZlJMR0tMc1QlMmJjRFAjdHQ1cms4Y3pPOWRmNk50K0BlR2ElMmJjYlZhY0ZhVklGUE5hazdlOU0lM2Q6JFlpOEVQR0VXRWI0YXE3JVZFd0xORClsVW9oMTUlMj1Pd2olMmZrUCUyZnlYTjUhVFM4SjN6cWs2RDRUbEdP";
     obj["sessionId"] = this.globalService.getSID();
-    obj["empId"] = "4417010014";
+    //obj["empId"] = "4417010014";
     //obj["empId"] = "4361010022";
+    obj["empId"] = this.user.userData.id;
     obj["lang"] = this.translate.currentLang == 'ar' ? 1 : 2;
     return obj;
   }
@@ -47,14 +45,14 @@ export class WafiHttpRequestService {
     const headers = this.getHeaders();
     return this.http.post(url, JSON.stringify(body), { headers });
   }
-  
+
   postRequest_obj(path: string, body: any = {}) {
     let url = this.getApiURI() + path;
     body = this.apllyBasicParams(body);
     const headers = this.getHeaders();
    // console.log("Parameter",body)
     return this.http.post(url, JSON.stringify(body), { headers });
-    
+
   }
 
 

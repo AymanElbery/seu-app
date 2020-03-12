@@ -1,8 +1,10 @@
 <div class="main-content">
+  <service-header title='{{"wafi.print-report" | translate}}'></service-header>
 
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
   <div class="form-group col-sm-4">
+    <label>{{"wafi.print-concern" | translate}}</label>
     <input (keyup)="onKey($event)" class="form-control"  placeholder="{{'wafi.typrhere' | translate}}....." type="text" autofocus="">
 </div>
 
@@ -21,7 +23,7 @@
   </div>
   <div class=" col-md-6 col-sm-12">
     <div class="state mt30px">      
-      <h5><a (click)="getprintreportdownlaod('hr_rep488')" target="blank"  class="anchtag" >{{"wafi.EMP_REPORTS_WITHOUT_SALARY EN" | translate}}</a> </h5>
+      <h5><a (click)="getprintreportdownlaod('hr_rep488')" target="blank"  class="anchtag" >{{"wafi.EMP_REPORTS_WITHOUT_SALARY_EN" | translate}}</a> </h5>
     </div>
     <div class="progress progress-sm">
       <div class="progress-bar bg-info"></div>
@@ -39,7 +41,7 @@
 
   <div class=" col-md-6 col-sm-12">
     <div class="state mt30px">      
-    <h5><a (click)="getprintreportdownlaod('hr_rep487')" target="blank" class="anchtag" >{{"wafi.EMP_REPORTS_WITH_SALARY EN" | translate}}</a> </h5>
+    <h5><a (click)="getprintreportdownlaod('hr_rep487')" target="blank" class="anchtag" >{{"wafi.EMP_REPORTS_WITH_SALARY_EN" | translate}}</a> </h5>
     </div>
     <div class="progress progress-sm">
       <div class="progress-bar bg-info"></div>
@@ -58,7 +60,7 @@
   <div class=" col-md-6 col-sm-12">
     <div class="state mt30px">
       
-      <h5><a (click)="getprintreportdownlaod('hr_rep486')" target="blank" class="anchtag" >{{"wafi.EMP_REPORTS_WITH_SALARY_AND_FEES EN" | translate}}</a> </h5>
+      <h5><a (click)="getprintreportdownlaod('hr_rep486')" target="blank" class="anchtag" >{{"wafi.EMP_REPORTS_WITH_SALARY_AND_FEES_EN" | translate}}</a> </h5>
     </div>
     <div class="progress progress-sm">
       <div class="progress-bar bg-info"></div>
@@ -78,7 +80,7 @@
   <div class=" col-md-6 col-sm-12">
     <div class="state mt30px">
       
-      <h5><a (click)="getprintreportdownlaod_housing('housing')" target="blank" style="color: #F4A247 !important;" class="anchtag">{{"wafi.HousingReaport" | translate}}</a> </h5>
+      <h5><a (click)="getprintreportdownlaod_housing('housing')" target="blank" class="anchtag">{{"wafi.HousingReaport" | translate}}</a> </h5>
     </div>
     <div class="progress progress-sm">
       <div class="progress-bar bg-info"></div>

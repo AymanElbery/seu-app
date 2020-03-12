@@ -19,6 +19,7 @@ export class TrainingRequestComponent implements OnInit, OnDestroy {
   training: training;
   reqData;
   msgs;
+  instructions=[];
   status;
   isLoading = false;
 
@@ -48,8 +49,12 @@ export class TrainingRequestComponent implements OnInit, OnDestroy {
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
+
+        this.acadmicProc.instructions = (res as any).data.instructions;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
+        this.instructions = this.acadmicProc.instructions;
+        
         this.isLoading = false;
       }, err => {
         this.toastr.tryagain();
