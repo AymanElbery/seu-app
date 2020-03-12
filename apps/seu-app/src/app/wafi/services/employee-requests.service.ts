@@ -47,5 +47,9 @@ export class EmployeeRequestsService {
     delete currentServiceRequestTable['file'];
     return this.wafihttRequest.postRequest_obj('emp/submit-service-request-entry', { file, serviceRequestEntryBean: { currentServiceRequestTable } });
   }
+  getCities(countryId: any) {
+
+    return this.wafihttRequest.postRequest_obj('emp/get-city-new-items', { countryId });
+  }
 
 }

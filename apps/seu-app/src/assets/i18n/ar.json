@@ -794,6 +794,9 @@
         "phone": "الهاتف",
         "notes": "ملاحظات",
         "Submit": "Submit",
-        "timePeriod": "المدة/يوم"
+        "timePeriod": "المدة/يوم",
+        "leaveDeductionPeriod":"ملاحظات",
+        "evacuateparty":"طلب اخلاء طرف",
+        "deductionregularleave27":"حسم من الإجازة العادية وفق المادة 27"
     }
 }

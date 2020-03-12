@@ -20,6 +20,7 @@ export class VacationRequestComponent implements OnInit {
   submitted = false;
   vacationreqtype: any;
   ddltruefalse=true;
+  citydata;
   ddlday;
   ddlmonth;
   ddlyear;
@@ -53,6 +54,17 @@ export class VacationRequestComponent implements OnInit {
     });
 
 
+  }
+  selectcity(countryid){
+    this.subscriptionvac = this.empreqservice.getCities(countryid).subscribe(citydata => {
+      if (citydata) {
+        this.citydata = (citydata as any).data;
+        console.log("city data",this.citydata);           
+        this.isLoading = false;
+      } else {
+        //this.messages = [];
+      }
+    });
   }
 
   onFormSubmit(event) {

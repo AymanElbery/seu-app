@@ -794,6 +794,9 @@
         "phone": "phone",
         "notes": "Notes",
         "Submit": "Submit",
-        "timePeriod": "Time Period"
+        "timePeriod": "Time Period",
+        "leaveDeductionPeriod":"Leave Deduction Period",
+        "evacuateparty":"Request to evacuate a party",
+        "deductionregularleave27":"Deduction from regular leave in accordance with Article 27"
     }
 }

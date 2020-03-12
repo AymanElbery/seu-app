@@ -8,7 +8,7 @@
   </div>
 
   <p style="font-size: 16px; font-weight: bold;margin:4px 4px 0 4px;">
-    {{"wafi.Self-servicerequests" | translate}}  -  {{"wafi.vacationrequest" | translate}} 
+     {{"wafi.deductionregularleave27" | translate}} 
   </p>
 <section class="dashboard-wrap mtb-40" style="margin-top: 30px;">
   <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
@@ -47,7 +47,7 @@
             <option *ngFor="let year of ddlyear"  [selected]="selectvactype == year.value"  value={{year.value}}>{{year.label}} </option>  
         </select>  
        
-          </div>beginYear
+          </div>
         </div>
 
 </div>

@@ -101,7 +101,7 @@
 
 <div class="col-md-4">
   <div class="form-group">               
-    <select   class="form-control select"    formControlName="toCountryNew"  [(ngModel)]="toCountryNew"  >  
+    <select   class="form-control select"    formControlName="toCountryNew"  [(ngModel)]="toCountryNew" (ngModelChange)="selectcity($event)" >  
       <option [ngValue]="undefined" selected>{{"wafi.tocountry" | translate}}</option> 
       <option *ngFor="let contitem of countryNewItems"   value={{contitem.value}}>{{contitem.label}} </option>  
   </select>  
@@ -110,9 +110,9 @@
 
   <div class="col-md-4">
     <div class="form-group">               
-      <select   class="form-control select"   >  
+      <select   class="form-control select"   formControlName="toCityNew"  [(ngModel)]="toCityNew"  >  
         <option [ngValue]="undefined" selected>{{"wafi.citycountry" | translate}}</option> 
-        <option *ngFor="let cityitms of cityNewItems"  [selected]="selectvactype == cityitms.value"  value={{cityitms.value}}>{{cityitms.label}} </option>  
+        <option *ngFor="let cityitms of citydata"  [selected]="selectvactype == cityitms.value"  value={{cityitms.value}}>{{cityitms.label}} </option>  
     </select>  
       </div>
     </div>
