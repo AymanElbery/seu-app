@@ -18,6 +18,7 @@ export class MenuComponent implements OnInit {
 
   showadmis = false;
   admisPage = {};
+  hasWafi = false;
   fillmenu() {
     /*if (this.userService.userData.role == 'Employee' || this.userService.userData.role == 'Instructor') {
       this.showMySystem = true;
@@ -53,6 +54,7 @@ export class MenuComponent implements OnInit {
     }
     this.admisPage = {};
     this.showadmis = false;
+
     if (this.userService.userData.role != 'Student') {
       this.userService.getAdmisPerm().subscribe(res => {
         this.admisPage = res['data'];
@@ -65,6 +67,10 @@ export class MenuComponent implements OnInit {
     } else {
       this.hasNoRole = true;
     }
+
+    this.hasWafi = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
+
+    // this.hasWafi = true;
   }
   hasNoRole = false;
   ngOnInit() {

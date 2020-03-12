@@ -34,6 +34,44 @@
               {{"menu.academicrecord" | translate}} </a>
           </div>
         </div>
+
+
+        <div *ngIf="hasWafi">
+          <div class="nav-item has-sub">
+            <h6 class="tab" style="box-sizing: border-box;text-align: justify;margin:15px 0 0 10px;;">
+              <i class="ik ik-book-open"></i>
+              {{"wafi.wafi" | translate}}</h6>
+            <a href="javascript:void(0)"> <span>{{"wafi.personal" | translate}} </span>
+              <i class="ik ik-user"></i> </a>
+            <div class="submenu-content">
+              <a  [routerLink]="['/wafi/personal']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.PersonalInfo" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+            <div class="submenu-content">
+              <a  [routerLink]="['/wafi/personal/salaries']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.Salaries" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+            <div class="submenu-content">
+              <a  [routerLink]="['/wafi/personal/vacations']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.Vacations" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+            <div class="submenu-content">
+              <a  [routerLink]="['/wafi/personal/print-report']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.print-report" | translate}}</span> <i class="ik ik-calendar"></i> </a>
+            </div>
+          </div>
+  
+          <div class="nav-item has-sub">
+            <a href="javascript:void(0)"> <span>{{"wafi.employee-requests" | translate}} </span>
+              <i class="ik ik-user"></i> </a>
+            <div class="submenu-content">
+              <a  [routerLink]="['/wafi/employee-requests']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.requests-lists" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+          </div>
+        </div>
+
+
         <div *ngIf="menuType==2&&showServices" class="nav-item has-sub ">
           <a href="javascript:void(0)"><span> {{"menu.printCert" | translate}} </span> <i class="ik ik-printer"></i></a>
           <div class="submenu-content">
@@ -199,7 +237,7 @@
           </div>
         </div>
         <!-- <div class="nav-lavel">  </div> -->
-        <div *ngIf="userService.userData.activeRole=='Employee'" class="nav-item has-sub open">
+        <div *ngIf="userService.userData.activeRole=='Employee'" class="nav-item has-sub">
           <a href="javascript:void(0)"> <span>{{"menu.PublicServices" | translate}} </span>
             <i class="ik ik-book-open"></i> </a>
           <div class="submenu-content">
@@ -387,39 +425,6 @@
         </div>
 
         <div></div>
-
-        <div class="nav-item has-sub">
-          <h6 class="tab" style="box-sizing: border-box;text-align: justify;margin:15px 0 0 10px;;">
-            <i class="ik ik-book-open"></i>
-            {{"wafi.wafi" | translate}}</h6>
-          <a href="javascript:void(0)"> <span>{{"wafi.personal" | translate}} </span>
-            <i class="ik ik-user"></i> </a>
-          <div class="submenu-content">
-            <a routerLinkActive="active" [routerLink]="['/wafi/personal']" class="menu-item"> <span
-                class="text-eng">{{"wafi.PersonalInfo" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-          </div>
-          <div class="submenu-content">
-            <a routerLinkActive="active" [routerLink]="['/wafi/personal/salaries']" class="menu-item"> <span
-                class="text-eng">{{"wafi.Salaries" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-          </div>
-          <div class="submenu-content">
-            <a routerLinkActive="active" [routerLink]="['/wafi/personal/vacations']" class="menu-item"> <span
-                class="text-eng">{{"wafi.Vacations" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-          </div>
-          <div class="submenu-content">
-            <a routerLinkActive="active" [routerLink]="['/wafi/personal/print-report']" class="menu-item"> <span
-                class="text-eng">{{"wafi.print-report" | translate}}</span> <i class="ik ik-calendar"></i> </a>
-          </div>
-        </div>
-
-        <div class="nav-item has-sub">
-          <a href="javascript:void(0)"> <span>{{"wafi.employee-requests" | translate}} </span>
-            <i class="ik ik-user"></i> </a>
-          <div class="submenu-content">
-            <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests']" class="menu-item"> <span
-                class="text-eng">{{"wafi.requests-lists" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-          </div>
-        </div>
 
         <!--
              <div *ngIf="userService.userData.act_as_student" class="nav-item has-sub">

@@ -10,8 +10,7 @@
     <thead>
 
       <tr>
-
-        <th *ngIf="reqdetaildata.requestType==1" scope="col">{{"wafi.RequestType" | translate}}</th>       
+        <th *ngIf="reqdetaildata.requestType" scope="col">{{"wafi.RequestType" | translate}}</th>       
         <th *ngIf="reqdetaildata.fromCountryEnabled==true" scope="col">{{"wafi.FromCountry-City" | translate}}</th>
         <th *ngIf="reqdetaildata.toCountryEnabled==true" scope="col">{{"wafi.ToCountry-City" | translate}}</th>
         <th *ngIf="reqdetaildata.ticketEnabled==true" scope="col">{{"wafi.Ticket" | translate}}</th>
@@ -40,7 +39,7 @@
     </thead>
     <tbody>
       <tr>        
-        <td *ngIf="reqdetaildata.requestType==1">{{reqdetaildata.requestDesc}}</td>
+        <td *ngIf="reqdetaildata.requestType">{{reqdetaildata.requestDesc}}</td>
         <td  *ngIf="reqdetaildata.fromCountryEnabled==true">{{reqdetaildata.fromCountryDesc}}</td>
         <td  *ngIf="reqdetaildata.toCountryEnabled==true">{{reqdetaildata.toCountryDesc}}</td>
         <td  *ngIf="reqdetaildata.ticketEnabled==true">{{reqdetaildata.ticket}}</td>
