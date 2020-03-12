@@ -619,7 +619,7 @@
     "wafi":{
         "wafi":"Wafi",
         "month":"شهر",
-        "year":"Year",
+        "year": "العام",
         "description":"Description",
         "amount":"Amount",
         "monthYear":"Month/Year",
@@ -697,7 +697,25 @@
         "RequestDtails":"Request Dtails",
         "Delete":"Delete",
         "employee-requests":"Employee-Requests",
-        "requests-lists":"Requests-Lists"
+        "requests-lists":"Requests-Lists",
+        "AddNewRequest":"Add New Request",
+        "vacationtype":"نوع الإجازة",
+        "VacationRequest":"طلب إجازة",
+        "normal":"عادية",
+        "day": "اليوم",      
+        "beginday": "Begin Day",
+        "beginmonth": "Begin Month",
+        "beginyear": "Begin Year",
+        "altEemployee": "الموظف البديل",
+        "tocountry": "الدولة",
+        "citycountry": "المدينة",
+        "compensation": "التعويض و الإركاب",
+        "vacationLoc": "العنوان أثناء الاجازة",
+        "phone": "الهاتف",
+        "notes": "ملاحظات",
+        "Submit": "Submit",
+        "timePeriod": "المدة/يوم"
+    
         
     }
 }

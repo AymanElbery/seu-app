@@ -28,4 +28,9 @@ export class AppToasterService {
     });
   }
 
+  messagesdis(msg){
+
+    this.toastr.success('', msg);
+  }
+
 }

@@ -696,7 +696,31 @@
         "RequestDtails":"Request Dtails",
         "Delete":"Delete",
         "employee-requests":"Employee-Requests",
-        "requests-lists":"Requests-Lists"
+        "requests-lists":"Requests-Lists",
+        "AddNewRequest":"Add New Request",
+        "vacationtype":"Vaction Type",
+        "VacationRequest":"Vacation Request",
+        "vacation":"Vacation",
+        "normal":"Normal",
+        "day": "Day",
+        "beginday": "Begin Day",
+        "beginmonth": "Begin Month",
+        "beginYear": "Begin Year",
+        "altEemployee": "Substitute Employee",
+        "tocountry": "To country",
+        "citycountry": "City Country",
+        "compensation": "Compensation",
+        "vacationLoc": "vacation Location",
+        "phone": "phone",
+        "notes": "Notes",
+        "Submit": "Submit",
+        "timePeriod": "Time Period"
+        
+        
+        
+        
+       
+
         
         
         

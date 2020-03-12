@@ -1,0 +1,36 @@
+<div class="main-content">
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+
+  <div  class="modal-header">
+    <h4 class="modal-title">{{"wafi.AddNewRequest" | translate}}</h4>  
+  
+  </div>
+
+
+<section class="dashboard-wrap mtb-40" style="margin-top: 40px;;">
+  <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
+  <div class="container">
+        <div class="body-content">
+        <div class="row">
+  <div class="col-sm-12">
+  <div class="dash">
+
+    <div class=" col-md-12 col-sm-12"  *ngFor="let rtype of reqtype;let i=index;">
+      <div class="state mt30px">
+        
+        <h5><a (click)="getrequesttype(i,rtype.requestType)" target="blank" class="anchtag" ><i class="ik ik-list"></i> {{rtype.requestDesc}}</a> </h5>
+      
+      </div>
+      <div class="progress progress-sm">
+        <div class="progress-bar bg-info"></div>
+      </div>
+    </div>
+   
+  </div>   
+ 
+</div>
+</div> </div>   
+</div> </form>
+</section>
+</div>

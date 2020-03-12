@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import {RequestsDetailsComponent} from '../requests-details/requests-details.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import {RequestAddComponent} from '../request-add/request-add.component';
 
 @Component({
   selector: 'app-requests-list',
@@ -38,7 +39,7 @@ export class RequestsListComponent implements OnInit,OnDestroy {
       this.isLoading = true
       this.subscription = this.empreqservice.getEmpReqLists().subscribe(empreqs => {
        if (empreqs) {       
-         this.emplistrequest = (empreqs as any).data["serviceRequestTable"];;
+         this.emplistrequest = (empreqs as any).data;;
          console.log("emp request",this.emplistrequest);      
          this.isLoading = false;      
        } else {       
@@ -47,6 +48,19 @@ export class RequestsListComponent implements OnInit,OnDestroy {
      });
     
     }
+
+
+// addRequest(){
+
+//   const dialogConfig = new MatDialogConfig();
+//     dialogConfig.autoFocus = true;
+//     dialogConfig.disableClose = false;
+//     dialogConfig.width = "65%";    
+//    dialogConfig.data = {  };
+//     this.dialog.open(RequestAddComponent, dialogConfig).afterClosed().subscribe(res => {         
+//     });
+// }
+
 
     getreqdetail(orderItemIndex,requestSeq, requestType) {
 
