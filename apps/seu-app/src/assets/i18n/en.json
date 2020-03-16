@@ -200,7 +200,9 @@
         "CouncilsAndCommittees": "Councils and committees management system",
         "TeachingLoad": "Teaching Load",
         "NewAdminPage": "New Admin Pages",
-        "AdminPage": "Admin Pages"
+        "AdminPage": "Admin Pages",
+        "training": "Training Request",
+        "chineescourse": "Chinees Course"
     },
     "services": {
         "academic_status": {
@@ -561,7 +563,8 @@
             "work_address": "work address ",
             "choose_work_address": "choose work adress  ",
             "employer": "  Job owner data  :",
-            "obligation": "Confirm that the information entered is correct, as the graduation document will be printed according to the information you entered"
+            "obligation": "Confirm that the information entered is correct, as the graduation document will be printed according to the information you entered",
+            "name": "Name"
         },
         "training_request": {
             "title": "Field training request",
@@ -575,7 +578,11 @@
             "alert": "alert",
             "alert_content": "Please read the conditions for accepting your request for field training .. Admission is conditional on your passing for 86 hours, knowing that you will not be able to train and your registration for training is considered canceled if they do not pass. ",
             "destination_letter": "The name of the entity you wish to address the letter to ",
-            "practical_train": "Field and practical training request"
+            "practical_train": "Field and practical training request",
+            "instructions": "Instructions",
+            "form_ar": "Form - Arabic",
+            "form_en": "Form - English",
+            "student_form": "Student Form"
         },
         "reg": {
             "choosewishe": "choose wishes ",
@@ -614,6 +621,12 @@
             "organizer": "Organizer",
             "location": "Location",
             "date": "Date"
+        },
+        "chineescourse": {
+            "title": "Chinese language course appplication",
+            "desc": "",
+            "time": "Course Time",
+            "req_date": "Application Date"
         }
     },
     "policy": {
