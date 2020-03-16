@@ -22,16 +22,16 @@ export class MedicalReportComponent implements OnInit {
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
-    this.isLoading=true;
+    this.isLoading = true;
     this.academicService.getِMedicalReport().then(
       res => {
     this.mrData =    (res as any).data;
-    this.isLoading=false;
-    this.msgs=(res as any).messages;
+    this.isLoading = false;
+    this.msgs = (res as any).messages;
       }
     );
     this.arabicPrint =   this.academicService.Download();
-    this.EngPrint = this.academicService.DownloadEng();    
+    this.EngPrint = this.academicService.DownloadEng();
   }
 
   onArabicPrint() {

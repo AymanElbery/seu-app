@@ -1,26 +1,40 @@
-<ActionBar>
+<ActionBar style="background:#001628; ">
     <!-- 
-            <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
-    -->
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
-        ios.position="left">
+
+-->
+
+<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
+
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
+<StackLayout margin-top="0">
+  
+    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
+
+  </StackLayout>
+
+    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
     </ActionItem>
-    <Label text='{{"services.student_info.title"|translate}}'></Label>
+
 </ActionBar>
 
+<StackLayout>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+</StackLayout>
 <ScrollView>
-    <FlexboxLayout flexDirection="column">
 
-        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+    <FlexboxLayout  class="wrap"  flexDirection="column">
+
         
+        <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
+            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+            <Label col="1" text='{{"services.student_info.title" | translate}}' class="serv-name" ></Label>
+            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        
+        </GridLayout>
+
         <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
             <ListView [items]="msgs">
                 <ng-template let-item="item">
@@ -35,38 +49,40 @@
           
               <Label row="0" colSpan="2"  class="ysHBox"  text='{{"general.student_data"|translate}}'></Label>
           
-              <Label row="1" column="1" style="font-weight: 800;" text='{{"services.student_info.sex"|translate}} :'></Label>
-              <Label row="1"  column="0" text="{{reqData.gender}}"></Label>
+              <Label row="1" class="ysPBox" column="1" style="font-weight: 800;" text='{{"services.student_info.sex"|translate}} :'></Label>
+              <Label row="1"  class="ysPBox2" column="0" text="{{reqData.gender}}"></Label>
           
-              <Label row="2" column="1" style="font-weight: 800;" text='{{"services.student_info.nationality"|translate}} :'></Label>
-              <Label row="2"  column="0" text="{{reqData.citizin}}"></Label>
+              <Label row="2"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"services.student_info.nationality"|translate}} :'></Label>
+              <Label row="2"  class="ysPBox2"  column="0" text="{{reqData.citizin}}"></Label>
           
-              <Label row="3" column="1" style="font-weight: 800;" text='{{"services.student_info.qualification"|translate}} :'></Label>
-              <Label row="3"  column="0" text="{{reqData.degree}}"></Label>
+              <Label row="3"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"services.student_info.qualification"|translate}} :'></Label>
+              <Label row="3"  class="ysPBox2"  column="0" text="{{reqData.degree}}"></Label>
 
-              <Label row="4" column="1" style="font-weight: 800;" text='{{"general.faculty" |translate}} :'></Label>
-              <Label row="4"  column="0" text="{{reqData.faculty}}"></Label>
+              <Label row="4"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.faculty" |translate}} :'></Label>
+              <Label row="4"  class="ysPBox2"  column="0" text="{{reqData.faculty}}"></Label>
 
-              <Label row="5" column="1" style="font-weight: 800;" text='{{"general.major" |translate}} :'></Label>
-              <Label row="5"  column="0" text="{{reqData.major}}" style="text-align: right;"></Label>
+              <Label row="5"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.major" |translate}} :'></Label>
+              <Label row="5"  class="ysPBox2"  column="0" text="{{reqData.major}}" ></Label>
 
-              <Label row="6" column="1" style="font-weight: 800;" text='{{"general.branch" |translate}} :'></Label>
-              <Label row="6"  column="0" text="{{reqData.branch}}"></Label>
 
-              <Label row="7" column="1" style="font-weight: 800;" text='{{"general.average"|translate}} :'></Label>
-              <Label row="7"  column="0" text="{{reqData.gpa}}"  style="text-align: right;"></Label>
 
-              <Label row="8" column="1" style="font-weight: 800;" text='{{"general.student_id"|translate}} :'></Label>
-              <Label row="8"  column="0" text="{{reqData.student_id}}"  style="text-align: right;"></Label>
+              <Label row="6"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.branch" |translate}} :'></Label>
+              <Label row="6"  class="ysPBox2"  column="0" text="{{reqData.branch}}"></Label>
+
+              <Label row="7"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.average"|translate}} :'></Label>
+              <Label row="7"  class="ysPBox2"  column="0" text="{{reqData.gpa}}"  style="text-align: right;"></Label>
+
+              <Label row="8"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.student_id"|translate}} :'></Label>
+              <Label row="8"  class="ysPBox2"  column="0" text="{{reqData.student_id}}"  style="text-align: right;"></Label>
             
-              <Label row="10" column="1" style="font-weight: 800;" text="{{'services.student_info.ar_name'|translate}} :"></Label>
+              <Label row="10" class="ysPBox2"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.ar_name'|translate}} :"></Label>
               <TextField 
               row="10" column="0"
               #name_ar="ngModel" [(ngModel)]="stdData.name_ar"
               style="border-width: 1;"
                 ></TextField>
           
-              <Label row="11" column="1" style="font-weight: 800;" text="{{'services.student_info.en_name'|translate}} :"></Label>
+              <Label row="11"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.en_name'|translate}} :"></Label>
               <TextField 
                row="11" column="0"
                #name_en="ngModel"
@@ -74,21 +90,21 @@
                style="border-width: 1;"
               ></TextField>
               
-              <Label row="12" column="1" style="font-weight: 800;" text="{{'general.email'|translate}} :"></Label>
+              <Label row="12"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'general.email'|translate}} :"></Label>
               <TextField 
               row="12" column="0"
               name="email" #email="ngModel" [(ngModel)]="stdData.email"
               style="border-width: 1;"
              ></TextField>
 
-             <Label row="13" column="1" style="font-weight: 800;" text="{{'services.student_info.phone_no'|translate}} :"></Label>
+             <Label row="13"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.phone_no'|translate}} :"></Label>
               <TextField 
               row="13" column="0"
               name="phone" #phone="ngModel" [(ngModel)]="stdData.phone"
               style="border-width: 1;"
              ></TextField>
             
-             <Label row="14" column="1" style="font-weight: 800;" text="{{'services.student_info.grad_term'|translate}} :"></Label>
+             <Label row="14"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.grad_term'|translate}} :"></Label>
              <DropDown
              row="14" column="0"
              [items]="termsDropDown"
@@ -99,7 +115,7 @@
              >
              </DropDown>    
 
-             <Label row="15" column="1" style="font-weight: 800;" text='{{"services.student_info.job_status"|translate}}'></Label>
+             <Label row="15"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"services.student_info.job_status"|translate}}'></Label>
              <DropDown
              row="15" column="0"
              [items]="statusDropDown"
@@ -110,7 +126,7 @@
              >
              </DropDown>  
 
-             <Label row="16" column="1" style="font-weight: 800;" text="{{'services.student_info.sector'|translate}} :"></Label>
+             <Label row="16"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.sector'|translate}} :"></Label>
              <DropDown
              row="16" column="0"
              [items]="sectorsDropDown"
@@ -121,7 +137,7 @@
              >
              </DropDown>  
 
-             <Label row="17" column="1" style="font-weight: 800;" text="{{'services.student_info.before_or_after'|translate}} :"></Label>
+             <Label row="17"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.before_or_after'|translate}} :"></Label>
              <DropDown
              row="17" column="0"
              [items]="periodsDropDown"
@@ -132,7 +148,7 @@
              >
              </DropDown> 
 
-             <Label row="18" column="1" style="font-weight: 800;" text="{{'services.student_info.work_address'|translate}} :"></Label>
+             <Label row="18"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.work_address'|translate}} :"></Label>
              <DropDown
              row="18" column="0"
              [items]="locationsDropDown"
@@ -143,32 +159,32 @@
              >
              </DropDown> 
 
-             <Label row="19" column="1" style="font-weight: 800;" text="{{'services.student_info.job_year'|translate}} :"></Label>
+             <Label row="19"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.job_year'|translate}} :"></Label>
               <TextField 
               row="19" column="0"
               #job_year="ngModel" [(ngModel)]="stdData.job_year"
               style="border-width: 1;"
              ></TextField>
 
-             <Label row="20" column="1" style="font-weight: 800;" text="{{'services.student_info.job_side'|translate}} :"></Label>
+             <Label row="20"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.job_side'|translate}} :"></Label>
               <TextField 
               row="20" column="0"
               #job_location="ngModel" [(ngModel)]="stdData.job_location"
               style="border-width: 1;"
              ></TextField>
 
-             <Label row="21" column="1" style="font-weight: 800;" text="{{'services.student_info.job_title'|translate}} :"></Label>
+             <Label row="21"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.job_title'|translate}} :"></Label>
               <TextField 
               row="21" column="0"
               #job_title="ngModel" [(ngModel)]="stdData.job_title"
               style="border-width: 1;"
              ></TextField>
 
-             <Label row="22" column="1" style="font-weight: 800;" text="{{'services.student_info.cv'|translate}} :"></Label>
-             <Button row="22" column="0" [text]="fileName" (tap)="openCustomFilesPicker('file')" class="-primary"></Button>
+             <Label row="22"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.cv'|translate}} :"></Label>
+             <Button row="22" column="0" [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn"></Button>
             
-             <Label row="23" column="1" style="font-weight: 800;" text="{{'services.student_info.pic'|translate}} :" textWrap="true"></Label>
-             <Button row="23" column="0" [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary"></Button>
+             <Label row="23"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.pic'|translate}} :" textWrap="true"></Label>
+             <Button row="23" column="0" [text]="imageName" (tap)="openCustomFilesPicker('image')" class="print-btn"></Button>
             
             </GridLayout>
 
@@ -176,28 +192,28 @@
           
             <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.student_info.employer"|translate}}'></Label>
                 
-              <Label row="1" column="1" style="font-weight: 800;" text="{{'services.student_info.name'|translate}} :"></Label>
+              <Label row="1"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.name'|translate}} :"></Label>
               <TextField 
               row="1" column="0"
               #job_name="ngModel" [(ngModel)]="stdData.job_name"
               style="border-width: 1;"
              ></TextField>
 
-             <Label row="2" column="1" style="font-weight: 800;" text="{{'services.student_info.job_title'|translate}} :"></Label>
+             <Label row="2"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.job_title'|translate}} :"></Label>
               <TextField 
               row="2" column="0"
               #job_title2="ngModel" [(ngModel)]="stdData.job_title2"
               style="border-width: 1;"
              ></TextField>
 
-             <Label row="3" column="1" style="font-weight: 800;" text="{{'services.student_info.phone_no'|translate}} :"></Label>
+             <Label row="3"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'services.student_info.phone_no'|translate}} :"></Label>
               <TextField 
               row="3" column="0"
               #phone2="ngModel" [(ngModel)]="stdData.phone2"
               style="border-width: 1;"
              ></TextField>
 
-             <Label row="4" column="1" style="font-weight: 800;" text="{{'general.email'|translate}} :"></Label>
+             <Label row="4"  class="ysPBox" column="1" style="font-weight: 800;" text="{{'general.email'|translate}} :"></Label>
               <TextField 
               row="4" column="0"
               #email2="ngModel" [(ngModel)]="stdData.email2"
@@ -207,9 +223,9 @@
 
             <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" flexWrap="wrap" alignItems="center" style="color: #6189f4;margin:20 20">
                 <CheckBox checked="false"></CheckBox>
-                <Label text='{{"services.student_info.obligation"|translate}}' textWrap="true"></Label>
+                <Label text='{{"services.student_info.obligation"|translate}}' textWrap="true" style="color: #f08b1c;"></Label>
             </FlexboxLayout>
-            <Button *ngIf="!isLoading" text='{{"general.save"|translate}}' (tap)="onSubmit()" class="-primary"></Button>
+            <Button *ngIf="!isLoading" text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn"></Button>
 
     </FlexboxLayout>
 

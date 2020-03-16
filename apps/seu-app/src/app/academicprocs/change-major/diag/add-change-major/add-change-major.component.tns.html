@@ -1,12 +1,12 @@
-<FlexboxLayout  flexDirection="column" style="padding: 20;">
+<FlexboxLayout  flexDirection="column" style="padding: 20;" class="pop">
 
-    <Label text='{{"services.change_major.change_major_req"|translate}}' class="header"></Label>
-    <StackLayout style="color:#6189f4;">
+    <Label text='{{"services.change_major.change_major_req"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+    <StackLayout  style="color: #080b57;">
         <Label text='{{"services.change_major.alert"|translate}}'  style="font-weight: 800;"></Label>
         <Label text='{{"services.change_major.alert_content"|translate}}' textWrap="true"></Label>
         <Label text='{{"services.change_major.major_cancellation_validity"|translate}}' textWrap="true"></Label>
 
-        <Label text='{{"services.change_major.choose_major"|translate}}' style="font-weight: 800;margin-top:20;"></Label>
+        <Label text='{{"services.change_major.choose_major"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
         <DropDown
         #dropdown
         [items]="majorsDropDown"
@@ -18,8 +18,8 @@
         </DropDown>
     </StackLayout>
     <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between" style="margin-top: 20;">
-        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="-primary" style="width: 50%;" [isEnabled]="mj.major!=''"></Button>
-        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="-primary" style="width: 50%;"></Button>
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn" style="width: 44%" [isEnabled]="mj.major!=''"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn" style="width: 44%;"></Button>
     </FlexboxLayout>
 
 </FlexboxLayout>

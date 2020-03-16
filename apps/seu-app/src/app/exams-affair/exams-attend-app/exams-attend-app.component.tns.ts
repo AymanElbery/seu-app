@@ -13,11 +13,11 @@ import { ExamData } from '../../shared/models/exam-data';
 })
 export class ExamsAttendAppComponent implements OnInit {
 
-  eaData:ExamData={
-    Final_Exam_With_Schedule:{Final_Schedule:[],labels:{},values:{},messages:[]},
-    Final_Exam_Without_Schedule:{labels:{},values:{},messages:[]},
-    Term_Exam_With_Schedule:{Term_Schedule:[],labels:{},values:{},messages:[]},
-    Term_Exam_Without_Schedule:{labels:{},values:{},messages:[]}};
+  eaData: ExamData = {
+    Final_Exam_With_Schedule: {Final_Schedule: [], labels: {}, values: {}, messages: []},
+    Final_Exam_Without_Schedule: {labels: {}, values: {}, messages: []},
+    Term_Exam_With_Schedule: {Term_Schedule: [], labels: {}, values: {}, messages: []},
+    Term_Exam_Without_Schedule: {labels: {}, values: {}, messages: []}};
   finalschedule: string;
   final: string;
   termSchedule: string;
@@ -27,30 +27,38 @@ export class ExamsAttendAppComponent implements OnInit {
   termScheduleEn: string;
   termEn: string;
   isLoading = false;
-  secondTabTitle:string;
-  thirdTabTitle:string;
-  forthTabTitle:string;
+  secondTabTitle: string;
+  thirdTabTitle: string;
+  forthTabTitle: string;
   msgs: any;
 
 
 
-  constructor(private academicService: ExamsAttendAppService ,private translate: TranslateService) {
+  constructor(private academicService: ExamsAttendAppService , private translate: TranslateService) {
 
-    this.secondTabTitle=this.translate.instant("services.exam.tnt");
-    this.thirdTabTitle=this.translate.instant("services.exam.ft");
-    this.forthTabTitle=this.translate.instant("services.exam.fnt");
+    this.secondTabTitle = this.translate.instant('services.exam.tnt');
+    this.thirdTabTitle = this.translate.instant('services.exam.ft');
+    this.forthTabTitle = this.translate.instant('services.exam.fnt');
  }
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
-    this.isLoading=true;
+    this.isLoading = true;
 
     this.academicService.getِExamsAttednace('S180105049').then(
       res => {
     this.eaData =    (res as any).data;
-    this.msgs=(res as any).messages;
-    this.isLoading=false;
+    if (!this.eaData ) {
+      this.eaData =  {
+        Final_Exam_With_Schedule: {Final_Schedule: [], labels: {}, values: {}, messages: []},
+        Final_Exam_Without_Schedule: {labels: {}, values: {}, messages: []},
+        Term_Exam_With_Schedule: {Term_Schedule: [], labels: {}, values: {}, messages: []},
+        Term_Exam_Without_Schedule: {labels: {}, values: {}, messages: []}};
+    }
+    console.log('data  ' + this.eaData);
+    this.msgs = (res as any).messages;
+    this.isLoading = false;
       }
     );
     this.finalschedule =   this.academicService.Print_Final_Exam_With_Schedule();
@@ -73,19 +81,19 @@ export class ExamsAttendAppComponent implements OnInit {
   onEnglishPrint() {
     utils.openUrl(this.termScheduleEn);
   }
-  onArabicPrintTerm(){
+  onArabicPrintTerm() {
     utils.openUrl(this.term);
   }
   onEnglishPrintTerm() {
     utils.openUrl(this.termEn);
   }
-  onArabicPrintFinalSced(){
+  onArabicPrintFinalSced() {
     utils.openUrl(this.finalschedule);
   }
   onEnglishPrintFinalSced() {
     utils.openUrl(this.finalscheduleEn);
   }
-  onArabicPrintFinal(){
+  onArabicPrintFinal() {
     utils.openUrl(this.final);
   }
   onEnglishPrintFinal() {

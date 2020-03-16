@@ -108,8 +108,9 @@ export class AcademicStatusComponent implements OnInit {
     sideDrawer.showDrawer();
   }
   onArabicPrint() {
-    console.log("araaaaaaaaaaaabic",this.arabicPrint)
-    this.downloader.downloadFile(this.arabicPrint)
+    console.log("araaaaaaaaaaaabic",this.arabicPrint);
+ //   utils.openUrl(this.EngPrint);
+    this.downloader.downloadFile(this.arabicPrint);
   }
   onEnglishPrint() {
     utils.openUrl(this.EngPrint);
