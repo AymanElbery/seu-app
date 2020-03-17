@@ -7,6 +7,7 @@ import { UserService } from '../account/services/user.service';
 import { NotificationsService } from '../shared/services/notificationsservice';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../environments/environment';
+import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 
 @Component({
   selector: 'app-header',
@@ -68,6 +69,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.currLang = this.translate.currentLang;
     this.useLang(this.currLang);
   }
+  hasWafi = false;
   ngOnInit() {
     this.initLang();
     this.translate.onLangChange.subscribe(() => {
@@ -77,6 +79,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.userService.userDataSubject.subscribe(res => {
       if (res) {
         this.userData = this.userService.getActiveRoleDetails();
+
+        this.hasWafi = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
+
         //console.log(this.userData);
         // if (!this.userService.userData.name_ar) {
         //   setTimeout(() => {

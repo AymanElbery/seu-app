@@ -202,7 +202,8 @@
         "NewAdminPage": "إدارة الخدمات الإلكترونية",
         "AdminPage": "الصفحة الإدارية",
         "training": "طلب التدريب الميداني",
-        "chineescourse": "الدورة الصينية"
+        "chineescourse": "الدورة الصينية",
+        "PersonalInfo" : "معلوماتي"
     },
     "services": {
         "academic_status": {

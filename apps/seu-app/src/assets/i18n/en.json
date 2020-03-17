@@ -202,7 +202,8 @@
         "NewAdminPage": "New Admin Pages",
         "AdminPage": "Admin Pages",
         "training": "Training Request",
-        "chineescourse": "Chinees Course"
+        "chineescourse": "Chinees Course",
+        "PersonalInfo" : "My Information"
     },
     "services": {
         "academic_status": {
