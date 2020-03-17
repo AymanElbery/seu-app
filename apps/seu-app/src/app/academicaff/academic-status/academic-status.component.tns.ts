@@ -9,6 +9,7 @@ import { Student } from '../../shared/models/student';
 import { StudentTerms } from '../../shared/models/student-terms';
 import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
 import { Downloader } from 'nativescript-downloader';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -18,7 +19,10 @@ import { Downloader } from 'nativescript-downloader';
 })
 export class AcademicStatusComponent implements OnInit {
 
-  print = 'طباعة';
+  printAR = '';
+  printEN = '';
+  isDownLoaded = false;
+
   student: Student = {
     acadimic_position: '',
     acadimic_position_label: '',
@@ -53,10 +57,16 @@ export class AcademicStatusComponent implements OnInit {
   terms: ValueItem<number>[] = [];
   acceptanceTerm;
   acceptanceYear: any;
-  constructor(private academicStatusService: AcademicStatusService, private downloader: DataDownLoadService) { }
+  constructor(private transalte: TranslateService,
+              private academicStatusService: AcademicStatusService,
+              private downloader: DataDownLoadService) { }
 
   ngOnInit() {
     Downloader.init();
+    this.transalte.get('general.ar_language').subscribe(res => {
+      this.printAR = res;
+    }
+    );
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right;
 
@@ -111,18 +121,39 @@ export class AcademicStatusComponent implements OnInit {
   onArabicPrint() {
     console.log('araaaaaaaaaaaabic', this.arabicPrint);
  //   utils.openUrl(this.EngPrint);
-    this.print = 'جاري التحميل';
+
+
     this.downloader.downloadFile(this.arabicPrint);
     console.log('downloiad');
+    this.printAR = '1%';
     this.downloader.csize.subscribe(x => {
       console.log(x);
-      this.print = x;
+      this.printAR = x;
       if (x == '100') {
-      this.print = 'فتح';
+        this.isDownLoaded = true;
+        this.transalte.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
       }
     });
   }
   onEnglishPrint() {
-    utils.openUrl(this.EngPrint);
+    this.downloader.downloadFile(this.EngPrint);
+    console.log('downloiad');
+    this.printEN = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log(x);
+      this.printEN = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.transalte.get('general.en_print').subscribe(res => {
+            this.printEN = res;
+          }
+          );
+
+      }
+    });
   }
 }
