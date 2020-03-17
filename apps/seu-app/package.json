@@ -93,7 +93,7 @@
     "typescript": "~3.5.3"
   },
   "nativescript": {
-    "id": "org.nativescript.ngsample",
+    "id": "com.ysolution.seu",
     "tns-android": {
       "version": "6.3.1"
     }

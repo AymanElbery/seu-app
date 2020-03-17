@@ -15,13 +15,8 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label>
                     <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
 
-                </GridLayout>
-               
-
-               
-                
-
-        <RadListView width="100%" *ngIf="!isLoading" [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">
+                </GridLayout>                
+        <RadListView width="100%"  [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">
             <ng-template let-item="item">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between">
                     <GridLayout columns="auto, *" class="ysMenuGridHeader2 ">
@@ -41,6 +36,8 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 
                         </GridLayout>
               
+
+
                         <GridLayout *ngFor="let item  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
                             <Label col="1" text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
                             <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>
@@ -49,9 +46,17 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     </FlexboxLayout>
             </ng-template>
         </RadListView>
+        <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/login')">
+            <Label col="1" text="تسجيل خروج" class="ysRootMenuItem" ></Label>
+            <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
+
+        </GridLayout>
             </StackLayout>
         </ScrollView>
     </GridLayout>
 
+
+
+    
     <page-router-outlet  tkMainContent></page-router-outlet>
 </RadSideDrawer>

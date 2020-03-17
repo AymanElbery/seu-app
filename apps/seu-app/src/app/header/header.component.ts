@@ -48,8 +48,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     } else {
       document.getElementById('html').setAttribute('lang', code);
       document.getElementById('html').setAttribute('dir', 'rtl');
-      if (document.getElementById('enStyle'))
+      if (document.getElementById('enStyle')) {
         document.getElementById('enStyle').remove();
+      }
     }
     localStorage.setItem('seu-lang', code);
   }
@@ -77,7 +78,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.userService.userDataSubject.subscribe(res => {
       if (res) {
         this.userData = this.userService.getActiveRoleDetails();
-        //console.log(this.userData);
+        // console.log(this.userData);
         // if (!this.userService.userData.name_ar) {
         //   setTimeout(() => {
         //     window.location.reload();

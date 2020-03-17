@@ -36,13 +36,13 @@
             <Button class=" print-btn " (tap)="onArabicPrint()">
                 <FormattedString>
                     <Span text="&#xf02f;" class="fas"></Span>
-                    <Span text=" طباعة"></Span>
+                    <Span text="{{printAR}}"></Span>
                 </FormattedString>
             </Button>
             <Button class=" print-btn " (tap)="onEnglishPrint()">
                 <FormattedString>
                     <Span text="&#xf02f;" class="fas"></Span>
-                    <Span text=" Print"></Span>
+                    <Span text=" {{printEN}}"></Span>
                 </FormattedString>
             </Button>
         </FlexboxLayout>
