@@ -7,7 +7,7 @@ export const environment = {
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
-  wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi 
+  wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS_Test/jersey/', // wafi 
   //wafi_apilink: 'http://172.30.4.5:7101/CPTIT_SEU_WS_Test/jersey', // wafi 
   servicesprefix: 'api-test', // api-test
   appsprefix: 'apps-test', // api-test

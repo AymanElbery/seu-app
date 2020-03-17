@@ -124,6 +124,12 @@ export class UserService extends BaseService {
 
     return this.httRequest.postAuthRequest('rest/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
   }
+  resetPassword(userName, pass) {
+    this.baseUrl = '';
+    this.configService.baseUrl='';
+
+    return this.httRequest.postAuthRequest('rest/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
+  }
 
   loadUserData() {
     if (this.userDataLoaded !== true) {
