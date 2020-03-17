@@ -151,7 +151,6 @@ export class UserService extends BaseService {
     return this.requestUser();
   }
   pushUserDataChanges() {
-
     this.userDataSubject.next(this.userData);
     this.userDataObservable.next(this.userData);
   }
