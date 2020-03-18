@@ -772,7 +772,7 @@
         "RequestType": "Request Type",
         "VactionType": "Vaction Type",
         "Period": "Period",
-        "BeginDate": "Begin Date",
+        "beginDate": "Begin Date",
         "EndDate": "End Date",
         "Status": "Status",
         "Details": "Details",
@@ -829,6 +829,33 @@
         "timePeriod": "Time Period",
         "leaveDeductionPeriod":"Leave Deduction Period",
         "evacuateparty":"Request to evacuate a party",
-        "deductionregularleave27":"Deduction from regular leave in accordance with Article 27"
+        "deductionregularleave27":"Deduction from regular leave in accordance with Article 27",
+        "date":"Date",
+        "attachment":"attachment",
+        "Previous":"Previous",
+        "Next":"Next",
+        "requestseprationvacationdays":"Request separate vacation days",
+        "ApprovalRequets":"Approval of service Requests",
+        "searchdata":"Search Record",
+        "RequestNo":"Request No",
+        "EmpNo":"Emp No",
+        "EmpName":"Emp Name",
+        "WorkSide":"Work Side",
+        "ServiceDescription":"Service Description",
+        "EMP_HR_APPROVAL_SERVICE_DESC_DTL":"HR Approval Desc",
+        "RequestDate":"Request Date",
+        "ApprovalHistory":"Approval History",
+        "Sequence":"Sequence",
+        "ApprovalRequestDtails":"Approval Request Dtails",
+        "ApprovalRequests":"Approval Requests",
+        "AppriovalHistory":"Apprioval History",
+        "ApprovalData":"Apprioval Data",
+        "Approve":"Approve",
+        "Reject":"Reject",
+        "reasondispaaproval":"The Reason in case of disapproval"
+        
+        
+      
+
     }
 }

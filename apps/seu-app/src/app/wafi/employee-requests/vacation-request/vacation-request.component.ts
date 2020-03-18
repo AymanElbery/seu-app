@@ -21,9 +21,9 @@ export class VacationRequestComponent implements OnInit {
   vacationreqtype: any;
   ddltruefalse=true;
   citydata;
-  ddlday;
-  ddlmonth;
-  ddlyear;
+  ddlday = [];
+  ddlmonth= [];
+  ddlyear= [];
   altEmpItems;
   countryNewItems;
   cityNewItems;
@@ -55,7 +55,14 @@ export class VacationRequestComponent implements OnInit {
 
 
   }
+  selectcityFF(){
+this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
+ }
   selectcity(countryid){
+    if(!countryid){
+      this.citydata = [];
+      return false;
+    }
     this.subscriptionvac = this.empreqservice.getCities(countryid).subscribe(citydata => {
       if (citydata) {
         this.citydata = (citydata as any).data;
@@ -69,6 +76,7 @@ export class VacationRequestComponent implements OnInit {
 
   onFormSubmit(event) {
     this.submitted = true;
+    //this.isLoading = true;
     const submitdatavalue = (this.AddReqForm.value);
     if (this.AddReqForm.invalid) {
       return;
@@ -80,10 +88,12 @@ export class VacationRequestComponent implements OnInit {
         var error = (contacts as any).data["errorMassege"]
         //this.toastr.push((contacts as any).data); 
 
-        this.toastr.messagesdis([{ type: 'error', 'body': error }]);
+        this.toastr.push([{ type: 'error', 'body': error }]);
+        //this.isLoading = false;
 
       }else {
-        this.toastr.messagesdis([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
+        //this.isLoading = false;
 //navigate
       this.router.navigate(['/wafi/employee-requests'])
       }
@@ -138,6 +148,7 @@ export class VacationRequestComponent implements OnInit {
     this.AddReqForm.controls['requestType'].setValue(this.id);
     this.subscriptionDDLReqtype = this.empreqservice.getDDLVacationType(reqtypeid).subscribe(reqtype => {
       if (reqtype) {
+        console.log(reqtype);
         this.vacationreqtype = reqtype
         this.vacationreqtype = (reqtype as any).data["vacationItems"];
         this.ddlday = (reqtype as any).data["dayItem"];
@@ -148,7 +159,7 @@ export class VacationRequestComponent implements OnInit {
         this.cityNewItems = (reqtype as any).data["cityNewItems"];
         this.compErkabItems = (reqtype as any).data["compErkabItems"];
 
-        console.log("vac item data", this.vacationreqtype);
+       // console.log("vac item data", this.vacationreqtype);
         this.isLoading = false
       } else {
       }

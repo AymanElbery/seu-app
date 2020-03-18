@@ -70,10 +70,10 @@ _handleReaderLoaded(e) {
       //console.log("saved data", leavdedcut);
       if (!leavdedcut['saveRequesst']) {
         var error = (leavdedcut as any).data["errorMassege"]       
-        this.toastr.messagesdis([{ type: 'error', 'body': error }]);
+        this.toastr.push([{ type: 'error', 'body': error }]);
 
       }else {
-        this.toastr.messagesdis([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
         this.router.navigate(['/wafi/employee-requests'])
       }
     }
@@ -112,9 +112,7 @@ _handleReaderLoaded(e) {
         this.ddlday = (reqtype as any).data["dayItem"];
         this.ddlmonth = (reqtype as any).data["monthItem"];
         this.ddlyear = (reqtype as any).data["yearItem"];
-        
-
-        console.log("vac item data", this.vacationreqtype);
+        //console.log("vac item data", this.vacationreqtype);
         this.isLoading = false
       } else {
       }

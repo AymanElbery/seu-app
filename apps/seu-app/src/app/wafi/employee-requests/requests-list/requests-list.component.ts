@@ -21,7 +21,8 @@ export class RequestsListComponent implements OnInit, OnDestroy {
   }
   isLoading = true;
   subscriptions;
-
+  p: number;
+  config: any;
   ngOnInit() {
     this.getReqlist();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
@@ -82,6 +83,10 @@ export class RequestsListComponent implements OnInit, OnDestroy {
         });
 
     }
+  }
+
+  pageChanged(event){
+    this.config.currentPage = event;
   }
 
 }

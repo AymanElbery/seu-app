@@ -7,11 +7,14 @@ import { PrintButtonDirective } from './print-button.directive';
 import { ServiceHeaderComponent } from './service-header/service-header.component';
 import { AppTransModule } from '../app.trans.module';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent],
   imports: [
     CommonModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FormsModule, ReactiveFormsModule
   ],
   exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent]
 })

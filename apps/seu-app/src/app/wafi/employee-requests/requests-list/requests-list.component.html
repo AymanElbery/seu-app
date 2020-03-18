@@ -23,7 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let empreqs of emplistrequest;let i=index;">
+        <tr *ngFor="let empreqs of emplistrequest | paginate: { itemsPerPage: 12, currentPage: p };let i=index;">
 
           <td>{{empreqs.requestDesc}}</td>
           <td>{{empreqs.vacationDesc}}</td>
@@ -42,6 +42,14 @@
 
       </tbody>
     </table>
+    <ul class="pagination">  
+      <pagination-controls (pageChange)="p = $event"  
+      directionLinks="true"
+      autoHide="true"
+      previousLabel="{{'wafi.Previous' | translate}}"
+      nextLabel="{{'wafi.Next' | translate}}"      
+      ></pagination-controls>  
+      </ul>  
   </div>
 
 

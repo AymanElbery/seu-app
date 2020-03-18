@@ -62,11 +62,12 @@ _handleReaderLoaded(e) {
     this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
       //console.log("saved data", leavdedcut);
       if (!leavdedcut['saveRequest']) {
-        var error = (leavdedcut as any).data["errorMassege"]       
-        this.toastr.messagesdis([{ type: 'error', 'body': error }]);
+        var error = (leavdedcut as any).data["errorMassege"]   
+        console.log("response data",error);
+        this.toastr.push([{ type: 'error', 'body': error }]);
 
       }else {
-        this.toastr.messagesdis([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
         this.router.navigate(['/wafi/employee-requests'])
       }
     }
