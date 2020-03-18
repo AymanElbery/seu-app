@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
 
     this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
       res => {
-        localStorage.setItem('sid', res['sid']);
+        localStorage.setItem('sid', encodeURI(res['csid']));
         this.userService.loadUserData();
       },
       error => {

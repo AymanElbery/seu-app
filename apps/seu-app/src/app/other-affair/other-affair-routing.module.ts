@@ -4,11 +4,8 @@ import { MedicalReportComponent } from './medical-report/medical-report.componen
 import { UnivCardComponent } from './univ-card/univ-card.component';
 import { MissingCardComponent } from './missing-card/missing-card/missing-card.component';
 import { TrainingRequestComponent } from './training-request/training-request.component';
-import { AddTrainingRequestComponent } from './training-request/diag/add-training-request/add-training-request.component';
-import { TrainingRequestService } from './services/training-request.service';
-
-import { from } from 'rxjs';
 import { StudentInfoComponent } from './student-info/student-info.component';
+import { ChineescourseComponent } from './chineescourse/chineescourse.component';
 const routes: Routes = [{ path: '', component: MedicalReportComponent },
 {
   path: '',
@@ -18,7 +15,7 @@ const routes: Routes = [{ path: '', component: MedicalReportComponent },
     { path: 'missingcard', component: MissingCardComponent },
     { path: 'training', component: TrainingRequestComponent },
     { path: 'studentinfo', component: StudentInfoComponent },
-    { path: 'trainging', component: TrainingRequestComponent }
+    { path: 'chineescourse', component: ChineescourseComponent }
   ]
 }
 ];

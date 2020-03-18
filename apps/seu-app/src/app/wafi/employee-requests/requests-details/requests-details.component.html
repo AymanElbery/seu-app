@@ -1,0 +1,109 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+
+<div  class="modal-header">
+  <h4 class="modal-title">{{"wafi.RequestDtails" | translate}}</h4>  
+<button type="button"  class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
+</div>
+
+<div *ngIf="reqdetaildata" class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+
+      <tr>
+        <th *ngIf="reqdetaildata.requestType" scope="col">{{"wafi.RequestType" | translate}}</th>       
+        <th *ngIf="reqdetaildata.fromCountryEnabled==true" scope="col">{{"wafi.FromCountry-City" | translate}}</th>
+        <th *ngIf="reqdetaildata.toCountryEnabled==true" scope="col">{{"wafi.ToCountry-City" | translate}}</th>
+        <th *ngIf="reqdetaildata.ticketEnabled==true" scope="col">{{"wafi.Ticket" | translate}}</th>
+        <th *ngIf="reqdetaildata.roundTripEnabled==true" scope="col">{{"wafi.RoundTrip" | translate}}</th>
+        <th *ngIf="reqdetaildata.attendantsEnabled==true" scope="col">{{"wafi.Attendants" | translate}}</th>
+        <th *ngIf="reqdetaildata.amountEnabled==true" scope="col">{{"wafi.CompensationAmount" | translate}}</th>
+        <th *ngIf="reqdetaildata.decisionEnabled==true" scope="col">{{"wafi.DecisionNo" | translate}}</th>
+        <th *ngIf="reqdetaildata.subjectEnabled==true" scope="col">{{"wafi.Task/Direction" | translate}}</th>
+        <th *ngIf="reqdetaildata.startTimeEnabled==true" scope="col">{{"wafi.FromTime" | translate}}</th>
+        <th *ngIf="reqdetaildata.endTimeEnabled==true" scope="col">{{"wafi.ToTime" | translate}}</th>
+        <th *ngIf="reqdetaildata.alternativEemployee==true" scope="col">{{"wafi.AltrnativeEmployee" | translate}}</th>
+        <th *ngIf="reqdetaildata.compensation==true" scope="col">{{"wafi.CompensationandTransport" | translate}}</th>
+        <th *ngIf="reqdetaildata.toCountryNewEnabled==true" scope="col">{{"wafi.ToCountry" | translate}}</th>
+        <th *ngIf="reqdetaildata.toCityNewEnabled==true" scope="col">{{"wafi.TpCity" | translate}}</th>
+        <th *ngIf="reqdetaildata.mandateTypeEnabled==true" scope="col">{{"wafi.MandateType" | translate}}</th>
+
+        <th *ngIf="reqdetaildata.courseTypeEnabled==true" scope="col">{{"wafi.CourseType" | translate}}</th>
+        <th *ngIf="reqdetaildata.taskEnabled==true" scope="col">{{"wafi.Task" | translate}}</th>
+        <th *ngIf="reqdetaildata.directionEnabled==true" scope="col">{{"wafi.Direction" | translate}}</th>
+        <th *ngIf="reqdetaildata.regCourseEnabled==true" scope="col">{{"wafi.scheduleName" | translate}}</th>
+        <th *ngIf="reqdetaildata.regCourseEnabled==true" scope="col">{{"wafi.sideName" | translate}}</th>
+        <th *ngIf="reqdetaildata.disclaimerReasonEnabled==true" scope="col">{{"wafi.DisclaimerReason" | translate}}</th>
+      
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>        
+        <td *ngIf="reqdetaildata.requestType">{{reqdetaildata.requestDesc}}</td>
+        <td  *ngIf="reqdetaildata.fromCountryEnabled==true">{{reqdetaildata.fromCountryDesc}}</td>
+        <td  *ngIf="reqdetaildata.toCountryEnabled==true">{{reqdetaildata.toCountryDesc}}</td>
+        <td  *ngIf="reqdetaildata.ticketEnabled==true">{{reqdetaildata.ticket}}</td>
+        <td  *ngIf="reqdetaildata.roundTripEnabled==true">{{reqdetaildata.roundTrip}}</td>
+        <td  *ngIf="reqdetaildata.attendantsEnabled==true">{{reqdetaildata.attendants}}</td>
+        <td  *ngIf="reqdetaildata.amountEnabled==true">{{reqdetaildata.compensationAmount}}</td>
+        <td  *ngIf="reqdetaildata.decisionEnabled==true">{{reqdetaildata.decisionNo}}</td>
+        <td  *ngIf="reqdetaildata.subjectEnabled==true">{{reqdetaildata.subject}}</td>
+        <td  *ngIf="reqdetaildata.startTimeEnabled==true">{{reqdetaildata.startTime}}</td>
+        <td  *ngIf="reqdetaildata.endTimeEnabled==true">{{reqdetaildata.endTime}}</td>
+        <td  *ngIf="reqdetaildata.alternativEemployee==true">{{reqdetaildata.altEemployeeDesc}}</td>
+        <td  *ngIf="reqdetaildata.compensation==true">{{reqdetaildata.compensationValDesc}}</td>
+        <td  *ngIf="reqdetaildata.toCountryNewEnabled==true">{{reqdetaildata.toCountryNewDesc}}</td>
+        <td  *ngIf="reqdetaildata.toCityNewEnabled==true">{{reqdetaildata.toCityNewDesc}}</td>
+        <td  *ngIf="reqdetaildata.mandateTypeEnabled==true">{{reqdetaildata.mandateTypeDesc}}</td>
+
+        <td  *ngIf="reqdetaildata.courseTypeEnabled==true">{{reqdetaildata.courseTypeDesc}}</td>
+        <td  *ngIf="reqdetaildata.taskEnabled==true">{{reqdetaildata.task}}</td>
+        <td  *ngIf="reqdetaildata.directionEnabled==true">{{reqdetaildata.direction}}</td>
+        <td  *ngIf="reqdetaildata.regCourseEnabled==true">{{reqdetaildata.scheduleDesc}}</td>
+        <td  *ngIf="reqdetaildata.regCourseEnabled==true">{{reqdetaildata.trainSideDesc}}</td>
+        <td  *ngIf="reqdetaildata.disclaimerReasonEnabled==true">{{reqdetaildata.disclaimerReasonDesc}}</td>
+      
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div  class="modal-header">
+  <h4 class="modal-title">{{"wafi.requestApprovalsData" | translate}}</h4>
+  
+</div>
+
+
+<div *ngIf="requestApprovalsData" class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+
+      <tr>
+
+        <th scope="col">{{"wafi.StepNo" | translate}}</th>
+        <th scope="col">{{"wafi.ApprovedEmployee" | translate}}</th>
+        <th scope="col">{{"wafi.DuatyDescription" | translate}}</th>
+        <th scope="col">{{"wafi.TransactionDate" | translate}}</th>
+        <th scope="col">{{"wafi.Agree/disagree" | translate}}</th>
+        <th scope="col">{{"wafi.RejecteReasone" | translate}}</th>
+        
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reqapprvl of requestApprovalsData;let i=index;">
+             
+        <td>{{reqapprvl.stepNo}}</td>
+        <td>{{reqapprvl.approvedEmpName}}</td>
+        <td>{{reqapprvl.duatyDesc}}</td>
+        <td>{{reqapprvl.approvedDate}}</td>        
+        <td>{{reqapprvl.isApprovedDesc}}</td>
+        <td>{{reqapprvl.disagreeReasone}}</td>       
+       
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+

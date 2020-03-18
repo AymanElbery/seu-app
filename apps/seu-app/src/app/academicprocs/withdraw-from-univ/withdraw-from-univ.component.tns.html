@@ -1,25 +1,4 @@
-
-<ActionBar style="background:#001628; ">
-    <!-- 
-    Use the NavigationButton as a side-drawer button in Android
-    because ActionItems are shown on the right side of the ActionBar
-
--->
-
-<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
-
-<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
--->
-<StackLayout margin-top="0">
-  
-    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
-
-  </StackLayout>
-
-    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
-    </ActionItem>
-
-</ActionBar>
+<app-header></app-header>
 
 <ScrollView>
     <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
@@ -88,7 +67,7 @@
                     <Label row="4"  column="0" class="ysPBox2" text="{{item.insert_date}}"  style="text-align: right;"></Label>
                     
                     <Label row="5" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_print"|translate}}'></Label>
-                    <Button row="5"  column="0" (tap)="print(item.request_number)" class=" fas blue-button  " text="&#xf02f;"></Button>
+                    <Button row="5"  column="0" (tap)="print(item.request_number)" class=" fas blue-button  " text="{{printAR}}"></Button>
 
                     <Label row="6" column="1" class="ysPBox" style="font-weight: 800;"  text='{{"general.request.req_delete"|translate}}'></Label>
                     <Button row="6"  column="0" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas blue-button "></Button>

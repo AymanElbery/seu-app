@@ -1,28 +1,4 @@
-<ActionBar style="background:#001628; ">
-    <!-- 
-    Use the NavigationButton as a side-drawer button in Android
-    because ActionItems are shown on the right side of the ActionBar
-  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-
--->
-<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" >
-    
-</NavigationButton>
-
-<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
--->
-<StackLayout margin-top="0">
-  
-    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
-
-  </StackLayout>
-
-    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
-    </ActionItem>
-
-  
-    
-</ActionBar>
+<app-header></app-header>
 <StackLayout>
     <StackLayout class="heading " style="padding-right: 10px;">
 

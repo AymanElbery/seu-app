@@ -8,6 +8,9 @@ import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/com
 import { AddExecuseTermComponent } from './diag/add-execuse-term/add-execuse-term.component.tns';
 import { AppToasterService } from '../../shared/services/app-toaster';
 import { RequestData } from '../../shared/models/request-data';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-execuse-request',
@@ -16,18 +19,20 @@ import { RequestData } from '../../shared/models/request-data';
 })
 export class ExecuseRequestComponent implements OnInit {
 
+  printAR='طباعة';
   reason: string;
   reqData:RequestData={can_add_new_request:false,requests:[],reqs:[],notes:[]};
   msgs=[];
   status;
   isLoading = false;
+  isDownLoaded = false;
 
   constructor(private _modalService: ModalDialogService,
-    private _vcRef: ViewContainerRef,private acadmicProc: TermExecuseService,private toastr: AppToasterService) { }
+    private _vcRef: ViewContainerRef,private acadmicProc: TermExecuseService,private toastr: AppToasterService,
+    private downloader: DataDownLoadService,private translate: TranslateService,) { }
     
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
+    Downloader.init(); 
     this.isLoading = true;
     this.reason = '';
     this.getRequests();
@@ -65,7 +70,21 @@ export class ExecuseRequestComponent implements OnInit {
 }
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log("xxxx",x)
+      this.printAR = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.translate.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
+      }
+    });
   }
   deleting = false;
   delete(id, index) {
@@ -91,9 +110,5 @@ export class ExecuseRequestComponent implements OnInit {
     }
 });
   }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
-
+ 
 }
