@@ -15,6 +15,7 @@ import {ExamAttendanceCertificateService} from './services/exam-attendance-certi
 import { ExamAttendanceCertificateAppService } from './services/exam-attendance-certificate-app.service';
 import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certificate-app/exam-attendance-certificate-app.component';
 import { AppLazyTransModule } from '../app.lazytrans.module';
+import { SeucommonModule } from '../seucommon/seucommon.module';
 
 @NgModule({
   declarations: [CertificateIDComponent,
@@ -29,7 +30,8 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    AppLazyTransModule
+    AppLazyTransModule,
+    SeucommonModule
     //BrowserAnimationsModule
   ],
   

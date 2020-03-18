@@ -64,6 +64,8 @@ import { LectureAbsQueryService } from './services/lecture-abs-query.service';
 import { TimerModule } from '../shared/components/timer/timer.module';
 import { MatCheckboxModule } from '@angular/material';
 import { AppLazyTransModule } from '../app.lazytrans.module';
+import { SeucommonModule } from '../seucommon/seucommon.module';
+
 @NgModule({
   declarations: [PostponeRequestComponent
     , ExecuseRequestComponent,
@@ -102,6 +104,7 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     AddBankReceiptComponent,
     AddVisitorStudentComponent,
     AbsenceQueryComponent
+    
 
   ],
   entryComponents: [AddRequestComponent,
@@ -135,7 +138,8 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     MatProgressSpinnerModule,
     ToastrModule.forRoot(),
     TimerModule,
-    AppLazyTransModule
+    AppLazyTransModule,
+    SeucommonModule
   ],
   providers: [WithdrawFromUnivService,
     TermPostponeService,

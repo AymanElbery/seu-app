@@ -231,8 +231,8 @@
 
 
     <div style="text-align: center" class="prin" *ngIf="!isLoading">
-      <a class="btn" href="{{arabicPrint}}">{{"general.ar_print" | translate}}<i class="ik ik-save"></i> </a>
-      <a class="btn" href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print" | translate}} </a>
+      <a class="btn" seu-auto-print href="{{arabicPrint}}">{{"general.ar_print" | translate}}<i class="ik ik-save"></i> </a>
+      <a class="btn" seu-auto-print href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print" | translate}} </a>
     </div>
 
     <mat-spinner *ngIf="isLoading"

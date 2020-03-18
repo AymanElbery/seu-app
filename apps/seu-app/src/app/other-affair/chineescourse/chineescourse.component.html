@@ -1,0 +1,55 @@
+<div class="main-content">
+  <section _ngcontent-fpr-c11="" class="service-single ">
+    <div _ngcontent-fpr-c11="" class="container">
+      <h3 _ngcontent-fpr-c11=""> {{"services.chineescourse.title"|translate}} </h3>
+      <div _ngcontent-fpr-c11="" class="row">
+        <div _ngcontent-fpr-c11="" class=" col-md-5">
+          <p _ngcontent-fpr-c11=""> {{"services.chineescourse.desc"|translate}} </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div *ngIf="isLoading" class=" loading-indicator  ">
+    <div class="state">
+      <mat-spinner *ngIf="isLoading"
+        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+      </mat-spinner>
+    </div>
+  </div>
+  <div class="ser-state" *ngIf="!isLoading">
+    <div *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}
+    </div>
+  </div>
+  <br />
+  <div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+      <h3 class="widget-title"> {{"general.request.pre_requests"|translate}}
+        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+          {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
+        </button>
+      </h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">{{"services.chineescourse.time"|translate}}</th>
+            <th scope="col">{{"services.chineescourse.req_date"|translate}}</th>
+            <th scope="col">{{"general.request.req_delete"|translate}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let it of reqData.requests;let i=index;">
+            <td>{{it.time}}</td>
+            <td>{{it.insert_date}}</td>
+            <td><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
+                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

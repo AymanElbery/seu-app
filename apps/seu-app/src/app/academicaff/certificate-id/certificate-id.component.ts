@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy,ViewChildren } from '@angular/core';
 import { Lecture } from 'src/app/shared/models/lecture';
 import { CertificateIDService } from '../services/certificate-id.service';
 import { TranslateService } from '@ngx-translate/core';
+import {PrintButtonDirective} from '../../seucommon/print-button.directive';
 
 @Component({
   selector: 'app-certificate-id',
@@ -9,6 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./certificate-id.component.scss']
 })
 export class CertificateIDComponent implements OnInit, OnDestroy {
+  @ViewChildren(PrintButtonDirective) dirs;
 
   constructor(private transalte: TranslateService, private certificateIDService: CertificateIDService) { }
   certificateDetails;
@@ -43,8 +45,8 @@ export class CertificateIDComponent implements OnInit, OnDestroy {
       }
     );
   }
-  toHTML(input): any {
-    return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
-  }
+ 
+
+  
 
 }
