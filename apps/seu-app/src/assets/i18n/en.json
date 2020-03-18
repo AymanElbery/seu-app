@@ -94,7 +94,9 @@
         "vitrual": "Virtual",
         "class": "Class",
         "total": "Total",
-        "no_absence_registered": "No Absense registered"
+        "no_absence_registered": "No Absense registered",
+        "required": "ٌRequired",
+        "mismatch": "Passwords Doesn't match"
     },
     "menu": {
         "myservices": "My Services",
@@ -203,7 +205,8 @@
         "AdminPage": "Admin Pages",
         "training": "Training Request",
         "chineescourse": "Chinees Course",
-        "PersonalInfo" : "My Information"
+        "PersonalInfo": "My Information",
+        "resetpassword": "Reset Password"
     },
     "services": {
         "academic_status": {
@@ -628,6 +631,20 @@
             "desc": "",
             "time": "Course Time",
             "req_date": "Application Date"
+        },
+        "reset": {
+            "oldpassword": "Current Paaword",
+            "newpassword": "New Paaword",
+            "cnewpassword": "Confirm New Password",
+            "note1": "Password should be of minimum 8 characters.",
+            "note2": "Password should be of maximum 20 character.",
+            "note3": "Password should not contain your user id.",
+            "note4": "Password should contain at least one upper case character.",
+            "note5": "Password should contain at least one lower case character.",
+            "note6": "Password should contain at least one number.",
+            "note7": "Password should not contain your first name.",
+            "note8": "Password should not contain your last name.",
+            "note9": "Password should not be from last 5 passwords."
         }
     },
     "policy": {

@@ -8,6 +8,8 @@ import { NotificationsService } from '../shared/services/notificationsservice';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../environments/environment';
 import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { ResetPasswordComponent } from '../account/reset-password/reset-password.component';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +21,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     private userManager: UserManagerService,
     public userService: UserService,
     public notifications: NotificationsService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    public dialog: MatDialog
   ) {
     this.environment = environment;
   }
@@ -96,5 +99,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     //   setTimeout(() => {
     //     window.location.reload();
     //   }, 3000);
+  }
+  resetPawwordFrom() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.width = '70%';
+    this.dialog.open(ResetPasswordComponent, dialogConfig);
   }
 }

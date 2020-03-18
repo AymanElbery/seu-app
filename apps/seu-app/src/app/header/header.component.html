@@ -61,8 +61,8 @@
             <a *ngIf="hasWafi" class="dropdown-item" [routerLink]="['/wafi/personal']">
               <i class="ik ik-user dropdown-icon"></i>{{"menu.PersonalInfo" | translate}}
             </a>
-            <a class="dropdown-item" [routerLink]="['/changepassword']">
-              <i class="ik ik-user dropdown-icon"></i>{{"menu.changepassword" | translate}}
+            <a class="dropdown-item" href="javascript:;" (click)="resetPawwordFrom()">
+              <i class="ik ik-user dropdown-icon"></i>{{"menu.resetpassword" | translate}}
             </a>
             <a class="dropdown-item" href="https://sso.seu.edu.sa/oam/server/logout"><i
                 class="ik ik-power dropdown-icon"></i> {{"menu.logout" | translate}} </a>
