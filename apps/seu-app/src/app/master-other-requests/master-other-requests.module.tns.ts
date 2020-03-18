@@ -17,6 +17,7 @@ import { AddChangeCourseComponent } from './change-course/diag/add-change-course
 import { AddPersonalIdComponent } from './personal-id/diag/add-personal-id/add-personal-id.component.tns';
 import { GraduateProfileDetailComponent } from './graduate-profile/diag/graduate-profile-detail/graduate-profile-detail.component.tns';
 import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduate-profile/add-graduate-profile.component.tns';
+import { HeaderModule } from '../shared/header.module.tns';
 
 @NgModule({
 
@@ -40,7 +41,8 @@ import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduat
     NativeScriptFormsModule,
     NativeScriptUIListViewModule,
     NativeScriptLocalizeModule,
-    AppTransModule
+    AppTransModule,
+    HeaderModule
   ],
   entryComponents: [
     AddChangeBranchComponent,

@@ -67,9 +67,6 @@ export class AcademicStatusComponent implements OnInit {
       this.printAR = res;
     }
     );
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
-
     this.isLoading = true;
     this.isLoadingTerm = true;
     this.academicStatusService.getStaudentStatus().then((res) => {

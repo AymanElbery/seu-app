@@ -7,6 +7,10 @@ import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
 import * as utils from 'tns-core-modules/utils/utils';
 import { RecoredDataModel } from '../../shared/models/RecoredDataModel';
 import { ItemsSource } from 'tns-core-modules/ui/list-view/list-view';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
+import { TranslateService } from '@ngx-translate/core';
+
 // tslint:disable-next-line: one-variable-per-declaration
 declare var UIView, NSMutableArray, NSIndexPath;
 
@@ -17,7 +21,14 @@ declare var UIView, NSMutableArray, NSIndexPath;
 })
 export class AcademicRecordComponent implements OnInit {
   msgs: any;
-  constructor(private academicService: AcademicRecordService) { }
+  printAR = '';
+  printEN = '';
+  isDownLoaded = false;
+
+  constructor(private academicService: AcademicRecordService,
+    private downloader: DataDownLoadService,
+    private transalte: TranslateService
+    ) { }
   recoredData: RecoredDataModel = {coll:'', grade:'', major:'', ssn:'', status:'', student_name:'', terms: []};
   arabicPrint: string;
   EngPrint: string;
@@ -50,10 +61,12 @@ onItemTap(event: ListViewEventData) {
 }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
-
     this.isLoading = true;
+    Downloader.init();
+    this.transalte.get('general.ar_language').subscribe(res => {
+      this.printAR = res;
+    }
+    );
     this.academicService.getِAcademicRecord().then(
       res => {
     this.recoredData =    (res as any).data;
@@ -66,14 +79,34 @@ onItemTap(event: ListViewEventData) {
     this.EngPrint = this.academicService.DownloadEng();
   }
 
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
   onArabicPrint() {
-    utils.openUrl(this.arabicPrint);
-  }
+       this.downloader.downloadFile(this.arabicPrint);
+       console.log('downloiad');
+       this.printAR = '1%';
+       this.downloader.csize.subscribe(x => {
+         this.printAR = x;
+         if (x == '100') {
+           this.isDownLoaded = true;
+           this.transalte.get('general.ar_print').subscribe(res => {
+               this.printAR = res;
+             }
+             );
+   
+         }
+       });  }
   onEnglishPrint() {
-    utils.openUrl(this.EngPrint);
+    this.downloader.downloadFile(this.EngPrint);
+    this.printEN = '1%';
+    this.downloader.csize.subscribe(x => {
+      this.printEN = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.transalte.get('general.en_print').subscribe(res => {
+            this.printEN = res;
+          }
+          );
+
+      }
+    });
   }
 }

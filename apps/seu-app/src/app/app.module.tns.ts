@@ -33,6 +33,7 @@ import { MasterPrintCertificatesModule } from './master-print-certificates/maste
 import { MasterOtherRequestsModule } from './master-other-requests/master-other-requests.module.tns';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 import { NotificationsComponent } from './notifications/notifications/notifications.component';
+import { HeaderModule } from './shared/header.module.tns';
 
 
 
@@ -62,7 +63,8 @@ import { NotificationsComponent } from './notifications/notifications/notificati
     MasterStudentDataModule,
     MasterPrintCertificatesModule,
     MasterOtherRequestsModule,
-    NativeScriptUIListViewModule
+    NativeScriptUIListViewModule,
+    HeaderModule
       ],
 
   providers: [ConfigService, HttpRequestService, UserManagerService,
