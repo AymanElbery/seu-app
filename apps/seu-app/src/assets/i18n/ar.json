@@ -829,8 +829,8 @@
         "leaveDeductionPeriod":"ملاحظات",
         "evacuateparty":"طلب اخلاء طرف",
         "deductionregularleave27":"حسم من الإجازة العادية وفق المادة 27",
-        "date":"Date",
-        "attachment":"attachment",
+        "date":"تاريخ",
+        "attachment":"المرفق",
         "Previous":"السابق",
         "Next":"التالى",
         "requestseprationvacationdays":"طلب ايام الاجازة المتفرقة",
@@ -847,10 +847,10 @@
         "Sequence":"تسلسل",
         "ApprovalRequestDtails":"الموافقات على طلبات الخدمة",
         "ApprovalData":"إظهار حركات الموافقات",
-        "ApprovalRequests":"Approval Requests",
-        "AppriovalHistory":"Apprioval History",
-        "Approve":"Approve",
-        "Reject":"Reject",
+        "ApprovalRequests":"الموافقة علي الطلبات",
+        "AppriovalHistory":"حركة الموافقات",
+        "Approve":"موافقة",
+        "Reject":"رفض",
         "reasondispaaproval":"السبب في حالة عدم الموافقة"
     }
 }
