@@ -75,7 +75,7 @@ switch (reqtypeval) {
       this.router.navigate(['/wafi/employee-requests/attend-course-request',reqtypeval])
         break;
     case "37":
-      this.router.navigate(['/wafi/employee-requests/regullar-leave-request',reqtypeval])
+      this.router.navigate(['/wafi/employee-requests/regular-leave-request',reqtypeval])
         break;
     case "65":
       this.router.navigate(['/wafi/employee-requests/evacuate-party-request',reqtypeval])
@@ -103,55 +103,6 @@ switch (reqtypeval) {
     //this.addrequestsdata(employee);
   }
 
-
-
-
-
-
-
-
-  // addrequestsdata(employee: Register) {  
-  //   var x = this.roles.filter(x => x.selected).map(y => y.name);
-  //   console.log("form data",employee);
-  //   if(x.length<1)
-  //   {
-  //     this.notificationService.warn(':: Please select at leat one role !!');
-  //     this.submitted = false;
-  //   }    
-  //   else{
-  //     this.submitted = true;
-  //     this.service.AddcreateEmployee(employee,x).subscribe(contacts => 
-  //       {
-  //         this.result = contacts;
-  //         console.log(this.result);  
-  //         if(this.result=="Login Id Already Exist"){
-  //           this.notificationService.warn(this.result);
-  //           return false; 
-  //         }  
-          
-  //         if(this.result=="Employee Id Already Exist"){
-  //           this.notificationService.warn(this.result);
-  //           return false;
-  //         }   
-
-  //         if(this.result=="MachineUserId Id Already Exist"){
-  //           this.notificationService.warn(this.result);
-  //           return false;
-  //         } 
-
-  //         else{
-  //         this.dataSaved = true;  
-  //         this.massage = 'Record saved Successfully';  
-  //         this.router.navigate(['/usermanagement/Employee']);
-  //         this.notificationService.success(':: Record saved Successfully !!');
-  //       }   
-  //         //this.loadAllEmployees();  
-  //         //this.employeeIdUpdate = null;  
-  //         //this.employeeForm.reset();  
-  //       }  
-  //     );  
-  //     }
-  //     }
 
   
 }
