@@ -14,6 +14,7 @@ import {AcademicStatusService} from './services/academic-status.service';
 import { AcademicRecordComponent } from './academic-record/academic-record.component';
 import { AcademicRecordService } from './services/academic-record.service';
 import { AppLazyTransModule } from '../app.lazytrans.module';
+import { SeucommonModule } from '../seucommon/seucommon.module';
 
 @NgModule({
   declarations: [AcademicStatusComponent, AcademicRecordComponent],
@@ -25,7 +26,8 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
-    AppLazyTransModule
+    AppLazyTransModule,
+    SeucommonModule
 
     // BrowserAnimationsModule
   ],

@@ -95,7 +95,9 @@
         "vitrual": "Virtual",
         "class": "Class",
         "total": "Total",
-        "no_absence_registered": "No Absense registered"
+        "no_absence_registered": "No Absense registered",
+        "required": "ٌRequired",
+        "mismatch": "Passwords Doesn't match"
     },
     "menu": {
         "myservices": "My Services",
@@ -157,7 +159,7 @@
         "GRADUATEINFO": "Graduate profile ",
         "PublicServices": "Public services ",
         "email": "Email ",
-        "ALWAFI": " Alwafi",
+        "ALWAFI": " Self Services",
         "Attednace": "Attendace ",
         "Support": " Support",
         "BANNER": "Banner",
@@ -201,7 +203,11 @@
         "CouncilsAndCommittees": "Councils and committees management system",
         "TeachingLoad": "Teaching Load",
         "NewAdminPage": "New Admin Pages",
-        "AdminPage": "Admin Pages"
+        "AdminPage": "Admin Pages",
+        "training": "Training Request",
+        "chineescourse": "Chinees Course",
+        "PersonalInfo": "My Information",
+        "resetpassword": "Reset Password"
     },
     "services": {
         "academic_status": {
@@ -562,7 +568,8 @@
             "work_address": "work address ",
             "choose_work_address": "choose work adress  ",
             "employer": "  Job owner data  :",
-            "obligation": "Confirm that the information entered is correct, as the graduation document will be printed according to the information you entered"
+            "obligation": "Confirm that the information entered is correct, as the graduation document will be printed according to the information you entered",
+            "name": "Name"
         },
         "training_request": {
             "title": "Field training request",
@@ -576,7 +583,11 @@
             "alert": "alert",
             "alert_content": "Please read the conditions for accepting your request for field training .. Admission is conditional on your passing for 86 hours, knowing that you will not be able to train and your registration for training is considered canceled if they do not pass. ",
             "destination_letter": "The name of the entity you wish to address the letter to ",
-            "practical_train": "Field and practical training request"
+            "practical_train": "Field and practical training request",
+            "instructions": "Instructions",
+            "form_ar": "Form - Arabic",
+            "form_en": "Form - English",
+            "student_form": "Student Form"
         },
         "reg": {
             "choosewishe": "choose wishes ",
@@ -615,6 +626,26 @@
             "organizer": "Organizer",
             "location": "Location",
             "date": "Date"
+        },
+        "chineescourse": {
+            "title": "Chinese language course appplication",
+            "desc": "",
+            "time": "Course Time",
+            "req_date": "Application Date"
+        },
+        "reset": {
+            "oldpassword": "Current Paaword",
+            "newpassword": "New Paaword",
+            "cnewpassword": "Confirm New Password",
+            "note1": "Password should be of minimum 8 characters.",
+            "note2": "Password should be of maximum 20 character.",
+            "note3": "Password should not contain your user id.",
+            "note4": "Password should contain at least one upper case character.",
+            "note5": "Password should contain at least one lower case character.",
+            "note6": "Password should contain at least one number.",
+            "note7": "Password should not contain your first name.",
+            "note8": "Password should not contain your last name.",
+            "note9": "Password should not be from last 5 passwords."
         }
     },
     "policy": {
@@ -625,8 +656,8 @@
         "no_conflict": "I acknowledge reading and understanding the SEU Conflict of Interest Policy and I hereby declare that I have no conflict  of interests.",
         "has_conflict": "I acknowledge reading and understanding the SEU Conflict of Interest Policy and I may have a conflict of interest and I will follow the announced disclosure procedure.",
         "send": "Send",
-        "doc_link":"/assets/files/policy.pdf",
-        "notes":"* Scroll down the appended policy to activate the options below."
+        "doc_link": "/assets/files/policy.pdf",
+        "notes": "* Scroll down the appended policy to activate the options below."
     },
     "instructions": {
         "exams": {
@@ -694,5 +725,89 @@
                 }
             ]
         }
+    },
+    "wafi": {
+        "wafi": "Self Services",
+        "month": "Month",
+        "year": "Year",
+        "description": "Description",
+        "amount": "Amount",
+        "monthYear": "Month/Year",
+        "branch": "Branch",
+        "bank": "Bank",
+        "accountno": "Acount No",
+        "balance": "Balance",
+        "basicsalary": "Basic Salary",
+        "selectyear": "Select Year",
+        "period": "Period",
+        "startDate": "Start Date",
+        "no": "NO",
+        "decisionNo": "DecisionNo",
+        "showPrint": "Show Print",
+        "seq": "Seq",
+        "startDateG": "Start DateG",
+        "vacationCode": "Vacation Code",
+        "endDate": "End Date",
+        "yearCode": "Year Code",
+        "vacationCoverage": "Vacation Coverage",
+        "VacationReservedBalance": "Vacation Reserved Balance",
+        "VacationAbsenceBalance": "Vacation Absence Balance",
+        "salarydetailsselected": "Salary Details",
+        "VacationBalance": "Vacation Balance",
+        "personal": "Personal",
+        "PersonalInfo": "Personal Info",
+        "Salaries": "Salaries",
+        "Vacations": "Vacations",
+        "print-report": "Print Report",
+        "EMP_REPORTS_WITHOUT_SALARY": "Certificate without Salary",
+        "EMP_REPORTS_WITHOUT_SALARY EN": "Certificate without salary (EN)",
+        "EMP_REPORTS_WITH_SALARY": "Certificate with Salary",
+        "EMP_REPORTS_WITH_SALARY EN": "Certificate with salary (EN)",
+        "EMP_REPORTS_WITH_SALARY_AND_FEES": "Certificate with Detailed Salary",
+        "EMP_REPORTS_WITH_SALARY_AND_FEES EN": "Certificate with Detailed salary (EN)",
+        "EMP_REPORTS_WITH_SALARY_DTL": "Salary definition and allowances details",
+        "typrhere": " Type Here",
+        "selectvacationtype": " Select Vacation Type",
+        "HousingReaport": "Housing Reaport",
+        "RequestType": "Request Type",
+        "VactionType": "Vaction Type",
+        "Period": "Period",
+        "BeginDate": "Begin Date",
+        "EndDate": "End Date",
+        "Status": "Status",
+        "Details": "Details",
+        "FromCountry-City": "From Country-City",
+        "ToCountry-City": "To Country-City",
+        "Ticket": "Ticket",
+        "RoundTrip": "RoundTrip",
+        "Attendants": "Attendants",
+        "CompensationAmount": "Compensation Amount",
+        "DecisionNo": "DecisionNo",
+        "Task/Direction": "Task/Direction",
+        "FromTime": "DeleFromTimete",
+        "ToTime": "ToTime",
+        "AltrnativeEmployee": "Altrnative Employee",
+        "CompensationandTransport": "Compensation and Transport",
+        "ToCountry": "To Country",
+        "TpCity": "TpCity",
+        "MandateType": "Mandate Type",
+        "CourseType": "Course Type",
+        "Task": "Task",
+        "Direction": "Direction",
+        "scheduleName": "schedule Name",
+        "sideName": "Side Name",
+        "DisclaimerReason": "Disclaimer Reason",
+        "requestApprovalsData": "Request Approvals Data",
+        "StepNo": "Step No",
+        "ApprovedEmployee": "Approved Employee",
+        "DuatyDescription": "Duaty Description",
+        "TransactionDate": "Transaction Date",
+        "Agree/disagree": "Agree/Disagree",
+        "RejecteReasone": "Rejecte Reasone",
+        "RequestDtails": "Request Dtails",
+        "Delete": "Delete",
+        "employee-requests": "Employee-Requests",
+        "requests-lists": "Requests-Lists",
+        "print-concern": "Whome to concern"
     }
 }

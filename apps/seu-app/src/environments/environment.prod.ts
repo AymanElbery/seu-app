@@ -1,8 +1,9 @@
 export const environment = {
   production: true,
-  cmslink: 'https://test.seu.edu.sa/umbraco/Surface/',
+  cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso/', // newservices/
+  wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi
   servicesprefix: 'api', // api
   appsprefix: 'apps-prod', // api-test
   loginpage: 'login-ss.php',
