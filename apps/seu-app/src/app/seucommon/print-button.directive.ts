@@ -1,10 +1,11 @@
 import { Directive, ElementRef, Input, Renderer2, OnInit, HostListener, ViewChild } from '@angular/core';
 import * as fileSaver from 'file-saver';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpClient, HttpHeaderResponse } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { AppToasterService } from '../shared/services/app-toaster';
 import { environment } from 'src/environments/environment';
 import { NewsComponent } from '../dashboard/news/news.component';
+import { GlobalBaseService } from '../shared/services/global-base.service';
 
 
 @Directive({
@@ -15,7 +16,7 @@ export class PrintButtonDirective {
   subscription: Subscription;
   isDownloading = false;
   @HostListener('click', ['$event']) onClick($event) {
-    if(this.isDownloading){
+    if (this.isDownloading) {
       return false;
     }
     var url = this.elmRef.nativeElement.href;
@@ -41,24 +42,48 @@ export class PrintButtonDirective {
     // disable 
     this.isDownloading = true;
     let newel = this.rendered.createElement('i');
-    this.rendered.addClass(newel,'fas')
-    this.rendered.addClass(newel,'fa-spinner');
-    this.rendered.addClass(newel,'fa-spin');
-    this.rendered.appendChild(this.elmRef.nativeElement,newel);
+    this.rendered.addClass(newel, 'fas')
+    this.rendered.addClass(newel, 'fa-spinner');
+    this.rendered.addClass(newel, 'fa-spin');
+    this.rendered.appendChild(this.elmRef.nativeElement, newel);
   }
   removeLoading() {
     // enable 
     this.isDownloading = false;
-    this.rendered.removeChild(this.elmRef.nativeElement,this.elmRef.nativeElement.children[1]);
+    this.rendered.removeChild(this.elmRef.nativeElement, this.elmRef.nativeElement.children[1]);
   }
-  constructor(private elmRef: ElementRef, private rendered: Renderer2, private toaster: AppToasterService, private renderer: Renderer2, private http: HttpClient, ) {
+  constructor(private elmRef: ElementRef, private rendered: Renderer2, private toaster: AppToasterService, private renderer: Renderer2, private http: HttpClient, private globalService: GlobalBaseService) {
   }
 
 
   ngOnInit() {
   }
+  removeURLParameter(url, parameter) {
+    //prefer to use l.search if you have a location/link object
+    var urlparts = url.split('?');
+    if (urlparts.length >= 2) {
+
+      var prefix = encodeURIComponent(parameter) + '=';
+      var pars = urlparts[1].split(/[&;]/g);
+
+      //reverse iteration as may be destructive
+      for (var i = pars.length; i-- > 0;) {
+        //idiom for string.startsWith
+        if (pars[i].lastIndexOf(prefix, 0) !== -1) {
+          pars.splice(i, 1);
+        }
+      }
+
+      return urlparts[0] + (pars.length > 0 ? '?' + pars.join('&') : '');
+    }
+    return url;
+  }
 
   requesturls(url: any) {
-    return this.http.get(url, { responseType: 'blob' as 'json', observe: 'response' });
+    const sid = this.globalService.getSID();
+    const headers = new HttpHeaders({
+      'Session-ID': sid
+    });
+    return this.http.get(this.removeURLParameter(url, "sid"), { headers: headers, responseType: 'blob' as 'json', observe: 'response' });
   }
 }
