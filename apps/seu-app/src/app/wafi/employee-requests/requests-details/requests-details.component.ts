@@ -23,7 +23,7 @@ export class RequestsDetailsComponent implements OnInit {
         this.reqdetaildata = (reqdetail as any).data["currentServiceRequestTable"];
         this.requestApprovalsData = (reqdetail as any).data["requestApprovalsData"];
 
-        //console.log("curent tab data",this.requestApprovalsData);
+        console.log("curent tab data",this.requestApprovalsData);
         this.isLoading = false;
       } else {
 

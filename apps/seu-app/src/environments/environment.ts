@@ -3,12 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production:false,
+  production: false,
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
-  wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS_Test/jersey/', // wafi 
-  //wafi_apilink: 'http://172.30.4.5:7101/CPTIT_SEU_WS_Test/jersey', // wafi 
+  wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS_TEST/jersey/', // wafi 
   servicesprefix: 'api-test', // api-test
   appsprefix: 'apps-test', // api-test
   loginpage: 'login-testl.php',

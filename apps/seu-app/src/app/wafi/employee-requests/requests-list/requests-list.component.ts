@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { RequestsDetailsComponent } from '../requests-details/requests-details.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import {RequestAddComponent} from '../request-add/request-add.component';
 
 @Component({
   selector: 'app-requests-list',

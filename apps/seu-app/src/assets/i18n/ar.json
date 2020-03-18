@@ -808,6 +808,26 @@
         "Delete": "حذف",
         "employee-requests": "الطلبات",
         "requests-lists": "عرض الطلبات",
-        "print-concern": "الجهة الموجه لها الخطاب"
+        "print-concern": "الجهة الموجه لها الخطاب",
+        "AddNewRequest": "Add New Request",
+        "vacationtype": "نوع الإجازة",
+        "VacationRequest": "طلب إجازة",
+        "normal": "عادية",
+        "day": "اليوم",
+        "beginday": "Begin Day",
+        "beginmonth": "Begin Month",
+        "beginyear": "Begin Year",
+        "altEemployee": "الموظف البديل",
+        "tocountry": "الدولة",
+        "citycountry": "المدينة",
+        "compensation": "التعويض و الإركاب",
+        "vacationLoc": "العنوان أثناء الاجازة",
+        "phone": "الهاتف",
+        "notes": "ملاحظات",
+        "Submit": "Submit",
+        "timePeriod": "المدة/يوم",
+        "leaveDeductionPeriod":"ملاحظات",
+        "evacuateparty":"طلب اخلاء طرف",
+        "deductionregularleave27":"حسم من الإجازة العادية وفق المادة 27"
     }
 }

@@ -76,6 +76,10 @@
               <a [routerLink]="['/wafi/employee-requests']" class="menu-item"> <span
                   class="text-eng">{{"wafi.requests-lists" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
+            <div class="submenu-content">
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/add-new-request']" class="menu-item">
+                <span class="text-eng">{{"wafi.AddNewRequest" | translate}}</span> <i class="ik ik-save"></i> </a>
+            </div>
           </div>
         </div>
 
@@ -439,9 +443,7 @@
           </div>
         </div>
 
-        <div></div>
-
-        <!--
+    <!--
              <div *ngIf="userService.userData.act_as_student" class="nav-item has-sub">
                 <a href="javascript:void(0)"> <span>الأنظمة </span>
                     <i class="ik ik-align-right"></i> </a>
@@ -452,9 +454,9 @@
                  </div>
              </div> -->
 
-        <!--
+    <!--
                   <div class="nav-lavel"> </div> -->
-        <!-- <div class="nav-item">
+    <!-- <div class="nav-item">
                     <a class="nav-link"  ><span>  إرشادات عامة  </span> <i class="ik ik-alert-circle"></i>
                    </a>
                    </div>
@@ -463,7 +465,7 @@
                     </a>
                   </div> -->
 
-      </nav>
-    </div>
+    </nav>
   </div>
+</div>
 </div>
