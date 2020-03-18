@@ -67,6 +67,9 @@ export class AcademicStatusComponent implements OnInit {
       this.printAR = res;
     }
     );
+    this.transalte.get('general.en_language').subscribe(res => {
+      this.printEN = res;
+    });
     this.isLoading = true;
     this.isLoadingTerm = true;
     this.academicStatusService.getStaudentStatus().then((res) => {
@@ -111,10 +114,6 @@ export class AcademicStatusComponent implements OnInit {
     );
   }
 
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
   onArabicPrint() {
     console.log('araaaaaaaaaaaabic', this.arabicPrint);
  //   utils.openUrl(this.EngPrint);

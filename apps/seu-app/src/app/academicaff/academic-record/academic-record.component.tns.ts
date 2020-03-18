@@ -67,6 +67,9 @@ onItemTap(event: ListViewEventData) {
       this.printAR = res;
     }
     );
+    this.transalte.get('general.en_language').subscribe(res => {
+      this.printEN = res;
+    });
     this.academicService.getِAcademicRecord().then(
       res => {
     this.recoredData =    (res as any).data;
