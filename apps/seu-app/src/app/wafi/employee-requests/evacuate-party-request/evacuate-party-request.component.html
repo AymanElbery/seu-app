@@ -18,7 +18,7 @@
       <div class=" col-md-6 col-sm-6">
         <div class="state">
           <h6>{{"wafi.DisclaimerReason"|translate}} </h6>
-          <select   class="form-control select"   formControlName="disclaimerReason"  [(ngModel)]="disclaimerReason" [ngClass]="{ 'is-invalid': submitted && f.disclaimerReason.errors }" >  
+          <select   class="form-control select"   formControlName="disclaimerReason"  [ngClass]="{ 'is-invalid': submitted && f.disclaimerReason.errors }" >  
             <option [ngValue]="undefined" selected>{{"wafi.DisclaimerReason" | translate}}</option> 
             <option *ngFor="let disclaim of disclaimerReasonItems"    value={{disclaim.value}}>{{disclaim.label}} </option>  
         </select>  
@@ -30,7 +30,7 @@
       <div class=" col-md-8 col-sm-8">
         <div class="state">
           <h6>{{"wafi.notes"|translate}} </h6>
-          <textarea class="form-control" cols="2" rows="3" formControlName="notes"  [(ngModel)]="notes"></textarea>             
+          <textarea class="form-control" cols="2" rows="3" formControlName="notes" ></textarea>             
         </div>
         
       </div>

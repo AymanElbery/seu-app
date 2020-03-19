@@ -18,15 +18,15 @@
       <div class=" col-md-12 col-sm-12">
         <div class="state">
           <h6>{{"wafi.date"|translate}} </h6>
-          <select      formControlName="beginDay"  [(ngModel)]="beginDay" [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }" >  
+          <select      formControlName="beginDay"  [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }" >  
             <option [ngValue]="undefined" selected>{{"wafi.beginday" | translate}}</option> 
             <option *ngFor="let day of ddlday"    value={{day.value}}>{{day.label}} </option>  
         </select>  
-        <select     formControlName="beginMonth"  [(ngModel)]="beginMonth"  [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }"> 
+        <select     formControlName="beginMonth"    [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }"> 
           <option [ngValue]="undefined" selected>{{"wafi.beginmonth" | translate}}</option>  
           <option *ngFor="let month of ddlmonth"  value={{month.value}}>{{month.label}} </option>  
       </select>
-      <select     formControlName="beginYear"  [(ngModel)]="beginYear" [(ngModel)]="beginYear"  [ngClass]="{ 'is-invalid': submitted && f.beginYear.errors }" >  
+      <select     formControlName="beginYear"     [ngClass]="{ 'is-invalid': submitted && f.beginYear.errors }" >  
         <option [ngValue]="undefined" selected>{{"wafi.beginyear" | translate}}</option> 
         <option *ngFor="let year of ddlyear"  [selected]="selectvactype == year.value"  value={{year.value}}>{{year.label}} </option>  
     </select>  
@@ -49,7 +49,7 @@
     <div class=" col-md-8 col-sm-8">
       <div class="state">
         <h6>{{"wafi.notes"|translate}} </h6>
-        <textarea class="form-control" cols="2" rows="3"  formControlName="notes"  [(ngModel)]="notes"></textarea>
+        <textarea class="form-control" cols="2" rows="3"  formControlName="notes"  ></textarea>
  
           </div>
     </div>
