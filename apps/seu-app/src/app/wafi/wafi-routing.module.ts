@@ -23,6 +23,11 @@ const routes: Routes = [
         path: 'employee-requests',
         loadChildren:
           './employee-requests/employee-requests.module#EmployeeRequestsModule',
+      },
+      {
+        path: 'administrative',
+        loadChildren:
+          './administrative/administrative.module#AdministrativeModule',
       }
     ]
   }

@@ -1,0 +1,39 @@
+<div class="main-content">
+
+  <service-header title='{{"wafi.EmployeeLeters" | translate}}'></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div class="table-responsive no-print">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">{{"wafi.EMP_LETTERS_LETTER_TYPE" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_LETTERS_LETTER_DATE" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_LETTERS_LETTER_NO" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_LETTERS_NOTES" | translate}}</th>
+         
+       
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empletters of emplistletters | paginate: { itemsPerPage: 12, currentPage: p };let i=index;">
+        
+          <td>{{empletters.letterType}}</td>
+          <td>{{empletters.decisionDate}}</td>
+          <td>{{empletters.decisionNo}}</td>
+          <td>{{empletters.note}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="pagination">  
+      <pagination-controls (pageChange)="p = $event"  
+      directionLinks="true"
+      autoHide="true"
+      previousLabel="{{'wafi.Previous' | translate}}"
+      nextLabel="{{'wafi.Next' | translate}}"      
+      ></pagination-controls>  
+      </ul>  
+  </div>
+
+
+</div>

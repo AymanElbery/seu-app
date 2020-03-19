@@ -1,0 +1,48 @@
+<div class="main-content">
+
+  <service-header title='{{"wafi.Employeecustody" | translate}}'></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div class="table-responsive no-print">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">{{"wafi.EMP_CUST_SERVICE_ID" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_CUST_SERVICE_EPC" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_CUST_SERVICE_SN" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_CUST_SERVICE_TYPE_NAME" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_CUST_SERVICE_SUBTYPE_NAME" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_CUST_SERVICE_ENTRY_DATE" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_CUST_SERVICE_DELIVERY_DATE" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_CUST_SERVICE_DURATION" | translate}}</th>
+       
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empcust of emplistcustody | paginate: { itemsPerPage: 12, currentPage: p };let i=index;">
+        
+          <td>{{empcust.id}}</td>
+          <td>{{empcust.epc}}</td>
+          <td>{{empcust.serialNo}}</td>
+          <td>{{empcust.typeName}}</td>
+          <td>{{empcust.subTypeName}}</td>
+          <td>{{empcust.entryDate}}</td>
+          <td>{{empcust.deliveryDate}}</td>
+          <td>{{empcust.duration}}</td>
+
+          
+        </tr>
+      </tbody>
+    </table>
+    <ul class="pagination">  
+      <pagination-controls (pageChange)="p = $event"  
+      directionLinks="true"
+      autoHide="true"
+      previousLabel="{{'wafi.Previous' | translate}}"
+      nextLabel="{{'wafi.Next' | translate}}"      
+      ></pagination-controls>  
+      </ul>  
+  </div>
+
+
+</div>
