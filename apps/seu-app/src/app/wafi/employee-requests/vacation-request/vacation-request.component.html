@@ -53,18 +53,18 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.date"|translate}} </h6>
-            <select formControlName="beginDay" [(ngModel)]="beginDay"
+            <select formControlName="beginDay" 
               [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }">
               <option [ngValue]="undefined" selected>{{"wafi.beginday" | translate}}</option>
               <option *ngFor="let day of ddlday" value={{day.value}}>{{day.label}} </option>
             </select>
-            <select formControlName="beginMonth" [(ngModel)]="beginMonth"
+            <select formControlName="beginMonth" 
               [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
               <option [ngValue]="undefined" selected>{{"wafi.beginmonth" | translate}}</option>
               <option *ngFor="let month of ddlmonth" value={{month.value}}>{{month.label}} </option>
             </select>
-            <select formControlName="beginYear" [(ngModel)]="beginYear" [(ngModel)]="beginYear"
-              [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
+            <select formControlName="beginYear"
+                          [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
               <option [ngValue]="undefined" selected>{{"wafi.beginyear" | translate}}</option>
               <option *ngFor="let year of ddlyear" [selected]="selectvactype == year.value" value={{year.value}}>
                 {{year.label}} </option>
@@ -88,7 +88,7 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.compensation"|translate}} </h6>
-            <select class="form-control" formControlName="compensationVal" [(ngModel)]="compensationVal">
+            <select class="form-control" formControlName="compensationVal" >
               <option [ngValue]="undefined" selected>{{"wafi.compensation" | translate}}</option>
               <option *ngFor="let comperk of compErkabItems" [selected]="selectvactype == comperk.value"
                 value={{comperk.value}}>{{comperk.label}} </option>
@@ -99,7 +99,7 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.altEemployee"|translate}} </h6>
-            <select class="form-control" formControlName="altEemployee" [(ngModel)]="altEemployee">
+            <select class="form-control" formControlName="altEemployee">
               <option [ngValue]="undefined" selected>{{"wafi.altEemployee" | translate}}</option>
               <option *ngFor="let altemp of altEmpItems" value={{altemp.value}}>{{altemp.label}} </option>
             </select>
@@ -126,7 +126,7 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.citycountry"|translate}} </h6>
-            <select class="form-control" formControlName="toCityNew" [(ngModel)]="toCityNew">
+            <select class="form-control" formControlName="toCityNew" >
               <option [ngValue]="undefined" selected>{{"wafi.citycountry" | translate}}</option>
               <option *ngFor="let cityitms of citydata" [selected]="selectvactype == cityitms.value"
                 value={{cityitms.value}}>{{cityitms.label}} </option>
@@ -153,7 +153,7 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.phone"|translate}} </h6>
-            <input type="NumbersOnly" class="form-control" NumbersOnly formControlName="phone" [(ngModel)]="phone"
+            <input type="NumbersOnly" class="form-control" NumbersOnly formControlName="phone" 
               class="form-control" />
           </div>
         </div>
@@ -164,7 +164,7 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.notes"|translate}} </h6>
-            <textarea class="form-control" cols="2" rows="3" formControlName="notes" [(ngModel)]="notes"></textarea>
+            <textarea class="form-control" cols="2" rows="3" formControlName="notes" ></textarea>
 
 
           </div>

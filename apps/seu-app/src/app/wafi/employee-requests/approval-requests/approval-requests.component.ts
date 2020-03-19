@@ -17,6 +17,7 @@ import * as _ from 'lodash';
 export class ApprovalRequestsComponent implements OnInit,OnDestroy {
   
   p: number;
+  filter;
   searchTerm: string;
   config: any;
   @Input() groupFilters: Object;
@@ -75,26 +76,7 @@ export class ApprovalRequestsComponent implements OnInit,OnDestroy {
   //   console.log("filters" , filters);
   // }
 
-  applySearch(filters){
- 
-		this.filteredUsers = this.emplistrequestapproval; 
-		const keys = Object.keys(filters);
-		const filterUser = user => {
-			let result = keys.map(key => {
-				if (!~key.indexOf('EmpName')) {
-					if(user[key]) {
-						return String(user[key]).toLowerCase().startsWith(String(filters[key]).toLowerCase())
-					} else {
-						return false;
-					}
-				}
-			});
-		
-			return result.reduce((acc, cur: any) => { return acc & cur }, 1)
-		}
-    //this.filteredUsers = this.users.filter(filterUser);
-    this.emplistrequestapproval=this.users.filter(filterUser); 
-		}
+  
 	
 
 

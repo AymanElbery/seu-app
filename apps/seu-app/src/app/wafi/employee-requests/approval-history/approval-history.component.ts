@@ -15,6 +15,7 @@ import {ApprovalHistoryDetailComponent} from '../approval-history-detail/approva
 })
 export class ApprovalHistoryComponent implements OnInit,OnDestroy {
   p: number;
+  filter;
   searchTerm: string;
   config: any;
   subscription: Subscription;
