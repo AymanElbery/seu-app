@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificationsService } from '../shared/services/notificationsservice';
+import { NotificationsService } from '../shared/services/notificationsservice.tns';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';

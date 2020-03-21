@@ -13,6 +13,8 @@ import { TranslateService } from '@ngx-translate/core';
 declare var UIView, NSMutableArray, NSIndexPath;
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-change-major',
@@ -30,12 +32,12 @@ export class ChangeMajorComponent implements OnInit {
     private _vcRef: ViewContainerRef,
       private toastr: AppToasterService, 
       private acadmicProc: ChangeMajorService,
-      private translate: TranslateService) { }
+      private translate: TranslateService,
+      private downloader: DataDownLoadService) { }
   deleting = false;
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
+    Downloader.init(); 
     this.isLoading = true;
     this.cancelCousre = { courses: null, agreement: 1 };
     this.getRequests();
@@ -77,7 +79,13 @@ export class ChangeMajorComponent implements OnInit {
 
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log("xxxx",x)
+      this.printAR = x;
+    });
   }
   delete(id, index) {
     dialogs.confirm({
@@ -106,10 +114,6 @@ export class ChangeMajorComponent implements OnInit {
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;
 
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
   }
 
   onItemTap(event: ListViewEventData) {

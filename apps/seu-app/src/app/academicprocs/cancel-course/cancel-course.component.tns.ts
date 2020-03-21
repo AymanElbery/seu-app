@@ -20,7 +20,7 @@ import { Downloader } from 'nativescript-downloader';
 export class CancelCourseComponent implements OnInit {
 
 
-  printAR='طباعة';
+  printAR;
   cancelCousre: CancelCousre;
   reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
   msgs=[];

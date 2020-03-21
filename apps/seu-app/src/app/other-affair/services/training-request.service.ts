@@ -25,7 +25,7 @@ export class TrainingRequestService {
   }
 
   Download(id) {
-    return this.configService.getApiURI() + '/training_service/download/' + id + "?sid=" + this.configService.getSid();
+    return this.configService.getApiURI() + '/training_service/download/' + id ;
   }
   DownloadEng(id) {
     return this.configService.getApiURI() + '/training_service/download/' + id + '?Lang=en' + "&sid=" + this.configService.getSid();

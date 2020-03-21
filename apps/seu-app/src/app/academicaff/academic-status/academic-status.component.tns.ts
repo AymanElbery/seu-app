@@ -115,10 +115,6 @@ export class AcademicStatusComponent implements OnInit {
   }
 
   onArabicPrint() {
-    console.log('araaaaaaaaaaaabic', this.arabicPrint);
- //   utils.openUrl(this.EngPrint);
-
-
     this.downloader.downloadFile(this.arabicPrint);
     console.log('downloiad');
     this.printAR = '1%';

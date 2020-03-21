@@ -21,8 +21,18 @@
         
         </GridLayout>
        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout" style="margin-top: 20;">
-            <Button text="عربى" class="print-btn" (tap)="onArabicPrint()"></Button>
-            <Button text="English" class="print-btn" (tap)="onEnglishPrint()"></Button>
+            <Button class=" print-btn " (tap)="onArabicPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text="{{printAR}}"></Span>
+                </FormattedString>
+            </Button>
+            <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text="{{printEN}}"></Span>
+                </FormattedString>
+            </Button>
         </FlexboxLayout>
 
 

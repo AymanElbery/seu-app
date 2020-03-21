@@ -19,7 +19,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ExecuseRequestComponent implements OnInit {
 
-  printAR='طباعة';
+  printAR;
   reason: string;
   reqData:RequestData={can_add_new_request:false,requests:[],reqs:[],notes:[]};
   msgs=[];

@@ -80,6 +80,7 @@ export class WithdrawFromUnivComponent implements OnInit {
 
 
   print(req) {
+    console.log("urllllllllllllllll",this.acadmicProc.print(req));
     this.downloader.downloadFile(this.acadmicProc.print(req));
     console.log('downloiad');
     this.printAR = '1%';
