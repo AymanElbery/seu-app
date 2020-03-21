@@ -36,7 +36,7 @@
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
             <ng-template let-item="item">
-                <Label verticalAlignment="center" [text]="item.body" class="ysMsg" textWrap="true"></Label>
+                <Label verticalAlignment="center" textWrap="true"[text]="item.body" class="ysMsg" textWrap="true"></Label>
             </ng-template>
         </ListView>
     </FlexboxLayout>
@@ -67,20 +67,20 @@
     -->
         <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of reqData.requests;let i=index;">
                           
-            <Label row="0"  column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
-            <Label row="0"  column="0" class="ysPBox2" text="{{item.request_number}}" style="text-align: right;"></Label>
+            <Label row="0"  column="1" textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
+            <Label row="0"  column="0" textWrap="true" class="ysPBox2" text="{{item.request_number}}"></Label>
            
-            <Label row="1"  column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_status"|translate}} :'></Label>
-            <Label row="1"  column="0" class="ysPBox2" text="{{item.status}}"></Label>
+            <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_status"|translate}} :'></Label>
+            <Label row="1"  column="0" textWrap="true" class="ysPBox2" text="{{item.status}}"></Label>
 
-            <Label row="2"  column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_date"|translate}} :'></Label>
-            <Label row="2"  column="0" class="ysPBox2" text="{{item.insert_date}}" style="text-align: right;"></Label>
+            <Label row="2"  column="1" textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_date"|translate}} :'></Label>
+            <Label row="2"  column="0" textWrap="true" class="ysPBox2" text="{{item.insert_date}}"></Label>
            
-            <Label row="3"  column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.english-equalize.reply_date"|translate}}'></Label>
-            <Label row="3"  column="0" class="ysPBox2" text="{{item.approval_date}}" style="text-align: right;"></Label>
+            <Label row="3"  column="1" textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"services.english-equalize.reply_date"|translate}}'></Label>
+            <Label row="3"  column="0" textWrap="true" class="ysPBox2" text="{{item.approval_date}}"></Label>
 
            
-            <Label row="4"  column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_print"|translate}}'></Label>
+            <Label row="4"  column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.request.req_print"|translate}}'></Label>
             <Button row="4"  column="0" (tap)="print(item.request_number)" class=" fas blue-button  " text="&#xf02f;"></Button>
 
            

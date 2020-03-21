@@ -57,15 +57,15 @@
     </StackLayout>
 
     <StackLayout>
-      <GridLayout class="ysBox" rows="auto,auto,auto,auto" columns="*,180">
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto" columns="*,180">
         <Label row="0" colSpan="2" class="ysHBox" text="{{'services.reg.choosewishe'|translate}}"></Label>
         <Label row="1" column="1"  class="ysPBox" style="font-weight: 800;" text="{{'services.reg.doyou25'|translate}} :"></Label>
         <Switch #sw style="margin:0px;padding: 0px;" class="ysPBox2" (checkedChange)="onChange(sw.checked)" row="1" column="0"></Switch>
-        <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.reg.perioddays'|translate}} :"></Label>
-        <DropDown [isEnabled]="registerWishes.tow_days==0" class="ysPBox2" row="2" style="font-weight: 700;" [items]="itemSource"
+        <Label row="2" colSpan="2" class="ysPBox" style="font-weight: 800;" text="{{'services.reg.perioddays'|translate}} :"></Label>
+        <DropDown [isEnabled]="registerWishes.tow_days==0" class="ysPBox2" row="3" colSpan="2" style="font-weight: 700;" [items]="itemSource"
           hint="{{'services.reg.choosewishe'|translate}}  " itemsTextAlignment="center"
           (selectedIndexChanged)="selItem($event)"></DropDown>
-        <Button [isEnabled]="!isLoading" row="3" colSpan="2" text="{{'general.request.add_request' | translate}}"
+        <Button [isEnabled]="!isLoading" row="4" colSpan="2" text="{{'general.request.add_request' | translate}}"
           (tap)="addRequest(registerWishes);" class="print-btn"></Button>
       </GridLayout>
     </StackLayout>

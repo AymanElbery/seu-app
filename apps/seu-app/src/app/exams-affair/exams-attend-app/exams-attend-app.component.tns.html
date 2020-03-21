@@ -47,9 +47,19 @@ androidSelectedTabHighlightColor="#010447">
             </ListView>
         </FlexboxLayout>
       
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center"  >
-            <Button text='{{"general.ar_language" | translate}}' class="print-btn"  (tap)="onArabicPrint()"></Button>
-            <Button text='{{"general.en_language" | translate}}' class="print-btn"  (tap)="onEnglishPrint()"></Button>
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <Button class=" print-btn " (tap)="onArabicPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" طباعة"></Span>
+                </FormattedString>
+            </Button>
+            <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" Print"></Span>
+                </FormattedString>
+            </Button>
         </FlexboxLayout>
 
         <ScrollView height="100%">
@@ -151,9 +161,19 @@ androidSelectedTabHighlightColor="#010447">
                 </ng-template>
             </ListView>
         </FlexboxLayout>
- <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="eaData.Term_Exam_Without_Schedule.messages.length==0">
-            <Button text='{{"general.ar_print"|translate}}' class="print-btn"  (tap)="onArabicPrintTerm()" *ngIf="term" ></Button>
-            <Button text='{{"general.en_print"|translate}}' class="print-btn"  (tap)="onEnglishPrintTerm()" *ngIf="termEn"></Button>
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <Button class=" print-btn " (tap)="onArabicPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" طباعة"></Span>
+                </FormattedString>
+            </Button>
+            <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" Print"></Span>
+                </FormattedString>
+            </Button>
         </FlexboxLayout>
         <ScrollView height="100%">
         <GridLayout  class="ysBox"  rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="eaData.Term_Exam_Without_Schedule.messages.length==0">
@@ -214,9 +234,19 @@ androidSelectedTabHighlightColor="#010447">
         </FlexboxLayout>
 
         <StackLayout>
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
-                <Button text='{{"general.ar_print"|translate}}' class="print-btn"  (tap)="onArabicPrintFinalSced()" ></Button>
-                <Button text='{{"general.en_print"|translate}}' class="print-btn"  (tap)="onEnglishPrintFinalSced()"></Button>
+            <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+                <Button class=" print-btn " (tap)="onArabicPrint()">
+                    <FormattedString>
+                        <Span text="&#xf02f;" class="fas"></Span>
+                        <Span text=" طباعة"></Span>
+                    </FormattedString>
+                </Button>
+                <Button class=" print-btn " (tap)="onEnglishPrint()">
+                    <FormattedString>
+                        <Span text="&#xf02f;" class="fas"></Span>
+                        <Span text=" Print"></Span>
+                    </FormattedString>
+                </Button>
             </FlexboxLayout>
         </StackLayout>
         <ScrollView height="100%">
@@ -315,9 +345,19 @@ androidSelectedTabHighlightColor="#010447">
             </ListView>
         </FlexboxLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="final.length==0">
-            <Button text='{{"general.ar_print"|translate}}' class="print-btn"  (tap)="onArabicPrintFinal()"></Button>
-            <Button text='{{"general.en_print"|translate}}' class="print-btn"  (tap)="onEnglishPrintFinal()"></Button>
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <Button class=" print-btn " (tap)="onArabicPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" طباعة"></Span>
+                </FormattedString>
+            </Button>
+            <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" Print"></Span>
+                </FormattedString>
+            </Button>
         </FlexboxLayout>
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="eaData.length > 0">
             

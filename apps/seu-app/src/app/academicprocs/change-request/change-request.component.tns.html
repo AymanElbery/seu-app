@@ -33,7 +33,7 @@
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
             <ng-template let-item="item">
-                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+                <Label verticalAlignment="center" textWrap="true" [text]="item.body" class="ysMsg"></Label>
             </ng-template>
         </ListView>
     </FlexboxLayout>
@@ -70,19 +70,19 @@
         <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of reqData.reqs;let i=index;">
                       
                       
-            <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='#'></Label>
-            <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="i+1" style="text-align: right;"></Label>
+            <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='#'></Label>
+            <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="i+1"></Label>
         
-            <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"services.change_branch.required_branch"|translate}}'></Label>
-            <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.CAMP_TITLE" style="text-align: right;"></Label>
+            <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"services.change_branch.required_branch"|translate}}'></Label>
+            <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.CAMP_TITLE"></Label>
 
-            <Label row="3"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.req_date"|translate}}'></Label>
-            <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.insert_date" style="text-align: right;"></Label>
+            <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"general.request.req_date"|translate}}'></Label>
+            <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.insert_date"></Label>
            
-            <Label row="4"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.req_status"|translate}}'></Label>
+            <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"general.request.req_status"|translate}}'></Label>
             <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.status" ></Label>
 
-            <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"    text='{{"services.change_branch.reply_date"|translate}}'></Label>
+            <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"services.change_branch.reply_date"|translate}}'></Label>
             <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.APPROVAL_DATE" ></Label>
              
             <Label row="6"  column="1"  class="ysPBox" style="font-weight: 800;"   text='{{"services.change_branch.procedure"|translate}}'></Label>

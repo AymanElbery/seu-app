@@ -71,24 +71,24 @@
                 <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                           
                     <Label row="0"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
-                    <Label row="0"  class="ysPBox2"  column="0" text="{{item.request_number}}" style="text-align: right;"></Label>
+                    <Label row="0"  class="ysPBox2"  column="0" text="{{item.request_number}}"></Label>
                 
-                    <Label row="1"  class="ysPBox" column="1" style="font-weight: 800;" text=':CRN' style="text-align: right;"></Label>
-                    <Label row="1" class="ysPBox2"   column="0" text="{{item.courseId}}" style="text-align: right;"></Label>
+                    <Label row="1"  class="ysPBox" column="1" style="font-weight: 800;" text=':CRN'></Label>
+                    <Label row="1" class="ysPBox2"   column="0" text="{{item.courseId}}" ></Label>
                 
 
 
                     <Label row="2"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.request.req_cname" | translate}} :'></Label>
-                    <Label row="2" class="ysPBox2"   column="0" text="{{item.course_title}}" style="text-align: right;"></Label>
+                    <Label row="2" class="ysPBox2"   column="0" text="{{item.course_title}}"></Label>
       
                     <Label row="3"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.request.req_status"|translate}} :'></Label>
                     <Label row="3" class="ysPBox2"   column="0" text="{{item.status}}"></Label>
       
                     <Label row="4"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.request.req_date"|translate}} :'></Label>
-                    <Label row="4" class="ysPBox2"   column="0" text="{{item.insert_date}}"  style="text-align: right;"></Label>
+                    <Label row="4" class="ysPBox2"   column="0" text="{{item.insert_date}}" ></Label>
       
                     <Label row="5"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.request.res_date" | translate}} :'></Label>
-                    <Label row="5" class="ysPBox2"   column="0" text="{{item.admin_date}}"  style="text-align: right;"></Label>
+                    <Label row="5" class="ysPBox2"   column="0" text="{{item.admin_date}}"></Label>
 
                     <Label row="6"  class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.request.req_delete"|translate}} :'></Label>                    
                     <Button row="6" class="ysPBox2"  column="0" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="blue-button fas  -rounded-sm" style="width: 15%;margin-left: 150;"></Button>

@@ -28,13 +28,7 @@
 -->
         
         
-    <FlexboxLayout style="margin-top: 20px;" flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
-        <ListView [items]="msgs">
-            <ng-template let-item="item">
-                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
-            </ng-template>
-        </ListView>
-    </FlexboxLayout>
+  
 
     <FlexboxLayout flexDirection="column" *ngIf="!isLoading && recoredData.terms">
 
@@ -44,6 +38,14 @@
             <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
         
         </GridLayout>
+
+        <FlexboxLayout style="margin-top: 20px;" flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+            <ListView [items]="msgs">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" textWrap="true" [text]="item.body" class="ysMsg"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
 
             <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
                 <Button class=" print-btn " (tap)="onArabicPrint()">
@@ -62,25 +64,25 @@
         <StackLayout>
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
           
-              <Label row="0" colSpan="2"  class="ysHBox"  text='{{"general.student_name" | translate}} {{recoredData.student_name}}'></Label>
+              <Label row="0" colSpan="2" textWrap="true" class="ysHBox"  text='{{"general.student_name" | translate}} {{recoredData.student_name}}'></Label>
           
-              <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.faculty" | translate}} :'></Label>
-              <Label row="1"  column="0" class="ysPBox2" text="{{recoredData.coll}}"></Label>
+              <Label row="1" column="1" textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.faculty" | translate}} :'></Label>
+              <Label row="1"  column="0" textWrap="true" class="ysPBox2" text="{{recoredData.coll}}"></Label>
           
-              <Label row="2" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.major" | translate}} :'></Label>
-              <Label row="2"  column="0" class="ysPBox2" text="{{recoredData.major}}"></Label>
+              <Label row="2" column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.major" | translate}} :'></Label>
+              <Label row="2"  column="0" textWrap="true" class="ysPBox2" text="{{recoredData.major}}"></Label>
           
-              <Label row="3" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.student_id" | translate}} :'></Label>
-              <Label row="3"  column="0"   class="ysPBox2"  text="{{recoredData.std_id}}" style="text-align: right;"></Label>
+              <Label row="3" column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.student_id" | translate}} :'></Label>
+              <Label row="3"  column="0"  textWrap="true"  class="ysPBox2"  text="{{recoredData.std_id}}"></Label>
 
-              <Label row="4" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.ssn" | translate}} :'></Label>
-              <Label row="4"  column="0"  class="ysPBox2" text="{{recoredData.ssn}}"  style="text-align: right;"></Label>
+              <Label row="4" column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.ssn" | translate}} :'></Label>
+              <Label row="4"  column="0" textWrap="true" class="ysPBox2" text="{{recoredData.ssn}}" ></Label>
 
-              <Label row="5" column="1"   class="ysPBox" style="font-weight: 800;" text='{{"general.grade" | translate}} :'></Label>
-              <Label row="5"  column="0"  class="ysPBox2" text="{{recoredData.grade}}"></Label>
+              <Label row="5" column="1"   textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.grade" | translate}} :'></Label>
+              <Label row="5"  column="0"  textWrap="true" class="ysPBox2" text="{{recoredData.grade}}"></Label>
 
-              <Label row="6" column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.student_status" | translate}} :'></Label>
-              <Label row="6"  column="0" class="ysPBox2" text="{{recoredData.status}}"></Label>
+              <Label row="6" column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.student_status" | translate}} :'></Label>
+              <Label row="6"  column="0" textWrap="true" class="ysPBox2" text="{{recoredData.status}}"></Label>
             </GridLayout>
           </StackLayout>
 
@@ -88,12 +90,12 @@
             <ng-template let-item="item">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between" class=" ysHdrop2" 
                 [ngStyle]="{'border-bottom-width':item ===recoredData.terms[recoredData.terms.length-1] ? '0' : '0' }">
-                    <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+                    <Label  text="&#xf107;" textWrap="true" class="fas arr-drop"></Label>
                     <FlexboxLayout flexDirection="row-reverse">
-                        <Label text='{{"general.term" | translate}}'></Label>
-                        <Label [text]="item.Term"></Label>
-                        <Label text='{{"general.for_year" | translate}}'></Label>
-                        <Label [text]="item.Year"></Label>
+                      <Label textWrap="true" text='{{"general.term" | translate}}'></Label> 
+                        <Label textWrap="true" [text]="item.Term"></Label>
+                        <!-- <Label textWrap="true" text='{{"general.for_year" | translate}}'></Label> -->
+                        <Label textWrap="true" [text]="item.Year"></Label>
                     </FlexboxLayout>
                 </FlexboxLayout>
             </ng-template>
@@ -101,13 +103,13 @@
             <ng-template tkTemplateKey="expanded" let-item="item">
                 <FlexboxLayout flexDirection="column">
                     <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
-                        <Label  text="&#xf106;"  class="fas arr-drop"></Label>
+                        <Label  text="&#xf106;" textWrap="true" class="fas arr-drop"></Label>
 
                         <FlexboxLayout flexDirection="row-reverse">
-                            <Label text='{{"general.term" | translate}}'></Label>
-                            <Label [text]="item.Term"></Label>
-                            <Label text='{{"general.for_year" | translate}}'></Label>
-                            <Label [text]="item.Year"></Label>
+                            <Label textWrap="true" text='{{"general.term" | translate}}'></Label>
+                            <Label textWrap="true" [text]="item.Term"></Label>
+                            <!-- <Label textWrap="true" text='{{"general.for_year" | translate}}'></Label> -->
+                            <Label textWrap="true" [text]="item.Year"></Label>
                         </FlexboxLayout>
                     </FlexboxLayout>
 
@@ -115,17 +117,17 @@
                         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                       
                       
-                          <Label row="1"  column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.term" | translate}}'></Label>
-                          <Label row="1"  column="0" class="ysPBox2" [text]="item.Term"></Label>
+                          <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.term" | translate}}'></Label>
+                          <Label row="1"  column="0" textWrap="true" class="ysPBox2" [text]="item.Term"></Label>
                       
-                          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.year" | translate}}'></Label>
-                          <Label row="2"  column="0" class="ysPBox2" [text]="item.Year" style="margin-right: -20;"></Label>
+                          <Label row="2"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.year" | translate}}'></Label>
+                          <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.Year" ></Label>
                       
-                          <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.major" | translate}}'></Label>
-                          <Label row="3"  column="0"   class="ysPBox2"  [text]="item.Major" style="text-align:right;"></Label>
+                          <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.major" | translate}}'></Label>
+                          <Label row="3"  column="0"   textWrap="true" class="ysPBox2"  [text]="item.Major"></Label>
             
-                          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;" text='{{"general.status" | translate}}'></Label>
-                          <Label row="4"  column="0"  class="ysPBox2" [text]="item.Status" ></Label>
+                          <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.status" | translate}}'></Label>
+                          <Label row="4"  column="0"  textWrap="true" class="ysPBox2" [text]="item.Status" ></Label>
             
                      
                         </GridLayout>
@@ -174,17 +176,17 @@
                         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of item.courses" >
                       
                       
-                          <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.course_code_name" | translate}}'></Label>
-                          <Label row="1"  column="0" class="ysPBox2" [text]="item.CRSE_TITLE" style="text-align: right;"></Label>
+                          <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.course_code_name" | translate}}'></Label>
+                          <Label row="1"  column="0" textWrap="true" class="ysPBox2" [text]="item.CRSE_TITLE"></Label>
                       
-                          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.rating" | translate}}'></Label>
-                          <Label row="2"  column="0" class="ysPBox2" [text]="item.GRADE_TITLE" style="text-align: right;"></Label>
+                          <Label row="2"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.rating" | translate}}'></Label>
+                          <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.GRADE_TITLE"></Label>
                       
-                          <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.course_hours" | translate}}'></Label>
-                          <Label row="3"  column="0"   class="ysPBox2"  [text]="item.HRS" style="text-align:right;"></Label>
+                          <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.course_hours" | translate}}'></Label>
+                          <Label row="3"  column="0"   textWrap="true" class="ysPBox2"  [text]="item.HRS"></Label>
             
-                          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
-                          <Label row="4"  column="0"  class="ysPBox2"  [text]="item.Points"style="text-align: right;"></Label>
+                          <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                          <Label row="4"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.Points"></Label>
             
                      
                         </GridLayout>
@@ -230,46 +232,46 @@
 
                         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" >
                       
-                          <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.hours" | translate}}'></Label>
-                          <Label row="1"  column="0" class="ysPBox2" text='{{"general.quarterly" | translate}}'></Label>
+                          <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.hours" | translate}}'></Label>
+                          <Label row="1"  column="0" textWrap="true" class="ysPBox2" text='{{"general.quarterly" | translate}}'></Label>
                       
-                          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.recorded" | translate}}'></Label>
-                          <Label row="2"  column="0" class="ysPBox2" [text]="item.registredHours" style="text-align: right;"></Label>
+                          <Label row="2"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.recorded" | translate}}'></Label>
+                          <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.registredHours"></Label>
                       
-                          <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.success" | translate}}'></Label>
-                          <Label row="3"  column="0"   class="ysPBox2"  [text]="item.gpa_hours"  style="text-align:right;"></Label>
+                          <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.success" | translate}}'></Label>
+                          <Label row="3"  column="0"   textWrap="true" class="ysPBox2"  [text]="item.gpa_hours"></Label>
             
-                          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.earned" | translate}}'></Label>
-                          <Label row="4"  column="0"  class="ysPBox2"  [text]="item.earned_hours"  style="text-align: right;"></Label>
+                          <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.earned" | translate}}'></Label>
+                          <Label row="4"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.earned_hours"></Label>
 
-                          <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
-                          <Label row="5"  column="0"  class="ysPBox2"  [text]="item.quality_points"   style="text-align: right;"></Label>
+                          <Label row="5"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                          <Label row="5"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.quality_points" ></Label>
             
-                          <Label row="6"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.average" | translate}}'></Label>
-                          <Label row="6"  column="0"  class="ysPBox2"  [text]="item.gpa"  style="text-align: right;"></Label>
+                          <Label row="6"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.average" | translate}}'></Label>
+                          <Label row="6"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.gpa" ></Label>
                      
                         </GridLayout>
                  
 
                         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" >
                       
-                          <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"general.hours" | translate}}'></Label>
-                          <Label row="1"  column="0" class="ysPBox2" text='{{"general.cumulative" | translate}}'></Label>
+                          <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.hours" | translate}}'></Label>
+                          <Label row="1"  column="0" textWrap="true" class="ysPBox2" text='{{"general.cumulative" | translate}}'></Label>
                       
-                          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.recorded" | translate}}'></Label>
-                          <Label row="2"  column="0" class="ysPBox2" [text]="item.TotalregistredHours" style="text-align: right;"></Label>
+                          <Label row="2"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.recorded" | translate}}'></Label>
+                          <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.TotalregistredHours"></Label>
                       
-                          <Label row="3"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.success" | translate}}'></Label>
-                          <Label row="3"  column="0"   class="ysPBox2"  [text]="item.total_gpa_hours"  style="text-align:right;"></Label>
+                          <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.success" | translate}}'></Label>
+                          <Label row="3"  column="0"   textWrap="true" class="ysPBox2"  [text]="item.total_gpa_hours"></Label>
             
-                          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.earned" | translate}}'></Label>
-                          <Label row="4"  column="0"  class="ysPBox2"  [text]="item.total_earned_hours"  style="text-align: right;"></Label>
+                          <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.earned" | translate}}'></Label>
+                          <Label row="4"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.total_earned_hours"></Label>
 
-                          <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
-                          <Label row="5"  column="0"  class="ysPBox2"  [text]="item.total_quality_points"   style="text-align: right;"></Label>
+                          <Label row="5"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                          <Label row="5"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.total_quality_points"></Label>
             
-                          <Label row="6"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.average" | translate}}'></Label>
-                          <Label row="6"  column="0"  class="ysPBox2"  [text]="item.total_gpa"  style="text-align: right;"></Label>
+                          <Label row="6"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.average" | translate}}'></Label>
+                          <Label row="6"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.total_gpa" ></Label>
                      
                         </GridLayout>
                       </StackLayout>
