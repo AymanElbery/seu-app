@@ -2,6 +2,7 @@
     "general": {
         "login": "دخول",
         "print": "طباعة",
+        "download":" عربي ",
         "note": "ملحوظة",
         "delete_confirm": "هل انت متأكد؟",
         "req_no": "رقم الطلب",
@@ -94,7 +95,9 @@
         "vitrual": "افتراضية",
         "class": "حضورية",
         "total": "إجمالي",
-        "no_absence_registered": "لا توجد غيابات مسجلة"
+        "no_absence_registered": "لا توجد غيابات مسجلة",
+        "required": "مطلوب",
+        "mismatch": "غير مطابق"
     },
     "menu": {
         "myservices": "خدماتي",
@@ -156,7 +159,7 @@
         "GRADUATEINFO": "بيانات خريج",
         "PublicServices": "أنظمتي",
         "email": "البريد الالكتروني",
-        "ALWAFI": "وافي",
+        "ALWAFI": "خدماتي الذاتية",
         "Attednace": "الحضور والإنصراف",
         "Support": "نظام دعم",
         "BANNER": "البانر",
@@ -200,7 +203,11 @@
         "CouncilsAndCommittees": "نظام إدارة المجالس واللجان",
         "TeachingLoad": "العبئ التدريسي",
         "NewAdminPage": "إدارة الخدمات الإلكترونية",
-        "AdminPage": "الصفحة الإدارية"
+        "AdminPage": "الصفحة الإدارية",
+        "training": "طلب التدريب الميداني",
+        "chineescourse": "الدورة الصينية",
+        "PersonalInfo": "معلوماتي الشخصية",
+        "resetpassword": "تغيير كلمة المرور"
     },
     "services": {
         "academic_status": {
@@ -576,7 +583,11 @@
             "alert": "تنبيه",
             "alert_content": ":يرجى قراءة الشروط الخاصة بقبول طلبك للتدريب الميداني .. القبول مشروط باجتيازك لـ 86 ساعة علماً بأنه لن تتمكن من التدريب ويعتبر تسجيلك في التدريب ملغي في حالة عدم اجتيازهم",
             "destination_letter": "اسم الجهة التي تود توجيه الخطاب لها ",
-            "practical_train": "طلب التدريب الميداني والعملي"
+            "practical_train": "طلب التدريب الميداني والعملي",
+            "instructions": "تعليمات",
+            "form_ar": "النموذج - عربي",
+            "form_en": "النموذج - انجليزي",
+            "student_form": " نموذج معلومات الطالب "
         },
         "reg": {
             "choosewishe": "إختر الرغبات",
@@ -615,6 +626,26 @@
             "organizer": "الجهة المنظمة",
             "location": "مقر إقامتها",
             "date": "التاريخ"
+        },
+        "chineescourse": {
+            "title": "طلب الالتحاق بدورة اللغة الصينية",
+            "desc": "",
+            "time": "موعد الدورة",
+            "req_date": "تاريخ الطلب"
+        },
+        "reset": {
+            "oldpassword": "كلمة السر الحالية",
+            "newpassword": "كلمة السر الجديدة",
+            "cnewpassword": "تأكيد كلمة السر الجديدة",
+            "note1": "يجب أن لا تقل كلمة المرور عن 8 أحرف",
+            "note2": "كلمة المرور بحد أقصى 20 حرفًا",
+            "note3": "يجب ألا تحتوي كلمة المرور على اسم المستخدم الخاص بك",
+            "note4": "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل من الأحرف الكبيرة",
+            "note5": "يجب أن تحتوي كلمة المرور على حرف واحد على الأقل",
+            "note6": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+            "note7": "يجب ألا تحتوي كلمة المرور على اسمك الأول",
+            "note8": "يجب ألا تحتوي كلمة المرور على اسم العائلة",
+            "note9": "يجب ألا تكون كلمة المرور من آخر 5 كلمات مرور"
         }
     },
     "policy": {
@@ -625,8 +656,8 @@
         "no_conflict": "أقر بالإطلاع علي سياسة تعارض المصالح الخاصة بالجامعة وليس لدي أي تعارض مصالح.",
         "has_conflict": "أقر بالإطلاع علي سياسة تعارض المصالح الخاصة بالجامعة ولدي احتمالية تعارض مصالح وسوف أتبع الإجراءات المعلنة للإفصاح عنها.",
         "send": "إرسال",
-        "doc_link":"/assets/files/policy.pdf",
-        "notes":"* يرجى الاطلاع على الوثيقة المرفقة بالكامل حتى نهايتها لتفعيل خاصية الاختيار"
+        "doc_link": "/assets/files/policy.pdf",
+        "notes": "* يرجى الاطلاع على الوثيقة المرفقة بالكامل حتى نهايتها لتفعيل خاصية الاختيار"
     },
     "instructions": {
         "exams": {
@@ -658,41 +689,125 @@
             "GuidelinesList": [
                 {
                     "title": "تعليمات ما قبل الاختبارات",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
                 },
                 {
                     "title": "تعليمات أثناء الاختبارات",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam.pdf"
                 },
                 {
                     "title": "المتطلبات الفنية للأجهزة المحمولة/ اللوحية خاص بالاختبارات الإلكترونية",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements.pdf"
                 },
                 {
                     "title": "فيديو تعريفي لكيفية أداء الاختبار الإلكتروني",
-                    "link":"https://www.youtube.com/watch?v=uwFhDd1ahkc&feature=youtu.be"
+                    "link": "https://www.youtube.com/watch?v=uwFhDd1ahkc&feature=youtu.be"
                 },
                 {
                     "title": "الاختبارات الإلكترونية باستخدام أجهزة الحاسوب المكتبية/المحمولة​ (Windows & Mac)",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "​الاختبارات الإلكترونية باستخدام الأجهزة اللوحية (iOS &Android )",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "الأسئلة الشائعة​",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs.pdf"
                 },
                 {
                     "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام Mac",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC.pdf"
                 },
                 {
                     "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام windows",
-                    "link":"https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN.pdf"
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN.pdf"
                 }
             ]
         }
+    },
+    "wafi": {
+        "wafi": "خدماتي الذاتية",
+        "month": "شهر",
+        "year": "سنة",
+        "description": "الوصف",
+        "amount": "صافي الراتب",
+        "monthYear": "شهر/سنة",
+        "branch": "الفرع",
+        "bank": "البنك",
+        "acnountno": "رقم الحساب",
+        "balance": "صافي الراتب",
+        "basicsalary": "الراتب الأساسي",
+        "selectyear": "السنة",
+        "period": "مدة الإجازة",
+        "startDate": "تاريخ البدء",
+        "no": "NO",
+        "decisionNo": "رقم القرار",
+        "showPrint": "'طباعة",
+        "seq": "رقم الاجازة",
+        "startDateG": "تاريخ القرار",
+        "vacationCode": "نوع الإجازة",
+        "endDate": "تاريخ الإنتهاء",
+        "yearCode": "السنة",
+        "vacationCoverage": "الرصيد الإجمالي لإجازاتك",
+        "VacationReservedBalance": " الصيد المحتفظ منها",
+        "VacationAbsenceBalance": "الغياب",
+        "salarydetailsselected": "تفاصيل الشهر",
+        "VacationBalance": "الرصيد الإجمالي لإجازاتك",
+        "personal": "شخصي",
+        "PersonalInfo": "معلومات الموظف",
+        "Salaries": "الرواتب",
+        "Vacations": "الأجازات",
+        "print-report": "طباعة تعاريف الموظف",
+        "EMP_REPORTS_WITHOUT_SALARY": "شهادة تعريف بدون راتب",
+        "EMP_REPORTS_WITHOUT_SALARY_EN": "شهادة تعريف بدون راتب (EN)",
+        "EMP_REPORTS_WITH_SALARY": "شهادة تعريف بالراتب",
+        "EMP_REPORTS_WITH_SALARY_EN": "شهادة تعريف بالراتب (EN)",
+        "EMP_REPORTS_WITH_SALARY_AND_FEES": "تعريف بالراتب مفصل",
+        "EMP_REPORTS_WITH_SALARY_AND_FEES_EN": "تعريف بالراتب مفصل (EN)",
+        "EMP_REPORTS_WITH_SALARY_DTL": "تعريف راتب وتفاصيل بدلات",
+        "typrhere": "أكتب هنا",
+        "selectvacationtype": " نوع الأجازة",
+        "HousingReaport": "نموذج بدل السكن",
+        "RequestType": "نوع الطلب",
+        "VactionType": "نوع الإجازة",
+        "Period": "المدة/يوم",
+        "BeginDate": "تاريخ البداية",
+        "EndDate": "تاريخ النهاية",
+        "Status": "الحالة",
+        "Details": "التفاصيل",
+        "FromCountry-City": "من دولة-مدينة",
+        "ToCountry-City": "إلى دولة-مدينة",
+        "Ticket": "درجة التذكرة",
+        "RoundTrip": "ذهاب/إياب",
+        "Attendants": "عدد التذاكر",
+        "CompensationAmount": "مبلغ التعويض",
+        "DecisionNo": "رقم القرار",
+        "Task/Direction": "المهمة/الجهة",
+        "FromTime": "من وقت",
+        "ToTime": "إلى وقت",
+        "AltrnativeEmployee": "الموظف البديل",
+        "CompensationandTransport": "التعويض و الإركاب",
+        "ToCountry": "الدولة",
+        "TpCity": "المدينة",
+        "MandateType": "نوع الإنتداب",
+        "CourseType": "نوع الدورة",
+        "Task": "المهمة",
+        "Direction": "الجهة",
+        "scheduleName": "اسم الدورة",
+        "sideName": "اسم المعهد",
+        "DisclaimerReason": "سبب اخلاء الطرف",
+        "requestApprovalsData": "الموافقات على طلبات الخدمة",
+        "StepNo": "تسلسل الموافقة",
+        "ApprovedEmployee": "اسم الموافق",
+        "DuatyDescription": "المنصب",
+        "TransactionDate": "تاريخ الإجراء",
+        "Agree/disagree": "الإجراء؟",
+        "RejecteReasone": "سبب الرفض",
+        "RequestDtails": "تفاصيل",
+        "Delete": "حذف",
+        "employee-requests": "الطلبات",
+        "requests-lists": "عرض الطلبات",
+        "print-concern": "الجهة الموجه لها الخطاب"
     }
 }

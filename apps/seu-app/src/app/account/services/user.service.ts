@@ -11,6 +11,7 @@ import { UserData } from 'src/app/shared/models/user-data';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,8 @@ export class UserService extends BaseService {
   constructor(
     private configService: ConfigService,
     private httRequest: HttpRequestService,
-    private http: HttpClient
+    private http: HttpClient,
+    private translate: TranslateService
   ) {
     super();
     this.configService.baseUrl = '';
@@ -120,9 +122,17 @@ export class UserService extends BaseService {
 
   SignIn(userName, pass) {
     this.baseUrl = '';
-    this.configService.baseUrl='';
+    this.configService.baseUrl = '';
 
     return this.httRequest.postAuthRequest('rest/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
+  }
+  resetPassword(opassword, npassword, cpassword) {
+    this.baseUrl = '';
+    this.configService.baseUrl = '';
+    const user = this.userData.username;
+    console.log(user);
+    const lang = this.translate.currentLang;
+    return this.httRequest.postAuthRequest('rest/ssosession/resetpassword', { user, opassword, npassword, cpassword, lang }).toPromise();
   }
 
   loadUserData() {
@@ -151,7 +161,6 @@ export class UserService extends BaseService {
     return this.requestUser();
   }
   pushUserDataChanges() {
-
     this.userDataSubject.next(this.userData);
     this.userDataObservable.next(this.userData);
   }

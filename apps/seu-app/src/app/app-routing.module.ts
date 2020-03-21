@@ -11,6 +11,7 @@ import { GRGuard } from './guards/gr.guard';
 import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
 import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
 import { PolicyComponent } from './home/policy.component';
+import { EmpGuard } from './guards/emp.guard';
 
 const routes: Routes = [
   {
@@ -91,6 +92,11 @@ const routes: Routes = [
         loadChildren:
           './master-student-data/master-student-data.module#MasterStudentDataModule',
         canActivate: [GRGuard]
+      },
+      {
+        path: 'wafi',
+        loadChildren: './wafi/wafi.module#WafiModule',
+        canActivate: [EmpGuard]
       }
     ]
   },

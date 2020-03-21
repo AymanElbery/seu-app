@@ -36,6 +36,6 @@ export class EnglishEqualizerService {
   Download(req) {
     this.configService.baseUrl = 'stdservicesapi';
     const sid = this.configService.getSid();
-    return this.configService.getApiURI() + '/english_certificates_service/download/english_certificates/' + req + '?sid=' + sid + '&lang=' + this.translate.currentLang;
+    return this.configService.getApiURI() + '/english_certificates_service/download/english_certificates/' + req;
   }
 }

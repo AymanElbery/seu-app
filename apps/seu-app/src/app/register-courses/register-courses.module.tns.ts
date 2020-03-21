@@ -5,6 +5,7 @@ import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { RegisterWishesComponent } from './register-wishes/register-wishes.component.tns';
 import { AppTransModule } from '../app.trans.module.tns';
 import { RegisterationHelperComponent } from './registeration-helper/registeration-helper.component.tns';
+import { HeaderModule } from '../shared/header.module.tns';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { RegisterationHelperComponent } from './registeration-helper/registerati
   imports: [
     RegisterCoursesRoutingModule,
     NativeScriptCommonModule,
-    AppTransModule
+    AppTransModule,
+    HeaderModule
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

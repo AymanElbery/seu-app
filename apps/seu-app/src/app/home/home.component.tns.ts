@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
-import * as app from 'tns-core-modules/application';
 import { GlobalBaseService } from '../shared/services/global-base.service';
 import { UserService } from '../account/services/user.service';
 import { PrintService } from '../shared/services/print.service';
@@ -22,7 +20,9 @@ registerElement('CarouselItem', () => CarouselItem);
 export class HomeComponent implements OnInit {
     constructor(public printService: PrintService, public homeService: HomeService,
                 public userService: UserService,
-                private router: Router , private globalService: GlobalBaseService) {
+                private router: Router , private globalService: GlobalBaseService
+                ) {
+
         // tslint:disable-next-line: only-arrow-functions
         this.router.routeReuseStrategy.shouldReuseRoute = function() {
           return false;
@@ -250,23 +250,12 @@ setInterval(
   }, 3000
 );
 
+
       }
 
-
     ngOnInit(): void {
-        const sideDrawer =  app.getRootView() as RadSideDrawer;
-
-        // Init your component properties here.
-        sideDrawer.drawerLocation = SideDrawerLocation.Right;
-      //  console.log('test');
         this.LoadData();
 
-
-
     }
-
-    onDrawerButtonTap(): void {
-        const sideDrawer =  app.getRootView() as RadSideDrawer;
-        sideDrawer.showDrawer();
-    }
+    
 }

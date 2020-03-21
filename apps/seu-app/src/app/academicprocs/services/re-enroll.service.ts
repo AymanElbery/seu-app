@@ -38,7 +38,7 @@ this.configService.baseUrl = 'stdservicesapi';
     const sid =   this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/return_service/download/return_request/' + req +'?sid='+sid+'&lang=' + this.translate.currentLang;
+    return this.configService.getApiURI() + '/return_service/download/return_request/' + req;
    }
    DownloadEng() {
     this.configService.baseUrl = 'stdservicesapi';

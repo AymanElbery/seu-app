@@ -10,6 +10,7 @@ import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/l
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { AppTransModule } from '../app.trans.module';
 import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certificate-app/exam-attendance-certificate-app.component';
+import { HeaderModule } from '../shared/header.module.tns';
 
 @NgModule({
   declarations: [CertificateIDComponent, ExamAttendanceCertificateComponent,
@@ -21,7 +22,8 @@ import { ExamAttendanceCertificateAppComponent } from './exam-attendance-certifi
     NativeScriptFormsModule,
     NativeScriptUIListViewModule,
     NativeScriptLocalizeModule,
-    AppTransModule
+    AppTransModule,
+    HeaderModule
   ]
 })
 export class MasterPrintCertificatesModule { }

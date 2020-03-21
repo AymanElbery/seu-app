@@ -12,6 +12,7 @@ import { AcademicRecordComponent } from './academic-record/academic-record.compo
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { AppTransModule } from '../app.trans.module.tns';
+import { HeaderModule } from '../shared/header.module.tns';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AppTransModule } from '../app.trans.module.tns';
     NativeScriptFormsModule,
     NativeScriptUIListViewModule,
     NativeScriptLocalizeModule,
-    AppTransModule
+    AppTransModule,
+    HeaderModule
 
   ],
   schemas: [NO_ERRORS_SCHEMA]

@@ -33,11 +33,13 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "@nstudio/nativescript-checkbox": "^1.0.0",
     "@spartadigital/nativescript-permissions": "^1.3.2",
+    "@types/file-saver": "^2.0.1",
     "angular-font-awesome": "^3.1.2",
     "base-64": "^0.1.0",
     "bootstrap": "^4.3.1",
     "buble": "^0.19.8",
     "core-js": "^2.5.4",
+    "file-saver": "^2.0.2",
     "font-awesome": "^4.7.0",
     "get-google-fonts": "^1.2.2",
     "ionicons": "^4.6.3",
@@ -93,9 +95,12 @@
     "typescript": "~3.5.3"
   },
   "nativescript": {
-    "id": "org.nativescript.ngsample",
+    "id": "net.ysolution.seu",
     "tns-android": {
       "version": "6.3.1"
+    },
+    "tns-ios": {
+      "version": "6.3.0"
     }
   },
   "android": {

@@ -11,6 +11,8 @@ import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular/com
 import { AddReEnrollComponent } from './diag/add-re-enroll/add-re-enroll.component.tns';
 import { TranslateService } from '@ngx-translate/core';
 import { RequestData } from '../../shared/models/request-data';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-re-eenrollment',
@@ -18,22 +20,22 @@ import { RequestData } from '../../shared/models/request-data';
   styleUrls: ['./re-eenrollment.component.tns.scss']
 })
 export class ReEenrollmentComponent implements OnInit {
-  printAR;
+  printAR='طباعة';
   reEnroll: ReEnroll;
   reqData:RequestData={can_add_new_request:false,requests:[],reqs:[],notes:[]};
   msgs=[];
   status;
   isLoading = false;
+  isDownLoaded = false;
 
   constructor(private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,
     private toastr: AppToasterService, 
     private acadmicProc: ReEnrollService,
-    private translate: TranslateService,) { }
+    private translate: TranslateService,private downloader: DataDownLoadService) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
+    Downloader.init(); 
     this.isLoading = true;
     this.reEnroll = { proof: '', reason: '', has_proof: '1' };
     this.getRequests();
@@ -74,8 +76,21 @@ export class ReEenrollmentComponent implements OnInit {
 }
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log("xxxx",x)
+      this.printAR = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.translate.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
 
+      }
+    });
   }
   deleting = false;
   delete(id, index) {
@@ -104,11 +119,5 @@ export class ReEenrollmentComponent implements OnInit {
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;
   }
-
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
-
 
 }

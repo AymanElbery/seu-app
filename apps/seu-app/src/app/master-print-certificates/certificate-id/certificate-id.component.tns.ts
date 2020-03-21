@@ -9,7 +9,7 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 
 @Component({
   selector: 'app-certificate-id',
-  templateUrl: './certificate-id.component.html',
+  templateUrl: './certificate-id.component.tns.html',
   styleUrls: ['./certificate-id.component.scss']
 })
 export class CertificateIDComponent implements OnInit {

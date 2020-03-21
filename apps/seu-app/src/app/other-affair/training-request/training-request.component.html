@@ -48,7 +48,6 @@
     <div class="table-responsive">
       <table class="table table-striped table-bordered">
         <thead>
-
           <tr>
             <th scope="col">{{"services.training_request.destination"|translate}}</th>
             <th scope="col">{{"general.request.req_date"|translate}}</th>
@@ -60,7 +59,7 @@
             <td>{{it.organization_name}}</td>
             <td>{{it.insert_date}}</td>
 
-            <td><a class="btn btn-primary" [href]="print(it.request_number)"><span class="ik ik-printer"></span>
+            <td><a class="btn btn-primary" seu-auto-print [href]="print(it.request_number)"><span class="ik ik-printer"></span>
                 {{"general.print" | translate}} </a></td>
           </tr>
         </tbody>
@@ -88,8 +87,8 @@
               <a [href]="instructions['StudentLink']">{{"services.training_request.student_form"|translate}}</a>
             </ng-container>
           </li>
-          <li>{{instructions['txt3']}}</li>
-          <li>{{instructions['txt4']}}</li>
+          <li *ngIf="instructions['txt3']">{{instructions['txt3']}}</li>
+          <li *ngIf="instructions['txt4']">{{instructions['txt4']}}</li>
         </ul>
       </div>
     </div>

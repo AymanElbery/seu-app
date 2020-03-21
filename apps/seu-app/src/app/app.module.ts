@@ -53,7 +53,7 @@ import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material';
 import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
 import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
 import { PolicyComponent } from './home/policy.component';
-
+import { ResetPasswordComponent } from './account/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [

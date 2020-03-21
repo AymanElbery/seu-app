@@ -9,6 +9,7 @@ import { OtherAffairRoutingModule } from './other-affair-routing.module.tns';
 import { StudentInfoComponent } from './student-info/student-info.component.tns';
 import { TrainingRequestComponent } from './training-request/training-request.component.tns';
 import { AddTrainingRequestComponent } from './training-request/diag/add-training-request/add-training-request.component.tns';
+import { HeaderModule } from '../shared/header.module.tns';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AddTrainingRequestComponent } from './training-request/diag/add-trainin
     OtherAffairRoutingModule,
     NativeScriptCommonModule,
     AppTransModule,
-    NativeScriptFormsModule
+    NativeScriptFormsModule,
+    HeaderModule
 
   ],
   entryComponents:[

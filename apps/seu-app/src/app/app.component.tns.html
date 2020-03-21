@@ -46,6 +46,11 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     </FlexboxLayout>
             </ng-template>
         </RadListView>
+        <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/reset')">
+            <Label col="1" text="تغير كلمة المرور " class="ysRootMenuItem" ></Label>
+            <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
+
+        </GridLayout>
         <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/login')">
             <!-- <Label col="1" text="تسجيل خروج" class="ysRootMenuItem" ></Label> -->
             <Label col="1"  text="&#xf2f5;" class="fas ysRootMenuIcon"></Label>
@@ -55,5 +60,6 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
         </ScrollView>
     </GridLayout>
 
+    
     <page-router-outlet  tkMainContent></page-router-outlet>
 </RadSideDrawer>

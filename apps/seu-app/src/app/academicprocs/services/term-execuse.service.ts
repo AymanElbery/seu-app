@@ -37,7 +37,7 @@ export class TermExecuseService {
 
     const sid = this.configService.getSid();
 
-    return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req + '?sid=' + sid + '&lang=' + this.translate.currentLang;
+    return this.configService.getApiURI() + '/execuse_service/download/execuse_request/' + req ;
   }
   DownloadEng() {
     this.configService.baseUrl = 'stdservicesapi';

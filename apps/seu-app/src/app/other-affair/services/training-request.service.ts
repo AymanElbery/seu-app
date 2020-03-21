@@ -15,7 +15,6 @@ export class TrainingRequestService {
   }
 
   getِgetRequests() {
-
     return this.httRequest.GetRequest('training_service').toPromise();
   }
   AddRequest(data) {
@@ -23,13 +22,12 @@ export class TrainingRequestService {
   }
   deleteReq(id) {
     return this.httRequest.GetRequest('training_service/remove/' + id).toPromise();
-
   }
 
   Download(id) {
-    return this.configService.getApiURI() + '/training_service/download/' + id;
+    return this.configService.getApiURI() + '/training_service/download/' + id ;
   }
   DownloadEng(id) {
-    return this.configService.getApiURI() + '/training_service/download/' + id + '?Lang=en';
+    return this.configService.getApiURI() + '/training_service/download/' + id + '?Lang=en' + "&sid=" + this.configService.getSid();
   }
 }
