@@ -13,7 +13,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class EmpLettersComponent implements OnInit {
   p: number;
-  filter; 
+  filter;
   config: any;
   subscriptionletterslist: Subscription;
   emplistletters: any;
@@ -33,7 +33,7 @@ export class EmpLettersComponent implements OnInit {
     if (this.subscriptions)
       this.subscriptions.unsubscribe();
   }
-  pageChanged(event){
+  pageChanged(event) {
     this.config.currentPage = event;
   }
   getEmpletters() {
@@ -41,12 +41,15 @@ export class EmpLettersComponent implements OnInit {
     this.isLoading = true
     this.subscriptionletterslist = this.empreqservice.getLetterlist().subscribe(empletters => {
       if (empletters) {
-        this.emplistletters = (empletters as any).data["lettersTable"];      
+        this.emplistletters = (empletters as any).data["lettersTable"];
         this.isLoading = false;
-      } else {
-
       }
-    });
+    },
+      err => {
+        this.isLoading = false;
+        this.toastr.tryagain();
+      }
+    );
 
   }
 

@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { EmployeeRequestsService } from '../../services/employee-requests.service';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Component({
   selector: 'app-requests-details',
@@ -13,7 +14,7 @@ export class RequestsDetailsComponent implements OnInit {
   subscription: Subscription;
   reqdetaildata;
   requestApprovalsData;
-  constructor(@Inject(MAT_DIALOG_DATA) public data, public dialogRef: MatDialogRef<RequestsDetailsComponent>, private empreqservice: EmployeeRequestsService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data, public dialogRef: MatDialogRef<RequestsDetailsComponent>, private empreqservice: EmployeeRequestsService, private toastr: AppToasterService) { }
 
   isLoading = true;
   ngOnInit() {
@@ -23,14 +24,15 @@ export class RequestsDetailsComponent implements OnInit {
         this.reqdetaildata = (reqdetail as any).data["currentServiceRequestTable"];
         this.requestApprovalsData = (reqdetail as any).data["requestApprovalsData"];
 
-        console.log("curent tab data",this.requestApprovalsData);
+        //console.log("curent tab data",this.requestApprovalsData);
         this.isLoading = false;
-      } else {
-
-        //this.messages = [];
       }
-    });
-
+    },
+      err => {
+        this.isLoading = false;
+        this.toastr.tryagain();
+      }
+    );
   }
 
 }

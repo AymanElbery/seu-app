@@ -29,8 +29,8 @@ export class WafiHttpRequestService {
     obj["authorizationKey"] = "RSUyZlJMR0tMc1QlMmJjRFAjdHQ1cms4Y3pPOWRmNk50K0BlR2ElMmJjYlZhY0ZhVklGUE5hazdlOU0lM2Q6JFlpOEVQR0VXRWI0YXE3JVZFd0xORClsVW9oMTUlMj1Pd2olMmZrUCUyZnlYTjUhVFM4SjN6cWs2RDRUbEdP";
     obj["sessionId"] = this.globalService.getSID();
     //obj["empId"] = "4417010014";
-    obj["empId"] = "4361010022";
-    //obj["empId"] = this.user.userData.id;
+    //obj["empId"] = "4361010022";
+    obj["empId"] = this.user.userData.id;
     obj["lang"] = this.translate.currentLang == 'ar' ? 1 : 2;
     return obj;
   }
@@ -50,7 +50,11 @@ export class WafiHttpRequestService {
     let url = this.getApiURI() + path;
     body = this.apllyBasicParams(body);
     const headers = this.getHeaders();
+<<<<<<< HEAD
     //console.log("Parameter",body)
+=======
+   // //console.log("Parameter",body)
+>>>>>>> 6dd3b2c0bb135d6197b84041a6c63a32c4c303e3
     return this.http.post(url, JSON.stringify(body), { headers });
 
   }
