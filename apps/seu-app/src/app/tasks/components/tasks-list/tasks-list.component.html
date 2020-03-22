@@ -1,16 +1,40 @@
 <div class="main-content">
 
-  <service-header title='{{"wafi.TaskList" | translate}}'></service-header>
-
-  <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
-
+  <service-header title='{{"tasks.TaskList" | translate}}'></service-header>
   <div class="prin" style="color: #fff;">
-  <a  class="btn" (click)="addtask()">Add Task</a>
+    <a class="btn" (click)="addtask()">Add Task</a>
   </div>
 
+  <seu-loader [isLoading]="isLoading"></seu-loader>
 
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">{{"tasks.ID" | translate}}</th>
+          <th scope="col">{{"tasks.title" | translate}}</th>
+          <th scope="col">{{"wafi.start_date" | translate}}</th>
+          <th scope="col">{{"wafi.end_date" | translate}}</th>
+          <th scope="col">{{"tasks.priority" | translate}}</th>
+          <th scope="col">{{"tasks.status" | translate}}</th>
+          <th scope="col">{{"tasks.assigned" | translate}}</th>
+          <th scope="col">{{"tasks.Details" | translate}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of gettasklist">
+          <td>{{task.tid}}</td>
+          <td>{{task.title}}</td>
+          <td>{{task.startDate}}</td>
+          <td>{{task.endDate}}</td>
+          <td>{{task.priorityDesc}}</td>
+          <td>{{task.statusDesc}}</td>
+          <td>{{task.assignedToName}}</td>
+          <td class="prin" style="color: #fff;"><a routerLink="['/tasks/details', task.id]"
+              class="btn">{{"wafi.Details" | translate}} <i class="ik ik-book"></i> </a></td>
+        </tr>
 
+      </tbody>
+    </table>
+  </div>
 </div>
-
-
-

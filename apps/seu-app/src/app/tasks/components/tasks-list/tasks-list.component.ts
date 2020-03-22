@@ -45,7 +45,7 @@ export class TasksListComponent implements OnInit {
     //this.isLoading = true
     this.subscriptionappreq = this.taskservice.getTasksList().subscribe(appreqs => {
       if (appreqs) {
-        this.gettasklist = (appreqs as any).data;
+        this.gettasklist = this.taskservice.prepareList((appreqs as any).data);
         console.log("data",this.gettasklist);      
         this.isLoading = false;
       } else {

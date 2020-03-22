@@ -11,6 +11,15 @@ export class TasksManagementService {
 
   constructor(private wafihttRequest: WafiHttpRequestService) { }
 
+  prepareList(data) {
+    return data.map(item => {
+      item['priorityDesc'] = item['priority'];
+      item['statusDesc'] = item['status'];
+      item['assignedToName'] = item['assignedTo'];
+      return item;
+    });
+  }
+
   AddTasksdata() {
     return this.wafihttRequest.postRequest_obj('task/createTask', {});
   }
@@ -18,7 +27,7 @@ export class TasksManagementService {
   getTasksList() {
     return this.wafihttRequest.postRequest_obj('task/getMyTasks', {});
   }
-  
+
 
 
 }
