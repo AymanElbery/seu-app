@@ -15,7 +15,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 export class EmpEvaluationsComponent implements OnInit {
 
   p: number;
-  filter; 
+  filter;
   config: any;
   subscriptionevallist: Subscription;
   emplistevaluations: any;
@@ -35,7 +35,7 @@ export class EmpEvaluationsComponent implements OnInit {
     if (this.subscriptions)
       this.subscriptions.unsubscribe();
   }
-  pageChanged(event){
+  pageChanged(event) {
     this.config.currentPage = event;
   }
   getEmpevaluations() {
@@ -46,11 +46,13 @@ export class EmpEvaluationsComponent implements OnInit {
         this.emplistevaluations = (empeval as any).data["evaluationsTable"];
         //console.log("emp app request",this.emplistevaluations);      
         this.isLoading = false;
-      } else {
-
       }
-    });
-
+    },
+      err => {
+        this.isLoading = false;
+        this.toastr.tryagain();
+      }
+    );
   }
 
 

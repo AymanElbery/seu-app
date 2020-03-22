@@ -19,11 +19,11 @@ export class VacationRequestComponent implements OnInit {
   AddReqForm: FormGroup;
   submitted = false;
   vacationreqtype: any;
-  ddltruefalse=true;
+  ddltruefalse = true;
   citydata;
   ddlday = [];
-  ddlmonth= [];
-  ddlyear= [];
+  ddlmonth = [];
+  ddlyear = [];
   altEmpItems;
   countryNewItems;
   cityNewItems;
@@ -55,11 +55,11 @@ export class VacationRequestComponent implements OnInit {
 
 
   }
-  selectcityFF(){
-this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
- }
-  selectcity(countryid){
-    if(!countryid){
+  selectcityFF() {
+    this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
+  }
+  selectcity(countryid) {
+    if (!countryid) {
       this.citydata = [];
       return false;
     }
@@ -91,14 +91,14 @@ this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
         this.toastr.push([{ type: 'error', 'body': error }]);
         //this.isLoading = false;
 
-      }else {
-        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
+      } else {
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
         //this.isLoading = false;
-//navigate
-      this.router.navigate(['/wafi/employee-requests'])
+        //navigate
+        this.router.navigate(['/wafi/employee-requests'])
       }
     }
-     
+
     );
 
     // this.formSubmitted = true;
@@ -108,7 +108,7 @@ this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
   }
   getvacationbal(event) {
     //console.log("vac type", event);
-    
+
     this.subscriptionvac = this.empreqservice.getVacationbalance(event, "sysdate").subscribe(empvacation => {
       if (empvacation) {
         this.vacationsbal = (empvacation as any).data["VacationBalance"];
@@ -119,14 +119,14 @@ this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
       }
     });
   }
-  
+
   ngOnInit() {
 
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
-      if(this.id==6){
-        this.ddltruefalse=false;
-        this.vacationsbal= this.getvacationbal(1);
+      if (this.id == 6) {
+        this.ddltruefalse = false;
+        this.vacationsbal = this.getvacationbal(1);
         //var=this.FillDDLReqType(this.id);
       }
       this.FillDDLReqType(this.id);
@@ -159,7 +159,7 @@ this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
         this.cityNewItems = (reqtype as any).data["cityNewItems"];
         this.compErkabItems = (reqtype as any).data["compErkabItems"];
 
-       // //console.log("vac item data", this.vacationreqtype);
+        // //console.log("vac item data", this.vacationreqtype);
         this.isLoading = false
       } else {
       }

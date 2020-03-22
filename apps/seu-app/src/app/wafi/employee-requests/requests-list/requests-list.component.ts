@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { RequestsDetailsComponent } from '../requests-details/requests-details.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
-import {RequestAddComponent} from '../request-add/request-add.component';
+import { RequestAddComponent } from '../request-add/request-add.component';
 
 @Component({
   selector: 'app-requests-list',
@@ -43,10 +43,13 @@ export class RequestsListComponent implements OnInit, OnDestroy {
         this.emplistrequest = (empreqs as any).data;
         ////console.log("emp request",this.emplistrequest);      
         this.isLoading = false;
-      } else {
-
       }
-    });
+    },
+      err => {
+        this.isLoading = false;
+        this.toastr.tryagain();
+      }
+    );
 
   }
 
@@ -67,15 +70,10 @@ export class RequestsListComponent implements OnInit, OnDestroy {
     if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.subscriptiondelreq = this.empreqservice.deletetEmpRequest(requestSeq, requestType).subscribe(empreqsdel => {
-        if (empreqsdel) {
-          //console.log(empreqsdel);
-          //this.toastr.push((empreqsdel as any).statusDesc);     
-          this.deleting = false;
-          this.getReqlist();
-
-        } else {
-
-        }
+        //console.log(empreqsdel);
+        //this.toastr.push((empreqsdel as any).statusDesc);     
+        this.deleting = false;
+        this.getReqlist();
       },
         err => {
           this.toastr.tryagain();
@@ -85,7 +83,7 @@ export class RequestsListComponent implements OnInit, OnDestroy {
     }
   }
 
-  pageChanged(event){
+  pageChanged(event) {
     this.config.currentPage = event;
   }
 
