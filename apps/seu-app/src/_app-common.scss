@@ -169,9 +169,17 @@ DropDown{     color: #f08b1c; font-size: 13px; font-family: 'DroidArabicKufi';}
 .ysRootMenuIcon
 {
     text-align: center;
-    color: rgb(219, 151, 4);
-    font-size: 22px;
+    color: #f08b1c;
+    font-size: 30px;
    
+  
+}
+
+.ysRootMenuIcon2
+{
+    text-align: right;padding-right: 50px;
+    color: #f08b1c;
+    font-size: 18px;
   
 }
 
@@ -217,7 +225,7 @@ background-color: #001628;
 {
     text-align:right;
     padding-right:50px;
-    color: rgb(219, 151, 4);
+    color: #f08b1c;
     font-size: 20px;
 
 }
@@ -225,7 +233,7 @@ background-color: #001628;
 {
     text-align:right;
     padding-right:100px;
-    color: rgb(219, 151, 4);
+    color: #f08b1c;
 
 }
 
@@ -342,7 +350,7 @@ background-color: #001628;
     color:darkgray;
 }
 
-.nt-drawer__header-brand{color:#fff ; font-weight: 700;margin-top: 8; margin-bottom: -8;}
+.nt-drawer__header-brand{color:#fff ; font-weight: 700;margin-top: 8; margin-bottom: -5;}
 .img-user{  border-bottom-width: 3; border-right-width: 3; border-color: rgb(219, 151, 4); margin-top: 5;
 }
 
@@ -404,7 +412,7 @@ TextView:focus{ border-width: 5px; border-color: #f08b1c; }
 label{font-family: 'DroidArabicKufi' ;  white-space: normal;
    
 }
-.hr{border-color: #f08b1c;}
+.hr{border-color: #f08b1c;  width: 85%;}
 
 @keyframes example {
     from { background-color: #010447; }
@@ -502,7 +510,7 @@ TabView{ font-family: 'DroidArabicKufi'}
     background-size: cover;
     background-image: linear-gradient(130deg, rgba(1,24,42,0.55) 0%, rgba(1,24,42,0.8) 54%, rgba(1,24,42,1) 99%);
 
-    background: linear-gradient(to left, #001628, rgba(1,24,42,0.9),#001628);
+    background: linear-gradient(to bottom, #001628, rgba(1,24,42,0.9),#001628);
 }
 
 FormattedString {float: right; width: 400;  color: #000; }

@@ -16,7 +16,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                     <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
 
                 </GridLayout>                
-       <!--  <RadListView width="100%"  [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">
+        <RadListView width="100%"  [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">
             <ng-template let-item="item">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between">
                     <GridLayout columns="auto, *" class="ysMenuGridHeader2 ">
@@ -45,15 +45,17 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                         </GridLayout>
                     </FlexboxLayout>
             </ng-template>
-        </RadListView> -->
+        </RadListView> 
+        <StackLayout class="hr m-10"></StackLayout>
+
         <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/reset')">
             <Label col="1" text="تغير كلمة المرور " class="ysRootMenuItem" ></Label>
-            <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
+            <Label col="1"  text="&#xf13e;" class="fas ysRootMenuIcon2"></Label>
 
         </GridLayout>
         <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/login')">
-            <!-- <Label col="1" text="تسجيل خروج" class="ysRootMenuItem" ></Label> -->
-            <Label col="1"  text="&#xf2f5;" class="fas ysRootMenuIcon"></Label>
+             <Label col="1" text="تسجيل خروج" class="ysRootMenuItem" ></Label> 
+            <Label col="1"  text="&#xf2f5;" class="fas ysRootMenuIcon2"></Label>
 
         </GridLayout>
             </StackLayout>
