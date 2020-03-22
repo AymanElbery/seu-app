@@ -7,11 +7,13 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { RegistrationFormComponent } from './registration-form/registration-form.component.tns';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { AppTransModule } from '../app.trans.module.tns';
+import { ResetPasswordComponent } from './reset-password/reset-password.component.tns';
+import { HeaderModule } from '../shared/header.module.tns';
 
 
 @NgModule({
-  declarations: [LoginFormComponent, RegistrationFormComponent],
-  imports: [
+  declarations: [LoginFormComponent, RegistrationFormComponent, ResetPasswordComponent],
+  imports: [HeaderModule,
     NativeScriptCommonModule, AccountRoutingModule, NativeScriptFormsModule, AppTransModule
   ],
   schemas: [NO_ERRORS_SCHEMA],

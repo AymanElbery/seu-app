@@ -7,6 +7,8 @@ import { RouterExtensions } from 'nativescript-angular/router';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application'; 
 import { RequestData } from '../../shared/models/request-data';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-english-equalize',
@@ -24,11 +26,11 @@ export class EnglishEqualizeComponent implements OnInit {
 
   constructor(private toastr: AppToasterService, 
     private acadmicProc: EnglishEqualizerService,
-    private routerExtensions: RouterExtensions) { }
+    private routerExtensions: RouterExtensions,
+    private downloader: DataDownLoadService) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
+    Downloader.init(); 
     this.isLoading = true;
     this.reason = '';
     this.getRequests();
@@ -47,7 +49,13 @@ export class EnglishEqualizeComponent implements OnInit {
   }
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log("xxxx",x)
+      this.printAR = x;
+    });
   }
 
   deleting = false;

@@ -10,6 +10,8 @@ import { AppToasterService } from '../../shared/services/app-toaster.tns';
 import { AddSummerWithdrawComponent } from './diag/add-summer-withdraw/add-summer-withdraw.component.tns';
 import { TranslateService } from '@ngx-translate/core';
 import { RequestData } from '../../shared/models/request-data';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-summer-withdraw',
@@ -22,7 +24,8 @@ export class SummerWithdrawComponent implements OnInit {
     private _vcRef: ViewContainerRef,
     private acadmicProc: SummerWithdrawService,
     private toaster:AppToasterService,
-    private translate: TranslateService) { }
+    private translate: TranslateService,
+    private downloader: DataDownLoadService) { }
 
   printAR;
   reason: string;
@@ -31,6 +34,7 @@ export class SummerWithdrawComponent implements OnInit {
   status;
   isLoading = false;
   deleting = false;
+  isDownLoaded = false;
 
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
@@ -72,7 +76,21 @@ export class SummerWithdrawComponent implements OnInit {
 }
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log("xxxx",x)
+      this.printAR = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.translate.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
+      }
+    });
   }
   delete(id, index) {
     dialogs.confirm({

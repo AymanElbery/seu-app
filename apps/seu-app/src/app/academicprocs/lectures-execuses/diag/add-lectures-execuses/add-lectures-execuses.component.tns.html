@@ -18,8 +18,8 @@
 <FlexboxLayout flexDirection="column">
 
     <StackLayout class="ysBox paragraph" style="margin-bottom: 20;">
-        <Label [text]="reqData.text_list[0].text1"></Label>
-        <Label [text]="reqData.text_list[1].text1"></Label>
+        <Label [text]="reqData.text_list[0].text1"textWrap="true" ></Label>
+        <Label [text]="reqData.text_list[1].text1"textWrap="true" ></Label>
         <Label [text]="reqData.text_list[2].text1" textWrap="true"></Label>
         <Label [text]="reqData.text_list[3].text1" textWrap="true"></Label>
         <Label [text]="reqData.text_list[4].text1" textWrap="true"></Label>
@@ -29,13 +29,13 @@
     <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" [ngClass]="{'throw_no_border':reqData.schedules.length === 0}"> 
             <label text='{{"general.crn"|translate}}'></label>
-            <label text='{{"general.course_name"|translate}}'></label>
+            <label text='{{"general.course_name"|translate}}' style="width: 40%;" textWrap="true"></label>
             <label text="&#xf00c;" class="fas"></label>
         </FlexboxLayout>
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" *ngFor="let item of reqData.schedules;let i=index;"
          class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.schedules.length-1 ? '0' : '1' }"> 
-            <label [text]="item.CRN"></label>
-            <label  [text]="item.CRSE_TITLE"></label>
+            <label [text]="item.CRN" textWrap="true"></label>
+            <label  [text]="item.CRSE_TITLE" style="width: 40%;text-align: center;" textWrap="true"></label>
             <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
         </FlexboxLayout>
     </FlexboxLayout>

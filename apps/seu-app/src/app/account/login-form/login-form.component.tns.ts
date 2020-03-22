@@ -38,6 +38,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     private ref: ChangeDetectorRef,
     private toastr: AppToasterService
   ) {
+    console.log('l1');
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
 
@@ -45,6 +46,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
         this.credentials.email = param.email;
       }
     );
+    console.log('l2');
+
     // this.userManger.logout();
     // this.userManger.logout();
   }

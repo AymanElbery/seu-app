@@ -3,43 +3,43 @@
 </ActionBar>
 <GridLayout backgroundColor="#CCCCCC">
   <ScrollView>
-      <StackLayout margin="10" verticalAlignment="center">
-          <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
-              <StackLayout class="input-field">
-                  <Label text="First Name" class="label font-weight-bold m-b-5"></Label>
-                  <TextField class="input" [(ngModel)]="userdata.firstName"></TextField>
+    <StackLayout margin="10" verticalAlignment="center">
+      <StackLayout class="form" padding="15" backgroundColor="#FFFFFF">
+        <StackLayout class="input-field">
+          <Label text="First Name" class="label font-weight-bold m-b-5"></Label>
+          <TextField class="input" [(ngModel)]="userdata.firstName"></TextField>
 
-                  <StackLayout class="hr-light"></StackLayout>
-              </StackLayout>
-              <StackLayout class="input-field">
-                  <Label text="Last Name" class="label font-weight-bold m-b-5"></Label>
-                  <TextField class="input" [(ngModel)]="userdata.lastName"></TextField>
-                  <StackLayout class="hr-light"></StackLayout>
-              </StackLayout>
-              <StackLayout class="input-field">
-                <Label text="User Name" class="label font-weight-bold m-b-5"></Label>
-                <TextField class="input" [(ngModel)]="userdata.username"></TextField>
-                <StackLayout class="hr-light"></StackLayout>
-            </StackLayout>
-              <StackLayout class="input-field">
-                  <Label text="Email" class="label font-weight-bold m-b-5"></Label>
-                  <TextField class="input" [(ngModel)]="userdata.email"></TextField>
-                  <StackLayout class="hr-light"></StackLayout>
-              </StackLayout>
-              <StackLayout class="input-field">
-                  <Label text="Password" class="label font-weight-bold m-b-5"></Label>
-                  <TextField secure="true" class="input" [(ngModel)]="userdata.password"></TextField>
-                  <StackLayout class="hr-light"></StackLayout>
-              </StackLayout>
-              <StackLayout class="input-field">
-                <Label text="address" class="label font-weight-bold m-b-5"></Label>
-                <TextField secure="true" class="input" [(ngModel)]="userdata.address"></TextField>
-                <StackLayout class="hr-light"></StackLayout>
-            </StackLayout>
-              <Button class="btn btn-primary w-full" text="Register" (tap)="registerUser(first)"></Button>
-              <Label (tap)="goBack()" text="Already a member? Login here." class="text-center footnote"></Label>
-          </StackLayout>
+          <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+          <Label text="Last Name" class="label font-weight-bold m-b-5"></Label>
+          <TextField class="input" [(ngModel)]="userdata.lastName"></TextField>
+          <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+          <Label text="User Name" class="label font-weight-bold m-b-5"></Label>
+          <TextField class="input" [(ngModel)]="userdata.username"></TextField>
+          <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+          <Label text="Email" class="label font-weight-bold m-b-5"></Label>
+          <TextField class="input" [(ngModel)]="userdata.email"></TextField>
+          <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+          <Label text="Password" class="label font-weight-bold m-b-5"></Label>
+          <TextField secure="true" class="input" [(ngModel)]="userdata.password"></TextField>
+          <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+          <Label text="address" class="label font-weight-bold m-b-5"></Label>
+          <TextField secure="true" class="input" [(ngModel)]="userdata.address"></TextField>
+          <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <Button class="btn btn-primary w-full" text="Register" (tap)="registerUser(first)"></Button>
+        <Label (tap)="goBack()" text="Already a member? Login here." class="text-center footnote"></Label>
       </StackLayout>
+    </StackLayout>
   </ScrollView>
 </GridLayout>
 
