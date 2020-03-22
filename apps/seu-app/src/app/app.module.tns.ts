@@ -32,7 +32,7 @@ import { MasterStudentDataModule } from './master-student-data/master-student-da
 import { MasterPrintCertificatesModule } from './master-print-certificates/master-print-certificates.module.tns';
 import { MasterOtherRequestsModule } from './master-other-requests/master-other-requests.module.tns';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
-import { NotificationsComponent } from './notifications/notifications/notifications.component';
+import { NotificationsComponent } from './notifications/notifications/notifications.component.tns';
 import { HeaderModule } from './shared/header.module.tns';
 
 
