@@ -42,6 +42,19 @@
 
 
         <div *ngIf="hasWafi">
+
+          <div class="nav-item has-sub">
+            <a href="javascript:void(0)"> <span>{{"tasks.title" | translate}} </span>
+              <i class="ik ik-user"></i> </a>
+            <div class="submenu-content">
+              <a [routerLink]="['/tasks/']" class="menu-item"> <span
+                  class="text-eng">{{"tasks.list" | translate}}</span>
+                <i class="ik ik-user-check"></i> </a>
+            </div>
+          </div>
+
+
+
           <div class="nav-item has-sub ">
             <a href="javascript:void(0)" class="menu-item homelink" routerLink="/">
               <span>{{"wafi.wafi" | translate}}</span>
@@ -81,11 +94,13 @@
                 <span class="text-eng">{{"wafi.AddNewRequest" | translate}}</span> <i class="ik ik-save"></i> </a>
             </div>
             <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-requests']" class="menu-item">
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-requests']"
+                class="menu-item">
                 <span class="text-eng">{{"wafi.ApprovalRequests" | translate}}</span> <i class="ik ik-save"></i> </a>
             </div>
             <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-history']" class="menu-item">
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-history']"
+                class="menu-item">
                 <span class="text-eng">{{"wafi.AppriovalHistory" | translate}}</span> <i class="ik ik-save"></i> </a>
             </div>
           </div>
@@ -95,7 +110,8 @@
               <i class="ik ik-user"></i> </a>
             <div class="submenu-content">
               <a [routerLink]="['/wafi/administrative/emp-evaluations']" class="menu-item"> <span
-                  class="text-eng">{{"wafi.employeeevaluations" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+                  class="text-eng">{{"wafi.employeeevaluations" | translate}}</span> <i class="ik ik-user-check"></i>
+              </a>
             </div>
 
             <div class="submenu-content">
@@ -117,10 +133,10 @@
               <a [routerLink]="['/wafi/administrative/vouchers']" class="menu-item"> <span
                   class="text-eng">{{"wafi.EmployeeVouchers" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
-         
-       
+
+
           </div>
-          
+
         </div>
 
 
@@ -483,7 +499,7 @@
           </div>
         </div>
 
-    <!--
+        <!--
              <div *ngIf="userService.userData.act_as_student" class="nav-item has-sub">
                 <a href="javascript:void(0)"> <span>الأنظمة </span>
                     <i class="ik ik-align-right"></i> </a>
@@ -494,9 +510,9 @@
                  </div>
              </div> -->
 
-    <!--
+        <!--
                   <div class="nav-lavel"> </div> -->
-    <!-- <div class="nav-item">
+        <!-- <div class="nav-item">
                     <a class="nav-link"  ><span>  إرشادات عامة  </span> <i class="ik ik-alert-circle"></i>
                    </a>
                    </div>
@@ -505,7 +521,7 @@
                     </a>
                   </div> -->
 
-    </nav>
+      </nav>
+    </div>
   </div>
-</div>
 </div>

@@ -97,6 +97,11 @@ const routes: Routes = [
         path: 'wafi',
         loadChildren: './wafi/wafi.module#WafiModule',
         canActivate: [EmpGuard]
+      },
+      {
+        path: 'tasks',
+        loadChildren: './tasks/tasks.module#TasksModule',
+        canActivate: [EmpGuard]
       }
     ]
   },
