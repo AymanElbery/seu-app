@@ -42,13 +42,13 @@ export class ApprovalHistoryDetailComponent implements OnInit {
 
   isLoading = true;
   ngOnInit() {
-    console.log("details",this.data.reqSeq,this.data.reqEmpId,this.data.reqType);
+    //console.log("details",this.data.reqSeq,this.data.reqEmpId,this.data.reqType);
     this.isLoading = true;
     this.subscription =  this.empreqservice.getapprovalhistoryDetail(this.data.reqSeq,this.data.reqType,this.data.reqEmpId).subscribe(apphistorydetail => {
       if (apphistorydetail) {
         this.currentServiceRequestTable = (apphistorydetail as any).data["currentServiceRequestTable"];
         this.transactionData = (apphistorydetail as any).data["transactionData"];
-        console.log("Detail data",this.currentServiceRequestTable);
+        //console.log("Detail data",this.currentServiceRequestTable);
         this.isLoading = false;
       } else {
         this.isLoading = false;
@@ -66,13 +66,13 @@ export class ApprovalHistoryDetailComponent implements OnInit {
       return;
     }
 
-    console.log("submit data", submitdatavalue);
+    //console.log("submit data", submitdatavalue);
 
     this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
-      //console.log("saved data", leavdedcut);
+      ////console.log("saved data", leavdedcut);
       if (!leavdedcut['saveRequest']) {
         var error = (leavdedcut as any).data["errorMassege"]   
-        console.log("response data",error);
+        //console.log("response data",error);
         this.toastr.push([{ type: 'error', 'body': error }]);
 
       }else {

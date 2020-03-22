@@ -46,7 +46,7 @@ export class ApprovalHistoryComponent implements OnInit,OnDestroy {
     this.subscriptionappreq = this.empreqservice.getapprovalhistory().subscribe(appreqs => {
       if (appreqs) {
         this.emplisthistoryapproval = (appreqs as any).data["requestsApproveDetailsTable"];
-        console.log("emp app request",this.emplisthistoryapproval);      
+        //console.log("emp app request",this.emplisthistoryapproval);      
         this.isLoading = false;
       } else {
 
@@ -56,7 +56,7 @@ export class ApprovalHistoryComponent implements OnInit,OnDestroy {
   }
 
   getapphistorydetail(reqSeq:any, reqEmpId:any, reqType:any) {
-    console.log("reqSeq",reqSeq,"reqType", reqType,"reqEmpId",reqEmpId);
+    //console.log("reqSeq",reqSeq,"reqType", reqType,"reqEmpId",reqEmpId);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;

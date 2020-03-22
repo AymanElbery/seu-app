@@ -43,7 +43,7 @@ export class TrainingComponent implements OnInit,OnDestroy {
     this.subscriptiontraininglist = this.empreqservice.gettraininglist().subscribe(emptraining => {
       if (emptraining) {
         this.emplisttraining = (emptraining as any).data["trainingTable"];
-        console.log("emp lett",this.emplisttraining);      
+        //console.log("emp lett",this.emplisttraining);      
         this.isLoading = false;
       } else {
 

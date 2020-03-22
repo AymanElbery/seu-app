@@ -44,7 +44,7 @@ selectYear = "";
      if (salyear) {       
        this.salaryyears = (salyear as any).data;
        this.getempsalaryyearwise(this.selectYear?this.selectYear:this.salaryyears[0]);
-       //console.log("salary year",this.salaryyears,this.salaryyears[0]);      
+       ////console.log("salary year",this.salaryyears,this.salaryyears[0]);      
        this.isLoading = false;      
      } else {       
        this.messages = [];
@@ -59,7 +59,7 @@ this.selectYear = year;
   this.subscription = this.empservice.getEmpsalary(year).subscribe(empsalary => {
    if (empsalary) {       
      this.Empsalary = (empsalary as any).data;
-     //console.log("emp salary",this.Empsalary);      
+     ////console.log("emp salary",this.Empsalary);      
      this.isLoading = false;      
    } else {       
      this.messages = [];
@@ -69,7 +69,7 @@ this.selectYear = year;
 }
 
 getsalarydetail(orderItemIndex, month,year) {
- // console.log("salar param",month,year);
+ // //console.log("salar param",month,year);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;

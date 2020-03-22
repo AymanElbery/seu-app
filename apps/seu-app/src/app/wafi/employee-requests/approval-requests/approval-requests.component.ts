@@ -53,7 +53,7 @@ export class ApprovalRequestsComponent implements OnInit,OnDestroy {
     this.subscriptionappreq = this.empreqservice.getapprovalrequests().subscribe(appreqs => {
       if (appreqs) {
         this.emplistrequestapproval = (appreqs as any).data["requestsToApproveTable"];
-        console.log("emp app request",this.emplistrequestapproval);      
+        //console.log("emp app request",this.emplistrequestapproval);      
         this.isLoading = false;
       } else {
 
@@ -73,7 +73,7 @@ export class ApprovalRequestsComponent implements OnInit,OnDestroy {
   }
 
   // applySearch(filters){
-  //   console.log("filters" , filters);
+  //   //console.log("filters" , filters);
   // }
 
   

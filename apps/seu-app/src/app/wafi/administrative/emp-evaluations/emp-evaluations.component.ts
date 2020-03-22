@@ -44,7 +44,7 @@ export class EmpEvaluationsComponent implements OnInit {
     this.subscriptionevallist = this.empreqservice.getEmpevaluations().subscribe(empeval => {
       if (empeval) {
         this.emplistevaluations = (empeval as any).data["evaluationsTable"];
-        console.log("emp app request",this.emplistevaluations);      
+        //console.log("emp app request",this.emplistevaluations);      
         this.isLoading = false;
       } else {
 

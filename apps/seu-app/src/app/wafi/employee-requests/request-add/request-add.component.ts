@@ -50,7 +50,7 @@ export class RequestAddComponent implements OnInit {
       if (reqtype) {
         this.reqtype=reqtype
         this.reqtype = (reqtype as any).data;
-        console.log("reqtype data",this.reqtype);   
+        //console.log("reqtype data",this.reqtype);   
         this.isLoading =false   
       } else {
             }
@@ -60,7 +60,7 @@ export class RequestAddComponent implements OnInit {
   
   getrequesttype(requestindex,reqtypeval:any){
     
-    console.log("reqtyep",reqtypeval);    
+    //console.log("reqtyep",reqtypeval);    
 
 switch (reqtypeval) {
   
@@ -81,7 +81,7 @@ switch (reqtypeval) {
       this.router.navigate(['/wafi/employee-requests/evacuate-party-request',reqtypeval])
         break;  
     default:
-        console.log("No such reqtype exists!");
+        //console.log("No such reqtype exists!");
         break;
 }
 
@@ -91,14 +91,14 @@ switch (reqtypeval) {
   onFormSubmit(event) {
     //this.submitted = true;
     const employee = this.AddReqForm.value;
-    console.log("submit data",employee);
+    //console.log("submit data",employee);
     //event.preventDefault();
    // this.formSubmitted = true;
     if (this.AddReqForm.invalid) {
       return;
   }
     // if (this.form.valid) {
-    //   console.log(this.form.value); // Process your form
+    //   //console.log(this.form.value); // Process your form
     // }
     //this.addrequestsdata(employee);
   }

@@ -42,7 +42,7 @@ export class EmpCustodyComponent implements OnInit,OnDestroy {
     this.subscriptioncustodylist = this.empreqservice.getLetterlist().subscribe(empcustody => {
       if (empcustody) {
         this.emplistcustody = (empcustody as any).data["custodyTable"];
-        console.log("emp cust",this.emplistcustody);      
+        //console.log("emp cust",this.emplistcustody);      
         this.isLoading = false;
       } else {
 

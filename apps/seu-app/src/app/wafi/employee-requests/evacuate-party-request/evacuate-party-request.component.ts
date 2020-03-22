@@ -57,13 +57,13 @@ _handleReaderLoaded(e) {
       return;
     }
 
-    console.log("submit data", submitdatavalue);
+    //console.log("submit data", submitdatavalue);
 
     this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
-      //console.log("saved data", leavdedcut);
+      ////console.log("saved data", leavdedcut);
       if (!leavdedcut['saveRequest']) {
         var error = (leavdedcut as any).data["errorMassege"]   
-        console.log("response data",error);
+        //console.log("response data",error);
         this.toastr.push([{ type: 'error', 'body': error }]);
 
       }else {
@@ -104,7 +104,7 @@ _handleReaderLoaded(e) {
       if (reqtype) {
        
         this.disclaimerReasonItems = (reqtype as any).data["disclaimerReasonItems"]; 
-        console.log("vac item data", this.vacationreqtype);
+        //console.log("vac item data", this.vacationreqtype);
         this.isLoading = false
       } else {
       }

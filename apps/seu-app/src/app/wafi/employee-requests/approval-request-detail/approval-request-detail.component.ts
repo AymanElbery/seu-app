@@ -42,7 +42,7 @@ export class ApprovalRequestDetailComponent implements OnInit {
       if (appreqdetail) {
         this.rejectionitmes = (appreqdetail as any).data["rejectReasoneItems"];
         this.appreqdetails = (appreqdetail as any).data["currentServiceRequestTable"];
-        console.log("Detail data",this.appreqdetails);
+        //console.log("Detail data",this.appreqdetails);
         this.isLoading = false;
       } else {
         
@@ -65,7 +65,7 @@ export class ApprovalRequestDetailComponent implements OnInit {
       return;
     }
 
-    console.log("submit data", submitdatavalue);
+    //console.log("submit data", submitdatavalue);
 
     this.saveapprovaldata(submitdatavalue.rejectReason,0);
 
@@ -79,10 +79,10 @@ export class ApprovalRequestDetailComponent implements OnInit {
   saveapprovaldata(rejectReasonNo:any,approveValue:any){
 
     this.empreqservice.submitapproverequest(this.data.reqSeq,this.data.reqEmpId,this.data.reqType,rejectReasonNo,approveValue).subscribe(saveappovedata => {
-      //console.log("saved data", leavdedcut);
+      ////console.log("saved data", leavdedcut);
       if (!saveappovedata['accepted']) {
         var error = (saveappovedata as any).data["errorMessage"]   
-        console.log("response data",error);
+        //console.log("response data",error);
         this.toastr.push([{ type: 'error', 'body': error }]);
 
       }else {
@@ -100,7 +100,7 @@ export class ApprovalRequestDetailComponent implements OnInit {
       if (reqtype) {
        
         this.disclaimerReasonItems = (reqtype as any).data["disclaimerReasonItems"]; 
-        console.log("vac item data", this.vacationreqtype);
+        //console.log("vac item data", this.vacationreqtype);
         this.isLoading = false
       } else {
       }

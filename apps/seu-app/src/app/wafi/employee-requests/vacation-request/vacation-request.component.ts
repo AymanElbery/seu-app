@@ -66,7 +66,7 @@ this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
     this.subscriptionvac = this.empreqservice.getCities(countryid).subscribe(citydata => {
       if (citydata) {
         this.citydata = (citydata as any).data;
-        console.log("city data",this.citydata);           
+        //console.log("city data",this.citydata);           
         this.isLoading = false;
       } else {
         //this.messages = [];
@@ -81,9 +81,9 @@ this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
     if (this.AddReqForm.invalid) {
       return;
     }
-    console.log("submit data", submitdatavalue);
+    //console.log("submit data", submitdatavalue);
     this.empreqservice.submitreqservice(submitdatavalue).subscribe(contacts => {
-      //console.log("saved ", contacts);
+      ////console.log("saved ", contacts);
       if (!contacts['saveRequesst']) {
         var error = (contacts as any).data["errorMassege"]
         //this.toastr.push((contacts as any).data); 
@@ -107,12 +107,12 @@ this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
     }
   }
   getvacationbal(event) {
-    console.log("vac type", event);
+    //console.log("vac type", event);
     
     this.subscriptionvac = this.empreqservice.getVacationbalance(event, "sysdate").subscribe(empvacation => {
       if (empvacation) {
         this.vacationsbal = (empvacation as any).data["VacationBalance"];
-        //console.log("emp vacations",this.vacationsbal);           
+        ////console.log("emp vacations",this.vacationsbal);           
         this.isLoading = false;
       } else {
         //this.messages = [];
@@ -148,7 +148,7 @@ this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
     this.AddReqForm.controls['requestType'].setValue(this.id);
     this.subscriptionDDLReqtype = this.empreqservice.getDDLVacationType(reqtypeid).subscribe(reqtype => {
       if (reqtype) {
-        console.log(reqtype);
+        //console.log(reqtype);
         this.vacationreqtype = reqtype
         this.vacationreqtype = (reqtype as any).data["vacationItems"];
         this.ddlday = (reqtype as any).data["dayItem"];
@@ -159,7 +159,7 @@ this.selectcity(this.AddReqForm.controls['toCountryNew'].value);
         this.cityNewItems = (reqtype as any).data["cityNewItems"];
         this.compErkabItems = (reqtype as any).data["compErkabItems"];
 
-       // console.log("vac item data", this.vacationreqtype);
+       // //console.log("vac item data", this.vacationreqtype);
         this.isLoading = false
       } else {
       }
