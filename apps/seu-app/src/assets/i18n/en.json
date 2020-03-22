@@ -207,7 +207,8 @@
         "training": "Training Request",
         "chineescourse": "Chinees Course",
         "PersonalInfo": "My Information",
-        "resetpassword": "Reset Password"
+        "resetpassword": "Reset Password",
+        "taks": "Tasks"
     },
     "services": {
         "academic_status": {
@@ -817,7 +818,7 @@
         "day": "Day",
         "beginday": "Begin Day",
         "beginmonth": "Begin Month",
-        "beginYear": "Begin Year",
+        "beginyear": "Begin Year",
         "altEemployee": "Substitute Employee",
         "tocountry": "To country",
         "citycountry": "City Country",
@@ -911,9 +912,8 @@
         "Next": "Next",
         "EmpNo": "Emp No",
         "EmpName": "Emp Name",
-        "RequestDate": "Request Date",
         "title": "Title",
-        "assignedTo": "AssignedTo",
+        "assignedTo": "Assigned To",
         "status": "Status",
         "priority": "Priority",
         "type": "Type",

@@ -40,19 +40,23 @@
           </div>
         </div>
 
-
         <div *ngIf="hasWafi">
-
           <div class="nav-item has-sub">
-            <a href="javascript:void(0)"> <span>{{"tasks.title" | translate}} </span>
+            <a href="javascript:void(0)"> <span>{{"menu.tasks" | translate}} </span>
               <i class="ik ik-user"></i> </a>
             <div class="submenu-content">
-              <a [routerLink]="['/tasks/']" class="menu-item"> <span
-                  class="text-eng">{{"tasks.list" | translate}}</span>
+              <a [routerLink]="['/tasks/assignedtasks']" class="menu-item"> <span
+                  class="text-eng">{{"tasks.assignedtasks" | translate}}</span>
+                <i class="ik ik-user-check"></i> </a>
+              <!-- <a [routerLink]="['/tasks/mytasks']" class="menu-item"> <span
+                  class="text-eng">{{"tasks.mytasks" | translate}}</span>
+                <i class="ik ik-user-check"></i> </a> -->
+              <a [routerLink]="['/tasks/alltasks']" class="menu-item"> <span
+                  class="text-eng">{{"tasks.alltasks" | translate}}</span>
                 <i class="ik ik-user-check"></i> </a>
             </div>
-           
-            
+
+
           </div>
 
 

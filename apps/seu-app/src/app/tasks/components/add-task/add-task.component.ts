@@ -34,7 +34,8 @@ export class AddTaskComponent implements OnInit {
       'title': ['', [Validators.required]],
       'description': [''],
       'assignedTo': ['', [Validators.required]],
-      'status': [''],
+      'viewers': [[]],
+      'status': ['1'],
       'priority': [''],
       'type': [''],
       'requiredProcedures': [''],
@@ -52,12 +53,8 @@ export class AddTaskComponent implements OnInit {
     if (this.AddReqForm.invalid) {
       return;
     }
-    console.log("submit data", submitdatavalue);
 
     this.taskservice.AddTasksdata(submitdatavalue).subscribe(addedtask => {
-
-      console.log("saved ", addedtask);
-
       if (!addedtask['saveTask']) {
         var error = (addedtask as any).data["errorMassege"]
         this.toastr.push([{ type: 'error', 'body': error }]);

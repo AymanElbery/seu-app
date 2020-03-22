@@ -1,133 +1,148 @@
 <div class="main-content">
 
-    <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
-  
-    <div  class="modal-header">
-        <h4 class="modal-title">{{"tasks.AddTask" | translate}}</h4>  
-      <button type="button"  class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
-      </div>
-  
-      <section class="dashboard-wrap" style="margin-top: 30px;">
-        <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
-    
-          <div class="row ser-block">
-            <div class=" col-md-6 col-sm-6">
-              <div class="state">
-                <h6>{{"tasks.title"|translate}} </h6>
-                <input type="text"  formControlName="title" class="form-control"   [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
-              </div>
+  <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
+
+  <div class="modal-header">
+    <h4 class="modal-title">{{"tasks.AddTask" | translate}}</h4>
+    <button type="button" class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
+  </div>
+
+  <section class="dashboard-wrap" style="margin-top: 30px;">
+    <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
+      <div class="modal-body">
+
+        <div class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"tasks.title"|translate}} </h6>
+              <input type="text" formControlName="title" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
             </div>
-    
-            <div class=" col-md-6 col-sm-6">
-              <div class="state">
-                <h6>{{"tasks.description"|translate}} </h6>
-                <input type="text"  formControlName="description" class="form-control" />
-              </div>
-            </div>    
           </div>
-          <div class="row ser-block">
-    
-            <div class=" col-md-6 col-sm-6">
-              <div class="state">
-                <h6>{{"tasks.assignedTo"|translate}} </h6>
+
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"tasks.description"|translate}} </h6>
+              <textarea formControlName="description" class="form-control"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"tasks.assignedTo"|translate}} </h6>
               <!--<select class="form-control" formControlName="assignedTo" [ngClass]="{ 'is-invalid': submitted && f.assignedTo.errors }" >
                     <option [ngValue]="undefined" selected>{{"tasks.assignedTo" | translate}}</option>
                     <option *ngFor="let assigto of ddlemplist" [selected]="selectvactype == assigto.empId"
                       value={{assigto.empId}}>{{assigto.empName}} </option>
                   </select>-->
 
-                  <ng-select [items]="ddlemplist"
-           bindLabel="empName"
-           autofocus
-           bindValue="empId" formControlName="assignedTo">
-</ng-select>
-              
-              </div>
-            </div>
-    
-            <div class=" col-md-6 col-sm-6">
-              <div class="state">
-                <h6>{{"tasks.status"|translate}} </h6>
-                <select class="form-control" formControlName="status" [ngClass]="{ 'is-invalid': submitted && f.status.errors }" >
-                    <option [ngValue]="undefined" selected>{{"tasks.status" | translate}}</option>
-                    <option *ngFor="let statusdat of ddltaskstatus" [selected]="selectvactype == statusdat.statusCode"
-                      value={{statusdat.statusCode}}>{{statusdat.statusDesc}} </option>
-                  </select>
-              </div>
+              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId"
+                formControlName="assignedTo">
+              </ng-select>
+
             </div>
           </div>
 
-          <div class="row ser-block">
-            <div class=" col-md-6 col-sm-6">
-              <div class="state">
-                <h6>{{"tasks.priority"|translate}} </h6>
-                <select class="form-control" formControlName="priority" [ngClass]="{ 'is-invalid': submitted && f.priority.errors }" >
-                    <option [ngValue]="undefined" selected>{{"tasks.priority" | translate}}</option>
-                    <option *ngFor="let proty of ddlpriority" [selected]="selectvactype == proty.priorityCode"
-                      value={{proty.priorityCode}}>{{proty.priorityDesc}} </option>
-                  </select>
-              </div>
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"tasks.priority"|translate}} </h6>
+              <select class="form-control" formControlName="priority"
+                [ngClass]="{ 'is-invalid': submitted && f.priority.errors }">
+                <option [ngValue]="undefined" selected>{{"tasks.priority" | translate}}</option>
+                <option *ngFor="let proty of ddlpriority" [selected]="selectvactype == proty.priorityCode"
+                  value={{proty.priorityCode}}>{{proty.priorityDesc}} </option>
+              </select>
             </div>
-    
-            <div class=" col-md-6 col-sm-6">
-              <div class="state">
-                <h6>{{"tasks.type"|translate}} </h6>
-                <select class="form-control" formControlName="type" [ngClass]="{ 'is-invalid': submitted && f.type.errors }" >
-                    <option [ngValue]="undefined" selected>{{"tasks.type" | translate}}</option>
-                    <option *ngFor="let typs of ddltype" [selected]="selectvactype == typs.typeCode"
-                      value={{typs.typeCode}}>{{typs.typeDesc}} </option>
-                  </select>
-              </div>
+          </div>
+          <!-- <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"tasks.status"|translate}} </h6>
+            <select class="form-control" formControlName="status"
+              [ngClass]="{ 'is-invalid': submitted && f.status.errors }">
+              <option [ngValue]="undefined" selected>{{"tasks.status" | translate}}</option>
+              <option *ngFor="let statusdat of ddltaskstatus" [selected]="selectvactype == statusdat.statusCode"
+                value={{statusdat.statusCode}}>{{statusdat.statusDesc}} </option>
+            </select>
+          </div>
+        </div> -->
+
+        </div>
+        <div class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"tasks.viewers"|translate}} </h6>
+              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId" formControlName="viewers"
+                multiple="multiple">
+              </ng-select>
+
+            </div>
+          </div>
+        </div>
+        <div class="row ser-block">
+
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"tasks.type"|translate}} </h6>
+              <select class="form-control" formControlName="type"
+                [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                <option [ngValue]="undefined" selected>{{"tasks.type" | translate}}</option>
+                <option *ngFor="let typs of ddltype" [selected]="selectvactype == typs.typeCode"
+                  value={{typs.typeCode}}>
+                  {{typs.typeDesc}} </option>
+              </select>
             </div>
           </div>
 
-          <div class="row ser-block">
-            <div class=" col-md-6 col-sm-6">
-                <div class="state">
-                    <h6>{{"tasks.endDate"|translate}} </h6>
-                    <input type="text"  formControlName="endDate" bsDatepicker class="form-control" />
-                  </div>
-           
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"tasks.requiredProcedures"|translate}} </h6>
+              <input type="text" formControlName="requiredProcedures" class="form-control" />
             </div>
-    
-            <div class=" col-md-6 col-sm-6">
-              <div class="state">
-                <h6>{{"tasks.startDate"|translate}} </h6>
-                <input type="text"  formControlName="startDate" bsDatepicker  class="form-control" />
-              </div>
+          </div>
+        </div>
+
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"tasks.endDate"|translate}} </h6>
+              <input type="text" formControlName="endDate" bsDatepicker class="form-control" />
+            </div>
+
+          </div>
+
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"tasks.startDate"|translate}} </h6>
+              <input type="text" formControlName="startDate" bsDatepicker class="form-control" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"tasks.notes"|translate}} </h6>
+              <textarea class="form-control" cols="2" rows="3" formControlName="notes"></textarea>
             </div>
           </div>
 
-          <div class="row ser-block">
-            <div class=" col-md-6 col-sm-6">
-                <div class="state">
-                    <h6>{{"tasks.notes"|translate}} </h6>
-                    <textarea class="form-control" cols="2" rows="3" formControlName="notes" ></textarea> 
-                  </div>
-            </div>
-    
-            <div class=" col-md-6 col-sm-6">
-            
-              <div class="state">
-                <h6>{{"tasks.requiredProcedures"|translate}} </h6>
-                <input type="text"  formControlName="requiredProcedures" class="form-control" />
-              </div>
+
+        </div>
+
+        <div>
+          <div class=" col-md-6 col-sm-6">
+            <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+              <button type="submit" class="btn" style="color: #fff;margin-top: 30px !important;"><i
+                  class="fa fa-database"></i> {{"tasks.Submit" | translate}}</button>
             </div>
           </div>
-        
-          <div>
-            <div class=" col-md-6 col-sm-6">
-              <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
-                <button type="submit" class="btn" style="color: #fff;margin-top: 30px !important;"><i
-                    class="fa fa-database"></i> {{"tasks.Submit" | translate}}</button>
-              </div>
-            </div>
-    
-          </div>
-    
-    
-        </form>
-      </section>
-  
-  
-  </div>
+
+        </div>
+
+      </div>
+    </form>
+  </section>
+
+
+</div>

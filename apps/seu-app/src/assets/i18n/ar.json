@@ -207,7 +207,8 @@
         "training": "طلب التدريب الميداني",
         "chineescourse": "الدورة الصينية",
         "PersonalInfo": "معلوماتي الشخصية",
-        "resetpassword": "تغيير كلمة المرور"
+        "resetpassword": "تغيير كلمة المرور",
+        "tasks": "المهام"
     },
     "services": {
         "academic_status": {
@@ -812,6 +813,7 @@
         "AddNewRequest": "إضافة طلب جديد",
         "vacationtype": "نوع الإجازة",
         "VacationRequest": "طلب إجازة",
+        "vacation": "أجازة",
         "normal": "عادية",
         "day": "اليوم",
         "beginday": "يوم",
@@ -826,8 +828,8 @@
         "notes": "ملاحظات",
         "Submit": "حفظ",
         "timePeriod": "المدة/يوم",
-<<<<<<< HEAD
         "leaveDeductionPeriod": "ملاحظات",
+        "leaveDeduction": "المدة",
         "evacuateparty": "طلب اخلاء طرف",
         "deductionregularleave27": "حسم من الإجازة العادية وفق المادة 27",
         "date": "تاريخ",
@@ -889,7 +891,7 @@
         "EMP_SRVC_PERIOD": "المدة/يوم",
         "EMP_PSNL_VCHR_NOTE": "ملاحظات",
         "EMP_SLRY_YEAR": "السنة",
-        "EmployeeVouchers": "Employee Vouchers",
+        "EmployeeVouchers": "البدلات و المكافاَت",
         "administrative": "إداري"
     },
     "tasks": {
@@ -897,7 +899,7 @@
         "endDate": "تاريخ الإنتهاء",
         "startDate": "تاريخ البدء",
         "status": "الحالة",
-        "Details": "Details",
+        "Details": "التفاصيل",
         "Task": "Task",
         "Delete": "Delete",
         "day": "Day",
@@ -909,13 +911,18 @@
         "Next": "التالى",
         "EmpNo": "رقم الموظف",
         "EmpName": "اسم الموظف",
-        "RequestDate": "Request Date",
-        "title": "Title",
-        "assignedTo": "AssignedTo",
-        "priority": "Priority",
+        "title": "العنوان",
+        "assignedTo": "مسندة إلي",
+        "priority": "الأولوية",
         "type": "Type",
         "requiredProcedures": "Required Procedures",
-        "AddTask": "Add Task",
-        "TaskList": "Task List"
+        "AddTask": "إضافة مهمة جديدة",
+        "TaskList": "قائمة المهام",
+        "mytasks": "مهامي",
+        "assignedtasks": "المهام الواردة",
+        "alltaks": "كل المهام",
+        "taskDetails": "تفاصيل المهمة",
+        "id": "رقم المهمة",
+        "comments":"التعليقات"
     }
 }
