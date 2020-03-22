@@ -29,6 +29,7 @@
     "@angular/router": "~8.2.14",
     "@nativescript-rtl/ui": "^0.1.2",
     "@nativescript/theme": "~2.2.1",
+    "@ng-select/ng-select": "^3.7.3",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "@nstudio/nativescript-checkbox": "^1.0.0",
