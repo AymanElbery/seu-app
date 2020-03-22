@@ -11,9 +11,9 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   templateUrl: './emp-custody.component.html',
   styleUrls: ['./emp-custody.component.css']
 })
-export class EmpCustodyComponent implements OnInit,OnDestroy {
+export class EmpCustodyComponent implements OnInit, OnDestroy {
   p: number;
-  filter; 
+  filter;
   config: any;
   subscriptioncustodylist: Subscription;
   emplistcustody: any;
@@ -33,21 +33,24 @@ export class EmpCustodyComponent implements OnInit,OnDestroy {
     if (this.subscriptions)
       this.subscriptions.unsubscribe();
   }
-  pageChanged(event){
+  pageChanged(event) {
     this.config.currentPage = event;
   }
   getEmpCustody() {
 
     this.isLoading = true
-    this.subscriptioncustodylist = this.empreqservice.getLetterlist().subscribe(empcustody => {
+    this.subscriptioncustodylist = this.empreqservice.getEmpCustody().subscribe(empcustody => {
       if (empcustody) {
         this.emplistcustody = (empcustody as any).data["custodyTable"];
-        console.log("emp cust",this.emplistcustody);      
+        //console.log("emp cust",this.emplistcustody);      
         this.isLoading = false;
-      } else {
-
       }
-    });
+    },
+      err => {
+        this.isLoading = false;
+        this.toastr.tryagain();
+      }
+    );
 
   }
 

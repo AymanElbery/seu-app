@@ -64,10 +64,10 @@ _handleReaderLoaded(e) {
     }
   
 
-    console.log("submit data", submitdatavalue);
+    //console.log("submit data", submitdatavalue);
 
     this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
-      //console.log("saved data", leavdedcut);
+      ////console.log("saved data", leavdedcut);
       if (!leavdedcut['saveRequesst']) {
         var error = (leavdedcut as any).data["errorMassege"]       
         this.toastr.push([{ type: 'error', 'body': error }]);
@@ -112,7 +112,7 @@ _handleReaderLoaded(e) {
         this.ddlday = (reqtype as any).data["dayItem"];
         this.ddlmonth = (reqtype as any).data["monthItem"];
         this.ddlyear = (reqtype as any).data["yearItem"];
-        //console.log("vac item data", this.vacationreqtype);
+        ////console.log("vac item data", this.vacationreqtype);
         this.isLoading = false
       } else {
       }
