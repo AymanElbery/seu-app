@@ -78,6 +78,7 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "assets/css/bootstrap4/bootstrap-rtl.css";
 @import "assets/css/theme-service";
 @import "assets/css/style-service";
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
 
 @font-face {
   font-family: 'fontreg';

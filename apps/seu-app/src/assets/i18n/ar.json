@@ -889,6 +889,15 @@
         "EMP_PSNL_VCHR_NOTE":"ملاحظات",
         "EMP_SLRY_YEAR":"السنة",
         "EmployeeVouchers":"Employee Vouchers",
-        "administrative":"إداري"
+        "administrative":"إداري",
+        "title":"Title",
+        "assignedTo":"AssignedTo",
+        "status":"Status",
+        "priority":"Priority",
+        "type":"Type",
+        "requiredProcedures":"Required Procedures",
+        "AddTask":"Add Task",
+        "TaskList":"Task List"
+      
     }
 }

@@ -890,7 +890,18 @@
         "EMP_PSNL_VCHR_NOTE":"Notes",
         "EMP_SLRY_YEAR":"Year",
         "EmployeeVouchers":"Employee Vouchers",
-        "administrative":"Administrative"
+        "administrative":"Administrative",
+        "title":"Title",
+        "assignedTo":"AssignedTo",
+        "status":"Status",
+        "priority":"Priority",
+        "type":"Type",
+        "requiredProcedures":"Required Procedures",
+        "AddTask":"Add Task",
+        "TaskList":"Task List"
+        
+      
+        
       
 
         
