@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { AppToasterService } from '../../shared/services/app-toaster';
 import { reduce } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
-import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-reset-password',
@@ -12,13 +11,10 @@ import { MatDialogRef } from '@angular/material';
 })
 export class ResetPasswordComponent implements OnInit {
 
-
   constructor(
     public userService: UserService,
     private toastr: AppToasterService,
-    private translate: TranslateService,
-    public dialogRef: MatDialogRef<ResetPasswordComponent>
-  ) {
+    private translate: TranslateService  ) {
     this.reset = {
       opassword: '',
       npassword: '',
@@ -32,11 +28,11 @@ export class ResetPasswordComponent implements OnInit {
 
   }
   addRequest(data: any) {
+    console.log(data);
     this.userService.resetPassword(this.reset.opassword, this.reset.npassword, this.reset.cpassword).then(res => {
       if ((res as any).status) {
         this.toastr.push([{ type: 'scuccess', body: this.translate.instant('general.restsuccess') }]);
 
-        this.dialogRef.close();
       } else {
         this.toastr.push([{ type: 'error', body: (res as any).error }]);
       }
@@ -47,15 +43,10 @@ export class ResetPasswordComponent implements OnInit {
         this.requesting = false;
       });
   }
-  onSubmit(form) {
-    if (this.requesting) {
-      return false;
-    }
-
-    this.requesting = true;
+  onSubmit() {
+ 
     this.addRequest(this.reset);
   }
   closeDiag() {
-    this.dialogRef.close();
   }
 }

@@ -50,6 +50,9 @@
     background-color: rgb(226, 226, 226);
     margin-bottom: 10px;
     font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 800;
 }
 
 .ysPBox2{
@@ -57,16 +60,22 @@
     padding-right: 20px;
     font-size: 13px;
     font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
     
 }
 .dro{     color: #f08b1c; font-size: 13px; font-family: 'DroidArabicKufi';}
+DropDown{     color: #f08b1c; font-size: 13px; font-family: 'DroidArabicKufi';}
+
 .yslab-dr{ 
     color: #080b57;
     font-size: 11px;
     font-weight: 700;
     background-color: rgb(226, 226, 226);
-    padding: 4 4 0 4;
-    height: 80px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 20px;
+    padding: 5 0 ;
 }
 .paragraph {  margin: 10 20;      border-radius: 70px 20px 20px 20px;
     background-color: rgb(235, 235, 235); padding: 5 10 ;
@@ -155,14 +164,25 @@
 
 .ysRootMenuItem{
     text-align: left;padding-right: 120px;font-size: 16px;
-    color: #080b57;
+    color: #fff;
 }
 .ysRootMenuIcon
 {
-    text-align: right;;padding-right: 50px;
-    color: rgb(219, 151, 4);
-    font-size: 16px;
+    text-align: center;
+    color: #f08b1c;
+    font-size: 30px;
+   
+  
 }
+
+.ysRootMenuIcon2
+{
+    text-align: right;padding-right: 50px;
+    color: #f08b1c;
+    font-size: 18px;
+  
+}
+
 
 .ysMenuHeader
 {
@@ -179,7 +199,7 @@
 }
 .ysMenuGridHeader
 {
-background-color: #ccc;  
+background-color: #001628;  
   margin-top: 0px;
     margin-bottom: 25px;
     padding: 10 0;
@@ -187,7 +207,6 @@ background-color: #ccc;
 
 .ysMenuGridHeader2
 {
-background-color: #f1f1f1;  
   margin-top: 0px;
     margin-bottom: 25px;
     padding: 10 0;
@@ -195,18 +214,18 @@ background-color: #f1f1f1;
 .ysMenuItem
 {
     text-align: left;padding-right: 160px;font-size: 15px;
-    color: #080b57;
+    color: #fff;
     
 }
 
 .ysMenuhead{  padding-right: 120px;font-size: 15px; font-weight: 700;
-    color: #080b57;}
+    color: #fff;}
 
     .ysMenuIconhead
 {
     text-align:right;
     padding-right:50px;
-    color: rgb(219, 151, 4);
+    color: #f08b1c;
     font-size: 20px;
 
 }
@@ -214,7 +233,7 @@ background-color: #f1f1f1;
 {
     text-align:right;
     padding-right:100px;
-    color: rgb(219, 151, 4);
+    color: #f08b1c;
 
 }
 
@@ -255,7 +274,7 @@ background-color: #f1f1f1;
     vertical-align: middle;
 }
 
-
+.nt-drawer__header{padding: 0px; margin: 0;}
 // Drawer navigation custom styles
 .nt-drawer__header-image {
     color: const(grey);
@@ -331,7 +350,7 @@ background-color: #f1f1f1;
     color:darkgray;
 }
 
-.nt-drawer__header-brand{color:#080b57 ; font-weight: 700; margin-top: 5;}
+.nt-drawer__header-brand{color:#fff ; font-weight: 700;margin-top: 8; margin-bottom: -5;}
 .img-user{  border-bottom-width: 3; border-right-width: 3; border-color: rgb(219, 151, 4); margin-top: 5;
 }
 
@@ -366,7 +385,7 @@ background-color: #f1f1f1;
     text-align: center; font-family: 'DroidArabicKufi'; padding: 2 0
 }
 .label-news{padding-right: 10px;color:#01021b;font-size:12px; font-weight: 600; margin-top: 10;}
-.label-news-title{padding-right: 200px;font-size:12px;}
+.label-news-title{padding-right: 200px;font-size:12px; text-align: center;}
 .news{margin: 5 15 ;}
  ActionBar{background-color:#f1f1f1; color:#243686;}
  ActionBar label{ color:#243686; font-size: 18px; font-family: 'DroidArabicKufi'}
@@ -390,8 +409,10 @@ TextField:focus{ border-width: 5px; border-color: #f08b1c; }
 TextView{ color:#243686 ; background-color: #f1f1f1; padding: 16 10;  border-radius: 100px;}
 TextView:focus{ border-width: 5px; border-color: #f08b1c; }
 
-label{font-family: 'DroidArabicKufi'}
-.hr{border-color: #f08b1c;}
+label{font-family: 'DroidArabicKufi' ;  white-space: normal;
+   
+}
+.hr{border-color: #f08b1c;  width: 85%;}
 
 @keyframes example {
     from { background-color: #010447; }
@@ -474,11 +495,7 @@ label{font-family: 'DroidArabicKufi'}
     padding: 5px 10px;
       transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
- .label-itme:highlighted {
-     bottom: 0px;
-     background: rgba(132, 201, 4, 0.7);
-      transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-}
+
 
 .header { text-align: center; color: #010447; border-color: #f08b1c;}
 .pop{ width: 100%;  background-color: #f9f9f9;} 
@@ -486,3 +503,15 @@ label{font-family: 'DroidArabicKufi'}
 .icon-action{ color: #fff; font-size: 10;}
 .label-action{ color: #fff;}
 TabView{ font-family: 'DroidArabicKufi'}
+.bgimg{ 
+    background-image: url('images/44.jpg');
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    background-image: linear-gradient(130deg, rgba(1,24,42,0.55) 0%, rgba(1,24,42,0.8) 54%, rgba(1,24,42,1) 99%);
+
+    background: linear-gradient(to bottom, #001628, rgba(1,24,42,0.9),#001628);
+}
+
+FormattedString {float: right; width: 400;  color: #000; }
+FormattedString{text-justify: distribute-all-lines;}

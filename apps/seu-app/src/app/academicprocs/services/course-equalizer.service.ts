@@ -38,7 +38,7 @@ export class CourseEqualizerService {
 
     const sid = this.configService.getSid();
 
-    return this.configService.getApiURI() + '/course_transfer_service/download/crse_transfer/' + req + '?sid=' + sid+ '&lang=' + this.translate.currentLang;
+    return this.configService.getApiURI() + '/course_transfer_service/download/crse_transfer/' + req;
   }
   
 }

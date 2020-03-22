@@ -6,6 +6,9 @@ import * as app from 'tns-core-modules/application';
 import { HttpClient } from '@angular/common/http';
 import * as utils from 'tns-core-modules/utils/utils';
 import { CertificateDetails } from 'src/app/shared/models/certificate-details';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-certificate-id',
@@ -15,18 +18,27 @@ import { CertificateDetails } from 'src/app/shared/models/certificate-details';
 })
 export class CertificateIDComponent implements OnInit {
 
-  constructor(private certificateIDService: CertificateIDService, private route: HttpClient) { }
+  constructor(private certificateIDService: CertificateIDService, private route: HttpClient,
+    private downloader: DataDownLoadService,
+    private transalte: TranslateService) { }
   certificateDetails: CertificateDetails = {labels: {}, values: {}};
   arabicPrint: string;
   EngPrint: string;
-
+  printAR = '';
+  printEN = '';
+  isDownLoaded = false;
   lectures: Lecture[] = [ {CRN: '', CRSE_CODE: '', CRSE_DAY: '', CRSE_TIME: '', CRSE_TITLE: '', SSBSECT_CREDIT_HRS: ''}];
   isLoading = false;
   msgs;
   ngOnInit() {
+    Downloader.init();
+    this.transalte.get('general.ar_language').subscribe(res => {
+      this.printAR = res;
+    });
+    this.transalte.get('general.en_language').subscribe(res => {
+      this.printEN = res;
+    });
     this.isLoading = true;
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
     this.arabicPrint = this.certificateIDService.DownloadCertificate();
     this.EngPrint = this.certificateIDService.DownloadEngCertificate();
     this.certificateIDService.getCertificateID().then(
@@ -42,18 +54,37 @@ export class CertificateIDComponent implements OnInit {
     );
   }
   toHTML(input): any {
-    console.log("inputttttttttttt",input)
     return input ? input.replace('&rarr;', '->') : '';
   }
 
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
   onArabicPrint() {
-    utils.openUrl(this.arabicPrint);
-  }
+    this.downloader.downloadFile(this.arabicPrint);
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      this.printAR = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.transalte.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
+      }
+    });    }
   onEnglishPrint() {
-    utils.openUrl(this.EngPrint);
-  }
+    this.downloader.downloadFile(this.EngPrint);
+    this.printEN = '1%';
+    this.downloader.csize.subscribe(x => {
+      this.printEN = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.transalte.get('general.en_print').subscribe(res => {
+            this.printEN = res;
+          }
+          );
+
+      }
+    });
+    }
 }

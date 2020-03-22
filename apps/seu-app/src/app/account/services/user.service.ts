@@ -130,6 +130,7 @@ export class UserService extends BaseService {
     this.baseUrl = '';
     this.configService.baseUrl = '';
     const user = this.userData.username;
+    console.log(user);
     const lang = this.translate.currentLang;
     return this.httRequest.postAuthRequest('rest/ssosession/resetpassword', { user, opassword, npassword, cpassword, lang }).toPromise();
   }

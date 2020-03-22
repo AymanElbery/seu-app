@@ -26,13 +26,13 @@ export class GraduatesStateService {
 
     const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?sid=' + sid;
+    return this.configService.getApiURI() + '/graduation_statement/get_statement_print';
    }
    DownloadEngStatement() {
     this.configService.baseUrl = 'stdservicesapi';
     const sid =   this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?Lang=en&sid=' + sid;
+    return this.configService.getApiURI() + '/graduation_statement/get_statement_print?Lang=en';
    }
 }

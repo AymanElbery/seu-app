@@ -22,12 +22,12 @@ export class TuitionFeesService {
     this.configService.baseUrl = 'stdservicesapi';
     const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/fees_stmt_request_service/download?sid=' + sid;
+    return this.configService.getApiURI() + '/fees_stmt_request_service/download';
    }
    DownloadEng() {
     this.configService.baseUrl = 'stdservicesapi';
     const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/fees_stmt_request_service/download?Lang=en&sid=' + sid;
+    return this.configService.getApiURI() + '/fees_stmt_request_service/download?Lang=en';
    }
 }

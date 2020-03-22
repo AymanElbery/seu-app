@@ -7,13 +7,15 @@ import { StudentPaymentComponent } from './student-payment/student-payment.compo
 import { AppTransModule } from '../app.trans.module.tns';
 import { FeesExceptionComponent } from './fees-exception/fees-exception.component.tns';
 import { AddFeesExceptionComponent } from './fees-exception/diag/add-fees-exception/add-fees-exception.component.tns';
+import { HeaderModule } from '../shared/header.module.tns';
 
 @NgModule({
   declarations: [TuitionFeesStatComponent, AddFeesExceptionComponent,StudentPaymentComponent, FeesExceptionComponent],
   imports: [
     FinanceAffairRoutingModule,
     NativeScriptCommonModule,
-    AppTransModule
+    AppTransModule,
+    HeaderModule
   ],
   schemas: [NO_ERRORS_SCHEMA]
 })

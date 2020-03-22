@@ -28,8 +28,6 @@ export class ObjectExamComponent implements OnInit {
      private translate: TranslateService) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.getRequests();
   }
   getRequests() {
@@ -74,9 +72,5 @@ export class ObjectExamComponent implements OnInit {
           name: 'fade'
       }
   });
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
   }
 }

@@ -20,13 +20,13 @@
     <FlexboxLayout *ngIf="!isLoading" flexDirection="column">
 
         <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
-            <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150">
+            <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
           
-              <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.visitor_student.college_info"|translate}}'></Label>
+              <Label row="0" colSpan="2"  class="ysHBox"  textWrap="true" text='{{"services.visitor_student.college_info"|translate}}'></Label>
                 
-              <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.desired_college'|translate}} :"></Label>
+              <Label row="1" colSpan="2" class="ysPBox" textWrap="true" style="font-weight: 800;" text="{{'services.visitor_student.desired_college'|translate}} :"></Label>
               <DropDown
-              row="1" column="0" class="ysPBox2"
+              row="2" colSpan="2" class="ysPBox2"
               [items]="univsDropDown"
               (selectedIndexChanged)="getUniv($event)"
               hint='{{"services.visitor_student.choose_college"|translate}}'
@@ -35,9 +35,9 @@
               >
               </DropDown>
           
-              <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.term'|translate}} :"></Label>
+              <Label row="3" colSpan="2" class="ysPBox" textWrap="true" style="font-weight: 800;" text="{{'services.visitor_student.term'|translate}} :"></Label>
               <DropDown
-              row="2" column="0" class="ysPBox2"
+              row="4" colSpan="2" class="ysPBox2"
               [items]="termsDropDown"
               (selectedIndexChanged)="getTerm($event)"
               hint='{{"services.visitor_student.choose_term"|translate}}'
@@ -46,9 +46,9 @@
               >
               </DropDown>
               
-              <Label row="3"  column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.academic_year'|translate}} :"></Label>
+              <Label row="5"  colSpan="2" class="ysPBox"  textWrap="true" style="font-weight: 800;" text="{{'services.visitor_student.academic_year'|translate}} :"></Label>
               <DropDown
-              row="3" column="0" class="ysPBox2"
+              row="6" colSpan="2" class="ysPBox2"
               [items]="yearsDropDown"
               (selectedIndexChanged)="getYear($event)"
               hint='{{"services.visitor_student.choose_academic_year"|translate}}'
@@ -60,9 +60,9 @@
 
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
           
-                <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.visitor_student.course_info"|translate}}'></Label>
+                <Label row="0" colSpan="2"  textWrap="true"  class="ysHBox"  text='{{"services.visitor_student.course_info"|translate}}'></Label>
                   
-                <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{'general.course_name'|translate}} :"></Label>
+                <Label row="1" column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text="{{'general.course_name'|translate}} :"></Label>
                 <TextField 
                 row="1" column="0"
                  #CourseName="ngModel"
@@ -70,7 +70,7 @@
                 style="border-width: 1;"
                   ></TextField>
             
-                <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.course_alpha_code'|translate}} :"></Label>
+                <Label row="2" column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.course_alpha_code'|translate}} :"></Label>
                 <TextField 
                  row="2" column="0"
                  #CourseSymbol="ngModel"
@@ -78,7 +78,7 @@
                  style="border-width: 1;"
                 ></TextField>
                 
-                <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.course_number_code'|translate}} :"></Label>
+                <Label row="3" column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.course_number_code'|translate}} :"></Label>
                 <TextField 
                 row="3" column="0"
                 #CourseCode="ngModel"
@@ -86,7 +86,7 @@
                 style="border-width: 1;"
                ></TextField>
 
-               <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.course_hours'|translate}} :"></Label>
+               <Label row="4" column="1"   textWrap="true" class="ysPBox" style="font-weight: 800;" text="{{'services.visitor_student.course_hours'|translate}} :"></Label>
                 <TextField 
                 row="4" column="0"
                 #CourseHours="ngModel"
@@ -94,20 +94,20 @@
                 style="border-width: 1;"
                ></TextField>
 
-               <Label row="5" column="1" class="ysPBox" text-wrap="true" style="font-weight: 800;" text="{{'services.visitor_student.upload_course_desc'|translate}} :"></Label>
+               <Label row="5" column="1"   textWrap="true" class="ysPBox" text-wrap="true" style="font-weight: 800;" text="{{'services.visitor_student.upload_course_desc'|translate}} :"></Label>
                <Button row="5" column="0" [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn"></Button>
                
-               <Label row="6" colSpan="2" class="ysPBox" text="{{'services.visitor_student.file_size'|translate}}" textWrap="true"></Label>
+               <Label row="6" colSpan="2"  textWrap="true" class="ysPBox" text="{{'services.visitor_student.file_size'|translate}}" textWrap="true"></Label>
  
               </GridLayout>
 
-              <GridLayout  class="ysBox" rows="auto,auto" columns="*,150">
+              <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150">
           
-                <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.visitor_student.equivalent_course"|translate}}'></Label>
+                <Label row="0" colSpan="2"  textWrap="true"  class="ysHBox"  text='{{"services.visitor_student.equivalent_course"|translate}}'></Label>
                   
-                <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.visitor_student.choose_subject"|translate}}'></Label>
+                <Label row="1" colSpan="2" class="ysPBox" style="font-weight: 800;" text='{{"services.visitor_student.choose_subject"|translate}}'></Label>
                 <DropDown
-                row="1" column="0" class="ysPBox2"
+                row="2"colSpan="2" class="ysPBox2"
                 [items]="subjectsDropDown"
                 (selectedIndexChanged)="getSubject($event)"
                 hint='{{"services.visitor_student.choose_subject"|translate}}'

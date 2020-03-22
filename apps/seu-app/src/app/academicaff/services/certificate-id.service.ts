@@ -24,7 +24,7 @@ export class CertificateIDService {
 
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.configService.getApiURI() + '/identification_crse/get_identification_print?sid=' + sid;
+    return this.configService.getApiURI() + '/identification_crse/get_identification_print';
    }
    DownloadEngCertificate() {
     const sid =   this.configService.getSid();
@@ -32,6 +32,6 @@ export class CertificateIDService {
 
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.configService.getApiURI() + '/identification_crse/get_identification_print?Lang=en&sid=' + sid;
+    return this.configService.getApiURI() + '/identification_crse/get_identification_print?Lang=en';
    }
 }
