@@ -35,10 +35,6 @@ export class ChangeRequestComponent implements OnInit {
 
   ngOnInit() {
     this.collapse = 'collapse';
-
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
     this.isLoading = true;
     this.getRequests();
   }
@@ -103,9 +99,4 @@ export class ChangeRequestComponent implements OnInit {
         });
     }});
   }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
-
 }

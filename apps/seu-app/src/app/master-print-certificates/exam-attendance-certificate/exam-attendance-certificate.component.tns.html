@@ -115,8 +115,8 @@
     </StackLayout>
         <StackLayout style="margin-top: 20;">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.messages.length==0">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termSchedule')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termScheduleEn')"></Button>
         </FlexboxLayout>
     </StackLayout>
 
@@ -181,8 +181,8 @@
         </GridLayout>
 
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="reqData.Term_Exam_Without_Schedule &&reqData.Term_Exam_Without_Schedule.messages.length==0">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintTerm()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('term')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termEn')"></Button>
         </FlexboxLayout>
 
     </StackLayout>
@@ -279,8 +279,8 @@
 
      <StackLayout style="margin-top: 20;">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintFinalSced()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintFinalSced()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalschedule')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalscheduleEn')"></Button>
         </FlexboxLayout>
     </StackLayout>
 </StackLayout>
@@ -343,8 +343,8 @@
         </GridLayout>
       
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.messages.length==0">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintFinal()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('final')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalEn')"></Button>
         </FlexboxLayout>
 	</StackLayout>
 </TabView>

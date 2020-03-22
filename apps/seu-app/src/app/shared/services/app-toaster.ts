@@ -11,6 +11,10 @@ export class AppToasterService {
     this.push([{type: 'error', body: 'خطأ: حاول مرة أخري'}]);
   }
 
+  download() {
+    this.push([{type: 'info', body: 'Downloading'}]);
+  }
+
   push(messages) {
 
     messages.forEach((element: any) => {
@@ -27,5 +31,4 @@ export class AppToasterService {
       }
     });
   }
-
 }

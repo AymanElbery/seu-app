@@ -27,13 +27,13 @@ androidSelectedTabHighlightColor="#010447">
         </FlexboxLayout>
       
         <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
-            <Button class=" print-btn " (tap)="onArabicPrint()">
+            <Button class=" print-btn " (tap)="onPrint('termSchedule')">
                 <FormattedString>
                     <Span text="&#xf02f;" class="fas"></Span>
                     <Span text=" طباعة"></Span>
                 </FormattedString>
             </Button>
-            <Button class=" print-btn " (tap)="onEnglishPrint()">
+            <Button class=" print-btn " (tap)="onPrint('termScheduleEn')">
                 <FormattedString>
                     <Span text="&#xf02f;" class="fas"></Span>
                     <Span text=" Print"></Span>
@@ -141,13 +141,13 @@ androidSelectedTabHighlightColor="#010447">
             </ListView>
         </FlexboxLayout>
         <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
-            <Button class=" print-btn " (tap)="onArabicPrint()">
+            <Button class=" print-btn " (tap)="onPrint('term')">
                 <FormattedString>
                     <Span text="&#xf02f;" class="fas"></Span>
                     <Span text=" طباعة"></Span>
                 </FormattedString>
             </Button>
-            <Button class=" print-btn " (tap)="onEnglishPrint()">
+            <Button class=" print-btn " (tap)="onPrint('termEn')">
                 <FormattedString>
                     <Span text="&#xf02f;" class="fas"></Span>
                     <Span text=" Print"></Span>
@@ -214,13 +214,13 @@ androidSelectedTabHighlightColor="#010447">
 
         <StackLayout>
             <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
-                <Button class=" print-btn " (tap)="onArabicPrint()">
+                <Button class=" print-btn " (tap)="onPrint('finalschedule')">
                     <FormattedString>
                         <Span text="&#xf02f;" class="fas"></Span>
                         <Span text=" طباعة"></Span>
                     </FormattedString>
                 </Button>
-                <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <Button class=" print-btn " (tap)="onPrint('finalscheduleEn')">
                     <FormattedString>
                         <Span text="&#xf02f;" class="fas"></Span>
                         <Span text=" Print"></Span>
@@ -325,13 +325,13 @@ androidSelectedTabHighlightColor="#010447">
         </FlexboxLayout>
 
         <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
-            <Button class=" print-btn " (tap)="onArabicPrint()">
+            <Button class=" print-btn " (tap)="onPrint('final')">
                 <FormattedString>
                     <Span text="&#xf02f;" class="fas"></Span>
                     <Span text=" طباعة"></Span>
                 </FormattedString>
             </Button>
-            <Button class=" print-btn " (tap)="onEnglishPrint()">
+            <Button class=" print-btn " (tap)="onPrint('finalEn')">
                 <FormattedString>
                     <Span text="&#xf02f;" class="fas"></Span>
                     <Span text=" Print"></Span>

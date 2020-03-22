@@ -74,10 +74,8 @@ export class PostponeRequestComponent implements OnInit {
 
   print(req) {
     this.downloader.downloadFile(this.acadmicProc.Download(req));
-    console.log('downloiad');
-    this.printAR = '1%';
+    this.toastr.download();
     this.downloader.csize.subscribe(x => {
-      console.log("xxxx",x)
       this.printAR = x;
       if (x == '100') {
         this.isDownLoaded = true;

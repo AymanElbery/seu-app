@@ -101,8 +101,8 @@
     <StackLayout>
 
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" >
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termSchedule')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termScheduleEn')"></Button>
         </FlexboxLayout>
     </StackLayout>
 </StackLayout>
@@ -162,8 +162,8 @@
         </GridLayout>
 
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintTerm()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('term')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termEn')"></Button>
         </FlexboxLayout>
 
     </StackLayout>
@@ -237,18 +237,18 @@
 
     <StackLayout>
         <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && finalScheduleMsgs == 0">
-            <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
-            <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
-            <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
-            <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt11}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt11}}" textWrap="true"></Label>
         </FlexboxLayout>
     </StackLayout>
 
 
     <StackLayout style="margin-top: 20;">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintFinalSced()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintFinalSced()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalschedule')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalscheduleEn')"></Button>
         </FlexboxLayout>
     </StackLayout>
 </StackLayout>
@@ -294,18 +294,18 @@
             <Label row="9" colSpan="2" text='{{reqData.Final_Exam_Without_Schedule.labels.txt7}}'></Label>
 
             <FlexboxLayout row="10" textWrap="wrap" flex-direction="row-reverse" >
-                <Label text="{{reqData.Term_Exam_Without_Schedule.labels.txt8}}" textWrap="true"></Label>
-                <Label text="{{reqData.Term_Exam_Without_Schedule.labels.txt9}}" textWrap="true"></Label>
-                <Label text="{{reqData.Term_Exam_Without_Schedule.labels.txt10}}" textWrap="true"></Label>
-                <Label text="{{reqData.Term_Exam_Without_Schedule.labels.txt11}}" textWrap="true"></Label>
-                <Label text="{{reqData.Term_Exam_Without_Schedule.labels.txt12}}" textWrap="true"></Label>
+                <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt8}}" textWrap="true"></Label>
+                <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt9}}" textWrap="true"></Label>
+                <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt10}}" textWrap="true"></Label>
+                <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt11}}" textWrap="true"></Label>
+                <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt12}}" textWrap="true"></Label>
 
             </FlexboxLayout>
         </GridLayout>
       
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" >
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintFinal()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('final')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalEn')"></Button>
         </FlexboxLayout>
 	</StackLayout>
 </TabView>

@@ -33,8 +33,6 @@ export class CancelCourseComponent implements OnInit {
 
   ngOnInit() {
     Downloader.init(); 
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.isLoading = true;
     this.cancelCousre = { courses: null, agreement: 1 };
     this.getRequests();
@@ -60,10 +58,8 @@ export class CancelCourseComponent implements OnInit {
 
   print(req) {
     this.downloader.downloadFile(this.acadmicProc.Download(req));
-    console.log('downloiad');
-    this.printAR = '1%';
+    this.toastr.download();
     this.downloader.csize.subscribe(x => {
-      console.log("xxxx",x)
       this.printAR = x;
       if (x == '100') {
         this.isDownLoaded = true;
@@ -110,9 +106,5 @@ export class CancelCourseComponent implements OnInit {
           name: 'fade'
       }
   });
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
   }
 }

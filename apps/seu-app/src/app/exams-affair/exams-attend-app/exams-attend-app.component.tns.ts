@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ExamsAttendAppService } from '../services/exams-attend-app.service';
 import { TranslateService } from '@ngx-translate/core';
-import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
-import * as app from 'tns-core-modules/application';
-import * as utils from 'tns-core-modules/utils/utils';
 import { ExamData } from '../../shared/models/exam-data';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
+import { AppToasterService } from '../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-exams-attend-app',
@@ -31,10 +31,13 @@ export class ExamsAttendAppComponent implements OnInit {
   thirdTabTitle: string;
   forthTabTitle: string;
   msgs: any;
+  printAR = '';
+  printEN = '';
+  isDownLoaded = false;
 
 
-
-  constructor(private academicService: ExamsAttendAppService , private translate: TranslateService) {
+  constructor(private academicService: ExamsAttendAppService , private translate: TranslateService
+    ,private downloader: DataDownLoadService,private toastr: AppToasterService) {
 
     this.secondTabTitle = this.translate.instant('services.exam.tnt');
     this.thirdTabTitle = this.translate.instant('services.exam.ft');
@@ -42,8 +45,14 @@ export class ExamsAttendAppComponent implements OnInit {
  }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
+    Downloader.init();
+    this.translate.get('general.ar_language').subscribe(res => {
+      this.printAR = res;
+    }
+    );
+    this.translate.get('general.en_language').subscribe(res => {
+      this.printEN = res;
+    });
     this.isLoading = true;
 
     this.academicService.getِExamsAttednace('S180105049').then(
@@ -75,33 +84,45 @@ export class ExamsAttendAppComponent implements OnInit {
     return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
 }
 
- onArabicPrint() {
-    utils.openUrl(this.termSchedule);
-  }
-  onEnglishPrint() {
-    utils.openUrl(this.termScheduleEn);
-  }
-  onArabicPrintTerm() {
-    utils.openUrl(this.term);
-  }
-  onEnglishPrintTerm() {
-    utils.openUrl(this.termEn);
-  }
-  onArabicPrintFinalSced() {
-    utils.openUrl(this.finalschedule);
-  }
-  onEnglishPrintFinalSced() {
-    utils.openUrl(this.finalscheduleEn);
-  }
-  onArabicPrintFinal() {
-    utils.openUrl(this.final);
-  }
-  onEnglishPrintFinal() {
-    utils.openUrl(this.finalEn);
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-}
+onPrint(print:string) {
+   if(print==="termSchedule"){
+     print=this.termSchedule
+   }else if(print==="termScheduleEn"){
+    print=this.termScheduleEn
+   }
+   else if(print==="term"){
+    print=this.term
 
+  }else if(print==="termEn"){
+    print=this.termEn
+
+  }
+  else if(print==="finalschedule"){
+    print=this.finalschedule
+
+  }else if(print==="finalscheduleEn"){
+    print=this.finalscheduleEn
+
+  }else if(print==="final"){
+    print=this.final
+
+  }else if(print==="finalEn"){
+    print=this.finalEn
+
+  }
+   // utils.openUrl(this.termSchedule);
+    this.downloader.downloadFile(print);
+
+    this.downloader.csize.subscribe(x => {
+  this.toastr.download();      
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.translate.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
+      }
+    });
+  }
 }

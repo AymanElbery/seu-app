@@ -37,50 +37,12 @@ export class DataDownLoadService {
         const subject = new Subject<any>();
         this.csize.next(0);
 
-
-        // Request format for Downlaoder
-        //      DownloadOptions {
-        //     url: string;
-        //     query?: Object | string;
-        //     headers?: Object;
-        //     path?: string;
-        //     fileName?: string;
-        //   }
-
-        // Prepare the header with token work
         const sid = this.globalService.getSID();
-        console.log("siiiiiiiiiiiiiiiiiiiiid",sid)
         const headerHttp = {
             'Content-Type': 'application/json',
             'Session-ID': sid
         };
-
-       /*  const url =  apiUrl;
-        let downloadedFilePath;
-        if (isAndroid) {
-            const permissions = require('nativescript-permissions');
-            permissions.requestPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 'I need these permissions because I\'m cool')
-                .then(() => {
-                     downloadedFilePath = fileSystem.path.join(android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).getAbsolutePath(), new Date().toString());
-                     console.log('pathhhhhhhhhh', downloadedFilePath);
-                     getFile({url, method:'GET', headers: headerHttp}, downloadedFilePath).then(resultFile => {
-                        alert({
-                            title: 'Saved!',
-                            okButtonText: 'OK',
-                            message: `File saved here:\n${resultFile.path}`
-                        });
-                    }, error => {
-                        alert({
-                            title: 'Error',
-                            okButtonText: 'OK',
-                            message: `${error}`
-                        });
-                    });
-                });
-        }
- */
-
-// tslint:disable-next-line: max-line-length
+   
         const  downloadedFilePath = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
         console.log(downloadedFilePath);
         const zipDownloaderId = this.downloader.createDownload({
@@ -109,7 +71,9 @@ export class DataDownLoadService {
                         utils.openFile(completed.path);
                         subject.next(true);
 
-                    });                 })
+                    },
+                    err=>{console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr',err)});
+                                 })
                  .catch( () => {
                     console.log('Uh oh, no permissions - plan B time!');
                  }

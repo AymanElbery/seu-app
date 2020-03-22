@@ -5,6 +5,9 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import * as utils from 'tns-core-modules/utils/utils';
 import { ExamData } from '../../shared/models/exam-data';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
+import { AppToasterService } from '../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-exam-attendance-certificate-app',
@@ -45,24 +48,28 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
   secondTabTitle: string;
   thirdTabTitle: string;
   forthTabTitle: string;
+  printAR = '';
+  printEN = '';
+  isDownLoaded = false;
 
-  constructor(private printCertificate: ExamAttendanceCertificateAppService, private translate: TranslateService) { }
+  constructor(private printCertificate: ExamAttendanceCertificateAppService, 
+    private translate: TranslateService,
+    private downloader: DataDownLoadService,private toastr: AppToasterService
+    ) { }
 
 
   ngOnInit() {
+    Downloader.init();
     this.firstTabTitle = this.translate.instant('services.exam.tt');
     this.secondTabTitle = this.translate.instant('services.exam.tnt');
     this.thirdTabTitle = this.translate.instant('services.exam.ft');
     this.forthTabTitle = this.translate.instant('services.exam.fnt');
-    const sideDrawer = app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
     this.isLoading = true;
     this.printCertificate.getRequest().then(
       res => {
         this.printCertificate.reqData = (res as any).data;
         this.printCertificate.msgs = (res as any).messages;
         this.reqData = this.printCertificate.reqData;
-        console.log("dataaaaaaaaaaaaa",this.reqData.Term_Exam_With_Schedule.labels)
         this.msgs = this.printCertificate.msgs;
         this.isLoading = false;
 
@@ -101,33 +108,45 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
   toHTML(input): any {
     return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
   }
-
-  onArabicPrint() {
-    utils.openUrl(this.termSchedule);
-  }
-  onEnglishPrint() {
-    utils.openUrl(this.termScheduleEn);
-  }
-  onArabicPrintTerm() {
-    utils.openUrl(this.term);
-  }
-  onEnglishPrintTerm() {
-    utils.openUrl(this.termEn);
-  }
-  onArabicPrintFinalSced() {
-    utils.openUrl(this.finalschedule);
-  }
-  onEnglishPrintFinalSced() {
-    utils.openUrl(this.finalscheduleEn);
-  }
-  onArabicPrintFinal() {
-    utils.openUrl(this.final);
-  }
-  onEnglishPrintFinal() {
-    utils.openUrl(this.finalEn);
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer = app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
+  onPrint(print:string) {
+    if(print==="termSchedule"){
+      print=this.termSchedule
+    }else if(print==="termScheduleEn"){
+     print=this.termScheduleEn
+    }
+    else if(print==="term"){
+     print=this.term
+ 
+   }else if(print==="termEn"){
+     print=this.termEn
+ 
+   }
+   else if(print==="finalschedule"){
+     print=this.finalschedule
+ 
+   }else if(print==="finalscheduleEn"){
+     print=this.finalscheduleEn
+ 
+   }else if(print==="final"){
+     print=this.final
+ 
+   }else if(print==="finalEn"){
+     print=this.finalEn
+ 
+   }
+    // utils.openUrl(this.termSchedule);
+     this.downloader.downloadFile(print);
+ 
+     this.downloader.csize.subscribe(x => {
+   this.toastr.download();      
+       if (x == '100') {
+         this.isDownLoaded = true;
+         this.translate.get('general.ar_print').subscribe(res => {
+             this.printAR = res;
+           }
+           );
+ 
+       }
+     });
+   }
 }

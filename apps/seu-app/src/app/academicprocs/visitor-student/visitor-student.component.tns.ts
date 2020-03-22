@@ -32,8 +32,6 @@ export class VisitorStudentComponent implements OnInit {
   deleting = false;
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.getRequests();
   }
 
@@ -77,12 +75,6 @@ export class VisitorStudentComponent implements OnInit {
       }
   });
   }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
-
-
   printRequest(requestNbr) {
     utils.openUrl(this.acadmicProc.Download(requestNbr));
 
