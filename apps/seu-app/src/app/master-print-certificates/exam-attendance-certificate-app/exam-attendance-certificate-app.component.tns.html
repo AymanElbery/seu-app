@@ -19,7 +19,7 @@
         <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
     </StackLayout>
 
-<TabView selectedIndex="3" *ngIf="!isLoading">
+<TabView *ngIf="!isLoading">
 	<StackLayout *tabItem='{title: firstTabTitle }'>
 
         <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels.length>0">

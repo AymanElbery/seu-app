@@ -11,11 +11,12 @@
  
 </GridLayout> -->
 
-<TabView selectedIndex="3" *ngIf="!isLoading"
+<TabView *ngIf="!isLoading"
   selectedTabTextColor="#f08b1c" 
 tabBackgroundColor="#f1f1f1"
 tabTextColor ="#010447"
 tabTextFontSize="14"
+androidOffscreenTabLimit="3"
 androidSelectedTabHighlightColor="#010447">
 	<StackLayout *tabItem="{title: eaData.Term_Exam_With_Schedule.labels.title}">
         <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading &&eaData.Term_Exam_With_Schedule.messages.length>0">
