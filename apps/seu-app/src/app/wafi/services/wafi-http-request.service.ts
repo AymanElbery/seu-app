@@ -50,15 +50,7 @@ export class WafiHttpRequestService {
     let url = this.getApiURI() + path;
     body = this.apllyBasicParams(body);
     const headers = this.getHeaders();
-<<<<<<< HEAD
-    //console.log("Parameter",body)
-=======
-   // //console.log("Parameter",body)
->>>>>>> 6dd3b2c0bb135d6197b84041a6c63a32c4c303e3
     return this.http.post(url, JSON.stringify(body), { headers });
-
   }
-
-
 
 }
