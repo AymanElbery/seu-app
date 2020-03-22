@@ -1,25 +1,4 @@
-<ActionBar style="background:#001628; ">
-    <!-- 
-    Use the NavigationButton as a side-drawer button in Android
-    because ActionItems are shown on the right side of the ActionBar
-
--->
-
-<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
-
-<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
--->
-<StackLayout margin-top="0">
-  
-    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
-
-  </StackLayout>
-
-    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
-    </ActionItem>
-
-</ActionBar>
-
+<app-header></app-header>
 <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 </StackLayout>
@@ -42,9 +21,19 @@
         
         </GridLayout>
             
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading  && mrData.labels" style="margin-top: 20;">
-            <Button text='{{"general.ar_language" | translate}}' class="print-btn"  (tap)="onArabicPrint()"></Button>
-            <Button text='{{"general.en_language" | translate}}' class="print-btn"  (tap)="onEnglishPrint()"></Button>
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <Button class=" print-btn " (tap)="onArabicPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" طباعة"></Span>
+                </FormattedString>
+            </Button>
+            <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" Print"></Span>
+                </FormattedString>
+            </Button>
         </FlexboxLayout>
         
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="!isLoading && mrData.labels">
@@ -52,16 +41,16 @@
               <Label row="0" colSpan="2"  class="ysHBox"  text='{{"general.student_data"|translate}}'></Label>
           
               <Label class="ysPBox" row="1" column="1" style="font-weight: 800;" text='{{mrData.labels.txt1}} :'></Label>
-              <Label class="ysPBox2"  row="1"  column="0" text="{{mrData.values.date}}" style="text-align: right;" ></Label>
+              <Label class="ysPBox2"  row="1"  column="0" text="{{mrData.values.date}}" ></Label>
           
               <Label class="ysPBox" row="2" column="1" style="font-weight: 800;" text='{{"general.female_or_male_name"|translate}} :'></Label>
               <Label class="ysPBox2" row="2"  column="0" text="{{mrData.values.std_name}}"></Label>
           
               <Label class="ysPBox" row="3" column="1" style="font-weight: 800;" text='{{"general.student_id"|translate}} :'></Label>
-              <Label class="ysPBox2" row="3"  column="0" text="{{mrData.values.std_id}}" style="text-align: right;" ></Label>
+              <Label class="ysPBox2" row="3"  column="0" text="{{mrData.values.std_id}}"></Label>
 
               <Label class="ysPBox" row="4" column="1" style="font-weight: 800;" text='{{"general.ssn"|translate}} :'></Label>
-              <Label class="ysPBox2" row="4"  column="0" text="{{mrData.values.ssn}}" style="text-align: right;" ></Label>
+              <Label class="ysPBox2" row="4"  column="0" text="{{mrData.values.ssn}}" ></Label>
 
               <Label class="ysPBox" row="5" column="1" style="font-weight: 800;" text='{{"general.faculty"|translate}} :'></Label>
               <Label class="ysPBox2" row="5"  column="0" text="{{mrData.values.coll}}"></Label>

@@ -49,6 +49,7 @@ export class DataDownLoadService {
 
         // Prepare the header with token work
         const sid = this.globalService.getSID();
+        console.log("siiiiiiiiiiiiiiiiiiiiid",sid)
         const headerHttp = {
             'Content-Type': 'application/json',
             'Session-ID': sid
@@ -94,6 +95,7 @@ export class DataDownLoadService {
             // tslint:disable-next-line: max-line-length
             permissions.requestPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 'I need these permissions because I\'m cool').then(
                 () => {
+                    console.log("permissions")
                     this.downloader
                     .start(zipDownloaderId, (progressData: ProgressEventData) => {
                         console.log(`Progress : ${progressData.value}%`);

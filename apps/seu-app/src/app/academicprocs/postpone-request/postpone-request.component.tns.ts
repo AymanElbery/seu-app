@@ -9,7 +9,8 @@ import { AddPostponeComponent } from './diag/add-postpone/add-postpone.component
 import { AppToasterService } from '../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { RequestData } from '../../shared/models/request-data';
-
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-postpone-request',
@@ -18,18 +19,20 @@ import { RequestData } from '../../shared/models/request-data';
 })
 export class PostponeRequestComponent implements OnInit {
 
-  printAR;
+  printAR='طباعة';
   reason: string;
   reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
   msgs=[];
   status;
+  isDownLoaded = false;
+
 
   constructor(private _modalService: ModalDialogService,private translate: TranslateService,
-    private _vcRef: ViewContainerRef,private acadmicProc: TermPostponeService,private toastr: AppToasterService) { }
+    private _vcRef: ViewContainerRef,private acadmicProc: TermPostponeService,private toastr: AppToasterService,
+    private downloader: DataDownLoadService) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;  
+    Downloader.init(); 
     this.isLoading = true;
     this.reason = '';
     this.getRequests();
@@ -70,7 +73,21 @@ export class PostponeRequestComponent implements OnInit {
 }
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log("xxxx",x)
+      this.printAR = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.translate.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
+      }
+    });
   }
   deleting = false;
   delete(id, index) {

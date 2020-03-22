@@ -13,6 +13,8 @@ import { RequestData } from '../../shared/models/request-data';
 declare var UIView, NSMutableArray, NSIndexPath;
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-withdraw-from-univ',
@@ -21,7 +23,7 @@ import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
 })
 export class WithdrawFromUnivComponent implements OnInit {
 
-  printAR;
+  printAR='طباعة';
   withdraw: UnivWithdraw;
   reqData:RequestData={can_add_new_request:false,reqs:[],requests:[],notes:[]};
   msgs=[];
@@ -29,16 +31,16 @@ export class WithdrawFromUnivComponent implements OnInit {
 
   isLoading = false;
   deleting = false;
+  isDownLoaded = false;
   constructor(
     private translate: TranslateService,
     private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,private acadmicProc: WithdrawFromUnivService,
-    private toastr: AppToasterService) { }
+    private toastr: AppToasterService,
+    private downloader: DataDownLoadService) { }
 
   ngOnInit() {
-
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;  
+    Downloader.init();
     this.isLoading = true;
     this.withdraw = { FeesForstd: 0, IBAN: '', IBANNAME: '', branch: '', email: '', mobile: null, bankimage: '', BANKID: 0 };
     this.getRequests();
@@ -78,7 +80,22 @@ export class WithdrawFromUnivComponent implements OnInit {
 
 
   print(req) {
-    utils.openUrl(this.acadmicProc.print(req));
+    console.log("urllllllllllllllll",this.acadmicProc.print(req));
+    this.downloader.downloadFile(this.acadmicProc.print(req));
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log("xxxx",x)
+      this.printAR = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.translate.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
+      }
+    });
   }
   delete(id, index) {
     dialogs.confirm({

@@ -21,11 +21,3 @@
     </ActionItem>
 
 </ActionBar>
- 
-<StackLayout>
-    <Button *ngFor="let not of notifications.notesList" 
-    text="{{not['TITLE']}} {{not['MESSAGE']}}" style="width: 100%;" textWrap="true"
-    (tap)="notifications.redirect(not)"
-    ></Button>
-    <Label *ngIf="notifications.notesList.length==0" text="لا يوجد" style="width: 100%;"></Label>
-</StackLayout>

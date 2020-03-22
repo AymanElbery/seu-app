@@ -19,8 +19,8 @@
 <FlexboxLayout flexDirection="column">
     <StackLayout class="ysBox paragraph" style="margin-bottom: 20;">
         <Label text='{{"services.course-equalize.alert"|translate}}' style="font-weight: 800; color: #f08b1c;"></Label>
-        <Label [text]="reqData.notes.txt2"></Label>
-        <Label [text]="reqData.notes.txt3"></Label>
+        <Label [text]="reqData.notes.txt2" textWrap="true"></Label>
+        <Label [text]="reqData.notes.txt3" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt4" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt5" textWrap="true"></Label>
         <Label [text]="reqData.notes.txt6" textWrap="true"></Label>
@@ -40,7 +40,7 @@
     style="margin-bottom: 20;"
     >
     </DropDown>
-    <Label text='{{"services.course-equalize.choose_course_lang_hours_grade"|translate}}' style="color: #f08b1c; font-weight: 800;margin-right: 20;"></Label>
+    <Label text='{{"services.course-equalize.choose_course_lang_hours_grade"|translate}}' textWrap="true" style="color: #f08b1c; font-weight: 800;margin-right: 20;"></Label>
 
     <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 

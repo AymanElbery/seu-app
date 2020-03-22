@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
-import * as app from 'tns-core-modules/application';
 import { GlobalBaseService } from '../shared/services/global-base.service';
 import { UserService } from '../account/services/user.service';
 import { PrintService } from '../shared/services/print.service';
@@ -11,9 +9,6 @@ import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
 import { registerElement } from 'nativescript-angular/element-registry';
 // Register Custom Elements for Angular
 import { Carousel, CarouselItem } from 'nativescript-carousel';
-import { NotificationsService } from '../shared/services/notificationsservice.tns';
-import { ValueList, ValueItem, SelectedIndexChangedEventData } from 'nativescript-drop-down';
-import { RouterExtensions } from 'nativescript-angular/router';
 
 registerElement('Carousel', () => Carousel);
 registerElement('CarouselItem', () => CarouselItem);
@@ -23,32 +18,11 @@ registerElement('CarouselItem', () => CarouselItem);
     templateUrl: './home.component.tns.html'
 })
 export class HomeComponent implements OnInit {
-  notifs: ValueItem<number>[] = [];
-  notifsDropDown: ValueList<number>;
-
     constructor(public printService: PrintService, public homeService: HomeService,
                 public userService: UserService,
-                private router: Router , private globalService: GlobalBaseService,
-                public notifications: NotificationsService
+                private router: Router , private globalService: GlobalBaseService
                 ) {
 
-                  for (let i = 0; i < this.notifications.notesList.length; i++) {
-                    this.notifs.push(
-                      {
-                        value: this.notifications.notesList[i]['REC_PK'],
-                        display:this.notifications.notesList[i]["TITLE"]
-                      }
-                    );
-                  }
-                  
-                  if(this.notifications.notesList.length==0){
-                    this.notifs.push(
-                      {
-                        value: -1,
-                        display:"لا يوجد"
-                      });
-                  }
-                  this.notifsDropDown = new ValueList(this.notifs);
         // tslint:disable-next-line: only-arrow-functions
         this.router.routeReuseStrategy.shouldReuseRoute = function() {
           return false;
@@ -279,22 +253,9 @@ setInterval(
 
       }
 
-      getNotifications(){
-        this.router.navigate(['/notifications']);
-      }
     ngOnInit(): void {
-        const sideDrawer =  app.getRootView() as RadSideDrawer;
-
-        // Init your component properties here.
-        sideDrawer.drawerLocation = SideDrawerLocation.Right;
-      //  console.log('test');
         this.LoadData();
 
-    }
-
-    onDrawerButtonTap(): void {
-        const sideDrawer =  app.getRootView() as RadSideDrawer;
-        sideDrawer.showDrawer();
     }
     
 }

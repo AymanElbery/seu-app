@@ -10,6 +10,8 @@ import { AppToasterService } from '../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-training-request',
@@ -34,7 +36,8 @@ export class TrainingRequestComponent implements OnInit {
 
   constructor(private toastr: AppToasterService, private acadmicProc: TrainingRequestService,
               private _modalService: ModalDialogService,
-              private _vcRef: ViewContainerRef, private translate: TranslateService) {
+              private _vcRef: ViewContainerRef, private translate: TranslateService,
+              private downloader: DataDownLoadService) {
 
       this.ar = this.translate.instant('general.ar_language');
       this.en = this.translate.instant('general.en_language');
@@ -45,8 +48,7 @@ export class TrainingRequestComponent implements OnInit {
      }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
+    Downloader.init(); 
     this.isLoading = true;
     this.training = {organization: ''};
     this.acadmicProc.getِgetRequests().then(
@@ -71,7 +73,13 @@ export class TrainingRequestComponent implements OnInit {
   }
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log("xxxx",x)
+      this.printAR = x;
+    });
   }
 
   delete(id, index) {

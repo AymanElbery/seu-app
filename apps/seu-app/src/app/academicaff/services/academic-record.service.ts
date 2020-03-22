@@ -22,7 +22,7 @@ constructor(private configService: ConfigService, private httRequest: HttpReques
     const sid =   this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?sid=' + sid;
+    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print';
    }
    DownloadEng() {
 
@@ -30,6 +30,6 @@ constructor(private configService: ConfigService, private httRequest: HttpReques
     const sid =   this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?Lang=en&sid=' + sid;
+    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?Lang=en';
    }
 }

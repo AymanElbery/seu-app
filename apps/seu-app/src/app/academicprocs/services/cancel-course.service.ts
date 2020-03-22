@@ -35,7 +35,7 @@ export class CancelCourseService {
     this.configService.baseUrl = 'stdservicesapi';
     const sid = this.configService.getSid();
 
-    return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req + '?sid=' + sid;
+    return this.configService.getApiURI() + '/course_cancel/download/crse_cancel/' + req;
   }
   DownloadEng(req) {
     const sid = this.configService.getSid();

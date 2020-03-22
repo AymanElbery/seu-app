@@ -35,7 +35,7 @@ export class WithdrawFromUnivService {
   print(req) {
     this.configService.baseUrl = 'stdservicesapi';
     const sid = this.configService.getSid();
-    return this.configService.getApiURI() + '/withdraw_service/print_statment/' + req + '?sid=' + sid + '&lang=' + this.translate.currentLang;
+    return this.configService.getApiURI() + '/withdraw_service/print_statment/' + req;
   }
 
   download(req) {

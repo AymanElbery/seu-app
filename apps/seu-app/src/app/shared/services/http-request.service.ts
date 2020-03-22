@@ -150,7 +150,7 @@ export class HttpRequestService {
   getSSOAuth() {
    // alert('10');
     
-    return `Basic ${window.btoa(environment.ssoAuth)}`;
+    return 'Basic bm90czpOMHQhZmljQHRpMG4k';
   }
 
 }

@@ -9,7 +9,7 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <Label text='{{"services.english-equalize.equalize_english_req"|translate}}' class="label-action"></Label>
+    <Label text='{{"services.english-equalize.equalize_english_req"|translate}}' textWrap="true" class="label-action"></Label>
 
     <NavigationButton  icon="font://&#xf104;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
     <ActionItem icon="font://&#xf0c7;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>

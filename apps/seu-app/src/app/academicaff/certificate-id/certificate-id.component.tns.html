@@ -1,35 +1,8 @@
-<ActionBar style="background:#001628; ">
-  <!-- 
-  Use the NavigationButton as a side-drawer button in Android
-  because ActionItems are shown on the right side of the ActionBar
-
--->
-
-<NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
-
-<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
--->
-<StackLayout margin-top="0">
-
-  <Image src="~/images/logo_3d.png" style="width:80%"></Image>
-
-</StackLayout>
-
-  <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
-  </ActionItem>
-
-</ActionBar>
-
+<app-header></app-header>
 <ScrollView>
   <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
-  <FlexboxLayout style="margin-top: 20px;" flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
-    <ListView [items]="msgs">
-        <ng-template let-item="item">
-            <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
-        </ng-template>
-    </ListView>
-</FlexboxLayout>
+ 
 
 <FlexboxLayout  flexDirection="column"  *ngIf="!isLoading && certificateDetails&&certificateDetails.labels && certificateDetails.values">
 
@@ -39,17 +12,25 @@
     <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
 </GridLayout>
 
+<FlexboxLayout style="margin-top: 20px;" flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+  <ListView [items]="msgs">
+      <ng-template let-item="item">
+          <Label verticalAlignment="center" textWrap="true" [text]="item.body" class="ysMsg"></Label>
+      </ng-template>
+  </ListView>
+</FlexboxLayout>
+
 <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
     <Button class=" print-btn " (tap)="onArabicPrint()">
         <FormattedString>
             <Span text="&#xf02f;" class="fas"></Span>
-            <Span text=" طباعة"></Span>
+            <Span text="{{printAR}}"></Span>
         </FormattedString>
     </Button>
     <Button class=" print-btn " (tap)="onEnglishPrint()">
         <FormattedString>
             <Span text="&#xf02f;" class="fas"></Span>
-            <Span text=" Print"></Span>
+            <Span text="{{printEN}}"></Span>
         </FormattedString>
     </Button>
 </FlexboxLayout>
@@ -58,29 +39,29 @@
     <GridLayout  class="ysBox" rows="auto,auto" columns="*,150">
   
   
-      <Label row="0" column="1" class="ysPBox"  style="font-weight: 800;" text="{{certificateDetails.labels.date}}"></Label>
-      <Label row="0"  column="0" class="ysPBox2" text="{{certificateDetails.values.date}}" style="text-align: right;"></Label>
+      <Label row="0" column="1" textWrap="true" class="ysPBox"  style="font-weight: 800;" text="{{certificateDetails.labels.date}}"></Label>
+      <Label row="0"  column="0" textWrap="true" class="ysPBox2" text="{{certificateDetails.values.date}}"></Label>
   
-      <Label row="1" column="1" class="ysPBox"  style="font-weight: 800;" text="{{certificateDetails.labels.ssn}}"></Label>
-      <Label row="1"  column="0" class="ysPBox2"  text="{{certificateDetails.values.ssn}}" style="text-align: right;"></Label>
+      <Label row="1" column="1" textWrap="true" class="ysPBox"  style="font-weight: 800;" text="{{certificateDetails.labels.ssn}}"></Label>
+      <Label row="1"  column="0" textWrap="true" class="ysPBox2"  text="{{certificateDetails.values.ssn}}"></Label>
 
     </GridLayout>
   </StackLayout>
 
 
   <FlexboxLayout row="1" flexDirection="row-reverse" class="paragraph" flexWrap="wrap" *ngIf="!isLoading">
-    <label  [text]="certificateDetails.labels.txt1"></label>
-    <label  [text]="certificateDetails.values.std_name"></label>
-    <label  [text]="certificateDetails.labels.txt2"></label>
-    <label  [text]="certificateDetails.values.std_id"></label>
-    <label  [text]="certificateDetails.labels.txt3"></label>
-    <label  [text]="certificateDetails.values.coll"></label>
-    <label  [text]="certificateDetails.labels.txt4"></label>
-    <label  [text]="certificateDetails.values.major"></label>
-    <label  [text]="certificateDetails.labels.txt5"></label>
-    <label  [text]="certificateDetails.values.term"></label>
-    <label  [text]="certificateDetails.labels.txt6"></label>
-    <label  [text]="certificateDetails.labels.txt7"></label>
+    <label textWrap="true" [text]="certificateDetails.labels.txt1"></label>
+    <label textWrap="true" [text]="certificateDetails.values.std_name"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt2"></label>
+    <label  textWrap="true" [text]="certificateDetails.values.std_id"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt3"></label>
+    <label  textWrap="true" [text]="certificateDetails.values.coll"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt4"></label>
+    <label textWrap="true"  [text]="certificateDetails.values.major"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt5"></label>
+    <label  textWrap="true" [text]="certificateDetails.values.term"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt6"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt7"></label>
   </FlexboxLayout>
 
   <ng-template [ngIf]="lectures !=null" [ngIfElse]="NoLec">
@@ -118,23 +99,23 @@
 <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of lectures" >
                       
                       
-  <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" [text]="certificateDetails.labels.course_title"></Label>
-  <Label row="1"  column="0" class="ysPBox2" [text]="item.CRSE_TITLE" style="text-align: right;"></Label>
+  <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" [text]="certificateDetails.labels.course_title"></Label>
+  <Label row="1"  column="0" textWrap="true" class="ysPBox2" [text]="item.CRSE_TITLE"></Label>
 
-  <Label row="2"  column="1"  class="ysPBox" style="font-weight:800; text-align: right;" [text]="certificateDetails.labels.crn"></Label>
-  <Label row="2"  column="0" class="ysPBox2" [text]="item.CRN" style="text-align: right;"></Label>
+  <Label row="2"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" [text]="certificateDetails.labels.crn"></Label>
+  <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.CRN"></Label>
  
-  <Label row="3"  column="1"  class="ysPBox" style="font-weight:800; text-align: right;" [text]="certificateDetails.labels.roomcode" ></Label>
-  <Label row="3"  column="0" class="ysPBox2" [text]="item.ROOM_CODE" style="text-align: right;" ></Label>
+  <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" [text]="certificateDetails.labels.roomcode" ></Label>
+  <Label row="3"  column="0" textWrap="true" class="ysPBox2" [text]="item.ROOM_CODE" ></Label>
 
-  <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"   [text]="certificateDetails.labels.day_and_date"></Label>
-  <Label row="4"  column="0" class="ysPBox2"[text]="item.DAYES" style="text-align: right; margin-right: -10;"></Label>
+  <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"   [text]="certificateDetails.labels.day_and_date"></Label>
+  <Label row="4"  column="0" textWrap="true" class="ysPBox2"[text]="item.DAYES"></Label>
    
-  <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"  [text]="certificateDetails.labels.time"></Label>
-  <Label row="5"  column="0" class="ysPBox2"[text]="item.LECT_TIME" style="text-align: right;"></Label>
+  <Label row="5"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  [text]="certificateDetails.labels.time"></Label>
+  <Label row="5"  column="0" textWrap="true" class="ysPBox2"[text]="item.LECT_TIME"></Label>
 
-  <Label row="6"  column="1"  class="ysPBox" style="font-weight: 800; text-align:right;" [text]="certificateDetails.labels.course_type" ></Label>
-  <Label row="6"  column="0" class="ysPBox2" [text]="item.CRSE_TYPE"  ></Label>
+  <Label row="6"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800; " [text]="certificateDetails.labels.course_type" ></Label>
+  <Label row="6"  column="0" textWrap="true" class="ysPBox2" [text]="item.CRSE_TYPE"  ></Label>
  
 
 </GridLayout>
@@ -143,16 +124,16 @@
 
 <ng-template #NoLec>  
   <FlexboxLayout row="2" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
-      <label  [text]="certificateDetails.labels.txt8"></label>
+      <label textWrap="true" [text]="certificateDetails.labels.txt8"></label>
   </FlexboxLayout>
 </ng-template>
 
   <FlexboxLayout row="3" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
     <label  [text]="certificateDetails.labels.txt9" textWrap="true"></label>
-    <label  [text]="certificateDetails.labels.txt10"></label>
-    <label  [text]="certificateDetails.labels.txt11"></label>
-    <label  [text]="certificateDetails.labels.txt12"></label>
-    <label  [text]="certificateDetails.labels.txt13"></label>
+    <label textWrap="true" [text]="certificateDetails.labels.txt10"></label>
+    <label textWrap="true" [text]="certificateDetails.labels.txt11"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt12"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt13"></label>
   </FlexboxLayout>
 <!--
   <FlexboxLayout row="4" flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
