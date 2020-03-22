@@ -3,7 +3,7 @@
     <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
   
     <div  class="modal-header">
-        <h4 class="modal-title">{{"wafi.AddTask" | translate}}</h4>  
+        <h4 class="modal-title">{{"tasks.AddTask" | translate}}</h4>  
       <button type="button"  class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
       </div>
   
@@ -13,14 +13,14 @@
           <div class="row ser-block">
             <div class=" col-md-6 col-sm-6">
               <div class="state">
-                <h6>{{"wafi.title"|translate}} </h6>
+                <h6>{{"tasks.title"|translate}} </h6>
                 <input type="text"  formControlName="title" class="form-control"   [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
               </div>
             </div>
     
             <div class=" col-md-6 col-sm-6">
               <div class="state">
-                <h6>{{"wafi.description"|translate}} </h6>
+                <h6>{{"tasks.description"|translate}} </h6>
                 <input type="text"  formControlName="description" class="form-control" />
               </div>
             </div>    
@@ -29,24 +29,29 @@
     
             <div class=" col-md-6 col-sm-6">
               <div class="state">
-                <h6>{{"wafi.assignedTo"|translate}} </h6>
-                <select class="form-control" formControlName="assignedTo" [ngClass]="{ 'is-invalid': submitted && f.assignedTo.errors }" >
-                    <option [ngValue]="undefined" selected>{{"wafi.assignedTo" | translate}}</option>
-                    <option *ngFor="let assigto of assigntoData" [selected]="selectvactype == assigto.value"
-                      value={{assigto.value}}>{{assigto.label}} </option>
-                  </select>
-                <!-- <input type="text"  formControlName="assignedTo" class="form-control" /> -->
-    
+                <h6>{{"tasks.assignedTo"|translate}} </h6>
+              <!--<select class="form-control" formControlName="assignedTo" [ngClass]="{ 'is-invalid': submitted && f.assignedTo.errors }" >
+                    <option [ngValue]="undefined" selected>{{"tasks.assignedTo" | translate}}</option>
+                    <option *ngFor="let assigto of ddlemplist" [selected]="selectvactype == assigto.empId"
+                      value={{assigto.empId}}>{{assigto.empName}} </option>
+                  </select>-->
+
+                  <ng-select [items]="ddlemplist"
+           bindLabel="empName"
+           autofocus
+           bindValue="empId" formControlName="assignedTo">
+</ng-select>
+              
               </div>
             </div>
     
             <div class=" col-md-6 col-sm-6">
               <div class="state">
-                <h6>{{"wafi.status"|translate}} </h6>
+                <h6>{{"tasks.status"|translate}} </h6>
                 <select class="form-control" formControlName="status" [ngClass]="{ 'is-invalid': submitted && f.status.errors }" >
-                    <option [ngValue]="undefined" selected>{{"wafi.status" | translate}}</option>
-                    <option *ngFor="let statusdat of statusData" [selected]="selectvactype == statusdat.value"
-                      value={{statusdat.value}}>{{statusdat.label}} </option>
+                    <option [ngValue]="undefined" selected>{{"tasks.status" | translate}}</option>
+                    <option *ngFor="let statusdat of ddltaskstatus" [selected]="selectvactype == statusdat.statusCode"
+                      value={{statusdat.statusCode}}>{{statusdat.statusDesc}} </option>
                   </select>
               </div>
             </div>
@@ -55,22 +60,22 @@
           <div class="row ser-block">
             <div class=" col-md-6 col-sm-6">
               <div class="state">
-                <h6>{{"wafi.priority"|translate}} </h6>
+                <h6>{{"tasks.priority"|translate}} </h6>
                 <select class="form-control" formControlName="priority" [ngClass]="{ 'is-invalid': submitted && f.priority.errors }" >
-                    <option [ngValue]="undefined" selected>{{"wafi.priority" | translate}}</option>
-                    <option *ngFor="let proty of priorityData" [selected]="selectvactype == proty.value"
-                      value={{proty.value}}>{{proty.label}} </option>
+                    <option [ngValue]="undefined" selected>{{"tasks.priority" | translate}}</option>
+                    <option *ngFor="let proty of ddlpriority" [selected]="selectvactype == proty.priorityCode"
+                      value={{proty.priorityCode}}>{{proty.priorityDesc}} </option>
                   </select>
               </div>
             </div>
     
             <div class=" col-md-6 col-sm-6">
               <div class="state">
-                <h6>{{"wafi.type"|translate}} </h6>
+                <h6>{{"tasks.type"|translate}} </h6>
                 <select class="form-control" formControlName="type" [ngClass]="{ 'is-invalid': submitted && f.type.errors }" >
-                    <option [ngValue]="undefined" selected>{{"wafi.type" | translate}}</option>
-                    <option *ngFor="let typs of typeData" [selected]="selectvactype == typs.value"
-                      value={{typs.value}}>{{typs.label}} </option>
+                    <option [ngValue]="undefined" selected>{{"tasks.type" | translate}}</option>
+                    <option *ngFor="let typs of ddltype" [selected]="selectvactype == typs.typeCode"
+                      value={{typs.typeCode}}>{{typs.typeDesc}} </option>
                   </select>
               </div>
             </div>
@@ -79,7 +84,7 @@
           <div class="row ser-block">
             <div class=" col-md-6 col-sm-6">
                 <div class="state">
-                    <h6>{{"wafi.endDate"|translate}} </h6>
+                    <h6>{{"tasks.endDate"|translate}} </h6>
                     <input type="text"  formControlName="endDate" bsDatepicker class="form-control" />
                   </div>
            
@@ -87,7 +92,7 @@
     
             <div class=" col-md-6 col-sm-6">
               <div class="state">
-                <h6>{{"wafi.startDate"|translate}} </h6>
+                <h6>{{"tasks.startDate"|translate}} </h6>
                 <input type="text"  formControlName="startDate" bsDatepicker  class="form-control" />
               </div>
             </div>
@@ -96,7 +101,7 @@
           <div class="row ser-block">
             <div class=" col-md-6 col-sm-6">
                 <div class="state">
-                    <h6>{{"wafi.notes"|translate}} </h6>
+                    <h6>{{"tasks.notes"|translate}} </h6>
                     <textarea class="form-control" cols="2" rows="3" formControlName="notes" ></textarea> 
                   </div>
             </div>
@@ -104,7 +109,7 @@
             <div class=" col-md-6 col-sm-6">
             
               <div class="state">
-                <h6>{{"wafi.requiredProcedures"|translate}} </h6>
+                <h6>{{"tasks.requiredProcedures"|translate}} </h6>
                 <input type="text"  formControlName="requiredProcedures" class="form-control" />
               </div>
             </div>
@@ -114,7 +119,7 @@
             <div class=" col-md-6 col-sm-6">
               <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
                 <button type="submit" class="btn" style="color: #fff;margin-top: 30px !important;"><i
-                    class="fa fa-database"></i> {{"wafi.Submit" | translate}}</button>
+                    class="fa fa-database"></i> {{"tasks.Submit" | translate}}</button>
               </div>
             </div>
     

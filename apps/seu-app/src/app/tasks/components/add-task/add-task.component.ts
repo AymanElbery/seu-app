@@ -4,11 +4,11 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
-import {TasksManagementService} from '../../services/tasks-management.service';
+import { TasksManagementService } from '../../services/tasks-management.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
-import { BsDatepickerConfig  } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-add-task',
@@ -19,8 +19,11 @@ export class AddTaskComponent implements OnInit {
   AddReqForm: FormGroup;
   submitted = false;
   subscriptionDDLReqtype: Subscription;
-  subscriptionvac: Subscription;
-  vacationsbal;
+  subscriptionEMplist: Subscription;
+  ddltaskstatus: any;
+  ddlpriority: any;
+  ddltype: any;
+  ddlemplist: any;
   isLoading = true;
   subscriptions;
   id: number;
@@ -50,31 +53,31 @@ export class AddTaskComponent implements OnInit {
       return;
     }
     console.log("submit data", submitdatavalue);
-   
-    this.taskservice.getTasksList().subscribe(contacts => {
-      //console.log("saved ", contacts);
-      if (!contacts['saveRequesst']) {
-        var error = (contacts as any).data["errorMassege"]       
+
+    this.taskservice.AddTasksdata(submitdatavalue).subscribe(addedtask => {
+
+      console.log("saved ", addedtask);
+
+      if (!addedtask['saveTask']) {
+        var error = (addedtask as any).data["errorMassege"]
         this.toastr.push([{ type: 'error', 'body': error }]);
-      }else {
-        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
+      } else {
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
         //this.isLoading = false;
-//navigate
-      this.router.navigate(['/wafi/employee-requests'])
+        //navigate
+
       }
     }
-     
+
     );
-
-   
   }
-  
-  
-  ngOnInit() {
 
-    this.FillDDLReqType();
+  ngOnInit() {
+    this.getDDLlist();
+    this.getDDLEmplist();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
-      this.FillDDLReqType();
+      this.getDDLlist();
+      this.getDDLEmplist();
     });
 
   }
@@ -85,10 +88,35 @@ export class AddTaskComponent implements OnInit {
       this.subscriptions.unsubscribe();
   }
 
-  FillDDLReqType() {
-    this.isLoading = true
-    //this.AddReqForm.controls['requestType'].setValue(this.id);
-   
+
+  defineDDLList() {
+    if (this.taskservice.ddl) {
+      this.ddltaskstatus = this.taskservice.ddl["TaskStatusList"];
+      this.ddlpriority = this.taskservice.ddl["taskPriorityList"];
+      this.ddltype = this.taskservice.ddl["taskTypesList"];
+    }
+
+  }
+  getDDLlist() {
+    this.taskservice.loadDDL();
+    this.defineDDLList();
+    this.subscriptionDDLReqtype = this.taskservice.ddlsubject.subscribe(reqtype => {
+      this.defineDDLList();
+    });
+  }
+  getDDLEmplist() {
+    this.ddlemplist = this.taskservice.empList;
+    this.subscriptionEMplist = this.taskservice.empListsubject.subscribe(emplist => {
+      this.ddlemplist = this.taskservice.empList;
+    });
+    // this.isLoading = true
+    // this.subscriptionEMplist = this.taskservice.getDDLEmplist().subscribe(emplist => {
+    //   if (emplist) {
+    //     this.ddlemplist = (emplist as any).data
+    //     this.isLoading = false
+    //   } else {
+    //   }
+    // });
   }
 
 

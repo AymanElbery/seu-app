@@ -891,7 +891,30 @@
         "EMP_PSNL_VCHR_NOTE":"Notes",
         "EMP_SLRY_YEAR":"Year",
         "EmployeeVouchers":"Employee Vouchers",
-        "administrative":"Administrative",
+        "administrative":"Administrative"
+       
+    }
+    ,
+    "tasks": {
+        
+        "description": "Description",
+        "endDate": "End Date",
+        "startDate": "Start Date",
+        "Status": "Status",
+        "Details": "Details",      
+        "Task": "Task",
+        "Delete": "Delete",
+        "day": "Day",
+        "phone": "phone",
+        "notes": "Notes",
+        "Submit": "Submit",
+        "date":"Date",
+        "attachment":"attachment",
+        "Previous":"Previous",
+        "Next":"Next",
+        "EmpNo":"Emp No",
+        "EmpName":"Emp Name",
+        "RequestDate":"Request Date",
         "title":"Title",
         "assignedTo":"AssignedTo",
         "status":"Status",
@@ -900,14 +923,5 @@
         "requiredProcedures":"Required Procedures",
         "AddTask":"Add Task",
         "TaskList":"Task List"
-        
-      
-        
-      
-
-        
-        
-      
-
     }
 }
