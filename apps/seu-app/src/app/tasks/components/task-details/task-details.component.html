@@ -1,0 +1,73 @@
+<div class="main-content">
+  <service-header title='{{"tasks.TaskDetails" | translate}}'></service-header>
+  <seu-loader [isLoading]="loading"></seu-loader>
+  <div class="widget" *ngIf="!loading">
+    <div class="widget-header">
+      <h3 class="widget-title">
+        {{task.title}}
+      </h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <tr>
+          <th scope="col">{{"tasks.ID" | translate}}</th>
+          <td>{{task.tid}}</td>
+        </tr>
+        <tr>
+          <th scope="col">{{"tasks.title" | translate}}</th>
+          <td>{{task.title}}</td>
+        </tr>
+        <tr>
+          <th scope="col">{{"tasks.description" | translate}}</th>
+          <td>{{task.description}}</td>
+        </tr>
+        <tr>
+          <th scope="col">{{"tasks.notes" | translate}}</th>
+          <td>{{task.notes}}</td>
+        </tr>
+        <tr>
+          <th scope="col">{{"tasks.startDate" | translate}}</th>
+          <td>{{task.startDate}}</td>
+        </tr>
+        <tr>
+          <th scope="col">{{"tasks.endDate" | translate}}</th>
+          <td>{{task.endDate}}</td>
+        </tr>
+        <tr>
+          <th scope="col">{{"tasks.priority" | translate}}</th>
+          <td>{{task.priorityDesc}}</td>
+        </tr>
+        <tr>
+          <th scope="col">{{"tasks.status" | translate}}</th>
+          <td>{{task.statusDesc}}</td>
+        </tr>
+        <tr>
+          <th scope="col">{{"tasks.assignedTo" | translate}}</th>
+          <td>{{task.assignedToName}}</td>
+        </tr>
+        <tr>
+          <th scope="col">{{"tasks.viewers" | translate}}</th>
+          <td>
+            <ul>
+              <li *ngFor="let viewer of task.taskViewers">{{viewer.viewerEmpName}}</li>
+            </ul>
+            {{task.assignedToName}}
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">{{"tasks.comments"| translate}}</th>
+        </tr>
+        <tr *ngFor="let comment of task.taskComments">
+          <td colspan="2">
+            <p>{{comment.comment}}</p>
+            <p><strong>{{"tasks.file" | translate}}</strong>{{comment.file}}</p>
+            <p><strong>{{"tasks.commentDate" | translate}}</strong>{{comment.createdAt}}</p>
+            <p><strong>{{"tasks.status" | translate}}</strong>{{comment.createdAt}}</p>
+            <p><strong>{{"tasks.assignedTo" | translate}}</strong>{{comment.createdAt}}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
