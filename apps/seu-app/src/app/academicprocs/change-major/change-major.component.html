@@ -63,7 +63,8 @@
             <th scope="col">{{"general.request.req_date"| translate}}</th>
             <th scope="col">{{"services.change_major.current_major"|translate}}</th>
             <th scope="col">{{"services.change_major.required_major"|translate}}</th>
-
+            
+            <th scope="col">{{"general.request.req_status"| translate}}</th>
             <th scope="col">{{"general.request.req_delete"| translate}}</th>
 
           </tr>
@@ -76,6 +77,7 @@
             <td>{{it.insert_date}}</td>
             <td>{{it.CURR_PROG}}</td>
             <td>{{it.REQ_PROG}}</td>
+            <td>{{it.APPROVAL_STATUS}}</td>
 
 
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"

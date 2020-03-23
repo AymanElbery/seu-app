@@ -52,7 +52,8 @@
 
           <tr>
             <th scope="col">{{"general.request.req_no"|translate}}</th>
-
+            <th scope="col">{{"services.english-equalize.exam_name"|translate}}</th>
+            
             <th scope="col">{{"general.request.req_date"|translate}}</th>
             <th scope="col">{{"services.english-equalize.reply_date"|translate}}</th>
 
@@ -65,6 +66,7 @@
         <tbody>
           <tr *ngFor="let it of reqData.requests;let i=index;">
             <td>{{it.request_number}}</td>
+            <td>{{it.name}}</td>
 
 
             <td>{{it.insert_date}}</td>
