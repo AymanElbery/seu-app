@@ -84,7 +84,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       if (res) {
         this.userData = this.userService.getActiveRoleDetails();
 
-        this.hasWafi = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
+        this.hasWafi = environment.allowWafi && (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
 
       }
     });

@@ -12,7 +12,8 @@ export const environment = {
   appsprefix: 'apps-test', // api-test
   loginpage: 'login-ss.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
-  ssoAuth: 'sso:s$0$3u2030'
+  ssoAuth: 'sso:s$0$3u2030',
+  allowWafi:true
 };
 
 /*
