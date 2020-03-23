@@ -919,6 +919,10 @@
         "type": "Type",
         "requiredProcedures": "Required Procedures",
         "AddTask": "Add Task",
-        "TaskList": "Task List"
+        "TaskList": "Task List",
+        "comments": "Comment",
+        "AddComment": "Add Comment",
+        "TaskDetails": "Task Details"
+        
     }
 }

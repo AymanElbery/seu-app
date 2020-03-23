@@ -105,6 +105,11 @@ export class TasksManagementService {
 
   }
 
+  AddTaskscommnets(data) {
+   
+    return this.wafihttRequest.postRequest_obj('task/createTaskComment', data);
+  }
+
 
 }
 

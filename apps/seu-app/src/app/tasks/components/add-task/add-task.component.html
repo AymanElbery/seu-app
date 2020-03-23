@@ -1,11 +1,10 @@
+
 <div class="main-content">
 
-  <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
+  <service-header title='{{"tasks.AddTask" | translate}}'></service-header>
+  <seu-loader [isLoading]="loading"></seu-loader>
 
-  <div class="modal-header">
-    <h4 class="modal-title">{{"tasks.AddTask" | translate}}</h4>
-    <button type="button" class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
-  </div>
+  
 
   <section class="dashboard-wrap" style="margin-top: 30px;">
     <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
@@ -72,7 +71,7 @@
           <div class=" col-md-12 col-sm-12">
             <div class="state">
               <h6>{{"tasks.viewers"|translate}} </h6>
-              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId" formControlName="viewers"
+              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId" formControlName="taskViewers"
                 multiple="multiple">
               </ng-select>
 
@@ -119,6 +118,20 @@
           </div>
         </div>
 
+        <div class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"wafi.attachment"|translate}} </h6>
+              <div class="custom-file">
+                <input class="custom-file-input" name="attachment" id="file" type="file" accept="*/*"
+                  (change)="handleFileInput($event)" />
+                <label for="file" class="custom-file-label ">
+                </label>
+              </div>
+                </div>
+          </div>
+        </div>
+  
         <div class="row ser-block">
           <div class=" col-md-12 col-sm-12">
             <div class="state">

@@ -15,6 +15,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TasksManagementService } from './services/tasks-management.service';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
+
 @NgModule({
   declarations: [TasksListComponent, AddTaskComponent, AddCommentComponent,TaskDetailsComponent],
   entryComponents: [AddTaskComponent],

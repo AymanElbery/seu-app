@@ -6,6 +6,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import {AddTaskComponent} from '../add-task/add-task.component';
 import {TasksManagementService} from '../../services/tasks-management.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tasks-list',
@@ -21,7 +22,7 @@ export class TasksListComponent implements OnInit {
   subscription: Subscription;
   subscriptionappreq: Subscription;
   gettasklist: any;
-  constructor(private http: HttpClient, private taskservice: TasksManagementService, private toastr: AppToasterService, private translate: TranslateService, private dialog: MatDialog) {
+  constructor(private http: HttpClient, private taskservice: TasksManagementService, private toastr: AppToasterService, private translate: TranslateService, private dialog: MatDialog,private router:Router) {
   }
   isLoading = true;
   subscriptions;
@@ -56,14 +57,16 @@ export class TasksListComponent implements OnInit {
   }
 
   addtask() {
-    
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = "75%";
-    dialogConfig.data = {  };
-    this.dialog.open(AddTaskComponent, dialogConfig).afterClosed().subscribe(res => {
-    });
+    this.router.navigate(['/tasks/add-task'])
+
+    // const dialogConfig = new MatDialogConfig();
+    // dialogConfig.autoFocus = true;
+    // dialogConfig.disableClose = false;
+    // dialogConfig.width = "70%";
+    // dialogConfig.height="70%";
+    // dialogConfig.data = {  };
+    // this.dialog.open(AddTaskComponent, dialogConfig).afterClosed().subscribe(res => {
+    // });
   }
 
 }

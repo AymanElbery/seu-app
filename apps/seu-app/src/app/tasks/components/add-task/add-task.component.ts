@@ -9,6 +9,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { DatePipe } from '@angular/common';
+import * as moment from 'moment'
 
 @Component({
   selector: 'app-add-task',
@@ -29,18 +31,18 @@ export class AddTaskComponent implements OnInit {
   id: number;
   private sub: any;
   constructor(private route: ActivatedRoute, private toastr: AppToasterService, private taskservice: TasksManagementService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
-    this.AddReqForm = fb.group({
-      //'requestType': [this.id],
+    this.AddReqForm = fb.group({      
       'title': ['', [Validators.required]],
       'description': [''],
       'assignedTo': ['', [Validators.required]],
-      'viewers': [[]],
+      'taskViewers': [[]],
       'status': ['1'],
       'priority': [''],
       'type': [''],
       'requiredProcedures': [''],
       'startDate': [''],
       'endDate': [''],
+      'file':[''],
       'notes': ['']
 
     });
@@ -48,20 +50,32 @@ export class AddTaskComponent implements OnInit {
 
   onFormSubmit(event) {
     this.submitted = true;
-    //this.isLoading = true;
+    this.isLoading = true;
+    
     const submitdatavalue = (this.AddReqForm.value);
+
+    this.AddReqForm.controls['startDate'].setValue((moment(submitdatavalue.startDate,"YYYY-MM-DD").format("DD-MM-YYYY")));
+    this.AddReqForm.controls['endDate'].setValue(moment(submitdatavalue.endDate,"YYYY-MM-DD").format("DD-MM-YYYY"));    
+
+    const submitdatavalueadeddate=(this.AddReqForm.value);    
+    submitdatavalueadeddate.taskViewers  = submitdatavalueadeddate.taskViewers.map(vid=>{return {viewerEmpId:vid}})
+
+    console.log("data",submitdatavalueadeddate);
+
     if (this.AddReqForm.invalid) {
       return;
     }
 
-    this.taskservice.AddTasksdata(submitdatavalue).subscribe(addedtask => {
-      if (!addedtask['saveTask']) {
-        var error = (addedtask as any).data["errorMassege"]
-        this.toastr.push([{ type: 'error', 'body': error }]);
+    this.taskservice.AddTasksdata(submitdatavalueadeddate).subscribe(addedtask => {
+    if (addedtask['saveTask']==true) {
+        
+        this.toastr.push([{ type: 'error', 'body': "error"}]);
+        
       } else {
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
-        //this.isLoading = false;
+        this.isLoading = false;
         //navigate
+        this.router.navigate(['/tasks/assignedtasks'])
 
       }
     }

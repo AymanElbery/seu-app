@@ -1,3 +1,79 @@
-<p>
-  add-comment works!
-</p>
+
+<div class="main-content">
+
+  <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
+  <!-- <mat-dialog-content> -->
+  <div class="modal-header">
+    <h4 class="modal-title">{{"tasks.AddComment" | translate}}</h4>
+    <button type="button" class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
+  </div>
+
+  <section class="dashboard-wrap" style="margin-top: 30px;">
+    <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
+      <div class="modal-body">
+
+       
+        <div class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"tasks.assignedTo"|translate}} </h6>              
+              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId" [ngClass]="{ 'is-invalid': submitted && f.assignedTo.errors }"
+                formControlName="assignTo">
+              </ng-select>
+
+            </div>
+          </div>
+        </div>
+        <div class="row ser-block">
+       <div class=" col-md-12 col-sm-12">
+          <div class="state">
+            <h6>{{"tasks.status"|translate}} </h6>
+            <select class="form-control" formControlName="taskStatus"
+              [ngClass]="{ 'is-invalid': submitted && f.taskStatus.errors }">
+              <option [ngValue]="undefined" selected>{{"tasks.status" | translate}}</option>
+              <option *ngFor="let statusdat of ddltaskstatus" [selected]="selectvactype == statusdat.statusCode"
+                value={{statusdat.statusCode}}>{{statusdat.statusDesc}} </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row ser-block">
+        <div class=" col-md-12 col-sm-12">
+          <div class="state">
+            <h6>{{"wafi.attachment"|translate}} </h6>
+            <div class="custom-file">
+              <input class="custom-file-input" name="attachment" id="file" type="file" accept="*/*"
+                (change)="handleFileInput($event)" />
+              <label for="file" class="custom-file-label ">
+              </label>
+            </div>
+              </div>
+        </div>
+      </div>
+
+      <div class="row ser-block">
+        <div class=" col-md-12 col-sm-12">
+          <div class="state">
+            <h6>{{"tasks.comments"|translate}} </h6>
+            <textarea formControlName="commentText" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.commentText.errors }"></textarea>
+          </div>
+        </div>
+      </div>
+      
+        <div>
+          <div class=" col-md-6 col-sm-6">
+            <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+              <button type="submit" class="btn" style="color: #fff;margin-top: 30px !important;"><i
+                  class="fa fa-database"></i> {{"tasks.Submit" | translate}}</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </section>
+<!-- </mat-dialog-content> -->
+
+</div>

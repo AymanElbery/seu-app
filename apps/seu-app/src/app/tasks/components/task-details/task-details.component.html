@@ -1,12 +1,18 @@
 <div class="main-content">
   <service-header title='{{"tasks.TaskDetails" | translate}}'></service-header>
   <seu-loader [isLoading]="loading"></seu-loader>
+  
   <div class="widget" *ngIf="!loading">
+  
     <div class="widget-header">
       <h3 class="widget-title">
         {{task.title}}
+        <button type="button" class="btn btn-primary" (click)="addcomment()">
+          {{"tasks.AddComment"|translate}} <i class="ik ik-plus"></i>
+        </button>
       </h3>
     </div>
+
     <div class="table-responsive">
       <table class="table table-striped table-bordered">
         <tr>
