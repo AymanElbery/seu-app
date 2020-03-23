@@ -1,0 +1,98 @@
+<div class="main-content">
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+
+  <div  class="modal-header">
+    <h4 class="modal-title">{{"wafi.AddNewRequest" | translate}}</h4>  
+  
+  </div>
+
+  <p style="font-size: 16px; font-weight: bold;margin:4px 4px 0 4px;">
+     {{"wafi.deductionregularleave27" | translate}} 
+  </p>
+<section class="dashboard-wrap mtb-40" style="margin-top: 30px;">
+  <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
+
+
+    <div class="row ser-block">
+      <div class=" col-md-12 col-sm-12">
+        <div class="state">
+          <h6>{{"wafi.date"|translate}} </h6>
+          <select      formControlName="beginDay"  [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }" >  
+            <option [ngValue]="undefined" selected>{{"wafi.beginday" | translate}}</option> 
+            <option *ngFor="let day of ddlday"    value={{day.value}}>{{day.label}} </option>  
+        </select>  
+        <select     formControlName="beginMonth"    [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }"> 
+          <option [ngValue]="undefined" selected>{{"wafi.beginmonth" | translate}}</option>  
+          <option *ngFor="let month of ddlmonth"  value={{month.value}}>{{month.label}} </option>  
+      </select>
+      <select     formControlName="beginYear"     [ngClass]="{ 'is-invalid': submitted && f.beginYear.errors }" >  
+        <option [ngValue]="undefined" selected>{{"wafi.beginyear" | translate}}</option> 
+        <option *ngFor="let year of ddlyear"  [selected]="selectvactype == year.value"  value={{year.value}}>{{year.label}} </option>  
+    </select>  
+            </div>
+      </div></div>
+      <div class="row ser-block">
+   
+      <div class=" col-md-6 col-sm-6">
+        <div class="state">
+          <h6>{{"wafi.leaveDeductionPeriod"|translate}} </h6>
+          <input type="text"  class="form-control select"  formControlName="leaveDeductionPeriod" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.leaveDeductionPeriod.errors }"/>
+              
+        </div>
+        
+      </div>
+    
+  </div>
+
+  <div class="row ser-block">
+    <div class=" col-md-8 col-sm-8">
+      <div class="state">
+        <h6>{{"wafi.notes"|translate}} </h6>
+        <textarea class="form-control" cols="2" rows="3"  formControlName="notes"  ></textarea>
+ 
+          </div>
+    </div>
+  </div>
+    <div class="row ser-block">
+ 
+    <div class=" col-md-8 col-sm-8">
+      <div class="state">
+        <h6>{{"wafi.attachment"|translate}} </h6>
+        <!-- <label for="file">Choose File</label>
+        <input type="file"
+               id="file"
+               (change)="handleFileInput($event)">       -->
+               
+               
+               <div class="custom-file">
+                <input class="custom-file-input" name="attachment" id="file" type="file" accept="*/*"
+                  (change)="handleFileInput($event)" />
+                <label for="file" class="custom-file-label ">
+                </label>
+              </div>
+
+      </div>
+      
+    </div>
+  
+</div>
+
+<div class="row ser-block">
+  <div class=" col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4">
+    <div class="state">
+     
+      <div class="form-group  prin" style="color: #fff;margin-top: 30px;">
+        <button type="submit" class="btn"><i class="fa fa-database"></i>  {{"wafi.Submit" | translate}}</button>
+      </div>
+
+        </div>
+  </div>
+
+</div>
+
+ </form>
+</section>
+
+
+</div>

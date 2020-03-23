@@ -34,14 +34,14 @@ export class PersonalinfoComponent implements OnInit,OnDestroy {
     // this.empservice.getِEmpInfo().then(
     //   res => {
     //     this.empInfo = (res as any).data;
-    //     console.log("emp info",this.empInfo)
+    //     //console.log("emp info",this.empInfo)
     //     this.isLoading = false;
     //   }
     // );
     this.isLoading = true
     this.subscription = this.empservice.getdataEmployees().subscribe(empdata => {
      if (empdata) {
-       console.log("employee data",empdata);
+       //console.log("employee data",empdata);
        this.empInfo = (empdata as any).data;
        //this.messages.push(empdata[0]);
        this.isLoading = false;      

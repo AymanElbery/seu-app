@@ -1,0 +1,70 @@
+<div class="main-content">
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+
+  <div  class="modal-header">
+    <h4 class="modal-title">{{"wafi.AddNewRequest" | translate}}</h4>  
+  
+  </div>
+
+  <p style="font-size: 16px; font-weight: bold;margin:4px 4px 0 4px;">
+     {{"wafi.evacuateparty" | translate}} 
+  </p>
+<section class="dashboard-wrap mtb-40" style="margin-top: 30px;">
+  <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
+  
+
+    <div class="row ser-block">
+      <div class=" col-md-6 col-sm-6">
+        <div class="state">
+          <h6>{{"wafi.DisclaimerReason"|translate}} </h6>
+          <select   class="form-control select"   formControlName="disclaimerReason"  [ngClass]="{ 'is-invalid': submitted && f.disclaimerReason.errors }" >  
+            <option [ngValue]="undefined" selected>{{"wafi.DisclaimerReason" | translate}}</option> 
+            <option *ngFor="let disclaim of disclaimerReasonItems"    value={{disclaim.value}}>{{disclaim.label}} </option>  
+        </select>  
+            </div>
+      </div>
+    </div>
+    
+    <div class="row ser-block">
+      <div class=" col-md-8 col-sm-8">
+        <div class="state">
+          <h6>{{"wafi.notes"|translate}} </h6>
+          <textarea class="form-control" cols="2" rows="3" formControlName="notes" ></textarea>             
+        </div>
+        
+      </div>
+    
+  </div>
+
+
+  <div class="row ser-block">
+    <div class=" col-md-8 col-sm-8">
+      <div class="state">
+        <h6>{{"wafi.attachment"|translate}} </h6>
+        <div class="custom-file">
+          <input class="custom-file-input" name="attachment" id="file" type="file" accept="*/*"
+            (change)="handleFileInput($event)" />
+          <label for="file" class="custom-file-label ">
+          </label>
+        </div>
+          </div>
+    </div>
+  </div>
+  <div class="row ser-block">
+    <div class=" col-md-6 col-sm-6">
+      <div class="state prin" style="margin-top: 20px !important;">
+       
+        <button type="submit" class="btn"><i class="fa fa-database"></i> {{"wafi.Submit" | translate}}</button>           
+      </div>
+      
+    </div>
+  
+</div>
+
+
+ </form>
+</section>
+
+
+</div>

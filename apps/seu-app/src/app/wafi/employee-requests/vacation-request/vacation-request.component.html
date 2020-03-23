@@ -1,0 +1,188 @@
+<div class="main-content">
+
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+
+  <div class="modal-header">
+    <h4 class="modal-title">{{"wafi.vacationtype" | translate}} : {{(ddltruefalse ? "wafi.VacationRequest" : "wafi.requestseprationvacationdays") | translate}} </h4>
+
+  </div>
+
+  <!-- <p style="font-size: 16px; font-weight: bold;margin:4px 4px 0 4px;">
+  </p> -->
+  <section class="dashboard-wrap mtb-40" style="margin-top: 30px;">
+    <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
+
+
+      <div class="row ser-block">
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.vacationtype"|translate}} </h6>
+
+            <div *ngIf="ddltruefalse==true">
+              <select class="form-control" formControlName="vacation" (ngModelChange)="getvacationbal($event)"
+                [(ngModel)]="vacation" [ngClass]="{ 'is-invalid': submitted && f.vacation.errors }">
+                <option [ngValue]="undefined" selected>{{"wafi.vacationtype" | translate}}</option>
+                <option *ngFor="let vactype of vacationreqtype" value={{vactype.value}}>{{vactype.label}} </option>
+              </select>
+            </div>
+            <div *ngIf="ddltruefalse==false">
+              <span>{{"wafi.normal" | translate}}</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.VacationBalance"|translate}} </h6>
+
+            <p style="font-size: 16px; font-weight: bold;">
+              {{"wafi.VacationBalance" | translate}} :<span style="color:#F9982F;"> {{ vacationsbal}} </span>
+              {{"wafi.day" | translate}}
+            </p>
+
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row ser-block">
+
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.date"|translate}} </h6>
+            <select formControlName="beginDay" 
+              [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }">
+              <option [ngValue]="undefined" selected>{{"wafi.beginday" | translate}}</option>
+              <option *ngFor="let day of ddlday" value={{day.value}}>{{day.label}} </option>
+            </select>
+            <select formControlName="beginMonth" 
+              [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
+              <option [ngValue]="undefined" selected>{{"wafi.beginmonth" | translate}}</option>
+              <option *ngFor="let month of ddlmonth" value={{month.value}}>{{month.label}} </option>
+            </select>
+            <select formControlName="beginYear"
+                          [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
+              <option [ngValue]="undefined" selected>{{"wafi.beginyear" | translate}}</option>
+              <option *ngFor="let year of ddlyear" [selected]="selectvactype == year.value" value={{year.value}}>
+                {{year.label}} </option>
+            </select>
+          </div>
+        </div>
+
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.timePeriod"|translate}} </h6>
+            <input type="text" class="form-control" formControlName="timePeriod" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.timePeriod.errors }" />
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row ser-block">
+
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.compensation"|translate}} </h6>
+            <select class="form-control" formControlName="compensationVal" >
+              <option [ngValue]="undefined" selected>{{"wafi.compensation" | translate}}</option>
+              <option *ngFor="let comperk of compErkabItems" [selected]="selectvactype == comperk.value"
+                value={{comperk.value}}>{{comperk.label}} </option>
+            </select>
+          </div>
+        </div>
+
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.altEemployee"|translate}} </h6>
+            <select class="form-control" formControlName="altEemployee">
+              <option [ngValue]="undefined" selected>{{"wafi.altEemployee" | translate}}</option>
+              <option *ngFor="let altemp of altEmpItems" value={{altemp.value}}>{{altemp.label}} </option>
+            </select>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+      <div class="row ser-block">
+
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.tocountry"|translate}} </h6>
+            <select class="form-control" formControlName="toCountryNew"  (change)="selectcityFF()">
+              <option [ngValue]="undefined" selected>{{"wafi.tocountry" | translate}}</option>
+              <option *ngFor="let contitem of countryNewItems" value={{contitem.value}}>{{contitem.label}} </option>
+            </select>
+          </div>
+        </div>
+
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.citycountry"|translate}} </h6>
+            <select class="form-control" formControlName="toCityNew" >
+              <option [ngValue]="undefined" selected>{{"wafi.citycountry" | translate}}</option>
+              <option *ngFor="let cityitms of citydata" [selected]="selectvactype == cityitms.value"
+                value={{cityitms.value}}>{{cityitms.label}} </option>
+            </select>
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+
+      <div class="row ser-block">
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.vacationLoc"|translate}} </h6>
+            <input type="text" class="form-control" formControlName="vacationLoc" class="form-control" />
+
+          </div>
+        </div>
+
+
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.phone"|translate}} </h6>
+            <input type="NumbersOnly" class="form-control" NumbersOnly formControlName="phone" 
+              class="form-control" />
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row ser-block">
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"wafi.notes"|translate}} </h6>
+            <textarea class="form-control" cols="2" rows="3" formControlName="notes" ></textarea>
+
+
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class=" col-md-6 col-sm-6">
+          <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+            <button type="submit" class="btn" style="color: #fff;margin-top: 30px !important;"><i
+                class="fa fa-database"></i> {{"wafi.Submit" | translate}}</button>
+          </div>
+        </div>
+
+      </div>
+
+
+    </form>
+  </section>
+
+
+</div>

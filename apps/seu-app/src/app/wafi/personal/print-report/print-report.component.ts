@@ -43,7 +43,7 @@ export class PrintReportComponent implements OnInit {
     //   this.subscription = this.empservice.getprintreport("hr_rep488",this.inputValue).subscribe(rpt => {
     //    if (rpt) {       
     //      this.printreport = (rpt as any).data;
-    //      //console.log("emp printreport",this.printreport);      
+    //      ////console.log("emp printreport",this.printreport);      
     //      this.isLoading = false;      
     //    } else {       
     //      //this.messages = [];
@@ -53,7 +53,7 @@ export class PrintReportComponent implements OnInit {
   }
 
   getprintreportdownlaod(rptname: any) {
-    //console.log("report name",rptname);
+    ////console.log("report name",rptname);
     this.isLoading = true
     this.subscriptiondownlaod = this.empservice.getprintreport(rptname, this.inputValue == null ? "" : this.inputValue).subscribe(prtrpt => {
       if (prtrpt) {
@@ -79,7 +79,7 @@ export class PrintReportComponent implements OnInit {
     this.subscriptiondownlaod_housing = this.empservice.getprintreport_housing(rptname).subscribe(prtrpthouse => {
       if (prtrpthouse) {
         this.printreportddwonld_house = (prtrpthouse as any).data;
-        // console.log("report data",this.printreportddwonld_house);
+        // //console.log("report data",this.printreportddwonld_house);
         window.open(this.printreportddwonld_house, '_blank');
         this.isLoading = false
       } else {
