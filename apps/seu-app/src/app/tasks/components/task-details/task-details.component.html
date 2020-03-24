@@ -77,15 +77,20 @@
           </td>
         </tr>
         <tr>
-          <th colspan="2">{{"tasks.comments"| translate}}</th>
+          <th colspan="2" style="color: #FF7800;">{{"tasks.comments"| translate}}</th>
         </tr>
         <tr *ngFor="let comment of task.taskComments">
           <td colspan="2">
+            <ng-container>
             <p>{{comment.comment}}</p>
-            <p><strong>{{"tasks.file" | translate}}</strong>{{comment.file}}</p>
-            <p><strong>{{"tasks.commentDate" | translate}}</strong>{{comment.createdAt}}</p>
-            <p><strong>{{"tasks.status" | translate}}</strong>{{comment.createdAt}}</p>
-            <p><strong>{{"tasks.assignedTo" | translate}}</strong>{{comment.createdAt}}</p>
+            <p *ngIf="comment.commentText"><strong>{{"tasks.commentText" | translate}}</strong>:           {{comment.commentText}}</p>
+            <p *ngIf="comment.file"><strong>{{"tasks.file" | translate}}</strong>{{comment.file}}:    
+                         <a class="prin" style="color:blue ;" href="{{comment.file}}" target="_blank" >Download File</a>
+            </p>
+            <p *ngIf="comment.createdAt"><strong>{{"tasks.commentDate" | translate}}</strong>:           {{comment.createdAt}}</p>
+            <p *ngIf="comment.taskStatus"><strong>{{"tasks.status" | translate}}</strong>:               {{comment.taskStatus}}</p>
+            <p *ngIf="comment.assignTo"><strong>{{"tasks.assignedTo" | translate}}</strong>:             {{comment.assignTo}}</p>
+          </ng-container>
           </td>
         </tr>
       </table>

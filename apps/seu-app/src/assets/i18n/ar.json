@@ -930,11 +930,17 @@
         "TaskDetails": "تفاصيل المهمة",
         "viewers": "المتابعين",
         "ID": "رقم",
+<<<<<<< HEAD
+        "commentText": "Comment Text",
+        "file": "file",
+        "commentDate": "Comment Date"
+=======
         "createdTasks": "مهامي",
         "resolve": "انجاز",
         "inprogress": "بدء",
         "assign": "إسناد",
         "close": "إغلاق",
         "reject": "رفض"
+>>>>>>> 30f9732c70e0b60652e1c0f0aa5a53fe716cf8d8
     }
 }
