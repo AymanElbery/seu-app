@@ -14,7 +14,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/land')">
                    <!-- <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label> -->
                     <!-- <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label> -->
-                   <Image col="1"  class="" src="~/images/home.png"></Image>
+                   <Image col="1"  class="home-img" src="~/images/home.png"></Image>
 
                 </GridLayout>                
         <RadListView width="100%"  [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">
