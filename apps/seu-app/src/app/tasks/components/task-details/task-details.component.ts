@@ -8,6 +8,7 @@ import { Observable, Subscription } from 'rxjs';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddTaskComponent } from '../add-task/add-task.component';
 import { AddCommentComponent } from '../add-comment/add-comment.component';
+import { UserService } from 'src/app/account/services/user.service';
 
 
 @Component({
@@ -22,11 +23,13 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
   loading = false;
   ddl;
   ddlemplist;
-
+  LoggedINID;
   constructor(private route: ActivatedRoute,
+    private user: UserService,
     private toastr: AppToasterService, private taskservice: TasksManagementService, private translate: TranslateService, private dialog: MatDialog) { }
 
   ngOnInit() {
+    this.LoggedINID = this.user.userData.id;
     this.taskID = this.route.snapshot.paramMap.get("tid");
     this.getTaskDetails();
     this.ddl = this.taskservice.ddlsubject.subscribe(() => {
@@ -50,13 +53,13 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
     }
   }
 
-  openDialog(type = '', code = '',title='') {
+  openDialog(type = '', code = '', title = '') {
     let taskID = this.taskID;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = "50%";
-    dialogConfig.data = { taskID, type, code,title };
+    dialogConfig.data = { taskID, type, code, title };
     this.dialog.open(AddCommentComponent, dialogConfig).afterClosed().subscribe(res => {
       if (this.taskservice.dialogCloseRefresh) {
         this.taskservice.dialogCloseRefresh = false;
@@ -86,7 +89,6 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
         this.task = this.taskservice.setTaskDescs(response['data']);
         this.updateTaskViewers();
       }
-      console.log(this.task);
       this.loading = false;
     }, err => {
       this.toastr.tryagain();

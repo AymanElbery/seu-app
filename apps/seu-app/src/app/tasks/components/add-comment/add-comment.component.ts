@@ -75,7 +75,6 @@ export class AddCommentComponent implements OnInit {
   defineDDLList() {
     if (this.taskservice.ddl) {
       this.ddltaskstatus = this.taskservice.ddl["TaskStatusList"];
-
     }
 
   }
@@ -114,7 +113,7 @@ export class AddCommentComponent implements OnInit {
       delete submitdatavalue['file'];
     }
     this.taskservice.AddTaskscommnets(submitdatavalue).subscribe(addcmt => {
-      if (!addcmt['saveTaskComment']) {
+      if (!addcmt['data']['saveTaskComment']) {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);
       } else {
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('general.request_saved') }]);

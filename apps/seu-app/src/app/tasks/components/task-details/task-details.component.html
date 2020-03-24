@@ -10,20 +10,22 @@
         <button type="button" class="btn btn-primary" (click)="openDialog('comment','','tasks.AddComment')">
           {{"tasks.AddComment"|translate}} <i class="ik ik-plus"></i>
         </button>&nbsp;
-        <button type="button" class="btn btn-primary" (click)="openDialog('status',5,'tasks.resolve')">
-          {{"tasks.resolve"|translate}} <i class="ik ik-plus"></i>
-        </button>&nbsp;
-        <button type="button" class="btn btn-primary" (click)="openDialog('status',6,'tasks.inprogress')">
+        
+        <button type="button" *ngIf="LoggedINID == task['assignedTo']" class="btn btn-primary" (click)="openDialog('status',6,'tasks.inprogress')">
           {{"tasks.inprogress"|translate}} <i class="ik ik-plus"></i>
         </button>&nbsp;
-        <button type="button" class="btn btn-primary" (click)="openDialog('status',2,'tasks.assign')">
+        <button *ngIf="LoggedINID == task['assignedTo']" type="button" class="btn btn-primary"
+          (click)="openDialog('status',5,'tasks.resolve')">
+          {{"tasks.resolve"|translate}} <i class="ik ik-plus"></i>
+        </button>&nbsp;
+        <button type="button" *ngIf="LoggedINID == task['assignedTo']" class="btn btn-primary" (click)="openDialog('status',4,'tasks.reject')">
+          {{"tasks.reject"|translate}} <i class="ik ik-plus"></i>
+        </button>&nbsp;
+        <button type="button" *ngIf="LoggedINID == task['assignedTo'] || LoggedINID == task['createdBy']" class="btn btn-primary" (click)="openDialog('status',2,'tasks.assign')">
           {{"tasks.assign"|translate}} <i class="ik ik-plus"></i>
         </button>
-        <button type="button" class="btn btn-primary" (click)="openDialog('status',3,'tasks.close')">
+        <button type="button" *ngIf="LoggedINID == task['createdBy']" class="btn btn-primary" (click)="openDialog('status',3,'tasks.close')">
           {{"tasks.close"|translate}} <i class="ik ik-plus"></i>
-        </button>
-        <button type="button" class="btn btn-primary" (click)="openDialog('status',4,'tasks.reject')">
-          {{"tasks.reject"|translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>
     </div>
