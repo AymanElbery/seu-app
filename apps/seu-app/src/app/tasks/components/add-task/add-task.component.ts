@@ -26,7 +26,7 @@ export class AddTaskComponent implements OnInit {
   ddlpriority: any;
   ddltype: any;
   ddlemplist: any;
-  isLoading = true;
+  isLoading = false;
   subscriptions;
   id: number;
   private sub: any;
@@ -44,7 +44,6 @@ export class AddTaskComponent implements OnInit {
       'endDate': [''],
       'file': [''],
       'notes': ['']
-
     });
   }
 
@@ -67,15 +66,13 @@ export class AddTaskComponent implements OnInit {
     this.isLoading = true;
     this.taskservice.AddTasksdata(submitdatavalueadeddate).subscribe(addedtask => {
       if (addedtask['data']['saveTask'] == true) {
-        this.router.navigate(['/tasks/assignedtasks'])
-        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('general.request_saved') }]);
+        this.router.navigate(['/tasks/createdTasks'])
       } else {
-        this.toastr.push([{ type: 'error', 'body': "error" }]);
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);
       }
       this.isLoading = false;
-    }
-
-    );
+    });
   }
 
   ngOnInit() {
@@ -109,6 +106,16 @@ export class AddTaskComponent implements OnInit {
     this.subscriptionDDLReqtype = this.taskservice.ddlsubject.subscribe(reqtype => {
       this.defineDDLList();
     });
+  }
+  handleFileInput(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = this._handleReaderLoaded.bind(this);
+    reader.readAsDataURL(file);
+  }
+  _handleReaderLoaded(e) {
+    const reader = e.target;
+    this.AddReqForm.controls['file'].setValue(reader.result);
   }
   getDDLEmplist() {
     this.ddlemplist = this.taskservice.empList;

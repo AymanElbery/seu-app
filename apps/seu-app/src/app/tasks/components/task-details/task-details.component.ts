@@ -41,12 +41,29 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
     this.ddlemplist.unsubscribe();
   }
   updateTaskViewers() {
-    this.task.taskViewers = this.task.taskViewers.map(view => {
-      view['viewerEmpName'] = this.taskservice.getEmpByID(view['viewerEmpId']);
-      return view;
-    });
+    if (this.task) {
+      this.task.assignedToName = this.taskservice.getEmpByID(this.task['assignedTo']);
+      this.task.taskViewers = this.task.taskViewers.map(view => {
+        view['viewerEmpName'] = this.taskservice.getEmpByID(view['viewerEmpId']);
+        return view;
+      });
+    }
   }
 
+  openDialog(type = '', code = '',title='') {
+    let taskID = this.taskID;
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = "50%";
+    dialogConfig.data = { taskID, type, code,title };
+    this.dialog.open(AddCommentComponent, dialogConfig).afterClosed().subscribe(res => {
+      if (this.taskservice.dialogCloseRefresh) {
+        this.taskservice.dialogCloseRefresh = false;
+        this.getTaskDetails();
+      }
+    });
+  }
   addcomment() {
     let taskID = this.taskID;
     const dialogConfig = new MatDialogConfig();
@@ -55,6 +72,10 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
     dialogConfig.width = "50%";
     dialogConfig.data = { taskID };
     this.dialog.open(AddCommentComponent, dialogConfig).afterClosed().subscribe(res => {
+      if (this.taskservice.dialogCloseRefresh) {
+        this.taskservice.dialogCloseRefresh = false;
+        this.getTaskDetails();
+      }
     });
   }
 
