@@ -282,7 +282,7 @@ export class AppComponent implements OnInit {
         'route':'/other/absencequery'
     },
     {
-        'subTitle':'تغير مقرر',
+        'subTitle':'تغير تخصص',
         'route':'/other/changecourse'
     },   {
         'subTitle':'تغير فرع',

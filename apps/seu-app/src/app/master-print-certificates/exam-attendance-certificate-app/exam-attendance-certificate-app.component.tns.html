@@ -35,17 +35,13 @@ androidSelectedTabHighlightColor="#010447">
             
             <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Term_Exam_With_Schedule.labels.title"></Label>
 
-             <Label row="1" column="1" text="{{reqData.Term_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
-             <Label row="1" column="0" text='{{reqData.Term_Exam_With_Schedule.values.date}}' textWrap="true"
-             style="text-align: right;"
-             ></Label>
+             <Label row="1" column="1" class="ysPBox" text="{{reqData.Term_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" class="ysPBox2" text='{{reqData.Term_Exam_With_Schedule.values.date}}' textWrap="true"></Label>
 
-             <Label row="2" column="1" text="{{reqData.Term_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
-             <Label row="2" column="0" text="{{reqData.Term_Exam_With_Schedule.values.std_id}}" textWrap="true"
-             style="text-align: right;"
-             ></Label>
+             <Label row="2" column="1" class="ysPBox" text="{{reqData.Term_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
+             <Label row="2" column="0" class="ysPBox2" text="{{reqData.Term_Exam_With_Schedule.values.std_id}}" textWrap="true"></Label>
 
-             <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2">
+             <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2" class="paragraph">
 
             <Label  text="{{reqData.Term_Exam_With_Schedule.labels.txt1}}" textWrap="true"></Label>
             <Label text="{{reqData.Term_Exam_With_Schedule.values.student_name}}" textWrap="true"></Label>
@@ -77,9 +73,8 @@ androidSelectedTabHighlightColor="#010447">
         </GridLayout>
     </StackLayout>
 
-    <StackLayout>
 
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" >
+        <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
                 <label text='{{"general.crn" | translate}}'></label>
                 <label text='{{"general.request.req_cname" | translate}}'></label>
@@ -88,18 +83,16 @@ androidSelectedTabHighlightColor="#010447">
             </FlexboxLayout>
 
             <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.Term_Exam_With_Schedule.Term_Schedule" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === reqData.Term_Exam_With_Schedule.Term_Schedule-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRSE_TITLE"  ></Label>
-                <Label [text]="item.CRSE_DAY" ></Label>
-                <Label [text]="item.CRSE_TIME" ></Label>
+              class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.Term_Exam_With_Schedule.Term_Schedule-1 ? '0' : '1' }">
+                <Label [text]="item.CRN" style="width: 20%;text-align: center;" textWrap="true"></Label>
+                <Label [text]="item.CRSE_TITLE" style="width: 25%;text-align: center;" textWrap="true" ></Label>
+                <Label [text]="item.CRSE_DAY" style="width: 30%;text-align: center;" textWrap="true"></Label>
+                <Label [text]="item.CRSE_TIME" style="width: 25%;text-align: center;" textWrap="true"></Label>
             </FlexboxLayout>
         </FlexboxLayout>
-    </StackLayout>
     <StackLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading">
+        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading" class="paragraph">
             <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
             <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
             <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
@@ -121,22 +114,21 @@ androidSelectedTabHighlightColor="#010447">
 	<StackLayout *tabItem='{title: secondTabTitle}'>
 
         
-
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Term_Exam_Without_Schedule && reqData.Term_Exam_Without_Schedule.labels">
+        <ScrollView height="100%" *ngIf="reqData.Term_Exam_Without_Schedule && reqData.Term_Exam_Without_Schedule.labels">
+            <StackLayout>
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150">
             
-            <Label row="0" colSpan="2"  class="ysHBox"  text='{{"reqData.Term_Exam_Without_Schedule.labels.title"}}'></Label>
+            <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Term_Exam_Without_Schedule.labels.title"></Label>
 
-             <Label row="1" column="1" text="{{reqData.Term_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
-             <Label row="1" column="0" text='{{reqData.Term_Exam_Without_Schedule.values.date}}' textWrap="true"
-             style="text-align: right;"
+             <Label row="1" column="1" class="ysPBox" text="{{reqData.Term_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" class="ysPBox2" text='{{reqData.Term_Exam_Without_Schedule.values.date}}' textWrap="true"
              ></Label>
 
-             <Label row="2" column="1" text="{{reqData.Term_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
-             <Label row="2" column="0" text="{{reqData.Term_Exam_Without_Schedule.values.std_id}}" textWrap="true"
-             style="text-align: right;"
+             <Label row="2" column="1" class="ysPBox" text="{{reqData.Term_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
+             <Label row="2" column="0" class="ysPBox2" text="{{reqData.Term_Exam_Without_Schedule.values.std_id}}" textWrap="true"
              ></Label>
 
-             <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2">
+             <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2" class="paragraph">
 
             <Label text="{{reqData.Term_Exam_Without_Schedule.labels.txt1}}" textWrap="true"></Label>
             <Label text="{{reqData.Term_Exam_Without_Schedule.values.student_name}}" textWrap="true"></Label>
@@ -176,7 +168,8 @@ androidSelectedTabHighlightColor="#010447">
             <Button text="{{'general.ar_print'|translate}}" class="print-btn"  (tap)="onPrint('term')" ></Button>
             <Button text="{{'general.en_print'|translate}}" class="print-btn"  (tap)="onPrint('termEn')"></Button>
         </FlexboxLayout>
-
+</StackLayout>
+</ScrollView>
     </StackLayout>
     
 	<StackLayout *tabItem='{title: thirdTabTitle}'>
@@ -188,17 +181,15 @@ androidSelectedTabHighlightColor="#010447">
             
             <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_With_Schedule.labels.title"></Label>
 
-             <Label row="1" column="1" text="{{reqData.Final_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
-             <Label row="1" column="0" text='{{reqData.Final_Exam_With_Schedule.values.date}}' textWrap="true"
-             style="text-align: right;"
+             <Label row="1" column="1" class="ysPBox" text="{{reqData.Final_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" class="ysPBox2" text='{{reqData.Final_Exam_With_Schedule.values.date}}' textWrap="true"
              ></Label>
 
-             <Label row="2" column="1" text="{{reqData.Final_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
-             <Label row="2" column="0" text="{{reqData.Final_Exam_With_Schedule.values.std_id}}" textWrap="true"
-             style="text-align: right;"
+             <Label row="2" column="1" class="ysPBox" text="{{reqData.Final_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
+             <Label row="2" column="0" class="ysPBox2" text="{{reqData.Final_Exam_With_Schedule.values.std_id}}" textWrap="true"
              ></Label>
 
-         <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2">
+         <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2" class="paragraph">
             <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt1}}" textWrap="true"></Label>
             <Label text="{{reqData.Final_Exam_With_Schedule.values.student_name}}" textWrap="true"></Label>
 
@@ -227,9 +218,8 @@ androidSelectedTabHighlightColor="#010447">
         </GridLayout>
     </StackLayout>
 
-    <StackLayout>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw">  
                 <label text='{{"general.crn" | translate}}'></label>
                 <label text='{{"general.request.req_cname" | translate}}'></label>
                 <label text='{{"general.request.day" | translate}}'></label>
@@ -237,18 +227,17 @@ androidSelectedTabHighlightColor="#010447">
             </FlexboxLayout>
 
             <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.Final_Exam_With_Schedule.Final_Schedule" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === reqData.Final_Exam_With_Schedule.Final_Schedule-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRSE_TITLE"  ></Label>
-                <Label [text]="item.CRSE_DAY" ></Label>
-                <Label [text]="item.CRSE_TIME" ></Label>
+            alignContent="center" class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.Final_Exam_With_Schedule.Final_Schedule-1 ? '0' : '1' }">
+                <Label [text]="item.CRN" style="width: 20%;text-align: center;" textWrap="true"></Label>
+                <Label [text]="item.CRSE_TITLE" style="width: 25%;text-align: center;" textWrap="true" ></Label>
+                <Label [text]="item.CRSE_DAY" style="width: 30%;text-align: center;" textWrap="true"></Label>
+                <Label [text]="item.CRSE_TIME" style="width: 25%;text-align: center;" textWrap="true"></Label>
             </FlexboxLayout>
         </FlexboxLayout>
-    </StackLayout>
-
+       
+       
     <StackLayout>
-        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && finalScheduleMsgs == 0">
+        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && finalScheduleMsgs == 0" class="paragraph">
             <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
             <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
             <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
@@ -270,21 +259,20 @@ androidSelectedTabHighlightColor="#010447">
     <StackLayout *tabItem='{title: forthTabTitle}'>
 
        
-
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.labels">
+        <ScrollView height="100%" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.labels">
+            <StackLayout>
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150" >
             
-            <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_With_Schedule.labels.title"></Label>
+            <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_Without_Schedule.labels.title"></Label>
 
-             <Label row="1" column="1" text="{{reqData.Final_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
-             <Label row="1" column="0" text='{{reqData.Final_Exam_Without_Schedule.values.date}}' textWrap="true"
-             style="text-align: right;"
+             <Label row="1" column="1" class="ysPBox" text="{{reqData.Final_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" class="ysPBox2" text='{{reqData.Final_Exam_Without_Schedule.values.date}}' textWrap="true"
              ></Label>
 
-             <Label row="2" column="1" text="{{reqData.Final_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
-            <Label row="2" column="0" text="{{reqData.Final_Exam_Without_Schedule.values.std_id}}" textWrap="true"
-            style="text-align: right;"
+             <Label row="2" column="1" class="ysPBox" text="{{reqData.Final_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
+            <Label row="2" column="0" class="ysPBox2" text="{{reqData.Final_Exam_Without_Schedule.values.std_id}}" textWrap="true"
             ></Label>
-            <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2">
+            <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2" class="paragraph">
 
             <Label  text="{{reqData.Final_Exam_Without_Schedule.labels.txt1}}" textWrap="true"></Label>
             <Label  text="{{reqData.Final_Exam_Without_Schedule.values.student_name}}" textWrap="true"></Label>
@@ -319,6 +307,8 @@ androidSelectedTabHighlightColor="#010447">
             <Button text="{{'general.ar_print'|translate}}" class="print-btn"  (tap)="onPrint('final')" ></Button>
             <Button text="{{'general.en_print'|translate}}" class="print-btn"  (tap)="onPrint('finalEn')"></Button>
         </FlexboxLayout>
+        </StackLayout>
+        </ScrollView>
 	</StackLayout>
 </TabView>
 
