@@ -30,7 +30,7 @@
             </ListView>
         </FlexboxLayout>
 
-        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels.length>0">
+        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels">
 
             <StackLayout>
                 <StackLayout>
@@ -97,12 +97,7 @@
                 <Label [text]="item.CRSE_TIME" ></Label>
             </FlexboxLayout>
         </FlexboxLayout>
-
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="arabicPrintTermWithSchedule()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()"></Button>
-        </FlexboxLayout>
-
+        
     </StackLayout>
 
     <StackLayout>
@@ -134,7 +129,7 @@
             </ListView>
         </FlexboxLayout>
 
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Term_Exam_Without_Schedule &&reqData.Term_Exam_Without_Schedule.labels.length>0">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Term_Exam_Without_Schedule &&reqData.Term_Exam_Without_Schedule.labels">
             
             <Label row="0" colSpan="2"  class="ysHBox"  text='{{"reqData.Term_Exam_Without_Schedule.labels.title"}}'></Label>
 
@@ -197,7 +192,7 @@
             </ListView>
         </FlexboxLayout>
 
-        <ScrollView height="100%" *ngIf="reqData.Final_Exam_With_Schedule &&reqData.Final_Exam_With_Schedule.labels.length>0">
+        <ScrollView height="100%" *ngIf="reqData.Final_Exam_With_Schedule &&reqData.Final_Exam_With_Schedule.labels">
             <StackLayout>
                 <StackLayout>
 
@@ -297,7 +292,7 @@
             </ListView>
         </FlexboxLayout>
        
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Final_Exam_Without_Schedule &&reqData.Final_Exam_Without_Schedule.labels.length>0">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Final_Exam_Without_Schedule &&reqData.Final_Exam_Without_Schedule.labels">
             
             <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_Without_Schedule.labels.title"></Label>
 
