@@ -89,8 +89,8 @@ export class TasksManagementService {
     return this.wafihttRequest.postRequest_obj('task/createTask', data);
   }
 
-  getTasksList() {
-    return this.wafihttRequest.postRequest_obj('task/getMyTasks', {});
+  getTasksList(url = 'getMyTasks') {
+    return this.wafihttRequest.postRequest_obj('task/' + url, {});
   }
 
   getDDLlist() {
@@ -106,7 +106,7 @@ export class TasksManagementService {
   }
 
   AddTaskscommnets(data) {
-   
+
     return this.wafihttRequest.postRequest_obj('task/createTaskComment', data);
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TasksManagementService } from '../../services/tasks-management.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -6,8 +6,8 @@ import { ActivatedRoute } from '@angular/router'
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import {AddTaskComponent} from '../add-task/add-task.component';
-import {AddCommentComponent} from '../add-comment/add-comment.component';
+import { AddTaskComponent } from '../add-task/add-task.component';
+import { AddCommentComponent } from '../add-comment/add-comment.component';
 
 
 @Component({
@@ -15,22 +15,40 @@ import {AddCommentComponent} from '../add-comment/add-comment.component';
   templateUrl: './task-details.component.html',
   styleUrls: ['./task-details.component.css']
 })
-export class TaskDetailsComponent implements OnInit {
+export class TaskDetailsComponent implements OnInit, OnDestroy {
 
   taskID;
   task;
   loading = false;
-  
+  ddl;
+  ddlemplist;
+
   constructor(private route: ActivatedRoute,
-    private toastr: AppToasterService, private taskservice: TasksManagementService, private translate: TranslateService,private dialog: MatDialog) { }
+    private toastr: AppToasterService, private taskservice: TasksManagementService, private translate: TranslateService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.taskID = this.route.snapshot.paramMap.get("tid");
     this.getTaskDetails();
+    this.ddl = this.taskservice.ddlsubject.subscribe(() => {
+      this.updateTaskViewers();
+    });
+    this.ddlemplist = this.taskservice.empListsubject.subscribe(() => {
+      this.updateTaskViewers();
+    });
+  }
+  ngOnDestroy() {
+    this.ddl.unsubscribe();
+    this.ddlemplist.unsubscribe();
+  }
+  updateTaskViewers() {
+    this.task.taskViewers = this.task.taskViewers.map(view => {
+      view['viewerEmpName'] = this.taskservice.getEmpByID(view['viewerEmpId']);
+      return view;
+    });
   }
 
-  addcomment() { 
-    let taskID=this.taskID;   
+  addcomment() {
+    let taskID = this.taskID;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
@@ -45,10 +63,7 @@ export class TaskDetailsComponent implements OnInit {
     this.taskservice.getTaskDetails(this.taskID).subscribe((response) => {
       if (response['statusCode'] == 200) {
         this.task = this.taskservice.setTaskDescs(response['data']);
-        this.task.taskViewers = this.task.taskViewers.map(view => {
-          view['viewerEmpName'] = this.taskservice.getEmpByID(view['viewerEmpId']);
-          return view;
-        });
+        this.updateTaskViewers();
       }
       console.log(this.task);
       this.loading = false;

@@ -31,7 +31,7 @@ export class AddTaskComponent implements OnInit {
   id: number;
   private sub: any;
   constructor(private route: ActivatedRoute, private toastr: AppToasterService, private taskservice: TasksManagementService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
-    this.AddReqForm = fb.group({      
+    this.AddReqForm = fb.group({
       'title': ['', [Validators.required]],
       'description': [''],
       'assignedTo': ['', [Validators.required]],
@@ -42,7 +42,7 @@ export class AddTaskComponent implements OnInit {
       'requiredProcedures': [''],
       'startDate': [''],
       'endDate': [''],
-      'file':[''],
+      'file': [''],
       'notes': ['']
 
     });
@@ -51,33 +51,28 @@ export class AddTaskComponent implements OnInit {
   onFormSubmit(event) {
     this.submitted = true;
     this.isLoading = true;
-    
+
     const submitdatavalue = (this.AddReqForm.value);
 
-    this.AddReqForm.controls['startDate'].setValue((moment(submitdatavalue.startDate,"YYYY-MM-DD").format("DD-MM-YYYY")));
-    this.AddReqForm.controls['endDate'].setValue(moment(submitdatavalue.endDate,"YYYY-MM-DD").format("DD-MM-YYYY"));    
+    this.AddReqForm.controls['startDate'].setValue((moment(submitdatavalue.startDate, "YYYY-MM-DD").format("DD-MM-YYYY")));
+    this.AddReqForm.controls['endDate'].setValue(moment(submitdatavalue.endDate, "YYYY-MM-DD").format("DD-MM-YYYY"));
 
-    const submitdatavalueadeddate=(this.AddReqForm.value);    
-    submitdatavalueadeddate.taskViewers  = submitdatavalueadeddate.taskViewers.map(vid=>{return {viewerEmpId:vid}})
+    const submitdatavalueadeddate = (this.AddReqForm.value);
+    submitdatavalueadeddate.taskViewers = submitdatavalueadeddate.taskViewers.map(vid => { return { viewerEmpId: vid } })
 
-    console.log("data",submitdatavalueadeddate);
 
     if (this.AddReqForm.invalid) {
       return;
     }
-
+    this.isLoading = true;
     this.taskservice.AddTasksdata(submitdatavalueadeddate).subscribe(addedtask => {
-    if (addedtask['saveTask']==true) {
-        
-        this.toastr.push([{ type: 'error', 'body': "error"}]);
-        
-      } else {
-        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
-        this.isLoading = false;
-        //navigate
+      if (addedtask['data']['saveTask'] == true) {
         this.router.navigate(['/tasks/assignedtasks'])
-
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
+      } else {
+        this.toastr.push([{ type: 'error', 'body': "error" }]);
       }
+      this.isLoading = false;
     }
 
     );

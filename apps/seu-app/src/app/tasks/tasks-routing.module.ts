@@ -6,9 +6,10 @@ import { AddCommentComponent } from './components//add-comment/add-comment.compo
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
 
 const routes: Routes = [
-  { path: 'assignedtasks', component: TasksListComponent },
-  { path: 'alltasks', component: TasksListComponent },
+  { path: '', component: TasksListComponent },
+  { path: 'createdTasks', component: TasksListComponent },
   { path: 'mytasks', component: TasksListComponent },
+  { path: 'alltasks', component: TasksListComponent },
   { path: 'add-task', component: AddTaskComponent },
   { path: 'add-comment/:tid', component: AddCommentComponent },
   { path: 'details/:tid', component: TaskDetailsComponent }

@@ -97,7 +97,8 @@
         "total": "إجمالي",
         "no_absence_registered": "لا توجد غيابات مسجلة",
         "required": "مطلوب",
-        "mismatch": "غير مطابق"
+        "mismatch": "غير مطابق",
+        "request_succeed": "تم الحففظ بنجاح"
     },
     "menu": {
         "myservices": "خدماتي",
@@ -900,9 +901,9 @@
         "startDate": "تاريخ البدء",
         "status": "الحالة",
         "Details": "التفاصيل",
-        "Task": "Task",
-        "Delete": "Delete",
-        "day": "Day",
+        "Task": "مهمة",
+        "Delete": "حذف",
+        "day": "يوم",
         "phone": "الهاتف",
         "notes": "ملاحظات",
         "Submit": "حفظ",
@@ -914,8 +915,8 @@
         "title": "العنوان",
         "assignedTo": "مسندة إلي",
         "priority": "الأولوية",
-        "type": "Type",
-        "requiredProcedures": "Required Procedures",
+        "type": "نوع المهمة",
+        "requiredProcedures": "الإجراء المطلوب",
         "AddTask": "إضافة مهمة جديدة",
         "TaskList": "قائمة المهام",
         "mytasks": "مهامي",
@@ -923,8 +924,10 @@
         "alltaks": "كل المهام",
         "taskDetails": "تفاصيل المهمة",
         "id": "رقم المهمة",
-        "comments":"التعليقات",        
-        "AddComment": "Add Comment",
-        "TaskDetails": "Task Details"
+        "comments": "التعليقات",
+        "AddComment": "إضافة تعليق",
+        "TaskDetails": "تفاصيل المهمة",
+        "viewers": "المتابعين",
+        "ID": "رقم"
     }
 }

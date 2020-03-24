@@ -1,10 +1,9 @@
-
 <div class="main-content">
 
   <service-header title='{{"tasks.AddTask" | translate}}'></service-header>
-  <seu-loader [isLoading]="loading"></seu-loader>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
 
-  
+
 
   <section class="dashboard-wrap" style="margin-top: 30px;">
     <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
@@ -71,8 +70,8 @@
           <div class=" col-md-12 col-sm-12">
             <div class="state">
               <h6>{{"tasks.viewers"|translate}} </h6>
-              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId" formControlName="taskViewers"
-                multiple="multiple">
+              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId"
+                formControlName="taskViewers" multiple="multiple">
               </ng-select>
 
             </div>
@@ -104,16 +103,14 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-6">
             <div class="state">
-              <h6>{{"tasks.endDate"|translate}} </h6>
-              <input type="text" formControlName="endDate" bsDatepicker class="form-control" />
-            </div>
-
-          </div>
-
-          <div class=" col-md-6 col-sm-6">
-            <div class="state">
               <h6>{{"tasks.startDate"|translate}} </h6>
               <input type="text" formControlName="startDate" bsDatepicker class="form-control" />
+            </div>
+          </div>
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"tasks.endDate"|translate}} </h6>
+              <input type="text" formControlName="endDate" bsDatepicker class="form-control" />
             </div>
           </div>
         </div>
@@ -128,10 +125,10 @@
                 <label for="file" class="custom-file-label ">
                 </label>
               </div>
-                </div>
+            </div>
           </div>
         </div>
-  
+
         <div class="row ser-block">
           <div class=" col-md-12 col-sm-12">
             <div class="state">
@@ -146,7 +143,7 @@
         <div>
           <div class=" col-md-6 col-sm-6">
             <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
-              <button type="submit" class="btn" style="color: #fff;margin-top: 30px !important;"><i
+              <button type="submit" [disabled]="AddReqForm.invalid" class="btn" style="color: #fff;margin-top: 30px !important;"><i
                   class="fa fa-database"></i> {{"tasks.Submit" | translate}}</button>
             </div>
           </div>

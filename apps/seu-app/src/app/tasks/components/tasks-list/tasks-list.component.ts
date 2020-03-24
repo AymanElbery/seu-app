@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { AppToasterService } from 'src/app/shared/services/app-toaster';
-import {AddTaskComponent} from '../add-task/add-task.component';
-import {TasksManagementService} from '../../services/tasks-management.service';
+import { AppToasterService } from '../../../shared/services/app-toaster';
+import { AddTaskComponent } from '../add-task/add-task.component';
+import { TasksManagementService } from '../../services/tasks-management.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,38 +19,61 @@ export class TasksListComponent implements OnInit {
   filter;
   searchTerm: string;
   config: any;
-  subscription: Subscription;
   subscriptionappreq: Subscription;
-  gettasklist: any;
-  constructor(private http: HttpClient, private taskservice: TasksManagementService, private toastr: AppToasterService, private translate: TranslateService, private dialog: MatDialog,private router:Router) {
+  gettasklist: any = [];
+  constructor(private http: HttpClient, private taskservice: TasksManagementService, private toastr: AppToasterService, private translate: TranslateService, private dialog: MatDialog, private router: Router) {
   }
   isLoading = true;
   subscriptions;
+  ddl;
+  ddlemplist;
 
   ngOnInit() {
     this.getTasksList();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
       this.getTasksList();
     });
+
+    this.ddl = this.taskservice.ddlsubject.subscribe(() => {
+      this.gettasklist = this.taskservice.prepareList(this.gettasklist);
+    });
+    this.ddlemplist = this.taskservice.empListsubject.subscribe(() => {
+      this.gettasklist = this.taskservice.prepareList(this.gettasklist);
+    });
   }
 
   ngOnDestroy() {
-    if (this.subscriptions)
+    if (this.subscriptions) {
       this.subscriptions.unsubscribe();
+    }
+    this.subscriptionappreq.unsubscribe();
+    this.ddl.unsubscribe();
+    this.ddlemplist.unsubscribe();
   }
-  pageChanged(event){
+  pageChanged(event) {
     this.config.currentPage = event;
   }
   getTasksList() {
-
     //this.isLoading = true
-    this.subscriptionappreq = this.taskservice.getTasksList().subscribe(appreqs => {
+    const func = this.router.url.split("/")[2];
+    let url;
+    switch (func) {
+      case 'mytasks':
+        url = 'getMyTasks';
+        break;
+      case 'alltasks':
+        url = 'getViewableTasks';
+        break;
+      case 'createdTasks':
+        url = 'getMyCreatedTasks';
+        break;
+    }
+
+
+    this.subscriptionappreq = this.taskservice.getTasksList(url).subscribe(appreqs => {
       if (appreqs) {
         this.gettasklist = this.taskservice.prepareList((appreqs as any).data);
-        console.log("data",this.gettasklist);      
         this.isLoading = false;
-      } else {
-
       }
     });
 
