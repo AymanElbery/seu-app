@@ -2,7 +2,7 @@
   <service-header title='{{"tasks.TaskDetails" | translate}}'></service-header>
   <seu-loader [isLoading]="loading"></seu-loader>
 
-  <div class="widget" *ngIf="!loading">
+  <div class="widget" *ngIf="!loading && task">
 
     <div class="widget-header">
       <h3 class="widget-title">
@@ -10,22 +10,26 @@
         <button type="button" class="btn btn-primary" (click)="openDialog('comment','','tasks.AddComment')">
           {{"tasks.AddComment"|translate}} <i class="ik ik-plus"></i>
         </button>&nbsp;
-        
-        <button type="button" *ngIf="LoggedINID == task['assignedTo']" class="btn btn-primary" (click)="openDialog('status',6,'tasks.inprogress')">
-          {{"tasks.inprogress"|translate}} <i class="ik ik-plus"></i>
+
+        <button type="button" *ngIf="LoggedINID == task['assignedTo']" class="btn btn-primary"
+          (click)="openDialog('status',6,'tasks.inprogress')">
+          {{"tasks.inprogress"|translate}}
         </button>&nbsp;
         <button *ngIf="LoggedINID == task['assignedTo']" type="button" class="btn btn-primary"
           (click)="openDialog('status',5,'tasks.resolve')">
-          {{"tasks.resolve"|translate}} <i class="ik ik-plus"></i>
+          {{"tasks.resolve"|translate}}
         </button>&nbsp;
-        <button type="button" *ngIf="LoggedINID == task['assignedTo']" class="btn btn-primary" (click)="openDialog('status',4,'tasks.reject')">
-          {{"tasks.reject"|translate}} <i class="ik ik-plus"></i>
+        <button type="button" *ngIf="LoggedINID == task['assignedTo']" class="btn btn-primary"
+          (click)="openDialog('status',4,'tasks.reject')">
+          {{"tasks.reject"|translate}}
         </button>&nbsp;
-        <button type="button" *ngIf="LoggedINID == task['assignedTo'] || LoggedINID == task['createdBy']" class="btn btn-primary" (click)="openDialog('status',2,'tasks.assign')">
-          {{"tasks.assign"|translate}} <i class="ik ik-plus"></i>
+        <button type="button" *ngIf="LoggedINID == task['assignedTo'] || LoggedINID == task['createdBy']"
+          class="btn btn-primary" (click)="openDialog('status',2,'tasks.assign')">
+          {{"tasks.assign"|translate}}
         </button>
-        <button type="button" *ngIf="LoggedINID == task['createdBy']" class="btn btn-primary" (click)="openDialog('status',3,'tasks.close')">
-          {{"tasks.close"|translate}} <i class="ik ik-plus"></i>
+        <button type="button" *ngIf="LoggedINID == task['createdBy']" class="btn btn-primary"
+          (click)="openDialog('status',3,'tasks.close')">
+          {{"tasks.close"|translate}}
         </button>
       </h3>
     </div>
@@ -68,6 +72,13 @@
           <th scope="col">{{"tasks.assignedTo" | translate}}</th>
           <td>{{task.assignedToName}}</td>
         </tr>
+        <tr *ngIf="task.downloadPath">
+          <th scope="col">{{"tasks.file" | translate}}</th>
+          <td>
+            <a class="prin" style="color:blue ;" href="{{task.downloadPath}}"
+              target="_blank">{{"tasks.download" | translate}}</a>
+          </td>
+        </tr>
         <tr>
           <th scope="col">{{"tasks.viewers" | translate}}</th>
           <td>
@@ -82,15 +93,19 @@
         <tr *ngFor="let comment of task.taskComments">
           <td colspan="2">
             <ng-container>
-            <p>{{comment.comment}}</p>
-            <p *ngIf="comment.commentText"><strong>{{"tasks.commentText" | translate}}</strong>:           {{comment.commentText}}</p>
-            <p *ngIf="comment.file"><strong>{{"tasks.file" | translate}}</strong>{{comment.file}}:    
-                         <a class="prin" style="color:blue ;" href="{{comment.file}}" target="_blank" >Download File</a>
-            </p>
-            <p *ngIf="comment.createdAt"><strong>{{"tasks.commentDate" | translate}}</strong>:           {{comment.createdAt}}</p>
-            <p *ngIf="comment.taskStatus"><strong>{{"tasks.status" | translate}}</strong>:               {{comment.taskStatus}}</p>
-            <p *ngIf="comment.assignTo"><strong>{{"tasks.assignedTo" | translate}}</strong>:             {{comment.assignTo}}</p>
-          </ng-container>
+              <p *ngIf="comment.commentText"><strong>{{"tasks.commentText" | translate}}</strong>:
+                {{comment.commentText}}</p>
+              <p *ngIf="comment.downloadPath"><strong>{{"tasks.file" | translate}}</strong>:
+                <a class="prin" style="color:blue ;" href="{{comment.downloadPath}}"
+                  target="_blank">{{"tasks.download" | translate}}</a>
+              </p>
+              <p *ngIf="comment.createdAt"><strong>{{"tasks.commentDate" | translate}}</strong>: {{comment.createdAt}}
+              </p>
+              <p *ngIf="comment.taskStatus"><strong>{{"tasks.status" | translate}}</strong>: {{comment.taskStatusDesc}}
+              </p>
+              <p *ngIf="comment.assignTo"><strong>{{"tasks.assignedTo" | translate}}</strong>:
+                {{comment.taskStatusName}}</p>
+            </ng-container>
           </td>
         </tr>
       </table>

@@ -99,7 +99,7 @@
         "required": "ٌRequired",
         "mismatch": "Passwords Doesn't match",
         "request_saved": "تم الحففظ بنجاح",
-        "error":"خطأ"
+        "error": "خطأ"
     },
     "menu": {
         "myservices": "My Services",
@@ -922,15 +922,25 @@
         "requiredProcedures": "Required Procedures",
         "AddTask": "Add Task",
         "TaskList": "Task List",
+        "mytasks": "مهامي",
+        "assignedtasks": "Assigned Tasks",
+        "alltasks": "All Tasks",
+        "taskDetails": "Task Details",
+        "id": "ID",
         "comments": "Comment",
         "AddComment": "Add Comment",
         "TaskDetails": "Task Details",
+        "viewers": "viewers",
+        "ID": "ID",
         "commentText": "Comment Text",
         "file": "file",
-        "commentDate": "Comment Date"      
-        
-        
-
-        
+        "commentDate": "Comment Date",
+        "createdTasks": "My Tasks",
+        "resolve": "Reesole",
+        "inprogress": "Start Progress",
+        "assign": "Assign",
+        "close": "Close",
+        "reject": "Reject",
+        "download": "Download"
     }
 }

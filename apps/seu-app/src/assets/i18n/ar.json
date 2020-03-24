@@ -900,7 +900,7 @@
         "description": "الوصف",
         "endDate": "تاريخ الإنتهاء",
         "startDate": "تاريخ البدء",
-        "status": "الحالة",
+        "Status": "الحالة",
         "Details": "التفاصيل",
         "Task": "مهمة",
         "Delete": "حذف",
@@ -908,6 +908,7 @@
         "phone": "الهاتف",
         "notes": "ملاحظات",
         "Submit": "حفظ",
+        "date": "التاريخ",
         "attachment": "المرفق",
         "Previous": "السابق",
         "Next": "التالى",
@@ -915,6 +916,7 @@
         "EmpName": "اسم الموظف",
         "title": "العنوان",
         "assignedTo": "مسندة إلي",
+        "status": "الحالة",
         "priority": "الأولوية",
         "type": "نوع المهمة",
         "requiredProcedures": "الإجراء المطلوب",
@@ -930,17 +932,15 @@
         "TaskDetails": "تفاصيل المهمة",
         "viewers": "المتابعين",
         "ID": "رقم",
-<<<<<<< HEAD
-        "commentText": "Comment Text",
-        "file": "file",
-        "commentDate": "Comment Date"
-=======
+        "commentText": "التعليق",
+        "file": "المرفق",
+        "commentDate": "التاريخ",
         "createdTasks": "مهامي",
         "resolve": "انجاز",
         "inprogress": "بدء",
         "assign": "إسناد",
         "close": "إغلاق",
-        "reject": "رفض"
->>>>>>> 30f9732c70e0b60652e1c0f0aa5a53fe716cf8d8
+        "reject": "رفض",
+        "download":"تحميل"
     }
 }
