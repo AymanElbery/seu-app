@@ -922,7 +922,13 @@
         "TaskList": "Task List",
         "comments": "Comment",
         "AddComment": "Add Comment",
-        "TaskDetails": "Task Details"
+        "TaskDetails": "Task Details",
+        "commentText": "Comment Text",
+        "file": "file",
+        "commentDate": "Comment Date"      
+        
+        
+
         
     }
 }

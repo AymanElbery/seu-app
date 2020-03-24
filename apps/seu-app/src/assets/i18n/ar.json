@@ -928,6 +928,9 @@
         "AddComment": "إضافة تعليق",
         "TaskDetails": "تفاصيل المهمة",
         "viewers": "المتابعين",
-        "ID": "رقم"
+        "ID": "رقم",
+        "commentText": "Comment Text",
+        "file": "file",
+        "commentDate": "Comment Date"
     }
 }
