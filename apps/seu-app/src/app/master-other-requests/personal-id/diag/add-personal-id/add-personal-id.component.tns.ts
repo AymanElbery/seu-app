@@ -69,16 +69,16 @@ export class AddPersonalIdComponent implements OnInit {
   addRequest(data: any) {
     this.univCard.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
-  /* comppented error found not status
-      if (res.status) {
+  // comppented error found not status
+      if ((res as any).status) {
         this.univCard.newreqs = true;
-        this.dialogRef.close();
-      } */
-      this.routerExtensions.navigate(['/other/personalid'], {
-        transition: {
-            name: 'fade'
-        }
-    });
+        this.routerExtensions.navigate(['/other/personalid'], {
+          transition: {
+              name: 'fade'
+          }
+      });
+      } 
+ 
       this.requesting = false;
     },
       err => {
