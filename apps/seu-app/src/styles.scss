@@ -78,7 +78,8 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "assets/css/bootstrap4/bootstrap-rtl.css";
 @import "assets/css/theme-service";
 @import "assets/css/style-service";
-
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
 @font-face {
   font-family: 'fontreg';
   src: url('assets/fonts/DroidArabicKufi.eot?#iefix') format('embedded-opentype'), url('assets/fonts/DroidArabicKufi.woff') format('woff'), url('assets/fonts/DroidArabicKufi.ttf') format('truetype');
