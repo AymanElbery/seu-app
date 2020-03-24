@@ -210,7 +210,7 @@
         "chineescourse": "Chinees Course",
         "PersonalInfo": "My Information",
         "resetpassword": "Reset Password",
-        "taks": "Tasks"
+        "taks": "Tasks Management"
     },
     "services": {
         "academic_status": {
@@ -941,6 +941,7 @@
         "assign": "Assign",
         "close": "Close",
         "reject": "Reject",
-        "download": "Download"
+        "download": "Download",
+        "createdBy":"Created By"
     }
 }

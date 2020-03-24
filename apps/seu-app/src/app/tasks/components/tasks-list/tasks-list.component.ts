@@ -53,19 +53,28 @@ export class TasksListComponent implements OnInit {
   pageChanged(event) {
     this.config.currentPage = event;
   }
+  tasksTitle;
+  addnewTask = false;
   getTasksList() {
     //this.isLoading = true
     const func = this.router.url.split("/")[2];
     let url;
+    this.tasksTitle = 'tasks.TaskList';
     switch (func) {
       case 'mytasks':
         url = 'getMyTasks';
+        this.tasksTitle = 'tasks.assignedtasks';
+
         break;
       case 'alltasks':
         url = 'getViewableTasks';
+        this.tasksTitle = 'tasks.alltasks';
+
         break;
       case 'createdTasks':
         url = 'getMyCreatedTasks';
+        this.tasksTitle = 'tasks.createdTasks';
+        this.addnewTask = true;
         break;
     }
 

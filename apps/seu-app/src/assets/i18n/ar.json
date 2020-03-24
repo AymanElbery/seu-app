@@ -210,7 +210,7 @@
         "chineescourse": "الدورة الصينية",
         "PersonalInfo": "معلوماتي الشخصية",
         "resetpassword": "تغيير كلمة المرور",
-        "tasks": "المهام"
+        "tasks": "إدارة المهام"
     },
     "services": {
         "academic_status": {
@@ -923,8 +923,8 @@
         "AddTask": "إضافة مهمة جديدة",
         "TaskList": "قائمة المهام",
         "mytasks": "مهامي",
-        "assignedtasks": "المهام الواردة",
-        "alltasks": "كل المهام",
+        "assignedtasks": "مهامي",
+        "alltasks": "جميع المهام",
         "taskDetails": "تفاصيل المهمة",
         "id": "رقم المهمة",
         "comments": "التعليقات",
@@ -935,12 +935,13 @@
         "commentText": "التعليق",
         "file": "المرفق",
         "commentDate": "التاريخ",
-        "createdTasks": "مهامي",
+        "createdTasks": "متابعة / إضافة المهام",
         "resolve": "انجاز",
         "inprogress": "بدء",
         "assign": "إسناد",
         "close": "إغلاق",
         "reject": "رفض",
-        "download":"تحميل"
+        "download":"تحميل",
+        "createdBy":"بواسطة"
     }
 }

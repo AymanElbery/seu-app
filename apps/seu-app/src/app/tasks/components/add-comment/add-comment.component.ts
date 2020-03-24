@@ -40,7 +40,7 @@ export class AddCommentComponent implements OnInit {
     });
   }
 
-  showAssign = true;
+  showAssign = false;
   showStatus = true;
 
   ngOnInit() {
@@ -49,7 +49,7 @@ export class AddCommentComponent implements OnInit {
       this.showStatus = false;
       this.AddReqForm.controls['taskStatus'].setValue(this.data['code']);
       switch (this.data['code']) {
-        case 2:
+        case 3:
           this.showAssign = true;
           this.AddReqForm.controls['assignTo'].setValidators([Validators.required]);
           break;

@@ -1,13 +1,13 @@
 <div class="main-content">
 
-  <service-header title='{{"tasks.TaskList" | translate}}'></service-header>
+  <service-header title='{{tasksTitle | translate}}'></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
   <div class="widget">
 
     <div class="widget-header">
       <h3 class="widget-title">
         {{"tasks.TaskList" | translate}}
-        <button type="button" class="btn btn-primary" (click)="addtask()">
+        <button *ngIf="addnewTask" type="button" class="btn btn-primary" (click)="addtask()">
           {{"tasks.AddTask"|translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>

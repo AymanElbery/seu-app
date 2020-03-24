@@ -47,6 +47,8 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
   updateTaskViewers() {
     if (this.task) {
       this.task.assignedToName = this.taskservice.getEmpByID(this.task['assignedTo']);
+      this.task.createdByName = this.taskservice.getEmpByID(this.task['createdBy']);
+      
       if (this.task['hasAttachment'] && this.task.attachName) {
         this.task['downloadPath'] = environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + this.LoggedINID + '&type=task&name=' + this.task.attachName
       }
@@ -57,6 +59,8 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
       this.task.taskComments = this.task.taskComments.map(comment => {
         comment['taskStatusDesc'] = this.taskservice.getStatusByID(comment['taskStatus']);
         comment['taskStatusName'] = this.taskservice.getStatusByID(comment['assignTo']);
+        comment['createdByName'] = this.taskservice.getEmpByID(comment['createdBy']);
+
         if (comment['hasAttachment'] && comment.attachName) {
           comment['downloadPath'] = environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + this.LoggedINID + '&type=comment&name=' + comment.attachName
         }
