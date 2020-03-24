@@ -11,9 +11,9 @@
     #organization="ngModel" [(ngModel)]="training.organization" required>
     </TextView>
     
-    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-between" style="margin-top: 20;">
-        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn" style="width: 44%;"></Button>
-        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn" style="width: 44%;"></Button>
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 20;">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn"></Button>
     </FlexboxLayout>
 
 </FlexboxLayout>

@@ -15,6 +15,7 @@
     <ActionItem icon="font://&#xf0c7;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
 
 </ActionBar>
+<ScrollView>
 <FlexboxLayout flexDirection="column">
 
     <StackLayout class="ysBox paragraph" style="margin-bottom: 20; margin-top: 20; padding: 5 10 ;">
@@ -37,7 +38,7 @@
         </FlexboxLayout>
 
         <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of radioButtonOptions;let i=index;" flexDirection="row-reverse" 
-        class="trow tabl" [ngStyle]="{'border-bottom-width':i === radioButtonOptions.length-1 ? '0' : '1' }">
+        alignContent="center" class="trow tabl" [ngStyle]="{'border-bottom-width':i === radioButtonOptions.length-1 ? '0' : '1' }">
             <CheckBox #elem boxType="circle" (checkedChange)="elem.checked !== item.selected && changeStatus(item)" [checked]="item.selected"></CheckBox>
             <Label [text]="item.courses.CRN"></Label>
             <Label [text]="item.courses.CRES_CODE"  ></Label>
@@ -50,3 +51,4 @@
         <Label text='{{reqData.notes.agrement}}' textWrap="true" style="color:#f08b1c ;"></Label>
     </FlexboxLayout>
 </FlexboxLayout>
+</ScrollView>

@@ -3,6 +3,14 @@
 
 <ScrollView>
     <FlexboxLayout flexDirection="column">
+
+        <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
+            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+            <Label col="1"  text='{{"services.change_branch.title"|translate}}' class="serv-name" ></Label>
+            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        
+        </GridLayout>
+
         <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs && msgs.length>0">
             <ListView style="margin-top: 0px;" [items]="msgs">
                 <ng-template let-item="item">
@@ -11,12 +19,7 @@
             </ListView>
         </FlexboxLayout>
 
-        <GridLayout  columns="auto, *" class="serv-title">
-            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
-            <Label col="1"  text='{{"services.change_branch.title"|translate}}' class="serv-name" ></Label>
-            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
-        
-        </GridLayout>
+       
         
         <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 

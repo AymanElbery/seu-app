@@ -61,7 +61,7 @@
       
                     <Label row="4" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.request.delete_print_req"|translate}} :'></Label>
                       
-                    <Button row="4"  column="0" class="ysPBox2" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="blue-button fas  -rounded-sm" style="width: 15%;margin-left: 150;"></Button>
+                    <Button row="4"  column="0" class="ysPBox2" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="blue-button fas "></Button>
                     <Label row="4"  column="0" textWrap="true" class="ysPBox2" *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}' textWrap="true"></Label>
                   </GridLayout>
 
