@@ -98,7 +98,8 @@
         "no_absence_registered": "لا توجد غيابات مسجلة",
         "required": "مطلوب",
         "mismatch": "غير مطابق",
-        "request_succeed": "تم الحففظ بنجاح"
+        "request_saved": "تم الحففظ بنجاح",
+        "error": "خطأ"
     },
     "menu": {
         "myservices": "خدماتي",
@@ -921,13 +922,19 @@
         "TaskList": "قائمة المهام",
         "mytasks": "مهامي",
         "assignedtasks": "المهام الواردة",
-        "alltaks": "كل المهام",
+        "alltasks": "كل المهام",
         "taskDetails": "تفاصيل المهمة",
         "id": "رقم المهمة",
         "comments": "التعليقات",
         "AddComment": "إضافة تعليق",
         "TaskDetails": "تفاصيل المهمة",
         "viewers": "المتابعين",
-        "ID": "رقم"
+        "ID": "رقم",
+        "createdTasks": "مهامي",
+        "resolve": "انجاز",
+        "inprogress": "بدء",
+        "assign": "إسناد",
+        "close": "إغلاق",
+        "reject": "رفض"
     }
 }

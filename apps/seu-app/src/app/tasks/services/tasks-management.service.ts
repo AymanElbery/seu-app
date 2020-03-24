@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class TasksManagementService {
-
+  dialogCloseRefresh=false;
   ddl;
   empList = [];
   ddlsubject = new Subject();

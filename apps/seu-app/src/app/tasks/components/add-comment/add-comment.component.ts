@@ -17,28 +17,48 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 export class AddCommentComponent implements OnInit {
   AddReqForm: FormGroup;
   submitted = false;
-  ddltaskstatus: any; 
+  ddltaskstatus: any;
   ddlemplist: any;
-  fileToUpload: File = null;  
+  fileToUpload: File = null;
   subscriptionDDLReqtype: Subscription;
   subscriptionEMplist: Subscription;
-  
+
   isLoading = true;
   subscriptions;
-  
+
   private sub: any;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data,private route: ActivatedRoute, private toastr: AppToasterService, private taskservice: TasksManagementService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data,
+    public dialogRef: MatDialogRef<AddCommentComponent>,
+    private route: ActivatedRoute, private toastr: AppToasterService, private taskservice: TasksManagementService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
     this.AddReqForm = fb.group({
-      'taskId': [this.data.taskID],  
-      'commentText': ['', [Validators.required]],     
-      'assignTo': ['',[Validators.required]],
+      'taskId': [this.data.taskID],
+      'commentText': ['', [Validators.required]],
+      'assignTo': [''],
       'taskStatus': [''],
-      'file':['']
+      'file': ['']
     });
-   }
+  }
+
+  showAssign = true;
+  showStatus = true;
 
   ngOnInit() {
+
+    if (this.data['type'] == 'status') {
+      this.showStatus = false;
+      this.AddReqForm.controls['taskStatus'].setValue(this.data['code']);
+      switch (this.data['code']) {
+        case 2:
+          this.showAssign = true;
+          this.AddReqForm.controls['assignTo'].setValidators([Validators.required]);
+          break;
+        default:
+          this.showAssign = false;
+          break;
+      }
+    }
+
     this.getDDLlist();
     this.getDDLEmplist();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
@@ -55,7 +75,7 @@ export class AddCommentComponent implements OnInit {
   defineDDLList() {
     if (this.taskservice.ddl) {
       this.ddltaskstatus = this.taskservice.ddl["TaskStatusList"];
-     
+
     }
 
   }
@@ -71,28 +91,40 @@ export class AddCommentComponent implements OnInit {
     this.subscriptionEMplist = this.taskservice.empListsubject.subscribe(emplist => {
       this.ddlemplist = this.taskservice.empList;
     });
-   
+
   }
 
   onFormSubmit(event) {
     this.submitted = true;
-    const submitdatavalue = (this.AddReqForm.value);
+    let submitdatavalue = (this.AddReqForm.value);
     if (this.AddReqForm.invalid) {
       return;
     }
-
-    console.log("submit data", submitdatavalue);
-
+    if (submitdatavalue.taskStatus == 1 && submitdatavalue.assignTo) {
+      return false;
+    }
+    //console.log("submit data", submitdatavalue);
+    if (!submitdatavalue['assignTo']) {
+      delete submitdatavalue['assignTo'];
+    }
+    if (!submitdatavalue['taskStatus']) {
+      delete submitdatavalue['taskStatus'];
+    }
+    if (!submitdatavalue['file']) {
+      delete submitdatavalue['file'];
+    }
     this.taskservice.AddTaskscommnets(submitdatavalue).subscribe(addcmt => {
-      console.log("saved data", addcmt);
-      if (!addcmt['assignedToChanged']) {
-        //var error = (addcmt as any).data["errorMassege"]
-        //console.log("response data",error);
-        this.toastr.push([{ type: 'error', 'body':"error" }]);
-
+      if (!addcmt['saveTaskComment']) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);
       } else {
-        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);        
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('general.request_saved') }]);
+        this.submitted = false;
+        this.taskservice.dialogCloseRefresh = true;
+        this.dialogRef.close();
       }
+    }, error => {
+      this.toastr.tryagain();
+      this.submitted = false;
     }
     );
 

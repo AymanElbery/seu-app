@@ -97,7 +97,9 @@
         "total": "Total",
         "no_absence_registered": "No Absense registered",
         "required": "ٌRequired",
-        "mismatch": "Passwords Doesn't match"
+        "mismatch": "Passwords Doesn't match",
+        "request_saved": "تم الحففظ بنجاح",
+        "error":"خطأ"
     },
     "menu": {
         "myservices": "My Services",
