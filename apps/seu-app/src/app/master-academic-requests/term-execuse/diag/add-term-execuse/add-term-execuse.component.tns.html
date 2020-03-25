@@ -1,4 +1,4 @@
-<FlexboxLayout  flexDirection="column" style="padding: 20;" class="pop">
+<FlexboxLayout  flexDirection="column" class="pop">
     <Label text='{{"services.term_execuse_master.title"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
 
     <Label text='{{"services.term_execuse_master.alert_title"|translate}} :{{"services.term_execuse_master.alert"|translate}}' textWrap="true"></Label>
@@ -21,7 +21,7 @@
     <Label text='{{"services.term_execuse_master.reason"|translate}}' style="color: #010447;" class="font"></Label>
     <TextField [(ngModel)]="termExecuse.reason" #reason="ngModel" required></TextField>
     
-    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 20;">
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
         <Button text='{{"general.save"|translate}}' (tap)="onSubmit()"  class="print-btn"></Button>
         <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()"  class="print-btn"></Button>
     </FlexboxLayout>
