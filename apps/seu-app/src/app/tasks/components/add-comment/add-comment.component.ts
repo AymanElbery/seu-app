@@ -94,7 +94,6 @@ export class AddCommentComponent implements OnInit {
   }
 
   onFormSubmit(event) {
-    this.submitted = true;
     let submitdatavalue = (this.AddReqForm.value);
     if (this.AddReqForm.invalid) {
       return;
@@ -112,6 +111,7 @@ export class AddCommentComponent implements OnInit {
     if (!submitdatavalue['file']) {
       delete submitdatavalue['file'];
     }
+    this.submitted = true;
     this.taskservice.AddTaskscommnets(submitdatavalue).subscribe(addcmt => {
       if (!addcmt['data']['saveTaskComment']) {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);

@@ -84,7 +84,7 @@ export class TasksManagementService {
 
   AddTasksdata(data) {
     if (data['assignedTo']) {
-      data['status'] = 2;
+      data['status'] = 3;
     }
     return this.wafihttRequest.postRequest_obj('task/createTask', data);
   }

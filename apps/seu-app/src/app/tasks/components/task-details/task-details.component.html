@@ -11,11 +11,11 @@
           {{"tasks.AddComment"|translate}} <i class="ik ik-plus"></i>
         </button>&nbsp;
 
-        <button type="button" *ngIf="LoggedINID == task['assignedTo']" class="btn btn-primary"
+        <button type="button" *ngIf="task['status']==3 && LoggedINID == task['assignedTo']" class="btn btn-primary"
           (click)="openDialog('status',4,'tasks.inprogress')">
           {{"tasks.inprogress"|translate}}
         </button>&nbsp;
-        <button *ngIf="LoggedINID == task['assignedTo']" type="button" class="btn btn-primary"
+        <button *ngIf="task['status']!=6 && LoggedINID == task['assignedTo']" type="button" class="btn btn-primary"
           (click)="openDialog('status',5,'tasks.resolve')">
           {{"tasks.resolve"|translate}}
         </button>&nbsp;
@@ -23,11 +23,11 @@
           (click)="openDialog('status',2,'tasks.reject')">
           {{"tasks.reject"|translate}}
         </button>&nbsp;
-        <button type="button" *ngIf=" LoggedINID == task['createdBy']"
-          class="btn btn-primary" (click)="openDialog('status',3,'tasks.assign')">
+        <button type="button" *ngIf="task['status']!=6 && LoggedINID == task['createdBy']" class="btn btn-primary"
+          (click)="openDialog('status',3,'tasks.assign')">
           {{"tasks.assign"|translate}}
         </button>
-        <button type="button" *ngIf="LoggedINID == task['createdBy']" class="btn btn-primary"
+        <button type="button" *ngIf="task['status']!=6 &&LoggedINID == task['createdBy']" class="btn btn-primary"
           (click)="openDialog('status',6,'tasks.close')">
           {{"tasks.close"|translate}}
         </button>
