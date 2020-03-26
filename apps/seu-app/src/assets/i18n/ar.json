@@ -533,6 +533,28 @@
             "title": "سداد الرسوم الدراسية",
             "desc": "سداد الرسوم الدراسية"
         },
+        "master_refund": {
+            "title": "Fee Refund",
+            "desc": "Fee Refund",
+            "AddRefundReq": "Refund Request",
+            "request_number": "ReqNo",
+            "insert_date": "Insert Date",
+            "deletable": "Deletable",
+            "status": "Status",
+            "type": "Type",
+            "Delete": "Delete",
+            "refund_reason": "Refund Reason",
+            "iban": "iban",
+            "bank_name": "Bank Name",
+            "name": "Name",
+            "last_four_id": "Last four Id",
+            "refund_type": "Refund Type",
+            "save": "save",
+            "cancel": "Cancel",
+            "national_id": "National Id",
+            "payment_reciept_copy": "Payment Reciept Copy"
+            
+        },
         "medical_report": {
             "title": "طلب تقرير طبي",
             "desc": "طلب تقرير طبي"
