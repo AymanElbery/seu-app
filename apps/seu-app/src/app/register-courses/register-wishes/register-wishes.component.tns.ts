@@ -13,6 +13,8 @@ import { delay } from 'rxjs/operators';
 import { ValueList, SelectedIndexChangedEventData } from 'nativescript-drop-down';
 import { ThrowStmt } from '@angular/compiler';
 import { Wishes } from 'src/app/shared/models/wishes';
+import { TranslateService } from '@ngx-translate/core';
+import* as dialogs from "tns-core-modules/ui/dialogs";
 
 
 @Component({
@@ -33,7 +35,8 @@ export class RegisterWishesComponent implements OnInit {
     b: 'B'
   }];
   wSelectedIndex;
-  constructor(private toastr: AppToasterService, private acadmicProc: RegisterWishesService) {
+  constructor(private toastr: AppToasterService, private acadmicProc: RegisterWishesService,
+    private translate: TranslateService) {
 
     this.registerWishes = { tow_days: 0, wish: '' };
     //  this.registerWishes.tow_days=false;
@@ -57,17 +60,8 @@ export class RegisterWishesComponent implements OnInit {
     this.data = of({ toggle: false }).pipe(delay(500));
     this.itemSource = new ValueList<any>();
     this.getServiceRequest();
-
-
-    const sideDrawer = app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
-
-
   }
-  onDrawerButtonTap(): void {
-    const sideDrawer = app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
+  
   getServiceRequest() {
     this.isLoading = true;
     console.log('load data');
@@ -97,8 +91,13 @@ export class RegisterWishesComponent implements OnInit {
 
 
   delete(id, index) {
-
-    if (confirm('هل انت متأكد')) {
+    dialogs.confirm({
+      title: this.translate.instant('general.delete_confirm'),
+      message: "",
+      okButtonText: "OK",
+      cancelButtonText: 'Cancel'
+  }).then((result:boolean) => {
+    if (result) {
       this.deleting = true;
       this.isLoading = true;
       this.acadmicProc.deleteReq(id).then(res => {
@@ -112,8 +111,7 @@ export class RegisterWishesComponent implements OnInit {
         this.deleting = false;
         this.isLoading = false;
       });
-    }
-
+    }});
   }
 
 
@@ -143,8 +141,7 @@ export class RegisterWishesComponent implements OnInit {
 
   }
   addRequest(data: any) {
-    this.isLoading = true;
-    this.registerWishes = this.itemSource.getValue(this.wSelectedIndex);
+   // this.isLoading = true;
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
       this.requesting = false;
