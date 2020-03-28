@@ -1,0 +1,34 @@
+<div class="main-content">
+
+  <service-header title='{{"tasks.favemps" | translate}}'></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <section class="dashboard-wrap" style="margin-top: 30px;">
+    <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit()">
+      <div class="modal-body">
+        <div class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <ng-select [items]="ddlemplist" bindLabel="empNameEmail" autofocus bindValue="empId"
+                formControlName="favEmpId">
+              </ng-select>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class=" col-md-6 col-sm-6">
+            <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+              <button type="submit" [disabled]="AddReqForm.invalid" class="btn"
+                style="color: #fff;margin-top: 30px !important;"><i class="fa fa-database"></i>
+                {{"tasks.Submit" | translate}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <h3>{{"tasks.favList" | translate}}</h3>
+    <ul>
+      <li *ngFor="let emp of favList">{{emp.empNameEmail}}</li>
+    </ul>
+  </section>
+</div>

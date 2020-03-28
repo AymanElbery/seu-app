@@ -941,7 +941,11 @@
         "assign": "إسناد",
         "close": "إغلاق",
         "reject": "رفض",
-        "download":"تحميل",
-        "createdBy":"بواسطة"
+        "download": "تحميل",
+        "createdBy": "بواسطة",
+        "showallemps": "عرض الكل",
+        "showfavemps": "عرض القائمة المفضلة",
+        "favemps": "القائمة المفضلة",
+        "favList": "القائمة المسجلة"
     }
 }

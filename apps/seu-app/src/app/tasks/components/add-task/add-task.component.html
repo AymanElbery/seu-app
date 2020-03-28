@@ -6,7 +6,7 @@
 
 
   <section class="dashboard-wrap" style="margin-top: 30px;">
-    <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
+    <form role="form" [formGroup]="AddReqForm">
       <div class="modal-body">
 
         <div class="row ser-block">
@@ -14,7 +14,7 @@
             <div class="state">
               <h6>{{"tasks.title"|translate}} </h6>
               <input type="text" formControlName="title" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+                [ngClass]="{ 'is-invalid': submitted && AddReqForm.controls.title.errors }" />
             </div>
           </div>
 
@@ -28,14 +28,24 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-6">
             <div class="state">
-              <h6>{{"tasks.assignedTo"|translate}} </h6>
-              <!--<select class="form-control" formControlName="assignedTo" [ngClass]="{ 'is-invalid': submitted && f.assignedTo.errors }" >
+              <h6>{{"tasks.assignedTo"|translate}}
+                <ng-container *ngIf="allowFav && showFav">
+                  <span (click)="toggleFavList();"
+                    style="cursor: pointer; color: black;">({{"tasks.showallemps" |translate }})</span>
+                </ng-container>
+                <ng-container *ngIf="allowFav && !showFav">
+                  <span (click)="toggleFavList();"
+                    style="cursor: pointer; color: black;">({{"tasks.showfavemps"|translate}})</span>
+                </ng-container>
+
+              </h6>
+              <!--<select class="form-control" formControlName="assignedTo" [ngClass]="{ 'is-invalid': submitted && AddReqForm.controls.assignedTo.errors }" >
                     <option [ngValue]="undefined" selected>{{"tasks.assignedTo" | translate}}</option>
                     <option *ngFor="let assigto of ddlemplist" [selected]="selectvactype == assigto.empId"
                       value={{assigto.empId}}>{{assigto.empName}} </option>
                   </select>-->
 
-              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId"
+              <ng-select [items]="ddlemplist" bindLabel="empNameEmail" autofocus bindValue="empId"
                 formControlName="assignedTo">
               </ng-select>
 
@@ -46,8 +56,8 @@
             <div class="state">
               <h6>{{"tasks.priority"|translate}} </h6>
               <select class="form-control" formControlName="priority"
-                [ngClass]="{ 'is-invalid': submitted && f.priority.errors }">
-                <option [ngValue]="undefined" selected>{{"tasks.priority" | translate}}</option>
+                [ngClass]="{ 'is-invalid': submitted && AddReqForm.controls.priority.errors }">
+                <option [ngValue]="" selected>{{"tasks.priority" | translate}}</option>
                 <option *ngFor="let proty of ddlpriority" [selected]="selectvactype == proty.priorityCode"
                   value={{proty.priorityCode}}>{{proty.priorityDesc}} </option>
               </select>
@@ -57,7 +67,7 @@
           <div class="state">
             <h6>{{"tasks.status"|translate}} </h6>
             <select class="form-control" formControlName="status"
-              [ngClass]="{ 'is-invalid': submitted && f.status.errors }">
+              [ngClass]="{ 'is-invalid': submitted && AddReqForm.controls.status.errors }">
               <option [ngValue]="undefined" selected>{{"tasks.status" | translate}}</option>
               <option *ngFor="let statusdat of ddltaskstatus" [selected]="selectvactype == statusdat.statusCode"
                 value={{statusdat.statusCode}}>{{statusdat.statusDesc}} </option>
@@ -69,8 +79,19 @@
         <div class="row ser-block">
           <div class=" col-md-12 col-sm-12">
             <div class="state">
-              <h6>{{"tasks.viewers"|translate}} </h6>
-              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId"
+              <h6>
+                {{"tasks.viewers"|translate}}
+                <ng-container *ngIf="allowFav && showFav">
+                  <span (click)="toggleFavList();"
+                    style="cursor: pointer; color: black;">({{"tasks.showallemps" |translate }})</span>
+                </ng-container>
+                <ng-container *ngIf="allowFav && !showFav">
+                  <span (click)="toggleFavList();"
+                    style="cursor: pointer; color: black;">({{"tasks.showfavemps"|translate}})</span>
+                </ng-container>
+
+              </h6>
+              <ng-select [items]="ddlemplist" bindLabel="empNameEmail" autofocus bindValue="empId"
                 formControlName="taskViewers" multiple="multiple">
               </ng-select>
 
@@ -83,8 +104,8 @@
             <div class="state">
               <h6>{{"tasks.type"|translate}} </h6>
               <select class="form-control" formControlName="type"
-                [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
-                <option [ngValue]="undefined" selected>{{"tasks.type" | translate}}</option>
+                [ngClass]="{ 'is-invalid': submitted && AddReqForm.controls.type.errors }">
+                <option [ngValue]="" selected>{{"tasks.type" | translate}}</option>
                 <option *ngFor="let typs of ddltype" [selected]="selectvactype == typs.typeCode"
                   value={{typs.typeCode}}>
                   {{typs.typeDesc}} </option>
@@ -143,8 +164,9 @@
         <div>
           <div class=" col-md-6 col-sm-6">
             <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
-              <button type="submit" [disabled]="AddReqForm.invalid" class="btn" style="color: #fff;margin-top: 30px !important;"><i
-                  class="fa fa-database"></i> {{"tasks.Submit" | translate}}</button>
+              <button click="onFormSubmit()" type="button" [disabled]="AddReqForm.invalid" class="btn"
+                style="color: #fff;margin-top: 30px !important;"><i class="fa fa-database"></i>
+                {{"tasks.Submit" | translate}}</button>
             </div>
           </div>
 

@@ -86,11 +86,28 @@ export class AddCommentComponent implements OnInit {
     });
   }
   getDDLEmplist() {
-    this.ddlemplist = this.taskservice.empList;
+    this.getddleList(true);
     this.subscriptionEMplist = this.taskservice.empListsubject.subscribe(emplist => {
-      this.ddlemplist = this.taskservice.empList;
+      this.getddleList(true);
     });
 
+  }
+  showFav = true;
+  allowFav = false;
+  toggleFavList() {
+    this.showFav = !this.showFav;
+    this.getddleList();
+  }
+  getddleList(force = false) {
+    if (force && this.taskservice.empListFavourit.length) {
+      this.allowFav = true;
+      this.showFav = true;
+    }
+    if (this.showFav) {
+      this.ddlemplist = this.taskservice.getfaVouriteList();
+    } else {
+      this.ddlemplist = this.taskservice.empList;
+    }
   }
 
   onFormSubmit(event) {
@@ -116,6 +133,7 @@ export class AddCommentComponent implements OnInit {
       if (!addcmt['data']['saveTaskComment']) {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);
       } else {
+        this.taskservice.loadStats();
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('general.request_saved') }]);
         this.submitted = false;
         this.taskservice.dialogCloseRefresh = true;

@@ -942,6 +942,10 @@
         "close": "Close",
         "reject": "Reject",
         "download": "Download",
-        "createdBy":"Created By"
+        "createdBy": "Created By",
+        "showallemps": "Show All",
+        "showfavemps": "Show favourites",
+        "favemps": "favourites List",
+        "favList": "Registered List"
     }
 }

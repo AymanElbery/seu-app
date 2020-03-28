@@ -3,6 +3,7 @@ import { UserService } from '../account/services/user.service';
 import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { TasksManagementService } from '../tasks/services/tasks-management.service';
 
 @Component({
   selector: 'app-menu',
@@ -14,7 +15,7 @@ export class MenuComponent implements OnInit {
   menuType = 1;
   acStd = false;
   showServices = false;
-  constructor(public userService: UserService, private router: Router) {
+  constructor(public userService: UserService, private router: Router, public task: TasksManagementService) {
   }
 
   showadmis = false;
@@ -71,6 +72,9 @@ export class MenuComponent implements OnInit {
 
     this.hasWafi = environment.allowWafi && (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
 
+    if(this.hasWafi){
+      this.task.loadStats();
+    }
     // this.hasWafi = true;
   }
   hasNoRole = false;

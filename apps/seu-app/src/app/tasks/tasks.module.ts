@@ -15,9 +15,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TasksManagementService } from './services/tasks-management.service';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
+import { FavEmpComponent } from './components/fav-emp/fav-emp.component';
+import { UserService } from '../account/services/user.service';
 
 @NgModule({
-  declarations: [TasksListComponent, AddTaskComponent, AddCommentComponent,TaskDetailsComponent],
+  declarations: [TasksListComponent, AddTaskComponent, AddCommentComponent, TaskDetailsComponent, FavEmpComponent],
   entryComponents: [AddTaskComponent],
   imports: [
     TasksRoutingModule,
@@ -35,9 +37,11 @@ import { TaskDetailsComponent } from './components/task-details/task-details.com
 })
 export class TasksModule {
 
-  constructor(private taskservice: TasksManagementService) {
-    this.taskservice.loadDDL();
-    this.taskservice.loadEmpList();
+  constructor(private taskservice: TasksManagementService, private user: UserService) {
+    if (this.user.userData.id) {
+      this.taskservice.loadDDL();
+      this.taskservice.loadEmpList();
+    }
   }
 
 

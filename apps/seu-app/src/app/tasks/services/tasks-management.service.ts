@@ -1,20 +1,23 @@
 import { Injectable } from '@angular/core';
-import { ConfigService } from '../../shared/services/config.service';
 import { WafiHttpRequestService } from '../../wafi/services/wafi-http-request.service';
-import { GlobalBaseService } from '../../shared/services/global-base.service';
 import { Subject } from 'rxjs';
+import { UserService } from 'src/app/account/services/user.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class TasksManagementService {
-  dialogCloseRefresh=false;
+  dialogCloseRefresh = false;
   ddl;
   empList = [];
+  empListFavourit = [];
   ddlsubject = new Subject();
   empListsubject = new Subject();
-  constructor(private wafihttRequest: WafiHttpRequestService) { }
+  stats;
+  constructor(private wafihttRequest: WafiHttpRequestService, private userService: UserService) {
+
+  }
 
   prepareList(data) {
     return data.map(item => {
@@ -30,6 +33,11 @@ export class TasksManagementService {
     return item;
   }
 
+  reloadList(force=false){
+    this.loadDDL();
+    this.loadEmpList();
+  }
+
   loadDDL(force = false) {
     if (!force && this.ddl) {
       return false;
@@ -41,16 +49,33 @@ export class TasksManagementService {
       }
     });
   }
+  loadStats() {
+    this.wafihttRequest.postRequest_obj('task/getTasksStatistics', {}).subscribe(res => {
+      if (res) {
+        this.stats = (res as any).data;
+      }
+    });
+  }
   loadEmpList(force = false) {
     if (!force && this.ddl) {
       return false;
     }
     this.getDDLEmplist().subscribe(reqtype => {
       if (reqtype) {
-        this.empList = (reqtype as any).data;
+        this.empList = (reqtype as any).data['employeesList'].map(item => {
+          item['empNameEmail'] = item['empName'] + ' (' + item['empWorkEmail'] + ')';
+          return item;
+        });
+        this.empListFavourit = (reqtype as any).data['favouriteEmpsList'].map(rec => { return rec['favEmpId'] }).filter((item, i, ar) => ar.indexOf(item) === i);
         this.empListsubject.next();
       }
     });
+  }
+
+  getfaVouriteList() {
+    return this.empListFavourit.map(id => {
+      return this.empList.find(it => it['empId'] == id);
+    })
   }
 
   getNameFromList(list, idcol, value, namecol) {
@@ -64,7 +89,7 @@ export class TasksManagementService {
   }
 
   getEmpByID(id) {
-    return this.getNameFromList(this.empList, 'empId', id, 'empName');
+    return this.getNameFromList(this.empList, 'empId', id, 'empNameEmail'/*'empName'*/);
   }
   getTypeByID(id) {
     if (!this.ddl)
@@ -87,6 +112,9 @@ export class TasksManagementService {
       data['status'] = 3;
     }
     return this.wafihttRequest.postRequest_obj('task/createTask', data);
+  }
+  AddFavEmp(data) {
+    return this.wafihttRequest.postRequest_obj('task/addFavouriteEmp', data);
   }
 
   getTasksList(url = 'getMyTasks') {

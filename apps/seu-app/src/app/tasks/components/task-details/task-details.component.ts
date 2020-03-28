@@ -27,7 +27,9 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
   LoggedINID;
   constructor(private route: ActivatedRoute,
     private user: UserService,
-    private toastr: AppToasterService, private taskservice: TasksManagementService, private translate: TranslateService, private dialog: MatDialog) { }
+    private toastr: AppToasterService, private taskservice: TasksManagementService, private translate: TranslateService, private dialog: MatDialog) {
+    this.taskservice.reloadList();
+  }
 
   ngOnInit() {
     this.LoggedINID = this.user.userData.id;
@@ -48,7 +50,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
     if (this.task) {
       this.task.assignedToName = this.taskservice.getEmpByID(this.task['assignedTo']);
       this.task.createdByName = this.taskservice.getEmpByID(this.task['createdBy']);
-      
+
       if (this.task['hasAttachment'] && this.task.attachName) {
         this.task['downloadPath'] = environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + this.LoggedINID + '&type=task&name=' + this.task.attachName
       }

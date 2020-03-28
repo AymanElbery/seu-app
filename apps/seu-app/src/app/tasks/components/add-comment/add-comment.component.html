@@ -15,11 +15,21 @@
         <div *ngIf="showAssign" class="row ser-block">
           <div class=" col-md-12 col-sm-12">
             <div class="state">
-              <h6>{{"tasks.assignedTo"|translate}} </h6>
-              <ng-select [items]="ddlemplist" bindLabel="empName" autofocus bindValue="empId"
+              <h6>{{"tasks.assignedTo"|translate}}
+                <ng-container *ngIf="allowFav && showFav">
+                  <span (click)="toggleFavList();"
+                    style="cursor: pointer; color: black;">({{"tasks.showallemps" |translate }})</span>
+                </ng-container>
+                <ng-container *ngIf="allowFav && !showFav">
+                  <span (click)="toggleFavList();"
+                    style="cursor: pointer; color: black;">({{"tasks.showfavemps"|translate}})</span>
+                </ng-container>
+
+              </h6>
+
+              <ng-select [items]="ddlemplist" bindLabel="empNameEmail" autofocus bindValue="empId"
                 formControlName="assignTo">
               </ng-select>
-
             </div>
           </div>
         </div>
@@ -54,7 +64,7 @@
           <div class=" col-md-12 col-sm-12">
             <div class="state">
               <h6>{{"tasks.comments"|translate}} </h6>
-              <textarea formControlName="commentText"  class="form-control" ></textarea>
+              <textarea formControlName="commentText" class="form-control"></textarea>
             </div>
           </div>
         </div>

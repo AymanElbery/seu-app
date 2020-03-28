@@ -19,18 +19,23 @@ import * as moment from 'moment'
 })
 export class AddTaskComponent implements OnInit {
   AddReqForm: FormGroup;
-  submitted = false;
   subscriptionDDLReqtype: Subscription;
   subscriptionEMplist: Subscription;
-  ddltaskstatus: any;
-  ddlpriority: any;
-  ddltype: any;
-  ddlemplist: any;
+  ddltaskstatus: any = [];
+  ddlpriority: any = [];
+  ddltype: any = [];
+  ddlemplist: any = [];
   isLoading = false;
+  submitted = false;
+
   subscriptions;
   id: number;
-  private sub: any;
+
+  showFav = false;
+  allowFav = false;
+
   constructor(private route: ActivatedRoute, private toastr: AppToasterService, private taskservice: TasksManagementService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
+    this.taskservice.reloadList();
     this.AddReqForm = fb.group({
       'title': ['', [Validators.required]],
       'description': [''],
@@ -47,10 +52,7 @@ export class AddTaskComponent implements OnInit {
     });
   }
 
-  onFormSubmit(event) {
-    this.submitted = true;
-    this.isLoading = true;
-
+  onFormSubmit() {
     const submitdatavalue = (this.AddReqForm.value);
 
     this.AddReqForm.controls['startDate'].setValue((moment(submitdatavalue.startDate, "YYYY-MM-DD").format("DD-MM-YYYY")));
@@ -64,8 +66,11 @@ export class AddTaskComponent implements OnInit {
       return;
     }
     this.isLoading = true;
+    this.submitted = true;
+
     this.taskservice.AddTasksdata(submitdatavalueadeddate).subscribe(addedtask => {
       if (addedtask['data']['saveTask'] == true) {
+        this.taskservice.loadStats();
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('general.request_saved') }]);
         this.router.navigate(['/tasks/createdTasks'])
       } else {
@@ -84,7 +89,6 @@ export class AddTaskComponent implements OnInit {
     });
 
   }
-  get f() { return this.AddReqForm.controls; }
 
   ngOnDestroy() {
     if (this.subscriptions)
@@ -118,19 +122,28 @@ export class AddTaskComponent implements OnInit {
     this.AddReqForm.controls['file'].setValue(reader.result);
   }
   getDDLEmplist() {
-    this.ddlemplist = this.taskservice.empList;
-    this.subscriptionEMplist = this.taskservice.empListsubject.subscribe(emplist => {
-      this.ddlemplist = this.taskservice.empList;
+    this.getddleList(true);
+    this.subscriptionEMplist = this.taskservice.empListsubject.subscribe(r => {
+      this.getddleList(true);
     });
-    // this.isLoading = true
-    // this.subscriptionEMplist = this.taskservice.getDDLEmplist().subscribe(emplist => {
-    //   if (emplist) {
-    //     this.ddlemplist = (emplist as any).data
-    //     this.isLoading = false
-    //   } else {
-    //   }
-    // });
   }
+  toggleFavList() {
+    this.showFav = !this.showFav;
+    this.getddleList();
+  }
+
+  getddleList(force = false) {
+    if (force && this.taskservice.empListFavourit.length) {
+      this.allowFav = true;
+      this.showFav = true;
+    }
+    if (this.showFav) {
+      this.ddlemplist = this.taskservice.getfaVouriteList();
+    } else {
+      this.ddlemplist = this.taskservice.empList;
+    }
+  }
+
 
 
 }

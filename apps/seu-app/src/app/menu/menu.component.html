@@ -46,14 +46,32 @@
               <i class="ik ik-user"></i> </a>
             <div class="submenu-content">
               <a [routerLink]="['/tasks/mytasks']" class="menu-item"> <span
-                  class="text-eng">{{"tasks.assignedtasks" | translate}}</span>
+                  class="text-eng">{{"tasks.assignedtasks" | translate}}
+                  <ng-container *ngIf="task.stats">
+                    ({{task.stats.assignedTasks}})
+                  </ng-container>
+                </span>
                 <i class="ik ik-user-check"></i> </a>
               <a [routerLink]="['/tasks/createdTasks']" class="menu-item"> <span
-                  class="text-eng">{{"tasks.createdTasks" | translate}}</span>
+                  class="text-eng">{{"tasks.createdTasks" | translate}}
+                  <ng-container *ngIf="task.stats">
+                    ({{task.stats.createdTasks}})
+                  </ng-container>
+
+                </span>
                 <i class="ik ik-user-check"></i> </a>
               <a [routerLink]="['/tasks/alltasks']" class="menu-item"> <span
-                  class="text-eng">{{"tasks.alltasks" | translate}}</span>
+                  class="text-eng">{{"tasks.alltasks" | translate}}
+                  <ng-container *ngIf="task.stats">
+                    ({{task.stats.viewableTasks}})
+                  </ng-container>
+
+                </span>
                 <i class="ik ik-user-check"></i> </a>
+              <a [routerLink]="['/tasks/fav-emps']" class="menu-item"> <span
+                  class="text-eng">{{"tasks.favemps" | translate}}
+                </span>
+                <i class="ik ik-user"></i> </a>
             </div>
           </div>
 
