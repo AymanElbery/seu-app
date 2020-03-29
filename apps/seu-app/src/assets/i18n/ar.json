@@ -107,6 +107,7 @@
         "grservices": "خدمات الماجستير",
         "userData": "بيانات الطالب",
         "academic_status": "الحالة الأكاديمية",
+        "infoupdate": "Info Update",
         "termexecuse": " طلب حذف المقررات (الإعتذار عن الفصل )",
         "postpone": "تأجيل الفصل الدراسي",
         "studypostpone": "طلب تأجيل الدراسه",
@@ -220,6 +221,26 @@
         "academic_record": {
             "title": "السجل الأكاديمي",
             "desc": "السجل الأكاديمي"
+        },
+        "info_update": {
+            "title": "Info Update",
+            "desc": "Info Update",
+            "addnewrequest": "Add New Request",
+            "first_name": "First Name",
+            "mid_name": "Mid Name",
+            "last_name": "Last Name",
+            "first_name_ar": "First Name Arabic",
+            "mid_name_ar": "Mid Name Arabic",
+            "last_name_ar": "Last Name Arabic",
+            "mobile": "Mobile",
+            "city": "City",
+            "street": "Street",
+            "cancel": "Cancel",
+            "save": "Save",
+            "ID": "ID",
+            "Name": "Name",
+            "NameAr": "Name Ar"         
+            
         },
         "certificate_id": {
             "title": "شهادة تعريف",

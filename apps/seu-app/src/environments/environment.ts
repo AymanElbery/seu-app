@@ -8,7 +8,7 @@ export const environment = {
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
   wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS_TEST/jersey/', // wafi 
-  servicesprefix: 'api', // api-test
+  servicesprefix: 'api-test', // api-test
   appsprefix: 'apps-test', // api-test
   loginpage: 'login-testl.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
