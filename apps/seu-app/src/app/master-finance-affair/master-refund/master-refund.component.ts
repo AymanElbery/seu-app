@@ -1,3 +1,4 @@
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
 import { PaymentRefundService } from '../services/payment-refund.service';
@@ -9,11 +10,15 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 
 
+
+
+
 @Component({
   selector: 'app-master-refund',
   templateUrl: './master-refund.component.html',
   styleUrls: ['./master-refund.component.css']
 })
+
 export class MasterRefundComponent implements OnInit,OnDestroy {
   canaddreq;
   reqData;
@@ -95,9 +100,5 @@ export class MasterRefundComponent implements OnInit,OnDestroy {
       });
     }
   }
-  call(hr) {
-    return Math.floor(Math.random() * 10) + hr;
-
-  }
-
+  
 }

@@ -35,6 +35,8 @@ import { AbsenceQueryComponent } from './absence-query/absence-query.component.t
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component.tns';
 import { AddVisitorStudentComponent } from './visitor-student/diag/add-visitor-student/add-visitor-student.component.tns';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
+import { AcademicaffModule } from '../academicaff/academicaff.module.tns';
+import { HeaderModule } from '../shared/header.module.tns';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/l
     NativeScriptLocalizeModule,
     TNSCheckBoxModule,
     AppTransModule,
-    NativeScriptUIListViewModule 
+    NativeScriptUIListViewModule,
+    AcademicaffModule,
+    HeaderModule
 
   ],
   schemas: [NO_ERRORS_SCHEMA],

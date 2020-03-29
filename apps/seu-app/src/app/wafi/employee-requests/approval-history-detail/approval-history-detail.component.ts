@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
 import { HttpClient } from '@angular/common/http';
-import { Observable ,  Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { EmployeeRequestsService } from '../../services/employee-requests.service';
 import { FormGroup, AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
@@ -16,25 +16,25 @@ import { ActivatedRoute } from '@angular/router';
 export class ApprovalHistoryDetailComponent implements OnInit {
 
   subscription: Subscription;
-  appreqdetails:any;
-  rejectionitmes:any;
+  appreqdetails: any;
+  rejectionitmes: any;
   AddReqForm: FormGroup;
   submitted = false;
   vacationreqtype: any;
   fileToUpload: File = null;
   disclaimerReasonItems;
-  currentServiceRequestTable:any;
-  transactionData:any;
+  currentServiceRequestTable: any;
+  transactionData: any;
 
- 
-  
+
+
   subscriptionDDLReqtype: Subscription;
   subscriptionvac: Subscription;
-  
-  constructor(@Inject(MAT_DIALOG_DATA) public data, public dialogRef: MatDialogRef<ApprovalHistoryDetailComponent>,private router: ActivatedRoute,private translate: TranslateService,private toastr: AppToasterService,private fb: FormBuilder,private empreqservice:EmployeeRequestsService) { 
-    this.AddReqForm = fb.group({      
-      'rejectReason': ['', [Validators.required]],    
-      
+
+  constructor(@Inject(MAT_DIALOG_DATA) public data, public dialogRef: MatDialogRef<ApprovalHistoryDetailComponent>, private router: ActivatedRoute, private translate: TranslateService, private toastr: AppToasterService, private fb: FormBuilder, private empreqservice: EmployeeRequestsService) {
+    this.AddReqForm = fb.group({
+      'rejectReason': ['', [Validators.required]],
+
     });
 
   }
@@ -42,20 +42,21 @@ export class ApprovalHistoryDetailComponent implements OnInit {
 
   isLoading = true;
   ngOnInit() {
-    console.log("details",this.data.reqSeq,this.data.reqEmpId,this.data.reqType);
+    //console.log("details",this.data.reqSeq,this.data.reqEmpId,this.data.reqType);
     this.isLoading = true;
-    this.subscription =  this.empreqservice.getapprovalhistoryDetail(this.data.reqSeq,this.data.reqType,this.data.reqEmpId).subscribe(apphistorydetail => {
+    this.subscription = this.empreqservice.getapprovalhistoryDetail(this.data.reqSeq, this.data.reqType, this.data.reqEmpId).subscribe(apphistorydetail => {
       if (apphistorydetail) {
         this.currentServiceRequestTable = (apphistorydetail as any).data["currentServiceRequestTable"];
         this.transactionData = (apphistorydetail as any).data["transactionData"];
-        console.log("Detail data",this.currentServiceRequestTable);
+        //console.log("Detail data",this.currentServiceRequestTable);
         this.isLoading = false;
-      } else {
-        this.isLoading = false;
-        //this.messages = [];
       }
-    }); 
-
+    },
+      err => {
+        this.isLoading = false;
+        this.toastr.tryagain();
+      }
+    );
   }
   get f() { return this.AddReqForm.controls; }
 
@@ -66,17 +67,17 @@ export class ApprovalHistoryDetailComponent implements OnInit {
       return;
     }
 
-    console.log("submit data", submitdatavalue);
+    //console.log("submit data", submitdatavalue);
 
     this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
-      //console.log("saved data", leavdedcut);
+      ////console.log("saved data", leavdedcut);
       if (!leavdedcut['saveRequest']) {
-        var error = (leavdedcut as any).data["errorMassege"]   
-        console.log("response data",error);
+        var error = (leavdedcut as any).data["errorMassege"]
+        //console.log("response data",error);
         this.toastr.push([{ type: 'error', 'body': error }]);
 
-      }else {
-        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
+      } else {
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
         //this.router.navigate(['/wafi/employee-requests'])
       }
     }

@@ -20,10 +20,10 @@ export class MedicalReportService {
 
    Download() {
     const sid =   this.configService.getSid();
-    return this.configService.getApiURI() + '/medical_report_service/download?sid=' + sid;
+    return this.configService.getApiURI() + '/medical_report_service/download';
    }
    DownloadEng() {
     const sid =   this.configService.getSid();
-    return this.configService.getApiURI() + '/medical_report_service/download?Lang=en&sid=' + sid;
+    return this.configService.getApiURI() + '/medical_report_service/download?Lang=en';
    }
 }

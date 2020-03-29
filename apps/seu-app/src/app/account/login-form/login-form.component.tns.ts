@@ -9,6 +9,9 @@ import { map } from 'rxjs/operators';
 import * as applicationSettings from 'tns-core-modules/application-settings';
 import { ChangeDetectorRef } from '@angular/core';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import * as app from 'tns-core-modules/application';
+
 
 
 @Component({
@@ -35,6 +38,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     private ref: ChangeDetectorRef,
     private toastr: AppToasterService
   ) {
+    console.log('l1');
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
 
@@ -42,6 +46,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
         this.credentials.email = param.email;
       }
     );
+    console.log('l2');
+
     // this.userManger.logout();
     // this.userManger.logout();
   }
@@ -61,6 +67,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
     this.isLoading = true;
     this.userService.SignIn( this.credentials.email, this.credentials.password).then(res => {
+
       this.status = (res as any).status;
       const data = (res as any);
       if ((res as any).status) {
@@ -80,6 +87,10 @@ export class LoginFormComponent implements OnInit, OnDestroy {
        // this.ref.markForCheck();
         // this.ref.detectChanges();
          this.isLoading = false;
+         const sideDrawer =  app.getRootView() as RadSideDrawer;
+         sideDrawer.isEnabled = true;
+         sideDrawer.gesturesEnabled = true;
+
          this.router.navigate(['/land']);
 
         } else {
@@ -134,6 +145,11 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.credentials.email = applicationSettings.getString('user');
     this.credentials.password = applicationSettings.getString('pass');
+    const sideDrawer =  app.getRootView() as RadSideDrawer;
+    sideDrawer.isEnabled = false;
+    sideDrawer.gesturesEnabled = false;
+
+
   }
   // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {

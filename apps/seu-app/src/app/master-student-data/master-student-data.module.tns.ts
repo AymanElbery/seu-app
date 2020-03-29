@@ -9,6 +9,7 @@ import { DropDownModule } from 'nativescript-drop-down/angular';
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
+import { HeaderModule } from '../shared/header.module.tns';
 
 @NgModule({
   declarations: [AcademicStatusComponent, AcademicRecordComponent],
@@ -19,7 +20,8 @@ import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
     NativeScriptFormsModule,
     NativeScriptUIListViewModule,
     NativeScriptLocalizeModule,
-    AppTransModule
+    AppTransModule,
+    HeaderModule
   ]
 })
 export class MasterStudentDataModule { }

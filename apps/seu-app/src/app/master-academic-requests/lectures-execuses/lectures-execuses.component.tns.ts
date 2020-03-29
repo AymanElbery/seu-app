@@ -13,6 +13,8 @@ import { RequestData } from '../../shared/models/request-data';
 declare var UIView, NSMutableArray, NSIndexPath;
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-lectures-execuses',
@@ -30,11 +32,11 @@ export class LecturesExecusesComponent implements OnInit {
   constructor(private translate: TranslateService, 
     private toastr: AppToasterService, 
     private acadmicProc: LecturesExecusesService,
-    private routerExtensions: RouterExtensions) { }
+    private routerExtensions: RouterExtensions,
+    private downloader: DataDownLoadService) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
+    Downloader.init();
     this.getRequests();
   }
   getRequests() {
@@ -55,8 +57,13 @@ export class LecturesExecusesComponent implements OnInit {
   }
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    this.toastr.download();
+    this.downloader.csize.subscribe(x => {
+      this.printAR = x;
+    });
   }
+  
 
   deleting = false;
   delete(id, index) {
@@ -87,11 +94,6 @@ export class LecturesExecusesComponent implements OnInit {
       }
   });
   }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
-
   onItemTap(event: ListViewEventData) {
     const listView = event.object,
         rowIndex = event.index,

@@ -7,6 +7,8 @@ import * as app from 'tns-core-modules/application';
 import * as utils from 'tns-core-modules/utils/utils';
 import { ExamData } from '../../shared/models/exam-data';
 import { AppToasterService } from '../../shared/services/app-toaster';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-exam-attendance-certificate',
@@ -14,14 +16,7 @@ import { AppToasterService } from '../../shared/services/app-toaster';
   styleUrls: ['./exam-attendance-certificate.component.scss']
 })
 export class ExamAttendanceCertificateComponent implements OnInit {
-  finalschedule: string;
-  final: string;
-  termSchedule: string;
-  term: string;
-  finalscheduleEn: string;
-  finalEn: string;
-  termScheduleEn: string;
-  termEn: string;
+
   isLoading = false;
   msgs;
 
@@ -41,13 +36,18 @@ export class ExamAttendanceCertificateComponent implements OnInit {
   EngPrintFinalWithSchedule: string;
   arabicPrintFinalWithoutSchedule: string;
   EngPrintFinalWithoutSchedule: string;
+  printAR = '';
+  printEN = '';
+  isDownLoaded = false;
 
   // tslint:disable-next-line: variable-name
   isFinal_Exam_Without_Schedule = false;
   // tslint:disable-next-line: variable-name
   isFinal_Exam_With_Schedule = false;
 
-  constructor(private translate: TranslateService, private toastr: AppToasterService, private stdData: ExamAttendanceCertificateService) { }
+  constructor(private translate: TranslateService, private toastr: AppToasterService, 
+    private stdData: ExamAttendanceCertificateService,
+    private downloader: DataDownLoadService) { }
 
   subscriptions;
   ngOnDestroy() {
@@ -57,12 +57,11 @@ export class ExamAttendanceCertificateComponent implements OnInit {
   }
 
   ngOnInit() {
+    Downloader.init();
     this.firstTabTitle = this.translate.instant('services.exam.tt');
     this.secondTabTitle = this.translate.instant('services.exam.tnt');
     this.thirdTabTitle = this.translate.instant('services.exam.ft');
     this.forthTabTitle = this.translate.instant('services.exam.fnt');
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
     this.getReqs();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
       this.getReqs();
@@ -103,33 +102,47 @@ export class ExamAttendanceCertificateComponent implements OnInit {
     return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
   }
 
-  onArabicPrint() {
-    utils.openUrl(this.arabicPrintTermWithSchedule);
-  }
-  onEnglishPrint() {
-    utils.openUrl(this.EngPrintTermWithSchedule);
-  }
-  onArabicPrintTerm() {
-    utils.openUrl(this.arabicPrintTermWithoutSchedule);
-  }
-  onEnglishPrintTerm() {
-    utils.openUrl(this.EngPrintTermWithoutSchedule);
-  }
-  onArabicPrintFinalSced() {
-    utils.openUrl(this.arabicPrintFinalWithSchedule);
-  }
-  onEnglishPrintFinalSced() {
-    utils.openUrl(this.EngPrintFinalWithSchedule);
-  }
-  onArabicPrintFinal() {
-    utils.openUrl(this.arabicPrintFinalWithoutSchedule);
-  }
-  onEnglishPrintFinal() {
-    utils.openUrl(this.EngPrintFinalWithoutSchedule);
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
-
+  onPrint(print:string) {
+    if(print==="termSchedule"){
+      print=this.arabicPrintTermWithSchedule
+    }else if(print==="termScheduleEn"){
+     print=this.EngPrintTermWithSchedule
+    }
+    else if(print==="term"){
+     print=this.arabicPrintTermWithoutSchedule
+ 
+   }else if(print==="termEn"){
+     print=this.EngPrintTermWithoutSchedule
+ 
+   }
+   else if(print==="finalschedule"){
+     print=this.arabicPrintFinalWithSchedule
+ 
+   }else if(print==="finalscheduleEn"){
+     print=this.EngPrintFinalWithSchedule
+ 
+   }else if(print==="final"){
+     print=this.arabicPrintFinalWithoutSchedule
+ 
+   }else if(print==="finalEn"){
+     print=this.EngPrintFinalWithoutSchedule
+ 
+   }
+    // utils.openUrl(this.termSchedule);
+     this.downloader.downloadFile(print);
+ 
+     this.downloader.csize.subscribe(x => {
+   this.toastr.download();      
+       if (x == '100') {
+         this.isDownLoaded = true;
+         this.translate.get('general.ar_print').subscribe(res => {
+             this.printAR = res;
+           }
+           );
+ 
+       }
+     });
+   }
+   
+ 
 }

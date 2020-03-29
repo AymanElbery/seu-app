@@ -34,7 +34,7 @@ export class UniversityWithdrawalService {
 
     const sid = this.configService.getSid();
 
-    return this.configService.getApiURI() + '/withdraw_service/download/' + req + '?sid=' + sid;
+    return this.configService.getApiURI() + '/withdraw_service/download/' + req;
   }
   DownloadEng() {
     this.configService.baseUrl = 'stdsUnivapi';

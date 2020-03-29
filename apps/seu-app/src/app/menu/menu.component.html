@@ -22,7 +22,12 @@
     </div>
     <div class="nav-container">
       <nav id="main-menu-navigation" class="navigation-main">
-
+        <div class="nav-item has-sub ">
+          <a href="#" class="menu-item homelink" routerLink="/">
+            <span>{{"general.home" | translate}}</span>
+            <i class="ik ik-home"></i>
+          </a>
+        </div>
         <div *ngIf="menuType==2&&showServices" class="nav-item has-sub ">
           <a href="javascript:void(0)"><span>{{'menu.userData' | translate}} </span> <i class="ik ik-user"></i></a>
           <div class="submenu-content">
@@ -35,12 +40,30 @@
           </div>
         </div>
 
-
         <div *ngIf="hasWafi">
           <div class="nav-item has-sub">
-            <h6 class="tab" style="box-sizing: border-box;text-align: justify;margin:15px 0 0 10px;;">
+            <a href="javascript:void(0)"> <span>{{"menu.tasks" | translate}} </span>
+              <i class="ik ik-user"></i> </a>
+            <div class="submenu-content">
+              <a [routerLink]="['/tasks/mytasks']" class="menu-item"> <span
+                  class="text-eng">{{"tasks.assignedtasks" | translate}}</span>
+                <i class="ik ik-user-check"></i> </a>
+              <a [routerLink]="['/tasks/createdTasks']" class="menu-item"> <span
+                  class="text-eng">{{"tasks.createdTasks" | translate}}</span>
+                <i class="ik ik-user-check"></i> </a>
+              <a [routerLink]="['/tasks/alltasks']" class="menu-item"> <span
+                  class="text-eng">{{"tasks.alltasks" | translate}}</span>
+                <i class="ik ik-user-check"></i> </a>
+            </div>
+          </div>
+
+          <div class="nav-item has-sub ">
+            <a href="javascript:void(0)" class="menu-item homelink" routerLink="/">
+              <span>{{"wafi.wafi" | translate}}</span>
               <i class="ik ik-book-open"></i>
-              {{"wafi.wafi" | translate}}</h6>
+            </a>
+          </div>
+          <div class="nav-item has-sub">
             <a href="javascript:void(0)"> <span>{{"wafi.personal" | translate}} </span>
               <i class="ik ik-user"></i> </a>
             <div class="submenu-content">
@@ -73,11 +96,13 @@
                 <span class="text-eng">{{"wafi.AddNewRequest" | translate}}</span> <i class="ik ik-save"></i> </a>
             </div>
             <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-requests']" class="menu-item">
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-requests']"
+                class="menu-item">
                 <span class="text-eng">{{"wafi.ApprovalRequests" | translate}}</span> <i class="ik ik-save"></i> </a>
             </div>
             <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-history']" class="menu-item">
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-history']"
+                class="menu-item">
                 <span class="text-eng">{{"wafi.AppriovalHistory" | translate}}</span> <i class="ik ik-save"></i> </a>
             </div>
           </div>
@@ -87,7 +112,8 @@
               <i class="ik ik-user"></i> </a>
             <div class="submenu-content">
               <a [routerLink]="['/wafi/administrative/emp-evaluations']" class="menu-item"> <span
-                  class="text-eng">{{"wafi.employeeevaluations" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+                  class="text-eng">{{"wafi.employeeevaluations" | translate}}</span> <i class="ik ik-user-check"></i>
+              </a>
             </div>
 
             <div class="submenu-content">
@@ -109,10 +135,10 @@
               <a [routerLink]="['/wafi/administrative/vouchers']" class="menu-item"> <span
                   class="text-eng">{{"wafi.EmployeeVouchers" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
-         
-       
+
+
           </div>
-          
+
         </div>
 
 
@@ -280,8 +306,9 @@
           <a href="javascript:void(0)"><span> {{"menu.OTHERREQ" | translate}} </span> <i class="ik ik-package"></i></a>
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/other/medicalreport"> {{"menu.MED" | translate}} </a>
-            <!--   <a href="#" class="menu-item" routerLink="/other/missingcard">طلب بطاقة جامعية بدل فاقد </a>
-                                <a href="#" class="menu-item" routerLink="/other/training"> طلب التدريب الميداني  </a>-->
+            <!--   <a href="#" class="menu-item" routerLink="/other/missingcard">طلب بطاقة جامعية بدل فاقد </a>-->
+            <a href="#" class="menu-item" routerLink="/other/training"> {{"menu.training" | translate}} </a>
+            <a href="#" class="menu-item" routerLink="/other/chineescourse"> {{"menu.chineescourse" | translate}} </a>
 
           </div>
         </div>
@@ -340,8 +367,9 @@
               href="http://seuapps.seu.edu.sa/eservices/taqrir_final/login.php">{{"menu.AdminPage" | translate}} <i
                 class="ik ik-tablet"></i></a>
 
-
-
+            <a routerLink="/instructions/exams" class="menu-item">
+              {{"menu.INSTRUCTEXAM" | translate}}
+              <i class="ik ik-user-check"></i> </a>
 
           </div>
         </div>
@@ -389,7 +417,7 @@
             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">
               {{"menu.email" | translate}}
               <i class="ik ik-mail"></i> </a>
-            <a target="_blank" href="https://wafi.seu.edu.sa/seu/casLogin" class="menu-item">
+            <a target="_blank" href="https://seu.edu.sa/kr/" class="menu-item">
               {{"menu.KnowMng" | translate}} <i class="ik ik-book-open"></i> </a>
             <a target="_blank" href="https://saudieu-analytics.blackboard.com/default.aspx" class="menu-item">
               {{"menu.Reports" | translate}}
@@ -410,7 +438,12 @@
               <i class="ik ik-mail"></i> </a>
             <a target="_blank" href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement"
               class="menu-item"> {{"menu.EVENTSMANAGE" | translate}}<i class="ik ik-mail"></i> </a>
-
+            <a class="menu-item" target="_blank"
+              href="https://lijan.seu.edu.sa/lpclient/">{{"menu.CouncilsAndCommittees" | translate}} <i
+                class="ik ik-tablet"></i></a>
+            <a routerLink="/instructions/exams" class="menu-item">
+              {{"menu.INSTRUCTEXAM" | translate}}
+              <i class="ik ik-user-check"></i> </a>
             <!-- <a target="_blank" href="https://seuapps.seu.edu.sa/attends"
               class="menu-item">  {{"menu.student_attendance" | translate}}<i class="ik ik-mail"></i> </a> -->
 
@@ -473,7 +506,7 @@
           </div>
         </div>
 
-    <!--
+        <!--
              <div *ngIf="userService.userData.act_as_student" class="nav-item has-sub">
                 <a href="javascript:void(0)"> <span>الأنظمة </span>
                     <i class="ik ik-align-right"></i> </a>
@@ -484,9 +517,9 @@
                  </div>
              </div> -->
 
-    <!--
+        <!--
                   <div class="nav-lavel"> </div> -->
-    <!-- <div class="nav-item">
+        <!-- <div class="nav-item">
                     <a class="nav-link"  ><span>  إرشادات عامة  </span> <i class="ik ik-alert-circle"></i>
                    </a>
                    </div>
@@ -495,7 +528,7 @@
                     </a>
                   </div> -->
 
-    </nav>
+      </nav>
+    </div>
   </div>
-</div>
 </div>

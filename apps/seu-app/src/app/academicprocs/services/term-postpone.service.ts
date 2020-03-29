@@ -36,7 +36,7 @@ export class TermPostponeService {
   Download(req) {
     this.configService.baseUrl = 'stdservicesapi';
     const sid = this.configService.getSid();
-    return this.configService.getApiURI() + '/postpone_service/download/postpone/' + req + '?sid=' + sid + '&lang=' + this.translate.currentLang;
+    return this.configService.getApiURI() + '/postpone_service/download/postpone/' + req;
   }
   // DownloadEng() {
   //   this.configService.baseUrl = 'stdservicesapi';

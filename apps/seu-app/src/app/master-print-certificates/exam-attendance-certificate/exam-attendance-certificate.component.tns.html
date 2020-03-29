@@ -1,25 +1,4 @@
-<ActionBar style="background:#001628; ">
-    <!-- 
-    Use the NavigationButton as a side-drawer button in Android
-    because ActionItems are shown on the right side of the ActionBar
-  
-  -->
-  
-  <NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ></NavigationButton>
-  
-  <!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
-  -->
-  <StackLayout margin-top="0">
-  
-    <Image src="~/images/logo_3d.png" style="width:80%"></Image>
-  
-  </StackLayout>
-  
-    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="left">
-    </ActionItem>
-  
-  </ActionBar> 
-  
+<app-header></app-header>  
   <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
     <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
     <Label col="1" text='{{"services.exam.certatt" | translate}}' class="serv-name" ></Label>
@@ -40,7 +19,7 @@
         <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
     </StackLayout>
 
-<TabView selectedIndex="3" *ngIf="!isLoading">
+<TabView  *ngIf="!isLoading">
 	<StackLayout *tabItem='{title: firstTabTitle }'>
 
         <FlexboxLayout flexDirection="row-reverse" *ngIf="reqData.Term_Exam_With_Schedule &&reqData.Term_Exam_With_Schedule.messages.length>0">
@@ -136,8 +115,8 @@
     </StackLayout>
         <StackLayout style="margin-top: 20;">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.messages.length==0">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termSchedule')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termScheduleEn')"></Button>
         </FlexboxLayout>
     </StackLayout>
 
@@ -202,8 +181,8 @@
         </GridLayout>
 
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="reqData.Term_Exam_Without_Schedule &&reqData.Term_Exam_Without_Schedule.messages.length==0">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintTerm()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintTerm()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('term')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termEn')"></Button>
         </FlexboxLayout>
 
     </StackLayout>
@@ -300,8 +279,8 @@
 
      <StackLayout style="margin-top: 20;">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintFinalSced()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintFinalSced()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalschedule')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalscheduleEn')"></Button>
         </FlexboxLayout>
     </StackLayout>
 </StackLayout>
@@ -364,8 +343,8 @@
         </GridLayout>
       
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" style="margin-top: 20;" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.messages.length==0">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onArabicPrintFinal()" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onEnglishPrintFinal()"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('final')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalEn')"></Button>
         </FlexboxLayout>
 	</StackLayout>
 </TabView>

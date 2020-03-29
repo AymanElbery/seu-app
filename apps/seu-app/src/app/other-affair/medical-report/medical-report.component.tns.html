@@ -1,20 +1,7 @@
-<ActionBar>
-    <!-- 
-            <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-
-    Use the NavigationButton as a side-drawer button in Android
-    because ActionItems are shown on the right side of the ActionBar
-    -->
-    <!-- 
-    Use the ActionItem for IOS with position set to left. Using the
-    NavigationButton as a side-drawer button in iOS is not possible,
-    because its function is to always navigate back in the application.
-    -->
-    <ActionItem icon="res://menu"  (tap)="onDrawerButtonTap()"
-        ios.position="left">
-    </ActionItem>
-    <Label text='{{"services.medical_report.title"|translate}}'></Label>
-</ActionBar>
+<app-header></app-header>
+<StackLayout>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+</StackLayout>
 
 <ScrollView>
     <FlexboxLayout flexDirection="column">
@@ -27,43 +14,60 @@
             </ListView>
         </FlexboxLayout>
 
-        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+        <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
+            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+            <Label col="1" text='{{"services.medical_report.title" | translate}}' class="serv-name" ></Label>
+            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        
+        </GridLayout>
             
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <Button class=" print-btn " (tap)="onArabicPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text="{{printAR}}"></Span>
+                </FormattedString>
+            </Button>
+            <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text="{{printEN}}"></Span>
+                </FormattedString>
+            </Button>
+        </FlexboxLayout>
+        
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="!isLoading && mrData.labels">
           
               <Label row="0" colSpan="2"  class="ysHBox"  text='{{"general.student_data"|translate}}'></Label>
           
-              <Label row="1" column="1" style="font-weight: 800;" text='{{mrData.labels.txt1}} :'></Label>
-              <Label row="1"  column="0" text="{{mrData.values.date}}"  style="text-align: right;"></Label>
+              <Label class="ysPBox" row="1" column="1" style="font-weight: 800;" text='{{mrData.labels.txt1}} :'></Label>
+              <Label class="ysPBox2"  row="1"  column="0" text="{{mrData.values.date}}" ></Label>
           
-              <Label row="2" column="1" style="font-weight: 800;" text='{{"general.female_or_male_name"|translate}} :'></Label>
-              <Label row="2"  column="0" text="{{mrData.values.std_name}}"></Label>
+              <Label class="ysPBox" row="2" column="1" style="font-weight: 800;" text='{{"general.female_or_male_name"|translate}} :'></Label>
+              <Label class="ysPBox2" row="2"  column="0" text="{{mrData.values.std_name}}"></Label>
           
-              <Label row="3" column="1" style="font-weight: 800;" text='{{"general.student_id"|translate}} :'></Label>
-              <Label row="3"  column="0" text="{{mrData.values.std_id}}" style="text-align: right;"></Label>
+              <Label class="ysPBox" row="3" column="1" style="font-weight: 800;" text='{{"general.student_id"|translate}} :'></Label>
+              <Label class="ysPBox2" row="3"  column="0" text="{{mrData.values.std_id}}"></Label>
 
-              <Label row="4" column="1" style="font-weight: 800;" text='{{"general.ssn"|translate}} :'></Label>
-              <Label row="4"  column="0" text="{{mrData.values.ssn}}"  style="text-align: right;"></Label>
+              <Label class="ysPBox" row="4" column="1" style="font-weight: 800;" text='{{"general.ssn"|translate}} :'></Label>
+              <Label class="ysPBox2" row="4"  column="0" text="{{mrData.values.ssn}}" ></Label>
 
-              <Label row="5" column="1" style="font-weight: 800;" text='{{"general.faculty"|translate}} :'></Label>
-              <Label row="5"  column="0" text="{{mrData.values.coll}}"></Label>
+              <Label class="ysPBox" row="5" column="1" style="font-weight: 800;" text='{{"general.faculty"|translate}} :'></Label>
+              <Label class="ysPBox2" row="5"  column="0" text="{{mrData.values.coll}}"></Label>
 
-              <Label row="6" column="1" style="font-weight: 800;" text='{{"general.major"|translate}} :'></Label>
-              <Label row="6"  column="0" text="{{mrData.values.major}}"></Label>
+              <Label class="ysPBox" row="6" column="1" style="font-weight: 800;" text='{{"general.major"|translate}} :'></Label>
+              <Label class="ysPBox2" row="6"  column="0" text="{{mrData.values.major}}"></Label>
             </GridLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" class="ysBox"  *ngIf="!isLoading && mrData.labels" flexWrap="wrap">
-            <Label text="{{mrData.labels.part1}}" textWrap="true"></Label>
-            <Label text="{{mrData.labels.part2}}" textWrap="true"></Label>
-            <Label text='{{"general.note"|translate}}' textWrap="true"></Label>
-            <Label text="{{mrData.labels.txt2}}" textWrap="true"></Label>
-            <Label text="{{mrData.labels.txt3}}" textWrap="true"></Label>
+        <FlexboxLayout flexDirection="row-reverse" class="paragraph"  *ngIf="!isLoading && mrData.labels" flexWrap="wrap">
+            <Label  text="{{mrData.labels.part1}}" textWrap="true"></Label>
+            <Label  text="{{mrData.labels.part2}}" textWrap="true"></Label>
+            <Label  text='{{"general.note"|translate}}' textWrap="true"></Label>
+            <Label  text="{{mrData.labels.txt2}}" textWrap="true"></Label>
+            <Label  text="{{mrData.labels.txt3}}" textWrap="true"></Label>
         </FlexboxLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading  && mrData.labels" style="margin-top: 20;">
-            <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()"></Button>
-            <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
-        </FlexboxLayout>
+    
     </FlexboxLayout>
 
     </ScrollView>

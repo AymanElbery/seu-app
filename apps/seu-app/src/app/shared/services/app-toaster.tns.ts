@@ -18,5 +18,9 @@ export class AppToasterService {
       }
 
   }
+  download() {
+    const toast = Toast.makeText('Downloading');
+    toast.show();
+  }
 
 }

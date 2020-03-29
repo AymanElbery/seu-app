@@ -5,6 +5,9 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import * as utils from 'tns-core-modules/utils/utils';
 import { ExamData } from '../../shared/models/exam-data';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
+import { AppToasterService } from '../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-exams-attend-stat',
@@ -41,10 +44,14 @@ export class ExamsAttendStatComponent implements OnInit {
   thirdTabTitle: string;
   forthTabTitle: string;
   msgs: any;
+  printAR = '';
+  printEN = '';
+  isDownLoaded = false;
 
 
-
-  constructor(private academicService: ExamAttendanceService, private translate: TranslateService) {
+  constructor(private academicService: ExamAttendanceService,
+     private translate: TranslateService,
+     private downloader: DataDownLoadService,private toastr: AppToasterService) {
 
     this.firstTabTitle = this.translate.instant('services.exam.tt');
     this.secondTabTitle = this.translate.instant('services.exam.tnt');
@@ -53,13 +60,11 @@ export class ExamsAttendStatComponent implements OnInit {
  }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
+    Downloader.init();
     this.isLoading = true;
     this.academicService.getِExamsAttednace().then(
       res => {
         this.eaData = (res as any).data;
-        console.log("eadataaaaaaaaaaaaa",this.eaData)
         this.isLoading = false;
 
         this.msgs=(res as any).messages;
@@ -97,32 +102,46 @@ export class ExamsAttendStatComponent implements OnInit {
     return new DOMParser().parseFromString(input, 'text/html').documentElement.textContent;
   }
 
-  onArabicPrint() {
-    utils.openUrl(this.termSchedule);
-  }
-  onEnglishPrint() {
-    utils.openUrl(this.termScheduleEn);
-  }
-  onArabicPrintTerm() {
-    utils.openUrl(this.term);
-  }
-  onEnglishPrintTerm() {
-    utils.openUrl(this.termEn);
-  }
-  onArabicPrintFinalSced() {
-    utils.openUrl(this.finalschedule);
-  }
-  onEnglishPrintFinalSced() {
-    utils.openUrl(this.finalscheduleEn);
-  }
-  onArabicPrintFinal() {
-    utils.openUrl(this.final);
-  }
-  onEnglishPrintFinal() {
-    utils.openUrl(this.finalEn);
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
+  onPrint(print:string) {
+    if(print==="termSchedule"){
+      print=this.termSchedule
+    }else if(print==="termScheduleEn"){
+     print=this.termScheduleEn
+    }
+    else if(print==="term"){
+     print=this.term
+ 
+   }else if(print==="termEn"){
+     print=this.termEn
+ 
+   }
+   else if(print==="finalschedule"){
+     print=this.finalschedule
+ 
+   }else if(print==="finalscheduleEn"){
+     print=this.finalscheduleEn
+ 
+   }else if(print==="final"){
+     print=this.final
+ 
+   }else if(print==="finalEn"){
+     print=this.finalEn
+ 
+   }
+    // utils.openUrl(this.termSchedule);
+     this.downloader.downloadFile(print);
+     this.toastr.download();      
+     this.downloader.csize.subscribe(x => {
+       this.printAR = x;
+       if (x == '100') {
+         this.isDownLoaded = true;
+         this.translate.get('general.ar_print').subscribe(res => {
+             this.printAR = res;
+           }
+           );
+ 
+       }
+     });
+   }
 }
+

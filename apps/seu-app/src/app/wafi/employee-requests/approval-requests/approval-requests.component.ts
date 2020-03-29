@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { RequestsDetailsComponent } from '../requests-details/requests-details.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
-import {ApprovalRequestDetailComponent} from '../approval-request-detail/approval-request-detail.component';
+import { ApprovalRequestDetailComponent } from '../approval-request-detail/approval-request-detail.component';
 import { Pipe, PipeTransform } from '@angular/core';
 import * as _ from 'lodash';
 @Component({
@@ -14,16 +14,16 @@ import * as _ from 'lodash';
   templateUrl: './approval-requests.component.html',
   styleUrls: ['./approval-requests.component.css']
 })
-export class ApprovalRequestsComponent implements OnInit,OnDestroy {
-  
+export class ApprovalRequestsComponent implements OnInit, OnDestroy {
+
   p: number;
   filter;
   searchTerm: string;
   config: any;
   @Input() groupFilters: Object;
-	@Input() searchByKeyword: string;
-	users: any[] = [];
-	filteredUsers: any[] = [];
+  @Input() searchByKeyword: string;
+  users: any[] = [];
+  filteredUsers: any[] = [];
   subscription: Subscription;
   subscriptionappreq: Subscription;
   emplistrequestapproval: any;
@@ -39,7 +39,7 @@ export class ApprovalRequestsComponent implements OnInit,OnDestroy {
     });
 
   }
-  pageChanged(event){
+  pageChanged(event) {
     this.config.currentPage = event;
   }
   ngOnDestroy() {
@@ -53,31 +53,32 @@ export class ApprovalRequestsComponent implements OnInit,OnDestroy {
     this.subscriptionappreq = this.empreqservice.getapprovalrequests().subscribe(appreqs => {
       if (appreqs) {
         this.emplistrequestapproval = (appreqs as any).data["requestsToApproveTable"];
-        console.log("emp app request",this.emplistrequestapproval);      
         this.isLoading = false;
-      } else {
-
       }
-    });
-
+    },
+      err => {
+        this.isLoading = false;
+        this.toastr.tryagain();
+      }
+    );
   }
 
-  getappreqdetail(reqSeq:any, reqEmpId:any, reqType:any) {
+  getappreqdetail(reqSeq: any, reqEmpId: any, reqType: any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = "75%";
-    dialogConfig.data = { reqSeq, reqType,reqEmpId  };
+    dialogConfig.data = { reqSeq, reqType, reqEmpId };
     this.dialog.open(ApprovalRequestDetailComponent, dialogConfig).afterClosed().subscribe(res => {
     });
   }
 
   // applySearch(filters){
-  //   console.log("filters" , filters);
+  //   //console.log("filters" , filters);
   // }
 
-  
-	
+
+
 
 
 }

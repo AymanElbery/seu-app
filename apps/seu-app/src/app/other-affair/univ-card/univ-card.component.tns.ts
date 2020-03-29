@@ -27,8 +27,6 @@ export class UnivCardComponent implements OnInit {
     private routerExtensions: RouterExtensions) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.card = { name: '', phone: '', ssn: '', day: '', time: '', level: '', photo: '', ssn_file: '' };
     this.getRequests();
   }
@@ -83,10 +81,4 @@ export class UnivCardComponent implements OnInit {
       }
   });
   }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
-
-
 }

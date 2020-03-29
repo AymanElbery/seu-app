@@ -1,4 +1,4 @@
-<ActionBar title='{{"services.univ_card.title"|translate}}'>
+<ActionBar style="background:#001628; ">
     <!-- 
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
@@ -8,8 +8,10 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <NavigationButton icon="font://&#xf060;"  class="fas" (tap)="goBack()" ios.position="left"></NavigationButton>
-    <ActionItem icon="font://&#xf0c7;" class="fas" ios.position="right" (tap)="onSubmit()"></ActionItem>
+    <Label text='{{"services.univ_card.title"|translate}}' class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
 
 </ActionBar>
 <ScrollView>
@@ -18,25 +20,25 @@
 
             <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.missing_card.req_requisites"|translate}}'></Label>
 
-            <StackLayout row="1" colSpan="2" style="margin-bottom: 20;">
-                <Label text='{{"services.missing_card.upload_pic"|translate}}'></Label>
-                <Label text='{{"services.missing_card.pic_size"|translate}}'></Label>
-                <Label text='{{"services.missing_card.pic_color"|translate}}' textWrap="true"></Label>
-                <Label text='{{"services.missing_card.pic_for_females"|translate}}' textWrap="true"></Label>
-                <Label text='{{"services.missing_card.pic_quality"|translate}}' textWrap="true"></Label>
-                <Label text='{{"services.missing_card.pic_warning"|translate}}' textWrap="true"></Label>
+            <StackLayout row="1" colSpan="2" style="margin-bottom: 20;" class="paragraph">
+                <Label  text='{{"services.missing_card.upload_pic"|translate}}'></Label>
+                <Label  text='{{"services.missing_card.pic_size"|translate}}'></Label>
+                <Label  text='{{"services.missing_card.pic_color"|translate}}' textWrap="true"></Label>
+                <Label  text='{{"services.missing_card.pic_for_females"|translate}}' textWrap="true"></Label>
+                <Label  text='{{"services.missing_card.pic_quality"|translate}}' textWrap="true"></Label>
+                <Label  text='{{"services.missing_card.pic_warning"|translate}}' textWrap="true"></Label>
             </StackLayout>
 
             
             
-            <Label row="2" column="1" style="font-weight: 800;" text='{{"general.female_or_male_name"|translate}} :'></Label>
+            <Label row="2" class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.female_or_male_name"|translate}} :'></Label>
             <TextField 
             row="2" column="0"
             #name="ngModel" [(ngModel)]="card.name"
             style="border-width: 1;"
             ></TextField>
         
-            <Label row="3" column="1" style="font-weight: 800;" text='{{"services.missing_card.ssn_or_equal"|translate}} :'
+            <Label class="ysPBox" row="3" column="1" style="font-weight: 800;" text='{{"services.missing_card.ssn_or_equal"|translate}} :'
             textWrap="true"></Label>
             <TextField 
             row="3" column="0"
@@ -44,14 +46,14 @@
             style="border-width: 1;"
             ></TextField>
             
-            <Label row="4" column="1" style="font-weight: 800;" text='{{"services.missing_card.mobile_no"|translate}} :'></Label>
+            <Label row="4" class="ysPBox" column="1" style="font-weight: 800;" text='{{"services.missing_card.mobile_no"|translate}} :'></Label>
             <TextField 
             row="4" column="0"
             name="phone" #phone="ngModel" [(ngModel)]="card.phone"
             style="border-width: 1;"
             ></TextField>
 
-            <Label row="5" column="1" style="font-weight: 800;" text='{{"services.missing_card.period"|translate}}'></Label>
+            <Label row="5" class="ysPBox" column="1" style="font-weight: 800;" text='{{"services.missing_card.period"|translate}}'></Label>
             <DropDown
             row="5" column="0"
             [items]="timesDropDown"
@@ -61,7 +63,7 @@
             itemsPadding="5"
             ></DropDown>
 
-            <Label row="6" column="1" style="font-weight: 800;" text='{{"general.day"|translate}}'></Label>
+            <Label row="6" class="ysPBox" column="1" style="font-weight: 800;" text='{{"general.day"|translate}}'></Label>
             <DropDown
             row="6" column="0"
             [items]="daysDropDown"
@@ -75,11 +77,11 @@
         </GridLayout>
         
 
-        <Label text='{{"services.missing_card.add_personal_pic"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;margin-top: 20;"></Label>
-        <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="-primary" style="margin-bottom: 20;"></Button>
+        <Label text='{{"services.missing_card.add_personal_pic"|translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;margin-top: 20;"></Label>
+        <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="print-btn" style="margin-bottom: 20;"></Button>
     
-        <Label text='{{"services.missing_card.add_ssn_pic"|translate}}' textWrap="true" style="color: #6189f4;margin-right: 20;"></Label>
-        <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="-primary"></Button>
+        <Label text='{{"services.missing_card.add_ssn_pic"|translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;"></Label>
+        <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn"></Button>
 
     </FlexboxLayout>
 </ScrollView>

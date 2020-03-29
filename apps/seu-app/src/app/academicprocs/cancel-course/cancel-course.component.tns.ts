@@ -9,7 +9,8 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { TranslateService } from '@ngx-translate/core';
 import { RequestData } from '../../shared/models/request-data';
-
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-cancel-course',
@@ -25,13 +26,13 @@ export class CancelCourseComponent implements OnInit {
   msgs=[];
   status;
   isLoading = false;
-
+  isDownLoaded = false;
   constructor(private toastr: AppToasterService, private acadmicProc: CancelCourseService,
-    private routerExtensions: RouterExtensions,private translate: TranslateService) { }
+    private routerExtensions: RouterExtensions,private translate: TranslateService,
+    private downloader: DataDownLoadService) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
+    Downloader.init(); 
     this.isLoading = true;
     this.cancelCousre = { courses: null, agreement: 1 };
     this.getRequests();
@@ -56,7 +57,19 @@ export class CancelCourseComponent implements OnInit {
   }
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    this.toastr.download();
+    this.downloader.csize.subscribe(x => {
+      this.printAR = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.translate.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
+      }
+    });
   }
 
   deleting = false;
@@ -93,9 +106,5 @@ export class CancelCourseComponent implements OnInit {
           name: 'fade'
       }
   });
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
   }
 }

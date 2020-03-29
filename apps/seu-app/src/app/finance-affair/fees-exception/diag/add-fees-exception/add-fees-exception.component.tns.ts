@@ -263,7 +263,6 @@ export class AddFeesExceptionComponent implements OnInit {
 
   assChange(p: SelectedIndexChangedEventData) {
     this.feesException.association = this.itemassociationsSource.getValue(p.newIndex);
-    alert(this.feesException.association);
     this.feesException.proof_status = '';
     this.feesException.insurance_card = '';
     this.feesException.work_status = '';

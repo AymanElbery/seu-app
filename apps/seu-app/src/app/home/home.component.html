@@ -1,8 +1,8 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div class="col-md-10 offset-md-1">
-      <div class="row justify-content-md-center">
-        <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="col-md-10 ">
+      <div class="row ">
+        <div class="col-md-6 col-sm-6 col-xs-12 ">
           <div class="widget ">
             <div class="widget-header">
               <h3 class="widget-title">
@@ -20,7 +20,7 @@
                       [carouselClasses]="['owl-theme', 'sliding']">
                       <div class="item" *ngFor="let news of userService.newsData;index as i">
                         <div style="align-content: center" class="owl-content">
-                            <img style="height: 260px;width:100%"
+                          <img style="height: 260px;width:100%"
                             [src]="news.image.startsWith('http')?news.image:('data:image/jpg;base64,' + news.image)" />
                           <p>
                             <a class="newslink" [routerLink]="['/dashboard/newsdetail', i]">
@@ -39,7 +39,7 @@
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-6 col-sm-6 col-xs-12 ">
           <div class="widget ">
             <div class="widget-header">
 
@@ -78,13 +78,11 @@
       </div>
 
 
-      <div class="row justify-content-md-center">
+      <div class="row ">
         <div class="col-md-6 col-sm-6 col-xs-12">
           <div class="widget">
             <div class="card latest-update-card">
               <div class="widget-header">
-
-
                 <h3 class="widget-title"> <i class="ik ik-calendar"></i> {{"menu.Events" | translate}} <i
                     *ngIf="!eventsLoaded" class="fas fa-spinner fa-spin"> </i></h3>
               </div>
@@ -96,7 +94,7 @@
                     </div>
                     <div class="col">
                       <a href="#">
-                        <h6 class="news-title">{{news.title}} </h6>
+                        <h6 class="news-title" [innerHtml]="news.title"></h6>
                       </a>
                       <p class=" mb-0"><i class="fa fa-calendar" style="color: #1c2172"></i>
                         {{news.date}} </p>
@@ -290,6 +288,11 @@
                   </div>
                 </div>
                 <div class="row">
+                  <div class="col-md-6 new-ser">
+                    <i class="ik ik-tablet"></i>
+                    <p><a target="_blank" href="https://lijan.seu.edu.sa/lpclient/">
+                        {{"menu.CouncilsAndCommittees" | translate}} </a></p>
+                  </div>
                   <!-- <div class="col-md-6 new-ser">
                   <i class="ik ik-clipboard"></i>
                   <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx">

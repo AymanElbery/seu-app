@@ -33,7 +33,7 @@ export class LectureExecuseServiceService {
   Download(req) {
     this.configService.baseUrl = 'stdservicesapi';
     const sid =   this.configService.getSid();
-    return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req + '?sid=' + sid;
+    return this.configService.getApiURI() + '/lecture_excuse_service/download/' + req;
   }
   DownloadEng() {
     this.configService.baseUrl = 'stdservicesapi';

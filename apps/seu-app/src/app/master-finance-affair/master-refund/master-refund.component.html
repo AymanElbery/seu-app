@@ -1,8 +1,9 @@
+
 <div class="main-content">
   <service-header title='{{"services.master_refund.desc" | translate}}'></service-header>
-  <seu-loader [isLoading]="loading"></seu-loader>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
 
-  <div class="widget" *ngIf="!loading">
+  <div class="widget" *ngIf="!isLoading">
 
     <div class="widget-header">
       <h3 class="widget-title">
@@ -44,3 +45,4 @@
   </div>
 
 </div>
+

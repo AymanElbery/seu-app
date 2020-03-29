@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../account/services/user.service';
 import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-menu',
@@ -68,7 +69,7 @@ export class MenuComponent implements OnInit {
       this.hasNoRole = true;
     }
 
-    this.hasWafi = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
+    this.hasWafi = environment.allowWafi && (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
 
     // this.hasWafi = true;
   }

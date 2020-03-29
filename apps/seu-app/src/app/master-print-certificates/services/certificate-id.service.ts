@@ -23,13 +23,13 @@ export class CertificateIDService {
     this.configService.baseUrl = 'stdsUnivapi';
     const sid =   this.configService.getSid();
 
-    return this.configService.getApiURI() + '/identification_certificate/download?sid=' + sid;
+    return this.configService.getApiURI() + '/identification_certificate/download';
    }
    DownloadEng() {
     this.configService.baseUrl = 'stdsUnivapi';
     const sid =   this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/identification_certificate/download?Lang=en&sid=' + sid;
+    return this.configService.getApiURI() + '/identification_certificate/download?Lang=en';
    }
 }

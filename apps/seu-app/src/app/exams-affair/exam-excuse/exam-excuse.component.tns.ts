@@ -3,8 +3,6 @@ import { ExamExcuseService } from '../services/exam-excuse.service';
 import { AppToasterService } from '../../shared/services/app-toaster';
 import* as dialogs from "tns-core-modules/ui/dialogs";
 import { RouterExtensions } from 'nativescript-angular/router';
-import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
-import * as app from 'tns-core-modules/application';
 import { TranslateService } from '@ngx-translate/core';
 import { RequestData } from '../../shared/models/request-data';
 declare var UIView, NSMutableArray, NSIndexPath;
@@ -30,8 +28,6 @@ export class ExamExcuseComponent implements OnInit {
      private translate: TranslateService,) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
     this.getRequests();
   }
   getRequests() {
@@ -77,10 +73,6 @@ export class ExamExcuseComponent implements OnInit {
           name: 'fade'
       }
   });
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
   }
 
   onItemTap(event: ListViewEventData) {

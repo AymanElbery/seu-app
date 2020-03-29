@@ -1,30 +1,34 @@
-<ActionBar style="color: white;">
-
+<ActionBar  style="background:#001628; ">
+<!--
     <NavigationButton style="color: white;background-color: white;" (tap)="goBack()" text="Go Back"
         android.systemIcon="ic_menu_back">
     </NavigationButton>
     <ActionItem style="color: white;background-color: white;" ios.systemIcon="9" android.systemIcon="ic_menu_save"
         (tap)="addRequest()" ios.position="right">
     </ActionItem>
-    <Label text="{{'general.request.add_request' | translate}} "></Label>
+    -->
+    <Label text="{{'general.request.add_request' | translate}} " class="label-action"></Label>
+    <NavigationButton  icon="font://&#xf104;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
 </ActionBar>
 <ScrollView>
 
 
 
     <StackLayout margin="10">
-        <StackLayout class="form ysBox" padding="15">
+        <StackLayout class="form " padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.doyou' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <DropDown class="input" style="font-weight: 700;" [items]="itemTypeSource"
+                <Label  class="ysPBox" text="{{'services.finance.doyou' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
+                <DropDown  class="ysPBox2" class="input" style="font-weight: 700;" [items]="itemTypeSource"
                     hint="{{'services.finance.choose' | translate}}" itemsTextAlignment="center"
                     (selectedIndexChanged)="exceptionTypeChange($event)"></DropDown>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
 
             <StackLayout class="input-field">
-                <Label text=" {{'services.finance.cat' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <DropDown class="input" style="font-weight: 700;" [items]="itemassociationsSource"
+                <Label  class="ysPBox" text=" {{'services.finance.cat' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
+                <DropDown  class="ysPBox2" class="input" style="font-weight: 700;" [items]="itemassociationsSource"
                     hint="{{'services.finance.choose' | translate}}" itemsTextAlignment="center"
                     (selectedIndexChanged)="assChange($event)"></DropDown>
                 <StackLayout class="hr"></StackLayout>
@@ -33,28 +37,28 @@
         </StackLayout>
         <StackLayout *ngIf="feesException.association=='0'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.sc' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label  class="ysPBox" text="{{'services.finance.sc' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
 
-                <Button [text]="scText" (tap)="openCustomFilesPicker('sc')" class="-primary"></Button>
+                <Button  class="ysPBox2" [text]="scText" (tap)="openCustomFilesPicker('sc')" class="print-btn"></Button>
 
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
 
             <StackLayout class="input-field">
-                <Label text=" {{'services.finance.gid' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <Button [text]="gidText" (tap)="openCustomFilesPicker('gid')" class="-primary"></Button>
+                <Label  class="ysPBox" text=" {{'services.finance.gid' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
+                <Button  class="ysPBox2" [text]="gidText" (tap)="openCustomFilesPicker('gid')" class="print-btn"></Button>
             </StackLayout>
             <StackLayout class="input-field">
-                <Label text=" {{'services.finance.cid' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <Button [text]="cidText" (tap)="openCustomFilesPicker('cid')" class="-primary"></Button>
+                <Label  class="ysPBox" text=" {{'services.finance.cid' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
+                <Button  class="ysPBox2" [text]="cidText" (tap)="openCustomFilesPicker('cid')" class="print-btn"></Button>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
         </StackLayout>
         <StackLayout *ngIf="feesException.association=='1'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.wletter' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label  class="ysPBox" text="{{'services.finance.wletter' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
 
-                <Button [text]="wText" (tap)="openCustomFilesPicker('w')" class="-primary"></Button>
+                <Button  class="ysPBox" [text]="wText" (tap)="openCustomFilesPicker('w')" class="print-btn"></Button>
 
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
@@ -63,14 +67,14 @@
 
         <StackLayout *ngIf="feesException.association=='2'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.assletter' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <Button [text]="assText" (tap)="openCustomFilesPicker('ass')" class="-primary"></Button>
+                <Label  class="ysPBox" text="{{'services.finance.assletter' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
+                <Button  class="ysPBox2" [text]="assText" (tap)="openCustomFilesPicker('ass')" class="print-btn"></Button>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.id' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label  class="ysPBox" text="{{'services.finance.id' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
 
-                <Button [text]="idText" (tap)="openCustomFilesPicker('id')" class="-primary"></Button>
+                <Button  class="ysPBox2" [text]="idText" (tap)="openCustomFilesPicker('id')" class="print-btn"></Button>
 
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
@@ -80,27 +84,30 @@
 
         <StackLayout *ngIf="feesException.exception_type=='1'" class="form ysBox" padding="15">
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.bank' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <DropDown class="input" style="font-weight: 700;" [items]="itemBankSource"
+                <Label  class="ysPBox" text="{{'services.finance.bank' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
+                <DropDown  class="ysPBox2 input" style="font-weight: 700;" [items]="itemBankSource"
                     hint="{{'services.finance.choose' | translate}}" itemsTextAlignment="center"
                     (selectedIndexChanged)="bankChange($event)"></DropDown>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
 
 
+
+
+
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.iban' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label text="{{'services.finance.iban' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
                 <TextField class="input" [(ngModel)]="feesException.iban"></TextField>
 
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.bankid' | translate}}" class="label font-weight-bold m-b-5"></Label>
-                <Button [text]="cbText" (tap)="openCustomFilesPicker('bank_card')" class="-primary"></Button>
+                <Label text="{{'services.finance.bankid' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
+                <Button [text]="cbText" (tap)="openCustomFilesPicker('bank_card')" class="print-btn"></Button>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.accname' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label text="{{'services.finance.accname' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
                 <TextField class="input" [(ngModel)]="feesException.account_name"></TextField>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
@@ -108,19 +115,19 @@
 
 
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.email' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label text="{{'services.finance.email' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
                 <TextField class="input" [(ngModel)]="feesException.email"></TextField>
 
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
 
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.accno' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label text="{{'services.finance.accno' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
                 <TextField class="input" [(ngModel)]="feesException.account_id"></TextField>
                 <StackLayout class="hr"></StackLayout>
             </StackLayout>
             <StackLayout class="input-field">
-                <Label text="{{'services.finance.areu' | translate}}" class="label font-weight-bold m-b-5"></Label>
+                <Label text="{{'services.finance.areu' | translate}}" style="color: #f08b1c;" class="label font-weight-bold m-b-5"></Label>
                 <DropDown class="input" style="font-weight: 700;" [items]="itemAccountSource"
                     hint="{{'services.finance.choose' | translate}}" itemsTextAlignment="center"
                     (selectedIndexChanged)="bankChange($event)"></DropDown>
@@ -132,7 +139,7 @@
         <StackLayout class="form ysBox" padding="15">
             <StackLayout class="input-field">
                 <Label textWrap="true" text="{{'services.finance.agree' | translate}}"
-                    class="label font-weight-bold m-b-5"></Label>
+                style="color: #001628;" class="label font-weight-bold m-b-5"></Label>
                 <CheckBox #chkCourse (checkedChange)="changeStatus($event)" checked="false"></CheckBox>
             </StackLayout>
         </StackLayout>

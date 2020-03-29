@@ -10,6 +10,8 @@ import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { AddWithdrawalRequestComponent } from './diag/add-withdrawal-request/add-withdrawal-request.component.tns';
 import { RequestData } from '../../shared/models/request-data';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-university-withdrawal',
@@ -30,11 +32,11 @@ export class UniversityWithdrawalComponent implements OnInit {
     private _vcRef: ViewContainerRef,
     private translate: TranslateService,
     private toastr: AppToasterService,
-    private acadmicProc: UniversityWithdrawalService) { }
+    private acadmicProc: UniversityWithdrawalService,
+    private downloader: DataDownLoadService) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;  
+    Downloader.init();  
     this.withdrawalRequest = { email: "", mobile: "" };
     this.getRequests();
   }
@@ -73,7 +75,11 @@ export class UniversityWithdrawalComponent implements OnInit {
   }
  
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    this.toastr.download();
+    this.downloader.csize.subscribe(x => {
+      this.printAR = x;
+    });
   }
   deleting = false;
   delete(id, index) {
@@ -97,10 +103,6 @@ export class UniversityWithdrawalComponent implements OnInit {
       });
     }});
 
-  }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
   }
   call(hr) {
     return Math.floor(Math.random() * 10) + hr;

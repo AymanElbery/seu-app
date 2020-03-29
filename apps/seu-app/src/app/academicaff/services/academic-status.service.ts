@@ -9,10 +9,10 @@ import { ConfigService } from '../../shared/services/config.service';
 })
 export class AcademicStatusService {
 
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = 'stdservicesapi';
-			  // tslint:disable-next-line: indent
-			  }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = 'stdservicesapi';
+    // tslint:disable-next-line: indent
+  }
 
 
   getStaudentStatus() {
@@ -26,16 +26,15 @@ export class AcademicStatusService {
 
 
     return this.httRequest.GetRequest('/academic_status/getTermDetails?TermCode=' + code).toPromise();
-   }
-   DownloadStatus(code) {
+  }
+  DownloadStatus(code) {
     this.configService.baseUrl = 'stdservicesapi';
-    const sid =   this.configService.getSid();
-
-    return this.configService.getApiURI() + '/academic_status/academic_status_print?TermCode=' + code ;
-   }
-   DownloadEngStatus(code) {
+    const sid = this.configService.getSid();
+    return this.configService.getApiURI() + '/academic_status/academic_status_print?TermCode=' + code;
+  }
+  DownloadEngStatus(code) {
     this.configService.baseUrl = 'stdservicesapi';
-    const sid =   this.configService.getSid();
-    return this.configService.getApiURI() + '/academic_status/academic_status_print?Lang=en&TermCode=' + code + '&sid=' + sid;
-   }
+    const sid = this.configService.getSid();
+    return this.configService.getApiURI() + '/academic_status/academic_status_print?Lang=en&TermCode=' + code;
+  }
 }

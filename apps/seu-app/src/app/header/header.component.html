@@ -58,7 +58,12 @@
 
               <div class="dropdown-divider"></div>
             </div>
-            <!-- <a class="dropdown-item" href="">الملف الشخصي <i class="ik ik-user dropdown-icon"></i> </a> -->
+            <a *ngIf="hasWafi" class="dropdown-item" [routerLink]="['/wafi/personal']">
+              <i class="ik ik-user dropdown-icon"></i>{{"menu.PersonalInfo" | translate}}
+            </a>
+            <a class="dropdown-item" href="javascript:;" (click)="resetPawwordFrom()">
+              <i class="ik ik-user dropdown-icon"></i>{{"menu.resetpassword" | translate}}
+            </a>
             <a class="dropdown-item" href="https://sso.seu.edu.sa/oam/server/logout"><i
                 class="ik ik-power dropdown-icon"></i> {{"menu.logout" | translate}} </a>
           </div>
@@ -86,7 +91,7 @@
       </div>
       <div class="mobile-logo w-75">
         <a target="_blank" href="https://seu.edu.sa">
-          <img class="" src="assets/images/logo_mobile.png" alt="">
+          <img class="" style="width: 300px;height:89px;" src="assets/images/logo_mobile.png" alt="">
         </a>
       </div>
 
@@ -98,13 +103,12 @@
           </div>
         </div>
 
-        <div class="d-none d-sm-block" style="white-space: nowrap;" *ngIf="environment.production">
-          <a href="#" routerLink="/" class="social" style="margin-top: -6px;">{{"general.home" | translate}}</a>
+        <div class="d-none d-sm-block" style="white-space: nowrap;">
           <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
-            style="font-size: 20px; font-weight: 400"> E
+            style="font-size: 20px; font-weight: 400"> English
           </a>
           <a href="javascript:;" *ngIf="currLang == 'en'" (click)="useLang('ar')" class="social"
-            style="font-size: 20px; margin-top: -6px;"> ع</a>
+            style="font-size: 20px; margin-top: -6px;"> عربي</a>
         </div>
 
 

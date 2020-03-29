@@ -74,7 +74,7 @@
 
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
-            <td><a class="btn btn-primary" [href]="print(it.request_number)"><span class="ik ik-printer"></span>
+            <td><a class="btn btn-primary" seu-auto-print [href]="print(it.request_number)"><span class="ik ik-printer"></span>
                 {{"general.print" | translate}} </a></td>
 
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"

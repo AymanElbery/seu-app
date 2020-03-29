@@ -9,6 +9,7 @@ import { Student } from '../../shared/models/student';
 import { StudentTerms } from '../../shared/models/student-terms';
 import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
 import { Downloader } from 'nativescript-downloader';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -18,30 +19,34 @@ import { Downloader } from 'nativescript-downloader';
 })
 export class AcademicStatusComponent implements OnInit {
 
-  student:Student={
-    acadimic_position:"",
-    acadimic_position_label:"",
-    current_acadimic_status:"",
-    current_acadimic_status_label:"",
-    final_graduation_GPA:"",
-    name:"",
-    ssn:"",
-    std_adm_term_code:"",
-    std_adm_term_label:"",
-    std_fees:"",
-    std_id:""
+  printAR = '';
+  printEN = '';
+  isDownLoaded = false;
+
+  student: Student = {
+    acadimic_position: '',
+    acadimic_position_label: '',
+    current_acadimic_status: '',
+    current_acadimic_status_label: '',
+    final_graduation_GPA: '',
+    name: '',
+    ssn: '',
+    std_adm_term_code: '',
+    std_adm_term_label: '',
+    std_fees: '',
+    std_id: ''
 };
-  studentTerms=[];
-  studentTermDetails:StudentTerms={
-    ACADIMICPOSITION:"",
-    CAMP_code:"",
-    COLL_CODE:"",
-    MAJR_code:"",
-    RegisterationStatus:"",
-    STD_UGGR:"",
-    acadimic_status:"",
-    gba:"",
-    study_level:""
+  studentTerms = [];
+  studentTermDetails: StudentTerms = {
+    ACADIMICPOSITION: '',
+    CAMP_code: '',
+    COLL_CODE: '',
+    MAJR_code: '',
+    RegisterationStatus: '',
+    STD_UGGR: '',
+    acadimic_status: '',
+    gba: '',
+    study_level: ''
   };
   selectedSems;
   arabicPrint: string;
@@ -52,13 +57,19 @@ export class AcademicStatusComponent implements OnInit {
   terms: ValueItem<number>[] = [];
   acceptanceTerm;
   acceptanceYear: any;
-  constructor(private academicStatusService: AcademicStatusService,private downloader :DataDownLoadService) { }
+  constructor(private transalte: TranslateService,
+              private academicStatusService: AcademicStatusService,
+              private downloader: DataDownLoadService) { }
 
   ngOnInit() {
     Downloader.init();
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right;
-
+    this.transalte.get('general.ar_language').subscribe(res => {
+      this.printAR = res;
+    }
+    );
+    this.transalte.get('general.en_language').subscribe(res => {
+      this.printEN = res;
+    });
     this.isLoading = true;
     this.isLoadingTerm = true;
     this.academicStatusService.getStaudentStatus().then((res) => {
@@ -103,15 +114,38 @@ export class AcademicStatusComponent implements OnInit {
     );
   }
 
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
   onArabicPrint() {
-    console.log("araaaaaaaaaaaabic",this.arabicPrint)
-    this.downloader.downloadFile(this.arabicPrint)
+    this.downloader.downloadFile(this.arabicPrint);
+    console.log('downloiad');
+    this.printAR = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log(x);
+      this.printAR = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.transalte.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
+      }
+    });
   }
   onEnglishPrint() {
-    utils.openUrl(this.EngPrint);
+    this.downloader.downloadFile(this.EngPrint);
+    console.log('downloiad');
+    this.printEN = '1%';
+    this.downloader.csize.subscribe(x => {
+      console.log(x);
+      this.printEN = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.transalte.get('general.en_print').subscribe(res => {
+            this.printEN = res;
+          }
+          );
+
+      }
+    });
   }
 }

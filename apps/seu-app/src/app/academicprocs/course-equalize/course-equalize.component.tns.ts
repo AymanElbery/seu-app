@@ -11,6 +11,8 @@ import { TranslateService } from '@ngx-translate/core';
 declare var UIView, NSMutableArray, NSIndexPath;
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
+import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
+import { Downloader } from 'nativescript-downloader';
 
 @Component({
   selector: 'app-course-equalize',
@@ -25,16 +27,18 @@ export class CourseEqualizeComponent implements OnInit {
   msgs=[];
   status;
   isLoading = false;
+  isDownLoaded = false;
 
 
   constructor(private toastr: AppToasterService,
      private acadmicProc: CourseEqualizerService,
      private routerExtensions: RouterExtensions,
-     private translate: TranslateService) { }
+     private translate: TranslateService,
+     private downloader: DataDownLoadService
+     ) { }
 
   ngOnInit() {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.drawerLocation = SideDrawerLocation.Right; 
+    Downloader.init(); 
     this.isLoading = true;
     this.reason = '';
     this.getRequests();
@@ -54,7 +58,19 @@ export class CourseEqualizeComponent implements OnInit {
 
 
   print(req) {
-    utils.openUrl(this.acadmicProc.Download(req));
+    this.downloader.downloadFile(this.acadmicProc.Download(req));
+    this.toastr.download();
+    this.downloader.csize.subscribe(x => {
+      this.printAR = x;
+      if (x == '100') {
+        this.isDownLoaded = true;
+        this.translate.get('general.ar_print').subscribe(res => {
+            this.printAR = res;
+          }
+          );
+
+      }
+    });
 
   }
   deleting = false;
@@ -88,12 +104,7 @@ export class CourseEqualizeComponent implements OnInit {
       }
   });
   }
-  onDrawerButtonTap(): void {
-    const sideDrawer =  app.getRootView() as RadSideDrawer;
-    sideDrawer.showDrawer();
-  }
 
-  
   onItemTap(event: ListViewEventData) {
     const listView = event.object,
         rowIndex = event.index,
