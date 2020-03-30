@@ -94,9 +94,12 @@ const routes: Routes = [
       },
       {
         path: 'wafi',
-        loadChildren:
-          './wafi/wafi.module#WafiModule'
-              }
+        loadChildren:'./wafi/wafi.module#WafiModule'
+      },
+      {
+        path: 'attendance',
+        loadChildren:'./attendance/attendance.module#AttendanceModule'
+      },
     ]
   },
   {

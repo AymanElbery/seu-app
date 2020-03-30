@@ -200,7 +200,8 @@
         "CouncilsAndCommittees": "Councils and committees management system",
         "TeachingLoad": "Teaching Load",
         "NewAdminPage": "New Admin Pages",
-        "AdminPage": "Admin Pages"
+        "AdminPage": "Admin Pages",
+        "student_attendance": "Student Attendance"
     },
     "services": {
         "academic_status": {
@@ -599,7 +600,19 @@
             "cancel": "cancel request ",
             "cantcancel": "  can not be deleted",
             "depart": "departments",
-            "addreq": "register request "
+            "addreq": "register request ",
+            "sunday": "Sunday",
+            "monday": "Monday",
+            "tuesday": "Tuesday",
+            "wednesday": "Wednesday",
+            "thursday": "Thursday",
+            "friday": "Friday",
+            "saturday": "Saturday",
+            "startTime": "Start time",
+            "endTime": "End time",
+            "attendAction": "Make Attendance",
+            "actions": "Actions",
+            "code_msg": "You have 10 minutes to submit this code to make your attendance"
         },
         "skills_record": {
             "title": "Skills Record",

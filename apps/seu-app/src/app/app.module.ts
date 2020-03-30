@@ -70,7 +70,8 @@ import { PolicyComponent } from './home/policy.component';
     PageHeaderComponent,
     DownloadPrintDirective,
     ExternalLinkDirective,
-    AdmisPagesComponent, StdsPagesComponent
+    AdmisPagesComponent, 
+    StdsPagesComponent
   ],
   imports: [
     BrowserModule,

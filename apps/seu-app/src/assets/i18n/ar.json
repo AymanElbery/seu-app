@@ -200,7 +200,8 @@
         "CouncilsAndCommittees": "نظام إدارة المجالس واللجان",
         "TeachingLoad": "العبئ التدريسي",
         "NewAdminPage": "إدارة الخدمات الإلكترونية",
-        "AdminPage": "الصفحة الإدارية"
+        "AdminPage": "الصفحة الإدارية",
+        "student_attendance": "التحضير الإلكتروني"
     },
     "services": {
         "academic_status": {
@@ -600,7 +601,19 @@
             "cancel": "إإلغاء الطلب",
             "cantcancel": "لايمكن الإإلغاء ",
             "depart": "الشعب",
-            "addreq": "تسجيل طلب"
+            "addreq": "تسجيل طلب",
+            "sunday": "الأحد",
+            "monday": "الإثنين",
+            "tuesday": "الثلاثاء",
+            "wednesday": "الأربعاء",
+            "thursday": "الخميس",
+            "friday": "الجمعة",
+            "saturday": "السبت",
+            "startTime": "وقت بداية المحاضرة",
+            "endTime": "وقت نهاية المحاضرة",
+            "attendAction": "إتاحة التحضير",
+            "actions": "الإجراءات",
+            "code_msg": "لديك 10 دقائق لتسجيل هذا الكود حتى تتمكن من تسجيل حضورك "
         },
         "skills_record": {
             "title": "السجل المهاري",

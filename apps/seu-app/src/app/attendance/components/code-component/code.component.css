@@ -1,0 +1,81 @@
+.code-content, .code-msg, .code-timer{
+    padding: 50px;
+    margin-top: 2vh;
+    margin-right: 17px;
+}
+.code-timer, .code-msg{
+    margin-top: 0;
+}
+.code-content{
+    background-color: #EDEDED;
+    padding-top: 70px;
+}
+.code-content h1{
+    font-weight: bolder;
+    font-size: 15em;
+    font-family: "Courier New", Courier, monospace;
+}
+div#ten-countdown{
+    margin: 0 auto;
+    text-align: center; 
+    border: 5px solid #004853;
+    padding: 10px 5px;
+    background-color: #004853;
+    color: #FFF;
+    width: 15%;
+    font-family: Verdana, sans-serif, Arial;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 2px;
+}
+.code-disabled{
+    color: #ccc;
+}
+@media (max-width: 765px) {
+    .code-content h1{
+        font-size: 12em;
+    }
+}
+@media (max-width: 630px) {
+    .code-content h1{
+        font-size: 9em;
+    }
+}
+
+@media (max-width: 500px) {
+    .code-content h1{
+        font-size: 7em;
+    }
+}
+
+@media (max-width: 400px) {
+    .code-content h1{
+        font-size: 5em;
+    }
+}
+@media (max-width: 1460px) {
+    div#ten-countdown{
+        width: 20%;
+    }
+}
+@media (max-width: 1180px) {
+    div#ten-countdown{
+        width: 25%;
+    }
+}
+@media (max-width: 720px) {
+    div#ten-countdown{
+        width: 30%;
+    }
+}
+@media (max-width: 620px) {
+    div#ten-countdown{
+        width: 50%;
+    }
+}
+@media (max-width: 430px) {
+    div#ten-countdown{
+        width: 70%;
+    }
+}
