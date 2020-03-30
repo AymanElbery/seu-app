@@ -39,8 +39,7 @@ export class TasksModule {
 
   constructor(private taskservice: TasksManagementService, private user: UserService) {
     if (this.user.userData.id) {
-      this.taskservice.loadDDL();
-      this.taskservice.loadEmpList();
+      this.taskservice.reloadList();
     }
   }
 

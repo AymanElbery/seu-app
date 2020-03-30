@@ -334,7 +334,7 @@
           </div>
         </div>
         <!-- <div class="nav-lavel">  </div> -->
-        <div *ngIf="userService.userData.activeRole=='Employee'" class="nav-item has-sub">
+        <div *ngIf="userService.userData && userService.userData.activeRole=='Employee'" class="nav-item has-sub">
           <a href="javascript:void(0)"> <span>{{"menu.PublicServices" | translate}} </span>
             <i class="ik ik-book-open"></i> </a>
           <div class="submenu-content">
@@ -427,7 +427,7 @@
           </div>
         </div>
 
-        <div *ngIf="userService.userData.activeRole=='Instructor'" class="nav-item has-sub open">
+        <div *ngIf="userService.userData && userService.userData.activeRole=='Instructor'" class="nav-item has-sub open">
           <a href="javascript:void(0)"> <span>{{"menu.PublicServices" | translate}} </span>
             <i class="ik ik-book-open"></i> </a>
           <div class="submenu-content">
@@ -472,7 +472,7 @@
         </div>
 
 
-        <div *ngIf="userService.userData.activeRole=='Student'" class="nav-item has-sub">
+        <div *ngIf="userService.userData && userService.userData.activeRole=='Student'" class="nav-item has-sub">
           <a href="javascript:void(0)"> <span>{{"menu.PublicServices" | translate}} </span>
             <i class="ik ik-book-open"></i> </a>
           <div class="submenu-content">

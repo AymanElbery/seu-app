@@ -32,6 +32,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.taskservice.reloadList();
     this.LoggedINID = this.user.userData.id;
     this.taskID = this.route.snapshot.paramMap.get("tid");
     this.getTaskDetails();

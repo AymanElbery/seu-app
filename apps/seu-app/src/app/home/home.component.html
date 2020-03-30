@@ -113,7 +113,7 @@
               <div class="widget-header">
                 <h3 class="widget-title"> <i class="ik ik-book-open"></i> {{"menu.PublicServices" | translate}} </h3>
               </div>
-              <div *ngIf="userService.userData.activeRole=='Employee'" class="card-body" style="padding: 0 15px">
+              <div *ngIf="userService.userData && userService.userData.activeRole=='Employee'" class="card-body" style="padding: 0 15px">
                 <div class="row">
                   <div class="col-md-6 new-ser">
                     <i class="ik ik-bold"></i>
@@ -217,7 +217,7 @@
 
               </div>
 
-              <div class="card-body" *ngIf="userService.userData.activeRole=='Instructor'" style="padding: 0 15px">
+              <div class="card-body" *ngIf="userService.userData && userService.userData.activeRole=='Instructor'" style="padding: 0 15px">
                 <div class="row">
                   <div class="col-md-6 new-ser">
                     <i class="ik ik-globe"></i>
@@ -321,7 +321,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card-body" *ngIf="userService.userData.activeRole=='Student'" style="padding: 0 15px">
+              <div class="card-body" *ngIf="userService.userData && userService.userData.activeRole=='Student'" style="padding: 0 15px">
                 <div class="row">
                   <div class="col-md-6 new-ser">
                     <i class="ik ik-user"></i>
