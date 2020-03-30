@@ -37,6 +37,8 @@
 
             <a href="#" class="menu-item" routerLink="/masterstddata/academicrecord">
               {{"menu.academicrecord" | translate}} </a>
+              <a href="#" class="menu-item" routerLink="/masterstddata/info-update">
+                {{"menu.infoupdate" | translate}} </a>
           </div>
         </div>
 
@@ -206,6 +208,11 @@
             <a href="" routerLink="/mfiniance/payment" class="menu-item">{{"menu.payment" | translate}} </a>
 
           </div>
+          <div class="submenu-content">
+            <a href="" routerLink="/mfiniance/refund" class="menu-item">{{"menu.refund" | translate}} </a>
+
+          </div>
+
         </div>
         <div *ngIf="menuType==2&&showServices" class="nav-item has-sub ">
           <a href="javascript:void(0)"><span> {{"menu.otherrequests" | translate}} </span> <i

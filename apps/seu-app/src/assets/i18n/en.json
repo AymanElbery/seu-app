@@ -72,8 +72,6 @@
             "res_date": "Response data   ",
             "day": "day   ",
             "time": "time   ",
-            "att": "attendance   ",
-            "rejectrs": "reject reason    ",
             "pre_requests": "Show Previous Requests",
             "pre_requesr": "Show Previous Requests",
             "date_and_status": "Request Date/Status",
@@ -107,6 +105,7 @@
         "grservices": "Master",
         "userData": "Student data",
         "academic_status": "Academic status",
+        "infoupdate": "Info Update",
         "termexecuse": "Term Excuse",
         "postpone": "Term Postpone",
         "studypostpone": "Study postpone  ",
@@ -119,6 +118,7 @@
         "academicrecord": "Academic record",
         "academicstatus": "Academic status ",
         "payment": "Fees payment ",
+        "refund": "Payment Refund ",
         "financeaff": " Finiance affair",
         "otherrequests": " Other requests",
         "changebranch": "Change branch ",
@@ -220,6 +220,26 @@
         "academic_record": {
             "title": "Academic Record",
             "desc": "Academic Record"
+        },
+        "info_update": {
+            "title": "Info Update",
+            "desc": "Info Update",
+            "addnewrequest": "Add New Request",
+            "first_name": "First Name",
+            "mid_name": "Mid Name",
+            "last_name": "Last Name",
+            "first_name_ar": "First Name Arabic",
+            "mid_name_ar": "Mid Name Arabic",
+            "last_name_ar": "Last Name Arabic",
+            "mobile": "Mobile",
+            "city": "City",
+            "street": "Street",
+            "cancel": "Cancel",
+            "save": "Save",
+            "ID": "ID",
+            "Name": "Name",
+            "NameAr": "NameAr"           
+            
         },
         "certificate_id": {
             "title": "Certificate ID",
@@ -542,6 +562,29 @@
         "master_payment": {
             "title": "Fees Pay",
             "desc": "Fees Pay"
+        },
+        "master_refund": {
+            "title": "Payment Refund",
+            "desc": "Payment Refund",
+            "AddRefundReq": "Refund Request",
+            "request_number": "ReqNo",
+            "insert_date": "Insert Date",
+            "deletable": "Deletable",
+            "status": "Status",
+            "type": "Type",
+            "Delete": "Delete",
+            "refund_reason": "Refund Reason",
+            "iban": "iban",
+            "bank_name": "Bank Name",
+            "name": "Name",
+            "last_four_id": "Last four Id",
+            "refund_type": "Refund Type",
+            "save": "save",
+            "cancel": "Cancel",
+            "national_id": "National Id",
+            "payment_reciept_copy": "Payment Reciept Copy"
+            
+            
         },
         "medical_report": {
             "title": "Medical Report Request",

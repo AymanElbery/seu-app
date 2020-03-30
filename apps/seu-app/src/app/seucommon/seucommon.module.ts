@@ -9,6 +9,7 @@ import { AppTransModule } from '../app.trans.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent],
   imports: [
