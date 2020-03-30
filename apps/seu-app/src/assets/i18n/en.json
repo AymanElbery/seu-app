@@ -946,6 +946,7 @@
         "showallemps": "Show All",
         "showfavemps": "Show favourites",
         "favemps": "favourites List",
-        "favList": "Registered List"
+        "favList": "Registered List",
+        "Send":"Send"
     }
 }

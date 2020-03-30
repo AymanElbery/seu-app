@@ -21,6 +21,7 @@ export class MenuComponent implements OnInit {
   showadmis = false;
   admisPage = {};
   hasWafi = false;
+  isEmp = false;
   fillmenu() {
     /*if (this.userService.userData.role == 'Employee' || this.userService.userData.role == 'Instructor') {
       this.showMySystem = true;
@@ -72,7 +73,8 @@ export class MenuComponent implements OnInit {
 
     this.hasWafi = environment.allowWafi && (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
 
-    if(this.hasWafi){
+    this.isEmp = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
+    if (this.isEmp) {
       this.task.loadStats();
     }
     // this.hasWafi = true;

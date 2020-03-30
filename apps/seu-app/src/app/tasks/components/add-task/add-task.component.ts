@@ -38,33 +38,32 @@ export class AddTaskComponent implements OnInit {
     this.taskservice.reloadList();
     this.AddReqForm = fb.group({
       'title': ['', [Validators.required]],
-      'description': [''],
+      'description': ['', [Validators.required]],
       'assignedTo': ['', [Validators.required]],
       'taskViewers': [[]],
       'status': ['1'],
-      'priority': [''],
-      'type': [''],
-      'requiredProcedures': [''],
-      'startDate': [''],
-      'endDate': [''],
+      'priority': ['1'],
+      'type': ['1'],
+      'requiredProcedures': ['', [Validators.required]],
+      'startDate': ['', [Validators.required]],
+      'endDate': ['', [Validators.required]],
       'file': [''],
       'notes': ['']
     });
   }
 
   onFormSubmit() {
-    const submitdatavalue = (this.AddReqForm.value);
-
-    this.AddReqForm.controls['startDate'].setValue((moment(submitdatavalue.startDate, "YYYY-MM-DD").format("DD-MM-YYYY")));
-    this.AddReqForm.controls['endDate'].setValue(moment(submitdatavalue.endDate, "YYYY-MM-DD").format("DD-MM-YYYY"));
-
-    const submitdatavalueadeddate = (this.AddReqForm.value);
-    submitdatavalueadeddate.taskViewers = submitdatavalueadeddate.taskViewers.map(vid => { return { viewerEmpId: vid } })
-
-
     if (this.AddReqForm.invalid) {
       return;
     }
+    const submitdatavalue = (this.AddReqForm.value);
+    let submitdatavalueadeddate = (this.AddReqForm.value);
+    submitdatavalueadeddate.taskViewers = submitdatavalueadeddate.taskViewers.map(vid => { return { viewerEmpId: vid } })
+    submitdatavalueadeddate['startDate'] = ((moment(submitdatavalue.startDate, "YYYY-MM-DD").format("DD-MM-YYYY")));
+    submitdatavalueadeddate['endDate'] = (moment(submitdatavalue.endDate, "YYYY-MM-DD").format("DD-MM-YYYY"));
+
+
+
     this.isLoading = true;
     this.submitted = true;
 

@@ -110,7 +110,7 @@ export class AddCommentComponent implements OnInit {
     }
   }
 
-  onFormSubmit(event) {
+  onFormSubmit() {
     let submitdatavalue = (this.AddReqForm.value);
     if (this.AddReqForm.invalid) {
       return;

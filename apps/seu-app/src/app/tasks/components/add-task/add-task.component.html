@@ -12,7 +12,7 @@
         <div class="row ser-block">
           <div class=" col-md-12 col-sm-12">
             <div class="state">
-              <h6>{{"tasks.title"|translate}} </h6>
+              <h6>{{"tasks.title"|translate}} <span class="reqstart">*</span></h6>
               <input type="text" formControlName="title" class="form-control"
                 [ngClass]="{ 'is-invalid': submitted && AddReqForm.controls.title.errors }" />
             </div>
@@ -20,7 +20,7 @@
 
           <div class=" col-md-12 col-sm-12">
             <div class="state">
-              <h6>{{"tasks.description"|translate}} </h6>
+              <h6>{{"tasks.description"|translate}} <span class="reqstart">*</span></h6>
               <textarea formControlName="description" class="form-control"></textarea>
             </div>
           </div>
@@ -28,7 +28,7 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-6">
             <div class="state">
-              <h6>{{"tasks.assignedTo"|translate}}
+              <h6>{{"tasks.assignedTo"|translate}} <span class="reqstart">*</span>
                 <ng-container *ngIf="allowFav && showFav">
                   <span (click)="toggleFavList();"
                     style="cursor: pointer; color: black;">({{"tasks.showallemps" |translate }})</span>
@@ -115,7 +115,7 @@
 
           <div class=" col-md-6 col-sm-6">
             <div class="state">
-              <h6>{{"tasks.requiredProcedures"|translate}} </h6>
+              <h6>{{"tasks.requiredProcedures"|translate}} <span class="reqstart">*</span></h6>
               <input type="text" formControlName="requiredProcedures" class="form-control" />
             </div>
           </div>
@@ -124,13 +124,13 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-6">
             <div class="state">
-              <h6>{{"tasks.startDate"|translate}} </h6>
+              <h6>{{"tasks.startDate"|translate}} <span class="reqstart">*</span></h6>
               <input type="text" formControlName="startDate" bsDatepicker class="form-control" />
             </div>
           </div>
           <div class=" col-md-6 col-sm-6">
             <div class="state">
-              <h6>{{"tasks.endDate"|translate}} </h6>
+              <h6>{{"tasks.endDate"|translate}} <span class="reqstart">*</span></h6>
               <input type="text" formControlName="endDate" bsDatepicker class="form-control" />
             </div>
           </div>
@@ -164,9 +164,9 @@
         <div>
           <div class=" col-md-6 col-sm-6">
             <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
-              <button click="onFormSubmit()" type="button" [disabled]="AddReqForm.invalid" class="btn"
+              <button (click)="onFormSubmit()" type="button" [disabled]="submitted || AddReqForm.invalid" class="btn"
                 style="color: #fff;margin-top: 30px !important;"><i class="fa fa-database"></i>
-                {{"tasks.Submit" | translate}}</button>
+                {{"tasks.Send" | translate}}</button>
             </div>
           </div>
 

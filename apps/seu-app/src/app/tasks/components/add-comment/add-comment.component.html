@@ -8,14 +8,14 @@
   </div>
 
   <section class="dashboard-wrap" style="margin-top: 30px;">
-    <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
+    <form role="form" [formGroup]="AddReqForm">
       <div class="modal-body">
 
 
         <div *ngIf="showAssign" class="row ser-block">
           <div class=" col-md-12 col-sm-12">
             <div class="state">
-              <h6>{{"tasks.assignedTo"|translate}}
+              <h6>{{"tasks.assignedTo"|translate}} <span class="reqstart">*</span>
                 <ng-container *ngIf="allowFav && showFav">
                   <span (click)="toggleFavList();"
                     style="cursor: pointer; color: black;">({{"tasks.showallemps" |translate }})</span>
@@ -63,7 +63,7 @@
         <div class="row ser-block">
           <div class=" col-md-12 col-sm-12">
             <div class="state">
-              <h6>{{"tasks.comments"|translate}} </h6>
+              <h6>{{"tasks.comments"|translate}} <span class="reqstart">*</span></h6>
               <textarea formControlName="commentText" class="form-control"></textarea>
             </div>
           </div>
@@ -72,9 +72,9 @@
         <div>
           <div class=" col-md-6 col-sm-6">
             <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
-              <button type="submit" [disabled]="submitted" class="btn"
+              <button (click)="onFormSubmit()" type="button" [disabled]="submitted || AddReqForm.invalid" class="btn"
                 style="color: #fff;margin-top: 30px !important;"><i class="fa fa-database"></i>
-                {{"tasks.Submit" | translate}}</button>
+                {{"tasks.Send" | translate}}</button>
             </div>
           </div>
 
