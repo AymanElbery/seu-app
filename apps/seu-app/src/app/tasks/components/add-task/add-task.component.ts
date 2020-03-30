@@ -62,7 +62,10 @@ export class AddTaskComponent implements OnInit {
     submitdatavalueadeddate['startDate'] = ((moment(submitdatavalue.startDate, "YYYY-MM-DD").format("DD-MM-YYYY")));
     submitdatavalueadeddate['endDate'] = (moment(submitdatavalue.endDate, "YYYY-MM-DD").format("DD-MM-YYYY"));
 
-
+    if (!this.validateFile(submitdatavalue.attachment)) {      
+      this.toastr.push([{ type: 'error', 'body': this.translate.instant("Selected file format is not supported") }]);
+      return false;
+  }
 
     this.isLoading = true;
     this.submitted = true;
@@ -110,8 +113,44 @@ export class AddTaskComponent implements OnInit {
       this.defineDDLList();
     });
   }
+  validateFile(name: String) {
+    var ext = name.substring(name.lastIndexOf('.') + 1);
+    if (ext.toLowerCase() == 'pdf') {
+        return true;
+    }
+    else if (ext.toLowerCase() == 'docx') {
+      return true;
+   }
+   else if (ext.toLowerCase() == 'doc') {
+    return true;
+ }
+    else if (ext.toLowerCase() == 'zip') {
+      return true;
+    }
+    else if (ext.toLowerCase() == 'rar') {
+    return true;
+    }
+    else if (ext.toLowerCase() == 'jpg') {
+   return true;
+    }
+    else if (ext.toLowerCase() == 'gif') {
+      return true;
+    }
+   else if (ext.toLowerCase() == 'bmp') {
+        return true;
+     }
+    else {
+        return false;
+    }
+}
+
   handleFileInput(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    if (!this.validateFile(file.name)) {      
+      this.toastr.push([{ type: 'error', 'body': this.translate.instant("Selected file format is not supported") }]);
+      return false;
+  }
+
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
