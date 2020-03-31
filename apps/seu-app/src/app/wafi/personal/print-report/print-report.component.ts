@@ -15,7 +15,7 @@ import { UserService } from 'src/app/account/services/user.service';
   styleUrls: ['./print-report.component.css']
 })
 export class PrintReportComponent implements OnInit {
-  private user: UserService;
+  
   subscription: Subscription;
   subscriptiondownlaod: Subscription;
   subscriptiondownlaod_housing: Subscription;
@@ -24,9 +24,11 @@ export class PrintReportComponent implements OnInit {
   printreportddwonld_house: any;
   subscriptions;
   inputValue: any;
-  constructor(private empservice: EmployeesService, private translate: TranslateService, private toaster: AppToasterService,private http: HttpClient,) { }
+  LoggedINID;
+  constructor(private user: UserService,private empservice: EmployeesService, private translate: TranslateService, private toaster: AppToasterService,private http: HttpClient) { }
   isLoading = true;
   ngOnInit() {
+    this.LoggedINID = this.user.userData.id;
     this.isLoading = true
     this.getprintreport();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
@@ -80,11 +82,12 @@ export class PrintReportComponent implements OnInit {
     this.isLoading = true
     this.subscriptiondownlaod_housing = this.empservice.getprintreport_housing(rptname).subscribe(prtrpthouse => {
       if (prtrpthouse) {
-        this.printreportddwonld_house = (prtrpthouse as any).data;
-        // //console.log("report data",this.printreportddwonld_house);
-        var empId = this.user.userData.id;
-        let url = this.getApiURI() + "DownloadFileServlet";
-        window.open("'+url+'?empId"+ empId +"&type="+ 'housing' +"&name="+ this.printreportddwonld_house, '_blank');
+        this.printreportddwonld_house = (prtrpthouse as any).data; 
+       // let url = this.getApiURI() + "DownloadFileServlet";
+        var downloadhousingreportUrl=environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + this.LoggedINID + '&type=housing&name=' + this.printreportddwonld_house
+        //var downloadhousingreportUrl=(url +"?empId="+ empId +"&type="+ 'housing' +"&name="+ this.printreportddwonld_house);
+        //console.log("url",downloadhoisingreport);
+        window.open(downloadhousingreportUrl, '_blank');
         this.isLoading = false
       } else {
         this.toaster.tryagain();

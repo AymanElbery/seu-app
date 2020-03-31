@@ -143,6 +143,8 @@ export class AddCommentComponent implements OnInit {
         this.submitted = false;
        // this.taskservice.dialogCloseRefresh = true;
         this.dialogRef.close();
+        this.getDDLlist();
+        this.getDDLEmplist();
        
       } else {
         var erromsg=addcmt['data']['errmsg'];
