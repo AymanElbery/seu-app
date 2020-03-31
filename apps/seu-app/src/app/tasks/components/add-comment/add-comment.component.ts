@@ -36,6 +36,7 @@ export class AddCommentComponent implements OnInit {
       'commentText': ['', [Validators.required]],
       'assignTo': [''],
       'taskStatus': [''],
+      'fileName': [''],
       'file': ['']
     });
   }
@@ -44,7 +45,7 @@ export class AddCommentComponent implements OnInit {
   showStatus = true;
 
   ngOnInit() {
-
+    
     if (this.data['type'] == 'status') {
       this.showStatus = false;
       this.AddReqForm.controls['taskStatus'].setValue(this.data['code']);
@@ -119,10 +120,10 @@ export class AddCommentComponent implements OnInit {
       return false;
     }
     
-    if (!this.validateFile(submitdatavalue.attachment)) {      
-      this.toastr.push([{ type: 'error', 'body': this.translate.instant("Selected file format is not supported") }]);
-      return false;
-  }
+  //   if (!this.validateFile(submitdatavalue.attachment)) {      
+  //     this.toastr.push([{ type: 'error', 'body': this.translate.instant("Selected file format is not supported") }]);
+  //     return false;
+  // }
     //console.log("submit data", submitdatavalue);
     if (!submitdatavalue['assignTo']) {
       delete submitdatavalue['assignTo'];
@@ -135,14 +136,18 @@ export class AddCommentComponent implements OnInit {
     }
     this.submitted = true;
     this.taskservice.AddTaskscommnets(submitdatavalue).subscribe(addcmt => {
-      if (!addcmt['data']['saveTaskComment']) {
-        this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);
-      } else {
+      console.log("success", addcmt['data']['status']);
+      if (addcmt['data']['status']==true) {
         this.taskservice.loadStats();
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('general.request_saved') }]);
         this.submitted = false;
-        this.taskservice.dialogCloseRefresh = true;
+       // this.taskservice.dialogCloseRefresh = true;
         this.dialogRef.close();
+       
+      } else {
+        var erromsg=addcmt['data']['errmsg'];
+        console.log("success", addcmt['data']['errmsg']);
+        this.toastr.push([{ type: 'error', 'body': erromsg }]);
       }
     }, error => {
       this.toastr.tryagain();
@@ -184,7 +189,8 @@ export class AddCommentComponent implements OnInit {
 }
 
   handleFileInput(e) {
-    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];    
+    this.AddReqForm.controls['fileName'].setValue(file.name);
     if (!this.validateFile(file.name)) {      
       this.toastr.push([{ type: 'error', 'body': this.translate.instant("Selected file format is not supported") }]);
       return false;
@@ -196,6 +202,7 @@ export class AddCommentComponent implements OnInit {
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.AddReqForm.controls['file'].setValue(reader.result);
+    
   }
 
 }
