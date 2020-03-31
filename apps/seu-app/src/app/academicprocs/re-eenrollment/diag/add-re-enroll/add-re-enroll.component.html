@@ -52,15 +52,16 @@
 
           </section>
 
-
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+              {{"general.cancel"|translate}}</button>
+            <button type="submit" class="btn btn-dark" [disabled]="reEnroll.reason =='' || requesting"><i
+                class="fa fa-database"></i>{{"general.save"|translate}}</button>
+          </div>
 
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-          {{"general.cancel"|translate}}</button>
-        <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"general.save"|translate}}</button>
-      </div>
+
     </div>
 
   </div>
