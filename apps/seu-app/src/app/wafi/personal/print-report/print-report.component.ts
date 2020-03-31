@@ -56,24 +56,15 @@ export class PrintReportComponent implements OnInit {
 
   }
 
-  getprintreportdownlaod(rptname: any) {
-    ////console.log("report name",rptname);
-      //  var pdfcont=atob("");
-      //   console.log("decode",pdfcont);
-      //   const fileName = "filedownload" + '_' + new Date().getTime() + '.pdf';
-       
-      //   var blob = new Blob([pdfcont], { type: "application/pdf" });
-      //   fileSaver.saveAs(blob, fileName);
+  getprintreportdownlaod(rptname: any, fName = 'PRINT') {
 
     this.isLoading = true
     this.subscriptiondownlaod = this.empservice.getprintreport(rptname, this.inputValue == null ? "" : this.inputValue).subscribe(prtrpt => {
-      if (prtrpt) {
-        this.printreportddwonld = (prtrpt as any).data;
-        if (this.printreportddwonld) {
-          window.open(this.printreportddwonld, '_blank');
-        } else {
-          this.toaster.tryagain();
-        }
+      if (prtrpt['statusCode'] == 200) {
+        const fileName = fName + '.pdf';
+        const pdfcont = atob(prtrpt['data']);
+        var blob = new Blob([pdfcont], { type: "application/pdf" });
+        fileSaver.saveAs(blob, fileName);
         this.isLoading = false
       } else {
         this.toaster.tryagain();
@@ -96,7 +87,7 @@ export class PrintReportComponent implements OnInit {
         window.open("'+url+'?empId"+ empId +"&type="+ 'housing' +"&name="+ this.printreportddwonld_house, '_blank');
         this.isLoading = false
       } else {
-        //this.messages = [];
+        this.toaster.tryagain();
       }
     });
 

@@ -113,7 +113,8 @@
               <div class="widget-header">
                 <h3 class="widget-title"> <i class="ik ik-book-open"></i> {{"menu.PublicServices" | translate}} </h3>
               </div>
-              <div *ngIf="userService.userData.activeRole=='Employee'" class="card-body" style="padding: 0 15px">
+              <div *ngIf="userService.userData && userService.userData.activeRole=='Employee'" class="card-body"
+                style="padding: 0 15px">
                 <div class="row">
                   <div class="col-md-6 new-ser">
                     <i class="ik ik-bold"></i>
@@ -217,7 +218,8 @@
 
               </div>
 
-              <div class="card-body" *ngIf="userService.userData.activeRole=='Instructor'" style="padding: 0 15px">
+              <div class="card-body" *ngIf="userService.userData && userService.userData.activeRole=='Instructor'"
+                style="padding: 0 15px">
                 <div class="row">
                   <div class="col-md-6 new-ser">
                     <i class="ik ik-globe"></i>
@@ -290,6 +292,18 @@
                 <div class="row">
                   <div class="col-md-6 new-ser">
                     <i class="ik ik-tablet"></i>
+                    <p><a target="_blank" href="https://seuapps.seu.edu.sa/stdsnew/users/index">
+                        {{"menu.NewAdminPage" | translate}} </a></p>
+                  </div>
+                  <div class="col-md-6 new-ser">
+                    <i class="ik ik-tablet"></i>
+                    <p><a target="_blank" href="http://seuapps.seu.edu.sa/eservices/taqrir_final/login.php">
+                        {{"menu.AdminPage" | translate}} </a></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 new-ser">
+                    <i class="ik ik-tablet"></i>
                     <p><a target="_blank" href="https://lijan.seu.edu.sa/lpclient/">
                         {{"menu.CouncilsAndCommittees" | translate}} </a></p>
                   </div>
@@ -321,7 +335,8 @@
                   </div>
                 </div>
               </div>
-              <div class="card-body" *ngIf="userService.userData.activeRole=='Student'" style="padding: 0 15px">
+              <div class="card-body" *ngIf="userService.userData && userService.userData.activeRole=='Student'"
+                style="padding: 0 15px">
                 <div class="row">
                   <div class="col-md-6 new-ser">
                     <i class="ik ik-user"></i>

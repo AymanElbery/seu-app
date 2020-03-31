@@ -100,7 +100,7 @@
         </div>
         <div class="row ser-block">
 
-          <div class=" col-md-6 col-sm-6">
+          <!-- <div class=" col-md-6 col-sm-6">
             <div class="state">
               <h6>{{"tasks.type"|translate}} </h6>
               <select class="form-control" formControlName="type"
@@ -111,9 +111,9 @@
                   {{typs.typeDesc}} </option>
               </select>
             </div>
-          </div>
+          </div> -->
 
-          <div class=" col-md-6 col-sm-6">
+          <div class=" col-md-12 col-sm-12">
             <div class="state">
               <h6>{{"tasks.requiredProcedures"|translate}} <span class="reqstart">*</span></h6>
               <input type="text" formControlName="requiredProcedures" class="form-control" />
@@ -139,7 +139,7 @@
         <div class="row ser-block">
           <div class=" col-md-12 col-sm-12">
             <div class="state">
-              <h6>{{"wafi.attachment"|translate}} </h6>
+              <h6>{{"wafi.attachment"|translate}} (word,excel, pdf, zip, rar, jpg, gif, bmp)</h6>
               <div class="custom-file">
                 <input class="custom-file-input" name="attachment" id="file" type="file" accept="*/*"
                   (change)="handleFileInput($event)" />

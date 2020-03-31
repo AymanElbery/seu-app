@@ -238,8 +238,7 @@
             "save": "Save",
             "ID": "ID",
             "Name": "Name",
-            "NameAr": "NameAr"           
-            
+            "NameAr": "NameAr"
         },
         "certificate_id": {
             "title": "Certificate ID",
@@ -583,8 +582,6 @@
             "cancel": "Cancel",
             "national_id": "National Id",
             "payment_reciept_copy": "Payment Reciept Copy"
-            
-            
         },
         "medical_report": {
             "title": "Medical Report Request",
@@ -937,7 +934,8 @@
         "EMP_PSNL_VCHR_NOTE": "Notes",
         "EMP_SLRY_YEAR": "Year",
         "EmployeeVouchers": "Employee Vouchers",
-        "administrative": "Administrative"
+        "administrative": "Administrative",
+        "back": "Back"
     },
     "tasks": {
         "description": "Description",
@@ -990,6 +988,6 @@
         "showfavemps": "Show favourites",
         "favemps": "favourites List",
         "favList": "Registered List",
-        "Send":"Send"
+        "Send": "Send"
     }
 }

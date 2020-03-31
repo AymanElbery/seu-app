@@ -37,8 +37,8 @@
 
             <a href="#" class="menu-item" routerLink="/masterstddata/academicrecord">
               {{"menu.academicrecord" | translate}} </a>
-              <a href="#" class="menu-item" routerLink="/masterstddata/info-update">
-                {{"menu.infoupdate" | translate}} </a>
+            <a href="#" class="menu-item" routerLink="/masterstddata/info-update">
+              {{"menu.infoupdate" | translate}} </a>
           </div>
         </div>
 
@@ -334,7 +334,7 @@
           </div>
         </div>
         <!-- <div class="nav-lavel">  </div> -->
-        <div *ngIf="userService.userData.activeRole=='Employee'" class="nav-item has-sub">
+        <div *ngIf="userService.userData && userService.userData.activeRole=='Employee'" class="nav-item has-sub">
           <a href="javascript:void(0)"> <span>{{"menu.PublicServices" | translate}} </span>
             <i class="ik ik-book-open"></i> </a>
           <div class="submenu-content">
@@ -427,7 +427,8 @@
           </div>
         </div>
 
-        <div *ngIf="userService.userData.activeRole=='Instructor'" class="nav-item has-sub open">
+        <div *ngIf="userService.userData && userService.userData.activeRole=='Instructor'"
+          class="nav-item has-sub open">
           <a href="javascript:void(0)"> <span>{{"menu.PublicServices" | translate}} </span>
             <i class="ik ik-book-open"></i> </a>
           <div class="submenu-content">
@@ -465,14 +466,11 @@
             <a routerLink="/instructions/exams" class="menu-item">
               {{"menu.INSTRUCTEXAM" | translate}}
               <i class="ik ik-user-check"></i> </a>
-            <!-- <a target="_blank" href="https://seuapps.seu.edu.sa/attends"
-              class="menu-item">  {{"menu.student_attendance" | translate}}<i class="ik ik-mail"></i> </a> -->
-
           </div>
         </div>
 
 
-        <div *ngIf="userService.userData.activeRole=='Student'" class="nav-item has-sub">
+        <div *ngIf="userService.userData && userService.userData.activeRole=='Student'" class="nav-item has-sub">
           <a href="javascript:void(0)"> <span>{{"menu.PublicServices" | translate}} </span>
             <i class="ik ik-book-open"></i> </a>
           <div class="submenu-content">
@@ -483,10 +481,6 @@
             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">
               {{"menu.email" | translate}}
               <i class="ik ik-mail"></i> </a>
-            <!-- <a target="_blank" href="https://seu.edu.sa/sites/ar/Calendar/Pages/Academic_Calendar.aspx"
-              class="menu-item"> {{"menu.CAL" | translate}}  <i class="ik ik-calendar"></i> </a> -->
-            <!-- <a target="_blank" href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx"
-              class="menu-item"> {{"menu.EDUSYSTEMS" | translate}} <i class="ik ik-clipboard"></i> </a> -->
             <a target="_blank" href="http://seuapps.seu.edu.sa/StudentRightsUnit/Home" class="menu-item">
               {{"menu.StdLaw" | translate}}
               <i class="ik ik-user-check"></i> </a>
@@ -509,6 +503,9 @@
               {{"menu.RESGISTERCOURSES" | translate}} <i class="ik ik-book"></i> </a>
             <a target="_blank" href="https://sd.seu.edu.sa" class="menu-item"> {{"menu.Support" | translate}} <i
                 class="ik ik-settings"></i>
+              <a class="menu-item" target="_blank"
+                href="https://www.seu.edu.sa/kr/">{{"menu.knowledgeresources" | translate}} <i
+                  class="ik ik-tablet"></i></a>
             </a>
           </div>
 
@@ -526,29 +523,6 @@
               <i class="ik ik-mail"></i> </a>
           </div>
         </div>
-
-        <!--
-             <div *ngIf="userService.userData.act_as_student" class="nav-item has-sub">
-                <a href="javascript:void(0)"> <span>الأنظمة </span>
-                    <i class="ik ik-align-right"></i> </a>
-                 <div class="submenu-content">
-                    <a href="javascript:;" (click)="redirectTo(0)" class="menu-item" *ngIf="showMySystem">خدماتي<i class="ik ik-bold"></i> </a>
-                    <a href="javascript:;" (click)="redirectTo(1)" class="menu-item"> خدمات بكالريوس  <i class="ik ik-bold"></i> </a>
-                    <a href="javascript:;" (click)="redirectTo(2)" class="menu-item"> خدمات ماجستير<i class="ik ik-bold"></i> </a>
-                 </div>
-             </div> -->
-
-        <!--
-                  <div class="nav-lavel"> </div> -->
-        <!-- <div class="nav-item">
-                    <a class="nav-link"  ><span>  إرشادات عامة  </span> <i class="ik ik-alert-circle"></i>
-                   </a>
-                   </div>
-                  <div class="nav-item">
-                    <a class="nav-link"><span>استفسارات  </span> <i class="ik ik-settings"></i>
-                    </a>
-                  </div> -->
-
       </nav>
     </div>
   </div>

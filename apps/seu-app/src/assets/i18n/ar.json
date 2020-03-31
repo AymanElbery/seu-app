@@ -937,7 +937,8 @@
         "EMP_PSNL_VCHR_NOTE": "ملاحظات",
         "EMP_SLRY_YEAR": "السنة",
         "EmployeeVouchers": "البدلات و المكافاَت",
-        "administrative": "إداري"
+        "administrative": "إداري",
+        "back":"إلغاء"
     },
     "tasks": {
         "description": "الوصف",

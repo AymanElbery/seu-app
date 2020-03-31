@@ -33,20 +33,27 @@ export class TasksManagementService {
     return item;
   }
 
-  reloadList(force=false){
+  reloadList(force = false) {
     this.loadDDL();
     this.loadEmpList();
   }
-
+  loadDDLStart = false;
   loadDDL(force = false) {
     if (!force && this.ddl) {
       return false;
     }
+    if (this.loadDDLStart) {
+      return false;
+    }
+    this.loadDDLStart = true;
     this.getDDLlist().subscribe(reqtype => {
       if (reqtype) {
+        this.loadDDLStart = false;
         this.ddl = (reqtype as any).data;
         this.ddlsubject.next();
       }
+    }, err => {
+      this.loadDDLStart = false;
     });
   }
   loadStats() {
@@ -56,10 +63,15 @@ export class TasksManagementService {
       }
     });
   }
+  loadEmpListStart = false;
   loadEmpList(force = false) {
     if (!force && this.ddl) {
       return false;
     }
+    if (this.loadEmpListStart) {
+      return false;
+    }
+    this.loadEmpListStart = true;
     this.getDDLEmplist().subscribe(reqtype => {
       if (reqtype) {
         this.empList = (reqtype as any).data['employeesList'].map(item => {
@@ -68,7 +80,10 @@ export class TasksManagementService {
         });
         this.empListFavourit = (reqtype as any).data['favouriteEmpsList'].map(rec => { return rec['favEmpId'] }).filter((item, i, ar) => ar.indexOf(item) === i);
         this.empListsubject.next();
+        this.loadEmpListStart = false;
       }
+    }, err => {
+      this.loadEmpListStart = false;
     });
   }
 

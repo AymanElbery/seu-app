@@ -75,26 +75,26 @@ export class VacationRequestComponent implements OnInit {
   }
 
   onFormSubmit(event) {
-    this.submitted = true;
     //this.isLoading = true;
     const submitdatavalue = (this.AddReqForm.value);
     if (this.AddReqForm.invalid) {
       return;
     }
+    this.submitted = true;
     //console.log("submit data", submitdatavalue);
     this.empreqservice.submitreqservice(submitdatavalue).subscribe(contacts => {
       ////console.log("saved ", contacts);
       if (!contacts['saveRequesst']) {
         var error = (contacts as any).data["errorMassege"]
         //this.toastr.push((contacts as any).data); 
-
         this.toastr.push([{ type: 'error', 'body': error }]);
         //this.isLoading = false;
-
+        this.submitted = false;
       } else {
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
         //this.isLoading = false;
         //navigate
+        this.submitted = false;
         this.router.navigate(['/wafi/employee-requests'])
       }
     }
@@ -146,6 +146,7 @@ export class VacationRequestComponent implements OnInit {
   FillDDLReqType(reqtypeid: any) {
     this.isLoading = true
     this.AddReqForm.controls['requestType'].setValue(this.id);
+    
     this.subscriptionDDLReqtype = this.empreqservice.getDDLVacationType(reqtypeid).subscribe(reqtype => {
       if (reqtype) {
         //console.log(reqtype);
@@ -166,5 +167,8 @@ export class VacationRequestComponent implements OnInit {
     });
   }
 
+  back() {
+    this.router.navigate(['/wafi/employee-requests/add-new-request'])
+  }
 
 }
