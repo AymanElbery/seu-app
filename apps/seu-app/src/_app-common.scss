@@ -213,11 +213,10 @@ background-color: #001628;
 }
 .ysMenuItem
 {
-    text-align: left;padding-right: 160px;font-size: 15px;
+    text-align: left;padding-right: 160px;font-size: 14px; 
     color: #fff;
-    
+    white-space: normal;
 }
-
 .ysMenuhead{  padding-right: 120px;font-size: 15px; font-weight: 700;
     color: #fff;}
 
@@ -498,7 +497,7 @@ label{font-family: 'DroidArabicKufi' ;  white-space: normal;
 
 
 .header { text-align: center; color: #010447; border-color: #f08b1c;}
-.pop{ width: 340;  background-color: #f9f9f9; padding: 20 30 ;} 
+.pop{ width: 340;  background-color: #f9f9f9; padding: 20 32 ;} 
 .font{color: #010447;} 
 .icon-action{ color: #fff; font-size: 10;}
 .label-action{ color: #fff;}

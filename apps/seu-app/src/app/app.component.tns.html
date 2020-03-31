@@ -40,7 +40,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 
 
                         <GridLayout *ngFor="let item  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
-                            <Label col="1" text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
+                            <Label col="1" textWrap="true"  text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
                             <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>
         
                         </GridLayout>

@@ -1,6 +1,6 @@
 
-<ScrollView>
-    <FlexboxLayout flexDirection="column">
+<ScrollView style="width: 330;">
+    <FlexboxLayout flexDirection="column" >
 
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,
             auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="!isLoading">
@@ -26,28 +26,28 @@
               <Label row="6"  column="0" class="ysPBox2" text="{{stdinfo.STD_MAJOR_DESC}}"></Label>
 
               <Label row="7" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.graduate.branch"|translate}} :'></Label>
-              <Label row="7"  column="0" class="ysPBox2" text="{{stdinfo.STD_CAMP}}"  style="text-align: right;"></Label>
+              <Label row="7"  column="0" class="ysPBox2" text="{{stdinfo.STD_CAMP}}"></Label>
 
               <Label row="8" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.graduate.rate"|translate}} :'></Label>
-              <Label row="8"  column="0" class="ysPBox2" text="{{stdinfo.STD_GPA}}"  style="text-align: right;"></Label>
+              <Label row="8"  column="0" class="ysPBox2" text="{{stdinfo.STD_GPA}}"></Label>
             
               <Label row="10" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.mobileno'|translate}} :"></Label>
-              <Label row="10"  column="0" class="ysPBox2" text="{{stdinfo.MOBILE_NUM}}"  style="text-align: right;"></Label>
+              <Label row="10"  column="0" class="ysPBox2" text="{{stdinfo.MOBILE_NUM}}"></Label>
 
               <Label row="11" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.email'|translate}} :"></Label>
-              <Label row="11"  column="0" class="ysPBox2" text="{{stdinfo.PERSONAL_EMAIL}}"  style="text-align: right;"></Label>
+              <Label row="11"  column="0" class="ysPBox2" text="{{stdinfo.PERSONAL_EMAIL}}"></Label>
 
               <Label row="12" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.uemail'|translate}} :"></Label>
-              <Label row="12"  column="0" class="ysPBox2" text="{{stdinfo.STD_EMAIL}}"  style="text-align: right;"></Label>
+              <Label row="12"  column="0" class="ysPBox2" text="{{stdinfo.STD_EMAIL}}"></Label>
 
              <Label row="13" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.stdpic'|translate}} :"></Label>
-             <Label row="13"  column="0" class="ysPBox2" text="{{stdinfo.STD_PIC}}"  style="text-align: right;"></Label>
+             <Label row="13"  column="0" class="ysPBox2" text="{{stdinfo.STD_PIC}}"></Label>
      
              <Label row="14" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.CV'|translate}}  :"></Label>
-             <Label row="14"  column="0" class="ysPBox2" text="{{stdinfo.STD_RESUME}}"  style="text-align: right;"></Label>
+             <Label row="14"  column="0" class="ysPBox2" text="{{stdinfo.STD_RESUME}}"></Label>
 
              <Label row="15" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.graduate.cjob"|translate}}'></Label>
-             <Label row="15"  column="0" class="ysPBox2" text="{{stdinfo.JOB_STATUS}}"  style="text-align: right;"></Label>
+             <Label row="15"  column="0" class="ysPBox2" text="{{stdinfo.JOB_STATUS}}"></Label>
         </GridLayout>
 
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="!isLoading">
@@ -55,22 +55,22 @@
             <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.graduate.jondes"|translate}}'></Label>
 
              <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.empsector'|translate}} :"></Label>
-             <Label row="1"  column="0" class="ysPBox2" text="{{stdinfo.JOB_SECTOR}}"  style="text-align: right;"></Label>
+             <Label row="1"  column="0" class="ysPBox2" text="{{stdinfo.JOB_SECTOR}}"></Label>
   
              <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.jobyear'|translate}} :"></Label>
-             <Label row="2"  column="0" class="ysPBox2" text="{{stdinfo.YEAR_JOB}}"  style="text-align: right;"></Label>
+             <Label row="2"  column="0" class="ysPBox2" text="{{stdinfo.YEAR_JOB}}"></Label>
 
              <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.jobcom'|translate}} :"></Label>
-             <Label row="3"  column="0" class="ysPBox2" text="{{stdinfo.JOB_COM}}"  style="text-align: right;"></Label>
+             <Label row="3"  column="0" class="ysPBox2" text="{{stdinfo.JOB_COM}}"></Label>
 
              <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.upgrade'|translate}} :"></Label>
              <Label row="4"  column="0" class="ysPBox2" text="{{stdinfo.JOB_PROMO}}"></Label>
 
              <Label row="5" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.upgradeyr'|translate}} :"></Label>
-             <Label row="5"  column="0" class="ysPBox2" text="{{stdinfo.JOB_PROMO_YEAR}}"  style="text-align: right;"></Label>
+             <Label row="5"  column="0" class="ysPBox2" text="{{stdinfo.JOB_PROMO_YEAR}}"></Label>
 
              <Label row="6" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.jobplace'|translate}} :"></Label>
-             <Label row="6"  column="0" class="ysPBox2" text="{{stdinfo.JOB_LOC}}"  style="text-align: right;"></Label>
+             <Label row="6"  column="0" class="ysPBox2" text="{{stdinfo.JOB_LOC}}"></Label>
         </GridLayout>
 
         <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto" columns="*,150" *ngIf="!isLoading">
@@ -78,16 +78,16 @@
             <Label row="0" colSpan="2"  class="ysHBox"  text='{{"services.graduate.jobownerdata"|translate}}'></Label>
 
              <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.oname'|translate}} :"></Label>
-             <Label row="1"  column="0" class="ysPBox2" text="{{stdinfo.EMPLOYER_NAME}}"  style="text-align: right;"></Label>
+             <Label row="1"  column="0" class="ysPBox2" text="{{stdinfo.EMPLOYER_NAME}}"></Label>
             
              <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.ojob'|translate}} :" textWrap="true"></Label>
-             <Label row="2"  column="0" class="ysPBox2" text="{{stdinfo.EMPLOYER_JOB_TITLE}}"  style="text-align: right;"></Label>
+             <Label row="2"  column="0" class="ysPBox2" text="{{stdinfo.EMPLOYER_JOB_TITLE}}"></Label>
             
              <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.mobileno'|translate}} :" textWrap="true"></Label>
-             <Label row="3"  column="0" class="ysPBox2" text="{{stdinfo.EMPLOYER_PHONE}}"  style="text-align: right;"></Label>
+             <Label row="3"  column="0" class="ysPBox2" text="{{stdinfo.EMPLOYER_PHONE}}"></Label>
 
              <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text="{{'services.graduate.email'|translate}} :" textWrap="true"></Label>
-             <Label row="4"  column="0" class="ysPBox2" text="{{stdinfo.EMPLOYER_EMAIL}}"  style="text-align: right;"></Label>
+             <Label row="4"  column="0" class="ysPBox2" text="{{stdinfo.EMPLOYER_EMAIL}}"></Label>
             
         </GridLayout>
 

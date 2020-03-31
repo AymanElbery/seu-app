@@ -232,7 +232,7 @@ export class AppComponent implements OnInit {
             'route':'/academicrequests/studypostpone'
         },
         {
-            'subTitle':'طلب حذف المقررات (الاعتذار عن الفصل)',
+            'subTitle':'طلب حذف المقررات ',
             'route':'/academicrequests/termexecuse'
         },
         {
