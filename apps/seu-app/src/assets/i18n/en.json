@@ -201,7 +201,18 @@
         "TeachingLoad": "Teaching Load",
         "NewAdminPage": "New Admin Pages",
         "AdminPage": "Admin Pages",
-        "student_attendance": "Student Attendance"
+        "student_attendance": "Student Attendance",
+        "resume": "Doctor CV"
+    },
+    "resume":{
+        "title": "Edit resume",
+        "name": "Doctor name",
+        "email": "Doctor email",
+        "phone": "Phone number",
+        "jobTitle": "Job title",
+        "section": "Section",
+        "nationality": "Nationality",
+        "photo": "Photo"
     },
     "services": {
         "academic_status": {

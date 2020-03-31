@@ -201,7 +201,18 @@
         "TeachingLoad": "العبئ التدريسي",
         "NewAdminPage": "إدارة الخدمات الإلكترونية",
         "AdminPage": "الصفحة الإدارية",
-        "student_attendance": "التحضير الإلكتروني"
+        "student_attendance": "التحضير الإلكتروني",
+        "resume": "السيرة الذاتية"
+    },
+    "resume":{
+        "title": "تعديل السيرة الذاتية الشخصية",
+        "name": "إسم عضو هيئة التدريس",
+        "email": "البريد الإلكتروني",
+        "phone": "رقم الهاتف",
+        "jobTitle": "المسمى الوظيفي",
+        "section": "القسم",
+        "nationality": "الجنسية",
+        "photo": "الصورة الشخصية"
     },
     "services": {
         "academic_status": {
