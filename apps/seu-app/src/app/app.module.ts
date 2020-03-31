@@ -71,7 +71,8 @@ import { ResetPasswordComponent } from './account/reset-password/reset-password.
     PageHeaderComponent,
     DownloadPrintDirective,
     ExternalLinkDirective,
-    AdmisPagesComponent, StdsPagesComponent
+    AdmisPagesComponent, 
+    StdsPagesComponent
   ],
   imports: [
     BrowserModule,
