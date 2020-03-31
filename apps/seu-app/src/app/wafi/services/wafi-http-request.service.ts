@@ -24,7 +24,9 @@ export class WafiHttpRequestService {
     let url = this.getApiURI() + '/' + path;
     return this.http.get(url);
   }
-
+getempIdLoggedin(){
+  return this.user.userData.id;
+}
   apllyBasicParams(obj) {
     obj["authorizationKey"] = "RSUyZlJMR0tMc1QlMmJjRFAjdHQ1cms4Y3pPOWRmNk50K0BlR2ElMmJjYlZhY0ZhVklGUE5hazdlOU0lM2Q6JFlpOEVQR0VXRWI0YXE3JVZFd0xORClsVW9oMTUlMj1Pd2olMmZrUCUyZnlYTjUhVFM4SjN6cWs2RDRUbEdP";
     obj["sessionId"] = this.globalService.getSID();
