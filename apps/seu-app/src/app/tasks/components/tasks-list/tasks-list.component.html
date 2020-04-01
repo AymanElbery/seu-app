@@ -35,7 +35,7 @@
             <td>{{task.priorityDesc}}</td>
             <td>{{task.statusDesc}}</td>
             <td>{{task.assignedToName}}</td>
-            <td class="prin" style="color: #fff;"><a [routerLink]="['/tasks/details', task.tid]"
+            <td class="prin" style="color: #fff;"><a [routerLink]="['/tasks/details', task.tid, {list:list}]"
                 class="btn">{{"tasks.Details" | translate}} <i class="ik ik-book"></i> </a></td>
           </tr>
 

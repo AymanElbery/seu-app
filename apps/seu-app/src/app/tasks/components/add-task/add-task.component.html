@@ -125,13 +125,13 @@
           <div class=" col-md-6 col-sm-6">
             <div class="state">
               <h6>{{"tasks.startDate"|translate}} <span class="reqstart">*</span></h6>
-              <input type="text" formControlName="startDate" bsDatepicker class="form-control" />
+              <input type="text" formControlName="startDate" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
             </div>
           </div>
           <div class=" col-md-6 col-sm-6">
             <div class="state">
               <h6>{{"tasks.endDate"|translate}} <span class="reqstart">*</span></h6>
-              <input type="text" formControlName="endDate" bsDatepicker class="form-control" />
+              <input type="text" formControlName="endDate" bsDatepicker  [bsConfig]="datePickerConfig" class="form-control" />
             </div>
           </div>
         </div>

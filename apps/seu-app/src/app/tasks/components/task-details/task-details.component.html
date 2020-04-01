@@ -7,6 +7,11 @@
     <div class="widget-header">
       <h3 class="widget-title">
         {{task.title}}
+        <a  class="btn btn-primary"  (click)="backToList()"> {{"tasks.bakcList" | translate}} <i class="ik ik-list"></i> </a>
+        <button type="button" class="btn btn-primary" (click)="openDialog('comment','','tasks.AddComment')">
+          {{"tasks.AddComment"|translate}} <i class="ik ik-plus"></i>
+        </button>&nbsp;
+
         <button type="button" class="btn btn-primary" (click)="openDialog('comment','','tasks.AddComment')">
           {{"tasks.AddComment"|translate}} <i class="ik ik-plus"></i>
         </button>&nbsp;

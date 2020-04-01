@@ -47,14 +47,14 @@
             <a href="javascript:void(0)"> <span>{{"menu.tasks" | translate}} </span>
               <i class="ik ik-user"></i> </a>
             <div class="submenu-content">
-              <a [routerLink]="['/tasks/mytasks']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/tasks/mytasks']" class="menu-item"> <span
                   class="text-eng">{{"tasks.assignedtasks" | translate}}
                   <ng-container *ngIf="task.stats && task.stats.assignedTasks">
                     ({{task.stats.assignedTasks}})
                   </ng-container>
                 </span>
                 <i class="ik ik-user-check"></i> </a>
-              <a [routerLink]="['/tasks/createdTasks']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/tasks/createdTasks']" class="menu-item"> <span
                   class="text-eng">{{"tasks.createdTasks" | translate}}
                   <ng-container *ngIf="task.stats && task.stats.createdTasks ">
                     ({{task.stats.createdTasks}})
@@ -62,7 +62,7 @@
 
                 </span>
                 <i class="ik ik-user-check"></i> </a>
-              <a [routerLink]="['/tasks/alltasks']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/tasks/alltasks']" class="menu-item"> <span
                   class="text-eng">{{"tasks.alltasks" | translate}}
                   <ng-container *ngIf="task.stats && task.stats.viewableTasks">
                     ({{task.stats.viewableTasks}})
@@ -70,7 +70,7 @@
 
                 </span>
                 <i class="ik ik-user-check"></i> </a>
-              <a [routerLink]="['/tasks/fav-emps']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/tasks/fav-emps']" class="menu-item"> <span
                   class="text-eng">{{"tasks.favemps" | translate}}
                 </span>
                 <i class="ik ik-user"></i> </a>
@@ -79,37 +79,37 @@
         </div>
         <div *ngIf="hasWafi">
           <div class="nav-item has-sub ">
-            <a href="javascript:void(0)" class="menu-item homelink" routerLink="/">
+            <a routerLinkActive="active" href="javascript:void(0)" class="menu-item homelink" routerLink="/">
               <span>{{"wafi.wafi" | translate}}</span>
               <i class="ik ik-book-open"></i>
             </a>
           </div>
           <div class="nav-item has-sub">
-            <a href="javascript:void(0)"> <span>{{"wafi.personal" | translate}} </span>
+            <a routerLinkActive="active" href="javascript:void(0)"> <span>{{"wafi.personal" | translate}} </span>
               <i class="ik ik-user"></i> </a>
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/personal']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal']" class="menu-item"> <span
                   class="text-eng">{{"wafi.PersonalInfo" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/personal/salaries']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal/salaries']" class="menu-item"> <span
                   class="text-eng">{{"wafi.Salaries" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/personal/vacations']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal/vacations']" class="menu-item"> <span
                   class="text-eng">{{"wafi.Vacations" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/personal/print-report']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal/print-report']" class="menu-item"> <span
                   class="text-eng">{{"wafi.print-report" | translate}}</span> <i class="ik ik-calendar"></i> </a>
             </div>
           </div>
 
           <div class="nav-item has-sub">
-            <a href="javascript:void(0)"> <span>{{"wafi.employee-requests" | translate}} </span>
+            <a routerLinkActive="active" href="javascript:void(0)"> <span>{{"wafi.employee-requests" | translate}} </span>
               <i class="ik ik-user"></i> </a>
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/employee-requests']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests']" class="menu-item"> <span
                   class="text-eng">{{"wafi.requests-lists" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
             <div class="submenu-content">
@@ -129,31 +129,31 @@
           </div>
 
           <div class="nav-item has-sub">
-            <a href="javascript:void(0)"> <span>{{"wafi.administrative" | translate}} </span>
+            <a routerLinkActive="active"  href="javascript:void(0)"> <span>{{"wafi.administrative" | translate}} </span>
               <i class="ik ik-user"></i> </a>
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/administrative/emp-evaluations']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-evaluations']" class="menu-item"> <span
                   class="text-eng">{{"wafi.employeeevaluations" | translate}}</span> <i class="ik ik-user-check"></i>
               </a>
             </div>
 
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/administrative/emp-custody']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-custody']" class="menu-item"> <span
                   class="text-eng">{{"wafi.Employeecustody" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
 
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/administrative/emp-letters']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-letters']" class="menu-item"> <span
                   class="text-eng">{{"wafi.EmployeeLeters" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
 
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/administrative/training']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/training']" class="menu-item"> <span
                   class="text-eng">{{"wafi.EmployeeTraining" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
 
             <div class="submenu-content">
-              <a [routerLink]="['/wafi/administrative/vouchers']" class="menu-item"> <span
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/vouchers']" class="menu-item"> <span
                   class="text-eng">{{"wafi.EmployeeVouchers" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
 
