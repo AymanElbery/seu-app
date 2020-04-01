@@ -48,6 +48,7 @@ export class AddTaskComponent implements OnInit {
       'startDate': ['', [Validators.required]],
       'endDate': ['', [Validators.required]],
       'file': [''],
+      'fileName': [''],
       'notes': ['']
     });
   }
@@ -71,7 +72,7 @@ export class AddTaskComponent implements OnInit {
     this.submitted = true;
 
     this.taskservice.AddTasksdata(submitdatavalueadeddate).subscribe(addedtask => {
-      if (addedtask['data']['saveTask'] == true) {
+      if (addedtask['data']['status'] == true) {
         this.taskservice.loadStats();
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('general.request_saved') }]);
         this.router.navigate(['/tasks/createdTasks'])
@@ -79,7 +80,7 @@ export class AddTaskComponent implements OnInit {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);
       }
       this.isLoading = false;
-    },err=>{
+    }, err => {
       this.toastr.tryagain();
       this.isLoading = false;
     });
@@ -134,14 +135,10 @@ export class AddTaskComponent implements OnInit {
       this.toastr.push([{ type: 'error', 'body': this.translate.instant("Selected file format is not supported") }]);
       return false;
     }
-    console.log(file);
+    this.AddReqForm.controls['fileName'].setValue(file.name);
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
-    console.log(    reader.readAsDataURL(file));
-    console.log(    reader.readAsArrayBuffer(file));
-    console.log(    reader.readAsBinaryString(file));
-    console.log(    reader.readAsText(file));
   }
   _handleReaderLoaded(e) {
     const reader = e.target;

@@ -10,16 +10,15 @@
         <button type="button" class="btn btn-primary" (click)="openDialog('comment','','tasks.AddComment')">
           {{"tasks.AddComment"|translate}} <i class="ik ik-plus"></i>
         </button>&nbsp;
-
         <button type="button" *ngIf="task['status']==3 && LoggedINID == task['assignedTo']" class="btn btn-primary"
           (click)="openDialog('status',4,'tasks.inprogress')">
           {{"tasks.inprogress"|translate}}
         </button>&nbsp;
-        <button *ngIf="task['status']!=6 && LoggedINID == task['assignedTo']" type="button" class="btn btn-primary"
-          (click)="openDialog('status',5,'tasks.resolve')">
+        <button *ngIf="(task['status']==3 || task['status']==4) && LoggedINID == task['assignedTo']" type="button"
+          class="btn btn-primary" (click)="openDialog('status',5,'tasks.resolve')">
           {{"tasks.resolve"|translate}}
         </button>&nbsp;
-        <button type="button" *ngIf="LoggedINID == task['assignedTo']" class="btn btn-primary"
+        <button type="button" *ngIf="task['status']==3 && LoggedINID == task['assignedTo']" class="btn btn-primary"
           (click)="openDialog('status',2,'tasks.reject')">
           {{"tasks.reject"|translate}}
         </button>&nbsp;

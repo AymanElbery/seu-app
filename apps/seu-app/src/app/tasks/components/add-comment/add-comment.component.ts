@@ -42,10 +42,9 @@ export class AddCommentComponent implements OnInit {
   }
 
   showAssign = false;
-  showStatus = true;
+  showStatus = false;
 
   ngOnInit() {
-
     if (this.data['type'] == 'status') {
       this.showStatus = false;
       this.AddReqForm.controls['taskStatus'].setValue(this.data['code']);
