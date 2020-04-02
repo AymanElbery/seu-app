@@ -1020,6 +1020,7 @@
         "showfavemps": "Show favourites",
         "favemps": "favourites List",
         "favList": "Registered List",
-        "Send": "Send"
+        "Send": "Send",
+        "bakcList": "Back List"
     }
 }

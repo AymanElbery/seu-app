@@ -50,9 +50,11 @@ export class VouchersComponent implements OnInit, OnDestroy {
     this.isLoading = true
     this.subscriptionDDL = this.empreqservice.getvaoucherlovs().subscribe(fillddl => {
       if (fillddl) {
-        this.FillDDLDataYear = (fillddl as any).data["years"];
-        this.FillDDLDatavouchertype = (fillddl as any).data["voucherTypes"];
-        ////console.log("emp lett",fillddl);      
+        this.FillDDLDataYear = (fillddl as any).data["years"];        
+        this.FillDDLDatavouchertype = (fillddl as any).data["voucherTypes"];        
+        this.vouchertype=(this.vouchertype?this.vouchertype:this.FillDDLDatavouchertype[0]);
+        this.getvoucherselect(this.vouchertype);
+        //console.log("emp lett",fillddl);      
       }
       this.isLoading = false;
     },
@@ -71,7 +73,7 @@ export class VouchersComponent implements OnInit, OnDestroy {
 
   getvoucherselect(vouchertype: any) {
     this.vouchertype = vouchertype;
-    // //console.log("param",this.selectedyear,vouchertype);
+    //console.log("param",this.selectedyear,vouchertype);
     //this.selectYear=this.selectedyear;
     this.isLoading = true
     this.subscriptionvoucherlist = this.empreqservice.getvaoucherlist(this.selectedyear, vouchertype).subscribe(vocherlist => {

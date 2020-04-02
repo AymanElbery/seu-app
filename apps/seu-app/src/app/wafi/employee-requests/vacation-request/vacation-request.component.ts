@@ -121,7 +121,7 @@ export class VacationRequestComponent implements OnInit {
   }
 
   ngOnInit() {
-
+   // this.uifSelected = this.ddlday.filter(o => o.value == this.uifSelectedValue)[0];
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
       if (this.id == 6) {
@@ -152,7 +152,7 @@ export class VacationRequestComponent implements OnInit {
         //console.log(reqtype);
         this.vacationreqtype = reqtype
         this.vacationreqtype = (reqtype as any).data["vacationItems"];
-        this.ddlday = (reqtype as any).data["dayItem"];
+        this.ddlday = (reqtype as any).data["dayItem"];       
         this.ddlmonth = (reqtype as any).data["monthItem"];
         this.ddlyear = (reqtype as any).data["yearItem"];
         this.altEmpItems = (reqtype as any).data["altEmpItems"];
@@ -160,7 +160,7 @@ export class VacationRequestComponent implements OnInit {
         this.cityNewItems = (reqtype as any).data["cityNewItems"];
         this.compErkabItems = (reqtype as any).data["compErkabItems"];
 
-        // //console.log("vac item data", this.vacationreqtype);
+      //console.log("vac item data", this.ddlday);
         this.isLoading = false
       } else {
       }
@@ -169,6 +169,15 @@ export class VacationRequestComponent implements OnInit {
 
   back() {
     this.router.navigate(['/wafi/employee-requests/add-new-request'])
+  }
+
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 
 }

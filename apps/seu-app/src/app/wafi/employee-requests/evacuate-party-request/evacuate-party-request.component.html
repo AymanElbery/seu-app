@@ -18,7 +18,7 @@
       <div class="row ser-block">
         <div class=" col-md-6 col-sm-6">
           <div class="state">
-            <h6>{{"wafi.DisclaimerReason"|translate}} </h6>
+            <h6>{{"wafi.DisclaimerReason"|translate}} <span class="reqstart">*</span></h6>
             <select class="form-control select" formControlName="disclaimerReason"
               [ngClass]="{ 'is-invalid': submitted && f.disclaimerReason.errors }">
               <option [ngValue]="undefined" selected>{{"wafi.DisclaimerReason" | translate}}</option>

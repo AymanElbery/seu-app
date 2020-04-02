@@ -1021,6 +1021,7 @@
         "showfavemps": "عرض القائمة المفضلة",
         "favemps": "القائمة المفضلة",
         "favList": "القائمة المسجلة",
-        "Send": "إرسال"
+        "Send":"إرسال",
+        "bakcList": "Back List"
     }
 }

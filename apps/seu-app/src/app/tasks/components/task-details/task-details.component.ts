@@ -10,7 +10,7 @@ import { AddTaskComponent } from '../add-task/add-task.component';
 import { AddCommentComponent } from '../add-comment/add-comment.component';
 import { UserService } from 'src/app/account/services/user.service';
 import { environment } from 'src/environments/environment';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-details',
@@ -20,12 +20,13 @@ import { environment } from 'src/environments/environment';
 export class TaskDetailsComponent implements OnInit, OnDestroy {
 
   taskID;
+  list;
   task;
   loading = false;
   ddl;
   ddlemplist;
   LoggedINID;
-  constructor(private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,private router:Router,
     private user: UserService,
     private toastr: AppToasterService, private taskservice: TasksManagementService, private translate: TranslateService, private dialog: MatDialog) {
     this.taskservice.reloadList();
@@ -35,6 +36,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
     this.taskservice.reloadList();
     this.LoggedINID = this.user.userData.id;
     this.taskID = this.route.snapshot.paramMap.get("tid");
+    this.list = this.route.snapshot.paramMap.get("list");
     this.getTaskDetails();
     this.ddl = this.taskservice.ddlsubject.subscribe(() => {
       this.updateTaskViewers();
@@ -46,6 +48,10 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.ddl.unsubscribe();
     this.ddlemplist.unsubscribe();
+  }
+  backToList(){
+   this.router.navigate(['/tasks/'+this.list])
+
   }
   updateTaskViewers() {
     if (this.task) {
