@@ -28,7 +28,8 @@
     </form>
     <h3>{{"tasks.favList" | translate}}</h3>
     <ul>
-      <li *ngFor="let emp of favList">{{emp.empNameEmail}}</li>
+      <li *ngFor="let emp of favList"><a
+        (click)="delete(emp.empId)"><i class="ik ik-delete"></i> </a> {{emp.empNameEmail}}</li>
     </ul>
   </section>
 </div>

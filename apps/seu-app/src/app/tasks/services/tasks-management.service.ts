@@ -153,6 +153,11 @@ export class TasksManagementService {
     return this.wafihttRequest.postRequest_obj('task/createTaskComment', data);
   }
 
+  DeleteFavEmployee(favEmpId) {
+
+    return this.wafihttRequest.postRequest_obj('task/deleteFavouriteEmp', {favEmpId});
+  }
+
 
 }
 
