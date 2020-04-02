@@ -125,13 +125,15 @@
           <div class=" col-md-6 col-sm-6">
             <div class="state">
               <h6>{{"tasks.startDate"|translate}} <span class="reqstart">*</span></h6>
-              <input type="text" formControlName="startDate" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+              <input type="text" formControlName="startDate" bsDatepicker [bsConfig]="datePickerConfig"
+                class="form-control" />
             </div>
           </div>
           <div class=" col-md-6 col-sm-6">
             <div class="state">
               <h6>{{"tasks.endDate"|translate}} <span class="reqstart">*</span></h6>
-              <input type="text" formControlName="endDate" bsDatepicker  [bsConfig]="datePickerConfig" class="form-control" />
+              <input type="text" formControlName="endDate" bsDatepicker [bsConfig]="datePickerConfig"
+                class="form-control" />
             </div>
           </div>
         </div>
@@ -167,6 +169,10 @@
               <button (click)="onFormSubmit()" type="button" [disabled]="submitted || AddReqForm.invalid" class="btn"
                 style="color: #fff;margin-top: 30px !important;"><i class="fa fa-database"></i>
                 {{"tasks.Send" | translate}}</button>
+
+
+              <button (click)="cancel()" type="button" class="btn" style="color: #fff;margin-top: 30px !important;">
+                {{"general.cancel" | translate}}</button>
             </div>
           </div>
 

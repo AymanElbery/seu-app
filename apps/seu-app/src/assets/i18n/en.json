@@ -73,7 +73,7 @@
             "day": "day   ",
             "time": "time   ",
             "att": "Attendance",
-            "rejectrs":"Reject Reason",
+            "rejectrs": "Reject Reason",
             "pre_requests": "Show Previous Requests",
             "pre_requesr": "Show Previous Requests",
             "date_and_status": "Request Date/Status",
@@ -83,6 +83,7 @@
         },
         "save": "Save",
         "cancel": "Cancel",
+        "Delete": "Delete",
         "count": "Count",
         "college": "College",
         "language": "Language",
@@ -1021,6 +1022,6 @@
         "favemps": "favourites List",
         "favList": "Registered List",
         "Send": "Send",
-        "bakcList": "Back List"
+        "bakcList": "Back to List"
     }
 }
