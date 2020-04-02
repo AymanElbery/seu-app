@@ -53,10 +53,8 @@ export class MasterRefundComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.refservice.getRequest().then(
       res => {
-        // console.log("get data",reqData);
-        this.refservice.reqData = (res as any).data["reqs"];
+        this.refservice.reqData = (res as any).data;
         this.canaddreq = (res as any).data["can_add_new_request"];
-        // console.log("get data",this.canaddreq,this.refservice.reqData);
         this.refservice.msgs = (res as any).messages;
         this.reqData = this.refservice.reqData;
         this.msgs = this.refservice.msgs;
@@ -89,10 +87,7 @@ export class MasterRefundComponent implements OnInit, OnDestroy {
       this.deleting = true;
       this.refservice.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
-        if ((res as any).status == 1) {
-          this.reqData.reqs.splice(index, 1);
-          this.getRequests();
-        }
+        this.getRequests();
         this.deleting = false;
       }, err => {
         this.toastr.tryagain();

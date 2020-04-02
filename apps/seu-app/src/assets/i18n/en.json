@@ -589,7 +589,6 @@
             "AddRefundReq": "Refund Request",
             "request_number": "ReqNo",
             "insert_date": "Insert Date",
-            "deletable": "Deletable",
             "status": "Status",
             "type": "Type",
             "Delete": "Delete",
