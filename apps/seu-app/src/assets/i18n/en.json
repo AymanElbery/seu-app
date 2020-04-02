@@ -603,7 +603,11 @@
             "cancel": "Cancel",
             "national_id": "National Id",
             "payment_reciept_copy": "Payment Reciept Copy",
-            "digitrequierd22": "22 digit  Number"
+            "digitrequierd22": "22 digit  Number",
+            "erro_22digit":"Please input correct 22 digit  Number",
+            "erro_4digit":"Please input correct 4 digit",
+            "erro_national_id":"Please Upload  National Id",
+            "erro_reciept_copy":"Please Upload  Payment Reciept Copy"
         },
         "medical_report": {
             "title": "Medical Report Request",

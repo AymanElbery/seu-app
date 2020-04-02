@@ -603,7 +603,11 @@
             "save": "حفظ",
             "cancel": "الغاء",
             "national_id": "صورة الهوية",
-            "payment_reciept_copy": "صورة إيصال السداد"
+            "payment_reciept_copy": "صورة إيصال السداد",
+            "erro_22digit":"الأيبان يجب أن يكون 22 رقم",
+            "erro_4digit":"ارجو تسجيل اخر اربع ارقام من البطاقة بشكل صحيح",
+            "erro_national_id":"الرجاء ارفاق صورة الهوية",
+            "erro_reciept_copy":"الرجاء ارفاق صورة إيصال السداد"
         },
         "medical_report": {
             "title": "طلب تقرير طبي",

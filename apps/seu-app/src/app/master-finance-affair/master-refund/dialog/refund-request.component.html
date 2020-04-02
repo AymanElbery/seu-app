@@ -27,27 +27,27 @@
           </div>
           <div class="state">
             <h6>{{"services.master_refund.bank_name"|translate}} <span class="reqstart">*</span></h6>
-            <input name="bank_name" #name="ngModel" required [(ngModel)]="payrefund.bank_name" class="form-control">
+            <input name="bank_name" #bank_name="ngModel" required [(ngModel)]="payrefund.bank_name" class="form-control">
           </div>
 
           <div class="state">
             <h6>{{"services.master_refund.iban"|translate}} <span class="reqstart">*</span></h6>
             <div>
               <span style="float:left;">SA</span>
-              <input style="display: inline;width:95%;" required name="iban" #name="ngModel" [(ngModel)]="payrefund.iban"
+              <input style="display: inline;width:95%;" required name="iban" #iban="ngModel" [(ngModel)]="payrefund.iban"
                 (keypress)="keyPress($event)" maxlength="22" class="form-control">
             </div>
 
           </div>
           <div class="state">
             <h6>{{"services.master_refund.last_four_id"|translate}} <span class="reqstart">*</span></h6>
-            <input name="last_four_id" #name="ngModel" required [(ngModel)]="payrefund.last_four_id"
+            <input name="last_four_id" #last_four_id="ngModel" required [(ngModel)]="payrefund.last_four_id"
               (keypress)="keyPress($event)" maxlength="4" class="form-control">
           </div>
 
           <div class="state">
             <h6>{{"services.master_refund.refund_reason"|translate}} <span class="reqstart">*</span></h6>
-            <input name="refund_reason" #name="ngModel" required [(ngModel)]="payrefund.refund_reason" class="form-control">
+            <input name="refund_reason" #refund_reason="ngModel" required [(ngModel)]="payrefund.refund_reason" class="form-control">
           </div>
 
           <div class="state">
@@ -82,7 +82,7 @@
           <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
             {{"services.master_refund.cancel"|translate}}</button>
 
-          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+          <button type="submit" [disabled]="payrefund.refund_reason==''  || payrefund.iban=='' || payrefund.name=='' || payrefund.last_four_id=='' || payrefund.refund_type==''" class="btn btn-dark"><i class="fa fa-database"></i>
             {{"services.master_refund.save"|translate}}</button>
         </div>
       </form>
