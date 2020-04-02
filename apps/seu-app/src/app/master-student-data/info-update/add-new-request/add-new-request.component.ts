@@ -87,6 +87,7 @@ export class AddNewRequestComponent implements OnInit {
   onSubmit(form: NgForm) {
     // console.log("save dataa",this.infoupdate);
     this.addRequest(this.infoupdate);
+    
   }
 
 
