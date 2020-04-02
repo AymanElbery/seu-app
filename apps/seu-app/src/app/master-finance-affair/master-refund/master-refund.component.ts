@@ -74,7 +74,10 @@ export class MasterRefundComponent implements OnInit, OnDestroy {
     dialogConfig.width = '50%';
     const dialogref = this.dialog.open(RefundRequestComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
-      this.getRequests();
+      if (this.refservice.newreqs) {
+        this.getRequests();
+        this.refservice.newreqs = false;
+      }
     });
   }
 
