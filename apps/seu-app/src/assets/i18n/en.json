@@ -602,7 +602,8 @@
             "save": "save",
             "cancel": "Cancel",
             "national_id": "National Id",
-            "payment_reciept_copy": "Payment Reciept Copy"
+            "payment_reciept_copy": "Payment Reciept Copy",
+            "digitrequierd22": "22 digit  Number"
         },
         "medical_report": {
             "title": "Medical Report Request",
