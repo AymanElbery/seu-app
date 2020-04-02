@@ -82,10 +82,13 @@
   <div class="row ser-block">
     <div class=" col-md-6 col-sm-6">
       <div class="state prin" style="margin-top: 20px !important;padding: 12px !important;color: #fff !important;">       
-        <button type="submit" class="btn"><i class="fa fa-database"></i> {{"wafi.Reject" | translate}}</button>  
+        <button type="submit" [disabled]="submitted" class="btn"><i class="fa fa-database"></i> {{"wafi.Reject" | translate}}</button>  
         
-        <a (click)="submitapporve(1)"
-            class="btn prin">{{"wafi.Approve" | translate}} <i class="ik ik-database"></i> </a>
+
+        <button type="button" [disabled]="submitted" (click)="submitapporve(1)" class="btn"><i class="fa fa-database"></i> {{"wafi.Approve" | translate}}</button>  
+        
+        <!-- <a (click)="submitapporve(1)"
+            class="btn prin">{{"wafi.Approve" | translate}} <i class="ik ik-database"></i> </a> -->
         <!-- <button  class="btn"><i class="fa fa-database"></i> {{"wafi.Approve" | translate}}</button>            -->
       </div>  
       <div class="state" style="margin-top: 20px !important;">       

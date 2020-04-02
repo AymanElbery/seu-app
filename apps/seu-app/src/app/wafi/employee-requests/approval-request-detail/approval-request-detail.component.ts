@@ -79,10 +79,10 @@ export class ApprovalRequestDetailComponent implements OnInit {
   }
 
   saveapprovaldata(rejectReasonNo: any, approveValue: any) {
-
+    this.submitted = true;
     this.empreqservice.submitapproverequest(this.data.reqSeq, this.data.reqEmpId, this.data.reqType, rejectReasonNo, approveValue).subscribe(saveappovedata => {
       ////console.log("saved data", leavdedcut);
-      if (!saveappovedata['accepted']) {
+      if (!saveappovedata['data']['accepted']) {
         var error = (saveappovedata as any).data["errorMessage"]
         //console.log("response data",error);
         this.toastr.push([{ type: 'error', 'body': error }]);
@@ -91,6 +91,10 @@ export class ApprovalRequestDetailComponent implements OnInit {
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
         //this.router.navigate(['/wafi/employee-requests'])
       }
+      this.submitted = false;
+    }, err => {
+      this.toastr.tryagain;
+      this.submitted = false;
     }
     );
   }
