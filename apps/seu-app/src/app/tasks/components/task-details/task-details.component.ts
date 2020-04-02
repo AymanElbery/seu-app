@@ -61,7 +61,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
       });
       this.task.taskComments = this.task.taskComments.map(comment => {
         comment['taskStatusDesc'] = this.taskservice.getStatusByID(comment['taskStatus']);
-        comment['taskStatusName'] = this.taskservice.getStatusByID(comment['assignTo']);
+        comment['taskAssignedTo'] = this.taskservice.getStatusByID(comment['assignTo']);
         comment['createdByName'] = this.taskservice.getEmpByID(comment['createdBy']);
 
         if (comment['hasAttachment'] && comment.attachName) {

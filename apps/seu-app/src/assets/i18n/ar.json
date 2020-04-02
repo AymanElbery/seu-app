@@ -107,7 +107,7 @@
         "grservices": "خدمات الماجستير",
         "userData": "بيانات الطالب",
         "academic_status": "الحالة الأكاديمية",
-        "infoupdate": "Info Update",
+        "infoupdate": "تحديث البيانات",
         "termexecuse": " طلب حذف المقررات (الإعتذار عن الفصل )",
         "postpone": "تأجيل الفصل الدراسي",
         "studypostpone": "طلب تأجيل الدراسه",
@@ -215,7 +215,7 @@
         "student_attendance": "التحضير الإلكتروني",
         "resume": "السيرة الذاتية"
     },
-    "resume":{
+    "resume": {
         "title": "تعديل السيرة الذاتية الشخصية",
         "name": "إسم عضو هيئة التدريس",
         "email": "البريد الإلكتروني",
@@ -235,24 +235,31 @@
             "desc": "السجل الأكاديمي"
         },
         "info_update": {
-            "title": "Info Update",
-            "desc": "Info Update",
-            "addnewrequest": "Add New Request",
-            "first_name": "First Name",
-            "mid_name": "Mid Name",
-            "last_name": "Last Name",
-            "first_name_ar": "First Name Arabic",
-            "mid_name_ar": "Mid Name Arabic",
-            "last_name_ar": "Last Name Arabic",
-            "mobile": "Mobile",
-            "city": "City",
-            "street": "Street",
-            "cancel": "Cancel",
-            "save": "Save",
-            "ID": "ID",
-            "Name": "Name",
-            "NameAr": "Name Ar"         
-            
+            "title": "تحديث البيانات",
+            "desc": "تحديث البيانات",
+            "addnewrequest": "طلب جديد",
+            "first_name": "الإسم الأول",
+            "mid_name": "اسم الأب",
+            "last_name": "اسم العائلة",
+            "first_name_ar": "الإسم الأول",
+            "mid_name_ar": "اسم الأب",
+            "last_name_ar": "اسم العائلة",
+            "mobile": "رقم الجوال",
+            "city": "اسم المدينة",
+            "state": "اسم المنطقة",
+            "street": "اسم الشارع",
+            "cancel": "إلغاء",
+            "email": "البريد الالكتروني الشخصي",
+            "save": "حفظ",
+            "ID": "الرقم الجامعي",
+            "Name": "الإسم",
+            "NameAr": "الإسم عربي",
+            "approve": "أقر واتعهد بأن جميع المعلومات المدخلة صحيحة.",
+            "stds_info": "معلومات الطالب",
+            "info_en": "باللغة الانجليزية",
+            "info_ar": "باللغة العربية",
+            "phone_note":"(يبدأ بدون صفر بالصيغة التالية 5 xxxxxxxx):",
+            "address":"عنوان الطالب"
         },
         "certificate_id": {
             "title": "شهادة تعريف",
@@ -596,7 +603,6 @@
             "cancel": "Cancel",
             "national_id": "National Id",
             "payment_reciept_copy": "Payment Reciept Copy"
-            
         },
         "medical_report": {
             "title": "طلب تقرير طبي",
@@ -962,7 +968,7 @@
         "EMP_SLRY_YEAR": "السنة",
         "EmployeeVouchers": "البدلات و المكافاَت",
         "administrative": "إداري",
-        "back":"إلغاء"
+        "back": "إلغاء"
     },
     "tasks": {
         "description": "الوصف",
@@ -1015,6 +1021,6 @@
         "showfavemps": "عرض القائمة المفضلة",
         "favemps": "القائمة المفضلة",
         "favList": "القائمة المسجلة",
-        "Send":"إرسال"
+        "Send": "إرسال"
     }
 }
