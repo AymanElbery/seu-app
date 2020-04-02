@@ -1,18 +1,18 @@
 <seu-loader [isLoading]="isLoading"></seu-loader>
 
-<div  class="modal-header">
-  <h4 class="modal-title">{{"wafi.ApprovalRequestDtails" | translate}}</h4>  
-<button type="button"  class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
+<div class="modal-header">
+  <h4 class="modal-title">{{"wafi.ApprovalRequestDtails" | translate}}</h4>
+  <button type="button" class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
 </div>
 
 <div *ngIf="appreqdetails" class="table-responsive">
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
-        <th *ngIf="appreqdetails.requestType" scope="col">{{"wafi.RequestType" | translate}}</th>       
+        <th *ngIf="appreqdetails.requestType" scope="col">{{"wafi.RequestType" | translate}}</th>
         <th *ngIf="appreqdetails.vacationEnabled==true" scope="col">{{"wafi.VacationDescription" | translate}}</th>
-        <th  scope="col">{{"wafi.beginDate" | translate}}</th>
-        <th  scope="col">{{"wafi.endDate" | translate}}</th>       
+        <th scope="col">{{"wafi.beginDate" | translate}}</th>
+        <th scope="col">{{"wafi.endDate" | translate}}</th>
         <th *ngIf="appreqdetails.fromCountryEnabled==true" scope="col">{{"wafi.fromCountry" | translate}}</th>
         <th *ngIf="appreqdetails.toCountryEnabled==true" scope="col">{{"wafi.ToCountry-City" | translate}}</th>
         <th *ngIf="appreqdetails.ticketEnabled==true" scope="col">{{"wafi.Ticket" | translate}}</th>
@@ -22,83 +22,85 @@
         <th *ngIf="appreqdetails.decisionEnabled==true" scope="col">{{"wafi.DecisionNo" | translate}}</th>
         <th *ngIf="appreqdetails.subjectEnabled==true" scope="col">{{"wafi.Task/Direction" | translate}}</th>
         <th *ngIf="appreqdetails.startTimeEnabled==true" scope="col">{{"wafi.FromTime" | translate}}</th>
-        <th *ngIf="appreqdetails.endTimeEnabled==true" scope="col">{{"wafi.ToTime" | translate}}</th>       
+        <th *ngIf="appreqdetails.endTimeEnabled==true" scope="col">{{"wafi.ToTime" | translate}}</th>
         <th *ngIf="appreqdetails.regCourseEnabled==true" scope="col">{{"wafi.scheduleName" | translate}}</th>
         <th *ngIf="appreqdetails.regCourseEnabled==true" scope="col">{{"wafi.sideName" | translate}}</th>
         <th *ngIf="appreqdetails.leaveDeductionEnabled==true" scope="col">{{"wafi.leaveDeduction" | translate}}</th>
-        <th *ngIf="appreqdetails.disclaimerReasonEnabled==true" scope="col">{{"wafi.DisclaimerReason" | translate}}</th>  
+        <th *ngIf="appreqdetails.disclaimerReasonEnabled==true" scope="col">{{"wafi.DisclaimerReason" | translate}}</th>
       </tr>
     </thead>
     <tbody>
-      <tr>        
+      <tr>
         <td *ngIf="appreqdetails.requestType">{{appreqdetails.requestDesc}}</td>
-        <td  *ngIf="appreqdetails.vacationEnabled==true">{{appreqdetails.vacationDesc}}</td>
-        <td >{{appreqdetails.beginDate}}</td>
-        <td  >{{appreqdetails.endDate}}</td>
-        <td  *ngIf="appreqdetails.fromCountryEnabled==true">{{appreqdetails.fromCountryDesc}}</td>
-        <td  *ngIf="appreqdetails.toCountryEnabled==true">{{appreqdetails.toCountryDesc}}</td>
-        <td  *ngIf="appreqdetails.ticketEnabled==true">{{appreqdetails.ticket}}</td>
-        <td  *ngIf="appreqdetails.roundTripEnabled==true">{{appreqdetails.roundTrip}}</td>
-        <td  *ngIf="appreqdetails.attendantsEnabled==true">{{appreqdetails.attendants}}</td>
-        <td  *ngIf="appreqdetails.amountEnabled==true">{{appreqdetails.compensationAmount}}</td>
-        <td  *ngIf="appreqdetails.decisionEnabled==true">{{appreqdetails.decisionNo}}</td>
-        <td  *ngIf="appreqdetails.subjectEnabled==true">{{appreqdetails.subject}}</td>
-        <td  *ngIf="appreqdetails.startTimeEnabled==true">{{appreqdetails.startTime}}</td>
-        <td  *ngIf="appreqdetails.endTimeEnabled==true">{{appreqdetails.endTime}}</td>       
-        <td  *ngIf="appreqdetails.regCourseEnabled==true">{{appreqdetails.scheduleDesc}}</td>
-        <td  *ngIf="appreqdetails.regCourseEnabled==true">{{appreqdetails.trainSideDesc}}</td>
-        <td  *ngIf="appreqdetails.leaveDeductionEnabled==true">{{appreqdetails.timePeriod}}</td>
-        <td  *ngIf="appreqdetails.disclaimerReasonEnabled==true">{{appreqdetails.disclaimerReasonDesc}}</td>
-      
+        <td *ngIf="appreqdetails.vacationEnabled==true">{{appreqdetails.vacationDesc}}</td>
+        <td>{{appreqdetails.beginDate}}</td>
+        <td>{{appreqdetails.endDate}}</td>
+        <td *ngIf="appreqdetails.fromCountryEnabled==true">{{appreqdetails.fromCountryDesc}}</td>
+        <td *ngIf="appreqdetails.toCountryEnabled==true">{{appreqdetails.toCountryDesc}}</td>
+        <td *ngIf="appreqdetails.ticketEnabled==true">{{appreqdetails.ticket}}</td>
+        <td *ngIf="appreqdetails.roundTripEnabled==true">{{appreqdetails.roundTrip}}</td>
+        <td *ngIf="appreqdetails.attendantsEnabled==true">{{appreqdetails.attendants}}</td>
+        <td *ngIf="appreqdetails.amountEnabled==true">{{appreqdetails.compensationAmount}}</td>
+        <td *ngIf="appreqdetails.decisionEnabled==true">{{appreqdetails.decisionNo}}</td>
+        <td *ngIf="appreqdetails.subjectEnabled==true">{{appreqdetails.subject}}</td>
+        <td *ngIf="appreqdetails.startTimeEnabled==true">{{appreqdetails.startTime}}</td>
+        <td *ngIf="appreqdetails.endTimeEnabled==true">{{appreqdetails.endTime}}</td>
+        <td *ngIf="appreqdetails.regCourseEnabled==true">{{appreqdetails.scheduleDesc}}</td>
+        <td *ngIf="appreqdetails.regCourseEnabled==true">{{appreqdetails.trainSideDesc}}</td>
+        <td *ngIf="appreqdetails.leaveDeductionEnabled==true">{{appreqdetails.timePeriod}}</td>
+        <td *ngIf="appreqdetails.disclaimerReasonEnabled==true">{{appreqdetails.disclaimerReasonDesc}}</td>
+
       </tr>
 
     </tbody>
   </table>
 </div>
 
-<div  class="modal-header">
+<div class="modal-header">
   <h4 class="modal-title">{{"wafi.ApprovalRequets" | translate}}</h4>
-  
+
 </div>
 
 
 <div *ngIf="rejectionitmes" class="table-responsive">
   <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit(AddReqForm.value)">
-  
+
 
     <div class="row ser-block">
       <div class=" col-md-6 col-sm-6">
         <div class="state">
           <h6>{{"wafi.reasondispaaproval"|translate}} </h6>
-          <select   class="form-control select"   formControlName="rejectReason"   [ngClass]="{ 'is-invalid': submitted && f.rejectReason.errors }" >  
+          <select class="form-control select" formControlName="rejectReason"
+            [ngClass]="{ 'is-invalid': submitted && f.rejectReason.errors }">
             <!-- <option [ngValue]="undefined" selected>{{"wafi.DisclaimerReason" | translate}}</option>  -->
-            <option *ngFor="let rejreson of rejectionitmes"    value={{rejreson.value}}>{{rejreson.label}} </option>  
-        </select>  
-            </div>
-                </div>
-  </div>
-
-
-  <div class="row ser-block">
-    <div class=" col-md-6 col-sm-6">
-      <div class="state prin" style="margin-top: 20px !important;padding: 12px !important;color: #fff !important;">       
-        <button type="submit" [disabled]="submitted" class="btn"><i class="fa fa-database"></i> {{"wafi.Reject" | translate}}</button>  
-        
-
-        <button type="button" [disabled]="submitted" (click)="submitapporve(1)" class="btn"><i class="fa fa-database"></i> {{"wafi.Approve" | translate}}</button>  
-        
-        <!-- <a (click)="submitapporve(1)"
-            class="btn prin">{{"wafi.Approve" | translate}} <i class="ik ik-database"></i> </a> -->
-        <!-- <button  class="btn"><i class="fa fa-database"></i> {{"wafi.Approve" | translate}}</button>            -->
-      </div>  
-      <div class="state" style="margin-top: 20px !important;">       
-                 
-      </div>      
+            <option *ngFor="let rejreson of rejectionitmes" value={{rejreson.value}}>{{rejreson.label}} </option>
+          </select>
+        </div>
+      </div>
     </div>
+
+
+    <div class="row ser-block">
+      <div class=" col-md-6 col-sm-6">
+        <div class="state prin" style="margin-top: 20px !important;padding: 12px !important;color: #fff !important;">
+          <button type="submit" [disabled]="submitted" class="btn"><i class="fa fa-database"></i>
+            {{"wafi.Reject" | translate}}</button>
+
+
+          <button type="button" [disabled]="submitted" (click)="submitapporve(1)" class="btn"><i
+              class="fa fa-database"></i> {{"wafi.Approve" | translate}}</button>
+
+          <!-- <a (click)="submitapporve(1)"
+            class="btn prin">{{"wafi.Approve" | translate}} <i class="ik ik-database"></i> </a> -->
+          <!-- <button  class="btn"><i class="fa fa-database"></i> {{"wafi.Approve" | translate}}</button>            -->
+        </div>
+        <div class="state" style="margin-top: 20px !important;">
+
+        </div>
+      </div>
+    </div>
+
+
+  </form>
+
 </div>
-
-
- </form>
- 
-</div>
-
