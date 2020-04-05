@@ -70,6 +70,10 @@ export class ApprovalRequestsComponent implements OnInit, OnDestroy {
     dialogConfig.width = "75%";
     dialogConfig.data = { reqSeq, reqType, reqEmpId };
     this.dialog.open(ApprovalRequestDetailComponent, dialogConfig).afterClosed().subscribe(res => {
+      if (this.empreqservice.refreshAfterClose) {
+        this.getapprovalReqlist();
+        this.empreqservice.refreshAfterClose = false;
+      }
     });
   }
 

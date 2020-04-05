@@ -27,16 +27,12 @@ export class AddReEnrollComponent implements OnInit {
     public dialogRef: MatDialogRef<AddReEnrollComponent>,
     private toastr: AppToasterService,
     private acadmicProc: ReEnrollService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.reEnroll = { proof: "", reason: "", has_proof: "1" };
-    this.acadmicProc.getِgetRequests().then(res => {
-      this.acadmicProc.reqData = (res as any).data;
-      this.acadmicProc.msgs = (res as any).messages;
-      this.reqData = this.acadmicProc.reqData;
-      this.msgs = this.acadmicProc.msgs;
-    });
+    this.reqData = this.acadmicProc.reqData;
+    this.msgs = this.acadmicProc.msgs;
   }
 
   requesting = false;
@@ -88,7 +84,6 @@ export class AddReEnrollComponent implements OnInit {
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.reEnroll.proof = reader.result;
-    console.log(this.reEnroll.proof);
   }
 
   print(req) {
