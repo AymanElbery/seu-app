@@ -25,7 +25,7 @@ export class AddNewRequestComponent implements OnInit {
     private toastr: AppToasterService, private infoupdateservice: InfoUpdateService) { }
 
   ngOnInit() {
-    this.infoupdate = { first_name: '', mid_name: '', last_name: '', first_name_ar: '', mid_name_ar: '', last_name_ar: '', mobile: '', state: '', city: '', street: '' };
+    this.infoupdate = { first_name: '', mid_name: '', last_name: '', first_name_ar: '', mid_name_ar: '', last_name_ar: '', mobile: '', state: '', city: '', street: '',email:'' };
     this.getRequests();
     this.subscribeLangChange();
   }

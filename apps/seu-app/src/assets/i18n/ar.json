@@ -83,6 +83,7 @@
         },
         "save": "حفظ",
         "cancel": "إلغاء",
+        "Delete": "حذف",
         "count": "العدد",
         "college": "الجامعة",
         "language": "اللغة",
@@ -592,7 +593,7 @@
             "insert_date": "تاريخ الإدخال",
             "status": "حالة الطلب",
             "type": "نوع الطلب",
-            "Delete": "حدف",
+            "Delete": "حذف",
             "refund_reason": "سبب استرداد الرسوم",
             "iban": "الآيبان",
             "bank_name": "اسم البنك",
@@ -602,7 +603,11 @@
             "save": "حفظ",
             "cancel": "الغاء",
             "national_id": "صورة الهوية",
-            "payment_reciept_copy": "صورة إيصال السداد"
+            "payment_reciept_copy": "صورة إيصال السداد",
+            "erro_22digit":"الأيبان يجب أن يكون 22 رقم",
+            "erro_4digit":"ارجو تسجيل اخر اربع ارقام من البطاقة بشكل صحيح",
+            "erro_national_id":"الرجاء ارفاق صورة الهوية",
+            "erro_reciept_copy":"الرجاء ارفاق صورة إيصال السداد"
         },
         "medical_report": {
             "title": "طلب تقرير طبي",
@@ -890,7 +895,7 @@
         "VacationRequest": "طلب إجازة",
         "vacation": "أجازة",
         "normal": "عادية",
-        "day": "اليوم",
+        "day": "يوم",
         "beginday": "يوم",
         "beginmonth": "شهر",
         "beginyear": "سنة",
@@ -903,11 +908,11 @@
         "notes": "ملاحظات",
         "Submit": "حفظ",
         "timePeriod": "المدة/يوم",
-        "leaveDeductionPeriod": "ملاحظات",
+        "leaveDeductionPeriod": "عدد الايام",
         "leaveDeduction": "المدة",
         "evacuateparty": "طلب اخلاء طرف",
         "deductionregularleave27": "حسم من الإجازة العادية وفق المادة 27",
-        "date": "تاريخ",
+        "date": "تاريخ البداية",
         "attachment": "المرفق",
         "Previous": "السابق",
         "Next": "التالى",
@@ -1022,6 +1027,6 @@
         "favemps": "القائمة المفضلة",
         "favList": "القائمة المسجلة",
         "Send":"إرسال",
-        "bakcList": "Back List"
+        "bakcList": "العودة الي القائمة"
     }
 }

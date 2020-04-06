@@ -12,6 +12,7 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
+import { HttpRequestServiceBase } from 'src/app/shared/services/http-request.service_base';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,7 @@ export class UserService extends BaseService {
   adsData;
   constructor(
     private configService: ConfigService,
-    private httRequest: HttpRequestService,
+    private httRequest: HttpRequestServiceBase,
     private http: HttpClient,
     private translate: TranslateService
   ) {
@@ -92,7 +93,7 @@ export class UserService extends BaseService {
     location: string
   ) {
     const body = { username, email, password, firstName, lastName, location };
-    return this.httRequest.postRequest('accounts', body).pipe(
+    return this.httRequest.postAuthRequest('accounts', body).pipe(
       map((res: any) => res),
       catchError(err => {
         console.error(err);
@@ -107,7 +108,7 @@ export class UserService extends BaseService {
   login(userName, password) {
     // console.log('ser');
     return this.httRequest
-      .postRequest('auth/login', { userName, password })
+      .postAuthRequest('auth/login', { userName, password })
       .pipe(
         map((res: any) => res),
         catchError(err => {
@@ -123,7 +124,6 @@ export class UserService extends BaseService {
   SignIn(userName, pass) {
     this.baseUrl = '';
     this.configService.baseUrl = '';
-
     return this.httRequest.postAuthRequest('rest/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
   }
   resetPassword(opassword, npassword, cpassword) {

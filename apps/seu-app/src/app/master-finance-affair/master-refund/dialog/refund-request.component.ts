@@ -86,23 +86,23 @@ export class RefundRequestComponent implements OnInit {
   }
   onSubmit(form: NgForm) {
     // console.log("save dataa",this.payrefund);
-    if(this.payrefund.iban && this.payrefund.iban.length!=22){
-      this.toastr.push([{ type: 'error', 'body': this.translate.instant("Please input correct 22 digit  Number") }]);
+    if ( this.payrefund.iban.length != 22) {
+      this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.master_refund.erro_22digit") }]);
       return false;
     }
-    if(this.payrefund.last_four_id && this.payrefund.last_four_id.length!=4){
-      this.toastr.push([{ type: 'error', 'body': this.translate.instant("Please input correct 4 digit") }]);
+    if (this.payrefund.last_four_id.length != 4) {
+      this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.master_refund.erro_4digit") }]);
       return false;
     }
-    if(!this.payrefund.national_id){
-      this.toastr.push([{ type: 'error', 'body': this.translate.instant("Please Upload  National Id") }]);
+    if (!this.payrefund.national_id) {
+      this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.master_refund.erro_national_id") }]);
       return false;
     }
-    if(!this.payrefund.payment_reciept_copy){
-      this.toastr.push([{ type: 'error', 'body': this.translate.instant("Please Upload  Payment Reciept Copy") }]);
+    if (!this.payrefund.payment_reciept_copy) {
+      this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.master_refund.erro_reciept_copy") }]);
       return false;
     }
-    
+
     this.addRequest(this.payrefund);
   }
 

@@ -18,7 +18,9 @@ export class TasksManagementService {
   constructor(private wafihttRequest: WafiHttpRequestService, private userService: UserService) {
 
   }
-
+  deleteFromFavourite(id) {
+    this.empListFavourit = this.empListFavourit.filter(rec => rec != id);
+  }
   prepareList(data) {
     return data.map(item => {
       return this.setTaskDescs(item);
@@ -155,7 +157,7 @@ export class TasksManagementService {
 
   DeleteFavEmployee(favEmpId) {
 
-    return this.wafihttRequest.postRequest_obj('task/deleteFavouriteEmp', {favEmpId});
+    return this.wafihttRequest.postRequest_obj('task/deleteFavouriteEmp', { favEmpId });
   }
 
 

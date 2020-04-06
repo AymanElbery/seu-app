@@ -80,12 +80,12 @@ export class FavEmpComponent implements OnInit, OnDestroy {
 
   deleting = false;
   delete(favEmpId) {
-   
     if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
       this.isLoading = true;
       this.subscriptionEMpDlete = this.taskservice.DeleteFavEmployee(favEmpId).subscribe(empreqsdel => {
-        if (empreqsdel['data']['deleteFavouriteEmp'] == true) {          
+        if (empreqsdel['data']['deleteFavouriteEmp'] == true) {     
+          this.taskservice.deleteFromFavourite(favEmpId);     
           this.getDDLEmplist();          
         } else {
           this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);

@@ -85,23 +85,24 @@
 </div>
  -->
 <div class="main-content">
-
-  <section class="service-single">
+  <service-header [title]="'services.certificate_id.title' |translate"
+    [desc]="'services.certificate_id.desc' |translate"></service-header>
+  <!-- <section class="service-single">
     <div class="container">
       <h3>{{"services.certificate_id.title" |translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
           <p>{{"services.certificate_id.desc" |translate}}</p>
         </div>
-        <!-- <div class=" col-md-6 descr">
+        <div class=" col-md-6 descr">
                 <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                   &nbsp; &nbsp; &nbsp; &nbsp;
                   <a href="#"><i class="ik ik-download"></i> </a>
                   <a href="#"><i class="ik ik-film"></i></a>
-              </div> -->
-      </div>
-    </div>
-  </section>
+              </div>
+</div>
+</div>
+</section> -->
   <div *ngIf="isLoading" class=" loading-indicator ">
     <div class="state">
 
@@ -214,8 +215,10 @@
         </div>
       </div>
       <div style="text-align: center" class="prin" *ngIf="!isLoading">
-        <a class="btn" seu-auto-print href="{{arabicPrint}}">{{"general.ar_print"|translate}}<i class="ik ik-save"></i> </a>
-        <a class="btn" seu-auto-print href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print"|translate}} </a>
+        <a class="btn" seu-auto-print href="{{arabicPrint}}">{{"general.ar_print"|translate}}<i class="ik ik-save"></i>
+        </a>
+        <a class="btn" seu-auto-print href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print"|translate}}
+        </a>
       </div>
     </ng-template>
     <!-- </div> -->

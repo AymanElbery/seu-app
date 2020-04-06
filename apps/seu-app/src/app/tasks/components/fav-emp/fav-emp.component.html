@@ -27,9 +27,17 @@
       </div>
     </form>
     <h3>{{"tasks.favList" | translate}}</h3>
+    
     <ul>
-      <li *ngFor="let emp of favList"><a
-        (click)="delete(emp.empId)"><i class="ik ik-delete"></i> </a> {{emp.empNameEmail}}</li>
+      <li *ngFor="let emp of favList">
+        {{emp.empNameEmail}} 
+        &nbsp;&nbsp;
+        &nbsp;&nbsp;
+        <a style="cursor:pointer" (click)="delete(emp.empId)">
+          {{"general.Delete" | translate }} </a>
+        &nbsp;&nbsp;
+        
+      </li>
     </ul>
   </section>
 </div>

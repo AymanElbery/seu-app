@@ -73,7 +73,7 @@
             "day": "day   ",
             "time": "time   ",
             "att": "Attendance",
-            "rejectrs":"Reject Reason",
+            "rejectrs": "Reject Reason",
             "pre_requests": "Show Previous Requests",
             "pre_requesr": "Show Previous Requests",
             "date_and_status": "Request Date/Status",
@@ -83,6 +83,7 @@
         },
         "save": "Save",
         "cancel": "Cancel",
+        "Delete": "Delete",
         "count": "Count",
         "college": "College",
         "language": "Language",
@@ -602,7 +603,11 @@
             "cancel": "Cancel",
             "national_id": "National Id",
             "payment_reciept_copy": "Payment Reciept Copy",
-            "digitrequierd22": "22 digit  Number"
+            "digitrequierd22": "22 digit  Number",
+            "erro_22digit":"Please input correct 22 digit  Number",
+            "erro_4digit":"Please input correct 4 digit",
+            "erro_national_id":"Please Upload  National Id",
+            "erro_reciept_copy":"Please Upload  Payment Reciept Copy"
         },
         "medical_report": {
             "title": "Medical Report Request",
@@ -1022,6 +1027,6 @@
         "favemps": "favourites List",
         "favList": "Registered List",
         "Send": "Send",
-        "bakcList": "Back List"
+        "bakcList": "Back to List"
     }
 }

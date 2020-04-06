@@ -36,8 +36,8 @@ export class AddTaskComponent implements OnInit {
   allowFav = false;
 
   constructor(private route: ActivatedRoute, private toastr: AppToasterService, private taskservice: TasksManagementService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
-   var minDate=new Date();   
-    this.datePickerConfig = Object.assign({}, { containerClass: 'theme-dark-blue' },{showWeekNumbers:false},{minDate:minDate});
+    var minDate = new Date();
+    this.datePickerConfig = Object.assign({}, { containerClass: 'theme-dark-blue' }, { showWeekNumbers: false }, { minDate: minDate });
     this.taskservice.reloadList();
     this.AddReqForm = fb.group({
       'title': ['', [Validators.required]],
@@ -169,7 +169,8 @@ export class AddTaskComponent implements OnInit {
       this.ddlemplist = this.taskservice.empList;
     }
   }
-
-
+  cancel() {
+    this.router.navigate(['/tasks/createdTasks'])
+  }
 
 }
