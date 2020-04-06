@@ -1,19 +1,21 @@
 <div class="main-content">
-  <section class="service-single">
+  <service-header [title]="'services.change_major.title' |translate"
+  [desc]="'services.change_major.desc' |translate"></service-header>
+  <!-- <section class="service-single">
     <div class="container">
       <h3>{{"services.change_major.title"|translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
           <p>{{"services.change_major.desc"|translate}}</p>
-        </div>
+        </div> -->
         <!-- <div class=" col-md-6 descr">
                   <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                     &nbsp; &nbsp; &nbsp; &nbsp;
 
                 </div> -->
-      </div>
+      <!-- </div>
     </div>
-  </section>
+  </section> -->
 
   <div *ngIf="isLoading" class=" loading-indicator ">
     <div class="state">

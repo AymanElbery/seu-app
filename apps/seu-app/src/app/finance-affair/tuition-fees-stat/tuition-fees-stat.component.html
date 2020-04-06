@@ -1,6 +1,8 @@
 <div class="main-content">
 
-  <section class="service-single">
+  <service-header [title]="'services.finance.feepayst' |translate"
+  [desc]="'services.finance.feepayst' |translate"></service-header>
+  <!-- <section class="service-single">
     <div class="container">
       <h3> {{"services.finance.feepayst" | translate}}
       </h3>
@@ -8,15 +10,15 @@
         <div class=" col-md-5">
           <p> {{"services.finance.feepayst" | translate}}
           </p>
-        </div>
+        </div> -->
         <!-- <div class=" col-md-6 descr">
               <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                 &nbsp; &nbsp; &nbsp; &nbsp;
 
             </div> -->
-      </div>
+      <!-- </div>
     </div>
-  </section>
+  </section> -->
   <div *ngIf="isLoading" class=" loading-indicator  ">
     <div class="state">
 

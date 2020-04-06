@@ -1,17 +1,18 @@
 <div class="main-content">
-
-  <section class="service-single">
+  <service-header [title]="'services.skills_record.title' |translate"
+  [desc]="'services.skills_record.desc' |translate"></service-header>
+  <!-- <section class="service-single">
     <div class="container">
       <h3>{{"services.skills_record.title" |translate}}</h3>
       <div class="row">
         <div class=" col-md-7">
-          <p style="font-weight: bold;font-size: 14px;text-align: justify;">
+          <p style="font-weight: bold;font-size: 14px;text-align: justify;"> -->
             <!-- {{"services.skills_record.desc" |translate}} -->
-          </p>
+          <!-- </p>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <div *ngIf="isLoading" class=" loading-indicator ">
     <div class="state">
       <mat-spinner *ngIf="isLoading"

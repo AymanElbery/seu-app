@@ -1,22 +1,24 @@
 <div class="main-content">
 
+  <service-header [title]="'services.medical_report.title' |translate"
+  [desc]="'services.medical_report.desc' |translate"></service-header>
 
-  <section class="service-single">
+  <!-- <section class="service-single">
     <div class="container">
       <h3>{{"services.medical_report.title"|translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
           <p>{{"services.medical_report.title"|translate}}</p>
-        </div>
+        </div> -->
         <!-- <div class=" col-md-6 descr">
                   <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                     &nbsp; &nbsp; &nbsp; &nbsp;
                     <a href="{{arabicPrint}}"><i class="ik ik-download"></i> </a>
                     <a href="#"><i class="ik ik-film"></i></a>
                 </div> -->
-      </div>
+      <!-- </div>
     </div>
-  </section>
+  </section> -->
   <div *ngIf="isLoading" class=" loading-indicator ">
     <div class="state">
 

@@ -1,6 +1,7 @@
 <div class="main-content">
-
-  <section _ngcontent-fpr-c11="" class="service-single ">
+  <service-header [title]="'services.training_request.title' |translate"
+  [desc]="'services.training_request.desc' |translate"></service-header>
+  <!-- <section _ngcontent-fpr-c11="" class="service-single ">
     <div _ngcontent-fpr-c11="" class="container">
       <h3 _ngcontent-fpr-c11=""> {{"services.training_request.title"|translate}} </h3>
       <div _ngcontent-fpr-c11="" class="row">
@@ -9,7 +10,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <div *ngIf="isLoading" class=" loading-indicator  ">
     <div class="state">
 

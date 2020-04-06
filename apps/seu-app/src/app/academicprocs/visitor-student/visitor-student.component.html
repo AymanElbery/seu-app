@@ -1,22 +1,24 @@
 <div class="main-content">
+  <service-header [title]="'services.visitor_student.title' |translate"
+  [desc]="'services.visitor_student.desc' |translate"></service-header>
 
   <!-- <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> -->
 
-  <section class="service-single">
+  <!-- <section class="service-single">
     <div class="container">
       <h3> {{"services.visitor_student.title"|translate}}</h3>
       <div class="row">
         <div class=" col-md-5">
           <p>{{"services.visitor_student.desc"|translate}}</p>
-        </div>
+        </div> -->
         <!-- <div class=" col-md-6 descr">
             <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
             &nbsp; &nbsp; &nbsp; &nbsp;
 
           </div> -->
-      </div>
+      <!-- </div>
     </div>
-  </section>
+  </section> -->
 
   <div *ngIf="isLoading" class=" loading-indicator  ">
     <div class="state">

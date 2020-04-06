@@ -1,7 +1,9 @@
 <div class="main-content">
 
+  <service-header [title]="'services.lecture_execuse.title' |translate"
+  [desc]="'services.lecture_execuse.desc' |translate"></service-header>
 
-
+   <!--
   <section class="service-single">
 
     <div class="container">
@@ -10,15 +12,16 @@
         <div class=" col-md-5">
           <p>{{"services.lecture_execuse.desc"|translate}}</p>
         </div>
-        <!-- <div class=" col-md-6 descr">
+        <div class=" col-md-6 descr">
               <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
                 &nbsp; &nbsp; &nbsp; &nbsp;
                 <a href="#"><i class="ik ik-download"></i> </a>
                 <a href="#"><i class="ik ik-film"></i></a>
-            </div> -->
-      </div>
+            </div>     </div>
     </div>
   </section>
+   -->
+ 
   <div *ngIf="isLoading" class=" loading-indicator  ">
     <div class="state">
 

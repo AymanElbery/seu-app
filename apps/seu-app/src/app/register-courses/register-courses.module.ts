@@ -15,6 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AppLazyTransModule } from '../app.lazytrans.module';
+import { SeucommonModule } from '../seucommon/seucommon.module';
 
 @NgModule({
   declarations: [RegisterWishesComponent, RegisterationHelperComponent, AddRegisterationHelperComponent],
@@ -28,7 +29,8 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     MatDatepickerModule,
      MatNativeDateModule,
     ToastrModule.forRoot(),
-    AppLazyTransModule
+    AppLazyTransModule,
+    SeucommonModule
   ],
   providers: [RegisterWishesService, RegistrationHelperService]
 })
