@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddMasterRefundComponent } from './add-master-refund.component';
+import { FavEmpComponent } from './fav-emp.component';
 
-describe('AddMasterRefundComponent', () => {
-  let component: AddMasterRefundComponent;
-  let fixture: ComponentFixture<AddMasterRefundComponent>;
+describe('FavEmpComponent', () => {
+  let component: FavEmpComponent;
+  let fixture: ComponentFixture<FavEmpComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddMasterRefundComponent ]
+      declarations: [ FavEmpComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddMasterRefundComponent);
+    fixture = TestBed.createComponent(FavEmpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

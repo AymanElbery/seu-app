@@ -1,10 +1,12 @@
 <div class="main-content">
+  <service-header title='{{"wafi.AddNewRequest" | translate}}'></service-header>
 
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
 
   <div class="modal-header">
-    <h4 class="modal-title">{{"wafi.vacationtype" | translate}} : {{(ddltruefalse ? "wafi.VacationRequest" : "wafi.requestseprationvacationdays") | translate}} </h4>
+    <h4 class="modal-title">{{"wafi.vacationtype" | translate}} :
+      {{(ddltruefalse ? "wafi.VacationRequest" : "wafi.requestseprationvacationdays") | translate}} </h4>
 
   </div>
 
@@ -17,11 +19,11 @@
       <div class="row ser-block">
         <div class=" col-md-6 col-sm-6">
           <div class="state">
-            <h6>{{"wafi.vacationtype"|translate}} </h6>
+            <h6>{{"wafi.vacationtype"|translate}} <span class="reqstart">*</span> </h6>
 
             <div *ngIf="ddltruefalse==true">
               <select class="form-control" formControlName="vacation" (ngModelChange)="getvacationbal($event)"
-                [(ngModel)]="vacation" [ngClass]="{ 'is-invalid': submitted && f.vacation.errors }">
+                [ngClass]="{ 'is-invalid': submitted && f.vacation.errors }">
                 <option [ngValue]="undefined" selected>{{"wafi.vacationtype" | translate}}</option>
                 <option *ngFor="let vactype of vacationreqtype" value={{vactype.value}}>{{vactype.label}} </option>
               </select>
@@ -52,21 +54,15 @@
 
         <div class=" col-md-6 col-sm-6">
           <div class="state">
-            <h6>{{"wafi.date"|translate}} </h6>
-            <select formControlName="beginDay" 
-              [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }">
-              <option [ngValue]="undefined" selected>{{"wafi.beginday" | translate}}</option>
-              <option *ngFor="let day of ddlday" value={{day.value}}>{{day.label}} </option>
+            <h6>{{"wafi.date"|translate}} <span class="reqstart">*</span> </h6>
+            <select formControlName="beginDay" [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }">              
+              <option *ngFor="let day of ddlday"   [selected]="day[0]" value={{day.value}}>{{day.label}} </option>
             </select>
-            <select formControlName="beginMonth" 
-              [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
-              <option [ngValue]="undefined" selected>{{"wafi.beginmonth" | translate}}</option>
+            <select formControlName="beginMonth" [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">              
               <option *ngFor="let month of ddlmonth" value={{month.value}}>{{month.label}} </option>
             </select>
-            <select formControlName="beginYear"
-                          [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
-              <option [ngValue]="undefined" selected>{{"wafi.beginyear" | translate}}</option>
-              <option *ngFor="let year of ddlyear" [selected]="selectvactype == year.value" value={{year.value}}>
+            <select formControlName="beginYear" [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">              
+              <option *ngFor="let year of ddlyear"  value={{year.value}}>
                 {{year.label}} </option>
             </select>
           </div>
@@ -74,8 +70,8 @@
 
         <div class=" col-md-6 col-sm-6">
           <div class="state">
-            <h6>{{"wafi.timePeriod"|translate}} </h6>
-            <input type="text" class="form-control" formControlName="timePeriod" class="form-control"
+            <h6>{{"wafi.timePeriod"|translate}} <span class="reqstart">*</span></h6>
+            <input type="text" class="form-control" formControlName="timePeriod" (keypress)="keyPress($event)" maxlength="3" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.timePeriod.errors }" />
 
           </div>
@@ -88,8 +84,8 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.compensation"|translate}} </h6>
-            <select class="form-control" formControlName="compensationVal" >
-              <option [ngValue]="undefined" selected>{{"wafi.compensation" | translate}}</option>
+            <select class="form-control" formControlName="compensationVal">
+              <option [ngValue]="" selected>{{"wafi.compensation" | translate}}</option>
               <option *ngFor="let comperk of compErkabItems" [selected]="selectvactype == comperk.value"
                 value={{comperk.value}}>{{comperk.label}} </option>
             </select>
@@ -100,7 +96,7 @@
           <div class="state">
             <h6>{{"wafi.altEemployee"|translate}} </h6>
             <select class="form-control" formControlName="altEemployee">
-              <option [ngValue]="undefined" selected>{{"wafi.altEemployee" | translate}}</option>
+              <option [ngValue]="" selected>{{"wafi.altEemployee" | translate}}</option>
               <option *ngFor="let altemp of altEmpItems" value={{altemp.value}}>{{altemp.label}} </option>
             </select>
           </div>
@@ -116,8 +112,8 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.tocountry"|translate}} </h6>
-            <select class="form-control" formControlName="toCountryNew"  (change)="selectcityFF()">
-              <option [ngValue]="undefined" selected>{{"wafi.tocountry" | translate}}</option>
+            <select class="form-control" formControlName="toCountryNew" (change)="selectcityFF()">
+              <option [ngValue]="" selected>{{"wafi.tocountry" | translate}}</option>
               <option *ngFor="let contitem of countryNewItems" value={{contitem.value}}>{{contitem.label}} </option>
             </select>
           </div>
@@ -126,8 +122,8 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.citycountry"|translate}} </h6>
-            <select class="form-control" formControlName="toCityNew" >
-              <option [ngValue]="undefined" selected>{{"wafi.citycountry" | translate}}</option>
+            <select class="form-control" formControlName="toCityNew">
+              <option [ngValue]="" selected>{{"wafi.citycountry" | translate}}</option>
               <option *ngFor="let cityitms of citydata" [selected]="selectvactype == cityitms.value"
                 value={{cityitms.value}}>{{cityitms.label}} </option>
             </select>
@@ -153,8 +149,7 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.phone"|translate}} </h6>
-            <input type="NumbersOnly" class="form-control" NumbersOnly formControlName="phone" 
-              class="form-control" />
+            <input type="NumbersOnly" class="form-control" (keypress)="keyPress($event)" maxlength="10" formControlName="phone" class="form-control" />
           </div>
         </div>
 
@@ -164,7 +159,7 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.notes"|translate}} </h6>
-            <textarea class="form-control" cols="2" rows="3" formControlName="notes" ></textarea>
+            <textarea class="form-control" cols="2" rows="3" formControlName="notes"></textarea>
 
 
           </div>
@@ -173,8 +168,12 @@
       <div>
         <div class=" col-md-6 col-sm-6">
           <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
-            <button type="submit" class="btn" style="color: #fff;margin-top: 30px !important;"><i
-                class="fa fa-database"></i> {{"wafi.Submit" | translate}}</button>
+            <button type="submit" [disabled]="submitted || !AddReqForm.valid" class="btn"
+              ><i class="fa fa-database"></i>
+              {{"wafi.Submit" | translate}}</button>
+              <button type="button" (click)="back()" class="btn"><i class="fa fa-back"></i>
+                {{"wafi.back" | translate}}</button>
+  
           </div>
         </div>
 

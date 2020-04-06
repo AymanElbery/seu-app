@@ -1,0 +1,88 @@
+<div class="main-content">
+
+  <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
+  <!-- <mat-dialog-content> -->
+  <div class="modal-header">
+    <h4 class="modal-title">{{data.title | translate}}</h4>
+    <button type="button" class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
+  </div>
+
+  <section class="dashboard-wrap" style="margin-top: 30px;">
+    <form role="form" [formGroup]="AddReqForm">
+      <div class="modal-body">
+
+
+        <div *ngIf="showAssign" class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"tasks.assignedTo"|translate}} <span class="reqstart">*</span>
+                <ng-container *ngIf="allowFav && showFav">
+                  <span (click)="toggleFavList();"
+                    style="cursor: pointer; color: black;">({{"tasks.showallemps" |translate }})</span>
+                </ng-container>
+                <ng-container *ngIf="allowFav && !showFav">
+                  <span (click)="toggleFavList();"
+                    style="cursor: pointer; color: black;">({{"tasks.showfavemps"|translate}})</span>
+                </ng-container>
+
+              </h6>
+
+              <ng-select [items]="ddlemplist" bindLabel="empNameEmail" autofocus bindValue="empId"
+                formControlName="assignTo">
+              </ng-select>
+            </div>
+          </div>
+        </div>
+        <!-- <div *ngIf="showStatus" class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"tasks.status"|translate}} </h6>
+              <select class="form-control" formControlName="taskStatus">
+                <option [ngValue]="" selected>{{"tasks.status" | translate}}</option>
+                <option *ngFor="let statusdat of ddltaskstatus" [selected]="selectvactype == statusdat.statusCode"
+                  value={{statusdat.statusCode}}>{{statusdat.statusDesc}} </option>
+              </select>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"wafi.attachment"|translate}} (word,excel, pdf, zip, rar, jpg, gif, bmp)</h6>
+              <div class="custom-file">
+                <input class="custom-file-input" name="attachment" id="file" type="file" accept="*/*"
+                  (change)="handleFileInput($event)" />
+                <label for="file" class="custom-file-label ">
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row ser-block">
+          <div class=" col-md-12 col-sm-12">
+            <div class="state">
+              <h6>{{"tasks.comments"|translate}} <span class="reqstart">*</span></h6>
+              <textarea formControlName="commentText" class="form-control"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class=" col-md-6 col-sm-6">
+            <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+              <button (click)="onFormSubmit()" type="button" [disabled]="submitted || AddReqForm.invalid" class="btn"
+                style="color: #fff;margin-top: 30px !important;"><i class="fa fa-database"></i>
+                {{"tasks.Send" | translate}}</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </section>
+  <!-- </mat-dialog-content> -->
+
+</div>

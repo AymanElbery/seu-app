@@ -9,12 +9,16 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { MasterFinanceAffairRoutingModule } from './master-finance-affair-routing.module';
 import { MasterPaymentComponent } from './master-payment/master-payment.component';
-import { AppLazyTransModule } from '../app.lazytrans.module';
 import { MasterRefundComponent } from './master-refund/master-refund.component';
-import { AddMasterRefundComponent } from './master-refund/dialog/add-master-refund/add-master-refund.component';
+import { RefundRequestComponent } from './master-refund/dialog/refund-request.component';
+import { AppLazyTransModule } from '../app.lazytrans.module';
+import{SeucommonModule} from '../seucommon/seucommon.module';
+
+
 
 @NgModule({
-  declarations: [MasterPaymentComponent, MasterRefundComponent, AddMasterRefundComponent],
+  declarations: [MasterPaymentComponent, MasterRefundComponent,RefundRequestComponent],
+
   imports: [
     CommonModule,
     MasterFinanceAffairRoutingModule,
@@ -23,8 +27,10 @@ import { AddMasterRefundComponent } from './master-refund/dialog/add-master-refu
     MatDatepickerModule,
     FormsModule,
     MatDialogModule,
+    SeucommonModule,
     //BrowserAnimationsModule
     AppLazyTransModule
-  ]
+  ],
+  entryComponents: [RefundRequestComponent],
 })
 export class MasterFinanceAffairModule { }
