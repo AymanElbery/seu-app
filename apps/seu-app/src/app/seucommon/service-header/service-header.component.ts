@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './service-header.component.html'
 })
 export class ServiceHeaderComponent implements OnInit {
-  urldata = environment.service_json;
+  urldata;
   constructor(private dialog: MatDialog, private http: HttpClient, private router: Router) { }
   @Input() title;
   @Input() desc;
@@ -27,6 +27,7 @@ export class ServiceHeaderComponent implements OnInit {
   _pdf = "";
   _vedio = "";
   ngOnInit() {
+    this.urldata = environment.service_json;
     if (this._dataservice) {
       this.setServiceSettings();
     } else {
