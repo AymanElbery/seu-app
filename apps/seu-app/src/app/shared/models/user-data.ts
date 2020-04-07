@@ -16,6 +16,7 @@ export interface UserData {
 
     username: string;
     role: string;
+    email: string;
     act_as_student: boolean;
     activeRole: string;
 }

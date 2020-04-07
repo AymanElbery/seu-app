@@ -39,10 +39,11 @@ export class ResumeService {
         });
     }
 
-    getResumeById(id) {
+    getResumeByEmail(email) {
+        console.log(email);
         return this.http.post(this.URL + "resume/getresume",
         { 
-            id: id
+            email: email
         },
         {
             headers: this.headers,
@@ -51,6 +52,13 @@ export class ResumeService {
 
     getCountries() {
         return this.http.get(this.URL + "resume/getcountries",
+        {
+            headers: this.headers,
+        });
+    }
+
+    getStuffByID(id) {
+        return this.http.get(this.URL + "resume/getStuffByID/"+id,
         {
             headers: this.headers,
         });
