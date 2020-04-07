@@ -44,3 +44,10 @@
 .errorBorder{
     border: solid 1px red
 }
+.del{
+    position: relative;
+    right: 3px;
+}
+#photo{
+    color: #FFF;
+}
