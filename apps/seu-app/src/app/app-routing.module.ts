@@ -21,12 +21,11 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: 'home/:t', component: HomeComponent },
-      //      { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
-      //      { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
+      // { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
+      // { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'admis-pages/:cat', component: AdmisPagesComponent },
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       { path: 'policy', component: PolicyComponent },
-
       {
         path: 'instructions',
         loadChildren: './instructions/instructions.module#InstructionsModule',

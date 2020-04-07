@@ -41,14 +41,14 @@ export class BlankComponent implements OnInit {
         }
       });
 
-    this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
-      res => {
-        localStorage.setItem('sid', encodeURI(res['csid']));
-        this.userService.loadUserData();
-      },
-      error => {
-        this.userService.relogin();
-      });
+    // this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
+    //   res => {
+    //     localStorage.setItem('sid', encodeURI(res['csid']));
+    //     this.userService.loadUserData();
+    //   },
+    //   error => {
+    //     this.userService.relogin();
+    //   });
   }
   setLang(ulang) {
     let lang = 'ar';

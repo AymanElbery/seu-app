@@ -16,7 +16,7 @@ export class ServiceHeaderComponent implements OnInit {
   @Input() desc;
   @Input() pdf = false;
   @Input() video = false;
-  _dataservice = [];
+  _dataservice;
   //@Input() set video(name) {
 
   //}
@@ -31,6 +31,7 @@ export class ServiceHeaderComponent implements OnInit {
       this.setServiceSettings();
     } else {
       this.getdatajson().subscribe(dataservice => {
+        this._dataservice = dataservice;
         this.setServiceSettings();
       });
     }

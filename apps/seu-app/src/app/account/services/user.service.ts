@@ -139,12 +139,16 @@ export class UserService extends BaseService {
     if (this.userDataLoaded !== true) {
       return this.requestUser()
         .then(res => {
-          this.userData = (res as any).data;
-          // console.log('userdata:'+this.userData);
-          this.userData.activeRole = this.userData.role;
-          this.userDataLoaded = true;
-          this.pushUserDataChanges();
-          return this.userData;
+          if (res['status']) {
+            this.userData = (res as any).data;
+            // console.log('userdata:'+this.userData);
+            this.userData.activeRole = this.userData.role;
+            this.userDataLoaded = true;
+            this.pushUserDataChanges();
+            return this.userData;
+          } else {
+            this.relogin();
+          }
         },
           err => {
             this.relogin();
