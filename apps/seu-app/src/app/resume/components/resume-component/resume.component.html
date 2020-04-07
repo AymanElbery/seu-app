@@ -39,15 +39,31 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="name">{{ "resume.name" | translate}}</label>
-            <input (input)="hideNameMessages()" required type="text" [ngClass]="{'errorBorder': nameError}" class="form-control" id="name" [(ngModel)]="name" name="name">
+            <input (input)="hideNameMessages()" disabled required type="text" [ngClass]="{'errorBorder': nameError}" class="form-control" id="name" [(ngModel)]="name" name="name">
             <span *ngIf="nameError" class="text text-danger">{{nameError}}</span>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label for="email">{{ "resume.email" | translate}}</label>
-            <input (input)="hideEmailMessages()"  required type="email" [ngClass]="{'errorBorder': emailError}" class="form-control" id="email" [(ngModel)]="email" name="email">
+            <input (input)="hideEmailMessages()" disabled required type="email" [ngClass]="{'errorBorder': emailError}" class="form-control" id="email" [(ngModel)]="email" name="email">
             <span *ngIf="emailError" class="text text-danger">{{emailError}}</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="jobTitle">{{ "resume.jobTitle" | translate}}</label>
+            <input (input)="hideJobTitleMessages()" disabled required type="text" class="form-control" id="jobTitle" [ngClass]="{'errorBorder': jobTitleError}" [(ngModel)]="jobTitle" name="jobTitle">
+            <span *ngIf="jobTitleError" class="text text-danger">{{jobTitleError}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="row row-form" >
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="section">{{ "resume.section" | translate}}</label>
+            <input (input)="hideSectionMessages()" disabled required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
+            <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
           </div>
         </div>
         <div class="col-md-6">
@@ -55,22 +71,6 @@
             <label for="phone">{{ "resume.phone" | translate}}</label>
             <input (input)="hidePhoneMessages()" required type="text" [ngClass]="{'errorBorder': phoneError}" class="form-control" id="phone" [(ngModel)]="phone" name="phone">
             <span *ngIf="phoneError" class="text text-danger">{{phoneError}}</span>
-          </div>
-        </div>
-      </div>
-      <div class="row row-form" >
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="jobTitle">{{ "resume.jobTitle" | translate}}</label>
-            <input (input)="hideJobTitleMessages()" required type="text" class="form-control" id="jobTitle" [ngClass]="{'errorBorder': jobTitleError}" [(ngModel)]="jobTitle" name="jobTitle">
-            <span *ngIf="jobTitleError" class="text text-danger">{{jobTitleError}}</span>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group">
-            <label for="section">{{ "resume.section" | translate}}</label>
-            <input (input)="hideSectionMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
-            <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
           </div>
         </div>
         <div class="col-md-6">
@@ -96,7 +96,7 @@
               </div>
             </div>
             <div class="col-md-1">
-              <button (click)="removeItem(title, j)" class="btn remove-item" ><i class="fas fa-trash-alt"></i></button>
+              <button (click)="removeItem(title, j)" class="btn remove-item" ><i class="fas fa-trash-alt del"></i></button>
             </div>
           </div>
           <div class="row row-form">
@@ -107,7 +107,7 @@
         </div>
       </div>
       <div class="col-md-1">
-        <button (click)="removeTitle(i)" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
+        <button (click)="removeTitle(i)" class="btn btn-danger" ><i class="fas fa-trash-alt del"></i></button>
       </div>
     </div>
     <div class="row row-form">

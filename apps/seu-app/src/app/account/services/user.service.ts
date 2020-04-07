@@ -52,6 +52,7 @@ export class UserService extends BaseService {
       name_ar: '',
       name_en: '',
       role: '',
+      email: '',
       sex: '',
       ssn: '',
       stdName: '',
