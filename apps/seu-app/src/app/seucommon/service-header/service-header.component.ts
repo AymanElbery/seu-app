@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
   templateUrl: './service-header.component.html'
 })
 export class ServiceHeaderComponent implements OnInit {
-   urldata = environment.service_json ;
-  constructor(private dialog: MatDialog,private http: HttpClient,private router:Router) { }
+  urldata = environment.service_json;
+  constructor(private dialog: MatDialog, private http: HttpClient, private router: Router) { }
   @Input() title;
   @Input() desc;
-  @Input() pdf;
-  @Input() video;
-
+  @Input() pdf = false;
+  @Input() video = false;
+  _dataservice = [];
   //@Input() set video(name) {
 
   //}
@@ -25,44 +25,49 @@ export class ServiceHeaderComponent implements OnInit {
   //}
 
   _pdf = "";
-  _vedio ="";
+  _vedio = "";
   ngOnInit() {
-   + 
-    this.getdatajson().subscribe(dataservice => {
-      this.pdf = false;
-      this.video = false;     
-    //  console.log(dataservice);
-      const current_url = this.router.url;
-      if(dataservice[current_url]){
-        if(dataservice[current_url]['ar']["pdf"]){
-          this.pdf = true;        
-          this._pdf=this.urldata+dataservice[current_url]['ar']["pdf"];        
-        }
-        if(dataservice[current_url]['ar']["vedio"]){
-          this.video = true;        
-          this._vedio=this.urldata+dataservice[current_url]['ar']["vedio"];
-          //console.log(this._vedio);        
-        }
-
-      }      
-     
-     });
-  
+    if (this._dataservice) {
+      this.setServiceSettings();
+    } else {
+      this.getdatajson().subscribe(dataservice => {
+        this.setServiceSettings();
+      });
+    }
   }
 
-  getdatajson(){
+  setServiceSettings() {
+    this.pdf = false;
+    this.video = false;
+
+    const dataservice = this._dataservice;
+    const current_url = this.router.url;
+    if (dataservice[current_url]) {
+      if (dataservice[current_url]['ar']["pdf"]) {
+        this.pdf = true;
+        this._pdf = this.urldata + dataservice[current_url]['ar']["pdf"];
+      }
+      if (dataservice[current_url]['ar']["vedio"]) {
+        this.video = true;
+        this._vedio = this.urldata + dataservice[current_url]['ar']["vedio"];
+      }
+
+    }
+  }
+
+  getdatajson() {
     return this.http.get('/assets/files/service.json');
   }
 
   playvedio(url) {
-   //console.log(url);
+    //console.log(url);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = "50%";
-    dialogConfig.data = { url};
+    dialogConfig.data = { url };
     this.dialog.open(DialogPlayerComponent, dialogConfig).afterClosed().subscribe(res => {
-     
+
     });
   }
 

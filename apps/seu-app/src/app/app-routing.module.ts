@@ -19,9 +19,10 @@ const routes: Routes = [
     component: BlankComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
-      { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'home', component: HomeComponent },
       { path: 'home/:t', component: HomeComponent },
+      //      { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
+      //      { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'admis-pages/:cat', component: AdmisPagesComponent },
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       { path: 'policy', component: PolicyComponent },
@@ -119,6 +120,10 @@ const routes: Routes = [
     outlet: 'print',
     component: PrintLayoutComponent,
     children: [{ path: 'print-file/:paramData', component: PrintFileComponent }]
+  },
+  {
+    path: 'apps',
+    loadChildren: './apps/apps.module#AppsModule'
   }
 ];
 

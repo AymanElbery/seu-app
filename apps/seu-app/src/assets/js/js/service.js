@@ -15,7 +15,7 @@
     //     wheelPropagation: !0,
     //     minScrollbarLength: 5
     // });
-    t.on("click", ".navigation-main .nav-item a", function () {
+    i(s).on("click", ".navigation-main .nav-item a", function () {
       var e = i(this).parent(".nav-item");
       if (e.hasClass("has-sub") && e.hasClass("open")) a(e);
       else {
