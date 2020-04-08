@@ -131,10 +131,10 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
  
    }
     // utils.openUrl(this.termSchedule);
-     this.downloader.downloadFile(print);
- 
+     this.downloader.downloadFile(print).subscribe(res=>{console.log(res)},
+     err=>{console.log("errrrr",err)});
+     this.toastr.download();      
      this.downloader.csize.subscribe(x => {
-   this.toastr.download();      
        if (x == '100') {
          this.isDownLoaded = true;
          this.translate.get('general.ar_print').subscribe(res => {

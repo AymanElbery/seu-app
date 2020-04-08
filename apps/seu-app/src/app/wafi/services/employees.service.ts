@@ -22,6 +22,9 @@ export class EmployeesService {
   getdataEmployees() { 
     return this.wafihttRequest.postRequest_obj('emp/get-emp-info',{});  
 }
+getdataEmployeesLang() { 
+  return this.wafihttRequest.postRequest_obj('emp/get-comm-lang',{});  
+}
 
 getsalaryyear(){
   return this.wafihttRequest.postRequest_obj('emp/get-salary-years',{});

@@ -57,8 +57,8 @@ sindex = 1;
     //  console.log('LoadNews');
      // console.log('user is ' + this.userService.userData);
         // tslint:disable-next-line: triple-equals
-      console.log(this.userService.userData);
-      console.log(this.userService.userData.activeRole + 'ActiveRule');
+    //  console.log(this.userService.userData);
+      //console.log(this.userService.userData.activeRole + 'ActiveRule');
       if (this.userService.userData.activeRole === ApiUserRoles.Student) {
           return this.loadStudentNews();
         } else if (this.userService.userData.activeRole === ApiUserRoles.Emplpyee) {
@@ -69,7 +69,7 @@ sindex = 1;
 
       }
       private loadStudentNews() {
-        console.log('loadStudentNews :' + CMSUserRoles.Student);
+       // console.log('loadStudentNews :' + CMSUserRoles.Student);
         return this.homeService.getNews(CMSUserRoles.Student,
           this.userService.userData.level,
           this.userService.userData.coll,
@@ -121,7 +121,7 @@ sindex = 1;
       LoadEvents() {
      //     console.log('events');
           this.loadStudentsEvents();
-          console.log(this.userService.userData.activeRole);
+     //     console.log(this.userService.userData.activeRole);
           if (this.userService.userData.activeRole === ApiUserRoles.Student) {
           return this.loadStudentsEvents();
         } else if (this.userService.userData.activeRole === ApiUserRoles.Emplpyee) {
@@ -141,7 +141,7 @@ sindex = 1;
             // console.log(res);
             this.userService.eventsData = (res as any).Data;
      //       console.log('events');
-            console.log(this.userService.eventsData);
+     //       console.log(this.userService.eventsData);
             // console.log(this.userService.eventsData.length);
             // console.log(this.userService.eventsData);
             this.eventsLoaded = true;

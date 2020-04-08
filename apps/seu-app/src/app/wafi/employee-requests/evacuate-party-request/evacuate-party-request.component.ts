@@ -20,8 +20,8 @@ export class EvacuatePartyRequestComponent implements OnInit {
   vacationreqtype: any;
   fileToUpload: File = null;
   disclaimerReasonItems;
- 
-  
+
+
   subscriptionDDLReqtype: Subscription;
   subscriptionvac: Subscription;
   vacationsbal;
@@ -31,55 +31,51 @@ export class EvacuatePartyRequestComponent implements OnInit {
   private sub: any;
   constructor(private route: ActivatedRoute, private toastr: AppToasterService, private empreqservice: EmployeeRequestsService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
     this.AddReqForm = fb.group({
-      'requestType': [this.id],  
-      'disclaimerReason': ['', [Validators.required]],     
+      'requestType': [this.id],
+      'disclaimerReason': ['', [Validators.required]],
       'notes': [''],
-      'file':['']
+      'file': ['']
     });
-  } 
+  }
 
 
-handleFileInput(e) {
-  const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-  const reader = new FileReader();
-  reader.onload = this._handleReaderLoaded.bind(this);
-  reader.readAsDataURL(file);
-}
-_handleReaderLoaded(e) {
-  const reader = e.target;
-  this.AddReqForm.controls['file'].setValue(reader.result);
-}
+  handleFileInput(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    const reader = new FileReader();
+    reader.onload = this._handleReaderLoaded.bind(this);
+    reader.readAsDataURL(file);
+  }
+  _handleReaderLoaded(e) {
+    const reader = e.target;
+    this.AddReqForm.controls['file'].setValue(reader.result);
+  }
 
   onFormSubmit(event) {
-    this.submitted = true;
     const submitdatavalue = (this.AddReqForm.value);
     if (this.AddReqForm.invalid) {
       return;
     }
 
     //console.log("submit data", submitdatavalue);
+    this.submitted = true;
 
     this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
       ////console.log("saved data", leavdedcut);
-      if (!leavdedcut['saveRequest']) {
-        var error = (leavdedcut as any).data["errorMassege"]   
+      if (!leavdedcut['data']['saveRequest']) {
+        var error = (leavdedcut as any).data["errorMassege"]
         //console.log("response data",error);
         this.toastr.push([{ type: 'error', 'body': error }]);
+        this.submitted = false;
 
-      }else {
-        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved')}]);
+      } else {
+        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
         this.router.navigate(['/wafi/employee-requests'])
       }
     }
     );
 
-    // this.formSubmitted = true;
-    if (this.AddReqForm.invalid) {
-      return;
-    }
-   
   }
-  
+
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number      
@@ -102,8 +98,8 @@ _handleReaderLoaded(e) {
     this.AddReqForm.controls['requestType'].setValue(this.id);
     this.subscriptionDDLReqtype = this.empreqservice.getDDLVacationType(reqtypeid).subscribe(reqtype => {
       if (reqtype) {
-       
-        this.disclaimerReasonItems = (reqtype as any).data["disclaimerReasonItems"]; 
+
+        this.disclaimerReasonItems = (reqtype as any).data["disclaimerReasonItems"];
         //console.log("vac item data", this.vacationreqtype);
         this.isLoading = false
       } else {
@@ -111,6 +107,9 @@ _handleReaderLoaded(e) {
     });
   }
 
+  back() {
+    this.router.navigate(['/wafi/employee-requests/add-new-request'])
+  }
 
 }
 

@@ -1,3 +1,51 @@
-<p>
-  master-refund works!
-</p>
+<div class="main-content">
+  <service-header title='{{"services.master_refund.desc" | translate}}'></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div class="widget" *ngIf="!isLoading">
+
+    <div class="widget-header">
+      <h3 class="widget-title">
+        {{"services.master_refund.title"|translate}}
+        <button *ngIf="canaddreq" type="button" class="btn btn-primary" (click)="openDialog()">
+          {{"services.master_refund.AddRefundReq"|translate}}<i class="ik ik-plus"></i>
+        </button>&nbsp;
+
+      </h3>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">{{"services.master_refund.request_number" | translate}}</th>
+            <th scope="col">{{"services.master_refund.insert_date" | translate}}</th>
+            <th scope="col">{{"services.master_refund.status" | translate}}</th>
+            <th scope="col">{{"services.master_refund.type" | translate}}</th>
+            <th scope="col">{{"services.master_refund.Delete" | translate}}</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reflist of reqData['reqs'] ;let i=index;">
+            <td>{{reflist.request_number}}</td>
+            <td>{{reflist.insert_date}}</td>
+            <td>{{reflist.status}}</td>
+            <td>{{reflist.type}}</td>
+
+
+            <td *ngIf='reflist.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger"
+                style="color: white" (click)="delete(reflist.request_number,i)"><i class="fa fa-trash"></i> </button>
+
+            </td>
+
+            <td *ngIf='!reflist.deletable'>{{"general.request.non_cancelable_request" | translate}} </td>
+
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>

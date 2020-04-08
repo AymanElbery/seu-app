@@ -1,0 +1,46 @@
+.section-content{
+    padding: 10px;
+    margin-top: 20px;
+}
+.row-form{
+    margin-top: 10px;
+}
+.title{
+    background-color:  #EDEDED;
+    border-radius: 5px;
+    padding: 20px;
+    margin-right: 20px;
+}
+.item{
+    border: solid 1px #FFF;
+    border-radius: 5px;
+    padding: 20px;
+    margin-right: 20px;
+}
+.remove-item{
+    text-align: center;
+}
+.sub{
+    width: 100%;
+}
+.sub-row{
+    margin-top: 100px;
+}
+.btn:hover , .btn:active{
+    color: #FFF
+}  
+.profile{
+    border: solid 1px #EDEDED;
+    height: 230px;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 5px;
+} 
+.profile img{
+    width: 100%;
+    height: 100%;
+}
+.errorBorder{
+    border: solid 1px red
+}

@@ -13,8 +13,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class PersonalinfoComponent implements OnInit,OnDestroy {
   //allEmployee: Observable<Employee[]>; 
   empInfo;
+  empInfolang;
   messages: any[] = [];
   subscription: Subscription;
+  subscriptionLang: Subscription;
   constructor(private http: HttpClient,private empservice:EmployeesService,private translate: TranslateService) { }
   isLoading = true;
   subscriptions;
@@ -40,9 +42,15 @@ export class PersonalinfoComponent implements OnInit,OnDestroy {
     // );
     this.isLoading = true
     this.subscription = this.empservice.getdataEmployees().subscribe(empdata => {
-     if (empdata) {
-       //console.log("employee data",empdata);
-       this.empInfo = (empdata as any).data;
+     if (empdata) {       
+       this.empInfo = (empdata as any).data;       
+       
+       this.subscriptionLang = this.empservice.getdataEmployeesLang().subscribe(empdaemplang => {
+        if (empdaemplang) {
+          this.empInfolang = (empdaemplang as any).data;
+          this.empInfo[17]["data"]=(this.empInfo[17]["data"]==2?this.empInfolang[1]["label"]:this.empInfolang[0]["label"]);          
+        }
+       });
        //this.messages.push(empdata[0]);
        this.isLoading = false;      
      } else {       

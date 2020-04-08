@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeRequestsService {
-
+  refreshAfterClose = false;
   constructor(private wafihttRequest: WafiHttpRequestService) { }
 
   getEmpReqLists() {
@@ -54,27 +54,27 @@ export class EmployeeRequestsService {
 
   getapprovalrequests() {
 
-    return this.wafihttRequest.postRequest_obj('emp/show-service-request-toapprove', { });
+    return this.wafihttRequest.postRequest_obj('emp/show-service-request-toapprove', {});
   }
 
-  getapprovalreqDetail(reqSeq:any,reqType:any, reqEmpId:any ) {
+  getapprovalreqDetail(reqSeq: any, reqType: any, reqEmpId: any) {
 
     ////console.log(reqSeq, reqEmpId, reqType);
-    return this.wafihttRequest.postRequest_obj('emp/show-service-request-toapprove-details', {  reqSeq, reqEmpId,reqType  });
+    return this.wafihttRequest.postRequest_obj('emp/show-service-request-toapprove-details', { reqSeq, reqEmpId, reqType });
   }
   getapprovalhistory() {
 
-    return this.wafihttRequest.postRequest_obj('emp/show-approved-request-trans', { });
+    return this.wafihttRequest.postRequest_obj('emp/show-approved-request-trans', {});
   }
 
-  getapprovalhistoryDetail(reqSeq:any,reqType:any, reqEmpId:any ) {
+  getapprovalhistoryDetail(reqSeq: any, reqType: any, reqEmpId: any) {
     ////console.log("service","reqSeq",reqSeq,"reqType", reqType,"reqEmpId",reqEmpId);    
-    return this.wafihttRequest.postRequest_obj('emp/show-service-request-transaction-details', {  reqSeq, reqEmpId,reqType  });
+    return this.wafihttRequest.postRequest_obj('emp/show-service-request-transaction-details', { reqSeq, reqEmpId, reqType });
   }
 
-  submitapproverequest(reqSeq:any,reqType:any, reqEmpId:any,rejectReasonNo:any,approveValue:any) {
-     //console.log("service","reqSeq",reqSeq,"reqType", reqType,"reqEmpId",reqEmpId,rejectReasonNo,approveValue);    
-    return this.wafihttRequest.postRequest_obj('emp/save-approve-request', {  reqSeq, reqEmpId,reqType,rejectReasonNo,approveValue  });
+  submitapproverequest(reqSeq: any, reqType: any, reqEmpId: any, rejectReasonNo: any, approveValue: any) {
+    //console.log("service","reqSeq",reqSeq,"reqType", reqType,"reqEmpId",reqEmpId,rejectReasonNo,approveValue);    
+    return this.wafihttRequest.postRequest_obj('emp/save-approve-request', { reqSeq, reqEmpId, reqType, rejectReasonNo, approveValue });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
+import { UserService } from 'src/app/account/services/user.service';
 
 @Component({
   selector: 'app-master-payment',
@@ -9,11 +10,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class MasterPaymentComponent implements OnInit, OnDestroy {
   @Input()
-  url = 'https://apps.seu.edu.sa/fees/gr/index?sid=';
+  url = 'https://apps.seu.edu.sa/fees/gr/index';
   urlSafe: SafeResourceUrl;
   sid;
   srcUrl;
-  constructor(private translate: TranslateService, public sanitizer: DomSanitizer) { }
+  constructor(private translate: TranslateService, public sanitizer: DomSanitizer,private userService:UserService) { }
 
   ngOnInit() {
     this.UpdateSettings();
@@ -34,7 +35,8 @@ export class MasterPaymentComponent implements OnInit, OnDestroy {
 
   UpdateSettings() {
     this.sid = localStorage.getItem('sid');
-    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url + this.sid + "&lang=" + this.translate.currentLang);
+    const user = this.userService.getActiveRoleDetails();
+    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url + '/' + user.username  +'?sid='+ this.sid + "&lang=" + this.translate.currentLang);
     // console.log(this.urlSafe);
   }
 

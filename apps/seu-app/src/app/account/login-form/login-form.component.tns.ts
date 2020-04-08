@@ -8,7 +8,7 @@ import { GlobalService } from '../../shared/services/global.service.tns';
 import { map } from 'rxjs/operators';
 import * as applicationSettings from 'tns-core-modules/application-settings';
 import { ChangeDetectorRef } from '@angular/core';
-import { AppToasterService } from '../../shared/services/app-toaster';
+import { AppToasterService } from '../../shared/services/app-toaster.tns';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 
