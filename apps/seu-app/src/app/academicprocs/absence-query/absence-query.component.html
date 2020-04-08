@@ -1,24 +1,8 @@
 <div class="main-content">
   <service-header [title]="'services.absence_quyery.title' |translate"
   [desc]="'services.absence_quyery.desc' |translate"></service-header>
-  <!-- <section class="service-single">
-    <div class="container">
-      <h3> {{"services.absence_quyery.title" |translate}} </h3>
-      <div class="row">
-        <div class=" col-md-5">
-          <p> {{"services.absence_quyery.title" |translate}} </p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <div *ngIf="isLoading" class=" loading-indicator ">
-    <div class="state">
-      <mat-spinner *ngIf="isLoading"
-        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-      </mat-spinner>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
 
-    </div>
-  </div>
   <section class="ser-state" *ngIf="!isLoading">
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="one">

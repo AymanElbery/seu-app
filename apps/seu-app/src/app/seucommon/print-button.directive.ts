@@ -6,6 +6,7 @@ import { AppToasterService } from '../shared/services/app-toaster';
 import { environment } from 'src/environments/environment';
 import { NewsComponent } from '../dashboard/news/news.component';
 import { GlobalBaseService } from '../shared/services/global-base.service';
+import { UserService } from '../account/services/user.service';
 
 
 @Directive({
@@ -52,7 +53,7 @@ export class PrintButtonDirective {
     this.isDownloading = false;
     this.rendered.removeChild(this.elmRef.nativeElement, this.elmRef.nativeElement.children[1]);
   }
-  constructor(private elmRef: ElementRef, private rendered: Renderer2, private toaster: AppToasterService, private renderer: Renderer2, private http: HttpClient, private globalService: GlobalBaseService) {
+  constructor(private elmRef: ElementRef, private rendered: Renderer2, private toaster: AppToasterService, private renderer: Renderer2, private http: HttpClient, private globalService: GlobalBaseService,private userService:UserService) {
   }
 
 
@@ -82,7 +83,8 @@ export class PrintButtonDirective {
   requesturls(url: any) {
     const sid = this.globalService.getSID();
     const headers = new HttpHeaders({
-      'Session-ID': sid
+      'Session-ID': sid,
+      'Student-ID': this.userService.userData.username
     });
     return this.http.get(this.removeURLParameter(url, "sid"), { headers: headers, responseType: 'blob' as 'json', observe: 'response' });
   }
