@@ -1,4 +1,4 @@
-<FlexboxLayout  flexDirection="column" style="padding: 20;" class="pop">
+<FlexboxLayout  flexDirection="column" class="pop">
     <Label text=' {{"services.re-enrollment.re-enroll_request"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
 
     <Label text='{{"services.re-enrollment.alert"|translate}}'
@@ -14,7 +14,7 @@
      class="font" textWrap="true" style="color: #f08b1c;" style="margin-top: 20;"></Label>
     <Button [text]="fileName" (tap)="openCustomFilesPicker()" class="print-btn"></Button>
 
-    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 20;">
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
         <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn" [isEnabled]="reason.valid"></Button>
         <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn"></Button>
     </FlexboxLayout>
