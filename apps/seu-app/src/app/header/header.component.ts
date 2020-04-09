@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   currLang;
   environment;
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    //this.subscription.unsubscribe();
   }
 
   logout() {

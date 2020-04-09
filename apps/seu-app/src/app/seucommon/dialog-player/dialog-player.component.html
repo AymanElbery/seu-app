@@ -1,0 +1,18 @@
+<div class="main-content">
+
+  <div class="modal-header">
+    <h4 class="modal-title">Vedio Play</h4>
+    <button type="button" class="btn-close-brd" (click)="closeDiag()" mat-dialog-close><i class="ik ik-x"></i> </button>
+  </div>
+
+<!-- <div class="video">
+    <video controls (click)="toggleVideo()" #videoPlayer>
+        <source [src]="vedio_url" type="video/mp4" />
+        Browser not supported
+    </video>
+</div> -->
+
+  <iframe width="760" height="489" [src]="vedio_url"
+  frameborder="0" allowfullscreen="true"></iframe>
+
+</div>

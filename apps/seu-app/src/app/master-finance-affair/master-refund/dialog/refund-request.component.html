@@ -79,7 +79,7 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+          <button type="button" (click)="closeDiag()"  class="btn btn-outline"><i class="ik ik-x"></i>
             {{"services.master_refund.cancel"|translate}}</button>
 
           <button type="submit" [disabled]="payrefund.refund_reason==''  || payrefund.iban=='' || payrefund.name=='' || payrefund.last_four_id=='' || payrefund.refund_type==''" class="btn btn-dark"><i class="fa fa-database"></i>

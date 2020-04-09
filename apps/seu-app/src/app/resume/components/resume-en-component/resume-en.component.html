@@ -1,0 +1,137 @@
+<div class="main-content">
+
+  <section class="service-single">
+    <div class="container">
+      <h3>{{ "menu.resume" | translate}}</h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p>{{ "resume.title" | translate}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section-content"> 
+    <form>
+      <div *ngIf="message" class="row">
+        <div class="col-md-6">
+          <div class="alert alert-success">
+            {{message}}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="profile">
+            <img *ngIf="profile == 'notExist'" src="assets/images/profile.png">
+            <img *ngIf="profile != 'notExist'" src="https://seuapps.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
+          </div>
+        </div>
+      </div>
+      <div class="row row-form" >
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="photo">{{ "resume.photo" | translate}}</label>
+            <input type="file" accept="*/*" (change)="handleInputChange($event)" id="photo" class="form-control-file form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row row-form tabs-navbar">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/resume/ar" >{{ "resume.resume_ar" | translate}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/resume/en" >{{ "resume.resume_en" | translate}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row row-form" >
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">{{ "resume.name_en" | translate}}</label>
+            <input (input)="hideNameMessages()" required type="text" [ngClass]="{'errorBorder': nameError}" class="form-control" id="name" [(ngModel)]="name" name="name">
+            <span *ngIf="nameError" class="text text-danger">{{nameError}}</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">{{ "resume.email" | translate}}</label>
+            <input (input)="hideEmailMessages()" disabled required type="email" [ngClass]="{'errorBorder': emailError}" class="form-control" id="email" [(ngModel)]="email" name="email">
+            <span *ngIf="emailError" class="text text-danger">{{emailError}}</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="jobTitle">{{ "resume.jobTitle" | translate}}</label>
+            <input (input)="hideJobTitleMessages()" required type="text" class="form-control" id="jobTitle" [ngClass]="{'errorBorder': jobTitleError}" [(ngModel)]="jobTitle" name="jobTitle">
+            <span *ngIf="jobTitleError" class="text text-danger">{{jobTitleError}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="row row-form" >
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="section">{{ "resume.section_en" | translate}}</label>
+            <input (input)="hideSectionMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
+            <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="phone">{{ "resume.phone" | translate}}</label>
+            <input (input)="hidePhoneMessages()" type="text" [ngClass]="{'errorBorder': phoneError}" class="form-control" id="phone" [(ngModel)]="phone" name="phone">
+            <span *ngIf="phoneError" class="text text-danger">{{phoneError}}</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="nationality">{{ "resume.nationality" | translate}}</label>
+            <select required class="form-control" id="nationality" [(ngModel)]="nationality" name="nationality">
+              <option>--</option>
+              <option [selected]="country.COUNTRY_EN == nationality" *ngFor="let country of countries">{{ country.COUNTRY_EN }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row row-form" *ngFor="let title of titles; let i = index;">
+      <div class="col-md-8 title">
+        <div class="form-group">
+          <label for="photo">عنوان رقم {{ i+1 }}</label>
+          <input name="title{{i}}" class="form-control" [(ngModel)]="title.text">
+          <div class="row row-form" *ngFor="let item of title.items; let j = index;">
+            <div class="col-md-8 item">
+              <div class="form-group">
+                <label for="photo">عنصر رقم {{ j+1 }}</label>
+                <input name="item{{j}}" class="form-control" [(ngModel)]="item.text">
+              </div>
+            </div>
+            <div class="col-md-1">
+              <button (click)="removeItem(title, j)" class="btn remove-item" ><i class="fas fa-trash-alt del"></i></button>
+            </div>
+          </div>
+          <div class="row row-form">
+            <div class="col-md-8">
+              <button (click)="addItem(title)" type="button" class="btn">{{ "resume.add_item" | translate}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <button (click)="removeTitle(i)" class="btn btn-danger" ><i class="fas fa-trash-alt del"></i></button>
+      </div>
+    </div>
+    <div class="row row-form">
+      <div class="col-md-8">
+        <button (click)="addTitle()" type="button" class="btn"> {{ "resume.add_title" | translate}}  </button>
+      </div>
+    </div>
+
+    <div class="row row-form sub-row">
+      <div class="col-md-4 offset-md-4">
+        <button (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}    <i class="fa fa-save"></i></button>
+      </div>
+    </div>
+  </section>
+</div>
+  

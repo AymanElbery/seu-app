@@ -6,12 +6,14 @@
       <div class=" col-md-5">
         <p>{{desc}}</p>
       </div>
-      <!-- <div class=" col-md-6 descr">
-              <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
-                &nbsp; &nbsp; &nbsp; &nbsp;
-                <a href="#"><i class="ik ik-download"></i> </a>
-                <a href="#"><i class="ik ik-film"></i></a>
-            </div> -->
+      <div class=" col-md-6 descr" style="display: none;">
+        <!--        <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>-->
+        &nbsp; &nbsp; &nbsp; &nbsp;        
+        <a *ngIf="pdf" target="_blank"  href="{{_pdf}}"><i class="ik ik-download"></i> </a>
+        <a  *ngIf="video" (click)="playvedio(_vedio)"><i class="ik ik-film"></i></a>
+      
+
+      </div>
     </div>
   </div>
 </section>

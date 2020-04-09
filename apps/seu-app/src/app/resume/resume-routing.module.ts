@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ResumeComponent } from './components/resume-component/resume.component';
+import { ResumeEnComponent } from './components/resume-en-component/resume-en.component';
 
 const routes: Routes = [
   {
@@ -8,9 +9,14 @@ const routes: Routes = [
     component: ResumeComponent
   },
   {
-    path: "resume",
+    path: "ar",
     component: ResumeComponent
   },
+  {
+    path: "en",
+    component: ResumeEnComponent
+  },
+  
 ];
 
 @NgModule({

@@ -21,8 +21,9 @@ export class ResumeService {
         private router: Router
     ) {}
 
-    addResume(data) {
-        return this.http.post(this.URL + "resume/add",
+    addResume(data, lang) {
+        let url = (lang == 'en') ? "resume/adden" : "resume/add";
+        return this.http.post(this.URL + url,
         { 
             id: data.id, 
             photo: data.photo, 
@@ -39,10 +40,11 @@ export class ResumeService {
         });
     }
 
-    getResumeById(id) {
+    getResumeByEmail(email, lang) {
         return this.http.post(this.URL + "resume/getresume",
         { 
-            id: id
+            email: email,
+            lang: lang
         },
         {
             headers: this.headers,
@@ -51,6 +53,13 @@ export class ResumeService {
 
     getCountries() {
         return this.http.get(this.URL + "resume/getcountries",
+        {
+            headers: this.headers,
+        });
+    }
+
+    getStuffByID(id) {
+        return this.http.get(this.URL + "resume/getStuffByID/"+id,
         {
             headers: this.headers,
         });

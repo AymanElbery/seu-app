@@ -1,24 +1,11 @@
 <div class="main-content">
-  <section _ngcontent-fpr-c11="" class="service-single ">
-    <div _ngcontent-fpr-c11="" class="container">
-      <h3 _ngcontent-fpr-c11=""> {{"services.termination-withdraw.title"|translate}} </h3>
-      <div _ngcontent-fpr-c11="" class="row">
-        <div _ngcontent-fpr-c11="" class=" col-md-5">
-          <p _ngcontent-fpr-c11=""> {{"services.termination-withdraw.desc"|translate}}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div *ngIf="isLoading" class=" loading-indicator  ">
-    <div class="state">
+
+  <service-header [title]="'services.termination-withdraw.title' |translate"
+  [desc]="'services.termination-withdraw.desc' |translate"></service-header>
+
+  <seu-loader [isLoading]="isLoading"></seu-loader>
 
 
-      <mat-spinner *ngIf="isLoading"
-        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-      </mat-spinner>
-
-    </div>
-  </div>
   <div class="ser-state" *ngIf="!isLoading">
     <div *ngFor="let msg of msgs"
       [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"

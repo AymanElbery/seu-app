@@ -52,6 +52,7 @@ export class UserService extends BaseService {
       name_ar: '',
       name_en: '',
       role: '',
+      email: '',
       sex: '',
       ssn: '',
       stdName: '',
@@ -93,7 +94,7 @@ export class UserService extends BaseService {
     location: string
   ) {
     const body = { username, email, password, firstName, lastName, location };
-    return this.httRequest.postRequest('accounts', body).pipe(
+    return this.httRequest.postAuthRequest('accounts', body).pipe(
       map((res: any) => res),
       catchError(err => {
         console.error(err);
@@ -108,7 +109,7 @@ export class UserService extends BaseService {
   login(userName, password) {
     // console.log('ser');
     return this.httRequest
-      .postRequest('auth/login', { userName, password })
+      .postAuthRequest('auth/login', { userName, password })
       .pipe(
         map((res: any) => res),
         catchError(err => {
@@ -124,7 +125,6 @@ export class UserService extends BaseService {
   SignIn(userName, pass) {
     this.baseUrl = '';
     this.configService.baseUrl = '';
-
     return this.httRequest.postAuthRequest('rest/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
   }
   resetPassword(opassword, npassword, cpassword) {
@@ -140,12 +140,16 @@ export class UserService extends BaseService {
     if (this.userDataLoaded !== true) {
       return this.requestUser()
         .then(res => {
-          this.userData = (res as any).data;
-          // console.log('userdata:'+this.userData);
-          this.userData.activeRole = this.userData.role;
-          this.userDataLoaded = true;
-          this.pushUserDataChanges();
-          return this.userData;
+          if (res['status']) {
+            this.userData = (res as any).data;
+            // console.log('userdata:'+this.userData);
+            this.userData.activeRole = this.userData.role;
+            this.userDataLoaded = true;
+            this.pushUserDataChanges();
+            return this.userData;
+          } else {
+            this.relogin();
+          }
         },
           err => {
             this.relogin();

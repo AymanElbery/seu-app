@@ -69,6 +69,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     // console.log('intial');
     this.userService.userDataSubject.subscribe(res => {
       if (res) {
+        //console.log("user change load Data");
         this.LoadData();
       }
     });

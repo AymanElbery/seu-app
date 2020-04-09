@@ -106,7 +106,7 @@ export class MenuComponent implements OnInit {
         this.userService.userData.coll = '';
         this.userService.userData.level = '';
         this.userService.userData.camp = '';
-        this.router.navigateByUrl('/home/emp');
+        //this.router.navigateByUrl('/home/emp');
       }
       // tslint:disable-next-line: triple-equals
     } else if (e == 1) {
@@ -115,7 +115,7 @@ export class MenuComponent implements OnInit {
       this.userService.userData.level = this.userService.userData.student_details.level;
       this.userService.userData.camp = this.userService.userData.student_details.camp;
 
-      this.router.navigateByUrl('/home/bsc');
+      //this.router.navigateByUrl('/home/bsc');
 
       // tslint:disable-next-line: triple-equals
     } else if (e == 2) {
@@ -123,8 +123,9 @@ export class MenuComponent implements OnInit {
       this.userService.userData.coll = this.userService.userData.student_details_gr.coll;
       this.userService.userData.level = this.userService.userData.student_details_gr.level;
       this.userService.userData.camp = this.userService.userData.student_details_gr.camp;
-      this.router.navigateByUrl('/home/msc');
+      //this.router.navigateByUrl('/home/msc');
     }
-    this.userService.pushUserDataChanges();
+    //this.userService.pushUserDataChanges();
+    this.router.navigateByUrl('/home');
   }
 }

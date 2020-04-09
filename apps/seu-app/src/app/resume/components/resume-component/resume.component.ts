@@ -63,8 +63,20 @@ export class ResumeComponent{
     private toastr: AppToasterService,
     public translate: TranslateService
   ) {
-
     this.id = this.userService.userData.id;
+    this.resumeService.getStuffByID(this.id).subscribe(
+      (response: any) => {
+        if (response) {
+          this.name = response.data.EMP_NAME;
+          this.email = response.data.WORK_EMAIL;
+          this.jobTitle = response.data.SCALE_DESC;
+          this.section = response.data.ACTUAL_DEPT_DESC;
+          this.getResumeByEmail(this.email);
+        }
+      },
+      error => {}
+    );
+    
     this.resumeService.getCountries().subscribe(
       (response: any) => {
         if (response) {
@@ -73,7 +85,10 @@ export class ResumeComponent{
       },
       error => {}
     );
-    this.resumeService.getResumeById(this.id).subscribe(
+  }
+
+  getResumeByEmail(email){
+    this.resumeService.getResumeByEmail(email, "ar").subscribe(
       (response: any) => {
         if (response) {
           if (response.status) {
@@ -86,6 +101,11 @@ export class ResumeComponent{
             this.section = this.data.SECTION;
             this.nationality = this.data.NATIONALITY;
             this.titles = this.data.TITLES;
+            if (this.titles) {
+              this.titles = this.data.TITLES;
+            } else {
+              this.titles = [];
+            }
             if (this.photo != null) {
               this.profile = this.photo;
             }else{
@@ -194,7 +214,7 @@ export class ResumeComponent{
         titles      : this.titles,
       };
       
-      this.resumeService.addResume(data).subscribe(
+      this.resumeService.addResume(data, "ar").subscribe(
         (response: any) => {
           if (response) {
             window.location.reload();

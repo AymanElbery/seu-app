@@ -31,6 +31,9 @@ export class UserTypeGuard implements CanActivate, CanActivateChild, CanLoad {
   }
   isLoggedIn() {
     if (!this.userService.userDataLoaded) {
+      // if (!localStorage.getItem('sid')) {
+      //   this.userService.relogin();
+      // }
       return this.userService.userDataObservable.pipe(
         map(
           (res) => {
