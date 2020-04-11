@@ -24,21 +24,30 @@ export class AcademicRecordComponent implements OnInit {
   printAR = '';
   printEN = '';
   isDownLoaded = false;
+  clicked;
+
 
   constructor(private academicService: AcademicRecordService,
-    private downloader: DataDownLoadService,
-    private transalte: TranslateService
+              private downloader: DataDownLoadService,
+              private transalte: TranslateService
     ) { }
-  recoredData: RecoredDataModel = {coll:'', grade:'', major:'', ssn:'', status:'', student_name:'', terms: []};
+  recoredData: RecoredDataModel = {coll: '', grade: '', major: '', ssn: '', status: '', student_name: '', terms: []};
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
 
   templateSelector(item: any, index: number, items: any): string {
-    if(index==0){      
+    if (index == 0) {
       return !item.expanded ? 'expanded' : 'default';
     }
     return item.expanded ? 'expanded' : 'default';
+}
+
+clickme(item) {
+  this.clicked = item;
+}
+uclickme(item) {
+  this.clicked = {};
 }
 
 onItemTap(event: ListViewEventData) {
@@ -73,7 +82,7 @@ onItemTap(event: ListViewEventData) {
     this.academicService.getِAcademicRecord().then(
       res => {
     this.recoredData =    (res as any).data;
-    this.msgs=(res as any).messages;
+    this.msgs = (res as any).messages;
   //  console.log("dataaaaaaaa",res);
     this.isLoading = false;
       }
@@ -94,7 +103,7 @@ onItemTap(event: ListViewEventData) {
                this.printAR = res;
              }
              );
-   
+
          }
        });  }
   onEnglishPrint() {
