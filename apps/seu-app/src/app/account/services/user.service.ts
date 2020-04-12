@@ -13,6 +13,7 @@ import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { HttpRequestServiceBase } from 'src/app/shared/services/http-request.service_base';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +37,8 @@ export class UserService extends BaseService {
     private configService: ConfigService,
     private httRequest: HttpRequestServiceBase,
     private http: HttpClient,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private router: Router
   ) {
     super();
     this.configService.baseUrl = '';
@@ -136,11 +138,14 @@ export class UserService extends BaseService {
     return this.httRequest.postAuthRequest('rest/ssosession/resetpassword', { user, opassword, npassword, cpassword, lang }).toPromise();
   }
 
+  errorRedirect() {
+    this.router.navigate(['/error']);
+  }
   loadUserData() {
     if (this.userDataLoaded !== true) {
       return this.requestUser()
         .then(res => {
-          if (res['status']) {
+          if ( res['status']) {
             this.userData = (res as any).data;
             // console.log('userdata:'+this.userData);
             this.userData.activeRole = this.userData.role;
@@ -148,11 +153,11 @@ export class UserService extends BaseService {
             this.pushUserDataChanges();
             return this.userData;
           } else {
-            this.relogin();
+            this.errorRedirect();
           }
         },
           err => {
-            this.relogin();
+            this.errorRedirect();
             // if (localStorage.getItem("userreloaded")) {
             //   localStorage.removeItem("userreloaded");
             //   window.location.href = "https://seu.edu.sa";

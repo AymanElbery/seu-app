@@ -12,7 +12,7 @@ import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
 import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
 import { PolicyComponent } from './home/policy.component';
 import { EmpGuard } from './guards/emp.guard';
-
+import { AppErrorComponent } from './home/error.component';
 const routes: Routes = [
   {
     path: '',
@@ -114,6 +114,10 @@ const routes: Routes = [
       },
     ]
   },
+  {
+    path: 'error',
+    component: AppErrorComponent
+  },  
   {
     path: 'print',
     outlet: 'print',
