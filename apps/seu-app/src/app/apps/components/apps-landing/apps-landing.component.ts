@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppsLandingComponent implements OnInit {
 
   constructor() { }
-
+  isLoading=true;
   ngOnInit() {
-    
+    this.isLoading=false;
   }
 
 }
