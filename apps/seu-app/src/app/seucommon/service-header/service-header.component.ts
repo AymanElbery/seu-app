@@ -4,6 +4,7 @@ import { DialogPlayerComponent } from '../dialog-player/dialog-player.component'
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
+import { AppServices } from '../app-services';
 
 @Component({
   selector: 'service-header',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class ServiceHeaderComponent implements OnInit {
   urldata;
-  constructor(private dialog: MatDialog, private http: HttpClient, private router: Router) { }
+  constructor(private dialog: MatDialog, private services: AppServices, private http: HttpClient, private router: Router) { }
   @Input() title;
   @Input() desc;
   @Input() pdf = false;
@@ -27,12 +28,14 @@ export class ServiceHeaderComponent implements OnInit {
   _pdf = "";
   _vedio = "";
   ngOnInit() {
+    this._dataservice = this.services.servicesList;
     this.urldata = environment.service_json;
     if (this._dataservice) {
       this.setServiceSettings();
     } else {
       this.getdatajson().subscribe(dataservice => {
         this._dataservice = dataservice;
+        this.services.servicesList = dataservice;
         this.setServiceSettings();
       });
     }

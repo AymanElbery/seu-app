@@ -1,38 +1,25 @@
-<service-header title='{{Welcome | translate}}'></service-header>
-  <seu-loader [isLoading]="isLoading"></seu-loader>
-  
 <main role="main">
   <div class="wrapper">
-    <app-apps-landing-header ></app-apps-landing-header>
+    <app-apps-header [appUserService]="appUser"></app-apps-header>
     <div class="page-wrap">
-
-<div  class="container-fluid" style="min-height: 500px;">
-      
-  
-
-  <div class="container" style="margin-top: 40px;">
-   
-    <div class="row">
-    
-    <div class="col-md-6 col-sm-12  text-center">
-      <a href="#" class="btn btn-primary tab-css text-center" routerLink="/apps/admission-ug">{{'ug' | translate}}
-      </a>
-    </div>
-
-    <div  class="col-md-6 col-sm-12  text-center">
-      <a href="#" class="btn btn-primary tab-css text-center" routerLink="/apps/admission-gr">{{'gr' | translate}}
-      </a>
-    </div>
-
-   
-    </div> 
-     
-    </div>
-
-
-       
+      <div class="container-fluid" style="min-height: 500px;">
+        <div class="container" style="margin-top: 40px;">
+          <br /><br /><br /><br />
+          <div class="row">
+            <div class="col-md-6 col-sm-12  text-center">
+              <a href="#" class="btn btn-primary tab-css text-center"
+                routerLink="/apps/admission-ug">{{'ug' | translate}}
+              </a>
+            </div>
+            <div class="col-md-6 col-sm-12  text-center">
+              <a href="#" class="btn btn-primary tab-css text-center"
+                routerLink="/apps/admission-gr">{{'gr' | translate}}
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <app-apps-landing-footer></app-apps-landing-footer>
+      <app-apps-footer></app-apps-footer>
     </div>
-    </div>
+  </div>
 </main>

@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./apps-header.component.css']
 })
 export class AppsHeaderComponent implements OnInit {
-  logedin='';
-@Input() appUserService:AppUserService;
+  logedin = '';
+  @Input() appUserService;
 
   constructor(
-    private translate: TranslateService,private router: Router
+    private translate: TranslateService, private router: Router
   ) {
   }
   userData: any = {};
@@ -61,17 +61,10 @@ export class AppsHeaderComponent implements OnInit {
     this.translate.onLangChange.subscribe(() => {
       this.initLang();
     });
-//  if(localStorage.getItem("logedin").toString()=="true"){
-//   this.logedin=localStorage.getItem("logedin").toString();
-//  }
-
   }
 
   logout() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("logedin");
-    
     this.appUserService.logout();
   }
- 
+
 }

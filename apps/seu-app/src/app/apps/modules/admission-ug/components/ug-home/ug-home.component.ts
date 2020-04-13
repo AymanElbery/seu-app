@@ -8,7 +8,7 @@ import { AdmisionUgService } from '../../services/admision-ug.service';
 })
 export class UGHomeComponent implements OnInit {
 
-  constructor(public appUserService:AdmisionUgService) { }
+  constructor(public appUserService: AdmisionUgService) { }
 
   ngOnInit() {
   }

@@ -9,30 +9,21 @@ import { AppUserService } from 'src/app/apps/services/app-user.service';
 })
 export class AppsUGMenuComponent implements OnInit {
 
-  constructor(private admissionugService: AdmisionUgService,private appService: AppUserService) {
+  constructor(private admissionugService: AdmisionUgService, private appService: AppUserService) {
     this.isLoggedIn();
-   }
- isLoggedIn() {
-    //console.log("menu item",this.admissionugService.isLoggedIn);
+  }
+  isLoggedIn() {
     if (this.admissionugService.isLoggedIn) {
       return true;
     }
-   
     return false;
-    
   }
-  logout(){
-    this.admissionugService.logout_ug(localStorage.getItem("token")).subscribe(reslout => { 
-     
-      console.log("response",reslout);
-     
-    },
-    );
-    this.appService.logout();
+  ngOnInit() {
+
   }
 
-  ngOnInit() {
-   
+  logout() {
+    this.admissionugService.logout();
   }
 
 }

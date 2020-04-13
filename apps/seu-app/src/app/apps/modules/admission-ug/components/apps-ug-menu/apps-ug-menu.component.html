@@ -8,44 +8,43 @@
     </a>
   </div>
   <div class="sidebar-content">
-   
     <div class="nav-container">
       <nav id="main-menu-navigation" class="navigation-main">
-        <div class="nav-item has-sub ">
+        <!-- <div class="nav-item has-sub ">
           <a href="#" class="menu-item homelink" routerLink="/apps">
             <span>{{"home" | translate}}</span>
             <i class="ik ik-home"></i>
           </a>
-        </div>
-    <div class="nav-item has-sub">         
-       
-          <a href="#" class="menu-item" routerLink="/apps/admission-ug/admission-result">              
+        </div> -->
+        <div class="nav-item">
+          <a href="#" class="menu-item" routerLink="/apps/admission-ug/admission-result">
             <span> {{'Adminssion Result' | translate}} </span>
             <i class="ik ik-user-check"></i>
-          </a>  
-          <a *ngIf="admissionugService.isLoggedIn==false" href="#" class="menu-item" routerLink="/apps/admission-ug/ug-login">              
+          </a>
+          <!-- <a *ngIf="!admissionugService.isLoggedIn" href="#" class="menu-item" routerLink="/apps/admission-ug/ug-login">
             <span> {{'Log In' | translate}} </span>
             <i class="ik ik-user-check"></i>
-          </a>  
-          <a *ngIf="admissionugService.isLoggedIn==true" href="#" class="menu-item" (click)="logout()">              
-            <span> {{'Log Out' | translate}} </span>
-            <i class="ik ik-user-check"></i>
-          </a>  
-
-          <a *ngIf="admissionugService.isLoggedIn==true"  href="#" class="menu-item" routerLinkActive="active"  routerLink="/apps/admission-ug/pay-fee">              
-            <span> {{'Pay the Fee' | translate}} </span>
-            <i class="ik ik-user-check"></i>
-          </a>  
-          <a href="#" *ngIf="admissionugService.isLoggedIn==true" class="menu-item" routerLink="/apps/admission-ug/upload-documents">              
-            <span> {{'Upload Document' | translate}} </span>
-            <i class="ik ik-user-check"></i>
-          </a>  
-           
-     </div>
-
-
-          
-   
+          </a> -->
+          <ng-container>
+            <!--*ngIf="admissionugService.isLoggedIn"-->
+            <a href="#" class="menu-item" routerLinkActive="active" routerLink="/apps/admission-ug/pay-fee">
+              <span> {{'Pay the Fee' | translate}} </span>
+              <i class="ik ik-user-check"></i>
+            </a>
+            <a href="#" class="menu-item" routerLinkActive="active" routerLink="/apps/admission-ug/pay-fee">
+              <span> {{'match doeuments' | translate}} </span>
+              <i class="ik ik-user-check"></i>
+            </a>
+            <a href="#" class="menu-item" routerLink="/apps/admission-ug/upload-documents">
+              <span> {{'Upload Document' | translate}} </span>
+              <i class="ik ik-user-check"></i>
+            </a>
+            <a *ngIf="admissionugService.isLoggedIn" href="#" class="menu-item" (click)="logout()">
+              <span> {{'Log Out' | translate}} </span>
+              <i class="ik ik-user-check"></i>
+            </a>
+          </ng-container>
+        </div>
       </nav>
     </div>
   </div>

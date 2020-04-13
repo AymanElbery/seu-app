@@ -1,55 +1,55 @@
 import { Injectable } from '@angular/core';
 import { AppUserService } from '../../../services/app-user.service';
-import {HttpRequestAdmisionUgService} from './http-request-admision-ug.service';
+import { HttpRequestAdmisionUgService } from './http-request-admision-ug.service';
 import { Router } from '@angular/router';
+import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdmisionUgService extends AppUserService {
-  studentDataDetails;
-  message;
-  notice;  
+  checkResultData;
+  tokenKey = 'ug-token';
+  userKey = 'ug-student';
 
-  constructor( router: Router,private admissionUgHttpRequest: HttpRequestAdmisionUgService) {
-    super(router);
+  constructor(router: Router, globalService: GlobalBaseService, private admissionUgHttpRequest: HttpRequestAdmisionUgService) {
+    super(router, globalService);
   }
 
-
-  get fulName(){
-    if(this.isLoggedIn)
-return this.LoggedInUser['S_NAME'];
-    
+  get fullName() {
+    if (this.isLoggedIn)
+      return this.LoggedInUser['S_NAME'];
     return '';
+  }
+
+  get isLoggedIn() {
+    if (this.LoggedInUser) {
+      return true;
     }
+    return false
+  }
 
-    get isLoggedIn(){
-      if(this.LoggedInUser){
-        return true;
-      }
-      return false
-    }
+  getresstatus(data) {
+    return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service', data);
+  }
 
-  getresstatus(ssn) { 
-    
-    return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service',{ssn});  
-}
+  getloginstatus(data) {
+    return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/check', data);
+  }
 
-getloginstatus(ssn) { 
-    
-  return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/check',{ssn});  
-}
+  getverification(data) {
+    return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/verification', data);
+  }
 
-getverification(token,code) { 
-    
-  return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/verification',{token,code});  
-}
+  logout_ug(token) {
+    return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/Logout', { token });
+  }
 
-logout_ug(token) { 
-    
-  return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/Logout',{token});  
-}
+  logout() {
+    this.logout_ug(this.LoggedInToken).subscribe();
+    super.logout();
+  }
 
 }
 

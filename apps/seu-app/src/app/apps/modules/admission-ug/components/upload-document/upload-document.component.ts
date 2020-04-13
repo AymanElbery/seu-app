@@ -10,6 +10,7 @@ export class UploadDocumentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

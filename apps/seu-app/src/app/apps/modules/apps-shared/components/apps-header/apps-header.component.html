@@ -2,54 +2,51 @@
   <div class="container-fluid">
     <div class="d-flex justify-content-between">
       <div class="top-menu d-flex align-items-center w-25">
-        <div class="dropdown align-items-right mr-0 mr-sm-5">
-          <a class="dropdown-toggle pub-ser d-flex align-items-center">
-            <img class="avatar d-none d-sm-inline-block" src="assets/images/avatar.png" alt=""> <span
-              class="d-none d-sm-block"> <bdi>
-                {{"hello" | translate}} :
-                <span class="d-none d-sm-inline-block">{{appUserService.fulName}}</span>
-              </bdi></span>
-            <i class="ik ik-user mobile-user-drop d-sm-none"></i>           
-          </a>
-
-          <div class="dropdown-menu" aria-labelledby="userDropdown">
-            <div class="d-sm-none">
-              <div >
-                <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
-                  style="font-size: 20px; font-weight: 400"> E
-                </a>
-                <a href="javascript:;" *ngIf="currLang == 'en'" (click)="useLang('ar')" class="social"
-                  style="font-size: 20px; margin-top: -6px;"> ع</a>
+        <ng-container *ngIf="appUserService.isLoggedIn">
+          <div class="dropdown align-items-right mr-0 mr-sm-5">
+            <a class="dropdown-toggle pub-ser d-flex align-items-center">
+              <img class="avatar d-none d-sm-inline-block" src="assets/images/avatar.png" alt=""> <span
+                class="d-none d-sm-block"> <bdi>
+                  {{"hello" | translate}} :
+                  <span class="d-none d-sm-inline-block">{{appUserService.fullName}}</span>
+                </bdi></span>
+              <i class="ik ik-user mobile-user-drop d-sm-none"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+              <div class="d-sm-none">
+                <div>
+                  <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
+                    style="font-size: 20px; font-weight: 400"> E
+                  </a>
+                  <a href="javascript:;" *ngIf="currLang == 'en'" (click)="useLang('ar')" class="social"
+                    style="font-size: 20px; margin-top: -6px;"> ع</a>
+                </div>
+                <div class="dropdown-divider"></div>
+                <p class="d-flex flex-column align-items-center">
+                  <img class="avatar" src="assets/images/avatar.png" alt=""> <span class=""> <bdi>
+                      {{"hello" | translate}} :
+                      <span class="">{{appUserService.fullName}}</span> </bdi></span>
+                </p>
               </div>
-              <div class="dropdown-divider"></div>
-              <p class="d-flex flex-column align-items-center">
-                <img class="avatar" src="assets/images/avatar.png" alt=""> <span class=""> <bdi>
-                    {{"hello" | translate}} :
-                    <span class="">{{appUserService.fulName}}</span> </bdi></span>
-              </p>
-            </div>           
+            </div>
           </div>
-        </div>
-        <div>
-
-          <a *ngIf="logedin==true" style="color:#fff;" class="d-flex flex-column align-items-center" (click)="logout()"> {{"logout" | translate}} </a>
-         
-        </div>
+          <div>
+            <a style="color:#fff;" class="d-flex flex-column align-items-center" (click)="logout()">
+              {{"logout" | translate}} </a>
+          </div>
+        </ng-container>
       </div>
       <div class="mobile-logo w-75">
         <a target="_blank" href="https://seu.edu.sa">
           <img class="" style="width: 300px;height:89px;" src="assets/images/logo_mobile.png" alt="">
         </a>
       </div>
-
       <div class="top-menu d-flex align-items-center  justify-content-end w-25">
-
         <a type="" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></a>
         <div class="header-search d-none d-sm-block">
           <div class="input-group ">
           </div>
         </div>
-
         <div class="d-none d-sm-block" style="white-space: nowrap;">
           <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
             style="font-size: 20px; font-weight: 400"> English

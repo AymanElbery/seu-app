@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppUserService } from '../../services/app-user.service';
 
 @Component({
   selector: 'app-apps-landing',
@@ -7,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppsLandingComponent implements OnInit {
 
-  constructor() { }
-  isLoading=true;
+  constructor(public appUser:AppUserService) { }
+  isLoading = true;
   ngOnInit() {
-    this.isLoading=false;
+    this.isLoading = false;
   }
 
 }
