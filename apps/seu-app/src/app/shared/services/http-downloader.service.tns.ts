@@ -43,15 +43,15 @@ export class DataDownLoadService {
             'Session-ID': sid
         };
    
-        const  downloadedFilePath = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
-        console.log(downloadedFilePath);
-        const zipDownloaderId = this.downloader.createDownload({
-            url: apiUrl,
-            headers: headerHttp,
-            path: downloadedFilePath,
-            fileName: 'mypdffile.pdf'
-        });
         if (isAndroid) {
+            const  downloadedFilePath = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
+            console.log(downloadedFilePath);
+            const zipDownloaderId = this.downloader.createDownload({
+                url: apiUrl,
+                headers: headerHttp,
+                path: downloadedFilePath,
+                fileName: 'mypdffile.pdf'
+            });
             console.log('android');
             const permissions = require('nativescript-permissions');
             // tslint:disable-next-line: max-line-length
@@ -80,6 +80,25 @@ export class DataDownLoadService {
             );
          //   permissions.requestPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE, 'I need these permissions because I\'m cool')
 
+        }else{
+            const zipDownloaderId = this.downloader.createDownload({
+                url: apiUrl,
+                headers: headerHttp,
+                path: fileSystem.knownFolders.ios.library().path,
+                fileName: 'mypdffile.pdf'
+            });
+
+            this.downloader
+            .start(zipDownloaderId, (progressData: ProgressEventData) => {
+                this.csize.next(progressData.value);
+            })
+            .then((completed: DownloadEventData) => {
+                console.log(`zip file saved at : ${completed.path}`);
+                utils.openFile(completed.path);
+                subject.next(true);
+
+            },
+            err=>{console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr',err)});
         }
 
 
