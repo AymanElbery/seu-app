@@ -11,10 +11,25 @@ export class AdmisionUgService extends AppUserService {
   studentDataDetails;
   message;
   notice;  
+
   constructor( router: Router,private admissionUgHttpRequest: HttpRequestAdmisionUgService) {
     super(router);
   }
 
+
+  get fulName(){
+    if(this.isLoggedIn)
+return this.LoggedInUser['S_NAME'];
+    
+    return '';
+    }
+
+    get isLoggedIn(){
+      if(this.LoggedInUser){
+        return true;
+      }
+      return false
+    }
 
   getresstatus(ssn) { 
     
@@ -29,6 +44,11 @@ getloginstatus(ssn) {
 getverification(token,code) { 
     
   return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/verification',{token,code});  
+}
+
+logout_ug(token) { 
+    
+  return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/Logout',{token});  
 }
 
 }

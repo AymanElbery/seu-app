@@ -47,16 +47,23 @@ export class UgVeryficationComponent implements OnInit {
     
       this.submitted = true;
       this.admissionUgservice.getverification(localStorage.getItem('token'),submitdatavalue.code).subscribe(resverify => {      
-      console.log("verific",resverify);
+      //console.log("verific",resverify);
         this.status = (resverify as any).status;  
-        
-       if (this.status==0) {     
-         console.log("message",(resverify as any).message);
-          this.admissionUgservice.studentDataDetails=(resverify as any).data["info"];
-          this.admissionUgservice.message=(resverify as any).message;
-          this.admissionUgservice.notice=(resverify as any).data["notice"];
-           this.router.navigate(['/apps/admission-ug/pay-fee/'])       
-           localStorage.setItem("logedin","true");
+        this.admissionUgservice.LoggedInUser = (resverify as any).data["info"]["student_data"];
+        this.admissionUgservice.studentDataDetails=(resverify as any).data["info"];
+        //console.log("message",this.admissionUgservice.LoggedInUser);
+        this.router.navigate(['/apps/admission-ug/pay-fee/'])   
+
+       if (0==0) {     
+                
+
+         
+
+          
+          // this.admissionUgservice.message=(resverify as any).message;
+          // this.admissionUgservice.notice=(resverify as any).data["notice"];
+               
+          // localStorage.setItem("logedin","true");
           this.submitted = false;
         }
           

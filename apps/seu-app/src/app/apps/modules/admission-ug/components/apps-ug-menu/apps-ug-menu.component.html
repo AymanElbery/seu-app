@@ -23,11 +23,20 @@
             <span> {{'Adminssion Result' | translate}} </span>
             <i class="ik ik-user-check"></i>
           </a>  
-          <a href="#" class="menu-item" routerLink="/apps/admission-ug/pay-fee">              
+          <a *ngIf="admissionugService.isLoggedIn==false" href="#" class="menu-item" routerLink="/apps/admission-ug/ug-login">              
+            <span> {{'Log In' | translate}} </span>
+            <i class="ik ik-user-check"></i>
+          </a>  
+          <a *ngIf="admissionugService.isLoggedIn==true" href="#" class="menu-item" (click)="logout()">              
+            <span> {{'Log Out' | translate}} </span>
+            <i class="ik ik-user-check"></i>
+          </a>  
+
+          <a *ngIf="admissionugService.isLoggedIn==true"  href="#" class="menu-item" routerLinkActive="active"  routerLink="/apps/admission-ug/pay-fee">              
             <span> {{'Pay the Fee' | translate}} </span>
             <i class="ik ik-user-check"></i>
           </a>  
-          <a href="#" class="menu-item" routerLink="/apps/admission-ug/upload-documents">              
+          <a href="#" *ngIf="admissionugService.isLoggedIn==true" class="menu-item" routerLink="/apps/admission-ug/upload-documents">              
             <span> {{'Upload Document' | translate}} </span>
             <i class="ik ik-user-check"></i>
           </a>  

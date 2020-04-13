@@ -7,15 +7,21 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AppUserService {
+  LoggedInUser;
   constructor(public router: Router) {
   }
 
 get fulName(){
-return '';
+  return '';
+}
+
+get isLoggedIn(){
+  return false;
 }
 
 appRedirect(){
-  this.router.navigate(['/apps'])  
+  this.router.navigate(['/apps/'])
+  
 }
 
 logout() {

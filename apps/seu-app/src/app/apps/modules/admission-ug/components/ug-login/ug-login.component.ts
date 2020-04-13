@@ -58,6 +58,7 @@ export class UgLoginComponent implements OnInit {
 console.log("ststuas",this.status);
           // this.admissionUgservice.token=(reslogin as any).data["token"];
            localStorage.setItem('token', (reslogin as any).data["token"]);
+           
            this.router.navigate(['/apps/admission-ug/ug-verification/'])       
        
           this.submitted = false;

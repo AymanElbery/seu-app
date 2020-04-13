@@ -61,9 +61,9 @@ export class AppsHeaderComponent implements OnInit {
     this.translate.onLangChange.subscribe(() => {
       this.initLang();
     });
- if(localStorage.getItem("logedin").toString()=="true"){
-  this.logedin=localStorage.getItem("logedin").toString();
- }
+//  if(localStorage.getItem("logedin").toString()=="true"){
+//   this.logedin=localStorage.getItem("logedin").toString();
+//  }
 
   }
 

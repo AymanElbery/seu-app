@@ -7,6 +7,10 @@ import { UploadDocumentComponent } from './components/upload-document/upload-doc
 import { DisplayResultComponent } from './components/display-result/display-result.component';
 import { UgLoginComponent } from './components/ug-login/ug-login.component';
 import { UgVeryficationComponent } from './components/ug-veryfication/ug-veryfication.component';
+import { AppsUgGuard } from './apps-ug-guard/apps-ug.guard';
+
+
+
 const routes: Routes = [
   {
     path: '', component: UGHomeComponent,
@@ -14,10 +18,11 @@ const routes: Routes = [
 
       { path: 'admission-result', component: AdmissionResultComponent },
       { path: 'display-result', component: DisplayResultComponent },
-      { path: 'pay-fee', component: PayFeeComponent },
-      { path: 'upload-documents', component: UploadDocumentComponent },
+      { path: 'pay-fee', component: PayFeeComponent,canActivate: [AppsUgGuard] },
+      { path: 'upload-documents', component: UploadDocumentComponent,canActivate: [AppsUgGuard] },
       { path: 'ug-login', component: UgLoginComponent },
       { path: 'ug-verification', component: UgVeryficationComponent }
+      
     ]
   }
 ];
