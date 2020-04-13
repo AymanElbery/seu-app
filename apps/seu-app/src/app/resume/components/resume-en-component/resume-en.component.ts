@@ -23,11 +23,11 @@ export class Item{
 
 
 @Component({
-  selector: 'app-resume',
-  styleUrls: ['./resume.component.css'],
-  templateUrl: './resume.component.html'
+  selector: 'app-resume-en',
+  styleUrls: ['./resume-en.component.css'],
+  templateUrl: './resume-en.component.html'
 })
-export class ResumeComponent{
+export class ResumeEnComponent{
 
   id;
   photo = "" ;
@@ -67,10 +67,7 @@ export class ResumeComponent{
     this.resumeService.getStuffByID(this.id).subscribe(
       (response: any) => {
         if (response) {
-          this.name = response.data.EMP_NAME;
           this.email = response.data.WORK_EMAIL;
-          this.jobTitle = response.data.SCALE_DESC;
-          this.section = response.data.ACTUAL_DEPT_DESC;
           this.getResumeByEmail(this.email);
         }
       },
@@ -88,7 +85,7 @@ export class ResumeComponent{
   }
 
   getResumeByEmail(email){
-    this.resumeService.getResumeByEmail(email, "ar").subscribe(
+    this.resumeService.getResumeByEmail(email, "en").subscribe(
       (response: any) => {
         if (response) {
           if (response.status) {
@@ -214,7 +211,7 @@ export class ResumeComponent{
         titles      : this.titles,
       };
       
-      this.resumeService.addResume(data, "ar").subscribe(
+      this.resumeService.addResume(data, "en").subscribe(
         (response: any) => {
           if (response) {
             window.location.reload();

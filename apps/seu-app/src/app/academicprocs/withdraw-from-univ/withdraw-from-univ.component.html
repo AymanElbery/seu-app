@@ -1,34 +1,8 @@
 <div class="main-content">
-  <service-header [title]="'services.withdrow_univ.title' |translate"
-  [desc]="'services.withdrow_univ.desc' |translate"></service-header>
-  <!-- <mat-spinner  *ngIf="isLoading" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;"></mat-spinner> -->
+  <service-header [title]="'services.withdrow_univ.title' |translate" [desc]="'services.withdrow_univ.desc' |translate">
+  </service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
 
-  <!-- <section class="service-single">
-    <div class="container">
-      <h3> {{"services.withdrow_univ.title"|translate}}</h3>
-      <div class="row">
-        <div class=" col-md-5">
-          <p> {{"services.withdrow_univ.desc"|translate}}</p>
-        </div> -->
-        <!-- <div class=" col-md-6 descr">
-            <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
-            &nbsp; &nbsp; &nbsp; &nbsp;
-
-          </div> -->
-      <!-- </div>
-    </div>
-  </section> -->
-
-  <div *ngIf="isLoading" class=" loading-indicator  ">
-    <div class="state">
-
-
-      <mat-spinner *ngIf="isLoading"
-        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-      </mat-spinner>
-
-    </div>
-  </div>
   <div class="ser-state" *ngIf="!isLoading">
     <div *ngFor="let msg of msgs"
       [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
@@ -70,9 +44,8 @@
             <td>{{it.request_number}}</td>
             <td>{{it.term}}</td>
             <td *ngIf='reqData.printable'>
-              <a class="btn btn-primary" [href]="print(it.request_number)"><span
-                class="ik ik-printer"></span>
-              {{"general.print"|translate}}</a>
+              <a class="btn btn-primary" [href]="print(it.request_number)"><span class="ik ik-printer"></span>
+                {{"general.print"|translate}}</a>
             </td>
 
             <td>{{it.insert_date}}</td>

@@ -60,9 +60,11 @@
                           <img style="height: 260px;width:100%"
                             [src]="ads.image.startsWith('http')?ads.image:('data:image/jpg;base64,' + ads.image)" />
                           <p>
-                            {{ads.title}}
-                            <br>
-                            <i class="ik ik-calendar"><span class="text-eng">{{ads.date}}</span></i>
+                            <a class="newslink" [href]="ads.url" target="_blank">
+                              {{ads.title}}
+                              <br>
+                              <i class="ik ik-calendar"><span class="text-eng">{{ads.date}}</span></i>
+                            </a>
                           </p>
                         </div>
                       </div>
@@ -314,7 +316,11 @@
                   </div>
                 </div>
                 <div class="row">
-
+                  <div class="col-md-6 new-ser">
+                    <i class="ik ik-tablet"></i>
+                    <p><a target="_blank" href="https://dms.seu.edu.sa/dms">
+                        {{"menu.DMS" | translate}} </a></p>
+                  </div>
                   <!-- <div class="col-md-6 new-ser">
                   <i class="ik ik-clipboard"></i>
                   <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx">

@@ -8,13 +8,14 @@ import { FormatDays } from './pipes/formatDays.pipe';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { ResumeComponent } from './components/resume-component/resume.component';
-
+import { ResumeEnComponent } from './components/resume-en-component/resume-en.component';
 
 @NgModule({
   declarations: [
     FormatTime,
     FormatDays,
-    ResumeComponent
+    ResumeComponent,
+    ResumeEnComponent
   ],
   imports: [
     ResumeRoutingModule,

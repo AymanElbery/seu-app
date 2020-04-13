@@ -219,12 +219,20 @@
     "resume": {
         "title": "Edit resume",
         "name": "Doctor name",
+        "name_en": "Doctor name in English",
         "email": "Doctor email",
         "phone": "Phone number",
         "jobTitle": "Job title",
+        "jobTitle_en": "Job title in English",
         "section": "Section",
+        "section_en": "Section in English",
         "nationality": "Nationality",
-        "photo": "Photo"
+        "photo": "Photo",
+        "resume_ar": "CV in Arabic",
+        "resume_en": "CV in English",
+        "add_item" : "Add item",
+        "add_title" : "Add title",
+        "save" : "Save CV"
     },
     "services": {
         "academic_status": {
@@ -572,7 +580,7 @@
             "title": "Cancel Courses Request(Term Execuse)",
             "desc": "Cancel Courses Request(Term Execuse)",
             "alert": "Student can cancel this request only during 48 hours starting from applying to the request",
-            "desire": "I want to Cancel Studying Starting From First Term for 1440/1441 Year",
+            "desire": "I want to Cancel Studying Starting From the current Term",
             "count": "Number Of Cancelled Terms",
             "choose_count": "Choose Number Of Terms",
             "mobile": "Mobile Number:(Ex:05xxxxxxxx)",

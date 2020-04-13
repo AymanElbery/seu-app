@@ -1,25 +1,8 @@
 <div class="main-content">
   <service-header [title]="'services.skills_record.title' |translate"
   [desc]="'services.skills_record.desc' |translate"></service-header>
-  <!-- <section class="service-single">
-    <div class="container">
-      <h3>{{"services.skills_record.title" |translate}}</h3>
-      <div class="row">
-        <div class=" col-md-7">
-          <p style="font-weight: bold;font-size: 14px;text-align: justify;"> -->
-            <!-- {{"services.skills_record.desc" |translate}} -->
-          <!-- </p>
-        </div>
-      </div>
-    </div>
-  </section> -->
-  <div *ngIf="isLoading" class=" loading-indicator ">
-    <div class="state">
-      <mat-spinner *ngIf="isLoading"
-        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-      </mat-spinner>
-    </div>
-  </div>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
   <section class="ser-state" *ngIf="!isLoading">
     <nav>
       <div class="nav-item  nav nav-tabs " id="myTab" role="tablist">
