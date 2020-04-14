@@ -184,5 +184,138 @@
             "pdf": "",
             "vedio": ""
         }
+    },
+	
+	"/masterstddata/academicstatus": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	
+	"/masterstddata/academicrecord": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/masterstddata/info-update": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/masterstdcertificate/idcertificate": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	
+	"/masterstdcertificate/examattendacecertificate": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	
+	"/masterstdcertificate/examattendacecertificateapp": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/academicrequests/withdrawal": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/academicrequests/studypostpone": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/academicrequests/termexecuse": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/academicrequests/objectexam": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/academicrequests/cancelcourse": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/academicrequests/reEnroll": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/academicrequests/examsexecuses": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/academicrequests/lecturesexecuses": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/mfiniance/payment": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/mfiniance/refund": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/otherrequests/changebranch": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/otherrequests/changecourse": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/otherrequests/personalid": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/otherrequests/absencequery": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+	"/otherrequests/graduateprofile": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
     }
+	
+	
+	
 }

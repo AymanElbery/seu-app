@@ -7,6 +7,7 @@ import { UploadDocumentComponent } from './components/upload-document/upload-doc
 import { DisplayResultComponent } from './components/admission-result/result/display-result.component';
 import { UgLoginComponent } from './components/ug-login/login/ug-login.component';
 import { UgVeryficationComponent } from './components/ug-login/verify/ug-veryfication.component';
+import { MatchDocumentsComponent } from './components/match-documents/match-documents.component';
 import { AppsUgGuard } from './apps-ug-guard/apps-ug.guard';
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'ug-verification', component: UgVeryficationComponent },
 
       { path: 'pay-fee', component: PayFeeComponent, canActivate: [AppsUgGuard] },
+      { path: 'match-documents', component: MatchDocumentsComponent },
       { path: 'upload-documents', component: UploadDocumentComponent, canActivate: [AppsUgGuard] }
 
     ]

@@ -42,6 +42,12 @@ export class AdmisionUgService extends AppUserService {
     return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/verification', data);
   }
 
+
+  matchdocs(token) {
+    return this.admissionUgHttpRequest.postRequest_obj('/Post_result_service', { token });
+  }
+
+
   logout_ug(token) {
     return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/Logout', { token });
   }

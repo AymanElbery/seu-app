@@ -12,5 +12,7 @@
     "CAMP": "Campus",
     "COLL_DESC1": "College",
     "MAJR_DESC1": "MAJRR",
-    "LogInUG": "LogIn Undergraguate"
+    "LogInUG": "LogIn Undergraguate",
+    "certificate_type": "Certificate Type",
+    "matchdocuments": "Match Documents"
 }

@@ -11,6 +11,7 @@ import { AppsUGMenuComponent } from './components/apps-ug-menu/apps-ug-menu.comp
 import { DisplayResultComponent } from './components/admission-result/result/display-result.component';
 import { UgLoginComponent } from './components/ug-login/login/ug-login.component';
 import { UgVeryficationComponent } from './components/ug-login/verify/ug-veryfication.component';
+import { MatchDocumentsComponent } from './components/match-documents/match-documents.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { AdmisionUgService } from './services/admision-ug.service';
 import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
@@ -18,7 +19,7 @@ import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 
 @NgModule({
   declarations: [UGHomeComponent, AdmissionResultComponent, PayFeeComponent, UploadDocumentComponent,
-    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent],
+    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent,MatchDocumentsComponent],
   imports: [AppsSharedModule,
     AdmissionUGRoutingModule,
     SeucommonModule,
