@@ -79,7 +79,8 @@
             "date_and_status": "تاريخ/حالة الطلب",
             "non_cancelable_request": "لا يمكن إلغاء الطلب",
             "req_type": "نوع الطلب",
-            "delete_print_req": "طباعة/حذف الطلب"
+            "delete_print_req": "طباعة/حذف الطلب",
+            "can_update_data": "Can Update Data"
         },
         "save": "حفظ",
         "cancel": "إلغاء",
