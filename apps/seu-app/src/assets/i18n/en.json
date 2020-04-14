@@ -73,7 +73,7 @@
             "day": "day   ",
             "time": "time   ",
             "att": "Attendance",
-            "rejectrs": "Reject Reason",
+            "rejectrs":"Reject Reason",
             "pre_requests": "Show Previous Requests",
             "pre_requesr": "Show Previous Requests",
             "date_and_status": "Request Date/Status",
@@ -83,7 +83,6 @@
         },
         "save": "Save",
         "cancel": "Cancel",
-        "Delete": "Delete",
         "count": "Count",
         "college": "College",
         "language": "Language",
@@ -167,11 +166,10 @@
         "ALWAFI": " Self Services",
         "Attednace": "Attendace ",
         "Support": " Support",
-        "BANNER": "Banner Services",
-        "FacultySelfService":"Banner Faculty Self Service",
+        "BANNER": "Banner",
         "SYSTEM": "System",
         "CAL": " Eduaction calender",
-        "EVENTSMANAGE": "   Self Service Banner Event Management",
+        "EVENTSMANAGE": "  Events manegment",
         "RESGISTERCOURSES": "Register wishes ",
         "EDUSYSTEMS": " Eduaction systems insturctions ",
         "INSTRUCTEXAM": "Electronic Exam Instructions ",
@@ -612,11 +610,10 @@
             "cancel": "Cancel",
             "national_id": "National Id",
             "payment_reciept_copy": "Payment Reciept Copy",
-            "digitrequierd22": "22 digit  Number",
-            "erro_22digit":"Please input correct 22 digit  Number",
-            "erro_4digit":"Please input correct 4 digit",
-            "erro_national_id":"Please Upload  National Id",
-            "erro_reciept_copy":"Please Upload  Payment Reciept Copy"
+            "digitrequierd_22": "Please input correct 22 digit  Number",
+            "digitrequierd_4": "Please input correct 4 digit",
+            "UploadNationalId": "Please Upload  National Id",
+            "UploadReciept": "Please Upload  Payment Reciept Copy"
         },
         "medical_report": {
             "title": "Medical Report Request",
@@ -1036,6 +1033,6 @@
         "favemps": "favourites List",
         "favList": "Registered List",
         "Send": "Send",
-        "bakcList": "Back to List"
+        "bakcList": "Back List"
     }
 }

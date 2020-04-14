@@ -14,7 +14,9 @@ export class GlobalService extends GlobalBaseService {
   getItem(key): string {
     return '';
   }
-
+  removeItem(key) {
+    applicationSettings.remove(key);
+  }
   setItem(key: string, value: string) {
     applicationSettings.setString(key, value);
   }

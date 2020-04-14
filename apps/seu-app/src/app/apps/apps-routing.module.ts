@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppsLandingComponent } from './components/apps-landing/apps-landing.component';
+
 const routes: Routes = [
-  { path: '', component: AppsLandingComponent },
+  {
+    path: '',
+    component: AppsLandingComponent,
+  },
   {
     path: 'admission-ug',
     loadChildren:
@@ -11,7 +15,9 @@ const routes: Routes = [
     path: 'admission-gr',
     loadChildren:
       './modules/admission-gr/admission-gr.module#AdmissionGRModule',
-  },
+  }
+
+  
 ];
 
 @NgModule({
