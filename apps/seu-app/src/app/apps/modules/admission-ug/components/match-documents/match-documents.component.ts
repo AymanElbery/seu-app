@@ -14,23 +14,31 @@ export class MatchDocumentsComponent implements OnInit {
   subscriptionsdata:Subscription;
   info;
   messages;
+  messageNodata;
+  isLoading=false;
   constructor(private admissionUgservice: AdmisionUgService, private router: Router,public globalService: GlobalBaseService) { }
 
-  ngOnInit() {
-    console.log("token",this.globalService.getItem("tokenKey"));
-    this.subscriptionsdata= this.admissionUgservice.matchdocs(this.globalService.getItem(this.admissionUgservice.tokenKey)).subscribe(resmatch => {
-      console.log("data resposne",resmatch);
-      const status = resmatch['status'];
-      if(resmatch['data']['info']){
-        
-      this.info=(resmatch as any ).data["info"]
-this.messages=(resmatch as any ).data["messages"]
-      console.log("data resposne",this.info,this.messages);
-
-      }
-
+  ngOnInit() {   
+   this.matchdocs();
+  }
+matchdocs(){
+  this.isLoading=true;
+  this.subscriptionsdata= this.admissionUgservice.matchdocs(this.globalService.getItem(this.admissionUgservice.tokenKey)).subscribe(resmatch => {
+    //console.log("data",resmatch);
+    const status = resmatch['status'];     
+    if(status==1){
+    if(resmatch['data']['info']){        
+    this.info=(resmatch as any ).data["info"]
+    this.messages=(resmatch as any ).data["messages"]
+    this.isLoading=false
     }
-    );
+  }
+  if(status==0){
+    this.messageNodata=(resmatch as any ).data["messages"];     
+    this.isLoading=false
   }
 
+  }
+  );
+}
 }

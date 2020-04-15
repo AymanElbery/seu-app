@@ -23,7 +23,7 @@ const routes: Routes = [
       { path: 'ug-verification', component: UgVeryficationComponent },
 
       { path: 'pay-fee', component: PayFeeComponent, canActivate: [AppsUgGuard] },
-      { path: 'match-documents', component: MatchDocumentsComponent },
+      { path: 'match-documents', component: MatchDocumentsComponent,canActivate: [AppsUgGuard] },
       { path: 'upload-documents', component: UploadDocumentComponent, canActivate: [AppsUgGuard] }
 
     ]

@@ -10,8 +10,21 @@
     "ResultStatus":"Admission Result",
     "Name":"NameAR",
     "ID":"ID",
+    "code":"Code",
     "CAMP":"Campus",
     "COLL_DESC1":"College",
     "MAJR_DESC1":"MAJRR",
-    "LogInUG":"LogIn Undergraguate"
+    "LogInUG":"LogIn Undergraguate",
+    "certificate_type": "Certificate Type",
+    "matchdocuments": "Match Documents",
+    "downlaodattachement": "Dwonlaod Attachment",
+    "downlaodmotherId": "Download Mother Id",
+    "attachment": "attachment",
+    "mother_id": "Mother Id",
+    "UplaodDocs": "Upload Documents",
+    "updatedocument": "Update Document",
+    "docs_saved": "Data Save Successfully",    
+    "formatnotsupport":"Selected file format is not supported",
+    "Attachementrequired":"Attachement Required",
+    "verificationUg":"Veryfication Log In"
 }

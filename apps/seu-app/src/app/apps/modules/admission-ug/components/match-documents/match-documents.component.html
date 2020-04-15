@@ -1,6 +1,6 @@
 <div class="main-content">
   <service-header title='{{"matchdocuments" | translate}}'></service-header>
-  <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
+  <seu-loader [isLoading]="isLoading"></seu-loader>
   <div class="container" style="margin-top:20px; margin-bottom:15px;">
     <div class="ser-state">
       <div *ngIf="messages" style="text-align: right" [ngClass]="'alert alert-info'" role="alert">
@@ -8,6 +8,9 @@
         <span>{{messages.message2}}</span><br>
         <span>{{messages.message3}}</span><br>
         <span>{{messages.message4}}</span><br>
+      </div>
+      <div *ngIf="messageNodata" style="text-align: right" [ngClass]="'alert alert-info'" role="alert">
+        <span>{{messageNodata}}</span><br>       
       </div>
     </div>
   </div>
