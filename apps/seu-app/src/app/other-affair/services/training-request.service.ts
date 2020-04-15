@@ -15,19 +15,24 @@ export class TrainingRequestService {
   }
 
   getِgetRequests() {
+    this.configService.baseUrl = "stdservicesapi";
     return this.httRequest.GetRequest('training_service').toPromise();
   }
   AddRequest(data) {
+    this.configService.baseUrl = "stdservicesapi";
     return this.httRequest.postRequest('training_service/insert', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = "stdservicesapi";
     return this.httRequest.GetRequest('training_service/remove/' + id).toPromise();
   }
 
   Download(id) {
-    return this.configService.getApiURI() + '/training_service/download/' + id ;
+    this.configService.baseUrl = "stdservicesapi";
+    return this.configService.getApiURI() + '/training_service/download/' + id;
   }
   DownloadEng(id) {
+    this.configService.baseUrl = "stdservicesapi";
     return this.configService.getApiURI() + '/training_service/download/' + id + '?Lang=en' + "&sid=" + this.configService.getSid();
   }
 }

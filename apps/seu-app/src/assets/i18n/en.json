@@ -73,7 +73,7 @@
             "day": "day   ",
             "time": "time   ",
             "att": "Attendance",
-            "rejectrs":"Reject Reason",
+            "rejectrs": "Reject Reason",
             "pre_requests": "Show Previous Requests",
             "pre_requesr": "Show Previous Requests",
             "date_and_status": "Request Date/Status",
@@ -83,6 +83,7 @@
         },
         "save": "Save",
         "cancel": "Cancel",
+        "Delete": "Delete",
         "count": "Count",
         "college": "College",
         "language": "Language",
@@ -214,7 +215,8 @@
         "resetpassword": "Reset Password",
         "taks": "Tasks Management",
         "student_attendance": "Student Attendance",
-        "resume": "Doctor CV"
+        "resume": "Doctor CV",
+        "gpa": "احتساب نظام التقديرات المعتمد"
     },
     "resume": {
         "title": "Edit resume",
@@ -230,9 +232,9 @@
         "photo": "Photo",
         "resume_ar": "CV in Arabic",
         "resume_en": "CV in English",
-        "add_item" : "Add item",
-        "add_title" : "Add title",
-        "save" : "Save CV"
+        "add_item": "Add item",
+        "add_title": "Add title",
+        "save": "Save CV"
     },
     "services": {
         "academic_status": {
@@ -267,7 +269,8 @@
             "stds_info": "Student Info",
             "info_en": "English Language",
             "info_ar": "Arabic Language",
-            "phone_note": "( start with 5 without 0 xxxxxxxx):"
+            "phone_note": "( start with 5 without 0 xxxxxxxx):",
+            "address": "Address"
         },
         "certificate_id": {
             "title": "Certificate ID",
@@ -733,6 +736,15 @@
             "note7": "Password should not contain your first name.",
             "note8": "Password should not contain your last name.",
             "note9": "Password should not be from last 5 passwords."
+        },
+        "course_gpa": {
+            "title": " احتساب نظام التقديرات المعتمد",
+            "desc": " احتساب نظام التقديرات المعتمد",
+            "notes": "أرغب في احتساب نظام التقديرات المعتمد واحتساب المعدل للمقررات التالية:",
+            "CI003": "مهارات أكاديمية CI003",
+            "CS003": "أساسيات الحاسب CS003",
+            "req_date": "Date",
+            "yes": "Yes"
         }
     },
     "policy": {
