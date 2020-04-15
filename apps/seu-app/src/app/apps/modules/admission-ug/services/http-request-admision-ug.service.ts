@@ -14,11 +14,11 @@ export class HttpRequestAdmisionUgService {
   getApiURI() {
     return environment.servie_admission_UG;
   }
- 
+
 
   apllyBasicParams(obj) {
 
-      obj["lang"] = this.translate.currentLang == 'ar' ? 1 : 2;
+    obj["lang"] = this.translate.currentLang == 'ar' ? 1 : 2;
     return obj;
   }
 
@@ -27,7 +27,7 @@ export class HttpRequestAdmisionUgService {
       'Content-Type': 'application/json'
     });
   }
-  
+
 
   postRequest_obj(path: string, body: any = {}) {
     let url = this.getApiURI() + path;

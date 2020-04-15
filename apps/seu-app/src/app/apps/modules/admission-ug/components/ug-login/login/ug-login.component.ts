@@ -22,7 +22,7 @@ export class UgLoginComponent implements OnInit {
   submitted = false;
   studentData;
   environment;
-  constructor(private toastr: AppToasterService, private admissionUgservice: AdmisionUgService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globalService: GlobalBaseService) {
+  constructor(private toastr: AppToasterService, public admissionUgservice: AdmisionUgService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globalService: GlobalBaseService) {
 
     this.AddReqForm = fb.group({
       'ssn': ['', [Validators.required, Validators.minLength(10), Validators.minLength(10)]],

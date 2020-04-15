@@ -9,7 +9,7 @@ import { AppUserService } from 'src/app/apps/services/app-user.service';
 })
 export class AppsUGMenuComponent implements OnInit {
 
-  constructor(private admissionugService: AdmisionUgService, private appService: AppUserService) {
+  constructor(public admissionugService: AdmisionUgService, private appService: AppUserService) {
     this.isLoggedIn();
   }
   isLoggedIn() {
