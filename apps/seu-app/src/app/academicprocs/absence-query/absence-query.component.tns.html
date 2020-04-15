@@ -13,7 +13,7 @@
     </ActionItem>    
     <Label text='{{"services.absence_quyery.title" |translate}}'></Label>
 </ActionBar>
-
+<GridLayout>
 <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 </StackLayout>
@@ -126,3 +126,4 @@
         <Button  text='{{"general.ar_print"|translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
         <Button  text='{{"general.en_print"|translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
     </FlexboxLayout>
+</GridLayout>
