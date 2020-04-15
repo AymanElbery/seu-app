@@ -66,7 +66,7 @@
           </StackLayout>
 
 
-        <RadListView height="100%" *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
+        <RadListView ios:visibility="collapsed" height="100%" *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
             <ng-template let-item="item">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between" class=" ysHdrop2" 
                 [ngStyle]="{'border-bottom-width':item ===recoredData.terms[recoredData.terms.length-1] ? '0' : '0' }">

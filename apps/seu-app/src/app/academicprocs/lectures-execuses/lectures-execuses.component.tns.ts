@@ -27,6 +27,7 @@ export class LecturesExecusesComponent implements OnInit {
   reqData:RequestData={can_add_new_request:false,notes:[],reqs:[],requests:[]};
   msgs=[];
   isLoading = false;
+  clicked: any;
 
   constructor(private routerExtensions: RouterExtensions, 
     private toastr: AppToasterService, 
@@ -52,7 +53,12 @@ export class LecturesExecusesComponent implements OnInit {
       }
     );
   }
-
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
+  }
 
 
   print(req) {

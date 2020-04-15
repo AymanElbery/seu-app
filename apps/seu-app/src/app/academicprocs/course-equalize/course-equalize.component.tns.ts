@@ -28,6 +28,7 @@ export class CourseEqualizeComponent implements OnInit {
   status;
   isLoading = false;
   isDownLoaded = false;
+  clicked: any;
 
 
   constructor(private toastr: AppToasterService,
@@ -37,6 +38,13 @@ export class CourseEqualizeComponent implements OnInit {
      private downloader: DataDownLoadService
      ) { }
 
+     clickme(item) {
+      this.clicked = item;
+    }
+    uclickme(item) {
+      this.clicked = {};
+    }
+    
   ngOnInit() {
     Downloader.init(); 
     this.isLoading = true;

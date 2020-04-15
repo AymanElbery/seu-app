@@ -21,12 +21,20 @@ export class ExamExcuseComponent implements OnInit {
   msgs=[];
   status;
   isLoading = false;
+  clicked: any;
 
   constructor(private toastr: AppToasterService,
      private acadmicProc: ExamExcuseService,
      private routerExtensions: RouterExtensions,
      private translate: TranslateService,) { }
 
+     clickme(item) {
+      this.clicked = item;
+    }
+    uclickme(item) {
+      this.clicked = {};
+    }
+    
   ngOnInit() {
     this.getRequests();
   }
