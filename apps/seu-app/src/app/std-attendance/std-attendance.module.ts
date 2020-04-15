@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import { AttendanceRoutingModule } from './attendance-routing.module';
+import { StdAttendanceRoutingModule } from './std-attendance-routing.module';
 import { CrnsComponent } from './components/crns-component/crns.component';
 import { CodeComponent } from './components/code-component/code.component';
-import { ReportComponent } from './components/report-component/report.component';
 import { AppLazyTransModule } from './../app.lazytrans.module';
 import { FormatTime } from './pipes/formatTime.pipe';
 import { FormatDays } from './pipes/formatDays.pipe';
@@ -16,15 +15,14 @@ import { FormsModule } from '@angular/forms';
     CrnsComponent,
     FormatTime,
     FormatDays,
-    CodeComponent,
-    ReportComponent
+    CodeComponent
   ],
   imports: [
-    AttendanceRoutingModule,
+    StdAttendanceRoutingModule,
     AppLazyTransModule,
     CommonModule,
     MatProgressSpinnerModule,
     FormsModule
   ]
 })
-export class AttendanceModule { }
+export class StdAttendanceModule { }

@@ -58,7 +58,7 @@ export class AttendanceService {
         });
     }
 
-    setCode(code, data){
+    setCode(data, code){
         
         let startTime = new Date().getTime();
         let endTime = startTime + (10 * 60000 );
@@ -69,38 +69,28 @@ export class AttendanceService {
             endTime: endTime,
             active: 1,
             crn: data.CRN,
-            meet_id: data.SSRMEET_SURROGATE_ID,
-            term: data.TERM_CODE,
         },
         {
             headers: this.headers,
         });
     }
 
-    getDates(crn){
-        return this.http.post(this.URL + "attendance/crndates",
+    getStdCrns(id) {
+        return this.http.post(this.URL + "attendance/stdcrns",
         { 
-            crn: crn,
+            id: id
         },
         {
             headers: this.headers,
         });
     }
 
-    getAllStds(crn){
-        return this.http.post(this.URL + "attendance/crnallstds",
+    confirmAttend(id, crn, code){
+        return this.http.post(this.URL + "attendance/confirmattend",
         { 
+            id: id,
             crn: crn,
-        },
-        {
-            headers: this.headers,
-        });
-    }
-
-    getAttendStds(crn){
-        return this.http.post(this.URL + "attendance/attends",
-        { 
-            crn: crn,
+            code: code
         },
         {
             headers: this.headers,

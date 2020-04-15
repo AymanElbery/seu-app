@@ -4,17 +4,12 @@
         <h3>{{ "menu.student_attendance" | translate}}</h3>
         <div class="row">
           <div class=" col-md-5">
-            <p>CRNS</p>
+            <p>{{"attends.crns"|translate}}</p>
           </div>
         </div>
       </div>
     </section>
-    <div class=" loading-indicator  ">
-      <div class="state">
-        <mat-spinner style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-        </mat-spinner>
-      </div>
-    </div>
+    
     <div class="row">
         <div class="col-md-11 code-content">
             <h1 *ngIf="!codeExpire" class="text-center">{{ code }}</h1>

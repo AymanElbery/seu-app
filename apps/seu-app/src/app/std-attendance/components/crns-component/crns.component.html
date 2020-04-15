@@ -4,7 +4,7 @@
         <h3>{{ "menu.student_attendance" | translate}}</h3>
         <div class="row">
           <div class=" col-md-5">
-            <p>{{"attends.crns"|translate}}</p>
+            <p>CRNS</p>
           </div>
         </div>
       </div>
@@ -26,23 +26,19 @@
                     <th scope="col"> {{"services.reg.startTime"|translate}} </th>
                     <th scope="col"> {{"services.reg.endTime"|translate}} </th>
                     <th scope="col"> {{"services.reg.actions"|translate}} </th>
-                    <th scope="col"> {{"services.reg.reports"|translate}} </th>
                 </tr>
               </thead>
             <tbody>
                 <tr *ngFor="let crn of crns">
                     <td>{{ crn.CRN }}</td>
-                    <td>{{ crn.SCBCRSE_TITLE }}</td>
+                    <td>{{ crn.CRSE_TITLE }}</td>
                     <td>{{ crn.days | formatCrnDays }}</td>
                     <td>{{ crn.SSRMEET_BEGIN_TIME | formatCrnTime }}</td>
                     <td>{{ crn.SSRMEET_END_TIME | formatCrnTime}}</td>
                     <td>
-                        <span *ngIf="crn.valid" class="text-center text-danger">{{"attends.attend_not_allow"|translate}}</span>
-                        <button [routerLink]="['/attendance/code']" [queryParams]="{c: crn.CRN}" *ngIf="!crn.valid" class="btn btn-primary">{{"attends.allow_attend"|translate}}</button>
+                        <span *ngIf="!crn.active" class="text-center text-danger">لا يمكن إثبات الحضور في غير وقت المحاضرة</span>
+                        <button [routerLink]="['/std-attendance/code']" [queryParams]="{c: crn.CRN}" *ngIf="crn.active" class="btn btn-primary">إثبات الحضور</button>
                     </td>
-                    <td>
-                      <button [routerLink]="['/attendance/report']" [queryParams]="{c: crn.CRN}" class="btn btn-primary">{{"attends.attend_report"|translate}}</button>
-                  </td>
                 </tr>
             </tbody>
         </table>
