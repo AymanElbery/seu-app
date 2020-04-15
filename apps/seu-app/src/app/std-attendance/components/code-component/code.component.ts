@@ -29,6 +29,7 @@ export class CodeComponent implements OnDestroy{
     id;
     meet_id;
     pidm;
+    insertBefor = false;
     constructor(
         public userService: UserService, 
         private attendanceService: AttendanceService, 
@@ -41,17 +42,32 @@ export class CodeComponent implements OnDestroy{
     ) {
         this.route.queryParams.subscribe(params => {
             this.crn = params.c;
-            this.attendanceService.getCrn(this.crn).subscribe(
-                (response: any) => {
-                  if (response) {
-                      this.meet_id = response.data[0].SSRMEET_SURROGATE_ID;
-                  }
-                },
-                error => {}
-            )
+            this.id = this.userService.getActiveRoleDetails().id;
+            this.checkAttend(this.crn, this.id);
         });
-        this.id = this.userService.getActiveRoleDetails().id;
-        
+    }
+
+    checkAttend(crn, id){
+        this.attendanceService.getAttendStd(crn, id).subscribe(
+            (response: any) => {
+              if (response) {
+                if (response.data.length > 0) {
+                    this.insertBefor = false;
+                } else {
+                    this.insertBefor = true;
+                    this.attendanceService.getCrn(this.crn).subscribe(
+                        (response: any) => {
+                          if (response) {
+                              this.meet_id = response.data[0].SSRMEET_SURROGATE_ID;
+                          }
+                        },
+                        error => {}
+                    )
+                }
+              }
+            },
+            error => {}
+        )
     }
 
     ngOnDestroy() {
@@ -68,7 +84,7 @@ export class CodeComponent implements OnDestroy{
                         this.attendanceService.confirmAttend(this.id, this.crn, this.codeInsert).subscribe(
                             (response: any) => {
                             if (response) {
-                                this.codeSuccess = true;
+                                this.router.navigate(['/std-attendance'])
                             }
                             },
                             error => {}

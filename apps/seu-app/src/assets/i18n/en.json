@@ -246,6 +246,7 @@
         "std_name": "NAME",
         "attend" : "ATT",
         "absent" : "ABS",
+        "finish" : "Finish",
         "JAN" : "Jan",
         "FEB" : "Feb",
         "MAR" : "Mar",

@@ -96,4 +96,15 @@ export class AttendanceService {
             headers: this.headers,
         });
     }
+
+    getAttendStd(crn, id){
+        return this.http.post(this.URL + "attendance/getattendstd",
+        { 
+            id: id,
+            crn: crn
+        },
+        {
+            headers: this.headers,
+        });
+    }
 }

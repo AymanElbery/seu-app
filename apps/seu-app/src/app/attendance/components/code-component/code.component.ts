@@ -110,6 +110,12 @@ export class CodeComponent implements OnDestroy{
         }, 1000);
     }
 
+    closeTimer(){
+        clearInterval(this.timerId);
+        this.codeExpire = true;
+        this.disActiveCode();
+    }
+
     disActiveCode(){
         this.attendanceService.disActiveCode(this.code).subscribe(
             (response: any) => {
