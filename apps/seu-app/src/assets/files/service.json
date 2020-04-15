@@ -188,94 +188,94 @@
 	
 	"/masterstddata/academicstatus": {
         "ar": {
-            "pdf": "300.pdf",
+            "pdf": "m10.pdf",
             "vedio": ""
         }
     },
 	
 	"/masterstddata/academicrecord": {
         "ar": {
-            "pdf": "",
+            "pdf": "m20.pdf",
             "vedio": ""
         }
     },
 	"/masterstddata/info-update": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m30.pdf",
+            "vedio": "m30.mp4"
         }
     },
 	"/masterstdcertificate/idcertificate": {
         "ar": {
-            "pdf": "",
+            "pdf": "m40.pdf",
             "vedio": ""
         }
     },
 	
 	"/masterstdcertificate/examattendacecertificate": {
         "ar": {
-            "pdf": "",
+            "pdf": "m50.pdf",
             "vedio": ""
         }
     },
 	
 	"/masterstdcertificate/examattendacecertificateapp": {
         "ar": {
-            "pdf": "",
+            "pdf": "m60.pdf",
             "vedio": ""
         }
     },
 	"/academicrequests/withdrawal": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m70.pdf",
+            "vedio": "m70.mp4"
         }
     },
 	"/academicrequests/studypostpone": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m80.pdf",
+            "vedio": "m80.mp4"
         }
     },
 	"/academicrequests/termexecuse": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m90.pdf",
+            "vedio": "m90.mp4"
         }
     },
 	"/academicrequests/objectexam": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m100.pdf",
+            "vedio": "m100.mp4"
         }
     },
 	"/academicrequests/cancelcourse": {
         "ar": {
-            "pdf": "",
+            "pdf": "m110.pdf",
             "vedio": ""
         }
     },
 	"/academicrequests/reEnroll": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m120.pdf",
+            "vedio": "m120.mp4"
         }
     },
 	"/academicrequests/examsexecuses": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m130.pdf",
+            "vedio": "m130.mp4"
         }
     },
 	"/academicrequests/lecturesexecuses": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m140.pdf",
+            "vedio": "m140.mp4"
         }
     },
 	"/mfiniance/payment": {
         "ar": {
-            "pdf": "",
+            "pdf": "m150.pdf",
             "vedio": ""
         }
     },
@@ -287,31 +287,31 @@
     },
 	"/otherrequests/changebranch": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m160.pdf",
+            "vedio": "m160.mp4"
         }
     },
 	"/otherrequests/changecourse": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m170.pdf",
+            "vedio": "m170.mp4"
         }
     },
 	"/otherrequests/personalid": {
         "ar": {
-            "pdf": "",
-            "vedio": ""
+            "pdf": "m180.pdf",
+            "vedio": "m180.mp4"
         }
     },
 	"/otherrequests/absencequery": {
         "ar": {
-            "pdf": "",
+            "pdf": "m190.pdf",
             "vedio": ""
         }
     },
 	"/otherrequests/graduateprofile": {
         "ar": {
-            "pdf": "",
+            "pdf": "m200.pdf",
             "vedio": ""
         }
     }

@@ -71,9 +71,8 @@ export class ServiceHeaderComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.width = "50%";
     dialogConfig.data = { url };
-    this.dialog.open(DialogPlayerComponent, dialogConfig).afterClosed().subscribe(res => {
-
-    });
+    this.dialog.open(DialogPlayerComponent, dialogConfig);
+    return false;
   }
 
 }

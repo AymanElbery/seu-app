@@ -5,14 +5,21 @@
     <button type="button" class="btn-close-brd" (click)="closeDiag()" mat-dialog-close><i class="ik ik-x"></i> </button>
   </div>
 
-<!-- <div class="video">
+  <vg-player>
+
+    <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls autoplay>
+      <source [src]="vedio_url" type="video/mp4">
+    </video>
+  </vg-player>
+
+  <!-- <div class="video">
     <video controls (click)="toggleVideo()" #videoPlayer>
         <source [src]="vedio_url" type="video/mp4" />
         Browser not supported
     </video>
 </div> -->
 
-  <iframe width="760" height="489" [src]="vedio_url"
-  frameborder="0" allowfullscreen="true"></iframe>
+  <!-- <iframe width="760" height="489" [src]="vedio_url"
+  frameborder="0" allowfullscreen="true"></iframe> -->
 
 </div>
