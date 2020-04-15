@@ -32,6 +32,7 @@ export class WithdrawFromUnivComponent implements OnInit {
   isLoading = false;
   deleting = false;
   isDownLoaded = false;
+  clicked: any;
   constructor(
     private translate: TranslateService,
     private _modalService: ModalDialogService,
@@ -39,6 +40,13 @@ export class WithdrawFromUnivComponent implements OnInit {
     private toastr: AppToasterService,
     private downloader: DataDownLoadService) { }
 
+    clickme(item) {
+      this.clicked = item;
+    }
+    uclickme(item) {
+      this.clicked = {};
+    }
+    
   ngOnInit() {
     Downloader.init();
     this.isLoading = true;
