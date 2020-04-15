@@ -27,7 +27,7 @@
     </FlexboxLayout>
 
     
-    <RadListView *ngIf="!isLoading && reqData.reqs&& reqData.reqs.length>0" [items]="reqData.reqs" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
+    <RadListView ios:visibility="collapsed" *ngIf="!isLoading && reqData.reqs&& reqData.reqs.length>0" [items]="reqData.reqs" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
         <ng-template let-item="item">
             <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop2" 
             [ngStyle]="{'border-bottom-width':item ===reqData.reqs[reqData.reqs.length-1] ? '0' : '1' }">
