@@ -79,7 +79,8 @@
             "date_and_status": "Request Date/Status",
             "non_cancelable_request": "Can't Delete Request",
             "req_type": "Type",
-            "delete_print_req": "Print/Delete Request"
+            "delete_print_req": "Print/Delete Request",
+            "can_update_data": "Can Update Data"
         },
         "save": "Save",
         "cancel": "Cancel",

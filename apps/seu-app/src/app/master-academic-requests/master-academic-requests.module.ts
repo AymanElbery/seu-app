@@ -32,7 +32,7 @@ import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectu
 import { AddExamExecuseComponent } from './exams-execuses/diag/add-exam-execuse/add-exam-execuse.component';
 import { MatDialogModule, MatCheckboxModule } from '@angular/material';
 import { AppLazyTransModule } from '../app.lazytrans.module';
-
+import { SeucommonModule } from '../seucommon/seucommon.module';
 
 @NgModule({
   declarations: [AddWithdrawalRequestComponent
@@ -74,7 +74,8 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     ToastrModule.forRoot(),
     MatDialogModule,
     MatCheckboxModule,
-    AppLazyTransModule
+    AppLazyTransModule,
+    SeucommonModule
   ],
   providers: [UniversityWithdrawalService,
     TermExecuseService, StudyPostponeService, ReEnrollService,
