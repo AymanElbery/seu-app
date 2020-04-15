@@ -102,8 +102,9 @@
         "mismatch": "Passwords Doesn't match",
         "request_saved": "Saved successfully",
         "error": "Error",
-        "instruction_pdf_file": "Instructions File",
-        "instruction_vedio_file": "Instructions Vedio"
+        "instruction_pdf_file": "Manual File",
+        "instruction_vedio_file": "Manual Vedio",
+        "instruction_": "Manual"
     },
     "menu": {
         "myservices": "My Services",

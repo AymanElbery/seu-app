@@ -103,7 +103,8 @@
         "request_saved": "تم الحففظ بنجاح",
         "error": "خطأ",
         "instruction_pdf_file": "ملف توضيحي للخدمة",
-        "instruction_vedio_file": "فيديو توضيحي للخدمة"
+        "instruction_vedio_file": "فيديو توضيحي للخدمة",
+        "instruction_": "الدليل الارشادي"
     },
     "menu": {
         "myservices": "خدماتي",
