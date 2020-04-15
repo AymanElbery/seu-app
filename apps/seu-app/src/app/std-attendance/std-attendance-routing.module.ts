@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CrnsComponent } from './components/crns-component/crns.component';
 import { CodeComponent } from './components/code-component/code.component';
-import { ReportComponent } from './components/report-component/report.component';
 
 const routes: Routes = [
   {
@@ -16,10 +15,6 @@ const routes: Routes = [
   { 
     path: 'code', 
     component: CodeComponent 
-  },
-  { 
-    path: 'report', 
-    component: ReportComponent 
   }
 ];
 
@@ -27,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AttendanceRoutingModule { }
+export class StdAttendanceRoutingModule { }

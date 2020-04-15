@@ -108,6 +108,11 @@ const routes: Routes = [
         loadChildren: './attendance/attendance.module#AttendanceModule'
       },
       {
+        path: 'std-attendance',
+        loadChildren: './std-attendance/std-attendance.module#StdAttendanceModule',
+        canActivate: [GRGuard, UGGuard]
+      },
+      {
         path: 'resume',
         loadChildren: './resume/resume.module#ResumeModule',
         canActivate: [EmpGuard]
