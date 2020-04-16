@@ -53,10 +53,10 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
       <StackLayout width="100%"  class="">
             <StackLayout *ngFor="let item of _dataItems" >
                 <FlexboxLayout horizontalAlignment="right" (tap)="clickme(item)" [visibility]="clickedd == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between">
-                    <GridLayout  horizontalAlignment="right" (tap)="clickme(item)" columns="auto, *" class="ysMenuGridHeader2 ">
-                        <Label col="1" text="&#xf107;" class="fas arr-drop" style="color: #f08b1c;"></Label>
+                    <GridLayout    (tap)="clickme(item)" columns="auto, *" class="ysMenuGridHeader2 ">
+                        <Label col="1" text="&#xf107;"   class="fas arr-drop" style="color: #f08b1c;"></Label>
                         <Label col="1"  horizontalAlignment="right" text='{{item.title}}' class="ysMenuhead"></Label>
-                        <Label col="1" text="&#xf2b9;" horizontalAlignment="left"  class=" far  ysMenuIconhead"></Label>
+                        <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead"></Label>
                     </GridLayout>
                 </FlexboxLayout>
                 <FlexboxLayout  horizontalAlignment="right"  [visibility]="clickedd == item ? 'visible' : 'collapsed'" flexDirection="column">
