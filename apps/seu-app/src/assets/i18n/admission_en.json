@@ -4,6 +4,7 @@
     "home": "Home",
     "ug": "Undergraduate",
     "gr": "Master",
+    "ssn": "ssn",
     "AdmissionUgResult": "Enquire about the result of admission",
     "AdmissionGrTitle": "AdmissionGrTitle",
     "ResultStatus": "Admission Result",
@@ -28,5 +29,12 @@
     "docs_saved": "Data Save Successfully",
     "formatnotsupport": "Selected file format is not supported",
     "Attachementrequired": "Attachement Required",
-    "verificationUg": "Veryfication Log In"
+    "verificationUg": "Veryfication Log In",
+    "PaytheFee": "Pay the Fee",
+    "UploadDocument": "Upload Document",
+    "LogOut": "Log Out",
+    "captcha": "Captcha",
+    "Send": "Send",
+    "Percentage": "Percentage"
+    
 }

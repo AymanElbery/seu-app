@@ -28,7 +28,7 @@
           <ng-container>
             <!--*ngIf="admissionugService.isLoggedIn"-->
             <a href="#" class="menu-item" routerLinkActive="active" routerLink="/apps/admission-ug/pay-fee">
-              <span> {{'Pay the Fee' | translate}} </span>
+              <span> {{'PaytheFee' | translate}} </span>
               <i class="ik ik-user-check"></i>
             </a>
             <a href="#" class="menu-item" routerLinkActive="active" routerLink="/apps/admission-ug/match-documents">
@@ -36,11 +36,11 @@
               <i class="ik ik-user-check"></i>
             </a>
             <a href="#" class="menu-item" routerLink="/apps/admission-ug/upload-documents">
-              <span> {{'Upload Document' | translate}} </span>
+              <span> {{'UploadDocument' | translate}} </span>
               <i class="ik ik-user-check"></i>
             </a>
             <a *ngIf="admissionugService.isLoggedIn" href="#" class="menu-item" (click)="logout()">
-              <span> {{'Log Out' | translate}} </span>
+              <span> {{'LogOut' | translate}} </span>
               <i class="ik ik-user-check"></i>
             </a>
           </ng-container>
