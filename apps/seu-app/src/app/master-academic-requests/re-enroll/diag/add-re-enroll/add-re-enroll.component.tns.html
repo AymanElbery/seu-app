@@ -19,7 +19,7 @@
     <StackLayout *ngIf="reEnroll.has_proof=='1'">
         <Label text='{{"services.re-enrollment.file"|translate}}'
         textWrap="true" style="color: #010447;" class="font"></Label>
-        <Button [text]="fileName" (tap)="openCustomFilesPicker()" class="print-btn"></Button>
+        <Button [text]="fileName" (tap)="openCustomFilesPicker()" class="print-btn iosFontCenter"></Button>
     </StackLayout>
     <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-around" style="margin-top: 5;">
         <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn" [isEnabled]="reason.valid"></Button>
