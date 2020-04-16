@@ -19,12 +19,12 @@ import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 
 @NgModule({
   declarations: [UGHomeComponent, AdmissionResultComponent, PayFeeComponent, UploadDocumentComponent,
-    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent,MatchDocumentsComponent],
-  imports: [AppsSharedModule,
+    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent],
+  imports: [
     AdmissionUGRoutingModule,
     SeucommonModule,
     RecaptchaModule,
-    AdmissionLazyTransModule
+    AppsSharedModule
   ]
 })
 export class AdmissionUGModule {

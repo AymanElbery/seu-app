@@ -42,15 +42,14 @@ export class UgVeryficationComponent implements OnInit {
       return;
     }
 
-    this.submitted = true;
     this.admissionUgservice.getverification(this.AddReqForm.value).subscribe(resverify => {
       if (resverify["status"]) {
         this.admissionUgservice.LoggedInToken = this.globaService.getItem(this.admissionUgservice.tokenKey);
         this.admissionUgservice.LoggedInUser = resverify["data"]["student_data"];
-
+        this.admissionUgservice.checkResultData = resverify["data"];
         this.globaService.setItem(this.admissionUgservice.userKey, JSON.stringify(resverify["data"]["student_data"]));
         this.submitted = false;
-        this.router.navigate(['/apps/admission-ug/']);
+        this.router.navigate(['/apps/admission-ug/display-result']);
       } else {
         this.toastr.push(resverify['messages']);
         this.submitted = false;
