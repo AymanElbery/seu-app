@@ -17,7 +17,7 @@
 
 </ActionBar>
     <ScrollView>
-    <FlexboxLayout *ngIf="!isLoading" flexDirection="column">
+    <FlexboxLayout *ngIf="!isLoading" flexDirection="column" class="iosFont">
 
         <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
             <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
