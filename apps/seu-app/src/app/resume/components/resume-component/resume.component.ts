@@ -184,23 +184,27 @@ export class ResumeComponent{
       this.nameError = "هذا الحقل مطلوب";
       valid = false;
     }
+    
     if (this.email == "" || this.email == null) {
       this.emailError = "هذا الحقل مطلوب";
       valid = false;
     }
+    
     if (this.phone == "" || this.phone == null) {
       this.phoneError = "هذا الحقل مطلوب";
       valid = false;
     }
+    
     if (this.jobTitle == "" || this.jobTitle == null) {
       this.jobTitleError = "هذا الحقل مطلوب";
       valid = false;
     }
+    
     if (this.section == "" || this.section == null) {
       this.sectionError = "هذا الحقل مطلوب";
       valid = false;
     }
-
+    
     if (valid) {
       let data = {
         id          : this.id,

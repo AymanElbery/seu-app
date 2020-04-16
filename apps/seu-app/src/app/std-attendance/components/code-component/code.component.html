@@ -1,0 +1,32 @@
+<div class="main-content">
+    <section class="service-single">
+      <div class="container">
+        <h3>{{ "menu.student_attendance" | translate}}</h3>
+        <div class="row">
+          <div class=" col-md-5">
+            <p>CRNS</p>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <div *ngIf="!insertBefor" style="margin-top: 10px;" class="alert alert-success text-center">
+      {{ "attends.code_success_msg" | translate}}
+    </div>
+    <div *ngIf="insertBefor" class="row">
+      <div class="col-md-7 code-content">
+        <div class="form-group">
+          <label for="codeInsert">{{ "attends.code_lable" | translate}}</label>
+          <input (input)="hideCodeMessages()" required type="text" [ngClass]="{'errorBorder': codeError}" class="form-control" id="codeInsert" [(ngModel)]="codeInsert" name="codeInsert">
+        </div>
+        <div style="margin-top: 10px;" *ngIf="codeError" class="alert alert-danger text-center">
+          {{ "attends.code_error_msg" | translate}}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="insertBefor" class="row">
+      <div class="col-md-7 code-content">
+        <button (click)="onSubmit()" type="submit" class="btn sub">{{ "attends.save" | translate}}  <i class="fa fa-save"></i></button>
+      </div>
+    </div>
+  </div>
+  

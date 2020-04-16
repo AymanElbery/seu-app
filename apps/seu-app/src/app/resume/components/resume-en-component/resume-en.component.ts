@@ -68,6 +68,7 @@ export class ResumeEnComponent{
       (response: any) => {
         if (response) {
           this.email = response.data.WORK_EMAIL;
+          this.name = response.data.EMP_NAME_E;
           this.getResumeByEmail(this.email);
         }
       },

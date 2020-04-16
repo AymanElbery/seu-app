@@ -1,0 +1,43 @@
+<div class="main-content">
+
+  <service-header title='{{"LogInUG" | translate}}'></service-header>
+
+  <section class="dashboard-wrap" style="margin-top: 30px;">
+    <form role="form" [formGroup]="AddReqForm">
+      <div class="modal-body">
+
+
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"ssn"|translate}} <span class="reqstart">*</span></h6>
+              <input type="text" formControlName="ssn" (keypress)="keyPress($event)" maxlength="10"
+                class="form-control" />
+            </div>
+
+          </div>
+        </div>
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"captcha"|translate}} <span class="reqstart">*</span></h6>
+              <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey"></re-captcha>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class=" col-md-6 col-sm-6">
+            <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+              <button (click)="onFormSubmit()" type="button" [disabled]="submitted || AddReqForm.invalid" class="btn"
+                style="color: #fff;margin-top: 30px !important;"><i class="fa fa-database"></i>
+                {{"Send" | translate}}</button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </section>
+
+</div>

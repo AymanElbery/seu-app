@@ -15,6 +15,10 @@ export class GlobalService extends GlobalBaseService {
     return localStorage.getItem('sid');
   }
 
+  removeItem(key) {
+    localStorage.removeItem(key);
+  }
+
 
   getItem(key): string {
     return localStorage.getItem(key);

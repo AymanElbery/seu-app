@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
         sideDrawer.drawerLocation = SideDrawerLocation.Right;
     }
 
-    getNotifications(){
+    getNotifications() {
         this.router.navigate(['/notifications']);
       }
 
@@ -30,5 +30,8 @@ export class HeaderComponent implements OnInit {
         const sideDrawer =  app.getRootView() as RadSideDrawer;
         sideDrawer.showDrawer();
     }
-  
+
+    goHome() {
+      this.router.navigate(['/land']);
+    }
 }

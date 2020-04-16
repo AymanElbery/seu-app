@@ -1,7 +1,10 @@
 
 <div class="main-content">
-  <service-header title='{{"services.info_update.desc" | translate}}'></service-header>
+
+  <service-header [title]="'services.info_update.desc' |translate"></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
+
+
 
   <div class="widget" *ngIf="!isLoading">
 
