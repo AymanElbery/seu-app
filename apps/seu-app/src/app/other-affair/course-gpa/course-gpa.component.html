@@ -1,0 +1,53 @@
+<div class="main-content">
+  <service-header [title]="'services.course_gpa.title' |translate" [desc]="'services.course_gpa.desc' |translate">
+  </service-header>
+
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div class="ser-state" *ngIf="!isLoading">
+    <div *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}
+    </div>
+  </div>
+  <br />
+  <div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+      <h3 class="widget-title"> {{"general.request.pre_requests"|translate}}
+        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+          {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
+        </button>
+      </h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">{{"services.course_gpa.req_date"|translate}}</th>
+            <th scope="col">{{"services.course_gpa.CS003"|translate}}</th>
+            <th scope="col">{{"services.course_gpa.CI003"|translate}}</th>
+            <!-- <th scope="col">{{"general.request.req_delete"|translate}}</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let it of reqData.reqs;let i=index;">
+            <td>{{it.INSER_DATE}}</td>
+            <td>
+              <span *ngIf="it.CS003 == 1">
+                {{"services.course_gpa.yes"|translate}}
+              </span>
+            </td>
+            <td>
+              <span *ngIf="it.CI003 == 1">
+                {{"services.course_gpa.yes"|translate}}
+              </span>
+            </td>
+            <!-- <td><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
+                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

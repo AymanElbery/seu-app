@@ -1,4 +1,17 @@
 {
+    
+    "logout":"LogOut",
+    "hello":"Hello",
+    "home":"Home",
     "ug":"Undergraduate",
-    "gr":"Master"
+    "gr":"Master",
+    "AdmissionUgResult":"Admission Result Undergraduate",
+    "AdmissionGrTitle":"AdmissionGrTitle",
+    "ResultStatus":"Admission Result",
+    "Name":"NameAR",
+    "ID":"ID",
+    "CAMP":"Campus",
+    "COLL_DESC1":"College",
+    "MAJR_DESC1":"MAJRR",
+    "LogInUG":"LogIn Undergraguate"
 }

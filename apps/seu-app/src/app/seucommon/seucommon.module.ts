@@ -9,13 +9,24 @@ import { AppTransModule } from '../app.trans.module';
 import { DialogPlayerComponent } from './dialog-player/dialog-player.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
+import { AppLazyTransModule } from '../app.lazytrans.module';
+
 
 @NgModule({
   declarations: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent,DialogPlayerComponent],
   imports: [
     CommonModule,
     MatProgressSpinnerModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule,
+    AppLazyTransModule
   ],
   entryComponents: [DialogPlayerComponent],
   exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent]

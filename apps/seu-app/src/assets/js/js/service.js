@@ -1,4 +1,4 @@
-! function (e, s, i) {
+function ServiceStart(e, s, i) {
   "use strict";
   i(s).ready(function () {
     function a(e, s) {
@@ -15,19 +15,19 @@
     //     wheelPropagation: !0,
     //     minScrollbarLength: 5
     // });
-    i(s).on("click", ".navigation-main .nav-item a", function () {
+    t.on("click", ".navigation-main .nav-item a", function () {
       var e = i(this).parent(".nav-item");
       if (e.hasClass("has-sub") && e.hasClass("open")) a(e);
       else {
         if (e.hasClass("has-sub") && function (e, s) {
-            var a = e.children(".submenu-content"),
-              n = a.children(".menu-item").addClass("is-hidden");
-            e.addClass("open"), a.hide().slideDown(200, function () {
-              i(this).css("display", ""), s && s()
-            }), setTimeout(function () {
-              n.addClass("is-shown"), n.removeClass("is-hidden")
-            }, 0)
-          }(e), t.data("collapsible")) return !1;
+          var a = e.children(".submenu-content"),
+            n = a.children(".menu-item").addClass("is-hidden");
+          e.addClass("open"), a.hide().slideDown(200, function () {
+            i(this).css("display", ""), s && s()
+          }), setTimeout(function () {
+            n.addClass("is-shown"), n.removeClass("is-hidden")
+          }, 0)
+        }(e), t.data("collapsible")) return !1;
         a(e.siblings(".open")), e.siblings(".open").find(".nav-item.open").removeClass("open")
       }
     }), i(".nav-toggle").on("click", function () {
@@ -223,4 +223,10 @@
       $(this).addClass('active');
     });
   })
-}(window, document, jQuery);
+};
+function WindowStartSerices(){
+  ServiceStart(window, document, jQuery);
+}
+$(document).ready(function () {
+ // WindowStartSerices();
+});

@@ -6,6 +6,7 @@ import { MissingCardComponent } from './missing-card/missing-card/missing-card.c
 import { TrainingRequestComponent } from './training-request/training-request.component';
 import { StudentInfoComponent } from './student-info/student-info.component';
 import { ChineescourseComponent } from './chineescourse/chineescourse.component';
+import { CourseGpaComponent } from './course-gpa/course-gpa.component';
 const routes: Routes = [{ path: '', component: MedicalReportComponent },
 {
   path: '',
@@ -15,7 +16,8 @@ const routes: Routes = [{ path: '', component: MedicalReportComponent },
     { path: 'missingcard', component: MissingCardComponent },
     { path: 'training', component: TrainingRequestComponent },
     { path: 'studentinfo', component: StudentInfoComponent },
-    { path: 'chineescourse', component: ChineescourseComponent }
+    { path: 'chineescourse', component: ChineescourseComponent },
+    { path: 'gpa', component: CourseGpaComponent }
   ]
 }
 ];
