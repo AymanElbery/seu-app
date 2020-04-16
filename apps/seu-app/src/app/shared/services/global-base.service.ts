@@ -9,6 +9,7 @@ export abstract class GlobalBaseService {
 
   }
   abstract getSID(): string;
+  abstract removeItem(key);
   abstract getItem(key): string;
   abstract setItem(key, value);
   abstract relogin();

@@ -10,19 +10,21 @@ export class UvnivCardService {
   newreqs = false;
   reqData;
   msgs;
- 	  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = "stdservicesapi";
-			  }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = "stdservicesapi";
+  }
 
   getِgetRequests() {
-
-   return this.httRequest.GetRequest('card_university_service').toPromise();
+    this.configService.baseUrl = "stdservicesapi";
+    return this.httRequest.GetRequest('card_university_service').toPromise();
   }
   AddRequest(data) {
-      return this.httRequest.postRequest('card_university_service/insert', data).toPromise();
+    this.configService.baseUrl = "stdservicesapi";
+    return this.httRequest.postRequest('card_university_service/insert', data).toPromise();
   }
   deleteReq(id) {
-    return this.httRequest.GetRequest('card_university_service/remove/' + id ).toPromise();
+    this.configService.baseUrl = "stdservicesapi";
+    return this.httRequest.GetRequest('card_university_service/remove/' + id).toPromise();
 
   }
 

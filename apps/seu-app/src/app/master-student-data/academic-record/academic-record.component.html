@@ -1,33 +1,8 @@
 <div class="main-content">
+  <service-header [title]="'services.academic_record.title' |translate"
+  [desc]="'services.academic_record.desc' |translate"></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
 
-
-  <section class="service-single">
-
-    <div class="container">
-      <h3> {{"services.academic_record.title" | translate}} </h3>
-      <div class="row">
-        <div class=" col-md-5">
-          <p>{{"services.academic_record.title" | translate}}</p>
-        </div>
-        <!-- <div class=" col-md-6 descr">
-                <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
-                  &nbsp; &nbsp; &nbsp; &nbsp;
-                  <a href="#"><i class="ik ik-download"></i> </a>
-                  <a href="#"><i class="ik ik-film"></i></a>
-              </div> -->
-      </div>
-    </div>
-  </section>
-  <div *ngIf="isLoading" class=" loading-indicator ">
-    <div class="state">
-
-
-      <mat-spinner *ngIf="isLoading"
-        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-      </mat-spinner>
-
-    </div>
-  </div>
   <div *ngIf="!isLoading">
     <div class="state">
 

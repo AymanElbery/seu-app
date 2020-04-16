@@ -1,5 +1,28 @@
-@import './add-course-equalize.component.tns.scss';
+@import './add-course-equalize.component.tns.ios.scss';
 
-.iosFont{
-    text-align: right;
+.univ-dropdown{
+  
+    margin-bottom: 10;
+    margin-left: 20;
+    margin-right: 20;
+    color:#f08b1c;
+}
+.hours-dropdown{
+
+    width: 15%;
+    border-bottom-color:orange ;
+    border-width: 1;
+}
+.grade-dropdown{
+    
+    width: 20%;
+    margin-left: 15;
+    border-bottom-color:orange ;
+    border-width: 1;
+
+}
+.lang-dropdown{
+    width: 25%;
+    border-bottom-color:orange ;
+    border-width: 1;
 }

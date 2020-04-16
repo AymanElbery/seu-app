@@ -29,7 +29,7 @@ export class AddCancelCourseRequestComponent implements OnInit {
     this.reqData = this.acadmicProc.reqData;
 
     this.approve = false;
-    console.log(this.reqData.notes);
+    //console.log(this.reqData.notes);
   }
 
   changeStatus(id) {

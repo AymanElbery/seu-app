@@ -34,7 +34,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                 
             </StackLyout>
         -->
-               <GridLayout style="margin-top: 40px">
+               <!--menu :  <GridLayout style="margin-top: 40px">
                     <StackLayout>
                             <StackLayout  horizontalAlignment="right" style="margin-bottom: 30px" *ngFor="let item of _dataItems">
                                 <GridLayout  horizontalAlignment="right" columns="auto, *" class="ysMenuGridHeader2 " (tap)="clicked(item)">
@@ -49,46 +49,45 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                               </StackLayout>
                             </StackLayout>
                     </StackLayout>
-                </GridLayout>
-    <!--    <RadListView width="100%"  [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">
-            <ng-template let-item="item">
-                <FlexboxLayout flexDirection="row" justifyContent="space-between">
-                    <GridLayout columns="auto, *" class="ysMenuGridHeader2 ">
-                        <Label col="1" text="&#xf107;" class="fas arr-drop" style="color: #f08b1c;"></Label>
-                        <Label col="1" text='{{item.title}}' class="ysMenuhead"></Label>
+                </GridLayout> -->
+      <StackLayout width="100%"  class="">
+            <StackLayout *ngFor="let item of _dataItems" >
+                <FlexboxLayout horizontalAlignment="right" (tap)="clickme(item)" [visibility]="clickedd == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between">
+                    <GridLayout    (tap)="clickme(item)" columns="auto, *" class="ysMenuGridHeader2 ">
+                        <Label col="1" text="&#xf107;"   class="fas arr-drop" style="color: #f08b1c;"></Label>
+                        <Label col="1"  horizontalAlignment="right" text='{{item.title}}' class="ysMenuhead"></Label>
                         <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead"></Label>
                     </GridLayout>
                 </FlexboxLayout>
-            </ng-template>
+                <FlexboxLayout  horizontalAlignment="right"  [visibility]="clickedd == item ? 'visible' : 'collapsed'" flexDirection="column">
+                    <GridLayout (tap)="uclickme(item)" columns="auto, *" class="ysMenuGridHeader ">
+                        <Label col="1" text="&#xf106;"  class="fas arr-drop" style="color: #f08b1c;"></Label>
+                        <Label  horizontalAlignment="right"  col="1" text='{{item.title}}' class="ysMenuhead"></Label>
+                        <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead"></Label>
 
-            <ng-template tkTemplateKey="expanded" let-item="item">
-                <FlexboxLayout flexDirection="column">
-                        <GridLayout columns="auto, *" class="ysMenuGridHeader ">
-                            <Label col="1" text="&#xf106;"  class="fas arr-drop" style="color: #f08b1c;"></Label>
-                            <Label col="1" text='{{item.title}}' class="ysMenuhead"></Label>
-                            <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead"></Label>
-
-                        </GridLayout>
-              
+                    </GridLayout>
+          
 
 
-                        <GridLayout *ngFor="let item  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
-                            <Label col="1" textWrap="true"  text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
-                            <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>
-        
-                        </GridLayout>
-                    </FlexboxLayout>
-            </ng-template>
-        </RadListView> -->
+                    <GridLayout (tap)="onNavItemTap(item.route)"  horizontalAlignment="right" *ngFor="let item  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
+                        <Label  horizontalAlignment="right" col="1" textWrap="true"  text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
+                        <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>
+    
+                    </GridLayout>
+                </FlexboxLayout>
+            </StackLayout>
+
+           
+        </StackLayout> 
         <StackLayout class="hr m-10"></StackLayout>
 
-        <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/reset')">
-            <Label col="1" text="تغير كلمة المرور " class="ysRootMenuItem" ></Label>
+        <GridLayout horizontalAlignment="right"  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/reset')">
+            <Label  horizontalAlignment="right" col="1" text="تغير كلمة المرور " class="ysRootMenuItem" ></Label>
             <Label col="1"  text="&#xf13e;" class="fas ysRootMenuIcon2"></Label>
 
         </GridLayout>
-        <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/login')">
-             <Label col="1" text="تسجيل خروج" class="ysRootMenuItem" ></Label> 
+        <GridLayout horizontalAlignment="right"  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/login')">
+             <Label  horizontalAlignment="right" col="1" text="تسجيل خروج" class="ysRootMenuItem" ></Label> 
             <Label col="1"  text="&#xf2f5;" class="fas ysRootMenuIcon2"></Label>
 
         </GridLayout>
