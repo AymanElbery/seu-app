@@ -10,7 +10,7 @@
     "admissionResult": "Admission Result",
     "Name": "Name",
     "ID": "ID",
-    "code":"Code",
+    "code": "Code",
     "CAMP": "Campus",
     "COLL_DESC1": "College",
     "MAJR_DESC1": "MAJRR",
@@ -26,8 +26,7 @@
     "UplaodDocs": "Upload Documents",
     "updatedocument": "Update Documents",
     "docs_saved": "Data Save Successfully",
-    "formatnotsupport":"Selected file format is not supported",
-    "Attachementrequired":"Attachement Required",
-    "verificationUg":"Veryfication Log In"
-    
+    "formatnotsupport": "Selected file format is not supported",
+    "Attachementrequired": "Attachement Required",
+    "verificationUg": "Veryfication Log In"
 }

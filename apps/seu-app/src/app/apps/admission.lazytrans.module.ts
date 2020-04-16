@@ -4,7 +4,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, 'admission_');
 }
 
 export function createTranslateLoader(http: HttpClient) {
@@ -20,12 +20,17 @@ export function createTranslateLoader(http: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
+      isolate: true
     }),
   ],
   providers: [
   ],
   exports: [TranslateModule]
 })
-export class AdmissionLazyTransModule { }
+export class AdmissionLazyTransModule {
+  constructor() {
+    console.log("AdmissionLazyTransModule");
+  }
+}

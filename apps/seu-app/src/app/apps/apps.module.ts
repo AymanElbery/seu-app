@@ -10,7 +10,6 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
   declarations: [AppsLandingComponent],
   imports: [
     AppsRoutingModule,
-    AdmissionLazyTransModule,
     SeucommonModule,
     AppsSharedModule
   ]
@@ -20,6 +19,6 @@ export class AppsModule {
     document.getElementById('bodyloading')
       ? document.getElementById('bodyloading').remove()
       : '';
-      this.translate.use('en');
+      this.translate.use('ar');
   }
 }
