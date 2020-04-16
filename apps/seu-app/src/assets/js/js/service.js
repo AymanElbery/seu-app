@@ -224,9 +224,9 @@ function ServiceStart(e, s, i) {
     });
   })
 };
-function WindowStartSerices() {
+function WindowStartSerices(){
   ServiceStart(window, document, jQuery);
 }
 $(document).ready(function () {
-  WindowStartSerices();
+ // WindowStartSerices();
 });
