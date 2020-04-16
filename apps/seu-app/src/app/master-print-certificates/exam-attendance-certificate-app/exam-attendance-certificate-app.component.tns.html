@@ -1,11 +1,14 @@
+<GridLayout>
 <app-header></app-header>
 <StackLayout>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+</StackLayout>
 
-    <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
+    <!-- <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
         <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
         <Label col="1" text='{{"services.exam.caa" | translate}}' class="serv-name" ></Label>
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
-      </GridLayout>
+      </GridLayout> -->
 
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
@@ -15,63 +18,64 @@
         </ListView>
     </FlexboxLayout>
 
-    <StackLayout>
-        <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
-    </StackLayout>
+    
 
-<TabView *ngIf="!isLoading">
+<TabView *ngIf="!isLoading" selectedTabTextColor="#f08b1c" 
+tabBackgroundColor="#f1f1f1"
+tabTextColor ="#010447"
+tabTextFontSize="14px"
+androidSelectedTabHighlightColor="#010447">
 	<StackLayout *tabItem='{title: firstTabTitle }'>
 
-        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels.length>0">
+        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels">
             <StackLayout>
 
                 <StackLayout>
 
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150">
             
             <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Term_Exam_With_Schedule.labels.title"></Label>
 
-             <Label row="1" column="1" text="{{reqData.Term_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
-             <Label row="1" column="0" text='{{reqData.Term_Exam_With_Schedule.values.date}}' textWrap="true"
-             style="text-align: right;"
-             ></Label>
+             <Label row="1" column="1" class="ysPBox" text="{{reqData.Term_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" class="ysPBox2" text='{{reqData.Term_Exam_With_Schedule.values.date}}' textWrap="true"></Label>
 
-            <Label row="2" column="1" text="{{reqData.Term_Exam_With_Schedule.labels.txt1}}" textWrap="true"></Label>
-            <Label row="2" column="0" text="{{reqData.Term_Exam_With_Schedule.values.student_name}}" textWrap="true"></Label>
+             <Label row="2" column="1" class="ysPBox" text="{{reqData.Term_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
+             <Label row="2" column="0" class="ysPBox2" text="{{reqData.Term_Exam_With_Schedule.values.std_id}}" textWrap="true"></Label>
 
-            <Label row="3" column="1" text="{{reqData.Term_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
-            <Label row="3" column="0" text="{{reqData.Term_Exam_With_Schedule.values.std_id}}" textWrap="true"
+             <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2" class="paragraph">
+
+            <Label  text="{{reqData.Term_Exam_With_Schedule.labels.txt1}}" textWrap="true"></Label>
+            <Label text="{{reqData.Term_Exam_With_Schedule.values.student_name}}" textWrap="true"></Label>
+
+          
+
+            <Label  text="{{reqData.Term_Exam_With_Schedule.labels.txt3}}" textWrap="true"></Label>
+            <Label  text="{{reqData.Term_Exam_With_Schedule.values.coll}}" textWrap="true"></Label>
+
+            <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt4}}" textWrap="true"></Label>
+            <Label  text="{{reqData.Term_Exam_With_Schedule.values.term}}" textWrap="true"></Label>
+
+            <Label  text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
+            <Label  text='{{reqData.Term_Exam_With_Schedule.values.std_id}}' textWrap="true"
             style="text-align: right;"
             ></Label>
 
-            <Label row="4" column="1" text="{{reqData.Term_Exam_With_Schedule.labels.txt3}}" textWrap="true"></Label>
-            <Label row="4" column="0" text="{{reqData.Term_Exam_With_Schedule.values.coll}}" textWrap="true"></Label>
-
-            <Label row="5" column="1" text="{{reqData.Term_Exam_With_Schedule.labels.txt4}}" textWrap="true"></Label>
-            <Label row="5" column="0" text="{{reqData.Term_Exam_With_Schedule.values.term}}" textWrap="true"></Label>
-
-            <Label row="6" column="1" text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
-            <Label row="6" column="0" text='{{reqData.Term_Exam_With_Schedule.values.std_id}}' textWrap="true"
+            <Label text=' {{reqData.Term_Exam_With_Schedule.labels.txt5}}:' textWrap="true"></Label>
+            <Label  text='{{reqData.Term_Exam_With_Schedule.values.startDay}}' textWrap="true"
             style="text-align: right;"
             ></Label>
 
-            <Label row="7" column="1" text=' {{reqData.Term_Exam_With_Schedule.labels.txt5}}:' textWrap="true"></Label>
-            <Label row="7" column="0" text='{{reqData.Term_Exam_With_Schedule.values.startDay}}' textWrap="true"
+            <Label  text='{{reqData.Term_Exam_With_Schedule.labels.txt6}}:' textWrap="true"></Label>
+            <Label  text='{{reqData.Term_Exam_With_Schedule.values.endDay}}' textWrap="true"
             style="text-align: right;"
             ></Label>
-
-            <Label row="8" column="1" text='{{reqData.Term_Exam_With_Schedule.labels.txt6}}:' textWrap="true"></Label>
-            <Label row="8" column="0" text='{{reqData.Term_Exam_With_Schedule.values.endDay}}' textWrap="true"
-            style="text-align: right;"
-            ></Label>
-            <Label row="9" text='{{reqData.Term_Exam_With_Schedule.labels.txt7}}'></Label>
-
+            <Label  text='{{reqData.Term_Exam_With_Schedule.labels.txt7}}'></Label>
+        </FlexboxLayout>
         </GridLayout>
     </StackLayout>
 
-    <StackLayout>
 
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start" >
+        <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
             <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
                 <label text='{{"general.crn" | translate}}'></label>
                 <label text='{{"general.request.req_cname" | translate}}'></label>
@@ -80,18 +84,16 @@
             </FlexboxLayout>
 
             <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.Term_Exam_With_Schedule.Term_Schedule" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === reqData.Term_Exam_With_Schedule.Term_Schedule-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRSE_TITLE"  ></Label>
-                <Label [text]="item.CRSE_DAY" ></Label>
-                <Label [text]="item.CRSE_TIME" ></Label>
+              class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.Term_Exam_With_Schedule.Term_Schedule-1 ? '0' : '1' }">
+                <Label [text]="item.CRN" style="width: 20%;text-align: center;" textWrap="true"></Label>
+                <Label [text]="item.CRSE_TITLE" style="width: 25%;text-align: center;" textWrap="true" ></Label>
+                <Label [text]="item.CRSE_DAY" style="width: 30%;text-align: center;" textWrap="true"></Label>
+                <Label [text]="item.CRSE_TIME" style="width: 25%;text-align: center;" textWrap="true"></Label>
             </FlexboxLayout>
         </FlexboxLayout>
-    </StackLayout>
     <StackLayout>
 
-        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading">
+        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading" class="paragraph">
             <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
             <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
             <Label text="{{reqData.Term_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
@@ -101,8 +103,8 @@
     <StackLayout>
 
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" >
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termSchedule')" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termScheduleEn')"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="print-btn"  (tap)="onPrint('termSchedule')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="print-btn"  (tap)="onPrint('termScheduleEn')"></Button>
         </FlexboxLayout>
     </StackLayout>
 </StackLayout>
@@ -113,111 +115,112 @@
 	<StackLayout *tabItem='{title: secondTabTitle}'>
 
         
-
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Term_Exam_Without_Schedule && reqData.Term_Exam_Without_Schedule.labels.length>0">
+        <ScrollView height="100%" *ngIf="reqData.Term_Exam_Without_Schedule && reqData.Term_Exam_Without_Schedule.labels">
+            <StackLayout>
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150">
             
-            <Label row="0" colSpan="2"  class="ysHBox"  text='{{"reqData.Term_Exam_Without_Schedule.labels.title"}}'></Label>
+            <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Term_Exam_Without_Schedule.labels.title"></Label>
 
-             <Label row="1" column="1" text="{{reqData.Term_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
-             <Label row="1" column="0" text='{{reqData.Term_Exam_Without_Schedule.values.date}}' textWrap="true"
-             style="text-align: right;"
+             <Label row="1" column="1" class="ysPBox" text="{{reqData.Term_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" class="ysPBox2" text='{{reqData.Term_Exam_Without_Schedule.values.date}}' textWrap="true"
              ></Label>
 
-            <Label row="2" column="1" text="{{reqData.Term_Exam_Without_Schedule.labels.txt1}}" textWrap="true"></Label>
-            <Label row="2" column="0" text="{{reqData.Term_Exam_Without_Schedule.values.student_name}}" textWrap="true"></Label>
+             <Label row="2" column="1" class="ysPBox" text="{{reqData.Term_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
+             <Label row="2" column="0" class="ysPBox2" text="{{reqData.Term_Exam_Without_Schedule.values.std_id}}" textWrap="true"
+             ></Label>
 
-            <Label row="3" column="1" text="{{reqData.Term_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
-            <Label row="3" column="0" text="{{reqData.Term_Exam_Without_Schedule.values.std_id}}" textWrap="true"
+             <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2" class="paragraph">
+
+            <Label text="{{reqData.Term_Exam_Without_Schedule.labels.txt1}}" textWrap="true"></Label>
+            <Label text="{{reqData.Term_Exam_Without_Schedule.values.student_name}}" textWrap="true"></Label>
+
+         
+
+            <Label text="{{reqData.Term_Exam_Without_Schedule.labels.txt3}}" textWrap="true"></Label>
+            <Label text="{{reqData.Term_Exam_Without_Schedule.values.coll}}" textWrap="true"></Label>
+
+            <Label text="{{reqData.Term_Exam_Without_Schedule.labels.txt4}}" textWrap="true"></Label>
+            <Label text="{{reqData.Term_Exam_Without_Schedule.values.term}}" textWrap="true"></Label>
+
+            <Label text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
+            <Label text='{{reqData.Term_Exam_Without_Schedule.values.std_id}}' textWrap="true"
             style="text-align: right;"
             ></Label>
 
-            <Label row="4" column="1" text="{{reqData.Term_Exam_Without_Schedule.labels.txt3}}" textWrap="true"></Label>
-            <Label row="4" column="0" text="{{reqData.Term_Exam_Without_Schedule.values.coll}}" textWrap="true"></Label>
-
-            <Label row="5" column="1" text="{{reqData.Term_Exam_Without_Schedule.labels.txt4}}" textWrap="true"></Label>
-            <Label row="5" column="0" text="{{reqData.Term_Exam_Without_Schedule.values.term}}" textWrap="true"></Label>
-
-            <Label row="6" column="1" text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
-            <Label row="6" column="0" text='{{reqData.Term_Exam_Without_Schedule.values.std_id}}' textWrap="true"
+            <Label text=' {{reqData.Term_Exam_Without_Schedule.labels.txt5}}:' textWrap="true"></Label>
+            <Label text='{{reqData.Term_Exam_Without_Schedule.values.startDay}}' textWrap="true"
             style="text-align: right;"
             ></Label>
 
-            <Label row="7" column="1" text=' {{reqData.Term_Exam_Without_Schedule.labels.txt5}}:' textWrap="true"></Label>
-            <Label row="7" column="0" text='{{reqData.Term_Exam_Without_Schedule.values.startDay}}' textWrap="true"
+            <Label text='{{reqData.Term_Exam_Without_Schedule.labels.txt6}}:' textWrap="true"></Label>
+            <Label text='{{reqData.Term_Exam_Without_Schedule.values.endDay}}' textWrap="true"
             style="text-align: right;"
             ></Label>
-
-            <Label row="8" column="1" text='{{reqData.Term_Exam_Without_Schedule.labels.txt6}}:' textWrap="true"></Label>
-            <Label row="8" column="0" text='{{reqData.Term_Exam_Without_Schedule.values.endDay}}' textWrap="true"
-            style="text-align: right;"
-            ></Label>
-            <FlexboxLayout row="9" textWrap="wrap" flex-direction="row-reverse">
+            
                 <Label  text='{{reqData.Term_Exam_Without_Schedule.labels.txt7}}'></Label>
                 <Label  text='{{reqData.Term_Exam_Without_Schedule.labels.txt8}}'></Label>
                 <Label  text='{{reqData.Term_Exam_Without_Schedule.labels.txt9}}'></Label>
                 <Label  text='{{reqData.Term_Exam_Without_Schedule.labels.txt10}}'></Label>
                 <Label  text='{{reqData.Term_Exam_Without_Schedule.labels.txt11}}'></Label>
-            </FlexboxLayout>
-
+        </FlexboxLayout>
         </GridLayout>
 
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('term')" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('termEn')"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="print-btn"  (tap)="onPrint('term')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="print-btn"  (tap)="onPrint('termEn')"></Button>
         </FlexboxLayout>
-
+</StackLayout>
+</ScrollView>
     </StackLayout>
     
 	<StackLayout *tabItem='{title: thirdTabTitle}'>
 
-        <ScrollView height="100%" *ngIf="reqData.Final_Exam_With_Schedule &&reqData.Final_Exam_With_Schedule.labels.length>0">
+        <ScrollView height="100%" *ngIf="reqData.Final_Exam_With_Schedule &&reqData.Final_Exam_With_Schedule.labels">
       <StackLayout>
                 <StackLayout>
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" *ngIf="reqData.Final_Exam_With_Schedule && reqData.Final_Exam_With_Schedule.labels.length>0" columns="*,150">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" *ngIf="reqData.Final_Exam_With_Schedule && reqData.Final_Exam_With_Schedule.labels" columns="*,150">
             
             <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_With_Schedule.labels.title"></Label>
 
-             <Label row="1" column="1" text="{{reqData.Final_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
-             <Label row="1" column="0" text='{{reqData.Final_Exam_With_Schedule.values.date}}' textWrap="true"
-             style="text-align: right;"
+             <Label row="1" column="1" class="ysPBox" text="{{reqData.Final_Exam_With_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" class="ysPBox2" text='{{reqData.Final_Exam_With_Schedule.values.date}}' textWrap="true"
              ></Label>
 
-            <Label row="2" column="1" text="{{reqData.Final_Exam_With_Schedule.labels.txt1}}" textWrap="true"></Label>
-            <Label row="2" column="0" text="{{reqData.Final_Exam_With_Schedule.values.student_name}}" textWrap="true"></Label>
+             <Label row="2" column="1" class="ysPBox" text="{{reqData.Final_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
+             <Label row="2" column="0" class="ysPBox2" text="{{reqData.Final_Exam_With_Schedule.values.std_id}}" textWrap="true"
+             ></Label>
 
-            <Label row="3" column="1" text="{{reqData.Final_Exam_With_Schedule.labels.txt2}}" textWrap="true"></Label>
-            <Label row="3" column="0" text="{{reqData.Final_Exam_With_Schedule.values.std_id}}" textWrap="true"
+         <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2" class="paragraph">
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt1}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.values.student_name}}" textWrap="true"></Label>
+
+            <Label  text="{{reqData.Final_Exam_With_Schedule.labels.txt3}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.values.coll}}" textWrap="true"></Label>
+
+            <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt4}}" textWrap="true"></Label>
+            <Label text="{{reqData.Final_Exam_With_Schedule.values.term}}" textWrap="true"></Label>
+
+            <Label text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
+            <Label text='{{reqData.Final_Exam_With_Schedule.values.std_id}}' textWrap="true"
             style="text-align: right;"
             ></Label>
 
-            <Label row="4" column="1" text="{{reqData.Final_Exam_With_Schedule.labels.txt3}}" textWrap="true"></Label>
-            <Label row="4" column="0" text="{{reqData.Final_Exam_With_Schedule.values.coll}}" textWrap="true"></Label>
-
-            <Label row="5" column="1" text="{{reqData.Final_Exam_With_Schedule.labels.txt4}}" textWrap="true"></Label>
-            <Label row="5" column="0" text="{{reqData.Final_Exam_With_Schedule.values.term}}" textWrap="true"></Label>
-
-            <Label row="6" column="1" text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
-            <Label row="6" column="0" text='{{reqData.Final_Exam_With_Schedule.values.std_id}}' textWrap="true"
+            <Label text=' {{reqData.Final_Exam_With_Schedule.labels.txt5}}:' textWrap="true"></Label>
+            <Label text='{{reqData.Final_Exam_With_Schedule.values.startDay}}' textWrap="true"
             style="text-align: right;"
             ></Label>
 
-            <Label row="7" column="1" text=' {{reqData.Final_Exam_With_Schedule.labels.txt5}}:' textWrap="true"></Label>
-            <Label row="7" column="0" text='{{reqData.Final_Exam_With_Schedule.values.startDay}}' textWrap="true"
+            <Label text='{{reqData.Final_Exam_With_Schedule.labels.txt6}}:' textWrap="true"></Label>
+            <Label text='{{reqData.Final_Exam_With_Schedule.values.endDay}}' textWrap="true"
             style="text-align: right;"
             ></Label>
-
-            <Label row="8" column="1" text='{{reqData.Final_Exam_With_Schedule.labels.txt6}}:' textWrap="true"></Label>
-            <Label row="8" column="0" text='{{reqData.Final_Exam_With_Schedule.values.endDay}}' textWrap="true"
-            style="text-align: right;"
-            ></Label>
-            <Label row="9" text='{{reqData.Final_Exam_With_Schedule.labels.txt7}}'></Label>
-
+            <Label text='{{reqData.Final_Exam_With_Schedule.labels.txt7}}'></Label>
+        </FlexboxLayout>
         </GridLayout>
     </StackLayout>
 
-    <StackLayout>
-        <FlexboxLayout flexDirection="column" justifyContent="flex-start">
-            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw">  
                 <label text='{{"general.crn" | translate}}'></label>
                 <label text='{{"general.request.req_cname" | translate}}'></label>
                 <label text='{{"general.request.day" | translate}}'></label>
@@ -225,18 +228,17 @@
             </FlexboxLayout>
 
             <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.Final_Exam_With_Schedule.Final_Schedule" flexDirection="row-reverse" 
-              class="trow" [ngStyle]="{'border-bottom-width':i === reqData.Final_Exam_With_Schedule.Final_Schedule-1 ? '0' : '1' }">
-               
-                <Label [text]="item.CRN"></Label>
-                <Label [text]="item.CRSE_TITLE"  ></Label>
-                <Label [text]="item.CRSE_DAY" ></Label>
-                <Label [text]="item.CRSE_TIME" ></Label>
+            alignContent="center" class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.Final_Exam_With_Schedule.Final_Schedule-1 ? '0' : '1' }">
+                <Label [text]="item.CRN" style="width: 20%;text-align: center;" textWrap="true"></Label>
+                <Label [text]="item.CRSE_TITLE" style="width: 25%;text-align: center;" textWrap="true" ></Label>
+                <Label [text]="item.CRSE_DAY" style="width: 30%;text-align: center;" textWrap="true"></Label>
+                <Label [text]="item.CRSE_TIME" style="width: 25%;text-align: center;" textWrap="true"></Label>
             </FlexboxLayout>
         </FlexboxLayout>
-    </StackLayout>
-
+       
+       
     <StackLayout>
-        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && finalScheduleMsgs == 0">
+        <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" *ngIf="!isLoading && finalScheduleMsgs == 0" class="paragraph">
             <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt8}}" textWrap="true"></Label>
             <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt9}}" textWrap="true"></Label>
             <Label text="{{reqData.Final_Exam_With_Schedule.labels.txt10}}" textWrap="true"></Label>
@@ -247,8 +249,8 @@
 
     <StackLayout style="margin-top: 20;">
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center">
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalschedule')" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalscheduleEn')"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="print-btn"  (tap)="onPrint('finalschedule')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="print-btn"  (tap)="onPrint('finalscheduleEn')"></Button>
         </FlexboxLayout>
     </StackLayout>
 </StackLayout>
@@ -258,56 +260,57 @@
     <StackLayout *tabItem='{title: forthTabTitle}'>
 
        
-
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.labels.length>0">
+        <ScrollView height="100%" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.labels">
+            <StackLayout>
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150" >
             
-            <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_With_Schedule.labels.title"></Label>
+            <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_Without_Schedule.labels.title"></Label>
 
-             <Label row="1" column="1" text="{{reqData.Final_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
-             <Label row="1" column="0" text='{{reqData.Final_Exam_Without_Schedule.values.date}}' textWrap="true"
-             style="text-align: right;"
+             <Label row="1" column="1" class="ysPBox" text="{{reqData.Final_Exam_Without_Schedule.labels.date}}:" textWrap="true"></Label>
+             <Label row="1" column="0" class="ysPBox2" text='{{reqData.Final_Exam_Without_Schedule.values.date}}' textWrap="true"
              ></Label>
 
-            <Label row="2" column="1" text="{{reqData.Final_Exam_Without_Schedule.labels.txt1}}" textWrap="true"></Label>
-            <Label row="2" column="0" text="{{reqData.Final_Exam_Without_Schedule.values.student_name}}" textWrap="true"></Label>
-
-            <Label row="3" column="1" text="{{reqData.Final_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
-            <Label row="3" column="0" text="{{reqData.Final_Exam_Without_Schedule.values.std_id}}" textWrap="true"
-            style="text-align: right;"
+             <Label row="2" column="1" class="ysPBox" text="{{reqData.Final_Exam_Without_Schedule.labels.txt2}}" textWrap="true"></Label>
+            <Label row="2" column="0" class="ysPBox2" text="{{reqData.Final_Exam_Without_Schedule.values.std_id}}" textWrap="true"
             ></Label>
+            <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" row="3" colSpan="2" class="paragraph">
 
-            <Label row="4" column="1" text="{{reqData.Final_Exam_Without_Schedule.labels.txt3}}" textWrap="true"></Label>
-            <Label row="4" column="0" text="{{reqData.Final_Exam_Without_Schedule.values.coll}}" textWrap="true"></Label>
+            <Label  text="{{reqData.Final_Exam_Without_Schedule.labels.txt1}}" textWrap="true"></Label>
+            <Label  text="{{reqData.Final_Exam_Without_Schedule.values.student_name}}" textWrap="true"></Label>
 
-            <Label row="5" column="1" text="{{reqData.Final_Exam_Without_Schedule.labels.txt4}}" textWrap="true"></Label>
-            <Label row="5" column="0" text="{{reqData.Final_Exam_Without_Schedule.values.term}}" textWrap="true"></Label>
+            <Label  text="{{reqData.Final_Exam_Without_Schedule.labels.txt3}}" textWrap="true"></Label>
+            <Label  text="{{reqData.Final_Exam_Without_Schedule.values.coll}}" textWrap="true"></Label>
 
-            <Label row="6" column="1" text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
-            <Label row="6" column="0" text='{{reqData.Final_Exam_Without_Schedule.values.std_id}}' textWrap="true"  style="text-align: right;" ></Label>
+            <Label  text="{{reqData.Final_Exam_Without_Schedule.labels.txt4}}" textWrap="true"></Label>
+            <Label  text="{{reqData.Final_Exam_Without_Schedule.values.term}}" textWrap="true"></Label>
 
-            <Label row="7" column="1" text=' {{reqData.Final_Exam_Without_Schedule.labels.txt5}}:' textWrap="true"></Label>
-            <Label row="7" column="0" text='{{reqData.Final_Exam_Without_Schedule.values.startDay}}' textWrap="true" style="text-align: right;" ></Label>
+            <Label  text=' {{"services.exam.uno" | translate}} :' textWrap="true"></Label>
+            <Label  text='{{reqData.Final_Exam_Without_Schedule.values.std_id}}' textWrap="true"  style="text-align: right;" ></Label>
 
-            <Label row="8" column="1" text='{{reqData.Final_Exam_Without_Schedule.labels.txt6}}:' textWrap="true"></Label>
-            <Label row="8" column="0" text='{{reqData.Final_Exam_Without_Schedule.values.endDay}}' textWrap="true" style="text-align: right;" ></Label>
+            <Label  text=' {{reqData.Final_Exam_Without_Schedule.labels.txt5}}:' textWrap="true"></Label>
+            <Label  text='{{reqData.Final_Exam_Without_Schedule.values.startDay}}' textWrap="true" style="text-align: right;" ></Label>
+
+            <Label  text='{{reqData.Final_Exam_Without_Schedule.labels.txt6}}:' textWrap="true"></Label>
+            <Label  text='{{reqData.Final_Exam_Without_Schedule.values.endDay}}' textWrap="true" style="text-align: right;" ></Label>
            
-            <Label row="9" colSpan="2" text='{{reqData.Final_Exam_Without_Schedule.labels.txt7}}'></Label>
+            <Label text='{{reqData.Final_Exam_Without_Schedule.labels.txt7}}'></Label>
 
-            <FlexboxLayout row="10" textWrap="wrap" flex-direction="row-reverse" >
                 <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt8}}" textWrap="true"></Label>
                 <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt9}}" textWrap="true"></Label>
                 <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt10}}" textWrap="true"></Label>
                 <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt11}}" textWrap="true"></Label>
                 <Label text="{{reqData.Final_Exam_Without_Schedule.labels.txt12}}" textWrap="true"></Label>
-
             </FlexboxLayout>
+
         </GridLayout>
       
         <FlexboxLayout flexDirection="row-reverse" justifyContent="center" >
-            <Button text="{{'general.ar_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('final')" ></Button>
-            <Button text="{{'general.en_print'|translate}}" class="-primary -rounded-sm"  (tap)="onPrint('finalEn')"></Button>
+            <Button text="{{'general.ar_print'|translate}}" class="print-btn"  (tap)="onPrint('final')" ></Button>
+            <Button text="{{'general.en_print'|translate}}" class="print-btn"  (tap)="onPrint('finalEn')"></Button>
         </FlexboxLayout>
+        </StackLayout>
+        </ScrollView>
 	</StackLayout>
 </TabView>
 
-</StackLayout>
+</GridLayout>

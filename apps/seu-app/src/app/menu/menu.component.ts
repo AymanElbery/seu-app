@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { UserService } from '../account/services/user.service';
 import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { Router } from '@angular/router';
@@ -10,12 +10,17 @@ import { TasksManagementService } from '../tasks/services/tasks-management.servi
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, AfterContentInit {
   showMySystem = false;
   menuType = 1;
   acStd = false;
   showServices = false;
+  environment;
   constructor(public userService: UserService, private router: Router, public task: TasksManagementService) {
+    this.environment = environment;
+  }
+  ngAfterContentInit() {
+    window['WindowStartSerices']();
   }
 
   showadmis = false;
@@ -71,7 +76,7 @@ export class MenuComponent implements OnInit {
       this.hasNoRole = true;
     }
 
-    this.hasWafi = environment.allowWafi && (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
+    this.hasWafi = this.environment.allowWafi && (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
 
     this.isEmp = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
     if (this.isEmp) {

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UgHomeComponent } from './ug-home.component';
+import { AddCourseGpaComponent } from './add-course-gpa.component';
 
-describe('UgHomeComponent', () => {
-  let component: UgHomeComponent;
-  let fixture: ComponentFixture<UgHomeComponent>;
+describe('AddCourseGpaComponent', () => {
+  let component: AddCourseGpaComponent;
+  let fixture: ComponentFixture<AddCourseGpaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UgHomeComponent ]
+      declarations: [ AddCourseGpaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UgHomeComponent);
+    fixture = TestBed.createComponent(AddCourseGpaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

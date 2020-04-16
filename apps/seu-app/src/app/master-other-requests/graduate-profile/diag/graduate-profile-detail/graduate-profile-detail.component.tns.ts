@@ -1,6 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { ToastrService } from 'ngx-toastr';
 import { GraduateProfileService } from '../../../../master-other-requests/services/graduate-profile.service';
 import { StudentInfo } from '../../../../shared/models/student-info';
 import { ModalDialogParams } from 'nativescript-angular/common';
@@ -21,7 +19,7 @@ export class GraduateProfileDetailComponent implements OnInit {
 
 
   constructor(private _params: ModalDialogParams,
-              private toastr: ToastrService, private gradService: GraduateProfileService) { }
+              private gradService: GraduateProfileService) { }
   ngOnInit() {
 
     this.stdinfo = {

@@ -3,7 +3,7 @@ RadSideDrawer is a UI component part of the Progress NativeScript UI set of comp
 Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
 https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawer/getting-started
 -->
-<RadSideDrawer    [drawerTransition]="sideDrawerTransition" gesturesEnabled="true" (loaded)="onLoaded()"  drawerContentSize="320">
+<RadSideDrawer    [drawerTransition]="sideDrawerTransition" gesturesEnabled="true" (loaded)="onLoaded()"  drawerContentSize="330">
     <GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content ">
         <StackLayout row="0" class="nt-drawer__header" style="background-color: #001628;">
            <!--<Image class="nt-drawer__header-image fas t-36 img-user" src="font://&#xf2bd;"></Image> --> 
@@ -13,10 +13,44 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
              <StackLayout >
                 <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/land')">
                    <!-- <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label> -->
-                    <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label>
+                    <!-- <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label> -->
+                   <Image col="1"  class="home-img" src="~/images/home.png"></Image>
 
-                </GridLayout>                
-        <RadListView width="100%"  [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">
+                </GridLayout>  
+               <!--
+                      <StackLyout *ngFor="let item of _dataItems">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" >
+                    <GridLayout columns="auto, *" class="ysMenuGridHeader2 ">
+                        <Label col="1" text="&#xf107;" class="fas arr-drop" style="color: #f08b1c;"></Label>
+                        <Label col="1" text='{{item.title}}' class="ysMenuhead"></Label>
+                        <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead" (tap)="clicked(item)"></Label>
+                    </GridLayout>
+                </FlexboxLayout>
+                <GridLayout *ngFor="let it  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
+                    <Label col="1" text='{{it.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(it.route)" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>
+                    <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>
+
+                </GridLayout>
+                
+            </StackLyout>
+        -->
+               <GridLayout style="margin-top: 40px">
+                    <StackLayout>
+                            <StackLayout  horizontalAlignment="right" style="margin-bottom: 30px" *ngFor="let item of _dataItems">
+                                <GridLayout  horizontalAlignment="right" columns="auto, *" class="ysMenuGridHeader2 " (tap)="clicked(item)">
+                                    <Label *ngIf="!clickedArray.includes(item)"  col="0" text="&#xf107;" class="fas arr-drop" style="color: #f08b1c;"></Label>
+                                    <Label *ngIf="clickedArray.includes(item)" col="0" text="&#xf106;" class="fas arr-drop" style="color: #f08b1c;"></Label>
+                                    <Label col="1" text='{{item.title}}' class="ysMenuhead"></Label>
+                                    <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead" ></Label>
+                                </GridLayout>
+                              <StackLayout orientation="horizontal" verticalAlignment="center" horizontalAlignment="right" *ngFor="let it  of item.subTitles; let i = index">
+                                <Label  horizontalAlignment="right" text='{{it.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(it.route)" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>
+                                <Label  text="&#xf0a3;"  class=" fas ysMenuIcon" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>                                
+                              </StackLayout>
+                            </StackLayout>
+                    </StackLayout>
+                </GridLayout>
+    <!--    <RadListView width="100%"  [items]="_dataItems" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)" class="">
             <ng-template let-item="item">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between">
                     <GridLayout columns="auto, *" class="ysMenuGridHeader2 ">
@@ -39,13 +73,13 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 
 
                         <GridLayout *ngFor="let item  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
-                            <Label col="1" text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
+                            <Label col="1" textWrap="true"  text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
                             <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>
         
                         </GridLayout>
                     </FlexboxLayout>
             </ng-template>
-        </RadListView> 
+        </RadListView> -->
         <StackLayout class="hr m-10"></StackLayout>
 
         <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/reset')">

@@ -14,12 +14,15 @@ export class ChineesCourseService {
   }
 
   getِgetRequests() {
+    this.configService.baseUrl = "stdservicesapi";
     return this.httRequest.GetRequest('chinese_course_service').toPromise();
   }
   AddRequest(data) {
+    this.configService.baseUrl = "stdservicesapi";
     return this.httRequest.postRequest('chinese_course_service/insert', data).toPromise();
   }
   deleteReq(id) {
+    this.configService.baseUrl = "stdservicesapi";
     return this.httRequest.GetRequest('chinese_course_service/remove/' + id).toPromise();
   }
 }

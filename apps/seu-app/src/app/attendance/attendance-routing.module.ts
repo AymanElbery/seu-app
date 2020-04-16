@@ -2,19 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CrnsComponent } from './components/crns-component/crns.component';
 import { CodeComponent } from './components/code-component/code.component';
+import { ReportComponent } from './components/report-component/report.component';
 
-// const routes: Routes = [
-//   {
-//     path: '',
-//     component: CrnsComponent,
-//     children: [
-//       { 
-//         path: 'code', 
-//         component: CodeComponent 
-//       },
-//     ]
-//   }
-// ];
 const routes: Routes = [
   {
     path: "",
@@ -27,6 +16,10 @@ const routes: Routes = [
   { 
     path: 'code', 
     component: CodeComponent 
+  },
+  { 
+    path: 'report', 
+    component: ReportComponent 
   }
 ];
 

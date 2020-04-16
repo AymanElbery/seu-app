@@ -31,7 +31,7 @@
     <RadListView *ngIf="!isLoading &&reqData.requests &&reqData.requests.length>0" [items]="reqData.requests" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
         <ng-template let-item="item">
             <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop2">
-                <Label  text="&#xf0dd;"  class="fas arr-drop"></Label>
+                <Label  text="&#xf107;"  class="fas arr-drop"></Label>
                 <FlexboxLayout flexDirection="row-reverse">
                     <Label text='{{item.request_number}}'></Label>
                     <Label text="{{item.status}}"></Label>
@@ -42,7 +42,7 @@
         <ng-template tkTemplateKey="expanded" let-item="item">
             <FlexboxLayout flexDirection="column">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
-                    <Label  text="&#xf0de;"  class="fas"></Label>
+                    <Label  text="&#xf106;"  class="fas"></Label>
                     <FlexboxLayout flexDirection="row-reverse">
                         <Label [text]='item.request_number'></Label>
                         <Label [text]="item.status"></Label>
@@ -52,22 +52,22 @@
                 <GridLayout rows="auto,auto,auto,auto,auto,auto,auto,auto" class="ysBox" columns="*,150" >
                           
                     <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
-                    <Label row="0"  column="0" class="ysPBox2" text="{{item.request_number}}" style="text-align: right;"></Label>
+                    <Label row="0"  column="0" class="ysPBox2" text="{{item.request_number}}"></Label>
                 
                     <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.course_name"|translate}} :'></Label>
-                    <Label row="1"  column="0" class="ysPBox2" text="{{item.course_title}}" style="text-align: right;"></Label>
+                    <Label row="1"  column="0" class="ysPBox2" text="{{item.course_title}}"></Label>
                 
                     <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text=': {{"general.crn"|translate}}' style="text-align: right;"></Label>
-                    <Label row="2"  column="0" class="ysPBox2" text="{{item.courseId}}" style="text-align: right;"></Label>
+                    <Label row="2"  column="0" class="ysPBox2" text="{{item.courseId}}"></Label>
       
                     <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_status"|translate}} :'></Label>
                     <Label row="3"  column="0" class="ysPBox2" text="{{item.status}}"></Label>
       
                     <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_date"|translate}} :'></Label>
-                    <Label row="4"  column="0" class="ysPBox2" text="{{item.insert_date}}" style="text-align: right;"></Label>
+                    <Label row="4"  column="0" class="ysPBox2" text="{{item.insert_date}}"></Label>
 
                     <Label row="5" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.lecture_execuse.absence_date_week"|translate}} :'></Label>
-                    <Label row="5"  column="0" class="ysPBox2" text="{{item.absance_date}}/{{item.week}}" style="text-align: right;"></Label>
+                    <Label row="5"  column="0" class="ysPBox2" text="{{item.absance_date}}/{{item.week}}"></Label>
 
                     <Label row="6" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.lecture_execuse.lecture_type"|translate}} :'></Label>
                     <Label row="6"  column="0" class="ysPBox2" text="{{item.class_type}}"></Label>

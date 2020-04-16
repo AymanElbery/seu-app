@@ -6,7 +6,7 @@ import { GlobalBaseService } from './global-base.service';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../environments/environment';
 import { HttpRequestServiceBase } from './http-request.service_base';
-import { UserService } from 'src/app/account/services/user.service';
+import { UserService } from '../../account/services/user.service';
 
 @Injectable({
   providedIn: 'root',

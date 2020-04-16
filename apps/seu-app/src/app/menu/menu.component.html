@@ -331,6 +331,7 @@
             <!--   <a href="#" class="menu-item" routerLink="/other/missingcard">طلب بطاقة جامعية بدل فاقد </a>-->
             <a href="#" class="menu-item" routerLink="/other/training"> {{"menu.training" | translate}} </a>
             <a href="#" class="menu-item" routerLink="/other/chineescourse"> {{"menu.chineescourse" | translate}} </a>
+            <a href="#" class="menu-item" routerLink="/other/gpa"> {{"menu.gpa" | translate}} </a>
 
           </div>
         </div>
@@ -397,7 +398,7 @@
 
           </div>
         </div>
-        <div *ngIf="showadmis" id='admis-pages-cont' class="nav-item has-sub">
+        <div *ngIf="false && showadmis" id='admis-pages-cont' class="nav-item has-sub">
           <a href="javascript:void(0)"> <span>{{"general.admis_pages" | translate}} </span>
             <i class="ik ik-book-open"></i> </a>
           <div class="submenu-content">
@@ -472,9 +473,12 @@
             <a routerLink="/instructions/exams" class="menu-item">
               {{"menu.INSTRUCTEXAM" | translate}}
               <i class="ik ik-user-check"></i> </a>
-            <!-- <a [routerLink]="['/attendance']" class="menu-item">  {{"menu.student_attendance" | translate}}<i class="ik ik-users"></i> </a> -->
-            <a [routerLink]="['/resume']" class="menu-item"> {{"menu.resume" | translate}}<i class="ik ik-users"></i>
-            </a>
+            <ng-container *ngIf="!environment.production">
+              <a [routerLink]="['/attendance']" class="menu-item"> {{"menu.student_attendance" | translate}}<i
+                  class="ik ik-users"></i> </a>
+              <a [routerLink]="['/resume']" class="menu-item"> {{"menu.resume" | translate}}<i class="ik ik-users"></i>
+              </a>
+            </ng-container>
 
           </div>
         </div>
@@ -511,12 +515,13 @@
               class="menu-item"> {{"menu.EVENTSMANAGE" | translate}} <i class="ik ik-briefcase"></i> </a>
             <a target="_blank" href="https://bannservices.seu.edu.sa/StudentRegistrationSsb" class="menu-item">
               {{"menu.RESGISTERCOURSES" | translate}} <i class="ik ik-book"></i> </a>
+            <a [routerLink]="['/std-attendance']" class="menu-item"> {{"menu.student_attendance" | translate}}<i
+                class="ik ik-users"></i> </a>
             <a target="_blank" href="https://sd.seu.edu.sa" class="menu-item"> {{"menu.Support" | translate}} <i
-                class="ik ik-settings"></i>
-              <a class="menu-item" target="_blank"
-                href="https://www.seu.edu.sa/kr/">{{"menu.knowledgeresources" | translate}} <i
-                  class="ik ik-tablet"></i></a>
-            </a>
+                class="ik ik-settings"></i> </a>
+            <a class="menu-item" target="_blank"
+              href="https://www.seu.edu.sa/kr/">{{"menu.knowledgeresources" | translate}} <i
+                class="ik ik-tablet"></i></a>
           </div>
 
         </div>

@@ -21,7 +21,8 @@ declare var UIView, NSMutableArray, NSIndexPath;
 export class AppComponent implements OnInit {
 
     // tslint:disable-next-line: variable-name
-    private _dataItems: ObservableArray<object>;
+    private _dataItems: Array<{"title":string,"subTitles":Array<object>}>;
+    public clickedArray: Array<{"title":string,"subTitles":Array<object>}>= [{"title":"","subTitles":[{}]}];
 
     @ViewChild(RadSideDrawerComponent,
         {
@@ -36,8 +37,8 @@ export class AppComponent implements OnInit {
     public userName: String = 'UserName';
     level = '';
     role = '';
-    UG_Menu: ObservableArray<{ 'title': string; 'subTitles': { 'subTitle': string; 'route': string; }[]; }>;
-    GR_Menu: ObservableArray<{ 'title': string; 'subTitles': { 'subTitle': string; 'route': string; }[]; }>;
+    UG_Menu:Array<any> = [];
+    GR_Menu:Array<any> = [];
     constructor(    private translate: TranslateService,
                     public userService: UserService,
                     private router: Router, private routerExtensions: RouterExtensions,
@@ -49,6 +50,14 @@ export class AppComponent implements OnInit {
         translate.use('ar');
 
 
+    }
+    clicked(item) {
+        if (this.clickedArray.indexOf(item) != -1) {
+            var index = this.clickedArray.indexOf(item)
+            this.clickedArray.splice(index, 1)
+        } else {
+            this.clickedArray.push(item)
+        }
     }
 
     ngOnInit(): void {
@@ -63,9 +72,9 @@ export class AppComponent implements OnInit {
         this.userService.logedIn = false;
      //   draw.drawerLocation = SideDrawerLocation.Right;
 
-
+        this._dataItems = [{"title":"","subTitles":[{}]}];
         Downloader.init();
-        this.UG_Menu = new ObservableArray([
+        this.UG_Menu = [
         {
             'title':'الشئون الاكاديمية',
             'subTitles': [
@@ -204,9 +213,9 @@ export class AppComponent implements OnInit {
     }
 ]
 }
-    ]);
+    ];
 
-        this.GR_Menu = new ObservableArray([
+        this.GR_Menu = [
         {
             'title':'بيانات الطالب',
             'subTitles': [
@@ -232,7 +241,7 @@ export class AppComponent implements OnInit {
             'route':'/academicrequests/studypostpone'
         },
         {
-            'subTitle':'طلب حذف المقررات (الاعتذار عن الفصل)',
+            'subTitle':'طلب حذف المقررات ',
             'route':'/academicrequests/termexecuse'
         },
         {
@@ -282,7 +291,7 @@ export class AppComponent implements OnInit {
         'route':'/other/absencequery'
     },
     {
-        'subTitle':'تغير مقرر',
+        'subTitle':'تغير تخصص',
         'route':'/other/changecourse'
     },   {
         'subTitle':'تغير فرع',
@@ -298,11 +307,10 @@ export class AppComponent implements OnInit {
 
 ]
 }
-    ]);
+    ];
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {
-
         this.userName = this.userService.userData.name_ar;
 
         this.level = this.userService.userData.student_details.level;
@@ -311,6 +319,7 @@ export class AppComponent implements OnInit {
 
         } else if (this.level == 'GR') {
             this._dataItems = this.GR_Menu;
+
         }
         this.role = this.userService.userData.activeRole;
         // console.log('act' + this.role);

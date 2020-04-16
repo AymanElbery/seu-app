@@ -18,6 +18,7 @@ import { AddChangeCourseComponent } from './change-course/diag/add-change-course
 import { ChangeCourseService } from './services/change-course.service';
 import { MatCheckboxModule } from '@angular/material';
 
+
 import { PersonalIDComponent } from './personal-id/personal-id.component';
 import { AddPersonalIdComponent } from './personal-id/diag/add-personal-id/add-personal-id.component';
 import { PersonalIDService } from './services/personal-id.service';
@@ -26,7 +27,7 @@ import { GraduateProfileComponent } from './graduate-profile/graduate-profile.co
 import { GraduateProfileDetailComponent } from './graduate-profile/diag/graduate-profile-detail/graduate-profile-detail.component';
 import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduate-profile/add-graduate-profile.component';
 import { AppLazyTransModule } from '../app.lazytrans.module';
-
+import { SeucommonModule } from '../seucommon/seucommon.module';
 
 @NgModule({
 
@@ -45,7 +46,7 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     FormsModule,
     MatDialogModule,
     // BrowserAnimationsModule,
-
+    SeucommonModule,
     MatCheckboxModule,
     AppLazyTransModule
   ],

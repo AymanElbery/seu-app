@@ -18,6 +18,7 @@ import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
   styleUrls: ['./visitor-student.component.tns.scss']
 })
 export class VisitorStudentComponent implements OnInit {
+  clicked: any;
   constructor(
     private toastr: AppToasterService,
     private acadmicProc: VisitorStudentService,
@@ -33,6 +34,13 @@ export class VisitorStudentComponent implements OnInit {
 
   ngOnInit() {
     this.getRequests();
+  }
+
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
   }
 
   getRequests() {

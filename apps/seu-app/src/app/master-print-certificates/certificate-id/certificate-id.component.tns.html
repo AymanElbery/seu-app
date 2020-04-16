@@ -16,13 +16,13 @@
       <Button class=" print-btn " (tap)="onArabicPrint()">
           <FormattedString>
               <Span text="&#xf02f;" class="fas"></Span>
-              <Span text="{{printAR}}"></Span>
+              <Span text=" {{printAR}}"></Span>
           </FormattedString>
       </Button>
       <Button class=" print-btn " (tap)="onEnglishPrint()">
           <FormattedString>
               <Span text="&#xf02f;" class="fas"></Span>
-              <Span text="{{printEN}}"></Span>
+              <Span text=" {{printEN}}"></Span>
           </FormattedString>
       </Button>
   </FlexboxLayout>
@@ -34,10 +34,10 @@
     
     
         <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text="{{certificateDetails.labels.date}}"></Label>
-        <Label row="0"  column="0" class="ysPBox2" text="{{certificateDetails.values.date}}" style="text-align: right;"></Label>
+        <Label row="0"  column="0" class="ysPBox2" text="{{certificateDetails.values.date}}"></Label>
     
         <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{certificateDetails.labels.ssn}}"></Label>
-        <Label row="1"  column="0" class="ysPBox2" text="{{certificateDetails.values.ssn}}" style="text-align: right;"></Label>
+        <Label row="1"  column="0" class="ysPBox2" text="{{certificateDetails.values.ssn}}"></Label>
   
       </GridLayout>
     </StackLayout>
@@ -64,16 +64,16 @@
                       
                       
           <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text="{{'general.request.req_cname' |translate}}"></Label>
-          <Label row="1"  column="0" class="ysPBox2" [text]="item.course_name" style="text-align: right;"></Label>
+          <Label row="1"  column="0" class="ysPBox2" [text]="item.course_name"></Label>
         
-          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800; text-align: right;" text="CRN"></Label>
-          <Label row="2"  column="0" class="ysPBox2" [text]="item.course_id" style="text-align: right;"></Label>
+          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text="CRN"></Label>
+          <Label row="2"  column="0" class="ysPBox2" [text]="item.course_id"></Label>
          
           <Label row="3"  column="1"  class="ysPBox" style="font-weight:800;" text="{{'general.request.day' |translate}}" ></Label>
-          <Label row="3"  column="0" class="ysPBox2" [text]="item.day" style="text-align: right;" ></Label>
+          <Label row="3"  column="0" class="ysPBox2" [text]="item.day" ></Label>
         
           <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;" text="{{'general.request.time' |translate}}"></Label>
-          <Label row="4"  column="0" class="ysPBox2"[text]="item.time" style="text-align: right; margin-right: -10;"></Label>
+          <Label row="4"  column="0" class="ysPBox2"[text]="item.time"></Label>
         
           <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;" text="{{'services.lecture_execuse.lecture_type' |translate}}" ></Label>
           <Label row="5"  column="0" class="ysPBox2" [text]="item.type"  ></Label>

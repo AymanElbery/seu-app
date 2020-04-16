@@ -5,7 +5,6 @@ import { BlankComponent } from './home/blank.component';
 
 import { PrintLayoutComponent } from './PrintExample/print-layout/print-layout.component';
 import { PrintFileComponent } from './PrintExample/print-file/print-file.component';
-import { AuthGuard } from './guards/auth.guard';
 import { UGGuard } from './guards/ug.guard';
 import { GRGuard } from './guards/gr.guard';
 import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
@@ -18,11 +17,9 @@ const routes: Routes = [
     path: '',
     component: BlankComponent,
     children: [
-      { path: '', component: HomeComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'home/:t', component: HomeComponent },
-      // { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
-      // { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'admis-pages/:cat', component: AdmisPagesComponent },
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       { path: 'policy', component: PolicyComponent },
@@ -108,6 +105,11 @@ const routes: Routes = [
         loadChildren: './attendance/attendance.module#AttendanceModule'
       },
       {
+        path: 'std-attendance',
+        loadChildren: './std-attendance/std-attendance.module#StdAttendanceModule',
+        canActivate: [GRGuard, UGGuard]
+      },
+      {
         path: 'resume',
         loadChildren: './resume/resume.module#ResumeModule',
         canActivate: [EmpGuard]
@@ -117,7 +119,7 @@ const routes: Routes = [
   {
     path: 'error',
     component: AppErrorComponent
-  },  
+  },
   {
     path: 'print',
     outlet: 'print',
