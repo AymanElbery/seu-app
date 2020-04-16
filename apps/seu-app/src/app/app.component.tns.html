@@ -37,14 +37,16 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
                <!--menu :  <GridLayout style="margin-top: 40px">
                     <StackLayout>
                             <StackLayout  horizontalAlignment="right" style="margin-bottom: 30px" *ngFor="let item of _dataItems">
-                                <GridLayout  horizontalAlignment="right" columns="auto, *" class="ysMenuGridHeader2 ">
-                                    <Label col="1" text="&#xf107;" class="fas arr-drop" style="color: #f08b1c;"></Label>
+                                <GridLayout  horizontalAlignment="right" columns="auto, *" class="ysMenuGridHeader2 " (tap)="clicked(item)">
+                                    <Label *ngIf="!clickedArray.includes(item)"  col="0" text="&#xf107;" class="fas arr-drop" style="color: #f08b1c;"></Label>
+                                    <Label *ngIf="clickedArray.includes(item)" col="0" text="&#xf106;" class="fas arr-drop" style="color: #f08b1c;"></Label>
                                     <Label col="1" text='{{item.title}}' class="ysMenuhead"></Label>
-                                    <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead" (tap)="clicked(item)"></Label>
+                                    <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead" ></Label>
                                 </GridLayout>
                               <StackLayout orientation="horizontal" verticalAlignment="center" horizontalAlignment="right" *ngFor="let it  of item.subTitles; let i = index">
                                 <Label  horizontalAlignment="right" text='{{it.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(it.route)" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>
-                                <Label  text="&#xf0a3;"  class=" fas ysMenuIcon" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>                                </StackLayout>
+                                <Label  text="&#xf0a3;"  class=" fas ysMenuIcon" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>                                
+                              </StackLayout>
                             </StackLayout>
                     </StackLayout>
                 </GridLayout> -->

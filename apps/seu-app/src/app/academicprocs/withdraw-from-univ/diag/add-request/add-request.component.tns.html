@@ -1,4 +1,4 @@
-<FlexboxLayout  flexDirection="column" style="padding: 20;" class="pop">
+<FlexboxLayout  flexDirection="column" style="padding: 20;" class="pop iosFont">
     <Label text='{{"services.withdrow_univ.title"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
     <DropDown required
         [items]="dropDownBranches"
@@ -10,7 +10,7 @@
         class="font dro "
     >
     </DropDown>
-    <TextField [(ngModel)]="withdraw.mobile" style="margin-bottom: 20; text-align: right;" hint='{{"services.withdrow_univ.phone_no"|translate}}' keyboardType="phone" required #mobile="ngModel"></TextField>
+    <TextField [(ngModel)]="withdraw.mobile" style="margin-bottom: 20;" hint='{{"services.withdrow_univ.phone_no"|translate}}' keyboardType="phone" required #mobile="ngModel"></TextField>
     <TextField [(ngModel)]="withdraw.email"  hint='{{"services.withdrow_univ.e-mail"|translate}}' keyboardType="email" required #mail="ngModel"></TextField>
     
     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 20;">
