@@ -24,6 +24,8 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
 import { AddChineescourseComponent } from './chineescourse/diag/add-chineescourse.component';
 import { ChineescourseComponent } from './chineescourse/chineescourse.component';
+import { CourseGpaComponent } from './course-gpa/course-gpa.component';
+import { AddCourseGpaComponent } from './course-gpa/dialog/add-course-gpa.component';
 
 @NgModule({
 
@@ -37,13 +39,16 @@ import { ChineescourseComponent } from './chineescourse/chineescourse.component'
     AddTrainingRequestComponent,
     StudentInfoComponent,
     ChineescourseComponent,
-    AddChineescourseComponent
+    AddChineescourseComponent,
+    CourseGpaComponent,
+    AddCourseGpaComponent
   ],
   entryComponents: [AddBankReceiptComponent,
     AddMissingCardDataComponent,
     AddUnivCardComponent,
     AddTrainingRequestComponent,
-    AddChineescourseComponent
+    AddChineescourseComponent,
+    AddCourseGpaComponent
   ],
   imports: [
     CommonModule,

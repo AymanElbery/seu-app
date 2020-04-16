@@ -28,10 +28,11 @@
         </div>
       </div>
       <div class="row row-form" >
-        <div class="col-md-6">
+        <div class="col-md-2">
           <div class="form-group">
             <label for="photo">{{ "resume.photo" | translate}}</label>
             <input type="file" accept="*/*" (change)="handleInputChange($event)" id="photo" class="form-control-file form-control">
+            <button id="fake-file" class="btn btn-primary">{{ "resume.choose_file" | translate}}</button>
           </div>
         </div>
       </div>
@@ -49,7 +50,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="name">{{ "resume.name_en" | translate}}</label>
-            <input (input)="hideNameMessages()" required type="text" [ngClass]="{'errorBorder': nameError}" class="form-control" id="name" [(ngModel)]="name" name="name">
+            <input (input)="hideNameMessages()" disabled required type="text" [ngClass]="{'errorBorder': nameError}" class="form-control" id="name" [(ngModel)]="name" name="name">
             <span *ngIf="nameError" class="text text-danger">{{nameError}}</span>
           </div>
         </div>
@@ -97,12 +98,12 @@
     <div class="row row-form" *ngFor="let title of titles; let i = index;">
       <div class="col-md-8 title">
         <div class="form-group">
-          <label for="photo">عنوان رقم {{ i+1 }}</label>
+          <label for="photo"> {{ "resume.title_no" | translate}} {{ i+1 }}</label>
           <input name="title{{i}}" class="form-control" [(ngModel)]="title.text">
           <div class="row row-form" *ngFor="let item of title.items; let j = index;">
             <div class="col-md-8 item">
               <div class="form-group">
-                <label for="photo">عنصر رقم {{ j+1 }}</label>
+                <label for="photo"> {{ "resume.item_no" | translate}} {{ j+1 }}</label>
                 <input name="item{{j}}" class="form-control" [(ngModel)]="item.text">
               </div>
             </div>

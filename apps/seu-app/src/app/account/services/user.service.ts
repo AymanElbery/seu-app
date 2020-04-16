@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../../shared/services/config.service';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { UserRegistration } from '../../shared/models/user.registration.interface';
-import { Observable, throwError, Subject } from 'rxjs';
+import { throwError, Subject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { HttpRequestService } from '../../shared/services/http-request.service';
 import { BaseService } from '../../shared/services/base.service';
-import { UserManagerService } from '../../shared/services/user-manager.service';
 import { UserData } from 'src/app/shared/models/user-data';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { HttpRequestServiceBase } from '../../shared/services/http-request.service_base';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +33,8 @@ export class UserService extends BaseService {
     private configService: ConfigService,
     private httRequest: HttpRequestServiceBase,
     private http: HttpClient,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private router: Router
   ) {
     super();
     this.configService.baseUrl = '';
@@ -136,6 +134,9 @@ export class UserService extends BaseService {
     return this.httRequest.postAuthRequest('rest/ssosession/resetpassword', { user, opassword, npassword, cpassword, lang }).toPromise();
   }
 
+  errorRedirect() {
+    this.router.navigate(['/error']);
+  }
   loadUserData() {
     if (this.userDataLoaded !== true) {
       return this.requestUser()
@@ -148,11 +149,11 @@ export class UserService extends BaseService {
             this.pushUserDataChanges();
             return this.userData;
           } else {
-            this.relogin();
+            this.errorRedirect();
           }
         },
           err => {
-            this.relogin();
+            this.errorRedirect();
             // if (localStorage.getItem("userreloaded")) {
             //   localStorage.removeItem("userreloaded");
             //   window.location.href = "https://seu.edu.sa";
