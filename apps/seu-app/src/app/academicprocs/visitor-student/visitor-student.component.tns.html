@@ -72,6 +72,51 @@
             </FlexboxLayout>
         </ng-template>
     </RadListView>
-        
+    
+    <StackLayout android:visibility="collapsed" height="100%" *ngIf="!isLoading && reqData.requests&& reqData.requests.length>0">
+        <StackLayout  *ngFor="let item of reqData.requests">
+            <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+                <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+                <FlexboxLayout flexDirection="row-reverse">
+                    <Label text='{{item.request_number}}'></Label>
+                    <Label text="{{item.status}}"></Label>
+                </FlexboxLayout>
+            </FlexboxLayout>
+            <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+                <FlexboxLayout flexDirection="column">
+                    <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                        <Label  text="&#xf106;"  class="fas arr-drop"></Label>
+                        <FlexboxLayout flexDirection="row-reverse">
+                            <Label [text]='item.request_number'></Label>
+                            <Label [text]="item.status"></Label>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
+    
+                    <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{item.request_number}}"></Label>
+                    
+                        <Label row="1" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.course_name"|translate}} :'></Label>
+                        <Label row="1"  column="0" class="ysPBox2" textWrap="true" text="{{item.course_equal}}"></Label>
+                    
+                        <Label row="2" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.ar_print"|translate}} :'></Label>
+                        <Button row="2" column="0" (tap)="print(item.request_number)" class="blue-button fas " text="&#xf02f;"></Button>
+          
+                        <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" textWrap="true" text='{{"general.request.req_status"|translate}} :'></Label>
+                        <Label row="3"  column="0" class="ysPBox2" textWrap="true" text="{{item.status}}"></Label>
+          
+                        <Label row="4" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.request.req_date"|translate}} :'></Label>
+                        <Label row="4"  column="0" class="ysPBox2" textWrap="true" text="{{item.insert_date}}"></Label>
+          
+                        <Label row="5" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"services.visitor_student.procedure"|translate}} :'></Label>
+                        
+                        <Button row="5"  column="0" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="blue-button fas "></Button>
+                        <Label row="5"  column="0" textWrap="true" class="ysPBox2" *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}' textWrap="true"></Label>
+                      </GridLayout>
+                </FlexboxLayout>
+            </FlexboxLayout>
+        </StackLayout>
+    </StackLayout>
 </FlexboxLayout>
 </ScrollView>

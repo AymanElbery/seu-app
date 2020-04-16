@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     // tslint:disable-next-line: variable-name
     private _dataItems: Array<{"title":string,"subTitles":Array<object>}>;
     public clickedArray: Array<{"title":string,"subTitles":Array<object>}>= [{"title":"","subTitles":[{}]}];
-
+    clickedd={};s
     @ViewChild(RadSideDrawerComponent,
         {
             static: false
@@ -51,15 +51,19 @@ export class AppComponent implements OnInit {
 
 
     }
-    clicked(item) {
-        if (this.clickedArray.indexOf(item) != -1) {
-            var index = this.clickedArray.indexOf(item)
-            this.clickedArray.splice(index, 1)
-        } else {
-            this.clickedArray.push(item)
-        }
-    }
 
+
+    // clicked(item) {
+    //     if (this.clickedArray.indexOf(item) != -1) {
+    //         var index = this.clickedArray.indexOf(item)
+    //         this.clickedArray.splice(index, 1)
+    //     } else {
+    //         this.clickedArray.push(item)
+    //     }
+    // }
+
+
+    
     ngOnInit(): void {
 
         this._activatedUrl = '/home';
@@ -411,5 +415,11 @@ export class AppComponent implements OnInit {
         sideDrawer.closeDrawer();
         this.router.navigate(['/login']);
    }
+   clickme(item) {
+    this.clickedd = item;
+  }
+  uclickme(item) {
+    this.clickedd = {};
+  }
 
 }

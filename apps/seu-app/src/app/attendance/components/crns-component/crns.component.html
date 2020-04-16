@@ -4,7 +4,7 @@
         <h3>{{ "menu.student_attendance" | translate}}</h3>
         <div class="row">
           <div class=" col-md-5">
-            <p>CRNS</p>
+            <p>{{"attends.crns"|translate}}</p>
           </div>
         </div>
       </div>
@@ -26,6 +26,7 @@
                     <th scope="col"> {{"services.reg.startTime"|translate}} </th>
                     <th scope="col"> {{"services.reg.endTime"|translate}} </th>
                     <th scope="col"> {{"services.reg.actions"|translate}} </th>
+                    <th scope="col"> {{"services.reg.reports"|translate}} </th>
                 </tr>
               </thead>
             <tbody>
@@ -36,9 +37,12 @@
                     <td>{{ crn.SSRMEET_BEGIN_TIME | formatCrnTime }}</td>
                     <td>{{ crn.SSRMEET_END_TIME | formatCrnTime}}</td>
                     <td>
-                        <span *ngIf="crn.valid" class="text-center text-danger">لا يمكن إتاحة التحضير في غير وقت المحاضرة</span>
-                        <button [routerLink]="['/attendance/code']" *ngIf="!crn.valid" class="btn btn-primary">إتاحة التحضير</button>
+                        <span *ngIf="crn.valid" class="text-center text-danger">{{"attends.attend_not_allow"|translate}}</span>
+                        <button [routerLink]="['/attendance/code']" [queryParams]="{c: crn.CRN}" *ngIf="!crn.valid" class="btn btn-primary">{{"attends.allow_attend"|translate}}</button>
                     </td>
+                    <td>
+                      <button [routerLink]="['/attendance/report']" [queryParams]="{c: crn.CRN}" class="btn btn-primary">{{"attends.attend_report"|translate}}</button>
+                  </td>
                 </tr>
             </tbody>
         </table>

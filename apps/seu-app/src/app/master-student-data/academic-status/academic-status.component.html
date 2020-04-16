@@ -3,32 +3,10 @@
   <!-- <mat-spinner *ngIf="isLoading"
   style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
 </mat-spinner> -->
+<service-header [title]="'services.academic_status.title' |translate"
+  [desc]="'services.academic_status.desc' |translate"></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
 
-  <section class="service-single">
-    <div class="container">
-      <h3> {{"services.academic_status.title" | translate}}  </h3>
-      <div class="row">
-        <div class=" col-md-5">
-          <p> {{"services.academic_status.title" | translate}}  </p>
-        </div>
-        <!-- <div class=" col-md-6 descr">
-          <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
-          &nbsp; &nbsp; &nbsp; &nbsp;
-
-        </div> -->
-      </div>
-    </div>
-  </section>
-  <div *ngIf="isLoading" class=" loading-indicator  ">
-    <div class="state">
-
-
-      <mat-spinner *ngIf="isLoading"
-        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-      </mat-spinner>
-
-    </div>
-  </div>
   <div class="ser-state" *ngIf="!isLoading">
     <div *ngFor="let msg of msgs"
       [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"

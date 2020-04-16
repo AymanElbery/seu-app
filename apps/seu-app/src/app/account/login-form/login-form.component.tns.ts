@@ -26,6 +26,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   brandNew: boolean;
   errors: string;
   isRequesting: boolean;
+  clicked = {};
   submitted = false;
   credentials: Credentials = { email: '', password: '' };
   status;
@@ -51,6 +52,13 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
     // this.userManger.logout();
     // this.userManger.logout();
+  }
+
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
   }
 
   login() {
@@ -151,6 +159,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     sideDrawer.gesturesEnabled = false;
 
 
+
+    
   }
   // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {

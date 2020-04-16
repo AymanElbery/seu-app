@@ -1,0 +1,58 @@
+<mat-dialog-content>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{"services.course_gpa.title"|translate}}</h5>
+      </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+          <section class="ser-state">
+            <div class="container">
+              <P class="text-center">
+                <span style="font-weight: bold; font-size: 15px;color: red;">
+                  {{"services.course_gpa.notes"|translate}}
+                </span>
+              </P>
+              <div class="row  ser-block">
+                <div class=" col-md-12 col-sm-12">
+                  <div class="state">
+                    <label>
+                      <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel"
+                        [(ngModel)]="course.CI003" name="CI003">
+                      &nbsp;&nbsp;
+                      {{"services.course_gpa.CI003"|translate}}
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row  ser-block">
+                <div class=" col-md-12 col-sm-12">
+                  <div class="state">
+                    <label>
+                      <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel"
+                        [(ngModel)]="course.CS003" name="CS003">
+                      &nbsp;&nbsp;
+                      {{"services.course_gpa.CS003"|translate}}
+
+                    </label>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+          <button type="submit" [disabled]="requesting || (course.CS003 ==0 && course.CI003 == 0)"
+            class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>
