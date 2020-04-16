@@ -1,4 +1,4 @@
-function ServiceStart(e, s, i) {
+! function (e, s, i) {
   "use strict";
   i(s).ready(function () {
     function a(e, s) {
@@ -10,14 +10,20 @@ function ServiceStart(e, s, i) {
       t = i(".sidebar-content"),
       l = i(".wrapper"),
       o = s.querySelector(".sidebar-content");
+      console.log(n, t, l,o);
+
     // new PerfectScrollbar(o, {
     //     wheelSpeed: 10,
     //     wheelPropagation: !0,
     //     minScrollbarLength: 5
     // });
-    t.on("click", ".navigation-main .nav-item a", function () {
+    i(s).on("click", ".navigation-main .nav-item a", function () {
+      console.log(n, t, l,o);
+
       var e = i(this).parent(".nav-item");
-      if (e.hasClass("has-sub") && e.hasClass("open")) a(e);
+      if (e.hasClass("has-sub") && e.hasClass("open")) {
+        //a(e);
+      }
       else {
         if (e.hasClass("has-sub") && function (e, s) {
           var a = e.children(".submenu-content"),
@@ -30,7 +36,7 @@ function ServiceStart(e, s, i) {
         }(e), t.data("collapsible")) return !1;
         a(e.siblings(".open")), e.siblings(".open").find(".nav-item.open").removeClass("open")
       }
-    }), i(".nav-toggle").on("click", function () {
+    }), i(s).on("click", ".nav-toggle", function () {
       var e = i(this).find(".toggle-icon");
       "expanded" === e.attr("data-toggle") ? (l.addClass("nav-collapsed"), i(".nav-toggle").find(".toggle-icon").removeClass("ik-toggle-right").addClass("ik-toggle-left"), e.attr("data-toggle", "collapsed")) : (l.removeClass("nav-collapsed menu-collapsed"), i(".nav-toggle").find(".toggle-icon").removeClass("ik-toggle-left").addClass("ik-toggle-right"), e.attr("data-toggle", "expanded"))
     }), n.on("mouseenter", function () {
@@ -223,10 +229,4 @@ function ServiceStart(e, s, i) {
       $(this).addClass('active');
     });
   })
-};
-function WindowStartSerices() {
-  ServiceStart(window, document, jQuery);
-}
-$(document).ready(function () {
-  WindowStartSerices();
-});
+}(window, document, jQuery);

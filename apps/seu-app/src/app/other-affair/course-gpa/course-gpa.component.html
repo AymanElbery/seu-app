@@ -34,12 +34,12 @@
           <tr *ngFor="let it of reqData.reqs;let i=index;">
             <td>{{it.INSER_DATE}}</td>
             <td>
-              <span *ngIf="it.CS003">
+              <span *ngIf="it.CS003 == 1">
                 {{"services.course_gpa.yes"|translate}}
               </span>
             </td>
             <td>
-              <span *ngIf="it.CI003">
+              <span *ngIf="it.CI003 == 1">
                 {{"services.course_gpa.yes"|translate}}
               </span>
             </td>
