@@ -1,117 +1,8 @@
-<!-- <div class="jumbotron jumbtron-fluid">
-    <h3 class="display-5 text-center">  شهادة تعريف</h3>
-<p style="text-align: center;direction: rtl">
-
-<b>  {{certificateDetails.labels.date}} </b>  {{certificateDetails.values.date}}
-<b>  {{certificateDetails.labels.ssn}} </b>  {{certificateDetails.values.ssn}}
-<br>
- {{certificateDetails.labelngs.txt1}}   {{certificateDetails.values.std_name}}
- {{certificateDetails.labels.txt2}}   {{certificateDetails.values.std_id}}
-
- {{certificateDetails.labels.txt3}}   {{certificateDetails.values.coll}}
-
- {{certificateDetails.labels.txt4}}   {{certificateDetails.values.major}}
- <br/>
-
-
- {{certificateDetails.labels.txt5}}   {{certificateDetails.values.term}}
-
- {{certificateDetails.labels.txt6}}
-
- {{certificateDetails.labels.txt7}}
- <br/>
- <br/>
-
- <ng-template [ngIf]="lectures ==null" [ngIfElse]="NoLec">
-  <div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">{{certificateDetails.labels.crn}}</th>
-          <th scope="col">{{certificateDetails.labels.course}}</th>
-          <th scope="col">{{certificateDetails.labels.day_and_date}}</th>
-          <th scope="col">{{certificateDetails.labels.time}}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of lectures">
-          <td >{{item.CRN}}</td>
-          <td>{{item.CRSE_TITLE}}</td>
-          <td>{{item.CRSE_DAY}}</td>
-          <td>{{item.CRSE_TIME}}</td>
-        </tr>
-
-      </tbody>
-    </table>  </div>
-    <br/>
-
-
-</ng-template>
-
-<ng-template #NoLec>
-  <div>
- <b>{{certificateDetails.labels.txt8}}  </b>
-  </div>
-</ng-template>
-<br/><br/>
-{{certificateDetails.labels.txt9}}  <br/>
-{{certificateDetails.labels.txt10}}
-<br/><br/>
-<b>
-{{certificateDetails.labels.txt11}}
-</b>
-{{certificateDetails.labels.txt12}}
-<br/>
-<br/>
-{{certificateDetails.labels.txt13}}
-
-
-
-
-<br/><br/>
-
-
-</p>
-
-<div  class="btn-group btn-group-justified col-md-12 ">
-  <div class="col-md-4"></div>
-  <a class="btn btn-primary" href="{{arabicPrint}}"><span class="ik ik-printer"></span>
-    {{"general.ar_print" | translate}} </a>
-  <a class="btn btn-primary" href="{{EngPrint}}"><span class="ik ik-printer"></span>
-    {{"general.en_print" | translate}} </a>
-  <div class="col-md-4"></div>
-
-  </div>
-</div>
- -->
 <div class="main-content">
+  <service-header [title]="'services.certificate_id.title' |translate"
+    [desc]="'services.certificate_id.desc' |translate"></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
 
-  <section class="service-single">
-    <div class="container">
-      <h3>{{"services.certificate_id.title" |translate}}</h3>
-      <div class="row">
-        <div class=" col-md-5">
-          <p>{{"services.certificate_id.desc" |translate}}</p>
-        </div>
-        <!-- <div class=" col-md-6 descr">
-                <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>
-                  &nbsp; &nbsp; &nbsp; &nbsp;
-                  <a href="#"><i class="ik ik-download"></i> </a>
-                  <a href="#"><i class="ik ik-film"></i></a>
-              </div> -->
-      </div>
-    </div>
-  </section>
-  <div *ngIf="isLoading" class=" loading-indicator ">
-    <div class="state">
-
-
-      <mat-spinner *ngIf="isLoading"
-        style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-      </mat-spinner>
-
-    </div>
-  </div>
   <section class="ser-state" *ngIf="!isLoading">
     <div class="container">
       <div class="row ser-block">
@@ -214,8 +105,10 @@
         </div>
       </div>
       <div style="text-align: center" class="prin" *ngIf="!isLoading">
-        <a class="btn" seu-auto-print href="{{arabicPrint}}">{{"general.ar_print"|translate}}<i class="ik ik-save"></i> </a>
-        <a class="btn" seu-auto-print href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print"|translate}} </a>
+        <a class="btn" seu-auto-print href="{{arabicPrint}}">{{"general.ar_print"|translate}}<i class="ik ik-save"></i>
+        </a>
+        <a class="btn" seu-auto-print href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print"|translate}}
+        </a>
       </div>
     </ng-template>
     <!-- </div> -->

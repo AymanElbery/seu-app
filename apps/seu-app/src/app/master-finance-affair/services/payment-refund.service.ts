@@ -6,7 +6,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class PaymentRefundService {
-
+  newreqs = false;
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
@@ -31,6 +31,6 @@ export class PaymentRefundService {
 
     return this.httRequest.GetRequest('payment_refund_service/remove/' + id).toPromise();
   }
-  
- 
+
+
 }

@@ -17,17 +17,14 @@
       <div class="row ser-block">
         <div class=" col-md-12 col-sm-12">
           <div class="state">
-            <h6>{{"wafi.date"|translate}} </h6>
+            <h6>{{"wafi.date"|translate}} <span class="reqstart">*</span> </h6>
             <select formControlName="beginDay" [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }">
-              <option [ngValue]="undefined" selected>{{"wafi.beginday" | translate}}</option>
               <option *ngFor="let day of ddlday" value={{day.value}}>{{day.label}} </option>
             </select>
             <select formControlName="beginMonth" [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
-              <option [ngValue]="undefined" selected>{{"wafi.beginmonth" | translate}}</option>
               <option *ngFor="let month of ddlmonth" value={{month.value}}>{{month.label}} </option>
             </select>
             <select formControlName="beginYear" [ngClass]="{ 'is-invalid': submitted && f.beginYear.errors }">
-              <option [ngValue]="undefined" selected>{{"wafi.beginyear" | translate}}</option>
               <option *ngFor="let year of ddlyear" [selected]="selectvactype == year.value" value={{year.value}}>
                 {{year.label}} </option>
             </select>
@@ -38,7 +35,7 @@
 
         <div class=" col-md-6 col-sm-6">
           <div class="state">
-            <h6>{{"wafi.leaveDeductionPeriod"|translate}} </h6>
+            <h6>{{"wafi.leaveDeductionPeriod"|translate}} <span class="reqstart">*</span></h6>
             <input type="text" class="form-control select" formControlName="leaveDeductionPeriod" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.leaveDeductionPeriod.errors }" />
 

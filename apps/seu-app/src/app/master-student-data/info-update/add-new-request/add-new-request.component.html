@@ -11,58 +11,64 @@
       </div>
       <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
         <div class="modal-body">
+          <h5>{{"services.info_update.stds_info"|translate}} ({{"services.info_update.info_en"|translate}}) </h5>
           <div class="state">
-            <h6>{{"services.info_update.first_name"|translate}}</h6>
-            <input name="first_name" #name="ngModel" [(ngModel)]="infoupdate.first_name" class="form-control">
-          
+            <h6>{{"services.info_update.first_name"|translate}} <span class="reqstart">*</span> </h6>
+            <input name="first_name" required #name="ngModel" [(ngModel)]="infoupdate.first_name" class="form-control">
           </div>
 
           <div class="state">
-            <h6>{{"services.info_update.mid_name"|translate}}</h6>
-            <input name="mid_name" #name="ngModel" [(ngModel)]="infoupdate.mid_name" class="form-control">
+            <h6>{{"services.info_update.mid_name"|translate}} <span class="reqstart">*</span></h6>
+            <input name="mid_name" required #name="ngModel" [(ngModel)]="infoupdate.mid_name" class="form-control">
           </div>
           <div class="state">
-            <h6>{{"services.info_update.last_name"|translate}}</h6>
-            <input name="last_name" #name="ngModel" [(ngModel)]="infoupdate.last_name" class="form-control">
+            <h6>{{"services.info_update.last_name"|translate}} <span class="reqstart">*</span></h6>
+            <input name="last_name" required #name="ngModel" [(ngModel)]="infoupdate.last_name" class="form-control">
           </div>
 
+          <h5>{{"services.info_update.stds_info"|translate}} ({{"services.info_update.info_ar"|translate}})</h5>
+
           <div class="state">
-            <h6>{{"services.info_update.first_name_ar"|translate}}</h6>
-            <input name="first_name_ar" #name="ngModel" [(ngModel)]="infoupdate.first_name_ar" class="form-control">
+            <h6>{{"services.info_update.first_name_ar"|translate}} <span class="reqstart">*</span></h6>
+            <input name="first_name_ar" required #name="ngModel" [(ngModel)]="infoupdate.first_name_ar" class="form-control">
           </div>
           <div class="state">
-            <h6>{{"services.info_update.mid_name_ar"|translate}}</h6>
-            <input name="mid_name_ar" #name="ngModel" [(ngModel)]="infoupdate.mid_name_ar" class="form-control">
+            <h6>{{"services.info_update.mid_name_ar"|translate}} <span class="reqstart">*</span></h6>
+            <input name="mid_name_ar" required #name="ngModel" [(ngModel)]="infoupdate.mid_name_ar" class="form-control">
             <!-- <input name="last_four_id" #name="ngModel" [(ngModel)]="payrefund.last_four_id" (keypress)="keyPress($event)" maxlength="4" class="form-control"> -->
           </div>
 
           <div class="state">
-            <h6>{{"services.info_update.last_name_ar"|translate}}</h6>
-            <input name="last_name_ar" #name="ngModel" [(ngModel)]="infoupdate.last_name_ar" class="form-control">
+            <h6>{{"services.info_update.last_name_ar"|translate}} <span class="reqstart">*</span></h6>
+            <input name="last_name_ar" required #name="ngModel" [(ngModel)]="infoupdate.last_name_ar" class="form-control">
           </div>
-         
+
           <div class="state">
-            <h6>{{"services.info_update.mobile"|translate}}</h6>
-            <input name="mobile" #name="ngModel" [(ngModel)]="infoupdate.mobile" (keypress)="keyPress($event)" maxlength="14" class="form-control">
+            <h6>{{"services.info_update.mobile"|translate}}{{"services.info_update.phone_note"|translate}} <span class="reqstart">*</span></h6>
+            <input name="mobile" required #name="ngModel" [(ngModel)]="infoupdate.mobile" (keypress)="keyPress($event)"
+              maxlength="8" class="form-control">
           </div>
 
-       <div class="state">                
-                <h6>{{"services.info_update.city"|translate}}</h6>
-                <select name="city" #city="ngModel" [(ngModel)]="infoupdate.city" class="form-control"
-            [class.is-invalid]="infoupdate.city==''">
-            <option value="">{{"services.info_update.city"|translate}}</option>
-            <option *ngFor="let item of cities" value="{{item.id}}">{{item.value}}</option>
-                <!-- <input name="city" #name="ngModel" [(ngModel)]="infoupdate.city" class="form-control">        -->
-         </select>
-       </div>
-       
+          <h5>{{"services.info_update.address"|translate}} ({{"services.info_update.info_en"|translate}}) </h5>
+          <div class="state">
+            <h6>{{"services.info_update.state"|translate}} <span class="reqstart">*</span></h6>
+            <input name="state" required #state="ngModel" [(ngModel)]="infoupdate.state" class="form-control">
+          </div>
+          <div class="state">
+            <h6>{{"services.info_update.city"|translate}} <span class="reqstart">*</span></h6>
+            <select name="city" required #city="ngModel" [(ngModel)]="infoupdate.city" class="form-control"
+              [class.is-invalid]="infoupdate.city==''">
+              <option value="">{{"services.info_update.city"|translate}}</option>
+              <option *ngFor="let item of cities" value="{{item.id}}">{{item.value}}</option>
+              <!-- <input name="city" #name="ngModel" [(ngModel)]="infoupdate.city" class="form-control">        -->
+            </select>
+          </div>
+          <div class="state">
+            <h6>{{"services.info_update.street"|translate}} <span class="reqstart">*</span></h6>
+            <input name="street" required #name="ngModel" [(ngModel)]="infoupdate.street" class="form-control">
 
-       <div class="state">                
-        <h6>{{"services.info_update.street"|translate}}</h6>
-        <input name="street" #name="ngModel" [(ngModel)]="infoupdate.street" class="form-control">       
- 
-</div>  
-         
+          </div>
+
 
         </div>
 
@@ -70,7 +76,7 @@
           <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
             {{"services.info_update.cancel"|translate}}</button>
 
-          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+          <button type="submit" [disabled]="infoupdate.first_name == '' || infoupdate.mid_name == '' || infoupdate.last_name == '' || infoupdate.first_name_ar == '' || infoupdate.mid_name_ar == '' || infoupdate.last_name_ar == '' || infoupdate.mobile == '' || infoupdate.state == '' || infoupdate.city == '' || infoupdate.street == '' || infoupdate.email == '' " class="btn btn-dark"><i class="fa fa-database"></i>
             {{"services.info_update.save"|translate}}</button>
         </div>
       </form>

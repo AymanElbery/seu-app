@@ -6,7 +6,7 @@ import { HttpRequestService } from 'src/app/shared/services/http-request.service
   providedIn: 'root'
 })
 export class InfoUpdateService {
-
+  cities = [];
   reqData;
   msgs;
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
@@ -24,6 +24,6 @@ export class InfoUpdateService {
 
     return this.httRequest.postRequest('student_info_service/update', data).toPromise();
   }
-    
- 
+
+
 }

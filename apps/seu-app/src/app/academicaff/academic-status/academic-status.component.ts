@@ -19,7 +19,9 @@ export class AcademicStatusComponent implements OnInit, OnDestroy {
   isLoadingTerm = false;
 
 
-  constructor(private transalte: TranslateService, private academicStatusService: AcademicStatusService) { }
+  constructor(private transalte: TranslateService, private academicStatusService: AcademicStatusService) {
+
+   }
   subscriptions;
   ngOnInit() {
     this.getReqs();

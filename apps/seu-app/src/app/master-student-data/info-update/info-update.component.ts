@@ -5,7 +5,7 @@ import { InfoUpdateService } from '../services/info-update.service';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { NgForm } from '@angular/forms';
-import {AddNewRequestComponent } from '../info-update/add-new-request/add-new-request.component';
+import { AddNewRequestComponent } from '../info-update/add-new-request/add-new-request.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -14,23 +14,23 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './info-update.component.html',
   styleUrls: ['./info-update.component.css']
 })
-export class InfoUpdateComponent implements OnInit,OnDestroy {
+export class InfoUpdateComponent implements OnInit, OnDestroy {
 
   canaddreq;
-  reqData:any;
+  reqData: any;
   msgs;
   status;
-  
+
   constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private infoupdateservice: InfoUpdateService) { }
   isLoading = true;
   ngOnInit() {
-    
+
     this.getRequests();
     this.subscribeLangChange();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
       this.getRequests();
     });
-    
+
   }
 
   subscriptions;
@@ -49,10 +49,11 @@ export class InfoUpdateComponent implements OnInit,OnDestroy {
     this.isLoading = true;
     this.infoupdateservice.getRequest().then(
       res => {
+        this.infoupdateservice.cities = (res as any).data["cities"];
         //console.log("get data",res);
         this.reqData = (res as any).data["request"];
         this.canaddreq = (res as any).data["can_update_data"];
-       //console.log("get data",this.canaddreq,this.reqData);
+        //console.log("get data",this.canaddreq,this.reqData);
         this.msgs = (res as any).messages;
         //this.reqData = this.infoupdateservice.reqData;
         this.msgs = this.infoupdateservice.msgs;
@@ -71,11 +72,11 @@ export class InfoUpdateComponent implements OnInit,OnDestroy {
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
     const dialogref = this.dialog.open(AddNewRequestComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {   
-      this.getRequests();           
+    dialogref.afterClosed().subscribe(result => {
+      this.getRequests();
     });
   }
 
 
-  
+
 }

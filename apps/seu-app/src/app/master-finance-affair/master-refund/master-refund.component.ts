@@ -5,7 +5,7 @@ import { PaymentRefundService } from '../services/payment-refund.service';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { NgForm } from '@angular/forms';
-import {RefundRequestComponent } from '../master-refund/dialog/refund-request.component';
+import { RefundRequestComponent } from '../master-refund/dialog/refund-request.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -19,22 +19,22 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./master-refund.component.css']
 })
 
-export class MasterRefundComponent implements OnInit,OnDestroy {
+export class MasterRefundComponent implements OnInit, OnDestroy {
   canaddreq;
   reqData;
   msgs;
   status;
-  
+
   constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private refservice: PaymentRefundService) { }
   isLoading = true;
   ngOnInit() {
-    
+
     this.getRequests();
     this.subscribeLangChange();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
       this.getRequests();
     });
-    
+
   }
 
   subscriptions;
@@ -53,10 +53,8 @@ export class MasterRefundComponent implements OnInit,OnDestroy {
     this.isLoading = true;
     this.refservice.getRequest().then(
       res => {
-       // console.log("get data",reqData);
-        this.refservice.reqData = (res as any).data["reqs"];
+        this.refservice.reqData = (res as any).data;
         this.canaddreq = (res as any).data["can_add_new_request"];
-       // console.log("get data",this.canaddreq,this.refservice.reqData);
         this.refservice.msgs = (res as any).messages;
         this.reqData = this.refservice.reqData;
         this.msgs = this.refservice.msgs;
@@ -75,13 +73,16 @@ export class MasterRefundComponent implements OnInit,OnDestroy {
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
     const dialogref = this.dialog.open(RefundRequestComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {   
-        this.getRequests();           
+    dialogref.afterClosed().subscribe(result => {
+      if (this.refservice.newreqs) {
+        this.getRequests();
+        this.refservice.newreqs = false;
+      }
     });
   }
 
 
-  
+
   deleting = false;
   delete(id, index) {
     //console.log(id);
@@ -89,10 +90,7 @@ export class MasterRefundComponent implements OnInit,OnDestroy {
       this.deleting = true;
       this.refservice.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
-        if ((res as any).status == 1) {
-          this.reqData.reqs.splice(index, 1);
-          this.getRequests();
-        }
+        this.getRequests();
         this.deleting = false;
       }, err => {
         this.toastr.tryagain();
@@ -100,5 +98,5 @@ export class MasterRefundComponent implements OnInit,OnDestroy {
       });
     }
   }
-  
+
 }

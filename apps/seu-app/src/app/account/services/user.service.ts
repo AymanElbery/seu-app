@@ -12,6 +12,8 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
+import { HttpRequestServiceBase } from 'src/app/shared/services/http-request.service_base';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -33,9 +35,10 @@ export class UserService extends BaseService {
   adsData;
   constructor(
     private configService: ConfigService,
-    private httRequest: HttpRequestService,
+    private httRequest: HttpRequestServiceBase,
     private http: HttpClient,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private router: Router
   ) {
     super();
     this.configService.baseUrl = '';
@@ -93,7 +96,7 @@ export class UserService extends BaseService {
     location: string
   ) {
     const body = { username, email, password, firstName, lastName, location };
-    return this.httRequest.postRequest('accounts', body).pipe(
+    return this.httRequest.postAuthRequest('accounts', body).pipe(
       map((res: any) => res),
       catchError(err => {
         console.error(err);
@@ -108,7 +111,7 @@ export class UserService extends BaseService {
   login(userName, password) {
     // console.log('ser');
     return this.httRequest
-      .postRequest('auth/login', { userName, password })
+      .postAuthRequest('auth/login', { userName, password })
       .pipe(
         map((res: any) => res),
         catchError(err => {
@@ -124,7 +127,6 @@ export class UserService extends BaseService {
   SignIn(userName, pass) {
     this.baseUrl = '';
     this.configService.baseUrl = '';
-
     return this.httRequest.postAuthRequest('rest/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
   }
   resetPassword(opassword, npassword, cpassword) {
@@ -136,19 +138,26 @@ export class UserService extends BaseService {
     return this.httRequest.postAuthRequest('rest/ssosession/resetpassword', { user, opassword, npassword, cpassword, lang }).toPromise();
   }
 
+  errorRedirect() {
+    this.router.navigate(['/error']);
+  }
   loadUserData() {
     if (this.userDataLoaded !== true) {
       return this.requestUser()
         .then(res => {
-          this.userData = (res as any).data;
-          // console.log('userdata:'+this.userData);
-          this.userData.activeRole = this.userData.role;
-          this.userDataLoaded = true;
-          this.pushUserDataChanges();
-          return this.userData;
+          if ( res['status']) {
+            this.userData = (res as any).data;
+            // console.log('userdata:'+this.userData);
+            this.userData.activeRole = this.userData.role;
+            this.userDataLoaded = true;
+            this.pushUserDataChanges();
+            return this.userData;
+          } else {
+            this.errorRedirect();
+          }
         },
           err => {
-            this.relogin();
+            this.errorRedirect();
             // if (localStorage.getItem("userreloaded")) {
             //   localStorage.removeItem("userreloaded");
             //   window.location.href = "https://seu.edu.sa";

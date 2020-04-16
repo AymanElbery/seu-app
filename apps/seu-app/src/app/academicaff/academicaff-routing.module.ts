@@ -10,18 +10,14 @@ import { SkillsRecordComponent } from './skills-record/skills-record.component';
 import { UGGuard } from '../guards/ug.guard';
 
 const routes: Routes = [
-  { path: '', component: AcademicStatusComponent },
-  {
-    path: '',
-    children: [
-      { path: 'status', component: AcademicStatusComponent },
-      { path: 'certificate', component: CertificateIDComponent },
-      { path: 'record', component: AcademicRecordComponent },
-      { path: 'graduationstatment', component: GraduateStateComponent },
-      { path: 'skills', component: SkillsRecordComponent, canActivate: [UGGuard] },
 
-    ]
-  }
+  { path: '', component: AcademicStatusComponent },
+  { path: 'status', component: AcademicStatusComponent },
+  { path: 'certificate', component: CertificateIDComponent },
+  { path: 'record', component: AcademicRecordComponent },
+  { path: 'graduationstatment', component: GraduateStateComponent },
+  { path: 'skills', component: SkillsRecordComponent, canActivate: [UGGuard] },
+
 ];
 
 @NgModule({

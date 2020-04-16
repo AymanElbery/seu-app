@@ -61,7 +61,7 @@ export class EvacuatePartyRequestComponent implements OnInit {
 
     this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
       ////console.log("saved data", leavdedcut);
-      if (!leavdedcut['saveRequest']) {
+      if (!leavdedcut['data']['saveRequest']) {
         var error = (leavdedcut as any).data["errorMassege"]
         //console.log("response data",error);
         this.toastr.push([{ type: 'error', 'body': error }]);

@@ -16,6 +16,7 @@ export class FavEmpComponent implements OnInit, OnDestroy {
   AddReqForm: FormGroup;
   submitted = false;
   subscriptionEMplist: Subscription;
+  subscriptionEMpDlete: Subscription;
   ddlemplist: any;
   isLoading = false;
   subscriptions;
@@ -70,9 +71,35 @@ export class FavEmpComponent implements OnInit, OnDestroy {
   getDDLEmplist() {
     this.ddlemplist = this.taskservice.empList;
     this.favList = this.taskservice.getfaVouriteList();
-    this.subscriptionEMplist = this.taskservice.empListsubject.subscribe(emplist => {
+    this.subscriptionEMplist = this.taskservice.empListsubject.subscribe(emplist => {      
       this.ddlemplist = this.taskservice.empList;
       this.favList = this.taskservice.getfaVouriteList();
+     
     });
   }
+
+  deleting = false;
+  delete(favEmpId) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
+      this.isLoading = true;
+      this.subscriptionEMpDlete = this.taskservice.DeleteFavEmployee(favEmpId).subscribe(empreqsdel => {
+        if (empreqsdel['data']['deleteFavouriteEmp'] == true) {     
+          this.taskservice.deleteFromFavourite(favEmpId);     
+          this.getDDLEmplist();          
+        } else {
+          this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);
+        }        
+        this.deleting = false;
+        this.isLoading = false;
+        
+      },
+        err => {
+          this.toastr.tryagain();
+          this.deleting = false;
+        });
+
+    }
+  }
+
 }

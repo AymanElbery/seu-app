@@ -1,0 +1,16 @@
+{
+    "logout": "LogOut",
+    "hello": "Hello",
+    "home": "Home",
+    "ug": "Undergraduate",
+    "gr": "Master",
+    "AdmissionUgResult": "Enquire about the result of admission",
+    "AdmissionGrTitle": "AdmissionGrTitle",
+    "ResultStatus": "Admission Result",
+    "Name": "Name",
+    "ID": "ID",
+    "CAMP": "Campus",
+    "COLL_DESC1": "College",
+    "MAJR_DESC1": "MAJRR",
+    "LogInUG": "LogIn Undergraguate"
+}

@@ -9,15 +9,15 @@ import { Router } from '@angular/router';
 import { AppToasterService } from '../../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from "@angular/router";
-import * as xlsx from 'xlsx'; 
+import * as xlsx from 'xlsx';
 
 
 @Component({
-  selector: 'app-report',
-  styleUrls: ['./report.component.css'],
-  templateUrl: './report.component.html'
+    selector: 'app-report',
+    styleUrls: ['./report.component.css'],
+    templateUrl: './report.component.html'
 })
-export class ReportComponent{
+export class ReportComponent {
 
     @ViewChild('epltable', { static: false }) epltable: ElementRef;
     isLoading;
@@ -30,11 +30,11 @@ export class ReportComponent{
     result = [];
     excel = false;
     constructor(
-        public userService: UserService, 
-        private attendanceService: AttendanceService, 
-        private http: HttpClient, 
-        private reqservice: HttpRequestService, 
-        private router: Router, 
+        public userService: UserService,
+        private attendanceService: AttendanceService,
+        private http: HttpClient,
+        private reqservice: HttpRequestService,
+        private router: Router,
         private toastr: AppToasterService,
         public translate: TranslateService,
         private route: ActivatedRoute
@@ -42,43 +42,43 @@ export class ReportComponent{
         this.isLoading = true;
         this.route.queryParams.subscribe(params => {
             this.crn = params.c;
-            
+
             this.attendanceService.getDates(this.crn).subscribe(
                 (response: any) => {
-                  if (response) {
-                      let dates = response.data;
-                      this.dates = this.formatDates(dates);
-                      this.resDates = this.resetDates(dates);
-                      console.log(this.dates, this.resDates);
-                  }
+                    if (response) {
+                        let dates = response.data;
+                        this.dates = this.formatDates(dates);
+                        this.resDates = this.resetDates(dates);
+                        console.log(this.dates, this.resDates);
+                    }
                 },
-                error => {}
+                error => { }
             )
 
             this.attendanceService.getAllStds(this.crn).subscribe(
                 (response: any) => {
-                  if (response) {
-                      this.allStd = response.data;
-                      this.attendanceService.getAttendStds(this.crn).subscribe(
-                        (response: any) => {
-                        if (response) {
-                            this.attendStd = response.data;
-                            this.result = this.formatStdAttend(this.allStd, this.attendStd);
-                            this.isLoading = false;
-                        }
-                        },
-                        error => {}
-                    )
-                  }
+                    if (response) {
+                        this.allStd = response.data;
+                        this.attendanceService.getAttendStds(this.crn).subscribe(
+                            (response: any) => {
+                                if (response) {
+                                    this.attendStd = response.data;
+                                    this.result = this.formatStdAttend(this.allStd, this.attendStd);
+                                    this.isLoading = false;
+                                }
+                            },
+                            error => { }
+                        )
+                    }
                 },
-                error => {}
+                error => { }
             )
 
-            
+
         });
     }
 
-    formatStdAttend(all, attends){
+    formatStdAttend(all, attends) {
         let result = [];
         for (let c = 0; c < all.length; c++) {
             all[c].INSERT_DATES = [];
@@ -93,19 +93,19 @@ export class ReportComponent{
                     all[j].INSERT_DATES[index] = attends[i].INSERT_DATE;
                 }
             }
-            
+
         }
         return all;
     }
 
-    formatDates(dates){
+    formatDates(dates) {
         dates.forEach(date => {
             this.datesArr.push(date.INSERT_DATE)
         });
         return dates;
-        
+
     }
-    resetDates(dates){
+    resetDates(dates) {
         let arrdates = [];
         let months = [];
         months['JAN'] = this.translate.instant('attends.JAN');
@@ -120,7 +120,7 @@ export class ReportComponent{
         months['OCT'] = this.translate.instant('attends.OCT');
         months['NOV'] = this.translate.instant('attends.NOV');
         months['DEC'] = this.translate.instant('attends.DEC');
-        
+
         for (let i = 0; i < dates.length; i++) {
             arrdates[i] = {};
             arrdates[i].INSERT_DATE = dates[i].INSERT_DATE.split("-");
@@ -128,21 +128,21 @@ export class ReportComponent{
             arrdates[i].INSERT_DATE[2] = dates[i].INSERT_DATE[2] + "20";
         }
         return arrdates;
-        
+
     }
 
-    exportexcel(lang){
+    exportexcel() {
 
         this.excel = true;
-
-        let fileName = (lang == "ar") ? "تقارير الحضور و الغياب.xlsx" : "Attendance Reports.xlsx" ;
+        let lang = this.translate.currentLang;
+        let fileName = (lang == "ar") ? "تقارير الحضور و الغياب.xlsx" : "Attendance Reports.xlsx";
 
         const ws: xlsx.WorkSheet = xlsx.utils.table_to_sheet(this.epltable.nativeElement);
         const wb: xlsx.WorkBook = xlsx.utils.book_new();
         xlsx.utils.book_append_sheet(wb, ws, 'Sheet1');
         xlsx.writeFile(wb, fileName);
-        this.excel = false;	
-        
+        this.excel = false;
+
     }
 
 }

@@ -28,4 +28,8 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
   ],
   providers: [AcademicStatusService, CertificateIDService, AcademicRecordService, GraduatesStateService]
 })
-export class AcademicaffModule { }
+export class AcademicaffModule {
+  constructor(){
+
+  }
+}

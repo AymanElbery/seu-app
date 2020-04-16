@@ -14,6 +14,9 @@ export class GRGuard extends UserTypeGuard {
     super(router, userService);
   }
   checkGuardRole() {
+    if (this.userService.userData.act_as_student) {
+      return true;
+    }
     if (this.userService.userData.role != this.getLoginAsType()) {
       return false;
     }

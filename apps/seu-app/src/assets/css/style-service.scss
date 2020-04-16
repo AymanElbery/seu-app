@@ -628,6 +628,7 @@
   background-position: 100% 445px;
   //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   border-radius: 8px;
+  margin-bottom:20px;
 
   &:before {
     content: "";
@@ -654,15 +655,16 @@
   }
 
   .ik {
-    color: #fff;
+    color: #26226a;
     font-size: 22px;
     line-height: 1.7;
     margin-left: 10px;
   }
 
   span {
-    color: #fff;
-    font-size: 11px;
+    color: #26226a;
+    font-size: 16px;
+    font-weight: bold;
     line-height: 1.7;
     margin-left: 10px;
     text-align: right;

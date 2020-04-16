@@ -84,7 +84,7 @@ export class VacationRequestComponent implements OnInit {
     //console.log("submit data", submitdatavalue);
     this.empreqservice.submitreqservice(submitdatavalue).subscribe(contacts => {
       ////console.log("saved ", contacts);
-      if (!contacts['saveRequesst']) {
+      if (!contacts['data']['saveRequest']) {
         var error = (contacts as any).data["errorMassege"]
         //this.toastr.push((contacts as any).data); 
         this.toastr.push([{ type: 'error', 'body': error }]);
@@ -121,12 +121,13 @@ export class VacationRequestComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // this.uifSelected = this.ddlday.filter(o => o.value == this.uifSelectedValue)[0];
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id']; // (+) converts string 'id' to a number
       if (this.id == 6) {
         this.ddltruefalse = false;
         this.vacationsbal = this.getvacationbal(1);
+        this.AddReqForm.controls['vacation'].setValue(1);
         //var=this.FillDDLReqType(this.id);
       }
       this.FillDDLReqType(this.id);
@@ -146,7 +147,7 @@ export class VacationRequestComponent implements OnInit {
   FillDDLReqType(reqtypeid: any) {
     this.isLoading = true
     this.AddReqForm.controls['requestType'].setValue(this.id);
-    
+
     this.subscriptionDDLReqtype = this.empreqservice.getDDLVacationType(reqtypeid).subscribe(reqtype => {
       if (reqtype) {
         //console.log(reqtype);
@@ -160,7 +161,7 @@ export class VacationRequestComponent implements OnInit {
         this.cityNewItems = (reqtype as any).data["cityNewItems"];
         this.compErkabItems = (reqtype as any).data["compErkabItems"];
 
-        // //console.log("vac item data", this.vacationreqtype);
+        //console.log("vac item data", this.ddlday);
         this.isLoading = false
       } else {
       }
@@ -169,6 +170,15 @@ export class VacationRequestComponent implements OnInit {
 
   back() {
     this.router.navigate(['/wafi/employee-requests/add-new-request'])
+  }
+
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 
 }

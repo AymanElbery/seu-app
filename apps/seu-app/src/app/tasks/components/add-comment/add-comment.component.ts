@@ -36,15 +36,15 @@ export class AddCommentComponent implements OnInit {
       'commentText': ['', [Validators.required]],
       'assignTo': [''],
       'taskStatus': [''],
+      'fileName': [''],
       'file': ['']
     });
   }
 
   showAssign = false;
-  showStatus = true;
+  showStatus = false;
 
   ngOnInit() {
-
     if (this.data['type'] == 'status') {
       this.showStatus = false;
       this.AddReqForm.controls['taskStatus'].setValue(this.data['code']);
@@ -119,6 +119,10 @@ export class AddCommentComponent implements OnInit {
       return false;
     }
 
+    //   if (!this.validateFile(submitdatavalue.attachment)) {      
+    //     this.toastr.push([{ type: 'error', 'body': this.translate.instant("Selected file format is not supported") }]);
+    //     return false;
+    // }
     //console.log("submit data", submitdatavalue);
     if (!submitdatavalue['assignTo']) {
       delete submitdatavalue['assignTo'];
@@ -131,14 +135,15 @@ export class AddCommentComponent implements OnInit {
     }
     this.submitted = true;
     this.taskservice.AddTaskscommnets(submitdatavalue).subscribe(addcmt => {
-      if (!addcmt['data']['saveTaskComment']) {
-        this.toastr.push([{ type: 'error', 'body': this.translate.instant("general.error") }]);
-      } else {
+      if (addcmt['data']['status'] == true) {
         this.taskservice.loadStats();
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('general.request_saved') }]);
         this.submitted = false;
         this.taskservice.dialogCloseRefresh = true;
         this.dialogRef.close();
+      } else {
+        var erromsg = addcmt['data']['errmsg'];
+        this.toastr.push([{ type: 'error', 'body': erromsg }]);
       }
     }, error => {
       this.toastr.tryagain();
@@ -159,13 +164,13 @@ export class AddCommentComponent implements OnInit {
   handleFileInput(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     if (!file) {
-      this.AddReqForm.controls['file'].setValue("");
-      return;
+      return false;
     }
     if (!this.validateFile(file.name)) {
       this.toastr.push([{ type: 'error', 'body': this.translate.instant("Selected file format is not supported") }]);
       return false;
     }
+    this.AddReqForm.controls['fileName'].setValue(file.name);
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
@@ -173,6 +178,7 @@ export class AddCommentComponent implements OnInit {
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.AddReqForm.controls['file'].setValue(reader.result);
+
   }
 
 }

@@ -27,8 +27,10 @@ export class TasksListComponent implements OnInit {
   subscriptions;
   ddl;
   ddlemplist;
-
+list;
   ngOnInit() {
+
+  this.list=this.router.url.split("/")[2];    
   this.taskservice.reloadList();
     this.getTasksList();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {

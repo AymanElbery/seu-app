@@ -12,20 +12,20 @@ import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
 import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
 import { PolicyComponent } from './home/policy.component';
 import { EmpGuard } from './guards/emp.guard';
-
+import { AppErrorComponent } from './home/error.component';
 const routes: Routes = [
   {
     path: '',
     component: BlankComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
-      { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
+      { path: 'home', component: HomeComponent },
       { path: 'home/:t', component: HomeComponent },
+      // { path: 'homebsc', component: HomeComponent, canActivate: [AuthGuard] },
+      // { path: 'homemsc', component: HomeComponent, canActivate: [AuthGuard] },
       { path: 'admis-pages/:cat', component: AdmisPagesComponent },
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       { path: 'policy', component: PolicyComponent },
-
       {
         path: 'instructions',
         loadChildren: './instructions/instructions.module#InstructionsModule',
@@ -120,10 +120,18 @@ const routes: Routes = [
     ]
   },
   {
+    path: 'error',
+    component: AppErrorComponent
+  },  
+  {
     path: 'print',
     outlet: 'print',
     component: PrintLayoutComponent,
     children: [{ path: 'print-file/:paramData', component: PrintFileComponent }]
+  },
+  {
+    path: 'apps',
+    loadChildren: './apps/apps.module#AppsModule'
   }
 ];
 

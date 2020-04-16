@@ -12,71 +12,77 @@
       <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
         <div class="modal-body">
           <div class="state">
-            <h6>{{"services.master_refund.refund_type"|translate}}</h6>
-            
-            <select name="refund_type" #refund_type="ngModel" [(ngModel)]="payrefund.refund_type" class="form-control"
-            [class.is-invalid]="payrefund.refund_type==''">
-            <option value="">{{"services.master_refund.refund_type"|translate}}</option>
-            <option *ngFor="let item of reftype" value="{{item.id}}">{{item.value}}</option>
-          </select>
+            <h6>{{"services.master_refund.refund_type"|translate}} <span class="reqstart">*</span></h6>
+
+            <select name="refund_type" required #refund_type="ngModel" [(ngModel)]="payrefund.refund_type" class="form-control"
+              [class.is-invalid]="payrefund.refund_type==''">
+              <option value="">{{"services.master_refund.refund_type"|translate}}</option>
+              <option *ngFor="let item of reftype" value="{{item.id}}">{{item.value}}</option>
+            </select>
           </div>
 
           <div class="state">
-            <h6>{{"services.master_refund.name"|translate}}</h6>
-            <input name="name" #name="ngModel" [(ngModel)]="payrefund.name" class="form-control">
+            <h6>{{"services.master_refund.name"|translate}} <span class="reqstart">*</span></h6>
+            <input name="name" #name="ngModel" required [(ngModel)]="payrefund.name" class="form-control">
           </div>
           <div class="state">
-            <h6>{{"services.master_refund.bank_name"|translate}}</h6>
-            <input name="bank_name" #name="ngModel" [(ngModel)]="payrefund.bank_name" class="form-control">
-          </div>
-
-          <div class="state">
-            <h6>{{"services.master_refund.iban"|translate}}</h6>
-            <input name="iban" #name="ngModel" [(ngModel)]="payrefund.iban" (keypress)="keyPress($event)" maxlength="22" class="form-control">
-          </div>
-          <div class="state">
-            <h6>{{"services.master_refund.last_four_id"|translate}}</h6>
-            <input name="last_four_id" #name="ngModel" [(ngModel)]="payrefund.last_four_id" (keypress)="keyPress($event)" maxlength="4" class="form-control">
+            <h6>{{"services.master_refund.bank_name"|translate}} <span class="reqstart">*</span></h6>
+            <input name="bank_name" #bank_name="ngModel" required [(ngModel)]="payrefund.bank_name" class="form-control">
           </div>
 
           <div class="state">
-            <h6>{{"services.master_refund.refund_reason"|translate}}</h6>
-            <input name="refund_reason" #name="ngModel" [(ngModel)]="payrefund.refund_reason" class="form-control">
+            <h6>{{"services.master_refund.iban"|translate}} <span class="reqstart">*</span></h6>
+            <div>
+              <span style="float:left;">SA</span>
+              <input style="display: inline;width:95%;" required name="iban" #iban="ngModel" [(ngModel)]="payrefund.iban"
+                (keypress)="keyPress($event)" maxlength="22" class="form-control">
+            </div>
+
           </div>
-         
           <div class="state">
-            <h6>{{"services.master_refund.national_id"|translate}}</h6>
+            <h6>{{"services.master_refund.last_four_id"|translate}} <span class="reqstart">*</span></h6>
+            <input name="last_four_id" #last_four_id="ngModel" required [(ngModel)]="payrefund.last_four_id"
+              (keypress)="keyPress($event)" maxlength="4" class="form-control">
+          </div>
+
+          <div class="state">
+            <h6>{{"services.master_refund.refund_reason"|translate}} <span class="reqstart">*</span></h6>
+            <input name="refund_reason" #refund_reason="ngModel" required [(ngModel)]="payrefund.refund_reason" class="form-control">
+          </div>
+
+          <div class="state">
+            <h6>{{"services.master_refund.national_id"|translate}} <span class="reqstart">*</span></h6>
             <div class="custom-file">
-              <input class="custom-file-input" name="national_id" id="file" type="file" accept="*/*"
-              (change)="handleInputChange($event)" />
-              <label for="file" class="custom-file-label ">
+              <input class="custom-file-input" required name="national_id" id="national_id" type="file" accept="*/*"
+                (change)="handleInputChange($event)" />
+              <label for="national_id" class="custom-file-label ">
               </label>
             </div>
-              </div>
-              <div class="state">
-                <h6>{{"services.master_refund.payment_reciept_copy"|translate}}</h6>
-                <div class="custom-file">
-                  <input class="custom-file-input" name="payment_reciept_copy" id="file" type="file" accept="*/*"
-                  (change)="handleInputChangeFile($event)" />
-                  <label for="file" class="custom-file-label ">
-                  </label>
-                </div>
-                  </div>
+          </div>
+          <div class="state">
+            <h6>{{"services.master_refund.payment_reciept_copy"|translate}} <span class="reqstart">*</span></h6>
+            <div class="custom-file">
+              <input class="custom-file-input" required name="payment_reciept_copy" id="payment_reciept_copy" type="file" accept="*/*"
+                (change)="handleInputChangeFile($event)" />
+              <label for="payment_reciept_copy" class="custom-file-label ">
+              </label>
+            </div>
+          </div>
 
-         
 
-         
 
-         
-         
+
+
+
+
 
         </div>
 
         <div class="modal-footer">
-          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+          <button type="button" (click)="closeDiag()"  class="btn btn-outline"><i class="ik ik-x"></i>
             {{"services.master_refund.cancel"|translate}}</button>
 
-          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+          <button type="submit" [disabled]="payrefund.refund_reason==''  || payrefund.iban=='' || payrefund.name=='' || payrefund.last_four_id=='' || payrefund.refund_type==''" class="btn btn-dark"><i class="fa fa-database"></i>
             {{"services.master_refund.save"|translate}}</button>
         </div>
       </form>

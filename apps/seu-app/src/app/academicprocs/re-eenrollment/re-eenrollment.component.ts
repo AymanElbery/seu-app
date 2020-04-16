@@ -87,7 +87,7 @@ export class ReEenrollmentComponent implements OnInit, OnDestroy {
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
         if ((res as any).status == 1) {
-          this.reqData.reqs.splice(index, 1);
+          this.reqData.requests.splice(index, 1);
         }
         this.deleting = false;
       }

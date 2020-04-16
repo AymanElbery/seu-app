@@ -1,14 +1,17 @@
 
 <div class="main-content">
-  <service-header title='{{"services.info_update.desc" | translate}}'></service-header>
+
+  <service-header [title]="'services.info_update.desc' |translate"></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
+
+
 
   <div class="widget" *ngIf="!isLoading">
 
     <div class="widget-header">
       <h3 class="widget-title">
         {{"services.info_update.title"|translate}}
-        <button *ngIf="canaddreq==false" type="button" class="btn btn-primary" (click)="openDialog()">
+        <button  type="button" class="btn btn-primary" (click)="openDialog()">
           {{"services.info_update.addnewrequest"|translate}}<i class="ik ik-plus"></i>
         </button>&nbsp;
        

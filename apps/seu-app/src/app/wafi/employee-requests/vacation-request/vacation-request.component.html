@@ -19,7 +19,7 @@
       <div class="row ser-block">
         <div class=" col-md-6 col-sm-6">
           <div class="state">
-            <h6>{{"wafi.vacationtype"|translate}} </h6>
+            <h6>{{"wafi.vacationtype"|translate}} <span class="reqstart">*</span> </h6>
 
             <div *ngIf="ddltruefalse==true">
               <select class="form-control" formControlName="vacation" (ngModelChange)="getvacationbal($event)"
@@ -54,18 +54,15 @@
 
         <div class=" col-md-6 col-sm-6">
           <div class="state">
-            <h6>{{"wafi.date"|translate}} </h6>
-            <select formControlName="beginDay" [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }">
-              <option [ngValue]="" selected>{{"wafi.beginday" | translate}}</option>
-              <option *ngFor="let day of ddlday" value={{day.value}}>{{day.label}} </option>
+            <h6>{{"wafi.date"|translate}} <span class="reqstart">*</span> </h6>
+            <select formControlName="beginDay" [ngClass]="{ 'is-invalid': submitted && f.beginDay.errors }">              
+              <option *ngFor="let day of ddlday"   [selected]="day[0]" value={{day.value}}>{{day.label}} </option>
             </select>
-            <select formControlName="beginMonth" [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
-              <option [ngValue]="" selected>{{"wafi.beginmonth" | translate}}</option>
+            <select formControlName="beginMonth" [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">              
               <option *ngFor="let month of ddlmonth" value={{month.value}}>{{month.label}} </option>
             </select>
-            <select formControlName="beginYear" [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">
-              <option [ngValue]="" selected>{{"wafi.beginyear" | translate}}</option>
-              <option *ngFor="let year of ddlyear" [selected]="selectvactype == year.value" value={{year.value}}>
+            <select formControlName="beginYear" [ngClass]="{ 'is-invalid': submitted && f.beginMonth.errors }">              
+              <option *ngFor="let year of ddlyear"  value={{year.value}}>
                 {{year.label}} </option>
             </select>
           </div>
@@ -73,8 +70,8 @@
 
         <div class=" col-md-6 col-sm-6">
           <div class="state">
-            <h6>{{"wafi.timePeriod"|translate}} </h6>
-            <input type="text" class="form-control" formControlName="timePeriod" class="form-control"
+            <h6>{{"wafi.timePeriod"|translate}} <span class="reqstart">*</span></h6>
+            <input type="text" class="form-control" formControlName="timePeriod" (keypress)="keyPress($event)" maxlength="3" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.timePeriod.errors }" />
 
           </div>
@@ -152,7 +149,7 @@
         <div class=" col-md-6 col-sm-6">
           <div class="state">
             <h6>{{"wafi.phone"|translate}} </h6>
-            <input type="NumbersOnly" class="form-control" NumbersOnly formControlName="phone" class="form-control" />
+            <input type="NumbersOnly" class="form-control" (keypress)="keyPress($event)" maxlength="10" formControlName="phone" class="form-control" />
           </div>
         </div>
 
