@@ -236,9 +236,12 @@
         "photo": "Photo",
         "resume_ar": "CV in Arabic",
         "resume_en": "CV in English",
-        "add_item": "Add item",
-        "add_title": "Add title",
-        "save": "Save CV"
+        "add_item" : "Add item",
+        "add_title" : "Add title",
+        "save" : "Save CV",
+        "choose_file": "Choose picture",
+        "title_no": "Title No",
+        "item_no": "Item No"
     },
     "attends": {
         "code_lable": "Enter CRN code",
