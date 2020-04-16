@@ -71,3 +71,18 @@
 .nav-tabs{
     border-color: #FFF;
 }
+input#photo{
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    bottom: 30px;
+    cursor: pointer;
+    width: 100%;
+}
+button#fake-file{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+	right: 0px;
+	z-index: 1;
+}
