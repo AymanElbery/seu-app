@@ -78,10 +78,10 @@
         
 
         <Label text='{{"services.missing_card.add_personal_pic"|translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;margin-top: 20;"></Label>
-        <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="print-btn" style="margin-bottom: 20;"></Button>
+        <Button [text]="imageName" (tap)="openCustomFilesPicker('image')" class="print-btn iosFontCenter" style="margin-bottom: 20;"></Button>
     
         <Label text='{{"services.missing_card.add_ssn_pic"|translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;"></Label>
-        <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn"></Button>
+        <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn iosFontCenter"></Button>
 
     </FlexboxLayout>
 </ScrollView>

@@ -12,7 +12,7 @@
 
     <Label text='{{"services.re-enrollment.file"|translate}}'
      class="font" textWrap="true" style="color: #f08b1c;" style="margin-top: 20;"></Label>
-    <Button [text]="fileName" (tap)="openCustomFilesPicker()" class="print-btn"></Button>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker()" class="print-btn iosFontCenter"></Button>
 
     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
         <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn" [isEnabled]="reason.valid"></Button>
