@@ -15,7 +15,9 @@ export class MenuComponent implements OnInit {
   menuType = 1;
   acStd = false;
   showServices = false;
+  environment;
   constructor(public userService: UserService, private router: Router, public task: TasksManagementService) {
+    this.environment = environment;
   }
 
   showadmis = false;
@@ -71,7 +73,7 @@ export class MenuComponent implements OnInit {
       this.hasNoRole = true;
     }
 
-    this.hasWafi = environment.allowWafi && (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
+    this.hasWafi = this.environment.allowWafi && (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
 
     this.isEmp = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
     if (this.isEmp) {
