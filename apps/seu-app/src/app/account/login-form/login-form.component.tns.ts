@@ -11,7 +11,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { AppToasterService } from '../../shared/services/app-toaster.tns';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
-
+import { Page } from 'tns-core-modules/ui/page';
 
 
 
@@ -33,6 +33,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   isLoading: boolean;
   role: string;
   constructor(
+    private page: Page,
     private userService: UserService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -41,6 +42,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     private toastr: AppToasterService
   ) {
     console.log('l1');
+    page.actionBarHidden = true;
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
 
@@ -160,7 +162,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
 
 
-    
+
   }
   // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {
