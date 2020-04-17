@@ -2,10 +2,10 @@
 <GridLayout class="view" style="background:#070f40">
 <Image src="~/images/log-b99.png" scaleX="1.1" scaleY="1.4" fill="aspectFill"></Image>
 
-  <ActionBar  class="view" title=" " style="background:#070f40">
+  <ActionBar  visibilty="collapse"  class="view" title=" " style="background:#070f40">
     <StackLayout margin-top="0" >
   
-      <Image src="~/images/logo_3d.png" style="width:85% ;" ></Image>
+      <Image src="~/images/logo_3d.png" style="width:85% ;height: 100%;" ></Image>
    
     </StackLayout>
   </ActionBar>
@@ -35,7 +35,7 @@
         <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn login-animate" [isEnabled]="!isLoading"></Button>
 
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="center" justifyContent="space-between">
-          <label class=" contact-btn">
+          <label [nsRouterLink]="['/policy']" class=" contact-btn">
               <FormattedString>
                   <Span text="&#xf084; &#xa0;" class="fas"></Span> 
                   <Span text="Privacy"></Span>
