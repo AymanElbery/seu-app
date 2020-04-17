@@ -27,10 +27,18 @@ export class CancelCourseComponent implements OnInit {
   msgs=[];
   status;
   isLoading = false;
+  clicked: any;
 
   constructor(private toastr: AppToasterService, private acadmicProc: CancelCourseService,
     private routerExtensions: RouterExtensions,private translate: TranslateService) { }
 
+    clickme(item) {
+      this.clicked = item;
+    }
+    uclickme(item) {
+      this.clicked = {};
+    }
+    
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right; 
