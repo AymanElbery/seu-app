@@ -27,6 +27,7 @@ export class ExamsAttendAppComponent implements OnInit {
   termScheduleEn: string;
   termEn: string;
   isLoading = false;
+  firstTabTitle: string;
   secondTabTitle: string;
   thirdTabTitle: string;
   forthTabTitle: string;
@@ -39,6 +40,7 @@ export class ExamsAttendAppComponent implements OnInit {
   constructor(private academicService: ExamsAttendAppService , private translate: TranslateService
     ,private downloader: DataDownLoadService,private toastr: AppToasterService) {
 
+    this.firstTabTitle= this.translate.instant('services.exam.tt');
     this.secondTabTitle = this.translate.instant('services.exam.tnt');
     this.thirdTabTitle = this.translate.instant('services.exam.ft');
     this.forthTabTitle = this.translate.instant('services.exam.fnt');
