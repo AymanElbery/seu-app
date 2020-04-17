@@ -2,14 +2,15 @@
 <GridLayout class="view" style="background:#070f40">
 <Image src="~/images/log-b99.png" scaleX="1.1" scaleY="1.4" fill="aspectFill"></Image>
 
-  <ActionBar  visibilty="collapse"  class="view" title=" " style="background:#070f40">
-    <StackLayout margin-top="0" >
-  
-      <Image src="~/images/logo_3d.png" style="width:85% ;height: 100%;" ></Image>
-   
-    </StackLayout>
+  <ActionBar  visability="collapsed"  class="view" title=" " style="background:#070f40">
+    
   </ActionBar>
 
+  <StackLayout margin-top="0" >
+  
+    <Image src="~/images/logo_3d.png" style="height: 150px;z-index: 100" ></Image>
+ 
+  </StackLayout>
   <ScrollView>
    
     <StackLayout >
@@ -41,7 +42,7 @@
                   <Span text="Privacy"></Span>
               </FormattedString>
           </label>
-          <label class=" contact-btn ">
+                 <label [nsRouterLink]="['/contact']" class=" contact-btn ">
               <FormattedString>
                   <Span text="&#xf0e0; &#xa0;" class="far"></Span>
                   <Span text="Contact Us"></Span>
