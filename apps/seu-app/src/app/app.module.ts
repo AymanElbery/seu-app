@@ -59,7 +59,8 @@ import { AppErrorComponent } from './home/error.component';
     ExternalLinkDirective,
     AdmisPagesComponent,
     StdsPagesComponent,
-    AppErrorComponent
+    AppErrorComponent,
+    
   ],
   imports: [
     BrowserModule,
