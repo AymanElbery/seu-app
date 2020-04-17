@@ -72,3 +72,52 @@
                 </FlexboxLayout>
             </ng-template>
         </RadListView>
+
+        <StackLayout android:visibility="collapsed" height="100%" *ngIf="!isLoading && reqData.reqs&& reqData.reqs.length>0">
+            <StackLayout  *ngFor="let item of reqData.reqs">
+                <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+                    <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label text='{{item.request_number}}'></Label>
+                        <Label text="{{item.status}}"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+                <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+                    <FlexboxLayout flexDirection="column">
+                        <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                            <Label  text="&#xf0de;"  class="fas arr-drop"></Label>
+                            <FlexboxLayout flexDirection="row-reverse">
+                                <Label [text]='item.request_number'></Label>
+                                <Label [text]="item.status"></Label>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+        
+                        <GridLayout rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" class="ysBox">
+                                  
+                            <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
+                            <Label row="0"  column="0" class="ysPBox2" text="{{item.request_number}}" style="text-align: right;"></Label>
+                        
+                            <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.major"| translate}} :'></Label>
+                            <Label row="1"  column="0" class="ysPBox2" text="{{item.MAJOR_TITLE}}"></Label>
+                        
+                            <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.change_major.accept_date"| translate}} :'></Label>
+                            <Label row="2"  column="0" class="ysPBox2" text="{{item.APPROVAL_DATE}}" style="text-align: right;"></Label>
+              
+                            <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_status"|translate}} :'></Label>
+                            <Label row="3"  column="0" class="ysPBox2" text="{{item.status}}"></Label>
+    
+                            <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_date"|translate}} :'></Label>
+                            <Label row="4"  column="0" class="ysPBox2" text="{{item.insert_date}}" style="text-align: right;"></Label>
+              
+                            <Label row="5" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_delete"| translate}} :'></Label>
+                              
+                            <Button row="5"  column="0" class="ysPBox2" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="blue-button fas  -rounded-sm" style="width:15%;margin-left: 150;"></Button>
+                            <Label row="5"  column="0" class="ysPBox2" *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}' textWrap="true"></Label>
+                          </GridLayout>
+        
+                    </FlexboxLayout>
+                </FlexboxLayout>
+            </StackLayout>
+        </StackLayout>
+        </FlexboxLayout>
+    </ScrollView>

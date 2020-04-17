@@ -1,10 +1,11 @@
-<GridLayout>
 <app-header></app-header>  
  <!--  <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
     <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
     <Label col="1" text='{{"services.exam.certatt" | translate}}' class="serv-name" ></Label>
     <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
   </GridLayout> -->
+  <GridLayout>
+
   <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 </StackLayout>

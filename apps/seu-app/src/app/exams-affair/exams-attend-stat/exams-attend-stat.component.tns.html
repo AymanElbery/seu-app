@@ -1,5 +1,5 @@
-<GridLayout>
 <app-header></app-header>
+<GridLayout>
 
 <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
@@ -16,7 +16,7 @@ tabBackgroundColor="#f1f1f1"
 tabTextColor ="#010447"
 tabTextFontSize="14px"
 androidSelectedTabHighlightColor="#010447">
-	<StackLayout *tabItem='{title: eaData.Term_Exam_With_Schedule.labels.title}'>
+	<StackLayout *tabItem='{title:firstTabTitle}'>
 
         <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading &&eaData.Term_Exam_With_Schedule.messages.length>0">
             <ListView [items]="eaData.Term_Exam_With_Schedule.messages">
