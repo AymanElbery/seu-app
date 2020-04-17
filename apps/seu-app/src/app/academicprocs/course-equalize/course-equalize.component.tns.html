@@ -20,7 +20,7 @@
     </FlexboxLayout>
 
     <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="center">
-        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
+        <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn" ios:visibility="collapsed"></Button>
     </FlexboxLayout>
 
     <RadListView ios:visibility="collapsed" *ngIf="!isLoading&&reqData.reqs &&reqData.reqs.length>0" [items]="reqData.reqs" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
