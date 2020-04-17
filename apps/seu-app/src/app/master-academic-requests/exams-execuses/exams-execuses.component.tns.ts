@@ -22,11 +22,19 @@ export class ExamsExecusesComponent implements OnInit {
   msgs;
   status;
   isLoading = false;
+  clicked: any;
 
   constructor(private translate: TranslateService, private toastr: AppToasterService,
      private acadmicProc: ExamsExecusesService,
      private routerExtensions: RouterExtensions) { }
 
+     clickme(item) {
+      this.clicked = item;
+    }
+    uclickme(item) {
+      this.clicked = {};
+    }
+    
   ngOnInit() {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.drawerLocation = SideDrawerLocation.Right; 
