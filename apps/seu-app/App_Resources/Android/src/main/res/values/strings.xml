@@ -488,7 +488,7 @@
   <string name="_general_delete_confirm_2hCB2O">"هل انت متأكد؟"</string>
   <string name="_general_note_1GWGF0">"ملحوظة"</string>
   <string name="_general_print_1XXIjl">"طباعة"</string>
-  <string name="_app_name_1k3Sbz">"seuapp"</string>
-  <string name="app_name">"seuapp"</string>
-  <string name="title_activity_kimera">"seuapp"</string>
+  <string name="_app_name_1k3Sbz">"SEU"</string>
+  <string name="app_name">"SEU"</string>
+  <string name="title_activity_kimera">"SEU"</string>
 </resources>
