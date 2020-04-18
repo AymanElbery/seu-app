@@ -16,6 +16,7 @@
 </ActionBar>
 <ScrollView >
 
+    <StackLayout class="iosFont">
     <Label text='{{"services.change_major.change_major_req"|translate}}' class="header"></Label>
     <StackLayout style="margin-bottom: 10;">
 
@@ -71,11 +72,11 @@
         <StackLayout *ngIf="outSide" class="input-field">
             <Label text="{{'services.change_major.equalize' | translate}}" style="color: #f08b1c;margin-right: 20;font-weight: 800;"></Label>
 
-            <Button [text]="fileTxt2" (tap)="openCustomFilesPicker('3')" class="print-btn"></Button>
+            <Button [text]="fileTxt2" (tap)="openCustomFilesPicker('3')" class="print-btn iosFontCenter"></Button>
 
         </StackLayout>
 
     </StackLayout>
    
-
+    </StackLayout>
 </ScrollView>
