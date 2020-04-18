@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AdmisionUgService } from '../../services/admision-ug.service';
-import { Router } from '@angular/router';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-pay-fee',
@@ -8,17 +10,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./pay-fee.component.css']
 })
 export class PayFeeComponent implements OnInit {
-  studentdata;
-  constructor(private admissionUgservice: AdmisionUgService, private router: Router) { }
+  url = '/gr/index';
+  urlSafe: SafeResourceUrl;
+  sid;
+  srcUrl;
+  constructor(private translate: TranslateService, public sanitizer: DomSanitizer, private admissionUgservice: AdmisionUgService) { }
 
   ngOnInit() {
-    // if(!localStorage.getItem('token')){
-    //   this.router.navigate(['/apps/admission-ug/ug-login/'])
-    // }
-    this.studentdata = this.admissionUgservice.LoggedInUser;
-    // this.message=this.admissionUgservice.message;
-    // this.notice=this.admissionUgservice.notice;
-    console.log("studeentdata", this.studentdata);
+    this.UpdateSettings();
+    this.subscribeLangChange();
   }
 
+  subscriptions;
+  ngOnDestroy() {
+    if (this.subscriptions) {
+      this.subscriptions.unsubscribe();
+    }
+  }
+  subscribeLangChange() {
+    this.subscriptions = this.translate.onLangChange.subscribe(() => {
+      this.UpdateSettings();
+    });
+  }
+
+  UpdateSettings() {
+    const user_id = this.admissionUgservice.LoggedInUser['ID'];
+    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(environment.paymentLink + this.url + '/' + user_id + '?lang=' + this.translate.currentLang);
+    // console.log(this.urlSafe);
+  }
 }
