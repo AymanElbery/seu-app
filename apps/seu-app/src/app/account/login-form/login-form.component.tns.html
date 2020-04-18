@@ -13,12 +13,12 @@
 
       <StackLayout class="form" margin="25 10 10 10" verticalAlignment="center" padding="5" >
         <StackLayout margin-top="0" >
-          <Image src="~/images/logo_3d.png" style="height: 170px;z-index: 100" ></Image>
+          <Image src="~/images/logo_3d.png" style="height: 250px;z-index: 100" ></Image>
        
         </StackLayout>
 
         <StackLayout margin="10">
-          <Image class="" style="width: 60; margin-top: 80;" src="~/images/user.png"></Image>
+          <Image class="" style="width: 60; margin-top: 40;" src="~/images/user.png"></Image>
         </StackLayout>
         <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
@@ -28,27 +28,36 @@
         </GridLayout>
         <GridLayout class="m-10 input-field logi" columns="auto,*">
           <Label col="0" text="&#xf13e;" class="fas log-icon" verticalAlignment="center"></Label>
-          <TextField  col="1" hint="كلمة المرور  " secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
+          <TextField  col="1" hint="كلمة المرور" secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
           </TextField>
         </GridLayout>
     
         <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn login-animate" [isEnabled]="!isLoading"></Button>
-
+        
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="center" justifyContent="space-between">
           <label [nsRouterLink]="['/policy']" class=" contact-btn">
               <FormattedString>
-                  <Span text="&#xf084; &#xa0;" class="fas"></Span> 
+                  <Span text="&#xf084; " class="fas"></Span> 
                   <Span text="الخصوصيه"></Span>
               </FormattedString>
           </label>
                  <label [nsRouterLink]="['/contact']" class=" contact-btn ">
               <FormattedString>
-                  <Span text="&#xf0e0; &#xa0;" class="far"></Span>
+                  <Span text="&#xf0e0; " class="far"></Span>
                   <Span text="تواصل معنا"></Span>
               </FormattedString>
           </label>
       </FlexboxLayout>
 
+<FlexboxLayout horizontalAlignment="center"  flexDirection="row-reverse"  alignItems="center" justifyContent="space-between">
+          
+        <label horizontalAlignment="center" [nsRouterLink]="['/forget']" class=" contact-btn ">
+              <FormattedString>
+                  <Span text="&#xf0e0; " class="far"></Span>
+                  <Span text="نسيت كلمة المرور "></Span>
+              </FormattedString>
+          </label>
+      </FlexboxLayout>
       </StackLayout>
 
     </StackLayout>
