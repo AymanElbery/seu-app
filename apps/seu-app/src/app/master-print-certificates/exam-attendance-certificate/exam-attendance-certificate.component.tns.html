@@ -1,10 +1,11 @@
-<GridLayout>
 <app-header></app-header>  
  <!--  <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
     <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
     <Label col="1" text='{{"services.exam.certatt" | translate}}' class="serv-name" ></Label>
     <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
   </GridLayout> -->
+  <GridLayout>
+
   <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 </StackLayout>
@@ -35,7 +36,7 @@ androidSelectedTabHighlightColor="#010447">
             </ListView>
         </FlexboxLayout>
 
-        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels">
+        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels&&reqData.Term_Exam_With_Schedule.messages.length==0">
 
             <StackLayout>
                 <StackLayout>
@@ -125,7 +126,7 @@ androidSelectedTabHighlightColor="#010447">
             </ListView>
         </FlexboxLayout>
 
-        <ScrollView height="100%" *ngIf="reqData.Term_Exam_Without_Schedule &&reqData.Term_Exam_Without_Schedule.labels">
+        <ScrollView height="100%" *ngIf="reqData.Term_Exam_Without_Schedule &&reqData.Term_Exam_Without_Schedule.labels&&reqData.Term_Exam_Without_Schedule.messages.length==0">
             <StackLayout>
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
             
@@ -189,7 +190,7 @@ androidSelectedTabHighlightColor="#010447">
             </ListView>
         </FlexboxLayout>
 
-        <ScrollView height="100%" *ngIf="reqData.Final_Exam_With_Schedule &&reqData.Final_Exam_With_Schedule.labels">
+        <ScrollView height="100%" *ngIf="reqData.Final_Exam_With_Schedule &&reqData.Final_Exam_With_Schedule.labels&& reqData.Final_Exam_With_Schedule.messages.length==0">
             <StackLayout>
                 <StackLayout>
 
@@ -283,7 +284,7 @@ androidSelectedTabHighlightColor="#010447">
                 </ng-template>
             </ListView>
         </FlexboxLayout>
-        <ScrollView height="100%" *ngIf="reqData.Final_Exam_Without_Schedule &&reqData.Final_Exam_Without_Schedule.labels">
+        <ScrollView height="100%" *ngIf="reqData.Final_Exam_Without_Schedule &&reqData.Final_Exam_Without_Schedule.labels && reqData.Final_Exam_Without_Schedule.messages.length==0">
         <StackLayout>
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
             

@@ -9,7 +9,6 @@ import { UserService } from 'src/app/account/services/user.service';
   styleUrls: ['./master-payment.component.scss']
 })
 export class MasterPaymentComponent implements OnInit, OnDestroy {
-  @Input()
   url = 'https://apps.seu.edu.sa/fees/gr/index';
   urlSafe: SafeResourceUrl;
   sid;

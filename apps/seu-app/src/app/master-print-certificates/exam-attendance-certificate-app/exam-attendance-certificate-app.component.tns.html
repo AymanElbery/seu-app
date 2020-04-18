@@ -1,5 +1,5 @@
-<GridLayout>
 <app-header></app-header>
+<GridLayout>
 <StackLayout>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 </StackLayout>
@@ -27,7 +27,7 @@ tabTextFontSize="14px"
 androidSelectedTabHighlightColor="#010447">
 	<StackLayout *tabItem='{title: firstTabTitle }'>
 
-        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels">
+        <ScrollView height="100%" *ngIf="reqData.Term_Exam_With_Schedule && reqData.Term_Exam_With_Schedule.labels&&reqData.Term_Exam_With_Schedule.messages.length==0">
             <StackLayout>
 
                 <StackLayout>
@@ -115,7 +115,7 @@ androidSelectedTabHighlightColor="#010447">
 	<StackLayout *tabItem='{title: secondTabTitle}'>
 
         
-        <ScrollView height="100%" *ngIf="reqData.Term_Exam_Without_Schedule && reqData.Term_Exam_Without_Schedule.labels">
+        <ScrollView height="100%" *ngIf="reqData.Term_Exam_Without_Schedule && reqData.Term_Exam_Without_Schedule.labels&&reqData.Term_Exam_Without_Schedule.messages.length==0">
             <StackLayout>
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150">
             
@@ -178,7 +178,7 @@ androidSelectedTabHighlightColor="#010447">
         <ScrollView height="100%" *ngIf="reqData.Final_Exam_With_Schedule &&reqData.Final_Exam_With_Schedule.labels">
       <StackLayout>
                 <StackLayout>
-        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" *ngIf="reqData.Final_Exam_With_Schedule && reqData.Final_Exam_With_Schedule.labels" columns="*,150">
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto" *ngIf="reqData.Final_Exam_With_Schedule && reqData.Final_Exam_With_Schedule.labels&&reqData.Final_Exam_With_Schedule.messages.length==0" columns="*,150">
             
             <Label row="0" colSpan="2"  class="ysHBox"  [text]="reqData.Final_Exam_With_Schedule.labels.title"></Label>
 
@@ -260,7 +260,7 @@ androidSelectedTabHighlightColor="#010447">
     <StackLayout *tabItem='{title: forthTabTitle}'>
 
        
-        <ScrollView height="100%" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.labels">
+        <ScrollView height="100%" *ngIf="reqData.Final_Exam_Without_Schedule && reqData.Final_Exam_Without_Schedule.labels&&reqData.Final_Exam_Without_Schedule.messages.length==0">
             <StackLayout>
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto" columns="*,150" >
             

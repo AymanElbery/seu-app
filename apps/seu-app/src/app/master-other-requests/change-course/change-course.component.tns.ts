@@ -28,6 +28,7 @@ export class ChangeCourseComponent implements OnInit {
   msgs;
   status;
   isLoading = false;
+  clicked: any;
 
   // tslint:disable-next-line: max-line-length
   // tslint:disable-next-line: variable-name
@@ -78,7 +79,12 @@ export class ChangeCourseComponent implements OnInit {
     });
 }
 
-
+clickme(item) {
+  this.clicked = item;
+}
+uclickme(item) {
+  this.clicked = {};
+}
   print(req) {
     // utils.openUrl(this.acadmicProc.Download(req));
   }

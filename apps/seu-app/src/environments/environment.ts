@@ -6,6 +6,7 @@ export const environment = {
   wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS_TEST/jersey/', // wafi 
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
   servie_admission_UG: 'https://apps.seu.edu.sa/newservices/admission/ug',
+  paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
   servicesprefix: 'api-test', // api-test
   appsprefix: 'apps-test', // api-test
   loginpage: 'login-testl.php',

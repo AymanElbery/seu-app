@@ -42,12 +42,27 @@ export class AdmisionUgService extends AppUserService {
     return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/verification', data);
   }
 
+
+  matchdocs(token) {
+    return this.admissionUgHttpRequest.postRequest_obj('/Post_result_service', { token });
+  }
+
+  uploaddocs(token) {
+    return this.admissionUgHttpRequest.postRequest_obj('/Upload_files_service', { token });
+  }
+
+  savedocs(data) {
+    return this.admissionUgHttpRequest.postRequest_obj('/Upload_files_service/Insert', { data });
+  }
+
+
   logout_ug(token) {
     return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/Logout', { token });
   }
 
   logout() {
     this.logout_ug(this.LoggedInToken).subscribe();
+    this.checkResultData = null;
     super.logout();
   }
 

@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 // import { DOCUMENT } from "@angular/common";
 import { Subscription, from } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { AppUserService } from '../../../../services/app-user.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-apps-header',
@@ -13,16 +13,22 @@ import { Router } from '@angular/router';
 export class AppsHeaderComponent implements OnInit {
   logedin = '';
   @Input() appUserService;
+  @Input() langs = false;
 
   constructor(
     private translate: TranslateService, private router: Router
   ) {
+    this.environment = environment
   }
+  environment;
   userData: any = {};
   currLang;
   username = "";
 
   useLang(code) {
+    if (!code) {
+      code = 'ar';
+    }
     this.currLang = code;
     this.translate.use(code);
     if (code === 'en') {

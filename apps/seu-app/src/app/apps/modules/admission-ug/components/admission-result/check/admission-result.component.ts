@@ -21,6 +21,10 @@ export class AdmissionResultComponent {
 
   constructor(private toastr: AppToasterService, private admissionUgservice: AdmisionUgService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
 
+    if (this.admissionUgservice.checkResultData) {
+      this.router.navigate(['/apps/admission-ug/display-result']);
+    }
+
     this.AddReqForm = fb.group({
       'ssn': ['', [Validators.required, Validators.minLength(10), Validators.minLength(10)]],
       'capcha': ['', [Validators.required]]

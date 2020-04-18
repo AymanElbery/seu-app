@@ -1,6 +1,6 @@
 <div class="main-content">
 
-  <service-header title='{{"verificationUg" | translate}}'></service-header>
+  <service-header title='{{"LogIn" | translate}}'></service-header>
   <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
 
   <section class="dashboard-wrap" style="margin-top: 30px;">
@@ -9,7 +9,7 @@
         <div class="row ser-block">
           <div class=" col-md-6 col-sm-6">
             <div class="state">
-              <h6>{{"ssn"|translate}} <span class="reqstart">*</span></h6>
+              <h6>{{"code"|translate}} <span class="reqstart">*</span></h6>
               <input type="text" formControlName="code" (keypress)="keyPress($event)" maxlength="4"
                 class="form-control" />
             </div>
