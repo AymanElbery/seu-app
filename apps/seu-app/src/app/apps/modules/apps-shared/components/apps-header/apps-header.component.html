@@ -14,7 +14,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="userDropdown">
               <div class="d-sm-none">
-                <div>
+                <div *ngIf="!environment.production">
                   <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
                     style="font-size: 20px; font-weight: 400"> E
                   </a>
@@ -31,7 +31,8 @@
             </div>
           </div>
           <div>
-            <a style="color:#fff;" class="d-flex flex-column align-items-center" (click)="logout()">
+            <a style="color:#fff; white-space: nowrap;cursor: pointer;" class="d-flex flex-column align-items-center"
+              (click)="logout()">
               {{"logout" | translate}} </a>
           </div>
         </ng-container>
@@ -47,7 +48,7 @@
           <div class="input-group ">
           </div>
         </div>
-        <div class="d-none d-sm-block" style="white-space: nowrap;">
+        <div class="d-none d-sm-block" style="white-space: nowrap;" *ngIf="!environment.production">
           <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
             style="font-size: 20px; font-weight: 400"> English
           </a>

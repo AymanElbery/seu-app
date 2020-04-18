@@ -433,6 +433,15 @@
 
         <div *ngIf="userService.userData && userService.userData.activeRole=='Instructor'"
           class="nav-item has-sub open">
+          <a href="javascript:void(0)"> <span>{{"menu.resume" | translate}} </span> <i class="ik ik-book-open"></i> </a>
+          <div class="submenu-content">
+            <a [routerLink]="['/resume/ar']"  class="menu-item"> {{"menu.resume_ar" | translate}} <i class="ik ik-users"></i> </a>
+            <a [routerLink]="['/resume/en']"  class="menu-item"> {{"menu.resume_en" | translate}} <i class="ik ik-users"></i> </a>
+          </div>
+        </div>
+
+        <div *ngIf="userService.userData && userService.userData.activeRole=='Instructor'"
+          class="nav-item has-sub">
           <a href="javascript:void(0)"> <span>{{"menu.PublicServices" | translate}} </span>
             <i class="ik ik-book-open"></i> </a>
           <div class="submenu-content">
