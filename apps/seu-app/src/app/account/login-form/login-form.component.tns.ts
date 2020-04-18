@@ -12,6 +12,7 @@ import { AppToasterService } from '../../shared/services/app-toaster.tns';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { Page } from 'tns-core-modules/ui/page';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 
 
@@ -39,7 +40,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private globalSer: GlobalService,
     private ref: ChangeDetectorRef,
-    private toastr: AppToasterService
+    private toastr: AppToasterService,
+    private routerExtensions: RouterExtensions
   ) {
     console.log('l1');
     page.actionBarHidden = true;
@@ -159,9 +161,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.isEnabled = false;
     sideDrawer.gesturesEnabled = false;
-
-
-
 
   }
   // tslint:disable-next-line: use-life-cycle-interface

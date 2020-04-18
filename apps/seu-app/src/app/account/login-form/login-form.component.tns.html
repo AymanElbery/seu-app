@@ -24,11 +24,11 @@
 
         <GridLayout class="m-10 input-field logi" columns="auto,*">
           <Label col="0" text="&#xf007;" class="far log-icon" verticalAlignment="center"></Label>
-          <TextField   col="1" hint="اسم المستخدم " [(ngModel)]="credentials.email" class="input" [editable]="!isLoading"></TextField>
+          <TextField horizontalAlignment="right"   col="1" hint="اسم المستخدم " [(ngModel)]="credentials.email" class="input" [editable]="!isLoading"></TextField>
         </GridLayout>
         <GridLayout class="m-10 input-field logi" columns="auto,*">
           <Label col="0" text="&#xf13e;" class="fas log-icon" verticalAlignment="center"></Label>
-          <TextField  col="1" hint="كلمة المرور" secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
+          <TextField  horizontalAlignment="right"  col="1" hint="كلمة المرور" secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
           </TextField>
         </GridLayout>
     
