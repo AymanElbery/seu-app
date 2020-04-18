@@ -24,11 +24,11 @@
 
         <GridLayout class="m-10 input-field logi" columns="auto,*">
           <Label col="0" text="&#xf007;" class="far log-icon" verticalAlignment="center"></Label>
-          <TextField   col="1" hint="Enter UserName" [(ngModel)]="credentials.email" class="input" [editable]="!isLoading"></TextField>
+          <TextField   col="1" hint="اسم المستخدم " [(ngModel)]="credentials.email" class="input" [editable]="!isLoading"></TextField>
         </GridLayout>
         <GridLayout class="m-10 input-field logi" columns="auto,*">
           <Label col="0" text="&#xf13e;" class="fas log-icon" verticalAlignment="center"></Label>
-          <TextField  col="1" hint="Enter  password" secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
+          <TextField  col="1" hint="كلمة المرور  " secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
           </TextField>
         </GridLayout>
     
@@ -38,13 +38,13 @@
           <label [nsRouterLink]="['/policy']" class=" contact-btn">
               <FormattedString>
                   <Span text="&#xf084; &#xa0;" class="fas"></Span> 
-                  <Span text="Privacy"></Span>
+                  <Span text="الخصوصيه"></Span>
               </FormattedString>
           </label>
                  <label [nsRouterLink]="['/contact']" class=" contact-btn ">
               <FormattedString>
                   <Span text="&#xf0e0; &#xa0;" class="far"></Span>
-                  <Span text="Contact Us"></Span>
+                  <Span text="تواصل معنا"></Span>
               </FormattedString>
           </label>
       </FlexboxLayout>
