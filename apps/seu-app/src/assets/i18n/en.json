@@ -244,7 +244,8 @@
         "save" : "Save Resume",
         "choose_file": "Choose Picture",
         "title_no": "Title No",
-        "item_no": "Item No"
+        "item_no": "Item No",
+        "agree": "I bear responsibility for the correctness of the data entered above"
     },
     "attends": {
         "code_lable": "Enter CRN code",

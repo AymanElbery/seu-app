@@ -53,6 +53,11 @@ export class ResumeComponent{
   countries;
   profile = "notExist";
 
+  collage;
+  major;
+
+  agree = false;
+
   constructor(
     public userService: UserService, 
     private resumeService: ResumeService, 
@@ -70,7 +75,16 @@ export class ResumeComponent{
           this.name = response.data.EMP_NAME;
           this.email = response.data.WORK_EMAIL;
           this.jobTitle = response.data.SCALE_DESC;
-          this.section = response.data.ACTUAL_DEPT_DESC;
+          if (response.data.COLLAGE_NAME != "") {
+            this.collage = response.data.COLLAGE_NAME;
+            this.section = this.collage;
+            if (response.data.MAJOR_DESC != "") {
+              this.major = response.data.MAJOR_DESC;
+              this.section = this.section + " - " + this.major;
+            }
+          }else{
+            this.section = "";
+          }
           this.getResumeByEmail(this.email);
         }
       },
@@ -85,6 +99,11 @@ export class ResumeComponent{
       },
       error => {}
     );
+  }
+
+
+  agreeCond(event: any){
+    this.agree = (event == "A") ? true : false;
   }
 
   getResumeByEmail(email){
