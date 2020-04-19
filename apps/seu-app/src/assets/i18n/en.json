@@ -239,9 +239,9 @@
         "photo": "Photo",
         "resume_ar": "Resume in Arabic",
         "resume_en": "Resume in English",
-        "add_item" : "Add item",
-        "add_title" : "Add title",
-        "save" : "Save Resume",
+        "add_item": "Add item",
+        "add_title": "Add title",
+        "save": "Save Resume",
         "choose_file": "Choose Picture",
         "title_no": "Title No",
         "item_no": "Item No",
@@ -527,7 +527,8 @@
             "account_no": "Account Number",
             "deposite": "Deposited Money:",
             "reasons": "Objection Reasons",
-            "upload_deposite": "Upload Deposite Receipt"
+            "upload_deposite": "Upload Deposite Receipt",
+            "notes": "تنبيه: قبل القيام بتقديم الطلب يجب عليك تحويل مبلغ 500 ريال عن كل مادة ترغب بالاعتراض عليها الى الحساب المدون في الايقونة أدناه."
         },
         "postpone_request": {
             "title": "Term Postpone",

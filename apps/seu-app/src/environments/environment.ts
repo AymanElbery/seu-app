@@ -7,7 +7,7 @@ export const environment = {
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
   servie_admission_UG: 'https://apps.seu.edu.sa/newservices/api-test/admission/ug',
   paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
-  servicesprefix: 'api-test', // api-test
+  servicesprefix: 'api', // api-test
   appsprefix: 'apps-test', // api-test
   loginpage: 'login-testl.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
