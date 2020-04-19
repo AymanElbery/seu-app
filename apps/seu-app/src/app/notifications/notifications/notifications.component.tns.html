@@ -1,10 +1,14 @@
 <app-header></app-header>
 
+<GridLayout  class="ysBox" rows="auto,auto" columns="*">
+          
+  <Label row="0" column="0" horizontalAlignment="right"  class="ysHBox" *ngIf="notifications.notesList.length==0" text="لايوجد اشعارات" style="width: 100%;margin: 20px;direction: rtl;"></Label>
+
  
-<StackLayout class="form "  horizontalAlignment="center" margin="90 10 10 10" verticalAlignment="center" backgroundColor="#FFFFFF" padding="5" style="border-radius: 100px 20px 100px 20px;" >
+<StackLayout row="1" olumn="0"    style="width: 100%;direction: rtl;" horizontalAlignment="right" margin="90 10 10 10" verticalAlignment="center" backgroundColor="#FFFFFF" padding="5" style="border-radius: 100px 20px 100px 20px;" >
   <Button  *ngFor="let not of notifications.notesList" 
     text="{{not['TITLE']}} {{not['MESSAGE']}}" style="width: 100%;" textWrap="true"
     (tap)="notifications.redirect(not)"
     ></Button>
-    <Label  *ngIf="notifications.notesList.length==0" text="   لايوجد اشعارات " style="width: 100%;margin: 20px;"></Label>
 </StackLayout>
+</GridLayout>
