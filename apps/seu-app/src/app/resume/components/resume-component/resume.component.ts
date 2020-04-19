@@ -57,6 +57,7 @@ export class ResumeComponent{
   major;
 
   agree = false;
+  
 
   constructor(
     public userService: UserService, 
