@@ -58,7 +58,7 @@ sindex = 1;
      // console.log('user is ' + this.userService.userData);
         // tslint:disable-next-line: triple-equals
     //  console.log(this.userService.userData);
-      //console.log(this.userService.userData.activeRole + 'ActiveRule');
+      // console.log(this.userService.userData.activeRole + 'ActiveRule');
       if (this.userService.userData.activeRole === ApiUserRoles.Student) {
           return this.loadStudentNews();
         } else if (this.userService.userData.activeRole === ApiUserRoles.Emplpyee) {
@@ -83,8 +83,29 @@ sindex = 1;
             this.homeService.reqData = this.userService.newsData;
 
             this.newsLoaded = true;
+          //  this.loadStudentNews2();
           });
       }
+
+
+      private loadStudentNews2() {
+        // console.log('loadStudentNews :' + CMSUserRoles.Student);
+         return this.homeService.getNews(CMSUserRoles.Student,
+           this.userService.userData.level,
+           this.userService.userData.coll,
+           this.userService.userData.camp).
+           then(res => {
+             // console.log(res);
+             this.userService.newsData = (res as any).Data;
+          //   alert(this.userService.newsData);
+             this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
+             // console.log(this.userService.newsData);
+             this.homeService.reqData = this.userService.newsData;
+
+             this.newsLoaded = true;
+           });
+
+       }
       private loadEmployessNews() {
         // console.log('loadEmployessNews :' + CMSUserRoles.Employee);
 
@@ -234,7 +255,7 @@ sindex = 1;
 
       LoadData() {
        // this.LoadEvents();
-//console.log('data');
+// console.log('data');
 this.LoadNews();
 this.LoadEvents();
 this.LoadAds();
@@ -257,5 +278,17 @@ setInterval(
         this.LoadData();
 
     }
-    
+
+     getfn(str) {
+      return str.substring(str.lastIndexOf('/') + 1);
+  }
+  getdfn(str) {
+    return encodeURIComponent(str.substring(str.lastIndexOf('/') + 1));
+}
+    decodeURL(img) {
+ const  fmn = this.getfn(img);
+ const  fmnd = this.getdfn(img);
+
+ return (img as string).replace(fmn,fmnd);
+    }
 }
