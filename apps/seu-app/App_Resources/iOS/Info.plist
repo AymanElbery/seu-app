@@ -5,13 +5,13 @@
     <key>CFBundleDevelopmentRegion</key>
     <string>ar</string>
     <key>CFBundleDisplayName</key>
-    <string>seuapp</string>
+    <string>SEU</string>
     <key>CFBundleExecutable</key>
     <string>${EXECUTABLE_NAME}</string>
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
-    <string>seuapp</string>
+    <string>SEU</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>

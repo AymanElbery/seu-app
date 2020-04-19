@@ -245,7 +245,8 @@
         "save" : "حفظ السيرة الذاتية",
         "choose_file": "إختيار صورة شخصية",
         "title_no": "عنوان رقم",
-        "item_no": "عنصر رقم"
+        "item_no": "عنصر رقم",
+        "agree": "أتحمل مسؤولية صحة البيانات المدخلة أعلاه"
     },
     "attends": {
         "code_lable": "أدخل كود المحاضرة",
@@ -527,7 +528,8 @@
             "account_no": "رقم الحساب",
             "deposite": "المبلغ الذى تم إيداعه:",
             "reasons": "أسباب الإعتراض",
-            "upload_deposite": "رفع وصل الايداع"
+            "upload_deposite": "رفع وصل الايداع",
+            "notes":"تنبيه: قبل القيام بتقديم الطلب يجب عليك تحويل مبلغ 500 ريال عن كل مادة ترغب بالاعتراض عليها الى الحساب المدون في الايقونة أدناه."
         },
         "postpone_request": {
             "title": "تأجيل الفصل الدراسي",
@@ -538,7 +540,7 @@
             "desire": "أرغب فى تأجيل الدراسة اعتبارا من",
             "period": "مدة التأجيل (بالفصول)",
             "mobile": "رقم الجوال (مثال 05xxxxxxxx) : ",
-            "reason": "سبب التحويل"
+            "reason": "سبب التأجيل"
         },
         "re-enrollment": {
             "title": "اعادة القيد",
@@ -893,7 +895,7 @@
         "VacationAbsenceBalance": "الغياب",
         "salarydetailsselected": "تفاصيل الشهر",
         "VacationBalance": "الرصيد الإجمالي لإجازاتك",
-        "personal": "شخصي",
+        "personal": "بياناتي الشخصية",
         "PersonalInfo": "معلومات الموظف",
         "Salaries": "الرواتب",
         "Vacations": "الأجازات",
@@ -945,7 +947,7 @@
         "RejecteReasone": "سبب الرفض",
         "RequestDtails": "تفاصيل",
         "Delete": "حذف",
-        "employee-requests": "الطلبات",
+        "employee-requests": "طلباتي الذاتية",
         "requests-lists": "عرض الطلبات",
         "print-concern": "الجهة الموجه لها الخطاب",
         "AddNewRequest": "إضافة طلب جديد",
@@ -1030,7 +1032,7 @@
         "EMP_PSNL_VCHR_NOTE": "ملاحظات",
         "EMP_SLRY_YEAR": "السنة",
         "EmployeeVouchers": "البدلات و المكافاَت",
-        "administrative": "إداري",
+        "administrative": "معلوماتي الذاتية",
         "back": "إلغاء"
     },
     "tasks": {

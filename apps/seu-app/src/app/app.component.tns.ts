@@ -21,9 +21,9 @@ declare var UIView, NSMutableArray, NSIndexPath;
 export class AppComponent implements OnInit {
 
     // tslint:disable-next-line: variable-name
-    private _dataItems: Array<{"title":string,"subTitles":Array<object>}>;
-    public clickedArray: Array<{"title":string,"subTitles":Array<object>}>= [{"title":"","subTitles":[{}]}];
-    clickedd={};s
+    private _dataItems: Array<{'title': string, 'subTitles': Array<object>}>;
+    public clickedArray: Array<{'title': string, 'subTitles': Array<object>}> = [{title: '',subTitles: [{}]}];
+    clickedd = {}; s;
     @ViewChild(RadSideDrawerComponent,
         {
             static: false
@@ -37,8 +37,8 @@ export class AppComponent implements OnInit {
     public userName: String = 'UserName';
     level = '';
     role = '';
-    UG_Menu:Array<any> = [];
-    GR_Menu:Array<any> = [];
+    UG_Menu: Array<any> = [];
+    GR_Menu: Array<any> = [];
     constructor(    private translate: TranslateService,
                     public userService: UserService,
                     private router: Router, private routerExtensions: RouterExtensions,
@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
     // }
 
 
-    
+
     ngOnInit(): void {
 
         this._activatedUrl = '/home';
@@ -76,144 +76,144 @@ export class AppComponent implements OnInit {
         this.userService.logedIn = false;
      //   draw.drawerLocation = SideDrawerLocation.Right;
 
-        this._dataItems = [{"title":"","subTitles":[{}]}];
+        this._dataItems = [{title: '',subTitles: [{}]}];
         Downloader.init();
         this.UG_Menu = [
         {
-            'title':'الشئون الاكاديمية',
-            'subTitles': [
+            title: 'الشئون الاكاديمية',
+            subTitles: [
                 {
-                'subTitle':'الحالة الاكاديمية',
-                'route':'/academicaff/status'
+                subTitle: 'الحالة الاكاديمية',
+                route: '/academicaff/status'
             },
             {
-                'subTitle':'شهادة تعريف',
-                'route':'/academicaff/certificate'
+                subTitle: 'شهادة تعريف',
+                route: '/academicaff/certificate'
             },
             {
-                'subTitle':'السجل الاكاديمى',
-                'route':'/academicaff/record'
+                subTitle: 'السجل الاكاديمى',
+                route: '/academicaff/record'
             },
             {
-                'subTitle':'افادة خريج',
-                'route':'/academicaff/graduationstatment'
+                subTitle: 'افادة خريج',
+                route: '/academicaff/graduationstatment'
             }
         ]
     },
     {
-        'title':'الاجراءات الاكاديمية',
-        'subTitles': [
+        title: 'الاجراءات الاكاديمية',
+        subTitles: [
             {
-            'subTitle':'الانسحاب من الجامعه',
-            'route':'/procedures/withdrawuniv'
+            subTitle: 'الانسحاب من الجامعه',
+            route: '/procedures/withdrawuniv'
         },
         {
-            'subTitle':'تأجيل الفصل الدراسي',
-            'route':'/procedures/postpone'
+            subTitle: 'تأجيل الفصل الدراسي',
+            route: '/procedures/postpone'
         },
         {
-            'subTitle':'الاعتذار عن فصل دراسي',
-            'route':'/procedures/execuse'
+            subTitle: 'الاعتذار عن فصل دراسي',
+            route: '/procedures/execuse'
         },
         {
-            'subTitle':'الاعتذار عن الفصل الصيفي',
-            'route':'/procedures/summer'
+            subTitle: 'الاعتذار عن الفصل الصيفي',
+            route: '/procedures/summer'
         },
         {
-            'subTitle':'اعادة قيد',
-            'route':'/procedures/reenrol'
+            subTitle: 'اعادة قيد',
+            route: '/procedures/reenrol'
         },
         {
-            'subTitle':'حذف مقرر',
-            'route':'/procedures/cancelcourse'
+            subTitle: 'حذف مقرر',
+            route: '/procedures/cancelcourse'
         },
         {
-            'subTitle':'معادلة المقررات',
-            'route':'/procedures/equalize'
+            subTitle: 'معادلة المقررات',
+            route: '/procedures/equalize'
         },
         {
-            'subTitle':'معادلة اللغه الانجليزيه',
-            'route':'/procedures/eequalize'
+            subTitle: 'معادلة اللغه الانجليزيه',
+            route: '/procedures/eequalize'
         },
         {
-            'subTitle':'تغيير التخصص',
-            'route':'/procedures/changemajor'
+            subTitle: 'تغيير التخصص',
+            route: '/procedures/changemajor'
         },
         {
-            'subTitle':'تغيير الفرع',
-            'route':'/procedures/changerequest'
+            subTitle: 'تغيير الفرع',
+            route: '/procedures/changerequest'
         },
         {
-            'subTitle':'رفع الاعذار للمحاضرات',
-            'route':'/procedures/lecexecuse'
+            subTitle: 'رفع الاعذار للمحاضرات',
+            route: '/procedures/lecexecuse'
         },
         {
-            'subTitle':'الاعتراض على نتيجة الاختبار النهائي',
-            'route':'/procedures/objectexam'
+            subTitle: 'الاعتراض على نتيجة الاختبار النهائي',
+            route: '/procedures/objectexam'
         },
         {
-            'subTitle':'طلب الدراسة كطالب زائر',
-            'route':'/procedures/visitorstudent'
+            subTitle: 'طلب الدراسة كطالب زائر',
+            route: '/procedures/visitorstudent'
         }
     ]
 },
 {
-    'title':'تسجيل المقررات',
-    'subTitles': [
+    title: 'تسجيل المقررات',
+    subTitles: [
         {
-        'subTitle':'رغبات التسجيل للمستجدين',
-        'route':'/registercourses/registerwishes'
+        subTitle: 'رغبات التسجيل للمستجدين',
+        route: '/registercourses/registerwishes'
     }
 ]
 },
 {
-    'title':'الشئون المالية',
-    'subTitles': [
+    title: 'الشئون المالية',
+    subTitles: [
         {
-        'subTitle':'افادة بالرسوم الدراسيه',
-        'route':'/finance/fees'
+        subTitle: 'افادة بالرسوم الدراسيه',
+        route: '/finance/fees'
     },
     {
-        'subTitle':'اعفاء من الرسوم الدراسيه',
-        'route':'/finance/feesexception'
+        subTitle: 'اعفاء من الرسوم الدراسيه',
+        route: '/finance/feesexception'
     }
 ]
 },
 {
-    'title':'شئون الاختبارات',
-    'subTitles': [
+    title: 'شئون الاختبارات',
+    subTitles: [
         {
-        'subTitle':'شهادة حضور اختبارات',
-        'route':'/exams/attend'
+        subTitle: 'شهادة حضور اختبارات',
+        route: '/exams/attend'
     },
     {
-        'subTitle':'شهادة اثبات حضور اختبارات',
-        'route':'/exams/attendapp'
+        subTitle: 'شهادة اثبات حضور اختبارات',
+        route: '/exams/attendapp'
     },
     {
-        'subTitle':'رفع الاعذار للاختبارات',
-        'route':'/exams/examexcuse'
+        subTitle: 'رفع الاعذار للاختبارات',
+        route: '/exams/examexcuse'
     }
 ]
 },
 {
-    'title':'طلبات أخرى',
-    'subTitles': [
+    title: 'طلبات أخرى',
+    subTitles: [
         {
-        'subTitle':'طلب تقرير طبي',
-        'route':'/other/medicalreport'
+        subTitle: 'طلب تقرير طبي',
+        route: '/other/medicalreport'
     },
     {
-        'subTitle':'طلب البطاقة الجامعية',
-        'route':'/other/universitycard'
+        subTitle: 'طلب البطاقة الجامعية',
+        route: '/other/universitycard'
     },
     {
-        'subTitle':'بيانات خريج',
-        'route':'/other/studentinfo'
+        subTitle: 'بيانات خريج',
+        route: '/other/studentinfo'
     },
     {
-        'subTitle':'طلب التدريب الميداني',
-        'route':'/other/training'
+        subTitle: 'طلب التدريب الميداني',
+        route: '/other/training'
     }
 ]
 }
@@ -221,92 +221,92 @@ export class AppComponent implements OnInit {
 
         this.GR_Menu = [
         {
-            'title':'بيانات الطالب',
-            'subTitles': [
+            title: 'بيانات الطالب',
+            subTitles: [
                 {
-                'subTitle':'الحالة الاكاديمية',
-                'route':'/masteraff/stdata'
+                subTitle: 'الحالة الاكاديمية',
+                route: '/masteraff/stdata'
             },
             {
-                'subTitle':'السجل الاكاديمى',
-                'route':'/masteraff/strec'
+                subTitle: 'السجل الاكاديمى',
+                route: '/masteraff/strec'
             }
         ]
     },
     {
-        'title':'الطلبات الاكاديمية',
-        'subTitles': [
+        title: 'الطلبات الاكاديمية',
+        subTitles: [
             {
-            'subTitle':'طلب الإنسحاب من الجامعة',
-            'route':'/academicrequests/withdrawal'
+            subTitle: 'طلب الإنسحاب من الجامعة',
+            route: '/academicrequests/withdrawal'
         },
         {
-            'subTitle':'طلب تأجيل الدراسة',
-            'route':'/academicrequests/studypostpone'
+            subTitle: 'طلب تأجيل الدراسة',
+            route: '/academicrequests/studypostpone'
         },
         {
-            'subTitle':'طلب حذف المقررات ',
-            'route':'/academicrequests/termexecuse'
+            subTitle: 'طلب حذف المقررات ',
+            route: '/academicrequests/termexecuse'
         },
         {
-            'subTitle':'اعادة قيد',
-            'route':'/academicrequests/reEnroll'
+            subTitle: 'اعادة قيد',
+            route: '/academicrequests/reEnroll'
         },
         {
-            'subTitle':'حذف مقرر',
-            'route':'/academicrequests/cancelcourse'
+            subTitle: 'حذف مقرر',
+            route: '/academicrequests/cancelcourse'
         },
         {
-            'subTitle':'رفع الاعذار للمحاضرات',
-            'route':'/academicrequests/lecturesexecuses'
+            subTitle: 'رفع الاعذار للمحاضرات',
+            route: '/academicrequests/lecturesexecuses'
         },
         {
-            'subTitle':'رفع اللأعذار للإختبارات',
-            'route':'/academicrequests/examsexecuses'
+            subTitle: 'رفع اللأعذار للإختبارات',
+            route: '/academicrequests/examsexecuses'
         },
         {
-            'subTitle':'الاعتراض على نتيجة الاختبار النهائي',
-            'route':'/academicrequests/objectexam'
+            subTitle: 'الاعتراض على نتيجة الاختبار النهائي',
+            route: '/academicrequests/objectexam'
         }
     ]
 },
 {
-    'title':' طباعة الشهادات',
-    'subTitles': [
+    title: ' طباعة الشهادات',
+    subTitles: [
         {
-        'subTitle':' شهادة التعريف',
-        'route':'/cert/id'
+        subTitle: ' شهادة التعريف',
+        route: '/cert/id'
     },
     {
-        'subTitle':'شهادة حضور اختبارات',
-        'route':'/cert/examatt'
+        subTitle: 'شهادة حضور اختبارات',
+        route: '/cert/examatt'
     },
     {
-        'subTitle':'شهادة اثبات حضور اختبارات',
-        'route':'/cert/examattapp'
+        subTitle: 'شهادة اثبات حضور اختبارات',
+        route: '/cert/examattapp'
     }
 ]
 },
 {
-    'title':'طلبات أخرى',
-    'subTitles': [
+    title: 'طلبات أخرى',
+    subTitles: [
         {
-        'subTitle':'استعلام عن الغياب',
-        'route':'/other/absencequery'
+        subTitle: 'استعلام عن الغياب',
+        route: '/other/absencequery'
     },
     {
-        'subTitle':'تغير تخصص',
-        'route':'/other/changecourse'
+        subTitle: 'تغير تخصص',
+        route: '/other/changecourse'
     },   {
-        'subTitle':'تغير فرع',
-        'route':'/other/changebranch'
+        subTitle: 'تغير فرع',
+        route: '/other/changebranch'
     },   {
-        'subTitle':'بيانات خريج',
-        'route':'/other/graduateprofile'
+        subTitle: 'بيانات خريج',
+        route: '/other/graduateprofile'
     },
     {
-        'subTitle':'البطاقة الجامعيه',
-        'route':'/other/personalid'
+        subTitle: 'البطاقة الجامعيه',
+        route: '/other/personalid'
     },
 
 ]
@@ -409,17 +409,21 @@ export class AppComponent implements OnInit {
            listView.androidListView.getAdapter().notifyItemChanged(rowIndex);
         }
     }
-    
+
     logout() {
         const sideDrawer =  app.getRootView() as RadSideDrawer;
         sideDrawer.closeDrawer();
-        this.router.navigate(['/login']);
-   }
+        this.routerExtensions.navigate(['/login'], { clearHistory: true });
+    }
    clickme(item) {
     this.clickedd = item;
   }
   uclickme(item) {
     this.clickedd = {};
+  }
+
+  logout1() {
+   // this.router.navigate(['/login'], { clearHistory: true });
   }
 
 }

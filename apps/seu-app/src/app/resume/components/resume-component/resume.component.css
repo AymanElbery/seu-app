@@ -86,3 +86,11 @@ button#fake-file{
 	right: 0px;
 	z-index: 1;
 }
+input#exampleCheck1{
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+.form-check-label{
+    margin-right: 7px;
+}
