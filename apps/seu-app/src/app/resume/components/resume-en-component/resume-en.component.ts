@@ -53,6 +53,8 @@ export class ResumeEnComponent{
   countries;
   profile = "notExist";
 
+  agree = false;
+
   constructor(
     public userService: UserService, 
     private resumeService: ResumeService, 
@@ -83,6 +85,10 @@ export class ResumeEnComponent{
       },
       error => {}
     );
+  }
+
+  agreeCond(event: any){
+    this.agree = (event == "A") ? true : false;
   }
 
   getResumeByEmail(email){
