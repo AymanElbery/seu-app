@@ -32,5 +32,14 @@
     "UploadDocument": "Upload Document",
     "captcha": "Captcha",
     "Send": "Send",
-    "Percentage": "Percentage"
+    "Percentage": "Percentage",
+    "paymentrefund": "Payment Refund",
+    "email": "Email",
+    "mobile": "Mobile",
+    "mobile2": "Mobile2",
+    "phone": "Phone",
+    "request_saved": "Request Saved",
+    "university_id": "University Id",
+    "agreement": "Agreement"
+
 }

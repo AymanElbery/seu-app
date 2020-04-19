@@ -54,7 +54,12 @@ export class AdmisionUgService extends AppUserService {
   savedocs(data) {
     return this.admissionUgHttpRequest.postRequest_obj('/Upload_files_service/Insert', { data });
   }
-
+  paymentrefund(token) {
+    return this.admissionUgHttpRequest.postRequest_obj('/cancel_admission_service', { token });
+  }
+  Reqpaymentrefund(data) {
+    return this.admissionUgHttpRequest.postRequest_obj('/cancel_admission_service/insert', {data});
+  }
 
   logout_ug(token) {
     return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/Logout', { token });
