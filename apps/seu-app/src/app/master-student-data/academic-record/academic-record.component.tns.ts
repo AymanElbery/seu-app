@@ -34,6 +34,7 @@ export class AcademicRecordComponent implements OnInit {
   printAR = '';
   printEN = '';
   isDownLoaded = false;
+  clicked;
 
   templateSelector(item: any, index: number, items: any): string {
     if(index==0){      
@@ -113,6 +114,13 @@ onItemTap(event: ListViewEventData) {
 
       }
     });
+  }
+
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
   }
   }
 

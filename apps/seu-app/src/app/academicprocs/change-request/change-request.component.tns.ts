@@ -65,6 +65,7 @@ export class ChangeRequestComponent implements OnInit {
         viewContainerRef: this._vcRef,
         context: {},
         fullscreen: false,
+        ios:{height:100}
     };
 
     this._modalService.showModal(AddRequestChangeComponent, options)

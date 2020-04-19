@@ -8,8 +8,8 @@
       </div>
       <div class=" col-md-6 descr">
         <!--        <span>مدة الإنجاز : <span class="badge">3 يوم</span> </span>-->
-        <span>{{'general.instruction_' | translate}}:</span>
-        &nbsp; &nbsp; 
+        <span *ngIf="pdf || video">{{'general.instruction_' | translate}}:</span>
+        &nbsp; &nbsp;
         <a title="{{'general.instruction_pdf_file' | translate}}" *ngIf="pdf" target="_blank" href="{{_pdf}}"><i
             class="ik ik-download"></i> </a>
         <a title="{{'general.instruction_vedio_file' | translate}}" *ngIf="video" href="#"

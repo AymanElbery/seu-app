@@ -1,18 +1,14 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../../shared/services/config.service';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { UserRegistration } from '../../shared/models/user.registration.interface';
-import { Observable, throwError, Subject } from 'rxjs';
+import { throwError, Subject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { HttpRequestService } from '../../shared/services/http-request.service';
 import { BaseService } from '../../shared/services/base.service';
-import { UserManagerService } from '../../shared/services/user-manager.service';
 import { UserData } from 'src/app/shared/models/user-data';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { HttpRequestServiceBase } from 'src/app/shared/services/http-request.service_base';
+import { HttpRequestServiceBase } from '../../shared/services/http-request.service_base';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -145,7 +141,7 @@ export class UserService extends BaseService {
     if (this.userDataLoaded !== true) {
       return this.requestUser()
         .then(res => {
-          if ( res['status']) {
+          if (res['status']) {
             this.userData = (res as any).data;
             // console.log('userdata:'+this.userData);
             this.userData.activeRole = this.userData.role;

@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ExamAttendanceCertificateAppService } from '../services/exam-attendance-certificate-app.service';
 import { TranslateService } from '@ngx-translate/core';
-import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
-import * as app from 'tns-core-modules/application';
-import * as utils from 'tns-core-modules/utils/utils';
-import { ExamData } from '../../shared/models/exam-data';
 import { DataDownLoadService } from '../../shared/services/http-downloader.service.tns';
 import { Downloader } from 'nativescript-downloader';
 import { AppToasterService } from '../../shared/services/app-toaster';
@@ -135,10 +131,10 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
  
    }
     // utils.openUrl(this.termSchedule);
-     this.downloader.downloadFile(print);
- 
+     this.downloader.downloadFile(print).subscribe(res=>{console.log(res)},
+     err=>{console.log("errrrr",err)});
+     this.toastr.download();      
      this.downloader.csize.subscribe(x => {
-   this.toastr.download();      
        if (x == '100') {
          this.isDownLoaded = true;
          this.translate.get('general.ar_print').subscribe(res => {

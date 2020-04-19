@@ -27,7 +27,7 @@
     <RadListView *ngIf="!isLoading && reqData.reqs &&reqData.reqs.length>0" [items]="reqData.reqs" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
         <ng-template let-item="item">
             <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop2">
-                <Label  text="&#xf0dd;"  class="fas arr-drop"></Label>
+                <Label  text="&#xf107;"  class="fas arr-drop"></Label>
                 <FlexboxLayout flexDirection="row-reverse">
                     <Label text='{{item.request_number}}'></Label>
                     <Label text="{{item.status}}"></Label>
@@ -38,7 +38,7 @@
         <ng-template tkTemplateKey="expanded" let-item="item">
             <FlexboxLayout flexDirection="column">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
-                    <Label  text="&#xf0de;"  class="fas arr-drop"></Label>
+                    <Label  text="&#xf106;"  class="fas arr-drop"></Label>
                     <FlexboxLayout flexDirection="row-reverse">
                         <Label [text]='item.request_number'></Label>
                         <Label [text]="item.status"></Label>
@@ -48,22 +48,22 @@
                 <GridLayout rows="auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" class="ysBox">
                           
                     <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_no"|translate}} :'></Label>
-                    <Label row="0"  column="0" class="ysPBox2" text="{{item.request_number}}" style="text-align: right;"></Label>
+                    <Label row="0"  column="0" class="ysPBox2" text="{{item.request_number}}"></Label>
                 
                     <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.course_code"|translate}} :'></Label>
-                    <Label row="1"  column="0" class="ysPBox2" text="{{item.course_id}}" style="text-align: right;"></Label>
+                    <Label row="1"  column="0" class="ysPBox2" text="{{item.course_id}}"></Label>
                 
                     <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.course_name"|translate}} :'></Label>
-                    <Label row="2"  column="0" class="ysPBox2" text="{{item.course_title}}" style="text-align: right;"></Label>
+                    <Label row="2"  column="0" class="ysPBox2" text="{{item.course_title}}"></Label>
       
                     <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_status"|translate}} :'></Label>
                     <Label row="3"  column="0" class="ysPBox2" text="{{item.status}}"></Label>
       
                     <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_date"|translate}} :'></Label>
-                    <Label row="4"  column="0" class="ysPBox2" text="{{item.insert_date}}"  style="text-align: right;"></Label>
+                    <Label row="4"  column="0" class="ysPBox2" text="{{item.insert_date}}"></Label>
                     
                     <Label row="5" column="1" class="ysPBox" style="font-weight: 800;" text='{{"services.master_cancel_course.acceptance_date"|translate}} :'></Label>
-                    <Label row="5"  column="0" class="ysPBox2" text="{{item.approval_date}}"  style="text-align: right;"></Label>
+                    <Label row="5"  column="0" class="ysPBox2" text="{{item.approval_date}}"></Label>
 
                     <Label row="6" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.request.req_delete"|translate}} :'></Label>
                     <Button row="6" column="0" class="ysPBox2" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas blue-button "></Button>

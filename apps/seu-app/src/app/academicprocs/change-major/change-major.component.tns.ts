@@ -28,6 +28,7 @@ export class ChangeMajorComponent implements OnInit {
   msgs=[];
   status;
   isLoading = false;
+  clicked: any;
   constructor(private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,
       private toastr: AppToasterService, 
@@ -77,6 +78,12 @@ export class ChangeMajorComponent implements OnInit {
     });
 }
 
+clickme(item) {
+  this.clicked = item;
+}
+uclickme(item) {
+  this.clicked = {};
+}
 
   print(req) {
     this.downloader.downloadFile(this.acadmicProc.Download(req));

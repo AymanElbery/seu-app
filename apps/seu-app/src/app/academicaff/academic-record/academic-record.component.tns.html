@@ -65,7 +65,8 @@
             </GridLayout>
           </StackLayout>
 
-        <RadListView *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
+
+        <RadListView ios:visibility="collapsed" height="100%" *ngIf="!isLoading" [items]="recoredData.terms" [itemTemplateSelector]="templateSelector" (itemTap)="onItemTap($event)">
             <ng-template let-item="item">
                 <FlexboxLayout flexDirection="row" justifyContent="space-between" class=" ysHdrop2" 
                 [ngStyle]="{'border-bottom-width':item ===recoredData.terms[recoredData.terms.length-1] ? '0' : '0' }">
@@ -258,6 +259,208 @@
                 </FlexboxLayout> 
             </ng-template>
         </RadListView>
+
+    
+   
+
+   <!-- collape in ios -->
+   
+  
+    <StackLayout android:visibility="collapsed" height="100%" *ngIf="!isLoading" >
+        <StackLayout  *ngFor="let item of recoredData.terms">
+            <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2" 
+            [ngStyle]="{'border-bottom-width':item ===recoredData.terms[recoredData.terms.length-1] ? '0' : '0' }">
+                <Label  text="&#xf107;" textWrap="true" class="fas arr-drop"></Label>
+                <FlexboxLayout (tap)="clickme(item)" flexDirection="row-reverse">
+                  <Label textWrap="true" text='{{"general.term" | translate}}'></Label> 
+                    <Label  textWrap="true" [text]="item.Term"></Label>
+                    <!-- <Label textWrap="true" text='{{"general.for_year" | translate}}'></Label> -->
+                    <Label textWrap="true" [text]="item.Year"></Label>
+                </FlexboxLayout>
+            </FlexboxLayout>
+            <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+                <FlexboxLayout  flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                    <Label  text="&#xf106;" textWrap="true" class="fas arr-drop"></Label>
+
+                    <FlexboxLayout  flexDirection="row-reverse">
+                        <Label  textWrap="true" text='{{"general.term" | translate}}'></Label>
+                        <Label textWrap="true" [text]="item.Term"></Label>
+                        <!-- <Label textWrap="true" text='{{"general.for_year" | translate}}'></Label> -->
+                        <Label textWrap="true" [text]="item.Year"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+
+                <StackLayout>
+                    <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                  
+                  
+                      <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.term" | translate}}'></Label>
+                      <Label row="1"  column="0" textWrap="true" class="ysPBox2" [text]="item.Term"></Label>
+                  
+                      <Label row="2"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.year" | translate}}'></Label>
+                      <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.Year" ></Label>
+                  
+                      <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.major" | translate}}'></Label>
+                      <Label row="3"  column="0"   textWrap="true" class="ysPBox2"  [text]="item.Major"></Label>
+        
+                      <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;" text='{{"general.status" | translate}}'></Label>
+                      <Label row="4"  column="0"  textWrap="true" class="ysPBox2" [text]="item.Status" ></Label>
+        
+                 
+                    </GridLayout>
+                  </StackLayout>
+      <!--
+                <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
+                    <label text='{{"general.term" | translate}}'></label>
+                    <label text='{{"general.year" | translate}}'></label>
+                    <label text='{{"general.major" | translate}}' style="text-align: right;"></label>
+                    <label text='{{"general.status" | translate}}'></label>
+                </FlexboxLayout>
+        
+                <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="trow">
+                    <label [text]="item.Term"></label>
+                    <label [text]="item.Year"></label>
+                    <label [text]="item.Major"></label>
+                    <label [text]="item.Status"></label>
+                </FlexboxLayout>
+
+                <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
+                    <label text='{{"general.course_code_name" | translate}}' class="wideColumn"></label>
+                    <label text='{{"general.rating" | translate}}' class="narrowColumn"></label>
+                    <label text='{{"general.course_hours" | translate}}' class="narrowColumn"></label>
+                    <label text='{{"general.points" | translate}}' class="narrowColumn"></label>
+                </FlexboxLayout>
+
+                <FlexboxLayout justifyContent="space-between" alignItems="center" flexWrap="nowrap" *ngFor="let item of item.courses"  flexDirection="row-reverse">
+                    <FlexboxLayout  flexDirection="column">
+                        <Label [text]="item.CRSE_TITLE" class="wideColumn" textWrap="true"></Label>
+                        <Label [text]="item.ID" class="narrowColumn"></Label>
+                    </FlexboxLayout>
+                    <Label [text]="item.GRADE_TITLE" class="narrowColumn"></Label>
+                    <Label [text]="item.HRS" class="narrowColumn"></Label>
+                    <Label [text]="item.Points" class="narrowColumn"></Label>
+                </FlexboxLayout>
+
+-->
+                <StackLayout>
+
+                    <StackLayout class="ser-title">
+
+                        <Label class="ser-name" text='المقررات'></Label>
+                
+                    </StackLayout>
+
+                    <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of item.courses" >
+                  
+                  
+                      <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.course_code_name" | translate}}'></Label>
+                      <Label row="1"  column="0" textWrap="true" class="ysPBox2" [text]="item.CRSE_TITLE"></Label>
+                  
+                      <Label row="2"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.rating" | translate}}'></Label>
+                      <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.GRADE_TITLE"></Label>
+                  
+                      <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.course_hours" | translate}}'></Label>
+                      <Label row="3"  column="0"   textWrap="true" class="ysPBox2"  [text]="item.HRS"></Label>
+        
+                      <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                      <Label row="4"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.Points"></Label>
+        
+                 
+                    </GridLayout>
+                  </StackLayout>
+
+<!--
+                <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between"  class="throw"> 
+                    <label text='{{"general.hours" | translate}}'></label>
+                    <label text='{{"general.recorded" | translate}}'></label>
+                    <label text='{{"general.success" | translate}}'></label>
+                    <label text='{{"general.earned" | translate}}'></label>
+                    <label text='{{"general.points" | translate}}'></label>
+                    <label text='{{"general.average" | translate}}'></label>
+                </FlexboxLayout>
+
+                <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between">
+                    <label text='{{"general.quarterly" | translate}}'></label>
+                    <label [text]="item.registredHours"  ></label>
+                    <label [text]="item.gpa_hours"  ></label>
+                    <label [text]="item.earned_hours"  ></label>
+                    <label [text]="item.quality_points"  ></label>
+                    <label [text]="item.gpa"  ></label>
+                </FlexboxLayout>
+
+                <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between">
+                    <label text='{{"general.cumulative" | translate}}'></label>
+                    <label [text]="item.TotalregistredHours"  ></label>
+                    <label [text]="item.total_gpa_hours"  ></label>
+                    <label [text]="item.total_earned_hours"  ></label>
+                    <label [text]="item.total_quality_points"  ></label>
+                    <label [text]="item.total_gpa"  ></label>
+                </FlexboxLayout> 
+                -->
+              
+
+                <StackLayout>
+
+                    <StackLayout class="ser-title">
+
+                        <Label class="ser-name" text='الساعات'></Label>
+                
+                    </StackLayout>
+
+                    <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" >
+                  
+                      <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.hours" | translate}}'></Label>
+                      <Label row="1"  column="0" textWrap="true" class="ysPBox2" text='{{"general.quarterly" | translate}}'></Label>
+                  
+                      <Label row="2"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.recorded" | translate}}'></Label>
+                      <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.registredHours"></Label>
+                  
+                      <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.success" | translate}}'></Label>
+                      <Label row="3"  column="0"   textWrap="true" class="ysPBox2"  [text]="item.gpa_hours"></Label>
+        
+                      <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.earned" | translate}}'></Label>
+                      <Label row="4"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.earned_hours"></Label>
+
+                      <Label row="5"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                      <Label row="5"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.quality_points" ></Label>
+        
+                      <Label row="6"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.average" | translate}}'></Label>
+                      <Label row="6"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.gpa" ></Label>
+                 
+                    </GridLayout>
+             
+
+                    <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" >
+                  
+                      <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.hours" | translate}}'></Label>
+                      <Label row="1"  column="0" textWrap="true" class="ysPBox2" text='{{"general.cumulative" | translate}}'></Label>
+                  
+                      <Label row="2"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.recorded" | translate}}'></Label>
+                      <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.TotalregistredHours"></Label>
+                  
+                      <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.success" | translate}}'></Label>
+                      <Label row="3"  column="0"   textWrap="true" class="ysPBox2"  [text]="item.total_gpa_hours"></Label>
+        
+                      <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.earned" | translate}}'></Label>
+                      <Label row="4"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.total_earned_hours"></Label>
+
+                      <Label row="5"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                      <Label row="5"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.total_quality_points"></Label>
+        
+                      <Label row="6"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.average" | translate}}'></Label>
+                      <Label row="6"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.total_gpa" ></Label>
+                 
+                    </GridLayout>
+                  </StackLayout>
+
+            </FlexboxLayout> 
+
+        </StackLayout>
+
+        
+    </StackLayout>
+
+
 <!--
         <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
             <Button class="login-btn" text='{{"general.ar_language" | translate}}' (tap)="onArabicPrint()" ></Button>

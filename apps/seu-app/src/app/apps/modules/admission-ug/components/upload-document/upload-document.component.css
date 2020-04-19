@@ -1,0 +1,11 @@
+.downaloadlink {
+    padding: 8px 15px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 30px;
+    transition: 0.3s ease-in-out;
+    background-color: #6DAAE3;
+    /* border: 1px solid #f28d1e; */
+    color: #fff;
+    
+}

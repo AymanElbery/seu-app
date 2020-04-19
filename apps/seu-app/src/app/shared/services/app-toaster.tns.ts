@@ -1,5 +1,4 @@
-import * as Toast from 'nativescript-toast';
-
+import { Toasty } from 'nativescript-toasty';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -8,18 +7,33 @@ import { Injectable } from '@angular/core';
 export class AppToasterService {
 
   tryagain() {
-    const toast = Toast.makeText('خطأ: حاول مرة أخري');
+    const toast = new Toasty({ text: 'خطأ: حاول مرة أخري',
+    yAxisOffset: 25,
+    ios:{
+      cornerRadius: 24
+    }
+  });
     toast.show();
   }
   push(messages) {
     for (let i = 0; i < messages.length; i++) {
-        const toast = Toast.makeText(messages[i].body);
+        const toast = new Toasty({ text: messages[i].body,
+          yAxisOffset: 25,
+    ios:{
+      cornerRadius: 24
+    }
+        });
         toast.show();
       }
 
   }
   download() {
-    const toast = Toast.makeText('Downloading');
+    const toast = new Toasty({ text: 'Downloading',
+    yAxisOffset: 25,
+    ios:{
+      cornerRadius: 24
+    }
+  });
     toast.show();
   }
 
