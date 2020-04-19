@@ -130,7 +130,12 @@
 
     <div class="row row-form sub-row">
       <div class="col-md-4 offset-md-4">
-        <button (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}    <i class="fa fa-save"></i></button>
+        <div style="padding-right: 20px;" class="form-check">
+          <input [(ngModel)]="isChecked" (change)="agreeCond(isChecked?'A':'B')" type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">{{ "resume.agree" | translate}}</label>
+        </div>
+        <button *ngIf="agree" style="margin-top: 20px;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
+        <button *ngIf="!agree" disabled style="margin-top: 20px;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
       </div>
     </div>
   </section>
