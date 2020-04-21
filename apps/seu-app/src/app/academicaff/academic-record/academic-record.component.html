@@ -141,27 +141,25 @@
                     <tr>
                       <th scope="col">{{"general.course_code" | translate}}</th>
                       <th scope="col">{{"general.course_name" | translate}}</th>
-                      <th scope="col">{{"general.rating" | translate}}</th>
+                      <th scope="col" *ngIf="!item.isCurrentRegistration">{{"general.rating" | translate}}</th>
                       <th scope="col">{{"general.course_hours" | translate}}</th>
-                      <th scope="col">{{"general.points" | translate}}</th>
+                      <th scope="col" *ngIf="!item.isCurrentRegistration">{{"general.points" | translate}}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let it of item.courses">
                       <td>{{it.ID}}</td>
                       <td>{{it.CRSE_TITLE}}</td>
-                      <td>{{it.GRADE_TITLE}}</td>
+                      <td *ngIf="!item.isCurrentRegistration"> {{it.GRADE_TITLE}}</td>
                       <td>{{it.HRS}}</td>
-                      <td>{{it.Points}}</td>
+                      <td *ngIf="!item.isCurrentRegistration">{{it.Points}}</td>
 
                     </tr>
 
                   </tbody>
                 </table>
               </div>
-              <div class="table-responsive">
-
-
+              <div class="table-responsive" *ngIf="!item.isCurrentRegistration">
                 <table class="table table-striped table-bordered">
                   <thead>
                     <tr>
