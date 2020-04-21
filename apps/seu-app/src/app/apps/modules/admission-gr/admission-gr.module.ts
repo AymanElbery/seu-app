@@ -11,9 +11,10 @@ import { VerifyComponent } from './components/gr-login/verify/verify.component';
 import { AdmissionGRService } from './services/admission-gr.service';
 import { SeucommonModule } from 'src/app/seucommon/seucommon.module';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { UploadFileComponent } from './components/upload-file/upload-file.component';
 
 @NgModule({
-  declarations: [GRHomeComponent,AppsGrMenuComponent,AdmissionResultComponent,GrLoginComponent,VerifyComponent],
+  declarations: [GRHomeComponent,AppsGrMenuComponent,AdmissionResultComponent,GrLoginComponent,VerifyComponent,UploadFileComponent],
   imports: [AppsSharedModule, AdmissionGRRoutingModule,
     AdmissionLazyTransModule,
     SeucommonModule,

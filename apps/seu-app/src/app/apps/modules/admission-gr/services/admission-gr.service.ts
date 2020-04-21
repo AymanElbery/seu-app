@@ -42,6 +42,10 @@ export class AdmissionGRService extends AppUserService {
     return this.admissionUgHttpRequest.postRequest_obj('/gr/Admission_result_service/verification', data);
   }
 
+  getuplaodfile(token) {
+    return this.admissionUgHttpRequest.postRequest_obj('/gr/Upload_files_service', {token});
+  }
+
 
   logout_ug(token) {
     return this.admissionUgHttpRequest.postRequest_obj('/gr/Admission_result_service/Logout', { token });

@@ -44,9 +44,9 @@ export class VerifyComponent implements OnInit {
     this.admissionGRservice.getverification(this.AddReqForm.value).subscribe(resverify => {
       if (resverify["status"]) {
         this.admissionGRservice.LoggedInToken = this.globaService.getItem(this.admissionGRservice.tokenKey);
-        this.admissionGRservice.LoggedInUser = resverify["data"]["student_data"];
+        this.admissionGRservice.LoggedInUser = resverify["data"];
         this.admissionGRservice.checkResultData = resverify["data"];
-        this.globaService.setItem(this.admissionGRservice.userKey, JSON.stringify(resverify["data"]["student_data"]));
+        this.globaService.setItem(this.admissionGRservice.userKey, JSON.stringify(resverify["data"]));
         this.submitted = false;
         //this.router.navigate(['/apps/admission-gr/display-result']);
         this.router.navigate(['/apps/admission-gr/']);
