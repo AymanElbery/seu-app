@@ -4,3 +4,50 @@
     text-align: center;
     padding-top: 75px !important;
 }
+
+.wrapper .page-wrap .main-landing {
+    padding: 0px 0;
+    min-height: calc(100vh - 45px);
+    margin-top: 0px;
+    padding-left: 0;
+     padding-right: 0px; 
+    transition: all 0.3s ease;
+    background: linear-gradient(to bottom, #01182a, rgba(1,24,42,0.9),#01182a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.data{  display: flex;
+    justify-content: center;
+    align-items: center;}
+    .data a{ 
+        font-size: 16px;
+        color: #fff;
+        transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) .8s
+    }
+    .data a:hover{ 
+        color:#f28d1e;
+        transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55) .8s ;
+
+    }
+    .data a i{ 
+        display: block;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .data img{ 
+        display: block;
+        width: 60px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .hr{border-top: 1px solid rgba(255, 255, 255, 0.4); margin: -12px;}
+    
+    .hr1{ 
+  
+        border:         none;
+        border-left:    1px solid rgba(255, 255, 255, 0.4) ;
+        height:         25vh;
+        width:          1px;       
+    }
+
