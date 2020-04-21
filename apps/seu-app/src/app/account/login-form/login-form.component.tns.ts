@@ -11,6 +11,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { AppToasterService } from '../../shared/services/app-toaster.tns';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
+import { Page } from 'tns-core-modules/ui/page';
 
 
 
@@ -25,12 +26,14 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   brandNew: boolean;
   errors: string;
   isRequesting: boolean;
+  clicked = {};
   submitted = false;
   credentials: Credentials = { email: '', password: '' };
   status;
   isLoading: boolean;
   role: string;
   constructor(
+    private page: Page,
     private userService: UserService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -39,6 +42,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     private toastr: AppToasterService
   ) {
     console.log('l1');
+    page.actionBarHidden = true;
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
 
@@ -50,6 +54,13 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
     // this.userManger.logout();
     // this.userManger.logout();
+  }
+
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
   }
 
   login() {
@@ -148,6 +159,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     const sideDrawer =  app.getRootView() as RadSideDrawer;
     sideDrawer.isEnabled = false;
     sideDrawer.gesturesEnabled = false;
+
+
 
 
   }

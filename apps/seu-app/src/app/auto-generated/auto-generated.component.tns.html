@@ -1,1 +1,70 @@
-<Button text="auto-generated works!" class="btn btn-primary"></Button>
+
+<ActionBar style="background:#001628; ">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+  <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+
+-->
+
+
+
+<StackLayout  horizontalAlignment="center" style="width:80%;height: 90%;" margin-top="0">
+  
+    <Image  src="~/images/logo_3d.png" ></Image>
+  </StackLayout>
+
+    
+
+</ActionBar>
+<ScrollView ><StackLayout>
+    
+                <GridLayout  rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*">
+              
+                  <Label row="0" column="0" class="ysPBox" textWrap="true" style="font-weight: 900;" text="رقم الهاتف"></Label>
+                  <HtmlView row="1" class='ysPBox2' column="0"    html="<p dir='rtl' style='text-align:center;height:10px'> 00966112613500 <a  class='ysPBox2' style='font-weight:800' href='tel:00966112613500 '>اضغط للاتصال</a>
+                <br/>   <br/>
+                199099 <a  class='ysPBox2' style='font-weight:900' href='tel:199099'>اضغط للاتصال</a>
+                </p>"></HtmlView>
+
+                  <Label row="2" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text="البريد الالكتروني"></Label>
+                  <Label row="3"  column="0" class="ysPBox2" textWrap="true" text="contact@seu.edu.sa" ></Label>
+              
+                  <Label row="4" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text=" المقر الرئيسي"></Label>
+                  <Label row="5"  column="0" class="ysPBox2" textWrap="true" text="الرياض - طريق ابو بكر الصديق تقاطع طريق الامير محمد بن سلمان." ></Label>
+                  <Label row="6" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text="  فرع الدمام  "></Label>
+                  <Label row="7"  column="0" class="ysPBox2" textWrap="true" text="يقع مقر الجامعة السعودية الالكترونية فرع الدمام (طلاب -طالبات) -بحي الريان خلف مجمع كليات البنات التابع لجامعة الدمام." ></Label>
+             
+                  <Label row="8" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text=" فرع جده "></Label>
+                  <Label row="9"  column="0" class="ysPBox2" textWrap="true" text=" يقع مقر الطلاب فرع الجامعة السعودية الإلكترونية في جامعة جدة ​بكلية التربية بحي الفيصلية مبنى (ب) ." ></Label>
+
+                  <Label row="10" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text="  فرع المدينة المنوره"></Label>
+                  <Label row="11"  column="0" class="ysPBox2" textWrap="true" text=" يقع مقر الطلاب في المدينة المنورة في جامعة طيبة ( موقع آبار علي )" ></Label>
+
+                  <Label row="12" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text=" فرع القسيم "></Label>
+                  <Label row="13"  column="0" class="ysPBox2" textWrap="true" text="مدينة بريدة في مبنى السنة التحضيرية التابع لجامعة القصيم حي المليداء." ></Label>
+                
+
+                  <Label row="14" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text=" فرع الاحساء "></Label>
+                  <Label row="15"  column="0" class="ysPBox2" textWrap="true" text="امتداد طريق الخليج​"></Label>
+
+                  <Label row="16" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text=" فرع ابها "></Label>
+                  <Label row="17"  column="0" class="ysPBox2" textWrap="true" text="مدينة أبها—فرع الجامعة السعودية الالكترونية في جامعة الملك خالد بالمدينة الجامعية حي القريقر مبنى أ"></Label>
+
+                  <Label row="18" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text=" فرع تبوك "></Label>
+                  <Label row="19"  column="0" class="ysPBox2" textWrap="true" text="يقع مقر الجامعة الالكترونية للطلاب في مدينة تبوك في مبنى كلية العلوم التابع لجامعة تبوك على طريق ضبا."></Label>
+            
+
+                  <Label row="20" column="0" class="ysPBox" textWrap="true" style="font-weight: 800;" text=" فرع جازان "></Label>
+                  <Label row="21"  column="0" class="ysPBox2" textWrap="true" text="يقع في فرع الجامعة السعودية الالكترونية بمنطقة جازان بالمدينة الجامعية، مبنى السنة التحضيرية"></Label>
+                </GridLayout>
+    
+        
+    
+    <FlexboxLayout>
+        <Button style="width: 100%;" text='عوده' [nsRouterLink]="['/login']" class="print-btn"></Button>
+    </FlexboxLayout>
+    </StackLayout>
+</ScrollView>
+
+

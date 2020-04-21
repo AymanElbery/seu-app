@@ -36,8 +36,7 @@
     font-size:15px;
     font-weight: 800;
     text-align: center;
-    background-image: linear-gradient(135deg,#001628  0%, #243686 100%);
-        color: white;
+    color: white;
     border-radius: 70px 20px 0px 0px;
     padding: 15px 0;
 
@@ -389,9 +388,10 @@ background-color: #001628;
  ActionBar{background-color:#f1f1f1; color:#243686;}
  ActionBar label{ color:#243686; font-size: 18px; font-family: 'DroidArabicKufi'}
 
- .login-btn{   background-image: linear-gradient(135deg,#001628  0%, #243686 100%); color: #fff;
+ .login-btn{   background-image: linear-gradient(135deg,#f17e13  0%, #f08b1c 100%); color: #fff;
     border-radius: 100px; 
-    font-family: 'DroidArabicKufi'; font-size: 16px;
+    font-family: 'DroidArabicKufi'; font-size: 16px; border-color: #f08b1c;
+    margin-top: 10;
 }
 
 .print-btn{    background-image: linear-gradient(135deg,#001628  0%, #243686 100%);
@@ -402,15 +402,32 @@ background-color: #001628;
     padding: 0 20;
 }
 
-TextField{ border-width: 0;
-     color:#243686 ; background-color: #f1f1f1; padding: 16 10;  border-radius: 100px;}
+.contact-btn{   
+     background-image: none;
+    color: #fff;
+    border-radius: 50px; 
+    font-family: 'DroidArabicKufi'; font-size: 15px; font-weight: 700;
+    height: 100px;
+    padding: 0 20;
+    margin-top: 10;
+}
+.contact-btn .far , .contact-btn .fas{ color: #f08b1c; font-size: 15;}
+TextField{ border-width: 0; background-color: #f1f1f1;
+    color:#243686 ; padding: 16 10;  border-radius: 100px;}
+
 TextField:focus{ border-width: 5px; border-color: #f08b1c; }
+
+.logi TextField{ border-width: 0; height: 55; margin-top: 20;
+     color:#243686 ; padding: 16 10;  border-radius: 100px;}
+ .logi TextField:focus{ border-width: 0px; border-color: #f08b1c; }
+
 TextView{ color:#243686 ; background-color: #f1f1f1; padding: 16 10;  border-radius: 100px;}
 TextView:focus{ border-width: 5px; border-color: #f08b1c; }
 
-label{font-family: 'DroidArabicKufi' ;  white-space: normal;
-   
-}
+.logi{  background-color: #f1f1f1; border-radius: 100px; height: 55; }
+.logi:focus{  border-width: 5px; border-color: #f08b1c; }
+.log-icon{ color: #f08b1c; margin-left: 15; font-size: 16;}
+label{font-family: 'DroidArabicKufi' ;  white-space: normal;}
 .hr{border-color: #f08b1c;  width: 85%;}
 
 @keyframes example {
@@ -419,14 +436,14 @@ label{font-family: 'DroidArabicKufi' ;  white-space: normal;
 }
 
 
-
+/* 
 .view {
     animation-name: example;
     animation-duration: 6s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite
  
-}
+} */
 
 /*
 @keyframes grd {

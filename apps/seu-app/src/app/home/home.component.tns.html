@@ -1,8 +1,8 @@
 <app-header></app-header>
 <StackLayout>
-    <StackLayout class="heading " style="padding-right: 10px;">
+    <StackLayout  horizontalAlignment="right"class="heading " style="padding-right: 10px;width: 90%;">
 
-        <Label  class="h3 heading-text "  text="   الإعـــــلانـــات  "></Label>
+        <Label horizontalAlignment="right"  class="h3 heading-text "  text="   الإعـــــلانـــات  "></Label>
         <Label   text="&#xf0a1;" class="fas  heading-icon"></Label>
 
     </StackLayout>
@@ -23,7 +23,7 @@
 
                             <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
                             src="{{item.image}}"></Image>
-                        <Label class="label-itme" textWrap="true" row="1"
+                        <Label horizontalAlignment="right" class="label-itme" textWrap="true" row="1"
                             text="{{item.title}}"></Label>
                     </StackLayout>
                 </GridLayout>
@@ -33,8 +33,8 @@
 
     <GridLayout col="*" style="direction: rtl;" class="page__content">
         <StackLayout>
-            <StackLayout class="heading">
-                <Label  class="h3 Almarai heading-text" text="الأخـــــــبـــــــار"></Label>
+            <StackLayout style="width: 90%;" horizontalAlignment="right" class="heading">
+                <Label horizontalAlignment="right"  class="h3 Almarai heading-text" text="الأخـــــــبـــــــار"></Label>
                 <Label   text="&#xf1ea;" class="fas  heading-icon"></Label>
 
 

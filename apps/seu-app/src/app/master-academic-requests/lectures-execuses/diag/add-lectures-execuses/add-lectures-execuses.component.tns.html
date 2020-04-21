@@ -16,7 +16,7 @@
 </ActionBar>
 
 <ScrollView>
-<FlexboxLayout flexDirection="column">
+<FlexboxLayout flexDirection="column" class="iosFont">
 
     <StackLayout class="ysBox paragraph" style="margin-bottom: 20;">
         <Label [text]="reqData.notes[0].text1"></Label>
@@ -80,7 +80,7 @@
     </TextView>
 
     <Label text='{{"services.lecture_execuse.file_size"|translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;margin-top: 20;"></Label>
-    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn"></Button>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn iosFontCenter"></Button>
    
 </FlexboxLayout>
 </ScrollView>

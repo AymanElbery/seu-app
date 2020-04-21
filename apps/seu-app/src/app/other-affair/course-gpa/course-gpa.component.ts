@@ -73,10 +73,10 @@ export class CourseGpaComponent implements OnInit {
   delete(id, index) {
     if (confirm(this.translate.instant('general.delete_confirm'))) {
       this.deleting = true;
-      this.acadmicProc.deleteReq(id).then(res => {
+      this.acadmicProc.deleteReq().then(res => {
         this.toastr.push((res as any).messages);
         if ((res as any).status == 1) {
-          this.reqData.reqs.splice(index, 1);
+          this.getRequests();
         }
         this.deleting = false;
       }
