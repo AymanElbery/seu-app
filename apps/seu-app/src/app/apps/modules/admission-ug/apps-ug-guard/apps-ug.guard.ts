@@ -3,13 +3,13 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from
 import { HttpClient } from '@angular/common/http';
 import { AppUserService } from 'src/app/apps/services/app-user.service';
 import { environment } from 'src/environments/environment';
-import { AdmisionUgService } from '../services/admision-ug.service';
+import { AdmissionUGService } from '../services/admission-ug.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppsUgGuard implements CanActivate {
-  constructor(private router: Router, private appuserService: AppUserService, private admissionugService: AdmisionUgService, private http: HttpClient) {
+  constructor(private router: Router, private appuserService: AppUserService, private admissionugService: AdmissionUGService, private http: HttpClient) {
 
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> {

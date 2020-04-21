@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdmisionUgService } from '../../services/admision-ug.service';
+import { AdmissionUGService } from '../../services/admission-ug.service';
 import { AppUserService } from 'src/app/apps/services/app-user.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AppUserService } from 'src/app/apps/services/app-user.service';
 })
 export class AppsUGMenuComponent implements OnInit {
 
-  constructor(public admissionugService: AdmisionUgService, private appService: AppUserService) {
+  constructor(public admissionugService: AdmissionUGService, private appService: AppUserService) {
     this.isLoggedIn();
   }
   isLoggedIn() {

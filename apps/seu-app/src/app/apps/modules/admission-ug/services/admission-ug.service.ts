@@ -8,7 +8,7 @@ import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AdmisionUgService extends AppUserService {
+export class AdmissionUGService extends AppUserService {
   checkResultData;
   tokenKey = 'ug-token';
   userKey = 'ug-student';
@@ -31,38 +31,38 @@ export class AdmisionUgService extends AppUserService {
   }
 
   getresstatus(data) {
-    return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service', data);
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/Admission_result_service', data);
   }
 
   getloginstatus(data) {
-    return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/check', data);
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/Admission_result_service/check', data);
   }
 
   getverification(data) {
-    return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/verification', data);
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/Admission_result_service/verification', data);
   }
 
 
   matchdocs(token) {
-    return this.admissionUgHttpRequest.postRequest_obj('/Post_result_service', { token });
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/Post_result_service', { token });
   }
 
   uploaddocs(token) {
-    return this.admissionUgHttpRequest.postRequest_obj('/Upload_files_service', { token });
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/Upload_files_service', { token });
   }
 
   savedocs(data) {
-    return this.admissionUgHttpRequest.postRequest_obj('/Upload_files_service/Insert', { data });
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/Upload_files_service/Insert', { data });
   }
   paymentrefund(token) {
-    return this.admissionUgHttpRequest.postRequest_obj('/cancel_admission_service', { token });
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/cancel_admission_service', { token });
   }
   Reqpaymentrefund(data) {
-    return this.admissionUgHttpRequest.postRequest_obj('/cancel_admission_service/insert', {data});
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/cancel_admission_service/insert', {data});
   }
 
   logout_ug(token) {
-    return this.admissionUgHttpRequest.postRequest_obj('/Admission_result_service/Logout', { token });
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/Admission_result_service/Logout', { token });
   }
 
   logout() {

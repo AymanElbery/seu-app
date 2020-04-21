@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AdmissionUGService } from '../../../services/admission-ug.service';
 import { Subscription } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
@@ -8,21 +7,21 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { environment } from 'src/environments/environment';
 import { RecaptchaComponent } from 'ng-recaptcha';
 import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
-
+import { AdmissionGRService } from '../../services/admission-gr.service';
 
 @Component({
-  selector: 'app-ug-login',
-  templateUrl: './ug-login.component.html',
-  styleUrls: ['./ug-login.component.css']
+  selector: 'app-gr-login',
+  templateUrl: './gr-login.component.html',
+  styleUrls: ['./gr-login.component.css']
 })
-export class UgLoginComponent implements OnInit {
+export class GrLoginComponent implements OnInit {
   @ViewChild('recaptchaRef', { read: RecaptchaComponent, static: false }) recaptchaRef: RecaptchaComponent;
 
   AddReqForm: FormGroup;
   submitted = false;
   studentData;
   environment;
-  constructor(private toastr: AppToasterService, public admissionUgservice: AdmissionUGService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globalService: GlobalBaseService) {
+  constructor(private toastr: AppToasterService, public admissionGRservice: AdmissionGRService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globalService: GlobalBaseService) {
 
     this.AddReqForm = fb.group({
       'ssn': ['', [Validators.required, Validators.minLength(10), Validators.minLength(10)]],
@@ -32,7 +31,7 @@ export class UgLoginComponent implements OnInit {
 
   }
   ngOnInit() {
-
+//this.admissionGRservice.LoggedInUser["exa"];
   }
 
   resolved(captchaResponse: string) {
@@ -45,11 +44,11 @@ export class UgLoginComponent implements OnInit {
       return;
     }
     this.submitted = true;
-    this.admissionUgservice.getloginstatus(this.AddReqForm.value).subscribe(reslogin => {
+    this.admissionGRservice.getloginstatus(this.AddReqForm.value).subscribe(reslogin => {
       if (reslogin['data']['token']) {
-        this.globalService.setItem(this.admissionUgservice.tokenKey, (reslogin as any).data["token"]);
+        this.globalService.setItem(this.admissionGRservice.tokenKey, (reslogin as any).data["token"]);
         this.submitted = false;
-        this.router.navigate(['/apps/admission-ug/ug-verification/'])
+        this.router.navigate(['/apps/admission-gr/gr-verification/'])
       } else if (!reslogin['status']) {
         this.toastr.push(reslogin['messages']);
         this.recaptchaRef.reset();

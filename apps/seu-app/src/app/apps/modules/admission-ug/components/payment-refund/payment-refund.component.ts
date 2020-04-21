@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdmisionUgService } from '../../services/admision-ug.service';
+import { AdmissionUGService } from '../../services/admission-ug.service';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
@@ -21,7 +21,7 @@ export class PaymentRefundComponent implements OnInit {
   AddReqForm: FormGroup;
   submitted = false;
   flagdetail=false;
-  constructor(private toastr: AppToasterService, private admissionUgservice: AdmisionUgService, private translate: TranslateService, private router: Router,private fb: FormBuilder, public globalService: GlobalBaseService) { 
+  constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private translate: TranslateService, private router: Router,private fb: FormBuilder, public globalService: GlobalBaseService) { 
 
     this.AddReqForm = fb.group({
       'name': ['', [Validators.required]],      

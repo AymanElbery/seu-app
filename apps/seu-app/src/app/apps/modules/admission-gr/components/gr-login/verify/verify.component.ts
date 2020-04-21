@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { AdmissionUGService } from '../../../services/admission-ug.service';
 import { Subscription } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
-
+import { AdmissionGRService } from '../../../services/admission-gr.service';
 
 @Component({
-  selector: 'app-ug-veryfication',
-  templateUrl: './ug-veryfication.component.html',
-  styleUrls: ['./ug-veryfication.component.css']
+  selector: 'app-verify',
+  templateUrl: './verify.component.html',
+  styleUrls: ['./verify.component.css']
 })
-export class UgVeryficationComponent implements OnInit {
+export class VerifyComponent implements OnInit {
   getresult;
   AddReqForm: FormGroup;
   submitted = false;
-  constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globaService: GlobalBaseService) {
+  constructor(private toastr: AppToasterService, private admissionGRservice: AdmissionGRService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globaService: GlobalBaseService) {
 
-    const ugtoken = globaService.getItem(admissionUgservice.tokenKey);
+    const ugtoken = globaService.getItem(admissionGRservice.tokenKey);
     if (!ugtoken) {
       this.redirectToLogin();
     }
@@ -34,7 +33,7 @@ export class UgVeryficationComponent implements OnInit {
   }
 
   redirectToLogin() {
-    this.router.navigate(['/apps/admission-ug/ug-login/']);
+    this.router.navigate(['/apps/admission-gr/gr-login/']);
   }
 
   onFormSubmit() {
@@ -42,14 +41,15 @@ export class UgVeryficationComponent implements OnInit {
       return;
     }
 
-    this.admissionUgservice.getverification(this.AddReqForm.value).subscribe(resverify => {
+    this.admissionGRservice.getverification(this.AddReqForm.value).subscribe(resverify => {
       if (resverify["status"]) {
-        this.admissionUgservice.LoggedInToken = this.globaService.getItem(this.admissionUgservice.tokenKey);
-        this.admissionUgservice.LoggedInUser = resverify["data"]["student_data"];
-        this.admissionUgservice.checkResultData = resverify["data"];
-        this.globaService.setItem(this.admissionUgservice.userKey, JSON.stringify(resverify["data"]["student_data"]));
+        this.admissionGRservice.LoggedInToken = this.globaService.getItem(this.admissionGRservice.tokenKey);
+        this.admissionGRservice.LoggedInUser = resverify["data"]["student_data"];
+        this.admissionGRservice.checkResultData = resverify["data"];
+        this.globaService.setItem(this.admissionGRservice.userKey, JSON.stringify(resverify["data"]["student_data"]));
         this.submitted = false;
-        this.router.navigate(['/apps/admission-ug/display-result']);
+        //this.router.navigate(['/apps/admission-gr/display-result']);
+        this.router.navigate(['/apps/admission-gr/']);
       } else {
         this.toastr.push(resverify['messages']);
         this.submitted = false;
