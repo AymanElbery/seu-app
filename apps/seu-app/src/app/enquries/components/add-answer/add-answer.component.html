@@ -1,0 +1,17 @@
+<div class="row" style="padding: 20px;">
+    <div class="col-md-12">
+        <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="answer">{{ "enquries.answer_on_enq" | translate}}</label>
+                <textarea (keypress)="keyPress()" formControlName="answer" class="form-control" id="answer" rows="6"></textarea>
+                <input formControlName="id" type="hidden" [value]="id">
+            </div>
+            <div *ngIf="errorMessage" style="margin-top: 10px;" class="alert alert-danger text-center">
+                <b>{{ "enquries.errorMessage" | translate}} </b>
+            </div>
+            <div class="form-group">
+                <button style="margin-top: 10px; width: 100%;" type="submit" class="btn sub">{{ "enquries.send" | translate}}  <i class="fa fa-save"></i></button>
+            </div>
+        </form>
+    </div>
+</div>

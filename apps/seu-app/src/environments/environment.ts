@@ -13,5 +13,7 @@ export const environment = {
   notesAuth: 'nots:N0t!fic@ti0n$',
   ssoAuth: 'sso:s$0$3u2030',
   allowWafi: true,
-  captchaSiteKey: "6LcZJOgUAAAAADeusuP0ndPRe8A5ip1FBypF_WlQ"
+  captchaSiteKey: "6LcZJOgUAAAAADeusuP0ndPRe8A5ip1FBypF_WlQ",
+  enquery_URL: 'https://f925a33c.ngrok.io/myweb/', // WhatsApp chatbot /
+  //enquery_URL: 'http://wapp.seu.edu.sa/myweb/', // WhatsApp chatbot /
 };

@@ -222,7 +222,8 @@
         "resume": "Doctor Resume",
         "gpa": "احتساب نظام التقديرات المعتمد",
         "resume_ar": "Doctor Resume in Arabic",
-        "resume_en": "Doctor Resume in English"
+        "resume_en": "Doctor Resume in English",
+        "enquries" : "Chatbot inquiries"
     },
     "resume": {
         "title": "Edit Resume in Arabic",
@@ -246,6 +247,15 @@
         "title_no": "Title No",
         "item_no": "Item No",
         "agree": "I bear responsibility for the correctness of the data entered above"
+    },
+    "enquries": {
+        "title": "Inquiries",
+        "message": "Message",
+        "answer" : "Answer",
+        "add_answer": "Add Answer",
+        "answer_on_enq" : "Answer on Inquiry",
+        "send" : "Send",
+        "errorMessage": "You must enter a reply to the message before sending"
     },
     "attends": {
         "code_lable": "Enter CRN code",

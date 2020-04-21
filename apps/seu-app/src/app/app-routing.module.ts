@@ -114,6 +114,10 @@ const routes: Routes = [
         loadChildren: './resume/resume.module#ResumeModule',
         canActivate: [EmpGuard]
       },
+      {
+        path: 'enquries',
+        loadChildren: './enquries/enquries.module#EnquriesModule'
+      },
     ]
   },
   {
