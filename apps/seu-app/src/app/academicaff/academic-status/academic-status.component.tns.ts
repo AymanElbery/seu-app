@@ -78,6 +78,7 @@ export class AcademicStatusComponent implements OnInit {
       this.acceptanceYear = this.student.std_adm_term_label.match(/[0-9\/[0-9]/g).join('');
       console.log(this.acceptanceYear);
       this.studentTerms = (res as any).data.STD_TERMS;
+      console.log("studentTerms",this.studentTerms);
       // tslint:disable-next-line: prefer-for-of
       for (let i = 0; i < this.studentTerms.length; i++) {
         this.terms.push(
@@ -90,7 +91,7 @@ export class AcademicStatusComponent implements OnInit {
       this.studentTermsDropDown = new ValueList(this.terms);
 
       this.studentTermDetails = (res as any).data.STD_TermDetails;
-      this.selectedSems = this.studentTerms[0].TERM_CODE;
+      this.selectedSems = this.studentTerms.length>0 &&this.studentTerms[0].TERM_CODE;
       this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
       this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
       this.isLoading = false;

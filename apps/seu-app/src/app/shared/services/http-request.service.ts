@@ -37,6 +37,8 @@ export class HttpRequestService extends HttpRequestServiceBase {
     }
     let headers = this.createRequestHeader();
     headers = this.setStudentIdHeader(url, headers);
+    console.log(url);
+  
     return this.http.get(url, { headers });
   }
 

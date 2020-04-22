@@ -9,17 +9,22 @@
 {{notifications.notesList.length}}"  class="far" style="font-size:10; color: #fff;" (tap)="getNotifications()">
 </NavigationButton>
 
-<ActionItem ios.position="left" android:visibility="collapsed" icon="font://&#xf0f3;
-({{notifications.notesList.length}})"  class="far" style="font-size:12; color: #fff;" (tap)="getNotifications()">
+ <ActionItem style="margin: 0;"  ios.position="left" android:visibility="collapsed" icon="font://&#xf0f3;
+{{notifications.notesList.length}}"   class="fas " style="font-size:30; color: #fff;" (tap)="getNotifications()">
+<label  class="fas" style="margin: 0;padding-left: -10px;margin-left: -10px;color: #fff;"  ios.position="left" android:visibility="collapsed" text="&#xf0f3; {{notifications.notesList.length}}"   class="fas " style="font-size:25; color: #fff;" (tap)="getNotifications()">
+
+</label>
 </ActionItem>
+
+
+
 <!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
 -->
-<StackLayout  horizontalAlignment="center" style="width:80%;height: 90%;" margin-top="0">
+<StackLayout   horizontalAlignment="center" style="height: 100%;margin: 0px;" margin-top="0">
   
-    <Image [nsRouterLink]="['/land']" src="~/images/logo_3d.png" ></Image>
+    <Image style="width: 100%;"   [nsRouterLink]="['/land']" src="~/images/logo_3d.png" ></Image>
   </StackLayout>
-
-    <ActionItem icon="font://&#xf0c9;"  class="fas" style="font-size:10; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="right">
+    <ActionItem icon="font://&#xf0c9;"  class="fas fa-2x" style="font-size:30; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="right">
     </ActionItem>
 
 </ActionBar>

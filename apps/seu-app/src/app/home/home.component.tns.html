@@ -60,9 +60,9 @@
                     <StackLayout height="160" class="list-group-item news"
                         *ngFor="let news of userService.newsData">
 
-
-                        <Image height="110" stretch="aspectFill" row="0" class="news-item"
-                            src="{{news.image}}"></Image>
+          
+                        <Image height="100" stretch="aspectFill" row="0" class="news-item"
+                            src="{{decodeURL(news.image)}}"></Image>
 
 
 
