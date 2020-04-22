@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
         Downloader.init();
         this.UG_Menu = [
         {
-            title: 'الشئون الاكاديمية',
+            title: 'الشؤون الاكاديمية',
             subTitles: [
                 {
                 subTitle: 'الحالة الاكاديمية',
