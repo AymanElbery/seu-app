@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AdmissionGRService } from '../../services/admission-gr.service';
+
 @Component({
   selector: 'app-gr-home',
   templateUrl: './gr-home.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GRHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public appUserService: AdmissionGRService) { }
 
   ngOnInit() {
   }

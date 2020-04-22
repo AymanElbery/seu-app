@@ -39,6 +39,10 @@
               <span> {{'UploadDocument' | translate}} </span>
               <i class="ik ik-user-check"></i>
             </a>
+            <a href="#" class="menu-item" routerLink="/apps/admission-ug/payment-refund">
+              <span> {{'paymentrefund' | translate}} </span>
+              <i class="ik ik-user-check"></i>
+            </a>
             <a *ngIf="admissionugService.isLoggedIn" href="#" class="menu-item" (click)="logout()">
               <span> {{'logout' | translate}} </span>
               <i class="ik ik-user-check"></i>

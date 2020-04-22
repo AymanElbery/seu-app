@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdmisionUgService } from '../../../services/admision-ug.service';
+import { AdmissionUGService } from '../../../services/admission-ug.service';
 import { Subscription } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
@@ -17,7 +17,7 @@ export class UgVeryficationComponent implements OnInit {
   getresult;
   AddReqForm: FormGroup;
   submitted = false;
-  constructor(private toastr: AppToasterService, private admissionUgservice: AdmisionUgService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globaService: GlobalBaseService) {
+  constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globaService: GlobalBaseService) {
 
     const ugtoken = globaService.getItem(admissionUgservice.tokenKey);
     if (!ugtoken) {
