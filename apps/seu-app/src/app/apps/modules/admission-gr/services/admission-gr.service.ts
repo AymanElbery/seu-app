@@ -10,6 +10,7 @@ import { HttpRequestAdmisionUgService } from '../../admission-ug/services/http-r
 })
 export class AdmissionGRService extends AppUserService {
   checkResultData;
+  messages;
   tokenKey = 'gr-token';
   userKey = 'gr-student';
 
@@ -19,7 +20,7 @@ export class AdmissionGRService extends AppUserService {
 
   get fullName() {
     if (this.isLoggedIn)
-      return this.LoggedInUser['S_NAME'];
+      return this.LoggedInUser['FIRST_NAME']+' '+this.LoggedInUser["LAST_NAME"];
     return '';
   }
 
@@ -46,6 +47,9 @@ export class AdmissionGRService extends AppUserService {
     return this.admissionUgHttpRequest.postRequest_obj('/gr/Upload_files_service', {token});
   }
 
+  postfileupload(data) {
+    return this.admissionUgHttpRequest.postRequest_obj('/gr/Upload_files_service/Insert', data);
+  }
 
   logout_ug(token) {
     return this.admissionUgHttpRequest.postRequest_obj('/gr/Admission_result_service/Logout', { token });
