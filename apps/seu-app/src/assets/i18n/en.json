@@ -251,7 +251,7 @@
     "enquries": {
         "title": "Inquiries",
         "message": "Message",
-        "answer" : "Answer",
+        "answer" : "Answer on message",
         "add_answer": "Add Answer",
         "answer_on_enq" : "Answer on Inquiry",
         "send" : "Send",

@@ -23,14 +23,14 @@
               <tr>
                   <th scope="col"> # </th>
                   <th scope="col"> {{"enquries.message"|translate}}</th>
-                  <th scope="col"> {{"enquries.answer"|translate}}</th>
+                  <th style="width: 200px;" scope="col"> {{"enquries.answer"|translate}}</th>
               </tr>
             </thead>
           <tbody>
               <tr *ngFor="let enquiry of data; let i = index;">
                   <td>{{ i+1 }}</td>
                   <td>{{ enquiry.clientMessage }}</td>
-                  <td>
+                  <td style="width: 200px;">
                     <button (click)="openDialog(enquiry.id)" type="button" class="btn btn-primary">{{"enquries.add_answer"|translate}}</button>
                   </td>
               </tr>
