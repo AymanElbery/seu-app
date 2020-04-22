@@ -15,4 +15,5 @@ export const environment = {
   allowWafi: true,
   captchaSiteKey: "6LcZJOgUAAAAADeusuP0ndPRe8A5ip1FBypF_WlQ",
   enquery_URL: 'https://sso.seu.edu.sa/myweb/', // WhatsApp chatbot /
+  chatbot_mails: ['contact@seu.edu.sa', 'mali@seu.edu.sa', 'a.elbery@seu.edu.sa']
 };

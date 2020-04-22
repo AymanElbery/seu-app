@@ -431,11 +431,11 @@
           </div>
         </div>
 
-        <div *ngIf="userService.userData && userService.userData.email == 'contact@seu.edu.sa'" class="nav-item">
+        <div *ngIf="userService.userData && environment.chatbot_mails.includes(userService.userData.email)" class="nav-item">
           <a routerLink="/enquries" > <span>{{"menu.enquries" | translate}} </span> <i class="ik ik-layers"></i> </a>
         </div>
 
-        
+
 
         <div *ngIf="userService.userData && userService.userData.activeRole=='Instructor'"
           class="nav-item has-sub open">
