@@ -21,14 +21,14 @@
       <table class="table table-striped table-bordered">
           <thead>
               <tr>
-                  <th scope="col"> # </th>
+                  <!-- <th scope="col"> # </th> -->
                   <th scope="col"> {{"enquries.message"|translate}}</th>
                   <th style="width: 200px;" scope="col"> {{"enquries.answer"|translate}}</th>
               </tr>
             </thead>
           <tbody>
-              <tr *ngFor="let enquiry of data; let i = index;">
-                  <td>{{ i+1 }}</td>
+              <tr *ngFor="let enquiry of data | paginate: { itemsPerPage: 30, currentPage: p }; let i = index;">
+                  <!-- <td>{{ i+1 }}</td> -->
                   <td>{{ enquiry.clientMessage }}</td>
                   <td style="width: 200px;">
                     <button (click)="openDialog(enquiry.id)" type="button" class="btn btn-primary">{{"enquries.add_answer"|translate}}</button>
@@ -36,6 +36,11 @@
               </tr>
           </tbody>
       </table>
+      <div style="text-align: left;" class="col-md-12">
+        <ul class="pagination">  
+          <pagination-controls (pageChange)="p = $event" previousLabel="{{'wafi.Previous' | translate}}" nextLabel="{{'wafi.Next' | translate}}" directionLinks="true"></pagination-controls>  
+        </ul>
+      </div>
     </div>
   </div>
 </div>

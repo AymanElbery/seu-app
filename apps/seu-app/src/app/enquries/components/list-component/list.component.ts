@@ -22,6 +22,7 @@ export class ListComponent{
   data;
   isLoading;
   title: string;
+  config;
 
   constructor(
     public userService: UserService, 
@@ -44,6 +45,10 @@ export class ListComponent{
       },
       error => {}
     );
+  }
+
+  pageChanged(event) {
+    this.config.currentPage = event;
   }
 
 

@@ -4,6 +4,7 @@ import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { TasksManagementService } from '../tasks/services/tasks-management.service';
+import { EnquriesService } from '../enquries/services/enquries.service';
 
 @Component({
   selector: 'app-menu',
@@ -16,11 +17,29 @@ export class MenuComponent implements OnInit, AfterContentInit {
   acStd = false;
   showServices = false;
   environment;
-  constructor(public userService: UserService, private router: Router, public task: TasksManagementService) {
+  unreadEnqueries;
+  constructor(public userService: UserService, private router: Router, public task: TasksManagementService, private enquriesService: EnquriesService) {
     this.environment = environment;
+    let unread = this;
+    this.getUnreadEnquries();
+    setInterval(function(){ 
+      unread.getUnreadEnquries(); 
+    }, 60000);
+    
   }
   ngAfterContentInit() {
     window['WindowStartSerices']();
+  }
+
+  getUnreadEnquries(){
+    this.enquriesService.getListEnquries().subscribe(
+      (response: any) => {
+        if (response) {
+          this.unreadEnqueries = response.totalElements;
+        }
+      },
+      error => {}
+    );
   }
 
   showadmis = false;

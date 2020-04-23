@@ -8,6 +8,7 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { ListComponent } from './components/list-component/list.component';
 import { AddAnswerComponent } from './components/add-answer/add-answer.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxPaginationModule
   ],
   entryComponents: [AddAnswerComponent],
 })

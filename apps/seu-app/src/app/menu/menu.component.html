@@ -432,7 +432,7 @@
         </div>
 
         <div *ngIf="userService.userData && environment.chatbot_mails.includes(userService.userData.email)" class="nav-item">
-          <a routerLink="/enquries" > <span>{{"menu.enquries" | translate}} </span> <i class="ik ik-layers"></i> </a>
+          <a routerLink="/enquries" > <span>{{"menu.enquries" | translate}} </span> <i class="ik ik-layers"></i> <span class="badge bg-danger">{{ unreadEnqueries }}</span> </a>
         </div>
 
 

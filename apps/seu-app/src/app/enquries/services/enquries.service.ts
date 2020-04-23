@@ -26,7 +26,7 @@ export class EnquriesService {
         {
             params: {
                 page: '0',
-                size: '100'
+                size: '1000000'
             },
             headers: this.headers,
         });
