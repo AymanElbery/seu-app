@@ -172,6 +172,7 @@
         "Attednace": "Attendace ",
         "Support": " Support",
         "BANNER": "Banner",
+        "FacultySelfService": "Faculty Self Service",
         "SYSTEM": "System",
         "CAL": " Eduaction calender",
         "EVENTSMANAGE": "  Events manegment",
@@ -223,7 +224,8 @@
         "gpa": "احتساب نظام التقديرات المعتمد",
         "resume_ar": "Doctor Resume in Arabic",
         "resume_en": "Doctor Resume in English",
-        "enquries" : "Chatbot inquiries"
+        "enquries": "Chatbot inquiries",
+        "ssoidentity": "sso Support"
     },
     "resume": {
         "title": "Edit Resume in Arabic",
@@ -251,10 +253,10 @@
     "enquries": {
         "title": "Inquiries",
         "message": "Message",
-        "answer" : "Answer on message",
+        "answer": "Answer on message",
         "add_answer": "Add Answer",
-        "answer_on_enq" : "Answer on Inquiry",
-        "send" : "Send",
+        "answer_on_enq": "Answer on Inquiry",
+        "send": "Send",
         "errorMessage": "You must enter a reply to the message before sending"
     },
     "attends": {

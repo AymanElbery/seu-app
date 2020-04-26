@@ -155,7 +155,7 @@ export class AddCommentComponent implements OnInit {
 
   validateFile(name: String) {
     var ext = name.substring(name.lastIndexOf('.') + 1);
-    if (['pdf', 'docx', 'doc', 'zip', 'rar', 'jpg', 'jpeg', 'gif', 'png'].includes(ext.toLowerCase())) {
+    if (['pdf', 'docx', 'doc', 'xlsx', 'xls', 'csv', 'bmp', 'zip', 'rar', 'jpg', 'jpeg', 'gif', 'png'].includes(ext.toLowerCase())) {
       return true;
     }
     return false;

@@ -1,4 +1,6 @@
 {
+    "memeber": "SEU members",
+    "publicservices": "Public services",
     "ug": "Undergraduate",
     "gr": "Master",
     "logout": "LogOut",
@@ -33,7 +35,7 @@
     "captcha": "Captcha",
     "Send": "Send",
     "Percentage": "Percentage",
-    "paymentrefund": "Payment Refund",
+    "paymentrefund": "Cancel Admission",
     "email": "Email",
     "mobile": "Mobile",
     "mobile2": "Mobile2",
@@ -62,6 +64,4 @@
     "equalcertificatescopyrequired": "Equal certificates copy required",
     "medicalcopyreq": "Medical copy required",
     "AdmissionGRResult": "Admission GR Result"
-    
-
 }
