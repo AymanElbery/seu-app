@@ -912,8 +912,8 @@
         "VacationAbsenceBalance": "الغياب",
         "salarydetailsselected": "تفاصيل الشهر",
         "VacationBalance": "الرصيد الإجمالي لإجازاتك",
-        "personal": "بياناتي الشخصية",
-        "PersonalInfo": "معلومات الموظف",
+        "personal": "بياناتي",
+        "PersonalInfo": "بيانات الموظف",
         "Salaries": "الرواتب",
         "Vacations": "الأجازات",
         "print-report": "طباعة تعاريف الموظف",
@@ -964,7 +964,7 @@
         "RejecteReasone": "سبب الرفض",
         "RequestDtails": "تفاصيل",
         "Delete": "حذف",
-        "employee-requests": "طلباتي الذاتية",
+        "employee-requests": "طلباتي ",
         "requests-lists": "عرض الطلبات",
         "print-concern": "الجهة الموجه لها الخطاب",
         "AddNewRequest": "إضافة طلب جديد",
@@ -1049,7 +1049,7 @@
         "EMP_PSNL_VCHR_NOTE": "ملاحظات",
         "EMP_SLRY_YEAR": "السنة",
         "EmployeeVouchers": "البدلات و المكافاَت",
-        "administrative": "معلوماتي الذاتية",
+        "administrative": "إستعلاماتي",
         "back": "إلغاء"
     },
     "tasks": {
