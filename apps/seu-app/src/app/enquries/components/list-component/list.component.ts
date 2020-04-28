@@ -19,6 +19,7 @@ import { AddAnswerComponent } from './../add-answer/add-answer.component';
 })
 export class ListComponent{
 
+  p: number;
   data;
   isLoading;
   title: string;
