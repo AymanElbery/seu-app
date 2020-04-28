@@ -28,9 +28,9 @@
       <h3 class="widget-title">{{"general.student_data"|translate}}</h3>
     </div>
     <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
-      <section class="ser-state">
+      
         <div class="container">
-
+          <section class="ser-state">
           <div class="row ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
@@ -196,14 +196,13 @@
 
 
           </div>
-
-
+        </section>
 
           <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"services.student_info.job_status"|translate}}</h6>
-                <select required name="job_status" #job_status="ngModel" [(ngModel)]="stdData.job_status"
+                <select required name="job_status" #job_status="ngModel" [(ngModel)]="stdData.job_status" (change)="getjobstatus($event.target.value)"
                   class="form-control" [class.is-invalid]="!isValid && stdData.job_status== ''">
 
                   <option value="">{{"services.student_info.choose_job_status"|translate}}</option>
@@ -214,11 +213,16 @@
                 <div class="progress-bar bg-info"></div>
               </div>
             </div>
+
+          </div>
+
+<div *ngIf="showDetail==true">
+          <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"services.student_info.sector"|translate}}</h6>
-                <select required name="job_type" #job_type="ngModel" [(ngModel)]="stdData.job_type" class="form-control"
-                  [class.is-invalid]="!isValid && stdData.job_type== ''">
+                <select  name="job_type" #job_type="ngModel" [(ngModel)]="stdData.job_type" class="form-control"
+                 >
 
                   <option value="">{{"services.student_info.choose_sector"|translate}}</option>
                   <option *ngFor="let item of reqData.job_type" value="{{item.id}}">{{item.value}}</option>
@@ -228,11 +232,12 @@
                 <div class="progress-bar bg-info"></div>
               </div>
             </div>
+            
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"services.student_info.before_or_after"|translate}}</h6>
-                <select required name="job_time" #job_time="ngModel" [(ngModel)]="stdData.job_time" class="form-control"
-                  [class.is-invalid]="!isValid && stdData.job_time== ''">
+                <select  name="job_time" #job_time="ngModel" [(ngModel)]="stdData.job_time" class="form-control"
+                  >
 
                   <option value="">{{"services.student_info.before_or_after"|translate}}</option>
                   <option *ngFor="let item of reqData.job_time" value="{{item.id}}">{{item.value}}</option>
@@ -243,9 +248,6 @@
                 <div class="progress-bar bg-info"></div>
               </div>
             </div>
-          </div>
-
-          <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"services.student_info.job_year"|translate}}</h6>
@@ -255,6 +257,9 @@
                 <div class="progress-bar bg-info"></div>
               </div>
             </div>
+          </div>
+
+          <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"services.student_info.job_side"|translate}}</h6>
@@ -275,15 +280,11 @@
                 <div class="progress-bar bg-info"></div>
               </div>
             </div>
-          </div>
-
-
-          <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"services.student_info.work_address"|translate}}</h6>
-                <select required name="work_city" #work_city="ngModel" [(ngModel)]="stdData.work_city"
-                  class="form-control" [class.is-invalid]="!isValid && stdData.work_city== ''">
+                <select  name="work_city" #work_city="ngModel" [(ngModel)]="stdData.work_city"
+                  class="form-control">
 
                   <option value="">{{"services.student_info.choose_work_address"|translate}}</option>
                   <option *ngFor="let item of reqData.cities" value="{{item.id}}">{{item.value}}</option>
@@ -293,12 +294,13 @@
                 <div class="progress-bar bg-info"></div>
               </div>
             </div>
-
           </div>
+
+
           <!-- <div class="row  ser-block" style="margin-right: 10px;">
         </div> -->
-        </div>
-      </section>
+       
+      
       <section class="ser-state">
         <div class="container">
           <h5 style="margin-right: 10px;">{{"services.student_info.employer"|translate}}</h5>
@@ -346,20 +348,24 @@
 
           </div>
 
-          <div *ngIf="reqData.can_update_data" class="row  ser-block" style="margin-top: 20px;">
-            <div class=" col-md-12 col-sm-12" style="margin-top: 10px;">
-              <div class="state">
-                <mat-checkbox #outside>&nbsp;
-                  <label class="form-check-label">{{"services.student_info.obligation"|translate}}</label>
-                </mat-checkbox>
-              </div>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
+    </div>
+  </div>
+      <div *ngIf="reqData.can_update_data" class="row  ser-block" style="margin-top: 20px;">
+        <div class=" col-md-12 col-sm-12" style="margin-top: 10px;">
+          <div class="state">
+            <mat-checkbox #outside>&nbsp;
+              <label class="form-check-label">{{"services.student_info.obligation"|translate}}</label>
+            </mat-checkbox>
+          </div>
+          <div class="progress progress-sm">
+            <div class="progress-bar bg-info"></div>
+          </div>
+        </div>
+      </div>
+
+      
       <div class="modal-body">
         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
           <button *ngIf="!requesting || reqData.can_update_data" [disabled]="form.invalid " type="submit"

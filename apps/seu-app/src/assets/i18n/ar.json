@@ -699,7 +699,13 @@
             "choose_work_address": "إختر مقر العمل",
             "employer": "بيانات رب العمل إن وجد :",
             "obligation": "اقر بصحة المعلومات المدخلة ,حيث سيتم طباعة وثيقة التخرج حسب المعلومات التي قمت بإدخالها",
-            "name": "الاسم"
+            "name": "الاسم",
+            "job_typeReq": "Job Type Required",
+            "job_timeReq": "Job Time Required",
+            "job_yearReq": "Job Year Required",
+            "job_locationReq": "Job Locatioon Required",
+            "job_titleReq": "Job Title Required",
+            "work_cityReq": "Work City Required"
         },
         "training_request": {
             "title": "طلب التدريب الميداني",

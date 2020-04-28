@@ -699,7 +699,13 @@
             "choose_work_address": "choose work adress  ",
             "employer": "  Job owner data  :",
             "obligation": "Confirm that the information entered is correct, as the graduation document will be printed according to the information you entered",
-            "name": "Name"
+            "name": "Name",
+            "job_typeReq": "Job Type Required",
+            "job_timeReq": "Job Time Required",
+            "job_yearReq": "Job Year Required",
+            "job_locationReq": "Job Locatioon Required",
+            "job_titleReq": "Job Title Required",
+            "work_cityReq": "Work City Required"
         },
         "training_request": {
             "title": "Field training request",
