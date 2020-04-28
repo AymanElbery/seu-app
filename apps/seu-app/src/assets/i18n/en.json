@@ -1104,6 +1104,9 @@
         "favemps": "favourites List",
         "favList": "Registered List",
         "Send": "Send",
-        "bakcList": "Back List"
+        "bakcList": "Back List",
+        "searchdata": "Search Record",
+        "pre_requesr": "Show Previous Requests",
+        "pre_requests": "Show Previous Requests"
     }
 }
