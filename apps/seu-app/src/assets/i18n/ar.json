@@ -224,7 +224,8 @@
         "gpa": "احتساب نظام التقديرات المعتمد",
         "resume_ar": "السيرة الذاتية باللغة العربية",
         "resume_en": "السيرة الذاتية باللغة الإنجليزية",
-        "enquries" : "استفسارات الشات بوت"
+        "enquries" : "استفسارات الشات بوت",
+        "ssoidentity":"دعم الدخول الموحد"
     },
     "resume": {
         "title": " السيرة الذاتية باللغة العربية",
@@ -698,7 +699,13 @@
             "choose_work_address": "إختر مقر العمل",
             "employer": "بيانات رب العمل إن وجد :",
             "obligation": "اقر بصحة المعلومات المدخلة ,حيث سيتم طباعة وثيقة التخرج حسب المعلومات التي قمت بإدخالها",
-            "name": "الاسم"
+            "name": "الاسم",
+            "job_typeReq": "Job Type Required",
+            "job_timeReq": "Job Time Required",
+            "job_yearReq": "Job Year Required",
+            "job_locationReq": "Job Locatioon Required",
+            "job_titleReq": "Job Title Required",
+            "work_cityReq": "Work City Required"
         },
         "training_request": {
             "title": "طلب التدريب الميداني",
@@ -905,8 +912,8 @@
         "VacationAbsenceBalance": "الغياب",
         "salarydetailsselected": "تفاصيل الشهر",
         "VacationBalance": "الرصيد الإجمالي لإجازاتك",
-        "personal": "بياناتي الشخصية",
-        "PersonalInfo": "معلومات الموظف",
+        "personal": "بياناتي",
+        "PersonalInfo": "بيانات الموظف",
         "Salaries": "الرواتب",
         "Vacations": "الأجازات",
         "print-report": "طباعة تعاريف الموظف",
@@ -957,7 +964,7 @@
         "RejecteReasone": "سبب الرفض",
         "RequestDtails": "تفاصيل",
         "Delete": "حذف",
-        "employee-requests": "طلباتي الذاتية",
+        "employee-requests": "طلباتي ",
         "requests-lists": "عرض الطلبات",
         "print-concern": "الجهة الموجه لها الخطاب",
         "AddNewRequest": "إضافة طلب جديد",
@@ -1042,7 +1049,7 @@
         "EMP_PSNL_VCHR_NOTE": "ملاحظات",
         "EMP_SLRY_YEAR": "السنة",
         "EmployeeVouchers": "البدلات و المكافاَت",
-        "administrative": "معلوماتي الذاتية",
+        "administrative": "إستعلاماتي",
         "back": "إلغاء"
     },
     "tasks": {
@@ -1097,6 +1104,9 @@
         "favemps": "القائمة المفضلة",
         "favList": "القائمة المسجلة",
         "Send": "إرسال",
-        "bakcList": "العودة الي القائمة"
+        "bakcList": "العودة الي القائمة",
+        "searchdata": "سجل البحث",
+        "pre_requesr": "الطلبات السابقة",
+        "pre_requests": "الطلبات السابقة"
     }
 }

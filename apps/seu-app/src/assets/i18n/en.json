@@ -172,6 +172,7 @@
         "Attednace": "Attendace ",
         "Support": " Support",
         "BANNER": "Banner",
+        "FacultySelfService": "Faculty Self Service",
         "SYSTEM": "System",
         "CAL": " Eduaction calender",
         "EVENTSMANAGE": "  Events manegment",
@@ -223,7 +224,8 @@
         "gpa": "احتساب نظام التقديرات المعتمد",
         "resume_ar": "Doctor Resume in Arabic",
         "resume_en": "Doctor Resume in English",
-        "enquries" : "Chatbot inquiries"
+        "enquries": "Chatbot inquiries",
+        "ssoidentity": "sso Support"
     },
     "resume": {
         "title": "Edit Resume in Arabic",
@@ -251,10 +253,10 @@
     "enquries": {
         "title": "Inquiries",
         "message": "Message",
-        "answer" : "Answer on message",
+        "answer": "Answer on message",
         "add_answer": "Add Answer",
-        "answer_on_enq" : "Answer on Inquiry",
-        "send" : "Send",
+        "answer_on_enq": "Answer on Inquiry",
+        "send": "Send",
         "errorMessage": "You must enter a reply to the message before sending"
     },
     "attends": {
@@ -697,7 +699,13 @@
             "choose_work_address": "choose work adress  ",
             "employer": "  Job owner data  :",
             "obligation": "Confirm that the information entered is correct, as the graduation document will be printed according to the information you entered",
-            "name": "Name"
+            "name": "Name",
+            "job_typeReq": "Job Type Required",
+            "job_timeReq": "Job Time Required",
+            "job_yearReq": "Job Year Required",
+            "job_locationReq": "Job Locatioon Required",
+            "job_titleReq": "Job Title Required",
+            "work_cityReq": "Work City Required"
         },
         "training_request": {
             "title": "Field training request",
@@ -1096,6 +1104,9 @@
         "favemps": "favourites List",
         "favList": "Registered List",
         "Send": "Send",
-        "bakcList": "Back List"
+        "bakcList": "Back List",
+        "searchdata": "Search Record",
+        "pre_requesr": "Show Previous Requests",
+        "pre_requests": "Show Previous Requests"
     }
 }

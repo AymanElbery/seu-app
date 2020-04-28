@@ -91,18 +91,53 @@
               <a routerLinkActive="active" [routerLink]="['/wafi/personal']" class="menu-item"> <span
                   class="text-eng">{{"wafi.PersonalInfo" | translate}}</span> <i class="ik ik-user-check"></i> </a>
             </div>
-            <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/personal/salaries']" class="menu-item"> <span
-                  class="text-eng">{{"wafi.Salaries" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-            </div>
-            <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/personal/vacations']" class="menu-item"> <span
-                  class="text-eng">{{"wafi.Vacations" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-            </div>
+
             <div class="submenu-content">
               <a routerLinkActive="active" [routerLink]="['/wafi/personal/print-report']" class="menu-item"> <span
                   class="text-eng">{{"wafi.print-report" | translate}}</span> <i class="ik ik-calendar"></i> </a>
             </div>
+
+            <div class="submenu-content">
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal/salaries']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.Salaries" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+
+            <div class="submenu-content">
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/vouchers']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.EmployeeVouchers" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+          </div>
+          <div class="nav-item has-sub">
+            <a routerLinkActive="active" href="javascript:void(0)"> <span>{{"wafi.administrative" | translate}} </span>
+              <i class="ik ik-user"></i> </a>
+            <div class="submenu-content">
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal/vacations']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.Vacations" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+            
+            <div class="submenu-content">
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-custody']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.Employeecustody" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+            <div class="submenu-content">
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-evaluations']" class="menu-item">
+                <span class="text-eng">{{"wafi.employeeevaluations" | translate}}</span> <i
+                  class="ik ik-user-check"></i>
+              </a>
+            </div>
+
+            <div class="submenu-content">
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-letters']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.EmployeeLeters" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+
+            <div class="submenu-content">
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/training']" class="menu-item"> <span
+                  class="text-eng">{{"wafi.EmployeeTraining" | translate}}</span> <i class="ik ik-user-check"></i> </a>
+            </div>
+
+
+
           </div>
 
           <div class="nav-item has-sub">
@@ -128,40 +163,6 @@
                 <span class="text-eng">{{"wafi.AppriovalHistory" | translate}}</span> <i class="ik ik-save"></i> </a>
             </div>
           </div>
-
-          <div class="nav-item has-sub">
-            <a routerLinkActive="active" href="javascript:void(0)"> <span>{{"wafi.administrative" | translate}} </span>
-              <i class="ik ik-user"></i> </a>
-            <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-evaluations']" class="menu-item">
-                <span class="text-eng">{{"wafi.employeeevaluations" | translate}}</span> <i
-                  class="ik ik-user-check"></i>
-              </a>
-            </div>
-
-            <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-custody']" class="menu-item"> <span
-                  class="text-eng">{{"wafi.Employeecustody" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-            </div>
-
-            <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-letters']" class="menu-item"> <span
-                  class="text-eng">{{"wafi.EmployeeLeters" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-            </div>
-
-            <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/training']" class="menu-item"> <span
-                  class="text-eng">{{"wafi.EmployeeTraining" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-            </div>
-
-            <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/vouchers']" class="menu-item"> <span
-                  class="text-eng">{{"wafi.EmployeeVouchers" | translate}}</span> <i class="ik ik-user-check"></i> </a>
-            </div>
-
-
-          </div>
-
         </div>
 
 
@@ -431,8 +432,14 @@
           </div>
         </div>
 
+<<<<<<< HEAD
         <div *ngIf="userService.userData && environment.chatbot_mails.includes(userService.userData.email)" class="nav-item">
           <a routerLink="/enquries" > <span>{{"menu.enquries" | translate}} </span> <i class="ik ik-layers"></i> <span class="badge bg-danger">{{ unreadEnqueries }}</span> </a>
+=======
+        <div *ngIf="userService.userData && environment.chatbot_mails.includes(userService.userData.email)"
+          class="nav-item">
+          <a routerLink="/enquries"> <span>{{"menu.enquries" | translate}} </span> <i class="ik ik-layers"></i> </a>
+>>>>>>> bc3a42e6ec861cb6abf96069a71d62af8a0b1059
         </div>
 
 
@@ -466,7 +473,7 @@
               {{"menu.Attednace" | translate}} <i class="ik ik-watch"></i></a>
 
             <a target="_blank" href="https://bannservices.seu.edu.sa/FacultySelfService/" class="menu-item">
-              {{"menu.BANNER" | translate}}
+              {{"menu.FacultySelfService" | translate}}
               <i class="ik ik-mail"></i> </a>
             <a target="_blank" href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement"
               class="menu-item"> {{"menu.EVENTSMANAGE" | translate}}<i class="ik ik-mail"></i> </a>

@@ -33,58 +33,57 @@
   <app-apps-header [appUserService]="appUser"></app-apps-header>
 
   <div class="page-wrap">
-     
-      <div class="main-landing">
-          <div class="container-fluid">
-            <div class="row vertical-divider">
-              <div class="col-md-6 offset-md-3 ">
 
-                <div class="data row" >
+    <div class="main-landing">
+      <div class="container-fluid">
+        <div class="row vertical-divider">
+          <div class="col-md-6 offset-md-3 ">
+
+            <div class="data row">
               <div class="text-center col">
-                  <a href="#" class=""
-                    routerLink="/apps/admission-ug"> <img src="../../assets/images/browser.png">
+                <a href="#" class="  " routerLink="/"> <img src="../../assets/images/award.png">
+                  {{'memeber' | translate}}
 
-                    {{'ug' | translate}}
-                  </a>
-                </div>
-                <hr class="hr1">
-                <div class="text-center col">
-                  <a href="#" class=""
-                    routerLink="/apps/admission-gr"><img src="../../assets/images/scholarship.png"> 
-                    {{'gr' | translate}}
-                  </a>
-                </div>
+                </a>
               </div>
-          <hr class="hr">
-              <div class="data row" >
-                <div class="text-center col">
-                    <a href="#" class="  "
-                      routerLink="/apps/admission-ug"> <img src="../../assets/images/award.png">
-                      منسوبي الجامعة
+              <hr class="hr1">
 
-                    </a>
-                  </div>
-                  <hr class="hr1">
-
-                  <div class="text-center col">
-                    <a href="#" class=""
-                      routerLink="/apps/admission-gr"><img src="../../assets/images/concept.png"> 
-                      خدمات عامة 
-                    </a>
-                  </div>
-                </div>
-
+              <div class="text-center col">
+                <a href="#" class="" routerLink="/"><img src="../../assets/images/concept.png">
+                  {{'publicservices' | translate}}
+                </a>
               </div>
+            </div>
+
+            <hr class="hr">
+
+
+            <div class="data row">
+              <div class="text-center col">
+                <a href="#" class="" routerLink="/apps/admission-ug"> <img src="../../assets/images/browser.png">
+
+                  {{'ug' | translate}}
+                </a>
               </div>
-             
-              
-         </div>
-               
-                    
+              <hr class="hr1">
+              <div class="text-center col">
+                <a href="#" class="" routerLink="/apps/admission-gr"><img src="../../assets/images/scholarship.png">
+                  {{'gr' | translate}}
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </div>
+    <app-apps-footer></app-apps-footer>
+
+
   </div>
-  <app-apps-footer></app-apps-footer>
- 
 
-</div>
-        
 </div>

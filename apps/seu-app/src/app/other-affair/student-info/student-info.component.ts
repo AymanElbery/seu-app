@@ -26,7 +26,7 @@ export class StudentInfoComponent implements OnInit {
   stdData: StudentInformationData
   isLoading = false;
   fileType;
-
+showDetail=false;
   constructor(private translate: TranslateService, private academicService: StudentInfoService, private toastr: AppToasterService) { }
 
   ngOnInit() {
@@ -122,8 +122,51 @@ export class StudentInfoComponent implements OnInit {
     if (this.requesting) {
       return false;
     }
+  if(this.showDetail==true){
+   
+      if (!this.stdData.job_type) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_typeReq") }]);
+        return false;
+      }
+      if (!this.stdData.job_time) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_timeReq") }]);
+        return false;
+      }
+      if (!this.stdData.job_year) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_yearReq") }]);
+        return false;
+      }
+      if (!this.stdData.job_location) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_locationReq") }]);
+        return false;
+      }
+      if (!this.stdData.job_title) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_titleReq") }]);
+        return false;
+      }
+      if (!this.stdData.work_city) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.work_cityReq") }]);
+        return false;
+      }
+  }
+
     this.addRequest(this.stdData);
   }
+
+
+  getjobstatus(workstatus){
+   //console.log("get data",workstatus);
+   if(workstatus=="1")
+   {
+     this.showDetail=true;
+   }
+   else{
+    this.showDetail=false;
+   }
+     // this.isLoading = true
+     
+    
+    }
 
   handleInputChange(e, fileType) {
     this.fileType = fileType;

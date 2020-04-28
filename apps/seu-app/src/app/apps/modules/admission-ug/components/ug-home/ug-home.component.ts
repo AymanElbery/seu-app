@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdmisionUgService } from '../../services/admision-ug.service';
+import { AdmissionUGService } from '../../services/admission-ug.service';
 
 @Component({
   selector: 'app-ug-home',
@@ -8,7 +8,7 @@ import { AdmisionUgService } from '../../services/admision-ug.service';
 })
 export class UGHomeComponent implements OnInit {
 
-  constructor(public appUserService: AdmisionUgService) { }
+  constructor(public appUserService: AdmissionUGService) { }
 
   ngOnInit() {
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AdmisionUgService } from '../../../services/admision-ug.service';
+import { AdmissionUGService } from '../../../services/admission-ug.service';
 import { Subscription } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
@@ -22,7 +22,7 @@ export class UgLoginComponent implements OnInit {
   submitted = false;
   studentData;
   environment;
-  constructor(private toastr: AppToasterService, public admissionUgservice: AdmisionUgService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globalService: GlobalBaseService) {
+  constructor(private toastr: AppToasterService, public admissionUgservice: AdmissionUGService, private fb: FormBuilder, private translate: TranslateService, private router: Router, private globalService: GlobalBaseService) {
 
     this.AddReqForm = fb.group({
       'ssn': ['', [Validators.required, Validators.minLength(10), Validators.minLength(10)]],

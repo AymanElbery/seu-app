@@ -12,7 +12,7 @@ export class HttpRequestAdmisionUgService {
 
 
   getApiURI() {
-    return environment.servie_admission_UG;
+    return environment.servie_admission;
   }
 
 

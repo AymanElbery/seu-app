@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AdmisionUgService } from '../../../services/admision-ug.service';
+import { AdmissionUGService } from '../../../services/admission-ug.service';
 import { Subscription } from 'rxjs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
@@ -19,7 +19,7 @@ export class AdmissionResultComponent {
   submitted = false;
   @ViewChild('recaptchaRef', { read: RecaptchaComponent, static: false }) recaptchaRef: RecaptchaComponent;
 
-  constructor(private toastr: AppToasterService, private admissionUgservice: AdmisionUgService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
+  constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
 
     if (this.admissionUgservice.checkResultData) {
       this.router.navigate(['/apps/admission-ug/display-result']);
