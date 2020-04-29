@@ -28,3 +28,8 @@
     border-color: #26226a !important; 
     background-color: #26226a !important;
 }
+li select{
+    width: 250%;
+    position: relative;
+    top: 6px;
+}

@@ -257,7 +257,15 @@
         "add_answer": "Add Answer",
         "answer_on_enq": "Answer on Inquiry",
         "send": "Send",
-        "errorMessage": "You must enter a reply to the message before sending"
+        "errorMessage": "You must enter a reply to the message before sending",
+        "all": "All",
+        "reply": "Replied",
+        "unreply": "Un Replied",
+        "email": "Answer Employee",
+        "replyMsg": "Message Answer",
+        "all_emp" : "All Employees",
+        "messageTime": "Message Time",
+        "replyTime": "Answer Time"
     },
     "attends": {
         "code_lable": "Enter CRN code",

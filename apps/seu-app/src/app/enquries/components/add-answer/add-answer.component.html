@@ -5,6 +5,7 @@
                 <label for="answer">{{ "enquries.answer_on_enq" | translate}}</label>
                 <textarea (keypress)="keyPress()" formControlName="answer" class="form-control" id="answer" rows="6"></textarea>
                 <input formControlName="id" type="hidden" [value]="id">
+                <input formControlName="email" type="hidden" [value]="email">
             </div>
             <div *ngIf="errorMessage" style="margin-top: 10px;" class="alert alert-danger text-center">
                 <b>{{ "enquries.errorMessage" | translate}} </b>

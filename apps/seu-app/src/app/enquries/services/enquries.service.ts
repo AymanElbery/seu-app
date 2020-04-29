@@ -22,6 +22,17 @@ export class EnquriesService {
     ) {}
 
     getListEnquries() {
+        return this.http.get(this.URL + "client-messages/list-all",
+        {
+            params: {
+                page: '0',
+                size: '1000000'
+            },
+            headers: this.headers,
+        });
+    }
+
+    getUnrepliedEnquries() {
         return this.http.get(this.URL + "client-messages/list-all-unreplied",
         {
             params: {
@@ -32,10 +43,35 @@ export class EnquriesService {
         });
     }
 
-    addAnswer(id, replyMessage) {
+    getRepliedEnquries() {
+        return this.http.get(this.URL + "client-messages/list-all-replied",
+        {
+            params: {
+                page: '0',
+                size: '1000000'
+            },
+            headers: this.headers,
+        });
+    }
+
+
+    getRepliedByEnquries(email) {
+        return this.http.get(this.URL + "client-messages/list-all-replied-email",
+        {
+            params: {
+                page: '0',
+                size: '1000000',
+                userEmail: email
+            },
+            headers: this.headers,
+        });
+    }
+
+    addAnswer(id, email,  replyMessage) {
         return this.http.put(this.URL + "client-messages/reply-message",
         { 
             id: id,
+            userEmail: email,
             replyMessage: replyMessage
         },
         {
