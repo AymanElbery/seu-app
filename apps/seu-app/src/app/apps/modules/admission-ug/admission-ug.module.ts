@@ -20,7 +20,7 @@ import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 
 @NgModule({
   declarations: [UGHomeComponent, AdmissionResultComponent, PayFeeComponent, UploadDocumentComponent,
-    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent,PaymentRefundComponent],
+    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent, PaymentRefundComponent],
   imports: [
     AdmissionUGRoutingModule,
     SeucommonModule,
@@ -34,6 +34,7 @@ export class AdmissionUGModule {
       this.admissionUgservice.LoggedInToken = globalService.getItem(admissionUgservice.tokenKey);
       this.admissionUgservice.LoggedInUser = JSON.parse(globalService.getItem(admissionUgservice.userKey));
     }
+    this.admissionUgservice.loadSettings();
   }
 }
 

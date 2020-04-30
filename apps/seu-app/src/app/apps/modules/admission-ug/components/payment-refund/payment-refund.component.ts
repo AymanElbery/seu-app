@@ -13,26 +13,22 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./payment-refund.component.css']
 })
 export class PaymentRefundComponent implements OnInit {
-  subscriptionsdata: Subscription;
-  details:any=[];
-  have_withdraw;
-  messageNodata;
-  isLoading = false;
+  can_add_new_request;
+  details: any = [];
+  user:any;
   AddReqForm: FormGroup;
   submitted = false;
-  flagdetail=false;
-  constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private translate: TranslateService, private router: Router,private fb: FormBuilder, public globalService: GlobalBaseService) { 
+  isLoading = false;
+  constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private translate: TranslateService, private router: Router, private fb: FormBuilder, public globalService: GlobalBaseService) {
 
     this.AddReqForm = fb.group({
-      'name': ['', [Validators.required]],      
-      'email': ['', [Validators.required,Validators.email]],
+      'name': ['', [Validators.required]],
+      'email': ['', [Validators.required, Validators.email]],
       'agreement': ['', [Validators.required]],
       'mobile': ['', [Validators.required]],
       'mobile2': [''],
       'phone': ['', [Validators.required]],
-      'token': [''],
-    
-      
+      'token': [this.admissionUgservice.LoggedInToken]
     });
 
   }
@@ -40,39 +36,23 @@ export class PaymentRefundComponent implements OnInit {
   ngOnInit() {
     this.paymentrefund();
   }
-  
+
   paymentrefund() {
     this.isLoading = true;
-    this.subscriptionsdata = this.admissionUgservice.paymentrefund(this.globalService.getItem(this.admissionUgservice.tokenKey)).subscribe(respayref => {
-   // console.log("responsedata",respayref);    
-   
-     const status = respayref['status'];     
-      if (status == 0) {                    
-        this.isLoading = false
-        this.flagdetail=false;
-        this.have_withdraw = (respayref as any).data["0"]["have_withdraw"]
-        
-        if (this.have_withdraw && (respayref as any).data["0"]["details"].length!='') {
-
-           this.details=(respayref as any).data["0"]["details"];           
-            this.have_withdraw = (respayref as any).data["0"]["have_withdraw"]
-            this.flagdetail=true;
-            this.isLoading = false      
-          
-        }
-        else{
-          //console.log(this.messageNodata);
-          this.messageNodata = (respayref as any).messages["0"]["body"];
-          this.flagdetail=false;
-        }
-        console.log("truefalse",this.have_withdraw,this.flagdetail);
-        
+    this.admissionUgservice.paymentrefund(this.admissionUgservice.LoggedInToken).subscribe(respayref => {
+      const status = respayref['status'];
+      if (status == 0) {
+        this.toastr.push(respayref['messages']);
+        this.router.navigate(['/apps/admission-ug/']);
       }
+      this.can_add_new_request = respayref['data']["can_add_new_request"];
+      this.user = respayref['data']["user"];
+      this.details = respayref['data']["details"];
+      this.isLoading = false;
     },
       err => {
         this.toastr.tryagain();
         this.isLoading = false
-
       }
     );
   }
@@ -81,21 +61,14 @@ export class PaymentRefundComponent implements OnInit {
       return;
     }
     this.submitted = true;
-    this.AddReqForm.controls['token'].setValue(this.globalService.getItem(this.admissionUgservice.tokenKey));
     this.admissionUgservice.Reqpaymentrefund(this.AddReqForm.value).subscribe(resreq => {
-      
-      if (resreq['data']['messages']) {
+      if (resreq['status']) {
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('request_saved') }]);
-        this.submitted = false;
         this.paymentrefund();
-      } else if (!resreq['status']) {
-        this.toastr.push(resreq['messages']);       
-        this.submitted = false;
-
       } else {
-        this.toastr.push([{ type: 'error', 'body': resreq['data']['message'] }]);        
-        this.submitted = false;
+        this.toastr.push(resreq['messages']);
       }
+      this.submitted = false;
     }, error => {
       this.toastr.tryagain();
       this.submitted = false;

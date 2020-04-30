@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./pay-fee.component.css']
 })
 export class PayFeeComponent implements OnInit {
-  url = '/gr/index';
+  url = '/admUG/index';
   urlSafe: SafeResourceUrl;
   sid;
   srcUrl;
