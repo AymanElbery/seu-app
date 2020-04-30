@@ -19,7 +19,6 @@ import { PayFeeComponent } from './components/pay-fee/pay-fee.component';
   declarations: [GRHomeComponent,AppsGrMenuComponent,AdmissionResultComponent,GrLoginComponent,
     VerifyComponent,UploadFileComponent,DisplayResultComponent,PayFeeComponent],
   imports: [AppsSharedModule, AdmissionGRRoutingModule,
-    AdmissionLazyTransModule,
     SeucommonModule,
     RecaptchaModule,
     AppsSharedModule
@@ -31,5 +30,6 @@ export class AdmissionGRModule {
       this.admissionGRservice.LoggedInToken = globalService.getItem(admissionGRservice.tokenKey);
       this.admissionGRservice.LoggedInUser = JSON.parse(globalService.getItem(admissionGRservice.userKey));
     }
+    this.admissionGRservice.loadSettings();
   }
  }

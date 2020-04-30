@@ -46,7 +46,7 @@ export class AdmissionResultComponent {
     this.admissionUgservice.getresstatus(this.AddReqForm.value).subscribe(resdttaus => {
       const status = resdttaus['status'];
       if (status == true) {
-        if (false && !resdttaus['data']['student_data']) {
+        if (!resdttaus['data']['student_data']) {
           this.toastr.push([{ type: 'error', 'body': resdttaus['data']['message'] }]);
         } else {
           this.admissionUgservice.checkResultData = (resdttaus as any).data;
