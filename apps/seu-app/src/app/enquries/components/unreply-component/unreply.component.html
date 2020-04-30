@@ -19,10 +19,10 @@
   <div *ngIf="admins.includes(email)" class="row row-form tabs-navbar">
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active" routerLink="/enquries/all">{{ "enquries.all" | translate}}</a>
+        <a class="nav-link" routerLink="/enquries/all">{{ "enquries.all" | translate}}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/enquries/unreply">{{ "enquries.unreply" | translate}}</a>
+        <a class="nav-link active" routerLink="/enquries/unreply">{{ "enquries.unreply" | translate}}</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/enquries/reply">{{ "enquries.reply" | translate}}</a>
@@ -34,20 +34,16 @@
       <table class="table table-striped table-bordered">
           <thead>
               <tr>
-                  <!-- <th scope="col"> # </th> -->
                   <th scope="col"> {{"enquries.message"|translate}}</th>
-                  <!-- <th style="width: 200px;" scope="col"> {{"enquries.messageTime"|translate}}</th> -->
-                  <!-- <th style="width: 200px;" scope="col"> {{"enquries.answer"|translate}}</th> -->
+                  <th style="width: 200px;" scope="col"> {{"enquries.answer"|translate}}</th>
               </tr>
             </thead>
           <tbody>
               <tr *ngFor="let enquiry of data | paginate: { itemsPerPage: 30, currentPage: p }; let i = index;">
-                  <!-- <td>{{ i+1 }}</td> -->
                   <td>{{ enquiry.clientMessage }}</td>
-                  <!-- <td style="width: 200px;">{{ enquiry.createdAt }}</td> -->
-                  <!-- <td style="width: 200px;">
+                  <td style="width: 200px;">
                     <button (click)="openDialog(enquiry.id)" type="button" class="btn btn-primary">{{"enquries.add_answer"|translate}}</button>
-                  </td> -->
+                  </td>
               </tr>
           </tbody>
       </table>

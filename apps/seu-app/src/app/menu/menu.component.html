@@ -3,26 +3,15 @@
     <a id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></a>
     <a class="header-brand" href="#">
       <div class="logo-img">
-        <img
-          src="assets/images/logo-ar.png"
-          class="header-brand-img"
-          alt="lavalite"
-        />
+        <img src="assets/images/logo-ar.png" class="header-brand-img" alt="lavalite" />
       </div>
     </a>
   </div>
 
   <div class="sidebar-content">
     <div *ngIf="acStd" class="sidebar-header" [hidden]="!showServices">
-      <select
-        (change)="onChange(t.value)"
-        name="menuType"
-        [(ngModel)]="menuType"
-        #t
-        class="form-control"
-        style="color: #1c2172; direction: rtl;"
-        id="exampleFormControlSelect1"
-      >
+      <select (change)="onChange(t.value)" name="menuType" [(ngModel)]="menuType" #t class="form-control"
+        style="color: #1c2172; direction: rtl;" id="exampleFormControlSelect1">
         <option value="0"> {{ "menu.myservices" | translate }}</option>
         <option value="1">{{ "menu.ugservices" | translate }}</option>
         <option value="2">{{ "menu.grservices" | translate }}</option>
@@ -37,31 +26,17 @@
           </a>
         </div>
         <div *ngIf="menuType == 2 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span>{{ "menu.userData" | translate }} </span>
-            <i class="ik ik-user"></i
-          ></a>
+          <a href="javascript:void(0)"><span>{{ "menu.userData" | translate }} </span>
+            <i class="ik ik-user"></i></a>
           <div class="submenu-content">
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/masterstddata/academicstatus"
-            >
+            <a href="#" class="menu-item" routerLink="/masterstddata/academicstatus">
               {{ "menu.academicstatus" | translate }}
             </a>
 
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/masterstddata/academicrecord"
-            >
+            <a href="#" class="menu-item" routerLink="/masterstddata/academicrecord">
               {{ "menu.academicrecord" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/masterstddata/info-update"
-            >
+            <a href="#" class="menu-item" routerLink="/masterstddata/info-update">
               {{ "menu.infoupdate" | translate }}
             </a>
           </div>
@@ -74,50 +49,31 @@
               <i class="ik ik-user"></i>
             </a>
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/tasks/mytasks']"
-                class="menu-item"
-              >
-                <span class="text-eng"
-                  >{{ "tasks.assignedtasks" | translate }}
+              <a routerLinkActive="active" [routerLink]="['/tasks/mytasks']" class="menu-item">
+                <span class="text-eng">{{ "tasks.assignedtasks" | translate }}
                   <ng-container *ngIf="task.stats && task.stats.assignedTasks">
                     ({{ task.stats.assignedTasks }})
                   </ng-container>
                 </span>
                 <i class="ik ik-user-check"></i>
               </a>
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/tasks/createdTasks']"
-                class="menu-item"
-              >
-                <span class="text-eng"
-                  >{{ "tasks.createdTasks" | translate }}
+              <a routerLinkActive="active" [routerLink]="['/tasks/createdTasks']" class="menu-item">
+                <span class="text-eng">{{ "tasks.createdTasks" | translate }}
                   <ng-container *ngIf="task.stats && task.stats.createdTasks">
                     ({{ task.stats.createdTasks }})
                   </ng-container>
                 </span>
                 <i class="ik ik-user-check"></i>
               </a>
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/tasks/alltasks']"
-                class="menu-item"
-              >
-                <span class="text-eng"
-                  >{{ "tasks.alltasks" | translate }}
+              <a routerLinkActive="active" [routerLink]="['/tasks/alltasks']" class="menu-item">
+                <span class="text-eng">{{ "tasks.alltasks" | translate }}
                   <ng-container *ngIf="task.stats && task.stats.viewableTasks">
                     ({{ task.stats.viewableTasks }})
                   </ng-container>
                 </span>
                 <i class="ik ik-user-check"></i>
               </a>
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/tasks/fav-emps']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/tasks/fav-emps']" class="menu-item">
                 <span class="text-eng">{{ "tasks.favemps" | translate }} </span>
                 <i class="ik ik-user"></i>
               </a>
@@ -137,11 +93,7 @@
               <i class="ik ik-user"></i>
             </a>
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/personal']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.PersonalInfo" | translate
                 }}</span>
@@ -150,11 +102,7 @@
             </div>
 
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/personal/print-report']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal/print-report']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.print-report" | translate
                 }}</span>
@@ -163,22 +111,14 @@
             </div>
 
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/personal/salaries']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal/salaries']" class="menu-item">
                 <span class="text-eng">{{ "wafi.Salaries" | translate }}</span>
                 <i class="ik ik-user-check"></i>
               </a>
             </div>
 
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/administrative/vouchers']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/vouchers']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.EmployeeVouchers" | translate
                 }}</span>
@@ -192,22 +132,14 @@
               <i class="ik ik-user"></i>
             </a>
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/personal/vacations']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal/vacations']" class="menu-item">
                 <span class="text-eng">{{ "wafi.Vacations" | translate }}</span>
                 <i class="ik ik-user-check"></i>
               </a>
             </div>
 
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/administrative/emp-custody']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-custody']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.Employeecustody" | translate
                 }}</span>
@@ -215,11 +147,7 @@
               </a>
             </div>
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/administrative/emp-evaluations']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-evaluations']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.employeeevaluations" | translate
                 }}</span>
@@ -228,11 +156,7 @@
             </div>
 
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/administrative/emp-letters']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-letters']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.EmployeeLeters" | translate
                 }}</span>
@@ -241,11 +165,7 @@
             </div>
 
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/administrative/training']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/training']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.EmployeeTraining" | translate
                 }}</span>
@@ -260,11 +180,7 @@
               <i class="ik ik-user"></i>
             </a>
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/employee-requests']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.requests-lists" | translate
                 }}</span>
@@ -272,11 +188,7 @@
               </a>
             </div>
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/employee-requests/add-new-request']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/add-new-request']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.AddNewRequest" | translate
                 }}</span>
@@ -284,11 +196,8 @@
               </a>
             </div>
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/employee-requests/approval-requests']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-requests']"
+                class="menu-item">
                 <span class="text-eng">{{
                   "wafi.ApprovalRequests" | translate
                 }}</span>
@@ -296,11 +205,8 @@
               </a>
             </div>
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/employee-requests/approval-history']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/employee-requests/approval-history']"
+                class="menu-item">
                 <span class="text-eng">{{
                   "wafi.AppriovalHistory" | translate
                 }}</span>
@@ -311,169 +217,92 @@
         </div>
 
         <div *ngIf="menuType == 2 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.printCert" | translate }} </span>
-            <i class="ik ik-printer"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.printCert" | translate }} </span>
+            <i class="ik ik-printer"></i></a>
           <div class="submenu-content">
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/masterstdcertificate/idcertificate"
-            >
+            <a href="#" class="menu-item" routerLink="/masterstdcertificate/idcertificate">
               {{ "menu.idcertificate" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/masterstdcertificate/examattendacecertificate"
-            >
+            <a href="#" class="menu-item" routerLink="/masterstdcertificate/examattendacecertificate">
               {{ "menu.examattendacecertificate" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/masterstdcertificate/examattendacecertificateapp"
-            >
+            <a href="#" class="menu-item" routerLink="/masterstdcertificate/examattendacecertificateapp">
               {{ "menu.examattendacecertificateapp" | translate }}
             </a>
           </div>
         </div>
         <div *ngIf="menuType == 2 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.acrequests" | translate }} </span>
-            <i class="ik ik-feather"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.acrequests" | translate }} </span>
+            <i class="ik ik-feather"></i></a>
           <div class="submenu-content">
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/academicrequests/withdrawal"
-            >
+            <a href="#" class="menu-item" routerLink="/academicrequests/withdrawal">
               {{ "menu.withdrawal" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/academicrequests/studypostpone"
-            >
+            <a href="#" class="menu-item" routerLink="/academicrequests/studypostpone">
               {{ "menu.studypostpone" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/academicrequests/termexecuse"
-            >
+            <a href="#" class="menu-item" routerLink="/academicrequests/termexecuse">
               {{ "menu.termexecuse" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/academicrequests/objectexam"
-            >
+            <a href="#" class="menu-item" routerLink="/academicrequests/objectexam">
               {{ "menu.objectexam" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/academicrequests/cancelcourse"
-              >{{ "menu.cancelcourse" | translate }}
+            <a href="#" class="menu-item"
+              routerLink="/academicrequests/cancelcourse">{{ "menu.cancelcourse" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/academicrequests/reEnroll"
-              >{{ "menu.reenrol" | translate }}
+            <a href="#" class="menu-item" routerLink="/academicrequests/reEnroll">{{ "menu.reenrol" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/academicrequests/examsexecuses"
-              >{{ "menu.examsexecuses" | translate }}
+            <a href="#" class="menu-item"
+              routerLink="/academicrequests/examsexecuses">{{ "menu.examsexecuses" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/academicrequests/lecturesexecuses"
-              >{{ "menu.lecexecuse" | translate }}
+            <a href="#" class="menu-item"
+              routerLink="/academicrequests/lecturesexecuses">{{ "menu.lecexecuse" | translate }}
             </a>
           </div>
         </div>
         <div *ngIf="menuType == 2 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.financeaff" | translate }} </span>
-            <i class="ik ik-dollar-sign"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.financeaff" | translate }} </span>
+            <i class="ik ik-dollar-sign"></i></a>
           <div class="submenu-content">
-            <a href="" routerLink="/mfiniance/payment" class="menu-item"
-              >{{ "menu.payment" | translate }}
+            <a href="" routerLink="/mfiniance/payment" class="menu-item">{{ "menu.payment" | translate }}
             </a>
           </div>
           <div class="submenu-content">
-            <a href="" routerLink="/mfiniance/refund" class="menu-item"
-              >{{ "menu.refund" | translate }}
+            <a href="" routerLink="/mfiniance/refund" class="menu-item">{{ "menu.refund" | translate }}
             </a>
           </div>
         </div>
         <div *ngIf="menuType == 2 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.otherrequests" | translate }} </span>
-            <i class="ik ik-package"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.otherrequests" | translate }} </span>
+            <i class="ik ik-package"></i></a>
           <div class="submenu-content">
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/otherrequests/changebranch"
-              >{{ "menu.changebranch" | translate }}
+            <a href="#" class="menu-item" routerLink="/otherrequests/changebranch">{{ "menu.changebranch" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/otherrequests/changecourse"
-            >
+            <a href="#" class="menu-item" routerLink="/otherrequests/changecourse">
               {{ "menu.changecourse" | translate }}
             </a>
             <!--    <a href="#" class="menu-item"> طلب البطاقة الجامعية  </a>
                       <a href="#" class="menu-item">تحويل إلى برنامج آخر</a>
                       <a href="#" class="menu-item"routerLink="/otherrequests/changecourse" >تحويل إلى برنامج آخر</a>-->
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/otherrequests/personalid"
-            >
+            <a href="#" class="menu-item" routerLink="/otherrequests/personalid">
               {{ "menu.personalid" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/otherrequests/absencequery"
-            >
+            <a href="#" class="menu-item" routerLink="/otherrequests/absencequery">
               {{ "menu.absencequery" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/otherrequests/graduateprofile"
-              >{{ "menu.graduateprofile" | translate }}
+            <a href="#" class="menu-item"
+              routerLink="/otherrequests/graduateprofile">{{ "menu.graduateprofile" | translate }}
             </a>
           </div>
         </div>
         <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.affairs" | translate }} </span>
-            <i class="ik ik-user"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.affairs" | translate }} </span>
+            <i class="ik ik-user"></i></a>
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/academicaff/status">
               {{ "menu.status" | translate }}
             </a>
-            <a
-              href="#"
-              id="menuskillsrecord"
-              class="menu-item"
-              routerLink="/academicaff/skills"
-            >
+            <a href="#" id="menuskillsrecord" class="menu-item" routerLink="/academicaff/skills">
               {{ "menu.skills_record" | translate }}
             </a>
             <a href="#" class="menu-item" routerLink="/academicaff/certificate">
@@ -489,15 +318,12 @@
               {{ "menu.lectabs" | translate }}
             </a>
             <a href="#" class="menu-item" routerLink="/procedures/lecexecuse">
-              {{ "menu.lecexecuse" | translate }}</a
-            >
+              {{ "menu.lecexecuse" | translate }}</a>
           </div>
         </div>
         <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.procedures" | translate }} </span>
-            <i class="ik ik-layers"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.procedures" | translate }} </span>
+            <i class="ik ik-layers"></i></a>
           <div class="submenu-content">
             <!--  <a href="#" class="menu-item" routerLink="/procedures/terminate">الانسحاب من الجامعة   </a>-->
 
@@ -521,11 +347,7 @@
             <a href="#" class="menu-item" routerLink="/procedures/changemajor">
               {{ "menu.changemajor" | translate }}
             </a>
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/procedures/changerequest"
-            >
+            <a href="#" class="menu-item" routerLink="/procedures/changerequest">
               {{ "menu.changerequest" | translate }}
             </a>
             <a href="#" class="menu-item" routerLink="/procedures/cancelcourse">
@@ -535,32 +357,21 @@
               {{ "menu.reenrol" | translate }}
             </a>
 
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/procedures/visitorstudent"
-            >
+            <a href="#" class="menu-item" routerLink="/procedures/visitorstudent">
               {{ "menu.visitorstudent" | translate }}
             </a>
             <a href="#" class="menu-item" routerLink="/procedures/withdrawuniv">
-              {{ "menu.withdrawuniv" | translate }}</a
-            >
+              {{ "menu.withdrawuniv" | translate }}</a>
 
             <!-- <a href="#" class="menu-item" routerLink="/procedures/terminate"> طلب فصل استثنائي   </a> -->
             <!-- <a href="#" class="menu-item" routerLink="/procedures/examexcuse"> تقديم الأعذار للمتغيبين عن الاختبارات   </a> -->
           </div>
         </div>
         <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.registerwishes" | translate }} </span>
-            <i class="ik ik-book"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.registerwishes" | translate }} </span>
+            <i class="ik ik-book"></i></a>
           <div class="submenu-content">
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/registercourses/registerwishes"
-            >
+            <a href="#" class="menu-item" routerLink="/registercourses/registerwishes">
               {{ "menu.registerwishesnew" | translate }}
             </a>
             <!-- <a href="#" class="menu-item" routerLink="/registercourses/reghelper"> مساعد التسجيل </a> -->
@@ -568,10 +379,8 @@
         </div>
 
         <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.financeaff" | translate }} </span>
-            <i class="ik ik-dollar-sign"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.financeaff" | translate }} </span>
+            <i class="ik ik-dollar-sign"></i></a>
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/finance/fees">
               {{ "menu.fees" | translate }}
@@ -585,10 +394,8 @@
           </div>
         </div>
         <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.EXAMAFF" | translate }} </span>
-            <i class="ik ik-trending-down"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.EXAMAFF" | translate }} </span>
+            <i class="ik ik-trending-down"></i></a>
           <div class="submenu-content">
             <!-- <a href="#" class="menu-item" routerLink="/exams/attend">  جداول الاختبارات   </a> -->
             <a href="#" class="menu-item" routerLink="/exams/">
@@ -606,29 +413,21 @@
           </div>
         </div>
         <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.GRADUATE" | translate }} </span>
-            <i class="ik ik-layers"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.GRADUATE" | translate }} </span>
+            <i class="ik ik-layers"></i></a>
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/other/studentinfo">
               {{ "menu.GRADUATEINFO" | translate }}
             </a>
 
-            <a
-              href="#"
-              class="menu-item"
-              routerLink="/academicaff/graduationstatment"
-            >
+            <a href="#" class="menu-item" routerLink="/academicaff/graduationstatment">
               {{ "menu.graduationstatment" | translate }}
             </a>
           </div>
         </div>
         <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">
-          <a href="javascript:void(0)"
-            ><span> {{ "menu.OTHERREQ" | translate }} </span>
-            <i class="ik ik-package"></i
-          ></a>
+          <a href="javascript:void(0)"><span> {{ "menu.OTHERREQ" | translate }} </span>
+            <i class="ik ik-package"></i></a>
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/other/medicalreport">
               {{ "menu.MED" | translate }}
@@ -646,49 +445,30 @@
           </div>
         </div>
         <!-- <div class="nav-lavel">  </div> -->
-        <div
-          *ngIf="
+        <div *ngIf="
             userService.userData &&
             userService.userData.activeRole == 'Employee'
-          "
-          class="nav-item has-sub"
-        >
+          " class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "menu.PublicServices" | translate }} </span>
             <i class="ik ik-book-open"></i>
           </a>
           <div class="submenu-content">
-            <a
-              target="_blank"
-              href="https://outlook.office365.com/owa/seu.edu.sa"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">
               {{ "menu.email" | translate }}
               <i class="ik ik-mail"></i>
             </a>
-            <a
-              target="_blank"
-              href="https://wafi.seu.edu.sa/seu/casLogin"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://wafi.seu.edu.sa/seu/casLogin" class="menu-item">
               {{ "menu.ALWAFI" | translate }}
               <i class="ik ik-message-square"></i>
             </a>
-            <a
-              target="_blank"
-              href="http://hadir.seu.edu.sa/"
-              class="menu-item"
-            >
+            <a target="_blank" href="http://hadir.seu.edu.sa/" class="menu-item">
               {{ "menu.Attednace" | translate }} <i class="ik ik-calendar"></i>
             </a>
             <a target="_blank" href="https://sd.seu.edu.sa" class="menu-item">
               {{ "menu.Support" | translate }} <i class="ik ik-settings"></i>
             </a>
-            <a
-              target="_blank"
-              href="https://bannadmin.seu.edu.sa/applicationNavigator"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://bannadmin.seu.edu.sa/applicationNavigator" class="menu-item">
               {{ "menu.BANNER" | translate }}
               <i class="ik ik-tablet"></i>
             </a>
@@ -697,73 +477,37 @@
               >{{ "menu.BLACKBOARD" | translate }} <i class="ik ik-tablet"></i
             ></a>
 
-            <a class="menu-item" target="_blank" href="http://forum.seu.edu.sa"
-              >{{ "menu.Forum" | translate }} <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              class="menu-item"
-              target="_blank"
-              href="https://www.seu.edu.sa/kr/"
-              >{{ "menu.knowledgeresources" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              class="menu-item"
-              target="_blank"
-              href="https://dms.seu.edu.sa/dms"
-              >{{ "menu.DMS" | translate }} <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              class="menu-item"
-              target="_blank"
-              href="http://stuapp.seu.edu.sa/ContractorsManagement"
-              >{{ "menu.FacultyRecruitmentSystem" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              class="menu-item"
-              target="_blank"
-              href="https://old.seu.edu.sa/sites/ar/Pages/QueryDMSNew.aspx"
-              >{{ "menu.QueryDMS" | translate }} <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              class="menu-item"
-              target="_blank"
-              href="http://p-az-erp-app01:9001/forms/frmservlet?config=ERP"
-              >{{ "menu.ERP" | translate }} <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              class="menu-item"
-              target="_blank"
-              href="https://lijan.seu.edu.sa/lpclient/"
-              >{{ "menu.CouncilsAndCommittees" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              class="menu-item"
-              target="_blank"
-              href="http://seuapps.seu.edu.sa/teaching-load"
-              >{{ "menu.TeachingLoad" | translate }} <i class="ik ik-tablet"></i
-            ></a>
+            <a class="menu-item" target="_blank" href="http://forum.seu.edu.sa">{{ "menu.Forum" | translate }} <i
+                class="ik ik-tablet"></i></a>
+            <a class="menu-item" target="_blank"
+              href="https://www.seu.edu.sa/kr/">{{ "menu.knowledgeresources" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a class="menu-item" target="_blank" href="https://dms.seu.edu.sa/dms">{{ "menu.DMS" | translate }} <i
+                class="ik ik-tablet"></i></a>
+            <a class="menu-item" target="_blank"
+              href="http://stuapp.seu.edu.sa/ContractorsManagement">{{ "menu.FacultyRecruitmentSystem" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a class="menu-item" target="_blank"
+              href="https://old.seu.edu.sa/sites/ar/Pages/QueryDMSNew.aspx">{{ "menu.QueryDMS" | translate }} <i
+                class="ik ik-tablet"></i></a>
+            <a class="menu-item" target="_blank"
+              href="http://p-az-erp-app01:9001/forms/frmservlet?config=ERP">{{ "menu.ERP" | translate }} <i
+                class="ik ik-tablet"></i></a>
+            <a class="menu-item" target="_blank"
+              href="https://lijan.seu.edu.sa/lpclient/">{{ "menu.CouncilsAndCommittees" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a class="menu-item" target="_blank"
+              href="http://seuapps.seu.edu.sa/teaching-load">{{ "menu.TeachingLoad" | translate }} <i
+                class="ik ik-tablet"></i></a>
 
-            <a
-              class="menu-item"
-              target="_blank"
-              href="https://seuapps.seu.edu.sa/stdsnew/users/index"
-              >{{ "menu.NewAdminPage" | translate }} <i class="ik ik-tablet"></i
-            ></a>
+            <a class="menu-item" target="_blank"
+              href="https://seuapps.seu.edu.sa/stdsnew/users/index">{{ "menu.NewAdminPage" | translate }} <i
+                class="ik ik-tablet"></i></a>
 
-            <a
-              class="menu-item"
-              target="_blank"
-              href="http://seuapps.seu.edu.sa/eservices/taqrir_final/login.php"
-              >{{ "menu.AdminPage" | translate }} <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              target="_blank"
-              href="https://seu.edu.sa/ar/instructions-educational-systems/"
-              class="menu-item"
-            >
+            <a class="menu-item" target="_blank"
+              href="http://seuapps.seu.edu.sa/eservices/taqrir_final/login.php">{{ "menu.AdminPage" | translate }} <i
+                class="ik ik-tablet"></i></a>
+            <a target="_blank" href="https://seu.edu.sa/ar/instructions-educational-systems/" class="menu-item">
               {{ "menu.EDUSYSTEMS" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
@@ -773,99 +517,47 @@
             </a>
           </div>
         </div>
-        <div
-          *ngIf="false && showadmis"
-          id="admis-pages-cont"
-          class="nav-item has-sub"
-        >
+        <div *ngIf="false && showadmis" id="admis-pages-cont" class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "general.admis_pages" | translate }} </span>
             <i class="ik ik-book-open"></i>
           </a>
           <div class="submenu-content">
-            <a
-              href="#"
-              *ngIf="admisPage['stds']"
-              class="menu-item admispages"
-              routerLink="/stdsnew-pages"
-            >
+            <a href="#" *ngIf="admisPage['stds']" class="menu-item admispages" routerLink="/stdsnew-pages">
               {{ "general.stds_pages" | translate }}
               <i class="ik ik-tablet"></i>
             </a>
-            <a
-              href="#"
-              *ngIf="admisPage[1]"
-              class="menu-item admispages"
-              routerLink="/admis-pages/1"
-              >{{ "menu.admis_pages_jobs" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              href="#"
-              *ngIf="admisPage[2]"
-              class="menu-item admispages"
-              routerLink="/admis-pages/2"
-              >{{ "menu.admis_pages_sms" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              href="#"
-              *ngIf="admisPage[3]"
-              class="menu-item admispages"
-              routerLink="/admis-pages/3"
-              >{{ "menu.admis_pages_stds" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              href="#"
-              *ngIf="admisPage[4]"
-              class="menu-item admispages"
-              routerLink="/admis-pages/4"
-              >{{ "menu.admis_pages_emp" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              href="#"
-              *ngIf="admisPage[5]"
-              class="menu-item admispages"
-              routerLink="/admis-pages/5"
-              >{{ "menu.admis_pages_stats" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              href="#"
-              *ngIf="admisPage[6]"
-              class="menu-item admispages"
-              routerLink="/admis-pages/6"
-              >{{ "menu.admis_pages_reports" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              href="#"
-              *ngIf="admisPage[7]"
-              class="menu-item admispages"
-              routerLink="/admis-pages/7"
-              >{{ "menu.admis_pages_admis" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              href="#"
-              *ngIf="admisPage[8]"
-              class="menu-item admispages"
-              routerLink="/admis-pages/8"
-              >{{ "menu.admis_pages_enquiries" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
+            <a href="#" *ngIf="admisPage[1]" class="menu-item admispages"
+              routerLink="/admis-pages/1">{{ "menu.admis_pages_jobs" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[2]" class="menu-item admispages"
+              routerLink="/admis-pages/2">{{ "menu.admis_pages_sms" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[3]" class="menu-item admispages"
+              routerLink="/admis-pages/3">{{ "menu.admis_pages_stds" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[4]" class="menu-item admispages"
+              routerLink="/admis-pages/4">{{ "menu.admis_pages_emp" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[5]" class="menu-item admispages"
+              routerLink="/admis-pages/5">{{ "menu.admis_pages_stats" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[6]" class="menu-item admispages"
+              routerLink="/admis-pages/6">{{ "menu.admis_pages_reports" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[7]" class="menu-item admispages"
+              routerLink="/admis-pages/7">{{ "menu.admis_pages_admis" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a href="#" *ngIf="admisPage[8]" class="menu-item admispages"
+              routerLink="/admis-pages/8">{{ "menu.admis_pages_enquiries" | translate }}
+              <i class="ik ik-tablet"></i></a>
           </div>
         </div>
 
-        <div
-          *ngIf="
+        <div *ngIf="
             userService.userData &&
             environment.chatbot_mails.includes(userService.userData.email)
-          "
-          class="nav-item"
-        >
+          " class="nav-item">
           <a routerLink="/enquries">
             <span>{{ "menu.enquries" | translate }} </span>
             <i class="ik ik-layers"></i>
@@ -873,43 +565,45 @@
           </a>
         </div>
 
-        <div
-          *ngIf="
+        <div *ngIf="userService.userData && userService.userData.activeRole == 'Instructor'" class="nav-item has-sub open">
+          <a href="javascript:void(0)">
+            <span>{{ "menu.resume" | translate }} </span>
+            <i class="ik ik-book-open"></i>
+          </a>
+          <div class="submenu-content">
+            <a [routerLink]="['/resume/ar']" class="menu-item">
+              {{ "menu.resume_ar" | translate }} <i class="ik ik-users"></i>
+            </a>
+            <a [routerLink]="['/resume/en']" class="menu-item">
+              {{ "menu.resume_en" | translate }} <i class="ik ik-users"></i>
+            </a>
+          </div>
+        </div>
+
+        <div *ngIf="
             userService.userData &&
             userService.userData.activeRole == 'Instructor'
-          "
-          class="nav-item has-sub open"
-        >
+          " class="nav-item has-sub open">
           <a href="javascript:void(0)">
             <span>{{ "menu.PublicServices" | translate }} </span>
             <i class="ik ik-book-open"></i>
           </a>
           <div class="submenu-content">
-            <a
-              target="_blank"
+            <a target="_blank"
               href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
-              class="menu-item"
-            >
+              class="menu-item">
               {{ "menu.SYSTEM" | translate }}
               <span class="text-eng">BlackBoard</span>
               <i class="ik ik-bold"></i>
             </a>
-            <a
-              target="_blank"
-              href="https://outlook.office365.com/owa/seu.edu.sa"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">
               {{ "menu.email" | translate }}
               <i class="ik ik-mail"></i>
             </a>
             <a target="_blank" href="https://seu.edu.sa/kr/" class="menu-item">
               {{ "menu.KnowMng" | translate }} <i class="ik ik-book-open"></i>
             </a>
-            <a
-              target="_blank"
-              href="https://saudieu-analytics.blackboard.com/default.aspx"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://saudieu-analytics.blackboard.com/default.aspx" class="menu-item">
               {{ "menu.Reports" | translate }}
               <span class="text-eng">BlackBoard</span>
               <i class="ik ik-bold"></i>
@@ -921,41 +615,21 @@
             <a target="_blank" href="https://sd.seu.edu.sa" class="menu-item">
               {{ "menu.Support" | translate }} <i class="ik ik-settings"></i>
             </a>
-            <a
-              target="_blank"
-              href="http://hadir.seu.edu.sa/"
-              class="menu-item"
-            >
-              {{ "menu.Attednace" | translate }} <i class="ik ik-watch"></i
-            ></a>
+            <a target="_blank" href="http://hadir.seu.edu.sa/" class="menu-item">
+              {{ "menu.Attednace" | translate }} <i class="ik ik-watch"></i></a>
 
-            <a
-              target="_blank"
-              href="https://bannservices.seu.edu.sa/FacultySelfService/"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://bannservices.seu.edu.sa/FacultySelfService/" class="menu-item">
               {{ "menu.FacultySelfService" | translate }}
               <i class="ik ik-mail"></i>
             </a>
-            <a
-              target="_blank"
-              href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement"
+              class="menu-item">
               {{ "menu.EVENTSMANAGE" | translate }}<i class="ik ik-mail"></i>
             </a>
-            <a
-              class="menu-item"
-              target="_blank"
-              href="https://lijan.seu.edu.sa/lpclient/"
-              >{{ "menu.CouncilsAndCommittees" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
-            <a
-              target="_blank"
-              href="https://seu.edu.sa/ar/instructions-educational-systems/"
-              class="menu-item"
-            >
+            <a class="menu-item" target="_blank"
+              href="https://lijan.seu.edu.sa/lpclient/">{{ "menu.CouncilsAndCommittees" | translate }}
+              <i class="ik ik-tablet"></i></a>
+            <a target="_blank" href="https://seu.edu.sa/ar/instructions-educational-systems/" class="menu-item">
               {{ "menu.EDUSYSTEMS" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
@@ -963,50 +637,33 @@
               {{ "menu.INSTRUCTEXAM" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
-            <ng-container *ngIf="!environment.production">
-              <a [routerLink]="['/attendance']" class="menu-item">
-                {{ "menu.student_attendance" | translate
-                }}<i class="ik ik-users"></i>
-              </a>
-              <!-- <a [routerLink]="['/resume']" class="menu-item"> {{"menu.resume" | translate}}<i class="ik ik-users"></i>
-              </a> -->
-            </ng-container>
+            <a [routerLink]="['/attendance']" class="menu-item">
+              {{ "menu.student_attendance" | translate
+              }}<i class="ik ik-users"></i>
+            </a>
           </div>
         </div>
 
-        <div
-          *ngIf="
+        <div *ngIf="
             userService.userData && userService.userData.activeRole == 'Student'
-          "
-          class="nav-item has-sub"
-        >
+          " class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "menu.PublicServices" | translate }} </span>
             <i class="ik ik-book-open"></i>
           </a>
           <div class="submenu-content">
-            <a
-              target="_blank"
+            <a target="_blank"
               href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
-              class="menu-item"
-            >
+              class="menu-item">
               {{ "menu.SYSTEM" | translate }}
               <span class="text-eng">BlackBoard</span>
               <i class="ik ik-bold"></i>
             </a>
-            <a
-              target="_blank"
-              href="https://outlook.office365.com/owa/seu.edu.sa"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">
               {{ "menu.email" | translate }}
               <i class="ik ik-mail"></i>
             </a>
-            <a
-              target="_blank"
-              href="http://seuapps.seu.edu.sa/StudentRightsUnit/Home"
-              class="menu-item"
-            >
+            <a target="_blank" href="http://seuapps.seu.edu.sa/StudentRightsUnit/Home" class="menu-item">
               {{ "menu.StdLaw" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
@@ -1016,36 +673,21 @@
               <i class="ik ik-user-check"></i>
             </a>
 
-            <a
-              target="_blank"
-              href="https://seu.edu.sa/ar/instructions-educational-systems/"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://seu.edu.sa/ar/instructions-educational-systems/" class="menu-item">
               {{ "menu.EDUSYSTEMS" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
 
-            <a
-              target="_blank"
-              href="https://bannservices.seu.edu.sa/StudentSelfService"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://bannservices.seu.edu.sa/StudentSelfService" class="menu-item">
               {{ "menu.StdSRV" | translate }}
               <i class="ik ik-user"></i>
             </a>
-            <a
-              target="_blank"
-              href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement"
+              class="menu-item">
               {{ "menu.EVENTSMANAGE" | translate }}
               <i class="ik ik-briefcase"></i>
             </a>
-            <a
-              target="_blank"
-              href="https://bannservices.seu.edu.sa/StudentRegistrationSsb"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://bannservices.seu.edu.sa/StudentRegistrationSsb" class="menu-item">
               {{ "menu.RESGISTERCOURSES" | translate }}
               <i class="ik ik-book"></i>
             </a>
@@ -1056,13 +698,9 @@
             <a target="_blank" href="https://sd.seu.edu.sa" class="menu-item">
               {{ "menu.Support" | translate }} <i class="ik ik-settings"></i>
             </a>
-            <a
-              class="menu-item"
-              target="_blank"
-              href="https://www.seu.edu.sa/kr/"
-              >{{ "menu.knowledgeresources" | translate }}
-              <i class="ik ik-tablet"></i
-            ></a>
+            <a class="menu-item" target="_blank"
+              href="https://www.seu.edu.sa/kr/">{{ "menu.knowledgeresources" | translate }}
+              <i class="ik ik-tablet"></i></a>
           </div>
         </div>
         <div *ngIf="hasNoRole" class="nav-item has-sub">
@@ -1071,20 +709,14 @@
             <i class="ik ik-book-open"></i>
           </a>
           <div class="submenu-content">
-            <a
-              target="_blank"
+            <a target="_blank"
               href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
-              class="menu-item"
-            >
+              class="menu-item">
               {{ "menu.SYSTEM" | translate }}
               <span class="text-eng">BlackBoard</span>
               <i class="ik ik-bold"></i>
             </a>
-            <a
-              target="_blank"
-              href="https://outlook.office365.com/owa/seu.edu.sa"
-              class="menu-item"
-            >
+            <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">
               {{ "menu.email" | translate }}
               <i class="ik ik-mail"></i>
             </a>

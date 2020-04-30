@@ -6,6 +6,8 @@ import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { EnquriesService } from './../../services/enquries.service';
+import { UserService } from '../../../account/services/user.service';
+
 
 export interface DialogData {
     id: string;
@@ -22,17 +24,21 @@ export class AddAnswerComponent {
     answerForm: FormGroup;
     submitted = false;
     errorMessage = false;
+    email;
     
     constructor(
     private fb: FormBuilder,
     private enquriesService: EnquriesService, 
+    public userService: UserService,
     public dialogRef: MatDialogRef<AddAnswerComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+        this.email = this.userService.userData.email;
         this.id = data.id;
         this.answerForm = this.fb.group(
             {
                 answer: ["", [Validators.required]],
-                id: [data.id]
+                id: [data.id],
+                email: [this.email]
             },
         );
         this.id = data.id;
@@ -59,7 +65,7 @@ export class AddAnswerComponent {
             return;
         }
 
-        this.enquriesService.addAnswer(this.answerForm.controls.id.value, this.answerForm.controls.answer.value).subscribe(
+        this.enquriesService.addAnswer(this.answerForm.controls.id.value, this.answerForm.controls.email.value, this.answerForm.controls.answer.value).subscribe(
             (response: any) => {
               if (response) {
                 window.location.reload();

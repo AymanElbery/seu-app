@@ -8,24 +8,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AppToasterService } from '../../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
-import { FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-import { ErrorStateMatcher } from "@angular/material/core";
 import { AddAnswerComponent } from './../add-answer/add-answer.component';
 
 @Component({
-  selector: 'app-list',
-  styleUrls: ['./list.component.css'],
-  templateUrl: './list.component.html'
+  selector: 'app-unreply',
+  styleUrls: ['./unreply.component.css'],
+  templateUrl: './unreply.component.html'
 })
-export class ListComponent{
+export class UnReplyComponent{
 
   p: number;
   data;
   isLoading;
   title: string;
   config;
-  email;
   admins;
+  email;
 
   constructor(
     public userService: UserService, 
@@ -41,12 +39,8 @@ export class ListComponent{
     this.admins = environment.chatbot_emps_admins_emails;
     this.email = this.userService.userData.email;
 
-    if(this.admins.indexOf(this.email) == -1){
-      this.router.navigate(['/enquries/unreply']);
-    }
-
     this.isLoading = true;
-    this.enquriesService.getListEnquries().subscribe(
+    this.enquriesService.getUnrepliedEnquries().subscribe(
       (response: any) => {
         if (response) {
           this.isLoading = false;
