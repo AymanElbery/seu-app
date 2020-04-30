@@ -36,6 +36,7 @@ export class ResumeEnComponent{
   phone;
   jobTitle;
   section;
+  work;
   nationality;
 
   nameError;
@@ -43,6 +44,7 @@ export class ResumeEnComponent{
   phoneError;
   jobTitleError;
   sectionError;
+  workError;
 
   title;
   titles = [];
@@ -103,6 +105,7 @@ export class ResumeEnComponent{
             this.phone = this.data.PHONE;
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
+            this.work = this.data.WORK;
             this.nationality = this.data.NATIONALITY;
             this.titles = this.data.TITLES;
             if (this.titles) {
@@ -174,6 +177,9 @@ export class ResumeEnComponent{
   hideSectionMessages(){
     this.sectionError = null;
   }
+  hideWorkMessages(){
+    this.workError = null;
+  }
 
   onSubmit(){
 
@@ -204,6 +210,10 @@ export class ResumeEnComponent{
       this.sectionError = "هذا الحقل مطلوب";
       valid = false;
     }
+    if (this.work == "" || this.work == null) {
+      this.workError = "هذا الحقل مطلوب";
+      valid = false;
+    }
 
     if (valid) {
       let data = {
@@ -214,6 +224,7 @@ export class ResumeEnComponent{
         phone       : this.phone,
         jobTitle    : this.jobTitle,
         section     : this.section,
+        work     : this.work,
         nationality : this.nationality,
         titles      : this.titles,
       };

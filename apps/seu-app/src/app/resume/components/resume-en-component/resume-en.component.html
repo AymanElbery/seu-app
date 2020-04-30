@@ -79,6 +79,13 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
+            <label for="work">{{ "resume.work" | translate}}</label>
+            <input (input)="hideWorkMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': workError}" id="work" [(ngModel)]="work" name="work">
+            <span *ngIf="workError" class="text text-danger">{{workError}}</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
             <label for="phone">{{ "resume.phone" | translate}}</label>
             <input (input)="hidePhoneMessages()" type="text" [ngClass]="{'errorBorder': phoneError}" class="form-control" id="phone" [(ngModel)]="phone" name="phone">
             <span *ngIf="phoneError" class="text text-danger">{{phoneError}}</span>

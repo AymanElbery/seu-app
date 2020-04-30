@@ -248,7 +248,8 @@
         "choose_file": "Choose Picture",
         "title_no": "Title No",
         "item_no": "Item No",
-        "agree": "I bear responsibility for the correctness of the data entered above"
+        "agree": "I bear responsibility for the correctness of the data entered above",
+        "work": "Work place"
     },
     "enquries": {
         "title": "Inquiries",
