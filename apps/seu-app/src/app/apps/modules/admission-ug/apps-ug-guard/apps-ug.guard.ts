@@ -44,6 +44,10 @@ export class AppsUgGuard implements CanActivate {
     if (!service_status) {
       this.appToasterService.push([{ type: 'error', body: this.translate.instant('service_closed') }]);
     }
+    if (curr_url != 'payment-refund' && this.admissionugService.LoggedInUser['APDC_CODE1'] == '04') {
+      service_status = false;
+    }
+
     return service_status;
   }
   isLoggedIn(state) {
