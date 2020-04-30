@@ -63,5 +63,6 @@
     "academiccopyreq": "Academic copy required",
     "equalcertificatescopyrequired": "Equal certificates copy required",
     "medicalcopyreq": "Medical copy required",
-    "AdmissionGRResult": "Admission GR Result"
+    "AdmissionGRResult": "Admission GR Result",
+    "service_closed" : "Service is closed"
 }

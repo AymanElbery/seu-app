@@ -17,14 +17,14 @@ const routes: Routes = [
   {
     path: '', component: UGHomeComponent,
     children: [
-      { path: 'admission-result', component: AdmissionResultComponent },
-      { path: 'display-result', component: DisplayResultComponent },
-
       { path: 'ug-login', component: UgLoginComponent },
       { path: 'ug-verification', component: UgVeryficationComponent },
 
+      { path: 'admission-result', component: AdmissionResultComponent, canActivate: [AppsUgGuard] },
+      { path: 'display-result', component: DisplayResultComponent },
+
       { path: 'pay-fee', component: PayFeeComponent, canActivate: [AppsUgGuard] },
-      { path: 'match-documents', component: MatchDocumentsComponent,canActivate: [AppsUgGuard] },
+      { path: 'match-documents', component: MatchDocumentsComponent, canActivate: [AppsUgGuard] },
       { path: 'upload-documents', component: UploadDocumentComponent, canActivate: [AppsUgGuard] },
       { path: 'payment-refund', component: PaymentRefundComponent, canActivate: [AppsUgGuard] }
 
