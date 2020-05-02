@@ -44,6 +44,7 @@ export class PolicyComponent implements OnInit, OnDestroy {
     });
     this.http.post(environment.baselink + environment.servicesprefix + "/rest/policy_acceptance/change_status", { username: this.userService.userData.username, status: this.selection, emp_id: this.userService.userData.id }, { headers }).subscribe(res => {
       if (res['status']) {
+        this.userService.userData['policy'] = "Done";
         this.dialogRef.close();
       } else {
         this.toastr.tryagain();
