@@ -15,7 +15,7 @@ export class AdmissionGRService extends AppUserService {
   tokenKey = 'gr-token';
   userKey = 'gr-student';
 
-  settings;
+  settings = {};
   settingsLoaded: boolean = false;
   settingsObservable = new Subject();
 

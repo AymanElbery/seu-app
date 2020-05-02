@@ -30,6 +30,14 @@ export class AdmissionResultComponent {
       'capcha': ['', [Validators.required]]
     });
 
+
+    if (this.admissionGrservice.isLoggedIn) {
+      this.AddReqForm.controls['ssn'].setValue(this.admissionGrservice.LoggedInUser['SSN']);
+      this.AddReqForm.controls['capcha'].setValue(this.admissionGrservice.LoggedInToken);
+
+      this.onFormSubmit();
+    }
+
     this.environment = environment;
   }
 
@@ -44,27 +52,11 @@ export class AdmissionResultComponent {
     }
     this.submitted = true;
     this.admissionGrservice.getresstatus(this.AddReqForm.value).subscribe(resdttaus => {
-     // console.log("response",resdttaus);
-      const status = resdttaus['status'];
-      if (status == true) {
-        if (false && !resdttaus['data']['info']) {
-          this.toastr.push([{ type: 'error', 'body': resdttaus['data']['message'] }]);
-        } else {
-          
-          this.admissionGrservice.checkResultData = (resdttaus as any).data;
-         
-          if((resdttaus as any).messages.length>0){
-            this.admissionGrservice.messages=(resdttaus as any).messages["0"]["body"];
-          }
-          
-          this.router.navigate(['/apps/admission-gr/display-result/']);
-        }
-        this.submitted = false;
-      }
-      else {
-        var erromsg = resdttaus['data']['errmsg'];
-        this.toastr.push([{ type: 'error', 'body': erromsg }]);
-
+      if (resdttaus['status']) {
+        this.admissionGrservice.checkResultData = resdttaus['data']['info'];
+        this.router.navigate(['/apps/admission-gr/display-result/']);
+      } else {
+        this.toastr.push(resdttaus['messages']);
         this.recaptchaRef.reset();
         this.submitted = false;
       }

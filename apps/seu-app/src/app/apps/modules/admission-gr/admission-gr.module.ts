@@ -16,9 +16,10 @@ import { DisplayResultComponent } from './components/admission-result/result/dis
 import { PayFeeComponent } from './components/pay-fee/pay-fee.component';
 
 @NgModule({
-  declarations: [GRHomeComponent,AppsGrMenuComponent,AdmissionResultComponent,GrLoginComponent,
-    VerifyComponent,UploadFileComponent,DisplayResultComponent,PayFeeComponent],
-  imports: [AppsSharedModule, AdmissionGRRoutingModule,
+  declarations: [GRHomeComponent, AppsGrMenuComponent, AdmissionResultComponent, GrLoginComponent,
+    VerifyComponent, UploadFileComponent, DisplayResultComponent, PayFeeComponent],
+  imports: [
+    AdmissionGRRoutingModule,
     SeucommonModule,
     RecaptchaModule,
     AppsSharedModule
@@ -32,4 +33,4 @@ export class AdmissionGRModule {
     }
     this.admissionGRservice.loadSettings();
   }
- }
+}

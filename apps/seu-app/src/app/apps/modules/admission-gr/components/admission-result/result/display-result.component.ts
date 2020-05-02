@@ -9,7 +9,7 @@ import { AdmissionGRService } from '../../../services/admission-gr.service';
 })
 export class DisplayResultComponent implements OnInit {
   checkResultData;
-  messages;
+  //messages;
   constructor(private admissionGRservice: AdmissionGRService, private router: Router) {
 
   }
@@ -18,12 +18,10 @@ export class DisplayResultComponent implements OnInit {
       this.router.navigate(['/apps/admission-gr/admission-result/'])
     }
     this.checkResultData = this.admissionGRservice.checkResultData;
-    
-    if(this.admissionGRservice.messages){
-      this.messages=this.admissionGRservice.messages;
-    }
-   
-   // console.log("data",this.checkResultData,this.messages);
+    // if(this.admissionGRservice.messages){
+    //   this.messages=this.admissionGRservice.messages;
+    // }
+    // console.log("data",this.checkResultData,this.messages);
   }
 
 }

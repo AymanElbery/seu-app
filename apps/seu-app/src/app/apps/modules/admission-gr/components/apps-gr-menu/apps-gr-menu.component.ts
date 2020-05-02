@@ -8,16 +8,9 @@ import { AdmissionGRService } from '../../services/admission-gr.service';
   styleUrls: ['./apps-gr-menu.component.css']
 })
 export class AppsGrMenuComponent implements OnInit {
-
   constructor(public admissionGRService: AdmissionGRService, private appService: AppUserService) {
-    this.isLoggedIn();
   }
-  isLoggedIn() {
-    if (this.admissionGRService.isLoggedIn) {
-      return true;
-    }
-    return false;
-  }
+
   ngOnInit() {
 
   }
