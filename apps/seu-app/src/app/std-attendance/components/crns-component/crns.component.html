@@ -37,7 +37,8 @@
                     <td>{{ crn.SSRMEET_END_TIME | formatCrnTime}}</td>
                     <td>
                         <span *ngIf="!crn.active" class="text-center text-danger">لا يمكن إثبات الحضور في غير وقت المحاضرة</span>
-                        <button [routerLink]="['/std-attendance/code']" [queryParams]="{c: crn.CRN}" *ngIf="crn.active" class="btn btn-primary">إثبات الحضور</button>
+                        <button [routerLink]="['/std-attendance/code']" [queryParams]="{c: crn.CRN}" *ngIf="crn.active && !crn.done" class="btn btn-primary">إثبات الحضور</button>
+                        <button disabled *ngIf="crn.active && crn.done" class="btn btn-primary">تم إثبات الحضور</button>
                     </td>
                 </tr>
             </tbody>

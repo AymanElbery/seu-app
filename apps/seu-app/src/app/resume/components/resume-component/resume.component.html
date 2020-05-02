@@ -72,6 +72,13 @@
       <div class="row row-form" >
         <div class="col-md-6">
           <div class="form-group">
+            <label for="faculty">{{ "resume.faculty" | translate}}</label>
+            <input (input)="hideFacultyMessages()" disabled required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
+            <span *ngIf="facultyError" class="text text-danger">{{facultyError}}</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
             <label for="section">{{ "resume.section" | translate}}</label>
             <input (input)="hideSectionMessages()" disabled required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
             <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
@@ -89,6 +96,13 @@
             <label for="phone">{{ "resume.phone" | translate}}</label>
             <input (input)="hidePhoneMessages()" required type="text" [ngClass]="{'errorBorder': phoneError}" class="form-control" id="phone" [(ngModel)]="phone" name="phone">
             <span *ngIf="phoneError" class="text text-danger">{{phoneError}}</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="address">{{ "resume.address" | translate}}</label>
+            <input (input)="hideAddressMessages()" required type="text" [ngClass]="{'errorBorder': addressError}" class="form-control" id="address" [(ngModel)]="address" name="address">
+            <span *ngIf="addressError" class="text text-danger">{{addressError}}</span>
           </div>
         </div>
         <div class="col-md-6">

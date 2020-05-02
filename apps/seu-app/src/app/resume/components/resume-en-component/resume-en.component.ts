@@ -34,16 +34,20 @@ export class ResumeEnComponent{
   name;
   email;
   phone;
+  address;
   jobTitle;
   section;
+  faculty;
   work;
   nationality;
 
   nameError;
   emailError;
   phoneError;
+  addressError;
   jobTitleError;
   sectionError;
+  facultyError;
   workError;
 
   title;
@@ -103,8 +107,10 @@ export class ResumeEnComponent{
             this.name = this.data.NAME;
             this.email = this.data.EMAIL;
             this.phone = this.data.PHONE;
+            this.address = this.data.ADDRESS;
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
+            this.faculty = this.data.FACULTY;
             this.work = this.data.WORK;
             this.nationality = this.data.NATIONALITY;
             this.titles = this.data.TITLES;
@@ -171,11 +177,17 @@ export class ResumeEnComponent{
   hidePhoneMessages(){
     this.phoneError = null;
   }
+  hideAddressMessages(){
+    this.addressError = null;
+  }
   hideJobTitleMessages(){
     this.jobTitleError = null;
   }
   hideSectionMessages(){
     this.sectionError = null;
+  }
+  hideFacultyMessages(){
+    this.facultyError = null;
   }
   hideWorkMessages(){
     this.workError = null;
@@ -202,12 +214,20 @@ export class ResumeEnComponent{
       this.phoneError = "هذا الحقل مطلوب";
       valid = false;
     }
+    if (this.address == "" || this.address == null) {
+      this.addressError = "هذا الحقل مطلوب";
+      valid = false;
+    }
     if (this.jobTitle == "" || this.jobTitle == null) {
       this.jobTitleError = "هذا الحقل مطلوب";
       valid = false;
     }
     if (this.section == "" || this.section == null) {
       this.sectionError = "هذا الحقل مطلوب";
+      valid = false;
+    }
+    if (this.faculty == "" || this.faculty == null) {
+      this.facultyError = "هذا الحقل مطلوب";
       valid = false;
     }
     if (this.work == "" || this.work == null) {
@@ -222,8 +242,10 @@ export class ResumeEnComponent{
         name        : this.name,
         email       : this.email,
         phone       : this.phone,
+        address     : this.address,
         jobTitle    : this.jobTitle,
         section     : this.section,
+        faculty     : this.faculty,
         work     : this.work,
         nationality : this.nationality,
         titles      : this.titles,
