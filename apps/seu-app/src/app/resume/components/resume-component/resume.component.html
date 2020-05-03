@@ -49,21 +49,21 @@
       <div class="row row-form" >
         <div class="col-md-6">
           <div class="form-group">
-            <label for="name">{{ "resume.name" | translate}}</label>
+            <label for="name">{{ "resume.name" | translate}} <span class="text-danger">*</span></label>
             <input (input)="hideNameMessages()" disabled required type="text" [ngClass]="{'errorBorder': nameError}" class="form-control" id="name" [(ngModel)]="name" name="name">
             <span *ngIf="nameError" class="text text-danger">{{nameError}}</span>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label for="email">{{ "resume.email" | translate}}</label>
+            <label for="email">{{ "resume.email" | translate}} <span class="text-danger">*</span></label>
             <input (input)="hideEmailMessages()" disabled required type="email" [ngClass]="{'errorBorder': emailError}" class="form-control" id="email" [(ngModel)]="email" name="email">
             <span *ngIf="emailError" class="text text-danger">{{emailError}}</span>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label for="jobTitle">{{ "resume.jobTitle" | translate}}</label>
+            <label for="jobTitle">{{ "resume.jobTitle" | translate}} <span class="text-danger">*</span></label>
             <input (input)="hideJobTitleMessages()" disabled required type="text" class="form-control" id="jobTitle" [ngClass]="{'errorBorder': jobTitleError}" [(ngModel)]="jobTitle" name="jobTitle">
             <span *ngIf="jobTitleError" class="text text-danger">{{jobTitleError}}</span>
           </div>
@@ -72,28 +72,35 @@
       <div class="row row-form" >
         <div class="col-md-6">
           <div class="form-group">
-            <label for="faculty">{{ "resume.faculty" | translate}}</label>
+            <label for="faculty">{{ "resume.faculty" | translate}}  <span class="text-danger">*</span></label>
             <input (input)="hideFacultyMessages()" disabled required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
             <span *ngIf="facultyError" class="text text-danger">{{facultyError}}</span>
           </div>
         </div>
-        <div class="col-md-6">
+        <div *ngIf="!sectionEdit" class="col-md-6">
           <div class="form-group">
-            <label for="section">{{ "resume.section" | translate}}</label>
+            <label for="section">{{ "resume.section" | translate}}  <span class="text-danger">*</span></label>
             <input (input)="hideSectionMessages()" disabled required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
             <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
           </div>
         </div>
-        <div class="col-md-6">
+        <div *ngIf="sectionEdit" class="col-md-6">
+          <div class="form-group">
+            <label for="section">{{ "resume.section" | translate}}  <span class="text-danger">*</span></label>
+            <input (input)="hideSectionMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
+            <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
+          </div>
+        </div>
+        <!-- <div class="col-md-6">
           <div class="form-group">
             <label for="work">{{ "resume.work" | translate}}</label>
             <input (input)="hideWorkMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': workError}" id="work" [(ngModel)]="work" name="work">
             <span *ngIf="workError" class="text text-danger">{{workError}}</span>
           </div>
-        </div>
+        </div> -->
         <div class="col-md-6">
           <div class="form-group">
-            <label for="phone">{{ "resume.phone" | translate}}</label>
+            <label for="phone">{{ "resume.phone" | translate}}  <span class="text-danger">*</span></label>
             <input (input)="hidePhoneMessages()" required type="text" [ngClass]="{'errorBorder': phoneError}" class="form-control" id="phone" [(ngModel)]="phone" name="phone">
             <span *ngIf="phoneError" class="text text-danger">{{phoneError}}</span>
           </div>
@@ -101,13 +108,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="address">{{ "resume.address" | translate}}</label>
-            <input (input)="hideAddressMessages()" required type="text" [ngClass]="{'errorBorder': addressError}" class="form-control" id="address" [(ngModel)]="address" name="address">
+            <input required type="text" [ngClass]="{'errorBorder': addressError}" class="form-control" id="address" [(ngModel)]="address" name="address">
             <span *ngIf="addressError" class="text text-danger">{{addressError}}</span>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label for="nationality">{{ "resume.nationality" | translate}}</label>
+            <label for="nationality">{{ "resume.nationality" | translate}} </label>
             <select required class="form-control" id="nationality" [(ngModel)]="nationality" name="nationality">
               <option>--</option>
               <option [selected]="country.COUNTRY_AR == nationality" *ngFor="let country of countries">{{ country.COUNTRY_AR }}</option>

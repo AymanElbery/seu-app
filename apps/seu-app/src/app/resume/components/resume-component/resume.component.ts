@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnDestroy, ɵConsole } from '@angular/core';
 import { UserService } from '../../../account/services/user.service';
 import { ResumeService } from '../../services/resume.service';
 
@@ -38,7 +38,7 @@ export class ResumeComponent{
   jobTitle;
   faculty;
   section;
-  work;
+  // work;
   nationality;
 
   nameError;
@@ -48,7 +48,7 @@ export class ResumeComponent{
   jobTitleError;
   sectionError;
   facultyError;
-  workError;
+  // workError;
 
   title;
   titles = [];
@@ -60,6 +60,8 @@ export class ResumeComponent{
   profile = "notExist";
 
   agree = false;
+  pidm;
+  sectionEdit = true;
   
 
   constructor(
@@ -73,18 +75,36 @@ export class ResumeComponent{
     public translate: TranslateService
   ) {
     this.id = this.userService.userData.id;
+    this.pidm = this.userService.userData.PIDM;
+
+    this.resumeService.getDept(this.pidm).subscribe(
+      (response: any) => {
+        if (response) {
+          if (response.data == null) {
+            this.sectionEdit = true;
+          } else {
+            this.sectionEdit = false;
+            let depCode = response.data.DEP_CODE;
+            this.resumeService.getDeptStr(depCode).subscribe(
+              (response: any) => {
+                if (response) {
+                  this.section = response.data.DEPT_DESC_AR;
+                }
+              },
+              error => {}
+            );
+          }
+        }
+      },
+      error => {}
+    );
     this.resumeService.getStuffByID(this.id).subscribe(
       (response: any) => {
         if (response) {
           this.name = response.data.EMP_NAME;
           this.email = response.data.WORK_EMAIL;
-          this.jobTitle = response.data.SCALE_DESC;
+          this.jobTitle = response.data.CARRER_DESC;
           this.faculty = response.data.ACTUAL_DEPT_DESC.split("-")[1];
-          if (response.data.COLLAGE_NAME != "") {
-            this.section = response.data.COLLAGE_NAME;
-          }else{
-            this.section = "";
-          }
           this.getResumeByEmail(this.email);
         }
       },
@@ -120,7 +140,7 @@ export class ResumeComponent{
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
             this.faculty = this.data.FACULTY;
-            this.work = this.data.WORK;
+            // this.work = this.data.WORK;
             this.nationality = this.data.NATIONALITY;
             this.titles = this.data.TITLES;
             if (this.titles) {
@@ -186,9 +206,9 @@ export class ResumeComponent{
   hidePhoneMessages(){
     this.phoneError = null;
   }
-  hideAddressMessages(){
-    this.addressError = null;
-  }
+  // hideAddressMessages(){
+  //   this.addressError = null;
+  // }
   hideJobTitleMessages(){
     this.jobTitleError = null;
   }
@@ -198,9 +218,9 @@ export class ResumeComponent{
   hideFacultyMessages(){
     this.facultyError = null;
   }
-  hideWorkMessages(){
-    this.workError = null;
-  }
+  // hideWorkMessages(){
+  //   this.workError = null;
+  // }
 
   onSubmit(){
 
@@ -226,10 +246,10 @@ export class ResumeComponent{
       valid = false;
     }
 
-    if (this.address == "" || this.address == null) {
-      this.addressError = "هذا الحقل مطلوب";
-      valid = false;
-    }
+    // if (this.address == "" || this.address == null) {
+    //   this.addressError = "هذا الحقل مطلوب";
+    //   valid = false;
+    // }
     
     if (this.jobTitle == "" || this.jobTitle == null) {
       this.jobTitleError = "هذا الحقل مطلوب";
@@ -245,10 +265,10 @@ export class ResumeComponent{
       valid = false;
     }
 
-    if (this.work == "" || this.work == null) {
-      this.workError = "هذا الحقل مطلوب";
-      valid = false;
-    }
+    // if (this.work == "" || this.work == null) {
+    //   this.workError = "هذا الحقل مطلوب";
+    //   valid = false;
+    // }
     
     if (valid) {
       let data = {
@@ -261,7 +281,7 @@ export class ResumeComponent{
         jobTitle    : this.jobTitle,
         section     : this.section,
         faculty     : this.faculty,
-        work        : this.work,
+        // work        : this.work,
         nationality : this.nationality,
         titles      : this.titles,
       };

@@ -73,24 +73,31 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="faculty">{{ "resume.faculty_en" | translate}}</label>
-            <input (input)="hideFacultyMessages()" disabled required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
+            <input (input)="hideFacultyMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
             <span *ngIf="facultyError" class="text text-danger">{{facultyError}}</span>
           </div>
         </div>
-        <div class="col-md-6">
+        <div *ngIf="!sectionEdit"  class="col-md-6">
           <div class="form-group">
             <label for="section">{{ "resume.section_en" | translate}}</label>
+            <input (input)="hideSectionMessages()" disabled required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
+            <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
+          </div>
+        </div>
+        <div *ngIf="sectionEdit" class="col-md-6">
+          <div class="form-group">
+            <label for="section">{{ "resume.section_en" | translate}}  <span class="text-danger">*</span></label>
             <input (input)="hideSectionMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
             <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
           </div>
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <div class="form-group">
             <label for="work">{{ "resume.work_en" | translate}}</label>
             <input (input)="hideWorkMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': workError}" id="work" [(ngModel)]="work" name="work">
             <span *ngIf="workError" class="text text-danger">{{workError}}</span>
           </div>
-        </div>
+        </div> -->
         <div class="col-md-6">
           <div class="form-group">
             <label for="phone">{{ "resume.phone" | translate}}</label>

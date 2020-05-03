@@ -34,7 +34,6 @@ export class ResumeService {
             jobTitle: data.jobTitle, 
             faculty: data.faculty, 
             section: data.section, 
-            work: data.work, 
             nationality: data.nationality, 
             titles: data.titles, 
         },
@@ -63,6 +62,20 @@ export class ResumeService {
 
     getStuffByID(id) {
         return this.http.get(this.URL + "resume/getStuffByID/"+id,
+        {
+            headers: this.headers,
+        });
+    }
+
+    getDept(pidm) {
+        return this.http.get(this.URL + "resume/getDept/"+pidm,
+        {
+            headers: this.headers,
+        });
+    }
+
+    getDeptStr(dep) {
+        return this.http.get(this.URL + "resume/getDeptStr/"+dep,
         {
             headers: this.headers,
         });

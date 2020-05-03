@@ -60,6 +60,8 @@ export class ResumeEnComponent{
   profile = "notExist";
 
   agree = false;
+  pidm;
+  sectionEdit = true;
 
   constructor(
     public userService: UserService, 
@@ -72,6 +74,29 @@ export class ResumeEnComponent{
     public translate: TranslateService
   ) {
     this.id = this.userService.userData.id;
+    this.pidm = this.userService.userData.PIDM;
+
+    this.resumeService.getDept(this.pidm).subscribe(
+      (response: any) => {
+        if (response) {
+          if (response.data == null) {
+            this.sectionEdit = true;
+          } else {
+            this.sectionEdit = false;
+            let depCode = response.data.DEP_CODE;
+            this.resumeService.getDeptStr(depCode).subscribe(
+              (response: any) => {
+                if (response) {
+                  this.section = response.data.DEPT_DESC_EN;
+                }
+              },
+              error => {}
+            );
+          }
+        }
+      },
+      error => {}
+    );
     this.resumeService.getStuffByID(this.id).subscribe(
       (response: any) => {
         if (response) {
@@ -111,7 +136,6 @@ export class ResumeEnComponent{
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
             this.faculty = this.data.FACULTY;
-            this.work = this.data.WORK;
             this.nationality = this.data.NATIONALITY;
             this.titles = this.data.TITLES;
             if (this.titles) {
@@ -177,9 +201,6 @@ export class ResumeEnComponent{
   hidePhoneMessages(){
     this.phoneError = null;
   }
-  hideAddressMessages(){
-    this.addressError = null;
-  }
   hideJobTitleMessages(){
     this.jobTitleError = null;
   }
@@ -188,9 +209,6 @@ export class ResumeEnComponent{
   }
   hideFacultyMessages(){
     this.facultyError = null;
-  }
-  hideWorkMessages(){
-    this.workError = null;
   }
 
   onSubmit(){
@@ -214,10 +232,10 @@ export class ResumeEnComponent{
       this.phoneError = "هذا الحقل مطلوب";
       valid = false;
     }
-    if (this.address == "" || this.address == null) {
-      this.addressError = "هذا الحقل مطلوب";
-      valid = false;
-    }
+    // if (this.address == "" || this.address == null) {
+    //   this.addressError = "هذا الحقل مطلوب";
+    //   valid = false;
+    // }
     if (this.jobTitle == "" || this.jobTitle == null) {
       this.jobTitleError = "هذا الحقل مطلوب";
       valid = false;
@@ -228,10 +246,6 @@ export class ResumeEnComponent{
     }
     if (this.faculty == "" || this.faculty == null) {
       this.facultyError = "هذا الحقل مطلوب";
-      valid = false;
-    }
-    if (this.work == "" || this.work == null) {
-      this.workError = "هذا الحقل مطلوب";
       valid = false;
     }
 
@@ -246,7 +260,6 @@ export class ResumeEnComponent{
         jobTitle    : this.jobTitle,
         section     : this.section,
         faculty     : this.faculty,
-        work     : this.work,
         nationality : this.nationality,
         titles      : this.titles,
       };
