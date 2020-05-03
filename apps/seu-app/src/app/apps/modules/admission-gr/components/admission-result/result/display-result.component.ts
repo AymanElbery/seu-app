@@ -9,7 +9,7 @@ import { AdmissionGRService } from '../../../services/admission-gr.service';
 })
 export class DisplayResultComponent implements OnInit {
   checkResultData;
-  //messages;
+  messages;
   constructor(private admissionGRservice: AdmissionGRService, private router: Router) {
 
   }
