@@ -23,7 +23,7 @@ export class UploadFileComponent implements OnInit {
   attachemngtss;
   typesdata;
   certificates_type;
-  info='';
+  info;
   EXAM_TYPE;
   CER_FROM_OUT_SID;
   COLL_CODE;
