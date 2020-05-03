@@ -109,6 +109,16 @@
                 <i class="ik ik-calendar"></i>
               </a>
             </div>
+            <div class="submenu-content">
+              <a
+                routerLinkActive="active"
+                [routerLink]="['/wafi/personal/managerial-duties']"
+                class="menu-item"
+              >
+                <span class="text-eng">{{ "wafi.managerialduties" | translate }}</span>
+                <i class="ik ik-user-check"></i>
+              </a>
+            </div>
 
             <div class="submenu-content">
               <a routerLinkActive="active" [routerLink]="['/wafi/personal/salaries']" class="menu-item">
@@ -140,6 +150,22 @@
 
             <div class="submenu-content">
               <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-custody']" class="menu-item">
+              <a
+                routerLinkActive="active"
+                [routerLink]="['/wafi/administrative/penalty-discount']"
+                class="menu-item"
+              >
+                <span class="text-eng">{{ "wafi.penaltydiscount" | translate }}</span>
+                <i class="ik ik-user-check"></i>
+              </a>
+            </div>
+
+            <div class="submenu-content">
+              <a
+                routerLinkActive="active"
+                [routerLink]="['/wafi/administrative/emp-custody']"
+                class="menu-item"
+              >
                 <span class="text-eng">{{
                   "wafi.Employeecustody" | translate
                 }}</span>
