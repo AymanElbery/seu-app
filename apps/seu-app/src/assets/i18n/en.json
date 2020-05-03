@@ -225,7 +225,8 @@
         "resume_ar": "Doctor Resume in Arabic",
         "resume_en": "Doctor Resume in English",
         "enquries": "Chatbot inquiries",
-        "ssoidentity": "sso Support"
+        "ssoidentity": "sso Support",
+        "attends": "Attendance System"
     },
     "resume": {
         "title": "Edit Resume in Arabic",
@@ -263,7 +264,7 @@
         "unreply": "Un Replied",
         "email": "Answer Employee",
         "replyMsg": "Message Answer",
-        "all_emp" : "All Employees",
+        "all_emp": "All Employees",
         "messageTime": "Message Time",
         "replyTime": "Answer Time"
     },
