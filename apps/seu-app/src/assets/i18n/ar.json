@@ -1059,7 +1059,27 @@
         "EMP_SLRY_YEAR": "السنة",
         "EmployeeVouchers": "البدلات و المكافاَت",
         "administrative": "إستعلاماتي",
-        "back": "إلغاء"
+        "back": "إلغاء",
+        "penaltydiscount": "Penalty Discount",
+        "managerialduties": "Managerial Duties",
+        "UpdateInfo": "Update Info",
+        "updatedsuccess": "Updated Success",        
+        "poersonalemail": "Personal E-Mail",
+        "Mobile": "Mobile",
+        "AlternativePhone": "Alternative Phone",
+        "address": "Address",
+        "addressEN": "Address Eng",
+        "comminicationlanguage": "Comminication Language",
+        "position": "Position",        
+        "decisionDate": "Decision Date",
+        "serviceSeq": "Service Seq", 
+        "absenceDateH": "Absence DateH", 
+        "absentTypeDesc": "Absent Type Desc", 
+        "absentDay": "Absent Day", 
+        "absentHour": "Absent Hour", 
+        "decisionDateH": "Decision DateH", 
+        "inService": "in Service",
+        "print": "Print" 
     },
     "tasks": {
         "description": "الوصف",
@@ -1117,5 +1137,6 @@
         "searchdata": "سجل البحث",
         "pre_requesr": "الطلبات السابقة",
         "pre_requests": "الطلبات السابقة"
+        
     }
 }
