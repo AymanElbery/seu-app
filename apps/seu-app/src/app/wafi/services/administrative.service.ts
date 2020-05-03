@@ -35,6 +35,7 @@ export class AdministrativeService {
     return this.wafihttRequest.postRequest_obj('emp/get-penalty-discounts', {});
   }
   getpandiscreport(decisionNo,decisionDate,absentDate) {
+    decisionDate = "";
     return this.wafihttRequest.postRequest_obj('emp/print-vacation-penalty_discount', {decisionNo,decisionDate,absentDate});
   }
 

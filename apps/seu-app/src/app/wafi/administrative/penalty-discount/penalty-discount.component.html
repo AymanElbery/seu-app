@@ -34,8 +34,8 @@
             <td>{{panaltylist.absentHour}}</td>        
             <td>{{panaltylist.decisionNo}}</td>
             <td>{{panaltylist.decisionDateH}}</td>
-            <td>{{panaltylist.inService}}</td>
-           <td class="prin"><button *ngIf="panaltylist.deductionType=='2'" class="btn"  (click)="printreport(panaltylist.decisionNo,panaltylist.absenceDateH,panaltylist.absenceDateH)" >{{"wafi.print" | translate}}<i class="ik ik-save"></i> </button></td>
+            <td>{{panaltylist.inService ? "YES" : "NO"}}</td>
+           <td class="prin"><button *ngIf="panaltylist.deductionType=='2'" class="btn"  (click)="printreport(panaltylist.decisionNo,panaltylist.decisionDate,panaltylist.absenceDate)" >{{"wafi.print" | translate}}<i class="ik ik-save"></i> </button></td>
 
         </tbody>
       </table>
