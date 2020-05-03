@@ -108,7 +108,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="address">{{ "resume.address" | translate}}</label>
-            <input (input)="hideAddressMessages()" type="text" [ngClass]="{'errorBorder': addressError}" class="form-control" id="address" [(ngModel)]="address" name="address">
+            <input type="text" [ngClass]="{'errorBorder': addressError}" class="form-control" id="address" [(ngModel)]="address" name="address">
             <span *ngIf="addressError" class="text text-danger">{{addressError}}</span>
           </div>
         </div>
