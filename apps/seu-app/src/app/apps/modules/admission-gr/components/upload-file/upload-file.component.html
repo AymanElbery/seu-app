@@ -12,9 +12,9 @@
         </ul>
 
       </div>
-      <!-- <div *ngIf="messageNodata" style="text-align: right" [ngClass]="'alert alert-info'" role="alert">
-        <span>{{messageNodata}}</span><br>
-      </div> -->
+      <div  style="text-align: right" [ngClass]="'alert alert-info'" role="alert">
+        <span style="color:#F28D1E ;">*   {{"messagevalidation"|translate}} </span>
+      </div>
     </div>
   </div>
 
@@ -69,7 +69,9 @@
       <div class="row ser-block">
         <div class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"ssn_copy"|translate}} <span class="reqstart">*</span></h6>
+            <h6>{{"ssn_copy"|translate}} <span class="reqstart">*</span>&nbsp; &nbsp;     
+            <a *ngIf="info.ssn_copy"  href="{{info.ssn_copy}}" target="_blank" class="anchtag">{{"downlaodfile"|translate}}</a>                        
+            </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="ssn_copy" id="file" type="file" accept="*/*"
                 (change)="handleFileInput($event,'ssn_copy')" />
@@ -80,7 +82,11 @@
         </div>
         <div class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"bacholar_copy"|translate}} <span class="reqstart">*</span></h6>
+            <h6>{{"bacholar_copy"|translate}} <span class="reqstart">*</span>
+              &nbsp; &nbsp;     
+              <a *ngIf="info.bacholar_copy"  href="{{info.bacholar_copy}}" target="_blank" class="anchtag">{{"downlaodfile"|translate}}</a>                    
+  
+            </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="bacholar_copy" id="file" type="file" accept="*/*"
                 (change)="handleFileInput($event,'bacholar_copy')" />
@@ -94,7 +100,9 @@
       <div class="row ser-block">
         <div class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"academic_copy"|translate}} <span class="reqstart">*</span></h6>
+            <h6>{{"academic_copy"|translate}} <span class="reqstart">*</span>
+              &nbsp; &nbsp;     
+              <a *ngIf="info.academic_copy"  href="{{info.academic_copy}}" target="_blank"  class="anchtag">{{"downlaodfile"|translate}}</a>  </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="academic_copy" id="file" type="file" accept="*/*"
                 (change)="handleFileInput($event,'academic_copy')" />
@@ -105,7 +113,10 @@
         </div>
         <div class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"lang_test_copy"|translate}} </h6>
+            <h6>{{"lang_test_copy"|translate}} 
+              &nbsp; &nbsp;     
+              <a *ngIf="info.lang_test_copy" href="{{info.lang_test_copy}}" target="_blank"  class="anchtag">{{"downlaodfile"|translate}}</a>
+            </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="lang_test_copy" id="file" type="file" accept="*/*"
                 (change)="handleFileInput($event,'lang_test_copy')" />
@@ -119,7 +130,10 @@
       <div class="row ser-block">
         <div class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"others_copy"|translate}}</h6>
+            <h6>{{"others_copy"|translate}}
+              &nbsp; &nbsp;     
+              <a *ngIf="info.others_copy" href="{{info.others_copy}}" target="_blank" class="anchtag">{{"downlaodfile"|translate}}</a>
+            </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="others_copy" id="file" type="file" accept="*/*"
                 (change)="handleFileInput($event,'others_copy')" />
@@ -130,7 +144,10 @@
         </div>
         <div class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"capabilites_copy"|translate}}</h6>
+            <h6>{{"capabilites_copy"|translate}}
+              &nbsp; &nbsp;     
+              <a *ngIf="info.capabilites_copy" href="{{info.capabilites_copy}}" target="_blank" class="anchtag">{{"downlaodfile"|translate}}</a>
+            </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="capabilites_copy" id="file" type="file" accept="*/*"
                 (change)="handleFileInput($event,'capabilites_copy')" />
@@ -144,7 +161,10 @@
       <div class="row ser-block">
         <div class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"recommedenation_copy"|translate}} </h6>
+            <h6>{{"recommedenation_copy"|translate}} 
+              &nbsp; &nbsp;     
+              <a *ngIf="info.recommedenation_copy" href="{{info.recommedenation_copy}}" target="_blank" class="anchtag">{{"downlaodfile"|translate}}</a>
+            </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="recommedenation_copy" id="file" type="file" accept="*/*"
                 (change)="handleFileInput($event,'recommedenation_copy')" />
@@ -155,7 +175,10 @@
         </div>
         <div class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"work_copy"|translate}}</h6>
+            <h6>{{"work_copy"|translate}}
+              &nbsp; &nbsp;     
+              <a *ngIf="info.work_copy" href="{{info.work_copy}}" target="_blank" class="anchtag">{{"downlaodfile"|translate}}</a>
+            </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="work_copy" id="file" type="file" accept="*/*"
                 (change)="handleFileInput($event,'work_copy')" />
@@ -169,7 +192,10 @@
       <div class="row ser-block">
         <div *ngIf="CER_FROM_OUT_SID=='Yes'" class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"equal_certificates_copy"|translate}} <span class="reqstart">*</span></h6>
+            <h6>{{"equal_certificates_copy"|translate}} <span class="reqstart">*</span>
+              &nbsp; &nbsp;     
+              <a *ngIf="info.equal_certificates_copy" href="{{info.equal_certificates_copy}}" target="_blank" class="anchtag">{{"downlaodfile"|translate}}</a>
+            </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="equal_certificates_copy" id="file" type="file"
                 accept="*/*" (change)="handleFileInput($event,'equal_certificates_copy')" />
@@ -180,7 +206,10 @@
         </div>
         <div *ngIf="COLL_CODE=='HS'" class=" col-md-6 col-sm-12">
           <div class="state">
-            <h6>{{"medical_copy"|translate}} <span class="reqstart">*</span></h6>
+            <h6>{{"medical_copy"|translate}} <span class="reqstart">*</span>
+              &nbsp; &nbsp;     
+              <a *ngIf="info.medical_copy" href="{{info.medical_copy}}" target="_blank" class="anchtag">{{"downlaodfile"|translate}}</a>
+            </h6>
             <div class="custom-file">
               <input class="custom-file-input" name="medical_copy" id="file" type="file" accept="*/*"
                 (change)="handleFileInput($event,'medical_copy')" />

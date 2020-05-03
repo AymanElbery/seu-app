@@ -79,5 +79,7 @@
     "equalcertificatescopyrequired": "Equal certificates copy required",
     "medicalcopyreq": "Medical copy required",
     "AdmissionGRResult": "Admission GR Result",
-    "service_closed" : "Service is closed"
+    "service_closed" : "Service is closed",
+    "downloaddfile":"Download file",
+    "messagevalidation":"Must be fill all required fields"
 }
