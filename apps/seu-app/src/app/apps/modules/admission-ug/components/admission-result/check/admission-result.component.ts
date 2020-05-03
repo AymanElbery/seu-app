@@ -24,11 +24,17 @@ export class AdmissionResultComponent {
     if (this.admissionUgservice.checkResultData) {
       this.router.navigate(['/apps/admission-ug/display-result']);
     }
-
     this.AddReqForm = fb.group({
       'ssn': ['', [Validators.required, Validators.minLength(10), Validators.minLength(10)]],
       'capcha': ['', [Validators.required]]
     });
+    if (this.admissionUgservice.isLoggedIn) {
+      this.AddReqForm.controls['ssn'].setValue(this.admissionUgservice.LoggedInUser['SSN']);
+      this.AddReqForm.controls['capcha'].setValue(this.admissionUgservice.LoggedInToken);
+      this.onFormSubmit();
+    }
+
+
 
     this.environment = environment;
   }
@@ -46,7 +52,7 @@ export class AdmissionResultComponent {
     this.admissionUgservice.getresstatus(this.AddReqForm.value).subscribe(resdttaus => {
       const status = resdttaus['status'];
       if (status == true) {
-        if (false && !resdttaus['data']['student_data']) {
+        if (!resdttaus['data']['student_data']) {
           this.toastr.push([{ type: 'error', 'body': resdttaus['data']['message'] }]);
         } else {
           this.admissionUgservice.checkResultData = (resdttaus as any).data;

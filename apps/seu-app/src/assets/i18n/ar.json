@@ -225,7 +225,8 @@
         "resume_ar": "السيرة الذاتية باللغة العربية",
         "resume_en": "السيرة الذاتية باللغة الإنجليزية",
         "enquries" : "استفسارات الشات بوت",
-        "ssoidentity":"دعم الدخول الموحد"
+        "ssoidentity":"دعم الدخول الموحد",
+        "attends":"نظام التحضير"
     },
     "resume": {
         "title": " السيرة الذاتية باللغة العربية",
@@ -1064,7 +1065,27 @@
         "EMP_SLRY_YEAR": "السنة",
         "EmployeeVouchers": "البدلات و المكافاَت",
         "administrative": "إستعلاماتي",
-        "back": "إلغاء"
+        "back": "إلغاء",
+        "penaltydiscount": "حسم من الأجازة العادية",
+        "managerialduties": "المناصب الإدارية",
+        "UpdateInfo": "تحديث البيانات",
+        "updatedsuccess": "تم التحديث بنجاح",        
+        "poersonalemail": "البريد الإلكتروني الشخصي",
+        "Mobile": "الجوال",
+        "AlternativePhone": "الهاتف",
+        "address": "العنوان",
+        "addressEN": "العنوان بالإنجليزية",
+        "comminicationlanguage": "لغة التواصل",
+        "position": "المنصب الإداري",        
+        "decisionDate": "تاريخ القرار",
+        "serviceSeq": "ت", 
+        "absenceDateH": "تاريخ التنفيذ", 
+        "absentTypeDesc": "نوع الخصم", 
+        "absentDay": "عدد الايام", 
+        "absentHour": "الساعات", 
+        "decisionDateH": "رقم القرار", 
+        "inService": "ضمن الخدمة",
+        "print": "طباعة" 
     },
     "tasks": {
         "description": "الوصف",
@@ -1122,5 +1143,6 @@
         "searchdata": "سجل البحث",
         "pre_requesr": "الطلبات السابقة",
         "pre_requests": "الطلبات السابقة"
+        
     }
 }

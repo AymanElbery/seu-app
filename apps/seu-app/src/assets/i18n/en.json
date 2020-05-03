@@ -225,7 +225,8 @@
         "resume_ar": "Doctor Resume in Arabic",
         "resume_en": "Doctor Resume in English",
         "enquries": "Chatbot inquiries",
-        "ssoidentity": "sso Support"
+        "ssoidentity": "sso Support",
+        "attends": "Attendance System"
     },
     "resume": {
         "title": "Edit Resume in Arabic",
@@ -269,7 +270,7 @@
         "unreply": "Un Replied",
         "email": "Answer Employee",
         "replyMsg": "Message Answer",
-        "all_emp" : "All Employees",
+        "all_emp": "All Employees",
         "messageTime": "Message Time",
         "replyTime": "Answer Time"
     },
@@ -1064,7 +1065,27 @@
         "EMP_SLRY_YEAR": "Year",
         "EmployeeVouchers": "Employee Vouchers",
         "administrative": "Administrative",
-        "back": "Back"
+        "back": "Back",
+        "penaltydiscount": "Penalty Discount",
+        "managerialduties": "Managerial Duties",
+        "UpdateInfo": "Update Info",
+        "updatedsuccess": "Data has been updated",
+        "poersonalemail": "Personal E-Mail",
+        "Mobile": "Mobile",
+        "AlternativePhone": "Alternative Phone",
+        "address": "Address",
+        "addressEN": "Address (English)",
+        "comminicationlanguage": "Comminication Language",
+        "position": "Position",
+        "decisionDate": "Decision Date",
+        "serviceSeq": "Service Seq",
+        "absenceDateH": "Absence Date",
+        "absentTypeDesc": "Absent Type Desc",
+        "absentDay": "Absent Day",
+        "absentHour": "Absent Hour",
+        "decisionDateH": "Decision Date",
+        "inService": "in Service",
+        "print": "Print"
     },
     "tasks": {
         "description": "Description",

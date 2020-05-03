@@ -109,6 +109,16 @@
                 <i class="ik ik-calendar"></i>
               </a>
             </div>
+            <div class="submenu-content">
+              <a
+                routerLinkActive="active"
+                [routerLink]="['/wafi/personal/managerial-duties']"
+                class="menu-item"
+              >
+                <span class="text-eng">{{ "wafi.managerialduties" | translate }}</span>
+                <i class="ik ik-user-check"></i>
+              </a>
+            </div>
 
             <div class="submenu-content">
               <a routerLinkActive="active" [routerLink]="['/wafi/personal/salaries']" class="menu-item">
@@ -139,7 +149,23 @@
             </div>
 
             <div class="submenu-content">
-              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-custody']" class="menu-item">
+              
+              <a
+                routerLinkActive="active"
+                [routerLink]="['/wafi/administrative/penalty-discount']"
+                class="menu-item"
+              >
+                <span class="text-eng">{{ "wafi.penaltydiscount" | translate }}</span>
+                <i class="ik ik-user-check"></i>
+              </a>
+            </div>
+
+            <div class="submenu-content">
+              <a
+                routerLinkActive="active"
+                [routerLink]="['/wafi/administrative/emp-custody']"
+                class="menu-item"
+              >
                 <span class="text-eng">{{
                   "wafi.Employeecustody" | translate
                 }}</span>
@@ -473,9 +499,9 @@
               <i class="ik ik-tablet"></i>
             </a>
 
-            <a class="menu-item" target="_blank" href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
-              >{{ "menu.BLACKBOARD" | translate }} <i class="ik ik-tablet"></i
-            ></a>
+            <a class="menu-item" target="_blank"
+              href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab">{{ "menu.BLACKBOARD" | translate }}
+              <i class="ik ik-tablet"></i></a>
 
             <a class="menu-item" target="_blank" href="http://forum.seu.edu.sa">{{ "menu.Forum" | translate }} <i
                 class="ik ik-tablet"></i></a>
@@ -565,7 +591,7 @@
           </a>
         </div>
 
-        <div *ngIf="userService.userData && userService.userData.activeRole == 'Instructor'" class="nav-item has-sub open">
+        <div *ngIf="userService.userData && userService.userData.activeRole == 'Instructor'" class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "menu.resume" | translate }} </span>
             <i class="ik ik-book-open"></i>
@@ -583,12 +609,16 @@
         <div *ngIf="
             userService.userData &&
             userService.userData.activeRole == 'Instructor'
-          " class="nav-item has-sub open">
+          " class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "menu.PublicServices" | translate }} </span>
             <i class="ik ik-book-open"></i>
           </a>
           <div class="submenu-content">
+            <a target="_blank" href="https://seuapps.seu.edu.sa/attends" class="menu-item">
+              {{"menu.attends" | translate}} 
+              <i class="ik ik-calendar"></i>
+            </a>
             <a target="_blank"
               href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
               class="menu-item">

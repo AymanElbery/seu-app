@@ -31,7 +31,7 @@ export class GrLoginComponent implements OnInit {
 
   }
   ngOnInit() {
-//this.admissionGRservice.LoggedInUser["exa"];
+    //this.admissionGRservice.LoggedInUser["exa"];
   }
 
   resolved(captchaResponse: string) {
@@ -46,24 +46,21 @@ export class GrLoginComponent implements OnInit {
     this.submitted = true;
     this.admissionGRservice.getloginstatus(this.AddReqForm.value).subscribe(reslogin => {
       if (reslogin['data']['token']) {
-        this.globalService.setItem(this.admissionGRservice.tokenKey, (reslogin as any).data["token"]);
-        this.submitted = false;
+        this.globalService.setItem(this.admissionGRservice.tokenKey, reslogin['data']["token"]);
+        this.admissionGRservice.messages = reslogin['messages'];
         this.router.navigate(['/apps/admission-gr/gr-verification/'])
       } else if (!reslogin['status']) {
         this.toastr.push(reslogin['messages']);
         this.recaptchaRef.reset();
-        this.submitted = false;
-
       } else {
         this.toastr.push([{ type: 'error', 'body': reslogin['data']['message'] }]);
         this.recaptchaRef.reset();
-        this.submitted = false;
       }
+      this.submitted = false;
     }, error => {
       this.toastr.tryagain();
       this.submitted = false;
       this.recaptchaRef.reset();
-
     }
     );
 
