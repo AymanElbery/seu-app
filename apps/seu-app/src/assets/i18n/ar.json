@@ -714,7 +714,12 @@
             "job_yearReq": "Job Year Required",
             "job_locationReq": "Job Locatioon Required",
             "job_titleReq": "Job Title Required",
-            "work_cityReq": "Work City Required"
+            "work_cityReq": "Work City Required",
+            "job_name": "Job Owner Name Required",
+            "job_title2": "Job  Title Required",
+            "phone2": "Job Owner Phone Required",
+            "email2": "Job Owner EMail Required",
+            "emailvalidate":"It is not a valid email !"
         },
         "training_request": {
             "title": "طلب التدريب الميداني",

@@ -116,7 +116,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"services.student_info.ar_name"|translate}}</h6>
-                <input name="name_ar" #name_ar="ngModel" [(ngModel)]="stdData.name_ar" class="form-control">
+                <input appAlphabateOnly name="name_ar" #name_ar="ngModel" [(ngModel)]="stdData.name_ar"  class="form-control">
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -125,7 +125,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"services.student_info.en_name"|translate}}</h6>
-                <input name="name_en" #name_en="ngModel" [(ngModel)]="stdData.name_en" class="form-control">
+                <input appAlphabateOnly name="name_en" #name_en="ngModel" [(ngModel)]="stdData.name_en" class="form-control">
                 <!-- <h5>{{student.std_fees}} </h5> -->
               </div>
               <div class="progress progress-sm">
@@ -137,7 +137,10 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"general.email"|translate}}</h6>
-                <input name="email" #email="ngModel" [(ngModel)]="stdData.email" class="form-control">
+                <input name="email" #email="ngModel" [(ngModel)]="stdData.email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+              </div>
+              <div *ngIf="email.touched">                
+                <p style="color:orangered;" *ngIf="email.errors?.pattern">{{"services.student_info.emailvalidate"|translate}}</p>
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -146,7 +149,7 @@
             <div class=" col-md-4 col-sm-12">
               <div class="state">
                 <h6>{{"services.student_info.phone_no"|translate}}</h6>
-                <input name="phone" #phone="ngModel" [(ngModel)]="stdData.phone" class="form-control">
+                <input name="phone" #phone="ngModel" [(ngModel)]="stdData.phone" (keypress)="keyPress($event)" maxlength="10" class="form-control">
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -154,7 +157,7 @@
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.grad_term"|translate}}</h6>
+                <h6>{{"services.student_info.grad_term"|translate}} <span class="reqstart">*</span></h6>
                 <select required name="graduation_term" #graduation_term="ngModel" [(ngModel)]="stdData.graduation_term"
                   class="form-control" [class.is-invalid]="!isValid && stdData.graduation_term== ''">
 
@@ -172,7 +175,7 @@
           <div class="row ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> {{"services.student_info.pic"|translate}} </h6>
+                <h6> {{"services.student_info.pic"|translate}} <span class="reqstart">*</span> </h6>
                 <input required class="form-control" name="image" id="image" type="file" accept="*/*"
                   (change)="handleInputChange($event,'image')" />
                 <h6 *ngIf="photoDownload"> <a href="{{photoDownload}}"> تحميل</a></h6>
@@ -183,7 +186,7 @@
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> {{"services.student_info.cv"|translate}}</h6>
+                <h6> {{"services.student_info.cv"|translate}} <span class="reqstart">*</span> </h6>
                 <input required class="form-control" name="cv" id="cv" type="file" accept="*/*"
                   (change)="handleInputChange($event,'cv')" />
                 <h6 *ngIf="cvDownload"> <a href="{{cvDownload}}"> تحميل</a></h6>
@@ -201,7 +204,7 @@
           <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.job_status"|translate}}</h6>
+                <h6>{{"services.student_info.job_status"|translate}} <span class="reqstart">*</span></h6>
                 <select required name="job_status" #job_status="ngModel" [(ngModel)]="stdData.job_status" (change)="getjobstatus($event.target.value)"
                   class="form-control" [class.is-invalid]="!isValid && stdData.job_status== ''">
 
@@ -220,7 +223,7 @@
           <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.sector"|translate}}</h6>
+                <h6>{{"services.student_info.sector"|translate}} <span class="reqstart">*</span></h6>
                 <select  name="job_type" #job_type="ngModel" [(ngModel)]="stdData.job_type" class="form-control"
                  >
 
@@ -235,7 +238,7 @@
             
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.before_or_after"|translate}}</h6>
+                <h6>{{"services.student_info.before_or_after"|translate}} <span class="reqstart">*</span></h6>
                 <select  name="job_time" #job_time="ngModel" [(ngModel)]="stdData.job_time" class="form-control"
                   >
 
@@ -250,8 +253,11 @@
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.job_year"|translate}}</h6>
-                <input name="job_year" #job_year="ngModel" [(ngModel)]="stdData.job_year" class="form-control">
+                <h6>{{"services.student_info.job_year"|translate}} <span class="reqstart">*</span></h6>
+                <!-- <input name="job_year" #job_year="ngModel" [(ngModel)]="stdData.job_year" class="form-control"> -->
+                <ng-select [items]="yearlist" bindLabel="value" autofocus bindValue="id"
+                name="job_year" #job_year="ngModel" [(ngModel)]="stdData.job_year" >
+              </ng-select>
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -262,7 +268,7 @@
           <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.job_side"|translate}}</h6>
+                <h6>{{"services.student_info.job_side"|translate}} <span class="reqstart">*</span></h6>
                 <input name="job_location" #job_location="ngModel" [(ngModel)]="stdData.job_location"
                   class="form-control">
               </div>
@@ -272,7 +278,7 @@
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.job_title"|translate}} </h6>
+                <h6>{{"services.student_info.job_title"|translate}} <span class="reqstart">*</span></h6>
                 <input name="job_title" #job_title="ngModel" [(ngModel)]="stdData.job_title" class="form-control">
 
               </div>
@@ -282,7 +288,7 @@
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.work_address"|translate}}</h6>
+                <h6>{{"services.student_info.work_address"|translate}}<span class="reqstart">*</span> </h6>
                 <select  name="work_city" #work_city="ngModel" [(ngModel)]="stdData.work_city"
                   class="form-control">
 
@@ -307,8 +313,8 @@
           <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6> {{"services.student_info.name"|translate}}</h6>
-                <input type="text" name="job_name" #job_name="ngModel" [(ngModel)]="stdData.job_name" />
+                <h6> {{"services.student_info.name"|translate}} <span class="reqstart">*</span></h6>
+                <input  appAlphabateOnly type="text" name="job_name" #job_name="ngModel" [(ngModel)]="stdData.job_name" class="form-control" />
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -316,8 +322,8 @@
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.job_title"|translate}}</h6>
-                <input type="text" name="job_title2" #job_title2="ngModel" [(ngModel)]="stdData.job_title2" />
+                <h6>{{"services.student_info.job_title"|translate}} <span class="reqstart">*</span></h6>
+                <input  type="text" name="job_title2" #job_title2="ngModel" [(ngModel)]="stdData.job_title2" class="form-control" />
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -329,8 +335,8 @@
           <div class="row  ser-block">
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"services.student_info.phone_no"|translate}}</h6>
-                <input type="text" name="phone2" #phone2="ngModel" [(ngModel)]="stdData.phone2" />
+                <h6>{{"services.student_info.phone_no"|translate}} <span class="reqstart">*</span></h6>
+                <input  type="text" name="phone2" #phone2="ngModel" [(ngModel)]="stdData.phone2" class="form-control" (keypress)="keyPress($event)" maxlength="10" />
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
@@ -338,8 +344,11 @@
             </div>
             <div class=" col-md-4 col-sm-12">
               <div class="state">
-                <h6>{{"general.email"|translate}}</h6>
-                <input type="text" name="email2" #email2="ngModel" [(ngModel)]="stdData.email2" />
+                <h6>{{"general.email"|translate}} <span class="reqstart">*</span></h6>
+                <input  type="text" name="email2" #email2="ngModel" [(ngModel)]="stdData.email2" class="form-control"   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+              </div>
+              <div *ngIf="email2.touched">                
+                <p style="color:orangered;" *ngIf="email2.errors?.pattern">{{"services.student_info.emailvalidate"|translate}}</p>
               </div>
               <div class="progress progress-sm">
                 <div class="progress-bar bg-info"></div>
