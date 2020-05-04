@@ -62,6 +62,7 @@ export class ResumeComponent{
   agree = false;
   pidm;
   sectionEdit = true;
+  facultyEdit = true;
   
 
   constructor(
@@ -77,6 +78,56 @@ export class ResumeComponent{
     this.id = this.userService.userData.id;
     this.pidm = this.userService.userData.PIDM;
 
+    this.getFaculty();
+    this.getDepartment();
+    
+    this.resumeService.getStuffByID(this.id).subscribe(
+      (response: any) => {
+        if (response) {
+          this.name = response.data.EMP_NAME;
+          this.email = response.data.WORK_EMAIL;
+          this.jobTitle = response.data.CARRER_DESC;
+          this.getResumeByEmail(this.email);
+        }
+      },
+      error => {}
+    );
+    
+    this.resumeService.getCountries().subscribe(
+      (response: any) => {
+        if (response) {
+          this.countries = response.data;
+        }
+      },
+      error => {}
+    );
+  }
+
+  getFaculty(){
+    this.resumeService.getFac(this.pidm).subscribe(
+      (response: any) => {
+        if (response) {
+          if (response.data == null) {
+            this.facultyEdit = true;
+          } else {
+            this.facultyEdit = false;
+            let facCode = response.data.DEP_CODE;
+            this.resumeService.getFacStr(facCode).subscribe(
+              (response: any) => {
+                if (response) {
+                  this.faculty = response.data.COLL_TITLE_AR;
+                }
+              },
+              error => {}
+            );
+          }
+        }
+      },
+      error => {}
+    );
+  }
+
+  getDepartment(){
     this.resumeService.getDept(this.pidm).subscribe(
       (response: any) => {
         if (response) {
@@ -98,29 +149,7 @@ export class ResumeComponent{
       },
       error => {}
     );
-    this.resumeService.getStuffByID(this.id).subscribe(
-      (response: any) => {
-        if (response) {
-          this.name = response.data.EMP_NAME;
-          this.email = response.data.WORK_EMAIL;
-          this.jobTitle = response.data.CARRER_DESC;
-          this.faculty = response.data.ACTUAL_DEPT_DESC.split("-")[1];
-          this.getResumeByEmail(this.email);
-        }
-      },
-      error => {}
-    );
-    
-    this.resumeService.getCountries().subscribe(
-      (response: any) => {
-        if (response) {
-          this.countries = response.data;
-        }
-      },
-      error => {}
-    );
   }
-
 
   agreeCond(event: any){
     this.agree = (event == "A") ? true : false;

@@ -70,10 +70,17 @@
         </div>
       </div>
       <div class="row row-form" >
-        <div class="col-md-6">
+        <div *ngIf="!facultyEdit" class="col-md-6">
           <div class="form-group">
             <label for="faculty">{{ "resume.faculty" | translate}}  <span class="text-danger">*</span></label>
             <input (input)="hideFacultyMessages()" disabled required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
+            <span *ngIf="facultyError" class="text text-danger">{{facultyError}}</span>
+          </div>
+        </div>
+        <div *ngIf="facultyEdit" class="col-md-6">
+          <div class="form-group">
+            <label for="faculty">{{ "resume.faculty" | translate}}  <span class="text-danger">*</span></label>
+            <input (input)="hideFacultyMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
             <span *ngIf="facultyError" class="text text-danger">{{facultyError}}</span>
           </div>
         </div>

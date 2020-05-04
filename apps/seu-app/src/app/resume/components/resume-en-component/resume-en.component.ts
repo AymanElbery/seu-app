@@ -62,6 +62,7 @@ export class ResumeEnComponent{
   agree = false;
   pidm;
   sectionEdit = true;
+  facultyEdit = true;
 
   constructor(
     public userService: UserService, 
@@ -75,7 +76,57 @@ export class ResumeEnComponent{
   ) {
     this.id = this.userService.userData.id;
     this.pidm = this.userService.userData.PIDM;
+    this.jobTitle = this.userService.userData.role;
 
+    this.getFaculty();
+    this.getDepartment();
+    
+    this.resumeService.getStuffByID(this.id).subscribe(
+      (response: any) => {
+        if (response) {
+          this.email = response.data.WORK_EMAIL;
+          this.name = response.data.EMP_NAME_E;
+          this.getResumeByEmail(this.email);
+        }
+      },
+      error => {}
+    );
+    
+    this.resumeService.getCountries().subscribe(
+      (response: any) => {
+        if (response) {
+          this.countries = response.data;
+        }
+      },
+      error => {}
+    );
+  }
+
+  getFaculty(){
+    this.resumeService.getFac(this.pidm).subscribe(
+      (response: any) => {
+        if (response) {
+          if (response.data == null) {
+            this.facultyEdit = true;
+          } else {
+            this.facultyEdit = false;
+            let facCode = response.data.DEP_CODE;
+            this.resumeService.getFacStr(facCode).subscribe(
+              (response: any) => {
+                if (response) {
+                  this.faculty = response.data.COLL_TITLE_EN;
+                }
+              },
+              error => {}
+            );
+          }
+        }
+      },
+      error => {}
+    );
+  }
+
+  getDepartment(){
     this.resumeService.getDept(this.pidm).subscribe(
       (response: any) => {
         if (response) {
@@ -93,25 +144,6 @@ export class ResumeEnComponent{
               error => {}
             );
           }
-        }
-      },
-      error => {}
-    );
-    this.resumeService.getStuffByID(this.id).subscribe(
-      (response: any) => {
-        if (response) {
-          this.email = response.data.WORK_EMAIL;
-          this.name = response.data.EMP_NAME_E;
-          this.getResumeByEmail(this.email);
-        }
-      },
-      error => {}
-    );
-    
-    this.resumeService.getCountries().subscribe(
-      (response: any) => {
-        if (response) {
-          this.countries = response.data;
         }
       },
       error => {}

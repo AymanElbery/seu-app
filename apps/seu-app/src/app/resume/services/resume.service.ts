@@ -80,4 +80,18 @@ export class ResumeService {
             headers: this.headers,
         });
     }
+
+    getFac(pidm) {
+        return this.http.get(this.URL + "resume/getFac/"+pidm,
+        {
+            headers: this.headers,
+        });
+    }
+
+    getFacStr(fac) {
+        return this.http.get(this.URL + "resume/getFacStr/"+fac,
+        {
+            headers: this.headers,
+        });
+    }
 }
