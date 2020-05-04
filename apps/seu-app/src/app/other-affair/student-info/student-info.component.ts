@@ -17,7 +17,7 @@ import { TranslateService } from '@ngx-translate/core';
   ]
 })
 export class StudentInfoComponent implements OnInit {
-
+  yearlist;
   reqData;
   msgs;
   cvDownload: string;
@@ -82,6 +82,7 @@ showDetail=false;
     this.academicService.getِRequests().then(
       res => {
         this.reqData = (res as any).data;
+        this.yearlist=(res as any).data["yearslist"];
         this.msgs = (res as any).messages;
         this.studentInfo = this.reqData.user;
         this.stdData.name_ar = this.studentInfo.NAME_AR;
@@ -148,11 +149,33 @@ showDetail=false;
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.work_cityReq") }]);
         return false;
       }
+      if (!this.stdData.job_name) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_name") }]);
+        return false;
+      }
+      if (!this.stdData.job_title2) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_title2") }]);
+        return false;
+      }
+      if (!this.stdData.phone2) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.phone2") }]);
+        return false;
+      }
+      if (!this.stdData.email2) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.email2") }]);
+        return false;
+      }
   }
 
     this.addRequest(this.stdData);
   }
-
+ keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+  }
 
   getjobstatus(workstatus){
    //console.log("get data",workstatus);

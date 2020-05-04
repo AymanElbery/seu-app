@@ -489,7 +489,19 @@
             "oname": "name",
             "ojob": " Job title",
             "omobile": "mobile",
-            "email": "email "
+            "email": "email",
+            "job_sector": "Employement Sector Required",
+            "year_job": "Job year Required",
+            "job_com": "Job com  Required",
+            "job_promo": "Upgrade  Required",
+            "job_promo_year": "Upgrade year Required",
+            "job_loc": "Job Location Required",
+            "employer_name": "Employer Name  Required",
+            "employer_job_title": "Employer job title  Required",
+            "employer_phone": "Employer phone Required",
+            "employer_email": "Employer Email  Required",
+            "emailvalidate": "It is not a valid email !"
+            
         },
         "missing_card": {
             "title": "Lost Card Replacment Request",
@@ -720,7 +732,12 @@
             "job_yearReq": "Job Year Required",
             "job_locationReq": "Job Locatioon Required",
             "job_titleReq": "Job Title Required",
-            "work_cityReq": "Work City Required"
+            "work_cityReq": "Work City Required",
+            "job_name": "Job Owner Name Required",
+            "job_title2": "Job  Title Required",
+            "phone2": "Job Owner Phone Required",
+            "email2": "Job Owner EMail Required",
+            "emailvalidate":"It is not a valid email !"
         },
         "training_request": {
             "title": "Field training request",
