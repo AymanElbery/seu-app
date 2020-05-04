@@ -84,5 +84,7 @@
     "updaterequest": "تعديل طلب",
     "time_finished": "انتهي وقت القبول",
     "verification_code": "الرجاء فحص الهاتف للتاكد من كود التحقق",
-    "no_id_for_payment": "لا يوجد رقم جامعي لسداد الرسوم"
+    "no_id_for_payment": "لا يوجد رقم جامعي لسداد الرسوم",
+    "downloaddfile":"Download file",
+    "messagevalidation":"Must be fill all required fields"
 }

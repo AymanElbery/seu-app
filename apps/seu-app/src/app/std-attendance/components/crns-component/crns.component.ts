@@ -22,6 +22,7 @@ export class CrnsComponent{
   today;
   curTime;
   isLoading;
+  id;
   constructor(
     public userService: UserService, 
     private attendanceService: AttendanceService, 
@@ -49,8 +50,8 @@ export class CrnsComponent{
     if (this.curTime.length < 4) {
       this.curTime = this.curTime+"0";
     }
-    let id = this.userService.getActiveRoleDetails().id;
-    this.getAllStdCrns(id);
+    this.id = this.userService.getActiveRoleDetails().id;
+    this.getAllStdCrns(this.id);
   }
 
   getAllStdCrns(id){
@@ -87,6 +88,19 @@ export class CrnsComponent{
             if (response.data.length > 0) {
               crn.active = true;
               crn.code = response.data[0].CODE;
+              
+              this.attendanceService.getSTD(crn.CRN, crn.code, this.id).subscribe(
+                (response: any) => {
+                  if (response) {
+                    if (response.data.length > 0) {
+                      crn.done = true;
+                    }else{
+                      crn.done = false;
+                    }
+                  }
+                },
+                error => {}
+              )
             }else{
               crn.active = false;
             }
@@ -95,6 +109,7 @@ export class CrnsComponent{
         error => {}
       )
     });
+    console.log(crns);
     return crns;
   }
 }

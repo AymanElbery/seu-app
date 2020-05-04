@@ -249,7 +249,13 @@
         "choose_file": "Choose Picture",
         "title_no": "Title No",
         "item_no": "Item No",
-        "agree": "I bear responsibility for the correctness of the data entered above"
+        "agree": "I bear responsibility for the correctness of the data entered above",
+        "work": "Work place",
+        "work_en": "Work place in English",
+        "address": "Address",
+        "address_en": "Address in English",
+        "faculty": "Faculty",
+        "faculty_en": "Faculty in English"
     },
     "enquries": {
         "title": "Inquiries",
@@ -1068,26 +1074,23 @@
         "penaltydiscount": "Penalty Discount",
         "managerialduties": "Managerial Duties",
         "UpdateInfo": "Update Info",
-        "updatedsuccess": "Updated Success",
+        "updatedsuccess": "Data has been updated",
         "poersonalemail": "Personal E-Mail",
         "Mobile": "Mobile",
         "AlternativePhone": "Alternative Phone",
         "address": "Address",
-        "addressEN": "Address Eng",
+        "addressEN": "Address (English)",
         "comminicationlanguage": "Comminication Language",
-        "position": "Position",        
+        "position": "Position",
         "decisionDate": "Decision Date",
-        "serviceSeq": "Service Seq", 
-        "absenceDateH": "Absence DateH", 
-        "absentTypeDesc": "Absent Type Desc", 
-        "absentDay": "Absent Day", 
-        "absentHour": "Absent Hour", 
-        "decisionDateH": "Decision DateH", 
+        "serviceSeq": "Service Seq",
+        "absenceDateH": "Absence Date",
+        "absentTypeDesc": "Absent Type Desc",
+        "absentDay": "Absent Day",
+        "absentHour": "Absent Hour",
+        "decisionDateH": "Decision Date",
         "inService": "in Service",
-        "print": "Print"     
-       
-       
-        
+        "print": "Print"
     },
     "tasks": {
         "description": "Description",
@@ -1145,6 +1148,5 @@
         "searchdata": "Search Record",
         "pre_requesr": "Show Previous Requests",
         "pre_requests": "Show Previous Requests"
-        
     }
 }

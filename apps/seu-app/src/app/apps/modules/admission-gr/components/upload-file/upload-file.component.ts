@@ -23,6 +23,7 @@ export class UploadFileComponent implements OnInit {
   attachemngtss;
   typesdata;
   certificates_type;
+  info;
   EXAM_TYPE;
   CER_FROM_OUT_SID;
   COLL_CODE;
@@ -55,6 +56,7 @@ export class UploadFileComponent implements OnInit {
       this.EXAM_TYPE = this.admissionGRservice.LoggedInUser["EXAM_TYPE"];
       this.CER_FROM_OUT_SID = this.admissionGRservice.LoggedInUser["CER_FROM_OUT_SID"];
       this.COLL_CODE = this.admissionGRservice.LoggedInUser["COLL_CODE"];
+     // console.log("code",this.COLL_CODE);
     }
     this.getuplaodfile();
 
@@ -164,7 +166,16 @@ export class UploadFileComponent implements OnInit {
         if (getuploadfiledata['data']) {
           this.typesdata = (getuploadfiledata as any).data["types"];
           this.certificates_type = (getuploadfiledata as any).data["notes"];
+          this.info = (getuploadfiledata as any).data["info"];
+          if(this.info){
+            this.AddReqForm.controls['major_ar'].setValue(this.info["major_ar"]);
+            this.AddReqForm.controls['major_en'].setValue(this.info["major_en"]);
+            this.AddReqForm.controls['ielts_code'].setValue(this.info["ielts_code"]);
+            this.AddReqForm.controls['type'].setValue(this.info["type"]);
+          }
+//info
 
+//this.AddReqForm.controls['mahor_ar'].setValue("");
           // console.log("data",this.uploaddata);
           this.isLoading = false;
         }

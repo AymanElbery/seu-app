@@ -9,6 +9,7 @@ export interface UserData {
     major: string;
     level: string;
     id: string;
+    PIDM: string;
     ssn: string;
     camp: string;
     student_details: StudentDetails;

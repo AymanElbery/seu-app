@@ -47,7 +47,6 @@ export class PersonalinfoComponent implements OnInit,OnDestroy {
     this.subscription = this.empservice.getdataEmployees().subscribe(empdata => {
      if (empdata) {       
        this.empInfo = (empdata as any).data;       
-       console.log("emp info",this.empInfo)
        this.subscriptionLang = this.empservice.getdataEmployeesLang().subscribe(empdaemplang => {
         if (empdaemplang) {
           this.empInfolang = (empdaemplang as any).data;
@@ -64,6 +63,7 @@ export class PersonalinfoComponent implements OnInit,OnDestroy {
 
 openDialog() {
   let updateinfo = this.empInfo;
+  updateinfo.langList = this.empInfolang;
  // this.updatedata.email=this.empInfo.data;
   const dialogConfig = new MatDialogConfig();
   dialogConfig.autoFocus = true;
