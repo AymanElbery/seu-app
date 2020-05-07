@@ -38,6 +38,10 @@ export class PolicyComponent implements OnInit, OnDestroy {
     }
   }
   saveChoose() {
+    if(this.requesting){
+      return false; 
+    }
+    this.requesting = true;
     const headers = new HttpHeaders({
       Authorization: this.reqservice.getSSOAuth(),
       'Content-Type': 'application/json',
@@ -47,9 +51,9 @@ export class PolicyComponent implements OnInit, OnDestroy {
         this.userService.userData['policy'] = "Done";
         this.dialogRef.close();
       } else {
+        this.requesting = false;
         this.toastr.tryagain();
       }
-      this.requesting = false;
     },
       err => {
         this.toastr.tryagain();
