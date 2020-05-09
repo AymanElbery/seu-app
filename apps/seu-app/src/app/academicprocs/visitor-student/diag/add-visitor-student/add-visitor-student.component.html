@@ -2,7 +2,8 @@
   <div class="modal-dialog" role="document" dir="rtl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"general.request.add_request"|translate}}</h5>
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"general.request.add_request"|translate}}</h5>
 
       </div>
       <div class="modal-body">
@@ -14,7 +15,7 @@
               <h3 class="widget-title">{{"services.visitor_student.college_info"|translate}}</h3>
             </div>
             <div class="row ser-block">
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>{{"services.visitor_student.desired_college"|translate}} </h6>
                   <select required class="form-control" #UniversityID="ngModel" [(ngModel)]="visitorStudent.university"
@@ -26,7 +27,9 @@
                 </div>
 
               </div>
-              <div class=" col-md-4 col-sm-12">
+            </div>
+            <div class="row ser-block">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>{{"services.visitor_student.term"|translate}} </h6>
                   <select required class="form-control" #TermID="ngModel" [(ngModel)]="visitorStudent.term"
@@ -38,7 +41,7 @@
 
               </div>
 
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>{{"services.visitor_student.academic_year"|translate}}</h6>
                   <select required class="form-control" #YearID="ngModel" [(ngModel)]="visitorStudent.year"
@@ -59,7 +62,7 @@
               <h3 class="widget-title">{{"services.visitor_student.course_info"|translate}}</h3>
             </div>
             <div class="row ser-block">
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>{{"general.course_name"|translate}}</h6>
                   <input type="text" required class="form-control" #CourseName="ngModel"
@@ -69,31 +72,8 @@
                 </div>
 
               </div>
-              <div class=" col-md-4 col-sm-12">
-                <div class="state">
-                  <h6>{{"services.visitor_student.course_alpha_code"|translate}}</h6>
-                  <input type="text" required class="form-control" #CourseSymbol="ngModel"
-                    [(ngModel)]="visitorStudent.course_symbol" name="CourseSymbol"
-                    [class.is-invalid]="visitorStudent.course_symbol == ''">
-
-                </div>
-
-              </div>
-
-              <div class=" col-md-4 col-sm-12">
-                <div class="state">
-                  <h6>{{"services.visitor_student.course_number_code"|translate}}</h6>
-                  <input type="text" required class="form-control" #CourseCode="ngModel"
-                    [(ngModel)]="visitorStudent.course_code" name="CourseCode"
-                    [class.is-invalid]="visitorStudent.course_code == ''">
-
-                </div>
-
-              </div>
-
-            </div>
-            <div class="row  ser-block">
-              <div class=" col-md-4 col-sm-12">
+              
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>{{"services.visitor_student.course_hours"|translate}}</h6>
                   <input type="text" required class="form-control" #CourseHours="ngModel"
@@ -104,12 +84,43 @@
                 </div>
 
               </div>
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.course_alpha_code"|translate}}</h6>
+                  <input type="text" required class="form-control" #CourseSymbol="ngModel"
+                    [(ngModel)]="visitorStudent.course_symbol" name="CourseSymbol"
+                    [class.is-invalid]="visitorStudent.course_symbol == ''">
 
-              <div class=" col-md-8 col-sm-12">
+                </div>
+
+              </div>
+
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.course_number_code"|translate}}</h6>
+                  <input type="text" required class="form-control" #CourseCode="ngModel"
+                    [(ngModel)]="visitorStudent.course_code" name="CourseCode"
+                    [class.is-invalid]="visitorStudent.course_code == ''">
+
+                </div>
+
+              </div>
+
+
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>{{"services.visitor_student.upload_course_desc"|translate}}</h6>
                   <input name="attachment" id="attachment" type="file" accept="*/*"
                     (change)="handleInputChange($event)" />
+                  <h6>{{"services.visitor_student.file_size"|translate}}</h6>
+                </div>
+
+              </div>
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.upload_university_approval"|translate}}</h6>
+                  <input name="univ_approval" id="univ_approval" type="file" accept="*/*"
+                    (change)="handleInputChangeApproval($event)" />
                   <h6>{{"services.visitor_student.file_size"|translate}}</h6>
                 </div>
 
@@ -183,9 +194,9 @@
             <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
               {{"general.cancel"|translate}}</button>
 
-            <button [disabled]="(form.invalid || !approves.approve)" type="submit" class="btn btn-dark"><i
+            <button [disabled]="(form.invalid || !approves.approve) || requesting" type="submit" class="btn btn-dark"><i
                 class="fa fa-database"></i>
-                {{"general.save"|translate}}</button>
+              {{"general.save"|translate}}</button>
           </div>
         </form>
 

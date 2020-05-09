@@ -625,7 +625,8 @@
             "equivalent_course": "Information About Equivalent Course In University",
             "choose_subject": "Choose Subject",
             "commitment": "Obligation",
-            "accept": "I Accept"
+            "accept": "I Accept",
+            "upload_university_approval":"Selected University Approval"
         },
         "withdrow_univ": {
             "title": "Withdrawal From University Request",

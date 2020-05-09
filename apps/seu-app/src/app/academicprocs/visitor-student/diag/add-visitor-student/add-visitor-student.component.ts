@@ -30,7 +30,7 @@ export class AddVisitorStudentComponent implements OnInit {
 
   ngOnInit() {
     this.approves={approve:false};
-    this.visitorStudent = { university: '', term: '', year: '', course_name: '', course_symbol: '', course_code: '', course_equal: '', hours: 0, attachment: '' };
+    this.visitorStudent = { university: '', term: '', year: '', course_name: '', course_symbol: '', course_code: '', course_equal: '', hours: 0, attachment: '',univ_approval: '' };
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
     this.universitiesList = this.acadmicProc.reqData.universities_list;
@@ -86,5 +86,24 @@ export class AddVisitorStudentComponent implements OnInit {
     this.visitorStudent.attachment = reader.result;
     //console.log(this.visitorStudent.attachment);
   }
+
+  handleInputChangeApproval(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    const pattern = /pdf-*/;
+    const reader = new FileReader();
+    /* if (!file.type.match(pattern)) {
+      alert('invalid format');
+      return;
+    }
+     */
+    reader.onload = this._handleReaderLoadedApproval.bind(this);
+    reader.readAsDataURL(file);
+  }
+  _handleReaderLoadedApproval(e) {
+    const reader = e.target;
+    this.visitorStudent.univ_approval = reader.result;
+    //console.log(this.visitorStudent.attachment);
+  }
+
 
 }
