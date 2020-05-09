@@ -19,14 +19,14 @@ export class AddGraduateProfileComponent implements OnInit {
   msgs;
   stdinfo: StudentData;
   fileType;
-  showDetail=true;
-  upgradeflag=false;
+  showDetail = true;
+  upgradeflag = false;
   // isLoading = false;
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddGraduateProfileComponent>,
-    private toastr: AppToasterService, private gradService: GraduateProfileService,private translate: TranslateService,) { }
+    private toastr: AppToasterService, private gradService: GraduateProfileService, private translate: TranslateService, ) { }
 
   ngOnInit() {
     this.stdinfo = {
@@ -59,28 +59,27 @@ export class AddGraduateProfileComponent implements OnInit {
 
   }
 
-  getworkstatus(workstatus){
-   // console.log("get data",workstatus);
-    if(workstatus=="unemployed")
-    {
-      this.showDetail=false;
+  getworkstatus(workstatus) {
+    // console.log("get data",workstatus);
+    if (workstatus == "unemployed") {
+      this.showDetail = false;
     }
-    else{
-     this.showDetail=true;
-    }         
-     
-     }
-     getupgaredmodel(upgtrademodel){       
-       if(upgtrademodel=="yes_promo")
-       {
-         this.upgradeflag=true;
-       }
-       else{
-        this.upgradeflag=false;
-       }             
-        
-        }
+    else {
+      this.showDetail = true;
+    }
+
+  }
+  getupgaredmodel(upgtrademodel) {
+    if (upgtrademodel == "yes_promo") {
+      this.upgradeflag = true;
+    }
+    else {
+      this.upgradeflag = false;
+    }
+
+  }
   addRequest(data: any) {
+    this.requesting = true;
     this.gradService.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
       if (res['status']) {
@@ -99,8 +98,7 @@ export class AddGraduateProfileComponent implements OnInit {
     if (this.requesting) {
       return false;
     }
-    if(this.showDetail==true){
-   
+    if (this.showDetail == true) {
       if (!this.stdinfo.job_sector) {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.graduate.job_sector") }]);
         return false;
@@ -117,12 +115,12 @@ export class AddGraduateProfileComponent implements OnInit {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.graduate.job_promo") }]);
         return false;
       }
-      if(this.upgradeflag==true){
-      if (!this.stdinfo.job_promo_year) {
-        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.graduate.job_promo_year") }]);
-        return false;
+      if (this.upgradeflag == true) {
+        if (!this.stdinfo.job_promo_year) {
+          this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.graduate.job_promo_year") }]);
+          return false;
+        }
       }
-    }
       if (!this.stdinfo.job_loc) {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.graduate.job_loc") }]);
         return false;
@@ -143,9 +141,8 @@ export class AddGraduateProfileComponent implements OnInit {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.graduate.employer_email") }]);
         return false;
       }
-     
-    }    
-    this.requesting = true;
+
+    }
     this.addRequest(this.stdinfo);
 
   }

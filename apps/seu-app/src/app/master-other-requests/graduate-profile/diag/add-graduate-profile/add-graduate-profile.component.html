@@ -1,5 +1,4 @@
 <mat-dialog-content>
-
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -13,62 +12,7 @@
 
             <div class="row ser-block">
 
-
-
-              <div class=" col-md-4 col-sm-12">
-                <div class="state">
-                  <h6> {{"services.graduate.fullname"|translate}} <span class="reqstart">*</span></h6>
-
-
-                  <input  required appAlphabateOnly name="name_ar" #name_ar="ngModel" [(ngModel)]="stdinfo.name_ar" class="form-control"
-                    [class.is-invalid]="stdinfo.name_ar==''">
-                </div>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-info"></div>
-                </div>
-              </div>
-
-              <div class=" col-md-4 col-sm-12">
-                <div class="state">
-                  <h6> {{"services.graduate.fullnameeng"|translate}} <span class="reqstart">*</span></h6>
-
-
-                  <input required appAlphabateOnly name="name_en" #name_en="ngModel" [(ngModel)]="stdinfo.name_en" class="form-control"
-                    [class.is-invalid]="stdinfo.name_en==''">
-                </div>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-info"></div>
-                </div>
-              </div>
-
-              <div class=" col-md-4 col-sm-12">
-                <div class="state">
-                  <h6>{{"services.graduate.gender"|translate}} </h6>
-                  <h5>{{reqData.stdinfo.gender}} </h5>
-                </div>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-info"></div>
-                </div>
-              </div>
-
-
-
-            </div>
-
-
-            <div class="row ser-block">
-
-              <div class=" col-md-4 col-sm-12">
-                <div class="state">
-                  <h6>{{"services.graduate.nationality"|translate}} </h6>
-                  <h5>{{reqData.stdinfo.nationality}} </h5>
-                </div>
-                <div class="progress progress-sm">
-                  <div class="progress-bar bg-info"></div>
-                </div>
-              </div>
-
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>{{"services.graduate.scdegree"|translate}} </h6>
                   <h5>{{reqData.stdinfo.grade_level}} </h5>
@@ -78,7 +22,7 @@
                 </div>
               </div>
 
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>{{"services.graduate.major"|translate}} </h6>
                   <h5>{{reqData.stdinfo.major}} </h5>
@@ -87,12 +31,9 @@
                   <div class="progress-bar bg-info"></div>
                 </div>
               </div>
-            </div>
 
 
-            <div class="row ser-block">
-
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6>{{"services.graduate.branch"|translate}} </h6>
                   <h5>{{reqData.stdinfo.branch}} </h5>
@@ -102,7 +43,7 @@
                 </div>
               </div>
 
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6> {{"services.graduate.rate"|translate}} </h6>
                   <h5>{{reqData.stdinfo.gpa}} </h5>
@@ -112,40 +53,27 @@
                 </div>
               </div>
 
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
-                  <h6>{{"services.graduate.mobileno"|translate}} <span class="reqstart">*</span></h6>
-
-                  <input required name="mobile" #mobile="ngModel" [(ngModel)]="stdinfo.mobile" (keypress)="keyPress($event)" maxlength="10" class="form-control"
-                    [class.is-invalid]="stdinfo.mobile==''">
+                  <h6>{{"services.graduate.nationality"|translate}} </h6>
+                  <h5>{{reqData.stdinfo.nationality}} </h5>
                 </div>
                 <div class="progress progress-sm">
                   <div class="progress-bar bg-info"></div>
                 </div>
               </div>
 
-
-            </div>
-
-
-            <div class="row ser-block">
-
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
-                  <h6> {{"services.graduate.email"|translate}} <span class="reqstart">*</span></h6>
-
-                  <input required name="email" #email="ngModel" [(ngModel)]="stdinfo.email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                    [class.is-invalid]="stdinfo.email==''">
-                </div>
-                <div *ngIf="email.touched">                
-                  <p style="color:orangered;" *ngIf="email.errors?.pattern">{{"services.graduate.emailvalidate"|translate}}</p>
+                  <h6>{{"services.graduate.gender"|translate}} </h6>
+                  <h5>{{reqData.stdinfo.gender}} </h5>
                 </div>
                 <div class="progress progress-sm">
                   <div class="progress-bar bg-info"></div>
                 </div>
               </div>
 
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6> {{"services.graduate.uemail"|translate}} </h6>
                   <h5>{{reqData.stdinfo.university_email}} </h5>
@@ -154,27 +82,77 @@
                   <div class="progress-bar bg-info"></div>
                 </div>
               </div>
+            </div>
 
-              <div class=" col-md-4 col-sm-12">
+
+            <div class="row ser-block">
+
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
-                  <h6> {{"services.graduate.stdpic"|translate}} <span class="reqstart">*</span></h6>
-
-
-                  <input required class="form-control" name="image" id="image" type="file" accept="*/*"
-                    (change)="handleInputChange($event,'image')" [class.is-invalid]="stdinfo.image == ''" />
+                  <h6> {{"services.graduate.fullname"|translate}} <span class="reqstart">*</span></h6>
+                  <input required appAlphabateOnly name="name_ar" #name_ar="ngModel" [(ngModel)]="stdinfo.name_ar"
+                    class="form-control" [class.is-invalid]="stdinfo.name_ar==''">
                 </div>
                 <div class="progress progress-sm">
                   <div class="progress-bar bg-info"></div>
                 </div>
               </div>
 
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6> {{"services.graduate.fullnameeng"|translate}} <span class="reqstart">*</span></h6>
 
-            </div>
 
+                  <input required appAlphabateOnly name="name_en" #name_en="ngModel" [(ngModel)]="stdinfo.name_en"
+                    class="form-control" [class.is-invalid]="stdinfo.name_en==''">
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
 
-            <div class="row ser-block">
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6> {{"services.graduate.email"|translate}} <span class="reqstart">*</span></h6>
 
-              <div class=" col-md-4 col-sm-12">
+                  <input required name="email" #email="ngModel" [(ngModel)]="stdinfo.email" class="form-control"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [class.is-invalid]="stdinfo.email==''">
+                </div>
+                <div *ngIf="email.touched">
+                  <p style="color:orangered;" *ngIf="email.errors?.pattern">
+                    {{"services.graduate.emailvalidate"|translate}}</p>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.graduate.mobileno"|translate}} <span class="reqstart">*</span></h6>
+
+                  <input required name="mobile" #mobile="ngModel" [(ngModel)]="stdinfo.mobile"
+                    (keypress)="keyPress($event)" maxlength="10" class="form-control"
+                    [class.is-invalid]="stdinfo.mobile==''">
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6> {{"services.graduate.stdpic"|translate}} <span class="reqstart">*</span></h6>
+
+                  <input required class="form-control" name="image" id="image" type="file" accept="*/*"
+                    (change)="handleInputChange($event,'image')" />
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6> {{"services.graduate.CV"|translate}} <span class="reqstart">*</span></h6>
                   <h5>{{stdinfo.STD_RESUME}} </h5>
@@ -186,11 +164,12 @@
                 </div>
               </div>
 
-              <div class=" col-md-4 col-sm-12">
+              <div class=" col-md-6 col-sm-12">
                 <div class="state">
                   <h6> {{"services.graduate.cjob"|translate}} <span class="reqstart">*</span></h6>
-                  <select required name="job_status" #job_status="ngModel" [(ngModel)]="stdinfo.job_status" (change)="getworkstatus($event.target.value)"
-                    class="form-control" [class.is-invalid]=" stdinfo.job_status==''">
+                  <select required name="job_status" #job_status="ngModel" [(ngModel)]="stdinfo.job_status"
+                    (change)="getworkstatus($event.target.value)" class="form-control"
+                    [class.is-invalid]=" stdinfo.job_status==''">
 
                     <option *ngFor="let item of reqData.job_status" value="{{item.id}}">{{item.value}}</option>
                   </select>
@@ -209,7 +188,7 @@
               </div>
               <div class="row ser-block">
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.empsector"|translate}} <span class="reqstart">*</span></h6>
                     <select name="job_sector" #job_sector="ngModel" [(ngModel)]="stdinfo.job_sector"
@@ -223,21 +202,21 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.jobyear"|translate}} <span class="reqstart">*</span></h6>
 
                     <!-- <input name="year_job" #year_job="ngModel" [(ngModel)]="stdinfo.year_job" class="form-control"> -->
-                    <ng-select [items]="reqData.yearslist" bindLabel="value" autofocus bindValue="id"
-                    name="year_job" #year_job="ngModel" [(ngModel)]="stdinfo.year_job" >
-                  </ng-select>
+                    <ng-select [items]="reqData.yearslist" bindLabel="value" autofocus bindValue="id" name="year_job"
+                      #year_job="ngModel" [(ngModel)]="stdinfo.year_job">
+                    </ng-select>
                   </div>
                   <div class="progress progress-sm">
                     <div class="progress-bar bg-info"></div>
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.jobcom"|translate}} <span class="reqstart">*</span></h6>
 
@@ -253,11 +232,12 @@
 
               <div class="row ser-block">
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.upgrade"|translate}} <span class="reqstart">*</span> </h6>
 
-                    <select name="job_promo" #job_promo="ngModel" [(ngModel)]="stdinfo.job_promo" (change)="getupgaredmodel($event.target.value)" class="form-control">
+                    <select name="job_promo" #job_promo="ngModel" [(ngModel)]="stdinfo.job_promo"
+                      (change)="getupgaredmodel($event.target.value)" class="form-control">
 
                       <option *ngFor="let item of reqData.job_promo" value="{{item.id}}">{{item.value}}</option>
                     </select>
@@ -267,12 +247,12 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.upgradeyr"|translate}} </h6>
                     <ng-select [items]="reqData.yearslist" bindLabel="value" autofocus bindValue="id"
-                    name="job_promo_year" #job_promo_year="ngModel" [(ngModel)]="stdinfo.job_promo_year" >
-                  </ng-select>
+                      name="job_promo_year" #job_promo_year="ngModel" [(ngModel)]="stdinfo.job_promo_year">
+                    </ng-select>
                     <!-- <input name="job_promo_year" #job_promo_year="ngModel" [(ngModel)]="stdinfo.job_promo_year"
                       class="form-control"> -->
                   </div>
@@ -281,12 +261,11 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.jobplace"|translate}} <span class="reqstart">*</span></h6>
 
                     <select name="job_loc" #job_loc="ngModel" [(ngModel)]="stdinfo.job_loc" class="form-control">
-                      <option value=""> {{"services.graduate.jobplace"|translate}} </option>
                       <option *ngFor="let item of reqData.cities" value="{{item.ID}}">{{item.NAME}}</option>
                     </select>
                   </div>
@@ -296,27 +275,28 @@
                 </div>
 
               </div>
-            <!-- </div>
+              <!-- </div>
 
             <div class="widget"> -->
               <div class="widget-header">
-                <h3 class="widget-title"> {{"services.graduate.jobownerdata"|translate}} <span class="reqstart">*</span></h3>
+                <h3 class="widget-title"> {{"services.graduate.jobownerdata"|translate}} <span class="reqstart">*</span>
+                </h3>
               </div>
               <div class="row ser-block">
 
-                <div class=" col-md-3 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.oname"|translate}} <span class="reqstart">*</span></h6>
 
-                    <input name="employer_name" appAlphabateOnly #EMPLOYER_NAME="ngModel" [(ngModel)]="stdinfo.employer_name"
-                      class="form-control">
+                    <input name="employer_name" appAlphabateOnly #EMPLOYER_NAME="ngModel"
+                      [(ngModel)]="stdinfo.employer_name" class="form-control">
                   </div>
                   <div class="progress progress-sm">
                     <div class="progress-bar bg-info"></div>
                   </div>
                 </div>
 
-                <div class=" col-md-3 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.ojob"|translate}} <span class="reqstart">*</span></h6>
 
@@ -328,27 +308,28 @@
                   </div>
                 </div>
 
-                <div class=" col-md-3 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.mobileno"|translate}} <span class="reqstart">*</span></h6>
 
-                    <input name="employer_phone" #employer_phone="ngModel" [(ngModel)]="stdinfo.employer_phone" (keypress)="keyPress($event)" maxlength="10"
-                      class="form-control">
+                    <input name="employer_phone" #employer_phone="ngModel" [(ngModel)]="stdinfo.employer_phone"
+                      (keypress)="keyPress($event)" maxlength="10" class="form-control">
                   </div>
                   <div class="progress progress-sm">
                     <div class="progress-bar bg-info"></div>
                   </div>
                 </div>
 
-                <div class=" col-md-3 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.email"|translate}} <span class="reqstart">*</span></h6>
 
-                    <input name="employer_email" #employer_email="ngModel" [(ngModel)]="stdinfo.employer_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                      class="form-control">
+                    <input name="employer_email" #employer_email="ngModel" [(ngModel)]="stdinfo.employer_email"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control">
                   </div>
-                  <div *ngIf="employer_email.touched">                
-                    <p style="color:orangered;" *ngIf="employer_email.errors?.pattern">{{"services.graduate.emailvalidate"|translate}}</p>
+                  <div *ngIf="employer_email.touched">
+                    <p style="color:orangered;" *ngIf="employer_email.errors?.pattern">
+                      {{"services.graduate.emailvalidate"|translate}}</p>
                   </div>
                   <div class="progress progress-sm">
                     <div class="progress-bar bg-info"></div>

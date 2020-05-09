@@ -16,10 +16,10 @@ export const environment = {
   captchaSiteKey: "6LcZJOgUAAAAADeusuP0ndPRe8A5ip1FBypF_WlQ",
   enquery_URL: 'https://sso.seu.edu.sa/myweb/', // WhatsApp chatbot /
   chatbot_mails: [
-    'mali@seu.edu.sa', 
-    'a.elbery@seu.edu.sa', 
-    'M.aldwaesh@seu.edu.sa', 
-    'SALasmari@seu.edu.sa', 
+    'mali@seu.edu.sa',
+    'a.elbery@seu.edu.sa',
+    'M.aldwaesh@seu.edu.sa',
+    'SALasmari@seu.edu.sa',
     'Maldwaesh@seu.edu.sa',
     't.alshiban@seu.edu.sa',
     'N.almuhareb@seu.edu.sa',
@@ -28,8 +28,8 @@ export const environment = {
     'A.dossari@seu.edu.sa'
   ],
   chatbot_emps_emails: [
-    'M.aldwaesh@seu.edu.sa', 
-    'SALasmari@seu.edu.sa', 
+    'M.aldwaesh@seu.edu.sa',
+    'SALasmari@seu.edu.sa',
     'Maldwaesh@seu.edu.sa',
     't.alshiban@seu.edu.sa',
     'N.almuhareb@seu.edu.sa',
@@ -38,8 +38,8 @@ export const environment = {
     'A.dossari@seu.edu.sa'
   ],
   chatbot_emps_names: [
-    'موضي مطلق الدويش', 
-    'سلمى عبدالله الأسمري', 
+    'موضي مطلق الدويش',
+    'سلمى عبدالله الأسمري',
     'مضاوي مطلق الدويش',
     'تهاني ناصر الشيبان',
     'نورة فهد المحارب',

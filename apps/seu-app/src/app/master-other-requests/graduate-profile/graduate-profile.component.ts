@@ -62,10 +62,10 @@ export class GraduateProfileComponent implements OnInit,OnDestroy {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
-    dialogConfig.width = '95%';
-    dialogConfig.height = '85%';
-    dialogConfig.direction = "rtl";
-    dialogConfig.position = { top: '80px', left: '20px' };
+    dialogConfig.width = '85%';
+
+    //dialogConfig.direction = "rtl";
+    //dialogConfig.position = { top: '80px', left: '20px' };
 
     this.gradProfServ.request_number = request_number;
 
@@ -77,10 +77,10 @@ export class GraduateProfileComponent implements OnInit,OnDestroy {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
-    dialogConfig.width = '95%';
-    dialogConfig.height = '85%';
-    dialogConfig.direction = "rtl";
-    dialogConfig.position = { top: '80px', left: '20px' };
+    dialogConfig.width = '85%';
+    // dialogConfig.height = '85%';
+    // dialogConfig.direction = "rtl";
+    // dialogConfig.position = { top: '80px', left: '20px' };
 
 
     let dialogref = this.dialog.open(AddGraduateProfileComponent, dialogConfig);

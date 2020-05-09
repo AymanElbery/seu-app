@@ -500,8 +500,7 @@
             "employer_job_title": "Employer job title  Required",
             "employer_phone": "Employer phone Required",
             "employer_email": "Employer Email  Required",
-            "emailvalidate": "It is not a valid email !"
-            
+            "emailvalidate": "It is not a valid email !" 
         },
         "missing_card": {
             "title": "Lost Card Replacment Request",
@@ -626,7 +625,8 @@
             "equivalent_course": "Information About Equivalent Course In University",
             "choose_subject": "Choose Subject",
             "commitment": "Obligation",
-            "accept": "I Accept"
+            "accept": "I Accept",
+            "upload_university_approval":"Selected University Approval"
         },
         "withdrow_univ": {
             "title": "Withdrawal From University Request",
@@ -737,7 +737,8 @@
             "job_title2": "Job  Title Required",
             "phone2": "Job Owner Phone Required",
             "email2": "Job Owner EMail Required",
-            "emailvalidate":"It is not a valid email !"
+            "emailvalidate":"It is not a valid email !",
+            "job_details":"Job Details"
         },
         "training_request": {
             "title": "Field training request",
