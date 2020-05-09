@@ -121,11 +121,11 @@
 
 
 
-                <div *ngIf="stdinfo.STD_PIC_URL" class=" col-md-6 col-sm-12">
+                <div *ngIf="STD_PIC_URL" class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.stdpic"|translate}} </h6>
                     <h5>
-                      <a href="{{stdinfo.STD_PIC_URL}}" target="_blank"> {{'general.download'| translate}} </a>
+                      <a href="{{STD_PIC_URL}}" target="_blank"> {{'general.download'| translate}} </a>
                     </h5>
                   </div>
                   <div class="progress progress-sm">
@@ -134,11 +134,11 @@
                 </div>
 
 
-                <div *ngIf="stdinfo.STD_RESUME_URL" class=" col-md-6 col-sm-12">
+                <div *ngIf="STD_RESUME_URL" class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.CV"|translate}} </h6>
                     <h5>
-                      <a href="{{stdinfo.STD_RESUME_URL}}" target="_blank"> {{'general.download'| translate}} </a>
+                      <a href="{{STD_RESUME_URL}}" target="_blank"> {{'general.download'| translate}} </a>
                     </h5>
                   </div>
                   <div class="progress progress-sm">
