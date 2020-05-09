@@ -16,7 +16,7 @@
 
 
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.fullname"|translate}} </h6>
                     <h5>{{stdinfo.STD_NAME_AR}} </h5>
@@ -26,7 +26,7 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.fullnameeng"|translate}} </h6>
                     <h5>{{stdinfo.STD_NAME_EN}} </h5>
@@ -36,7 +36,7 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6>{{"services.graduate.gender"|translate}} </h6>
                     <h5>{{stdinfo.STD_GENDER}} </h5>
@@ -47,13 +47,7 @@
                 </div>
 
 
-
-              </div>
-
-
-              <div class="row ser-block">
-
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6>{{"services.graduate.nationality"|translate}} </h6>
                     <h5>{{stdinfo.STD_NATIONALITY}} </h5>
@@ -63,7 +57,7 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6>{{"services.graduate.scdegree"|translate}} </h6>
                     <h5>{{stdinfo.PROGRAM_TYPE}} </h5>
@@ -73,7 +67,7 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6>{{"services.graduate.major"|translate}} </h6>
                     <h5>{{stdinfo.STD_MAJOR_DESC}} </h5>
@@ -82,12 +76,9 @@
                     <div class="progress-bar bg-info"></div>
                   </div>
                 </div>
-              </div>
 
 
-              <div class="row ser-block">
-
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6>{{"services.graduate.branch"|translate}} </h6>
                     <h5>{{stdinfo.STD_CAMP}} </h5>
@@ -97,7 +88,7 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.rate"|translate}} </h6>
                     <h5>{{stdinfo.STD_GPA}} </h5>
@@ -107,7 +98,7 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6>{{"services.graduate.mobileno"|translate}} </h6>
                     <h5>{{stdinfo.MOBILE_NUM}} </h5>
@@ -118,12 +109,7 @@
                 </div>
 
 
-              </div>
-
-
-              <div class="row ser-block">
-
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.email"|translate}} </h6>
                     <h5>{{stdinfo.PERSONAL_EMAIL}} </h5>
@@ -133,7 +119,34 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
+
+
+                <div *ngIf="stdinfo.STD_PIC_URL" class=" col-md-6 col-sm-12">
+                  <div class="state">
+                    <h6> {{"services.graduate.stdpic"|translate}} </h6>
+                    <h5>
+                      <a href="{{stdinfo.STD_PIC_URL}}" target="_blank"> {{'general.download'| translate}} </a>
+                    </h5>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+
+                <div *ngIf="stdinfo.STD_RESUME_URL" class=" col-md-6 col-sm-12">
+                  <div class="state">
+                    <h6> {{"services.graduate.CV"|translate}} </h6>
+                    <h5>
+                      <a href="{{stdinfo.STD_RESUME_URL}}" target="_blank"> {{'general.download'| translate}} </a>
+                    </h5>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.uemail"|translate}} </h6>
                     <h5>{{stdinfo.STD_EMAIL}} </h5>
@@ -143,33 +156,7 @@
                   </div>
                 </div>
 
-                <div class=" col-md-4 col-sm-12">
-                  <div class="state">
-                    <h6> {{"services.graduate.stdpic"|translate}} </h6>
-                    <h5>{{stdinfo.STD_PIC}} </h5>
-                  </div>
-                  <div class="progress progress-sm">
-                    <div class="progress-bar bg-info"></div>
-                  </div>
-                </div>
-
-
-              </div>
-
-
-              <div class="row ser-block">
-
-                <div class=" col-md-4 col-sm-12">
-                  <div class="state">
-                    <h6> {{"services.graduate.CV"|translate}} </h6>
-                    <h5>{{stdinfo.STD_RESUME}} </h5>
-                  </div>
-                  <div class="progress progress-sm">
-                    <div class="progress-bar bg-info"></div>
-                  </div>
-                </div>
-
-                <div class=" col-md-4 col-sm-12">
+                <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6> {{"services.graduate.cjob"|translate}} </h6>
                     <h5>{{stdinfo.JOB_STATUS}} </h5>
@@ -189,7 +176,7 @@
                 </div>
                 <div class="row ser-block">
 
-                  <div class=" col-md-4 col-sm-12">
+                  <div class=" col-md-6 col-sm-12">
                     <div class="state">
                       <h6> {{"services.graduate.empsector"|translate}} </h6>
                       <h5>{{stdinfo.JOB_SECTOR}} </h5>
@@ -199,7 +186,7 @@
                     </div>
                   </div>
 
-                  <div class=" col-md-4 col-sm-12">
+                  <div class=" col-md-6 col-sm-12">
                     <div class="state">
                       <h6> {{"services.graduate.jobyear"|translate}} </h6>
                       <h5>{{stdinfo.YEAR_JOB}} </h5>
@@ -209,7 +196,7 @@
                     </div>
                   </div>
 
-                  <div class=" col-md-4 col-sm-12">
+                  <div class=" col-md-6 col-sm-12">
                     <div class="state">
                       <h6> {{"services.graduate.jobcom"|translate}} </h6>
                       <h5>{{stdinfo.JOB_COM}} </h5>
@@ -220,11 +207,17 @@
                   </div>
 
 
-                </div>
+                  <div class=" col-md-6 col-sm-12">
+                    <div class="state">
+                      <h6> {{"services.graduate.jobplace"|translate}} </h6>
+                      <h5>{{stdinfo.JOB_LOC}} </h5>
+                    </div>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-info"></div>
+                    </div>
+                  </div>
 
-                <div class="row ser-block">
-
-                  <div class=" col-md-4 col-sm-12">
+                  <div class=" col-md-6 col-sm-12">
                     <div class="state">
                       <h6> {{"services.graduate.upgrade"|translate}} </h6>
                       <h5>{{stdinfo.JOB_PROMO}} </h5>
@@ -234,7 +227,7 @@
                     </div>
                   </div>
 
-                  <div class=" col-md-4 col-sm-12">
+                  <div class=" col-md-6 col-sm-12">
                     <div class="state">
                       <h6> {{"services.graduate.upgradeyr"|translate}} </h6>
                       <h5>{{stdinfo.JOB_PROMO_YEAR}} </h5>
@@ -244,15 +237,6 @@
                     </div>
                   </div>
 
-                  <div class=" col-md-4 col-sm-12">
-                    <div class="state">
-                      <h6> {{"services.graduate.jobplace"|translate}} </h6>
-                      <h5>{{stdinfo.JOB_LOC}} </h5>
-                    </div>
-                    <div class="progress progress-sm">
-                      <div class="progress-bar bg-info"></div>
-                    </div>
-                  </div>
 
                 </div>
               </div>
@@ -263,7 +247,7 @@
                 </div>
                 <div class="row ser-block">
 
-                  <div class=" col-md-3 col-sm-12">
+                  <div class=" col-md-6 col-sm-12">
                     <div class="state">
                       <h6> {{"services.graduate.oname"|translate}} </h6>
                       <h5>{{stdinfo.EMPLOYER_NAME}} </h5>
@@ -273,7 +257,7 @@
                     </div>
                   </div>
 
-                  <div class=" col-md-3 col-sm-12">
+                  <div class=" col-md-6 col-sm-12">
                     <div class="state">
                       <h6> {{"services.graduate.ojob"|translate}} </h6>
                       <h5>{{stdinfo.EMPLOYER_JOB_TITLE}} </h5>
@@ -283,7 +267,7 @@
                     </div>
                   </div>
 
-                  <div class=" col-md-3 col-sm-12">
+                  <div class=" col-md-6 col-sm-12">
                     <div class="state">
                       <h6> {{"services.graduate.mobileno"|translate}} </h6>
                       <h5>{{stdinfo.EMPLOYER_PHONE}} </h5>
@@ -293,7 +277,7 @@
                     </div>
                   </div>
 
-                  <div class=" col-md-3 col-sm-12">
+                  <div class=" col-md-6 col-sm-12">
                     <div class="state">
                       <h6> {{"services.graduate.email"|translate}} </h6>
                       <h5>{{stdinfo.EMPLOYER_EMAIL}} </h5>
@@ -313,7 +297,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-            {{"services.cancel"|translate}}</button>
+            {{"general.cancel"|translate}}</button>
 
           <!-- <button [disabled]="(form.invalid || !approves.approve)" type="submit" class="btn btn-dark"><i
             class="fa fa-database"></i>

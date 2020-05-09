@@ -23,11 +23,11 @@ export class StudentInfoService {
   }
   DownloadPhoto() {
     this.configService.baseUrl = "stdservicesapi";
-    return this.configService.getApiURI() + '/student_info_service/download/photo?sid=' + this.configService.getSid();
+    return this.configService.getApiURI() + '/student_info_service/download/photo';
   }
   DownloadCv() {
     this.configService.baseUrl = "stdservicesapi";
-    return this.configService.getApiURI() + '/student_info_service/download/cv?sid=' + this.configService.getSid();
+    return this.configService.getApiURI() + '/student_info_service/download/cv';
   }
 }
 
