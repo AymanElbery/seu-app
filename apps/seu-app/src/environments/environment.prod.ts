@@ -28,7 +28,6 @@ export const environment = {
     'A.dossari@seu.edu.sa'
   ],
   chatbot_emps_emails: [
-    'a.elbery@seu.edu.sa',
     'M.aldwaesh@seu.edu.sa', 
     'SALasmari@seu.edu.sa', 
     'Maldwaesh@seu.edu.sa',
@@ -39,7 +38,6 @@ export const environment = {
     'A.dossari@seu.edu.sa'
   ],
   chatbot_emps_names: [
-    'أيمن البري',
     'موضي مطلق الدويش', 
     'سلمى عبدالله الأسمري', 
     'مضاوي مطلق الدويش',

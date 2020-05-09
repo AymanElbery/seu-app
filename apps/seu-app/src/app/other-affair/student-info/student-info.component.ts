@@ -17,7 +17,7 @@ import { TranslateService } from '@ngx-translate/core';
   ]
 })
 export class StudentInfoComponent implements OnInit {
-
+  yearlist;
   reqData;
   msgs;
   cvDownload: string;
@@ -26,7 +26,7 @@ export class StudentInfoComponent implements OnInit {
   stdData: StudentInformationData
   isLoading = false;
   fileType;
-showDetail=false;
+  showDetail = false;
   constructor(private translate: TranslateService, private academicService: StudentInfoService, private toastr: AppToasterService) { }
 
   ngOnInit() {
@@ -82,6 +82,7 @@ showDetail=false;
     this.academicService.getِRequests().then(
       res => {
         this.reqData = (res as any).data;
+        this.yearlist = (res as any).data["yearslist"];
         this.msgs = (res as any).messages;
         this.studentInfo = this.reqData.user;
         this.stdData.name_ar = this.studentInfo.NAME_AR;
@@ -91,7 +92,7 @@ showDetail=false;
         this.stdData.phone = this.studentInfo.PHONE;
         this.stdData.job_status = this.studentInfo.JOB_STATUS;
         this.stdData.job_location = this.studentInfo.JOB_LOCATION;
-        this.stdData.job_title = this.studentInfo.JOB_TITLE;
+        this.stdData.job_title = this.studentInfo['JOB_TILE'];
         this.stdData.job_title2 = this.studentInfo.JOB_TILE2;
         this.stdData.email2 = this.studentInfo.EMAIL2;
         this.stdData.phone2 = this.studentInfo.PHONE2;
@@ -100,6 +101,7 @@ showDetail=false;
         this.stdData.job_time = this.studentInfo.JOB_TIME;
         this.stdData.job_year = this.studentInfo.JOB_YEAR;
         this.stdData.work_city = this.studentInfo.WORK_CITY;
+        this.getjobstatus(this.stdData.job_status);
         this.isLoading = false;
       }
     );
@@ -122,8 +124,8 @@ showDetail=false;
     if (this.requesting) {
       return false;
     }
-  if(this.showDetail==true){
-   
+    if (this.showDetail == true) {
+
       if (!this.stdData.job_type) {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_typeReq") }]);
         return false;
@@ -148,25 +150,46 @@ showDetail=false;
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.work_cityReq") }]);
         return false;
       }
-  }
+      if (!this.stdData.job_name) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_name") }]);
+        return false;
+      }
+      if (!this.stdData.job_title2) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.job_title2") }]);
+        return false;
+      }
+      if (!this.stdData.phone2) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.phone2") }]);
+        return false;
+      }
+      if (!this.stdData.email2) {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.email2") }]);
+        return false;
+      }
+    }
 
     this.addRequest(this.stdData);
   }
-
-
-  getjobstatus(workstatus){
-   //console.log("get data",workstatus);
-   if(workstatus=="1")
-   {
-     this.showDetail=true;
-   }
-   else{
-    this.showDetail=false;
-   }
-     // this.isLoading = true
-     
-    
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
     }
+  }
+
+  getjobstatus(workstatus) {
+    //console.log("get data",workstatus);
+    if (workstatus == "1") {
+      this.showDetail = true;
+    }
+    else {
+      this.showDetail = false;
+    }
+    // this.isLoading = true
+
+
+  }
 
   handleInputChange(e, fileType) {
     this.fileType = fileType;

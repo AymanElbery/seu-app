@@ -29,7 +29,6 @@ export class VerifyComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   redirectToLogin() {
@@ -44,16 +43,15 @@ export class VerifyComponent implements OnInit {
     this.admissionGRservice.getverification(this.AddReqForm.value).subscribe(resverify => {
       if (resverify["status"]) {
         this.admissionGRservice.LoggedInToken = this.globaService.getItem(this.admissionGRservice.tokenKey);
-        this.admissionGRservice.LoggedInUser = resverify["data"];
-        this.admissionGRservice.checkResultData = resverify["data"];
-        this.globaService.setItem(this.admissionGRservice.userKey, JSON.stringify(resverify["data"]));
-        this.submitted = false;
-        //this.router.navigate(['/apps/admission-gr/display-result']);
+        this.admissionGRservice.LoggedInUser = resverify["data"]["user"];
+        this.admissionGRservice.checkResultData = resverify["data"]["info"];
+
+        this.globaService.setItem(this.admissionGRservice.userKey, JSON.stringify(resverify["data"]["user"]));
         this.router.navigate(['/apps/admission-gr/']);
       } else {
         this.toastr.push(resverify['messages']);
-        this.submitted = false;
       }
+      this.submitted = false;
     }, error => {
       this.toastr.tryagain();
       this.submitted = false;

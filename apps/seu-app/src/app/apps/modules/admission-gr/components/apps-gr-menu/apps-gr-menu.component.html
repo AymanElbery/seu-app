@@ -10,33 +10,40 @@
   <div class="sidebar-content">
     <div class="nav-container">
       <nav id="main-menu-navigation" class="navigation-main">
-        <!-- <div class="nav-item has-sub ">
-          <a href="#" class="menu-item homelink" routerLink="/apps">
-            <span>{{"home" | translate}}</span>
-            <i class="ik ik-home"></i>
-          </a>
-        </div> -->
         <div class="nav-item">
+
+
+          <a href="{{admissionGRService.settings['UPLOAD_FILES_SERVICE'] == 1 ? 'https://bannerssb.seu.edu.sa/PPRD_en/bwskalog.p_disploginnew?in_id=&cpbl=&newid=' : 'javascript:;' }}"
+            class="menu-item" target="_blank"
+            title="{{admissionGRService.settings['UPLOAD_FILES_SERVICE'] == 1 ? '' : 'time_finished'| translate }}">
+            <span> {{'newrequest' | translate}} </span>
+            <i class="ik ik-user-check"></i>
+          </a>
+          <a href="{{admissionGRService.settings['UPLOAD_FILES_SERVICE'] == 1 ? 'https://bannerssb.seu.edu.sa/PPRD_en/bwskalog.P_ProcNewApp' : 'javascript:;' }}"
+            class="menu-item" target="_blank"
+            title="{{admissionGRService.settings['UPLOAD_FILES_SERVICE'] == 1 ? '' : 'time_finished'| translate }}">
+            <span> {{'updaterequest' | translate}} </span>
+            <i class="ik ik-user-check"></i>
+          </a>
+
+
+          <a href="#" class="menu-item" routerLink="/apps/admission-gr/upload-documents">
+            <span> {{'uploadfile' | translate}} </span>
+            <i class="ik ik-user-check"></i>
+          </a>
+
           <a href="#" class="menu-item" routerLink="/apps/admission-gr/admission-result">
             <span> {{'admissionResult' | translate}} </span>
             <i class="ik ik-user-check"></i>
           </a>
-          <a  href="#" class="menu-item" routerLink="/apps/admission-gr/gr-upload-file">
-            <span> {{'uploadfile' | translate}} </span>
+          <a href="#" class="menu-item" routerLink="/apps/admission-gr/pay-fee">
+            <span> {{"PaytheFee" | translate}} </span>
             <i class="ik ik-user-check"></i>
           </a>
-          <ng-container>
-            <!--*ngIf="admissionugService.isLoggedIn"-->
-           
-            <a href="#" class="menu-item" routerLinkActive="active" routerLink="/apps/admission-gr/pay-fee">
-              <span> {{"PaytheFee" | translate}} </span>
-              <i class="ik ik-user-check"></i>
-            </a>
-            <a *ngIf="admissionGRService.isLoggedIn" href="#" class="menu-item" (click)="logout()">
-              <span> {{'logout' | translate}} </span>
-              <i class="ik ik-user-check"></i>
-            </a>
-          </ng-container>
+          <a *ngIf="admissionGRService.isLoggedIn" href="javascript:;" class="menu-item" (click)="logout()">
+            <span> {{'logout' | translate}} </span>
+            <i class="ik ik-user-check"></i>
+          </a>
         </div>
       </nav>
     </div>

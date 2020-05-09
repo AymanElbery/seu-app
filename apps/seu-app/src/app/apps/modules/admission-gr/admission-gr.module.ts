@@ -16,10 +16,10 @@ import { DisplayResultComponent } from './components/admission-result/result/dis
 import { PayFeeComponent } from './components/pay-fee/pay-fee.component';
 
 @NgModule({
-  declarations: [GRHomeComponent,AppsGrMenuComponent,AdmissionResultComponent,GrLoginComponent,
-    VerifyComponent,UploadFileComponent,DisplayResultComponent,PayFeeComponent],
-  imports: [AppsSharedModule, AdmissionGRRoutingModule,
-    AdmissionLazyTransModule,
+  declarations: [GRHomeComponent, AppsGrMenuComponent, AdmissionResultComponent, GrLoginComponent,
+    VerifyComponent, UploadFileComponent, DisplayResultComponent, PayFeeComponent],
+  imports: [
+    AdmissionGRRoutingModule,
     SeucommonModule,
     RecaptchaModule,
     AppsSharedModule
@@ -31,5 +31,6 @@ export class AdmissionGRModule {
       this.admissionGRservice.LoggedInToken = globalService.getItem(admissionGRservice.tokenKey);
       this.admissionGRservice.LoggedInUser = JSON.parse(globalService.getItem(admissionGRservice.userKey));
     }
+    this.admissionGRservice.loadSettings();
   }
- }
+}

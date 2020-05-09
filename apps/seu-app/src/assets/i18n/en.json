@@ -225,7 +225,8 @@
         "resume_ar": "Doctor Resume in Arabic",
         "resume_en": "Doctor Resume in English",
         "enquries": "Chatbot inquiries",
-        "ssoidentity": "sso Support"
+        "ssoidentity": "sso Support",
+        "attends": "Attendance System"
     },
     "resume": {
         "title": "Edit Resume in Arabic",
@@ -248,7 +249,13 @@
         "choose_file": "Choose Picture",
         "title_no": "Title No",
         "item_no": "Item No",
-        "agree": "I bear responsibility for the correctness of the data entered above"
+        "agree": "I bear responsibility for the correctness of the data entered above",
+        "work": "Work place",
+        "work_en": "Work place in English",
+        "address": "Address",
+        "address_en": "Address in English",
+        "faculty": "Faculty",
+        "faculty_en": "Faculty in English"
     },
     "enquries": {
         "title": "Inquiries",
@@ -263,7 +270,7 @@
         "unreply": "Un Replied",
         "email": "Answer Employee",
         "replyMsg": "Message Answer",
-        "all_emp" : "All Employees",
+        "all_emp": "All Employees",
         "messageTime": "Message Time",
         "replyTime": "Answer Time"
     },
@@ -482,7 +489,18 @@
             "oname": "name",
             "ojob": " Job title",
             "omobile": "mobile",
-            "email": "email "
+            "email": "email",
+            "job_sector": "Employement Sector Required",
+            "year_job": "Job year Required",
+            "job_com": "Job com  Required",
+            "job_promo": "Upgrade  Required",
+            "job_promo_year": "Upgrade year Required",
+            "job_loc": "Job Location Required",
+            "employer_name": "Employer Name  Required",
+            "employer_job_title": "Employer job title  Required",
+            "employer_phone": "Employer phone Required",
+            "employer_email": "Employer Email  Required",
+            "emailvalidate": "It is not a valid email !" 
         },
         "missing_card": {
             "title": "Lost Card Replacment Request",
@@ -607,7 +625,8 @@
             "equivalent_course": "Information About Equivalent Course In University",
             "choose_subject": "Choose Subject",
             "commitment": "Obligation",
-            "accept": "I Accept"
+            "accept": "I Accept",
+            "upload_university_approval":"Selected University Approval"
         },
         "withdrow_univ": {
             "title": "Withdrawal From University Request",
@@ -713,7 +732,13 @@
             "job_yearReq": "Job Year Required",
             "job_locationReq": "Job Locatioon Required",
             "job_titleReq": "Job Title Required",
-            "work_cityReq": "Work City Required"
+            "work_cityReq": "Work City Required",
+            "job_name": "Job Owner Name Required",
+            "job_title2": "Job  Title Required",
+            "phone2": "Job Owner Phone Required",
+            "email2": "Job Owner EMail Required",
+            "emailvalidate":"It is not a valid email !",
+            "job_details":"Job Details"
         },
         "training_request": {
             "title": "Field training request",
@@ -1058,7 +1083,27 @@
         "EMP_SLRY_YEAR": "Year",
         "EmployeeVouchers": "Employee Vouchers",
         "administrative": "Administrative",
-        "back": "Back"
+        "back": "Back",
+        "penaltydiscount": "Penalty Discount",
+        "managerialduties": "Managerial Duties",
+        "UpdateInfo": "Update Info",
+        "updatedsuccess": "Data has been updated",
+        "poersonalemail": "Personal E-Mail",
+        "Mobile": "Mobile",
+        "AlternativePhone": "Alternative Phone",
+        "address": "Address",
+        "addressEN": "Address (English)",
+        "comminicationlanguage": "Comminication Language",
+        "position": "Position",
+        "decisionDate": "Decision Date",
+        "serviceSeq": "Service Seq",
+        "absenceDateH": "Absence Date",
+        "absentTypeDesc": "Absent Type Desc",
+        "absentDay": "Absent Day",
+        "absentHour": "Absent Hour",
+        "decisionDateH": "Decision Date",
+        "inService": "in Service",
+        "print": "Print"
     },
     "tasks": {
         "description": "Description",

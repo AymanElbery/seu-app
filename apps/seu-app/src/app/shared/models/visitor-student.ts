@@ -8,5 +8,5 @@ export interface VisitorStudent {
     course_equal:string;
     hours:number;
     attachment:string;
-
+    univ_approval:string;
 }

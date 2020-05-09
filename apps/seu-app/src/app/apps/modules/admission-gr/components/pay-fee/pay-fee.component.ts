@@ -10,13 +10,16 @@ import { AdmissionGRService } from '../../services/admission-gr.service';
 })
 export class PayFeeComponent implements OnInit {
 
-  url = '/gr/index';
+  url = '/admGR/index';
   urlSafe: SafeResourceUrl;
   sid;
   srcUrl;
+  user_id;
   constructor(private translate: TranslateService, public sanitizer: DomSanitizer, private admissionGrservice: AdmissionGRService) { }
 
   ngOnInit() {
+    this.user_id = this.admissionGrservice.LoggedInUser['ID'];
+
     this.UpdateSettings();
     this.subscribeLangChange();
   }
@@ -34,8 +37,7 @@ export class PayFeeComponent implements OnInit {
   }
 
   UpdateSettings() {
-    const user_id = this.admissionGrservice.LoggedInUser['ID'];
-    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(environment.paymentLink + this.url + '/' + user_id + '?lang=' + this.translate.currentLang);
+    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(environment.paymentLink + this.url + '/' + this.user_id + '?lang=' + this.translate.currentLang);
     // console.log(this.urlSafe);
   }
 }

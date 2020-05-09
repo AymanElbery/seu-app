@@ -26,6 +26,7 @@ import { AddChineescourseComponent } from './chineescourse/diag/add-chineescours
 import { ChineescourseComponent } from './chineescourse/chineescourse.component';
 import { CourseGpaComponent } from './course-gpa/course-gpa.component';
 import { AddCourseGpaComponent } from './course-gpa/dialog/add-course-gpa.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
 
@@ -59,7 +60,9 @@ import { AddCourseGpaComponent } from './course-gpa/dialog/add-course-gpa.compon
     ToastrModule.forRoot(),
     MatCheckboxModule,
     AppLazyTransModule,
-    SeucommonModule
+    SeucommonModule,
+    NgSelectModule
+
   ],
   providers: [MedicalReportService,
     UvnivCardService,

@@ -53,15 +53,6 @@ export class AdmissionUGService extends AppUserService {
     return true;
   }
 
-  getresstatus(data) {
-    return this.admissionUgHttpRequest.postRequest_obj('/ug/Admission_result_service', data).pipe(
-      map(res => {
-        this.checknotloggedinresult(res)
-        return res;
-      })
-    );
-  }
-
   getloginstatus(data) {
     return this.admissionUgHttpRequest.postRequest_obj('/ug/Admission_result_service/check', data);
   }
@@ -70,6 +61,14 @@ export class AdmissionUGService extends AppUserService {
     return this.admissionUgHttpRequest.postRequest_obj('/ug/Admission_result_service/verification', data);
   }
 
+  getresstatus(data) {
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/Admission_result_service', data).pipe(
+      map(res => {
+        this.checknotloggedinresult(res)
+        return res;
+      })
+    );
+  }
 
   matchdocs(token) {
     return this.admissionUgHttpRequest.postRequest_obj('/ug/Post_result_service', { token }).pipe(

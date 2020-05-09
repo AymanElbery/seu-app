@@ -13,9 +13,10 @@ import {TrainingComponent} from './training/training.component';
 import {VouchersComponent} from './vouchers/vouchers.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PenaltyDiscountComponent } from './penalty-discount/penalty-discount.component';
 
 @NgModule({
-  declarations: [EmpEvaluationsComponent,EmpCustodyComponent,EmpLettersComponent,TrainingComponent,VouchersComponent],
+  declarations: [EmpEvaluationsComponent,EmpCustodyComponent,EmpLettersComponent,TrainingComponent,VouchersComponent,PenaltyDiscountComponent],
   entryComponents: [],
   imports: [
     CommonModule,

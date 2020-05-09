@@ -45,6 +45,7 @@ export class UserService extends BaseService {
       camp: '',
       coll: '',
       id: '',
+      PIDM: '',
       level: '',
       major: '',
       name_ar: '',
