@@ -141,9 +141,23 @@ export class AddGraduateProfileComponent implements OnInit {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.graduate.employer_email") }]);
         return false;
       }
+      if (this.stdinfo.employer_email) {        
+        if(this.validateemail(this.stdinfo.employer_email)==false)
+        {
+          this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.graduate.emilnotallowed") }]);
+          return false;
+        }
+      }
 
     }
-    this.addRequest(this.stdinfo);
+    if (this.stdinfo.email) {     
+      if(this.validateemail(this.stdinfo.email)==false)
+      {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.graduate.emilnotallowed") }]);
+        return false;
+      }
+    }
+    //this.addRequest(this.stdinfo);
 
   }
   keyPress(event: any) {
@@ -181,6 +195,15 @@ export class AddGraduateProfileComponent implements OnInit {
     }
 
 
+  }
+  regex =/^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(seu.edu)\.sa$/g;  
+   validateemail(email) {     
+    if(this.regex.test(email)) {      
+      return false     
+    }
+    else {         
+      return true
+    }
   }
 
 }
