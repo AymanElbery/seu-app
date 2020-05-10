@@ -29,12 +29,22 @@ export class AcademicRecordComponent implements OnInit, OnDestroy {
     this.arabicPrint = this.academicService.Download();
     this.EngPrint = this.academicService.DownloadEng();
   }
-
+  isClosed = false;
+  messagesList = [];
   getReqs() {
     this.isLoading = true;
     this.academicService.getِAcademicRecord().then(
       res => {
+       // res['status'] = 0;
+        //res['messages'] = [{body:"service is closed",type:"error"}];
+        if (res['status']) {
         this.recoredData = (res as any).data;
+        
+        this.isClosed = false;
+      } else {
+        this.isClosed = true;
+        this.messagesList = res['messages'];
+      }
         this.isLoading = false;
       }
     );

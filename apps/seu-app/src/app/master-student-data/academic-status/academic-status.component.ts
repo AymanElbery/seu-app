@@ -28,16 +28,25 @@ export class AcademicStatusComponent implements OnInit, OnDestroy {
       this.getReqs();
     })
   }
-
+  isClosed = false;
+  messagesList = [];
   getReqs() {
     this.isLoading = true;
 
     this.stdData.getRequests().then(
       res => {
+      //  res['status'] = 0;
+       // res['messages'] = [{body:"service is closed",type:"error"}];
+        if (res['status']) {
         this.stdData.reqData = (res as any).data;
         this.stdData.msgs = (res as any).messages;
         this.reqData = this.stdData.reqData;
         this.msgs = this.stdData.msgs;
+        this.isClosed = false;
+      } else {
+        this.isClosed = true;
+        this.messagesList = res['messages'];
+      }
         this.isLoading = false;
         // console.log(this.reqData);
       }, err => {

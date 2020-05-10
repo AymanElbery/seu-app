@@ -32,6 +32,8 @@ export class CertificateIDComponent implements OnInit, OnDestroy {
       this.getReqs();
     });
   }
+  isClosed = false;
+  messagesList = [];
   getReqs() {
     this.isLoading = true;
     this.arabicPrint = this.certificateIDService.DownloadCertificate();
@@ -39,8 +41,17 @@ export class CertificateIDComponent implements OnInit, OnDestroy {
 
     this.certificateIDService.getCertificateID().then(
       (res) => {
+       // res['status'] = 0;
+        //res['messages'] = [{body:"service is closed",type:"error"}];
+        if (res['status']) {
         this.certificateDetails = ((res) as any).data;
         this.lectures = (((res) as any).data as any).Lectures;
+        this.isClosed = false;
+      } else {
+        this.isClosed = true;
+        this.messagesList = res['messages'];
+      }
+	  
         this.isLoading = false;
       }
     );

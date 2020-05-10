@@ -3,6 +3,10 @@
   [desc]="'services.exam.certatt' |translate"></service-header>
 
   <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div *ngIf="isClosed">
+    <seu-flash [msgs]="messagesList"  [isLoading]="isLoading"> </seu-flash>
+   </div>
+   <ng-container *ngIf="!isClosed">
 
   <section class="ser-state" *ngIf="!isLoading">
     <div *ngIf="status==0" class="alert alert-primary text-center" role="alert">
@@ -337,4 +341,5 @@
       </div>
     </div>
   </section>
+</ng-container>
 </div>
