@@ -1,8 +1,13 @@
 <div class="main-content">
   <service-header [title]="'services.academic_status.title' |translate"
-  [desc]="'services.academic_status.desc' |translate"></service-header>
+    [desc]="'services.academic_status.desc' |translate"></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
+
+  <div *ngIf="isClosed">
+    <seu-flash [msgs]="messagesList"  [isLoading]="isLoading"> </seu-flash>
+  </div>
+<ng-container *ngIf="!isClosed">
   <div class="ser-state" *ngIf="!isLoading">
   </div>
   <div class="widget" *ngIf="!isLoading">
@@ -103,7 +108,8 @@
         <div class="widget-header">
           <div class="row">
             <div class="col-md-6">
-              <h3 class="widget-title" style="font-size:12px;text-align: right">{{"general.academic_status_through_terms" | translate}}</h3>
+              <h3 class="widget-title" style="font-size:12px;text-align: right">
+                {{"general.academic_status_through_terms" | translate}}</h3>
             </div>
             <div class="col-md-6">
               <div class="form-group row">
@@ -226,8 +232,10 @@
     </div>
   </section>
   <div style="text-align: center" class="prin" *ngIf="!isLoading">
-    <a class="btn" seu-auto-print  downloadpdf href="{{arabicPrint}}">{{"general.ar_print" | translate}} <i class="ik ik-save"></i> </a>
-    <a class="btn" seu-auto-print downloadpdf href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print" | translate}} </a>
+    <a class="btn" seu-auto-print downloadpdf href="{{arabicPrint}}">{{"general.ar_print" | translate}} <i
+        class="ik ik-save"></i> </a>
+    <a class="btn" seu-auto-print downloadpdf href="{{EngPrint}}"> <i class="ik ik-save"></i>
+      {{"general.en_print" | translate}} </a>
   </div>
-
+</ng-container>
 </div>
