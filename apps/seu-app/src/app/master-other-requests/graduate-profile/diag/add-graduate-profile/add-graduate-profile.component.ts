@@ -54,6 +54,7 @@ export class AddGraduateProfileComponent implements OnInit {
     // this.isLoading = true;
 
     this.reqData = this.gradService.reqData;
+    this.getworkstatus(this.stdinfo.job_status);
     //console.log("get data",this.reqData);
 
 
@@ -61,7 +62,7 @@ export class AddGraduateProfileComponent implements OnInit {
 
   getworkstatus(workstatus) {
     // console.log("get data",workstatus);
-    if (workstatus == "unemployed") {
+    if (workstatus = '' || workstatus == "unemployed") {
       this.showDetail = false;
     }
     else {
