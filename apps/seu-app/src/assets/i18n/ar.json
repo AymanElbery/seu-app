@@ -501,7 +501,7 @@
             "employer_phone": "رقم الجوال للمدير المباشر مطلوب",
             "employer_email": "البريد الإلكتروني للمدير المباشر مطلوب",
             "emailvalidate": "بريد الكتروني غير صحيح",
-            "emilnotallowed": "Email Not Allowed !"
+            "emilnotallowed": "مطلوب البريد الشخصي وليس الجامعي"
         },
         "missing_card": {
             "title": "طلب بطاقة جامعية بدل فاقد",
@@ -740,7 +740,7 @@
             "email2": "حقل الريد الإلكتروني للمدير المباشر مطلوب",
             "emailvalidate": "بريد الكتروني غير صحيح",
             "job_details": "بيانات الوظيفة",
-            "emilnotallowed": "Email Not Allowed !"
+            "emilnotallowed": "مطلوب البريد الشخصي وليس الجامعي"
         },
         "training_request": {
             "title": "طلب التدريب الميداني",

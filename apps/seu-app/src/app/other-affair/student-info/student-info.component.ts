@@ -177,7 +177,6 @@ export class StudentInfoComponent implements OnInit {
       
     }
     if (this.stdData.email) {
-      console.log(this.stdData.email);
       if(this.validateemail(this.stdData.email)==false)
       {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.emilnotallowed") }]);

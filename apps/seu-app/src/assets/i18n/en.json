@@ -501,7 +501,7 @@
             "employer_phone": "Employer phone Required",
             "employer_email": "Employer Email  Required",
             "emailvalidate": "It is not a valid email !" ,
-            "emilnotallowed": "Email Not Allowed !"
+            "emilnotallowed": "University email is not allowed"
         },
         "missing_card": {
             "title": "Lost Card Replacment Request",
@@ -758,7 +758,7 @@
             "form_ar": "Form - Arabic",
             "form_en": "Form - English",
             "student_form": "Student Form",
-            "emilnotallowed": "Email Not Allowed !"
+            "emilnotallowed": "University email is not allowed"
         },
         "reg": {
             "choosewishe": "choose wishes ",
