@@ -3,20 +3,10 @@
  
     <StackLayout>
 
-        <GridLayout *ngIf="!newsLoaded" >
 
-            <StackLayout class="form" verticalAlignment="center">
-               
-                <StackLayout>
-                    <ActivityIndicator *ngIf="!newsLoaded" 
-                        [busy]="!newsLoaded"></ActivityIndicator>
+    <ActivityIndicator *ngIf="!newsLoaded" [busy]="!newsLoaded"></ActivityIndicator>
 
-                </StackLayout>
-
-            </StackLayout>
-
-        </GridLayout>
-
+       
         <StackLayout height="160" class="list-group-item news"
             *ngFor="let news of userService.newsData">
 
