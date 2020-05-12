@@ -9,17 +9,17 @@
 
 
 <GridLayout class="heading2" rows="auto,auto" columns="*,150">
-    <label  row="1" colSpan="2" text=" هلا بك فهد بن سعود " class=" heading-text2" ></label>
+    <label  row="1" colSpan="2" text=" أهلا بك {{userService.userData.name_ar}}" class=" heading-text2" ></label>
   </GridLayout>
 
 <FlexboxLayout  flexDirection="row-reverse"  alignItems="center" justifyContent="space-between">
 
-    <GridLayout class="heading4" rows="auto,auto" columns="*,150">
+    <GridLayout class="heading4" rows="auto,auto" columns="*,150" (tap)="navigate('news')">
         <Image  row="0" colSpan="2"  class="heading-img" src="~/images/news.png"></Image>
         <label  row="1" colSpan="2" text="   أخر الأخبار  " class=" heading-text4 " ></label>
       </GridLayout>
 
-      <GridLayout class="heading4" rows="auto,auto" columns="*,150">
+      <GridLayout class="heading4" rows="auto,auto" columns="*,150" (tap)="navigate('ads')">
         <Image  row="0" colSpan="2"  class="heading-img" src="~/images/ads.png"></Image>
         <label  row="1" colSpan="2" text="   أخر الإعلانات  " class=" heading-text4 " ></label>
       </GridLayout>
@@ -34,12 +34,12 @@
 
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
 
-            <GridLayout class="heading6" rows="auto,auto" columns="*,*" >
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/status')" >
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/st.png"></Image>
-                <label  row="1" colSpan="2" text=" الحالة الاكاديمية " class=" heading-text6 " ></label>
+                <label  row="1" colSpan="2" text=" الحالة الاكاديمية " class=" heading-text6 "></label>
               </GridLayout>
         
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/certificate')">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/certificate.png"></Image>
                 <label  row="1" colSpan="2" text="  شهادة تعريف  " class=" heading-text6 " ></label>
               </GridLayout>
@@ -48,12 +48,12 @@
 
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
 
-            <GridLayout class="heading6" rows="auto,auto" columns="*,*">
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/record')">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/record.png"></Image>
                 <label  row="1" colSpan="2" text="   السجل الأكاديمي  " class=" heading-text6 " ></label>
               </GridLayout>
         
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changemajor')">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book-2.png"></Image>
                 <label  row="1" colSpan="2" text="   تغيير التخصص " class=" heading-text6 " ></label>
               </GridLayout>
@@ -62,12 +62,12 @@
 
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
 
-            <GridLayout class="heading6" rows="auto,auto" columns="*,*">
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changerequest')">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/branch.png"></Image>
                 <label  row="1" colSpan="2" text="   تغيير الفرع  " class=" heading-text6 " ></label>
               </GridLayout>
         
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/cancelcourse')">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
                 <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
               </GridLayout>
@@ -100,7 +100,7 @@
 
 </ScrollView> 
 
-<GridLayout  verticalAlignment="bottom"class="fixed-button">
+<GridLayout  verticalAlignment="bottom"class="fixed-button" (tap)="navigate('contact')">
     <FlexboxLayout justifyContent="center" width="100%" >
         <Image   class="fixed-img" src="~/images/contact.png"></Image>
     </FlexboxLayout>

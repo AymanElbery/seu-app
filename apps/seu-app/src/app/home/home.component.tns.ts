@@ -275,7 +275,7 @@ setInterval(
       }
 
     ngOnInit(): void {
-        this.LoadData();
+      //  this.LoadData();
 
     }
 
@@ -290,5 +290,9 @@ setInterval(
  const  fmnd = this.getdfn(img);
 
  return (img as string).replace(fmn,fmnd);
+    }
+
+    navigate(route:string){
+      this.router.navigate([route]);
     }
 }
