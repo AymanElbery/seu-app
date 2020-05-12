@@ -38,6 +38,7 @@ export class ResumeEnComponent{
   jobTitle;
   section;
   faculty;
+  office;
   work;
   nationality;
 
@@ -48,6 +49,7 @@ export class ResumeEnComponent{
   jobTitleError;
   sectionError;
   facultyError;
+  officeError;
   workError;
 
   title;
@@ -168,6 +170,7 @@ export class ResumeEnComponent{
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
             this.faculty = this.data.FACULTY;
+            this.office = this.data.OFFICE;
             this.nationality = this.data.NATIONALITY;
             this.titles = this.data.TITLES;
             if (this.titles) {
@@ -242,6 +245,9 @@ export class ResumeEnComponent{
   hideFacultyMessages(){
     this.facultyError = null;
   }
+  hideOfficeMessages(){
+    this.officeError = null;
+  }
 
   onSubmit(){
 
@@ -280,6 +286,10 @@ export class ResumeEnComponent{
       this.facultyError = "هذا الحقل مطلوب";
       valid = false;
     }
+    if (this.office == "" || this.office == null) {
+      this.officeError = "هذا الحقل مطلوب";
+      valid = false;
+    }
 
     if (valid) {
       let data = {
@@ -292,6 +302,7 @@ export class ResumeEnComponent{
         jobTitle    : this.jobTitle,
         section     : this.section,
         faculty     : this.faculty,
+        office      : this.office,
         nationality : this.nationality,
         titles      : this.titles,
       };

@@ -255,7 +255,9 @@
         "address": "Address",
         "address_en": "Address in English",
         "faculty": "Faculty",
-        "faculty_en": "Faculty in English"
+        "faculty_en": "Faculty in English",
+        "office": "Office",
+        "office_en": "Office in English"
     },
     "enquries": {
         "title": "Inquiries",
