@@ -4,7 +4,10 @@
   [desc]="'services.medical_report.desc' |translate"></service-header>
 
   <seu-loader [isLoading]="isLoading"></seu-loader>
-
+  <div *ngIf="isClosed">
+    <seu-flash [msgs]="messagesList"  [isLoading]="isLoading"> </seu-flash>
+   </div>
+   <ng-container *ngIf="!isClosed">
   <div class="widget" *ngIf="!isLoading">
     <br>
 
@@ -107,4 +110,5 @@
     <a class="btn " seu-auto-print href="{{EngPrint}}"><i class="ik ik-save"></i>
       {{"general.en_print"|translate}}</a>
   </div>
+</ng-container>
 </div>

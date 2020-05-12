@@ -500,7 +500,8 @@
             "employer_job_title": "Employer job title  Required",
             "employer_phone": "Employer phone Required",
             "employer_email": "Employer Email  Required",
-            "emailvalidate": "It is not a valid email !" 
+            "emailvalidate": "It is not a valid email !" ,
+            "emilnotallowed": "Email Not Allowed !"
         },
         "missing_card": {
             "title": "Lost Card Replacment Request",
@@ -756,7 +757,8 @@
             "instructions": "Instructions",
             "form_ar": "Form - Arabic",
             "form_en": "Form - English",
-            "student_form": "Student Form"
+            "student_form": "Student Form",
+            "emilnotallowed": "Email Not Allowed !"
         },
         "reg": {
             "choosewishe": "choose wishes ",
