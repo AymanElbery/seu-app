@@ -30,7 +30,7 @@ export class ResumeService {
             name: data.name, 
             email: data.email, 
             phone: data.phone, 
-            address: data.address, 
+            // address: data.address, 
             jobTitle: data.jobTitle, 
             faculty: data.faculty, 
             office: data.office, 

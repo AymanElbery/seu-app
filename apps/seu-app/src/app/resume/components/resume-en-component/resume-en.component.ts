@@ -34,7 +34,7 @@ export class ResumeEnComponent{
   name;
   email;
   phone;
-  address;
+  // address;
   jobTitle;
   section;
   faculty;
@@ -45,7 +45,7 @@ export class ResumeEnComponent{
   nameError;
   emailError;
   phoneError;
-  addressError;
+  // addressError;
   jobTitleError;
   sectionError;
   facultyError;
@@ -166,7 +166,7 @@ export class ResumeEnComponent{
             this.name = this.data.NAME;
             this.email = this.data.EMAIL;
             this.phone = this.data.PHONE;
-            this.address = this.data.ADDRESS;
+            // this.address = this.data.ADDRESS;
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
             this.faculty = this.data.FACULTY;
@@ -298,7 +298,7 @@ export class ResumeEnComponent{
         name        : this.name,
         email       : this.email,
         phone       : this.phone,
-        address     : this.address,
+        // address     : this.address,
         jobTitle    : this.jobTitle,
         section     : this.section,
         faculty     : this.faculty,

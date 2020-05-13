@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="profile">
             <img *ngIf="profile == 'notExist'" src="assets/images/profile.png">
             <img *ngIf="profile != 'notExist'" src="https://seuapps.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
@@ -99,14 +99,14 @@
         </div>
       </div>
       <div class="row row-form" >
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
           <div class="form-group">
             <label for="address">{{ "resume.address" | translate}}</label>
             <input type="text" [ngClass]="{'errorBorder': addressError}" class="form-control" id="address" [(ngModel)]="address" name="address">
             <span *ngIf="addressError" class="text text-danger">{{addressError}}</span>
           </div>
-        </div>
-        <div class="col-md-4">
+        </div> -->
+        <div class="col-md-6">
           <div class="form-group">
             <label for="nationality">{{ "resume.nationality" | translate}}</label>
             <select required class="form-control" id="nationality" [(ngModel)]="nationality" name="nationality">
@@ -115,7 +115,7 @@
             </select>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="form-group">
             <label for="office">{{ "resume.office_en" | translate}}</label>
             <input required type="text" [ngClass]="{'errorBorder': officeError}" class="form-control" id="office" [(ngModel)]="office" name="office">
