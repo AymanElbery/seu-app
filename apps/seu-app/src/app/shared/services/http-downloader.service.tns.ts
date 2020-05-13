@@ -20,7 +20,7 @@ export class DataDownLoadService {
     downloader: Downloader = new Downloader();
      csize = new Subject<any>();
     constructor(private globalService: GlobalBaseService) { }
-    
+
 
     /**
     // tslint:disable-next-line: jsdoc-format
@@ -42,10 +42,11 @@ export class DataDownLoadService {
             'Content-Type': 'application/json',
             'Session-ID': sid
         };
-   
+
         if (isAndroid) {
             const  downloadedFilePath = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
             console.log(downloadedFilePath);
+
             const zipDownloaderId = this.downloader.createDownload({
                 url: apiUrl,
                 headers: headerHttp,
@@ -57,7 +58,7 @@ export class DataDownLoadService {
             // tslint:disable-next-line: max-line-length
             permissions.requestPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 'I need these permissions because I\'m cool').then(
                 () => {
-                    console.log("permissions")
+                    console.log('permissions');
                     this.downloader
                     .start(zipDownloaderId, (progressData: ProgressEventData) => {
                         console.log(`Progress : ${progressData.value}%`);
@@ -72,7 +73,7 @@ export class DataDownLoadService {
                         subject.next(true);
 
                     },
-                    err=>{console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr',err)});
+                    err => {console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr', err);});
                                  })
                  .catch( () => {
                     console.log('Uh oh, no permissions - plan B time!');
@@ -80,12 +81,14 @@ export class DataDownLoadService {
             );
          //   permissions.requestPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE, 'I need these permissions because I\'m cool')
 
-        }else{
+        } else {
+            const d = new Date();
+            const fileName = d.getTime();
             const zipDownloaderId = this.downloader.createDownload({
                 url: apiUrl,
                 headers: headerHttp,
                 path: fileSystem.knownFolders.ios.library().path,
-                fileName: 'mypdffile.pdf'
+                fileName: +fileName + '.pdf'
             });
 
             this.downloader
@@ -98,7 +101,7 @@ export class DataDownLoadService {
                 subject.next(true);
 
             },
-            err=>{console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr',err)});
+            err => {console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr', err);});
         }
 
 
