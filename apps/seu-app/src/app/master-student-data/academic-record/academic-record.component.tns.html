@@ -116,20 +116,20 @@
                           <Label row="2"  column="1" class="ysPBox" style="font-weight:800;" text='الرمز'></Label>
                           <Label row="2"  column="0" class="ysPBox2" [text]="item.ID"></Label>
 
-                          <Label row="3"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.rating" | translate}}'></Label>
-                          <Label row="3"  column="0" class="ysPBox2" [text]="item.GRADE_TITLE"></Label>
+                          <Label row="3"  column="1"  class="ysPBox" *ngIf="!item.isCurrentRegistration" style="font-weight:800;" text='{{"general.rating" | translate}}'></Label>
+                          <Label row="3"  column="0" class="ysPBox2" *ngIf="!item.isCurrentRegistration" [text]="item.GRADE_TITLE"></Label>
                       
                           <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.course_hours" | translate}}'></Label>
                           <Label row="4"  column="0"   class="ysPBox2"  [text]="item.HRS"></Label>
             
-                          <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
-                          <Label row="5"  column="0"  class="ysPBox2"  [text]="item.Points"></Label>
+                          <Label row="5"  column="1" *ngIf="!item.isCurrentRegistration"  class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                          <Label row="5"  column="0" *ngIf="!item.isCurrentRegistration" class="ysPBox2"  [text]="item.Points"></Label>
             
                      
                         </GridLayout>
                       </StackLayout>
 
-                      <StackLayout>
+                      <StackLayout  *ngIf="!item.isCurrentRegistration">
 
                         <StackLayout class="ser-title">
 
