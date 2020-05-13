@@ -27,13 +27,15 @@ export class AppUserService {
     this.router.navigate(['/apps']);
   }
 
-  logout() {
+  logout(redirect = true) {
     // add custom code
     this.globalService.removeItem(this.tokenKey);
     this.globalService.removeItem(this.userKey);
     this.LoggedInToken = null;
     this.LoggedInUser = null;
-    this.appRedirect();
+    if (redirect) {
+      this.appRedirect();
+    }
   }
 
 }

@@ -14,10 +14,12 @@ import {VgControlsModule} from 'videogular2/controls';
 import {VgOverlayPlayModule} from 'videogular2/overlay-play';
 import {VgBufferingModule} from 'videogular2/buffering';
 import { AppLazyTransModule } from '../app.lazytrans.module';
+import { AlphabateOnlyDirective } from './alphabate-only.directive';
+import { SeuFlashComponent } from './seu-flash/seu-flash.component';
 
 
 @NgModule({
-  declarations: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent,DialogPlayerComponent],
+  declarations: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent,DialogPlayerComponent, AlphabateOnlyDirective,SeuFlashComponent],
   imports: [
     CommonModule,
     MatProgressSpinnerModule,
@@ -29,6 +31,6 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
     AppLazyTransModule
   ],
   entryComponents: [DialogPlayerComponent],
-  exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent]
+  exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent,AlphabateOnlyDirective,SeuFlashComponent]
 })
 export class SeucommonModule { }

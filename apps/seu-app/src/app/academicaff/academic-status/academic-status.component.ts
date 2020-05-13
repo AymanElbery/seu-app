@@ -21,7 +21,7 @@ export class AcademicStatusComponent implements OnInit, OnDestroy {
 
   constructor(private transalte: TranslateService, private academicStatusService: AcademicStatusService) {
 
-   }
+  }
   subscriptions;
   ngOnInit() {
     this.getReqs();
@@ -33,16 +33,29 @@ export class AcademicStatusComponent implements OnInit, OnDestroy {
     if (this.subscriptions)
       this.subscriptions.unsubscribe();
   }
+  isClosed = false;
+  messagesList = [];
   getReqs() {
     this.isLoading = true;
     this.isLoadingTerm = true;
     this.academicStatusService.getStaudentStatus().then((res) => {
-      this.student = (res as any).data.student;
-      this.studentTerms = (res as any).data.STD_TERMS;
-      this.studentTermDetails = (res as any).data.STD_TermDetails;
-      this.selectedSems = this.studentTerms[0].TERM_CODE;
-      this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
-      this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
+
+      // res['status'] = 0;
+      // res['messages'] = [{body:"service is closed",type:"error"}];
+
+      if (res['status']) {
+        this.student = (res as any).data.student;
+        this.studentTerms = (res as any).data.STD_TERMS;
+        this.studentTermDetails = (res as any).data.STD_TermDetails;
+        this.selectedSems = this.studentTerms[0].TERM_CODE;
+        this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
+        this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
+
+        this.isClosed = false;
+      } else {
+        this.isClosed = true;
+        this.messagesList = res['messages'];
+      }
       this.isLoading = false;
       this.isLoadingTerm = false;
     });

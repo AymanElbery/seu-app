@@ -21,8 +21,8 @@ export class CourseGPAService {
     this.configService.baseUrl = "stdservicesapi";
     return this.httRequest.postRequest('Courses_gpa_service/insert', data).toPromise();
   }
-  deleteReq(id) {
+  deleteReq() {
     this.configService.baseUrl = "stdservicesapi";
-    return this.httRequest.GetRequest('Courses_gpa_service/remove/' + id).toPromise();
+    return this.httRequest.GetRequest('Courses_gpa_service/remove').toPromise();
   }
 }

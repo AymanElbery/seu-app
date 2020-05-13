@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdmisionUgService } from '../../../services/admision-ug.service';
+import { AdmissionUGService } from '../../../services/admission-ug.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DisplayResultComponent implements OnInit {
   checkResultData;
-  constructor(private admissionUgservice: AdmisionUgService, private router: Router) {
+  constructor(private admissionUgservice: AdmissionUGService, private router: Router) {
 
   }
   ngOnInit() {

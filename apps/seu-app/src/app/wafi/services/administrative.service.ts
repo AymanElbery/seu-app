@@ -31,5 +31,12 @@ export class AdministrativeService {
     return this.wafihttRequest.postRequest_obj('emp/open-show-personal-vouchers', {year,voucherType});
   }
 
+  getpanaltydiscount() {
+    return this.wafihttRequest.postRequest_obj('emp/get-penalty-discounts', {});
+  }
+  getpandiscreport(decisionNo,decisionDate,absentDate) {
+    decisionDate = "";
+    return this.wafihttRequest.postRequest_obj('emp/print-vacation-penalty_discount', {decisionNo,decisionDate,absentDate});
+  }
 
 }

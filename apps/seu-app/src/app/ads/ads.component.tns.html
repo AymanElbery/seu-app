@@ -1,0 +1,29 @@
+<app-header></app-header>
+<ScrollView height="100%">
+ 
+    <StackLayout>
+
+
+    <ActivityIndicator *ngIf="!adsLoaded" [busy]="!adsLoaded"></ActivityIndicator>
+
+
+
+        <StackLayout height="160" class="list-group-item news"
+            *ngFor="let item of userService.adsData">
+
+            <GridLayout  >
+                <StackLayout>
+                    <!-- <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
+                        src="{{'data:image/jpg;base64,' + item.image}}"></Image> -->
+
+
+                        <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
+                        src="{{item.image}}"></Image>
+                    <Label horizontalAlignment="right" class="label-itme" textWrap="true" row="1"
+                        text="{{item.title}}"></Label>
+                </StackLayout>
+            </GridLayout>
+
+        </StackLayout>
+    </StackLayout>
+</ScrollView>

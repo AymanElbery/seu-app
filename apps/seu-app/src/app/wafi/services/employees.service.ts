@@ -22,6 +22,12 @@ export class EmployeesService {
   getdataEmployees() { 
     return this.wafihttRequest.postRequest_obj('emp/get-emp-info',{});  
 }
+updateEmpInfo(data) { 
+  return this.wafihttRequest.postRequest_obj('emp/update-emp-info',{email:data.email,mobile_no:data.mobile_no,phone_no:data.phone_no,address:data.address,address_s:data.address_s,preferred_lang_sms:data.preferred_lang_sms});  
+}
+getmanagerialduties() { 
+  return this.wafihttRequest.postRequest_obj('emp/get-managerial-duties',{});  
+}
 getdataEmployeesLang() { 
   return this.wafihttRequest.postRequest_obj('emp/get-comm-lang',{});  
 }

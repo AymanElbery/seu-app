@@ -1,7 +1,7 @@
 <div class="main-content">
 
-  <service-header [title]="'menu.graduateprofile' |translate"
-  [desc]="'menu.graduateprofile' |translate"></service-header>
+  <service-header [title]="'menu.graduateprofile' |translate" [desc]="'menu.graduateprofile' |translate">
+  </service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
   <div class="ser-state" *ngIf="!isLoading">
@@ -25,8 +25,8 @@
     <div class="widget-header">
 
 
-      <h3 class="widget-title"> {{"general.request.can_update_data"|translate}}
-        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openAddDialoge()">
+      <h3 class="widget-title"> {{"general.request.pre_requests"|translate}}
+        <button *ngIf=" true || reqData.can_update_data" type="button" class="btn btn-primary" (click)="openAddDialoge()">
           {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
         </button>
 
@@ -62,13 +62,10 @@
 
               </button>
             </td>
-            <td *ngIf='it.deletable'><button [disabled]='!it.deletable' class="btn btn-sm btn-danger"
-                style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
+            <td><button class="btn btn-sm btn-danger" style="color: white" (click)="delete(it.request_number,i)"><i
+                  class="fa fa-trash">
                   <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
                 </i> </button></td>
-
-            <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"|translate}}</td>
-
 
 
           </tr>

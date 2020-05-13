@@ -114,6 +114,10 @@ const routes: Routes = [
         loadChildren: './resume/resume.module#ResumeModule',
         canActivate: [EmpGuard]
       },
+      {
+        path: 'enquries',
+        loadChildren: './enquries/enquries.module#EnquriesModule'
+      },
     ]
   },
   {
@@ -125,7 +129,8 @@ const routes: Routes = [
     outlet: 'print',
     component: PrintLayoutComponent,
     children: [{ path: 'print-file/:paramData', component: PrintFileComponent }]
-  },
+  }
+  ,
   {
     path: 'apps',
     loadChildren: './apps/apps.module#AppsModule'

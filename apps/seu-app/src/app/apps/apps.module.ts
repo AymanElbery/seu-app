@@ -5,6 +5,8 @@ import { AppsLandingComponent } from './components/apps-landing/apps-landing.com
 import { AdmissionLazyTransModule } from './admission.lazytrans.module';
 import { TranslateService } from '@ngx-translate/core';
 import { SeucommonModule } from '../seucommon/seucommon.module';
+import { AppsUgGuard } from './modules/admission-ug/apps-ug-guard/apps-ug.guard';
+import { AppsGrGuard } from './modules/admission-gr/apps-gr-guard/apps-gr.guard';
 
 @NgModule({
   declarations: [AppsLandingComponent],
@@ -12,6 +14,9 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     AppsRoutingModule,
     SeucommonModule,
     AppsSharedModule
+  ],
+  providers: [
+    AppsUgGuard,AppsGrGuard
   ]
 })
 export class AppsModule {
@@ -19,6 +24,6 @@ export class AppsModule {
     document.getElementById('bodyloading')
       ? document.getElementById('bodyloading').remove()
       : '';
-      this.translate.use('ar');
+    this.translate.use('ar');
   }
 }

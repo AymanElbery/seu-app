@@ -48,6 +48,18 @@ export class AttendanceService {
         });
     }
 
+    getSTD(crn, code, id) {
+        return this.http.post(this.URL + "attendance/stdbycode",
+        { 
+            crn: crn,
+            code: code,
+            id: id
+        },
+        {
+            headers: this.headers,
+        });
+    }
+
     disActiveCode(code) {
         return this.http.post(this.URL + "attendance/disactivecode",
         { 

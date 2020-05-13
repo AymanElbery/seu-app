@@ -1,15 +1,83 @@
 <app-header></app-header>
+
+<GridLayout  style="background:#ededed">
+    <Image src="~/images/home-ba.png" scaleX="1.1" scaleY="1.1" fill="aspectFill"></Image>
+
+<ScrollView height="100%">
+
 <StackLayout>
-    <StackLayout  horizontalAlignment="right"class="heading " style="padding-right: 10px;width: 90%;">
 
-        <Label horizontalAlignment="right"  class="h3 heading-text "  text="   الإعـــــلانـــات  "></Label>
-        <Label   text="&#xf0a1;" class="fas  heading-icon"></Label>
 
-    </StackLayout>
+<GridLayout class="heading2" rows="auto,auto" columns="*,150">
+    <label  row="1" colSpan="2" text=" أهلا بك {{userService.userData.name_ar}}" class=" heading-text2" ></label>
+  </GridLayout>
+
+<FlexboxLayout  flexDirection="row-reverse"  alignItems="center" justifyContent="space-between">
+
+    <GridLayout class="heading4" rows="auto,auto" columns="*,150" (tap)="navigate('news')">
+        <Image  row="0" colSpan="2"  class="heading-img" src="~/images/news.png"></Image>
+        <label  row="1" colSpan="2" text="   أخر الأخبار  " class=" heading-text4 " ></label>
+      </GridLayout>
+
+      <GridLayout class="heading4" rows="auto,auto" columns="*,150" (tap)="navigate('ads')">
+        <Image  row="0" colSpan="2"  class="heading-img" src="~/images/ads.png"></Image>
+        <label  row="1" colSpan="2" text="   أخر الإعلانات  " class=" heading-text4 " ></label>
+      </GridLayout>
+      
+</FlexboxLayout> 
+
+
+        <GridLayout class="heading3" columns="auto,*">
+            <Image  col="0"   class="heading-img3" src="~/images/ser.png"></Image>
+        <label text="  الخدمات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
+        </GridLayout> 
+
+        <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
+
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/status')" >
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/st.png"></Image>
+                <label  row="1" colSpan="2" text=" الحالة الاكاديمية " class=" heading-text6 "></label>
+              </GridLayout>
+        
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/certificate')">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/certificate.png"></Image>
+                <label  row="1" colSpan="2" text="  شهادة تعريف  " class=" heading-text6 " ></label>
+              </GridLayout>
+     
+        </FlexboxLayout> 
+
+        <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
+
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/record')">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/record.png"></Image>
+                <label  row="1" colSpan="2" text="   السجل الأكاديمي  " class=" heading-text6 " ></label>
+              </GridLayout>
+        
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changemajor')">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book-2.png"></Image>
+                <label  row="1" colSpan="2" text="   تغيير التخصص " class=" heading-text6 " ></label>
+              </GridLayout>
+     
+        </FlexboxLayout>
+
+        <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
+
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changerequest')">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/branch.png"></Image>
+                <label  row="1" colSpan="2" text="   تغيير الفرع  " class=" heading-text6 " ></label>
+              </GridLayout>
+        
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/cancelcourse')">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
+                <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
+              </GridLayout>
+     
+        </FlexboxLayout>
+       
+
+     
    
-    <GridLayout height="150" class="slider">
-
-
+    <!-- <GridLayout height="170" class="slider">
         <Carousel  selectedPage="{{sindex}}" finite="true" bounce="false" #myCarousel [items]="userService.adsData"
             height="100%" width="100%" color="white" android:indicatorAnimation="slide"
             android:indicatorAnimation="slide" indicatorColorUnselected ="#f08b1c"indicatorColor="#243686" indicatorOffset="0, -15" showIndicator="true" >
@@ -17,11 +85,7 @@
                 verticalAlignment="middle" >
                 <GridLayout  >
                     <StackLayout>
-                        <!-- <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
-                            src="{{'data:image/jpg;base64,' + item.image}}"></Image> -->
-
-
-                            <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
+                            <Image class="slid-itme" height="140" stretch="aspectFill" stretch="aspectFill" row="0"
                             src="{{item.image}}"></Image>
                         <Label horizontalAlignment="right" class="label-itme" textWrap="true" row="1"
                             text="{{item.title}}"></Label>
@@ -29,17 +93,29 @@
                 </GridLayout>
             </CarouselItem>
         </Carousel>
-    </GridLayout>
+    </GridLayout> -->
 
-    <GridLayout col="*" style="direction: rtl;" class="page__content">
+ 
+</StackLayout>
+
+</ScrollView> 
+
+<GridLayout  verticalAlignment="bottom"class="fixed-button" (tap)="navigate('contact')">
+    <FlexboxLayout justifyContent="center" width="100%" >
+        <Image   class="fixed-img" src="~/images/contact.png"></Image>
+    </FlexboxLayout>
+</GridLayout>  
+
+
+      
+
+   <!--  <GridLayout col="*" style="direction: rtl;" class="page__content">
         <StackLayout>
-            <StackLayout style="width: 90%;" horizontalAlignment="right" class="heading">
-                <Label horizontalAlignment="right"  class="h3 Almarai heading-text" text="الأخـــــــبـــــــار"></Label>
-                <Label   text="&#xf1ea;" class="fas  heading-icon"></Label>
-
-
-            </StackLayout>
-            <ScrollView height="100%">
+          
+             <GridLayout class="heading3" columns="auto,*">
+                <Label col="0"  text="&#xf781;" class=" fas heading-icon3" verticalAlignment="center"></Label>
+                <label text="  الأخــبــار  " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
+              </GridLayout> 
  
                 <StackLayout>
 
@@ -55,39 +131,32 @@
 
                         </StackLayout>
 
-                    </GridLayout>
+                    </GridLayout>                                            
 
-                    <StackLayout height="160" class="list-group-item news"
-                        *ngFor="let news of userService.newsData">
-
-          
-                        <Image height="100" stretch="aspectFill" row="0" class="news-item"
-                            src="{{decodeURL(news.image)}}"></Image>
-
-
-
-
-
-
-                        <GridLayout columns="auto, *" class="label-block">
-                            <Label textWrap="true" col="1" row="0"
-                                horizontalAlignment="right" text="{{news.date}} " class="label-news"></Label>
-                            <Label textWrap="true" col="1" row="2"
-                                 text="{{news.title}} " class="label-news-title"></Label>
-
-
+                    <StackLayout  class="list-group-item news"
+                    *ngFor="let news of userService.newsData">
+                           <GridLayout rows="*" backgroundColor="White">
+                            <GridLayout rows="*" columns="*"> 
+                                    <Image stretch="aspectFill"
+                                    src="{{decodeURL(news.image)}}" class="news-im"></Image>
+                                <GridLayout verticalAlignment="top">
+                                    <GridLayout  columns="auto, *"  class="date-bac">
+                                        <Label   col="1" text="{{news.date}}" class="news-source"></Label>
+                                        <Label  col="1" text="&#xf274;" class="far date-icon "></Label>
+                                    </GridLayout>
+                                </GridLayout>
+                            </GridLayout>
                         </GridLayout>
+                        <StackLayout class="title-bac">
+                            <Label  text="{{news.title}}" class="news-title"
+                                textWrap="true"></Label>
+                        </StackLayout>
+                    </StackLayout> 
 
-
-
-                        <StackLayout class="hr"></StackLayout>
-
-                    </StackLayout>
                 </StackLayout>
-            </ScrollView>
         </StackLayout>
 
 
-    </GridLayout>
-   
-</StackLayout>
+    </GridLayout> -->
+
+</GridLayout>

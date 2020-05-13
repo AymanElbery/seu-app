@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AdmisionUgService } from '../../services/admision-ug.service';
+import { AdmissionUGService } from '../../services/admission-ug.service';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
@@ -10,11 +10,11 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./pay-fee.component.css']
 })
 export class PayFeeComponent implements OnInit {
-  url = '/gr/index';
+  url = '/admUG/index';
   urlSafe: SafeResourceUrl;
   sid;
   srcUrl;
-  constructor(private translate: TranslateService, public sanitizer: DomSanitizer, private admissionUgservice: AdmisionUgService) { }
+  constructor(private translate: TranslateService, public sanitizer: DomSanitizer, private admissionUgservice: AdmissionUGService) { }
 
   ngOnInit() {
     this.UpdateSettings();

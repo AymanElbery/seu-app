@@ -28,6 +28,7 @@ import { GraduateProfileDetailComponent } from './graduate-profile/diag/graduate
 import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduate-profile/add-graduate-profile.component';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
 
@@ -48,7 +49,8 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     // BrowserAnimationsModule,
     SeucommonModule,
     MatCheckboxModule,
-    AppLazyTransModule
+    AppLazyTransModule,
+    NgSelectModule
   ],
   providers: [AbseneQueryService, ChangeBranchService, ChangeCourseService, PersonalIDService]
 
