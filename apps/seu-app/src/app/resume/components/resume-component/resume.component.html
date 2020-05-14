@@ -127,7 +127,7 @@
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label for="office">{{ "resume.office" | translate}}</label>
+            <label for="office">{{ "resume.office" | translate}} <span class="text-danger">*</span></label>
             <input required type="text" [ngClass]="{'errorBorder': officeError}" class="form-control" id="office" [(ngModel)]="office" name="office">
             <span *ngIf="officeError" class="text text-danger">{{officeError}}</span>
           </div>
