@@ -1,18 +1,27 @@
 <app-header></app-header>
 <ScrollView>
     <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+   
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
 
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"services.finance.feepayst" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
     
+    </GridLayout>
 
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+        <ListView [items]="messagesList">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
     
      
-    <StackLayout *ngIf="!isLoading">
-        <GridLayout  columns="auto, *" class="serv-title">
-            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
-            <Label col="1" text='{{"services.finance.feepayst" | translate}}' class="serv-name" ></Label>
-            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
-        
-        </GridLayout>
+    <StackLayout *ngIf="!isLoading && !isClosed">
+
        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout" style="margin-top: 20;">
             <Button class=" print-btn " (tap)="onArabicPrint()">
                 <FormattedString>
@@ -65,4 +74,5 @@
         
         
     </StackLayout>
+</FlexboxLayout>
 </ScrollView>

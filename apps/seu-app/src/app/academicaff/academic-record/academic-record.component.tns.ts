@@ -25,6 +25,8 @@ export class AcademicRecordComponent implements OnInit {
   printEN = '';
   isDownLoaded = false;
   clicked;
+  isClosed: boolean;
+  messagesList: any;
 
 
   constructor(private academicService: AcademicRecordService,
@@ -81,12 +83,17 @@ onItemTap(event: ListViewEventData) {
     });
     this.academicService.getِAcademicRecord().then(
       res => {
-    this.recoredData =    (res as any).data;
-    this.msgs = (res as any).messages;
-  //  console.log("dataaaaaaaa",res);
+     if(res['status']){
+      this.isClosed=false;
+      this.recoredData =    (res as any).data;
+      this.msgs = (res as any).messages;
+    //  console.log("dataaaaaaaa",res);
+     }else{
+      this.isClosed=true;
+      this.messagesList=res['messages'];
+     }
+    });
     this.isLoading = false;
-      }
-    );
     this.arabicPrint =   this.academicService.Download();
     this.EngPrint = this.academicService.DownloadEng();
   }

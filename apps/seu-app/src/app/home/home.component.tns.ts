@@ -48,7 +48,7 @@ sindex = 1;
       isNewsLoading;
       isAdsLoading;
       isEventLoading;
-
+      level;
 
 
 
@@ -275,6 +275,7 @@ setInterval(
       }
 
     ngOnInit(): void {
+      this.level=this.userService.userData.student_details.level;
       //  this.LoadData();
 
     }

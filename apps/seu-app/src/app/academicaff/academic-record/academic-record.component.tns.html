@@ -3,21 +3,24 @@
 <ScrollView>
    
     <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
-<!--
     <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
--->
-        
-        
-  
 
-    <FlexboxLayout flexDirection="column" *ngIf="!isLoading && recoredData.terms">
-
-        <GridLayout  columns="auto, *" class="serv-title">
-            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
-            <Label col="1" text='{{"services.academic_record.title" | translate}}' class="serv-name" ></Label>
-            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"services.academic_record.title" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    
+    </GridLayout>
         
-        </GridLayout>
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+        <ListView [items]="messagesList">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
+    
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading && !isClosed &&recoredData.terms">
 
         <FlexboxLayout style="margin-top: 20px;" flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
             <ListView [items]="msgs">
@@ -469,5 +472,5 @@
         </FlexboxLayout>
             -->
     </FlexboxLayout>
-    
+</FlexboxLayout>
 </ScrollView>

@@ -90,7 +90,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
          applicationSettings.setString('pass', this.credentials.password);
          this.userService.logedIn = true;
          if (this.role === 'Vendor') {
-           this.userService.userData.student_details.level = data.data.data.student_details.level;
+           this.userService.userData.student_details.level = data.data.data.student_details_gr.level;
 
          } else if (this.role === 'Student') {
           this.userService.userData.student_details.level = data.data.data.level;

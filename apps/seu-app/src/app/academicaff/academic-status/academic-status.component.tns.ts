@@ -57,6 +57,8 @@ export class AcademicStatusComponent implements OnInit {
   terms: ValueItem<number>[] = [];
   acceptanceTerm;
   acceptanceYear: any;
+  isClosed: boolean;
+  messagesList: any;
   constructor(private transalte: TranslateService,
               private academicStatusService: AcademicStatusService,
               private downloader: DataDownLoadService) { }
@@ -73,27 +75,35 @@ export class AcademicStatusComponent implements OnInit {
     this.isLoading = true;
     this.isLoadingTerm = true;
     this.academicStatusService.getStaudentStatus().then((res) => {
-      this.student = (res as any).data.student;
-      this.acceptanceTerm = this.student.std_adm_term_label.match(/[^0-9\/م]/g).join('');
-      this.acceptanceYear = this.student.std_adm_term_label.match(/[0-9\/[0-9]/g).join('');
-      console.log(this.acceptanceYear);
-      this.studentTerms = (res as any).data.STD_TERMS;
-      console.log("studentTerms",this.studentTerms);
-      // tslint:disable-next-line: prefer-for-of
-      for (let i = 0; i < this.studentTerms.length; i++) {
-        this.terms.push(
-          {
-            value: this.studentTerms[i].TERM_CODE,
-            display: this.studentTerms[i].TERM_DESC
-          }
-        );
+     // res['status']=0;
+     // res['messages']=[{body:"service is closed",type:"error"}]
+      if(res['status']){
+        this.isClosed=false;
+        this.student = (res as any).data.student;
+        this.acceptanceTerm = this.student.std_adm_term_label.match(/[^0-9\/م]/g).join('');
+        this.acceptanceYear = this.student.std_adm_term_label.match(/[0-9\/[0-9]/g).join('');
+        console.log(this.acceptanceYear);
+        this.studentTerms = (res as any).data.STD_TERMS;
+        console.log("studentTerms",this.studentTerms);
+        // tslint:disable-next-line: prefer-for-of
+        for (let i = 0; i < this.studentTerms.length; i++) {
+          this.terms.push(
+            {
+              value: this.studentTerms[i].TERM_CODE,
+              display: this.studentTerms[i].TERM_DESC
+            }
+          );
+        }
+        this.studentTermsDropDown = new ValueList(this.terms);
+  
+        this.studentTermDetails = (res as any).data.STD_TermDetails;
+        this.selectedSems = this.studentTerms.length>0 &&this.studentTerms[0].TERM_CODE;
+        this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
+        this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
       }
-      this.studentTermsDropDown = new ValueList(this.terms);
-
-      this.studentTermDetails = (res as any).data.STD_TermDetails;
-      this.selectedSems = this.studentTerms.length>0 &&this.studentTerms[0].TERM_CODE;
-      this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
-      this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
       this.isLoading = false;
       this.isLoadingTerm = false;
     });
