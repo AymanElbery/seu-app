@@ -13,7 +13,7 @@ export class NewsComponent implements OnInit {
   newsLen = 0;
   newsLoaded;
   sindex = 1;
-  constructor(public userService: UserService,public homeService: HomeService
+  constructor(public userService: UserService, public homeService: HomeService
     ) { }
 
   ngOnInit() {
@@ -68,7 +68,7 @@ export class NewsComponent implements OnInit {
             this.newsLoaded = true;
           });
       }
-      
+
       LoadData() {
 
         this.LoadNews();
@@ -81,5 +81,18 @@ export class NewsComponent implements OnInit {
             }
           }, 3000
         );
+              }
+
+              getfn(str) {
+                return str.substring(str.lastIndexOf('/') + 1);
+            }
+            getdfn(str) {
+              return encodeURIComponent(str.substring(str.lastIndexOf('/') + 1));
+          }
+              decodeURL(img) {
+           const  fmn = this.getfn(img);
+           const  fmnd = this.getdfn(img);
+
+           return (img as string).replace(fmn, fmnd);
               }
 }

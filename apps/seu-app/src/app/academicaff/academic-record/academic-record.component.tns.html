@@ -163,14 +163,14 @@
                           <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.course_code_name" | translate}}'></Label>
                           <Label row="1"  column="0" textWrap="true" class="ysPBox2" [text]="item.CRSE_TITLE"></Label>
                       
-                          <Label row="2"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.rating" | translate}}'></Label>
-                          <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.GRADE_TITLE"></Label>
+                          <Label row="2" *ngIf="!item.isCurrentRegistration"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" text='{{"general.rating" | translate}}'></Label>
+                          <Label row="2" *ngIf="!item.isCurrentRegistration"  column="0" textWrap="true" class="ysPBox2" [text]="item.GRADE_TITLE"></Label>
                       
                           <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.course_hours" | translate}}'></Label>
                           <Label row="3"  column="0"   textWrap="true" class="ysPBox2"  [text]="item.HRS"></Label>
             
-                          <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
-                          <Label row="4"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.Points"></Label>
+                          <Label row="4" *ngIf="!item.isCurrentRegistration" column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  text='{{"general.points" | translate}}'></Label>
+                          <Label row="4" *ngIf="!item.isCurrentRegistration"  column="0"  textWrap="true" class="ysPBox2"  [text]="item.Points"></Label>
             
                      
                         </GridLayout>
@@ -206,7 +206,7 @@
                     -->
                   
 
-                    <StackLayout>
+                    <StackLayout  *ngIf="!item.isCurrentRegistration">
 
                         <StackLayout class="ser-title">
 
