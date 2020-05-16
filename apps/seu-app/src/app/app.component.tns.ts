@@ -12,6 +12,7 @@ import { RadSideDrawerComponent } from 'nativescript-ui-sidedrawer/angular/side-
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { ObservableArray } from 'tns-core-modules/data/observable-array/observable-array';
 import { Downloader } from 'nativescript-downloader';
+import { ApiUserRoles } from './shared/models/StaticData/api-user-roles';
 declare var UIView, NSMutableArray, NSIndexPath;
 
 @Component({
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
     role = '';
     UG_Menu: Array<any> = [];
     GR_Menu: Array<any> = [];
+    Employee_Menu: { title: string; subTitles: object[]; }[];
     constructor(    private translate: TranslateService,
                     public userService: UserService,
                     private router: Router, private routerExtensions: RouterExtensions,
@@ -312,20 +314,113 @@ export class AppComponent implements OnInit {
 ]
 }
     ];
+
+    this.Employee_Menu = [
+        {
+            title: 'بياناتى',
+            subTitles: [
+                {
+                subTitle: 'بيانات الموظف',
+                route: '/personal/'
+            }
+        ]
+    }/*,
+    {
+        title: 'الطلبات الاكاديمية',
+        subTitles: [
+            {
+            subTitle: 'طلب الإنسحاب من الجامعة',
+            route: '/academicrequests/withdrawal'
+        },
+        {
+            subTitle: 'طلب تأجيل الدراسة',
+            route: '/academicrequests/studypostpone'
+        },
+        {
+            subTitle: 'طلب حذف المقررات ',
+            route: '/academicrequests/termexecuse'
+        },
+        {
+            subTitle: 'اعادة قيد',
+            route: '/academicrequests/reEnroll'
+        },
+        {
+            subTitle: 'حذف مقرر',
+            route: '/academicrequests/cancelcourse'
+        },
+        {
+            subTitle: 'رفع الاعذار للمحاضرات',
+            route: '/academicrequests/lecturesexecuses'
+        },
+        {
+            subTitle: 'رفع اللأعذار للإختبارات',
+            route: '/academicrequests/examsexecuses'
+        },
+        {
+            subTitle: 'الاعتراض على نتيجة الاختبار النهائي',
+            route: '/academicrequests/objectexam'
+        }
+    ]
+},
+{
+    title: ' طباعة الشهادات',
+    subTitles: [
+        {
+        subTitle: ' شهادة التعريف',
+        route: '/cert/id'
+    },
+    {
+        subTitle: 'شهادة حضور اختبارات',
+        route: '/cert/examatt'
+    },
+    {
+        subTitle: 'شهادة اثبات حضور اختبارات',
+        route: '/cert/examattapp'
+    }
+]
+},
+{
+    title: 'طلبات أخرى',
+    subTitles: [
+        {
+        subTitle: 'استعلام عن الغياب',
+        route: '/other/absencequery'
+    },
+    {
+        subTitle: 'تغير تخصص',
+        route: '/other/changecourse'
+    },   {
+        subTitle: 'تغير فرع',
+        route: '/other/changebranch'
+    },   {
+        subTitle: 'بيانات خريج',
+        route: '/other/graduateprofile'
+    },
+    {
+        subTitle: 'البطاقة الجامعيه',
+        route: '/other/personalid'
+    },
+
+]
+}*/
+    ];
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {
         this.userName = this.userService.userData.name_ar;
-
         this.level = this.userService.userData.student_details.level;
-        if (this.level == 'UG') {
+        this.role = this.userService.userData.activeRole;
+
+        if (this.level == 'UG' && this.role==ApiUserRoles.Student) {
             this._dataItems = this.UG_Menu;
 
-        } else if (this.level == 'GR') {
+        } else if (this.level == 'GR' && this.role==ApiUserRoles.Student) {
             this._dataItems = this.GR_Menu;
 
+        }else if(this.role==ApiUserRoles.Emplpyee){
+            this._dataItems = this.Employee_Menu;
+
         }
-        this.role = this.userService.userData.activeRole;
         // console.log('act' + this.role);
         return this._sideDrawerTransition;
     }

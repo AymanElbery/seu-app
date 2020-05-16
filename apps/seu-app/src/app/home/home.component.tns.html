@@ -130,9 +130,9 @@
 
 </ScrollView> 
 
-<GridLayout  verticalAlignment="bottom"class="fixed-button" (tap)="navigate('contact')">
+<GridLayout  verticalAlignment="bottom"class="fixed-button" >
     <FlexboxLayout justifyContent="center" width="100%" >
-        <Image   class="fixed-img" src="~/images/contact.png"></Image>
+        <Image   class="fixed-img" src="~/images/contact.png" (tap)="navigate('contact')"></Image>
     </FlexboxLayout>
 </GridLayout>  
 

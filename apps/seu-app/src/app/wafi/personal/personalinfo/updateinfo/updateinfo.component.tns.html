@@ -1,1 +1,40 @@
-<Button text="updateinfo works!" class="btn btn-primary"></Button>
+<ScrollView>
+
+<FlexboxLayout  flexDirection="column" class="pop iosFont">
+
+    <Label text='{{"wafi.UpdateInfo" | translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+    <StackLayout  style="color: #080b57;">
+       
+
+        <Label text='{{"wafi.poersonalemail"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.email" #reason="ngModel" required></TextField>
+
+        <Label text='{{"wafi.Mobile"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.mobile_no" #reason="ngModel" required></TextField>
+
+        <Label text='{{"wafi.AlternativePhone"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.phone_no" #reason="ngModel" required></TextField>
+
+        <Label text='{{"wafi.address"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.address" #reason="ngModel" required></TextField>
+
+        <Label text='{{"wafi.addressEN"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.address_s" #reason="ngModel" required></TextField>
+
+        <Label text='{{"wafi.comminicationlanguage"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <DropDown
+        #dropdown
+        [items]="langsDropDown"
+        (selectedIndexChanged)="getLang($event)"
+        itemsTextAlignment="left"
+        itemsPadding="5"
+        required>
+        </DropDown>
+    </StackLayout>
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
+        <Button text='{{"tasks.Send" | translate}}' (tap)="onFormSubmit()" class="print-btn"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>
+</ScrollView>

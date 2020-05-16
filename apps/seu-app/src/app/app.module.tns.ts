@@ -37,6 +37,7 @@ import { HeaderModule } from './shared/header.module.tns';
 import { PolicyComponent } from './home/policy.component.tns';
 import { NewsComponent } from './news/news.component.tns';
 import { AdsComponent } from './ads/ads.component.tns';
+import { PersonalModule } from './wafi/personal/personal.module.tns';
 
 
 
@@ -70,7 +71,8 @@ import { AdsComponent } from './ads/ads.component.tns';
     MasterPrintCertificatesModule,
     MasterOtherRequestsModule,
     NativeScriptUIListViewModule,
-    HeaderModule
+    HeaderModule,
+    PersonalModule
       ],
 
   providers: [ConfigService, HttpRequestService, UserManagerService,
