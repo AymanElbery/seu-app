@@ -322,6 +322,10 @@ export class AppComponent implements OnInit {
                 {
                 subTitle: 'بيانات الموظف',
                 route: '/personal/'
+            },
+            {
+                subTitle: 'طباعة تعاريف الموظف',
+                route: '/personal/print-report'
             }
         ]
     }/*,

@@ -7,9 +7,10 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { HeaderModule } from '../../shared/header.module.tns';
 import { UpdateinfoComponent } from './personalinfo/updateinfo/updateinfo.component.tns';
+import { PrintReportComponent } from './print-report/print-report.component.tns';
 
 @NgModule({
-  declarations: [PersonalinfoComponent,UpdateinfoComponent],
+  declarations: [PersonalinfoComponent,UpdateinfoComponent,PrintReportComponent],
   entryComponents:[UpdateinfoComponent],
   imports: [
     PersonalRoutingModule,

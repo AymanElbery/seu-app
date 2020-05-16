@@ -1,1 +1,39 @@
-<Button text="print-report works!" class="btn btn-primary"></Button>
+<app-header></app-header>
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
+
+    <StackLayout *ngIf="!isLoading">
+
+        <GridLayout  columns="auto, *" class="serv-title">
+          <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+          <Label col="1" text='{{"wafi.print-report" | translate}}' class="serv-name" ></Label>
+          <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        </GridLayout>
+
+        <Label text='{{"wafi.print-concern"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="inputValue" #destination="ngModel" required hint="{{'wafi.typrhere' | translate}}...." style="margin-right:20 ;"></TextField>
+
+        <FlexboxLayout flexDirection="column">
+
+            <FlexboxLayout flexDirection="row" justifyContent="space-between">
+                <Button class="print-btn" (tap)="getprintreportdownlaod('hr_rep485','PRINT_WITHOUT_SALARY')" text='{{"wafi.EMP_REPORTS_WITHOUT_SALARY" | translate}}'></Button>
+                <Button class="print-btn" (tap)="getprintreportdownlaod('hr_rep488','PRINT_WITHOUT_SALARY_EN')" text='{{"wafi.EMP_REPORTS_WITHOUT_SALARY_EN" | translate}}'></Button>
+            </FlexboxLayout>
+
+            <FlexboxLayout flexDirection="row" justifyContent="space-between">
+                <Button class="print-btn" (tap)="getprintreportdownlaod('hr_rep484','PRINT_WITH_SALARY')" text='{{"wafi.EMP_REPORTS_WITH_SALARY" | translate}}'></Button>
+                <Button class="print-btn" (tap)="getprintreportdownlaod('hr_rep487','PRINT_WITH_SALARY_EN')" text='{{"wafi.EMP_REPORTS_WITH_SALARY_EN" | translate}}'></Button>
+            </FlexboxLayout>
+
+            <FlexboxLayout flexDirection="row" justifyContent="space-between">
+                <Button class="print-btn" (tap)="getprintreportdownlaod('hr_rep483','PRINT_WITH_SALARY_FEES')" text='{{"wafi.EMP_REPORTS_WITH_SALARY_AND_FEES" | translate}}'></Button>
+                <Button class="print-btn" (tap)="getprintreportdownlaod('hr_rep486','PRINT_WITH_SALARY_FEES_EN')" text='{{"wafi.EMP_REPORTS_WITH_SALARY_AND_FEES_EN" | translate}}'></Button>
+            </FlexboxLayout>
+
+            <FlexboxLayout flexDirection="row" justifyContent="space-between">
+                <Button class="print-btn" (tap)="getprintreportdownlaod_housing('housing')" text='{{"wafi.HousingReaport" | translate}}'></Button>
+                <Button class="print-btn" (tap)="getprintreportdownlaod('hr_rep0401_seu','PRINT_WITH_SALARY_DETAILS')" text='{{"wafi.EMP_REPORTS_WITH_SALARY_DTL" | translate}}'></Button>
+            </FlexboxLayout>
+        </FlexboxLayout>
+    </StackLayout>
+</ScrollView>
