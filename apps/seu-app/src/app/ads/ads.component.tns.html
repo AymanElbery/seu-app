@@ -6,7 +6,12 @@
 
     <ActivityIndicator *ngIf="!adsLoaded" [busy]="!adsLoaded"></ActivityIndicator>
 
-
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"general.ADS "| translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    
+    </GridLayout>
 
         <StackLayout height="160" class="list-group-item news"
             *ngFor="let item of userService.adsData">
