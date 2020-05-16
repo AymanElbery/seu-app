@@ -105,7 +105,7 @@
     "typescript": "~3.5.3"
   },
   "nativescript": {
-    "id": "com.cptit.seu",
+    "id": "net.ysolution.seu",
     "tns-ios": {
       "version": "6.3.0"
     },

@@ -6,6 +6,7 @@ import { getFile } from 'tns-core-modules/http';
 import * as fileSystem from 'tns-core-modules/file-system';
 import { isAndroid } from 'tns-core-modules/platform';
 import * as utils from 'tns-core-modules/utils/utils';
+import { UserService } from '../../account/services/user.service';
 
 declare var android;
 
@@ -19,7 +20,7 @@ export class DataDownLoadService {
     public database: any;
     downloader: Downloader = new Downloader();
      csize = new Subject<any>();
-    constructor(private globalService: GlobalBaseService) { }
+    constructor(private globalService: GlobalBaseService, private user: UserService) { }
 
 
     /**
@@ -34,16 +35,19 @@ export class DataDownLoadService {
     * @param downloadlocation : mobile local location
     */
     downloadFile(apiUrl) {
+        console.log(apiUrl);
         const subject = new Subject<any>();
         this.csize.next(0);
 
         const sid = this.globalService.getSID();
         const headerHttp = {
             'Content-Type': 'application/json',
-            'Session-ID': sid
+            'Session-ID': sid,
+            'Student-ID': this.user.userData.username
         };
 
         if (isAndroid) {
+            // tslint:disable-next-line: max-line-length
             const  downloadedFilePath = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
             console.log(downloadedFilePath);
 
@@ -73,7 +77,7 @@ export class DataDownLoadService {
                         subject.next(true);
 
                     },
-                    err => {console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr', err);});
+                    err => {console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr', err); });
                                  })
                  .catch( () => {
                     console.log('Uh oh, no permissions - plan B time!');
@@ -88,7 +92,7 @@ export class DataDownLoadService {
                 url: apiUrl,
                 headers: headerHttp,
                 path: fileSystem.knownFolders.ios.library().path,
-                fileName: +fileName + '.pdf'
+                fileName:  fileName + '.pdf'
             });
 
             this.downloader
@@ -96,12 +100,12 @@ export class DataDownLoadService {
                 this.csize.next(progressData.value);
             })
             .then((completed: DownloadEventData) => {
-                console.log(`zip file saved at : ${completed.path}`);
+                console.log(`pdf  saved at : ${completed.path}`);
                 utils.openFile(completed.path);
                 subject.next(true);
 
             },
-            err => {console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr', err);});
+            err => {console.log('errrrrrrrrrrrrrrrrrrrrrrrrrr', err); });
         }
 
 

@@ -67,6 +67,18 @@ export class AdsComponent implements OnInit {
       });
   }
 
+  getfn(str) {
+    return str.substring(str.lastIndexOf('/') + 1);
+}
+getdfn(str) {
+  return encodeURIComponent(str.substring(str.lastIndexOf('/') + 1));
+}
+  decodeURL(img) {
+const  fmn = this.getfn(img);
+const  fmnd = this.getdfn(img);
+
+return (img as string).replace(fmn, fmnd);
+  }
   LoadData() {
 
     this.LoadAds();
