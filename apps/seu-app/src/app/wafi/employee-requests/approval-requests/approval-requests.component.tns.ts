@@ -16,6 +16,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./approval-requests.component.css']
 })
 export class ApprovalRequestsComponent implements OnInit, OnDestroy {
+  constructor(private http: HttpClient,
+              private empreqservice: EmployeeRequestsService,
+              private toastr: AppToasterService,
+              private translate: TranslateService,
+              private router: Router) {
+  }
 
   p: number;
   filter;
@@ -28,14 +34,10 @@ export class ApprovalRequestsComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   subscriptionappreq: Subscription;
   emplistrequestapproval: any;
-  constructor(private http: HttpClient,
-              private empreqservice: EmployeeRequestsService,
-              private toastr: AppToasterService,
-              private translate: TranslateService,
-              private router: Router) {
-  }
+  clicked: any;
   isLoading = true;
   subscriptions;
+  list: [];
 
   ngOnInit() {
     this.getapprovalReqlist();
@@ -60,6 +62,8 @@ export class ApprovalRequestsComponent implements OnInit, OnDestroy {
       if (appreqs) {
         this.emplistrequestapproval = (appreqs as any).data.requestsToApproveTable;
         this.isLoading = false;
+        this.list = [];
+        (this.emplistrequestapproval as []).forEach(e => this.list.push(e));
       }
     },
       err => {
@@ -68,12 +72,35 @@ export class ApprovalRequestsComponent implements OnInit, OnDestroy {
       }
     );
   }
+  search() {
+    console.log('f');
+    console.log(this.filter);
+    this.emplistrequestapproval=[];
+    this.list.forEach(e => (this.emplistrequestapproval as []).push(e));
+    if (!this.filter || this.filter == '' ) {
+      console.log('1');
+      console.log(this.emplistrequestapproval);
+      return;
+    }
+    console.log('2');
+    console.log(this.emplistrequestapproval);
 
+    this.emplistrequestapproval =  (this.emplistrequestapproval as []).filter(r => ((r as any).requestSeq == this.filter ||
+    ((r as any).requestEmpName + '').includes( this.filter)));
+  }
   getappreqdetail(reqSeq: any, reqEmpId: any, reqType: any) {
   this.router.navigate(['requests/approval-details', reqSeq, reqEmpId, reqType]);
 
   }
-
+  onBlur(e) {
+    console.log(e);
+  }
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
+  }
   // applySearch(filters){
   //   //console.log("filters" , filters);
   // }

@@ -10,6 +10,7 @@ import { HeaderModule } from '../../shared/header.module.tns';
 import { RequestsDetailsComponent } from './requests-details/requests-details.component.tns';
 import { ApprovalRequestsComponent } from './approval-requests/approval-requests.component.tns';
 import { ApprovalRequestDetailComponent } from './approval-request-detail/approval-request-detail.component.tns';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [RequestsListComponent
@@ -22,7 +23,8 @@ import { ApprovalRequestDetailComponent } from './approval-request-detail/approv
     AppTransModule,
     NativeScriptFormsModule,
     NativeScriptCommonModule,
-    HeaderModule
+    HeaderModule,
+    Ng2SearchPipeModule
   ]
 })
 export class EmployeeRequestsModule { }
