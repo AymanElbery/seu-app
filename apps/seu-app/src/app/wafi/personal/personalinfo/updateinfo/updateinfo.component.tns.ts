@@ -24,6 +24,7 @@ export class UpdateinfoComponent implements OnInit {
     private _params: ModalDialogParams,
     private route: ActivatedRoute, private toastr: AppToasterService,private http: HttpClient, private empservice: EmployeesService, private translate: TranslateService, private router: Router) {
     this.langsList = this._params.context['updateinfo']['langList'];
+    console.log("this.langsList",this.langsList)
   }
   subscriptions;
   ngOnInit() {

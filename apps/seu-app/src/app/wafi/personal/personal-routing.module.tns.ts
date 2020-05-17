@@ -4,6 +4,7 @@ import { NativeScriptRouterModule } from 'nativescript-angular/router';
 import { PersonalinfoComponent } from './personalinfo/personalinfo.component.tns';
 import { PrintReportComponent } from './print-report/print-report.component.tns';
 import { ManagerialDutiesComponent } from './managerial-duties/managerial-duties.component.tns';
+import { SalariesComponent } from './salaries/salaries.component.tns';
 
 const routes: Routes = [
     {
@@ -12,6 +13,7 @@ const routes: Routes = [
       { path: '', component: PersonalinfoComponent },
       { path: 'print-report', component: PrintReportComponent },
       { path: 'managerial-duties', component: ManagerialDutiesComponent },
+      { path: 'salaries', component: SalariesComponent },
 
     ]
   }
