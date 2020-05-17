@@ -1,1 +1,36 @@
-<Button text="managerial-duties works!" class="btn btn-primary"></Button>
+<app-header></app-header>
+
+
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+    <StackLayout *ngIf="!isLoading">
+
+      <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"wafi.managerialduties" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+      </GridLayout>
+
+    
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of mangerialdutiesdata">
+                      
+                      
+        <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.position" | translate}}'></Label>
+        <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.position"></Label>
+    
+        <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.decisionNo" | translate}}'></Label>
+        <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.decisionNo"></Label>
+
+        <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.decisionDate" | translate}}'></Label>
+        <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.decisionDate"></Label>
+       
+        <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.startDate" | translate}}'></Label>
+        <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.startDate" ></Label>
+
+        <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.endDate" | translate}}'></Label>
+        <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.endDate" ></Label>
+         
+      </GridLayout>
+    </StackLayout>
+</ScrollView>

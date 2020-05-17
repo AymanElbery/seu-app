@@ -8,9 +8,14 @@ import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { HeaderModule } from '../../shared/header.module.tns';
 import { UpdateinfoComponent } from './personalinfo/updateinfo/updateinfo.component.tns';
 import { PrintReportComponent } from './print-report/print-report.component.tns';
+import { ManagerialDutiesComponent } from './managerial-duties/managerial-duties.component.tns';
 
 @NgModule({
-  declarations: [PersonalinfoComponent,UpdateinfoComponent,PrintReportComponent],
+  declarations: [
+    PersonalinfoComponent,
+    UpdateinfoComponent,
+    PrintReportComponent,
+    ManagerialDutiesComponent],
   entryComponents:[UpdateinfoComponent],
   imports: [
     PersonalRoutingModule,

@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
                 ) {
 
                   Downloader.init();
-                  Downloader.setTimeout(120);
+             //     Downloader.setTimeout(120);
         // tslint:disable-next-line: only-arrow-functions
                   this.router.routeReuseStrategy.shouldReuseRoute = function() {
           return false;
