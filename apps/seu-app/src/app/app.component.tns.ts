@@ -367,8 +367,8 @@ export class AppComponent implements OnInit {
                 route: '/requests/requests-list'
             },
             {
-                subTitle: 'طباعة تعاريف الموظف',
-                route: '/personal/print-report'
+                subTitle: ' الموافقه على الطلبات',
+                route: '/requests/approval-requests'
             }
         ]
     }
