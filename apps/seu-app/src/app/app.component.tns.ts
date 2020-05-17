@@ -328,7 +328,48 @@ export class AppComponent implements OnInit {
                 route: '/personal/print-report'
             }
         ]
-    }/*,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    },
+    { title: 'طلباتي',
+            subTitles: [
+                {
+                subTitle: 'الطلبات ',
+                route: '/requests/requests-list'
+            },
+            {
+                subTitle: 'طباعة تعاريف الموظف',
+                route: '/personal/print-report'
+            }
+        ]
+    }
+
+
+
+
+    /*,
     {
         title: 'الطلبات الاكاديمية',
         subTitles: [
