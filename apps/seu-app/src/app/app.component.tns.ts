@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
 
     // tslint:disable-next-line: variable-name
     private _dataItems: Array<{'title': string, 'subTitles': Array<object>}>;
-    public clickedArray: Array<{'title': string, 'subTitles': Array<object>}> = [{title: '',subTitles: [{}]}];
+    public clickedArray: Array<{'title': string, 'subTitles': Array<object>}> = [{title: '', subTitles: [{}]}];
     clickedd = {}; s;
     @ViewChild(RadSideDrawerComponent,
         {
@@ -78,7 +78,7 @@ export class AppComponent implements OnInit {
         this.userService.logedIn = false;
      //   draw.drawerLocation = SideDrawerLocation.Right;
 
-        this._dataItems = [{title: '',subTitles: [{}]}];
+        this._dataItems = [{title: '', subTitles: [{}]}];
         Downloader.init();
         this.UG_Menu = [
         {
@@ -315,7 +315,7 @@ export class AppComponent implements OnInit {
 }
     ];
 
-    this.Employee_Menu = [
+        this.Employee_Menu = [
         {
             title: 'بياناتى',
             subTitles: [
@@ -415,13 +415,16 @@ export class AppComponent implements OnInit {
         this.level = this.userService.userData.student_details.level;
         this.role = this.userService.userData.activeRole;
 
-        if (this.level == 'UG' && this.role==ApiUserRoles.Student) {
+        if (this.level == 'UG' && this.role == ApiUserRoles.Student) {
             this._dataItems = this.UG_Menu;
 
-        } else if (this.level == 'GR' && this.role==ApiUserRoles.Student) {
+        } else if (this.level == 'GR' && this.role == ApiUserRoles.Student) {
             this._dataItems = this.GR_Menu;
 
-        }else if(this.role==ApiUserRoles.Emplpyee){
+        } else if (this.role == ApiUserRoles.Emplpyee) {
+            this._dataItems = this.Employee_Menu;
+
+        } else if (this.role == ApiUserRoles.Instructor) {
             this._dataItems = this.Employee_Menu;
 
         }
