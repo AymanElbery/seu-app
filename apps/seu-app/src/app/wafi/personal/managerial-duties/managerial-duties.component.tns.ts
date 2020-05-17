@@ -21,7 +21,7 @@ export class ManagerialDutiesComponent implements OnInit {
   mangerialdutiesdata; 
   subscription: Subscription;
   messages;
-  constructor(private http: HttpClient,private empservice:EmployeesService,private translate: TranslateService, private dialog: MatDialog) { }
+  constructor(private http: HttpClient,private empservice:EmployeesService,private translate: TranslateService) { }
   isLoading = true;
   subscriptions;
   ngOnInit() {
@@ -34,9 +34,7 @@ export class ManagerialDutiesComponent implements OnInit {
     if (this.subscriptions)
       this.subscriptions.unsubscribe();
   }
-  pageChanged(event) {
-    this.config.currentPage = event;
-  }
+  
   loaddutiesdata() {  
     
     this.isLoading = true
@@ -44,7 +42,7 @@ export class ManagerialDutiesComponent implements OnInit {
      // console.log("emp info",this.empInfo)
       if (managduties) {       
        this.mangerialdutiesdata = (managduties as any).data["managerialDuties"];                 
-       this.isLoading = false;      
+       this.isLoading = false; 
      } else {       
        this.messages = [];
      }

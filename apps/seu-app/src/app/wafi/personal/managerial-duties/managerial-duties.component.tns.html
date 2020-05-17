@@ -12,16 +12,25 @@
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
 
-      <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,
-      auto,auto,auto,auto,auto,auto,auto,auto,auto,,auto,auto" columns="*,150">
-      
-          <Label row="0" colSpan="2"  class="ysHBox"  text="{{'wafi.PersonalInfo'|translate}}"></Label>
-      
-          <ng-container *ngFor="let item of empInfo; index as i">
-            <Label row="{{i+1}}" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text="{{item.header}} :"></Label>
-            <Label row="{{i+1}}"  column="0" class="ysPBox2" textWrap="true" text="{{item.data}}"></Label>
-          </ng-container>
-          
+    
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of mangerialdutiesdata">
+                      
+                      
+        <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.position" | translate}}'></Label>
+        <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.position"></Label>
+    
+        <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.decisionNo" | translate}}'></Label>
+        <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.decisionNo"></Label>
+
+        <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.decisionDate" | translate}}'></Label>
+        <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.decisionDate"></Label>
+       
+        <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.startDate" | translate}}'></Label>
+        <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.startDate" ></Label>
+
+        <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.endDate" | translate}}'></Label>
+        <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.endDate" ></Label>
+         
       </GridLayout>
     </StackLayout>
 </ScrollView>
