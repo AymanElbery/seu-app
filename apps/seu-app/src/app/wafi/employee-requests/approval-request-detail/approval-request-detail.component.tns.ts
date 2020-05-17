@@ -40,10 +40,22 @@ export class ApprovalRequestDetailComponent implements OnInit {
   isLoading = true;
   ngOnInit() {
     this.isLoading = true;
+    this.router.params.subscribe(res => {
+      this.reqSeq = res.sq;
+      this.reqType = res.type;
+      this.reqEmpId = res.empId;
+
+    });
+    console.log('param');
+    console.log(this.reqSeq);
+    console.log(this.reqEmpId);
     this.subscription = this.empreqservice.getapprovalreqDetail(this.reqSeq, this.reqType, this.reqEmpId).subscribe(appreqdetail => {
       if (appreqdetail) {
+        console.log('type');
+       
         this.rejectionitmes = (appreqdetail as any).data.rejectReasoneItems;
         this.appreqdetails = (appreqdetail as any).data.currentServiceRequestTable;
+        console.log(this.appreqdetails);
         // console.log("Detail data",this.appreqdetails);
         this.isLoading = false;
       }
@@ -61,11 +73,11 @@ export class ApprovalRequestDetailComponent implements OnInit {
     this.saveapprovaldata(' ', approveValue);
   }
 
-  
+
 
   saveapprovaldata(rejectReasonNo: any, approveValue: any) {
     this.submitted = true;
-    this.empreqservice.submitapproverequest(this.reqSeq, this.reqType, 
+    this.empreqservice.submitapproverequest(this.reqSeq, this.reqType,
       this.reqEmpId, rejectReasonNo, approveValue).subscribe(saveappovedata => {
       //// console.log("saved data", leavdedcut);
       if ((!saveappovedata as any).data.accepted) {

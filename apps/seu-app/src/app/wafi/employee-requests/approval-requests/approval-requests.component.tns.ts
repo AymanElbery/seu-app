@@ -89,7 +89,7 @@ export class ApprovalRequestsComponent implements OnInit, OnDestroy {
     ((r as any).requestEmpName + '').includes( this.filter)));
   }
   getappreqdetail(reqSeq: any, reqEmpId: any, reqType: any) {
-  this.router.navigate(['requests/approval-details', reqSeq, reqEmpId, reqType]);
+  this.router.navigate(['requests/approval-details', reqSeq, reqType,reqEmpId ]);
 
   }
   onBlur(e) {

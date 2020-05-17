@@ -920,6 +920,7 @@
     },
     "wafi": {
         "wafi": "خدماتي الذاتية",
+        "beginDate":"من",
         "month": "شهر",
         "year": "سنة",
         "description": "الوصف",
