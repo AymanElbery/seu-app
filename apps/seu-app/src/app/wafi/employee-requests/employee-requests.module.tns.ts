@@ -8,9 +8,14 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { HeaderModule } from '../../shared/header.module.tns';
 import { RequestsDetailsComponent } from './requests-details/requests-details.component.tns';
+import { ApprovalRequestsComponent } from './approval-requests/approval-requests.component.tns';
+import { ApprovalRequestDetailComponent } from './approval-request-detail/approval-request-detail.component.tns';
 
 @NgModule({
-  declarations: [RequestsListComponent,RequestsDetailsComponent],
+  declarations: [RequestsListComponent
+    , RequestsDetailsComponent
+    , ApprovalRequestsComponent
+    , ApprovalRequestDetailComponent],
   imports: [
     EmployeeRequestsRoutingModule,
     FormsModule,
