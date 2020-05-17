@@ -68,9 +68,11 @@ export class AdsComponent implements OnInit {
   }
 
   getfn(str) {
+    
     return str.substring(str.lastIndexOf('/') + 1);
 }
 getdfn(str) {
+  
   return encodeURIComponent(str.substring(str.lastIndexOf('/') + 1));
 }
   decodeURL(img) {
