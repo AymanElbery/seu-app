@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { EmployeeRequestsService } from '../../services/employee-requests.service';
 import { TranslateService } from '@ngx-translate/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AppToasterService } from '../../../shared/services/app-toaster';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-requests-list',
@@ -15,7 +15,9 @@ export class RequestsListComponent implements OnInit, OnDestroy {
   constructor(private http: HttpClient,
               private empreqservice: EmployeeRequestsService,
               private toastr: AppToasterService,
-              private translate: TranslateService
+              private translate: TranslateService,
+              private activatedroute: ActivatedRoute,
+              private router: Router,
               ) {
   }
   subscription: Subscription;
@@ -70,7 +72,7 @@ export class RequestsListComponent implements OnInit, OnDestroy {
 
   getreqdetail(orderItemIndex, requestSeq, requestType) {
 
-
+ this.router.navigate(['/requests/requests-details', requestSeq, requestType]);
 
 
   }

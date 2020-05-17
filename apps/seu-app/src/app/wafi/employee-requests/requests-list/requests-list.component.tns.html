@@ -20,8 +20,12 @@
             <FlexboxLayout (tap)="clickme(empreqs)" [visibility]="clicked == empreqs ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
                 <Label  text="&#xf107;"  class="fas arr-drop"></Label>
                 <FlexboxLayout flexDirection="row-reverse">
+                    <Label text='{{empreqs.requestDesc}}'></Label>
+                    <Label text="- "></Label>
                     <Label text='{{empreqs.beginDate}}'></Label>
+                    <Label text="- "></Label>
                     <Label text="{{empreqs.requestStatus}}"></Label>
+
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout (tap)="uclickme(empreqs)" [visibility]="clicked == empreqs ? 'visible' : 'collapsed'"  flexDirection="column">
@@ -29,8 +33,12 @@
                     <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
                         <Label  text="&#xf106;"  class="fas arr-drop"></Label>
                         <FlexboxLayout flexDirection="row-reverse">
-                            <Label [text]='empreqs.beginDate'></Label>
-                            <Label [text]="empreqs.requestStatus"></Label>
+                            <Label text='{{empreqs.requestDesc}}'></Label>
+                            <Label text="- "></Label>
+                            <Label text='{{empreqs.beginDate}}'></Label>
+                            <Label text="- "></Label>
+                            <Label text="{{empreqs.requestStatus}}"></Label>
+        
                         </FlexboxLayout>
                     </FlexboxLayout>
     
@@ -54,10 +62,11 @@
                         <Label row="5"  column="0" class="ysPBox2" textWrap="true" text="{{empreqs.requestStatus}}"></Label>
 
                         <Label row="6" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.Details" | translate}} :'></Label>
-                        <Button row="6"  column="0" (tap)="getreqdetail(i,empreqs.requestSeq,empreqs.requestType)" textWrap="true" class="fas blue-button" text="&#xf02f;"></Button>
+                        <Label row="6"  column="0" (tap)="getreqdetail(i,empreqs.requestSeq,empreqs.requestType)" textWrap="true" class="fas ysPBox2" text="&#xf0e0;"></Label>
                        
-                          
-                        <Button row="7"  column="1" class="fas blue-button"  [disabled]='deleting' text="&#xf1f8;" (tap)="delete(i,empreqs.requestSeq,empreqs.requestType)" class="blue-button fas "></Button>
+                        <Label *ngIf="empreqs.enableDelete==true" row="7" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.Delete" | translate}} :'></Label>
+
+                        <Label *ngIf="empreqs.enableDelete==true" row="7"  column="0" class="ysPBox2 fas"  [disabled]='deleting' text="&#xf1f8;" (tap)="delete(i,empreqs.requestSeq,empreqs.requestType)" ></Label>
 
                       </GridLayout>
     
