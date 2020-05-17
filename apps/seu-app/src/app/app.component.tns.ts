@@ -330,6 +330,9 @@ export class AppComponent implements OnInit {
             {
                 subTitle:'المناصب الإدارية',
                 route:'/personal/managerial-duties'
+            },{
+                subTitle:'الرواتب',
+                route:'/personal/salaries'
             }
         ]
 
