@@ -39,6 +39,7 @@ import { NewsComponent } from './news/news.component.tns';
 import { AdsComponent } from './ads/ads.component.tns';
 import { PersonalModule } from './wafi/personal/personal.module.tns';
 import { EmployeeRequestsModule } from './wafi/employee-requests/employee-requests.module.tns';
+import { AdministrativeModule } from './wafi/administrative/administrative.module.tns';
 
 
 
@@ -74,7 +75,8 @@ import { EmployeeRequestsModule } from './wafi/employee-requests/employee-reques
     NativeScriptUIListViewModule,
     HeaderModule,
     PersonalModule,
-    EmployeeRequestsModule
+    EmployeeRequestsModule,
+    AdministrativeModule
       ],
 
   providers: [ConfigService, HttpRequestService, UserManagerService,

@@ -333,8 +333,20 @@ export class AppComponent implements OnInit {
             },{
                 subTitle:'الرواتب',
                 route:'/personal/salaries'
+            },
+            {
+                subTitle:'البدلات و المكافاَت',
+                route:'/administrative/vouchers'
             }
-        ]
+        ]},
+        {
+            title:"استعلاماتى",
+            subTitles:[
+                {
+                    subTitle:'الأجازات',
+                    route:'/personal/vacations'
+                }
+            ]
 
 
 
