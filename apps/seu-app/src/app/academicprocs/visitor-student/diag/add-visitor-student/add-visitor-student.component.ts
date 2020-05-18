@@ -21,16 +21,16 @@ export class AddVisitorStudentComponent implements OnInit {
   yearList: any;
   coursesList: any;
   isLoading = false;
-  approves:{approve};
- 
+  approves: { approve };
+
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddVisitorStudentComponent>,
     private toastr: AppToasterService, private acadmicProc: VisitorStudentService) { }
 
   ngOnInit() {
-    this.approves={approve:false};
-    this.visitorStudent = { university: '', term: '', year: '', course_name: '', course_symbol: '', course_code: '', course_equal: '', hours: 0, attachment: '',univ_approval: '' };
+    this.approves = { approve: false };
+    this.visitorStudent = { university: '', term: '', year: '', course_name: '', course_symbol: '', course_code: '', course_equal: '', hours: 0, attachment: '', univ_approval: '', custom_university_name: '' };
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
     this.universitiesList = this.acadmicProc.reqData.universities_list;
@@ -44,7 +44,7 @@ export class AddVisitorStudentComponent implements OnInit {
   }
 
 
-  
+
   requesting = false;
   addRequest(data: any) {
     this.acadmicProc.AddRequest(data).then(res => {
@@ -63,6 +63,11 @@ export class AddVisitorStudentComponent implements OnInit {
   onSubmit(form: NgForm) {
     if (this.requesting) {
       return false;
+    }
+    if (this.visitorStudent.university == '39' || this.visitorStudent.university == '37') {
+      if (!this.visitorStudent.custom_university_name) {
+        return;
+      }
     }
 
     this.requesting = true;

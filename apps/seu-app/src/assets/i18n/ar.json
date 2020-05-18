@@ -80,7 +80,8 @@
             "non_cancelable_request": "لا يمكن إلغاء الطلب",
             "req_type": "نوع الطلب",
             "delete_print_req": "طباعة/حذف الطلب",
-            "can_update_data": "Can Update Data"
+            "can_update_data": "Can Update Data",
+            "notes": "ملاحظات"
         },
         "save": "حفظ",
         "cancel": "إلغاء",
@@ -107,6 +108,7 @@
         "instruction_": "الدليل الارشادي"
     },
     "menu": {
+        "grades":"التقديرات قبل حساب المعدل",
         "myservices": "خدماتي",
         "ugservices": "خدمات البكالوريوس",
         "grservices": "خدمات الماجستير",

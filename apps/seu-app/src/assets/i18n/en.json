@@ -80,7 +80,8 @@
             "non_cancelable_request": "Can't Delete Request",
             "req_type": "Type",
             "delete_print_req": "Print/Delete Request",
-            "can_update_data": "Can Update Data"
+            "can_update_data": "Can Update Data",
+            "notes": "Notes"
         },
         "save": "Save",
         "cancel": "Cancel",
@@ -107,6 +108,7 @@
         "instruction_": "Manual"
     },
     "menu": {
+        "grades":"التقديرات قبل حساب المعدل",
         "myservices": "My Services",
         "ugservices": "Undergradulate",
         "grservices": "Master",
@@ -500,7 +502,7 @@
             "employer_job_title": "Employer job title  Required",
             "employer_phone": "Employer phone Required",
             "employer_email": "Employer Email  Required",
-            "emailvalidate": "It is not a valid email !" ,
+            "emailvalidate": "It is not a valid email !",
             "emilnotallowed": "University email is not allowed"
         },
         "missing_card": {
@@ -627,7 +629,7 @@
             "choose_subject": "Choose Subject",
             "commitment": "Obligation",
             "accept": "I Accept",
-            "upload_university_approval":"Selected University Approval"
+            "upload_university_approval": "Selected University Approval"
         },
         "withdrow_univ": {
             "title": "Withdrawal From University Request",
@@ -738,8 +740,8 @@
             "job_title2": "Job  Title Required",
             "phone2": "Job Owner Phone Required",
             "email2": "Job Owner EMail Required",
-            "emailvalidate":"It is not a valid email !",
-            "job_details":"Job Details"
+            "emailvalidate": "It is not a valid email !",
+            "job_details": "Job Details"
         },
         "training_request": {
             "title": "Field training request",
