@@ -81,7 +81,27 @@
             "req_type": "Type",
             "delete_print_req": "Print/Delete Request",
             "can_update_data": "Can Update Data",
-            "notes": "Notes"
+            "course":"Course",           
+            "title": "Courses Equalize",
+             "desc": "Courses Equalize",
+            "reply": "Reply",
+            "reply_date": "Reply Date",
+            "choose_college": "Choose College",
+            "choose_course_lang_hours_grade": "Choose Course,Hours,Degree and Language",
+            "course_desc": "Course Description",
+            "record_image": "Record Picture",
+             "alert": "Alert:",
+             "note_text1":"Conditions for equivalence of the preparatory semester materials",
+            "note_text2":"The university in which the subject was studied must be recognized by the Ministry of Education",
+            "note_text3":"The estimate of the subject to be equivalent is (good) and above.",
+            "note_text4":"The description of the subject being studied matches the subject for equivalence.",
+            "note_text5":"That the study of the material be in a regular manner.",
+            "note_text6":"Not more than five years have passed since the period to be equivalent.",
+            "note_text7":"The student should accompany a detailed and certified description of the course required to be equivalently only.",
+            "note_text8":"The course description should match the course code and number in the academic record.",
+            "Years":"Year",
+            "attachment":"attachment"
+           
         },
         "save": "Save",
         "cancel": "Cancel",
@@ -108,7 +128,6 @@
         "instruction_": "Manual"
     },
     "menu": {
-        "grades":"التقديرات قبل حساب المعدل",
         "myservices": "My Services",
         "ugservices": "Undergradulate",
         "grservices": "Master",
@@ -502,8 +521,8 @@
             "employer_job_title": "Employer job title  Required",
             "employer_phone": "Employer phone Required",
             "employer_email": "Employer Email  Required",
-            "emailvalidate": "It is not a valid email !",
-            "emilnotallowed": "University email is not allowed"
+            "emailvalidate": "It is not a valid email !" ,
+            "emilnotallowed": "Email Not Allowed !"
         },
         "missing_card": {
             "title": "Lost Card Replacment Request",
@@ -629,7 +648,7 @@
             "choose_subject": "Choose Subject",
             "commitment": "Obligation",
             "accept": "I Accept",
-            "upload_university_approval": "Selected University Approval"
+            "upload_university_approval":"Selected University Approval"
         },
         "withdrow_univ": {
             "title": "Withdrawal From University Request",
@@ -740,8 +759,8 @@
             "job_title2": "Job  Title Required",
             "phone2": "Job Owner Phone Required",
             "email2": "Job Owner EMail Required",
-            "emailvalidate": "It is not a valid email !",
-            "job_details": "Job Details"
+            "emailvalidate":"It is not a valid email !",
+            "job_details":"Job Details"
         },
         "training_request": {
             "title": "Field training request",
@@ -760,7 +779,7 @@
             "form_ar": "Form - Arabic",
             "form_en": "Form - English",
             "student_form": "Student Form",
-            "emilnotallowed": "University email is not allowed"
+            "emilnotallowed": "Email Not Allowed !"
         },
         "reg": {
             "choosewishe": "choose wishes ",

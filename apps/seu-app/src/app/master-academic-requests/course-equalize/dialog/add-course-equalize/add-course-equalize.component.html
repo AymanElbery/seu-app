@@ -1,0 +1,144 @@
+<!-- Modal -->
+<mat-dialog-content dir="rtl">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+        {{"general.request.title"|translate}}</h5>
+
+    </div>
+
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+      <div class="modal-body">
+        <P class="text-center">
+          <span
+            style="font-weight: bold; font-size: 15px;color: red;">{{"general.request.alert"|translate}}</span>{{"general.request.note_text1"|translate}}
+          <br />
+          {{"general.request.note_text2"|translate}} <br />  {{"general.request.note_text3"|translate}} <br /> {{"general.request.note_text4"|translate}}
+
+          <br /> {{"general.request.note_text5"|translate}}  <br /> {{"general.request.note_text6"|translate}} <br /> {{"general.request.note_text7"|translate}}
+
+          <br /> {{"general.request.note_text8"|translate}}
+         
+        </P>
+        <section class="ser-state">
+          <div class="container">
+            <div class="row ser-block">
+              <div class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6> {{"services.course-equalize.choose_college"|translate}}</h6>
+                  <div class="form-group">
+
+                    <select name="university" #university="ngModel" [(ngModel)]="curseEqual.university"
+                      class="form-control" [class.is-invalid]=" curseEqual.university==0">
+                      <option value="0">{{"general.college"|translate}} </option>
+                      <option *ngFor="let item of reqData.universities" value="{{item.UN_ID}}">{{item.UN_NAME}}
+                      </option>
+                    </select>
+                    <br />
+                  </div>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6> {{"general.request.Years"|translate}}</h6>
+                  <div class="form-group">
+                    <input name="year" #year="ngModel" [(ngModel)]="curseEqual.year" class="form-control">
+                  </div>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.course-equalize.choose_course_lang_hours_grade"|translate}}</h6>
+                  <table style="text-align: center" class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">{{"general.course_name"|translate}}</th>
+                        <th scope="col">{{"general.course_hours"|translate}}</th>
+                        <th scope="col">{{"general.grade"|translate}}</th>
+                        <th scope="col">{{"general.language"|translate}} </th>
+
+                        <th scope="col"> </th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let it of reqData.courses;let i=index;">
+                        <td>{{it.value}}</td>
+
+
+                        <td>
+                          <select class="custom-select  col-md-12" #TRNS_HRS="ngModel" name="TRNS_HRS"
+                            [(ngModel)]="it.TRNS_HRS">
+                            <option *ngFor="let g of reqData.hourse_list" [value]="g.value">{{g.value}}</option>
+
+                          </select>
+
+                        </td>
+                        <td>
+                          <select class="custom-select  col-md-12" #TRNS_GRADE="ngModel" name="TRNS_GRADE"
+                            [(ngModel)]="it.TRNS_GRADE">
+                            <option *ngFor="let g of reqData.grade_list" [value]="g.value">{{g.value}}</option>
+                          </select>
+
+                        </td>
+                        <td>
+                          <select class="custom-select  col-md-12" #TRNS_LANG="ngModel" name="TRNS_LANG"
+                            [(ngModel)]="it.TRNS_LANG">
+                            <option selected value="1">{{"general.ar_language"|translate}}</option>
+                            <option value="2">{{"general.en_language"|translate}}</option>
+                          </select>
+                        </td>
+
+
+                        <td>
+                          <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event)" #chkCourse>
+                        </td>
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"general.request.attachment"|translate}}</h6>
+                  <div class="custom-file">
+                    <input name="attachment " type="file" accept="*/*" (change)="handleInputChange($event)" id="attachment "
+                      class="custom-file-input" />
+                    <label for="attachment " class="custom-file-label ">
+                    </label>
+                  </div>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </section>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+          {{"general.cancel"|translate}}</button>
+        <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"general.save"|translate}}</button>
+      </div>
+    </form>
+
+
+  </div>
+
+</mat-dialog-content>
