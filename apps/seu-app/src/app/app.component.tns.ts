@@ -345,6 +345,10 @@ export class AppComponent implements OnInit {
                 {
                     subTitle:'الأجازات',
                     route:'/personal/vacations'
+                },
+                {
+                    subTitle:"حسم من الأجازة العادية",
+                    route:"/administrative/penalty-discount"
                 }
             ]
 

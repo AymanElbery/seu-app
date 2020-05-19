@@ -7,16 +7,19 @@ import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { HeaderModule } from '../../shared/header.module.tns';
 import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
+import { PenaltyDiscountComponent } from './penalty-discount/penalty-discount.component.tns';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
-  declarations: [VouchersComponent],
+  declarations: [VouchersComponent,PenaltyDiscountComponent],
   imports: [
     AdministrativeRoutingModule,
     AppTransModule,
     NativeScriptFormsModule,
     NativeScriptCommonModule,
     HeaderModule,
-    NativeScriptHttpClientModule
+    NativeScriptHttpClientModule,
+    Ng2SearchPipeModule
   ]
 })
 export class AdministrativeModule { }
