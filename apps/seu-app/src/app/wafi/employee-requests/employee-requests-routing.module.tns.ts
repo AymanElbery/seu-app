@@ -6,10 +6,10 @@ import { RequestsDetailsComponent } from './requests-details/requests-details.co
 import { ApprovalRequestsComponent } from './approval-requests/approval-requests.component.tns';
 import { ApprovalRequestDetailComponent } from './approval-request-detail/approval-request-detail.component.tns';
 import { RequestAddComponent } from './request-add/request-add.component.tns';
-import { EvacuatePartyRequestComponent } from './evacuate-party-request/evacuate-party-request.component.tns';
 import { VacationRequestComponent } from './vacation-request/vacation-request.component.tns';
-import { RegularLeaveRequestComponent } from './regular-leave-request/regular-leave-request.component.tns';
 import { AttendCourceRequestComponent } from './attend-cource-request/attend-cource-request.component.tns';
+import { RegularLeaveRequestComponent } from './regular-leave-request/regular-leave-request.component.tns';
+import { EvacuatePartyRequestComponent } from './evacuate-party-request/evacuate-party-request.component.tns';
 
 const routes: Routes = [
   {
@@ -22,30 +22,11 @@ const routes: Routes = [
     { path: 'approval-details/:sq/:type/:empId', component: ApprovalRequestDetailComponent },
     { path: 'add-request', component: RequestAddComponent },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     { path: 'vacation-request/:id', component: VacationRequestComponent },
     { path: 'attend-course-request/:id', component: AttendCourceRequestComponent },
     { path: 'regular-leave-request/:id', component: RegularLeaveRequestComponent },
-    { path: 'evacuate-party-request/:id', component: EvacuatePartyRequestComponent },
-
-
-
-
-  ]
-}
+    { path: 'evacuate-party-request/:id', component: EvacuatePartyRequestComponent}
+  ]}
 ];
 @NgModule({
   imports: [NativeScriptRouterModule.forChild(routes)],

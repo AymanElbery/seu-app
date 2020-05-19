@@ -6,6 +6,7 @@ import { EmployeeRequestsService } from '../../services/employee-requests.servic
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppToasterService } from '../../../shared/services/app-toaster';
+import { ValueItem, ValueList } from 'nativescript-drop-down';
 
 
 @Component({
@@ -31,6 +32,9 @@ export class VacationRequestComponent implements OnInit {
   isLoading = true;
   subscriptions;
   id: number;
+  dataObject;
+  vacsDropDown;
+  vacs: ValueItem<number>[] = [];
   private sub: any;
   constructor(private route: ActivatedRoute,
               private toastr: AppToasterService,
@@ -39,6 +43,11 @@ export class VacationRequestComponent implements OnInit {
               private router: Router) {
 
 
+  }
+
+  changeVac(e)
+  {
+    this.dataObject.vacation = this.vacsDropDown.getValue(e.newIndex);
   }
   selectcityFF(val) {
     this.selectcity(val);
@@ -133,6 +142,18 @@ export class VacationRequestComponent implements OnInit {
       if (reqtype) {
         // console.log(reqtype);
         this.vacationreqtype = reqtype;
+        // tslint:disable-next-line: prefer-for-of
+        for (let i = 0; i < this.vacationreqtype.length; i++) {
+          this.vacs.push(
+            {
+              value: this.vacationreqtype[i].value,
+              display: this.vacationreqtype[i].label
+            }
+          );
+        }
+        console.log('vacs');
+        console.log(this.vacs);
+        this.vacsDropDown = new ValueList(this.vacs);
         this.vacationreqtype = (reqtype as any).data.vacationItems;
         this.ddlday = (reqtype as any).data.dayItem;
         this.ddlmonth = (reqtype as any).data.monthItem;

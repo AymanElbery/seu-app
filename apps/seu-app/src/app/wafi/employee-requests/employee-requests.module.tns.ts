@@ -11,6 +11,8 @@ import { RequestsDetailsComponent } from './requests-details/requests-details.co
 import { ApprovalRequestsComponent } from './approval-requests/approval-requests.component.tns';
 import { ApprovalRequestDetailComponent } from './approval-request-detail/approval-request-detail.component.tns';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ApprovalHistoryComponent } from './approval-history/approval-history.component.tns';
+import { ApprovalHistoryDetailComponent } from './approval-history-detail/approval-history-detail.component.tns';
 import { DropDownModule } from 'nativescript-drop-down/angular';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
@@ -25,18 +27,15 @@ import { EvacuatePartyRequestComponent } from './evacuate-party-request/evacuate
     , RequestsDetailsComponent
     , ApprovalRequestsComponent
     , ApprovalRequestDetailComponent
-
-
-
-
-
-
-
-
-
-
-
-    , RequestAddComponent,VacationRequestComponent,AttendCourceRequestComponent,RegularLeaveRequestComponent,EvacuatePartyRequestComponent
+    , ApprovalHistoryComponent
+    , ApprovalHistoryDetailComponent
+    , ApprovalRequestDetailComponent
+    , RequestAddComponent
+    , RequestAddComponent,
+     VacationRequestComponent,
+     AttendCourceRequestComponent, 
+     RegularLeaveRequestComponent,
+      EvacuatePartyRequestComponent
   ],
   imports: [
     EmployeeRequestsRoutingModule,
