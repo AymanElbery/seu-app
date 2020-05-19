@@ -13,6 +13,10 @@ import { ApprovalRequestDetailComponent } from './approval-request-detail/approv
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { ApprovalHistoryComponent } from './approval-history/approval-history.component.tns';
 import { ApprovalHistoryDetailComponent } from './approval-history-detail/approval-history-detail.component.tns';
+import { DropDownModule } from 'nativescript-drop-down/angular';
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
+import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
+import { RequestAddComponent } from './request-add/request-add.component.tns';
 
 @NgModule({
   declarations: [RequestsListComponent
@@ -21,6 +25,8 @@ import { ApprovalHistoryDetailComponent } from './approval-history-detail/approv
     , ApprovalRequestDetailComponent
     ,ApprovalHistoryComponent
     ,ApprovalHistoryDetailComponent
+    , ApprovalRequestDetailComponent
+    , RequestAddComponent
   ],
   imports: [
     EmployeeRequestsRoutingModule,
@@ -29,7 +35,11 @@ import { ApprovalHistoryDetailComponent } from './approval-history-detail/approv
     NativeScriptFormsModule,
     NativeScriptCommonModule,
     HeaderModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    DropDownModule,
+    NativeScriptUIListViewModule,
+    NativeScriptLocalizeModule,
+
   ]
 })
 export class EmployeeRequestsModule { }

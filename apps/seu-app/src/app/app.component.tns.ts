@@ -328,11 +328,11 @@ export class AppComponent implements OnInit {
                 route: '/personal/print-report'
             },
             {
-                subTitle:'المناصب الإدارية',
-                route:'/personal/managerial-duties'
-            },{
-                subTitle:'الرواتب',
-                route:'/personal/salaries'
+                subTitle: 'المناصب الإدارية',
+                route: '/personal/managerial-duties'
+            }, {
+                subTitle: 'الرواتب',
+                route: '/personal/salaries'
             },
             {
                 subTitle:'البدلات و المكافاَت',
@@ -405,6 +405,10 @@ export class AppComponent implements OnInit {
             {
                 subTitle:'حركة الموافقات',
                 route:'/requests/approval-history'
+            },
+            {
+                subTitle: ' اضافة طلب ',
+                route: '/requests/add-request'
             }
         ]
     }

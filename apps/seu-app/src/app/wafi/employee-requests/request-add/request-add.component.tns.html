@@ -1,1 +1,34 @@
-<Button text="request-add works!" class="btn btn-primary"></Button>
+<app-header></app-header>
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+
+        <GridLayout columns="auto, *" class="serv-title">
+          <Label col="1" text="&#xf0d9;" class="fas serv-ico-r"></Label>
+          <Label col="1" text='{{"wafi.RequestDtails" | translate}}' class="serv-name"></Label>
+          <Label col="1" text="&#xf0da;" class="fas serv-ico "></Label>
+    
+        </GridLayout>
+    
+    
+    
+    
+    
+        <StackLayout height="100%" *ngIf="!isLoading">
+          <StackLayout>
+    
+    
+            <GridLayout rows="10,*" columns="*,*">
+
+                <Button row="1" colSpan="2" text='{{"wafi.Reject" | translate}}'   class=" print-btn " (tap)="reject()" ></Button>
+              </GridLayout>
+    
+    
+    
+        </StackLayout>
+      </FlexboxLayout>
+    <
+
+
+
+</ScrollView>
