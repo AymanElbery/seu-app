@@ -328,11 +328,11 @@ export class AppComponent implements OnInit {
                 route: '/personal/print-report'
             },
             {
-                subTitle:'المناصب الإدارية',
-                route:'/personal/managerial-duties'
-            },{
-                subTitle:'الرواتب',
-                route:'/personal/salaries'
+                subTitle: 'المناصب الإدارية',
+                route: '/personal/managerial-duties'
+            }, {
+                subTitle: 'الرواتب',
+                route: '/personal/salaries'
             }
         ]
 

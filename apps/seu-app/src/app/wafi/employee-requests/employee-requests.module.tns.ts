@@ -11,6 +11,9 @@ import { RequestsDetailsComponent } from './requests-details/requests-details.co
 import { ApprovalRequestsComponent } from './approval-requests/approval-requests.component.tns';
 import { ApprovalRequestDetailComponent } from './approval-request-detail/approval-request-detail.component.tns';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { DropDownModule } from 'nativescript-drop-down/angular';
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
+import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 
 @NgModule({
   declarations: [RequestsListComponent
@@ -24,7 +27,11 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     NativeScriptFormsModule,
     NativeScriptCommonModule,
     HeaderModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    DropDownModule,
+    NativeScriptUIListViewModule,
+    NativeScriptLocalizeModule,
+
   ]
 })
 export class EmployeeRequestsModule { }
