@@ -333,8 +333,24 @@ export class AppComponent implements OnInit {
             }, {
                 subTitle: 'الرواتب',
                 route: '/personal/salaries'
+            },
+            {
+                subTitle:'البدلات و المكافاَت',
+                route:'/administrative/vouchers'
             }
-        ]
+        ]},
+        {
+            title:"استعلاماتى",
+            subTitles:[
+                {
+                    subTitle:'الأجازات',
+                    route:'/personal/vacations'
+                },
+                {
+                    subTitle:"حسم من الأجازة العادية",
+                    route:"/administrative/penalty-discount"
+                }
+            ]
 
 
 
@@ -369,6 +385,10 @@ export class AppComponent implements OnInit {
             {
                 subTitle: ' الموافقه على الطلبات',
                 route: '/requests/approval-requests'
+            },
+            {
+                subTitle: ' اضافة طلب ',
+                route: '/requests/add-request'
             }
         ]
     }

@@ -15,12 +15,14 @@
       <Label text='{{"wafi.selectyear" | translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
       <DropDown
       #dropdown
-      style="margin-right: 20;"
+      style="margin-right: 20;margin-left: 160;"
       [items]="yearsDropDown"
       (selectedIndexChanged)="getYear($event)"
       itemsTextAlignment="right"
       itemsPadding="5"
-      required>
+      required
+      (loaded) =onLoadedDropDown(dropdown)
+      >
       </DropDown>
     
       <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of Empsalary;let i=index;">

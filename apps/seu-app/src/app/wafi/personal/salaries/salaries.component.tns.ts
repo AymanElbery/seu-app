@@ -26,6 +26,7 @@ export class SalariesComponent implements OnInit {
   isLoading = true;
   subscriptions;
   selectYear = "";
+  indexDropdown: number=0;
   constructor(private http: HttpClient,private empservice:EmployeesService,private translate: TranslateService,
     private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef) { }
@@ -101,7 +102,12 @@ getsalarydetail(orderItemIndex, month,year) {
   }
   getYear(val: SelectedIndexChangedEventData) {
     const code = this.yearsDropDown.getValue(val.newIndex);
+    this.indexDropdown=val.newIndex;
     this.selectYear=code;
     this.getempsalaryyearwise(code);
+  }
+
+  onLoadedDropDown(dropdown){
+    dropdown.selectedIndex=this.indexDropdown;
   }
 }

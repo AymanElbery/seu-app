@@ -11,6 +11,7 @@ import { PrintReportComponent } from './print-report/print-report.component.tns'
 import { ManagerialDutiesComponent } from './managerial-duties/managerial-duties.component.tns';
 import { SalariesComponent } from './salaries/salaries.component.tns';
 import { SalarydetailComponent } from './salarydetail/salarydetail.component.tns';
+import { VacationsComponent } from './vacations/vacations.component.tns';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SalarydetailComponent } from './salarydetail/salarydetail.component.tns
     PrintReportComponent,
     ManagerialDutiesComponent,
     SalariesComponent,
-    SalarydetailComponent
+    SalarydetailComponent,
+    VacationsComponent
   ],
   entryComponents:[UpdateinfoComponent,SalarydetailComponent],
   imports: [
