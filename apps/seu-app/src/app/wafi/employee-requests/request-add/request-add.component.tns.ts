@@ -1,10 +1,8 @@
 
 import { Component, OnInit,  Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable ,  Subscription } from 'rxjs';
-import {FormGroup, AbstractControl, FormBuilder, Validators} from '@angular/forms';
 import { EmployeeRequestsService } from '../../services/employee-requests.service';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -18,13 +16,9 @@ export class RequestAddComponent implements OnInit {
   reqtype: any;
   subscriptionDDLReqtype: Subscription;
   constructor(private empreqservice: EmployeeRequestsService,
-              private fb: FormBuilder,
               private translate: TranslateService,
               private router: Router) {
-    this.AddReqForm = fb.group({
-      reqtype: ['', [Validators.required]]
 
-    });
 
   }
 
@@ -53,6 +47,7 @@ export class RequestAddComponent implements OnInit {
       if (reqtype) {
         this.reqtype = reqtype;
         this.reqtype = (reqtype as any).data;
+        console.log(this.reqtype);
         // console.log("reqtype data",this.reqtype);
         this.isLoading = false;
       } else {
@@ -69,19 +64,19 @@ switch (reqtypeval) {
 
     case '1':
 
-      this.router.navigate(['/wafi/employee-requests/vacation-request', reqtypeval]);
+      this.router.navigate(['requests/vacation-request', reqtypeval]);
       break;
     case '6':
-      this.router.navigate(['/wafi/employee-requests/vacation-request', reqtypeval]);
+      this.router.navigate(['requests/vacation-request', reqtypeval]);
       break;
     case '34':
-      this.router.navigate(['/wafi/employee-requests/attend-course-request', reqtypeval]);
+      this.router.navigate(['requests/attend-course-request', reqtypeval]);
       break;
     case '37':
-      this.router.navigate(['/wafi/employee-requests/regular-leave-request', reqtypeval]);
+      this.router.navigate(['requests/regular-leave-request', reqtypeval]);
       break;
     case '65':
-      this.router.navigate(['/wafi/employee-requests/evacuate-party-request', reqtypeval]);
+      this.router.navigate(['requests/evacuate-party-request', reqtypeval]);
       break;
     default:
         // console.log("No such reqtype exists!");
