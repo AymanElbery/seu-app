@@ -11,12 +11,17 @@ import { RequestsDetailsComponent } from './requests-details/requests-details.co
 import { ApprovalRequestsComponent } from './approval-requests/approval-requests.component.tns';
 import { ApprovalRequestDetailComponent } from './approval-request-detail/approval-request-detail.component.tns';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ApprovalHistoryComponent } from './approval-history/approval-history.component.tns';
+import { ApprovalHistoryDetailComponent } from './approval-history-detail/approval-history-detail.component.tns';
 
 @NgModule({
   declarations: [RequestsListComponent
     , RequestsDetailsComponent
     , ApprovalRequestsComponent
-    , ApprovalRequestDetailComponent],
+    , ApprovalRequestDetailComponent
+    ,ApprovalHistoryComponent
+    ,ApprovalHistoryDetailComponent
+  ],
   imports: [
     EmployeeRequestsRoutingModule,
     FormsModule,

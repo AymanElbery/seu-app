@@ -401,6 +401,10 @@ export class AppComponent implements OnInit {
             {
                 subTitle: ' الموافقه على الطلبات',
                 route: '/requests/approval-requests'
+            },
+            {
+                subTitle:'حركة الموافقات',
+                route:'/requests/approval-history'
             }
         ]
     }
