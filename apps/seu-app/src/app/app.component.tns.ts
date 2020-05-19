@@ -349,6 +349,22 @@ export class AppComponent implements OnInit {
                 {
                     subTitle:"حسم من الأجازة العادية",
                     route:"/administrative/penalty-discount"
+                },
+                {
+                    subTitle:'عهد الموظف',
+                    route:"/administrative/emp-custody"
+                },
+                {
+                    subTitle:'التقويم الوظيفي',
+                    route:'/administrative/emp-evaluations'
+                },
+                {
+                    subTitle:'خطابات الشكر والإنذارات',
+                    route:'/administrative/emp-letters'
+                },
+                {
+                    subTitle:'الدورات التدريبية',
+                    route:'/administrative/training'
                 }
             ]
 
