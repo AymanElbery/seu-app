@@ -14,12 +14,15 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { DropDownModule } from 'nativescript-drop-down/angular';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
+import { RequestAddComponent } from './request-add/request-add.component.tns';
 
 @NgModule({
   declarations: [RequestsListComponent
     , RequestsDetailsComponent
     , ApprovalRequestsComponent
-    , ApprovalRequestDetailComponent],
+    , ApprovalRequestDetailComponent
+    , RequestAddComponent
+  ],
   imports: [
     EmployeeRequestsRoutingModule,
     FormsModule,
