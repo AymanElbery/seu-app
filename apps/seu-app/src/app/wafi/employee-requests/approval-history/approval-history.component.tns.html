@@ -15,9 +15,27 @@
       <Label text='{{"tasks.searchdata"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
       <TextField [(ngModel)]="filter" #search="ngModel" required hint="" style="margin-right:20 ;"></TextField>
 
-      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of emplisthistoryapproval |filter:filter">
-                      
-                      
+      <StackLayout  *ngFor="let item of emplisthistoryapproval |filter:filter">
+        <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+            <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+            <FlexboxLayout flexDirection="row-reverse">
+                <Label text='{{item.requestIndex}}'></Label>
+                <Label text="- "></Label>
+                <Label text='{{item.requestEmpName}}'></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                    <Label  text="&#xf106;"  class="fas arr-drop"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label text='{{item.requestIndex}}'></Label>
+                        <Label text="-"></Label>
+                        <Label text='{{item.requestEmpName}}'></Label>
+                    </FlexboxLayout>
+                 </FlexboxLayout>
+                 
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">           
         <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.Sequence" | translate}}'></Label>
         <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.requestIndex"></Label>
     
@@ -40,5 +58,8 @@
         <Button row="7"  column="0" class="blue-button fas" textWrap="true" text='{{"wafi.Details" | translate}}' (tap)="getapphistorydetail(item.requestSeq,item.requestEmpId,item.requestType)"></Button>
          
       </GridLayout>
+    </FlexboxLayout>
+  </FlexboxLayout>
+  </StackLayout>
     </StackLayout>
 </ScrollView>

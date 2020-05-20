@@ -22,6 +22,7 @@ export class ApprovalHistoryComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   subscriptionappreq: Subscription;
   emplisthistoryapproval: any;
+  clicked: any;
   constructor(private http: HttpClient, private empreqservice: EmployeeRequestsService, 
     private toastr: AppToasterService, private translate: TranslateService,private router:Router) {
   }
@@ -61,7 +62,13 @@ export class ApprovalHistoryComponent implements OnInit, OnDestroy {
   }
 
   getapphistorydetail(reqSeq: any, reqEmpId: any, reqType: any) {
+    console.log(reqSeq,reqEmpId,reqType)
     this.router.navigate(['/requests/approval-history-detail/'+reqSeq+'/'+reqType+'/',reqEmpId])
   }
-
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
+  }
 }

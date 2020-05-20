@@ -31,6 +31,7 @@ export class VouchersComponent implements OnInit, OnDestroy {
   typesDropDown;
   indexDropdown1: number=0;
   indexDropdown2: number=0;
+  clicked: any;
 
   constructor(private http: HttpClient, private empreqservice: AdministrativeService, private toastr: AppToasterService, 
     private translate: TranslateService) {
@@ -140,5 +141,11 @@ export class VouchersComponent implements OnInit, OnDestroy {
   }
   onLoadedSecondDropDown(dropdown2){
     dropdown2.selectedIndex=this.indexDropdown2;
+  }
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
   }
 }

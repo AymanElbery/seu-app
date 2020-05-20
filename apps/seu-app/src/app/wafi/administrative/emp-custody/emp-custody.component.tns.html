@@ -12,8 +12,28 @@
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
 
+      
+      <StackLayout  *ngFor="let item of emplistcustody">
+        <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+            <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+            <FlexboxLayout flexDirection="row-reverse">
+                <Label text='{{item.id}}'></Label>
+                <Label text="-"></Label>
+                <Label text='{{item.typeName}}'></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                    <Label  text="&#xf106;"  class="fas arr-drop"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label text='{{item.id}}'></Label>
+                        <Label text="-"></Label>
+                        <Label text='{{item.typeName}}'></Label>
+                    </FlexboxLayout>
+                 </FlexboxLayout>
 
-      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of emplistcustody">
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                       
                       
         <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_CUST_SERVICE_ID" | translate}}'></Label>
@@ -41,5 +61,8 @@
         <Label row="8"  column="0" class="ysPBox2" textWrap="true" [text]="item.duration" ></Label>
          
       </GridLayout>
+    </FlexboxLayout>
+  </FlexboxLayout>
+  </StackLayout>
     </StackLayout>
 </ScrollView>

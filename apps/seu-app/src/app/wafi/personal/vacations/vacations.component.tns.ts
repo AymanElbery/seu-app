@@ -21,6 +21,7 @@ export class VacationsComponent implements OnInit {
   subscriptions;
   vacationsArray:ValueItem<number>[] = [];
   vacationsDropDown;
+  clicked: any;
   constructor(private empservice:EmployeesService,private translate: TranslateService) { }
   isLoading = true;
   selectvactype :number=0;
@@ -74,10 +75,10 @@ export class VacationsComponent implements OnInit {
        this.VacationBalance = (empvacation as any).data["VacationBalance"];
       // //console.log("emp vacations",this.vacations);      
       
-       this.isLoading = false;      
      } else {       
        //this.messages = [];
-     }
+    }
+    this.isLoading = false;      
    });
   
   }
@@ -89,5 +90,11 @@ export class VacationsComponent implements OnInit {
 
   onLoadedDropDown(dropdown){
     dropdown.selectedIndex=this.selectvactype;
+  }
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
   }
 }
