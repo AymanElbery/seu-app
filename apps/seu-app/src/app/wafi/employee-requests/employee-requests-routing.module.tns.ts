@@ -10,6 +10,8 @@ import { VacationRequestComponent } from './vacation-request/vacation-request.co
 import { AttendCourceRequestComponent } from './attend-cource-request/attend-cource-request.component.tns';
 import { RegularLeaveRequestComponent } from './regular-leave-request/regular-leave-request.component.tns';
 import { EvacuatePartyRequestComponent } from './evacuate-party-request/evacuate-party-request.component.tns';
+import { ApprovalHistoryComponent } from './approval-history/approval-history.component.tns';
+import { ApprovalHistoryDetailComponent } from './approval-history-detail/approval-history-detail.component.tns';
 
 const routes: Routes = [
   {
@@ -25,7 +27,9 @@ const routes: Routes = [
     { path: 'vacation-request/:id', component: VacationRequestComponent },
     { path: 'attend-course-request/:id', component: AttendCourceRequestComponent },
     { path: 'regular-leave-request/:id', component: RegularLeaveRequestComponent },
-    { path: 'evacuate-party-request/:id', component: EvacuatePartyRequestComponent}
+    { path: 'evacuate-party-request/:id', component: EvacuatePartyRequestComponent},
+    { path: 'approval-history', component: ApprovalHistoryComponent },
+    { path: 'approval-history-detail/:sq/:type/:empId', component: ApprovalHistoryDetailComponent }
   ]}
 ];
 @NgModule({
