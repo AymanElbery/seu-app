@@ -17,16 +17,25 @@ import { DropDownModule } from 'nativescript-drop-down/angular';
 import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular/listview-directives';
 import { NativeScriptLocalizeModule } from 'nativescript-localize/angular';
 import { RequestAddComponent } from './request-add/request-add.component.tns';
+import { RegularLeaveRequestComponent } from './regular-leave-request/regular-leave-request.component.tns';
+import { VacationRequestComponent } from './vacation-request/vacation-request.component.tns';
+import { AttendCourceRequestComponent } from './attend-cource-request/attend-cource-request.component.tns';
+import { EvacuatePartyRequestComponent } from './evacuate-party-request/evacuate-party-request.component.tns';
 
 @NgModule({
   declarations: [RequestsListComponent
     , RequestsDetailsComponent
     , ApprovalRequestsComponent
     , ApprovalRequestDetailComponent
-    ,ApprovalHistoryComponent
-    ,ApprovalHistoryDetailComponent
+    , ApprovalHistoryComponent
+    , ApprovalHistoryDetailComponent
     , ApprovalRequestDetailComponent
     , RequestAddComponent
+    , RequestAddComponent,
+     VacationRequestComponent,
+     AttendCourceRequestComponent, 
+     RegularLeaveRequestComponent,
+      EvacuatePartyRequestComponent
   ],
   imports: [
     EmployeeRequestsRoutingModule,
