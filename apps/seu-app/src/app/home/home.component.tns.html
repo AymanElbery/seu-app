@@ -53,6 +53,16 @@
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/certificate.png"></Image>
                 <label  row="1" colSpan="2" text="  شهادة تعريف  " class=" heading-text6 " ></label>
               </GridLayout>
+
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/administrative/penalty-discount')"  *ngIf="role=='Employee'">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/branch.png"></Image>
+                <label  row="1" colSpan="2" text="حسم من الاجازة العادية" class=" heading-text6 " ></label>
+              </GridLayout>
+
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/approval-requests')"  *ngIf="role=='Employee'">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/st.png"></Image>
+                <label  row="1" colSpan="2" text="الموافقة على الطلبات" class=" heading-text6 " ></label>
+              </GridLayout>
      
         </FlexboxLayout> 
 
@@ -76,6 +86,16 @@
               <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/changecourse')" *ngIf="level=='GR'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book-2.png"></Image>
                 <label  row="1" colSpan="2" text="   تغيير التخصص " class=" heading-text6 " ></label>
+              </GridLayout>
+
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/salaries')" *ngIf="role=='Employee'">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/record.png"></Image>
+                <label  row="1" colSpan="2" text="الرواتب" class=" heading-text6 " ></label>
+              </GridLayout>
+
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/vacations')"  *ngIf="role=='Employee'">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book-2.png"></Image>
+                <label  row="1" colSpan="2" text="الأجازات " class=" heading-text6 " ></label>
               </GridLayout>
      
         </FlexboxLayout>
@@ -101,6 +121,17 @@
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
                 <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
               </GridLayout>
+
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/add-request')"  *ngIf="role=='Employee'">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/branch.png"></Image>
+                <label  row="1" colSpan="2" text="اضافة طلب" class=" heading-text6 " ></label>
+              </GridLayout>
+
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/administrative/vouchers')"  *ngIf="role=='Employee'">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
+                <label  row="1" colSpan="2" text="البدلات و المكافأت" class=" heading-text6 " ></label>
+              </GridLayout>
+
      
         </FlexboxLayout>
        

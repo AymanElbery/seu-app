@@ -18,6 +18,7 @@ registerElement('CarouselItem', () => CarouselItem);
     templateUrl: './home.component.tns.html'
 })
 export class HomeComponent implements OnInit {
+  role: string;
     constructor(public printService: PrintService, public homeService: HomeService,
                 public userService: UserService,
                 private router: Router , private globalService: GlobalBaseService
@@ -278,6 +279,7 @@ setInterval(
 
     ngOnInit(): void {
       this.level = this.userService.userData.student_details.level;
+      this.role=this.userService.userData.activeRole
       //  this.LoadData();
 
     }
