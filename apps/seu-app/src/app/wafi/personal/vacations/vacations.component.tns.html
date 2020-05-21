@@ -33,10 +33,30 @@
         <Label text='{{VacationReservedBalance}}' style="color: #f08b1c"></Label>
         <Label text='{{"wafi.VacationAbsenceBalance" | translate}}'></Label>
         <Label text='{{VacationAbsenceBalance}}' style="color: #f08b1c"></Label>
-
       </FlexboxLayout>
+
+      <StackLayout  *ngFor="let item of vacations">
+        <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+            <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+            <FlexboxLayout flexDirection="row-reverse">
+                <Label text='{{item.desc}}'></Label>
+                <Label text="-"></Label>
+                <Label text='{{item.startDate}}'></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                    <Label  text="&#xf106;"  class="fas arr-drop"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label text='{{item.desc}}'></Label>
+                        <Label text="/"></Label>
+                        <Label text='{{item.startDate}}'></Label>
+                    </FlexboxLayout>
+                 </FlexboxLayout>
+
       <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,
-      auto,auto,auto,auto,auto,auto,auto,auto,auto,,auto,auto" columns="*,150" *ngFor="let item of vacations">
+      auto,auto,auto,auto,auto,auto,auto,auto,auto,,auto,auto" columns="*,150">
       
       <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.seq" | translate}}'></Label>
       <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.no"></Label>
@@ -60,7 +80,9 @@
       <Label row="7"  column="0" class="ysPBox2" textWrap="true" [text]="item.period" ></Label>
           
       </GridLayout>
-
+    </FlexboxLayout>
+  </FlexboxLayout>
+  </StackLayout>
     </StackLayout>
 
 </ScrollView>

@@ -37,7 +37,27 @@
       >
       </DropDown>
 
-      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of vocherlistdata;let i=index;">
+      
+      <StackLayout  *ngFor="let item of  vocherlistdata;let i=index;">
+        <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+            <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+            <FlexboxLayout flexDirection="row-reverse">
+                <Label text='{{item.voucherType}}'></Label>
+                <Label text="-"></Label>
+                <Label text='{{item.claimStatusDesc}}'></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                    <Label  text="&#xf106;"  class="fas arr-drop"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label text='{{item.voucherType}}'></Label>
+                        <Label text="/"></Label>
+                        <Label text='{{item.claimStatusDesc}}'></Label>
+                    </FlexboxLayout>
+                 </FlexboxLayout>
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                       
                       
         <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_PSNL_VCHR_TYPE" | translate}}'></Label>
@@ -67,7 +87,9 @@
         <Label row="9"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_PSNL_VCHR_NOTE" | translate}}'></Label>
         <Label row="9"  column="0" class="ysPBox2" textWrap="true" [text]="item.note" ></Label>
       </GridLayout>
-
+    </FlexboxLayout>
+  </FlexboxLayout>
+  </StackLayout>
     </StackLayout>
 
 </ScrollView>

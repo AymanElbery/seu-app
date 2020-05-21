@@ -28,6 +28,7 @@ export class PenaltyDiscountComponent implements OnInit {
   messages;
   printdata;
   downloadedFilePath;
+  clicked: any;
 
   constructor(private http: HttpClient, private adminservice: AdministrativeService, private translate: TranslateService) { }
   isLoading = true;
@@ -92,5 +93,10 @@ export class PenaltyDiscountComponent implements OnInit {
   }, TextModule.encoding.ISO_8859_1);
 
   }
-
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
+  }
 }

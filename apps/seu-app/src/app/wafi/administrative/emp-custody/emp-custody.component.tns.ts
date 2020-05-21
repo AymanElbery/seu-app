@@ -17,6 +17,7 @@ export class EmpCustodyComponent implements OnInit, OnDestroy {
   config: any;
   subscriptioncustodylist: Subscription;
   emplistcustody: any;
+  clicked: any;
   constructor(private http: HttpClient, private empreqservice: AdministrativeService, private toastr: AppToasterService, private translate: TranslateService) {
   }
   isLoading = true;
@@ -55,6 +56,11 @@ export class EmpCustodyComponent implements OnInit, OnDestroy {
   }
 
 
-
+  clickme(item) {
+    this.clicked = item;
+  }
+  uclickme(item) {
+    this.clicked = {};
+  }
 }
 
