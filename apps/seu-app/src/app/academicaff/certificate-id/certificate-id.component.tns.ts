@@ -17,6 +17,8 @@ import { TranslateService } from '@ngx-translate/core';
   moduleId: module.id
 })
 export class CertificateIDComponent implements OnInit {
+  isClosed: boolean;
+  messagesList: any;
 
   constructor(private certificateIDService: CertificateIDService, private route: HttpClient,
     private downloader: DataDownLoadService,
@@ -29,7 +31,7 @@ export class CertificateIDComponent implements OnInit {
   isDownLoaded = false;
   lectures: Lecture[] = [ {CRN: '', CRSE_CODE: '', CRSE_DAY: '', CRSE_TIME: '', CRSE_TITLE: '', SSBSECT_CREDIT_HRS: ''}];
   isLoading = false;
-  msgs;
+  msgs=[];
   ngOnInit() {
     Downloader.init();
     this.transalte.get('general.ar_language').subscribe(res => {
@@ -43,14 +45,20 @@ export class CertificateIDComponent implements OnInit {
     this.EngPrint = this.certificateIDService.DownloadEngCertificate();
     this.certificateIDService.getCertificateID().then(
       (res) => {
+        if(res['status']){
+          this.isClosed=false;
         console.log('resl' + res);
         this.msgs = ((res) as any).messages;
-        console.log('msg' + this.msgs);
         this.certificateDetails = ((res) as any).data;
         console.log('details'+this.certificateDetails);
         this.lectures = (((res) as any).data as any).Lectures;
-        this.isLoading = false;
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
       }
+      this.isLoading = false;
+
+    }
     );
   }
   toHTML(input): any {

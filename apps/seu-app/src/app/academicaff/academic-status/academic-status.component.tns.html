@@ -4,14 +4,23 @@
 <ScrollView>
     <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
-    <FlexboxLayout *ngIf="!isLoading"  flexDirection="column"  class="wrap" >
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
 
-       
-        <GridLayout  columns="auto, *" class="serv-title">
-            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
-            <Label col="1" text='{{"services.academic_status.title" | translate}}' class="serv-name" ></Label>
-            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
-        </GridLayout>
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"services.academic_status.title" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    </GridLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+        <ListView [items]="messagesList">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
+
+    <FlexboxLayout *ngIf="!isLoading && !isClosed"  flexDirection="column"  class="wrap" >
 
         <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
             <Button class=" print-btn " (tap)="onArabicPrint()">
@@ -106,6 +115,7 @@
         </FlexboxLayout>   
 -->
     </FlexboxLayout>
+</FlexboxLayout>
 </ScrollView>
 
  <!--

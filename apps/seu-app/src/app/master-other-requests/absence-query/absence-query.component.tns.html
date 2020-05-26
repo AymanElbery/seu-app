@@ -1,20 +1,29 @@
 <app-header></app-header>
 <StackLayout>
 
-<StackLayout>
-    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
-</StackLayout>
-
 <ScrollView>
 
-<FlexboxLayout flexDirection="column">
+  <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 
-<GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
-    <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
-    <Label col="1" text='{{"services.absence_quyery.title" |translate}}' class="serv-name" ></Label>
-    <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
-  </GridLayout>
+  <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
 
+  
+    <GridLayout  columns="auto, *" class="serv-title">
+      <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+      <Label col="1" text='{{"services.absence_quyery.title" |translate}}' class="serv-name" ></Label>
+      <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    </GridLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+      <ListView [items]="messagesList">
+          <ng-template let-item="item">
+              <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+          </ng-template>
+      </ListView>
+    </FlexboxLayout>
+
+
+<FlexboxLayout flexDirection="column" *ngIf="!isLoading && !isClosed">
 	<StackLayout *ngIf="!isLoading">
 
         <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of reqData">
@@ -45,6 +54,7 @@
         </ng-template>
 
 	</StackLayout>
+</FlexboxLayout>
 </FlexboxLayout>
 </ScrollView>
 </StackLayout>

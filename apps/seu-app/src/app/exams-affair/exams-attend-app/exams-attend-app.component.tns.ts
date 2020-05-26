@@ -35,6 +35,8 @@ export class ExamsAttendAppComponent implements OnInit {
   printAR = '';
   printEN = '';
   isDownLoaded = false;
+  isClosed: boolean;
+  messagesList: any;
 
 
   constructor(private academicService: ExamsAttendAppService , private translate: TranslateService
@@ -59,6 +61,8 @@ export class ExamsAttendAppComponent implements OnInit {
 
     this.academicService.getِExamsAttednace('S180105049').then(
       res => {
+      if(res['status']){
+        this.isClosed=false;
     this.eaData =    (res as any).data;
     if (!this.eaData ) {
       this.eaData =  {
@@ -69,8 +73,12 @@ export class ExamsAttendAppComponent implements OnInit {
     }
     console.log('data  ' + this.eaData);
     this.msgs = (res as any).messages;
-    this.isLoading = false;
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
       }
+      this.isLoading = false;
+    }
     );
     this.finalschedule =   this.academicService.Print_Final_Exam_With_Schedule();
     this.final = this.academicService.Print_Final_Exam_Without_Schedule();

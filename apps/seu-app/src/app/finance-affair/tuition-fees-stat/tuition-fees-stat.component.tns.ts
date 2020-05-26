@@ -22,6 +22,8 @@ export class TuitionFeesStatComponent implements OnInit {
   printAR = '';
   printEN = '';
   isDownLoaded = false;
+  messagesList: any;
+  isClosed: boolean;
 
   constructor(private academicService: TuitionFeesService,
     private downloader: DataDownLoadService,
@@ -32,10 +34,16 @@ export class TuitionFeesStatComponent implements OnInit {
     this.isLoading = true;
     this.academicService.getِTuitionFeez().then(
       res => {
-    this.feesData =    (res as any).data;
-    this.isLoading = false;
-    this.msgs=(res as any).messages;
+      if(res['status']){
+        this.isClosed=false;
+        this.feesData =    (res as any).data;
+        this.msgs=(res as any).messages;
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
       }
+      this.isLoading = false;
+    }
     );
     this.arabicPrint =   this.academicService.Download();
     this.EngPrint = this.academicService.DownloadEng();

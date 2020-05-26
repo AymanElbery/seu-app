@@ -9,7 +9,7 @@ import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
 import { registerElement } from 'nativescript-angular/element-registry';
 // Register Custom Elements for Angular
 import { Carousel, CarouselItem } from 'nativescript-carousel';
-
+import { Downloader } from 'nativescript-downloader';
 registerElement('Carousel', () => Carousel);
 registerElement('CarouselItem', () => CarouselItem);
 
@@ -18,16 +18,19 @@ registerElement('CarouselItem', () => CarouselItem);
     templateUrl: './home.component.tns.html'
 })
 export class HomeComponent implements OnInit {
+  role: string;
     constructor(public printService: PrintService, public homeService: HomeService,
                 public userService: UserService,
                 private router: Router , private globalService: GlobalBaseService
                 ) {
 
+                  Downloader.init();
+             //     Downloader.setTimeout(120);
         // tslint:disable-next-line: only-arrow-functions
-        this.router.routeReuseStrategy.shouldReuseRoute = function() {
+                  this.router.routeReuseStrategy.shouldReuseRoute = function() {
           return false;
         };
-        this.mySubscription = this.router.events.subscribe((event) => {
+                  this.mySubscription = this.router.events.subscribe((event) => {
           if (event instanceof NavigationEnd) {
             //     // Trick the Router into believing it's last link wasn't previously loaded
             this.router.navigated = false;
@@ -48,7 +51,7 @@ sindex = 1;
       isNewsLoading;
       isAdsLoading;
       isEventLoading;
-
+      level;
 
 
 
@@ -275,7 +278,9 @@ setInterval(
       }
 
     ngOnInit(): void {
-        this.LoadData();
+      this.level = this.userService.userData.student_details.level;
+      this.role=this.userService.userData.activeRole
+      //  this.LoadData();
 
     }
 
@@ -289,6 +294,10 @@ setInterval(
  const  fmn = this.getfn(img);
  const  fmnd = this.getdfn(img);
 
- return (img as string).replace(fmn,fmnd);
+ return (img as string).replace(fmn, fmnd);
+    }
+
+    navigate(route: string) {
+      this.router.navigate([route]);
     }
 }

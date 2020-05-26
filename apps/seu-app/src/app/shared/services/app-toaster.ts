@@ -10,6 +10,7 @@ export class AppToasterService {
   tryagain() {
     this.push([{ type: 'error', body: 'خطأ: حاول مرة أخري' }]);
   }
+  
 
   download() {
     this.push([{ type: 'info', body: 'Downloading' }]);

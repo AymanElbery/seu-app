@@ -41,6 +41,8 @@ export class RequestsListComponent implements OnInit, OnDestroy {
     this.subscription = this.empreqservice.getEmpReqLists().subscribe(empreqs => {
       if (empreqs) {
         this.emplistrequest = (empreqs as any).data;
+        console.log('data');
+        console.log(this.emplistrequest);
         ////console.log("emp request",this.emplistrequest);      
         this.isLoading = false;
       }

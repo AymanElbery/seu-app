@@ -25,6 +25,8 @@ export class CertificateIDComponent implements OnInit {
   printAR = '';
   printEN = '';
   isDownLoaded = false;
+  isClosed: boolean;
+  messagesList: any;
 
   constructor(private stdData: CertificateIDService,
     private downloader: DataDownLoadService,
@@ -48,11 +50,16 @@ export class CertificateIDComponent implements OnInit {
     this.EngPrint = this.stdData.DownloadEng();
     this.stdData.getRequest().then(
       (res) => {
+      if(res['status']){
+        this.isClosed=false;
         this.certificateDetails = ((res) as any).data;
-        console.log("detailssssssss",this.certificateDetails)
         this.lectures = (((res) as any).data as any).courses;
-        this.isLoading = false;
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
       }
+      this.isLoading = false;
+    }
     );
   }
   toHTML(input): any {

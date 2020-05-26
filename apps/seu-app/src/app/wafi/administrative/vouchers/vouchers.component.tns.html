@@ -1,1 +1,95 @@
-<Button text="vouchers works!" class="btn btn-primary"></Button>
+<app-header></app-header>
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+
+    <StackLayout *ngIf="!isLoading">
+
+      <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"wafi.EmployeeVouchers" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+      </GridLayout>
+
+      <Label text='{{"wafi.EMP_SLRY_YEAR"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <DropDown
+      style="margin-right:20;margin-left: 160;"
+      #dropdown1
+      [items]="yearsDropDown"
+      (selectedIndexChanged)="getYear($event)"
+      itemsTextAlignment="right"
+      itemsPadding="5"
+      required
+      (loaded) =onLoadedFirstDropDown(dropdown1)
+      >
+      </DropDown>
+
+      <Label text='{{"wafi.EMP_PSNL_VCHR_TYPE"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <DropDown
+      #dropdown2
+      style="margin-right:20;"
+      #dropdown
+      [items]="typesDropDown"
+      (selectedIndexChanged)="getType($event)"
+      itemsTextAlignment="left"
+      itemsPadding="5"
+      required
+      (loaded) =onLoadedSecondDropDown(dropdown2)
+      >
+      </DropDown>
+
+      
+      <StackLayout  *ngFor="let item of  vocherlistdata;let i=index;">
+        <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+            <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+            <FlexboxLayout flexDirection="row-reverse">
+                <Label text='{{item.voucherType}}'></Label>
+                <Label text="-"></Label>
+                <Label text='{{item.claimStatusDesc}}'></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                    <Label  text="&#xf106;"  class="fas arr-drop"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label text='{{item.voucherType}}'></Label>
+                        <Label text="/"></Label>
+                        <Label text='{{item.claimStatusDesc}}'></Label>
+                    </FlexboxLayout>
+                 </FlexboxLayout>
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                      
+                      
+        <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_PSNL_VCHR_TYPE" | translate}}'></Label>
+        <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.voucherType"></Label>
+
+        <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_PSNL_VCHR_AMOUNT" | translate}}'></Label>
+        <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.amount"></Label>
+
+        <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_PSNL_VCHR_PAID" | translate}}'></Label>
+        <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.claimStatusDesc"></Label>
+       
+        <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_VCTN_DECISION_NO" | translate}}'></Label>
+        <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.decisionNumber" ></Label>
+
+        <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_PSNL_DECISION_DATE" | translate}}'></Label>
+        <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.voucherDate" ></Label>
+         
+        <Label row="6"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_MNG_DTS_START_DATE" | translate}}'></Label>
+        <Label row="6"  column="0" class="ysPBox2" textWrap="true" [text]="item.startHdate" ></Label>
+
+        <Label row="7"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_MNG_DTS_END_DATE" | translate}}'></Label>
+        <Label row="7"  column="0" class="ysPBox2" textWrap="true" [text]="item.endHdate" ></Label>
+
+        <Label row="8"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_SRVC_PERIOD" | translate}}'></Label>
+        <Label row="8"  column="0" class="ysPBox2" textWrap="true" [text]="item.period" ></Label>
+
+        <Label row="9"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_PSNL_VCHR_NOTE" | translate}}'></Label>
+        <Label row="9"  column="0" class="ysPBox2" textWrap="true" [text]="item.note" ></Label>
+      </GridLayout>
+    </FlexboxLayout>
+  </FlexboxLayout>
+  </StackLayout>
+    </StackLayout>
+
+</ScrollView>

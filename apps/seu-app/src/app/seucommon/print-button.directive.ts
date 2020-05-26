@@ -86,6 +86,7 @@ export class PrintButtonDirective {
       'Session-ID': sid,
       'Student-ID': this.userService.userData.username
     });
+    console.log(url);
     return this.http.get(this.removeURLParameter(url, "sid"), { headers: headers, responseType: 'blob' as 'json', observe: 'response' });
   }
 }
