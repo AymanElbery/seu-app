@@ -1,16 +1,22 @@
 <div class="main-content">
   <service-header [title]="'services.course-equalize.title' |translate"
-  [desc]="'services.course-equalize.desc' |translate"></service-header>
+    [desc]="'services.course-equalize.desc' |translate"></service-header>
 
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
- 
- 
-  
+  <div class="ser-state" *ngIf="!isLoading">
+    <div *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}
+    </div>
+  </div>
+  <br />
+
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
       <h3 class="widget-title">{{"general.request.pre_requests"|translate}}
-        <button  type="button" class="btn btn-primary" (click)="openDialoge()">
+        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
           {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>
@@ -24,7 +30,6 @@
             <th scope="col">{{"general.request.req_date"|translate}}</th>
             <th scope="col">{{"general.request.req_status"|translate}}</th>
             <th scope="col">{{"general.request.req_delete"|translate}}</th>
-
           </tr>
         </thead>
         <tbody>
@@ -34,11 +39,12 @@
 
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
-           
 
-            <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
-                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
 
+            <td *ngIf='it.deletable'>
+              <button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
+                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button>
+            </td>
             <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"|translate}}</td>
 
           </tr>

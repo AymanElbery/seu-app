@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CourseEqualizerService } from '../services/course-equalizer.service';
+import { MasterCourseEqualizerService } from '../services/master-course-equalizer.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { NgForm } from '@angular/forms';
@@ -22,7 +22,7 @@ export class CourseEqualizeComponent implements OnInit {
   isLoading = false;
 
 
-  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: CourseEqualizerService) { }
+  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: MasterCourseEqualizerService) { }
 
   ngOnInit() {
     this.reason = '';
@@ -45,13 +45,11 @@ export class CourseEqualizeComponent implements OnInit {
     this.isLoading = true;
     this.acadmicProc.getِgetRequests().then(
       res => {
-        ////console.log(res);
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
-        // //console.log(this.reqData.reqs);
       }, err => {
         this.toastr.tryagain();
         this.isLoading = false;
@@ -75,10 +73,7 @@ export class CourseEqualizeComponent implements OnInit {
     });
   }
 
-  print(req) {
-    return this.acadmicProc.Download(req);
 
-  }
   deleting = false;
   delete(id, index) {
     if (confirm(this.translate.instant('general.delete_confirm'))) {

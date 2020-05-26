@@ -6,12 +6,12 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable({
   providedIn: 'root'
 })
-export class CourseEqualizerService {
+export class MasterCourseEqualizerService {
   newreqs = false;
- 
+
   reqData;
   msgs;
-  constructor(private translate: TranslateService,private configService: ConfigService, private httRequest: HttpRequestService) {
+  constructor(private translate: TranslateService, private configService: ConfigService, private httRequest: HttpRequestService) {
     this.configService.baseUrl = 'stdsUnivapi';
   }
 
@@ -32,13 +32,4 @@ export class CourseEqualizerService {
     return this.httRequest.GetRequest('course_equation_service/remove/' + id).toPromise();
 
   }
-
-  Download(req) {
-    this.configService.baseUrl = 'stdsUnivapi';
-
-    const sid = this.configService.getSid();
-
-    return this.configService.getApiURI() + '/course_equation_service/download/crse_transfer/' + req;
-  }
-  
 }
