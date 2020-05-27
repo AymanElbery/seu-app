@@ -27,7 +27,7 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
   finalMsgs;
   termScheduleMsgs;
   termMsgs;
-  msgs;
+  msgs=[];
   reqData;
   status;
   arabicPrintTermWithSchedule: string;
@@ -47,6 +47,8 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
   printAR = '';
   printEN = '';
   isDownLoaded = false;
+  isClosed: boolean;
+  messagesList: any;
 
   constructor(private printCertificate: ExamAttendanceCertificateAppService, 
     private translate: TranslateService,
@@ -63,12 +65,12 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
     this.isLoading = true;
     this.printCertificate.getRequest().then(
       res => {
+      if(res['status']){
+        this.isClosed=false;
         this.printCertificate.reqData = (res as any).data;
         this.printCertificate.msgs = (res as any).messages;
         this.reqData = this.printCertificate.reqData;
         this.msgs = this.printCertificate.msgs;
-        this.isLoading = false;
-
 
         this.termSchedule = this.printCertificate.Download('Term_Exam_With_Schedule');
         this.termScheduleEn = this.printCertificate.DownloadEng('Term_Exam_With_Schedule');
@@ -97,7 +99,12 @@ export class ExamAttendanceCertificateAppComponent implements OnInit {
 
           //console.log(this.finalScheduleMsgs);
           //console.log(this.finalMsgs);*/
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
       }
+      this.isLoading = false;
+    }
     );
   }
 

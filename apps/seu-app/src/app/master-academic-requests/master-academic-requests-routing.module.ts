@@ -8,7 +8,7 @@ import { CancelCourseComponent } from './cancel-course/cancel-course.component';
 import { ExamObjectionComponent } from './exam-objection/exam-objection.component';
 import { ExamsExecusesComponent } from './exams-execuses/exams-execuses.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
-
+import { CourseEqualizeComponent } from './course-equalize/course-equalize.component';
 const routes: Routes = [
   //{ path: 'withdrawal', component: UniversityWithdrawalComponent },
   //{ path: 'studypostpone', component: StudyPostponeComponent },
@@ -23,7 +23,8 @@ const routes: Routes = [
       { path: 'cancelcourse', component: CancelCourseComponent },
       { path: 'objectexam', component: ExamObjectionComponent },
       { path: 'examsexecuses', component: ExamsExecusesComponent },
-      { path: 'lecturesexecuses', component: LecturesExecusesComponent }
+      { path: 'lecturesexecuses', component: LecturesExecusesComponent },
+      { path: 'equalize', component: CourseEqualizeComponent }
     ]
   }
 ];

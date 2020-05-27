@@ -9,4 +9,5 @@ export interface VisitorStudent {
     hours:number;
     attachment:string;
     univ_approval:string;
+    custom_university_name:string;
 }

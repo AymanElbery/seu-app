@@ -47,6 +47,8 @@ export class ExamsAttendStatComponent implements OnInit {
   printAR = '';
   printEN = '';
   isDownLoaded = false;
+  isClosed: boolean;
+  messagesList: any;
 
 
   constructor(private academicService: ExamAttendanceService,
@@ -64,9 +66,9 @@ export class ExamsAttendStatComponent implements OnInit {
     this.isLoading = true;
     this.academicService.getِExamsAttednace().then(
       res => {
+      if(res['status']){
+        this.isClosed=false;
         this.eaData = (res as any).data;
-        this.isLoading = false;
-
         this.msgs=(res as any).messages;
         this.termScheduleMsgs = this.eaData.Term_Exam_With_Schedule?this.eaData.Term_Exam_With_Schedule.messages:[];
         this.termMsgs = this.eaData.Term_Exam_Without_Schedule?this.eaData.Term_Exam_Without_Schedule.messages:[];
@@ -86,6 +88,12 @@ export class ExamsAttendStatComponent implements OnInit {
 
         //console.log(this.finalScheduleMsgs);
         //console.log(this.finalMsgs);*/
+      }else{
+          this.isClosed=true;
+          this.messagesList=res['messages'];
+        
+      }
+      this.isLoading = false;
       }
     );
     this.finalschedule = this.academicService.Print_Final_Exam_With_Schedule();

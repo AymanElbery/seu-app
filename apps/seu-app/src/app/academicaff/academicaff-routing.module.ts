@@ -8,6 +8,7 @@ import { GraduateStateComponent } from './graduate-state/graduate-state.componen
 import { SkillsRecordService } from './services/skills-record.service';
 import { SkillsRecordComponent } from './skills-record/skills-record.component';
 import { UGGuard } from '../guards/ug.guard';
+import { StudentGradesComponent } from './student_grades/student-grades.component';
 
 const routes: Routes = [
 
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'record', component: AcademicRecordComponent },
   { path: 'graduationstatment', component: GraduateStateComponent },
   { path: 'skills', component: SkillsRecordComponent, canActivate: [UGGuard] },
-
+  { path: 'grades', component: StudentGradesComponent, canActivate: [UGGuard] },
+  
 ];
 
 @NgModule({

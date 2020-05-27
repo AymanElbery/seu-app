@@ -1,0 +1,35 @@
+<div class="main-content">
+  <service-header [title]="'menu.grades' |translate">
+  </service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div class="ser-state" *ngIf="!isLoading">
+    <div style="text-align: right" *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}
+    </div>
+  </div>
+  <div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th  scope="col">#</th>
+            <th scope="col">{{"general.course_name"|translate}}</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let it of recoredData.courses;let i=index;">
+            <td>{{i+1}}</td>
+            <td>{{it.CRSE_CODE}}</td>
+            <td>{{it.GRADE_CODE}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

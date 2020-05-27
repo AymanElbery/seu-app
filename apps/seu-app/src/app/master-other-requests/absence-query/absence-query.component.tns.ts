@@ -15,6 +15,8 @@ export class AbsenceQueryComponent implements OnInit {
   isLoading: boolean = false;
   reqData;
   msgs;
+  isClosed: boolean;
+  messagesList: any;
   constructor(private translate: TranslateService, private toastr: AppToasterService,
     private otherReq: AbseneQueryService) {
    }
@@ -52,15 +54,22 @@ export class AbsenceQueryComponent implements OnInit {
 
     this.otherReq.getRequests().then(
       res => {
+      if(res['status']){
+        this.isClosed=false;
         this.otherReq.reqData = (res as any).data;
         this.otherReq.msgs = (res as any).messages;
         this.reqData = this.otherReq.reqData;
         this.msgs = this.otherReq.msgs;
-        this.isLoading = false;
         console.log(this.reqData);
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
+      }
+      this.isLoading = false;
+
       }, err => {
         this.reqData = [];
-        this.msgs = [];
+        this.messagesList = [];
         this.toastr.tryagain();
         this.isLoading = false;
       }

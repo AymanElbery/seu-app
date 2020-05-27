@@ -2,9 +2,9 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { AppToasterService } from '../../../../shared/services/app-toaster';
 import { HttpClient } from '@angular/common/http';
-import { EmployeesService } from 'src/app/wafi/services/employees.service';
+import { EmployeesService } from '../../../../wafi/services/employees.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({

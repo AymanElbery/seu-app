@@ -9,6 +9,13 @@
         <Label col="1" text='{{"services.exam.caa" | translate}}' class="serv-name" ></Label>
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout> -->
+      <FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+        <ListView [items]="messagesList">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
 
     <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
         <ListView [items]="msgs">
@@ -20,7 +27,7 @@
 
     
 
-<TabView *ngIf="!isLoading" selectedTabTextColor="#f08b1c" 
+<TabView *ngIf="!isClosed && !isLoading" selectedTabTextColor="#f08b1c" 
 tabBackgroundColor="#f1f1f1"
 tabTextColor ="#010447"
 tabTextFontSize="14px"
