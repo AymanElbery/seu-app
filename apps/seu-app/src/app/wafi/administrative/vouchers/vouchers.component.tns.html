@@ -37,7 +37,10 @@
       >
       </DropDown>
 
-      
+      <StackLayout *ngIf="vocherlistdata && vocherlistdata.length==0">
+        <Label  text='{{"wafi.vouchers_not_found" | translate}}' style="margin:20 20;"></Label>
+      </StackLayout>
+
       <StackLayout  *ngFor="let item of  vocherlistdata;let i=index;">
         <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
             <Label  text="&#xf107;"  class="fas arr-drop"></Label>

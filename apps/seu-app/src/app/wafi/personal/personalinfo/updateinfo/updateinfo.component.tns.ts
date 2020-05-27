@@ -20,11 +20,11 @@ export class UpdateinfoComponent implements OnInit {
   langsList = [];
   langs:ValueItem<number>[] = [];
   langsDropDown;
+  preferred_lang_sms_index: any;
   constructor(
     private _params: ModalDialogParams,
     private route: ActivatedRoute, private toastr: AppToasterService,private http: HttpClient, private empservice: EmployeesService, private translate: TranslateService, private router: Router) {
     this.langsList = this._params.context['updateinfo']['langList'];
-    console.log("this.langsList",this.langsList)
   }
   subscriptions;
   ngOnInit() {
@@ -38,6 +38,9 @@ export class UpdateinfoComponent implements OnInit {
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
     });
     for (let i = 0; i < this.langsList.length; i++) {
+      if(this.updatedForm.preferred_lang_sms==this.langsList[i].label){
+        this.preferred_lang_sms_index=i;
+      }
       this.langs.push(
         {
           value: this.langsList[i].value,
@@ -79,4 +82,8 @@ export class UpdateinfoComponent implements OnInit {
     this.updatedForm.preferred_lang_sms=code;
   }
 
+  onLoadedDropDown(dropdown){
+    
+    dropdown.selectedIndex=this.preferred_lang_sms_index;
+  }
 }

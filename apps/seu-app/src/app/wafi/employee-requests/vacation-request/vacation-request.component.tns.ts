@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AppToasterService } from '../../../shared/services/app-toaster.tns';
 import { ValueItem, ValueList } from 'nativescript-drop-down';
 import { trigger } from '@angular/animations';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class VacationRequestComponent implements OnInit {
   monthes: ValueItem<number>[] = [];
   monthesDropDown;
   ddlyear = [];
-  years;
+ //s years;
   altEmpItems;
   countryNewItems;
   cityNewItems;
@@ -62,7 +63,8 @@ export class VacationRequestComponent implements OnInit {
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
               private translate: TranslateService,
-              private router: Router
+              private router: Router,
+              private routerExtensions: RouterExtensions,
               ) {
 
 
@@ -329,5 +331,7 @@ export class VacationRequestComponent implements OnInit {
       event.preventDefault();
     }
   }
-
+  goBack() {
+    this.routerExtensions.backToPreviousPage();
+}
 }

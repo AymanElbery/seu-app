@@ -12,7 +12,7 @@
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
 
-      <Label text='{{"tasks.searchdata"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <Label text='{{"wafi.search_by_employee_name_number"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
       <TextField [(ngModel)]="filter" #search="ngModel" required hint="" style="margin-right:20 ;"></TextField>
 
       <StackLayout  *ngFor="let item of emplisthistoryapproval |filter:filter">

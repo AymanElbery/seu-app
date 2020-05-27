@@ -7,16 +7,17 @@
        
 
         <Label text='{{"wafi.poersonalemail"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <TextField [(ngModel)]="updatedForm.email" #reason="ngModel" required></TextField>
+        <TextField [(ngModel)]="updatedForm.email" ngControl="mail"
+         required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"></TextField>
 
         <Label text='{{"wafi.Mobile"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <TextField [(ngModel)]="updatedForm.mobile_no" #reason="ngModel" required></TextField>
+        <TextField [(ngModel)]="updatedForm.mobile_no" #mobile="ngModel" required></TextField>
 
         <Label text='{{"wafi.AlternativePhone"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <TextField [(ngModel)]="updatedForm.phone_no" #reason="ngModel" required></TextField>
+        <TextField [(ngModel)]="updatedForm.phone_no" #phone="ngModel" required></TextField>
 
         <Label text='{{"wafi.address"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <TextField [(ngModel)]="updatedForm.address" #reason="ngModel" required></TextField>
+        <TextField [(ngModel)]="updatedForm.address" #address="ngModel" required></TextField>
 
         <Label text='{{"wafi.addressEN"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
         <TextField [(ngModel)]="updatedForm.address_s" #reason="ngModel" required></TextField>
@@ -28,7 +29,9 @@
         (selectedIndexChanged)="getLang($event)"
         itemsTextAlignment="left"
         itemsPadding="5"
-        required>
+        required
+        (loaded) =onLoadedDropDown(dropdown)
+        >
         </DropDown>
     </StackLayout>
     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">

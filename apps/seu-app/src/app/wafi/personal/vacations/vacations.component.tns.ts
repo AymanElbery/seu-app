@@ -24,7 +24,7 @@ export class VacationsComponent implements OnInit {
   clicked: any;
   constructor(private empservice:EmployeesService,private translate: TranslateService) { }
   isLoading = true;
-  selectvactype :number=0;
+  selectvactype :number;
   ngOnInit() {
     this.getvacationstype();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {

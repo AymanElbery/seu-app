@@ -1127,7 +1127,22 @@
         "absentHour": "Absent Hour",
         "decisionDateH": "Decision Date",
         "inService": "in Service",
-        "print": "Print"
+        "print": "Print",
+        "mangerial_duties_not_found":"There is no Mangerial Duties",
+        "vouchers_not_found":"There is no Reward",
+        "search_by_date_or_no":"Search By Descision Number Or Date",
+        "search_by_employee_name_number":"Search By Employee Name Or Number Or Procedure Date",
+        "letters_not_found":"There is No Letter",
+        "custody_not_found":"There is No Custody",  
+        "training_not_found":"There is No Training",
+        "Yes":"Yes",
+        "No":"No",
+        "VacationDescription":"Vacation Type"
+
+
+
+
+
     },
     "tasks": {
         "description": "Description",

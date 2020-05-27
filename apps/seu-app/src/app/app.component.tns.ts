@@ -343,11 +343,11 @@ export class AppComponent implements OnInit {
             title:"استعلاماتى",
             subTitles:[
                 {
-                    subTitle:'الأجازات',
+                    subTitle:'الإجازات',
                     route:'/personal/vacations'
                 },
                 {
-                    subTitle:"حسم من الأجازة العادية",
+                    subTitle:"حسم من الإجازة العادية",
                     route:"/administrative/penalty-discount"
                 },
                 {
@@ -514,6 +514,9 @@ export class AppComponent implements OnInit {
 
         } else if (this.role == ApiUserRoles.Instructor) {
             this._dataItems = this.Employee_Menu;
+
+        }else{
+            this._dataItems = [{title: '', subTitles: [{}]}];
 
         }
         // console.log('act' + this.role);

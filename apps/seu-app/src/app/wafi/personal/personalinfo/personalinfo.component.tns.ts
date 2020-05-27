@@ -21,6 +21,8 @@ export class PersonalinfoComponent implements OnInit,OnDestroy {
   messages: any[] = [];
   subscription: Subscription;
   subscriptionLang: Subscription;
+  htmlString: void;
+  nonHtmlString: any;
   constructor(private http: HttpClient,private empservice:EmployeesService,private translate: TranslateService,
     private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,) { }
@@ -49,7 +51,15 @@ export class PersonalinfoComponent implements OnInit,OnDestroy {
     this.isLoading = true
     this.subscription = this.empservice.getdataEmployees().subscribe(empdata => {
      if (empdata) {       
-       this.empInfo = (empdata as any).data;       
+       this.empInfo = (empdata as any).data;  
+       this.empInfo.forEach(element => {
+         if(element.header.includes("font")){
+           let htmlStartIndex=element.header.indexOf('(');
+           let htmlEndIndex=element.header.indexOf(')')+1;
+           this.nonHtmlString=element.header.substring(0,element.header.indexOf('<br>'));
+           this.htmlString=element.header.substring(htmlStartIndex,htmlEndIndex);
+         }
+       });
        this.subscriptionLang = this.empservice.getdataEmployeesLang().subscribe(empdaemplang => {
         if (empdaemplang) {
           this.empInfolang = (empdaemplang as any).data;

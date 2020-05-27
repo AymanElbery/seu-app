@@ -20,11 +20,8 @@
             <FlexboxLayout (tap)="clickme(empreqs)" [visibility]="clicked == empreqs ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
                 <Label  text="&#xf107;"  class="fas arr-drop"></Label>
                 <FlexboxLayout flexDirection="row-reverse">
-                    <Label text='{{empreqs.requestDesc}}'></Label>
-                    <Label text="- "></Label>
-                    <Label text='{{empreqs.beginDate}}'></Label>
-                    <Label text="- "></Label>
-                    <Label text="{{empreqs.requestStatus}}"></Label>
+                    <Label text='{{empreqs.requestDesc}}-{{empreqs.requestStatus}}'></Label>
+                  
 
                 </FlexboxLayout>
             </FlexboxLayout>
