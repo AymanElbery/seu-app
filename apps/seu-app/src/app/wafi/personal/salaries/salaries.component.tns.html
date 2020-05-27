@@ -4,27 +4,31 @@
 <ScrollView>
     <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
-    <StackLayout *ngIf="!isLoading">
+    <StackLayout>
 
       <GridLayout  columns="auto, *" class="serv-title">
         <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
         <Label col="1" text='{{"wafi.Salaries" | translate}}' class="serv-name" ></Label>
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
-
-      <Label text='{{"wafi.selectyear" | translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
-      <DropDown
+ <GridLayout class="ysBox" rows="auto" columns="*,150">    
+    <Label  class="ysPBox" row="0" col="1" text='{{"wafi.selectyear" | translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <DropDown 
+      class="ysPBox2"
+      row="0" col="0"
       #dropdown
-      style="margin-right: 20;margin-left: 160;"
+ 
       [items]="yearsDropDown"
       (selectedIndexChanged)="getYear($event)"
       itemsTextAlignment="right"
       itemsPadding="5"
       required
       (loaded) =onLoadedDropDown(dropdown)
+      style="color: blueviolet;"
       >
       </DropDown>
-    
+    </GridLayout>
+ 
       <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of Empsalary;let i=index;">
                       
                       

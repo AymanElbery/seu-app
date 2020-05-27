@@ -593,9 +593,11 @@
 
   &:hover {
     //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.09) !important;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.09) !important;
     //Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
     transition: all 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-color: #02355c;
+
   }
 
   i {
@@ -605,7 +607,11 @@
 
   a {
     color: #1c2172;
+
+   
   }
+ 
+
 
   p {
     margin: 0;
@@ -800,9 +806,7 @@
   direction: rtl;
 }
 
-.text-eng {
-  font-family: Open Sans, sans-serif;
-}
+
 
 .modal-header {
   padding: 20px 30px;
@@ -837,12 +841,10 @@
   padding-top: 30px;
 
   h6 {
-    color: #1c2172;
+    color: #01182a;
   }
 
-  p {
-    color: #f28d1e;
-  }
+ 
 }
 
 select.form-control {
@@ -906,12 +908,166 @@ h6.news-title {
   margin-bottom: 5px;
 }
 .widget .widget-header {
-  padding: 10px 20px;
+  padding: 8px 20px;
   border-bottom: 0;
   position: relative;
-  background: #e6e6e6;
-  color: #1c2172;
-  border-radius: 8px 8px 0 0;
+  background: #01182a;
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+.widget .widget-header .widget-title h3{
+  font-size: 16px;
+  margin: 0;
+}
+.widget .widget-header .widget-title img{
+  width: 40px;
+  height: 40px;
+}
+
+.main-content{
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.new-ser img {
+  width: 40px;
+  height: 40px;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  background:#f28d1e !important;
+  color: #fff !important;
+  padding: 5px !important;
+  font: inherit;
+  position: absolute;
+  top: 35%;
+  right: -20px;
+  border-radius: 50%;
+  width: 30px; height: 30px;
+  transition: ease-in-out .5s;
+  line-height: 0;
+}
+.owl-carousel .owl-nav button.owl-prev:hover , .owl-carousel .owl-nav button.owl-next:hover {
+  background:#000440 !important;
+  color: #fff !important;
+  transition: ease-in-out .5s;
+}
+.owl-carousel .owl-nav button.owl-next{
+  background:#f28d1e !important;
+  color: #fff !important;
+  border: none;
+  padding: 5px !important;
+  font: inherit;
+  position: absolute;
+  top: 35%;
+  left: -20px;
+  border-radius: 50%;
+  width: 30px; height: 30px;
+  line-height: 0;
+
+}
+.owl-theme .owl-nav{margin-top: 0;}
+.owl-theme .owl-dots   {
+  display: none !important;
+}
+.owl-theme .owl-dots .owl-dot span {
+  margin: 5px !important;
+}
+
+.owl-carousel.owl-drag .owl-item .item{
+  position: relative;
+}
+.owl-carousel.owl-drag .owl-item .item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(1, 24, 42,0) 0%, #01182a 100%) !important;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+.widget .widget-body {
+  padding: 0;
+  padding-bottom: 0px;
+}
+.owl-content p {
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(1, 24, 42,0) 0%, #01182a 100%) !important;
+  padding: 10px!important;
+  z-index: 9999;
+  border-radius: 10px!important;
+
+}
+.owl-content p i {
+ color: #f28d1e;
+ font-size: 14px;
+}
+
+.card {
+ 
+  background: #fff;
+}
+.new-ser {
+  text-align: center;
+  padding: 11px; }
+
+  .new-ser:hover {
+   background-color: #01182a;
+   transform: scale(1.1);
+  
+  }
+  .new-ser:hover a{
+    color: #fff;
+   
+   }
+
+  .new-ser img {
+display: block; 
+margin: auto;  
+   }
+  
+  .news-title p  { margin-bottom: 5px; letter-spacing: 0;}
+
+.news1 .date {
+   font-size: 15px;
+  color: #f9f9f9;
+  background: #01182a;
+  width: 130px;
+  border-radius: 8px;
+  float: left;
+  text-align: center;
+}
+.news1 .date i {
+  color: #f28d1e; font-size: 15px;  margin-right: 5px ; line-height: 1.4;
+}
+.news1{
+  position: relative;
+  background-color: #f1f1f1;
+    border-radius: 10px;
+    margin: 0 15px;
+    padding: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1) !important;
+    transition: all 400ms cubic-bezier(0.645, 0.045, 0.355, 1);
+   
+}
+
+.news1:before {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 8%;
+  border-left: 0;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-left: 8px solid #ffa300;
+
+}
+.img-eve{  width: 35px;
+  height: 35px; 
+  margin-right: 19px;
 }
 .slider-nav .right-arrow, .slider-nav .left-arrow {
   font-size: 20px;

@@ -34,22 +34,22 @@
 
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
 
-            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/status')" *ngIf="level=='UG'">
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/status')" *ngIf="level=='UG'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/st.png"></Image>
                 <label  row="1" colSpan="2" text=" الحالة الاكاديمية " class=" heading-text6 "></label>
               </GridLayout>
 
-            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/masteraff/stdata')" *ngIf="level=='GR'">
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/masteraff/stdata')" *ngIf="level=='GR'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/st.png"></Image>
                 <label  row="1" colSpan="2" text=" الحالة الاكاديمية " class=" heading-text6 "></label>
             </GridLayout>
         
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/certificate')" *ngIf="level=='UG'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/certificate')" *ngIf="level=='UG'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/certificate.png"></Image>
                 <label  row="1" colSpan="2" text="  شهادة تعريف  " class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/cert/id')" *ngIf="level=='GR'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/cert/id')" *ngIf="level=='GR'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/certificate.png"></Image>
                 <label  row="1" colSpan="2" text="  شهادة تعريف  " class=" heading-text6 " ></label>
               </GridLayout>
@@ -68,22 +68,22 @@
 
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
 
-            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/record')" *ngIf="level=='UG'">
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/record')" *ngIf="level=='UG'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/record.png"></Image>
                 <label  row="1" colSpan="2" text="   السجل الأكاديمي  " class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/masteraff/strec')" *ngIf="level=='GR'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/masteraff/strec')" *ngIf="level=='GR'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/record.png"></Image>
                 <label  row="1" colSpan="2" text="   السجل الأكاديمي  " class=" heading-text6 " ></label>
               </GridLayout>
         
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changemajor')" *ngIf="level=='UG'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changemajor')" *ngIf="level=='UG'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book-2.png"></Image>
                 <label  row="1" colSpan="2" text="   تغيير التخصص " class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/changecourse')" *ngIf="level=='GR'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/changecourse')" *ngIf="level=='GR' && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book-2.png"></Image>
                 <label  row="1" colSpan="2" text="   تغيير التخصص " class=" heading-text6 " ></label>
               </GridLayout>
@@ -102,22 +102,22 @@
 
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
 
-            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changerequest')" *ngIf="level=='UG'">
+            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changerequest')" *ngIf="level=='UG'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/branch.png"></Image>
                 <label  row="1" colSpan="2" text="   تغيير الفرع  " class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/changebranch')" *ngIf="level=='GR'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/changebranch')" *ngIf="level=='GR'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/branch.png"></Image>
                 <label  row="1" colSpan="2" text="   تغيير الفرع  " class=" heading-text6 " ></label>
               </GridLayout>
         
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/cancelcourse')" *ngIf="level=='UG'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/cancelcourse')" *ngIf="level=='UG'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
                 <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/academicrequests/cancelcourse')" *ngIf="level=='GR'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/academicrequests/cancelcourse')" *ngIf="level=='GR'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
                 <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
               </GridLayout>

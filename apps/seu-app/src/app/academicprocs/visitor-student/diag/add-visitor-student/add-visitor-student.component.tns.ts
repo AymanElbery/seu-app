@@ -54,7 +54,7 @@ export class AddVisitorStudentComponent implements OnInit {
 
   ngOnInit() {
     this.approves={approve:false};
-    this.visitorStudent = { university: '', term: '', year: '', course_name: '', course_symbol: '', course_code: '', course_equal: '', hours: 0, attachment: '',univ_approval:'' };
+    this.visitorStudent = { university: '', term: '', year: '', course_name: '', course_symbol: '', course_code: '', course_equal: '', hours: 0, attachment: '',univ_approval:'',custom_university_name:''};
     this.reqData = this.acadmicProc.reqData;
     this.msgs = this.acadmicProc.msgs;
     this.universitiesList = this.acadmicProc.reqData.universities_list;

@@ -2,18 +2,21 @@
 <ScrollView>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 
-    <StackLayout *ngIf="!isLoading">
+    <StackLayout >
 
       <GridLayout  columns="auto, *" class="serv-title">
         <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
         <Label col="1" text='{{"wafi.EmployeeVouchers" | translate}}' class="serv-name" ></Label>
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
+      <GridLayout  class="ysBox"  columns="*,150"
+       rows="*,*">
 
-      <Label text='{{"wafi.EMP_SLRY_YEAR"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
-      <DropDown
-      style="margin-right:20;margin-left: 160;"
+      <Label class="ysPBox" col="1" row="0" text='{{"wafi.EMP_SLRY_YEAR"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <DropDown class="ysPBox2"
       #dropdown1
+      col="0" 
+      row="0"
       [items]="yearsDropDown"
       (selectedIndexChanged)="getYear($event)"
       itemsTextAlignment="right"
@@ -22,12 +25,11 @@
       (loaded) =onLoadedFirstDropDown(dropdown1)
       >
       </DropDown>
-
-      <Label text='{{"wafi.EMP_PSNL_VCHR_TYPE"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
-      <DropDown
+   
+      <Label class="ysPBox" col="1" row="1" text='{{"wafi.EMP_PSNL_VCHR_TYPE"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <DropDown class="ysPBox2"
+      col="0" row="1"
       #dropdown2
-      style="margin-right:20;"
-      #dropdown
       [items]="typesDropDown"
       (selectedIndexChanged)="getType($event)"
       itemsTextAlignment="left"
@@ -36,8 +38,11 @@
       (loaded) =onLoadedSecondDropDown(dropdown2)
       >
       </DropDown>
+    </GridLayout>
+      <StackLayout *ngIf="vocherlistdata && vocherlistdata.length==0">
+        <Label  text='{{"wafi.vouchers_not_found" | translate}}' style="margin:20 20;"></Label>
+      </StackLayout>
 
-      
       <StackLayout  *ngFor="let item of  vocherlistdata;let i=index;">
         <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
             <Label  text="&#xf107;"  class="fas arr-drop"></Label>

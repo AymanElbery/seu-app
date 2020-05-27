@@ -18,7 +18,14 @@
           <Label row="0" colSpan="2"  class="ysHBox"  text="{{'wafi.PersonalInfo'|translate}}"></Label>
       
           <ng-container *ngFor="let item of empInfo; index as i">
-            <Label row="{{i+1}}" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text="{{item.header}} :"></Label>
+            <Label *ngIf="!item.header.includes('font')" row="{{i+1}}" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text="{{item.header}} :"></Label>
+          
+            <ng-container *ngIf="item.header.includes('font')">
+              <FlexboxLayout flexDirection="column"  row="{{i+1}}" column="1" class="ysPBox">
+                <Label  style="font-weight: 800;" text="{{nonHtmlString}}"></Label>
+                <Label textWrap="true" style="font-weight: 800;" text="{{htmlString}} :" style="color: red;"></Label>
+              </FlexboxLayout>
+            </ng-container>
             <Label row="{{i+1}}"  column="0" class="ysPBox2" textWrap="true" text="{{item.data}}"></Label>
           </ng-container>
           

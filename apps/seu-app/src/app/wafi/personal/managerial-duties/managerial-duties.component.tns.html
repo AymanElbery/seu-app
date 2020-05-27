@@ -12,7 +12,10 @@
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
 
-    
+    <StackLayout *ngIf="mangerialdutiesdata && mangerialdutiesdata.length==0">
+      <Label  text='{{"wafi.mangerial_duties_not_found" | translate}}' style="color: orange; margin:20 20;"></Label>
+    </StackLayout>
+
       <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of mangerialdutiesdata">
                       
                       

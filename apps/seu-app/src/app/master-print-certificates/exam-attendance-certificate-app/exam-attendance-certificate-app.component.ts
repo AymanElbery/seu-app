@@ -36,15 +36,24 @@ export class ExamAttendanceCertificateAppComponent implements OnInit, OnDestroy 
       this.getReqs();
     })
   }
-
+  isClosed = false;
+  messagesList = [];
   getReqs() {
     this.isLoading = true;
     this.printCertificate.getRequest().then
       (res => {
+       // res['status'] = 0;
+        // res['messages'] = [{body:"service is closed",type:"error"}];
+         if (res['status']) {
         this.printCertificate.reqData = (res as any).data;
         this.printCertificate.msgs = (res as any).messages;
         this.reqData = this.printCertificate.reqData;
         this.msgs = this.printCertificate.msgs;
+        this.isClosed = false;
+      } else {
+        this.isClosed = true;
+        this.messagesList = res['messages'];
+      }
         this.isLoading = false;
         //console.log(this.reqData);
       }, err => {

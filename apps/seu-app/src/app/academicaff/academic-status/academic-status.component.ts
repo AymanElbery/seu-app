@@ -40,8 +40,8 @@ export class AcademicStatusComponent implements OnInit, OnDestroy {
     this.isLoadingTerm = true;
     this.academicStatusService.getStaudentStatus().then((res) => {
 
-      // res['status'] = 0;
-      // res['messages'] = [{body:"service is closed",type:"error"}];
+       //res['status'] = 0;
+       //res['messages'] = [{body:"service is closed",type:"error"}];
 
       if (res['status']) {
         this.student = (res as any).data.student;

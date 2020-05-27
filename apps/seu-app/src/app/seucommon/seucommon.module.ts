@@ -16,6 +16,7 @@ import {VgBufferingModule} from 'videogular2/buffering';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { AlphabateOnlyDirective } from './alphabate-only.directive';
 import { SeuFlashComponent } from './seu-flash/seu-flash.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 @NgModule({
@@ -28,9 +29,10 @@ import { SeuFlashComponent } from './seu-flash/seu-flash.component';
     VgControlsModule,
     VgOverlayPlayModule,
     VgBufferingModule,
-    AppLazyTransModule
+    AppLazyTransModule,
+    NgSelectModule
   ],
   entryComponents: [DialogPlayerComponent],
-  exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent,AlphabateOnlyDirective,SeuFlashComponent]
+  exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent,AlphabateOnlyDirective,SeuFlashComponent,NgSelectModule]
 })
 export class SeucommonModule { }

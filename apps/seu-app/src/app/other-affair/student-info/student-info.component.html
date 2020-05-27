@@ -355,7 +355,7 @@
                 <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6>{{"general.email"|translate}} <span class="reqstart">*</span></h6>
-                    <input type="text" name="email2" #email2="ngModel" [(ngModel)]="stdData.email2" class="form-control"
+                    <input type="text" name="email2" #email2="ngModel" (input)="checkInput($event.target.value)"  [(ngModel)]="stdData.email2" class="form-control"
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                   </div>
                   <div *ngIf="email2.touched">

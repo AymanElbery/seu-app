@@ -4,6 +4,8 @@
 <ScrollView>
     <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
+  
+
     <StackLayout *ngIf="!isLoading">
 
       <GridLayout  columns="auto, *" class="serv-title">
@@ -12,6 +14,9 @@
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
 
+      <StackLayout *ngIf="emplistcustody && emplistcustody.length==0">
+        <Label  text='{{"wafi.custody_not_found" | translate}}' style="margin:20 20;color: orange;"></Label>
+      </StackLayout>
       
       <StackLayout  *ngFor="let item of emplistcustody">
         <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">

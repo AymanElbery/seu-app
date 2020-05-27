@@ -80,7 +80,28 @@
             "non_cancelable_request": "Can't Delete Request",
             "req_type": "Type",
             "delete_print_req": "Print/Delete Request",
-            "can_update_data": "Can Update Data"
+            "can_update_data": "Can Update Data",
+            "course":"Course",           
+            "title": "Courses Equalize",
+             "desc": "Courses Equalize",
+            "reply": "Reply",
+            "reply_date": "Reply Date",
+            "choose_college": "Choose College",
+            "choose_course_lang_hours_grade": "Choose Course,Hours,Degree and Language",
+            "course_desc": "Course Description",
+            "record_image": "Record Picture",
+             "alert": "Alert:",
+             "note_text1":"Conditions for equivalence of the preparatory semester materials",
+            "note_text2":"The university in which the subject was studied must be recognized by the Ministry of Education",
+            "note_text3":"The estimate of the subject to be equivalent is (good) and above.",
+            "note_text4":"The description of the subject being studied matches the subject for equivalence.",
+            "note_text5":"That the study of the material be in a regular manner.",
+            "note_text6":"Not more than five years have passed since the period to be equivalent.",
+            "note_text7":"The student should accompany a detailed and certified description of the course required to be equivalently only.",
+            "note_text8":"The course description should match the course code and number in the academic record.",
+            "Years":"Year",
+            "attachment":"attachment"
+           
         },
         "save": "Save",
         "cancel": "Cancel",
@@ -500,7 +521,8 @@
             "employer_job_title": "Employer job title  Required",
             "employer_phone": "Employer phone Required",
             "employer_email": "Employer Email  Required",
-            "emailvalidate": "It is not a valid email !" 
+            "emailvalidate": "It is not a valid email !" ,
+            "emilnotallowed": "Email Not Allowed !"
         },
         "missing_card": {
             "title": "Lost Card Replacment Request",
@@ -757,7 +779,8 @@
             "instructions": "Instructions",
             "form_ar": "Form - Arabic",
             "form_en": "Form - English",
-            "student_form": "Student Form"
+            "student_form": "Student Form",
+            "emilnotallowed": "Email Not Allowed !"
         },
         "reg": {
             "choosewishe": "choose wishes ",
@@ -1104,7 +1127,22 @@
         "absentHour": "Absent Hour",
         "decisionDateH": "Decision Date",
         "inService": "in Service",
-        "print": "Print"
+        "print": "Print",
+        "mangerial_duties_not_found":"There is no Mangerial Duties",
+        "vouchers_not_found":"There is no Reward",
+        "search_by_date_or_no":"Search By Descision Number Or Date",
+        "search_by_employee_name_number":"Search By Employee Name Or Number Or Procedure Date",
+        "letters_not_found":"There is No Letter",
+        "custody_not_found":"There is No Custody",  
+        "training_not_found":"There is No Training",
+        "Yes":"Yes",
+        "No":"No",
+        "VacationDescription":"Vacation Type"
+
+
+
+
+
     },
     "tasks": {
         "description": "Description",

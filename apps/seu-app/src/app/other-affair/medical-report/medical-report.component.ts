@@ -32,12 +32,21 @@ export class MedicalReportComponent implements OnInit, OnDestroy {
       this.getRequests();
     });
   }
-
+  isClosed = false;
+  messagesList = [];
   getRequests() {
   this.isLoading = true;
     this.academicService.getِMedicalReport().then(
       res => {
+        //res['status'] = 0;
+        //res['messages'] = [{body:"service is closed",type:"error"}];
+        if (res['status']) {
         this.mrData = (res as any).data;
+        this.isClosed = false;
+      } else {
+        this.isClosed = true;
+        this.messagesList = res['messages'];
+      }
         this.isLoading = false;
       }
     );

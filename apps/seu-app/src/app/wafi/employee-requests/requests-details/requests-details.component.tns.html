@@ -9,10 +9,9 @@
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
     -->
-    <StackLayout   horizontalAlignment="center" style="height: 100%;margin: 0px;" margin-top="0">
-  
-        <Image style="width: 100%;"   [nsRouterLink]="['/land']" src="~/images/logo_3d.png" ></Image>
-      </StackLayout>
+      <Label text="{{'wafi.employee-requests'|translate}}" class="label-action"></Label>
+
+       <!-- <Image style="width: 100%;"   [nsRouterLink]="['/land']" src="~/images/logo_3d.png" ></Image>-->
     <NavigationButton  icon="font://&#xf104;"  style="font-size: 25px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
 
 </ActionBar>

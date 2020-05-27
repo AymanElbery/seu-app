@@ -23,7 +23,7 @@ auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
                       
                       
     <Label *ngIf="currentServiceRequestTable.requestType" row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.RequestType" | translate}}'></Label>
-    <Label *ngIf="currentServiceRequestTable.requestType" row="1"  column="0" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.requestType"></Label>
+    <Label *ngIf="currentServiceRequestTable.requestType" row="1"  column="0" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.requestDesc"></Label>
 
     <Label *ngIf="currentServiceRequestTable.vacationEnabled==true" row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.VacationDescription" | translate}}'></Label>
     <Label *ngIf="currentServiceRequestTable.vacationEnabled==true" row="2"  column="0" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.vacationDesc"></Label>

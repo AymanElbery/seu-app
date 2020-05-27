@@ -7,29 +7,35 @@ import { HttpRequestService } from '../../shared/services/http-request.service';
 })
 export class AcademicRecordService {
 
-constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-                    this.configService.baseUrl = 'stdservicesapi'; }
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+    this.configService.baseUrl = 'stdservicesapi';
+  }
 
   getِAcademicRecord() {
     this.configService.baseUrl = 'stdservicesapi';
 
     return this.httRequest.GetRequest('academic_record_service/get_academic_record').toPromise();
   }
+  getٍِStudentGrades() {
+    this.configService.baseUrl = 'stdservicesapi';
 
-   Download() {
+    return this.httRequest.GetRequest('academic_record_service/grades').toPromise();
+  }
+
+  Download() {
 
     this.configService.baseUrl = 'stdservicesapi';
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
 
     return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print';
-   }
-   DownloadEng() {
+  }
+  DownloadEng() {
 
     this.configService.baseUrl = 'stdservicesapi';
-    const sid =   this.configService.getSid();
+    const sid = this.configService.getSid();
 
 
     return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?Lang=en';
-   }
+  }
 }

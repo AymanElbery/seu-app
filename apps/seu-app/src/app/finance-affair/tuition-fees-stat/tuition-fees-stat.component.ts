@@ -32,12 +32,21 @@ export class TuitionFeesStatComponent implements OnInit, OnDestroy {
       this.getServiceRequest();
     });
   }
-
+  isClosed = false;
+  messagesList = [];
   getServiceRequest() {
     this.isLoading = true;
     this.academicService.getِTuitionFeez().then(
       res => {
+        //res['status'] = 0;
+        //res['messages'] = [{body:"service is closed",type:"error"}];
+        if (res['status']) {
         this.feesData = (res as any).data;
+        this.isClosed = false;
+      } else {
+        this.isClosed = true;
+        this.messagesList = res['messages'];
+      }
         this.isLoading = false;
       }, err => {
         this.toastr.tryagain();

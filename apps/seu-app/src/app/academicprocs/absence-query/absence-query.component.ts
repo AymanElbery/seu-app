@@ -35,13 +35,22 @@ export class AbsenceQueryComponent implements OnInit, OnDestroy {
       this.getRequests();
     });
   }
-
+  isClosed = false;
+  messagesList = [];
   getRequests() {
     this.isLoading = true;
     this.academicService.getِAbsemceQuery().then(
       res => {
+        //res['status'] = 0;
+       //res['messages'] = [{body:"service is closed",type:"error"}];
+       if (res['status']) {
         this.reqData = (res as any).data;
         this.status = (res as any).status;
+        this.isClosed = false;
+      } else {
+        this.isClosed = true;
+        this.messagesList = res['messages'];
+      }
         this.isLoading = false;
       }, err => {
         this.reqData = [];

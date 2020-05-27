@@ -166,9 +166,25 @@ export class StudentInfoComponent implements OnInit {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.email2") }]);
         return false;
       }
+     
+      if (this.stdData.email2) {
+        if(this.validateemail(this.stdData.email2)==false)
+        {
+          this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.emilnotallowed") }]);
+          return false;
+        }
+      }
+      
+    }
+    if (this.stdData.email) {
+      if(this.validateemail(this.stdData.email)==false)
+      {
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.emilnotallowed") }]);
+        return false;
+      }
     }
 
-    this.addRequest(this.stdData);
+   this.addRequest(this.stdData);
   }
   keyPress(event: any) {
     const pattern = /[0-9\+\-\ ]/;
@@ -177,6 +193,8 @@ export class StudentInfoComponent implements OnInit {
       event.preventDefault();
     }
   }
+  
+  
 
   getjobstatus(workstatus) {
     //console.log("get data",workstatus);
@@ -211,4 +229,16 @@ export class StudentInfoComponent implements OnInit {
     else if (this.fileType == 'cv')
       this.stdData.cv = reader.result;
   }
+
+   
+   regex =/^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(seu.edu)\.sa$/g;  
+   validateemail(email) {     
+    if(this.regex.test(email)) {      
+      return false     
+    }
+    else {         
+      return true
+    }
+  }
+
 }

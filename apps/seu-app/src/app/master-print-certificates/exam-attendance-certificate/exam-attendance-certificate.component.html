@@ -4,7 +4,10 @@
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
   
-
+  <div *ngIf="isClosed">
+    <seu-flash [msgs]="messagesList"  [isLoading]="isLoading"> </seu-flash>
+   </div>
+   <ng-container *ngIf="!isClosed">
   <div class="ser-state" *ngIf="!isLoading">
     <div *ngFor="let msg of msgs"
       [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
@@ -356,5 +359,5 @@
     </div>
   </section>
 
-
+</ng-container>
 </div>
