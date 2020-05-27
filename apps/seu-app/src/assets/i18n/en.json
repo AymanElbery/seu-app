@@ -159,6 +159,7 @@
         "certificate": "Certificate ID ",
         "record": "Academic record ",
         "graduationstatment": "Graduate statement ",
+        "graduat_address": "Graduate address ",
         "procedures": "Academic procedure ",
         "withdrawuniv": "Withdraw from university  ",
         "execuse": " Term Execuse",
@@ -276,7 +277,9 @@
         "address": "Address",
         "address_en": "Address in English",
         "faculty": "Faculty",
-        "faculty_en": "Faculty in English"
+        "faculty_en": "Faculty in English",
+        "office": "Office",
+        "office_en": "Office in English"
     },
     "enquries": {
         "title": "Inquiries",
@@ -366,6 +369,29 @@
         "graduate_state": {
             "title": "Graduate state",
             "desc": "Graduate State"
+        },
+        "graduate_address": {
+            "title": "Graduate Address",
+            "desc": "Graduate Address",
+            "name": "Name",
+            "sid" : "University Number",
+            "ssn" : "SSN",
+            "phone": "Mobile Number",
+            "email": "Personal Email",
+            "phone_required": "Field is required",
+            "email_required": "Field is required",
+            "email_email": "Field must be a valid email",
+            "building_no": "Bulding Number",
+            "building_no_required": "Field is required",
+            "city": "City",
+            "area": "Area",
+            "address": "National Address Details",
+            "street": "Street",
+            "city_required": "Field is required",
+            "area_required": "Field is required",
+            "street_required": "Field is required",
+            "save": "Update",
+            "insert_befor": "You have insert your address successfully"
         },
         "absence_quyery": {
             "title": "Absence Enquiry",

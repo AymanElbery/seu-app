@@ -1,0 +1,128 @@
+<div class="main-content">
+    <service-header [title]="'services.graduate_address.title' |translate"
+        [desc]="'services.graduate_address.desc' |translate"></service-header>
+
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <div class="ser-state" *ngIf="!isLoading">
+        <div style="text-align: right" *ngFor="let msg of msgs" [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))" role="alert">
+          {{msg.body}}
+        </div>
+    </div>
+
+    <div class="ser-state" *ngIf="insertBefore">
+        <div style="text-align: right" class="alert alert-info">
+            {{"services.graduate_address.insert_befor" | translate}}
+        </div>
+    </div>
+
+    <div *ngIf="!isClosed" class="widget">
+        <div class="widget-header">
+            <h3 class="widget-title">{{"general.student_address" | translate}}</h3>
+        </div>
+        <section class="ser-state">
+            <div class="container" style="padding-bottom: 20px;">
+                <div class="row ser-block">
+                    <div class=" col-md-4 col-sm-12">
+                      <div class="state">
+                        <h6>{{"services.graduate_address.name" | translate}}</h6>
+                        <h5>{{name}} </h5>
+                      </div>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-info"></div>
+                      </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-12">
+                      <div class="state">
+                        <h6>{{"services.graduate_address.sid" | translate}}</h6>
+                        <h5>{{sid}} </h5>
+                      </div>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-info"></div>
+                      </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-12">
+                      <div class="state">
+                        <h6>{{"services.graduate_address.ssn" | translate}}</h6>
+                        <h5>{{ssn}} </h5>
+                      </div>
+                      <div class="progress progress-sm">
+                        <div class="progress-bar bg-info"></div>
+                      </div>
+                    </div>
+                </div>
+                <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="email">{{ "services.graduate_address.email" | translate}}</label>
+                                <input formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" type="email" class="form-control" id="email">
+                                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">{{ "services.graduate_address.email_required" | translate}}</div>
+                                    <div *ngIf="f.email.errors.email">{{ "services.graduate_address.email_email" | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="phone">{{ "services.graduate_address.phone" | translate}}</label>
+                                <input formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" type="text" class="form-control" id="phone">
+                                <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                    <div *ngIf="f.phone.errors.required">{{ "services.graduate_address.phone_required" | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 style="margin-top: 30px;">{{ "services.graduate_address.address" | translate}}</h6>
+                    <div class="row" style="margin-top: 10px;">
+                        <div class="col-md-3">
+
+                            <div class="form-group">
+                                
+                                <label for="city">{{ "services.graduate_address.city" | translate}}</label>
+                                <select formControlName="city" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" class="form-control" id="city">
+                                    <option>--</option>
+                                    <option [selected]="cit.value == city_selected" *ngFor="let cit of cities">{{ cit.value }}</option>
+                                </select>
+                                <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+                                    <div *ngIf="f.city.errors.required">{{ "services.graduate_address.city_required" | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="area">{{ "services.graduate_address.area" | translate}}</label>
+                                <input formControlName="area" [ngClass]="{ 'is-invalid': submitted && f.area.errors }" type="text" class="form-control" id="area">
+                                <div *ngIf="submitted && f.area.errors" class="invalid-feedback">
+                                    <div *ngIf="f.area.errors.required">{{ "services.graduate_address.area_required" | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="street">{{ "services.graduate_address.street" | translate}}</label>
+                                <input formControlName="street" [ngClass]="{ 'is-invalid': submitted && f.street.errors }" type="text" class="form-control" id="street">
+                                <div *ngIf="submitted && f.street.errors" class="invalid-feedback">
+                                    <div *ngIf="f.street.errors.required">{{ "services.graduate_address.street_required" | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="building_no">{{ "services.graduate_address.building_no" | translate}}</label>
+                                <input formControlName="building_no" [ngClass]="{ 'is-invalid': submitted && f.building_no.errors }" type="number" class="form-control" id="building_no">
+                                <div *ngIf="submitted && f.building_no.errors" class="invalid-feedback">
+                                    <div *ngIf="f.building_no.errors.required">{{ "services.graduate_address.building_no_required" | translate}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 20px;">
+                        <div class="form-group" style="width: 20%;">
+                            <button type="submit" style="width: 100%;" class="btn btn-primary">{{"services.graduate_address.save" | translate}}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
