@@ -63,6 +63,7 @@ export class VouchersComponent implements OnInit, OnDestroy {
     this.isLoading = true
     this.subscriptionDDL = this.empreqservice.getvaoucherlovs().subscribe(fillddl => {
       if (fillddl) {
+        
         this.FillDDLDataYear = (fillddl as any).data["years"];
         this.FillDDLDatavouchertype = (fillddl as any).data["voucherTypes"];
         this.selectedyear = (this.selectedyear ? this.selectedyear : this.FillDDLDataYear.length > 0 ? this.FillDDLDataYear[0]['value']:"");
@@ -88,6 +89,7 @@ export class VouchersComponent implements OnInit, OnDestroy {
           );
         }
         this.typesDropDown = new ValueList(this.types);
+
 
       }
       this.isLoading = false;

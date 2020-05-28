@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppToasterService } from '../../../shared/services/app-toaster.tns';
 import { ValueItem, ValueList } from 'nativescript-drop-down';
-import { trigger } from '@angular/animations';
+import { trigger, AnimateTimings } from '@angular/animations';
 import { RouterExtensions } from 'nativescript-angular/router';
 
 
@@ -22,13 +22,12 @@ export class VacationRequestComponent implements OnInit {
   ddltruefalse = true;
   citydata;
   ddlday = [];
-  days: ValueItem<number>[] = [];
+  days: ValueItem<any>[] = [];
   daysDropDown;
   ddlmonth = [];
-  monthes: ValueItem<number>[] = [];
+  monthes: ValueItem<any>[] = [];
   monthesDropDown;
   ddlyear = [];
- //s years;
   altEmpItems;
   countryNewItems;
   cityNewItems;

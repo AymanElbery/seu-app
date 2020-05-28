@@ -35,6 +35,7 @@ export class AppToasterService {
     toast.show();
   }
   push(messages) {
+    // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < messages.length; i++) {
         const toast = new Toasty({ text: messages[i].body,
           yAxisOffset: 25,

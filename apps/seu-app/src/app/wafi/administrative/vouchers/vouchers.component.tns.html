@@ -2,19 +2,23 @@
 <ScrollView>
     <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 
-    <StackLayout *ngIf="!isLoading">
+    <StackLayout >
 
       <GridLayout  columns="auto, *" class="serv-title">
         <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
         <Label col="1" text='{{"wafi.EmployeeVouchers" | translate}}' class="serv-name" ></Label>
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
+      <GridLayout  class="ysBox"  columns="*,150"
+       rows="*,*">
 
-      <Label *ngIf="yearsDropDown.length>0" text='{{"wafi.EMP_SLRY_YEAR"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <Label row="0" col="1" *ngIf="yearsDropDown &&yearsDropDown.length>0" text='{{"wafi.EMP_SLRY_YEAR"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"  class="ysPBox"></Label>
       <DropDown
-      *ngIf="yearsDropDown.length>0"
-      style="margin-right:20;margin-left: 160;color: black;"
+      *ngIf="yearsDropDown &&yearsDropDown.length>0"
+      style="margin-right:20;margin-left: 100;color: black;"
       #dropdown1
+      col="0" 
+      row="0"
       [items]="yearsDropDown"
       (selectedIndexChanged)="getYear($event)"
       itemsTextAlignment="right"
@@ -23,10 +27,11 @@
       (loaded) =onLoadedFirstDropDown(dropdown1)
       >
       </DropDown>
-
-      <Label *ngIf="typesDropDown.length>0" text='{{"wafi.EMP_PSNL_VCHR_TYPE"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
-      <DropDown
-      *ngIf="typesDropDown.length>0"
+   
+      <Label *ngIf="typesDropDown &&typesDropDown.length>0" class="ysPBox" col="1" row="1" text='{{"wafi.EMP_PSNL_VCHR_TYPE"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <DropDown class="ysPBox2"
+      col="0" row="1"
+      *ngIf="typesDropDown &&typesDropDown.length>0"
       #dropdown2
       style="margin-right:20;color: black;"
       #dropdown
@@ -38,12 +43,12 @@
       (loaded) =onLoadedSecondDropDown(dropdown2)
       >
       </DropDown>
-
-      <StackLayout *ngIf="typesDropDown.length==0 && yearsDropDown.length==0">
+    </GridLayout>
+      <StackLayout *ngIf="typesDropDown&&typesDropDown.length==0 && yearsDropDown &&yearsDropDown.length==0">
         <Label  text='{{"wafi.emp_no_data" | translate}}' style="margin:20 20; color: orange;"></Label>
       </StackLayout>
 
-      <StackLayout *ngIf="vocherlistdata && vocherlistdata.length==0 && typesDropDown.length>0 && yearsDropDown.length>0">
+      <StackLayout *ngIf="vocherlistdata && vocherlistdata.length==0 && typesDropDown &&yearsDropDown&& typesDropDown.length>0 && yearsDropDown.length>0">
         <Label  text='{{"wafi.vouchers_not_found" | translate}}' style="margin:20 20;"></Label>
       </StackLayout>
 
