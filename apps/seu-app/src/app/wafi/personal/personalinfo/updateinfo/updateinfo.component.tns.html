@@ -7,14 +7,15 @@
        
 
         <Label text='{{"wafi.poersonalemail"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <TextField [(ngModel)]="updatedForm.email" ngControl="mail"
+        <TextField [(ngModel)]="updatedForm.email" #mail="ngModel"
          required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"></TextField>
+         <Label *ngIf="!mail.valid" text='{{"wafi.email_err_msg"|translate}}' style="color: red;"></Label>
 
         <Label text='{{"wafi.Mobile"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <TextField [(ngModel)]="updatedForm.mobile_no" #mobile="ngModel" required></TextField>
+        <TextField [(ngModel)]="updatedForm.mobile_no" #mobile="ngModel" keyboardType="phone" required></TextField>
 
         <Label text='{{"wafi.AlternativePhone"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <TextField [(ngModel)]="updatedForm.phone_no" #phone="ngModel" required></TextField>
+        <TextField [(ngModel)]="updatedForm.phone_no" #phone="ngModel" keyboardType="phone" required></TextField>
 
         <Label text='{{"wafi.address"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
         <TextField [(ngModel)]="updatedForm.address" #address="ngModel" required></TextField>

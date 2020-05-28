@@ -948,7 +948,7 @@
         "month": "شهر",
         "year": "سنة",
         "description": "الوصف",
-        "amount": "صافي الراتب",
+        "amount": "القيمة",
         "monthYear": "شهر/سنة",
         "branch": "الفرع",
         "bank": "البنك",
@@ -1139,7 +1139,10 @@
         "training_not_found":"لا يوجد دورات تدريبية",
         "Yes":"نعم",
         "No":"لا",
-        "VacationDescription":"نوع الإجازة"
+        "VacationDescription":"نوع الإجازة",
+        "email_err_msg":"البريد الإلكترونى غير صالح",
+        "emp_no_data":"الموظف ليس له بيانات",
+        "evaluation_not_found":"لا يوجد تقويم "
 
     },
     "tasks": {

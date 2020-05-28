@@ -10,9 +10,10 @@
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
 
-      <Label text='{{"wafi.EMP_SLRY_YEAR"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <Label *ngIf="yearsDropDown.length>0" text='{{"wafi.EMP_SLRY_YEAR"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
       <DropDown
-      style="margin-right:20;margin-left: 160;"
+      *ngIf="yearsDropDown.length>0"
+      style="margin-right:20;margin-left: 160;color: black;"
       #dropdown1
       [items]="yearsDropDown"
       (selectedIndexChanged)="getYear($event)"
@@ -23,10 +24,11 @@
       >
       </DropDown>
 
-      <Label text='{{"wafi.EMP_PSNL_VCHR_TYPE"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <Label *ngIf="typesDropDown.length>0" text='{{"wafi.EMP_PSNL_VCHR_TYPE"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
       <DropDown
+      *ngIf="typesDropDown.length>0"
       #dropdown2
-      style="margin-right:20;"
+      style="margin-right:20;color: black;"
       #dropdown
       [items]="typesDropDown"
       (selectedIndexChanged)="getType($event)"
@@ -37,7 +39,11 @@
       >
       </DropDown>
 
-      <StackLayout *ngIf="vocherlistdata && vocherlistdata.length==0">
+      <StackLayout *ngIf="typesDropDown.length==0 && yearsDropDown.length==0">
+        <Label  text='{{"wafi.emp_no_data" | translate}}' style="margin:20 20; color: orange;"></Label>
+      </StackLayout>
+
+      <StackLayout *ngIf="vocherlistdata && vocherlistdata.length==0 && typesDropDown.length>0 && yearsDropDown.length>0">
         <Label  text='{{"wafi.vouchers_not_found" | translate}}' style="margin:20 20;"></Label>
       </StackLayout>
 

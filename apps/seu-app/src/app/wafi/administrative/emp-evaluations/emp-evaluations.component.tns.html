@@ -12,6 +12,9 @@
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
 
+      <StackLayout *ngIf="emplistevaluations.length==0">
+        <Label  text='{{"wafi.evaluation_not_found" | translate}}' style="margin:20 20;color: orange;"></Label>
+      </StackLayout>
 
       <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of emplistevaluations">
                       

@@ -1137,7 +1137,11 @@
         "training_not_found":"There is No Training",
         "Yes":"Yes",
         "No":"No",
-        "VacationDescription":"Vacation Type"
+        "VacationDescription":"Vacation Type",
+        "email_err_msg":"E-mail is Not Valid",
+        "emp_no_data":"Employee has No Data",
+        "evaluation_not_found":"There is No Evaluation"
+
 
 
 

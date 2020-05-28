@@ -12,8 +12,9 @@
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
 
-      <Label text='{{"wafi.selectyear" | translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+      <Label *ngIf="yearsDropDown &&yearsDropDown.length>0" text='{{"wafi.selectyear" | translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
       <DropDown
+      *ngIf="yearsDropDown &&yearsDropDown.length>0"
       #dropdown
       style="margin-right: 20;margin-left: 160;"
       [items]="yearsDropDown"
@@ -24,7 +25,9 @@
       (loaded) =onLoadedDropDown(dropdown)
       >
       </DropDown>
-    
+    <StackLayout *ngIf="yearsDropDown &&yearsDropDown.length==0">
+      <Label text='{{"wafi.emp_no_data" |translate}}' style="margin: 20 20;color: orange;"></Label>
+    </StackLayout>
       <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of Empsalary;let i=index;">
                       
                       

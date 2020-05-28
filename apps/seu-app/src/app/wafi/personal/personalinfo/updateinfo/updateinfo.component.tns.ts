@@ -40,6 +40,7 @@ export class UpdateinfoComponent implements OnInit {
     for (let i = 0; i < this.langsList.length; i++) {
       if(this.updatedForm.preferred_lang_sms==this.langsList[i].label){
         this.preferred_lang_sms_index=i;
+        this.updatedForm.preferred_lang_sms=this.langsList[i].value;
       }
       this.langs.push(
         {
