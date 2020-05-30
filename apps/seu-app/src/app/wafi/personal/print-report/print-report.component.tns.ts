@@ -12,7 +12,7 @@ import * as utils from 'tns-core-modules/utils/utils';
 import { path ,File} from 'tns-core-modules/file-system';
 import * as TextModule from "tns-core-modules/text";
 import * as base64 from "base-64";
-import { isAndroid } from 'tns-core-modules/platform';
+import { isAndroid, isIOS } from 'tns-core-modules/platform';
 import * as fileSystem from 'tns-core-modules/file-system';
 
 declare var java: any;
@@ -43,9 +43,11 @@ export class PrintReportComponent implements OnInit {
   isLoading = true;
   ngOnInit() {
     if (isAndroid) {
+      console.log("android print");
        this.downloadedFilePath = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
 
-    }else{
+    }else if(isIOS){
+      console.log("ios print");
       this.downloadedFilePath= fileSystem.knownFolders.ios.library().path
     }
 

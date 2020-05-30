@@ -13,7 +13,7 @@
       </GridLayout>
 
       <StackLayout *ngIf="emplistletters && emplistletters.length==0">
-        <Label  text='{{"wafi.letters_not_found" | translate}}' style="margin:20 20;color: orange;"></Label>
+        <Label  text='{{"wafi.letters_not_found" | translate}}' style="margin:20 20;color: orange;" class="iosFont"></Label>
       </StackLayout>
 
       <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of emplistletters">

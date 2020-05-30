@@ -13,7 +13,7 @@
       </GridLayout>
 
       <StackLayout *ngIf="emplisttraining && emplisttraining.length==0">
-        <Label  text='{{"wafi.training_not_found" | translate}}' style="margin:20 20;color: orange;"></Label>
+        <Label  text='{{"wafi.training_not_found" | translate}}' style="margin:20 20;color: orange;" class="iosFont"></Label>
       </StackLayout>
 
       <StackLayout  *ngFor="let item of emplisttraining">
