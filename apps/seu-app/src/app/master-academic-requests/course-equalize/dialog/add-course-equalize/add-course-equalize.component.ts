@@ -17,7 +17,7 @@ export class AddCourseEqualizeComponent implements OnInit {
   reqData: CourseEqualMaster;
   msgs: any;
   private imageSrc = '';
-
+  coursesList = [];
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddCourseEqualizeComponent>,
     private toastr: AppToasterService, private acadmicProc: MasterCourseEqualizerService) { }
@@ -26,13 +26,20 @@ export class AddCourseEqualizeComponent implements OnInit {
     this.curseEqual = {
       courses: [],
       attachment: '',
+      attachment2: '',
       year: '',
-      university: ''
+      university: '',
+      custom_university_name: ''
     };
     this.reqData = this.acadmicProc.reqData as CourseEqualMaster;
+    this.coursesList = (JSON.parse(JSON.stringify(this.reqData.courses)));
   }
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    if (!file) {
+      this.curseEqual.attachment = '';
+      return;
+    }
     const pattern = /image-*/;
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
@@ -43,6 +50,21 @@ export class AddCourseEqualizeComponent implements OnInit {
     this.curseEqual.attachment = reader.result;
   }
 
+  handleInputChange2(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    if (!file) {
+      this.curseEqual.attachment2 = '';
+      return;
+    }
+    const pattern = /image-*/;
+    const reader = new FileReader();
+    reader.onload = this._handleReaderLoaded2.bind(this);
+    reader.readAsDataURL(file);
+  }
+  _handleReaderLoaded2(e) {
+    const reader = e.target;
+    this.curseEqual.attachment2 = reader.result;
+  }
 
   requesting = false;
   addRequest(data: any) {
@@ -61,15 +83,35 @@ export class AddCourseEqualizeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    if (this.curseEqual.university == '39' || this.curseEqual.university == '37') {
+      if (!this.curseEqual.custom_university_name) {
+        return;
+      }
+    }
+    let courses = [];
+    this.coursesList.forEach(item => {
+      if (item.checked && item.TRNS_GRADE && item.TRNS_LANG && item.TRNS_HRS) {
+        courses.push({
+          CRSE: item.id,
+          TRNS_GRADE: item.TRNS_GRADE,
+          TRNS_LANG: item.TRNS_LANG,
+          TRNS_HRS: item.TRNS_HRS
+        })
+      }
+      if (courses.length == 0) {
+        return;
+      }
+    });
     if (this.requesting) {
       return false;
     }
-    let formValue = (JSON.parse(JSON.stringify(this.curseEqual)));
-    formValue.courses = formValue.courses.map(crseCode => {
-      return { CRSE: crseCode };
-    });
+    // let formValue = (JSON.parse(JSON.stringify(this.curseEqual)));
+    // formValue.courses = formValue.courses.map(crseCode => {
+    //   return { CRSE: crseCode };
+    // });
+    this.curseEqual.courses = courses;
     this.requesting = true;
-    this.addRequest(formValue);
+    this.addRequest(this.curseEqual);
   }
 
   closeDiag() {
