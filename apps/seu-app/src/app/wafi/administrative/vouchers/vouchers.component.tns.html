@@ -45,11 +45,11 @@
       </DropDown>
     </GridLayout>
       <StackLayout *ngIf="typesDropDown&&typesDropDown.length==0 && yearsDropDown &&yearsDropDown.length==0">
-        <Label  text='{{"wafi.emp_no_data" | translate}}' style="margin:20 20; color: orange;"></Label>
+        <Label  text='{{"wafi.emp_no_data" | translate}}' style="margin:20 20; color: orange;" class="iosFont"></Label>
       </StackLayout>
 
       <StackLayout *ngIf="vocherlistdata && vocherlistdata.length==0 && typesDropDown &&yearsDropDown&& typesDropDown.length>0 && yearsDropDown.length>0">
-        <Label  text='{{"wafi.vouchers_not_found" | translate}}' style="margin:20 20;"></Label>
+        <Label  text='{{"wafi.vouchers_not_found" | translate}}' style="margin:20 20;" class="iosFont"></Label>
       </StackLayout>
 
       <StackLayout  *ngFor="let item of  vocherlistdata;let i=index;">
