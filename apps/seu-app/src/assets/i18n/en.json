@@ -248,7 +248,8 @@
         "resume_en": "Doctor Resume in English",
         "enquries": "Chatbot inquiries",
         "ssoidentity": "sso Support",
-        "attends": "Attendance System"
+        "attends": "Attendance System",
+        "masterequalize":"معادلة مقررات الفصل التحضيري"
     },
     "resume": {
         "title": "Edit Resume in Arabic",

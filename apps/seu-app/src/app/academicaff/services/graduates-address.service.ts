@@ -18,7 +18,6 @@ export class GraduatesAddressService {
 
   saveAddress(data){
     this.configService.baseUrl = 'stdservicesapi';
-
     return this.httRequest.postRequest('/student_address_service/update', data).toPromise();
   }
  

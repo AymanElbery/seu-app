@@ -1,21 +1,22 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GraduatesAddressService } from '../services/graduates-address.service';
 import { TranslateService } from '@ngx-translate/core';
-import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
-import { UserService } from 'src/app/account/services/user.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../account/services/user.service';
+import { AppToasterService } from '../../shared/services/app-toaster';
 
 
 @Component({
-  selector: 'app-graduate-address',
-  templateUrl: './graduate-address.component.html',
-  styleUrls: ['./graduate-address.component.css']
+    selector: 'app-graduate-address',
+    templateUrl: './graduate-address.component.html',
+    styleUrls: ['./graduate-address.component.css']
 })
 export class GraduateAddressComponent implements OnInit, OnDestroy {
 
-    isLoading       = false;
-    insertBefore    = false;
+    isLoading = false;
+    insertBefore = false;
     addressData;
-    isClosed        = false;
+    isClosed = false;
 
 
     cities;
@@ -29,25 +30,24 @@ export class GraduateAddressComponent implements OnInit, OnDestroy {
     submitted = false;
 
     constructor(
-        private transalte: TranslateService, 
+        private transalte: TranslateService,
         private graduateAddressSer: GraduatesAddressService,
         private formBuilder: FormBuilder,
-        private userService: UserService
+        private userService: UserService,
+        private toastr: AppToasterService
     ) {
-        
+
     }
 
 
     ngOnInit() {
-
         this.name = this.userService.getActiveRoleDetails().name_ar;
         this.ssn = this.userService.getActiveRoleDetails().ssn;
         this.sid = this.userService.getActiveRoleDetails().id;
         this.getReqs();
-
         this.addressForm = this.formBuilder.group({
             email: ['', [Validators.required, Validators.email]],
-            phone: ['', [Validators.required, Validators.minLength(10)]],
+            phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^[0-9]*$")]],
             city: ['', Validators.required],
             area: ['', Validators.required],
             street: ['', Validators.required],
@@ -74,35 +74,35 @@ export class GraduateAddressComponent implements OnInit, OnDestroy {
                     this.addressForm.controls['area'].setValue(this.addressData.user.AREA);
                     this.addressForm.controls['street'].setValue(this.addressData.user.STREET);
                     this.addressForm.controls['building_no'].setValue(this.addressData.user.BUILDING_NO);
-                } else {undefined
+                } else {
                     this.insertBefore = false;
                 }
             }
         );
     }
-
     get f() { return this.addressForm.controls; }
-
     onSubmit() {
-        this.submitted = true;
-
         // stop here if form is invalid
         if (this.addressForm.invalid) {
             return;
         }
-        
+        this.submitted = true;
         let data = this.addressForm.value;
         this.graduateAddressSer.saveAddress(data).then(
             (res) => {
-                //window.location.reload();
-                this.ngOnInit();
+                this.toastr.push(data.messages);
+                if (res['status']) {
+                    this.ngOnInit();
+                }
+            },
+            error => {
+                this.toastr.tryagain();
             }
         );
     }
 
-
     ngOnDestroy() {
-      
+
     }
-    
+
 }
