@@ -1141,6 +1141,7 @@
         "No":"لا",
         "VacationDescription":"نوع الإجازة",
         "email_err_msg":"البريد الإلكترونى غير صالح",
+        "phone_no_err":"رقم الهاتف غير صحيح",
         "emp_no_data":"الموظف ليس له بيانات",
         "evaluation_not_found":"لا يوجد تقويم "
 
