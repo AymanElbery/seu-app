@@ -68,6 +68,7 @@
                                 <input formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" type="text" class="form-control" id="phone">
                                 <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                                     <div *ngIf="f.phone.errors.required">{{ "services.graduate_address.phone_required" | translate}}</div>
+                                    <div *ngIf="f.phone.errors.minlength">{{ "services.graduate_address.phone_minLength" | translate}}</div>
                                 </div>
                             </div>
                         </div>

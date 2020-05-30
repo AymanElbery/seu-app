@@ -17,6 +17,7 @@ export class GraduateAddressComponent implements OnInit, OnDestroy {
     addressData;
     isClosed        = false;
 
+
     cities;
     msgs;
     name;
@@ -33,17 +34,20 @@ export class GraduateAddressComponent implements OnInit, OnDestroy {
         private formBuilder: FormBuilder,
         private userService: UserService
     ) {
-        this.name = this.userService.getActiveRoleDetails().name_ar;
-        this.ssn = this.userService.getActiveRoleDetails().ssn;
-        this.sid = this.userService.getActiveRoleDetails().id;
-        this.getReqs();
+        
     }
 
 
     ngOnInit() {
+
+        this.name = this.userService.getActiveRoleDetails().name_ar;
+        this.ssn = this.userService.getActiveRoleDetails().ssn;
+        this.sid = this.userService.getActiveRoleDetails().id;
+        this.getReqs();
+
         this.addressForm = this.formBuilder.group({
             email: ['', [Validators.required, Validators.email]],
-            phone: ['', Validators.required],
+            phone: ['', [Validators.required, Validators.minLength(10)]],
             city: ['', Validators.required],
             area: ['', Validators.required],
             street: ['', Validators.required],
@@ -90,7 +94,8 @@ export class GraduateAddressComponent implements OnInit, OnDestroy {
         let data = this.addressForm.value;
         this.graduateAddressSer.saveAddress(data).then(
             (res) => {
-                window.location.reload();
+                //window.location.reload();
+                this.ngOnInit();
             }
         );
     }
