@@ -1,3 +1,12 @@
-<p>
-  gr-home works!
-</p>
+<main role="main">
+  <div class="wrapper">
+    <app-apps-header [appUserService]="appUserService"></app-apps-header>
+    <div class="page-wrap">
+      <app-apps-gr-menu></app-apps-gr-menu>
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+        <app-apps-footer></app-apps-footer>
+      </div>
+    </div>
+  </div>
+</main>

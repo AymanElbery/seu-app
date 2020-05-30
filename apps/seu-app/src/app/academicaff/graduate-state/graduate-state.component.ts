@@ -39,7 +39,7 @@ export class GraduateStateComponent implements OnInit, OnDestroy {
       (res) => {
         this.graduateData = res['data'];
         this.msgs = res['messages'];
-        this.allowed = (this.graduateData.keys.length) ? true : false;
+        this.allowed = Object.keys(this.graduateData).length ? true : false;
         this.isLoading = false;
       }
     );

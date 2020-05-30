@@ -90,13 +90,15 @@ export class LoginFormComponent implements OnInit, OnDestroy {
          applicationSettings.setString('pass', this.credentials.password);
          this.userService.logedIn = true;
          if (this.role === 'Vendor') {
-           this.userService.userData.student_details.level = data.data.data.student_details.level;
+           this.userService.userData.student_details.level = data.data.data.student_details_gr.level;
 
          } else if (this.role === 'Student') {
           this.userService.userData.student_details.level = data.data.data.level;
          }
          this.userService.userData.username = data.data.data.username;
          this.userService.userData.name_ar = data.data.data.name_ar;
+         console.log(data.data);
+         this.userService.userData.id=data.data.data.id;
        // this.ref.markForCheck();
         // this.ref.detectChanges();
          this.isLoading = false;

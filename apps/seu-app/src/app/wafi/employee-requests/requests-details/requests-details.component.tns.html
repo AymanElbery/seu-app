@@ -1,1 +1,233 @@
-<Button text="requests-details works!" class="btn btn-primary"></Button>
+
+<ActionBar style="background:#001628; ">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+      <Label text="{{'wafi.employee-requests'|translate}}" class="label-action"></Label>
+
+       <!-- <Image style="width: 100%;"   [nsRouterLink]="['/land']" src="~/images/logo_3d.png" ></Image>-->
+    <NavigationButton  icon="font://&#xf104;"  style="font-size: 25px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+
+</ActionBar>
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
+
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+
+        <GridLayout  columns="auto, *" class="serv-title">
+            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+            <Label col="1"     text='{{"wafi.RequestDtails" | translate}}' class="serv-name" ></Label>
+            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        
+        </GridLayout>
+
+    
+
+  
+
+    <StackLayout height="100%" *ngIf="!isLoading">
+        <StackLayout  >
+          
+            <FlexboxLayout    flexDirection="column">
+                <FlexboxLayout flexDirection="column">
+                    
+                    <StackLayout class="ysBox">
+                    <GridLayout *ngIf="reqdetaildata.requestType" rows="auto"  columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.RequestType" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.requestDesc}}"></Label>                                   
+                      </GridLayout>
+                      <GridLayout *ngIf="reqdetaildata.fromCountryEnabled==true" rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.FromCountry-City" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.fromCountryDesc}}"></Label>                                   
+                      </GridLayout>
+                      <GridLayout *ngIf="reqdetaildata.toCountryEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.ToCountry-City" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.toCountryDesc}}"></Label>                                   
+                      </GridLayout>
+                      <GridLayout *ngIf="reqdetaildata.ticketEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.Ticket" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.ticket}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout *ngIf="reqdetaildata.roundTripEnabled==true" rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.RoundTrip" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.roundTrip}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout *ngIf="reqdetaildata.attendantsEnabled==true" rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.Attendants" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.attendants}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout *ngIf="reqdetaildata.amountEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.CompensationAmount" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.compensationAmount}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout *ngIf="reqdetaildata.decisionEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.DecisionNo" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.decisionNo}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout  *ngIf="reqdetaildata.subjectEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.Task/Direction" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.subject}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout *ngIf="reqdetaildata.startTimeEnabled==true" rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.FromTime" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.startTime}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout *ngIf="reqdetaildata.endTimeEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.ToTime" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.endTime}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout *ngIf="reqdetaildata.alternativEemployee==true" rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.AltrnativeEmployee" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.altEemployeeDesc}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout  *ngIf="reqdetaildata.compensation==true" rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.CompensationandTransport" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.compensationValDesc}}"></Label>                                   
+                      </GridLayout>
+
+                      <GridLayout *ngIf="reqdetaildata.toCountryNewEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.ToCountry" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.toCountryNewDesc}}"></Label>                                   
+                      </GridLayout>
+
+                      
+                      <GridLayout *ngIf="reqdetaildata.toCityNewEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.TpCity" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.toCityNewDesc}}"></Label>                                   
+                      </GridLayout>
+
+                      
+                      <GridLayout *ngIf="reqdetaildata.mandateTypeEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.MandateType" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.mandateTypeDesc}}"></Label>                                   
+                      </GridLayout>
+
+                      
+                      <GridLayout  *ngIf="reqdetaildata.courseTypeEnabled==true" rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.CourseType" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.courseTypeDesc}}"></Label>                                   
+                      </GridLayout>
+
+                      
+                      <GridLayout *ngIf="reqdetaildata.taskEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.Task" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.task}}"></Label>                                   
+                      </GridLayout>
+
+                      
+                      <GridLayout *ngIf="reqdetaildata.directionEnabled==true" rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.Direction" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.direction}}"></Label>                                   
+                      </GridLayout>
+
+                      
+                      <GridLayout *ngIf="reqdetaildata.regCourseEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.scheduleName" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.scheduleDesc}}"></Label>                                   
+                      </GridLayout>
+
+
+                      
+                      <GridLayout *ngIf="reqdetaildata.regCourseEnabled==true"  rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.sideName" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.trainSideDesc}}"></Label>                                   
+                      </GridLayout>
+
+                      
+                      <GridLayout *ngIf="reqdetaildata.disclaimerReasonEnabled==true" rows="auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.DisclaimerReason" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqdetaildata.disclaimerReasonDesc}}"></Label>                                   
+                      </GridLayout>
+                    </StackLayout>
+             
+                    <StackLayout *ngIf="requestApprovalsData"  class="ysBox">
+                        
+                        <Label row="0" colSpan="2"  class="ysHBox"  text="{{'wafi.requestApprovalsData'|translate}}"></Label>
+      <StacKLayout *ngFor="let reqapprvl of requestApprovalsData;let i=index;">
+                        <GridLayout  rows="auto"  columns="*,150">
+                                  
+                            <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.StepNo" | translate}} :'></Label>
+                            <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqapprvl.stepNo}}"></Label>                                   
+                          </GridLayout>
+
+
+                          <GridLayout  rows="auto"  columns="*,150">
+                                  
+                            <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.ApprovedEmployee" | translate}} :'></Label>
+                            <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqapprvl.approvedEmpName}}"></Label>                                   
+                          </GridLayout>
+
+
+                          <GridLayout  rows="auto"  columns="*,150">
+                                  
+                            <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.DuatyDescription" | translate}} :'></Label>
+                            <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqapprvl.duatyDesc}}"></Label>                                   
+                          </GridLayout>
+
+
+                          <GridLayout  rows="auto"  columns="*,150">
+                                  
+                            <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.TransactionDate" | translate}} :'></Label>
+                            <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqapprvl.approvedDate}}"></Label>                                   
+                          </GridLayout>
+
+
+                          <GridLayout  rows="auto"  columns="*,150">
+                                  
+                            <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.Agree/disagree" | translate}} :'></Label>
+                            <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{reqapprvl.isApprovedDesc}}"></Label>                                   
+                          </GridLayout>
+
+
+                          <GridLayout  rows="auto"  columns="*,150">
+                                  
+                            <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.RejecteReasone" | translate}} :'></Label>
+                            <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{ reqapprvl.disagreeReasone}}"></Label>                                   
+                          </GridLayout>
+                        </StacKLayout>
+                        </StackLayout>
+             
+             
+                </FlexboxLayout>
+            </FlexboxLayout>
+        </StackLayout>
+    </StackLayout>
+</FlexboxLayout>
+</ScrollView>

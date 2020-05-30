@@ -1,1 +1,73 @@
-<Button text="emp-custody works!" class="btn btn-primary"></Button>
+<app-header></app-header>
+
+
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+  
+
+    <StackLayout *ngIf="!isLoading">
+
+      <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"wafi.Employeecustody" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+      </GridLayout>
+
+      <StackLayout *ngIf="emplistcustody && emplistcustody.length==0">
+        <Label  text='{{"wafi.custody_not_found" | translate}}' style="margin:20 20;color: orange;"></Label>
+      </StackLayout>
+      
+      <StackLayout  *ngFor="let item of emplistcustody">
+        <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+            <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+            <FlexboxLayout flexDirection="row-reverse">
+                <Label text='{{item.id}}'></Label>
+                <Label text="-"></Label>
+                <Label text='{{item.typeName}}'></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                    <Label  text="&#xf106;"  class="fas arr-drop"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label text='{{item.id}}'></Label>
+                        <Label text="-"></Label>
+                        <Label text='{{item.typeName}}'></Label>
+                    </FlexboxLayout>
+                 </FlexboxLayout>
+
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                      
+                      
+        <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_CUST_SERVICE_ID" | translate}}'></Label>
+        <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.id"></Label>
+    
+        <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_CUST_SERVICE_EPC" | translate}}'></Label>
+        <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.epc"></Label>
+
+        <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_CUST_SERVICE_SN" | translate}}'></Label>
+        <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.serialNo"></Label>
+       
+        <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_CUST_SERVICE_TYPE_NAME" | translate}}'></Label>
+        <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.typeName" ></Label>
+
+        <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_CUST_SERVICE_SUBTYPE_NAME" | translate}}'></Label>
+        <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.subTypeName" ></Label>
+
+        <Label row="6"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_CUST_SERVICE_ENTRY_DATE" | translate}}'></Label>
+        <Label row="6"  column="0" class="ysPBox2" textWrap="true" [text]="item.entryDate" ></Label>
+
+        <Label row="7"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_CUST_SERVICE_DELIVERY_DATE" | translate}}'></Label>
+        <Label row="7"  column="0" class="ysPBox2" textWrap="true" [text]="item.deliveryDate" ></Label>
+
+        <Label row="8"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_CUST_SERVICE_DURATION" | translate}}'></Label>
+        <Label row="8"  column="0" class="ysPBox2" textWrap="true" [text]="item.duration" ></Label>
+         
+      </GridLayout>
+    </FlexboxLayout>
+  </FlexboxLayout>
+  </StackLayout>
+    </StackLayout>
+</ScrollView>

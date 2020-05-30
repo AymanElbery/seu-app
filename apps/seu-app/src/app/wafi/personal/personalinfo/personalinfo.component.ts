@@ -4,6 +4,8 @@ import { Observable ,  Subscription } from 'rxjs';
 import { EmployeesService } from '../../services/employees.service';  
 import { Employee } from '../personalinfo/employee';  
 import { TranslateService } from '@ngx-translate/core';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { UpdateinfoComponent } from '../personalinfo/updateinfo/updateinfo.component';
 
 @Component({
   selector: 'app-personalinfo',
@@ -12,12 +14,13 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class PersonalinfoComponent implements OnInit,OnDestroy {
   //allEmployee: Observable<Employee[]>; 
+ 
   empInfo;
   empInfolang;
   messages: any[] = [];
   subscription: Subscription;
   subscriptionLang: Subscription;
-  constructor(private http: HttpClient,private empservice:EmployeesService,private translate: TranslateService) { }
+  constructor(private http: HttpClient,private empservice:EmployeesService,private translate: TranslateService, private dialog: MatDialog) { }
   isLoading = true;
   subscriptions;
   ngOnInit() {
@@ -44,7 +47,6 @@ export class PersonalinfoComponent implements OnInit,OnDestroy {
     this.subscription = this.empservice.getdataEmployees().subscribe(empdata => {
      if (empdata) {       
        this.empInfo = (empdata as any).data;       
-       
        this.subscriptionLang = this.empservice.getdataEmployeesLang().subscribe(empdaemplang => {
         if (empdaemplang) {
           this.empInfolang = (empdaemplang as any).data;
@@ -59,6 +61,19 @@ export class PersonalinfoComponent implements OnInit,OnDestroy {
    });
 }
 
+openDialog() {
+  let updateinfo = this.empInfo;
+  updateinfo.langList = this.empInfolang;
+ // this.updatedata.email=this.empInfo.data;
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.autoFocus = true;
+  dialogConfig.disableClose = false;
+  dialogConfig.width = "50%";
+  dialogConfig.data = { updateinfo };
+  this.dialog.open(UpdateinfoComponent, dialogConfig).afterClosed().subscribe(res => {
+    this.loadEmpdata();
+  });
+}
 
 
 }

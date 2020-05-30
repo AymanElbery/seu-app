@@ -1,0 +1,105 @@
+<!-- Modal -->
+<mat-dialog-content dir="rtl">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+        {{"general.request.title"|translate}}</h5>
+
+    </div>
+
+    <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+      <div class="modal-body">
+        <P class="text-center">
+          <span style="font-weight: bold; font-size: 15px;color: red;">
+            {{"general.request.alert"|translate}}
+          </span>
+          {{"general.request.note_text1"|translate}} <br />
+          {{"general.request.note_text2"|translate}} <br />
+          {{"general.request.note_text3"|translate}} <br />
+          {{"general.request.note_text4"|translate}} <br />
+          {{"general.request.note_text5"|translate}} <br />
+          {{"general.request.note_text6"|translate}} <br />
+          {{"general.request.note_text7"|translate}} <br />
+          {{"general.request.note_text8"|translate}}
+        </P>
+        <section class="ser-state">
+          <div class="container">
+            <div class="row ser-block">
+              <div class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6> {{"services.course-equalize.choose_college"|translate}}</h6>
+                  <div class="form-group">
+                    <select required name="university" #university="ngModel" [(ngModel)]="curseEqual.university"
+                      class="form-control" [class.is-invalid]=" curseEqual.university==''">
+                      <option value="0">{{"general.college"|translate}} </option>
+                      <option *ngFor="let item of reqData.universities" value="{{item.UN_ID}}">{{item.UN_NAME}}
+                      </option>
+                    </select>
+                    <br />
+                  </div>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+              <div class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6> {{"general.request.Years"|translate}}</h6>
+                  <div class="form-group">
+                    <input required name="year" #year="ngModel" [(ngModel)]="curseEqual.year"
+                      [class.is-invalid]="curseEqual.year==''" class="form-control">
+                  </div>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6> {{"general.course_code_name"|translate}}</h6>
+                  <div class="form-group">
+                    <ng-select required multiple="multiple" [class.is-invalid]="curseEqual.courses.length==0"
+                      [items]="reqData.courses" bindLabel="value" bindValue="id" name="courses" #courses="ngModel"
+                      [(ngModel)]="curseEqual.courses">
+                    </ng-select>
+                  </div>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+              <div class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"general.request.attachment"|translate}}</h6>
+                  <div class="custom-file">
+                    <input name="attachment" [class.is-invalid]="curseEqual.attachment ==''" type="file"
+                      (change)="handleInputChange($event)" id="attachment " class="custom-file-input" required />
+                    <label for="attachment " class="custom-file-label ">
+                    </label>
+                  </div>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+          {{"general.cancel"|translate}}</button>
+        <button type="submit" class="btn btn-dark"
+          [disabled]="form.invalid || curseEqual.attachment == '' || requesting"><i
+            class="fa fa-database"></i>{{"general.save"|translate}}</button>
+      </div>
+    </form>
+
+
+  </div>
+
+</mat-dialog-content>

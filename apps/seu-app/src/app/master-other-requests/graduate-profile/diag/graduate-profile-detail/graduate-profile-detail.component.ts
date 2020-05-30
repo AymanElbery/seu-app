@@ -17,7 +17,8 @@ export class GraduateProfileDetailComponent implements OnInit {
   stdinfo: StudentInfo;
   STD_NAME_EN;
   isLoading = false;
-
+  STD_PIC_URL = '';
+  STD_RESUME_URL = '';
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<GraduateProfileDetailComponent>,
@@ -67,6 +68,9 @@ export class GraduateProfileDetailComponent implements OnInit {
         this.reqDataDetail = this.gradService.reqDataDetail;
         this.msgsDetail = this.gradService.msgsDetail;
         this.stdinfo = this.reqDataDetail.stdinfo[0];
+        this.stdinfo.JOB_LOC = this.reqDataDetail.locations[0]['NAME_AR'];
+        this.STD_PIC_URL = this.reqDataDetail.stdinfo[0]['STD_PIC_URL'];
+        this.STD_RESUME_URL = this.reqDataDetail.stdinfo[0]['STD_RESUME_URL'];
         if (this.stdinfo.STD_GENDER == 'M')
           this.stdinfo.STD_GENDER = 'ذكر'
         else if (this.stdinfo.STD_GENDER == 'F')

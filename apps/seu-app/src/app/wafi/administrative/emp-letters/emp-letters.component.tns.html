@@ -1,1 +1,36 @@
-<Button text="emp-letters works!" class="btn btn-primary"></Button>
+<app-header></app-header>
+
+
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+    <StackLayout *ngIf="!isLoading">
+
+      <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"wafi.EmployeeLeters" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+      </GridLayout>
+
+      <StackLayout *ngIf="emplistletters && emplistletters.length==0">
+        <Label  text='{{"wafi.letters_not_found" | translate}}' style="margin:20 20;color: orange;"></Label>
+      </StackLayout>
+
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of emplistletters">
+                      
+                      
+        <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_LETTERS_LETTER_TYPE" | translate}}'></Label>
+        <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.letterType"></Label>
+    
+        <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_LETTERS_LETTER_DATE" | translate}}'></Label>
+        <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.decisionDate"></Label>
+
+        <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_LETTERS_LETTER_NO" | translate}}'></Label>
+        <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.decisionNo"></Label>
+
+        <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_LETTERS_NOTES" | translate}}'></Label>
+        <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.note"></Label>
+         
+      </GridLayout>
+    </StackLayout>
+</ScrollView>

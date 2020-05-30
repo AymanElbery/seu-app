@@ -12,14 +12,15 @@ import { DisplayResultComponent } from './components/admission-result/result/dis
 import { UgLoginComponent } from './components/ug-login/login/ug-login.component';
 import { UgVeryficationComponent } from './components/ug-login/verify/ug-veryfication.component';
 import { MatchDocumentsComponent } from './components/match-documents/match-documents.component';
+import { PaymentRefundComponent } from './components/payment-refund/payment-refund.component';
 import { RecaptchaModule } from 'ng-recaptcha';
-import { AdmisionUgService } from './services/admision-ug.service';
+import { AdmissionUGService } from './services/admission-ug.service';
 import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 
 
 @NgModule({
   declarations: [UGHomeComponent, AdmissionResultComponent, PayFeeComponent, UploadDocumentComponent,
-    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent],
+    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent, PaymentRefundComponent],
   imports: [
     AdmissionUGRoutingModule,
     SeucommonModule,
@@ -28,11 +29,12 @@ import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
   ]
 })
 export class AdmissionUGModule {
-  constructor(private admissionUgservice: AdmisionUgService, private globalService: GlobalBaseService) {
+  constructor(private admissionUgservice: AdmissionUGService, private globalService: GlobalBaseService) {
     if (globalService.getItem(admissionUgservice.userKey) && globalService.getItem(admissionUgservice.tokenKey)) {
       this.admissionUgservice.LoggedInToken = globalService.getItem(admissionUgservice.tokenKey);
       this.admissionUgservice.LoggedInUser = JSON.parse(globalService.getItem(admissionUgservice.userKey));
     }
+    this.admissionUgservice.loadSettings();
   }
 }
 

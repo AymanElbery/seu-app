@@ -14,9 +14,10 @@ import { GraduateStateComponent } from './graduate-state/graduate-state.componen
 import { GraduatesStateService } from './services/graduates-state.service';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
+import { StudentGradesComponent } from './student_grades/student-grades.component';
 @NgModule({
   declarations: [AcademicStatusComponent, CertificateIDComponent, AcademicRecordComponent,
-    GraduateStateComponent, SkillsRecordComponent
+    GraduateStateComponent, SkillsRecordComponent , StudentGradesComponent
   ],
   imports: [
     CommonModule,

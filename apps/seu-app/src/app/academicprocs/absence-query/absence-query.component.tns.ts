@@ -12,6 +12,8 @@ import { AbsData } from '../../shared/models/absence-data';
   styleUrls: ['./absence-query.component.tns.scss']
 })
 export class AbsenceQueryComponent implements OnInit {
+  isClosed: boolean;
+  messagesList: any;
 
 
   constructor(private academicService: LectureAbsQueryService,
@@ -41,10 +43,19 @@ export class AbsenceQueryComponent implements OnInit {
     this.isLoading = true;
     this.academicService.getِAbsemceQuery().then(
       res => {
+             // res['status']=0;
+     // res['messages']=[{body:"service is closed",type:"error"}]
+      if(res['status']){
+        this.isClosed=false;
         this.absData = (res as any).data;
         //// console.log(this.absData.absent_percentage_total);
         this.status = (res as any).status;
-        this.isLoading = false;
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
+      }
+      this.isLoading = false;
+
       }
     );
     this.arabicPrint = this.academicService.Download();

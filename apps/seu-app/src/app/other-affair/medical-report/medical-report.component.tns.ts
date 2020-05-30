@@ -15,10 +15,12 @@ export class MedicalReportComponent implements OnInit {
   arabicPrint: string;
   EngPrint: string;
   isLoading = false;
-  msgs: any;
+  msgs: any=[];
   printAR = '';
   printEN = '';
   isDownLoaded = false;
+  isClosed: boolean;
+  messagesList: any;
   constructor(private academicService: MedicalReportService,
     private downloader: DataDownLoadService,
     private transalte: TranslateService) { }
@@ -35,10 +37,18 @@ export class MedicalReportComponent implements OnInit {
     this.isLoading = true;
     this.academicService.getِMedicalReport().then(
       res => {
+      if(res['status']){
+        this.isClosed=false;
     this.mrData =    (res as any).data;
-    this.isLoading = false;
     this.msgs = (res as any).messages;
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
       }
+
+      this.isLoading = false;
+
+    }
     );
     this.arabicPrint =   this.academicService.Download();
     this.EngPrint = this.academicService.DownloadEng();

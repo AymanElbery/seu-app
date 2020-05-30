@@ -1,25 +1,59 @@
-<main role="main">
-  <div class="wrapper">
-    <app-apps-header [appUserService]="appUser"></app-apps-header>
-    <div class="page-wrap">
-      <div class="container-fluid" style="min-height: 500px;">
-        <div class="container" style="margin-top: 40px;">
-          <br /><br /><br /><br />
-          <div class="row">
-            <div class="col-md-6 col-sm-12  text-center">
-              <a href="#" class="btn btn-primary tab-css text-center"
-                routerLink="/apps/admission-ug">{{'ug' | translate}}
-              </a>
+<div class="wrapper">
+
+  <app-apps-header [appUserService]="appUser"></app-apps-header>
+
+  <div class="page-wrap">
+
+    <div class="main-landing">
+      <div class="container-fluid">
+        <div class="row vertical-divider">
+          <div class="col-md-6 offset-md-3 ">
+
+            <div class="data row">
+              <div class="text-center col">
+                <a href="#" class="" routerLink="/"> <img src="../../assets/images/award.png">
+                  {{'memeber' | translate}}
+
+                </a>
+              </div>
+              <hr class="hr1">
+
+              <div class="text-center col">
+                <a href="#" class="" routerLink="/"><img src="../../assets/images/concept.png">
+                  {{'publicservices' | translate}}
+                </a>
+              </div>
             </div>
-            <div class="col-md-6 col-sm-12  text-center">
-              <a href="#" class="btn btn-primary tab-css text-center"
-                routerLink="/apps/admission-gr">{{'gr' | translate}}
-              </a>
+
+            <hr class="hr">
+
+
+            <div class="data row">
+              <div class="text-center col">
+                <a href="#" class="" routerLink="/apps/admission-ug"> <img src="../../assets/images/browser.png">
+
+                  {{'ug' | translate}}
+                </a>
+              </div>
+              <hr class="hr1">
+              <div class="text-center col">
+                <a href="#" class="" routerLink="/apps/admission-gr"><img src="../../assets/images/scholarship.png">
+                  {{'gr' | translate}}
+                </a>
+              </div>
             </div>
+
           </div>
         </div>
+
+
       </div>
-      <app-apps-footer></app-apps-footer>
+
+
     </div>
+    <app-apps-footer></app-apps-footer>
+
+
   </div>
-</main>
+
+</div>

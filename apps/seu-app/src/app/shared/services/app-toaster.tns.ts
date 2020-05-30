@@ -15,7 +15,27 @@ export class AppToasterService {
   });
     toast.show();
   }
+
+  saved() {
+    const toast = new Toasty({ text: 'تم الحفظ',
+    yAxisOffset: 25,
+    ios:{
+      cornerRadius: 24
+    }
+  });
+    toast.show();
+  }
+  show(msg) {
+    const toast = new Toasty({ text: msg,
+    yAxisOffset: 25,
+    ios:{
+      cornerRadius: 24
+    }
+  });
+    toast.show();
+  }
   push(messages) {
+    // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < messages.length; i++) {
         const toast = new Toasty({ text: messages[i].body,
           yAxisOffset: 25,

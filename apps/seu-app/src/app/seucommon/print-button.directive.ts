@@ -53,7 +53,7 @@ export class PrintButtonDirective {
     this.isDownloading = false;
     this.rendered.removeChild(this.elmRef.nativeElement, this.elmRef.nativeElement.children[1]);
   }
-  constructor(private elmRef: ElementRef, private rendered: Renderer2, private toaster: AppToasterService, private renderer: Renderer2, private http: HttpClient, private globalService: GlobalBaseService,private userService:UserService) {
+  constructor(private elmRef: ElementRef, private rendered: Renderer2, private toaster: AppToasterService, private renderer: Renderer2, private http: HttpClient, private globalService: GlobalBaseService, private userService: UserService) {
   }
 
 
@@ -86,6 +86,7 @@ export class PrintButtonDirective {
       'Session-ID': sid,
       'Student-ID': this.userService.userData.username
     });
+    console.log(url);
     return this.http.get(this.removeURLParameter(url, "sid"), { headers: headers, responseType: 'blob' as 'json', observe: 'response' });
   }
 }

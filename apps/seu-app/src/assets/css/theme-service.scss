@@ -2213,6 +2213,8 @@ iframe {
     padding: 10px 20px;
     border-bottom: 1px solid #f5f7f9;
     position: relative;
+     background: #01182a;
+    color: #fff;
 
     .widget-title {
       font-size: 14px;
@@ -8241,7 +8243,7 @@ iframe {
 
       .sidebar-content {
         position: relative;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 75px);
         overflow: auto;
         z-index: 4;
 
@@ -8681,7 +8683,7 @@ iframe {
       right: 0;
       width: 240px;
       background: #fff;
-      height: calc(100vh - 60px);
+      height: calc(100vh - 75px);
       border-right: 1px solid #eef1f2;
       border-top: 1px solid #eef1f2;
       padding: 1.07143em;

@@ -12,6 +12,7 @@ import { RadSideDrawerComponent } from 'nativescript-ui-sidedrawer/angular/side-
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { ObservableArray } from 'tns-core-modules/data/observable-array/observable-array';
 import { Downloader } from 'nativescript-downloader';
+import { ApiUserRoles } from './shared/models/StaticData/api-user-roles';
 declare var UIView, NSMutableArray, NSIndexPath;
 
 @Component({
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit {
 
     // tslint:disable-next-line: variable-name
     private _dataItems: Array<{'title': string, 'subTitles': Array<object>}>;
-    public clickedArray: Array<{'title': string, 'subTitles': Array<object>}> = [{title: '',subTitles: [{}]}];
+    public clickedArray: Array<{'title': string, 'subTitles': Array<object>}> = [{title: '', subTitles: [{}]}];
     clickedd = {}; s;
     @ViewChild(RadSideDrawerComponent,
         {
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
     role = '';
     UG_Menu: Array<any> = [];
     GR_Menu: Array<any> = [];
+    Employee_Menu: { title: string; subTitles: object[]; }[];
     constructor(    private translate: TranslateService,
                     public userService: UserService,
                     private router: Router, private routerExtensions: RouterExtensions,
@@ -76,11 +78,11 @@ export class AppComponent implements OnInit {
         this.userService.logedIn = false;
      //   draw.drawerLocation = SideDrawerLocation.Right;
 
-        this._dataItems = [{title: '',subTitles: [{}]}];
+        this._dataItems = [{title: '', subTitles: [{}]}];
         Downloader.init();
         this.UG_Menu = [
         {
-            title: 'الشئون الاكاديمية',
+            title: 'الشؤون الاكاديمية',
             subTitles: [
                 {
                 subTitle: 'الحالة الاكاديمية',
@@ -312,20 +314,211 @@ export class AppComponent implements OnInit {
 ]
 }
     ];
+
+        this.Employee_Menu = [
+        {
+            title: 'بياناتى',
+            subTitles: [
+                {
+                subTitle: 'بيانات الموظف',
+                route: '/personal/'
+            },
+            {
+                subTitle: 'طباعة تعاريف الموظف',
+                route: '/personal/print-report'
+            },
+            {
+                subTitle: 'المناصب الإدارية',
+                route: '/personal/managerial-duties'
+            }, {
+                subTitle: 'الرواتب',
+                route: '/personal/salaries'
+            },
+            {
+                subTitle:'البدلات و المكافاَت',
+                route:'/administrative/vouchers'
+            }
+        ]},
+        {
+            title:"استعلاماتى",
+            subTitles:[
+                {
+                    subTitle:'الإجازات',
+                    route:'/personal/vacations'
+                },
+                {
+                    subTitle:"حسم من الإجازة العادية",
+                    route:"/administrative/penalty-discount"
+                },
+                {
+                    subTitle:'عهد الموظف',
+                    route:"/administrative/emp-custody"
+                },
+                {
+                    subTitle:'التقويم الوظيفي',
+                    route:'/administrative/emp-evaluations'
+                },
+                {
+                    subTitle:'خطابات الشكر والإنذارات',
+                    route:'/administrative/emp-letters'
+                },
+                {
+                    subTitle:'الدورات التدريبية',
+                    route:'/administrative/training'
+                }
+            ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    },
+    { title: 'طلباتي',
+            subTitles: [
+                {
+                subTitle: 'الطلبات ',
+                route: '/requests/requests-list'
+            },
+            {
+                subTitle: ' الموافقه على الطلبات',
+                route: '/requests/approval-requests'
+            },
+            {
+                subTitle:'حركة الموافقات',
+                route:'/requests/approval-history'
+            },
+            {
+                subTitle: ' اضافة طلب ',
+                route: '/requests/add-request'
+            }
+        ]
+    }
+
+
+
+
+    /*,
+    {
+        title: 'الطلبات الاكاديمية',
+        subTitles: [
+            {
+            subTitle: 'طلب الإنسحاب من الجامعة',
+            route: '/academicrequests/withdrawal'
+        },
+        {
+            subTitle: 'طلب تأجيل الدراسة',
+            route: '/academicrequests/studypostpone'
+        },
+        {
+            subTitle: 'طلب حذف المقررات ',
+            route: '/academicrequests/termexecuse'
+        },
+        {
+            subTitle: 'اعادة قيد',
+            route: '/academicrequests/reEnroll'
+        },
+        {
+            subTitle: 'حذف مقرر',
+            route: '/academicrequests/cancelcourse'
+        },
+        {
+            subTitle: 'رفع الاعذار للمحاضرات',
+            route: '/academicrequests/lecturesexecuses'
+        },
+        {
+            subTitle: 'رفع اللأعذار للإختبارات',
+            route: '/academicrequests/examsexecuses'
+        },
+        {
+            subTitle: 'الاعتراض على نتيجة الاختبار النهائي',
+            route: '/academicrequests/objectexam'
+        }
+    ]
+},
+{
+    title: ' طباعة الشهادات',
+    subTitles: [
+        {
+        subTitle: ' شهادة التعريف',
+        route: '/cert/id'
+    },
+    {
+        subTitle: 'شهادة حضور اختبارات',
+        route: '/cert/examatt'
+    },
+    {
+        subTitle: 'شهادة اثبات حضور اختبارات',
+        route: '/cert/examattapp'
+    }
+]
+},
+{
+    title: 'طلبات أخرى',
+    subTitles: [
+        {
+        subTitle: 'استعلام عن الغياب',
+        route: '/other/absencequery'
+    },
+    {
+        subTitle: 'تغير تخصص',
+        route: '/other/changecourse'
+    },   {
+        subTitle: 'تغير فرع',
+        route: '/other/changebranch'
+    },   {
+        subTitle: 'بيانات خريج',
+        route: '/other/graduateprofile'
+    },
+    {
+        subTitle: 'البطاقة الجامعيه',
+        route: '/other/personalid'
+    },
+
+]
+}*/
+    ];
     }
 
     get sideDrawerTransition(): DrawerTransitionBase {
         this.userName = this.userService.userData.name_ar;
-
         this.level = this.userService.userData.student_details.level;
-        if (this.level == 'UG') {
+        this.role = this.userService.userData.activeRole;
+
+        if (this.level == 'UG' && this.role == ApiUserRoles.Student) {
             this._dataItems = this.UG_Menu;
 
-        } else if (this.level == 'GR') {
+        } else if (this.level == 'GR' && this.role == ApiUserRoles.Student) {
             this._dataItems = this.GR_Menu;
 
+        } else if (this.role == ApiUserRoles.Emplpyee) {
+            this._dataItems = this.Employee_Menu;
+
+        } else if (this.role == ApiUserRoles.Instructor) {
+            this._dataItems = this.Employee_Menu;
+
+        }else{
+            this._dataItems = [{title: '', subTitles: [{}]}];
+
         }
-        this.role = this.userService.userData.activeRole;
         // console.log('act' + this.role);
         return this._sideDrawerTransition;
     }

@@ -1,1 +1,34 @@
-<Button text="emp-evaluations works!" class="btn btn-primary"></Button>
+<app-header></app-header>
+
+
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+    <StackLayout *ngIf="!isLoading">
+
+      <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"wafi.employeeevaluations" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+      </GridLayout>
+
+      <StackLayout *ngIf="emplistevaluations.length==0">
+        <Label  text='{{"wafi.evaluation_not_found" | translate}}' style="margin:20 20;color: orange;"></Label>
+      </StackLayout>
+
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of emplistevaluations">
+                      
+                      
+        <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_EVALUATIONS_YEAR" | translate}}'></Label>
+        <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.year"></Label>
+    
+        <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_EVALUATIONS_EVALUATION" | translate}}'></Label>
+        <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.evaluation"></Label>
+
+        <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_EVALUATIONS_WORK_DEPT" | translate}}'></Label>
+        <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.workDept"></Label>
+
+         
+      </GridLayout>
+    </StackLayout>
+</ScrollView>

@@ -51,13 +51,22 @@ export class ExamsAttendAppComponent implements OnInit, OnDestroy {
       this.getRequests();
     });
   }
-
+  isClosed = false;
+  messagesList = [];
   getRequests() {
     this.isLoading = true;
 
     this.academicService.getِExamsAttednace('S180105049').then(
       res => {
+        //res['status'] = 0;
+        //res['messages'] = [{body:"service is closed",type:"error"}];
+        if (res['status']) {
         this.eaData = (res as any).data;
+        this.isClosed = false;
+      } else {
+        this.isClosed = true;
+        this.messagesList = res['messages'];
+      }
         this.isLoading = false;
       }, err => {
         this.toastr.tryagain();

@@ -1,7 +1,7 @@
 <div class="main-content">
     <section class="service-single">
       <div class="container">
-        <h3>{{ "menu.student_attendance" | translate}}</h3>
+        <a routerLink="/attendance"><h3>{{ "menu.student_attendance" | translate}}</h3></a>
         <div class="row">
           <div class=" col-md-5">
             <p>{{"attends.attend_report"|translate}}</p>
@@ -17,7 +17,8 @@
     </div>
     <div class="row" style="margin-top: 10px;">
       <div class="col-md-4">
-        <button (click)="exportexcel()" type="button" class="btn btn-success"> {{"attends.excel"|translate}}  <i class="fas fa-file-excel"></i></button>
+        <button id="excel" (click)="exportexcel()" style="background-color: #fff; border-color: green; color:#032b4a" class="btn" data-toggle="tooltip" data-placement="top" title="Excel"> Export as Excel <img src="assets/images/excel-icon.png" width="26px" height="26px"></button>
+        <!-- <button (click)="exportexcel()" type="button" class="btn btn-success"> {{"attends.excel"|translate}}  <i class="fas fa-file-excel"></i></button> -->
       </div>
     </div>
     <div class="widget" style="margin-top: 10px;">

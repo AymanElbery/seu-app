@@ -18,7 +18,7 @@ import { Downloader } from 'nativescript-downloader';
 export class ExamAttendanceCertificateComponent implements OnInit {
 
   isLoading = false;
-  msgs;
+  msgs=[];
 
   test = {};
 
@@ -44,6 +44,8 @@ export class ExamAttendanceCertificateComponent implements OnInit {
   isFinal_Exam_Without_Schedule = false;
   // tslint:disable-next-line: variable-name
   isFinal_Exam_With_Schedule = false;
+  isClosed: boolean;
+  messagesList: any;
 
   constructor(private translate: TranslateService, private toastr: AppToasterService, 
     private stdData: ExamAttendanceCertificateService,
@@ -72,12 +74,13 @@ export class ExamAttendanceCertificateComponent implements OnInit {
     this.isLoading = true;
     this.stdData.getRequest().then
       (res => {
+      if(res['status']){
+        this.isClosed=false;
         this.stdData.reqData = (res as any).data;
         this.stdData.msgs = (res as any).messages;
         this.reqData = this.stdData.reqData;
         console.log("reqdataaaaaaaaaa",this.reqData )
         this.msgs = this.stdData.msgs;
-        this.isLoading = false;
 
         this.arabicPrintTermWithSchedule = this.stdData.Download('Term_Exam_With_Schedule');
         this.EngPrintTermWithSchedule = this.stdData.DownloadEng('Term_Exam_With_Schedule');
@@ -90,7 +93,13 @@ export class ExamAttendanceCertificateComponent implements OnInit {
     
         this.arabicPrintFinalWithoutSchedule = this.stdData.Download('Final_Exam_Without_Schedule');
         this.EngPrintFinalWithoutSchedule = this.stdData.DownloadEng('Final_Exam_Without_Schedule');
-      }, err => {
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
+      }
+      this.isLoading = false;
+    }
+      , err => {
         this.toastr.tryagain;
         this.isLoading = false;
       });

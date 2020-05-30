@@ -28,6 +28,8 @@ export class AcademicStatusComponent implements OnInit {
   terms: ValueItem<number>[] = [];
   acceptanceTerm;
   acceptanceYear: any;
+  isClosed: boolean;
+  messagesList: any;
   constructor(private academicStatusService: AcademicStatusService) { }
 
   ngOnInit() {
@@ -38,16 +40,20 @@ export class AcademicStatusComponent implements OnInit {
     this.isLoadingTerm = true;
     this.academicStatusService.getRequests().then((res) => {
       console.log(res);
+     if(res['status']){
+      this.isClosed=false;
       this.student = (res as any).data;
       console.log('details : ' + this.student);
       //   this.acceptanceTerm = this.student.std_adm_term_label.match(/[^0-9\/م]/g).join('');
       //  this.acceptanceYear = this.student.std_adm_term_label.match(/[0-9\/[0-9]/g).join('');
       console.log(this.acceptanceYear);
 
-
-
-      this.isLoading = false;
-      this.isLoadingTerm = false;
+     }else{
+      this.isClosed=true;
+      this.messagesList=res['messages'];
+    }
+    this.isLoading = false;
+    this.isLoadingTerm = false;
     });
 
   }

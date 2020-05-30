@@ -3,6 +3,10 @@
   <service-header [title]="'services.finance.feepayst' |translate"
   [desc]="'services.finance.feepayst' |translate"></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div *ngIf="isClosed">
+    <seu-flash [msgs]="messagesList"  [isLoading]="isLoading"> </seu-flash>
+   </div>
+   <ng-container *ngIf="!isClosed">
 
   <div class="ser-state" *ngIf="!isLoading"></div>
   <div class="widget" *ngIf="!isLoading">
@@ -138,4 +142,5 @@
 
 
   </div>
+</ng-container>
 </div>

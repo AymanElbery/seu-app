@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
-import { environment } from '../../../../../environments/environment';
+import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpRequestAdmisionUgService {
+export class HttpRequestAdmisionService {
 
   constructor(private translate: TranslateService,
     private http: HttpClient) { }
 
 
   getApiURI() {
-    return environment.servie_admission_UG;
+    return environment.servie_admission;
   }
 
 

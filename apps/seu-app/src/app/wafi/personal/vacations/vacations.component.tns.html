@@ -1,1 +1,87 @@
-<Button text="vacations works!" class="btn btn-primary"></Button>
+<app-header></app-header>
+
+
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+    <StackLayout>
+
+      <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"wafi.Vacations" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+      </GridLayout>
+  
+      <GridLayout  class="ysBox" rows="auto" columns="*,150">
+      <Label row="0" col="1" text='{{"wafi.selectvacationtype" | translate}}' class="ysPBox"></Label>
+      <DropDown row="0" col="0" class="ysPBox2"
+      #dropdown
+      [items]="vacationsDropDown"
+      (selectedIndexChanged)="getVacation($event)"
+      itemsTextAlignment="left"
+      itemsPadding="5"
+      required
+      hint='{{"wafi.selectvacationtype" | translate}}'
+      >
+    </DropDown>
+      </GridLayout>
+      <FlexboxLayout flexDirection="row-reverse" *ngIf="vacations" style="margin-right:20">
+        <Label text='{{"wafi.VacationBalance" | translate}} :'></Label>
+        <Label text='{{VacationBalance}}' style="color: #f08b1c"></Label>
+        <Label text='{{"wafi.VacationReservedBalance" | translate}} :'></Label>
+        <Label text='{{VacationReservedBalance}}' style="color: #f08b1c"></Label>
+        <Label text='{{"wafi.VacationAbsenceBalance" | translate}}'></Label>
+        <Label text='{{VacationAbsenceBalance}}' style="color: #f08b1c"></Label>
+      </FlexboxLayout>
+
+      <StackLayout  *ngFor="let item of vacations">
+        <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+            <Label  text="&#xf107;"  class="fas arr-drop"></Label>
+            <FlexboxLayout flexDirection="row-reverse">
+                <Label text='{{item.desc}}'></Label>
+                <Label text="-"></Label>
+                <Label text='{{item.startDate}}'></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout (tap)="uclickme(item)" [visibility]="clicked == item ? 'visible' : 'collapsed'"  flexDirection="column">
+            <FlexboxLayout flexDirection="column">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                    <Label  text="&#xf106;"  class="fas arr-drop"></Label>
+                    <FlexboxLayout flexDirection="row-reverse">
+                        <Label text='{{item.desc}}'></Label>
+                        <Label text="/"></Label>
+                        <Label text='{{item.startDate}}'></Label>
+                    </FlexboxLayout>
+                 </FlexboxLayout>
+
+      <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,
+      auto,auto,auto,auto,auto,auto,auto,auto,auto,,auto,auto" columns="*,150">
+      
+      <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.seq" | translate}}'></Label>
+      <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.no"></Label>
+  
+      <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.vacationCode" | translate}}'></Label>
+      <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.desc"></Label>
+
+      <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.startDate" | translate}}'></Label>
+      <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.startDate"></Label>
+     
+      <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.endDate" | translate}}'></Label>
+      <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.endDate" ></Label>
+
+      <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.decisionNo" | translate}}'></Label>
+      <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.decisionNo" ></Label>
+      
+      <Label row="6"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.startDateG" | translate}}'></Label>
+      <Label row="6"  column="0" class="ysPBox2" textWrap="true" [text]="item.startDateG" ></Label>
+
+      <Label row="7"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.period" | translate}}'></Label>
+      <Label row="7"  column="0" class="ysPBox2" textWrap="true" [text]="item.period" ></Label>
+          
+      </GridLayout>
+    </FlexboxLayout>
+  </FlexboxLayout>
+  </StackLayout>
+    </StackLayout>
+
+</ScrollView>

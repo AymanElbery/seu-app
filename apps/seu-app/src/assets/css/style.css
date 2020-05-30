@@ -231,7 +231,7 @@ nav.navbar.bootsnav.navbar-transparent.dark .attr-nav>ul>li>a,
 nav.navbar.bootsnav.navbar-transparent.dark ul.nav>li>a {
   color: #eee;
 }
-}
+
 
 @media (max-width: 992px) {
 
@@ -2730,7 +2730,6 @@ a:focus {
   font-size: 1.4em;
   text-align: center;
   position: absolute;
-  margin-left: -;
   background-color: #999999;
   border-radius: 50%;
 }
@@ -3464,3 +3463,4 @@ blockquote::after {
     max-width: 400px !important;
 }
 }
+

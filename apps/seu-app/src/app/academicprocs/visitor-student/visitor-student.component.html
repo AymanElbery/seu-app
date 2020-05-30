@@ -1,6 +1,6 @@
 <div class="main-content">
   <service-header [title]="'services.visitor_student.title' |translate"
-  [desc]="'services.visitor_student.desc' |translate"></service-header>
+    [desc]="'services.visitor_student.desc' |translate"></service-header>
 
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
@@ -41,6 +41,7 @@
             <th scope="col">{{"general.course_name"|translate}}</th>
             <th scope="col"> {{"general.request.req_date"|translate}}</th>
             <th scope="col">{{"general.request.req_status"|translate}}</th>
+            <th scope="col">{{"general.request.notes"|translate}}</th>
             <th scope="col"> {{"general.print"|translate}}</th>
             <th scope="col">{{"services.visitor_student.procedure"|translate}}</th>
 
@@ -56,16 +57,17 @@
             <td>{{it.course_equal}}</td>
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
+            <td>{{it.notes}}</td>
 
-            <td><a class="btn btn-sm btn-primary" style="color: white" [href]="printRequest(it.request_number)"><i
-                  class="fa fa-print"></i> </a></td>
-                  <td *ngIf='it.deletable'><button
-                    [disabled]='deleting' class="btn btn-sm btn-danger"
-                    style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash">
-                       <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
-                    </i> </button></td>
+            <td><a seu-auto-print *ngIf="it.printable" class="btn btn-sm btn-primary" style="color: white"
+                [href]="printRequest(it.request_number)"><i class="fa fa-print"></i> </a>
+            </td>
+            <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
+                (click)="delete(it.request_number,i)"><i class="fa fa-trash">
+                  <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
+                </i> </button></td>
 
-                <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"|translate}}</td>
+            <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"|translate}}</td>
 
 
           </tr>

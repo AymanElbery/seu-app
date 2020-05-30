@@ -16,6 +16,8 @@ declare var UIView, NSMutableArray, NSIndexPath;
   styleUrls: ['./academic-record.component.scss']
 })
 export class AcademicRecordComponent implements OnInit {
+  isClosed: boolean;
+  messagesList: any;
   constructor(private academicService: AcademicRecordService,
     private downloader: DataDownLoadService,
     private transalte: TranslateService) { }
@@ -76,9 +78,16 @@ onItemTap(event: ListViewEventData) {
     this.isLoading = true;
     this.academicService.getRecord().then(
       res => {
+      if(res['status']){
+        this.isClosed=false;
     this.recoredData =    (res as any).data;
-    this.isLoading = false;
+      }else{
+        this.isClosed=true;
+        this.messagesList=res['messages'];
       }
+      this.isLoading = false;
+
+    }
     );
     this.arabicPrint =   this.academicService.Download();
     this.EngPrint = this.academicService.DownloadEng();
