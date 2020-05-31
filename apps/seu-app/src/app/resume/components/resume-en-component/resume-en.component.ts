@@ -34,20 +34,22 @@ export class ResumeEnComponent{
   name;
   email;
   phone;
-  address;
+  // address;
   jobTitle;
   section;
   faculty;
+  office;
   work;
   nationality;
 
   nameError;
   emailError;
   phoneError;
-  addressError;
+  // addressError;
   jobTitleError;
   sectionError;
   facultyError;
+  officeError;
   workError;
 
   title;
@@ -62,6 +64,7 @@ export class ResumeEnComponent{
   agree = false;
   pidm;
   sectionEdit = true;
+  facultyEdit = true;
 
   constructor(
     public userService: UserService, 
@@ -75,28 +78,11 @@ export class ResumeEnComponent{
   ) {
     this.id = this.userService.userData.id;
     this.pidm = this.userService.userData.PIDM;
+    this.jobTitle = this.userService.userData.role;
 
-    this.resumeService.getDept(this.pidm).subscribe(
-      (response: any) => {
-        if (response) {
-          if (response.data == null) {
-            this.sectionEdit = true;
-          } else {
-            this.sectionEdit = false;
-            let depCode = response.data.DEP_CODE;
-            this.resumeService.getDeptStr(depCode).subscribe(
-              (response: any) => {
-                if (response) {
-                  this.section = response.data.DEPT_DESC_EN;
-                }
-              },
-              error => {}
-            );
-          }
-        }
-      },
-      error => {}
-    );
+    this.getFaculty();
+    this.getDepartment();
+    
     this.resumeService.getStuffByID(this.id).subscribe(
       (response: any) => {
         if (response) {
@@ -118,6 +104,54 @@ export class ResumeEnComponent{
     );
   }
 
+  getFaculty(){
+    this.resumeService.getFac(this.pidm).subscribe(
+      (response: any) => {
+        if (response) {
+          if (response.data == null) {
+            this.facultyEdit = true;
+          } else {
+            this.facultyEdit = false;
+            let facCode = response.data.DEP_CODE;
+            this.resumeService.getFacStr(facCode).subscribe(
+              (response: any) => {
+                if (response) {
+                  this.faculty = response.data.COLL_TITLE_EN;
+                }
+              },
+              error => {}
+            );
+          }
+        }
+      },
+      error => {}
+    );
+  }
+
+  getDepartment(){
+    this.resumeService.getDept(this.pidm).subscribe(
+      (response: any) => {
+        if (response) {
+          if (response.data == null) {
+            this.sectionEdit = true;
+          } else {
+            this.sectionEdit = false;
+            let depCode = response.data.DEP_CODE;
+            this.resumeService.getDeptStr(depCode).subscribe(
+              (response: any) => {
+                if (response) {
+                  this.section = response.data.DEPT_DESC_EN;
+                }
+              },
+              error => {}
+            );
+          }
+        }
+      },
+      error => {}
+    );
+  }
+
   agreeCond(event: any){
     this.agree = (event == "A") ? true : false;
   }
@@ -132,10 +166,11 @@ export class ResumeEnComponent{
             this.name = this.data.NAME;
             this.email = this.data.EMAIL;
             this.phone = this.data.PHONE;
-            this.address = this.data.ADDRESS;
+            // this.address = this.data.ADDRESS;
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
             this.faculty = this.data.FACULTY;
+            this.office = this.data.OFFICE;
             this.nationality = this.data.NATIONALITY;
             this.titles = this.data.TITLES;
             if (this.titles) {
@@ -210,6 +245,9 @@ export class ResumeEnComponent{
   hideFacultyMessages(){
     this.facultyError = null;
   }
+  hideOfficeMessages(){
+    this.officeError = null;
+  }
 
   onSubmit(){
 
@@ -248,6 +286,10 @@ export class ResumeEnComponent{
       this.facultyError = "هذا الحقل مطلوب";
       valid = false;
     }
+    if (this.office == "" || this.office == null) {
+      this.officeError = "هذا الحقل مطلوب";
+      valid = false;
+    }
 
     if (valid) {
       let data = {
@@ -256,10 +298,11 @@ export class ResumeEnComponent{
         name        : this.name,
         email       : this.email,
         phone       : this.phone,
-        address     : this.address,
+        // address     : this.address,
         jobTitle    : this.jobTitle,
         section     : this.section,
         faculty     : this.faculty,
+        office      : this.office,
         nationality : this.nationality,
         titles      : this.titles,
       };

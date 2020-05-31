@@ -7,27 +7,30 @@ import { CertificateIDComponent } from './certificate-id/certificate-id.componen
 import { AcademicRecordComponent } from './academic-record/academic-record.component';
 import { AcademicStatusService } from './services/academic-status.service';
 import { CertificateIDService } from './services/certificate-id.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AcademicRecordService } from './services/academic-record.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { GraduateStateComponent } from './graduate-state/graduate-state.component';
+import { GraduateAddressComponent } from './graduate-address/graduate-address.component';
 import { GraduatesStateService } from './services/graduates-state.service';
+import { GraduatesAddressService } from './services/graduates-address.service';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
 import { StudentGradesComponent } from './student_grades/student-grades.component';
 @NgModule({
   declarations: [AcademicStatusComponent, CertificateIDComponent, AcademicRecordComponent,
-    GraduateStateComponent, SkillsRecordComponent , StudentGradesComponent
+    GraduateStateComponent, SkillsRecordComponent , StudentGradesComponent, GraduateAddressComponent
   ],
   imports: [
     CommonModule,
     AcademicaffRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MatProgressSpinnerModule,
     AppLazyTransModule,
     SeucommonModule
   ],
-  providers: [AcademicStatusService, CertificateIDService, AcademicRecordService, GraduatesStateService]
+  providers: [AcademicStatusService, CertificateIDService, AcademicRecordService, GraduatesStateService, GraduatesAddressService]
 })
 export class AcademicaffModule {
   constructor(){
