@@ -2223,16 +2223,16 @@ iframe {
       .btn {
         float: left;
         border-radius: 50px;
-        background: transparent;
-        color: #26226a;
+        // background: transparent;
+        // color: #26226a;
         padding: 6px 20px;
         height: auto;
         border-color: #f28d1e;
 
         &:hover,
         &:focus {
-          border-color: #f28d1e;
-          color: #26226a !important;
+          // border-color: #f28d1e;
+          // color: #26226a !important;
 
           .ik {
             transform: rotate(180deg) scale(1.1);

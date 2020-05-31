@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="profile">
             <img *ngIf="profile == 'notExist'" src="assets/images/profile.png">
             <img *ngIf="profile != 'notExist'" src="https://seuapps.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
@@ -61,6 +61,8 @@
             <span *ngIf="emailError" class="text text-danger">{{emailError}}</span>
           </div>
         </div>
+      </div>
+      <div class="row row-form" >
         <div class="col-md-6">
           <div class="form-group">
             <label for="jobTitle">{{ "resume.jobTitle" | translate}} <span class="text-danger">*</span></label>
@@ -68,15 +70,22 @@
             <span *ngIf="jobTitleError" class="text text-danger">{{jobTitleError}}</span>
           </div>
         </div>
-      </div>
-      <div class="row row-form" >
-        <div class="col-md-6">
+        <div *ngIf="!facultyEdit" class="col-md-6">
           <div class="form-group">
             <label for="faculty">{{ "resume.faculty" | translate}}  <span class="text-danger">*</span></label>
             <input (input)="hideFacultyMessages()" disabled required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
             <span *ngIf="facultyError" class="text text-danger">{{facultyError}}</span>
           </div>
         </div>
+        <div *ngIf="facultyEdit" class="col-md-6">
+          <div class="form-group">
+            <label for="faculty">{{ "resume.faculty" | translate}}  <span class="text-danger">*</span></label>
+            <input (input)="hideFacultyMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
+            <span *ngIf="facultyError" class="text text-danger">{{facultyError}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="row row-form" >
         <div *ngIf="!sectionEdit" class="col-md-6">
           <div class="form-group">
             <label for="section">{{ "resume.section" | translate}}  <span class="text-danger">*</span></label>
@@ -91,13 +100,6 @@
             <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
           </div>
         </div>
-        <!-- <div class="col-md-6">
-          <div class="form-group">
-            <label for="work">{{ "resume.work" | translate}}</label>
-            <input (input)="hideWorkMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': workError}" id="work" [(ngModel)]="work" name="work">
-            <span *ngIf="workError" class="text text-danger">{{workError}}</span>
-          </div>
-        </div> -->
         <div class="col-md-6">
           <div class="form-group">
             <label for="phone">{{ "resume.phone" | translate}}  <span class="text-danger">*</span></label>
@@ -105,13 +107,15 @@
             <span *ngIf="phoneError" class="text text-danger">{{phoneError}}</span>
           </div>
         </div>
-        <div class="col-md-6">
+      </div>
+      <div class="row row-form">
+        <!-- <div class="col-md-4">
           <div class="form-group">
             <label for="address">{{ "resume.address" | translate}}</label>
             <input required type="text" [ngClass]="{'errorBorder': addressError}" class="form-control" id="address" [(ngModel)]="address" name="address">
             <span *ngIf="addressError" class="text text-danger">{{addressError}}</span>
           </div>
-        </div>
+        </div> -->
         <div class="col-md-6">
           <div class="form-group">
             <label for="nationality">{{ "resume.nationality" | translate}} </label>
@@ -119,6 +123,13 @@
               <option>--</option>
               <option [selected]="country.COUNTRY_AR == nationality" *ngFor="let country of countries">{{ country.COUNTRY_AR }}</option>
             </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="office">{{ "resume.office" | translate}} <span class="text-danger">*</span></label>
+            <input required type="text" [ngClass]="{'errorBorder': officeError}" class="form-control" id="office" [(ngModel)]="office" name="office">
+            <span *ngIf="officeError" class="text text-danger">{{officeError}}</span>
           </div>
         </div>
       </div>

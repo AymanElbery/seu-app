@@ -13,7 +13,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class AddVisitorStudentComponent implements OnInit {
 
-  visitorStudent: VisitorStudent
+  visitorStudent;
   reqData: any;
   msgs: any;
   universitiesList: any;

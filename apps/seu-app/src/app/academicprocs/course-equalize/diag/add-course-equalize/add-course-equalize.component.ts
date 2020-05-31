@@ -53,7 +53,6 @@ export class AddCourseEqualizeComponent implements OnInit {
       }
     }
     //console.log(this.curseEqual.courses);
-
   }
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];

@@ -20,22 +20,24 @@ export class MenuComponent implements OnInit, AfterContentInit {
   unreadEnqueries;
   constructor(public userService: UserService, private router: Router, public task: TasksManagementService, private enquriesService: EnquriesService) {
     this.environment = environment;
-    let unread = this;
-    this.getUnreadEnquries();
-    setInterval(function(){ 
-      unread.getUnreadEnquries(); 
-    }, 60000);
     
+    // if (this.environment.chatbot_mails.includes(this.userService.userData.email)) {
+      let unread = this;
+      this.getUnreadEnquries();
+      setInterval(function(){ 
+        unread.getUnreadEnquries(); 
+      }, 60000);
+    // }
   }
   ngAfterContentInit() {
     window['WindowStartSerices']();
   }
 
   getUnreadEnquries(){
-    this.enquriesService.getListEnquries().subscribe(
+    this.enquriesService.getNotificationsEnq().subscribe(
       (response: any) => {
         if (response) {
-          this.unreadEnqueries = response.totalElements;
+          this.unreadEnqueries = response.data.count;
         }
       },
       error => {}
