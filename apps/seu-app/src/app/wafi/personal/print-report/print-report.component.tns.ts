@@ -42,12 +42,10 @@ export class PrintReportComponent implements OnInit {
      private http: HttpClient,private downloader: DataDownLoadService) { }
   isLoading = true;
   ngOnInit() {
-    if (isAndroid) {
-      console.log("android print");
+    if(isAndroid) {
        this.downloadedFilePath = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
 
     }else if(isIOS){
-      console.log("ios print");
       this.downloadedFilePath= fileSystem.knownFolders.ios.library().path
     }
 
@@ -87,12 +85,19 @@ export class PrintReportComponent implements OnInit {
         const fileName = fName+'.pdf';
      
       const permissions = require('nativescript-permissions');
-      permissions.requestPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 'I need these permissions').then(
+      if(isAndroid){
+        permissions.requestPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 'I need these permissions').then(
           () => {
               const file: File = File.fromPath(path.join(this.downloadedFilePath,fileName));
               this.convertBase64ToPdf(prtrpt['data'],file);
               utils.openFile(file.path);
             });
+      }else{
+        const file: File = File.fromPath(path.join(this.downloadedFilePath,fileName));
+        this.convertBase64ToPdf(prtrpt['data'],file);
+        utils.openFile(file.path);
+      }
+     
         this.isLoading = false
       } else {
         this.toaster.tryagain();
