@@ -12,10 +12,13 @@
          <Label *ngIf="!mail.valid" text='{{"wafi.email_err_msg"|translate}}' style="color: red;"></Label>
 
         <Label text='{{"wafi.Mobile"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <TextField [(ngModel)]="updatedForm.mobile_no" #mobile="ngModel" keyboardType="phone" required></TextField>
+        <TextField [(ngModel)]="updatedForm.mobile_no" #mobile="ngModel" keyboardType="phone" required pattern="[0-9]+"></TextField>
+        <Label *ngIf="!mobile.valid" text='{{"wafi.phone_no_err"|translate}}' style="color: red;"></Label>
+
 
         <Label text='{{"wafi.AlternativePhone"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <TextField [(ngModel)]="updatedForm.phone_no" #phone="ngModel" keyboardType="phone" required></TextField>
+        <TextField [(ngModel)]="updatedForm.phone_no" #phone="ngModel" keyboardType="phone" required pattern="[0-9]+"></TextField>
+        <Label *ngIf="!phone.valid" text='{{"wafi.phone_no_err"|translate}}' style="color: red;"></Label>
 
         <Label text='{{"wafi.address"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
         <TextField [(ngModel)]="updatedForm.address" #address="ngModel" required></TextField>

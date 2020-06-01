@@ -31,6 +31,12 @@ export class EnquriesService {
             headers: this.headers,
         });
     }
+    getNotificationsEnq() {
+        return this.http.get(this.URL + "client-messages/unreplied-messages-count",
+        {
+            headers: this.headers,
+        });
+    }
 
     getUnrepliedEnquries() {
         return this.http.get(this.URL + "client-messages/list-all-unreplied",

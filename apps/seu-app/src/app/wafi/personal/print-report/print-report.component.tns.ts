@@ -12,7 +12,7 @@ import * as utils from 'tns-core-modules/utils/utils';
 import { path ,File} from 'tns-core-modules/file-system';
 import * as TextModule from "tns-core-modules/text";
 import * as base64 from "base-64";
-import { isAndroid } from 'tns-core-modules/platform';
+import { isAndroid, isIOS } from 'tns-core-modules/platform';
 import * as fileSystem from 'tns-core-modules/file-system';
 
 declare var java: any;
@@ -42,10 +42,10 @@ export class PrintReportComponent implements OnInit {
      private http: HttpClient,private downloader: DataDownLoadService) { }
   isLoading = true;
   ngOnInit() {
-    if (isAndroid) {
+    if(isAndroid) {
        this.downloadedFilePath = android.os.Environment.getExternalStoragePublicDirectory(android.os.Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
 
-    }else{
+    }else if(isIOS){
       this.downloadedFilePath= fileSystem.knownFolders.ios.library().path
     }
 
@@ -85,12 +85,19 @@ export class PrintReportComponent implements OnInit {
         const fileName = fName+'.pdf';
      
       const permissions = require('nativescript-permissions');
-      permissions.requestPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 'I need these permissions').then(
+      if(isAndroid){
+        permissions.requestPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 'I need these permissions').then(
           () => {
               const file: File = File.fromPath(path.join(this.downloadedFilePath,fileName));
               this.convertBase64ToPdf(prtrpt['data'],file);
               utils.openFile(file.path);
             });
+      }else{
+        const file: File = File.fromPath(path.join(this.downloadedFilePath,fileName));
+        this.convertBase64ToPdf(prtrpt['data'],file);
+        utils.openFile(file.path);
+      }
+     
         this.isLoading = false
       } else {
         this.toaster.tryagain();

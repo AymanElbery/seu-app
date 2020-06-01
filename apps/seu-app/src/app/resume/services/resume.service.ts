@@ -30,9 +30,10 @@ export class ResumeService {
             name: data.name, 
             email: data.email, 
             phone: data.phone, 
-            address: data.address, 
+            // address: data.address, 
             jobTitle: data.jobTitle, 
             faculty: data.faculty, 
+            office: data.office, 
             section: data.section, 
             nationality: data.nationality, 
             titles: data.titles, 
@@ -76,6 +77,20 @@ export class ResumeService {
 
     getDeptStr(dep) {
         return this.http.get(this.URL + "resume/getDeptStr/"+dep,
+        {
+            headers: this.headers,
+        });
+    }
+
+    getFac(pidm) {
+        return this.http.get(this.URL + "resume/getFac/"+pidm,
+        {
+            headers: this.headers,
+        });
+    }
+
+    getFacStr(fac) {
+        return this.http.get(this.URL + "resume/getFacStr/"+fac,
         {
             headers: this.headers,
         });

@@ -15,7 +15,7 @@
       </GridLayout>
 
       <StackLayout *ngIf="emplistcustody && emplistcustody.length==0">
-        <Label  text='{{"wafi.custody_not_found" | translate}}' style="margin:20 20;color: orange;"></Label>
+        <Label  text='{{"wafi.custody_not_found" | translate}}' style="margin:20 20;color: orange;" class="iosFont"></Label>
       </StackLayout>
       
       <StackLayout  *ngFor="let item of emplistcustody">
