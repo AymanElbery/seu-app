@@ -32,7 +32,7 @@ getempIdLoggedin() {
     obj['sessionId'] = this.globalService.getSID();
     obj['empId'] = this.user.userData.id;
     // obj["empId"] = "4417010014";
-    obj["empId"] = "4361010022";
+   // obj["empId"] = "4361010022";
     // obj["empId"] = "4417010015";
 
     obj['lang'] = this.translate.currentLang == 'ar' ? 1 : 2;
