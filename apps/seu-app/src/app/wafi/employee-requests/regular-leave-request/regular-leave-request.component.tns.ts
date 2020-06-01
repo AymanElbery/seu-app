@@ -72,7 +72,7 @@ d;
     this.submitted = true;
     console.log('file', filePath);
     this.dataObject.file = this.convertToBase64(filePath);
-  
+
     console.log('submit data', this.dataObject);
 
     this.empreqservice.submitreqserviceleavededuction(this.dataObject).subscribe(leavdedcut => {
@@ -80,8 +80,13 @@ d;
 
      console.log('datadata');
      console.log(leavdedcut);
-     alert(leavdedcut);
-     if ((!leavdedcut as any).data.saveRequest) {
+     if (!(leavdedcut as any).data) {
+      const error = 'خطأ ارسال البيانات ';
+
+      this.toastr.push([{ type: 'error', body: error }]);
+
+     }
+     if (!(leavdedcut as any).data.saveRequest) {
         const error = (leavdedcut as any).data.errorMassege;
         this.toastr.push([{ type: 'error', body: error }]);
 
@@ -228,6 +233,8 @@ d;
                   filePath = result.file;
                   console.log('filepath:');
                   console.log(result.file);
+                  filePath = filePath.replace('file:///', '');
+                  console.log('fpath', filePath);
                 }
             }
         }

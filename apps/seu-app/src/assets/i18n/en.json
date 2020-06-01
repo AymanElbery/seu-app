@@ -1012,6 +1012,7 @@
         "scheduleName": "schedule Name",
         "sideName": "Side Name",
         "DisclaimerReason": "Disclaimer Reason",
+        "disChoose":"Choose reason",
         "requestApprovalsData": "Request Approvals Data",
         "StepNo": "Step No",
         "ApprovedEmployee": "Approved Employee",

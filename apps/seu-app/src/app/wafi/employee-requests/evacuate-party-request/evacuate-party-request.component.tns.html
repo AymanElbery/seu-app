@@ -1,1 +1,96 @@
-<Button text="evacuate-party-request works!" class="btn btn-primary"></Button>
+<ActionBar style="background:#001628; ">
+    <!-- 
+      Use the NavigationButton as a side-drawer button in Android
+      because ActionItems are shown on the right side of the ActionBar
+      -->
+    <!-- 
+      Use the ActionItem for IOS with position set to left. Using the
+      NavigationButton as a side-drawer button in iOS is not possible,
+      because its function is to always navigate back in the application.
+      -->
+    <StackLayout horizontalAlignment="center" style="height: 100%;margin: 0px;" margin-top="0">
+  
+      <Image style="width: 100%;" [nsRouterLink]="['/land']" src="~/images/logo_3d.png"></Image>
+    </StackLayout>
+    <NavigationButton icon="font://&#xf104;" style="font-size: 25px;" class="fas icon-action" (tap)="goBack()"
+      ios.position="left"></NavigationButton>
+  
+  </ActionBar>
+  <ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
+  
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+  
+      <GridLayout columns="auto, *" class="serv-title">
+        <Label col="1" text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"wafi.AddNewRequest" | translate}}' class="serv-name"></Label>
+        <Label col="1" text="&#xf0da;" class="fas serv-ico "></Label>
+  
+      </GridLayout>
+  
+  
+  
+  
+  
+      <StackLayout height="100%" *ngIf="!isLoading">
+        <StackLayout>
+  
+          <FlexboxLayout flexDirection="column">
+            <FlexboxLayout flexDirection="column">
+  
+              <StackLayout class="ysBox">
+              
+              
+                
+
+                 
+               
+                 
+                  <GridLayout  rows="auto"  columns="*">
+                                  
+                    <Label row="0"  colSpam="2" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.date"|translate}}'></Label>
+                       
+                          </GridLayout>
+                          <GridLayout  rows="auto"  columns="*,150">
+                            <label class="ysPBox"  row="0" col="1" text='{{"wafi.DisclaimerReason"|translate}}'></label>
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            [items]="disclaimerReasonItemsDropDown"
+                            (selectedIndexChanged)="changedisclaimerReason($event)"
+                            hint="{{'wafi.disChoose'|translate}}"
+                            itemsTextAlignment="center" style="text-align: center ;width: 100%;" >
+                          
+                          </DropDown>
+                          </GridLayout>
+                         
+                         
+                          <GridLayout  rows="auto"  columns="*,150">
+                            <label class="ysPBox" row="0" col="1" text="{{'wafi.leaveDeductionPeriod'|translate}}"></label>
+                            <TextField class="ysPBox2" keyboardType="number" col="0" row="0" hint="{{'wafi.leaveDeductionPeriod'|translate}}"  [(ngModel)]='dataObject.leaveDeductionPeriod' ></TextField>
+                          </GridLayout>
+
+
+                          <GridLayout   rows="auto"  columns="*,150">
+                            <label class="ysPBox"  row="0" col="1" text="{{'wafi.notes'|translate}}"></label>
+                            <TextField class="ysPBox2"  col="0" row="0"  hint=" {{'wafi.notes'|translate}}" [(ngModel)]='dataObject.notes' ></TextField>
+
+                          </GridLayout>
+                          <GridLayout   rows="auto"  columns="*,150">
+                            <label class="ysPBox"  row="0" col="1" text="{{'wafi.attachment'|translate}}"></label>
+                            <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="ysPBox print-btn"></Button>
+
+                          </GridLayout>
+
+                          <GridLayout rows="*,*" columns="*,*">
+
+                            <Button row="1" col="1" text='{{"wafi.Submit" | translate}}'   class=" print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
+                            <Button row="1" col="0" text='{{"wafi.back" | translate}}'    [disabled]="submitted" class=" print-btn "  (tap)="back()"></Button>
+                          </GridLayout>
+                     
+
+              </StackLayout>
+            </FlexboxLayout>
+          </FlexboxLayout>
+        </StackLayout>
+      </StackLayout>
+    </FlexboxLayout>
+  </ScrollView>
