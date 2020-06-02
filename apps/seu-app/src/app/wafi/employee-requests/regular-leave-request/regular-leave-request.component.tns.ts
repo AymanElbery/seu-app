@@ -188,7 +188,7 @@ d;
 
 
   back() {
-    this.router.navigate(['requests/add-new-request']);
+    this.router.navigate(['requests/add-request']);
   }
 
   public openCustomFilesPicker(type: string) {

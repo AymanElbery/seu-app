@@ -16,7 +16,7 @@
   
 
     <StackLayout height="100%" *ngIf="!isLoading">
-        <StackLayout  *ngFor="let empreqs of emplistrequest">
+        <StackLayout  *ngFor="let empreqs of emplistrequest;let i=index;">
             <FlexboxLayout (tap)="clickme(empreqs)" [visibility]="clicked == empreqs ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
                 <Label  text="&#xf107;"  class="fas arr-drop"></Label>
                 <FlexboxLayout flexDirection="row-reverse">
@@ -25,14 +25,12 @@
 
                 </FlexboxLayout>
             </FlexboxLayout>
-            <FlexboxLayout (tap)="uclickme(empreqs)" [visibility]="clicked == empreqs ? 'visible' : 'collapsed'"  flexDirection="column">
-                <FlexboxLayout flexDirection="column">
-                    <FlexboxLayout flexDirection="row" justifyContent="space-between" class="ysHdrop">
+            <FlexboxLayout  [visibility]="clicked == empreqs ? 'visible' : 'collapsed'"  flexDirection="column">
+                <FlexboxLayout  flexDirection="column">
+                    <FlexboxLayout (tap)="uclickme(empreqs)" flexDirection="row" justifyContent="space-between" class="ysHdrop">
                         <Label  text="&#xf106;"  class="fas arr-drop"></Label>
                         <FlexboxLayout flexDirection="row-reverse">
                             <Label text='{{empreqs.requestDesc}}'></Label>
-                            <Label text="- "></Label>
-                            <Label text='{{empreqs.beginDate}}'></Label>
                             <Label text="- "></Label>
                             <Label text="{{empreqs.requestStatus}}"></Label>
         

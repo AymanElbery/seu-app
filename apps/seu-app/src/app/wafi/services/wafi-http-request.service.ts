@@ -29,7 +29,9 @@ getempIdLoggedin() {
 }
   apllyBasicParams(obj) {
     obj.empId = this.user.userData.id;
+    obj.lang = this.translate.currentLang == 'ar' ? 1 : 2;
 
+    // tslint:disable-next-line: max-line-length
     obj.authorizationKey = 'RSUyZlJMR0tMc1QlMmJjRFAjdHQ1cms4Y3pPOWRmNk50K0BlR2ElMmJjYlZhY0ZhVklGUE5hazdlOU0lM2Q6JFlpOEVQR0VXRWI0YXE3JVZFd0xORClsVW9oMTUlMj1Pd2olMmZrUCUyZnlYTjUhVFM4SjN6cWs2RDRUbEdP';
     obj.sessionId = this.globalService.getSID();
     console.log('empid', this.user.userData.id);
@@ -38,7 +40,6 @@ getempIdLoggedin() {
    // obj["empId"] = "4361010022";
     // obj["empId"] = "4417010015";
 
-    obj.lang = this.translate.currentLang == 'ar' ? 1 : 2;
     return obj;
   }
   getHeaders() {
