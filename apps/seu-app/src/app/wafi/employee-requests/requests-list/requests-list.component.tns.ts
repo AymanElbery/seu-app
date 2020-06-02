@@ -71,10 +71,7 @@ export class RequestsListComponent implements OnInit, OnDestroy {
   }
 
   getreqdetail(orderItemIndex, requestSeq, requestType) {
-
  this.router.navigate(['/requests/requests-details', requestSeq, requestType]);
-
-
   }
   delete(requestSeq: any, requestType: any) {
     if (confirm(this.translate.instant('general.delete_confirm'))) {

@@ -34,7 +34,7 @@ export class EvacuatePartyRequestComponent implements OnInit {
   disclaimerReasons: ValueItem<any>[] = [];
   disclaimerReasonItemsDropDown;
   dataObject = {  disclaimerReason: '',
-    file: '',  notes: ''};
+    file: '',  notes: '',requestType:0};
 
 
   subscriptionDDLReqtype: Subscription;
@@ -61,7 +61,7 @@ export class EvacuatePartyRequestComponent implements OnInit {
   }
   onFormSubmit(data) {
     this.dataObject.file = this.convertToBase64(filePath);
-
+  this.dataObject.requestType=this.id;
     const submitdatavalue = this.dataObject;
 
 

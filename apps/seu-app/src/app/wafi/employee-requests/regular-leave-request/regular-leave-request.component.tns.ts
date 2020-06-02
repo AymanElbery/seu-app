@@ -60,7 +60,7 @@ get fileName() {
   subscriptions;
   id: number;
   private sub: any;
-  dataObject = { beginYear: 0, beginMonth: 0,
+  dataObject = { beginYear: 0, beginMonth: 0,requestType:0,
     beginDay: 0, leaveDeductionPeriod: 0,
     file: '',  notes: ''};
 d;
@@ -72,7 +72,7 @@ d;
     this.submitted = true;
     console.log('file', filePath);
     this.dataObject.file = this.convertToBase64(filePath);
-
+    this.dataObject.requestType= this.id;
     console.log('submit data', this.dataObject);
 
     this.empreqservice.submitreqserviceleavededuction(this.dataObject).subscribe(leavdedcut => {

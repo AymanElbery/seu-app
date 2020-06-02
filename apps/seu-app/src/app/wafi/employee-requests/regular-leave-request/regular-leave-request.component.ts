@@ -68,7 +68,7 @@ export class RegularLeaveRequestComponent implements OnInit {
 
     this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
       //// console.log("saved data", leavdedcut);
-      if (!leavdedcut.data['saveRequest']) {
+      if (!(leavdedcut as any).data.saveRequest) {
         let error = (leavdedcut as any).data['errorMassege'];
         this.toastr.push([{ type: 'error', body: error }]);
 
