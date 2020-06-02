@@ -61,7 +61,7 @@
                        
                         <Label *ngIf="empreqs.enableDelete==true" row="7" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.Delete" | translate}} :'></Label>
 
-                        <Label *ngIf="empreqs.enableDelete==true" row="7"  column="0" class="ysPBox2 fas"  [disabled]='deleting' text="&#xf1f8;" (tap)="delete(i,empreqs.requestSeq,empreqs.requestType)" ></Label>
+                        <Label *ngIf="empreqs.enableDelete==true" row="7"  column="0" class="ysPBox2 fas"  [disabled]='deleting' text="&#xf1f8;" (tap)="delete(empreqs.requestSeq,empreqs.requestType)" ></Label>
 
                       </GridLayout>
     

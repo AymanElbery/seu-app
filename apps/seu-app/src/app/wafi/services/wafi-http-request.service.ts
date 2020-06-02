@@ -63,6 +63,8 @@ getempIdLoggedin() {
     console.log('before', body);
     body = this.apllyBasicParams(body);
     const headers = this.getHeaders();
+    body.lang = this.translate.currentLang == 'ar' ? 1 : 2;
+
     console.log('after', body);
     return this.http.post(url, JSON.stringify(body), { headers });
   }
