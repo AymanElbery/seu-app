@@ -12,7 +12,7 @@
   
       <Image style="width: 100%;" [nsRouterLink]="['/land']" src="~/images/logo_3d.png"></Image>
     </StackLayout>
-    <NavigationButton icon="font://&#xf104;" style="font-size: 25px;" class="fas icon-action" (tap)="goBack()"
+    <NavigationButton icon="font://&#xf104;" style="font-size: 25px;" class="fas icon-action" (tap)="back()"
       ios.position="left"></NavigationButton>
   
   </ActionBar>
@@ -52,7 +52,7 @@
                        
                           </GridLayout>
                           <GridLayout  rows="auto"  columns="*,150">
-                            <label class="ysPBox"  row="0" col="1" text='{{"wafi.DisclaimerReason"|translate}}'></label>
+                            <label class="ysPBox"  row="0" col="1" text='{{"wafi.DisclaimerReason"|translate}}*'></label>
                             <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
                             [items]="disclaimerReasonItemsDropDown"
                             (selectedIndexChanged)="changedisclaimerReason($event)"
@@ -77,10 +77,10 @@
 
                           </GridLayout>
 
-                          <GridLayout rows="*,*" columns="*,*">
+                          <GridLayout rows="150" columns="*,*">
 
-                            <Button row="1" col="1" text='{{"wafi.Submit" | translate}}'   class=" print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
-                            <Button row="1" col="0" text='{{"wafi.back" | translate}}'    [disabled]="submitted" class=" print-btn "  (tap)="back()"></Button>
+                            <Button row="1" col="1" isEnabled="{{dataObject.disclaimerReason>0}}" text='{{"wafi.Submit" | translate}}'   class="ysPBox print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
+                            <Button row="1" col="0" text='{{"wafi.back" | translate}}'     class="ysPBox print-btn "  (tap)="back()"></Button>
                           </GridLayout>
                      
 

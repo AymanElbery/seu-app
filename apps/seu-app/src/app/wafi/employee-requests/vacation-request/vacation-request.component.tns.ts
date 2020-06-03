@@ -40,8 +40,8 @@ export class VacationRequestComponent implements OnInit {
   id: number;
   msg;
   dataObject = {vacation: 0, beginYear: 0, beginMonth: 0,
-     beginDay: 0, timePeriod: 0, compensationVal: 0,
-     altEemployee: 0, toCountryNew: 0, toCityNew: 0,
+     beginDay: 0, timePeriod: 0, compensationVal: '',
+     altEemployee: '', toCountryNew: '', toCityNew: '',
      vacationLoc: '', phone: '', notes: '', requestType: 0};
   vacsDropDown;
   vacs: ValueItem<number>[] = [];
@@ -147,6 +147,12 @@ export class VacationRequestComponent implements OnInit {
     // console.log("submit data", submitdatavalue);
     this.empreqservice.submitreqservice(submitdatavalue).subscribe(contacts => {
        console.log('saved ', contacts);
+       if (!((contacts as any).data)) {
+        const error = '  حدث خطأ اثناء عملية التسجيل الرجاء ادخال البيانات بطريقة صحيحه ';
+  
+        this.toastr.push([{ type: 'error', body: error }]);
+  
+       }
        if ((contacts as any).data.saveRequest) {
         this.toastr.saved();
         this.back();
@@ -198,6 +204,7 @@ export class VacationRequestComponent implements OnInit {
     });
 
   }
+  // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {
     if (this.subscriptions) {
       this.subscriptions.unsubscribe();

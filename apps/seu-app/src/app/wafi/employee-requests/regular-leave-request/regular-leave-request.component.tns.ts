@@ -39,6 +39,7 @@ export class RegularLeaveRequestComponent implements OnInit {
 get fileName() {
   return filePath != null ? File.fromPath(filePath).name : 'Browse';
 }
+
   submitted = false;
   vacationreqtype: any;
   fileToUpload: File = null;
@@ -60,33 +61,39 @@ get fileName() {
   subscriptions;
   id: number;
   private sub: any;
-  dataObject = { beginYear: 0, beginMonth: 0,requestType:0,
+  dataObject = { beginYear: 0, beginMonth: 0, requestType: 0,
     beginDay: 0, leaveDeductionPeriod: 0,
     file: '',  notes: ''};
 d;
 
 
 
-
+ getExt(filename) {
+    const ext = filename.split('.').pop();
+    if (ext == filename) { return ''; }
+    return ext;
+}
   onFormSubmit(data) {
     this.submitted = true;
     console.log('file', filePath);
-    this.dataObject.file = this.convertToBase64(filePath);
-    this.dataObject.requestType= this.id;
-    console.log('submit data', this.dataObject);
+    const ext =  this.getExt(this.fileName);
 
+    this.dataObject.file = 'data:application/' + ext + ';base64,' + this.convertToBase64(filePath); this.convertToBase64(filePath);
+    this.dataObject.requestType = this.id;
+    console.log('submit data', this.dataObject);
     this.empreqservice.submitreqserviceleavededuction(this.dataObject).subscribe(leavdedcut => {
       //// console.log("saved data", leavdedcut);
 
-     console.log('datadata');
-     console.log(leavdedcut);
-     if (!(leavdedcut as any).data) {
-      const error = 'خطأ ارسال البيانات ';
 
-      this.toastr.push([{ type: 'error', body: error }]);
+      console.log(leavdedcut);
+      if (!(leavdedcut as any).data) {
+        const error = '  حدث خطأ اثناء عملية التسجيل الرجاء ادخال البيانات بطريقة صحيحه ';
+
+        this.toastr.push([{ type: 'error', body: error }]);
 
      }
-     if (!(leavdedcut as any).data.saveRequest) {
+
+      if (!(leavdedcut as any).data.saveRequest) {
         const error = (leavdedcut as any).data.errorMassege;
         this.toastr.push([{ type: 'error', body: error }]);
 

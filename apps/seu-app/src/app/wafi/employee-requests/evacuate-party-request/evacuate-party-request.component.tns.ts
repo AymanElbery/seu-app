@@ -34,7 +34,7 @@ export class EvacuatePartyRequestComponent implements OnInit {
   disclaimerReasons: ValueItem<any>[] = [];
   disclaimerReasonItemsDropDown;
   dataObject = {  disclaimerReason: '',
-    file: '',  notes: '',requestType:0};
+    file: '',  notes: '', requestType: 0};
 
 
   subscriptionDDLReqtype: Subscription;
@@ -56,14 +56,25 @@ export class EvacuatePartyRequestComponent implements OnInit {
   get fileName() {
     return filePath != null ? File.fromPath(filePath).name : 'Browse';
   }
-  changeYear(e) {
+  changedisclaimerReason(e) {
     this.dataObject.disclaimerReason = this.disclaimerReasonItemsDropDown.getValue(e.newIndex);
   }
-  onFormSubmit(data) {
-    this.dataObject.file = this.convertToBase64(filePath);
-  this.dataObject.requestType=this.id;
-    const submitdatavalue = this.dataObject;
 
+
+
+ getExt(filename) {
+    const ext = filename.split('.').pop();
+    if (ext == filename) { return ''; }
+    return ext;
+}
+
+
+  onFormSubmit(data) {
+    const ext =  this.getExt(this.fileName);
+
+    this.dataObject.file = 'data:application/' + ext + ';base64,' + this.convertToBase64(filePath); this.convertToBase64(filePath);
+    this.dataObject.requestType = this.id;
+    const submitdatavalue = this.dataObject;
 
     // console.log("submit data", submitdatavalue);
     this.submitted = true;
@@ -73,10 +84,8 @@ export class EvacuatePartyRequestComponent implements OnInit {
 
      console.log((leavdedcut as any).data);
      if (!((leavdedcut as any).data)) {
-      const error = 'خطأ ارسال البيانات ';
-
+      const error = '  حدث خطأ اثناء عملية التسجيل الرجاء ادخال البيانات بطريقة صحيحه ';
       this.toastr.push([{ type: 'error', body: error }]);
-
      }
 
      if (!(leavdedcut as any).data.saveRequest) {
@@ -84,10 +93,9 @@ export class EvacuatePartyRequestComponent implements OnInit {
         // console.log("response data",error);
         this.toastr.push([{ type: 'error', body: error }]);
         this.submitted = false;
-
       } else {
         this.toastr.push([{ type: 'success', body: this.translate.instant('wafi.request_saved') }]);
-        this.router.navigate(['/wafi/employee-requests']);
+        // this.router.navigate(['/wafi/employee-requests']);
       }
     }
     );
