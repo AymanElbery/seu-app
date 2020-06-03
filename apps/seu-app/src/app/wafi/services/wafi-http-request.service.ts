@@ -52,8 +52,6 @@ getempIdLoggedin() {
 
   postRequest_obj(path: string, body: any = {}) {
     const url = this.getApiURI() + path;
-    console.log('url');
-    console.log(url); ;
     body = this.apllyBasicParams(body);
     const headers = this.getHeaders();
    // console.log("Parameter",body)

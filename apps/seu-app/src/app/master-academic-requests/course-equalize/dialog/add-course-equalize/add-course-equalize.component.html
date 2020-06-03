@@ -40,9 +40,9 @@
                   </div>
                 </div> -->
                 <div class="state">
-                  <h6>{{"services.course-equalize.choose_college"|translate}} </h6>
                   <div class="row">
                     <div class=" col-md-6 col-sm-12">
+                      <h6>{{"services.course-equalize.choose_college"|translate}} </h6>
                       <select required class="form-control" #university="ngModel" [(ngModel)]="curseEqual.university"
                         name="university" [class.is-invalid]="curseEqual.university == ''">
                         <option *ngFor="let un of reqData.universities" [value]="un.UN_ID">{{un.UN_NAME}}</option>
@@ -50,6 +50,7 @@
                     </div>
                     <div class=" col-md-6 col-sm-12"
                       *ngIf="curseEqual.university == '39' || curseEqual.university == '37'">
+                      <h6>{{"services.course-equalize.univ_name"|translate}} </h6>
                       <input type="text" required class="form-control" #custom_university_name="ngModel"
                         [(ngModel)]="curseEqual.custom_university_name" name="custom_university_name"
                         [class.is-invalid]="curseEqual.custom_university_name == ''">
