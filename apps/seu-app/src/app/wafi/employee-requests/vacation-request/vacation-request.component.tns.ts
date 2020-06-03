@@ -42,7 +42,7 @@ export class VacationRequestComponent implements OnInit {
   dataObject = {vacation: 0, beginYear: 0, beginMonth: 0,
      beginDay: 0, timePeriod: 0, compensationVal: 0,
      altEemployee: 0, toCountryNew: 0, toCityNew: 0,
-     vacationLoc: '', phone: '', notes: ''};
+     vacationLoc: '', phone: '', notes: '', requestType: 0};
   vacsDropDown;
   vacs: ValueItem<number>[] = [];
   altempDropDown;
@@ -71,6 +71,7 @@ export class VacationRequestComponent implements OnInit {
 
   changeVac(e) {
     this.dataObject.vacation = this.vacsDropDown.getValue(e.newIndex);
+    this.dataObject.requestType = this.id;
     console.log('vacid');
     console.log(this.dataObject.vacation);
     this.getvacationbal(this.dataObject.vacation);
@@ -137,9 +138,11 @@ export class VacationRequestComponent implements OnInit {
   }
 
   onFormSubmit(f) {
+    this.dataObject.requestType = this.id;
+
     // this.isLoading = true;
     const submitdatavalue = this.dataObject;
-
+    console.log(submitdatavalue);
     this.submitted = true;
     // console.log("submit data", submitdatavalue);
     this.empreqservice.submitreqservice(submitdatavalue).subscribe(contacts => {
@@ -182,9 +185,10 @@ export class VacationRequestComponent implements OnInit {
         this.ddltruefalse = false;
         this.vacationsbal = this.getvacationbal(1);
         this.dataObject.vacation = 1;
+        this.dataObject.requestType = this.id;
        // this.AddReqForm.controls.vacation.setValue(1);
         // var=this.FillDDLReqType(this.id);
-     
+
       }
       this.FillDDLReqType(this.id);
     });
