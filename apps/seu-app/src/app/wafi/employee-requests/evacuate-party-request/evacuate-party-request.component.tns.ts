@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { EmployeeRequestsService } from '../../services/employee-requests.service';
@@ -10,6 +10,7 @@ import { File } from 'tns-core-modules/file-system';
 import { FilePickerOptions } from 'nativescript-mediafilepicker/mediafilepicker.common';
 import { Mediafilepicker } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
+import { ios } from 'tns-core-modules/application';
 
 
 declare const kUTTypePDF;
@@ -18,7 +19,7 @@ declare var NSString: any;
 declare var NSUTF8StringEncoding: any;
 declare var java: any;
 declare var android: any;
-let filePath: string = null;
+let filePath2: string = null;
 
 
 @Component({
@@ -34,7 +35,8 @@ export class EvacuatePartyRequestComponent implements OnInit {
   disclaimerReasons: ValueItem<any>[] = [];
   disclaimerReasonItemsDropDown;
   dataObject = {  disclaimerReason: '',
-    file: '',  notes: '', requestType: 0};
+      notes: '', requestType: 0};
+  datafile = '';
 
 
   subscriptionDDLReqtype: Subscription;
@@ -49,13 +51,11 @@ export class EvacuatePartyRequestComponent implements OnInit {
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
               private translate: TranslateService,
-              private router: Router) {
+              private router: Router, private ref: ChangeDetectorRef) {
 
   }
 
-  get fileName() {
-    return filePath != null ? File.fromPath(filePath).name : 'Browse';
-  }
+
   changedisclaimerReason(e) {
     this.dataObject.disclaimerReason = this.disclaimerReasonItemsDropDown.getValue(e.newIndex);
   }
@@ -64,23 +64,49 @@ export class EvacuatePartyRequestComponent implements OnInit {
 
  getExt(filename) {
     const ext = filename.split('.').pop();
-    if (ext == filename) { return ''; }
+    if (ext == filename) { return 'png'; }
     return ext;
 }
 
+get fileName() {
+  return filePath2 != null ? File.fromPath(filePath2).name : 'Browse';
+}
 
-  onFormSubmit(data) {
-    const ext =  this.getExt(this.fileName);
+   onFormSubmit(data) {
+    let ftype = 'data:image/png;base64,';
 
-    this.dataObject.file = 'data:application/' + ext + ';base64,' + this.convertToBase64(filePath); this.convertToBase64(filePath);
+ //   this.ref.detectChanges();
+   // alert('1');
+    console.log('1');
+    if (filePath2 != null && filePath2.includes('.') ) {
+
+    const extens = this.getExt(filePath2);
+    if (extens == 'pdf' || extens == 'PDF') {ftype = 'data:application/pdf;base64,'; }
+
+   // alert('11');
+
+    // tslint:disable-next-line: max-line-length
+    try {
+    this.datafile = ftype +  this.convertToBase64(filePath2) ;
+    } catch (e) {
+      alert(e);
+    }
+   // alert('12');
+
+
+
+    }
+    // this.convertToBase64(filePath);
     this.dataObject.requestType = this.id;
     const submitdatavalue = this.dataObject;
 
     // console.log("submit data", submitdatavalue);
     this.submitted = true;
+    // // alert('13');
 
-    this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
+    this.empreqservice.submitreqserviceleavedeductionmobile(this.datafile, submitdatavalue).toPromise().then(leavdedcut => {
      console.log('saved data', leavdedcut);
+     // // alert('14');
 
      console.log((leavdedcut as any).data);
      if (!((leavdedcut as any).data)) {
@@ -97,7 +123,11 @@ export class EvacuatePartyRequestComponent implements OnInit {
         this.toastr.push([{ type: 'success', body: this.translate.instant('wafi.request_saved') }]);
         // this.router.navigate(['/wafi/employee-requests']);
       }
-    }
+    },
+
+    (e) => {console.log(e);        this.toastr.push([{ type: 'error', body: e }]);
+  }
+    // tslint:disable-next-line: align
     );
 
   }
@@ -148,10 +178,12 @@ export class EvacuatePartyRequestComponent implements OnInit {
   }
 
   back() {
+    filePath2 = null;
     this.router.navigate(['/requests/add-request']);
   }
 
   public openCustomFilesPicker(type: string) {
+    filePath2 = null;
     console.log('f1');
     let extensions = [];
     if (app.ios) {
@@ -190,12 +222,13 @@ export class EvacuatePartyRequestComponent implements OnInit {
               console.log('f1f' + i);
               const result = results[i];
               if (type === 'file') {
-                  filePath = result.file;
+                  filePath2 = result.file;
                   console.log('filepath:');
                   console.log(result.file);
-                  filePath = filePath.replace('file:///', '');
-                  console.log('fpath', filePath);
-                }
+                  filePath2 = filePath2.replace('file:///', '');
+                  console.log('fpath', filePath2);
+
+             }
             }
         }
   });
@@ -205,34 +238,34 @@ export class EvacuatePartyRequestComponent implements OnInit {
       const msg = res.object.get('msg');
       console.log(msg);
   });
-
     // tslint:disable-next-line: only-arrow-functions
     mediafilepicker.on('cancel', function(res) {
       const msg = res.object.get('msg');
       console.log(msg);
   });
+
 }
-  convertToBase64(f: string) {
+   convertToBase64(f: string) {
     console.log('ggfile');
     console.log(f);
     let base64String: string;
     let file: File;
     if (f != null) {
-      console.log('ggfile1');
-      file = File.fromPath(f);
-      console.log('ggfile3');
+      // alert('ggfile1');
+      file =  File.fromPath(f);
+      // alert('ggfile3');
     } else {
       return;
     }
-    console.log('ggfile5');
-    const data = file.readSync();
-    console.log('ggfile6');
+    // alert('ggfile7');
+    const data =  file.readSync();
+    // alert('ggfile6');
 
     if (app.ios) {
-      base64String = data.base64EncodedStringWithOptions(0);
-      console.log('ggfile7');
+      base64String =  data.base64EncodedStringWithOptions(0);
+      // alert('ggfile7');
     } else {
-      base64String = android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
+      base64String =  android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
 
     }
     return base64String;
