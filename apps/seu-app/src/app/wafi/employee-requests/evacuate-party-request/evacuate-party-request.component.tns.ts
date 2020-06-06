@@ -10,6 +10,7 @@ import { File } from 'tns-core-modules/file-system';
 import { FilePickerOptions } from 'nativescript-mediafilepicker/mediafilepicker.common';
 import { Mediafilepicker } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 
 declare const kUTTypePDF;
@@ -49,7 +50,7 @@ export class EvacuatePartyRequestComponent implements OnInit {
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
               private translate: TranslateService,
-              private router: Router) {
+              private router: Router,private routerExtensions: RouterExtensions) {
 
   }
 
@@ -140,6 +141,7 @@ export class EvacuatePartyRequestComponent implements OnInit {
   }
 
   back() {
+    filePath=null;
     this.router.navigate(['/requests/add-request']);
   }
 
@@ -229,7 +231,6 @@ export class EvacuatePartyRequestComponent implements OnInit {
     }
     return base64String;
   }
-
 
 }
 

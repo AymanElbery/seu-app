@@ -96,7 +96,17 @@
 
                           <GridLayout  rows="auto"  columns="*,150">
                             <label class="ysPBox" row="0" col="1" text="{{'wafi.timePeriod'|translate}}"></label>
-                            <TextField class="ysPBox2" keyboardType="number" col="0" row="0" hint="{{'wafi.timePeriod'|translate}}"  [(ngModel)]='dataObject.timePeriod' ></TextField>
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro ysPBox2"
+                            [items]="periodsDropDown"
+                            (selectedIndexChanged)="changePeriod($event)"
+                            hint=' {{"wafi.timePeriod"|translate}}'
+                            itemsTextAlignment="center" style="text-align: center ;width: 100%;"
+                            *ngIf="!ddltruefalse"
+
+                             >
+                          </DropDown>
+                            <TextField *ngIf="ddltruefalse"
+                             class="ysPBox2" keyboardType="number" col="0" row="0" hint="{{'wafi.timePeriod'|translate}}"  [(ngModel)]='dataObject.timePeriod' ></TextField>
                           </GridLayout>
 
                           <GridLayout  rows="auto"  columns="*,150">

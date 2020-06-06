@@ -1169,7 +1169,8 @@
         "email_err_msg":"E-mail is Not Valid",
         "phone_no_err":"Phone Number is Not Valid",
         "emp_no_data":"Employee has No Data",
-        "evaluation_not_found":"There is No Evaluation"
+        "evaluation_not_found":"There is No Evaluation",
+        "data_not_found":"There is No Data"
 
 
 
