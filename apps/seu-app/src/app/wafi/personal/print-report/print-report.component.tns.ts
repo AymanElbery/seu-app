@@ -108,8 +108,8 @@ export class PrintReportComponent implements OnInit {
 
   getprintreportdownlaod_housing(rptname: any) {
 
-    this.isLoading = true
-    this.subscriptiondownlaod_housing = this.empservice.getprintreport_housing(rptname).subscribe(prtrpthouse => {
+   /* this.isLoading = true
+    this.subscriptiondownlaod_housing = this.empservice.getprintreport_housing_mobile(rptname).subscribe(prtrpthouse => {
       if (prtrpthouse) {
         this.printreportddwonld_house = (prtrpthouse as any).data; 
        // let url = this.getApiURI() + "DownloadFileServlet";
@@ -122,7 +122,33 @@ export class PrintReportComponent implements OnInit {
       } else {
         this.toaster.tryagain();
       }
+    });*/
+
+    this.isLoading = true
+    this.subscriptiondownlaod = this.empservice.getprintreport_housing_mobile(rptname).subscribe(prtrpt => {
+      if (prtrpt['statusCode'] == 200) {
+        const fileName = "housing"+'.pdf';
+     
+      const permissions = require('nativescript-permissions');
+      if(isAndroid){
+        permissions.requestPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 'I need these permissions').then(
+          () => {
+              const file: File = File.fromPath(path.join(this.downloadedFilePath,fileName));
+              this.convertBase64ToPdf(prtrpt['data'],file);
+              utils.openFile(file.path);
+            });
+      }else{
+        const file: File = File.fromPath(path.join(this.downloadedFilePath,fileName));
+        this.convertBase64ToPdf(prtrpt['data'],file);
+        utils.openFile(file.path);
+      }
+     
+        this.isLoading = false
+      } else {
+        this.toaster.tryagain();
+      }
     });
+
 
   }
 

@@ -58,6 +58,15 @@ export class VacationRequestComponent implements OnInit {
   private sub: any;
   compErkabs: ValueItem<number>[] = [];
   compErkabItemsDropDown;
+
+  periodsDropDown;
+  periods: ValueItem<number>[] = [
+    {display:"1",value:1},
+    {display:"2",value:2},
+    {display:"3",value:3},
+    {display:"4",value:4},
+
+  ];
   constructor(private route: ActivatedRoute,
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
@@ -92,7 +101,10 @@ export class VacationRequestComponent implements OnInit {
   changealtemp(e) {
     this.dataObject.altEemployee = this.altempDropDown.getValue(e.newIndex);
   }
+  changePeriod(e){
+    this.dataObject.timePeriod = this.periodsDropDown.getValue(e.newIndex);
 
+  }
   changecountry(e) {
     this.dataObject.toCountryNew = this.countryDropDown.getValue(e.newIndex);
     console.log(this.dataObject.toCountryNew );
@@ -327,6 +339,7 @@ export class VacationRequestComponent implements OnInit {
       } else {
       }
     });
+    this.periodsDropDown = new ValueList(this.periods);
   }
 
   back() {

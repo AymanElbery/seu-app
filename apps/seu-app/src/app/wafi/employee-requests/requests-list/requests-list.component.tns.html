@@ -1,8 +1,8 @@
 <app-header></app-header>
-<ScrollView>
+<ScrollView height="auto">
     <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
 
-    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading" >
 
         <GridLayout  columns="auto, *" class="serv-title">
             <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
@@ -11,9 +11,10 @@
         
         </GridLayout>
 
-    
 
-  
+        <StackLayout *ngIf="emplistrequest.length==0">
+            <Label text='{{"wafi.data_not_found"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c" class="iosFont"></Label>
+         </StackLayout>
 
     <StackLayout height="100%" *ngIf="!isLoading">
         <StackLayout  *ngFor="let empreqs of emplistrequest;let i=index;">
@@ -21,12 +22,10 @@
                 <Label  text="&#xf107;"  class="fas arr-drop"></Label>
                 <FlexboxLayout flexDirection="row-reverse">
                     <Label text='{{empreqs.requestDesc}}-{{empreqs.requestStatus}}'></Label>
-                  
-
                 </FlexboxLayout>
             </FlexboxLayout>
             <FlexboxLayout  [visibility]="clicked == empreqs ? 'visible' : 'collapsed'"  flexDirection="column">
-                <FlexboxLayout  flexDirection="column">
+                <FlexboxLayout  flexDirection="column" height="auto">
                     <FlexboxLayout (tap)="uclickme(empreqs)" flexDirection="row" justifyContent="space-between" class="ysHdrop">
                         <Label  text="&#xf106;"  class="fas arr-drop"></Label>
                         <FlexboxLayout flexDirection="row-reverse">

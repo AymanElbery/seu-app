@@ -11,6 +11,7 @@ import { File } from 'tns-core-modules/file-system';
 import { FilePickerOptions } from 'nativescript-mediafilepicker/mediafilepicker.common';
 import { Mediafilepicker } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 
 declare const kUTTypePDF;
@@ -30,7 +31,7 @@ export class RegularLeaveRequestComponent implements OnInit {
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
               private translate: TranslateService,
-              private router: Router) {
+              private router: Router,private routerExtensions: RouterExtensions) {
 
 
 

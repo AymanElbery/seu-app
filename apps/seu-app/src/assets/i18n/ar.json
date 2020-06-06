@@ -1043,7 +1043,7 @@
         "scheduleName": "اسم الدورة",
         "sideName": "اسم المعهد",
         "DisclaimerReason": "سبب اخلاء الطرف",
-        "disChoose": " احتر السيبب",
+        "disChoose": " اختر السبب",
         "requestApprovalsData": "الموافقات على طلبات الخدمة",
         "StepNo": "تسلسل الموافقة",
         "ApprovedEmployee": "اسم الموافق",
@@ -1173,7 +1173,8 @@
         "email_err_msg":"البريد الإلكترونى غير صالح",
         "phone_no_err":"رقم الهاتف غير صحيح",
         "emp_no_data":"الموظف ليس له بيانات",
-        "evaluation_not_found":"لا يوجد تقويم "
+        "evaluation_not_found":"لا يوجد تقويم ",
+        "data_not_found":"لا يوجد دورات بيانات"
 
     },
     "tasks": {

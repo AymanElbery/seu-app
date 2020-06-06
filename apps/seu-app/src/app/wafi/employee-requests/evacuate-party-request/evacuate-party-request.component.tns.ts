@@ -10,6 +10,7 @@ import { File } from 'tns-core-modules/file-system';
 import { FilePickerOptions } from 'nativescript-mediafilepicker/mediafilepicker.common';
 import { Mediafilepicker } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
+import { RouterExtensions } from 'nativescript-angular/router';
 import { ios } from 'tns-core-modules/application';
 
 
@@ -51,7 +52,8 @@ export class EvacuatePartyRequestComponent implements OnInit {
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
               private translate: TranslateService,
-              private router: Router, private ref: ChangeDetectorRef) {
+              private router: Router,private routerExtensions: RouterExtensions,
+             private ref: ChangeDetectorRef) {
 
   }
 
@@ -276,7 +278,6 @@ get fileName() {
     console.log('2');
     return base64String;
   }
-
 
 }
 

@@ -8,10 +8,8 @@
       NavigationButton as a side-drawer button in iOS is not possible,
       because its function is to always navigate back in the application.
       -->
-    <StackLayout horizontalAlignment="center" style="height: 100%;margin: 0px;" margin-top="0">
-  
-      <Image style="width: 100%;" [nsRouterLink]="['/land']" src="~/images/logo_3d.png"></Image>
-    </StackLayout>
+      <Label text='{{"wafi.AddNewRequest"|translate}}' class="label-action"></Label>
+
     <NavigationButton icon="font://&#xf104;" style="font-size: 25px;" class="fas icon-action" (tap)="back()"
       ios.position="left"></NavigationButton>
   
@@ -21,16 +19,7 @@
   
     <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
   
-      <GridLayout columns="auto, *" class="serv-title">
-        <Label col="1" text="&#xf0d9;" class="fas serv-ico-r"></Label>
-        <Label col="1" text='{{"wafi.deductionregularleave27" | translate}}' class="serv-name"></Label>
-        <Label col="1" text="&#xf0da;" class="fas serv-ico "></Label>
-  
-      </GridLayout>
-  
-  
-  
-  
+
   
       <StackLayout height="100%" *ngIf="!isLoading">
         <StackLayout>
