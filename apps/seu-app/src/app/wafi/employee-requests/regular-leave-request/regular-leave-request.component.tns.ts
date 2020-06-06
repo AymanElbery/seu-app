@@ -51,7 +51,7 @@ export class RegularLeaveRequestComponent implements OnInit {
   yearsDropDown;
   years: ValueItem<number>[] = [];
 
-datafile='';
+datafile = '';
   subscriptionDDLReqtype: Subscription;
   subscriptionvac: Subscription;
   vacationsbal;
@@ -75,16 +75,14 @@ d;
       // alert('START');
 
   //  this.dataObject.file = 'data:' + ext + ';base64,' + this.convertToBase64(filePath); this.convertToBase64(filePath);
-      let ftype = 'data:image/png;base64,';
+      const ftype = 'data:image/png;base64,';
       this.dataObject.requestType = this.id;
-      if (filePath!=null  && filePath.includes('.')) {
+      if (filePath != null  ) {
 const extens = this.getExt(filePath);
-if (extens == 'pdf' || extens == 'PDF')
-{ftype = 'data:application/pdf;base64,'; }
+//alert(extens);
 
 try {
       this.datafile = ftype + this.convertToBase64(filePath) ;
-
 
      } catch (E) {
 // alert(E);
@@ -94,7 +92,7 @@ try {
       console.log('submit data', this.dataObject);
     // // // // // alert('3');
       // alert('ddd');
-      this.empreqservice.submitreqserviceleavedeductionmobile(this.datafile,this.dataObject).toPromise().then(leavdedcut => {
+      this.empreqservice.submitreqserviceleavedeductionmobile(this.datafile, this.dataObject).toPromise().then(leavdedcut => {
       //// console.log("saved data", leavdedcut);
 
       // // // // // alert('1');
@@ -211,8 +209,9 @@ try {
 
 
   back() {
+    this.convertToBase64(filePath) ;
     filePath = null;
-    this.router.navigate(['requests/add-request']);
+   // this.router.navigate(['requests/add-request']);
   }
   get fileName() {
     return filePath != null ? File.fromPath(filePath).name : 'Browse';
@@ -260,9 +259,10 @@ try {
                   filePath = result.file;
                   console.log('filepath:');
                   console.log(result.file);
-
+                  if (app.ios) {
                   filePath = filePath.replace('file:///', '');
                   console.log('fpath', filePath);
+}
 
                 }
             }
@@ -307,6 +307,7 @@ try {
       // // // // // alert('ggfile8');
 
     }
+
     return base64String;
   }
 }

@@ -49,7 +49,7 @@ export class EmployeeRequestsService {
     delete currentServiceRequestTable.file;
     return this.wafihttRequest.postRequest_obj('emp/submit-service-request-entry', { file, serviceRequestEntryBean: { currentServiceRequestTable } });
   }
-  submitreqserviceleavedeductionmobile(file: any, currentServiceRequestTable: any) {
+  submitreqserviceleavedeductionmobile(file, currentServiceRequestTable: any) {
     // console.log("submit data", currentServiceRequestTable);
     // tslint:disable-next-line: max-line-length
     return this.wafihttRequest.postRequest_obj('emp/submit-service-request-entry', { file, serviceRequestEntryBean: { currentServiceRequestTable } });

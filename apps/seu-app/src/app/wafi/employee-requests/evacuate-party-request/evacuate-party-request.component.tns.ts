@@ -73,26 +73,22 @@ get fileName() {
 }
 
    onFormSubmit(data) {
-    let ftype = 'data:image/png;base64,';
+    const ftype = 'data:image/png;base64,';
 
  //   this.ref.detectChanges();
-   // alert('1');
+   // alert(filePath2);
     console.log('1');
-    if (filePath2 != null && filePath2.includes('.') ) {
+    if (filePath2 != null  ) {
 
-    const extens = this.getExt(filePath2);
-    if (extens == 'pdf' || extens == 'PDF') {ftype = 'data:application/pdf;base64,'; }
-
-   // alert('11');
 
     // tslint:disable-next-line: max-line-length
     try {
-    this.datafile = ftype +  this.convertToBase64(filePath2) ;
+    this.datafile =   ftype +  this.convertToBase64(filePath2) ;
+    console.log(this.datafile.length);
     } catch (e) {
       alert(e);
     }
    // alert('12');
-
 
 
     }
@@ -102,12 +98,13 @@ get fileName() {
 
     // console.log("submit data", submitdatavalue);
     this.submitted = true;
-    // // alert('13');
+    console.log('13');
 
-    this.empreqservice.submitreqserviceleavedeductionmobile(this.datafile, submitdatavalue).toPromise().then(leavdedcut => {
+     this.empreqservice.submitreqserviceleavedeductionmobile(this.datafile, submitdatavalue).toPromise().then(leavdedcut => {
      console.log('saved data', leavdedcut);
      // // alert('14');
-
+     this.datafile = '';
+     filePath2 = null;
      console.log((leavdedcut as any).data);
      if (!((leavdedcut as any).data)) {
       const error = '  حدث خطأ اثناء عملية التسجيل الرجاء ادخال البيانات بطريقة صحيحه ';
@@ -178,7 +175,11 @@ get fileName() {
   }
 
   back() {
+  //  alert(filePath2);
+   // this.convertToBase64(filePath2) ;
+
     filePath2 = null;
+
     this.router.navigate(['/requests/add-request']);
   }
 
@@ -225,7 +226,9 @@ get fileName() {
                   filePath2 = result.file;
                   console.log('filepath:');
                   console.log(result.file);
+                  if (app.ios) {
                   filePath2 = filePath2.replace('file:///', '');
+                  }
                   console.log('fpath', filePath2);
 
              }
@@ -248,16 +251,18 @@ get fileName() {
    convertToBase64(f: string) {
     console.log('ggfile');
     console.log(f);
+   // alert(f);
     let base64String: string;
     let file: File;
     if (f != null) {
-      // alert('ggfile1');
+      console.log('1');
       file =  File.fromPath(f);
-      // alert('ggfile3');
+      console.log('2');
     } else {
       return;
     }
     // alert('ggfile7');
+
     const data =  file.readSync();
     // alert('ggfile6');
 
@@ -268,6 +273,7 @@ get fileName() {
       base64String =  android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
 
     }
+    console.log('2');
     return base64String;
   }
 

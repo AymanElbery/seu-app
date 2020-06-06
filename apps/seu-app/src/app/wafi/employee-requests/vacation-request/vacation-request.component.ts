@@ -89,7 +89,7 @@ export class VacationRequestComponent implements OnInit {
     // console.log("submit data", submitdatavalue);
     this.empreqservice.submitreqservice(submitdatavalue).subscribe(contacts => {
       //// console.log("saved ", contacts);
-      if (!contacts.data['saveRequest']) {
+      if (!(contacts.data as any).saveRequest) {
         let error = (contacts as any).data['errorMassege'];
         // this.toastr.push((contacts as any).data);
         this.toastr.push([{ type: 'error', body: error }]);
