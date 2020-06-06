@@ -40,7 +40,7 @@
                        
                           </GridLayout>
                           <GridLayout  rows="auto"  columns="*,150">
-                            <label class="ysPBox"  row="0" col="1" text='{{"wafi.DisclaimerReason"|translate}}'></label>
+                            <label class="ysPBox"  row="0" col="1" text='{{"wafi.DisclaimerReason"|translate}}*'></label>
                             <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
                             [items]="disclaimerReasonItemsDropDown"
                             (selectedIndexChanged)="changedisclaimerReason($event)"
@@ -61,14 +61,14 @@
                           </GridLayout>
                           <GridLayout   rows="auto"  columns="*,150">
                             <label class="ysPBox"  row="0" col="1" text="{{'wafi.attachment'|translate}}"></label>
-                            <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="ysPBox print-btn"></Button>
+                            <Button text="{{fileName}}" (tap)="openCustomFilesPicker('file')" class="ysPBox print-btn"></Button>
 
                           </GridLayout>
 
-                          <GridLayout rows="*,*" columns="*,*">
+                          <GridLayout rows="150" columns="*,*">
 
-                            <Button row="1" col="1" text='{{"wafi.Submit" | translate}}'   class=" print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
-                            <Button row="1" col="0" text='{{"wafi.back" | translate}}'    [disabled]="submitted" class=" print-btn "  (tap)="back()"></Button>
+                            <Button row="1" col="1" isEnabled="{{dataObject.disclaimerReason>0}}" text='{{"wafi.Submit" | translate}}'   class="ysPBox print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
+                            <Button row="1" col="0" text='{{"wafi.back" | translate}}'     class="ysPBox print-btn "  (tap)="back()"></Button>
                           </GridLayout>
                      
 

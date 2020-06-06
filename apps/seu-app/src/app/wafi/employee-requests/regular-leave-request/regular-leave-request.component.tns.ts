@@ -37,9 +37,8 @@ export class RegularLeaveRequestComponent implements OnInit {
 
   }
 
-get fileName() {
-  return filePath != null ? File.fromPath(filePath).name : 'Browse';
-}
+
+
   submitted = false;
   vacationreqtype: any;
   fileToUpload: File = null;
@@ -53,7 +52,7 @@ get fileName() {
   yearsDropDown;
   years: ValueItem<number>[] = [];
 
-
+datafile='';
   subscriptionDDLReqtype: Subscription;
   subscriptionvac: Subscription;
   vacationsbal;
@@ -61,33 +60,55 @@ get fileName() {
   subscriptions;
   id: number;
   private sub: any;
-  dataObject = { beginYear: 0, beginMonth: 0,requestType:0,
+  dataObject = { beginYear: 0, beginMonth: 0, requestType: 0,
     beginDay: 0, leaveDeductionPeriod: 0,
-    file: '',  notes: ''};
+      notes: ''};
 d;
 
 
 
+ getExt(filename) {
+    const ext = filename.split('.').pop();
+    if (ext == filename) { return ''; }
+    return ext;
+}
+   onFormSubmit(data) {
+      // alert('START');
 
-  onFormSubmit(data) {
-    this.submitted = true;
-    console.log('file', filePath);
-    this.dataObject.file = this.convertToBase64(filePath);
-    this.dataObject.requestType= this.id;
-    console.log('submit data', this.dataObject);
+  //  this.dataObject.file = 'data:' + ext + ';base64,' + this.convertToBase64(filePath); this.convertToBase64(filePath);
+      let ftype = 'data:image/png;base64,';
+      this.dataObject.requestType = this.id;
+      if (filePath!=null  && filePath.includes('.')) {
+const extens = this.getExt(filePath);
+if (extens == 'pdf' || extens == 'PDF')
+{ftype = 'data:application/pdf;base64,'; }
 
-    this.empreqservice.submitreqserviceleavededuction(this.dataObject).subscribe(leavdedcut => {
+try {
+      this.datafile = ftype + this.convertToBase64(filePath) ;
+
+
+     } catch (E) {
+// alert(E);
+     }
+      // // // // // alert('3');
+    }
+      console.log('submit data', this.dataObject);
+    // // // // // alert('3');
+      // alert('ddd');
+      this.empreqservice.submitreqserviceleavedeductionmobile(this.datafile,this.dataObject).toPromise().then(leavdedcut => {
       //// console.log("saved data", leavdedcut);
 
-     console.log('datadata');
-     console.log(leavdedcut);
-     if (!(leavdedcut as any).data) {
-      const error = 'خطأ ارسال البيانات ';
+      // // // // // alert('1');
 
-      this.toastr.push([{ type: 'error', body: error }]);
+      console.log(leavdedcut);
+      if (!(leavdedcut as any).data) {
+        const error = '  حدث خطأ اثناء عملية التسجيل الرجاء ادخال البيانات بطريقة صحيحه ';
+
+        this.toastr.push([{ type: 'error', body: error }]);
 
      }
-     if (!(leavdedcut as any).data.saveRequest) {
+
+      if (!(leavdedcut as any).data.saveRequest) {
         const error = (leavdedcut as any).data.errorMassege;
         this.toastr.push([{ type: 'error', body: error }]);
 
@@ -96,6 +117,8 @@ d;
         this.back();
       }
     }
+    ,
+    (e) => {console.log(e); }
     );
 
     // this.formSubmitted = true;
@@ -189,11 +212,14 @@ d;
 
 
   back() {
-    filePath=null;
+    filePath = null;
     this.router.navigate(['requests/add-request']);
   }
-
+  get fileName() {
+    return filePath != null ? File.fromPath(filePath).name : 'Browse';
+  }
   public openCustomFilesPicker(type: string) {
+    filePath = null;
     console.log('f1');
     let extensions = [];
     if (app.ios) {
@@ -235,8 +261,10 @@ d;
                   filePath = result.file;
                   console.log('filepath:');
                   console.log(result.file);
+
                   filePath = filePath.replace('file:///', '');
                   console.log('fpath', filePath);
+
                 }
             }
         }
@@ -254,27 +282,30 @@ d;
       console.log(msg);
   });
 }
-  convertToBase64(f: string) {
+   convertToBase64(f: string) {
     console.log('ggfile');
     console.log(f);
     let base64String: string;
     let file: File;
     if (f != null) {
+      // // // // // alert('A')
       console.log('ggfile1');
-      file = File.fromPath(f);
+      file =   File.fromPath(f);
       console.log('ggfile3');
+      // // // // // alert('B');
     } else {
       return;
     }
-    console.log('ggfile5');
-    const data = file.readSync();
-    console.log('ggfile6');
+    // // // // // alert('ggfile5');
+    const data =  file.readSync();
+    // // // // // alert('ggfile6');
 
     if (app.ios) {
-      base64String = data.base64EncodedStringWithOptions(0);
-      console.log('ggfile7');
+      base64String =  data.base64EncodedStringWithOptions(0);
+      // // // // // alert('ggfile7');
     } else {
-      base64String = android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
+      base64String =  android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
+      // // // // // alert('ggfile8');
 
     }
     return base64String;
