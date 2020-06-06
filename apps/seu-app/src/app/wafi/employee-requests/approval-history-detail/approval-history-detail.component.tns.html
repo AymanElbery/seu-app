@@ -99,13 +99,10 @@ auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
     <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.approvedDate" ></Label>
 
     <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.Agree/disagree" | translate}}'></Label>
-    <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.absentHour" ></Label>
+    <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.isApprovedDesc" ></Label>
 
-    <Label row="6"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.decisionNo" | translate}}'></Label>
-    <Label row="6"  column="0" class="ysPBox2" textWrap="true" [text]="item.isApprovedDesc" ></Label>
-
-    <Label row="7"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.RejecteReasone" | translate}}'></Label>
-    <Label row="7"  column="0" class="ysPBox2" textWrap="true" [text]="item.disagreeReasone" ></Label>
+    <Label row="6"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.RejecteReasone" | translate}}'></Label>
+    <Label row="6"  column="0" class="ysPBox2" textWrap="true" [text]="item.disagreeReasone" ></Label>
      
   </GridLayout>
 </StackLayout>
