@@ -1170,7 +1170,9 @@
         "phone_no_err":"Phone Number is Not Valid",
         "emp_no_data":"Employee has No Data",
         "evaluation_not_found":"There is No Evaluation",
-        "data_not_found":"There is No Data"
+        "data_not_found":"There is No Data",
+        "request_not_found":"There is No Requests"
+
 
 
 

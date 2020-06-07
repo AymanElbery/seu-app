@@ -1174,7 +1174,9 @@
         "phone_no_err":"رقم الهاتف غير صحيح",
         "emp_no_data":"الموظف ليس له بيانات",
         "evaluation_not_found":"لا يوجد تقويم ",
-        "data_not_found":"لا يوجد دورات بيانات"
+        "data_not_found":"لا يوجد بيانات",
+        "request_not_found":"لا يوجد طلبات"
+
 
     },
     "tasks": {
