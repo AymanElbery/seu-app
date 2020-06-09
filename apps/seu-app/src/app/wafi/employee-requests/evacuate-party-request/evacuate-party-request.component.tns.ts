@@ -52,8 +52,8 @@ export class EvacuatePartyRequestComponent implements OnInit {
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
               private translate: TranslateService,
-              private router: Router,private routerExtensions: RouterExtensions,
-             private ref: ChangeDetectorRef) {
+              private router: Router, private routerExtensions: RouterExtensions,
+              private ref: ChangeDetectorRef) {
 
   }
 
@@ -75,7 +75,7 @@ get fileName() {
 }
 
    onFormSubmit(data) {
-    const ftype = 'data:image/png;base64,';
+    let ftype = 'data:image/png;base64,';
 
  //   this.ref.detectChanges();
    // alert(filePath2);
@@ -83,8 +83,12 @@ get fileName() {
     if (filePath2 != null  ) {
 
 
+      const exts = this.getExt(filePath2);
+      if (exts == 'pdf' || exts == 'PDF') {
+        ftype = 'data:application/pdf;base64,';
+      }
     // tslint:disable-next-line: max-line-length
-    try {
+      try {
     this.datafile =   ftype +  this.convertToBase64(filePath2) ;
     console.log(this.datafile.length);
     } catch (e) {
@@ -201,6 +205,8 @@ get fileName() {
         android: {
             extensions,
             maxNumberFiles: 1
+
+
         },
         ios: {
             extensions,
