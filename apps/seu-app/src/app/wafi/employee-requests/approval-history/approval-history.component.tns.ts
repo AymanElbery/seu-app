@@ -23,8 +23,8 @@ export class ApprovalHistoryComponent implements OnInit, OnDestroy {
   subscriptionappreq: Subscription;
   emplisthistoryapproval: any;
   clicked: any;
-  constructor(private http: HttpClient, private empreqservice: EmployeeRequestsService, 
-    private toastr: AppToasterService, private translate: TranslateService,private router:Router) {
+  constructor(private http: HttpClient, private empreqservice: EmployeeRequestsService,
+              private toastr: AppToasterService, private translate: TranslateService, private router: Router) {
   }
   isLoading = true;
   subscriptions;
@@ -37,19 +37,20 @@ export class ApprovalHistoryComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.subscriptions)
+    if (this.subscriptions) {
       this.subscriptions.unsubscribe();
+    }
   }
   pageChanged(event) {
     this.config.currentPage = event;
   }
   getapprovalhistorylist() {
 
-    this.isLoading = true
+    this.isLoading = true;
     this.subscriptionappreq = this.empreqservice.getapprovalhistory().subscribe(appreqs => {
       if (appreqs) {
-        this.emplisthistoryapproval = (appreqs as any).data["requestsApproveDetailsTable"];
-        //console.log("emp app request",this.emplisthistoryapproval);      
+        this.emplisthistoryapproval = (appreqs as any).data['requestsApproveDetailsTable'];
+        // console.log("emp app request",this.emplisthistoryapproval);
         this.isLoading = false;
       }
     },
@@ -62,8 +63,8 @@ export class ApprovalHistoryComponent implements OnInit, OnDestroy {
   }
 
   getapphistorydetail(reqSeq: any, reqEmpId: any, reqType: any) {
-    console.log(reqSeq,reqEmpId,reqType)
-    this.router.navigate(['/requests/approval-history-detail/'+reqSeq+'/'+reqType+'/',reqEmpId])
+    console.log(reqSeq, reqEmpId, reqType);
+    this.router.navigate(['/requests/approval-history-detail/' + reqSeq + '/' + reqType + '/', reqEmpId]);
   }
   clickme(item) {
     this.clicked = item;

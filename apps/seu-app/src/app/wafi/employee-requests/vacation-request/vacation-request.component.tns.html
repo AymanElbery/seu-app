@@ -11,7 +11,7 @@
       <Label text="{{'wafi.AddNewRequest'|translate}}" class="label-action"></Label>
 
       <!--<Image style="width: 100%;" [nsRouterLink]="['/land']" src="~/images/logo_3d.png"></Image>-->
-    <NavigationButton icon="font://&#xf104;" style="font-size: 25px;" class="fas icon-action" (tap)="goBack()"
+    <NavigationButton icon="font://&#xf104;" style="font-size: 25px;" class="fas icon-action" (tap)="back()"
       ios.position="left"></NavigationButton>
   
   </ActionBar>
@@ -34,7 +34,7 @@
                   </GridLayout>
                 <GridLayout *ngIf="ddltruefalse==true"  rows="auto" columns="*,150">
                   <Label row="0"  colspan="2" class="ysPBox" textWrap="true" style="font-weight: 800;"
-                  text='{{"wafi.vacationtype" | translate}} :'></Label>
+                  text='{{"wafi.vacationtype" | translate}} *:'></Label>
                    
                   </GridLayout>
                   <GridLayout *ngIf="ddltruefalse==true"  rows="auto" columns="*,150">
@@ -65,7 +65,7 @@
                        
                           </GridLayout>
                           <GridLayout  rows="auto"  columns="*,150">
-                            <label class="ysPBox"  row="0" col="1" text="اختر السنه"></label>
+                            <label class="ysPBox"  row="0" col="1" text="اختر السنه*"></label>
                             <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
                             [items]="yearsDropDown"
                             (selectedIndexChanged)="changeYear($event)"
@@ -75,7 +75,7 @@
                           </DropDown>
                           </GridLayout>
                           <GridLayout   rows="auto"  columns="*,150">
-                            <label class="ysPBox"  row="0" col="1" text="{{'wafi.day'|translate}}"></label>
+                            <label class="ysPBox"  row="0" col="1" text="{{'wafi.day'|translate}}*"></label>
                             <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
                             [items]="daysDropDown"
                             (selectedIndexChanged)="changeDay($event)"
@@ -85,7 +85,7 @@
                           </DropDown>
                           </GridLayout>
                           <GridLayout  rows="auto"  columns="*,150">
-                            <label class="ysPBox" row="0" col="1" text='{{"wafi.month"|translate}}'></label>
+                            <label class="ysPBox" row="0" col="1" text='{{"wafi.month"|translate}}*'></label>
                             <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
                             [items]="monthesDropDown"
                             (selectedIndexChanged)="changeMonth($event)"
@@ -95,17 +95,27 @@
                           </DropDown>                          </GridLayout>
 
                           <GridLayout  rows="auto"  columns="*,150">
-                            <label class="ysPBox" row="0" col="1" text="{{'wafi.timePeriod'|translate}}"></label>
-                            <TextField class="ysPBox2" keyboardType="number" col="0" row="0" hint="{{'wafi.timePeriod'|translate}}"  [(ngModel)]='dataObject.timePeriod' ></TextField>
+                            <label class="ysPBox" row="0" col="1" text="{{'wafi.timePeriod'|translate}}*"></label>
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro ysPBox2"
+                            [items]="periodsDropDown"
+                            (selectedIndexChanged)="changePeriod($event)"
+                            hint=' {{"wafi.timePeriod"|translate}}'
+                            itemsTextAlignment="center" style="text-align: center ;width: 100%;"
+                            *ngIf="!ddltruefalse"
+
+                             >
+                          </DropDown>
+                            <TextField *ngIf="ddltruefalse"
+                             class="ysPBox2" keyboardType="number" col="0" row="0" hint="{{'wafi.timePeriod'|translate}}"  [(ngModel)]='dataObject.timePeriod' ></TextField>
                           </GridLayout>
 
                           <GridLayout  rows="auto"  columns="*,150">
-                            <label class="ysPBox"  row="0" col="1" text="{{'wafi.compensation'|translate}}"></label>
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <label class="ng-invalid" class="ysPBox"  row="0" col="1" text="{{'wafi.compensation'|translate}}"></label>
+                            <DropDown  horizontalAlignment="center" col="0" row="0"  class="dro"
                             [items]="compErkabItemsDropDown"
                             (selectedIndexChanged)="changecomp($event)"
                             hint=' {{"wafi.compensation"|translate}}'
-                            itemsTextAlignment="center" style="text-align: center ;width: 100%;" >
+                            itemsTextAlignment="center" style="text-align: center ;width: 100%;" class="ng-invalid" >
                           
                           </DropDown>
                           </GridLayout>
@@ -165,10 +175,10 @@
 
                           </GridLayout>
 
-                          <GridLayout rows="*,*" columns="*,*">
+                          <GridLayout rows="150" columns="*,*">
 
-                            <Button row="1" col="1" text='{{"wafi.Submit" | translate}}'   class=" print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
-                            <Button row="1" col="0" text='{{"wafi.back" | translate}}'    [disabled]="submitted" class=" print-btn "  (tap)="back()"></Button>
+                            <Button row="1" col="1" text='{{"wafi.Submit" | translate}}' isEnabled="{{dataObject.beginYear>0 && dataObject.beginMonth>0 && dataObject.beginDay>0 && dataObject.vacation>0  && dataObject.timePeriod>0}}"   class="ysPBox print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
+                            <Button row="1" col="0" text='{{"wafi.back" | translate}}'    [disabled]="submitted" class="ysPBox print-btn"  (tap)="back()"></Button>
                           </GridLayout>
                      
 

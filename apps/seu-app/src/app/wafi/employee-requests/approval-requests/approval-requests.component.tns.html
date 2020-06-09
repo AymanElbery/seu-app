@@ -2,7 +2,7 @@
 <ScrollView>
     <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
 
-    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+    <StackLayout *ngIf="!isLoading">
 
         <GridLayout  columns="auto, *" class="serv-title">
             <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
@@ -12,17 +12,23 @@
         </GridLayout>
 
     
-        <GridLayout  columns="auto, *" style="width: 100%;">
-            <TextField col="1" style="width: 60%;text-align: center;" hint='{{"wafi.searchdata" | translate}}' [(ngModel)]="filter"  color="orangered" >
+        <StackLayout *ngIf="emplistrequestapproval.length>0">
+            <Label text='{{"wafi.search_by_employee_name_number"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c" class="iosFont"></Label>
+
+            <TextField hint='dd-mm-yyyy' [(ngModel)]="filter"  style="margin-right:20 ;">
        
             </TextField>
-            <Button col="0" text="بحث!" (tap)="search()"></Button>
+        <!--    <Button col="0" text="بحث!" (tap)="search()"></Button>-->
         
-        </GridLayout>
+    </StackLayout>
+
+    <StackLayout *ngIf="emplistrequestapproval.length==0">
+        <Label text='{{"wafi.request_not_found"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c" class="iosFont"></Label>
+     </StackLayout>
   
 
     <StackLayout height="100%" *ngIf="!isLoading">
-        <StackLayout  *ngFor="let appreq of emplistrequestapproval ">
+        <StackLayout  *ngFor="let appreq of emplistrequestapproval |filter:filter">
             <FlexboxLayout (tap)="clickme(appreq)" [visibility]="clicked == appreq ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
                 <Label  text="&#xf107;"  class="fas arr-drop"></Label>
                 <FlexboxLayout flexDirection="row-reverse">
@@ -76,5 +82,5 @@
             </FlexboxLayout>
         </StackLayout>
     </StackLayout>
-</FlexboxLayout>
+</StackLayout>
 </ScrollView>

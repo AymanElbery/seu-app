@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
 import { EmployeeRequestsService } from '../../services/employee-requests.service';
 import { TranslateService } from '@ngx-translate/core';
-import { AppToasterService } from '../../../shared/services/app-toaster';
+import { AppToasterService } from '../../../shared/services/app-toaster.tns';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as dialogs from 'tns-core-modules/ui/dialogs';
 
 @Component({
   selector: 'app-requests-list',
@@ -73,14 +74,20 @@ export class RequestsListComponent implements OnInit, OnDestroy {
   getreqdetail(orderItemIndex, requestSeq, requestType) {
  this.router.navigate(['/requests/requests-details', requestSeq, requestType]);
   }
-  delete(requestSeq: any, requestType: any) {
-    if (confirm(this.translate.instant('general.delete_confirm'))) {
+  delete(requestSeq: string, requestType: string) {
+
+    console.log(requestSeq);
+    dialogs.confirm(this.translate.instant('general.delete_confirm')).then(result => {
+   console.log(result);
+   if (result) {
       this.deleting = true;
       this.subscriptiondelreq = this.empreqservice.deletetEmpRequest(requestSeq, requestType).subscribe(empreqsdel => {
-        // console.log(empreqsdel);
-        // this.toastr.push((empreqsdel as any).statusDesc);
-        this.deleting = false;
-        this.getReqlist();
+         console.log(empreqsdel);
+         this.toastr.show((empreqsdel as any).statusDesc);
+        // this.toastr.show('hi');
+         this.deleting = false;
+
+         this.getReqlist();
       },
         err => {
           this.toastr.tryagain();
@@ -88,6 +95,7 @@ export class RequestsListComponent implements OnInit, OnDestroy {
         });
 
     }
+    });
   }
 
   pageChanged(event) {

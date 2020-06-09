@@ -29,16 +29,17 @@ getempIdLoggedin() {
 }
   apllyBasicParams(obj) {
     obj.empId = this.user.userData.id;
+    obj.lang = this.translate.currentLang == 'ar' ? 1 : 2;
 
+    // tslint:disable-next-line: max-line-length
     obj.authorizationKey = 'RSUyZlJMR0tMc1QlMmJjRFAjdHQ1cms4Y3pPOWRmNk50K0BlR2ElMmJjYlZhY0ZhVklGUE5hazdlOU0lM2Q6JFlpOEVQR0VXRWI0YXE3JVZFd0xORClsVW9oMTUlMj1Pd2olMmZrUCUyZnlYTjUhVFM4SjN6cWs2RDRUbEdP';
     obj.sessionId = this.globalService.getSID();
-    console.log('empid', this.user.userData.id);
-    console.log(obj);
+   // console.log('empid', this.user.userData.id);
+   // console.log(obj);
     // obj["empId"] = "4417010014";
-   // obj["empId"] = "4361010022";
+   // obj.empId = '4361010022';
     // obj["empId"] = "4417010015";
 
-    obj.lang = this.translate.currentLang == 'ar' ? 1 : 2;
     return obj;
   }
   getHeaders() {
@@ -57,13 +58,15 @@ getempIdLoggedin() {
 
   postRequest_obj(path: string, body: any = {}) {
     const url = this.getApiURI() + path;
-    console.log('url');
-    console.log(url);
-    console.log('before', body);
     body = this.apllyBasicParams(body);
     const headers = this.getHeaders();
-    console.log('after', body);
+    console.log('20');
+    //body.lang = this.translate.currentLang == 'ar' ? 1 : 2;
+  
+    try {
+      console.log('22');
     return this.http.post(url, JSON.stringify(body), { headers });
+    } catch (e) {console.log('e'); }
   }
 
 }

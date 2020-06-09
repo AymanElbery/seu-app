@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { EmployeeRequestsService } from '../../services/employee-requests.service';
@@ -10,6 +10,8 @@ import { File } from 'tns-core-modules/file-system';
 import { FilePickerOptions } from 'nativescript-mediafilepicker/mediafilepicker.common';
 import { Mediafilepicker } from 'nativescript-mediafilepicker';
 import * as app from 'tns-core-modules/application';
+import { RouterExtensions } from 'nativescript-angular/router';
+import { ios } from 'tns-core-modules/application';
 
 
 declare const kUTTypePDF;
@@ -18,7 +20,7 @@ declare var NSString: any;
 declare var NSUTF8StringEncoding: any;
 declare var java: any;
 declare var android: any;
-let filePath: string = null;
+let filePath2: string = null;
 
 
 @Component({
@@ -34,7 +36,8 @@ export class EvacuatePartyRequestComponent implements OnInit {
   disclaimerReasons: ValueItem<any>[] = [];
   disclaimerReasonItemsDropDown;
   dataObject = {  disclaimerReason: '',
-    file: '',  notes: '',requestType:0};
+      notes: '', requestType: 0};
+  datafile = '';
 
 
   subscriptionDDLReqtype: Subscription;
@@ -49,34 +52,69 @@ export class EvacuatePartyRequestComponent implements OnInit {
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
               private translate: TranslateService,
-              private router: Router) {
+              private router: Router, private routerExtensions: RouterExtensions,
+              private ref: ChangeDetectorRef) {
 
   }
 
-  get fileName() {
-    return filePath != null ? File.fromPath(filePath).name : 'Browse';
-  }
-  changeYear(e) {
+
+  changedisclaimerReason(e) {
     this.dataObject.disclaimerReason = this.disclaimerReasonItemsDropDown.getValue(e.newIndex);
   }
-  onFormSubmit(data) {
-    this.dataObject.file = this.convertToBase64(filePath);
-  this.dataObject.requestType=this.id;
-    const submitdatavalue = this.dataObject;
 
+
+
+ getExt(filename) {
+    const ext = filename.split('.').pop();
+    if (ext == filename) { return 'png'; }
+    return ext;
+}
+
+get fileName() {
+  return filePath2 != null ? File.fromPath(filePath2).name : 'Browse';
+}
+
+   onFormSubmit(data) {
+    let ftype = 'data:image/png;base64,';
+
+ //   this.ref.detectChanges();
+   // alert(filePath2);
+    console.log('1');
+    if (filePath2 != null  ) {
+
+
+      const exts = this.getExt(filePath2);
+      if (exts == 'pdf' || exts == 'PDF') {
+        ftype = 'data:application/pdf;base64,';
+      }
+    // tslint:disable-next-line: max-line-length
+      try {
+    this.datafile =   ftype +  this.convertToBase64(filePath2) ;
+    console.log(this.datafile.length);
+    } catch (e) {
+      alert(e);
+    }
+   // alert('12');
+
+
+    }
+    // this.convertToBase64(filePath);
+    this.dataObject.requestType = this.id;
+    const submitdatavalue = this.dataObject;
 
     // console.log("submit data", submitdatavalue);
     this.submitted = true;
+    console.log('13');
 
-    this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
+     this.empreqservice.submitreqserviceleavedeductionmobile(this.datafile, submitdatavalue).toPromise().then(leavdedcut => {
      console.log('saved data', leavdedcut);
-
+     // // alert('14');
+     this.datafile = '';
+     filePath2 = null;
      console.log((leavdedcut as any).data);
      if (!((leavdedcut as any).data)) {
-      const error = 'خطأ ارسال البيانات ';
-
+      const error = '  حدث خطأ اثناء عملية التسجيل الرجاء ادخال البيانات بطريقة صحيحه ';
       this.toastr.push([{ type: 'error', body: error }]);
-
      }
 
      if (!(leavdedcut as any).data.saveRequest) {
@@ -84,12 +122,15 @@ export class EvacuatePartyRequestComponent implements OnInit {
         // console.log("response data",error);
         this.toastr.push([{ type: 'error', body: error }]);
         this.submitted = false;
-
       } else {
         this.toastr.push([{ type: 'success', body: this.translate.instant('wafi.request_saved') }]);
-        this.router.navigate(['/wafi/employee-requests']);
+        // this.router.navigate(['/wafi/employee-requests']);
       }
-    }
+    },
+
+    (e) => {console.log(e);        this.toastr.push([{ type: 'error', body: e }]);
+  }
+    // tslint:disable-next-line: align
     );
 
   }
@@ -140,10 +181,16 @@ export class EvacuatePartyRequestComponent implements OnInit {
   }
 
   back() {
-    this.router.navigate(['/requests/add-new-request']);
+  //  alert(filePath2);
+   // this.convertToBase64(filePath2) ;
+
+    filePath2 = null;
+
+    this.router.navigate(['/requests/add-request']);
   }
 
   public openCustomFilesPicker(type: string) {
+    filePath2 = null;
     console.log('f1');
     let extensions = [];
     if (app.ios) {
@@ -158,6 +205,8 @@ export class EvacuatePartyRequestComponent implements OnInit {
         android: {
             extensions,
             maxNumberFiles: 1
+
+
         },
         ios: {
             extensions,
@@ -182,12 +231,15 @@ export class EvacuatePartyRequestComponent implements OnInit {
               console.log('f1f' + i);
               const result = results[i];
               if (type === 'file') {
-                  filePath = result.file;
+                  filePath2 = result.file;
                   console.log('filepath:');
                   console.log(result.file);
-                  filePath = filePath.replace('file:///', '');
-                  console.log('fpath', filePath);
-                }
+                  if (app.ios) {
+                  filePath2 = filePath2.replace('file:///', '');
+                  }
+                  console.log('fpath', filePath2);
+
+             }
             }
         }
   });
@@ -197,39 +249,41 @@ export class EvacuatePartyRequestComponent implements OnInit {
       const msg = res.object.get('msg');
       console.log(msg);
   });
-
     // tslint:disable-next-line: only-arrow-functions
     mediafilepicker.on('cancel', function(res) {
       const msg = res.object.get('msg');
       console.log(msg);
   });
+
 }
-  convertToBase64(f: string) {
+   convertToBase64(f: string) {
     console.log('ggfile');
     console.log(f);
+   // alert(f);
     let base64String: string;
     let file: File;
     if (f != null) {
-      console.log('ggfile1');
-      file = File.fromPath(f);
-      console.log('ggfile3');
+      console.log('1');
+      file =  File.fromPath(f);
+      console.log('2');
     } else {
       return;
     }
-    console.log('ggfile5');
-    const data = file.readSync();
-    console.log('ggfile6');
+    // alert('ggfile7');
+
+    const data =  file.readSync();
+    // alert('ggfile6');
 
     if (app.ios) {
-      base64String = data.base64EncodedStringWithOptions(0);
-      console.log('ggfile7');
+      base64String =  data.base64EncodedStringWithOptions(0);
+      // alert('ggfile7');
     } else {
-      base64String = android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
+      base64String =  android.util.Base64.encodeToString(data, android.util.Base64.NO_WRAP);
 
     }
+    console.log('2');
     return base64String;
   }
-
 
 }
 
