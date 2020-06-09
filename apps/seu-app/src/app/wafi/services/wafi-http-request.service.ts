@@ -37,7 +37,7 @@ getempIdLoggedin() {
    // console.log('empid', this.user.userData.id);
    // console.log(obj);
     // obj["empId"] = "4417010014";
-    obj.empId = '4361010022';
+   // obj.empId = '4361010022';
     // obj["empId"] = "4417010015";
 
     return obj;
