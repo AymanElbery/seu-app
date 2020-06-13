@@ -27,16 +27,20 @@
         <TextField [(ngModel)]="updatedForm.address_s" #reason="ngModel" required></TextField>
 
         <Label text='{{"wafi.comminicationlanguage"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <DropDown
-        #dropdown
-        [items]="langsDropDown"
-        (selectedIndexChanged)="getLang($event)"
-        itemsTextAlignment="left"
-        itemsPadding="5"
-        required
-        (loaded) =onLoadedDropDown(dropdown)
-        >
-        </DropDown>
+        <GridLayout rows="auto" columns="*,150">
+             <Label row="0" col="1" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
+            <DropDown
+            row="0" col="1"
+            #dropdown
+            [items]="langsDropDown"
+            (selectedIndexChanged)="getLang($event)"
+            itemsTextAlignment="left"
+            itemsPadding="5"
+            required
+            (loaded) =onLoadedDropDown(dropdown)
+            >
+            </DropDown>
+        </GridLayout>
     </StackLayout>
     <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
         <Button text='{{"tasks.Send" | translate}}' (tap)="onFormSubmit()" class="print-btn"></Button>
