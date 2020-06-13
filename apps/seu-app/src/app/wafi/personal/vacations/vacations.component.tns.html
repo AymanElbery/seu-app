@@ -19,7 +19,8 @@
       #dropdown
       [items]="vacationsDropDown"
       (selectedIndexChanged)="getVacation($event)"
-      itemsTextAlignment="left"
+      android:itemsTextAlignment="left"
+      ios:itemsTextAlignment="right"
       itemsPadding="5"
       required
       hint='{{"wafi.selectvacationtype" | translate}}'
