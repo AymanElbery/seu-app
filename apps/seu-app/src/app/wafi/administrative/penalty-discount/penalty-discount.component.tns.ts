@@ -73,12 +73,18 @@ export class PenaltyDiscountComponent implements OnInit {
         this.printdata = getreport['data'];
         const fileName = "panalty_discount" + '_' + new Date().getTime() + '.pdf';
         const permissions = require('nativescript-permissions');
+        if(isAndroid){
         permissions.requestPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, 'I need these permissions').then(
             () => {
                 const file: File = File.fromPath(path.join(this.downloadedFilePath,fileName));
                 this.convertBase64ToPdf(this.printdata,file);
                 utils.openFile(file.path);
               });
+            }else{
+              const file: File = File.fromPath(path.join(this.downloadedFilePath,fileName));
+              this.convertBase64ToPdf(this.printdata,file);
+              utils.openFile(file.path);
+            }
       } else {
         this.messages = [];
       }
