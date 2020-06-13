@@ -31,7 +31,7 @@ export class RegularLeaveRequestComponent implements OnInit {
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
               private translate: TranslateService,
-              private router: Router,private routerExtensions: RouterExtensions) {
+              private router: Router, private routerExtensions: RouterExtensions) {
 
 
 
@@ -76,13 +76,16 @@ d;
       // alert('START');
 
   //  this.dataObject.file = 'data:' + ext + ';base64,' + this.convertToBase64(filePath); this.convertToBase64(filePath);
-      const ftype = 'data:image/png;base64,';
+      let ftype = 'data:image/png;base64,';
       this.dataObject.requestType = this.id;
-      if (filePath != null  ) {
-const extens = this.getExt(filePath);
-//alert(extens);
 
-try {
+      if (filePath != null  ) {
+        const exts = this.getExt(filePath);
+        if (exts == 'pdf' || exts == 'PDF') {
+          ftype = 'data:application/pdf;base64,';
+        }
+
+        try {
       this.datafile = ftype + this.convertToBase64(filePath) ;
 
      } catch (E) {
@@ -210,9 +213,9 @@ try {
 
 
   back() {
-    this.convertToBase64(filePath) ;
+   // this.convertToBase64(filePath) ;
     filePath = null;
-   // this.router.navigate(['requests/add-request']);
+    this.router.navigate(['requests/add-request']);
   }
   get fileName() {
     return filePath != null ? File.fromPath(filePath).name : 'Browse';
