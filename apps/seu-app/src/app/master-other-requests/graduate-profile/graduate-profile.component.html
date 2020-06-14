@@ -26,7 +26,7 @@
 
 
       <h3 class="widget-title"> {{"general.request.pre_requests"|translate}}
-        <button *ngIf=" true || reqData.can_update_data" type="button" class="btn btn-primary" (click)="openAddDialoge()">
+        <button *ngIf="reqData.can_update_data" type="button" class="btn btn-primary" (click)="openAddDialoge()">
           {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
         </button>
 
@@ -62,7 +62,7 @@
 
               </button>
             </td>
-            <td><button class="btn btn-sm btn-danger" style="color: white" (click)="delete(it.request_number,i)"><i
+            <td><button class="btn btn-sm btn-danger" style="color: white" [disabled]='deleting' (click)="delete(it.request_number,i)"><i
                   class="fa fa-trash">
                   <!-- <app-timer [hr]="it.time_to_delete_per_hour"></app-timer>-->
                 </i> </button></td>
