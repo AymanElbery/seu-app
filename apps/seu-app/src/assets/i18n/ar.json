@@ -1178,8 +1178,6 @@
         "evaluation_not_found":"لا يوجد تقويم ",
         "data_not_found":"لا يوجد بيانات",
         "request_not_found":"لا يوجد طلبات"
-
-
     },
     "tasks": {
         "description": "الوصف",
