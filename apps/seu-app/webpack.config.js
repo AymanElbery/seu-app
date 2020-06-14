@@ -305,6 +305,8 @@ module.exports = env => {
                 { from: { glob: "**/*.jpg" } },
                 { from: { glob: "**/*.png" } },
                 { from: { glob: "**/*.mp4" } },
+                { from: { glob: "**/*.pdf" } },
+
 
             ], { ignore: [`${relative(appPath, appResourcesFullPath)}/**`] }),
             new nsWebpack.GenerateNativeScriptEntryPointsPlugin("bundle"),

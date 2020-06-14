@@ -2,23 +2,25 @@
 
 
 <ScrollView>
-    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
 
     <StackLayout>
+      <ActivityIndicator [visibility]='isLoading?"visible":"collapse"' [busy]="isLoading" color="#6189f4"></ActivityIndicator>
 
       <GridLayout  columns="auto, *" class="serv-title">
         <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
         <Label col="1" text='{{"wafi.Vacations" | translate}}' class="serv-name" ></Label>
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
-  
+
       <GridLayout  class="ysBox" rows="auto" columns="*,150">
       <Label row="0" col="1" text='{{"wafi.selectvacationtype" | translate}}' class="ysPBox"></Label>
+      <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
       <DropDown row="0" col="0" class="ysPBox2"
       #dropdown
       [items]="vacationsDropDown"
       (selectedIndexChanged)="getVacation($event)"
-      itemsTextAlignment="left"
+      android:itemsTextAlignment="left"
+      ios:itemsTextAlignment="right"
       itemsPadding="5"
       required
       hint='{{"wafi.selectvacationtype" | translate}}'

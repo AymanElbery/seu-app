@@ -40,9 +40,9 @@ export class VacationRequestComponent implements OnInit {
   id: number;
   msg;
   dataObject = {vacation: 0, beginYear: 0, beginMonth: 0,
-     beginDay: 0, timePeriod: 0, compensationVal: 0,
-     altEemployee: 0, toCountryNew: 0, toCityNew: 0,
-     vacationLoc: '', phone: '', notes: ''};
+     beginDay: 0, timePeriod: 0, compensationVal: '',
+     altEemployee: '', toCountryNew: '', toCityNew: '',
+     vacationLoc: '', phone: '', notes: '', requestType: 0};
   vacsDropDown;
   vacs: ValueItem<number>[] = [];
   altempDropDown;
@@ -58,6 +58,15 @@ export class VacationRequestComponent implements OnInit {
   private sub: any;
   compErkabs: ValueItem<number>[] = [];
   compErkabItemsDropDown;
+
+  periodsDropDown;
+  periods: ValueItem<number>[] = [
+    {display:"1",value:1},
+    {display:"2",value:2},
+    {display:"3",value:3},
+    {display:"4",value:4},
+
+  ];
   constructor(private route: ActivatedRoute,
               private toastr: AppToasterService,
               private empreqservice: EmployeeRequestsService,
@@ -71,6 +80,7 @@ export class VacationRequestComponent implements OnInit {
 
   changeVac(e) {
     this.dataObject.vacation = this.vacsDropDown.getValue(e.newIndex);
+    this.dataObject.requestType = this.id;
     console.log('vacid');
     console.log(this.dataObject.vacation);
     this.getvacationbal(this.dataObject.vacation);
@@ -91,7 +101,10 @@ export class VacationRequestComponent implements OnInit {
   changealtemp(e) {
     this.dataObject.altEemployee = this.altempDropDown.getValue(e.newIndex);
   }
+  changePeriod(e){
+    this.dataObject.timePeriod = this.periodsDropDown.getValue(e.newIndex);
 
+  }
   changecountry(e) {
     this.dataObject.toCountryNew = this.countryDropDown.getValue(e.newIndex);
     console.log(this.dataObject.toCountryNew );
@@ -137,13 +150,21 @@ export class VacationRequestComponent implements OnInit {
   }
 
   onFormSubmit(f) {
+    this.dataObject.requestType = this.id;
+
     // this.isLoading = true;
     const submitdatavalue = this.dataObject;
-
+    console.log(submitdatavalue);
     this.submitted = true;
     // console.log("submit data", submitdatavalue);
     this.empreqservice.submitreqservice(submitdatavalue).subscribe(contacts => {
        console.log('saved ', contacts);
+       if (!((contacts as any).data)) {
+        const error = '  حدث خطأ اثناء عملية التسجيل الرجاء ادخال البيانات بطريقة صحيحه ';
+  
+        this.toastr.push([{ type: 'error', body: error }]);
+  
+       }
        if ((contacts as any).data.saveRequest) {
         this.toastr.saved();
         this.back();
@@ -182,9 +203,10 @@ export class VacationRequestComponent implements OnInit {
         this.ddltruefalse = false;
         this.vacationsbal = this.getvacationbal(1);
         this.dataObject.vacation = 1;
+        this.dataObject.requestType = this.id;
        // this.AddReqForm.controls.vacation.setValue(1);
         // var=this.FillDDLReqType(this.id);
-     
+
       }
       this.FillDDLReqType(this.id);
     });
@@ -194,6 +216,7 @@ export class VacationRequestComponent implements OnInit {
     });
 
   }
+  // tslint:disable-next-line: use-life-cycle-interface
   ngOnDestroy() {
     if (this.subscriptions) {
       this.subscriptions.unsubscribe();
@@ -316,6 +339,7 @@ export class VacationRequestComponent implements OnInit {
       } else {
       }
     });
+    this.periodsDropDown = new ValueList(this.periods);
   }
 
   back() {

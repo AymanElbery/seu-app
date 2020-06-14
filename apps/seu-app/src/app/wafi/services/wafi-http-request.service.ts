@@ -28,14 +28,15 @@ getempIdLoggedin() {
   return this.user.userData.id;
 }
   apllyBasicParams(obj) {
-    obj['authorizationKey'] = 'RSUyZlJMR0tMc1QlMmJjRFAjdHQ1cms4Y3pPOWRmNk50K0BlR2ElMmJjYlZhY0ZhVklGUE5hazdlOU0lM2Q6JFlpOEVQR0VXRWI0YXE3JVZFd0xORClsVW9oMTUlMj1Pd2olMmZrUCUyZnlYTjUhVFM4SjN6cWs2RDRUbEdP';
-    obj['sessionId'] = this.globalService.getSID();
-    obj['empId'] = this.user.userData.id;
-    // obj["empId"] = "4417010014";
-    // obj["empId"] = "4361010022";
-    // obj["empId"] = "4417010015";
+    obj.empId = this.user.userData.id;
+    obj.lang = this.translate.currentLang == 'ar' ? 1 : 2;
 
-    obj['lang'] = this.translate.currentLang == 'ar' ? 1 : 2;
+    // tslint:disable-next-line: max-line-length
+    obj.authorizationKey = 'RSUyZlJMR0tMc1QlMmJjRFAjdHQ1cms4Y3pPOWRmNk50K0BlR2ElMmJjYlZhY0ZhVklGUE5hazdlOU0lM2Q6JFlpOEVQR0VXRWI0YXE3JVZFd0xORClsVW9oMTUlMj1Pd2olMmZrUCUyZnlYTjUhVFM4SjN6cWs2RDRUbEdP';
+    obj.sessionId = this.globalService.getSID();
+   
+   obj["empId"] = this.user.userData.id;
+   
     return obj;
   }
   getHeaders() {
@@ -46,6 +47,8 @@ getempIdLoggedin() {
   postRequest(path: string, body: any = {}) {
     const url = this.getApiURI() + path;
     body = this.apllyBasicParams(body);
+    console.log('body');
+    console.log(body);
     const headers = this.getHeaders();
     return this.http.post(url, JSON.stringify(body), { headers });
   }
@@ -54,8 +57,13 @@ getempIdLoggedin() {
     const url = this.getApiURI() + path;
     body = this.apllyBasicParams(body);
     const headers = this.getHeaders();
-   // console.log("Parameter",body)
+    console.log('20');
+    //body.lang = this.translate.currentLang == 'ar' ? 1 : 2;
+  
+    try {
+      console.log('22');
     return this.http.post(url, JSON.stringify(body), { headers });
+    } catch (e) {console.log('e'); }
   }
 
 }

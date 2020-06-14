@@ -8,11 +8,9 @@
       NavigationButton as a side-drawer button in iOS is not possible,
       because its function is to always navigate back in the application.
       -->
-    <StackLayout horizontalAlignment="center" style="height: 100%;margin: 0px;" margin-top="0">
-  
-      <Image style="width: 100%;" [nsRouterLink]="['/land']" src="~/images/logo_3d.png"></Image>
-    </StackLayout>
-    <NavigationButton icon="font://&#xf104;" style="font-size: 25px;" class="fas icon-action" (tap)="goBack()"
+      <Label text='{{"wafi.AddNewRequest"|translate}}' class="label-action"></Label>
+
+    <NavigationButton icon="font://&#xf104;" style="font-size: 25px;" class="fas icon-action" (tap)="back()"
       ios.position="left"></NavigationButton>
   
   </ActionBar>
@@ -21,16 +19,7 @@
   
     <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
   
-      <GridLayout columns="auto, *" class="serv-title">
-        <Label col="1" text="&#xf0d9;" class="fas serv-ico-r"></Label>
-        <Label col="1" text='{{"wafi.deductionregularleave27" | translate}}' class="serv-name"></Label>
-        <Label col="1" text="&#xf0da;" class="fas serv-ico "></Label>
-  
-      </GridLayout>
-  
-  
-  
-  
+
   
       <StackLayout height="100%" *ngIf="!isLoading">
         <StackLayout>
@@ -52,56 +41,61 @@
                        
                           </GridLayout>
                           <GridLayout  rows="auto"  columns="*,150">
-                            <label class="ysPBox"  row="0" col="1" text="اختر السنه"></label>
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <label class="ysPBox"  row="0" col="1" text="اختر السنه *"></label>
+                            <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
+                            <DropDown horizontalAlignment="center" col="0" row="0" [class]="dataObject.beginYear>0 ? 'ysPBox2' : 'ysPBox3'" 
                             [items]="yearsDropDown"
                             (selectedIndexChanged)="changeYear($event)"
                             hint="{{'wafi.year'|translate}}"
                             itemsTextAlignment="center" style="text-align: center ;width: 100%;" >
-                          
+                            required
                           </DropDown>
                           </GridLayout>
                           <GridLayout   rows="auto"  columns="*,150">
-                            <label class="ysPBox"  row="0" col="1" text="{{'wafi.day'|translate}}"></label>
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <label class="ysPBox"  row="0" col="1" text="{{'wafi.day'|translate}}*"></label>
+                            <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
+
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="daysDropDown"
                             (selectedIndexChanged)="changeDay($event)"
                             hint="{{'wafi.day'|translate}}"
                             itemsTextAlignment="center" style="text-align: center ;width: 100%;" >
-                          
+                            required
                           </DropDown>
                           </GridLayout>
                           <GridLayout  rows="auto"  columns="*,150">
-                            <label class="ysPBox" row="0" col="1" text='{{"wafi.month"|translate}}'></label>
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <label class="ysPBox" row="0" col="1" text='{{"wafi.month"|translate}}*'></label>
+                            <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
+
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="monthesDropDown"
                             (selectedIndexChanged)="changeMonth($event)"
                             hint=' {{"wafi.month"|translate}}'
                             itemsTextAlignment="center" style="text-align: center ;width: 100%;" >
-                          
+                            required
                           </DropDown>                          </GridLayout>
 
                           <GridLayout  rows="auto"  columns="*,150">
-                            <label class="ysPBox" row="0" col="1" text="{{'wafi.leaveDeductionPeriod'|translate}}"></label>
-                            <TextField class="ysPBox2" keyboardType="number" col="0" row="0" hint="{{'wafi.leaveDeductionPeriod'|translate}}"  [(ngModel)]='dataObject.leaveDeductionPeriod' ></TextField>
+                            <label  class="ysPBox" row="0" col="1" text="{{'wafi.leaveDeductionPeriod'|translate}}*"></label>
+                            <TextField class="ysPBox3" keyboardType="number" col="0" row="0" hint="{{'wafi.leaveDeductionPeriod'|translate}}"  [(ngModel)]='dataObject.leaveDeductionPeriod' ></TextField>
                           </GridLayout>
 
 
                           <GridLayout   rows="auto"  columns="*,150">
                             <label class="ysPBox"  row="0" col="1" text="{{'wafi.notes'|translate}}"></label>
-                            <TextField class="ysPBox2"  col="0" row="0"  hint=" {{'wafi.notes'|translate}}" [(ngModel)]='dataObject.notes' ></TextField>
+                            <TextField class="ysPBox3"  col="0" row="0"  hint=" {{'wafi.notes'|translate}}" [(ngModel)]='dataObject.notes' ></TextField>
 
                           </GridLayout>
                           <GridLayout   rows="auto"  columns="*,150">
-                            <label class="ysPBox"  row="0" col="1" text="{{'wafi.notes'|translate}}"></label>
-                            <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="ysPBox print-btn"></Button>
+                            <label class="ysPBox"  row="0" col="1" text="{{'wafi.attachment'|translate}}"></label>
+                            <Button text="اختر ملف"  (tap)="openCustomFilesPicker('file')" class="ysPBox print-btn"></Button>
 
                           </GridLayout>
 
-                          <GridLayout rows="*,*" columns="*,*">
+                          <GridLayout  rows="150" columns="*,*">
 
-                            <Button row="1" col="1" text='{{"wafi.Submit" | translate}}'   class=" print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
-                            <Button row="1" col="0" text='{{"wafi.back" | translate}}'    [disabled]="submitted" class=" print-btn "  (tap)="back()"></Button>
+                            <Button isEnabled="{{dataObject.beginYear > 0 && dataObject.beginMonth > 0 &&  dataObject.beginDay > 0 && dataObject.leaveDeductionPeriod>0}}" row="1" col="1" text='{{"wafi.Submit" | translate}}'   class="ysPBox print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
+                            <Button text='{{"wafi.back" | translate}}'  row="1" col="0" text='{{"wafi.back" | translate}}'     class="ysPBox print-btn "  (tap)="back()"></Button>
                           </GridLayout>
                      
 

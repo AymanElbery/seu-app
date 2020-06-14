@@ -12,8 +12,14 @@
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
       </GridLayout>
 
-      <Label text='{{"wafi.search_by_date_or_no"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c" class="iosFont"></Label>
-      <TextField [(ngModel)]="filter" #search="ngModel" required hint="" style="margin-right:20 ;"></TextField>
+      <StackLayout *ngIf="getepanaltydata.length>0">
+        <Label text='{{"wafi.search_by_date_or_no"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c" class="iosFont"></Label>
+        <TextField [(ngModel)]="filter" #search="ngModel" required hint="dd-mm-yyyy" style="margin-right:20 ;"></TextField>
+     </StackLayout>
+
+     <StackLayout *ngIf="getepanaltydata.length==0">
+      <Label text='{{"wafi.data_not_found"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c" class="iosFont"></Label>
+   </StackLayout>
 
       <StackLayout  *ngFor="let item of getepanaltydata  |filter:filter">
         <FlexboxLayout (tap)="clickme(item)" [visibility]="clicked == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">

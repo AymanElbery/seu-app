@@ -59,6 +59,8 @@ getprintreport(repName:any,outerSide:any){
 getprintreport_housing(repName:any){
   return this.wafihttRequest.postRequest_obj('emp/print-pdf-report',{repName});
 }
-
+getprintreport_housing_mobile(repName:any){
+  return this.wafihttRequest.postRequest_obj('emp/print-pdf-report-mobile',{repName});
+}
 
 }

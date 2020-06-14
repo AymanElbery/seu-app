@@ -41,14 +41,17 @@
         <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_TRN_CONTENT_DESC" | translate}}'></Label>
         <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.content"></Label>
 
-        <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_TRN_CRS_DURATION" | translate}}'></Label>
-        <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.courseDuration"></Label>
-       
+       <FlexboxLayout flexDirection="row-reverse" row="3"  column="1" class="ysPBox" justifyContent="center">
+        <Label  textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_TRN_CRS_DURATION" | translate}}'></Label>
+        <Label   textWrap="true" text="/"></Label>
+        <Label   textWrap="true" [text]="item.durationDesc"></Label>
+       </FlexboxLayout>
+       <Label row="3"  column="0" class="ysPBox2"  textWrap="true" [text]="item.courseDuration"></Label>
+
         <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.EMP_TRN_CONTECT_DATE" | translate}}'></Label>
         <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.contentHDate" ></Label>
 
-        <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_TRN_CRS_DURATION_TYPE" | translate}}'></Label>
-        <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.durationDesc" ></Label>
+      
 
         <Label row="6"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.EMP_TRN_CONTENT_TRAING_DESC" | translate}}'></Label>
         <Label row="6"  column="0" class="ysPBox2" textWrap="true" [text]="item.contentDesc" ></Label>

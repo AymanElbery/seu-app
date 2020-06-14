@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
@@ -32,13 +32,13 @@ export class RegularLeaveRequestComponent implements OnInit {
   private sub: any;
   constructor(private route: ActivatedRoute, private toastr: AppToasterService, private empreqservice: EmployeeRequestsService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
     this.AddReqForm = fb.group({
-      'requestType': [this.id],
-      'beginDay': ['', [Validators.required]],
-      'beginMonth': ['', [Validators.required]],
-      'beginYear': ['', [Validators.required]],
-      'leaveDeductionPeriod': ['', [Validators.required]],
-      'notes': [''],
-      'file': ['']
+      requestType: [this.id],
+      beginDay: ['', [Validators.required]],
+      beginMonth: ['', [Validators.required]],
+      beginYear: ['', [Validators.required]],
+      leaveDeductionPeriod: ['', [Validators.required]],
+      notes: [''],
+      file: ['']
     });
 
 
@@ -53,7 +53,7 @@ export class RegularLeaveRequestComponent implements OnInit {
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    this.AddReqForm.controls['file'].setValue(reader.result);
+    this.AddReqForm.controls.file.setValue(reader.result);
   }
 
   onFormSubmit(event) {
@@ -64,17 +64,17 @@ export class RegularLeaveRequestComponent implements OnInit {
     }
 
 
-    //console.log("submit data", submitdatavalue);
+    // console.log("submit data", submitdatavalue);
 
     this.empreqservice.submitreqserviceleavededuction(submitdatavalue).subscribe(leavdedcut => {
-      ////console.log("saved data", leavdedcut);
-      if (!leavdedcut['data']['saveRequest']) {
-        var error = (leavdedcut as any).data["errorMassege"]
-        this.toastr.push([{ type: 'error', 'body': error }]);
+      //// console.log("saved data", leavdedcut);
+      if (!(leavdedcut as any).data.saveRequest) {
+        let error = (leavdedcut as any).data['errorMassege'];
+        this.toastr.push([{ type: 'error', body: error }]);
 
       } else {
-        this.toastr.push([{ type: 'success', 'body': this.translate.instant('wafi.request_saved') }]);
-        this.router.navigate(['/wafi/employee-requests'])
+        this.toastr.push([{ type: 'success', body: this.translate.instant('wafi.request_saved') }]);
+        this.router.navigate(['/wafi/employee-requests']);
       }
     }
     );
@@ -88,10 +88,10 @@ export class RegularLeaveRequestComponent implements OnInit {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id']; // (+) converts string 'id' to a number      
+      this.id = +params.id; // (+) converts string 'id' to a number
       this.FillDDLReqType(this.id);
     });
-    //this.FillDDLReqType();
+    // this.FillDDLReqType();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
       this.FillDDLReqType(this.id);
     });
@@ -99,28 +99,29 @@ export class RegularLeaveRequestComponent implements OnInit {
   }
   get f() { return this.AddReqForm.controls; }
   ngOnDestroy() {
-    if (this.subscriptions)
+    if (this.subscriptions) {
       this.subscriptions.unsubscribe();
+    }
   }
 
   FillDDLReqType(reqtypeid: any) {
-    this.isLoading = true
-    this.AddReqForm.controls['requestType'].setValue(this.id);
+    this.isLoading = true;
+    this.AddReqForm.controls.requestType.setValue(this.id);
     this.subscriptionDDLReqtype = this.empreqservice.getDDLVacationType(reqtypeid).subscribe(reqtype => {
       if (reqtype) {
 
-        this.ddlday = (reqtype as any).data["dayItem"];
-        this.ddlmonth = (reqtype as any).data["monthItem"];
-        this.ddlyear = (reqtype as any).data["yearItem"];
-        ////console.log("vac item data", this.vacationreqtype);
-        this.isLoading = false
+        this.ddlday = (reqtype as any).data['dayItem'];
+        this.ddlmonth = (reqtype as any).data['monthItem'];
+        this.ddlyear = (reqtype as any).data['yearItem'];
+        //// console.log("vac item data", this.vacationreqtype);
+        this.isLoading = false;
       } else {
       }
     });
   }
 
   back() {
-    this.router.navigate(['/wafi/employee-requests/add-new-request'])
+    this.router.navigate(['/wafi/employee-requests/add-new-request']);
   }
 
 }
