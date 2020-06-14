@@ -91,5 +91,23 @@ export class GraduateProfileComponent implements OnInit,OnDestroy {
       }
     });
   }
+  deleting = false;
+  delete(id, index) {
+    if (confirm(this.translate.instant('general.delete_confirm'))) {
+      this.deleting = true;
+      this.gradProfServ.deleteReq(id).then(res => {
+        this.toastr.push((res as any).messages);
+        if ((res as any).status == 1) {
+          this.reqData.reqs.splice(index, 1);
+        }
+        this.deleting = false;
+      }, err => {
+        this.toastr.tryagain();
+        this.deleting = false;
+      });
+    }
+
+  }
+
 
 }
