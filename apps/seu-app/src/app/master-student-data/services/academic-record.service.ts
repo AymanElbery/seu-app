@@ -17,21 +17,25 @@ export class AcademicRecordService {
 
 
     return this.httRequest.GetRequest('academic_record_service').toPromise();
-   }
+  }
 
-    Download() {
+  Download() {
 
-      this.configService.baseUrl = 'stdsUnivapi';
-      const sid =   this.configService.getSid();
-
-
-      return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print';
-    }
-    DownloadEng() {
-      this.configService.baseUrl = 'stdsUnivapi';
-      const sid =   this.configService.getSid();
+    this.configService.baseUrl = 'stdsUnivapi';
+    const sid = this.configService.getSid();
 
 
-      return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?lang=en' + sid;
-    }
+    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print';
+  }
+  DownloadEng() {
+    this.configService.baseUrl = 'stdsUnivapi';
+    const sid = this.configService.getSid();
+
+
+    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?lang=en' + sid;
+  }
+  getٍِStudentGrades() {
+    this.configService.baseUrl = 'stdsUnivapi';
+    return this.httRequest.GetRequest('academic_record_service/grades').toPromise();
+  }
 }
