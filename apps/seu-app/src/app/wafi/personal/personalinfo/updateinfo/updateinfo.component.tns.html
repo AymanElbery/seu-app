@@ -27,9 +27,10 @@
         <TextField [(ngModel)]="updatedForm.address_s" #reason="ngModel" required></TextField>
 
         <Label text='{{"wafi.comminicationlanguage"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
-        <GridLayout rows="auto" columns="*,150">
-             <Label row="0" col="1" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
-            <DropDown
+        <GridLayout rows="auto" columns="*,10" class="ysBox">
+            <Label row="0" col="1" class="ysPBox"></Label>
+             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
+            <DropDown class="ysPBox2"
             row="0" col="0"
             #dropdown
             [items]="langsDropDown"

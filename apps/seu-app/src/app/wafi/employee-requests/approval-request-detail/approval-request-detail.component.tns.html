@@ -299,9 +299,11 @@
             <Label row="0"  colSpan="2" class="ysPBox" textWrap="true" style="font-weight: 800;"
               text='{{"wafi.reasondispaaproval"|translate}}'></Label>
           </GridLayout>
-          <GridLayout rows="auto" columns="*,150">
-            <Label row="0" colSpan="2" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
-            <DropDown  row="0" colSpan="2" class="dro"
+          <GridLayout rows="auto" columns="*,10" class="ysBox">
+       
+            <Label row="0" col="1" class="ysPBox"></Label>
+             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
+            <DropDown  row="0" col="0" class="dro ysPBox2"
             [items]="dataDropDowns"
             hint='اختار السبب'
              (selectedIndexChanged)="dataChange($event)"
