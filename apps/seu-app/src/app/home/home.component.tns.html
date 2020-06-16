@@ -101,31 +101,6 @@
      
         </FlexboxLayout>
 
-        <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
-
-            <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changerequest')" *ngIf="level=='UG'  && role=='Student'">
-                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/branch.png"></Image>
-                <label  row="1" colSpan="2" text="   تغيير الفرع  " class=" heading-text6 " ></label>
-              </GridLayout>
-
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/changebranch')" *ngIf="level=='GR'  && role=='Student'">
-                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/branch.png"></Image>
-                <label  row="1" colSpan="2" text="   تغيير الفرع  " class=" heading-text6 " ></label>
-              </GridLayout>
-        
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/cancelcourse')" *ngIf="level=='UG'  && role=='Student'">
-                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
-                <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
-              </GridLayout>
-
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/academicrequests/cancelcourse')" *ngIf="level=='GR'  && role=='Student'">
-                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
-                <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
-              </GridLayout>
-
-     
-        </FlexboxLayout>
-       
 
         <GridLayout class="heading3" columns="auto,*" style="margin-top: 20px;">
           <Image  col="0"   class="heading-img3" src="~/images/req.png"></Image>
