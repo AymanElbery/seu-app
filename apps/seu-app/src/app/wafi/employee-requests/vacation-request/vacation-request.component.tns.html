@@ -174,10 +174,10 @@
 
                           </GridLayout>
 
-                          <GridLayout rows="150" columns="*,*">
+                          <GridLayout rows="auto" columns="*,150">
 
-                            <Button row="1" col="1" text='{{"wafi.Submit" | translate}}' isEnabled="{{dataObject.beginYear>0 && dataObject.beginMonth>0 && dataObject.beginDay>0 && dataObject.vacation>0  && dataObject.timePeriod>0}}"   class="ysPBox print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
-                            <Button row="1" col="0" text='{{"wafi.back" | translate}}'    [disabled]="submitted" class="ysPBox print-btn"  (tap)="back()"></Button>
+                            <Button row="0" col="1" text='{{"wafi.Submit" | translate}}' isEnabled="{{dataObject.beginYear>0 && dataObject.beginMonth>0 && dataObject.beginDay>0 && dataObject.vacation>0  && dataObject.timePeriod>0}}"   class="ysPBox print-btn " (tap)="onFormSubmit(dataObject)" ></Button>
+                            <Button row="0" col="0" text='{{"wafi.back" | translate}}'    [disabled]="submitted" class="ysPBox print-btn"  (tap)="back()"></Button>
                           </GridLayout>
                      
 

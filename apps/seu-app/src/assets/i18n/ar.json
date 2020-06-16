@@ -1019,6 +1019,7 @@
         "HousingReaport": "نموذج بدل السكن",
         "RequestType": "نوع الطلب",
         "VactionType": "نوع الإجازة",
+        "request-saved":"تم الحغظ",
         "Period": "المدة/يوم",
         "BeginDate": "تاريخ البداية",
         "EndDate": "تاريخ النهاية",

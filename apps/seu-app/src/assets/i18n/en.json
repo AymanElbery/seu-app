@@ -977,6 +977,7 @@
         "wafi": "Self Services",
         "month": "Month",
         "year": "Year",
+        "request-saved":"Saved",
         "description": "Description",
         "amount": "Amount",
         "monthYear": "Month/Year",
