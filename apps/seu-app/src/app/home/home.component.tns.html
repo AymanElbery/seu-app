@@ -28,7 +28,7 @@
 
 
         <GridLayout class="heading3" columns="auto,*">
-            <Image  col="0"   class="heading-img3" src="~/images/ser.png"></Image>
+            <Image  col="0"   class="heading-img3" src="~/images/req.png"></Image>
         <label text="  الاستعلامات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
         </GridLayout> 
 
@@ -55,7 +55,7 @@
               </GridLayout>
 
               <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/print-report')"  *ngIf="role=='Employee' || role=='Instructor'">
-                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/valid.png"></Image>
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/certificate.png"></Image>
                 <label  row="1" colSpan="2" text="طباعة شهادة التعاريف" class=" heading-text6 " ></label>
               </GridLayout>
 
@@ -103,14 +103,14 @@
 
 
         <GridLayout class="heading3" columns="auto,*" style="margin-top: 20px;">
-          <Image  col="0"   class="heading-img3" src="~/images/req.png"></Image>
+          <Image  col="0"   class="heading-img3" src="~/images/ser.png"></Image>
       <label text="  الخدمات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
       </GridLayout> 
    
       <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
 
           <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/vacation-request/1')"  *ngIf="role=='Employee' || role=='Instructor'">
-            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/check.png"></Image>
+            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/re.png"></Image>
             <label  row="1" colSpan="2" text="  طلب اجازة" class=" heading-text6 " ></label>
           </GridLayout> 
           
@@ -123,7 +123,7 @@
             <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
           </GridLayout>
           <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/universitycard')" *ngIf="level=='UG'  && role=='Student'">
-            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
+            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/card.png"></Image>
             <label  row="1" colSpan="2" text="طلب البطاقه الجامعية" class=" heading-text6 " ></label>
           </GridLayout>
           <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/academicrequests/cancelcourse')" *ngIf="level=='GR'  && role=='Student'">
@@ -131,7 +131,7 @@
             <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
           </GridLayout>
           <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/personalid')" *ngIf="level=='GR'  && role=='Student'">
-            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
+            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/card.png"></Image>
             <label  row="1" colSpan="2" text="طلب البطاقه الجامعية" class=" heading-text6 " ></label>
           </GridLayout>
     </FlexboxLayout> 
