@@ -215,7 +215,7 @@ d;
   back() {
    // this.convertToBase64(filePath) ;
     filePath = null;
-    this.router.navigate(['requests/add-request']);
+    this.router.navigate(['/land']);
   }
   get fileName() {
     return filePath != null ? File.fromPath(filePath).name : 'Browse';

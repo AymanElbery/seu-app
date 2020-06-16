@@ -186,7 +186,7 @@ get fileName() {
 
     filePath2 = null;
 
-    this.router.navigate(['/requests/add-request']);
+    this.router.navigate(['/land']);
   }
 
   public openCustomFilesPicker(type: string) {

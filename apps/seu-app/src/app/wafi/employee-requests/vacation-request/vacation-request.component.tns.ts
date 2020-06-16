@@ -343,7 +343,7 @@ export class VacationRequestComponent implements OnInit {
   }
 
   back() {
-    this.router.navigate(['requests/add-request']);
+    this.router.navigate(['/land']);
   }
 
   keyPress(event: any) {

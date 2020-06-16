@@ -29,7 +29,7 @@
 
         <GridLayout class="heading3" columns="auto,*">
             <Image  col="0"   class="heading-img3" src="~/images/ser.png"></Image>
-        <label text="  الخدمات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
+        <label text="  الاستعلامات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
         </GridLayout> 
 
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
@@ -54,14 +54,14 @@
                 <label  row="1" colSpan="2" text="  شهادة تعريف  " class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/administrative/penalty-discount')"  *ngIf="role=='Employee'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/print-report')"  *ngIf="role=='Employee' || role=='Instructor'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/valid.png"></Image>
-                <label  row="1" colSpan="2" text="حسم من الاجازة العادية" class=" heading-text6 " ></label>
+                <label  row="1" colSpan="2" text="طباعة شهادة التعاريف" class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/salaries')" *ngIf="role=='Employee'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/salaries')" *ngIf="role=='Employee' || role=='Instructor'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/sal.png"></Image>
-                <label  row="1" colSpan="2" text="الرواتب" class=" heading-text6 " ></label>
+                <label  row="1" colSpan="2" text="مسيرات الرواتب" class=" heading-text6 " ></label>
               </GridLayout>
            
      
@@ -81,20 +81,20 @@
         
               <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changemajor')" *ngIf="level=='UG'  && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book-2.png"></Image>
-                <label  row="1" colSpan="2" text="   تغيير التخصص " class=" heading-text6 " ></label>
+                <label  row="1" colSpan="2" text="    شهادة حضور اختبارات " class=" heading-text6 " ></label>
               </GridLayout>
 
               <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/changecourse')" *ngIf="level=='GR' && role=='Student'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book-2.png"></Image>
-                <label  row="1" colSpan="2" text="   تغيير التخصص " class=" heading-text6 " ></label>
+                <label  row="1" colSpan="2" text=" شهادة حضور اختبارات" class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/vacations')"  *ngIf="role=='Employee'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/vacations')"  *ngIf="role=='Employee' || role=='Instructor'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/vaca.png"></Image>
-                <label  row="1" colSpan="2" text="الأجازات " class=" heading-text6 " ></label>
+                <label  row="1" colSpan="2" text="استعلام عن الاجازات " class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/administrative/vouchers')"  *ngIf="role=='Employee'">
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/administrative/vouchers')"  *ngIf="role=='Employee' || role=='Instructor'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/sal2.png"></Image>
                 <label  row="1" colSpan="2" text="البدلات و المكافأت" class=" heading-text6 " ></label>
               </GridLayout>
@@ -129,21 +129,36 @@
 
         <GridLayout class="heading3" columns="auto,*" style="margin-top: 20px;">
           <Image  col="0"   class="heading-img3" src="~/images/req.png"></Image>
-      <label text="  الطلبات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
+      <label text="  الخدمات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
       </GridLayout> 
    
       <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
 
-          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/requests-list')"  *ngIf="role=='Employee'">
+          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/vacation-request/1')"  *ngIf="role=='Employee' || role=='Instructor'">
             <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/check.png"></Image>
-            <label  row="1" colSpan="2" text="  الطلبات" class=" heading-text6 " ></label>
+            <label  row="1" colSpan="2" text="  طلب اجازة" class=" heading-text6 " ></label>
           </GridLayout> 
           
-          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/add-request')"  *ngIf="role=='Employee'">
+          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/requests-list')"  *ngIf="role=='Employee' || role=='Instructor'">
             <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/add.png"></Image>
-            <label  row="1" colSpan="2" text="اضافة طلب" class=" heading-text6 " ></label>
+            <label  row="1" colSpan="2" text=" متابعة طلباتي" class=" heading-text6 " ></label>
           </GridLayout>
- 
+          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/procedures/cancelcourse')" *ngIf="level=='UG'  && role=='Student'">
+            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
+            <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
+          </GridLayout>
+          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/universitycard')" *ngIf="level=='UG'  && role=='Student'">
+            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
+            <label  row="1" colSpan="2" text="طلب البطاقه الجامعية" class=" heading-text6 " ></label>
+          </GridLayout>
+          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/academicrequests/cancelcourse')" *ngIf="level=='GR'  && role=='Student'">
+            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
+            <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
+          </GridLayout>
+          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/personalid')" *ngIf="level=='GR'  && role=='Student'">
+            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/book.png"></Image>
+            <label  row="1" colSpan="2" text="طلب البطاقه الجامعية" class=" heading-text6 " ></label>
+          </GridLayout>
     </FlexboxLayout> 
 
     

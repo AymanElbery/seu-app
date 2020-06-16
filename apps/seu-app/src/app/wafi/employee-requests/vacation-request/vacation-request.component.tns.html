@@ -1,20 +1,4 @@
-<ActionBar style="background:#001628; ">
-    <!-- 
-      Use the NavigationButton as a side-drawer button in Android
-      because ActionItems are shown on the right side of the ActionBar
-      -->
-    <!-- 
-      Use the ActionItem for IOS with position set to left. Using the
-      NavigationButton as a side-drawer button in iOS is not possible,
-      because its function is to always navigate back in the application.
-      -->
-      <Label text="{{'wafi.AddNewRequest'|translate}}" class="label-action"></Label>
-
-      <!--<Image style="width: 100%;" [nsRouterLink]="['/land']" src="~/images/logo_3d.png"></Image>-->
-    <NavigationButton icon="font://&#xf104;" style="font-size: 25px;" class="fas icon-action" (tap)="back()"
-      ios.position="left"></NavigationButton>
-  
-  </ActionBar>
+<app-header></app-header>
   <ScrollView>
     <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
   

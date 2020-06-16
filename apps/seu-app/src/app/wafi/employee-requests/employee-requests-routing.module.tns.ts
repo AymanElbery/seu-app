@@ -24,6 +24,7 @@ const routes: Routes = [
     { path: 'approval-details/:sq/:type/:empId', component: ApprovalRequestDetailComponent },
     { path: 'add-request', component: RequestAddComponent },
 
+
     { path: 'vacation-request/:id', component: VacationRequestComponent },
     { path: 'attend-course-request/:id', component: AttendCourceRequestComponent },
     { path: 'regular-leave-request/:id', component: RegularLeaveRequestComponent },
