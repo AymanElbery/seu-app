@@ -59,10 +59,11 @@
                 <label  row="1" colSpan="2" text="حسم من الاجازة العادية" class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/approval-requests')"  *ngIf="role=='Employee'">
-                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/check.png"></Image>
-                <label  row="1" colSpan="2" text="الموافقة على الطلبات" class=" heading-text6 " ></label>
-              </GridLayout> 
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/salaries')" *ngIf="role=='Employee'">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/sal.png"></Image>
+                <label  row="1" colSpan="2" text="الرواتب" class=" heading-text6 " ></label>
+              </GridLayout>
+           
      
         </FlexboxLayout> 
 
@@ -88,14 +89,14 @@
                 <label  row="1" colSpan="2" text="   تغيير التخصص " class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/salaries')" *ngIf="role=='Employee'">
-                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/sal.png"></Image>
-                <label  row="1" colSpan="2" text="الرواتب" class=" heading-text6 " ></label>
-              </GridLayout>
-
               <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/vacations')"  *ngIf="role=='Employee'">
                 <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/vaca.png"></Image>
                 <label  row="1" colSpan="2" text="الأجازات " class=" heading-text6 " ></label>
+              </GridLayout>
+
+              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/administrative/vouchers')"  *ngIf="role=='Employee'">
+                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/sal2.png"></Image>
+                <label  row="1" colSpan="2" text="البدلات و المكافأت" class=" heading-text6 " ></label>
               </GridLayout>
      
         </FlexboxLayout>
@@ -122,22 +123,31 @@
                 <label  row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 " ></label>
               </GridLayout>
 
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/add-request')"  *ngIf="role=='Employee'">
-                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/add.png"></Image>
-                <label  row="1" colSpan="2" text="اضافة طلب" class=" heading-text6 " ></label>
-              </GridLayout>
-
-              <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/administrative/vouchers')"  *ngIf="role=='Employee'">
-                <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/sal2.png"></Image>
-                <label  row="1" colSpan="2" text="البدلات و المكافأت" class=" heading-text6 " ></label>
-              </GridLayout>
-
      
         </FlexboxLayout>
        
 
-     
+        <GridLayout class="heading3" columns="auto,*" style="margin-top: 20px;">
+          <Image  col="0"   class="heading-img3" src="~/images/req.png"></Image>
+      <label text="  الطلبات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
+      </GridLayout> 
    
+      <FlexboxLayout  flexDirection="row-reverse"  alignItems="flex-start" justifyContent="center">
+
+          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/requests-list')"  *ngIf="role=='Employee'">
+            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/check.png"></Image>
+            <label  row="1" colSpan="2" text="  الطلبات" class=" heading-text6 " ></label>
+          </GridLayout> 
+          
+          <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/add-request')"  *ngIf="role=='Employee'">
+            <Image  row="0" colSpan="2"  class="heading-img6" src="~/images/add.png"></Image>
+            <label  row="1" colSpan="2" text="اضافة طلب" class=" heading-text6 " ></label>
+          </GridLayout>
+ 
+    </FlexboxLayout> 
+
+    
+      
     <!-- <GridLayout height="170" class="slider">
         <Carousel  selectedPage="{{sindex}}" finite="true" bounce="false" #myCarousel [items]="userService.adsData"
             height="100%" width="100%" color="white" android:indicatorAnimation="slide"
@@ -163,7 +173,7 @@
 
 <GridLayout  verticalAlignment="bottom"class="fixed-button" >
     <FlexboxLayout justifyContent="center" width="100%" >
-        <Image   class="fixed-img" src="~/images/contact.png" (tap)="navigate('contact')"></Image>
+        <Image   class="fixed-img" src="~/images/telephone.png" (tap)="navigate('contact')"></Image>
     </FlexboxLayout>
 </GridLayout>  
 

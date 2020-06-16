@@ -4,12 +4,17 @@ Learn more about the RadSideDrawer UI component and how it can be customized in 
 https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawer/getting-started
 -->
 <RadSideDrawer    [drawerTransition]="sideDrawerTransition" gesturesEnabled="true" (loaded)="onLoaded()"  drawerContentSize="330">
+
     <GridLayout  tkDrawerContent rows="auto, *" class="nt-drawer__content bgimg">
-        <StackLayout row="0" class="nt-drawer__header" style="background-color: #001628;">
+        <!-- <Image src="~/images/log-b99.png" scaleX="1.1" scaleY="1.9" fill="aspectFill"></Image> -->
+ 
+        <StackLayout row="0" class="nt-drawer__header" style="background-color: #081247;">
            <!--<Image class="nt-drawer__header-image fas t-36 img-user" src="font://&#xf2bd;"></Image> --> 
             <Label class="nt-drawer__header-brand" text="{{userName}}  " textWrap="true"></Label>
         </StackLayout>
+
         <ScrollView row="1" class="nt-drawer__body " style="direction: rtl;"  >
+
              <StackLayout >
                 <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/land')">
                    <!-- <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label> -->
