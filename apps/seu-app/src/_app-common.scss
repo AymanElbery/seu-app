@@ -386,7 +386,7 @@ background-color: #070d3d;
 .slid-itme{border-radius: 70px 20px 0px 0px; }
 .label-itme{border-radius: 0px 0px 20px 20px; background-color: rgb(219, 151, 4);color: #fff;
             text-align: center; padding: 5 3; font-family: 'DroidArabicKufi';font-size:12px;
-            
+       
 }
 .news-item {border-radius: 70px 20px 0px 0px;}
 .label-block{border-radius: 0px 0px 20px 20px; background-color: rgb(219, 151, 4);color: #fff;
@@ -582,7 +582,7 @@ FormattedString{text-justify: distribute-all-lines;}
     color: white;
     text-align: center;
    padding-top: 20;
-   background: linear-gradient(to bottom, #001628, rgba(1,24,42,0.8),#001628);
+   background: linear-gradient(to bottom, #070d3d, rgba(1,24,42,0.8),#070d3d);
 
 
    
@@ -655,16 +655,21 @@ FormattedString{text-justify: distribute-all-lines;}
    .heading-img6{ width: 45; }
 
 .title-bac{ padding:  4;
-    text-align: center;  background: linear-gradient(to left, #001628, rgba(1,24,42,0.8),#001628);
-     border-radius: 0 0 20 20;} 
+    text-align: center;
+      background: linear-gradient(to left, #001628, rgba(1,24,42,0.8),#001628);
+     border-radius: 0 0 20 20;
+     background: linear-gradient(to left, #081247, rgba(8,18,71,0.88),#081247);
+     background: linear-gradient(to top, #070d3d, #0c1f5a,#194687);
+
+    } 
 .news-title {
     color: #fff;
-    font-size: 14;
+    font-size: 13;
     font-family: 'DroidArabicKufi'; 
    
 }
 .news-im{border-radius: 20 20 0 0; height: 130; }
-.date-bac{background-color:  rgba(1,24,42,0.5); border-radius: 20 20 0 0;}
+.date-bac{background-color:  rgba(8,18,71,0.5); border-radius: 20 20 0 0;}
 .news-source {
     color: White;
     font-size: 16;

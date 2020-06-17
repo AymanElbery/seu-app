@@ -9,12 +9,10 @@
         <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
         <Label col="1" text='{{"menu.News" | translate}}' class="serv-name" ></Label>
         <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
-    
     </GridLayout>
        
-        <StackLayout height="160" class="list-group-item news"
+        <!-- <StackLayout height="180" class="list-group-item news"
             *ngFor="let news of userService.newsData">
-
 
             <Image height="110" stretch="aspectFill" row="0" class="news-item"
                 src="{{decodeURL(news.image)}}"></Image>
@@ -30,6 +28,26 @@
 
             <StackLayout class="hr"></StackLayout>
 
-        </StackLayout>
+        </StackLayout> -->
+
+        <StackLayout  class="list-group-item news"
+        *ngFor="let news of userService.newsData">
+               <GridLayout rows="*" backgroundColor="White">
+                <GridLayout rows="*" columns="*"> 
+                        <Image stretch="aspectFill"
+                        src="{{decodeURL(news.image)}}" class="news-im"></Image>
+                    <GridLayout verticalAlignment="top">
+                        <GridLayout  columns="auto, *"  class="date-bac">
+                            <Label   col="1" text="{{news.date}}" class="news-source"></Label>
+                            <Label  col="1" text="&#xf274;" class="far date-icon "></Label>
+                        </GridLayout>
+                    </GridLayout>
+                </GridLayout>
+            </GridLayout>
+            <StackLayout class="title-bac">
+                <Label  text="{{news.title}}" class="news-title"
+                    textWrap="true"></Label>
+            </StackLayout>
+        </StackLayout> 
     </StackLayout>
 </ScrollView>
