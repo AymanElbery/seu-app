@@ -13,14 +13,12 @@
     
     </GridLayout>
 
-        <StackLayout height="160" class="list-group-item news"
+       <!--  <StackLayout height="180" class="list-group-item news"
             *ngFor="let item of userService.adsData">
 
-            <GridLayout  >
+            <GridLayout >
                 <StackLayout>
-                    <!-- <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
-                        src="{{'data:image/jpg;base64,' + item.image}}"></Image> -->
-
+                   
 
                         <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
                         src="{{decodeURL(item.image)}}"></Image>
@@ -29,6 +27,22 @@
                 </StackLayout>
             </GridLayout>
 
-        </StackLayout>
+        </StackLayout> -->
+
+        <StackLayout  class="list-group-item news"
+        *ngFor="let item of userService.adsData">
+               <GridLayout rows="*" backgroundColor="White">
+                <GridLayout rows="*" columns="*"> 
+                        <Image stretch="aspectFill"
+                        src="{{decodeURL(item.image)}}" class="news-im"></Image>
+                   
+                </GridLayout>
+            </GridLayout>
+            <StackLayout class="title-bac">
+                <Label  text="{{item.title}}" class="news-title"
+                    textWrap="true"></Label>
+            </StackLayout>
+        </StackLayout> 
+
     </StackLayout>
 </ScrollView>
