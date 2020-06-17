@@ -1,0 +1,38 @@
+<mat-dialog-content dir="{{translate.currentLang == 'ar' ? 'rtl':'ltr'}}">
+    <div class="modal-content">
+        <div class="modal-header">
+
+            <h5 style="width:100%;text-align: center" class="modal-title " id="exampleModalLabel">
+                اقرار بالقبول المشروط
+            </h5>
+
+        </div>
+        <div class="modal-body" (scroll)="onScroll($event)">
+            <div>
+                <p>
+                    أقر أنا الطالب أنه فى حال حصولى علي القبول المشروط لأي من برامج الدراسات العليا فى الجامعة السعودية
+                    الإلكترونية، ألتزم بتزويد كافة المستندات المطلوبة للقبول النهائى من (اختبار لغة - توصيات علمية -
+                    موافقة جهة العمل ) أو أي مستندات أخرى مطلوبة من قبل عمادة الدراسات العليا فى الفترة المحددة لذلك.
+                    وفي حال عدم تزويدى بالمطلوب خلال الفترة المحددة فللجامعة الحق بالاعتذار عن قبولى بدون أي مستردات أو
+                    مستحقات مالية
+                </p>
+                <p style="color: red;">
+                    ملحوظة: يتم منح الطالب إفادة باجتياز مقررات الفصل التحضيري فى حال عدم قبوله نهائيا فى البرنامج.
+                </p>
+                <p style="text-align: center;">
+                    <strong>
+                        تمنياتنا لكم بالتوفيق
+                        <br />
+                        عمادة الدراسات العليا
+                    </strong>
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer" style="border-top: 2px solid #f28d1d;">
+            <div>
+                <button type="button" [disabled]="!allowSelection || requesting" (click)="saveChoose()"
+                    class="btn btn-dark"><i class="fa fa-database"></i>موافق</button>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
