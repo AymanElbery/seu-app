@@ -24,7 +24,7 @@
                   <GridLayout *ngIf="ddltruefalse==true"  rows="auto" columns="*,150">
                     <Label row="1" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
 
-                      <DropDown horizontalAlignment="center" colspan="2"  row="1"  class="dro"
+                      <DropDown horizontalAlignment="center" colspan="2"  row="1"  class="ysPBox2"
                     [items]="vacsDropDown"
                     (selectedIndexChanged)="changeVac($event)"
                     hint='{{"wafi.vacationtype" | translate}}'
@@ -53,7 +53,7 @@
                             <label class="ysPBox"  row="0" col="1" text="اختر السنه*"></label>
                             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
 
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="yearsDropDown"
                             (selectedIndexChanged)="changeYear($event)"
                             hint="{{'wafi.year'|translate}}"
@@ -64,7 +64,7 @@
                           <GridLayout   rows="auto"  columns="*,150">
                             <label class="ysPBox"  row="0" col="1" text="{{'wafi.day'|translate}}*"></label>
                             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="daysDropDown"
                             (selectedIndexChanged)="changeDay($event)"
                             hint="{{'wafi.day'|translate}}"
@@ -75,7 +75,7 @@
                           <GridLayout  rows="auto"  columns="*,150">
                             <label class="ysPBox" row="0" col="1" text='{{"wafi.month"|translate}}*'></label>
                             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="monthesDropDown"
                             (selectedIndexChanged)="changeMonth($event)"
                             hint=' {{"wafi.month"|translate}}'
@@ -87,7 +87,7 @@
                             <label class="ysPBox" row="0" col="1" text="{{'wafi.timePeriod'|translate}}*"></label>
                             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
 
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro ysPBox2"
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="periodsDropDown"
                             (selectedIndexChanged)="changePeriod($event)"
                             hint=' {{"wafi.timePeriod"|translate}}'
@@ -104,7 +104,7 @@
                             <label class="ng-invalid" class="ysPBox"  row="0" col="1" text="{{'wafi.compensation'|translate}}"></label>
                             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
 
-                            <DropDown  horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <DropDown  horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="compErkabItemsDropDown"
                             (selectedIndexChanged)="changecomp($event)"
                             hint=' {{"wafi.compensation"|translate}}'
@@ -119,7 +119,7 @@
                             <label class="ysPBox"  row="0" col="1" text="{{'wafi.altEemployee'|translate}}"></label>
                             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
 
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="altempDropDown"
                             (selectedIndexChanged)="changealtemp($event)"
                             hint=' {{"wafi.altEemployee"|translate}}'
@@ -132,7 +132,7 @@
                             <label class="ysPBox"  row="0" col="1" text="{{'wafi.tocountry'|translate}}"></label>
                             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
 
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="countryDropDown"
                             (selectedIndexChanged)="changecountry($event)"
                             hint=' {{"wafi.tocountry"|translate}}'
@@ -146,7 +146,7 @@
                             <label class="ysPBox"  row="0" col="1" text="{{'wafi.citycountry'|translate}}"></label>
                             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
 
-                            <DropDown horizontalAlignment="center" col="0" row="0"  class="dro"
+                            <DropDown horizontalAlignment="center" col="0" row="0"  class="ysPBox2"
                             [items]="cityDropDown"
                             (selectedIndexChanged)="changecity($event)"
                             hint=' {{"wafi.citycountry"|translate}}'
