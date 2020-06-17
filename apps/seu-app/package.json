@@ -108,11 +108,11 @@
     "typescript": "~3.5.3"
   },
   "nativescript": {
-    "id": "net.ysolution.seu",
-    "tns-ios": {
+    "id": "com.nativescript.seu",
+    "tns-android": {
       "version": "6.5.1"
     },
-    "tns-android": {
+    "tns-ios": {
       "version": "6.5.1"
     }
   },
