@@ -8,7 +8,7 @@ export class AppToasterService {
 
   tryagain() {
     const toast = new Toasty({ text: 'خطأ: حاول مرة أخري',
-    yAxisOffset: 25,
+    yAxisOffset: 80,
     ios:{
       cornerRadius: 24
     }
@@ -18,7 +18,7 @@ export class AppToasterService {
 
   saved() {
     const toast = new Toasty({ text: 'تم الحفظ',
-    yAxisOffset: 25,
+    yAxisOffset: 80,
     ios:{
       cornerRadius: 24
     }
@@ -27,7 +27,7 @@ export class AppToasterService {
   }
   show(msg) {
     const toast = new Toasty({ text: msg,
-    yAxisOffset: 25,
+    yAxisOffset: 80,
     ios:{
       cornerRadius: 24
     }
@@ -38,7 +38,7 @@ export class AppToasterService {
     // tslint:disable-next-line: prefer-for-of
     for (let i = 0; i < messages.length; i++) {
         const toast = new Toasty({ text: messages[i].body,
-          yAxisOffset: 25,
+          yAxisOffset: 80,
     ios:{
       cornerRadius: 24
     }
@@ -49,7 +49,7 @@ export class AppToasterService {
   }
   download() {
     const toast = new Toasty({ text: 'Downloading',
-    yAxisOffset: 25,
+    yAxisOffset: 80,
     ios:{
       cornerRadius: 24
     }
