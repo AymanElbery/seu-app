@@ -4,11 +4,11 @@ export const environment = {
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
-  wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS_TEST/jersey/', // wafi
+  wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi
   servie_admission: 'https://apps.seu.edu.sa/newservices/api-test/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
-  servicesprefix: 'api-test', // api-test
-  appsprefix: 'apps-test', // api-test
+  servicesprefix: 'api', // api-test
+  appsprefix: 'apps-prod', // api-test
   loginpage: 'login-testl.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
   ssoAuth: 'sso:s$0$3u2030',
