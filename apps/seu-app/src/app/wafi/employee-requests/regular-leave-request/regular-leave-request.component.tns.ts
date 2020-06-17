@@ -112,6 +112,7 @@ d;
       if (!(leavdedcut as any).data.saveRequest) {
         const error = (leavdedcut as any).data.errorMassege;
         this.toastr.push([{ type: 'error', body: error }]);
+        this.back();
 
       } else {
         this.toastr.push([{ type: 'success', body: this.translate.instant('wafi.request_saved') }]);
