@@ -65,6 +65,8 @@ export class ResumeEnComponent{
   pidm;
   sectionEdit = true;
   facultyEdit = true;
+  loading = false;
+  imagePath;
 
   constructor(
     public userService: UserService, 
@@ -76,6 +78,7 @@ export class ResumeEnComponent{
     private toastr: AppToasterService,
     public translate: TranslateService
   ) {
+    this.loading = true;
     this.id = this.userService.userData.id;
     this.pidm = this.userService.userData.PIDM;
     this.jobTitle = this.userService.userData.role;
@@ -160,6 +163,7 @@ export class ResumeEnComponent{
     this.resumeService.getResumeByEmail(email, "en").subscribe(
       (response: any) => {
         if (response) {
+          this.loading = false;
           if (response.status) {
             this.data = response.data;
             this.photo = this.data.PHOTO_PATH;
@@ -225,6 +229,7 @@ export class ResumeEnComponent{
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.photo = reader.result;
+    this.imagePath = this.photo;
   }
   
   hideNameMessages(){
@@ -310,7 +315,12 @@ export class ResumeEnComponent{
       this.resumeService.addResume(data, "en").subscribe(
         (response: any) => {
           if (response) {
-            window.location.reload();
+            this.toastr.push([{
+              'type' : 'success',
+              'body' : 'تم تحديث السيرة الذاتية الخاصة بكم ، يمكنك الإطلاع عليها من خلال الدخول إلى البوابة'
+            }]);
+            this.router.navigate(['/resume/en']);
+            //window.location.reload();
           }
         },
         error => {}

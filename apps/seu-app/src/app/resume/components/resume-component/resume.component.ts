@@ -5,7 +5,7 @@ import { ResumeService } from '../../services/resume.service';
 import { HttpRequestService } from '../../../shared/services/http-request.service';
 import { environment } from '../../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { AppToasterService } from '../../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialogRef } from '@angular/material';
@@ -65,7 +65,8 @@ export class ResumeComponent{
   pidm;
   sectionEdit = true;
   facultyEdit = true;
-  
+  loading = false;
+  imagePath;
 
   constructor(
     public userService: UserService, 
@@ -77,6 +78,7 @@ export class ResumeComponent{
     private toastr: AppToasterService,
     public translate: TranslateService
   ) {
+    this.loading = true;
     this.id = this.userService.userData.id;
     this.pidm = this.userService.userData.PIDM;
 
@@ -161,6 +163,7 @@ export class ResumeComponent{
     this.resumeService.getResumeByEmail(email, "ar").subscribe(
       (response: any) => {
         if (response) {
+          this.loading = false;
           if (response.status) {
             this.data = response.data;
             this.photo = this.data.PHOTO_PATH;
@@ -227,6 +230,7 @@ export class ResumeComponent{
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.photo = reader.result;
+    this.imagePath = this.photo;
   }
   
   hideNameMessages(){
@@ -329,7 +333,12 @@ export class ResumeComponent{
       this.resumeService.addResume(data, "ar").subscribe(
         (response: any) => {
           if (response) {
-            window.location.reload();
+            this.toastr.push([{
+              'type' : 'success',
+              'body' : 'تم تحديث السيرة الذاتية الخاصة بكم ، يمكنك الإطلاع عليها من خلال الدخول إلى البوابة'
+            }]);
+            this.router.navigate(['/resume/ar']);
+            //window.location.reload();
           }
         },
         error => {}

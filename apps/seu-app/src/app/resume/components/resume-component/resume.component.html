@@ -1,5 +1,5 @@
 <div class="main-content">
-
+  <seu-loader [isLoading]="loading"></seu-loader>
   <section class="service-single">
     <div class="container">
       <h3>{{ "menu.resume" | translate}}</h3>
@@ -22,8 +22,10 @@
       <div class="row">
         <div class="col-md-4">
           <div class="profile">
-            <img *ngIf="profile == 'notExist'" src="assets/images/profile.png">
-            <img *ngIf="profile != 'notExist'" src="https://seuapps.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
+            <img *ngIf="profile == 'notExist' && !imagePath" src="assets/images/profile.png">
+            <img *ngIf="profile == 'notExist' && imagePath" [src]="imagePath">
+            <img *ngIf="profile != 'notExist' && !imagePath" src="https://seuapps.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
+            <img *ngIf="profile != 'notExist' && imagePath" [src]="imagePath">
           </div>
         </div>
       </div>
