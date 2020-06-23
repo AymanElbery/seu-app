@@ -33,6 +33,7 @@ export class ResumeComponent{
   photo = "" ;
   name;
   email;
+  displayEmail;
   phone;
   // address;
   jobTitle;
@@ -67,6 +68,10 @@ export class ResumeComponent{
   facultyEdit = true;
   loading = false;
   imagePath;
+  
+
+  facs = [];
+  deps = [];
 
   constructor(
     public userService: UserService, 
@@ -83,6 +88,7 @@ export class ResumeComponent{
     this.pidm = this.userService.userData.PIDM;
 
     this.getFaculty();
+    this.getFaculties();
     this.getDepartment();
     
     this.resumeService.getStuffByID(this.id).subscribe(
@@ -90,6 +96,7 @@ export class ResumeComponent{
         if (response) {
           this.name = response.data.EMP_NAME;
           this.email = response.data.WORK_EMAIL;
+          this.displayEmail = btoa(this.email);
           this.jobTitle = response.data.CARRER_DESC;
           this.getResumeByEmail(this.email);
         }
@@ -125,6 +132,32 @@ export class ResumeComponent{
               error => {}
             );
           }
+        }
+      },
+      error => {}
+    );
+  }
+
+  getFaculties(){
+    this.resumeService.getFacs().subscribe(
+      (response: any) => {
+        if (response) {
+          for (let i = 0; i < response.data.length; i++) {
+            if (response.data[i].COLL_PK !== "PY") {
+              this.facs.push(response.data[i]);
+            }
+          }
+        }
+      },
+      error => {}
+    );
+  }
+
+  changeFac(){
+    this.resumeService.getDepsOnFac(this.faculty).subscribe(
+      (response: any) => {
+        if (response) {
+          this.deps = response.data;
         }
       },
       error => {}
@@ -174,6 +207,7 @@ export class ResumeComponent{
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
             this.faculty = this.data.FACULTY;
+            this.changeFac();
             this.office = this.data.OFFICE;
             // this.work = this.data.WORK;
             this.nationality = this.data.NATIONALITY;

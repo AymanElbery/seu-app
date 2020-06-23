@@ -82,7 +82,11 @@
         <div *ngIf="facultyEdit" class="col-md-6">
           <div class="form-group">
             <label for="faculty">{{ "resume.faculty" | translate}}  <span class="text-danger">*</span></label>
-            <input (input)="hideFacultyMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
+            <!-- <input (input)="hideFacultyMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty"> -->
+            <select required class="form-control" id="faculty" [(ngModel)]="faculty" name="faculty" (change)="changeFac()">
+              <option>--</option>
+              <option value="{{fac.COLL_TITLE_AR}}" [selected]="fac.COLL_TITLE_AR == faculty" *ngFor="let fac of facs">{{ fac.COLL_TITLE_AR }}</option>
+            </select>
             <span *ngIf="facultyError" class="text text-danger">{{facultyError}}</span>
           </div>
         </div>
@@ -98,7 +102,11 @@
         <div *ngIf="sectionEdit" class="col-md-6">
           <div class="form-group">
             <label for="section">{{ "resume.section" | translate}}  <span class="text-danger">*</span></label>
-            <input (input)="hideSectionMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
+            <!-- <input (input)="hideSectionMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section"> -->
+            <select required class="form-control" id="section" [(ngModel)]="section" name="section">
+              <option>--</option>
+              <option value="{{dep.DEPT_DESC_AR}}" [selected]="dep.DEPT_DESC_AR == section" *ngFor="let dep of deps">{{ dep.DEPT_DESC_AR }}</option>
+            </select>
             <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
           </div>
         </div>
@@ -175,8 +183,9 @@
           <input [(ngModel)]="agree" (change)="agreeCond(agree?'A':'B')" type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">{{ "resume.agree" | translate}}</label>
         </div>
-        <button *ngIf="agree" style="margin-top: 20px;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
-        <button *ngIf="!agree" disabled style="margin-top: 20px;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
+        <button *ngIf="agree" style="margin-top: 20px; width: 40%;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
+        <button *ngIf="!agree" disabled style="margin-top: 20px;width: 40%;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
+        <a target="_blank" href="https://test.seu.edu.sa/satsc/ar/doctor-cv/?p={{displayEmail}}" style="margin-top: 20px; display: inline-block; width: 40%; margin-right: 10px;"class="btn sub-a">{{ "resume.cv_display" | translate}}  <i class="fa fa-eye"></i></a>
       </div>
     </div>
   </section>

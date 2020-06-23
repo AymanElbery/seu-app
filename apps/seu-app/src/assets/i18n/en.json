@@ -282,7 +282,8 @@
         "faculty": "Faculty",
         "faculty_en": "Faculty in English",
         "office": "Office",
-        "office_en": "Office in English"
+        "office_en": "Office in English",
+        "cv_display": "Display Resume"
     },
     "enquries": {
         "title": "Inquiries",
