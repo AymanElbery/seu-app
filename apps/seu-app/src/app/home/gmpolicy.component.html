@@ -10,7 +10,7 @@
         <div class="modal-body" (scroll)="onScroll($event)">
             <div>
                 <p>
-                    أقر أنا الطالب أنه في حال حصولي على القبول المشروط لأي من برامج الدراسات العليا في الجامعة السعودية
+                    أقر أنا <strong>{{studentName}}</strong> أنه في حال حصولي على القبول المشروط لأي من برامج الدراسات العليا في الجامعة السعودية
                     الالكترونية، ألتزم بتزويد كافة المستندات المطلوبة للقبول النهائي من (اختبار لغة - توصيات علمية -
                     موافقة جهة العمل) أو أي مستندات أخرى مطلوبة من قبل عمادة الدراسات العليا في الفترة المحددة لذلك.
                     <br />
@@ -31,8 +31,15 @@
         </div>
         <div class="modal-footer" style="border-top: 2px solid #f28d1d;">
             <div>
-                <button type="button" [disabled]="!allowSelection || requesting" (click)="saveChoose()"
-                    class="btn btn-dark"><i class="fa fa-database"></i>موافق</button>
+                <label>
+                    <input [disabled]="!allowSelection" [(ngModel)]="selection" type="radio" value="1"
+                        name="selection" />
+                    اقرا واوافق على الاقرار
+                </label>
+            </div>
+            <div style="text-align: center;">
+                <button type="button" [disabled]="!allowSelection || !selection || requesting" (click)="saveChoose()"
+                    class="btn btn-dark"><i class="fa fa-database"></i>إرسال</button>
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './course-equalize.component.html',
   styleUrls: ['./course-equalize.component.css']
 })
-export class CourseEqualizeComponent implements OnInit {
+export class MasterCourseEqualizeComponent implements OnInit {
 
   printAR;
   reason: string;
