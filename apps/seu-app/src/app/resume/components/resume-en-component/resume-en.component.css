@@ -28,6 +28,12 @@
 }
 .btn:hover , .btn:active{
     color: #FFF
+} 
+a.sub-a{
+    color: #FFF
+}  
+a.sub-a:hover, a.sub-a:active{
+    color: #FFF
 }  
 .profile{
     border: solid 1px #EDEDED;
