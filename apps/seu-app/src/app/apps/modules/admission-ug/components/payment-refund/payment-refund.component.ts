@@ -15,10 +15,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class PaymentRefundComponent implements OnInit {
   can_add_new_request;
   details: any = [];
-  user:any;
+  user: any;
   AddReqForm: FormGroup;
   submitted = false;
-  isLoading = false;
+  isLoading = true;
   constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private translate: TranslateService, private router: Router, private fb: FormBuilder, public globalService: GlobalBaseService) {
 
     this.AddReqForm = fb.group({
@@ -38,7 +38,6 @@ export class PaymentRefundComponent implements OnInit {
   }
 
   paymentrefund() {
-    this.isLoading = true;
     this.admissionUgservice.paymentrefund(this.admissionUgservice.LoggedInToken).subscribe(respayref => {
       const status = respayref['status'];
       if (status == 0) {
@@ -52,6 +51,7 @@ export class PaymentRefundComponent implements OnInit {
     },
       err => {
         this.toastr.tryagain();
+        this.router.navigate(['/apps/admission-ug/']);
         this.isLoading = false
       }
     );

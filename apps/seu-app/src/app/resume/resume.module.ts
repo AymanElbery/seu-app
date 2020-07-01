@@ -9,6 +9,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { ResumeComponent } from './components/resume-component/resume.component';
 import { ResumeEnComponent } from './components/resume-en-component/resume-en.component';
+import { SeucommonModule } from '../seucommon/seucommon.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ResumeEnComponent } from './components/resume-en-component/resume-en.co
     CommonModule,
     MatProgressSpinnerModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SeucommonModule
   ]
 })
 export class ResumeModule { }

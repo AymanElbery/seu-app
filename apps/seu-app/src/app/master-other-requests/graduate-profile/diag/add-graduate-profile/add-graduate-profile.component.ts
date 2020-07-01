@@ -158,8 +158,7 @@ export class AddGraduateProfileComponent implements OnInit {
         return false;
       }
     }
-    //this.addRequest(this.stdinfo);
-
+    this.addRequest(this.stdinfo);
   }
   keyPress(event: any) {
     const pattern = /[0-9\+\-\ ]/;

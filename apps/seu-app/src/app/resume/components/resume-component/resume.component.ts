@@ -5,7 +5,7 @@ import { ResumeService } from '../../services/resume.service';
 import { HttpRequestService } from '../../../shared/services/http-request.service';
 import { environment } from '../../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { AppToasterService } from '../../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialogRef } from '@angular/material';
@@ -33,6 +33,7 @@ export class ResumeComponent{
   photo = "" ;
   name;
   email;
+  displayEmail;
   phone;
   // address;
   jobTitle;
@@ -65,7 +66,12 @@ export class ResumeComponent{
   pidm;
   sectionEdit = true;
   facultyEdit = true;
+  loading = false;
+  imagePath;
   
+
+  facs = [];
+  deps = [];
 
   constructor(
     public userService: UserService, 
@@ -77,10 +83,12 @@ export class ResumeComponent{
     private toastr: AppToasterService,
     public translate: TranslateService
   ) {
+    this.loading = true;
     this.id = this.userService.userData.id;
     this.pidm = this.userService.userData.PIDM;
 
     this.getFaculty();
+    this.getFaculties();
     this.getDepartment();
     
     this.resumeService.getStuffByID(this.id).subscribe(
@@ -88,6 +96,7 @@ export class ResumeComponent{
         if (response) {
           this.name = response.data.EMP_NAME;
           this.email = response.data.WORK_EMAIL;
+          this.displayEmail = btoa(this.email);
           this.jobTitle = response.data.CARRER_DESC;
           this.getResumeByEmail(this.email);
         }
@@ -129,6 +138,32 @@ export class ResumeComponent{
     );
   }
 
+  getFaculties(){
+    this.resumeService.getFacs().subscribe(
+      (response: any) => {
+        if (response) {
+          for (let i = 0; i < response.data.length; i++) {
+            if (response.data[i].COLL_PK !== "PY") {
+              this.facs.push(response.data[i]);
+            }
+          }
+        }
+      },
+      error => {}
+    );
+  }
+
+  changeFac(){
+    this.resumeService.getDepsOnFac(this.faculty).subscribe(
+      (response: any) => {
+        if (response) {
+          this.deps = response.data;
+        }
+      },
+      error => {}
+    );
+  }
+
   getDepartment(){
     this.resumeService.getDept(this.pidm).subscribe(
       (response: any) => {
@@ -161,6 +196,7 @@ export class ResumeComponent{
     this.resumeService.getResumeByEmail(email, "ar").subscribe(
       (response: any) => {
         if (response) {
+          this.loading = false;
           if (response.status) {
             this.data = response.data;
             this.photo = this.data.PHOTO_PATH;
@@ -171,6 +207,7 @@ export class ResumeComponent{
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
             this.faculty = this.data.FACULTY;
+            this.changeFac();
             this.office = this.data.OFFICE;
             // this.work = this.data.WORK;
             this.nationality = this.data.NATIONALITY;
@@ -227,6 +264,7 @@ export class ResumeComponent{
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.photo = reader.result;
+    this.imagePath = this.photo;
   }
   
   hideNameMessages(){
@@ -329,7 +367,12 @@ export class ResumeComponent{
       this.resumeService.addResume(data, "ar").subscribe(
         (response: any) => {
           if (response) {
-            window.location.reload();
+            this.toastr.push([{
+              'type' : 'success',
+              'body' : 'تم تحديث السيرة الذاتية الخاصة بكم ، يمكنك الإطلاع عليها من خلال الدخول إلى البوابة'
+            }]);
+            this.router.navigate(['/resume/ar']);
+            //window.location.reload();
           }
         },
         error => {}

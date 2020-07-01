@@ -1,0 +1,46 @@
+<mat-dialog-content dir="{{translate.currentLang == 'ar' ? 'rtl':'ltr'}}">
+    <div class="modal-content">
+        <div class="modal-header">
+
+            <h5 style="width:100%;text-align: center" class="modal-title " id="exampleModalLabel">
+                اقرار بالقبول المشروط
+            </h5>
+
+        </div>
+        <div class="modal-body" (scroll)="onScroll($event)">
+            <div>
+                <p>
+                    أقر أنا <strong>{{studentName}}</strong> أنه في حال حصولي على القبول المشروط لأي من برامج الدراسات العليا في الجامعة السعودية
+                    الالكترونية، ألتزم بتزويد كافة المستندات المطلوبة للقبول النهائي من (اختبار لغة - توصيات علمية -
+                    موافقة جهة العمل) أو أي مستندات أخرى مطلوبة من قبل عمادة الدراسات العليا في الفترة المحددة لذلك.
+                    <br />
+                    وفي حال عدم تزويدي بالمطلوب خلال الفترة المحددة فللجامعة الحق بالاعتذار عن قبولي بدون أي مستردات أو
+                    مستحقات مالية.
+                </p>
+                <p style="color: red;">
+                    ملاحظة: يتم منح الطالب افادة باجتياز مقررات الفصل التحضيري في حال عدم قبوله نهائياً في البرنامج.
+                </p>
+                <p style="text-align: center;">
+                    <strong>
+                        تمنياتنا لكم بالتوفيق
+                        <br />
+                        عمادة الدراسات العليا
+                    </strong>
+                </p>
+            </div>
+        </div>
+        <div class="modal-footer" style="border-top: 2px solid #f28d1d;">
+            <div>
+                <label>
+                    <input [disabled]="!allowSelection" [(ngModel)]="selection" type="radio" value="1"
+                        name="selection" />
+                    اقر واوافق على الاقرار
+                </label>
+            </div>
+            <div style="text-align: center;">
+                <button type="button" [disabled]="!allowSelection || !selection || requesting" (click)="saveChoose()"
+                    class="btn btn-dark"><i class="fa fa-database"></i>إرسال</button>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
