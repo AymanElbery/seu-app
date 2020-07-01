@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { AdmissionUGService } from '../../services/admission-ug.service';
 import { AppUserService } from 'src/app/apps/services/app-user.service';
 
@@ -7,7 +7,7 @@ import { AppUserService } from 'src/app/apps/services/app-user.service';
   templateUrl: './apps-ug-menu.component.html',
   styleUrls: ['./apps-ug-menu.component.css']
 })
-export class AppsUGMenuComponent implements OnInit {
+export class AppsUGMenuComponent implements OnInit , AfterContentInit {
 
   constructor(public admissionugService: AdmissionUGService, private appService: AppUserService) {
     this.isLoggedIn();
@@ -20,6 +20,10 @@ export class AppsUGMenuComponent implements OnInit {
   }
   ngOnInit() {
 
+  }
+
+  ngAfterContentInit() {
+    window['WindowStartSerices']();
   }
 
   logout() {

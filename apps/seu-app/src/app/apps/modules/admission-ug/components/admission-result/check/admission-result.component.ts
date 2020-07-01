@@ -22,7 +22,7 @@ export class AdmissionResultComponent {
   constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
 
     if (this.admissionUgservice.checkResultData) {
-      this.router.navigate(['/apps/admission-ug/display-result']);
+      //this.router.navigate(['/apps/admission-ug/display-result']);
     }
     this.AddReqForm = fb.group({
       'ssn': ['', [Validators.required, Validators.minLength(10), Validators.minLength(10)]],
@@ -54,6 +54,7 @@ export class AdmissionResultComponent {
       if (status == true) {
         if (!resdttaus['data']['student_data']) {
           this.toastr.push([{ type: 'error', 'body': resdttaus['data']['message'] }]);
+          this.recaptchaRef.reset();
         } else {
           this.admissionUgservice.checkResultData = (resdttaus as any).data;
           this.router.navigate(['/apps/admission-ug/display-result/']);
@@ -61,9 +62,7 @@ export class AdmissionResultComponent {
         this.submitted = false;
       }
       else {
-        var erromsg = resdttaus['data']['errmsg'];
-        this.toastr.push([{ type: 'error', 'body': erromsg }]);
-
+        this.toastr.push(resdttaus['messages']);
         this.recaptchaRef.reset();
         this.submitted = false;
       }

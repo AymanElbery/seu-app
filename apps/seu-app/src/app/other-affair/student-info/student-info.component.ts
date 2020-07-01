@@ -27,9 +27,7 @@ export class StudentInfoComponent implements OnInit {
   isLoading = false;
   fileType;
   showDetail = false;
-  constructor(private translate: TranslateService, private academicService: StudentInfoService, private toastr: AppToasterService) { }
-
-  ngOnInit() {
+  constructor(private translate: TranslateService, private academicService: StudentInfoService, private toastr: AppToasterService) {
     this.studentInfo =
     {
 
@@ -75,33 +73,40 @@ export class StudentInfoComponent implements OnInit {
       photo: '',
       cv: ''
     }
+  }
+
+  ngOnInit() {
     this.getData();
   }
   getData() {
     this.isLoading = true;
     this.academicService.getِRequests().then(
       res => {
-        this.reqData = (res as any).data;
-        this.yearlist = (res as any).data["yearslist"];
-        this.msgs = (res as any).messages;
-        this.studentInfo = this.reqData.user;
-        this.stdData.name_ar = this.studentInfo.NAME_AR;
-        this.stdData.name_en = this.studentInfo.NAME_EN;
-        this.stdData.graduation_term = this.studentInfo.GRADUATION_TERM;
-        this.stdData.email = this.studentInfo.EMAIL;
-        this.stdData.phone = this.studentInfo.PHONE;
-        this.stdData.job_status = this.studentInfo.JOB_STATUS;
-        this.stdData.job_location = this.studentInfo.JOB_LOCATION;
-        this.stdData.job_title = this.studentInfo['JOB_TILE'];
-        this.stdData.job_title2 = this.studentInfo.JOB_TILE2;
-        this.stdData.email2 = this.studentInfo.EMAIL2;
-        this.stdData.phone2 = this.studentInfo.PHONE2;
-        this.stdData.job_name = this.studentInfo.JOB_NAME;
-        this.stdData.job_type = this.studentInfo.JOB_TYPE;
-        this.stdData.job_time = this.studentInfo.JOB_TIME;
-        this.stdData.job_year = this.studentInfo.JOB_YEAR;
-        this.stdData.work_city = this.studentInfo.WORK_CITY;
-        this.getjobstatus(this.stdData.job_status);
+        if (res['status']) {
+          this.reqData = (res as any).data;
+          this.yearlist = (res as any).data["yearslist"];
+          this.msgs = (res as any).messages;
+          this.studentInfo = this.reqData.user;
+          this.stdData.name_ar = this.studentInfo.NAME_AR;
+          this.stdData.name_en = this.studentInfo.NAME_EN;
+          this.stdData.graduation_term = this.studentInfo.GRADUATION_TERM;
+          this.stdData.email = this.studentInfo.EMAIL;
+          this.stdData.phone = this.studentInfo.PHONE;
+          this.stdData.job_status = this.studentInfo.JOB_STATUS;
+          this.stdData.job_location = this.studentInfo.JOB_LOCATION;
+          this.stdData.job_title = this.studentInfo['JOB_TILE'];
+          this.stdData.job_title2 = this.studentInfo.JOB_TILE2;
+          this.stdData.email2 = this.studentInfo.EMAIL2;
+          this.stdData.phone2 = this.studentInfo.PHONE2;
+          this.stdData.job_name = this.studentInfo.JOB_NAME;
+          this.stdData.job_type = this.studentInfo.JOB_TYPE;
+          this.stdData.job_time = this.studentInfo.JOB_TIME;
+          this.stdData.job_year = this.studentInfo.JOB_YEAR;
+          this.stdData.work_city = this.studentInfo.WORK_CITY;
+          this.getjobstatus(this.stdData.job_status);
+        } else {
+          this.toastr.tryagain();
+        }
         this.isLoading = false;
       }
     );
@@ -166,25 +171,23 @@ export class StudentInfoComponent implements OnInit {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.email2") }]);
         return false;
       }
-     
+
       if (this.stdData.email2) {
-        if(this.validateemail(this.stdData.email2)==false)
-        {
+        if (this.validateemail(this.stdData.email2) == false) {
           this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.emilnotallowed") }]);
           return false;
         }
       }
-      
+
     }
     if (this.stdData.email) {
-      if(this.validateemail(this.stdData.email)==false)
-      {
+      if (this.validateemail(this.stdData.email) == false) {
         this.toastr.push([{ type: 'error', 'body': this.translate.instant("services.student_info.emilnotallowed") }]);
         return false;
       }
     }
 
-   this.addRequest(this.stdData);
+    this.addRequest(this.stdData);
   }
   keyPress(event: any) {
     const pattern = /[0-9\+\-\ ]/;
@@ -193,8 +196,8 @@ export class StudentInfoComponent implements OnInit {
       event.preventDefault();
     }
   }
-  
-  
+
+
 
   getjobstatus(workstatus) {
     //console.log("get data",workstatus);
@@ -230,13 +233,13 @@ export class StudentInfoComponent implements OnInit {
       this.stdData.cv = reader.result;
   }
 
-   
-   regex =/^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(seu.edu)\.sa$/g;  
-   validateemail(email) {     
-    if(this.regex.test(email)) {      
-      return false     
+
+  regex = /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(seu.edu)\.sa$/g;
+  validateemail(email) {
+    if (this.regex.test(email)) {
+      return false
     }
-    else {         
+    else {
       return true
     }
   }

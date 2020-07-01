@@ -33,7 +33,7 @@ import { AddExamExecuseComponent } from './exams-execuses/diag/add-exam-execuse/
 import { MatDialogModule, MatCheckboxModule } from '@angular/material';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
-import { CourseEqualizeComponent } from './course-equalize/course-equalize.component';
+import { MasterCourseEqualizeComponent } from './course-equalize/course-equalize.component';
 import { AddCourseEqualizeComponent } from './course-equalize/dialog/add-course-equalize/add-course-equalize.component';
 
 @NgModule({
@@ -54,7 +54,7 @@ import { AddCourseEqualizeComponent } from './course-equalize/dialog/add-course-
     AddObjectExamComponent,
     AddExamExecuseComponent,
     AddLecturesExecusesComponent,
-    CourseEqualizeComponent,
+    MasterCourseEqualizeComponent,
     AddCourseEqualizeComponent
 
 

@@ -122,6 +122,7 @@ get fileName() {
         // console.log("response data",error);
         this.toastr.push([{ type: 'error', body: error }]);
         this.submitted = false;
+        this.back();
       } else {
         this.toastr.push([{ type: 'success', body: this.translate.instant('wafi.request_saved') }]);
         // this.router.navigate(['/wafi/employee-requests']);

@@ -331,7 +331,7 @@ export class AppComponent implements OnInit {
                         subTitle: ' مناصبي الادارية',
                         route: '/personal/managerial-duties'
                     }, {
-                        subTitle: 'مسيرات الرواتب',
+                        subTitle: 'تفاصيل الرواتب',
                         route: '/personal/salaries'
                     },
                     {
@@ -424,11 +424,11 @@ export class AppComponent implements OnInit {
                         subTitle: ' متابعة حركة الموافقات',
                         route: '/requests/approval-history'
                     }
-                    ,
+                   /*  ,
                     {
                         subTitle: ' اضافة طلب ',
                         route: '/requests/add-request'
-                    } 
+                    }  */
                 ]
             }
 

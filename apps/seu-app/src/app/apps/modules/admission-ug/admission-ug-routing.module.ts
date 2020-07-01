@@ -10,24 +10,23 @@ import { UgVeryficationComponent } from './components/ug-login/verify/ug-veryfic
 import { MatchDocumentsComponent } from './components/match-documents/match-documents.component';
 import { PaymentRefundComponent } from './components/payment-refund/payment-refund.component';
 import { AppsUgGuard } from './apps-ug-guard/apps-ug.guard';
+import { UGLandingComponent } from './components/ug-landing/ug-landing.component';
 
 
 
 const routes: Routes = [
   {
-    path: '', component: UGHomeComponent,
+    path: '', component: UGLandingComponent,
     children: [
+      { path: '', component: UGHomeComponent },
       { path: 'ug-login', component: UgLoginComponent },
       { path: 'ug-verification', component: UgVeryficationComponent },
-
       { path: 'admission-result', component: AdmissionResultComponent, canActivate: [AppsUgGuard] },
       { path: 'display-result', component: DisplayResultComponent },
-
       { path: 'pay-fee', component: PayFeeComponent, canActivate: [AppsUgGuard] },
       { path: 'match-documents', component: MatchDocumentsComponent, canActivate: [AppsUgGuard] },
       { path: 'upload-documents', component: UploadDocumentComponent, canActivate: [AppsUgGuard] },
       { path: 'payment-refund', component: PaymentRefundComponent, canActivate: [AppsUgGuard] }
-
     ]
   }
 ];
