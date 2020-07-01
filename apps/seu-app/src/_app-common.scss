@@ -21,7 +21,7 @@
     margin-left: 20;
     margin-right: 20;
     background-color: #f1f1f1;
-    border-radius: 70px 20px 20px 20px;
+    border-radius: 20px 20px 20px 20px;
     border-width: 0;
     padding: 0;
     color: #6189f4;
@@ -33,11 +33,11 @@
 
 .ysHBox
 {
-    font-size:15px;
+    font-size:14px;
     font-weight: 800;
     text-align: center;
     color: white;
-    border-radius: 70px 20px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
     padding: 15px 0;
 
 }
@@ -48,7 +48,7 @@
     padding-bottom: 10px;
     background-color: rgb(226, 226, 226);
     margin-bottom: 10px;
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
     vertical-align: middle;
     font-weight: 800;
@@ -57,7 +57,7 @@
 .ysPBox2{
     color: #f08b1c;
     padding-right: 20px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     text-align: center;
     vertical-align: middle;
@@ -66,7 +66,7 @@
 .ysPBox3{
     color: #f08b1c;
     padding-right: 20px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     text-align: center;
     vertical-align: middle;
@@ -86,7 +86,7 @@ DropDown{     color: #f08b1c; font-size: 13px; font-family: 'DroidArabicKufi';}
     border-radius: 20px;
     padding: 5 0 ;
 }
-.paragraph {  margin: 10 20;      border-radius: 70px 20px 20px 20px;
+.paragraph {  margin: 10 20;      border-radius: 20px 20px 20px 20px;
     background-color: rgb(235, 235, 235); padding: 5 10 ;
 }
 
@@ -97,9 +97,10 @@ DropDown{     color: #f08b1c; font-size: 13px; font-family: 'DroidArabicKufi';}
     font-size:14px;
     font-weight: 800;
     text-align: center;
-    background-image: linear-gradient(135deg,#001628  0%, #243686 100%);
+    // background-image: linear-gradient(135deg,#001628  0%, #243686 100%);
+    background:#0c1f5a;
         color: white;
-    border-radius: 70px 20px 0px 0px;
+    border-radius: 50px 20px 0px 0px;
     padding: 10px 12px;
     margin: 7 20;
     border-bottom-width: 0px!important;
@@ -112,7 +113,7 @@ DropDown{     color: #f08b1c; font-size: 13px; font-family: 'DroidArabicKufi';}
     text-align: center;
     background: linear-gradient(to right,#f28d1e,#f28d1e);  
       color:#fff;
-    border-radius: 70px 20px 0px 0px;
+    border-radius: 50px 20px 0px 0px;
     padding: 10px 12px;
     margin: 7 20;
     border-bottom-width: 0px!important;
@@ -136,7 +137,7 @@ DropDown{     color: #f08b1c; font-size: 13px; font-family: 'DroidArabicKufi';}
     margin-left: 20;
     margin-right: 20;
     background-color:#ccc;
-    border-radius: 70 20 20 20 ;
+    border-radius: 20 20 20 20 ;
     padding: 20px;
     color:brown;
     text-align: center;
@@ -362,8 +363,8 @@ background-color: #070d3d;
 .img-user{  border-bottom-width: 3; border-right-width: 3; border-color: rgb(219, 151, 4); margin-top: 5;
 }
 
-.heading{margin: 10 15;   background-image: linear-gradient(135deg,#001628  0%, #243686 100%);
-     border-radius: 70px 20px 20px 20px; padding: 4px 20 20px ;}
+.heading{margin: 10 15;     background:#0c1f5a;
+     border-radius: 20px 20px 20px 20px; padding: 4px 20 20px ;}
 
 .heading-text{ color: #fff; font-weight: 800; font-family: 'DroidArabicKufi'; float: left; vertical-align: middle;}
 .heading-icon{ color: #fff;  float: right; margin-top: -28; }
@@ -377,8 +378,8 @@ background-color: #070d3d;
 .serv-ico-r{ font-size: 30px; font-weight: bold; color: rgb(219, 151, 4); text-align: right; padding-right: 0; }
 
 
-.ser-title{margin: 10 15;   background-image:linear-gradient(135deg,#f1f1f1  0%, #ccc 100%);
-    border-radius: 70px 20px 20px 20px; padding: 3px 0px ; 
+.ser-title{margin: 10 15;   background-image:linear-gradient(135deg,#f1f1f1  0%, rgb(233, 233, 233) 100%);
+    border-radius: 20px 20px 20px 20px; padding: 3px 0px ; 
 }
 .ser-name{ font-size: 15px; font-weight: bold; color: #010447; text-align: center; }
 
@@ -398,13 +399,16 @@ background-color: #070d3d;
  ActionBar{background-color:#f1f1f1; color:#243686;}
  ActionBar label{ color:#243686; font-size: 18px; font-family: 'DroidArabicKufi'}
 
- .login-btn{   background-image: linear-gradient(135deg,#f17e13  0%, #f08b1c 100%); color: #fff;
+ .login-btn{   background-image: linear-gradient(135deg,#f28d1e  0%, #f28d1e 100%); color: #fff;
     border-radius: 100px; 
-    font-family: 'DroidArabicKufi'; font-size: 16px; border-color: #f08b1c;
+    font-family: 'DroidArabicKufi'; font-size: 15px; border-color: #f08b1c;
     margin-top: 10;
+    height: 46;
 }
 
-.print-btn{    background-image: linear-gradient(135deg,#001628  0%, #243686 100%);
+.print-btn{    
+ ActionBar{background-color:#f1f1f1; color:#243686;}
+ background:#0c1f5a;
     color: #fff;
     border-radius: 50px; 
     font-family: 'DroidArabicKufi'; font-size: 14px;
@@ -416,25 +420,25 @@ background-color: #070d3d;
      background-image: none;
     color: #fff;
     border-radius: 50px; 
-    font-family: 'DroidArabicKufi'; font-size: 15px; font-weight: 700;
+    font-family: 'DroidArabicKufi'; font-size: 12px; font-weight: 500;
     height: 100px;
     padding: 0 20;
     margin-top: 10;
 }
-.contact-btn .far , .contact-btn .fas{ color: #f08b1c; font-size: 15;}
+.contact-btn .far , .contact-btn .fas{ color: #f08b1c; font-size: 13;}
 TextField{ border-width: 0; background-color: #f1f1f1;
     color:#243686 ; padding: 16 10;  border-radius: 100px;}
 
 TextField:focus{ border-width: 5px; border-color: #f08b1c; }
 
-.logi TextField{ border-width: 0; height: 55; margin-top: 20;
+.logi TextField{ border-width: 0; height: 46; margin-top: 20;
      color:#243686 ; padding: 16 10;  border-radius: 100px;}
  .logi TextField:focus{ border-width: 0px; border-color: #f08b1c; }
 
 TextView{ color:#243686 ; background-color: #f1f1f1; padding: 16 10;  border-radius: 100px;}
 TextView:focus{ border-width: 5px; border-color: #f08b1c; }
 
-.logi{  background-color: #f1f1f1; border-radius: 100px; height: 55; }
+.logi{  background-color: #f1f1f1; border-radius: 100px; height: 46; }
 .logi:focus{  border-width: 5px; border-color: #f08b1c; }
 .log-icon{ color: #f08b1c; margin-left: 15; font-size: 16;}
 label{font-family: 'DroidArabicKufi' ;  white-space: normal;}
@@ -605,7 +609,8 @@ FormattedString{text-justify: distribute-all-lines;}
     margin: 10 15 0 ; 
     border-radius: 50px;
     border-color: #f1f5f8;
-    border-width: 0;
+    background-color: #fff;
+    border-width: 1;
    padding: 6 0 ;
    height:45;
    text-align: center;
@@ -699,3 +704,24 @@ FormattedString{text-justify: distribute-all-lines;}
 .hr2{margin: 0;   border-color: #cacaca;}
 .top-ser .heading6 {  padding-bottom: 10;}
 .bottom-ser .heading6 { margin-top: -10px; padding-top: 20;} */
+.hr2{  border-color: #103f80;}
+
+.heading8{margin: 8 0 0 ; 
+    border-radius: 0px;
+    border-width: 0;
+   padding: 5   ;
+   text-align: center;
+  }
+  
+  .heading-text8{ color: #fff; font-weight: 500; font-size: 12;}
+  .heading-img8{ width: 50; }
+
+  .heading9{margin: 10 0 0 ; 
+    border-radius: 0px;
+    border-width: 0;
+   padding: 5   ;
+   text-align: center;
+  }
+  
+  .heading-text9{ color: #fff; font-weight: 500; font-size: 12;}
+  .heading-img9{ width: 25;}
