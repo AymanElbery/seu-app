@@ -10,7 +10,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class MasterStudentGradesComponent implements OnInit, OnDestroy {
 
-  recoredData;
+  recoredData = [];
   isLoading = false;
   msgs;
   constructor(private transalte: TranslateService, private toastr: AppToasterService, private academicService: AcademicRecordService) { }
