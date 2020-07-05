@@ -11,60 +11,65 @@
     <div class="nav-container">
       <nav id="main-menu-navigation" class="navigation-main">
         <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-          <a href="#" class="menu-item" routerLink="/apps/admission-ug" >
+          <a href="#" class="menu-item" routerLink="/apps/admission-ug">
             <span> {{'home' | translate}} </span>
-            <i class="ik ik-user-check"></i>
+            <i class="ik ik-home"></i>
+          </a>
+        </div>
+        <div *ngIf="newRequest" class="nav-item">
+          <a target="_blank" href="https://bannerssb.seu.edu.sa/PPRD_en/bwskalog.P_DispLoginNon" class="menu-item">
+            <span> {{'newrequest' | translate}} </span>
+            <i class="ik ik ik-layers"></i>
           </a>
         </div>
         <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-
           <a href="#" class="menu-item" routerLink="/apps/admission-ug/admission-result">
             <span> {{'admissionResult' | translate}} </span>
-            <i class="ik ik-user-check"></i>
+            <i class="ik ik ik-layers"></i>
           </a>
         </div>
-          <!-- <a *ngIf="!admissionugService.isLoggedIn" href="#" class="menu-item" routerLink="/apps/admission-ug/ug-login">
+        <!-- <a *ngIf="!admissionugService.isLoggedIn" href="#" class="menu-item" routerLink="/apps/admission-ug/ug-login">
             <span> {{'Log In' | translate}} </span>
-            <i class="ik ik-user-check"></i>
+            <i class="ik ik ik-layers"></i>
           </a> -->
-          <ng-container>
-            <!--*ngIf="admissionugService.isLoggedIn"-->
-            <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <ng-container>
+          <!--*ngIf="admissionugService.isLoggedIn"-->
+          <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
             <a href="#" class="menu-item" routerLink="/apps/admission-ug/pay-fee">
               <span> {{"PaytheFee" | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <i class="ik ik ik-layers"></i>
             </a>
-            </div>
-            <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          </div>
+          <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
-            <a href="#" class="menu-item"  routerLink="/apps/admission-ug/match-documents">
+            <a href="#" class="menu-item" routerLink="/apps/admission-ug/match-documents">
               <span> {{'matchdocuments' | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <i class="ik ik ik-layers"></i>
             </a>
-            </div>
-            <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          </div>
+          <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
             <a href="#" class="menu-item" routerLink="/apps/admission-ug/upload-documents">
               <span> {{'UploadDocument' | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <i class="ik ik ik-layers"></i>
             </a>
-            </div>
-            <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          </div>
+          <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
             <a href="#" class="menu-item" routerLink="/apps/admission-ug/payment-refund">
               <span> {{'paymentrefund' | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <i class="ik ik ik-layers"></i>
             </a>
-            </div>
-            <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          </div>
+          <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
             <a *ngIf="admissionugService.isLoggedIn" href="#" class="menu-item" (click)="logout()">
               <span> {{'logout' | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <i class="ik ik ik-layers"></i>
             </a>
-            </div>
-            </ng-container>
+          </div>
+        </ng-container>
       </nav>
     </div>
   </div>

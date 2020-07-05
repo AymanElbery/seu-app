@@ -104,7 +104,7 @@ export class AdmissionUGService extends AppUserService {
       }));
   }
   Reqpaymentrefund(data) {
-    return this.admissionUgHttpRequest.postRequest_obj('/ug/cancel_admission_service/insert', data ).pipe(
+    return this.admissionUgHttpRequest.postRequest_obj('/ug/cancel_admission_service/insert', data).pipe(
       map(res => {
         this.checknotloggedinresult(res)
         return res;
@@ -113,6 +113,10 @@ export class AdmissionUGService extends AppUserService {
 
   logout_ug(token) {
     return this.admissionUgHttpRequest.postRequest_obj('/ug/Admission_result_service/Logout', { token });
+  }
+
+  appRedirect() {
+    this.router.navigate(['/apps/admission-ug']);
   }
 
   logout() {

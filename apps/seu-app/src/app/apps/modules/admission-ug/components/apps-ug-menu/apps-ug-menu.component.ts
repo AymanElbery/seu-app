@@ -7,10 +7,10 @@ import { AppUserService } from 'src/app/apps/services/app-user.service';
   templateUrl: './apps-ug-menu.component.html',
   styleUrls: ['./apps-ug-menu.component.css']
 })
-export class AppsUGMenuComponent implements OnInit , AfterContentInit {
-
+export class AppsUGMenuComponent implements OnInit, AfterContentInit {
+  newRequest = false;
   constructor(public admissionugService: AdmissionUGService, private appService: AppUserService) {
-    this.isLoggedIn();
+    //this.isLoggedIn();
   }
   isLoggedIn() {
     if (this.admissionugService.isLoggedIn) {
@@ -19,7 +19,17 @@ export class AppsUGMenuComponent implements OnInit , AfterContentInit {
     return false;
   }
   ngOnInit() {
+    this.checkForNewReqs();
+    this.admissionugService.settingsObservable.subscribe(() => {
+      this.checkForNewReqs();
+    });
+  }
 
+  checkForNewReqs() {
+    if (!this.admissionugService.settingsLoaded) {
+      return;
+    }
+    this.newRequest = (this.admissionugService.settings['ADMISSION_NEWREQ'] == 1);
   }
 
   ngAfterContentInit() {
@@ -28,6 +38,7 @@ export class AppsUGMenuComponent implements OnInit , AfterContentInit {
 
   logout() {
     this.admissionugService.logout();
+    return false;
   }
 
 }
