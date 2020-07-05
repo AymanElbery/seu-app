@@ -121,16 +121,24 @@
                 </div>
                 <div class="row">
                  
-                  <div class="col-md-6 new-ser">
+                  <div class="col-md-4 new-ser">
                     <p><a target="_blank" href="http://seuapps.seu.edu.sa/eservices/taqrir_final/login.php">
                       <img src="assets/images/manag.png"> 
                       {{"menu.AdminPage" | translate}} </a></p>
                   </div>
 
-                  <div class="col-md-6 new-ser">
+                  <div class="col-md-4 new-ser">
                     <p><a target="_blank" href="https://sso.seu.edu.sa/identity">
                       <img src="assets/images/mass-media.png"> 
                       {{"menu.ssoidentity" | translate}} </a></p>
+                  </div>
+
+                  <div class="col-md-4 new-ser">
+                    <p><a target="_blank" href="http://seuapps.seu.edu.sa/StudentRightsUnit/Home">
+                      <img src="assets/images/student.png"> 
+                      {{"menu.StdLaw" | translate}}
+
+                      </a></p>
                   </div>
                 </div>
               
@@ -251,16 +259,24 @@
                 </div>
                 <div class="row">
                  
-                  <div class="col-md-6 new-ser">
+                  <div class="col-md-4 new-ser">
                     <p><a target="_blank" href="https://sso.seu.edu.sa/identity">
                       <img src="assets/images/mass-media.png"> 
                       {{"menu.ssoidentity" | translate}} </a></p>
                   </div>
 
-                  <div class="col-md-6 new-ser">
+                  <div class="col-md-4 new-ser">
                     <p><a target="_blank" href="https://seuapps.seu.edu.sa/attends">
                       <img src="assets/images/streaming.png"> 
                       {{"menu.attends" | translate}} </a></p>
+                  </div>
+
+                  <div class="col-md-4 new-ser">
+                    <p><a target="_blank" href="http://seuapps.seu.edu.sa/StudentRightsUnit/Home">
+                      <img src="assets/images/student.png"> 
+                      {{"menu.StdLaw" | translate}}
+
+                      </a></p>
                   </div>
 
                 </div>
@@ -292,6 +308,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="card-body" *ngIf="userService.userData && userService.userData.activeRole=='Student'"
                 style="padding: 0 15px">
                 <div class="row">
