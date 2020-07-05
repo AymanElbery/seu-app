@@ -13,6 +13,10 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { Page } from 'tns-core-modules/ui/page';
 import { RouterExtensions } from 'nativescript-angular/router';
+import * as utils from "tns-core-modules/utils/utils";
+import * as appavailability from "nativescript-appavailability";
+import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
+import { TranslateService } from '@ngx-translate/core';
 
 
 
@@ -41,7 +45,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     private globalSer: GlobalService,
     private ref: ChangeDetectorRef,
     private toastr: AppToasterService,
-    private routerExtensions: RouterExtensions
+    private routerExtensions: RouterExtensions,
+    private translate: TranslateService
   ) {
     console.log('l1');
     page.actionBarHidden = true;
@@ -170,6 +175,32 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     // prevent memory leak by unsubscribing
     this.subscription.unsubscribe();
   }
-
-
+  openLink(url:string){
+    utils.openUrl(url);
+  }
+  
+  
+  openWhatsAppConversation(){
+    let chatBotNumber="966112613500"
+    let msg=this.translate.instant('general.isInstalled')
+    if(isIOS) {
+      appavailability.available("whatsapp://")
+        .then((avail: boolean) => {
+          if(avail) {
+            utils.openUrl("whatsapp://send?phone="+chatBotNumber)
+          } else {
+            this.toastr.show(msg);
+          }
+        })
+    } else {
+      appavailability.available("com.whatsapp")
+        .then((avail: boolean) => {
+          if(avail) {
+            utils.openUrl("https://api.whatsapp.com/send?phone="+chatBotNumber)
+          } else {
+            this.toastr.show(msg);
+          }
+        })
+    }
+  }
 }
