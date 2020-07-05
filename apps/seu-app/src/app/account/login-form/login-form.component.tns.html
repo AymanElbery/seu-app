@@ -11,12 +11,12 @@
     
     <StackLayout >
 
-      <StackLayout class="form" margin="25 10 10 10" verticalAlignment="center" padding="5" >
+      <StackLayout class="form" margin="20 10 10 10" verticalAlignment="center" padding="5" >
         <StackLayout margin-top="0" >
-          <Image src="~/images/logo_3d.png" style="height: 220px;z-index: 100" ></Image>
+          <Image src="~/images/logo_3d.png" style="height: 250px;z-index: 100" ></Image>
        
         </StackLayout>
-
+        <StackLayout style="margin-top: -30;">
         <FlexboxLayout flexDirection="row-reverse" alignItems="flex-start" justifyContent="center">
 
           <GridLayout class="heading8" rows="auto,auto" columns="*,*">
@@ -48,13 +48,13 @@
   
   
         </FlexboxLayout>
-
+        </StackLayout>
         <!-- 
 
         <StackLayout margin="10">
           <Image class="" style="width: 60; margin-top: 40;" src="~/images/user.png"></Image>
         </StackLayout> -->
-        <StackLayout style="margin-top: -20;">
+        <StackLayout style="margin-top: -35;">
         <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center" style="margin-top:0;"></ActivityIndicator>
         <GridLayout class="m-10 input-field logi" columns="auto,*">
           <Label col="0" text="&#xf007;" class="far log-icon" verticalAlignment="center"></Label>

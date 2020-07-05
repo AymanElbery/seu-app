@@ -403,7 +403,7 @@ background-color: #070d3d;
     border-radius: 100px; 
     font-family: 'DroidArabicKufi'; font-size: 15px; border-color: #f08b1c;
     margin-top: 10;
-    height: 46;
+    height: 40;
 }
 
 .print-btn{    
@@ -431,14 +431,14 @@ TextField{ border-width: 0; background-color: #f1f1f1;
 
 TextField:focus{ border-width: 5px; border-color: #f08b1c; }
 
-.logi TextField{ border-width: 0; height: 46; margin-top: 20;
-     color:#243686 ; padding: 16 10;  border-radius: 100px;}
+.logi TextField{ border-width: 0; height: 40; margin-top: 20;
+     color:#243686 ; padding: 4 10;  border-radius: 100px;}
  .logi TextField:focus{ border-width: 0px; border-color: #f08b1c; }
 
 TextView{ color:#243686 ; background-color: #f1f1f1; padding: 16 10;  border-radius: 100px;}
 TextView:focus{ border-width: 5px; border-color: #f08b1c; }
 
-.logi{  background-color: #f1f1f1; border-radius: 100px; height: 46; }
+.logi{  background-color: #f1f1f1; border-radius: 100px; height: 40; }
 .logi:focus{  border-width: 5px; border-color: #f08b1c; }
 .log-icon{ color: #f08b1c; margin-left: 15; font-size: 16;}
 label{font-family: 'DroidArabicKufi' ;  white-space: normal;}
