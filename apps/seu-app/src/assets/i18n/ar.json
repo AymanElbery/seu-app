@@ -126,7 +126,9 @@
         "error": "خطأ",
         "instruction_pdf_file": "ملف توضيحي للخدمة",
         "instruction_vedio_file": "فيديو توضيحي للخدمة",
-        "instruction_": "الدليل الارشادي"
+        "instruction_": "الدليل الارشادي",
+        "isInstalled":"تطبيق الواتس اب غير مثبت"
+
     },
     "menu": {
         "grades":"التقديرات قبل حساب المعدل",

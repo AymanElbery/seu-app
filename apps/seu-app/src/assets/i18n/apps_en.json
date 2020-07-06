@@ -81,5 +81,9 @@
     "AdmissionGRResult": "Admission GR Result",
     "service_closed" : "Service is closed",
     "downloaddfile":"Download file",
-    "messagevalidation":"Must be fill all required fields"
+    "messagevalidation":"Must be fill all required fields",
+    "univ": "Saudi Electronic University",
+    "desc": " A set of services provided to undergraduate students ",
+    "homeapps": " Back To Home "
+
 }
