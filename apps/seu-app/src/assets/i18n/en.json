@@ -126,7 +126,8 @@
         "error": "Error",
         "instruction_pdf_file": "Manual File",
         "instruction_vedio_file": "Manual Vedio",
-        "instruction_": "Manual"
+        "instruction_": "Manual",
+        "isInstalled":"WhatsApp Is Not Installed"
     },
     "menu": {
         "grades":"التقديرات قبل حساب المعدل",

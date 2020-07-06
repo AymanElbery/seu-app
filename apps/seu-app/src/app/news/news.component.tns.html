@@ -1,4 +1,17 @@
-<app-header></app-header>
+<app-header *ngIf="this.userService.logedIn"></app-header>
+
+
+<ActionBar style="background:#080f43;" *ngIf="!this.userService.logedIn">
+
+    <StackLayout   horizontalAlignment="center" style="height: 100%;margin-top: 15px;">
+    
+        <Image style="width: 90%;"   [nsRouterLink]="['/land']" src="~/images/logo_3d.png" ></Image>
+    </StackLayout>
+        <NavigationButton  icon="font://&#xf104;"  style="font-size: 25px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+
+
+</ActionBar>
+
 <ScrollView height="100%">
  
     <StackLayout>
