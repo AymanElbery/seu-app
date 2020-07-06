@@ -86,5 +86,9 @@
     "verification_code": "الرجاء فحص الهاتف للتاكد من كود التحقق",
     "no_id_for_payment": "لا يوجد رقم جامعي لسداد الرسوم",
     "downloaddfile":"Download file",
-    "messagevalidation":"Must be fill all required fields"
+    "messagevalidation":"Must be fill all required fields",
+    "univ": "الجامعة السعودية الإلكترونية",
+    "desc": "  مجموعه من الخدمات المقدمة لطلبة البكالوريوس ",
+    "homeapps": " العودة للرئيسية "
+    
 }
