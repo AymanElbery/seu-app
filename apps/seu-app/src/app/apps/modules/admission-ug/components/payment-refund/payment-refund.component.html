@@ -1,5 +1,6 @@
 <div class="main-content" >
-  <service-header *ngIf="!isLoading" title='{{"paymentrefund_header" | translate}}'></service-header>
+  <app-service-header *ngIf="!isLoading" title="{{'ug' | translate}}"  subtitle="{{'paymentrefund_header' | translate}}"></app-service-header>
+  <!-- <service-header *ngIf="!isLoading" title='{{"paymentrefund_header" | translate}}'></service-header> -->
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
 

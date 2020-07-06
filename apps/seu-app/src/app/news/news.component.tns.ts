@@ -3,6 +3,7 @@ import { UserService } from '../account/services/user.service';
 import { HomeService } from '../rootservices/home.service';
 import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   selector: 'app-news',
@@ -13,7 +14,7 @@ export class NewsComponent implements OnInit {
   newsLen = 0;
   newsLoaded;
   sindex = 1;
-  constructor(public userService: UserService, public homeService: HomeService
+  constructor(public userService: UserService, public homeService: HomeService,private routerExtensions: RouterExtensions
     ) { }
 
   ngOnInit() {
@@ -24,8 +25,13 @@ export class NewsComponent implements OnInit {
           return this.loadStudentNews();
         } else if (this.userService.userData.activeRole === ApiUserRoles.Emplpyee) {
           return this.loadEmployessNews();
-        } else {
+        } else if (this.userService.userData.activeRole === ApiUserRoles.Instructor) {
           return this.loadStaffNews();
+        }else{
+          console.log("studentssssssss newwwwwwwwwwwwwwwwwws")
+
+          return this.loadStudentNews();
+
         }
 
       }
@@ -35,6 +41,7 @@ export class NewsComponent implements OnInit {
           this.userService.userData.coll,
           this.userService.userData.camp).
           then(res => {
+            console.log(res)
             this.userService.newsData = (res as any).Data;
             this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
             this.homeService.reqData = this.userService.newsData;
@@ -95,4 +102,8 @@ export class NewsComponent implements OnInit {
 
            return (img as string).replace(fmn, fmnd);
               }
+
+goBack() {
+    this.routerExtensions.backToPreviousPage();
+  }
 }
