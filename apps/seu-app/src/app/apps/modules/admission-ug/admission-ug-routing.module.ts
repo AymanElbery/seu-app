@@ -11,6 +11,7 @@ import { MatchDocumentsComponent } from './components/match-documents/match-docu
 import { PaymentRefundComponent } from './components/payment-refund/payment-refund.component';
 import { AppsUgGuard } from './apps-ug-guard/apps-ug.guard';
 import { UGLandingComponent } from './components/ug-landing/ug-landing.component';
+import { PayFeeCheckComponent } from './components/pay-fee-check/pay-fee-callback.component';
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: 'admission-result', component: AdmissionResultComponent, canActivate: [AppsUgGuard] },
       { path: 'display-result', component: DisplayResultComponent },
       { path: 'pay-fee', component: PayFeeComponent, canActivate: [AppsUgGuard] },
+      { path: 'pay-callback/:tid', component: PayFeeCheckComponent},
       { path: 'match-documents', component: MatchDocumentsComponent, canActivate: [AppsUgGuard] },
       { path: 'upload-documents', component: UploadDocumentComponent, canActivate: [AppsUgGuard] },
       { path: 'payment-refund', component: PaymentRefundComponent, canActivate: [AppsUgGuard] }
