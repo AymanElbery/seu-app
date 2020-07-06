@@ -33,6 +33,7 @@ export class ResumeEnComponent{
   photo = "" ;
   name;
   email;
+  displayEmail
   phone;
   // address;
   jobTitle;
@@ -65,7 +66,11 @@ export class ResumeEnComponent{
   pidm;
   sectionEdit = true;
   facultyEdit = true;
+  loading = false;
+  imagePath;
 
+  facs = [];
+  deps = [];
   constructor(
     public userService: UserService, 
     private resumeService: ResumeService, 
@@ -76,17 +81,20 @@ export class ResumeEnComponent{
     private toastr: AppToasterService,
     public translate: TranslateService
   ) {
+    this.loading = true;
     this.id = this.userService.userData.id;
     this.pidm = this.userService.userData.PIDM;
     this.jobTitle = this.userService.userData.role;
 
     this.getFaculty();
+    this.getFaculties();
     this.getDepartment();
     
     this.resumeService.getStuffByID(this.id).subscribe(
       (response: any) => {
         if (response) {
           this.email = response.data.WORK_EMAIL;
+          this.displayEmail = btoa(this.email);
           this.name = response.data.EMP_NAME_E;
           this.getResumeByEmail(this.email);
         }
@@ -128,6 +136,32 @@ export class ResumeEnComponent{
     );
   }
 
+  getFaculties(){
+    this.resumeService.getFacs().subscribe(
+      (response: any) => {
+        if (response) {
+          for (let i = 0; i < response.data.length; i++) {
+            if (response.data[i].COLL_PK !== "PY") {
+              this.facs.push(response.data[i]);
+            }
+          }
+        }
+      },
+      error => {}
+    );
+  }
+
+  changeFac(){
+    this.resumeService.getDepsOnFacEn(this.faculty).subscribe(
+      (response: any) => {
+        if (response) {
+          this.deps = response.data;
+        }
+      },
+      error => {}
+    );
+  }
+
   getDepartment(){
     this.resumeService.getDept(this.pidm).subscribe(
       (response: any) => {
@@ -160,6 +194,7 @@ export class ResumeEnComponent{
     this.resumeService.getResumeByEmail(email, "en").subscribe(
       (response: any) => {
         if (response) {
+          this.loading = false;
           if (response.status) {
             this.data = response.data;
             this.photo = this.data.PHOTO_PATH;
@@ -170,6 +205,7 @@ export class ResumeEnComponent{
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
             this.faculty = this.data.FACULTY;
+            this.changeFac();
             this.office = this.data.OFFICE;
             this.nationality = this.data.NATIONALITY;
             this.titles = this.data.TITLES;
@@ -225,6 +261,7 @@ export class ResumeEnComponent{
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.photo = reader.result;
+    this.imagePath = this.photo;
   }
   
   hideNameMessages(){
@@ -310,7 +347,12 @@ export class ResumeEnComponent{
       this.resumeService.addResume(data, "en").subscribe(
         (response: any) => {
           if (response) {
-            window.location.reload();
+            this.toastr.push([{
+              'type' : 'success',
+              'body' : 'تم تحديث السيرة الذاتية الخاصة بكم ، يمكنك الإطلاع عليها من خلال الدخول إلى البوابة'
+            }]);
+            this.router.navigate(['/resume/en']);
+            //window.location.reload();
           }
         },
         error => {}

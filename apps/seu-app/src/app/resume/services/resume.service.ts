@@ -89,6 +89,33 @@ export class ResumeService {
         });
     }
 
+    getFacs() {
+        return this.http.get(this.URL + "resume/getAllFac",
+        {
+            headers: this.headers,
+        });
+    }
+
+    getDepsOnFac(faculty) {
+        return this.http.post(this.URL + "resume/getDepsOnFac",
+        {
+            faculty : faculty
+        },
+        {
+            headers: this.headers,
+        });
+    }
+
+    getDepsOnFacEn(faculty) {
+        return this.http.post(this.URL + "resume/getDepsOnFacEn",
+        {
+            faculty : faculty
+        },
+        {
+            headers: this.headers,
+        });
+    }
+
     getFacStr(fac) {
         return this.http.get(this.URL + "resume/getFacStr/"+fac,
         {

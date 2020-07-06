@@ -1133,3 +1133,106 @@ margin: auto;
   .reqstart{
     color: red;
   }
+
+  .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item.active::after {
+    background-color: #f28d1e;
+  }
+  
+  .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item.active {
+    background-color:  #163c79;
+    color: #fff;
+  }
+  .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item.active a {
+
+    color: #fff;
+  }
+
+  .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item a img{
+width: 20px; height: 20px;
+margin-left: 5px;
+  }
+
+  .ug-home {
+    width: 100%;
+    height: 25vh;
+    background: url(assets/images/inner_banner.jpg) top center;
+    background-size: cover;
+    //overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-position: 100% 445px;
+    margin-bottom:20px;
+    margin-top: -65px;
+  
+  
+  
+    h3 {
+      color: #fff;
+      position: relative;
+      line-height: 1.7;
+      letter-spacing: 1px;
+      margin-top: 10px;
+    }
+  
+   
+  }
+  .ug-content h3 {    
+     font-size: 22px;
+    border-right: 6px solid #f28d1e;
+    letter-spacing: 0;
+    padding-right: 15px;
+}
+
+
+.ug-content .text {
+ width: 125px;
+  padding: .6rem 1rem ;
+  border-bottom-left-radius: 15px;
+  background-color: #ededed;
+  transition: all 0.5s ease-out;
+  text-align: center;
+
+  span { font-size: 13px;}
+}
+.ug-content .act {
+ 
+   background-color: #112e5d;
+   transition: all 0.5s ease-out;
+   text-align: center;
+ 
+   span { font-size: 13px; color: #fff;}
+ }
+ .ug-content .act:hover{
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ededed;
+  transition: box-shadow 500ms;
+  transition: all 0.5s ease-out;
+  span { font-size: 13px; color: #01182a;}
+
+}
+.ug-content .text:hover{
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  transition: box-shadow 500ms;
+  transition: all 0.5s ease-out;
+}
+
+.ug-content h4{
+  background-color:#163c79 ;
+  text-align: center;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  padding: .6rem 1.2rem;
+  margin: 0;
+}
+.ug-content h4 img{
+width: 25px;
+height: 25px;
+}
+.ug-content .block{
+  
+margin-bottom: 20px;}
+
+
+

@@ -54,6 +54,8 @@ function ServiceStart(e, s, i) {
       i(e).width() < 992 && (n.addClass("hide-sidebar"), l.removeClass("nav-collapsed menu-collapsed")), i(e).width() > 992 && (n.removeClass("hide-sidebar"), "collapsed" === i(".toggle-icon").attr("data-toggle") && l.not(".nav-collapsed menu-collapsed") && l.addClass("nav-collapsed menu-collapsed"))
     }), i(s).on("click", ".navigation li:not(.has-sub)", function () {
       i(e).width() < 992 && n.addClass("hide-sidebar")
+    }), i(s).on("click", ".menu-item", function () {
+      i(e).width() < 992 && n.addClass("hide-sidebar")
     }), i(s).on("click", ".logo-text", function () {
       i(e).width() < 992 && n.addClass("hide-sidebar")
     }), i(".mobile-nav-toggle").on("click", function (e) {
@@ -224,9 +226,9 @@ function ServiceStart(e, s, i) {
     });
   })
 };
-function WindowStartSerices(){
+function WindowStartSerices() {
   ServiceStart(window, document, jQuery);
 }
 $(document).ready(function () {
- // WindowStartSerices();
+  // WindowStartSerices();
 });

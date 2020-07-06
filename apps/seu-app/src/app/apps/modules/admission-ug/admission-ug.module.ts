@@ -16,11 +16,12 @@ import { PaymentRefundComponent } from './components/payment-refund/payment-refu
 import { RecaptchaModule } from 'ng-recaptcha';
 import { AdmissionUGService } from './services/admission-ug.service';
 import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
+import { UGLandingComponent } from './components/ug-landing/ug-landing.component';
 
 
 @NgModule({
   declarations: [UGHomeComponent, AdmissionResultComponent, PayFeeComponent, UploadDocumentComponent,
-    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent, PaymentRefundComponent],
+    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent, PaymentRefundComponent,UGLandingComponent],
   imports: [
     AdmissionUGRoutingModule,
     SeucommonModule,

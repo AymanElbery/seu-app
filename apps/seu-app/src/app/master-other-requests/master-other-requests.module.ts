@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -29,12 +29,13 @@ import { AddGraduateProfileComponent } from './graduate-profile/diag/add-graduat
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { MasterGraduateAddressComponent } from './graduate-address/graduate-address.component';
 
 @NgModule({
 
   declarations: [AbsenceQueryComponent, ChangeBranchComponent, AddChangeBranchComponent,
     ChangeCourseComponent, PersonalIDComponent,
-    AddChangeBranchComponent, AddChangeCourseComponent,
+    AddChangeBranchComponent, AddChangeCourseComponent,MasterGraduateAddressComponent,
     AddPersonalIdComponent, GraduateProfileComponent, GraduateProfileDetailComponent, AddGraduateProfileComponent],
   entryComponents: [AddChangeBranchComponent, AddChangeCourseComponent,
     AddPersonalIdComponent, GraduateProfileDetailComponent, AddGraduateProfileComponent],
@@ -45,6 +46,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
     MatNativeDateModule,
     MatDatepickerModule,
     FormsModule,
+    ReactiveFormsModule,
     MatDialogModule,
     // BrowserAnimationsModule,
     SeucommonModule,

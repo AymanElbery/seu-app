@@ -126,7 +126,8 @@
         "error": "Error",
         "instruction_pdf_file": "Manual File",
         "instruction_vedio_file": "Manual Vedio",
-        "instruction_": "Manual"
+        "instruction_": "Manual",
+        "isInstalled":"WhatsApp Is Not Installed"
     },
     "menu": {
         "grades":"التقديرات قبل حساب المعدل",
@@ -177,8 +178,8 @@
         "objectexam": "  finial exam result objection",
         "lectabs": " Absence query ",
         "visitorstudent": "   vistor student requet",
-        "registerwishes": " register courses",
-        "registerwishesnew": "righer courses wishes  ",
+        "registerwishes": " Register courses",
+        "registerwishesnew": "Register courses",
         "fees": "  fees payment statement",
         "feesexception": "Tuuition fees excemption   ",
         "FEEPAY": "fees payment ",
@@ -200,7 +201,7 @@
         "SYSTEM": "System",
         "CAL": " Eduaction calender",
         "EVENTSMANAGE": "  Events manegment",
-        "RESGISTERCOURSES": "Register wishes ",
+        "RESGISTERCOURSES": "Register Courses",
         "EDUSYSTEMS": " Eduaction systems insturctions ",
         "INSTRUCTEXAM": "Electronic Exam Instructions ",
         "StdLaw": "Student rights ",
@@ -210,7 +211,7 @@
         "News": "News     ",
         "ADS": "Ads",
         "Events": "Events",
-        "BBREPORTS": " Black Board Reports",
+        "BBREPORTS": " Blackboard Reports",
         "BADAL": " University education allowance",
         "BAWABA": "Deanship of the Scientific Research Electronic Portal",
         "hello": "hello",
@@ -218,7 +219,7 @@
         "not": "notifications ",
         "notfound": "not found ",
         "skills_record": "Skills Record",
-        "BLACKBOARD": "Black Board",
+        "BLACKBOARD": "Blackboard",
         "GRADUATE": "Graduate affairs",
         "admis_pages_jobs": "نظام التوظيف",
         "admis_pages_sms": "نظام الرسائل",
@@ -282,7 +283,8 @@
         "faculty": "Faculty",
         "faculty_en": "Faculty in English",
         "office": "Office",
-        "office_en": "Office in English"
+        "office_en": "Office in English",
+        "cv_display": "Display Resume"
     },
     "enquries": {
         "title": "Inquiries",

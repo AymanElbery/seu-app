@@ -44,7 +44,7 @@ export class AppsUgGuard implements CanActivate {
     if (!service_status) {
       this.appToasterService.push([{ type: 'error', body: this.translate.instant('service_closed') }]);
     }
-    if (curr_url != 'payment-refund' && this.admissionugService.LoggedInUser['APDC_CODE1'] == '04') {
+    if (curr_url != 'payment-refund' && this.admissionugService.isLoggedIn && this.admissionugService.LoggedInUser['APDC_CODE1'] == '04') {
       service_status = false;
     }
 
@@ -52,6 +52,11 @@ export class AppsUgGuard implements CanActivate {
   }
   isLoggedIn(state) {
     let checkLogin = true;
+    if (this.admissionugService.settingsLoaded) {
+      if (!this.isActiveService(state)) {
+        return false;
+      }
+    }
     const curr_url = state['url'].replace('/apps/admission-ug/', '');
     if (curr_url == 'admission-result') {
       checkLogin = false;
@@ -63,6 +68,7 @@ export class AppsUgGuard implements CanActivate {
     if (this.admissionugService.settingsLoaded) {
       return this.isActiveService(state);
     }
+
     return this.admissionugService.settingsObservable.pipe(
       map(
         (res) => {

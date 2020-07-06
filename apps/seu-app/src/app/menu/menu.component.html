@@ -39,6 +39,9 @@
             <a href="#" class="menu-item" routerLink="/masterstddata/info-update">
               {{ "menu.infoupdate" | translate }}
             </a>
+            <a href="#" class="menu-item" routerLink="/masterstddata/grades">
+              {{ "menu.grades" | translate }}
+            </a>
           </div>
         </div>
 
@@ -110,11 +113,7 @@
               </a>
             </div>
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/personal/managerial-duties']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/personal/managerial-duties']" class="menu-item">
                 <span class="text-eng">{{ "wafi.managerialduties" | translate }}</span>
                 <i class="ik ik-user-check"></i>
               </a>
@@ -149,23 +148,15 @@
             </div>
 
             <div class="submenu-content">
-              
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/administrative/penalty-discount']"
-                class="menu-item"
-              >
+
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/penalty-discount']" class="menu-item">
                 <span class="text-eng">{{ "wafi.penaltydiscount" | translate }}</span>
                 <i class="ik ik-user-check"></i>
               </a>
             </div>
 
             <div class="submenu-content">
-              <a
-                routerLinkActive="active"
-                [routerLink]="['/wafi/administrative/emp-custody']"
-                class="menu-item"
-              >
+              <a routerLinkActive="active" [routerLink]="['/wafi/administrative/emp-custody']" class="menu-item">
                 <span class="text-eng">{{
                   "wafi.Employeecustody" | translate
                 }}</span>
@@ -321,6 +312,9 @@
             </a>
             <a href="#" class="menu-item"
               routerLink="/otherrequests/graduateprofile">{{ "menu.graduateprofile" | translate }}
+            </a>
+            <a href="#" class="menu-item" routerLink="/otherrequests/address">
+              {{ "menu.graduat_address" | translate }}
             </a>
           </div>
         </div>
@@ -627,14 +621,14 @@
           </a>
           <div class="submenu-content">
             <a target="_blank" href="https://seuapps.seu.edu.sa/attends" class="menu-item">
-              {{"menu.attends" | translate}} 
+              {{"menu.attends" | translate}}
               <i class="ik ik-calendar"></i>
             </a>
             <a target="_blank"
               href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
               class="menu-item">
               {{ "menu.SYSTEM" | translate }}
-              <span class="text-eng">BlackBoard</span>
+              <span class="text-eng"></span>
               <i class="ik ik-bold"></i>
             </a>
             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">
@@ -645,8 +639,8 @@
               {{ "menu.KnowMng" | translate }} <i class="ik ik-book-open"></i>
             </a>
             <a target="_blank" href="https://saudieu-analytics.blackboard.com/default.aspx" class="menu-item">
-              {{ "menu.Reports" | translate }}
-              <span class="text-eng">BlackBoard</span>
+              {{ "menu.BBREPORTS" | translate }}
+              <span class="text-eng"></span>
               <i class="ik ik-bold"></i>
             </a>
             <!-- <a target="_blank" href="https://seu.edu.sa/sites/ar/Calendar/Pages/Academic_Calendar.aspx"
@@ -696,8 +690,7 @@
             <a target="_blank"
               href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
               class="menu-item">
-              {{ "menu.SYSTEM" | translate }}
-              <span class="text-eng">BlackBoard</span>
+              {{ "menu.BLACKBOARD" | translate }}
               <i class="ik ik-bold"></i>
             </a>
             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">
@@ -753,8 +746,7 @@
             <a target="_blank"
               href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
               class="menu-item">
-              {{ "menu.SYSTEM" | translate }}
-              <span class="text-eng">BlackBoard</span>
+              {{ "menu.BLACKBOARD" | translate }}
               <i class="ik ik-bold"></i>
             </a>
             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa" class="menu-item">

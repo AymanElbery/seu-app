@@ -1,5 +1,5 @@
 <div class="main-content">
-
+  <seu-loader [isLoading]="loading"></seu-loader>
   <section class="service-single">
     <div class="container">
       <h3>{{ "menu.resume" | translate}}</h3>
@@ -22,8 +22,10 @@
       <div class="row">
         <div class="col-md-4">
           <div class="profile">
-            <img *ngIf="profile == 'notExist'" src="assets/images/profile.png">
-            <img *ngIf="profile != 'notExist'" src="https://seuapps.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
+            <img *ngIf="profile == 'notExist' && !imagePath" src="assets/images/profile.png">
+            <img *ngIf="profile == 'notExist' && imagePath" [src]="imagePath">
+            <img *ngIf="profile != 'notExist' && !imagePath" src="https://seuapps.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
+            <img *ngIf="profile != 'notExist' && imagePath" [src]="imagePath">
           </div>
         </div>
       </div>
@@ -70,7 +72,11 @@
         <div *ngIf="facultyEdit" class="col-md-6">
           <div class="form-group">
             <label for="faculty">{{ "resume.faculty_en" | translate}}  <span class="text-danger">*</span></label>
-            <input (input)="hideFacultyMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty">
+            <!-- <input (input)="hideFacultyMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': facultyError}" id="faculty" [(ngModel)]="faculty" name="faculty"> -->
+            <select required class="form-control" id="faculty" [(ngModel)]="faculty" name="faculty" (change)="changeFac()">
+              <option>--</option>
+              <option value="{{fac.COLL_TITLE_EN}}" [selected]="fac.COLL_TITLE_EN == faculty" *ngFor="let fac of facs">{{ fac.COLL_TITLE_EN }}</option>
+            </select>
             <span *ngIf="facultyError" class="text text-danger">{{facultyError}}</span>
           </div>
         </div>
@@ -86,7 +92,11 @@
         <div *ngIf="sectionEdit" class="col-md-6">
           <div class="form-group">
             <label for="section">{{ "resume.section_en" | translate}}  <span class="text-danger">*</span></label>
-            <input (input)="hideSectionMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section">
+            <!-- <input (input)="hideSectionMessages()" required type="text" class="form-control" [ngClass]="{'errorBorder': sectionError}" id="section" [(ngModel)]="section" name="section"> -->
+            <select required class="form-control" id="section" [(ngModel)]="section" name="section">
+              <option>--</option>
+              <option value="{{dep.DEPT_DESC_EN}}" [selected]="dep.DEPT_DESC_EN == section" *ngFor="let dep of deps">{{ dep.DEPT_DESC_EN }}</option>
+            </select>
             <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
           </div>
         </div>
@@ -163,8 +173,9 @@
           <input [(ngModel)]="agree" (change)="agreeCond(agree?'A':'B')" type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">{{ "resume.agree" | translate}}</label>
         </div>
-        <button *ngIf="agree" style="margin-top: 20px;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
-        <button *ngIf="!agree" disabled style="margin-top: 20px;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
+        <button *ngIf="agree" style="margin-top: 20px;width: 40%;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
+        <button *ngIf="!agree" disabled style="margin-top: 20px;width: 40%;" (click)="onSubmit()" type="submit" class="btn sub">{{ "resume.save" | translate}}  <i class="fa fa-save"></i></button>
+        <a target="_blank" href="https://test.seu.edu.sa/satsc/en/doctor-cv/?p={{displayEmail}}" style="margin-top: 20px; display: inline-block; width: 40%; margin-right: 10px;"class="btn sub-a">{{ "resume.cv_display" | translate}}  <i class="fa fa-eye"></i></a>
       </div>
     </div>
   </section>

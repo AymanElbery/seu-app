@@ -7,7 +7,7 @@ export const environment = {
   wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi
   servie_admission: 'https://apps.seu.edu.sa/newservices/api-test/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
-  servicesprefix: 'api', // api-test
+  servicesprefix: 'api-test', // api-test
   appsprefix: 'apps-prod', // api-test
   loginpage: 'login-testl.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
@@ -18,24 +18,24 @@ export const environment = {
   chatbot_mails: [
     'mali@seu.edu.sa',
     'a.elbery@seu.edu.sa',
-    'M.aldwaesh@seu.edu.sa',
-    'SALasmari@seu.edu.sa',
-    'Maldwaesh@seu.edu.sa',
+    'm.aldwaesh@seu.edu.sa',
+    'salasmari@seu.edu.sa',
+    'maldwaesh@seu.edu.sa',
     't.alshiban@seu.edu.sa',
-    'N.almuhareb@seu.edu.sa',
-    'L.alrashed@seu.edu.sa',
-    'HALtamimy@seu.edu.sa',
-    'A.dossari@seu.edu.sa'
+    'n.almuhareb@seu.edu.sa',
+    'l.alrashed@seu.edu.sa',
+    'haltamimy@seu.edu.sa',
+    'a.dossari@seu.edu.sa'
   ],
   chatbot_emps_emails: [
-    'M.aldwaesh@seu.edu.sa',
-    'SALasmari@seu.edu.sa',
-    'Maldwaesh@seu.edu.sa',
+    'm.aldwaesh@seu.edu.sa',
+    'salasmari@seu.edu.sa',
+    'maldwaesh@seu.edu.sa',
     't.alshiban@seu.edu.sa',
-    'N.almuhareb@seu.edu.sa',
-    'L.alrashed@seu.edu.sa',
-    'HALtamimy@seu.edu.sa',
-    'A.dossari@seu.edu.sa'
+    'n.almuhareb@seu.edu.sa',
+    'l.alrashed@seu.edu.sa',
+    'haltamimy@seu.edu.sa',
+    'a.dossari@seu.edu.sa'
   ],
   chatbot_emps_names: [
     'موضي مطلق الدويش',
@@ -49,7 +49,7 @@ export const environment = {
   ],
   chatbot_emps_admins_emails: [
     'a.elbery@seu.edu.sa',
-    'HALtamimy@seu.edu.sa',
-    'A.dossari@seu.edu.sa'
+    'haltamimy@seu.edu.sa',
+    'a.dossari@seu.edu.sa'
   ],
 };
