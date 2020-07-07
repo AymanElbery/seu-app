@@ -14,7 +14,7 @@ export const environment = {
   ssoAuth: 'sso:s$0$3u2030',
   allowWafi: true,
   captchaSiteKey: "6LcZJOgUAAAAADeusuP0ndPRe8A5ip1FBypF_WlQ",
-  enquery_URL: 'https://sso.seu.edu.sa/myweb/', // WhatsApp chatbot /
+  enquery_URL: 'https://intserv.seu.edu.sa/myweb/', // WhatsApp chatbot /
   chatbot_mails: [
     'mali@seu.edu.sa',
     'a.elbery@seu.edu.sa',
