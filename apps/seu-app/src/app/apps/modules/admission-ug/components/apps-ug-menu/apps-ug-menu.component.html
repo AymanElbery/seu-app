@@ -63,18 +63,19 @@
               <img src="../../assets/images/cancel2.png">
             </a>
           </div>
-          <div *ngIf="admissionugService.isLoggedIn" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <div *ngIf="admissionugService.isLoggedIn" class="nav-item" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
             <a href="#" class="menu-item" (click)="logout()">
               <span> {{'logout' | translate}} </span>
               <img src="../../assets/images/logout.png">
             </a>
           </div>
-          <div  *ngIf="!admissionugService.isLoggedIn" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <!-- <div  *ngIf="!admissionugService.isLoggedIn" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
             <a href="#" routerLink="/apps/admission-ug/ug-login" class="menu-item">
               <span> {{'LogIn' | translate}} </span>
               <i class="ik ik ik-layers"></i>
             </a>
-          </div>
+          </div> -->
         </ng-container>
       </nav>
     </div>
