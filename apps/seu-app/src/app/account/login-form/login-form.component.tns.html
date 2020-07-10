@@ -24,7 +24,7 @@
             <label row="1" colSpan="2" text=" أخبار  الجامعة " class=" heading-text8 "></label>
           </GridLayout>
   
-          <GridLayout class="heading8" rows="auto,auto" columns="*,*" (tap)="openLink('https://seu.edu.sa/ar/location/')">
+          <GridLayout class="heading8" rows="auto,auto" columns="*,*"  [nsRouterLink]="['/branches']">
             <Image row="0" colSpan="2" class="heading-img8" src="~/images/u-b.png"></Image>
             <label row="1" colSpan="2" text=" فروع الجامعة " class=" heading-text8 "></label>
           </GridLayout>
@@ -35,7 +35,7 @@
 
         <FlexboxLayout flexDirection="row-reverse" alignItems="flex-start" justifyContent="center">
 
-          <GridLayout class="heading8" rows="auto,auto" columns="*,*" (tap)="openLink('https://seu.edu.sa/ar/bachelor/')">
+          <GridLayout class="heading8" rows="auto,auto" columns="*,*"  [nsRouterLink]="['/accept']">
             <Image row="0" colSpan="2" class="heading-img8" src="~/images/u-a.png"></Image>
             <label row="1" colSpan="2" text=" تعليمات القبول " class=" heading-text8 "></label>
           </GridLayout>
