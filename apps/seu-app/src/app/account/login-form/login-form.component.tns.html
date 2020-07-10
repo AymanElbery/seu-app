@@ -11,12 +11,34 @@
     
     <StackLayout >
 
-      <StackLayout class="form" margin="20 10 10 10" verticalAlignment="center" padding="5" >
-        <StackLayout margin-top="0" >
-          <Image src="~/images/logo_3d.png" style="height: 250px;z-index: 100" ></Image>
+      <StackLayout class="form"  verticalAlignment="center" >
+        <StackLayout>
+          <Image src="~/images/logo3d14.png" class="logo-login" ></Image>
        
         </StackLayout>
-        <StackLayout style="margin-top: -30;">
+
+        
+
+        <StackLayout margin="10">
+          <Image class="" style="width: 45; margin-top: 10;" src="~/images/user.png"></Image>
+        </StackLayout>
+        <StackLayout  class="form-login">
+        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center" style="margin-top:0;"></ActivityIndicator>
+        <GridLayout class="m-10 input-field logi" columns="auto,*">
+          <Label col="0" text="&#xf007;" class="far log-icon" verticalAlignment="center"></Label>
+          <TextField horizontalAlignment="right"   col="1" hint="اسم المستخدم " [(ngModel)]="credentials.email" class="input" [editable]="!isLoading"></TextField>
+        </GridLayout>
+        <GridLayout class="m-10 input-field logi" columns="auto,*">
+          <Label col="0" text="&#xf13e;" class="fas log-icon" verticalAlignment="center"></Label>
+          <TextField  horizontalAlignment="right"  col="1" hint="كلمة المرور" secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
+          </TextField>
+        </GridLayout>
+    
+        <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn login-animate" [isEnabled]="!isLoading"></Button>
+        
+      </StackLayout>
+       
+      <StackLayout style="margin-top:0;">
         <FlexboxLayout flexDirection="row-reverse" alignItems="flex-start" justifyContent="center">
 
           <GridLayout class="heading8" rows="auto,auto" columns="*,*" [nsRouterLink]="['/news']">
@@ -49,29 +71,8 @@
   
         </FlexboxLayout>
         </StackLayout>
-        <!-- 
 
-        <StackLayout margin="10">
-          <Image class="" style="width: 60; margin-top: 40;" src="~/images/user.png"></Image>
-        </StackLayout> -->
-        <StackLayout style="margin-top: -35;">
-        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center" style="margin-top:0;"></ActivityIndicator>
-        <GridLayout class="m-10 input-field logi" columns="auto,*">
-          <Label col="0" text="&#xf007;" class="far log-icon" verticalAlignment="center"></Label>
-          <TextField horizontalAlignment="right"   col="1" hint="اسم المستخدم " [(ngModel)]="credentials.email" class="input" [editable]="!isLoading"></TextField>
-        </GridLayout>
-        <GridLayout class="m-10 input-field logi" columns="auto,*">
-          <Label col="0" text="&#xf13e;" class="fas log-icon" verticalAlignment="center"></Label>
-          <TextField  horizontalAlignment="right"  col="1" hint="كلمة المرور" secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
-          </TextField>
-        </GridLayout>
-    
-        <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn login-animate" [isEnabled]="!isLoading"></Button>
-        
-      </StackLayout>
-       
-
-        <!-- <StackLayout class="hr hr2 m-10"></StackLayout> -->
+        <StackLayout class="hr hr2 m-10"></StackLayout> 
 
         <FlexboxLayout  flexDirection="row-reverse"  alignItems="center" justifyContent="center">
 
