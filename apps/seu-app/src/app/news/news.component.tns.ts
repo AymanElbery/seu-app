@@ -14,13 +14,20 @@ export class NewsComponent implements OnInit {
   newsLen = 0;
   newsLoaded;
   sindex = 1;
-  constructor(public userService: UserService, public homeService: HomeService,private routerExtensions: RouterExtensions
+  constructor(public userService: UserService, public homeService: HomeService, private routerExtensions: RouterExtensions
     ) { }
 
   ngOnInit() {
-    this.LoadData();
-  }
   
+    if (!this.userService.logedIn) {
+    
+      this.loadEmployessNews();
+    } else {
+      
+      this.LoadData();
+    }
+  }
+
   LoadNews() {
       if (this.userService.userData.activeRole === ApiUserRoles.Student) {
           return this.loadStudentNews();
@@ -28,8 +35,8 @@ export class NewsComponent implements OnInit {
           return this.loadEmployessNews();
         } else if (this.userService.userData.activeRole === ApiUserRoles.Instructor) {
           return this.loadStaffNews();
-        }else{
-          console.log("studentssssssss newwwwwwwwwwwwwwwwwws")
+        } else {
+          console.log('studentssssssss newwwwwwwwwwwwwwwwwws');
 
           return this.loadStudentNews();
 
@@ -42,7 +49,7 @@ export class NewsComponent implements OnInit {
           this.userService.userData.coll,
           this.userService.userData.camp).
           then(res => {
-            console.log(res)
+            console.log(res);
             this.userService.newsData = (res as any).Data;
             this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
             this.homeService.reqData = this.userService.newsData;
@@ -60,7 +67,7 @@ export class NewsComponent implements OnInit {
             this.newsLen = this.userService.newsData ? this.userService.newsData.length : 0;
             this.homeService.reqData = this.userService.newsData;
             this.newsLoaded = true;
-          });
+          }).catch(res => {alert(res) ; this.newsLoaded = true; } );
       }
 
       private loadStaffNews() {

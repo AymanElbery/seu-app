@@ -50,6 +50,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     private translate: TranslateService
   ) {
     console.log('l1');
+    this.globalSer.setSid('AAAAAAAAAAAAA');
+
     page.actionBarHidden = true;
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
@@ -59,7 +61,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       }
     );
     console.log('l2');
-    this.userService.userData.activeRole = (ApiUserRoles.Student);
+    //this.userService.userData.activeRole = (ApiUserRoles.Emplpyee);
 
     // this.userManger.logout();
     // this.userManger.logout();
