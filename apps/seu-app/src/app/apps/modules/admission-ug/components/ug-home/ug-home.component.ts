@@ -10,7 +10,8 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class UGHomeComponent implements OnInit {
   newRequest = false;
-  constructor(public admissionugService: AdmissionUGService,private appToasterService: AppToasterService,private translate: TranslateService) { }
+  addnewLink = '#';
+  constructor(public admissionugService: AdmissionUGService, private appToasterService: AppToasterService, private translate: TranslateService) { }
 
   ngOnInit() {
     this.checkForNewReqs();
@@ -24,6 +25,9 @@ export class UGHomeComponent implements OnInit {
       return;
     }
     this.newRequest = (this.admissionugService.settings['ADMISSION_NEWREQ'] == 1);
+    if (this.newRequest) {
+      this.addnewLink = 'https://bannerssb.seu.edu.sa/PPRD_en/bwskalog.P_DispLoginNon';
+    }
   }
   addNewReq() {
     if (this.newRequest) {

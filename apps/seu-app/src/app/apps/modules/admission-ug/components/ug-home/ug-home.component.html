@@ -15,10 +15,11 @@
           <!-- <p> {{'desc' | translate}} </p> -->
 
           <div class="d-flex justify-content-between block">
-            <a (click)="addNewReq()" target="_blank" href="https://bannerssb.seu.edu.sa/PPRD_en/bwskalog.P_DispLoginNon">
+            <a (click)="addNewReq()" target="_blank"
+              [href]="addnewLink">
               <div class="d-flex ">
                 <div class="">
-                    <h4><img src="../../assets/images/admit.png"></h4>
+                  <h4><img src="../../assets/images/admit.png"></h4>
                 </div>
                 <div class="text"> <span>{{'newrequest' | translate}}</span></div>
               </div>
@@ -46,7 +47,7 @@
                 <div class="text"> <span>{{'matchdocuments' | translate}}</span></div>
               </div>
             </a>
-            <a routerLink="/apps/admission-ug/upload-result">
+            <a routerLink="/apps/admission-ug/upload-documents">
               <div class="d-flex">
                 <div class="">
                   <h4><img src="../../assets/images/up.png"></h4>
