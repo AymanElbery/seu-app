@@ -20,6 +20,7 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
     this.LoadData();
   }
+  
   LoadNews() {
       if (this.userService.userData.activeRole === ApiUserRoles.Student) {
           return this.loadStudentNews();

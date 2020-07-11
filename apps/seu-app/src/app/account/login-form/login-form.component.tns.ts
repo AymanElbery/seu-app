@@ -17,6 +17,7 @@ import * as utils from "tns-core-modules/utils/utils";
 import * as appavailability from "nativescript-appavailability";
 import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
 import { TranslateService } from '@ngx-translate/core';
+import { ApiUserRoles } from '../../shared/models/StaticData/api-user-roles';
 
 
 
@@ -58,6 +59,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       }
     );
     console.log('l2');
+    this.userService.userData.activeRole = (ApiUserRoles.Student);
 
     // this.userManger.logout();
     // this.userManger.logout();

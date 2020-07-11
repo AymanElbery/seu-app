@@ -1,4 +1,4 @@
-<div id="side-menu" class="app-sidebar colored">
+<div id="side-menu" class="app-sidebar colored" style="padding-top: 45px!important;">
   <div class="sidebar-header d-none">
     <a id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></a>
     <a class="header-brand" href="#">
@@ -13,14 +13,14 @@
         <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a href="#" class="menu-item" routerLink="/apps/admission-ug" >
             <span> {{'home' | translate}} </span>
-            <i class="ik ik-user-check"></i>
+            <img src="../../assets/images/Home-menu2.png">
           </a>
         </div>
         <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
           <a href="#" class="menu-item" routerLink="/apps/admission-ug/admission-result">
             <span> {{'admissionResult' | translate}} </span>
-            <i class="ik ik-user-check"></i>
+            <img src="../../assets/images/admit2.png">
           </a>
         </div>
           <!-- <a *ngIf="!admissionugService.isLoggedIn" href="#" class="menu-item" routerLink="/apps/admission-ug/ug-login">
@@ -33,35 +33,35 @@
 
             <a href="#" class="menu-item" routerLink="/apps/admission-ug/pay-fee">
               <span> {{"PaytheFee" | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <img src="../../assets/images/pay-card2.png">
             </a>
             </div>
             <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
             <a href="#" class="menu-item"  routerLink="/apps/admission-ug/match-documents">
               <span> {{'matchdocuments' | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <img src="../../assets/images/cop2.png">
             </a>
             </div>
             <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
             <a href="#" class="menu-item" routerLink="/apps/admission-ug/upload-documents">
               <span> {{'UploadDocument' | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <img src="../../assets/images/up2.png">
             </a>
             </div>
             <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
             <a href="#" class="menu-item" routerLink="/apps/admission-ug/payment-refund">
               <span> {{'paymentrefund' | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <img src="../../assets/images/cancel2.png">
             </a>
             </div>
             <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 
             <a *ngIf="admissionugService.isLoggedIn" href="#" class="menu-item" (click)="logout()">
               <span> {{'logout' | translate}} </span>
-              <i class="ik ik-user-check"></i>
+              <img src="../../assets/images/logout.png">
             </a>
             </div>
             </ng-container>
