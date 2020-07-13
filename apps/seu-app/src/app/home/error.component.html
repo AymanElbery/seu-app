@@ -27,6 +27,10 @@
                             <div class="notfound-404">
                                 <h1>خطأ</h1>
                             </div>
+                            <h4 style="color: red;" *ngIf="userService.userErroCode">
+                                {{'errors.'+userService.userErroCode | translate}}
+                            </h4>
+                            <br />
                             <h2>يرجي المحاولة لاحقا</h2>
                             <h2>Error: please try again</h2>
 

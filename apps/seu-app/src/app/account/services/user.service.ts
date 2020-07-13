@@ -29,6 +29,7 @@ export class UserService extends BaseService {
   newsData;
   eventsData;
   adsData;
+  userErroCode = ''
   constructor(
     private configService: ConfigService,
     private httRequest: HttpRequestServiceBase,
@@ -150,6 +151,7 @@ export class UserService extends BaseService {
             this.pushUserDataChanges();
             return this.userData;
           } else {
+            this.userErroCode = res['errCode'];
             this.errorRedirect();
           }
         },
