@@ -1,13 +1,13 @@
 <app-header *ngIf="this.userService.logedIn"></app-header>
 
 
-<ActionBar style="background:#080f43;" *ngIf="!this.userService.logedIn">
+<ActionBar style="background:#080f43;color: white;" *ngIf="!this.userService.logedIn">
 
     <StackLayout   horizontalAlignment="center" style="height: 100%;margin-top: 15px;">
     
         <Image style="width: 90%;"  src="~/images/logo_3d.png" ></Image>
     </StackLayout>
-    <NavigationButton  icon="font://&#xf060;"     style="font-size: 12px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <NavigationButton  icon="font://&#xf060;"     style="font-size: 15px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
 
 
 </ActionBar>
