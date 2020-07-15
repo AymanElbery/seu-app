@@ -10,6 +10,7 @@ import { GRGuard } from './guards/gr.guard';
 import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
 import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
 import { PolicyComponent } from './home/policy.component';
+import { DocsConfirmComponent } from './home/docs-confirm.component';
 import { EmpGuard } from './guards/emp.guard';
 import { AppErrorComponent } from './home/error.component';
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'admis-pages/:cat', component: AdmisPagesComponent },
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       { path: 'policy', component: PolicyComponent },
+      { path: 'docs-confirm', component: DocsConfirmComponent },
       {
         path: 'instructions',
         loadChildren: './instructions/instructions.module#InstructionsModule',

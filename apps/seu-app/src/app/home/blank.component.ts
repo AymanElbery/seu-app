@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PolicyComponent } from './policy.component';
+import { DocsConfirmComponent } from './docs-confirm.component';
 import { GMPolicyComponent } from './gmpolicy.component';
 
 @Component({
@@ -68,7 +69,14 @@ export class BlankComponent implements OnInit {
           ? document.getElementById('bodyloading').remove()
           // tslint:disable-next-line: no-unused-expression
           : '';
-
+        if (this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") {
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.autoFocus = true;
+          dialogConfig.disableClose = true;
+          dialogConfig.maxWidth = 1000;
+          //dialogConfig.height = '88%';
+          this.dialog.open(DocsConfirmComponent, dialogConfig);
+        }
         if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
           //this.router.navigate(['/policy']);
           const dialogConfig = new MatDialogConfig();
