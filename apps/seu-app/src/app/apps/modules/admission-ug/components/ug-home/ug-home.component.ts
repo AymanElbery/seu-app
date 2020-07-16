@@ -13,6 +13,7 @@ export class UGHomeComponent implements OnInit {
   addnewLink = '#';
   constructor(public admissionugService: AdmissionUGService, private appToasterService: AppToasterService, private translate: TranslateService) { }
 
+  isLoading = true;
   ngOnInit() {
     this.checkForNewReqs();
     this.admissionugService.settingsObservable.subscribe(() => {
@@ -24,6 +25,7 @@ export class UGHomeComponent implements OnInit {
     if (!this.admissionugService.settingsLoaded) {
       return;
     }
+    this.isLoading = false;
     this.newRequest = (this.admissionugService.settings['ADMISSION_NEWREQ'] == 1);
     if (this.newRequest) {
       this.addnewLink = 'https://bannerssb.seu.edu.sa/PPRD_en/bwskalog.P_DispLoginNon';

@@ -25,7 +25,20 @@ export const environment = {
     'n.almuhareb@seu.edu.sa',
     'l.alrashed@seu.edu.sa',
     'haltamimy@seu.edu.sa',
-    'a.dossari@seu.edu.sa'
+    'a.dossari@seu.edu.sa',
+
+    'halhabib@seu.edu.sa',
+    't.aldawish@seu.edu.sa',
+    'balsaif@seu.edu.sa',
+    'n.almohimid@seu.edu.sa',
+    's.abdalwahhb@seu.edu.sa',
+    's.abalkhil@seu.edu.sa',
+    'f.alswilem@seu.edu.sa',
+    'd.alswilem@seu.edu.sa',
+    'l.alomari@seu.edu.sa',
+    'n.alwahby@seu.edu.sa',
+    'halharbi@seu.edu.sa',
+    'a.algeffary@seu.edu.sa',
   ],
   chatbot_emps_emails: [
     'm.aldwaesh@seu.edu.sa', 
@@ -35,7 +48,20 @@ export const environment = {
     'n.almuhareb@seu.edu.sa',
     'l.alrashed@seu.edu.sa',
     'haltamimy@seu.edu.sa',
-    'a.dossari@seu.edu.sa'
+    'a.dossari@seu.edu.sa',
+    
+    'halhabib@seu.edu.sa',
+    't.aldawish@seu.edu.sa',
+    'balsaif@seu.edu.sa',
+    'n.almohimid@seu.edu.sa',
+    's.abdalwahhb@seu.edu.sa',
+    's.abalkhil@seu.edu.sa',
+    'f.alswilem@seu.edu.sa',
+    'd.alswilem@seu.edu.sa',
+    'l.alomari@seu.edu.sa',
+    'n.alwahby@seu.edu.sa',
+    'halharbi@seu.edu.sa',
+    'a.algeffary@seu.edu.sa',
   ],
   chatbot_emps_names: [
     'موضي مطلق الدويش', 
@@ -45,7 +71,20 @@ export const environment = {
     'نورة فهد المحارب',
     'لما عبداللطيف الراشد',
     'حنان عبدالله التميمي',
-    'العنود عبدالله الدوسري'
+    'العنود عبدالله الدوسري',
+
+    'هيلة علي الحبيب',
+    'تهاني فلاح الدويش',
+    'باسمة صالح السيف',
+    'نوف ابراهيم المحيميد',
+    'صباح عبدالرحمن عبدالوهاب',
+    'سهام سليمان أبالخيل',
+    'فاطمة عبدالله سويلم السويلم',
+    'دينا عبدالله سويلم السويلم',
+    'لولوة ماجد بجاد الحربي',
+    'نورة راشد محمد الوهبي',
+    'هجوس فهد الحربي ',
+    'اميرة سليمان القفاري'
   ],
   chatbot_emps_admins_emails: [
     'a.elbery@seu.edu.sa',

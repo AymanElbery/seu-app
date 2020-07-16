@@ -43,7 +43,7 @@ export class PrintButtonDirective {
     // disable 
     this.isDownloading = true;
     let newel = this.rendered.createElement('i');
-    this.rendered.addClass(newel, 'fas')
+    this.rendered.addClass(newel, 'fa')
     this.rendered.addClass(newel, 'fa-spinner');
     this.rendered.addClass(newel, 'fa-spin');
     this.rendered.appendChild(this.elmRef.nativeElement, newel);

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../../shared/services/config.service';
 import { HttpRequestService } from '../../shared/services/http-request.service';
+import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class StudentInfoService {
   reqData;
   msgs;
   reqNo;
-  constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
+  constructor(private configService: ConfigService, private httRequest: HttpRequestService,protected globalService: GlobalBaseService) {
     this.configService.baseUrl = "stdservicesapi";
   }
   getِRequests() {
@@ -23,7 +24,7 @@ export class StudentInfoService {
   }
   DownloadPhoto() {
     this.configService.baseUrl = "stdservicesapi";
-    return this.configService.getApiURI() + '/student_info_service/download/photo';
+    return this.configService.getApiURI() + '/student_info_service/download/photo?sid='+btoa(this.globalService.getSID());
   }
   DownloadCv() {
     this.configService.baseUrl = "stdservicesapi";
