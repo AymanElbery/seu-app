@@ -114,6 +114,7 @@ export class StudentInfoComponent implements OnInit {
     this.photoDownload = this.academicService.DownloadPhoto();
   }
   addRequest(data) {
+    this.requesting = true;
     this.academicService.AddRequest(data).then(res => {
       this.academicService.msgs = (res as any).messages;
       this.msgs = this.academicService.msgs;
@@ -121,7 +122,7 @@ export class StudentInfoComponent implements OnInit {
       if (res['status']) {
         this.getData();
       }
-
+      this.requesting = false;
     });
   }
   requesting = false;
