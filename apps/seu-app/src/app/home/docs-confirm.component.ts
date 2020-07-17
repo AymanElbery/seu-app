@@ -388,6 +388,8 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
         }
     }
 
+    
+
     if (valid) {
         let data = {
             id                          : this.userService.userData.id,
