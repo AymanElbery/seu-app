@@ -420,13 +420,24 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
             workCheck                   : this.showWorkFields,
             emailWorkCheck              : this.showWorkEmailFields
         };
+        this.requesting = true;
         this.userService.updateEmpInfo(data).subscribe(
             (response: any) => {
               if (response) {
-                this.router.navigate(['/home']);
+                //this.router.navigate(['/home']);
+                  if (response['status']) {
+                    this.userService.userData['showConfirmations'] = false;
+                    this.dialogRef.close();
+                  } else {
+                    this.requesting = false;
+                    this.toastr.tryagain();
+                  }
               }
             },
-            error => {}
+            error => {
+              this.toastr.tryagain();
+              this.requesting = false;
+            }
         );
     } 
   }

@@ -256,7 +256,7 @@
             </div>
             <div class="modal-footer" style="border-top: 2px solid #f28d1d;">
                 <div>
-                    <button *ngIf="valid" style="width: 20%;" (click)="submit()" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"docs_confirm.confirm"|translate}}</button>
+                    <button *ngIf="valid" [disabled]="requesting" style="width: 20%;" (click)="submit()" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"docs_confirm.confirm"|translate}}</button>
                 </div>
             </div>
         </form>
