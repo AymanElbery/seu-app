@@ -215,7 +215,7 @@ export class UserService extends BaseService {
       headers: headers
     });
   }
-  getDistricts(){
+  getDistrictsByCityId(cityId){
     var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
@@ -223,7 +223,7 @@ export class UserService extends BaseService {
         'Authorization': auth
     });
 
-    return this.http.get(url + "info_confirmations/districts", {
+    return this.http.get(url + "info_confirmations/districts/"+cityId, {
       headers: headers
     });
   }

@@ -97,20 +97,12 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
   postalCode_max_error;
   additionalNumber_max_error;
   showWorkEmailFields = false;
+  selectedCityId;
   
   
   constructor(public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService, public translate: TranslateService,
     public dialogRef: MatDialogRef<DocsConfirmComponent>,
   ) {
-    this.userService.getDistricts().subscribe(
-        (response: any) => {
-          if (response) {
-            this.districts = response.data;
-          }
-        },
-        error => {}
-    );
-
     this.userService.getCities().subscribe(
         (response: any) => {
           if (response) {
@@ -142,6 +134,21 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
 
             this.district = response.data[0].DISTRICT;
             this.city = response.data[0].CITY;
+            if (this.city) {
+              for (let i = 0; i < this.cities.length; i++) {
+                if (this.cities[i].NAME_AR == this.city) {
+                  this.selectedCityId = this.cities[i].ID;
+                }
+              }
+              this.userService.getDistrictsByCityId(this.selectedCityId).subscribe(
+                (response: any) => {
+                  if (response) {
+                    this.districts = response.data;
+                  }
+                },
+                error => {}
+              );
+            }
             this.buildingNo = response.data[0].BUILDING_NO;
             this.additionalNumber = response.data[0].ADDITIONAL_NUMBER;
             this.postalCode = response.data[0].POSTAL_CODE;
@@ -253,7 +260,22 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
   removeBuildingNoError(){ this.buildingNo_error = false; this.buildingNo_max_error = false; }
   removeStreetNameError(){ this.streetName_error = false; }
   removeDistrictError(){ this.district_error = false; }
-  removeCityError(){ this.city_error = false; }
+  removeCityError(){ 
+    this.city_error = false;
+    for (let i = 0; i < this.cities.length; i++) {
+      if (this.cities[i].NAME_AR == this.city) {
+        this.selectedCityId = this.cities[i].ID;
+      }
+    }
+    this.userService.getDistrictsByCityId(this.selectedCityId).subscribe(
+      (response: any) => {
+        if (response) {
+          this.districts = response.data;
+        }
+      },
+      error => {}
+    );
+  }
   removePostalCodeError(){ this.postalCode_error = false; this.postalCode_max_error = false;  }
   removeAdditionalNumberError(){ this.additionalNumber_error = false; this.additionalNumber_max_error = false;  }
 
