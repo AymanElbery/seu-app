@@ -13,71 +13,66 @@
         <div class="col-md-6">
           <h3> {{'ug' | translate}} </h3>
           <!-- <p> {{'desc' | translate}} </p> -->
-
-          <div class="d-flex justify-content-between block">
-            <a (click)="addNewReq()" target="_blank"
-              [href]="addnewLink">
-              <div class="d-flex ">
-                <div class="">
-                  <h4><img src="../../assets/images/admit.png"></h4>
+          <seu-loader [isLoading]="isLoading"></seu-loader>
+          <ng-container *ngIf="!isLoading">
+            <div class="d-flex justify-content-between block">
+              <a (click)="addNewReq()" target="_blank" [href]="addnewLink">
+                <div class="d-flex ">
+                  <div class="">
+                    <h4><img src="../../assets/images/admit.png"></h4>
+                  </div>
+                  <div class="text"> <span>{{'newrequest' | translate}}</span></div>
                 </div>
-                <div class="text"> <span>{{'newrequest' | translate}}</span></div>
-              </div>
-            </a>
-
-            <a routerLink="/apps/admission-ug/admission-result">
-              <div class="d-flex ">
-                <div class="">
-                  <h4><img src="../../assets/images/admit.png"></h4>
+              </a>
+              <a routerLink="/apps/admission-ug/admission-result">
+                <div class="d-flex ">
+                  <div class="">
+                    <h4><img src="../../assets/images/admit.png"></h4>
+                  </div>
+                  <div class="text"> <span>{{'admissionResult' | translate}}</span></div>
                 </div>
-                <div class="text"> <span>{{'admissionResult' | translate}}</span></div>
-              </div>
-            </a>
-
-          </div>
-
-
-
-          <div class="d-flex justify-content-between block">
-            <a routerLink="/apps/admission-ug/match-documents">
-              <div class="d-flex ">
-                <div class="">
-                  <h4><img src="../../assets/images/cop.png"></h4>
+              </a>
+            </div>
+            <div class="d-flex justify-content-between block">
+              <a routerLink="/apps/admission-ug/match-documents">
+                <div class="d-flex ">
+                  <div class="">
+                    <h4><img src="../../assets/images/cop.png"></h4>
+                  </div>
+                  <div class="text"> <span>{{'matchdocuments' | translate}}</span></div>
                 </div>
-                <div class="text"> <span>{{'matchdocuments' | translate}}</span></div>
-              </div>
-            </a>
-            <a routerLink="/apps/admission-ug/upload-documents">
-              <div class="d-flex">
-                <div class="">
-                  <h4><img src="../../assets/images/up.png"></h4>
+              </a>
+              <a routerLink="/apps/admission-ug/upload-documents">
+                <div class="d-flex">
+                  <div class="">
+                    <h4><img src="../../assets/images/up.png"></h4>
+                  </div>
+                  <div class="text"> <span>{{'UploadDocument' | translate}}</span></div>
                 </div>
-                <div class="text"> <span>{{'UploadDocument' | translate}}</span></div>
-              </div>
-            </a>
-          </div>
-          <div class="d-flex justify-content-between">
+              </a>
+            </div>
+            <div class="d-flex justify-content-between">
 
-            <a routerLink="/apps/admission-ug/pay-fee">
-              <div class="d-flex">
-                <div class="">
-                  <h4><img src="../../assets/images/pay-card.png"></h4>
+              <a routerLink="/apps/admission-ug/pay-fee">
+                <div class="d-flex">
+                  <div class="">
+                    <h4><img src="../../assets/images/pay-card.png"></h4>
+                  </div>
+                  <div class="text"> <span>{{'PaytheFee' | translate}}</span></div>
                 </div>
-                <div class="text"> <span>{{'PaytheFee' | translate}}</span></div>
-              </div>
-            </a>
+              </a>
 
-            <a routerLink="/apps/admission-ug/payment-refund">
-              <div class="d-flex ">
-                <div class="">
-                  <h4><img src="../../assets/images/cancel.png"></h4>
+              <a routerLink="/apps/admission-ug/payment-refund">
+                <div class="d-flex ">
+                  <div class="">
+                    <h4><img src="../../assets/images/cancel.png"></h4>
+                  </div>
+                  <div class="text"> <span>{{'paymentrefund' | translate}}</span></div>
                 </div>
-                <div class="text"> <span>{{'paymentrefund' | translate}}</span></div>
-              </div>
-            </a>
-          </div>
-          <hr>
-          <!-- <div class="d-flex justify-content-end">
+              </a>
+            </div>
+            <hr>
+            <!-- <div class="d-flex justify-content-end">
 
             <div class="d-flex" routerLink="/apps" style="cursor: pointer;">
               <div class="">
@@ -87,6 +82,7 @@
             </div>
 
           </div> -->
+          </ng-container>
         </div>
         <div class="col-md-6">
           <img src="../../assets/images/home-img.png" class="img-fluid">

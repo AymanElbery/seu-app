@@ -134,8 +134,7 @@
             <div class=" col-md-6 col-sm-12">
               <div class="state">
                 <h6>{{"general.email"|translate}}</h6>
-                <input required name="email" #email="ngModel" [(ngModel)]="stdData.email" class="form-control"
-                  >
+                <input required name="email" #email="ngModel" [(ngModel)]="stdData.email" class="form-control">
               </div>
               <div *ngIf="email.touched">
                 <p style="color:orangered;" *ngIf="email.errors?.pattern">
@@ -355,7 +354,8 @@
                 <div class=" col-md-6 col-sm-12">
                   <div class="state">
                     <h6>{{"general.email"|translate}} <span class="reqstart">*</span></h6>
-                    <input type="text" name="email2" #email2="ngModel" (input)="checkInput($event.target.value)"  [(ngModel)]="stdData.email2" class="form-control" />
+                    <input type="text" name="email2" #email2="ngModel" [(ngModel)]="stdData.email2"
+                      class="form-control" />
                   </div>
                   <div *ngIf="email2.touched">
                     <p style="color:orangered;" *ngIf="email2.errors?.pattern">
@@ -386,9 +386,12 @@
       </div>
       <div class="modal-body">
         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-          <button *ngIf="!requesting || reqData.can_update_data" [disabled]="!agrrecheck.checked || !form.form.valid "
-            type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
-            {{"general.save"|translate}}</button>
+          <button *ngIf="!requesting || reqData.can_update_data"
+            [disabled]="!agrrecheck.checked || !form.form.valid || requesting " type="submit" class="btn btn-dark">
+            <i *ngIf="!requesting" class="fa fa-database"></i>
+            <i *ngIf="requesting" class="fa fa-spin fa-spinner"></i>
+            {{"general.save"|translate}}
+          </button>
         </div>
       </div>
 
