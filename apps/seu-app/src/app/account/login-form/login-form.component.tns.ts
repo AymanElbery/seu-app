@@ -13,8 +13,8 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import * as app from 'tns-core-modules/application';
 import { Page } from 'tns-core-modules/ui/page';
 import { RouterExtensions } from 'nativescript-angular/router';
-import * as utils from "tns-core-modules/utils/utils";
-import * as appavailability from "nativescript-appavailability";
+import * as utils from 'tns-core-modules/utils/utils';
+import * as appavailability from 'nativescript-appavailability';
 import { isIOS, isAndroid } from 'tns-core-modules/ui/page/page';
 import { TranslateService } from '@ngx-translate/core';
 import { ApiUserRoles } from '../../shared/models/StaticData/api-user-roles';
@@ -61,7 +61,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       }
     );
     console.log('l2');
-    //this.userService.userData.activeRole = (ApiUserRoles.Emplpyee);
+    // this.userService.userData.activeRole = (ApiUserRoles.Emplpyee);
 
     // this.userManger.logout();
     // this.userManger.logout();
@@ -107,7 +107,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
          this.userService.userData.username = data.data.data.username;
          this.userService.userData.name_ar = data.data.data.name_ar;
          console.log(data.data);
-         this.userService.userData.id=data.data.data.id;
+         this.userService.userData.id = data.data.data.id;
        // this.ref.markForCheck();
         // this.ref.detectChanges();
          this.isLoading = false;
@@ -179,32 +179,32 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     // prevent memory leak by unsubscribing
     this.subscription.unsubscribe();
   }
-  openLink(url:string){
+  openLink(url: string) {
     utils.openUrl(url);
   }
-  
-  
-  openWhatsAppConversation(){
-    let chatBotNumber="966112613500"
-    let msg=this.translate.instant('general.isInstalled')
-    if(isIOS) {
-      appavailability.available("whatsapp://")
+
+
+  openWhatsAppConversation() {
+    const chatBotNumber ='966112613500'
+    const msg = this.translate.instant('general.isInstalled');
+    if (isIOS) {
+      appavailability.available('whatsapp://')
         .then((avail: boolean) => {
-          if(avail) {
-            utils.openUrl("whatsapp://send?phone="+chatBotNumber)
+          if (avail) {
+            utils.openUrl('whatsapp://send?phone='+ chatBotNumber);
           } else {
             this.toastr.show(msg);
           }
-        })
+        });
     } else {
-      appavailability.available("com.whatsapp")
+      appavailability.available('com.whatsapp')
         .then((avail: boolean) => {
-          if(avail) {
-            utils.openUrl("https://api.whatsapp.com/send?phone="+chatBotNumber)
+          if (avail) {
+            utils.openUrl('https://api.whatsapp.com/send?phone='+ chatBotNumber);
           } else {
             this.toastr.show(msg);
           }
-        })
+        });
     }
   }
 }
