@@ -97,6 +97,14 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
             }
           }
         },
@@ -108,6 +116,9 @@
           "configurations": {
             "production": {
               "browserTarget": "seu-app:build:production"
+            },
+            "local": {
+              "browserTarget": "seu-app:build:local"
             }
           }
         },
