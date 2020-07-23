@@ -949,7 +949,8 @@
         "required_error": "هذا الحقل إلزامي",
         "mobile_max_error": "رقم الجوال يكون 10 أرقام",
         "four_max_error": "هذا الحق يكون 4 أرقام",
-        "five_max_error": "هذا الحق يكون 5 أرقام"
+        "five_max_error": "هذا الحق يكون 5 أرقام",
+        "update" : "تعديل"
     },
     "instructions": {
         "exams": {

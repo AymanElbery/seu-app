@@ -948,7 +948,8 @@
         "required_error": "This field required",
         "mobile_max_error": "Max length 10 numbers",
         "four_max_error": "Max length 4 numbers",
-        "five_max_error": "Max length 5 numbers"
+        "five_max_error": "Max length 5 numbers",
+        "update": "Update"
     },
     "instructions": {
         "exams": {
