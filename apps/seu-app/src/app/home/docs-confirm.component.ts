@@ -282,6 +282,7 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
 
   submit(){
     let valid = true;
+    
     if (this.showNameFields) {
         if (!this.firstNameAr) { this.first_name_ar_error = true; this.scrollToTob(); valid = false;}
         if (!this.fatherNameAr) { this.father_name_ar_error = true; this.scrollToTob(); valid = false;}
@@ -389,7 +390,6 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
     }
 
     
-
     if (valid) {
         let data = {
             id                          : this.userService.userData.id,

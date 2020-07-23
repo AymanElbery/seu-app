@@ -157,7 +157,7 @@
                     <div class="col-md-10">
                         <div class="form-group">
                             <label for="ssn">{{"docs_confirm.work_email"|translate}}</label>
-                            <h6 *ngIf="!showWorkEmailFields">{{ workEmail }}</h6>
+                            <h6>{{ workEmail }}</h6>
                             <input *ngIf="showWorkEmailFields" type="text" (input)="removeWorkEmailError()" value="" [(ngModel)]="workEmail" [ngClass]="{'error-required': workEmail_error == true}" name="workEmail" class="form-control">
                             <span *ngIf="workEmail_error && showWorkEmailFields" class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
                         </div>
@@ -199,12 +199,32 @@
                 <div class="row" style="margin-top: 20px;">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="buildingNo">{{"docs_confirm.building_no"|translate}}</label>
-                            <input type="number" (input)="removeBuildingNoError()" [ngClass]="{'error-required': buildingNo_error == true || buildingNo_max_error == true }" [(ngModel)]="buildingNo" name="buildingNo" [value]="buildingNo" class="form-control">
-                            <span *ngIf="buildingNo_error" class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
-                            <span *ngIf="buildingNo_max_error" class="text text-danger">{{"docs_confirm.four_max_error"|translate}}</span>
+                            <label for="city">{{"docs_confirm.city"|translate}}</label>
+                            <!-- <select required (change)="removeCityError()" [ngClass]="{'error-required': city_error == true}" [(ngModel)]="city" class="form-control" id="city" name="city">
+                                <option>--</option>
+                                <option [selected]="city.NAME_AR == city" *ngFor="let city of cities">{{ city.NAME_AR }}</option>
+                            </select> -->
+                            <ng-select (change)="removeCityError()" *ngIf="cities" [items]="cities" bindLabel="NAME_AR" autofocus bindValue="NAME_AR" name="city"
+                             [(ngModel)]="city" [ngClass]="{'error-required': city_error == true}">
+                            </ng-select>
+                            <span *ngIf="city_error" class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="district">{{"docs_confirm.district"|translate}}</label>
+                            <!-- <select required (change)="removeDistrictError()" [ngClass]="{'error-required': district_error == true}" [(ngModel)]="district" class="form-control" id="district" name="district">
+                                <option>--</option>
+                                <option [selected]="dis.NAME_AR == district" *ngFor="let dis of districts">{{ dis.NAME_AR }}</option>
+                            </select> -->
+                            <ng-select (change)="removeDistrictError()" *ngIf="cities" [items]="districts" bindLabel="NAME_AR" autofocus bindValue="NAME_AR" name="district"
+                             [(ngModel)]="district" [ngClass]="{'error-required': district_error == true}">
+                            </ng-select>
+                            <span *ngIf="district_error" class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="streetName">{{"docs_confirm.street_name"|translate}}</label>
@@ -212,26 +232,12 @@
                             <span *ngIf="streetName_error" class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
                         </div>
                     </div>
-                </div>
-                <div class="row" style="margin-top: 20px;">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="city">{{"docs_confirm.city"|translate}}</label>
-                            <select required (change)="removeCityError()" [ngClass]="{'error-required': city_error == true}" [(ngModel)]="city" class="form-control" id="city" name="city">
-                                <option>--</option>
-                                <option [selected]="city.NAME_AR == city" *ngFor="let city of cities">{{ city.NAME_AR }}</option>
-                            </select>
-                            <span *ngIf="city_error" class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="district">{{"docs_confirm.district"|translate}}</label>
-                            <select required (change)="removeDistrictError()" [ngClass]="{'error-required': district_error == true}" [(ngModel)]="district" class="form-control" id="district" name="district">
-                                <option>--</option>
-                                <option [selected]="dis.NAME_AR == district" *ngFor="let dis of districts">{{ dis.NAME_AR }}</option>
-                            </select>
-                            <span *ngIf="district_error" class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                            <label for="buildingNo">{{"docs_confirm.building_no"|translate}}</label>
+                            <input type="number" (input)="removeBuildingNoError()" [ngClass]="{'error-required': buildingNo_error == true || buildingNo_max_error == true }" [(ngModel)]="buildingNo" name="buildingNo" [value]="buildingNo" class="form-control">
+                            <span *ngIf="buildingNo_error" class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                            <span *ngIf="buildingNo_max_error" class="text text-danger">{{"docs_confirm.four_max_error"|translate}}</span>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardModule } from './dashboard/dashboard.module';
@@ -67,6 +69,8 @@ import { GMPolicyComponent } from './home/gmpolicy.component';
     
   ],
   imports: [
+    CommonModule,
+    NgSelectModule,
     BrowserModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
