@@ -1,0 +1,111 @@
+<header class="header-top" header-theme="">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between">
+      <div class="top-menu d-flex align-items-center w-25">
+        <div class="dropdown align-items-right mr-0 mr-sm-5">
+          <a class="dropdown-toggle pub-ser d-flex align-items-center" href="#" id="userDropdown"
+            data-toggle="dropdown">
+            <img class="avatar d-none d-sm-inline-block" src="assets/images/avatar.png" alt=""> <span
+              class="d-none d-sm-block"> <bdi>
+                {{"menu.hello" | translate}} :
+                <span class="d-none d-sm-inline-block">{{currLang == 'ar' ? userData.name_ar : userData.name_en}}</span>
+              </bdi></span>
+            <i class="ik ik-user mobile-user-drop d-sm-none"></i>
+            <i class="ik ik-chevron-down d-none d-sm-inline-block"></i>
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="userDropdown">
+
+            <div class="d-sm-none">
+
+              <div *ngIf="environment.production">
+                <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
+                  style="font-size: 20px; font-weight: 400"> E
+                </a>
+                <a href="javascript:;" *ngIf="currLang == 'en'" (click)="useLang('ar')" class="social"
+                  style="font-size: 20px; margin-top: -6px;"> ع</a>
+              </div>
+
+              <div class="dropdown-divider"></div>
+
+
+              <p class="d-flex flex-column align-items-center">
+                <img class="avatar" src="assets/images/avatar.png" alt=""> <span class=""> <bdi>
+                    {{"menu.hello" | translate}} :
+                    <span class="">{{currLang == 'ar' ? userData.name_ar : userData.name_en}}</span> </bdi></span>
+              </p>
+
+              <div class="dropdown-divider"></div>
+
+
+              <h6 class="header">
+                <i class="ik ik-bell"></i> التنبيهات ({{notifications.notesList.length}})
+              </h6>
+              <p *ngIf="notifications.notesList.length" class="header">{{"menu.not" | translate}}</p>
+              <p *ngIf="!notifications.notesList.length" class="header">{{"menu.notfound" | translate}} </p>
+              <div *ngIf="notifications.notesList.length" class="notifications-wrap d-sm-none">
+                <a href="javascript:;" (click)="notifications.redirect(not)" class="media"
+                  *ngFor="let not of notifications.notesList">
+                  <!--<span class="d-flex"><i class="ik ik-check"></i> </span>-->
+                  <span class="media-body">
+                    <h6>{{not['TITLE']}}</h6>
+                    <span class="heading-font-family media-heading">{{not['MESSAGE']}}</span>
+                  </span>
+                </a>
+              </div>
+
+              <div class="dropdown-divider"></div>
+            </div>
+            <a *ngIf="hasWafi" class="dropdown-item" [routerLink]="['/wafi/personal']">
+              <i class="ik ik-user dropdown-icon"></i>{{"menu.PersonalInfo" | translate}}
+            </a>
+            <a class="dropdown-item" href="javascript:;" (click)="resetPawwordFrom()">
+              <i class="ik ik-user dropdown-icon"></i>{{"menu.resetpassword" | translate}}
+            </a>
+            <a class="dropdown-item" href="https://sso.seu.edu.sa/oam/server/logout"><i
+                class="ik ik-power dropdown-icon"></i> {{"menu.logout" | translate}} </a>
+          </div>
+        </div>
+        <div class="dropdown d-none d-sm-block">
+          <a class="nav-link dropdown-toggle" href="#" id="notiDropdown" data-toggle="dropdown">
+            <i class="ik ik-bell"></i><span class="badge bg-danger">{{notifications.notesList.length}}</span></a>
+          <div class="dropdown-menu notification-dropdown">
+
+            <h4 *ngIf="notifications.notesList.length" class="header">{{"menu.not" | translate}}</h4>
+            <h4 *ngIf="!notifications.notesList.length" class="header">{{"menu.notfound" | translate}} </h4>
+            <div *ngIf="notifications.notesList.length" class="notifications-wrap">
+              <a href="javascript:;" (click)="notifications.redirect(not)" class="media"
+                *ngFor="let not of notifications.notesList">
+                <!--<span class="d-flex"><i class="ik ik-check"></i> </span>-->
+                <span class="media-body">
+                  <h6>{{not['TITLE']}}</h6>
+                  <span class="heading-font-family media-heading">{{not['MESSAGE']}}</span>
+                </span>
+              </a>
+            </div>
+            <!-- <div class="footer"><a href="">كل الإشعارات</a></div>-->
+          </div>
+        </div>
+      </div>
+      <div class="mobile-logo w-75">
+        <a target="_blank" href="https://seu.edu.sa">
+          <img class="" style="width: 300px;height:89px;" src="assets/images/logo_mobile.png" alt="">
+        </a>
+      </div>
+      <div class="top-menu d-flex align-items-center  justify-content-end w-25">
+        <a type="" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></a>
+        <div class="header-search d-none d-sm-block">
+          <div class="input-group ">
+          </div>
+        </div>
+        <div class="d-none d-sm-block" style="white-space: nowrap;">
+          <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social"
+            style="font-size: 20px; font-weight: 400"> English
+          </a>
+          <a href="javascript:;" *ngIf="currLang == 'en'" (click)="useLang('ar')" class="social"
+            style="font-size: 20px; margin-top: -6px;"> عربي</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
