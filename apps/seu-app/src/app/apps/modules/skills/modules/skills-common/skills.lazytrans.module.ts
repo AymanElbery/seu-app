@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {
@@ -8,7 +8,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/skills_', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/skills_', '.json?rand=' + Math.random());
 }
 
 
@@ -30,6 +30,7 @@ export function createTranslateLoader(http: HttpClient) {
   exports: [TranslateModule]
 })
 export class SkillsLazyTransModule {
-  constructor() {
+  constructor(private trans: TranslateService) {
+    trans.use('ar');
   }
 }

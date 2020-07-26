@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
-import { SeucommonModule } from '../../../seucommon/seucommon.module';
-import { SkillsLandingComponent } from './components/skills-landing/skills-landing.component';
-import { SkillsRoutingModule } from './skills-routing.module';
-import { SkillsCommonModule } from './modules/skills-common/skills-common.module';
 import { TranslateService } from '@ngx-translate/core';
-import { SkillsFooterComponent } from './components/skills-footer/skills-footer.component';
-import { SkillsHomeComponent } from './components/skills-home/skills-home.component';
-import { SkillsHeaderComponent } from './components/skills-header/skills-header.component';
+import { SeucommonModule } from '../../../seucommon/seucommon.module';
+import { SkillsCommonModule } from './modules/skills-common/skills-common.module';
+import { providerDeclarations, routes, componentDeclarations } from './skills.common';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [SkillsLandingComponent, SkillsHeaderComponent, SkillsFooterComponent, SkillsHomeComponent],
+  declarations: [componentDeclarations],
   imports: [
     SeucommonModule,
     SkillsCommonModule,
-    SkillsRoutingModule
-  ]
+    RouterModule.forChild(routes)
+
+  ],
+  providers : [providerDeclarations]
 })
 export class SkillsModule {
   constructor(private translate: TranslateService) {

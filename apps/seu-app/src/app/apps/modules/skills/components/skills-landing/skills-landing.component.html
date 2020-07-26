@@ -1,12 +1,14 @@
 <main role="main">
   <div class="wrapper">
-    <app-skills-header>
-      </app-header>
-      <div class="page-wrap">
-        <div class="container-fluid">
+    <app-header></app-header>
+    <div class="page-wrap">
+      <app-skills-menu></app-skills-menu>
+      <div class="">
+        <div class="main-content">
           <router-outlet></router-outlet>
-          <app-skills-footer></app-skills-footer>
         </div>
+        <app-footer></app-footer>
       </div>
+    </div>
   </div>
 </main>
