@@ -13,6 +13,11 @@ const routes: Routes = [
       './modules/admission-ug/admission-ug.module#AdmissionUGModule',
   },
   {
+    path: 'job-application',
+    loadChildren:
+      './modules/job-application/job-application.module#JobApplicationModule',
+  },
+  {
     path: 'admission-gr',
     loadChildren:
       './modules/admission-gr/admission-gr.module#AdmissionGRModule',

@@ -1,0 +1,198 @@
+<div class="main-content">
+  <app-service-header title="{{'univ' | translate}}" subtitle="{{'job' | translate}}"></app-service-header>
+
+  <section class="ug-content">
+    <div class="container">
+      <seu-loader [isLoading]="isLoading"></seu-loader>
+      <form role="form" [formGroup]="AddForm">
+        <div class="row">
+          <div class="col-md-6">
+            <h3> {{'personal' | translate}} </h3>
+            <ng-container *ngIf="!isLoading">
+                <div class="state">
+                  <h6>{{"name"|translate}} <span class="reqstart">*</span></h6>
+                  <input [attr.disabled]="disabled ? '' : null" type="text" formControlName="name" class="form-control" />
+                </div>
+                <div *ngIf="AddForm.controls.name.invalid && (AddForm.controls.name.dirty || AddForm.controls.name.touched)">
+                  <div *ngIf="AddForm.controls.name.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                  </div>
+                </div>
+
+                <div class="state">
+                  <h6>{{"email"|translate}} <span class="reqstart">*</span></h6>
+                  <input [attr.disabled]="disabled ? '' : null" type="email" formControlName="email" class="form-control" />
+                </div>
+                <div *ngIf="AddForm.controls.email.invalid && (AddForm.controls.email.dirty || AddForm.controls.email.touched)">
+                  <div *ngIf="AddForm.controls.email.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                  </div>
+                  <div *ngIf="AddForm.controls.email.errors.email">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"email_error"|translate}}</b>
+                  </div>
+                </div>
+
+                <div class="state">
+                  <h6>{{"birthdate"|translate}} <span class="reqstart">*</span></h6>
+                  <input [attr.disabled]="disabled ? '' : null" type="text" formControlName="birth_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                </div>
+                <div *ngIf="AddForm.controls.birth_date.invalid && (AddForm.controls.birth_date.dirty || AddForm.controls.birth_date.touched)">
+                  <div *ngIf="AddForm.controls.birth_date.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                  </div>
+                </div>
+
+                <div class="state">
+                  <h6>{{"phone1"|translate}} <span class="reqstart">*</span></h6>
+                  <input [attr.disabled]="disabled ? '' : null" type="text" formControlName="phone" class="form-control" />
+                </div>
+                <div *ngIf="AddForm.controls.phone.invalid && (AddForm.controls.phone.dirty || AddForm.controls.phone.touched)">
+                  <div *ngIf="AddForm.controls.phone.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                  </div>
+                  <div *ngIf="AddForm.controls.phone.errors.maxlength">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"max_length"|translate}}</b>
+                  </div>
+                  <div *ngIf="AddForm.controls.phone.errors.minlength">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"min_length"|translate}}</b>
+                  </div>
+                </div>
+
+                <div class="state">
+                  <h6>{{"nationality"|translate}} <span class="reqstart">*</span></h6>
+                  <ng-select [items]="countries" bindLabel="COUNTRY" bindValue="NO" formControlName="nationality">
+                  </ng-select>
+                  <!-- <select [attr.disabled]="disabled ? '' : null" class="form-control" formControlName="nationality">
+                    <option *ngFor="let country of countries" [value]="country.NO">{{ country.COUNTRY }}</option>
+                  </select> -->
+
+                </div>
+                <div *ngIf="AddForm.controls.nationality.invalid && (AddForm.controls.nationality.dirty || AddForm.controls.nationality.touched)">
+                  <div *ngIf="AddForm.controls.nationality.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                  </div>
+                </div>
+
+                <div class="state">
+                  <h6>{{"city"|translate}} <span class="reqstart">*</span></h6>
+                  <ng-select [items]="cities" bindLabel="CITY" bindValue="ID" formControlName="city">
+                    </ng-select>
+                  <!-- <select [attr.disabled]="disabled ? '' : null" class="form-control" formControlName="city">
+                    <option *ngFor="let cit of cities" [value]="cit.ID">{{ cit.CITY }}</option>
+                  </select> -->
+                </div>
+                <div *ngIf="AddForm.controls.city.invalid && (AddForm.controls.city.dirty || AddForm.controls.city.touched)">
+                  <div *ngIf="AddForm.controls.city.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                  </div>
+                </div>
+
+                <div class="state">
+                  <h6>{{"gender"|translate}} <span class="reqstart">*</span></h6>
+                  <select [attr.disabled]="disabled ? '' : null" class="form-control" formControlName="gender">
+                    <option value="m">{{"male"|translate}}</option>
+                    <option value="f">{{"female"|translate}}</option>
+                  </select>
+                </div>
+                <div *ngIf="AddForm.controls.gender.invalid && (AddForm.controls.gender.dirty || AddForm.controls.gender.touched)">
+                  <div *ngIf="AddForm.controls.gender.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                  </div>
+                </div>
+                
+            </ng-container>
+          </div>
+          <div class="col-md-6">
+            <h3> {{'qualifications' | translate}} </h3>
+            <ng-container *ngIf="!isLoading">
+              <div class="state">
+                <h6>{{"qualification"|translate}} <span class="reqstart">*</span></h6>
+                <select [attr.disabled]="disabled ? '' : null" formControlName="qualification"  class="form-control">
+                  <option *ngFor="let qual of quals" [value]="qual.ID">{{ qual.NAME }}</option>
+                </select>
+              </div>
+              <div *ngIf="AddForm.controls.qualification.invalid && (AddForm.controls.qualification.dirty || AddForm.controls.qualification.touched)">
+                <div *ngIf="AddForm.controls.qualification.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                </div>
+              </div>
+
+              <div class="state">
+                <h6>{{"general_major"|translate}} <span class="reqstart">*</span></h6>
+                <select (change)="onMajorsChange($event.target.value)" [attr.disabled]="disabled ? '' : null" formControlName="general_major"  class="form-control">
+                  <option *ngFor="let major of majors" [value]="major.ID">{{ major.NAME }}</option>
+                </select>
+              </div>
+              <div *ngIf="AddForm.controls.general_major.invalid && (AddForm.controls.general_major.dirty || AddForm.controls.general_major.touched)">
+                <div *ngIf="AddForm.controls.general_major.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                </div>
+              </div>
+
+              <div class="state">
+                <h6>{{"private_major"|translate}} <span class="reqstart">*</span></h6>
+                <select [attr.disabled]="disabled ? '' : null" formControlName="private_major"  class="form-control">
+                  <option *ngFor="let submajor of selectedSubMajors" [value]="submajor.ID">{{ submajor.NAME }}</option>
+                </select>
+              </div>
+              <div *ngIf="AddForm.controls.private_major.invalid && (AddForm.controls.private_major.dirty || AddForm.controls.private_major.touched)">
+                <div *ngIf="AddForm.controls.private_major.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                </div>
+              </div>
+
+              <div class="state">
+                <h6>{{"branch"|translate}} <span class="reqstart">*</span></h6>
+                <select [attr.disabled]="disabled ? '' : null" class="form-control" formControlName="branch">
+                  <option *ngFor="let branche of brances" [value]="branche.CAMP">{{ branche.CAMP }}</option>
+                </select>
+              </div>
+              <div *ngIf="AddForm.controls.branch.invalid && (AddForm.controls.branch.dirty || AddForm.controls.branch.touched)">
+                <div *ngIf="AddForm.controls.branch.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                </div>
+              </div>
+
+              <div class="state">
+                <h6>{{"job_type"|translate}} <span class="reqstart">*</span></h6>
+                <select [attr.disabled]="disabled ? '' : null" class="form-control" formControlName="job_type">
+                  <option value="f">{{"fulltime"|translate}}</option>
+                  <option value="p">{{"parttime"|translate}}</option>
+                </select>
+              </div>
+              <div *ngIf="AddForm.controls.job_type.invalid && (AddForm.controls.job_type.dirty || AddForm.controls.job_type.touched)">
+                <div *ngIf="AddForm.controls.job_type.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                </div>
+              </div>
+
+              <div style="width: 50%; display: inline-block;" class="state">
+                <h6>{{"resume"|translate}} <span class="reqstart">*</span></h6>
+                <input id="resume" type="file" accept="*/*" (change)="handleInputChange($event)" formControlName="resume" class="form-control" />
+                <button id="fake-file" class="btn btn-primary">{{ "choose_file" | translate}}</button>
+              </div>
+              <div *ngIf="AddForm.controls.resume.invalid && (AddForm.controls.resume.dirty || AddForm.controls.resume.touched)">
+                <div *ngIf="AddForm.controls.resume.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"required"|translate}}</b>
+                </div>
+              </div>
+              
+            <div class="state">
+              <h6>{{"captcha"|translate}} <span class="reqstart">*</span></h6>
+              <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey"></re-captcha>
+
+
+            </div>
+              
+            </ng-container>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 100px; text-align: center;">
+          <div class="col-md-12">
+            <button *ngIf="!disabled" style="width: 20%;" [disabled]="submitted || AddForm.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "save" | translate}}  <i class="fa fa-save"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
