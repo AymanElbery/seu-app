@@ -172,6 +172,13 @@
                 </div>
               </div>
               
+            <div class="state">
+              <h6>{{"captcha"|translate}} <span class="reqstart">*</span></h6>
+              <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey"></re-captcha>
+
+
+            </div>
+              
             </ng-container>
           </div>
         </div>

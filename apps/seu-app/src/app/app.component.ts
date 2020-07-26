@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
         this.userService.loadUserData();
       },
       err => {
-        if (this.route.url.indexOf("/apps") == -1) {
+        if (document.location.href.indexOf("/apps") == -1) {
           this.userService.relogin();
         }
       }

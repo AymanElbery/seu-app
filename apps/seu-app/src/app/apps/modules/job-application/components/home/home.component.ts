@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { JobApplicationService } from '../../services/job-application.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { RecaptchaComponent } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-job-home',
@@ -12,6 +13,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
   styleUrls: ['./home.component.css']
 })
 export class JobHomeComponent implements OnInit {
+  @ViewChild('recaptchaRef', { read: RecaptchaComponent, static: false }) recaptchaRef: RecaptchaComponent;
 
   datePickerConfig: Partial<BsDatepickerConfig>;
   AddForm: FormGroup;
@@ -47,6 +49,7 @@ export class JobHomeComponent implements OnInit {
         'job_type': ['', [Validators.required]],
         'resume': ['', [Validators.required]],
         'branch': ['', [Validators.required]],
+        'capcha': ['', [Validators.required]]
       });
     }
 
@@ -92,7 +95,7 @@ export class JobHomeComponent implements OnInit {
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    this.cv = reader.result;
+    this.AddForm.controls['resume'] = reader.result;
   }
 
   onMajorsChange(value){
@@ -104,29 +107,16 @@ export class JobHomeComponent implements OnInit {
     });
     this.selectedSubMajors = data;
   }
-
+  resolved(captchaResponse: string) {
+    this.AddForm.controls['capcha'].setValue(captchaResponse);
+  }
   onSubmit(){
     if (this.AddForm.invalid) {
       return;
     }
+    let data = this.AddForm.value;
+    //data['resume']  = this.cv;
     this.submitted = true;
-
-    let data = {
-      name          : this.AddForm.value.name,
-      email         : this.AddForm.value.email,
-      birth_date     : this.AddForm.value.birth_date,
-      phone         : this.AddForm.value.phone,
-      nationality   : this.AddForm.value.nationality,
-      city          : this.AddForm.value.city,
-      gender        : this.AddForm.value.gender,
-      qualification : this.AddForm.value.qualification,
-      general_major : this.AddForm.value.general_major,
-      private_major : this.AddForm.value.private_major,
-      branch        : this.AddForm.value.branch,
-      job_type      : this.AddForm.value.job_type,
-      resume        : this.cv,
-    };
-
     this.jobApplicationService.addRequest(data).subscribe(
       (response: any) => {
         this.isLoading = true;
@@ -145,8 +135,11 @@ export class JobHomeComponent implements OnInit {
             }]);
           }
         }
+        this.recaptchaRef.reset();
       },
-      error => {}
+      error => {
+        this.recaptchaRef.reset();
+      }
     ); 
   }
 
