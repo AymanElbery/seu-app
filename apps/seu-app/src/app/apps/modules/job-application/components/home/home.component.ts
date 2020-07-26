@@ -27,31 +27,31 @@ export class JobHomeComponent implements OnInit {
   quals;
   cv;
   disabled = false;
-  
+
   constructor(
-    public jobApplicationService: JobApplicationService, 
-    private toastr: AppToasterService, 
+    public jobApplicationService: JobApplicationService,
+    private toastr: AppToasterService,
     private translate: TranslateService,
     private fb: FormBuilder,
-    ) {
-      this.environment = environment;
-      this.AddForm = this.fb.group({
-        'name': ['', [Validators.required]],
-        'nationality': ['', [Validators.required]],
-        'gender': ['', [Validators.required]],
-        'birth_date': ['', [Validators.required]],
-        'city': ['', [Validators.required]],
-        'email': ['', [Validators.required, Validators.email]],
-        'phone': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-        'qualification': ['', [Validators.required]],
-        'general_major': ['', [Validators.required]],
-        'private_major': ['', [Validators.required]],
-        'job_type': ['', [Validators.required]],
-        'resume': ['', [Validators.required]],
-        'branch': ['', [Validators.required]],
-        'capcha': ['', [Validators.required]]
-      });
-    }
+  ) {
+    this.environment = environment;
+    this.AddForm = this.fb.group({
+      'name': ['', [Validators.required]],
+      'nationality': ['', [Validators.required]],
+      'gender': ['', [Validators.required]],
+      'birth_date': ['', [Validators.required]],
+      'city': ['', [Validators.required]],
+      'email': ['', [Validators.required, Validators.email]],
+      'phone': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      'qualification': ['', [Validators.required]],
+      'general_major': ['', [Validators.required]],
+      'private_major': ['', [Validators.required]],
+      'job_type': ['', [Validators.required]],
+      'resume': ['', [Validators.required]],
+      'branch': ['', [Validators.required]],
+      'capcha': ['', [Validators.required]]
+    });
+  }
 
   isLoading = false;
   submitted = false;
@@ -67,7 +67,7 @@ export class JobHomeComponent implements OnInit {
           this.submajors = response.data.submajors;
         }
       },
-      error => {}
+      error => { }
     );
   }
 
@@ -95,10 +95,11 @@ export class JobHomeComponent implements OnInit {
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    this.AddForm.controls['resume'] = reader.result;
+    this.cv = reader.result;
+    //this.AddForm.controls['resume'] = reader.result;
   }
 
-  onMajorsChange(value){
+  onMajorsChange(value) {
     let data = [];
     this.submajors.forEach(element => {
       if (element.MAJOR_ID == value) {
@@ -110,12 +111,12 @@ export class JobHomeComponent implements OnInit {
   resolved(captchaResponse: string) {
     this.AddForm.controls['capcha'].setValue(captchaResponse);
   }
-  onSubmit(){
+  onSubmit() {
     if (this.AddForm.invalid) {
       return;
     }
     let data = this.AddForm.value;
-    //data['resume']  = this.cv;
+    data['resume'] = this.cv;
     this.submitted = true;
     this.jobApplicationService.addRequest(data).subscribe(
       (response: any) => {
@@ -123,24 +124,31 @@ export class JobHomeComponent implements OnInit {
         if (response) {
           if (response.status) {
             this.toastr.push([{
-              'type' : 'success',
-              'body' : this.translate.instant("success_request")
+              'type': 'success',
+              'body': this.translate.instant("success_request")
             }]);
             this.isLoading = false;
             this.disabled = true;
-          }else{
+            this.submitted = false;
+          } else {
             this.toastr.push([{
-              'type' : 'error',
-              'body' : response.error
+              'type': 'error',
+              'body': response.error
             }]);
+            this.isLoading = false;
+            this.disabled = false;
+            this.submitted = false;
           }
         }
         this.recaptchaRef.reset();
       },
       error => {
         this.recaptchaRef.reset();
+        this.isLoading = false;
+        this.disabled = false;
+        this.submitted = false;
       }
-    ); 
+    );
   }
 
 }

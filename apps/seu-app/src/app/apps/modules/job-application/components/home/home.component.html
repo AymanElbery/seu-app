@@ -60,9 +60,12 @@
 
                 <div class="state">
                   <h6>{{"nationality"|translate}} <span class="reqstart">*</span></h6>
-                  <select [attr.disabled]="disabled ? '' : null" class="form-control" formControlName="nationality">
+                  <ng-select [items]="countries" bindLabel="COUNTRY" bindValue="NO" formControlName="nationality">
+                  </ng-select>
+                  <!-- <select [attr.disabled]="disabled ? '' : null" class="form-control" formControlName="nationality">
                     <option *ngFor="let country of countries" [value]="country.NO">{{ country.COUNTRY }}</option>
-                  </select>
+                  </select> -->
+
                 </div>
                 <div *ngIf="AddForm.controls.nationality.invalid && (AddForm.controls.nationality.dirty || AddForm.controls.nationality.touched)">
                   <div *ngIf="AddForm.controls.nationality.errors.required">
@@ -72,9 +75,11 @@
 
                 <div class="state">
                   <h6>{{"city"|translate}} <span class="reqstart">*</span></h6>
-                  <select [attr.disabled]="disabled ? '' : null" class="form-control" formControlName="city">
+                  <ng-select [items]="cities" bindLabel="CITY" bindValue="ID" formControlName="city">
+                    </ng-select>
+                  <!-- <select [attr.disabled]="disabled ? '' : null" class="form-control" formControlName="city">
                     <option *ngFor="let cit of cities" [value]="cit.ID">{{ cit.CITY }}</option>
-                  </select>
+                  </select> -->
                 </div>
                 <div *ngIf="AddForm.controls.city.invalid && (AddForm.controls.city.dirty || AddForm.controls.city.touched)">
                   <div *ngIf="AddForm.controls.city.errors.required">
