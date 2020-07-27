@@ -1,4 +1,37 @@
 <app-service-header title="{{'skills' | translate}}" subtitle="{{'users.users-list' | translate}}"></app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
-<section class="dashboard-wrap" style="margin-top: 30px;">
+<section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">{{"users.name_ar" | translate}}</th>
+                            <th scope="col">{{"users.name_en" | translate}}</th>
+                            <th scope="col">{{"users.email" | translate}}</th>
+                            <th scope="col">{{"users.role" | translate}}</th>
+                            <th scope="col">{{"users.active" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{user.NAME_AR}}</td>
+                            <td>{{user.NAME_EN}}</td>
+                            <td>{{user.SEU_EMAIL}}</td>
+                            <td>
+                                <b *ngIf="user.ROLE == 'admin'">{{"users.admin" | translate}}</b>
+                            </td>
+                            <td>
+                                <b style="font-size: 1.5em; font-weight: bold;" class="text-success" *ngIf="user.ACTIVE == '1'"><i class="ik ik-check-circle"></i></b>
+                                <b style="font-size: 1.5em; font-weight: bold;" class="text-danger" *ngIf="user.ACTIVE != '1'"><i class="ik ik-x-circle"></i></b>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </section>
