@@ -13,6 +13,7 @@
                             <th scope="col">{{"users.email" | translate}}</th>
                             <th scope="col">{{"users.role" | translate}}</th>
                             <th scope="col">{{"users.active" | translate}}</th>
+                            <th scope="col">{{"users.actions" | translate}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,10 +24,18 @@
                             <td>{{user.SEU_EMAIL}}</td>
                             <td>
                                 <b *ngIf="user.ROLE == 'admin'">{{"users.admin" | translate}}</b>
+                                <b *ngIf="user.ROLE == 'instructor'">{{"users.instructor" | translate}}</b>
+                                <b *ngIf="user.ROLE == 'admission'">{{"users.admission" | translate}}</b>
+                                <b *ngIf="user.ROLE == 'college'">{{"users.college" | translate}}</b>
                             </td>
                             <td>
                                 <b style="font-size: 1.5em; font-weight: bold;" class="text-success" *ngIf="user.ACTIVE == '1'"><i class="ik ik-check-circle"></i></b>
                                 <b style="font-size: 1.5em; font-weight: bold;" class="text-danger" *ngIf="user.ACTIVE != '1'"><i class="ik ik-x-circle"></i></b>
+                            </td>
+                            <td>
+                                <!-- <button class="btn btn-warning">{{"users.edit" | translate}}</button> -->
+                                <button (click)="inactiveUser(user.USER_ID)" *ngIf="user.ACTIVE == '1'" style="margin-right: 5px;" class="btn btn-danger">{{"users.inactive-btn" | translate}}</button>
+                                <button (click)="activeUser(user.USER_ID)" *ngIf="user.ACTIVE != '1'" style="margin-right: 5px;" class="btn btn-danger">{{"users.active-btn" | translate}}</button>
                             </td>
                         </tr>
                     </tbody>

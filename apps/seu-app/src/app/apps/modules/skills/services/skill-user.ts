@@ -20,6 +20,16 @@ export class SkillsUserService extends SkillsRootService{
         return this.get("emp/users/list");
     }
 
+    inactiveUser(id){
+        return this.post("emp/users/update", {'USER_ID' : id,'ACTIVE' : 0});
+    }
 
+    activeUser(id){
+        return this.post("emp/users/update", {'USER_ID' : id,'ACTIVE' : 1});
+    }
+
+    addUser(data){
+        return this.post("emp/users/add", data);
+    }
 }
 

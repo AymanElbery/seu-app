@@ -1,3 +1,70 @@
 <app-service-header title="{{'skills' | translate}}" subtitle="{{'users.add-user' | translate}}"></app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
-<section class="dashboard-wrap" style="margin-top: 30px;"></section>
+<section class="dashboard-wrap ug-content" style="margin-top: 30px; padding: 0 30px;">
+    <form role="form" [formGroup]="AddUserForm">
+        <div class="row">
+            <div class="col-md-6">
+                <h3> {{'users.user_data' | translate}} </h3>
+                <ng-container *ngIf="!isLoading">
+                    <div class="state">
+                        <h6>{{"users.name_ar"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="NAME_AR" class="form-control" />
+                    </div>
+                    <div *ngIf="AddUserForm.controls.NAME_AR.invalid && (AddUserForm.controls.NAME_AR.dirty || AddUserForm.controls.NAME_AR.touched)">
+                        <div *ngIf="AddUserForm.controls.NAME_AR.errors.required">
+                          <b style="position: relative; left: -10px;" class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+
+                    <div class="state" style="margin-top: 20px">
+                        <h6>{{"users.name_en"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="NAME_EN" class="form-control" />
+                    </div>
+                    <div *ngIf="AddUserForm.controls.NAME_EN.invalid && (AddUserForm.controls.NAME_EN.dirty || AddUserForm.controls.NAME_EN.touched)">
+                        <div *ngIf="AddUserForm.controls.NAME_EN.errors.required">
+                          <b style="position: relative; left: -10px;" class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+
+                    <div class="state" style="margin-top: 20px">
+                        <h6>{{"users.email"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="email" formControlName="SEU_EMAIL" class="form-control" />
+                    </div>
+                    <div *ngIf="AddUserForm.controls.SEU_EMAIL.invalid && (AddUserForm.controls.SEU_EMAIL.dirty || AddUserForm.controls.SEU_EMAIL.touched)">
+                        <div *ngIf="AddUserForm.controls.SEU_EMAIL.errors.required">
+                          <b style="position: relative; left: -10px;" class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                        <div *ngIf="AddUserForm.controls.SEU_EMAIL.errors.email">
+                          <b style="position: relative; left: -10px;" class="text-danger">{{"users.email_error"|translate}}</b>
+                        </div>
+                    </div>
+
+                    <div class="state" style="margin-top: 20px">
+                        <h6>{{"users.role"|translate}} <span class="reqstart">*</span></h6>
+                        <select class="form-control" formControlName="ROLE">
+                          <option value="admin">{{"users.admin"|translate}} </option>
+                          <option value="instructor">{{"users.instructor"|translate}} </option>
+                          <option value="admission">{{"users.admission"|translate}} </option>
+                          <option value="college">{{"users.college"|translate}} </option>
+                        </select>
+                    </div>
+                    <div *ngIf="AddUserForm.controls.ROLE.invalid && (AddUserForm.controls.ROLE.dirty || AddUserForm.controls.ROLE.touched)">
+                        <div *ngIf="AddUserForm.controls.ROLE.errors.required">
+                          <b style="position: relative; left: -10px;" class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+
+                    <div class="state" style="margin-top: 20px">
+                        <h6>{{"users.active"|translate}} <span class="reqstart">*</span></h6>
+                        <input style="width: 8%; margin-top: 20px; cursor: pointer;" type="checkbox" formControlName="ACTIVE" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px; text-align: center;">
+            <div class="col-md-12">
+              <button *ngIf="!disabled" style="width: 20%;" [disabled]="submitted || AddUserForm.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "users.save" | translate}}  <i class="fa fa-save"></i></button>
+            </div>
+        </div>
+    </form>
+</section>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SkillsUserService } from './../../../../services/skill-user';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-skills-users-list',
@@ -13,8 +14,8 @@ export class SkillsUsersListComponent implements OnInit {
 
   constructor(
     private skillsUserService: SkillsUserService,
+    private router: Router, private route: ActivatedRoute
   ) {
-    this.isLoading = true;
     this.getAllUsers();
   }
 
@@ -22,11 +23,38 @@ export class SkillsUsersListComponent implements OnInit {
   }
 
   getAllUsers(){
+    this.isLoading = true;
     this.skillsUserService.getAllUsers().subscribe(
       (response: any) => {
         if (response) {
-          this.isLoading = false;
           this.users = response.data;
+        }
+        this.isLoading = false;
+      },
+      error => {
+        this.isLoading = false;
+      }
+    )
+  }
+
+  inactiveUser(id){
+    this.isLoading = true;
+    this.skillsUserService.inactiveUser(id).subscribe(
+      (response: any) => {
+        if (response) {
+          this.getAllUsers();
+        }
+      },
+      error => {}
+    )
+  } 
+
+  activeUser(id){
+    this.isLoading = true;
+    this.skillsUserService.activeUser(id).subscribe(
+      (response: any) => {
+        if (response) {
+          this.getAllUsers();
         }
       },
       error => {}
