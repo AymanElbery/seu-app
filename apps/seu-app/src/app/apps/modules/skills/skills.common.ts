@@ -10,6 +10,8 @@ import { SkillsMenuComponent } from './components/menu/skills-menu/skills-menu.c
 import { SkillsEmpMenuComponent } from './components/menu/skills-emp-menu/skills-emp-menu.component';
 import { SkillsStaffMenuComponent } from './components/menu/skills-staff-menu/skills-staff-menu.component';
 import { SkillsStdMenuComponent } from './components/menu/skills-std-menu/skills-std-menu.component';
+import { SkillsUSERGuard } from './skills-guard/user.guard';
+import { SkillsADMINGuard } from './skills-guard/admin.guard';
 
 
 export const componentDeclarations: any[] = [
@@ -18,13 +20,14 @@ export const componentDeclarations: any[] = [
 ];
 
 export const providerDeclarations: any[] = [
-    SkillsSTDGuard, SkillsSTAFFGuard, SkillsEMPGuard, SkillsHomeComponent
+    SkillsUSERGuard,SkillsADMINGuard,SkillsSTDGuard, SkillsSTAFFGuard, SkillsEMPGuard, SkillsHomeComponent
 ];
 
 
 export const routes: Routes = [
     {
         path: '', component: SkillsLandingComponent,
+        canActivate: [SkillsUSERGuard],
         children: [
             {
                 path: '',

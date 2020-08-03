@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { SkillsUserService } from './../../../../services/skill-user';
+import { SkillsUsersManagementService } from '../../../../services/skill-users-management';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -18,7 +18,7 @@ export class SkillsUsersFromComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private skillsUserService: SkillsUserService,
+    private skillsUserService: SkillsUsersManagementService,
     private toastr: AppToasterService,
     private translate: TranslateService,
     private router: Router,

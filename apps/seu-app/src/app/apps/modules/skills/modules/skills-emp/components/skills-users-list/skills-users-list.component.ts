@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SkillsUserService } from './../../../../services/skill-user';
+import { SkillsUsersManagementService } from '../../../../services/skill-users-management';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class SkillsUsersListComponent implements OnInit {
   isLoading;
 
   constructor(
-    private skillsUserService: SkillsUserService,
+    private skillsUserService: SkillsUsersManagementService,
     private router: Router, private route: ActivatedRoute
   ) {
     this.getAllUsers();
