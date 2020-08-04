@@ -10,32 +10,34 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./pay-fee.component.css']
 })
 export class PayFeeComponent implements OnInit {
-  url = '/admUG/index';
-  urlSafe: SafeResourceUrl;
-  sid;
-  srcUrl;
-  constructor(private translate: TranslateService, public sanitizer: DomSanitizer, private admissionUgservice: AdmissionUGService) { }
+  std_id = '';
+  constructor(private translate: TranslateService, public sanitizer: DomSanitizer, private admissionUgservice: AdmissionUGService) {
+    this.std_id = this.admissionUgservice.LoggedInUser['ID'];
+  }
 
   ngOnInit() {
-    this.UpdateSettings();
-    this.subscribeLangChange();
+    // this.UpdateSettings();
+    // this.subscribeLangChange();
   }
 
-  subscriptions;
-  ngOnDestroy() {
-    if (this.subscriptions) {
-      this.subscriptions.unsubscribe();
-    }
-  }
-  subscribeLangChange() {
-    this.subscriptions = this.translate.onLangChange.subscribe(() => {
-      this.UpdateSettings();
-    });
-  }
-
-  UpdateSettings() {
-    const user_id = this.admissionUgservice.LoggedInUser['ID'];
-    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(environment.paymentLink + this.url + '/' + user_id + '?lang=' + this.translate.currentLang);
-    // console.log(this.urlSafe);
-  }
+  // url = '/admUG/index';
+  // urlSafe: SafeResourceUrl;
+  // sid;
+  // srcUrl;
+  // subscriptions;
+  // ngOnDestroy() {
+  //   if (this.subscriptions) {
+  //     this.subscriptions.unsubscribe();
+  //   }
+  // }
+  // subscribeLangChange() {
+  //   this.subscriptions = this.translate.onLangChange.subscribe(() => {
+  //     this.UpdateSettings();
+  //   });
+  // }
+  // UpdateSettings() {
+  //   const user_id = this.admissionUgservice.LoggedInUser['ID'];
+  //   this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(environment.paymentLink + this.url + '/' + user_id + '?lang=' + this.translate.currentLang);
+  //   // console.log(this.urlSafe);
+  // }
 }
