@@ -1,4 +1,47 @@
-<app-header></app-header>
+<!-- <app-header></app-header> -->
+
+<ActionBar style="background:#080f43; ">
+  <!-- 
+  Use the NavigationButton as a side-drawer button in Android
+  because ActionItems are shown on the right side of the ActionBar
+<NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+
+-->
+<!-- <ActionItem (tap)="navigate('land')" ios:visibility="collapsed" class="" >
+<Image  class="ico-hom"   src="~/images/Home-menu.png" ></Image>
+</ActionItem> -->
+
+<!-- <NavigationButton ios:visibility="collapsed" icon="font://&#xf015;"  class="fas"
+style="font-size:13; color: #fff;"  (tap)="navigate('land')">
+</NavigationButton> -->
+
+ <NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;
+{{notifications.notesList.length}}"  class="far" style="font-size:10; color: #fff;" (tap)="getNotifications()">
+</NavigationButton> 
+
+<ActionItem style="margin: 0;"  ios.position="left" android:visibility="collapsed" icon="font://&#xf0f3;
+{{notifications.notesList.length}}"   class="fas " style="font-size:30; color: #fff;" (tap)="getNotifications()">
+<label  class="fas" style="margin: 0;padding-left: -10px;margin-left: -10px;color: #fff;"  ios.position="left" android:visibility="collapsed" text="&#xf0f3; {{notifications.notesList.length}}"   class="fas " style="font-size:25; color: #fff;" (tap)="getNotifications()">
+
+</label>
+</ActionItem>
+
+
+
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
+<StackLayout   horizontalAlignment="center" style="height: 100%;margin-top: 15px;">
+
+  <Image style="width: 90%;"   (tap)="navigate('land')" src="~/images/logo_3d.png" ></Image>
+</StackLayout>
+
+
+
+  <ActionItem icon="font://&#xf0c9;"  class="fas " style="font-size:20; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="right">
+  </ActionItem>
+ 
+
+</ActionBar>
 
 <GridLayout style="background:#ededed">
   <Image src="~/images/home-ba.png" scaleX="1.1" scaleY="1.1" fill="aspectFill"></Image>

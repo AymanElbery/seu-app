@@ -623,6 +623,7 @@ export class AppComponent implements OnInit {
     logout() {
         const sideDrawer = app.getRootView() as RadSideDrawer;
         sideDrawer.closeDrawer();
+        this.userService.logedIn=false;
         this.routerExtensions.navigate(['/login'], { clearHistory: true });
     }
     clickme(item) {

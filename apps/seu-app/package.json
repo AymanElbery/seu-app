@@ -109,7 +109,7 @@
     "typescript": "~3.5.3"
   },
   "nativescript": {
-    "id": "org.nativescript.seu",
+    "id": "org.nativescript.seuapp",
     "tns-android": {
       "version": "6.5.1"
     },
