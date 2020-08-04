@@ -4,7 +4,7 @@
   <!-- <service-header title='{{"AdmissionUgResult" | translate}}'></service-header> -->
   <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
 
-  <section class="dashboard-wrap" style="margin-top: 30px;">
+  <section *ngIf="!autosubmit" class="dashboard-wrap" style="margin-top: 30px;">
     <form role="form" [formGroup]="AddReqForm">
       <div class="modal-body">
 

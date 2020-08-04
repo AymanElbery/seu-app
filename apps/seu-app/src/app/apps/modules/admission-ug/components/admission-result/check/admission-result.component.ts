@@ -19,6 +19,7 @@ export class AdmissionResultComponent {
   submitted = false;
   @ViewChild('recaptchaRef', { read: RecaptchaComponent, static: false }) recaptchaRef: RecaptchaComponent;
 
+  autosubmit = false;
   constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
 
     if (this.admissionUgservice.checkResultData) {
@@ -31,11 +32,10 @@ export class AdmissionResultComponent {
     if (this.admissionUgservice.isLoggedIn) {
       this.AddReqForm.controls['ssn'].setValue(this.admissionUgservice.LoggedInUser['SSN']);
       this.AddReqForm.controls['capcha'].setValue(this.admissionUgservice.LoggedInToken);
+      this.autosubmit = true;
       this.onFormSubmit();
     }
-
-
-
+    
     this.environment = environment;
   }
 
