@@ -30,7 +30,7 @@ export class PayComponent implements OnInit {
       if (res['status']) {
         this.paymentData = res['data'];
         let baseURL = window.location.protocol + '//' + window.location.host;
-        this.callbackURL = (baseURL + "/" + this.data['casllbackURL'] + "/" + res['data']['tid']).replace("//", "/");
+        this.callbackURL = (baseURL) + (( "/" + this.data['casllbackURL'] + "/" + res['data']['tid']).replace("//", "/"));
         this.isLoading = false;
         this.loadwidgetScript();
       } else {
