@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
