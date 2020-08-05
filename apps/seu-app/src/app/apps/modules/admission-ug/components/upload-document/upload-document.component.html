@@ -1,11 +1,11 @@
 <div class="main-content">
   <!-- <service-header title='{{"UplaodDocs" | translate}}'></service-header> -->
-  <app-service-header title="{{'ug' | translate}}"  subtitle="{{'UplaodDocs' | translate}}"></app-service-header>
+  <app-service-header title="{{'ug' | translate}}" subtitle="{{'UplaodDocs' | translate}}"></app-service-header>
 
   <seu-loader [isLoading]="isLoading"></seu-loader>
+  <seu-flash [msgs]="messages"  [isLoading]="isLoading"> </seu-flash>
 
-
-  <section class="dashboard-wrap mtb-40" style="margin-top: 30px;">
+  <section *ngIf="!isLoading && can_upload" class="dashboard-wrap mtb-40" style="margin-top: 30px;">
     <div style="text-align: right" [ngClass]="'alert alert-info'" role="alert">
       <span>{{'upload_file_nots' | translate}}</span>
     </div>

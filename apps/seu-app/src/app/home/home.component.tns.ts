@@ -7,6 +7,12 @@ import { NavigationEnd, Router } from '@angular/router';
 import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
 import { registerElement } from 'nativescript-angular/element-registry';
+import { NotificationsService } from '../shared/services/notificationsservice.tns';
+import { RadSideDrawer, SideDrawerLocation } from 'nativescript-ui-sidedrawer';
+import * as app from 'tns-core-modules/application';
+
+
+
 // Register Custom Elements for Angular
 import { Carousel, CarouselItem } from 'nativescript-carousel';
 import { Downloader } from 'nativescript-downloader';
@@ -21,6 +27,7 @@ export class HomeComponent implements OnInit {
   role: string;
     constructor(public printService: PrintService, public homeService: HomeService,
                 public userService: UserService,
+                public notifications: NotificationsService,
                 private router: Router , private globalService: GlobalBaseService
                 ) {
 
@@ -281,8 +288,18 @@ setInterval(
       this.level = this.userService.userData.student_details.level;
       this.role=this.userService.userData.activeRole
       //  this.LoadData();
+      const sideDrawer =  app.getRootView() as RadSideDrawer;
+        sideDrawer.drawerLocation = SideDrawerLocation.Right;
 
     }
+    getNotifications() {
+      this.router.navigate(['/notifications']);
+    }
+
+    onDrawerButtonTap(): void {
+      const sideDrawer =  app.getRootView() as RadSideDrawer;
+      sideDrawer.showDrawer();
+  }
 
      getfn(str) {
       return str.substring(str.lastIndexOf('/') + 1);
@@ -300,4 +317,6 @@ setInterval(
     navigate(route: string) {
       this.router.navigate([route]);
     }
+
+    
 }

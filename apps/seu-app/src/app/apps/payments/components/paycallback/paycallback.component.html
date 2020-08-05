@@ -1,0 +1,8 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<div *ngIf="message && message['body']" class="container" style="margin-top:20px; margin-bottom:15px;">
+  <div class="ser-state">
+    <div style="text-align: right" class="alert alert-{{message['type']}}" role="alert">
+      {{message['body']}}
+    </div>
+  </div>
+</div>

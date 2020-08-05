@@ -15,7 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class UploadDocumentComponent implements OnInit {
   subscriptionsdata: Subscription;
   uploaddata: any;
-  messages;
+  messages = [];
   messageNodata;
   AddReqForm: FormGroup;
   submitted = false;
@@ -40,6 +40,7 @@ export class UploadDocumentComponent implements OnInit {
       return false;
     }
     this.submitted = true;
+    this.messages = [];
     this.admissionUgservice.savedocs(this.AddReqForm.value).subscribe(savadocs => {
       if (savadocs['status']) {
         this.toastr.push([{ type: 'success', 'body': this.translate.instant('docs_saved') }]);
@@ -96,19 +97,27 @@ export class UploadDocumentComponent implements OnInit {
     }
     return false;
   }
+
+  can_upload = false;
   getuplaoddocs() {
     this.isLoading = true;
-    this.subscriptionsdata = this.admissionUgservice.uploaddocs(this.admissionUgservice.LoggedInToken).subscribe(uploadocs => {
-      const status = uploadocs['status'];
-      if (status == 1) {
-        if (uploadocs['data']) {
-          this.uploaddata = uploadocs['data'];
-          this.attachemngtss = this.uploaddata.attachement;
-          this.upload_mother_id = this.uploaddata.upload_mother_id;
+    this.subscriptionsdata = this.admissionUgservice.uploaddocs(this.admissionUgservice.LoggedInToken).subscribe(
+      uploadocs => {
+        this.messages = uploadocs['messages'];
+        if (uploadocs['status'] == 1) {
+          this.can_upload = true;
+          if (uploadocs['data']) {
+            this.uploaddata = uploadocs['data'];
+            this.attachemngtss = this.uploaddata.attachement;
+            this.upload_mother_id = this.uploaddata.upload_mother_id;
+          }
         }
+        this.isLoading = false;
+      },
+      error => {
+        this.can_upload = false;
+        this.isLoading = false;
       }
-      this.isLoading = false;
-    }
     );
   }
 
