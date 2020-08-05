@@ -31,6 +31,7 @@ export class SkillsCoursesFromComponent implements OnInit {
 
   course;
   updated_id;
+  redirectUrl;
 
   constructor(
     private fb: FormBuilder,
@@ -203,7 +204,7 @@ export class SkillsCoursesFromComponent implements OnInit {
   onUpdate(){
     this.onSubmit("update");
   }
-
+  
   onSubmit(type = "insert") {
     if (this.AddCourseForm.invalid) {
       return;
@@ -227,58 +228,35 @@ export class SkillsCoursesFromComponent implements OnInit {
 
     if (type == "update") {
       data.ID = this.updated_id;
-      this.skillsCourseService.updateCourse(data).subscribe(
-        (response: any) => {
-          this.isLoading = true;
-          if (response) {
-            if (response.status) {
-              this.router.navigate(['../../courses-list'], { relativeTo: this.route });
-              this.toastr.push([{
-                'type': 'success',
-                'body': this.translate.instant("courses.success_update")
-              }]);
-            } else {
-              this.toastr.push([{
-                'type': 'error',
-                'body': response.error
-              }]);
-            }
-            this.isLoading = false;
-            this.submitted = false;
-          }
-        },
-        error => {
-          this.isLoading = false;
-          this.submitted = false;
-        }
-      );
+      this.redirectUrl = '../../courses-list';
     }else{
-      this.skillsCourseService.updateCourse(data).subscribe(
-        (response: any) => {
-          this.isLoading = true;
-          if (response) {
-            if (response.status) {
-              this.router.navigate(['../courses-list'], { relativeTo: this.route });
-              this.toastr.push([{
-                'type': 'success',
-                'body': this.translate.instant("courses.success_request")
-              }]);
-            } else {
-              this.toastr.push([{
-                'type': 'error',
-                'body': response.error
-              }]);
-            }
-            this.isLoading = false;
-            this.submitted = false;
+      this.redirectUrl = '../courses-list';
+    }
+    this.skillsCourseService.updateCourse(data).subscribe(
+      (response: any) => {
+        this.isLoading = true;
+        if (response) {
+          if (response.status) {
+            this.router.navigate([this.redirectUrl], { relativeTo: this.route });
+            this.toastr.push([{
+              'type': 'success',
+              'body': this.translate.instant("courses.success_update")
+            }]);
+          } else {
+            this.toastr.push([{
+              'type': 'error',
+              'body': response.error
+            }]);
           }
-        },
-        error => {
           this.isLoading = false;
           this.submitted = false;
         }
-      );
-    }
+      },
+      error => {
+        this.isLoading = false;
+        this.submitted = false;
+      }
+    );
     
   }
 
