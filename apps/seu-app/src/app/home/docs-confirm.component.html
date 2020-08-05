@@ -1,0 +1,363 @@
+<mat-dialog-content dir="{{translate.currentLang == 'ar' ? 'rtl':'ltr'}}">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="width:100%;text-align: center" class="modal-title " id="exampleModalLabel">
+                {{"docs_confirm.title"|translate}}
+            </h5>
+        </div>
+        <form>
+            <div class="modal-body" style="width: 100%" (scroll)="onScroll($event)">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="name_ar">{{"docs_confirm.name_ar"|translate}}</label>
+                            <h5>{{ firstNameAr }} {{ firstNameAr }} {{ midNameAr }} {{ lastNameAr }}</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="name_en">{{"docs_confirm.name_en"|translate}}</label>
+                            <h5>{{ firstNameEn }} {{ fatherNameEn }} {{ midNameEn }} {{ lastNameEn }}</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-check" style="text-align: center;">
+                            <label class="form-check-label">{{"docs_confirm.update"|translate}}</label><br>
+                            <input (click)="showNameEdit()" style="width: 26px; height: 26px; cursor: pointer"
+                                type="checkbox" class="form-check-input" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="showNameFields" style="margin-top: 20px;">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="firstNameAr">{{"docs_confirm.first_name_ar"|translate}} <span
+                                    class="text text-danger">*</span></label>
+                            <input type="text" (input)="removeFirstNameArError()" [(ngModel)]="firstNameAr"
+                                [ngClass]="{'error-required': first_name_ar_error == true}" class="form-control"
+                                id="firstNameAr" name="firstNameAr">
+                            <span *ngIf="first_name_ar_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="fatherNameAr">{{"docs_confirm.father_name_ar"|translate}} <span
+                                    class="text text-danger">*</span></label>
+                            <input type="text" (input)="removeFatherNameArError()" [(ngModel)]="fatherNameAr"
+                                [ngClass]="{'error-required': father_name_ar_error == true}" class="form-control"
+                                id="fatherNameAr" name="fatherNameAr">
+                            <span *ngIf="father_name_ar_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="midNameAr">{{"docs_confirm.mid_name_ar"|translate}} <span
+                                    class="text text-danger">*</span></label>
+                            <input type="text" (input)="removeMidNameArError()" [(ngModel)]="midNameAr"
+                                [ngClass]="{'error-required': mid_name_ar_error == true}" class="form-control"
+                                id="midNameAr" name="midNameAr">
+                            <span *ngIf="mid_name_ar_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="lastNameAr">{{"docs_confirm.last_name_ar"|translate}} <span
+                                    class="text text-danger">*</span></label>
+                            <input type="text" (input)="removeLastNameArError()" [(ngModel)]="lastNameAr"
+                                [ngClass]="{'error-required': last_name_ar_error == true}" class="form-control"
+                                id="lastNameAr" name="lastNameAr">
+                            <span *ngIf="last_name_ar_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="showNameFields" style="margin-top: 20px;">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="firstNameEn">{{"docs_confirm.first_name_en"|translate}} <span
+                                    class="text text-danger">*</span></label>
+                            <input type="text" (input)="removeFirstNameEnError()" [(ngModel)]="firstNameEn"
+                                [ngClass]="{'error-required': first_name_en_error == true}" class="form-control"
+                                id="firstNameEn" name="firstNameEn">
+                            <span *ngIf="first_name_en_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="fatherNameEn">{{"docs_confirm.father_name_en"|translate}} <span
+                                    class="text text-danger">*</span></label>
+                            <input type="text" (input)="removeFatherNameEnError()" [(ngModel)]="fatherNameEn"
+                                [ngClass]="{'error-required': father_name_en_error == true}" class="form-control"
+                                id="fatherNameEn" name="fatherNameEn">
+                            <span *ngIf="father_name_en_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="midNameEn">{{"docs_confirm.mid_name_en"|translate}} <span
+                                    class="text text-danger">*</span></label>
+                            <input type="text" (input)="removeMidNameEnError()" [(ngModel)]="midNameEn"
+                                [ngClass]="{'error-required': mid_name_en_error == true}" class="form-control"
+                                id="midNameEn" name="midNameEn">
+                            <span *ngIf="mid_name_en_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="lastNameEn">{{"docs_confirm.last_name_en"|translate}} <span
+                                    class="text text-danger">*</span></label>
+                            <input type="text" (input)="removeLastNameEnError()" [(ngModel)]="lastNameEn"
+                                [ngClass]="{'error-required': last_name_en_error == true}" class="form-control"
+                                id="lastNameEn" name="lastNameEn">
+                            <span *ngIf="last_name_en_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-10">
+                        <div class="form-group">
+                            <label for="ssn">{{"docs_confirm.ssn"|translate}}</label>
+                            <h4>{{ ssn }}</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-check" style="text-align: center;">
+                            <label class="form-check-label">{{"docs_confirm.update"|translate}}</label><br>
+                            <input (click)="showSsnEdit()" style="width: 26px; height: 26px; cursor: pointer"
+                                type="checkbox" class="form-check-input" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="showSsnFields" style="margin-top: 20px;">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="nationalId">{{"docs_confirm.new_ssn"|translate}} <span
+                                    class="text text-danger">*</span></label>
+                            <input type="text" (input)="removeNationalIdError()" [(ngModel)]="nationalId"
+                                [ngClass]="{'error-required': national_id_error == true}" name="nationalId"
+                                class="form-control">
+                            <span *ngIf="national_id_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <hr *ngIf="showNameFields || showSsnFields">
+                <div class="row" *ngIf="showNameFields || showSsnFields" style="margin-top: 20px;">
+                    <div class="col-md-3">
+                        <span [ngClass]="{'error-required': idDocError == true}"
+                            class="btn btn-success btn-file">{{"docs_confirm.name_doc"|translate}}<input type="file"
+                                name="idDoc" [(ngModel)]="idDoc" (change)="idFileChange($event)" required> </span>
+                        <span *ngIf="idDocError"
+                            class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                    </div>
+                    <div class="col-md-9">
+                        <span *ngIf="idFile" class='label label-info'>{{ idFileName }}</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-10">
+                        <div class="form-group">
+                            <label for="ssn">{{"docs_confirm.work"|translate}}</label>
+                            <h6>{{ work }}</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-check" style="text-align: center;">
+                            <label class="form-check-label">{{"docs_confirm.update"|translate}}</label><br>
+                            <input (click)="showWorkEdit()" style="width: 26px; height: 26px; cursor: pointer"
+                                type="checkbox" class="form-check-input" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="showWorkFields" style="margin-top: 20px;">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label for="actWork">{{"docs_confirm.new_work"|translate}}</label>
+                            <input type="text" (input)="removeActWorkError()" [(ngModel)]="actWork"
+                                [ngClass]="{'error-required': actWork_error == true}" name="actWork"
+                                class="form-control">
+                            <span *ngIf="actWork_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <span [ngClass]="{'error-required': idDocWorkError == true}"
+                            style="position: relative; top: 25px;"
+                            class="btn btn-success btn-file">{{"docs_confirm.work_doc"|translate}}<input type="file"
+                                [(ngModel)]="idDocWork" name="idDocWork" (change)="idFileWorkChange($event)" required>
+                        </span>
+                    </div>
+                    <div class="col-md-4">
+                        <span style="position: relative; top: 35px" *ngIf="idDocWorkError"
+                            class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        <span style="position: relative; top: 35px;" *ngIf="idFileWork"
+                            class='label label-info'>{{ idFileNameWork }}</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-10">
+                        <div class="form-group">
+                            <label for="ssn">{{"docs_confirm.work_email"|translate}}</label>
+                            <h6>{{ workEmail }}</h6>
+                            <input *ngIf="showWorkEmailFields" type="text" (input)="removeWorkEmailError()" value=""
+                                [(ngModel)]="workEmail" [ngClass]="{'error-required': workEmail_error == true}"
+                                name="workEmail" class="form-control">
+                            <span *ngIf="workEmail_error && showWorkEmailFields"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-check" style="text-align: center;">
+                            <label class="form-check-label">{{"docs_confirm.update"|translate}}</label><br>
+                            <input (click)="showWorkEmailEdit()" style="width: 26px; height: 26px; cursor: pointer"
+                                type="checkbox" class="form-check-input" value="">
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-top: 20px;">
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="mobile">{{"docs_confirm.mobile"|translate}}</label>
+                            <input type="text" (input)="removeMobileError()" [(ngModel)]="mobile"
+                                [ngClass]="{'error-required': mobile_error == true || mobile_max_error == true }"
+                                name="mobile" [value]="mobile" class="form-control">
+                            <span *ngIf="mobile_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                            <span *ngIf="mobile_max_error"
+                                class="text text-danger">{{"docs_confirm.mobile_max_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">{{"docs_confirm.email"|translate}}</label>
+                            <input type="text" (input)="removeEmailError()" [(ngModel)]="email"
+                                [ngClass]="{'error-required': email_error == true}" name="email" [value]="email"
+                                class="form-control">
+                            <span *ngIf="email_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="twitterId">{{"docs_confirm.twitter"|translate}}</label>
+                            <input type="text" (input)="removeTwitterIdError()"
+                                [ngClass]="{'error-required': twitterId_error == true}" [(ngModel)]="twitterId"
+                                name="twitterId" [value]="twitter" class="form-control">
+                            <span *ngIf="twitterId_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="city">{{"docs_confirm.city"|translate}}</label>
+                            <!-- <select required (change)="removeCityError()" [ngClass]="{'error-required': city_error == true}" [(ngModel)]="city" class="form-control" id="city" name="city">
+                                <option>--</option>
+                                <option [selected]="city.NAME_AR == city" *ngFor="let city of cities">{{ city.NAME_AR }}</option>
+                            </select> -->
+                            <ng-select (change)="removeCityError()" *ngIf="cities" [items]="cities" bindLabel="NAME_AR"
+                                autofocus bindValue="NAME_AR" name="city" [(ngModel)]="city"
+                                [ngClass]="{'error-required': city_error == true}">
+                            </ng-select>
+                            <span *ngIf="city_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="district">{{"docs_confirm.district"|translate}}</label>
+                            <!-- <select required (change)="removeDistrictError()" [ngClass]="{'error-required': district_error == true}" [(ngModel)]="district" class="form-control" id="district" name="district">
+                                <option>--</option>
+                                <option [selected]="dis.NAME_AR == district" *ngFor="let dis of districts">{{ dis.NAME_AR }}</option>
+                            </select> -->
+                            <ng-select (change)="removeDistrictError()" *ngIf="cities" [items]="districts"
+                                bindLabel="NAME_AR" autofocus bindValue="NAME_AR" name="district" [(ngModel)]="district"
+                                [ngClass]="{'error-required': district_error == true}">
+                            </ng-select>
+                            <span *ngIf="district_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="streetName">{{"docs_confirm.street_name"|translate}}</label>
+                            <input type="text" (input)="removeStreetNameError()"
+                                [ngClass]="{'error-required': streetName_error == true}" [(ngModel)]="streetName"
+                                name="streetName" [value]="streetName" class="form-control">
+                            <span *ngIf="streetName_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="buildingNo">{{"docs_confirm.building_no"|translate}}</label>
+                            <input type="number" (input)="removeBuildingNoError()"
+                                [ngClass]="{'error-required': buildingNo_error == true || buildingNo_max_error == true }"
+                                [(ngModel)]="buildingNo" name="buildingNo" [value]="buildingNo" class="form-control">
+                            <span *ngIf="buildingNo_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                            <span *ngIf="buildingNo_max_error"
+                                class="text text-danger">{{"docs_confirm.four_max_error"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="postalCode">{{"docs_confirm.postal_code"|translate}}</label>
+                            <input type="number" (input)="removePostalCodeError()"
+                                [ngClass]="{'error-required': postalCode_error == true || postalCode_max_error == true }"
+                                [(ngModel)]="postalCode" name="postalCode" [value]="postalCode" class="form-control">
+                            <span *ngIf="postalCode_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                            <span *ngIf="postalCode_max_error"
+                                class="text text-danger">{{"docs_confirm.five_max_error"|translate}}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="additionalNumber">{{"docs_confirm.additional_number"|translate}}</label>
+                            <input type="number" (input)="removeAdditionalNumberError()"
+                                [ngClass]="{'error-required': additionalNumber_error == true || additionalNumber_max_error == true }"
+                                [(ngModel)]="additionalNumber" name="additionalNumber" [value]="additionalNumber"
+                                class="form-control">
+                            <span *ngIf="additionalNumber_error"
+                                class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
+                            <span *ngIf="additionalNumber_max_error"
+                                class="text text-danger">{{"docs_confirm.four_max_error"|translate}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin: 20px;">
+                    <div class="col-md-12" style="text-align: center;">
+                        <button *ngIf="valid" [disabled]="requesting" (click)="submit()" type="submit"
+                            class="btn btn-dark btn-lg">
+                            <i class="fa fa-database"></i>
+                            {{"docs_confirm.confirm"|translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer" style="border-top: 2px solid #f28d1d;">
+                <div>
+                </div>
+            </div> -->
+        </form>
+    </div>
+</mat-dialog-content>

@@ -202,4 +202,83 @@ export class UserService extends BaseService {
     });
     return this.http.get(notsURL, { headers });
   }
+
+  getEmpData(emp_id){
+    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': auth
+    });
+
+    return this.http.get(url + "info_confirmations/info/"+emp_id, {
+      headers: headers
+    });
+  }
+  getDistrictsByCityId(cityId){
+    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': auth
+    });
+
+    return this.http.get(url + "info_confirmations/districts/"+cityId, {
+      headers: headers
+    });
+  }
+
+  getCities(){
+    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': auth
+    });
+
+    return this.http.get(url + "info_confirmations/cities", {
+      headers: headers
+    });
+  }
+
+  updateEmpInfo(data){
+    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': auth
+    });
+
+    return this.http.post(url + "info_confirmations/update",{ 
+      id                          : data.id,
+      FIRST_NAME                  : data.FIRST_NAME,
+      FATHER_NAME                 : data.FATHER_NAME,
+      MID_NAME                    : data.MID_NAME,
+      LAST_NAME                   : data.LAST_NAME,
+      FIRST_NAME_S                : data.FIRST_NAME_S,
+      FATHER_NAME_S               : data.FATHER_NAME_S,
+      MID_NAME_S                  : data.MID_NAME_S,
+      LAST_NAME_S                 : data.LAST_NAME_S,
+      NATIONAL_ID                 : data.NATIONAL_ID,
+      ACTUAL_DEPT_DESC            : data.ACTUAL_DEPT_DESC,
+      MOBILE_NO                   : data.MOBILE_NO,
+      WORK_EMAIL                  : data.WORK_EMAIL,
+      EMAIL                       : data.EMAIL,
+      TWITTER_ID                  : data.TWITTER_ID,
+      BUILDING_NO                 : data.BUILDING_NO,
+      STREET_NAME                 : data.STREET_NAME,
+      DISTRICT                    : data.DISTRICT,
+      CITY                        : data.CITY,
+      POSTAL_CODE                 : data.POSTAL_CODE,
+      ADDITIONAL_NUMBER           : data.ADDITIONAL_NUMBER,
+      idPhoto                     : data.idPhoto,
+      workPhoto                   : data.workPhoto,
+      idFileName                  : data.idFileName,
+      idFileNameWork              : data.idFileNameWork, 
+      nameCheck                   : data.nameCheck, 
+      ssnCheck                    : data.ssnCheck, 
+      workCheck                   : data.workCheck, 
+      emailWorkCheck              : data.emailWorkCheck, 
+    }, { headers: headers });
+  }
 }

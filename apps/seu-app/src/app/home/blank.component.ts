@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PolicyComponent } from './policy.component';
+import { DocsConfirmComponent } from './docs-confirm.component';
 import { GMPolicyComponent } from './gmpolicy.component';
 
 @Component({
@@ -76,7 +77,12 @@ export class BlankComponent implements OnInit {
           dialogConfig.disableClose = true;
           dialogConfig.maxWidth = 550;
           //dialogConfig.height = '58%';
-          this.dialog.open(PolicyComponent, dialogConfig);
+          let dialogRef = this.dialog.open(PolicyComponent, dialogConfig);
+          dialogRef.afterClosed().subscribe(result => {
+            this.showConfirmation();
+          });
+        } else {
+          this.showConfirmation();
         }
         //console.log(this.userService.userData);
         if ((this.userService.userData.role == "Student" && this.userService.userData.level == "GR") && this.userService.userData['GM_policy'] && this.userService.userData['GM_policy']['show'] && !this.userService.userData['gmpolicy']) {
@@ -90,5 +96,16 @@ export class BlankComponent implements OnInit {
         }
       }
     });
+  }
+  showConfirmation() {
+    if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && this.userService.userData['showConfirmations'] === true) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      dialogConfig.disableClose = true;
+      dialogConfig.width = '75%';
+      dialogConfig.maxWidth = 1000;
+      //dialogConfig.height = '88%';
+      this.dialog.open(DocsConfirmComponent, dialogConfig);
+    }
   }
 }
