@@ -16,3 +16,17 @@
     </a>
   </div>
 </div>
+
+<div class="nav-item has-sub">
+  <a href="javascript:void(0)"><span>{{ "menu.courses" | translate }} </span>
+    <i class="ik ik-user"></i></a>
+  <div class="submenu-content">
+    <a [ngClass]="{'active': activeRoute == 'courses-list'}" href="#" class="menu-item" routerLink="emp/courses-list">
+      {{ "menu.courses-list" | translate }}
+    </a>
+
+    <a [ngClass]="{'active': activeRoute == 'courses-add'}" href="#" class="menu-item" routerLink="emp/courses-add">
+      {{ "menu.add-course" | translate }}
+    </a>
+  </div>
+</div>

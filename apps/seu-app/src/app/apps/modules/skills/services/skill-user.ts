@@ -39,6 +39,13 @@ export class SkillsUserService extends SkillsRootService {
         });
     }
 
+    getStuffUsers() {
+        return this.get("emp/users/list_instructors");
+    }
+
+    inactiveUser(id){
+        return this.post("emp/users/update", {'USER_ID' : id,'ACTIVE' : 0});
+    }
     is_admin() {
         return this.has_role('admin');
     }
