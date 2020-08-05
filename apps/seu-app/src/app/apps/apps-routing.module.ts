@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppsLandingComponent } from './components/apps-landing/apps-landing.component';
-import { UserTypeGuard } from '../guards/userType.guard'
+import { AuthGuard } from '../guards/auth.guard'
 const routes: Routes = [
   {
     path: '',
@@ -26,7 +26,7 @@ const routes: Routes = [
     path: 'skills',
     loadChildren:
       './modules/skills/skills.module#SkillsModule',
-    canActivate: [UserTypeGuard]
+      canLoad: [AuthGuard]
   }
 ];
 

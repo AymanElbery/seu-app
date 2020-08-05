@@ -1,20 +1,16 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router'; import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { map } from 'rxjs/operators';
-import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import {  Router } from '@angular/router'; import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-
+import { SkillsUserService } from '../services/skill-user'
+import { SkillsUSERGuard } from './user.guard';
 @Injectable()
-export class SkillsSTAFFGuard implements CanActivate {
-  constructor(private router: Router, private appToasterService: AppToasterService, private translate: TranslateService, private http: HttpClient) {
+export class SkillsSTAFFGuard extends SkillsUSERGuard {
+  constructor(router: Router, user: SkillsUserService, translate: TranslateService) {
+    super(router, user, translate);
+  }
 
+  hasTheRole() {
+    return this.user.is_instructor();
   }
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> {
-    return this.isLoggedIn(state);
-  }
-  isLoggedIn(state) {
-    return true;
-  }
+
 }
