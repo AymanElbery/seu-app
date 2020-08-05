@@ -2,9 +2,15 @@ import { Routes } from '@angular/router';
 import { SkillsUsersHomeComponent } from './components/skills-users-home/skills-users-home.component';
 import { SkillsUsersListComponent } from './components/skills-users-list/skills-users-list.component';
 import { SkillsUsersFromComponent } from './components/skills-users-from/skills-users-from.component';
+import { SkillsCoursesListComponent } from './components/skills-courses-list/skills-courses-list.component';
+import { SkillsCoursesFromComponent } from './components/skills-courses-from/skills-courses-from.component';
 
 export const componentDeclarations: any[] = [
-    SkillsUsersHomeComponent, SkillsUsersListComponent, SkillsUsersFromComponent
+    SkillsUsersHomeComponent, 
+    SkillsUsersListComponent, 
+    SkillsUsersFromComponent,
+    SkillsCoursesListComponent,
+    SkillsCoursesFromComponent,
 ];
 
 export const providerDeclarations: any[] = [
@@ -19,5 +25,14 @@ export const routes: Routes = [
     },
     {
         path: 'users-add', component: SkillsUsersFromComponent
+    },
+    {
+        path: 'courses-list', component: SkillsCoursesListComponent
+    },
+    {
+        path: 'courses-add', component: SkillsCoursesFromComponent
+    },
+    {
+        path: 'courses-update/:id', component: SkillsCoursesFromComponent
     }
 ];

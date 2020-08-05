@@ -6,7 +6,7 @@ import { GlobalService } from 'src/app/shared/services/global.service';
 @Injectable({
     providedIn: 'root'
 })
-export class SkillsUserService extends SkillsRootService{
+export class SkillsCourseService extends SkillsRootService{
 
     constructor(
         public http: HttpClient,
@@ -16,24 +16,24 @@ export class SkillsUserService extends SkillsRootService{
         super(http, router,config);
     }
 
-    getAllUsers() {
-        return this.get("emp/users/list");
+    getAllCourses() {
+        return this.get("emp/courses/list");
+    }
+    
+    getCourseById(id) {
+        return this.post("emp/courses/get_course", id);
+    }
+    
+    getClassificatios() {
+        return this.get("emp/courses/list_classifications");
     }
 
-    getStuffUsers() {
-        return this.get("emp/users/list_instructors");
+    updateCourse(data){
+        return this.post("emp/courses/add_update", data);
     }
 
-    inactiveUser(id){
-        return this.post("emp/users/update", {'USER_ID' : id,'ACTIVE' : 0});
-    }
-
-    activeUser(id){
-        return this.post("emp/users/update", {'USER_ID' : id,'ACTIVE' : 1});
-    }
-
-    addUser(data){
-        return this.post("emp/users/add", data);
+    deleteCourse(data){
+        return this.post("emp/courses/delete", data);
     }
 }
 
