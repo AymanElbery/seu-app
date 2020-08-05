@@ -102,6 +102,7 @@ export class BlankComponent implements OnInit {
       const dialogConfig = new MatDialogConfig();
       dialogConfig.autoFocus = true;
       dialogConfig.disableClose = true;
+      dialogConfig.width = '75%';
       dialogConfig.maxWidth = 1000;
       //dialogConfig.height = '88%';
       this.dialog.open(DocsConfirmComponent, dialogConfig);
