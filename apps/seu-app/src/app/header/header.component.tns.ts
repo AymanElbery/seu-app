@@ -34,4 +34,7 @@ export class HeaderComponent implements OnInit {
     goHome() {
       this.router.navigate(['/land']);
     }
+    navigate(route: string) {
+      this.router.navigate([route]);
+    }
 }

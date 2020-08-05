@@ -17,8 +17,10 @@ export class AdmissionResultComponent {
   environment;
   AddReqForm: FormGroup;
   submitted = false;
+  messages = [];
   @ViewChild('recaptchaRef', { read: RecaptchaComponent, static: false }) recaptchaRef: RecaptchaComponent;
 
+  autosubmit = false;
   constructor(private toastr: AppToasterService, private admissionUgservice: AdmissionUGService, private fb: FormBuilder, private translate: TranslateService, private router: Router) {
 
     if (this.admissionUgservice.checkResultData) {
@@ -31,10 +33,9 @@ export class AdmissionResultComponent {
     if (this.admissionUgservice.isLoggedIn) {
       this.AddReqForm.controls['ssn'].setValue(this.admissionUgservice.LoggedInUser['SSN']);
       this.AddReqForm.controls['capcha'].setValue(this.admissionUgservice.LoggedInToken);
+      this.autosubmit = true;
       this.onFormSubmit();
     }
-
-
 
     this.environment = environment;
   }
@@ -49,12 +50,15 @@ export class AdmissionResultComponent {
       return;
     }
     this.submitted = true;
+    this.messages = [];
     this.admissionUgservice.getresstatus(this.AddReqForm.value).subscribe(resdttaus => {
       const status = resdttaus['status'];
       if (status == true) {
         if (!resdttaus['data']['student_data']) {
-          this.toastr.push([{ type: 'error', 'body': resdttaus['data']['message'] }]);
+          this.messages = [{ type: 'error', 'body': resdttaus['data']['message'] }];
+          this.toastr.push(this.messages);
           this.recaptchaRef.reset();
+          this.AddReqForm.reset();
         } else {
           this.admissionUgservice.checkResultData = (resdttaus as any).data;
           this.router.navigate(['/apps/admission-ug/display-result/']);

@@ -17,16 +17,19 @@ import { RecaptchaModule } from 'ng-recaptcha';
 import { AdmissionUGService } from './services/admission-ug.service';
 import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 import { UGLandingComponent } from './components/ug-landing/ug-landing.component';
+import { PaymentsModule } from '../../payments/payments.module';
+import { PayFeeCheckComponent } from './components/pay-fee-check/pay-fee-callback.component';
 
 
 @NgModule({
-  declarations: [UGHomeComponent, AdmissionResultComponent, PayFeeComponent, UploadDocumentComponent,
-    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent, PaymentRefundComponent,UGLandingComponent],
+  declarations: [UGHomeComponent, AdmissionResultComponent, PayFeeComponent, UploadDocumentComponent,PayFeeCheckComponent,
+    AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent, PaymentRefundComponent, UGLandingComponent],
   imports: [
     AdmissionUGRoutingModule,
     SeucommonModule,
     RecaptchaModule,
-    AppsSharedModule
+    AppsSharedModule,
+    PaymentsModule
   ]
 })
 export class AdmissionUGModule {

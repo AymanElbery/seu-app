@@ -1,6 +1,6 @@
 export const environment = {
-  production: false,
-  cmslink: 'https://seu.edu.sa/umbraco/Surface/',
+  production:false,
+  cmslink: 'https://test.seu.edu.sa/umbraco/Surface/',
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
@@ -8,7 +8,7 @@ export const environment = {
   servie_admission: 'https://apps.seu.edu.sa/newservices/api-test/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
   servicesprefix: 'api-test', // api-test
-  appsprefix: 'apps-prod', // api-test
+  appsprefix: 'apps-test', // api-test
   loginpage: 'login-testl.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
   ssoAuth: 'sso:s$0$3u2030',
@@ -26,7 +26,6 @@ export const environment = {
     'l.alrashed@seu.edu.sa',
     'haltamimy@seu.edu.sa',
     'a.dossari@seu.edu.sa',
-
     'halhabib@seu.edu.sa',
     't.aldawish@seu.edu.sa',
     'balsaif@seu.edu.sa',

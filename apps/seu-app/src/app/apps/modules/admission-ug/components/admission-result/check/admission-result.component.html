@@ -1,10 +1,10 @@
 <div class="main-content">
-  <app-service-header title="{{'ug' | translate}}"  subtitle="{{'AdmissionUgResult' | translate}}"></app-service-header>
+  <app-service-header title="{{'ug' | translate}}" subtitle="{{'AdmissionUgResult' | translate}}"></app-service-header>
 
   <!-- <service-header title='{{"AdmissionUgResult" | translate}}'></service-header> -->
   <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
-
-  <section class="dashboard-wrap" style="margin-top: 30px;">
+  <seu-flash [msgs]="messages" [isLoading]="submitted"></seu-flash>
+  <section *ngIf="!autosubmit" class="dashboard-wrap" style="margin-top: 30px;">
     <form role="form" [formGroup]="AddReqForm">
       <div class="modal-body">
 
@@ -23,7 +23,8 @@
           <div class=" col-md-6 col-sm-6">
             <div class="state">
               <h6>{{"captcha"|translate}} <span class="reqstart">*</span></h6>
-              <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey"></re-captcha>
+              <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey">
+              </re-captcha>
 
 
             </div>

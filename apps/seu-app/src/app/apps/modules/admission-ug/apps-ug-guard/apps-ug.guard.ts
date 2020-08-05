@@ -56,8 +56,6 @@ export class AppsUgGuard implements CanActivate {
       if (!this.isActiveService(state)) {
         return false;
       }
-    } else {
-      return false;
     }
     const curr_url = state['url'].replace('/apps/admission-ug/', '');
     if (curr_url == 'admission-result') {

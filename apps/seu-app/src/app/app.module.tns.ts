@@ -40,6 +40,9 @@ import { AdsComponent } from './ads/ads.component.tns';
 import { PersonalModule } from './wafi/personal/personal.module.tns';
 import { EmployeeRequestsModule } from './wafi/employee-requests/employee-requests.module.tns';
 import { AdministrativeModule } from './wafi/administrative/administrative.module.tns';
+import { BranchesComponent } from './branches/branches.component.tns';
+import { AcceptanceComponent } from './acceptance/acceptance.component.tns';
+
 
 
 
@@ -51,7 +54,10 @@ import { AdministrativeModule } from './wafi/administrative/administrative.modul
     NotificationsComponent,
     PolicyComponent,
     NewsComponent,
-    AdsComponent
+    AdsComponent,
+    BranchesComponent,
+    AcceptanceComponent
+
   ],
   imports: [
     AppTransModule,
