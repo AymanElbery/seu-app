@@ -255,7 +255,7 @@
                             <label for="twitterId">{{"docs_confirm.twitter"|translate}}</label>
                             <input type="text" (input)="removeTwitterIdError()"
                                 [ngClass]="{'error-required': twitterId_error == true}" [(ngModel)]="twitterId"
-                                name="twitterId" [value]="twitter" class="form-control">
+                                name="twitterId" [value]="twitterId" class="form-control">
                             <span *ngIf="twitterId_error"
                                 class="text text-danger">{{"docs_confirm.required_error"|translate}}</span>
                         </div>
