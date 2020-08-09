@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnDestroy, Inject } from '@angular/core';
 import { UserService } from '../account/services/user.service';
 
 import { HttpRequestService } from '../shared/services/http-request.service';
@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AppToasterService } from '../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-docs-confirm-home',
@@ -99,9 +99,11 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
   showWorkEmailFields = false;
   selectedCityId;
 
+  FULLNameAr = '';
+  FULLNameEn = '';
 
   constructor(public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService, public translate: TranslateService,
-    public dialogRef: MatDialogRef<DocsConfirmComponent>,
+    public dialogRef: MatDialogRef<DocsConfirmComponent>,@Inject(MAT_DIALOG_DATA) public confirmdata
   ) {
     this.userService.getCities().subscribe(
       (response: any) => {
@@ -120,6 +122,10 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
                 this.fatherNameEn = response.data[0].FATHER_NAME_S;
                 this.midNameEn = response.data[0].MID_NAME_S;
                 this.lastNameEn = response.data[0].LAST_NAME_S;
+
+                this.FULLNameAr = this.firstNameAr + ' ' + this.fatherNameAr + ' ' + this.midNameAr + ' ' + this.lastNameAr;
+                this.FULLNameEn = this.firstNameEn + ' ' + this.fatherNameEn + ' ' + this.midNameEn + ' ' + this.lastNameEn;
+
 
                 this.ssn = response.data[0].NATIONAL_ID;
                 this.mobile = response.data[0].MOBILE_NO;
@@ -430,7 +436,7 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
           if (response) {
             //this.router.navigate(['/home']);
             if (response['status']) {
-              this.userService.userData['showConfirmations'] = false;
+              this.userService.userData['emp_confirm']['show'] = false;
               this.dialogRef.close();
             } else {
               this.requesting = false;

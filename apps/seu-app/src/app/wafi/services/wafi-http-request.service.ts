@@ -57,11 +57,9 @@ getempIdLoggedin() {
     const url = this.getApiURI() + path;
     body = this.apllyBasicParams(body);
     const headers = this.getHeaders();
-    console.log('20');
     //body.lang = this.translate.currentLang == 'ar' ? 1 : 2;
   
     try {
-      console.log('22');
     return this.http.post(url, JSON.stringify(body), { headers });
     } catch (e) {console.log('e'); }
   }

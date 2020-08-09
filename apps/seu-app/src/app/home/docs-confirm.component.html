@@ -7,17 +7,23 @@
         </div>
         <form>
             <div class="modal-body" style="width: 100%" (scroll)="onScroll($event)">
+                <div *ngIf="confirmdata['notes']">
+                    <div class='alert alert-info' role="alert">
+                        {{confirmdata['notes']}}
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-5">
                         <div class="form-group">
                             <label for="name_ar">{{"docs_confirm.name_ar"|translate}}</label>
-                            <h5>{{ firstNameAr }} {{ firstNameAr }} {{ midNameAr }} {{ lastNameAr }}</h5>
+                            <h5>{{ FULLNameAr }}</h5>
                         </div>
                     </div>
                     <div class="col-md-5">
                         <div class="form-group">
                             <label for="name_en">{{"docs_confirm.name_en"|translate}}</label>
-                            <h5>{{ firstNameEn }} {{ fatherNameEn }} {{ midNameEn }} {{ lastNameEn }}</h5>
+                            <h5>{{ FULLNameEn }}</h5>
                         </div>
                     </div>
                     <div class="col-md-2">
