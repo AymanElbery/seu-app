@@ -107,52 +107,54 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
       (response: any) => {
         if (response) {
           this.cities = response.data;
-        }
-      },
-      error => { }
-    );
 
-    this.userService.getEmpData(this.userService.userData.id).subscribe(
-      (response: any) => {
-        if (response) {
-          this.firstNameAr = response.data[0].FIRST_NAME;
-          this.fatherNameAr = response.data[0].FATHER_NAME;
-          this.midNameAr = response.data[0].MID_NAME;
-          this.lastNameAr = response.data[0].LAST_NAME;
+          this.userService.getEmpData(this.userService.userData.id).subscribe(
+            (response: any) => {
+              if (response) {
+                this.firstNameAr = response.data[0].FIRST_NAME;
+                this.fatherNameAr = response.data[0].FATHER_NAME;
+                this.midNameAr = response.data[0].MID_NAME;
+                this.lastNameAr = response.data[0].LAST_NAME;
 
-          this.firstNameEn = response.data[0].FIRST_NAME_S;
-          this.fatherNameEn = response.data[0].FATHER_NAME_S;
-          this.midNameEn = response.data[0].MID_NAME_S;
-          this.lastNameEn = response.data[0].LAST_NAME_S;
+                this.firstNameEn = response.data[0].FIRST_NAME_S;
+                this.fatherNameEn = response.data[0].FATHER_NAME_S;
+                this.midNameEn = response.data[0].MID_NAME_S;
+                this.lastNameEn = response.data[0].LAST_NAME_S;
 
-          this.ssn = response.data[0].NATIONAL_ID;
-          this.mobile = response.data[0].MOBILE_NO;
-          this.workEmail = response.data[0].WORK_EMAIL;
-          this.work = response.data[0].ACTUAL_DEPT_DESC;
-          this.email = response.data[0].EMAIL;
-          this.twitterId = response.data[0].TWITTER_ID;
+                this.ssn = response.data[0].NATIONAL_ID;
+                this.mobile = response.data[0].MOBILE_NO;
+                this.workEmail = response.data[0].WORK_EMAIL;
+                this.work = response.data[0].ACTUAL_DEPT_DESC;
+                this.email = response.data[0].EMAIL;
+                this.twitterId = response.data[0].TWITTER_ID;
 
-          this.district = response.data[0].DISTRICT;
-          this.city = response.data[0].CITY;
-          if (this.city) {
-            for (let i = 0; i < this.cities.length; i++) {
-              if (this.cities[i].NAME_AR == this.city) {
-                this.selectedCityId = this.cities[i].ID;
-              }
-            }
-            this.userService.getDistrictsByCityId(this.selectedCityId).subscribe(
-              (response: any) => {
-                if (response) {
-                  this.districts = response.data;
+                this.district = response.data[0].DISTRICT;
+                this.city = response.data[0].CITY;
+                if (this.city) {
+                  for (let i = 0; i < this.cities.length; i++) {
+                    if (this.cities[i].NAME_AR == this.city) {
+                      this.selectedCityId = this.cities[i].ID;
+                    }
+                  }
+                  this.userService.getDistrictsByCityId(this.selectedCityId).subscribe(
+                    (response: any) => {
+                      if (response) {
+                        this.districts = response.data;
+                      }
+                    },
+                    error => { }
+                  );
                 }
-              },
-              error => { }
-            );
-          }
-          this.buildingNo = response.data[0].BUILDING_NO;
-          this.additionalNumber = response.data[0].ADDITIONAL_NUMBER;
-          this.postalCode = response.data[0].POSTAL_CODE;
-          this.streetName = response.data[0].STREET_NAME;
+                this.buildingNo = response.data[0].BUILDING_NO;
+                this.additionalNumber = response.data[0].ADDITIONAL_NUMBER;
+                this.postalCode = response.data[0].POSTAL_CODE;
+                this.streetName = response.data[0].STREET_NAME;
+              }
+            },
+            error => { }
+          );
+
+
         }
       },
       error => { }
