@@ -11,7 +11,12 @@
               <div class="widget-header">
 
                 <div class="widget-title d-flex justify-content-between">
-                  <h3> {{"menu.PublicServices" | translate}} </h3>
+                  <h3> {{"menu.PublicServices" | translate}}
+                    <p *ngIf="userService.userData && (userService.userData.activeRole=='Instructor' || userService.userData.activeRole=='Employee')"
+                      id="sysnotes" [innerHtml]='sysNotes'>
+                    </p>
+
+                  </h3>
                   <img src="assets/images/sys.png">
 
                 </div>
