@@ -12,9 +12,9 @@ import { UserService } from '../../account/services/user.service';
 export class WafiHttpRequestService {
 
   constructor(private translate: TranslateService,
-              private http: HttpClient,
-              private user: UserService,
-              private globalService: GlobalBaseService) { }
+    private http: HttpClient,
+    private user: UserService,
+    private globalService: GlobalBaseService) { }
 
 
   getApiURI() {
@@ -24,9 +24,9 @@ export class WafiHttpRequestService {
     const url = this.getApiURI() + '/' + path;
     return this.http.get(url);
   }
-getempIdLoggedin() {
-  return this.user.userData.id;
-}
+  getempIdLoggedin() {
+    return this.user.userData.id;
+  }
   apllyBasicParams(obj) {
     obj.empId = this.user.userData.id;
     obj.lang = this.translate.currentLang == 'ar' ? 1 : 2;
@@ -34,9 +34,9 @@ getempIdLoggedin() {
     // tslint:disable-next-line: max-line-length
     obj.authorizationKey = 'RSUyZlJMR0tMc1QlMmJjRFAjdHQ1cms4Y3pPOWRmNk50K0BlR2ElMmJjYlZhY0ZhVklGUE5hazdlOU0lM2Q6JFlpOEVQR0VXRWI0YXE3JVZFd0xORClsVW9oMTUlMj1Pd2olMmZrUCUyZnlYTjUhVFM4SjN6cWs2RDRUbEdP';
     obj.sessionId = this.globalService.getSID();
-   
-   obj["empId"] = this.user.userData.id;
-   
+
+    obj["empId"] = this.user.userData.id;
+
     return obj;
   }
   getHeaders() {
@@ -47,8 +47,6 @@ getempIdLoggedin() {
   postRequest(path: string, body: any = {}) {
     const url = this.getApiURI() + path;
     body = this.apllyBasicParams(body);
-    console.log('body');
-    console.log(body);
     const headers = this.getHeaders();
     return this.http.post(url, JSON.stringify(body), { headers });
   }
@@ -58,10 +56,10 @@ getempIdLoggedin() {
     body = this.apllyBasicParams(body);
     const headers = this.getHeaders();
     //body.lang = this.translate.currentLang == 'ar' ? 1 : 2;
-  
+
     try {
-    return this.http.post(url, JSON.stringify(body), { headers });
-    } catch (e) {console.log('e'); }
+      return this.http.post(url, JSON.stringify(body), { headers });
+    } catch (e) {  }
   }
 
 }
