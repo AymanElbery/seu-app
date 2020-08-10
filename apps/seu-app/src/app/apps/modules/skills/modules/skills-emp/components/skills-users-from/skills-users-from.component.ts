@@ -11,10 +11,11 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./skills-users-from.component.css']
 })
 export class SkillsUsersFromComponent implements OnInit {
-  
+
   isLoading = false;
   submitted = false;
-  AddUserForm : FormGroup;
+  AddUserForm: FormGroup;
+  instuctors = false;
 
   constructor(
     private fb: FormBuilder,
@@ -27,14 +28,18 @@ export class SkillsUsersFromComponent implements OnInit {
     this.AddUserForm = this.fb.group({
       'NAME_AR': ['', [Validators.required]],
       'NAME_EN': ['', [Validators.required]],
-      'SEU_EMAIL': ['', [Validators.required, Validators.email]],
+      'SEU_EMAIL': ['', [Validators.required]], //, Validators.email
       'ROLE': ['', [Validators.required]],
       'ACTIVE': [''],
     });
   }
 
   ngOnInit() {
-    
+    if (document.location.href.indexOf("/instructors") !== -1) {
+      this.instuctors = true;
+      this.AddUserForm.controls['ROLE'].setValue("instructor");
+    }
+
   }
 
   onSubmit() {
@@ -43,12 +48,16 @@ export class SkillsUsersFromComponent implements OnInit {
     }
     let data = this.AddUserForm.value;
     this.submitted = true;
-    this.skillsUserService.addUser(data).subscribe(
+    this.skillsUserService.addUser(data, this.instuctors).subscribe(
       (response: any) => {
         this.isLoading = true;
         if (response) {
           if (response.status) {
-            this.router.navigate(['../users-list'], { relativeTo: this.route });
+            if (this.instuctors) {
+              this.router.navigate(['../instructors-list'], { relativeTo: this.route });
+            } else {
+              this.router.navigate(['../users-list'], { relativeTo: this.route });
+            }
             this.toastr.push([{
               'type': 'success',
               'body': this.translate.instant("users.success_request")

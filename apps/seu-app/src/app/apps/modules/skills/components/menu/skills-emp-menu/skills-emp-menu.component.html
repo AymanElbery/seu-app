@@ -1,4 +1,4 @@
-<div [ngClass]="{'active': activeRoute == 'emp'}" class="nav-item" >
+<div [ngClass]="{'active': activeRoute == 'emp'}" class="nav-item">
   <a href="#" routerLink="emp"><span>{{ "menu.home" | translate }} </span>
     <i class="ik ik-home"></i></a>
 </div>
@@ -7,12 +7,14 @@
   <a href="javascript:void(0)"><span>{{ "menu.users" | translate }} </span>
     <i class="ik ik-user"></i></a>
   <div class="submenu-content">
-    <a [ngClass]="{'active': activeRoute == 'users-list'}" href="#" class="menu-item" routerLink="emp/users-list">
+    <a *ngIf="is_admin" [ngClass]="{'active': activeRoute == 'users-list'}" href="#" class="menu-item"
+      routerLink="emp/users-list">
       {{ "menu.users-list" | translate }}
     </a>
 
-    <a [ngClass]="{'active': activeRoute == 'users-add'}" href="#" class="menu-item" routerLink="emp/users-add">
-      {{ "menu.add-user" | translate }}
+    <a [ngClass]="{'active': activeRoute == 'instructors-list'}" href="#" class="menu-item"
+      routerLink="emp/instructors-list">
+      {{ "menu.instructors-list" | translate }}
     </a>
   </div>
 </div>

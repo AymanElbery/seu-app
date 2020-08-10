@@ -8,23 +8,32 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./skills-users-list.component.css']
 })
 export class SkillsUsersListComponent implements OnInit {
-  
+
   users;
   isLoading;
-
+  instuctors = false;
   constructor(
     private skillsUserService: SkillsUsersManagementService,
     private router: Router, private route: ActivatedRoute
   ) {
+    if (document.location.href.indexOf("/instructors") !== -1) {
+      this.instuctors = true;
+    }
     this.getAllUsers();
   }
 
   ngOnInit() {
   }
+  addNewUser() {
+    this.router.navigate(['../users-add'], { relativeTo: this.route })
+  }
+  addNewInstructor() {
+    this.router.navigate(['../instructors-add'], { relativeTo: this.route })
+  }
 
-  getAllUsers(){
+  getAllUsers() {
     this.isLoading = true;
-    this.skillsUserService.getAllUsers().subscribe(
+    this.skillsUserService.getAllUsers(this.instuctors).subscribe(
       (response: any) => {
         if (response) {
           this.users = response.data;
@@ -37,27 +46,27 @@ export class SkillsUsersListComponent implements OnInit {
     )
   }
 
-  inactiveUser(id){
+  inactiveUser(id) {
     this.isLoading = true;
-    this.skillsUserService.inactiveUser(id).subscribe(
+    this.skillsUserService.inactiveUser(id, this.instuctors).subscribe(
       (response: any) => {
         if (response) {
           this.getAllUsers();
         }
       },
-      error => {}
+      error => { }
     )
-  } 
+  }
 
-  activeUser(id){
+  activeUser(id) {
     this.isLoading = true;
-    this.skillsUserService.activeUser(id).subscribe(
+    this.skillsUserService.activeUser(id, this.instuctors).subscribe(
       (response: any) => {
         if (response) {
           this.getAllUsers();
         }
       },
-      error => {}
+      error => { }
     )
   }
 

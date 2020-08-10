@@ -5,10 +5,11 @@ import { SkillsUsersFromComponent } from './components/skills-users-from/skills-
 import { SkillsCoursesListComponent } from './components/skills-courses-list/skills-courses-list.component';
 import { SkillsCoursesFromComponent } from './components/skills-courses-from/skills-courses-from.component';
 import { SkillsADMINGuard } from '../../skills-guard/admin.guard';
+import { SkillsEMPGuard } from '../../skills-guard/emp.guard';
 
 export const componentDeclarations: any[] = [
-    SkillsUsersHomeComponent, 
-    SkillsUsersListComponent, 
+    SkillsUsersHomeComponent,
+    SkillsUsersListComponent,
     SkillsUsersFromComponent,
     SkillsCoursesListComponent,
     SkillsCoursesFromComponent,
@@ -26,6 +27,12 @@ export const routes: Routes = [
     },
     {
         path: 'users-add', component: SkillsUsersFromComponent, canActivate: [SkillsADMINGuard]
+    },
+    {
+        path: 'instructors-list', component: SkillsUsersListComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
+        path: 'instructors-add', component: SkillsUsersFromComponent, canActivate: [SkillsEMPGuard]
     },
     {
         path: 'courses-list', component: SkillsCoursesListComponent, canActivate: [SkillsADMINGuard]

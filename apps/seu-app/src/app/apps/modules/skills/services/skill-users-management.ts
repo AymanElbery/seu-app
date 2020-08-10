@@ -17,19 +17,38 @@ export class SkillsUsersManagementService extends SkillsRootService {
         super(http, router, config);
     }
 
-    getAllUsers() {
+    getAllUsers(instructors = false) {
+        if (instructors) {
+            return this.get("emp/instructors/list");
+        }
         return this.get("emp/users/list");
     }
 
-    inactiveUser(id) {
+    inactiveUser(id, instructors = false) {
+        if (instructors) {
+            return this.post("emp/instructors/update", { 'USER_ID': id, 'ACTIVE': 0 });
+        }
         return this.post("emp/users/update", { 'USER_ID': id, 'ACTIVE': 0 });
     }
 
-    activeUser(id) {
+    activeUser(id, instructors) {
+        if (instructors) {
+            return this.post("emp/instructor/update", { 'USER_ID': id, 'ACTIVE': 0 });
+        }
         return this.post("emp/users/update", { 'USER_ID': id, 'ACTIVE': 1 });
     }
 
-    addUser(data) {
+    addUser(data,instructors=false) {
+        if(instructors){
+            return this.post("emp/instructors/add", data);
+        }
+        return this.post("emp/users/add", data);
+    }
+
+    addInstructor(data,instructors) {
+        if(instructors){
+            return this.post("emp/instructors/add", data);
+        }
         return this.post("emp/users/add", data);
     }
 }
