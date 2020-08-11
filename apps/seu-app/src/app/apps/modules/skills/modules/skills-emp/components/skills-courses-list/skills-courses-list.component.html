@@ -19,7 +19,7 @@
                             <th scope="col">{{"courses.hr_hours" | translate}}</th>
                             <th scope="col">{{"courses.allowed_absense" | translate}}</th>
                             <th scope="col">{{"courses.status" | translate}}</th>
-                            <th scope="col">{{"courses.actions" | translate}}</th>
+                            <th style="width: 200px !important;" scope="col">{{"courses.actions" | translate}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,10 +47,10 @@
                                 <span *ngIf="course.STATUS == 1">{{"courses.course_active" | translate}}</span>
                                 <span *ngIf="course.STATUS == 2">{{"courses.course_canceled" | translate}}</span>
                             </td>
-                            <td>
-                                <button (click)="delete(course.ID)" class="btn btn-danger">{{"courses.delete" | translate}}</button>
-                                <button (click)="update(course.ID)" style="margin-right: 5px;" class="btn btn-info">{{"courses.edit" | translate}}</button>
-                                <button style="margin-top: 5px;" class="btn btn-info">{{"courses.appointments" | translate}}</button>
+                            <td style="width: 200px !important;">
+                                <button (click)="delete(course.ID)" class="btn-course-list">{{"courses.delete" | translate}}</button>
+                                <button (click)="update(course.ID)" class="btn-course-list">{{"courses.edit" | translate}}</button>
+                                <button (click)="appointments(course.ID)"class="btn-course-list">{{"courses.appointments" | translate}}</button>
                             </td>
                         </tr>
                     </tbody>

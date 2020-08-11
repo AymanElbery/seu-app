@@ -317,6 +317,40 @@
             </div>
         </div>
 
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.campus"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="campus" bindLabel="CAMP" [multiple]="true" bindValue="CAMP" formControlName="CAMP">
+                        </ng-select>
+                    </div>
+                    
+                    <div *ngIf="AddCourseForm.controls.CAMP.invalid && (AddCourseForm.controls.CAMP.dirty || AddCourseForm.controls.CAMP.touched)">
+                        <div *ngIf="AddCourseForm.controls.CAMP.errors.required">
+                          <b style="position: relative; left: -10px;" class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="col-md-6" *ngIf="checkCollege">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.colleges"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="colleges" bindLabel="COLL_TITLE" [multiple]="true" bindValue="COLL_PK" formControlName="COLLEGE">
+                        </ng-select>
+                    </div>
+                    
+                    <div *ngIf="AddCourseForm.controls.COLLEGE.invalid && (AddCourseForm.controls.COLLEGE.dirty || AddCourseForm.controls.COLLEGE.touched)">
+                        <div *ngIf="AddCourseForm.controls.COLLEGE.errors.required">
+                          <b style="position: relative; left: -10px;" class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
         <div class="row" style="margin-top: 200px; text-align: center;">
             <div class="col-md-12">
               <button *ngIf="!disabled && !course" style="width: 20%;" [disabled]="submitted || AddCourseForm.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "courses.save" | translate}}  <i class="fa fa-save"></i></button>

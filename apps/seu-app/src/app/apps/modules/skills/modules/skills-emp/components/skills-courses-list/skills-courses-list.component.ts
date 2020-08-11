@@ -42,8 +42,17 @@ export class SkillsCoursesListComponent implements OnInit {
     )
   }
 
+  setCampus(id){
+    this.router.navigate(['../courses-campus/'+id], { relativeTo: this.route })
+  }
+
   update(id){
+    this.isLoading = true;
     this.router.navigate(['../courses-update/'+id], { relativeTo: this.route })
+  }
+  appointments(id){
+    this.isLoading = true;
+    this.router.navigate(['../courses-appointments/'+id], { relativeTo: this.route })
   }
 
   delete(id){

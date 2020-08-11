@@ -19,9 +19,21 @@ export class SkillsCourseService extends SkillsRootService{
     getAllCourses() {
         return this.get("emp/courses/list");
     }
+
+    getCampus() {
+        return this.get("lookups/campus");
+    }
+
+    getColleges() {
+        return this.get("lookups/colleges_groups");
+    }
     
     getCourseById(id) {
         return this.post("emp/courses/get_course", id);
+    }
+    
+    getCourseAppointments(id) {
+        return this.post("emp/courses/get_course_appointments", id);
     }
     
     getClassificatios() {
@@ -32,8 +44,16 @@ export class SkillsCourseService extends SkillsRootService{
         return this.post("emp/courses/add_update", data);
     }
 
+    addCourseAppointment(data){
+        return this.post("emp/courses/add_course_appointment", data);
+    }
+
     deleteCourse(data){
         return this.post("emp/courses/delete", data);
+    }
+
+    deleteCourseAppointment(data){
+        return this.post("emp/courses/delete_appointment", data);
     }
 }
 
