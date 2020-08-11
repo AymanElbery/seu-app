@@ -16,11 +16,11 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe]
 })
 export class SkillsCoursesFromComponent implements OnInit {
-  
+
   datePickerConfig: Partial<BsDatepickerConfig>;
   isLoading = false;
   submitted = false;
-  AddCourseForm : FormGroup;
+  AddCourseForm: FormGroup;
   stuffs;
   classifications;
   classRoomDisabled;
@@ -60,15 +60,20 @@ export class SkillsCoursesFromComponent implements OnInit {
     }
     this.getClassificatios();
     this.getStuffUsers();
-    
-    
+
+
 
     this.AddCourseForm = this.fb.group({
       'TITLE': ['', [Validators.required]],
+      'TITLE_EN': ['', [Validators.required]],
       'TYPE': ['', [Validators.required]],
       'CERT_TYPE': ['', [Validators.required]],
       'STAFF_ID': ['', [Validators.required]],
       'INSTITUTION': ['', [Validators.required]],
+      'INSTITUTION_EN': ['', [Validators.required]],
+      'LOCATION_AR': ['', [Validators.required]],
+      'LOCATION_EN': ['', [Validators.required]],
+      'C_LANG': ['', [Validators.required]],
       'SEATS': ['', [Validators.required]],
       'START_DATE': ['', [Validators.required]],
       'END_DATE': ['', [Validators.required]],
@@ -95,64 +100,51 @@ export class SkillsCoursesFromComponent implements OnInit {
   }
 
   ngOnInit() {
-    let lengthCheck = this.router.url.split("/").length;
-    if (lengthCheck == 6) {
-      this.isLoading = true;
-      this.updated_id = this.router.url.split("/")[5];
+    // let lengthCheck = this.router.url.split("/").length;
+    // if (lengthCheck == 6) {
+    //   this.isLoading = true;
+    //   this.updated_id = this.router.url.split("/")[5];
+    //   this.getCourseById(this.updated_id);
+    // }
+    if (this.route.snapshot.params['id']) {
+      this.updated_id = this.route.snapshot.params['id'];
       this.getCourseById(this.updated_id);
     }
   }
-  
-  getCourseById(id){
+  allcampus(code = '') {
+    this.AddCourseForm.controls['CAMP'].setValue(this.campus.filter(item => {
+      return code == '' || item['CAMP_PK'].includes(code);
+    }).map(item => item.CAMP_PK));
+    return false;
+  }
+  allcolleges() {
+    this.AddCourseForm.controls['COLLEGE'].setValue(this.colleges.map(item => item.COLL_PK));
+    return false;
+
+  }
+  getCourseById(id) {
+    this.isLoading = true;
     let data = {
-      'ID'      : id,
+      'ID': id,
     };
     this.skillsCourseService.getCourseById(data).subscribe(
       (response: any) => {
         if (response) {
-          this.course = response.data[0];
+          this.course = response.data;
           this.course.START_DATE = (this.course.START_DATE) ? this.datePipe.transform(this.course.START_DATE, 'MM/dd/yyyy') : "";
           this.course.END_DATE = (this.course.END_DATE) ? this.datePipe.transform(this.course.END_DATE, 'MM/dd/yyyy') : "";
           this.course.REG_START_DATE = (this.course.REG_START_DATE) ? this.datePipe.transform(this.course.REG_START_DATE, 'MM/dd/yyyy') : "";
           this.course.REG_END_DATE = (this.course.REG_END_DATE) ? this.datePipe.transform(this.course.REG_END_DATE, 'MM/dd/yyyy') : "";
           this.course.EXCUSE_DATE = (this.course.EXCUSE_DATE) ? this.datePipe.transform(this.course.EXCUSE_DATE, 'MM/dd/yyyy') : "";
           this.course.CANCEL_DATE = (this.course.CANCEL_DATE) ? this.datePipe.transform(this.course.CANCEL_DATE, 'MM/dd/yyyy') : "";
-          
+
           this.classRoomDisabled = (this.course.FACE_ATTEND == 1) ? false : true;
           this.linkDisabled = (this.course.VIRTUAL_ATTEND == 1) ? false : true;
           this.cancelDisabled = (this.course.CANCEL_OPTION == 1) ? false : true;
           this.excuseDisabled = (this.course.EXCUSE_OPTION == 1) ? false : true;
           this.skillsDisabled = (this.course.SKILLS_OPTION == 1) ? false : true;
-          
-          this.AddCourseForm.patchValue({
-            ALLOWED_ABSENSE : this.course.ALLOWED_ABSENSE,
-            CANCEL_DATE : this.course.CANCEL_DATE,
-            CANCEL_OPTION : this.course.CANCEL_OPTION,
-            CERT_TYPE : this.course.CERT_TYPE,
-            CLASSIFICATION_ID : this.course.CLASSIFICATION_ID,
-            CLASS_ROOM : this.course.CLASS_ROOM,
-            END_DATE : this.course.END_DATE,
-            EXCUSE_DATE : this.course.EXCUSE_DATE,
-            EXCUSE_OPTION : this.course.EXCUSE_OPTION,
-            FACE_ATTEND : this.course.FACE_ATTEND,
-            HR_HOURS : this.course.HR_HOURS,
-            INSTITUTION : this.course.INSTITUTION,
-            LINK : this.course.LINK,
-            PERIOD : this.course.PERIOD,
-            REG_END_DATE : this.course.REG_END_DATE,
-            REG_START_DATE : this.course.REG_START_DATE,
-            SEATS : this.course.SEATS,
-            SKILLS_OPTION : this.course.SKILLS_OPTION,
-            STAFF_ID : this.course.STAFF_ID,
-            CAMP : this.course.CAMP,
-            COLLEGE : this.course.COLLEGE,
-            START_DATE : this.course.START_DATE,
-            STATUS : this.course.STATUS,
-            TIME : this.course.TIME,
-            TITLE : this.course.TITLE,
-            TYPE : this.course.TYPE,
-            VIRTUAL_ATTEND : this.course.VIRTUAL_ATTEND,
-          });
+
+          this.AddCourseForm.patchValue(this.course);
           this.isLoading = false;
         }
       },
@@ -161,37 +153,37 @@ export class SkillsCoursesFromComponent implements OnInit {
     )
   }
 
-  classRoomChange(){
+  classRoomChange() {
     this.classRoomDisabled = !this.AddCourseForm.value.FACE_ATTEND;
   }
-  
-  linkChange(){
+
+  linkChange() {
     this.linkDisabled = !this.AddCourseForm.value.VIRTUAL_ATTEND;
   }
 
-  cancelChange(){
+  cancelChange() {
     this.cancelDisabled = !this.AddCourseForm.value.CANCEL_OPTION;
   }
 
-  skillsChange(){
+  skillsChange() {
     this.skillsDisabled = !this.AddCourseForm.value.SKILLS_OPTION;
   }
 
-  excuseChange(){
+  excuseChange() {
     this.excuseDisabled = !this.AddCourseForm.value.EXCUSE_OPTION;
   }
 
-  changeFormate(date){
+  changeFormate(date) {
     var newDate = new Date(date).toLocaleDateString();
     var res = newDate.split("/");
     var day = res[0];
     var month = res[1];
     var year = res[2];
-    var todayFormat = year+'-'+month+'-'+day;
+    var todayFormat = year + '-' + month + '-' + day;
     return todayFormat;
   }
 
-  getStuffUsers(){
+  getStuffUsers() {
     this.skillsUserService.getStuffUsers().subscribe(
       (response: any) => {
         if (response) {
@@ -203,7 +195,7 @@ export class SkillsCoursesFromComponent implements OnInit {
     )
   }
 
-  getClassificatios(){
+  getClassificatios() {
     this.skillsCourseService.getClassificatios().subscribe(
       (response: any) => {
         if (response) {
@@ -215,7 +207,7 @@ export class SkillsCoursesFromComponent implements OnInit {
     )
   }
 
-  getCampus(){
+  getCampus() {
     this.skillsCourseService.getCampus().subscribe(
       (response: any) => {
         if (response) {
@@ -227,7 +219,7 @@ export class SkillsCoursesFromComponent implements OnInit {
     )
   }
 
-  getColleges(){
+  getColleges() {
     this.skillsCourseService.getColleges().subscribe(
       (response: any) => {
         if (response) {
@@ -241,10 +233,10 @@ export class SkillsCoursesFromComponent implements OnInit {
 
 
 
-  onUpdate(){
+  onUpdate() {
     this.onSubmit("update");
   }
-  
+
   onSubmit(type = "insert") {
     if (this.AddCourseForm.invalid) {
       return;
@@ -264,14 +256,14 @@ export class SkillsCoursesFromComponent implements OnInit {
     data.END_DATE = this.changeFormate(data.END_DATE);
     data.REG_START_DATE = this.changeFormate(data.REG_START_DATE);
     data.REG_END_DATE = this.changeFormate(data.REG_END_DATE);
-    data.CANCEL_DATE = (data.CANCEL_DATE) ? this.changeFormate(data.CANCEL_DATE): '';
-    data.EXCUSE_DATE = (data.EXCUSE_DATE) ? this.changeFormate(data.EXCUSE_DATE): '';
+    data.CANCEL_DATE = (data.CANCEL_DATE) ? this.changeFormate(data.CANCEL_DATE) : '';
+    data.EXCUSE_DATE = (data.EXCUSE_DATE) ? this.changeFormate(data.EXCUSE_DATE) : '';
 
     if (type == "update") {
       data.ID = this.updated_id;
       this.redirectUrl = '../../courses-list';
       this.redirectMsg = 'courses.success_update';
-    }else{
+    } else {
       this.redirectUrl = '../courses-list';
       this.redirectMsg = 'courses.success_request';
     }
@@ -299,7 +291,7 @@ export class SkillsCoursesFromComponent implements OnInit {
         this.submitted = false;
       }
     );
-    
+
   }
 
 }

@@ -48,19 +48,23 @@
 
                     <div class="state" style="margin-top: 20px" *ngIf="!instuctors">
                         <h6>{{"users.role"|translate}} <span class="reqstart">*</span></h6>
-                        <select class="form-control" formControlName="ROLE">
+                        <!-- <select class="form-control" formControlName="ROLE">
                             <option value="admin">{{"users.admin"|translate}} </option>
                             <option value="instructor">{{"users.instructor"|translate}} </option>
                             <option value="admission">{{"users.admission"|translate}} </option>
                             <option value="college">{{"users.college"|translate}} </option>
-                        </select>
+                        </select> -->
+                        <ng-select [items]="groups" bindLabel="G_NAME" bindValue="G_CODE"
+                            formControlName="ROLE">
+                        </ng-select>
+
                     </div>
                     <div class="state" style="margin-top: 20px" *ngIf="AddUserForm.controls['ROLE'].value == 'college'">
                         <ng-container>
                             <div class="state">
                                 <h6>{{"courses.colleges"|translate}} <span class="reqstart">*</span></h6>
-                                <ng-select [items]="colleges" bindLabel="COLL_TITLE"
-                                    bindValue="COLL_PK" formControlName="COLL_CODE">
+                                <ng-select [items]="colleges" bindLabel="COLL_TITLE" bindValue="COLL_PK"
+                                    formControlName="COLL_CODE">
                                 </ng-select>
                             </div>
                             <!--                     

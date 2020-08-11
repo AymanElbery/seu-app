@@ -5,6 +5,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { SkillsCourseService } from '../../../../services/skill-course';
+import { SkillsLookupsService } from '../../../../services/skill-lookups';
 
 @Component({
   selector: 'app-skills-users-from',
@@ -18,6 +19,7 @@ export class SkillsUsersFromComponent implements OnInit {
   AddUserForm: FormGroup;
   instuctors = false;
   colleges = [];
+  groups = [];
   constructor(
     private fb: FormBuilder,
     private skillsUserService: SkillsUsersManagementService,
@@ -25,7 +27,7 @@ export class SkillsUsersFromComponent implements OnInit {
     private translate: TranslateService,
     private router: Router,
     private route: ActivatedRoute,
-    private skillsCourseService: SkillsCourseService
+    private lookups: SkillsLookupsService
 
   ) {
     this.AddUserForm = this.fb.group({
@@ -48,10 +50,11 @@ export class SkillsUsersFromComponent implements OnInit {
 
 
   getColleges() {
-    this.skillsCourseService.getColleges().subscribe(
+    this.lookups.getCollegesGroups().subscribe(
       (response: any) => {
         if (response) {
           this.colleges = response.data.colleges;
+          this.groups = response.data.groups;
         }
       },
       error => {
