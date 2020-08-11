@@ -42,6 +42,10 @@ export class SkillsCoursesListComponent implements OnInit {
     )
   }
 
+  addNewCourse(){
+    this.router.navigate(['../courses-add'], { relativeTo: this.route })
+  }
+
   setCampus(id){
     this.router.navigate(['../courses-campus/'+id], { relativeTo: this.route })
   }

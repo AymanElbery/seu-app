@@ -40,6 +40,7 @@
                                     <b *ngIf="user.ROLE == 'instructor'">{{"users.instructor" | translate}}</b>
                                     <b *ngIf="user.ROLE == 'admission'">{{"users.admission" | translate}}</b>
                                     <b *ngIf="user.ROLE == 'college'">{{"users.college" | translate}}</b>
+                                    <b *ngIf="user.ROLE == 'college'"> - {{user.COLL_CODE}}</b>
                                 </td>
                                 <td>
                                     <b style="font-size: 1.5em; font-weight: bold;" class="text-success"

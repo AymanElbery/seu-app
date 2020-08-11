@@ -7,12 +7,12 @@
   <a href="javascript:void(0)"><span>{{ "menu.users" | translate }} </span>
     <i class="ik ik-user"></i></a>
   <div class="submenu-content">
-    <a *ngIf="is_admin" [ngClass]="{'active': activeRoute == 'users-list'}" href="#" class="menu-item"
+    <a *ngIf="is_admin" [ngClass]="{'active': activeRoute == 'users-list' || activeRoute == 'users-add'}" href="#" class="menu-item"
       routerLink="emp/users-list">
       {{ "menu.users-list" | translate }}
     </a>
 
-    <a [ngClass]="{'active': activeRoute == 'instructors-list'}" href="#" class="menu-item"
+    <a [ngClass]="{'active': activeRoute == 'instructors-list' || activeRoute == 'instructors-add'}" href="#" class="menu-item"
       routerLink="emp/instructors-list">
       {{ "menu.instructors-list" | translate }}
     </a>
@@ -23,12 +23,12 @@
   <a href="javascript:void(0)"><span>{{ "menu.courses" | translate }} </span>
     <i class="ik ik-user"></i></a>
   <div class="submenu-content">
-    <a [ngClass]="{'active': activeRoute == 'courses-list'}" href="#" class="menu-item" routerLink="emp/courses-list">
+    <a [ngClass]="{'active': activeRoute == 'courses-list' || activeRoute == 'courses-add'}" href="#" class="menu-item" routerLink="emp/courses-list">
       {{ "menu.courses-list" | translate }}
     </a>
 
-    <a [ngClass]="{'active': activeRoute == 'courses-add'}" href="#" class="menu-item" routerLink="emp/courses-add">
+    <!-- <a [ngClass]="{'active': activeRoute == 'courses-add'}" href="#" class="menu-item" routerLink="emp/courses-add">
       {{ "menu.add-course" | translate }}
-    </a>
+    </a> -->
   </div>
 </div>

@@ -152,6 +152,7 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
               'type': 'success',
               'body': this.translate.instant('courses.success_request')
             }]);
+            this.AddCourseAppointmentsForm.reset();
           } else {
             this.toastr.push([{
               'type': 'error',

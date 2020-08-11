@@ -54,7 +54,7 @@ export class SkillsCoursesFromComponent implements OnInit {
     this.skillsDisabled = true;
 
     this.getCampus();
-    this.checkCollege = this.skillsUserService.is_college();
+    this.checkCollege = !this.skillsUserService.is_college();
     if (this.checkCollege) {
       this.getColleges();
     }

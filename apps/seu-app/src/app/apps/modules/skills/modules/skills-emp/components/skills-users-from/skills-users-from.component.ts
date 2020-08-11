@@ -4,6 +4,7 @@ import { SkillsUsersManagementService } from '../../../../services/skill-users-m
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { SkillsCourseService } from '../../../../services/skill-course';
 
 @Component({
   selector: 'app-skills-users-from',
@@ -16,14 +17,16 @@ export class SkillsUsersFromComponent implements OnInit {
   submitted = false;
   AddUserForm: FormGroup;
   instuctors = false;
-
+  colleges = [];
   constructor(
     private fb: FormBuilder,
     private skillsUserService: SkillsUsersManagementService,
     private toastr: AppToasterService,
     private translate: TranslateService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private skillsCourseService: SkillsCourseService
+
   ) {
     this.AddUserForm = this.fb.group({
       'NAME_AR': ['', [Validators.required]],
@@ -31,6 +34,7 @@ export class SkillsUsersFromComponent implements OnInit {
       'SEU_EMAIL': ['', [Validators.required]], //, Validators.email
       'ROLE': ['', [Validators.required]],
       'ACTIVE': [''],
+      'COLL_CODE': ['']
     });
   }
 
@@ -39,7 +43,20 @@ export class SkillsUsersFromComponent implements OnInit {
       this.instuctors = true;
       this.AddUserForm.controls['ROLE'].setValue("instructor");
     }
+    this.getColleges();
+  }
 
+
+  getColleges() {
+    this.skillsCourseService.getColleges().subscribe(
+      (response: any) => {
+        if (response) {
+          this.colleges = response.data.colleges;
+        }
+      },
+      error => {
+      }
+    )
   }
 
   onSubmit() {

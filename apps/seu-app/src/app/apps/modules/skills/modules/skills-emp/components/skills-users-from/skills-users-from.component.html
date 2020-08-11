@@ -55,6 +55,22 @@
                             <option value="college">{{"users.college"|translate}} </option>
                         </select>
                     </div>
+                    <div class="state" style="margin-top: 20px" *ngIf="AddUserForm.controls['ROLE'].value == 'college'">
+                        <ng-container>
+                            <div class="state">
+                                <h6>{{"courses.colleges"|translate}} <span class="reqstart">*</span></h6>
+                                <ng-select [items]="colleges" bindLabel="COLL_TITLE"
+                                    bindValue="COLL_PK" formControlName="COLL_CODE">
+                                </ng-select>
+                            </div>
+                            <!--                     
+                    <div *ngIf="AddCourseForm.controls.COLLEGE.invalid && (AddCourseForm.controls.COLLEGE.dirty || AddCourseForm.controls.COLLEGE.touched)">
+                        <div *ngIf="AddCourseForm.controls.COLLEGE.errors.required">
+                          <b style="position: relative; left: -10px;" class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div> -->
+                        </ng-container>
+                    </div>
                     <div
                         *ngIf="AddUserForm.controls.ROLE.invalid && (AddUserForm.controls.ROLE.dirty || AddUserForm.controls.ROLE.touched)">
                         <div *ngIf="AddUserForm.controls.ROLE.errors.required">
