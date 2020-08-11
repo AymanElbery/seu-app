@@ -1,0 +1,16 @@
+.btn-course-list{
+    border: none;
+    background-color: #1c2172;
+    margin-right: 5px;
+    width: 30%;
+    border-radius: 3px;
+    text-align: center;
+    padding: 2px;
+    display: inline-block;
+    transition: 0.2s;
+    color: #FFF;
+}
+.btn-course-list:hover{
+    background-color: #fd7e14;
+    transition: 0.2s;
+}

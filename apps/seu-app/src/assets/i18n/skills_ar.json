@@ -39,14 +39,18 @@
         "success_request": "تم حفظ المستخدم بنجاح"
     },
     "courses": {
+        "add-course-appintment": "مواعيد الدورة",
         "add-course": "اضافة مستخدم جديد",
         "courses-list": "قائمة المستخدمين",
         "title": "عنوان الدورة",
+        "lec_title": "عنوان المحاضرة",
         "required": "هذا الحقل مطلوب",
         "actions": "الإجراءات",
         "edit": "تعديل",
         "course_data": "إدخال بيانات الدورة التدريبية",
+        "course_data_appointments": "إضافة مواعيد الدورة",
         "save": "حفظ",
+        "add": "إضافة المحاضرة",
         "success_request": "تم حفظ بيانات الدورة بنجاح",
         "success_delete": "تم مسح الدورة بنجاح",
         "success_update": "تم تعديل بيانات الدورة بنجاح",
@@ -83,9 +87,15 @@
         "course_canceled" : "ملغاه",
         "status": "الحالة",
         "delete": "مسح",
-        "appointments": "مواعيد الدورة",
+        "appointments": "المواعيد",
         "delete_confirm": "هل أنت متأكد ؟",
         "delete_ok": "نعم",
-        "delete_cancel": "إلغاء"
+        "delete_cancel": "إلغاء",
+        "campus": "الفرع",
+        "campuses": "الفروع",
+        "colleges": "الكلية",
+        "actual_date": "تاريخ المحاضرة",
+        "actual_appointments": "المواعيد الحالية",
+        "not_found_appointments": "لا يوجد مواعيد لهذه الدورة"
     }
 }

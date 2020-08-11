@@ -32,6 +32,10 @@ export class SkillsCoursesFromComponent implements OnInit {
   course;
   updated_id;
   redirectUrl;
+  redirectMsg;
+  checkCollege;
+  campus;
+  colleges;
 
   constructor(
     private fb: FormBuilder,
@@ -49,8 +53,14 @@ export class SkillsCoursesFromComponent implements OnInit {
     this.excuseDisabled = true;
     this.skillsDisabled = true;
 
+    this.getCampus();
+    this.checkCollege = this.skillsUserService.is_college();
+    if (this.checkCollege) {
+      this.getColleges();
+    }
     this.getClassificatios();
     this.getStuffUsers();
+    
     
 
     this.AddCourseForm = this.fb.group({
@@ -79,6 +89,8 @@ export class SkillsCoursesFromComponent implements OnInit {
       'SKILLS_OPTION': [''],
       'CLASSIFICATION_ID': [''],
       'STATUS': ['', [Validators.required]],
+      'CAMP': ['', [Validators.required]],
+      'COLLEGE': [''],
     });
   }
 
@@ -132,6 +144,8 @@ export class SkillsCoursesFromComponent implements OnInit {
             SEATS : this.course.SEATS,
             SKILLS_OPTION : this.course.SKILLS_OPTION,
             STAFF_ID : this.course.STAFF_ID,
+            CAMP : this.course.CAMP,
+            COLLEGE : this.course.COLLEGE,
             START_DATE : this.course.START_DATE,
             STATUS : this.course.STATUS,
             TIME : this.course.TIME,
@@ -201,6 +215,32 @@ export class SkillsCoursesFromComponent implements OnInit {
     )
   }
 
+  getCampus(){
+    this.skillsCourseService.getCampus().subscribe(
+      (response: any) => {
+        if (response) {
+          this.campus = response.data;
+        }
+      },
+      error => {
+      }
+    )
+  }
+
+  getColleges(){
+    this.skillsCourseService.getColleges().subscribe(
+      (response: any) => {
+        if (response) {
+          this.colleges = response.data.colleges;
+        }
+      },
+      error => {
+      }
+    )
+  }
+
+
+
   onUpdate(){
     this.onSubmit("update");
   }
@@ -209,6 +249,7 @@ export class SkillsCoursesFromComponent implements OnInit {
     if (this.AddCourseForm.invalid) {
       return;
     }
+    this.isLoading = true;
     this.submitted = true;
     let data = this.AddCourseForm.value;
 
@@ -229,18 +270,19 @@ export class SkillsCoursesFromComponent implements OnInit {
     if (type == "update") {
       data.ID = this.updated_id;
       this.redirectUrl = '../../courses-list';
+      this.redirectMsg = 'courses.success_update';
     }else{
       this.redirectUrl = '../courses-list';
+      this.redirectMsg = 'courses.success_request';
     }
     this.skillsCourseService.updateCourse(data).subscribe(
       (response: any) => {
-        this.isLoading = true;
         if (response) {
           if (response.status) {
             this.router.navigate([this.redirectUrl], { relativeTo: this.route });
             this.toastr.push([{
               'type': 'success',
-              'body': this.translate.instant("courses.success_update")
+              'body': this.translate.instant(this.redirectMsg)
             }]);
           } else {
             this.toastr.push([{
