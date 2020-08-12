@@ -34,7 +34,7 @@
                         <tbody>
                             <tr *ngFor="let course of courses; let i = index">
                                 <td>{{i+1}}</td>
-                                <td>{{course.TITLE}}</td>
+                                <td>{{course.TITLE_AR}}</td>
                                 <td>
                                     <span *ngIf="course.TYPE == 'in'">{{"courses.in_type" | translate}}</span>
                                     <span *ngIf="course.TYPE == 'out'">{{"courses.out_type" | translate}}</span>
@@ -45,7 +45,7 @@
                                     <span *ngIf="course.CERT_TYPE == 'w'">{{"courses.cert_work" | translate}}</span>
                                 </td>
                                 <td>{{course.INSTRUCTOR}}</td>
-                                <td>{{course.INSTITUTION}}</td>
+                                <td>{{course.INSTITUTION_AR}}</td>
                                 <td>{{course.PERIOD}}</td>
                                 <td>{{course.TIME}}</td>
                                 <td>{{course.SEATS}}</td>
@@ -58,9 +58,9 @@
                                 </td>
                                 <td style="width: 200px !important;">
                                     <button (click)="delete(course.ID)"
-                                        class="btn-course-list">{{"courses.delete" | translate}}</button>
+                                        class="btn-course-list">{{"general.delete" | translate}}</button>
                                     <button (click)="update(course.ID)"
-                                        class="btn-course-list">{{"courses.edit" | translate}}</button>
+                                        class="btn-course-list">{{"general.edit" | translate}}</button>
                                     <button (click)="appointments(course.ID)"
                                         class="btn-course-list">{{"courses.appointments" | translate}}</button>
                                 </td>

@@ -32,6 +32,7 @@ export class SkillsUserService extends SkillsRootService {
             if (res['status']) {
                 this.user = res['user'];
                 this.student = res['student'];
+                this.userLoaded = true;
                 this.userHasLoaded.next();
             } else {
                 this.config.relogin();

@@ -64,12 +64,12 @@ export class SkillsCoursesFromComponent implements OnInit {
 
 
     this.AddCourseForm = this.fb.group({
-      'TITLE': ['', [Validators.required]],
+      'TITLE_AR': ['', [Validators.required]],
       'TITLE_EN': ['', [Validators.required]],
       'TYPE': ['', [Validators.required]],
       'CERT_TYPE': ['', [Validators.required]],
       'STAFF_ID': ['', [Validators.required]],
-      'INSTITUTION': ['', [Validators.required]],
+      'INSTITUTION_AR': ['', [Validators.required]],
       'INSTITUTION_EN': ['', [Validators.required]],
       'LOCATION_AR': ['', [Validators.required]],
       'LOCATION_EN': ['', [Validators.required]],
@@ -96,6 +96,9 @@ export class SkillsCoursesFromComponent implements OnInit {
       'STATUS': ['', [Validators.required]],
       'CAMP': ['', [Validators.required]],
       'COLLEGE': [''],
+      'DETAILS_AR': [''],
+      'DETAILS_EN': [''],
+      
     });
   }
 
@@ -144,6 +147,35 @@ export class SkillsCoursesFromComponent implements OnInit {
           this.excuseDisabled = (this.course.EXCUSE_OPTION == 1) ? false : true;
           this.skillsDisabled = (this.course.SKILLS_OPTION == 1) ? false : true;
 
+          // this.AddCourseForm.patchValue({
+          //   ALLOWED_ABSENSE : this.course.ALLOWED_ABSENSE,
+          //   CANCEL_DATE : this.course.CANCEL_DATE,
+          //   CANCEL_OPTION : this.course.CANCEL_OPTION,
+          //   CERT_TYPE : this.course.CERT_TYPE,
+          //   CLASSIFICATION_ID : this.course.CLASSIFICATION_ID,
+          //   CLASS_ROOM : this.course.CLASS_ROOM,
+          //   END_DATE : this.course.END_DATE,
+          //   EXCUSE_DATE : this.course.EXCUSE_DATE,
+          //   EXCUSE_OPTION : this.course.EXCUSE_OPTION,
+          //   FACE_ATTEND : this.course.FACE_ATTEND,
+          //   HR_HOURS : this.course.HR_HOURS,
+          //   INSTITUTION : this.course.INSTITUTION,
+          //   LINK : this.course.LINK,
+          //   PERIOD : this.course.PERIOD,
+          //   REG_END_DATE : this.course.REG_END_DATE,
+          //   REG_START_DATE : this.course.REG_START_DATE,
+          //   SEATS : this.course.SEATS,
+          //   SKILLS_OPTION : this.course.SKILLS_OPTION,
+          //   STAFF_ID : this.course.STAFF_ID,
+          //   CAMP : this.course.CAMP,
+          //   COLLEGE : this.course.COLLEGE,
+          //   START_DATE : this.course.START_DATE,
+          //   STATUS : this.course.STATUS,
+          //   TIME : this.course.TIME,
+          //   TITLE : this.course.TITLE,
+          //   TYPE : this.course.TYPE,
+          //   VIRTUAL_ATTEND : this.course.VIRTUAL_ATTEND,
+          // });
           this.AddCourseForm.patchValue(this.course);
           this.isLoading = false;
         }
@@ -174,14 +206,15 @@ export class SkillsCoursesFromComponent implements OnInit {
   }
 
   changeFormate(date) {
-    var newDate = new Date(date).toLocaleDateString();
-    var res = newDate.split("/");
-    var day = res[0];
-    var month = res[1];
-    var year = res[2];
+    var newDate = new Date(date);
+    console.log(newDate, date);
+    var day = ("0" + (newDate.getDate())).slice(-2);
+    var month = ("0" + (newDate.getMonth() + 1)).slice(-2);;
+    var year = newDate.getFullYear();
     var todayFormat = year + '-' + month + '-' + day;
     return todayFormat;
   }
+
 
   getStuffUsers() {
     this.skillsUserService.getStuffUsers().subscribe(
@@ -232,7 +265,9 @@ export class SkillsCoursesFromComponent implements OnInit {
   }
 
 
-
+  back() {
+    this.router.navigate(["../../courses-list"], { relativeTo: this.route });
+  }
   onUpdate() {
     this.onSubmit("update");
   }

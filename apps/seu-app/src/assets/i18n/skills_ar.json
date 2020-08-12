@@ -5,7 +5,11 @@
         "allmales": "الطلاب",
         "allfemals": "الطالبات",
         "arabic":"العربية",
-        "english":"الإنجليزية"
+        "english":"الإنجليزية",
+        "save": "حفظ",
+        "edit": "تعديل",
+        "delete": "حذف",
+        "cancel": "إلغاء"
     },
     "menu": {
         "hello": "مرحبا",
@@ -56,10 +60,8 @@
         "lec_title": "عنوان المحاضرة",
         "required": "هذا الحقل مطلوب",
         "actions": "الإجراءات",
-        "edit": "تعديل",
         "course_data": "إدخال بيانات الدورة التدريبية",
         "course_data_appointments": "إضافة مواعيد الدورة",
-        "save": "حفظ",
         "add": "إضافة المحاضرة",
         "success_request": "تم حفظ بيانات الدورة بنجاح",
         "success_delete": "تم مسح الدورة بنجاح",
@@ -100,7 +102,6 @@
         "course_active": "فعالة",
         "course_canceled": "ملغاه",
         "status": "الحالة",
-        "delete": "حذف",
         "appointments": "المواعيد",
         "delete_confirm": "هل أنت متأكد ؟",
         "delete_ok": "نعم",
