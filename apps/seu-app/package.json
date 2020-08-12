@@ -88,6 +88,8 @@
     "@angular/cli": "^8.3.21",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
+    "@ckeditor/ckeditor5-angular": "^1.2.3",
+    "@ckeditor/ckeditor5-build-custom": "file:./ckeditor",
     "@fortawesome/fontawesome-free": "^5.12.0",
     "@nativescript/schematics": "~0.4.0",
     "@types/core-js": "^2.5.3",

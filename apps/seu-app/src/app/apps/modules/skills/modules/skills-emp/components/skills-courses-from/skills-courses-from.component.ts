@@ -2,12 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SkillsCourseService } from '../../../../services/skill-course';
 import { SkillsUserService } from '../../../../services/skill-user';
-import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
-import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 import { DatePipe } from '@angular/common';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
+//import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import * as CustomEditor from '@ckeditor/ckeditor5-build-custom/build/ckeditor';
+//import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+//import { ckEditorSEUconfig } from './editorConfig';
 
 @Component({
   selector: 'app-skills-courses-from',
@@ -16,7 +19,16 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe]
 })
 export class SkillsCoursesFromComponent implements OnInit {
+  public EditorAR = CustomEditor;
+  public EditorEN = CustomEditor;
+  public editorData = {
+    DETAILS_AR: "",
+    DETAILS_EN: ""
+  };
 
+  toolbarConfig = {
+    toolbar: ['heading', '|', 'bold', 'italic', 'Indent', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|' ,'highlight','fontFamily','fontSize','horizontalLine',,  '|','insertTable', '|', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo'],
+  };;
   datePickerConfig: Partial<BsDatepickerConfig>;
   isLoading = false;
   submitted = false;
@@ -95,10 +107,7 @@ export class SkillsCoursesFromComponent implements OnInit {
       'CLASSIFICATION_ID': [''],
       'STATUS': ['', [Validators.required]],
       'CAMP': ['', [Validators.required]],
-      'COLLEGE': [''],
-      'DETAILS_AR': [''],
-      'DETAILS_EN': [''],
-      
+      'COLLEGE': ['']
     });
   }
 
@@ -177,6 +186,8 @@ export class SkillsCoursesFromComponent implements OnInit {
           //   VIRTUAL_ATTEND : this.course.VIRTUAL_ATTEND,
           // });
           this.AddCourseForm.patchValue(this.course);
+          this.editorData.DETAILS_AR = this.course['DETAILS_AR'];
+          this.editorData.DETAILS_EN = this.course['DETAILS_EN'];
           this.isLoading = false;
         }
       },
@@ -293,6 +304,10 @@ export class SkillsCoursesFromComponent implements OnInit {
     data.REG_END_DATE = this.changeFormate(data.REG_END_DATE);
     data.CANCEL_DATE = (data.CANCEL_DATE) ? this.changeFormate(data.CANCEL_DATE) : '';
     data.EXCUSE_DATE = (data.EXCUSE_DATE) ? this.changeFormate(data.EXCUSE_DATE) : '';
+
+
+    data['DETAILS_AR'] = this.editorData.DETAILS_AR;
+    data['DETAILS_EN'] = this.editorData.DETAILS_EN;
 
     if (type == "update") {
       data.ID = this.updated_id;

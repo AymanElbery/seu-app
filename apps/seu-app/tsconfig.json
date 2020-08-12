@@ -12,6 +12,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
+    "allowJs": true,
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -19,9 +20,6 @@
       "es2018",
       "dom"
     ]
-
   },
   "skipLibCheck": true
-
-  
 }

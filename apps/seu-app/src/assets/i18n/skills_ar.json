@@ -4,8 +4,8 @@
         "all": "الكل",
         "allmales": "الطلاب",
         "allfemals": "الطالبات",
-        "arabic":"العربية",
-        "english":"الإنجليزية",
+        "arabic": "العربية",
+        "english": "الإنجليزية",
         "save": "حفظ",
         "edit": "تعديل",
         "delete": "حذف",
@@ -76,7 +76,7 @@
         "stuff_name": "اســم المدرب",
         "institution": "جهة التنفيذ",
         "institution_en": "جهة التنفيذ E",
-        "c_lang":"لغة الدورة",
+        "c_lang": "لغة الدورة",
         "location_ar": "مقر الإقامة",
         "location_en": "مقر الإقامة E",
         "start_date": "وقت بداية الدورة",
@@ -111,6 +111,8 @@
         "colleges": "الكلية",
         "actual_date": "تاريخ المحاضرة",
         "actual_appointments": "المواعيد الحالية",
-        "not_found_appointments": "لا يوجد مواعيد لهذه الدورة"
+        "not_found_appointments": "لا يوجد مواعيد لهذه الدورة",
+        "details_ar": "التفاصيل",
+        "details_en": "التفاصيل E"
     }
 }
