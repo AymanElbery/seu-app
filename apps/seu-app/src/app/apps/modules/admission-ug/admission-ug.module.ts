@@ -3,7 +3,7 @@ import { AdmissionUGRoutingModule } from './admission-ug-routing.module';
 import { AppsSharedModule } from '../apps-shared/apps.shared.module';
 import { UGHomeComponent } from './components/ug-home/ug-home.component';
 import { AdmissionResultComponent } from './components/admission-result/check/admission-result.component';
-import { PayFeeComponent } from './components/pay-fee/pay-fee.component';
+import { UGPayFeeComponent } from './components/pay-fee/pay-fee.component';
 import { UploadDocumentComponent } from './components/upload-document/upload-document.component';
 import { AdmissionLazyTransModule } from '../../admission.lazytrans.module';
 import { SeucommonModule } from '../../../seucommon/seucommon.module';
@@ -22,7 +22,7 @@ import { PayFeeCheckComponent } from './components/pay-fee-check/pay-fee-callbac
 
 
 @NgModule({
-  declarations: [UGHomeComponent, AdmissionResultComponent, PayFeeComponent, UploadDocumentComponent,PayFeeCheckComponent,
+  declarations: [UGHomeComponent, AdmissionResultComponent, UGPayFeeComponent, UploadDocumentComponent,PayFeeCheckComponent,
     AppsUGMenuComponent, DisplayResultComponent, UgLoginComponent, UgVeryficationComponent, MatchDocumentsComponent, PaymentRefundComponent, UGLandingComponent],
   imports: [
     AdmissionUGRoutingModule,

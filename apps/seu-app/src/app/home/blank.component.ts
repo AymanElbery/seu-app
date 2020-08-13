@@ -98,13 +98,18 @@ export class BlankComponent implements OnInit {
     });
   }
   showConfirmation() {
-    if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && this.userService.userData['showConfirmations'] === true) {
+    let showConf = false;
+    if (this.userService.userData['emp_confirm'] && this.userService.userData['emp_confirm']['show'] === true) {
+      showConf = true;
+    }
+    if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && showConf) {
       const dialogConfig = new MatDialogConfig();
       dialogConfig.autoFocus = true;
       dialogConfig.disableClose = true;
       dialogConfig.width = '75%';
       dialogConfig.maxWidth = 1000;
       //dialogConfig.height = '88%';
+      dialogConfig.data = { notes: this.userService.userData['emp_confirm']['notes'] };
       this.dialog.open(DocsConfirmComponent, dialogConfig);
     }
   }

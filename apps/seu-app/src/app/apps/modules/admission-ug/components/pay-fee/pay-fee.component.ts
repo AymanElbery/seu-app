@@ -5,11 +5,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-pay-fee',
+  selector: 'app-ug-pay-fee',
   templateUrl: './pay-fee.component.html',
   styleUrls: ['./pay-fee.component.css']
 })
-export class PayFeeComponent implements OnInit {
+export class UGPayFeeComponent implements OnInit {
   std_id = '';
   constructor(private translate: TranslateService, public sanitizer: DomSanitizer, private admissionUgservice: AdmissionUGService) {
     this.std_id = this.admissionUgservice.LoggedInUser['ID'];

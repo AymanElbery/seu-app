@@ -6,6 +6,7 @@ import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 // declare function LoadCrsAds(): any;
 // declare function OWLmoveDotsToNav(): any;
@@ -40,7 +41,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     public homeService: HomeService,
     public userService: UserService,
     private router: Router,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private sanitized: DomSanitizer
   ) {
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -61,7 +63,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   adsLoaded;
   eventsLoaded;
   mySubscription: any;
-
+  sysNotes ;
   subscriptions;
   ngOnInit() {
     // console.log('home');
@@ -73,11 +75,18 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.LoadData();
       }
     });
+    this.getSysMessage();
     this.subscriptions = this.translate.onLangChange.subscribe(() => {
       if (this.userService.userDataLoaded) {
         this.LoadData();
+        this.getSysMessage();
       }
     });
+  }
+  getSysMessage(){
+    this.translate.get('general.mysystemNotes').subscribe(value=>{
+      this.sysNotes = this.sanitized.bypassSecurityTrustHtml(value);
+    })
   }
 
   OWLmoveDotsToNav() {
