@@ -11,9 +11,9 @@
     <div class="nav-container">
       <nav id="main-menu-navigation" class="navigation-main">
         <br />
-        <app-skills-emp-menu></app-skills-emp-menu>
-        <app-skills-staff-menu></app-skills-staff-menu>
-        <app-skills-std-menu></app-skills-std-menu>
+        <app-skills-emp-menu *ngIf="menuType = 'emp' "></app-skills-emp-menu>
+        <app-skills-staff-menu *ngIf="menuType = 'staff' "></app-skills-staff-menu>
+        <app-skills-std-menu *ngIf="menuType = 'std' "></app-skills-std-menu>
       </nav>
     </div>
   </div>
