@@ -85,7 +85,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   getSysMessage(){
     this.translate.get('general.mysystemNotes').subscribe(value=>{
-      console.log(value);
       this.sysNotes = this.sanitized.bypassSecurityTrustHtml(value);
     })
   }
