@@ -14,7 +14,7 @@ export class SkillsMenuComponent implements OnInit, AfterContentInit {
     const currURL = document.location.href;
     if (currURL.indexOf("/skills/emp") !== -1) {
       this.menuType = 'emp';
-    } else if (currURL.indexOf("/std/emp") !== -1) {
+    } else if (currURL.indexOf("/skills/std") !== -1) {
       this.menuType = 'std';
     } else if (currURL.indexOf("/skills/staff") !== -1) {
       this.menuType = 'staff';
