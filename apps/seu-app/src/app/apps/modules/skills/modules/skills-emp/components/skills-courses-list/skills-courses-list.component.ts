@@ -59,6 +59,11 @@ export class SkillsCoursesListComponent implements OnInit {
     this.router.navigate(['../courses-appointments/'+id], { relativeTo: this.route })
   }
 
+  details(id){
+    this.isLoading = true;
+    this.router.navigate(['../courses-details/'+id], { relativeTo: this.route })
+  }
+
   delete(id){
     let data = {
       'ID'      : id,

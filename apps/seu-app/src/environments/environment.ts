@@ -9,7 +9,8 @@ export const environment = {
   paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
   servicesprefix: 'api-test', // api-test
   appsprefix: 'apps-test', // api-test
-  loginpage: 'login-testl.php',
+  // loginpage: 'login-testl.php',
+  loginpage: 'login-local.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
   ssoAuth: 'sso:s$0$3u2030',
   allowWafi: true,

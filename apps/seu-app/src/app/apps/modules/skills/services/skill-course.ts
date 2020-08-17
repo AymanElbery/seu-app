@@ -31,6 +31,14 @@ export class SkillsCourseService extends SkillsRootService{
     getCourseById(id) {
         return this.post("emp/courses/get_course", id);
     }
+
+    getCourseStdRequest(id) {
+        return this.post("emp/courses/get_course_std_req", id);
+    }
+
+    getCourseStudents(id) {
+        return this.post("emp/courses/get_course_students", id);
+    }
     
     getCourseAppointments(id) {
         return this.post("emp/courses/get_course_appointments", id);
@@ -44,8 +52,16 @@ export class SkillsCourseService extends SkillsRootService{
         return this.post("emp/courses/add_update", data);
     }
 
+    updateStatus(data){
+        return this.post("emp/courses/change_course_std_status", data);
+    }
+
     addCourseAppointment(data){
         return this.post("emp/courses/add_course_appointment", data);
+    }
+
+    addCourseStd(data){
+        return this.post("emp/courses/add_course_std", data);
     }
 
     deleteCourse(data){
