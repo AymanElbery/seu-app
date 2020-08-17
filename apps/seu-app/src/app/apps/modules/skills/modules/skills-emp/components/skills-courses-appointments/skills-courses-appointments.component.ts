@@ -91,7 +91,11 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
   formatDatepickerDate(date){
     let dateArr = date.split("-");
     let months = {
-      'AUG' : '08'
+      'AUG' : '08',
+      'SEP' : '09',
+      'OCT' : '10',
+      'NOV' : '11',
+      'DEC' : '12',
     };
     let dateStr = dateArr[2]+"20"+"-"+months[dateArr[1]]+"-"+dateArr[0];
     return dateStr;
@@ -100,7 +104,11 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
   formatDisplayDate(date){
     let dateArr = date.split("-");
     let months = {
-      'AUG' : 'أغسطس'
+      'AUG' : 'أغسطس',
+      'SEP' : 'سبتمبر',
+      'OCT' : 'أكتوبر',
+      'NOV' : 'نوفمبر',
+      'DEC' : 'ديسيمبر',
     };
     return dateArr[0]+" "+months[dateArr[1]]+" "+dateArr[2]+"20";
   }

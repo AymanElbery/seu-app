@@ -1,0 +1,79 @@
+<app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.courses-details' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 10px; padding: 0 30px;">
+    <div *ngIf="!isLoading" class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills tabs-course-details">
+                <li style="margin-left: 20px;">
+                    <h6 style="color: #EDEDED; position: relative; top: 25px;">({{ courseDetails.TITLE_AR }})</h6>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-primary active-tab-details active" (click)="details(course_id)">تفاصيل الدورة</button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-primary" (click)="students(course_id)">طلبات التسجيل</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-3 text-center">
+            <h6 class="orang-label">{{"courses.title"|translate}} </h6>
+            <h5>{{ courseDetails.TITLE_AR }}</h5>
+        </div>
+        <div class="col-md-3 text-center">
+            <h6 class="orang-label">{{"courses.title_en"|translate}} </h6>
+            <h5>{{ courseDetails.TITLE_EN }}</h5>
+        </div>
+        <div class="col-md-3 text-center">
+            <h6 class="orang-label">{{"courses.stuff_name"|translate}} </h6>
+            <h5>{{ courseDetails.INSTRUCTOR }}</h5>
+        </div>
+        <div class="col-md-3 text-center">
+            <h6 class="orang-label">{{"courses.institution"|translate}} </h6>
+            <h5>{{ courseDetails.INSTITUTION_AR }}</h5>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-3 text-center">
+            <h6 class="orang-label">{{"courses.start_date"|translate}} </h6>
+            <h5>{{ courseDetails.START_DATE }}</h5>
+        </div>
+        <div class="col-md-3 text-center">
+            <h6 class="orang-label">{{"courses.end_date"|translate}} </h6>
+            <h5>{{ courseDetails.END_DATE }}</h5>
+        </div>
+        <div class="col-md-3 text-center">
+            <h6 class="orang-label">{{"courses.req_start_date"|translate}} </h6>
+            <h5>{{ courseDetails.REG_START_DATE }}</h5>
+        </div>
+        <div class="col-md-3 text-center">
+            <h6 class="orang-label">{{"courses.req_end_date"|translate}} </h6>
+            <h5>{{ courseDetails.REG_END_DATE }}</h5>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-4 text-center">
+            <button style="width: 100%;  margin-top: 15px;" class="btn btn-primary"type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">{{"courses.details_ar"|translate}}</button>
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+                <p [innerHTML]="courseDetails.DETAILS_AR" class="details-block"></p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <button style="width: 100%; margin-top: 15px;" class="btn btn-primary"type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">{{"courses.details_en"|translate}}</button>
+            <div class="collapse multi-collapse" id="multiCollapseExample3">
+                <p [innerHTML]="courseDetails.DETAILS_EN" class="details-block"></p>
+            </div>
+        </div>
+        <div class="col-md-2">
+            
+        </div>
+        <div class="col-md-2">
+            <h6 class="orang-label">{{"courses.type"|translate}} </h6>
+            <h5 *ngIf="courseDetails.TYPE == 'in'">{{"courses.in_type"|translate}}</h5>
+            <h5 *ngIf="courseDetails.TYPE == 'out'">{{"courses.out_type"|translate}}</h5>
+            <h5 *ngIf="courseDetails.TYPE == 'in_out'">{{"courses.in_out_type"|translate}}</h5>
+        </div>
+    </div>
+</section>

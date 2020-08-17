@@ -1,0 +1,78 @@
+<app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.courses-std' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 10px; padding: 0 30px;">
+    <div *ngIf="courseDetails" class="row">
+        <div class="col-md-12">
+            <ul class="nav nav-pills tabs-course-details">
+                <li style="margin-left: 20px;">
+                    <h6 style="color: #EDEDED; position: relative; top: 25px;">({{ courseDetails.TITLE_AR }})</h6>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-primary" (click)="details(course_id)">تفاصيل الدورة</button>
+                </li>
+                <li class="nav-item">
+                  <button class="btn btn-primary active-tab-details active" (click)="students(course_id)">طلبات التسجيل</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <form role="form" [formGroup]="AddStdForm">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <input type="number" class="form-control" formControlName="STD_ID" placeholder="{{'courses.std_no' | translate}}">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <button [disabled]="submitted || AddStdForm.invalid" (click)="onSubmit()" type="submit" style="width: 100%;" class="btn btn-primary">{{'courses.add_std' | translate}}</button>
+            </div>
+        </div>
+    </form>
+    <div class="row" style="margin-top: 20px;">
+        <div *ngIf="courseStudents.length == 0" class="col-md-12">
+            <div class="alert alert-info text-center">
+                {{"courses.empty_std" | translate}}
+            </div>
+        </div>
+        <div *ngIf="courseStudents.length > 0" class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">{{"courses.std_no" | translate}}</th>
+                            <th scope="col">{{"courses.std_name" | translate}}</th>
+                            <th scope="col">{{"courses.std_coll" | translate}}</th>
+                            <th scope="col">{{"courses.std_dept" | translate}}</th>
+                            <th scope="col">{{"courses.std_level" | translate}}</th>
+                            <th scope="col">{{"courses.status" | translate}}</th>
+                            <th scope="col">{{"courses.actions" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let std of courseStudents; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{std.STD_ID}}</td>
+                            <td>{{std.FULL_NAME_AR}}</td>
+                            <td>{{std.COLL_TITLE_AR}}</td>
+                            <td>{{std.DEPT_DESC_AR}}</td>
+                            <td>
+                                <span *ngIf="std.LEVEL_CODE == 'UG'">{{"courses.ug" | translate}}</span>
+                                <span *ngIf="std.LEVEL_CODE == 'GR'">{{"courses.gr" | translate}}</span>
+                            </td>
+                            <td>
+                                <span *ngIf="std.STATUS == 'registered'">{{"courses.registered" | translate}}</span>
+                                <span *ngIf="std.STATUS == 'rejected'">{{"courses.rejected" | translate}}</span>
+                                <span *ngIf="std.STATUS == 'approved'">{{"courses.approved" | translate}}</span>
+                            </td>
+                            <td>
+                                <button [disabled]="std.STATUS == 'rejected' || std.STATUS == 'approved'" (click)="changeStatus(std.REC_ID, std.STATUS)" class="btn btn-danger">{{"courses.change_status" | translate}}</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

@@ -3,6 +3,9 @@ import { SkillsUsersHomeComponent } from './components/skills-users-home/skills-
 import { SkillsUsersListComponent } from './components/skills-users-list/skills-users-list.component';
 import { SkillsUsersFromComponent } from './components/skills-users-from/skills-users-from.component';
 import { SkillsCoursesListComponent } from './components/skills-courses-list/skills-courses-list.component';
+import { SkillsCoursesDetailsComponent } from './components/skills-courses-details/skills-courses-details.component';
+import { SkillsCoursesStdComponent } from './components/skills-courses-std/skills-courses-std.component';
+import { ChangeRequestComponent } from './components/skills-courses-std/diag/change-request/change-request.component';
 import { SkillsCoursesFromComponent } from './components/skills-courses-from/skills-courses-from.component';
 import { SkillsCoursesAppointmentsComponent } from './components/skills-courses-appointments/skills-courses-appointments.component';
 import { SkillsADMINGuard } from '../../skills-guard/admin.guard';
@@ -15,6 +18,9 @@ export const componentDeclarations: any[] = [
     SkillsCoursesListComponent,
     SkillsCoursesFromComponent,
     SkillsCoursesAppointmentsComponent,
+    SkillsCoursesDetailsComponent,
+    SkillsCoursesStdComponent,
+    ChangeRequestComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -47,5 +53,11 @@ export const routes: Routes = [
     },
     {
         path: 'courses-appointments/:id', component: SkillsCoursesAppointmentsComponent, canActivate: [SkillsADMINGuard]
-    }
+    },
+    {
+        path: 'courses-details/:id', component: SkillsCoursesDetailsComponent, canActivate: [SkillsADMINGuard]
+    },
+    {
+        path: 'courses-students/:id', component: SkillsCoursesStdComponent, canActivate: [SkillsADMINGuard]
+    },
 ];

@@ -11,8 +11,8 @@
         "edit": "تعديل",
         "delete": "حذف",
         "cancel": "إلغاء",
-        "back":"العودة الي القائمة",
-        "details" :"التفاصيل"
+        "back": "العودة الي القائمة",
+        "details": "التفاصيل"
     },
     "menu": {
         "hello": "مرحبا",
@@ -60,11 +60,14 @@
         "add-course-appintment": "مواعيد الدورة",
         "add-course": "اضافة دورة",
         "courses-list": "قائمة الدورات",
+        "courses-details": "تفاصيل دورة",
+        "courses-std": "طلبات التسجيل في الدورة",
         "title": "عنوان الدورة",
         "title_en": "عنوان الدورة E",
         "lec_title": "عنوان المحاضرة",
         "required": "هذا الحقل مطلوب",
         "actions": "الإجراءات",
+        "change-status": "تغيير الحالة",
         "course_data": "إدخال بيانات الدورة التدريبية",
         "course_data_appointments": "إضافة مواعيد الدورة",
         "add": "إضافة المحاضرة",
@@ -118,11 +121,25 @@
         "actual_appointments": "المواعيد الحالية",
         "not_found_appointments": "لا يوجد مواعيد لهذه الدورة",
         "details_ar": "التفاصيل",
-        "details_en": "التفاصيل E"
+        "details_en": "التفاصيل E",
+        "details": "التفاصيل",
+        "empty_std": "لا يوجد طلبات تسجيل على هذه الدورة",
+        "std_no": "رقم الطالب",
+        "std_name": "اسم الطالب",
+        "std_coll": "الكلية",
+        "std_dept": "التخصص",
+        "std_level": "المستوى",
+        "add_std": "إضافة طالب",
+        "change_status": "تغيير حالة الطلب",
+        "registered": "قيد التسجيل",
+        "rejected": "مرفوض",
+        "approved": "مقبول",
+        "ug": "under graduated",
+        "gr": "graduated"
     },
     "std_courses": {
         "course_dates": "تاريخ اقامة الدورة",
         "reg_dates": "تاريخ التسجيل في الدورة",
-        "is_skill_record" : "تصنيف الدورة فى السجل المهاري"
+        "is_skill_record": "تصنيف الدورة فى السجل المهاري"
     }
 }
