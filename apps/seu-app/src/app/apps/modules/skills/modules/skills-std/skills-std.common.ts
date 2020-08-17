@@ -20,7 +20,7 @@ export const routes: Routes = [
         path: 'courses-list', component: SkillsStdCoursesListComponent, canActivate: [SkillsSTDGuard]
     },
     {
-        path: 'course-view/:id', component: SkillsStdCourseDetailsComponent, canActivate: [SkillsSTDGuard]
+        path: 'course-details/:id', component: SkillsStdCourseDetailsComponent, canActivate: [SkillsSTDGuard]
     },
     {
         path: 'mycourses', component: SkillsStdMycoursesComponent, canActivate: [SkillsSTDGuard]

@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { environment } from '../../../../../environments/environment';
 import { GlobalService } from '../../../../shared/services/global.service';
 import { map } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Injectable({
@@ -13,12 +14,19 @@ export class SkillsRootService {
     URL = environment.baselink + environment.servicesprefix + "/rest/skills/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     
+    langPrefix = '_AR';
 
     constructor(
         public http: HttpClient,
         public router: Router,
-        public config:GlobalService
+        public config:GlobalService,
+        public translate: TranslateService
     ) {
+
+        this.langPrefix = this.translate.currentLang == 'ar' ? '_AR' : '_EN';
+        this.translate.onLangChange.subscribe(() => {
+            this.langPrefix = this.translate.currentLang == 'ar' ? '_AR' : '_EN';
+        });
         
     }
 

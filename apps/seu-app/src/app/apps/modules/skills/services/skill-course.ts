@@ -3,17 +3,19 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { SkillsRootService } from './skill-root.service';
 import { GlobalService } from 'src/app/shared/services/global.service';
+import { TranslateService } from '@ngx-translate/core';
 @Injectable({
     providedIn: 'root'
 })
-export class SkillsCourseService extends SkillsRootService{
+export class SkillsCourseService extends SkillsRootService {
 
     constructor(
         public http: HttpClient,
         public router: Router,
-        config:GlobalService
+        config: GlobalService,
+        translate: TranslateService
     ) {
-        super(http, router,config);
+        super(http, router, config, translate);
     }
 
     getAllCourses() {
@@ -27,32 +29,32 @@ export class SkillsCourseService extends SkillsRootService{
     getColleges() {
         return this.get("lookups/colleges_groups");
     }
-    
+
     getCourseById(id) {
         return this.post("emp/courses/get_course", id);
     }
-    
+
     getCourseAppointments(id) {
         return this.post("emp/courses/get_course_appointments", id);
     }
-    
+
     getClassificatios() {
         return this.get("emp/courses/list_classifications");
     }
 
-    updateCourse(data){
+    updateCourse(data) {
         return this.post("emp/courses/add_update", data);
     }
 
-    addCourseAppointment(data){
+    addCourseAppointment(data) {
         return this.post("emp/courses/add_course_appointment", data);
     }
 
-    deleteCourse(data){
+    deleteCourse(data) {
         return this.post("emp/courses/delete", data);
     }
 
-    deleteCourseAppointment(data){
+    deleteCourseAppointment(data) {
         return this.post("emp/courses/delete_appointment", data);
     }
 }

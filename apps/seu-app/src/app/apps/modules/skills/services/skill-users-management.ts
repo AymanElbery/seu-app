@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { SkillsRootService } from './skill-root.service';
 import { GlobalService } from '../../../../shared/services/global.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
     providedIn: 'root'
@@ -12,9 +13,10 @@ export class SkillsUsersManagementService extends SkillsRootService {
     constructor(
         public http: HttpClient,
         public router: Router,
-        config: GlobalService
+        config: GlobalService,
+        translate: TranslateService
     ) {
-        super(http, router, config);
+        super(http, router, config, translate);
     }
 
     getAllUsers(instructors = false) {
@@ -38,15 +40,15 @@ export class SkillsUsersManagementService extends SkillsRootService {
         return this.post("emp/users/update", { 'USER_ID': id, 'ACTIVE': 1 });
     }
 
-    addUser(data,instructors=false) {
-        if(instructors){
+    addUser(data, instructors = false) {
+        if (instructors) {
             return this.post("emp/instructors/add", data);
         }
         return this.post("emp/users/add", data);
     }
 
-    addInstructor(data,instructors) {
-        if(instructors){
+    addInstructor(data, instructors) {
+        if (instructors) {
             return this.post("emp/instructors/add", data);
         }
         return this.post("emp/users/add", data);

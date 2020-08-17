@@ -1,3 +1,39 @@
-<p>
-  skills-std-course-details works!
-</p>
+<div class="card" *ngIf="!loading">
+  <h5 class="card-headersss">{{courseDetails['TITLE'+coursesService.langPrefix]}}</h5>
+  <div class="card-body">
+    <div class="card-text" [innerHtml]="courseDetails['DETAILS'+coursesService.langPrefix]">
+    </div>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-md-6">
+          <b>{{"courses.cert_type"|translate}}</b>:
+          <span *ngIf="courseDetails['CERT_TYPE'] == 'c'">{{"courses.cert_course" | translate}}</span>
+          <span *ngIf="courseDetails['CERT_TYPE'] == 'w'">{{"courses.cert_work" | translate}}</span>
+        </div>
+        <div class="col-md-6">
+          <b>{{"courses.c_lang"|translate}}</b>: {{"general."+courseDetails['C_LANG'] | translate}}
+        </div>
+      </div>
+    </li>
+    <li class="list-group-item">
+      <b>{{"courses.seats"|translate}}</b>: {{courseDetails['SEATS']}}
+    </li>
+    <li class="list-group-item">
+      <b>{{"std_courses.course_dates"|translate}}</b>: {{courseDetails['START_DATE']}} / {{courseDetails['END_DATE']}}
+    </li>
+    <li class="list-group-item">
+      <b>{{"std_courses.reg_dates"|translate}}</b>: {{courseDetails['REG_START_DATE']}} /
+      {{courseDetails['REG_END_DATE']}}
+    </li>
+    <li class="list-group-item" *ngIf="courseDetails['SKILLS_OPTION']">
+      <b>{{"std_courses.is_skill_record"|translate}}</b>:
+      {{courseDetails['CLASSIFICATION_NAME'+coursesService.langPrefix]}} / {{courseDetails['HR_HOURS']}}</li>
+  </ul>
+  <div class="card-body text-center">
+    <a href="#" (click)="register()" class="btn btn-primary">{{'general.details' | translate}}</a>
+    <a href="#" (click)="gotoList()" class="card-link">{{'general.back' | translate}}</a>
+  </div>
+
+</div>

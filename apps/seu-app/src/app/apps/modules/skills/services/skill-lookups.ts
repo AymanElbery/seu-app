@@ -7,6 +7,7 @@ import { User } from '../models/user';
 import { Student } from '../models/student';
 import { Subject, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
     providedIn: 'root'
@@ -19,9 +20,10 @@ export class SkillsLookupsService extends SkillsRootService {
     constructor(
         public http: HttpClient,
         public router: Router,
-        config: GlobalService
+        config: GlobalService,
+        translate: TranslateService
     ) {
-        super(http, router, config);
+        super(http, router, config, translate);
     }
 
     getCollegesGroups() {

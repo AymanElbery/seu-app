@@ -6,6 +6,7 @@ import { GlobalService } from '../../../../shared/services/global.service';
 import { User } from '../models/user';
 import { Student } from '../models/student';
 import { Subject } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
     providedIn: 'root'
@@ -22,9 +23,10 @@ export class SkillsUserService extends SkillsRootService {
     constructor(
         public http: HttpClient,
         public router: Router,
-        config: GlobalService
+        config: GlobalService,
+        translate: TranslateService
     ) {
-        super(http, router, config);
+        super(http, router, config, translate);
     }
 
     getUser() {

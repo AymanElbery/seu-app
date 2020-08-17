@@ -1,15 +1,18 @@
 {
     "skills": "السجل المهاري",
+    "training": "التدريب وتنمية المهارات",
     "general": {
         "all": "الكل",
         "allmales": "الطلاب",
         "allfemals": "الطالبات",
-        "arabic": "العربية",
-        "english": "الإنجليزية",
+        "ar": "العربية",
+        "en": "الإنجليزية",
         "save": "حفظ",
         "edit": "تعديل",
         "delete": "حذف",
-        "cancel": "إلغاء"
+        "cancel": "إلغاء",
+        "back":"العودة الي القائمة",
+        "details" :"التفاصيل"
     },
     "menu": {
         "hello": "مرحبا",
@@ -27,8 +30,8 @@
         "instructors-list": "قائمة المدربين",
         "add-course": "اضافة دورة",
         "courses-list": "قائمة الدورات",
-        "mycourses" : "دوراتي",
-        "traingnig" : "التدريب وتنمية المهارات"
+        "mycourses": "دوراتي",
+        "traingnig": "التدريب وتنمية المهارات"
     },
     "users": {
         "add-user": "اضافة مستخدم جديد",
@@ -116,5 +119,10 @@
         "not_found_appointments": "لا يوجد مواعيد لهذه الدورة",
         "details_ar": "التفاصيل",
         "details_en": "التفاصيل E"
+    },
+    "std_courses": {
+        "course_dates": "تاريخ اقامة الدورة",
+        "reg_dates": "تاريخ التسجيل في الدورة",
+        "is_skill_record" : "تصنيف الدورة فى السجل المهاري"
     }
 }

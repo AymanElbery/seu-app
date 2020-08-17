@@ -18,9 +18,8 @@ export class SkillsStdMenuComponent implements OnInit {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         let url = val.url;
-        let urlArr = url.split("/");
-        let length = urlArr.length;
-        this.activeRoute = urlArr[length - 1];
+        let urlArr = url.replace("/apps/skills/std/", '').split("/");
+        this.activeRoute = urlArr[0];
       }
     });
   }
