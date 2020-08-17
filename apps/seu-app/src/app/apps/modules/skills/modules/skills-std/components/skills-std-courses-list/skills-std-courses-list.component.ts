@@ -11,7 +11,7 @@ import { Route } from '@angular/compiler/src/core';
 export class SkillsStdCoursesListComponent implements OnInit {
 
   coursesList = [];
-  loading = false;
+  isLoading = false;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -27,10 +27,10 @@ export class SkillsStdCoursesListComponent implements OnInit {
   }
 
   getCourses() {
-    this.loading = true;
+    this.isLoading = true;
     this.coursesService.getAllCourses().subscribe((response) => {
       this.coursesList = response['data'];
-      this.loading = false;
+      this.isLoading = false;
     });
   }
 

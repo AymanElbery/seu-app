@@ -537,10 +537,10 @@
     </div>
     <div class="row" style="margin-top: 20px; text-align: center;">
         <div class="col-md-12">
-            <button *ngIf="!disabled && !course" style="width: 20%;" [disabled]="submitted || AddCourseForm.invalid"
+            <button *ngIf=" !course" style="width: 20%;" [disabled]="submitted || AddCourseForm.invalid"
                 (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "general.save" | translate}} <i
                     class="fa fa-save"></i></button>
-            <button *ngIf="!disabled && course" style="width: 20%;" [disabled]="submitted || AddCourseForm.invalid"
+            <button *ngIf=" course" style="width: 20%;" [disabled]="submitted || AddCourseForm.invalid"
                 (click)="onUpdate()" type="submit" class="btn btn-primary">{{ "general.edit" | translate}} <i
                     class="fa fa-save"></i></button>
 
