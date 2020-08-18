@@ -131,7 +131,7 @@
         "registered": "قيد التسجيل",
         "rejected": "مرفوض",
         "approved": "مقبول",
-        "ug": "under graduated",
-        "gr": "graduated"
+        "success_course_std_request": "تم إضافة الطالب إلى الدورة بنجاح",
+        "not_found_course_std_request": "رقم الطالب غير صحيح "
     }
 }

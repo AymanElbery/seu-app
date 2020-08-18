@@ -126,12 +126,12 @@ export class SkillsCoursesStdComponent implements OnInit {
             this.getCourseStudents(this.course_id);
             this.toastr.push([{
               'type': 'success',
-              'body': this.translate.instant("courses.success_request")
+              'body': this.translate.instant("courses.success_course_std_request")
             }]);
           } else {
             this.toastr.push([{
               'type': 'error',
-              'body': response.error
+              'body': this.translate.instant("courses.not_found_course_std_request")
             }]);
           }
           this.submitted = false;
