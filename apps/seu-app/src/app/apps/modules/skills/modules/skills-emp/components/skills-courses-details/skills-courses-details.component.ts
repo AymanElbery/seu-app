@@ -27,7 +27,7 @@ export class SkillsCoursesDetailsComponent implements OnInit {
     private toastr: AppToasterService,
   ) {
     this.isLoading = true;
-    this.course_id = this.router.url.split("/")[5];
+    this.course_id = this.route.snapshot.params['id'];
     this.getCourseDetails(this.course_id);
   }
 

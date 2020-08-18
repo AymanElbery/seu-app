@@ -15,7 +15,7 @@ export class SkillsStdCourseDetailsComponent implements OnInit {
   courseID;
   courseDetails;
   courseLects;
-  loading = false;
+  isLoading = false;
   constructor(
     private sanitized: DomSanitizer,
     private router: Router,
@@ -31,15 +31,15 @@ export class SkillsStdCourseDetailsComponent implements OnInit {
     if (!courseID) {
       this.gotoList();
     }
-    this.loading = true;
+    this.isLoading = true;
     this.coursesService.getCourseDetails(courseID).subscribe((response) => {
       if (response['status']) {
         this.courseDetails = response['data']['course'];
         this.courseDetails['DETAILS_AR'] = this.sanitized.bypassSecurityTrustHtml(this.courseDetails['DETAILS_AR']);
         this.courseDetails['DETAILS_EN'] = this.sanitized.bypassSecurityTrustHtml(this.courseDetails['DETAILS_EN']);
-    
+
         this.courseDetails = response['data']['course'];
-        this.loading = false;
+        this.isLoading = false;
       } else {
         this.gotoList();
       }
@@ -48,6 +48,22 @@ export class SkillsStdCourseDetailsComponent implements OnInit {
   }
 
   register() {
+    this.isLoading = true;
+    this.coursesService.register(this.courseID).subscribe(response => {
+      if (response['status']) {
+        this.coursesService.notifySucc('registerd_succ');
+        this.router.navigate(['../../mycourses'], { relativeTo: this.route });
+      } else {
+        this.coursesService.notifyError(response['res_code']);
+      }
+      this.isLoading = false;
+    }, err => {
+      this.coursesService.tryagain();
+
+      this.isLoading = false;
+
+    });
+    return false;
 
   }
 

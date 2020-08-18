@@ -8,6 +8,7 @@ import { Student } from '../models/student';
 import { Subject, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Injectable({
     providedIn: 'root'
@@ -21,9 +22,10 @@ export class SkillsLookupsService extends SkillsRootService {
         public http: HttpClient,
         public router: Router,
         config: GlobalService,
-        translate: TranslateService
+        translate: TranslateService,
+        toaster:AppToasterService
     ) {
-        super(http, router, config, translate);
+        super(http, router, config, translate,toaster);
     }
 
     getCollegesGroups() {

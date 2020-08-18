@@ -12,7 +12,10 @@
         "delete": "حذف",
         "cancel": "إلغاء",
         "back": "العودة الي القائمة",
-        "details": "التفاصيل"
+        "details": "التفاصيل",
+        "registrations":"طلبات التسجيل",
+        "days": "يوم",
+        "register": "تسجيل"
     },
     "menu": {
         "hello": "مرحبا",
@@ -131,11 +134,13 @@
         "std_level": "المستوى",
         "add_std": "إضافة طالب",
         "change_status": "تغيير حالة الطلب",
-        "registered": "قيد التسجيل",
-        "rejected": "مرفوض",
-        "approved": "مقبول",
         "ug": "under graduated",
         "gr": "graduated"
+    },
+    "statuses": {
+        "registered": "قيد التسجيل",
+        "rejected": "مرفوض",
+        "approved": "مقبول"
     },
     "std_courses": {
         "course_dates": "تاريخ اقامة الدورة",

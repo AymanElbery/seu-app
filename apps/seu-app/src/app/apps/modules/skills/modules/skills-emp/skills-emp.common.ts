@@ -10,6 +10,7 @@ import { SkillsCoursesFromComponent } from './components/skills-courses-from/ski
 import { SkillsCoursesAppointmentsComponent } from './components/skills-courses-appointments/skills-courses-appointments.component';
 import { SkillsADMINGuard } from '../../skills-guard/admin.guard';
 import { SkillsEMPGuard } from '../../skills-guard/emp.guard';
+import { SkillsCourseViewComponent } from './components/skills-course-view/skills-course-view.component';
 
 export const componentDeclarations: any[] = [
     SkillsUsersHomeComponent,
@@ -20,6 +21,7 @@ export const componentDeclarations: any[] = [
     SkillsCoursesAppointmentsComponent,
     SkillsCoursesDetailsComponent,
     SkillsCoursesStdComponent,
+    SkillsCourseViewComponent,
     ChangeRequestComponent
 ];
 
@@ -43,21 +45,28 @@ export const routes: Routes = [
         path: 'instructors-add', component: SkillsUsersFromComponent, canActivate: [SkillsEMPGuard]
     },
     {
-        path: 'courses-list', component: SkillsCoursesListComponent, canActivate: [SkillsADMINGuard]
+        path: 'courses-list', component: SkillsCoursesListComponent, canActivate: [SkillsEMPGuard]
     },
     {
-        path: 'courses-add', component: SkillsCoursesFromComponent, canActivate: [SkillsADMINGuard]
+        path: 'courses-add', component: SkillsCoursesFromComponent, canActivate: [SkillsEMPGuard]
     },
     {
-        path: 'courses-update/:id', component: SkillsCoursesFromComponent, canActivate: [SkillsADMINGuard]
+        path: 'courses-update/:id', component: SkillsCoursesFromComponent, canActivate: [SkillsEMPGuard]
     },
     {
-        path: 'courses-appointments/:id', component: SkillsCoursesAppointmentsComponent, canActivate: [SkillsADMINGuard]
+        path: 'courses-appointments/:id', component: SkillsCoursesAppointmentsComponent, canActivate: [SkillsEMPGuard]
     },
     {
-        path: 'courses-details/:id', component: SkillsCoursesDetailsComponent, canActivate: [SkillsADMINGuard]
+        path: 'courses-view', component: SkillsCourseViewComponent,
+        canActivate: [SkillsEMPGuard],
+        children: [
+            {
+                path: 'details/:id', component: SkillsCoursesDetailsComponent, canActivate: [SkillsEMPGuard]
+            },
+            {
+                path: 'students/:id', component: SkillsCoursesStdComponent, canActivate: [SkillsEMPGuard]
+            },
+        ]
     },
-    {
-        path: 'courses-students/:id', component: SkillsCoursesStdComponent, canActivate: [SkillsADMINGuard]
-    },
+
 ];

@@ -61,7 +61,7 @@ export class SkillsCoursesListComponent implements OnInit {
 
   details(id){
     this.isLoading = true;
-    this.router.navigate(['../courses-details/'+id], { relativeTo: this.route })
+    this.router.navigate(['../courses-view/details/'+id], { relativeTo: this.route })
   }
 
   delete(id){

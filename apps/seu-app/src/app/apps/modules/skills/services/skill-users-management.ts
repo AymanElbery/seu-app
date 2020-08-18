@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { SkillsRootService } from './skill-root.service';
 import { GlobalService } from '../../../../shared/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 @Injectable({
     providedIn: 'root'
@@ -14,9 +15,10 @@ export class SkillsUsersManagementService extends SkillsRootService {
         public http: HttpClient,
         public router: Router,
         config: GlobalService,
-        translate: TranslateService
+        translate: TranslateService,
+        toaster:AppToasterService
     ) {
-        super(http, router, config, translate);
+        super(http, router, config, translate,toaster);
     }
 
     getAllUsers(instructors = false) {
