@@ -13,7 +13,7 @@
         "cancel": "إلغاء",
         "back": "العودة الي القائمة",
         "details": "التفاصيل",
-        "registrations":"طلبات التسجيل",
+        "registrations": "طلبات التسجيل",
         "days": "يوم",
         "register": "تسجيل"
     },
@@ -135,7 +135,9 @@
         "add_std": "إضافة طالب",
         "change_status": "تغيير حالة الطلب",
         "ug": "under graduated",
-        "gr": "graduated"
+        "gr": "graduated",
+        "success_course_std_request": "تم إضافة الطالب إلى الدورة بنجاح",
+        "not_found_course_std_request": "رقم الطالب غير صحيح "
     },
     "statuses": {
         "registered": "قيد التسجيل",
