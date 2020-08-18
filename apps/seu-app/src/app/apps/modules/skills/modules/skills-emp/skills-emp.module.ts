@@ -5,6 +5,7 @@ import { AppsSharedModule } from '../../../apps-shared/apps.shared.module';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatDialogModule } from '@angular/material/dialog';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -20,7 +21,8 @@ import { routes, componentDeclarations } from './skills-emp.common';
     DatepickerModule.forRoot(),
     BsDatepickerModule.forRoot(),
     CKEditorModule,
-    SkillsCommonModule
+    SkillsCommonModule,
+    Ng2SearchPipeModule
   ],
   entryComponents: [
     componentDeclarations,

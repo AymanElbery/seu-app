@@ -1,38 +1,20 @@
-<!-- <app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.courses-std' | translate}}">
-</app-service-header> -->
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 10px; padding: 0 30px;">
-    <!-- <div *ngIf="courseDetails" class="row">
-        <div class="col-md-12">
-            <ul class="nav nav-pills tabs-course-details">
-                <li style="margin-left: 20px;">
-                    <h6 style="color: #EDEDED; position: relative; top: 25px;">({{ courseDetails.TITLE_AR }})</h6>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-primary" (click)="details(course_id)">تفاصيل الدورة</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn btn-primary active-tab-details active" (click)="students(course_id)">طلبات
-                        التسجيل</button>
-                </li>
-            </ul>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-6">
+            <input type="text" class="form-control" [(ngModel)]="filter"  placeholder="{{'std_courses.search' | translate}}">
         </div>
-    </div> -->
-
-    <form role="form" [formGroup]="AddStdForm">
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-md-4">
+        <div class="col-md-6">
+            <form role="form" [formGroup]="AddStdForm">
                 <div class="form-group">
-                    <input type="number" class="form-control" formControlName="STD_ID"
+                    <input style="display: inline-block; width: 70%;" type="number" class="form-control" formControlName="STD_ID"
                         placeholder="{{'courses.std_no' | translate}}">
+                    <button style="display: inline-block; width: 25%; margin-right: 3%;" [disabled]="submitted || AddStdForm.invalid" (click)="onSubmit()" type="submit"
+                     class="btn btn-primary">{{'courses.add_std' | translate}}</button>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <button [disabled]="submitted || AddStdForm.invalid" (click)="onSubmit()" type="submit"
-                    style="width: 100%;" class="btn btn-primary">{{'courses.add_std' | translate}}</button>
-            </div>
+            </form>
         </div>
-    </form>
+    </div>
     <div class="row" style="margin-top: 20px;">
         <div *ngIf="courseStudents.length == 0" class="col-md-12">
             <div class="alert alert-info text-center">
@@ -44,7 +26,11 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th>
+                                <div class="form-check">
+                                    <input style="width: 20px; height: 20px; position: relative; top: 5px; cursor: pointer;" class="form-check-input" type="checkbox" (change)="setAll($event)">
+                                </div>
+                            </th>
                             <th scope="col">{{"courses.std_no" | translate}}</th>
                             <th scope="col">{{"courses.std_name" | translate}}</th>
                             <th scope="col">{{"courses.std_coll" | translate}}</th>
@@ -55,8 +41,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let std of courseStudents; let i = index">
-                            <td>{{i+1}}</td>
+                        <tr *ngFor="let std of courseStudents | filter:filter ; let i = index">
+                            <td>
+                                <div class="form-check">
+                                    <input [disabled]="std.STATUS == 'rejected' || std.STATUS == 'approved'" style="width: 20px; height: 20px; position: relative; top: 5px; cursor: pointer;" class="form-check-input" type="checkbox" (change)="pushIds($event, std.REC_ID)">
+                                </div>
+                            </td>
                             <td>{{std.STD_ID}}</td>
                             <td>{{std.FULL_NAME_AR}}</td>
                             <td>{{std.COLL_TITLE_AR}}</td>
@@ -73,6 +63,12 @@
                         </tr>
                     </tbody>
                 </table>
+                <select [disabled]="reqIds.length == 0" style="width: 30%; display: inline-block;" [(ngModel)]="status" class="form-control" id="status">
+                    <option value="registered">{{"statuses.registered"|translate}}</option>
+                    <option value="approved">{{"statuses.approved"|translate}}</option>
+                    <option value="rejected">{{"statuses.rejected"|translate}}</option>
+                </select>
+                <button [disabled]="reqIds.length == 0" style="width: 15%; display: inline-block; margin-right: 1%;" type="button" (click)="changeBulkStatus()" class="btn btn-primary">{{"general.save"|translate}}</button>
             </div>
         </div>
     </div>
