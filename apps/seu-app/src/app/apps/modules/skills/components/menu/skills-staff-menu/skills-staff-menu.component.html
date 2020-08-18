@@ -1,6 +1,4 @@
-<div class="nav-item has-sub">
-    <a routerLink="staff/mycourses">
-        <span>{{ "menu.courses" | translate }} </span>
-        <i class="ik ik-user"></i>
-    </a>
+<div [ngClass]="{'active': activeRoute == 'std'}" class="nav-item">
+    <a href="#" routerLink="staff/mycourses"><span>{{ "menu.mycourses" | translate }} </span>
+        <i class="ik ik-home"></i></a>
 </div>

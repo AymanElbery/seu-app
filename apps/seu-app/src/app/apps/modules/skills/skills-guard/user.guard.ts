@@ -4,8 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { SkillsUserService } from '../services/skill-user'
 import { map } from 'rxjs/operators';
+import { SkillsModule } from '../skills.module';
 
-@Injectable()
+@Injectable({
+  providedIn: SkillsModule
+})
 export class SkillsUSERGuard implements CanActivate {
   constructor(private router: Router, protected user: SkillsUserService, private translate: TranslateService) {
 
