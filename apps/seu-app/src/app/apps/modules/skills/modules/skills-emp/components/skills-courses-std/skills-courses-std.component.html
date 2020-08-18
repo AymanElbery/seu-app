@@ -57,10 +57,7 @@
                             <td>{{std.FULL_NAME_AR}}</td>
                             <td>{{std.COLL_TITLE_AR}}</td>
                             <td>{{std.DEPT_DESC_AR}}</td>
-                            <td>
-                                <span *ngIf="std.LEVEL_CODE == 'UG'">{{"courses.ug" | translate}}</span>
-                                <span *ngIf="std.LEVEL_CODE == 'GR'">{{"courses.gr" | translate}}</span>
-                            </td>
+                            <td>{{std.CLASS_LEVEL}}</td>
                             <td>
                                 <span *ngIf="std.STATUS == 'registered'">{{"courses.registered" | translate}}</span>
                                 <span *ngIf="std.STATUS == 'rejected'">{{"courses.rejected" | translate}}</span>
