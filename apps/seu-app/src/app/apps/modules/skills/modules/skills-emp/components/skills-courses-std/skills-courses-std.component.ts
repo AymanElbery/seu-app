@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SkillsCourseService } from '../../../../services/skill-course';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -21,6 +21,11 @@ export class SkillsCoursesStdComponent implements OnInit {
   courseDetails;
   submitted = false;
   courseStudents = [];
+  filter;
+  status;
+  @Input() groupFilters: Object;
+
+  reqIds = [];
 
   constructor(
     private fb: FormBuilder,
@@ -71,11 +76,6 @@ export class SkillsCoursesStdComponent implements OnInit {
     );
   }
 
-  // details(id) {
-  //   this.isLoading = true;
-  //   this.router.navigate(['../../courses-details/' + id], { relativeTo: this.route });
-  // }
-
   students(id) {
     this.isLoading = true;
     this.getCourseStudents(id);
@@ -108,6 +108,55 @@ export class SkillsCoursesStdComponent implements OnInit {
     });
   }
 
+  pushIds(e, id){
+    if (e.currentTarget.checked) {
+      this.reqIds.push(id);
+    }else{
+      let index = this.reqIds.indexOf(id);
+      if (index > -1) {
+        this.reqIds.splice(index, 1);
+      }
+    }
+  }
+
+  setAll(e){
+    if (e.currentTarget.checked) {
+      let elements = Array.from(document.getElementsByClassName("form-check-input"));
+      elements.forEach((element: any) => {
+        if (!element.disabled) {
+          element.checked = true;
+        }
+      });
+      this.reqIds = [];
+      for (let i = 0; i < this.courseStudents.length; i++) {
+        if (this.courseStudents[i].STATUS == 'registered') {
+          this.reqIds.push(this.courseStudents[i].REC_ID);
+        }
+      }
+    }else{
+      let elements = Array.from(document.getElementsByClassName("form-check-input"));
+      elements.forEach((element: any) => {
+        element.checked = false;
+      });
+      this.reqIds = [];
+    }
+  }
+
+  changeBulkStatus(){
+    this.isLoading = true;
+    let data = {
+      'ids'         : this.reqIds,
+      'STATUS'      : this.status,
+    };
+    this.skillsCourseService.updateBulkStatus(data).subscribe(
+      (response: any) => {
+        if (response) {
+          this.getCourseStudents(this.course_id);
+        }
+      }
+    );
+  }
+
   onSubmit() {
     this.isLoading = true;
     if (this.AddStdForm.invalid) {
@@ -123,7 +172,6 @@ export class SkillsCoursesStdComponent implements OnInit {
         this.isLoading = true;
         if (response) {
           if (response.status) {
-            this.getCourseStudents(this.course_id);
             this.toastr.push([{
               'type': 'success',
               'body': this.translate.instant("courses.success_course_std_request")
@@ -134,6 +182,7 @@ export class SkillsCoursesStdComponent implements OnInit {
               'body': this.translate.instant("courses.not_found_course_std_request")
             }]);
           }
+          this.getCourseStudents(this.course_id);
           this.submitted = false;
         }
       },

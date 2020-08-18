@@ -60,6 +60,10 @@ export class SkillsCourseService extends SkillsRootService {
         return this.post("emp/courses/change_course_std_status", data);
     }
 
+    updateBulkStatus(data){
+        return this.post("emp/courses/change_course_std_status_bulk", data);
+    }
+
     addCourseAppointment(data){
         return this.post("emp/courses/add_course_appointment", data);
     }

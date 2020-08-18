@@ -33,7 +33,7 @@ export class SkillsStdMycoursesComponent implements OnInit {
 
   cancel(id) {
     this.isLoading = true;
-    this.coursesService.cancel(this.courseID).subscribe(response => {
+    this.coursesService.cancel(id).subscribe(response => {
       if (response['status']) {
         this.coursesService.notifySucc('registerd_succ');
         this.router.navigate(['../../mycourses'], { relativeTo: this.route });
