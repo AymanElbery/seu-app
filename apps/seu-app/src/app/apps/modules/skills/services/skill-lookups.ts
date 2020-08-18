@@ -9,9 +9,10 @@ import { Subject, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { SkillsModule } from '../skills.module';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: SkillsModule
 })
 export class SkillsLookupsService extends SkillsRootService {
 

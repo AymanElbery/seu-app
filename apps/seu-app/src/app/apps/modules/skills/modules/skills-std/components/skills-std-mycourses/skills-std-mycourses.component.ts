@@ -31,12 +31,17 @@ export class SkillsStdMycoursesComponent implements OnInit {
     });
   }
 
+  details(id) {
+    this.router.navigate(['../course-details/', id], { relativeTo: this.route });
+    return false;
+  }
+
   cancel(id) {
     this.isLoading = true;
     this.coursesService.cancel(id).subscribe(response => {
       if (response['status']) {
-        this.coursesService.notifySucc('registerd_succ');
-        this.router.navigate(['../../mycourses'], { relativeTo: this.route });
+        this.coursesService.notifySucc(response['res_code']);
+        this.getMyCourses();
       } else {
         this.coursesService.notifyError(response['res_code']);
       }
@@ -51,7 +56,22 @@ export class SkillsStdMycoursesComponent implements OnInit {
   }
 
   excuse(id) {
+    this.isLoading = true;
+    this.coursesService.excuse(id).subscribe(response => {
+      if (response['status']) {
+        this.coursesService.notifySucc(response['res_code']);
+        this.getMyCourses();
+      } else {
+        this.coursesService.notifyError(response['res_code']);
+      }
+      this.isLoading = false;
+    }, err => {
+      this.coursesService.tryagain();
 
+      this.isLoading = false;
+
+    });
+    return false;
   }
 
 }
