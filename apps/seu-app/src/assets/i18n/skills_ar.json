@@ -142,11 +142,25 @@
     "statuses": {
         "registered": "قيد التسجيل",
         "rejected": "مرفوض",
-        "approved": "مقبول"
+        "approved": "مقبول",
+        "excused": "معتذر",
+        "cancelled": "ملغي"
     },
     "std_courses": {
         "course_dates": "تاريخ اقامة الدورة",
         "reg_dates": "تاريخ التسجيل في الدورة",
-        "is_skill_record": "تصنيف الدورة فى السجل المهاري"
+        "is_skill_record": "تصنيف الدورة فى السجل المهاري",
+        "cancel_reg": "إلغاء التسجيل ",
+        "excuse_reg": "الإعتذار عن الدورة"
+    },
+    "messages": {
+        "already_registered": "انت مسجل بالفعل فى هذه الدورة",
+        "cousrse_has_been_registered": "تم التسجيل فى الدورة بنجاح",
+        "couldnot_register_course": "لم يتم التسجيل فى الدورة، الرجاء المحاولة مرة أخري",
+        "not_registered": "أنت لست مسجل فى هذه الدورة",
+        "cousrse_has_been_canceled": "تم الغاء التسجيل فى الدورة بنجاح",
+        "couldnot_cancel_course": "لم يتم الغاء التسجيل، الرجاء المحاولة مرة أخري",
+        "cousrse_has_been_excused": "تم الأعتذار عن الدورة بنجاح",
+        "couldnot_excuse_course": "لم يتم الإعتذار عن الدورة، الرجاء المحاولة مرة أخري"
     }
 }
