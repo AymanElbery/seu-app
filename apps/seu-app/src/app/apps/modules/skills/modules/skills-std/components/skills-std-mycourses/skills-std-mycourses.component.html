@@ -38,15 +38,15 @@
                 <td>{{course['END_DATE'] | date : 'yyyy-MM-dd'}}</td>
                 <td>{{ "statuses."+course['STATUS'] | translate}}</td>
                 <td>
-                  <button (click)="details(course.ID)"
+                  <button *ngIf="course['STATUS'] == 'approved'" (click)="details(course.ID)"
                     class="btn btn-primary">{{"general.details" | translate}}</button>
                 </td>
-                <td *ngIf="course['CAN_CANCEL'] && course['STATUS']!='cancelled'">
-                  <button (click)="cancel(course.ID)"
+                <td>
+                  <button *ngIf="course['CAN_CANCEL'] && course['STATUS']!='cancelled'" (click)="cancel(course.ID)"
                     class="btn btn-primary">{{"std_courses.cancel_reg" | translate}}</button>
                 </td>
-                <td *ngIf="course['CAN_EXCUSE'] && course['STATUS']!='excused'">
-                  <button (click)="excuse(course.ID)"
+                <td>
+                  <button *ngIf="course['CAN_EXCUSE'] && course['STATUS']!='excused'" (click)="excuse(course.ID)"
                     class="btn btn-primary">{{"std_courses.excuse_reg" | translate}}</button>
                 </td>
               </tr>

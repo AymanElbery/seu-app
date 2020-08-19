@@ -8,12 +8,17 @@ import { SkillsStdCourseViewComponent } from './components/skills-std-course-vie
 import { SkillsStdCourseFilesComponent } from './components/skills-std-course-view/skills-std-course-files/skills-std-course-files.component';
 import { SkillsStdCourseAttendsComponent } from './components/skills-std-course-view/skills-std-course-attends/skills-std-course-attends.component';
 import { SkillsStdMycourseDetailsComponent } from './components/skills-std-course-view/skills-std-mycourse-details/skills-std-mycourse-details.component';
+import { SkillsStdExcuseComponent } from './components/skills-std-course-view/skills-std-course-attends/dialog/skills-std-excuse.component';
 
 export const componentDeclarations: any[] = [
     SkillsStdHomeComponent, SkillsStdCoursesListComponent, SkillsStdCourseDetailsComponent, SkillsStdMycoursesComponent,
-    SkillsStdCourseViewComponent, SkillsStdMycourseDetailsComponent, SkillsStdCourseFilesComponent, SkillsStdCourseAttendsComponent
+    SkillsStdCourseViewComponent, SkillsStdMycourseDetailsComponent, SkillsStdCourseFilesComponent, SkillsStdCourseAttendsComponent,
+    SkillsStdExcuseComponent
 ];
 
+export const stdEntryComponents: any[] = [
+    SkillsStdExcuseComponent
+];
 export const providerDeclarations: any[] = [
 ];
 

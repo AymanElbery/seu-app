@@ -21,7 +21,7 @@
                 <td>{{lect.TITLE}}</td>
                 <td>{{lect.ACTUAL_DATE}}</td>
                 <td>
-                  <span *ngIf="lect['ATTENDS']">
+                  <span *ngIf="lect['ATTENDS'] == 1">
                     {{"staff.attends_1" | translate}}
                   </span>
                 </td>

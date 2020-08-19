@@ -11,6 +11,10 @@
     <li class="nav-item">
       <a class="nav-link " (click)="redirectTo('students')" [class.active]="current=='students'" href="#">{{"general.registrations" | translate}}</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link " (click)="redirectTo('excuses')" [class.active]="current=='excuses'" href="#">{{"general.excuses" | translate}}</a>
+    </li>
+    
   </ul>
   <div class="tab-content">
     <router-outlet></router-outlet>
