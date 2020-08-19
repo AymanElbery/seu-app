@@ -31,11 +31,14 @@ export class StaffCoursesService extends SkillsRootService {
     getCourseStudents(id) {
         return this.get("staff/courses/students/" + id);
     }
-    getCourseAttendance(id) {
-        return this.get("staff/courses/attendance/" + id);
+    getCourseLects(id) {
+        return this.get("staff/course_attendance/lects/" + id);
+    }
+    getCourseAttendance(lect_id) {
+        return this.get("staff/course_attendance/lectattend/" + lect_id);
     }
     saveCourseAttendance(post) {
-        return this.post("staff/courses/save_attendance", post);
+        return this.post("staff/course_attendance/save_attendance", post);
     }
 
     getCourseFiles(id) {
