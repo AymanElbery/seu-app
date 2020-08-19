@@ -157,7 +157,9 @@
         "is_skill_record": "تصنيف الدورة فى السجل المهاري",
         "search": "بحــث",
         "cancel_reg": "إلغاء التسجيل ",
-        "excuse_reg": "الإعتذار عن الدورة"
+        "excuse_reg": "الإعتذار عن الدورة",
+        "course_files": "الحقيبة التدريبية",
+        "course_attendance": "التحضير"
     },
     "messages": {
         "already_registered": "انت مسجل بالفعل فى هذه الدورة",
