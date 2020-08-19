@@ -1,10 +1,17 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { componentDeclarations, routes } from './skills-staff.common';
+import { SeucommonModule } from 'src/app/seucommon/seucommon.module';
+import { RouterModule } from '@angular/router';
+import { AppsSharedModule } from '../../../apps-shared/apps.shared.module';
+import { SkillsCommonModule } from '../skills-common/skills-common.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [componentDeclarations],
   imports: [
-    CommonModule
+    SeucommonModule,
+    AppsSharedModule,
+    RouterModule.forChild(routes),
+    SkillsCommonModule
   ]
 })
 export class SkillsStaffModule { }

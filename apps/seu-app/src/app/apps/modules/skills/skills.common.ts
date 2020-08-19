@@ -12,6 +12,7 @@ import { SkillsStaffMenuComponent } from './components/menu/skills-staff-menu/sk
 import { SkillsStdMenuComponent } from './components/menu/skills-std-menu/skills-std-menu.component';
 import { SkillsUSERGuard } from './skills-guard/user.guard';
 import { SkillsADMINGuard } from './skills-guard/admin.guard';
+import { SkillsUserService } from './services/skill-user';
 
 
 export const componentDeclarations: any[] = [
@@ -20,6 +21,7 @@ export const componentDeclarations: any[] = [
 ];
 
 export const providerDeclarations: any[] = [
+    SkillsUserService,
     SkillsUSERGuard,SkillsADMINGuard,SkillsSTDGuard, SkillsSTAFFGuard, SkillsEMPGuard, SkillsHomeComponent
 ];
 

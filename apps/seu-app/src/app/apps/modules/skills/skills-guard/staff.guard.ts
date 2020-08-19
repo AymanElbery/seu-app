@@ -3,7 +3,10 @@ import {  Router } from '@angular/router'; import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { SkillsUserService } from '../services/skill-user'
 import { SkillsUSERGuard } from './user.guard';
-@Injectable()
+import { SkillsModule } from '../skills.module';
+@Injectable({
+  providedIn: SkillsModule
+})
 export class SkillsSTAFFGuard extends SkillsUSERGuard {
   constructor(router: Router, user: SkillsUserService, translate: TranslateService) {
     super(router, user, translate);

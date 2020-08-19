@@ -8,9 +8,10 @@ import { Student } from '../models/student';
 import { Subject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { SkillsModule } from '../skills.module';
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: SkillsModule
 })
 export class SkillsUserService extends SkillsRootService {
 
