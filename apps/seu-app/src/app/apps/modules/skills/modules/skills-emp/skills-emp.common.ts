@@ -54,9 +54,6 @@ export const routes: Routes = [
         path: 'courses-update/:id', component: SkillsCoursesFromComponent, canActivate: [SkillsEMPGuard]
     },
     {
-        path: 'courses-appointments/:id', component: SkillsCoursesAppointmentsComponent, canActivate: [SkillsEMPGuard]
-    },
-    {
         path: 'courses-view', component: SkillsCourseViewComponent,
         canActivate: [SkillsEMPGuard],
         children: [
@@ -65,6 +62,9 @@ export const routes: Routes = [
             },
             {
                 path: 'students/:id', component: SkillsCoursesStdComponent, canActivate: [SkillsEMPGuard]
+            },
+            {
+                path: 'lects/:id', component: SkillsCoursesAppointmentsComponent, canActivate: [SkillsEMPGuard]
             },
         ]
     },

@@ -27,6 +27,7 @@ export class SkillsStaffCourseViewComponent implements OnInit {
     } else if (currURl.indexOf("/course-view/attendance") != -1) {
       this.current = 'attendance';
     }
+    this.current = this.route.snapshot.children[0]['url'][0]['path']
 
   }
   redirectTo(code) {

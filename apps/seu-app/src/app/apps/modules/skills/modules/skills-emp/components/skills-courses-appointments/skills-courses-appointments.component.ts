@@ -41,7 +41,7 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
     private datePipe: DatePipe
   ) {
     this.isLoading = true;
-    this.course_id = this.router.url.split("/")[5];
+    this.course_id = this.route.snapshot.params['id'];
     this.getCourseById(this.course_id);
     this.getCourseAppointments(this.course_id);
     
@@ -63,11 +63,11 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
     this.skillsCourseService.getCourseById(data).subscribe(
       (response: any) => {
         if (response) {
-          this.minDate = new Date(this.formatDatepickerDate(response.data[0].START_DATE));
-          this.maxDate = new Date(this.formatDatepickerDate(response.data[0].END_DATE));
-          this.courseStartDate = this.formatDisplayDate(response.data[0].START_DATE);
-          this.courseEndDate = this.formatDisplayDate(response.data[0].END_DATE);
-          this.course_title = response.data[0].TITLE;
+          this.minDate = new Date(this.formatDatepickerDate(response.data.START_DATE));
+          this.maxDate = new Date(this.formatDatepickerDate(response.data.END_DATE));
+          this.courseStartDate = this.formatDisplayDate(response.data.START_DATE);
+          this.courseEndDate = this.formatDisplayDate(response.data.END_DATE);
+          this.course_title = response.data.TITLE;
           this.isLoading = false;
         }
       }

@@ -1,8 +1,8 @@
-<app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.add-course-appintment' | translate}}"></app-service-header>
+<!-- <app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.add-course-appintment' | translate}}"></app-service-header> -->
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section class="dashboard-wrap ug-content" style="margin-top: 30px; padding: 0 30px;">
     <form role="form" [formGroup]="AddCourseAppointmentsForm">
-        <h3> {{'courses.course_data_appointments' | translate}} ( {{ course_title }} ) </h3>
+        <!-- <h3> {{'courses.course_data_appointments' | translate}} ( {{ course_title }} ) </h3> -->
 
         <div class="row" style="margin-top: 15px;">
             <div class="col-md-6">
@@ -63,7 +63,7 @@
                             <td>{{appointment.TITLE}}</td>
                             <td>{{appointment.ACTUAL_DATE}}</td>
                             <td style="width: 200px !important;">
-                                <button (click)="delete(appointment.ID)" class="btn btn-danger">{{"courses.delete" | translate}}</button>
+                                <button (click)="delete(appointment.ID)" class="btn btn-danger">{{"general.delete" | translate}}</button>
                             </td>
                         </tr>
                     </tbody>

@@ -1,3 +1,103 @@
-<p>
-  skills-staff-course-details works!
-</p>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="card" *ngIf="courseDetails">
+      <h3 class="card-headersss">{{courseDetails['TITLE'+coursesService.langPrefix]}}</h3>
+      <div class="card-body">
+        <div class="card-text" [innerHtml]="courseDetails['DETAILS'+coursesService.langPrefix]">
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.cert_type"|translate}}</b>:
+              <span *ngIf="courseDetails['CERT_TYPE'] == 'c'">{{"courses.cert_course" | translate}}</span>
+              <span *ngIf="courseDetails['CERT_TYPE'] == 'w'">{{"courses.cert_work" | translate}}</span>
+            </div>
+            <div class="col-md-6">
+              <b>{{"courses.c_lang"|translate}}</b>: {{"general."+courseDetails['C_LANG'] | translate}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.type"|translate}}</b>:
+              <span>{{"courses."+courseDetails['TYPE']+"_type" | translate}}</span>
+            </div>
+            <div class="col-md-6">
+              <b>{{"courses.seats"|translate}}</b>: {{courseDetails['SEATS']}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.start_date"|translate}}</b>:
+              {{courseDetails['START_DATE'] | date : 'yyyy-MM-dd' }}
+            </div>
+
+            <div class="col-md-6">
+              <b>{{"courses.end_date"|translate}}</b>:
+              {{courseDetails['END_DATE'] | date : 'yyyy-MM-dd' }}
+            </div>
+          </div>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.period"|translate}}</b>: {{courseDetails['PERIOD']}} {{"general.days"|translate}}
+            </div>
+            <div class="col-md-6">
+              <b>{{"courses.time"|translate}}</b>: {{courseDetails['TIME']}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item" *ngIf="courseDetails['FACE_ATTEND']">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.face_attend"|translate}}</b>
+            </div>
+            <div class="col-md-6">
+              <b>{{courseDetails['CLASS_ROOM']}}</b>
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item" *ngIf="courseDetails['VIRTUAL_ATTEND']">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.virual_attend"|translate}}</b>
+            </div>
+            <div class="col-md-6">
+              <a href="{{courseDetails['LINK']}}" target="_blank">{{"courses.link"|translate}}</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="card-body" *ngIf="courseLects">
+        <div class="card-text">
+          <h5 class="card-headersss">{{"courses.appointments"|translate}}</h5>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">{{"courses.lec_title" | translate}}</th>
+                  <th scope="col">{{"courses.actual_date" | translate}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let lect of courseLects; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{lect.TITLE}}</td>
+                  <td>{{lect.ACTUAL_DATE}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -6,8 +6,9 @@ import { GlobalService } from 'src/app/shared/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { SkillsModule } from '../skills.module';
+import { SkillServicesModule } from './skills-service.module';
 @Injectable({
-    providedIn: SkillsModule
+    providedIn: SkillServicesModule
 })
 export class StaffCoursesService extends SkillsRootService {
 
@@ -30,11 +31,14 @@ export class StaffCoursesService extends SkillsRootService {
     getCourseStudents(id) {
         return this.get("staff/courses/students/" + id);
     }
-    getCourseAttendance(id) {
-        return this.get("staff/courses/attendance/" + id);
+    getCourseLects(id) {
+        return this.get("staff/course_attendance/lects/" + id);
+    }
+    getCourseAttendance(lect_id) {
+        return this.get("staff/course_attendance/lectattend/" + lect_id);
     }
     saveCourseAttendance(post) {
-        return this.post("staff/courses/save_attendance", post);
+        return this.post("staff/course_attendance/save_attendance", post);
     }
 
     getCourseFiles(id) {
