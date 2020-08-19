@@ -53,6 +53,8 @@ export class SkillsCoursesStdComponent implements OnInit {
     let data = {
       'ID': id,
     };
+
+    this.isLoading = true;
     this.skillsCourseService.getCourseStudents(data).subscribe(
       (response: any) => {
         if (response) {
@@ -77,7 +79,6 @@ export class SkillsCoursesStdComponent implements OnInit {
   }
 
   students(id) {
-    this.isLoading = true;
     this.getCourseStudents(id);
   }
 
@@ -103,15 +104,16 @@ export class SkillsCoursesStdComponent implements OnInit {
 
     let dialogref = this.dialog.open(ChangeRequestComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
-      this.isLoading = true;
-      this.getCourseStudents(this.course_id);
+      if (result && result['refresh']) {
+        this.getCourseStudents(this.course_id);
+      }
     });
   }
 
-  pushIds(e, id){
+  pushIds(e, id) {
     if (e.currentTarget.checked) {
       this.reqIds.push(id);
-    }else{
+    } else {
       let index = this.reqIds.indexOf(id);
       if (index > -1) {
         this.reqIds.splice(index, 1);
@@ -119,7 +121,7 @@ export class SkillsCoursesStdComponent implements OnInit {
     }
   }
 
-  setAll(e){
+  setAll(e) {
     if (e.currentTarget.checked) {
       let elements = Array.from(document.getElementsByClassName("form-check-input"));
       elements.forEach((element: any) => {
@@ -129,11 +131,13 @@ export class SkillsCoursesStdComponent implements OnInit {
       });
       this.reqIds = [];
       for (let i = 0; i < this.courseStudents.length; i++) {
-        if (this.courseStudents[i].STATUS == 'registered') {
+        if (this.courseStudents[i].STATUS == 'registered'
+          || this.courseStudents[i].STATUS == 'approved'
+          || this.courseStudents[i].STATUS == 'rejected') {
           this.reqIds.push(this.courseStudents[i].REC_ID);
         }
       }
-    }else{
+    } else {
       let elements = Array.from(document.getElementsByClassName("form-check-input"));
       elements.forEach((element: any) => {
         element.checked = false;
@@ -142,23 +146,23 @@ export class SkillsCoursesStdComponent implements OnInit {
     }
   }
 
-  changeBulkStatus(){
-    this.isLoading = true;
+  changeBulkStatus() {
+    this.submitted = true;
     let data = {
-      'ids'         : this.reqIds,
-      'STATUS'      : this.status,
+      'ids': this.reqIds,
+      'STATUS': this.status,
     };
     this.skillsCourseService.updateBulkStatus(data).subscribe(
       (response: any) => {
-        if (response) {
-          this.getCourseStudents(this.course_id);
-        }
+        this.submitted = true;
+        this.getCourseStudents(this.course_id);
+      }, error => {
+        this.submitted = false;
       }
     );
   }
 
   onSubmit() {
-    this.isLoading = true;
     if (this.AddStdForm.invalid) {
       return;
     }

@@ -42,14 +42,14 @@ export class ChangeRequestComponent implements OnInit {
     this.skillsCourseService.updateStatus(data).subscribe(
       (response: any) => {
         if (response) {
-          this.closeDiag();
+          this.closeDiag({refresh:true});
         }
       }
     );
   }
 
-  closeDiag() {
-    this.dialogRef.close();
+  closeDiag(obj={}) {
+    this.dialogRef.close(obj);
   }
 
 }
