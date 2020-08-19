@@ -253,7 +253,8 @@
         "enquries": "Chatbot inquiries",
         "ssoidentity": "sso Support",
         "attends": "Attendance System",
-        "masterequalize": "معادلة مقررات الفصل التحضيري"
+        "masterequalize": "معادلة مقررات الفصل التحضيري",
+        "skills": "Trainging & Skills record"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",

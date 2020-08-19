@@ -10,7 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SkillsCourseExcusesComponent implements OnInit {
 
-
+  isLoading = false;
   status;
   course_id
   excusesList = [];
@@ -67,14 +67,18 @@ export class SkillsCourseExcusesComponent implements OnInit {
     }
   }
   getList() {
+    this.isLoading = true;
     this.skillsCourseService.excuses_list(this.course_id).subscribe((response) => {
       if (response['status']) {
         this.excusesList = response['data'];
         this.excusesList = this.skillsCourseService.addFileURL(this.excusesList, 'EXCUSE_FILE');
-
+        this.isLoading = false;
+      } else {
+        this.isLoading = false;
       }
     }, err => {
       this.skillsCourseService.tryagain();
+      this.isLoading = false;
     });
   }
 

@@ -103,7 +103,7 @@
 
       -->
       <div class="card-body text-center">
-        <button (click)="register()" class="btn btn-success">{{'general.register' | translate}}</button>
+        <button *ngIf="courseDetails['CAN_REGISTER']" (click)="register()" class="btn btn-success">{{'general.register' | translate}}</button>
         &nbsp;
         <button (click)="gotoList()" class="btn btn-primary">{{'general.back' | translate}}</button>
       </div>
