@@ -13,12 +13,13 @@ import { SkillsStdMenuComponent } from './components/menu/skills-std-menu/skills
 import { SkillsLandingComponent } from './components/skills-landing/skills-landing.component';
 import { SkillsHomeComponent } from './components/skills-home/skills-home.component';
 import { SkillServicesModule } from './services/skills-service.module';
+import { SkillsUseromponent } from './components/user/skills-user.component';
 
 
 
 @NgModule({
-  declarations: [    SkillsLandingComponent, SkillsHomeComponent, SkillsMenuComponent,
-    SkillsEmpMenuComponent, SkillsStaffMenuComponent, SkillsStdMenuComponent],
+  declarations: [SkillsLandingComponent, SkillsHomeComponent, SkillsMenuComponent,
+    SkillsEmpMenuComponent, SkillsStaffMenuComponent, SkillsStdMenuComponent, SkillsUseromponent],
   imports: [
     SeucommonModule,
     SkillsCommonModule,

@@ -1,4 +1,4 @@
-<app-service-header title="{{'skills' | translate}}" subtitle="{{'menu.mycourses' | translate}}">
+<app-service-header title="{{'training' | translate}}" subtitle="{{'menu.mycourses' | translate}}">
 </app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
@@ -38,14 +38,12 @@
                 <td>{{course['END_DATE'] | date : 'yyyy-MM-dd'}}</td>
                 <td>{{ "statuses."+course['STATUS'] | translate}}</td>
                 <td>
-                  <button *ngIf="course['STATUS'] == 'approved'" (click)="details(course.ID)"
-                    class="btn btn-primary">{{"general.details" | translate}}</button>
-                </td>
-                <td>
+                  <button *ngIf="course['STATUS'] == 'approved' || course['STATUS'] == 'completed'"
+                    (click)="details(course.ID)" class="btn btn-primary">{{"general.details" | translate}}</button>
+                  &nbsp;
                   <button *ngIf="course['CAN_CANCEL'] && course['STATUS']!='cancelled'" (click)="cancel(course.ID)"
                     class="btn btn-primary">{{"std_courses.cancel_reg" | translate}}</button>
-                </td>
-                <td>
+                  &nbsp;
                   <button *ngIf="course['CAN_EXCUSE'] && course['STATUS']!='excused'" (click)="excuse(course.ID)"
                     class="btn btn-primary">{{"std_courses.excuse_reg" | translate}}</button>
                 </td>
