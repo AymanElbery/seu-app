@@ -173,5 +173,27 @@
         "course_files": "الحقيبة التدريبية",
         "course_attendance": "التحضير",
         "students": "الطلاب"
+    },
+    "course_files":{
+        "add-file": "إضافة ملف جديد",
+        "title": "عنوان الملف",
+        "url": "رابط الملف",
+        "upload_file": "رفع الملف",
+        "actions": "الإجراءات",
+        "delete": "حذف",
+        "download": "تحميل الملف",
+        "type": "نوع الملف",
+        "empty": "الحقيبة التدريبية فارغة",
+        "add_file_to_files": "إضافة ملف إلى الحقيبة التدريبية",
+        "type_url": "إدراج رابط",
+        "type_file": "رفع ملف",
+        "success_file_uploaded": "تم رفع الملف بنجاح",
+        "wrong_file_uploaded": "خطأ في رفع الملف",
+        "wrong_file": "نوع الملف المرفوع مرفوض",
+        "wrong_file_size": "حجم الملف كبير",
+        "dowbload": "تحميل الملف",
+        "download_btn": "تحميل",
+        "typeFile": "ملف",
+        "typeUrl": "رابط"
     }
 }
