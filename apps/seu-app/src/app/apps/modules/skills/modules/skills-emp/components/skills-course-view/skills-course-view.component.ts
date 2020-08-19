@@ -15,7 +15,6 @@ export class SkillsCourseViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log();
     this.currentID = this.route.snapshot.children[0].params['id'];
     this.current = this.route.snapshot.children[0]['url'][0]['path']
 

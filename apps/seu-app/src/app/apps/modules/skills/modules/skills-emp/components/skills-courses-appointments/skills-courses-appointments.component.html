@@ -68,7 +68,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div *ngIf="appointments.length == 0" class="alert alert-info text-center">
+                <div *ngIf="appointments.length == 0 && !isLoading" class="alert alert-info text-center">
                     {{"courses.not_found_appointments" | translate}}
                 </div>
             </div>
