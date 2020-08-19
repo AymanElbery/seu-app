@@ -6,8 +6,9 @@ import { GlobalService } from 'src/app/shared/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { SkillsModule } from '../skills.module';
+import { SkillServicesModule } from './skills-service.module';
 @Injectable({
-    providedIn: SkillsModule
+    providedIn: SkillServicesModule
 })
 export class SkillsCourseService extends SkillsRootService {
 

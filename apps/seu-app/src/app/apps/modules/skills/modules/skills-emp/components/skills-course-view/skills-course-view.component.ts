@@ -15,13 +15,9 @@ export class SkillsCourseViewComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log();
     this.currentID = this.route.snapshot.children[0].params['id'];
-    const currURl = document.location.href;
-    if (currURl.indexOf("/courses-view/details") != -1) {
-      this.current = 'details'
-    } else if (currURl.indexOf("/courses-view/students") != -1) {
-      this.current = 'students'
-    }
+    this.current = this.route.snapshot.children[0]['url'][0]['path']
 
   }
   redirectTo(code) {

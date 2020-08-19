@@ -90,8 +90,8 @@
         "c_lang": "لغة الدورة",
         "location_ar": "مقر الإقامة",
         "location_en": "مقر الإقامة E",
-        "start_date": "وقت بداية تاريخ",
-        "end_date": "وقت نهاية تاريخ",
+        "start_date": "تاريخ بداية الدورة",
+        "end_date": "تاريخ نهاية الدورة",
         "period": "مدة الدورة",
         "time": "وقت الدورة",
         "hr_hours": "الساعات المكتسبة",
@@ -172,6 +172,7 @@
     "staff": {
         "course_files": "الحقيبة التدريبية",
         "course_attendance": "التحضير",
-        "students": "الطلاب"
+        "students": "الطلاب",
+        "student_name":"اسم الطالب"
     }
 }

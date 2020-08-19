@@ -7,10 +7,11 @@ import { map } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { SkillsModule } from '../skills.module';
+import { SkillServicesModule } from './skills-service.module';
 
 
 @Injectable({
-    providedIn: SkillsModule
+    providedIn: SkillServicesModule
 })
 export class SkillsRootService {
     URL = environment.baselink + environment.servicesprefix + "/rest/skills/";
@@ -68,7 +69,6 @@ export class SkillsRootService {
     }
 
     notifySucc(code) {
-        console.log("messages." + code, this.translate.instant("messages." + code));
         this.toaster.push([{ type: "success", 'body': this.translate.instant("messages." + code) }]);
     }
 
