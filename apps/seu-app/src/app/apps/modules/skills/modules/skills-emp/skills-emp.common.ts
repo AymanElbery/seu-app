@@ -11,6 +11,7 @@ import { SkillsCoursesAppointmentsComponent } from './components/skills-courses-
 import { SkillsADMINGuard } from '../../skills-guard/admin.guard';
 import { SkillsEMPGuard } from '../../skills-guard/emp.guard';
 import { SkillsCourseViewComponent } from './components/skills-course-view/skills-course-view.component';
+import { SkillsCoursesFilesComponent } from './components/skills-course-files/skills-courses-files.component';
 
 export const componentDeclarations: any[] = [
     SkillsUsersHomeComponent,
@@ -22,7 +23,8 @@ export const componentDeclarations: any[] = [
     SkillsCoursesDetailsComponent,
     SkillsCoursesStdComponent,
     SkillsCourseViewComponent,
-    ChangeRequestComponent
+    ChangeRequestComponent,
+    SkillsCoursesFilesComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -65,6 +67,9 @@ export const routes: Routes = [
             },
             {
                 path: 'lects/:id', component: SkillsCoursesAppointmentsComponent, canActivate: [SkillsEMPGuard]
+            },
+            {
+                path: 'files/:id', component: SkillsCoursesFilesComponent, canActivate: [SkillsEMPGuard]
             },
         ]
     },
