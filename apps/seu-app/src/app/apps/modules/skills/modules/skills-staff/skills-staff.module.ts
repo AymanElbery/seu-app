@@ -4,6 +4,8 @@ import { SeucommonModule } from 'src/app/seucommon/seucommon.module';
 import { RouterModule } from '@angular/router';
 import { AppsSharedModule } from '../../../apps-shared/apps.shared.module';
 import { SkillsCommonModule } from '../skills-common/skills-common.module';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [componentDeclarations],
@@ -11,7 +13,11 @@ import { SkillsCommonModule } from '../skills-common/skills-common.module';
     SeucommonModule,
     AppsSharedModule,
     RouterModule.forChild(routes),
-    SkillsCommonModule
-  ]
+    SkillsCommonModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    componentDeclarations,
+  ],
 })
 export class SkillsStaffModule { }

@@ -1,0 +1,91 @@
+<ActionBar style="background:#001628; ">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <Label text='{{"services.lecture_execuse.title"|translate}}' class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  style="font-size: 25px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" style="font-size: 25px;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
+</ActionBar>
+<ScrollView>
+<FlexboxLayout flexDirection="column" class="iosFont">
+
+    <StackLayout class="ysBox paragraph" style="margin-bottom: 20;">
+        <Label [text]="reqData.text_list[0].text1"textWrap="true" ></Label>
+        <Label [text]="reqData.text_list[1].text1"textWrap="true" ></Label>
+        <Label [text]="reqData.text_list[2].text1" textWrap="true"></Label>
+        <Label [text]="reqData.text_list[3].text1" textWrap="true"></Label>
+        <Label [text]="reqData.text_list[4].text1" textWrap="true"></Label>
+    </StackLayout>
+
+    <Label text='{{"services.lecture_execuse.define_courses_names"|translate}}' style="color: #f08b1c; font-weight: 800;margin-right: 20;"></Label>
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" [ngClass]="{'throw_no_border':reqData.schedules.length === 0}"> 
+            <label text='{{"general.crn"|translate}}'></label>
+            <label text='{{"general.course_name"|translate}}' style="width: 40%;" textWrap="true"></label>
+            <label text="&#xf00c;" class="fas"></label>
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" *ngFor="let item of reqData.schedules;let i=index;"
+         class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.schedules.length-1 ? '0' : '1' }"> 
+            <label [text]="item.CRN" textWrap="true"></label>
+            <label  [text]="item.CRSE_TITLE" style="width: 40%;text-align: center;" textWrap="true"></label>
+            <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
+        </FlexboxLayout>
+    </FlexboxLayout>
+
+    <StackLayout style="margin:20 20;">
+        <Label text='{{"services.lecture_execuse.choose_lec_type"|translate}}' style="color: #f08b1c; font-weight: 800;"></Label>
+
+        <DropDown
+        [items]="lecsDropDown"
+        (selectedIndexChanged)="getLec($event)"
+        hint='{{"services.lecture_execuse.choose_lec_type"|translate}}'
+        itemsTextAlignment="left"
+        itemsPadding="5"
+        >
+        </DropDown>
+    </StackLayout>
+
+    <StackLayout style="margin:0 20 20;">
+        <Label text='{{"services.lecture_execuse.choose_week"|translate}}' style="color: #f08b1c; font-weight: 800;"></Label>
+        <DropDown
+        [items]="weeksDropDown"
+        (selectedIndexChanged)="getWeek($event)"
+        hint='{{"services.lecture_execuse.choose_week"|translate}}'
+        itemsTextAlignment="left"
+        itemsPadding="5"
+        >
+        </DropDown>
+    </StackLayout>
+
+    <StackLayout style="margin:0 20 20;">
+        <Label text='{{"services.lecture_execuse.define_date"|translate}}' style="color: #f08b1c; font-weight: 800;"></Label>
+        <DropDown
+        [items]="datesDropDown"
+        (selectedIndexChanged)="getDate($event)"
+        itemsTextAlignment="left"
+        itemsPadding="5"
+        hint='{{"services.lecture_execuse.define_date"|translate}}'
+        >
+        </DropDown>
+    </StackLayout>
+
+    <Label text='{{"services.lecture_execuse.absence_cause"|translate}}' textWrap="true"
+    style="color: #f08b1c;; margin-right:20 ;"></Label>
+
+    <TextView style="border-color: gray;border-width: 1; padding:10;"
+        #reason="ngModel" [(ngModel)]="lectureExecuse.reason" required>
+    </TextView>
+
+    <Label text='{{"services.lecture_execuse.file"|translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;margin-top: 20;"></Label>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn iosFontCenter"></Button>
+   
+</FlexboxLayout>
+</ScrollView>

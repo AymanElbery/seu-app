@@ -75,5 +75,12 @@ export class SkillsRootService {
     tryagain() {
         this.toaster.tryagain();
     }
+
+    addFileURL(files){
+        return files.map(item=>{
+            item['downloadURL'] = environment.baselink + environment.servicesprefix + "/rest"+"/download.php?file="+item['FILE_NAME'];
+        return item;
+        })
+    }
 }
 

@@ -5,6 +5,7 @@ import { SkillsStaffCourseFilesComponent } from './components/skills-staff-cours
 import { SkillsStaffCourseStudentsComponent } from './components/skills-staff-course-students/skills-staff-course-students.component';
 import { SkillsStaffCourseViewComponent } from './components/skills-staff-course-view/skills-staff-course-view.component';
 import { SkillsStaffMycoursesComponent } from './components/skills-staff-mycourses/skills-staff-mycourses.component';
+import { AddFileComponent } from './components/skills-staff-course-files/diag/add-file/add-file.component';
 import { SkillsSTAFFGuard } from '../../skills-guard/staff.guard';
 
 export const componentDeclarations: any[] = [
@@ -13,7 +14,8 @@ export const componentDeclarations: any[] = [
     SkillsStaffCourseFilesComponent,
     SkillsStaffCourseStudentsComponent,
     SkillsStaffCourseViewComponent,
-    SkillsStaffMycoursesComponent
+    SkillsStaffMycoursesComponent,
+    AddFileComponent
 ];
 
 export const providerDeclarations: any[] = [
