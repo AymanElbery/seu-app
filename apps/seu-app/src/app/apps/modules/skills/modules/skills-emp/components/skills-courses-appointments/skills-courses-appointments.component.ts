@@ -82,6 +82,9 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
       (response: any) => {
         if (response) {
           this.appointments = response.data;
+          this.appointments.forEach(element => {
+            element.ACTUAL_DATE = this.formatDisplayDate(element.ACTUAL_DATE);
+          });
           this.isLoading = false;
         }
       }

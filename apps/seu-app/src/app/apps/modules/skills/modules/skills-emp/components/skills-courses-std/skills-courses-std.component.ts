@@ -53,7 +53,6 @@ export class SkillsCoursesStdComponent implements OnInit {
     let data = {
       'ID': id,
     };
-
     this.isLoading = true;
     this.skillsCourseService.getCourseStudents(data).subscribe(
       (response: any) => {

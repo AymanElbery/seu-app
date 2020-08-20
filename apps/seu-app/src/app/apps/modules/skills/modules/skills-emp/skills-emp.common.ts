@@ -12,6 +12,7 @@ import { SkillsADMINGuard } from '../../skills-guard/admin.guard';
 import { SkillsEMPGuard } from '../../skills-guard/emp.guard';
 import { SkillsCourseViewComponent } from './components/skills-course-view/skills-course-view.component';
 import { SkillsCoursesFilesComponent } from './components/skills-course-files/skills-courses-files.component';
+import { SkillsCoursesAttendComponent } from './components/skills-course-attend/skills-courses-attend.component';
 
 export const componentDeclarations: any[] = [
     SkillsUsersHomeComponent,
@@ -24,7 +25,8 @@ export const componentDeclarations: any[] = [
     SkillsCoursesStdComponent,
     SkillsCourseViewComponent,
     ChangeRequestComponent,
-    SkillsCoursesFilesComponent
+    SkillsCoursesFilesComponent,
+    SkillsCoursesAttendComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -70,6 +72,9 @@ export const routes: Routes = [
             },
             {
                 path: 'files/:id', component: SkillsCoursesFilesComponent, canActivate: [SkillsEMPGuard]
+            },
+            {
+                path: 'attendance/:id', component: SkillsCoursesAttendComponent, canActivate: [SkillsEMPGuard]
             },
         ]
     },

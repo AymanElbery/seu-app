@@ -16,7 +16,8 @@
         "registrations": "طلبات التسجيل",
         "days": "يوم",
         "register": "تسجيل",
-        "files": "الحقيبة التدريبية"
+        "files": "الحقيبة التدريبية",
+        "attendance": "الحضور"
     },
     "menu": {
         "hello": "مرحبا",
@@ -138,7 +139,10 @@
         "ug": "under graduated",
         "gr": "graduated",
         "success_course_std_request": "تم إضافة الطالب إلى الدورة بنجاح",
-        "not_found_course_std_request": "رقم الطالب غير صحيح "
+        "not_found_course_std_request": "رقم الطالب غير صحيح ",
+        "attend": "حاضر",
+        "not_attend": "غائب",
+        "not_attend_yet": "غير محدد"
     },
     "statuses": {
         "registered": "قيد التسجيل",
