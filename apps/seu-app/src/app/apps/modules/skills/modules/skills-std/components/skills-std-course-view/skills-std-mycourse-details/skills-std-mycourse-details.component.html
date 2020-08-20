@@ -1,5 +1,3 @@
-<app-service-header title="{{'training' | translate}}" subtitle="{{'courses.courses-details' | translate}}">
-</app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
   <div class="row">
@@ -71,9 +69,9 @@
             <div class="col-md-6">
               <b>{{"courses.face_attend"|translate}}</b>
             </div>
-            <!-- <div class="col-md-6">
-                <b>{{"courses.class_room"|translate}}</b>: {{courseDetails['CLASS_ROOM']}}
-              </div> -->
+            <div class="col-md-6">
+              <b>{{"courses.class_room"|translate}}</b>: {{courseDetails['CLASS_ROOM']}}
+            </div>
           </div>
         </li>
         <li class="list-group-item" *ngIf="courseDetails['VIRTUAL_ATTEND']">
@@ -81,33 +79,12 @@
             <div class="col-md-6">
               <b>{{"courses.virual_attend"|translate}}</b>
             </div>
-            <!-- <div class="col-md-6">
-                <b>{{"courses.link"|translate}}</b>: {{courseDetails['LINK']}}
-              </div> -->
+            <div class="col-md-6">
+              <a href="{{courseDetails['LINK']}}" target="_blank">{{"courses.link"|translate}}</a>
+            </div>
           </div>
         </li>
-
       </ul>
-      <!--
-        
-        <li class="list-group-item">
-          <div class="row">
-            <div class="col-md-6">
-              <b>{{"courses.cert_type"|translate}}</b>: {{"courses.cert_course" | translate}}
-            </div>
-            <div class="col-md-6">
-              <b>{{"courses.c_lang"|translate}}</b>: {{"general."+courseDetails['C_LANG'] | translate}}
-            </div>
-          </div>
-        </li>
-
-      -->
-      <div class="card-body text-center">
-        <button *ngIf="courseDetails['CAN_REGISTER']" (click)="register()" class="btn btn-success">{{'general.register' | translate}}</button>
-        &nbsp;
-        <button (click)="gotoList()" class="btn btn-primary">{{'general.back' | translate}}</button>
-      </div>
-
     </div>
   </div>
 </section>

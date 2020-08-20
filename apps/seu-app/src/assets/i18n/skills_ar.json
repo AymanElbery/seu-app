@@ -17,7 +17,8 @@
         "days": "يوم",
         "register": "تسجيل",
         "files": "الحقيبة التدريبية",
-        "attendance": "الحضور"
+        "attendance": "الحضور",
+        "excuses": "الأعذار"
     },
     "menu": {
         "hello": "مرحبا",
@@ -156,13 +157,34 @@
         "3": "محذوفة",
         "4": "مكتملة"
     },
+    "excsue_status": {
+        "2": "تحت المراجعة",
+        "1": "مقبول",
+        "0": "مرفوض",
+        "null": "تحت المراجعة"
+    },
     "std_courses": {
         "course_dates": "تاريخ اقامة الدورة",
         "reg_dates": "تاريخ التسجيل في الدورة",
         "is_skill_record": "تصنيف الدورة فى السجل المهاري",
         "search": "بحــث",
         "cancel_reg": "إلغاء التسجيل ",
-        "excuse_reg": "الإعتذار عن الدورة"
+        "excuse_reg": "الإعتذار عن الدورة",
+        "course_files": "الحقيبة التدريبية",
+        "course_attendance": "الجلسات والحضور",
+        "attends_1": "حاضر",
+        "attends_0": "غائب",
+        "attends_null": "لم يتم التحضير",
+        "excuse_status_0": "مرفوض",
+        "excuse_status_1": "مقبول",
+        "excuse_status_2": "تحت الدراسة",
+        "excuseadded": "تم التقديم",
+        "add-excuse": "تقديم عذر",
+        "attends": "الحضور",
+        "excuse": "العذر",
+        "excuse_reason": "السبب",
+        "excuse_file": "ملف العذر",
+        "excuse_status": "حالة العذر"
     },
     "messages": {
         "already_registered": "انت مسجل بالفعل فى هذه الدورة",
@@ -178,9 +200,12 @@
     "staff": {
         "course_files": "الحقيبة التدريبية",
         "course_attendance": "التحضير",
-        "students": "الطلاب"
+        "students": "الطلاب",
+        "attends": "التحضير",
+        "attends_1": "تم التحضير",
+        "attends_0": "غير مسجل"
     },
-    "course_files":{
+    "course_files": {
         "add-file": "إضافة ملف جديد",
         "title": "عنوان الملف",
         "url": "رابط الملف",
@@ -206,6 +231,7 @@
         "attends": "التحضير",
         "attends_1": "تم التحضير",
         "attends_0": "غير مسجل",
+        "link_url": "الرابط",
         "files": "الحقيبة التدريبية"
     }
 }

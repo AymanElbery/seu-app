@@ -17,9 +17,9 @@ export class SkillsCourseService extends SkillsRootService {
         public router: Router,
         config: GlobalService,
         translate: TranslateService,
-        toaster:AppToasterService
+        toaster: AppToasterService
     ) {
-        super(http, router, config, translate,toaster);
+        super(http, router, config, translate, toaster);
     }
 
     getAllCourses() {
@@ -49,7 +49,7 @@ export class SkillsCourseService extends SkillsRootService {
     getCourseStudents(id) {
         return this.post("emp/courses/get_course_students", id);
     }
-    
+
     getCourseAppointments(id) {
         return this.post("emp/courses/get_course_appointments", id);
     }
@@ -66,28 +66,37 @@ export class SkillsCourseService extends SkillsRootService {
         return this.post("emp/courses/add_update", data);
     }
 
-    updateStatus(data){
+    updateStatus(data) {
         return this.post("emp/courses/change_course_std_status", data);
     }
 
-    updateBulkStatus(data){
+    updateBulkStatus(data) {
         return this.post("emp/courses/change_course_std_status_bulk", data);
     }
 
-    addCourseAppointment(data){
+    addCourseAppointment(data) {
         return this.post("emp/courses/add_course_appointment", data);
     }
 
-    addCourseStd(data){
+    addCourseStd(data) {
         return this.post("emp/courses/add_course_std", data);
     }
 
-    deleteCourse(data){
+    deleteCourse(data) {
         return this.post("emp/courses/delete", data);
     }
 
     deleteCourseAppointment(data) {
         return this.post("emp/courses/delete_appointment", data);
+    }
+
+
+    excuses_list(id) {
+        return this.get("emp/excuses/list/" + id);
+    }
+
+    excuses_update(data) {
+        return this.post("emp/excuses/update", data);
     }
 }
 

@@ -112,12 +112,13 @@ export class SkillsStaffCourseAttendanceComponent implements OnInit {
   }
   saveAttends() {
     this.loadAttends = true;
-    this.coursesService.saveCourseAttendance({ attends: this.lectAttends[this.currentLec['ID']] }).subscribe(response => {
+    this.coursesService.saveCourseAttendance({ course_id: this.courseID, attends: this.lectAttends[this.currentLec['ID']] }).subscribe(response => {
       if (response['status']) {
         this.coursesService.notifySucc(response['res_code']);
         if (this.firstSave) {
           delete this.lectAttends[this.currentLec['ID']];
         }
+        this.getCourseLects();
         this.currentLec = null;
       } else {
         this.coursesService.notifyError(response['res_code']);

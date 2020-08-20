@@ -40,5 +40,16 @@ export class StudentCoursesService extends SkillsRootService {
     excuse(id) {
         return this.post("std/courses/excuse", { course_id: id });
     }
+
+    getAllFiles(id) {
+        return this.get("std/courses/files/" + id);
+    }
+    getLectsAttends(id) {
+        return this.get("std/courses/lects/" + id);
+    }
+
+    addExcuse(data) {
+        return this.post("std/courses/lec_excuse", data);
+    }
 }
 

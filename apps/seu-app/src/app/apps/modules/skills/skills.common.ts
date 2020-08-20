@@ -7,6 +7,7 @@ import { SkillsADMINGuard } from './skills-guard/admin.guard';
 import { SkillsUserService } from './services/skill-user';
 import { SkillsLandingComponent } from './components/skills-landing/skills-landing.component';
 import { SkillsHomeComponent } from './components/skills-home/skills-home.component';
+import { SkillsUseromponent } from './components/user/skills-user.component';
 
 
 export const providerDeclarations: any[] = [
@@ -21,6 +22,10 @@ export const routes: Routes = [
             {
                 path: '',
                 component: SkillsHomeComponent
+            },
+            {
+                path: 'user',
+                component: SkillsUseromponent
             },
             {
                 path: 'staff',

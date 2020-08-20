@@ -32,7 +32,7 @@ export class SkillsStdMycoursesComponent implements OnInit {
   }
 
   details(id) {
-    this.router.navigate(['../course-details/', id], { relativeTo: this.route });
+    this.router.navigate(['../course-view/details/', id], { relativeTo: this.route });
     return false;
   }
 

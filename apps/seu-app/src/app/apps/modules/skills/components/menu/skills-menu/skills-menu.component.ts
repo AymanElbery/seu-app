@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
+import { SkillsUserService } from '../../../services/skill-user';
 
 @Component({
   selector: 'app-skills-menu',
@@ -7,20 +8,17 @@ import { Component, OnInit, AfterContentInit } from '@angular/core';
 })
 export class SkillsMenuComponent implements OnInit, AfterContentInit {
 
-  constructor() { }
+  constructor(private userService: SkillsUserService) { }
   menuType = '';
   ngOnInit() {
-
     const currURL = document.location.href;
-    if (currURL.indexOf("/skills/emp") !== -1) {
-      this.menuType = 'emp';
-    } else if (currURL.indexOf("/skills/std") !== -1) {
+    if (this.userService.is_std() && currURL.indexOf("/skills/std") !== -1) {
       this.menuType = 'std';
-    } else if (currURL.indexOf("/skills/staff") !== -1) {
+    } else if (this.userService.is_emp()) {
+      this.menuType = 'emp';
+    } else if (this.userService.is_instructor()) {
       this.menuType = 'staff';
     }
-
-
   }
 
   ngAfterContentInit() {

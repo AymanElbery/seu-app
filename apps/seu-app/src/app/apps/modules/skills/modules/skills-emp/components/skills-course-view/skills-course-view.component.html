@@ -3,16 +3,24 @@
 <section class="dashboard-wrap" style="margin-top: 10px; padding: 0 30px;">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link " (click)="redirectTo('details')" [class.active]="current=='details'" href="#">{{"general.details" | translate}}</a>
+      <a class="nav-link " (click)="redirectTo('details')" [class.active]="current=='details'"
+        href="#">{{"general.details" | translate}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " (click)="redirectTo('lects')" [class.active]="current=='lects'" href="#">{{"courses.appointments" | translate}}</a>
+      <a class="nav-link " (click)="redirectTo('lects')" [class.active]="current=='lects'"
+        href="#">{{"courses.appointments" | translate}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " (click)="redirectTo('students')" [class.active]="current=='students'" href="#">{{"general.registrations" | translate}}</a>
+      <a class="nav-link " (click)="redirectTo('students')" [class.active]="current=='students'"
+        href="#">{{"general.registrations" | translate}}</a>
+    </li>
+    <li>
+      <a class="nav-link " (click)="redirectTo('files')" [class.active]="current=='files'"
+        href="#">{{"general.files" | translate}}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " (click)="redirectTo('files')" [class.active]="current=='files'" href="#">{{"general.files" | translate}}</a>
+      <a class="nav-link " (click)="redirectTo('excuses')" [class.active]="current=='excuses'"
+        href="#">{{"general.excuses" | translate}}</a>
     </li>
     <li class="nav-item">
       <a class="nav-link " (click)="redirectTo('attendance')" [class.active]="current=='attendance'" href="#">{{"general.attendance" | translate}}</a>

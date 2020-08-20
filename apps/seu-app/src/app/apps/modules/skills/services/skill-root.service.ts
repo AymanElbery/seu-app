@@ -76,11 +76,11 @@ export class SkillsRootService {
         this.toaster.tryagain();
     }
 
-    addFileURL(files){
+    addFileURL(files,field='FILE_NAME'){
         return files.map(item=>{
-            item['downloadURL'] = environment.baselink + environment.servicesprefix + "/rest"+"/download.php?file="+item['FILE_NAME'];
+            item['downloadURL'] = environment.baselink + environment.servicesprefix + "/rest"+"/download.php?file="+item[field];
         return item;
-        })
+        });
     }
 }
 
