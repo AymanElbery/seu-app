@@ -106,13 +106,21 @@ export class MenuComponent implements OnInit, AfterContentInit {
     // this.hasWafi = true;
   }
   hasNoRole = false;
+  enqueryInterval;
   ngOnInit() {
-    // console.log('menu suer data');
     this.userService.userDataSubject.subscribe(res => {
       // console.log('fill menu');
-      if (res) {
+        if (this.environment.chatbot_mails.includes(this.userService.userData.email)) {
+          let unread = this;
+          this.getUnreadEnquries();
+          if (this.enqueryInterval) {
+            clearInterval(this.enqueryInterval);
+          }
+          this.enqueryInterval = setInterval(function(){ 
+            unread.getUnreadEnquries(); 
+          }, 60000);
+        }
         this.fillmenu();
-      }
 
     });
 
