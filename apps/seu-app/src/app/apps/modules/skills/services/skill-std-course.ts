@@ -47,9 +47,17 @@ export class StudentCoursesService extends SkillsRootService {
     getLectsAttends(id) {
         return this.get("std/courses/lects/" + id);
     }
-
+    getRatingTypes(files){
+        return (files > 0) ? this.get("std/courses/rating_questions_type") : this.get("std/courses/rating_questions_type_except_files");
+    }
+    getRatingQuestions(files){
+        return (files > 0) ? this.get("std/courses/rating_questions") : this.get("std/courses/rating_questions_except_files");
+    }
     addExcuse(data) {
         return this.post("std/courses/lec_excuse", data);
+    }
+    addRate(data) {
+        return this.post("std/courses/add_rate", data);
     }
 }
 

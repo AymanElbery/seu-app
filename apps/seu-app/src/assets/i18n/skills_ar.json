@@ -183,8 +183,19 @@
         "attends": "الحضور",
         "excuse": "العذر",
         "excuse_reason": "السبب",
+        "excellent": "ممتاز",
+        "very_good": "جيد جداً",
+        "good": "جيد",
+        "fairly_good": "مقبول",
+        "weak": "ضعيف",
+        "positive": "إيجابيات البرنامج التدريبي",
+        "negative": "سلبيات البرنامج التدريبي",
         "excuse_file": "ملف العذر",
-        "excuse_status": "حالة العذر"
+        "excuse_status": "حالة العذر",
+        "suggestions": "اقتراحات برامج أخرى",
+        "success_rate": "تم حفظ التقييم بنجاح",
+        "failed_rate": "لم يتم حفظ التقييم "
+
     },
     "messages": {
         "already_registered": "انت مسجل بالفعل فى هذه الدورة",
