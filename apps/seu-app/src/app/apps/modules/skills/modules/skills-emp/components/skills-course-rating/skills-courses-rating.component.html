@@ -30,4 +30,26 @@
             </div>
         </div>
     </div>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-6">
+            <h6 class="title">{{ "course_ratings.positive" | translate }}</h6>
+            <ul style="padding: 10px 30px; border: solid 1px #EDEDED;" *ngIf="positivs" class="list-group">
+                <span *ngFor="let positiv of positivs"><li *ngIf="positiv.POSITIVE">{{positiv.POSITIVE}}</li></span>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <h6 class="title">{{ "course_ratings.negative" | translate }}</h6>
+            <ul style="padding: 10px 30px; border: solid 1px #EDEDED;" *ngIf="negativs" class="list-group">
+                <span *ngFor="let negativ of negativs"><li *ngIf="negativ.NEGATIVE">{{negativ.NEGATIVE}}</li></span>
+            </ul>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-12">
+            <h6 class="title">{{ "course_ratings.suggestions" | translate }}</h6>
+            <ul style="padding: 10px 30px; border: solid 1px #EDEDED;" *ngIf="suggestions" class="list-group">
+                <span *ngFor="let suggestion of suggestions"><li *ngIf="suggestion.SUGGESTIONS">{{suggestion.SUGGESTIONS}}</li></span>
+            </ul>
+        </div>
+    </div>
 </section>

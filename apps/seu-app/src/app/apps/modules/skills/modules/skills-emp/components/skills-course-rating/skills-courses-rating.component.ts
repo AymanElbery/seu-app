@@ -14,6 +14,9 @@ export class SkillsCoursesRatingComponent implements OnInit {
   course_id;
   ratings;
   questions;
+  positivs;
+  negativs;
+  suggestions;
 
   constructor(
     private skillsCourseService: SkillsCourseService,
@@ -46,7 +49,9 @@ export class SkillsCoursesRatingComponent implements OnInit {
         if (response) {
           this.ratings = response.data.ratings;
           this.questions = response.data.questions;
-          console.log(this.ratings);
+          this.suggestions = response.data.suggestions;
+          this.negativs = response.data.negativs;
+          this.positivs = response.data.positivs;
         }
         this.isLoading = false;  
       },
