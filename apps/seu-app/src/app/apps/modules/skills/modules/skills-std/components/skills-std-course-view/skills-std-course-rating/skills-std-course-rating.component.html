@@ -1,0 +1,71 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <form role="form" [formGroup]="AddRateForm">
+    <div *ngFor="let type of types">
+      <div class="row" style="margin-top: 40px; border-bottom: solid 2px #EDEDED;">
+        <div class="col-md-12">
+          <h4 class="title">{{ type.TYPE_AR }}</h4>
+        </div>
+      </div>
+      <div style="margin-top: 20px;" *ngFor="let question of questions; let i = index">
+        <div *ngIf="question.RATING_TYPE == type.ID" class="row">
+          <div class="col-md-7">
+            <li style="font-size: 1.3em; position: relative; top: 10px;">{{ question.QUESTION_AR }}</li>
+          </div>
+          <div class="col-md-1">
+            <div class="form-group">
+              <input id="male" style="cursor: pointer;" type="radio" value="5" name="{{'RATE_' + question.ID}}" formControlName="{{'RATE_' + question.ID}}"> <span style="position: relative; bottom: 4px; right: 4px;"> {{"std_courses.excellent"|translate}}</span>
+            </div>  
+          </div>
+          <div class="col-md-1">
+            <div class="form-group">
+              <input id="male" style="cursor: pointer;" type="radio" value="4" name="{{'RATE_' + question.ID}}" formControlName="{{'RATE_' + question.ID}}"> <span style="position: relative; bottom: 4px; right: 4px;"> {{"std_courses.very_good"|translate}}</span>
+            </div>  
+          </div>
+          <div class="col-md-1">
+            <div class="form-group">
+              <input id="male" style="cursor: pointer;" type="radio" value="3" name="{{'RATE_' + question.ID}}" formControlName="{{'RATE_' + question.ID}}"><span style="position: relative; bottom: 4px; right: 4px;">  {{"std_courses.good"|translate}}</span>
+            </div>  
+          </div>
+          <div class="col-md-1">
+            <div class="form-group">
+              <input id="male" style="cursor: pointer;" type="radio" value="2" name="{{'RATE_' + question.ID}}" formControlName="{{'RATE_' + question.ID}}"> <span style="position: relative; bottom: 4px; right: 4px;"> {{"std_courses.fairly_good"|translate}}</span>
+            </div>  
+          </div>
+          <div class="col-md-1">
+            <div class="form-group">
+              <input id="male" style="cursor: pointer;" type="radio" value="1" name="{{'RATE_' + question.ID}}" formControlName="{{'RATE_' + question.ID}}"><span style="position: relative; bottom: 4px; right: 4px;">{{"std_courses.weak"|translate}}</span>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 40px;">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="positive">{{"std_courses.positive"|translate}} <span class="reqstart">*</span></label>
+          <textarea class="form-control" formControlName="POSITIVE" id="positive" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="negative">{{"std_courses.negative"|translate}} <span class="reqstart">*</span></label>
+          <textarea class="form-control" formControlName="NEGATIVE" id="negative" rows="3"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 40px;">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="suggestions">{{"std_courses.suggestions"|translate}}</label>
+          <textarea class="form-control" formControlName="SUGGESTIONS" id="suggestions" rows="5"></textarea>
+        </div>
+      </div> 
+    </div>
+    <div class="row" style="margin-top: 40px; text-align: center;">
+      <div class="col-md-12">
+        <button style="width: 30%;" [disabled]="submitted || AddRateForm.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "general.save" | translate}} <i class="fa fa-save"></i></button>
+      </div>
+    </div>
+  </form>
+</section>

@@ -18,7 +18,8 @@
         "register": "تسجيل",
         "files": "الحقيبة التدريبية",
         "attendance": "الحضور",
-        "excuses": "الأعذار"
+        "excuses": "الأعذار",
+        "rating": "التقييمات"
     },
     "menu": {
         "hello": "مرحبا",
@@ -183,8 +184,19 @@
         "attends": "الحضور",
         "excuse": "العذر",
         "excuse_reason": "السبب",
+        "excellent": "ممتاز",
+        "very_good": "جيد جداً",
+        "good": "جيد",
+        "fairly_good": "مقبول",
+        "weak": "ضعيف",
+        "positive": "إيجابيات البرنامج التدريبي",
+        "negative": "سلبيات البرنامج التدريبي",
         "excuse_file": "ملف العذر",
-        "excuse_status": "حالة العذر"
+        "excuse_status": "حالة العذر",
+        "suggestions": "اقتراحات برامج أخرى",
+        "success_rate": "تم حفظ التقييم بنجاح",
+        "failed_rate": "لم يتم حفظ التقييم "
+
     },
     "messages": {
         "already_registered": "انت مسجل بالفعل فى هذه الدورة",
@@ -233,5 +245,17 @@
         "attends_0": "غير مسجل",
         "link_url": "الرابط",
         "files": "الحقيبة التدريبية"
+    },
+    "course_ratings": {
+        "question": "السؤال",
+        "excellent": "ممتاز",
+        "very_good": "جيد جداً",
+        "good": "جيد",
+        "fairly_good": "مقبول",
+        "weak": "ضعيف",
+        "suggestions": "المقترحات",
+        "positive":"إيجابيات البرنامج التدريبي",
+        "not_found":"لا يوجد",
+        "negative":"سلبيات البرنامج التدريبي"
     }
 }

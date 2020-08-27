@@ -34,6 +34,10 @@ export class SkillsCourseService extends SkillsRootService {
         return this.get("emp/courses/get_all_files/" + id);
     }
 
+    getRatings(id, files) {
+        return this.get("emp/courses/get_all_ratings/" + id + "/"+ files);
+    }
+
     getColleges() {
         return this.get("lookups/colleges_groups");
     }

@@ -14,6 +14,7 @@ import { SkillsCourseViewComponent } from './components/skills-course-view/skill
 import { SkillsCourseExcusesComponent } from './components/skills-course-excuses/skills-course-excuses.component';
 import { SkillsCoursesFilesComponent } from './components/skills-course-files/skills-courses-files.component';
 import { SkillsCoursesAttendComponent } from './components/skills-course-attend/skills-courses-attend.component';
+import { SkillsCoursesRatingComponent } from './components/skills-course-rating/skills-courses-rating.component';
 
 export const componentDeclarations: any[] = [
     SkillsUsersHomeComponent,
@@ -29,7 +30,8 @@ export const componentDeclarations: any[] = [
     SkillsCoursesFilesComponent,
     SkillsCoursesAttendComponent,
     SkillsCourseExcusesComponent,
-    SkillsCoursesFilesComponent
+    SkillsCoursesFilesComponent,
+    SkillsCoursesRatingComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -80,6 +82,9 @@ export const routes: Routes = [
             },
             {
                 path: 'attendance/:id', component: SkillsCoursesAttendComponent, canActivate: [SkillsEMPGuard]
+            },
+            {
+                path: 'rating/:id', component: SkillsCoursesRatingComponent, canActivate: [SkillsEMPGuard]
             },
         ]
     },
