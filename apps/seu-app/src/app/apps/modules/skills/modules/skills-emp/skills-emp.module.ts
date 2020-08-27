@@ -7,13 +7,14 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatDialogModule } from '@angular/material/dialog';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { StdName } from './pipes/stdName.pipe';
+import { RatingPipe } from './pipes/ratingPipe';
 
 
 
 import { RouterModule } from '@angular/router';
 import { routes, componentDeclarations } from './skills-emp.common';
 @NgModule({
-  declarations: [componentDeclarations, StdName],
+  declarations: [componentDeclarations, StdName, RatingPipe],
   imports: [
     MatDialogModule,
     SeucommonModule,

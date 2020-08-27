@@ -25,6 +25,9 @@
     <li class="nav-item">
       <a class="nav-link " (click)="redirectTo('attendance')" [class.active]="current=='attendance'" href="#">{{"general.attendance" | translate}}</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link " (click)="redirectTo('rating')" [class.active]="current=='rating'" href="#">{{"general.rating" | translate}}</a>
+    </li>
   </ul>
   <div class="tab-content">
     <router-outlet></router-outlet>

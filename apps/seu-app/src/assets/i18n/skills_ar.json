@@ -18,7 +18,8 @@
         "register": "تسجيل",
         "files": "الحقيبة التدريبية",
         "attendance": "الحضور",
-        "excuses": "الأعذار"
+        "excuses": "الأعذار",
+        "rating": "التقييمات"
     },
     "menu": {
         "hello": "مرحبا",
@@ -244,5 +245,13 @@
         "attends_0": "غير مسجل",
         "link_url": "الرابط",
         "files": "الحقيبة التدريبية"
+    },
+    "course_ratings": {
+        "question": "السؤال",
+        "excellent": "ممتاز",
+        "very_good": "جيد جداً",
+        "good": "جيد",
+        "fairly_good": "مقبول",
+        "weak": "ضعيف"
     }
 }
