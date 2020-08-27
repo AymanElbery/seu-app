@@ -23,10 +23,10 @@ export class MenuComponent implements OnInit, AfterContentInit {
     
     // if (this.environment.chatbot_mails.includes(this.userService.userData.email)) {
       let unread = this;
-      this.getUnreadEnquries();
-      setInterval(function(){ 
-        unread.getUnreadEnquries(); 
-      }, 60000);
+      // this.getUnreadEnquries();
+      // setInterval(function(){ 
+      //   unread.getUnreadEnquries(); 
+      // }, 60000);
     // }
   }
   ngAfterContentInit() {
