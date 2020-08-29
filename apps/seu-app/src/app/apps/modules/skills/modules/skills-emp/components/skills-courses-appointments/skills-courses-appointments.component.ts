@@ -126,6 +126,7 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
         (response: any) => {
           if (response) {
             if (response.status) {
+              this.getCourseAppointments(this.course_id);
               this.toastr.push([{
                 'type': 'success',
                 'body': this.translate.instant("courses.success_delete")
@@ -136,7 +137,6 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
                 'body': response.error
               }]);
             }
-            this.getCourseAppointments(id);
           }
         },
         error => {
@@ -170,7 +170,6 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
               'body': response.error
             }]);
           }
-          this.isLoading = false;
           this.submitted = false;
         }
       },

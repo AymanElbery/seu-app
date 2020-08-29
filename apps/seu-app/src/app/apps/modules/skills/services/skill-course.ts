@@ -23,7 +23,7 @@ export class SkillsCourseService extends SkillsRootService {
     }
 
     getAllCourses() {
-        return this.get("emp/courses/list");
+        return this.get("emp/courses/list/"+ 1);
     }
 
     getCampus() {
