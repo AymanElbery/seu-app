@@ -73,5 +73,27 @@ export class SkillsStdMycoursesComponent implements OnInit {
     });
     return false;
   }
+  isdownloaing = false;
+  loadings = {};
+  printCert(crse_id,std_id) {
+    this.isdownloaing = true;
+    this.loadings[crse_id] = true;
+    this.coursesService.printCerts(crse_id,std_id,true).subscribe(response => {
+      if (response['status'] == false && response['res_code'] == 'no_rating') {
+        this.coursesService.notifyError('must_rate_course');
+        this.router.navigate(['../course-view/rating/', crse_id], { relativeTo: this.route });
+        return false;
+      }
+      this.coursesService.downloadPDF(response);
+      this.loadings[crse_id] = false;
+      this.isdownloaing = false;
+    }, err => {
+      this.coursesService.tryagain();
+      this.loadings[crse_id] = false;
+      this.isdownloaing = false;
+
+    });
+    return false;
+  }
 
 }

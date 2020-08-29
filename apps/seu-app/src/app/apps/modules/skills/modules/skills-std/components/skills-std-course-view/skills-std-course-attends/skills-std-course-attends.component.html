@@ -23,15 +23,29 @@
                 <td>{{lect.TITLE}}</td>
                 <td>{{lect.ACTUAL_DATE}}</td>
                 <td>
-                  <span class="text-green" *ngIf="lect['STATUS'] == '1'">
-                    {{"std_courses.attends_1" | translate}}
-                  </span>
+                  <ng-container *ngIf="lect['STATUS'] == '1'">
+                    <span class="text-green">
+                      {{"std_courses.attends_1" | translate}}
+                      |
+                    </span>
+                    <a (click)="print_attend(lect['ATTND_ID'])" class="btn btn-primary" href="#">
+                      <span class="ik ik-printer"></span>
+                      {{"general.print" | translate}}
+                      <span *ngIf="loadings[lect['ATTND_ID']]">
+                        {{"general.loading" | translate}}
+                      </span>
+                      
+                    </a>
+                  </ng-container>
+
                   <span class="text-red" *ngIf="lect['STATUS'] == '0'">
                     {{"std_courses.attends_0" | translate}}
                   </span>
                   <span *ngIf="lect['STATUS'] == NULL">
                     {{"std_courses.attends_null" | translate}}
                   </span>
+
+
                 </td>
                 <td *ngIf="lect['STATUS'] == '0'">
                   <span *ngIf="lect['EXCUSE'] == '1'">

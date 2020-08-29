@@ -54,5 +54,25 @@ export class SkillsStdCourseAttendsComponent implements OnInit {
       }
     });
   }
+  loadings = {};
+  isdownloaing = false;
+  print_attend(attnd_id) {
+    if(this.isdownloaing){
+      return false;
+    }
+    this.isdownloaing = true;
+    this.loadings[attnd_id] = true;
+    this.coursesService.printAttends(attnd_id).subscribe(response => {
+      this.coursesService.downloadPDF(response);
+      this.loadings[attnd_id] = false;
+      this.isdownloaing = false;
+    }, err => {
+      this.coursesService.tryagain();
+      this.loadings[attnd_id] = false;
+      this.isdownloaing = false;
+
+    });
+    return false;
+  }
 
 }

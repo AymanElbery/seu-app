@@ -46,6 +46,16 @@
                   &nbsp;
                   <button *ngIf="course['CAN_EXCUSE'] && course['STATUS']!='excused'" (click)="excuse(course.ID)"
                     class="btn btn-primary">{{"std_courses.excuse_reg" | translate}}</button>
+
+
+                  <a *ngIf="course['STATUS'] == 'completed'" (click)="printCert(course.ID,course.STD_ID)"
+                    class="btn btn-primary" href="#">
+                    <span class="ik ik-printer"></span>
+                    {{"general.print" | translate}}
+                    <span *ngIf="loadings[course.ID]">
+                      {{"general.loading" | translate}}
+                    </span>
+                  </a>
                 </td>
               </tr>
             </tbody>

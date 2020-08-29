@@ -12,6 +12,7 @@
         "delete": "حذف",
         "cancel": "إلغاء",
         "complete": "اغلاق",
+        "print": "طباعة",
         "back": "العودة الي القائمة",
         "details": "التفاصيل",
         "registrations": "طلبات التسجيل",
@@ -21,6 +22,7 @@
         "attendance": "الحضور",
         "excuses": "الأعذار",
         "rating": "التقييمات",
+        "loading": "تحميل ...",
         "submit_note": "يجب إدخال جميع الحقول الإلزامية لكي تتم عملية التسجيل"
     },
     "menu": {
@@ -42,7 +44,7 @@
         "stds-courses-list": "قائمة الدورات",
         "mycourses": "دوراتي",
         "traingnig": "التدريب وتنمية المهارات",
-        "inactive-courses-list": "قائمة الدورات الملغاه والمنتهية"
+        "inactive-courses-list": "قائمة الدورات المنتهية"
     },
     "users": {
         "add-user": "اضافة مستخدم جديد",
@@ -149,7 +151,8 @@
         "not_found_course_std_request": "رقم الطالب غير صحيح ",
         "attend": "حاضر",
         "not_attend": "غائب",
-        "not_attend_yet": "غير محدد"
+        "certificate":"شهادة",
+        "not_attend_yet": "لم يتم التحضير"
     },
     "statuses": {
         "registered": "قيد التسجيل",
@@ -216,7 +219,8 @@
         "attendance_has_been_saved": "تم تسجيل الحضور بنجاح",
         "attends_not_done": "لم يتم تسجيل الحضور لكافة مواعيد الدورة",
         "excuses_not_done": "لم يتم النظر فى كافة الأعذار المقدمة من الطلبة",
-        "closing_done": "تم اغلاق الدورة بنجاح"
+        "closing_done": "تم اغلاق الدورة بنجاح",
+        "must_rate_course": "يجب تقييم الدورة قبل طباعة الشهادة"
     },
     "staff": {
         "course_files": "الحقيبة التدريبية",

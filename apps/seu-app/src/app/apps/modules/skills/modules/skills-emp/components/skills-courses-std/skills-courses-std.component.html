@@ -44,6 +44,7 @@
                             <th scope="col">{{"courses.std_dept" | translate}}</th>
                             <th scope="col">{{"courses.std_level" | translate}}</th>
                             <th scope="col">{{"courses.status" | translate}}</th>
+                            <th scope="col">{{"courses.certificate" | translate}}</th>
                             <th scope="col">{{"courses.actions" | translate}}</th>
                         </tr>
                     </thead>
@@ -51,7 +52,8 @@
                         <tr *ngFor="let std of courseStudents | filter:filter ; let i = index">
                             <td>
                                 <div class="form-check">
-                                    <input [disabled]="!(std.STATUS == 'registered' || std.STATUS == 'rejected' || std.STATUS == 'approved')"
+                                    <input
+                                        [disabled]="!(std.STATUS == 'registered' || std.STATUS == 'rejected' || std.STATUS == 'approved')"
                                         style="width: 20px; height: 20px; position: relative; top: 5px; cursor: pointer;"
                                         class="form-check-input" type="checkbox" (change)="pushIds($event, std.REC_ID)">
                                 </div>
@@ -65,9 +67,23 @@
                                 <span>{{"statuses."+std.STATUS | translate}}</span>
                             </td>
                             <td>
-                                <button [disabled]="!(std.STATUS == 'registered' || std.STATUS == 'approved'|| std.STATUS == 'rejected')"
+                                <a *ngIf="std.STATUS == 'completed'" (click)="print_cert(std.STD_ID)"
+                                    class="btn btn-primary" href="#">
+                                    <span class="ik ik-printer"></span>
+                                    <span *ngIf="loadings[std.STD_ID]">
+                                        {{"general.loading" | translate}}
+                                    </span>
+                                </a>
+
+                            </td>
+                            <td>
+                                <button
+                                    [disabled]="!(std.STATUS == 'registered' || std.STATUS == 'approved'|| std.STATUS == 'rejected')"
                                     (click)="changeStatus(std.REC_ID, std.STATUS)"
                                     class="btn btn-danger">{{"courses.change_status" | translate}}</button>
+
+
+
                             </td>
                         </tr>
                     </tbody>

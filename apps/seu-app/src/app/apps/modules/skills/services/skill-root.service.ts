@@ -49,7 +49,9 @@ export class SkillsRootService {
         }).pipe(
             map((res: any) => {
                 if (!res.status && (res.res_code == "invalid_user" || res.res_code == "invalid_session")) {
-                    this.config.relogin();
+                    console.log("INVALID", this.URL + url, res);
+
+                    // /this.config.relogin();
                 } else {
                     return res;
                 }
@@ -76,11 +78,36 @@ export class SkillsRootService {
         this.toaster.tryagain();
     }
 
-    addFileURL(files,field='FILE_NAME'){
-        return files.map(item=>{
-            item['downloadURL'] = environment.baselink + environment.servicesprefix + "/rest"+"/download.php?file="+item[field];
-        return item;
+    addFileURL(files, field = 'FILE_NAME') {
+        return files.map(item => {
+            item['downloadURL'] = environment.baselink + environment.servicesprefix + "/rest" + "/download.php?file=" + item[field];
+            return item;
         });
+    }
+
+
+    printAttends(attnd_id) {
+        return this.get("certs/attends/" + attnd_id);
+    }
+
+    printAttendByLect(lect_id, std_id) {
+        return this.get("certs/attends_lect/" + lect_id + "/" + std_id);
+    }
+    printCerts(c_id, std_id, rate) {
+        return this.get("certs/cert/" + c_id + '/' + std_id + '/' + (rate ? 1 : 0));
+    }
+    downloadPDF(response) {
+        if (response['status']) {
+            const linkSource = `data:application/pdf;base64,${response['data']['content']}`;
+            const downloadLink = document.createElement("a");
+            const fileName = "cert.pdf";
+
+            downloadLink.href = linkSource;
+            downloadLink.download = fileName;
+            downloadLink.click();
+        } else {
+            this.notifyError(response['res_code']);
+        }
     }
 }
 

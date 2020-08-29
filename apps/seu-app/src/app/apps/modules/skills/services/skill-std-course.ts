@@ -5,7 +5,7 @@ import { SkillsRootService } from './skill-root.service';
 import { GlobalService } from 'src/app/shared/services/global.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
-import { SkillsModule } from '../skills.module';
+import * as fileSaver from 'file-saver';
 import { SkillServicesModule } from './skills-service.module';
 @Injectable({
     providedIn: SkillServicesModule
@@ -47,10 +47,10 @@ export class StudentCoursesService extends SkillsRootService {
     getLectsAttends(id) {
         return this.get("std/courses/lects/" + id);
     }
-    getRatingTypes(files){
+    getRatingTypes(files) {
         return (files > 0) ? this.get("std/courses/rating_questions_type") : this.get("std/courses/rating_questions_type_except_files");
     }
-    getRatingQuestions(files){
+    getRatingQuestions(files) {
         return (files > 0) ? this.get("std/courses/rating_questions") : this.get("std/courses/rating_questions_except_files");
     }
     addExcuse(data) {

@@ -18,7 +18,7 @@ export class SkillsStdCourseViewComponent implements OnInit {
 
   ngOnInit() {
     this.currentID = this.route.snapshot.children[0].params['id'];
-    this.current = this.route.snapshot.children[0]['url'][0]['path']
+    this.current = this.route.snapshot.children[0]['url'][0]['path'];
   }
   redirectTo(code) {
     this.current = code;

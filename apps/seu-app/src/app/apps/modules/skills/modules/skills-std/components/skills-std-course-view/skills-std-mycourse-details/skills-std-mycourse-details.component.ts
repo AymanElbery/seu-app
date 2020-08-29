@@ -47,7 +47,7 @@ export class SkillsStdMycourseDetailsComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['../../mycourses'], { relativeTo: this.route });
+    this.router.navigate(['../../../mycourses'], { relativeTo: this.route });
     return false;
   }
 }

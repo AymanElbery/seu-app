@@ -195,4 +195,24 @@ export class SkillsCoursesStdComponent implements OnInit {
       }
     );
   }
+
+  isdownloaing = false;
+  loadings = {};
+  print_cert(std_id) {
+    this.isdownloaing = true;
+    this.loadings[std_id] = true;
+    this.skillsCourseService.printCerts(this.course_id, std_id, false).subscribe(response => {
+      this.skillsCourseService.downloadPDF(response);
+      this.loadings[std_id] = false;
+      this.isdownloaing = false;
+    }, err => {
+      this.skillsCourseService.tryagain();
+      this.loadings[std_id] = false;
+      this.isdownloaing = false;
+
+    });
+    return false;
+  }
+
+
 }
