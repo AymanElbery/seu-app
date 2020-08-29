@@ -29,6 +29,9 @@ export const routes: Routes = [
         path: 'mycourses', component: SkillsStaffMycoursesComponent, canActivate: [SkillsSTAFFGuard]
     },
     {
+        path: 'history', component: SkillsStaffMycoursesComponent, canActivate: [SkillsSTAFFGuard]
+    },
+    {
         path: 'course-view', component: SkillsStaffCourseViewComponent,
         canActivate: [SkillsSTAFFGuard],
         children: [

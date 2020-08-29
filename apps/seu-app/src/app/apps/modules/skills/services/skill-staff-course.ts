@@ -22,8 +22,8 @@ export class StaffCoursesService extends SkillsRootService {
         super(http, router, config, translate, toaster);
     }
 
-    mycourses() {
-        return this.get("staff/courses/mycourses");
+    mycourses(history) {
+        return this.get("staff/courses/mycourses/" + (history ? 1 : 0)) ;
     }
     getCourseDetails(id) {
         return this.get("staff/courses/details/" + id);

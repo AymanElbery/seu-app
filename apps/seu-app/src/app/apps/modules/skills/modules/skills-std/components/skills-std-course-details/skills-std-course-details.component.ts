@@ -51,7 +51,7 @@ export class SkillsStdCourseDetailsComponent implements OnInit {
     this.isLoading = true;
     this.coursesService.register(this.courseID).subscribe(response => {
       if (response['status']) {
-        this.coursesService.notifySucc('registerd_succ');
+        this.coursesService.notifySucc(response['res_code']);
         this.router.navigate(['../../mycourses'], { relativeTo: this.route });
       } else {
         this.coursesService.notifyError(response['res_code']);

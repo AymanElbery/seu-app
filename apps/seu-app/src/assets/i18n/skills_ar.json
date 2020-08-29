@@ -44,7 +44,8 @@
         "stds-courses-list": "قائمة الدورات",
         "mycourses": "دوراتي",
         "traingnig": "التدريب وتنمية المهارات",
-        "inactive-courses-list": "قائمة الدورات المنتهية"
+        "inactive-courses-list": "قائمة الدورات المنتهية",
+        "mycourseshistory": "الدورات المكتملة"
     },
     "users": {
         "add-user": "اضافة مستخدم جديد",
@@ -52,7 +53,7 @@
         "users-home": "الصفحة الرئيسية",
         "name_ar": "الإسم باللغة العربية",
         "name_en": "الإسم باللغة الإنجليزية",
-        "email": "البريد الإلكتروني",
+        "email": "حساب الدخول الموحد",
         "role": "الدور الوظيفي",
         "active": "الفاعلية",
         "admin": "مدير النظام",
@@ -151,7 +152,7 @@
         "not_found_course_std_request": "رقم الطالب غير صحيح ",
         "attend": "حاضر",
         "not_attend": "غائب",
-        "certificate":"شهادة",
+        "certificate": "شهادة",
         "not_attend_yet": "لم يتم التحضير"
     },
     "statuses": {
@@ -205,7 +206,9 @@
         "excuse_status": "حالة العذر",
         "suggestions": "اقتراحات برامج أخرى",
         "success_rate": "تم حفظ التقييم بنجاح",
-        "failed_rate": "لم يتم حفظ التقييم "
+        "failed_rate": "لم يتم حفظ التقييم ",
+        "rating": "التقييم",
+        "excuse_file_notes": "يجب عليك وضع الوثائق التى تثبت سبب تغيبك فى ملف واحد من نوع PDF. ثم قم برفعها (حجم الملف يجب ألا يزيد عن 5 ميجابايت)        "
     },
     "messages": {
         "already_registered": "انت مسجل بالفعل فى هذه الدورة",
@@ -258,7 +261,8 @@
         "attends_1": "تم التحضير",
         "attends_0": "غير مسجل",
         "link_url": "الرابط",
-        "files": "الحقيبة التدريبية"
+        "files": "الحقيبة التدريبية",
+        "file_notes": "حجم الملف المسموح به 5 ميجابايت من نوع (PDF,zip, Word, Excel, PowerPonit)"
     },
     "course_ratings": {
         "question": "السؤال",

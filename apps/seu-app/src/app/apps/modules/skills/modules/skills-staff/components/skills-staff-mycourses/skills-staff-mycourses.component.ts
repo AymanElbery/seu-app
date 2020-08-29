@@ -11,6 +11,7 @@ export class SkillsStaffMycoursesComponent implements OnInit {
 
   coursesList = [];
   isLoading = false;
+  history = false;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -19,12 +20,13 @@ export class SkillsStaffMycoursesComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.history = !(document.location.href.indexOf("/history") == -1);
     this.getMyCourses();
   }
 
   getMyCourses() {
     this.isLoading = true;
-    this.coursesService.mycourses().subscribe((response) => {
+    this.coursesService.mycourses(this.history).subscribe((response) => {
       this.coursesList = response['data'];
       this.isLoading = false;
     },err=>{

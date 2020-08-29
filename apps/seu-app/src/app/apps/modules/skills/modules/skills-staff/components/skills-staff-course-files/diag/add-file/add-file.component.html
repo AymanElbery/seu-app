@@ -38,6 +38,7 @@
           <div style="margin-top: 20px" *ngIf="fileCheck" class="row">
             <div class="col-md-6">
               <div class="form-group">
+                <label for="URL">{{"course_files.file_notes"|translate}}</label>                
                 <input id="file" type="file" accept="*/*" (change)="handleInputChange($event)" formControlName="FILE" class="form-control" />
                 <button id="fake-file" class="btn btn-primary">{{"course_files.upload_file"|translate}}</button>
               </div>
