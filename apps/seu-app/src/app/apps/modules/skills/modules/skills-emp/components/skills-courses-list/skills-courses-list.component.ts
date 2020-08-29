@@ -34,6 +34,7 @@ export class SkillsCoursesListComponent implements OnInit {
       (response: any) => {
         if (response) {
           this.courses = response.data;
+          console.log(this.courses);
         }
         this.isLoading = false;
       },

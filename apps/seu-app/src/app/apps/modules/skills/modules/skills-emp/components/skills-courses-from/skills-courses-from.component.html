@@ -535,6 +535,11 @@
             <ckeditor [config]="toolbarConfig" [(ngModel)]="editorData.DETAILS_EN" [editor]="EditorEN"></ckeditor>
         </div>
     </div>
+    <div *ngIf="AddCourseForm.invalid" class="row" style="margin-top: 20px; text-align: center;">
+        <div class="col-md-12">
+            <span class="text-danger"><b>{{ "general.submit_note" | translate}}  <i class="fas fa-exclamation-circle"></i></b></span>
+        </div>
+    </div>
     <div class="row" style="margin-top: 20px; text-align: center;">
         <div class="col-md-12">
             <button *ngIf=" !course" style="width: 20%;" [disabled]="submitted || AddCourseForm.invalid"
@@ -544,7 +549,7 @@
                 (click)="onUpdate()" type="submit" class="btn btn-primary">{{ "general.edit" | translate}} <i
                     class="fa fa-save"></i></button>
 
-            <button style="width: 20%;" [disabled]="submitted || AddCourseForm.invalid" (click)="back()" type="submit"
+            <button style="width: 20%; margin-right: 10px;" [disabled]="submitted || AddCourseForm.invalid" (click)="back()" type="submit"
                 class="btn btn-primary">{{ "general.cancel" | translate}} <i class="fa fa-save"></i></button>
         </div>
     </div>
