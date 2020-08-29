@@ -22,8 +22,8 @@ export class SkillsCourseService extends SkillsRootService {
         super(http, router, config, translate, toaster);
     }
 
-    getAllCourses() {
-        return this.get("emp/courses/list");
+    getAllCourses(active) {
+        return this.get("emp/courses/list/" + (active ? 1 : 0));
     }
 
     getCampus() {
@@ -35,7 +35,7 @@ export class SkillsCourseService extends SkillsRootService {
     }
 
     getRatings(id, files) {
-        return this.get("emp/courses/get_all_ratings/" + id + "/"+ files);
+        return this.get("emp/courses/get_all_ratings/" + id + "/" + files);
     }
 
     getColleges() {
@@ -58,7 +58,7 @@ export class SkillsCourseService extends SkillsRootService {
         return this.post("emp/courses/get_course_appointments", id);
     }
 
-    getAppStd(id){
+    getAppStd(id) {
         return this.post("emp/courses/get_course_app_std", id);
     }
 
@@ -88,6 +88,9 @@ export class SkillsCourseService extends SkillsRootService {
 
     deleteCourse(data) {
         return this.post("emp/courses/delete", data);
+    }
+    completeCourse(id){
+        return this.get("emp/courses/close/"+id);
     }
 
     deleteCourseAppointment(data) {

@@ -204,7 +204,7 @@
                         <input [checked]="true"
                             style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
                             type="checkbox" disabled formControlName="VIRTUAL_ATTEND" class="form-control" />
-                        <span style="font-size: 1.3em;">{{courseDetails.LINK}}</span>
+                        <a href="{{courseDetails.LINK}}" target="_blank" style="font-size: 1.3em;">{{courseDetails.LINK}}</a>
                     </div>
                 </ng-container>
             </div>
@@ -258,6 +258,7 @@
                         <h5 *ngIf="courseDetails.STATUS == '0'">{{"courses.course_not_active"|translate}}</h5>
                         <h5 *ngIf="courseDetails.STATUS == '1'">{{"courses.course_active"|translate}}</h5>
                         <h5 *ngIf="courseDetails.STATUS == '2'">{{"courses.course_canceled"|translate}}</h5>
+                        <h5 *ngIf="courseDetails.STATUS == '4'">{{"courses.course_completed"|translate}}</h5>
                     </div>
                 </ng-container>
             </div>

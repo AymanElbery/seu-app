@@ -57,6 +57,9 @@ export const routes: Routes = [
         path: 'courses-list', component: SkillsCoursesListComponent, canActivate: [SkillsEMPGuard]
     },
     {
+        path: 'courses-inactive', component: SkillsCoursesListComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
         path: 'courses-add', component: SkillsCoursesFromComponent, canActivate: [SkillsEMPGuard]
     },
     {

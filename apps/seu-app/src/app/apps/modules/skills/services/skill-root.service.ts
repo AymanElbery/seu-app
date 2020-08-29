@@ -48,7 +48,7 @@ export class SkillsRootService {
             headers: this.getHeader()
         }).pipe(
             map((res: any) => {
-                if (!res.status && (res.error == "invalid_user" || res.error == "invalid_session")) {
+                if (!res.status && (res.res_code == "invalid_user" || res.res_code == "invalid_session")) {
                     this.config.relogin();
                 } else {
                     return res;

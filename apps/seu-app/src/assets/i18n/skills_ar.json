@@ -11,6 +11,7 @@
         "edit": "تعديل",
         "delete": "حذف",
         "cancel": "إلغاء",
+        "complete": "اغلاق",
         "back": "العودة الي القائمة",
         "details": "التفاصيل",
         "registrations": "طلبات التسجيل",
@@ -36,9 +37,11 @@
         "add-instructor": "اضافة مدرب",
         "instructors-list": "قائمة المدربين",
         "add-course": "اضافة دورة",
-        "courses-list": "قائمة الدورات",
+        "courses-list": "قائمة الدورات الفعالة",
+        "stds-courses-list": "قائمة الدورات",
         "mycourses": "دوراتي",
-        "traingnig": "التدريب وتنمية المهارات"
+        "traingnig": "التدريب وتنمية المهارات",
+        "inactive-courses-list": "قائمة الدورات الملغاه والمنتهية"
     },
     "users": {
         "add-user": "اضافة مستخدم جديد",
@@ -116,6 +119,7 @@
         "course_not_active": "غير فعالة",
         "course_active": "فعالة",
         "course_canceled": "ملغاه",
+        "course_completed": "مغلقة",
         "status": "الحالة",
         "appointments": "المواعيد",
         "delete_confirm": "هل أنت متأكد ؟",
@@ -152,11 +156,13 @@
         "approved": "مقبول",
         "excused": "معتذر",
         "cancelled": "ملغي",
+        "completed": "مكتملة",
+        "incomplete": "غير مكتملة",
         "0": "غير فعالة",
         "1": "نشطة",
         "2": "ملغاه",
         "3": "محذوفة",
-        "4": "مكتملة"
+        "4": "مغلقة"
     },
     "excsue_status": {
         "2": "تحت المراجعة",
@@ -196,7 +202,6 @@
         "suggestions": "اقتراحات برامج أخرى",
         "success_rate": "تم حفظ التقييم بنجاح",
         "failed_rate": "لم يتم حفظ التقييم "
-
     },
     "messages": {
         "already_registered": "انت مسجل بالفعل فى هذه الدورة",
@@ -207,7 +212,10 @@
         "couldnot_cancel_course": "لم يتم الغاء التسجيل، الرجاء المحاولة مرة أخري",
         "cousrse_has_been_excused": "تم الأعتذار عن الدورة بنجاح",
         "couldnot_excuse_course": "لم يتم الإعتذار عن الدورة، الرجاء المحاولة مرة أخري",
-        "attendance_has_been_saved": "تم تسجيل الحضور بنجاح"
+        "attendance_has_been_saved": "تم تسجيل الحضور بنجاح",
+        "attends_not_done": "لم يتم تسجيل الحضور لكافة مواعيد الدورة",
+        "excuses_not_done": "لم يتم النظر فى كافة الأعذار المقدمة من الطلبة",
+        "closing_done": "تم اغلاق الدورة بنجاح"
     },
     "staff": {
         "course_files": "الحقيبة التدريبية",
@@ -254,8 +262,8 @@
         "fairly_good": "مقبول",
         "weak": "ضعيف",
         "suggestions": "المقترحات",
-        "positive":"إيجابيات البرنامج التدريبي",
-        "not_found":"لا يوجد",
-        "negative":"سلبيات البرنامج التدريبي"
+        "positive": "إيجابيات البرنامج التدريبي",
+        "not_found": "لا يوجد",
+        "negative": "سلبيات البرنامج التدريبي"
     }
 }

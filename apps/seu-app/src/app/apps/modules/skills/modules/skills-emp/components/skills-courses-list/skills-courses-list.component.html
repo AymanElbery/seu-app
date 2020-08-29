@@ -7,7 +7,7 @@
             <div class="widget" *ngIf="!isLoading">
                 <div class="widget-header">
                     <h3 class="widget-title">&nbsp;
-                        <button type="button" class="btn btn-primary" (click)="addNewCourse()">
+                        <button *ngIf="listActive" type="button" class="btn btn-primary" (click)="addNewCourse()">
                             {{"menu.add-course"| translate}}
                         </button>
                     </h3>
@@ -55,12 +55,18 @@
                                     <span *ngIf="course.STATUS == 0">{{"courses.course_not_active" | translate}}</span>
                                     <span *ngIf="course.STATUS == 1">{{"courses.course_active" | translate}}</span>
                                     <span *ngIf="course.STATUS == 2">{{"courses.course_canceled" | translate}}</span>
+                                    <span *ngIf="course.STATUS == 4">{{"courses.course_completed" | translate}}</span>
                                 </td>
                                 <td style="width: 250px !important;">
-                                    <button (click)="delete(course.ID)"
-                                        class="btn-course-list">{{"general.delete" | translate}}</button>
-                                    <button (click)="update(course.ID)"
-                                        class="btn-course-list">{{"general.edit" | translate}}</button>
+                                    <ng-container *ngIf="listActive">
+                                        <button (click)="delete(course.ID)"
+                                            class="btn-course-list">{{"general.delete" | translate}}</button>
+                                        <button (click)="update(course.ID)"
+                                            class="btn-course-list">{{"general.edit" | translate}}</button>
+                                    </ng-container>
+                                    <button *ngIf="course.STATUS == 1" (click)="complete(course.ID)"
+                                    class="btn-course-list">{{"general.complete" | translate}}</button>
+
                                     <!-- <button (click)="appointments(course.ID)"
                                         class="btn-course-list">{{"courses.appointments" | translate}}</button> -->
                                     <button (click)="details(course.ID)"
