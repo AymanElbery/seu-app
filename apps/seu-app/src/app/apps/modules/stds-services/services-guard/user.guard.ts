@@ -19,18 +19,21 @@ export class STDServicesUSERGuard implements CanActivate, CanLoad {
     return this.isLoggedIn('');
   }
   isActiveService(state) {
+    if (!this.stdsService.isLoggedIn) {
+      this.stdsService.redirect_login();
+      return false;
+    }
     return true;
   }
 
   isLoggedIn(state) {
-
     if (this.stdsService.userLoaded) {
-      return this.stdsService.isLoggedIn;
+      return this.isActiveService(state);
     }
 
     return this.stdsService.userLoadedObservable.pipe(
       map((response) => {
-        return this.stdsService.isLoggedIn;
+        return this.isActiveService(state);
       }));
   }
 }
