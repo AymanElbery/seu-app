@@ -70,6 +70,7 @@ export class StudentService extends AppUserRootService {
     logout() {
         this.logout_stduent().subscribe();
         super.logout();
+        this.pushuserLoaded();
     }
 
     download_pdf_get(url) {
