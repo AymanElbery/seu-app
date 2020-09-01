@@ -63,9 +63,12 @@ export class AppUserRootService extends AppUserService {
   getHeader() {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Basic ${window.btoa(environment.ssoAuth)}`,
-      'sessionid': this.globalService.getItem(this.tokenKey)
+      'Authorization': `Basic ${window.btoa(environment.ssoAuth)}`
     });
+    const session_id = this.globalService.getItem(this.tokenKey);
+    if (session_id) {
+      headers = headers.append('sessionid', session_id);
+    }
     return headers;
   }
 

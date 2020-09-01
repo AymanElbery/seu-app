@@ -16,13 +16,16 @@ export class ServicesMenuComponent implements OnInit {
     private router: Router
   ) { }
 
+  isLoggedIn = false;
   ngOnInit() {
     const path = this.route.snapshot.children[0]['url'][0];
     this.current = (path) ? path['path'] : "";
 
     this.is_ug = this.stdservice.is_ug;
+    this.isLoggedIn = this.stdservice.isLoggedIn;
     this.stdservice.userLoadedObservable.subscribe(() => {
       this.is_ug = this.stdservice.is_ug;
+      this.isLoggedIn = this.stdservice.isLoggedIn;
     });
   }
 
@@ -30,6 +33,11 @@ export class ServicesMenuComponent implements OnInit {
   redirectTo(code) {
     this.current = code;
     this.router.navigate([code], { relativeTo: this.route })
+    return false;
+  }
+
+  logout() {
+    this.stdservice.logout();
     return false;
   }
 }

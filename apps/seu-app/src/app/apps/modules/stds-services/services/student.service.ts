@@ -15,7 +15,7 @@ export class StudentService extends AppUserRootService {
     userKey = 'services-student';
 
     login_std_id = '';
-    constructor(router: Router, globalService: GlobalBaseService, http: HttpClient,translate: TranslateService,toaster: AppToasterService) {
+    constructor(router: Router, globalService: GlobalBaseService, http: HttpClient, translate: TranslateService, toaster: AppToasterService) {
         super(router, globalService, translate, toaster, http);
     }
     get is_ug() {
@@ -60,7 +60,7 @@ export class StudentService extends AppUserRootService {
     }
 
     appRedirect() {
-        this.router.navigate(['/apps']);
+        this.redirect_login();
     }
 
     redirect_login() {
