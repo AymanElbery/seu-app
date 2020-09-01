@@ -1,0 +1,37 @@
+<div id="side-menu" class="app-sidebar colored">
+  <!-- style="padding-top: 45px!important;" -->
+  <div class="sidebar-header d-none">
+    <a id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></a>
+    <a class="header-brand" href="#">
+      <div class="logo-img">
+        <img src="assets/images/logo-ar.png" class="header-brand-img" alt="lavalite">
+      </div>
+    </a>
+  </div>
+  <div class="sidebar-content">
+    <div class="nav-container">
+      <nav id="main-menu-navigation" class="navigation-main">
+
+        <div [ngClass]="{'active': current == '' || current == 'home'}" class="nav-item">
+          <a href="#" routerLink="/apps/stds-services" (click)="redirectTo('home')">
+            <span>{{ "menu.home" | translate }} </span>
+            <img _ngcontent-rpp-c3="" src="../../assets/images/Home-menu2.png">
+          </a>
+        </div>
+
+        <div [ngClass]="{'active': current == 'appointments'}" class="nav-item">
+          <a href="#" routerLink="/apps/stds-services/appointments"
+            (click)="redirectTo('appointments')"><span>{{ "menu.appointments" | translate }} </span>
+            <img _ngcontent-fcu-c3="" src="../../assets/images/admit2.png"> </a>
+        </div>
+        <div *ngIf="is_ug" [ngClass]="{'active': current == 'docs'}" class="nav-item">
+          <a href="#" routerLink="/apps/stds-services/docs" (click)="redirectTo('docs')">
+            <span>{{ "menu.print_docuemnts" | translate }} </span>
+            <img _ngcontent-rbd-c3="" src="../../assets/images/cop2.png">
+          </a>
+        </div>
+
+      </nav>
+    </div>
+  </div>
+</div>

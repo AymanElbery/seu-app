@@ -8,8 +8,8 @@ import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
   providedIn: 'root'
 })
 export class AppUserService {
-  LoggedInUser;
-  LoggedInToken;
+  _LoggedInUser;
+  _LoggedInToken;
   tokenKey = 'token';
   userKey = 'user';
   constructor(public router: Router, public globalService: GlobalBaseService) {
@@ -21,6 +21,19 @@ export class AppUserService {
 
   get isLoggedIn() {
     return false;
+  }
+
+  set LoggedInUser(data) {
+    this._LoggedInUser = data;
+  }
+  get LoggedInUser() {
+    return this._LoggedInUser;
+  }
+  set LoggedInToken(token) {
+    this._LoggedInToken = token;
+  }
+  get LoggedInToken() {
+    return this._LoggedInToken;
   }
 
   appRedirect() {
@@ -39,4 +52,3 @@ export class AppUserService {
   }
 
 }
-

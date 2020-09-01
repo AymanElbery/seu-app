@@ -23,10 +23,15 @@ const routes: Routes = [
       './modules/admission-gr/admission-gr.module#AdmissionGRModule',
   },
   {
+    path: 'stds-services',
+    loadChildren:
+      './modules/stds-services/stds-services.module#STDSServicesModule',
+  },
+  {
     path: 'skills',
     loadChildren:
       './modules/skills/skills.module#SkillsModule',
-      canLoad: [AuthGuard]
+    canLoad: [AuthGuard]
   }
 ];
 

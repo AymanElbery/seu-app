@@ -1,0 +1,54 @@
+{
+    "logout": "تسجيل الخروج",
+    "hello": "مرحبا",
+    "general": {
+        "univ": "الجامعة السعودية الإلكترونية",
+        "services": "الخدمات الالكترونية",
+        "std_id": "الرقم الجامعي",
+        "captcha": "",
+        "submit": "ارسال",
+        "loading": "تحميل",
+        "print": "طباعة",
+        "delete": "حذف",
+        "cancel": "إلغاء"
+    },
+    "menu": {
+        "home": "الرئيسية",
+        "login": "تسجيل الدخول",
+        "appointments": "المواعيد",
+        "print_docuemnts": "طباعة الوثائق"
+    },
+    "signin": {
+        "submit": "تسجيل الدخول",
+        "code": "كود التحقق",
+        "back": "العودة",
+        "verify": "تحقق"
+    },
+    "docs": {
+        "certification": "وثيقة التخرج",
+        "record_ar": "السجل الأكاديمي  ع",
+        "record_en": "السجل الأكاديمي E"
+    },
+    "appointments": {
+        "appointments": "مواعيدي",
+        "history": "المواعيد السابقة",
+        "new": "موعد جديد",
+        "branch": "الفرع",
+        "date": "التاريخ",
+        "time": "الوقت",
+        "actions": "الإجراءات",
+        "register": "حجز"
+    },
+    "messages": {
+        "appoitment_is_not_available": "هذا الموعد غير متاح",
+        "invalid_params": "بعض البيانات غير صحيحة",
+        "appoint_not_active": "الموعد غير متوفر",
+        "appoint_has_been_canceled": "تم الغاء الموعد بنجاح",
+        "couldnot_cancel_appoint": "لم يتم الغاء الموعد، الرجاء المحاولة مرة أخري",
+        "only_ug_can_print": "الخدمة متوفرة فقط لطلبة البكالوريوس",
+        "invalid_session": "تم انتهاء الجلسة الرجاء تسجيل الدخول مرة أخري",
+        "missing_params": "بعض البيانات المطلوبة غير متوفرة",
+        "invalid_capcha": "يجب تفعيل الـ captch",
+        "invalid_verification_code": "الكود غير صحيح"
+    }
+}
