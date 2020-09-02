@@ -117,6 +117,11 @@ const routes: Routes = [
         canActivate: [EmpGuard]
       },
       {
+        path: 'leadership',
+        loadChildren: './leadership/leadership.module#LeadershipModule',
+        canActivate: [EmpGuard]
+      },
+      {
         path: 'enquries',
         loadChildren: './enquries/enquries.module#EnquriesModule'
       },

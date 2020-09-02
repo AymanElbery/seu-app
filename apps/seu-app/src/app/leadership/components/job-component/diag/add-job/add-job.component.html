@@ -1,0 +1,45 @@
+<mat-dialog-content dir="rtl">
+  <seu-loader [isLoading]="loading"></seu-loader>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">
+        {{ "leadership.job.add_new_job" | translate}} <i class="fa fa-file"></i>
+      </h5>
+    </div>
+    <div class="modal-body">
+      <form role="form" [formGroup]="AddJobForm">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="state">
+              <h6>{{"leadership.job.title"|translate}} <span class="reqstart">*</span></h6>
+              <input type="text" formControlName="JOB_TITLE" class="form-control" />
+            </div>
+            <div *ngIf="AddJobForm.controls.JOB_TITLE.invalid && (AddJobForm.controls.JOB_TITLE.dirty || AddJobForm.controls.JOB_TITLE.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_TITLE.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-12">
+            <div class="state">
+              <h6>{{"leadership.job.desc"|translate}} <span class="reqstart">*</span></h6>
+              <textarea formControlName="JOB_DESC" class="form-control" id="job_desc" rows="5"></textarea>
+            </div>
+            <div *ngIf="AddJobForm.controls.JOB_DESC.invalid && (AddJobForm.controls.JOB_DESC.dirty || AddJobForm.controls.JOB_DESC.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_DESC.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-md-12" style="text-align: center;">
+            <button style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "leadership.save" | translate}} <i class="fa fa-save"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>
