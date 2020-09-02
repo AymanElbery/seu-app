@@ -40,6 +40,10 @@ export class StudentService extends AppUserRootService {
         return this.post('/stds/session/login', data);
     }
 
+    autologin(data){
+        return this.post('/stds/session/autologin', data);
+    }
+
     verify(data) {
         return this.post('/stds/session/verify', data);
     }

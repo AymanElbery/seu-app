@@ -36,6 +36,7 @@
             </tbody>
           </table>
           <div class="card-body text-center">
+            <h4 class="text-red">{{"appointments.notes" | translate}}</h4>
             <button (click)="register()" [disabled]="!selectedAppointmentID || submit" class="btn btn-lg btn-success"
               style="min-width: 150px;">{{'appointments.register' | translate}}</button>
           </div>
