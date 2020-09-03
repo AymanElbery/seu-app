@@ -1,0 +1,83 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{"courses.lec_title" | translate}}</th>
+                <th scope="col">{{"courses.actual_date" | translate}}</th>
+                <th scope="col">{{"std_courses.attends" | translate}}</th>
+                <th scope="col">{{"std_courses.excuse" | translate}}</th>
+                <th scope="col">{{"std_courses.excuse_reason" | translate}}</th>
+                <th scope="col">{{"std_courses.excuse_file" | translate}}</th>
+                <th scope="col">{{"std_courses.excuse_status" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let lect of lectsList; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{lect.TITLE}}</td>
+                <td>{{lect.ACTUAL_DATE}}</td>
+                <td>
+                  <ng-container *ngIf="lect['STATUS'] == '1'">
+                    <span class="text-green">
+                      {{"std_courses.attends_1" | translate}}
+                      |
+                    </span>
+                    <a (click)="print_attend(lect['ATTND_ID'])" class="btn btn-primary" href="#">
+                      <span class="ik ik-printer"></span>
+                      {{"general.print" | translate}}
+                      <span *ngIf="loadings[lect['ATTND_ID']]">
+                        {{"general.loading" | translate}}
+                      </span>
+                      
+                    </a>
+                  </ng-container>
+
+                  <span class="text-red" *ngIf="lect['STATUS'] == '0'">
+                    {{"std_courses.attends_0" | translate}}
+                  </span>
+                  <span *ngIf="lect['STATUS'] == NULL">
+                    {{"std_courses.attends_null" | translate}}
+                  </span>
+
+
+                </td>
+                <td *ngIf="lect['STATUS'] == '0'">
+                  <span *ngIf="lect['EXCUSE'] == '1'">
+                    {{"std_courses.excuseadded"| translate}}
+                  </span>
+                  <button *ngIf="lect['EXCUSE'] == '0'" type="button" class="btn btn-primary"
+                    (click)="addEXCUSE(lect['ATTND_ID'])">
+                    {{"std_courses.add-excuse"| translate}}
+                  </button>
+
+                </td>
+                <td *ngIf="lect['STATUS'] == '0'">
+                  {{lect.EXCUSE_REASON}}
+                </td>
+                <td *ngIf="lect['STATUS'] == '0' ">
+                  <a *ngIf="lect['EXCUSE_FILE']" target="_blanck" [href]="lect.downloadURL" style="margin-right: 5px;"
+                    class="btn btn-danger">{{"course_files.download_btn" | translate}} <i
+                      class="fa fa-download"></i></a>
+                </td>
+                <td *ngIf="lect['STATUS'] == '0' && lect['EXCUSE'] == '1'">
+                  <span [class.text-green]="lect.EXCUSE_STATUS == 1" [class.text-red]="lect.EXCUSE_STATUS == 0">
+                    {{"std_courses.excuse_status_"+lect.EXCUSE_STATUS | translate}}
+                  </span>
+                </td>
+                <td *ngIf="lect['STATUS'] != '0'" colspan="4">
+                  &nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

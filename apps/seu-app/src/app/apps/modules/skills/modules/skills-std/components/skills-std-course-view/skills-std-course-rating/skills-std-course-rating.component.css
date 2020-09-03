@@ -1,0 +1,28 @@
+.title{
+    border-right: solid 8px #f08b1d;
+    padding: 3px 8px;
+}
+.form-check-label{
+    position: relative;
+    bottom: 5px
+}
+.btnn-radio-f{
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+.btnn-radio-l{
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+.btnn-radio{
+    background-color: #1c2172;
+    border-color: #1c2172;
+}
+.btnn-radio:active{
+    background-color: #fd7e14 !important;
+    border-color: #fd7e14 !important;
+}
+.btnn-radio.active{
+    background-color: #fd7e14 !important;
+    border-color: #fd7e14 !important;
+}

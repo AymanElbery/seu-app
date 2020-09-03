@@ -1,0 +1,53 @@
+<div class="main-content">
+  <app-service-header title="{{'general.services' | translate}}" subtitle="{{'menu.appointments' | translate}}">
+  </app-service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="widget" *ngIf="!isLoading">
+          <div class="widget-header">
+            <h3 class="widget-title">&nbsp;
+              {{"appointments.appointments"| translate}}
+              <button type="button" *ngIf="can_add" class="btn btn-primary" (click)="addNew()">
+                {{"appointments.new"| translate}}
+              </button>
+            </h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">{{"appointments.date" | translate}}</th>
+                  <th scope="col">{{"appointments.time" | translate}}</th>
+                  <th style="width: 250px !important;" scope="col">{{"appointments.actions" | translate}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let appoint of appointments; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{appoint.ACTUAL_DATE | date : 'yyyy-MM-dd'}}</td>
+                  <td>{{appoint.SCHEDULE_TIME}}</td>
+                  <td style="width: 250px !important;">
+                    <ng-container>
+                      <button *ngIf="appoint.CAN_PRINT" (click)="print(appoint.APPOINT_PK)"
+                        class="btn btn-success btn-course-list">
+                        {{"general.print" | translate}}
+                        <span *ngIf="current_download == appoint.APPOINT_PK " class=text-red>&nbsp;
+                          {{"general.loading" | translate}} </span>
+                      </button>
+                      &nbsp;
+                      <button *ngIf="appoint.CAN_CANCEL" (click)="cancel(appoint.APPOINT_PK)"
+                        class="btn btn-danger btn-course-list">{{"general.cancel" | translate}}</button>
+                    </ng-container>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

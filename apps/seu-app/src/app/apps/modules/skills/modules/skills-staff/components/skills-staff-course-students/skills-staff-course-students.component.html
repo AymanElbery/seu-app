@@ -1,0 +1,25 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{"staff.student_name" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let std of stdsList; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{std['FULL_NAME'+coursesService.langPrefix]}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

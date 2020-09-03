@@ -1,0 +1,38 @@
+<div class="main-content full-page-wihtoutmenu">
+  <app-service-header title="{{'general.services' | translate}}" subtitle="{{'menu.verify' | translate}}">
+  </app-service-header>
+  <section class="dashboard-wrap" style="margin-top: 30px;">
+    <form role="form" [formGroup]="form">
+      <div class="modal-body">
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <h6>{{"signin.code"|translate}} <span class="reqstart">*</span></h6>
+              <input type="text" formControlName="code" (keypress)="keyPress($event)" maxlength="4" minlength="4"
+                class="form-control" />
+            </div>
+          </div>
+        </div>
+
+
+        <div>
+          <div class=" col-md-6 col-sm-6">
+            <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+
+              <button type="button" (click)="redirectToLogin()" class="btn btn-outline">
+                <i class="ik ik-x"></i>
+                {{"signin.back"|translate}}
+              </button>
+              <button (click)="onFormSubmit()" type="button" [disabled]="submitted || form.invalid" class="btn">
+                {{"signin.verify" | translate}}
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </form>
+  </section>
+
+</div>

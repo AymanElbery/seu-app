@@ -1,0 +1,54 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 10px; padding: 0 30px;">
+  <div class="row" style="margin-top: 20px;">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>
+                <div class="form-check">
+                  <input style="width: 20px; height: 20px; position: relative; top: 5px; cursor: pointer;"
+                    class="form-check-input" type="checkbox" (change)="setAll($event.target.checked)">
+                </div>
+              </th>
+              <th scope="col">{{"courses.std_no" | translate}}</th>
+              <th scope="col">{{"courses.std_name" | translate}}</th>
+              <th scope="col">{{"std_courses.excuse_reason" | translate}}</th>
+              <th scope="col">{{"std_courses.excuse_file" | translate}}</th>
+              <th scope="col">{{"std_courses.excuse_status" | translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of excusesList ; let i = index">
+              <td>
+                <div class="form-check">
+                  <input style="width: 20px; height: 20px; position: relative; top: 5px; cursor: pointer;"
+                    class="form-check-input" type="checkbox"  [(ngModel)]="record.selected" (change)="pushId($event.target.checked, record.ATTND_ID)">
+                </div>
+              </td>
+              <td>{{record.STD_ID}}</td>
+              <td>{{record.FULL_NAME_AR}}</td>
+              <td>{{record.EXCUSE_REASON}}</td>
+              <td>
+                <a *ngIf="record['EXCUSE_FILE']" target="_blanck" [href]="record.downloadURL" style="margin-right: 5px;"
+                  class="btn btn-danger">{{"course_files.download_btn" | translate}} <i class="fa fa-download"></i></a>
+              </td>
+              <td>
+                <span>{{"excsue_status."+record.EXCUSE_STATUS | translate}}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <select [disabled]="reqIds.length == 0" style="width: 30%; display: inline-block;" [(ngModel)]="status"
+          class="form-control" id="status">
+          <option value="2">{{"excsue_status.2"|translate}}</option>
+          <option value="1">{{"excsue_status.1"|translate}}</option>
+          <option value="0">{{"excsue_status.0"|translate}}</option>
+        </select>
+        <button [disabled]="reqIds.length == 0 || !status " style="width: 15%; display: inline-block; margin-right: 1%;"
+          type="button" (click)="changeBulkStatus()" class="btn btn-primary">{{"general.save"|translate}}</button>
+      </div>
+    </div>
+  </div>
+</section>
