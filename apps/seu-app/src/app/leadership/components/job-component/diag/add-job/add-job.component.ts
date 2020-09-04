@@ -1,13 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { UnivWithdraw } from 'src/app/shared/models/univ-withdraw';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr';
-import { WithdrawFromUnivService } from 'src/app/academicprocs/services/withdraw-from-univ.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { LeadershipService } from '../../../../services/leadership.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import * as CustomEditor from '@ckeditor/ckeditor5-build-custom/build/ckeditor';
 
 @Component({
   selector: 'app-add-job',
@@ -19,7 +17,11 @@ export class AddJobComponent implements OnInit {
   isLoading = false;
   submitted = false;
   AddJobForm: FormGroup;
-
+  public EditorAR = CustomEditor;
+  DETAILS_AR = "";
+  toolbarConfig = {
+    toolbar: ['heading', '|', 'bold', 'italic', 'Indent', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|' ,'highlight','fontFamily','fontSize','horizontalLine',,  '|','insertTable', '|', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo'],
+  };;
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddJobComponent>,

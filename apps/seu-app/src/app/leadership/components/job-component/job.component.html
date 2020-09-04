@@ -33,9 +33,12 @@
             <tr *ngFor="let job of jobs; let i = index;">
               <td>{{i+1}}</td>
               <td>{{job.JOB_TITLE}}</td>
-              <td>{{job.JOB_DESC}}</td>
               <td>
-                <button (click)="delete(job.JOB_PK)" class="btn btn-danger">{{"leadership.delete" | translate}} <i class="fa fa-trash"></i></button>
+                <button (click)="update(job.JOB_DESC)" class="btn btn-danger">{{"leadership.job.details" | translate}} <i class="fa fa-list"></i></button>
+              </td>
+              <td>
+                <button (click)="update(job.JOB_PK)" class="btn btn-danger">{{"leadership.update" | translate}} <i class="fa fa-edit"></i></button>
+                <button style="margin-right: 5px;" (click)="delete(job.JOB_PK)" class="btn btn-danger">{{"leadership.delete" | translate}} <i class="fa fa-trash"></i></button>
               </td>
             </tr>
           </tbody>
