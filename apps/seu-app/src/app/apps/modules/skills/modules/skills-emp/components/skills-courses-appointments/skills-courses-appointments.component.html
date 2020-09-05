@@ -1,0 +1,77 @@
+<!-- <app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.add-course-appintment' | translate}}"></app-service-header> -->
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap ug-content" style="margin-top: 30px; padding: 0 30px;">
+    <form role="form" [formGroup]="AddCourseAppointmentsForm">
+        <!-- <h3> {{'courses.course_data_appointments' | translate}} ( {{ course_title }} ) </h3> -->
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.start_date"|translate}} </h6>
+                        <h5 *ngIf="courseStartDate">{{ courseStartDate }}</h5>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.end_date"|translate}} </h6>
+                        <h5 *ngIf="courseEndDate">{{ courseEndDate }}</h5>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-5">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.lec_title"|translate}} </h6>
+                        <input type="text" formControlName="TITLE" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-5">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.actual_date"|translate}} </h6>
+                        <input type="text" [minDate]="minDate" placement="top" [maxDate]="maxDate" formControlName="ACTUAL_DATE" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-2">
+                <button style="width: 100%; position: relative; top: 25px;" [disabled]="submitted || AddCourseAppointmentsForm.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "courses.add" | translate}}  <i class="fa fa-save"></i></button>
+            </div>
+        </div>
+    </form>
+    <h3 style="margin-top: 20px;"> {{'courses.actual_appointments' | translate}} </h3>
+    <div class="row" *ngIf="!isLoading">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table *ngIf="appointments.length > 0" class="table table-striped table-bordered" style="font-size: 0.9em;">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">{{"courses.lec_title" | translate}}</th>
+                            <th scope="col">{{"courses.actual_date" | translate}}</th>
+                            <th style="width: 200px !important;" scope="col">{{"courses.actions" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let appointment of appointments; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{appointment.TITLE}}</td>
+                            <td>{{appointment.ACTUAL_DATE}}</td>
+                            <td style="width: 200px !important;">
+                                <button (click)="delete(appointment.ID)" class="btn btn-danger">{{"general.delete" | translate}}</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="appointments.length == 0 && !isLoading" class="alert alert-info text-center">
+                    {{"courses.not_found_appointments" | translate}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

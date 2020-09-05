@@ -1,0 +1,113 @@
+<app-service-header title="{{'training' | translate}}" subtitle="{{'courses.courses-details' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="card" *ngIf="courseDetails">
+      <h3 class="card-headersss">{{courseDetails['TITLE'+coursesService.langPrefix]}}</h3>
+      <div class="card-body">
+        <div class="card-text" [innerHtml]="courseDetails['DETAILS'+coursesService.langPrefix]">
+        </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.cert_type"|translate}}</b>:
+              <span *ngIf="courseDetails['CERT_TYPE'] == 'c'">{{"courses.cert_course" | translate}}</span>
+              <span *ngIf="courseDetails['CERT_TYPE'] == 'w'">{{"courses.cert_work" | translate}}</span>
+            </div>
+            <div class="col-md-6">
+              <b>{{"courses.c_lang"|translate}}</b>: {{"general."+courseDetails['C_LANG'] | translate}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item" *ngIf="courseDetails['SKILLS_OPTION']">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"std_courses.is_skill_record"|translate}}</b>:
+              {{courseDetails['CLASSIFICATION_NAME'+coursesService.langPrefix]}}
+            </div>
+            <div class="col-md-6">
+              <b>{{"courses.hr_hours"|translate}}</b>: {{courseDetails['HR_HOURS']}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.type"|translate}}</b>:
+              <span>{{"courses."+courseDetails['TYPE']+"_type" | translate}}</span>
+            </div>
+            <div class="col-md-6">
+              <b>{{"courses.seats"|translate}}</b>: {{courseDetails['SEATS']}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"std_courses.reg_dates"|translate}}</b>: {{courseDetails['REG_START_DATE'] | date : 'yyyy-MM-dd'}} /
+              {{courseDetails['REG_END_DATE'] | date : 'yyyy-MM-dd'}}
+            </div>
+            <div class="col-md-6">
+              <b>{{"std_courses.course_dates"|translate}}</b>: {{courseDetails['START_DATE'] | date : 'yyyy-MM-dd' }} /
+              {{courseDetails['END_DATE'] | date : 'yyyy-MM-dd' }}
+            </div>
+          </div>
+
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.period"|translate}}</b>: {{courseDetails['PERIOD']}} {{"general.days"|translate}}
+            </div>
+            <div class="col-md-6">
+              <b>{{"courses.time"|translate}}</b>: {{courseDetails['TIME']}}
+            </div>
+          </div>
+        </li>
+        <li class="list-group-item" *ngIf="courseDetails['FACE_ATTEND']">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.face_attend"|translate}} <span *ngIf="courseDetails['VIRTUAL_ATTEND']">/ {{"courses.virual_attend"|translate}}</span> </b>  
+            </div>
+            <!-- <div class="col-md-6">
+                <b>{{"courses.class_room"|translate}}</b>: {{courseDetails['CLASS_ROOM']}}
+              </div> -->
+          </div>
+        </li>
+        <!-- <li class="list-group-item" *ngIf="courseDetails['VIRTUAL_ATTEND']">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.virual_attend"|translate}}</b>
+            </div>
+            <div class="col-md-6">
+                <b>{{"courses.link"|translate}}</b>: {{courseDetails['LINK']}}
+              </div> 
+          </div>
+        </li> -->
+
+      </ul>
+      <!--
+        
+        <li class="list-group-item">
+          <div class="row">
+            <div class="col-md-6">
+              <b>{{"courses.cert_type"|translate}}</b>: {{"courses.cert_course" | translate}}
+            </div>
+            <div class="col-md-6">
+              <b>{{"courses.c_lang"|translate}}</b>: {{"general."+courseDetails['C_LANG'] | translate}}
+            </div>
+          </div>
+        </li>
+
+      -->
+      <div class="card-body text-center">
+        <button *ngIf="courseDetails['CAN_REGISTER']" (click)="register()" class="btn btn-success">{{'general.register' | translate}}</button>
+        &nbsp;
+        <button (click)="gotoList()" class="btn btn-primary">{{'general.back' | translate}}</button>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -136,12 +136,11 @@ const routes: Routes = [
     outlet: 'print',
     component: PrintLayoutComponent,
     children: [{ path: 'print-file/:paramData', component: PrintFileComponent }]
+  },
+  {
+    path: 'apps',
+    loadChildren: './apps/apps.module#AppsModule'
   }
-   ,
-   {
-     path: 'apps',
-     loadChildren: './apps/apps.module#AppsModule'
-   }
 ];
 
 @NgModule({

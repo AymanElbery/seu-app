@@ -611,24 +611,36 @@
           </div>
         </div>
 
-        <div *ngIf="userService.userData && userService.userData.activeRole == 'Instructor'" class="nav-item has-sub">
+        <div *ngIf="leadership['show_menu']" class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "menu.leadership" | translate }} </span>
             <i class="ik ik-book-open"></i>
           </a>
-          <div class="submenu-content">
+          <div class="submenu-content" *ngIf="leadership['menu_user']">
             <a [routerLink]="['/leadership/jobs']" class="menu-item">
               {{ "leadership.jobs" | translate }} <i class="ik ik-users"></i>
             </a>
           </div>
-          <div class="submenu-content">
+          <div class="submenu-content" *ngIf="leadership['menu_user']">
             <a [routerLink]="['/leadership/ads']" class="menu-item">
               {{ "leadership.ads" | translate }} <i class="ik ik-users"></i>
             </a>
           </div>
-          <div class="submenu-content">
+          <div class="submenu-content" *ngIf="leadership['menu_admin']">
             <a [routerLink]="['/leadership/users']" class="menu-item">
               {{ "leadership.users" | translate }} <i class="ik ik-users"></i>
+            </a>
+          </div>
+
+          <div class="submenu-content" *ngIf="leadership['menu_instructor']">
+            <a [routerLink]="['/leadership/application/ads']" class="menu-item">
+              {{ "leadership.newapplications" | translate }} <i class="ik ik-users"></i>
+            </a>
+          </div>
+
+          <div class="submenu-content" *ngIf="leadership['menu_instructor']">
+            <a [routerLink]="['/leadership/myapplications']" class="menu-item">
+              {{ "leadership.myapplications" | translate }} <i class="ik ik-users"></i>
             </a>
           </div>
         </div>

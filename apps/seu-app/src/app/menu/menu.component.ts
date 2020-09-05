@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { TasksManagementService } from '../tasks/services/tasks-management.service';
 import { EnquriesService } from '../enquries/services/enquries.service';
+import { LeadershipService } from '../leadership/services/leadership.service';
 
 @Component({
   selector: 'app-menu',
@@ -18,29 +19,29 @@ export class MenuComponent implements OnInit, AfterContentInit {
   showServices = false;
   environment;
   unreadEnqueries;
-  constructor(public userService: UserService, private router: Router, public task: TasksManagementService, private enquriesService: EnquriesService) {
+  constructor(private leadershipService: LeadershipService, public userService: UserService, private router: Router, public task: TasksManagementService, private enquriesService: EnquriesService) {
     this.environment = environment;
-    
+
     // if (this.environment.chatbot_mails.includes(this.userService.userData.email)) {
-      let unread = this;
-      // this.getUnreadEnquries();
-      // setInterval(function(){ 
-      //   unread.getUnreadEnquries(); 
-      // }, 60000);
+    let unread = this;
+    // this.getUnreadEnquries();
+    // setInterval(function(){ 
+    //   unread.getUnreadEnquries(); 
+    // }, 60000);
     // }
   }
   ngAfterContentInit() {
     window['WindowStartSerices']();
   }
 
-  getUnreadEnquries(){
+  getUnreadEnquries() {
     this.enquriesService.getNotificationsEnq().subscribe(
       (response: any) => {
         if (response) {
           this.unreadEnqueries = response.data.count;
         }
       },
-      error => {}
+      error => { }
     );
   }
 
@@ -103,24 +104,33 @@ export class MenuComponent implements OnInit, AfterContentInit {
     if (this.isEmp) {
       this.task.loadStats();
     }
+    // check for leasership
+    if (this.userService.userData.activeRole != 'Student') {
+      this.leadershipService.settings().subscribe((settings) => {
+        this.leadership = settings;
+      })
+    } else {
+
+    }
     // this.hasWafi = true;
   }
+  leadership = {};
   hasNoRole = false;
   enqueryInterval;
   ngOnInit() {
     this.userService.userDataSubject.subscribe(res => {
       // console.log('fill menu');
-        if (this.environment.chatbot_mails.includes(this.userService.userData.email)) {
-          let unread = this;
-          this.getUnreadEnquries();
-          if (this.enqueryInterval) {
-            clearInterval(this.enqueryInterval);
-          }
-          this.enqueryInterval = setInterval(function(){ 
-            unread.getUnreadEnquries(); 
-          }, 60000);
+      if (this.environment.chatbot_mails.includes(this.userService.userData.email)) {
+        let unread = this;
+        this.getUnreadEnquries();
+        if (this.enqueryInterval) {
+          clearInterval(this.enqueryInterval);
         }
-        this.fillmenu();
+        this.enqueryInterval = setInterval(function () {
+          unread.getUnreadEnquries();
+        }, 60000);
+      }
+      this.fillmenu();
 
     });
 

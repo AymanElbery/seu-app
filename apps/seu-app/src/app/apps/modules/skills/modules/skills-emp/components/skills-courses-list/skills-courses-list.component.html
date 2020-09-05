@@ -1,0 +1,82 @@
+<app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.courses-list' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="widget" *ngIf="!isLoading">
+                <div class="widget-header">
+                    <h3 class="widget-title">&nbsp;
+                        <button *ngIf="listActive" type="button" class="btn btn-primary" (click)="addNewCourse()">
+                            {{"menu.add-course"| translate}}
+                        </button>
+                    </h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">{{"courses.title" | translate}}</th>
+                                <th scope="col">{{"courses.type" | translate}}</th>
+                                <th scope="col">{{"courses.cert_type" | translate}}</th>
+                                <th scope="col">{{"courses.stuff_name" | translate}}</th>
+                                <th scope="col">{{"courses.institution" | translate}}</th>
+                                <th scope="col">{{"courses.period" | translate}}</th>
+                                <th scope="col">{{"courses.time" | translate}}</th>
+                                <th scope="col">{{"courses.seats" | translate}}</th>
+                                <th scope="col">{{"courses.hr_hours" | translate}}</th>
+                                <th scope="col">{{"courses.allowed_absense" | translate}}</th>
+                                <th scope="col">{{"courses.status" | translate}}</th>
+                                <th style="width: 250px !important;" scope="col">{{"courses.actions" | translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let course of courses; let i = index">
+                                <td>{{i+1}}</td>
+                                <td>{{course.TITLE_AR}}</td>
+                                <td>
+                                    <span *ngIf="course.TYPE == 'in'">{{"courses.in_type" | translate}}</span>
+                                    <span *ngIf="course.TYPE == 'out'">{{"courses.out_type" | translate}}</span>
+                                    <span *ngIf="course.TYPE == 'in_out'">{{"courses.in_out_type" | translate}}</span>
+                                </td>
+                                <td>
+                                    <span *ngIf="course.CERT_TYPE == 'c'">{{"courses.cert_course" | translate}}</span>
+                                    <span *ngIf="course.CERT_TYPE == 'w'">{{"courses.cert_work" | translate}}</span>
+                                </td>
+                                <td>{{course.INSTRUCTOR}}</td>
+                                <td>{{course.INSTITUTION_AR}}</td>
+                                <td>{{course.PERIOD}}</td>
+                                <td>{{course.TIME}}</td>
+                                <td>{{course.SEATS}}</td>
+                                <td>{{course.HR_HOURS}}</td>
+                                <td>{{course.ALLOWED_ABSENSE}}</td>
+                                <td>
+                                    <span *ngIf="course.STATUS == 0">{{"courses.course_not_active" | translate}}</span>
+                                    <span *ngIf="course.STATUS == 1">{{"courses.course_active" | translate}}</span>
+                                    <span *ngIf="course.STATUS == 2">{{"courses.course_canceled" | translate}}</span>
+                                    <span *ngIf="course.STATUS == 4">{{"courses.course_completed" | translate}}</span>
+                                </td>
+                                <td style="width: 250px !important;">
+                                    <ng-container *ngIf="listActive">
+                                        <button (click)="delete(course.ID)"
+                                            class="btn-course-list">{{"general.delete" | translate}}</button>
+                                        <button (click)="update(course.ID)"
+                                            class="btn-course-list">{{"general.edit" | translate}}</button>
+                                    </ng-container>
+                                    <button *ngIf="course.STATUS == 1" (click)="complete(course.ID)"
+                                    class="btn-course-list">{{"general.complete" | translate}}</button>
+
+                                    <!-- <button (click)="appointments(course.ID)"
+                                        class="btn-course-list">{{"courses.appointments" | translate}}</button> -->
+                                    <button (click)="details(course.ID)"
+                                        class="btn-course-list">{{"courses.details" | translate}}</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
