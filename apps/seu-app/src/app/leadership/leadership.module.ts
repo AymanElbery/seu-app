@@ -18,6 +18,8 @@ import { LeadershipMyapplicationsComponent } from './components/myapplications/l
 import { LeadershipMyapplicationViewComponent } from './components/myapplications/leadership-myapplication-view/leadership-myapplication-view.component';
 import { LeadershipApplicationNewComponent } from './components/newapplication/leadership-application-new/leadership-application-new.component';
 import { LeadershipApplicationAdslistComponent } from './components/newapplication/leadership-application-adslist/leadership-application-adslist.component';
+import { LeadershipAddApplicationsComponent } from './components/leadership-add-applications/leadership-add-applications.component';
+import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -28,9 +30,9 @@ import { LeadershipApplicationAdslistComponent } from './components/newapplicati
     AddAdsComponent,
     JobDetailsComponent,
     AddAdsComponent,
-    LeadershipUserFormComponent,
+    LeadershipUserFormComponent, LeadershipAddApplicationsComponent,
     LeadershipMyapplicationsComponent, LeadershipMyapplicationViewComponent,
-    LeadershipApplicationAdslistComponent, LeadershipApplicationNewComponent
+    LeadershipApplicationAdslistComponent, LeadershipApplicationNewComponent,
   ],
   imports: [
     LeadershipRoutingModule,
@@ -42,8 +44,10 @@ import { LeadershipApplicationAdslistComponent } from './components/newapplicati
     SeucommonModule,
     MatDialogModule,
     CKEditorModule,
+    DatepickerModule.forRoot(),
+    BsDatepickerModule.forRoot(),
   ],
-  entryComponents: [AddJobComponent, AddAdsComponent, JobDetailsComponent,LeadershipUserFormComponent
+  entryComponents: [AddJobComponent, AddAdsComponent, JobDetailsComponent, LeadershipUserFormComponent
   ]
 })
 export class LeadershipModule { }

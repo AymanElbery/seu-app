@@ -105,7 +105,7 @@ export class MenuComponent implements OnInit, AfterContentInit {
       this.task.loadStats();
     }
     // check for leasership
-    if (this.userService.userData.activeRole != 'Student') {
+    if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
       this.leadershipService.settings().subscribe((settings) => {
         this.leadership = settings;
       })

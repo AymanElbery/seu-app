@@ -18,34 +18,30 @@ import { AddAdsComponent } from "./diag/add-ads/add-ads.component";
   styleUrls: ['./ads.component.css'],
   templateUrl: './ads.component.html'
 })
-export class AdsComponent{
-  
-  ads; 
+export class AdsComponent {
+
+  ads;
   isLoading = false;
   constructor(
-    public userService: UserService, 
-    private leadershipService: LeadershipService, 
-    private http: HttpClient, 
-    private reqservice: HttpRequestService, 
-    private router: Router, 
+    public userService: UserService,
+    private leadershipService: LeadershipService,
+    private http: HttpClient,
+    private reqservice: HttpRequestService,
+    private router: Router,
     private route: ActivatedRoute,
     private toastr: AppToasterService,
     public translate: TranslateService,
     public dialog: MatDialog
   ) {
     this.getAllAds();
-  }  
+  }
 
   getAllAds() {
     this.isLoading = true;
     this.leadershipService.list_ads().subscribe(
       (response: any) => {
-        if (response) {
-          this.ads = response.data;
-          this.isLoading = false;
-        }
-      },
-      error => {
+        this.ads = response['data']['ads'];
+        this.isLoading = false;
       }
     )
   }
@@ -55,29 +51,35 @@ export class AdsComponent{
       this.isLoading = true;
       this.leadershipService.delete_ads(id).subscribe(
         (response: any) => {
-          if (response) {
-            this.toastr.push([{
-              'type': 'success',
-              'body': this.translate.instant("leadership.ad.success_deleted")
-            }]);
+          if (response.status) {
+            this.leadershipService.notifySucc(response['res_code']);
             this.getAllAds();
+          } else {
+            this.leadershipService.notifyError(response['res_code']);
           }
         },
         error => {
         }
-      )
+      );
     }
   }
 
-  addAds() {
+  showAddForm(ad) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
-    dialogConfig.width = '50%';
+    dialogConfig.width = '60%';
+    dialogConfig.data = { ad };
 
     let dialogref = this.dialog.open(AddAdsComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {
+    dialogref.afterClosed().subscribe(refresh => {
+      if (refresh)
         this.getAllAds();
     });
+  }
+
+  applications(ad) {
+    this.leadershipService.currentAddApps = ad;
+    this.router.navigate(["../applications"], { relativeTo: this.route })
   }
 }

@@ -26,7 +26,7 @@ export class AddJobComponent implements OnInit {
   };
 
   id;
-  job: any = {};
+  job;
   message;
 
   constructor(
@@ -47,7 +47,6 @@ export class AddJobComponent implements OnInit {
       this.id = this.data.id
       this.getJobById();
     }
-    this.job['JOB_DESC'] = "";
   }
 
   ngOnInit() {

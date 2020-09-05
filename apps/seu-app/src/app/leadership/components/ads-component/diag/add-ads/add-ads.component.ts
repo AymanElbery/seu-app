@@ -8,17 +8,22 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { LeadershipService } from '../../../../services/leadership.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-add-ads',
   templateUrl: './add-ads.component.html',
-  styleUrls: ['./add-ads.component.scss']
+  styleUrls: ['./add-ads.component.scss'],
+  providers: [DatePipe]
 })
 export class AddAdsComponent implements OnInit {
 
   isLoading = false;
   submitted = false;
-  AddAdsForm: FormGroup;
+  form: FormGroup;
+  ad;
+  datePickerConfig: Partial<BsDatepickerConfig>;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
@@ -26,56 +31,63 @@ export class AddAdsComponent implements OnInit {
     private fb: FormBuilder,
     private leadershipService: LeadershipService,
     private toastr: AppToasterService,
-    private router: Router,
-    private translate: TranslateService,
-    private route: ActivatedRoute,
-  ) { 
-    this.AddAdsForm = this.fb.group({
-      'JOB_TITLE': ['', [Validators.required]],
-      'JOB_DESC': ['', [Validators.required]]
+    private datePipe: DatePipe
+  ) {
+    this.form = this.fb.group({
+      'JOB_ID': ['', [Validators.required]],
+      'ADS_START_DATE': ['', [Validators.required]],
+      'ADS_END_DATE': ['', [Validators.required]],
+      'ADS_IS_ACTIVE': [0]
     });
+    this.ad = data['ad'];
+    if (this.ad) {
+      this.ad.ADS_START_DATE = this.datePipe.transform(this.ad.ADS_START_DATE, 'MM/dd/yyyy');
+      this.ad.ADS_END_DATE = this.datePipe.transform(this.ad.ADS_END_DATE, 'MM/dd/yyyy');
+      this.form.reset(this.ad);
+    }
   }
-
+  jobs = [];
   ngOnInit() {
-    
+    this.leadershipService.list_jobs().subscribe(
+      (response: any) => {
+        if (response['status']) {
+          this.jobs = response.data;
+        }
+      }
+    );
   }
 
-  onSubmit() {
-    if (this.AddAdsForm.invalid) {
+  save() {
+    if (this.form.invalid) {
       return;
     }
-    let data = this.AddAdsForm.value;
+    let data = this.form.value;
+    if (this.ad) {
+      data['ADS_PK'] = this.ad['ADS_PK'];
+    }
     this.submitted = true;
-    this.leadershipService.add_ads(data).subscribe(
+    this.leadershipService.save_ads(data).subscribe(
       (response: any) => {
         this.isLoading = true;
-        if (response) {
-          if (response.status) {
-            this.router.navigate(['/ads'], { relativeTo: this.route });
-            this.toastr.push([{
-              'type': 'success',
-              'body': this.translate.instant("leadership.ad.success_added")
-            }]);
-          } else {
-            this.toastr.push([{
-              'type': 'error',
-              'body': this.translate.instant("leadership.ad.error_added")
-            }]);
-          }
+        if (response.status) {
+          this.leadershipService.notifySucc(response['res_code']);
           this.closeDiag();
-          this.isLoading = false;
-          this.submitted = false;
+        } else {
+          this.leadershipService.notifyError(response['res_code']);
         }
+        this.isLoading = false;
+        this.submitted = false;
       },
       error => {
         this.isLoading = false;
         this.submitted = false;
+        this.toastr.tryagain();
       }
     );
   }
 
   closeDiag() {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 
 }

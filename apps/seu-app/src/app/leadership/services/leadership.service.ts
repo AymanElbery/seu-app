@@ -15,6 +15,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 export class LeadershipService {
     _settings;
     currentApp;
+    currentAddApps;
     currentAdd;
     instructor;
     URL = environment.baselink + environment.servicesprefix + "/rest/leadership/";
@@ -43,11 +44,13 @@ export class LeadershipService {
     }
 
     getHeader() {
-        const headers = new HttpHeaders({
+        let headers = new HttpHeaders({
             'Content-Type': 'application/json',
-            'Authorization': this.auth,
-            'sessionid': this.globalService.getSID()
+            'Authorization': this.auth
         });
+        if (this.globalService.getSID()) {
+            headers = headers.append("sessionid", this.globalService.getSID());
+        }
         return headers;
     }
 
@@ -68,23 +71,27 @@ export class LeadershipService {
             return of(this._settings);
         }
         return this.get('leadership/user').pipe(map(response => {
-            let setting = {
-                show_menu: false,
-                menu_user: false,
-                menu_admin: false,
-                menu_instructor: false,
+            if (response['status']) {
+                let setting = {
+                    show_menu: false,
+                    menu_user: false,
+                    menu_admin: false,
+                    menu_instructor: false,
+                }
+                if (response['data']['instructor']) {
+                    setting.show_menu = true;
+                    setting.menu_instructor = true;
+                }
+                if (response['data']['user']) {
+                    setting.show_menu = true;
+                    setting.menu_user = true;
+                    setting.menu_admin = (response['data']['user']['IS_ADMIN']) ? true : false;
+                }
+                this._settings = setting;
+                return setting;
+            } else {
+                return {};
             }
-            if (response['data']['instructor']) {
-                setting.show_menu = true;
-                setting.menu_instructor = true;
-            }
-            if (response['data']['user']) {
-                setting.show_menu = true;
-                setting.menu_user = true;
-                setting.menu_admin = (response['data']['user']['IS_ADMIN']) ? true : false;
-            }
-            this._settings = setting;
-            return setting;
         }));
     }
     list_jobs() {
@@ -96,7 +103,7 @@ export class LeadershipService {
     }
 
     get_job_by_id(id) {
-        return this.get("job/get_job_by_id/"+id);
+        return this.get("job/get_job_by_id/" + id);
     }
 
     delete_job(id) {
@@ -108,8 +115,11 @@ export class LeadershipService {
         return this.get("ads/list");
     }
 
-    add_ads(data) {
-        return this.post("ads/add", data);
+    save_ads(data) {
+        return this.post("ads/save", data);
+    }
+    ads_apps(id) {
+        return this.get("ads/apps/" + id);
     }
 
     delete_ads(id) {

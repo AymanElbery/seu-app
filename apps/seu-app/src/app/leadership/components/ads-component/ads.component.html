@@ -13,7 +13,8 @@
   <div class="row">
     <div class="col-md-12">
       <div class="add-block">
-        <button (click)="addAds()" class="btn btn-primary"><i class="fa fa-plus"></i> {{ "leadership.ad.add_ads" | translate}}</button>
+        <button (click)="showAddForm({})" class="btn btn-primary"><i class="fa fa-plus"></i>
+          {{ "leadership.ad.add_ads" | translate}}</button>
       </div>
     </div>
   </div>
@@ -35,11 +36,13 @@
             <tr *ngFor="let ad of ads; let i = index;">
               <td>{{i+1}}</td>
               <td>{{ad.JOB_TITLE}}</td>
-              <td>{{ad.ADS_START_DATE}}</td>
-              <td>{{ad.ADS_END_DATE}}</td>
-              <td>{{ad.ADS_IS_ACTIVE}}</td>
+              <td>{{ad.ADS_START_DATE | date :'yyyy-MM-dd'}}</td>
+              <td>{{ad.ADS_END_DATE | date :'yyyy-MM-dd'}}</td>
+              <td>{{(ad.ADS_IS_ACTIVE ? 'leadership.user.active_1' : 'leadership.user.active_0')  |translate}}</td>
               <td>
-                <button (click)="delete(ad.ADS_PK)" class="btn btn-danger">{{"leadership.delete" | translate}} <i class="fa fa-trash"></i></button>
+                <button (click)="showAddForm(ad)" class="btn btn-primary">{{"leadership.update" | translate}}</button>
+                &nbsp;
+                <button (click)="applications(ad)" class="btn btn-primary">{{"leadership.ad.apps" | translate}}</button>
               </td>
             </tr>
           </tbody>
@@ -48,4 +51,3 @@
     </div>
   </div>
 </div>
-  
