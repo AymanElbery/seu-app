@@ -108,7 +108,7 @@ export class LeadershipApplicationNewComponent implements OnInit {
   }
 
   validateFileSize(size) {
-    return (size < 5000000) ? true : false;
+    return (size < 10000000) ? true : false;
   }
 
   validateFile(name: String) {

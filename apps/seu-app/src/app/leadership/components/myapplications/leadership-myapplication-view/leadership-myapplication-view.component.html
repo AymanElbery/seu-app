@@ -16,7 +16,9 @@
           <th scope="col" width="35%">
             <h6>{{"leadership.applications.jobdetails"|translate}}</h6>
           </th>
-          <td scope="col">{{currentApp.JOB_DESC}}</td>
+          <td scope="col">
+            <div style="text-align: right;" [innerHTML]="currentApp.JOB_DESC"></div>
+          </td>
         </tr>
         <tr>
           <th scope="col" width="35%">
@@ -101,6 +103,12 @@
             <a target="_blank" href="#" (click)="download('REASON')" style="margin-right: 5px;"
               class="btn btn-danger">{{"leadership.applications.download" | translate}} <i
                 class="fa fa-download"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button style="width: 20%;margin-bottom: 20px;" (click)="back()" type="submit"
+              class="btn btn-primary">{{ "leadership.applications.back" | translate}} </button>
           </td>
         </tr>
       </table>

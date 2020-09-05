@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LeadershipService } from '../../services/leadership.service';
 import { MatDialogConfig, MatDialog } from '@angular/material';
-// import { LeadershipUserFormComponent } from './dialog/leadership-user-form.component'
+import { LeadershipUserFormComponent } from './dialog/leadership-user-form.component';
 @Component({
   selector: 'app-users',
   styleUrls: ['./users.component.css'],
@@ -42,11 +42,11 @@ export class UsersComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
     dialogConfig.data = { user };
-    //let dialogref = this.dialog.open(LeadershipUserFormComponent, dialogConfig);
-    // dialogref.afterClosed().subscribe(refresh => {
-    //   if (refresh) {
-    //     this.loadUsersList();
-    //   }
-    // });
+    let dialogref = this.dialog.open(LeadershipUserFormComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(refresh => {
+      if (refresh) {
+        this.loadUsersList();
+      }
+    });
   }
 }

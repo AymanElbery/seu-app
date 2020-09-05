@@ -1,5 +1,5 @@
 <mat-dialog-content dir="rtl">
-  <seu-loader [isLoading]="loading"></seu-loader>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title" id="exampleModalLabel">
@@ -12,34 +12,39 @@
           <div class="col-md-12">
             <div class="state">
               <h6>{{"leadership.job.title"|translate}} <span class="reqstart">*</span></h6>
-              <input *ngIf="!job" type="text" formControlName="JOB_TITLE" class="form-control" />
-              <input *ngIf="job" value="{{job.JOB_TITLE}}" type="text" formControlName="JOB_TITLE" class="form-control" />
+              <input type="text" formControlName="JOB_TITLE" class="form-control" />
             </div>
-            <div *ngIf="AddJobForm.controls.JOB_TITLE.invalid && (AddJobForm.controls.JOB_TITLE.dirty || AddJobForm.controls.JOB_TITLE.touched)">
+            <div
+              *ngIf="AddJobForm.controls.JOB_TITLE.invalid && (AddJobForm.controls.JOB_TITLE.dirty || AddJobForm.controls.JOB_TITLE.touched)">
               <div *ngIf="AddJobForm.controls.JOB_TITLE.errors.required">
-                  <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
               </div>
             </div>
           </div>
         </div>
         <div class="row" style="margin-top: 30px;">
           <div class="col-md-12">
-            <div class="state">
+            <div class="state cke_rtl">
               <h6>{{"leadership.job.desc"|translate}} <span class="reqstart">*</span></h6>
-              <ckeditor *ngIf="!job" style="height: 100px;" [config]="toolbarConfig" formControlName="JOB_DESC" [editor]="EditorAR"></ckeditor>
-              <ckeditor *ngIf="job" style="height: 100px;" [config]="toolbarConfig" formControlName="JOB_DESC" [(ngModel)]="job.JOB_DESC" [editor]="EditorAR"></ckeditor>
+              <ckeditor style="height: 100px;" [config]="toolbarConfig" formControlName="JOB_DESC" [editor]="EditorAR">
+              </ckeditor>
             </div>
-            <div *ngIf="AddJobForm.controls.JOB_DESC.invalid && (AddJobForm.controls.JOB_DESC.dirty || AddJobForm.controls.JOB_DESC.touched)">
+            <div
+              *ngIf="AddJobForm.controls.JOB_DESC.invalid && (AddJobForm.controls.JOB_DESC.dirty || AddJobForm.controls.JOB_DESC.touched)">
               <div *ngIf="AddJobForm.controls.JOB_DESC.errors.required">
-                  <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
               </div>
             </div>
           </div>
         </div>
         <div class="row" style="margin-top: 20px;">
           <div class="col-md-12" style="text-align: center;">
-            <button *ngIf="!job" style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "leadership.save" | translate}} <i class="fa fa-save"></i></button>
-            <button *ngIf="job" style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "leadership.update" | translate}} <i class="fa fa-save"></i></button>
+            <button *ngIf="!job" style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()"
+              type="submit" class="btn btn-primary">{{ "leadership.save" | translate}} <i
+                class="fa fa-save"></i></button>
+            <button *ngIf="job" style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()"
+              type="submit" class="btn btn-primary">{{ "leadership.update" | translate}} <i
+                class="fa fa-save"></i></button>
           </div>
         </div>
       </form>

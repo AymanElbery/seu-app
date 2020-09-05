@@ -19,23 +19,23 @@ import { JobDetailsComponent } from "./diag/job-details/job-details.component";
   styleUrls: ['./job.component.css'],
   templateUrl: './job.component.html'
 })
-export class JobComponent{
-  
+export class JobComponent {
+
   jobs;
   isLoading = false;
   constructor(
-    public userService: UserService, 
-    private leadershipService: LeadershipService, 
-    private http: HttpClient, 
-    private reqservice: HttpRequestService, 
-    private router: Router, 
+    public userService: UserService,
+    private leadershipService: LeadershipService,
+    private http: HttpClient,
+    private reqservice: HttpRequestService,
+    private router: Router,
     private route: ActivatedRoute,
     private toastr: AppToasterService,
     public translate: TranslateService,
     public dialog: MatDialog
   ) {
     this.getAllJobs();
-  }  
+  }
 
   getAllJobs() {
     this.isLoading = true;
@@ -77,17 +77,18 @@ export class JobComponent{
     dialogConfig.width = '50%';
     if (id != 0) {
       dialogConfig.data = {
-        id : id
+        id: id
       };
     }
 
     let dialogref = this.dialog.open(AddJobComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {
+    dialogref.afterClosed().subscribe(refresh => {
+      if (refresh)
         this.getAllJobs();
     });
   }
 
-  update(id){
+  update(id) {
     this.openDialoge(id)
   }
 
@@ -97,12 +98,12 @@ export class JobComponent{
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
     dialogConfig.data = {
-      details : details
+      details: details
     };
 
     let dialogref = this.dialog.open(JobDetailsComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
-      
+
     });
   }
 }

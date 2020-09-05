@@ -13,11 +13,11 @@ import { AddJobComponent } from './components/job-component/diag/add-job/add-job
 import { JobDetailsComponent } from './components/job-component/diag/job-details/job-details.component';
 import { AddAdsComponent } from './components/ads-component/diag/add-ads/add-ads.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-// import { LeadershipUserFormComponent } from './components/users-component/dialog/leadership-user-form.component';
-// import { LeadershipMyapplicationsComponent } from './components/myapplications/leadership-myapplications/leadership-myapplications.component';
-// import { LeadershipMyapplicationViewComponent } from './components/myapplications/leadership-myapplication-view/leadership-myapplication-view.component';
-// import { LeadershipApplicationNewComponent } from './components/newapplication/leadership-application-new/leadership-application-new.component';
-// import { LeadershipApplicationAdslistComponent } from './components/newapplication/leadership-application-adslist/leadership-application-adslist.component';
+import { LeadershipUserFormComponent } from './components/users-component/dialog/leadership-user-form.component';
+import { LeadershipMyapplicationsComponent } from './components/myapplications/leadership-myapplications/leadership-myapplications.component';
+import { LeadershipMyapplicationViewComponent } from './components/myapplications/leadership-myapplication-view/leadership-myapplication-view.component';
+import { LeadershipApplicationNewComponent } from './components/newapplication/leadership-application-new/leadership-application-new.component';
+import { LeadershipApplicationAdslistComponent } from './components/newapplication/leadership-application-adslist/leadership-application-adslist.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +27,10 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     AddJobComponent,
     AddAdsComponent,
     JobDetailsComponent,
-    AddAdsComponent, 
-    // LeadershipUserFormComponent,
-    // LeadershipMyapplicationsComponent, LeadershipMyapplicationViewComponent,
-    // LeadershipApplicationAdslistComponent, LeadershipApplicationNewComponent
+    AddAdsComponent,
+    LeadershipUserFormComponent,
+    LeadershipMyapplicationsComponent, LeadershipMyapplicationViewComponent,
+    LeadershipApplicationAdslistComponent, LeadershipApplicationNewComponent
   ],
   imports: [
     LeadershipRoutingModule,
@@ -43,6 +43,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     MatDialogModule,
     CKEditorModule,
   ],
-  entryComponents: [AddJobComponent, AddAdsComponent, JobDetailsComponent]
+  entryComponents: [AddJobComponent, AddAdsComponent, JobDetailsComponent,LeadershipUserFormComponent
+  ]
 })
 export class LeadershipModule { }

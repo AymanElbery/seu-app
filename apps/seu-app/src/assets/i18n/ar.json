@@ -276,7 +276,7 @@
         "save": "حفظ",
         "update": "تعديل",
         "newapplications": "طلب ترشيح",
-        "myapplications": "طلباتي",
+        "myapplications": "طلباتي السابقة",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "إضافة وظيفة جديدة",
@@ -315,6 +315,7 @@
             "newapp": "طلب ترشيح جديد",
             "addslist": "قائمة الوظائف المتاحة",
             "apply": "ترشيح",
+            "send": "ارسال",
             "EMPLOYEE_ID": "الرقم الوظيفي",
             "FULL_NAME": "الإسم",
             "COLLEGE": "الكلية",
@@ -334,7 +335,8 @@
             "myapplications": "طلباتي السابقة",
             "submit_date": "تاريخ الترشيح",
             "details": "تفاصيل الطلب",
-            "download": " تحميل "
+            "download": " تحميل ",
+            "back": "العودة الي القائمة"
         }
     },
     "resume": {

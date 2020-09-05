@@ -8,7 +8,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { LeadershipService } from '../../../../services/leadership.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import * as CustomEditor from '@ckeditor/ckeditor5-build-classic/build/ckeditor';
+import * as CustomEditor from '@ckeditor/ckeditor5-build-custom/build/ckeditor';
 
 @Component({
   selector: 'app-add-job',
@@ -22,13 +22,13 @@ export class AddJobComponent implements OnInit {
   AddJobForm: FormGroup;
   public EditorAR = CustomEditor;
   toolbarConfig = {
-    toolbar: ['heading', '|', 'bold', 'italic', 'Indent', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|' ,'highlight','fontFamily','fontSize','horizontalLine',,  '|','insertTable', '|', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo'],
+    toolbar: ['heading', '|', 'bold', 'italic', 'Indent', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|', 'highlight', 'fontFamily', 'fontSize', 'horizontalLine', , '|', 'insertTable', '|', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo'],
   };
 
   id;
-  job;
+  job: any = {};
   message;
-   
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddJobComponent>,
@@ -38,27 +38,29 @@ export class AddJobComponent implements OnInit {
     private router: Router,
     private translate: TranslateService,
     private route: ActivatedRoute,
-  ) { 
+  ) {
     this.AddJobForm = this.fb.group({
       'JOB_TITLE': ['', [Validators.required]],
       'JOB_DESC': ['', [Validators.required]]
     });
-    if (this.data.id) {
+    if (this.data && this.data.id) {
       this.id = this.data.id
       this.getJobById();
     }
+    this.job['JOB_DESC'] = "";
   }
 
   ngOnInit() {
-    
+
   }
 
-  getJobById(){
+  getJobById() {
     this.isLoading = true;
     this.leadershipService.get_job_by_id(this.id).subscribe(
       (response: any) => {
         if (response) {
           this.job = response.data;
+          this.AddJobForm.reset(this.job);
           this.isLoading = false;
         }
       },
@@ -108,7 +110,7 @@ export class AddJobComponent implements OnInit {
   }
 
   closeDiag() {
-    this.dialogRef.close();
+    this.dialogRef.close(true);
   }
 
 }

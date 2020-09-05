@@ -26,6 +26,7 @@ export class LeadershipMyapplicationsComponent implements OnInit {
     this.isLoading = true;
     this.leadershipService.myapplications().subscribe((response => {
       this.appsList = response['data']['apps'];
+      this.isLoading = false;
     }));
 
   }

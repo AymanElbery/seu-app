@@ -16,7 +16,9 @@
           <th scope="col" width="35%">
             <h6>{{"leadership.applications.jobdetails"|translate}}</h6>
           </th>
-          <td scope="col">{{ad.JOB_DESC}}</td>
+          <td scope="col">
+            <div style="text-align: right;" [innerHTML]="ad.JOB_DESC"></div>
+          </td>
         </tr>
         <tr>
           <th scope="col" width="35%">
@@ -63,17 +65,15 @@
       </table>
 
       <form role="form" [formGroup]="form">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="state">
-              <h6>{{"leadership.applications.PHONE"|translate}} <span class="reqstart">*</span></h6>
-              <input type="text" formControlName="PHONE" class="form-control" (keypress)="keyPress($event)"
-                maxlength="10" minlength="10" />
-            </div>
-            <div *ngIf="form.controls.PHONE.invalid && (form.controls.PHONE.dirty || form.controls.PHONE.touched)">
-              <div *ngIf="form.controls.PHONE.errors.required">
-                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
-              </div>
+        <div class="col-md-6">
+          <div class="state">
+            <h6>{{"leadership.applications.PHONE"|translate}} <span class="reqstart">*</span></h6>
+            <input type="text" formControlName="PHONE" class="form-control" (keypress)="keyPress($event)" maxlength="10"
+              minlength="10" />
+          </div>
+          <div *ngIf="form.controls.PHONE.invalid && (form.controls.PHONE.dirty || form.controls.PHONE.touched)">
+            <div *ngIf="form.controls.PHONE.errors.required">
+              <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
             </div>
           </div>
         </div>
@@ -112,11 +112,11 @@
             </div>
           </div>
         </div>
-
-        <div class="row" style="margin-top: 20px;">
+        <div class="rowss" style="margin-top: 20px;">
           <div class="col-md-12" style="text-align: center;">
-            <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="save()" type="submit"
-              class="btn btn-primary">{{ "leadership.save" | translate}} <i class="fa fa-save"></i></button>
+            <button style="width: 20%;margin-bottom: 20px;" [disabled]="submitted || form.invalid" (click)="save()"
+              type="submit" class="btn btn-primary">{{ "leadership.applications.send" | translate}} <i
+                class="fa fa-save"></i></button>
           </div>
         </div>
       </form>
