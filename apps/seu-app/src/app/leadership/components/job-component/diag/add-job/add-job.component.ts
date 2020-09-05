@@ -1,11 +1,14 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { UnivWithdraw } from 'src/app/shared/models/univ-withdraw';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
+import { WithdrawFromUnivService } from 'src/app/academicprocs/services/withdraw-from-univ.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { LeadershipService } from '../../../../services/leadership.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import * as CustomEditor from '@ckeditor/ckeditor5-build-custom/build/ckeditor';
+import * as CustomEditor from '@ckeditor/ckeditor5-build-classic/build/ckeditor';
 
 @Component({
   selector: 'app-add-job',
@@ -18,10 +21,14 @@ export class AddJobComponent implements OnInit {
   submitted = false;
   AddJobForm: FormGroup;
   public EditorAR = CustomEditor;
-  DETAILS_AR = "";
   toolbarConfig = {
     toolbar: ['heading', '|', 'bold', 'italic', 'Indent', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|' ,'highlight','fontFamily','fontSize','horizontalLine',,  '|','insertTable', '|', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo'],
-  };;
+  };
+
+  id;
+  job;
+  message;
+   
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddJobComponent>,
@@ -36,10 +43,28 @@ export class AddJobComponent implements OnInit {
       'JOB_TITLE': ['', [Validators.required]],
       'JOB_DESC': ['', [Validators.required]]
     });
+    if (this.data.id) {
+      this.id = this.data.id
+      this.getJobById();
+    }
   }
 
   ngOnInit() {
     
+  }
+
+  getJobById(){
+    this.isLoading = true;
+    this.leadershipService.get_job_by_id(this.id).subscribe(
+      (response: any) => {
+        if (response) {
+          this.job = response.data;
+          this.isLoading = false;
+        }
+      },
+      error => {
+      }
+    )
   }
 
   onSubmit() {
@@ -47,21 +72,27 @@ export class AddJobComponent implements OnInit {
       return;
     }
     let data = this.AddJobForm.value;
+    if (this.job) {
+      data.JOB_PK = this.job.JOB_PK;
+      this.message = "leadership.job.success_updated";
+    } else {
+      data.JOB_PK = 0;
+      this.message = "leadership.job.success_added";
+    }
     this.submitted = true;
-    this.leadershipService.add_job(data).subscribe(
+    this.leadershipService.add_update_job(data).subscribe(
       (response: any) => {
         this.isLoading = true;
         if (response) {
           if (response.status) {
-            this.router.navigate(['/jobs'], { relativeTo: this.route });
             this.toastr.push([{
               'type': 'success',
-              'body': this.translate.instant("leadership.job.success_added")
+              'body': this.translate.instant(this.message)
             }]);
           } else {
             this.toastr.push([{
               'type': 'error',
-              'body': this.translate.instant("leadership.job.error_added")
+              'body': this.translate.instant(this.message)
             }]);
           }
           this.closeDiag();

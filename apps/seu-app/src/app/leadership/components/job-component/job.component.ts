@@ -12,6 +12,7 @@ import { MatDialogRef, MatDialogConfig, MatDialog } from '@angular/material';
 import { FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
 import { ErrorStateMatcher } from "@angular/material/core";
 import { AddJobComponent } from "./diag/add-job/add-job.component";
+import { JobDetailsComponent } from "./diag/job-details/job-details.component";
 
 @Component({
   selector: 'app-job',
@@ -69,15 +70,39 @@ export class JobComponent{
     }
   }
 
-  openDialoge() {
+  openDialoge(id = 0) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
+    if (id != 0) {
+      dialogConfig.data = {
+        id : id
+      };
+    }
 
     let dialogref = this.dialog.open(AddJobComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
         this.getAllJobs();
+    });
+  }
+
+  update(id){
+    this.openDialoge(id)
+  }
+
+  showDetails(details) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = {
+      details : details
+    };
+
+    let dialogref = this.dialog.open(JobDetailsComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      
     });
   }
 }

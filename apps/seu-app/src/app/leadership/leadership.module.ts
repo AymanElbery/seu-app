@@ -10,7 +10,9 @@ import { AdsComponent } from './components/ads-component/ads.component';
 import { UsersComponent } from './components/users-component/users.component';
 import { SeucommonModule } from '../seucommon/seucommon.module';
 import { AddJobComponent } from './components/job-component/diag/add-job/add-job.component';
+import { JobDetailsComponent } from './components/job-component/diag/job-details/job-details.component';
 import { AddAdsComponent } from './components/ads-component/diag/add-ads/add-ads.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { AddAdsComponent } from './components/ads-component/diag/add-ads/add-ads
     AdsComponent,
     UsersComponent,
     AddJobComponent,
-    AddAdsComponent
+    AddAdsComponent,
+    JobDetailsComponent
   ],
   imports: [
     LeadershipRoutingModule,
@@ -28,8 +31,9 @@ import { AddAdsComponent } from './components/ads-component/diag/add-ads/add-ads
     FormsModule,
     ReactiveFormsModule,
     SeucommonModule,
-    MatDialogModule
+    MatDialogModule,
+    CKEditorModule,
   ],
-  entryComponents: [AddJobComponent, AddAdsComponent]
+  entryComponents: [AddJobComponent, AddAdsComponent, JobDetailsComponent]
 })
 export class LeadershipModule { }

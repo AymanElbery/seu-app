@@ -47,8 +47,12 @@ export class LeadershipService {
         return this.get("job/list");
     }
 
-    add_job(data) {
-        return this.post("job/add", data);
+    add_update_job(data) {
+        return (data.JOB_PK != 0) ? this.post("job/update", data) : this.post("job/add", data);
+    }
+
+    get_job_by_id(id) {
+        return this.get("job/get_job_by_id/"+id);
     }
 
     delete_job(id) {
