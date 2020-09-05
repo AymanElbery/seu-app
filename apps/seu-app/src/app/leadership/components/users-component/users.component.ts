@@ -8,27 +8,53 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 import { AppToasterService } from '../../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
-import { MatDialogRef } from '@angular/material';
-import { FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-import { ErrorStateMatcher } from "@angular/material/core";
-
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { LeadershipUserFormComponent } from './dialog/leadership-user-form.component'
 @Component({
   selector: 'app-users',
   styleUrls: ['./users.component.css'],
   templateUrl: './users.component.html'
 })
-export class UsersComponent{
+export class UsersComponent implements OnInit {
 
-  constructor(
-    public userService: UserService, 
-    private leadershipService: LeadershipService, 
-    private http: HttpClient, 
-    private reqservice: HttpRequestService, 
-    private router: Router, 
-    private route: ActivatedRoute,
-    private toastr: AppToasterService,
-    public translate: TranslateService
+  isLoading = false;
+  userslist = [];
+  constructor(private leadershipService: LeadershipService,
+    public dialog: MatDialog
   ) {
-    
-  }  
+
+  }
+
+  ngOnInit() {
+    this.loadUsersList();
+  }
+
+  loadUsersList() {
+    this.isLoading = true;
+    this.leadershipService.users_list().subscribe(response => {
+      if (response['status']) {
+        this.userslist = response['data']['users'];
+      }
+      this.isLoading = false;
+    });
+  }
+  newUser() {
+    this.userForm(null);
+  }
+  edit(user) {
+    this.userForm(user);
+  }
+  userForm(user) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = { user };
+    let dialogref = this.dialog.open(LeadershipUserFormComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(refresh => {
+      if (refresh) {
+        this.loadUsersList();
+      }
+    });
+  }
 }
