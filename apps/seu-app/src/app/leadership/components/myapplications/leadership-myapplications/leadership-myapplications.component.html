@@ -1,0 +1,39 @@
+<div class="main-content">
+
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <service-header [title]="'leadership.applications.myapplications' | translate"></service-header>
+
+  <div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+      <h3 class="widget-title">
+        {{"leadership.applications.myapplications"|translate}}
+      </h3>
+
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">{{"leadership.job.title"|translate}}</th>
+            <th scope="col">{{"leadership.applications.submit_date"|translate}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let app of appsList;let i=index;">
+            <td>{{i+1}}</td>
+            <td>{{app.JOB_TITLE}}</td>
+            <td>{{app.INSERT_DATE | date : 'yyyy-MM-dd'}}</td>
+            <td>
+              <button class="btn btn-sm btn-danger" style="color: white" (click)="details(app)">
+                {{"leadership.applications.details" |translate}}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
