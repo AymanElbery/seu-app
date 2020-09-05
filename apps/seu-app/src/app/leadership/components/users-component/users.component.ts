@@ -1,15 +1,7 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy, ɵConsole } from '@angular/core';
-import { UserService } from '../../../account/services/user.service';
+import { Component, OnInit } from '@angular/core';
 import { LeadershipService } from '../../services/leadership.service';
-
-import { HttpRequestService } from '../../../shared/services/http-request.service';
-import { environment } from '../../../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
-import { AppToasterService } from '../../../shared/services/app-toaster';
-import { TranslateService } from '@ngx-translate/core';
 import { MatDialogConfig, MatDialog } from '@angular/material';
-import { LeadershipUserFormComponent } from './dialog/leadership-user-form.component'
+// import { LeadershipUserFormComponent } from './dialog/leadership-user-form.component'
 @Component({
   selector: 'app-users',
   styleUrls: ['./users.component.css'],
@@ -50,11 +42,11 @@ export class UsersComponent implements OnInit {
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
     dialogConfig.data = { user };
-    let dialogref = this.dialog.open(LeadershipUserFormComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(refresh => {
-      if (refresh) {
-        this.loadUsersList();
-      }
-    });
+    //let dialogref = this.dialog.open(LeadershipUserFormComponent, dialogConfig);
+    // dialogref.afterClosed().subscribe(refresh => {
+    //   if (refresh) {
+    //     this.loadUsersList();
+    //   }
+    // });
   }
 }
