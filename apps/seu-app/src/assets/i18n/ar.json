@@ -274,14 +274,17 @@
         "delete": "حذف",
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
+        "update": "تعديل",
         "newapplications": "طلب ترشيح",
         "myapplications": "طلباتي",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "إضافة وظيفة جديدة",
-            "title": "عنوان الوظيفة",
+            "title": "اسم الوظيفة",
             "desc": "وصف الوظيفة",
+            "details": "التفاصيل",
             "success_added": "تمت إضافة الوظيفة بنجاح",
+            "success_updated": "تم تعديل الوظيفة بنجاح",
             "success_deleted": "تم حذف الوظيفة بنجاح",
             "error_added": "خطأ في إدخال الوظيفة"
         },

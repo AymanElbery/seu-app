@@ -10,12 +10,14 @@ import { AdsComponent } from './components/ads-component/ads.component';
 import { UsersComponent } from './components/users-component/users.component';
 import { SeucommonModule } from '../seucommon/seucommon.module';
 import { AddJobComponent } from './components/job-component/diag/add-job/add-job.component';
+import { JobDetailsComponent } from './components/job-component/diag/job-details/job-details.component';
 import { AddAdsComponent } from './components/ads-component/diag/add-ads/add-ads.component';
-import { LeadershipUserFormComponent } from './components/users-component/dialog/leadership-user-form.component';
-import { LeadershipMyapplicationsComponent } from './components/myapplications/leadership-myapplications/leadership-myapplications.component';
-import { LeadershipMyapplicationViewComponent } from './components/myapplications/leadership-myapplication-view/leadership-myapplication-view.component';
-import { LeadershipApplicationNewComponent } from './components/newapplication/leadership-application-new/leadership-application-new.component';
-import { LeadershipApplicationAdslistComponent } from './components/newapplication/leadership-application-adslist/leadership-application-adslist.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+// import { LeadershipUserFormComponent } from './components/users-component/dialog/leadership-user-form.component';
+// import { LeadershipMyapplicationsComponent } from './components/myapplications/leadership-myapplications/leadership-myapplications.component';
+// import { LeadershipMyapplicationViewComponent } from './components/myapplications/leadership-myapplication-view/leadership-myapplication-view.component';
+// import { LeadershipApplicationNewComponent } from './components/newapplication/leadership-application-new/leadership-application-new.component';
+// import { LeadershipApplicationAdslistComponent } from './components/newapplication/leadership-application-adslist/leadership-application-adslist.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +25,12 @@ import { LeadershipApplicationAdslistComponent } from './components/newapplicati
     AdsComponent,
     UsersComponent,
     AddJobComponent,
-    AddAdsComponent, LeadershipUserFormComponent,
-    LeadershipMyapplicationsComponent, LeadershipMyapplicationViewComponent,
-    LeadershipApplicationAdslistComponent, LeadershipApplicationNewComponent
+    AddAdsComponent,
+    JobDetailsComponent,
+    AddAdsComponent, 
+    // LeadershipUserFormComponent,
+    // LeadershipMyapplicationsComponent, LeadershipMyapplicationViewComponent,
+    // LeadershipApplicationAdslistComponent, LeadershipApplicationNewComponent
   ],
   imports: [
     LeadershipRoutingModule,
@@ -35,8 +40,9 @@ import { LeadershipApplicationAdslistComponent } from './components/newapplicati
     FormsModule,
     ReactiveFormsModule,
     SeucommonModule,
-    MatDialogModule
+    MatDialogModule,
+    CKEditorModule,
   ],
-  entryComponents: [AddJobComponent, AddAdsComponent, LeadershipUserFormComponent]
+  entryComponents: [AddJobComponent, AddAdsComponent, JobDetailsComponent]
 })
 export class LeadershipModule { }
