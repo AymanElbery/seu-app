@@ -290,7 +290,7 @@
         },
         "ad": {
             "add_ads": "إضافة إعلان",
-            "add_new_ads": "إضافة إعلان جديد",
+            "add_new_ads": "بيانات الاعلان",
             "start_date": "تاريخ البداية",
             "end_date": "تاريخ النهاية",
             "is_active": "الفاعلية",
@@ -298,7 +298,7 @@
             "success_deleted": "تم حذف الإعلان بنجاح",
             "error_added": "خطأ في إدخال الإعلان",
             "apps": "الترشيحات",
-            "active":"الفاعلية"
+            "active": "الفاعلية"
         },
         "user": {
             "newuser": "مستخدم جديد",
@@ -339,6 +339,19 @@
             "details": "تفاصيل الطلب",
             "download": " تحميل ",
             "back": "العودة الي القائمة"
+        },
+        "messages": {
+            "invalid_session": "انتهت جلسة الدخول، الرجاء تسجيل الدخول مرة أخري",
+            "missing_params": "بعض البيانات المطلوبة غير متورفة",
+            "invalid_params": "بعض البيانات غير صحيحة",
+            "cant_get_empolyee_id": "لم يتم العثور علي بيانات الرقم الوظيفي",
+            "ad_has_been_saved": "تم حفظ الاعلان بنجاح",
+            "ad_has_been_deleted": "تم حذف الاعلان بنجاح",
+            "app_has_been_submitted": "تم ارسال الترشيح بنجاح",
+            "job_has_been_saved": "تم حفظ الوظيفة بنجاح",
+            "job_has_been_deleted": "تم حذف الوظيفة بنجاح",
+            "user_has_been_updated": "تم حفظ المستخدم بنجاح",
+            "user_has_been_added": "تم تحديث بيانات المستخدم بنجاح"
         }
     },
     "resume": {

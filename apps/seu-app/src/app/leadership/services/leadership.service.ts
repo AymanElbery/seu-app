@@ -36,11 +36,11 @@ export class LeadershipService {
     }
 
     notifyError(code) {
-        this.toaster.push([{ type: "error", 'body': this.translate.instant("messages." + code) }]);
+        this.toaster.push([{ type: "error", 'body': this.translate.instant("leadership.messages." + code) }]);
     }
 
     notifySucc(code) {
-        this.toaster.push([{ type: "success", 'body': this.translate.instant("messages." + code) }]);
+        this.toaster.push([{ type: "success", 'body': this.translate.instant("leadership.messages." + code) }]);
     }
 
     getHeader() {
