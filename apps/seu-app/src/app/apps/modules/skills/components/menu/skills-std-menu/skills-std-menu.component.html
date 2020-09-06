@@ -1,0 +1,19 @@
+<div [ngClass]="{'active': activeRoute == 'std'}" class="nav-item">
+    <a href="#" routerLink="std"><span>{{ "menu.home" | translate }} </span>
+        <i class="ik ik-home"></i></a>
+</div>
+
+<div class="nav-item has-sub">
+    <a href="javascript:void(0)"><span>{{ "menu.traingnig" | translate }} </span>
+        <i class="ik ik-user"></i></a>
+    <div class="submenu-content">
+        <a [ngClass]="{'active': activeRoute == 'courses-list'}" href="#" class="menu-item"
+            routerLink="std/courses-list">
+            {{ "menu.stds-courses-list" | translate }}
+        </a>
+        <a [ngClass]="{'active': activeRoute == 'mycourses'}" href="#" class="menu-item"
+            routerLink="std/mycourses">
+            {{ "menu.mycourses" | translate }}
+        </a>
+    </div>
+</div>

@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   adsLoaded;
   eventsLoaded;
   mySubscription: any;
-  sysNotes ;
+  sysNotes;
   subscriptions;
   ngOnInit() {
     // console.log('home');
@@ -83,8 +83,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       }
     });
   }
-  getSysMessage(){
-    this.translate.get('general.mysystemNotes').subscribe(value=>{
+  getSysMessage() {
+    this.translate.get('general.mysystemNotes').subscribe(value => {
       this.sysNotes = this.sanitized.bypassSecurityTrustHtml(value);
     })
   }
@@ -308,7 +308,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       });
   }
 
+  studentType = '';
   LoadData() {
+    this.studentType = this.userService.userData.level;
     this.LoadNews()
       .then(() => this.LoadAds())
       .then(() => this.LoadEvents())

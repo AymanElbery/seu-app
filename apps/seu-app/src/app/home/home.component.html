@@ -125,6 +125,13 @@
 
                       </a></p>
                   </div>
+
+                  <div class="col-md-4 new-ser">
+                    <p><a [routerLink]="['/apps/skills/user']">
+                      <img src="assets/images/book.png">
+                        {{"menu.skills" | translate}}
+                      </a></p>
+                  </div>
                 </div>
 
 
@@ -241,6 +248,14 @@
 
                       </a></p>
                   </div>
+
+                  <div class="col-md-4 new-ser">
+                    <p><a [routerLink]="['/apps/skills/user']">
+                      <img src="assets/images/book.png">
+                        {{"menu.skills" | translate}}
+                      </a></p>
+                  </div>
+
                   <!-- <div class="col-md-6 new-ser">
                   <i class="ik ik-clipboard"></i>
                   <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx">
@@ -265,6 +280,13 @@
                       <img src="assets/images/mail.png">
                       {{"menu.email" | translate}} </a>
                   </div>
+                  <div class="col-md-6 new-ser">
+                    <p><a [routerLink]="['/apps/skills/user']">
+                      <img src="assets/images/book.png">
+                        {{"menu.skills" | translate}}
+                      </a></p>
+                  </div>
+
                 </div>
               </div>
 
@@ -316,12 +338,16 @@
 
                       </a></p>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col new-ser">
+                  <div class="col-md-4 new-ser">
                     <p><a target="_blank" href="https://sd.seu.edu.sa">
                         <img src="assets/images/concept.png">
                         {{"menu.Support" | translate}} </a></p>
+                  </div>
+                  <div class="col-md-4 new-ser" *ngIf="studentType == 'UG'">
+                    <p><a [routerLink]="['/apps/skills/std/courses-list']">
+                      <img src="assets/images/book.png">
+                        {{"menu.skills" | translate}}
+                      </a></p>
                   </div>
                 </div>
 

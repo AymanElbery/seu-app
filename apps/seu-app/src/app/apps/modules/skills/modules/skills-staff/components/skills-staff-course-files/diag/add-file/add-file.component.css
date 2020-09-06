@@ -1,0 +1,22 @@
+#file{
+    z-index: 2;
+    opacity: 1;
+    cursor: pointer;
+}
+button#fake-file{
+    width: 100%;
+    position: relative;
+    top: -40px;
+	right: 0px;
+    z-index:-1;
+    cursor: pointer;
+}
+
+.file-tag{
+    padding: 5px 20px;
+    background-color: #1c2172;
+    color: #FFF;
+    border-radius: 5px;
+    position: relative;
+    top: 10px;
+}

@@ -1,0 +1,27 @@
+<app-service-header title="{{'training' | translate}}" subtitle="{{'courses.courses-details' | translate}}">
+</app-service-header>
+<section class="dashboard-wrap" style="margin-top: 10px; padding: 0 30px;">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link " (click)="redirectTo('details')" [class.active]="current=='details'"
+        href="#">{{"general.details" | translate}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " (click)="redirectTo('files')" [class.active]="current=='files'"
+        href="#">{{"std_courses.course_files" | translate}}</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " (click)="redirectTo('attendance')" [class.active]="current=='attendance'"
+        href="#">{{"std_courses.course_attendance" | translate}}</a>
+    </li>
+    
+    <li class="nav-item" *ngIf="current=='rating'">
+      <a class="nav-link " (click)="redirectTo('rating')" [class.active]="current=='rating'"
+        href="#">{{"std_courses.rating" | translate}}</a>
+    </li>
+    
+  </ul>
+  <div class="tab-content">
+    <router-outlet></router-outlet>
+  </div>
+</section>

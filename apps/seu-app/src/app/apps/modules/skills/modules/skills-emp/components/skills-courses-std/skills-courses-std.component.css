@@ -1,0 +1,31 @@
+.tabs-course-details{
+    background-color: #262626;
+    border-radius: 5px;
+    padding: 0px 30px;
+    padding-bottom: 12px;
+}
+.tabs-course-details li{
+    margin-left: 0.8%;
+}
+.tabs-course-details li button{
+    display: block;
+    margin-top: 12px;
+    padding: 9px 30px;
+    border-radius: 1px;
+    padding-bottom: 30px;
+    border-radius: 5px;
+}
+.tabs-course-details li button.active-tab-details{
+    background-color: #1c2172;
+    border: solid 1px #1c2172;
+    color: #FFF;
+}
+.orang-label{
+    color: #f28d1e;
+}
+.details-block{
+    padding: 20px; 
+    border: solid 1px #f1f1f1;
+    background-color: #f1f1f1!important;
+    border-radius: 5px;
+}

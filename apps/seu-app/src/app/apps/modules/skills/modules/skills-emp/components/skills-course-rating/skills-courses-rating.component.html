@@ -1,0 +1,53 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap ug-content" style="margin-top: 30px; padding: 0 30px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">{{ "course_ratings.question" | translate }}</th>
+                            <th scope="col">{{ "course_ratings.excellent" | translate }}</th>
+                            <th scope="col">{{ "course_ratings.very_good" | translate }}</th>
+                            <th scope="col">{{ "course_ratings.good" | translate }}</th>
+                            <th scope="col">{{ "course_ratings.fairly_good" | translate }}</th>
+                            <th scope="col">{{ "course_ratings.weak" | translate }}</th>
+                          </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let question of questions; let i = index">
+                            <td>{{ i+1 }}</td>
+                            <td>{{ question.QUESTION_AR }}</td>
+                            <td>{{ ratings[question.ID][5] | ratingPipe }}</td>
+                            <td>{{ ratings[question.ID][4] | ratingPipe }}</td>
+                            <td>{{ ratings[question.ID][3] | ratingPipe }}</td>
+                            <td>{{ ratings[question.ID][2] | ratingPipe }}</td>
+                            <td>{{ ratings[question.ID][1] | ratingPipe }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-md-4">
+            <h6 class="title">{{ "course_ratings.positive" | translate }}</h6>
+            <ul style="padding: 10px 30px; border: solid 1px #EDEDED;" *ngIf="positivs" class="list-group">
+                <span *ngFor="let positiv of positivs"><li *ngIf="positiv.POSITIVE">{{positiv.POSITIVE}}</li></span>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h6 class="title">{{ "course_ratings.negative" | translate }}</h6>
+            <ul style="padding: 10px 30px; border: solid 1px #EDEDED;" *ngIf="negativs" class="list-group">
+                <span *ngFor="let negativ of negativs"><li *ngIf="negativ.NEGATIVE">{{negativ.NEGATIVE}}</li></span>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h6 class="title">{{ "course_ratings.suggestions" | translate }}</h6>
+            <ul style="padding: 10px 30px; border: solid 1px #EDEDED;" *ngIf="suggestions" class="list-group">
+                <span *ngFor="let suggestion of suggestions"><li *ngIf="suggestion.SUGGESTIONS">{{suggestion.SUGGESTIONS}}</li></span>
+            </ul>
+        </div>
+    </div>
+</section>
