@@ -17,6 +17,9 @@ const routes: Routes = [
   {
     path: "ads",
     component: AdsComponent
+  },{
+    path: "jobads",
+    component: AdsComponent
   },
   {
     path: "applications",

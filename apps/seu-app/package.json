@@ -16,6 +16,7 @@
   },
   "private": true,
   "dependencies": {
+    "-": "0.0.1",
     "@angular/animations": "~8.2.14",
     "@angular/cdk": "^7.3.7",
     "@angular/common": "~8.2.14",
@@ -80,8 +81,9 @@
     "reflect-metadata": "~0.1.12",
     "rxjs": "^6.5.5",
     "rxjs-compat": "^6.6.2",
-    "tns-android": "^6.5.3",
+    "save": "^2.4.0",
     "sweetalert2": "^9.17.1",
+    "tns-android": "^6.5.3",
     "tns-core-modules": "~6.3.0",
     "tns-platform-declarations": "^6.5.15",
     "tslib": "^1.13.0",

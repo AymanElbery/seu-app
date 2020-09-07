@@ -16,8 +16,10 @@ export class LeadershipService {
     _settings;
     currentApp;
     currentAddApps;
+    currentJobAds;
     currentAdd;
     instructor;
+
     URL = environment.baselink + environment.servicesprefix + "/rest/leadership/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     headers = new HttpHeaders({
@@ -57,14 +59,28 @@ export class LeadershipService {
     get(url) {
         return this.http.get(this.URL + url, {
             headers: this.getHeader()
-        });
+        }).pipe(
+            map((res: any) => {
+                if (!res.status && (res.res_code == "invalid_user" || res.res_code == "invalid_session")) {
+                    this.globalService.relogin();
+                }
+                return res;
+            })
+        );
     }
 
     post(url, data) {
         return this.http.post(this.URL + url, data,
             {
                 headers: this.getHeader(),
-            });
+            }).pipe(
+                map((res: any) => {
+                    if (!res.status && (res.res_code == "invalid_user" || res.res_code == "invalid_session")) {
+                        this.globalService.relogin();
+                    }
+                    return res;
+                })
+            );
     }
     settings() {
         if (this._settings) {

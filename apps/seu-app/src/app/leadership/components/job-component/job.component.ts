@@ -87,6 +87,10 @@ export class JobComponent {
         this.getAllJobs();
     });
   }
+  ads(job) {
+    this.leadershipService.currentJobAds = job;
+    this.router.navigate(['../jobads'], { relativeTo: this.route });
+  }
 
   update(id) {
     this.openDialoge(id)
