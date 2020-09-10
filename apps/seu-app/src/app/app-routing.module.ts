@@ -63,6 +63,11 @@ const routes: Routes = [
         canActivate: [UGGuard]
       },
       {
+        path: 'univcard',
+        loadChildren: './modules/card-module/card-module.module#CardModule',
+        canActivate: [UGGuard]
+      },
+      {
         path: 'academicrequests',
         loadChildren:
           './master-academic-requests/master-academic-requests.module#MasterAcademicRequestsModule',

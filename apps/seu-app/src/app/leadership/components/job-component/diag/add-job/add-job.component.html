@@ -40,8 +40,7 @@
         <div class="row" style="margin-top: 20px;">
           <div class="col-md-12" style="text-align: center;">
             <button *ngIf="!job" style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()"
-              type="submit" class="btn btn-primary">{{ "leadership.save" | translate}} <i
-                class="fa fa-save"></i></button>
+              type="submit" class="btn btn-primary">{{ "leadership.save" | translate}} <i class="fa fa-save"></i></button>
             <button *ngIf="job" style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()"
               type="submit" class="btn btn-primary">{{ "leadership.update" | translate}} <i
                 class="fa fa-save"></i></button>
