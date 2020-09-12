@@ -23,7 +23,7 @@ export class RequestsComponent {
     public dialog: MatDialog,
     private toastr: AppToasterService
   ) {
-    this.std_id = this.userService.userData.student_details.id;
+    this.std_id = this.userService.userData.id;
     this.getRequest();
   }
 

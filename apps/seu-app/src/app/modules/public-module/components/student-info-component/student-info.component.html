@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <app-public-header></app-public-header>
+
+  <div class="page-wrap">
+    <div class="main-landing">
+      <seu-loader [isLoading]="isLoading"></seu-loader>
+      <section class="ug-home">
+        <div class="container">
+          <h3>{{ "card.info" | translate}}</h3>
+        </div>
+      </section>
+      <section style="padding: 20px 100px;">
+        <div class="row" style="padding: 10px; border-radius: 5px;">
+          <div class="col-md-12">
+            <div class="table-responsive" *ngIf="!isLoading">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">{{ "card.std_name" | translate}}</th>
+                    <th class="col_b">{{ info.FULL_NAME_AR }}</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">{{ "card.std_id" | translate}}</th>
+                    <th class="col_b">{{ std_id }}</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">{{ "card.std_ssn" | translate}}</th>
+                    <th class="col_b">{{ info.SSN }}</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">{{ "card.std_college" | translate}}</th>
+                    <th class="col_b">{{ info.COLL_TITLE_AR }}</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">{{ "card.std_major" | translate}}</th>
+                    <th class="col_b">{{ info.MAJOR_DESC_AR }}</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">{{ "card.std_camp" | translate}}</th>
+                    <th class="col_b">{{ info.CAMP_TITLE_AR }}</th>
+                  </tr>
+                  <tr>
+                    <th scope="col">{{ "card.std_status" | translate}}</th>
+                    <th class="col_b">{{ info.STD_STATUS_DESC }}</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <app-public-footer></app-public-footer>
+</div>

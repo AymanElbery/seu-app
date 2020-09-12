@@ -145,7 +145,11 @@ const routes: Routes = [
   {
     path: 'apps',
     loadChildren: './apps/apps.module#AppsModule'
-  }
+  },
+  {
+    path: 'public',
+    loadChildren: './modules/public-module/public-module.module#PublicModule'
+  },
 ];
 
 @NgModule({
