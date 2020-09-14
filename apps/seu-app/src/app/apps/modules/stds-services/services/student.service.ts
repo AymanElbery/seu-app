@@ -18,9 +18,9 @@ export class StudentService extends AppUserRootService {
     constructor(router: Router, globalService: GlobalBaseService, http: HttpClient, translate: TranslateService, toaster: AppToasterService) {
         super(router, globalService, translate, toaster, http);
     }
-    get is_ug() {
+    get have_docs_permession() {
         if (this.isLoggedIn)
-            return this.LoggedInUser['LEVEL_CODE'] == 'UG';
+            return (this.LoggedInUser['LEVEL_CODE'] == 'UG' && this.LoggedInUser['STD_STATUS_CODE'] == 'IG');
         return false;
     }
     get fullName() {

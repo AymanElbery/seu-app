@@ -9,13 +9,13 @@ import { StudentService } from '../../services/student.service';
 export class ServicesHomeComponent implements OnInit {
 
   isLoading = false;
-  is_ug = false;
+  have_docs_permession = false;
   constructor(private stdservice: StudentService) { }
 
   ngOnInit() {
-    this.is_ug = this.stdservice.is_ug;
+    this.have_docs_permession = this.stdservice.have_docs_permession;
     this.stdservice.userLoadedObservable.subscribe(() => {
-      this.is_ug = this.stdservice.is_ug;
+      this.have_docs_permession = this.stdservice.have_docs_permession;
     });
   }
 
