@@ -47,6 +47,12 @@ export class StudentService extends AppUserRootService {
     verify(data) {
         return this.post('/stds/session/verify', data);
     }
+    send_verify_code(){
+        return this.get('/stds/stds/send_verify_code');
+    }
+    sms_verify(data){
+        return this.post('/stds/stds/sms_verify', data);
+    }
 
     load_token_data() {
         return this.post('/stds/session/details', { token: this.LoggedInToken }).subscribe(response => {
