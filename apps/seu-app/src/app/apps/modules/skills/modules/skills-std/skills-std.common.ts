@@ -3,6 +3,9 @@ import { SkillsStdHomeComponent } from './components/skills-std-home/skills-std-
 import { SkillsStdCoursesListComponent } from './components/skills-std-courses-list/skills-std-courses-list.component';
 import { SkillsStdCourseDetailsComponent } from './components/skills-std-course-details/skills-std-course-details.component';
 import { SkillsStdMycoursesComponent } from './components/skills-std-mycourses/skills-std-mycourses.component';
+import { SkillsStdSkillsCoursesComponent } from './components/skills-std-skills-courses/skills-std-skills-courses.component';
+import { SkillsStdConditionsComponent } from './components/skills-std-conditions/skills-std-conditions.component';
+import { SkillsStdStandardsComponent } from './components/skills-std-standards/skills-std-standards.component';
 import { SkillsSTDGuard } from '../../skills-guard/std.guard';
 import { SkillsStdCourseViewComponent } from './components/skills-std-course-view/skills-std-course-view/skills-std-course-view.component';
 import { SkillsStdCourseFilesComponent } from './components/skills-std-course-view/skills-std-course-files/skills-std-course-files.component';
@@ -14,7 +17,7 @@ import { SkillsStdExcuseComponent } from './components/skills-std-course-view/sk
 export const componentDeclarations: any[] = [
     SkillsStdHomeComponent, SkillsStdCoursesListComponent, SkillsStdCourseDetailsComponent, SkillsStdMycoursesComponent,
     SkillsStdCourseViewComponent, SkillsStdMycourseDetailsComponent, SkillsStdCourseFilesComponent, SkillsStdCourseAttendsComponent,
-    SkillsStdExcuseComponent, SkillsStdCourseRatingComponent
+    SkillsStdExcuseComponent, SkillsStdCourseRatingComponent, SkillsStdConditionsComponent, SkillsStdStandardsComponent, SkillsStdSkillsCoursesComponent
 ];
 
 export const stdEntryComponents: any[] = [
@@ -35,6 +38,15 @@ export const routes: Routes = [
     },
     {
         path: 'mycourses', component: SkillsStdMycoursesComponent, canActivate: [SkillsSTDGuard]
+    },
+    {
+        path: 'conditions', component: SkillsStdConditionsComponent, canActivate: [SkillsSTDGuard]
+    },
+    {
+        path: 'standards', component: SkillsStdStandardsComponent, canActivate: [SkillsSTDGuard]
+    },
+    {
+        path: 'skills-courses', component: SkillsStdSkillsCoursesComponent, canActivate: [SkillsSTDGuard]
     },
     {
         path: 'course-view', component: SkillsStdCourseViewComponent,

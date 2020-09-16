@@ -15,6 +15,8 @@ import { SkillsCourseExcusesComponent } from './components/skills-course-excuses
 import { SkillsCoursesFilesComponent } from './components/skills-course-files/skills-courses-files.component';
 import { SkillsCoursesAttendComponent } from './components/skills-course-attend/skills-courses-attend.component';
 import { SkillsCoursesRatingComponent } from './components/skills-course-rating/skills-courses-rating.component';
+import { SkillsSettingsComponent } from './components/skills-settings/skills-settings.component';
+import { UpdateSettingComponent } from './components/skills-settings/diag/update-setting/update-setting.component';
 
 export const componentDeclarations: any[] = [
     SkillsUsersHomeComponent,
@@ -31,7 +33,9 @@ export const componentDeclarations: any[] = [
     SkillsCoursesAttendComponent,
     SkillsCourseExcusesComponent,
     SkillsCoursesFilesComponent,
-    SkillsCoursesRatingComponent
+    SkillsCoursesRatingComponent,
+    SkillsSettingsComponent,
+    UpdateSettingComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -55,6 +59,9 @@ export const routes: Routes = [
     },
     {
         path: 'courses-list', component: SkillsCoursesListComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
+        path: 'settings', component: SkillsSettingsComponent, canActivate: [SkillsEMPGuard]
     },
     {
         path: 'courses-inactive', component: SkillsCoursesListComponent, canActivate: [SkillsEMPGuard]

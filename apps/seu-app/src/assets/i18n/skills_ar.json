@@ -35,6 +35,8 @@
         "home": "الصفحة الرئيسية",
         "users": "مستخدمي النظام",
         "courses": "الدورات التدريبية",
+        "settings": "الإعدادات",
+        "standards": "المعايير و الضوابط",
         "add-user": "اضافة مستخدم جديد",
         "users-list": "قائمة المستخدمين",
         "add-instructor": "اضافة مدرب",
@@ -45,7 +47,19 @@
         "mycourses": "دوراتي",
         "traingnig": "التدريب وتنمية المهارات",
         "inactive-courses-list": "قائمة الدورات المنتهية",
-        "mycourseshistory": "الدورات المكتملة"
+        "mycourseshistory": "الدورات المكتملة",
+        "skills" : "السجل المهاري",
+        "stds-conditions": "التعريف و الشروط",
+        "stds-standards": "المعايير و الضوابط",
+        "stds-skills-courses": "دوراتي"
+    },
+    "settings": {
+        "title": "العنوان" , 
+        "required": "هذا الحقل مطلوب" , 
+        "edit": "تعديل تفاصيل العنوان" ,
+        "details_ar": "التفاصيل باللغة العربية",
+        "details_en": "التفاصيل باللغة الإنجليزية",
+        "success_updated": "تم تعديل الإعداد بنجاح"
     },
     "users": {
         "add-user": "اضافة مستخدم جديد",
@@ -153,7 +167,9 @@
         "attend": "حاضر",
         "not_attend": "غائب",
         "certificate": "شهادة",
-        "not_attend_yet": "لم يتم التحضير"
+        "not_attend_yet": "لم يتم التحضير",
+        "conditions": "التعريف و الشروط",
+        "standards": "المعايير و الضوابط"
     },
     "statuses": {
         "registered": "قيد التسجيل",

@@ -31,3 +31,8 @@
     </a>
   </div>
 </div>
+
+<div [ngClass]="{'active': activeRoute == 'settings'}" class="nav-item">
+  <a href="#" routerLink="emp/settings"><span>{{ "menu.settings" | translate }} </span>
+    <i class="ik ik-settings"></i></a>
+</div>
