@@ -110,11 +110,18 @@
             <span *ngIf="sectionError" class="text text-danger">{{sectionError}}</span>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
           <div class="form-group">
             <label for="phone">{{ "resume.phone" | translate}}  <span class="text-danger">*</span></label>
             <input (input)="hidePhoneMessages()" required type="text" [ngClass]="{'errorBorder': phoneError}" class="form-control" id="phone" [(ngModel)]="phone" name="phone">
             <span *ngIf="phoneError" class="text text-danger">{{phoneError}}</span>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label for="major">{{ "resume.major" | translate}}  <span class="text-danger">*</span></label>
+            <input (input)="hideMajorMessages()" required type="text" [ngClass]="{'errorBorder': majorError}" class="form-control" id="major" [(ngModel)]="major" name="major">
+            <span *ngIf="majorError" class="text text-danger">{{majorError}}</span>
           </div>
         </div>
       </div>

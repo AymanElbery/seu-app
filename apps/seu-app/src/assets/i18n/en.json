@@ -269,6 +269,7 @@
         "name_en": "Doctor name in English",
         "email": "Doctor email",
         "phone": "Phone number",
+        "major": "Major",
         "jobTitle": "Job title",
         "jobTitle_en": "Job title in English",
         "section": "Section",
