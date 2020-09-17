@@ -10,11 +10,13 @@ import { PublicLandingComponent } from './components/public-landing-component/pu
 import { PublicSharedModule } from './modules/apps-shared/public.shared.module';
 import { SeucommonModule } from '../../seucommon/seucommon.module';
 import { TranslateService } from '@ngx-translate/core';
+import { PublicStdsCertComponent } from './components/public-stds-cert/public-stds-cert.component';
 
 @NgModule({
   declarations: [
     StudentInfoComponent,
-    PublicLandingComponent
+    PublicLandingComponent,
+    PublicStdsCertComponent
   ],
   imports: [
     PublicRoutingModule,
