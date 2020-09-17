@@ -45,7 +45,9 @@ export class AppComponent implements OnInit {
         this.userService.loadUserData();
       },
       err => {
-        if (document.location.href.indexOf("/apps") == -1) {
+        const notapps = (document.location.href.indexOf("/apps") == -1)?true:false;
+        const notpublic = (document.location.href.indexOf("/public") == -1)?true:false;
+        if (notapps && notpublic) {
           this.userService.relogin();
         }
       }
