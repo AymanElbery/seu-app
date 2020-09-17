@@ -32,7 +32,7 @@ export class AcademicRecordService {
     const sid = this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?lang=en' + sid;
+    return this.configService.getApiURI() + '/academic_record_service/get_academic_record_print?lang=en&sid=' + sid;
   }
   getٍِStudentGrades() {
     this.configService.baseUrl = 'stdsUnivapi';
