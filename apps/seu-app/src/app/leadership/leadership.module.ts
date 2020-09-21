@@ -17,6 +17,7 @@ import { LeadershipUserFormComponent } from './components/users-component/dialog
 import { LeadershipMyapplicationsComponent } from './components/myapplications/leadership-myapplications/leadership-myapplications.component';
 import { LeadershipMyapplicationViewComponent } from './components/myapplications/leadership-myapplication-view/leadership-myapplication-view.component';
 import { LeadershipApplicationNewComponent } from './components/newapplication/leadership-application-new/leadership-application-new.component';
+import { LeadershipApplicationRecommendComponent } from './components/newapplication/leadership-application-recommend/leadership-application-recommend.component';
 import { LeadershipApplicationAdslistComponent } from './components/newapplication/leadership-application-adslist/leadership-application-adslist.component';
 import { LeadershipAddApplicationsComponent } from './components/leadership-add-applications/leadership-add-applications.component';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
@@ -32,7 +33,9 @@ import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     AddAdsComponent,
     LeadershipUserFormComponent, LeadershipAddApplicationsComponent,
     LeadershipMyapplicationsComponent, LeadershipMyapplicationViewComponent,
-    LeadershipApplicationAdslistComponent, LeadershipApplicationNewComponent,
+    LeadershipApplicationAdslistComponent, 
+    LeadershipApplicationNewComponent,
+    LeadershipApplicationRecommendComponent,
   ],
   imports: [
     LeadershipRoutingModule,
