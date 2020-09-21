@@ -35,6 +35,7 @@ export class ResumeComponent{
   email;
   displayEmail;
   phone;
+  major;
   // address;
   jobTitle;
   faculty;
@@ -46,6 +47,7 @@ export class ResumeComponent{
   nameError;
   emailError;
   phoneError;
+  majorError;
   // addressError;
   jobTitleError;
   sectionError;
@@ -203,6 +205,7 @@ export class ResumeComponent{
             this.name = this.data.NAME;
             this.email = this.data.EMAIL;
             this.phone = this.data.PHONE;
+            this.major = this.data.MAJOR;
             // this.address = this.data.ADDRESS;
             this.jobTitle = this.data.JOB_TITLE;
             this.section = this.data.SECTION;
@@ -276,6 +279,9 @@ export class ResumeComponent{
   hidePhoneMessages(){
     this.phoneError = null;
   }
+  hideMajorMessages(){
+    this.majorError = null;
+  }
   // hideAddressMessages(){
   //   this.addressError = null;
   // }
@@ -319,6 +325,11 @@ export class ResumeComponent{
       valid = false;
     }
 
+    if (this.major == "" || this.major == null) {
+      this.majorError = "هذا الحقل مطلوب";
+      valid = false;
+    }
+
     // if (this.address == "" || this.address == null) {
     //   this.addressError = "هذا الحقل مطلوب";
     //   valid = false;
@@ -354,6 +365,7 @@ export class ResumeComponent{
         name        : this.name,
         email       : this.email,
         phone       : this.phone,
+        major       : this.major,
         // address     : this.address,
         jobTitle    : this.jobTitle,
         section     : this.section,

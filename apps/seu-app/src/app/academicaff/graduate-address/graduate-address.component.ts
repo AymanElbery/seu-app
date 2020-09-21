@@ -90,7 +90,7 @@ export class GraduateAddressComponent implements OnInit, OnDestroy {
         let data = this.addressForm.value;
         this.graduateAddressSer.saveAddress(data).then(
             (res) => {
-                this.toastr.push(data.messages);
+                this.toastr.push(res['messages']);
                 if (res['status']) {
                     this.ngOnInit();
                 }

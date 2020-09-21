@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
   providedIn: StudentServicesModule
 })
 export class STDServicesUSERGuard implements CanActivate, CanLoad {
-  constructor(private router: Router, private translate: TranslateService, private stdsService: StudentService) {
+  constructor(protected router: Router, protected translate: TranslateService, protected stdsService: StudentService) {
 
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> {

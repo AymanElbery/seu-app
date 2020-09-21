@@ -9,7 +9,7 @@ import { StudentService } from '../../services/student.service';
 })
 export class ServicesMenuComponent implements OnInit {
   current = '';
-  is_ug = false;
+  have_docs_permession = false;
   constructor(
     private stdservice: StudentService,
     private route: ActivatedRoute,
@@ -21,10 +21,10 @@ export class ServicesMenuComponent implements OnInit {
     const path = this.route.snapshot.children[0]['url'][0];
     this.current = (path) ? path['path'] : "";
 
-    this.is_ug = this.stdservice.is_ug;
+    this.have_docs_permession = this.stdservice.have_docs_permession;
     this.isLoggedIn = this.stdservice.isLoggedIn;
     this.stdservice.userLoadedObservable.subscribe(() => {
-      this.is_ug = this.stdservice.is_ug;
+      this.have_docs_permession = this.stdservice.have_docs_permession;
       this.isLoggedIn = this.stdservice.isLoggedIn;
     });
   }

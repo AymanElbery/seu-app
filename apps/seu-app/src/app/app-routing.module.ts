@@ -63,6 +63,11 @@ const routes: Routes = [
         canActivate: [UGGuard]
       },
       {
+        path: 'univcard',
+        loadChildren: './modules/card-module/card-module.module#CardModule',
+        canActivate: [UGGuard]
+      },
+      {
         path: 'academicrequests',
         loadChildren:
           './master-academic-requests/master-academic-requests.module#MasterAcademicRequestsModule',
@@ -140,7 +145,11 @@ const routes: Routes = [
   {
     path: 'apps',
     loadChildren: './apps/apps.module#AppsModule'
-  }
+  },
+  {
+    path: 'public',
+    loadChildren: './modules/public-module/public-module.module#PublicModule'
+  },
 ];
 
 @NgModule({

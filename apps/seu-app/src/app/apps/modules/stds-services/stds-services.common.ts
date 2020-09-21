@@ -6,10 +6,13 @@ import { ServicesAutoLoginComponent } from './components/services-autologin/serv
 import { ServicesVerifyComponent } from './components/services-verify/services-verify.component';
 import { STDServicesUSERGuard } from './services-guard/user.guard';
 import { ServicesMenuComponent } from './components/services-menu/services-menu.component';
+import { STDServicesUSERVerifiedGuard } from './services-guard/user-verified.guard';
+import { StdSmsVerifyComponent } from './components/std-sms-verify/std-sms-verify.component';
 
 
 export const componentDeclarations: any[] = [
-    ServicesAutoLoginComponent,ServicesLandigComponent, ServicesHomeComponent, ServicesLoginComponent, ServicesVerifyComponent, ServicesMenuComponent
+    ServicesAutoLoginComponent,ServicesLandigComponent, ServicesHomeComponent, ServicesLoginComponent,
+    StdSmsVerifyComponent, ServicesVerifyComponent, ServicesMenuComponent
 ];
 export const providerDeclarations: any[] = [];
 
@@ -20,6 +23,7 @@ export const routes: Routes = [
             { path: 'login', component: ServicesAutoLoginComponent },
             { path: 'oldlogin', component: ServicesLoginComponent },
             { path: 'verify', component: ServicesVerifyComponent },
+            {path:'sms-verification', component: StdSmsVerifyComponent},
             { path: '', component: ServicesHomeComponent, canActivate: [STDServicesUSERGuard] },
             { path: 'home', component: ServicesHomeComponent, canActivate: [STDServicesUSERGuard] },
             {

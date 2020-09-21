@@ -1,16 +1,12 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy, ɵConsole } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../../../account/services/user.service';
 import { LeadershipService } from '../../services/leadership.service';
-
 import { HttpRequestService } from '../../../shared/services/http-request.service';
-import { environment } from '../../../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AppToasterService } from '../../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
-import { MatDialogRef, MatDialogConfig, MatDialog } from '@angular/material';
-import { FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-import { ErrorStateMatcher } from "@angular/material/core";
+import { MatDialogConfig, MatDialog } from '@angular/material';
 import { AddJobComponent } from "./diag/add-job/add-job.component";
 import { JobDetailsComponent } from "./diag/job-details/job-details.component";
 
