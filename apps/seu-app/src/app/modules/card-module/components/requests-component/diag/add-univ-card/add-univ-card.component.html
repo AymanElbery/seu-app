@@ -1,0 +1,40 @@
+<mat-dialog-content>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{"services.univ_card.title"|translate}}</h5>
+      </div>
+      <form role="form" [formGroup]="AddCardRequestForm">
+        <div class="modal-body">
+          <h6>{{"services.missing_card.req_requisites"|translate}}</h6>
+          <ul class="list-group" style="font-size: 12px;">
+            <li class="list-group-item list-group-item-info">{{"services.missing_card.upload_pic"|translate}}</li>
+            <li class="list-group-item list-group-item-info">{{"services.missing_card.pic_color"|translate}}</li>
+            <li class="list-group-item list-group-item-info">{{"services.missing_card.pic_for_females"|translate}}</li>
+            <li class="list-group-item list-group-item-info">{{"services.missing_card.pic_quality"|translate}}</li>
+            <li class="list-group-item list-group-item-info">{{"services.missing_card.pic_warning"|translate}}</li>
+          </ul>
+          <div style="margin-top: 30px;" class="row ser-block">
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6> {{"services.missing_card.add_personal_pic"|translate}} </h6>
+                <div class="custom-file">
+                  <input formControlName="PHOTO" type="file" accept="*/*" (change)="handleInputChange($event)"
+                    class="custom-file-input" id="photo" />
+                  <label class="custom-file-label" for="photo">
+                    {{"services.missing_card.add_pic"|translate}}
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button style="width: 100%;" [disabled]="submitted || AddCardRequestForm.invalid" (click)="onSubmit()"
+              type="submit" class="btn btn-primary">{{ "card.save" | translate}} <i class="fa fa-save"></i></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

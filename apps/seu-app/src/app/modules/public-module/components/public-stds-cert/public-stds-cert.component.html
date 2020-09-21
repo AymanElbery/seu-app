@@ -1,0 +1,82 @@
+<div class="public-container wrapper">
+  <app-public-header></app-public-header>
+
+  <div class="page-wrap">
+    <div class="main-landing">
+      <seu-loader [isLoading]="isLoading"></seu-loader>
+      <section class="ug-home">
+        <div class="container">
+          <h3>Certificate   -  الوثيقة</h3>
+        </div>
+      </section>
+      <section style="padding:0 10px; font-size: 16px;" >
+        <div class="row" style="padding: 10px; border-radius: 5px;">
+          <div class="col-md-12">
+            <div class="table-responsive" *ngIf="!isLoading">
+              <table class="table table-striped table-bordered">
+                <tbody>
+                  <tr>
+                    <th >الإسم</th>
+                    <th >{{ info['new_data']['NAME_AR'] }}</th>
+                    <th >{{ info['new_data']['NAME_EN'] }}</th>
+                    <th >Name</th>
+                  </tr>
+                  <tr>
+                    <th >رقم الهوية</th>
+                    <th >{{ info['student_data']['SSN'] }}</th>
+                    <th >{{ info['student_data']['SSN'] }}</th>
+                    <th >SSN</th>
+                  </tr>
+                  <tr>
+                    <th >الرقم الجامعي</th>
+                    <th >{{ info['student_data']['STD_ID'] }}</th>
+                    <th >{{ info['student_data']['STD_ID'] }}</th>
+                    <th >ID</th>
+                  </tr>
+                  <tr>
+                    <th >الكلية</th>
+                    <th >{{ info['college_ar'] }}</th>
+                    <th >{{ info['college_en'] }}</th>
+                    <th >Collge</th>
+                  </tr>
+                  <tr>
+                    <th >التخصص</th>
+                    <th >{{ info['major_ar'] }}</th>
+                    <th >{{ info['student_data']['MAJOR_CODE'] != 'ENGL' ? info['student_data']['DEPT_DESC'] : info['major_en'] }}</th>
+                    <th >Major</th>
+                  </tr>
+                  <tr>
+                    <th >التقدير</th>
+                    <th >{{ info['gradeTitle_ar'] }}</th>
+                    <th >{{ info['gradeTitle_en'] }}</th>
+                    <th >Grade</th>
+                  </tr>
+                  <tr>
+                    <th >المعدل</th>
+                    <th >{{ info['student_data']['GPA']  }} / 4</th>
+                    <th >{{ info['student_data']['GPA']  }} / 4</th>
+                    <th >GPA</th>
+                  </tr>
+                  <tr>
+                    <th >الفصل الدراسي</th>
+                    <th >{{ info['term']['TERM_DESC_HIJRI']}}</th>
+                    <th >{{ info['term']['TERM_DESC_EN'] }}</th>
+                    <th >TERM</th>
+                  </tr>
+                  <tr>
+                    <th >تاريخ الإعتماد</th>
+                    <th >{{ info['commit_date']['HIGRY_DATE']}}</th>
+                    <th >{{ info['commit_date']['GEOGRY_DATE']}}</th>
+                    <th >Date</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <app-public-footer></app-public-footer>
+</div>

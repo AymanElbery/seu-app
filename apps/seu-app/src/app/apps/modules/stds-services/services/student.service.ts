@@ -18,9 +18,9 @@ export class StudentService extends AppUserRootService {
     constructor(router: Router, globalService: GlobalBaseService, http: HttpClient, translate: TranslateService, toaster: AppToasterService) {
         super(router, globalService, translate, toaster, http);
     }
-    get is_ug() {
+    get have_docs_permession() {
         if (this.isLoggedIn)
-            return this.LoggedInUser['LEVEL_CODE'] == 'UG';
+            return (this.LoggedInUser['LEVEL_CODE'] == 'UG' && this.LoggedInUser['STD_STATUS_CODE'] == 'IG');
         return false;
     }
     get fullName() {
@@ -46,6 +46,12 @@ export class StudentService extends AppUserRootService {
 
     verify(data) {
         return this.post('/stds/session/verify', data);
+    }
+    send_verify_code(){
+        return this.get('/stds/stds/send_verify_code');
+    }
+    sms_verify(data){
+        return this.post('/stds/stds/sms_verify', data);
     }
 
     load_token_data() {

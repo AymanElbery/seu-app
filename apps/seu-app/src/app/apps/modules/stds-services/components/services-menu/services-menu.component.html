@@ -24,12 +24,12 @@
             (click)="redirectTo('appointments')"><span>{{ "menu.appointments" | translate }} </span>
             <img _ngcontent-fcu-c3="" src="../../assets/images/admit2.png"> </a>
         </div>
-        <!-- <div *ngIf="is_ug" [ngClass]="{'active': current == 'docs'}" class="nav-item">
+        <div *ngIf="have_docs_permession" [ngClass]="{'active': current == 'docs'}" class="nav-item">
           <a href="#" routerLink="/apps/stds-services/docs" (click)="redirectTo('docs')">
             <span>{{ "menu.print_docuemnts" | translate }} </span>
             <img _ngcontent-rbd-c3="" src="../../assets/images/cop2.png">
           </a>
-        </div> -->
+        </div>
         <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a href="#" class="menu-item" (click)="logout()">
             <span> {{'logout' | translate}} </span>
