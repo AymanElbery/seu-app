@@ -7,12 +7,12 @@ import { DatePipe } from '@angular/common';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-leadership-add-applications',
-  templateUrl: './leadership-add-applications.component.html',
-  styleUrls: ['./leadership-add-applications.component.css'],
+  selector: 'app-leadership-ad-recommendations',
+  templateUrl: './leadership-ad-recommendations.component.html',
+  styleUrls: ['./leadership-ad-recommendations.component.css'],
   providers: [DatePipe]
 })
-export class LeadershipAddApplicationsComponent implements OnInit {
+export class LeadershipAdRecommendationsComponent implements OnInit {
 
   isLoading = false;
   appsList = [];
@@ -40,23 +40,22 @@ export class LeadershipAddApplicationsComponent implements OnInit {
 
   loadapps() {
     this.isLoading = true;
-    this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK']).subscribe((response => {
-      this.appsList = response['data']['apps'];
+    this.leadershipService.ads_recommendations(this.leadershipService.currentAddApps['ADS_PK']).subscribe((response => {
+      this.appsList = response['data']['recommendations'];
       this.isLoading = false;
     }));
   }
   exportAsXLSX(){
-    this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK'],1).subscribe((response => {
-      const linkSource = `data:application/pdf;base64,${response['data']['apps']}`;
+    this.leadershipService.ads_recommendations(this.leadershipService.currentAddApps['ADS_PK'],1).subscribe((response => {
+      const linkSource = `data:application/pdf;base64,${response['data']['recommendations']}`;
       const downloadLink = document.createElement("a");
-      const fileName = "applications.xls";
+      const fileName = "recommendations.xls";
       downloadLink.href = linkSource;
       downloadLink.download = fileName;
       downloadLink.click();
     }));
   }
-
-  exportAsXLSX_old(): void {
+  exportAsXLSX_js(): void {
     let i = 1;
     const baseLink = environment.baselink + environment.servicesprefix + "/rest/download.php?folder=INT_JOB_APPLICATIONS&file=";
     const download = this.translate.instant("leadership.applications.download");
@@ -78,25 +77,6 @@ export class LeadershipAddApplicationsComponent implements OnInit {
       return record;
     });
     this.excelService.exportAsExcelFile(exportAppsList, 'ترشيحات - ' + this.leadershipService.currentAddApps['JOB_TITLE']);
-  }
-
-  download(file_name, code) {
-    this.leadershipService.file(file_name).subscribe(response => {
-      if (response['status']) {
-        const linkSource = `data:application/pdf;base64,${response['data']['content']}`;
-        const downloadLink = document.createElement("a");
-        const fileName = code + ".pdf";
-        downloadLink.href = linkSource;
-        downloadLink.download = fileName;
-        downloadLink.click();
-      }
-    });
-    return false;
-  }
-
-  details(app) {
-    this.leadershipService.currentApp = app;
-    this.router.navigate(['../application-details'], { relativeTo: this.route });
   }
 
 }

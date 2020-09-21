@@ -134,8 +134,11 @@ export class LeadershipService {
     save_ads(data) {
         return this.post("ads/save", data);
     }
-    ads_apps(id) {
-        return this.get("ads/apps/" + id);
+    ads_apps(id,print=0) {
+        return this.get("ads/apps/" + id+"/"+print);
+    }
+    ads_recommendations(id,print=0) {
+        return this.get("recommendations/adrecommendation/" + id+"/"+print);
     }
 
     delete_ads(id) {
@@ -158,8 +161,12 @@ export class LeadershipService {
         return this.get("recommendations/myrecommendation");
     }
 
+    get_recommendations() {
+        return this.get("recommendations/recommendation");
+    }
+
     get_my_add_recommendations(id) {
-        return this.get("recommendations/myadrecommendation/" + id);
+        return this.get("recommendations/recommendation/" + id);
     }
 
     file(name) {

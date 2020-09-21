@@ -5,11 +5,13 @@ import { AdsComponent } from './components/ads-component/ads.component';
 import { UsersComponent } from './components/users-component/users.component';
 import { LeadershipMyapplicationsComponent } from './components/myapplications/leadership-myapplications/leadership-myapplications.component';
 import { LeadershipMyRecomendationssComponent } from './components/myrecommendations/myrecommendations.component';
+import { LeadershipRecomendationssComponent } from './components/recommendations/recommendations.component';
 import { LeadershipApplicationAdslistComponent } from './components/newapplication/leadership-application-adslist/leadership-application-adslist.component';
 import { LeadershipMyapplicationViewComponent } from './components/myapplications/leadership-myapplication-view/leadership-myapplication-view.component';
 import { LeadershipApplicationNewComponent } from './components/newapplication/leadership-application-new/leadership-application-new.component';
 import { LeadershipApplicationRecommendComponent } from './components/newapplication/leadership-application-recommend/leadership-application-recommend.component';
 import { LeadershipAddApplicationsComponent } from './components/leadership-add-applications/leadership-add-applications.component';
+import { LeadershipAdRecommendationsComponent } from './components/leadership-ad-recommendations/leadership-ad-recommendations.component';
 
 const routes: Routes = [
   {
@@ -26,7 +28,11 @@ const routes: Routes = [
   {
     path: "applications",
     component: LeadershipAddApplicationsComponent
+  },{
+    path: "adrecommendations",
+    component: LeadershipAdRecommendationsComponent
   },
+  
   {
     path: "users",
     component: UsersComponent
@@ -38,6 +44,10 @@ const routes: Routes = [
   {
     path: "myrecomendations",
     component: LeadershipMyRecomendationssComponent
+  },
+  {
+    path: "recomendations",
+    component: LeadershipRecomendationssComponent
   },
   {
     path: "myapplication-details",

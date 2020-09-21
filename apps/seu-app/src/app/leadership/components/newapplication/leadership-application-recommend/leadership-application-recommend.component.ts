@@ -57,15 +57,15 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
     let data = this.form.value;
     
     this.leadershipService.get_instructor(data).subscribe((response => {
-      this.recommendedInstructor = response.data.instructor;
+      if(!response['status']){
+        //this.leadershipService.notifyError(response['res_code']);
+        this.showMessage = true;
+      }else{
+        this.recommendedInstructor = response.data.instructor;
+        this.showResult = true;
+      }
       this.isLoading = false;
       this.submitted = false;
-      if (this.recommendedInstructor != null) {
-        this.showResult = true;
-      }else{
-        this.showMessage = true;
-      }
-      
     }));
   }
 
@@ -79,9 +79,13 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
     data.EMPLOYEE_ID = this.recommendedInstructor['EMPLOYEE_ID'];
     data.AD_ID = this.ad['ADS_PK'];
     this.leadershipService.save_recommend(data).subscribe((response => {
+      if(!response['status']){
+        this.leadershipService.notifyError(response['res_code']);
+      }else{
+        this.router.navigate(['../../myrecomendations'], { relativeTo: this.route });
+      }
       this.isLoading = false;
       this.rec_submitted = false;
-      this.router.navigate(['../../myrecomendations'], { relativeTo: this.route });
     }));
   }
 
