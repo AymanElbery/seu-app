@@ -304,6 +304,7 @@
         "update": "تعديل",
         "newapplications": "طلب ترشيح / تزكية",
         "myapplications": "طلباتي السابقة",
+        "myrecomendations": "تزكياتي",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "بيانات الوظيفة",
@@ -342,6 +343,10 @@
             "admin": "صلاحية اضافة مستخدمبن",
             "yes": "نعم",
             "no": "لا"
+        },
+        "recommendations": {
+            "rec_date": "تاريخ التزكية",
+            "recommendations": "التزكيات"
         },
         "applications": {
             "newapp": "طلب ترشيح / تزكية جديد",

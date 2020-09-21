@@ -60,13 +60,28 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
       this.recommendedInstructor = response.data.instructor;
       this.isLoading = false;
       this.submitted = false;
-      console.log(this.recommendedInstructor);
       if (this.recommendedInstructor != null) {
         this.showResult = true;
       }else{
         this.showMessage = true;
       }
       
+    }));
+  }
+
+  save_rec() {
+    this.isLoading = true;
+    if (this.recommendForm.invalid) {
+      return;
+    }
+    this.rec_submitted = true;
+    let data = this.recommendForm.value;
+    data.EMPLOYEE_ID = this.recommendedInstructor['EMPLOYEE_ID'];
+    data.AD_ID = this.ad['ADS_PK'];
+    this.leadershipService.save_recommend(data).subscribe((response => {
+      this.isLoading = false;
+      this.rec_submitted = false;
+      this.router.navigate(['../../myrecomendations'], { relativeTo: this.route });
     }));
   }
 
