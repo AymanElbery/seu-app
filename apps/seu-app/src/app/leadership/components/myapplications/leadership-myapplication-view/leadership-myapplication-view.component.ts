@@ -9,6 +9,7 @@ import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 })
 export class LeadershipMyapplicationViewComponent implements OnInit {
 
+  recList;
   currentApp;
   isLoading = false;
   constructor(private leadershipService: LeadershipService, private router: Router, private route: ActivatedRoute) {
@@ -16,11 +17,20 @@ export class LeadershipMyapplicationViewComponent implements OnInit {
       this.back();
     }
     this.currentApp = this.leadershipService.currentApp;
-
   }
 
   ngOnInit() {
+    this.loadRec();
   }
+
+  loadRec(){
+    this.isLoading = true;
+    this.leadershipService.get_my_add_recommendations(this.currentApp.AD_ID).subscribe((response => {
+      this.recList = response.data.recommendations;
+      this.isLoading = false;
+    }));
+  }
+
   back() {
     this.router.navigate(['../myapplications'], { relativeTo: this.route });
   }

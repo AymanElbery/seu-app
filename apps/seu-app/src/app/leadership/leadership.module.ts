@@ -21,6 +21,7 @@ import { LeadershipApplicationRecommendComponent } from './components/newapplica
 import { LeadershipApplicationAdslistComponent } from './components/newapplication/leadership-application-adslist/leadership-application-adslist.component';
 import { LeadershipAddApplicationsComponent } from './components/leadership-add-applications/leadership-add-applications.component';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { LeadershipMyRecomendationssComponent } from './components/myrecommendations/myrecommendations.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     LeadershipApplicationAdslistComponent, 
     LeadershipApplicationNewComponent,
     LeadershipApplicationRecommendComponent,
+    LeadershipMyRecomendationssComponent,
   ],
   imports: [
     LeadershipRoutingModule,

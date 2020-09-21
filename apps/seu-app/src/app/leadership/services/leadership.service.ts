@@ -154,6 +154,14 @@ export class LeadershipService {
         return this.get("applications/mylist");
     }
 
+    get_my_recommendations() {
+        return this.get("recommendations/myrecommendation");
+    }
+
+    get_my_add_recommendations(id) {
+        return this.get("recommendations/myadrecommendation/" + id);
+    }
+
     file(name) {
         return this.get("applications/file/" + name);
     }
@@ -163,7 +171,11 @@ export class LeadershipService {
     }
 
     get_instructor(data) {
-        return this.post("applications/get_instructor_by", data);
+        return this.post("recommendations/get_instructor_by", data);
+    }
+
+    save_recommend(data) {
+        return this.post("recommendations/save", data);
     }
 
     application_create(data) {
