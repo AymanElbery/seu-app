@@ -162,6 +162,10 @@ export class LeadershipService {
         return this.get("applications/addslist");
     }
 
+    get_instructor(data) {
+        return this.post("applications/get_instructor_by", data);
+    }
+
     application_create(data) {
         return this.post("applications/save", data);
     }
