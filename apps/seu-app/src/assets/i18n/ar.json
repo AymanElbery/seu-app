@@ -302,7 +302,7 @@
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
         "update": "تعديل",
-        "newapplications": "طلب ترشيح",
+        "newapplications": "طلب ترشيح / تزكية",
         "myapplications": "طلباتي السابقة",
         "job": {
             "add_job": "إضافة وظيفة",
@@ -344,7 +344,7 @@
             "no": "لا"
         },
         "applications": {
-            "newapp": "طلب ترشيح جديد",
+            "newapp": "طلب ترشيح / تزكية جديد",
             "addslist": "قائمة الوظائف المتاحة",
             "apply": "ترشيح",
             "recommend": "تزكية",
