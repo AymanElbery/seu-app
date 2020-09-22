@@ -45,10 +45,10 @@ const routes: Routes = [
     path: "myrecomendations",
     component: LeadershipMyRecomendationssComponent
   },
-  {
-    path: "recomendations",
-    component: LeadershipRecomendationssComponent
-  },
+  // {
+  //   path: "recomendations",
+  //   component: LeadershipRecomendationssComponent
+  // },
   {
     path: "myapplication-details",
     component: LeadershipMyapplicationViewComponent

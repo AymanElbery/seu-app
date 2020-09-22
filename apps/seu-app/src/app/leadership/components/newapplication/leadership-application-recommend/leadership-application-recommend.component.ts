@@ -47,7 +47,7 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
       'NOTES': ['']
     });
   }
-
+  noemp = false;
   save() {
     if (this.form.invalid) {
       return;
@@ -59,10 +59,12 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
     this.leadershipService.get_instructor(data).subscribe((response => {
       if(!response['status']){
         //this.leadershipService.notifyError(response['res_code']);
-        this.showMessage = true;
+        this.showMessage = false;
+        this.noemp = true;
       }else{
         this.recommendedInstructor = response.data.instructor;
         this.showResult = true;
+        this.noemp = false;
       }
       this.isLoading = false;
       this.submitted = false;
