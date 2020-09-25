@@ -396,7 +396,10 @@
             "job_has_been_saved": "تم حفظ الوظيفة بنجاح",
             "job_has_been_deleted": "تم حذف الوظيفة بنجاح",
             "user_has_been_updated": "تم حفظ المستخدم بنجاح",
-            "user_has_been_added": "تم تحديث بيانات المستخدم بنجاح"
+            "user_has_been_added": "تم تحديث بيانات المستخدم بنجاح",
+            "cant_recommend_yourself":"لا يستطيع عضو هيئة التدريس بتزكيه نفسه",
+            "recommended_before":"تم تزكية عضو هيئة التدريس سابقا",
+            "cant_save_recommendation":"لم يتم حفظ التزكية، الرجاء المحاولة مرة أخرى"
         }
     },
     "resume": {

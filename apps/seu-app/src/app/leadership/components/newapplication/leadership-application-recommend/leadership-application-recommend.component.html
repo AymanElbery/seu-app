@@ -24,7 +24,7 @@
           </div>
         </div>
         <div class="col-md-2" style="text-align: center;">
-          <button style="width: 100%;margin-top: 30px;" [disabled]="submitted || form.invalid" (click)="save()"
+          <button style="width: 100%;margin-top: 30px;" [disabled]="submitted || form.invalid" (click)="save('EMPLOYEE_ID')"
             type="submit" class="btn btn-primary">
             <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
             {{ "leadership.applications.search" | translate}} 
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="col-md-2" style="text-align: center;">
-          <button style="width: 100%;margin-top: 30px;" [disabled]="submitted || form.invalid" (click)="save()"
+          <button style="width: 100%;margin-top: 30px;" [disabled]="submitted || form.invalid" (click)="save('EMAIL')"
             type="submit" class="btn btn-primary">
             <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
             {{ "leadership.applications.search" | translate}} 

@@ -48,15 +48,17 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
     });
   }
   noemp = false;
-  save() {
+  save(key) {
     if (this.form.invalid) {
       return;
     }
 
     this.submitted = true;
     let data = this.form.value;
-    
-    this.leadershipService.get_instructor(data).subscribe((response => {
+    let post = {};
+    console.log(key,data);
+    post[key] = data[key];
+    this.leadershipService.get_instructor(post).subscribe((response => {
       if(!response['status']){
         //this.leadershipService.notifyError(response['res_code']);
         this.showMessage = false;
@@ -110,5 +112,6 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
   changeVal() {
     this.showMessage = false;
     this.showResult = false;
+    this.noemp = false;
   }
 }
