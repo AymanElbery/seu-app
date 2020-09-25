@@ -73,12 +73,13 @@ export class EnquriesService {
         });
     }
 
-    addAnswer(id, email,  replyMessage) {
+    addAnswer(id, email,  replyMessage, autoAnswer) {
         return this.http.put(this.URL + "client-messages/reply-message",
         { 
             id: id,
             userEmail: email,
-            replyMessage: replyMessage
+            replyMessage: replyMessage,
+            autoAnswer: autoAnswer,
         },
         {
             headers: this.headers,
