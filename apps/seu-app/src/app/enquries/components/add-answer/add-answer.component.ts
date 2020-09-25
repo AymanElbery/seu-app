@@ -25,6 +25,7 @@ export class AddAnswerComponent {
     submitted = false;
     errorMessage = false;
     email;
+    autoAnswer;
     
     constructor(
     private fb: FormBuilder,
@@ -38,7 +39,8 @@ export class AddAnswerComponent {
             {
                 answer: ["", [Validators.required]],
                 id: [data.id],
-                email: [this.email]
+                email: [this.email],
+                autoAnswer: [this.autoAnswer],
             },
         );
         this.id = data.id;
@@ -64,8 +66,13 @@ export class AddAnswerComponent {
             }
             return;
         }
-
-        this.enquriesService.addAnswer(this.answerForm.controls.id.value, this.answerForm.controls.email.value, this.answerForm.controls.answer.value).subscribe(
+        this.autoAnswer = this.answerForm.controls.autoAnswer.value ? 1 : 0;
+        this.enquriesService.addAnswer(
+            this.answerForm.controls.id.value, 
+            this.answerForm.controls.email.value, 
+            this.answerForm.controls.answer.value,
+            this.autoAnswer
+            ).subscribe(
             (response: any) => {
               if (response) {
                 window.location.reload();
