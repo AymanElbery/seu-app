@@ -128,7 +128,7 @@
         "instruction_vedio_file": "فيديو توضيحي للخدمة",
         "instruction_": "الدليل الارشادي",
         "isInstalled": "تطبيق الواتس اب غير مثبت",
-        "mysystemNotes": "<span style='color: red;  font-weight: bold;  font-size: 14px;'>تنبيه:</span> تم إغلاق نظام خدماتي الذاتية وافي علمًا بأن جميع خدماته متوفرة الآن عبر تبويبات القائمة الجانبية (بياناتي - استعلاماتي - طلباتي)"
+        "mysystemNotes": ""
     },
     "menu": {
         "grades": "التقديرات قبل حساب المعدل",
