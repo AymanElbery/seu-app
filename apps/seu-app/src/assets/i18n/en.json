@@ -296,6 +296,7 @@
         "cv_display": "Display Resume"
     },
     "enquries": {
+        "close": "Close",
         "title": "Inquiries",
         "message": "Message",
         "answer": "Answer on message",
