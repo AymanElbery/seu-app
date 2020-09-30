@@ -20,7 +20,7 @@ export class StudentService extends AppUserRootService {
     }
     get have_docs_permession() {
         if (this.isLoggedIn)
-            return (this.LoggedInUser['LEVEL_CODE'] == 'UG' && this.LoggedInUser['STD_STATUS_CODE'] == 'IG');
+            return (this.LoggedInUser['LEVEL_CODE'] == 'UG' ); //&& this.LoggedInUser['STD_STATUS_CODE'] == 'IG'
         return false;
     }
     get fullName() {
