@@ -1,0 +1,50 @@
+<app-service-header title="{{'translation' | translate}}" subtitle="{{'menu.users' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget">
+
+        <div class="widget-header">
+          <h3 class="widget-title">
+            {{"menu.users" | translate}}
+            <button (click)="openAddUserDialog()" class="btn btn-primary">{{"users_page.add_user" | translate}} <i class="fa fa-plus"></i></button>
+          </h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{"users_page.username" | translate}}</th>
+                <th scope="col">{{"users_page.role" | translate}}</th>
+                <th scope="col">{{"users_page.active" | translate}}</th>
+                <th scopr="col">{{"users_page.actions" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 1.3em;">
+              <tr *ngFor="let user of usersList; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{ user.USERNAME }}</td>
+                <td>
+                  <span *ngIf="user.ROLE == 'admin'">مدير</span>
+                  <span *ngIf="user.ROLE == 'emp'">موظف</span>
+                  <span *ngIf="user.ROLE == 'client'">مستفيد</span>
+                </td>
+                <td>
+                  <b class="text-success" *ngIf="user.ACTIVE == 1"><i class="fa fa-check-circle"></i></b>
+                  <b class="text-danger" *ngIf="user.ACTIVE != 1"><i class="fa fa-times-circle"></i></b>
+                </td>
+                <td>
+                  <button *ngIf="user.ACTIVE == 1" (click)="inActivate(user.USER_ID)" class="btn btn-primary">{{"users_page.in_active" | translate}}</button>
+                  <button *ngIf="user.ACTIVE != 1" (click)="activate(user.USER_ID)" class="btn btn-primary">{{"users_page.activate" | translate}}</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

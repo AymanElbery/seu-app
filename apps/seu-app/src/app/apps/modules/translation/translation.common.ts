@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { TranslationUSERGuard } from './translation-guard/user.guard';
+import { TranslationADMINGuard } from './translation-guard/admin.guard';
+import { TranslationCLIENTGuard } from './translation-guard/client.guard';
 import { TranslationLandingComponent } from './components/translation-landing/translation-landing.component';
 import { TranslationHomeComponent } from './components/translation-home/translation-home.component';
 
@@ -16,6 +18,16 @@ export const routes: Routes = [
             {
                 path: '',
                 component: TranslationHomeComponent
+            },
+            {
+                path: 'admin',
+                loadChildren: './modules/translation-admin/translation-admin.module#TranslationAdminModule',
+                canActivate: [TranslationADMINGuard]
+            },
+            {
+                path: 'client',
+                loadChildren: './modules/translation-client/translation-client.module#TranslationClientModule',
+                canActivate: [TranslationCLIENTGuard]
             },
         ]
     }

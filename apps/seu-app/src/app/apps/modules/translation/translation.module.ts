@@ -5,6 +5,7 @@ import { providerDeclarations, routes } from './translation.common';
 import { TranslationLandingComponent } from './components/translation-landing/translation-landing.component';
 import { TranslationHomeComponent } from './components/translation-home/translation-home.component';
 import { TranslationAdminMenuComponent } from './components/menu/translation-admin-menu/translation-admin-menu.component';
+import { TranslationClientMenuComponent } from './components/menu/translation-client-menu/translation-client-menu.component';
 import { TranslationMenuComponent } from './components/menu/translation-menu/translation-menu.component';
 import { RouterModule } from '@angular/router';
 import { TranslationCommonModule } from './modules/translation-common/translation-common.module';
@@ -17,7 +18,8 @@ import { TranslationServicesModule } from './services/translation-service.module
     TranslationLandingComponent,
     TranslationHomeComponent,
     TranslationMenuComponent,
-    TranslationAdminMenuComponent
+    TranslationAdminMenuComponent,
+    TranslationClientMenuComponent,
   ],
   imports: [
     SeucommonModule,

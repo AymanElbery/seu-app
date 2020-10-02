@@ -12,8 +12,8 @@
       <nav id="main-menu-navigation" class="navigation-main">
         <br />
         <!-- <app-skills-emp-menu *ngIf="menuType == 'emp' "></app-skills-emp-menu> -->
-        <app-translation-admin-menu ></app-translation-admin-menu>
-        <!-- <app-skills-client-menu *ngIf="menuType == 'client' "></app-skills-client-menu> -->
+        <app-translation-admin-menu *ngIf="menuType == 'admin'"></app-translation-admin-menu>
+        <app-translation-client-menu *ngIf="menuType == 'client'"></app-translation-client-menu>
       </nav>
     </div>
   </div>

@@ -42,9 +42,6 @@ export class TranslationUserService extends TranslationRootService {
         });
     }
 
-    inactiveUser(id){
-        return this.post("emp/users/update", {'USER_ID' : id,'ACTIVE' : 0});
-    }
     is_admin() {
         return this.has_role('admin');
     }
@@ -52,7 +49,7 @@ export class TranslationUserService extends TranslationRootService {
         return this.has_role('client');
     }
     is_emp() {
-        return this.is_admin() || this.is_client();
+        return this.has_role('emp');
     }
     has_role(role) {
         return this.user.ROLE == role;
