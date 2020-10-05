@@ -3,7 +3,9 @@ import { TranslationAdminUsersComponent } from './components/translation-admin-u
 import { TranslationAdminAddUsersComponent } from './components/translation-admin-add-users/translation-admin-add-users.component';
 import { TranslationAddCommentComponent } from './components/translation-add-comment/translation-add-comment.component';
 import { TranslationChangeReqStatusComponent } from './components/translation-change-req-status/translation-change-req-status.component';
+import { TranslationAddTranslatedFileComponent } from './components/translation-add-translated-file/translation-add-translated-file.component';
 import { TranslationPenddingRequestsComponent } from './components/translation-client-pendding-requests/translation-pendding-requests.component';
+import { TranslationProcessiongRequestsComponent } from './components/translation-client-processing-requests/translation-client-processing-requests.component';
 import { TranslationADMINGuard } from '../../translation-guard/admin.guard';
 import { TranslationMyrequestsComponent } from './components/translation-myrequests/translation-myrequests.component';
 import { TranslationEMPGuard } from '../../translation-guard/emp.guard';
@@ -16,11 +18,13 @@ export const componentDeclarations: any[] = [
     TranslationAdminAddUsersComponent,
     //TranslationAddCommentComponent,
     TranslationPenddingRequestsComponent,
+    TranslationProcessiongRequestsComponent,
     TranslationMyrequestsComponent,
     TranslationCompletedRequestsComponent,
     TranslationCompleteFormComponent,
     TranslationViewRequestComponent,
-    TranslationChangeReqStatusComponent
+    TranslationChangeReqStatusComponent,
+    TranslationAddTranslatedFileComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -35,6 +39,9 @@ export const routes: Routes = [
     },
     {
         path: 'pendding-requests', component: TranslationPenddingRequestsComponent, canActivate: [TranslationADMINGuard]
+    },
+    {
+        path: 'processing-requests', component: TranslationProcessiongRequestsComponent, canActivate: [TranslationADMINGuard]
     },
     {
         path: 'completed-requests', component: TranslationCompletedRequestsComponent, canActivate: [TranslationEMPGuard]

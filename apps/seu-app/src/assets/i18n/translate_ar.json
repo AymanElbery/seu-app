@@ -66,6 +66,9 @@
         "comment_by": "صاحب التعليق",
         "comment_at": "تاريخ التعليق",
         "comment": "التعليق",
+        "assign_to": "إسناد الملف لموظف",
+        "emp_list": "الموظف المسؤول",
+        "upload_tranlate_file": "رفع الملف المترجم",
         "estimated_date": "التاريخ المتوقع للإنتهاء من الترجمة"
     },
     "new_request_page": {

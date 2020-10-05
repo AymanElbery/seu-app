@@ -29,8 +29,11 @@ export class ClientAdminRequestsService extends TranslationRootService {
             return item;
         });
     }
-    getAllRequests() {
-        return this.get("admin/request/get_all_requests") ;
+    getPenddingRequests() {
+        return this.get("admin/request/get_pendding_requests") ;
+    }
+    getProcessiongRequests() {
+        return this.get("admin/request/get_processing_requests") ;
     }
     getMyRequests(){
         return this.get("admin/request/myrequests") ;
@@ -43,6 +46,9 @@ export class ClientAdminRequestsService extends TranslationRootService {
     }
     changeStatus(data) {
         return this.post("admin/request/change_status" , data) ;
+    }
+    addTranslatedFile(data) {
+        return this.post("admin/request/add_translated_file" , data) ;
     }
 }
 

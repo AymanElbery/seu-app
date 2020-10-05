@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CommentService } from '../../../../services/translation-comment';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Route } from '@angular/compiler/src/core';
-import { TranslationUserService } from '../../../../services/translation-user';
+import { AdminUsersService } from '../../../../services/translation-admin-users';
 import { ClientAdminRequestsService } from '../../../../services/translation-admin-requests';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
@@ -24,12 +24,13 @@ export class TranslationChangeReqStatusComponent implements OnInit {
   changeStatusForm: FormGroup;
   submitted= false;
   reqId;
+  empList;
   datePickerConfig: Partial<BsDatepickerConfig>;
 
   constructor(
   private fb: FormBuilder, 
   private router: Router,
-  private userService: TranslationUserService,
+  private userService: AdminUsersService,
   private requestsService: ClientAdminRequestsService,
   public dialogRef: MatDialogRef<TranslationChangeReqStatusComponent>,
   @Inject(MAT_DIALOG_DATA) public data: DialogData
@@ -37,12 +38,24 @@ export class TranslationChangeReqStatusComponent implements OnInit {
     this.reqId = data;
     this.changeStatusForm = this.fb.group({
       ESTIMATED_DATE: ["", [Validators.required]],
+      EMP_ID: ["", [Validators.required]],
     });
   }
 
   ngOnInit() {
-    
+    this.getEmpList();
   }  
+
+  getEmpList(){
+    this.isLoading = true;
+    this.userService.getUsers().subscribe((response) => {
+      this.empList = response['data'];
+      this.isLoading = false;
+    }, err => {
+      this.userService.tryagain();
+      this.isLoading = false;
+    });
+  }
 
   closeDiag(refresh = false) {
     this.dialogRef.close(refresh);

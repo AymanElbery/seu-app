@@ -1,4 +1,4 @@
-<app-service-header title="{{'translation' | translate}}" subtitle="{{'menu.new_requests' | translate}}">
+<app-service-header title="{{'translation' | translate}}" subtitle="{{'menu.current_requests' | translate}}">
 </app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
@@ -8,7 +8,7 @@
 
         <div class="widget-header">
           <h3 class="widget-title">
-            {{"menu.new_requests" | translate}}
+            {{"menu.current_requests" | translate}}
           </h3>
         </div>
         <div class="table-responsive">
@@ -23,7 +23,7 @@
                 <th scope="col">{{"my_requests_page.file_type" | translate}}</th>
                 <th scope="col">{{"my_requests_page.words_count" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
-                <th scopr="col">{{"my_requests_page.assign_to" | translate}}</th>
+                <th scopr="col">{{"my_requests_page.upload_tranlate_file" | translate}}</th>
                 <th scopr="col">{{"general.details" | translate}}</th>
               </tr>
             </thead>
@@ -53,7 +53,7 @@
                 <td>{{ req.FILE_WORDS_COUNT }}</td>
                 <td>{{ req.INSERTED_DATE | date : 'yyyy-MM-dd'}}</td>
                 <td>
-                  <button (click)="openChangeStatusDialog(req.REQ_ID)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
+                  <button (click)="openAddTranslatedFileDialog(req.REQ_ID)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
                 </td>
                 <td>
                   <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.comments" | translate}}</button>

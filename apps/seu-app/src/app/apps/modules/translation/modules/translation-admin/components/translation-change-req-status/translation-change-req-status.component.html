@@ -8,6 +8,15 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
+        <label for="EMP_ID">{{"my_requests_page.emp_list" | translate}}</label>
+        <select formControlName="EMP_ID" class="form-control">
+          <option value="">--</option>
+          <option *ngFor="let emp of empList" [value]="emp.USER_ID">{{ emp.NAME }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
         <button [disabled]="submitted || changeStatusForm.invalid" style="margin-top: 30px; width: 100%;" type="submit" class="btn sub">{{ "new_request_page.save" | translate}}  <i class="fa fa-save"></i></button>
       </div>
     </div>
