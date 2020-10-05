@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AdminUsersService } from '../../../../services/translation-admin-users';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material/dialog';
 import { TranslationAdminAddUsersComponent } from './../translation-admin-add-users/translation-admin-add-users.component';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-translation-admin-users',
@@ -15,7 +16,7 @@ export class TranslationAdminUsersComponent implements OnInit {
   isLoading = false;
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
+    private translate: TranslateService,
     private usersService: AdminUsersService,
     public dialog: MatDialog
   ) {

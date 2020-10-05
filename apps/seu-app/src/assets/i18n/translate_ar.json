@@ -38,7 +38,8 @@
         "admin": "مدير",
         "emp": "موظف",
         "client": "مستفيد",
-        "activity": "الفاعلية"
+        "activity": "الفاعلية",
+        "export_as_excel": "ملف إكسيل"
     },
     "my_requests_page": {
         "req_num": "رقم الطلب",
