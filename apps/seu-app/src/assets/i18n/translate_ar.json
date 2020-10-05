@@ -1,7 +1,12 @@
 {
     "translation": "مركز الترجمة",
     "general": {
-        "support_note": "إذا قابلتكم مشكلة يمكنكم التواصل مع الايميل التالي"
+        "support_note": "إذا قابلتكم مشكلة يمكنكم التواصل مع الايميل التالي",
+        "download":"تحميل",
+        "file":"الملف",
+        "details":"التفاصيل",
+        "update":"تحديث",
+        "comments":"التعليقات"
     },
     "menu": {
         "users": "إدارة المستخدمين",
@@ -19,7 +24,8 @@
         "home": "الصفحة الرئيسية"
     },
     "users_page": {
-        "username": "اسم المستخدم",
+        "username": "اسم المستخدم في نظام sso",
+        "name":"الإسم",
         "role": "نوع المستخدم",
         "active": "الفاعلية",
         "actions": "الإجراءات",
@@ -42,14 +48,18 @@
         "file_type": "نوع الملف",
         "words_count": "عدد الكلمات",
         "req_date": "تاريخ الطلب",
+        "trans_date": "تاريخ الترجمة",
+        "est_date":"التاريخ المتوقع للترجمة ",
         "add_comment": "إضافة تعليق",
         "status": "حالة الطلب" ,
-        "pendding" : "تحت الدراسة",
+        "pendding" : "جديد",
         "processing" : "جاري الترجمة",
         "completed" : "تم الإنتهاء",
         "download_file": "تحميل الملف",
         "client": "مقدم الطلب",
-        "update": "تحديث"
+        "update": "تحديث",
+        "req_file":"الملف الأصلي",
+        "trans_file":"الملف المترجم"
     },
     "new_request_page": {
         "save": "حفظ",
@@ -81,6 +91,7 @@
         "choose_file": "رفع ملف الترجمة",
         "wrong_file": "نوع الملف غير صحيح",
         "wrong_file_size": "حجم الملف كبير",
-        "request_saved": "تم حفظ الطلب بنجاح"
+        "request_saved": "تم حفظ الطلب بنجاح",
+        "file_required":"يجب رفع الملف للتحديث"
     }
 }

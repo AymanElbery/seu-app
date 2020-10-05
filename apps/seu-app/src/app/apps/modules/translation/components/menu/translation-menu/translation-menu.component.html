@@ -11,6 +11,10 @@
     <div class="nav-container">
       <nav id="main-menu-navigation" class="navigation-main">
         <br />
+        <div class="nav-item">
+          <a href="#" routerLink="/"><span>{{ "menu.home" | translate }} </span>
+              <i class="ik ik-home"></i></a>
+      </div>
         <!-- <app-skills-emp-menu *ngIf="menuType == 'emp' "></app-skills-emp-menu> -->
         <app-translation-admin-menu *ngIf="menuType == 'admin'"></app-translation-admin-menu>
         <app-translation-client-menu *ngIf="menuType == 'client'"></app-translation-client-menu>

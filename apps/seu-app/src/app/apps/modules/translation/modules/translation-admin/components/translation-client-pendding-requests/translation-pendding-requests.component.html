@@ -1,4 +1,4 @@
-<app-service-header title="{{'translation' | translate}}" subtitle="{{'menu.my_requests' | translate}}">
+<app-service-header title="{{'translation' | translate}}" subtitle="{{'menu.new_requests' | translate}}">
 </app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
@@ -24,7 +24,7 @@
                 <th scope="col">{{"my_requests_page.words_count" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
                 <th scopr="col">{{"my_requests_page.status" | translate}}</th>
-                <th scopr="col">{{"my_requests_page.add_comment" | translate}}</th>
+                <th scopr="col">{{"my_requests_page.details" | translate}}</th>
               </tr>
             </thead>
             <tbody style="font-size: 1.3em;">
@@ -56,7 +56,9 @@
                   <button class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
                 </td>
                 <td>
-                  <button class="btn btn-primary">{{"my_requests_page.add_comment" | translate}}</button>
+                  <button class="btn btn-primary">{{"general.comments" | translate}}</button>
+                  &nbsp;
+                  <button class="btn btn-primary"(click)="openDetailsDialog(req)">{{"general.details" | translate}}</button>
                 </td>
               </tr>
             </tbody>

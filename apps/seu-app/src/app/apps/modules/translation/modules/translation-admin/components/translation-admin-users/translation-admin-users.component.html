@@ -17,6 +17,7 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
+                <th scope="col">{{"users_page.name" | translate}}</th>
                 <th scope="col">{{"users_page.username" | translate}}</th>
                 <th scope="col">{{"users_page.role" | translate}}</th>
                 <th scope="col">{{"users_page.active" | translate}}</th>
@@ -26,6 +27,7 @@
             <tbody style="font-size: 1.3em;">
               <tr *ngFor="let user of usersList; let i = index">
                 <td>{{i+1}}</td>
+                <td>{{ user.NAME }}</td>
                 <td>{{ user.USERNAME }}</td>
                 <td>
                   <span *ngIf="user.ROLE == 'admin'">مدير</span>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslationUserService } from '../../../services/translation-user';
 
 @Component({
   selector: 'app-translation-admin-menu',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TranslationAdminMenuComponent implements OnInit {
 
-  constructor() { } 
-
+  constructor(private user: TranslationUserService) { }
+  is_admin = false;
   ngOnInit() {
+    this.is_admin = this.user.is_admin();
   }
 
 }

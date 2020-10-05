@@ -42,6 +42,7 @@ export class TranslationClientNewrequestsComponent implements OnInit {
 
     this.addRequestForm = this.fb.group({
       CLIENT_ID: [""],
+      CLIENT_NAME: ["", [Validators.required]],
       CLIENT_WORK: ["", [Validators.required]],
       CLIENT_EMAIL: ["", [Validators.required]],
       TRANSLATE_FROM: ["", [Validators.required]],

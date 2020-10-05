@@ -4,6 +4,7 @@ import { TranslationADMINGuard } from './translation-guard/admin.guard';
 import { TranslationCLIENTGuard } from './translation-guard/client.guard';
 import { TranslationLandingComponent } from './components/translation-landing/translation-landing.component';
 import { TranslationHomeComponent } from './components/translation-home/translation-home.component';
+import { TranslationEMPGuard } from './translation-guard/emp.guard';
 
 
 export const providerDeclarations: any[] = [
@@ -22,7 +23,7 @@ export const routes: Routes = [
             {
                 path: 'admin',
                 loadChildren: './modules/translation-admin/translation-admin.module#TranslationAdminModule',
-                canActivate: [TranslationADMINGuard]
+                canActivate: [TranslationEMPGuard]
             },
             {
                 path: 'client',

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ClientAdminRequestsService } from '../../../../services/translation-admin-requests';
+import { MatDialogConfig, MatDialog } from '@angular/material';
+import { TranslationViewRequestComponent } from '../translation-view-request/translation-view-request.component';
 
 @Component({
   selector: 'app-translation-pendding-requests',
@@ -11,11 +13,12 @@ export class TranslationPenddingRequestsComponent implements OnInit {
 
   requestsList = [];
   isLoading = false;
-  
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private requestsService: ClientAdminRequestsService
+    private requestsService: ClientAdminRequestsService,
+    public dialog: MatDialog
   ) {
 
   }
@@ -30,9 +33,23 @@ export class TranslationPenddingRequestsComponent implements OnInit {
       this.requestsList = response['data'];
       console.log(this.requestsList);
       this.isLoading = false;
-    },err=>{
+    }, err => {
       this.requestsService.tryagain();
       this.isLoading = false;
+    });
+  }
+
+  openDetailsDialog(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = { 'req': req };
+    let dialogref = this.dialog.open(TranslationViewRequestComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getAllRequests();
+      }
     });
   }
 

@@ -1,25 +1,32 @@
 <div class="row" style="padding: 20px;">
   <div class="col-md-12">
-      <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-              <label for="answer">{{ "users_page.username" | translate}}</label>
-              <input formControlName="USERNAME" class="form-control" type="text">
-          </div>
-          <div class="form-group" style="margin-top: 20px;">
-            <label for="answer">{{ "users_page.role" | translate}}</label>
-            <select formControlName="ROLE" class="form-control">
-              <option value="admin">{{ "users_page.admin" | translate}}</option>
-              <option value="emp">{{ "users_page.emp" | translate}}</option>
-              <option value="client">{{ "users_page.client" | translate}}</option>
-            </select>
-          </div>
-          <div style="margin: 20px;" class="form-check">
-            <input style="margin-left: 25px; width: 20px; height: 20px; cursor: pointer;" formControlName="ACTIVE" type="checkbox" class="form-check-input" id="active">
-            <label style="margin-right: 15px;" class="form-check-label" for="active">{{ "users_page.activity" | translate}}</label>
-          </div>
-          <div class="form-group">
-              <button [disabled]="submitted || addUserForm.invalid" style="margin-top: 10px; width: 100%;" type="submit" class="btn sub">{{ "users_page.add" | translate}}  <i class="fa fa-save"></i></button>
-          </div>
-      </form>
+    <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="answer">{{ "users_page.name" | translate}}</label>
+        <input formControlName="NAME" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="answer">{{ "users_page.username" | translate}}</label>
+        <input formControlName="USERNAME" class="form-control" type="text">
+      </div>
+      <div class="form-group" style="margin-top: 20px;">
+        <label for="answer">{{ "users_page.role" | translate}}</label>
+        <select formControlName="ROLE" class="form-control">
+          <option value="admin">{{ "users_page.admin" | translate}}</option>
+          <option value="emp">{{ "users_page.emp" | translate}}</option>
+          <!-- <option value="client">{{ "users_page.client" | translate}}</option> -->
+        </select>
+      </div>
+      <div style="margin: 20px;" class="form-check">
+        <input style="margin-left: 25px; width: 20px; height: 20px; cursor: pointer;" formControlName="ACTIVE"
+          type="checkbox" class="form-check-input" id="active">
+        <label style="margin-right: 15px;" class="form-check-label"
+          for="active">{{ "users_page.activity" | translate}}</label>
+      </div>
+      <div class="form-group">
+        <button [disabled]="submitted || addUserForm.invalid" style="margin-top: 10px; width: 100%;" type="submit"
+          class="btn sub">{{ "users_page.add" | translate}} <i class="fa fa-save"></i></button>
+      </div>
+    </form>
   </div>
 </div>

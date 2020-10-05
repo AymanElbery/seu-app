@@ -14,7 +14,7 @@
       <div class="col-md-4">
         <div class="form-group">
           <label>{{ "new_request_page.client_username" | translate}}</label>
-          <input disabled [value]="clientName" class="form-control" type="text">
+          <input formControlName="CLIENT_NAME" class="form-control" type="text">
         </div>
       </div>
       <div class="col-md-4">
@@ -106,7 +106,7 @@
           <label>{{ "new_request_page.client_work_place" | translate}}</label>
           <select (change)="changeClientWorkPlace($event)" formControlName="CLIENT_WORK_PLACE_TYPE" class="form-control">
             <option value="internal">{{ "new_request_page.internal" | translate}}</option>
-            <option value="external">{{ "new_request_page.external" | translate}}</option>
+            <!-- <option value="external">{{ "new_request_page.external" | translate}}</option> -->
           </select> 
         </div>
       </div>
