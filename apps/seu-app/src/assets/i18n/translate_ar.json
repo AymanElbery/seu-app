@@ -74,6 +74,7 @@
     },
     "new_request_page": {
         "save": "حفظ",
+        "req_date":"تاريخ الطلب",
         "ar_lang": "اللغة العربية",
         "en_lang": "اللغة الإنجليزية",
         "translate_from": "الترجمة من",

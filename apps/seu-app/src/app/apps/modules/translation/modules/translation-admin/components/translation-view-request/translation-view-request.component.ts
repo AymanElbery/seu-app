@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-translation-view-request',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TranslationViewRequestComponent implements OnInit {
 
-  constructor() { }
+  request;
+  constructor( 
+    public dialogRef: MatDialogRef<TranslationViewRequestComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { 
+    this.request = data['req'];
+  }
 
   ngOnInit() {
   }
