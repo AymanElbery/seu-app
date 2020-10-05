@@ -31,7 +31,7 @@
             <tbody style="font-size: 1.3em;">
               <tr *ngFor="let req of requestsList; let i = index">
                 <td>{{ req.REQ_ID }}</td>
-                <td>{{ req.USERNAME }}</td>
+                <td>{{ req.NAME }}</td>
                 <td>
                   <span *ngIf="req.TRANSLATE_FROM == 'en'">{{"new_request_page.en_lang" | translate}}</span>
                   <span *ngIf="req.TRANSLATE_FROM == 'ar'">{{"new_request_page.ar_lang" | translate}}</span>
