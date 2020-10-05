@@ -93,6 +93,7 @@ export class TranslationAddTranslatedFileComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     let data = this.addFileForm.value;
+    data['REQ_ID'] = this.reqId;
     data['FILE_PATH'] = this.FILE_PATH;
     data['FILE_EXT'] = this.ext;
     data['TRANSLATION_USER_ID'] = this.userService.user['USER_ID'];
