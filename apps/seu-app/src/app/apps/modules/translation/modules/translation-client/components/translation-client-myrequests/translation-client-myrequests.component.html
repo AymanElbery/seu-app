@@ -56,7 +56,7 @@
                   <span *ngIf="req.STATUS == 'completed'" class="completed">{{"my_requests_page.completed" | translate}}</span>
                 </td>
                 <td>
-                  <button class="btn btn-primary">{{"my_requests_page.add_comment" | translate}}</button>
+                  <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"my_requests_page.add_comment" | translate}}</button>
                 </td>
               </tr>
             </tbody>

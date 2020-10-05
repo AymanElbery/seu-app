@@ -1,0 +1,15 @@
+<form [formGroup]="changeStatusForm" (ngSubmit)="onSubmit()">
+  <div class="row" style="padding: 20px;">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="ESTIMATED_DATE">{{"my_requests_page.estimated_date" | translate}}</label>
+        <input type="text" formControlName="ESTIMATED_DATE" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <button [disabled]="submitted || changeStatusForm.invalid" style="margin-top: 30px; width: 100%;" type="submit" class="btn sub">{{ "new_request_page.save" | translate}}  <i class="fa fa-save"></i></button>
+      </div>
+    </div>
+  </div>
+</form>

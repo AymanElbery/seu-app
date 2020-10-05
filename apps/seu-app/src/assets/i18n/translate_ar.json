@@ -59,7 +59,14 @@
         "client": "مقدم الطلب",
         "update": "تحديث",
         "req_file":"الملف الأصلي",
-        "trans_file":"الملف المترجم"
+        "trans_file":"الملف المترجم",
+        "notes": "ملاحظات",
+        "comments": "التعليقات",
+        "comments_on_req": "التعليقات على الطلب",
+        "comment_by": "صاحب التعليق",
+        "comment_at": "تاريخ التعليق",
+        "comment": "التعليق",
+        "estimated_date": "التاريخ المتوقع للإنتهاء من الترجمة"
     },
     "new_request_page": {
         "save": "حفظ",

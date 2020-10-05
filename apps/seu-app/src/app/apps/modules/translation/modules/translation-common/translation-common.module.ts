@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslationLazyTransModule } from './translation.lazytrans.module';
+import { TranslationAddCommentComponent } from '../translation-admin/components/translation-add-comment/translation-add-comment.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    TranslationAddCommentComponent
+  ],
   imports: [
     CommonModule,
     MatProgressSpinnerModule,
     FormsModule, ReactiveFormsModule, TranslationLazyTransModule
   ],
-  exports: [FormsModule, ReactiveFormsModule, CommonModule, TranslationLazyTransModule, MatProgressSpinnerModule]
+  entryComponents:[TranslationAddCommentComponent],
+  exports: [FormsModule, ReactiveFormsModule, CommonModule, TranslationLazyTransModule, MatProgressSpinnerModule,TranslationAddCommentComponent]
 })
 export class TranslationCommonModule { }

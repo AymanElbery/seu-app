@@ -41,5 +41,8 @@ export class ClientAdminRequestsService extends TranslationRootService {
     completeRequest(data){
         return this.post("admin/request/complete",data);
     }
+    changeStatus(data) {
+        return this.post("admin/request/change_status" , data) ;
+    }
 }
 

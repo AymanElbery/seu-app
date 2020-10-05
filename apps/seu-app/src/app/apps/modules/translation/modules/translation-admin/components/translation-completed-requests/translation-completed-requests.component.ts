@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ClientAdminRequestsService } from '../../../../services/translation-admin-requests';
-import { TranslationAddCommentComponent } from './../translation-add-comment/translation-add-comment.component';
-import { TranslationChangeReqStatusComponent } from './../translation-change-req-status/translation-change-req-status.component';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { TranslationViewRequestComponent } from '../translation-view-request/translation-view-request.component';
+import { TranslationAddCommentComponent } from '../translation-add-comment/translation-add-comment.component';
 
 @Component({
-  selector: 'app-translation-pendding-requests',
-  templateUrl: './translation-pendding-requests.component.html',
-  styleUrls: ['./translation-pendding-requests.component.css']
+  selector: 'app-translation-completed-requests',
+  templateUrl: './translation-completed-requests.component.html',
+  styleUrls: ['./translation-completed-requests.component.css']
 })
-export class TranslationPenddingRequestsComponent implements OnInit {
+export class TranslationCompletedRequestsComponent implements OnInit {
 
   requestsList = [];
   isLoading = false;
@@ -31,15 +30,28 @@ export class TranslationPenddingRequestsComponent implements OnInit {
 
   getAllRequests() {
     this.isLoading = true;
-    this.requestsService.getAllRequests().subscribe((response) => {
+    this.requestsService.getCompletedRequests().subscribe((response) => {
       this.requestsList = response['data'];
+      this.requestsList = this.requestsService.addFileURL(this.requestsList);
       this.isLoading = false;
     }, err => {
       this.requestsService.tryagain();
       this.isLoading = false;
     });
   }
-
+  openDetailsDialog(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = { 'req': req };
+    let dialogref = this.dialog.open(TranslationViewRequestComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getAllRequests();
+      }
+    });
+  }
   openAddCommentDialog(reqId) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
@@ -54,34 +66,4 @@ export class TranslationPenddingRequestsComponent implements OnInit {
       }
     });
   }
-
-  openChangeStatusDialog(reqId) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = '50%';
-    dialogConfig.data = reqId;
-
-    let dialogref = this.dialog.open(TranslationChangeReqStatusComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {
-      if (result) {
-        this.getAllRequests();
-      }
-    });
-  }
-
-  openDetailsDialog(req) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = '50%';
-    dialogConfig.data = { 'req': req };
-    let dialogref = this.dialog.open(TranslationViewRequestComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {
-      if (result) {
-        this.getAllRequests();
-      }
-    });
-  }
-
 }
