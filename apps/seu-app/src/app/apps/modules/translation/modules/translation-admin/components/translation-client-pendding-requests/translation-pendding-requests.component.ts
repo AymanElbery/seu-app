@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ClientAdminRequestsService } from '../../../../services/translation-admin-requests';
+import { TranslationAddCommentComponent } from './../translation-add-comment/translation-add-comment.component';
+import { TranslationChangeReqStatusComponent } from './../translation-change-req-status/translation-change-req-status.component';
 
 @Component({
   selector: 'app-translation-pendding-requests',
@@ -15,7 +18,8 @@ export class TranslationPenddingRequestsComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private requestsService: ClientAdminRequestsService
+    private requestsService: ClientAdminRequestsService,
+    public dialog: MatDialog
   ) {
 
   }
@@ -28,11 +32,40 @@ export class TranslationPenddingRequestsComponent implements OnInit {
     this.isLoading = true;
     this.requestsService.getAllRequests().subscribe((response) => {
       this.requestsList = response['data'];
-      console.log(this.requestsList);
       this.isLoading = false;
     },err=>{
       this.requestsService.tryagain();
       this.isLoading = false;
+    });
+  }
+
+  openAddCommentDialog(reqId){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = reqId;
+
+    let dialogref = this.dialog.open(TranslationAddCommentComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if(result){
+        this.getAllRequests();
+      }
+    });
+  }
+
+  openChangeStatusDialog(reqId){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = reqId;
+
+    let dialogref = this.dialog.open(TranslationChangeReqStatusComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if(result){
+        this.getAllRequests();
+      }
     });
   }
 

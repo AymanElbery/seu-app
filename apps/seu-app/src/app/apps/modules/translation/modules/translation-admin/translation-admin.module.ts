@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppsSharedModule } from '../../../apps-shared/apps.shared.module';
 import { TranslationCommonModule } from '../translation-common/translation-common.module';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppsSharedModule,
     RouterModule.forChild(routes),
     TranslationCommonModule,
-    MatDialogModule
+    MatDialogModule,
+    DatepickerModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   entryComponents: [
     componentDeclarations,

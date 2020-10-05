@@ -9,7 +9,7 @@ import { TranslationServicesModule } from './translation-service.module';
 @Injectable({
     providedIn: TranslationServicesModule
 })
-export class ClientAdminRequestsService extends TranslationRootService {
+export class CommentService extends TranslationRootService {
 
     constructor(
         public http: HttpClient,
@@ -21,12 +21,12 @@ export class ClientAdminRequestsService extends TranslationRootService {
         super(http, router, config, translate, toaster);
     }
 
-    getAllRequests() {
-        return this.get("admin/request/get_all_requests") ;
+    getCommentsByReqId(reqId) {
+        return this.get("admin/request/get_comments_by_req_id/" + reqId) ;
     }
 
-    changeStatus(data) {
-        return this.post("admin/request/change_status" , data) ;
+    addComment(data) {
+        return this.post("admin/request/add_comment", data) ;
     }
 }
 
