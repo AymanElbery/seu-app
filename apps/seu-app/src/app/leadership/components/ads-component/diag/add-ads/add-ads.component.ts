@@ -31,8 +31,10 @@ export class AddAdsComponent implements OnInit {
     private fb: FormBuilder,
     private leadershipService: LeadershipService,
     private toastr: AppToasterService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private translate:TranslateService
   ) {
+    this.datePickerConfig = {dateInputFormat: 'DD/MM/YYYY'};
     this.form = this.fb.group({
       'JOB_ID': ['', [Validators.required]],
       'ADS_START_DATE': ['', [Validators.required]],
@@ -40,9 +42,9 @@ export class AddAdsComponent implements OnInit {
       'ADS_IS_ACTIVE': [0]
     });
     this.ad = data['ad'];
-    if (this.ad) {
-      this.ad.ADS_START_DATE = this.datePipe.transform(this.ad.ADS_START_DATE, 'MM/dd/yyyy');
-      this.ad.ADS_END_DATE = this.datePipe.transform(this.ad.ADS_END_DATE, 'MM/dd/yyyy');
+    if (this.ad['ADS_PK']) {
+      this.ad.ADS_START_DATE = this.datePipe.transform(this.ad.ADS_START_DATE, 'dd/MM/yyyy');
+      this.ad.ADS_END_DATE = this.datePipe.transform(this.ad.ADS_END_DATE, 'dd/MM/yyyy');
       this.form.reset(this.ad);
     }
   }
@@ -62,7 +64,7 @@ export class AddAdsComponent implements OnInit {
       return;
     }
     let data = this.form.value;
-    if (this.ad) {
+    if (this.ad && this.ad['ADS_PK']) {
       data['ADS_PK'] = this.ad['ADS_PK'];
     }
     this.submitted = true;

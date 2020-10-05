@@ -7,6 +7,10 @@
     <div class="widget-header">
       <h3 class="widget-title">
         {{currentad['JOB_TITLE']}}
+        <button type="button" class="btn btn-primary" (click)="exportAsXLSX()">
+          {{"leadership.applications.export"|translate}}
+        </button>
+        &nbsp; 
         <button type="button" class="btn btn-primary" (click)="back()">
           {{"leadership.applications.back"|translate}}
         </button>
@@ -26,6 +30,7 @@
             <th scope="col">{{"leadership.applications.DEPT"|translate}}</th>
             <th scope="col">{{"leadership.applications.SCALE"|translate}}</th>
             <th scope="col">{{"leadership.applications.PHONE"|translate}}</th>
+            <th scope="col">{{"leadership.applications.TERMS"|translate}}</th>
             <th scope="col">{{"leadership.applications.submit_date"|translate}}</th>
             <th scope="col">{{"leadership.applications.CV"|translate}}</th>
             <th scope="col">{{"leadership.applications.PLAN"|translate}}</th>
@@ -42,6 +47,7 @@
             <td>{{app.DEPT}}</td>
             <td>{{app.SCALE}}</td>
             <td>{{app.PHONE}}</td>
+            <td>{{app.TERMS}}</td>
             <td>{{app.INSERT_DATE | date : 'yyyy-MM-dd'}}</td>
             <td scope="col">
               <a target="_blank" href="#" (click)="download(app['CV'],app.EMPLOYEE_ID+'_CV')" style="margin-right: 5px;"

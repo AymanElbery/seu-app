@@ -646,6 +646,17 @@
               {{ "leadership.myapplications" | translate }} <i class="ik ik-book-open"></i>
             </a>
           </div>
+          <div class="submenu-content" *ngIf="leadership['menu_instructor']">
+            <a [routerLink]="['/leadership/myrecomendations']" class="menu-item">
+              {{ "leadership.myrecomendations" | translate }} <i class="ik ik-book-open"></i>
+            </a>
+          </div>
+          <!-- <div class="submenu-content" *ngIf="leadership['menu_instructor']">
+            <a [routerLink]="['/leadership/recomendations']" class="menu-item">
+              {{ "leadership.recomendations" | translate }} <i class="ik ik-book-open"></i>
+            </a>
+          </div> -->
+          
         </div>
 
         <div *ngIf="

@@ -16,8 +16,10 @@ export class LeadershipService {
     _settings;
     currentApp;
     currentAddApps;
+    currentJobAds;
     currentAdd;
     instructor;
+
     URL = environment.baselink + environment.servicesprefix + "/rest/leadership/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     headers = new HttpHeaders({
@@ -57,14 +59,28 @@ export class LeadershipService {
     get(url) {
         return this.http.get(this.URL + url, {
             headers: this.getHeader()
-        });
+        }).pipe(
+            map((res: any) => {
+                if (!res.status && (res.res_code == "invalid_user" || res.res_code == "invalid_session")) {
+                    this.globalService.relogin();
+                }
+                return res;
+            })
+        );
     }
 
     post(url, data) {
         return this.http.post(this.URL + url, data,
             {
                 headers: this.getHeader(),
-            });
+            }).pipe(
+                map((res: any) => {
+                    if (!res.status && (res.res_code == "invalid_user" || res.res_code == "invalid_session")) {
+                        this.globalService.relogin();
+                    }
+                    return res;
+                })
+            );
     }
     settings() {
         if (this._settings) {
@@ -118,8 +134,11 @@ export class LeadershipService {
     save_ads(data) {
         return this.post("ads/save", data);
     }
-    ads_apps(id) {
-        return this.get("ads/apps/" + id);
+    ads_apps(id,print=0) {
+        return this.get("ads/apps/" + id+"/"+print);
+    }
+    ads_recommendations(id,print=0) {
+        return this.get("recommendations/adrecommendation/" + id+"/"+print);
     }
 
     delete_ads(id) {
@@ -138,12 +157,32 @@ export class LeadershipService {
         return this.get("applications/mylist");
     }
 
+    get_my_recommendations() {
+        return this.get("recommendations/myrecommendation");
+    }
+
+    get_recommendations() {
+        return this.get("recommendations/recommendation");
+    }
+
+    get_my_add_recommendations(id) {
+        return this.get("recommendations/recommendation/" + id);
+    }
+
     file(name) {
         return this.get("applications/file/" + name);
     }
 
     addslist() {
         return this.get("applications/addslist");
+    }
+
+    get_instructor(data) {
+        return this.post("recommendations/get_instructor_by", data);
+    }
+
+    save_recommend(data) {
+        return this.post("recommendations/save", data);
     }
 
     application_create(data) {

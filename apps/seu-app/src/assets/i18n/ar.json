@@ -291,9 +291,9 @@
         }
     },
     "leadership": {
-        "jobs": "الوظائف",
-        "ads": "الإعلانات",
-        "users": "المستخدمين",
+        "jobs": "إدارة الوظائف",
+        "ads": "إدارة الإعلانات",
+        "users": "إدارة المستخدمين",
         "ads_title": "قائمة الإعلانات",
         "job_title": "قائمة الوظائف",
         "users_title": "قائمة المستخدمين",
@@ -302,8 +302,10 @@
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
         "update": "تعديل",
-        "newapplications": "طلب ترشيح",
+        "newapplications": "طلب ترشيح / تزكية",
         "myapplications": "طلباتي السابقة",
+        "myrecomendations": "تزكياتي",
+        "recomendations": "التزكيات",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "بيانات الوظيفة",
@@ -313,19 +315,22 @@
             "success_added": "تمت إضافة الوظيفة بنجاح",
             "success_updated": "تم تعديل الوظيفة بنجاح",
             "success_deleted": "تم حذف الوظيفة بنجاح",
-            "error_added": "خطأ في إدخال الوظيفة"
+            "error_added": "خطأ في إدخال الوظيفة",
+            "ads":"الإعلانات"
         },
         "ad": {
             "add_ads": "إضافة إعلان",
             "add_new_ads": "بيانات الاعلان",
-            "start_date": "تاريخ البداية",
-            "end_date": "تاريخ النهاية",
-            "is_active": "الفاعلية",
+            "start_date": "بداية فترة الترشيح",
+            "end_date": "نهاية فترة الترشيح",
+            "is_active": "نشر الإعلان",
             "success_added": "تمت إضافة الإعلان بنجاح",
             "success_deleted": "تم حذف الإعلان بنجاح",
             "error_added": "خطأ في إدخال الإعلان",
             "apps": "الترشيحات",
-            "active": "الفاعلية"
+            "active": "نشر الإعلان",
+            "active_1": "نعم",
+            "active_0": "لا"
         },
         "user": {
             "newuser": "مستخدم جديد",
@@ -340,11 +345,22 @@
             "yes": "نعم",
             "no": "لا"
         },
+        "recommendations": {
+            "rec_date": "تاريخ التزكية",
+            "recommendations": "التزكيات",
+            "recommended":"بيانات المزكى",
+            "recommended_by":"بيانات المزكي"
+        },
         "applications": {
-            "newapp": "طلب ترشيح جديد",
+            "newapp": "طلب ترشيح / تزكية جديد",
             "addslist": "قائمة الوظائف المتاحة",
             "apply": "ترشيح",
+            "recommend": "تزكية",
             "send": "ارسال",
+            "search": "بحث",
+            "notes": "ملاحظات",
+            "not_found": "لا يوجد موظف بهذه المدخلات",
+            "EMAIL": "البريد الإلكتروني",
             "EMPLOYEE_ID": "الرقم الوظيفي",
             "FULL_NAME": "الإسم",
             "COLLEGE": "الكلية",
@@ -365,11 +381,13 @@
             "submit_date": "تاريخ الترشيح",
             "details": "تفاصيل الطلب",
             "download": " تحميل ",
-            "back": "العودة الي القائمة"
+            "back": "العودة الي القائمة",
+            "export":"تصدير الي اكسيل",
+            "TERMS":"الفصول الدراسية"
         },
         "messages": {
             "invalid_session": "انتهت جلسة الدخول، الرجاء تسجيل الدخول مرة أخري",
-            "missing_params": "بعض البيانات المطلوبة غير متورفة",
+            "missing_params": "بعض البيانات المطلوبة غير متوفرة",
             "invalid_params": "بعض البيانات غير صحيحة",
             "cant_get_empolyee_id": "لم يتم العثور علي بيانات الرقم الوظيفي",
             "ad_has_been_saved": "تم حفظ الاعلان بنجاح",
@@ -378,7 +396,10 @@
             "job_has_been_saved": "تم حفظ الوظيفة بنجاح",
             "job_has_been_deleted": "تم حذف الوظيفة بنجاح",
             "user_has_been_updated": "تم حفظ المستخدم بنجاح",
-            "user_has_been_added": "تم تحديث بيانات المستخدم بنجاح"
+            "user_has_been_added": "تم تحديث بيانات المستخدم بنجاح",
+            "cant_recommend_yourself":"لا يستطيع عضو هيئة التدريس بتزكيه نفسه",
+            "recommended_before":"تم تزكية عضو هيئة التدريس سابقا",
+            "cant_save_recommendation":"لم يتم حفظ التزكية، الرجاء المحاولة مرة أخرى"
         }
     },
     "resume": {
