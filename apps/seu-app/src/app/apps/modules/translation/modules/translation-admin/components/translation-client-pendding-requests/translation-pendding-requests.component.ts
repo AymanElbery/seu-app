@@ -84,4 +84,15 @@ export class TranslationPenddingRequestsComponent implements OnInit {
     });
   }
 
+  exportAsXLSX(){
+    this.requestsService.getPenddingRequests(1).subscribe((response => {
+      const linkSource = `data:application/pdf;base64,${response['data']}`;
+      const downloadLink = document.createElement("a");
+      const fileName = "pendding_requests.xls";
+      downloadLink.href = linkSource;
+      downloadLink.download = fileName;
+      downloadLink.click();
+    }));
+  }
+
 }

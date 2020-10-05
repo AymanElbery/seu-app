@@ -9,6 +9,10 @@
         <div class="widget-header">
           <h3 class="widget-title">
             {{"menu.log_requests" | translate}}
+            <button type="button" class="btn btn-primary" (click)="exportAsXLSX()">
+              {{"general.export_as_excel"|translate}}
+            </button>
+            &nbsp; 
           </h3>
         </div>
         <div class="table-responsive">
@@ -17,6 +21,7 @@
               <tr>
                 <th scope="col">{{"my_requests_page.req_num" | translate}}</th>
                 <th scope="col">{{"my_requests_page.client" | translate}}</th>
+                <th scope="col">{{"my_requests_page.emp_list" | translate}}</th>
                 <th scope="col">{{"my_requests_page.translate_form" | translate}}</th>
                 <th scope="col">{{"my_requests_page.translate_to" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
@@ -30,7 +35,8 @@
             <tbody style="font-size: 1.3em;">
               <tr *ngFor="let req of requestsList; let i = index">
                 <td>{{ req.REQ_ID }}</td>
-                <td>{{ req.NAME }}</td>
+                <td>{{ req.CLIENTNAME }}</td>
+                <td>{{ req.EMPNAME }}</td>
                 <td>
                   <span *ngIf="req.TRANSLATE_FROM == 'en'">{{"new_request_page.en_lang" | translate}}</span>
                   <span *ngIf="req.TRANSLATE_FROM == 'ar'">{{"new_request_page.ar_lang" | translate}}</span>

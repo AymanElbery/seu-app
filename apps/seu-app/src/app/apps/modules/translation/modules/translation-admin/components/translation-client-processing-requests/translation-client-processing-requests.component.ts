@@ -84,4 +84,15 @@ export class TranslationProcessiongRequestsComponent implements OnInit {
     });
   }
 
+  exportAsXLSX(){
+    this.requestsService.getProcessiongRequests(1).subscribe((response => {
+      const linkSource = `data:application/pdf;base64,${response['data']}`;
+      const downloadLink = document.createElement("a");
+      const fileName = "processing_requests.xls";
+      downloadLink.href = linkSource;
+      downloadLink.download = fileName;
+      downloadLink.click();
+    }));
+  }
+
 }

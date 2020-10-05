@@ -29,17 +29,17 @@ export class ClientAdminRequestsService extends TranslationRootService {
             return item;
         });
     }
-    getPenddingRequests() {
-        return this.get("admin/request/get_pendding_requests") ;
+    getPenddingRequests(print = 0) {
+        return this.get("admin/request/get_pendding_requests/" + print) ;
     }
-    getProcessiongRequests() {
-        return this.get("admin/request/get_processing_requests") ;
+    getProcessiongRequests(print = 0) {
+        return this.get("admin/request/get_processing_requests/" + print) ;
     }
     getMyRequests(){
         return this.get("admin/request/myrequests") ;
     }
-    getCompletedRequests(){
-        return this.get("admin/request/get_completed_requests") ;
+    getCompletedRequests(print = 0){
+        return this.get("admin/request/get_completed_requests/" + print) ;
     }
     completeRequest(data){
         return this.post("admin/request/complete",data);

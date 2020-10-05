@@ -6,7 +6,8 @@
         "file":"الملف",
         "details":"التفاصيل",
         "update":"تحديث",
-        "comments":"التعليقات"
+        "comments":"التعليقات",
+        "export_as_excel": "ملف إكسيل"
     },
     "menu": {
         "users": "إدارة المستخدمين",
@@ -38,8 +39,7 @@
         "admin": "مدير",
         "emp": "موظف",
         "client": "مستفيد",
-        "activity": "الفاعلية",
-        "export_as_excel": "ملف إكسيل"
+        "activity": "الفاعلية"
     },
     "my_requests_page": {
         "req_num": "رقم الطلب",

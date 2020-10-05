@@ -5,10 +5,13 @@
   <div class="row">
     <div class="col-md-12">
       <div class="widget">
-
         <div class="widget-header">
           <h3 class="widget-title">
             {{"menu.current_requests" | translate}}
+            <button type="button" class="btn btn-primary" (click)="exportAsXLSX()">
+              {{"general.export_as_excel"|translate}}
+            </button>
+            &nbsp; 
           </h3>
         </div>
         <div class="table-responsive">
