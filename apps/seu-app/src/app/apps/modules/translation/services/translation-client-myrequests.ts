@@ -24,5 +24,8 @@ export class ClientMyrequestsService extends TranslationRootService {
     getMyRequests(userId) {
         return this.get("client/request/get_my_requests/" + userId) ;
     }
+    cancel(id){
+        return this.get("client/request/cancel/" + id);
+    }
 }
 

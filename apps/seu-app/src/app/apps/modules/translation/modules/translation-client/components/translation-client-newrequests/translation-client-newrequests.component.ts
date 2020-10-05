@@ -115,10 +115,12 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     this.newrequestsService.saveNewRequest(data).subscribe((response) => {
       this.toastr.push([{ type: 'success', 'body': this.translate.instant('new_request_page.request_saved') }]);
         this.isLoading = false;
+        this.submitted = false;
         this.router.navigate(['../my-requests'], { relativeTo: this.route })
     },err=>{
       this.newrequestsService.tryagain();
       this.isLoading = false;
+      this.submitted = false;
     });
   }
 }

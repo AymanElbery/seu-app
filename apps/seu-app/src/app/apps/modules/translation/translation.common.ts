@@ -5,9 +5,11 @@ import { TranslationCLIENTGuard } from './translation-guard/client.guard';
 import { TranslationLandingComponent } from './components/translation-landing/translation-landing.component';
 import { TranslationHomeComponent } from './components/translation-home/translation-home.component';
 import { TranslationEMPGuard } from './translation-guard/emp.guard';
+import { TranslationUserComponent } from './components/translation-user/translation-user.component';
 
 
 export const providerDeclarations: any[] = [
+    
 ];
 
 
@@ -19,6 +21,10 @@ export const routes: Routes = [
             {
                 path: '',
                 component: TranslationHomeComponent
+            },
+            {
+                path: 'user',
+                component: TranslationUserComponent
             },
             {
                 path: 'admin',

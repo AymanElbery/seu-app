@@ -58,18 +58,21 @@ export class TranslationAddCommentComponent implements OnInit {
   }
 
   onSubmit(){
-    this.submitted = true;
     if (this.addCommentForm.invalid) {
         return;
     }
+    this.submitted = true;
     let data = this.addCommentForm.value;
     data.REQ_ID = this.reqId;
     data.INSERTED_BY = this.userService.user['USER_ID'];
     this.commentService.addComment(data).subscribe((response) => {
+      this.addCommentForm.reset();
       this.getAllComments();
+      this.submitted = false;
       //this.closeDiag(true);
     },err=>{
       this.commentService.tryagain();
+      this.submitted = false;
     });
   }
 }

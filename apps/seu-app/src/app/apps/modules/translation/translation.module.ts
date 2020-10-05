@@ -10,6 +10,7 @@ import { TranslationMenuComponent } from './components/menu/translation-menu/tra
 import { RouterModule } from '@angular/router';
 import { TranslationCommonModule } from './modules/translation-common/translation-common.module';
 import { TranslationServicesModule } from './services/translation-service.module';
+import { TranslationUserComponent } from './components/translation-user/translation-user.component';
 
 
 
@@ -20,6 +21,7 @@ import { TranslationServicesModule } from './services/translation-service.module
     TranslationMenuComponent,
     TranslationAdminMenuComponent,
     TranslationClientMenuComponent,
+    TranslationUserComponent
   ],
   imports: [
     SeucommonModule,

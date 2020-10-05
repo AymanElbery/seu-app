@@ -7,7 +7,8 @@
         "details":"التفاصيل",
         "update":"تحديث",
         "comments":"التعليقات",
-        "export_as_excel": "ملف إكسيل"
+        "export_as_excel": "ملف إكسيل",
+        "cancel":"الغاء"
     },
     "menu": {
         "users": "إدارة المستخدمين",
@@ -55,6 +56,7 @@
         "status": "حالة الطلب" ,
         "pendding" : "جديد",
         "processing" : "جاري الترجمة",
+        "canceled":"ملغي",
         "completed" : "تم الإنتهاء",
         "download_file": "تحميل الملف",
         "client": "مقدم الطلب",

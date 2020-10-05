@@ -16,31 +16,30 @@
             <thead>
               <tr>
                 <th scope="col">{{"my_requests_page.req_num" | translate}}</th>
-                <th scope="col">{{"my_requests_page.translate_form" | translate}}</th>
-                <th scope="col">{{"my_requests_page.translate_to" | translate}}</th>
-                <th scope="col">{{"my_requests_page.file_secret" | translate}}</th>
+                <!-- <th scope="col">{{"my_requests_page.translate_form" | translate}}</th>
+                <th scope="col">{{"my_requests_page.translate_to" | translate}}</th> -->
                 <th scope="col">{{"my_requests_page.file_type" | translate}}</th>
-                <th scope="col">{{"my_requests_page.words_count" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.req_file" | translate}}</th>
                 <th scopr="col">{{"my_requests_page.status" | translate}}</th>
-                <th scopr="col">{{"my_requests_page.add_comment" | translate}}</th>
+                <th scope="col">{{"my_requests_page.trans_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.trans_file" | translate}}</th>
+                <th scopr="col">
+                  <!-- {{"general.details" | translate}} -->
+                </th>
               </tr>
             </thead>
             <tbody style="font-size: 1.3em;">
               <tr *ngFor="let req of requestsList; let i = index">
                 <td>{{ req.REQ_ID }}</td>
-                <td>
+                <!-- <td>
                   <span *ngIf="req.TRANSLATE_FROM == 'en'">{{"new_request_page.en_lang" | translate}}</span>
                   <span *ngIf="req.TRANSLATE_FROM == 'ar'">{{"new_request_page.ar_lang" | translate}}</span>
                 </td>
                 <td>
                   <span *ngIf="req.TRANSLATE_TO == 'en'">{{"new_request_page.en_lang" | translate}}</span>
                   <span *ngIf="req.TRANSLATE_TO == 'ar'">{{"new_request_page.ar_lang" | translate}}</span>
-                </td>
-                <td>
-                  <span class="text-success"><i *ngIf="req.FILE_SECRET == 1" class="fa fa-check-circle"></i></span>
-                  <span class="text-danger"><i *ngIf="req.FILE_SECRET == 0" class="fa fa-times-circle"></i></span>
-                </td>
+                </td> -->
                 <td>
                   <span *ngIf="req.FILE_TYPE == 'other'">{{"new_request_page.other" | translate}}</span>
                   <span *ngIf="req.FILE_TYPE == 'content'">{{"new_request_page.content" | translate}}</span>
@@ -48,15 +47,42 @@
                   <span *ngIf="req.FILE_TYPE == 'invite'">{{"new_request_page.invite" | translate}}</span>
                   <span *ngIf="req.FILE_TYPE == 'letter'">{{"new_request_page.letter" | translate}}</span>
                 </td>
-                <td>{{ req.FILE_WORDS_COUNT }}</td>
                 <td>{{ req.INSERTED_DATE | date : 'yyyy-MM-dd'}}</td>
                 <td>
-                  <span *ngIf="req.STATUS == 'pendding'" class="pendding">{{"my_requests_page.pendding" | translate}}</span>
-                  <span *ngIf="req.STATUS == 'processing'" class="processing">{{"my_requests_page.processing" | translate}}</span>
-                  <span *ngIf="req.STATUS == 'completed'" class="completed">{{"my_requests_page.completed" | translate}}</span>
+                  <a target="_blanck" [href]="req.downloadURL" style="margin-right: 5px;"
+                    class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
                 </td>
                 <td>
-                  <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"my_requests_page.add_comment" | translate}}</button>
+                  <span *ngIf="req.STATUS == 'pendding'"
+                    class="pendding">{{"my_requests_page.pendding" | translate}}</span>
+                  <span *ngIf="req.STATUS == 'processing'"
+                    class="processing">{{"my_requests_page.processing" | translate}}</span>
+                  <span *ngIf="req.STATUS == 'canceled'"
+                    class="processing">{{"my_requests_page.canceled" | translate}}</span>
+                  <span *ngIf="req.STATUS == 'completed'"
+                    class="completed">{{"my_requests_page.completed" | translate}}</span>
+                </td>
+
+                <td>
+                  <span *ngIf="req.TRANSLATION_DATE && req.STATUS == 'completed'">
+                    {{ req.TRANSLATION_DATE | date : 'yyyy-MM-dd'}}
+                  </span>
+                </td>
+                <td>
+                  <ng-container *ngIf="req.TRANSLATION_DATE && req.STATUS == 'completed'">
+                    <a target="_blanck" [href]="req.downloadTransURL" style="margin-right: 5px;"
+                      class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
+                  </ng-container>
+                </td>
+                <td>
+                  <button *ngIf="req.STATUS != 'canceled'" (click)="cancel(req.REQ_ID)"
+                  class="btn btn-primary">{{"general.cancel" | translate}}</button>
+                  &nbsp;
+                  <button (click)="openAddCommentDialog(req.REQ_ID)"
+                    class="btn btn-primary">{{"general.comments" | translate}}</button>
+                  &nbsp;
+                  <button class="btn btn-primary"
+                    (click)="openDetailsDialog(req)">{{"general.details" | translate}}</button>
                 </td>
               </tr>
             </tbody>

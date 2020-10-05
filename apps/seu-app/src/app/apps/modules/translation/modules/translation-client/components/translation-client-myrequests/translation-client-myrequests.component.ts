@@ -4,6 +4,7 @@ import { ClientMyrequestsService } from '../../../../services/translation-client
 import { TranslationUserService } from '../../../../services/translation-user';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material';
 import { TranslationAddCommentComponent } from './../../../translation-admin/components/translation-add-comment/translation-add-comment.component';
+import { TranslationViewRequestComponent } from '../../../translation-admin/components/translation-view-request/translation-view-request.component';
 
 @Component({
   selector: 'app-translation-client-myrequests',
@@ -33,13 +34,34 @@ export class TranslationClientMyrequestsComponent implements OnInit {
     this.isLoading = true;
     this.myrequestsService.getMyRequests(this.userId).subscribe((response) => {
       this.requestsList = response['data'];
+      this.requestsList = this.myrequestsService.addFileURL(this.requestsList);
       this.isLoading = false;
-    },err=>{
+    }, err => {
+      this.myrequestsService.tryagain();
+      this.isLoading = false;
+    });
+  }
+  cancel(req_id) {
+    this.myrequestsService.cancel(req_id).subscribe((response) => {
+      this.getMyRequests();
+    }, err => {
       this.myrequestsService.tryagain();
     });
   }
-
-  openAddCommentDialog(reqId){
+  openDetailsDialog(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = { 'req': req };
+    let dialogref = this.dialog.open(TranslationViewRequestComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getMyRequests();
+      }
+    });
+  }
+  openAddCommentDialog(reqId) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
@@ -48,7 +70,7 @@ export class TranslationClientMyrequestsComponent implements OnInit {
 
     let dialogref = this.dialog.open(TranslationAddCommentComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
-      if(result){
+      if (result) {
         this.getMyRequests();
       }
     });
