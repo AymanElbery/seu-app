@@ -74,9 +74,10 @@ export class TranslationRootService {
         this.toaster.tryagain();
     }
 
-    addFileURL(files, field = 'FILE_NAME') {
+    addFileURL(files) {
         return files.map(item => {
-            item['downloadURL'] = environment.baselink + environment.servicesprefix + "/rest" + "/download.php?file=" + item[field];
+            item['downloadURL'] = environment.baselink + environment.servicesprefix + "/rest" + "/download.php?folder=TRANSLATION_FILES&file=" + item['FILE_PATH'];
+            item['downloadTransURL'] = environment.baselink + environment.servicesprefix + "/rest" + "/download.php?folder=TRANSLATION_FILES&file=" + item['TRANSLATION_FILE'];
             return item;
         });
     }

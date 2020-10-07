@@ -18,11 +18,12 @@
                 <th scope="col">{{"my_requests_page.req_num" | translate}}</th>
                 <!-- <th scope="col">{{"my_requests_page.translate_form" | translate}}</th>
                 <th scope="col">{{"my_requests_page.translate_to" | translate}}</th> -->
-                <th scope="col">{{"my_requests_page.file_type" | translate}}</th>
+                <!-- <th scope="col">{{"my_requests_page.file_type" | translate}}</th> -->
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_file" | translate}}</th>
                 <th scopr="col">{{"my_requests_page.status" | translate}}</th>
                 <th scope="col">{{"my_requests_page.trans_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.estimate_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.trans_file" | translate}}</th>
                 <th scopr="col">
                   <!-- {{"general.details" | translate}} -->
@@ -40,13 +41,13 @@
                   <span *ngIf="req.TRANSLATE_TO == 'en'">{{"new_request_page.en_lang" | translate}}</span>
                   <span *ngIf="req.TRANSLATE_TO == 'ar'">{{"new_request_page.ar_lang" | translate}}</span>
                 </td> -->
-                <td>
+                <!-- <td>
                   <span *ngIf="req.FILE_TYPE == 'other'">{{"new_request_page.other" | translate}}</span>
                   <span *ngIf="req.FILE_TYPE == 'content'">{{"new_request_page.content" | translate}}</span>
                   <span *ngIf="req.FILE_TYPE == 'new'">{{"new_request_page.new" | translate}}</span>
                   <span *ngIf="req.FILE_TYPE == 'invite'">{{"new_request_page.invite" | translate}}</span>
                   <span *ngIf="req.FILE_TYPE == 'letter'">{{"new_request_page.letter" | translate}}</span>
-                </td>
+                </td> -->
                 <td>{{ req.INSERTED_DATE | date : 'yyyy-MM-dd'}}</td>
                 <td>
                   <a target="_blanck" [href]="req.downloadURL" style="margin-right: 5px;"
@@ -69,13 +70,18 @@
                   </span>
                 </td>
                 <td>
+                  <span *ngIf="req.ESTIMATED_DATE && req.STATUS != 'pendding'">
+                    {{ req.ESTIMATED_DATE | date : 'yyyy-MM-dd'}}
+                  </span>
+                </td>
+                <td>
                   <ng-container *ngIf="req.TRANSLATION_DATE && req.STATUS == 'completed'">
                     <a target="_blanck" [href]="req.downloadTransURL" style="margin-right: 5px;"
                       class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
                   </ng-container>
                 </td>
                 <td>
-                  <button *ngIf="req.STATUS != 'canceled'" (click)="cancel(req.REQ_ID)"
+                  <button *ngIf="req.STATUS == 'pendding'" (click)="cancel(req.REQ_ID)"
                   class="btn btn-primary">{{"general.cancel" | translate}}</button>
                   &nbsp;
                   <button (click)="openAddCommentDialog(req.REQ_ID)"

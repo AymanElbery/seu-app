@@ -14,19 +14,22 @@
       <div class="col-md-4">
         <div class="form-group">
           <label>{{ "new_request_page.client_username" | translate}}</label>
-          <input formControlName="CLIENT_NAME" class="form-control" type="text">
+          <input *ngIf="clientName" disabled formControlName="CLIENT_NAME" [value]="clientName" class="form-control" type="text">
+          <input *ngIf="!clientName" formControlName="CLIENT_NAME" class="form-control" type="text">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>{{ "new_request_page.client_work" | translate}}</label>
-          <input formControlName="CLIENT_WORK" class="form-control" type="text">
+          <input *ngIf="clientWork" disabled formControlName="CLIENT_WORK" [value]="clientWork" class="form-control" type="text">
+          <input *ngIf="!clientWork" formControlName="CLIENT_WORK" class="form-control" type="text">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>{{ "new_request_page.client_email" | translate}}</label>
-          <input formControlName="CLIENT_EMAIL" class="form-control" type="text">
+          <input *ngIf="workEmail" disabled formControlName="CLIENT_EMAIL" [value]="workEmail" class="form-control" type="text">
+          <input *ngIf="!workEmail" formControlName="CLIENT_EMAIL" class="form-control" type="text">
         </div>
       </div>
     </div>
@@ -34,20 +37,20 @@
     <div class="row">
       <div class="col-md-6">
         <div class="form-group">
-          <label>{{ "new_request_page.translate_from" | translate}}</label>
+          <label>{{ "new_request_page.translate_field" | translate}}</label>
           <select formControlName="TRANSLATE_FROM" class="form-control">
-            <option value="ar">{{ "new_request_page.ar_lang" | translate}}</option>
-            <option value="en">{{ "new_request_page.en_lang" | translate}}</option>
+            <option value="ar-en">{{ "new_request_page.ar_to_en_lang" | translate}}</option>
+            <option value="en-ar">{{ "new_request_page.en_to_ar_lang" | translate}}</option>
           </select>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label>{{ "new_request_page.translate_to" | translate}}</label>
-          <select formControlName="TRANSLATE_TO" class="form-control">
-            <option value="ar">{{ "new_request_page.ar_lang" | translate}}</option>
-            <option value="en">{{ "new_request_page.en_lang" | translate}}</option>
-          </select>        
+          <label>{{ "new_request_page.client_work_place" | translate}}</label>
+          <select disabled formControlName="CLIENT_WORK_PLACE_TYPE" class="form-control">
+            <option [selected]="true" value="internal">{{ "new_request_page.internal" | translate}}</option>
+            <!-- <option value="external">{{ "new_request_page.external" | translate}}</option> -->
+          </select> 
         </div>
       </div>
     </div>
@@ -95,21 +98,13 @@
     </div>
 
     <div class="row">
-      <div class="col-md-4">
+      <!-- <div class="col-md-4">
         <div class="form-group">
           <label>{{ "new_request_page.words_count" | translate}}</label>
           <input formControlName="FILE_WORDS_COUNT" class="form-control" type="number">
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="form-group">
-          <label>{{ "new_request_page.client_work_place" | translate}}</label>
-          <select (change)="changeClientWorkPlace($event)" formControlName="CLIENT_WORK_PLACE_TYPE" class="form-control">
-            <option value="internal">{{ "new_request_page.internal" | translate}}</option>
-            <!-- <option value="external">{{ "new_request_page.external" | translate}}</option> -->
-          </select> 
-        </div>
-      </div>
+      </div> -->
+      
       <div *ngIf="showClientWorkPlace" class="col-md-4">
         <div class="form-group">
           <label>{{ "new_request_page.client_work_place_external" | translate}}</label>

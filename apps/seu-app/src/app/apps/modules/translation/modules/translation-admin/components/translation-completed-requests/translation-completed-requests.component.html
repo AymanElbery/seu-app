@@ -35,7 +35,7 @@
             <tbody style="font-size: 1.3em;">
               <tr *ngFor="let req of requestsList; let i = index">
                 <td>{{ req.REQ_ID }}</td>
-                <td>{{ req.CLIENTNAME }}</td>
+                <td>{{ req.CLIENT_NAME }}</td>
                 <td>{{ req.EMPNAME }}</td>
                 <td>
                   <span *ngIf="req.TRANSLATE_FROM == 'en'">{{"new_request_page.en_lang" | translate}}</span>
@@ -56,7 +56,7 @@
                 </td>
 
                 <td>
-                  <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.comments" | translate}}</button>
+                  <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.add_comment" | translate}}</button>
                   &nbsp;
                   <button class="btn btn-primary"(click)="openDetailsDialog(req)">{{"general.details" | translate}}</button>
                 </td>

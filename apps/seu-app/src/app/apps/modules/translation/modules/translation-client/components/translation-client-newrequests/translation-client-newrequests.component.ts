@@ -20,6 +20,8 @@ export class TranslationClientNewrequestsComponent implements OnInit {
   addRequestForm : FormGroup;
   clientId;
   clientName;
+  workEmail;
+  clientWork;
   showOtherFileType = false;
   showClientWorkPlace= false;
   fileName;
@@ -37,21 +39,22 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     private translate: TranslateService
   ) {
     this.clientId = this.userService.user['USER_ID'];
-    this.clientName = this.userService.user['USERNAME'];
+    this.clientName = this.userService.user['NAME'];
+    this.clientWork = this.userService.user['CLIENT_WORK'];
+    this.workEmail = this.userService.user['WORK_EMAIL'];
     this.support_email = client_config.support_email;
 
     this.addRequestForm = this.fb.group({
       CLIENT_ID: [""],
-      CLIENT_NAME: ["", [Validators.required]],
-      CLIENT_WORK: ["", [Validators.required]],
-      CLIENT_EMAIL: ["", [Validators.required]],
+      CLIENT_NAME: [""],
+      CLIENT_WORK: [""],
+      CLIENT_EMAIL: [""],
       TRANSLATE_FROM: ["", [Validators.required]],
-      TRANSLATE_TO: ["", [Validators.required]],
       FILE_SECRET: ["", [Validators.required]],
       FILE_TYPE: ["", [Validators.required]],
-      FILE_KEYWORDS: ["", [Validators.required]],
-      FILE_WORDS_COUNT: ["", [Validators.required]],
-      CLIENT_WORK_PLACE_TYPE: ["", [Validators.required]],
+      FILE_KEYWORDS: [""],
+      FILE_WORDS_COUNT: [""],
+      CLIENT_WORK_PLACE_TYPE: [""],
       CLIENT_WORK_PLACE: [""],
       FILE_DETAILS: [""],
     });
@@ -112,6 +115,14 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     data['FILE_PATH'] = this.FILE_PATH;
     data['FILE_EXT'] = this.ext;
     data['CLIENT_ID'] = this.clientId;
+    data['CLIENT_NAME'] = this.clientName;
+    if (data['TRANSLATE_FROM'] == "ar-en") {
+      data['TRANSLATE_FROM'] = "ar";
+      data['TRANSLATE_TO'] = "en";
+    } else {
+      data['TRANSLATE_FROM'] = "en";
+      data['TRANSLATE_TO'] = "ar";
+    }
     this.newrequestsService.saveNewRequest(data).subscribe((response) => {
       this.toastr.push([{ type: 'success', 'body': this.translate.instant('new_request_page.request_saved') }]);
         this.isLoading = false;
