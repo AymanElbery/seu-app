@@ -30,6 +30,7 @@ export class TranslationAdminAddUsersComponent implements OnInit {
   @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {
     this.addUserForm = this.fb.group({
+      NAME: ["", [Validators.required]],
       USERNAME: ["", [Validators.required]],
       ROLE: ["", [Validators.required]],
       ACTIVE: ["", [Validators.required]],

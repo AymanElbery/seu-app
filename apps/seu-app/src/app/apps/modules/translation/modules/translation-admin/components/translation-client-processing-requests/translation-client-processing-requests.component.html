@@ -24,7 +24,7 @@
                 <th scope="col">{{"my_requests_page.translate_form" | translate}}</th>
                 <th scope="col">{{"my_requests_page.translate_to" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
-                <th scopr="col">{{"my_requests_page.upload_tranlate_file" | translate}}</th>
+                <!-- <th scopr="col">{{"my_requests_page.upload_tranlate_file" | translate}}</th> -->
                 <th scopr="col">{{"general.details" | translate}}</th>
               </tr>
             </thead>
@@ -42,9 +42,9 @@
                   <span *ngIf="req.TRANSLATE_TO == 'ar'">{{"new_request_page.ar_lang" | translate}}</span>
                 </td>
                 <td>{{ req.INSERTED_DATE | date : 'yyyy-MM-dd'}}</td>
-                <td>
+                <!-- <td>
                   <button (click)="openAddTranslatedFileDialog(req.REQ_ID)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
-                </td>
+                </td> -->
                 <td>
                   <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.add_comment" | translate}}</button>
                   &nbsp;
