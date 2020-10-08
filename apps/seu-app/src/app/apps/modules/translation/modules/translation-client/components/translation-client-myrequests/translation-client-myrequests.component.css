@@ -10,6 +10,12 @@
     border-radius: 3px;
     color: #FFF;
 }
+.reviewing{
+    padding: 3px 10px;
+    background-color: #2d2c7e;
+    border-radius: 3px;
+    color: #FFF;
+}
 .completed{
     padding: 3px 10px;
     background-color: #5cb85c;

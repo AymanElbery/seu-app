@@ -14,6 +14,7 @@ export class TranslationViewRequestComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { 
     this.request = data['req'];
+    console.log(this.request);
   }
 
   ngOnInit() {

@@ -116,6 +116,9 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     data['FILE_EXT'] = this.ext;
     data['CLIENT_ID'] = this.clientId;
     data['CLIENT_NAME'] = this.clientName;
+    data['CLIENT_WORK'] = this.clientWork;
+    data['CLIENT_WORK'] = this.clientWork;
+    data['CLIENT_WORK_PLACE'] = 'internal';
     if (data['TRANSLATE_FROM'] == "ar-en") {
       data['TRANSLATE_FROM'] = "ar";
       data['TRANSLATE_TO'] = "en";

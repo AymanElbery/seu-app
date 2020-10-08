@@ -92,7 +92,7 @@ export class TranslationCompleteFormComponent implements OnInit {
       'FILE_EXT': this.ext,
       'REQ_ID': this.request['REQ_ID']
     }
-    this.requestsService.completeRequest(data).subscribe((response) => {
+    this.requestsService.reviewRequest(data).subscribe((response) => {
       this.toastr.push([{ type: 'success', 'body': this.translate.instant('new_request_page.request_saved') }]);
       this.isLoading = false;
       this.closeDiag(true);

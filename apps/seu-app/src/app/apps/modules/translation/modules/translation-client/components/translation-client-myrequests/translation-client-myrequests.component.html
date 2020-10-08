@@ -56,8 +56,8 @@
                 <td>
                   <span *ngIf="req.STATUS == 'pendding'"
                     class="pendding">{{"my_requests_page.pendding" | translate}}</span>
-                  <span *ngIf="req.STATUS == 'processing'"
-                    class="processing">{{"my_requests_page.processing" | translate}}</span>
+                  <span *ngIf="req.STATUS == 'processing'" class="processing">{{"my_requests_page.processing" | translate}}</span>
+                  <span *ngIf="req.STATUS == 'reviewing'" class="reviewing">{{"my_requests_page.reviewing" | translate}}</span>
                   <span *ngIf="req.STATUS == 'canceled'"
                     class="processing">{{"my_requests_page.canceled" | translate}}</span>
                   <span *ngIf="req.STATUS == 'completed'"

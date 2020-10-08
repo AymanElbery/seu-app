@@ -35,14 +35,20 @@ export class ClientAdminRequestsService extends TranslationRootService {
     getProcessiongRequests(print = 0) {
         return this.get("admin/request/get_processing_requests/" + print) ;
     }
+    getReviewingRequests(print = 0) {
+        return this.get("admin/request/get_reviewing_requests/" + print) ;
+    }
     getMyRequests(){
         return this.get("admin/request/myrequests") ;
     }
     getCompletedRequests(print = 0){
         return this.get("admin/request/get_completed_requests/" + print) ;
     }
-    completeRequest(data){
-        return this.post("admin/request/complete",data);
+    reviewRequest(data){
+        return this.post("admin/request/review",data);
+    }
+    addReview(data){
+        return this.post("admin/request/add_review",data);
     }
     changeStatus(data) {
         return this.post("admin/request/change_status" , data) ;

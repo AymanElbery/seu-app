@@ -5,11 +5,14 @@ import { TranslationChangeReqStatusComponent } from './components/translation-ch
 import { TranslationAddTranslatedFileComponent } from './components/translation-add-translated-file/translation-add-translated-file.component';
 import { TranslationPenddingRequestsComponent } from './components/translation-client-pendding-requests/translation-pendding-requests.component';
 import { TranslationProcessiongRequestsComponent } from './components/translation-client-processing-requests/translation-client-processing-requests.component';
+import { TranslationReviewingRequestsComponent } from './components/translation-client-reviewing-requests/translation-client-reviewing-requests.component';
 import { TranslationADMINGuard } from '../../translation-guard/admin.guard';
 import { TranslationMyrequestsComponent } from './components/translation-myrequests/translation-myrequests.component';
 import { TranslationEMPGuard } from '../../translation-guard/emp.guard';
 import { TranslationCompletedRequestsComponent } from './components/translation-completed-requests/translation-completed-requests.component';
 import { TranslationCompleteFormComponent } from './components/translation-complete-form/translation-complete-form.component';
+import { TranslationReviewFormComponent } from './components/translation-review-form/translation-review-form.component';
+import { TranslationNoteComponent } from './components/translation-note/translation-note.component';
 
 export const componentDeclarations: any[] = [
     TranslationAdminUsersComponent,
@@ -20,7 +23,10 @@ export const componentDeclarations: any[] = [
     TranslationCompletedRequestsComponent,
     TranslationCompleteFormComponent,
     TranslationChangeReqStatusComponent,
-    TranslationAddTranslatedFileComponent
+    TranslationAddTranslatedFileComponent,
+    TranslationReviewingRequestsComponent,
+    TranslationReviewFormComponent,
+    TranslationNoteComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -38,6 +44,9 @@ export const routes: Routes = [
     },
     {
         path: 'processing-requests', component: TranslationProcessiongRequestsComponent, canActivate: [TranslationADMINGuard]
+    },
+    {
+        path: 'reviewing-requests', component: TranslationReviewingRequestsComponent, canActivate: [TranslationADMINGuard]
     },
     {
         path: 'completed-requests', component: TranslationCompletedRequestsComponent, canActivate: [TranslationEMPGuard]

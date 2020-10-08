@@ -1,28 +1,52 @@
 <div class="row" style="padding: 20px;">
-  <div class="col-md-6">
-    <h5>{{ "new_request_page.client_username" | translate}}</h5>
-    <h6>{{ request.NAME }}</h6>
-  </div>
-  <!--
-    <div class="col-md-6">
+  <div class="col-md-4">
     <h5>{{ "new_request_page.client_username" | translate}}</h5>
     <h6>{{ request.CLIENT_NAME }}</h6>
   </div>
-  
-  <div *ngIf="request.STATUS != 'pendding'" class="col-md-6">
+  <div *ngIf="request.EMPNAME" class="col-md-4">
     <h5>{{ "my_requests_page.emp_list" | translate}}</h5>
     <h6>{{ request.EMPNAME }}</h6>
-  </div> -->
+  </div>
+  <div *ngIf="request.ESTIMATED_DATE" class="col-md-4">
+    <h5>{{ "my_requests_page.estimate_date" | translate}}</h5>
+    <h6>{{ request.ESTIMATED_DATE | date : 'yyyy-MM-dd'}}</h6>
+  </div>
 </div>
 <div class="row" style="padding: 20px;">
   <div class="col-md-6">
     <h5>{{ "new_request_page.client_work_place" | translate}}</h5>
-    <h6 *ngIf="request.CLIENT_WORK_PLACE_TYPE == 'internal'">{{ "new_request_page.internal" | translate}}</h6>
-    <h6 *ngIf="request.CLIENT_WORK_PLACE_TYPE == 'external'">{{ "new_request_page.external" | translate}}</h6>
+    <h6 *ngIf="request.CLIENT_WORK_PLACE == 'internal'">{{ "new_request_page.seu" | translate}}</h6>
+    <h6 *ngIf="request.CLIENT_WORK_PLACE == 'external'">{{ "new_request_page.external" | translate}}</h6>
   </div>
   <div class="col-md-6">
     <h5>{{ "new_request_page.client_work" | translate}}</h5>
     <h6>{{ request.CLIENT_WORK }}</h6>
+  </div>
+</div>
+
+<div class="row" style="padding: 20px;">
+  <div class="col-md-6">
+    <h5>{{ "new_request_page.req_date" | translate}}</h5>
+    <h6>{{ request.INSERTED_DATE | date : 'yyyy-MM-dd'}}</h6>
+  </div>
+  <div class="col-md-6">
+    <h5>{{ "my_requests_page.status" | translate}}</h5>
+    <h6 *ngIf="request.STATUS == 'pendding'">{{ "my_requests_page.pendding" | translate}}</h6>
+    <h6 *ngIf="request.STATUS == 'processing'">{{ "my_requests_page.processing" | translate}}</h6>
+    <h6 *ngIf="request.STATUS == 'reviewing'">{{ "my_requests_page.reviewing" | translate}}</h6>
+    <h6 *ngIf="request.STATUS == 'completed'">{{ "my_requests_page.completed" | translate}}</h6>
+  </div>
+</div>
+<div class="row" style="padding: 20px;">
+  <div class="col-md-6">
+    <h5>{{ "new_request_page.translate_from" | translate}}</h5>
+    <h6 *ngIf="request.TRANSLATE_FROM == 'ar'">{{ "new_request_page.ar_lang" | translate}}</h6>
+    <h6 *ngIf="request.TRANSLATE_FROM == 'en'">{{ "new_request_page.en_lang" | translate}}</h6>
+  </div>
+  <div class="col-md-6">
+    <h5>{{ "new_request_page.translate_to" | translate}}</h5>
+    <h6 *ngIf="request.TRANSLATE_TO == 'ar'">{{ "new_request_page.ar_lang" | translate}}</h6>
+    <h6 *ngIf="request.TRANSLATE_TO == 'en'">{{ "new_request_page.en_lang" | translate}}</h6>
   </div>
 </div>
 <div class="row" style="padding: 20px;">
@@ -41,26 +65,12 @@
   </div>
 </div>
 <div class="row" style="padding: 20px;">
-  <div class="col-md-6">
-    <h5>{{ "new_request_page.req_date" | translate}}</h5>
-    <h6>{{ request.INSERTED_DATE | date : 'yyyy-MM-dd'}}</h6>
+  <div *ngIf="request.FILE_KEYWORDS" class="col-md-6">
+    <h5>{{ "new_request_page.keywords" | translate}}</h5>
+    <h6>{{ request.FILE_KEYWORDS }}</h6>
   </div>
-  <div class="col-md-6">
-    <h5>{{ "my_requests_page.status" | translate}}</h5>
-    <h6 *ngIf="request.STATUS == 'pendding'">{{ "my_requests_page.pendding" | translate}}</h6>
-    <h6 *ngIf="request.STATUS == 'processing'">{{ "my_requests_page.processing" | translate}}</h6>
-    <h6 *ngIf="request.STATUS == 'completed'">{{ "my_requests_page.completed" | translate}}</h6>
-  </div>
-</div>
-<div class="row" style="padding: 20px;">
-  <div class="col-md-6">
-    <h5>{{ "new_request_page.translate_from" | translate}}</h5>
-    <h6 *ngIf="request.TRANSLATE_FROM == 'ar'">{{ "new_request_page.ar_lang" | translate}}</h6>
-    <h6 *ngIf="request.TRANSLATE_FROM == 'en'">{{ "new_request_page.en_lang" | translate}}</h6>
-  </div>
-  <div class="col-md-6">
-    <h5>{{ "new_request_page.translate_to" | translate}}</h5>
-    <h6 *ngIf="request.TRANSLATE_TO == 'ar'">{{ "new_request_page.ar_lang" | translate}}</h6>
-    <h6 *ngIf="request.TRANSLATE_TO == 'en'">{{ "new_request_page.en_lang" | translate}}</h6>
+  <div *ngIf="request.FILE_DETAILS" class="col-md-6">
+    <h5>{{ "new_request_page.file_details_type" | translate}}</h5>
+    <h6>{{ request.FILE_DETAILS }}</h6>
   </div>
 </div>

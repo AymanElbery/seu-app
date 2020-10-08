@@ -14,7 +14,8 @@
     "menu": {
         "users": "إدارة المستخدمين",
         "new_requests": "الطلبات الجديدة",
-        "current_requests": "الطلبات تحت الإجراء",
+        "current_requests": "الطلبات قيد الترجمة",
+        "review_requests": "الطلبات قيد المراجعة",
         "log_requests": "أرشيف الطلبات",
         "my_requests": "طلباتي",
         "new_request": "طلب جديد",
@@ -57,6 +58,7 @@
         "status": "حالة الطلب" ,
         "pendding" : "جديد",
         "processing" : "قيد الترجمة",
+        "reviewing" : "قيد المراجعة",
         "canceled":"ملغي",
         "completed" : "تم تسليم الطلب",
         "download_file": "تحميل الملف",
@@ -74,7 +76,12 @@
         "emp_list": "الموظف المسؤول",
         "upload_tranlate_file": "رفع الملف المترجم",
         "estimated_date": "التاريخ المتوقع للإنتهاء من الترجمة",
-        "estimate_date": "تاريخ التسليم"
+        "estimate_date": "تاريخ التسليم",
+        "reviewing_note": "ملاحظات الترجمة",
+        "translate_status": "حالة الملف المترجم",
+        "accept": "قبول",
+        "reject": "رفض",
+        "reviewing_note_reject": "ملاحظات و سبب الرفض"
     },
     "new_request_page": {
         "save": "حفظ",

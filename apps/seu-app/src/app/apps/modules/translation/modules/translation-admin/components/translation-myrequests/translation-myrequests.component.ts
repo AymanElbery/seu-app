@@ -5,6 +5,7 @@ import { MatDialogConfig, MatDialog } from '@angular/material';
 import { TranslationCompleteFormComponent } from '../translation-complete-form/translation-complete-form.component';
 import { TranslationViewRequestComponent } from '../translation-view-request/translation-view-request.component';
 import { TranslationAddCommentComponent } from '../translation-add-comment/translation-add-comment.component';
+import { TranslationNoteComponent } from '../translation-note/translation-note.component';
 
 @Component({
   selector: 'app-translation-myrequests',
@@ -54,6 +55,21 @@ export class TranslationMyrequestsComponent implements OnInit {
       }
     });
   }
+
+  openNoteDialog(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '40%';
+    dialogConfig.data = { 'req': req };
+    let dialogref = this.dialog.open(TranslationNoteComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getAllRequests();
+      }
+    });
+  }
+
   openDetailsDialog(req){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;

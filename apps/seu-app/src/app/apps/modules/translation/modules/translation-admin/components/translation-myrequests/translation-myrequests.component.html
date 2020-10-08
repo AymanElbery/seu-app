@@ -19,6 +19,7 @@
                 <th scope="col">{{"my_requests_page.translate_form" | translate}}</th>
                 <th scope="col">{{"my_requests_page.translate_to" | translate}}</th>
                 <th scope="col">{{"my_requests_page.est_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.status" | translate}}</th>
                 <th scopr="col">{{"general.file" | translate}}</th>
                 <th scopr="col"></th>
               </tr>
@@ -35,11 +36,23 @@
                   <span *ngIf="req.TRANSLATE_TO == 'ar'">{{"new_request_page.ar_lang" | translate}}</span>
                 </td>
                 <td>{{ req.ESTIMATED_DATE | date : 'yyyy-MM-dd'}}</td>
+                <td> 
+                  <span *ngIf="req.STATUS == 'pendding'"
+                    class="pendding">{{"my_requests_page.pendding" | translate}}</span>
+                  <span *ngIf="req.STATUS == 'processing'" class="processing">{{"my_requests_page.processing" | translate}}</span>
+                  <span *ngIf="req.STATUS == 'reviewing'" class="reviewing">{{"my_requests_page.reviewing" | translate}}</span>
+                  <span *ngIf="req.STATUS == 'canceled'"
+                    class="processing">{{"my_requests_page.canceled" | translate}}</span>
+                  <span *ngIf="req.STATUS == 'completed'"
+                    class="completed">{{"my_requests_page.completed" | translate}}</span>
+                </td>
                 <td>
                   <a target="_blanck" [href]="req.downloadURL" style="margin-right: 5px;" class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
                 </td>
                 <td>
-                  <button (click)="openDialog(req)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
+                  <button *ngIf="req.STATUS != 'reviewing'" (click)="openDialog(req)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
+                  
+                  <button style="margin-right: 10px;" *ngIf="req.STATUS != 'reviewing' && req.REVIEWING_NOTE" (click)="openNoteDialog(req)" class="btn btn-primary">{{"my_requests_page.reviewing_note" | translate}} <i class="fa fa-list"></i></button>
                   &nbsp;
                   <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.add_comment" | translate}}</button>
                   &nbsp;
