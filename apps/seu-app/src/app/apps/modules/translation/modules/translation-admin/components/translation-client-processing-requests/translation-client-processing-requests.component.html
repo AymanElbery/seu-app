@@ -20,9 +20,10 @@
               <tr>
                 <th scope="col">{{"my_requests_page.req_num" | translate}}</th>
                 <th scope="col">{{"my_requests_page.client" | translate}}</th>
+                <th scope="col">{{"new_request_page.work_place" | translate}}</th>
+                <th scope="col">{{"new_request_page.work" | translate}}</th>
                 <th scope="col">{{"my_requests_page.emp_list" | translate}}</th>
-                <th scope="col">{{"my_requests_page.translate_form" | translate}}</th>
-                <th scope="col">{{"my_requests_page.translate_to" | translate}}</th>
+                <th scope="col">{{"my_requests_page.file_secret" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
                 <!-- <th scopr="col">{{"my_requests_page.upload_tranlate_file" | translate}}</th> -->
                 <th scopr="col">{{"general.details" | translate}}</th>
@@ -32,21 +33,19 @@
               <tr *ngFor="let req of requestsList; let i = index">
                 <td>{{ req.REQ_ID }}</td>
                 <td>{{ req.CLIENT_NAME }}</td>
+                <td>{{ req.CLIENT_WORK }}</td>
+                <td>{{"new_request_page.seu" | translate}}</td>
                 <td>{{ req.EMPNAME }}</td>
                 <td>
-                  <span *ngIf="req.TRANSLATE_FROM == 'en'">{{"new_request_page.en_lang" | translate}}</span>
-                  <span *ngIf="req.TRANSLATE_FROM == 'ar'">{{"new_request_page.ar_lang" | translate}}</span>
-                </td>
-                <td>
-                  <span *ngIf="req.TRANSLATE_TO == 'en'">{{"new_request_page.en_lang" | translate}}</span>
-                  <span *ngIf="req.TRANSLATE_TO == 'ar'">{{"new_request_page.ar_lang" | translate}}</span>
+                  <span *ngIf="req.FILE_SECRET == '1'">{{"new_request_page.secret" | translate}}</span>
+                  <span *ngIf="req.FILE_SECRET == '0'">{{"new_request_page.not_secret" | translate}}</span>
                 </td>
                 <td>{{ req.INSERTED_DATE | date : 'yyyy-MM-dd'}}</td>
                 <!-- <td>
                   <button (click)="openAddTranslatedFileDialog(req.REQ_ID)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
                 </td> -->
                 <td>
-                  <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.add_comment" | translate}}</button>
+                  <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.comments" | translate}}</button>
                   &nbsp;
                   <button class="btn btn-primary"(click)="openDetailsDialog(req)">{{"general.details" | translate}}</button>
                 </td>

@@ -22,8 +22,8 @@
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_file" | translate}}</th>
                 <th scopr="col">{{"my_requests_page.status" | translate}}</th>
-                <th scope="col">{{"my_requests_page.trans_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.estimate_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.trans_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.trans_file" | translate}}</th>
                 <th scopr="col">
                   <!-- {{"general.details" | translate}} -->
@@ -63,17 +63,17 @@
                   <span *ngIf="req.STATUS == 'completed'"
                     class="completed">{{"my_requests_page.completed" | translate}}</span>
                 </td>
-
-                <td>
-                  <span *ngIf="req.TRANSLATION_DATE && req.STATUS == 'completed'">
-                    {{ req.TRANSLATION_DATE | date : 'yyyy-MM-dd'}}
-                  </span>
-                </td>
                 <td>
                   <span *ngIf="req.ESTIMATED_DATE && req.STATUS != 'pendding'">
                     {{ req.ESTIMATED_DATE | date : 'yyyy-MM-dd'}}
                   </span>
                 </td>
+                <td>
+                  <span *ngIf="req.TRANSLATION_DATE && req.STATUS == 'completed'">
+                    {{ req.TRANSLATION_DATE | date : 'yyyy-MM-dd'}}
+                  </span>
+                </td>
+                
                 <td>
                   <ng-container *ngIf="req.TRANSLATION_DATE && req.STATUS == 'completed'">
                     <a target="_blanck" [href]="req.downloadTransURL" style="margin-right: 5px;"
