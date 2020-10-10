@@ -9,7 +9,7 @@
     <div class="modal-body">
       <form role="form" [formGroup]="AddJobForm">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <div class="state">
               <h6>{{"leadership.job.title"|translate}} <span class="reqstart">*</span></h6>
               <input type="text" formControlName="JOB_TITLE" class="form-control" />
@@ -21,7 +21,53 @@
               </div>
             </div>
           </div>
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.job.category"|translate}} <span class="reqstart">*</span></h6>
+              <ng-select [items]="cats" bindLabel="LOOKUP_NAME" bindValue="LOOKUP_CODE" formControlName="JOB_CAT_CODE">
+              </ng-select>
+            </div>
+            <div
+              *ngIf="AddJobForm.controls.JOB_CAT_CODE.invalid && (AddJobForm.controls.JOB_CAT_CODE.dirty || AddJobForm.controls.JOB_CAT_CODE.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_CAT_CODE.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.job.college_dean"|translate}} <span class="reqstart">*</span></h6>
+              <ng-select [items]="colleges_deans" bindLabel="DEPT_NAME" bindValue="DEPT_CODE"
+                formControlName="JOB_DEPT_CODE">
+              </ng-select>
+            </div>
+            <div
+              *ngIf="AddJobForm.controls.JOB_DEPT_CODE.invalid && (AddJobForm.controls.JOB_DEPT_CODE.dirty || AddJobForm.controls.JOB_DEPT_CODE.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_DEPT_CODE.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.job.agency"|translate}} <span class="reqstart">*</span></h6>
+              <ng-select [items]="agences" bindLabel="DEPT_NAME" bindValue="DEPT_CODE"
+                formControlName="JOB_AGENCY_CODE">
+              </ng-select>
+            </div>
+            <div
+              *ngIf="AddJobForm.controls.JOB_AGENCY_CODE.invalid && (AddJobForm.controls.JOB_AGENCY_CODE.dirty || AddJobForm.controls.JOB_AGENCY_CODE.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_AGENCY_CODE.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         <div class="row" style="margin-top: 30px;">
           <div class="col-md-12">
             <div class="state cke_rtl">
@@ -39,11 +85,10 @@
         </div>
         <div class="row" style="margin-top: 20px;">
           <div class="col-md-12" style="text-align: center;">
-            <button *ngIf="!job" style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()"
-              type="submit" class="btn btn-primary">{{ "leadership.save" | translate}} <i class="fa fa-save"></i></button>
-            <button *ngIf="job" style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()"
-              type="submit" class="btn btn-primary">{{ "leadership.update" | translate}} <i
-                class="fa fa-save"></i></button>
+            <button style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()"
+              type="submit" class="btn btn-primary">{{ (job ? "leadership.update" : "leadership.save" ) | translate}}
+              <i class="fa fa-save"></i>
+            </button>
           </div>
         </div>
       </form>
