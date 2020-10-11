@@ -36,4 +36,9 @@ export class LeadershipApplicationAdslistComponent implements OnInit {
     this.router.navigate(['../create'], { relativeTo: this.route });
   }
 
+  recommend(ad) {
+    this.leadershipService.currentAdd = ad;
+    this.router.navigate(['../create-recommend'], { relativeTo: this.route });
+  }
+
 }

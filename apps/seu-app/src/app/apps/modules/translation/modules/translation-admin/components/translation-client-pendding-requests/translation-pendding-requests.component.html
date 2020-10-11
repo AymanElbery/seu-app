@@ -1,0 +1,58 @@
+<app-service-header title="{{'translation' | translate}}" subtitle="{{'menu.new_requests' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget">
+
+        <div class="widget-header">
+          <h3 class="widget-title">
+            {{"menu.new_requests" | translate}}
+            <button type="button" class="btn btn-primary" (click)="exportAsXLSX()">
+              {{"general.export_as_excel"|translate}}
+            </button>
+            &nbsp;
+          </h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+            <thead>
+              <tr>
+                <th scope="col">{{"my_requests_page.req_num" | translate}}</th>
+                <th scope="col">{{"my_requests_page.client" | translate}}</th>
+                <th scope="col">{{"new_request_page.work_place" | translate}}</th>
+                <th scope="col">{{"new_request_page.work" | translate}}</th>
+                <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
+                <th scope="col">{{"new_request_page.file_secret" | translate}}</th>
+                <th scopr="col">{{"my_requests_page.assign_to" | translate}}</th>
+                <th scopr="col">{{"general.details" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 1.3em;">
+              <tr *ngFor="let req of requestsList; let i = index">
+                <td>{{ req.REQ_ID }}</td>
+                <td>{{ req.CLIENT_NAME }}</td>
+                <td>{{ req.CLIENT_WORK }}</td>
+                <td>{{"new_request_page.seu" | translate}}</td>
+                <td>{{ req.INSERTED_DATE | date : 'yyyy-MM-dd'}}</td>
+                <td>
+                  <span *ngIf="req.FILE_SECRET == '1'">{{"new_request_page.secret" | translate}}</span>
+                  <span *ngIf="req.FILE_SECRET == '0'">{{"new_request_page.not_secret" | translate}}</span>
+                </td>
+                <td>
+                  <button (click)="openChangeStatusDialog(req.REQ_ID)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
+                </td>
+                <td>
+                  <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.add_comment" | translate}}</button>
+                  &nbsp;
+                  <button class="btn btn-primary"(click)="openDetailsDialog(req)">{{"general.details" | translate}}</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

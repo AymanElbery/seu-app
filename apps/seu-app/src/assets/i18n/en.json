@@ -254,7 +254,8 @@
         "ssoidentity": "sso Support",
         "attends": "Attendance System",
         "masterequalize": "معادلة مقررات الفصل التحضيري",
-        "skills": "Trainging & Skills record"
+        "skills": "Trainging & Skills record",
+        "translation":"Translation Center"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",

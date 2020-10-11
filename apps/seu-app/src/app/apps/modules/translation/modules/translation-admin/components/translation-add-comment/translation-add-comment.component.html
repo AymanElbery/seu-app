@@ -1,0 +1,50 @@
+<form [formGroup]="addCommentForm" (ngSubmit)="onSubmit()">
+  <div class="row" style="padding: 20px;">
+    <div class="col-md-10">
+      <div class="form-group">
+        <label for="DETAILS">{{"my_requests_page.notes" | translate}}</label>
+        <textarea class="form-control" id="DETAILS" formControlName="DETAILS" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-group">
+        <button [disabled]="submitted || addCommentForm.invalid" style="margin-top: 30px; width: 100%;" type="submit" class="btn sub">{{ "users_page.add" | translate}}  <i class="fa fa-save"></i></button>
+      </div>
+    </div>
+  </div>
+</form>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget">
+        <div class="widget-header text-center">
+          <h3 class="widget-title text-center">
+            {{"my_requests_page.comments_on_req" | translate}}
+          </h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+            <thead>
+              <tr>
+                <!-- <th scope="col">{{"my_requests_page.req_num" | translate}}</th> -->
+                <th scope="col">#</th>
+                <th scope="col">{{"my_requests_page.comment_by" | translate}}</th>
+                <th scope="col">{{"my_requests_page.comment_at" | translate}}</th>
+                <th scope="col">{{"my_requests_page.comment" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 1.3em;">
+              <tr *ngFor="let comment of commentsList; let i = index">
+                <!-- <td>{{ comment.REQ_ID }}</td> -->
+                <td>{{ i+1 }}</td>
+                <td>{{ comment.NAME }}</td>
+                <td>{{ comment.INSERTED_DATE | date : 'yyyy-MM-dd'}}</td>
+                <td>{{ comment.DETAILS }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

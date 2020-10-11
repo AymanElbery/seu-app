@@ -41,16 +41,30 @@ export class AddJobComponent implements OnInit {
   ) {
     this.AddJobForm = this.fb.group({
       'JOB_TITLE': ['', [Validators.required]],
-      'JOB_DESC': ['', [Validators.required]]
+      'JOB_DESC': [],
+      'JOB_CAT_CODE': ['', [Validators.required]],
+      'JOB_DEPT_CODE': ['', [Validators.required]],
+      'JOB_AGENCY_CODE': ['', [Validators.required]]
     });
     if (this.data && this.data.id) {
       this.id = this.data.id
       this.getJobById();
     }
   }
-
+  cats = [];
+  colleges_deans = [];
+  agences = [];
   ngOnInit() {
-
+    this.leadershipService.lookups();
+    this.leadershipService.colleges_deans_list().subscribe(list => {
+      this.colleges_deans = list;
+    });
+    this.leadershipService.jobcats_list().subscribe(list => {
+      this.cats = list;
+    });
+    this.leadershipService.agences_list().subscribe(list => {
+      this.agences = list;
+    });
   }
 
   getJobById() {

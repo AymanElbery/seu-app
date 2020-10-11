@@ -18,9 +18,10 @@ import { AddAdsComponent } from "./diag/add-ads/add-ads.component";
   styleUrls: ['./ads.component.css'],
   templateUrl: './ads.component.html'
 })
-export class AdsComponent {
+export class AdsComponent implements OnDestroy{
 
   ads;
+  currentJobAds;
   isLoading = false;
   constructor(
     public userService: UserService,
@@ -34,17 +35,26 @@ export class AdsComponent {
     public dialog: MatDialog
   ) {
     this.getAllAds();
+    this.currentJobAds = this.leadershipService.currentJobAds;
   }
 
+  ngOnDestroy(){
+    this.leadershipService.currentJobAds = null;
+  }
   getAllAds() {
     this.isLoading = true;
     this.leadershipService.list_ads().subscribe(
       (response: any) => {
-        this.ads = response['data']['ads'];
+        let ads = response['data']['ads'];
+        this.ads = ads.filter(ad =>
+          (!this.leadershipService.currentJobAds ||
+            this.leadershipService.currentJobAds['JOB_PK'] == ad['JOB_ID'])
+        );
         this.isLoading = false;
       }
     )
   }
+
 
   delete(id) {
     if (confirm(this.translate.instant('general.delete_confirm'))) {
@@ -65,6 +75,7 @@ export class AdsComponent {
   }
 
   showAddForm(ad) {
+    ad = JSON.parse(JSON.stringify(ad));
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
@@ -81,5 +92,9 @@ export class AdsComponent {
   applications(ad) {
     this.leadershipService.currentAddApps = ad;
     this.router.navigate(["../applications"], { relativeTo: this.route })
+  }
+  recommendations(ad){
+    this.leadershipService.currentAddApps = ad;
+    this.router.navigate(["../adrecommendations"], { relativeTo: this.route })
   }
 }

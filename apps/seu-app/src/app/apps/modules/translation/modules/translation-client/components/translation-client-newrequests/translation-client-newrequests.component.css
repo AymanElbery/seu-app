@@ -1,0 +1,26 @@
+.row{
+    margin-top: 20px;
+}
+.sub:hover{
+    color: #FFF;
+}
+input#photo{
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+}
+button#fake-file{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+	right: 0px;
+	z-index: 1;
+}
+.file-name{
+    padding: 5px 30px;
+    background-color: cadetblue;
+    border-radius: 3px;
+    color: #FFF;
+}

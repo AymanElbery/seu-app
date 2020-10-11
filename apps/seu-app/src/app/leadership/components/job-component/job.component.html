@@ -25,7 +25,9 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">{{"leadership.job.title" | translate}}</th>
-              <th scope="col">{{"leadership.job.desc" | translate}}</th>
+              <th scope="col">{{"leadership.job.category" | translate}}</th>
+              <th scope="col">{{"leadership.job.college_dean" | translate}}</th>
+              <th scope="col">{{"leadership.job.agency" | translate}}</th>
               <th scope="col">{{"leadership.actions" | translate}}</th>
             </tr>
           </thead>
@@ -33,11 +35,15 @@
             <tr *ngFor="let job of jobs; let i = index;">
               <td>{{i+1}}</td>
               <td>{{job.JOB_TITLE}}</td>
-              <td>
+              <td>{{job.CAT_NAME}}</td>
+              <td>{{job.COLLEGE_DEAN}}</td>
+              <td>{{job.AGENCY}}</td>
+              <!-- <td>
                 <button (click)="showDetails(job.JOB_DESC)" class="btn btn-danger">{{"leadership.job.details" | translate}} <i class="fa fa-list"></i></button>
-              </td>
+              </td> -->
               <td>
-                <button (click)="update(job.JOB_PK)" class="btn btn-danger">{{"leadership.update" | translate}} <i class="fa fa-edit"></i></button>
+                <button (click)="update(job.JOB_PK)" class="btn btn-danger">{{"leadership.update" | translate}} <i class="fa fa-edit"></i></button>&nbsp;
+                <button (click)="ads(job)" class="btn btn-danger">{{"leadership.job.ads" | translate}} <i class="fa fa-eye"></i></button>&nbsp;
                 <button style="margin-right: 5px;" (click)="delete(job.JOB_PK)" class="btn btn-danger">{{"leadership.delete" | translate}} <i class="fa fa-trash"></i></button>
               </td>
             </tr>
