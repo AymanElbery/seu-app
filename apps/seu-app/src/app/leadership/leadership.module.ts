@@ -24,6 +24,10 @@ import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { LeadershipMyRecomendationssComponent } from './components/myrecommendations/myrecommendations.component';
 import { LeadershipRecomendationssComponent } from './components/recommendations/recommendations.component';
 import { LeadershipAdRecommendationsComponent } from './components/leadership-ad-recommendations/leadership-ad-recommendations.component';
+import { LeadershipAppViewComponent } from './components/leadership-app-view/leadership-app-view.component';
+import { LeadershipAppDetailsComponent } from './components/leadership-app-details/leadership-app-details.component';
+import { LeadershipAppAdminRateComponent } from './components/leadership-app-admin-rate/leadership-app-admin-rate.component';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +45,10 @@ import { LeadershipAdRecommendationsComponent } from './components/leadership-ad
     LeadershipApplicationRecommendComponent,
     LeadershipMyRecomendationssComponent,
     LeadershipRecomendationssComponent,
-    LeadershipAdRecommendationsComponent
+    LeadershipAdRecommendationsComponent,
+    LeadershipAppViewComponent,
+    LeadershipAppDetailsComponent,
+    LeadershipAppAdminRateComponent
   ],
   imports: [
     LeadershipRoutingModule,

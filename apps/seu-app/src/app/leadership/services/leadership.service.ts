@@ -188,7 +188,7 @@ export class LeadershipService {
     list_ads() {
         return this.get("ads/list");
     }
-
+    
     save_ads(data) {
         return this.post("ads/save", data);
     }
@@ -252,5 +252,21 @@ export class LeadershipService {
     }
     save_app_file(post) {
         return this.post("applications/save_file", post);
+    }
+
+    get_app_by_id(id) {
+        return this.get("applications/get_app_by_id/" + id);
+    }
+
+    get_app_files_by_app_id(id) {
+        return this.get("applications/get_app_files_by_app_id/" + id);
+    }
+
+    get_indicators(id) {
+        return this.get("applications/indicators/" + id);
+    }
+
+    save_indicators_rating(data) {
+        return this.post("applications/save_indicators" , data);
     }
 }

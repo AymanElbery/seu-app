@@ -389,7 +389,34 @@
             "export":"تصدير الي اكسيل",
             "TERMS":"الفصول الدراسية",
             "status":"حالة الطلب",
+            "app_details": "التفاصيل",
             "not_compeleted_notes":"الرجاء استكمال الطلب برفع الوثائق من خلال ايفونة تفاصيل الطلب"
+        },
+        "application-display":{
+            "title": "تفاصيل الترشيح",
+            "details": "الوثائق",
+            "admin_rate": "تقييم أمين سر اللجنة",
+            "emp_id": "الرقم الوظيفي",
+            "emp_name": "الإسم",
+            "emp_college": "الكلية",
+            "emp_section": "القسم",
+            "emp_branch": "الفرع",
+            "emp_degree": "الدرجة العلمية",
+            "emp_email": "البريد الإلكتروني",
+            "emp_mobile": "رقم الجوال",
+            "emp_terms":"الفصول الدراسية",
+            "ads_start_date": "تاريخ بداية الترشيح",
+            "ads_end_date": "تاريخ نهاية الترشيح",
+            "app_status": "الحالة",
+            "docs_details": "الوثائق المرفوعة :",
+            "app_not_comleted_yet": "لا يمكنك تقييم الطلب إلا بعد إنتهاء فترة الترشيح",
+            "rate_result": "نتيجة التقييم",
+            "send_rate": "حفظ التقييم",
+            "total_val": "التقييم النهائي",
+            "status":{
+                "completed": "تم رفع الوثائق",
+                "not_completed": "الطلب غير مكتمل"
+            }
         },
         "messages": {
             "invalid_session": "انتهت جلسة الدخول، الرجاء تسجيل الدخول مرة أخري",
