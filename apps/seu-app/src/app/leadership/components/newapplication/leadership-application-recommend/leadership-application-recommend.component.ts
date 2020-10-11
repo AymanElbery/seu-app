@@ -47,25 +47,29 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
       'NOTES': ['']
     });
   }
-
-  save() {
+  noemp = false;
+  save(key) {
     if (this.form.invalid) {
       return;
     }
 
     this.submitted = true;
     let data = this.form.value;
-    
-    this.leadershipService.get_instructor(data).subscribe((response => {
-      this.recommendedInstructor = response.data.instructor;
+    let post = {};
+    console.log(key,data);
+    post[key] = data[key];
+    this.leadershipService.get_instructor(post).subscribe((response => {
+      if(!response['status']){
+        //this.leadershipService.notifyError(response['res_code']);
+        this.showMessage = false;
+        this.noemp = true;
+      }else{
+        this.recommendedInstructor = response.data.instructor;
+        this.showResult = true;
+        this.noemp = false;
+      }
       this.isLoading = false;
       this.submitted = false;
-      if (this.recommendedInstructor != null) {
-        this.showResult = true;
-      }else{
-        this.showMessage = true;
-      }
-      
     }));
   }
 
@@ -79,9 +83,13 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
     data.EMPLOYEE_ID = this.recommendedInstructor['EMPLOYEE_ID'];
     data.AD_ID = this.ad['ADS_PK'];
     this.leadershipService.save_recommend(data).subscribe((response => {
+      if(!response['status']){
+        this.leadershipService.notifyError(response['res_code']);
+      }else{
+        this.router.navigate(['../../myrecomendations'], { relativeTo: this.route });
+      }
       this.isLoading = false;
       this.rec_submitted = false;
-      this.router.navigate(['../../myrecomendations'], { relativeTo: this.route });
     }));
   }
 
@@ -104,5 +112,6 @@ export class LeadershipApplicationRecommendComponent implements OnInit {
   changeVal() {
     this.showMessage = false;
     this.showResult = false;
+    this.noemp = false;
   }
 }

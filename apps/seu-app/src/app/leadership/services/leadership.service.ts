@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { environment } from '../../../environments/environment';
-import { of } from 'rxjs';
+import { of, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -43,6 +43,10 @@ export class LeadershipService {
 
     notifySucc(code) {
         this.toaster.push([{ type: "success", 'body': this.translate.instant("leadership.messages." + code) }]);
+    }
+
+    tryagain() {
+        this.toaster.tryagain();
     }
 
     getHeader() {
@@ -110,6 +114,60 @@ export class LeadershipService {
             }
         }));
     }
+    _lookups;
+    _lookups_observ = new Subject<any>();
+    lookups() {
+        if (this._lookups) {
+            return;
+        }
+        return this.get("lookups/list").subscribe(response => {
+            if (response['status']) {
+                this._lookups = response['data'];
+                console.log(this._lookups);
+                this._lookups_observ.next();
+            }
+        });
+    }
+
+    agences() {
+        return this._lookups['depts'].filter(item => item['DEPT_TYPE'] == 'AGENCY');
+    }
+    colleges_deans() {
+        return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'COLLEGE' || item['DEPT_TYPE'] == 'DEAN'));
+    }
+    job_cats() {
+        return this._lookups['lookups'].filter(item => (item['LOOKUP_CAT'] == 'JOB_CAT'));
+    }
+
+    jobcats_list() {
+        if (this._lookups) {
+            return of(this.job_cats());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.job_cats();
+            }));
+    }
+    colleges_deans_list() {
+        if (this._lookups) {
+            return of(this.colleges_deans());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.colleges_deans();
+            }));
+    }
+    agences_list() {
+        if (this._lookups) {
+            return of(this.agences());
+        }
+
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.agences();
+            }));
+    }
+
     list_jobs() {
         return this.get("job/list");
     }
@@ -134,8 +192,11 @@ export class LeadershipService {
     save_ads(data) {
         return this.post("ads/save", data);
     }
-    ads_apps(id) {
-        return this.get("ads/apps/" + id);
+    ads_apps(id, print = 0) {
+        return this.get("ads/apps/" + id + "/" + print);
+    }
+    ads_recommendations(id, print = 0) {
+        return this.get("recommendations/adrecommendation/" + id + "/" + print);
     }
 
     delete_ads(id) {
@@ -158,8 +219,12 @@ export class LeadershipService {
         return this.get("recommendations/myrecommendation");
     }
 
+    get_recommendations() {
+        return this.get("recommendations/recommendation");
+    }
+
     get_my_add_recommendations(id) {
-        return this.get("recommendations/myadrecommendation/" + id);
+        return this.get("recommendations/recommendation/" + id);
     }
 
     file(name) {
@@ -180,5 +245,12 @@ export class LeadershipService {
 
     application_create(data) {
         return this.post("applications/save", data);
+    }
+
+    load_app_files(app_id) {
+        return this.get("applications/files/" + app_id);
+    }
+    save_app_file(post) {
+        return this.post("applications/save_file", post);
     }
 }

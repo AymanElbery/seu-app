@@ -32,6 +32,12 @@ const routes: Routes = [
     loadChildren:
       './modules/skills/skills.module#SkillsModule',
     canLoad: [AuthGuard]
+  },
+  {
+    path: 'translation',
+    loadChildren:
+      './modules/translation/translation.module#TranslationModule',
+    canLoad: [AuthGuard]
   }
 ];
 

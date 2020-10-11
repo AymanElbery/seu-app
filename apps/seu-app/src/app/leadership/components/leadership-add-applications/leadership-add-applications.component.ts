@@ -45,8 +45,18 @@ export class LeadershipAddApplicationsComponent implements OnInit {
       this.isLoading = false;
     }));
   }
+  exportAsXLSX(){
+    this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK'],1).subscribe((response => {
+      const linkSource = `data:application/pdf;base64,${response['data']['apps']}`;
+      const downloadLink = document.createElement("a");
+      const fileName = "applications.xls";
+      downloadLink.href = linkSource;
+      downloadLink.download = fileName;
+      downloadLink.click();
+    }));
+  }
 
-  exportAsXLSX(): void {
+  exportAsXLSX_old(): void {
     let i = 1;
     const baseLink = environment.baselink + environment.servicesprefix + "/rest/download.php?folder=INT_JOB_APPLICATIONS&file=";
     const download = this.translate.instant("leadership.applications.download");

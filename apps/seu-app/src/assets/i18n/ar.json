@@ -255,7 +255,8 @@
         "attends": "نظام التحضير",
         "masterequalize": "معادلة مقررات الفصل التحضيري",
         "leadership": "الوظائف القيادية",
-        "skills": "السجل المهاري والتدريب"
+        "skills": "السجل المهاري والتدريب",
+        "translation":"مركز الترجمة"
     },
     "errors": {
         "invalidStdID": "لم نستطيع الحصول علي بيانات الرقم الرجامعي",
@@ -302,20 +303,24 @@
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
         "update": "تعديل",
-        "newapplications": "طلب ترشيح",
+        "newapplications": "طلب ترشيح / تزكية",
         "myapplications": "طلباتي السابقة",
         "myrecomendations": "تزكياتي",
+        "recomendations": "التزكيات",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "بيانات الوظيفة",
             "title": "اسم الوظيفة",
-            "desc": "وصف الوظيفة",
+            "desc": "التفاصيل",
             "details": "التفاصيل",
             "success_added": "تمت إضافة الوظيفة بنجاح",
             "success_updated": "تم تعديل الوظيفة بنجاح",
             "success_deleted": "تم حذف الوظيفة بنجاح",
             "error_added": "خطأ في إدخال الوظيفة",
-            "ads":"الإعلانات"
+            "ads":"الإعلانات",
+            "category":"تصنيف",
+            "college_dean":"العمادة أو الكلية",
+            "agency":"الوكالة التي تتبع لها"
         },
         "ad": {
             "add_ads": "إضافة إعلان",
@@ -346,10 +351,12 @@
         },
         "recommendations": {
             "rec_date": "تاريخ التزكية",
-            "recommendations": "التزكيات"
+            "recommendations": "التزكيات",
+            "recommended":"بيانات المزكى",
+            "recommended_by":"بيانات المزكي"
         },
         "applications": {
-            "newapp": "طلب ترشيح جديد",
+            "newapp": "طلب ترشيح / تزكية جديد",
             "addslist": "قائمة الوظائف المتاحة",
             "apply": "ترشيح",
             "recommend": "تزكية",
@@ -379,7 +386,10 @@
             "details": "تفاصيل الطلب",
             "download": " تحميل ",
             "back": "العودة الي القائمة",
-            "export":"تصدير الي اكسيل"
+            "export":"تصدير الي اكسيل",
+            "TERMS":"الفصول الدراسية",
+            "status":"حالة الطلب",
+            "not_compeleted_notes":"الرجاء استكمال الطلب برفع الوثائق من خلال ايفونة تفاصيل الطلب"
         },
         "messages": {
             "invalid_session": "انتهت جلسة الدخول، الرجاء تسجيل الدخول مرة أخري",
@@ -392,7 +402,10 @@
             "job_has_been_saved": "تم حفظ الوظيفة بنجاح",
             "job_has_been_deleted": "تم حذف الوظيفة بنجاح",
             "user_has_been_updated": "تم حفظ المستخدم بنجاح",
-            "user_has_been_added": "تم تحديث بيانات المستخدم بنجاح"
+            "user_has_been_added": "تم تحديث بيانات المستخدم بنجاح",
+            "cant_recommend_yourself":"لا يستطيع عضو هيئة التدريس بتزكيه نفسه",
+            "recommended_before":"تم تزكية عضو هيئة التدريس سابقا",
+            "cant_save_recommendation":"لم يتم حفظ التزكية، الرجاء المحاولة مرة أخرى"
         }
     },
     "resume": {

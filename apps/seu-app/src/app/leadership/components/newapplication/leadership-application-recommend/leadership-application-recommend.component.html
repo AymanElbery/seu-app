@@ -23,6 +23,16 @@
             </div>
           </div>
         </div>
+        <div class="col-md-2" style="text-align: center;">
+          <button style="width: 100%;margin-top: 30px;" [disabled]="submitted || form.invalid" (click)="save('EMPLOYEE_ID')"
+            type="submit" class="btn btn-primary">
+            <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
+            {{ "leadership.applications.search" | translate}} 
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-5">
           <div class="state">
             <h6>{{"leadership.applications.EMAIL"|translate}}</h6>
@@ -35,7 +45,7 @@
           </div>
         </div>
         <div class="col-md-2" style="text-align: center;">
-          <button style="width: 100%;margin-top: 30px;" [disabled]="submitted || form.invalid" (click)="save()"
+          <button style="width: 100%;margin-top: 30px;" [disabled]="submitted || form.invalid" (click)="save('EMAIL')"
             type="submit" class="btn btn-primary">
             <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
             {{ "leadership.applications.search" | translate}} 
@@ -43,8 +53,12 @@
           </button>
         </div>
       </div>
+      <div class="row">
+
+
+      </div>
     </form>
-    <div *ngIf="showMessage" class="row">
+    <div *ngIf="noemp" class="row">
       <div class="col-md-12">
         <div class="alert alert-danger">
           {{ "leadership.applications.not_found" | translate}}
@@ -97,12 +111,12 @@
             <td scope="col">{{recommendedInstructor.WORK_EMAIL}}</td>
           </tr>
         </table>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-12" style="text-align: center;">
             <label for="notes">{{"leadership.applications.notes"|translate}}</label>
             <textarea class="form-control" formControlName="NOTES" id="notes" rows="5"></textarea>
           </div>
-        </div>
+        </div> -->
         <div class="row">
           <div class="col-md-12" style="text-align: center;">
             <button style="width: 10%; margin-top: 30px;" [disabled]="rec_submitted || recommendForm.invalid" (click)="save_rec()"

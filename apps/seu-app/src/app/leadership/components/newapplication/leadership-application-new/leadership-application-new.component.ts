@@ -34,10 +34,10 @@ export class LeadershipApplicationNewComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      'PHONE': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
-      'PLAN': ['', [Validators.required]],
-      'CV': ['', [Validators.required]],
-      'REASON': ['', [Validators.required]]
+      'PHONE': [this.instructor['PHONE_NO'], [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      // 'PLAN': ['', [Validators.required]],
+      // 'CV': ['', [Validators.required]],
+      // 'REASON': ['', [Validators.required]]
     });
   }
 

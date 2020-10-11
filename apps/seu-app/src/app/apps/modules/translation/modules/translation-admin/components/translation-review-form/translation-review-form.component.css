@@ -1,0 +1,20 @@
+input#photo{
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    cursor: pointer;
+    width: 100%;
+}
+button#fake-file{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+	right: 0px;
+	z-index: 1;
+}
+.file-name{
+    padding: 5px 30px;
+    background-color: cadetblue;
+    border-radius: 3px;
+    color: #FFF;
+}

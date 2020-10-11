@@ -32,7 +32,8 @@ export class AddAnswerComponent {
     private enquriesService: EnquriesService, 
     public userService: UserService,
     public dialogRef: MatDialogRef<AddAnswerComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    ) {
         this.email = this.userService.userData.email;
         this.id = data.id;
         this.answerForm = this.fb.group(

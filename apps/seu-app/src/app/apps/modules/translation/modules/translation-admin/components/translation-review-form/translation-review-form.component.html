@@ -1,0 +1,28 @@
+<form [formGroup]="addReviewForm" (ngSubmit)="onSubmit()">
+  <div class="row" style="padding: 20px;">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>{{"my_requests_page.translate_status" | translate}}</label>
+        <select (change)="onChange($event.target.value)" class="form-control" formControlName="STATUS">
+          <option value="completed">{{"my_requests_page.accept" | translate}}</option>
+          <option value="processing">{{"my_requests_page.reject" | translate}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showNote" class="row" style="padding: 20px;">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label>{{"my_requests_page.reviewing_note_reject" | translate}}</label>
+        <textarea formControlName="REVIEWING_NOTE" class="form-control" rows="5"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding: 20px; ">
+    <div class="col-md-12">
+      <div class="form-group" >
+        <button [disabled]="submitted || addReviewForm.invalid" style="width: 100%;; margin-bottom: 40px;" type="submit" class="btn sub">{{ "new_request_page.save" | translate}}  <i class="fa fa-save"></i></button>
+      </div>
+    </div>
+  </div>
+</form>
