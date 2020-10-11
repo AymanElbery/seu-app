@@ -307,6 +307,7 @@
         "myapplications": "طلباتي السابقة",
         "myrecomendations": "تزكياتي",
         "recomendations": "التزكيات",
+        "interviewers_committee": "لجنة المقابلات",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "بيانات الوظيفة",
@@ -406,7 +407,12 @@
             "cant_recommend_yourself":"لا يستطيع عضو هيئة التدريس بتزكيه نفسه",
             "recommended_before":"تم تزكية عضو هيئة التدريس سابقا",
             "cant_save_recommendation":"لم يتم حفظ التزكية، الرجاء المحاولة مرة أخرى"
-        }
+        },
+      "interviewers": {
+        "title": "تعيين لجنة المقابلات",
+        "start_date": "تاريخ بدء المقابلات",
+        "end_date": "تاريخ انتهاء المقابلات"
+      }
     },
     "resume": {
         "title": " السيرة الذاتية باللغة العربية",

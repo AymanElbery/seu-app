@@ -1,28 +1,29 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy, ɵConsole } from '@angular/core';
-import { UserService } from '../../../account/services/user.service';
-import { LeadershipService } from '../../services/leadership.service';
+import {Component, OnInit, ViewEncapsulation, OnDestroy, ɵConsole} from '@angular/core';
+import {UserService} from '../../../account/services/user.service';
+import {LeadershipService} from '../../services/leadership.service';
 
-import { HttpRequestService } from '../../../shared/services/http-request.service';
-import { environment } from '../../../../environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
-import { AppToasterService } from '../../../shared/services/app-toaster';
-import { TranslateService } from '@ngx-translate/core';
-import { MatDialogRef, MatDialogConfig, MatDialog } from '@angular/material';
-import { FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective, NgForm } from '@angular/forms';
-import { ErrorStateMatcher } from "@angular/material/core";
-import { AddAdsComponent } from "./diag/add-ads/add-ads.component";
+import {HttpRequestService} from '../../../shared/services/http-request.service';
+import {environment} from '../../../../environments/environment';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Router, ActivatedRoute, NavigationExtras} from '@angular/router';
+import {AppToasterService} from '../../../shared/services/app-toaster';
+import {TranslateService} from '@ngx-translate/core';
+import {MatDialogRef, MatDialogConfig, MatDialog} from '@angular/material';
+import {FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective, NgForm} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
+import {AddAdsComponent} from './diag/add-ads/add-ads.component';
 
 @Component({
   selector: 'app-ads',
   styleUrls: ['./ads.component.css'],
   templateUrl: './ads.component.html'
 })
-export class AdsComponent implements OnDestroy{
+export class AdsComponent implements OnDestroy {
 
   ads;
   currentJobAds;
   isLoading = false;
+
   constructor(
     public userService: UserService,
     private leadershipService: LeadershipService,
@@ -38,9 +39,10 @@ export class AdsComponent implements OnDestroy{
     this.currentJobAds = this.leadershipService.currentJobAds;
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.leadershipService.currentJobAds = null;
   }
+
   getAllAds() {
     this.isLoading = true;
     this.leadershipService.list_ads().subscribe(
@@ -52,7 +54,7 @@ export class AdsComponent implements OnDestroy{
         );
         this.isLoading = false;
       }
-    )
+    );
   }
 
 
@@ -80,21 +82,28 @@ export class AdsComponent implements OnDestroy{
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '60%';
-    dialogConfig.data = { ad };
+    dialogConfig.data = {ad};
 
     let dialogref = this.dialog.open(AddAdsComponent, dialogConfig);
     dialogref.afterClosed().subscribe(refresh => {
-      if (refresh)
+      if (refresh) {
         this.getAllAds();
+      }
     });
   }
 
   applications(ad) {
     this.leadershipService.currentAddApps = ad;
-    this.router.navigate(["../applications"], { relativeTo: this.route })
+    this.router.navigate(['../applications'], {relativeTo: this.route});
   }
-  recommendations(ad){
+
+  recommendations(ad) {
     this.leadershipService.currentAddApps = ad;
-    this.router.navigate(["../adrecommendations"], { relativeTo: this.route })
+    this.router.navigate(['../adrecommendations'], {relativeTo: this.route});
+  }
+
+  interviewers(ad) {
+    this.leadershipService.currentAddApps = ad;
+    this.router.navigate(['../interviewers'], {relativeTo: this.route});
   }
 }
