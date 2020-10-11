@@ -90,7 +90,7 @@ export class LeadershipMyapplicationViewComponent implements OnInit {
     }
     const reader = new FileReader();
     reader.onload = (er) => {
-      this.saveFile(settings, er.target['result'],e);
+      this.saveFile(settings, er['target']['result'],e);
     }
     reader.readAsDataURL(file);
   }
