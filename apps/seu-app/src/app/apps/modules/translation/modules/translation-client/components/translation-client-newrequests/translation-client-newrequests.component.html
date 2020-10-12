@@ -14,22 +14,19 @@
       <div class="col-md-4">
         <div class="form-group">
           <label>{{ "new_request_page.client_username" | translate}}</label>
-          <input *ngIf="clientName" disabled formControlName="CLIENT_NAME" [value]="clientName" class="form-control" type="text">
-          <input *ngIf="!clientName" formControlName="CLIENT_NAME" class="form-control" type="text">
+          <input formControlName="CLIENT_NAME"  class="form-control" type="text">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>{{ "new_request_page.client_work" | translate}}</label>
-          <input *ngIf="clientWork" disabled formControlName="CLIENT_WORK" [value]="clientWork" class="form-control" type="text">
-          <input *ngIf="!clientWork" formControlName="CLIENT_WORK" class="form-control" type="text">
+          <input formControlName="CLIENT_WORK" class="form-control" type="text">
         </div>
       </div>
       <div class="col-md-4">
         <div class="form-group">
           <label>{{ "new_request_page.client_email" | translate}}</label>
-          <input *ngIf="workEmail" disabled formControlName="CLIENT_EMAIL" [value]="workEmail" class="form-control" type="text">
-          <input *ngIf="!workEmail" formControlName="CLIENT_EMAIL" class="form-control" type="text">
+          <input  formControlName="CLIENT_EMAIL" class="form-control" type="text">
         </div>
       </div>
     </div>

@@ -33,6 +33,7 @@ export class TranslationProcessiongRequestsComponent implements OnInit {
     this.isLoading = true;
     this.requestsService.getProcessiongRequests().subscribe((response) => {
       this.requestsList = response['data'];
+      this.requestsList = this.requestsService.addFileURL(this.requestsList);
       this.isLoading = false;
     }, err => {
       this.requestsService.tryagain();

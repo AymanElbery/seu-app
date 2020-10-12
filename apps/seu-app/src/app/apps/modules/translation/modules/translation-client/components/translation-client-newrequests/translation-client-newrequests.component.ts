@@ -18,10 +18,10 @@ export class TranslationClientNewrequestsComponent implements OnInit {
   submitted = false;
   support_email;
   addRequestForm : FormGroup;
-  clientId;
-  clientName;
-  workEmail;
-  clientWork;
+  // clientId;
+  // clientName;
+  // workEmail;
+  // clientWork;
   showOtherFileType = false;
   showClientWorkPlace= false;
   fileName;
@@ -38,17 +38,14 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     private newrequestsService: ClientNewrequestsService,
     private translate: TranslateService
   ) {
-    this.clientId = this.userService.user['USER_ID'];
-    this.clientName = this.userService.user['NAME'];
-    this.clientWork = this.userService.user['CLIENT_WORK'];
-    this.workEmail = this.userService.user['WORK_EMAIL'];
     this.support_email = client_config.support_email;
 
+    const user = this.userService.user;
     this.addRequestForm = this.fb.group({
-      CLIENT_ID: [""],
-      CLIENT_NAME: [""],
-      CLIENT_WORK: [""],
-      CLIENT_EMAIL: [""],
+      CLIENT_ID: [user['USER_ID']],
+      CLIENT_NAME: [user['NAME']],
+      CLIENT_WORK: [user['CLIENT_WORK']],
+      CLIENT_EMAIL: [user['WORK_EMAIL']],
       TRANSLATE_FROM: ["", [Validators.required]],
       FILE_SECRET: ["", [Validators.required]],
       FILE_TYPE: ["", [Validators.required]],
@@ -114,10 +111,10 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     let data = this.addRequestForm.value;
     data['FILE_PATH'] = this.FILE_PATH;
     data['FILE_EXT'] = this.ext;
-    data['CLIENT_ID'] = this.clientId;
-    data['CLIENT_NAME'] = this.clientName;
-    data['CLIENT_WORK'] = this.clientWork;
-    data['CLIENT_WORK'] = this.clientWork;
+    // data['CLIENT_ID'] = this.clientId;
+    // data['CLIENT_NAME'] = this.clientName;
+    // data['CLIENT_WORK'] = this.clientWork;
+    // data['CLIENT_WORK'] = this.clientWork;
     data['CLIENT_WORK_PLACE'] = 'internal';
     if (data['TRANSLATE_FROM'] == "ar-en") {
       data['TRANSLATE_FROM'] = "ar";

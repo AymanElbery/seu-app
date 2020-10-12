@@ -20,7 +20,8 @@
                 <th scope="col">{{"my_requests_page.translate_to" | translate}}</th>
                 <th scope="col">{{"my_requests_page.est_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.status" | translate}}</th>
-                <th scopr="col">{{"general.file" | translate}}</th>
+                <th scopr="col">{{"my_requests_page.req_file" | translate}}</th>
+                <th scope="col">{{"my_requests_page.trans_file" | translate}}</th>
                 <th scopr="col"></th>
               </tr>
             </thead>
@@ -48,6 +49,9 @@
                 </td>
                 <td>
                   <a target="_blanck" [href]="req.downloadURL" style="margin-right: 5px;" class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
+                </td>
+                <td>
+                  <a *ngIf="req.downloadTransURL" target="_blanck" [href]="req.downloadTransURL" style="margin-right: 5px;" class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
                 </td>
                 <td>
                   <button *ngIf="req.STATUS != 'reviewing'" (click)="openDialog(req)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
