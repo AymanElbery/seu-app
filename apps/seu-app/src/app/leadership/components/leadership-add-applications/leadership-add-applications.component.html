@@ -9,12 +9,10 @@
         {{currentad['JOB_TITLE']}}
         <button type="button" class="btn btn-primary" (click)="exportAsXLSX()">
           {{"leadership.applications.export"|translate}}
-        </button>
-        &nbsp; 
-        <button type="button" class="btn btn-primary" (click)="back()">
+        </button>  
+        <button style="margin-left: 10px;" type="button" class="btn btn-primary" (click)="back()">
           {{"leadership.applications.back"|translate}}
         </button>
-
       </h3>
 
     </div>
@@ -28,10 +26,11 @@
             <th scope="col">{{"leadership.applications.FULL_NAME"|translate}}</th>
             <th scope="col">{{"leadership.applications.COLLEGE"|translate}}</th>
             <th scope="col">{{"leadership.applications.DEPT"|translate}}</th>
-            <th scope="col">{{"leadership.applications.SCALE"|translate}}</th>
-            <th scope="col">{{"leadership.applications.PHONE"|translate}}</th>
+            <!-- <th scope="col">{{"leadership.applications.SCALE"|translate}}</th> -->
+            <!-- <th scope="col">{{"leadership.applications.PHONE"|translate}}</th>
             <th scope="col">{{"leadership.applications.TERMS"|translate}}</th>
-            <th scope="col">{{"leadership.applications.submit_date"|translate}}</th>
+            <th scope="col">{{"leadership.applications.submit_date"|translate}}</th> -->
+            <th scope="col">{{"leadership.applications.app_details"|translate}}</th> 
             <!-- <th scope="col">{{"leadership.applications.CV"|translate}}</th>
             <th scope="col">{{"leadership.applications.PLAN"|translate}}</th>
             <th scope="col">{{"leadership.applications.REASON"|translate}}</th> -->
@@ -45,10 +44,13 @@
             <td>{{app.FULL_NAME}}</td>
             <td>{{app.COLLEGE}}</td>
             <td>{{app.DEPT}}</td>
-            <td>{{app.SCALE}}</td>
+            <!-- <td>{{app.SCALE}}</td>
             <td>{{app.PHONE}}</td>
-            <td>{{app.TERMS}}</td>
-            <td>{{app.INSERT_DATE}}</td>
+            <td>{{app.TERMS}}</td> -->
+            <!-- <td>{{app.INSERT_DATE | date : 'yyyy-MM-dd'}}</td> -->
+            <td>
+              <button (click)="details(app.APP_ID)" class="btn btn-primary">{{"leadership.applications.app_details"|translate}} <i class="fa fa-list"></i></button>
+            </td>
             <!-- <td scope="col">
               <a target="_blank" href="#" (click)="download(app['CV'],app.EMPLOYEE_ID+'_CV')" style="margin-right: 5px;"
                 class="btn btn-danger">
