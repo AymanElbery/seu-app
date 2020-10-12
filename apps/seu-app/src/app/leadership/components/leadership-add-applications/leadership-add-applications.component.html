@@ -7,11 +7,15 @@
     <div class="widget-header">
       <h3 class="widget-title">
         {{currentad['JOB_TITLE']}}
-        <button type="button" class="btn btn-primary" (click)="exportAsXLSX()">
+        <button *ngIf="adminApps" type="button" class="btn btn-primary" (click)="exportAsXLSX()">
           {{"leadership.applications.export"|translate}}
         </button>  
-        <button style="margin-left: 10px;" type="button" class="btn btn-primary" (click)="back()">
+        <button *ngIf="adminApps" style="margin-left: 10px;" type="button" class="btn btn-primary" (click)="backAdmin()">
           {{"leadership.applications.back"|translate}}
+        </button>
+
+        <button *ngIf="interviewApps" style="margin-left: 10px;" type="button" class="btn btn-primary" (click)="backInterview()">
+          {{"leadership.applications.back"|translate}} <i class="fa fa-arrow-circle-left"></i>
         </button>
       </h3>
 

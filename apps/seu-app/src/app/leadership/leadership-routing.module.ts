@@ -16,6 +16,8 @@ import {AdsInterviewersComponent} from './components/ads-interviewers/ads-interv
 import { LeadershipAppViewComponent } from './components/leadership-app-view/leadership-app-view.component';
 import { LeadershipAppDetailsComponent } from './components/leadership-app-details/leadership-app-details.component';
 import { LeadershipAppAdminRateComponent } from './components/leadership-app-admin-rate/leadership-app-admin-rate.component';
+import { LeadershipAppInterviewRateComponent } from './components/leadership-app-interview-rate/leadership-app-interview-rate.component';
+import { LeadershipPersonalInterviewsComponent } from './components/leadership-personal-interviews/leadership-personal-interviews.component';
 
 const routes: Routes = [
   {
@@ -34,6 +36,10 @@ const routes: Routes = [
     component: LeadershipAddApplicationsComponent
   },
   {
+    path: 'interview-applications',
+    component: LeadershipAddApplicationsComponent
+  },
+  {
     path: 'application-display', component: LeadershipAppViewComponent,
     children: [
         {
@@ -41,6 +47,23 @@ const routes: Routes = [
         },
         {
           path: 'admin-rate/:id', component: LeadershipAppAdminRateComponent
+        },
+        {
+          path: 'interview-rate/:id', component: LeadershipAppInterviewRateComponent
+        },
+    ]
+  },
+  {
+    path: 'interview-application-display', component: LeadershipAppViewComponent,
+    children: [
+        {
+          path: 'details/:id', component: LeadershipAppDetailsComponent
+        },
+        {
+          path: 'admin-rate/:id', component: LeadershipAppAdminRateComponent
+        },
+        {
+          path: 'interview-rate/:id', component: LeadershipAppInterviewRateComponent
         },
     ]
   },
@@ -64,6 +87,10 @@ const routes: Routes = [
   {
     path: 'myapplications',
     component: LeadershipMyapplicationsComponent
+  },
+  {
+    path: 'personal-interviews',
+    component: LeadershipPersonalInterviewsComponent
   },
   {
     path: 'myrecomendations',

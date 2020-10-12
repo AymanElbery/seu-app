@@ -22,16 +22,20 @@
                         <th scope="col">{{ currentApp.COLLEGE }}</th>
                         <th class="back-dark" scope="col">{{"leadership.application-display.emp_section"|translate}}</th>
                         <th scope="col">{{ currentApp.DEPT }}</th>
-                        <th class="back-dark" scope="col">{{"leadership.application-display.ads_start_date"|translate}}</th>
-                        <th scope="col">{{ currentApp.ADS_START_DATE | date : 'yyyy-MM-dd' }}</th>
+                        <th *ngIf="currentParent == 'application-display'" class="back-dark" scope="col">{{"leadership.application-display.ads_start_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'interview-application-display'" class="back-dark" scope="col">{{"leadership.personal_interview_page.start_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'application-display'" scope="col">{{ currentApp.ADS_START_DATE | date : 'yyyy-MM-dd' }}</th>
+                        <th *ngIf="currentParent == 'interview-application-display'" scope="col">{{ currentApp.INTV_START_DATE | date : 'yyyy-MM-dd' }}</th>
                     </tr>
                     <tr>
                         <th class="back-dark" scope="col">{{"leadership.application-display.emp_branch"|translate}}</th>
                         <th scope="col">{{ currentApp.BRANCH }}</th>
                         <th class="back-dark" scope="col">{{"leadership.application-display.emp_degree"|translate}}</th>
                         <th scope="col">{{ currentApp.SCALE }}</th>
-                        <th class="back-dark" scope="col">{{"leadership.application-display.ads_end_date"|translate}}</th>
-                        <th scope="col"> {{ currentApp.ADS_END_DATE | date : 'yyyy-MM-dd' }} </th>
+                        <th *ngIf="currentParent == 'application-display'" class="back-dark" scope="col">{{"leadership.application-display.ads_end_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'interview-application-display'" class="back-dark" scope="col">{{"leadership.personal_interview_page.end_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'application-display'" scope="col"> {{ currentApp.ADS_END_DATE | date : 'yyyy-MM-dd' }} </th>
+                        <th *ngIf="currentParent == 'interview-application-display'" scope="col">{{ currentApp.INTV_END_DATE | date : 'yyyy-MM-dd' }}</th>
                     </tr>
                     <tr>
                         <th class="back-dark" scope="col">{{"leadership.application-display.emp_email"|translate}}</th>
@@ -53,9 +57,13 @@
                 <a class="nav-link " (click)="redirectTo('details')" [class.active]="current=='details'"
                 href="#">{{"leadership.application-display.details" | translate}}</a>
             </li>
-            <li *ngIf="currentApp.APP_STATUS == 'COMPLETED'"  class="nav-item">
+            <li *ngIf="currentApp.APP_STATUS != 'NOT_COMPLETED'"  class="nav-item">
                 <a class="nav-link " (click)="redirectTo('admin-rate')" [class.active]="current=='admin-rate'"
                 href="#">{{"leadership.application-display.admin_rate" | translate}}</a>
+            </li>
+            <li *ngIf="currentApp.APP_STATUS == 'INTERVIEW'"  class="nav-item">
+                <a class="nav-link " (click)="redirectTo('interview-rate')" [class.active]="current=='interview-rate'"
+                href="#">{{"leadership.personal_interview_page.interview_rate" | translate}}</a>
             </li>
         </ul>
         <div class="tab-content">

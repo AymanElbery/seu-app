@@ -17,6 +17,10 @@ export class LeadershipAddApplicationsComponent implements OnInit {
   isLoading = false;
   appsList = [];
   currentad;
+  current;
+  adminApps = false;
+  interviewApps = false;
+
   constructor(
     private leadershipService: LeadershipService,
     private router: Router,
@@ -25,13 +29,23 @@ export class LeadershipAddApplicationsComponent implements OnInit {
     private translate: TranslateService,
     private datePipe: DatePipe
   ) {
-    if (!this.leadershipService.currentAddApps) {
-      this.back();
-    }
+    this.current = this.route.snapshot['url'][0]['path'];
     this.currentad = this.leadershipService.currentAddApps;
+    if (this.current == 'applications') {
+      if (!this.leadershipService.currentAddApps) {
+        this.backAdmin();
+      }
+      this.adminApps = true;
+    } else if(this.current == 'interview-applications') {
+      this.interviewApps = true;
+    }
   }
-  back() {
+  backAdmin() {
     this.router.navigate(['../ads'], { relativeTo: this.route });
+  }
+
+  backInterview() {
+    this.router.navigate(['../personal-interviews'], { relativeTo: this.route });
   }
 
   ngOnInit() {
@@ -40,13 +54,20 @@ export class LeadershipAddApplicationsComponent implements OnInit {
 
   loadapps() {
     this.isLoading = true;
-    this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK']).subscribe((response => {
-      this.appsList = response['data']['apps'];
-      this.isLoading = false;
-    }));
+    if (this.current == 'applications') {
+      this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK']).subscribe((response => {
+        this.appsList = response['data']['apps'];
+        this.isLoading = false;
+      }));
+    }else if(this.current == 'interview-applications'){
+      this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK'], 'interview').subscribe((response => {
+        this.appsList = response['data']['apps'];
+        this.isLoading = false;
+      }));
+    }
   }
   exportAsXLSX(){
-    this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK'],1).subscribe((response => {
+    this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK'], 'admin', 1).subscribe((response => {
       const linkSource = `data:application/pdf;base64,${response['data']['apps']}`;
       const downloadLink = document.createElement("a");
       const fileName = "applications.xls";
@@ -94,13 +115,12 @@ export class LeadershipAddApplicationsComponent implements OnInit {
     return false;
   }
 
-  // details(app) {
-  //   this.leadershipService.currentApp = app;
-  //   this.router.navigate(['../application-details'], { relativeTo: this.route });
-  // }
-
   details(id) {
     this.isLoading = true;
-    this.router.navigate(['../application-display/details/' + id], { relativeTo: this.route })
+    if (this.current == 'applications') {
+      this.router.navigate(['../application-display/details/' + id], { relativeTo: this.route })
+    }else if(this.current == 'interview-applications'){
+      this.router.navigate(['../interview-application-display/details/' + id], { relativeTo: this.route })
+    }
   }
 }
