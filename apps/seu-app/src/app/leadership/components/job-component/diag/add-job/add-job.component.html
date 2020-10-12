@@ -40,7 +40,7 @@
           <div class="col-md-6">
             <div class="state">
               <h6>{{"leadership.job.college_dean"|translate}} <span class="reqstart">*</span></h6>
-              <ng-select [items]="colleges_deans" bindLabel="DEPT_NAME" bindValue="DEPT_CODE"
+              <ng-select #SelectJobCode [items]="job_depts_list" bindLabel="DEPT_NAME" bindValue="DEPT_CODE"
                 formControlName="JOB_DEPT_CODE">
               </ng-select>
             </div>

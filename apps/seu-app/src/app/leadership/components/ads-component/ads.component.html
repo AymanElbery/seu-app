@@ -34,8 +34,8 @@
           <tr *ngFor="let ad of ads; let i = index;">
             <td>{{i+1}}</td>
             <td>{{ad.JOB_TITLE}}</td>
-            <td>{{ad.ADS_START_DATE | date :'dd/MM/yyyy'}}</td>
-            <td>{{ad.ADS_END_DATE | date :'dd/MM/yyyy'}}</td>
+            <td>{{ad.ADS_START_DATE }}</td>
+            <td>{{ad.ADS_END_DATE}}</td>
             <td>{{(ad.ADS_IS_ACTIVE ? 'leadership.ad.active_1' : 'leadership.ad.active_0')  |translate}}</td>
             <td>
               <button (click)="showAddForm(ad)" class="btn btn-primary">{{"leadership.update" | translate}}</button>

@@ -135,6 +135,9 @@ export class LeadershipService {
     colleges_deans() {
         return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'COLLEGE' || item['DEPT_TYPE'] == 'DEAN'));
     }
+    depts(){
+        return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'DEPT'));
+    }
     job_cats() {
         return this._lookups['lookups'].filter(item => (item['LOOKUP_CAT'] == 'JOB_CAT'));
     }
@@ -157,6 +160,16 @@ export class LeadershipService {
                 return this.colleges_deans();
             }));
     }
+    depts_list() {
+        if (this._lookups) {
+            return of(this.depts());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.depts();
+            }));
+    }
+    
     agences_list() {
         if (this._lookups) {
             return of(this.agences());
