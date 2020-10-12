@@ -81,11 +81,12 @@ export class RequestsComponent {
     this.cardService.printRequest(id).subscribe(
       (response: any) => {
         if (response) {
-          this.cardService.downloadPDF(response);
+          this.cardService.downloadImage(response);
           this.isLoading = false;
         }
       },
       error => {
+        this.isLoading = false;
       }
     )
   }

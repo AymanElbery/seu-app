@@ -81,11 +81,11 @@ export class CardService {
         return this.get("card/print_request/" + id);
     }
 
-    downloadPDF(response) {
+    downloadImage(response) {
         if (response['status']) {
-            const linkSource = `data:application/pdf;base64,${response['data']['content']}`;
+            const linkSource = `data:image/png;base64,${response['data']['content']}`;
             const downloadLink = document.createElement("a");
-            const fileName = "Card.pdf";
+            const fileName = "Card.png";
 
             downloadLink.href = linkSource;
             downloadLink.download = fileName;
@@ -94,4 +94,5 @@ export class CardService {
             this.notifyError(response['res_code']);
         }
     }
+
 }
