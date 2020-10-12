@@ -97,6 +97,8 @@ export class LeadershipService {
           show_menu: false,
           menu_user: false,
           menu_admin: false,
+          menu_interviewer: false,
+          menu_agency: false,
           menu_instructor: false,
         };
         if (response['data']['instructor']) {
@@ -107,6 +109,8 @@ export class LeadershipService {
           setting.show_menu = true;
           setting.menu_user = true;
           setting.menu_admin = (response['data']['user']['IS_ADMIN']) ? true : false;
+          setting.menu_interviewer = (response['data']['user']['IS_INTERVIEWER']) ? true : false;
+          setting.menu_agency = (response['data']['user']['IS_AGENCY']) ? true : false;
         }
         this._settings = setting;
         return setting;
@@ -140,6 +144,10 @@ export class LeadershipService {
     return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'COLLEGE' || item['DEPT_TYPE'] == 'DEAN'));
   }
 
+  depts() {
+    return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'DEPT'));
+  }
+
   job_cats() {
     return this._lookups['lookups'].filter(item => (item['LOOKUP_CAT'] == 'JOB_CAT'));
   }
@@ -161,6 +169,16 @@ export class LeadershipService {
     return this._lookups_observ.pipe(
       map(() => {
         return this.colleges_deans();
+      }));
+  }
+
+  depts_list() {
+    if (this._lookups) {
+      return of(this.depts());
+    }
+    return this._lookups_observ.pipe(
+      map(() => {
+        return this.depts();
       }));
   }
 
@@ -200,8 +218,8 @@ export class LeadershipService {
     return this.post('ads/save', data);
   }
 
-  ads_apps(id, print = 0) {
-    return this.get('ads/apps/' + id + '/' + print);
+  ads_apps(id, type = 'admin', print = 0) {
+    return this.get('ads/apps/' + id + '/' + type + '/' + print);
   }
 
   ads_recommendations(id, print = 0) {
@@ -272,23 +290,21 @@ export class LeadershipService {
     return this.post('ads/save_interviewers', data);
   }
 
-    get_app_by_id(id) {
-        return this.get("applications/get_app_by_id/" + id);
-    }
+  get_app_by_id(id) {
+    return this.get('applications/get_app_by_id/' + id);
+  }
 
-    get_app_files_by_app_id(id) {
-        return this.get("applications/get_app_files_by_app_id/" + id);
-    }
+  get_app_files_by_app_id(id) {
+    return this.get('applications/get_app_files_by_app_id/' + id);
+  }
 
-    get_indicators(id) {
-        return this.get("applications/indicators/" + id);
-    }
+  get_indicators(id, type) {
+    return this.get('applications/indicators/' + id + '/' + type);
+  }
 
-    save_indicators_rating(data) {
-        return this.post("applications/save_indicators" , data);
-    }
-
-
+  save_indicators_rating(data) {
+    return this.post('applications/save_indicators', data);
+  }
 
   get_agencies(ad_id) {
     return this.get('ads/agencies/' + ad_id);
@@ -296,5 +312,13 @@ export class LeadershipService {
 
   save_agencies(data) {
     return this.post('ads/save_agencies', data);
+  }
+
+  save_interview_indicators_rating(data) {
+    return this.post('applications/save_interview_indicators', data);
+  }
+
+  loadInterviewrCurrentAds() {
+    return this.get('personal_interview/current_ads');
   }
 }

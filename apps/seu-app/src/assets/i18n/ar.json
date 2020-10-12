@@ -302,6 +302,7 @@
         "delete": "حذف",
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
+        "personal_interviews": "المقابلات الشخصية",
         "update": "تعديل",
         "newapplications": "طلب ترشيح / تزكية",
         "myapplications": "طلباتي السابقة",
@@ -394,7 +395,7 @@
             "app_details": "التفاصيل",
             "not_compeleted_notes":"الرجاء استكمال الطلب برفع الوثائق من خلال ايفونة تفاصيل الطلب"
         },
-        "application-display":{
+        "application-display": {
             "title": "تفاصيل الترشيح",
             "details": "الوثائق",
             "admin_rate": "تقييم أمين سر اللجنة",
@@ -419,6 +420,12 @@
                 "completed": "تم رفع الوثائق",
                 "not_completed": "الطلب غير مكتمل"
             }
+        },
+        "personal_interview_page": {
+            "ads": "إعلانات الوظائف الحالية",
+            "start_date": "تاريخ بدء المقابلات",
+            "end_date": "تاريخ نهاية المقابلات",
+            "interview_rate": "تقييم المقابلات الشخصية"
         },
         "messages": {
             "invalid_session": "انتهت جلسة الدخول، الرجاء تسجيل الدخول مرة أخري",

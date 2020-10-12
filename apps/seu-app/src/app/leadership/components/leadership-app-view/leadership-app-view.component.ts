@@ -12,6 +12,7 @@ export class LeadershipAppViewComponent implements OnInit {
   currentID;
   isLoading = false;
   currentApp;
+  currentParent;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,14 +22,19 @@ export class LeadershipAppViewComponent implements OnInit {
 
   }
 
-  back() {
-    this.router.navigate(['../applications'], { relativeTo: this.route });
-  }
-
   ngOnInit() {
     this.currentID = this.route.snapshot.children[0].params['id'];
-    this.current = this.route.snapshot.children[0]['url'][0]['path']
+    this.current = this.route.snapshot.children[0]['url'][0]['path'];
+    this.currentParent = this.route.snapshot['url'][0]['path'];
     this.loadApp();
+  }
+
+  back() {
+    if (this.currentParent == 'application-display') {
+      this.router.navigate(['../applications'], { relativeTo: this.route });
+    } else if(this.currentParent == 'interview-application-display') {
+      this.router.navigate(['../interview-applications'], { relativeTo: this.route });
+    }
   }
 
   loadApp() {
@@ -41,7 +47,12 @@ export class LeadershipAppViewComponent implements OnInit {
 
   redirectTo(code) {
     this.current = code;
-    this.router.navigate(['../application-display/' + code + '/' + this.currentID], { relativeTo: this.route })
+    if (this.currentParent == 'application-display') {
+      this.router.navigate(['../application-display/' + code + '/' + this.currentID], { relativeTo: this.route })
+    } else if(this.currentParent == 'interview-application-display') {
+      this.router.navigate(['../interview-application-display/' + code + '/' + this.currentID], { relativeTo: this.route })
+    }
+    
     return false;
   }
 }

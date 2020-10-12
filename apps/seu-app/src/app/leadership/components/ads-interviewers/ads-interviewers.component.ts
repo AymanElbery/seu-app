@@ -38,7 +38,7 @@ export class AdsInterviewersComponent implements OnInit {
     }
     this.currentAd = this.leadershipService.currentAddApps;
 
-    this.datePickerConfig = {dateInputFormat: 'DD/MM/YYYY'};
+    this.datePickerConfig = {dateInputFormat: 'DD-MM-YYYY',showWeekNumbers:false};
     this.form = this.fb.group({
       START_DATE: [null, [Validators.required]],
       END_DATE: [null, [Validators.required]],
@@ -126,7 +126,6 @@ export class AdsInterviewersComponent implements OnInit {
     if (this.currentAd && this.currentAd['ADS_PK']) {
       data['AD_ID'] = this.currentAd['ADS_PK'];
     }
-    console.log(data);
     this.submitted = true;
     this.leadershipService.save_interviewers(data).subscribe(
       (response: any) => {
