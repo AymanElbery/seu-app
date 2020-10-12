@@ -33,7 +33,7 @@
         <tbody>
           <tr *ngFor="let ad of ads; let i = index;">
             <td>{{i+1}}</td>
-            <td>{{ad.JOB_TITLE}}</td>
+            <td>{{ad.ADS_PK}} {{ad.JOB_TITLE}}</td>
             <td>{{ad.ADS_START_DATE }}</td>
             <td>{{ad.ADS_END_DATE}}</td>
             <td>{{(ad.ADS_IS_ACTIVE ? 'leadership.ad.active_1' : 'leadership.ad.active_0')  |translate}}</td>
@@ -45,7 +45,7 @@
               <button (click)="applications(ad)" class="btn btn-primary">{{"leadership.ad.apps" | translate}}</button>
               &nbsp;
               <button (click)="recommendations(ad)" class="btn btn-primary">{{"leadership.recomendations" | translate}}</button>
-
+              &nbsp;
               <button (click)="interviewers(ad)" class="btn btn-primary">{{"leadership.interviewers_committee" | translate}}</button>
             </td>
           </tr>
