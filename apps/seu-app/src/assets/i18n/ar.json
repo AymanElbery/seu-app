@@ -308,6 +308,7 @@
         "myrecomendations": "تزكياتي",
         "recomendations": "التزكيات",
         "interviewers_committee": "لجنة المقابلات",
+        "agencies_committee": "لجنة الوكلاء",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "بيانات الوظيفة",
@@ -439,6 +440,11 @@
         "title": "تعيين لجنة المقابلات",
         "start_date": "تاريخ بدء المقابلات",
         "end_date": "تاريخ انتهاء المقابلات"
+      },
+      "agencies": {
+        "title": "تعيين الوكلاء",
+        "start_date": "تاريخ بدء مقابلة الوكلاء",
+        "end_date": "تاريخ انتهاء مقابلة الوكلاء"
       }
     },
     "resume": {

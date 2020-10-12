@@ -287,4 +287,14 @@ export class LeadershipService {
     save_indicators_rating(data) {
         return this.post("applications/save_indicators" , data);
     }
+
+
+
+  get_agencies(ad_id) {
+    return this.get('ads/agencies/' + ad_id);
+  }
+
+  save_agencies(data) {
+    return this.post('ads/save_agencies', data);
+  }
 }
