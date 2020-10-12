@@ -212,7 +212,6 @@ export class LeadershipService {
     return this.get('ads/delete/' + id);
   }
 
-
   users_list() {
     return this.get('users/list');
   }
@@ -272,4 +271,20 @@ export class LeadershipService {
   save_interviewers(data) {
     return this.post('ads/save_interviewers', data);
   }
+
+    get_app_by_id(id) {
+        return this.get("applications/get_app_by_id/" + id);
+    }
+
+    get_app_files_by_app_id(id) {
+        return this.get("applications/get_app_files_by_app_id/" + id);
+    }
+
+    get_indicators(id) {
+        return this.get("applications/indicators/" + id);
+    }
+
+    save_indicators_rating(data) {
+        return this.post("applications/save_indicators" , data);
+    }
 }

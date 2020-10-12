@@ -94,9 +94,13 @@ export class LeadershipAddApplicationsComponent implements OnInit {
     return false;
   }
 
-  details(app) {
-    this.leadershipService.currentApp = app;
-    this.router.navigate(['../application-details'], { relativeTo: this.route });
-  }
+  // details(app) {
+  //   this.leadershipService.currentApp = app;
+  //   this.router.navigate(['../application-details'], { relativeTo: this.route });
+  // }
 
+  details(id) {
+    this.isLoading = true;
+    this.router.navigate(['../application-display/details/' + id], { relativeTo: this.route })
+  }
 }
