@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {environment} from '../../../environments/environment';
-import {of, Subject} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {GlobalBaseService} from 'src/app/shared/services/global-base.service';
-import {TranslateService} from '@ngx-translate/core';
-import {AppToasterService} from 'src/app/shared/services/app-toaster';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
+import { of, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
+import { TranslateService } from '@ngx-translate/core';
+import { AppToasterService } from 'src/app/shared/services/app-toaster';
 
 
 @Injectable({
@@ -38,11 +38,11 @@ export class LeadershipService {
   }
 
   notifyError(code) {
-    this.toaster.push([{type: 'error', 'body': this.translate.instant('leadership.messages.' + code)}]);
+    this.toaster.push([{ type: 'error', 'body': this.translate.instant('leadership.messages.' + code) }]);
   }
 
   notifySucc(code) {
-    this.toaster.push([{type: 'success', 'body': this.translate.instant('leadership.messages.' + code)}]);
+    this.toaster.push([{ type: 'success', 'body': this.translate.instant('leadership.messages.' + code) }]);
   }
 
   tryagain() {
@@ -78,13 +78,13 @@ export class LeadershipService {
       {
         headers: this.getHeader(),
       }).pipe(
-      map((res: any) => {
-        if (!res.status && (res.res_code == 'invalid_user' || res.res_code == 'invalid_session')) {
-          this.globalService.relogin();
-        }
-        return res;
-      })
-    );
+        map((res: any) => {
+          if (!res.status && (res.res_code == 'invalid_user' || res.res_code == 'invalid_session')) {
+            this.globalService.relogin();
+          }
+          return res;
+        })
+      );
   }
 
   settings() {
@@ -139,11 +139,12 @@ export class LeadershipService {
   agences() {
     return this._lookups['depts'].filter(item => item['DEPT_TYPE'] == 'AGENCY');
   }
-
   colleges_deans() {
     return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'COLLEGE' || item['DEPT_TYPE'] == 'DEAN'));
   }
-
+  depts() {
+    return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'DEPT'));
+  }
   job_cats() {
     return this._lookups['lookups'].filter(item => (item['LOOKUP_CAT'] == 'JOB_CAT'));
   }
@@ -157,7 +158,6 @@ export class LeadershipService {
         return this.job_cats();
       }));
   }
-
   colleges_deans_list() {
     if (this._lookups) {
       return of(this.colleges_deans());
@@ -165,6 +165,15 @@ export class LeadershipService {
     return this._lookups_observ.pipe(
       map(() => {
         return this.colleges_deans();
+      }));
+  }
+  depts_list() {
+    if (this._lookups) {
+      return of(this.depts());
+    }
+    return this._lookups_observ.pipe(
+      map(() => {
+        return this.depts();
       }));
   }
 
@@ -276,27 +285,27 @@ export class LeadershipService {
     return this.post('ads/save_interviewers', data);
   }
 
-    get_app_by_id(id) {
-        return this.get("applications/get_app_by_id/" + id);
-    }
+  get_app_by_id(id) {
+    return this.get("applications/get_app_by_id/" + id);
+  }
 
-    get_app_files_by_app_id(id) {
-        return this.get("applications/get_app_files_by_app_id/" + id);
-    }
+  get_app_files_by_app_id(id) {
+    return this.get("applications/get_app_files_by_app_id/" + id);
+  }
 
-    get_indicators(id, type) {
-      return this.get("applications/indicators/" + id + "/" + type);
-    }
+  get_indicators(id, type) {
+    return this.get("applications/indicators/" + id + "/" + type);
+  }
 
-    save_files_indicators_rating(data) {
-        return this.post("applications/save_files_indicators" , data);
-    }
+  save_files_indicators_rating(data) {
+      return this.post("applications/save_files_indicators" , data);
+  }
 
-    save_interview_indicators_rating(data) {
-        return this.post("applications/save_interview_indicators" , data);
-    }
+  save_interview_indicators_rating(data) {
+      return this.post("applications/save_interview_indicators" , data);
+  }
 
-    loadInterviewrCurrentAds() {
-      return this.get("personal_interview/current_ads");
+  loadInterviewrCurrentAds() {
+    return this.get("personal_interview/current_ads");
   }
 }

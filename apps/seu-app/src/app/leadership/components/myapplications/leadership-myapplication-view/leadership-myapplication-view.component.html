@@ -24,7 +24,7 @@
           <th scope="col" width="35%">
             <h6>{{"leadership.applications.submit_date"|translate}}</h6>
           </th>
-          <td scope="col">{{currentApp.INSERT_DATE | date : 'dd/MM/yyyy'}}</td>
+          <td scope="col">{{currentApp.INSERT_DATE}}</td>
         </tr>
         <tr>
           <th scope="col" width="35%">
@@ -167,7 +167,7 @@
             <td>{{ rec.FROM_FULL_NAME }}</td>
             <td>{{ rec.FROM_SEU_EMAIL }}</td>
             <td>{{ rec.FROM_SCALE }}</td>
-            <td>{{ rec.INSERT_DATE | date : 'dd/MM/yyyy'}}</td>
+            <td>{{ rec.INSERT_DATE }}</td>
             </tr>
         </tbody>
       </table>
