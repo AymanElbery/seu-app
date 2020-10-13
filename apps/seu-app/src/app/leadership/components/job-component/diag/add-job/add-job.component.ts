@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { UnivWithdraw } from 'src/app/shared/models/univ-withdraw';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
@@ -46,18 +46,32 @@ export class AddJobComponent implements OnInit {
       'JOB_DEPT_CODE': ['', [Validators.required]],
       'JOB_AGENCY_CODE': ['', [Validators.required]]
     });
+    this.AddJobForm.controls['JOB_CAT_CODE'].valueChanges.subscribe(() => {
+      this.AddJobForm.controls['JOB_DEPT_CODE'].setValue("");
+      this.updatedeptslist();
+    })
     if (this.data && this.data.id) {
       this.id = this.data.id
       this.getJobById();
     }
   }
+  updatedeptslist(){
+    this.job_depts_list = ((this.AddJobForm.controls['JOB_CAT_CODE'].value == "DEPARTMENT") ? this.depts_list : this.colleges_deans);
+  }
+  job_depts_list = [];
   cats = [];
   colleges_deans = [];
+  depts_list = [];
   agences = [];
   ngOnInit() {
     this.leadershipService.lookups();
     this.leadershipService.colleges_deans_list().subscribe(list => {
       this.colleges_deans = list;
+      this.updatedeptslist();
+    });
+    this.leadershipService.depts_list().subscribe(list => {
+      this.depts_list = list;
+      this.updatedeptslist();
     });
     this.leadershipService.jobcats_list().subscribe(list => {
       this.cats = list;

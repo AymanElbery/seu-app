@@ -34,7 +34,7 @@ export class AddAdsComponent implements OnInit {
     private datePipe: DatePipe,
     private translate:TranslateService
   ) {
-    this.datePickerConfig = {dateInputFormat: 'DD/MM/YYYY'};
+    this.datePickerConfig = {dateInputFormat: 'DD-MM-YYYY',showWeekNumbers:false};
     this.form = this.fb.group({
       'JOB_ID': ['', [Validators.required]],
       'ADS_START_DATE': ['', [Validators.required]],
