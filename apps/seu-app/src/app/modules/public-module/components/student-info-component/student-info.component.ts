@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../../../account/services/user.service';
-import { CardService, PublicCardService } from '../../services/card.service';
+import {  PublicCardService } from '../../services/card.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
