@@ -3,11 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LeadershipService } from '../../services/leadership.service';
 
 @Component({
-  selector: 'app-leadership-app-interview-rate',
-  templateUrl: './leadership-app-interview-rate.component.html',
-  styleUrls: ['./leadership-app-interview-rate.component.css']
+  selector: 'app-leadership-app-agency-rate',
+  templateUrl: './leadership-app-agency-rate.component.html',
+  styleUrls: ['./leadership-app-agency-rate.component.css']
 })
-export class LeadershipAppInterviewRateComponent implements OnInit {
+export class LeadershipAppAgencyRateComponent implements OnInit {
   currentID;
   current;
   Loading = false;
@@ -17,7 +17,7 @@ export class LeadershipAppInterviewRateComponent implements OnInit {
   saveBtnDisable = true;
   indicators_val;
   currentParent;
-  isInterviewer = true;
+  isAgency = true;
   indicatorsReport;
   emps;
   
@@ -26,13 +26,14 @@ export class LeadershipAppInterviewRateComponent implements OnInit {
     private router: Router,
     private leadershipService: LeadershipService
   ) { 
+    console.log("sdfsdf");
   }
 
   ngOnInit() {
     this.currentID = this.route.snapshot.params['id'];
     this.currentParent = this.route.snapshot.parent['url'][0]['path'];
-    if (this.currentParent != 'interview-application-display') {
-      this.isInterviewer = false;
+    if (this.currentParent != 'agency-application-display') {
+      this.isAgency = false;
     }
     this.loadApp();
   }
@@ -41,7 +42,7 @@ export class LeadershipAppInterviewRateComponent implements OnInit {
     this.Loading = true;
     this.leadershipService.get_app_by_id(this.currentID).subscribe((response => {
       this.currentApp = response['data'];
-      if (!this.isInterviewer) {
+      if (!this.isAgency) {
         this.loadIndecatorsReportForAdmin();
       }
       this.loadIndecators();
@@ -49,7 +50,7 @@ export class LeadershipAppInterviewRateComponent implements OnInit {
   }
 
   loadIndecators(){
-    this.leadershipService.get_indicators(this.currentID, 'INTERVIEW').subscribe((response => {
+    this.leadershipService.get_indicators(this.currentID, 'AGENCY').subscribe((response => {
       this.indicators = response['data']['indicators'];
       this.Loading = false;
       this.setTotalVal();
@@ -57,7 +58,7 @@ export class LeadershipAppInterviewRateComponent implements OnInit {
   }
 
   loadIndecatorsReportForAdmin(){
-    this.leadershipService.get_indicators_report_for_admin(this.currentID, 'INTERVIEW').subscribe((response => {
+    this.leadershipService.get_indicators_report_for_admin(this.currentID, 'AGENCY').subscribe((response => {
       this.indicatorsReport = response['data']['indicators'];
       this.emps = response['data']['emps'];
       this.Loading = false;
@@ -94,11 +95,11 @@ export class LeadershipAppInterviewRateComponent implements OnInit {
     let allData = {
       "data" : data,
       "total" : [{
-        "INTERVIEW_EVAL" : this.totalVal
+        "AGENCY_EVAL" : this.totalVal
       }],
     };
 
-    this.leadershipService.save_interview_indicators_rating(allData).subscribe((response => {
+    this.leadershipService.save_agency_indicators_rating(allData).subscribe((response => {
       if (response['status']) {
         this.Loading = false;
       }

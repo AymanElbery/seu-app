@@ -303,6 +303,7 @@
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
         "personal_interviews": "المقابلات الشخصية",
+        "agency_interviews": "المقابلات مع الوكلاء",
         "update": "تعديل",
         "newapplications": "طلب ترشيح / تزكية",
         "myapplications": "طلباتي السابقة",
@@ -425,7 +426,19 @@
             "ads": "إعلانات الوظائف الحالية",
             "start_date": "تاريخ بدء المقابلات",
             "end_date": "تاريخ نهاية المقابلات",
-            "interview_rate": "تقييم المقابلات الشخصية"
+            "interview_rate": "تقييم المقابلات الشخصية",
+            "interview_total_rate_message": "التقييم الكلي لطلب الترشيح في جميع المقابلات الشخصية هو ",
+            "indicators": "المؤشرات",
+            "interviewer" : "الموظف المسؤول"
+        },
+        "agency_interview_page": {
+            "ads": "إعلانات الوظائف الحالية",
+            "start_date": "تاريخ بدء المقابلات",
+            "end_date": "تاريخ نهاية المقابلات",
+            "interview_rate": "تقييم مقابلات الوكلاء",
+            "interview_total_rate_message": "التقييم الكلي لطلب الترشيح في جميع المقابلات مع الوكلاء هو ",
+            "indicators": "المؤشرات",
+            "interviewer" : "الوكيل"
         },
         "messages": {
             "invalid_session": "انتهت جلسة الدخول، الرجاء تسجيل الدخول مرة أخري",

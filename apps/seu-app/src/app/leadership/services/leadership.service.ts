@@ -302,7 +302,11 @@ export class LeadershipService {
     return this.get('applications/indicators/' + id + '/' + type);
   }
 
-  save_indicators_rating(data) {
+  get_indicators_report_for_admin(id, type) {
+    return this.get('applications/indicators_report/' + id + '/' + type);
+  }
+
+  save_files_indicators_rating(data) {
     return this.post('applications/save_indicators', data);
   }
 
@@ -318,7 +322,15 @@ export class LeadershipService {
     return this.post('applications/save_interview_indicators', data);
   }
 
+  save_agency_indicators_rating(data) {
+    return this.post('applications/save_agency_indicators', data);
+  }
+
   loadInterviewrCurrentAds() {
     return this.get('personal_interview/current_ads');
+  }
+
+  loadAgencyCurrentAds() {
+    return this.get('agency_interview/current_ads');
   }
 }

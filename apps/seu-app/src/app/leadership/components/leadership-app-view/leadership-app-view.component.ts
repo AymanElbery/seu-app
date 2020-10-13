@@ -35,6 +35,9 @@ export class LeadershipAppViewComponent implements OnInit {
     } else if(this.currentParent == 'interview-application-display') {
       this.router.navigate(['../interview-applications'], { relativeTo: this.route });
     }
+    else if(this.currentParent == 'agency-application-display') {
+      this.router.navigate(['../agency-applications'], { relativeTo: this.route });
+    }
   }
 
   loadApp() {
@@ -51,6 +54,8 @@ export class LeadershipAppViewComponent implements OnInit {
       this.router.navigate(['../application-display/' + code + '/' + this.currentID], { relativeTo: this.route })
     } else if(this.currentParent == 'interview-application-display') {
       this.router.navigate(['../interview-application-display/' + code + '/' + this.currentID], { relativeTo: this.route })
+    } else if(this.currentParent == 'agency-application-display') {
+      this.router.navigate(['../agency-application-display/' + code + '/' + this.currentID], { relativeTo: this.route })
     }
     
     return false;

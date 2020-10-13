@@ -18,7 +18,9 @@ import {LeadershipAppDetailsComponent} from './components/leadership-app-details
 import {LeadershipAppAdminRateComponent} from './components/leadership-app-admin-rate/leadership-app-admin-rate.component';
 import {AdsAgenciesComponent} from './components/ads-agencies/ads-agencies.component';
 import {LeadershipAppInterviewRateComponent} from './components/leadership-app-interview-rate/leadership-app-interview-rate.component';
+import {LeadershipAppAgencyRateComponent} from './components/leadership-app-agency-rate/leadership-app-agency-rate.component';
 import {LeadershipPersonalInterviewsComponent} from './components/leadership-personal-interviews/leadership-personal-interviews.component';
+import {LeadershipAgencyInterviewsComponent} from './components/leadership-agency-interviews/leadership-agency-interviews.component';
 
 const routes: Routes = [
   {
@@ -41,6 +43,10 @@ const routes: Routes = [
     component: LeadershipAddApplicationsComponent
   },
   {
+    path: 'agency-applications',
+    component: LeadershipAddApplicationsComponent
+  },
+  {
     path: 'application-display', component: LeadershipAppViewComponent,
     children: [
       {
@@ -51,6 +57,9 @@ const routes: Routes = [
       },
       {
         path: 'interview-rate/:id', component: LeadershipAppInterviewRateComponent
+      },
+      {
+        path: 'agency-rate/:id', component: LeadershipAppAgencyRateComponent
       },
     ]
   },
@@ -65,6 +74,26 @@ const routes: Routes = [
       },
       {
         path: 'interview-rate/:id', component: LeadershipAppInterviewRateComponent
+      },
+      {
+        path: 'agency-rate/:id', component: LeadershipAppAgencyRateComponent
+      },
+    ]
+  },
+  {
+    path: 'agency-application-display', component: LeadershipAppViewComponent,
+    children: [
+      {
+        path: 'details/:id', component: LeadershipAppDetailsComponent
+      },
+      {
+        path: 'admin-rate/:id', component: LeadershipAppAdminRateComponent
+      },
+      {
+        path: 'interview-rate/:id', component: LeadershipAppInterviewRateComponent
+      },
+      {
+        path: 'agency-rate/:id', component: LeadershipAppAgencyRateComponent
       },
     ]
   },
@@ -96,6 +125,10 @@ const routes: Routes = [
   {
     path: 'personal-interviews',
     component: LeadershipPersonalInterviewsComponent
+  },
+  {
+    path: 'agency-interviews',
+    component: LeadershipAgencyInterviewsComponent
   },
   {
     path: 'myrecomendations',

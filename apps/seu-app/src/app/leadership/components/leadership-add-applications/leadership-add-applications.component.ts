@@ -20,6 +20,7 @@ export class LeadershipAddApplicationsComponent implements OnInit {
   current;
   adminApps = false;
   interviewApps = false;
+  agencyApps = false;
 
   constructor(
     private leadershipService: LeadershipService,
@@ -38,6 +39,8 @@ export class LeadershipAddApplicationsComponent implements OnInit {
       this.adminApps = true;
     } else if(this.current == 'interview-applications') {
       this.interviewApps = true;
+    } else if(this.current == 'agency-applications') {
+      this.agencyApps = true;
     }
   }
   backAdmin() {
@@ -46,6 +49,10 @@ export class LeadershipAddApplicationsComponent implements OnInit {
 
   backInterview() {
     this.router.navigate(['../personal-interviews'], { relativeTo: this.route });
+  }
+
+  backAgency() {
+    this.router.navigate(['../agency-interviews'], { relativeTo: this.route });
   }
 
   ngOnInit() {
@@ -61,6 +68,11 @@ export class LeadershipAddApplicationsComponent implements OnInit {
       }));
     }else if(this.current == 'interview-applications'){
       this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK'], 'interview').subscribe((response => {
+        this.appsList = response['data']['apps'];
+        this.isLoading = false;
+      }));
+    }else if(this.current == 'agency-applications'){
+      this.leadershipService.ads_apps(this.leadershipService.currentAddApps['ADS_PK'], 'agency').subscribe((response => {
         this.appsList = response['data']['apps'];
         this.isLoading = false;
       }));
@@ -121,6 +133,8 @@ export class LeadershipAddApplicationsComponent implements OnInit {
       this.router.navigate(['../application-display/details/' + id], { relativeTo: this.route })
     }else if(this.current == 'interview-applications'){
       this.router.navigate(['../interview-application-display/details/' + id], { relativeTo: this.route })
+    }else if(this.current == 'agency-applications'){
+      this.router.navigate(['../agency-application-display/details/' + id], { relativeTo: this.route })
     }
   }
 }

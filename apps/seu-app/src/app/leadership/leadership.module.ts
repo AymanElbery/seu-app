@@ -31,6 +31,8 @@ import { LeadershipAppAdminRateComponent } from './components/leadership-app-adm
 import {AdsAgenciesComponent} from './components/ads-agencies/ads-agencies.component';
 import { LeadershipPersonalInterviewsComponent } from './components/leadership-personal-interviews/leadership-personal-interviews.component';
 import { LeadershipAppInterviewRateComponent } from './components/leadership-app-interview-rate/leadership-app-interview-rate.component';
+import {LeadershipAgencyInterviewsComponent} from './components/leadership-agency-interviews/leadership-agency-interviews.component';
+import {LeadershipAppAgencyRateComponent} from './components/leadership-app-agency-rate/leadership-app-agency-rate.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { LeadershipAppInterviewRateComponent } from './components/leadership-app
     LeadershipAppDetailsComponent,
     LeadershipAppAdminRateComponent,
     LeadershipPersonalInterviewsComponent,
-    LeadershipAppInterviewRateComponent
+    LeadershipAppInterviewRateComponent,
+    LeadershipAgencyInterviewsComponent,
+    LeadershipAppAgencyRateComponent
   ],
   imports: [
     LeadershipRoutingModule,
