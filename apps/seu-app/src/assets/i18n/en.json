@@ -255,7 +255,8 @@
         "attends": "Attendance System",
         "masterequalize": "معادلة مقررات الفصل التحضيري",
         "skills": "Trainging & Skills record",
-        "translation":"Translation Center"
+        "translation":"Translation Center",
+        "exam":"Swift Asses"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",
