@@ -33,6 +33,7 @@ import { LeadershipPersonalInterviewsComponent } from './components/leadership-p
 import { LeadershipAppInterviewRateComponent } from './components/leadership-app-interview-rate/leadership-app-interview-rate.component';
 import {LeadershipAgencyInterviewsComponent} from './components/leadership-agency-interviews/leadership-agency-interviews.component';
 import {LeadershipAppAgencyRateComponent} from './components/leadership-app-agency-rate/leadership-app-agency-rate.component';
+import { LeadershipBlankComponent } from './components/leadership-blank/leadership-blank.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {LeadershipAppAgencyRateComponent} from './components/leadership-app-agen
     LeadershipPersonalInterviewsComponent,
     LeadershipAppInterviewRateComponent,
     LeadershipAgencyInterviewsComponent,
-    LeadershipAppAgencyRateComponent
+    LeadershipAppAgencyRateComponent,
+    LeadershipBlankComponent
   ],
   imports: [
     LeadershipRoutingModule,
