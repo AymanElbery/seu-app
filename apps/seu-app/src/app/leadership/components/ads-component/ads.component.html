@@ -38,17 +38,19 @@
             <td>{{ad.ADS_END_DATE}}</td>
             <td>{{(ad.ADS_IS_ACTIVE ? 'leadership.ad.active_1' : 'leadership.ad.active_0')  |translate}}</td>
             <td>
-              <button (click)="showAddForm(ad)" class="btn btn-primary">{{"leadership.update" | translate}}</button>
-              &nbsp;
-              <button style="margin-right: 5px;" (click)="delete(ad.ADS_PK)" class="btn btn-danger">{{"leadership.delete" | translate}} <i class="fa fa-trash"></i></button>
-              &nbsp;
-              <button (click)="applications(ad)" class="btn btn-primary">{{"leadership.ad.apps" | translate}}</button>
-              &nbsp;
-              <button (click)="recommendations(ad)" class="btn btn-primary">{{"leadership.recomendations" | translate}}</button>
-              &nbsp;
-              <button (click)="interviewers(ad)" class="btn btn-primary">{{"leadership.interviewers_committee" | translate}}</button>
-              &nbsp;
-              <button (click)="agencies(ad)" class="btn btn-primary">{{"leadership.agencies_committee" | translate}}</button>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{"leadership.actions" | translate}} <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <button (click)="showAddForm(ad)" class="dropdown-item"><i class="fa fa-edit"></i> {{"leadership.update" | translate}}</button>
+                  <button style="margin-right: 5px;" (click)="delete(ad.ADS_PK)" class="dropdown-item"><i class="fa fa-trash"></i> {{"leadership.delete" | translate}}</button>
+                  <button (click)="applications(ad)" class="dropdown-item"><i class="fa fa-list"></i> {{"leadership.ad.apps" | translate}} </button>
+                  <!-- <button (click)="recommendations(ad)" class="dropdown-item">{{"leadership.recomendations" | translate}}</button> -->
+                  <button (click)="interviewers(ad)" class="dropdown-item"><i class="fa fa-user"></i> {{"leadership.interviewers_committee" | translate}} </button>
+                  <button (click)="agencies(ad)" class="dropdown-item"><i class="fa fa-address-book"></i> {{"leadership.agencies_committee" | translate}} </button>
+                </div>
+              </div>
             </td>
           </tr>
         </tbody>
