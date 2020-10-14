@@ -49,6 +49,7 @@
                   <!-- <button (click)="recommendations(ad)" class="dropdown-item">{{"leadership.recomendations" | translate}}</button> -->
                   <button (click)="interviewers(ad)" class="dropdown-item"><i class="fa fa-user"></i> {{"leadership.interviewers_committee" | translate}} </button>
                   <button (click)="agencies(ad)" class="dropdown-item"><i class="fa fa-address-book"></i> {{"leadership.agencies_committee" | translate}} </button>
+                  <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean(ad)" class="dropdown-item"><i class="fa fa-address-book"></i> {{"leadership.dean.title" | translate}} </button>
                 </div>
               </div>
             </td>

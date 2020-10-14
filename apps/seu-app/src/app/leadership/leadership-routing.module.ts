@@ -21,6 +21,7 @@ import {LeadershipAppInterviewRateComponent} from './components/leadership-app-i
 import {LeadershipAppAgencyRateComponent} from './components/leadership-app-agency-rate/leadership-app-agency-rate.component';
 import {LeadershipPersonalInterviewsComponent} from './components/leadership-personal-interviews/leadership-personal-interviews.component';
 import {LeadershipAgencyInterviewsComponent} from './components/leadership-agency-interviews/leadership-agency-interviews.component';
+import {AdsDeanComponent} from './components/ads-dean/ads-dean.component';
 
 const routes: Routes = [
   {
@@ -112,6 +113,11 @@ const routes: Routes = [
   {
     path: 'agencies',
     component: AdsAgenciesComponent
+  },
+
+  {
+    path: 'dean',
+    component: AdsDeanComponent
   },
 
   {

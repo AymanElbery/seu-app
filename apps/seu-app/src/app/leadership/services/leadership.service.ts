@@ -318,6 +318,7 @@ export class LeadershipService {
     return this.post('ads/save_agencies', data);
   }
 
+
   save_interview_indicators_rating(data) {
     return this.post('applications/save_interview_indicators', data);
   }
@@ -332,5 +333,14 @@ export class LeadershipService {
 
   loadAgencyCurrentAds() {
     return this.get('agency_interview/current_ads');
+  }
+
+
+  get_dean(ad_id) {
+    return this.get('ads/dean/' + ad_id);
+  }
+
+  save_dean(data) {
+    return this.post('ads/save_dean', data);
   }
 }
