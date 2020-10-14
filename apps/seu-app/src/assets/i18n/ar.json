@@ -312,6 +312,8 @@
         "interviewers_committee": "لجنة المقابلات",
         "agencies_committee": "لجنة الوكلاء",
         "dean_title": "تعيين العميد المعني",
+        "ads_recommendations": "تزكيات العميد",
+        "search_save": "بحث وحفظ",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "بيانات الوظيفة",

@@ -23,6 +23,8 @@ import { LeadershipPersonalInterviewsComponent } from './components/leadership-p
 import { LeadershipAgencyInterviewsComponent } from './components/leadership-agency-interviews/leadership-agency-interviews.component';
 import { LeadershipBlankComponent } from './components/leadership-blank/leadership-blank.component';
 import {AdsDeanComponent} from './components/ads-dean/ads-dean.component';
+import {AdsDeanRecommendationsComponent} from './components/ads-dean-recommendations/ads-dean-recommendations.component';
+import {AdsDeanRecommendationsEditComponent} from './components/ads-dean-recommendations-edit/ads-dean-recommendations-edit.component';
 
 const routes: Routes = [
   {
@@ -163,6 +165,14 @@ const routes: Routes = [
       {
         path: 'application/create-recommend',
         component: LeadershipApplicationRecommendComponent
+      },
+      {
+        path: 'ads-recommendations',
+        component: AdsDeanRecommendationsComponent
+      },
+      {
+        path: 'ads-recommendations/edit',
+        component: AdsDeanRecommendationsEditComponent
       }
     ]
   }

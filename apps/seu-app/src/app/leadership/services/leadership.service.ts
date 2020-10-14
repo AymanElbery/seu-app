@@ -100,17 +100,21 @@ export class LeadershipService {
           menu_interviewer: false,
           menu_agency: false,
           menu_instructor: false,
+          menu_recommender: false,
         };
+
         if (response['data']['instructor']) {
           setting.show_menu = true;
           setting.menu_instructor = true;
         }
+
         if (response['data']['user']) {
           setting.show_menu = true;
           setting.menu_user = true;
-          setting.menu_admin = (response['data']['user']['IS_ADMIN']) ? true : false;
-          setting.menu_interviewer = (response['data']['user']['IS_INTERVIEWER']) ? true : false;
-          setting.menu_agency = (response['data']['user']['IS_AGENCY']) ? true : false;
+          setting.menu_admin = (response['data']['IS_ADMIN']) ? true : false;
+          setting.menu_interviewer = (response['data']['IS_INTERVIEWER']) ? true : false;
+          setting.menu_agency = (response['data']['IS_AGENCY']) ? true : false;
+          setting.menu_recommender = (response['data']['IS_RECOMMENDER']) ? true : false;
         }
         this._settings = setting;
         return setting;
@@ -343,4 +347,21 @@ export class LeadershipService {
   save_dean(data) {
     return this.post('ads/save_dean', data);
   }
+
+  list_recommender_ads() {
+    return this.get('ads/recommender_ads');
+  }
+
+  get_dean_recommendations(ad_id) {
+    return this.get('ads/dean_recommendations/' + ad_id);
+  }
+
+  save_dean_recommendation(data) {
+    return this.post('ads/save_dean_recommendation', data);
+  }
+
+  delete_dean_recommendation(ad_id, empId) {
+    return this.get('ads/delete_dean_recommendation/' + ad_id + '/' + empId);
+  }
+
 }
