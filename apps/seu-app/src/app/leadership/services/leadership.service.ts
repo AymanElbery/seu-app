@@ -108,10 +108,10 @@ export class LeadershipService {
         if (response['data']['user']) {
           setting.show_menu = true;
           setting.menu_user = true;
-          setting.menu_admin = (response['data']['IS_ADMIN']) ? true : false;
-          setting.menu_interviewer = (response['data']['IS_INTERVIEWER']) ? true : false;
-          setting.menu_agency = (response['data']['IS_AGENCY']) ? true : false;
         }
+        setting.menu_admin = (response['data']['IS_ADMIN']) ? true : false;
+        setting.menu_interviewer = (response['data']['IS_INTERVIEWER']) ? true : false;
+        setting.menu_agency = (response['data']['IS_AGENCY']) ? true : false;
         this._settings = setting;
         return setting;
       } else {
@@ -298,8 +298,8 @@ export class LeadershipService {
     return this.get('applications/get_app_files_by_app_id/' + id);
   }
 
-  get_indicators(id, type) {
-    return this.get('applications/indicators/' + id + '/' + type);
+  get_indicators(id, type, emp_id = 1) {
+    return this.get('applications/indicators/' + id + '/' + type + '/' + emp_id);
   }
 
   get_indicators_report_for_admin(id, type) {
@@ -307,7 +307,7 @@ export class LeadershipService {
   }
 
   save_files_indicators_rating(data) {
-    return this.post('applications/save_indicators', data);
+    return this.post('applications/save_files_indicators', data);
   }
 
   get_agencies(ad_id) {

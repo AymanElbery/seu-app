@@ -58,7 +58,8 @@ export class LeadershipAppAdminRateComponent implements OnInit {
   }
 
   loadIndecators(){
-    this.leadershipService.get_indicators(this.currentID, 'FILES').subscribe((response => {
+    let empId = (this.isAdmin) ? 1 : 0;
+    this.leadershipService.get_indicators(this.currentID, 'FILES', empId).subscribe((response => {
       this.indicators = response['data']['indicators'];
       this.Loading = false;
       this.setTotalVal();
