@@ -132,8 +132,11 @@ export class LeadershipService {
     agences() {
         return this._lookups['depts'].filter(item => item['DEPT_TYPE'] == 'AGENCY');
     }
-    colleges_deans() {
+    colleges_deans_agenceis() {
         return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'COLLEGE' || item['DEPT_TYPE'] == 'AGENCY' || item['DEPT_TYPE'] == 'DEAN'));
+    }
+    colleges_deans() {
+        return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'COLLEGE' || item['DEPT_TYPE'] == 'DEAN'));
     }
     depts(){
         return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'DEPT'));
@@ -158,6 +161,15 @@ export class LeadershipService {
         return this._lookups_observ.pipe(
             map(() => {
                 return this.colleges_deans();
+            }));
+    }
+    colleges_deans_agenceis_list() {
+        if (this._lookups) {
+            return of(this.colleges_deans_agenceis());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.colleges_deans_agenceis();
             }));
     }
     depts_list() {

@@ -56,11 +56,18 @@ export class AddJobComponent implements OnInit {
     }
   }
   updatedeptslist(){
-    this.job_depts_list = ((this.AddJobForm.controls['JOB_CAT_CODE'].value == "DEPARTMENT") ? this.depts_list : this.colleges_deans);
+    if(this.AddJobForm.controls['JOB_CAT_CODE'].value == "DEPARTMENT"){
+      this.job_depts_list = this.depts_list;
+    }else if(this.AddJobForm.controls['JOB_CAT_CODE'].value == "DEAN"){
+      this.job_depts_list = this.colleges_deans_agenceis;
+    }else{
+      this.job_depts_list = this.colleges_deans;
+    }
   }
   job_depts_list = [];
   cats = [];
   colleges_deans = [];
+  colleges_deans_agenceis = [];
   depts_list = [];
   agences = [];
   ngOnInit() {
@@ -69,10 +76,15 @@ export class AddJobComponent implements OnInit {
       this.colleges_deans = list;
       this.updatedeptslist();
     });
+    this.leadershipService.colleges_deans_agenceis_list().subscribe(list => {
+      this.colleges_deans_agenceis = list;
+      this.updatedeptslist();
+    });
     this.leadershipService.depts_list().subscribe(list => {
       this.depts_list = list;
       this.updatedeptslist();
     });
+    
     this.leadershipService.jobcats_list().subscribe(list => {
       this.cats = list;
     });
