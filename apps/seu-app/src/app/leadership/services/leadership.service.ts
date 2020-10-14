@@ -108,9 +108,9 @@ export class LeadershipService {
         if (response['data']['user']) {
           setting.show_menu = true;
           setting.menu_user = true;
-          setting.menu_admin = (response['data']['user']['IS_ADMIN']) ? true : false;
-          setting.menu_interviewer = (response['data']['user']['IS_INTERVIEWER']) ? true : false;
-          setting.menu_agency = (response['data']['user']['IS_AGENCY']) ? true : false;
+          setting.menu_admin = (response['data']['IS_ADMIN']) ? true : false;
+          setting.menu_interviewer = (response['data']['IS_INTERVIEWER']) ? true : false;
+          setting.menu_agency = (response['data']['IS_AGENCY']) ? true : false;
         }
         this._settings = setting;
         return setting;
