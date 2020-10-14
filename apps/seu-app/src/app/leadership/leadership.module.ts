@@ -33,6 +33,7 @@ import { LeadershipPersonalInterviewsComponent } from './components/leadership-p
 import { LeadershipAppInterviewRateComponent } from './components/leadership-app-interview-rate/leadership-app-interview-rate.component';
 import {LeadershipAgencyInterviewsComponent} from './components/leadership-agency-interviews/leadership-agency-interviews.component';
 import {LeadershipAppAgencyRateComponent} from './components/leadership-app-agency-rate/leadership-app-agency-rate.component';
+import {AdsDeanComponent} from './components/ads-dean/ads-dean.component';
 import { LeadershipBlankComponent } from './components/leadership-blank/leadership-blank.component';
 
 @NgModule({
@@ -54,6 +55,7 @@ import { LeadershipBlankComponent } from './components/leadership-blank/leadersh
     LeadershipAdRecommendationsComponent,
     AdsInterviewersComponent,
     AdsAgenciesComponent,
+    AdsDeanComponent,
     LeadershipAppViewComponent,
     LeadershipAppDetailsComponent,
     LeadershipAppAdminRateComponent,
