@@ -304,7 +304,7 @@
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
         "update": "تعديل",
-        "newapplications": "طلب ترشيح / تزكية",
+        "newapplications": "طلب ترشيح",
         "myapplications": "طلباتي السابقة",
         "myrecomendations": "تزكياتي",
         "recomendations": "التزكيات",
@@ -357,7 +357,7 @@
             "recommended_by":"بيانات المزكي"
         },
         "applications": {
-            "newapp": "طلب ترشيح / تزكية جديد",
+            "newapp": "طلب ترشيح جديد",
             "addslist": "قائمة الوظائف المتاحة",
             "apply": "ترشيح",
             "recommend": "تزكية",
