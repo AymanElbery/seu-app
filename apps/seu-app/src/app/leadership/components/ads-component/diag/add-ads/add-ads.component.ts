@@ -32,9 +32,9 @@ export class AddAdsComponent implements OnInit {
     private leadershipService: LeadershipService,
     private toastr: AppToasterService,
     private datePipe: DatePipe,
-    private translate:TranslateService
+    private translate: TranslateService
   ) {
-    this.datePickerConfig = {dateInputFormat: 'DD-MM-YYYY',showWeekNumbers:false};
+    this.datePickerConfig = { dateInputFormat: 'DD-MM-YYYY', showWeekNumbers: false };
     this.form = this.fb.group({
       'JOB_ID': ['', [Validators.required]],
       'ADS_START_DATE': ['', [Validators.required]],
@@ -45,6 +45,7 @@ export class AddAdsComponent implements OnInit {
     if (this.ad['ADS_PK']) {
       this.ad.ADS_START_DATE = this.datePipe.transform(this.ad.ADS_START_DATE, 'dd/MM/yyyy');
       this.ad.ADS_END_DATE = this.datePipe.transform(this.ad.ADS_END_DATE, 'dd/MM/yyyy');
+      this.ad.ADS_IS_ACTIVE = this.ad.ADS_IS_ACTIVE == '1' ? true : false;
       this.form.reset(this.ad);
     }
   }

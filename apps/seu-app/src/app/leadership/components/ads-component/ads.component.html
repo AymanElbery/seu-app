@@ -36,7 +36,7 @@
             <td>{{ad.JOB_TITLE}}</td>
             <td>{{ad.ADS_START_DATE }}</td>
             <td>{{ad.ADS_END_DATE}}</td>
-            <td>{{(ad.ADS_IS_ACTIVE ? 'leadership.ad.active_1' : 'leadership.ad.active_0')  |translate}}</td>
+            <td>{{(ad.ADS_IS_ACTIVE == '1' ? 'leadership.ad.active_1' : 'leadership.ad.active_0')  |translate}}</td>
             <td>
               <button (click)="showAddForm(ad)" class="btn btn-primary">{{"leadership.update" | translate}}</button>
               &nbsp;
