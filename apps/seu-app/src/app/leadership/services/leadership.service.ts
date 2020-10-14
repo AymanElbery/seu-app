@@ -133,7 +133,7 @@ export class LeadershipService {
         return this._lookups['depts'].filter(item => item['DEPT_TYPE'] == 'AGENCY');
     }
     colleges_deans() {
-        return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'COLLEGE' || item['DEPT_TYPE'] == 'DEAN'));
+        return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'COLLEGE' || item['DEPT_TYPE'] == 'AGENCY' || item['DEPT_TYPE'] == 'DEAN'));
     }
     depts(){
         return this._lookups['depts'].filter(item => (item['DEPT_TYPE'] == 'DEPT'));
