@@ -302,8 +302,8 @@ export class LeadershipService {
     return this.get('applications/get_app_files_by_app_id/' + id);
   }
 
-  get_indicators(id, type) {
-    return this.get('applications/indicators/' + id + '/' + type);
+  get_indicators(id, type, emp_id = 1) {
+    return this.get('applications/indicators/' + id + '/' + type + '/' + emp_id);
   }
 
   get_indicators_report_for_admin(id, type) {
@@ -311,7 +311,7 @@ export class LeadershipService {
   }
 
   save_files_indicators_rating(data) {
-    return this.post('applications/save_indicators', data);
+    return this.post('applications/save_files_indicators', data);
   }
 
   get_agencies(ad_id) {

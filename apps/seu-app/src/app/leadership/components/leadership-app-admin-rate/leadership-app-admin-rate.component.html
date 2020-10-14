@@ -25,27 +25,27 @@
           <td>{{ row.IND_NAME }} </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0" [checked]="row.GRADE_BASE == '0'" [disabled]="!isAdmin">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0" [checked]="row.GRADE_BASE == '0'" [disabled]="currentApp.DISABLE_ADMIN_RATE">
             </div>
           </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.25" [checked]="row.GRADE_BASE == 0.25" [disabled]="!isAdmin">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.25" [checked]="row.GRADE_BASE == 0.25" [disabled]="currentApp.DISABLE_ADMIN_RATE">
             </div>
           </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.5" [checked]="row.GRADE_BASE == 0.5" [disabled]="!isAdmin">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.5" [checked]="row.GRADE_BASE == 0.5" [disabled]="currentApp.DISABLE_ADMIN_RATE">
             </div>
           </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.75" [checked]="row.GRADE_BASE == 0.75" [disabled]="!isAdmin">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.75" [checked]="row.GRADE_BASE == 0.75" [disabled]="currentApp.DISABLE_ADMIN_RATE">
             </div>
           </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="1" [checked]="row.GRADE_BASE == 1" [disabled]="!isAdmin">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="1" [checked]="row.GRADE_BASE == 1" [disabled]="currentApp.DISABLE_ADMIN_RATE">
             </div>
           </td>
           <td style="width: 300px;">

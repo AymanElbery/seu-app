@@ -61,15 +61,15 @@
                 <a class="nav-link " (click)="redirectTo('details')" [class.active]="current=='details'"
                 href="#">{{"leadership.application-display.details" | translate}}</a>
             </li>
-            <li *ngIf="currentApp.APP_STATUS != 'NOT_COMPLETED'"  class="nav-item">
+            <li *ngIf="currentApp.SHOW_ADMIN_RATE"  class="nav-item">
                 <a class="nav-link " (click)="redirectTo('admin-rate')" [class.active]="current=='admin-rate'"
                 href="#">{{"leadership.application-display.admin_rate" | translate}}</a>
             </li>
-            <li *ngIf="currentApp.APP_STATUS == 'INTERVIEW' || currentParent == 'application-display' || currentParent == 'agency-application-display'"  class="nav-item">
+            <li *ngIf="currentApp.SHOW_INTERVIEW_RATE"  class="nav-item">
                 <a class="nav-link " (click)="redirectTo('interview-rate')" [class.active]="current=='interview-rate'"
                 href="#">{{"leadership.personal_interview_page.interview_rate" | translate}}</a>
             </li>
-            <li *ngIf="currentApp.APP_STATUS == 'AGENCY' || currentParent == 'application-display'"  class="nav-item">
+            <li *ngIf="currentApp.SHOW_AGENCY_RATE"  class="nav-item">
                 <a class="nav-link " (click)="redirectTo('agency-rate')" [class.active]="current=='agency-rate'"
                 href="#">{{"leadership.agency_interview_page.interview_rate" | translate}}</a>
             </li>
