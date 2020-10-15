@@ -28,7 +28,7 @@ export class AddJobComponent implements OnInit {
   id;
   job;
   message;
-
+  genders;
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddJobComponent>,
@@ -44,7 +44,8 @@ export class AddJobComponent implements OnInit {
       'JOB_DESC': [],
       'JOB_CAT_CODE': ['', [Validators.required]],
       'JOB_DEPT_CODE': ['', [Validators.required]],
-      'JOB_AGENCY_CODE': ['', [Validators.required]]
+      'JOB_AGENCY_CODE': ['', [Validators.required]],
+      'JOB_GENDER': []
     });
     this.AddJobForm.controls['JOB_CAT_CODE'].valueChanges.subscribe(() => {
       this.AddJobForm.controls['JOB_DEPT_CODE'].setValue("");
@@ -54,13 +55,17 @@ export class AddJobComponent implements OnInit {
       this.id = this.data.id
       this.getJobById();
     }
+    this.genders = [
+      { id: '1', value: "Males" },
+      { id: '2', value: "Females" }
+    ]
   }
-  updatedeptslist(){
-    if(this.AddJobForm.controls['JOB_CAT_CODE'].value == "DEPARTMENT"){
+  updatedeptslist() {
+    if (this.AddJobForm.controls['JOB_CAT_CODE'].value == "DEPARTMENT") {
       this.job_depts_list = this.depts_list;
-    }else if(this.AddJobForm.controls['JOB_CAT_CODE'].value == "DEAN"){
+    } else if (this.AddJobForm.controls['JOB_CAT_CODE'].value == "DEAN") {
       this.job_depts_list = this.colleges_deans_agenceis;
-    }else{
+    } else {
       this.job_depts_list = this.colleges_deans;
     }
   }
@@ -84,7 +89,7 @@ export class AddJobComponent implements OnInit {
       this.depts_list = list;
       this.updatedeptslist();
     });
-    
+
     this.leadershipService.jobcats_list().subscribe(list => {
       this.cats = list;
     });
