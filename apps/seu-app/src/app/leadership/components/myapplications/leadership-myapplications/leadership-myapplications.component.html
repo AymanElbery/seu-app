@@ -36,7 +36,11 @@
             <td>{{app.INSERT_DATE}}</td>
             <td>
               <button class="btn btn-sm btn-danger" style="color: white" (click)="details(app)">
-                {{"leadership.applications.details" |translate}}
+                {{"leadership.applications.details" |translate}} <i class="fa fa-list"></i>
+              </button>
+              &nbsp;
+              <button *ngIf="app.CAN_DELETE" class="btn btn-sm btn-danger" style="color: white" (click)="delete(app.APP_ID)">
+                {{"leadership.applications.delete" |translate}} <i class="fa fa-trash"></i>
               </button>
             </td>
           </tr>

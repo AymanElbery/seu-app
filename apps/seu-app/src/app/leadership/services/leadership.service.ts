@@ -275,6 +275,11 @@ export class LeadershipService {
     load_app_files(app_id) {
         return this.get("applications/files/" + app_id);
     }
+
+    delete_app(app_id) {
+        return this.get("applications/delete_app/" + app_id);
+    }
+
     save_app_file(post) {
         return this.post("applications/save_file", post);
     }
