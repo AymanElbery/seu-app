@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from '../../../../account/services/user.service';
-import { CardService } from '../../services/card.service';
+import {  PublicCardService } from '../../services/card.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
@@ -19,14 +19,14 @@ export class StudentInfoComponent {
   std_id;
 
   constructor(
-    public userService: UserService,
+    public cardService: PublicCardService,
     public translate: TranslateService,
     public dialog: MatDialog,
     private toastr: AppToasterService,
     private route: ActivatedRoute
   ) {
     this.code = this.route.snapshot.params['code'];
-    this.std_id = this.code.substr(this.code.length - 9); 
+    //this.std_id = this.code.substr(this.code.length - 9); 
     this.getStdInfo();
   }
 
@@ -35,7 +35,7 @@ export class StudentInfoComponent {
 
   getStdInfo(){
     this.isLoading = true;
-    this.userService.getStdData(this.std_id).subscribe(
+    this.cardService.getStdData(this.code).subscribe(
       (response: any) => {
         if (response) {
           this.info = response.data;

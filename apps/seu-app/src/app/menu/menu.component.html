@@ -304,7 +304,12 @@
             <!--    <a href="#" class="menu-item"> طلب البطاقة الجامعية  </a>
                       <a href="#" class="menu-item">تحويل إلى برنامج آخر</a>
                       <a href="#" class="menu-item"routerLink="/otherrequests/changecourse" >تحويل إلى برنامج آخر</a>-->
-            <a href="#" class="menu-item" routerLink="/otherrequests/personalid">
+
+            <!-- <a href="#" class="menu-item" routerLink="/otherrequests/personalid">
+              {{ "menu.personalid" | translate }}
+            </a> -->
+
+            <a href="#" class="menu-item" routerLink="/univcard/requests">
               {{ "menu.personalid" | translate }}
             </a>
             <a href="#" class="menu-item" routerLink="/otherrequests/absencequery">
@@ -338,12 +343,12 @@
               {{ "menu.grades" | translate }}
             </a>
 
-            <a href="#" class="menu-item" routerLink="/other/universitycard">
-              {{ "menu.UID" | translate }}
-            </a>
-            <!-- <a href="#" class="menu-item" routerLink="/univcard/requests">
+            <!-- <a href="#" class="menu-item" routerLink="/other/universitycard">
               {{ "menu.UID" | translate }}
             </a> -->
+            <a href="#" class="menu-item" routerLink="/univcard/requests">
+              {{ "menu.UID" | translate }}
+            </a>
             <a href="#" class="menu-item" routerLink="/procedures/lectabs">
               {{ "menu.lectabs" | translate }}
             </a>
@@ -657,7 +662,7 @@
               {{ "leadership.recomendations" | translate }} <i class="ik ik-book-open"></i>
             </a>
           </div> -->
-          
+
         </div>
 
         <div *ngIf="

@@ -64,13 +64,13 @@ export class CardService {
                 headers: this.getHeader(),
             });
     }
-    
+
     getRequest(id) {
         return this.get("card/get_request/" + id);
     }
 
     addRequest(data) {
-        return this.post("card/add_request", data) ;
+        return this.post("card/add_request", data);
     }
 
     deleteRequest(id) {
@@ -81,17 +81,36 @@ export class CardService {
         return this.get("card/print_request/" + id);
     }
 
-    downloadPDF(response) {
+    downloadImage(response) {
         if (response['status']) {
-            const linkSource = `data:application/pdf;base64,${response['data']['content']}`;
-            const downloadLink = document.createElement("a");
-            const fileName = "Card.pdf";
-
-            downloadLink.href = linkSource;
-            downloadLink.download = fileName;
-            downloadLink.click();
+            if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+                this.iedownload(response['data']['content'], "Card.png");
+            } else {
+                this.browserDonload(response['data']['content'], "Card.png");
+            }
         } else {
             this.notifyError(response['res_code']);
         }
+    }
+
+    browserDonload(content, fileName) {
+        const linkSource = `data:image/png;base64,${content}`;
+        const downloadLink = document.createElement("a");
+
+        downloadLink.href = linkSource;
+        downloadLink.download = fileName;
+        downloadLink.click();
+
+    }
+
+    iedownload(data, fileName) {
+        const byteCharacters = atob(data)
+        let byteNumbers = new Array(byteCharacters.length)
+        for (var i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i)
+        }
+        const byteArray = new Uint8Array(byteNumbers)
+        const blob = new Blob([byteArray], { type: 'application/pdf' })
+        window.navigator.msSaveOrOpenBlob(blob, fileName)
     }
 }
