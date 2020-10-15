@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {LeadershipService} from 'src/app/leadership/services/leadership.service';
-import {Router, ActivatedRoute} from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
-import {AppToasterService} from '../../../shared/services/app-toaster';
+import { Component, OnInit } from '@angular/core';
+import { LeadershipService } from 'src/app/leadership/services/leadership.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { AppToasterService } from '../../../shared/services/app-toaster';
 
 @Component({
   selector: 'app-ads-dean',
@@ -38,7 +38,7 @@ export class AdsDeanComponent implements OnInit {
     }
     this.currentAd = this.leadershipService.currentAddApps;
 
-    this.datePickerConfig = {dateInputFormat: 'DD/MM/YYYY'};
+    this.datePickerConfig = { dateInputFormat: 'DD-MM-YYYY' };
     this.form = this.fb.group({
       START_DATE: [null, [Validators.required]],
       END_DATE: [null, [Validators.required]],
@@ -51,7 +51,7 @@ export class AdsDeanComponent implements OnInit {
   ngOnInit() {
     this.loadDean();
   }
-
+  submittedform = false;
   save(key) {
     const data = this.form.value;
     const post = {};
@@ -79,7 +79,11 @@ export class AdsDeanComponent implements OnInit {
       }
       this.isLoading = false;
       this.submitted = false;
-    }));
+    }), err => {
+      this.isLoading = false;
+      this.submitted = false;
+      this.leadershipService.tryagain();
+    });
   }
 
 
@@ -99,7 +103,7 @@ export class AdsDeanComponent implements OnInit {
 
 
   back() {
-    this.router.navigate(['../ads'], {relativeTo: this.route});
+    this.router.navigate(['../ads'], { relativeTo: this.route });
   }
 
 
@@ -123,7 +127,7 @@ export class AdsDeanComponent implements OnInit {
       data['AD_ID'] = this.currentAd['ADS_PK'];
     }
 
-    this.submitted = true;
+    this.submittedform = true;
     this.leadershipService.save_dean(data).subscribe(
       (response: any) => {
         this.isLoading = true;
@@ -133,11 +137,11 @@ export class AdsDeanComponent implements OnInit {
           this.leadershipService.notifyError(response['res_code']);
         }
         this.isLoading = false;
-        this.submitted = false;
+        this.submittedform = false;
       },
       error => {
         this.isLoading = false;
-        this.submitted = false;
+        this.submittedform = false;
         this.toastr.tryagain();
       }
     );

@@ -16,7 +16,7 @@
             <div class="state">
               <h6>{{"leadership.dean.start_date"|translate}} <span class="reqstart">*</span></h6>
               <input type="text" formControlName="START_DATE" bsDatepicker [bsConfig]="datePickerConfig"
-                     class="form-control"/>
+                class="form-control" />
             </div>
             <div
               *ngIf="form.controls.START_DATE.invalid && (form.controls.START_DATE.dirty || form.controls.START_DATE.touched)">
@@ -31,7 +31,7 @@
             <div class="state">
               <h6>{{"leadership.dean.end_date"|translate}} <span class="reqstart">*</span></h6>
               <input type="text" formControlName="END_DATE" bsDatepicker [bsConfig]="datePickerConfig"
-                     class="form-control"/>
+                class="form-control" />
             </div>
             <div
               *ngIf="form.controls.END_DATE.invalid && (form.controls.END_DATE.dirty || form.controls.END_DATE.touched)">
@@ -42,52 +42,64 @@
           </ng-container>
         </div>
       </div>
+      <br />
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="state">
+                <h6>{{"leadership.applications.EMPLOYEE_ID"|translate}}</h6>
+                <input type="text" formControlName="EMPLOYEE_ID" class="form-control" (input)="changeVal()"
+                  (keypress)="keyPress($event)" />
+              </div>
+              <div
+                *ngIf="form.controls.EMPLOYEE_ID.invalid && (form.controls.EMPLOYEE_ID.dirty || form.controls.EMPLOYEE_ID.touched)">
+                <div *ngIf="form.controls.EMPLOYEE_ID.errors.required">
+                  <b style="position: relative; left: -10px;"
+                    class="text-danger">{{"leadership.required"|translate}}</b>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" style="text-align: center;">
+              <button style="width: 100%;margin-top: 30px;" [disabled]="submitted" (click)="save('EMPLOYEE_ID')"
+                type="submit" class="btn btn-primary">
+                <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
+                {{ "leadership.applications.search" | translate}}
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </div>
 
-      <div class="row">
-        <div class="col-md-5">
-          <div class="state">
-            <h6>{{"leadership.applications.EMPLOYEE_ID"|translate}}</h6>
-            <input type="text" formControlName="EMPLOYEE_ID" class="form-control" (input)="changeVal()"
-                   (keypress)="keyPress($event)"/>
-          </div>
-          <div
-            *ngIf="form.controls.EMPLOYEE_ID.invalid && (form.controls.EMPLOYEE_ID.dirty || form.controls.EMPLOYEE_ID.touched)">
-            <div *ngIf="form.controls.EMPLOYEE_ID.errors.required">
-              <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="state">
+                <h6>{{"leadership.applications.EMAIL"|translate}}</h6>
+                <input type="text" formControlName="EMAIL" class="form-control" (input)="changeVal()" />
+              </div>
+              <div *ngIf="form.controls.EMAIL.invalid && (form.controls.EMAIL.dirty || form.controls.EMAIL.touched)">
+                <div *ngIf="form.controls.EMAIL.errors.required">
+                  <b style="position: relative; left: -10px;"
+                    class="text-danger">{{"leadership.required"|translate}}</b>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" style="text-align: center;">
+              <button style="width: 100%;margin-top: 30px;" [disabled]="submitted" (click)="save('EMAIL')" type="submit"
+                class="btn btn-primary">
+                <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
+                {{ "leadership.applications.search" | translate}}
+                <i class="fa fa-search"></i>
+              </button>
             </div>
           </div>
         </div>
-        <div class="col-md-2" style="text-align: center;">
-          <button style="width: 100%;margin-top: 30px;" [disabled]="submitted"
-                  (click)="save('EMPLOYEE_ID')"
-                  type="submit" class="btn btn-primary">
-            <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
-            {{ "leadership.applications.search" | translate}}
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
       </div>
-      <div class="row">
-        <div class="col-md-5">
-          <div class="state">
-            <h6>{{"leadership.applications.EMAIL"|translate}}</h6>
-            <input type="text" formControlName="EMAIL" class="form-control" (input)="changeVal()"/>
-          </div>
-          <div *ngIf="form.controls.EMAIL.invalid && (form.controls.EMAIL.dirty || form.controls.EMAIL.touched)">
-            <div *ngIf="form.controls.EMAIL.errors.required">
-              <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2" style="text-align: center;">
-          <button style="width: 100%;margin-top: 30px;" [disabled]="submitted" (click)="save('EMAIL')"
-                  type="submit" class="btn btn-primary">
-            <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
-            {{ "leadership.applications.search" | translate}}
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
+      <br />
+      <br />
+
       <div *ngIf="noEmp" class="row">
         <div class="col-md-12">
           <div class="alert alert-danger">
@@ -120,8 +132,8 @@
 
       <div class="row" style="margin-top: 20px;">
         <div class="col-md-12" style="text-align: center;">
-          <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="saveDean()" type="submit"
-                  class="btn btn-primary">{{ "leadership.save" | translate}} <i class="fa fa-save"></i></button>
+          <button style="width: 30%;" [disabled]="submitted || submittedform || form.invalid" (click)="saveDean()" type="submit"
+            class="btn btn-primary">{{ "leadership.save" | translate}} <i class="fa fa-save"></i></button>
         </div>
       </div>
 

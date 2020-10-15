@@ -306,8 +306,8 @@
         "save": "حفظ",
         "accept": "قبول",
         "refuse": "رفض",
-        "personal_interviews": "المقابلات الشخصية",
-        "agency_interviews": "المقابلات مع الوكلاء",
+        "personal_interviews": "مقابلات اللجنة الشخصية",
+        "agency_interviews": "مقابلات الوكلاء",
         "update": "تعديل",
         "newapplications": "طلب ترشيح",
         "myapplications": "طلباتي السابقة",
@@ -316,7 +316,7 @@
         "interviewers_committee": "لجنة المقابلات",
         "agencies_committee": "لجنة الوكلاء",
         "dean_title": "تعيين العميد المعني",
-        "ads_recommendations": "تزكيات العميد",
+        "ads_recommendations": "التزكيات",
         "search_save": "بحث وحفظ",
         "reports":"التقارير",
         "job": {
@@ -368,13 +368,15 @@
             "rec_date": "تاريخ التزكية",
             "recommendations": "التزكيات",
             "recommended":"بيانات المزكى",
-            "recommended_by":"بيانات المزكي"
+            "recommended_by":"بيانات المزكي",
+            "approved":"مقبول",
+            "rejected":"مرفوض"
         },
         "applications": {
             "newapp": "طلب ترشيح جديد",
             "addslist": "قائمة الوظائف المتاحة",
             "apply": "ترشيح",
-            "recommend": "تزكية",
+            "recommend": "التزكيات",
             "send": "ارسال",
             "search": "بحث",
             "notes": "ملاحظات",
