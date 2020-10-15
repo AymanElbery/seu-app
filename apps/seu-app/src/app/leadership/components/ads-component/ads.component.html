@@ -20,7 +20,8 @@
     </div>
     <div class="row" style="margin-top: 2px;">
       <div class="col-md-12">
-        <input class="form-control" [(ngModel)]="filter_text" type="text" placeholder="{{'leadership.ad.filter' | translate}}">
+        <input class="form-control" [(ngModel)]="filter_text" type="text"
+          placeholder="{{'leadership.ad.filter' | translate}}">
       </div>
     </div>
     <div class="table-responsive" style="margin-top: 2px;">
@@ -43,28 +44,46 @@
             <td>{{ad.ADS_END_DATE}}</td>
             <td>{{(ad.ADS_IS_ACTIVE ? 'leadership.ad.active_1' : 'leadership.ad.active_0')  |translate}}</td>
             <td style="text-align: right;">
-              <button (click)="applications(ad)" class="btn btn-primary"><i class="fa fa-list"></i> {{"leadership.ad.apps" | translate}} </button>
-              &nbsp;
-              <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean_recommendations(ad)" class="btn btn-primary"><i class="fa fa-address-book"></i> {{"leadership.ads_recommendations" | translate}} </button>
-              &nbsp;
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {{"leadership.committes" | translate}} <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonreports"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{"leadership.reports" | translate}} <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                  <button (click)="interviewers(ad)" class="dropdown-item"><i class="fa fa-user"></i> {{"leadership.interviewers_committee" | translate}} </button>
-                  <button (click)="agencies(ad)" class="dropdown-item"><i class="fa fa-address-book"></i> {{"leadership.agencies_committee" | translate}} </button>
-                  <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean(ad)" class="dropdown-item"><i class="fa fa-address-book"></i> {{"leadership.dean.title" | translate}} </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonreports">
+                  <button (click)="applications(ad)" class="dropdown-item"><i class="fa fa-list"></i>
+                    {{"leadership.ad.apps" | translate}} </button>
+                  <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean_recommendations(ad)" class="dropdown-item"><i
+                      class="fa fa-address-book"></i> {{"leadership.ads_recommendations" | translate}} </button>
                 </div>
               </div>
               &nbsp;
+
               <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{"leadership.committes" | translate}} <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <button (click)="interviewers(ad)" class="dropdown-item"><i class="fa fa-user"></i>
+                    {{"leadership.interviewers_committee" | translate}} </button>
+                  <button (click)="agencies(ad)" class="dropdown-item"><i class="fa fa-address-book"></i>
+                    {{"leadership.agencies_committee" | translate}} </button>
+                  <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean(ad)" class="dropdown-item"><i
+                      class="fa fa-address-book"></i> {{"leadership.dean.title" | translate}} </button>
+                </div>
+              </div>
+
+              &nbsp;
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{"leadership.actions" | translate}} <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <button (click)="showAddForm(ad)" class="dropdown-item"><i class="fa fa-edit"></i> {{"leadership.update" | translate}}</button>
-                  <button style="margin-right: 5px;" (click)="delete(ad.ADS_PK)" class="dropdown-item"><i class="fa fa-trash"></i> {{"leadership.delete" | translate}}</button>
+                  <button (click)="showAddForm(ad)" class="dropdown-item"><i class="fa fa-edit"></i>
+                    {{"leadership.update" | translate}}</button>
+                  <button style="margin-right: 5px;" (click)="delete(ad.ADS_PK)" class="dropdown-item"><i
+                      class="fa fa-trash"></i> {{"leadership.delete" | translate}}</button>
                 </div>
               </div>
             </td>
