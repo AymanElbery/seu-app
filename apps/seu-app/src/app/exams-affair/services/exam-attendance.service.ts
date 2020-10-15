@@ -33,7 +33,7 @@ export class ExamAttendanceService {
     const sid = this.configService.getSid();
 
 
-    return this.configService.getApiURI() + '/attendance_service/download?type=Term_Exam_Without_Schedul';
+    return this.configService.getApiURI() + '/attendance_service/download?type=Term_Exam_Without_Schedule';
   }
   Print_Final_Exam_With_Schedule() {
     const sid = this.configService.getSid();

@@ -23,11 +23,14 @@ export class LeadershipApplicationAdslistComponent implements OnInit {
 
   loadadds() {
     this.isLoading = true;
-    this.leadershipService.addslist().subscribe((response => {
+    this.leadershipService.addslist().subscribe((response) => {
       this.addsList = response['data']['adds'];
       this.leadershipService.instructor = response['data']['instructor'];
       this.isLoading = false;
-    }));
+    }, (err) => {
+      this.isLoading = false;
+      this.leadershipService.tryagain();
+    });
 
   }
 

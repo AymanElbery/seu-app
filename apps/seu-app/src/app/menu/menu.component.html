@@ -508,7 +508,8 @@
             </a>
 
             <a class="menu-item" target="_blank"
-              href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab">{{ "menu.BLACKBOARD" | translate }}
+              href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab">
+              {{ "menu.BLACKBOARD" | translate }}
               <i class="ik ik-tablet"></i></a>
 
             <a class="menu-item" target="_blank" href="http://forum.seu.edu.sa">{{ "menu.Forum" | translate }} <i
@@ -599,7 +600,7 @@
           </a>
         </div>
 
-        <div *ngIf="userService.userData && userService.userData.activeRole == 'Instructor'" class="nav-item has-sub">
+        <!-- <div *ngIf="userService.userData && userService.userData.activeRole == 'Instructor'" class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "menu.resume" | translate }} </span>
             <i class="ik ik-book-open"></i>
@@ -612,7 +613,7 @@
               {{ "menu.resume_en" | translate }} <i class="ik ik-users"></i>
             </a>
           </div>
-        </div>
+        </div> -->
 
         <div *ngIf="leadership['show_menu']" class="nav-item has-sub">
           <a href="javascript:void(0)">
@@ -646,23 +647,12 @@
               {{ "leadership.myapplications" | translate }} <i class="ik ik-book-open"></i>
             </a>
           </div>
-          <div class="submenu-content" *ngIf="leadership['menu_interviewer']">
-            <a [routerLink]="['/leadership/personal-interviews']" class="menu-item">
-              {{ "leadership.personal_interviews" | translate }} <i class="ik ik-book-open"></i>
-            </a>
-          </div>
-          <div class="submenu-content" *ngIf="leadership['menu_agency']">
-            <a [routerLink]="['/leadership/agency-interviews']" class="menu-item">
-              {{ "leadership.agency_interviews" | translate }} <i class="ik ik-book-open"></i>
-            </a>
-          </div>
-          <!--
-            <div class="submenu-content" *ngIf="leadership['menu_instructor']">
+          <!-- <div class="submenu-content" *ngIf="leadership['menu_instructor']">
             <a [routerLink]="['/leadership/myrecomendations']" class="menu-item">
-              {{ "leadership.recomendations" | translate }} <i class="ik ik-book-open"></i>
+              {{ "leadership.myrecomendations" | translate }} <i class="ik ik-book-open"></i>
             </a>
-            </div>
-             <div class="submenu-content" *ngIf="leadership['menu_instructor']">
+          </div> -->
+          <!-- <div class="submenu-content" *ngIf="leadership['menu_instructor']">
             <a [routerLink]="['/leadership/recomendations']" class="menu-item">
               {{ "leadership.recomendations" | translate }} <i class="ik ik-book-open"></i>
             </a>
@@ -686,7 +676,7 @@
             <a target="_blank"
               href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_137_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab"
               class="menu-item">
-              {{ "menu.SYSTEM" | translate }}
+              {{ "menu.BLACKBOARD" | translate }}
               <span class="text-eng"></span>
               <i class="ik ik-bold"></i>
             </a>

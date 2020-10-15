@@ -128,7 +128,7 @@
         "instruction_vedio_file": "Manual Vedio",
         "instruction_": "Manual",
         "isInstalled": "WhatsApp Is Not Installed",
-        "mysystemNotes": "<span style='color: red;font-weight: bold;font-size: 14px;'>Attention:</span> Self services (wafi) System is Closed All of its services are now available on the side menu ( Personal, Administrative, Employee-Requests )"
+        "mysystemNotes": ""
     },
     "menu": {
         "grades": "التقديرات قبل حساب المعدل",
@@ -214,7 +214,7 @@
         "Events": "Events",
         "BBREPORTS": " Blackboard Reports",
         "BADAL": " University education allowance",
-        "BAWABA": "Deanship of the Scientific Research Electronic Portal",
+        "BAWABA": "Research Tracking Management System",
         "hello": "hello",
         "logout": "log out ",
         "not": "notifications ",
@@ -255,7 +255,8 @@
         "attends": "Attendance System",
         "masterequalize": "معادلة مقررات الفصل التحضيري",
         "skills": "Trainging & Skills record",
-        "translation":"Translation Center"
+        "translation":"Translation Center",
+        "exam":"Swift Asses"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",
@@ -297,6 +298,7 @@
         "cv_display": "Display Resume"
     },
     "enquries": {
+        "close": "Close",
         "title": "Inquiries",
         "message": "Message",
         "answer": "Answer on message",
