@@ -26,6 +26,8 @@ import {AdsDeanComponent} from './components/ads-dean/ads-dean.component';
 import {AdsDeanRecommendationsComponent} from './components/ads-dean-recommendations/ads-dean-recommendations.component';
 import {AdsDeanRecommendationsEditComponent} from './components/ads-dean-recommendations-edit/ads-dean-recommendations-edit.component';
 import {AdsRecommendationsComponent} from './components/ads-recommendations/ads-recommendations.component';
+import {AdPrimaryReportComponent} from './components/ad-primary-report/ad-primary-report.component';
+import {AdFinalReportComponent} from './components/ad-final-report/ad-final-report.component';
 
 const routes: Routes = [
   {
@@ -134,6 +136,14 @@ const routes: Routes = [
       {
         path: 'dean',
         component: AdsDeanComponent
+      },
+      {
+        path: 'ad-primary-report',
+        component: AdPrimaryReportComponent
+      },
+      {
+        path: 'ad-final-report',
+        component: AdFinalReportComponent
       },
       {
         path: 'ad-recommendations',

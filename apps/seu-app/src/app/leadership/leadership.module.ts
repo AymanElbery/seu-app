@@ -39,6 +39,8 @@ import {AdsDeanRecommendationsComponent} from './components/ads-dean-recommendat
 import {AdsDeanRecommendationsEditComponent} from './components/ads-dean-recommendations-edit/ads-dean-recommendations-edit.component';
 import {AdsRecommendationsComponent} from './components/ads-recommendations/ads-recommendations.component';
 import { FilterPipe } from './pipes/filter-pipe';
+import {AdPrimaryReportComponent} from './components/ad-primary-report/ad-primary-report.component';
+import {AdFinalReportComponent} from './components/ad-final-report/ad-final-report.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { FilterPipe } from './pipes/filter-pipe';
     AdsRecommendationsComponent,
     AdsDeanRecommendationsComponent,
     AdsDeanRecommendationsEditComponent,
+    AdPrimaryReportComponent,
+    AdFinalReportComponent,
     LeadershipAppViewComponent,
     LeadershipAppDetailsComponent,
     LeadershipAppAdminRateComponent,
