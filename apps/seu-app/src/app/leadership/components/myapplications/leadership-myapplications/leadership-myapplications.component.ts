@@ -28,7 +28,14 @@ export class LeadershipMyapplicationsComponent implements OnInit {
       this.appsList = response['data']['apps'];
       this.isLoading = false;
     }));
+  }
 
+  delete(id){
+    this.isLoading = true;
+    this.leadershipService.delete_app(id).subscribe((response => {
+      this.isLoading = false;
+      this.loadapps();
+    }));
   }
 
   details(app) {
