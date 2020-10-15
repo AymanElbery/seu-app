@@ -59,6 +59,9 @@ const routes: Routes = [
         path: 'application-display', component: LeadershipAppViewComponent,
         children: [
           {
+            path: '', component: LeadershipAppViewComponent
+          },
+          {
             path: 'details/:id', component: LeadershipAppDetailsComponent
           },
           {
@@ -76,6 +79,9 @@ const routes: Routes = [
         path: 'interview-application-display', component: LeadershipAppViewComponent,
         children: [
           {
+            path: '', component: LeadershipAppViewComponent
+          },
+          {
             path: 'details/:id', component: LeadershipAppDetailsComponent
           },
           {
@@ -92,6 +98,9 @@ const routes: Routes = [
       {
         path: 'agency-application-display', component: LeadershipAppViewComponent,
         children: [
+          {
+            path: '', component: LeadershipAppViewComponent
+          },
           {
             path: 'details/:id', component: LeadershipAppDetailsComponent
           },

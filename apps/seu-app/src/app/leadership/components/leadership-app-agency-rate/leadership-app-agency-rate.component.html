@@ -1,5 +1,5 @@
 <seu-loader [isLoading]="Loading"></seu-loader>
-<div *ngIf="!Loading && isAgency" class="row">
+<div *ngIf="!Loading && type == 'agency'" class="row">
   <div class="col-md-12">
     <table class="table table-striped table-bordered">
       <thead>
@@ -18,27 +18,27 @@
           <td>{{ row.IND_NAME }} </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0" [checked]="row.GRADE_BASE == '0'" [disabled]="!isAgency">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0" [checked]="row.GRADE_BASE == '0'">
             </div>
           </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.25" [checked]="row.GRADE_BASE == 0.25" [disabled]="!isAgency">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.25" [checked]="row.GRADE_BASE == 0.25">
             </div>
           </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.5" [checked]="row.GRADE_BASE == 0.5" [disabled]="!isAgency">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.5" [checked]="row.GRADE_BASE == 0.5">
             </div>
           </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.75" [checked]="row.GRADE_BASE == 0.75" [disabled]="!isAgency">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.75" [checked]="row.GRADE_BASE == 0.75">
             </div>
           </td>
           <td>
             <div class="form-check">
-              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="1" [checked]="row.GRADE_BASE == 1" [disabled]="!isAgency">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="1" [checked]="row.GRADE_BASE == 1">
             </div>
           </td>
           <td style="width: 300px;">
@@ -62,7 +62,7 @@
   </div>
 </div>
 
-<div *ngIf="!Loading && !isAgency" class="row">
+<div *ngIf="!Loading && type != 'agency'" class="row">
   <div class="col-md-12">
     <div *ngIf="currentApp.AGENCY_EVAL >= 50" class="card p-3 mb-2 bg-success text-white">
       <h5>{{ "leadership.agency_interview_page.interview_total_rate_message" | translate }}<span class="percent">{{ currentApp.AGENCY_EVAL }}</span></h5>
@@ -72,7 +72,7 @@
     </div>
   </div>
 </div>
-<div *ngIf="!Loading && !isAgency" class="row">
+<div *ngIf="!Loading && type != 'agency'" class="row">
   <div class="col-md-12">
     <table class="table table-striped table-bordered">
       <thead>

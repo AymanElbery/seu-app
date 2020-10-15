@@ -20,6 +20,7 @@ export class LeadershipAppInterviewRateComponent implements OnInit {
   isInterviewer = true;
   indicatorsReport;
   emps;
+  type;
   
   constructor(
     private route: ActivatedRoute,
@@ -31,17 +32,21 @@ export class LeadershipAppInterviewRateComponent implements OnInit {
   ngOnInit() {
     this.currentID = this.route.snapshot.params['id'];
     this.currentParent = this.route.snapshot.parent['url'][0]['path'];
-    if (this.currentParent != 'interview-application-display') {
-      this.isInterviewer = false;
+    if (this.currentParent == 'application-display') {
+      this.type = 'admin';
+    } else if(this.currentParent == 'interview-application-display') {
+      this.type = 'interview';
+    } else if(this.currentParent == 'agency-application-display') {
+      this.type = 'agency';
     }
     this.loadApp();
   }
 
   loadApp() {
     this.Loading = true;
-    this.leadershipService.get_app_by_id(this.currentID).subscribe((response => {
+    this.leadershipService.get_app_by_id(this.currentID, this.type).subscribe((response => {
       this.currentApp = response['data'];
-      if (!this.isInterviewer) {
+      if (this.type != 'interview') {
         this.loadIndecatorsReportForAdmin();
       }
       this.loadIndecators();
@@ -93,9 +98,7 @@ export class LeadershipAppInterviewRateComponent implements OnInit {
     });
     let allData = {
       "data" : data,
-      "total" : [{
-        "INTERVIEW_EVAL" : this.totalVal
-      }],
+      "AD_ID" : this.currentApp.AD_ID,
     };
 
     this.leadershipService.save_interview_indicators_rating(allData).subscribe((response => {

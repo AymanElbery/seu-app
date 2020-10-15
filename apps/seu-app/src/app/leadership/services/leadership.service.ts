@@ -111,11 +111,11 @@ export class LeadershipService {
         if (response['data']['user']) {
           setting.show_menu = true;
           setting.menu_user = true;
-          setting.menu_admin = (response['data']['IS_ADMIN']) ? true : false;
-          setting.menu_interviewer = (response['data']['IS_INTERVIEWER']) ? true : false;
-          setting.menu_agency = (response['data']['IS_AGENCY']) ? true : false;
-          setting.menu_recommender = (response['data']['IS_RECOMMENDER']) ? true : false;
         }
+        setting.menu_admin = (response['data']['IS_ADMIN']) ? true : false;
+        setting.menu_interviewer = (response['data']['IS_INTERVIEWER']) ? true : false;
+        setting.menu_agency = (response['data']['IS_AGENCY']) ? true : false;
+        setting.menu_recommender = (response['data']['IS_RECOMMENDER']) ? true : false;
         this._settings = setting;
         return setting;
       } else {
@@ -294,8 +294,8 @@ export class LeadershipService {
     return this.post('ads/save_interviewers', data);
   }
 
-  get_app_by_id(id) {
-    return this.get('applications/get_app_by_id/' + id);
+  get_app_by_id(id, type) {
+    return this.get('applications/get_app_by_id/' + id + '/' + type);
   }
 
   get_app_files_by_app_id(id) {

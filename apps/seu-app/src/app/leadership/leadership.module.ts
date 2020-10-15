@@ -38,6 +38,7 @@ import { LeadershipBlankComponent } from './components/leadership-blank/leadersh
 import {AdsDeanRecommendationsComponent} from './components/ads-dean-recommendations/ads-dean-recommendations.component';
 import {AdsDeanRecommendationsEditComponent} from './components/ads-dean-recommendations-edit/ads-dean-recommendations-edit.component';
 import {AdsRecommendationsComponent} from './components/ads-recommendations/ads-recommendations.component';
+import { FilterPipe } from './pipes/filter-pipe';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import {AdsRecommendationsComponent} from './components/ads-recommendations/ads-
     LeadershipAppInterviewRateComponent,
     LeadershipAgencyInterviewsComponent,
     LeadershipAppAgencyRateComponent,
-    LeadershipBlankComponent
+    LeadershipBlankComponent,
+    FilterPipe
   ],
   imports: [
     LeadershipRoutingModule,

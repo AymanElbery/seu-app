@@ -7,13 +7,13 @@
     border-radius: 3px;
     color: #FFF;
 }
-.app_status_NOT_COMPLETED, .app_status_FAIL_APP{
+.app_status_NOT_COMPLETED, .app_status_FAIL_APP, .app_status_FAIL_INTERVIEW, .app_status_FAIL_AGENCY{
     background-color: #dc3545;
     padding: 3px 30px;
     border-radius: 3px;
     color: #FFF;
 }
-.app_status_INTERVIEW{
+.app_status_INTERVIEW, .app_status_RECOMMENDED{
     background-color: #17a2b8;
     padding: 3px 30px;
     border-radius: 3px;
