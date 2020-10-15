@@ -26,6 +26,7 @@ export class LeadershipAppAdminRateComponent implements OnInit {
   indicators_val;
   currentParent;
   isAdmin = true;
+  type;
   
   constructor(
     private route: ActivatedRoute,
@@ -38,15 +39,19 @@ export class LeadershipAppAdminRateComponent implements OnInit {
   ngOnInit() {
     this.currentID = this.route.snapshot.params['id'];
     this.currentParent = this.route.snapshot.parent['url'][0]['path'];
-    if (this.currentParent != 'application-display') {
-      this.isAdmin = false;
+    if (this.currentParent == 'application-display') {
+      this.type = 'admin';
+    } else if(this.currentParent == 'interview-application-display') {
+      this.type = 'interview';
+    } else if(this.currentParent == 'agency-application-display') {
+      this.type = 'agency';
     }
     this.loadApp();
   }
 
   loadApp() {
     this.Loading = true;
-    this.leadershipService.get_app_by_id(this.currentID).subscribe((response => {
+    this.leadershipService.get_app_by_id(this.currentID, this.type).subscribe((response => {
       this.currentApp = response['data'];
       if (new Date(this.currentApp.ADS_END_DATE) > new Date()) {
         this.showRate = false;
@@ -58,7 +63,8 @@ export class LeadershipAppAdminRateComponent implements OnInit {
   }
 
   loadIndecators(){
-    this.leadershipService.get_indicators(this.currentID, 'FILES').subscribe((response => {
+    let empId = (this.type == 'admin') ? 1 : 0;
+    this.leadershipService.get_indicators(this.currentID, 'FILES', empId).subscribe((response => {
       this.indicators = response['data']['indicators'];
       this.Loading = false;
       this.setTotalVal();

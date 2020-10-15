@@ -17,7 +17,12 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row" style="margin-top: 2px;">
+    <div class="col-md-12">
+      <input class="form-control" [(ngModel)]="filter_text" type="text" placeholder="{{'leadership.job.filter' | translate}}">
+    </div>
+  </div>
+  <div class="row" style="margin-top: 2px;">
     <div class="col-md-12">
       <div class="table-responsive" *ngIf="!isLoading">
         <table class="table table-striped table-bordered">
@@ -32,7 +37,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let job of jobs; let i = index;">
+            <tr *ngFor="let job of jobs | filter : filter_text; let i = index;">
               <td>{{i+1}}</td>
               <td>{{job.JOB_TITLE}}</td>
               <td>{{job.CAT_NAME}}</td>

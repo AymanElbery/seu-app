@@ -13,6 +13,7 @@ export class LeadershipAppViewComponent implements OnInit {
   isLoading = false;
   currentApp;
   currentParent;
+  type;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,23 +27,29 @@ export class LeadershipAppViewComponent implements OnInit {
     this.currentID = this.route.snapshot.children[0].params['id'];
     this.current = this.route.snapshot.children[0]['url'][0]['path'];
     this.currentParent = this.route.snapshot['url'][0]['path'];
+    if (this.currentParent == 'application-display') {
+      this.type = 'admin';
+    } else if(this.currentParent == 'interview-application-display') {
+      this.type = 'interview';
+    } else if(this.currentParent == 'agency-application-display') {
+      this.type = 'agency';
+    }
     this.loadApp();
   }
 
   back() {
-    if (this.currentParent == 'application-display') {
+    if (this.type == 'admin') {
       this.router.navigate(['../applications'], { relativeTo: this.route });
-    } else if(this.currentParent == 'interview-application-display') {
+    } else if(this.type == 'interview') {
       this.router.navigate(['../interview-applications'], { relativeTo: this.route });
-    }
-    else if(this.currentParent == 'agency-application-display') {
+    } else if(this.type == 'agency') {
       this.router.navigate(['../agency-applications'], { relativeTo: this.route });
     }
   }
 
   loadApp() {
     this.isLoading = true;
-    this.leadershipService.get_app_by_id(this.currentID).subscribe((response => {
+    this.leadershipService.get_app_by_id(this.currentID, this.type).subscribe((response => {
       this.currentApp = response['data'];
       this.isLoading = false;
     }));

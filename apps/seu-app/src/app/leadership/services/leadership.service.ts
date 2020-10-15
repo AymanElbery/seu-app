@@ -100,18 +100,22 @@ export class LeadershipService {
           menu_interviewer: false,
           menu_agency: false,
           menu_instructor: false,
+          menu_recommender: false,
         };
+
         if (response['data']['instructor']) {
           setting.show_menu = true;
           setting.menu_instructor = true;
         }
+
         if (response['data']['user']) {
           setting.show_menu = true;
           setting.menu_user = true;
-          setting.menu_admin = (response['data']['IS_ADMIN']) ? true : false;
-          setting.menu_interviewer = (response['data']['IS_INTERVIEWER']) ? true : false;
-          setting.menu_agency = (response['data']['IS_AGENCY']) ? true : false;
         }
+        setting.menu_admin = (response['data']['IS_ADMIN']) ? true : false;
+        setting.menu_interviewer = (response['data']['IS_INTERVIEWER']) ? true : false;
+        setting.menu_agency = (response['data']['IS_AGENCY']) ? true : false;
+        setting.menu_recommender = (response['data']['IS_RECOMMENDER']) ? true : false;
         this._settings = setting;
         return setting;
       } else {
@@ -293,16 +297,16 @@ export class LeadershipService {
     return this.post('ads/save_interviewers', data);
   }
 
-  get_app_by_id(id) {
-    return this.get('applications/get_app_by_id/' + id);
+  get_app_by_id(id, type) {
+    return this.get('applications/get_app_by_id/' + id + '/' + type);
   }
 
   get_app_files_by_app_id(id) {
     return this.get('applications/get_app_files_by_app_id/' + id);
   }
 
-  get_indicators(id, type) {
-    return this.get('applications/indicators/' + id + '/' + type);
+  get_indicators(id, type, emp_id = 1) {
+    return this.get('applications/indicators/' + id + '/' + type + '/' + emp_id);
   }
 
   get_indicators_report_for_admin(id, type) {
@@ -310,7 +314,7 @@ export class LeadershipService {
   }
 
   save_files_indicators_rating(data) {
-    return this.post('applications/save_indicators', data);
+    return this.post('applications/save_files_indicators', data);
   }
 
   get_agencies(ad_id) {
@@ -346,4 +350,29 @@ export class LeadershipService {
   save_dean(data) {
     return this.post('ads/save_dean', data);
   }
+
+  list_recommender_ads() {
+    return this.get('ads/recommender_ads');
+  }
+
+  get_dean_recommendations(ad_id) {
+    return this.get('ads/dean_recommendations/' + ad_id);
+  }
+
+  save_dean_recommendation(data) {
+    return this.post('ads/save_dean_recommendation', data);
+  }
+
+  delete_dean_recommendation(ad_id, empId) {
+    return this.get('ads/delete_dean_recommendation/' + ad_id + '/' + empId);
+  }
+
+  list_ad_recommendations(ad_id) {
+    return this.get('ads/ad_recommendations/' + ad_id);
+  }
+
+  confirm_recommendation(data) {
+    return this.post('ads/ad_recommendation_confirm', data);
+  }
+
 }

@@ -20,29 +20,33 @@ export class LeadershipAppAgencyRateComponent implements OnInit {
   isAgency = true;
   indicatorsReport;
   emps;
+  type;
   
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private leadershipService: LeadershipService
   ) { 
-    console.log("sdfsdf");
   }
 
   ngOnInit() {
     this.currentID = this.route.snapshot.params['id'];
     this.currentParent = this.route.snapshot.parent['url'][0]['path'];
-    if (this.currentParent != 'agency-application-display') {
-      this.isAgency = false;
+    if (this.currentParent == 'application-display') {
+      this.type = 'admin';
+    } else if(this.currentParent == 'interview-application-display') {
+      this.type = 'interview';
+    } else if(this.currentParent == 'agency-application-display') {
+      this.type = 'agency';
     }
     this.loadApp();
   }
 
   loadApp() {
     this.Loading = true;
-    this.leadershipService.get_app_by_id(this.currentID).subscribe((response => {
+    this.leadershipService.get_app_by_id(this.currentID, this.type).subscribe((response => {
       this.currentApp = response['data'];
-      if (!this.isAgency) {
+      if (this.type != 'agency') {
         this.loadIndecatorsReportForAdmin();
       }
       this.loadIndecators();
@@ -94,9 +98,7 @@ export class LeadershipAppAgencyRateComponent implements OnInit {
     });
     let allData = {
       "data" : data,
-      "total" : [{
-        "AGENCY_EVAL" : this.totalVal
-      }],
+      "AD_ID" : this.currentApp.AD_ID,
     };
 
     this.leadershipService.save_agency_indicators_rating(allData).subscribe((response => {

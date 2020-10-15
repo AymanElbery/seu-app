@@ -18,8 +18,13 @@
           {{ "leadership.ad.add_ads" | translate}}</button>
       </h3>
     </div>
-    <div class="table-responsive" *ngIf="!isLoading">
-      <table class="table table-striped table-bordered">
+    <div class="row" style="margin-top: 2px;">
+      <div class="col-md-12">
+        <input class="form-control" [(ngModel)]="filter_text" type="text" placeholder="{{'leadership.ad.filter' | translate}}">
+      </div>
+    </div>
+    <div class="table-responsive" style="margin-top: 2px;">
+      <table class="table table-striped table-bordered" style="margin-bottom: 100px;">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -31,13 +36,28 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let ad of ads; let i = index;">
+          <tr *ngFor="let ad of ads | filter : filter_text; let i = index;">
             <td>{{i+1}}</td>
             <td>{{ad.JOB_TITLE}}</td>
             <td>{{ad.ADS_START_DATE }}</td>
             <td>{{ad.ADS_END_DATE}}</td>
-            <td>{{(ad.ADS_IS_ACTIVE == '1' ? 'leadership.ad.active_1' : 'leadership.ad.active_0')  |translate}}</td>
-            <td>
+            <td>{{(ad.ADS_IS_ACTIVE ? 'leadership.ad.active_1' : 'leadership.ad.active_0')  |translate}}</td>
+            <td style="text-align: right;">
+              <button (click)="applications(ad)" class="btn btn-primary"><i class="fa fa-list"></i> {{"leadership.ad.apps" | translate}} </button>
+              &nbsp;
+              <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean_recommendations(ad)" class="btn btn-primary"><i class="fa fa-address-book"></i> {{"leadership.ads_recommendations" | translate}} </button>
+              &nbsp;
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{"leadership.committes" | translate}} <i class="fa fa-angle-down" aria-hidden="true"></i>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                  <button (click)="interviewers(ad)" class="dropdown-item"><i class="fa fa-user"></i> {{"leadership.interviewers_committee" | translate}} </button>
+                  <button (click)="agencies(ad)" class="dropdown-item"><i class="fa fa-address-book"></i> {{"leadership.agencies_committee" | translate}} </button>
+                  <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean(ad)" class="dropdown-item"><i class="fa fa-address-book"></i> {{"leadership.dean.title" | translate}} </button>
+                </div>
+              </div>
+              &nbsp;
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {{"leadership.actions" | translate}} <i class="fa fa-angle-down" aria-hidden="true"></i>
@@ -45,11 +65,6 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <button (click)="showAddForm(ad)" class="dropdown-item"><i class="fa fa-edit"></i> {{"leadership.update" | translate}}</button>
                   <button style="margin-right: 5px;" (click)="delete(ad.ADS_PK)" class="dropdown-item"><i class="fa fa-trash"></i> {{"leadership.delete" | translate}}</button>
-                  <button (click)="applications(ad)" class="dropdown-item"><i class="fa fa-list"></i> {{"leadership.ad.apps" | translate}} </button>
-                  <!-- <button (click)="recommendations(ad)" class="dropdown-item">{{"leadership.recomendations" | translate}}</button> -->
-                  <button (click)="interviewers(ad)" class="dropdown-item"><i class="fa fa-user"></i> {{"leadership.interviewers_committee" | translate}} </button>
-                  <button (click)="agencies(ad)" class="dropdown-item"><i class="fa fa-address-book"></i> {{"leadership.agencies_committee" | translate}} </button>
-                  <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean(ad)" class="dropdown-item"><i class="fa fa-address-book"></i> {{"leadership.dean.title" | translate}} </button>
                 </div>
               </div>
             </td>

@@ -300,9 +300,12 @@
         "job_title": "قائمة الوظائف",
         "users_title": "قائمة المستخدمين",
         "actions": "الإجراءات",
+        "committes":"اللجان",
         "delete": "حذف",
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
+        "accept": "قبول",
+        "refuse": "رفض",
         "personal_interviews": "المقابلات الشخصية",
         "agency_interviews": "المقابلات مع الوكلاء",
         "update": "تعديل",
@@ -313,6 +316,8 @@
         "interviewers_committee": "لجنة المقابلات",
         "agencies_committee": "لجنة الوكلاء",
         "dean_title": "تعيين العميد المعني",
+        "ads_recommendations": "تزكيات العميد",
+        "search_save": "بحث وحفظ",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "بيانات الوظيفة",
@@ -327,7 +332,8 @@
             "category":"تصنيف",
             "college_dean":"العمادة أو الكلية",
             "agency":"الوكالة التي تتبع لها",
-            "gender":"الجنس"
+            "gender":"الجنس",
+            "filter": "بحث في الوظائف ..."
         },
         "ad": {
             "add_ads": "إضافة إعلان",
@@ -341,7 +347,8 @@
             "apps": "الترشيحات",
             "active": "نشر الإعلان",
             "active_1": "نعم",
-            "active_0": "لا"
+            "active_0": "لا",
+            "filter": "بحث في الإعلانات ..."
         },
         "user": {
             "newuser": "مستخدم جديد",
@@ -397,6 +404,7 @@
             "TERMS":"الفصول الدراسية",
             "status":"حالة الطلب",
             "app_details": "التفاصيل",
+            "filter": "بحث في الترشيحات ...",
             "not_compeleted_notes":"الرجاء استكمال الطلب برفع الوثائق من خلال ايفونة تفاصيل الطلب"
         },
         "application-display": {
