@@ -12,6 +12,7 @@ import {BsDatepickerConfig} from 'ngx-bootstrap/datepicker';
 export class AdsDeanRecommendationsEditComponent implements OnInit {
 
   isLoading = false;
+  isDeleting = false;
   currentAd: number;
 
   form: FormGroup;
@@ -93,8 +94,9 @@ export class AdsDeanRecommendationsEditComponent implements OnInit {
 
 
   delete(empId) {
-    this.isLoading = true;
+    this.isDeleting = true;
     this.leadershipService.delete_dean_recommendation(this.currentAd['ADS_PK'], empId).subscribe((response => {
+      this.isDeleting = false;
       this.loadRecommendations();
     }));
   }

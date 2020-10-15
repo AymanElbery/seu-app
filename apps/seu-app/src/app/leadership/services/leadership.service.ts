@@ -364,4 +364,12 @@ export class LeadershipService {
     return this.get('ads/delete_dean_recommendation/' + ad_id + '/' + empId);
   }
 
+  list_ad_recommendations(ad_id) {
+    return this.get('ads/ad_recommendations/' + ad_id);
+  }
+
+  confirm_recommendation(data) {
+    return this.post('ads/ad_recommendation_confirm', data);
+  }
+
 }

@@ -302,6 +302,8 @@
         "delete": "حذف",
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
+        "accept": "قبول",
+        "refuse": "رفض",
         "personal_interviews": "المقابلات الشخصية",
         "agency_interviews": "المقابلات مع الوكلاء",
         "update": "تعديل",
