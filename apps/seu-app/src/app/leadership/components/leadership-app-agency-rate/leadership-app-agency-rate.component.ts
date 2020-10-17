@@ -99,6 +99,8 @@ export class LeadershipAppAgencyRateComponent implements OnInit {
     let allData = {
       "data" : data,
       "AD_ID" : this.currentApp.AD_ID,
+      "FILES_EVAL" : this.currentApp.FILES_EVAL,
+      "INTERVIEW_EVAL" : this.currentApp.INTERVIEW_EVAL,
     };
 
     this.leadershipService.save_agency_indicators_rating(allData).subscribe((response => {

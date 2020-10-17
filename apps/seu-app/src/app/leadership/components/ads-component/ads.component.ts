@@ -121,4 +121,14 @@ export class AdsComponent implements OnDestroy {
     this.leadershipService.currentAddApps = ad;
     this.router.navigate(['../ad-recommendations'], {relativeTo: this.route});
   }
+
+  primaryReport(ad){
+    this.leadershipService.currentAddApps = ad;
+    this.router.navigate(['../ad-primary-report'], {relativeTo: this.route});
+  }
+
+  finalReport(ad){
+    this.leadershipService.currentAddApps = ad;
+    this.router.navigate(['../ad-final-report'], {relativeTo: this.route});
+  }
 }

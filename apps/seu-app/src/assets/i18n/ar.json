@@ -319,6 +319,8 @@
         "ads_recommendations": "التزكيات",
         "search_save": "بحث وحفظ",
         "reports":"التقارير",
+        "primary_report":"التقرير الأولي",
+        "final_report":"التقرير النهائي",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "بيانات الوظيفة",
@@ -408,7 +410,11 @@
             "status":"حالة الطلب",
             "app_details": "التفاصيل",
             "filter": "بحث في الترشيحات ...",
-            "not_compeleted_notes":"الرجاء استكمال الطلب برفع الوثائق من خلال ايفونة تفاصيل الطلب"
+            "not_compeleted_notes":"الرجاء استكمال الطلب برفع الوثائق من خلال ايفونة تفاصيل الطلب",
+            "FILES_EVAL":"تقييم الوثائق",
+            "INTERVIEW_EVAL":"تقييم المقابلات",
+            "AGENCY_EVAL":"تقييم الوكلاء",
+            "FINAL_EVAL":"التقييم النهائي"
         },
         "application-display": {
             "title": "تفاصيل الترشيح",
