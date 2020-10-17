@@ -7,6 +7,10 @@
     <div class="widget-header">
       <h3 class="widget-title">
         {{currentad['JOB_TITLE']}}
+        <button type="button" class="btn btn-primary" (click)="back()">
+          {{"leadership.back"|translate}}
+        </button>
+        &nbsp;
         <button type="button" class="btn btn-primary" (click)="exportAsXLSX()">
           {{"leadership.applications.export"|translate}}
         </button>
@@ -20,11 +24,14 @@
             <th scope="col">#</th>
             <th scope="col">{{"leadership.applications.EMPLOYEE_ID"|translate}}</th>
             <th scope="col">{{"leadership.applications.FULL_NAME"|translate}}</th>
+            <th scope="col">{{"leadership.applications.SCALE"|translate}}</th>
+            <th scope="col">{{"leadership.applications.COLLEGE"|translate}}</th>
             <th scope="col">{{"leadership.applications.DEPT"|translate}}</th>
             <th scope="col">{{"leadership.applications.FILES_EVAL"|translate}}</th>
             <th scope="col">{{"leadership.applications.INTERVIEW_EVAL"|translate}}</th>
             <th scope="col">{{"leadership.applications.AGENCY_EVAL"|translate}}</th>
             <th scope="col">{{"leadership.applications.FINAL_EVAL"|translate}}</th>
+            <th scope="col">{{"leadership.applications.status"|translate}}</th>
           </tr>
         </thead>
         <tbody>
@@ -32,11 +39,14 @@
             <td>{{i+1}}</td>
             <td>{{app.EMPLOYEE_ID}}</td>
             <td>{{app.FULL_NAME}}</td>
+            <td>{{ app.SCALE }}</td>
+            <td>{{ app.COLLEGE }}</td>
             <td>{{app.DEPT}}</td>
             <td>{{app.FILES_EVAL}}</td>
             <td>{{app.INTERVIEW_EVAL}}</td>
             <td>{{app.AGENCY_EVAL}}</td>
             <td>{{app.FINAL_EVAL}}</td>
+            <td>{{app.LOOKUP_NAME}}</td>
           </tr>
         </tbody>
       </table>
