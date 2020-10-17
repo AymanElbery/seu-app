@@ -394,4 +394,7 @@ export class LeadershipService {
     return this.get('ads/ad_final_report/' + ad_id + '/' + excel);
   }
 
+  delete_app(app_id) {
+    return this.get("applications/delete_app/" + app_id);
+  }
 }

@@ -17,43 +17,40 @@ export class AddUnivCardComponent implements OnInit {
   submitted = false;
   AddCardRequestForm: FormGroup;
   photo;
+  photo_name;
   message;
   isLoading;
   std_id;
-  std_name_ar;
-  std_name_en;
-  std_ssn;
-  std_branch;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddUnivCardComponent>,
-    private toastr: AppToasterService, 
+    private toastr: AppToasterService,
     private cardService: CardService,
     private fb: FormBuilder,
     private translate: TranslateService,
     public userService: UserService
   ) {
     // To Do ...
-    this.std_id = this.userService.userData.student_details.id;
+    this.std_id = this.userService.getActiveRoleDetails()['id'];
     this.AddCardRequestForm = this.fb.group({
       'PHOTO': ['', [Validators.required]]
     });
   }
 
   ngOnInit() {
-    
+
   }
 
   onSubmit() {
-    this.isLoading = true;
-    if (this.AddCardRequestForm.invalid) {
+    if (!this.photo) {
       return;
     }
-    let data = this.AddCardRequestForm.value;
-    data.STD_ID = this.std_id;
-    if (this.photo) {
-      data.PHOTO = this.photo;
+    this.isLoading = true;
+    let data = {
+      STD_ID: this.std_id,
+      PHOTO: this.photo,
+      PHOTO_NAME: this.photo_name,
     }
     this.message = "card.messages.card_has_been_saved";
     this.submitted = true;
@@ -66,6 +63,8 @@ export class AddUnivCardComponent implements OnInit {
               'type': 'success',
               'body': this.translate.instant(this.message)
             }]);
+          } else {
+            this.toastr.tryagain();
           }
           this.closeDiag();
           this.isLoading = false;
@@ -73,23 +72,45 @@ export class AddUnivCardComponent implements OnInit {
         }
       },
       error => {
+        this.toastr.tryagain();
         this.isLoading = false;
         this.submitted = false;
       }
     );
   }
-  
+
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    if (!file) {
+      return false;
+    }
+    if (!this.validateFile(file.name)) {
+      return false;
+    }
+    if (!this.validateFileSize(file.size)) {
+      return false;
+    }
+    this.photo_name = file.name;
+
     const pattern = /image-*/;
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
   }
-  
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.photo = reader.result;
+  }
+  validateFileSize(size) {
+    return (size < 5000000) ? true : false;
+  }
+
+  validateFile(name: String) {
+    var ext = name.substring(name.lastIndexOf('.') + 1);
+    if (['png', 'jpg', 'jpeg'].includes(ext.toLowerCase())) {
+      return true;
+    }
+    return false;
   }
 
   closeDiag() {

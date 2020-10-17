@@ -27,13 +27,26 @@ export class LeadershipMyapplicationsComponent implements OnInit {
     this.leadershipService.myapplications().subscribe((response => {
       this.appsList = response['data']['apps'];
       this.isLoading = false;
-    }));
+    }), err => {
+      this.isLoading = false;
+      this.leadershipService.tryagain();
+    });
+  }
 
+  delete(id) {
+    this.isLoading = true;
+    this.leadershipService.delete_app(id).subscribe((response => {
+      this.isLoading = false;
+      this.loadapps();
+    }), err => {
+      this.isLoading = false;
+      this.leadershipService.tryagain();
+    });
   }
 
   details(app) {
     this.leadershipService.currentApp = app;
     this.router.navigate(['../myapplication-details'], { relativeTo: this.route });
   }
-  
+
 }

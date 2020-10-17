@@ -23,7 +23,8 @@ export class RequestsComponent {
     public dialog: MatDialog,
     private toastr: AppToasterService
   ) {
-    this.std_id = this.userService.userData.id;
+    //this.std_id = this.userService.userData.id;
+    this.std_id = this.userService.getActiveRoleDetails()['id'];
     this.getRequest();
   }
 
@@ -37,6 +38,8 @@ export class RequestsComponent {
         }
       },
       error => {
+        this.isLoading = false;
+        this.toastr.tryagain();
       }
     )
   }
@@ -78,11 +81,12 @@ export class RequestsComponent {
     this.cardService.printRequest(id).subscribe(
       (response: any) => {
         if (response) {
-          this.cardService.downloadPDF(response);
+          this.cardService.downloadImage(response);
           this.isLoading = false;
         }
       },
       error => {
+        this.isLoading = false;
       }
     )
   }
