@@ -44,6 +44,8 @@
                 <td>
                   <button (click)="openDialog(req)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
                   &nbsp;
+                  <button *ngIf="user['ROLE'] != 'emp'" (click)="openAssignDialog(req)" class="btn btn-primary">{{"my_requests_page.assign" | translate}} <i class="fa fa-edit"></i></button>
+                  &nbsp;
                   <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.comments" | translate}}</button>
                   &nbsp;
                   <button class="btn btn-primary"(click)="openDetailsDialog(req)">{{"general.details" | translate}}</button>

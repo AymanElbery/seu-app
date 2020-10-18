@@ -46,6 +46,9 @@ export class ClientAdminRequestsService extends TranslationRootService {
     getReviewingRequests(print = 0) {
         return this.get("admin/request/get_reviewing_requests/" + print);
     }
+    getReviewingEmpRequests(user_id, print = 0) {
+        return this.get("admin/request/get_reviewing_emp_requests/" + user_id + "/" + print);
+    }
     getMyRequests() {
         return this.get("admin/request/myrequests");
     }
@@ -60,6 +63,9 @@ export class ClientAdminRequestsService extends TranslationRootService {
     }
     changeStatus(data) {
         return this.post("admin/request/change_status", data);
+    }
+    assignReview(data) {
+        return this.post("admin/request/assign_review", data);
     }
     addTranslatedFile(data) {
         return this.post("admin/request/add_translated_file", data);

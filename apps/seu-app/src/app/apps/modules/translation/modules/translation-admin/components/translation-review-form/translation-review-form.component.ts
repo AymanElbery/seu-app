@@ -37,7 +37,6 @@ export class TranslationReviewFormComponent implements OnInit {
   @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {
     this.req = data.req;
-    console.log(this.req);
     this.addReviewForm = this.fb.group({
       STATUS: ["", [Validators.required]],
       REVIEWING_NOTE: [""],

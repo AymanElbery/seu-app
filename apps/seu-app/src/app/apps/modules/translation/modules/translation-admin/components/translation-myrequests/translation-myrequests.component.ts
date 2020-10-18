@@ -47,7 +47,7 @@ export class TranslationMyrequestsComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    dialogConfig.data = { 'req': req };
+    dialogConfig.data = { 'req': req , 'review' : false};
     let dialogref = this.dialog.open(TranslationCompleteFormComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {

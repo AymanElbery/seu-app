@@ -56,12 +56,12 @@ export class TranslationProcessiongRequestsComponent implements OnInit {
     });
   }
 
-  openAddTranslatedFileDialog(reqId) {
+  openAddTranslatedFileDialog(req) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    dialogConfig.data = reqId;
+    dialogConfig.data = { 'req': req , 'review' : true };
 
     let dialogref = this.dialog.open(TranslationAddTranslatedFileComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {

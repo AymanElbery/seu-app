@@ -13,6 +13,8 @@ import { TranslationCompletedRequestsComponent } from './components/translation-
 import { TranslationCompleteFormComponent } from './components/translation-complete-form/translation-complete-form.component';
 import { TranslationReviewFormComponent } from './components/translation-review-form/translation-review-form.component';
 import { TranslationNoteComponent } from './components/translation-note/translation-note.component';
+import { TranslationAssignReviewFormComponent } from './components/translation-assign-review-form/translation-assign-review-form.component';
+
 
 export const componentDeclarations: any[] = [
     TranslationAdminUsersComponent,
@@ -26,7 +28,8 @@ export const componentDeclarations: any[] = [
     TranslationAddTranslatedFileComponent,
     TranslationReviewingRequestsComponent,
     TranslationReviewFormComponent,
-    TranslationNoteComponent
+    TranslationNoteComponent,
+    TranslationAssignReviewFormComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -46,7 +49,7 @@ export const routes: Routes = [
         path: 'processing-requests', component: TranslationProcessiongRequestsComponent, canActivate: [TranslationADMINGuard]
     },
     {
-        path: 'reviewing-requests', component: TranslationReviewingRequestsComponent, canActivate: [TranslationADMINGuard]
+        path: 'reviewing-requests', component: TranslationReviewingRequestsComponent, canActivate: [TranslationEMPGuard]
     },
     {
         path: 'completed-requests', component: TranslationCompletedRequestsComponent, canActivate: [TranslationEMPGuard]
