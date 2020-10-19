@@ -22,9 +22,10 @@
                 <th scope="col">{{"my_requests_page.client" | translate}}</th>
                 <th scope="col">{{"new_request_page.work_place" | translate}}</th>
                 <th scope="col">{{"new_request_page.work" | translate}}</th>
-                <th scope="col">{{"my_requests_page.emp_list" | translate}}</th>
                 <th scope="col">{{"my_requests_page.file_secret" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.emp_list" | translate}}</th>
+                <th scope="col">{{"my_requests_page.req_file" | translate}}</th>
                 <!-- <th scopr="col">{{"my_requests_page.upload_tranlate_file" | translate}}</th> -->
                 <th scopr="col">{{"general.details" | translate}}</th>
               </tr>
@@ -35,12 +36,17 @@
                 <td>{{ req.CLIENT_NAME }}</td>
                 <td>{{ req.CLIENT_WORK }}</td>
                 <td>{{"new_request_page.seu" | translate}}</td>
-                <td>{{ req.EMPNAME }}</td>
                 <td>
                   <span *ngIf="req.FILE_SECRET == '1'">{{"new_request_page.secret" | translate}}</span>
                   <span *ngIf="req.FILE_SECRET == '0'">{{"new_request_page.not_secret" | translate}}</span>
                 </td>
                 <td>{{ req.INSERTED_DATE | date : 'yyyy-MM-dd'}}</td>
+                <td>{{ req.EMPNAME }}</td>
+                <td>
+                  <a target="_blanck" [href]="req.downloadURL" style="margin-right: 5px;"
+                    class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
+                </td>
+
                 <!-- <td>
                   <button (click)="openAddTranslatedFileDialog(req.REQ_ID)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
                 </td> -->

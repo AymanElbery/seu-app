@@ -42,7 +42,7 @@ export class TranslationAddTranslatedFileComponent implements OnInit {
   public dialogRef: MatDialogRef<TranslationAddTranslatedFileComponent>,
   @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {
-    this.reqId = data;
+    this.reqId = data['req']['REQ_ID'];
     this.addFileForm = this.fb.group({
     });
   }

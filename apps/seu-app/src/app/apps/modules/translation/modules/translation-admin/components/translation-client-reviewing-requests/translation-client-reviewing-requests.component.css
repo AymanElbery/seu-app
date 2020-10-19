@@ -16,3 +16,6 @@
     border-radius: 3px;
     color: #FFF;
 }
+th , td {
+    white-space: nowrap;
+}

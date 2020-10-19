@@ -9,7 +9,8 @@
         "comments":"تحدث معنا",
         "add_comment":"التعليقات",
         "export_as_excel": "ملف إكسيل",
-        "cancel":"الغاء"
+        "cancel":"الغاء",
+        "word_count_note": "سيتم حساب عدد الكلمات من مدير النظام"
     },
     "menu": {
         "users": "إدارة المستخدمين",
@@ -81,6 +82,7 @@
         "translate_status": "حالة الملف المترجم",
         "accept": "قبول",
         "reject": "رفض",
+        "assign": "إسناد",
         "reviewing_note_reject": "ملاحظات و سبب الرفض"
     },
     "new_request_page": {

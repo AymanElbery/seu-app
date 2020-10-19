@@ -33,6 +33,7 @@ export class TranslationProcessiongRequestsComponent implements OnInit {
     this.isLoading = true;
     this.requestsService.getProcessiongRequests().subscribe((response) => {
       this.requestsList = response['data'];
+      this.requestsList = this.requestsService.addFileURL(this.requestsList);
       this.isLoading = false;
     }, err => {
       this.requestsService.tryagain();
@@ -55,12 +56,12 @@ export class TranslationProcessiongRequestsComponent implements OnInit {
     });
   }
 
-  openAddTranslatedFileDialog(reqId) {
+  openAddTranslatedFileDialog(req) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    dialogConfig.data = reqId;
+    dialogConfig.data = { 'req': req , 'review' : true };
 
     let dialogref = this.dialog.open(TranslationAddTranslatedFileComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {

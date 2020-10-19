@@ -23,7 +23,7 @@ export class TranslationCompleteFormComponent implements OnInit {
   FILE_PATH;
   ext;
   showFileName = false;
-
+  reviewForm;
 
   constructor(private fb: FormBuilder, private requestsService: ClientAdminRequestsService,
     private route:ActivatedRoute,    private router: Router, public dialogRef: MatDialogRef<TranslationCompleteFormComponent>,
@@ -35,7 +35,7 @@ export class TranslationCompleteFormComponent implements OnInit {
   request;
   ngOnInit() {
     this.request = this.data['req'];
-    console.log("this.request",this.request);
+    this.reviewForm = this.data['review'];
   }
   closeDiag(refresh = false) {
     this.dialogRef.close(refresh);
@@ -90,7 +90,8 @@ export class TranslationCompleteFormComponent implements OnInit {
     let data = {
       'FILE': this.FILE_PATH,
       'FILE_EXT': this.ext,
-      'REQ_ID': this.request['REQ_ID']
+      'REQ_ID': this.request['REQ_ID'],
+      'REVIEW_FORM': this.reviewForm
     }
     this.requestsService.reviewRequest(data).subscribe((response) => {
       this.toastr.push([{ type: 'success', 'body': this.translate.instant('new_request_page.request_saved') }]);

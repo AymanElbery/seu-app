@@ -22,39 +22,53 @@ export class ClientAdminRequestsService extends TranslationRootService {
         super(http, router, config, translate, toaster);
     }
 
-    addFileURL(items, field = 'FILE_PATH', field2 = 'TRANSLATION_FILE') {
+    addFileURL(items) {
         return items.map(item => {
-            item['downloadURL'] = environment.baselink + environment.servicesprefix + "/rest" + "/download.php?folder=TRANSLATION_FILES&file=" + item[field];
-            item['downloadTransURL'] = environment.baselink + environment.servicesprefix + "/rest" + "/download.php?folder=TRANSLATION_FILES&file=" + item[field2];
-            return item;
+            return this.adURLs(item);;
         });
     }
+
+    adURLs(item, field = 'FILE_PATH', field2 = 'TRANSLATION_FILE') {
+        if (item[field])
+            item['downloadURL'] = environment.baselink + environment.servicesprefix + "/rest" + "/download.php?folder=TRANSLATION_FILES&file=" + item[field];
+
+        if (item[field2])
+            item['downloadTransURL'] = environment.baselink + environment.servicesprefix + "/rest" + "/download.php?folder=TRANSLATION_FILES&file=" + item[field2];
+
+        return item;
+    }
     getPenddingRequests(print = 0) {
-        return this.get("admin/request/get_pendding_requests/" + print) ;
+        return this.get("admin/request/get_pendding_requests/" + print);
     }
     getProcessiongRequests(print = 0) {
-        return this.get("admin/request/get_processing_requests/" + print) ;
+        return this.get("admin/request/get_processing_requests/" + print);
     }
     getReviewingRequests(print = 0) {
-        return this.get("admin/request/get_reviewing_requests/" + print) ;
+        return this.get("admin/request/get_reviewing_requests/" + print);
     }
-    getMyRequests(){
-        return this.get("admin/request/myrequests") ;
+    getReviewingEmpRequests(user_id, print = 0) {
+        return this.get("admin/request/get_reviewing_emp_requests/" + user_id + "/" + print);
     }
-    getCompletedRequests(print = 0){
-        return this.get("admin/request/get_completed_requests/" + print) ;
+    getMyRequests() {
+        return this.get("admin/request/myrequests");
     }
-    reviewRequest(data){
-        return this.post("admin/request/review",data);
+    getCompletedRequests(print = 0) {
+        return this.get("admin/request/get_completed_requests/" + print);
     }
-    addReview(data){
-        return this.post("admin/request/add_review",data);
+    reviewRequest(data) {
+        return this.post("admin/request/review", data);
+    }
+    addReview(data) {
+        return this.post("admin/request/add_review", data);
     }
     changeStatus(data) {
-        return this.post("admin/request/change_status" , data) ;
+        return this.post("admin/request/change_status", data);
+    }
+    assignReview(data) {
+        return this.post("admin/request/assign_review", data);
     }
     addTranslatedFile(data) {
-        return this.post("admin/request/add_translated_file" , data) ;
+        return this.post("admin/request/add_translated_file", data);
     }
 }
 
