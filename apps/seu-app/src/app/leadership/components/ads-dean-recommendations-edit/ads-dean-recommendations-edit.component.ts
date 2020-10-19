@@ -25,7 +25,7 @@ export class AdsDeanRecommendationsEditComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private leadershipService: LeadershipService,
+    public leadershipService: LeadershipService,
     private router: Router,
     private route: ActivatedRoute
   ) {

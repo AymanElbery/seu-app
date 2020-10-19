@@ -18,6 +18,7 @@ import { JobDetailsComponent } from "./diag/job-details/job-details.component";
 export class JobComponent {
 
   jobs;
+  filter_text;
   isLoading = false;
   constructor(
     public userService: UserService,

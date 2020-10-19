@@ -23,6 +23,7 @@ export class AdsComponent implements OnDestroy {
   ads;
   currentJobAds;
   isLoading = false;
+  filter_text;
 
   constructor(
     public userService: UserService,
