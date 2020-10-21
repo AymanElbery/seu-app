@@ -95,13 +95,13 @@ export class BlankComponent implements OnInit {
           //dialogConfig.height = '58%';
           this.dialog.open(GMPolicyComponent, dialogConfig);
         }
-        if (this.userService.userData.role == "Student" && this.userService.userData['UPLOAD_PHOTO'] == 1 && !this.userService.userData['UPLOAD_PHOTO_STATUS']){
+        if (this.userService.userData.role == "Student" && this.userService.userData['UPLOAD_PHOTO'] == 1 && !this.userService.userData['UPLOAD_PHOTO_STATUS']) {
           const dialogConfig = new MatDialogConfig();
           dialogConfig.autoFocus = true;
           dialogConfig.disableClose = true;
-          dialogConfig.width = "800px";
+          dialogConfig.maxWidth = "800px";
           this.dialog.open(StdUploadPhotoComponent, dialogConfig);
-        }        
+        }
       }
     });
   }
