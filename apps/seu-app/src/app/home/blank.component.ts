@@ -11,6 +11,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PolicyComponent } from './policy.component';
 import { DocsConfirmComponent } from './docs-confirm.component';
 import { GMPolicyComponent } from './gmpolicy.component';
+import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.component';
 
 @Component({
   selector: 'app-blank-home',
@@ -94,6 +95,13 @@ export class BlankComponent implements OnInit {
           //dialogConfig.height = '58%';
           this.dialog.open(GMPolicyComponent, dialogConfig);
         }
+        if (this.userService.userData.role == "Student" && this.userService.userData['UPLOAD_PHOTO'] == 1 && !this.userService.userData['UPLOAD_PHOTO_STATUS']){
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.autoFocus = true;
+          dialogConfig.disableClose = true;
+          dialogConfig.width = "800px";
+          this.dialog.open(StdUploadPhotoComponent, dialogConfig);
+        }        
       }
     });
   }
