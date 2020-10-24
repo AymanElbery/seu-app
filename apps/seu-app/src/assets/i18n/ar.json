@@ -301,14 +301,28 @@
         "job_title": "قائمة الوظائف",
         "users_title": "قائمة المستخدمين",
         "actions": "الإجراءات",
+        "committes":"اللجان",
         "delete": "حذف",
         "required": "هذا الحقل مطلوب",
         "save": "حفظ",
+        "accept": "قبول",
+        "refuse": "رفض",
+        "personal_interviews": "مقابلات اللجنة الشخصية",
+        "agency_interviews": "مقابلات الوكلاء",
         "update": "تعديل",
         "newapplications": "طلب ترشيح",
         "myapplications": "طلباتي السابقة",
         "myrecomendations": "تزكياتي",
         "recomendations": "التزكيات",
+        "interviewers_committee": "لجنة المقابلات",
+        "agencies_committee": "لجنة الوكلاء",
+        "dean_title": "تعيين العميد المعني",
+        "ads_recommendations": "التزكيات",
+        "search_save": "بحث وحفظ",
+        "reports":"التقارير",
+        "primary_report":"التقرير الأولي",
+        "final_report":"التقرير النهائي",
+        "back": "العودة الي القائمة",
         "job": {
             "add_job": "إضافة وظيفة",
             "add_new_job": "بيانات الوظيفة",
@@ -323,7 +337,8 @@
             "category":"تصنيف",
             "college_dean":"العمادة أو الكلية",
             "agency":"الوكالة التي تتبع لها",
-            "gender":"الجنس"
+            "gender":"الجنس",
+            "filter": "بحث في الوظائف ..."
         },
         "ad": {
             "add_ads": "إضافة إعلان",
@@ -337,7 +352,8 @@
             "apps": "الترشيحات",
             "active": "نشر الإعلان",
             "active_1": "نعم",
-            "active_0": "لا"
+            "active_0": "لا",
+            "filter": "بحث في الإعلانات ..."
         },
         "user": {
             "newuser": "مستخدم جديد",
@@ -356,13 +372,15 @@
             "rec_date": "تاريخ التزكية",
             "recommendations": "التزكيات",
             "recommended":"بيانات المزكى",
-            "recommended_by":"بيانات المزكي"
+            "recommended_by":"بيانات المزكي",
+            "approved":"مقبول",
+            "rejected":"مرفوض"
         },
         "applications": {
             "newapp": "طلب ترشيح جديد",
             "addslist": "قائمة الوظائف المتاحة",
             "apply": "ترشيح",
-            "recommend": "تزكية",
+            "recommend": "التزكيات",
             "send": "ارسال",
             "delete": "حذف",
             "search": "بحث",
@@ -393,7 +411,57 @@
             "export":"تصدير الي اكسيل",
             "TERMS":"الفصول الدراسية",
             "status":"حالة الطلب",
-            "not_compeleted_notes":"الرجاء استكمال الطلب برفع الوثائق من خلال ايفونة تفاصيل الطلب"
+            "app_details": "التفاصيل",
+            "filter": "بحث في الترشيحات ...",
+            "not_compeleted_notes":"الرجاء استكمال الطلب برفع الوثائق من خلال ايفونة تفاصيل الطلب",
+            "FILES_EVAL":"تقييم الوثائق",
+            "INTERVIEW_EVAL":"تقييم المقابلات",
+            "AGENCY_EVAL":"تقييم الوكلاء",
+            "FINAL_EVAL":"التقييم النهائي"
+        },
+        "application-display": {
+            "title": "تفاصيل الترشيح",
+            "details": "الوثائق",
+            "admin_rate": "تقييم أمين سر اللجنة",
+            "emp_id": "الرقم الوظيفي",
+            "emp_name": "الإسم",
+            "emp_college": "الكلية",
+            "emp_section": "القسم",
+            "emp_branch": "الفرع",
+            "emp_degree": "الدرجة العلمية",
+            "emp_email": "البريد الإلكتروني",
+            "emp_mobile": "رقم الجوال",
+            "emp_terms":"الفصول الدراسية",
+            "ads_start_date": "تاريخ بداية الترشيح",
+            "ads_end_date": "تاريخ نهاية الترشيح",
+            "app_status": "الحالة",
+            "docs_details": "الوثائق المرفوعة :",
+            "app_not_comleted_yet": "لا يمكنك تقييم الطلب إلا بعد إنتهاء فترة الترشيح",
+            "rate_result": "نتيجة التقييم",
+            "send_rate": "حفظ التقييم",
+            "total_val": "التقييم النهائي",
+            "status":{
+                "completed": "تم رفع الوثائق",
+                "not_completed": "الطلب غير مكتمل"
+            }
+        },
+        "personal_interview_page": {
+            "ads": "إعلانات الوظائف الحالية",
+            "start_date": "تاريخ بدء المقابلات",
+            "end_date": "تاريخ نهاية المقابلات",
+            "interview_rate": "تقييم المقابلات الشخصية",
+            "interview_total_rate_message": "التقييم الكلي لطلب الترشيح في جميع المقابلات الشخصية هو ",
+            "indicators": "المؤشرات",
+            "interviewer" : "الموظف المسؤول"
+        },
+        "agency_interview_page": {
+            "ads": "إعلانات الوظائف الحالية",
+            "start_date": "تاريخ بدء المقابلات",
+            "end_date": "تاريخ نهاية المقابلات",
+            "interview_rate": "تقييم مقابلات الوكلاء",
+            "interview_total_rate_message": "التقييم الكلي لطلب الترشيح في جميع المقابلات مع الوكلاء هو ",
+            "indicators": "المؤشرات",
+            "interviewer" : "الوكيل"
         },
         "messages": {
             "invalid_session": "انتهت جلسة الدخول، الرجاء تسجيل الدخول مرة أخري",
@@ -410,7 +478,22 @@
             "cant_recommend_yourself":"لا يستطيع عضو هيئة التدريس بتزكيه نفسه",
             "recommended_before":"تم تزكية عضو هيئة التدريس سابقا",
             "cant_save_recommendation":"لم يتم حفظ التزكية، الرجاء المحاولة مرة أخرى"
-        }
+        },
+      "interviewers": {
+        "title": "تعيين لجنة المقابلات",
+        "start_date": "تاريخ بدء المقابلات",
+        "end_date": "تاريخ انتهاء المقابلات"
+      },
+      "agencies": {
+        "title": "تعيين الوكلاء",
+        "start_date": "تاريخ بدء مقابلة الوكلاء",
+        "end_date": "تاريخ انتهاء مقابلة الوكلاء"
+      },
+      "dean": {
+        "title": "العميد المعني",
+        "start_date": "تاريخ بدء التزكيات",
+        "end_date": "تاريخ انتهاء التزكيات"
+      }
     },
     "resume": {
         "title": " السيرة الذاتية باللغة العربية",

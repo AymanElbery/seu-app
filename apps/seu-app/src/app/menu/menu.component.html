@@ -652,7 +652,23 @@
               {{ "leadership.myapplications" | translate }} <i class="ik ik-book-open"></i>
             </a>
           </div>
-          <!-- <div class="submenu-content" *ngIf="leadership['menu_instructor']">
+          <div class="submenu-content" *ngIf="leadership['menu_interviewer']">
+            <a [routerLink]="['/leadership/personal-interviews']" class="menu-item">
+              {{ "leadership.personal_interviews" | translate }} <i class="ik ik-book-open"></i>
+            </a>
+          </div>
+          <div class="submenu-content" *ngIf="leadership['menu_agency']">
+            <a [routerLink]="['/leadership/agency-interviews']" class="menu-item">
+              {{ "leadership.agency_interviews" | translate }} <i class="ik ik-book-open"></i>
+            </a>
+          </div>
+          <div class="submenu-content" *ngIf="leadership['menu_recommender']">
+            <a [routerLink]="['/leadership/ads-recommendations']" class="menu-item">
+              {{ "leadership.ads_recommendations" | translate }} <i class="ik ik-book-open"></i>
+            </a>
+          </div>
+          <!--
+            <div class="submenu-content" *ngIf="leadership['menu_instructor']">
             <a [routerLink]="['/leadership/myrecomendations']" class="menu-item">
               {{ "leadership.myrecomendations" | translate }} <i class="ik ik-book-open"></i>
             </a>

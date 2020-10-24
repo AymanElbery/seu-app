@@ -1,0 +1,92 @@
+<seu-loader [isLoading]="Loading"></seu-loader>
+<div *ngIf="!Loading && type == 'interview'" class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>0</th>
+          <th>1/4</th>
+          <th>1/2</th>
+          <th>3/4</th>
+          <th>1</th>
+          <th style="width: 300px;">{{ "leadership.application-display.rate_result" | translate }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of indicators">
+          <td>{{ row.IND_NAME }} </td>
+          <td>
+            <div class="form-check">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0" [checked]="row.GRADE_BASE == '0'">
+            </div>
+          </td>
+          <td>
+            <div class="form-check">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.25" [checked]="row.GRADE_BASE == 0.25">
+            </div>
+          </td>
+          <td>
+            <div class="form-check">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.5" [checked]="row.GRADE_BASE == 0.5">
+            </div>
+          </td>
+          <td>
+            <div class="form-check">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="0.75" [checked]="row.GRADE_BASE == 0.75">
+            </div>
+          </td>
+          <td>
+            <div class="form-check">
+              <input (change)="changeRadio(row, $event)" [name]="row.IND_CODE" class="form-check-input" type="radio" class="radio" value="1" [checked]="row.GRADE_BASE == 1">
+            </div>
+          </td>
+          <td style="width: 300px;">
+            <input style="text-align: center; font-weight: bold; font-size: 1.5em;" [value]="row.GRADE" type="text" class="form-control" disabled>
+          </td>
+        </tr>
+        <tr>
+          <td class="back-gray">{{ "leadership.application-display.total_val" | translate }}</td>
+          <td class="back-gray"></td>
+          <td class="back-gray"></td>
+          <td class="back-gray"></td>
+          <td class="back-gray"></td>
+          <td class="back-gray"></td>
+          <td style="width: 300px;">
+            <input style="width: 48%; display: inline-block; text-align: center; font-size: 1.5em; font-weight: bold;" [(ngModel)]="totalVal" type="text" class="form-control" disabled>
+            <button [disabled]="saveBtnDisable" (click)="saveRate()" style="width: 48%; display: inline-block; margin-right: 2%;" class="btn btn-primary">{{ "leadership.application-display.send_rate" | translate }} </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="!Loading && type != 'interview'" class="row">
+  <div class="col-md-12">
+    <div *ngIf="currentApp.INTERVIEW_EVAL >= 50" class="card p-3 mb-2 bg-success text-white">
+      <h5>{{ "leadership.personal_interview_page.interview_total_rate_message" | translate }}<span class="percent">{{ currentApp.INTERVIEW_EVAL }}</span></h5>
+    </div>
+    <div *ngIf="currentApp.INTERVIEW_EVAL < 50" class="card p-3 mb-2 bg-danger text-white">
+      <h5>{{ "leadership.personal_interview_page.interview_total_rate_message" | translate }}<span class="percent">{{ currentApp.INTERVIEW_EVAL }}</span></h5>
+    </div>
+  </div>
+</div>
+<div *ngIf="!Loading && type != 'interview'" class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>{{ "leadership.personal_interview_page.indicators" | translate }} / {{ "leadership.personal_interview_page.interviewer" | translate }}</th>
+          <th *ngFor="let emp of emps">{{ emp.EMPLOYEE_NAME }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of indicatorsReport | keyvalue">
+          <td>{{ row.key }} </td>
+          <td *ngFor="let emp of row.value">{{ emp.GRADE }} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

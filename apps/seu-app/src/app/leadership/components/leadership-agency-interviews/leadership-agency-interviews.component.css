@@ -1,0 +1,24 @@
+.back-dark{
+    background-color: #CCC;
+}
+.app_status_COMPLETED{
+    background-color: #28a745;
+    padding: 3px 30px;
+    border-radius: 3px;
+    color: #FFF;
+}
+.app_status_NOT_COMPLETED{
+    background-color: #dc3545;
+    padding: 3px 30px;
+    border-radius: 3px;
+    color: #FFF;
+}
+.app_status_INTERVIEW{
+    background-color: #17a2b8;
+    padding: 3px 30px;
+    border-radius: 3px;
+    color: #FFF;
+}
+.question{
+    color: #999;
+}

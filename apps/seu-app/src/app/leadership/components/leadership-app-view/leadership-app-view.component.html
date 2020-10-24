@@ -1,0 +1,81 @@
+<div class="main-content">
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <h3 class="widget-title" style="text-align: left;">
+        <button style="margin-left: 10px;" type="button" class="btn btn-primary" (click)="back()">
+          {{"leadership.applications.back"|translate}} <i class="fa fa-arrow-circle-left"></i>
+        </button>
+    </h3>
+    <div *ngIf="!isLoading" class="row">
+        <div class="col-md-10 offset-md-1">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <tr>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.emp_id"|translate}}</th>
+                        <th scope="col">{{ currentApp.EMPLOYEE_ID }}</th>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.emp_name"|translate}}</th>
+                        <th scope="col">{{ currentApp.FULL_NAME }}</th>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.emp_terms"|translate}}</th>
+                        <th scope="col">{{ currentApp.TERMS }}</th>
+                    </tr>
+                    <tr>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.emp_college"|translate}}</th>
+                        <th scope="col">{{ currentApp.COLLEGE }}</th>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.emp_section"|translate}}</th>
+                        <th scope="col">{{ currentApp.DEPT }}</th>
+                        <th *ngIf="currentParent == 'application-display'" class="back-dark" scope="col">{{"leadership.application-display.ads_start_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'interview-application-display'" class="back-dark" scope="col">{{"leadership.personal_interview_page.start_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'agency-application-display'" class="back-dark" scope="col">{{"leadership.personal_interview_page.start_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'application-display'" scope="col">{{ currentApp.ADS_START_DATE | date : 'yyyy-MM-dd' }}</th>
+                        <th *ngIf="currentParent == 'interview-application-display'" scope="col">{{ currentApp.INTV_START_DATE | date : 'yyyy-MM-dd' }}</th>
+                        <th *ngIf="currentParent == 'agency-application-display'" scope="col">{{ currentApp.AGENCY_START_DATE | date : 'yyyy-MM-dd' }}</th>
+                    </tr>
+                    <tr>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.emp_branch"|translate}}</th>
+                        <th scope="col">{{ currentApp.BRANCH }}</th>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.emp_degree"|translate}}</th>
+                        <th scope="col">{{ currentApp.SCALE }}</th>
+                        <th *ngIf="currentParent == 'application-display'" class="back-dark" scope="col">{{"leadership.application-display.ads_end_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'interview-application-display'" class="back-dark" scope="col">{{"leadership.personal_interview_page.end_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'agency-application-display'" class="back-dark" scope="col">{{"leadership.personal_interview_page.end_date"|translate}}</th>
+                        <th *ngIf="currentParent == 'application-display'" scope="col"> {{ currentApp.ADS_END_DATE | date : 'yyyy-MM-dd' }} </th>
+                        <th *ngIf="currentParent == 'interview-application-display'" scope="col">{{ currentApp.INTV_END_DATE | date : 'yyyy-MM-dd' }}</th>
+                        <th *ngIf="currentParent == 'agency-application-display'" scope="col">{{ currentApp.AGENCY_END_DATE | date : 'yyyy-MM-dd' }}</th>
+                    </tr>
+                    <tr>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.emp_email"|translate}}</th>
+                        <th scope="col">{{ currentApp.SEU_EMAIL }}</th>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.emp_mobile"|translate}}</th>
+                        <th scope="col">{{ currentApp.PHONE }}</th>
+                        <th class="back-dark" scope="col">{{"leadership.application-display.app_status"|translate}}</th>
+                        <th scope="col">
+                            <span class="app_status_{{currentApp.APP_STATUS}}">{{ currentApp.LOOKUP_NAME }}</span>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 10px; padding: 0 30px;">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link " (click)="redirectTo('details')" [class.active]="current=='details'"
+                href="#">{{"leadership.application-display.details" | translate}}</a>
+            </li>
+            <li *ngIf="currentApp.SHOW_ADMIN_RATE"  class="nav-item">
+                <a class="nav-link " (click)="redirectTo('admin-rate')" [class.active]="current=='admin-rate'"
+                href="#">{{"leadership.application-display.admin_rate" | translate}}</a>
+            </li>
+            <li *ngIf="currentApp.SHOW_INTERVIEW_RATE"  class="nav-item">
+                <a class="nav-link " (click)="redirectTo('interview-rate')" [class.active]="current=='interview-rate'"
+                href="#">{{"leadership.personal_interview_page.interview_rate" | translate}}</a>
+            </li>
+            <li *ngIf="currentApp.SHOW_AGENCY_RATE"  class="nav-item">
+                <a class="nav-link " (click)="redirectTo('agency-rate')" [class.active]="current=='agency-rate'"
+                href="#">{{"leadership.agency_interview_page.interview_rate" | translate}}</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+</div>
