@@ -921,6 +921,24 @@
         "doc_link": "https://seu.edu.sa/vropdq/en/conflict-of-interest-policy/",
         "notes": "* Scroll down the appended policy to activate the options below."
     },
+    "upload_photo": {
+        "title": "Info Update",
+        "photo": "Photo",
+        "ssn": "National ID",
+        "save": "update",
+        "photo_not_uploaded": "no file uploaded",
+        "ssn_not_uploaded": "no file uploaded",
+        "wrong_file":"please select a file with the rigth format",
+        "wrong_file_size":"file size is too large, max size is 5 M",
+        "choose_file": "select a file",
+        "note1": "Image dimensions must be clear and square.",
+        "note2": "It must be a recent original photo, not more than six months old, and reflecting the current appearance.",
+        "note3": "Color photos can be accepted, and the background must be white.",
+        "note4": "The image should be clear and the image must have adequate lighting (neither too dark nor too light).",
+        "note5": "The photo must be frontal so that the full face is visible, including the ears.",
+        "note6": "The dimensions of the face should be from 2.5 to 3.5 cm from the top of the head to the bottom of the chin.",
+        "note7": "Editing of digital photos is not permitted. Inserting a white background on an old photo is not allowed."
+    },
     "docs_confirm": {
         "title": "The data to be authenticated",
         "confirm": "Confirm",

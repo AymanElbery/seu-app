@@ -57,9 +57,9 @@ export class GMPolicyComponent implements OnInit, OnDestroy {
         this.toastr.tryagain();
       }
     },
-      err => {
-        this.toastr.tryagain();
-        this.requesting = false;
-      });
+    err => {
+      this.toastr.tryagain();
+      this.requesting = false;
+    });
   }
 }
