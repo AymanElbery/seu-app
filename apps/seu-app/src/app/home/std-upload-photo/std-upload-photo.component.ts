@@ -23,11 +23,13 @@ export class StdUploadPhotoComponent implements OnInit, OnDestroy {
     ssnExt;
     PHOTO_FILE_PATH;
     SSN_FILE_PATH;
+    approve = false;
 
+sex = '';
     constructor(public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService, public translate: TranslateService,
         public dialogRef: MatDialogRef<StdUploadPhotoComponent>,
     ) {
-
+    this.sex = this.userService.userData.sex;
     }
 
     ngOnInit() {
@@ -78,7 +80,7 @@ export class StdUploadPhotoComponent implements OnInit, OnDestroy {
     }
 
     validatePhotoFile(name: String, ext) {
-        if (['png', 'bmp', 'jpeg', 'jpg'].includes(ext.toLowerCase())) {
+        if (ext && ['png', 'bmp', 'jpeg', 'jpg'].includes(ext.toLowerCase())) {
             return true;
         }
         return false;
@@ -117,7 +119,7 @@ export class StdUploadPhotoComponent implements OnInit, OnDestroy {
     }
 
     validateSsnFile(name: String, ext) {
-        if (['png', 'bmp', 'jpeg', 'jpg', 'pdf'].includes(ext.toLowerCase())) {
+        if (ext && ['png', 'bmp', 'jpeg', 'jpg', 'pdf'].includes(ext.toLowerCase())) {
             return true;
         }
         return false;

@@ -47,6 +47,7 @@ export class AdsDeanRecommendationsEditComponent implements OnInit {
   back() {
     this.router.navigate(['../../ads-recommendations'], {relativeTo: this.route});
   }
+  errMsg = "leadership.applications.not_found";
 
   save(key) {
     const data = this.form.value;
@@ -62,6 +63,7 @@ export class AdsDeanRecommendationsEditComponent implements OnInit {
     this.submitted = true;
     this.leadershipService.save_dean_recommendation(post).subscribe((response => {
       if (!response.status) {
+        this.errMsg = "leadership.messages."+response['res_code'];
         this.showMessage = false;
         this.noEmp = true;
       } else {

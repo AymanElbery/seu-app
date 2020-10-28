@@ -67,10 +67,10 @@
       </div>
       <br />
       <br />
-      <div *ngIf="noEmp" class="row">
+      <div *ngIf="!submitted && noEmp" class="row">
         <div class="col-md-12">
           <div class="alert alert-danger">
-            {{ "leadership.applications.not_found" | translate}}
+            {{ errMsg | translate}}
           </div>
         </div>
       </div>

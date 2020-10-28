@@ -6,12 +6,13 @@
         </div>
         <div class="modal-body" (scroll)="onScroll($event)">
             <div>
+                <div style="font-size: 18px;font-weight: bold;margin-bottom: 5px;">{{"upload_photo.note"|translate}}</div>
                 <ul class="list-group" style="font-size: 12px;">
                     <li class="list-group-item list-group-item-info">{{"upload_photo.note1"|translate}}</li>
                     <li class="list-group-item list-group-item-info">{{"upload_photo.note2"|translate}}</li>
                     <li class="list-group-item list-group-item-info">{{"upload_photo.note3"|translate}}</li>
                     <li class="list-group-item list-group-item-info">{{"upload_photo.note4"|translate}}</li>
-                    <li class="list-group-item list-group-item-info">{{"upload_photo.note5"|translate}}</li>
+                    <li class="list-group-item list-group-item-info text-red">{{"upload_photo.note5"|translate}}</li>
                     <li class="list-group-item list-group-item-info">{{"upload_photo.note6"|translate}}</li>
                     <li class="list-group-item list-group-item-info">{{"upload_photo.note7"|translate}}</li>
                 </ul>
@@ -20,6 +21,11 @@
                 <div class="col-md-12">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
+                        <tr>
+                            <td colspan="3">
+                                <img style="height:150px" src="/assets/images/exam-{{sex}}.jpeg"/>
+                                </td>
+                        </tr>
                             <tr>
                                 <td>{{"upload_photo.photo" | translate}}
                                     <br /> <span class="text-red">(png, jpg, jpeg, bmp)</span>
@@ -52,9 +58,27 @@
                     </div>
                 </div>
             </div>
+            <div>
+                <div style="font-size: 18px;font-weight: bold;margin-bottom: 10px;">{{"upload_photo.cond"|translate}}</div>
+                <ul class="list-group" style="font-size: 12px;">
+                    <ol class="list-group-item list-group-item-info">{{"upload_photo.cond_1"|translate}}</ol>
+                    <ol class="list-group-item list-group-item-info">{{"upload_photo.cond_2"|translate}}</ol>
+                    <ol class="list-group-item list-group-item-info">{{"upload_photo.cond_3"|translate}}</ol>
+                    <ol class="list-group-item list-group-item-info">{{"upload_photo.cond_4"|translate}}</ol>
+                    <ol class="list-group-item list-group-item-info">{{"upload_photo.cond_5"|translate}}</ol>
+                    <ol class="list-group-item list-group-item-info">{{"upload_photo.cond_6"|translate}}</ol>
+                    <ol class="list-group-item list-group-item-info">{{"upload_photo.cond_7"|translate}}</ol>
+                </ul>
+                <label class="form-check-labele" for="approvecond" style="margin-right: 18px;margin-top: 10px;">
+                    <input id="approvecond" type="checkbox" [(ngModel)]="approve" class="form-check-input" style="width: 20px;height: 20px;">
+                    &nbsp;&nbsp;
+                    {{"upload_photo.cond_approve"|translate}}
+
+                </label>
+            </div>
         </div>
         <div class="modal-footer" style="border-top: 2px solid #8a551a;text-align: center;">
-            <button [disabled]="!showPhotoName || !showSsnName || submitting" style="width: 50%;max-width: 200px;"
+            <button [disabled]="!approve || !showPhotoName || !showSsnName || submitting" style="width: 50%;max-width: 200px;"
                 type="submit" (click)="save()" class="btn sub">
                 {{ "upload_photo.save" | translate}}
                 <i *ngIf="submitting" class="fa fa-spinner"></i>
