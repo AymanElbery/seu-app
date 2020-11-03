@@ -52,8 +52,8 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonreports">
                   <button (click)="applications(ad)" class="dropdown-item"><i class="fa fa-list"></i>
                     {{"leadership.ad.apps" | translate}} </button>
-                  <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean_recommendations(ad)" class="dropdown-item"><i
-                      class="fa fa-address-book"></i> {{"leadership.ads_recommendations" | translate}} </button>
+                  <!-- <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean_recommendations(ad)" class="dropdown-item"><i
+                      class="fa fa-address-book"></i> {{"leadership.ads_recommendations" | translate}} </button> -->
                   <button (click)="primaryReport(ad)" class="dropdown-item"><i class="fa fa-list"></i>
                     {{"leadership.primary_report" | translate}} </button>
                   <button (click)="finalReport(ad)" class="dropdown-item"><i class="fa fa-list"></i>
@@ -72,8 +72,8 @@
                     {{"leadership.interviewers_committee" | translate}} </button>
                   <button (click)="agencies(ad)" class="dropdown-item"><i class="fa fa-address-book"></i>
                     {{"leadership.agencies_committee" | translate}} </button>
-                  <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean(ad)" class="dropdown-item"><i
-                      class="fa fa-address-book"></i> {{"leadership.dean.title" | translate}} </button>
+                  <!-- <button *ngIf="ad.JOB_CAT_CODE!= 'DEAN'" (click)="dean(ad)" class="dropdown-item"><i
+                      class="fa fa-address-book"></i> {{"leadership.dean.title" | translate}} </button> -->
                 </div>
               </div>
 
