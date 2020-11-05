@@ -1,10 +1,17 @@
 <div class="main-content">
     <app-service-header title="{{'univ' | translate}}" subtitle="{{'projects.service' | translate}}"></app-service-header>
-
     <section class="ug-content">
         <div class="container">
             <seu-loader [isLoading]="isLoading"></seu-loader>
-            <form role="form" [formGroup]="form">
+            <div *ngIf="app_pk">
+                <div class="ser-state">
+                    <div style="text-align: right" class="alert  alert-success" role="alert">
+                        <h1>{{"projects.success_req_no" | translate }} #{{app_pk}} </h1>
+                        <h5>{{"projects.success" | translate }}</h5>
+                    </div>
+                </div>
+            </div>
+            <form *ngIf="!app_pk" role="form" [formGroup]="form">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="state">
@@ -16,7 +23,7 @@
                     <div class="col-md-6">
                         <div class="state">
                             <h6>{{"projects.ssn"|translate}} <span class="reqstart">*</span></h6>
-                            <input type="text" formControlName="ssn" class="form-control" />
+                            <input type="text" formControlName="ssn" class="form-control" size="10" maxlength="10" pattern="[0-9]{10}" />
                             <control-validations-errors [control]="form.controls.ssn"></control-validations-errors>
                         </div>
                     </div>
@@ -30,7 +37,7 @@
                     <div class="col-md-6">
                         <div class="state">
                             <h6>{{"projects.phone"|translate}} <span class="reqstart">*</span></h6>
-                            <input type="phone" formControlName="phone" class="form-control" />
+                            <input type="phone" formControlName="phone" class="form-control" size="10" maxlength="10" pattern="[0-9]{10}" />
                             <control-validations-errors [control]="form.controls.phone"></control-validations-errors>
                         </div>
                     </div>
@@ -47,9 +54,8 @@
                     <div class="col-md-6">
                         <div class="state">
                             <h6>{{"projects.college"|translate}} <span class="reqstart">*</span></h6>
-                            <select class="form-control" formControlName="college">
-                            <option value=""></option>
-                          </select>
+                            <ng-select [items]="colleges" bindLabel="NAME" bindValue="ID" formControlName="college">
+                            </ng-select>
                             <control-validations-errors [control]="form.controls.college"></control-validations-errors>
                         </div>
                     </div>
@@ -62,8 +68,8 @@
                     </div>
                     <div class="col-md-12">
                         <div class="state">
-                            <h6>{{"projects.desc"|translate}} <span class="reqstart">*</span></h6>
-                            <textarea formControlName="desc" class="form-control"></textarea>
+                            <h6>{{"projects.details"|translate}} <span class="reqstart">*</span></h6>
+                            <textarea formControlName="details" class="form-control"></textarea>
                             <control-validations-errors [control]="form.controls.title"></control-validations-errors>
                         </div>
                     </div>
@@ -127,12 +133,12 @@
 
                     <div class="col-md-12">
                         <div class="state">
-                            <h6>{{"projects.file_name"|translate}}</h6>
+                            <h6>{{"projects.file"|translate}}</h6>
                             <div class="custom-file">
                                 <input name="imageUrl2" type="file" accept="*/*" (change)="handleInputChange($event)" id="customFileLang" class="custom-file-input" />
                                 <label for="customFileLang" class="custom-file-label"></label>
                             </div>
-                            <control-validations-errors [control]="form.controls.file_name"></control-validations-errors>
+                            <control-validations-errors [control]="form.controls.file"></control-validations-errors>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -144,7 +150,7 @@
                 </div>
                 <div class="row" style="margin-top: 100px; text-align: center;">
                     <div class="col-md-12">
-                        <button *ngIf="!disabled" style="width: 20%;" [disabled]="submitted || form.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "save" | translate}}  <i class="fa fa-save"></i></button>
+                        <button style="width: 20%; min-width: 200px;" [disabled]="form.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "save" | translate}}  <i class="fa fa-save"></i></button>
                     </div>
                 </div>
             </form>

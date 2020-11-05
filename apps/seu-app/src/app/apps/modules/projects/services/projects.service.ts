@@ -12,18 +12,17 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   providedIn: 'root'
 })
 export class ProjectsService extends AppUserRootService {
-  
-  URL = environment.baselink + environment.servicesprefix + "/rest/employment/";
-  constructor(router: Router, globalService: GlobalBaseService, http: HttpClient, translate: TranslateService, toaster: AppToasterService) {
-        super(router, globalService,  translate, toaster,http)
-    }
 
-  getLookups(lang){
-    return this.get('/projects/lookups?lang='+lang);
+  constructor(router: Router, globalService: GlobalBaseService, http: HttpClient, translate: TranslateService, toaster: AppToasterService) {
+    super(router, globalService, translate, toaster, http)
+  }
+
+  getLookups(lang) {
+    return this.get('/innovation/application/lookups?lang=' + lang);
   }
 
   addRequest(data) {
-    return this.post("projects/save",data);
+    return this.post("/innovation/application/save", data);
   }
 
 }
