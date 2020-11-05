@@ -12,16 +12,11 @@ const routes: Routes = [
     loadChildren:
       './modules/admission-ug/admission-ug.module#AdmissionUGModule',
   },
-  {
-    path: 'job-application',
-    loadChildren:
-      './modules/job-application/job-application.module#JobApplicationModule',
-  },
-  {
-    path: 'admission-gr',
-    loadChildren:
-      './modules/admission-gr/admission-gr.module#AdmissionGRModule',
-  },
+  // {
+  //   path: 'admission-gr',
+  //   loadChildren:
+  //     './modules/admission-gr/admission-gr.module#AdmissionGRModule',
+  // },
   {
     path: 'stds-services',
     loadChildren:
@@ -38,6 +33,16 @@ const routes: Routes = [
     loadChildren:
       './modules/translation/translation.module#TranslationModule',
     canLoad: [AuthGuard]
+  },
+  // {
+  //   path: 'job-application',
+  //   loadChildren:
+  //     './modules/job-application/job-application.module#JobApplicationModule',
+  // },
+  {
+    path: 'projects',
+    loadChildren:
+      './modules/projects/projects.module#ProjectsModule',
   }
 ];
 

@@ -116,10 +116,35 @@
     "time_finished": "انتهي وقت القبول",
     "verification_code": "الرجاء فحص الهاتف للتاكد من كود التحقق",
     "no_id_for_payment": "لا يوجد رقم جامعي لسداد الرسوم",
-    "downloaddfile":"Download file",
-    "messagevalidation":"Must be fill all required fields",
+    "downloaddfile": "Download file",
+    "messagevalidation": "Must be fill all required fields",
     "univ": "الجامعة السعودية الإلكترونية",
     "desc": "  مجموعه من الخدمات المقدمة لطلبة البكالوريوس ",
-    "homeapps": " العودة للرئيسية "
-    
+    "homeapps": " العودة للرئيسية ",
+    "validations": {
+        "required": "هذا الحقل مطلوب"
+    },
+    "projects": {
+        "service": "مسرعة الابتكار في التعليم الإلكتروني",
+        "name": "الإسم كامل (رباعي)",
+        "email": "البريد الإلكتروني",
+        "ssn": "رقم الهوية",
+        "phone": "الجوال",
+        "gender": "الجنس",
+        "college": "الكلية",
+        "title": "عنوان مقترح المشروع",
+        "desc": "الوصف المختصر",
+        "target": "مستفيد/مستهدف/مستهلك",
+        "cost": "التكلفة وحجم التمويل",
+        "duration": "مدة تنفيذ المشروع",
+        "reason": "سبب إختيار المشروع",
+        "recurrence": "إمكانية تكرار المشروع",
+        "strength": "نقاط القوة",
+        "weaknesses": "نقاط الضعف",
+        "opportunities": "الفرص الممكن تحقيقها",
+        "risks": "التهديدات أو المخاطر",
+        "file_name": "إرفاق المشروع",
+        "captcha": "رمز الحماية"
+    }
+
 }
