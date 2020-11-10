@@ -256,8 +256,8 @@
         "attends": "Attendance System",
         "masterequalize": "معادلة مقررات الفصل التحضيري",
         "skills": "Trainging & Skills record",
-        "translation":"Translation Center",
-        "exam":"Swift Asses"
+        "translation": "Translation Center",
+        "exam": "SwiftAssess"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",
@@ -928,8 +928,8 @@
         "save": "update",
         "photo_not_uploaded": "no file uploaded",
         "ssn_not_uploaded": "no file uploaded",
-        "wrong_file":"please select a file with the rigth format",
-        "wrong_file_size":"file size is too large, max size is 5 M",
+        "wrong_file": "please select a file with the rigth format",
+        "wrong_file_size": "file size is too large, max size is 5 M",
         "choose_file": "select a file",
         "note1": "Image dimensions must be clear and square.",
         "note2": "It must be a recent original photo, not more than six months old, and reflecting the current appearance.",
@@ -983,8 +983,7 @@
             "downloadapps": "Download the eExam Application (SwiftAssess Assessment):",
             "Device": "Device",
             "DownloadLink": "Download Link",
-            "apps": [
-                {
+            "apps": [{
                     "title": "Desktop and Laptop Computers",
                     "desc": "Download the browser for (Windows & Mac)",
                     "link": "https://eur01.safelinks.protection.outlook.com/?url=https://gammalearn.sharepoint.com/:f:/s/Operations/Er2Rmx_Fld1EmTkAxJPejkEBTBr6Efg8ofSjtUhtRzwYVQ?e%3DzDyNy6&amp;data=02%7c01%7c%7ce6d26d10d6bf44bedd3508d7691dea15%7c1f00763a1f87473bbba1b6c746af03e4%7c0%7c0%7c637093450070182397&amp;sdata=T6FmnCMZ%2Bav9tW7TUCOGog9mYkZbEIgRDVMLoA%2Bq9%2BU%3D&amp;reserved=0"
@@ -1003,8 +1002,7 @@
             "Guidelines": "Guidelines:",
             "Manual": "Instructions Manual",
             "Download": "Download",
-            "GuidelinesList": [
-                {
+            "GuidelinesList": [{
                     "title": "Instruction before exams",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam_en.pdf"
                 },
@@ -1039,8 +1037,8 @@
                 {
                     "title": "​​How to connect to SEU Wi-Fi? (Mac)",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN_En.pdf"
-                } ,
-                  {
+                },
+                {
                     "title": "متطلبات وتعليمات عامة لأداء الاختبار الإلكتروني عن بعد",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/requirements-and-instructions-ar.pdf"
                 }

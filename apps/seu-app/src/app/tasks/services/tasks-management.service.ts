@@ -90,9 +90,14 @@ export class TasksManagementService {
   }
 
   getfaVouriteList() {
-    return this.empListFavourit.map(id => {
-      return this.empList.find(it => it['empId'] == id);
-    })
+    let favs = [];
+    this.empListFavourit.forEach(id => {
+      let empDetails = this.empList.find(it => it['empId'] == id);
+      if (empDetails) {
+        favs.push(empDetails);
+      }
+    });
+    return favs;
   }
 
   getNameFromList(list, idcol, value, namecol) {
