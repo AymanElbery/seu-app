@@ -38,6 +38,12 @@ const routes: Routes = [
     loadChildren:
       './modules/translation/translation.module#TranslationModule',
     canLoad: [AuthGuard]
+  },
+  {
+    path: 'bbreports',
+    loadChildren:
+      './modules/bbreports/bbreports.module#BBReportsModule',
+    canLoad: [AuthGuard]
   }
 ];
 

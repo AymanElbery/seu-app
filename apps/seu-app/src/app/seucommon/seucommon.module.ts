@@ -20,7 +20,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -36,11 +36,13 @@ import { TranslateService } from '@ngx-translate/core';
     VgBufferingModule,
     NgSelectModule,
     RouterModule.forChild([]),
-    AppLazyTransModule
+    AppLazyTransModule,
+    DatepickerModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   entryComponents: [DialogPlayerComponent],
   exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent, AlphabateOnlyDirective,
-    SeuFlashComponent, NgSelectModule, HeaderComponent, FooterComponent]
+    SeuFlashComponent, NgSelectModule, HeaderComponent, FooterComponent,DatepickerModule,BsDatepickerModule]
 })
 export class SeucommonModule {
   
