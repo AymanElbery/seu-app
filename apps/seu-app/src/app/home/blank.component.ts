@@ -73,15 +73,15 @@ export class BlankComponent implements OnInit {
 
         if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
           //this.router.navigate(['/policy']);
-          const dialogConfig = new MatDialogConfig();
-          dialogConfig.autoFocus = true;
-          dialogConfig.disableClose = true;
-          dialogConfig.maxWidth = 550;
-          //dialogConfig.height = '58%';
-          let dialogRef = this.dialog.open(PolicyComponent, dialogConfig);
-          dialogRef.afterClosed().subscribe(result => {
-            this.showConfirmation();
-          });
+          // const dialogConfig = new MatDialogConfig();
+          // dialogConfig.autoFocus = true;
+          // dialogConfig.disableClose = true;
+          // dialogConfig.maxWidth = 550;
+          // //dialogConfig.height = '58%';
+          // let dialogRef = this.dialog.open(PolicyComponent, dialogConfig);
+          // dialogRef.afterClosed().subscribe(result => {
+          //   this.showConfirmation();
+          // });
         } else {
           this.showConfirmation();
         }

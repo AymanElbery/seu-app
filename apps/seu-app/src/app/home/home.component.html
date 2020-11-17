@@ -145,6 +145,13 @@
                                             </a>
                                         </p>
                                     </div>
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['bbreports']">
+                                        <p>
+                                            <a [routerLink]="['/apps/bbreports']">
+                                                <img src="assets/images/black.png"> {{"menu.bb_virtual_reports" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
 
                                     <!-- <div class="col-md-4 new-ser">
                     <p><a [routerLink]="['/apps/skills/user']">
@@ -298,6 +305,13 @@
                                             </a>
                                         </p>
                                     </div>
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['bbreports']">
+                                        <p>
+                                            <a [routerLink]="['/apps/bbreports']">
+                                                <img src="assets/images/black.png"> {{"menu.bb_virtual_reports" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
                                     <!-- <div class="col-md-4 new-ser">
                     <p><a [routerLink]="['/apps/skills/user']">
                       <img src="assets/images/skills.png">
@@ -349,6 +363,14 @@
                                         <p>
                                             <a [routerLink]="['/apps/translation/user']">
                                                 <img src="assets/images/translate.png"> {{"menu.translation" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['bbreports']">
+                                        <p>
+                                            <a [routerLink]="['/apps/bbreports']">
+                                                <img src="assets/images/black.png"> {{"menu.bb_virtual_reports" | translate}}
                                             </a>
                                         </p>
                                     </div>
@@ -431,7 +453,6 @@
                 </div> -->
                                 </div>
                             </div>
-
 
                         </div>
                     </div>

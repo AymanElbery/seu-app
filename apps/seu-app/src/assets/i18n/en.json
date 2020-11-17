@@ -257,7 +257,8 @@
         "masterequalize": "معادلة مقررات الفصل التحضيري",
         "skills": "Trainging & Skills record",
         "translation": "Translation Center",
-        "exam": "SwiftAssess"
+        "exam": "SwiftAssess",
+        "bb_virtual_reports": "Virtual Classroom Reports "
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",
