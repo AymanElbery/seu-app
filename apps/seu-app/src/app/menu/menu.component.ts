@@ -99,8 +99,8 @@ export class MenuComponent implements OnInit, AfterContentInit {
       this.hasNoRole = true;
     }
 
-    this.hasWafi = this.environment.allowWafi && (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
-    this.hasTasks = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == 'Operations') ? true : false;
+    this.hasWafi = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
+    this.hasTasks = (this.hasWafi || this.userService.userData.activeRole == 'Operations') ? true : false;
     this.isEmp = (this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor);
     if (this.isEmp) {
       this.task.loadStats();
