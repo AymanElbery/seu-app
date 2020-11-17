@@ -4,11 +4,12 @@
     <div class="row">
         <div class="col-md-12">
             <div class="widget">
-
                 <div class="widget-header">
                     <h3 class="widget-title">
                         {{report['name']}}
-                        <!-- <button (click)="openAddUserDialog()" class="btn btn-primary">{{"users_page.add_user" | translate}} <i class="fa fa-plus"></i></button> -->
+                        <button *ngIf="showGrid" [disabled]="exporting" (click)="exportToExcel()" class="btn btn-primary">
+                            {{"filter.export_excel" | translate}}
+                        </button>
                     </h3>
                 </div>
 
@@ -17,35 +18,34 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="state">
                                 <h6>{{"filter.college"|translate}} <span class="reqstart">*</span></h6>
-                                <ng-select [items]="colleges" bindLabel="name" [multiple]="true" bindValue="code" formControlName="college">
+                                <ng-select [items]="colleges" bindLabel="name" bindValue="code" formControlName="college">
                                 </ng-select>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="state">
-                                <h6>{{"filter.start_date"|translate}} <span class="reqstart"></span></h6>
-                                <input type="text" formControlName="start_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                        <ng-container *ngIf="report['filter_date']">
+                            <div class="col-md-3 col-sm-6">
+                                <div class="state">
+                                    <h6>{{"filter.start_date"|translate}} <span class="reqstart"></span></h6>
+                                    <input type="text" formControlName="start_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6">
-                            <div class="state">
-                                <h6>{{"filter.end_date"|translate}} <span class="reqstart"></span></h6>
-                                <input type="text" formControlName="end_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                            <div class="col-md-3 col-sm-6">
+                                <div class="state">
+                                    <h6>{{"filter.end_date"|translate}} <span class="reqstart"></span></h6>
+                                    <input type="text" formControlName="end_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                                </div>
                             </div>
-                        </div>
+                        </ng-container>
                         <div class="col-md-3 col-sm-6">
                             <div class="state">
                                 <h6>&nbsp;</h6>
-                                <button type="button" (click)="fetch()" class="btn btn-primary col-md-6">{{"filter.filter" | translate}}</button>
+                                <button type="button" (click)="fetch()" [disabled]="!form.valid" class="btn btn-primary col-md-6">{{"filter.filter" | translate}}</button>
                             </div>
                         </div>
                     </div>
                 </form>
-                <br /><br /><br /><br />
-                <button (click)="onBtExport()" style="margin: 5px; font-weight: bold;">
-                    Export to Excel
-                </button>
-                <div class="table-responsive">
+                <br />
+                <div *ngIf="showGrid" class="table-responsive">
                     <ag-grid-angular [enableRtl]="true" [defaultColDef]="defaultColDef" style="width: 100%; height: 500px;" class="ag-theme-alpine" [rowData]="rowData" [columnDefs]="columnDefs" (gridReady)="onGridReady($event)">
                     </ag-grid-angular>
                 </div>

@@ -12,6 +12,7 @@
         "staff-attend": "حضور أعضاء هيئة التدريس"
     },
     "filter": {
+        "export_excel": "تصدير الى اكسيل",
         "filter": "بحث",
         "college": "الكلية",
         "start_date": "تاريخ البداية",

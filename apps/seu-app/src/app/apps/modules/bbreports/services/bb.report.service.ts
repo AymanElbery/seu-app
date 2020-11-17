@@ -49,13 +49,13 @@ export class BBReportService extends BBRootService {
         });
     }
     get_report_by_code(code) {
-        console.log(this._lookups['reports']);
         const report = this._lookups['reports'].find(item => item['CODE'] == code);
         if (!report) {
             return false;
         }
         return {
             code: report['CODE'],
+            filter_date: (report['FILTER_DATE'] == 1 ? true : false),
             name: report['NAME' + this.langPrefix],
             path: report['R_PATH']
         };
