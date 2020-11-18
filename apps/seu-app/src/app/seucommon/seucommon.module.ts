@@ -21,11 +21,12 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { ControlValidationsErrorsComponent } from './control-validations-errors/control-validations-errors.component';
 
 
 @NgModule({
   declarations: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent, DialogPlayerComponent,
-    AlphabateOnlyDirective, SeuFlashComponent, HeaderComponent, FooterComponent],
+    AlphabateOnlyDirective, SeuFlashComponent, HeaderComponent, FooterComponent,ControlValidationsErrorsComponent],
   imports: [
     CommonModule,
     MatProgressSpinnerModule,
@@ -40,7 +41,7 @@ import { TranslateService } from '@ngx-translate/core';
   ],
   entryComponents: [DialogPlayerComponent],
   exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent, AlphabateOnlyDirective,
-    SeuFlashComponent, NgSelectModule, HeaderComponent, FooterComponent]
+    SeuFlashComponent, NgSelectModule, HeaderComponent, FooterComponent,ControlValidationsErrorsComponent]
 })
 export class SeucommonModule {
   
