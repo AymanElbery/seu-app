@@ -47,7 +47,7 @@ export class AcademicStatusComponent implements OnInit, OnDestroy {
         this.student = (res as any).data.student;
         this.studentTerms = (res as any).data.STD_TERMS;
         this.studentTermDetails = (res as any).data.STD_TermDetails;
-        this.selectedSems = this.studentTerms[0].TERM_CODE;
+        this.selectedSems = this.studentTerms.length ? this.studentTerms[0].TERM_CODE : '';
         this.arabicPrint = this.academicStatusService.DownloadStatus(this.selectedSems);
         this.EngPrint = this.academicStatusService.DownloadEngStatus(this.selectedSems);
 
