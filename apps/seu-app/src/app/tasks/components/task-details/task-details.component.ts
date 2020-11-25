@@ -71,7 +71,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
         comment['createdByName'] = this.taskservice.getEmpByID(comment['createdBy']);
 
         if (comment['hasAttachment'] && comment.attachName) {
-          comment['downloadPath'] = environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + this.LoggedINID + '&type=comment&name=' + comment.attachName
+          comment['downloadPath'] = environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + comment.createdBy + '&type=comment&name=' + comment.attachName
         }
         return comment;
       });
