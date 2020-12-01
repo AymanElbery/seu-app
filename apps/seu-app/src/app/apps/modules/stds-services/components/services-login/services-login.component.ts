@@ -58,7 +58,6 @@ export class ServicesLoginComponent implements OnInit {
       this.submitted = false;
       this.recaptchaRef.reset();
     });
-
   }
 
 
@@ -69,5 +68,4 @@ export class ServicesLoginComponent implements OnInit {
       event.preventDefault();
     }
   }
-
 }
