@@ -1,0 +1,30 @@
+<form role="form" [formGroup]="form">
+    <div class="modal-body">
+        <div class="row ser-block">
+            <div class=" col-md-6 col-sm-6">
+                <div class="state">
+                    <h6>{{"general.std_id"|translate}} <span class="reqstart">*</span></h6>
+                    <input type="text" formControlName="std_id" (keypress)="keyPress($event)" maxlength="9" minlength="9" class="form-control" />
+                </div>
+
+            </div>
+        </div>
+        <div class="row ser-block">
+            <div class=" col-md-6 col-sm-6">
+                <div class="state">
+                    <h6>{{"general.captcha"|translate}} <span class="reqstart">*</span></h6>
+                    <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey">
+                    </re-captcha>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class=" col-md-6 col-sm-6">
+                <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+                    <button (click)="onFormSubmit()" type="button" [disabled]="submitted || form.invalid" class="btn" style="color: #fff;margin-top: 30px !important;">
+            {{"signin.submit" | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
