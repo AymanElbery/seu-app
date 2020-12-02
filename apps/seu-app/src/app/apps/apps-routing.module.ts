@@ -43,6 +43,11 @@ const routes: Routes = [
     path: 'projects',
     loadChildren:
       './modules/projects/projects.module#ProjectsModule',
+  },
+  {
+    path: 'contactus',
+    loadChildren:
+      './modules/contactus/contactus.module#ContactusModule',
   }
 ];
 

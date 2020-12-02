@@ -1,0 +1,89 @@
+.logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+.logo img {
+    width: 300px;
+}
+
+.header {
+    background: #01182a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 0;
+    line-height: 2.5;
+}
+
+@media (max-width: 767.98px) {
+    .header {
+        text-align: center;
+    }
+}
+
+.header .username {
+    text-align: right;
+}
+
+@media (max-width: 767.98px) {
+    .header .username {
+        text-align: center;
+        margin-top: 90px;
+    }
+}
+
+.header a {
+    padding: 5px;
+    color: #fff;
+}
+
+.header a:hover {
+    color: #9b99b0;
+    text-decoration: none;
+}
+
+.header img {
+    width: 220px;
+    background: #fff;
+    padding: 5px;
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    background-color: #f18d1e;
+    border-radius: .25rem;
+    font-family: 'cairo', serif;
+}
+
+.tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.tooltip.bs-tooltip-bottom .arrow::before {
+    margin-left: -3px;
+    content: "";
+    border-width: 0 5px 5px;
+    border-bottom-color: #f18d1e;
+}
+
+.main-header .img-title {
+    position: relative;
+    width: 100%;
+    color: #fff;
+    height: 230px;
+    background-position: center;
+    background: url(/assets/images/inner_banner.jpg);
+    background-size: cover;
+    border-bottom: 4px solid #ee8a008c;
+}
+
+.main-header .img-title .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
