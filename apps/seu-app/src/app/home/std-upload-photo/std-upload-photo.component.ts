@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnDestroy, Inject } from '@angular/core';
 import { UserService } from '../../account/services/user.service';
 import { HttpRequestService } from '../../shared/services/http-request.service';
 import { environment } from '../../../environments/environment';
@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AppToasterService } from '../../shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
     selector: 'app-std-upload-photo',
@@ -25,11 +25,15 @@ export class StdUploadPhotoComponent implements OnInit, OnDestroy {
     SSN_FILE_PATH;
     approve = false;
 
-sex = '';
-    constructor(public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService, public translate: TranslateService,
+    sex = '';
+    showCancelNotes = true;
+    allowCancel = true;
+    constructor(@Inject(MAT_DIALOG_DATA) public data, public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService, public translate: TranslateService,
         public dialogRef: MatDialogRef<StdUploadPhotoComponent>,
     ) {
-    this.sex = this.userService.userData.sex;
+        this.sex = this.userService.userData.sex;
+        this.showCancelNotes = this.data['showCancelNotes'];
+        this.allowCancel = this.data['allowCancel'];
     }
 
     ngOnInit() {
@@ -153,5 +157,9 @@ sex = '';
                 this.toastr.tryagain();
                 this.submitting = false;
             });
+    }
+    close() {
+        this.userService.userData['UPLOAD_PHOTO_STATUS'] = "Done";
+        this.dialogRef.close();
     }
 }

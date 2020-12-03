@@ -21,18 +21,17 @@
                 <div class="col-md-12">
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
-                        <tr>
-                            <td colspan="3">
-                                <img style="height:150px" src="/assets/images/exam-{{sex}}.jpeg"/>
+                            <tr>
+                                <td colspan="3">
+                                    <img style="height:150px" src="/assets/images/exam-{{sex}}.jpeg" />
                                 </td>
-                        </tr>
+                            </tr>
                             <tr>
                                 <td>{{"upload_photo.photo" | translate}}
                                     <br /> <span class="text-red">(png, jpg, jpeg, bmp)</span>
                                 </td>
                                 <td>
-                                    <input type="file" accept="*/*" (change)="handlePhotoChange($event)" id="photo"
-                                        class="form-control-file form-control">
+                                    <input type="file" accept="*/*" (change)="handlePhotoChange($event)" id="photo" class="form-control-file form-control">
                                 </td>
                                 <td>
                                     <p *ngIf="showPhotoName" class="photo-name alert-success">{{ photoName }}</p>
@@ -45,8 +44,7 @@
                                     <br /> <span class="text-red">(png, jpg, jpeg, bmp, pdf)</span>
                                 </td>
                                 <td>
-                                    <input type="file" accept="*/*" (change)="handleSsnChange($event)" id="ssn"
-                                        class="form-control-file form-control">
+                                    <input type="file" accept="*/*" (change)="handleSsnChange($event)" id="ssn" class="form-control-file form-control">
                                 </td>
                                 <td>
                                     <p *ngIf="showSsnName" class="photo-name alert-success">{{ ssnName }}</p>
@@ -78,12 +76,17 @@
             </div>
         </div>
         <div class="modal-footer" style="border-top: 2px solid #8a551a;text-align: center;">
-            <button [disabled]="!approve || !showPhotoName || !showSsnName || submitting" style="width: 50%;max-width: 200px;"
-                type="submit" (click)="save()" class="btn sub">
+            <button [disabled]="!approve || !showPhotoName || !showSsnName || submitting" style="width: 50%;max-width: 200px;" type="submit" (click)="save()" class="btn sub">
                 {{ "upload_photo.save" | translate}}
                 <i *ngIf="submitting" class="fa fa-spinner"></i>
                 <i *ngIf="!submitting" class="fa fa-save"></i>
             </button>
+
+            <button *ngIf="allowCancel" style="width: 50%;max-width: 200px;" type="submit" (click)="close()" class="btn sub">
+                {{ "upload_photo.cancel" | translate}}
+            </button>
+            <br />
+            <p *ngIf="showCancelNotes" class="text-red">{{'upload_photo.cancel_notes' | translate }}</p>
         </div>
     </div>
 </mat-dialog-content>
