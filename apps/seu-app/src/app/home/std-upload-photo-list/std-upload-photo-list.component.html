@@ -23,6 +23,7 @@
                         <th scope="col">{{"general.request.req_date"| translate}}</th>
                         <th scope="col">{{"general.request.req_status"| translate}}</th>
                         <th scope="col">{{"upload_photo.photo"| translate}}</th>
+                        <th scope="col">{{"upload_photo.ssn"| translate}}</th>
                         <th scope="col">{{"general.request.req_delete"| translate}}</th>
                     </tr>
                 </thead>
@@ -31,7 +32,12 @@
                         <td>{{it.REQ_ID}}</td>
                         <td>{{it.INSERT_DATE}}</td>
                         <td>{{"upload_photo.STATUS_"+it['IS_ACTIVE'] | translate}}</td>
-                        <td><img width="50" src="{{it.IMAGE_URL}}" /></td>
+                        <td>
+                            <img *ngIf="it.IMAGE_URL" width="50" src="{{it.IMAGE_URL}}" />
+                        </td>
+                        <td>
+                            <a href="{{it.ID_URL}}" target="_blank">{{"general.download"| translate}}</a>
+                        </td>
                         <td *ngIf='it.deletable'>
                             <button [disabled]='!it.deletable || deleting' class="btn btn-sm btn-danger" style="color: white" (click)="delete(it.REQ_ID,i)">
                           <i class="fa fa-trash"></i>

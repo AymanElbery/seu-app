@@ -27,29 +27,40 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{"upload_photo.photo" | translate}}
-                                    <br /> <span class="text-red">(png, jpg, jpeg, bmp)</span>
-                                </td>
-                                <td>
-                                    <input type="file" accept="*/*" (change)="handlePhotoChange($event)" id="photo" class="form-control-file form-control">
-                                </td>
-                                <td>
-                                    <p *ngIf="showPhotoName" class="photo-name alert-success">{{ photoName }}</p>
-                                    <p *ngIf="!showPhotoName" class="photo-name alert-danger">
-                                        {{"upload_photo.photo_not_uploaded" | translate}}</p>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td>{{"upload_photo.ssn" | translate}}
                                     <br /> <span class="text-red">(png, jpg, jpeg, bmp, pdf)</span>
                                 </td>
                                 <td>
                                     <input type="file" accept="*/*" (change)="handleSsnChange($event)" id="ssn" class="form-control-file form-control">
+                                    <p>
+                                        <span class="text-red">
+                                            {{ "upload_photo.id_note" | translate}}
+                                            ({{ "upload_photo.required" | translate}})
+                                        </span>
+                                    </p>
                                 </td>
                                 <td>
                                     <p *ngIf="showSsnName" class="photo-name alert-success">{{ ssnName }}</p>
                                     <p *ngIf="!showSsnName" class="photo-name alert-danger">
                                         {{"upload_photo.ssn_not_uploaded" | translate}}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{"upload_photo.photo" | translate}}
+                                    <br /> <span class="text-red">(png, jpg, jpeg, bmp)</span>
+                                </td>
+                                <td>
+                                    <input type="file" accept="*/*" (change)="handlePhotoChange($event)" id="photo" class="form-control-file form-control">
+                                    <p>
+                                        <span class="text-red">
+                                            {{ "upload_photo.not_required" | translate}}
+                                        </span>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p *ngIf="showPhotoName" class="photo-name alert-success">{{ photoName }}</p>
+                                    <p *ngIf="!showPhotoName" class="photo-name alert-danger">
+                                        {{"upload_photo.photo_not_uploaded" | translate}}</p>
                                 </td>
                             </tr>
                         </table>
@@ -76,7 +87,8 @@
             </div>
         </div>
         <div class="modal-footer" style="border-top: 2px solid #8a551a;text-align: center;">
-            <button [disabled]="!approve || !showPhotoName || !showSsnName || submitting" style="width: 50%;max-width: 200px;" type="submit" (click)="save()" class="btn sub">
+            <!-- || !showPhotoName -->
+            <button [disabled]="!approve || !showSsnName || submitting" style="width: 50%;max-width: 200px;" type="submit" (click)="save()" class="btn sub">
                 {{ "upload_photo.save" | translate}}
                 <i *ngIf="submitting" class="fa fa-spinner"></i>
                 <i *ngIf="!submitting" class="fa fa-save"></i>

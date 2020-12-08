@@ -36,8 +36,17 @@ export class StdUploadPhotoComponent implements OnInit, OnDestroy {
         this.allowCancel = this.data['allowCancel'];
     }
 
+    
     ngOnInit() {
         document.getElementById("side-menu").style.display = "none";
+        this.updatesettings();
+    }
+
+    updatesettings(){
+        this.sex = this.userService.getActiveRoleDetails()['sex'];
+        this.showCancelNotes = this.data['showCancelNotes'];
+        this.allowCancel = this.data['allowCancel'];
+
     }
 
     ngOnDestroy() {

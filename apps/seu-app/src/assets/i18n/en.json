@@ -258,7 +258,8 @@
         "skills": "Trainging & Skills record",
         "translation": "Translation Center",
         "exam": "SwiftAssess",
-        "EXAM_PHOTO": "صورة نظام الاختبارات"
+        "EXAM_PHOTO": "صورة نظام الاختبارات",
+        "tawkeed": "Tawkeed"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",

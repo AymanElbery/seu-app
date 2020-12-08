@@ -25,7 +25,13 @@ export class StdUploadPhotoListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.isLoading = true;
-    this.getRequests();
+    //this.getRequests();
+    if (this.userService.userDataLoaded) {
+      this.getRequests();
+    }
+    this.userService.userDataObservable.subscribe(() => {
+      this.getRequests();
+    })
     this.subscribeLangChange();
   }
 
@@ -49,6 +55,9 @@ export class StdUploadPhotoListComponent implements OnInit, OnDestroy {
       'Content-Type': 'application/json',
     });
     const std_id = this.userService.getActiveRoleDetails()['id'];
+    if (!(std_id)) {
+      return;
+    }
     this.http.get(environment.baselink + environment.servicesprefix + "/rest/upload_photo/list/" + std_id, { headers }).subscribe(
       res => {
         this.reqData = (res as any).data;
@@ -67,7 +76,7 @@ export class StdUploadPhotoListComponent implements OnInit, OnDestroy {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = true;
     dialogConfig.maxWidth = "800px";
-    dialogConfig.data = {'showCancelNotes':false,'allowCancel':true};
+    dialogConfig.data = { 'showCancelNotes': false, 'allowCancel': true };
     let dialogref = this.dialog.open(StdUploadPhotoComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       this.getRequests();
