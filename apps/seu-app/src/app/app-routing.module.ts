@@ -13,6 +13,7 @@ import { PolicyComponent } from './home/policy.component';
 import { DocsConfirmComponent } from './home/docs-confirm.component';
 import { EmpGuard } from './guards/emp.guard';
 import { AppErrorComponent } from './home/error.component';
+import { StdUploadPhotoListComponent } from './home/std-upload-photo-list/std-upload-photo-list.component';
 const routes: Routes = [
   {
     path: '',
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       { path: 'policy', component: PolicyComponent },
       { path: 'docs-confirm', component: DocsConfirmComponent },
+      { path: 'exam-photo', component: StdUploadPhotoListComponent },
       {
         path: 'instructions',
         loadChildren: './instructions/instructions.module#InstructionsModule',

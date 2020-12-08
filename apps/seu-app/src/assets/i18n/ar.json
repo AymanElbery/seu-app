@@ -258,7 +258,9 @@
         "leadership": "الوظائف القيادية",
         "skills": "السجل المهاري والتدريب",
         "translation": "مركز الترجمة",
-        "exam": "الاختبارات الالكترونية"
+        "exam": "الاختبارات الالكترونية",
+        "EXAM_PHOTO": "صورة نظام الاختبارات",
+        "tawkeed": "توكيد"
     },
     "errors": {
         "invalidStdID": "لم نستطيع الحصول علي بيانات الرقم الرجامعي",
@@ -1156,7 +1158,10 @@
         "notes": "* يرجى الاطلاع على الوثيقة المرفقة بالكامل حتى نهايتها لتفعيل خاصية الاختيار"
     },
     "upload_photo": {
-        "title": "تحديث البيانات",
+        "title": "صورة نظام الاختبارات",
+        "desc": "",
+        "cancel": "إغلاق",
+        "cancel_notes": "يمكنك اغلاق النافذة وتحديث البيانات من قائمة شؤون الاختبارات فى وقت لاحق",
         "photo": "الصورة الشخصية",
         "ssn": "صورة الهوية الوطنية",
         "save": "تحديث",
@@ -1181,7 +1186,14 @@
         "cond_4": "النظر بعيداً عن شاشة الجهاز المحمول لفترة طويلة قد يترتب عليه إلغاء درجة الاختبار.",
         "cond_5": "يمنع التحدث أو قراءة الأسئلة بصوت مسموع أثناء أداء الاختبار. وفي حال حدوث ذلك سيعرضك ذلك لإلغاء درجة الاختبار.",
         "cond_6": "من غير المسموح تغطية الوجه أو جزء منه باليدين.",
-        "cond_7": "يمنع ارتداء اي نوع من الاكسسوارات على المعصمين او الساعات الذكيه"
+        "cond_7": "يمنع ارتداء اي نوع من الاكسسوارات على المعصمين او الساعات الذكيه",
+        "STATUS_0": "مرفوضة",
+        "STATUS_1": "تحت الإجراء",
+        "STATUS_2": "مقبولة",
+        "STATUS_3": "محذوفة",
+        "id_note": "يستلزم رفع صورة الهوية الوطنية أو الإقامة أو البطاقة الجامعية وعدم تغطية الصورة الشخصية في البطاقة.",
+        "required": "الزامية",
+        "not_required": "غير الزامية"
     },
     "docs_confirm": {
         "title": "البيانات المطلوب المصادقة عليها",
@@ -1227,8 +1239,7 @@
             "downloadapps": "لتنزيل برنامج الاختبارات الإلكترونية (SwiftAssess Assessment):",
             "Device": "نوع الجهاز المستخدم​",
             "DownloadLink": "رابط تنزيل البرنامج​",
-            "apps": [
-                {
+            "apps": [{
                     "title": "جهاز الحاسوب المكتبي/المحمول",
                     "desc": "رابط تنزيل المتصفح الآمن لأنظمة التشغيل (Windows & Mac)",
                     "link": "https://eur01.safelinks.protection.outlook.com/?url=https://gammalearn.sharepoint.com/:f:/s/Operations/Er2Rmx_Fld1EmTkAxJPejkEBTBr6Efg8ofSjtUhtRzwYVQ?e%3DzDyNy6&amp;data=02%7c01%7c%7ce6d26d10d6bf44bedd3508d7691dea15%7c1f00763a1f87473bbba1b6c746af03e4%7c0%7c0%7c637093450070182397&amp;sdata=T6FmnCMZ%2Bav9tW7TUCOGog9mYkZbEIgRDVMLoA%2Bq9%2BU%3D&amp;reserved=0"
@@ -1247,8 +1258,7 @@
             "Guidelines": "الأدلة الإرشادية:",
             "Manual": "الدليل الإرشادي",
             "Download": "تحميل",
-            "GuidelinesList": [
-                {
+            "GuidelinesList": [{
                     "title": "تعليمات ما قبل الاختبارات",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
                 },
@@ -1284,7 +1294,7 @@
                     "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام windows",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN.pdf"
                 },
-                 {
+                {
                     "title": "متطلبات وتعليمات عامة لأداء الاختبار الإلكتروني عن بعد",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/requirements-and-instructions-ar.pdf"
                 }

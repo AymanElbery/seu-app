@@ -100,6 +100,8 @@ export class BlankComponent implements OnInit {
           dialogConfig.autoFocus = true;
           dialogConfig.disableClose = true;
           dialogConfig.maxWidth = "800px";
+          const CanCancel = (this.userService.userData['UPLOAD_PHOTO_CANCEL'] == 1 ? true : false);
+          dialogConfig.data = {'showCancelNotes':CanCancel,'allowCancel':CanCancel};
           this.dialog.open(StdUploadPhotoComponent, dialogConfig);
         }
       }
