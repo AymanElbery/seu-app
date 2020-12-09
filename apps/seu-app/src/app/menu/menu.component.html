@@ -44,6 +44,9 @@
                     </div>
                 </div>
 
+
+
+
                 <div *ngIf="hasTasks">
                     <div class="nav-item has-sub">
                         <a href="javascript:void(0)">
@@ -309,11 +312,21 @@
                         <a href="#" class="menu-item" routerLink="/otherrequests/absencequery">
               {{ "menu.absencequery" | translate }}
             </a>
+                    </div>
+                </div>
+                <div *ngIf="menuType == 2 && showServices" class="nav-item has-sub">
+                    <a href="javascript:void(0)"><span> {{ "menu.EXAMAFF" | translate }} </span>
+        <i class="ik ik-trending-up"></i></a>
+                    <div class="submenu-content">
+                        <a href="#" class="menu-item" routerLink="/exam-photo">
+                                    {{ "menu.EXAM_PHOTO" | translate }}
+                     </a>
                         <a href="#" class="menu-item" routerLink="/otherrequests/graduateprofile">{{ "menu.graduateprofile" | translate }}
-            </a>
+                     </a>
                         <a href="#" class="menu-item" routerLink="/otherrequests/address">
-              {{ "menu.graduat_address" | translate }}
-            </a>
+                       {{ "menu.graduat_address" | translate }}
+                     </a>
+
                     </div>
                 </div>
                 <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">
@@ -423,9 +436,11 @@
                 </div>
                 <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">
                     <a href="javascript:void(0)"><span> {{ "menu.EXAMAFF" | translate }} </span>
-            <i class="ik ik-trending-down"></i></a>
+            <i class="ik ik-trending-up"></i></a>
                     <div class="submenu-content">
-                        <!-- <a href="#" class="menu-item" routerLink="/exams/attend">  جداول الاختبارات   </a> -->
+                        <a href="#" class="menu-item" routerLink="/exam-photo">
+                                        {{ "menu.EXAM_PHOTO" | translate }}
+                         </a>
                         <a href="#" class="menu-item" routerLink="/exams/">
               {{ "menu.EXAMATT" | translate }}
             </a>
