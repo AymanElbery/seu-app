@@ -73,11 +73,10 @@
     position: relative;
     width: 100%;
     color: #fff;
-    height: 230px;
+    height: 175px;
     background-position: center;
     background: url(/assets/images/inner_banner.jpg);
     background-size: cover;
-    border-bottom: 4px solid #ee8a008c;
 }
 
 .main-header .img-title .title {
@@ -86,4 +85,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+}
+
+h4 {
+    margin: 0;
 }
