@@ -18,6 +18,9 @@ export const routes: Routes = [
         path: '', component: TranslationAuthComponent,
         children: [
             {
+                path: '', component: TranslationLoginComponent
+            },
+            {
                 path: 'login', component: TranslationLoginComponent
             },
             {

@@ -1,3 +1,37 @@
-<p>
-  translation-login works!
-</p>
+<form role="form" [formGroup]="form">
+    <div class="modal-body">
+        <div class="row ser-block">
+            <div class=" col-md-6 col-sm-6">
+                <div class="state">
+                    <h6>{{"auth.user_name"|translate}} <span class="reqstart">*</span></h6>
+                    <input type="text" formControlName="user_name" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row ser-block">
+            <div class=" col-md-6 col-sm-6">
+                <div class="state">
+                    <h6>{{"auth.password"|translate}} <span class="reqstart">*</span></h6>
+                    <input type="text" formControlName="password" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row ser-block">
+            <div class=" col-md-6 col-sm-6">
+                <div class="state">
+                    <h6>{{"auth.captcha"|translate}} <span class="reqstart">*</span></h6>
+                    <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey"></re-captcha>
+                </div>
+            </div>
+        </div>
+        <div class="row ser-block">
+            <div class=" col-md-6 col-sm-6">
+                <div class="form-group">
+                    <br />
+                    <a [routerLink]="['./register']">{{"auth.register" | translate}}</a> | <a [routerLink]="['./forgot']">{{"auth.forgot" | translate}}</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button (click)="onFormSubmit()" type="button" [disabled]="submitted || form.invalid" class="btn">{{"auth.signin" | translate}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
