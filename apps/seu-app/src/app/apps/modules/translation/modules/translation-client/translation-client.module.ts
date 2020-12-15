@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppsSharedModule } from '../../../apps-shared/apps.shared.module';
 import { TranslationCommonModule } from '../translation-common/translation-common.module';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { TranslationLazyTransModule } from '../translation-common/translation.lazytrans.module';
 
 @NgModule({
   declarations: [componentDeclarations],
@@ -14,10 +14,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppsSharedModule,
     RouterModule.forChild(routes),
     TranslationCommonModule,
-    MatDialogModule
+    MatDialogModule,
+    TranslationLazyTransModule
   ],
   entryComponents: [
-    componentDeclarations,
+    componentDeclarations
   ],
 })
 export class TranslationClientModule { }

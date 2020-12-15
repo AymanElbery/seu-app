@@ -6,6 +6,7 @@ import { AppsSharedModule } from '../../../apps-shared/apps.shared.module';
 import { TranslationCommonModule } from '../translation-common/translation-common.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TranslationLazyTransModule } from '../translation-common/translation.lazytrans.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     TranslationCommonModule,
     MatDialogModule,
     DatepickerModule.forRoot(),
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    TranslationLazyTransModule
   ],
   entryComponents: [
     componentDeclarations,

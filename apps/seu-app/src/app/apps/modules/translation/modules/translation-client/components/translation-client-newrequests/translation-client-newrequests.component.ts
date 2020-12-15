@@ -17,18 +17,19 @@ export class TranslationClientNewrequestsComponent implements OnInit {
   isLoading = false;
   submitted = false;
   support_email;
-  addRequestForm : FormGroup;
+  addRequestForm: FormGroup;
   // clientId;
   // clientName;
   // workEmail;
   // clientWork;
   showOtherFileType = false;
-  showClientWorkPlace= false;
+  showClientWorkPlace = false;
   fileName;
   FILE_PATH;
   ext;
   showFileName = false;
 
+  sso;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -58,14 +59,14 @@ export class TranslationClientNewrequestsComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.sso = this.userService.is_sso();
   }
 
-  changeFileType(e){
-    this.showOtherFileType = (e.target.value == "other") ? true : false ;
+  changeFileType(e) {
+    this.showOtherFileType = (e.target.value == "other") ? true : false;
   }
-  changeClientWorkPlace(e){
-    this.showClientWorkPlace = (e.target.value == "external") ? true : false ;
+  changeClientWorkPlace(e) {
+    this.showClientWorkPlace = (e.target.value == "external") ? true : false;
   }
 
   handleInputChange(e) {
@@ -91,7 +92,7 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     this.FILE_PATH = reader.result;
   }
 
-  validateFileSize(size){
+  validateFileSize(size) {
     return (size < 5000000) ? true : false;
   }
 
@@ -102,10 +103,10 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     return false;
   }
 
-  onSubmit(){
+  onSubmit() {
     this.submitted = true;
     if (this.addRequestForm.invalid) {
-        return;
+      return;
     }
     this.isLoading = true;
     let data = this.addRequestForm.value;
@@ -125,10 +126,10 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     }
     this.newrequestsService.saveNewRequest(data).subscribe((response) => {
       this.toastr.push([{ type: 'success', 'body': this.translate.instant('new_request_page.request_saved') }]);
-        this.isLoading = false;
-        this.submitted = false;
-        this.router.navigate(['../my-requests'], { relativeTo: this.route })
-    },err=>{
+      this.isLoading = false;
+      this.submitted = false;
+      this.router.navigate(['../my-requests'], { relativeTo: this.route })
+    }, err => {
       this.newrequestsService.tryagain();
       this.isLoading = false;
       this.submitted = false;

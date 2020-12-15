@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslationUserService } from '../../../../services/translation-user';
 
 @Component({
   selector: 'app-translation-auth',
@@ -6,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./translation-auth.component.css']
 })
 export class TranslationAuthComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private user: TranslationUserService) {
+  }
   ngOnInit() {
   }
 

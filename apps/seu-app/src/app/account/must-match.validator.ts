@@ -6,17 +6,17 @@ export function MustMatch(controlName: string, matchingControlName: string) {
 
         const control = formGroup.controls[controlName];
         const matchingControl = formGroup.controls[matchingControlName];
-        console.log('MustMatchDirective',formGroup,control,matchingControl);
+        //console.log('MustMatchDirective',formGroup,control,matchingControl);
 
         // return null if controls haven't initialised yet
         if (!control || !matchingControl) {
-            console.log("NULL 2");
+            //console.log("NULL 2");
           return null;
         }
 
         // return null if another validator has already found an error on the matchingControl
         if (matchingControl.errors && !matchingControl.errors.mustMatch) {
-            console.log("NULL 1");
+            //console.log("NULL 1");
             return null;
         }
 

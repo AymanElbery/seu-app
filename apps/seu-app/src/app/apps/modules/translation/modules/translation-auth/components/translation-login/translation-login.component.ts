@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 import { environment } from 'src/environments/environment';
 import { TranslationAuthService } from '../../../../services/translation-auth';
+import { TranslationUserService } from '../../../../services/translation-user';
 
 @Component({
   selector: 'app-translation-login',
@@ -20,10 +21,10 @@ export class TranslationLoginComponent implements OnInit {
   submitted = false;
   studentData;
   environment;
-  constructor(public transervice: TranslationAuthService, private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private globalService: GlobalBaseService) {
+  constructor(public transervice: TranslationAuthService, private tuser: TranslationUserService, private fb: FormBuilder, private router: Router, private route: ActivatedRoute, private globalService: GlobalBaseService) {
 
     this.form = fb.group({
-      'user_name': ['', [Validators.required, Validators.minLength(6)]],
+      'username': ['', [Validators.required, Validators.minLength(6)]],
       'password': ['', [Validators.required, Validators.minLength(8)]],
       'captcha': ['', [Validators.required]]
     });
@@ -51,8 +52,10 @@ export class TranslationLoginComponent implements OnInit {
         this.submitted = false;
         return false;
       }
-      //afterLogin
-      //this.transervice.login_std_id = this.form.controls['std_id'].value;
+      localStorage.setItem('sid', encodeURI(response['data']['token']));
+
+      this.tuser.setUser(response['data']['user']);
+      this.router.navigate(["/apps/translation/client/my-requests"]);
     }, error => {
       this.transervice.tryagain();
       this.submitted = false;
