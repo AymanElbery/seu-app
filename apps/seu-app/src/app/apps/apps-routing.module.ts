@@ -43,6 +43,12 @@ const routes: Routes = [
     path: 'projects',
     loadChildren:
       './modules/projects/projects.module#ProjectsModule',
+  },
+  {
+    path: 'bbreports',
+    loadChildren:
+      './modules/bbreports/bbreports.module#BBReportsModule',
+    canLoad: [AuthGuard]
   }
 ];
 

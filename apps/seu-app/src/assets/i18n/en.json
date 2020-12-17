@@ -260,7 +260,8 @@
         "exam": "SwiftAssess",
         "EXAM_PHOTO": "صورة نظام الاختبارات",
         "tawkeed": "Tawkeed",
-        "umc": "University Medical Center"
+        "umc": "University Medical Center",
+        "bb_virtual_reports": "Virtual Classroom Reports "
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",
