@@ -149,6 +149,7 @@
         "actual_date": "تاريخ المحاضرة",
         "actual_appointments": "المواعيد الحالية",
         "not_found_appointments": "لا يوجد مواعيد لهذه الدورة",
+        "not_found_courses": "لا يوجد لك دورات تحت هذا التصنيف",
         "details_ar": "التفاصيل",
         "details_en": "التفاصيل E",
         "details": "التفاصيل",

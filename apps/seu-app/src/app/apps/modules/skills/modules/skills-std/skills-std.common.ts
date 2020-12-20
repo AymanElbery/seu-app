@@ -4,6 +4,7 @@ import { SkillsStdCoursesListComponent } from './components/skills-std-courses-l
 import { SkillsStdCourseDetailsComponent } from './components/skills-std-course-details/skills-std-course-details.component';
 import { SkillsStdMycoursesComponent } from './components/skills-std-mycourses/skills-std-mycourses.component';
 import { SkillsStdSkillsCoursesComponent } from './components/skills-std-skills-courses/skills-std-skills-courses.component';
+import { SkillsStdSkillsCoursesRecordComponent } from './components/skills-std-skills-courses-record/skills-std-skills-courses-record.component';
 import { SkillsStdConditionsComponent } from './components/skills-std-conditions/skills-std-conditions.component';
 import { SkillsStdStandardsComponent } from './components/skills-std-standards/skills-std-standards.component';
 import { SkillsSTDGuard } from '../../skills-guard/std.guard';
@@ -15,9 +16,20 @@ import { SkillsStdMycourseDetailsComponent } from './components/skills-std-cours
 import { SkillsStdExcuseComponent } from './components/skills-std-course-view/skills-std-course-attends/dialog/skills-std-excuse.component';
 
 export const componentDeclarations: any[] = [
-    SkillsStdHomeComponent, SkillsStdCoursesListComponent, SkillsStdCourseDetailsComponent, SkillsStdMycoursesComponent,
-    SkillsStdCourseViewComponent, SkillsStdMycourseDetailsComponent, SkillsStdCourseFilesComponent, SkillsStdCourseAttendsComponent,
-    SkillsStdExcuseComponent, SkillsStdCourseRatingComponent, SkillsStdConditionsComponent, SkillsStdStandardsComponent, SkillsStdSkillsCoursesComponent
+    SkillsStdHomeComponent, 
+    SkillsStdCoursesListComponent, 
+    SkillsStdCourseDetailsComponent, 
+    SkillsStdMycoursesComponent,
+    SkillsStdCourseViewComponent, 
+    SkillsStdMycourseDetailsComponent, 
+    SkillsStdCourseFilesComponent, 
+    SkillsStdCourseAttendsComponent,
+    SkillsStdExcuseComponent, 
+    SkillsStdCourseRatingComponent, 
+    SkillsStdConditionsComponent, 
+    SkillsStdStandardsComponent, 
+    SkillsStdSkillsCoursesComponent,
+    SkillsStdSkillsCoursesRecordComponent,
 ];
 
 export const stdEntryComponents: any[] = [
@@ -47,6 +59,9 @@ export const routes: Routes = [
     },
     {
         path: 'skills-courses', component: SkillsStdSkillsCoursesComponent, canActivate: [SkillsSTDGuard]
+    },
+    {
+        path: 'skills-courses-record', component: SkillsStdSkillsCoursesRecordComponent, canActivate: [SkillsSTDGuard]
     },
     {
         path: 'course-view', component: SkillsStdCourseViewComponent,

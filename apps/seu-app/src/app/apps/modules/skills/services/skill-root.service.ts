@@ -100,7 +100,7 @@ export class SkillsRootService {
         if (response['status']) {
             const linkSource = `data:application/pdf;base64,${response['data']['content']}`;
             const downloadLink = document.createElement("a");
-            const fileName = "cert.pdf";
+            const fileName = "سجل المهارات الغير أكاديمية.pdf";
 
             downloadLink.href = linkSource;
             downloadLink.download = fileName;

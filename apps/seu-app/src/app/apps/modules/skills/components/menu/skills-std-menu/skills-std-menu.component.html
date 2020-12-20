@@ -34,5 +34,9 @@
             routerLink="std/skills-courses">
         {{ "menu.stds-skills-courses" | translate }}
         </a>
+        <a [ngClass]="{'active': activeRoute == 'skills-courses-record'}" href="#" class="menu-item"
+            routerLink="std/skills-courses-record">
+        {{ "menu.skills" | translate }}
+        </a>
     </div>
 </div>

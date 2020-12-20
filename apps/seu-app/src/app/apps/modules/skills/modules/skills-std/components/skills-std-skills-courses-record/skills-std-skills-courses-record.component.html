@@ -1,0 +1,79 @@
+<app-service-header title="{{'training' | translate}}" subtitle="{{'menu.skills' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="widget-header" style="text-align: left;">
+        <h3 class="widget-title">
+          <button class="btn btn-primary" style="margin-left: 1%;" (click)="print()">
+            <span class="ik ik-printer"></span>  {{"general.print" | translate}}
+          </button>
+        </h3>
+      </div>
+
+      <div class="widget">
+        <div *ngFor="let class of classificationsList" class="accordion" id="{{ 'class' + class['ID'] }}">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <div class="card" style="background-color: #333; border-radius: 10px;" type="button"  data-toggle="collapse" [attr.data-target]="'#collapse'+ class['ID']" aria-expanded="true" [attr.aria-controls]="'collapse'+ class['ID']" >
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h6 style="color: #FFF;">{{class['NAME'+coursesService.langPrefix]}}</h6>
+                      </div>
+                      <div class="col-md-4">
+                        <h6 style="color: #FFF;"> الساعات المعتمدة : {{class.HOURS}}</h6>
+                      </div>
+                      <div class="col-md-4">
+                        <h6 style="color: #FFF;"> الساعات المنجزة : {{class.ACTUAL}}</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </h2>
+            </div>
+            <div id="{{ 'collapse' + class['ID'] }}" class="collapse" aria-labelledby="headingOne" [attr.data-parent]="'#class'+ class['ID']">
+              <div class="card-body">
+                <div *ngIf="class['COURSES'].length > 0" class="table-responsive">
+                  <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">{{"courses.title" | translate}}</th>
+                        <th scope="col">{{"courses.cert_type" | translate}}</th>
+                        <th scope="col">{{"courses.start_date" | translate}}</th>
+                        <th scope="col">{{"courses.end_date" | translate}}</th>
+                        <th scope="col">{{"courses.status" | translate}}</th>
+                        <th scope="col">{{"courses.hr_hours" | translate}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let course of class['COURSES']; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{course['TITLE'+coursesService.langPrefix]}}</td>
+                        <td>
+                          <span *ngIf="course.CERT_TYPE == 'c'">{{"courses.cert_course" | translate}}</span>
+                          <span *ngIf="course.CERT_TYPE == 'w'">{{"courses.cert_work" | translate}}</span>
+                        </td>
+                        <td>{{course['START_DATE'] | date : 'yyyy-MM-dd'}}</td>
+                        <td>{{course['END_DATE'] | date : 'yyyy-MM-dd'}}</td>
+                        <td>{{ "statuses."+course['STATUS'] | translate}}</td>
+                        <td>{{ course['HR_HOURS'] }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div *ngIf="class['COURSES'].length == 0" class="alert alert-info text-center">
+                  <b>{{ "courses.not_found_courses" | translate}}</b>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
