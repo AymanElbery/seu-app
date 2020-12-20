@@ -11,6 +11,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PolicyComponent } from './policy.component';
 import { DocsConfirmComponent } from './docs-confirm.component';
 import { GMPolicyComponent } from './gmpolicy.component';
+import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.component';
 
 @Component({
   selector: 'app-blank-home',
@@ -72,15 +73,15 @@ export class BlankComponent implements OnInit {
 
         if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
           //this.router.navigate(['/policy']);
-          const dialogConfig = new MatDialogConfig();
-          dialogConfig.autoFocus = true;
-          dialogConfig.disableClose = true;
-          dialogConfig.maxWidth = 550;
-          //dialogConfig.height = '58%';
-          let dialogRef = this.dialog.open(PolicyComponent, dialogConfig);
-          dialogRef.afterClosed().subscribe(result => {
-            this.showConfirmation();
-          });
+          // const dialogConfig = new MatDialogConfig();
+          // dialogConfig.autoFocus = true;
+          // dialogConfig.disableClose = true;
+          // dialogConfig.maxWidth = 550;
+          // //dialogConfig.height = '58%';
+          // let dialogRef = this.dialog.open(PolicyComponent, dialogConfig);
+          // dialogRef.afterClosed().subscribe(result => {
+          //   this.showConfirmation();
+          // });
         } else {
           this.showConfirmation();
         }
@@ -93,6 +94,15 @@ export class BlankComponent implements OnInit {
           dialogConfig.maxWidth = 550;
           //dialogConfig.height = '58%';
           this.dialog.open(GMPolicyComponent, dialogConfig);
+        }
+        if (this.userService.userData.role == "Student" && this.userService.userData['UPLOAD_PHOTO'] == 1 && !this.userService.userData['UPLOAD_PHOTO_STATUS']) {
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.autoFocus = true;
+          dialogConfig.disableClose = true;
+          dialogConfig.maxWidth = "800px";
+          const CanCancel = (this.userService.userData['UPLOAD_PHOTO_CANCEL'] == 1 ? true : false);
+          dialogConfig.data = {'showCancelNotes':CanCancel,'allowCancel':CanCancel};
+          this.dialog.open(StdUploadPhotoComponent, dialogConfig);
         }
       }
     });

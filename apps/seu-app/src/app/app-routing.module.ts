@@ -13,6 +13,7 @@ import { PolicyComponent } from './home/policy.component';
 import { DocsConfirmComponent } from './home/docs-confirm.component';
 import { EmpGuard } from './guards/emp.guard';
 import { AppErrorComponent } from './home/error.component';
+import { StdUploadPhotoListComponent } from './home/std-upload-photo-list/std-upload-photo-list.component';
 const routes: Routes = [
   {
     path: '',
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       { path: 'policy', component: PolicyComponent },
       { path: 'docs-confirm', component: DocsConfirmComponent },
+      { path: 'exam-photo', component: StdUploadPhotoListComponent },
       {
         path: 'instructions',
         loadChildren: './instructions/instructions.module#InstructionsModule',
@@ -60,6 +62,11 @@ const routes: Routes = [
       {
         path: 'other',
         loadChildren: './other-affair/other-affair.module#OtherAffairModule',
+        canActivate: [UGGuard]
+      },
+      {
+        path: 'univcard',
+        loadChildren: './modules/card-module/card-module.module#CardModule',
         canActivate: [UGGuard]
       },
       {
@@ -117,6 +124,11 @@ const routes: Routes = [
         canActivate: [EmpGuard]
       },
       {
+        path: 'leadership',
+        loadChildren: './leadership/leadership.module#LeadershipModule',
+        canActivate: [EmpGuard]
+      },
+      {
         path: 'enquries',
         loadChildren: './enquries/enquries.module#EnquriesModule'
       },
@@ -131,12 +143,15 @@ const routes: Routes = [
     outlet: 'print',
     component: PrintLayoutComponent,
     children: [{ path: 'print-file/:paramData', component: PrintFileComponent }]
-  }
-   ,
-   {
-     path: 'apps',
-     loadChildren: './apps/apps.module#AppsModule'
-   }
+  },
+  {
+    path: 'apps',
+    loadChildren: './apps/apps.module#AppsModule'
+  },
+  {
+    path: 'public',
+    loadChildren: './modules/public-module/public-module.module#PublicModule'
+  },
 ];
 
 @NgModule({

@@ -25,20 +25,23 @@ export class AddAnswerComponent {
     submitted = false;
     errorMessage = false;
     email;
+    autoAnswer;
     
     constructor(
     private fb: FormBuilder,
     private enquriesService: EnquriesService, 
     public userService: UserService,
     public dialogRef: MatDialogRef<AddAnswerComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    @Inject(MAT_DIALOG_DATA) public data: DialogData
+    ) {
         this.email = this.userService.userData.email;
         this.id = data.id;
         this.answerForm = this.fb.group(
             {
                 answer: ["", [Validators.required]],
                 id: [data.id],
-                email: [this.email]
+                email: [this.email],
+                autoAnswer: [this.autoAnswer],
             },
         );
         this.id = data.id;
@@ -64,8 +67,13 @@ export class AddAnswerComponent {
             }
             return;
         }
-
-        this.enquriesService.addAnswer(this.answerForm.controls.id.value, this.answerForm.controls.email.value, this.answerForm.controls.answer.value).subscribe(
+        this.autoAnswer = this.answerForm.controls.autoAnswer.value ? 1 : 0;
+        this.enquriesService.addAnswer(
+            this.answerForm.controls.id.value, 
+            this.answerForm.controls.email.value, 
+            this.answerForm.controls.answer.value,
+            this.autoAnswer
+            ).subscribe(
             (response: any) => {
               if (response) {
                 window.location.reload();

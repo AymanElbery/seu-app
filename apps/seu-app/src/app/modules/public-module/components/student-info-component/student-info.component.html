@@ -1,0 +1,85 @@
+<div class="public-container wrapper">
+  <app-public-header></app-public-header>
+
+  <div class="page-wrap">
+    <div class="main-landing">
+      <seu-loader [isLoading]="isLoading"></seu-loader>
+      <section class="ug-home">
+        <div class="container">
+          <h3>{{ "card.info" | translate}}</h3>
+        </div>
+      </section>
+      <section style="padding:0 10px; font-size: 16px;">
+        <div class="row" style="padding: 10px; border-radius: 5px;">
+          <div class="col-md-12">
+            <div class="table-responsive" *ngIf="!isLoading">
+              <table class="table table-striped table-bordered">
+                <tbody>
+                  <tr>
+                    <th scope="col">الإسم</th>
+                    <th class="col_b">{{ info.FULL_NAME_AR }}</th>
+                    <th class="col_b">{{ info.FULL_NAME_EN }}</th>
+                    <th class="col_b">Name</th>
+                  </tr>
+                  <tr>
+                    <th>الرقم الجامعي</th>
+                    <th class="col_b">{{ info.STD_ID }}</th>
+                    <th class="col_b">{{ info.STD_ID }}</th>
+                    <th>ID</th>
+
+                  </tr>
+                  <tr>
+                    <th>رقم الهوية</th>
+                    <th class="col_b">{{ info.SSN }}</th>
+                    <th class="col_b">{{ info.SSN }}</th>
+                    <th>SSN</th>
+
+                  </tr>
+                  <tr>
+                    <th>الكلية</th>
+                    <th class="col_b">{{ info.COLL_TITLE_AR }}</th>
+                    <th class="col_b">{{ info.COLL_TITLE_EN }}</th>
+                    <th>College</th>
+
+                  </tr>
+                  <tr>
+
+                    <th>التخصص</th>
+                    <th class="col_b">{{ info.MAJOR_DESC_AR }}</th>
+                    <th class="col_b">{{ info.MAJOR_DESC_EN }}</th>
+                    <th>Major</th>
+
+                  </tr>
+                  <tr>
+                    <th>الفرع</th>
+                    <th class="col_b">{{ info.CAMP_TITLE_AR }}</th>
+                    <th class="col_b">{{ info.CAMP_TITLE_EN }}</th>
+                    <th>Campus</th>
+
+                  </tr>
+                  <tr>
+                    <th>المرحلة الجامعية</th>
+                    <th class="col_b">{{ info.LEVEL_CODE == 'UG' ? "بكالوريوس"  : "ماجستير"}}</th>
+                    <th class="col_b">{{ info.LEVEL_CODE == 'UG' ? "Bacholar"  : "Master"}}</th>
+                    <th>LEVEL</th>
+
+                  </tr>
+                  <tr>
+                    <th>الحالة الأكاديمية</th>
+                    <th class="col_b">{{ info.STATUS_AR }}</th>
+                    <th class="col_b">{{ info.STATUS_EN }}</th>
+                    <th>Academic Status</th>
+
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <br /><br /><br /><br />
+  <app-public-footer></app-public-footer>
+</div>

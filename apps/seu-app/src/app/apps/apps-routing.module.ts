@@ -12,21 +12,43 @@ const routes: Routes = [
     loadChildren:
       './modules/admission-ug/admission-ug.module#AdmissionUGModule',
   },
+  // {
+  //   path: 'admission-gr',
+  //   loadChildren:
+  //     './modules/admission-gr/admission-gr.module#AdmissionGRModule',
+  // },
   {
-    path: 'job-application',
+    path: 'stds-services',
     loadChildren:
-      './modules/job-application/job-application.module#JobApplicationModule',
-  },
-  {
-    path: 'admission-gr',
-    loadChildren:
-      './modules/admission-gr/admission-gr.module#AdmissionGRModule',
+      './modules/stds-services/stds-services.module#STDSServicesModule',
   },
   {
     path: 'skills',
     loadChildren:
       './modules/skills/skills.module#SkillsModule',
-      canLoad: [AuthGuard]
+    canLoad: [AuthGuard]
+  },
+  {
+    path: 'translation',
+    loadChildren:
+      './modules/translation/translation.module#TranslationModule',
+    canLoad: [AuthGuard]
+  },
+  // {
+  //   path: 'job-application',
+  //   loadChildren:
+  //     './modules/job-application/job-application.module#JobApplicationModule',
+  // },
+  {
+    path: 'projects',
+    loadChildren:
+      './modules/projects/projects.module#ProjectsModule',
+  },
+  {
+    path: 'bbreports',
+    loadChildren:
+      './modules/bbreports/bbreports.module#BBReportsModule',
+    canLoad: [AuthGuard]
   }
 ];
 

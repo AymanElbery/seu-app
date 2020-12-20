@@ -1,0 +1,113 @@
+<div class="main-content">
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <service-header [title]="'leadership.applications.recommend' | translate"></service-header>
+  <div class="widget">
+    <div class="widget-header">
+      <h3 class="widget-title">
+        {{"leadership.applications.recommend"|translate}} - {{leadershipService.currentAddApps['JOB_TITLE'] }}
+        <button (click)="back()" class="btn btn-primary"><i class="fa fa-plus"></i>
+          {{ "leadership.applications.back" | translate}}</button>
+  
+      </h3>
+    </div>
+
+    <form style="margin-top: 20px; padding-bottom: 20px;" role="form" [formGroup]="form">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="state">
+                <h6>{{"leadership.applications.EMPLOYEE_ID"|translate}}</h6>
+                <input type="text" formControlName="EMPLOYEE_ID" class="form-control" (input)="changeVal()"
+                  (keypress)="keyPress($event)" />
+              </div>
+              <div
+                *ngIf="form.controls.EMPLOYEE_ID.invalid && (form.controls.EMPLOYEE_ID.dirty || form.controls.EMPLOYEE_ID.touched)">
+                <div *ngIf="form.controls.EMPLOYEE_ID.errors.required">
+                  <b style="position: relative; left: -10px;"
+                    class="text-danger">{{"leadership.required"|translate}}</b>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" style="text-align: center;">
+              <button style="width: 100%;margin-top: 30px;" [disabled]="submitted" (click)="save('EMPLOYEE_ID')"
+                type="submit" class="btn btn-primary">
+                <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
+                {{ "leadership.search_save" | translate}}
+                <!--            <i class="fa fa-search"></i>-->
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="state">
+                <h6>{{"leadership.applications.EMAIL"|translate}}</h6>
+                <input type="text" formControlName="EMAIL" class="form-control" (input)="changeVal()" />
+              </div>
+              <div *ngIf="form.controls.EMAIL.invalid && (form.controls.EMAIL.dirty || form.controls.EMAIL.touched)">
+                <div *ngIf="form.controls.EMAIL.errors.required">
+                  <b style="position: relative; left: -10px;"
+                    class="text-danger">{{"leadership.required"|translate}}</b>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" style="text-align: center;">
+              <button style="width: 100%;margin-top: 30px;" [disabled]="submitted" (click)="save('EMAIL')" type="submit"
+                class="btn btn-primary">
+                <i *ngIf="submitted" class="fa fa-spinner fa-spin"></i>
+                {{ "leadership.search_save" | translate}}
+                <!--            <i class="fa fa-search"></i>-->
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div *ngIf="!submitted && noEmp" class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger">
+            {{ errMsg | translate}}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="empList.length && !isLoading" class="container">
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">{{"leadership.applications.EMPLOYEE_ID" | translate}}</th>
+                  <th scope="col">{{"leadership.applications.FULL_NAME" | translate}}</th>
+                  <th scope="col">{{"leadership.applications.EMAIL" | translate}}</th>
+                  <th scope="col">&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let emp of empList; let i = index;">
+                  <td>{{i + 1}}</td>
+                  <td>{{emp.EMPLOYEE_ID}}</td>
+                  <td>{{emp.FULL_NAME}}</td>
+                  <td>{{emp.SEU_EMAIL}}</td>
+                  <td>
+                    <button style="margin-right: 5px;" [disabled]="isDeleting" (click)="delete(emp.EMPLOYEE_ID)"
+                      class="btn btn-danger">
+                      <i *ngIf="isDeleting" class="fa fa-spinner fa-spin"></i>
+                      {{"leadership.delete" | translate}} <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</div>

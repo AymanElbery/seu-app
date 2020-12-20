@@ -1,0 +1,34 @@
+<mat-dialog-content dir="rtl">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+        {{"general.update"|translate}}</h5>
+
+    </div>
+    <div class="modal-body">
+      <div class="row" style="padding: 20px;">
+        <div class="col-md-10">
+          <form (ngSubmit)="onSubmit()">
+            <div class="row" style="margin-bottom: 40px;">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <input type="file" accept="*/*" (change)="handleInputChange($event)" id="photo" class="form-control-file form-control">
+                  <button id="fake-file" type="button" class="btn btn-primary">{{ "new_request_page.choose_file" | translate}}</button>
+                </div>
+              </div>
+              <div *ngIf="showFileName" class="col-md-9" style="margin-top: 7px;">
+                <b class="file-name">{{ fileName }}</b>
+              </div>
+            </div>
+            <div class="form-group">
+              <button [disabled]="submitted || fileName == ''" style="margin-top: 10px; width: 100%;" type="submit"
+                class="btn sub">{{ "general.update" | translate}} <i class="fa fa-save"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+

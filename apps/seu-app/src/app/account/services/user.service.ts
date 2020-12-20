@@ -146,6 +146,7 @@ export class UserService extends BaseService {
           if (res['status']) {
             this.userData = (res as any).data;
             // console.log('userdata:'+this.userData);
+            //this.userData.role = "Instructor";
             this.userData.activeRole = this.userData.role;
             this.userDataLoaded = true;
             this.pushUserDataChanges();
@@ -212,6 +213,19 @@ export class UserService extends BaseService {
     });
 
     return this.http.get(url + "info_confirmations/info/"+emp_id, {
+      headers: headers
+    });
+  }
+
+  getStdData(std_id){
+    var url = environment.baselink + environment.servicesprefix + "/rest/public/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': auth
+    });
+
+    return this.http.get(url + "stds/get_stds_info/"+std_id, {
       headers: headers
     });
   }

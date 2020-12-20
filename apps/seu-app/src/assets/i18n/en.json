@@ -62,6 +62,7 @@
         "home": "Home",
         "choosefile": "Choose file ...... ",
         "request": {
+            "reject_reason": "Reject Reason",
             "add_request": "Add Request",
             "cname": "Course ",
             "req_date": "Request Date",
@@ -128,7 +129,7 @@
         "instruction_vedio_file": "Manual Vedio",
         "instruction_": "Manual",
         "isInstalled": "WhatsApp Is Not Installed",
-        "mysystemNotes": "<span style='color: red;font-weight: bold;font-size: 14px;'>Attention:</span> Self services (wafi) System is Closed All of its services are now available on the side menu ( Personal, Administrative, Employee-Requests )"
+        "mysystemNotes": ""
     },
     "menu": {
         "grades": "التقديرات قبل حساب المعدل",
@@ -214,7 +215,7 @@
         "Events": "Events",
         "BBREPORTS": " Blackboard Reports",
         "BADAL": " University education allowance",
-        "BAWABA": "Deanship of the Scientific Research Electronic Portal",
+        "BAWABA": "Research Tracking Management System",
         "hello": "hello",
         "logout": "log out ",
         "not": "notifications ",
@@ -244,7 +245,7 @@
         "chineescourse": "Chinees Course",
         "PersonalInfo": "My Information",
         "resetpassword": "Reset Password",
-        "taks": "Tasks Management",
+        "tasks": "Tasks",
         "student_attendance": "Student Attendance",
         "resume": "Doctor Resume",
         "gpa": "احتساب نظام التقديرات المعتمد",
@@ -254,7 +255,13 @@
         "ssoidentity": "sso Support",
         "attends": "Attendance System",
         "masterequalize": "معادلة مقررات الفصل التحضيري",
-        "skills": "Trainging & Skills record"
+        "skills": "Trainging & Skills record",
+        "translation": "Translation Center",
+        "exam": "SwiftAssess",
+        "EXAM_PHOTO": "صورة نظام الاختبارات",
+        "tawkeed": "Tawkeed",
+        "umc": "University Medical Center",
+        "bb_virtual_reports": "Virtual Classroom Reports "
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",
@@ -269,6 +276,7 @@
         "name_en": "Doctor name in English",
         "email": "Doctor email",
         "phone": "Phone number",
+        "major": "Major",
         "jobTitle": "Job title",
         "jobTitle_en": "Job title in English",
         "section": "Section",
@@ -295,6 +303,7 @@
         "cv_display": "Display Resume"
     },
     "enquries": {
+        "close": "Close",
         "title": "Inquiries",
         "message": "Message",
         "answer": "Answer on message",
@@ -916,6 +925,24 @@
         "doc_link": "https://seu.edu.sa/vropdq/en/conflict-of-interest-policy/",
         "notes": "* Scroll down the appended policy to activate the options below."
     },
+    "upload_photo": {
+        "title": "Info Update",
+        "photo": "Photo",
+        "ssn": "National ID",
+        "save": "update",
+        "photo_not_uploaded": "no file uploaded",
+        "ssn_not_uploaded": "no file uploaded",
+        "wrong_file": "please select a file with the rigth format",
+        "wrong_file_size": "file size is too large, max size is 5 M",
+        "choose_file": "select a file",
+        "note1": "Image dimensions must be clear and square.",
+        "note2": "It must be a recent original photo, not more than six months old, and reflecting the current appearance.",
+        "note3": "Color photos can be accepted, and the background must be white.",
+        "note4": "The image should be clear and the image must have adequate lighting (neither too dark nor too light).",
+        "note5": "The photo must be frontal so that the full face is visible, including the ears.",
+        "note6": "The dimensions of the face should be from 2.5 to 3.5 cm from the top of the head to the bottom of the chin.",
+        "note7": "Editing of digital photos is not permitted. Inserting a white background on an old photo is not allowed."
+    },
     "docs_confirm": {
         "title": "The data to be authenticated",
         "confirm": "Confirm",
@@ -960,8 +987,7 @@
             "downloadapps": "Download the eExam Application (SwiftAssess Assessment):",
             "Device": "Device",
             "DownloadLink": "Download Link",
-            "apps": [
-                {
+            "apps": [{
                     "title": "Desktop and Laptop Computers",
                     "desc": "Download the browser for (Windows & Mac)",
                     "link": "https://eur01.safelinks.protection.outlook.com/?url=https://gammalearn.sharepoint.com/:f:/s/Operations/Er2Rmx_Fld1EmTkAxJPejkEBTBr6Efg8ofSjtUhtRzwYVQ?e%3DzDyNy6&amp;data=02%7c01%7c%7ce6d26d10d6bf44bedd3508d7691dea15%7c1f00763a1f87473bbba1b6c746af03e4%7c0%7c0%7c637093450070182397&amp;sdata=T6FmnCMZ%2Bav9tW7TUCOGog9mYkZbEIgRDVMLoA%2Bq9%2BU%3D&amp;reserved=0"
@@ -980,8 +1006,7 @@
             "Guidelines": "Guidelines:",
             "Manual": "Instructions Manual",
             "Download": "Download",
-            "GuidelinesList": [
-                {
+            "GuidelinesList": [{
                     "title": "Instruction before exams",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam_en.pdf"
                 },
@@ -1016,6 +1041,10 @@
                 {
                     "title": "​​How to connect to SEU Wi-Fi? (Mac)",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN_En.pdf"
+                },
+                {
+                    "title": "متطلبات وتعليمات عامة لأداء الاختبار الإلكتروني عن بعد",
+                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/requirements-and-instructions-ar.pdf"
                 }
             ]
         }
@@ -1102,7 +1131,7 @@
         "RejecteReasone": "Rejecte Reasone",
         "RequestDtails": "Request Dtails",
         "Delete": "Delete",
-        "employee-requests": "Employee-Requests",
+        "employee-requests": "Requests",
         "requests-lists": "Requests-Lists",
         "print-concern": "Whome to concern",
         "AddNewRequest": "Add New Request",
@@ -1187,7 +1216,7 @@
         "EMP_PSNL_VCHR_NOTE": "Notes",
         "EMP_SLRY_YEAR": "Year",
         "EmployeeVouchers": "Employee Vouchers",
-        "administrative": "Administrative",
+        "administrative": "Enquires",
         "back": "Back",
         "penaltydiscount": "Penalty Discount",
         "managerialduties": "Managerial Duties",

@@ -6,7 +6,7 @@ import { SkillsLazyTransModule } from './skills.lazytrans.module';
 
 @NgModule({
   declarations: [],
-  imports: [
+  imports: [ 
     CommonModule,
     MatProgressSpinnerModule,
     FormsModule, ReactiveFormsModule, SkillsLazyTransModule

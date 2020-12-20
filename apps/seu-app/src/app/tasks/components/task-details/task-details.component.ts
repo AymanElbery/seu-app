@@ -59,7 +59,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
       this.task.createdByName = this.taskservice.getEmpByID(this.task['createdBy']);
 
       if (this.task['hasAttachment'] && this.task.attachName) {
-        this.task['downloadPath'] = environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + this.LoggedINID + '&type=task&name=' + this.task.attachName
+        this.task['downloadPath'] = environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + this.task.createdBy + '&type=task&name=' + this.task.attachName
       }
       this.task.taskViewers = this.task.taskViewers.map(view => {
         view['viewerEmpName'] = this.taskservice.getEmpByID(view['viewerEmpId']);
@@ -71,7 +71,7 @@ export class TaskDetailsComponent implements OnInit, OnDestroy {
         comment['createdByName'] = this.taskservice.getEmpByID(comment['createdBy']);
 
         if (comment['hasAttachment'] && comment.attachName) {
-          comment['downloadPath'] = environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + this.LoggedINID + '&type=comment&name=' + comment.attachName
+          comment['downloadPath'] = environment.wafi_apilink.replace('/jersey', '') + '/DownloadFileServlet?empId=' + comment.createdBy + '&type=comment&name=' + comment.attachName
         }
         return comment;
       });

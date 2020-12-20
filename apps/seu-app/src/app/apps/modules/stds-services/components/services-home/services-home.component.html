@@ -1,0 +1,38 @@
+<div class="main-content">
+  <app-service-header title="{{'general.univ' | translate}}" subtitle="{{'general.services' | translate}}">
+  </app-service-header>
+  <section class="ug-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h3> {{'general.services' | translate}} </h3>
+          <!-- <p> {{'desc' | translate}} </p> -->
+          <seu-loader [isLoading]="isLoading"></seu-loader>
+          <ng-container *ngIf="!isLoading">
+            <div class="d-flex justify-content-between block">
+              <a routerLink="/apps/stds-services/appointments">
+                <div class="d-flex ">
+                  <div class="">
+                    <h4><img src="../../assets/images/admit.png"></h4>
+                  </div>
+                  <div class="text"> <span>{{'menu.appointments' | translate}}</span></div>
+                </div>
+              </a>
+              <a *ngIf="have_docs_permession" routerLink="/apps/stds-services/docs">
+                <div class="d-flex ">
+                  <div class="">
+                    <h4><img src="../../assets/images/admit.png"></h4>
+                  </div>
+                  <div class="text"> <span>{{'menu.print_docuemnts' | translate}}</span></div>
+                </div>
+              </a>
+            </div>
+          </ng-container>
+        </div>
+        <div class="col-md-6">
+          <img src="../../assets/images/home-img.png" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

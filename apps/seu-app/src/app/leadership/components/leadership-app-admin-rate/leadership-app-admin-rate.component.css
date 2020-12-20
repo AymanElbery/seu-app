@@ -1,0 +1,11 @@
+.row{
+    margin-top: 20px;
+}
+.radio{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.back-gray{
+    background-color: #CCC;
+}

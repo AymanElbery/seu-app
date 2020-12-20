@@ -41,6 +41,7 @@
             <th scope="col">  {{"general.request.req_date" | translate}}</th>
             <th scope="col"> {{"general.request.res_date" | translate}} </th>
             <th scope="col">  {{"general.request.req_status" | translate}} </th>
+            <th scope="col">  {{"general.request.reject_reason" | translate}} </th>
             <th scope="col">{{"general.request.req_delete" | translate}} </th>
 
           </tr>
@@ -53,7 +54,7 @@
             <td>{{it.insert_date}}</td>
             <td>{{it.admin_date}}</td>
             <td>{{it.status}}</td>
-
+            <td>{{it.reject_reason}}</td>
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger"
               style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
           <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request" | translate}}    </td>

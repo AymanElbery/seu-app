@@ -1,241 +1,237 @@
 <div class="main-content">
-  <service-header [title]="'services.academic_status.title' |translate"
-    [desc]="'services.academic_status.desc' |translate"></service-header>
-  <seu-loader [isLoading]="isLoading"></seu-loader>
+    <service-header [title]="'services.academic_status.title' |translate" [desc]="'services.academic_status.desc' |translate"></service-header>
+    <seu-loader [isLoading]="isLoading"></seu-loader>
 
 
-  <div *ngIf="isClosed">
-    <seu-flash [msgs]="messagesList"  [isLoading]="isLoading"> </seu-flash>
-  </div>
-<ng-container *ngIf="!isClosed">
-  <div class="ser-state" *ngIf="!isLoading">
-  </div>
-  <div class="widget" *ngIf="!isLoading">
-    <div class="widget-header">
-      <h3 class="widget-title">{{"general.student_data" | translate}}</h3>
+    <div *ngIf="isClosed">
+        <seu-flash [msgs]="messagesList" [isLoading]="isLoading"> </seu-flash>
     </div>
-    <section class="ser-state">
-      <div class="container">
-
-        <div class="row ser-block">
-          <div class=" col-md-4 col-sm-12">
-            <div class="state">
-              <h6>{{"general.female_or_male_name" | translate}}</h6>
-              <h5>{{student.name}} </h5>
-            </div>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-info"></div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12">
-            <div class="state">
-              <h6>{{"general.student_id" | translate}}</h6>
-              <h5>{{student.std_id}} </h5>
-            </div>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-info"></div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12">
-            <div class="state">
-              <h6>{{"general.ssn" | translate}}</h6>
-              <h5>{{student.ssn}} </h5>
-            </div>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-info"></div>
-            </div>
-          </div>
+    <ng-container *ngIf="!isClosed">
+        <div class="ser-state" *ngIf="!isLoading">
         </div>
+        <div class="widget" *ngIf="!isLoading">
+            <div class="widget-header">
+                <h3 class="widget-title">{{"general.student_data" | translate}}</h3>
+            </div>
+            <section class="ser-state">
+                <div class="container">
 
-        <div class="row ser-block">
-          <div class=" col-md-4 col-sm-12">
-            <div class="state">
-              <h6>{{"general.acceptance_term" | translate}}</h6>
-              <h5>{{student.std_adm_term_label}} </h5>
-            </div>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-info"></div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12">
-            <div class="state">
-              <h6>{{"general.current_academic_status" | translate}}</h6>
-              <h5>{{student.current_acadimic_status_label}} </h5>
-            </div>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-info"></div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12">
-            <div class="state">
-              <h6>{{"general.graduation_gpa" | translate}} </h6>
-              <h5>{{student.final_graduation_GPA}} </h5>
-            </div>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-info"></div>
-            </div>
-          </div>
+                    <div class="row ser-block">
+                        <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                                <h6>{{"general.female_or_male_name" | translate}}</h6>
+                                <h5>{{student.name}} </h5>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info"></div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                                <h6>{{"general.student_id" | translate}}</h6>
+                                <h5>{{student.std_id}} </h5>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info"></div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                                <h6>{{"general.ssn" | translate}}</h6>
+                                <h5>{{student.ssn}} </h5>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ser-block">
+                        <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                                <h6>{{"general.acceptance_term" | translate}}</h6>
+                                <h5>{{student.std_adm_term_label}} </h5>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info"></div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                                <h6>{{"general.current_academic_status" | translate}}</h6>
+                                <h5>{{student.current_acadimic_status_label}} </h5>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info"></div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                                <h6>{{"general.graduation_gpa" | translate}} </h6>
+                                <h5>{{student.final_graduation_GPA}} </h5>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row  ser-block">
+                        <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                                <h6>{{"general.academic_position" | translate}}</h6>
+                                <h5> {{student.acadimic_position_label}}</h5>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info"></div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12">
+                            <div class="state">
+                                <h6>{{"general.fees" | translate}}</h6>
+                                <h5>{{student.std_fees}} </h5>
+                            </div>
+                            <div class="progress progress-sm">
+                                <div class="progress-bar bg-info"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
+        <section class="ser-state" *ngIf="!isLoading && studentTerms.length">
 
-        <div class="row  ser-block">
-          <div class=" col-md-4 col-sm-12">
-            <div class="state">
-              <h6>{{"general.academic_position" | translate}}</h6>
-              <h5> {{student.acadimic_position_label}}</h5>
-            </div>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-info"></div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12">
-            <div class="state">
-              <h6>{{"general.fees" | translate}}</h6>
-              <h5>{{student.std_fees}} </h5>
-            </div>
-            <div class="progress progress-sm">
-              <div class="progress-bar bg-info"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="container">
+                <div class="widget">
+                    <div class="widget-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="widget-title" style="font-size:12px;text-align: right">
+                                    {{"general.academic_status_through_terms" | translate}}</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="" class="col-sm-3 col-form-label">{{"general.term" | translate}}</label>
+                                    <div class="col-sm-9">
 
-  </div>
-  <section class="ser-state" *ngIf="!isLoading">
-
-    <div class="container">
-      <div class="widget">
-        <div class="widget-header">
-          <div class="row">
-            <div class="col-md-6">
-              <h3 class="widget-title" style="font-size:12px;text-align: right">
-                {{"general.academic_status_through_terms" | translate}}</h3>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group row">
-                <label for="" class="col-sm-3 col-form-label">{{"general.term" | translate}}</label>
-                <div class="col-sm-9">
-
-                  <select name="trems" [(ngModel)]="selectedSems" #t (change)="getTrmsDetails(t.value)"
-                    class="form-control">
+                                        <select name="trems" [(ngModel)]="selectedSems" #t (change)="getTrmsDetails(t.value)" class="form-control">
                     <option *ngFor="let item of studentTerms" value="{{item.TERM_CODE}}">{{item.TERM_DESC}}</option>
                   </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="isLoadingTerm" class=" loading-indicator ">
+                        <div class="state">
+
+                            <h5>{{"general.loading" | translate}}</h5>
+
+                            <mat-spinner *ngIf="isLoadingTerm" style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+                            </mat-spinner>
+
+                        </div>
+                    </div>
+                    <div class="row ser-block" *ngIf="!isLoadingTerm">
+                        <div class="col-md-4 col-sm-12 ">
+                            <div class="state">
+                                <h6>{{"general.faculty" | translate}}</h6>
+                                <h5> {{studentTermDetails.COLL_CODE}} </h5>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12 ">
+                            <div class="state">
+                                <h6>{{"general.major" | translate}}</h6>
+                                <h5> {{studentTermDetails.MAJR_code}}</h5>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12 ">
+                            <div class="state">
+                                <h6>{{"general.branch" | translate}}</h6>
+                                <h5> {{studentTermDetails.CAMP_code}}</h5>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row ser-block" *ngIf="!isLoadingTerm">
+                        <div class="col-md-4 col-sm-12 ">
+                            <div class="state">
+                                <h6>{{"general.gpa" | translate}}</h6>
+                                <h5>{{studentTermDetails.gba}}</h5>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12 ">
+                            <div class="state">
+                                <h6>{{"general.regestration_status" | translate}}</h6>
+                                <h5> {{studentTermDetails.RegisterationStatus}}</h5>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12 ">
+                            <div class="state">
+                                <h6>{{"general.level" | translate}}</h6>
+                                <h5>{{studentTermDetails.study_level}} </h5>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row ser-block" *ngIf="!isLoadingTerm">
+                        <div class="col-md-4 col-sm-12 ">
+                            <div class="state">
+                                <h6>{{"services.academic_status.title" | translate}}</h6>
+                                <h5>{{studentTermDetails.acadimic_status}} </h5>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12 ">
+                            <div class="state">
+                                <h6>{{"general.academic_position_term" | translate}}</h6>
+                                <h5>{{studentTermDetails.ACADIMICPOSITION}}</h5>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" col-md-4 col-sm-12 ">
+                            <div class="state">
+                                <h6>{{"general.stage" | translate}}</h6>
+                                <h5> {{studentTermDetails.STD_UGGR}}</h5>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar bg-info"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-        <div *ngIf="isLoadingTerm" class=" loading-indicator ">
-          <div class="state">
-
-            <h5>{{"general.loading" | translate}}</h5>
-
-            <mat-spinner *ngIf="isLoadingTerm"
-              style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
-            </mat-spinner>
-
-          </div>
-        </div>
-        <div class="row ser-block" *ngIf="!isLoadingTerm">
-          <div class="col-md-4 col-sm-12 ">
-            <div class="state">
-              <h6>{{"general.faculty" | translate}}</h6>
-              <h5> {{studentTermDetails.COLL_CODE}} </h5>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12 ">
-            <div class="state">
-              <h6>{{"general.major" | translate}}</h6>
-              <h5> {{studentTermDetails.MAJR_code}}</h5>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12 ">
-            <div class="state">
-              <h6>{{"general.branch" | translate}}</h6>
-              <h5> {{studentTermDetails.CAMP_code}}</h5>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row ser-block" *ngIf="!isLoadingTerm">
-          <div class="col-md-4 col-sm-12 ">
-            <div class="state">
-              <h6>{{"general.gpa" | translate}}</h6>
-              <h5>{{studentTermDetails.gba}}</h5>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12 ">
-            <div class="state">
-              <h6>{{"general.regestration_status" | translate}}</h6>
-              <h5> {{studentTermDetails.RegisterationStatus}}</h5>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12 ">
-            <div class="state">
-              <h6>{{"general.level" | translate}}</h6>
-              <h5>{{studentTermDetails.study_level}} </h5>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row ser-block" *ngIf="!isLoadingTerm">
-          <div class="col-md-4 col-sm-12 ">
-            <div class="state">
-              <h6>{{"services.academic_status.title" | translate}}</h6>
-              <h5>{{studentTermDetails.acadimic_status}} </h5>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12 ">
-            <div class="state">
-              <h6>{{"general.academic_position_term" | translate}}</h6>
-              <h5>{{studentTermDetails.ACADIMICPOSITION}}</h5>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4 col-sm-12 ">
-            <div class="state">
-              <h6>{{"general.stage" | translate}}</h6>
-              <h5> {{studentTermDetails.STD_UGGR}}</h5>
-              <div class="progress progress-sm">
-                <div class="progress-bar bg-info"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-  <div style="text-align: center" class="prin" *ngIf="!isLoading">
-    <a class="btn" seu-auto-print downloadpdf href="{{arabicPrint}}">{{"general.ar_print" | translate}} <i
+        </section>
+        <div style="text-align: center" class="prin" *ngIf="!isLoading">
+            <a class="btn" seu-auto-print downloadpdf href="{{arabicPrint}}">{{"general.ar_print" | translate}} <i
         class="ik ik-save"></i> </a>
-    <a class="btn" seu-auto-print downloadpdf href="{{EngPrint}}"> <i class="ik ik-save"></i>
-      {{"general.en_print" | translate}} </a>
-  </div>
-</ng-container>
+            <a class="btn" seu-auto-print downloadpdf href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print" | translate}} </a>
+        </div>
+    </ng-container>
 </div>
