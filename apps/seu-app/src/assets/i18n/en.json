@@ -261,7 +261,8 @@
         "EXAM_PHOTO": "صورة نظام الاختبارات",
         "tawkeed": "Tawkeed",
         "umc": "University Medical Center",
-        "bb_virtual_reports": "Virtual Classroom Reports "
+        "bb_virtual_reports": "Virtual Classroom Reports ",
+        "dashboard": "Dashboard"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",
