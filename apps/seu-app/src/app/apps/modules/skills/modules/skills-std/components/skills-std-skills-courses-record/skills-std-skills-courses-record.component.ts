@@ -28,7 +28,7 @@ export class SkillsStdSkillsCoursesRecordComponent implements OnInit {
   getMyClassifications() {
     this.isLoading = true;
     this.coursesService.myskillsclassifications().subscribe((response) => {
-      this.classificationsList = response['data'];
+      this.classificationsList = response['data']['data'];
       this.isLoading = false;
     });
   }

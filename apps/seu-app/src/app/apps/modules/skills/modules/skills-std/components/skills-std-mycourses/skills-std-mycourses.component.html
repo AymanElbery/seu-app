@@ -39,20 +39,28 @@
                 <td>{{ "statuses."+course['STATUS'] | translate}}</td>
                 <td>
                   <button *ngIf="course['STATUS'] == 'approved' || course['STATUS'] == 'completed'"
-                    (click)="details(course.ID)" class="btn btn-primary">{{"general.details" | translate}}</button>
+                    (click)="details(course.ID)" class="btn btn-primary"><span class="ik ik-list"></span> {{"general.details" | translate}}</button>
                   &nbsp;
                   <button *ngIf="course['CAN_CANCEL'] && course['STATUS']!='cancelled'" (click)="cancel(course.ID)"
                     class="btn btn-primary">{{"std_courses.cancel_reg" | translate}}</button>
                   &nbsp;
                   <button *ngIf="course['CAN_EXCUSE'] && course['STATUS']!='excused'" (click)="excuse(course.ID)"
                     class="btn btn-primary">{{"std_courses.excuse_reg" | translate}}</button>
-
-
+                  
                   <a *ngIf="course['STATUS'] == 'completed'" (click)="printCert(course.ID,course.STD_ID)"
                     class="btn btn-primary" href="#">
                     <span class="ik ik-printer"></span>
-                    {{"general.print" | translate}}
+                    {{"general.cert" | translate}}
                     <span *ngIf="loadings[course.ID]">
+                      {{"general.loading" | translate}}
+                    </span>
+                  </a>
+                  &nbsp;
+                  <a (click)="printAttend(course.ID,course.STD_ID)"
+                    class="btn btn-primary" href="#">
+                    <span class="ik ik-printer"></span>
+                    {{"general.attend" | translate}}
+                    <span *ngIf="loadingsAtt[course.ID]">
                       {{"general.loading" | translate}}
                     </span>
                   </a>

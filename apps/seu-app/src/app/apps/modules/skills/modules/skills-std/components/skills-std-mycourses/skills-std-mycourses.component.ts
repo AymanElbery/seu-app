@@ -75,6 +75,10 @@ export class SkillsStdMycoursesComponent implements OnInit {
   }
   isdownloaing = false;
   loadings = {};
+
+  isdownloaingAtt = false;
+  loadingsAtt = {};
+
   printCert(crse_id,std_id) {
     this.isdownloaing = true;
     this.loadings[crse_id] = true;
@@ -91,6 +95,28 @@ export class SkillsStdMycoursesComponent implements OnInit {
       this.coursesService.tryagain();
       this.loadings[crse_id] = false;
       this.isdownloaing = false;
+
+    });
+    return false;
+  }
+
+  printAttend(crse_id,std_id) {
+    this.isdownloaingAtt = true;
+    this.loadingsAtt[crse_id] = true;
+    this.coursesService.printAttend(crse_id,std_id).subscribe(response => {
+      if (response['status'] == false && response['res_code'] == 'no_attending') {
+        this.coursesService.notifyError('must_attend_course');
+        this.loadingsAtt[crse_id] = false;
+        this.isdownloaingAtt = false;
+        return false;
+      }
+      this.coursesService.downloadPDF(response, "attend_certificate.pdf");
+      this.loadingsAtt[crse_id] = false;
+      this.isdownloaingAtt = false;
+    }, err => {
+      this.coursesService.tryagain();
+      this.loadingsAtt[crse_id] = false;
+      this.isdownloaingAtt = false;
 
     });
     return false;
