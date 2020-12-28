@@ -168,14 +168,24 @@ export class SkillsCoursesDetailsComponent implements OnInit {
   }
 
   formatDisplayDate(date){
-    let dateArr = date.split("-");
-    let months = {
-      'AUG' : 'أغسطس',
-      'SEP' : 'سبتمبر',
-      'OCT' : 'أكتوبر',
-      'NOV' : 'نوفمبر',
-      'DEC' : 'ديسيمبر',
-    };
-    return dateArr[0]+" "+months[dateArr[1]]+" "+dateArr[2]+"20";
+    if (date) {
+      let dateArr = date.split("-");
+      let months = {
+        'JAN' : 'يناير',
+        'FEB' : 'فبراير',
+        'MAR' : 'مارس',
+        'APR' : 'أبريل',
+        'MAY' : 'مايو',
+        'JUN' : 'يونيو',
+        'JUL' : 'يوليو',
+        'AUG' : 'أغسطس',
+        'SEP' : 'سبتمبر',
+        'OCT' : 'أكتوبر',
+        'NOV' : 'نوفمبر',
+        'DEC' : 'ديسيمبر',
+      };
+      return dateArr[0]+" "+months[dateArr[1]]+" 20"+dateArr[2];
+    }
+    return date;
   }
 }

@@ -19,13 +19,13 @@
                             <td>{{ stdLec.key | getStdName: students }}</td>
                             <td *ngFor="let item of stdLec.value | keyvalue">
                                 <span class="attend" *ngIf="item.value == 1">{{ 'courses.attend' | translate }}</span>
-                                <a *ngIf="item.value == 1" (click)="print_attend(item.key ,stdLec.key)" class="btn btn-primary"
+                                <!-- <a *ngIf="item.value == 1" (click)="print_attend(item.key ,stdLec.key)" class="btn btn-primary"
                                     href="#">
                                     <span class="ik ik-printer"></span>
                                     <span *ngIf="loadings[item.key] && loadings[item.key][stdLec.key]">
                                         {{"general.loading" | translate}}
                                     </span>
-                                </a>
+                                </a> -->
 
 
 

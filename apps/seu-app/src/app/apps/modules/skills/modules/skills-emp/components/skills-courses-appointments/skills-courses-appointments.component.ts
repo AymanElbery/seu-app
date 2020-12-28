@@ -94,6 +94,13 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
   formatDatepickerDate(date){
     let dateArr = date.split("-");
     let months = {
+      'JAN' : '01',
+      'FEB' : '02',
+      'MAR' : '03',
+      'APR' : '04',
+      'MAY' : '05',
+      'JUN' : '06',
+      'JUL' : '07',
       'AUG' : '08',
       'SEP' : '09',
       'OCT' : '10',
@@ -107,13 +114,20 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
   formatDisplayDate(date){
     let dateArr = date.split("-");
     let months = {
+      'JAN' : 'يناير',
+      'FEB' : 'فبراير',
+      'MAR' : 'مارس',
+      'APR' : 'أبريل',
+      'MAY' : 'مايو',
+      'JUN' : 'يونيو',
+      'JUL' : 'يوليو',
       'AUG' : 'أغسطس',
       'SEP' : 'سبتمبر',
       'OCT' : 'أكتوبر',
       'NOV' : 'نوفمبر',
       'DEC' : 'ديسيمبر',
     };
-    return dateArr[0]+" "+months[dateArr[1]]+" "+dateArr[2]+"20";
+    return dateArr[0]+" "+months[dateArr[1]]+" 20"+dateArr[2];
   }
 
   delete(id){

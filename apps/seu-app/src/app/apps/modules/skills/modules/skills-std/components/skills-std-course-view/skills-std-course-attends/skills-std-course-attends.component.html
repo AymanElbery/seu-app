@@ -26,16 +26,16 @@
                   <ng-container *ngIf="lect['STATUS'] == '1'">
                     <span class="text-green">
                       {{"std_courses.attends_1" | translate}}
-                      |
+                      
                     </span>
-                    <a (click)="print_attend(lect['ATTND_ID'])" class="btn btn-primary" href="#">
+                    <!-- <a (click)="print_attend(lect['ATTND_ID'])" class="btn btn-primary" href="#">
                       <span class="ik ik-printer"></span>
                       {{"general.print" | translate}}
                       <span *ngIf="loadings[lect['ATTND_ID']]">
                         {{"general.loading" | translate}}
                       </span>
                       
-                    </a>
+                    </a> -->
                   </ng-container>
 
                   <span class="text-red" *ngIf="lect['STATUS'] == '0'">

@@ -25,6 +25,7 @@ export class SkillsCoursesListComponent implements OnInit {
 
   ngOnInit() {
     this.listActive = document.location.href.indexOf("/courses-inactive") == -1;
+    console.log(this.listActive);
     this.getAllCourses();
   }
 

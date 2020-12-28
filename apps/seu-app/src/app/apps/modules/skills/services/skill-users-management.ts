@@ -39,7 +39,7 @@ export class SkillsUsersManagementService extends SkillsRootService {
 
     activeUser(id, instructors) {
         if (instructors) {
-            return this.post("emp/instructor/update", { 'USER_ID': id, 'ACTIVE': 0 });
+            return this.post("emp/instructors/update", { 'USER_ID': id, 'ACTIVE': 1 });
         }
         return this.post("emp/users/update", { 'USER_ID': id, 'ACTIVE': 1 });
     }
