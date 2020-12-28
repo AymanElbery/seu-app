@@ -10,6 +10,7 @@ import { environment } from '../../environments/environment';
 import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { ResetPasswordComponent } from '../account/reset-password/reset-password.component';
+import { AppServices } from '../seucommon/app-services';
 
 @Component({
   selector: 'app-header',
@@ -22,7 +23,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     public userService: UserService,
     public notifications: NotificationsService,
     private translate: TranslateService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private app: AppServices
   ) {
     this.environment = environment;
   }
@@ -42,20 +44,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   useLang(code) {
     this.currLang = code;
     this.translate.use(code);
-    if (code === 'en') {
-      this.loadExternalStyles('en-style.css')
-        .then(() => {
-          document.getElementById('html').setAttribute('lang', code);
-          document.getElementById('html').setAttribute('dir', 'ltr');
-        })
-        .catch(() => { });
-    } else {
-      document.getElementById('html').setAttribute('lang', code);
-      document.getElementById('html').setAttribute('dir', 'rtl');
-      if (document.getElementById('enStyle')) {
-        document.getElementById('enStyle').remove();
-      }
-    }
+    this.app.updateStayle(code);
+    this.app.translate.next({ lang: code });
     localStorage.setItem('seu-lang', code);
   }
 

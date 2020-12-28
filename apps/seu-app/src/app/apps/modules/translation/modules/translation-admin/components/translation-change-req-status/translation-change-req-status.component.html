@@ -1,12 +1,12 @@
 <form [formGroup]="changeStatusForm" (ngSubmit)="onSubmit()">
   <div class="row" style="padding: 20px;">
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="form-group">
         <label for="ESTIMATED_DATE">{{"my_requests_page.estimated_date" | translate}}</label>
         <input type="text" formControlName="ESTIMATED_DATE" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <div class="form-group">
         <label for="EMP_ID">{{"my_requests_page.emp_list" | translate}}</label>
         <select formControlName="EMP_ID" class="form-control">
@@ -15,7 +15,38 @@
         </select>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="FILE_WORDS_COUNT">{{"my_requests_page.file_words_count" | translate}}</label>
+        <input type="number" formControlName="FILE_WORDS_COUNT" class="form-control" />
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding: 20px;">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="PAYMENT">{{"my_requests_page.payment_type" | translate}}</label>
+        <select formControlName="PAYMENT" class="form-control" (change)="paymentTypeChange($event.target.value)">
+          <option [selected]="req.CLIENT_WORK_PLACE != 'internal'" value="payment">{{"my_requests_page.payment" | translate}}</option>
+          <option [selected]="req.CLIENT_WORK_PLACE == 'internal'" value="not_payment">{{"my_requests_page.not_payment" | translate}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-4" *ngIf="paymentDetails">
+      <div class="form-group">
+        <label for="AMOUNT">{{"my_requests_page.amount" | translate}}</label>
+        <input type="number" formControlName="AMOUNT" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-4" *ngIf="paymentDetails">
+      <div class="form-group">
+        <label for="PAYMENT_DATE">{{"my_requests_page.payment_date" | translate}}</label>
+        <input type="text" formControlName="PAYMENT_DATE" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-bottom: 30px;">
+    <div class="col-md-4 offset-md-4">
       <div class="form-group">
         <button [disabled]="submitted || changeStatusForm.invalid" style="margin-top: 30px; width: 100%;" type="submit" class="btn sub">{{ "new_request_page.save" | translate}}  <i class="fa fa-save"></i></button>
       </div>

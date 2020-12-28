@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { TranslationCommonModule } from '../translation-common/translation-common.module';
 import { MatDialogModule } from '@angular/material';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { TranslationLazyTransModule } from '../translation-common/translation.lazytrans.module';
 
 @NgModule({
   declarations: [componentDeclarations],
@@ -15,7 +16,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     RecaptchaModule,
     RouterModule.forChild(routes),
     TranslationCommonModule,
-    MatDialogModule
+    MatDialogModule,
+    TranslationLazyTransModule
   ]
 })
 export class TranslationAuthModule { }

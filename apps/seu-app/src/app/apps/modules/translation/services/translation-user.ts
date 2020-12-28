@@ -25,21 +25,32 @@ export class TranslationUserService extends TranslationRootService {
         public router: Router,
         config: GlobalService,
         translate: TranslateService,
-        toaster:AppToasterService
+        toaster: AppToasterService
     ) {
-        super(http, router, config, translate,toaster);
+        super(http, router, config, translate, toaster);
     }
 
     getUser() {
-        this.get("translation/user").subscribe(res => {
+        this.get("translation/user").subscribe((res) => {
             if (res['status']) {
-                this.user = res['user'];
-                this.userLoaded = true;
-                this.userHasLoaded.next();
+                this.setUser(res['user']);
             } else {
                 this.config.relogin();
             }
-        });
+        },
+            err => {
+                console.log("ERR:", err);
+            });
+    }
+
+    setUser(user) {
+        this.user = user;
+        this.userLoaded = true;
+        this.userHasLoaded.next();
+    }
+
+    is_sso() {
+        return this.user['SSO'] == '1';
     }
 
     is_admin() {

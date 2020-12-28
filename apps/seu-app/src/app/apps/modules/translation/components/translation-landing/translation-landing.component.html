@@ -1,14 +1,19 @@
 <main role="main">
-  <div class="wrapper">
-    <app-header></app-header>
-    <div class="page-wrap">
-      <app-translation-menu></app-translation-menu>
-      <div class="">
-        <div class="main-content">
-          <router-outlet></router-outlet>
+    <div class="wrapper">
+        <ng-container *ngIf="sso">
+            <app-header></app-header>
+        </ng-container>
+        <ng-container *ngIf="!sso">
+            <app-translation-header></app-translation-header>
+        </ng-container>
+        <div class="page-wrap">
+            <app-translation-menu></app-translation-menu>
+            <div class="">
+                <div class="main-content">
+                    <router-outlet></router-outlet>
+                </div>
+                <app-footer></app-footer>
+            </div>
         </div>
-        <app-footer></app-footer>
-      </div>
     </div>
-  </div>
 </main>

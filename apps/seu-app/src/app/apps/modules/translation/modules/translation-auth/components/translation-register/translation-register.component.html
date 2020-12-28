@@ -1,30 +1,86 @@
-<form role="form" [formGroup]="form">
-    <div class="modal-body">
-        <div class="row ser-block">
-            <div class=" col-md-6 col-sm-6">
-                <div class="state">
-                    <h6>{{"general.std_id"|translate}} <span class="reqstart">*</span></h6>
-                    <input type="text" formControlName="std_id" (keypress)="keyPress($event)" maxlength="9" minlength="9" class="form-control" />
-                </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget">
+            <div class="widget-header">
+                <h3 class="widget-title">
+                    {{"auth.new_user" | translate}}
+                </h3>
+            </div>
+            <div class="widget-body">
+                <form role="form" [formGroup]="form">
+                    <div class="modal-body">
+                        <div class="row ser-block">
+                            <div class="col-md-6 col-sm-6">
+                                <h5> {{'auth.personal_info' | translate}} </h5>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="state">
+                                            <h6>{{"auth.name"|translate}} <span class="reqstart">*</span></h6>
+                                            <input type="text" formControlName="NAME" class="form-control" />
+                                            <control-validations-errors [control]="form.controls.NAME"></control-validations-errors>
 
-            </div>
-        </div>
-        <div class="row ser-block">
-            <div class=" col-md-6 col-sm-6">
-                <div class="state">
-                    <h6>{{"general.captcha"|translate}} <span class="reqstart">*</span></h6>
-                    <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey">
-                    </re-captcha>
-                </div>
-            </div>
-        </div>
-        <div>
-            <div class=" col-md-6 col-sm-6">
-                <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
-                    <button (click)="onFormSubmit()" type="button" [disabled]="submitted || form.invalid" class="btn" style="color: #fff;margin-top: 30px !important;">
-            {{"signin.submit" | translate}}</button>
-                </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="state">
+                                            <h6>{{"auth.client_work"|translate}} <span class="reqstart">*</span></h6>
+                                            <input type="text" formControlName="CLIENT_WORK" class="form-control" />
+                                            <control-validations-errors [control]="form.controls.CLIENT_WORK"></control-validations-errors>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="state">
+                                            <h6>{{"auth.phone"|translate}} <span class="reqstart">* (05xxxxxxxx)</span></h6>
+                                            <input type="text" formControlName="PHONE" class="form-control" />
+                                            <control-validations-errors [control]="form.controls.PHONE" (keypress)="onlyNumbers($event)"></control-validations-errors>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <h5> {{'auth.login_info' | translate}} </h5>
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="state">
+                                            <h6>{{"auth.work_email"|translate}} <span class="reqstart">*</span></h6>
+                                            <input type="email" style="direction: ltr;" email="true" formControlName="WORK_EMAIL" class="form-control" />
+                                            <control-validations-errors [control]="form.controls.WORK_EMAIL"></control-validations-errors>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="state">
+                                            <h6>{{"auth.password"|translate}} <span class="reqstart">*</span></h6>
+                                            <input type="password" formControlName="PASS" class="form-control" />
+                                            <control-validations-errors [control]="form.controls.PASS"></control-validations-errors>
+
+                                        </div>
+                                    </div>
+                                    <div class=" col-md-12 col-sm-12">
+                                        <div class="state">
+                                            <h6>{{"auth.captcha"|translate}} <span class="reqstart">*</span></h6>
+                                            <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey"></re-captcha>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class=" col-md-6 col-sm-6">
+                                <div class="form-group  prin">
+                                    <br /> <br />
+                                    <a [routerLink]="['../login']">{{"auth.signin" | translate}}</a> | <a [routerLink]="['../forgot']">{{"auth.forgot" | translate}}</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button (click)="onFormSubmit()" type="button" [disabled]="submitted || form.invalid" class="btn">
+                            {{"auth.register" | translate}}
+                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</form>
+</div>

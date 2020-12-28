@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ClientAdminRequestsService } from '../../../../services/translation-admin-requests';
-import { TranslationAddCommentComponent } from './../translation-add-comment/translation-add-comment.component';
-import { TranslationChangeReqStatusComponent } from './../translation-change-req-status/translation-change-req-status.component';
+import { TranslationAddCommentComponent } from '../translation-add-comment/translation-add-comment.component';
+import { TranslationChangeReqStatusComponent } from '../translation-change-req-status/translation-change-req-status.component';
 import { TranslationViewRequestComponent } from '../translation-view-request/translation-view-request.component';
 
 @Component({
-  selector: 'app-translation-pendding-requests',
-  templateUrl: './translation-pendding-requests.component.html',
-  styleUrls: ['./translation-pendding-requests.component.css']
+  selector: 'app-translation-payment-requests',
+  templateUrl: './translation-payment-requests.component.html',
+  styleUrls: ['./translation-payment-requests.component.css']
 })
-export class TranslationPenddingRequestsComponent implements OnInit {
+export class TranslationPaymentRequestsComponent implements OnInit {
 
   requestsList = [];
   isLoading = false;
@@ -26,12 +26,12 @@ export class TranslationPenddingRequestsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getPenddingRequests();
+    this.getPaymentRequests();
   }
 
-  getPenddingRequests() {
+  getPaymentRequests() {
     this.isLoading = true;
-    this.requestsService.getPenddingRequests().subscribe((response) => {
+    this.requestsService.getPaymentRequests().subscribe((response) => {
       this.requestsList = response['data'];
       this.requestsList = this.requestsService.addFileURL(this.requestsList);
       this.isLoading = false;
@@ -51,7 +51,7 @@ export class TranslationPenddingRequestsComponent implements OnInit {
     let dialogref = this.dialog.open(TranslationAddCommentComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {
-        this.getPenddingRequests();
+        this.getPaymentRequests();
       }
     });
   }
@@ -66,7 +66,7 @@ export class TranslationPenddingRequestsComponent implements OnInit {
     let dialogref = this.dialog.open(TranslationChangeReqStatusComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {
-        this.getPenddingRequests();
+        this.getPaymentRequests();
       }
     });
   }
@@ -80,16 +80,16 @@ export class TranslationPenddingRequestsComponent implements OnInit {
     let dialogref = this.dialog.open(TranslationViewRequestComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {
-        this.getPenddingRequests();
+        this.getPaymentRequests();
       }
     });
   }
 
   exportAsXLSX(){
-    this.requestsService.getPenddingRequests(1).subscribe((response => {
+    this.requestsService.getPaymentRequests(1).subscribe((response => {
       const linkSource = `data:application/pdf;base64,${response['data']}`;
       const downloadLink = document.createElement("a");
-      const fileName = "pendding_requests.xls";
+      const fileName = "payment_requests.xls";
       downloadLink.href = linkSource;
       downloadLink.download = fileName;
       downloadLink.click();

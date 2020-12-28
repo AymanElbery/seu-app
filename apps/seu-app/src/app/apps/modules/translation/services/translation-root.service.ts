@@ -34,11 +34,14 @@ export class TranslationRootService {
     }
 
     getHeader() {
-        const headers = new HttpHeaders({
+        let headers = new HttpHeaders({
             'Content-Type': 'application/json',
-            'Authorization': this.auth,
-            'sessionid': this.config.getSID()
+            'Authorization': this.auth
         });
+        const session_id = this.config.getSID();
+        if (session_id) {
+            headers = headers.append('sessionid', session_id);
+        }
         return headers;
     }
 
@@ -48,6 +51,7 @@ export class TranslationRootService {
         }).pipe(
             map((res: any) => {
                 if (!res.status && (res.res_code == "invalid_user" || res.res_code == "invalid_session")) {
+                    return res;
                 } else {
                     return res;
                 }

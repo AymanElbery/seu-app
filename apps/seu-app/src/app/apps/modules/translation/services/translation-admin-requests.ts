@@ -40,6 +40,9 @@ export class ClientAdminRequestsService extends TranslationRootService {
     getPenddingRequests(print = 0) {
         return this.get("admin/request/get_pendding_requests/" + print);
     }
+    getPaymentRequests(print = 0) {
+        return this.get("admin/request/get_payment_requests/" + print);
+    }
     getProcessiongRequests(print = 0) {
         return this.get("admin/request/get_processing_requests/" + print);
     }

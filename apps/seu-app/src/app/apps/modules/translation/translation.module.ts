@@ -11,7 +11,8 @@ import { RouterModule } from '@angular/router';
 import { TranslationCommonModule } from './modules/translation-common/translation-common.module';
 import { TranslationServicesModule } from './services/translation-service.module';
 import { TranslationUserComponent } from './components/translation-user/translation-user.component';
-
+import { TranslationLazyTransModule } from './modules/translation-common/translation.lazytrans.module';
+import { TranslationPasswordComponent } from './components/translation-password/translation-password.component';
 
 
 @NgModule({
@@ -21,24 +22,27 @@ import { TranslationUserComponent } from './components/translation-user/translat
     TranslationMenuComponent,
     TranslationAdminMenuComponent,
     TranslationClientMenuComponent,
-    TranslationUserComponent
+    TranslationUserComponent,
+    TranslationPasswordComponent
   ],
   imports: [
     SeucommonModule,
     TranslationCommonModule,
     TranslationServicesModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    TranslationLazyTransModule
   ],
   providers: [
     providerDeclarations
-  ]
+  ],
+  entryComponents: [TranslationPasswordComponent]
 })
 export class TranslationModule {
   constructor(private translate: TranslateService) {
     document.getElementById('bodyloading')
       ? document.getElementById('bodyloading').remove()
       : '';
-    this.translate.use('ar');
+    //this.translate.use('ar');
   }
 }
 
