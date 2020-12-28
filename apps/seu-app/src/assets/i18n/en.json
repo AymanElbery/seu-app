@@ -259,7 +259,10 @@
         "translation": "Languages and Translation center",
         "exam": "SwiftAssess",
         "EXAM_PHOTO": "صورة نظام الاختبارات",
-        "tawkeed": "Tawkeed"
+        "tawkeed": "Tawkeed",
+        "umc": "University Medical Center",
+        "bb_virtual_reports": "Virtual Classroom Reports ",
+        "dashboard": "Dashboard"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",

@@ -22,7 +22,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ControlValidationsErrorsComponent } from './control-validations-errors/control-validations-errors.component';
-
+import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent, DialogPlayerComponent,
@@ -37,11 +37,13 @@ import { ControlValidationsErrorsComponent } from './control-validations-errors/
     VgBufferingModule,
     NgSelectModule,
     RouterModule.forChild([]),
-    AppLazyTransModule
+    AppLazyTransModule,
+    DatepickerModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   entryComponents: [DialogPlayerComponent],
   exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent, AlphabateOnlyDirective,
-    SeuFlashComponent, NgSelectModule, HeaderComponent, FooterComponent,ControlValidationsErrorsComponent]
+    SeuFlashComponent, NgSelectModule, HeaderComponent, FooterComponent,ControlValidationsErrorsComponent,DatepickerModule,BsDatepickerModule]
 })
 export class SeucommonModule {
   

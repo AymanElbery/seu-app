@@ -145,7 +145,29 @@
                                             </a>
                                         </p>
                                     </div>
+                                    <div class="col-md-4 new-ser">
+                                        <p>
+                                            <a target="_blank" href="http://umc.seu.edu.sa/auth">
+                                                <img src="assets/images/umc.png"> {{"menu.umc" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
 
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['bbreports']">
+                                        <p>
+                                            <a [routerLink]="['/apps/bbreports']">
+                                                <img src="assets/images/black.png"> {{"menu.bb_virtual_reports" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['dashboard']">
+                                        <p>
+                                            <a target="_blank" href="https://dashboard.seu.edu.sa/">
+                                                <img src="assets/images/dashboard.png"> {{"menu.dashboard" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
 
                                     <!-- <div class="col-md-4 new-ser">
                     <p><a [routerLink]="['/apps/skills/user']">
@@ -306,6 +328,27 @@
                                             </a>
                                         </p>
                                     </div>
+                                    <div class="col-md-4 new-ser">
+                                        <p>
+                                            <a target="_blank" href="http://umc.seu.edu.sa/auth">
+                                                <img src="assets/images/umc.png"> {{"menu.umc" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['bbreports']">
+                                        <p>
+                                            <a [routerLink]="['/apps/bbreports']">
+                                                <img src="assets/images/black.png"> {{"menu.bb_virtual_reports" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['dashboard']">
+                                        <p>
+                                            <a target="_blank" href="https://dashboard.seu.edu.sa/">
+                                                <img src="assets/images/dashboard.png"> {{"menu.dashboard" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
                                     <!-- <div class="col-md-4 new-ser">
                     <p><a [routerLink]="['/apps/skills/user']">
                       <img src="assets/images/skills.png">
@@ -357,6 +400,21 @@
                                         <p>
                                             <a [routerLink]="['/apps/translation/user']">
                                                 <img src="assets/images/translate.png"> {{"menu.translation" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['bbreports']">
+                                        <p>
+                                            <a [routerLink]="['/apps/bbreports']">
+                                                <img src="assets/images/black.png"> {{"menu.bb_virtual_reports" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['dashboard']">
+                                        <p>
+                                            <a target="_blank" href="https://dashboard.seu.edu.sa/">
+                                                <img src="assets/images/dashboard.png"> {{"menu.dashboard" | translate}}
                                             </a>
                                         </p>
                                     </div>
@@ -439,7 +497,6 @@
                 </div> -->
                                 </div>
                             </div>
-
 
                         </div>
                     </div>

@@ -90,6 +90,8 @@ export class MenuComponent implements OnInit, AfterContentInit {
       this.userService.getAdmisPerm().subscribe(res => {
         this.admisPage = res['data'];
         this.showadmis = Object.keys(res["data"]).length ? true : false;
+        this.userService.userData['bbreports'] = (res["data"]['bbreports'] == 1);
+        this.userService.userData['dashboard'] = (res["data"]['dashboard'] == 1);
       });
     }
     //console.log(this.userService.userData.activeRole);
