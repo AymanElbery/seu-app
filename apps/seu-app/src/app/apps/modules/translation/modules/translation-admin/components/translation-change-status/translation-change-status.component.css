@@ -1,0 +1,6 @@
+/* .widget-title{
+    display: inline-block;
+} */
+button.btn:hover, button.btn:active{
+    color: #FFF;
+}

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { TranslationAdminUsersComponent } from './components/translation-admin-users/translation-admin-users.component';
 import { TranslationAdminAddUsersComponent } from './components/translation-admin-add-users/translation-admin-add-users.component';
 import { TranslationChangeReqStatusComponent } from './components/translation-change-req-status/translation-change-req-status.component';
+import { TranslationChangeStatusComponent } from './components/translation-change-status/translation-change-status.component';
 import { TranslationAddTranslatedFileComponent } from './components/translation-add-translated-file/translation-add-translated-file.component';
 import { TranslationPenddingRequestsComponent } from './components/translation-client-pendding-requests/translation-pendding-requests.component';
 import { TranslationPaymentRequestsComponent } from './components/translation-client-payment-requests/translation-payment-requests.component';
@@ -27,6 +28,7 @@ export const componentDeclarations: any[] = [
     TranslationCompletedRequestsComponent,
     TranslationCompleteFormComponent,
     TranslationChangeReqStatusComponent,
+    TranslationChangeStatusComponent,
     TranslationAddTranslatedFileComponent,
     TranslationReviewingRequestsComponent,
     TranslationReviewFormComponent,

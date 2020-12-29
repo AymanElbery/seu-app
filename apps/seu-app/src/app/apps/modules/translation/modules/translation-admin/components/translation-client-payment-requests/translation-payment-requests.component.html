@@ -24,7 +24,6 @@
                 <th scope="col">{{"new_request_page.work_place" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_file" | translate}}</th>
-                <th scope="col">{{"new_request_page.payment_status" | translate}}</th>
                 <th scopr="col">{{"general.actions" | translate}}</th>
               </tr>
             </thead>
@@ -38,7 +37,6 @@
                   <a target="_blanck" [href]="req.downloadURL" style="margin-right: 5px;"
                     class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
                 </td>
-                <td><span class="badge badge-primary">{{ req.PAYMENT_STATUS }}</span></td>
                 <td>
                   <!-- <button (click)="openChangeStatusDialog(req)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button> -->
                   &nbsp;

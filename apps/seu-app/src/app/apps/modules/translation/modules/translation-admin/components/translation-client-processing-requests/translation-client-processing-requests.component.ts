@@ -5,6 +5,7 @@ import { ClientAdminRequestsService } from '../../../../services/translation-adm
 import { TranslationAddCommentComponent } from '../translation-add-comment/translation-add-comment.component';
 import { TranslationAddTranslatedFileComponent } from '../translation-add-translated-file/translation-add-translated-file.component';
 import { TranslationViewRequestComponent } from '../translation-view-request/translation-view-request.component';
+import { TranslationChangeStatusComponent } from './../translation-change-status/translation-change-status.component';
 
 @Component({
   selector: 'app-translation-processing-requests',
@@ -64,6 +65,21 @@ export class TranslationProcessiongRequestsComponent implements OnInit {
     dialogConfig.data = { 'req': req , 'review' : true };
 
     let dialogref = this.dialog.open(TranslationAddTranslatedFileComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getProcessiongRequests();
+      }
+    });
+  }
+
+  openChangeStatusDialog(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = req;
+
+    let dialogref = this.dialog.open(TranslationChangeStatusComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {
         this.getProcessiongRequests();

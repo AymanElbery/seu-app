@@ -51,6 +51,8 @@
                   <button (click)="openAddTranslatedFileDialog(req.REQ_ID)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
                 </td> -->
                 <td>
+                  <button (click)="openChangeStatusDialog(req)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button>
+                  &nbsp;
                   <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.comments" | translate}}</button>
                   &nbsp;
                   <button class="btn btn-primary"(click)="openDetailsDialog(req)">{{"general.details" | translate}}</button>
