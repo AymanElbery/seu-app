@@ -32,6 +32,11 @@
   </div>
 </div>
 
+<div [ngClass]="{'active': activeRoute == 'skills'}" class="nav-item">
+  <a href="#" routerLink="emp/skills"><span>{{ "menu.skills" | translate }} </span>
+    <i class="ik ik-user"></i></a>
+</div>
+
 <div [ngClass]="{'active': activeRoute == 'settings'}" class="nav-item">
   <a href="#" routerLink="emp/settings"><span>{{ "menu.settings" | translate }} </span>
     <i class="ik ik-settings"></i></a>

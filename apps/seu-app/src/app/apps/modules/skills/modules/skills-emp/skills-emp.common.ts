@@ -16,6 +16,8 @@ import { SkillsCoursesFilesComponent } from './components/skills-course-files/sk
 import { SkillsCoursesAttendComponent } from './components/skills-course-attend/skills-courses-attend.component';
 import { SkillsCoursesRatingComponent } from './components/skills-course-rating/skills-courses-rating.component';
 import { SkillsSettingsComponent } from './components/skills-settings/skills-settings.component';
+import { SkillsRecordComponent } from './components/skills-record/skills-record.component';
+import { StudentSkillsRecordComponent } from './components/student-skills-record/student-skills-record.component';
 import { UpdateSettingComponent } from './components/skills-settings/diag/update-setting/update-setting.component';
 
 export const componentDeclarations: any[] = [
@@ -35,6 +37,8 @@ export const componentDeclarations: any[] = [
     SkillsCoursesFilesComponent,
     SkillsCoursesRatingComponent,
     SkillsSettingsComponent,
+    SkillsRecordComponent,
+    StudentSkillsRecordComponent,
     UpdateSettingComponent
 ];
 
@@ -62,6 +66,12 @@ export const routes: Routes = [
     },
     {
         path: 'settings', component: SkillsSettingsComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
+        path: 'skills', component: SkillsRecordComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
+        path: 'student-skill-record/:std_id', component: StudentSkillsRecordComponent, canActivate: [SkillsEMPGuard]
     },
     {
         path: 'courses-inactive', component: SkillsCoursesListComponent, canActivate: [SkillsEMPGuard]

@@ -26,6 +26,10 @@ export class SkillsCourseService extends SkillsRootService {
         return this.get("emp/courses/list/" + (active ? 1 : 0));
     }
 
+    getAllCompletedSkills(){
+        return this.get("emp/courses/skills")
+    }
+
     getCampus() {
         return this.get("lookups/campus");
     }

@@ -57,5 +57,9 @@ export class SkillsUsersManagementService extends SkillsRootService {
         }
         return this.post("emp/users/add", data);
     }
+
+    stdClassifications(std_id, print = 0) {
+        return this.get("emp/courses/std_classifications/" + std_id + "/" + print);
+    }
 }
 

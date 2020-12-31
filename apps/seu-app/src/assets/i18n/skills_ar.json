@@ -87,6 +87,9 @@
         "success_request": "تم حفظ المستخدم بنجاح"
     },
     "courses": {
+        "filter_courses": "بحث في الدورات",
+        "filter_std": "بحث في الطلاب",
+        "student-list": "قائمة الطلاب",
         "add-course-appintment": "مواعيد الدورة",
         "add-course": "اضافة دورة",
         "courses-list": "قائمة الدورات",
