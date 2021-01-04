@@ -1,63 +1,24 @@
 <form>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">الاسم</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">رقم الهوية</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">الايميل</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">رقم الجوال</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">تصنيف</label>
-    <div class="col-sm-10">
-      <select class="custom-select form-control">
-        <option selected>اختر</option>
-        <option value="1">تصنيف #1</option>
-        <option value="2">تصنيف #2</option>
-        <option value="3">تصنيف #3</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">العنوان</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">تفاصيل</label>
-    <div class="col-sm-10">
-      <textarea class="form-control" rows="3"></textarea>
-    </div>
-  </div>
-  <div class="form-group row">
-    <label class="col-sm-2 col-form-label">مرفقات</label>
-    <div class="col-sm-10">
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" id="customFile">
-        <label class="custom-file-label  form-control">اختر ملف</label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group row">
-    <div class="col-sm-12 text-center">
-      <button class="btn btn-primary" type="submit">إرسال</button>
-    </div>
-  </div>
+  <div class="row">
+ <div class="col-md-6">
+  <label>الاسم</label>
+  <input id="name" required="" name="text" class="form-control" type="text" placeholder="اسم المستخدم">
+</div>  
+ 
+<div class="col-md-6">
+  <label>البريد الإلكتروني</label>
+  <input id="email" required="" name="email" class="form-control" type="text" placeholder="البريد الإلكتروني ">
+</div> 
+<div class="col-md-6">
+  <label> تاريخ الميلاد</label>
+  <input id="idenity" required="" name="text" class="form-control" type="date" placeholder="تاريخ الميلاد  ">
+</div> 
+<div class="col-md-6">
+  <label>رقم الهوية</label>
+  <input id="idenity" required="" name="text" class="form-control" type="text" placeholder="رقم الهوية ">
+</div> 
+<div class="col-md-12" style="text-align: center;">
+  <button class="btn btn-suggest" type="submit"> إرسال</button>
+</div>
+</div>
 </form>

@@ -196,7 +196,7 @@ nav.navbar.bootsnav.navbar-transparent.dark ul.nav>li>a {
 }
 
 nav.navbar .navbar-brand img.logo {
-
+width: auto;
 }
 
 .attr-nav>ul>li>a {
@@ -846,7 +846,7 @@ nav.navbar.bootsnav ul.nav>li>a {
     transform: rotateY(0)
 }
 @media only screen and (max-width:479px) {
-    . .nav-tabs {
+     .nav-tabs {
         display: block;
         width: 100%;
         border-right: none

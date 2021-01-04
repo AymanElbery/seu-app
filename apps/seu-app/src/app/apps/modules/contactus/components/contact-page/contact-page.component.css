@@ -1,3 +1,6 @@
+.nav {
+    flex-wrap: nowrap;
+}
 .nav-tabs {
     margin-bottom: 10px;
 }

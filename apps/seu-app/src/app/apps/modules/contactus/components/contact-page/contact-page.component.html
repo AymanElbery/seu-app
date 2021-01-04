@@ -1,21 +1,36 @@
-<section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 10px; padding: 0 30px;">
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link " (click)="toggle('form','help')" [class.active]="current=='help'" href="#">{{"general.help" | translate}}</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link " (click)="toggle('form','suggestions')" [class.active]="current=='suggestions'" href="#">{{"general.suggestions" | translate}}</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link " (click)="toggle('enquiry','enquiry')" [class.active]="current=='enquiry'" href="#">{{"general.enquiry" | translate}}</a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <ng-container *ngIf="show == 'form'">
-            <app-contact-form></app-contact-form>
-        </ng-container>
-        <ng-container *ngIf="show == 'enquiry'">
-            <app-contact-enquire></app-contact-enquire>
-        </ng-container>
+<!-- <ul class="nav nav-tabs" role="tablist">
+    <li class="active"><a href="#login" data-toggle="tab" aria-expanded="false"> <i
+                class="fas fa-sign-in-alt"></i> <span> دعم الدخول الموحد </span></a></li>
+    <li class=""><a href="#suggest" data-toggle="tab" aria-expanded="false"> 
+            <span> شكاوي ومقترحات </span></a></li>
+    <li class=""><a href="#query" data-toggle="tab" aria-expanded="true"> <span>
+                استعلام </span></a></li>
+</ul> -->
+
+<div class="contact-page-inner">
+    <div *ngIf="!isLoading" class="dashboard-wrap">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link " (click)="toggle('form','help')" [class.active]="current=='help'" href="#">
+                    <i class="fas fa-sign-in-alt"></i>
+                    {{"general.help" | translate}}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " (click)="toggle('form','suggestions')" [class.active]="current=='suggestions'"
+                    href="#"><i class="far fa-comments"></i>{{"general.suggestions" | translate}}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " (click)="toggle('enquiry','enquiry')" [class.active]="current=='enquiry'"
+                    href="#"><i class="fas fa-desktop"></i>{{"general.enquiry" | translate}}</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <ng-container *ngIf="show == 'form'">
+                <app-contact-form></app-contact-form>
+            </ng-container>
+            <ng-container *ngIf="show == 'enquiry'">
+                <app-contact-enquire></app-contact-enquire>
+            </ng-container>
+        </div>
     </div>
-</section>
+</div>

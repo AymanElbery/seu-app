@@ -1,5 +1,5 @@
 form {
-    padding: 0px 15px;
+    padding: 24px 15px;
 }
 .form-group {
     font-size: 13px;
@@ -25,4 +25,15 @@ form {
     transition: 0.3s ease-in-out;
     border: 1px solid #f28d1e;
     background-color: #f28d1e;
+}
+ label {
+    color: #f08a1c;
+}
+ .form-control {
+    height: 45px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, .12);
+    padding: 0 10px;
+    border-bottom: 1px solid #f28d1e;
 }
