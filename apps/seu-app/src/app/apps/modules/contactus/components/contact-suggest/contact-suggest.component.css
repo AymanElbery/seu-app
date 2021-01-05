@@ -1,0 +1,39 @@
+form {
+    padding: 24px 15px;
+}
+.form-group {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+.col-form-label {
+    line-height: 2;
+}
+.custom-file-label::after {
+    height: 3.25rem;
+    content: "رفع الملف";
+    line-height: 2.1;
+}
+.custom-file-label {
+    line-height: 2.1;
+}
+.btn {
+    margin-top: 20px;
+    background-color: #1c2172;
+    border: 1px solid #1c2172;
+}
+.btn:hover {
+    transition: 0.3s ease-in-out;
+    border: 1px solid #f28d1e;
+    background-color: #f28d1e;
+}
+ label {
+    color: #f08a1c;
+}
+ .form-control {
+    height: 45px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, .12);
+    padding: 0 10px;
+    border-bottom: 1px solid #f28d1e;
+}

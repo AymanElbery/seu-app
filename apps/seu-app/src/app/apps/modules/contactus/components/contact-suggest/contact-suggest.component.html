@@ -1,26 +1,36 @@
 <form [formGroup]="form" (submit)="onSubmit()">
   <div class="row">
     <div class="col-md-6">
-      <label>{{'form.user_name' | translate}}</label>
-      <input class="form-control" type="text" formControlName="user_name">
-      <control-validations-errors [control]="form.controls.user_name"></control-validations-errors>
-    </div>
-    <div class="col-md-6">
-      <label>{{'form.email' | translate}}</label>
-      <input class="form-control" type="text" formControlName="email">
-      <control-validations-errors [control]="form.controls.email"></control-validations-errors>
+      <label>{{'form.name' | translate}}</label>
+      <input class="form-control" type="text" formControlName="name">
+      <control-validations-errors [control]="form.controls.name"></control-validations-errors>
     </div>
     <div class="col-md-6">
       <label>{{'form.ssn' | translate}}</label>
       <input class="form-control" type="number" formControlName="ssn">
       <control-validations-errors [control]="form.controls.ssn"></control-validations-errors>
     </div>
+
     <div class="col-md-6">
-      <label>{{'form.birth_date' | translate}}</label>
-      <input class="form-control" type="text" formControlName="birth_date">
-      <control-validations-errors [control]="form.controls.birth_date"></control-validations-errors>
+      <label>{{'form.email' | translate}}</label>
+      <input class="form-control" type="text" formControlName="email">
+      <control-validations-errors [control]="form.controls.email"></control-validations-errors>
     </div>
-    <div class="col-md-12">
+
+    <div class="col-md-6">
+      <label>{{'form.phone' | translate}}</label>
+      <input class="form-control" type="number" formControlName="phone">
+      <control-validations-errors [control]="form.controls.phone"></control-validations-errors>
+    </div>
+
+    <div class="col-md-6">
+      <label>{{'form.group' | translate}}</label>
+      <ng-select [items]="groups" bindLabel="NAME_AR" bindValue="ID" formControlName="group">
+      </ng-select>
+
+      <control-validations-errors [control]="form.controls.group"></control-validations-errors>
+    </div>
+    <div class="col-md-6">
       <label>{{'form.subject' | translate}}</label>
       <input class="form-control" type="text" formControlName="title">
       <control-validations-errors [control]="form.controls.title"></control-validations-errors>
@@ -48,8 +58,7 @@
       </div>
     </div>
     <div class="col-md-12" style="text-align: center;">
-      <button class="btn btn-suggest" type="submit" [disabled]="submitting || form.invalid">{{"form.send"|translate}}
-      </button>
+      <button class="btn btn-suggest" type="submit"> {{"form.send"|translate}}</button>
     </div>
   </div>
 </form>

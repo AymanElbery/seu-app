@@ -16,7 +16,7 @@
                     {{"general.help" | translate}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " (click)="toggle('form','suggestions')" [class.active]="current=='suggestions'"
+                <a class="nav-link " (click)="toggle('suggest','suggestions')" [class.active]="current=='suggestions'"
                     href="#"><i class="far fa-comments"></i>{{"general.suggestions" | translate}}</a>
             </li>
             <li class="nav-item">
@@ -27,6 +27,9 @@
         <div class="tab-content">
             <ng-container *ngIf="show == 'form'">
                 <app-contact-form></app-contact-form>
+            </ng-container>
+            <ng-container *ngIf="show == 'suggest'">
+                <app-contact-suggest></app-contact-suggest>
             </ng-container>
             <ng-container *ngIf="show == 'enquiry'">
                 <app-contact-enquire></app-contact-enquire>

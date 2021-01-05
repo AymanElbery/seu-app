@@ -7,11 +7,11 @@ import { environment } from 'src/environments/environment';
 import { ContactService } from '../../services/contact.service';
 
 @Component({
-  selector: 'app-contact-form',
-  templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.css']
+  selector: 'app-contact-suggest',
+  templateUrl: './contact-suggest.component.html',
+  styleUrls: ['./contact-suggest.component.css']
 })
-export class ContactFormComponent implements OnInit {
+export class ContactSuggestComponent implements OnInit {
 
   @ViewChild('recaptchaRef', { read: RecaptchaComponent, static: false }) recaptchaRef: RecaptchaComponent;
 
@@ -30,15 +30,22 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      'user_name': ['', [Validators.required]],
-      'email': ['', [Validators.required]],
+      'name': ['', [Validators.required]],
+      'phone': ['', [Validators.required]],
       'ssn': ['', [Validators.required]],
-      'birth_date': ['', [Validators.required]],
+      'email': ['', [Validators.required]],
+      'group': ['', [Validators.required]],
       'title': ['', [Validators.required]],
-      'description': [''],
+      'description': ['', [Validators.required]],
       'captcha': ['', [Validators.required]],
       'file': []
     });
+    this.getGroups();
+  }
+  getGroups() {
+    this.contact.getLookups().subscribe(resposne => {
+      this.groups = resposne['data']['groups'];
+    })
   }
   onFileSelect(event) {
     if (event.target.files.length > 0) {
@@ -49,7 +56,6 @@ export class ContactFormComponent implements OnInit {
   resolved(captchaResponse: string) {
     this.form.controls['captcha'].setValue(captchaResponse);
   }
-  submitting = false;
   onSubmit() {
     if (this.form.invalid) {
       return false;
@@ -57,17 +63,9 @@ export class ContactFormComponent implements OnInit {
     const formData = new FormData();
     const data = this.form.value;
     Object.keys(data).forEach(key => {
-      formData.append(key, data[key]);
-    });
-
-    this.submitting = true;
-    this.contact.addLoginRequest(formData).subscribe(response => {
-      if (response['status']) {
-        this.form.reset();
-        console.log(response);
-      }
-      this.recaptchaRef.reset();
-      this.submitting = false;
+      formData.append(key, data['key']);
     })
+
   }
+
 }
