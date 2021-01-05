@@ -1,0 +1,86 @@
+{
+    "dammam": {
+        "title": "فرع الدمام",
+        "contact": [
+            {
+                "label": "",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": " ​​​​​​​​​​​​​​​​​​​​​​​المملكة العربية السعودية - الدمام - حي الريان"
+            },
+            {
+                "label": "صندوق بريد",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "15515"
+            },
+            {
+                "label": " ​​الرمز البريدي",
+                "iconclass": "far fa-compass",
+                "value": "31454"
+            },
+            {
+                "label": "تلفون",
+                "iconclass": "fas fa-phone",
+                "value": "7444 892 13 966+"
+            },
+            {
+                "label": "البريد الالكتروني للطلاب",
+                "iconclass": "fas fa-envelope-open",
+                "value": "dmm-seu@seu.edu.sa"
+            },
+            {
+                "label": "البريد الالكتروني للطالبات",
+                "iconclass": "fas fa-envelope-open",
+                "value": "seufd@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب والطالبات",
+                "desc": "يقع مقر الجامعة السعودية الالكترونية فرع الدمام (طلاب -طالبات) -بحي الريان خلف مجمع كليات البنات التابع لجامعة الدمام.",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3573.5612977993223!2d50.08733781503413!3d26.405357383348804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x170d794395ebe005!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KfZhNmD2KrYsdmI2YbZitip!5e0!3m2!1sen!2sus!4v1456900533716"
+            }
+        ]
+    },
+    "madina": {
+        "title": "فرع المدينة المنورة",
+        "contact": [
+            {
+                "label": "",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​​​​​​​​​​المملكة العربية السعودية - المدينة المنورة"
+            },
+            {
+                "label": "تحويلة شطر الطلاب",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "4001"
+            },
+            {
+                "label": "تحويلة شطر الطالبات",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "4101"
+            },
+            {
+                "label": "تلفون",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": " البريد الإلكتروني للفرع",
+                "iconclass": "fas fa-envelope-open",
+                "value": "med-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب",
+                "desc": "يقع مقر الطلاب في المدينة المنورة في جامعة طيبة ( موقع آبار علي )",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.220243241886!2d39.52343131499383!3d24.40841498426911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDI0JzMwLjMiTiAzOcKwMzEnMzIuMiJF!5e0!3m2!1sen!2suk!4v1456911436942"
+            },
+            {
+                "title": " مقر الطالبات",
+                "desc": "يقع مقر الطالبات في المدينة المنورة في جامعة طيبة، مجمع كليات السلام ​بحي الفيصلية.",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14523.563003371657!2d39.5489243!3d24.4892419!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x5e09cad39a5b224e!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KfZhNmD2KrYsdmI2YbZitipINi02LfYsSDYp9mE2LfYp9mE2KjYp9iq!5e0!3m2!1sar!2ssa!4v1456911504113"
+            }
+        ]
+    }
+}
