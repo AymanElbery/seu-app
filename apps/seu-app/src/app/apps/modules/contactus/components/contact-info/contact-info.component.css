@@ -257,3 +257,10 @@ p {
 .branch-data span {
     color: #1c2172;
 }
+p.title {
+    color:  #f28d1e;
+    margin: 20px 0;
+}
+p.title span {
+    color: #1c2172;
+}
