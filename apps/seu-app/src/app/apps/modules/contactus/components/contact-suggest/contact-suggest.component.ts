@@ -31,14 +31,17 @@ export class ContactSuggestComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       'name': ['', [Validators.required]],
-      'phone': ['', [Validators.required]],
-      'ssn': ['', [Validators.required]],
-      'email': ['', [Validators.required]],
+      'phone': ['', [Validators.required,Validators.maxLength(12),Validators.minLength(10)]],
+      'ssn': ['', [Validators.required,Validators.maxLength(10),Validators.minLength(9)]],
+      'email': ['', [Validators.required,Validators.email]],
       'group': ['', [Validators.required]],
       'title': ['', [Validators.required]],
       'description': ['', [Validators.required]],
       'captcha': ['', [Validators.required]],
       'file': []
+    });
+    this.form.valueChanges.subscribe(() => {
+      this.ticket_id = '';
     });
     this.getGroups();
   }
@@ -56,6 +59,8 @@ export class ContactSuggestComponent implements OnInit {
   resolved(captchaResponse: string) {
     this.form.controls['captcha'].setValue(captchaResponse);
   }
+  submitting = false;
+  ticket_id = '';
   onSubmit() {
     if (this.form.invalid) {
       return false;
@@ -63,9 +68,25 @@ export class ContactSuggestComponent implements OnInit {
     const formData = new FormData();
     const data = this.form.value;
     Object.keys(data).forEach(key => {
-      formData.append(key, data['key']);
+      if (data[key])
+        formData.set(key, data[key]);
+    });
+
+    this.submitting = true;
+    this.contact.addSuggestRequest(formData).subscribe(response => {
+      if (response['status']) {
+        this.recaptchaRef.reset();
+        this.form.reset();
+        document.getElementById("customFileLangLabel").innerText = '';
+        document.getElementById("customFileLangLabel").innerHTML = '';
+        this.ticket_id = response['data']['ticket_id'];
+        document.getElementById("contactForm").scrollIntoView();
+      } else {
+        this.recaptchaRef.reset();
+      }
+      this.submitting = false;
+    }, error => {
+      this.submitting = false;
     })
-
   }
-
 }

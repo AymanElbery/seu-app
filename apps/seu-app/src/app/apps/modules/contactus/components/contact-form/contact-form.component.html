@@ -1,27 +1,35 @@
-<form [formGroup]="form" (submit)="onSubmit()">
+<div *ngIf="ticket_id">
+  <div class="ser-state">
+      <div style="text-align: center" class="alert  alert-success" role="alert">
+          <h3>{{"form.success_req_no" | translate }} #{{ticket_id}} </h3>
+          <h6>{{"form.success" | translate }}</h6>
+      </div>
+  </div>
+</div>
+<form [formGroup]="form" (submit)="onSubmit()" id="contactForm">
   <div class="row">
     <div class="col-md-6">
-      <label>{{'form.user_name' | translate}}</label>
+      <label>{{'form.user_name' | translate}}<span class="reqstart">*</span></label>
       <input class="form-control" type="text" formControlName="user_name">
       <control-validations-errors [control]="form.controls.user_name"></control-validations-errors>
     </div>
     <div class="col-md-6">
-      <label>{{'form.email' | translate}}</label>
+      <label>{{'form.email' | translate}}<span class="reqstart">*</span></label>
       <input class="form-control" type="text" formControlName="email">
       <control-validations-errors [control]="form.controls.email"></control-validations-errors>
     </div>
     <div class="col-md-6">
-      <label>{{'form.ssn' | translate}}</label>
+      <label>{{'form.ssn' | translate}}<span class="reqstart">*</span></label>
       <input class="form-control" type="number" formControlName="ssn">
       <control-validations-errors [control]="form.controls.ssn"></control-validations-errors>
     </div>
     <div class="col-md-6">
-      <label>{{'form.birth_date' | translate}}</label>
+      <label>{{'form.birth_date' | translate}}<span class="reqstart">*</span></label>
       <input class="form-control" type="text" formControlName="birth_date">
       <control-validations-errors [control]="form.controls.birth_date"></control-validations-errors>
     </div>
     <div class="col-md-12">
-      <label>{{'form.subject' | translate}}</label>
+      <label>{{'form.subject' | translate}}<span class="reqstart">*</span></label>
       <input class="form-control" type="text" formControlName="title">
       <control-validations-errors [control]="form.controls.title"></control-validations-errors>
     </div>
@@ -36,7 +44,7 @@
         <div class="custom-file">
           <input name="imageUrl2" type="file" accept="*/*" (change)="onFileSelect($event)" id="customFileLang"
             class="custom-file-input" />
-          <label for="customFileLang" class="custom-file-label"></label>
+          <label for="customFileLang" id="customFileLangLabel" class="custom-file-label"></label>
         </div>
         <control-validations-errors [control]="form.controls.file"></control-validations-errors>
       </div>

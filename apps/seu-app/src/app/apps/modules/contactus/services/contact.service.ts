@@ -20,7 +20,7 @@ export class ContactService extends AppUserRootService {
   }
   getHeader() {
     let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
+      //'Content-Type': 'application/json',
       'Authorization': `Basic ${window.btoa('support:support@202020')}`
     });
     return headers;
@@ -33,6 +33,9 @@ export class ContactService extends AppUserRootService {
   }
   addSuggestRequest(data) {
     return this.post('/contactus/support/add_suggest_request',data);
+  }
+  getRequestDetails(data) {
+    return this.post('/contactus/support/details',data);
   }
 
 }

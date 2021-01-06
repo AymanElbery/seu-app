@@ -16,6 +16,15 @@
         "group": "الجهة",
         "send": "إرسال",
         "captcha": "",
-        "attachment": "المرفق"
+        "attachment": "المرفق",
+        "success_req_no": "رقم الطلب ",
+        "success": "تم ارسال طلبكم بنجاح، سيتم فحصه والرد عليكم فى أرسع وقت",
+        "ticket_id":"رقم التذكرة",
+        "enquiry":"استعلام"
+    },
+    "validations": {
+        "required": "هذا الحقل مطلوب",
+        "email":"هذا الحقل يجب ان يكون بريد الكتروني صحيح",
+        "minlength":"الحقل يجب الا يقل عن {{requiredLength}}"
     }
 }

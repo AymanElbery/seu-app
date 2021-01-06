@@ -31,13 +31,16 @@ export class ContactFormComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       'user_name': ['', [Validators.required]],
-      'email': ['', [Validators.required]],
-      'ssn': ['', [Validators.required]],
-      'birth_date': ['', [Validators.required]],
+      'email': ['', [Validators.required, Validators.email]],
+      'ssn': ['', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
+      'birth_date': [, [Validators.required]],
       'title': ['', [Validators.required]],
       'description': [''],
       'captcha': ['', [Validators.required]],
       'file': []
+    });
+    this.form.valueChanges.subscribe(() => {
+      this.ticket_id = '';
     });
   }
   onFileSelect(event) {
@@ -50,6 +53,8 @@ export class ContactFormComponent implements OnInit {
     this.form.controls['captcha'].setValue(captchaResponse);
   }
   submitting = false;
+  ticket_id = '';
+
   onSubmit() {
     if (this.form.invalid) {
       return false;
@@ -57,16 +62,24 @@ export class ContactFormComponent implements OnInit {
     const formData = new FormData();
     const data = this.form.value;
     Object.keys(data).forEach(key => {
-      formData.append(key, data[key]);
+      if (data[key])
+        formData.set(key, data[key]);
     });
 
     this.submitting = true;
     this.contact.addLoginRequest(formData).subscribe(response => {
       if (response['status']) {
+        this.recaptchaRef.reset();
         this.form.reset();
-        console.log(response);
+        document.getElementById("customFileLangLabel").innerText = '';
+        document.getElementById("customFileLangLabel").innerHTML = '';
+        this.ticket_id = response['data']['ticket_id'];
+        document.getElementById("contactForm").scrollIntoView();
+      } else {
+        this.recaptchaRef.reset();
       }
-      this.recaptchaRef.reset();
+      this.submitting = false;
+    }, error => {
       this.submitting = false;
     })
   }
