@@ -83,6 +83,7 @@ export class ContactSuggestComponent implements OnInit {
         document.getElementById("contactForm").scrollIntoView();
       } else {
         this.recaptchaRef.reset();
+        this.toastr.push([{ type: 'error', 'body': this.translate.instant('messages.' + response['res_code']) }]);
       }
       this.submitting = false;
     }, error => {

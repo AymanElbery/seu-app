@@ -19,12 +19,26 @@
         "attachment": "المرفق",
         "success_req_no": "رقم الطلب ",
         "success": "تم ارسال طلبكم بنجاح، سيتم فحصه والرد عليكم فى أرسع وقت",
-        "ticket_id":"رقم التذكرة",
-        "enquiry":"استعلام"
+        "ticket_id": "رقم التذكرة",
+        "enquiry": "استعلام",
+        "status": "الحالة",
+        "note": "ملاحظة",
+        "add_note": "إضافة ملاحظة"
+    },
+    "details": {
+        "attachments": "المرفقات",
+        "time": "الوقت",
+        "to": "مرسلة الي",
+        "title": "الموضوع",
+        "description": "الوصف"
     },
     "validations": {
         "required": "هذا الحقل مطلوب",
-        "email":"هذا الحقل يجب ان يكون بريد الكتروني صحيح",
-        "minlength":"الحقل يجب الا يقل عن {{requiredLength}}"
+        "email": "هذا الحقل يجب ان يكون بريد الكتروني صحيح",
+        "minlength": "الحقل يجب الا يقل عن {{requiredLength}}"
+    },
+    "messages": {
+        "missing_params": "الرجاء تعبئة كل الحقول",
+        "invlid_params": "الرجاء تعبئة الحقول بشكل صحيح"
     }
 }

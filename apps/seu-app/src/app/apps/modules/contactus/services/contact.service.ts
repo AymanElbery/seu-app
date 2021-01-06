@@ -37,6 +37,13 @@ export class ContactService extends AppUserRootService {
   getRequestDetails(data) {
     return this.post('/contactus/support/details',data);
   }
+  download(data) {
+    return this.post('/contactus/support/download',data);
+  }
+  addNote(data) {
+    return this.post('/contactus/support/add_note',data);
+  }
+  
 
 }
 

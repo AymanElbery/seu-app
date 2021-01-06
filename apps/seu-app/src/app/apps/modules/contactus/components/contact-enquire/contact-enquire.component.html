@@ -1,5 +1,4 @@
 <form [formGroup]="form" (submit)="getDetails()" id="contactForm">
-
   <div class="row">
     <div class="col-md-6">
       <label>{{'form.ticket_id' | translate}}<span class="reqstart">*</span></label>
@@ -22,36 +21,103 @@
     </div>
   </div>
 </form>
+<seu-loader [isLoading]="requesting"></seu-loader>
+<ng-container *ngIf="ticketDetails">
+  <div style="padding: 10px;" id="contactDetails">
 
-<div class="form-group row" *ngIf="ticketDetails">
-  <label class="col-sm-2 col-form-label">التصنيف</label>
-  <div class="col-sm-10">
-    <label class="col-form-label font-weight-normal">تصنيف 4</label>
+    <!-- details -->
+    <ng-container *ngFor="let field of details_fields">
+      <ng-container *ngIf="ticketDetails[field]">
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-form-label">{{'form.'+field | translate}}:</label>
+          <div class="col-sm-6 col-md-6">
+            <div class="col-form-label font-weight-normal" [innerHtml]="ticketDetails[field]"></div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <!-- attachments -->
+    <ng-container *ngIf="ticketDetails['attachments']">
+      <div class="row">
+        <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
+        <div class="col-sm-6 col-md-6">
+          <ng-container *ngFor="let attch of ticketDetails['attachments']">
+            <div class="col-form-label font-weight-normal">
+              <a href="#" (click)="download(attch)" target="_blank">{{attch['name']}}</a>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- conversations -->
+    <ng-container *ngIf="ticketDetails['conversations']">
+      <ng-container *ngFor="let conv of ticketDetails['conversations']">
+        <hr>
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-form-label">{{'details.time'| translate}}:</label>
+          <div class="col-sm-6 col-md-6">
+            <div class="col-form-label font-weight-normal">{{conv['time']}}</div>
+          </div>
+        </div>
+        <ng-container *ngIf="conv['type']=='email'">
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-form-label">{{'details.to'| translate}}:</label>
+            <div class="col-sm-6 col-md-6">
+              <div class="col-form-label font-weight-normal">{{conv['to']}}</div>
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-form-label">{{'details.title'| translate}}:</label>
+            <div class="col-sm-6 col-md-6">
+              <div class="col-form-label font-weight-normal">{{conv['title']}}</div>
+            </div>
+          </div>
+        </ng-container>
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-form-label">{{'details.description'| translate}}:</label>
+          <div class="col-sm-8 col-md-8">
+            <div class="col-form-label font-weight-normal" [innerHtml]="conv['description']"></div>
+          </div>
+        </div>
+        <!-- attachments -->
+        <ng-container *ngIf="conv['attachments']">
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
+            <div class="col-sm-6 col-md-6">
+              <ng-container *ngFor="let attch of conv['attachments']">
+                <div class="col-form-label font-weight-normal">
+                  <a href="#" (click)="download(attch)" target="_blank">{{attch['name']}}</a>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+    </ng-container>
   </div>
-</div>
-<div class="form-group row">
-  <label class="col-sm-2 col-form-label">العنوان</label>
-  <div class="col-sm-10">
-    <label class="col-form-label font-weight-normal">عنوان التذكرة كما هو مكتوب</label>
-  </div>
-</div>
-<div class="form-group row">
-  <label class="col-sm-2 col-form-label">التفاصيل</label>
-  <div class="col-sm-10">
-    <label class="col-form-label font-weight-normal">لإنشاء شخصيات كلامية، نختار ونسجل المواهب الصوتية المحترفة. ويتم في
-      قاعدة بيانات الكلام الناتج، تقسيم كل كلمة منطوقة إلى أجزاء فردية، مثل الأصوات والمقاطع اللفظية والكلمات. ثم نطبق
-      تقنية تسمى توليف اختيار الوحدة (USS). تختار تقنية USS مقاطع (وحدات) من الكلام التي يمكن “لصقها” معا بطريقة تنتج
-      الكلام الاصطناعي عال الجودة. وبمجرد اختيار الموهبة الصوتية، فإنه يعمل مع فريق تطوير الصوت الخاص بنا لعدة أسابيع.
-      ويُستخدم برنامج نصي متنوع للتسجيلات، تم تصميمه لاحتواء جميع الأنماط الصوتية للغة الجاري تطويرها. يراقب الفريق عن
-      كثب عمليه التسجيل للتحقق من التناسق في النطق والنبرة والأسلوب. في المرحلة الثانية من إنشاء صوت TTS، تتم إضافة
-      ترميز زاخر إلى التسجيلات الصوتية. ويتم توضيح كل كلمة وصويت</label>
-  </div>
-</div>
-<hr>
-<div class="form-group row">
-  <label class="col-sm-2 col-form-label">الحل</label>
-  <div class="col-sm-10">
-    <label class="col-form-label font-weight-normal">من إنشاء صوت TTS، تتم إضافة ترميز زاخر إلى التسجيلات الصوتية. ويتم
-      توضيح كل كلمة وصويت</label>
-  </div>
-</div>
+
+  <h5>{{'form.add_note'|translate}}</h5>
+  <form [formGroup]="noteform" (submit)="onSubmit()" id="contactForm">
+    <div class="row">
+      <div class="col-md-12">
+        <label>{{'form.note' | translate}}</label>
+        <textarea class="form-control" style="height: auto;" formControlName="description" rows="5"></textarea>
+        <control-validations-errors [control]="noteform.controls.description"></control-validations-errors>
+      </div>
+      <div class="col-md-12">
+        <div class="state">
+          <h6>{{"form.captcha"|translate}} <span class="reqstart">*</span></h6>
+          <re-captcha #recaptchaNoteRef (resolved)="resolvednote($event)" [siteKey]="environment.captchaSiteKey">
+          </re-captcha>
+        </div>
+      </div>
+      <div class="col-md-12" style="text-align: center;">
+        <button class="btn btn-suggest" type="submit"
+          [disabled]="submitting || noteform.invalid">{{"form.send"|translate}}
+        </button>
+      </div>
+    </div>
+  </form>
+</ng-container>
