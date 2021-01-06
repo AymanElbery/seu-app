@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact-page.component.css','../styles/contact.css']
 })
 export class ContactPageComponent implements OnInit {
-
   isLoading = false;
-  show = 'enquiry';
-  current = 'enquiry';
+  show = 'form';
+  current = 'help';
   constructor() { }
 
   ngOnInit() {
