@@ -8,11 +8,7 @@ form {
 .col-form-label {
     line-height: 2;
 }
-.custom-file-label::after {
-    
-    content: "رفع الملف";
-    
-}
+
 .custom-file-label {
     line-height: 2.1;
 }

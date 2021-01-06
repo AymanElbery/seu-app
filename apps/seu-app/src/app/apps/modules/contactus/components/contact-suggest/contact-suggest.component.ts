@@ -9,7 +9,7 @@ import { ContactService } from '../../services/contact.service';
 @Component({
   selector: 'app-contact-suggest',
   templateUrl: './contact-suggest.component.html',
-  styleUrls: ['./contact-suggest.component.css']
+  styleUrls: ['./contact-suggest.component.css', '../styles/contact.css']
 })
 export class ContactSuggestComponent implements OnInit {
 

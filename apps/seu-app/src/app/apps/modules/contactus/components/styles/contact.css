@@ -257,3 +257,9 @@
 .nav-tabs {
     margin-bottom: 0px;
 }
+
+.custom-file-label::after {
+    right: auto;
+    height: auto;
+    content: "رفع الملف";
+}
