@@ -9,9 +9,9 @@ form {
     line-height: 2;
 }
 .custom-file-label::after {
-    height: 3.25rem;
+    
     content: "رفع الملف";
-    line-height: 2.1;
+    
 }
 .custom-file-label {
     line-height: 2.1;
