@@ -82,5 +82,209 @@
                 "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14523.563003371657!2d39.5489243!3d24.4892419!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x5e09cad39a5b224e!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KfZhNmD2KrYsdmI2YbZitipINi02LfYsSDYp9mE2LfYp9mE2KjYp9iq!5e0!3m2!1sar!2ssa!4v1456911504113"
             }
         ]
+    },
+    "jeddah": {
+        "title": "فرع جدة",
+        "contact": [
+            {
+                "label": "",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​​المملكة العربية السعودية - جدة - حي الفيصلية"
+            },
+            {
+                "label": "تحويلة شطر الطلاب",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "2002"
+            },
+            {
+                "label": "تحويلة شطر الطالبات",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "2323"
+            },
+            {
+                "label": "تلفون",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": "الرمز البريدي",
+                "iconclass": "far fa-compass",
+                "value": "23442"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب",
+                "desc": "يقع مقر الطلاب فرع الجامعة السعودية الإلكترونية في مبنى جامعة جدة ​بكلية التربية بحي الفيصلية مبنى (ب)",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d927.5356003625877!2d39.1699217!3d21.5803639!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x94f9baa00eee7ef3!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KfZhNmD2KrYsdmI2YbZitip!5e0!3m2!1sen!2s!4v1456909410066"
+            },
+            {
+                "title": " مقر الطالبات",
+                "desc": "يقع مقر الطالبات لفرع جدة في مبنى جامعة جدة مجمع كليات البنات بحي الفيصلية، مبنى رقم (14)",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3710.237085086981!2d39.1804486!3d21.5766668!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d058fc21b109%3A0x285877cf5a9e9c0c!2sSaudi+Electronic+University+-+Girls+Section!5e0!3m2!1sen!2s!4v1456909299553"
+            }
+        ]
+    },
+    "qassim": {
+        "title": "فرع القصيم",
+        "contact": [
+            {
+                "label": "",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "المملكة العربية السعودية، مدينة بريدة، مبنى السنة التحضيرية في جامعة القصيم"
+            },
+            {
+                "label": "تحويلة شطر الطلاب",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "6000"
+            },
+            {
+                "label": "تلفون",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": " البريد الإلكتروني للفرع",
+                "iconclass": "fas fa-envelope-open",
+                "value": "elq-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب",
+                "desc": "يقع مقر الطلاب فرع الجامعة السعودية الإلكترونية في مبنى جامعة جدة ​بكلية التربية بحي الفيصلية مبنى (ب)",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.410458919383!2d43.762695315032886!3d26.345582983375163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDIwJzQ0LjEiTiA0M8KwNDUnNTMuNiJF!5e0!3m2!1sen!2ssa!4v1456912631249"
+            }
+        ]
+    },
+    "alahsa": {
+        "title": "فرع الأحساء",
+        "contact": [
+            {
+                "label": "",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​​​​​المملكة العربية السعودية - الأحساء - الهفوف "
+            },
+            {
+                "label": "تلفون",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": " البريد الإلكتروني للفرع",
+                "iconclass": "fas fa-envelope-open",
+                "value": "ahf-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب و الطالبات",
+                "desc": "امتداد طريق الخليج​",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1803.8228693597957!2d49.734983241918314!3d25.282499995964134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE2JzU3LjAiTiA0OcKwNDQnMDIuMCJF!5e0!3m2!1sar!2ssa!4v1483515610428"
+            }
+        ]
+    },
+    "abha": {
+        "title": "فرع أبها",
+        "contact": [
+            {
+                "label": "",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​المملكة العربية السعودية - أبها"
+            },
+            {
+                "label": "تلفون",
+                "iconclass": "fas fa-phone",
+                "value": "+966172417139"
+            },
+            {
+                "label": " البريد الإلكتروني للفرع",
+                "iconclass": "fas fa-envelope-open",
+                "value": "ahb-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب",
+                "desc": "مدينة أبها—فرع الجامعة السعودية الالكترونية في جامعة الملك خالد  بالمدينة الجامعية حي القريقر مبنى أ",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1894.58159536099!2d42.55992592346373!3d18.248339098965143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fcaac8d05abed1%3A0x249997a8b354e044!2zNzc0OdiMINin2YTZgtix2YrZgtix2Iwg2KPYqNmH2KcgNjI1MjnCoDMzNzQ!5e0!3m2!1sar!2ssa!4v1456914787919"
+            },
+            {
+                "title": " مقر الطالبات",
+                "desc": "فرع الجامعة السعودية الالكترونية في  حي السامر المركز الجامعي لدراسة الطالبات مبنى أ",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4613.647742679007!2d42.51415128469909!3d18.22802278281215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e354f5575f9c27%3A0x49a7f080a68cd1fc!2zNDYzMiDYp9mE2LHZitin2LbYjCDYtNmF2LPYp9mG2Iwg2KPYqNmH2KcgNjI1MjHCoDkxNDA!5e1!3m2!1sar!2ssa!4v1456914994290"
+            }
+        ]
+    },
+    "tabuk": {
+        "title": "فرع تبوك",
+        "contact": [
+            {
+                "label": "",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​​​​​​​​​​​​​​​المملكة العربية السعودية - تبوك"
+            },
+            {
+                "label": "تلفون",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": " البريد الإلكتروني للفرع",
+                "iconclass": "fas fa-envelope-open",
+                "value": "Tabu-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب",
+                "desc": "يقع مقر الجامعة الالكترونية للطلاب في مدينة تبوك في مبنى كلية العلوم التابع لجامعة تبوك على طريق ضبا",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.4651693814167!2d36.47253431507686!3d28.375014982520096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDIyJzMwLjEiTiAzNsKwMjgnMjkuMCJF!5e0!3m2!1sen!2ssa!4v1456982034569"
+            }
+        ]
+    },
+    "jazan": {
+        "title": "فرع جازان",
+        "contact": [
+            {
+                "label": "",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​المملكة العربية السعودية - جازان"
+            },
+            {
+                "label": "تلفون الطلاب",
+                "iconclass": "fas fa-phone",
+                "value": "0173342801 – 0173342815"
+            },
+            {
+                "label": "تلفون الطالبات",
+                "iconclass": "fas fa-phone",
+                "value": "0173223347"
+            },
+            {
+                "label": " البريد الإلكتروني للفرع",
+                "iconclass": "fas fa-envelope-open",
+                "value": "Jaz-seu@seu.edu.sa"
+            },
+            {
+                "label": "تحويلة",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "1548"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب",
+                "desc": "يقع في فرع الجامعة السعودية الالكترونية بمنطقة جازان بالمدينة الجامعية، مبنى السنة التحضيرية",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15264.798797533424!2d42.5508258!3d16.9647246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16080763837ef1a3%3A0xf3b94b7cd2d2f6bc!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KXZhNmD2KrYsdmI2YbZitipINmB2LHYuSDYrNin2LLYp9mG!5e0!3m2!1sar!2ssa!4v1456982468857"
+            },
+            {
+                "title": " مقر الطالبات",
+                "desc": "يقع في فرع الجامعة السعودية الالكترونية بمنطقة جازان بالمدينة الجامعية، مبنى السنة التحضيرية",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15264.798797533424!2d42.5508258!3d16.9647246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16080763837ef1a3%3A0xf3b94b7cd2d2f6bc!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KXZhNmD2KrYsdmI2YbZitipINmB2LHYuSDYrNin2LLYp9mG!5e0!3m2!1sar!2ssa!4v1456982468857"
+            }
+        ]
     }
+
+
 }
