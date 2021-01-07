@@ -9,7 +9,7 @@ import { ContactService } from '../../services/contact.service';
 @Component({
   selector: 'app-contact-enquire',
   templateUrl: './contact-enquire.component.html',
-  styleUrls: ['./contact-enquire.component.css']
+  styleUrls: ['./contact-enquire.component.css','../styles/contact.css']
 })
 export class ContactEnquireComponent implements OnInit {
 
@@ -35,9 +35,9 @@ export class ContactEnquireComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      'ticket_id': ['', [Validators.required]],
-      'ssn': ['', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
-      'captcha': ['', [Validators.required]],
+      'ticket_id': ['128507', [Validators.required]],
+      'ssn': ['1111111111', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
+      //'captcha': ['', [Validators.required]],
     });
     this.getDetails();
 

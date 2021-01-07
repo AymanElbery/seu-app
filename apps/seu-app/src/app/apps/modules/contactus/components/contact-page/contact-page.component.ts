@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactPageComponent implements OnInit {
   isLoading = false;
-  show = 'form';
-  current = 'help';
+  show = 'enquiry';
+  current = 'enquiry';
   constructor() { }
 
   ngOnInit() {
