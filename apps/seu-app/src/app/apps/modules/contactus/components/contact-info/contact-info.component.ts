@@ -5,7 +5,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-contact-info',
   templateUrl: './contact-info.component.html',
-  styleUrls: ['./contact-info.component.css', '../styles/contact.css']
+  styleUrls: [ '../styles/contact.css','./contact-info.component.css']
 })
 export class ContactInfoComponent implements OnInit {
 

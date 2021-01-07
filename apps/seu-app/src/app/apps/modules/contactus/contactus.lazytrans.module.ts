@@ -31,6 +31,6 @@ export function createTranslateLoader(http: HttpClient) {
 })
 export class ContactusLazyTransModule {
   constructor(private trans: TranslateService) {
-    trans.use('en');
+    trans.use('ar');
   }
 }

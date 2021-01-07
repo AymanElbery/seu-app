@@ -25,7 +25,7 @@
 }
 
 .header .username {
-    text-align: right;
+    text-align: left;
 }
 
 @media (max-width: 767.98px) {
@@ -647,7 +647,7 @@ nav.navbar.bootsnav ul.nav .dropdown-menu .about {
 .top-nav a i {
     font-size: 13px;
     color: #fff;
-    margin-left: 4px
+    margin-right: 4px
 }
 
 .top-nav a.today {
@@ -666,7 +666,7 @@ nav.navbar.bootsnav ul.nav .dropdown-menu .about {
 }
 
 .left-s {
-    text-align: left
+    text-align: right;
 }
 
 @media (min-width:1024px) {
@@ -759,7 +759,7 @@ nav.navbar.bootsnav ul.nav>li>a {
     nav.bootsnav.brand-center.center-side .navbar-collapse .col-half.right {
         padding-left: 0;
         padding-right: 0;
-        text-align: right
+        text-align: left
     }
 }
 
@@ -1313,3 +1313,7 @@ nav.navbar.bootsnav ul.nav>li>a {
     margin-right: -28px;
 }
 /*  */
+.contact-page-inner .section-header h2 {
+    
+    text-align: left;
+}
