@@ -1,8 +1,19 @@
 {
     "general": {
+        "seu": "Saudi Electronic University",
         "help": "ٍSingle Sign On Suppoert",
         "suggestions": "Complaints and suggestions",
-        "enquiry": "Enquiry"
+        "enquiry": "Enquiry",
+        "main_camups": "Main Campus",
+        "main_address": "Saudi Arabia - Ryiadh - Prince Muhammad Ibn Salman Rd - Ar Rabi",
+        "branch_name": "Branch Name",
+        "nearest_branch": "Nearest Branch",
+        "main_phone": "SEU Hotline",
+        "direct_phone": "(International)",
+        "local_phone": "Call (Local) ",
+        "local_phone_Val": "199099",
+        "direct_phone_val": "00966112613500",
+        "Complaints_and_suggestions": "Suggestions and Complaints"
     },
     "form": {
         "name": "Name",

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-info',
@@ -13,11 +14,23 @@ export class ContactInfoComponent implements OnInit {
   branchesData;
   branchesList = [];
   loading = true;
-  constructor(private http: HttpClient, private dom: DomSanitizer) { }
+  constructor(private http: HttpClient, private dom: DomSanitizer, private translate: TranslateService) { }
 
   ngOnInit() {
+    this.getBrannhes();
+    this.translate.onLangChange.subscribe(() => {
+      this.getBrannhes();
+    });
+  }
+  down() {
+    document.getElementById("contact-page-form").scrollIntoView();
+    return false;
+  }
+
+  getBrannhes() {
     this.loading = true;
-    this.http.get("/assets/branches.json").subscribe((branches) => {
+    console.log(this.translate.currentLang);
+    this.http.get("/assets/branches_" + (this.translate.currentLang) + ".json").subscribe((branches) => {
       this.branchesData = branches;
       let blist = [];
       Object.keys(branches).forEach(key => {
@@ -28,7 +41,7 @@ export class ContactInfoComponent implements OnInit {
         });
       });
       this.branchesList = blist;
-      this.selectedbranch = 'madina';
+      this.selectedbranch = 'MainCampus';
       this.loading = false;
     })
   }
