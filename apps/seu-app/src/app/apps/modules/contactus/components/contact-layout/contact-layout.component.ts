@@ -21,8 +21,6 @@ export class ContactLayoutComponent implements OnInit {
     });
   }
 
-
-
   useLang(code) {
     this.currLang = code;
     this.translate.use(code);
