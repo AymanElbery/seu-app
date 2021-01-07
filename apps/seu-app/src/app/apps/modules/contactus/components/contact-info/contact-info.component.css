@@ -264,3 +264,15 @@ p.title {
 p.title span {
     color: #1c2172;
 }
+.content-english  .contact-page-inner .section-header h2 {
+    text-align: left ;
+    text-transform: capitalize;
+} 
+.content-english .contact-page-inner .section-header::before {
+    left: calc(0%);
+}
+.content-arabic  .contact-page-inner .section-header h2 {
+    text-align: right ;
+    text-transform: capitalize;
+} 
+

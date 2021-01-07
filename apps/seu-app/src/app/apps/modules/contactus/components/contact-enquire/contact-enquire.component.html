@@ -21,7 +21,9 @@
     </div>
   </div>
 </form>
-<seu-loader [isLoading]="requesting"></seu-loader>
+<div style="position: relative;">
+  <seu-loader [isLoading]="requesting"></seu-loader>
+</div>
 <ng-container *ngIf="ticketDetails">
   <div style="padding: 10px;" id="contactDetails">
 

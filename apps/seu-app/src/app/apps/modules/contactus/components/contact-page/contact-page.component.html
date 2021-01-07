@@ -9,7 +9,7 @@
 
 <div class="contact-page-inner" id="contact-page-form">
     <div *ngIf="!isLoading" class="dashboard-wrap">
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs {{currLang == 'ar' ? 'content-arabic' : 'content-english'}} ">
             <li class="nav-item">
                 <a class="nav-link " (click)="toggle('form','help')" [class.active]="current=='help'" href="#">
                     <i class="fas fa-sign-in-alt"></i>

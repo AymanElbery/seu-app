@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-contact-layout',
   templateUrl: './contact-layout.component.html',
-  styleUrls: ['./contact-layout.component.css']
+  styleUrls: ['../styles/contact.css','./contact-layout.component.css']
 })
 export class ContactLayoutComponent implements OnInit {
   currLang;

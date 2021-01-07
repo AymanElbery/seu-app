@@ -321,3 +321,6 @@ form {
         border-radius: 5px;
         color: #09151f
     }
+    .content-english .contact-page-inner .nav-tabs > li > a i {
+        margin-right: 5px;
+    }
