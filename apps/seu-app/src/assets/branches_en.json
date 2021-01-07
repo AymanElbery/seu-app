@@ -1,4 +1,30 @@
-{
+{   "MainCampus": {
+    "title": "Headquarters ",
+    "contact": [
+        {
+            "label": "",
+            "iconclass": "fas fa-map-marker-alt",
+            "value": "Saudi Arabia - Ryiadh"
+        },
+        {
+            "label": "تلفون",
+            "iconclass": "fas fa-phone",
+            "value": "+966112613500 - 199099"
+        }
+    ],
+    "maps": [
+        {
+            "title": "Main Campus",
+            "desc": "Saudi Arabia - Ryiadh - Prince Muhammad Ibn Salman Rd - Ar Rabi.",
+            "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.0409008627457!2d46.67493811537127!3d24.794052954021275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efcce47c28ac1%3A0xcd8c06eb681e5fd4!2s4552+Prince+Saud+Ibn+Muhammad+Ibn+Muqrin+Rd%2C+Ar+Rabi%2C+Riyadh+13316%C2%A06867%2C+Saudi+Arabia!5e0!3m2!1sen!2s!4v1456984539732"
+        },
+        {
+            "title": "Female Campus",
+            "desc": "Saudi Arabia - Ryiadh - Abi Bakr As Siddiq Rd- An Narjis.",
+            "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7243.013389557378!2d46.66941!3d24.81234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4bf3263eabe4940c!2sSaudi+Electronic+University+-+Female+Section!5e0!3m2!1sen!2sus!4v1456984456764"
+        }
+    ]
+},
     "dammam": {
         "title": "Dammam Branch",
         "contact": [
