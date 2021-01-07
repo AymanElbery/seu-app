@@ -26,84 +26,91 @@
   <div style="padding: 10px;" id="contactDetails">
 
     <!-- details -->
-    <ng-container *ngFor="let field of details_fields">
-      <ng-container *ngIf="ticketDetails[field]">
+    <div class="contact-details">
+
+
+      <ng-container *ngFor="let field of details_fields">
+        <ng-container *ngIf="ticketDetails[field]">
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-form-label">{{'form.'+field | translate}}:</label>
+            <div class="col-sm-6 col-md-6">
+              <div class="col-form-label font-weight-normal" [innerHtml]="ticketDetails[field]"></div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <!-- attachments -->
+      <ng-container *ngIf="ticketDetails['attachments']">
         <div class="row">
-          <label class="col-sm-3 col-md-3 col-form-label">{{'form.'+field | translate}}:</label>
+          <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
           <div class="col-sm-6 col-md-6">
-            <div class="col-form-label font-weight-normal" [innerHtml]="ticketDetails[field]"></div>
+            <ng-container *ngFor="let attch of ticketDetails['attachments']">
+              <div class="col-form-label font-weight-normal">
+                <a href="#" class="attch" (click)="download(attch)" target="_blank">{{attch['name']}}</a>
+              </div>
+            </ng-container>
           </div>
         </div>
       </ng-container>
-    </ng-container>
-
-    <!-- attachments -->
-    <ng-container *ngIf="ticketDetails['attachments']">
-      <div class="row">
-        <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
-        <div class="col-sm-6 col-md-6">
-          <ng-container *ngFor="let attch of ticketDetails['attachments']">
-            <div class="col-form-label font-weight-normal">
-              <a href="#" (click)="download(attch)" target="_blank">{{attch['name']}}</a>
-            </div>
-          </ng-container>
-        </div>
-      </div>
-    </ng-container>
-
+    </div>
     <!-- conversations -->
     <ng-container *ngIf="ticketDetails['conversations']">
       <ng-container *ngFor="let conv of ticketDetails['conversations']">
-        <hr>
-        <div class="row">
-          <label class="col-sm-3 col-md-3 col-form-label">{{'details.time'| translate}}:</label>
-          <div class="col-sm-6 col-md-6">
-            <div class="col-form-label font-weight-normal">{{conv['time']}}</div>
+        <div class="contact-comment">
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-form-label">{{'details.time'| translate}}:</label>
+            <div class="col-sm-6 col-md-6">
+              <div class="col-form-label font-weight-normal">{{conv['time']}}</div>
+            </div>
           </div>
+          <ng-container *ngIf="conv['type']=='email'">
+            <div class="row">
+              <label class="col-sm-3 col-md-3 col-form-label">{{'details.to'| translate}}:</label>
+              <div class="col-sm-6 col-md-6">
+                <div class="col-form-label font-weight-normal">{{conv['to']}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <label class="col-sm-3 col-md-3 col-form-label">{{'details.title'| translate}}:</label>
+              <div class="col-sm-6 col-md-6">
+                <div class="col-form-label font-weight-normal">{{conv['title']}}</div>
+              </div>
+            </div>
+          </ng-container>
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-form-label">{{'details.description'| translate}}:</label>
+            <div class="col-sm-8 col-md-8">
+              <div class="col-form-label font-weight-normal" [innerHtml]="conv['description']"></div>
+            </div>
+          </div>
+          <!-- attachments -->
+          <ng-container *ngIf="conv['attachments']">
+            <div class="row">
+              <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
+              <div class="col-sm-6 col-md-6">
+                <ng-container *ngFor="let attch of conv['attachments']">
+                  <div class="col-form-label font-weight-normal">
+                    <a href="#" class="attch" (click)="download(attch)" target="_blank">{{attch['name']}}</a>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </ng-container>
+
         </div>
-        <ng-container *ngIf="conv['type']=='email'">
-          <div class="row">
-            <label class="col-sm-3 col-md-3 col-form-label">{{'details.to'| translate}}:</label>
-            <div class="col-sm-6 col-md-6">
-              <div class="col-form-label font-weight-normal">{{conv['to']}}</div>
-            </div>
-          </div>
-          <div class="row">
-            <label class="col-sm-3 col-md-3 col-form-label">{{'details.title'| translate}}:</label>
-            <div class="col-sm-6 col-md-6">
-              <div class="col-form-label font-weight-normal">{{conv['title']}}</div>
-            </div>
-          </div>
-        </ng-container>
-        <div class="row">
-          <label class="col-sm-3 col-md-3 col-form-label">{{'details.description'| translate}}:</label>
-          <div class="col-sm-8 col-md-8">
-            <div class="col-form-label font-weight-normal" [innerHtml]="conv['description']"></div>
-          </div>
-        </div>
-        <!-- attachments -->
-        <ng-container *ngIf="conv['attachments']">
-          <div class="row">
-            <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
-            <div class="col-sm-6 col-md-6">
-              <ng-container *ngFor="let attch of conv['attachments']">
-                <div class="col-form-label font-weight-normal">
-                  <a href="#" (click)="download(attch)" target="_blank">{{attch['name']}}</a>
-                </div>
-              </ng-container>
-            </div>
-          </div>
-        </ng-container>
       </ng-container>
     </ng-container>
   </div>
-
+ <!-- conversations 
   <h5>{{'form.add_note'|translate}}</h5>
+  -->
+  <div class="form-details">
   <form [formGroup]="noteform" (submit)="onSubmit()" id="contactForm">
     <div class="row">
       <div class="col-md-12">
         <label>{{'form.note' | translate}}</label>
-        <textarea class="form-control" style="height: auto;" formControlName="description" rows="5"></textarea>
+        <textarea class="form-control" style="height: auto;" formControlName="description" rows="5" placeholder="اضف ملاحظات اخرى هنا"></textarea>
         <control-validations-errors [control]="noteform.controls.description"></control-validations-errors>
       </div>
       <div class="col-md-12">
@@ -120,4 +127,5 @@
       </div>
     </div>
   </form>
+</div>
 </ng-container>
