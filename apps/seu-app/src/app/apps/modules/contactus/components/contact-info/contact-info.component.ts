@@ -14,12 +14,15 @@ export class ContactInfoComponent implements OnInit {
   branchesData;
   branchesList = [];
   loading = true;
+  currLang;
   constructor(private http: HttpClient, private dom: DomSanitizer, private translate: TranslateService) { }
 
   ngOnInit() {
     this.getBrannhes();
+    this.currLang = this.translate.currentLang;
     this.translate.onLangChange.subscribe(() => {
       this.getBrannhes();
+      this.currLang = this.translate.currentLang;
     });
   }
   down() {

@@ -14,7 +14,7 @@ export class ContactLayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.useLang("en");
+    //this.useLang("en");
     this.currLang = this.translate.currentLang;
     this.translate.onLangChange.subscribe(() => {
       this.currLang = this.translate.currentLang;
