@@ -7,11 +7,14 @@ import { ContactLayoutComponent } from './components/contact-layout/contact-layo
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { ContactFooterComponent } from './components/contact-footer/contact-footer.component';
 import { ContactSuggestComponent } from './components/contact-suggest/contact-suggest.component';
+import { ContactFooterEnComponent } from './components/contact-footer-en/contact-footer-en.component';
+import { ContactHeaderEnComponent } from './components/contact-header-en/contact-header-en.component';
 
 export const componentDeclarations: any[] = [
     ContactLayoutComponent, ContactPageComponent,
     ContactInfoComponent, ContactFormComponent, ContactSuggestComponent,
-    ContactEnquireComponent, ContactHeaderComponent, ContactFooterComponent
+    ContactEnquireComponent, ContactHeaderComponent, ContactFooterComponent,
+    ContactFooterEnComponent, ContactHeaderEnComponent
 ];
 
 export const providerDeclarations: any[] = [

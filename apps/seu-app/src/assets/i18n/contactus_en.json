@@ -1,0 +1,44 @@
+{
+    "general": {
+        "help": "ٍSingle Sign On Suppoert",
+        "suggestions": "Complaints and suggestions",
+        "enquiry": "Enquiry"
+    },
+    "form": {
+        "name": "Name",
+        "user_name": "User Name (sso)",
+        "phone": "Phone",
+        "email": "Personal Email",
+        "ssn": "SSN",
+        "birth_date": "Birth date",
+        "subject": "Subject",
+        "description": "Description",
+        "group": "Department",
+        "send": "Send",
+        "captcha": "",
+        "attachment": "Attachement",
+        "success_req_no": "Ticket No ",
+        "success": "تم ارسال طلبكم بنجاح، سيتم فحصه والرد عليكم فى أرسع وقت",
+        "ticket_id": "Ticket No",
+        "enquiry": "Submit",
+        "status": "Status",
+        "note": "Comment",
+        "add_note": "Add Comment"
+    },
+    "details": {
+        "attachments": "Attachments",
+        "time": "Time",
+        "to": "Sent to",
+        "title": "Subject",
+        "description": "Description"
+    },
+    "validations": {
+        "required": "Required",
+        "email": "invalid Email",
+        "minlength": "min length is {{requiredLength}}"
+    },
+    "messages": {
+        "missing_params": "Please fill all fields",
+        "invlid_params": "please fill fields with valid data"
+    }
+}
