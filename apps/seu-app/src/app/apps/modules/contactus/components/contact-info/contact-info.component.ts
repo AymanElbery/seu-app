@@ -32,7 +32,6 @@ export class ContactInfoComponent implements OnInit {
 
   getBrannhes() {
     this.loading = true;
-    console.log(this.translate.currentLang);
     this.http.get("/assets/branches_" + (this.translate.currentLang) + ".json").subscribe((branches) => {
       this.branchesData = branches;
       let blist = [];

@@ -1,5 +1,5 @@
-<app-contact-header *ngIf="currLang == 'ar'"></app-contact-header>
-<app-contact-header-en *ngIf="currLang == 'en'"></app-contact-header-en>
+<app-contact-header *ngIf="currLang == 'ar'" (updateLang)="useLang($event)"></app-contact-header>
+<app-contact-header-en *ngIf="currLang == 'en'" (updateLang)="useLang($event)"></app-contact-header-en>
 <div class="container">
     <div class="row">
         <div class="col-md-12">

@@ -29,12 +29,16 @@
         "captcha": "",
         "attachment": "Attachement",
         "success_req_no": "Ticket No ",
-        "success": "تم ارسال طلبكم بنجاح، سيتم فحصه والرد عليكم فى أرسع وقت",
+        "success": "Request has been send, we will reply as soon as possible",
         "ticket_id": "Ticket No",
         "enquiry": "Submit",
         "status": "Status",
         "note": "Comment",
-        "add_note": "Add Comment"
+        "add_note": "Add Comment",
+        "type": "Type",
+        "type_suggest": "suggestion",
+        "type_complaint": "Complaint",
+        "id": "Request #"
     },
     "details": {
         "attachments": "Attachments",
@@ -50,6 +54,9 @@
     },
     "messages": {
         "missing_params": "Please fill all fields",
-        "invlid_params": "please fill fields with valid data"
+        "invlid_params": "please fill fields with valid data",
+        "ticket_not_found": "invalid request number",
+        "ticket_ssn_invalid": "request no and ssn doesn't match",
+        "invalid_captach": "Capcha code is invalid"
     }
 }

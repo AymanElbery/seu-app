@@ -6,6 +6,7 @@ import { AppsSharedModule } from '../apps-shared/apps.shared.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContactusLazyTransModule } from './contactus.lazytrans.module';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [componentDeclarations],
@@ -15,7 +16,9 @@ import { RecaptchaModule } from 'ng-recaptcha';
     RecaptchaModule,
     RouterModule.forChild(routes),
     MatDialogModule,
-    ContactusLazyTransModule
+    ContactusLazyTransModule,
+    DatepickerModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ]
 })
 export class ContactusModule { }

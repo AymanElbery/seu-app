@@ -20,18 +20,18 @@
     </div>
     <div class="col-md-6">
       <label>{{'form.ssn' | translate}}<span class="reqstart">*</span></label>
-      <input class="form-control" type="number" formControlName="ssn">
+      <input class="form-control" type="text" formControlName="ssn"  (keypress)="keyPress($event)" maxlength="10">
       <control-validations-errors [control]="form.controls.ssn"></control-validations-errors>
     </div>
     <div class="col-md-6">
       <label>{{'form.birth_date' | translate}}<span class="reqstart">*</span></label>
-      <input class="form-control" type="text" formControlName="birth_date">
+      <input class="form-control" type="text" formControlName="birth_date" bsDatepicker [bsConfig]="datePickerConfig">
       <control-validations-errors [control]="form.controls.birth_date"></control-validations-errors>
     </div>
     <div class="col-md-12">
       <label>{{'form.subject' | translate}}<span class="reqstart">*</span></label>
-      <input class="form-control" type="text" formControlName="title">
-      <control-validations-errors [control]="form.controls.title"></control-validations-errors>
+      <input class="form-control" type="text" formControlName="subject">
+      <control-validations-errors [control]="form.controls.subject"></control-validations-errors>
     </div>
     <div class="col-md-12">
       <label>{{'form.description' | translate}}</label>

@@ -9,7 +9,7 @@ import { ContactService } from '../../services/contact.service';
 @Component({
   selector: 'app-contact-enquire',
   templateUrl: './contact-enquire.component.html',
-  styleUrls: ['./contact-enquire.component.css','../styles/contact.css']
+  styleUrls: ['./contact-enquire.component.css', '../styles/contact.css']
 })
 export class ContactEnquireComponent implements OnInit {
 
@@ -35,9 +35,9 @@ export class ContactEnquireComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      'ticket_id': ['128507', [Validators.required]],
-      'ssn': ['1111111111', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
-      //'captcha': ['', [Validators.required]],
+      'ticket_id': ['', [Validators.required]],
+      'ssn': ['', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
+      'captcha': ['', [Validators.required]],
     });
     this.getDetails();
 
@@ -50,7 +50,7 @@ export class ContactEnquireComponent implements OnInit {
   resolved(captchaResponse: string) {
     this.form.controls['captcha'].setValue(captchaResponse);
   }
-  details_fields = ['name', 'user_name', 'ssn', 'email', 'phone', 'subject', 'description', 'status'];
+  details_fields = ['id', 'status','name', 'user_name', 'ssn', 'email', 'phone','type', 'subject', 'description'];
   requesting = false;
   err_code = '';
   formInput;
@@ -137,6 +137,13 @@ export class ContactEnquireComponent implements OnInit {
     }, error => {
       this.submitting = false;
     })
+  }
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    const inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode !== 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 }
 

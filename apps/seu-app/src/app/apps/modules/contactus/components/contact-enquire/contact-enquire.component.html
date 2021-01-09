@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-md-6">
       <label>{{'form.ticket_id' | translate}}<span class="reqstart">*</span></label>
-      <input class="form-control" type="number" formControlName="ticket_id">
+      <input class="form-control" type="text" formControlName="ticket_id" (keypress)="keyPress($event)" maxlength="10">
       <control-validations-errors [control]="form.controls.ticket_id"></control-validations-errors>
     </div>
     <div class="col-md-6">
       <label>{{'form.ssn' | translate}}<span class="reqstart">*</span></label>
-      <input class="form-control" type="number" formControlName="ssn">
+      <input class="form-control" type="text" formControlName="ssn" (keypress)="keyPress($event)" maxlength="10">
       <control-validations-errors [control]="form.controls.ssn"></control-validations-errors>
     </div>
     <div class="col-md-12">

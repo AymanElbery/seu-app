@@ -15,7 +15,7 @@
     </div>
     <div class="col-md-6">
       <label>{{'form.ssn' | translate}}<span class="reqstart">*</span></label>
-      <input class="form-control" type="number" formControlName="ssn">
+      <input class="form-control" type="text" formControlName="ssn"  (keypress)="keyPress($event)" maxlength="10">
       <control-validations-errors [control]="form.controls.ssn"></control-validations-errors>
     </div>
 
@@ -27,7 +27,7 @@
 
     <div class="col-md-6">
       <label>{{'form.phone' | translate}}<span class="reqstart">*</span></label>
-      <input class="form-control" type="number" formControlName="phone">
+      <input class="form-control" type="text" formControlName="phone"  (keypress)="keyPress($event)" maxlength="12">
       <control-validations-errors [control]="form.controls.phone"></control-validations-errors>
     </div>
 
@@ -35,13 +35,20 @@
       <label>{{'form.group' | translate}}<span class="reqstart">*</span></label>
       <ng-select [items]="groups" bindLabel="NAME_AR" bindValue="ID" formControlName="group">
       </ng-select>
-
       <control-validations-errors [control]="form.controls.group"></control-validations-errors>
     </div>
     <div class="col-md-6">
+      <label>{{'form.type' | translate}}<span class="reqstart">*</span></label>
+      <select class="form-control" formControlName="type">
+        <option value="{{'form.type_suggest'|translate}}">{{'form.type_suggest'|translate}}</option>
+        <option value="{{'form.type_complaint'|translate}}">{{'form.type_complaint'|translate}}</option>  
+      </select>
+      <control-validations-errors [control]="form.controls.type"></control-validations-errors>
+    </div>
+    <div class="col-md-12">
       <label>{{'form.subject' | translate}}<span class="reqstart">*</span></label>
-      <input class="form-control" type="text" formControlName="title">
-      <control-validations-errors [control]="form.controls.title"></control-validations-errors>
+      <input class="form-control" type="text" formControlName="subject">
+      <control-validations-errors [control]="form.controls.subject"></control-validations-errors>
     </div>
     <div class="col-md-12">
       <label>{{'form.description' | translate}}<span class="reqstart">*</span></label>
@@ -66,7 +73,8 @@
       </div>
     </div>
     <div class="col-md-12" style="text-align: center;">
-      <button class="btn btn-suggest" type="submit" [disabled]="submitting || form.invalid"> {{"form.send"|translate}}</button>
+      <button class="btn btn-suggest" type="submit" [disabled]="submitting || form.invalid">
+        {{"form.send"|translate}}</button>
     </div>
   </div>
 </form>

@@ -116,7 +116,7 @@ body {
 
 body {
   font-weight: 600;
-  font-family: fontreg;
+  font-family: fontreg !important;
   position: relative;
   line-height: 24px;
   color: $color_log_cabin_approx;
@@ -3775,3 +3775,24 @@ form {
  .wpwl-container-card{
    padding: 5px;
  }
+
+ app-contact-header .navbar-nav .dropdown-menu {
+  float: right !important;
+  position: absolute !important;
+}
+app-contact-header .navbar-nav .dropdown-menu {
+  float: right !important;
+  position: absolute !important;
+}
+
+app-contact-header nav.navbar.bootsnav ul.nav .dropdown-menu .dropdown-menu{
+  left: 100% !important;
+}
+app-contact-header nav.navbar.bootsnav ul.nav.navbar-right .dropdown-menu .dropdown-menu{
+  left: 198px !important;
+}
+@media (max-width: 992px){
+  app-contact-header nav.navbar.bootsnav ul.nav.navbar-right .dropdown-menu .dropdown-menu{
+  left: 0px !important;
+}
+}

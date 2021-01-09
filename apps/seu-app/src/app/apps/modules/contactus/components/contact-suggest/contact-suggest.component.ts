@@ -31,11 +31,12 @@ export class ContactSuggestComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       'name': ['', [Validators.required]],
-      'phone': ['', [Validators.required,Validators.maxLength(12),Validators.minLength(10)]],
-      'ssn': ['', [Validators.required,Validators.maxLength(10),Validators.minLength(9)]],
-      'email': ['', [Validators.required,Validators.email]],
+      'phone': ['', [Validators.required, Validators.maxLength(12), Validators.minLength(10)]],
+      'ssn': ['', [Validators.required, Validators.maxLength(10), Validators.minLength(9)]],
+      'email': ['', [Validators.required, Validators.email]],
       'group': ['', [Validators.required]],
-      'title': ['', [Validators.required]],
+      'type': ['', [Validators.required]],
+      'subject': ['', [Validators.required]],
       'description': ['', [Validators.required]],
       'captcha': ['', [Validators.required]],
       'file': []
@@ -89,5 +90,12 @@ export class ContactSuggestComponent implements OnInit {
     }, error => {
       this.submitting = false;
     })
+  }
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    const inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode !== 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 }

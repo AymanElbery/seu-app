@@ -1,7 +1,9 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { RecaptchaComponent } from 'ng-recaptcha';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { environment } from 'src/environments/environment';
 import { ContactService } from '../../services/contact.service';
@@ -9,11 +11,16 @@ import { ContactService } from '../../services/contact.service';
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
-  styleUrls: ['./contact-form.component.css', '../styles/contact.css']
+  styleUrls: ['./contact-form.component.css', '../styles/contact.css'],
+  providers: [DatePipe]
+
 })
 export class ContactFormComponent implements OnInit {
 
   @ViewChild('recaptchaRef', { read: RecaptchaComponent, static: false }) recaptchaRef: RecaptchaComponent;
+
+  datePickerConfig: Partial<BsDatepickerConfig>;
+
 
   environment;
   form: FormGroup;
@@ -26,6 +33,7 @@ export class ContactFormComponent implements OnInit {
     private contact: ContactService
   ) {
     this.environment = environment;
+    this.datePickerConfig = {dateInputFormat: 'DD-MM-YYYY', showWeekNumbers: false};
   }
 
   ngOnInit() {
@@ -34,7 +42,7 @@ export class ContactFormComponent implements OnInit {
       'email': ['', [Validators.required, Validators.email]],
       'ssn': ['', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
       'birth_date': [, [Validators.required]],
-      'title': ['', [Validators.required]],
+      'subject': ['', [Validators.required]],
       'description': [''],
       'captcha': ['', [Validators.required]],
       'file': []
@@ -83,5 +91,12 @@ export class ContactFormComponent implements OnInit {
     }, error => {
       this.submitting = false;
     })
+  }
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    const inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode !== 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 }

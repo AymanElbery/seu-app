@@ -1313,3 +1313,17 @@ nav.navbar.bootsnav ul.nav>li>a {
     margin-right: -28px;
 }
 /*  */
+.navbar-nav .dropdown-menu {
+    float: left;
+    position: absolute;
+}
+
+nav.navbar.bootsnav ul.nav.navbar-right .dropdown-menu .dropdown-menu{
+    left: 198px !important;
+}
+
+@media (max-width: 992px){
+nav.navbar.bootsnav ul.nav.navbar-right .dropdown-menu .dropdown-menu{
+    left: 0px !important;
+}
+}
