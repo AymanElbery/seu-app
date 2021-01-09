@@ -18,15 +18,16 @@ export class ContactLayoutComponent implements OnInit {
       .subscribe(params => {
         if (params.lang) {
           this.useLang(params.lang);
+        } else {
+          this.useLang(localStorage.getItem('seu-lang'));
         }
       });
-    this.translate.onLangChange.subscribe(() => {
-      this.currLang = this.translate.currentLang;
-    });
-    this.useLang(localStorage.getItem('seu-lang'));
-    setTimeout(() => {
-      //this.loadCss();
-    }, 1000);
+    // this.translate.onLangChange.subscribe(() => {
+    //   this.currLang = this.translate.currentLang;
+    // });
+    // setTimeout(() => {
+    //   //this.loadCss();
+    // }, 1000);
   }
 
   loadCss() {
