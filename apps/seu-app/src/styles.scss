@@ -3796,3 +3796,23 @@ app-contact-header nav.navbar.bootsnav ul.nav.navbar-right .dropdown-menu .dropd
   left: 0px !important;
 }
 }
+
+app-contact-header nav.navbar.bootsnav ul.nav>li>a {
+  padding: 18px 1px !important;
+  font-weight: 600 !important;
+}
+
+@media (min-width: 1024px) {
+app-contact-header nav.bootsnav.brand-center ul.nav>li.dropdown>ul.dropdown-menu {
+  margin-top: -4px !important;
+}
+
+}
+
+@media (min-width: 1024px) {
+  app-contact-header  nav.bootsnav.brand-center.center-side .navbar-collapse .col-half.right {
+    text-align: center;
+    padding-right: 100px;
+}
+}
+
