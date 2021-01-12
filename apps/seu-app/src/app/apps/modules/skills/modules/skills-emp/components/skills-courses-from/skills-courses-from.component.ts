@@ -28,7 +28,7 @@ export class SkillsCoursesFromComponent implements OnInit {
 
   toolbarConfig = {
     toolbar: ['heading', '|', 'bold', 'italic', 'Indent', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|' ,'highlight','fontFamily','fontSize','horizontalLine',,  '|','insertTable', '|', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo'],
-  };;
+  };
   datePickerConfig: Partial<BsDatepickerConfig>;
   isLoading = false;
   submitted = false;

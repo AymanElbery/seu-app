@@ -61,5 +61,9 @@ export class SkillsUsersManagementService extends SkillsRootService {
     stdClassifications(std_id, print = 0) {
         return this.get("emp/courses/std_classifications/" + std_id + "/" + print);
     }
+
+    blockNewUser(data) {
+        return this.post("emp/courses/block_new_std" , data );
+    }
 }
 

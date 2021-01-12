@@ -1,0 +1,38 @@
+<app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.block-users' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+    <div class="row" style="margin-top: 2px;">
+        <div class="col-md-12">
+          <input class="form-control" [(ngModel)]="filter_text" type="text" placeholder="{{'courses.filter_std' | translate}}">
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <div class="widget" *ngIf="!isLoading">
+                <div class="widget-header">
+                    <h3 class="widget-title">&nbsp;
+                        <button type="button" class="btn btn-primary" (click)="blockNewUser()">
+                            {{"menu.add-block-std"| translate}}
+                        </button>
+                    </h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th style="width: 250px !important;" scope="col">{{"courses.actions" | translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let student of students | filter : filter_text; let i = index">
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

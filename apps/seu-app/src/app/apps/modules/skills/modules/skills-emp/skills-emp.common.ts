@@ -3,6 +3,8 @@ import { SkillsUsersHomeComponent } from './components/skills-users-home/skills-
 import { SkillsUsersListComponent } from './components/skills-users-list/skills-users-list.component';
 import { SkillsUsersFromComponent } from './components/skills-users-from/skills-users-from.component';
 import { SkillsCoursesListComponent } from './components/skills-courses-list/skills-courses-list.component';
+import { SkillsBlockUserComponent } from './components/skills-block-users/skills-block-users.component';
+import { SkillsBlockNewStdComponent } from './components/skills-block-new-std/skills-block-new-std.component';
 import { SkillsCoursesDetailsComponent } from './components/skills-courses-details/skills-courses-details.component';
 import { SkillsCoursesStdComponent } from './components/skills-courses-std/skills-courses-std.component';
 import { ChangeRequestComponent } from './components/skills-courses-std/diag/change-request/change-request.component';
@@ -25,6 +27,8 @@ export const componentDeclarations: any[] = [
     SkillsUsersListComponent,
     SkillsUsersFromComponent,
     SkillsCoursesListComponent,
+    SkillsBlockUserComponent,
+    SkillsBlockNewStdComponent,
     SkillsCoursesFromComponent,
     SkillsCoursesAppointmentsComponent,
     SkillsCoursesDetailsComponent,
@@ -56,6 +60,9 @@ export const routes: Routes = [
         path: 'users-add', component: SkillsUsersFromComponent, canActivate: [SkillsADMINGuard]
     },
     {
+        path: 'block-new-std', component: SkillsBlockNewStdComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
         path: 'instructors-list', component: SkillsUsersListComponent, canActivate: [SkillsEMPGuard]
     },
     {
@@ -63,6 +70,9 @@ export const routes: Routes = [
     },
     {
         path: 'courses-list', component: SkillsCoursesListComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
+        path: 'block-users', component: SkillsBlockUserComponent, canActivate: [SkillsEMPGuard]
     },
     {
         path: 'settings', component: SkillsSettingsComponent, canActivate: [SkillsEMPGuard]

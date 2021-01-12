@@ -29,6 +29,9 @@
     <a [ngClass]="{'active': activeRoute == 'courses-inactive'}" href="#" class="menu-item" routerLink="emp/courses-inactive">
       {{ "menu.inactive-courses-list" | translate }}
     </a>
+    <a [ngClass]="{'active': activeRoute == 'block-users' || activeRoute == 'block-std-add'}" href="#" class="menu-item" routerLink="emp/block-users">
+      {{ "menu.block-users" | translate }}
+    </a>
   </div>
 </div>
 
