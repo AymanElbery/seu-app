@@ -60,6 +60,12 @@ export class TranslationClientNewrequestsComponent implements OnInit {
 
   ngOnInit() {
     this.sso = this.userService.is_sso();
+    if (this.sso) {
+      this.addRequestForm.controls['CLIENT_WORK_PLACE_TYPE'].setValue('internal');
+    } else {
+      this.addRequestForm.controls['CLIENT_WORK_PLACE_TYPE'].setValue('external');
+      this.showClientWorkPlace = true;
+    }
   }
 
   changeFileType(e) {
@@ -116,7 +122,7 @@ export class TranslationClientNewrequestsComponent implements OnInit {
     // data['CLIENT_NAME'] = this.clientName;
     // data['CLIENT_WORK'] = this.clientWork;
     // data['CLIENT_WORK'] = this.clientWork;
-    data['CLIENT_WORK_PLACE'] = 'internal';
+    //data['CLIENT_WORK_PLACE'] = 'internal';
     if (data['TRANSLATE_FROM'] == "ar-en") {
       data['TRANSLATE_FROM'] = "ar";
       data['TRANSLATE_TO'] = "en";

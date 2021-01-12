@@ -6,6 +6,7 @@ import { AppsSharedModule } from '../../../apps-shared/apps.shared.module';
 import { TranslationCommonModule } from '../translation-common/translation-common.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TranslationLazyTransModule } from '../translation-common/translation.lazytrans.module';
+import { PaymentsModule } from 'src/app/apps/payments/payments.module';
 
 @NgModule({
   declarations: [componentDeclarations],
@@ -15,7 +16,8 @@ import { TranslationLazyTransModule } from '../translation-common/translation.la
     RouterModule.forChild(routes),
     TranslationCommonModule,
     MatDialogModule,
-    TranslationLazyTransModule
+    TranslationLazyTransModule,
+    PaymentsModule
   ],
   entryComponents: [
     componentDeclarations

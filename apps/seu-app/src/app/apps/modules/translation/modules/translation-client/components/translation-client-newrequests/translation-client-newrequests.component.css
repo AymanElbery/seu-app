@@ -24,3 +24,6 @@ button#fake-file{
     border-radius: 3px;
     color: #FFF;
 }
+p {
+    margin: 0px;
+}

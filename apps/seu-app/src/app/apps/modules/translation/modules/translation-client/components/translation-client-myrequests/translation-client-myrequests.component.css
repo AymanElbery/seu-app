@@ -22,3 +22,10 @@
     border-radius: 3px;
     color: #FFF;
 }
+
+.payment{
+    padding: 3px 10px;
+    background-color: red;
+    border-radius: 3px;
+    color: #FFF;
+}

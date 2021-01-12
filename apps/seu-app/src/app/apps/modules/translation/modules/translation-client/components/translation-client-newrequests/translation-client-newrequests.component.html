@@ -11,22 +11,33 @@
     </div>
     <form [formGroup]="addRequestForm" (ngSubmit)="onSubmit()">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label>{{ "new_request_page.client_username" | translate}}</label>
                     <input formControlName="CLIENT_NAME" class="form-control" type="text">
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>{{ "new_request_page.client_email" | translate}}</label>
+                    <input formControlName="CLIENT_EMAIL" class="form-control" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
                 <div class="form-group">
                     <label>{{ "new_request_page.client_work" | translate}}</label>
                     <input formControlName="CLIENT_WORK" class="form-control" type="text">
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="form-group">
-                    <label>{{ "new_request_page.client_email" | translate}}</label>
-                    <input formControlName="CLIENT_EMAIL" class="form-control" type="text">
+                    <label>{{ "new_request_page.translate_field" | translate}}</label>
+                    <select formControlName="TRANSLATE_FROM" class="form-control">
+                        <option value="ar-en">{{ "new_request_page.ar_to_en_lang" | translate}}</option>
+                        <option value="en-ar">{{ "new_request_page.en_to_ar_lang" | translate}}</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -34,20 +45,17 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <label>{{ "new_request_page.translate_field" | translate}}</label>
-                    <select formControlName="TRANSLATE_FROM" class="form-control">
-            <option value="ar-en">{{ "new_request_page.ar_to_en_lang" | translate}}</option>
-            <option value="en-ar">{{ "new_request_page.en_to_ar_lang" | translate}}</option>
-          </select>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
                     <label>{{ "new_request_page.client_work_place" | translate}}</label>
                     <select disabled formControlName="CLIENT_WORK_PLACE_TYPE" class="form-control">
-                        <option [selected]="sso" value="internal">{{ "new_request_page.internal" | translate}}</option>
-                        <option [selected]="!sso" value="external">{{ "new_request_page.external" | translate}}</option>
+                        <option value="internal">{{ "new_request_page.internal" | translate}}</option>
+                        <option value="external">{{ "new_request_page.external" | translate}}</option>
                     </select>
+                </div>
+            </div>
+            <div *ngIf="showClientWorkPlace" class="col-md-6">
+                <div class="form-group">
+                    <label>{{ "new_request_page.client_work_place_external" | translate}}</label>
+                    <input formControlName="CLIENT_WORK_PLACE" class="form-control" type="text">
                 </div>
             </div>
         </div>
@@ -57,21 +65,21 @@
                 <div class="form-group">
                     <label>{{ "new_request_page.file_secret" | translate}}</label>
                     <select formControlName="FILE_SECRET" class="form-control">
-            <option value="1">{{ "new_request_page.secret" | translate}}</option>
-            <option value="0">{{ "new_request_page.not_secret" | translate}}</option>
-          </select>
+                        <option value="1">{{ "new_request_page.secret" | translate}}</option>
+                        <option value="0">{{ "new_request_page.not_secret" | translate}}</option>
+                    </select>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>{{ "new_request_page.file_type" | translate}}</label>
                     <select (change)="changeFileType($event)" formControlName="FILE_TYPE" class="form-control">
-            <option value="letter">{{ "new_request_page.letter" | translate}}</option>
-            <option value="invite">{{ "new_request_page.invite" | translate}}</option>
-            <option value="new">{{ "new_request_page.new" | translate}}</option>
-            <option value="content">{{ "new_request_page.content" | translate}}</option>
-            <option value="other">{{ "new_request_page.other" | translate}}</option>
-          </select>
+                        <option value="letter">{{ "new_request_page.letter" | translate}}</option>
+                        <option value="invite">{{ "new_request_page.invite" | translate}}</option>
+                        <option value="new">{{ "new_request_page.new" | translate}}</option>
+                        <option value="content">{{ "new_request_page.content" | translate}}</option>
+                        <option value="other">{{ "new_request_page.other" | translate}}</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -88,7 +96,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label>{{ "new_request_page.keywords" | translate}} <span class="text-danger">"{{ "new_request_page.keywords_note" | translate}}"</span></label>
+                    <label>{{ "new_request_page.keywords" | translate}} <span class="text-danger">"{{
+                            "new_request_page.keywords_note" | translate}}"</span></label>
                     <textarea class="form-control" formControlName="FILE_KEYWORDS" rows="3"></textarea>
                 </div>
             </div>
@@ -101,30 +110,36 @@
           <input formControlName="FILE_WORDS_COUNT" class="form-control" type="number">
         </div>
       </div> -->
-
-            <div *ngIf="showClientWorkPlace" class="col-md-4">
-                <div class="form-group">
-                    <label>{{ "new_request_page.client_work_place_external" | translate}}</label>
-                    <input formControlName="CLIENT_WORK_PLACE" class="form-control" type="text">
-                </div>
-            </div>
         </div>
 
         <div class="row" style="margin-top: 40px;">
             <div class="col-md-3">
                 <div class="form-group">
-                    <input type="file" accept="*/*" (change)="handleInputChange($event)" id="photo" class="form-control-file form-control">
-                    <button id="fake-file" class="btn btn-primary">{{ "new_request_page.choose_file" | translate}}</button>
+                    <input type="file" accept="*/*" (change)="handleInputChange($event)" id="photo"
+                        class="form-control-file form-control">
+                    <button id="fake-file" class="btn btn-primary">{{ "new_request_page.choose_file" |
+                        translate}}</button>
                 </div>
             </div>
             <div *ngIf="showFileName" class="col-md-9" style="margin-top: 7px;">
-                <b class="file-name">{{ fileName }}<span style="margin-right: 20px; color: black;">"{{'general.word_count_note' | translate}}"</span></b>
+                <b class="file-name">{{ fileName }}<span
+                        style="margin-right: 20px; color: black;">"{{'general.word_count_note' | translate}}"</span></b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <p><label>باعتبار ان الصفحة ٢٥٠ كلمة:</label></p>
+                <p><label>٤٠ ريال لترجمة صفحة او جزء منها</label></p>
+                <p><label>٦٠ ريال لترجمة متخصصة او جزء منها</label></p>
+                <p><label>٢٥ ريال للتدقيق اللغوي او جزء منها</label></p>
             </div>
         </div>
         <div class="row" style="margin-top: 100px;">
             <div class="col-md-12">
                 <div class="form-group">
-                    <button [disabled]="submitted || addRequestForm.invalid" style="margin-right: 35%; width: 30%;" type="submit" class="btn sub">{{ "new_request_page.save" | translate}}  <i class="fa fa-save"></i></button>
+                    <button [disabled]="submitted || addRequestForm.invalid" style="margin-right: 35%; width: 30%;"
+                        type="submit" class="btn sub">{{ "new_request_page.save" | translate}} <i
+                            class="fa fa-save"></i></button>
                 </div>
             </div>
         </div>

@@ -20,12 +20,17 @@ export class ClientMyrequestsService extends TranslationRootService {
     ) {
         super(http, router, config, translate, toaster);
     }
-
     getMyRequests(userId) {
-        return this.get("client/request/get_my_requests/" + userId) ;
+        return this.get("client/request/get_my_requests/" + userId);
     }
-    cancel(id){
+    cancel(id) {
         return this.get("client/request/cancel/" + id);
+    }
+    checkout(req_id) {
+        return this.get('/client/request/checkout/' + req_id);
+    }
+    payment_status(tid) {
+        return this.get('/client/request/payment_status' + tid);
     }
 }
 

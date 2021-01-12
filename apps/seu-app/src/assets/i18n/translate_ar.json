@@ -94,6 +94,14 @@
         "not_payment": "غير مدفوع",
         "payment_type": "نوع الطلب"
     },
+    "statuses": {
+        "pendding": "جديد",
+        "processing": "قيد الترجمة",
+        "reviewing": "قيد المراجعة",
+        "canceled": "ملغي",
+        "completed": "تم تسليم الطلب",
+        "payment": "قيد الدفع"
+    },
     "new_request_page": {
         "save": "حفظ",
         "payment_status": "حالة الدفع",
