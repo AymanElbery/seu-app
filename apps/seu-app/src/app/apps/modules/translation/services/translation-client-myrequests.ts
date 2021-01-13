@@ -30,7 +30,7 @@ export class ClientMyrequestsService extends TranslationRootService {
         return this.get('/client/request/checkout/' + req_id);
     }
     payment_status(tid) {
-        return this.get('/client/request/payment_status' + tid);
+        return this.get('/client/request/payment_status/' + tid);
     }
 }
 

@@ -34,7 +34,9 @@ export class TranslationPayFeeComponent implements OnInit {
         this.isLoading = false;
         this.loadwidgetScript();
       } else {
+        this.payment.notifyError(res['res_code']);
         this.isLoading = false;
+        this.closeDiag();
       }
     });
   }
@@ -55,6 +57,9 @@ export class TranslationPayFeeComponent implements OnInit {
         this.isLoading = false;
         //Do something when script is loaded and parsed by browser
       });
+  }
+  closeDiag() {
+    this.dialogRef.close();
   }
 
 
