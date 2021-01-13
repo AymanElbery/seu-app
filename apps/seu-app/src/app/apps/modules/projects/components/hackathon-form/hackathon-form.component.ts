@@ -20,8 +20,8 @@ export class HackathonFormComponent implements OnInit {
   form: FormGroup;
   environment;
   colleges;
-  app_pk  ;
-  appreq = {app_pk:100};
+  app_pk;
+  appreq;
   constructor(
     public pservice: ProjectsService,
     private toastr: AppToasterService,
@@ -31,28 +31,37 @@ export class HackathonFormComponent implements OnInit {
     this.environment = environment;
     this.form = this.fb.group({
       'IS_STUDENT': ['', [Validators.required]],
-      'UNIVERSITY': ['', [Validators.required]],
+      'UNIVERSITY': [''],
       'FULL_NAME': ['', [Validators.required]],
-      'AGE': ['', [Validators.required,Validators.min(1),Validators.max(150)],],
-      'SSN': ['', [Validators.required,Validators.minLength(9),Validators.maxLength(10)]],
+      'AGE': ['', [Validators.required, Validators.min(1), Validators.max(150)],],
+      'SSN': ['', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
       'EMAIL': ['', [Validators.required, Validators.email]],
-      'PHONE': ['', [Validators.required,Validators.minLength(10),Validators.maxLength(12)]],
+      'PHONE': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(12)]],
       'CITY': ['', [Validators.required]],
       'EDU_LEVEL': ['', [Validators.required]],
-      'JOB_TITLE': ['', [Validators.required]],
+      'JOB_TITLE': ['', []],
       'HAS_PREV': ['', [Validators.required]],
       'TRACK': ['', [Validators.required]],
       'captcha': ['', [Validators.required]]
     });
+    this.form.controls['IS_STUDENT'].valueChanges.subscribe(() => {
+      if (this.form.controls['IS_STUDENT'].value == '1') {
+        this.form.controls['UNIVERSITY'].setValidators([Validators.required]);
+      } else {
+        this.form.controls['UNIVERSITY'].setValidators(null);
+      }
+    });
   }
   isLoading = false;
   submitted = false;
-
+  active = false;
   ngOnInit() {
-    this.pservice.getLookups(this.translate.currentLang).subscribe(
+    this.isLoading = true;
+    this.pservice.gethackathonLookups(this.translate.currentLang).subscribe(
       (response: any) => {
         if (response) {
-          this.colleges = response.data.colleges;;
+          this.active = response.data.active;
+          this.isLoading = false;
         }
       },
       error => { }
@@ -68,17 +77,17 @@ export class HackathonFormComponent implements OnInit {
       return false;
     }
     let data = this.form.value;
-    this.isLoading = true;
-    this.pservice.addRequest(data).subscribe(
+    this.submitted = true;
+    this.pservice.addhackathonRequest(data).subscribe(
       (response: any) => {
         if (response.status) {
           this.toastr.push([{
             'type': 'success',
             'body': this.translate.instant("success_request")
           }]);
-          this.submitted = true;
-          this.isLoading = false;
+          this.submitted = false;
           this.app_pk = response['data']['APP_PK'];
+          this.appreq = { app_pk: this.app_pk };
         } else {
           const errList = response['errors'];
           Object.keys(errList).forEach(key => {
@@ -95,6 +104,7 @@ export class HackathonFormComponent implements OnInit {
       error => {
         this.toastr.tryagain();
         this.resetCaptcha();
+        this.submitted = false;
         this.isLoading = false;
       }
     );

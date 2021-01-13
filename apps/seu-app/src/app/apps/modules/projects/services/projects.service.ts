@@ -25,6 +25,14 @@ export class ProjectsService extends AppUserRootService {
     return this.post("/innovation/application/save", data);
   }
 
+  gethackathonLookups(lang) {
+    return this.get('/innovation/hackathon/lookups?lang=' + lang);
+  }
+
+  addhackathonRequest(data) {
+    return this.post("/innovation/hackathon/save", data);
+  }
+
 }
 
 

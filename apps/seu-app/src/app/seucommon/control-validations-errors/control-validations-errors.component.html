@@ -1,6 +1,7 @@
 <div *ngIf="control.invalid && (control.dirty || control.touched)">
     <!-- || control.touched-->
     <div *ngFor="let obj of control.errors | keyvalue">
-        <b style="position: relative; left: -10px;" class="text-danger">{{"validations." +obj.key |translate}}</b>
+        <b style="position: relative; left: -10px;" class="text-danger">{{"validations." +obj.key
+            |translate:obj.value}}</b>
     </div>
 </div>
