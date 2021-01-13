@@ -84,6 +84,32 @@
     "messagevalidation":"Must be fill all required fields",
     "univ": "Saudi Electronic University",
     "desc": " A set of services provided to undergraduate students ",
-    "homeapps": " Back To Home "
+    "homeapps": " Back To Home ",
+    "hackathon":{
+        "hackathon":"Hackathons and business accelerators",
+        "success_req_no": "Number Request",
+        "success":"Thank you for your interest in the eLearning Innovation Hackathon and Accelerator program,<span class='number-req'>{{app_pk}}</span> and we got your registration info, and we will contact you to provide you with more details soon.",
+        "is_student":"Are you a student?",
+        "yes":"yes",
+        "no":"no",
+        "university":"For students, What is the name of your university?",
+        "name":"Your full name",
+        "age":"Age",
+        "id":"ID number",
+        "email":"Email",
+        "phone":"Mobile number ",
+        "city":"City (KSA only)",
+        "levelstudy":"Education",
+        "Diploma":"Diploma",
+        "Baccalaureus":"Bachelor Degree",
+        "Master":"Master Degree",
+        "Doctorat":"Doctoral",
+        "job":"For employees, what is your job title?",
+        "subscribe":"Did you participate in a Hackathon or Accelerator before?",
+        "path":"What is your participation track?",
+        "experience":"Skill",
+        "idea":"Idea"
+    }
+
 
 }

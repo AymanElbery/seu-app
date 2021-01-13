@@ -20,8 +20,7 @@ export class HackathonFormComponent implements OnInit {
   form: FormGroup;
   environment;
   colleges;
-  app_pk = 100 ;
-  appreq = {app_pk:100};
+  app_pk ;
   constructor(
     public pservice: ProjectsService,
     private toastr: AppToasterService,
