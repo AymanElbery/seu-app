@@ -21,4 +21,8 @@ import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
     BsDatepickerModule.forRoot()
   ]
 })
-export class ContactusModule { }
+export class ContactusModule {
+  constructor() {
+    window.location.href = "/contactus";
+  }
+}
