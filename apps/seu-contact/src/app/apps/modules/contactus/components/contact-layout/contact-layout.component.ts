@@ -31,6 +31,18 @@ export class ContactLayoutComponent implements OnInit {
   }
 
   loadCss() {
+    if (this.currLang == 'ar') {
+      this.addCssURL("/assets/seu/css/bootstrap.min-rtl.css", "bootstrap_rtl");
+      this.addCssURL("/assets/seu/css/bootsnav.rtl.css", "bootsnav_rtl");
+      document.getElementById('html').setAttribute('dir', 'rtl');
+    } else {
+      this.addCssURL("/assets/seu/css/bootstrap.min.css", "bootstrap_rtl");
+      this.addCssURL("/assets/seu/css/bootsnav.css", "bootsnav_rtl");
+      this.addCssURL("/assets/seu/css/style-en.css", "seu_style_en");
+      document.getElementById('html').setAttribute('dir', 'ltr');
+    }
+    document.getElementById('html').setAttribute('lang', this.currLang);
+
     return false;
     // this.addCssURL("https://seu.edu.sa/css/bootstrap.min.css", "seubootstrap");
     // this.addCssURL("https://seu.edu.sa/css/bootstrap.min-rtl.css", "seubootstraprtl");
@@ -41,34 +53,33 @@ export class ContactLayoutComponent implements OnInit {
   }
 
   addCssURL(styleUrl, id) {
-    if (document.getElementById(id)) {
-      document.getElementById(id).remove();
+    let elm = document.getElementById(id);
+    if (elm) {
+      //document.getElementById(id).remove();
+      elm.setAttribute("href", styleUrl);
+    } else {
+      const styleElement = document.createElement('link');
+      styleElement.href = styleUrl;
+      styleElement.id = id;
+      styleElement.rel = 'stylesheet';
+      document.head.appendChild(styleElement);
     }
-
-    const styleElement = document.createElement('link');
-    styleElement.href = styleUrl;
-    styleElement.id = id;
-    styleElement.rel = 'stylesheet';
-    document.head.appendChild(styleElement);
   }
 
   useLang(code) {
     this.currLang = code;
     this.translate.use(code);
     if (code === 'en') {
-      this.loadExternalStyles('en-style.css')
-        .then(() => {
-          document.getElementById('html').setAttribute('lang', code);
-          document.getElementById('html').setAttribute('dir', 'ltr');
-        })
-        .catch(() => { });
+      document.getElementById('html').setAttribute('lang', code);
+      document.getElementById('html').setAttribute('dir', 'ltr');
     } else {
       document.getElementById('html').setAttribute('lang', code);
       document.getElementById('html').setAttribute('dir', 'rtl');
-      if (document.getElementById('enStyle')) {
-        document.getElementById('enStyle').remove();
+      if (document.getElementById('seu_style_en')) {
+        document.getElementById('seu_style_en').remove();
       }
     }
+    this.loadCss();
     localStorage.setItem('seu-lang', code);
   }
 

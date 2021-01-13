@@ -8,7 +8,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/contact_', '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/contactus_', '.json');
 }
 
 

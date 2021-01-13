@@ -16,8 +16,6 @@ export class ContactHeaderEnComponent implements OnInit, AfterViewInit, OnDestro
   }
 
   ngOnInit() {
-    //console.log("Start EN");
-
   }
   changeLang() {
     this.updateLang.emit('ar');
