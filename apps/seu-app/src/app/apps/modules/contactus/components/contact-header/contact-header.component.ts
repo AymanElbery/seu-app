@@ -25,7 +25,8 @@ export class ContactHeaderComponent implements OnInit, AfterViewInit, OnDestroy 
     return false;
   }
   ngAfterViewInit() {
-    window['bootsnavapply']();
+    window["bootsnav"].initialize();
+    //window['bootsnavapply']();
   }
   ngOnDestroy() {
     // if (document.getElementById("navbar-menu"))

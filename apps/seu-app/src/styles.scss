@@ -262,6 +262,7 @@ p {
 }
 
 @media(min-width: 1024px) {
+ app-header {
   nav.navbar {
     .navbar-brand {
       margin-top: 0;
@@ -339,8 +340,10 @@ p {
     }
   }
 }
+}
 
 @media(max-width: 1200px) {
+  app-header{
   nav.navbar {
     .navbar-brand {
       margin-top: 0;
@@ -357,7 +360,8 @@ p {
     }
   }
 }
-
+}
+app-header{
 nav {
   &.navbar {
     .navbar-brand {
@@ -680,8 +684,10 @@ nav {
     color: $color_carrot_orange_approx !important;
   }
 }
+}
 
 @media(max-width: 992px) {
+app-header{
   nav {
     &.navbar {
       .navbar-brand {
@@ -768,6 +774,7 @@ nav {
       padding-top: 10px;
     }
   }
+}
 
   .adv {
     margin-top: 20px;
@@ -1851,7 +1858,7 @@ nav {
     }
   }
 
-  nav.navbar .navbar-brand img.logo {
+app-header  nav.navbar .navbar-brand img.logo {
     width: 90%;
     height: 50px;
     margin-top: -10px;

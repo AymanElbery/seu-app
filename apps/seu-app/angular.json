@@ -46,7 +46,7 @@
               "src/assets/js/js/service.js",
               "src/assets/js/main-2.js",
               "./node_modules/owl.carousel/dist/owl.carousel.js",
-              "src/assets/js/bootsnav.js"
+              "src/assets/seu/js/bootsnav.js"
             ],
             "es5BrowserSupport": true
           },
