@@ -20,7 +20,7 @@ export class HackathonFormComponent implements OnInit {
   form: FormGroup;
   environment;
   colleges;
-  app_pk = 100 ;
+  app_pk  ;
   appreq = {app_pk:100};
   constructor(
     public pservice: ProjectsService,
@@ -30,24 +30,18 @@ export class HackathonFormComponent implements OnInit {
   ) {
     this.environment = environment;
     this.form = this.fb.group({
-      'name': ['', [Validators.required]],
-      'ssn': ['', [Validators.required]],
-      'email': ['', [Validators.required, Validators.email]],
-      'phone': ['', [Validators.required]],
-      'gender': ['', [Validators.required]],
-      'college': ['', [Validators.required]],
-      'title': ['', [Validators.required]],
-      'details': ['', [Validators.required]],
-      'target': ['', [Validators.required]],
-      'cost': ['', [Validators.required]],
-      'duration': ['', [Validators.required]],
-      'reason': ['', [Validators.required]],
-      //'recurrence': ['', [Validators.required]],
-      'strength': ['', [Validators.required]],
-      'weaknesses': ['', [Validators.required]],
-      'opportunities': ['', [Validators.required]],
-      'risks': ['', [Validators.required]],
-      'file': ['', [Validators.required]],
+      'IS_STUDENT': ['', [Validators.required]],
+      'UNIVERSITY': ['', [Validators.required]],
+      'FULL_NAME': ['', [Validators.required]],
+      'AGE': ['', [Validators.required,Validators.min(1),Validators.max(150)],],
+      'SSN': ['', [Validators.required,Validators.minLength(9),Validators.maxLength(10)]],
+      'EMAIL': ['', [Validators.required, Validators.email]],
+      'PHONE': ['', [Validators.required,Validators.minLength(10),Validators.maxLength(12)]],
+      'CITY': ['', [Validators.required]],
+      'EDU_LEVEL': ['', [Validators.required]],
+      'JOB_TITLE': ['', [Validators.required]],
+      'HAS_PREV': ['', [Validators.required]],
+      'TRACK': ['', [Validators.required]],
       'captcha': ['', [Validators.required]]
     });
   }
@@ -63,34 +57,6 @@ export class HackathonFormComponent implements OnInit {
       },
       error => { }
     );
-  }
-
-  validateFile(name: String) {
-    var ext = name.substring(name.lastIndexOf('.') + 1);
-    if (['pdf'].includes(ext.toLowerCase())) {
-      return true;
-    }
-    return false;
-  }
-
-  handleInputChange(e) {
-    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
-    if (!file) {
-      this.form.controls['file'].setValue("");
-      return false;
-    }
-    if (!this.validateFile(file.name)) {
-      this.toastr.push([{ type: 'error', 'body': this.translate.instant("wrong_file") }]);
-      this.form.controls['file'].setValue("");
-      return false;
-    }
-    const reader = new FileReader();
-    reader.onload = this._handleReaderLoaded.bind(this);
-    reader.readAsDataURL(file);
-  }
-  _handleReaderLoaded(e) {
-    const reader = e.target;
-    this.form.controls['file'].setValue(reader.result);
   }
 
   resolved(captchaResponse: string) {
@@ -137,6 +103,14 @@ export class HackathonFormComponent implements OnInit {
   resetCaptcha() {
     this.recaptchaRef.reset();
     this.form.controls['captcha'].setValue('');
+  }
+
+  keypress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    let inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode != 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 
 }
