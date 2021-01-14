@@ -133,7 +133,8 @@
         "subscribe":"Did you participate in a Hackathon or Accelerator before?",
         "path":"What is your participation track?",
         "experience":"Skill",
-        "idea":"Idea"
+        "idea":"Idea",
+        "file":"If you are the owner of an idea, attach a file explaining the idea in the field of e-learning. If you are an experienced holder, attach a professional CV stating your experiences, programming and design skills, and your certifications."
     }
 
 

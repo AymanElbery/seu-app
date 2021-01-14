@@ -42,6 +42,7 @@ export class HackathonFormComponent implements OnInit {
       'JOB_TITLE': ['', []],
       'HAS_PREV': ['', [Validators.required]],
       'TRACK': ['', [Validators.required]],
+      'file': [''],
       'captcha': ['', [Validators.required]]
     });
     this.form.controls['IS_STUDENT'].valueChanges.subscribe(() => {
@@ -70,6 +71,33 @@ export class HackathonFormComponent implements OnInit {
 
   resolved(captchaResponse: string) {
     this.form.controls['captcha'].setValue(captchaResponse);
+  }
+  validateFile(name: String) {
+    var ext = name.substring(name.lastIndexOf('.') + 1);
+    if (['pdf','docx','doc'].includes(ext.toLowerCase())) {
+      return true;
+    }
+    return false;
+  }
+
+  handleInputChange(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    if (!file) {
+      this.form.controls['file'].setValue("");
+      return false;
+    }
+    if (!this.validateFile(file.name)) {
+      this.toastr.push([{ type: 'error', 'body': this.translate.instant("wrong_file") }]);
+      this.form.controls['file'].setValue("");
+      return false;
+    }
+    const reader = new FileReader();
+    reader.onload = this._handleReaderLoaded.bind(this);
+    reader.readAsDataURL(file);
+  }
+  _handleReaderLoaded(e) {
+    const reader = e.target;
+    this.form.controls['file'].setValue(reader.result);
   }
 
   onSubmit() {

@@ -168,6 +168,16 @@
                     </div>
                     <div class="col-md-12">
                         <div class="state">
+                            <h6>{{"hackathon.file"|translate}}</h6>
+                            <div class="custom-file">
+                                <input name="imageUrl2" type="file" accept="*/*" (change)="handleInputChange($event)" id="customFileLang" class="custom-file-input" />
+                                <label for="customFileLang" class="custom-file-label"></label>
+                            </div>
+                            <control-validations-errors [control]="form.controls.file"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
                             <h6>{{"projects.captcha"|translate}} <span class="reqstart">*</span></h6>
                             <re-captcha #recaptchaRef (resolved)="resolved($event)"
                                 [siteKey]="environment.captchaSiteKey"></re-captcha>
