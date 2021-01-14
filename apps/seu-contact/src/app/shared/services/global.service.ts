@@ -9,7 +9,7 @@ export class GlobalService extends GlobalBaseService {
 
   relogin() {
     localStorage.removeItem('sid');
-    window.location.href = environment.ssolink + '/' + environment.loginpage;
+    window.location.href = environment['ssolink'] + '/' + environment['loginpage'];
   }
   getSID(): string {
     return localStorage.getItem('sid');

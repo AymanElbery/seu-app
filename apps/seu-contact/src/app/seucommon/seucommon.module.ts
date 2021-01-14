@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { SeuLoaderComponent } from '../seucommon/seu-loader/seu-loader.component';
 import { MatProgressSpinnerModule } from '@angular/material';
 import { PrintButtonDirective } from './print-button.directive';
-import { ServiceHeaderComponent } from './service-header/service-header.component';
 import { DialogPlayerComponent } from './dialog-player/dialog-player.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -21,7 +20,7 @@ import { ControlValidationsErrorsComponent } from './control-validations-errors/
 
 
 @NgModule({
-  declarations: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent, DialogPlayerComponent,
+  declarations: [SeuLoaderComponent, PrintButtonDirective, DialogPlayerComponent,
     AlphabateOnlyDirective, SeuFlashComponent,ControlValidationsErrorsComponent],
   imports: [
     CommonModule,
@@ -36,7 +35,7 @@ import { ControlValidationsErrorsComponent } from './control-validations-errors/
     AppLazyTransModule
   ],
   entryComponents: [DialogPlayerComponent],
-  exports: [SeuLoaderComponent, PrintButtonDirective, ServiceHeaderComponent, AlphabateOnlyDirective,
+  exports: [SeuLoaderComponent, PrintButtonDirective, AlphabateOnlyDirective,
     SeuFlashComponent, NgSelectModule,ControlValidationsErrorsComponent]
 })
 export class SeucommonModule {

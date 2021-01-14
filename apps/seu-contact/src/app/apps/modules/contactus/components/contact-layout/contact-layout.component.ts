@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['../styles/contact.css', './contact-layout.component.css']
 })
 export class ContactLayoutComponent implements OnInit {
-  currLang;
+  currLang = 'ar';
   constructor(private translate: TranslateService, private activatedRoute: ActivatedRoute) {
 
   }
@@ -67,17 +67,18 @@ export class ContactLayoutComponent implements OnInit {
   }
 
   useLang(code) {
-    this.currLang = code;
     this.translate.use(code);
     if (code === 'en') {
       document.getElementById('html').setAttribute('lang', code);
       document.getElementById('html').setAttribute('dir', 'ltr');
+      this.currLang = 'en';
     } else {
       document.getElementById('html').setAttribute('lang', code);
       document.getElementById('html').setAttribute('dir', 'rtl');
       if (document.getElementById('seu_style_en')) {
         document.getElementById('seu_style_en').remove();
       }
+      this.currLang = 'ar';
     }
     this.loadCss();
     localStorage.setItem('seu-lang', code);
