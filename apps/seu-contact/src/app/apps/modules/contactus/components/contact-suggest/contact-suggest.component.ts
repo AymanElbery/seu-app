@@ -78,8 +78,10 @@ export class ContactSuggestComponent implements OnInit {
       if (response['status']) {
         this.recaptchaRef.reset();
         this.form.reset();
-        document.getElementById("customFileLangLabel").innerText = '';
-        document.getElementById("customFileLangLabel").innerHTML = '';
+        if (document.getElementById("customFileLangLabel")) {
+          document.getElementById("customFileLangLabel").innerText = '';
+          document.getElementById("customFileLangLabel").innerHTML = '';
+        }
         this.ticket_id = response['data']['ticket_id'];
         document.getElementById("contactForm").scrollIntoView();
       } else {

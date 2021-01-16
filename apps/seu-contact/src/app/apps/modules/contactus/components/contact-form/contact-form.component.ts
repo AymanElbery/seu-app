@@ -33,7 +33,7 @@ export class ContactFormComponent implements OnInit {
     private contact: ContactService
   ) {
     this.environment = environment;
-    this.datePickerConfig = {dateInputFormat: 'DD-MM-YYYY', showWeekNumbers: false};
+    this.datePickerConfig = { dateInputFormat: 'DD-MM-YYYY', showWeekNumbers: false };
   }
 
   ngOnInit() {
@@ -68,19 +68,23 @@ export class ContactFormComponent implements OnInit {
       return false;
     }
     const formData = new FormData();
-    const data = this.form.value;
+    let data = this.form.value;
+    data.birth_date = this.changeFormate(data.birth_date);
     Object.keys(data).forEach(key => {
       if (data[key])
         formData.set(key, data[key]);
     });
 
     this.submitting = true;
+    
     this.contact.addLoginRequest(formData).subscribe(response => {
       if (response['status']) {
         this.recaptchaRef.reset();
         this.form.reset();
-        document.getElementById("customFileLangLabel").innerText = '';
-        document.getElementById("customFileLangLabel").innerHTML = '';
+        if (document.getElementById("customFileLangLabel")) {
+          document.getElementById("customFileLangLabel").innerText = '';
+          document.getElementById("customFileLangLabel").innerHTML = '';
+        }
         this.ticket_id = response['data']['ticket_id'];
         document.getElementById("contactForm").scrollIntoView();
       } else {
@@ -91,6 +95,14 @@ export class ContactFormComponent implements OnInit {
     }, error => {
       this.submitting = false;
     })
+  }
+  changeFormate(date) {
+    var newDate = new Date(date);
+    var day = ("0" + (newDate.getDate())).slice(-2);
+    var month = ("0" + (newDate.getMonth() + 1)).slice(-2);;
+    var year = newDate.getFullYear();
+    var todayFormat = year + '-' + month + '-' + day;
+    return todayFormat;
   }
   keyPress(event: any) {
     const pattern = /[0-9\+\-\ ]/;

@@ -50,7 +50,7 @@ export class ContactEnquireComponent implements OnInit {
   resolved(captchaResponse: string) {
     this.form.controls['captcha'].setValue(captchaResponse);
   }
-  details_fields = ['id', 'status','name', 'user_name', 'ssn', 'email', 'phone','type', 'subject', 'description'];
+  details_fields = ['id', 'status', 'name', 'user_name', 'ssn', 'email', 'phone', 'type', 'subject', 'description'];
   requesting = false;
   err_code = '';
   formInput;
@@ -90,6 +90,7 @@ export class ContactEnquireComponent implements OnInit {
     formData.append('url', file['url']);
     this.contact.download(formData).subscribe(response => {
       if (response['status']) {
+        response['data']['content'] = (response['data']['content']);
         const linkSource = `data:application/octet-stream;base64,${response['data']['content']}`;
         const downloadLink = document.createElement("a");
         const fileName = file['name'];

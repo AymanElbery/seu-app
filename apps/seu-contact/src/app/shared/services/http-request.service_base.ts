@@ -111,7 +111,7 @@ export class HttpRequestServiceBase {
   }
 
   getNotinficationsAuth() {
-    return `Basic ${window.btoa(environment.notesAuth)}`;
+    return `Basic ${window.btoa(environment['notesAuth'])}`;
   }
   getSSOAuth() {
     // alert('10');
