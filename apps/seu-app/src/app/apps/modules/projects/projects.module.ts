@@ -7,9 +7,10 @@ import { DatepickerModule, BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ProjectsLandingComponent } from './components/projects-landing/projects-landing.component';
 import { ProjectsFormComponent } from './components/projects-form/projects-form.component';
 import { ProjectsRoutingModule } from './projects-routing.module'
+import { HackathonFormComponent } from './components/hackathon-form/hackathon-form.component';
 @NgModule({
   declarations: [
-    ProjectsLandingComponent,ProjectsFormComponent
+    ProjectsLandingComponent, ProjectsFormComponent, HackathonFormComponent
   ],
   imports: [
     ProjectsRoutingModule,
