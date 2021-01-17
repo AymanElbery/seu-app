@@ -118,11 +118,11 @@ const routes: Routes = [
         loadChildren: './std-attendance/std-attendance.module#StdAttendanceModule',
         canActivate: [GRGuard, UGGuard]
       },
-      {
-        path: 'resume',
-        loadChildren: './resume/resume.module#ResumeModule',
-        canActivate: [EmpGuard]
-      },
+      // {
+      //   path: 'resume',
+      //   loadChildren: './resume/resume.module#ResumeModule',
+      //   canActivate: [EmpGuard]
+      // },
       {
         path: 'leadership',
         loadChildren: './leadership/leadership.module#LeadershipModule',

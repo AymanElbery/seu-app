@@ -34,6 +34,12 @@ const routes: Routes = [
       './modules/translation/translation.module#TranslationModule',
     canLoad: [AuthGuard]
   },
+  {
+    path: 'resume',
+    loadChildren:
+      './modules/resume/resume.module#ResumeModule', 
+    canLoad: [AuthGuard]
+  },
   // {
   //   path: 'job-application',
   //   loadChildren:

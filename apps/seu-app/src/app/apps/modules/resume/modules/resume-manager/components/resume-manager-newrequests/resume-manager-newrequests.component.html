@@ -1,0 +1,64 @@
+<app-service-header title="{{'resume' | translate}}" subtitle="{{'menu.new_requests' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget">
+
+        <div class="widget-header">
+          <h3 class="widget-title">
+            {{"menu.new_requests" | translate}}
+          </h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+            <thead>
+              <tr>
+                <th scope="col">{{"new_requests_page.req_num" | translate}}</th>
+                <th scope="col">{{"new_requests_page.req_date" | translate}}</th>
+                <th scope="col">{{"new_requests_page.username" | translate}}</th>
+                <th scopr="col">{{"new_requests_page.content_status" | translate}}</th>
+                <th scopr="col">{{"new_requests_page.manager_status" | translate}}</th>
+                <th scopr="col">{{"new_requests_page.gate_status" | translate}}</th>
+                <th scopr="col">{{"new_requests_page.change_status" | translate}}</th>
+                <th scopr="col">{{"new_requests_page.view_req" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 1.3em;">
+              <tr *ngFor="let req of requestsList; let i = index">
+                <td>{{ req.REQ_ID }}</td>
+                <td>{{ req.INSERT_DATE | date : 'yyyy-MM-dd'}}</td>
+                <td>{{ req.NAME }}</td>
+                <td>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 2"><span class="badge badge-warning">{{"new_requests_page.under" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 1"><span class="badge badge-success">{{"new_requests_page.agree" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 0"><span class="badge badge-danger">{{"new_requests_page.disagree" | translate}}</span></b>
+                </td>
+                <td>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.MANAGER_STATUS == 2"><span class="badge badge-warning">{{"new_requests_page.under" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.MANAGER_STATUS == 1"><span class="badge badge-success">{{"new_requests_page.agree" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.MANAGER_STATUS == 0"><span class="badge badge-danger">{{"new_requests_page.disagree" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.MANAGER_STATUS == 3"><span class="badge badge-info">{{"new_requests_page.waitting" | translate}}</span></b>
+                </td>
+                <td>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.GATE_STATUS == 2"><span class="badge badge-warning">{{"new_requests_page.under" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.GATE_STATUS == 1"><span class="badge badge-success">{{"new_requests_page.agree" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.GATE_STATUS == 0"><span class="badge badge-danger">{{"new_requests_page.disagree" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.GATE_STATUS == 3"><span class="badge badge-info">{{"new_requests_page.waitting" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.GATE_STATUS == 4"><span class="badge badge-info">{{"new_requests_page.waitting_m" | translate}}</span></b>
+                </td>
+                <td>
+                  <button [disabled]="req.MANAGER_STATUS != 2" (click)="openAddAdminDialog(req)" class="btn btn-primary">{{"new_requests_page.update" | translate}}</button>
+                </td>
+                <td>
+                  <button (click)="gotToDetails(req)" class="btn btn-primary">{{"new_requests_page.details" | translate}}</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
