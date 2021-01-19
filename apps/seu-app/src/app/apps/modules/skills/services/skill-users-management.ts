@@ -63,7 +63,16 @@ export class SkillsUsersManagementService extends SkillsRootService {
     }
 
     blockNewUser(data) {
-        return this.post("emp/courses/block_new_std" , data );
+        return this.post("emp/users/block_new_std" , data );
+    }
+
+    removeUserFromBlock(id) {
+        let data = {'id' : id};
+        return this.post("emp/users/remove_from_block_list" , data );
+    }
+
+    getBlockedStudents(){
+        return this.get("emp/users/list_blocked");
     }
 }
 

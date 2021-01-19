@@ -89,6 +89,7 @@
         "success_request": "تم حفظ المستخدم بنجاح"
     },
     "courses": {
+        "unblock_btn": "إزالة من قائمة الحظر",
         "filter_courses": "بحث في الدورات",
         "filter_std": "بحث في الطلاب",
         "block_start_date":"تاريخ بداية الحظر",
@@ -168,6 +169,7 @@
         "std_name": "اسم الطالب",
         "std_coll": "الكلية",
         "std_dept": "التخصص",
+        "block-users":"حظر الطلاب",
         "std_level": "المستوى",
         "add_std": "إضافة طالب",
         "change_status": "تغيير حالة الطلب",

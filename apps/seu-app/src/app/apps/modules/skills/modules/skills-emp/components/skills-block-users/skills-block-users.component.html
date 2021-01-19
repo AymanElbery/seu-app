@@ -22,12 +22,27 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">{{ 'courses.std_no' | translate }}</th>
+                                <th scope="col">{{ 'courses.std_name' | translate }}</th>
+                                <th scope="col">{{ 'courses.std_coll' | translate }}</th>
+                                <th scope="col">{{ 'courses.std_dept' | translate }}</th>
+                                <th scope="col">{{ 'courses.block_start_date' | translate }}</th>
+                                <th scope="col">{{ 'courses.block_end_date' | translate }}</th>
                                 <th style="width: 250px !important;" scope="col">{{"courses.actions" | translate}}</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr *ngFor="let student of students | filter : filter_text; let i = index">
-                                
+                                <td style="text-align: center;">{{ i+1 }}</td>
+                                <td style="text-align: center;">{{ student.STD_ID }}</td>
+                                <td style="text-align: center;">{{ student.FULL_NAME_AR }}</td>
+                                <td style="text-align: center;">{{ student.COLL_DESC }}</td>
+                                <td style="text-align: center;">{{ student.DEPT_DESC }}</td>
+                                <td style="text-align: center;">{{ student.START_DATE |  date : 'yyyy-MM-dd' }}</td>
+                                <td style="text-align: center;">{{ student.END_DATE |  date : 'yyyy-MM-dd' }}</td>
+                                <td style="text-align: center;">
+                                    <button (click)="unblock(student.ID)" class="btn btn-danger">{{"courses.unblock_btn" | translate}}</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

@@ -73,6 +73,6 @@ export class SkillsUserService extends SkillsRootService {
     has_role(role) {
         return this.user.ROLE == role;
     }
-
+    
 }
 
