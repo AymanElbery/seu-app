@@ -48,6 +48,7 @@ import { StdUploadPhotoComponent } from './home/std-upload-photo/std-upload-phot
 import { SeucommonModule } from './seucommon/seucommon.module';
 import { TranslateService } from '@ngx-translate/core';
 import { StdUploadPhotoListComponent } from './home/std-upload-photo-list/std-upload-photo-list.component';
+import { ContactRedirectComponent } from './shared/components/contact/contactcomponent';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,7 @@ import { StdUploadPhotoListComponent } from './home/std-upload-photo-list/std-up
     AdmisPagesComponent,
     StdsPagesComponent,
     AppErrorComponent,
-
+    ContactRedirectComponent
   ],
   imports: [
     CommonModule,

@@ -14,6 +14,7 @@ import { DocsConfirmComponent } from './home/docs-confirm.component';
 import { EmpGuard } from './guards/emp.guard';
 import { AppErrorComponent } from './home/error.component';
 import { StdUploadPhotoListComponent } from './home/std-upload-photo-list/std-upload-photo-list.component';
+import { ContactRedirectComponent } from './shared/components/contact/contactcomponent';
 const routes: Routes = [
   {
     path: '',
@@ -143,6 +144,10 @@ const routes: Routes = [
     outlet: 'print',
     component: PrintLayoutComponent,
     children: [{ path: 'print-file/:paramData', component: PrintFileComponent }]
+  },
+  {
+    path: 'contactus',
+    component: ContactRedirectComponent
   },
   {
     path: 'apps',
