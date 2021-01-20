@@ -5,6 +5,7 @@ import { SkillsUsersFromComponent } from './components/skills-users-from/skills-
 import { SkillsCoursesListComponent } from './components/skills-courses-list/skills-courses-list.component';
 import { SkillsBlockUserComponent } from './components/skills-block-users/skills-block-users.component';
 import { SkillsBlockNewStdComponent } from './components/skills-block-new-std/skills-block-new-std.component';
+import { SkillsCoursesStudentsComponent } from './components/skills-courses-students/skills-courses-students.component';
 import { SkillsCoursesDetailsComponent } from './components/skills-courses-details/skills-courses-details.component';
 import { SkillsCoursesStdComponent } from './components/skills-courses-std/skills-courses-std.component';
 import { ChangeRequestComponent } from './components/skills-courses-std/diag/change-request/change-request.component';
@@ -28,6 +29,7 @@ export const componentDeclarations: any[] = [
     SkillsUsersFromComponent,
     SkillsCoursesListComponent,
     SkillsBlockUserComponent,
+    SkillsCoursesStudentsComponent,
     SkillsBlockNewStdComponent,
     SkillsCoursesFromComponent,
     SkillsCoursesAppointmentsComponent,
@@ -73,6 +75,9 @@ export const routes: Routes = [
     },
     {
         path: 'block-users', component: SkillsBlockUserComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
+        path: 'courses-students', component: SkillsCoursesStudentsComponent, canActivate: [SkillsEMPGuard]
     },
     {
         path: 'settings', component: SkillsSettingsComponent, canActivate: [SkillsEMPGuard]

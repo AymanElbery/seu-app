@@ -58,6 +58,10 @@ export class SkillsCourseService extends SkillsRootService {
         return this.post("emp/courses/get_course_students", id);
     }
 
+    getCoursesStudents() {
+        return this.get("emp/courses/get_courses_students");
+    }
+
     getCourseAppointments(id) {
         return this.post("emp/courses/get_course_appointments", id);
     }

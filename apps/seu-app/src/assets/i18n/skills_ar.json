@@ -29,6 +29,7 @@
     },
     "menu": {
         "block-users": "حظر الطلاب",
+        "students_lists": "قائمة الطلاب",
         "add-block-std": "إضافة طالب",
         "hello": "مرحبا",
         "not": "الإشعارات",
@@ -89,6 +90,7 @@
         "success_request": "تم حفظ المستخدم بنجاح"
     },
     "courses": {
+        "courses-students": "قائمة الطلاب",
         "unblock_btn": "إزالة من قائمة الحظر",
         "filter_courses": "بحث في الدورات",
         "filter_std": "بحث في الطلاب",
@@ -169,6 +171,7 @@
         "std_name": "اسم الطالب",
         "std_coll": "الكلية",
         "std_dept": "التخصص",
+        "filter_courses_students": "بحث في الطلاب",
         "block-users":"حظر الطلاب",
         "std_level": "المستوى",
         "add_std": "إضافة طالب",
