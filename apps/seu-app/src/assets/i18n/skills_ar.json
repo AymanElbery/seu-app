@@ -90,6 +90,9 @@
         "success_request": "تم حفظ المستخدم بنجاح"
     },
     "courses": {
+        "export_excel": "تصدير إكسيل",
+        "you_are_blocked_from": "تم حظرك من التسجيل في الدورات التدريبية خلال الفترة من ",
+        "you_are_blocked_to": "إلى",
         "courses-students": "قائمة الطلاب",
         "unblock_btn": "إزالة من قائمة الحظر",
         "filter_courses": "بحث في الدورات",
