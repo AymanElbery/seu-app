@@ -15,10 +15,17 @@
 
                 <form role="form" [formGroup]="form">
                     <div class="row" style="margin-top: 15px;">
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-3 col-sm-6" *ngIf="colleges.length">
                             <div class="state">
                                 <h6>{{"filter.college"|translate}} <span class="reqstart">*</span></h6>
                                 <ng-select [items]="colleges" bindLabel="name" bindValue="code" formControlName="college">
+                                </ng-select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6" *ngIf="depts.length">
+                            <div class="state">
+                                <h6>{{"filter.dept"|translate}} <span class="reqstart">*</span></h6>
+                                <ng-select [items]="selectdepts" bindLabel="name" bindValue="code" formControlName="dept">
                                 </ng-select>
                             </div>
                         </div>

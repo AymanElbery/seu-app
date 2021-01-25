@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-6">
+    <h2>Please enter your information</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+      <form #f="ngForm" novalidate (ngSubmit)="registerUser(f)">
+          <div class="form-group">
+              <label for="first-name">الاسم الاول</label>
+              <input type="text" class="form-control" id="first-name" placeholder="First name" name="firstName" tmFocus ngModel>              
+          </div>
+          <div class="form-group">
+              <label for="last-name"> الاسم الاخير</label>
+              <input type="text" class="form-control" id="last-name" placeholder="Last name" name="lastName" ngModel>              
+          </div>
+          <div class="form-group">
+            <label for="username">اسم المستخدم </label>
+          	<input id="fusername" type="text" validateUserName required name="username"  class="form-control" placeholder="UserName" ngModel  #username="ngModel">
+            <small [hidden]="username.valid   ||(username.pristine && !submitted)" class="text-danger">Please enter a valid username</small>
+          </div>
+          <div class="form-group">
+            <label for="email">البريد</label>
+          	<input id="email" type="text" required name="email" validateEmail class="form-control" placeholder="Email" ngModel  #email="ngModel">
+            <small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a valid email</small>
+          </div>
+          <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" ngModel>
+          </div>   
+          <div class="form-group">
+             <label for="address">العنوان</label>
+             <input type="text" class="form-control" id="address" placeholder="address"  required name="address" ngModel>              
+          </div> 
+
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary" [disabled]="f.invalid || isRequesting">Sign Up</button>
+          </div>
+
+          <div *ngIf="errors" class="alert alert-danger" role="alert">
+              <strong>Oops!</strong> {{errors}}
+            </div>               
+          
+        </form>
+   </div>
+</div>
+
+

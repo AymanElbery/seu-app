@@ -1,0 +1,37 @@
+// Import common styles
+@import "app-common";
+
+// Place any CSS rules you want to apply only on iOS here
+.iosFont{
+    text-align: right;
+}
+
+.iosFontCenter{
+    text-align: center;
+
+}
+.ysHBox
+{
+    background:#0c1f5a;
+
+}
+.ysPBox2{
+    color:blueviolet;
+    padding-right: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+.ysPBox3{
+    color:blueviolet;
+    padding-right: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    border: red($color: #000000);
+    
+}
+.logo-login{width: 100%; margin-top: -10}

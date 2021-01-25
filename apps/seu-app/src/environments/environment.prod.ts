@@ -40,6 +40,8 @@ export const environment = {
     'n.alwahby@seu.edu.sa',
     'halharbi@seu.edu.sa',
     'a.algeffary@seu.edu.sa',
+    'a.farouk@seu.edu.sa',
+    'o.alturiqi@seu.edu.sa'
   ],
   chatbot_emps_emails: [
     'm.aldwaesh@seu.edu.sa', 
@@ -90,6 +92,8 @@ export const environment = {
   chatbot_emps_admins_emails: [
     'a.elbery@seu.edu.sa',
     'haltamimy@seu.edu.sa',
-    'a.dossari@seu.edu.sa'
+    'a.dossari@seu.edu.sa',
+    'a.farouk@seu.edu.sa',
+    'o.alturiqi@seu.edu.sa'
   ],
 };

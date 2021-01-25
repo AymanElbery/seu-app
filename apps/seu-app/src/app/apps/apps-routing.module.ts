@@ -55,6 +55,10 @@ const routes: Routes = [
     loadChildren:
       './modules/bbreports/bbreports.module#BBReportsModule',
     canLoad: [AuthGuard]
+  }, {
+    path: 'contactus',
+    loadChildren:
+      './modules/contactus/contactus.module#ContactusModule',
   }
 ];
 

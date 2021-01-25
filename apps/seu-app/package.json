@@ -52,6 +52,7 @@
     "file-saver": "^2.0.5",
     "font-awesome": "^4.7.0",
     "get-google-fonts": "^1.2.2",
+    "hijrah-date": "^1.0.3",
     "ionicons": "^4.6.3",
     "jquery": "^3.5.1",
     "mime": "^2.4.7",
