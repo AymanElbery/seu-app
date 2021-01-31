@@ -27,7 +27,7 @@
               <tbody>
                 <tr *ngFor="let appoint of appointments; let i = index">
                   <td>{{i+1}}</td>
-                  <td>{{appoint.ACTUAL_DATE | date : 'yyyy-MM-dd'}}</td>
+                  <td>{{appoint.ACTUAL_DATE }}</td>
                   <td>{{appoint.SCHEDULE_TIME}}</td>
                   <td style="width: 250px !important;">
                     <ng-container>
