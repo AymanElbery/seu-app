@@ -60,7 +60,7 @@
             <h2>{{"general.nearest_branch" | translate }} </h2>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="address-data  wow fadeInDown" data-wow-duration="2s"
                     style="visibility: visible; animation-duration: 2s; animation-name: fadeInDown;">
                     <div class="form-group group2 ">
@@ -79,20 +79,13 @@
                                 <span> {{item['value']}}</span>
                             </p>
                         </ng-container>
-                        <!-- 
-                    <p>المقر الرئيسي</p>
-                    <h4>الرياض - طريق ابو بكر الصديق تقاطع طريق الأمير محمد بن سلمان. </h4>
-
-                    <p>صندوق البريد : <span> 4334</span></p>
-                    <p> الرمز البريدي : <span> 4334</span></p>
-                    <a href=""><span class="fas fa-phone" style="font-size: 16px;"></span> 00966112613500</a>
-                    <p> ​من الأحد إلى الخميس​ <span> 8 صباحاً - 4 مساءاً</span></p> -->
                     </div>
-
                 </div>
             </div>
-            <div class="col-md-6">
-                <ng-container *ngFor="let map of branchesData[selectedbranch]['maps']">
+        </div>
+        <div class="row">
+            <ng-container *ngFor="let map of branchesData[selectedbranch]['maps']">
+                <div class="col-md-6">
                     <p class="title">
                         {{map['title']}} :
                         <span> {{map['desc']}}</span>
@@ -102,8 +95,8 @@
                         <iframe [src]="map['url']" style="border:0" allowfullscreen="" width="100%" height="300"
                             frameborder="0"></iframe>
                     </div>
-                </ng-container>
-            </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>

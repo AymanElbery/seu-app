@@ -36,7 +36,7 @@ export class ContactEnquireComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       'ticket_id': ['', [Validators.required]],
-      'ssn': ['', [Validators.required, Validators.minLength(9), Validators.maxLength(10)]],
+      'ssn': ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       'captcha': ['', [Validators.required]],
     });
     this.getDetails();

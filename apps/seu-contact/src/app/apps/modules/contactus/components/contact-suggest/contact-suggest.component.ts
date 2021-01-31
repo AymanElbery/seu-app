@@ -32,7 +32,7 @@ export class ContactSuggestComponent implements OnInit {
     this.form = this.fb.group({
       'name': ['', [Validators.required]],
       'phone': ['', [Validators.required, Validators.maxLength(12), Validators.minLength(10)]],
-      'ssn': ['', [Validators.required, Validators.maxLength(10), Validators.minLength(9)]],
+      'ssn': ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
       'email': ['', [Validators.required, Validators.email]],
       'group': ['', [Validators.required]],
       'type': ['', [Validators.required]],
