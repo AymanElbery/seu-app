@@ -61,10 +61,12 @@ export class ContactFormComponent implements OnInit {
     this.form.controls['captcha'].setValue(captchaResponse);
   }
   submitting = false;
+  submit = false;
   ticket_id = '';
 
   onSubmit() {
     if (this.form.invalid) {
+      this.submit = true;
       return false;
     }
     const formData = new FormData();

@@ -20,7 +20,7 @@ export class ContactEnquireComponent implements OnInit {
   environment;
   form: FormGroup;
   noteform: FormGroup;
-
+  submitt = false;
   ticketDetails
 
   groups = [];
@@ -54,6 +54,7 @@ export class ContactEnquireComponent implements OnInit {
   requesting = false;
   err_code = '';
   formInput;
+  
   getDetails() {
     if (this.form.invalid) {
       return false;
