@@ -18,6 +18,7 @@ export class ResumeAdminRequestDetailsComponent implements OnInit {
   submitted = false;
   request;
   lang;
+  exist = false;
 
   constructor(
     private router: Router,

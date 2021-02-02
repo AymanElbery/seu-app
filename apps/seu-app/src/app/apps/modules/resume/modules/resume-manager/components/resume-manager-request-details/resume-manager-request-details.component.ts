@@ -19,6 +19,7 @@ export class ResumeManagerRequestDetailsComponent implements OnInit {
   submitted = false;
   request;
   lang;
+  exist = false;
 
   constructor(
     private router: Router,
