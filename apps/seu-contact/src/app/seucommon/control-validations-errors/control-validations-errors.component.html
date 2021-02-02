@@ -1,4 +1,4 @@
-<div *ngIf="control.invalid && (control.dirty || control.touched)" style="position: relative; bottom: 20px;">
+<div *ngIf="control.invalid" style="position: relative; bottom: 20px;">
     <!-- || control.touched-->
     <div *ngFor="let obj of control.errors | keyvalue">
         <b style="position: relative; left: -10px;" class="text-danger">{{"validations." +obj.key |translate:obj.value}}</b>
