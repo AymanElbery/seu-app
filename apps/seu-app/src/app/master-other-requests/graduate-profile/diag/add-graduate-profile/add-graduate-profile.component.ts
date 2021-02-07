@@ -22,11 +22,17 @@ export class AddGraduateProfileComponent implements OnInit {
   showDetail = true;
   upgradeflag = false;
   // isLoading = false;
+  terms;
+  cur_term;
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddGraduateProfileComponent>,
-    private toastr: AppToasterService, private gradService: GraduateProfileService, private translate: TranslateService, ) { }
+    private toastr: AppToasterService, private gradService: GraduateProfileService, private translate: TranslateService, ) { 
+      this.terms = this.data.terms;
+      this.cur_term = this.data.cur_term;
+      console.log(this.terms[25].TERM_CODE == this.cur_term);
+    }
 
   ngOnInit() {
     this.stdinfo = {
@@ -35,6 +41,8 @@ export class AddGraduateProfileComponent implements OnInit {
       mobile: '',
       email: '',
       job_status: '',
+      gr_term: this.cur_term,
+      gr_term_hr: '',
       job_sector: '',
       year_job: '',
       job_com: '',

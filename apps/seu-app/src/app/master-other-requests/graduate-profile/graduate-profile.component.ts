@@ -19,6 +19,9 @@ export class GraduateProfileComponent implements OnInit,OnDestroy {
   msgs;
   status;
   isLoading = false;
+  terms;
+  cur_term;
+
   constructor(private translate: TranslateService,public dialog: MatDialog, private toastr: AppToasterService, private gradProfServ: GraduateProfileService) { }
   ngOnInit() {
     this.getRequests();
@@ -47,7 +50,9 @@ export class GraduateProfileComponent implements OnInit,OnDestroy {
         this.reqData = this.gradProfServ.reqData;
         this.msgs = this.gradProfServ.msgs;
         this.isLoading = false;
-        // //console.log(this.reqData.requests);
+        this.terms = this.gradProfServ.reqData.terms;
+        this.cur_term = this.gradProfServ.reqData.curr_term;
+        //console.log(this.terms, this.cur_term);
       }, err => {
         this.reqData = [];
         this.msgs = [];
@@ -78,6 +83,10 @@ export class GraduateProfileComponent implements OnInit,OnDestroy {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '85%';
+    dialogConfig.data = {
+      'terms': this.terms,
+      'cur_term': this.cur_term
+    };
     // dialogConfig.height = '85%';
     // dialogConfig.direction = "rtl";
     // dialogConfig.position = { top: '80px', left: '20px' };
