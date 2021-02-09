@@ -39,6 +39,7 @@ export class GraduateProfileDetailComponent implements OnInit {
       JOB_PROMO_YEAR: '',
       JOB_SECTOR: '',
       JOB_STATUS: '',
+      GRADUATE_TERM: '',
       JOB_TIT: '',
       MOBILE_NUM: '',
       PERSONAL_EMAIL: '',
@@ -75,7 +76,7 @@ export class GraduateProfileDetailComponent implements OnInit {
           this.stdinfo.STD_GENDER = 'ذكر'
         else if (this.stdinfo.STD_GENDER == 'F')
           this.stdinfo.STD_GENDER = 'أنثي'
-        // //console.log(this.stdinfo);
+          console.log(this.stdinfo);
         this.isLoading = false;
 
       }
