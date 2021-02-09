@@ -22,6 +22,8 @@
                 <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.req_file" | translate}}</th>
                 <th scopr="col">{{"my_requests_page.status" | translate}}</th>
+                <th scopr="col">{{"my_requests_page.pay_amount" | translate}}</th>
+                <th scopr="col">{{"my_requests_page.pay_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.estimate_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.trans_date" | translate}}</th>
                 <th scope="col">{{"my_requests_page.trans_file" | translate}}</th>
@@ -56,6 +58,9 @@
                 <td>
                   <span class="{{req.STATUS}}">{{"statuses."+req.STATUS | translate}}</span>
                 </td>
+                <td>{{ req.AMOUNT}}</td>
+                <td>{{ req.PAYMENT_DATE | date : 'yyyy-MM-dd'}}</td>
+
                 <td>
                   <span *ngIf="req.ESTIMATED_DATE && req.STATUS != 'pendding'">
                     {{ req.ESTIMATED_DATE | date : 'yyyy-MM-dd'}}
@@ -72,20 +77,24 @@
                       class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
                   </ng-container>
                 </td>
-                <td>
-                  <button *ngIf="req.STATUS == 'pendding' || req.STATUS == 'payment'" (click)="cancel(req.REQ_ID)"
-                    class="btn btn-primary">{{"general.cancel" | translate}}</button>
-                  &nbsp;
-                  <button *ngIf="req.STATUS == 'payment'" (click)="openAddPayment(req)"
-                    class="btn btn-primary">{{"general.pay" |
-                    translate}}</button>
-                  &nbsp;
-
-                  <button (click)="openAddCommentDialog(req.REQ_ID)" class="btn btn-primary">{{"general.comments" |
-                    translate}}</button>
-                  &nbsp;
-                  <button class="btn btn-primary" (click)="openDetailsDialog(req)">{{"general.details" |
-                    translate}}</button>
+                <td style="text-align: right;">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonreports"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{"general.actions" | translate}} <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonreports">
+                      <button class="dropdown-item" *ngIf="req.STATUS == 'pendding' || req.STATUS == 'payment'"
+                        (click)="cancel(req.REQ_ID)">{{"general.cancel" | translate}}</button>
+                      <button class="dropdown-item" *ngIf="req.STATUS == 'payment'"
+                        (click)="openAddPayment(req)">{{"general.pay" |
+                        translate}}</button>
+                      <button class="dropdown-item" (click)="openAddCommentDialog(req.REQ_ID)">{{"general.comments" |
+                        translate}}</button>
+                      <button class="dropdown-item" (click)="openDetailsDialog(req)">{{"general.details" |
+                        translate}}</button>
+                    </div>
+                  </div>
                 </td>
               </tr>
             </tbody>

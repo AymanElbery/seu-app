@@ -162,5 +162,11 @@
         "password_updated": "password has been updated",
         "validation_error": "validation errors",
         "password_has_been_rest": "new password has been sent to your email"
+    },
+    "pay_notes": {
+        "note1": "Page 250 Word:",
+        "note2": "40 SR to translate a page or part of it",
+        "note3": "60 SR for specialized translation or part thereof",
+        "note4": "25 SR for proofreading, or part thereof"
     }
 }
