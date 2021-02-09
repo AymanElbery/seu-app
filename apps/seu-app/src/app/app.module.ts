@@ -49,7 +49,9 @@ import { SeucommonModule } from './seucommon/seucommon.module';
 import { TranslateService } from '@ngx-translate/core';
 import { StdUploadPhotoListComponent } from './home/std-upload-photo-list/std-upload-photo-list.component';
 import { ContactRedirectComponent } from './shared/components/contact/contactcomponent';
-
+import { VedioComponent } from './instructions/exams/vedio.component';
+import { VgCoreModule } from 'videogular2/core';
+import { VgControlsModule } from 'videogular2/controls';
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +73,8 @@ import { ContactRedirectComponent } from './shared/components/contact/contactcom
     AdmisPagesComponent,
     StdsPagesComponent,
     AppErrorComponent,
-    ContactRedirectComponent
+    ContactRedirectComponent,
+    VedioComponent
   ],
   imports: [
     CommonModule,
@@ -91,7 +94,9 @@ import { ContactRedirectComponent } from './shared/components/contact/contactcom
     , TimerModule
     , MatProgressSpinnerModule
     , MatDialogModule
-    , SeucommonModule
+    , SeucommonModule,
+    VgCoreModule,
+    VgControlsModule
   ],
   providers: [ConfigService,
     HttpRequestService,
@@ -104,8 +109,8 @@ import { ContactRedirectComponent } from './shared/components/contact/contactcom
     , { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
 
   ],
-  entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent],
-  exports: [DownloadPrintDirective, ExternalLinkDirective],
+  entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent,VedioComponent],
+  exports: [DownloadPrintDirective, ExternalLinkDirective,VedioComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

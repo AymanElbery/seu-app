@@ -90,7 +90,7 @@
     "tns-core-modules": "~6.3.0",
     "tns-platform-declarations": "^6.5.15",
     "tslib": "^1.14.1",
-    "videogular2": "6.3.0",
+    "videogular2": "^6.3.0",
     "xlsx": "^0.15.6",
     "zone.js": "~0.9.1"
   },

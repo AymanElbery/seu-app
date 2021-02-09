@@ -264,7 +264,6 @@
         "umc": "المركز الطبي الجامعي",
         "bb_virtual_reports": "تقارير الفصول الإفتراضية",
         "dashboard": "لوحة القيادة"
-
     },
     "errors": {
         "invalidStdID": "لم نستطيع الحصول علي بيانات الرقم الرجامعي",
@@ -1249,7 +1248,8 @@
             "downloadapps": "لتنزيل برنامج الاختبارات الإلكترونية (SwiftAssess Assessment):",
             "Device": "نوع الجهاز المستخدم​",
             "DownloadLink": "رابط تنزيل البرنامج​",
-            "apps": [{
+            "apps": [
+                {
                     "title": "جهاز الحاسوب المكتبي/المحمول",
                     "desc": "رابط تنزيل المتصفح الآمن لأنظمة التشغيل (Windows & Mac)",
                     "link": "https://eur01.safelinks.protection.outlook.com/?url=https://gammalearn.sharepoint.com/:f:/s/Operations/Er2Rmx_Fld1EmTkAxJPejkEBTBr6Efg8ofSjtUhtRzwYVQ?e%3DzDyNy6&amp;data=02%7c01%7c%7ce6d26d10d6bf44bedd3508d7691dea15%7c1f00763a1f87473bbba1b6c746af03e4%7c0%7c0%7c637093450070182397&amp;sdata=T6FmnCMZ%2Bav9tW7TUCOGog9mYkZbEIgRDVMLoA%2Bq9%2BU%3D&amp;reserved=0"
@@ -1268,7 +1268,14 @@
             "Guidelines": "الأدلة الإرشادية:",
             "Manual": "الدليل الإرشادي",
             "Download": "تحميل",
-            "GuidelinesList": [{
+            "actions": "الإجراء",
+            "Play": "تشغيل",
+            "guide_doc": "الدليل الإرشادي للاختبارات الإلكترونية عن بعد باستخدام الذكاء الاصطناعي",
+            "guide_vedio_SwiftAssess": "فيديو تعريفي لكيفية استيفاء متطلبات منصة (SwiftAssess) ",
+            "guide_vedio_WebEx": "فيديو تعريفي عن الدعم التقني للاختبارات الإلكترونية عن بعد  عبر نظام (WebEx)",
+            "guide_faqs": "الأسئلة الشائعة​",
+            "GuidelinesList": [
+                {
                     "title": "تعليمات ما قبل الاختبارات",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
                 },
