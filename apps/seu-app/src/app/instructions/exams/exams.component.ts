@@ -39,7 +39,7 @@ export class ExamsComponent implements OnInit, OnDestroy {
   play(file) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    dialogConfig.width = '50%';
+    dialogConfig.width = (document.body.clientWidth < 650) ? '100' : '65%';
     dialogConfig.maxWidth = 1000;
     dialogConfig.data = { file: file };
     this.dialog.open(VedioComponent, dialogConfig);
