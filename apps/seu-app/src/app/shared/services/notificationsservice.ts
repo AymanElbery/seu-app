@@ -61,9 +61,9 @@ export class NotificationsService {
       username = username.substr(1);
     }
     this.getList(username);
-    setTimeout(() => {
-      this.reload();
-    }, 60000);
+    // setTimeout(() => {
+    //   this.reload();
+    // }, 60000);
   }
 
   getList(username) {
