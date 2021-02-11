@@ -226,6 +226,7 @@
         "skills_record": "السجل المهاري",
         "BLACKBOARD": "البلاكبورد",
         "GRADUATE": "شؤون الخريجين",
+        "statements": "الإفادات الطلابية",
         "admis_pages_jobs": "نظام التوظيف",
         "admis_pages_sms": "نظام الرسائل",
         "admis_pages_stds": "طلبات الطلاب",
@@ -587,6 +588,14 @@
         "DEC": "ديسيمبر"
     },
     "services": {
+        "statements":{
+            "statements_list": "قائمة الإفادات الطلابية",
+            "state_type": "نوع الإفادة",
+            "action": "الإجراءات",
+            "print_ar": "طباعة",
+            "print_en": "print",
+            "can_not_print": "عدم تحقق الشروط"
+        },
         "academic_status": {
             "title": "الحالة الأكاديمية",
             "desc": "الحالة الأكاديمية"

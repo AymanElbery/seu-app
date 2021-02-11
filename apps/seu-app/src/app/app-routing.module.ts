@@ -44,6 +44,12 @@ const routes: Routes = [
         canActivate: [UGGuard]
       },
       {
+        path: 'statements',
+        loadChildren:
+          './statements/statements.module#StatementsModule',
+        canActivate: [UGGuard]
+      },
+      {
         path: 'registercourses',
         loadChildren:
           './register-courses/register-courses.module#RegisterCoursesModule',
