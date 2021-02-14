@@ -188,7 +188,8 @@
         "certificate": "شهادة",
         "not_attend_yet": "لم يتم التحضير",
         "conditions": "التعريف و الشروط",
-        "standards": "المعايير و الضوابط"
+        "standards": "المعايير و الضوابط",
+        "attends": "التحضير"
     },
     "statuses": {
         "registered": "قيد التسجيل",

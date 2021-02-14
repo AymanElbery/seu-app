@@ -5,7 +5,7 @@
   <div class="row" *ngIf="checkBlock">
     <div class="col-md-12">
       <div class="alert alert-danger text-center" style="font-weight: bold;">
-        {{"courses.you_are_blocked_from" | translate}} {{ block_record.START_DATE | date : 'yyyy-MM-dd' }} {{"courses.you_are_blocked_to" | translate}} {{ block_record.END_DATE | date : 'yyyy-MM-dd' }}
+        {{"courses.you_are_blocked_from" | translate}} {{ block_record.START_DATE }} {{"courses.you_are_blocked_to" | translate}} {{ block_record.END_DATE }}
       </div>
     </div>
   </div>

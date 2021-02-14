@@ -38,8 +38,8 @@
                                 <td style="text-align: center;">{{ student.FULL_NAME_AR }}</td>
                                 <td style="text-align: center;">{{ student.COLL_DESC }}</td>
                                 <td style="text-align: center;">{{ student.DEPT_DESC }}</td>
-                                <td style="text-align: center;">{{ student.START_DATE |  date : 'yyyy-MM-dd' }}</td>
-                                <td style="text-align: center;">{{ student.END_DATE |  date : 'yyyy-MM-dd' }}</td>
+                                <td style="text-align: center;">{{ student.START_DATE }}</td>
+                                <td style="text-align: center;">{{ student.END_DATE }}</td>
                                 <td style="text-align: center;">
                                     <button (click)="unblock(student.ID)" class="btn btn-danger">{{"courses.unblock_btn" | translate}}</button>
                                 </td>

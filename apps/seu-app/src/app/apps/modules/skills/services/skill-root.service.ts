@@ -99,6 +99,9 @@ export class SkillsRootService {
     printAttend(c_id, std_id) {
         return this.get("std/courses/attend_cert/" + c_id + '/' + std_id);
     }
+    printAttendAdmin(c_id, std_id) {
+        return this.get("emp/courses/attend_cert/" + c_id + '/' + std_id);
+    }
     downloadPDF(response, file_name ="certificate.pdf") {
         if (response['status']) {
             const linkSource = `data:application/pdf;base64,${response['data']['content']}`;
