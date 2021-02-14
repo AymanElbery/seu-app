@@ -22,7 +22,7 @@ export class StatementsListComponent implements OnInit {
         private toastr: AppToasterService
     ) { 
         this.lang = this.translate.currentLang;
-        this.baseApiUrl = this.statementsService.URL + "/stdservicesapi/";
+        this.baseApiUrl = this.statementsService.getDoaunloadURL()+'/';
         this.getStatements();
     }
 
