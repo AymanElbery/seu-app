@@ -33,6 +33,14 @@ export class ProjectsService extends AppUserRootService {
     return this.post("/innovation/hackathon/save", data);
   }
 
+  getDistanceLearningLookups(lang) {
+    return this.get('/innovation/distancelearning/lookups?lang=' + lang);
+  }
+
+  addDistanceLearningRequest(data) {
+    return this.post("/innovation/distancelearning/save", data);
+  }
+
 }
 
 
