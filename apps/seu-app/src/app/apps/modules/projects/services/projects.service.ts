@@ -37,8 +37,30 @@ export class ProjectsService extends AppUserRootService {
     return this.get('/innovation/distancelearning/lookups?lang=' + lang);
   }
 
+  getCertsByEmail(data) {
+    return this.post('/innovation/distancelearning/get_certs_by_email' , data);
+  }
+
   addDistanceLearningRequest(data) {
     return this.post("/innovation/distancelearning/save", data);
+  }
+
+  printCert(c_id, r_id) {
+    return this.get("/innovation/distancelearning/cert/" + c_id + '/' + r_id);
+  }
+
+  downloadPDF(response) {
+    if (response['status']) {
+        const linkSource = `data:application/pdf;base64,${response['data']['content']}`;
+        const downloadLink = document.createElement("a");
+        const fileName = "cert.pdf";
+
+        downloadLink.href = linkSource;
+        downloadLink.download = fileName;
+        downloadLink.click();
+    } else {
+        this.notifyError(response['res_code']);
+    }
   }
 
 }
