@@ -9,5 +9,8 @@ export const providerDeclarations: any[] = [
 export const routes: Routes = [
     {
         path: 'all', component: StatementsListComponent,
+    },
+    {
+        path: '', component: StatementsListComponent,
     }
 ];

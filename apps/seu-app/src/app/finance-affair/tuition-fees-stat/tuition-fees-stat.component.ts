@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TuitionFeesService } from '../services/tuition-fees.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { Router, RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-tuition-fees-stat',
@@ -15,7 +16,14 @@ export class TuitionFeesStatComponent implements OnInit, OnDestroy {
   EngPrint: string;
   isLoading = false;
 
-  constructor(private translate: TranslateService, private toastr: AppToasterService, private academicService: TuitionFeesService) { }
+  constructor(
+    private translate: TranslateService, 
+    private toastr: AppToasterService, 
+    private academicService: TuitionFeesService,
+    private router: Router
+  ) { 
+    this.router.navigate(['/statements']);
+  }
   ngOnInit() {
     this.getServiceRequest();
     this.subscribeLangChange();
