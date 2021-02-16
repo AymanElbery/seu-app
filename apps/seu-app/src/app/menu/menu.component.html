@@ -255,9 +255,6 @@
           <a href="javascript:void(0)"><span> {{ "menu.acrequests" | translate }} </span>
             <i class="ik ik-feather"></i></a>
           <div class="submenu-content">
-            <a href="#" class="menu-item" routerLink="/academicrequests/withdrawal">
-              {{ "menu.withdrawal" | translate }}
-            </a>
             <a href="#" class="menu-item" routerLink="/academicrequests/studypostpone">
               {{ "menu.studypostpone" | translate }}
             </a>
@@ -280,6 +277,9 @@
             </a>
             <a href="#" class="menu-item" routerLink="/academicrequests/lecturesexecuses">{{ "menu.lecexecuse" |
               translate }}
+            </a>
+            <a href="#" class="menu-item" routerLink="/academicrequests/withdrawal">
+              {{ "menu.withdrawal" | translate }}
             </a>
           </div>
         </div>
@@ -304,6 +304,12 @@
             <a href="#" class="menu-item" routerLink="/otherrequests/changecourse">
               {{ "menu.changecourse" | translate }}
             </a>
+            <a href="#" class="menu-item" routerLink="/otherrequests/graduateprofile">{{ "menu.graduateprofile" |
+              translate }}
+            </a>
+            <a href="#" class="menu-item" routerLink="/otherrequests/address">
+              {{ "menu.graduat_address" | translate }}
+            </a>
             <!--    <a href="#" class="menu-item"> طلب البطاقة الجامعية  </a>
                       <a href="#" class="menu-item">تحويل إلى برنامج آخر</a>
                       <a href="#" class="menu-item"routerLink="/otherrequests/changecourse" >تحويل إلى برنامج آخر</a>-->
@@ -318,6 +324,7 @@
             <a href="#" class="menu-item" routerLink="/otherrequests/absencequery">
               {{ "menu.absencequery" | translate }}
             </a>
+
           </div>
         </div>
         <div *ngIf="menuType == 2 && showServices" class="nav-item has-sub">
@@ -326,12 +333,6 @@
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/exam-photo">
               {{ "menu.EXAM_PHOTO" | translate }}
-            </a>
-            <a href="#" class="menu-item" routerLink="/otherrequests/graduateprofile">{{ "menu.graduateprofile" |
-              translate }}
-            </a>
-            <a href="#" class="menu-item" routerLink="/otherrequests/address">
-              {{ "menu.graduat_address" | translate }}
             </a>
 
           </div>
