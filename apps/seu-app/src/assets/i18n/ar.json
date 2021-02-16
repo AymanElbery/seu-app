@@ -67,6 +67,9 @@
             "cname": "اسم المقرر ",
             "req_date": "تاريخ الطلب",
             "req_status": "حالة الطلب",
+            "under_proccess": "تحت الإجراء",
+            "confirm": "تم القبول",
+            "reject": "تم الرفض",
             "req_print": "طباعة الطلب",
             "req_delete": "حذف الطلب",
             "req_no": "رقم الطلب",
@@ -158,7 +161,7 @@
         "changecourse": "تغير التخصص",
         "personalid": "البطاقة الجامعية",
         "absencequery": "الاستعلام عن الغياب",
-        "graduateprofile": "معلومات خريج",
+        "graduateprofile": "طلب التخرج",
         "affairs": "الشؤون الأكاديمية",
         "status": "الحالة الأكاديمية",
         "certificate": "شهادة تعريف",
@@ -223,6 +226,7 @@
         "skills_record": "السجل المهاري",
         "BLACKBOARD": "البلاكبورد",
         "GRADUATE": "شؤون الخريجين",
+        "statements": "الإفادات الطلابية",
         "admis_pages_jobs": "نظام التوظيف",
         "admis_pages_sms": "نظام الرسائل",
         "admis_pages_stds": "طلبات الطلاب",
@@ -232,7 +236,7 @@
         "admis_pages_admis": "ادارة الأنظمة",
         "admis_pages_enquiries": "الاستعلامات",
         "Forum": "المنتدى",
-        "knowledgeresources": "إدارة المصادر المعرفية",
+        "knowledgeresources": "منصة المصادر المعرفية",
         "DMS": "الاتصالات الإدارية",
         "FacultyRecruitmentSystem": "نظام التعاقد",
         "QueryDMS": "استعلام عن المعاملة",
@@ -264,7 +268,6 @@
         "umc": "المركز الطبي الجامعي",
         "bb_virtual_reports": "تقارير الفصول الإفتراضية",
         "dashboard": "لوحة القيادة"
-
     },
     "errors": {
         "invalidStdID": "لم نستطيع الحصول علي بيانات الرقم الرجامعي",
@@ -585,6 +588,14 @@
         "DEC": "ديسيمبر"
     },
     "services": {
+        "statements":{
+            "statements_list": "قائمة الإفادات الطلابية",
+            "state_type": "نوع الإفادة",
+            "action": "الإجراءات",
+            "print_ar": "طباعة",
+            "print_en": "print",
+            "can_not_print": "عدم تحقق الشروط"
+        },
         "academic_status": {
             "title": "الحالة الأكاديمية",
             "desc": "الحالة الأكاديمية"
@@ -785,6 +796,12 @@
             "stdpic": "صورة شخصية 4*6 للطلاب فقط",
             "CV": "السيرة الذاتية",
             "cjob": "الحالة الوظيفية",
+            "gr_term": "فصل التخرج",
+            "hr_3": "3 ساعات",
+            "hr_6": "6 ساعات",
+            "hr_9": "9 ساعات",
+            "hr_12": "12 ساعات",
+            "gr_term_hr": "عدد الساعات المسجلة في الفصل الحالي",
             "jondes": "بيانات العمل",
             "empsector": "قطاع التوظيف ",
             "jobyear": " سنة التوظيف",
@@ -1243,7 +1260,8 @@
             "downloadapps": "لتنزيل برنامج الاختبارات الإلكترونية (SwiftAssess Assessment):",
             "Device": "نوع الجهاز المستخدم​",
             "DownloadLink": "رابط تنزيل البرنامج​",
-            "apps": [{
+            "apps": [
+                {
                     "title": "جهاز الحاسوب المكتبي/المحمول",
                     "desc": "رابط تنزيل المتصفح الآمن لأنظمة التشغيل (Windows & Mac)",
                     "link": "https://eur01.safelinks.protection.outlook.com/?url=https://gammalearn.sharepoint.com/:f:/s/Operations/Er2Rmx_Fld1EmTkAxJPejkEBTBr6Efg8ofSjtUhtRzwYVQ?e%3DzDyNy6&amp;data=02%7c01%7c%7ce6d26d10d6bf44bedd3508d7691dea15%7c1f00763a1f87473bbba1b6c746af03e4%7c0%7c0%7c637093450070182397&amp;sdata=T6FmnCMZ%2Bav9tW7TUCOGog9mYkZbEIgRDVMLoA%2Bq9%2BU%3D&amp;reserved=0"
@@ -1262,7 +1280,14 @@
             "Guidelines": "الأدلة الإرشادية:",
             "Manual": "الدليل الإرشادي",
             "Download": "تحميل",
-            "GuidelinesList": [{
+            "actions": "الإجراء",
+            "Play": "تشغيل",
+            "guide_doc": "الدليل الإرشادي للاختبارات الإلكترونية عن بعد باستخدام الذكاء الاصطناعي",
+            "guide_vedio_SwiftAssess": "فيديو تعريفي لكيفية استيفاء متطلبات منصة (SwiftAssess) ",
+            "guide_vedio_WebEx": "فيديو تعريفي عن الدعم التقني للاختبارات الإلكترونية عن بعد  عبر نظام (WebEx)",
+            "guide_faqs": "الأسئلة الشائعة​",
+            "GuidelinesList": [
+                {
                     "title": "تعليمات ما قبل الاختبارات",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
                 },

@@ -1,0 +1,27 @@
+.pendding{
+    padding: 3px 10px;
+    background-color: #337ab7;
+    border-radius: 3px;
+    color: #FFF;
+}
+.processing{
+    padding: 3px 10px;
+    background-color: #f0ad4e;
+    border-radius: 3px;
+    color: #FFF;
+}
+.reviewing{
+    padding: 3px 10px;
+    background-color: #2d2c7e;
+    border-radius: 3px;
+    color: #FFF;
+}
+.completed{
+    padding: 3px 10px;
+    background-color: #5cb85c;
+    border-radius: 3px;
+    color: #FFF;
+}
+mat-dialog-container{
+    overflow-x: hidden;
+}

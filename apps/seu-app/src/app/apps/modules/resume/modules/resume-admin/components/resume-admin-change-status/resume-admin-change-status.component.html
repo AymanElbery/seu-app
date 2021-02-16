@@ -1,0 +1,22 @@
+<div class="row" style="padding: 20px;">
+  <div class="col-md-12">
+    <form [formGroup]="changeStatusForm" (ngSubmit)="onSubmit()">
+      <div class="form-group" style="margin-top: 20px;">
+        <label for="answer">{{ "change_status_page.status" | translate}}</label>
+        <select #mySelect (change)='onOptionsSelected(mySelect.value)' formControlName="CONTENT_STATUS" class="form-control">
+          <option value="2">{{ "change_status_page.under" | translate}}</option>
+          <option value="1">{{ "change_status_page.agree" | translate}}</option>
+          <option value="0">{{ "change_status_page.disagree" | translate}}</option>
+        </select>
+      </div>
+      <div *ngIf="displayReason" style="margin-top: 20px;" class="form-group">
+        <label for="answer">{{ "change_status_page.reason" | translate}}</label>
+        <textarea class="form-control" formControlName="CONTENT_REASON" rows="5"></textarea>
+      </div>
+      <div class="form-group">
+        <button [disabled]="submitted || changeStatusForm.invalid" style="margin-top: 10px; width: 100%;" type="submit"
+          class="btn sub">{{ "change_status_page.change" | translate}} <i class="fa fa-save"></i></button>
+      </div>
+    </form>
+  </div>
+</div>

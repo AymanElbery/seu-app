@@ -120,7 +120,7 @@ body {
 
 body {
   font-weight: 600;
-  font-family: fontreg;
+  font-family: fontreg !important;
   position: relative;
   line-height: 24px;
   color: $color_log_cabin_approx;
@@ -266,6 +266,7 @@ p {
 }
 
 @media(min-width: 1024px) {
+ app-header {
   nav.navbar {
     .navbar-brand {
       margin-top: 0;
@@ -343,8 +344,10 @@ p {
     }
   }
 }
+}
 
 @media(max-width: 1200px) {
+  app-header{
   nav.navbar {
     .navbar-brand {
       margin-top: 0;
@@ -361,7 +364,8 @@ p {
     }
   }
 }
-
+}
+app-header{
 nav {
   &.navbar {
     .navbar-brand {
@@ -684,8 +688,10 @@ nav {
     color: $color_carrot_orange_approx !important;
   }
 }
+}
 
 @media(max-width: 992px) {
+app-header{
   nav {
     &.navbar {
       .navbar-brand {
@@ -772,6 +778,7 @@ nav {
       padding-top: 10px;
     }
   }
+}
 
   .adv {
     margin-top: 20px;
@@ -1855,7 +1862,7 @@ nav {
     }
   }
 
-  nav.navbar .navbar-brand img.logo {
+app-header  nav.navbar .navbar-brand img.logo {
     width: 90%;
     height: 50px;
     margin-top: -10px;
@@ -3779,3 +3786,44 @@ form {
  .wpwl-container-card{
    padding: 5px;
  }
+
+ app-contact-header .navbar-nav .dropdown-menu {
+  float: right !important;
+  position: absolute !important;
+}
+app-contact-header .navbar-nav .dropdown-menu {
+  float: right !important;
+  position: absolute !important;
+}
+
+app-contact-header nav.navbar.bootsnav ul.nav .dropdown-menu .dropdown-menu{
+  left: 100% !important;
+}
+app-contact-header nav.navbar.bootsnav ul.nav.navbar-right .dropdown-menu .dropdown-menu{
+  left: 198px !important;
+}
+@media (max-width: 992px){
+  app-contact-header nav.navbar.bootsnav ul.nav.navbar-right .dropdown-menu .dropdown-menu{
+  left: 0px !important;
+}
+}
+
+app-contact-header nav.navbar.bootsnav ul.nav>li>a {
+  padding: 18px 1px !important;
+  font-weight: 600 !important;
+}
+
+@media (min-width: 1024px) {
+app-contact-header nav.bootsnav.brand-center ul.nav>li.dropdown>ul.dropdown-menu {
+  margin-top: -4px !important;
+}
+
+}
+
+@media (min-width: 1024px) {
+  app-contact-header  nav.bootsnav.brand-center.center-side .navbar-collapse .col-half.right {
+    text-align: center;
+    padding-right: 100px;
+}
+}
+

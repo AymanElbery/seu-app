@@ -1,0 +1,63 @@
+<div *ngIf="ticket_id">
+  <div class="ser-state">
+      <div style="text-align: center" class="alert  alert-success" role="alert">
+          <h3>{{"form.success_req_no" | translate }} #{{ticket_id}} </h3>
+          <h6>{{"form.success" | translate }}</h6>
+      </div>
+  </div>
+</div>
+<form [formGroup]="form" (submit)="onSubmit()" id="contactForm">
+  <div class="row">
+    <div class="col-md-6">
+      <label>{{'form.user_name' | translate}}<span class="reqstart">*</span></label>
+      <input class="form-control" type="text" formControlName="user_name">
+      <control-validations-errors [control]="form.controls.user_name"></control-validations-errors>
+    </div>
+    <div class="col-md-6">
+      <label>{{'form.email' | translate}}<span class="reqstart">*</span></label>
+      <input class="form-control" type="text" formControlName="email">
+      <control-validations-errors [control]="form.controls.email"></control-validations-errors>
+    </div>
+    <div class="col-md-6">
+      <label>{{'form.ssn' | translate}}<span class="reqstart">*</span></label>
+      <input class="form-control" type="text" formControlName="ssn"  (keypress)="keyPress($event)" maxlength="10">
+      <control-validations-errors [control]="form.controls.ssn"></control-validations-errors>
+    </div>
+    <div class="col-md-6">
+      <label>{{'form.birth_date' | translate}}<span class="reqstart">*</span></label>
+      <input class="form-control" type="text" formControlName="birth_date" bsDatepicker [bsConfig]="datePickerConfig">
+      <control-validations-errors [control]="form.controls.birth_date"></control-validations-errors>
+    </div>
+    <div class="col-md-12">
+      <label>{{'form.subject' | translate}}<span class="reqstart">*</span></label>
+      <input class="form-control" type="text" formControlName="subject">
+      <control-validations-errors [control]="form.controls.subject"></control-validations-errors>
+    </div>
+    <div class="col-md-12">
+      <label>{{'form.description' | translate}}</label>
+      <textarea class="form-control" style="height: auto;" formControlName="description" rows="5"></textarea>
+      <control-validations-errors [control]="form.controls.description"></control-validations-errors>
+    </div>
+    <div class="col-md-12">
+      <div class="state">
+        <h6>{{"form.attachment"|translate}}</h6>
+        <div class="custom-file">
+          <input name="imageUrl2" type="file" accept="*/*" (change)="onFileSelect($event)" id="customFileLang"
+            class="custom-file-input" />
+          <label for="customFileLang" id="customFileLangLabel" class="custom-file-label"></label>
+        </div>
+        <control-validations-errors [control]="form.controls.file"></control-validations-errors>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="state">
+        <h6>{{"form.captcha"|translate}} <span class="reqstart">*</span></h6>
+        <re-captcha #recaptchaRef (resolved)="resolved($event)" [siteKey]="environment.captchaSiteKey"></re-captcha>
+      </div>
+    </div>
+    <div class="col-md-12" style="text-align: center;">
+      <button class="btn btn-suggest" type="submit" [disabled]="submitting || form.invalid">{{"form.send"|translate}}
+      </button>
+    </div>
+  </div>
+</form>

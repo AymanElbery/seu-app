@@ -1,0 +1,314 @@
+{
+    "/academicaff/status": {
+        "ar": {
+            "pdf": "10.pdf",
+            "vedio": ""
+        }
+    },
+    "/academicaff/skills": {
+        "ar": {
+            "pdf": "20.pdf",
+            "vedio": ""
+        }
+    },
+    "/academicaff/certificate": {
+        "ar": {
+            "pdf": "30.pdf",
+            "vedio": ""
+        }
+    },
+    "/academicaff/record": {
+        "ar": {
+            "pdf": "40.pdf",
+            "vedio": ""
+        }
+    },
+    "/other/universitycard": {
+        "ar": {
+            "pdf": "50.pdf",
+            "vedio": ""
+        }
+    },
+    "/procedures/lectabs": {
+        "ar": {
+            "pdf": "60.pdf",
+            "vedio": ""
+        }
+    },
+    "/procedures/lecexecuse": {
+        "ar": {
+            "pdf": "70.pdf",
+            "vedio": "70.mp4"
+        }
+    },
+    "/procedures/postpone": {
+        "ar": {
+            "pdf": "80.pdf",
+            "vedio": "80.mp4"
+        }
+    },
+    "/procedures/execuse": {
+        "ar": {
+            "pdf": "90.pdf",
+            "vedio": "90.mp4"
+        }
+    },
+    "/procedures/summer": {
+        "ar": {
+            "pdf": "100.pdf",
+            "vedio": "110.mp4"
+        }
+    },
+    "/procedures/equalize": {
+        "ar": {
+            "pdf": "120.pdf",
+            "vedio": "120.mp4"
+        }
+    },
+    "/procedures/eequalize": {
+        "ar": {
+            "pdf": "130.pdf",
+            "vedio": "130.mp4"
+        }
+    },
+    "/procedures/changemajor": {
+        "ar": {
+            "pdf": "140.pdf",
+            "vedio": "140.mp4"
+        }
+    },
+    "/procedures/changerequest": {
+        "ar": {
+            "pdf": "150.pdf",
+            "vedio": "150.mp4"
+        }
+    },
+    "/procedures/cancelcourse": {
+        "ar": {
+            "pdf": "160.pdf",
+            "vedio": ""
+        }
+    },
+    "/procedures/reenrol": {
+        "ar": {
+            "pdf": "170.pdf",
+            "vedio": "170.mp4"
+        }
+    },
+    "/procedures/visitorstudent": {
+        "ar": {
+            "pdf": "180.pdf",
+            "vedio": "180.mp4"
+        }
+    },
+    "/procedures/withdrawuniv": {
+        "ar": {
+            "pdf": "190.pdf",
+            "vedio": "190.mp4"
+        }
+    },
+    "/registercourses/registerwishes": {
+        "ar": {
+            "pdf": "200.pdf",
+            "vedio": ""
+        }
+    },
+    "/finance/fees": {
+        "ar": {
+            "pdf": "210.pdf",
+            "vedio": ""
+        }
+    },
+    "/finance/feesexception": {
+        "ar": {
+            "pdf": "220.pdf",
+            "vedio": "220.mp4"
+        }
+    },
+    "/finance/stdpay": {
+        "ar": {
+            "pdf": "230.pdf",
+            "vedio": ""
+        }
+    },
+    "/exams/": {
+        "ar": {
+            "pdf": "240.pdf",
+            "vedio": ""
+        }
+    },
+    "/exams/attendapp": {
+        "ar": {
+            "pdf": "250.pdf",
+            "vedio": ""
+        }
+    },
+    "/exams/examexcuse": {
+        "ar": {
+            "pdf": "260.pdf",
+            "vedio": "260.mp4"
+        }
+    },
+    "/procedures/objectexam": {
+        "ar": {
+            "pdf": "270.pdf",
+            "vedio": "270.mp4"
+        }
+    },
+    "/other/studentinfo": {
+        "ar": {
+            "pdf": "280.pdf",
+            "vedio": ""
+        }
+    },
+    "/academicaff/graduationstatment": {
+        "ar": {
+            "pdf": "290.pdf",
+            "vedio": ""
+        }
+    },
+    "/other/medicalreport": {
+        "ar": {
+            "pdf": "300.pdf",
+            "vedio": ""
+        }
+    },
+    "/other/training": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+    "/other/chineescourse": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+    "/masterstddata/academicstatus": {
+        "ar": {
+            "pdf": "m10.pdf",
+            "vedio": ""
+        }
+    },
+    "/masterstddata/academicrecord": {
+        "ar": {
+            "pdf": "m20.pdf",
+            "vedio": ""
+        }
+    },
+    "/masterstddata/info-update": {
+        "ar": {
+            "pdf": "m30.pdf",
+            "vedio": "m30.mp4"
+        }
+    },
+    "/masterstdcertificate/idcertificate": {
+        "ar": {
+            "pdf": "m40.pdf",
+            "vedio": ""
+        }
+    },
+    "/masterstdcertificate/examattendacecertificate": {
+        "ar": {
+            "pdf": "m50.pdf",
+            "vedio": ""
+        }
+    },
+    "/masterstdcertificate/examattendacecertificateapp": {
+        "ar": {
+            "pdf": "m60.pdf",
+            "vedio": ""
+        }
+    },
+    "/academicrequests/withdrawal": {
+        "ar": {
+            "pdf": "m70.pdf",
+            "vedio": "m70.mp4"
+        }
+    },
+    "/academicrequests/studypostpone": {
+        "ar": {
+            "pdf": "m80.pdf",
+            "vedio": "m80.mp4"
+        }
+    },
+    "/academicrequests/termexecuse": {
+        "ar": {
+            "pdf": "m90.pdf",
+            "vedio": "m90.mp4"
+        }
+    },
+    "/academicrequests/objectexam": {
+        "ar": {
+            "pdf": "m100.pdf",
+            "vedio": "m100.mp4"
+        }
+    },
+    "/academicrequests/cancelcourse": {
+        "ar": {
+            "pdf": "m110.pdf",
+            "vedio": ""
+        }
+    },
+    "/academicrequests/reEnroll": {
+        "ar": {
+            "pdf": "m120.pdf",
+            "vedio": "m120.mp4"
+        }
+    },
+    "/academicrequests/examsexecuses": {
+        "ar": {
+            "pdf": "m130.pdf",
+            "vedio": "m130.mp4"
+        }
+    },
+    "/academicrequests/lecturesexecuses": {
+        "ar": {
+            "pdf": "m140.pdf",
+            "vedio": "m140.mp4"
+        }
+    },
+    "/mfiniance/payment": {
+        "ar": {
+            "pdf": "m150.pdf",
+            "vedio": ""
+        }
+    },
+    "/mfiniance/refund": {
+        "ar": {
+            "pdf": "",
+            "vedio": ""
+        }
+    },
+    "/otherrequests/changebranch": {
+        "ar": {
+            "pdf": "m160.pdf",
+            "vedio": "m160.mp4"
+        }
+    },
+    "/otherrequests/changecourse": {
+        "ar": {
+            "pdf": "m170.pdf",
+            "vedio": "m170.mp4"
+        }
+    },
+    "/otherrequests/personalid": {
+        "ar": {
+            "pdf": "m180.pdf",
+            "vedio": "m180.mp4"
+        }
+    },
+    "/otherrequests/absencequery": {
+        "ar": {
+            "pdf": "m190.pdf",
+            "vedio": ""
+        }
+    },
+    "/otherrequests/graduateprofile": {
+        "ar": {
+            "pdf": "m200.pdf",
+            "vedio": ""
+        }
+    }
+}

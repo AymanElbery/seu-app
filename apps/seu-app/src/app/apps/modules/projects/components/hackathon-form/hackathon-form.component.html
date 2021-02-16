@@ -1,0 +1,197 @@
+<div class="main-content">
+    <app-service-header title="{{'univ' | translate}}" subtitle="{{'hackathon.hackathon' | translate}}">
+    </app-service-header>
+    <section class="ug-content">
+        <div class="container" *ngIf="!isLoading">
+            <seu-loader [isLoading]="isLoading"></seu-loader>
+            <div *ngIf="!active">
+                <div class="ser-state">
+                    <div style="text-align: right" class="alert  alert-danger" role="alert">
+                        <!-- <h1>{{"hackathon.success_req_no" | translate }} #{{app_pk}} </h1> -->
+                        <h5>{{"hackathon.notopen" | translate }}</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="app_pk">
+                <div class="ser-state">
+                    <div style="text-align: right" class="alert  alert-success" role="alert">
+                        <!-- <h1>{{"hackathon.success_req_no" | translate }} #{{app_pk}} </h1> -->
+                        <h5 innerHtml='{{"hackathon.success" | translate:appreq }}'></h5>
+                    </div>
+                </div>
+            </div>
+            <form *ngIf="active && !app_pk" role="form" [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.is_student"|translate}} <span class="reqstart">*</span></h6>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" formControlName="IS_STUDENT"
+                                    id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">{{"hackathon.yes"|translate}}</label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" formControlName="IS_STUDENT"
+                                    id="inlineRadio2" value="0">
+                                <label class="form-check-label" for="inlineRadio2">{{"hackathon.no"|translate}}</label>
+                            </div>
+                        </div>
+                        <control-validations-errors [control]="form.controls.IS_STUDENT"></control-validations-errors>
+                    </div>
+                    <div class="col-md-12" *ngIf="form.controls['IS_STUDENT'].value == '1'">
+                        <div class="state">
+                            <h6>{{"hackathon.university"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" formControlName="UNIVERSITY" class="form-control" />
+                            <control-validations-errors [control]="form.controls.UNIVERSITY">
+                            </control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.name"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" formControlName="FULL_NAME" class="form-control" />
+                            <control-validations-errors [control]="form.controls.FULL_NAME">
+                            </control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.age"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" (keypress)="keypress($event)" formControlName="AGE" class="form-control"
+                                size="3" maxlength="3" />
+                            <control-validations-errors [control]="form.controls.AGE"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.id"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" (keypress)="keypress($event)" formControlName="SSN" class="form-control"
+                                maxlength="10" />
+                            <control-validations-errors [control]="form.controls.SSN"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.email"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="email" formControlName="EMAIL" class="form-control" />
+                            <control-validations-errors [control]="form.controls.EMAIL"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.phone"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" (keypress)="keypress($event)" formControlName="PHONE"
+                                class="form-control" />
+                            <control-validations-errors [control]="form.controls.PHONE"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.city"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" formControlName="CITY" class="form-control" />
+                            <control-validations-errors [control]="form.controls.CITY"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.levelstudy"|translate}} <span class="reqstart">*</span></h6>
+                            <div class="form-check ">
+                                <input class="form-check-input" formControlName="EDU_LEVEL" type="radio"
+                                    id="inlineRadio1" value="Diploma">
+                                <label class="form-check-label"
+                                    for="inlineRadio1">{{"hackathon.Diploma"|translate}}</label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" formControlName="EDU_LEVEL" type="radio"
+                                    id="inlineRadio2" value="Bachelor">
+                                <label class="form-check-label"
+                                    for="inlineRadio2">{{"hackathon.Baccalaureus"|translate}}</label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" formControlName="EDU_LEVEL" type="radio"
+                                    id="inlineRadio1" value="Master">
+                                <label class="form-check-label"
+                                    for="inlineRadio1">{{"hackathon.Master"|translate}}</label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" formControlName="EDU_LEVEL" type="radio"
+                                    id="inlineRadio2" value="PhD">
+                                <label class="form-check-label"
+                                    for="inlineRadio2">{{"hackathon.Doctorat"|translate}}</label>
+                            </div>
+                            <control-validations-errors [control]="form.controls.EDU_LEVEL">
+                            </control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.job"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" formControlName="JOB_TITLE" class="form-control" />
+                            <control-validations-errors [control]="form.controls.JOB_TITLE">
+                            </control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.subscribe"|translate}} <span class="reqstart">*</span></h6>
+                            <div class="form-check ">
+                                <input class="form-check-input" formControlName="HAS_PREV" type="radio"
+                                    id="inlineRadio1" value="1">
+                                <label class="form-check-label" for="inlineRadio1">{{"hackathon.yes"|translate}}</label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" formControlName="HAS_PREV" type="radio"
+                                    id="inlineRadio1" value="0">
+                                <label class="form-check-label" for="inlineRadio1">{{"hackathon.no"|translate}}</label>
+                            </div>
+                            <control-validations-errors [control]="form.controls.HAS_PREV"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.path"|translate}} <span class="reqstart">*</span></h6>
+                            <div class="form-check ">
+                                <input class="form-check-input" formControlName="TRACK" type="radio" id="inlineRadio1"
+                                    value="experience">
+                                <label class="form-check-label"
+                                    for="inlineRadio1">{{"hackathon.experience"|translate}}</label>
+                            </div>
+                            <div class="form-check ">
+                                <input class="form-check-input" formControlName="TRACK" type="radio" id="inlineRadio1"
+                                    value="idea">
+                                <label class="form-check-label"
+                                    for="inlineRadio1">{{"hackathon.idea"|translate}}</label>
+                            </div>
+                            <control-validations-errors [control]="form.controls.TRACK"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"hackathon.file"|translate}}</h6>
+                            <div class="custom-file">
+                                <input name="imageUrl2" type="file" accept="*/*" (change)="handleInputChange($event)" id="customFileLang" class="custom-file-input" />
+                                <label for="customFileLang" class="custom-file-label"></label>
+                            </div>
+                            <control-validations-errors [control]="form.controls.file"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"projects.captcha"|translate}} <span class="reqstart">*</span></h6>
+                            <re-captcha #recaptchaRef (resolved)="resolved($event)"
+                                [siteKey]="environment.captchaSiteKey"></re-captcha>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 100px; text-align: center;">
+                    <div class="col-md-12">
+                        <button style="width: 20%; min-width: 200px;" [disabled]="submitted || form.invalid"
+                            (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "save" | translate}}
+                            <i class="fa fa-save"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>

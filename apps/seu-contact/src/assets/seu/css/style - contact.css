@@ -1,0 +1,236 @@
+.contact-page-inner{
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.07);
+    padding: 40px 40px; 
+    margin-bottom: 50px;
+}
+.contact-page-inner .section-header h2 {
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+.contact-page-inner .section-header::before {
+    right: calc(0%);
+}
+.contact-page-inner .address-data p{
+    font-size: 15px;
+    color: #f28d1e;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 8px;
+}
+.contact-page-inner .address-data h4{
+    font-size: 16px;
+    color: #1c2172;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin: 0;
+}
+.contact-page-inner .address-data a{
+    font-size: 16px;
+    color: #1c2172;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin: 0;
+    display: block;
+    margin-bottom: 4px;
+}
+.contact-page-inner .address-data a span{
+    font-size: 12px;
+    color: #f28d1e;
+    margin-left: 6px;
+}
+.contact-page-inner  a.btn-suggest{
+    background: #1e2170;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 25px;
+    font-size: 14px;
+    margin-top: 6px;
+    display: inline-block;
+}
+.contact-page-inner a.js-scroll{
+    position: inherit;
+    transform: none;
+}
+.contact-page-inner  .btn-suggest:hover{
+   background-color: #f08a1c;
+   transition: .5s;
+  }
+.contact-page-inner .btn-suggest:focus{
+  border: 0;
+  outline: 0;
+}
+
+.thim-social-share {
+    position: relative;
+    margin: 0;
+    display: inline-block;
+    padding: 0;
+    margin-top: 35px;
+}
+.thim-social-share li {
+    margin-left: 8px;
+    display: inline-block;
+}
+.thim-social-share li i {
+    color: #fff;
+}
+.thim-social-share li a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.thim-social-share li .facebook-social a {
+    border-color: #3b5998;
+    background-color: #3b5998;
+}
+.thim-social-share li .youtube-social a {
+    border-color: #dd4b39;
+    background-color: #dd4b39;
+}
+.thim-social-share li .twitter-social a {
+    border-color: #00aced;
+    background-color: #00aced;
+}
+.contact-page-inner .form-control{
+    height: 45px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 7px rgba(0, 0, 0, .12);
+    padding: 0 10px;
+    border-bottom: 1px solid #f28d1e;
+}
+.contact-page-inner label{
+   color: #f08a1c;
+}
+.contact-page-inner .form-control:focus{
+    box-shadow: 0 0 7px rgba(0, 0, 0, .16);
+}
+
+.contact-page-inner .custom-file {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 0;
+}
+.contact-page-inner .custom-file-input {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin: 0;
+    opacity: 0;
+    height: 45px;
+}
+.contact-page-inner .custom-file-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+   
+}
+
+.contact-page-inner .custom-file-label:after {
+    content: "رفع الملف";
+    line-height: 2.1;
+}
+
+.contact-page-inner .custom-file-label::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    display: block;
+    color: #fff;
+    background-color: #1c2171;
+    padding: 10px;
+    border-radius: .25rem 0 0 .25rem;
+}
+.contact-page-inner .branch-data p span{
+color: #1c2172;
+margin-right: 6px;
+}
+.contact-page-inner .address-data h3{
+    font-size: 20px;
+    color: #1c2172;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin: 0;
+}
+.contact-page-inner  .btn-survey{
+    background:#f4f4f4;
+    color: #1c2172;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 6px;
+    width: 100px;
+    height: 100px;
+    font-weight: 600;
+    transition: .8s;
+    box-shadow: 0 0 7px rgba(0, 0, 0, .12);
+    padding: 0;
+
+}
+.contact-page-inner  .btn-survey:hover{
+    background: #fff;
+    color: #1c2172;
+    border-radius: 8px;
+   transition: .8s;
+    box-shadow: 0 0 9px rgba(0, 0, 0, .12);
+}
+.contact-page-inner  .btn-survey:focus{
+    border: 0;
+  outline: 0;
+}
+.contact-page-inner  .btn-survey i{
+    color: #f08a1c;
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+   
+}
+.contact-page-inner .nav-tabs>li {
+    width: 25%;
+    text-align: center;
+    border-top: 1px solid #1c2172;
+}
+.contact-page-inner .nav-tabs>li>a{
+    margin: 0;
+    border-radius: 0;
+    padding: 15px ;
+    font-size: 16px;
+    border-left: 1px solid rgb(197, 197, 197);
+}
+.contact-page-inner .nav-tabs>li>a i{
+  color: #f08a1c;
+  font-size: 20px;
+  margin-left: 5px;
+}
+.contact-page-inner .tab-content{
+    box-shadow: 0 0 8px #d8d8d8;
+    border-radius: 0 0 10px 10px;
+}
+
+.contact-page-inner .tab-content .btn-survey{
+    font-size: 13px;
+    margin: 6px 0 10px 10px;
+    width: 90px;
+    height: 90px;
+    white-space: normal;
+}
+
+.contact-page-inner .tab-content .btn-survey.active{
+  border: 2px solid #f08a1c;
+}
+
+.contact-page-inner .tab-content .btn-survey i{
+    font-size: 18px;
+}
