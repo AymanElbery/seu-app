@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GraduatesStateService } from '../services/graduates-state.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,8 +16,12 @@ export class GraduateStateComponent implements OnInit, OnDestroy {
   EngPrint: string;
   isLoading = false;
   msgs;
-  constructor(private transalte: TranslateService, private graduateStateSer: GraduatesStateService) {
-
+  constructor(
+    private transalte: TranslateService, 
+    private graduateStateSer: GraduatesStateService,
+    private router: Router
+  ) {
+    this.router.navigate(['/statements']);
   }
 
   subscriptions;

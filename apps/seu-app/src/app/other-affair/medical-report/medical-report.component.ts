@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MedicalReportService } from '../services/medical-report.service';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-medical-report',
@@ -14,7 +15,14 @@ export class MedicalReportComponent implements OnInit, OnDestroy {
   EngPrint: string;
   isLoading = false;
 
-  constructor(private translate: TranslateService, private academicService: MedicalReportService) { }
+  constructor
+  (
+    private translate: TranslateService, 
+    private academicService: MedicalReportService,
+    private router: Router
+  ) {
+    this.router.navigate(['/statements']);
+  }
 
   ngOnInit() {
     this.getRequests();
