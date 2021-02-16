@@ -16,6 +16,7 @@ export class TranslationPaymentRequestsComponent implements OnInit {
   requestsList = [];
   isLoading = false;
   payment_action = 'payment';
+  filter_text;
   constructor(
     private router: Router,
     private route: ActivatedRoute,

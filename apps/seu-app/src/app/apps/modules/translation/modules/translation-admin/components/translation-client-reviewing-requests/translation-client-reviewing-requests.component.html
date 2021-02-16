@@ -15,6 +15,10 @@
           </h3>
         </div>
         <div class="table-responsive">
+          <div class="col-md-12">
+            <input class="form-control" [(ngModel)]="filter_text" type="text" placeholder="{{'general.search' | translate}}">
+          </div>
+
           <table class="table table-striped table-bordered" style="font-size: 0.9em;">
             <thead>
               <tr>
@@ -29,7 +33,7 @@
               </tr>
             </thead>
             <tbody style="font-size: 1.3em;">
-              <tr *ngFor="let req of requestsList; let i = index">
+              <tr *ngFor="let req of requestsList| appfilter : filter_text; let i = index">
                 <td>{{ req.REQ_ID }}</td>
                 <td>{{ req.CLIENT_NAME }}</td>
                 <td>{{ req.CLIENT_WORK }}</td>

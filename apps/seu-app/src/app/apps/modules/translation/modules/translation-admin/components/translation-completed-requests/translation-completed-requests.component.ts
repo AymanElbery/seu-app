@@ -14,6 +14,8 @@ export class TranslationCompletedRequestsComponent implements OnInit {
 
   requestsList = [];
   isLoading = false;
+  filter_text;
+
 
   constructor(
     private router: Router,

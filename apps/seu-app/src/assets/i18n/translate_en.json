@@ -11,11 +11,15 @@
         "add_comment": "Comments",
         "export_as_excel": "Export to Excel",
         "cancel": "Cancel",
-        "word_count_note": "The word count will be counted from the system administrator"
+        "actions": "Actions",
+        "word_count_note": "The word count will be counted from the system administrator",
+        "pay": "Pay",
+        "search": "Search"
     },
     "menu": {
         "users": "Users",
         "new_requests": "New Requests",
+        "payment_requests": "Payment Requests",
         "current_requests": "translating Requests",
         "review_requests": "Under review Requests",
         "log_requests": "Requests archive",
@@ -26,8 +30,10 @@
         "notfound": "Not found",
         "PersonalInfo": "personal information",
         "resetpassword": "Update Password",
+        "home": "Home Page",
         "logout": "Logout",
-        "home": "Home Page"
+        "paid_requests": "Paid Requests",
+        "unpaid_requests": "unpaid requests"
     },
     "users_page": {
         "username": "sso user name",
@@ -84,10 +90,28 @@
         "accept": "Accept",
         "reject": "Reject",
         "assign": "Assign",
-        "reviewing_note_reject": "Notes and reject reason"
+        "reviewing_note_reject": "Notes and reject reason",
+        "file_words_count": "File words count",
+        "amount": "Amount",
+        "payment_date": "Last payment Date",
+        "payment": "Paid",
+        "not_payment": "Un-paid",
+        "payment_type": "Payment Type",
+        "pay_amount": "Amount",
+        "pay_date": "Last Payment Date",
+        "paid_date": "Paid Date"
+    },
+    "statuses": {
+        "pendding": "New",
+        "processing": "Processing",
+        "reviewing": "Reviewing",
+        "canceled": "Cancled",
+        "completed": "Completed",
+        "payment": "Payment"
     },
     "new_request_page": {
         "save": "Save",
+        "payment_status": "Payment Status",
         "req_date": "Request Date",
         "ar_lang": "Arabic",
         "en_lang": "English",

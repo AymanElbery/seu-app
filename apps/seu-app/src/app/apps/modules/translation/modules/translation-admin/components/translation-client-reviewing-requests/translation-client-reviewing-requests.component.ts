@@ -20,6 +20,8 @@ export class TranslationReviewingRequestsComponent implements OnInit {
   requestsList = [];
   isLoading = false;
   user;
+  filter_text;
+
 
   constructor(
     private router: Router,
