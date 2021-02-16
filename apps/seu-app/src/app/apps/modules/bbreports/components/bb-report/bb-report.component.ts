@@ -16,6 +16,8 @@ export class BbReportComponent implements OnInit {
   report: any = { code: '', name: '' };
   report_code = '';
   colleges = [];
+  depts = [];
+  selectdepts = [];
   columnDefs = [];
   rowData = [];
 
@@ -48,6 +50,7 @@ export class BbReportComponent implements OnInit {
     this.form = this.fb.group({
       'report': ['', [Validators.required]],
       'college': ['', [Validators.required]],
+      'dept': [''],
       'start_date': [''],
       'end_date': [''],
     });
@@ -58,6 +61,16 @@ export class BbReportComponent implements OnInit {
     });
 
     this.colleges = this.bbservice.collges();
+    this.depts = this.bbservice.depts();
+    if (this.colleges.length == 0) {
+      this.form.controls['college'].setValidators(null);
+      this.form.controls['dept'].setValidators([Validators.required]);
+      this.selectdepts = this.depts;
+    }
+    this.form.controls['college'].valueChanges.subscribe(() => {
+      const coll_code = this.form.controls['college'].value;
+      this.selectdepts = this.depts.filter(item => item['coll'] == coll_code);
+    });
   }
 
   reset() {

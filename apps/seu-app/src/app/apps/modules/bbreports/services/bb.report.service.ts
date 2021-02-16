@@ -38,6 +38,15 @@ export class BBReportService extends BBRootService {
             }
         });
     }
+    depts() {
+        return this._lookups['depts'].map((item) => {
+            return {
+                code: item['DEPT_CODE'],
+                name: item['DEPT_DESC_AR'],
+                coll: item['COLL_CODE'],
+            }
+        });
+    }
 
     reports() {
         return this._lookups['reports'].map((item) => {

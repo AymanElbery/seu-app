@@ -229,6 +229,20 @@ export class UserService extends BaseService {
       headers: headers
     });
   }
+
+  getResumeAdminUsers(){
+    var url = environment.baselink + environment.servicesprefix + "/rest/public/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': auth
+    });
+
+    return this.http.get(url + "stds/get_admin_users", {
+      headers: headers
+    });
+  }
+
   getDistrictsByCityId(cityId){
     var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;

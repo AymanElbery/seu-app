@@ -1,0 +1,44 @@
+<app-service-header title="{{'resume' | translate}}" subtitle="{{'menu.admins' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget">
+
+        <div class="widget-header">
+          <h3 class="widget-title">
+            {{"menu.admins" | translate}}
+            <button (click)="openAddAdminDialog()" class="btn btn-primary">{{"admins_page.add_admin" | translate}}</button>
+          </h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+            <thead>
+              <tr>
+                <th scope="col">{{"admins_page.admin_name" | translate}}</th>
+                <th scope="col">{{"admins_page.admin_email" | translate}}</th>
+                <th scopr="col">{{"admins_page.admin_active" | translate}}</th>
+                <th scopr="col">{{"admins_page.admin_actions" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 1.3em;">
+              <tr *ngFor="let admin of admins; let i = index">
+                <td>{{ admin.NAME }}</td>
+                <td>{{ admin.WORK_EMAIL }}</td>
+                <td>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="admin.ACTIVE == 1"><i class="fa fa-check-circle"></i></b>
+                  <b style="font-size: 1.2em;" class="text-danger" *ngIf="admin.ACTIVE == 0"><i class="fa fa-times-circle"></i></b>
+                </td>
+                <td>
+                  <button (click)="inActivate(admin.ID)" *ngIf="admin.ACTIVE == 1" class="btn btn-primary">{{"admins_page.inactive" | translate}}</button>
+                  <button (click)="activate(admin.ID)" *ngIf="admin.ACTIVE == 0" class="btn btn-primary">{{"admins_page.active" | translate}}</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

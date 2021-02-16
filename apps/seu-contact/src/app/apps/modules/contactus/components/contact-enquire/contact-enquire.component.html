@@ -1,0 +1,139 @@
+<form [formGroup]="form" (submit)="getDetails()" id="contactForm">
+  <div class="row">
+    <div class="col-md-6">
+      <label>{{'form.ticket_id' | translate}}<span class="reqstart">*</span></label>
+      <input class="form-control" type="text" formControlName="ticket_id" (keypress)="keyPress($event)" maxlength="10">
+      <control-validations-errors [control]="form.controls.ticket_id"></control-validations-errors>
+    </div>
+    <div class="col-md-6">
+      <label>{{'form.ssn' | translate}}<span class="reqstart">*</span></label>
+      <input class="form-control" type="text" formControlName="ssn" (keypress)="keyPress($event)" maxlength="10">
+      <control-validations-errors [control]="form.controls.ssn"></control-validations-errors>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h6>{{"form.captcha"|translate}} <span class="reqstart">*</span></h6>
+      <re-captcha #recaptchaRef style="display: inline-block;" (resolved)="resolved($event)"
+        [siteKey]="environment.captchaSiteKey"></re-captcha>
+      &nbsp;&nbsp;
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" style="text-align: center;">
+      <button style="margin: 0 auto;" class="btn btn-lg btn-primary" [disabled]="requesting || form.invalid" type="submit">
+        {{'form.enquiry' | translate}}
+      </button>
+    </div>
+  </div>
+</form>
+<div style="position: relative;">
+  <seu-loader [isLoading]="requesting"></seu-loader>
+</div>
+<ng-container *ngIf="ticketDetails">
+  <div style="padding: 10px;" id="contactDetails">
+
+    <!-- details -->
+    <div class="contact-details">
+
+
+      <ng-container *ngFor="let field of details_fields">
+        <ng-container *ngIf="ticketDetails[field]">
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-form-label">{{'form.'+field | translate}}:</label>
+            <div class="col-sm-6 col-md-6">
+              <div class="col-form-label font-weight-normal" [innerHtml]="ticketDetails[field]"></div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+
+      <!-- attachments -->
+      <ng-container *ngIf="ticketDetails['attachments']">
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
+          <div class="col-sm-6 col-md-6">
+            <ng-container *ngFor="let attch of ticketDetails['attachments']">
+              <div class="col-form-label font-weight-normal">
+                <a href="#" class="attch" (click)="download(attch)" target="_blank">{{attch['name']}}</a>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <!-- conversations -->
+    <ng-container *ngIf="ticketDetails['conversations']">
+      <ng-container *ngFor="let conv of ticketDetails['conversations']">
+        <div class="contact-comment">
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-form-label">{{'details.time'| translate}}:</label>
+            <div class="col-sm-6 col-md-6">
+              <div class="col-form-label font-weight-normal">{{conv['time']}}</div>
+            </div>
+          </div>
+          <ng-container *ngIf="conv['type']=='email'">
+            <div class="row">
+              <label class="col-sm-3 col-md-3 col-form-label">{{'details.to'| translate}}:</label>
+              <div class="col-sm-6 col-md-6">
+                <div class="col-form-label font-weight-normal">{{conv['to']}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <label class="col-sm-3 col-md-3 col-form-label">{{'details.title'| translate}}:</label>
+              <div class="col-sm-6 col-md-6">
+                <div class="col-form-label font-weight-normal">{{conv['title']}}</div>
+              </div>
+            </div>
+          </ng-container>
+          <div class="row">
+            <label class="col-sm-3 col-md-3 col-form-label">{{'details.description'| translate}}:</label>
+            <div class="col-sm-8 col-md-8">
+              <div class="col-form-label font-weight-normal" [innerHtml]="conv['description']"></div>
+            </div>
+          </div>
+          <!-- attachments -->
+          <ng-container *ngIf="conv['attachments']">
+            <div class="row">
+              <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
+              <div class="col-sm-6 col-md-6">
+                <ng-container *ngFor="let attch of conv['attachments']">
+                  <div class="col-form-label font-weight-normal">
+                    <a href="#" class="attch" (click)="download(attch)" target="_blank">{{attch['name']}}</a>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </ng-container>
+
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+ <!-- conversations 
+  <h5>{{'form.add_note'|translate}}</h5>
+  -->
+  <div class="form-details">
+  <form [formGroup]="noteform" (submit)="onSubmit()" id="contactForm">
+    <div class="row">
+      <div class="col-md-12">
+        <label>{{'form.note' | translate}}</label>
+        <textarea class="form-control" style="height: auto;" formControlName="description" rows="5" placeholder="اضف ملاحظات اخرى هنا"></textarea>
+        <control-validations-errors [control]="noteform.controls.description"></control-validations-errors>
+      </div>
+      <div class="col-md-12">
+        <div class="state">
+          <h6>{{"form.captcha"|translate}} <span class="reqstart">*</span></h6>
+          <re-captcha #recaptchaNoteRef (resolved)="resolvednote($event)" [siteKey]="environment.captchaSiteKey">
+          </re-captcha>
+        </div>
+      </div>
+      <div class="col-md-12" style="text-align: center;">
+        <button class="btn btn-suggest" type="submit"
+          [disabled]="submitting || noteform.invalid">{{"form.send"|translate}}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</ng-container>

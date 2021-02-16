@@ -9,7 +9,8 @@ import { AppointmentService } from '../../../../services/appointments.service';
 })
 export class StdsAppointmentsComponent implements OnInit {
   isLoading = false;
-  constructor(private route: ActivatedRoute, private router: Router, private appoint: AppointmentService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private appoint: AppointmentService) { 
+  }
   appointments = [];
   can_add = false;
   ngOnInit() {

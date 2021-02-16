@@ -4,6 +4,8 @@ export interface StudentData {
     mobile: string;
     email: string;
     job_status: string;
+    gr_term: string,
+    gr_term_hr: string,
     job_sector: string;
     year_job: string;
     job_com: string;

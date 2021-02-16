@@ -12,6 +12,7 @@ export interface StudentInfo {
     JOB_PROMO_YEAR: string
     JOB_SECTOR: string
     JOB_STATUS: string
+    GRADUATE_TERM: string
     JOB_TIT: string
     MOBILE_NUM: string
     PERSONAL_EMAIL: string

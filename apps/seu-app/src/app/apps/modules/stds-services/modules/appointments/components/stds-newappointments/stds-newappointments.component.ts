@@ -10,7 +10,10 @@ import { AppointmentService } from '../../../../services/appointments.service';
 export class StdsNewappointmentsComponent implements OnInit {
 
   isLoading = false;
-  constructor(private route: ActivatedRoute, private router: Router, private appoint: AppointmentService) { }
+  is_ug = true;
+  constructor(private route: ActivatedRoute, private router: Router, private appoint: AppointmentService) { 
+    
+  }
   appointments = [];
   can_add = false;
   student;
@@ -31,6 +34,7 @@ export class StdsNewappointmentsComponent implements OnInit {
         this.redirectToList();
       }
       this.appointments = response['data']['appointments'];
+      this.is_ug = response['data']['is_ug'];
       Object.keys(this.appointments).forEach((time) => {
         let record = this.appointments[time];
         this.times.push(time);

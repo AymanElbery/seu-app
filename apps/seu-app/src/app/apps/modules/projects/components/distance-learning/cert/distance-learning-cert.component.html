@@ -1,0 +1,50 @@
+<div class="main-content">
+    <app-service-header title="{{'univ' | translate}}" subtitle="{{'distancelearning.header' | translate}}">
+    </app-service-header>
+    <section class="ug-content">
+        <div class="container" *ngIf="!isLoading">
+            <seu-loader [isLoading]="isLoading"></seu-loader>
+            <form role="form" [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="state">
+                            <h6>{{"distancelearning.EMAIL"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="email" formControlName="EMAIL" class="form-control" />
+                            <control-validations-errors [control]="form.controls.EMAIL"></control-validations-errors>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <button style="width: 90%; margin-left: 20px; position: relative; top: 47px;" [disabled]="submitted || form.invalid"
+                            (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "search" | translate}}
+                            <i class="fa fa-save"></i></button>
+                    </div>
+                </div>
+            </form>
+            <div *ngIf="showCerts" class="table-responsive" style="margin-top: 10px">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">{{"distancelearning.COURSE_ID" | translate}}</th>
+                            <th scope="col">{{"distancelearning.print" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cert of certs; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{cert.NAME_AR}}</td>
+                            <td>
+                                <a (click)="print_attend(cert.COURSE_ID, cert.R_ID)" class="btn btn-primary" href="#">
+                                    <span class="ik ik-printer"></span>
+                                    <span *ngIf="loadings[cert.COURSE_ID] && loadings[cert.COURSE_ID][cert.R_ID]">
+                                        {{"distancelearning.loading" | translate}}
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>

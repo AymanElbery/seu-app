@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     // animateIn: "slideInLeft",
     rtl: true
   };
+  resumeAdmins;
+  isResumeUser = false;
   // CarouselOptions = { items: 3, dots: true, nav: true };
 
   hasNoRole = false;
@@ -44,6 +46,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private translate: TranslateService,
     private sanitized: DomSanitizer
   ) {
+    this.loadResumeAdminUsers();
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -208,6 +211,23 @@ export class HomeComponent implements OnInit, OnDestroy {
         // console.log(this.userService.eventsData);
         this.eventsLoaded = true;
       });
+  }
+
+  private loadResumeAdminUsers(){
+    if (this.userService.userData.activeRole == 'Instructor' || this.userService.userData.activeRole == "") {
+      this.isResumeUser = true;
+    } else {
+      this.userService.getResumeAdminUsers().subscribe((res: any) => {
+        if (res) {
+          this.resumeAdmins = res.data;
+          for (let i = 0; i < this.resumeAdmins.length; i++) {
+            if (this.resumeAdmins[i].WORK_EMAIL == this.userService.userData.email) {
+              this.isResumeUser = true;
+            }
+          }
+        }
+      });
+    }
   }
 
   private loadEmployeesEvents() {

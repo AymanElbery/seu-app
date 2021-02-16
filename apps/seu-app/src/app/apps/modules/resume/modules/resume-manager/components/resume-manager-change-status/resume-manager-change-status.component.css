@@ -1,0 +1,9 @@
+/* .widget-title{
+    display: inline-block;
+} */
+mat-dialog-container{
+    overflow-x: hidden;
+}
+.sub:hover{
+    color: #FFF;
+}

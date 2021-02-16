@@ -261,7 +261,8 @@
         "EXAM_PHOTO": "صورة نظام الاختبارات",
         "tawkeed": "Tawkeed",
         "umc": "University Medical Center",
-        "bb_virtual_reports": "Virtual Classroom Reports "
+        "bb_virtual_reports": "Virtual Classroom Reports ",
+        "dashboard": "Dashboard"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",
@@ -987,7 +988,8 @@
             "downloadapps": "Download the eExam Application (SwiftAssess Assessment):",
             "Device": "Device",
             "DownloadLink": "Download Link",
-            "apps": [{
+            "apps": [
+                {
                     "title": "Desktop and Laptop Computers",
                     "desc": "Download the browser for (Windows & Mac)",
                     "link": "https://eur01.safelinks.protection.outlook.com/?url=https://gammalearn.sharepoint.com/:f:/s/Operations/Er2Rmx_Fld1EmTkAxJPejkEBTBr6Efg8ofSjtUhtRzwYVQ?e%3DzDyNy6&amp;data=02%7c01%7c%7ce6d26d10d6bf44bedd3508d7691dea15%7c1f00763a1f87473bbba1b6c746af03e4%7c0%7c0%7c637093450070182397&amp;sdata=T6FmnCMZ%2Bav9tW7TUCOGog9mYkZbEIgRDVMLoA%2Bq9%2BU%3D&amp;reserved=0"
@@ -1006,7 +1008,14 @@
             "Guidelines": "Guidelines:",
             "Manual": "Instructions Manual",
             "Download": "Download",
-            "GuidelinesList": [{
+            "actions": "Action",
+            "Play": "Play",
+            "guide_doc": "الدليل الإرشادي للاختبارات الإلكترونية عن بعد باستخدام الذكاء الاصطناعي",
+            "guide_vedio_SwiftAssess": "فيديو تعريفي لكيفية استيفاء متطلبات منصة (SwiftAssess) ",
+            "guide_vedio_WebEx": "فيديو تعريفي عن الدعم التقني للاختبارات الإلكترونية عن بعد  عبر نظام (WebEx)",
+            "guide_faqs": "FAQs",
+            "GuidelinesList": [
+                {
                     "title": "Instruction before exams",
                     "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam_en.pdf"
                 },

@@ -25,7 +25,7 @@
     <section class="ser-state">
       <div class="container">
         <div class="row ser-block">
-          <h6> {{"instructions.exams.downloadapps" | translate}} </h6>
+          <!-- <h6> {{"instructions.exams.downloadapps" | translate}} </h6>
           <table class="table table-striped table-bordered">
             <thead>
               <tr>
@@ -42,21 +42,54 @@
                 <a href="{{app.link}}" target="_blank">{{"instructions.exams.Download" | translate}}</a>
               </td>
             </tr>
-          </table>
+          </table> -->
           <h6> {{"instructions.exams.Guidelines" | translate}} </h6>
           <table class="table table-striped table-bordered">
             <thead>
               <tr>
+                <th>#</th>
                 <th>{{"instructions.exams.Manual" | translate}}</th>
-                <th>{{"instructions.exams.Download" | translate}}</th>
+                <th>{{"instructions.exams.actions" | translate}}</th>
               </tr>
             </thead>
-            <tr *ngFor="let guid of guidlines;">
+            <tr>
+              <td>1</td>
+              <td>{{"instructions.exams.guide_doc" | translate}}</td>
+              <td>
+                <a href="https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/Guides_{{_lang}}.pdf"
+                  target="_blank">{{"instructions.exams.Download" | translate}}</a>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>{{"instructions.exams.guide_vedio_SwiftAssess" | translate}}</td>
+              <td>
+                <a href="javascript:;" (click)="play('vedio_SwiftAssess_'+_lang+'.mp4')">{{"instructions.exams.Play" |
+                  translate}}</a>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>{{"instructions.exams.guide_vedio_WebEx" | translate}}</td>
+              <td>
+                <a href="javascript:;" (click)="play('vedio_Webex_'+_lang+'.mp4')">{{"instructions.exams.Play" |
+                  translate}}</a>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>{{"instructions.exams.guide_faqs" | translate}}</td>
+              <td>
+                <a href="https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs_{{_lang}}.pdf"
+                  target="_blank">{{"instructions.exams.Download" | translate}}</a>
+              </td>
+            </tr>
+            <!-- <tr *ngFor="let guid of guidlines;">
               <td>{{guid.title}}</td>
               <td>
                 <a href="{{guid.link}}" target="_blank">{{"instructions.exams.Download" | translate}}</a>
               </td>
-            </tr>
+            </tr> -->
           </table>
         </div>
       </div>
