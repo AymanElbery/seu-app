@@ -35,7 +35,7 @@
                 <td>{{ req.CLIENT_NAME }}</td>
                 <td>{{ req.CLIENT_WORK }}</td>
                 <td>{{"new_request_page.seu" | translate}}</td>
-                <td>{{ req.INSERTED_DATE | date : 'yyyy-MM-dd'}}</td>
+                <td>{{ req.INSERTED_DATE}}</td>
                 <td>
                   <a target="_blanck" [href]="req.downloadURL" style="margin-right: 5px;"
                     class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>

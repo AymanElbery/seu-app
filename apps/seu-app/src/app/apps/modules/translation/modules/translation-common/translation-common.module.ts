@@ -6,7 +6,6 @@ import { TranslationLazyTransModule } from './translation.lazytrans.module';
 import { TranslationAddCommentComponent } from '../translation-admin/components/translation-add-comment/translation-add-comment.component';
 import { TranslationViewRequestComponent } from '../translation-admin/components/translation-view-request/translation-view-request.component';
 import { TranslationHeaderComponent } from '../../components/translation-header/translation-header.component';
-import { TranslationPasswordComponent } from '../../components/translation-password/translation-password.component';
 import { SeucommonModule } from 'src/app/seucommon/seucommon.module';
 
 @NgModule({
@@ -14,7 +13,7 @@ import { SeucommonModule } from 'src/app/seucommon/seucommon.module';
     TranslationAddCommentComponent,
     TranslationViewRequestComponent,
     TranslationHeaderComponent
-    ],
+  ],
   imports: [
     CommonModule,
     SeucommonModule,
@@ -22,6 +21,6 @@ import { SeucommonModule } from 'src/app/seucommon/seucommon.module';
     FormsModule, ReactiveFormsModule, TranslationLazyTransModule
   ],
   entryComponents: [TranslationAddCommentComponent, TranslationViewRequestComponent],
-  exports: [FormsModule, ReactiveFormsModule, CommonModule, MatProgressSpinnerModule, TranslationAddCommentComponent,TranslationHeaderComponent]
+  exports: [FormsModule, ReactiveFormsModule, CommonModule, MatProgressSpinnerModule, TranslationAddCommentComponent, TranslationHeaderComponent]
 })
 export class TranslationCommonModule { }

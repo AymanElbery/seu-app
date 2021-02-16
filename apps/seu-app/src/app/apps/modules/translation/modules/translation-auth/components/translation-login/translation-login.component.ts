@@ -53,6 +53,7 @@ export class TranslationLoginComponent implements OnInit {
         return false;
       }
       localStorage.setItem('sid', encodeURI(response['data']['token']));
+      localStorage.setItem('sid_out', '1');
 
       this.tuser.setUser(response['data']['user']);
       this.router.navigate(["/apps/translation/client/my-requests"]);

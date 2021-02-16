@@ -30,7 +30,9 @@
         "PersonalInfo": "معلوماتي الشخصية",
         "resetpassword": "تغيير كلمة المرور",
         "logout": "تسجيل خروج",
-        "home": "الصفحة الرئيسية"
+        "home": "الصفحة الرئيسية",
+        "paid_requests": "الطلبات المدفوعة",
+        "unpaid_requests": "طلبات لم يتم الدفع"
     },
     "users_page": {
         "username": "اسم المستخدم في نظام sso",

@@ -69,7 +69,7 @@ export class TranslationCompletedRequestsComponent implements OnInit {
 
   exportAsXLSX(){
     this.requestsService.getCompletedRequests(1).subscribe((response => {
-      const linkSource = `data:application/pdf;base64,${response['data']}`;
+      const linkSource = `data:application/octet-stream;base64,${response['data']}`;
       const downloadLink = document.createElement("a");
       const fileName = "completed_requests.xls";
       downloadLink.href = linkSource;

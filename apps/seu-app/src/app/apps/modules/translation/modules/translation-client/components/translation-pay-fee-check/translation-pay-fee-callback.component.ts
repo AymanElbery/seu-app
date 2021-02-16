@@ -23,7 +23,7 @@ export class TranslationPayFeeCheckComponent implements OnInit {
   init() {
     this.isLoading = true;
     this.payment.payment_status(this.tid).subscribe(res => {
-      this.message = res['messages'];
+      this.message = res['messages']['messages'];
       this.isLoading = false;
     });
   }

@@ -35,7 +35,11 @@ export class TranslationUserService extends TranslationRootService {
             if (res['status']) {
                 this.setUser(res['user']);
             } else {
-                this.config.relogin();
+                if (localStorage.getItem('sid_out')) {
+                    this.router.navigate(["/apps/translation/auth/login"]);
+                } else {
+                    this.config.relogin();
+                }
             }
         },
             err => {

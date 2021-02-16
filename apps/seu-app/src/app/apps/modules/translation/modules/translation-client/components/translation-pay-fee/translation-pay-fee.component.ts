@@ -28,10 +28,11 @@ export class TranslationPayFeeComponent implements OnInit {
     this.payment.checkout(this.data['REQ_ID']).subscribe(res => {
       this.message = res['messages'];
       if (res['status']) {
-        this.paymentData = res['data'];
         let baseURL = window.location.protocol + '//' + window.location.host;
-        this.callbackURL = (baseURL) + (( "/" + this.data['casllbackURL'] + "/" + res['data']['tid']).replace("//", "/"));
+        this.callbackURL = (baseURL) + (( "/" + this.data['casllbackURL'] + res['data']['tid']).replace("//", "/"));
         this.isLoading = false;
+        this.paymentData = res['data'];
+        console.log(this.callbackURL);
         this.loadwidgetScript();
       } else {
         this.payment.notifyError(res['res_code']);

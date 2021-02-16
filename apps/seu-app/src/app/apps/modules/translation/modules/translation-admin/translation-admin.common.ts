@@ -53,6 +53,12 @@ export const routes: Routes = [
         path: 'payment-requests', component: TranslationPaymentRequestsComponent, canActivate: [TranslationADMINGuard]
     },
     {
+        path: 'paid-requests', component: TranslationPaymentRequestsComponent, canActivate: [TranslationADMINGuard]
+    },
+    {
+        path: 'unpaid-requests', component: TranslationPaymentRequestsComponent, canActivate: [TranslationADMINGuard]
+    },
+    {
         path: 'processing-requests', component: TranslationProcessiongRequestsComponent, canActivate: [TranslationADMINGuard]
     },
     {

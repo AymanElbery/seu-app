@@ -15,23 +15,23 @@ export class TranslationPaymentRequestsComponent implements OnInit {
 
   requestsList = [];
   isLoading = false;
-
+  payment_action = 'payment';
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private requestsService: ClientAdminRequestsService,
     public dialog: MatDialog
   ) {
-
+    this.payment_action = this.route.snapshot.routeConfig.path.replace("-requests", "")
   }
 
   ngOnInit() {
-    this.getPaymentRequests();
+    this.listRequests();
   }
 
-  getPaymentRequests() {
+  listRequests() {
     this.isLoading = true;
-    this.requestsService.getPaymentRequests().subscribe((response) => {
+    this.requestsService.getPaymentRequests(this.payment_action).subscribe((response) => {
       this.requestsList = response['data'];
       this.requestsList = this.requestsService.addFileURL(this.requestsList);
       this.isLoading = false;
@@ -51,7 +51,7 @@ export class TranslationPaymentRequestsComponent implements OnInit {
     let dialogref = this.dialog.open(TranslationAddCommentComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {
-        this.getPaymentRequests();
+        this.listRequests();
       }
     });
   }
@@ -66,7 +66,7 @@ export class TranslationPaymentRequestsComponent implements OnInit {
     let dialogref = this.dialog.open(TranslationChangeReqStatusComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {
-        this.getPaymentRequests();
+        this.listRequests();
       }
     });
   }
@@ -80,14 +80,14 @@ export class TranslationPaymentRequestsComponent implements OnInit {
     let dialogref = this.dialog.open(TranslationViewRequestComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {
-        this.getPaymentRequests();
+        this.listRequests();
       }
     });
   }
 
-  exportAsXLSX(){
-    this.requestsService.getPaymentRequests(1).subscribe((response => {
-      const linkSource = `data:application/pdf;base64,${response['data']}`;
+  exportAsXLSX() {
+    this.requestsService.getPaymentRequests(this.payment_action, 1).subscribe((response => {
+      const linkSource = `data:application/octet-stream;base64,${response['data']}`;
       const downloadLink = document.createElement("a");
       const fileName = "payment_requests.xls";
       downloadLink.href = linkSource;

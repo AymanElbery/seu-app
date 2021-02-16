@@ -37,7 +37,7 @@
                                     <span *ngIf="req.FILE_SECRET == '1'">{{"new_request_page.secret" | translate}}</span>
                                     <span *ngIf="req.FILE_SECRET == '0'">{{"new_request_page.not_secret" | translate}}</span>
                                 </td>
-                                <td>{{ req.ESTIMATED_DATE | date : 'yyyy-MM-dd'}}</td>
+                                <td>{{ req.ESTIMATED_DATE }}</td>
                                 <td>
                                     <span *ngIf="req.STATUS == 'pendding'" class="pendding">{{"my_requests_page.pendding" | translate}}</span>
                                     <span *ngIf="req.STATUS == 'processing'" class="processing">{{"my_requests_page.processing" | translate}}</span>

@@ -108,8 +108,10 @@ export class TranslationChangeReqStatusComponent implements OnInit {
     }
     delete data.PAYMENT;
     this.requestsService.changeStatus(data).subscribe((response) => {
+      console.log(response);
       this.closeDiag(true);
     }, err => {
+      console.log(err);
       this.requestsService.tryagain();
     });
   }

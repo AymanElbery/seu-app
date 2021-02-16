@@ -67,7 +67,7 @@ export class TranslationClientMyrequestsComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    req['casllbackURL'] = '/apps/translation/pay-callback/'
+    req['casllbackURL'] = '/apps/translation/client/pay-callback/'
     dialogConfig.data = req;
 
     let dialogref = this.dialog.open(TranslationPayFeeComponent, dialogConfig);
