@@ -52,14 +52,14 @@
               </div>
             </div>
 
-            <div *ngIf="feesException.association=='0'" class=" col-md-6 col-sm-12">
+            <!-- <div *ngIf="feesException.association=='0'" class=" col-md-6 col-sm-12">
               <div class="state">
                 <h6> {{"services.finance.gid" | translate}} </h6>
                 <input required class="form-control" name="insuranceAtt" id="insuranceAtt" type="file" accept="*/*"
                   (change)="handleInputChange($event,'insurance_card')"
                   [class.is-invalid]="feesException.insurance_card == ''" />
               </div>
-            </div>
+            </div> -->
 
             <div *ngIf="feesException.association=='0'" class=" col-md-6 col-sm-12">
               <div class="state">
