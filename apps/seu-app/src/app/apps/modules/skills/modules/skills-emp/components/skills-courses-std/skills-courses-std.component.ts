@@ -82,6 +82,7 @@ export class SkillsCoursesStdComponent implements OnInit {
   }
 
   formatDisplayDate(date) {
+    return date;
     let dateArr = date.split("-");
     let months = {
       'AUG': 'أغسطس',

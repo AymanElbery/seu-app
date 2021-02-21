@@ -4,7 +4,7 @@ import { SkillsUserService } from '../../../../services/skill-user';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
-import { FormGroup, FormBuilder,Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-skills-courses-details',
@@ -31,7 +31,7 @@ export class SkillsCoursesDetailsComponent implements OnInit {
     private fb: FormBuilder,
     private skillsCourseService: SkillsCourseService,
     private skillsUserService: SkillsUserService,
-    private router: Router, 
+    private router: Router,
     private route: ActivatedRoute,
     private translate: TranslateService,
     private toastr: AppToasterService,
@@ -135,20 +135,20 @@ export class SkillsCoursesDetailsComponent implements OnInit {
     )
   }
 
-  getCourseDetails(id){
+  getCourseDetails(id) {
     let data = {
-      'ID'      : id,
+      'ID': id,
     };
     this.skillsCourseService.getCourseById(data).subscribe(
       (response: any) => {
         if (response) {
           this.courseDetails = response.data;
-          this.courseDetails.START_DATE =  this.formatDisplayDate(response.data.START_DATE) ;
+          this.courseDetails.START_DATE = this.formatDisplayDate(response.data.START_DATE);
           this.courseDetails.END_DATE = this.formatDisplayDate(response.data.END_DATE);
-          this.courseDetails.REG_START_DATE =  this.formatDisplayDate(response.data.REG_START_DATE) ;
-          this.courseDetails.REG_END_DATE =  this.formatDisplayDate(response.data.REG_END_DATE) ;
-          this.courseDetails.CANCEL_DATE =  this.formatDisplayDate(response.data.CANCEL_DATE) ;
-          this.courseDetails.EXCUSE_DATE =  this.formatDisplayDate(response.data.EXCUSE_DATE) ;
+          this.courseDetails.REG_START_DATE = this.formatDisplayDate(response.data.REG_START_DATE);
+          this.courseDetails.REG_END_DATE = this.formatDisplayDate(response.data.REG_END_DATE);
+          this.courseDetails.CANCEL_DATE = this.formatDisplayDate(response.data.CANCEL_DATE);
+          this.courseDetails.EXCUSE_DATE = this.formatDisplayDate(response.data.EXCUSE_DATE);
 
           this.AddCourseForm.patchValue(this.courseDetails);
           this.isLoading = false;
@@ -157,35 +157,17 @@ export class SkillsCoursesDetailsComponent implements OnInit {
     );
   }
 
-  details(id){
+  details(id) {
     this.isLoading = true;
     this.getCourseDetails(id);
   }
 
-  students(id){
+  students(id) {
     this.isLoading = true;
-    this.router.navigate(['../../courses-students/'+id], { relativeTo: this.route })
+    this.router.navigate(['../../courses-students/' + id], { relativeTo: this.route })
   }
 
-  formatDisplayDate(date){
-    if (date) {
-      let dateArr = date.split("-");
-      let months = {
-        'JAN' : 'يناير',
-        'FEB' : 'فبراير',
-        'MAR' : 'مارس',
-        'APR' : 'أبريل',
-        'MAY' : 'مايو',
-        'JUN' : 'يونيو',
-        'JUL' : 'يوليو',
-        'AUG' : 'أغسطس',
-        'SEP' : 'سبتمبر',
-        'OCT' : 'أكتوبر',
-        'NOV' : 'نوفمبر',
-        'DEC' : 'ديسيمبر',
-      };
-      return dateArr[0]+" "+months[dateArr[1]]+" 20"+dateArr[2];
-    }
+  formatDisplayDate(date) {
     return date;
   }
 }

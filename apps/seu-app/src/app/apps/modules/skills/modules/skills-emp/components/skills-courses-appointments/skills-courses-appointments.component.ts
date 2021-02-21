@@ -92,6 +92,7 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
   }
 
   formatDatepickerDate(date){
+    return date;
     let dateArr = date.split("-");
     let months = {
       'JAN' : '01',
@@ -112,6 +113,7 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
   }
 
   formatDisplayDate(date){
+    return date;
     let dateArr = date.split("-");
     let months = {
       'JAN' : 'يناير',
