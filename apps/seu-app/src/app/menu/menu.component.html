@@ -295,6 +295,17 @@
             </a>
           </div>
         </div>
+        <div *ngIf="userService.userData && userService.userData.activeRole == 'Student'" class="nav-item has-sub">
+          <a href="javascript:void(0)">
+            <span>{{ "menu.academic_assistant" | translate }} </span>
+            <i class="ik ik-book-open"></i>
+          </a>
+          <div class="submenu-content">
+            <a href="#" class="menu-item" routerLink="/academic-assistant/reg-assistant/tickets">
+              {{ "menu.reg_assistant" | translate }}<i class="ik ik-info"></i>
+            </a>
+          </div>
+        </div>
         <div *ngIf="menuType == 2 && showServices" class="nav-item has-sub">
           <a href="javascript:void(0)"><span> {{ "menu.otherrequests" | translate }} </span>
             <i class="ik ik-package"></i></a>
@@ -761,7 +772,6 @@
             </a>
           </div>
         </div>
-
         <div *ngIf="
             userService.userData && userService.userData.activeRole == 'Student'
           " class="nav-item has-sub">

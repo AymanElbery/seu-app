@@ -1,0 +1,47 @@
+<div class="main-content">
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <section class="service-single">
+      <div class="container">
+        <h3>{{ "academic_assistant.title" | translate}}</h3>
+        <div class="row">
+          <div class="col-md-5">
+            <h5>{{ "academic_assistant.reg_assistant.title" | translate}}</h5>&nbsp;
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <div class="widget">
+      <div class="widget-header">
+        <h3 class="widget-title">
+          &nbsp;
+          <button *ngIf="!request" type="button" class="btn btn-primary" (click)="openDialoge()">
+            {{"academic_assistant.reg_assistant.add" | translate}} <i class="ik ik-plus"></i>
+          </button>
+        </h3>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">{{ "academic_assistant.reg_assistant.name" | translate}}</th>
+                  <th scope="col">{{ "academic_assistant.reg_assistant.std_id" | translate}}</th>
+                  <th scope="col">{{ "academic_assistant.reg_assistant.ssn" | translate}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let ticket of tickets; let i = index">
+                  <td>{{ i }}</td>
+                  <td>{{ ticket.NAME_AR }}</td>
+                  <td>{{ ticket.STD_ID }}</td>
+                  <td>{{ ticket.SSN }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>

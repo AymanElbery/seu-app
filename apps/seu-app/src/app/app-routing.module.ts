@@ -77,6 +77,11 @@ const routes: Routes = [
         canActivate: [UGGuard]
       },
       {
+        path: 'academic-assistant',
+        loadChildren: './modules/academic-assistant-module/academic-assistant.module#AcademicAssistantModule',
+        canActivate: [GRGuard, UGGuard]
+      },
+      {
         path: 'academicrequests',
         loadChildren:
           './master-academic-requests/master-academic-requests.module#MasterAcademicRequestsModule',
