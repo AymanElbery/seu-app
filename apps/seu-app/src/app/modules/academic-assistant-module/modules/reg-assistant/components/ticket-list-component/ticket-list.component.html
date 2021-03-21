@@ -18,7 +18,7 @@
           <table class="table table-striped table-bordered">
             <thead>
               <tr>
-                <th scope="col">#</th>
+                <th scope="col">{{ "academic_assistant.reg_assistant.ticket_id" | translate}}</th>
                 <th scope="col">{{ "academic_assistant.reg_assistant.crse" | translate}}</th>
                 <th scope="col">{{ "academic_assistant.reg_assistant.error_message" | translate}}</th>
                 <th scope="col">{{ "academic_assistant.reg_assistant.created_at" | translate}}</th>
@@ -28,15 +28,15 @@
             </thead>
             <tbody>
               <tr *ngFor="let ticket of tickets; let i = index">
-                <td>{{ i+1 }}</td>
+                <td>{{ ticket.id }}</td>
                 <td>{{ ticket.crse }}</td>
                 <td>{{ ticket.message }}</td>
                 <td>{{ ticket.created_time.display_value }}</td>
                 <td>{{ ticket.status }}</td>
                 <td>
-                  <button class="btn btn-primary">{{ "academic_assistant.reg_assistant.view" | translate}}</button>
+                  <button class="btn btn-primary" (click)="openDetailsDialoge(ticket.id)">{{ "academic_assistant.reg_assistant.view" | translate}}</button>
                   &nbsp;
-                  <button class="btn btn-primary">{{ "academic_assistant.reg_assistant.delete" | translate}}</button>
+                  <button class="btn btn-primary" (click)="delete(ticket.id)">{{ "academic_assistant.reg_assistant.delete" | translate}}</button>
                 </td>
               </tr>
             </tbody>

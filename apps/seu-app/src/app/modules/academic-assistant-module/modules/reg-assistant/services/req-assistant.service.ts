@@ -65,13 +65,26 @@ export class ReqAssistantService {
             });
     }
 
-    getTickets(id) {
+    getTickets() {
         return this.get("registration_assistant/requests");
+    }
+
+    getTicketDetails(id) {
+        return this.get("registration_assistant/details/" + id);
+    }
+
+    delete(id) {
+        return this.get("registration_assistant/delete/" + id);
+    }
+
+    download(url) {
+        return this.get('registration_assistant/download/'+ url);
     }
 
     getLockups() {
         return this.get("registration_assistant/lookups");
     }
+
     AddRequest(data) {
         return this.post("registration_assistant/add", data);
     }
