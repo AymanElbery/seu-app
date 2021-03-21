@@ -66,7 +66,7 @@ export class ReqAssistantService {
     }
 
     getTickets(id) {
-        return this.get("registration_assistant/reqs/" + id);
+        return this.get("registration_assistant/requests");
     }
 
     getLockups() {

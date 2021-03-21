@@ -15,7 +15,7 @@
       <div class="widget-header">
         <h3 class="widget-title">
           &nbsp;
-          <button *ngIf="!request" type="button" class="btn btn-primary" (click)="openDialoge()">
+          <button type="button" class="btn btn-primary" (click)="openDialoge()">
             {{"academic_assistant.reg_assistant.add" | translate}} <i class="ik ik-plus"></i>
           </button>
         </h3>
@@ -27,17 +27,25 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">{{ "academic_assistant.reg_assistant.name" | translate}}</th>
-                  <th scope="col">{{ "academic_assistant.reg_assistant.std_id" | translate}}</th>
-                  <th scope="col">{{ "academic_assistant.reg_assistant.ssn" | translate}}</th>
+                  <th scope="col">{{ "academic_assistant.reg_assistant.crse" | translate}}</th>
+                  <th scope="col">{{ "academic_assistant.reg_assistant.error_message" | translate}}</th>
+                  <th scope="col">{{ "academic_assistant.reg_assistant.created_at" | translate}}</th>
+                  <th scope="col">{{ "academic_assistant.reg_assistant.ticket_status" | translate}}</th>
+                  <th scope="col">{{ "academic_assistant.reg_assistant.actions" | translate}}</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let ticket of tickets; let i = index">
-                  <td>{{ i }}</td>
-                  <td>{{ ticket.NAME_AR }}</td>
-                  <td>{{ ticket.STD_ID }}</td>
-                  <td>{{ ticket.SSN }}</td>
+                  <td>{{ i+1 }}</td>
+                  <td>{{ ticket.crse }}</td> 
+                  <td>{{ ticket.message }}</td>
+                  <td>{{ ticket.created_time.display_value | date : 'yyyy-MM-dd' }}</td>
+                  <td><span class="badge badge-info">{{ "academic_assistant.reg_assistant." + ticket.status | translate}}</span></td>
+                  <td>
+                    <button class="btn btn-primary">{{ "academic_assistant.reg_assistant.view" | translate}}</button>
+                    &nbsp;
+                    <button class="btn btn-primary">{{ "academic_assistant.reg_assistant.delete" | translate}}</button>
+                  </td>
                 </tr>
               </tbody>
             </table>

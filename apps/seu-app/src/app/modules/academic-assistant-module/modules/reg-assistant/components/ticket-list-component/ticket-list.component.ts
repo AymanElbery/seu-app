@@ -31,8 +31,8 @@ export class TicketListComponent {
     this.reqAssistantService.getTickets(this.std_id).subscribe(
       (response: any) => {
         if (response) {
-          this.tickets = response.data;
           this.isLoading = false;
+          this.tickets = response.data.requests;
         }
       },
       error => {
