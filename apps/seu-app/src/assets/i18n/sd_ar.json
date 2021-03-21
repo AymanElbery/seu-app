@@ -1,44 +1,39 @@
 {
     "general": {
-        "title": "المساعد الأكاديمي"
+        "title": "المساعد الأكاديمي",
+        "resolution": "الحل",
+        "actions": "الإجراءات",
+        "view": "التفاصيل",
+        "delete": "حذف",
+        "add": "إضافة",
+        "send": "إرسال",
+        "back": "العودة",
+        "created_at": "تاريخ الطلب",
+        "ticket_details": "تفاصيل التذكرة",
+        "ticket_id": "رقم التذكرة",
+        "conversations": "المحادثات",
+        "ticket_status": "الحالة",
+        "attachments": "المرفقات"
     },
     "reg_assistant": {
         "title": "مساعد التسجيل",
-        "add": "إضافة",
-        "name": "الإسم",
-        "std_id": "الرقم الجامعي",
-        "ssn": "رقم الهوية"
+        "college": "الكلية",
+        "crn": "الشعبة",
+        "crse": "المقرر",
+        "error_message": "رسالة الخطأ",
+        "conv_title": "العنوان",
+        "description": "الوصف",
+        "note": "ملاحظة",
+        "comments": "الملاحظات",
+        "email": "بريد إلكتروني",
+        "lectres":"الجدول الدراسي",
+        "time":"الوقت"
     },
-    "academic_assistant":{
-        "title": "المساعد الأكاديمي",
-        "reg_assistant":{
-            "title": "مساعد التسجيل",
-            "add": "إضافة",
-            "name": "الإسم",
-            "std_id":"الرقم الجامعي",
-            "ssn":"رقم الهوية",
-            "ticket_title": "العنوان",
-            "college": "الكلية",
-            "crn": "الشعبة",
-            "ticket_status": "الحالة",
-            "actions": "الإجراءات",
-            "view": "التفاصيل",
-            "delete": "حذف",
-            "crse": "المقرر",
-            "error_message": "رسالة الخطأ",
-            "Open": "مفتوحة",
-            "created_at": "تاريخ الطلب",
-            "ticket_details": "تفاصيل التذكرة",
-            "attachments": "المرفقات",
-            "comments": "الملاحظات",
-            "ticket_id": "رقم التذكرة",
-            "conversations": "المحادثات",
-            "time": "الوقت",
-            "to": "إلى",
-            "conv_title": "العنوان",
-            "description": "الوصف",
-            "note": "ملاحظة",
-            "email": "بريد إلكتروني"
-        }
+    "validations": {
+        "required": "الحقل مطلوب"
+    },
+    "messages": {
+        "request_added": " تم اضافة الطلب بنجاح",
+        "request_deleted": "تم حذف الطلب بنجاح"
     }
 }

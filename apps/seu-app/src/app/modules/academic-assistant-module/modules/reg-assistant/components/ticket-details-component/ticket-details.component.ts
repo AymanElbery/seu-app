@@ -31,9 +31,9 @@ export class TicketDetailsComponent implements OnInit {
 
   }
 
-  getTicketDetails(){
+  getTicketDetails() {
     this.isLoading = true;
-    this.reqAssistantService.getTicketDetails(this.ticketId ).subscribe(
+    this.reqAssistantService.getTicketDetails(this.ticketId).subscribe(
       (response: any) => {
         if (response) {
           this.isLoading = false;
@@ -70,4 +70,10 @@ export class TicketDetailsComponent implements OnInit {
     })
     return false;
   }
+
+
+  closeDiag() {
+    this.dialogRef.close();
+  }
+
 }

@@ -13,6 +13,7 @@ import { map } from "rxjs/operators";
 })
 export class ReqAssistantService {
 
+    _usedCourses = [];
     _lookups: any;
     _lookups_observ = new Subject<any>();
 
@@ -87,12 +88,14 @@ export class ReqAssistantService {
         return this._lookups['colleges'].map(rec => {
             let item = {};
             item['text'] = rec['COLL_NAME'];
-            item['value'] = rec['COLL_PK'];
+            item['value'] = rec['COLL_PK'] + ' - ' + rec['COLL_NAME'];
             return item;
         });
     }
     courses(coll_code) {
-        return this._lookups['courses'][coll_code].map(rec => {
+        return this._lookups['courses'][coll_code].filter(item => {
+            return !this._usedCourses.includes(item['SUBJ_CODE'] + item['CRSE_NUMB']);
+        }).map(rec => {
             let item = {};
             item['text'] = rec['CRSE_CODE'] + ' | ' + rec['CRSE_TITLE'];
             item['value'] = rec['CRSE_CODE'] + ' | ' + rec['CRSE_TITLE'];
@@ -151,13 +154,27 @@ export class ReqAssistantService {
     crns_list(crse) {
         return this.post("registration_assistant/crns", { 'crse': crse }).pipe(
             map((response) => {
-                return response['data']['crns'];
+                return response['data']['crns'].map(rec => {
+                    let item = {};
+                    item['text'] = rec['CRN'] + ' ' + rec['BLDG_DESC'];
+                    item['value'] = rec['CRN'] + ' ' + rec['BLDG_DESC'];
+                    return item;
+                });
             })
         );
     }
 
-
-    getTickets(id) {
+    checkCourses(tickets) {
+        let usedCourses = [];
+        tickets.forEach(element => {
+            if (element['status'] == 'Open') {
+                let crsecode = element['crse'].split(" ");
+                usedCourses.push(crsecode[0] + crsecode[1]);
+            }
+        });
+        this._usedCourses = usedCourses;
+    }
+    getTickets() {
         return this.get("registration_assistant/requests");
     }
 

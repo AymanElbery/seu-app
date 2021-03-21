@@ -14,6 +14,7 @@ import { TicketDetailsComponent } from './../ticket-details-component/ticket-det
 })
 export class TicketListComponent {
 
+  can_add_new = false;
   tickets;
   isLoading = false;
   std_id;
@@ -35,7 +36,7 @@ export class TicketListComponent {
 
     let dialogref = this.dialog.open(RegistrationAssistantFormComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
-      if (result['refresh']) {
+      if (result && result['refresh']) {
         this.getTickets();
       }
     });
@@ -45,9 +46,10 @@ export class TicketListComponent {
     this.isLoading = true;
     this.reqAssistantService.getTickets().subscribe(
       (response: any) => {
-          this.isLoading = false;
-          this.tickets = response.data.requests;
-        
+        this.isLoading = false;
+        this.tickets = response.data.requests;
+        this.can_add_new = response.data.can_add_new;
+        this.reqAssistantService.checkCourses(this.tickets);
       },
       error => {
         this.isLoading = false;
@@ -61,7 +63,7 @@ export class TicketListComponent {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    dialogConfig.data = id ;
+    dialogConfig.data = id;
 
     let dialogref = this.dialog.open(TicketDetailsComponent, dialogConfig);
     dialogref.afterClosed().subscribe(refresh => {
@@ -74,7 +76,11 @@ export class TicketListComponent {
     this.isLoading = true;
     this.reqAssistantService.delete(id).subscribe(
       (response: any) => {
-        this.getTickets();       
+        this.toastr.push([{
+          'type': 'success',
+          'body': this.translate.instant('messages.request_deleted')
+        }]);
+        this.getTickets();
       },
       error => {
         this.isLoading = false;
