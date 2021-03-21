@@ -5,6 +5,7 @@ import { MatDialogConfig, MatDialog } from '@angular/material';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { ReqAssistantService } from '../../services/req-assistant.service';
 import { RegistrationAssistantFormComponent } from '../ticket-add-component/ticket-add.component';
+import { TicketDetailsComponent } from './../ticket-details-component/ticket-details.component';
 
 @Component({
   selector: 'app-ticket-list',
@@ -30,7 +31,7 @@ export class TicketListComponent {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
-    dialogConfig.width = '50%';
+    dialogConfig.width = '70%';
 
     let dialogref = this.dialog.open(RegistrationAssistantFormComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
@@ -42,12 +43,38 @@ export class TicketListComponent {
 
   getTickets() {
     this.isLoading = true;
-    this.reqAssistantService.getTickets(this.std_id).subscribe(
+    this.reqAssistantService.getTickets().subscribe(
       (response: any) => {
-        if (response) {
           this.isLoading = false;
           this.tickets = response.data.requests;
-        }
+        
+      },
+      error => {
+        this.isLoading = false;
+        this.toastr.tryagain();
+      }
+    )
+  }
+
+  openDetailsDialoge(id) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = id ;
+
+    let dialogref = this.dialog.open(TicketDetailsComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(refresh => {
+      if (refresh)
+        this.getTickets();
+    });
+  }
+
+  delete(id) {
+    this.isLoading = true;
+    this.reqAssistantService.delete(id).subscribe(
+      (response: any) => {
+        this.getTickets();       
       },
       error => {
         this.isLoading = false;
