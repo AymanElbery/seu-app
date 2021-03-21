@@ -6,6 +6,62 @@
 
     </div>
     <div class="modal-body">
+        <form role="form" [formGroup]="form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="state">
+                        <h6>{{"reg_assistant.college"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="colleges" bindLabel="text" bindValue="value" formControlName="college">
+                        </ng-select>
+                    </div>
+                    <control-validations-errors [control]="form.controls.college"></control-validations-errors>
+                </div>
 
+                <div class="col-md-12">
+                    <div class="state">
+                        <h6>{{"reg_assistant.crse"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="crse">
+                        </ng-select>
+                    </div>
+                    <control-validations-errors [control]="form.controls.crse"></control-validations-errors>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="state">
+                        <h6>{{"reg_assistant.crn"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="crns" bindLabel="text" bindValue="value" formControlName="crn">
+                        </ng-select>
+                    </div>
+                    <control-validations-errors [control]="form.controls.crn"></control-validations-errors>
+                </div>
+
+
+                <div class="col-md-12">
+                    <div class="state">
+                        <h6>{{"reg_assistant.error_message"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="messages" bindLabel="text" bindValue="value" formControlName="message">
+                        </ng-select>
+                    </div>
+                    <control-validations-errors [control]="form.controls.message"></control-validations-errors>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="state">
+                        <h6>{{"reg_assistant.comments"|translate}} <span class="reqstart">*</span></h6>
+                        <textarea class="form-control" formControlName="comments"></textarea>
+                    </div>
+                    <control-validations-errors [control]="form.controls.comments"></control-validations-errors>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-12" style="text-align: center;">
+                    <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="onSubmit()"
+                        type="submit" class="btn btn-primary">{{ "general.send" |
+                        translate}}
+                        <i class="fa fa-save"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
