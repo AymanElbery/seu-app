@@ -72,4 +72,7 @@ export class ReqAssistantService {
     getLockups() {
         return this.get("registration_assistant/lookups");
     }
+    AddRequest(data) {
+        return this.post("registration_assistant/add", data);
+    }
 }
