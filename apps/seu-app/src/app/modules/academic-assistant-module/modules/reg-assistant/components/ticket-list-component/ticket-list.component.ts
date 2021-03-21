@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { ReqAssistantService } from '../../services/req-assistant.service';
+import { RegistrationAssistantFormComponent } from '../ticket-add-component/ticket-add.component';
 
 @Component({
   selector: 'app-ticket-list',
@@ -25,6 +26,19 @@ export class TicketListComponent {
     this.std_id = this.userService.getActiveRoleDetails()['id'];
     this.getTickets();
   }
+  openDialoge() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+
+    let dialogref = this.dialog.open(RegistrationAssistantFormComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result['refresh']) {
+        this.getTickets();
+      }
+    });
+  }
 
   getTickets() {
     this.isLoading = true;
@@ -41,5 +55,4 @@ export class TicketListComponent {
       }
     )
   }
-
 }
