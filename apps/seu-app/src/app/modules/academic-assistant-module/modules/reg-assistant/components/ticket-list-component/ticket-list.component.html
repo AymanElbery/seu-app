@@ -36,7 +36,8 @@
                   <button class="btn btn-primary" (click)="openDetailsDialoge(ticket.id)">{{ "general.view" |
                     translate}}</button>
                   &nbsp;
-                  <button class="btn btn-primary" (click)="delete(ticket.id)">{{ "general.delete" | translate}}</button>
+                  <button class="btn btn-primary" *ngIf="ticket.status == 'Open'" (click)="delete(ticket.id)">{{
+                    "general.delete" | translate}}</button>
                 </td>
               </tr>
             </tbody>
