@@ -11,6 +11,7 @@ export class SkillsStaffMycoursesComponent implements OnInit {
 
   coursesList = [];
   isLoading = false;
+  filter_text;
   history = false;
   constructor(
     private router: Router,

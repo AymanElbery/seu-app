@@ -56,6 +56,9 @@
                                     <button (click)="activeUser(user.USER_ID)" *ngIf="user.ACTIVE != '1'"
                                         style="margin-right: 5px;"
                                         class="btn btn-danger">{{"users.active-btn" | translate}}</button>
+                                    <button (click)="deleteUser(user.USER_ID)"
+                                        style="margin-right: 5px;"
+                                        class="btn btn-danger">{{"users.delete" | translate}}</button>
                                 </td>
                             </tr>
                         </tbody>
