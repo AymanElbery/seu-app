@@ -24,5 +24,9 @@ export const routes: Routes = [
     {
         path: '',
         component: ContactLayoutComponent
+    },
+    {
+        path: 'form',
+        component: ContactLayoutComponent
     }
 ];

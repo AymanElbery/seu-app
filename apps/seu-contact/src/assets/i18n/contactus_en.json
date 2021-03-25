@@ -38,6 +38,7 @@
         "type": "Type",
         "type_suggest": "suggestion",
         "type_complaint": "Inquiry",
+        "type_problem": "Issue / Problem",
         "id": "Request #"
     },
     "details": {
@@ -45,7 +46,8 @@
         "time": "Time",
         "to": "Sent to",
         "title": "Subject",
-        "description": "Description"
+        "description": "Description",
+        "resolution": "Resolution"
     },
     "validations": {
         "required": "Required",

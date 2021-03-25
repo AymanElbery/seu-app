@@ -14,21 +14,26 @@ export class ContactLayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.queryParams
-      .subscribe(params => {
-        if (params.lang) {
-          this.useLang(params.lang);
-        } else {
-          this.useLang(localStorage.getItem('seu-lang'));
-        }
-      });
-    // this.translate.onLangChange.subscribe(() => {
-    //   this.currLang = this.translate.currentLang;
-    // });
-    // setTimeout(() => {
-    //   //this.loadCss();
-    // }, 1000);
+
+    localStorage.setItem("contactform", "1");
+    window.location.href = "/contactus/index.html";
+
   }
+
+  // this.activatedRoute.queryParams
+  //   .subscribe(params => {
+  //     if (params.lang) {
+  //       this.useLang(params.lang);
+  //     } else {
+  //       this.useLang(localStorage.getItem('seu-lang'));
+  //     }
+  //   });
+  // // this.translate.onLangChange.subscribe(() => {
+  //   this.currLang = this.translate.currentLang;
+  // });
+  // setTimeout(() => {
+  //   //this.loadCss();
+  // }, 1000);
 
   loadCss() {
     this.addCssURL("https://seu.edu.sa/css/bootstrap.min.css", "seubootstrap");
