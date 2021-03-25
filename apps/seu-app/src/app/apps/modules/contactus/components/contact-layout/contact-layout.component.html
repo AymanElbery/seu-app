@@ -1,18 +1,20 @@
-<app-contact-header *ngIf="currLang == 'ar'" (updateLang)="useLang($event)"></app-contact-header>
-<app-contact-header-en *ngIf="currLang == 'en'" (updateLang)="useLang($event)"></app-contact-header-en>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="content">
-                <app-contact-info></app-contact-info>
+<ng-container *ngIf="!loading">
+    <app-contact-header *ngIf="currLang == 'ar'" (updateLang)="useLang($event)"></app-contact-header>
+    <app-contact-header-en *ngIf="currLang == 'en'" (updateLang)="useLang($event)"></app-contact-header-en>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <app-contact-info></app-contact-info>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="content">
+                    <app-contact-page></app-contact-page>
+                </div>
             </div>
         </div>
-        <div class="col-md-12">
-            <div class="content">
-                <app-contact-page></app-contact-page>
-            </div>
-        </div>        
     </div>
-</div>
-<app-contact-footer  *ngIf="currLang == 'ar'"></app-contact-footer>
-<app-contact-footer-en  *ngIf="currLang == 'en'"></app-contact-footer-en>
+    <app-contact-footer *ngIf="currLang == 'ar'"></app-contact-footer>
+    <app-contact-footer-en *ngIf="currLang == 'en'"></app-contact-footer-en>
+</ng-container>

@@ -9,14 +9,15 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ContactLayoutComponent implements OnInit {
   currLang;
+  loading = true;
   constructor(private translate: TranslateService, private activatedRoute: ActivatedRoute) {
+    localStorage.setItem("contactform", "1");
+    window.location.href = "/contactus/index.html";
 
   }
 
   ngOnInit() {
 
-    localStorage.setItem("contactform", "1");
-    window.location.href = "/contactus/index.html";
 
   }
 
