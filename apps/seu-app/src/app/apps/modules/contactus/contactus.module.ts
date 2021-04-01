@@ -23,6 +23,5 @@ import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
 })
 export class ContactusModule {
   constructor() {
-    window.location.href = "/contactus/index.html"
   }
 }

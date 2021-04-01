@@ -32,17 +32,16 @@ export class ContactLayoutComponent implements OnInit {
 
   loadCss() {
     if (this.currLang == 'ar') {
-      this.addCssURL("/assets/seu/css/bootstrap.min-rtl.css", "bootstrap_rtl");
-      this.addCssURL("/assets/seu/css/bootsnav.rtl.css", "bootsnav_rtl");
+      this.addCssURL("assets/seu/css/bootstrap.min-rtl.css", "bootstrap_rtl");
+      this.addCssURL("assets/seu/css/bootsnav.rtl.css", "bootsnav_rtl");
       document.getElementById('html').setAttribute('dir', 'rtl');
     } else {
-      this.addCssURL("/assets/seu/css/bootstrap.min.css", "bootstrap_rtl");
-      this.addCssURL("/assets/seu/css/bootsnav.css", "bootsnav_rtl");
-      this.addCssURL("/assets/seu/css/style-en.css", "seu_style_en");
+      this.addCssURL("assets/seu/css/bootstrap.min.css", "bootstrap_rtl");
+      this.addCssURL("assets/seu/css/bootsnav.css", "bootsnav_rtl");
+      this.addCssURL("assets/seu/css/style-en.css", "seu_style_en");
       document.getElementById('html').setAttribute('dir', 'ltr');
     }
     document.getElementById('html').setAttribute('lang', this.currLang);
-
     return false;
     // this.addCssURL("https://seu.edu.sa/css/bootstrap.min.css", "seubootstrap");
     // this.addCssURL("https://seu.edu.sa/css/bootstrap.min-rtl.css", "seubootstraprtl");

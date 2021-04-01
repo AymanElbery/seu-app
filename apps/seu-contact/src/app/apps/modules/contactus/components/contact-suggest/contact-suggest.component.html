@@ -47,6 +47,7 @@
       <select class="form-control" formControlName="type">
         <option value="{{'form.type_suggest'|translate}}">{{'form.type_suggest'|translate}}</option>
         <option value="{{'form.type_complaint'|translate}}">{{'form.type_complaint'|translate}}</option>
+        <option value="{{'form.type_problem'|translate}}">{{'form.type_problem'|translate}}</option>
       </select>
       <control-validations-errors *ngIf="submit" [control]="form.controls.type"></control-validations-errors>
     </div>

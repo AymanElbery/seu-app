@@ -2,7 +2,7 @@
     "general": {
         "seu": "Saudi Electronic University",
         "help": "Single Sign On Suppoert",
-        "suggestions": "Complaints and suggestions",
+        "suggestions": "Inquiries and suggestions",
         "enquiry": "Enquiry",
         "main_camups": "Main Campus",
         "main_address": "Saudi Arabia - Ryiadh - Prince Muhammad Ibn Salman Rd - Ar Rabi",
@@ -13,7 +13,7 @@
         "local_phone": "Call (Local) ",
         "local_phone_Val": "199099",
         "direct_phone_val": "00966112613500",
-        "Complaints_and_suggestions": "Suggestions and Complaints"
+        "Complaints_and_suggestions": "Inquiries and suggestions"
     },
     "form": {
         "name": "Name",
@@ -37,7 +37,8 @@
         "add_note": "Add Comment",
         "type": "Type",
         "type_suggest": "suggestion",
-        "type_complaint": "Complaint",
+        "type_complaint": "Inquiry",
+        "type_problem": "Issue / Problem",
         "id": "Request #"
     },
     "details": {
@@ -45,7 +46,8 @@
         "time": "Time",
         "to": "Sent to",
         "title": "Subject",
-        "description": "Description"
+        "description": "Description",
+        "resolution": "Resolution"
     },
     "validations": {
         "required": "Required",
