@@ -66,18 +66,12 @@
 
     <div class="contact-comment" *ngIf="ticketDetails['resolution']">
       <div class="row">
-        <label class="col-sm-3 col-md-3 col-form-label">{{'details.time'| translate}}:</label>
-        <div class="col-sm-6 col-md-6">
-          <div class="col-form-label font-weight-normal">{{conv['time']}}</div>
-        </div>
-      </div>
-      <div class="row">
-        <label class="col-sm-3 col-md-3 col-form-label">{{'resolution.resolution'| translate}}:</label>
+        <label class="col-sm-3 col-md-3 col-form-label">{{'details.resolution'| translate}}:</label>
         <div class="col-sm-8 col-md-8">
           <div class="col-form-label font-weight-normal" [innerHtml]="ticketDetails['resolution']['content']"></div>
         </div>
       </div>
-      <ng-container *ngIf="ticketDetails['resolution']['attachments']">
+      <ng-container *ngIf="ticketDetails['resolution']['attachments'].length">
         <div class="row">
           <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
           <div class="col-sm-6 col-md-6">
