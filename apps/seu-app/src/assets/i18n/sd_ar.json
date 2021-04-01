@@ -13,6 +13,10 @@
         "ticket_id": "رقم التذكرة",
         "conversations": "المحادثات",
         "ticket_status": "الحالة",
+        "category": "الفئة",
+        "item": "البند",
+        "subject": "الموضوع",
+        "description":"الوصف",
         "attachments": "المرفقات"
     },
     "reg_assistant": {
@@ -26,8 +30,15 @@
         "note": "ملاحظة",
         "comments": "الملاحظات",
         "email": "بريد إلكتروني",
-        "lectres":"الجدول الدراسي",
-        "time":"الوقت"
+        "lectres": "الجدول الدراسي",
+        "time": "الوقت"
+    },
+    "academic_requests": {
+        "title": "المشاكل الأكاديمية"
+    },
+    "exams": {
+        "title": "الإختبارات الإلكترونية",
+        "crse": "المقرر"
     },
     "validations": {
         "required": "الحقل مطلوب"

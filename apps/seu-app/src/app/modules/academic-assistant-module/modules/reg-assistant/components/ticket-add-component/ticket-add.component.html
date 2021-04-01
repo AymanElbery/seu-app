@@ -72,7 +72,7 @@
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"reg_assistant.comments"|translate}} <span class="reqstart">*</span></h6>
-                            <textarea class="form-control" formControlName="comments"></textarea>
+                            <textarea maxlength="1000" class="form-control" formControlName="comments"></textarea>
                         </div>
                         <control-validations-errors [control]="form.controls.comments"></control-validations-errors>
                     </div>
