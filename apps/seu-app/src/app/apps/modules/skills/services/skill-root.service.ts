@@ -49,9 +49,9 @@ export class SkillsRootService {
         }).pipe(
             map((res: any) => {
                 if (!res.status && (res.res_code == "invalid_user" || res.res_code == "invalid_session")) {
-                    console.log("INVALID", this.URL + url, res);
+                    //console.log("INVALID", this.URL + url, res);
 
-                    // /this.config.relogin();
+                    this.config.relogin();
                 } else {
                     return res;
                 }

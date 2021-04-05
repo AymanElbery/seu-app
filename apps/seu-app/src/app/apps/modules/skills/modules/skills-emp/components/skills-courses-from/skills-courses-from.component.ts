@@ -143,12 +143,12 @@ export class SkillsCoursesFromComponent implements OnInit {
       (response: any) => {
         if (response) {
           this.course = response.data;
-          this.course.START_DATE = (this.course.START_DATE) ? this.datePipe.transform(this.course.START_DATE, 'MM/dd/yyyy') : "";
-          this.course.END_DATE = (this.course.END_DATE) ? this.datePipe.transform(this.course.END_DATE, 'MM/dd/yyyy') : "";
-          this.course.REG_START_DATE = (this.course.REG_START_DATE) ? this.datePipe.transform(this.course.REG_START_DATE, 'MM/dd/yyyy') : "";
-          this.course.REG_END_DATE = (this.course.REG_END_DATE) ? this.datePipe.transform(this.course.REG_END_DATE, 'MM/dd/yyyy') : "";
-          this.course.EXCUSE_DATE = (this.course.EXCUSE_DATE) ? this.datePipe.transform(this.course.EXCUSE_DATE, 'MM/dd/yyyy') : "";
-          this.course.CANCEL_DATE = (this.course.CANCEL_DATE) ? this.datePipe.transform(this.course.CANCEL_DATE, 'MM/dd/yyyy') : "";
+          this.course.START_DATE = (this.course.START_DATE) ? this.course.START_DATE: "";
+          this.course.END_DATE = (this.course.END_DATE) ? this.course.END_DATE : "";
+          this.course.REG_START_DATE = (this.course.REG_START_DATE) ? this.course.REG_START_DATE: "";
+          this.course.REG_END_DATE = (this.course.REG_END_DATE) ? this.course.REG_END_DATE : "";
+          this.course.EXCUSE_DATE = (this.course.EXCUSE_DATE) ? this.course.EXCUSE_DATE : "";
+          this.course.CANCEL_DATE = (this.course.CANCEL_DATE) ? this.course.CANCEL_DATE : "";
 
           this.classRoomDisabled = (this.course.FACE_ATTEND == 1) ? false : true;
           this.linkDisabled = (this.course.VIRTUAL_ATTEND == 1) ? false : true;

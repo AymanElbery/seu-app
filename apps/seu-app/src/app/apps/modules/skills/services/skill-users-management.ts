@@ -37,6 +37,13 @@ export class SkillsUsersManagementService extends SkillsRootService {
         return this.post("emp/users/update", { 'USER_ID': id, 'ACTIVE': 0 });
     }
 
+    deleteUser(id, instructors = false) {
+        if (instructors) {
+            return this.post("emp/instructors/delete", { 'USER_ID': id, 'ACTIVE': 0 , 'DELETED': 1});
+        }
+        return this.post("emp/users/delete", { 'USER_ID': id, 'ACTIVE': 0 ,'DELETED': 1});
+    }
+
     activeUser(id, instructors) {
         if (instructors) {
             return this.post("emp/instructors/update", { 'USER_ID': id, 'ACTIVE': 1 });
