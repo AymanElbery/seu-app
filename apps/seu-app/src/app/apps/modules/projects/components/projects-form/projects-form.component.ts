@@ -52,12 +52,18 @@ export class ProjectsFormComponent implements OnInit {
   }
   isLoading = false;
   submitted = false;
+  active = false;
 
   ngOnInit() {
+    this.isLoading = true;
+
     this.pservice.getLookups(this.translate.currentLang).subscribe(
       (response: any) => {
         if (response) {
-          this.colleges = response.data.colleges;;
+          this.colleges = response.data.colleges;
+          this.active = response.data.active;
+          this.isLoading = false;
+
         }
       },
       error => { }

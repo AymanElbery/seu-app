@@ -2,7 +2,7 @@
     "general": {
         "seu": "الجامعة السعودية الإلكترونية",
         "help": "دعم الدخول الموحد",
-        "suggestions": "شكاوى و مقترحات",
+        "suggestions": "استفسارات و مقترحات",
         "enquiry": "استعلام",
         "main_camups": "المقر الرئيسي",
         "main_address": "الرياض - طريق أبو بكر الصديق تقاطع طريق الأمير محمد بن سلمان",
@@ -13,10 +13,10 @@
         "local_phone": "(محلي)",
         "local_phone_Val": "199099",
         "direct_phone_val": "00966112613500",
-        "Complaints_and_suggestions": "الاقتراحات و الشكاوى"
+        "Complaints_and_suggestions": "الاستفسارات و المقترحات"
     },
     "form": {
-        "name": "الإسم",
+        "name": "الاسم",
         "user_name": "اسم المستخدم فى نظام الدخول الموحد",
         "phone": "رقم الجوال",
         "email": "البريد الإلكتروني الشخصي",
@@ -35,17 +35,19 @@
         "status": "الحالة",
         "note": "ملاحظة",
         "add_note": "إضافة ملاحظة",
-        "type":"النوع",
+        "type": "النوع",
         "type_suggest": "مقترح",
-        "type_complaint": "شكوي",
-        "id":"رقم الطلب"
+        "type_complaint": "استفسار",
+        "type_problem": "مشكلة / شكوي",
+        "id": "رقم الطلب"
     },
     "details": {
         "attachments": "المرفقات",
         "time": "الوقت",
         "to": "مرسلة الي",
         "title": "الموضوع",
-        "description": "الوصف"
+        "description": "الوصف",
+        "resolution": "الحل"
     },
     "validations": {
         "required": "هذا الحقل مطلوب",
@@ -55,8 +57,8 @@
     "messages": {
         "missing_params": "الرجاء تعبئة كل الحقول",
         "invlid_params": "الرجاء تعبئة الحقول بشكل صحيح",
-        "ticket_not_found":"لا يوجد طلب بهذا الرقم",
-        "ticket_ssn_invalid":"رقم الطلب لا يتوافق مع رقم الهوية",
-        "invalid_captach":"الرجاء التحقق من الكابتشا"
+        "ticket_not_found": "لا يوجد طلب بهذا الرقم",
+        "ticket_ssn_invalid": "رقم الطلب لا يتوافق مع رقم الهوية",
+        "invalid_captach": "الرجاء التحقق من الكابتشا"
     }
 }

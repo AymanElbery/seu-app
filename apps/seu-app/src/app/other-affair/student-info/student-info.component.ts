@@ -78,12 +78,14 @@ export class StudentInfoComponent implements OnInit {
   ngOnInit() {
     this.getData();
   }
+  can_update_data = false;
   getData() {
     this.isLoading = true;
     this.academicService.getِRequests().then(
       res => {
         if (res['status']) {
           this.reqData = (res as any).data;
+          this.can_update_data = this.reqData.can_update_data;
           this.yearlist = (res as any).data["yearslist"];
           this.msgs = (res as any).messages;
           this.studentInfo = this.reqData.user;
@@ -105,7 +107,9 @@ export class StudentInfoComponent implements OnInit {
           this.stdData.work_city = this.studentInfo.WORK_CITY;
           this.getjobstatus(this.stdData.job_status);
         } else {
-          this.toastr.tryagain();
+          this.can_update_data = false;
+          this.msgs = (res as any).messages;
+          //this.toastr.tryagain();
         }
         this.isLoading = false;
       }

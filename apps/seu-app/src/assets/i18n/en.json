@@ -1010,10 +1010,11 @@
             "Download": "Download",
             "actions": "Action",
             "Play": "Play",
-            "guide_doc": "الدليل الإرشادي للاختبارات الإلكترونية عن بعد باستخدام الذكاء الاصطناعي",
+            "guide_doc": "Guidelines for the Online E-Exams Using Artificial Intelligence Technology",
             "guide_vedio_SwiftAssess": "فيديو تعريفي لكيفية استيفاء متطلبات منصة (SwiftAssess) ",
             "guide_vedio_WebEx": "فيديو تعريفي عن الدعم التقني للاختبارات الإلكترونية عن بعد  عبر نظام (WebEx)",
             "guide_faqs": "FAQs",
+            "sd_ticketes": "آلية رفع تذكرة دعم للاختبارات – بعد الاختبار",
             "GuidelinesList": [
                 {
                     "title": "Instruction before exams",

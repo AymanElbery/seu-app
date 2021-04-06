@@ -51,6 +51,12 @@ export class DistanceLearningFormComponent implements OnInit {
   submitted = false;
   active = false;
   ngOnInit() {
+    this.loadlookups();
+    this.translate.onLangChange.subscribe(() => {
+      this.loadlookups();
+    });
+  }
+  loadlookups() {
     this.isLoading = true;
     this.pservice.getDistanceLearningLookups(this.translate.currentLang).subscribe(
       (response: any) => {

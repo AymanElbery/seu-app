@@ -5,6 +5,7 @@ import { FeesExceptionService } from 'src/app/finance-affair/services/fees-excep
 import { FeesException } from 'src/app/shared/models/fees-exception';
 import { NgForm } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-add-fees-exception',
@@ -14,9 +15,9 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 export class AddFeesExceptionComponent implements OnInit {
 
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
-              public dialogRef: MatDialogRef<AddFeesExceptionComponent>,
-              private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data,private translate: TranslateService,
+    public dialogRef: MatDialogRef<AddFeesExceptionComponent>,
+    private toastr: AppToasterService, private acadmicProc: FeesExceptionService) { }
 
   feesException: FeesException;
   reqData: any;
@@ -56,6 +57,10 @@ export class AddFeesExceptionComponent implements OnInit {
     this.dialogRef.close();
   }
   addRequest(data: any) {
+    if (data.iban && data.iban.length != '22') {
+      this.toastr.push([{body:this.translate.instant("services.finance.iban_not_correct"),type:'error'}]);
+      return false;
+    }
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
       if ((res as any).status) {
@@ -84,12 +89,12 @@ export class AddFeesExceptionComponent implements OnInit {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const reader = new FileReader();
     reader.onload = this._handleReaderLoaded.bind(this);
-    
+
     reader.readAsDataURL(file);
   }
   _handleReaderLoaded(e) {
     const reader = e.target;
-    
+
     // console.log('_reader ');
     // console.log(this.fileType);
     // console.log(e);
@@ -98,17 +103,17 @@ export class AddFeesExceptionComponent implements OnInit {
       this.feesException.bank_card = reader.result;
     } else if (this.fileType == 'proof_status') {
       this.feesException.proof_status = reader.result;
-         } else if (this.fileType == 'insurance_card') {
+    } else if (this.fileType == 'insurance_card') {
       this.feesException.insurance_card = reader.result;
-         } else if (this.fileType == 'id_card') {
+    } else if (this.fileType == 'id_card') {
       this.feesException.id_card = reader.result;
-         } else if (this.fileType == 'work_status') {
+    } else if (this.fileType == 'work_status') {
       this.feesException.work_status = reader.result;
-         } else if (this.fileType == 'letter') {
+    } else if (this.fileType == 'letter') {
       this.feesException.letter = reader.result;
-         } else if (this.fileType == 'mco_id_card') {
+    } else if (this.fileType == 'mco_id_card') {
       this.feesException.mco_id_card = reader.result;
-         }
+    }
 
   }
 
