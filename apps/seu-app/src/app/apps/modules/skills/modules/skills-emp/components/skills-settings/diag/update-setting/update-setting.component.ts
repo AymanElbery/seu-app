@@ -19,7 +19,7 @@ export class UpdateSettingComponent implements OnInit {
   id;
   UpdateSettingForm;
   isLoading;
-  setting = {};
+  setting ;
   message;
   submitted;
 
@@ -42,6 +42,7 @@ export class UpdateSettingComponent implements OnInit {
     private translate: TranslateService,
     private skillsSettingService: SkillsSettingsService
   ) {
+    this.setting = {};
     this.id = this.data.id; 
     this.isLoading = true;
     this.getSettingById();
