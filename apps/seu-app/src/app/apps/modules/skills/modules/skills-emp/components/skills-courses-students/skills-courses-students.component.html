@@ -1,9 +1,11 @@
-<app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.courses-students' | translate}}"></app-service-header>
+<app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.courses-students' | translate}}">
+</app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
     <div class="row" style="margin-top: 2px;">
         <div class="col-md-12">
-          <input class="form-control" [(ngModel)]="filter_text" type="text" placeholder="{{'courses.filter_courses_students' | translate}}">
+            <input class="form-control" [(ngModel)]="filter_text" type="text"
+                placeholder="{{'courses.filter_courses_students' | translate}}">
         </div>
     </div>
     <div class="row" style="margin-top: 20px;">
@@ -29,6 +31,7 @@
                                 <th scope="col">{{"courses.end_date" | translate}}</th>
                                 <th scope="col">{{"courses.hr_hours" | translate}}</th>
                                 <th scope="col">{{"skills" | translate}}</th>
+                                <th scope="col">{{"courses.status" | translate}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,6 +50,7 @@
                                     <b style="font-size: 1.5em; font-weight: bold;" class="text-danger"
                                         *ngIf="student.SKILLS_OPTION != '1'"><i class="ik ik-x-circle"></i></b>
                                 </td>
+                                <td>{{ "statuses."+student['STATUS'] | translate}}</td>
                             </tr>
                         </tbody>
                     </table>

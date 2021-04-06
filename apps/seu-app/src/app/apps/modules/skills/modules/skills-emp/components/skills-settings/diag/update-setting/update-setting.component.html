@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
-          {{"settings.edit"|translate}}
+          {{setting.SET_TITLE}}
         </h5>
       </div>
       <div class="modal-body" style=" direction: rtl;">
@@ -14,7 +14,7 @@
             <div class="col-md-12">
               <div class="state cke_rtl">
                 <h6>{{"settings.details_ar"|translate}} <span class="reqstart">*</span></h6>
-                <ckeditor [(ngModel)]="SET_VALUE_AR" style="height: 100px; margin-top: 20px;" [config]="toolbarConfig" formControlName="SET_VALUE_AR" [editor]="EditorAR">
+                <ckeditor [(ngModel)]="SET_VALUE_AR" style="height: 500px; margin-top: 20px;" [config]="toolbarConfig" formControlName="SET_VALUE_AR" [editor]="EditorAR">
                 </ckeditor>
               </div>
               <div *ngIf="UpdateSettingForm.controls.SET_VALUE_AR.invalid && (UpdateSettingForm.controls.SET_VALUE_AR.dirty || UpdateSettingForm.controls.SET_VALUE_AR.touched)">
@@ -28,7 +28,7 @@
             <div class="col-md-12">
               <div class="state cke_rtl">
                 <h6>{{"settings.details_en"|translate}} <span class="reqstart">*</span></h6>
-                <ckeditor [(ngModel)]="SET_VALUE_EN" style="height: 100px; margin-top: 20px;" [config]="toolbarConfig" formControlName="SET_VALUE_EN" [editor]="EditorEN">
+                <ckeditor [(ngModel)]="SET_VALUE_EN" style="height: 500px; margin-top: 20px;" [config]="toolbarConfig" formControlName="SET_VALUE_EN" [editor]="EditorEN">
                 </ckeditor>
               </div>
               <div *ngIf="UpdateSettingForm.controls.SET_VALUE_EN.invalid && (UpdateSettingForm.controls.SET_VALUE_EN.dirty || UpdateSettingForm.controls.SET_VALUE_EN.touched)">

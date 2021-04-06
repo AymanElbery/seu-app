@@ -19,7 +19,7 @@ export class UpdateSettingComponent implements OnInit {
   id;
   UpdateSettingForm;
   isLoading;
-  setting;
+  setting = {};
   message;
   submitted;
 

@@ -27,7 +27,7 @@ export class SkillsCoursesFromComponent implements OnInit {
   };
 
   toolbarConfig = {
-    toolbar: ['heading', '|', 'bold', 'italic', 'Indent', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|' ,'highlight','fontFamily','fontSize','horizontalLine',,  '|','insertTable', '|', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo'],
+    toolbar: ['heading', '|', 'bold', 'italic', 'Indent', '|', 'alignment:left', 'alignment:right', 'alignment:center', 'alignment:justify', '|', 'highlight', 'fontFamily', 'fontSize', 'horizontalLine', '|', 'insertTable', '|', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'undo', 'redo'],
   };
   datePickerConfig: Partial<BsDatepickerConfig>;
   isLoading = false;
@@ -72,8 +72,7 @@ export class SkillsCoursesFromComponent implements OnInit {
     }
     this.getClassificatios();
     this.getStuffUsers();
-
-
+    this.datePickerConfig = { dateInputFormat: 'DD-MM-YYYY', showWeekNumbers: false };
 
     this.AddCourseForm = this.fb.group({
       'TITLE_AR': ['', [Validators.required]],
@@ -143,9 +142,9 @@ export class SkillsCoursesFromComponent implements OnInit {
       (response: any) => {
         if (response) {
           this.course = response.data;
-          this.course.START_DATE = (this.course.START_DATE) ? this.course.START_DATE: "";
+          this.course.START_DATE = (this.course.START_DATE) ? this.course.START_DATE : "";
           this.course.END_DATE = (this.course.END_DATE) ? this.course.END_DATE : "";
-          this.course.REG_START_DATE = (this.course.REG_START_DATE) ? this.course.REG_START_DATE: "";
+          this.course.REG_START_DATE = (this.course.REG_START_DATE) ? this.course.REG_START_DATE : "";
           this.course.REG_END_DATE = (this.course.REG_END_DATE) ? this.course.REG_END_DATE : "";
           this.course.EXCUSE_DATE = (this.course.EXCUSE_DATE) ? this.course.EXCUSE_DATE : "";
           this.course.CANCEL_DATE = (this.course.CANCEL_DATE) ? this.course.CANCEL_DATE : "";
@@ -217,13 +216,14 @@ export class SkillsCoursesFromComponent implements OnInit {
   }
 
   changeFormate(date) {
-    var newDate = new Date(date);
-    console.log(newDate, date);
-    var day = ("0" + (newDate.getDate())).slice(-2);
-    var month = ("0" + (newDate.getMonth() + 1)).slice(-2);;
-    var year = newDate.getFullYear();
-    var todayFormat = year + '-' + month + '-' + day;
-    return todayFormat;
+    return date;
+    // var newDate = new Date(date);
+    // console.log(newDate, date);
+    // var day = ("0" + (newDate.getDate())).slice(-2);
+    // var month = ("0" + (newDate.getMonth() + 1)).slice(-2);;
+    // var year = newDate.getFullYear();
+    // var todayFormat = year + '-' + month + '-' + day;
+    // return todayFormat;
   }
 
 
