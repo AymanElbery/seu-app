@@ -103,6 +103,7 @@ export class DistanceLearningFormComponent implements OnInit {
         }
         this.resetCaptcha();
         this.isLoading = false;
+        this.submitted = false;
         this.recaptchaRef.reset();
       },
       error => {
