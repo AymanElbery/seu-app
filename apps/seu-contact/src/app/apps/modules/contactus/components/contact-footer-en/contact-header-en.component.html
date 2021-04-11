@@ -4,21 +4,15 @@
                         <div class="col-md-6 col-sm-6 col-xs-2 right-s">
 
                                 <ul>
+                                        <!-- <li class="top-menu"><a href="#"> <i class="fa fa-bars" style="font-size:20px"></i> </a> </li> -->
 
 
-                                        <li class="hidden-xs"> <a href="#" class="today"> <img
-                                                                src="https://stage.seu.edu.sa/images/cal-w.png"
-                                                                style="width:20px;margin-right:6px" alt="seu"
-                                                                class="icon-collapse"> <span>11/04/2021</span></a> </li>
+                                        <li class="hidden-xs"> <a href="javascript:;" class="today"> <i
+                                                                class="fa fa-calendar"></i>
+                                                        <span>{{gdate}}</span></a>
+                                        </li>
                                         <!--<li><a style="color:#f28d1e !important" href="https://old.seu.edu.sa/sites/en/Pages/main.aspx" target="_blank"> Old Portal </a> </li>-->
 
-                                        <li>
-                                                <img src="https://stage.seu.edu.sa/images/cor.png"
-                                                        style="width:20px;margin-right:4px;filter: invert(1);" alt="seu"
-                                                        class="icon-collapse">
-                                                <a href="?lang=ar">عربي</a>
-
-                                        </li>
                                 </ul>
 
                         </div>
@@ -26,10 +20,10 @@
                                 <ul>
 
                                         <li class=""><a href="https://outlook.office365.com/owa/seu.edu.sa"
-                                                        target="_blank"> <img
-                                                                src="https://stage.seu.edu.sa/images/mail-w.png" alt=""
-                                                                style="width: 20px;"></a></li>
+                                                        target="_blank"><i class="fa fa-envelope-open"></i></a></li>
 
+                                        <li class="hidden-xs"><a href="http://outlet.199099.gov.sa/en/"> <i
+                                                                class="fa fa-phone"></i> 199099</a> </li>
 
 
                                         <li class="dropdown">
@@ -38,18 +32,16 @@
 
 
 
-                                                        <img src="https://stage.seu.edu.sa/images/login-w.png" alt=""
-                                                                style="width: 20px; margin:0 7px 0 0px ">
+                                                        <img src="/assets/images/login-bo1.png" alt=""
+                                                                style="width: 20px; height: 20px">
                                                 </a>
 
                                         </li>
-                                        <li class="hidden-xs"><a href="https://eservice.seu.edu.sa/contactus/index.html"
-                                                        target="_blank"> <img
-                                                                src="https://stage.seu.edu.sa/images/help.png" alt=""
-                                                                style="width: 20px;"> Contact Us</a> </li>
 
+                                        <li>
+                                                <a href="?lang=ar">عربي</a>
 
-
+                                        </li>
 
 
                                         <li class="searchBox">
@@ -68,7 +60,6 @@
                                                 </form>
 
 
-
                                         </li>
 
 
@@ -81,9 +72,8 @@
 
         </div>
 </div>
-
-
-<nav class="navbar navbar-default brand-center center-side navbar-sticky navbar-scrollspy bootsnav">
+<nav class="navbar navbar-default brand-center center-side navbar-sticky navbar-scrollspy bootsnav on no-full sticked">
+        <span class="storage-name" style="display:none;"></span>
 
 
 
@@ -91,13 +81,11 @@
                 <div class="attr-nav ">
                         <ul>
 
-                                <li class=""><a href="https://outlook.office365.com/owa/seu.edu.sa" target="_blank"><img
-                                                        src="https://stage.seu.edu.sa/images/mail-w.png" alt=""
-                                                        style="width: 20px;"></a></li>
+                                <li class=""><a href="https://outlook.office365.com/owa/seu.edu.sa" target="_blank"><i
+                                                        class="fa fa-envelope-open"></i></a></li>
                                 <li class="">
-                                        <a target="_blank" href="https://eservice.seu.edu.sa/?lang=ar"><img
-                                                        src="https://stage.seu.edu.sa/images/login-w.png" alt=""
-                                                        style="width: 20px;"></a>
+                                        <a target="_blank" href="https://eservice.seu.edu.sa/?lang=ar"><i
+                                                        class="fa fa-user-check"></i></a>
 
                                 </li>
 
@@ -109,11 +97,11 @@
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                                <img src="https://stage.seu.edu.sa/images/menu.png" alt="" style="width: 20px;">
+                                <i class="fa fa-bars"></i>
                         </button>
                         <!--<a class="navbar-brand" href="#brand"><img src="images/logo-ar.png" class="logo" alt=""></a>-->
-                        <a class="navbar-brand" href="/en/home/"><img
-                                        src="https://stage.seu.edu.sa/media/5169/new-logo1.png" class="logo" alt=""></a>
+                        <a class="navbar-brand" href="https://seu.edu.sa/en/home/"><img
+                                        src="/assets/seu/images/logo_3d_last.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -130,22 +118,22 @@
 
                                 </div>
                         </form>
-
-
                         <ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
 
 
 
                                 <li class="nav-item dropdown">
                                         <a href="https://seu.edu.sa/en/about/" target="_self">
-                                                <img src="https://stage.seu.edu.sa/media/5178/home.png" alt="">
+                                                <i class="fa fas fa-university">
+
+
+                                                </i>
                                                 About SEU
                                         </a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown"> <img
-                                                        src="https://stage.seu.edu.sa/media/5184/managment.png" alt="">
-                                                Structure</a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown"><i
+                                                        class="fa fas fa-chalkboard-teacher"></i> Structure</a>
                                         <ul class="dropdown-menu">
 
                                                 <li class="dropdown">
@@ -153,8 +141,8 @@
 
 
                                                         <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                <img src="https://stage.seu.edu.sa/media/5187/agency.png"
-                                                                        alt=""> Vice Rectorates </a>
+                                                                <i class="fas fa-project-diagram"></i> Vice
+                                                                Rectorates </a>
 
 
                                                         <ul class="dropdown-menu " style="width:280px">
@@ -172,7 +160,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/vroaa/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Vice Rectorate of Academic Affairs
+                                                                                Vice Rectorate of Academic
+                                                                                Affairs
 
 
                                                                         </a>
@@ -188,8 +177,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/vrogsr/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Vice Rectorate of Graduate Studies and
-                                                                                Research
+                                                                                Vice Rectorate of Graduate
+                                                                                Studies and Research
 
 
                                                                         </a>
@@ -197,8 +186,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/vropdq/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Vice Rectorate of Planning, Development
-                                                                                and Quality
+                                                                                Vice Rectorate of Planning,
+                                                                                Development and Quality
 
 
                                                                         </a>
@@ -206,7 +195,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/vrofsa/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Vice Rectorate of Female Student Affairs
+                                                                                Vice Rectorate of Female Student
+                                                                                Affairs
 
 
                                                                         </a>
@@ -221,8 +211,7 @@
 
 
                                                         <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                <img src="https://stage.seu.edu.sa/media/5188/breif.png"
-                                                                        alt=""> Deanships </a>
+                                                                <i class="fas fa-briefcase"></i> Deanships </a>
 
 
                                                         <ul class="dropdown-menu " style="width:280px">
@@ -230,10 +219,10 @@
 
 
                                                                 <li>
-                                                                        <a href="https://seu.edu.sa/aasa/en/home/">
+                                                                        <a href="https://seu.edu.sa/aasa/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Deanship of Admission and Student
-                                                                                Affairs
+                                                                                Deanship of Admission and
+                                                                                Student Affairs
 
 
                                                                         </a>
@@ -265,7 +254,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/it/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Deanship of Information Technology
+                                                                                Deanship of Information
+                                                                                Technology
 
 
                                                                         </a>
@@ -273,7 +263,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/en/institute-home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Institute for Research and Studies
+                                                                                Institute for Research and
+                                                                                Studies
 
 
                                                                         </a>
@@ -296,8 +287,7 @@
 
 
                                                         <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                <img src="https://stage.seu.edu.sa/media/5189/edarat.png"
-                                                                        alt=""> Departments </a>
+                                                                <i class="fas fa-landmark"></i> Departments </a>
 
 
                                                         <ul class="dropdown-menu usity" style="width:280px">
@@ -307,7 +297,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/kr/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Department of Knowledge Resources
+                                                                                Department of Knowledge
+                                                                                Resources
 
 
                                                                         </a>
@@ -315,8 +306,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/pram/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Administration of Public Relations and
-                                                                                Media
+                                                                                Administration of Public
+                                                                                Relations and Media
 
 
                                                                         </a>
@@ -340,7 +331,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/pab/en/home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Administration of Planning and Budget
+                                                                                Administration of Planning and
+                                                                                Budget
 
 
                                                                         </a>
@@ -356,7 +348,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/af/en/home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Administration of Administrative Affairs
+                                                                                Administration of Administrative
+                                                                                Affairs
 
 
                                                                         </a>
@@ -364,7 +357,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/aofd/en/home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Administration of Finance Department
+                                                                                Administration of Finance
+                                                                                Department
 
 
                                                                         </a>
@@ -372,7 +366,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/aocap/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Administration of Contracts and Purchase
+                                                                                Administration of Contracts and
+                                                                                Purchase
 
 
                                                                         </a>
@@ -380,7 +375,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/aosas/en/home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Administration of Safety And Security
+                                                                                Administration of Safety And
+                                                                                Security
 
 
                                                                         </a>
@@ -388,7 +384,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/aoss/en/home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Administration of Student Support
+                                                                                Administration of Student
+                                                                                Support
 
 
                                                                         </a>
@@ -396,7 +393,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/aosaw/en/about/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Administration of Storage and Warehouses
+                                                                                Administration of Storage and
+                                                                                Warehouses
 
 
                                                                         </a>
@@ -421,7 +419,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/aoms/en/home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Administration Of Medical Services
+                                                                                Administration Of Medical
+                                                                                Services
 
 
                                                                         </a>
@@ -469,9 +468,9 @@
                                         </ul>
                                 </li>
                                 <li class="nav-item dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown"> <img
-                                                        src="https://stage.seu.edu.sa/media/5183/fac.png" alt="">
-                                                Colleges and Branches</a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown"><i
+                                                        class="fa fas fa-book-open"></i> Colleges and
+                                                Branches</a>
                                         <ul class="dropdown-menu">
 
                                                 <li class="dropdown">
@@ -479,8 +478,7 @@
 
 
                                                         <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                <img src="https://stage.seu.edu.sa/media/5191/coll.png"
-                                                                        alt=""> Colleges </a>
+                                                                <i class="fas fa-briefcase"></i> Colleges </a>
 
 
                                                         <ul class="dropdown-menu " style="width:280px">
@@ -490,8 +488,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/afsc/en/home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                College of Administrative and Financial
-                                                                                Sciences
+                                                                                College of Administrative and
+                                                                                Financial Sciences
 
 
                                                                         </a>
@@ -499,7 +497,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/caic/en/home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                College of Computing and Informatics
+                                                                                College of Computing and
+                                                                                Informatics
 
 
                                                                         </a>
@@ -515,8 +514,8 @@
                                                                 <li>
                                                                         <a href="https://seu.edu.sa/satsc/en/home/">
                                                                                 <i class="fas fa-list"></i>
-                                                                                College Of Science and Theoretical
-                                                                                Studies
+                                                                                College Of Science and
+                                                                                Theoretical Studies
 
 
                                                                         </a>
@@ -531,8 +530,8 @@
 
 
                                                         <a class="dropdown-toggle" data-toggle="dropdown">
-                                                                <img src="https://stage.seu.edu.sa/media/5190/bran.png"
-                                                                        alt=""> Branches </a>
+                                                                <i class="fas fa-project-diagram"></i> Branches
+                                                        </a>
 
 
                                                         <ul class="dropdown-menu usity" style="width:280px">
@@ -611,9 +610,8 @@
                                         </ul>
                                 </li>
                                 <li class="nav-item dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown"> <img
-                                                        src="https://stage.seu.edu.sa/media/5185/media.png" alt="">
-                                                Media</a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown"><i
+                                                        class="fa fa fa-images"></i> Media</a>
                                         <ul class="dropdown-menu">
 
                                                 <li>
@@ -621,8 +619,7 @@
 
 
 
-                                                                <img src="https://stage.seu.edu.sa/media/5198/news.png"
-                                                                        alt="">
+                                                                <i class="fa fa-newspaper"></i>
                                                                 News
                                                         </a>
                                                 </li>
@@ -631,18 +628,16 @@
 
 
 
-                                                                <img src="https://stage.seu.edu.sa/media/5185/media.png"
-                                                                        alt="">
+                                                                <i class="fas fa-bullhorn"></i>
                                                                 Advertisements
                                                         </a>
                                                 </li>
                                                 <li>
-                                                        <a href="https://seu.edu.sa/en/events/" target="_self">
+                                                        <a href="https://seu.edu.sa/en/events/arday20/" target="_self">
 
 
 
-                                                                <img src="https://stage.seu.edu.sa/media/5200/eve.png"
-                                                                        alt="">
+                                                                <i class=""></i>
                                                                 Events
                                                         </a>
                                                 </li>
@@ -651,8 +646,7 @@
 
 
 
-                                                                <img src="https://stage.seu.edu.sa/media/5204/vids.png"
-                                                                        alt="">
+                                                                <i class="fa fa-video-camera"></i>
                                                                 Videos
                                                         </a>
                                                 </li>
@@ -661,8 +655,7 @@
 
 
 
-                                                                <img src="https://stage.seu.edu.sa/media/5202/imag.png"
-                                                                        alt="">
+                                                                <i class="fas fa-image"></i>
                                                                 Gallery
                                                         </a>
                                                 </li>
@@ -672,8 +665,8 @@
 
 
                                                                 <i>
-                                                                        <img src="https://stage.seu.edu.sa/media/5199/cha.png"
-                                                                                alt="">
+                                                                        <img src="/assets/images/icon-vi.png" alt=""
+                                                                                style="width: 20px;height: 14px">
                                                                 </i>
 
                                                                 SEU channel
@@ -686,7 +679,10 @@
                                 <li class="nav-item dropdown">
                                         <a href="https://seu.edu.sa/en/academic-programs/" target="_self"
                                                 class="dropdown-toggle" data-toggle="dropdown">
-                                                <img src="https://stage.seu.edu.sa/media/5186/prog.png" alt="">
+                                                <i class="fa fas fa-award">
+
+
+                                                </i>
                                                 Academic Programs
                                         </a>
                                         <ul class="dropdown-menu">
@@ -695,11 +691,10 @@
 
 
 
-                                                        <a href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Bachelor"
+                                                        <a href="https://seu.edu.sa/en/academic-programs?p=1&programType=Bachelor"
                                                                 class="dropdown-toggle" data-toggle="dropdown"
                                                                 target="_self">
-                                                                <img src="https://stage.seu.edu.sa/media/5192/baca.png"
-                                                                        alt=""> Bachelor </a>
+                                                                <i class="fas fa-book-open"></i> Bachelor </a>
 
 
                                                         <ul class="dropdown-menu " style="width:280px">
@@ -708,19 +703,29 @@
 
                                                                 <li>
                                                                         <a
-                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Bachelor&amp;programName=College of Administrative and Financial Sciences Programs">
+                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&programType=Bachelor&programName=College of Administrative and Financial Sciences Programs">
                                                                                 <i class="fas fa-list"></i>
-                                                                                College of Administrative and Financial
-                                                                                Sciences Programs
+                                                                                College of Administrative and
+                                                                                Financial Sciences Programs
 
 
                                                                         </a>
                                                                 </li>
                                                                 <li>
                                                                         <a
-                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Bachelor&amp;programName=Computing and Informatics College programs">
+                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&programType=Bachelor&programName=Computing and Informatics College programs">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Computing and Informatics College
+                                                                                Computing and Informatics
+                                                                                College programs
+
+
+                                                                        </a>
+                                                                </li>
+                                                                <li>
+                                                                        <a
+                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&programType=Bachelor&programName=College of Health Sciences programs">
+                                                                                <i class="fas fa-list"></i>
+                                                                                College of Health Sciences
                                                                                 programs
 
 
@@ -728,18 +733,10 @@
                                                                 </li>
                                                                 <li>
                                                                         <a
-                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Bachelor&amp;programName=College of Health Sciences programs">
+                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&programType=Bachelor&programName=Science and Theoretical Studies Programs">
                                                                                 <i class="fas fa-list"></i>
-                                                                                College of Health Sciences programs
-
-
-                                                                        </a>
-                                                                </li>
-                                                                <li>
-                                                                        <a
-                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Bachelor&amp;programName=Science and Theoretical Studies Programs">
-                                                                                <i class="fas fa-list"></i>
-                                                                                Science and Theoretical Studies Programs
+                                                                                Science and Theoretical Studies
+                                                                                Programs
 
 
                                                                         </a>
@@ -753,11 +750,11 @@
 
 
 
-                                                        <a href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Graduate Studies​​"
+                                                        <a href="https://seu.edu.sa/en/academic-programs?p=1&programType=Graduate Studies​​"
                                                                 class="dropdown-toggle" data-toggle="dropdown"
                                                                 target="_self">
-                                                                <img src="https://stage.seu.edu.sa/media/5191/coll.png"
-                                                                        alt=""> Graduate Studies​​ </a>
+                                                                <i class="fas fa-user-graduate"></i> Graduate
+                                                                Studies​​ </a>
 
 
                                                         <ul class="dropdown-menu " style="width:280px">
@@ -766,19 +763,29 @@
 
                                                                 <li>
                                                                         <a
-                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Graduate Studies​​&amp;programName=College of Administrative and Financial Sciences Programs">
+                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&programType=Graduate Studies​​&programName=College of Administrative and Financial Sciences Programs">
                                                                                 <i class="fas fa-list"></i>
-                                                                                College of Administrative and Financial
-                                                                                Sciences Programs
+                                                                                College of Administrative and
+                                                                                Financial Sciences Programs
 
 
                                                                         </a>
                                                                 </li>
                                                                 <li>
                                                                         <a
-                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Graduate Studies​​&amp;programName=Computing and Informatics College programs">
+                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&programType=Graduate Studies​​&programName=Computing and Informatics College programs">
                                                                                 <i class="fas fa-list"></i>
-                                                                                Computing and Informatics College
+                                                                                Computing and Informatics
+                                                                                College programs
+
+
+                                                                        </a>
+                                                                </li>
+                                                                <li>
+                                                                        <a
+                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&programType=Graduate Studies​​&programName=College of Health Sciences programs">
+                                                                                <i class="fas fa-list"></i>
+                                                                                College of Health Sciences
                                                                                 programs
 
 
@@ -786,19 +793,10 @@
                                                                 </li>
                                                                 <li>
                                                                         <a
-                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Graduate Studies​​&amp;programName=College of Health Sciences programs">
+                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&programType=Graduate Studies​​&programName=College of Science and Theoretical Studies">
                                                                                 <i class="fas fa-list"></i>
-                                                                                College of Health Sciences programs
-
-
-                                                                        </a>
-                                                                </li>
-                                                                <li>
-                                                                        <a
-                                                                                href="https://seu.edu.sa/en/academic-programs?p=1&amp;programType=Graduate Studies​​&amp;programName=College of Science and Theoretical Studies">
-                                                                                <i class="fas fa-list"></i>
-                                                                                College of Science and Theoretical
-                                                                                Studies
+                                                                                College of Science and
+                                                                                Theoretical Studies
 
 
                                                                         </a>
@@ -812,65 +810,16 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                         <a href="https://seu.edu.sa/en/arabic-online/" target="_self">
-                                                <img src="https://stage.seu.edu.sa/media/5181/arabic.png" alt="">
+                                                <i class="fa fas fa-language">
+
+
+                                                </i>
                                                 Arabic Online
                                         </a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown"> <img
-                                                        src="https://stage.seu.edu.sa/media/5182/commit.png" alt="">
-                                                Initiatives and Committees</a>
-                                        <ul class="dropdown-menu">
-
-                                                <li>
-                                                        <a href="https://seu.edu.sa/en/business-centers/elic/"
-                                                                target="_self">
-
-
-
-                                                                <img src="https://stage.seu.edu.sa/media/5193/comi1.png"
-                                                                        alt="">
-                                                                Innovation in eLearning Hackathon and Accelerator
-                                                        </a>
-                                                </li>
-                                                <li>
-                                                        <a href="https://seu.edu.sa/sr/en/e-learning-initiative/"
-                                                                target="_self">
-
-
-
-                                                                <img src="https://stage.seu.edu.sa/media/5194/comi2.png"
-                                                                        alt="">
-                                                                E-Learning Initiative
-                                                        </a>
-                                                </li>
-                                                <li>
-                                                        <a href="https://seu.edu.sa/sr/en/institutional-funding-research-initiative/"
-                                                                target="_self">
-
-
-
-                                                                <img src="https://stage.seu.edu.sa/media/5195/comi3.png"
-                                                                        alt="">
-                                                                Institutional Funding Research Initiative
-                                                        </a>
-                                                </li>
-                                                <li>
-                                                        <a href="https://seu.edu.sa/mhc/en/about/" target="_self">
-
-
-
-                                                                <img src="https://stage.seu.edu.sa/media/5196/comi4.png"
-                                                                        alt="">
-                                                                Permanent Committee for Mental Health
-                                                        </a>
-                                                </li>
-                                        </ul>
-                                </li>
-                                <li class="nav-item dropdown">
-                                        <a class="dropdown-toggle" data-toggle="dropdown"> <img
-                                                        src="https://stage.seu.edu.sa/media/5180/acc.png" alt="">
-                                                Admissions</a>
+                                        <a class="dropdown-toggle" data-toggle="dropdown"><i
+                                                        class="fa fas fa-check-square"></i> Admissions</a>
                                         <ul class="dropdown-menu">
 
                                                 <li>
@@ -878,8 +827,7 @@
 
 
 
-                                                                <img src="https://stage.seu.edu.sa/media/5192/baca.png"
-                                                                        alt="">
+                                                                <i class="fas fa-book-open"></i>
                                                                 Bachelor
                                                         </a>
                                                 </li>
@@ -889,8 +837,7 @@
 
 
 
-                                                                <img src="https://stage.seu.edu.sa/media/5191/coll.png"
-                                                                        alt="">
+                                                                <i class="fas fa-user-graduate"></i>
                                                                 Graduate Studies​​ ​
                                                         </a>
                                                 </li>
@@ -898,12 +845,17 @@
                                 </li>
                                 <li class="nav-item dropdown">
                                         <a href="https://eservice.seu.edu.sa/?lang=en" target="_blank">
-                                                <img src="https://stage.seu.edu.sa/media/5179/login.png" alt="">
+                                                <i class="fa fa fa-user-check">
+
+
+                                                </i>
                                                 Log In
                                         </a>
                                 </li>
                         </ul>
-                        <a href="?lang=ar" class="langu"> <i class="fas fa-cog"></i> عربي</a>
+
+                        <a href="?lang=ar" class="langu d-sm-none"> <i class="fas fa-cog"></i>
+                                عربي</a>
                         <!--<a href="https://old.seu.edu.sa/sites/en/Pages/main.aspx" class="langu" target="_blank"> <i class="fas fa-book-open"></i> Old Portal  </a> -->
 
 

@@ -38,7 +38,7 @@ export class ContactLayoutComponent implements OnInit {
     } else {
       this.addCssURL("assets/seu/css/bootstrap.min.css", "bootstrap_rtl");
       this.addCssURL("assets/seu/css/bootsnav.css", "bootsnav_rtl");
-      this.addCssURL("assets/seu/css/style-en.css", "seu_style_en");
+      this.addCssURL("assets/seu/css/main-en.css", "seu_style_en");
       document.getElementById('html').setAttribute('dir', 'ltr');
     }
     document.getElementById('html').setAttribute('lang', this.currLang);
