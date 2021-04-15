@@ -9,6 +9,36 @@
 
 <div class="contact-page-inner" id="contact-page-form">
     <div *ngIf="!isLoading" class="dashboard-wrap">
+
+        <div *ngIf="isdown" style="
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        z-index: 999;
+        opacity: 0.6;
+        text-align: center;
+        /* display: table; */
+    ">
+
+            <span style="
+        font-size: 25px;
+        color: red;
+        font-weight: 700;
+        position: absolute;
+        top: 25px;
+        left: 25%;
+    ">
+     {{"general.down" | translate}}
+                
+                <span>
+
+
+                </span></span>
+        </div>
+
         <ul class="nav nav-tabs {{currLang == 'ar' ? 'content-arabic' : 'content-english'}} ">
             <li class="nav-item">
                 <a class="nav-link " (click)="toggle('form','help')" [class.active]="current=='help'" href="#">

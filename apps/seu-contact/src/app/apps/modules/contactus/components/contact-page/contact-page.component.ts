@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-page',
@@ -7,11 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactPageComponent implements OnInit {
   isLoading = false;
+  isdown = false;
   show = 'suggest';
   current = 'suggestions';
-  constructor() { }
+  constructor(private contact: ContactService
+  ) { }
 
   ngOnInit() {
+    this.contact.checkdown().subscribe(resposne => {
+      this.isdown = resposne['data']['isdown'];
+    })
   }
   toggle(show, current) {
     this.show = show;

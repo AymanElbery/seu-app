@@ -13,7 +13,8 @@
         "local_phone": "(محلي)",
         "local_phone_Val": "199099",
         "direct_phone_val": "00966112613500",
-        "Complaints_and_suggestions": "الاستفسارات و المقترحات"
+        "Complaints_and_suggestions": "الاستفسارات و المقترحات",
+        "down": "النظام غير متاح حالياً وذلك لأعمال الصيانة"
     },
     "form": {
         "name": "الاسم",
