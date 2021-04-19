@@ -106,4 +106,12 @@ export class SDService {
     AddRequest(data) {
         return this.post(this._controller + "/add", data);
     }
+
+
+    AddNote(data) {
+        return this.post(this._controller + "/addnote", data);
+    }
+    AddFile(data) {
+        return this.post(this._controller + "/addfile", data);
+    }
 }
