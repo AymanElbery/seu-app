@@ -16,7 +16,7 @@ export class SDService {
     _usedCourses = [];
     _lookups: any;
     _lookups_observ = new Subject<any>();
-    protected _controller = "";
+    protected _controller = "std";
 
     _settings;
     currentApp;
@@ -48,11 +48,13 @@ export class SDService {
         this.toaster.push([{ type: "success", 'body': this.translate.instant("card.messages." + code) }]);
     }
 
-    getHeader() {
+    getHeader(json = true) {
         let headers = new HttpHeaders({
-            'Content-Type': 'application/json',
             'Authorization': this.auth
         });
+        if (json) {
+            headers = headers.append("Content-Type", 'application/json');
+        }
         if (this.globalService.getSID()) {
             headers = headers.append("sessionid", this.globalService.getSID());
         }
@@ -66,9 +68,14 @@ export class SDService {
     }
 
     post(url, data) {
-        return this.http.post(this.URL + url, data,
+        let formData = new FormData();
+        Object.keys(data).forEach(key => {
+            if (data[key])
+                formData.set(key, data[key]);
+        });
+        return this.http.post(this.URL + url, formData,
             {
-                headers: this.getHeader(),
+                headers: this.getHeader(false),
             });
     }
 
@@ -107,11 +114,7 @@ export class SDService {
         return this.post(this._controller + "/add", data);
     }
 
-
     AddNote(data) {
         return this.post(this._controller + "/addnote", data);
-    }
-    AddFile(data) {
-        return this.post(this._controller + "/addfile", data);
     }
 }

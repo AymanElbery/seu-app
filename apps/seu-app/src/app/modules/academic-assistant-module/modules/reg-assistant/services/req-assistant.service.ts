@@ -7,11 +7,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { of, Subject } from 'rxjs';
 import { map } from "rxjs/operators";
+import { SDService } from "../../../sd.service";
 
 @Injectable({
     providedIn: "root"
 })
-export class ReqAssistantService {
+export class ReqAssistantService extends SDService {
 
     _usedCourses = [];
     _lookups: any;
@@ -31,45 +32,14 @@ export class ReqAssistantService {
     });
 
     constructor(
-        private http: HttpClient,
-        private router: Router,
-        private globalService: GlobalBaseService,
-        private translate: TranslateService,
-        private toaster: AppToasterService
+        http: HttpClient,
+        router: Router,
+        globalService: GlobalBaseService,
+        translate: TranslateService,
+        toaster: AppToasterService
     ) {
-
-    }
-
-    notifyError(code) {
-        this.toaster.push([{ type: "error", 'body': this.translate.instant("card.messages." + code) }]);
-    }
-
-    notifySucc(code) {
-        this.toaster.push([{ type: "success", 'body': this.translate.instant("card.messages." + code) }]);
-    }
-
-    getHeader() {
-        let headers = new HttpHeaders({
-            'Content-Type': 'application/json',
-            'Authorization': this.auth
-        });
-        if (this.globalService.getSID()) {
-            headers = headers.append("sessionid", this.globalService.getSID());
-        }
-        return headers;
-    }
-
-    get(url) {
-        return this.http.get(this.URL + url, {
-            headers: this.getHeader()
-        });
-    }
-
-    post(url, data) {
-        return this.http.post(this.URL + url, data,
-            {
-                headers: this.getHeader(),
-            });
+        super(http, router, globalService, translate, toaster);
+        this._controller = 'registration_assistant';
     }
 
     loadlookups() {
@@ -173,28 +143,5 @@ export class ReqAssistantService {
             }
         });
         this._usedCourses = usedCourses;
-    }
-    getTickets() {
-        return this.get("registration_assistant/requests");
-    }
-
-    getTicketDetails(id) {
-        return this.get("registration_assistant/details/" + id);
-    }
-
-    delete(id) {
-        return this.get("registration_assistant/delete/" + id);
-    }
-
-    download(url) {
-        return this.get('registration_assistant/download/' + url);
-    }
-
-    getLockups() {
-        return this.get("registration_assistant/lookups");
-    }
-
-    AddRequest(data) {
-        return this.post("registration_assistant/add", data);
     }
 }

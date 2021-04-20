@@ -17,7 +17,8 @@
         "item": "البند",
         "subject": "الموضوع",
         "description":"الوصف",
-        "attachments": "المرفقات"
+        "attachments": "المرفقات",
+        "note": "ملاحظة"
     },
     "reg_assistant": {
         "title": "مساعد التسجيل",

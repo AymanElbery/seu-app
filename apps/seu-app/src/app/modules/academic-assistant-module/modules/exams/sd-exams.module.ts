@@ -6,6 +6,7 @@ import { SDCommonModule } from '../sd-common/sd-common.module';
 import { SeucommonModule } from 'src/app/seucommon/seucommon.module';
 
 import { SDExamsRoutingModule } from './sd-exams-routing.module';
+import { AcademicAssistantSharedModule } from '../../academic-assistant-shared.module';
 
 @NgModule({
   declarations: [
@@ -14,8 +15,7 @@ import { SDExamsRoutingModule } from './sd-exams-routing.module';
     SDExamsTicketDetailsComponent
   ],
   imports: [
-    SeucommonModule,
-    SDCommonModule,
+    AcademicAssistantSharedModule,
     SDExamsRoutingModule,
   ],
   entryComponents: [

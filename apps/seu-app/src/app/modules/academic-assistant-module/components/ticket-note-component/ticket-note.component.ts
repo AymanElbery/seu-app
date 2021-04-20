@@ -1,77 +1,70 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
-import { UserService } from 'src/app/account/services/user.service';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { SDService } from '../../sd.service';
 
 @Component({
-  selector: 'sd-exams-details',
-  templateUrl: './ticket-details.component.html',
-  styleUrls: ['./ticket-details.component.css']
+  selector: 'sd-request-note',
+  templateUrl: './ticket-note.component.html',
+  styleUrls: ['./ticket-note.component.css']
 })
-export class SDExamsTicketDetailsComponent implements OnInit {
+export class SDRequestNoteComponent implements OnInit {
 
-  isLoading;
-  ticket;
-  @Input() ticketId;
+  form: FormGroup;
+  submitted = false;
+  @Input() ticket_id;
+  @Output() newNote = new EventEmitter();
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data,
-    public dialogRef: MatDialogRef<SDExamsTicketDetailsComponent>,
     private translate: TranslateService,
-    private reqAssistantService: SDService,
-    public userService: UserService,
-    private toastr: AppToasterService
+    private service: SDService,
+    private toastr: AppToasterService,
+    private fb: FormBuilder
   ) {
+    this.form = this.fb.group({
+      description: ['', [Validators.required]],
+      file: ['']
+    });
   }
 
   ngOnInit() {
 
   }
-
-  getTicketDetails() {
-    this.isLoading = true;
-    this.reqAssistantService.getTicketDetails(this.ticketId).subscribe(
+  handleFileInput(files: FileList) {
+    this.form.controls['file'].setValue(files.item(0));
+  }
+  onSubmit() {
+    if (this.form.invalid) {
+      return;
+    }
+    let data = this.form.value;
+    data['ticket_id'] = this.ticket_id;
+    this.submitted = true;
+    this.service.AddNote(data).subscribe(
       (response: any) => {
-        if (response) {
-          this.isLoading = false;
-          this.ticket = response.data.ticket;
+        if (response.status) {
+          this.toastr.push([{
+            'type': 'success',
+            'body': this.translate.instant('messages.request_added')
+          }]);
+          this.newNote.emit(response.data);
+          this.form.reset();
+        } else {
+          if (response['messages'].length) {
+            this.toastr.push(response['messages']);
+          } else {
+            this.toastr.push([{
+              'type': 'error',
+              'body': this.translate.instant(response['res_code'])
+            }]);
+          }
         }
+        this.submitted = false;
       },
       error => {
-        this.isLoading = false;
         this.toastr.tryagain();
+        this.submitted = false;
       }
-    )
+    );
   }
-
-  downloading = {};
-  download(file) {
-    this.downloading = true;
-    // const formData = new FormData();
-    // formData.append('url', file['url']);
-    this.reqAssistantService.download(file.url).subscribe(response => {
-      if (response['status']) {
-        console.log(response);
-        response['data']['content'] = (response['data']['content']);
-        const linkSource = `data:application/octet-stream;base64,${response['data']['content']}`;
-        const downloadLink = document.createElement("a");
-        const fileName = file['name'];
-
-        downloadLink.href = linkSource;
-        downloadLink.download = fileName;
-        downloadLink.click();
-      }
-      this.downloading = false;
-    }, error => {
-      this.downloading = false;
-    })
-    return false;
-  }
-
-
-  closeDiag() {
-    this.dialogRef.close();
-  }
-
 }

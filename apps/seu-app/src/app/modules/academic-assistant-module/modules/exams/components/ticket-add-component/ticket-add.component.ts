@@ -25,12 +25,16 @@ export class SDExamsFormComponent implements OnInit {
         this.form = this.fb.group({
             crse: ['', [Validators.required]],
             subject: ['', [Validators.required]],
-            description: ['', [Validators.required]]
+            description: ['', [Validators.required]],
+            file: ['', [Validators.required]]
         });
         this.service.loadlookups();
         this.service.crses_list().subscribe(list => {
             this.courses = list;
         });
+    }
+    handleFileInput(files: FileList) {
+        this.form.controls['file'].setValue(files.item(0));
     }
 
     onSubmit() {

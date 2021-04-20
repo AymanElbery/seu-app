@@ -30,6 +30,9 @@ export class SDExamsTicketDetailsComponent implements OnInit {
   ngOnInit() {
 
   }
+  addNote(data) {
+    this.ticket.conversations.push(data);
+  }
 
   getTicketDetails() {
     this.isLoading = true;

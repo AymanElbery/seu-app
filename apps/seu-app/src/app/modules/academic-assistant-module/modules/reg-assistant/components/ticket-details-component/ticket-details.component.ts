@@ -31,6 +31,10 @@ export class TicketDetailsComponent implements OnInit {
 
   }
 
+  addNote(data) {
+    this.ticket.conversations.push(data);
+  }
+
   getTicketDetails() {
     this.isLoading = true;
     this.reqAssistantService.getTicketDetails(this.ticketId).subscribe(

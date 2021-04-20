@@ -27,7 +27,8 @@ export class RegistrationAssistantFormComponent implements OnInit {
             category: ['', [Validators.required]],
             item: ['', [Validators.required]],
             subject: ['', [Validators.required]],
-            description: ['', [Validators.required]]
+            description: ['', [Validators.required]],
+            file: ['']
         });
         this.service.loadlookups();
         this.service.categories_list().subscribe(list => {
@@ -44,6 +45,9 @@ export class RegistrationAssistantFormComponent implements OnInit {
                 this.items = [];
             }
         });
+    }
+    handleFileInput(files: FileList) {
+        this.form.controls['file'].setValue(files.item(0));
     }
 
     onSubmit() {

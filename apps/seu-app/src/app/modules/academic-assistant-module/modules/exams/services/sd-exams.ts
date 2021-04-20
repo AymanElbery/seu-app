@@ -27,8 +27,8 @@ export class SDExamsService extends SDService {
     crses() {
         return this._lookups['crses'].map(rec => {
             let item = {};
-            item['text'] = rec['SUBJ_CODE'] + rec['CRSE_NUMB'] + ' | ' + rec['CRSE_TITLE'];
-            item['value'] = rec['SUBJ_CODE'] + rec['CRSE_NUMB'] + ' | ' + rec['CRSE_TITLE'];
+            item['text'] = rec['CRN'] + ' | ' + rec['SUBJ_CODE'] + rec['CRSE_NUMB'] + ' | ' + rec['CRSE_TITLE'];
+            item['value'] = rec['CRN'] + ' | ' + rec['SUBJ_CODE'] + rec['CRSE_NUMB'] + ' | ' + rec['CRSE_TITLE'];
             return item;
         });
     }

@@ -77,6 +77,9 @@
             </div>
         </div>
         <div class="row">
+            <sd-request-note [ticket_id]="ticketId" (newNote)="addNote($event)"></sd-request-note>
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <button type="button" (click)="closeDiag()" class="btn btn-outline pull-left">
                     <i class="ik ik-x"></i>
