@@ -56,7 +56,9 @@
         "skills" : "السجل المهاري",
         "stds-conditions": "التعريف و الشروط",
         "stds-standards": "المعايير و الضوابط",
-        "stds-skills-courses": "دوراتي"
+        "stds-skills-courses": "دوراتي",
+        "instructions": "الإرشادات",
+        "courses_conditions": "شروط الدورات و البرامج"
     },
     "settings": {
         "title": "العنوان" , 
@@ -270,7 +272,8 @@
         "attends": "التحضير",
         "attends_1": "تم التحضير",
         "attends_0": "غير مسجل",
-        "student_name": "اسم الطالب"
+        "student_name": "اسم الطالب",
+        "attend_absent": "الحضور - الغياب"
     },
     "course_files": {
         "add-file": "إضافة ملف جديد",

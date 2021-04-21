@@ -22,8 +22,11 @@ import { SkillsSettingsComponent } from './components/skills-settings/skills-set
 import { SkillsRecordComponent } from './components/skills-record/skills-record.component';
 import { StudentSkillsRecordComponent } from './components/student-skills-record/student-skills-record.component';
 import { UpdateSettingComponent } from './components/skills-settings/diag/update-setting/update-setting.component';
+import { CoursesConditionsComponent } from './components/skills-courses-conditions/skills-courses-conditions.component';
+import { CoursesInstructionsComponent } from './components/skills-courses-instructions/skills-courses-instructions.component';
 
 export const componentDeclarations: any[] = [
+    CoursesInstructionsComponent,
     SkillsUsersHomeComponent,
     SkillsUsersListComponent,
     SkillsUsersFromComponent,
@@ -45,7 +48,8 @@ export const componentDeclarations: any[] = [
     SkillsSettingsComponent,
     SkillsRecordComponent,
     StudentSkillsRecordComponent,
-    UpdateSettingComponent
+    UpdateSettingComponent,
+    CoursesConditionsComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -84,6 +88,12 @@ export const routes: Routes = [
     },
     {
         path: 'skills', component: SkillsRecordComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
+        path: 'courses-conditions', component: CoursesConditionsComponent, canActivate: [SkillsEMPGuard]
+    },
+    {
+        path: 'instructions', component: CoursesInstructionsComponent, canActivate: [SkillsEMPGuard]
     },
     {
         path: 'student-skill-record/:std_id', component: StudentSkillsRecordComponent, canActivate: [SkillsEMPGuard]
