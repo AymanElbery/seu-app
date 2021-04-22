@@ -32,6 +32,11 @@ export class ChangeRequestComponent implements OnInit,OnDestroy {
     this.subscribeLangChange();
   }
 
+  print(req) {
+    return this.acadmicProc.Download(req);
+  }
+
+
   subscriptions;
   ngOnDestroy() {
     if (this.subscriptions) {

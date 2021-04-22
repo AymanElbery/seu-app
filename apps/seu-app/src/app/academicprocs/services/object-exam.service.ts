@@ -32,6 +32,11 @@ export class ObjectExamService {
     this.configService.baseUrl = 'stdservicesapi';
 
     return this.httRequest.GetRequest('exam_objections_service/remove/' + id).toPromise();
+  }
 
+  download(req) {
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid = this.configService.getSid();
+    return this.configService.getApiURI() + '/exam_objections_service/download/exam_objection_request/' + req;
   }
 }

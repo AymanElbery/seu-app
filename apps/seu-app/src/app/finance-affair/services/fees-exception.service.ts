@@ -31,4 +31,10 @@ export class FeesExceptionService {
     // console.log(data);
     return this.httRequest.postRequest('fees_exception_service/insert', data).toPromise();
   }
+
+  download(req) {
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid = this.configService.getSid();
+    return this.configService.getApiURI() + '/fees_exception_service/download/fees_exception/' + req;
+  }
 }

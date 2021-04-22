@@ -27,4 +27,10 @@ export class ExamExcuseService {
     return this.httRequest.GetRequest('exam_excuse_service/remove/' + id + '').toPromise();
 
   }
+
+  download(req) {
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid = this.configService.getSid();
+    return this.configService.getApiURI() + '/exam_excuse_service/download/upload_exam_excuse/' + req;
+  }
 }

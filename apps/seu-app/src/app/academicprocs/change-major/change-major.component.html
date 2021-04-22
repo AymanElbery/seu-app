@@ -43,6 +43,7 @@
             <th scope="col">{{"services.change_major.required_major"|translate}}</th>
             
             <th scope="col">{{"general.request.req_status"| translate}}</th>
+            <th scope="col">{{"general.request.req_print"|translate}}</th>
             <th scope="col">{{"general.request.req_delete"| translate}}</th>
 
           </tr>
@@ -57,7 +58,9 @@
             <td>{{it.REQ_PROG}}</td>
             <td>{{it.APPROVAL_STATUS}}</td>
 
-
+            <td><a class="btn btn-primary" seu-auto-print [href]="print(it.request_number)"><span
+              class="ik ik-printer"></span>
+            {{"general.print"|translate}}</a></td>
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
 

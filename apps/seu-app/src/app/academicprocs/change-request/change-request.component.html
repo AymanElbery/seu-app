@@ -43,6 +43,7 @@
 
             <th scope="col">{{"services.change_branch.reply_date"|translate}}</th>
             <th scope="col">{{"general.request.req_status" |translate}}</th>
+            <th scope="col">{{"general.request.req_print"|translate}}</th>
             <th scope="col">{{"services.change_branch.procedure"|translate}}</th>
 
           </tr>
@@ -57,7 +58,9 @@
             <td>{{it.APPROVAL_DATE}} </td>
             <td>{{it.status}}</td>
 
-
+            <td><a class="btn btn-primary" seu-auto-print [href]="print(it.request_number)"><span
+              class="ik ik-printer"></span>
+            {{"general.print"|translate}}</a></td>
 
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>

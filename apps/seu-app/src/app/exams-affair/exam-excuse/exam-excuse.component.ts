@@ -87,4 +87,8 @@ export class ExamExcuseComponent implements OnInit {
     }
   }
 
+  download(req) {
+    return this.acadmicProc.download(req);
+  }
+
 }
