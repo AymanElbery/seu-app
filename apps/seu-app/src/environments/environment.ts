@@ -1,6 +1,6 @@
 export const environment = {
   production:false,
-  cmslink: 'https://test.seu.edu.sa/umbraco/Surface/',
+  cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
