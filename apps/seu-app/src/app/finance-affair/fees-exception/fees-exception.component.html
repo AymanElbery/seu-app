@@ -29,6 +29,7 @@
             <th scope="col">   {{"general.req_no" | translate}}</th>
             <th scope="col">  {{"general.request.req_date" | translate}}</th>
             <th scope="col">   {{"general.request.req_status" | translate}}</th>
+            <th scope="col">{{"general.request.req_print"|translate}}</th>
             <th scope="col">  {{"general.request.rejectrs" | translate}}</th>
             <th scope="col">   {{"general.request.req_delete" | translate}} </th>
           </tr>
@@ -38,6 +39,9 @@
             <td>{{it.request_number}}</td>
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
+            <td><a class="btn btn-primary" seu-auto-print [href]="download(it.request_number)"><span
+              class="ik ik-printer"></span>
+            {{"general.print"|translate}}</a></td>
             <td>{{it.rejection_reason}}</td>
 
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"

@@ -36,7 +36,7 @@ export class SummerWithdrawService {
   Download(req) {
     this.configService.baseUrl = 'stdservicesapi';
     const sid = this.configService.getSid();
-    return this.configService.getApiURI() + '/cancel_summer_service/download/' + req;
+    return this.configService.getApiURI() + '/cancel_summer_service/download/summer_withdraw/' + req;
   }
   DownloadEng() {
     this.configService.baseUrl = 'stdservicesapi';

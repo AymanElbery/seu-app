@@ -43,14 +43,13 @@
           <tr *ngFor="let it of reqData.reqs;let i=index;">
             <td>{{it.request_number}}</td>
             <td>{{it.term}}</td>
-            <td *ngIf='reqData.printable'>
-              <a class="btn btn-primary" [href]="print(it.request_number)"><span class="ik ik-printer"></span>
-                {{"general.print"|translate}}</a>
-            </td>
+            <td><a class="btn btn-primary" seu-auto-print [href]="print(it.request_number)"><span
+              class="ik ik-printer"></span>
+            {{"general.print"|translate}}</a></td>
 
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
-            <td><a class="btn btn-primary" seu-auto-print [href]="print(it.request_number)"><span
+            <td><a class="btn btn-primary" seu-auto-print [href]="download(it.request_number)"><span
                   class="ik ik-printer"></span>
                 {{"general.print"|translate}}</a></td>
 

@@ -30,5 +30,10 @@ export class ChangeRequestService {
 
   }
 
+  Download(req) {
+    this.configService.baseUrl = 'stdservicesapi';
+    const sid = this.configService.getSid();
+    return this.configService.getApiURI() + '/change_camp_service/download/change_camp/' + req;
+  }
 
 }

@@ -31,7 +31,7 @@ export class ChangeMajorService {
   Download(req) {
     this.configService.baseUrl = 'stdservicesapi';
     const sid = this.configService.getSid();
-    return this.configService.getApiURI() + '/return_service/download/return_request/' + req;
+    return this.configService.getApiURI() + '/return_service/download/change_major/' + req;
   }
   DownloadEng() {
     const sid = this.configService.getSid();

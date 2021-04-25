@@ -39,6 +39,11 @@ export class ObjectExamComponent implements OnInit, OnDestroy {
       this.getRequests();
     });
   }
+
+  download(req) {
+    return this.acadmicProc.download(req);
+  }
+
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getRequests().then(
