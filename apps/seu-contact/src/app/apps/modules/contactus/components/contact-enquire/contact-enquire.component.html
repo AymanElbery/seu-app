@@ -21,7 +21,8 @@
   </div>
   <div class="row">
     <div class="col-md-12" style="text-align: center;">
-      <button style="margin: 0 auto;" class="btn btn-lg btn-primary" [disabled]="requesting || form.invalid" type="submit">
+      <button style="margin: 0 auto;" class="btn btn-lg btn-primary" [disabled]="requesting || form.invalid"
+        type="submit">
         {{'form.enquiry' | translate}}
       </button>
     </div>
@@ -62,6 +63,28 @@
         </div>
       </ng-container>
     </div>
+
+    <div class="contact-comment" *ngIf="ticketDetails['resolution']">
+      <div class="row">
+        <label class="col-sm-3 col-md-3 col-form-label">{{'details.resolution'| translate}}:</label>
+        <div class="col-sm-8 col-md-8">
+          <div class="col-form-label font-weight-normal" [innerHtml]="ticketDetails['resolution']['content']"></div>
+        </div>
+      </div>
+      <ng-container *ngIf="ticketDetails['resolution']['attachments'].length">
+        <div class="row">
+          <label class="col-sm-3 col-md-3 col-form-label">{{'details.attachments' | translate}}:</label>
+          <div class="col-sm-6 col-md-6">
+            <ng-container *ngFor="let attch of ticketDetails['resolution']['attachments']">
+              <div class="col-form-label font-weight-normal">
+                <a href="#" class="attch" (click)="download(attch)" target="_blank">{{attch['name']}}</a>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
     <!-- conversations -->
     <ng-container *ngIf="ticketDetails['conversations']">
       <ng-container *ngFor="let conv of ticketDetails['conversations']">
@@ -110,30 +133,31 @@
       </ng-container>
     </ng-container>
   </div>
- <!-- conversations 
+  <!-- conversations 
   <h5>{{'form.add_note'|translate}}</h5>
   -->
   <div class="form-details">
-  <form [formGroup]="noteform" (submit)="onSubmit()" id="contactForm">
-    <div class="row">
-      <div class="col-md-12">
-        <label>{{'form.note' | translate}}</label>
-        <textarea class="form-control" style="height: auto;" formControlName="description" rows="5" placeholder="اضف ملاحظات اخرى هنا"></textarea>
-        <control-validations-errors [control]="noteform.controls.description"></control-validations-errors>
-      </div>
-      <div class="col-md-12">
-        <div class="state">
-          <h6>{{"form.captcha"|translate}} <span class="reqstart">*</span></h6>
-          <re-captcha #recaptchaNoteRef (resolved)="resolvednote($event)" [siteKey]="environment.captchaSiteKey">
-          </re-captcha>
+    <form [formGroup]="noteform" (submit)="onSubmit()" id="contactForm">
+      <div class="row">
+        <div class="col-md-12">
+          <label>{{'form.note' | translate}}</label>
+          <textarea class="form-control" style="height: auto;" formControlName="description" rows="5"
+            placeholder="اضف ملاحظات اخرى هنا"></textarea>
+          <control-validations-errors [control]="noteform.controls.description"></control-validations-errors>
+        </div>
+        <div class="col-md-12">
+          <div class="state">
+            <h6>{{"form.captcha"|translate}} <span class="reqstart">*</span></h6>
+            <re-captcha #recaptchaNoteRef (resolved)="resolvednote($event)" [siteKey]="environment.captchaSiteKey">
+            </re-captcha>
+          </div>
+        </div>
+        <div class="col-md-12" style="text-align: center;">
+          <button class="btn btn-suggest" type="submit"
+            [disabled]="submitting || noteform.invalid">{{"form.send"|translate}}
+          </button>
         </div>
       </div>
-      <div class="col-md-12" style="text-align: center;">
-        <button class="btn btn-suggest" type="submit"
-          [disabled]="submitting || noteform.invalid">{{"form.send"|translate}}
-        </button>
-      </div>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
 </ng-container>

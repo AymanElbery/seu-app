@@ -85,5 +85,7 @@ export class FeesExceptionComponent implements OnInit, OnDestroy {
       }
     });
   }
-
+  download(req) {
+    return this.acadmicProc.download(req);
+  }
 }

@@ -17,10 +17,10 @@ export class VouchersComponent implements OnInit, OnDestroy {
   config: any;
   subscriptionDDL: Subscription;
   FillDDLData: any;
-  FillDDLDataYear: any;
-  FillDDLDatavouchertype: any;
+  FillDDLDataYear: any = [];
+  FillDDLDatavouchertype: any= [];
   subscriptionvoucherlist: Subscription;
-  vocherlistdata: any;
+  vocherlistdata: any = [];
   selectedyear: any;
   selectYear = "";
   vouchertype = "";
@@ -49,7 +49,7 @@ export class VouchersComponent implements OnInit, OnDestroy {
   FillDDL() {
     this.isLoading = true
     this.subscriptionDDL = this.empreqservice.getvaoucherlovs().subscribe(fillddl => {
-      if (fillddl) {
+      if (fillddl['data']) {
         this.FillDDLDataYear = (fillddl as any).data["years"];
         this.FillDDLDatavouchertype = (fillddl as any).data["voucherTypes"];
         this.selectedyear = (this.selectedyear ? this.selectedyear : this.FillDDLDataYear[0]['value']);

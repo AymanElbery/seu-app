@@ -100,7 +100,7 @@
   }
 
   .header-top {
-    background-color: #01182a;
+    background: linear-gradient(to left, #5b3283, #3580ab, #5db5b3);
     padding-top: 7px;
     padding-bottom: 7px;
     color: #fff;
@@ -606,7 +606,7 @@
   }
 
   a {
-    color: #1c2172;
+    color: #5f5f5f;
 
    
   }
@@ -654,7 +654,7 @@
   }
 
   p {
-    color: #f28d1e;
+    color: #3580ab;
     line-height: 1.7;
     letter-spacing: 1px;
     margin-bottom: 6px;
@@ -706,12 +706,12 @@
   padding: 8px 12px 4px;
 
   h6 {
-    color: #f28d1e;
+    color: #3580ab;
     margin-bottom: 5px;
   }
 
   h5 {
-    color: #1c2172;
+    color: #5b5b5b;
     font-size: 16px;
   }
 }
@@ -859,7 +859,7 @@ select.form-control {
   color: #1c2172;
 
   .dropdown-icon {
-    color: #f28d1e;
+    color: #3580ab;
   }
 }
 
@@ -887,8 +887,8 @@ div.pub-ser2 {
   //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
   border-radius: 10px;
   margin-left: 20px;
-  background: #1c2172;
-  border-color: #1c2172;
+  background: #3580ab;
+  border-color: #3580ab;
 
   &:hover {
     //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
@@ -911,7 +911,7 @@ h6.news-title {
   padding: 8px 20px;
   border-bottom: 0;
   position: relative;
-  background: #01182a;
+  background: linear-gradient(to left, #5b3283, #3580ab, #5db5b3);
   color: #fff;
   border-radius: 10px 10px 0 0;
 }
@@ -922,6 +922,7 @@ h6.news-title {
 .widget .widget-header .widget-title img{
   width: 40px;
   height: 40px;
+  display: none;
 }
 
 .main-content{
@@ -935,7 +936,7 @@ h6.news-title {
 }
 
 .owl-carousel .owl-nav button.owl-prev {
-  background:#f28d1e !important;
+  background:#3580ab !important;
   color: #fff !important;
   padding: 5px !important;
   font: inherit;
@@ -948,12 +949,12 @@ h6.news-title {
   line-height: 0;
 }
 .owl-carousel .owl-nav button.owl-prev:hover , .owl-carousel .owl-nav button.owl-next:hover {
-  background:#000440 !important;
+  background:#5b3384 !important;
   color: #fff !important;
   transition: ease-in-out .5s;
 }
 .owl-carousel .owl-nav button.owl-next{
-  background:#f28d1e !important;
+  background:#3580ab !important;
   color: #fff !important;
   border: none;
   padding: 5px !important;
@@ -1002,7 +1003,7 @@ h6.news-title {
 
 }
 .owl-content p i {
- color: #f28d1e;
+ color: #ffffff;
  font-size: 14px;
 }
 
@@ -1015,7 +1016,7 @@ h6.news-title {
   padding: 11px; }
 
   .new-ser:hover {
-   background-color: #01182a;
+   background-color: #5b3283;
    transform: scale(1.1);
   
   }
@@ -1034,14 +1035,14 @@ margin: auto;
 .news1 .date {
    font-size: 15px;
   color: #f9f9f9;
-  background: #01182a;
+  background: #3580ab;
   width: 130px;
   border-radius: 8px;
   float: left;
   text-align: center;
 }
 .news1 .date i {
-  color: #f28d1e; font-size: 15px;  margin-right: 5px ; line-height: 1.4;
+  color: #fff; font-size: 15px;  margin-right: 5px ; line-height: 1.4;
 }
 .news1{
   position: relative;
@@ -1062,7 +1063,7 @@ margin: auto;
   border-left: 0;
   border-bottom: 8px solid transparent;
   border-top: 8px solid transparent;
-  border-left: 8px solid #ffa300;
+  border-left: 8px solid #5b3283;
 
 }
 .img-eve{  width: 35px;
@@ -1135,23 +1136,30 @@ margin: auto;
   }
 
   .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item.active::after {
-    background-color: #f28d1e;
+    background-color: #5db5b4;
   }
   
   .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item.active {
-    background-color:  #163c79;
+    background-color:  #5b3283;
     color: #fff;
   }
   .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item.active a {
 
     color: #fff;
   }
-
+  .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item a:hover {
+    color: #5db5b4;
+}
+.wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item a i {
+  color: #3580ab;
+}
   .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item a img{
 width: 20px; height: 20px;
 margin-left: 5px;
   }
-
+  .wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item a {
+    color: #353535;
+  }
   .ug-home {
     width: 100%;
     height: 25vh;
@@ -1179,9 +1187,10 @@ margin-left: 5px;
   }
   .ug-content h3 {    
      font-size: 22px;
-    border-right: 6px solid #f28d1e;
+    border-right: 6px solid #5b3283;
     letter-spacing: 0;
     padding-right: 15px;
+    color: #163c79;
 }
 
 
@@ -1218,7 +1227,7 @@ margin-left: 5px;
 }
 
 .ug-content h4{
-  background-color:#163c79 ;
+  background-color:#3580ab ;
   text-align: center;
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -1241,4 +1250,12 @@ margin-bottom: 20px;}
     height: 15vh;
     margin-bottom: 0;
   }
+}
+span.bk {
+  background: #5b3283;
+  margin-right: 19px;
+  font-size: 17px;
+  padding: 8px;
+  border-radius: 5px;
+  color: #fff;
 }

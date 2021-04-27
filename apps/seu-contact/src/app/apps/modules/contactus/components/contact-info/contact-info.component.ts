@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-contact-info',
   templateUrl: './contact-info.component.html',
-  styleUrls: [ '../styles/contact.css','./contact-info.component.css']
+  styleUrls: ['../styles/contact.css', './contact-info.component.css']
 })
 export class ContactInfoComponent implements OnInit {
 
@@ -24,15 +24,20 @@ export class ContactInfoComponent implements OnInit {
       this.getBrannhes();
       this.currLang = this.translate.currentLang;
     });
+    if (localStorage.getItem("contactform") == "1") {
+      setTimeout(() => {
+        this.down();
+      }, 1500);
+    }
   }
   down() {
-    document.getElementById("contact-page-form").scrollIntoView();
+    document.getElementById("contactfromcontainer").scrollIntoView(); //contact-page-form
     return false;
   }
 
   getBrannhes() {
     this.loading = true;
-    this.http.get("/assets/branches_" + (this.translate.currentLang) + ".json").subscribe((branches) => {
+    this.http.get("assets/branches_" + (this.translate.currentLang) + ".json").subscribe((branches) => {
       this.branchesData = branches;
       let blist = [];
       Object.keys(branches).forEach(key => {

@@ -3,6 +3,7 @@ import { Lecture } from 'src/app/shared/models/lecture';
 import { CertificateIDService } from '../services/certificate-id.service';
 import { TranslateService } from '@ngx-translate/core';
 import {PrintButtonDirective} from '../../seucommon/print-button.directive';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-certificate-id',
@@ -12,7 +13,13 @@ import {PrintButtonDirective} from '../../seucommon/print-button.directive';
 export class CertificateIDComponent implements OnInit, OnDestroy {
   @ViewChildren(PrintButtonDirective) dirs;
 
-  constructor(private transalte: TranslateService, private certificateIDService: CertificateIDService) { }
+  constructor(
+    private transalte: TranslateService, 
+    private certificateIDService: CertificateIDService,
+    private router: Router
+  ) {
+    this.router.navigate(['/statements']);
+  }
   certificateDetails;
   arabicPrint: string;
   EngPrint: string;

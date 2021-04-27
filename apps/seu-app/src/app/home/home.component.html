@@ -26,12 +26,6 @@
                                 *ngIf="userService.userData && userService.userData.activeRole=='Employee'"
                                 style="padding: 0 15px">
                                 <div class="row">
-                                    <!-- <div class="col-md-4 new-ser">
-                    <p><a target="_blank" href="https://wafi.seu.edu.sa/seu/casLogin">
-                        <img src="assets/images/wafi.png">
-                        {{"menu.ALWAFI" | translate}} </a>
-                    </p>
-                  </div> -->
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
@@ -76,11 +70,6 @@
                                                 translate}} </a>
                                         </p>
                                     </div>
-                                    <!-- <div class="col-md-4 new-ser">
-                    <p><a target="_blank" href="http://forum.seu.edu.sa">
-                      <img src="assets/images/forum.png"> 
-                      {{"menu.Forum" | translate}} </a></p>
-                  </div> -->
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank" href="https://seu.app.deepknowledge.io/LoginRedirect">
@@ -95,22 +84,6 @@
                                                 <img src="assets/images/laptop.png"> {{"menu.DMS" | translate}} </a>
                                         </p>
                                     </div>
-                                    <!-- <div class="col-md-4 new-ser">
-                                        <p>
-                                            <a target="_blank" href="http://stuapp.seu.edu.sa/ContractorsManagement">
-                                                <img src="assets/images/gdpr.png"> {{"menu.FacultyRecruitmentSystem" |
-                                                translate}} </a>
-                                        </p>
-                                    </div> -->
-
-                                    <!-- <div class="col-md-4 new-ser">
-                                        <p>
-                                            <a target="_blank"
-                                                href="https://old.seu.edu.sa/sites/ar/Pages/QueryDMSNew.aspx">
-                                                <img src="assets/images/contract.png"> {{"menu.QueryDMS" | translate}}
-                                            </a>
-                                        </p>
-                                    </div> -->
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank"
@@ -189,10 +162,19 @@
                                         </p>
                                     </div>
 
+
                                     <div class="col-md-4 new-ser" *ngIf="userService.userData['dashboard']">
                                         <p>
                                             <a target="_blank" href="https://dashboard.seu.edu.sa/">
                                                 <img src="assets/images/dashboard.png"> {{"menu.dashboard" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['guest']">
+                                        <p>
+                                            <a href="https://guest.seu.edu.sa/sso_auth" target="_blank">
+                                                <img src="assets/images/black.png"> {{"menu.guest" |
+                                                translate}}
                                             </a>
                                         </p>
                                     </div>
@@ -214,12 +196,6 @@
                                 *ngIf="userService.userData && userService.userData.activeRole=='Instructor'"
                                 style="padding: 0 15px">
                                 <div class="row">
-                                    <!-- <div class="col-md-4 new-ser">
-                    <p><a target="_blank" href="https://wafi.seu.edu.sa/seu/casLogin">
-                        <img src="assets/images/wafi.png">
-                        {{"menu.ALWAFI" | translate}} </a>
-                    </p>
-                  </div> -->
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
@@ -416,13 +392,14 @@
                                                 {{"menu.skills" | translate}}
                                             </a></p>
                                     </div>
-
-                                    <!-- <div class="col-md-6 new-ser">
-                  <i class="ik ik-clipboard"></i>
-                  <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx">
-                    {{"menu.EDUSYSTEMS" | translate}}    </a></p>
-                </div> -->
-
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['guest']">
+                                        <p>
+                                            <a href="https://guest.seu.edu.sa/sso_auth" target="_blank">
+                                                <img src="assets/images/black.png"> {{"menu.guest" |
+                                                translate}}
+                                            </a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -488,6 +465,22 @@
                                         <p>
                                             <a target="_blank" href="https://dashboard.seu.edu.sa/">
                                                 <img src="assets/images/dashboard.png"> {{"menu.dashboard" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+
+                                    <div class="col-md-4 new-ser">
+                                        <p>
+                                            <a target="_blank" href="http://umc.seu.edu.sa/auth">
+                                                <img src="assets/images/umc.png"> {{"menu.umc" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 new-ser" *ngIf="userService.userData['guest']">
+                                        <p>
+                                            <a href="https://guest.seu.edu.sa/sso_auth" target="_blank">
+                                                <img src="assets/images/black.png"> {{"menu.guest" |
+                                                translate}}
                                             </a>
                                         </p>
                                     </div>
@@ -576,22 +569,13 @@
                                                 translate}} </a>
                                         </p>
                                     </div>
-                                    <!-- <div class="col-md-4 new-ser" *ngIf="studentType == 'UG'">
-                                        <p><a [routerLink]="['/apps/skills/std/courses-list']">
-                                                <img src="assets/images/book.png">
-                                                {{"menu.skills" | translate}}
-                                            </a></p>
-                                    </div> -->
-                                    <!-- <div class="col-md-6 new-ser">
-                  <i class="ik ik-clipboard"></i>
-                  <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Services/Pages/instructions-instructors.aspx">
-                    {{"menu.EDUSYSTEMS" | translate}}    </a></p>
-                </div> -->
-                                    <!-- <div class="col-md-6 new-ser">
-                  <i class="ik ik-calendar"></i>
-                  <p><a target="_blank" href="https://seu.edu.sa/sites/ar/Calendar/Pages/Academic_Calendar.aspx">
-                    {{"menu.CAL" | translate}}  </a></p>
-                </div> -->
+                                    <div class="col-md-4 new-ser">
+                                        <p>
+                                            <a target="_blank" href="http://umc.seu.edu.sa/auth">
+                                                <img src="assets/images/umc.png"> {{"menu.umc" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -613,7 +597,12 @@
                                 <div class="latest-update-box">
                                     <div *ngFor="let news of userService.eventsData" class="row pb-30">
                                         <div class="col-auto update-meta pr-0">
-                                            <i><img src="assets/images/calendar.png" class="img-eve"> </i>
+                                            <i>
+
+                                                <span class="bk">
+
+                                                    <i class="far fa-calendar-alt"></i>
+                                                </span></i>
                                         </div>
                                         <div class="col news1">
                                             <a href="#">

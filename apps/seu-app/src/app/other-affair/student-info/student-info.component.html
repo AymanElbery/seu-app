@@ -23,7 +23,7 @@
     </div>
   </div>
   <br />
-  <div class="widget" *ngIf="!isLoading && reqData.can_update_data">
+  <div class="widget" *ngIf="!isLoading && can_update_data">
     <div class="widget-header">
       <h3 class="widget-title">{{"general.student_data"|translate}}</h3>
     </div>
@@ -386,7 +386,7 @@
       </div>
       <div class="modal-body">
         <div class="btn-group" style="direction: ltr" role="group" aria-label="Basic example">
-          <button *ngIf="!requesting || reqData.can_update_data"
+          <button *ngIf="!requesting || can_update_data"
             [disabled]="!agrrecheck.checked || !form.form.valid || requesting " type="submit" class="btn btn-dark">
             <i *ngIf="!requesting" class="fa fa-database"></i>
             <i *ngIf="requesting" class="fa fa-spin fa-spinner"></i>

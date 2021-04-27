@@ -1,9 +1,9 @@
-
+/* 
 h3 {
     letter-spacing:normal !important;
 }
 #footer {
-    background: #fff url(/assets/images/footer22.png) top center repeat-x;
+    background: #fff url(/assets/images/footer22.png) top center repeat-x; 
     padding-top: 130px;
     margin-top: 50px;
     font-weight: normal;
@@ -258,4 +258,4 @@ h3 {
 
 h4 {
     margin: 0;
-} */
+} */ 

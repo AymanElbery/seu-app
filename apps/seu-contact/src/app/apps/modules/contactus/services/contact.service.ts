@@ -25,25 +25,28 @@ export class ContactService extends AppUserRootService {
     });
     return headers;
   }
+  checkdown() {
+    return this.get('/contactus/support/checkdown');
+  }
   getLookups() {
     return this.get('/contactus/support/contactus_lockups');
   }
   addLoginRequest(data) {
-    return this.post('/contactus/support/add_login_request',data);
+    return this.post('/contactus/support/add_login_request', data);
   }
   addSuggestRequest(data) {
-    return this.post('/contactus/support/add_suggest_request',data);
+    return this.post('/contactus/support/add_suggest_request', data);
   }
   getRequestDetails(data) {
-    return this.post('/contactus/support/details',data);
+    return this.post('/contactus/support/details', data);
   }
   download(data) {
-    return this.post('/contactus/support/download',data);
+    return this.post('/contactus/support/download', data);
   }
   addNote(data) {
-    return this.post('/contactus/support/add_note',data);
+    return this.post('/contactus/support/add_note', data);
   }
-  
+
 
 }
 
