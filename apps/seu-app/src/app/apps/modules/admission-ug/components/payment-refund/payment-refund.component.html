@@ -13,119 +13,123 @@
 
   </div>
 
-  <div *ngIf="user">
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered">
-        <tr>
-          <th scope="col">{{"Name" | translate}}</th>
-          <td>{{user.name}}</td>
-        </tr>
-
-        <tr>
-          <th scope="col">{{"ID" | translate}}</th>
-          <td>{{user.university_id}}</td>
-        </tr>
-
-        <tr>
-          <th scope="col">{{"ssn" | translate}}</th>
-          <td>{{user.ssn}}</td>
-        </tr>
-
-      </table>
-    </div>
+  <div class="container">
+      <div *ngIf="user">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+            <tr>
+              <th scope="col">{{"Name" | translate}}</th>
+              <td>{{user.name}}</td>
+            </tr>
+    
+            <tr>
+              <th scope="col">{{"ID" | translate}}</th>
+              <td>{{user.university_id}}</td>
+            </tr>
+    
+            <tr>
+              <th scope="col">{{"ssn" | translate}}</th>
+              <td>{{user.ssn}}</td>
+            </tr>
+    
+          </table>
+        </div>
+      </div>
   </div>
 
   <section *ngIf="can_add_new_request" class="dashboard-wrap" style="margin-top: 30px;">
-    <div class="row ser-block">
-      <div class="state">
+    <div class="container ser-block">
+      <div class="statePhone">
         <h6>{{'phone_notes' | translate}}</h6>
         <h6>{{'phone_notes_1' | translate}}</h6>
         <h6>{{'phone_notes_2' | translate}}</h6>
       </div>
     </div>
-    <form role="form" [formGroup]="AddReqForm">
-      <div class="modal-body">
-        <div class="row ser-block">
-          <div class=" col-md-12 col-sm-12">
-            <div class="state">
-              <h6>{{"cancel_name"|translate}} <span class="reqstart">*</span></h6>
-              <input type="text" formControlName="name" class="form-control" />
-            </div>
-
-          </div>
-        </div>
-        <div class="row ser-block">
-          <div class=" col-md-12 col-sm-12">
-            <div class="state">
-              <h6>{{"email"|translate}} <span class="reqstart">*</span></h6>
-              <input type="text" formControlName="email" class="form-control" />
-            </div>
-
-          </div>
-        </div>
-        <div class="row ser-block">
-          <div class=" col-md-12 col-sm-12">
-            <div class="state">
-              <h6>{{"mobile"|translate}} <span class="reqstart">*</span></h6>
-              <input type="text" formControlName="mobile" (keypress)="keyPress($event)" maxlength="10"
-                class="form-control" />
-            </div>
-
-          </div>
-        </div>
-
-        <div class="row ser-block">
-          <div class=" col-md-12 col-sm-12">
-            <div class="state">
-              <h6>{{"mobile2"|translate}} </h6>
-              <input type="text" formControlName="mobile2" (keypress)="keyPress($event)" maxlength="10"
-                class="form-control" />
-            </div>
-
-          </div>
-        </div>
-
-        <div class="row ser-block">
-          <div class=" col-md-12 col-sm-12">
-            <div class="state">
-              <h6>{{"phone"|translate}} <span class="reqstart">*</span></h6>
-              <input type="text" formControlName="phone" (keypress)="keyPress($event)" maxlength="10"
-                class="form-control" />
-            </div>
-
-          </div>
-        </div>
-
-        <div class="row ser-block">
-          <div class=" col-md-12 col-sm-12">
-            <div class="state">
-              <label>
-
-                <h6>
-                  <input type="checkbox" formControlName="agreement" value='1'/>
-
-                  {{"agreement"|translate}} <span class="reqstart">*</span>
-
-                </h6>
-              </label>
-            </div>
-
-          </div>
-        </div>
-
-        <div>
-          <div class=" col-md-12 col-sm-12">
-            <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
-              <button (click)="onFormSubmit()" type="button" [disabled]="submitted || AddReqForm.invalid" class="btn"
-                style="color: #fff;margin-top: 30px !important;"><i class="fa fa-database"></i>
-                {{"Send" | translate}}</button>
+    <div class="container">
+      <form role="form" [formGroup]="AddReqForm">
+        <div class="modal-body">
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"cancel_name"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" formControlName="name" class="form-control" />
+              </div>
+  
             </div>
           </div>
-
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"email"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" formControlName="email" class="form-control" />
+              </div>
+  
+            </div>
+          </div>
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"mobile"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" formControlName="mobile" (keypress)="keyPress($event)" maxlength="10"
+                  class="form-control" />
+              </div>
+  
+            </div>
+          </div>
+  
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"mobile2"|translate}} </h6>
+                <input type="text" formControlName="mobile2" (keypress)="keyPress($event)" maxlength="10"
+                  class="form-control" />
+              </div>
+  
+            </div>
+          </div>
+  
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"phone"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" formControlName="phone" (keypress)="keyPress($event)" maxlength="10"
+                  class="form-control" />
+              </div>
+  
+            </div>
+          </div>
+  
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <label>
+  
+                  <h6>
+                    <input type="checkbox" formControlName="agreement" value='1'/>
+  
+                    {{"agreement"|translate}} <span class="reqstart">*</span>
+  
+                  </h6>
+                </label>
+              </div>
+  
+            </div>
+          </div>
+  
+          <div>
+            <div class=" col-md-12 col-sm-12">
+              <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+                <button (click)="onFormSubmit()" type="button" [disabled]="submitted || AddReqForm.invalid" class="btn"
+                  style="color: #fff;margin-top: 30px !important;"><i class="fa fa-database"></i>
+                  {{"Send" | translate}}</button>
+              </div>
+            </div>
+  
+          </div>
+  
         </div>
-
-      </div>
-    </form>
+      </form>
+    </div>
   </section>
 
 
