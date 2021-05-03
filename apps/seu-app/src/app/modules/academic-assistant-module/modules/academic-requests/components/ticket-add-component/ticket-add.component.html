@@ -1,0 +1,65 @@
+<mat-dialog-content dir="rtl">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="text-align: center" class="modal-title ">
+                {{"academic_requests.title"|translate}}</h5>
+        </div>
+        <div class="modal-body">
+            <form role="form" [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.category"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="categories" bindLabel="text" bindValue="value"
+                                formControlName="category">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.category"></control-validations-errors>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.item"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="items" bindLabel="text" bindValue="value" formControlName="item">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.item"></control-validations-errors>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.subject"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" class="form-control" formControlName="subject" />
+                        </div>
+                        <control-validations-errors [control]="form.controls.subject"></control-validations-errors>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.description"|translate}} <span class="reqstart">*</span></h6>
+                            <textarea maxlength="1000" class="form-control" formControlName="description"></textarea>
+                        </div>
+                        <control-validations-errors [control]="form.controls.description"></control-validations-errors>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.attachments"|translate}} <span class="reqstart"></span></h6>
+                            <input type="file" class="form-control" (change)="handleFileInput($event.target.files)" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-12" style="text-align: center;">
+                        <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+                            {{"general.back"|translate}}</button>
+
+                        <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="onSubmit()"
+                            type="submit" class="btn btn-primary">{{ "general.send" |
+                            translate}}
+                            <i class="fa fa-save"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-dialog-content>

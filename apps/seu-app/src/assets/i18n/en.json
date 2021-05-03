@@ -263,7 +263,9 @@
         "umc": "University Medical Center",
         "bb_virtual_reports": "Virtual Classroom Reports ",
         "dashboard": "Dashboard",
-        "guest": "Guest Services"
+        "guest": "Guest Services",
+        "sd_academic_requests": "Academic Requests",
+        "sd_exams": "Electronic Exams"
     },
     "errors": {
         "invalidStdID": "Invalid Student ID",

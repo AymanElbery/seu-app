@@ -1,0 +1,95 @@
+<mat-dialog-content dir="rtl">
+
+    <div class="modal-content">
+        <div class="modal-header">
+
+            <h5 style="text-align: center" class="modal-title ">
+                {{"reg_assistant.title"|translate}}</h5>
+
+        </div>
+        <div class="modal-body">
+
+
+            <div class="table-responsive" *ngIf="lectures.length">
+                <h5>{{"reg_assistant.lectres" | translate}}</h5>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">{{ "reg_assistant.crn" | translate}}</th>
+                            <th scope="col">{{ "reg_assistant.crse" | translate}}</th>
+                            <th scope="col">{{ "reg_assistant.time" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let lec of lectures;">
+                            <td>{{ lec.CRN }}</td>
+                            <td>{{ lec.CRSE_TITLE }}</td>
+                            <td>{{ lec.LECT_TIME }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <form role="form" [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"reg_assistant.college"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="colleges" bindLabel="text" bindValue="value" formControlName="college">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.college"></control-validations-errors>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"reg_assistant.crse"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="crse">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.crse"></control-validations-errors>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"reg_assistant.crn"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="crns" bindLabel="text" bindValue="value" formControlName="crn">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.crn"></control-validations-errors>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"reg_assistant.error_message"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="messages" bindLabel="text" bindValue="value" formControlName="message">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.message"></control-validations-errors>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"reg_assistant.comments"|translate}} <span class="reqstart">*</span></h6>
+                            <textarea maxlength="1000" class="form-control" formControlName="comments"></textarea>
+                        </div>
+                        <control-validations-errors [control]="form.controls.comments"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-12" style="text-align: center;">
+                        <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+                            {{"general.back"|translate}}</button>
+
+                        <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="onSubmit()"
+                            type="submit" class="btn btn-primary">{{ "general.send" |
+                            translate}}
+                            <i class="fa fa-save"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-dialog-content>

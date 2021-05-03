@@ -1,0 +1,51 @@
+{
+    "general": {
+        "title": "المساعد الأكاديمي",
+        "resolution": "الحل",
+        "actions": "الإجراءات",
+        "view": "التفاصيل",
+        "delete": "حذف",
+        "add": "إضافة",
+        "send": "إرسال",
+        "back": "العودة",
+        "created_at": "تاريخ الطلب",
+        "ticket_details": "تفاصيل التذكرة",
+        "ticket_id": "رقم التذكرة",
+        "conversations": "المحادثات",
+        "ticket_status": "الحالة",
+        "category": "الفئة",
+        "item": "البند",
+        "subject": "الموضوع",
+        "description":"الوصف",
+        "attachments": "المرفقات",
+        "note": "ملاحظة"
+    },
+    "reg_assistant": {
+        "title": "مساعد التسجيل",
+        "college": "الكلية",
+        "crn": "الشعبة",
+        "crse": "المقرر",
+        "error_message": "رسالة الخطأ",
+        "conv_title": "العنوان",
+        "description": "الوصف",
+        "note": "ملاحظة",
+        "comments": "الملاحظات",
+        "email": "بريد إلكتروني",
+        "lectres": "الجدول الدراسي",
+        "time": "الوقت"
+    },
+    "academic_requests": {
+        "title": "المشاكل الأكاديمية"
+    },
+    "exams": {
+        "title": "الإختبارات الإلكترونية",
+        "crse": "المقرر"
+    },
+    "validations": {
+        "required": "الحقل مطلوب"
+    },
+    "messages": {
+        "request_added": " تم اضافة الطلب بنجاح",
+        "request_deleted": "تم حذف الطلب بنجاح"
+    }
+}
