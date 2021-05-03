@@ -53,7 +53,7 @@
         "traingnig": "التدريب وتنمية المهارات",
         "inactive-courses-list": "قائمة الدورات المنتهية",
         "mycourseshistory": "الدورات المكتملة",
-        "skills" : "السجل المهاري",
+        "skills": "السجل المهاري",
         "stds-conditions": "التعريف و الشروط",
         "stds-standards": "المعايير و الضوابط",
         "stds-skills-courses": "دوراتي",
@@ -61,9 +61,9 @@
         "courses_conditions": "شروط الدورات و البرامج"
     },
     "settings": {
-        "title": "العنوان" , 
-        "required": "هذا الحقل مطلوب" , 
-        "edit": "تعديل تفاصيل العنوان" ,
+        "title": "العنوان",
+        "required": "هذا الحقل مطلوب",
+        "edit": "تعديل تفاصيل العنوان",
         "details_ar": "التفاصيل باللغة العربية",
         "details_en": "التفاصيل باللغة الإنجليزية",
         "success_updated": "تم تعديل الإعداد بنجاح"
@@ -100,8 +100,8 @@
         "unblock_btn": "إزالة من قائمة الحظر",
         "filter_courses": "بحث في الدورات",
         "filter_std": "بحث ...",
-        "block_start_date":"تاريخ بداية الحظر",
-        "block_end_date":"تاريخ نهاية الحظر",
+        "block_start_date": "تاريخ بداية الحظر",
+        "block_end_date": "تاريخ نهاية الحظر",
         "block_std_user": "بيانات حظر الطالب",
         "student-list": "قائمة الطلاب",
         "add-course-appintment": "مواعيد الدورة",
@@ -178,7 +178,7 @@
         "std_coll": "الكلية",
         "std_dept": "التخصص",
         "filter_courses_students": "بحث في الطلاب",
-        "block-users":"حظر الطلاب",
+        "block-users": "حظر الطلاب",
         "std_level": "المستوى",
         "add_std": "إضافة طالب",
         "change_status": "تغيير حالة الطلب",
@@ -273,7 +273,10 @@
         "attends_1": "تم التحضير",
         "attends_0": "غير مسجل",
         "student_name": "اسم الطالب",
-        "attend_absent": "الحضور - الغياب"
+        "attend_absent": "الحضور - الغياب",
+        "attend_absent_note": "علامة الصح بالمربع تعني حضور الطالب",
+        "attend": "حاضر",
+        "absent": "غائب"
     },
     "course_files": {
         "add-file": "إضافة ملف جديد",

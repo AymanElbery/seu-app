@@ -41,7 +41,14 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">{{"staff.student_name" | translate}}</th>
-                <th scope="col">{{"staff.attend_absent" | translate}} <input type="checkbox" (change)="check($event.target.checked)" />  </th>
+                <th scope="col">
+                  <p>
+                    {{"staff.attend_absent" | translate}}
+                    (<img width="25" src="/assets/images/skills-attend.png"> {{"staff.attend" | translate}}
+                    <img width="25" src="/assets/images/skills-absent.png"> {{"staff.absent" | translate}})
+                  </p>
+                  <input type="checkbox" (change)="check($event.target.checked)" />
+                </th>
               </tr>
             </thead>
             <tbody>

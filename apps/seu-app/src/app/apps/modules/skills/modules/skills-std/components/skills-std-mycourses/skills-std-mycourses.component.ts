@@ -79,10 +79,14 @@ export class SkillsStdMycoursesComponent implements OnInit {
   isdownloaingAtt = false;
   loadingsAtt = {};
 
-  printCert(crse_id,std_id) {
+  evalueate(crse_id) {
+    this.router.navigate(['../course-view/rating/', crse_id], { relativeTo: this.route });
+    return false;
+  }
+  printCert(crse_id, std_id) {
     this.isdownloaing = true;
     this.loadings[crse_id] = true;
-    this.coursesService.printCerts(crse_id,std_id,true).subscribe(response => {
+    this.coursesService.printCerts(crse_id, std_id, true).subscribe(response => {
       if (response['status'] == false && response['res_code'] == 'no_rating') {
         this.coursesService.notifyError('must_rate_course');
         this.router.navigate(['../course-view/rating/', crse_id], { relativeTo: this.route });
@@ -100,10 +104,10 @@ export class SkillsStdMycoursesComponent implements OnInit {
     return false;
   }
 
-  printAttend(crse_id,std_id) {
+  printAttend(crse_id, std_id) {
     this.isdownloaingAtt = true;
     this.loadingsAtt[crse_id] = true;
-    this.coursesService.printAttend(crse_id,std_id).subscribe(response => {
+    this.coursesService.printAttend(crse_id, std_id).subscribe(response => {
       if (response['status'] == false && response['res_code'] == 'no_attending') {
         this.coursesService.notifyError('must_attend_course');
         this.loadingsAtt[crse_id] = false;
