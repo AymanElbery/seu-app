@@ -103,7 +103,7 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
   FULLNameEn = '';
 
   constructor(public userService: UserService, private http: HttpClient, private reqservice: HttpRequestService, private router: Router, private toastr: AppToasterService, public translate: TranslateService,
-    public dialogRef: MatDialogRef<DocsConfirmComponent>,@Inject(MAT_DIALOG_DATA) public confirmdata
+    public dialogRef: MatDialogRef<DocsConfirmComponent>, @Inject(MAT_DIALOG_DATA) public confirmdata
   ) {
     this.userService.getCities().subscribe(
       (response: any) => {
@@ -275,6 +275,8 @@ export class DocsConfirmComponent implements OnInit, OnDestroy {
         this.selectedCityId = this.cities[i].ID;
       }
     }
+    this.district = '';
+    this.districts = [];
     this.userService.getDistrictsByCityId(this.selectedCityId).subscribe(
       (response: any) => {
         if (response) {
