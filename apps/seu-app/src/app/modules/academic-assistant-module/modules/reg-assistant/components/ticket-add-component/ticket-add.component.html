@@ -52,7 +52,7 @@
 
                     <div class="col-md-12">
                         <div class="state">
-                            <h6>{{"reg_assistant.crn"|translate}} <span class="reqstart">*</span></h6>
+                            <h6>{{"reg_assistant.crn"|translate}} <span class="reqstart"></span></h6>
                             <ng-select [items]="crns" bindLabel="text" bindValue="value" formControlName="crn">
                             </ng-select>
                         </div>
@@ -71,8 +71,8 @@
 
                     <div class="col-md-12">
                         <div class="state">
-                            <h6>{{"reg_assistant.comments"|translate}} <span class="reqstart">*</span></h6>
-                            <textarea maxlength="1000" class="form-control" formControlName="comments"></textarea>
+                            <h6>{{"reg_assistant.comments"|translate}} <span class="reqstart">*</span><span style="font-weight: normal;color: red;"> ({{"reg_assistant.crsecomments"|translate}})</span></h6>
+                            <textarea maxlength="500" class="form-control" formControlName="comments"></textarea>
                         </div>
                         <control-validations-errors [control]="form.controls.comments"></control-validations-errors>
                     </div>
