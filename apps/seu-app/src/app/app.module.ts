@@ -52,8 +52,6 @@ import { ContactRedirectComponent } from './shared/components/contact/contactcom
 import { VedioComponent } from './instructions/exams/vedio.component';
 import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
-import { StatementsModule } from './statements/statements.module';
-import { StatementsGrModule } from './statements-gr/statements_gr.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,8 +82,6 @@ import { StatementsGrModule } from './statements-gr/statements_gr.module';
     BrowserModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
-    StatementsModule,
-    StatementsGrModule,
     OwlModule,
     AppTransModule,
     HttpClientModule,
