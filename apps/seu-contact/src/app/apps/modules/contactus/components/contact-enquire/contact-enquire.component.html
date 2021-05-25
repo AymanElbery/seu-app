@@ -3,12 +3,12 @@
     <div class="col-md-6">
       <label>{{'form.ticket_id' | translate}}<span class="reqstart">*</span></label>
       <input class="form-control" type="text" formControlName="ticket_id" (keypress)="keyPress($event)" maxlength="10">
-      <control-validations-errors [control]="form.controls.ticket_id"></control-validations-errors>
+      <control-validations-errors *ngIf="submitting" [control]="form.controls.ticket_id"></control-validations-errors>
     </div>
     <div class="col-md-6">
       <label>{{'form.ssn' | translate}}<span class="reqstart">*</span></label>
       <input class="form-control" type="text" formControlName="ssn" (keypress)="keyPress($event)" maxlength="10">
-      <control-validations-errors [control]="form.controls.ssn"></control-validations-errors>
+      <control-validations-errors *ngIf="submitting" [control]="form.controls.ssn"></control-validations-errors>
     </div>
   </div>
   <div class="row">
@@ -133,7 +133,7 @@
       </ng-container>
     </ng-container>
   </div>
-  <!-- conversations 
+  <!-- conversations
   <h5>{{'form.add_note'|translate}}</h5>
   -->
   <div class="form-details">
