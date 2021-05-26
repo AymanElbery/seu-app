@@ -45,7 +45,7 @@ export class TranslationRegisterComponent implements OnInit {
     this.submitted = true;
     this.transervice.register(this.form.value).subscribe(response => {
       if (response['status']) {
-        this.transervice.notifyError(response['res_code']);
+        this.transervice.notifySucc(response['res_code']);
         this.router.navigate(['../login'], { relativeTo: this.route });
       } else {
         this.transervice.notifyError(response['res_code']);

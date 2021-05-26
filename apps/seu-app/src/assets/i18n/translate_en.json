@@ -167,7 +167,8 @@
         "reset": "Reset password",
         "newpassword": "New password",
         "send": "Send",
-        "update": "Update"
+        "update": "Update",
+        "seustaff": "SEU Login"
     },
     "validations": {
         "required": "Required",
