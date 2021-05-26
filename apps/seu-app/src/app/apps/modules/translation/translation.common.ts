@@ -9,7 +9,7 @@ import { TranslationUserComponent } from './components/translation-user/translat
 
 
 export const providerDeclarations: any[] = [
-    
+
 ];
 
 
@@ -36,6 +36,11 @@ export const routes: Routes = [
                 loadChildren: './modules/translation-client/translation-client.module#TranslationClientModule',
                 canActivate: [TranslationCLIENTGuard]
             },
+            
         ]
+    },
+    {
+        path: 'auth',
+        loadChildren: './modules/translation-auth/translation-auth.module#TranslationAuthModule',
     }
 ];

@@ -32,7 +32,7 @@ const routes: Routes = [
     path: 'translation',
     loadChildren:
       './modules/translation/translation.module#TranslationModule',
-    canLoad: [AuthGuard]
+    //canLoad: [AuthGuard]
   },
   {
     path: 'resume',

@@ -15,6 +15,8 @@ export class TranslationPenddingRequestsComponent implements OnInit {
 
   requestsList = [];
   isLoading = false;
+  filter_text;
+
 
   constructor(
     private router: Router,
@@ -56,12 +58,12 @@ export class TranslationPenddingRequestsComponent implements OnInit {
     });
   }
 
-  openChangeStatusDialog(reqId) {
+  openChangeStatusDialog(req) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    dialogConfig.data = reqId;
+    dialogConfig.data = req;
 
     let dialogref = this.dialog.open(TranslationChangeReqStatusComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
@@ -87,7 +89,7 @@ export class TranslationPenddingRequestsComponent implements OnInit {
 
   exportAsXLSX(){
     this.requestsService.getPenddingRequests(1).subscribe((response => {
-      const linkSource = `data:application/pdf;base64,${response['data']}`;
+      const linkSource = `data:application/octet-stream;base64,${response['data']}`;
       const downloadLink = document.createElement("a");
       const fileName = "pendding_requests.xls";
       downloadLink.href = linkSource;

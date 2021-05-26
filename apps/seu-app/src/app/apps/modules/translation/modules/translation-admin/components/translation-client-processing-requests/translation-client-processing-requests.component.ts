@@ -5,6 +5,7 @@ import { ClientAdminRequestsService } from '../../../../services/translation-adm
 import { TranslationAddCommentComponent } from '../translation-add-comment/translation-add-comment.component';
 import { TranslationAddTranslatedFileComponent } from '../translation-add-translated-file/translation-add-translated-file.component';
 import { TranslationViewRequestComponent } from '../translation-view-request/translation-view-request.component';
+import { TranslationChangeStatusComponent } from './../translation-change-status/translation-change-status.component';
 
 @Component({
   selector: 'app-translation-processing-requests',
@@ -15,6 +16,8 @@ export class TranslationProcessiongRequestsComponent implements OnInit {
 
   requestsList = [];
   isLoading = false;
+  filter_text;
+
 
   constructor(
     private router: Router,
@@ -71,6 +74,21 @@ export class TranslationProcessiongRequestsComponent implements OnInit {
     });
   }
 
+  openChangeStatusDialog(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = req;
+
+    let dialogref = this.dialog.open(TranslationChangeStatusComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getProcessiongRequests();
+      }
+    });
+  }
+
   openDetailsDialog(req) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
@@ -87,7 +105,7 @@ export class TranslationProcessiongRequestsComponent implements OnInit {
 
   exportAsXLSX(){
     this.requestsService.getProcessiongRequests(1).subscribe((response => {
-      const linkSource = `data:application/pdf;base64,${response['data']}`;
+      const linkSource = `data:application/octet-stream;base64,${response['data']}`;
       const downloadLink = document.createElement("a");
       const fileName = "processing_requests.xls";
       downloadLink.href = linkSource;

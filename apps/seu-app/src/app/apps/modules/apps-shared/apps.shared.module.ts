@@ -6,15 +6,16 @@ import { AppsHeaderComponent } from './components/apps-header/apps-header.compon
 import { AppsFooterComponent } from './components/apps-footer/apps-footer.component';
 import { AdmissionLazyTransModule } from '../../admission.lazytrans.module';
 import { AppsServiceHeaderComponent } from './components/apps-service-header/apps-service-header.component';
+import { AppFilterPipe } from './pipes/app-filter-pipe';
 
 
 @NgModule({
-  declarations: [AppsHeaderComponent, AppsFooterComponent, AppsServiceHeaderComponent],
+  declarations: [AppsHeaderComponent, AppsFooterComponent, AppsServiceHeaderComponent,AppFilterPipe],
   imports: [
     CommonModule,
     MatProgressSpinnerModule,
     FormsModule, ReactiveFormsModule, AdmissionLazyTransModule
   ],
-  exports: [FormsModule, AppsServiceHeaderComponent, ReactiveFormsModule, CommonModule, AdmissionLazyTransModule, MatProgressSpinnerModule, AppsHeaderComponent, AppsFooterComponent]
+  exports: [FormsModule, AppsServiceHeaderComponent, ReactiveFormsModule,AppFilterPipe, CommonModule, AdmissionLazyTransModule, MatProgressSpinnerModule, AppsHeaderComponent, AppsFooterComponent]
 })
 export class AppsSharedModule { }

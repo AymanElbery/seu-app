@@ -2,8 +2,10 @@ import { Routes } from '@angular/router';
 import { TranslationAdminUsersComponent } from './components/translation-admin-users/translation-admin-users.component';
 import { TranslationAdminAddUsersComponent } from './components/translation-admin-add-users/translation-admin-add-users.component';
 import { TranslationChangeReqStatusComponent } from './components/translation-change-req-status/translation-change-req-status.component';
+import { TranslationChangeStatusComponent } from './components/translation-change-status/translation-change-status.component';
 import { TranslationAddTranslatedFileComponent } from './components/translation-add-translated-file/translation-add-translated-file.component';
 import { TranslationPenddingRequestsComponent } from './components/translation-client-pendding-requests/translation-pendding-requests.component';
+import { TranslationPaymentRequestsComponent } from './components/translation-client-payment-requests/translation-payment-requests.component';
 import { TranslationProcessiongRequestsComponent } from './components/translation-client-processing-requests/translation-client-processing-requests.component';
 import { TranslationReviewingRequestsComponent } from './components/translation-client-reviewing-requests/translation-client-reviewing-requests.component';
 import { TranslationADMINGuard } from '../../translation-guard/admin.guard';
@@ -20,11 +22,13 @@ export const componentDeclarations: any[] = [
     TranslationAdminUsersComponent,
     TranslationAdminAddUsersComponent,
     TranslationPenddingRequestsComponent,
+    TranslationPaymentRequestsComponent,
     TranslationProcessiongRequestsComponent,
     TranslationMyrequestsComponent,
     TranslationCompletedRequestsComponent,
     TranslationCompleteFormComponent,
     TranslationChangeReqStatusComponent,
+    TranslationChangeStatusComponent,
     TranslationAddTranslatedFileComponent,
     TranslationReviewingRequestsComponent,
     TranslationReviewFormComponent,
@@ -44,6 +48,15 @@ export const routes: Routes = [
     },
     {
         path: 'pendding-requests', component: TranslationPenddingRequestsComponent, canActivate: [TranslationADMINGuard]
+    },
+    {
+        path: 'payment-requests', component: TranslationPaymentRequestsComponent, canActivate: [TranslationADMINGuard]
+    },
+    {
+        path: 'paid-requests', component: TranslationPaymentRequestsComponent, canActivate: [TranslationADMINGuard]
+    },
+    {
+        path: 'unpaid-requests', component: TranslationPaymentRequestsComponent, canActivate: [TranslationADMINGuard]
     },
     {
         path: 'processing-requests', component: TranslationProcessiongRequestsComponent, canActivate: [TranslationADMINGuard]

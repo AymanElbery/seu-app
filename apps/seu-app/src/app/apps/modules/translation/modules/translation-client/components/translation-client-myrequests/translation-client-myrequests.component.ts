@@ -5,6 +5,7 @@ import { TranslationUserService } from '../../../../services/translation-user';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angular/material';
 import { TranslationAddCommentComponent } from './../../../translation-admin/components/translation-add-comment/translation-add-comment.component';
 import { TranslationViewRequestComponent } from '../../../translation-admin/components/translation-view-request/translation-view-request.component';
+import { TranslationPayFeeComponent } from '../translation-pay-fee/translation-pay-fee.component';
 
 @Component({
   selector: 'app-translation-client-myrequests',
@@ -55,6 +56,21 @@ export class TranslationClientMyrequestsComponent implements OnInit {
     dialogConfig.width = '50%';
     dialogConfig.data = { 'req': req };
     let dialogref = this.dialog.open(TranslationViewRequestComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getMyRequests();
+      }
+    });
+  }
+  openAddPayment(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    req['casllbackURL'] = '/apps/translation/client/pay-callback/'
+    dialogConfig.data = req;
+
+    let dialogref = this.dialog.open(TranslationPayFeeComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {
         this.getMyRequests();

@@ -20,6 +20,8 @@ export class TranslationReviewingRequestsComponent implements OnInit {
   requestsList = [];
   isLoading = false;
   user;
+  filter_text;
+
 
   constructor(
     private router: Router,
@@ -123,7 +125,7 @@ export class TranslationReviewingRequestsComponent implements OnInit {
 
   exportAsXLSX(){
     this.requestsService.getReviewingRequests(1).subscribe((response => {
-      const linkSource = `data:application/pdf;base64,${response['data']}`;
+      const linkSource = `data:application/octet-stream;base64,${response['data']}`;
       const downloadLink = document.createElement("a");
       const fileName = "processing_requests.xls";
       downloadLink.href = linkSource;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslationUserService } from '../../services/translation-user';
 
 @Component({
   selector: 'app-translation-landing',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./translation-landing.component.css']
 })
 export class TranslationLandingComponent implements OnInit {
-
-  constructor() { }
+  sso = false;
+  constructor(private user: TranslationUserService) {
+    this.sso = this.user.is_sso();
+    this.user.userHasLoaded.subscribe(() => {
+      this.sso = this.user.is_sso();
+    })
+  }
 
   ngOnInit() {
   }
