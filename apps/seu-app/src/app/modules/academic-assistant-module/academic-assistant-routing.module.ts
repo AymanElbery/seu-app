@@ -22,7 +22,11 @@ const routes: Routes = [
   {
     path: 'sadad',
     loadChildren: './modules/sadad/sd-sadad.module#SDSadadModule',
-  }
+  },
+  {
+    path: 'issues',
+    loadChildren: './modules/issues/sd-issues.module#SDIssuesModule',
+  },
 ];
 
 @NgModule({
