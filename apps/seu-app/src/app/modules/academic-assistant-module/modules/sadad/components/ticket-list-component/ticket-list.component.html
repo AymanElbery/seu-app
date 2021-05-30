@@ -18,7 +18,6 @@
             <thead>
               <tr>
                 <th scope="col">{{ "general.ticket_id" | translate}}</th>
-                <th scope="col">{{ "general.category" | translate}}</th>
                 <th scope="col">{{ "general.item" | translate}}</th>
                 <th scope="col">{{ "general.subject" | translate}}</th>
                 <th scope="col">{{ "general.created_at" | translate}}</th>
@@ -29,7 +28,6 @@
             <tbody>
               <tr *ngFor="let ticket of tickets; let i = index">
                 <td>{{ ticket.id }}</td>
-                <td>{{ ticket.category }}</td>
                 <td>{{ ticket.item }}</td>
                 <td>{{ ticket.subject }}</td>
                 <td>{{ ticket.created_time.display_value }}</td>

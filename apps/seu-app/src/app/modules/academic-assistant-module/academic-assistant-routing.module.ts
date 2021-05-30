@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'issues',
     loadChildren: './modules/issues/sd-issues.module#SDIssuesModule',
   },
+  {
+    path: 'login',
+    loadChildren: './modules/login/sd-login.module#SDLoginModule',
+  },
 ];
 
 @NgModule({
