@@ -14,7 +14,23 @@ const routes: Routes = [
   {
     path: 'exams',
     loadChildren: './modules/exams/sd-exams.module#SDExamstModule',
-  }
+  },
+  {
+    path: 'knowledge-resources',
+    loadChildren: './modules/knowledge-resources/sd-knowledge-resources.module#SDKnowledgeResourcesModule',
+  },
+  {
+    path: 'sadad',
+    loadChildren: './modules/sadad/sd-sadad.module#SDSadadModule',
+  },
+  {
+    path: 'issues',
+    loadChildren: './modules/issues/sd-issues.module#SDIssuesModule',
+  },
+  {
+    path: 'login',
+    loadChildren: './modules/login/sd-login.module#SDLoginModule',
+  },
 ];
 
 @NgModule({
