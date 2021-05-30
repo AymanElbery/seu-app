@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'exams',
     loadChildren: './modules/exams/sd-exams.module#SDExamstModule',
+  },
+  {
+    path: 'knowledge-resources',
+    loadChildren: './modules/knowledge-resources/sd-knowledge-resources.module#SDKnowledgeResourcesModule',
   }
 ];
 

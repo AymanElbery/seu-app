@@ -271,7 +271,8 @@
         "bb_virtual_reports": "تقارير الفصول الإفتراضية",
         "dashboard": "لوحة القيادة",
         "sd_academic_requests": "المشاكل الأكاديمية",
-        "sd_exams": "الإختبارات الالكترونية"
+        "sd_exams": "الإختبارات الالكترونية",
+        "sd_knowledge_resources": "المصادر المعرفية"
     },
     "errors": {
         "invalidStdID": "لم نستطيع الحصول علي بيانات الرقم الرجامعي",
