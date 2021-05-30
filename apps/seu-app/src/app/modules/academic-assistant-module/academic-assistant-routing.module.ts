@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'knowledge-resources',
     loadChildren: './modules/knowledge-resources/sd-knowledge-resources.module#SDKnowledgeResourcesModule',
+  },
+  {
+    path: 'sadad',
+    loadChildren: './modules/sadad/sd-sadad.module#SDSadadModule',
   }
 ];
 

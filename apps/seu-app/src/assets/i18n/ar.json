@@ -272,7 +272,8 @@
         "dashboard": "لوحة القيادة",
         "sd_academic_requests": "المشاكل الأكاديمية",
         "sd_exams": "الإختبارات الالكترونية",
-        "sd_knowledge_resources": "المصادر المعرفية"
+        "sd_knowledge_resources": "المصادر المعرفية",
+        "sd_sadad": "بوابة الدفع الإلكتروني"
     },
     "errors": {
         "invalidStdID": "لم نستطيع الحصول علي بيانات الرقم الرجامعي",
