@@ -75,7 +75,13 @@ export class ResumeInstructorNewArComponent implements OnInit {
   getIfExist(){
     this.isLoading = true;
     this.newrequestsService.getIfExist(this.userService.user.ID, "ar").subscribe((response) => {
-      this.exist = response['data'];
+      if (response['data'] == true) {
+        this.exist = response['data'];
+      } else if(response['data'] == false) {
+        this.exist = response['data'];
+      }else{
+        this.exist = false;
+      }
       this.isLoading = false;
     }, err => {
       this.newrequestsService.tryagain();

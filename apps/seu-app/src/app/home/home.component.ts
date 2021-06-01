@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private translate: TranslateService,
     private sanitized: DomSanitizer
   ) {
-    //this.loadResumeAdminUsers();
+    this.loadResumeAdminUsers();
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
