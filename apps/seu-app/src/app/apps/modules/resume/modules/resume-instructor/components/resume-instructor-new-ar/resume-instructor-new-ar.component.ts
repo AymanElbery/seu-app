@@ -94,44 +94,45 @@ export class ResumeInstructorNewArComponent implements OnInit {
   }
 
   resetTitles(){
+    let lang = localStorage.getItem("seu-lang");
     this.educationTitle = new Title();
-    this.educationTitle.text = "التحصيل العلمي";
+    this.educationTitle.text = (lang == 'ar') ? "التحصيل العلمي" : "Education";
     this.educationTitle.items = [];
 
     this.experienceTitle = new Title();
-    this.experienceTitle.text = "المناصب والوظائف الاكاديمية";
+    this.experienceTitle.text = (lang == 'ar') ? "المناصب والوظائف الاكاديمية" : "Experience";
     this.experienceTitle.items = [];
 
     this.committesTitle = new Title();
-    this.committesTitle.text = "عضوية المجالس واللجان";
+    this.committesTitle.text = (lang == 'ar') ? "عضوية المجالس واللجان": "Membership of Boards and Committees";
     this.committesTitle.items = [];
 
     this.organizationsTitle = new Title();
-    this.organizationsTitle.text = "عضوية المنظمات العلمية";
+    this.organizationsTitle.text = (lang == 'ar') ? "عضوية المنظمات العلمية" : "Membership of Scientific Organizations";
     this.organizationsTitle.items = [];
 
     this.booksTitle = new Title();
-    this.booksTitle.text = "الكتب";
+    this.booksTitle.text = (lang == 'ar') ? "الكتب" : "Books";
     this.booksTitle.items = [];
 
     this.researchTitle = new Title();
-    this.researchTitle.text = "البحوث والدراسات والمنشورات في المجلات العلمية";
+    this.researchTitle.text = (lang == 'ar') ? "البحوث والدراسات والمنشورات في المجلات العلمية" : "Research and Studies Published in Scientific Journals";
     this.researchTitle.items = [];
 
     this.workshopsTitle = new Title();
-    this.workshopsTitle.text = "الدورات التدريبة وورش العمل";
+    this.workshopsTitle.text = (lang == 'ar') ? "الدورات التدريبة وورش العمل" : "Training and Workshops";
     this.workshopsTitle.items = [];
 
     this.socialTitle = new Title();
-    this.socialTitle.text = "المشاركات الاجتماعية والإعلامية (التلفزيون، والإذاعة، والصحف)";
+    this.socialTitle.text = (lang == 'ar') ? "المشاركات الاجتماعية والإعلامية (التلفزيون، والإذاعة، والصحف)" : "Social and Media Activities (TV, Radio, or Press)";
     this.socialTitle.items = [];
 
     this.scienceInterestTitle = new Title();
-    this.scienceInterestTitle.text = "الاهتمامات العلمية";
+    this.scienceInterestTitle.text = (lang == 'ar') ? "الاهتمامات العلمية" : "Research Interests";
     this.scienceInterestTitle.items = [];
 
     this.otherInterestTitle = new Title();
-    this.otherInterestTitle.text = "الاهتمامات الاخرى";
+    this.otherInterestTitle.text = (lang == 'ar') ? "الاهتمامات الاخرى" : "Other Interest";
     this.otherInterestTitle.items = [];
     
   }

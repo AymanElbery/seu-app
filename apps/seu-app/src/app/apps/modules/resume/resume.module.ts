@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SeucommonModule } from '../../../seucommon/seucommon.module';
+import { ResumeLazyTransModule } from './modules/resume-common/resume.lazytrans.module';
 import { providerDeclarations, routes } from './resume.common';
 import { ResumeLandingComponent } from './components/resume-landing/resume-landing.component';
 import { ResumeHomeComponent } from './components/resume-home/resume-home.component';
@@ -28,6 +29,7 @@ import { ResumeCommonModule } from './modules/resume-common/resume-common.module
     SeucommonModule,
     ResumeServicesModule,
     ResumeCommonModule,  
+    ResumeLazyTransModule,
     RouterModule.forChild(routes)
   ],
   providers: [
