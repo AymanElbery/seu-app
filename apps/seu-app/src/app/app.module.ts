@@ -52,6 +52,8 @@ import { ContactRedirectComponent } from './shared/components/contact/contactcom
 import { VedioComponent } from './instructions/exams/vedio.component';
 import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,7 +98,8 @@ import { VgControlsModule } from 'videogular2/controls';
     , MatDialogModule
     , SeucommonModule,
     VgCoreModule,
-    VgControlsModule
+    VgControlsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ConfigService,
     HttpRequestService,

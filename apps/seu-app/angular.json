@@ -26,7 +26,8 @@
                 "glob": "*",
                 "input": "node_modules/@fortawesome/fontawesome-free/webfonts",
                 "output": "assets/fonts/"
-              }
+              },
+              "src/manifest.webmanifest"
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
@@ -73,7 +74,8 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true
             },
             "test": {
               "fileReplacements": [
@@ -142,7 +144,8 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ]
           }
         },
