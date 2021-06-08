@@ -16,6 +16,18 @@
         <div class="modal-body">
 
           <div class="row ser-block">
+            <div class="col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.cat" | translate}}</h6>
+                <select required class="form-control" #association="ngModel" [(ngModel)]="feesException.association"
+                  name="association" [class.is-invalid]="feesException.association == ''" #t
+                  (change)="associationChange(feesException.association)">
+                  <option value=''> {{"services.finance.choose" | translate}} </option>
+                  <option *ngFor="let e of associationsList" [value]="e.id">{{e.value}}</option>
+                </select>
+              </div>
+            </div>
+
             <div class=" col-md-6 col-sm-12">
               <div class="state">
                 <h6> {{"services.finance.doyou" | translate}} </h6>
@@ -23,19 +35,7 @@
                   [(ngModel)]="feesException.exception_type" name="exceptionType"
                   [class.is-invalid]="feesException.exception_type == ''" #t (change)="exceptionTypeChange(t.value)">
                   <option value=''> {{"services.finance.choose" | translate}} </option>
-                  <option *ngFor="let e of exceptionTypeList" [value]="e.id">{{e.value}}</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-sm-12">
-              <div class="state">
-                <h6> {{"services.finance.cat" | translate}}</h6>
-                <select required class="form-control" #association="ngModel" [(ngModel)]="feesException.association"
-                  name="association" [class.is-invalid]="feesException.association == ''" #t
-                  (change)="associationChange(t.value)">
-                  <option value=''> {{"services.finance.choose" | translate}} </option>
-                  <option *ngFor="let e of associationsList" [value]="e.id">{{e.value}}</option>
+                  <option *ngFor="let e of exceptionTypeListFiltered" [value]="e.id">{{e.value}}</option>
                 </select>
               </div>
             </div>

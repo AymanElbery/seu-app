@@ -28,6 +28,7 @@ export class AddFeesExceptionComponent implements OnInit {
   accountRelativeList: any;
   haveAccountList: any;
   exceptionTypeList: any;
+  exceptionTypeListFiltered: any;
   associationsList: any;
   isLoading = false;
   accountOwner: any;
@@ -149,14 +150,18 @@ export class AddFeesExceptionComponent implements OnInit {
 
   }
 
-  associationChange(p) {
+  associationChange(p: string) {
     this.feesException.proof_status = '';
     this.feesException.insurance_card = '';
     this.feesException.work_status = '';
     this.feesException.letter = '';
     this.feesException.mco_id_card = '';
     this.feesException.id_card = '';
-    //this.feesException.association ='';
+    if (p == '3') {
+      this.exceptionTypeListFiltered = [this.exceptionTypeList[1]];
+    } else {
+      this.exceptionTypeListFiltered = this.exceptionTypeList;
+    }
   }
 
 
