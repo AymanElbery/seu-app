@@ -51,7 +51,11 @@ export class ResumeInstructorNewArComponent implements OnInit {
   eduErrorMsg = "";
   contentReason = "";
   managerReason = "";
-  req = {};
+  req = {
+    'NAME' : "",
+    'EMAIL' : "",
+    'JOB_TITLE' : ""
+  };
   constructor(
     private fb: FormBuilder,
     private router: Router,

@@ -6,7 +6,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 export interface DialogData {
-  REQ_ID: number
 }
 
 @Component({

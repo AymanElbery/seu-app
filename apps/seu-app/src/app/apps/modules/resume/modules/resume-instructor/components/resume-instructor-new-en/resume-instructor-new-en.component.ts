@@ -51,7 +51,11 @@ export class ResumeInstructorNewEnComponent implements OnInit {
   eduErrorMsg = "";
   contentReason = "";
   managerReason = "";
-  req = {};
+  req = {
+    'NAME' : "",
+    'EMAIL' : "",
+    'JOB_TITLE' : ""
+  };
 
   constructor(
     private fb: FormBuilder,
