@@ -28,7 +28,8 @@
             <tbody style="font-size: 1.3em;">
               <tr *ngFor="let req of requestsList; let i = index">
                 <td>{{ req.REQ_ID }}</td>
-                <td>{{ req.INSERT_DATE | date : 'yyyy-MM-dd'}}</td>
+                <!-- <td>{{ req.INSERT_DATE | date : 'yyyy-MM-dd'}}</td> -->
+                <td>{{ req.INSERT_DATE }}</td>
                 <td>{{ req.NAME }}</td>
                 <td>
                   <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 2"><span class="badge badge-warning">{{"new_requests_page.under" | translate}}</span></b>

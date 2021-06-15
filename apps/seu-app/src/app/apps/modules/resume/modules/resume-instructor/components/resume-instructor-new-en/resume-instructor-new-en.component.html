@@ -1,38 +1,45 @@
 <app-service-header title="{{'resume' | translate}}" subtitle="{{'menu.new_request_en' | translate}}">
 </app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
-<section *ngIf="exist" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+<section *ngIf="contentReason != ''" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
   <div class="row">
     <div class="col-md-12">
-      <div class="alert alert-info text-center">
-        <b>{{ "new_request_en_page.exist" | translate}}</b>
+      <div class="alert alert-warning text-center">
+        <b>{{ "new_request_ar_page.content_reason" | translate}}  <a style="color: #5a3585;" (click)="openReasonDialog(req)" [routerLink]="">{{ "new_request_ar_page.click_here" | translate}}</a></b>
       </div>
     </div>
   </div>
 </section>
-<section *ngIf="!exist" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
   <form [formGroup]="addRequestForm" (ngSubmit)="onSubmit()">
-    <div class="row">
+    <div class="row" #eduElement>
       <div class="col-md-2">
         <div class="profile">
           <img *ngIf="profile == 'notExist' && !imagePath" src="assets/images/profile.png">
           <img *ngIf="profile == 'notExist' && imagePath" [src]="imagePath">
-          <img *ngIf="profile != 'notExist' && !imagePath" src="https://seuapps.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
+          <img *ngIf="profile != 'notExist' && !imagePath" src="https://seuapps.seu.edu.sa/newservices/api/profile.php?image={{profile}}">
           <img *ngIf="profile != 'notExist' && imagePath" [src]="imagePath">
         </div>
       </div>
       <div class="col-md-8" style="border: solid 1px #EDEDED; padding: 30px;">
         <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-info text-center">
+              <strong>{{ "new_request_en_page.ar_note" | translate}}</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_en_page.name" | translate}} <span class="text-danger">*</span></label>
-              <input formControlName="NAME" class="form-control" type="text">
+              <input formControlName="NAME" [(ngModel)]="req.NAME" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_en_page.email" | translate}} <span class="text-danger">*</span></label>
-              <input formControlName="EMAIL" class="form-control" type="text">
+              <input formControlName="EMAIL" [(ngModel)]="req.EMAIL" class="form-control" type="text">
             </div>
           </div>
         </div>
@@ -46,7 +53,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_en_page.job" | translate}} <span class="text-danger">*</span></label>
-              <input formControlName="JOB_TITLE" class="form-control" type="text">
+              <input formControlName="JOB_TITLE" [(ngModel)]="req.JOB_TITLE" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
             </div>
           </div>
         </div>
@@ -63,6 +70,13 @@
     <!-- <hr> -->
     <div class="row row-form"> <!-- Education -->
       <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row" *ngIf="eduError">
+          <div class="col-md-10">
+            <div class="alert alert-danger text-center">
+              <strong>{{ eduErrorMsg }}</strong>
+            </div>
+          </div>
+        </div>
         <div class="row row-form">
           <div class="col-md-10 title">
             <div class="form-group"> 
@@ -77,7 +91,7 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_degree" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.degree" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.degree" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -111,7 +125,7 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.position" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.position" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.position" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -146,7 +160,7 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.commit" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.commit" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.commit" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -180,7 +194,7 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.organization" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.org" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.org" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -215,7 +229,7 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.book" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.book" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.book" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -236,13 +250,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}"  class="form-control" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.research" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.research" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.research" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -269,7 +283,7 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.workshop" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.workshop" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.workshop" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -297,7 +311,7 @@
                 <div class="col-md-10 item">
                   <div class="form-group">
                     <label>{{j+1}}.</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -325,7 +339,7 @@
                 <div class="col-md-10 item">
                   <div class="form-group">
                     <label>{{j+1}}.</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -353,7 +367,7 @@
                 <div class="col-md-10 item">
                   <div class="form-group">
                     <label>{{j+1}}.</label>
-                    <input name="item{{j}}" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -377,8 +391,8 @@
           <input (change)="agreeCond(agree)" type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">{{ "new_request_en_page.agree" | translate}}</label>
         </div>
-        <button *ngIf="agree" style="margin-top: 20px; width: 100%;" (click)="onSubmit()" type="button" class="btn sub">{{ "new_request_en_page.save" | translate}}  <i class="fa fa-save"></i></button>
-        <button *ngIf="!agree" disabled style="margin-top: 20px;width: 100%;" (click)="onSubmit()" type="button" class="btn sub">{{ "new_request_en_page.save" | translate}}  <i class="fa fa-save"></i></button>
+        <button *ngIf="agree" style="margin-top: 20px; width: 100%;" (click)="onSubmit(eduElement)" type="button" class="btn sub">{{ "new_request_en_page.save" | translate}}  <i class="fa fa-save"></i></button>
+        <button *ngIf="!agree" disabled style="margin-top: 20px;width: 100%;" (click)="onSubmit(eduElement)" type="button" class="btn sub">{{ "new_request_en_page.save" | translate}}  <i class="fa fa-save"></i></button>
       </div>
     </div>
   </form>

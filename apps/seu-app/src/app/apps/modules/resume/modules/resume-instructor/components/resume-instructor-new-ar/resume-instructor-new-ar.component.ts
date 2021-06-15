@@ -6,6 +6,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { ResumeInstructorReasonsComponent } from '../resume-instructor-reasons/resume-instructor-reasons.component';
 
 export class Title{
   text: any;
@@ -45,7 +47,11 @@ export class ResumeInstructorNewArComponent implements OnInit {
   datePickerConfig: Partial<BsDatepickerConfig>;
   agree = false;
   exist = false;
-
+  eduError = false;
+  eduErrorMsg = "";
+  contentReason = "";
+  managerReason = "";
+  req = {};
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -53,8 +59,11 @@ export class ResumeInstructorNewArComponent implements OnInit {
     private route: ActivatedRoute,
     private userService: ResumeUserService,
     private newrequestsService: InstructorNewrequestsService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    public dialog: MatDialog
   ) {
+    let lang = localStorage.getItem("seu-lang");
+    this.eduErrorMsg = (lang == 'ar') ? "يجب إدخال بيانات المؤهل العلمي" : "Education information required";
     const user = this.userService.user;
     this.getIfExist();
     this.addRequestForm = this.fb.group({
@@ -72,13 +81,39 @@ export class ResumeInstructorNewArComponent implements OnInit {
     
   }
 
+  openReasonDialog(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '40%';
+    dialogConfig.data = req;
+
+    let dialogref = this.dialog.open(ResumeInstructorReasonsComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if(result){
+        
+      }
+    });
+  }
+
   getIfExist(){
     this.isLoading = true;
     this.newrequestsService.getIfExist(this.userService.user.ID, "ar").subscribe((response) => {
-      if (response['data'] == true) {
-        this.exist = response['data'];
-      } else if(response['data'] == false) {
-        this.exist = response['data'];
+      if (response['data'] != false) {
+        this.exist = true;
+        this.contentReason = response['data'].CONTENT_REASON != null ? response['data'].CONTENT_REASON : "";
+        this.managerReason = response['data'].MANAGER_REASON != null ? response['data'].MANAGER_REASON : "";
+        this.req = response['data'];
+        this.educationTitle.items = this.req['EDUCATION'].items;
+        this.experienceTitle.items = this.req['EXPERIENCE'].items;
+        this.committesTitle.items = this.req['COMMITES'].items;
+        this.organizationsTitle.items = this.req['ORGANIZATIONS'].items;
+        this.booksTitle.items = this.req['BOOKS'].items;
+        this.researchTitle.items = this.req['RESEARCHES'].items;
+        this.workshopsTitle.items = this.req['WORKSHOPS'].items;
+        this.socialTitle.items = this.req['SOCIAL_ACTIVITIES'].items;
+        this.scienceInterestTitle.items = this.req['RESEARCH_INTERESTS'].items;
+        this.otherInterestTitle.items = this.req['OTHER_INTERESTS'].items;
       }else{
         this.exist = false;
       }
@@ -137,6 +172,15 @@ export class ResumeInstructorNewArComponent implements OnInit {
     
   }
 
+  keyPressArabic(e){
+    if (e.key.match(/^[\u0621-\u064A]+$/) || e.key == " " || e.key == "Backspace") {
+      return true;
+    }else{
+      e.preventDefault();
+      return false;
+    }
+  }
+
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const pattern = /image-*/;
@@ -152,6 +196,12 @@ export class ResumeInstructorNewArComponent implements OnInit {
 
 
   addItem(title) {
+    if (typeof title.items == "undefined") {
+      title.items = [];
+    }
+    if(title == this.educationTitle){
+      this.eduError = false;
+    }
     this.item = new Item();
     this.item.text = "";
     title.items.push(this.item); 
@@ -161,10 +211,16 @@ export class ResumeInstructorNewArComponent implements OnInit {
     title.items.splice(j, 1);
   }
 
-  onSubmit(){
+  onSubmit($eduElement){
     this.submitted = true;
     if (this.addRequestForm.invalid) {
-        return;
+      $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      return;
+    }
+    if(this.educationTitle.items.length == 0){
+      this.eduError = true;
+      $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      return;
     }
     this.isLoading = true;
     let data = {

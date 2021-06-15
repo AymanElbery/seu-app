@@ -59,6 +59,7 @@
         "add": "Add"
     },
     "new_request_ar_page": {
+        "ar_note": "Please enter the fields in Arabic only",
         "choose_file": "Choose photo",
         "photo": "Photo",
         "name": "Name",
@@ -82,6 +83,7 @@
         "exist": "There is a pendding request for you to create a CV in Arabic"
     },
     "new_request_en_page": {
+        "en_note": "Please enter the fields in English only",
         "choose_file": "Choose photo",
         "photo": "Photo",
         "name": "Name in English",

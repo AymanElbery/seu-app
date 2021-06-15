@@ -43,7 +43,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_"+lang+"_page.dob" | translate}}</label>
-              <legend *ngIf="request.DOB">{{ request.DOB }}</legend>
+              <legend *ngIf="request.DOB">{{ request.DOB | date : 'yyyy-MM-dd' }}</legend>
               <legend *ngIf="!request.DOB" class="text-danger">{{ "details_page.not_exist" | translate}}</legend>
             </div>
           </div>

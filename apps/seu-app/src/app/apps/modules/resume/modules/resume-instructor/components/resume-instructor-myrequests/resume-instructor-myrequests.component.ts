@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { InstructorMyrequestsService } from '../../../../services/resume-instructor-myrequests';
 import { ResumeUserService } from '../../../../services/resume-user';
+import { ResumeInstructorReasonsComponent } from '../resume-instructor-reasons/resume-instructor-reasons.component';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 
 @Component({
@@ -26,6 +27,21 @@ export class ResumeInstructorMyrequestsComponent implements OnInit {
 
   ngOnInit() {
     this.getMyRequests();
+  }
+
+  openReasonDialog(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '40%';
+    dialogConfig.data = req;
+
+    let dialogref = this.dialog.open(ResumeInstructorReasonsComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if(result){
+        
+      }
+    });
   }
 
   getMyRequests() {

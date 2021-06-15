@@ -31,12 +31,15 @@
                 <td>
                   <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 2"><span class="badge badge-warning">{{"new_requests_page.under" | translate}}</span></b>
                   <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 1"><span class="badge badge-success">{{"new_requests_page.agree" | translate}}</span></b>
-                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 0"><span class="badge badge-danger">{{"new_requests_page.disagree" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 0 && req.CONTENT_REASON == null"><span class="badge badge-danger">{{"new_requests_page.disagree" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 0 && req.CONTENT_REASON != null"><span style="cursor: pointer;" (click)="openReasonDialog(req)" class="badge badge-danger">{{"new_requests_page.disagree" | translate}}</span></b>
                 </td>
                 <td>
                   <b style="font-size: 1.2em;" class="text-success" *ngIf="req.MANAGER_STATUS == 2"><span class="badge badge-warning">{{"new_requests_page.under" | translate}}</span></b>
                   <b style="font-size: 1.2em;" class="text-success" *ngIf="req.MANAGER_STATUS == 1"><span class="badge badge-success">{{"new_requests_page.agree" | translate}}</span></b>
-                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.MANAGER_STATUS == 0"><span class="badge badge-danger">{{"new_requests_page.disagree" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.MANAGER_STATUS == 0 && req.MANAGER_REASON == null"><span class="badge badge-danger">{{"new_requests_page.disagree" | translate}}</span></b>
+                  <b style="font-size: 1.2em;" class="text-success" *ngIf="req.MANAGER_STATUS == 0 && req.MANAGER_REASON != null"><span style="cursor: pointer;" (click)="openReasonDialog(req)" class="badge badge-danger">{{"new_requests_page.disagree" | translate}}</span></b>
+
                 </td>
                 <td>
                   <b style="font-size: 1.2em;" class="text-success" *ngIf="req.GATE_STATUS == 2"><span class="badge badge-warning">{{"new_requests_page.under" | translate}}</span></b>

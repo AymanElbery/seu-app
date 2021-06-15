@@ -6,6 +6,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { ResumeInstructorReasonsComponent } from '../resume-instructor-reasons/resume-instructor-reasons.component';
 
 export class Title{
   text: any;
@@ -45,6 +47,11 @@ export class ResumeInstructorNewEnComponent implements OnInit {
   datePickerConfig: Partial<BsDatepickerConfig>;
   agree = false;
   exist = false;
+  eduError = false;
+  eduErrorMsg = "";
+  contentReason = "";
+  managerReason = "";
+  req = {};
 
   constructor(
     private fb: FormBuilder,
@@ -53,9 +60,12 @@ export class ResumeInstructorNewEnComponent implements OnInit {
     private route: ActivatedRoute,
     private userService: ResumeUserService,
     private newrequestsService: InstructorNewrequestsService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    public dialog: MatDialog
   ) {
     const user = this.userService.user;
+    let lang = localStorage.getItem("seu-lang");
+    this.eduErrorMsg = (lang == 'ar') ? "يجب إدخال بيانات المؤهل العلمي" : "Education information required";
     this.getIfExist();
     this.addRequestForm = this.fb.group({
       NAME: ["", [Validators.required]],
@@ -72,10 +82,43 @@ export class ResumeInstructorNewEnComponent implements OnInit {
     
   }
 
+  openReasonDialog(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '40%';
+    dialogConfig.data = req;
+
+    let dialogref = this.dialog.open(ResumeInstructorReasonsComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if(result){
+        
+      }
+    });
+  }
+
   getIfExist(){
     this.isLoading = true;
     this.newrequestsService.getIfExist(this.userService.user.ID, "en").subscribe((response) => {
-      this.exist = response['data'];
+      if (response['data'] != false) {
+        this.exist = true;
+        this.contentReason = response['data'].CONTENT_REASON != null ? response['data'].CONTENT_REASON : "";
+        this.managerReason = response['data'].MANAGER_REASON != null ? response['data'].MANAGER_REASON : "";
+        this.req = response['data'];
+        this.educationTitle.items = this.req['EDUCATION'].items;
+        this.experienceTitle.items = this.req['EXPERIENCE'].items;
+        this.committesTitle.items = this.req['COMMITES'].items;
+        this.organizationsTitle.items = this.req['ORGANIZATIONS'].items;
+        this.booksTitle.items = this.req['BOOKS'].items;
+        this.researchTitle.items = this.req['RESEARCHES'].items;
+        this.workshopsTitle.items = this.req['WORKSHOPS'].items;
+        this.socialTitle.items = this.req['SOCIAL_ACTIVITIES'].items;
+        this.scienceInterestTitle.items = this.req['RESEARCH_INTERESTS'].items;
+        this.otherInterestTitle.items = this.req['OTHER_INTERESTS'].items;
+      }else{
+        this.exist = false;
+        this.resetTitles();
+      }
       this.isLoading = false;
     }, err => {
       this.newrequestsService.tryagain();
@@ -86,49 +129,6 @@ export class ResumeInstructorNewEnComponent implements OnInit {
   agreeCond(event: any){
     this.agree = !this.agree;
   }
-
-  // resetTitles(){
-  //   this.educationTitle = new Title();
-  //   this.educationTitle.text = "التحصيل العلمي";
-  //   this.educationTitle.items = [];
-
-  //   this.experienceTitle = new Title();
-  //   this.experienceTitle.text = "المناصب والوظائف الاكاديمية";
-  //   this.experienceTitle.items = [];
-
-  //   this.committesTitle = new Title();
-  //   this.committesTitle.text = "عضوية المجالس واللجان";
-  //   this.committesTitle.items = [];
-
-  //   this.organizationsTitle = new Title();
-  //   this.organizationsTitle.text = "عضوية المنظمات العلمية";
-  //   this.organizationsTitle.items = [];
-
-  //   this.booksTitle = new Title();
-  //   this.booksTitle.text = "الكتب";
-  //   this.booksTitle.items = [];
-
-  //   this.researchTitle = new Title();
-  //   this.researchTitle.text = "البحوث والدراسات والمنشورات في المجلات العلمية";
-  //   this.researchTitle.items = [];
-
-  //   this.workshopsTitle = new Title();
-  //   this.workshopsTitle.text = "الدورات التدريبة وورش العمل";
-  //   this.workshopsTitle.items = [];
-
-  //   this.socialTitle = new Title();
-  //   this.socialTitle.text = "المشاركات الاجتماعية والإعلامية (التلفزيون، والإذاعة، والصحف)";
-  //   this.socialTitle.items = [];
-
-  //   this.scienceInterestTitle = new Title();
-  //   this.scienceInterestTitle.text = "الاهتمامات العلمية";
-  //   this.scienceInterestTitle.items = [];
-
-  //   this.otherInterestTitle = new Title();
-  //   this.otherInterestTitle.text = "الاهتمامات الاخرى";
-  //   this.otherInterestTitle.items = [];
-    
-  // }
 
   resetTitles(){
     let lang = localStorage.getItem("seu-lang");
@@ -174,6 +174,15 @@ export class ResumeInstructorNewEnComponent implements OnInit {
     
   }
 
+  keyPressEnglish(e){
+    if (e.key.match(/^[a-zA-Z]+$/) || e.key == " " || e.key == "Backspace") {
+      return true;
+    }else{
+      e.preventDefault();
+      return false;
+    }
+  }
+
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const pattern = /image-*/;
@@ -189,6 +198,12 @@ export class ResumeInstructorNewEnComponent implements OnInit {
 
 
   addItem(title) {
+    if (typeof title.items == "undefined") {
+      title.items = [];
+    }
+    if(title == this.educationTitle){
+      this.eduError = false;
+    }
     this.item = new Item();
     this.item.text = "";
     title.items.push(this.item); 
@@ -198,10 +213,15 @@ export class ResumeInstructorNewEnComponent implements OnInit {
     title.items.splice(j, 1);
   }
 
-  onSubmit(){
+  onSubmit($eduElement){
     this.submitted = true;
     if (this.addRequestForm.invalid) {
         return;
+    }
+    if(this.educationTitle.items.length == 0){
+      this.eduError = true;
+      $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      return;
     }
     this.isLoading = true;
     let data = {
