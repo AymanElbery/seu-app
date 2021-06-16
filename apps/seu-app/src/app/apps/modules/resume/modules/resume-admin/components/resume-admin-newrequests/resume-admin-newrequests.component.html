@@ -18,6 +18,7 @@
                 <th scope="col">{{"new_requests_page.req_num" | translate}}</th>
                 <th scope="col">{{"new_requests_page.req_date" | translate}}</th>
                 <th scope="col">{{"new_requests_page.username" | translate}}</th>
+                <th scope="col">{{"new_requests_page.lang" | translate}}</th>
                 <th scopr="col">{{"new_requests_page.content_status" | translate}}</th>
                 <th scopr="col">{{"new_requests_page.manager_status" | translate}}</th>
                 <th scopr="col">{{"new_requests_page.gate_status" | translate}}</th>
@@ -30,6 +31,8 @@
                 <td>{{ req.REQ_ID }}</td>
                 <td>{{ req.INSERT_DATE | date : 'yyyy-MM-dd'}}</td>
                 <td>{{ req.NAME }}</td>
+                <td *ngIf="req.LANG == 'ar'">{{"new_requests_page.ar_lang" | translate}}</td>
+                <td *ngIf="req.LANG == 'en'">{{"new_requests_page.en_lang" | translate}}</td>
                 <td>
                   <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 2"><span class="badge badge-warning">{{"new_requests_page.under" | translate}}</span></b>
                   <b style="font-size: 1.2em;" class="text-success" *ngIf="req.CONTENT_STATUS == 1"><span class="badge badge-success">{{"new_requests_page.agree" | translate}}</span></b>

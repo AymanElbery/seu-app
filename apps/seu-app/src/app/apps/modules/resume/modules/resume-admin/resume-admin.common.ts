@@ -3,6 +3,7 @@ import { ResumeAdminAdminsComponent } from './components/resume-admin-admins/res
 import { ResumeAdminNewrequestsComponent } from './components/resume-admin-newrequests/resume-admin-newrequests.component';
 import { ResumeAdminAddUsersComponent } from './components/resume-admin-add-users/resume-admin-add-users.component';
 import { ResumeAdminRequestDetailsComponent } from './components/resume-admin-request-details/resume-admin-request-details.component';
+import { ResumeAdminRequestEditComponent } from './components/resume-admin-request-edit/resume-admin-request-edit.component';
 import { ResumeAdminChangeStatusComponent } from './components/resume-admin-change-status/resume-admin-change-status.component';
 
 import { ResumeAdminGuard } from '../../resume-guard/admin.guard';
@@ -13,7 +14,8 @@ export const componentDeclarations: any[] = [
     ResumeAdminNewrequestsComponent,
     ResumeAdminAddUsersComponent,
     ResumeAdminRequestDetailsComponent,
-    ResumeAdminChangeStatusComponent
+    ResumeAdminChangeStatusComponent,
+    ResumeAdminRequestEditComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -31,5 +33,8 @@ export const routes: Routes = [
     },
     {
         path: 'request-details/:id', component: ResumeAdminRequestDetailsComponent, canActivate: [ResumeAdminGuard]
+    },
+    {
+        path: 'request-edit/:id', component: ResumeAdminRequestEditComponent, canActivate: [ResumeAdminGuard]
     }
 ];

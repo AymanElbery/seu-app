@@ -57,11 +57,12 @@
         </div>
       </div>
       <div class="col-md-2">
-        <button [disabled]="request.CONTENT_STATUS != 2" (click)="openAddAdminDialog(request)" class="btn btn-primary">{{"new_requests_page.update" | translate}}</button>
+        <button style="margin: 5px;" [disabled]="request.CONTENT_STATUS != 2" (click)="openAddAdminDialog(request)" class="btn btn-primary">{{"new_requests_page.update" | translate}}</button>
+        <button (click)="gotToEdit(request)" class="btn btn-primary">{{"new_requests_page.edit" | translate}}</button>
       </div>
     </div>
 
-    <div *ngIf="request.EDUCATION" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.EDUCATION.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.EDUCATION.text }}</legend>
             <div class="table-responsive" style="margin-top: 10px;">
@@ -83,7 +84,7 @@
         </div>
     </div>
 
-    <div *ngIf="request.EXPERIENCE" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.EXPERIENCE.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.EXPERIENCE.text }}</legend>
             <div class="table-responsive" style="margin-top: 10px;">
@@ -105,7 +106,7 @@
         </div>
     </div>
 
-    <div *ngIf="request.COMMITES" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.COMMITES.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.COMMITES.text }}</legend>
             <div class="table-responsive" style="margin-top: 10px;">
@@ -127,7 +128,7 @@
         </div>
     </div>
 
-    <div *ngIf="request.ORGANIZATIONS" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.ORGANIZATIONS.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.ORGANIZATIONS.text }}</legend>
             <div class="table-responsive" style="margin-top: 10px;">
@@ -149,7 +150,7 @@
         </div>
     </div>
 
-    <div *ngIf="request.BOOKS" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.BOOKS.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.BOOKS.text }}</legend>
             <div class="table-responsive" style="margin-top: 10px;">
@@ -171,7 +172,7 @@
         </div>
     </div>
 
-    <div *ngIf="request.RESEARCHES" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.RESEARCHES.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.RESEARCHES.text }}</legend>
             <div class="table-responsive" style="margin-top: 10px;">
@@ -193,7 +194,7 @@
         </div>
     </div>
 
-    <div *ngIf="request.WORKSHOPS" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.WORKSHOPS.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.WORKSHOPS.text }}</legend>
             <div class="table-responsive" style="margin-top: 10px;">
@@ -215,7 +216,7 @@
         </div>
     </div>
 
-    <div *ngIf="request.SOCIAL_ACTIVITIES" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.SOCIAL_ACTIVITIES.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.SOCIAL_ACTIVITIES.text }}</legend>
             <ul class="list-group">
@@ -224,7 +225,7 @@
         </div>
     </div>
 
-    <div *ngIf="request.RESEARCH_INTERESTS" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.RESEARCH_INTERESTS.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.RESEARCH_INTERESTS.text }}</legend>
             <ul class="list-group">
@@ -233,7 +234,7 @@
         </div>
     </div>
 
-    <div *ngIf="request.OTHER_INTERESTS" class="row" style="margin-top: 20px;">
+    <div *ngIf="request.OTHER_INTERESTS.items.length > 0" class="row" style="margin-top: 20px;">
         <div class="col-md-8 offset-md-2">
             <legend class="text-danger">{{ request.OTHER_INTERESTS.text }}</legend>
             <ul class="list-group">

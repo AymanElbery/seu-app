@@ -37,6 +37,9 @@ export class ResumeAdminRequestDetailsComponent implements OnInit {
     
   }
 
+  gotToEdit(req){
+    this.router.navigate(['../../request-edit/'+ req.REQ_ID], { relativeTo: this.route })
+  }
   openAddAdminDialog(req) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;

@@ -29,6 +29,10 @@
         "req_num": "رقم الطلب",
         "req_date": "تاريخ الطلب",
         "username": "مقدم الطلب",
+        "lang": "لغة الطلب",
+        "edit": "تصحيح",
+        "ar_lang": "اللغة العربية",
+        "en_lang": "اللغة الإنجليزية",
         "content_status": "موافقة المحتوى",
         "manager_status": "موافقة رئيس القسم",
         "gate_status": "النشر على البوابة",
@@ -112,7 +116,8 @@
     },
     "details_page":{
         "not_exist": "لا يوجد بيان",
-        "back": "رجوع إلى الطلبات"
+        "back": "رجوع إلى الطلبات",
+        "just_back": "رجوع"
     },
     "change_status_page":{
         "status": "حالة الطلب",

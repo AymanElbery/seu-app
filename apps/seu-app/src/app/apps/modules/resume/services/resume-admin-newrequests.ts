@@ -28,6 +28,10 @@ export class AdminNewRequestsService extends ResumeRootService {
     getRequest(id) {
         return this.get("admin/request/get_request/"+ id) ;
     }
+    
+    editRequest(data) {
+        return this.post("admin/request/edit_request" , data) ;
+    }
 
     changeStatus(data) {
         return this.post("admin/request/change_status", data) ;
