@@ -25,7 +25,7 @@ export const routes: Routes = [
         path: 'my-requests', component: ResumeInstructorMyrequestsComponent, canActivate: [ResumeInstructorGuard]
     },
     {
-        path: 'new-request-ar', component: ResumeInstructorNewArComponent, canActivate: [ResumeInstructorGuard]
+        path: 'new-request', component: ResumeInstructorNewArComponent, canActivate: [ResumeInstructorGuard]
     },
     {
         path: 'new-request-en', component: ResumeInstructorNewEnComponent, canActivate: [ResumeInstructorGuard]

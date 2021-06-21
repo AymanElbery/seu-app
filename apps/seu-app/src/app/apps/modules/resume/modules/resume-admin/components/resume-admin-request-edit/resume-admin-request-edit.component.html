@@ -69,7 +69,7 @@
       </div>
     </div>
 
-    <div class="row row-form" *ngIf="experienceTitle.items.length > 0"> <!-- Experience -->
+    <div class="row row-form" *ngIf="experienceTitle.items && experienceTitle.items.length > 0"> <!-- Experience -->
       <div class="col-md-12" style="padding-top: 10px;">
         <div class="row row-form">
           <div class="col-md-10 title">
@@ -95,7 +95,7 @@
       </div>
     </div>
 
-    <div class="row row-form" *ngIf="committesTitle.items.length > 0"> <!-- Committees -->
+    <div class="row row-form" *ngIf="committesTitle.items && committesTitle.items.length > 0"> <!-- Committees -->
       <div class="col-md-12" style="padding-top: 10px;">
         <div class="row row-form">
           <div class="col-md-10 title">
@@ -121,7 +121,7 @@
       </div>
     </div>
 
-    <div class="row row-form" *ngIf="organizationsTitle.items.length > 0"> <!-- organizations -->
+    <div class="row row-form" *ngIf="organizationsTitle.items && organizationsTitle.items.length > 0"> <!-- organizations -->
       <div class="col-md-12" style="padding-top: 10px;">
         <div class="row row-form">
           <div class="col-md-10 title">
@@ -152,7 +152,7 @@
         <div class="row row-form">
           <div class="col-md-10 title">
             <h5 style="text-align: center;">{{ "new_request_ar_page.publishing" | translate}}</h5>
-            <div class="form-group" *ngIf="booksTitle.items.length > 0"> 
+            <div class="form-group" *ngIf="booksTitle.items && booksTitle.items.length > 0"> 
               <legend style="font-size: 1.2em;">{{booksTitle.text}} :</legend>
               <div class="row row-form" *ngFor="let item of booksTitle.items; let j = index;">
                 <div class="col-md-6 item">
@@ -171,7 +171,7 @@
             </div>
 
             <hr>
-            <div class="form-group" style="margin-top: 20px;" *ngIf="researchTitle.items.length > 0"> 
+            <div class="form-group" style="margin-top: 20px;" *ngIf="researchTitle.items && researchTitle.items.length > 0"> 
               <legend style="font-size: 1.2em;">{{researchTitle.text}} :</legend>
               <div class="row row-form" *ngFor="let item of researchTitle.items; let j = index;">
                 <div class="col-md-5 item">
@@ -190,7 +190,7 @@
             </div>
 
             <hr>
-            <div class="form-group" style="margin-top: 20px;" *ngIf="workshopsTitle.items.length > 0"> 
+            <div class="form-group" style="margin-top: 20px;" *ngIf="workshopsTitle.items && workshopsTitle.items.length > 0"> 
               <legend style="font-size: 1.2em;">{{workshopsTitle.text}} :</legend>
               <div class="row row-form" *ngFor="let item of workshopsTitle.items; let j = index;">
                 <div class="col-md-5 item">
@@ -212,7 +212,7 @@
       </div>
     </div>
 
-    <div class="row row-form" *ngIf="socialTitle.items.length > 0"> <!-- social -->
+    <div class="row row-form" *ngIf="socialTitle.items && socialTitle.items.length > 0"> <!-- social -->
       <div class="col-md-12" style="padding-top: 10px;">
         <div class="row row-form">
           <div class="col-md-10 title">
@@ -232,7 +232,7 @@
       </div>
     </div>
 
-    <div class="row row-form" *ngIf="scienceInterestTitle.items.length > 0"> <!-- science interests -->
+    <div class="row row-form" *ngIf="scienceInterestTitle.items && scienceInterestTitle.items.length > 0"> <!-- science interests -->
       <div class="col-md-12" style="padding-top: 10px;">
         <div class="row row-form">
           <div class="col-md-10 title">
@@ -252,7 +252,7 @@
       </div>
     </div>
 
-    <div class="row row-form" *ngIf="otherInterestTitle.items.length > 0"> <!-- other interests -->
+    <div class="row row-form" *ngIf="otherInterestTitle.items && otherInterestTitle.items.length > 0"> <!-- other interests -->
       <div class="col-md-12" style="padding-top: 10px;">
         <div class="row row-form">
           <div class="col-md-10 title">

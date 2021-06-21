@@ -33,6 +33,7 @@ export class ResumeInstructorNewArComponent implements OnInit {
   imagePath;
   photo = "" ;
   titles = [];
+  // ar ..
   educationTitle;
   experienceTitle;
   committesTitle;
@@ -43,18 +44,33 @@ export class ResumeInstructorNewArComponent implements OnInit {
   socialTitle;
   scienceInterestTitle;
   otherInterestTitle;
+  // en ..
+  educationTitleEn;
+  experienceTitleEn;
+  committesTitleEn;
+  organizationsTitleEn;
+  booksTitleEn;
+  researchTitleEn;
+  workshopsTitleEn;
+  socialTitleEn;
+  scienceInterestTitleEn;
+  otherInterestTitleEn;
+
   item;
   datePickerConfig: Partial<BsDatepickerConfig>;
   agree = false;
   exist = false;
   eduError = false;
   eduErrorMsg = "";
+  eduErrorMsgEn = "";
   contentReason = "";
   managerReason = "";
   req = {
     'NAME' : "",
+    'NAME_EN' : "",
     'EMAIL' : "",
-    'JOB_TITLE' : ""
+    'JOB_TITLE' : "",
+    'JOB_TITLE_EN' : "",
   };
   constructor(
     private fb: FormBuilder,
@@ -68,13 +84,16 @@ export class ResumeInstructorNewArComponent implements OnInit {
   ) {
     let lang = localStorage.getItem("seu-lang");
     this.eduErrorMsg = (lang == 'ar') ? "يجب إدخال بيانات المؤهل العلمي" : "Education information required";
+    this.eduErrorMsgEn = (lang == 'ar') ? "يجب إدخال بيانات المؤهل العلمي باللغة الإنجليزية" : "Education information in English required";
     const user = this.userService.user;
     this.getIfExist();
     this.addRequestForm = this.fb.group({
       NAME: ["", [Validators.required]],
+      NAME_EN: ["", [Validators.required]],
       EMAIL: ["", [Validators.required]],
       DOB: [""],
       JOB_TITLE: ["", [Validators.required]],
+      JOB_TITLE_EN: ["", [Validators.required]],
     });
 
     this.resetTitles();
@@ -108,16 +127,28 @@ export class ResumeInstructorNewArComponent implements OnInit {
         this.contentReason = response['data'].CONTENT_REASON != null ? response['data'].CONTENT_REASON : "";
         this.managerReason = response['data'].MANAGER_REASON != null ? response['data'].MANAGER_REASON : "";
         this.req = response['data'];
-        this.educationTitle.items = this.req['EDUCATION'].items;
-        this.experienceTitle.items = this.req['EXPERIENCE'].items;
-        this.committesTitle.items = this.req['COMMITES'].items;
-        this.organizationsTitle.items = this.req['ORGANIZATIONS'].items;
-        this.booksTitle.items = this.req['BOOKS'].items;
-        this.researchTitle.items = this.req['RESEARCHES'].items;
-        this.workshopsTitle.items = this.req['WORKSHOPS'].items;
-        this.socialTitle.items = this.req['SOCIAL_ACTIVITIES'].items;
-        this.scienceInterestTitle.items = this.req['RESEARCH_INTERESTS'].items;
-        this.otherInterestTitle.items = this.req['OTHER_INTERESTS'].items;
+        // req ar ..
+        this.educationTitle.items = this.req['REQ_AR']['EDUCATION'].items;
+        this.experienceTitle.items = this.req['REQ_AR']['EXPERIENCE'].items;
+        this.committesTitle.items = this.req['REQ_AR']['COMMITES'].items;
+        this.organizationsTitle.items = this.req['REQ_AR']['ORGANIZATIONS'].items;
+        this.booksTitle.items = this.req['REQ_AR']['BOOKS'].items;
+        this.researchTitle.items = this.req['REQ_AR']['RESEARCHES'].items;
+        this.workshopsTitle.items = this.req['REQ_AR']['WORKSHOPS'].items;
+        this.socialTitle.items = this.req['REQ_AR']['SOCIAL_ACTIVITIES'].items;
+        this.scienceInterestTitle.items = this.req['REQ_AR']['RESEARCH_INTERESTS'].items;
+        this.otherInterestTitle.items = this.req['REQ_AR']['OTHER_INTERESTS'].items;
+        // req en ..
+        this.educationTitleEn.items = this.req['REQ_AR']['EDUCATION'].items;
+        this.experienceTitleEn.items = this.req['REQ_AR']['EXPERIENCE'].items;
+        this.committesTitleEn.items = this.req['REQ_AR']['COMMITES'].items;
+        this.organizationsTitleEn.items = this.req['REQ_AR']['ORGANIZATIONS'].items;
+        this.booksTitleEn.items = this.req['REQ_AR']['BOOKS'].items;
+        this.researchTitleEn.items = this.req['REQ_AR']['RESEARCHES'].items;
+        this.workshopsTitleEn.items = this.req['REQ_AR']['WORKSHOPS'].items;
+        this.socialTitleEn.items = this.req['REQ_AR']['SOCIAL_ACTIVITIES'].items;
+        this.scienceInterestTitleEn.items = this.req['REQ_AR']['RESEARCH_INTERESTS'].items;
+        this.otherInterestTitleEn.items = this.req['REQ_AR']['OTHER_INTERESTS'].items;
       }else{
         this.exist = false;
       }
@@ -134,50 +165,109 @@ export class ResumeInstructorNewArComponent implements OnInit {
 
   resetTitles(){
     let lang = localStorage.getItem("seu-lang");
-    this.educationTitle = new Title();
-    this.educationTitle.text = (lang == 'ar') ? "التحصيل العلمي" : "Education";
-    this.educationTitle.items = [];
 
+    // ar ..
+    this.educationTitle = this.educationTitleEn = new Title();
+    this.educationTitle.text = this.educationTitleEn.text = (lang == 'ar') ? "التحصيل العلمي" : "Education";
+    this.educationTitle.items = this.educationTitleEn.items = [];
+    // en ..
+    this.educationTitleEn = new Title();
+    this.educationTitleEn.text = (lang == 'ar') ? "التحصيل العلمي باللغة الإنجليزية" : "Education in English";
+    this.educationTitleEn.items = [];
+
+    // ar ..
     this.experienceTitle = new Title();
     this.experienceTitle.text = (lang == 'ar') ? "المناصب والوظائف الاكاديمية" : "Experience";
     this.experienceTitle.items = [];
+    // en ..
+    this.experienceTitleEn = new Title();
+    this.experienceTitleEn.text = (lang == 'ar') ? "المناصب والوظائف الأكاديمية باللغة الإنجليزية" : "Experience in English";
+    this.experienceTitleEn.items = [];
 
+    // ar ..
     this.committesTitle = new Title();
     this.committesTitle.text = (lang == 'ar') ? "عضوية المجالس واللجان": "Membership of Boards and Committees";
     this.committesTitle.items = [];
+    // en ..
+    this.committesTitleEn = new Title();
+    this.committesTitleEn.text = (lang == 'ar') ? "عضوية المجالس و اللجان باللغة الإنجليزية": "Membership of Boards and Committees in English";
+    this.committesTitleEn.items = [];
 
+    // ar ..
     this.organizationsTitle = new Title();
     this.organizationsTitle.text = (lang == 'ar') ? "عضوية المنظمات العلمية" : "Membership of Scientific Organizations";
     this.organizationsTitle.items = [];
+    // en ..
+    this.organizationsTitleEn = new Title();
+    this.organizationsTitleEn.text = (lang == 'ar') ? "عضوية المنظمات العلمية باللغة الإنجليزية" : "Membership of Scientific Organizations in English";
+    this.organizationsTitleEn.items = [];
 
+    // ar ..
     this.booksTitle = new Title();
     this.booksTitle.text = (lang == 'ar') ? "الكتب" : "Books";
     this.booksTitle.items = [];
+    // en ..
+    this.booksTitleEn = new Title();
+    this.booksTitleEn.text = (lang == 'ar') ? "الكتب باللغة الإنجليزية" : "Books in English";
+    this.booksTitleEn.items = [];
 
+    // ar ..
     this.researchTitle = new Title();
     this.researchTitle.text = (lang == 'ar') ? "البحوث والدراسات والمنشورات في المجلات العلمية" : "Research and Studies Published in Scientific Journals";
     this.researchTitle.items = [];
+    // en ..
+    this.researchTitleEn = new Title();
+    this.researchTitleEn.text = (lang == 'ar') ? "البحوث والدراسات والمنشورات في المجلات العلمية باللغة الإنجيزية" : "Research and Studies Published in Scientific Journals in English";
+    this.researchTitleEn.items = [];
 
+    // ar ..
     this.workshopsTitle = new Title();
     this.workshopsTitle.text = (lang == 'ar') ? "الدورات التدريبة وورش العمل" : "Training and Workshops";
     this.workshopsTitle.items = [];
+    // en ..
+    this.workshopsTitleEn = new Title();
+    this.workshopsTitleEn.text = (lang == 'ar') ? "الدورات التدريبة وورش العمل باللغة الإنجليزية" : "Training and Workshops in English";
+    this.workshopsTitleEn.items = [];
 
+    // ar ..
     this.socialTitle = new Title();
     this.socialTitle.text = (lang == 'ar') ? "المشاركات الاجتماعية والإعلامية (التلفزيون، والإذاعة، والصحف)" : "Social and Media Activities (TV, Radio, or Press)";
     this.socialTitle.items = [];
+    // en ..
+    this.socialTitleEn = new Title();
+    this.socialTitleEn.text = (lang == 'ar') ? "المشاركات الاجتماعية والإعلامية (التلفزيون، والإذاعة، والصحف) باللغة الإنجليزية" : "Social and Media Activities (TV, Radio, or Press) in English";
+    this.socialTitleEn.items = [];
 
+    // ar ..
     this.scienceInterestTitle = new Title();
     this.scienceInterestTitle.text = (lang == 'ar') ? "الاهتمامات العلمية" : "Research Interests";
     this.scienceInterestTitle.items = [];
+    // en ..
+    this.scienceInterestTitleEn = new Title();
+    this.scienceInterestTitleEn.text = (lang == 'ar') ? "الاهتمامات العلمية باللغة الإنجليزية" : "Research Interests in English";
+    this.scienceInterestTitleEn.items = [];
 
+    // ar ..
     this.otherInterestTitle = new Title();
-    this.otherInterestTitle.text = (lang == 'ar') ? "الاهتمامات الاخرى" : "Other Interest";
+    this.otherInterestTitle.text = (lang == 'ar') ? "الاهتمامات الأخرى" : "Other Interest";
     this.otherInterestTitle.items = [];
-    
+    // en ..
+    this.otherInterestTitleEn = new Title();
+    this.otherInterestTitleEn.text = (lang == 'ar') ? "الاهتمامات الأخرى باللغة الإنجليزية" : "Other Interest in English";
+    this.otherInterestTitleEn.items = [];
   }
 
   keyPressArabic(e){
     if (e.key.match(/^[\u0621-\u064A]+$/) || e.key == " " || e.key == "Backspace") {
+      return true;
+    }else{
+      e.preventDefault();
+      return false;
+    }
+  }
+
+  keyPressEnglish(e){
+    if (e.key.match(/^[a-zA-Z]+$/) || e.key == " " || e.key == "Backspace") {
       return true;
     }else{
       e.preventDefault();
@@ -203,7 +293,7 @@ export class ResumeInstructorNewArComponent implements OnInit {
     if (typeof title.items == "undefined") {
       title.items = [];
     }
-    if(title == this.educationTitle){
+    if(title == this.educationTitle || title == this.educationTitleEn){
       this.eduError = false;
     }
     this.item = new Item();
@@ -226,8 +316,13 @@ export class ResumeInstructorNewArComponent implements OnInit {
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
     }
+    if(this.educationTitleEn.items.length == 0){
+      this.eduError = true;
+      $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      return;
+    }
     this.isLoading = true;
-    let data = {
+    let reqAr = {
       PHOTO_PATH        : this.photo,
       NAME              : this.addRequestForm.value.NAME,
       EMAIL             : this.addRequestForm.value.EMAIL,
@@ -249,8 +344,33 @@ export class ResumeInstructorNewArComponent implements OnInit {
       GATE_STATUS       : 0,
       USER_ID           : this.userService.user.ID
     };
+    let reqEn = {
+      PHOTO_PATH        : this.photo,
+      NAME              : this.addRequestForm.value.NAME_EN,
+      EMAIL             : this.addRequestForm.value.EMAIL,
+      DOB               : this.addRequestForm.value.DOB,
+      JOB_TITLE         : this.addRequestForm.value.JOB_TITLE_EN,
+      EDUCATION         : this.educationTitleEn,
+      EXPERIENCE        : this.experienceTitleEn,
+      COMMITES          : this.committesTitleEn,
+      ORGANIZATIONS     : this.organizationsTitleEn,
+      BOOKS             : this.booksTitleEn,
+      RESEARCHES        : this.researchTitleEn,
+      WORKSHOPS         : this.workshopsTitleEn,
+      SOCIAL_ACTIVITIES : this.socialTitleEn,
+      RESEARCH_INTERESTS: this.scienceInterestTitleEn,
+      OTHER_INTERESTS   : this.otherInterestTitleEn,
+      LANG              : 'en',
+      CONTENT_STATUS    : 0,
+      MANAGER_STATUS    : 0,
+      GATE_STATUS       : 0,
+      USER_ID           : this.userService.user.ID
+    };
     
-
+    let data = {
+      'REQ_AR' : reqAr,
+      'REQ_EN' : reqEn,
+    };
     this.newrequestsService.saveNewRequest(data).subscribe(
       (response: any) => {
         if (response) {

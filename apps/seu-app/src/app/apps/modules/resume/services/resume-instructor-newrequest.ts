@@ -26,7 +26,7 @@ export class InstructorNewrequestsService extends ResumeRootService {
     }
 
     getIfExist(user_id, lang) {
-        return this.get("instructor/request/get_if_exist_request/"+user_id+"/"+lang) ;
+        return this.get("instructor/request/get_if_exist_request/"+user_id) ;
     }
 }
 
