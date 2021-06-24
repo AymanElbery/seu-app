@@ -60,11 +60,18 @@ export class ResumeInstructorNewArComponent implements OnInit {
   datePickerConfig: Partial<BsDatepickerConfig>;
   agree = false;
   exist = false;
-  eduError = false;
+  eduErrorAr = false;
+  excepErrorAr = false;
+  eduErrorEn = false;
+  excepErrorEn = false;
   eduErrorMsg = "";
   eduErrorMsgEn = "";
-  contentReason = "";
-  managerReason = "";
+  excepErrorMsg = "";
+  excepErrorMsgEn = "";
+  contentReasonAr = "";
+  contentReasonEn = "";
+  managerReasonAr = "";
+  managerReasonEn = "";
   req = {
     'NAME' : "",
     'NAME_EN' : "",
@@ -83,8 +90,10 @@ export class ResumeInstructorNewArComponent implements OnInit {
     public dialog: MatDialog
   ) {
     let lang = localStorage.getItem("seu-lang");
-    this.eduErrorMsg = (lang == 'ar') ? "يجب إدخال بيانات المؤهل العلمي" : "Education information required";
+    this.eduErrorMsg = (lang == 'ar') ? "يجب إدخال بيانات المؤهل العلمي باللغة العربية" : "Education information in Arabic required";
     this.eduErrorMsgEn = (lang == 'ar') ? "يجب إدخال بيانات المؤهل العلمي باللغة الإنجليزية" : "Education information in English required";
+    this.excepErrorMsg = (lang == 'ar') ? "يجب إدخال بيانات المناصب والوظائف الأكاديمية باللغة العربية" : "Experience in Arabic required";
+    this.excepErrorMsgEn = (lang == 'ar') ? "يجب إدخال بيانات المناصب والوظائف الأكاديمية باللغة الإنجليزية" : "Experience in English required";
     const user = this.userService.user;
     this.getIfExist();
     this.addRequestForm = this.fb.group({
@@ -124,9 +133,14 @@ export class ResumeInstructorNewArComponent implements OnInit {
     this.newrequestsService.getIfExist(this.userService.user.ID, "ar").subscribe((response) => {
       if (response['data'] != false) {
         this.exist = true;
-        this.contentReason = response['data'].CONTENT_REASON != null ? response['data'].CONTENT_REASON : "";
-        this.managerReason = response['data'].MANAGER_REASON != null ? response['data'].MANAGER_REASON : "";
         this.req = response['data'];
+        // CONTENT_REASON ..
+        this.contentReasonAr = this.req['REQ_AR'].CONTENT_REASON != null ? this.req['REQ_AR'].CONTENT_REASON : "";
+        this.contentReasonEn = this.req['REQ_EN'].CONTENT_REASON != null ? this.req['REQ_EN'].CONTENT_REASON : "";
+        // MANAGER_REASON ..
+        this.managerReasonAr = this.req['REQ_AR'].MANAGER_REASON != null ? this.req['REQ_AR'].MANAGER_REASON : "";
+        this.managerReasonEn = this.req['REQ_EN'].MANAGER_REASON != null ? this.req['REQ_EN'].MANAGER_REASON : "";
+        
         // req ar ..
         this.educationTitle.items = this.req['REQ_AR']['EDUCATION'].items;
         this.experienceTitle.items = this.req['REQ_AR']['EXPERIENCE'].items;
@@ -139,16 +153,16 @@ export class ResumeInstructorNewArComponent implements OnInit {
         this.scienceInterestTitle.items = this.req['REQ_AR']['RESEARCH_INTERESTS'].items;
         this.otherInterestTitle.items = this.req['REQ_AR']['OTHER_INTERESTS'].items;
         // req en ..
-        this.educationTitleEn.items = this.req['REQ_AR']['EDUCATION'].items;
-        this.experienceTitleEn.items = this.req['REQ_AR']['EXPERIENCE'].items;
-        this.committesTitleEn.items = this.req['REQ_AR']['COMMITES'].items;
-        this.organizationsTitleEn.items = this.req['REQ_AR']['ORGANIZATIONS'].items;
-        this.booksTitleEn.items = this.req['REQ_AR']['BOOKS'].items;
-        this.researchTitleEn.items = this.req['REQ_AR']['RESEARCHES'].items;
-        this.workshopsTitleEn.items = this.req['REQ_AR']['WORKSHOPS'].items;
-        this.socialTitleEn.items = this.req['REQ_AR']['SOCIAL_ACTIVITIES'].items;
-        this.scienceInterestTitleEn.items = this.req['REQ_AR']['RESEARCH_INTERESTS'].items;
-        this.otherInterestTitleEn.items = this.req['REQ_AR']['OTHER_INTERESTS'].items;
+        this.educationTitleEn.items = this.req['REQ_EN']['EDUCATION'].items;
+        this.experienceTitleEn.items = this.req['REQ_EN']['EXPERIENCE'].items;
+        this.committesTitleEn.items = this.req['REQ_EN']['COMMITES'].items;
+        this.organizationsTitleEn.items = this.req['REQ_EN']['ORGANIZATIONS'].items;
+        this.booksTitleEn.items = this.req['REQ_EN']['BOOKS'].items;
+        this.researchTitleEn.items = this.req['REQ_EN']['RESEARCHES'].items;
+        this.workshopsTitleEn.items = this.req['REQ_EN']['WORKSHOPS'].items;
+        this.socialTitleEn.items = this.req['REQ_EN']['SOCIAL_ACTIVITIES'].items;
+        this.scienceInterestTitleEn.items = this.req['REQ_EN']['RESEARCH_INTERESTS'].items;
+        this.otherInterestTitleEn.items = this.req['REQ_EN']['OTHER_INTERESTS'].items;
       }else{
         this.exist = false;
       }
@@ -167,9 +181,9 @@ export class ResumeInstructorNewArComponent implements OnInit {
     let lang = localStorage.getItem("seu-lang");
 
     // ar ..
-    this.educationTitle = this.educationTitleEn = new Title();
-    this.educationTitle.text = this.educationTitleEn.text = (lang == 'ar') ? "التحصيل العلمي" : "Education";
-    this.educationTitle.items = this.educationTitleEn.items = [];
+    this.educationTitle  = new Title();
+    this.educationTitle.text =  (lang == 'ar') ? "التحصيل العلمي باللغة العربية" : "Education in Arabic";
+    this.educationTitle.items =  [];
     // en ..
     this.educationTitleEn = new Title();
     this.educationTitleEn.text = (lang == 'ar') ? "التحصيل العلمي باللغة الإنجليزية" : "Education in English";
@@ -177,7 +191,7 @@ export class ResumeInstructorNewArComponent implements OnInit {
 
     // ar ..
     this.experienceTitle = new Title();
-    this.experienceTitle.text = (lang == 'ar') ? "المناصب والوظائف الاكاديمية" : "Experience";
+    this.experienceTitle.text = (lang == 'ar') ? "المناصب والوظائف الأكاديمية باللغة العربية" : "Experience in Arabic";
     this.experienceTitle.items = [];
     // en ..
     this.experienceTitleEn = new Title();
@@ -186,7 +200,7 @@ export class ResumeInstructorNewArComponent implements OnInit {
 
     // ar ..
     this.committesTitle = new Title();
-    this.committesTitle.text = (lang == 'ar') ? "عضوية المجالس واللجان": "Membership of Boards and Committees";
+    this.committesTitle.text = (lang == 'ar') ? "عضوية المجالس واللجان باللغة العربية": "Membership of Boards and Committees in Arabic";
     this.committesTitle.items = [];
     // en ..
     this.committesTitleEn = new Title();
@@ -195,7 +209,7 @@ export class ResumeInstructorNewArComponent implements OnInit {
 
     // ar ..
     this.organizationsTitle = new Title();
-    this.organizationsTitle.text = (lang == 'ar') ? "عضوية المنظمات العلمية" : "Membership of Scientific Organizations";
+    this.organizationsTitle.text = (lang == 'ar') ? "عضوية المنظمات العلمية باللغة العربية" : "Membership of Scientific Organizations in Arabic";
     this.organizationsTitle.items = [];
     // en ..
     this.organizationsTitleEn = new Title();
@@ -208,7 +222,7 @@ export class ResumeInstructorNewArComponent implements OnInit {
     this.booksTitle.items = [];
     // en ..
     this.booksTitleEn = new Title();
-    this.booksTitleEn.text = (lang == 'ar') ? "الكتب باللغة الإنجليزية" : "Books in English";
+    this.booksTitleEn.text = (lang == 'ar') ? "الكتب" : "Books";
     this.booksTitleEn.items = [];
 
     // ar ..
@@ -217,7 +231,7 @@ export class ResumeInstructorNewArComponent implements OnInit {
     this.researchTitle.items = [];
     // en ..
     this.researchTitleEn = new Title();
-    this.researchTitleEn.text = (lang == 'ar') ? "البحوث والدراسات والمنشورات في المجلات العلمية باللغة الإنجيزية" : "Research and Studies Published in Scientific Journals in English";
+    this.researchTitleEn.text = (lang == 'ar') ? "البحوث والدراسات والمنشورات في المجلات العلمية" : "Research and Studies Published in Scientific Journals";
     this.researchTitleEn.items = [];
 
     // ar ..
@@ -226,12 +240,12 @@ export class ResumeInstructorNewArComponent implements OnInit {
     this.workshopsTitle.items = [];
     // en ..
     this.workshopsTitleEn = new Title();
-    this.workshopsTitleEn.text = (lang == 'ar') ? "الدورات التدريبة وورش العمل باللغة الإنجليزية" : "Training and Workshops in English";
+    this.workshopsTitleEn.text = (lang == 'ar') ? "الدورات التدريبة وورش العمل " : "Training and Workshops";
     this.workshopsTitleEn.items = [];
 
     // ar ..
     this.socialTitle = new Title();
-    this.socialTitle.text = (lang == 'ar') ? "المشاركات الاجتماعية والإعلامية (التلفزيون، والإذاعة، والصحف)" : "Social and Media Activities (TV, Radio, or Press)";
+    this.socialTitle.text = (lang == 'ar') ? "المشاركات الاجتماعية والإعلامية (التلفزيون، والإذاعة، والصحف) باللغة العربية" : "Social and Media Activities (TV, Radio, or Press) in Arabic";
     this.socialTitle.items = [];
     // en ..
     this.socialTitleEn = new Title();
@@ -240,7 +254,7 @@ export class ResumeInstructorNewArComponent implements OnInit {
 
     // ar ..
     this.scienceInterestTitle = new Title();
-    this.scienceInterestTitle.text = (lang == 'ar') ? "الاهتمامات العلمية" : "Research Interests";
+    this.scienceInterestTitle.text = (lang == 'ar') ? "الاهتمامات العلمية باللغة العربية" : "Research Interests in Arabic";
     this.scienceInterestTitle.items = [];
     // en ..
     this.scienceInterestTitleEn = new Title();
@@ -249,7 +263,7 @@ export class ResumeInstructorNewArComponent implements OnInit {
 
     // ar ..
     this.otherInterestTitle = new Title();
-    this.otherInterestTitle.text = (lang == 'ar') ? "الاهتمامات الأخرى" : "Other Interest";
+    this.otherInterestTitle.text = (lang == 'ar') ? "الاهتمامات الأخرى باللغة العربية" : "Other Interest in Arabic";
     this.otherInterestTitle.items = [];
     // en ..
     this.otherInterestTitleEn = new Title();
@@ -294,7 +308,12 @@ export class ResumeInstructorNewArComponent implements OnInit {
       title.items = [];
     }
     if(title == this.educationTitle || title == this.educationTitleEn){
-      this.eduError = false;
+      this.eduErrorAr = false;
+      this.eduErrorEn = false;
+    }
+    if(title == this.experienceTitle || title == this.experienceTitleEn){
+      this.excepErrorAr = false;
+      this.excepErrorEn = false;
     }
     this.item = new Item();
     this.item.text = "";
@@ -311,13 +330,24 @@ export class ResumeInstructorNewArComponent implements OnInit {
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
     }
-    if(this.educationTitle.items.length == 0){
-      this.eduError = true;
+    
+    if(typeof this.educationTitle.items == "undefined" || this.educationTitle.items.length == 0){
+      this.eduErrorAr = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
     }
-    if(this.educationTitleEn.items.length == 0){
-      this.eduError = true;
+    if(typeof this.educationTitleEn.items == "undefined" || this.educationTitleEn.items.length == 0){
+      this.eduErrorEn = true;
+      $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      return;
+    }
+    if(typeof this.experienceTitle.items == "undefined" || this.experienceTitle.items.length == 0){
+      this.excepErrorAr = true;
+      $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+      return;
+    }
+    if(typeof this.experienceTitleEn.items == "undefined" || this.experienceTitleEn.items.length == 0){
+      this.excepErrorEn = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
     }

@@ -1,7 +1,7 @@
 <app-service-header title="{{'resume' | translate}}" subtitle="{{'menu.new_request_ar' | translate}}">
 </app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
-<section *ngIf="contentReason != ''" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+<section *ngIf="contentReasonAr != '' || contentReasonEn != ''" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
   <div class="row">
     <div class="col-md-12">
       <div class="alert alert-warning text-center">
@@ -11,8 +11,8 @@
   </div>
 </section>
 <section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
-  <form [formGroup]="addRequestForm" (ngSubmit)="onSubmit(eduElement)">
-    <div class="row" #eduElement>
+  <form #eduElement [formGroup]="addRequestForm" (ngSubmit)="onSubmit(eduElement)">
+    <div class="row">
       <div class="col-md-2">
         <div class="profile">
           <img *ngIf="profile == 'notExist' && !imagePath" src="assets/images/profile.png">
@@ -32,40 +32,65 @@
             <div class="form-group">
               <label for="name">{{ "new_request_ar_page.name" | translate}} <span class="text-danger">*</span></label>
               <input formControlName="NAME" [(ngModel)]="req.NAME" (keypress)="keyPressArabic($event)" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.NAME.invalid && (addRequestForm.controls.NAME.dirty || addRequestForm.controls.NAME.touched)">
+                <div *ngIf="addRequestForm.controls.NAME.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="name">{{ "new_request_ar_page.email" | translate}} <span class="text-danger">*</span></label>
-              <input formControlName="EMAIL" [(ngModel)]="req.EMAIL" class="form-control" type="text">
-            </div>
-          </div>
-        </div>
-        <div class="row" style="margin-top: 10px;">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="name">{{ "new_request_ar_page.dob" | translate}}</label>
-              <input type="text" formControlName="DOB" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="name">{{ "new_request_ar_page.job" | translate}} <span class="text-danger">*</span></label>
-              <input formControlName="JOB_TITLE" [(ngModel)]="req.JOB_TITLE" (keypress)="keyPressArabic($event)" class="form-control" type="text">
-            </div>
-          </div>
-        </div>
-        <div class="row" style="margin-top: 10px;">
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_en_page.name" | translate}} <span class="text-danger">*</span></label>
               <input formControlName="NAME_EN" [(ngModel)]="req.NAME_EN" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.NAME_EN.invalid && (addRequestForm.controls.NAME_EN.dirty || addRequestForm.controls.NAME_EN.touched)">
+                <div *ngIf="addRequestForm.controls.NAME_EN.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">{{ "new_request_ar_page.job" | translate}} <span class="text-danger">*</span></label>
+              <input formControlName="JOB_TITLE" [(ngModel)]="req.JOB_TITLE" (keypress)="keyPressArabic($event)" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.JOB_TITLE.invalid && (addRequestForm.controls.JOB_TITLE.dirty || addRequestForm.controls.JOB_TITLE.touched)">
+                <div *ngIf="addRequestForm.controls.JOB_TITLE.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_en_page.job" | translate}} <span class="text-danger">*</span></label>
               <input formControlName="JOB_TITLE_EN" [(ngModel)]="req.JOB_TITLE_EN" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.JOB_TITLE_EN.invalid && (addRequestForm.controls.JOB_TITLE_EN.dirty || addRequestForm.controls.JOB_TITLE_EN.touched)">
+                <div *ngIf="addRequestForm.controls.JOB_TITLE_EN.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">{{ "new_request_ar_page.email" | translate}} <span class="text-danger">*</span></label>
+              <input formControlName="EMAIL" [(ngModel)]="req.EMAIL" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.EMAIL.invalid && (addRequestForm.controls.EMAIL.dirty || addRequestForm.controls.EMAIL.touched)">
+                <div *ngIf="addRequestForm.controls.EMAIL.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">{{ "new_request_ar_page.dob" | translate}}</label>
+              <input type="text" formControlName="DOB" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
             </div>
           </div>
         </div>
@@ -74,7 +99,7 @@
 
     <div class="row row-form"> <!-- Education -->
       <div class="col-md-12" style="padding-top: 10px;">
-        <div class="row" *ngIf="eduError">
+        <div class="row" *ngIf="eduErrorAr">
           <div class="col-md-10">
             <div class="alert alert-danger text-center">
               <strong>{{ eduErrorMsg }}</strong>
@@ -114,7 +139,7 @@
     </div>
     <div class="row row-form"> <!-- Education EN -->
       <div class="col-md-12" style="padding-top: 10px;">
-        <div class="row" *ngIf="eduError">
+        <div class="row" *ngIf="eduErrorEn">
           <div class="col-md-10">
             <div class="alert alert-danger text-center">
               <strong>{{ eduErrorMsgEn }}</strong>
@@ -156,6 +181,13 @@
 
     <div class="row row-form"> <!-- Experience -->
       <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row" *ngIf="excepErrorAr">
+          <div class="col-md-10">
+            <div class="alert alert-danger text-center">
+              <strong>{{ eduErrorMsgAr }}</strong>
+            </div>
+          </div>
+        </div>
         <div class="row row-form">
           <div class="col-md-10 title">
             <div class="form-group"> 
@@ -189,6 +221,13 @@
     </div>
     <div class="row row-form"> <!-- Experience EN -->
       <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row" *ngIf="excepErrorEn">
+          <div class="col-md-10">
+            <div class="alert alert-danger text-center">
+              <strong>{{ eduErrorMsgEn }}</strong>
+            </div>
+          </div>
+        </div>
         <div class="row row-form">
           <div class="col-md-10 title">
             <div class="form-group"> 
