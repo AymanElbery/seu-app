@@ -331,22 +331,22 @@ export class ResumeInstructorNewArComponent implements OnInit {
       return;
     }
     
-    if(typeof this.educationTitle.items == "undefined" || this.educationTitle.items.length == 0){
+    if(typeof this.educationTitle.items == "undefined" || this.educationTitle.items.length == 0 || this.educationTitle.items[0].text == ""){
       this.eduErrorAr = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
     }
-    if(typeof this.educationTitleEn.items == "undefined" || this.educationTitleEn.items.length == 0){
+    if(typeof this.educationTitleEn.items == "undefined" || this.educationTitleEn.items.length == 0 || this.educationTitleEn.items[0].text == ""){
       this.eduErrorEn = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
     }
-    if(typeof this.experienceTitle.items == "undefined" || this.experienceTitle.items.length == 0){
+    if(typeof this.experienceTitle.items == "undefined" || this.experienceTitle.items.length == 0 || this.experienceTitle.items[0].text == ""){
       this.excepErrorAr = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
     }
-    if(typeof this.experienceTitleEn.items == "undefined" || this.experienceTitleEn.items.length == 0){
+    if(typeof this.experienceTitleEn.items == "undefined" || this.experienceTitleEn.items.length == 0 || this.experienceTitleEn.items[0].text == ""){
       this.excepErrorEn = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
