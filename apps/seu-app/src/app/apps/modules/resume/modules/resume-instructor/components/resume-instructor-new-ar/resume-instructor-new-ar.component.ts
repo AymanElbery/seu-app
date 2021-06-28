@@ -330,26 +330,34 @@ export class ResumeInstructorNewArComponent implements OnInit {
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
     }
-    
-    if(typeof this.educationTitle.items == "undefined" || this.educationTitle.items.length == 0 || this.educationTitle.items[0].text == ""){
+    if(typeof this.educationTitle.items == "undefined" || this.educationTitle.items.length == 0 || typeof this.educationTitle.items[0].year == "undefined"){
       this.eduErrorAr = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
+    }else{
+      this.eduErrorAr = false;
     }
-    if(typeof this.educationTitleEn.items == "undefined" || this.educationTitleEn.items.length == 0 || this.educationTitleEn.items[0].text == ""){
+    if(typeof this.educationTitleEn.items == "undefined" || this.educationTitleEn.items.length == 0 || typeof this.educationTitleEn.items[0].year == "undefined"){
+      console.log(this.educationTitle.items);
       this.eduErrorEn = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
+    }else{
+      this.eduErrorEn = false;
     }
-    if(typeof this.experienceTitle.items == "undefined" || this.experienceTitle.items.length == 0 || this.experienceTitle.items[0].text == ""){
+    if(typeof this.experienceTitle.items == "undefined" || this.experienceTitle.items.length == 0 || typeof this.experienceTitle.items[0].year == "undefined"){
       this.excepErrorAr = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
+    }else{
+      this.excepErrorAr = false;
     }
-    if(typeof this.experienceTitleEn.items == "undefined" || this.experienceTitleEn.items.length == 0 || this.experienceTitleEn.items[0].text == ""){
+    if(typeof this.experienceTitleEn.items == "undefined" || this.experienceTitleEn.items.length == 0 || typeof this.experienceTitleEn.items[0].year == "undefined"){
       this.excepErrorEn = true;
       $eduElement.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
       return;
+    }else{
+      this.excepErrorEn = false;
     }
     this.isLoading = true;
     let reqAr = {
