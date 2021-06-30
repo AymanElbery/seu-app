@@ -8,7 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ResumeInstructorReasonsComponent } from '../resume-instructor-reasons/resume-instructor-reasons.component';
-
 export class Title{
   text: any;
   items: [];
@@ -282,6 +281,14 @@ export class ResumeInstructorNewArComponent implements OnInit {
 
   keyPressEnglish(e){
     if (e.key.match(/^[a-zA-Z]+$/) || e.key == " " || e.key == "Backspace") {
+      return true;
+    }else{
+      e.preventDefault();
+      return false;
+    }
+  }
+  keyPressNumber(e){
+    if (e.key.match(/^[0-9]+$/) || e.key == "Backspace") {
       return true;
     }else{
       e.preventDefault();
