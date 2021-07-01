@@ -16,9 +16,9 @@ export class ContactInfoComponent implements OnInit {
   loading = true;
   currLang;
   constructor(private http: HttpClient, private dom: DomSanitizer, private translate: TranslateService) { 
-    setTimeout(() => {
-      this.down();
-    }, 1500);
+    // setTimeout(() => {
+    //   this.down();
+    // }, 1500);
   }
 
   ngOnInit() {
@@ -28,11 +28,11 @@ export class ContactInfoComponent implements OnInit {
       this.getBrannhes();
       this.currLang = this.translate.currentLang;
     });
-    // if (localStorage.getItem("contactform") == "1") {
-    //   setTimeout(() => {
-    //     this.down();
-    //   }, 1500);
-    // }
+    if (localStorage.getItem("contactform") == "1") {
+      setTimeout(() => {
+        this.down();
+      }, 1500);
+    }
   }
   down() {
     document.getElementById("contactfromcontainer").scrollIntoView(); //contact-page-form
