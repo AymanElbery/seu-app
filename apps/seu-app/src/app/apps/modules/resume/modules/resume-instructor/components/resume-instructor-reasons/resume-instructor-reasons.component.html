@@ -1,10 +1,8 @@
 <div class="row" style="padding: 20px;">
   <div class="col-md-12">
-    <h4 class="text-center" *ngIf="data['REQ_AR'].CONTENT_REASON != null || data['REQ_EN'].CONTENT_REASON != null">{{ "new_request_ar_page.content_reason_title" | translate}}</h4>
-    <h4 class="text-center" *ngIf="data['REQ_AR'].MANAGER_REASON != null || data['REQ_EN'].MANAGER_REASON != null">{{ "new_request_ar_page.manager_reason_title" | translate}}</h4>
-    <p class="text-center" *ngIf="data['REQ_AR'].CONTENT_REASON != null" style="padding: 20px; border: solid 1px #EDEDED">{{ data['REQ_AR'].CONTENT_REASON }}</p>
-    <p class="text-center" *ngIf="data['REQ_EN'].CONTENT_REASON != null" style="padding: 20px; border: solid 1px #EDEDED">{{ data['REQ_EN'].CONTENT_REASON }}</p>
-    <p class="text-center" *ngIf="data['REQ_AR'].MANAGER_REASON != null" style="padding: 20px; border: solid 1px #EDEDED">{{ data['REQ_AR'].MANAGER_REASON }}</p>
-    <p class="text-center" *ngIf="data['REQ_EN'].MANAGER_REASON != null" style="padding: 20px; border: solid 1px #EDEDED">{{ data['REQ_EN'].MANAGER_REASON }}</p>
+    <h4 class="text-center" *ngIf="data.CONTENT_REASON != null || data.CONTENT_REASON != null">{{ "new_request_ar_page.content_reason_title" | translate}}</h4>
+    <h4 class="text-center" *ngIf="data.MANAGER_REASON != null || data.MANAGER_REASON != null">{{ "new_request_ar_page.manager_reason_title" | translate}}</h4>
+    <p class="text-center" *ngIf="data.CONTENT_REASON != null" style="padding: 20px; border: solid 1px #EDEDED">{{ data.CONTENT_REASON }}</p>
+    <p class="text-center" *ngIf="data.MANAGER_REASON != null" style="padding: 20px; border: solid 1px #EDEDED">{{ data.MANAGER_REASON }}</p>
   </div>
 </div>

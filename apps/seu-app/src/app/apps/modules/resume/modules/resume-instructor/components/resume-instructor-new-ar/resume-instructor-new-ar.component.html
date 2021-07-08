@@ -31,7 +31,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_ar_page.name" | translate}} <span class="text-danger">*</span></label>
-              <input formControlName="NAME" [(ngModel)]="req.NAME" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" class="form-control" type="text">
+              <input formControlName="NAME" [(ngModel)]="req.NAME" (keypress)="keyPressArabic($event)" class="form-control" type="text">
               <div *ngIf="addRequestForm.controls.NAME.invalid && (addRequestForm.controls.NAME.dirty || addRequestForm.controls.NAME.touched)">
                 <div *ngIf="addRequestForm.controls.NAME.errors.required">
                     <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
@@ -42,7 +42,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_en_page.name" | translate}} <span class="text-danger">*</span></label>
-              <input formControlName="NAME_EN" [(ngModel)]="req.NAME_EN" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
+              <input formControlName="NAME_EN" [(ngModel)]="req.NAME_EN" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
               <div *ngIf="addRequestForm.controls.NAME_EN.invalid && (addRequestForm.controls.NAME_EN.dirty || addRequestForm.controls.NAME_EN.touched)">
                 <div *ngIf="addRequestForm.controls.NAME_EN.errors.required">
                     <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
@@ -55,7 +55,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_ar_page.job" | translate}} <span class="text-danger">*</span></label>
-              <input formControlName="JOB_TITLE" [(ngModel)]="req.JOB_TITLE" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" class="form-control" type="text">
+              <input formControlName="JOB_TITLE" [(ngModel)]="req.JOB_TITLE" (keypress)="keyPressArabic($event)" class="form-control" type="text">
               <div *ngIf="addRequestForm.controls.JOB_TITLE.invalid && (addRequestForm.controls.JOB_TITLE.dirty || addRequestForm.controls.JOB_TITLE.touched)">
                 <div *ngIf="addRequestForm.controls.JOB_TITLE.errors.required">
                     <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
@@ -66,7 +66,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="name">{{ "new_request_en_page.job" | translate}} <span class="text-danger">*</span></label>
-              <input formControlName="JOB_TITLE_EN" [(ngModel)]="req.JOB_TITLE_EN" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
+              <input formControlName="JOB_TITLE_EN" [(ngModel)]="req.JOB_TITLE_EN" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
               <div *ngIf="addRequestForm.controls.JOB_TITLE_EN.invalid && (addRequestForm.controls.JOB_TITLE_EN.dirty || addRequestForm.controls.JOB_TITLE_EN.touched)">
                 <div *ngIf="addRequestForm.controls.JOB_TITLE_EN.errors.required">
                     <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
@@ -114,13 +114,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.edu_degree" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.degree" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.degree" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -154,13 +154,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_degree" | translate}}</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.degree" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.degree" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -196,13 +196,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.position" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.position" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.position" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -236,13 +236,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.position" | translate}}</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.position" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.position" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -271,13 +271,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.commit" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.commit" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.commit" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -304,13 +304,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.commit" | translate}}</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.commit" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.commit" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -339,13 +339,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.organization" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.org" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.org" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -372,13 +372,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.organization" | translate}}</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.org" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.org" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -408,13 +408,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.book" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.book" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.book" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -435,13 +435,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.research" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.research" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.research" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -462,13 +462,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_ar_page.workshop" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.workshop" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.workshop" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -496,13 +496,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.book" | translate}}</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.book" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.book" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -523,13 +523,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}"  class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}"  class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.research" | translate}}</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.research" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.research" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -550,13 +550,13 @@
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.edu_general" | translate}}</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-5 item">
                   <div class="form-group">
                     <label> {{ "new_request_en_page.workshop" | translate}}</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.workshop" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.workshop" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -585,7 +585,7 @@
                 <div class="col-md-10 item">
                   <div class="form-group">
                     <label>{{j+1}}.</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -612,7 +612,7 @@
                 <div class="col-md-10 item">
                   <div class="form-group">
                     <label>{{j+1}}.</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -641,7 +641,7 @@
                 <div class="col-md-10 item">
                   <div class="form-group">
                     <label>{{j+1}}.</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -668,7 +668,7 @@
                 <div class="col-md-10 item">
                   <div class="form-group">
                     <label>{{j+1}}.</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -697,7 +697,7 @@
                 <div class="col-md-10 item">
                   <div class="form-group">
                     <label>{{j+1}}.</label>
-                    <input name="item{{j}}" class="form-control" (paste)="$event.preventDefault()" (keypress)="keyPressArabic($event)" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
@@ -724,7 +724,7 @@
                 <div class="col-md-10 item">
                   <div class="form-group">
                     <label>{{j+1}}.</label>
-                    <input name="item{{j}}" (paste)="$event.preventDefault()" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
                   </div>
                 </div>
                 <div class="col-md-1">
