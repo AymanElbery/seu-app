@@ -20,15 +20,17 @@ export interface DialogData {
 export class ResumeInstructorReasonsComponent implements OnInit {
 
   isLoading = false;
-
+  url;
   constructor(
   private fb: FormBuilder, 
   private requestsService: AdminNewRequestsService,
   private router: Router,
+  private route: ActivatedRoute,
   public dialogRef: MatDialogRef<ResumeInstructorReasonsComponent>,
   @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {
-    
+    this.url = this.router.url;
+    console.log(this.url);
   }
 
   ngOnInit() {

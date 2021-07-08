@@ -133,6 +133,8 @@ export class ResumeInstructorNewArComponent implements OnInit {
       if (response['data'] != false) {
         this.exist = true;
         this.req = response['data'];
+        console.log(this.req['REQ_EN']);
+        console.log(this.req['REQ_AR']);
         // CONTENT_REASON ..
         this.contentReasonAr = this.req['REQ_AR'].CONTENT_REASON != null ? this.req['REQ_AR'].CONTENT_REASON : "";
         this.contentReasonEn = this.req['REQ_EN'].CONTENT_REASON != null ? this.req['REQ_EN'].CONTENT_REASON : "";
