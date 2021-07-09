@@ -7,11 +7,11 @@ const routes: Routes = [
     path: '',
     component: AppsLandingComponent,
   },
-  {
-    path: 'admission-ug',
-    loadChildren:
-      './modules/admission-ug/admission-ug.module#AdmissionUGModule',
-  },
+  // {
+  //   path: 'admission-ug',
+  //   loadChildren:
+  //     './modules/admission-ug/admission-ug.module#AdmissionUGModule',
+  // },
   // {
   //   path: 'admission-gr',
   //   loadChildren:
