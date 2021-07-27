@@ -22,7 +22,7 @@ export class TuitionFeesStatComponent implements OnInit, OnDestroy {
     private academicService: TuitionFeesService,
     private router: Router
   ) { 
-    //this.router.navigate(['/statements']);
+    this.router.navigate(['/statements']);
   }
   ngOnInit() {
     this.getServiceRequest();
