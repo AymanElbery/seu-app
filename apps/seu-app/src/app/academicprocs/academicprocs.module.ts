@@ -10,6 +10,7 @@ import { ExceptSemesterComponent } from './except-semester/except-semester.compo
 import { ChangeRequestComponent } from './change-request/change-request.component';
 import { CancelCourseComponent } from './cancel-course/cancel-course.component';
 import { WithdrawFromUnivComponent } from './withdraw-from-univ/withdraw-from-univ.component';
+import { ChangeScheduleComponent } from './change-schedule-request/change-schedule-request.component';
 import { WithdrawFromUnivService } from './services/withdraw-from-univ.service';
 import { FormsModule } from '@angular/forms';
 import { AddRequestComponent } from './withdraw-from-univ/diag/add-request/add-request.component';
@@ -38,6 +39,7 @@ import { ChangeMajorComponent } from './change-major/change-major.component';
 import { ChangeMajorService } from './services/change-major.service';
 import { AddChangeMajorComponent } from './change-major/diag/add-change-major/add-change-major.component';
 import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component';
+import { AddChangeScheduleRequestComponent } from './change-schedule-request/dialogue/add-change-schedule-request.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
 import { ObjectExamComponent } from './object-exam/object-exam.component';
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
@@ -75,6 +77,7 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     ChangeRequestComponent,
     CancelCourseComponent,
     WithdrawFromUnivComponent,
+    ChangeScheduleComponent,
     AddRequestComponent,
     AddPostponeComponent,
     AddSummerWithdrawComponent,
@@ -87,6 +90,7 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     AddReEnrollComponent,
     ChangeMajorComponent,
     AddChangeMajorComponent,
+    AddChangeScheduleRequestComponent,
     AddRequestChangeComponent,
     LecturesExecusesComponent,
     ObjectExamComponent,
@@ -117,6 +121,7 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     AddReEnrollComponent,
     AddChangeMajorComponent,
     AddRequestChangeComponent,
+    AddChangeScheduleRequestComponent,
     AddLecturesExecusesComponent,
     AddExamObjectComponent,
     AddUnivCardComponent,

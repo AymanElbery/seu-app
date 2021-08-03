@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WithdrawFromUnivComponent } from './withdraw-from-univ/withdraw-from-univ.component';
 import { PostponeRequestComponent } from './postpone-request/postpone-request.component';
+import { ChangeScheduleComponent } from './change-schedule-request/change-schedule-request.component';
 import { SummerWithdrawComponent } from './summer-withdraw/summer-withdraw.component';
 import { CancelCourseComponent } from './cancel-course/cancel-course.component';
 import { ExecuseRequestComponent } from './execuse-request/execuse-request.component';
@@ -22,6 +23,7 @@ const routes: Routes = [{ path: '', component: WithdrawFromUnivComponent },
   path: '',
   children: [
     { path: 'withdrawuniv', component: WithdrawFromUnivComponent },
+    { path: 'change-schedule', component: ChangeScheduleComponent },
     { path: 'postpone', component: PostponeRequestComponent },
     { path: 'summer', component: SummerWithdrawComponent },
     { path: 'cancelcourse', component: CancelCourseComponent },

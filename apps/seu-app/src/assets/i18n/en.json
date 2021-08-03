@@ -167,6 +167,7 @@
         "graduat_address": "Graduate address ",
         "procedures": "Academic procedure ",
         "withdrawuniv": "Withdraw from university  ",
+        "change_schedule": "Change study schedule",
         "execuse": " Term Execuse",
         "summer": "  withdraw  from summer course",
         "reenrol": "re enroll ",
@@ -709,7 +710,7 @@
             "title": "Withdrawal From University Request",
             "desc": "Withdrawal From University Request",
             "term": "Term",
-            "state_print": "Prinrt State",
+            "state_print": "Print State",
             "branch": "Branch",
             "choose_branch": "Choose The Nearest Branch",
             "phone_no": "Phone Number",
@@ -718,6 +719,13 @@
             "alert_content": "Student can cancel this request only during 48 hours starting from applying to the request.I Want to  Withdraw My File utterlyand I have no right to ask for re-enrollment as well as asking for fees that i paid for  univerity in case of my withdrawal date has exceeded the univerity one",
             "mobile": "Mobile Number:(Ex:05xxxxxxxx)",
             "personal_mail": "E-mail Address(Non Academic)"
+        },
+        "change_schedule": {
+            "title": "Change study schedule ",
+            "desc": "Change study schedule ",
+            "term": "Term",
+            "state_print": "Print"
+
         },
         "master_cancel_course": {
             "title": "Cancel Course",
