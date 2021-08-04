@@ -33,7 +33,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     rtl: true
   };
   resumeAdmins;
+  traficUsers;
   isResumeUser = false;
+  isTraficUser = false;
   // CarouselOptions = { items: 3, dots: true, nav: true };
 
   hasNoRole = false;
@@ -47,6 +49,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private sanitized: DomSanitizer
   ) {
     this.loadResumeAdminUsers();
+    this.loadTraficUsers();
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -223,6 +226,24 @@ export class HomeComponent implements OnInit, OnDestroy {
           for (let i = 0; i < this.resumeAdmins.length; i++) {
             if (this.resumeAdmins[i].WORK_EMAIL == this.userService.userData.email) {
               this.isResumeUser = true;
+            }
+          }
+        }
+      });
+    }
+  }
+
+  private loadTraficUsers(){
+    if (this.userService.userData.activeRole == "") {
+      this.isTraficUser = true;
+    } else{
+      this.userService.getTraficUsers().subscribe((res: any) => {
+        if (res) {
+          this.traficUsers = res.data;
+          for (let i = 0; i < this.traficUsers.length; i++) {
+            let email = this.traficUsers[i].U_EMAIL + "@seu.edu.sa";
+            if (email == this.userService.userData.email) {
+              this.isTraficUser = true;
             }
           }
         }

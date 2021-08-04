@@ -38,11 +38,12 @@
             </td>
             <td>
               <span *ngIf="request.APPROVAL == 2" class="badge badge-info">{{"services.change_schedule.pendding"|translate}}</span>
-              <span *ngIf="request.APPROVAL == 1" class="badge badge-info">{{"services.change_schedule.confirm"|translate}}</span>
-              <span *ngIf="request.APPROVAL == 0" class="badge badge-info">{{"services.change_schedule.reject"|translate}}</span>
+              <span *ngIf="request.APPROVAL == 1" class="badge badge-success">{{"services.change_schedule.confirm"|translate}}</span>
+              <span *ngIf="request.APPROVAL == 0" class="badge badge-danger">{{"services.change_schedule.reject"|translate}}</span>
             </td>
             <td>
-              <button class="btn btn-danger" (click)="cancel(request.REQ_PK)">{{"services.change_schedule.cancel"|translate}}</button>
+              <button *ngIf="request.APPROVAL == 2" class="btn btn-danger" (click)="cancel(request.REQ_PK)">{{"services.change_schedule.cancel"|translate}}</button>
+              <strong *ngIf="request.APPROVAL != 2" class="text-danger" >{{"services.change_schedule.can_not_cancel"|translate}}</strong>
             </td>
           </tr>
         </tbody>

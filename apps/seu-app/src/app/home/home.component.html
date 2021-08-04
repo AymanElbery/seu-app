@@ -223,12 +223,6 @@
                                 *ngIf="userService.userData && userService.userData.activeRole=='Instructor'"
                                 style="padding: 0 15px">
                                 <div class="row">
-                                    <!-- <div class="col-md-4 new-ser">
-                    <p><a target="_blank" href="https://wafi.seu.edu.sa/seu/casLogin">
-                        <img src="assets/images/wafi.png">
-                        {{"menu.ALWAFI" | translate}} </a>
-                    </p>
-                  </div> -->
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
@@ -442,7 +436,7 @@
 
                                 </div>
                             </div>
-
+                            
                             <div class="card-body" *ngIf="hasNoRole" style="padding: 0 15px">
                                 <div class="row">
                                     <div class="col-md-4 new-ser">
@@ -505,6 +499,13 @@
                                         <p>
                                             <a target="_blank" href="https://dashboard.seu.edu.sa/">
                                                 <img src="assets/images/dashboard.png"> {{"menu.dashboard" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 new-ser" *ngIf="isTraficUser">
+                                        <p>
+                                            <a target="_blanck" href="https://seuapps.seu.edu.sa/trafficManagement/Homepage">
+                                                <img src="assets/images/trafiic.png"> {{"menu.trafic" | translate}}
                                             </a>
                                         </p>
                                     </div>
