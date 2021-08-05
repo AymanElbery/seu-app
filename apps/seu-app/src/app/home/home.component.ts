@@ -48,8 +48,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private translate: TranslateService,
     private sanitized: DomSanitizer
   ) {
-    this.loadResumeAdminUsers();
-    this.loadTraficUsers();
+    
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -217,7 +216,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadResumeAdminUsers(){
-    if (this.userService.userData.activeRole == 'Instructor' || this.userService.userData.activeRole == "") {
+    if (this.userService.userData.activeRole == 'Instructor') {
       this.isResumeUser = true;
     } else {
       this.userService.getResumeAdminUsers().subscribe((res: any) => {
@@ -234,21 +233,17 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadTraficUsers(){
-    if (this.userService.userData.activeRole == "") {
-      this.isTraficUser = true;
-    } else{
-      this.userService.getTraficUsers().subscribe((res: any) => {
-        if (res) {
-          this.traficUsers = res.data;
-          for (let i = 0; i < this.traficUsers.length; i++) {
-            let email = this.traficUsers[i].U_EMAIL + "@seu.edu.sa";
-            if (email == this.userService.userData.email) {
-              this.isTraficUser = true;
-            }
+    this.userService.getTraficUsers().subscribe((res: any) => {
+      if (res) {
+        this.traficUsers = res.data;
+        for (let i = 0; i < this.traficUsers.length; i++) {
+          let email = this.traficUsers[i].U_EMAIL + "@seu.edu.sa";
+          if (email == this.userService.userData.email) {
+            this.isTraficUser = true;
           }
         }
-      });
-    }
+      }
+    });
   }
 
   private loadEmployeesEvents() {
@@ -351,6 +346,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   studentType = '';
   LoadData() {
+    this.loadResumeAdminUsers();
+    this.loadTraficUsers();
     this.studentType = this.userService.userData.level;
     this.LoadNews()
       .then(() => this.LoadAds())
