@@ -172,13 +172,7 @@
                                             </a>
                                         </p>
                                     </div>
-                                    <div class="col-md-4 new-ser" *ngIf="isResumeUser">
-                                        <p>
-                                            <a [routerLink]="['/apps/resume/user']">
-                                                <img src="assets/images/resume.png"> {{"menu.resume" | translate}}
-                                            </a>
-                                        </p>
-                                    </div>
+                                    
 
                                     <div class="col-md-4 new-ser" *ngIf="userService.userData['bbreports']">
                                         <p>
@@ -202,6 +196,13 @@
                                             <a href="https://guest.seu.edu.sa/sso_auth" target="_blank">
                                                 <img src="assets/images/black.png"> {{"menu.guest" |
                                                 translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 new-ser" *ngIf="isResumeUser">
+                                        <p>
+                                            <a [routerLink]="['/apps/resume/user']">
+                                                <img src="assets/images/resume.png"> {{"menu.resume" | translate}}
                                             </a>
                                         </p>
                                     </div>
@@ -391,7 +392,7 @@
                                             </a>
                                         </p>
                                     </div>
-                                    <div class="col-md-4 new-ser" *ngIf="isResumeUser">
+                                    <div class="col-md-4 new-ser">
                                         <p>
                                             <a [routerLink]="['/apps/resume/user']">
                                                 <img src="assets/images/resume.png"> {{"menu.resume" | translate}}

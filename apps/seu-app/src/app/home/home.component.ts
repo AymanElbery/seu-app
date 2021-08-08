@@ -216,20 +216,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadResumeAdminUsers(){
-    if (this.userService.userData.activeRole == 'Instructor') {
-      this.isResumeUser = true;
-    } else {
-      this.userService.getResumeAdminUsers().subscribe((res: any) => {
-        if (res) {
-          this.resumeAdmins = res.data;
-          for (let i = 0; i < this.resumeAdmins.length; i++) {
-            if (this.resumeAdmins[i].WORK_EMAIL == this.userService.userData.email) {
-              this.isResumeUser = true;
-            }
+    this.userService.getResumeAdminUsers().subscribe((res: any) => {
+      if (res) {
+        this.resumeAdmins = res.data;
+        for (let i = 0; i < this.resumeAdmins.length; i++) {
+          if (this.resumeAdmins[i].WORK_EMAIL.toLowerCase() == this.userService.userData.email.toLowerCase()) {
+            this.isResumeUser = true;
           }
         }
-      });
-    }
+      }
+    });
   }
 
   private loadTraficUsers(){
