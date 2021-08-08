@@ -34,8 +34,9 @@ export class NotificationsService {
     RETURN_REQUEST_MASTER: { path: '/academicrequests/reEnroll' },
     EXCUSE_REQUEST_MASTER: { path: '/academicrequests/termexecuse' },
     WITHDRAW_REQUEST_MASTER: { path: '/academicrequests/withdrawal' },
-    POSTPHONE_REQUEST_MASTER: { path: '/academicrequests/studypostpone' }
+    POSTPHONE_REQUEST_MASTER: { path: '/academicrequests/studypostpone' },
     //FEES_REFUND_MASTER: { path: '/academicrequests/lecexecuse' },
+    EMP_NOTIFI: { emailPath: 'https://outlook.office365.com/owa/seu.edu.sa' }
   }
 
   notsURL = environment.baselink + environment.servicesprefix + "/rest/notifications/";
@@ -78,11 +79,17 @@ export class NotificationsService {
     });
     this.http.get(this.notsURL + 'unreadlist', { headers }).subscribe(res => {
       this.notesList = res['data'];
-      //console.log("notesList", this.notesList);
+      // console.log("notesList", this.notesList);
     });
   }
   redirect(note) {
-    //console.log(note);
+    if(note['SERVICECODE'] == 'EMP_NOTIFI'){
+      // window.location.href = this.NOTIFICAATIONSETTINGS[note['SERVICECODE']].emailPath;
+      window.open(
+        this.NOTIFICAATIONSETTINGS[note['SERVICECODE']].emailPath,
+        '_blank' 
+      );
+    }
     const url = this.notsURL;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
