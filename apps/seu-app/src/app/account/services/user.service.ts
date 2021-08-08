@@ -251,7 +251,7 @@ export class UserService extends BaseService {
       'Authorization': auth
     });
 
-    return this.http.get(url + "resume/get_admin_users", {
+    return this.http.get(url + "api/get_admin_users", {
       headers: headers
     });
   }
