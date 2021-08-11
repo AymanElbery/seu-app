@@ -335,4 +335,15 @@ export class UserService extends BaseService {
       emailWorkCheck: data.emailWorkCheck,
     }, { headers: headers });
   }
+
+  updateStudentVaccineStatus(data) {
+    var url = environment.baselink + environment.servicesprefix + "/rest/vaccine/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth
+    });
+
+    return this.http.post(url + "status/update", data, { headers: headers });
+  }
 }

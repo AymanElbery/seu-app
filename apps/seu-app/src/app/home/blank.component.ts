@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PolicyComponent } from './policy.component';
 import { DocsConfirmComponent } from './docs-confirm.component';
+import { VaccineStatusComponent } from './vaccine-status/vaccine-status.component';
 import { GMPolicyComponent } from './gmpolicy.component';
 import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.component';
 
@@ -71,21 +72,7 @@ export class BlankComponent implements OnInit {
           // tslint:disable-next-line: no-unused-expression
           : '';
 
-        if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData['policy']) {
-          //this.router.navigate(['/policy']);
-          // const dialogConfig = new MatDialogConfig();
-          // dialogConfig.autoFocus = true;
-          // dialogConfig.disableClose = true;
-          // dialogConfig.maxWidth = 550;
-          // //dialogConfig.height = '58%';
-          // let dialogRef = this.dialog.open(PolicyComponent, dialogConfig);
-          // dialogRef.afterClosed().subscribe(result => {
-          //   this.showConfirmation();
-          // });
-        } else {
-          this.showConfirmation();
-        }
-        //console.log(this.userService.userData);
+        this.showVaccineStatus();
         if ((this.userService.userData.role == "Student" && this.userService.userData.level == "GR") && this.userService.userData['GM_policy'] && this.userService.userData['GM_policy']['show'] && !this.userService.userData['gmpolicy']) {
           //this.router.navigate(['/policy']);
           const dialogConfig = new MatDialogConfig();
@@ -107,6 +94,19 @@ export class BlankComponent implements OnInit {
       }
     });
   }
+
+  showVaccineStatus(){
+    if (this.userService.userData.role == "Student" && !this.userService.userData['VACCINE_STATUS']) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      dialogConfig.disableClose = true;
+      dialogConfig.width = '75%';
+      dialogConfig.maxWidth = 1000;
+      dialogConfig.data = this.userService.userData;
+      this.dialog.open(VaccineStatusComponent, dialogConfig);
+    }
+  }
+
   showConfirmation() {
     let showConf = false;
     if (this.userService.userData['emp_confirm'] && this.userService.userData['emp_confirm']['show'] === true) {
