@@ -18,6 +18,7 @@ export class VaccineStatusComponent implements OnInit, OnDestroy {
     status;
     saving = false;
     choiceChange = false;
+    allowSelection = false;
     constructor(
         public userService: UserService, 
         private http: HttpClient, 
@@ -41,6 +42,13 @@ export class VaccineStatusComponent implements OnInit, OnDestroy {
 
     choice(){
         this.choiceChange = true;
+    }
+
+    onScroll(e) {
+        //scrollTop + clientHeight = scrollHeight
+        if (parseInt(e.srcElement.scrollTop + e.srcElement.clientHeight) >= (e.srcElement.scrollHeight - 50)) {
+          this.allowSelection = true;
+        }
     }
 
     submit(){
