@@ -62,13 +62,21 @@ export class ReqAssistantService extends SDService {
             return item;
         });
     }
-    courses(coll_code) {
-        return this._lookups['courses'][coll_code].filter(item => {
-            return !this._usedCourses.includes(item['SUBJ_CODE'] + item['CRSE_NUMB']);
-        }).map(rec => {
+    // courses(coll_code) {
+    //     return this._lookups['courses'][coll_code].filter(item => {
+    //         return !this._usedCourses.includes(item['SUBJ_CODE'] + item['CRSE_NUMB']);
+    //     }).map(rec => {
+    //         let item = {};
+    //         item['text'] = rec['CRSE_CODE'] + ' | ' + rec['CRSE_TITLE'];
+    //         item['value'] = rec['CRSE_CODE'] + ' | ' + rec['CRSE_TITLE'];
+    //         return item;
+    //     });
+    // }
+    courses() {
+        return this._lookups['courses'].map(rec => {
             let item = {};
-            item['text'] = rec['CRSE_CODE'] + ' | ' + rec['CRSE_TITLE'];
-            item['value'] = rec['CRSE_CODE'] + ' | ' + rec['CRSE_TITLE'];
+            item['text'] = rec['COURSE_CODE'] + ' | ' + rec['COURSE_TITLE'];
+            item['value'] = rec['COURSE_CODE']  + ' | ' + rec['COURSE_TITLE'];
             return item;
         });
     }
@@ -77,6 +85,22 @@ export class ReqAssistantService extends SDService {
             let item = {};
             item['text'] = rec['MESSAGE'];
             item['value'] = rec['MESSAGE'];
+            return item;
+        });
+    }
+    days() {
+        return this._lookups['days'].map(rec => {
+            let item = {};
+            item['text'] = rec['NAME_AR'];
+            item['value'] = rec['ID'];
+            return item;
+        });
+    }
+    times() {
+        return this._lookups['times'].map(rec => {
+            let item = {};
+            item['text'] = rec['NAME_AR'];
+            item['value'] = rec['CODE'];
             return item;
         });
     }
@@ -94,14 +118,23 @@ export class ReqAssistantService extends SDService {
             }));
     }
 
-    courses_list(coll_code) {
+    // courses_list(coll_code) {
+    //     if (this._lookups) {
+    //         return of(this.courses(coll_code));
+    //     }
+    //     return this._lookups_observ.pipe(
+    //         map(() => {
+    //             return this.courses(coll_code);
+    //         }));
+    // }
+    courses_list() {
         if (this._lookups) {
-            return of(this.courses(coll_code));
+            return of(this.courses());
         }
         return this._lookups_observ.pipe(
             map(() => {
-                return this.courses(coll_code);
-            }));
+            return this.courses();
+        }));
     }
     lectures_list() {
         if (this._lookups) {
@@ -119,6 +152,24 @@ export class ReqAssistantService extends SDService {
         return this._lookups_observ.pipe(
             map(() => {
                 return this.messages();
+            }));
+    }
+    days_list() {
+        if (this._lookups) {
+            return of(this.days());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.days();
+            }));
+    }
+    times_list() {
+        if (this._lookups) {
+            return of(this.times());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.times();
             }));
     }
     crns_list(crse) {

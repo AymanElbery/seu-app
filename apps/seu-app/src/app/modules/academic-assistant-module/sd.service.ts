@@ -102,6 +102,10 @@ export class SDService {
         return this.get(this._controller + "/delete/" + id);
     }
 
+    update(id) {
+        return this.get(this._controller + "/update/" + id);
+    }
+
     download(url) {
         return this.get(this._controller + '/download/' + url);
     }
@@ -112,6 +116,10 @@ export class SDService {
 
     AddRequest(data) {
         return this.post(this._controller + "/add", data);
+    }
+
+    AddRequestCrn(data) {
+        return this.post(this._controller + "/add_crn", data);
     }
 
     AddNote(data) {

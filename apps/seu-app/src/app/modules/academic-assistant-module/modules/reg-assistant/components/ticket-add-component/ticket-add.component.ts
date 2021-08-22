@@ -17,38 +17,36 @@ export class RegistrationAssistantFormComponent implements OnInit {
     form: FormGroup;
     submitted = false;
 
-    colleges = [];
     courses = [];
     messages = [];
     crns = [];
-    lectures= [];
-    constructor(@Inject(MAT_DIALOG_DATA) public data, private fb: FormBuilder,
-        public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, private translate: TranslateService,
-        private toastr: AppToasterService, private service: ReqAssistantService) { }
+    lectures = [];
+    tickets;
+    can_add_new = true;
+    
 
-    ngOnInit() {
+    constructor(
+    @Inject(MAT_DIALOG_DATA) public data, 
+    private fb: FormBuilder,
+    public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, 
+    private translate: TranslateService,
+    private toastr: AppToasterService, 
+    private service: ReqAssistantService) {
+        this.tickets = data;
         this.form = this.fb.group({
-            college: ['', [Validators.required]],
             crse: ['', [Validators.required]],
-            crn: [''],
             message: ['', [Validators.required]],
             comments: ['', [Validators.required]]
         });
+    }
+
+    ngOnInit() {
+        
         this.service.loadlookups();
-        this.service.colleges_list().subscribe(list => {
-            this.colleges = list;
+        this.service.courses_list().subscribe(list => {
+            this.courses = list;
         });
-        this.form.controls['college'].valueChanges.subscribe(() => {
-            this.form.controls['crse'].setValue("");
-            if (this.form.controls['college'].value) {
-                let coll_code = this.form.controls['college'].value.split("-")[0].trim();
-                this.service.courses_list(coll_code).subscribe(list => {
-                    this.courses = list;
-                });
-            } else {
-                this.courses = [];
-            }
-        });
+        
         this.form.controls['crse'].valueChanges.subscribe(() => {
             this.form.controls['crn'].setValue("");
             if (this.form.controls['crse'].value) {
@@ -65,12 +63,21 @@ export class RegistrationAssistantFormComponent implements OnInit {
         this.service.messages_list().subscribe(list => {
             this.messages = list;
         });
+       
         this.service.lectures_list().subscribe(list => {
             this.lectures = list;
         });
-
     }
 
+    crseCange(e){
+        this.can_add_new = true;
+        let course_code = e.value.split("|")[0].trim();
+        this.tickets.forEach(ticket => {
+            if(course_code.trim() == ticket.subject.split("|")[1].trim()){
+                this.can_add_new = false;
+            }
+        });
+    }
 
     onSubmit() {
         if (this.form.invalid) {
