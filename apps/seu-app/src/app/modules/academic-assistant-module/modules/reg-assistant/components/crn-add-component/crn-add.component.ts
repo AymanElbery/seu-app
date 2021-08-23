@@ -21,6 +21,8 @@ export class RegistrationAssistantFormCrnComponent implements OnInit {
     crns = [];
     days = [];
     times = [];
+    requests;
+    can_add_new = true;
 
     constructor(
     @Inject(MAT_DIALOG_DATA) public data, 
@@ -29,6 +31,7 @@ export class RegistrationAssistantFormCrnComponent implements OnInit {
     private translate: TranslateService,
     private toastr: AppToasterService, 
     private service: ReqAssistantService) {
+        this.requests = data;
         this.formCrn = this.fb.group({
             crse: ['', [Validators.required]],
             day: [''],
@@ -47,6 +50,16 @@ export class RegistrationAssistantFormCrnComponent implements OnInit {
         });
         this.service.times_list().subscribe(list => {
             this.times = list;
+        });
+    }
+
+    crseCange(e){
+        this.can_add_new = true;
+        let course_code = e.value.split("|")[0].trim();
+        this.requests.forEach(request => {
+            if(course_code.trim() == request.CRN_CODE && request.STATUS == 2){
+                this.can_add_new = false;
+            }
         });
     }
     

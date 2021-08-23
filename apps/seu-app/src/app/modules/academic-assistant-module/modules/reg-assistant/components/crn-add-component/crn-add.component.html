@@ -17,10 +17,15 @@
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"reg_assistant.crse"|translate}} <span class="reqstart">*</span></h6>
-                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="crse">
+                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="crse" (change)="crseCange($event)"> 
                             </ng-select>
                         </div>
                         <control-validations-errors [control]="formCrn.controls.crse"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row" *ngIf="!can_add_new">
+                    <div class="col-md-12 alert alert-danger text-center">
+                        <strong>{{"reg_assistant.can_add_new_crn"|translate}}</strong>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 10px;">

@@ -16,7 +16,6 @@ import { TicketDetailsComponent } from './../ticket-details-component/ticket-det
 export class TicketListComponent {
 
   can_add_new_ticket = false;
-  can_add_new_crn = false;
   tickets;
   requests;
   isLoading = false;
@@ -53,6 +52,7 @@ export class TicketListComponent {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '70%';
+    dialogConfig.data = this.requests;
 
     let dialogref = this.dialog.open(RegistrationAssistantFormCrnComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
@@ -70,7 +70,6 @@ export class TicketListComponent {
         this.tickets = response.data.requests;
         this.requests = response.data.requestsCrn;
         this.can_add_new_ticket = response.data.can_add_new_ticket;
-        this.can_add_new_crn = response.data.can_add_new_crn;
         this.reqAssistantService.checkCourses(this.tickets);
       },
       error => {
