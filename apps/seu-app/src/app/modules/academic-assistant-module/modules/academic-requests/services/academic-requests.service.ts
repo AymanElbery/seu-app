@@ -24,7 +24,7 @@ export class AcademicRequestsService extends SDService {
         this._controller = 'academic_requests';
     }
 
-    categories() {
+    subcategories() {
         return this._lookups['subcategories'].map(rec => {
             let item = {};
             item['text'] = rec['NAME'];
@@ -32,9 +32,9 @@ export class AcademicRequestsService extends SDService {
             return item;
         });
     }
-    items(_code) {
+    items(code) {
         return this._lookups['items'].filter(item => {
-            return item['SUBCATEGORYID'] == _code;
+            return item['SUBCATEGORYID'] == code;
         }).map(rec => {
             let item = {};
             item['text'] = rec['NAME'];
@@ -42,14 +42,33 @@ export class AcademicRequestsService extends SDService {
             return item;
         });
     }
-
-    categories_list() {
+    description(_code) {
         if (this._lookups) {
-            return of(this.categories());
+            return of(this.getDesc(_code));
         }
         return this._lookups_observ.pipe(
             map(() => {
-                return this.categories();
+                return this.getDesc(_code);
+            }));
+    }
+
+    getDesc(_code){
+        return this._lookups['descs'].filter(description => {
+            return description['ITEM'] == _code;
+        }).map(rec => {
+            let desc = "";
+            desc = rec['DESC'];
+            return desc;
+        });
+    }
+
+    subcategories_list() {
+        if (this._lookups) {
+            return of(this.subcategories());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.subcategories();
             }));
     }
 
@@ -60,6 +79,16 @@ export class AcademicRequestsService extends SDService {
         return this._lookups_observ.pipe(
             map(() => {
                 return this.items(coll_code);
+            }));
+    }
+
+    desc_list(coll_code) {
+        if (this._lookups) {
+            return of(this.getDesc(coll_code));
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.getDesc(coll_code);
             }));
     }
 
