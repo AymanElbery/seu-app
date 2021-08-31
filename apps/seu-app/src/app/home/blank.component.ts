@@ -73,6 +73,8 @@ export class BlankComponent implements OnInit {
           : '';
 
         this.showVaccineStatus();
+        this.showConfirmation();
+
         if ((this.userService.userData.role == "Student" && this.userService.userData.level == "GR") && this.userService.userData['GM_policy'] && this.userService.userData['GM_policy']['show'] && !this.userService.userData['gmpolicy']) {
           //this.router.navigate(['/policy']);
           const dialogConfig = new MatDialogConfig();
@@ -118,7 +120,6 @@ export class BlankComponent implements OnInit {
       dialogConfig.disableClose = true;
       dialogConfig.width = '75%';
       dialogConfig.maxWidth = 1000;
-      //dialogConfig.height = '88%';
       dialogConfig.data = { notes: this.userService.userData['emp_confirm']['notes'] };
       this.dialog.open(DocsConfirmComponent, dialogConfig);
     }

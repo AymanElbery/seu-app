@@ -55,8 +55,12 @@ import { VgCoreModule } from 'videogular2/core';
 import { VgControlsModule } from 'videogular2/controls';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { City_pipe } from './home/pips/city_pipe';
+import { District_pipe } from './home/pips/district_pipe';
 @NgModule({
   declarations: [
+    City_pipe,
+    District_pipe,
     AppComponent,
     HomeComponent,
     BlankComponent,
