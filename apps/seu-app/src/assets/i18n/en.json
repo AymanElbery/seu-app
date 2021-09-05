@@ -140,9 +140,12 @@
         "userData": "Student data",
         "academic_status": "Academic status",
         "infoupdate": "Info Update",
-        "termexecuse": "Term Excuse",
+        "termexecuse": "Semester postponement (exception)",
+        "termexecuse_corona": "Term Excuse",
         "postpone": "Term Postpone",
+        "postpone_corona": "Semester postponement (exception)",
         "studypostpone": "Study postpone  ",
+        "studypostpone_corona": "Semester Withdrawal (exception)",
         "withdrawal": "Withdraw from university ",
         "acrequests": "Academic request",
         "examattendacecertificateapp": "Exam Attendace  Approval",
@@ -170,6 +173,7 @@
         "withdrawuniv": "Withdraw from university  ",
         "change_schedule": "Change study schedule",
         "execuse": " Term Execuse",
+        "execuse_corona": "Semester Withdrawal (exception)",
         "summer": "  withdraw  from summer course",
         "reenrol": "re enroll ",
         "cancelcourse": "Cancel course ",
@@ -497,6 +501,12 @@
             "execuse_req": "Execuse for a Term Request",
             "cause": "Reason"
         },
+        "excuse_request_corona": {
+            "title": "Semester Withdrawal (exception)",
+            "desc": "Semester Withdrawal (exception)",
+            "execuse_req": "Semester Withdrawal (exception) Request",
+            "cause": "Reason"
+        },
         "lecture_execuse": {
             "title": "Lectures' Execuses",
             "desc": "Lectures' Execuses",
@@ -658,6 +668,17 @@
             "mobile": "Mobile Number:(Ex:05xxxxxxxx)",
             "reason": "Reason"
         },
+        "postpone_corona_request": {
+            "title": "Semester postponement (exception)",
+            "desc": "Semester postponement (exception)",
+            "postpone_req": "College Postpone Request",
+            "cause": "Reason",
+            "alert": "Alert:Student can cancel this request only during 48 hours starting from applying to the request",
+            "desire": "I want to Postpone Studying Starting From",
+            "period": "Postpone Period(in Terms)",
+            "mobile": "Mobile Number:(Ex:05xxxxxxxx)",
+            "reason": "Reason"
+        },
         "re-enrollment": {
             "title": "Re-enrollment",
             "desc": "Re-enrollment",
@@ -747,6 +768,17 @@
         "term_execuse_master": {
             "title": "Cancel Courses Request(Term Execuse)",
             "desc": "Cancel Courses Request(Term Execuse)",
+            "alert": "Student can cancel this request only during 48 hours starting from applying to the request",
+            "desire": "I want to Cancel Studying Starting From the current Term",
+            "count": "Number Of Cancelled Terms",
+            "choose_count": "Choose Number Of Terms",
+            "mobile": "Mobile Number:(Ex:05xxxxxxxx)",
+            "reason": "Execuse Reason",
+            "alert_title": "Alert"
+        },
+        "term_execuse_master_corona": {
+            "title": "Semester Withdrawal (exception)",
+            "desc": "Semester Withdrawal (exception)",
             "alert": "Student can cancel this request only during 48 hours starting from applying to the request",
             "desire": "I want to Cancel Studying Starting From the current Term",
             "count": "Number Of Cancelled Terms",
