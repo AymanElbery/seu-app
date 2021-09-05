@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WithdrawFromUnivComponent } from './withdraw-from-univ/withdraw-from-univ.component';
 import { PostponeRequestComponent } from './postpone-request/postpone-request.component';
+import { PostponeCoronaRequestComponent } from './postpone-request-corona/postpone-request-corona.component';
 import { ChangeScheduleComponent } from './change-schedule-request/change-schedule-request.component';
 import { SummerWithdrawComponent } from './summer-withdraw/summer-withdraw.component';
 import { CancelCourseComponent } from './cancel-course/cancel-course.component';
 import { ExecuseRequestComponent } from './execuse-request/execuse-request.component';
+import { ExecuseRequestCoronaComponent } from './execuse-request-corona/execuse-request-corona.component';
 import { CourseEqualizeComponent } from './course-equalize/course-equalize.component';
 import { EnglishEqualizeComponent } from './english-equalize/english-equalize.component';
 import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component';
@@ -25,9 +27,11 @@ const routes: Routes = [{ path: '', component: WithdrawFromUnivComponent },
     { path: 'withdrawuniv', component: WithdrawFromUnivComponent },
     { path: 'change-schedule', component: ChangeScheduleComponent },
     { path: 'postpone', component: PostponeRequestComponent },
+    { path: 'postpone-corona', component: PostponeCoronaRequestComponent },
     { path: 'summer', component: SummerWithdrawComponent },
     { path: 'cancelcourse', component: CancelCourseComponent },
     { path: 'execuse', component: ExecuseRequestComponent },
+    { path: 'execuse-corona', component: ExecuseRequestCoronaComponent },
     { path: 'equalize', component: CourseEqualizeComponent },
     { path: 'eequalize', component: EnglishEqualizeComponent },
     { path: 'reenrol', component: ReEenrollmentComponent },

@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UniversityWithdrawalComponent } from './university-withdrawal/university-withdrawal.component';
 import { TermExecuseComponent } from './term-execuse/term-execuse.component';
+import { TermExecuseCoronaComponent } from './term-execuse-corona/term-execuse-corona.component';
 import { StudyPostponeComponent } from './study-postpone/study-postpone.component';
+import { StudyPostponeCoronaComponent } from './study-postpone-corona/study-postpone-corona.component';
 import { ReEnrollComponent } from './re-enroll/re-enroll.component';
 import { CancelCourseComponent } from './cancel-course/cancel-course.component';
 import { ExamObjectionComponent } from './exam-objection/exam-objection.component';
@@ -18,7 +20,9 @@ const routes: Routes = [
     children: [
       { path: 'withdrawal', component: UniversityWithdrawalComponent },
       { path: 'termexecuse', component: TermExecuseComponent },
+      { path: 'termexecuse-corona', component: TermExecuseCoronaComponent },
       { path: 'studypostpone', component: StudyPostponeComponent },
+      { path: 'studypostpone-corona', component: StudyPostponeCoronaComponent},
       { path: 'reEnroll', component: ReEnrollComponent },
       { path: 'cancelcourse', component: CancelCourseComponent },
       { path: 'objectexam', component: ExamObjectionComponent },

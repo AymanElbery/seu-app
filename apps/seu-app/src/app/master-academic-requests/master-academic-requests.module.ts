@@ -12,9 +12,15 @@ import { UniversityWithdrawalService } from './services/university-withdrawal.se
 import { TermExecuseComponent } from './term-execuse/term-execuse.component';
 import { AddTermExecuseComponent } from './term-execuse/diag/add-term-execuse/add-term-execuse.component';
 import { TermExecuseService } from './services/term-execuse.service';
+import { TermExecuseCoronaComponent } from './term-execuse-corona/term-execuse-corona.component';
+import { AddTermExecuseCoronaComponent } from './term-execuse-corona/diag/add-term-execuse-corona/add-term-execuse-corona.component';
+import { TermExecuseCoronaService } from './services/term-execuse-corona.service';
 import { StudyPostponeComponent } from './study-postpone/study-postpone.component';
 import { StudyPostponeService } from './services/study-postpone.service';
 import { AddStudyPostponeComponent } from './study-postpone/diag/add-study-postpone/add-study-postpone.component';
+import { StudyPostponeCoronaComponent } from './study-postpone-corona/study-postpone-corona.component';
+import { StudyPostponeCoronaService } from './services/study-postpone-corona.service';
+import { AddStudyPostponeCoronaComponent } from './study-postpone-corona/diag/add-study-postpone-corona/add-study-postpone-corona.component';
 import { ReEnrollComponent } from './re-enroll/re-enroll.component';
 import { AddReEnrollComponent } from './re-enroll/diag/add-re-enroll/add-re-enroll.component';
 import { ReEnrollService } from './services/re-enroll.service';
@@ -41,8 +47,12 @@ import { AddCourseEqualizeComponent } from './course-equalize/dialog/add-course-
     , UniversityWithdrawalComponent
     , AddTermExecuseComponent
     , TermExecuseComponent
+    , AddTermExecuseCoronaComponent
+    , TermExecuseCoronaComponent
     , StudyPostponeComponent,
     AddStudyPostponeComponent,
+    StudyPostponeCoronaComponent,
+    AddStudyPostponeCoronaComponent,
     ReEnrollComponent,
     AddReEnrollComponent,
     CancelCourseComponent,
@@ -61,7 +71,9 @@ import { AddCourseEqualizeComponent } from './course-equalize/dialog/add-course-
   ],
   entryComponents: [AddWithdrawalRequestComponent,
     AddTermExecuseComponent,
+    AddTermExecuseCoronaComponent,
     AddStudyPostponeComponent,
+    AddStudyPostponeCoronaComponent,
     AddReEnrollComponent,
     AddCancelCourseRequestComponent,
     AddObjectExamComponent,
@@ -83,7 +95,7 @@ import { AddCourseEqualizeComponent } from './course-equalize/dialog/add-course-
     SeucommonModule
   ],
   providers: [UniversityWithdrawalService,
-    TermExecuseService, StudyPostponeService, ReEnrollService,
+    TermExecuseService, StudyPostponeService, ReEnrollService, StudyPostponeCoronaService, TermExecuseCoronaService,
   ]
 })
 export class MasterAcademicRequestsModule { }

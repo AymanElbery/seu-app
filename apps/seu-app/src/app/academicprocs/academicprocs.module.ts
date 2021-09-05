@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AcademicprocsRoutingModule } from './academicprocs-routing.module';
 import { PostponeRequestComponent } from './postpone-request/postpone-request.component';
+import { PostponeCoronaRequestComponent } from './postpone-request-corona/postpone-request-corona.component';
 import { ExecuseRequestComponent } from './execuse-request/execuse-request.component';
 import { SummerWithdrawComponent } from './summer-withdraw/summer-withdraw.component';
 import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component';
@@ -21,11 +22,16 @@ import { ToastrModule } from 'ngx-toastr';
 import { TimerComponent } from '../shared/components/timer/timer.component';
 import { TermPostponeService } from './services/term-postpone.service';
 import { AddPostponeComponent } from './postpone-request/diag/add-postpone/add-postpone.component';
+import { AddPostponeCoronaComponent } from './postpone-request-corona/diag/add-postpone-corona/add-postpone-corona.component';
 import { AddSummerWithdrawComponent } from './summer-withdraw/diag/add-summer-withdraw/add-summer-withdraw.component';
 import { SummerWithdrawService } from './services/summer-withdraw.service';
+import { TermPostponeCoronaService } from './services/term-postpone-corona.service';
+import { TermExecuseCoronaService } from './services/term-execuse-corona.service';
 import { CancelCourseService } from './services/cancel-course.service';
 import { AddCourseCancelComponent } from './cancel-course/diag/add-course-cancel/add-course-cancel.component';
 import { AddExecuseTermComponent } from './execuse-request/diag/add-execuse-term/add-execuse-term.component';
+import { ExecuseRequestCoronaComponent } from './execuse-request-corona/execuse-request-corona.component';
+import { AddExecuseTermCoronaComponent } from './execuse-request-corona/diag/add-execuse-term-corona/add-execuse-term-corona.component';
 import { TermExecuseService } from './services/term-execuse.service';
 import { CourseEqualizeComponent } from './course-equalize/course-equalize.component';
 import { AddCourseEqualizeComponent } from './course-equalize/diag/add-course-equalize/add-course-equalize.component';
@@ -69,8 +75,10 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
 
 @NgModule({
-  declarations: [PostponeRequestComponent
-    , ExecuseRequestComponent,
+  declarations: [
+    PostponeRequestComponent, 
+    PostponeCoronaRequestComponent, 
+    ExecuseRequestComponent,
     SummerWithdrawComponent,
     ReEenrollmentComponent,
     ExceptSemesterComponent,
@@ -80,6 +88,9 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     ChangeScheduleComponent,
     AddRequestComponent,
     AddPostponeComponent,
+    ExecuseRequestCoronaComponent,
+    AddExecuseTermCoronaComponent,
+    AddPostponeCoronaComponent,
     AddSummerWithdrawComponent,
     AddCourseCancelComponent,
     AddExecuseTermComponent,
@@ -113,6 +124,8 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
   ],
   entryComponents: [AddRequestComponent,
     AddPostponeComponent,
+    AddPostponeCoronaComponent,
+    AddExecuseTermCoronaComponent,
     AddSummerWithdrawComponent,
     AddCourseCancelComponent,
     AddExecuseTermComponent,
@@ -148,6 +161,8 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
   ],
   providers: [WithdrawFromUnivService,
     TermPostponeService,
+    TermPostponeCoronaService,
+    TermExecuseCoronaService,
     SummerWithdrawService,
     CancelCourseService,
     TermExecuseService,
