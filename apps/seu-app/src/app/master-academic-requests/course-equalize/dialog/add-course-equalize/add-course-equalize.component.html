@@ -2,26 +2,40 @@
 <mat-dialog-content dir="rtl">
   <div class="modal-content">
     <div class="modal-header">
-
-      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
-        {{"menu.masterequalize"|translate}}</h5>
-
+      <h5 *ngIf="classLevel == 'GY'" style="text-align: center" class="modal-title " id="exampleModalLabel">
+        {{"menu.masterequalize_gy"|translate}}
+      </h5>
+      <h5 *ngIf="classLevel == 'GM'" style="text-align: center" class="modal-title " id="exampleModalLabel">
+        {{"menu.masterequalize_gm"|translate}}
+      </h5>
     </div>
-
     <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
       <div class="modal-body">
         <P class="text-center">
-          <span style="font-weight: bold; font-size: 15px;color: red;">
+          <!-- <span style="font-weight: bold; font-size: 15px;color: red;">
             {{"general.request.alert"|translate}}
-          </span>
-          {{"general.request.note_text1"|translate}} <br />
-          {{"general.request.note_text2"|translate}} <br />
-          {{"general.request.note_text3"|translate}} <br />
-          {{"general.request.note_text4"|translate}} <br />
-          {{"general.request.note_text5"|translate}} <br />
-          {{"general.request.note_text6"|translate}} <br />
-          {{"general.request.note_text7"|translate}} <br />
-          {{"general.request.note_text8"|translate}}
+          </span> -->
+          
+          <span style="font-weight: bold; font-size: 15px;color: red;" *ngIf="classLevel == 'GM'">{{"general.request.note_text1"|translate}}</span> <br *ngIf="classLevel == 'GM'"/>
+          <span *ngIf="classLevel == 'GM'">{{"general.request.note_text2"|translate}}</span> <br *ngIf="classLevel == 'GM'" />
+          <span *ngIf="classLevel == 'GM'">{{"general.request.note_text3"|translate}}</span> <br *ngIf="classLevel == 'GM'" />
+          <span *ngIf="classLevel == 'GM'">{{"general.request.note_text4"|translate}}</span> <br *ngIf="classLevel == 'GM'" />
+          <span *ngIf="classLevel == 'GM'">{{"general.request.note_text5"|translate}}</span> <br *ngIf="classLevel == 'GM'" />
+          <span *ngIf="classLevel == 'GM'">{{"general.request.note_text6"|translate}}</span> <br *ngIf="classLevel == 'GM'" />
+          <span *ngIf="classLevel == 'GM'">{{"general.request.note_text7"|translate}}</span> <br *ngIf="classLevel == 'GM'" />
+          <span *ngIf="classLevel == 'GM'">{{"general.request.note_text8"|translate}}</span>
+
+          <span style="font-weight: bold; font-size: 15px;color: red;" *ngIf="classLevel == 'GY'">{{"general.request.note_text1_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          <span *ngIf="classLevel == 'GY'">{{"general.request.note_text2_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          <span *ngIf="classLevel == 'GY'">{{"general.request.note_text3_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          <span *ngIf="classLevel == 'GY'">{{"general.request.note_text4_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          <span *ngIf="classLevel == 'GY'">{{"general.request.note_text5_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          <span *ngIf="classLevel == 'GY'">{{"general.request.note_text6_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          <span *ngIf="classLevel == 'GY'">{{"general.request.note_text7_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          <span *ngIf="classLevel == 'GY'">{{"general.request.note_text8_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          <span *ngIf="classLevel == 'GY'">{{"general.request.note_text9_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          <span *ngIf="classLevel == 'GY'">{{"general.request.note_text10_gy"|translate}}</span> <br *ngIf="classLevel == 'GY'" />
+          
         </P>
         <section class="ser-state">
           <div class="container">
@@ -41,7 +55,7 @@
                 </div> -->
                 <div class="state">
                   <div class="row">
-                    <div class=" col-md-6 col-sm-12">
+                    <div class=" col-md-12 col-sm-12">
                       <h6>{{"services.course-equalize.choose_college"|translate}} </h6>
                       <select required class="form-control" #university="ngModel" [(ngModel)]="curseEqual.university"
                         name="university" [class.is-invalid]="curseEqual.university == ''">
@@ -62,7 +76,7 @@
                   <div class="progress-bar bg-info"></div>
                 </div>
               </div>
-              <div class="col-md-12 col-sm-12">
+              <div *ngIf="classLevel == 'GM'" class="col-md-12 col-sm-12">
                 <div class="state">
                   <h6> {{"general.request.Years"|translate}}</h6>
                   <div class="form-group">
@@ -85,15 +99,18 @@
                   <table style="text-align: center" class="table">
                     <thead>
                       <tr>
+                        <th scope="col">{{"general.course_code"|translate}}</th>
                         <th scope="col">{{"general.course_name"|translate}}</th>
                         <th scope="col">{{"general.course_hours"|translate}}</th>
                         <th scope="col">{{"general.grade"|translate}}</th>
-                        <th scope="col">{{"general.language"|translate}} </th>
+                        <th *ngIf="classLevel == 'GM'" scope="col">{{"general.language"|translate}} </th>
+                        <th *ngIf="classLevel == 'GY'" scope="col">{{"general.request.Years_gy"|translate}} </th>
                         <th scope="col"> </th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let it of coursesList;let i=index;">
+                        <td>{{it.id}}</td>
                         <td>{{it.value}}</td>
                         <td>
                           <select class="custom-select  col-md-12" #TRNS_HRS="ngModel" name="TRNS_HRS"
@@ -107,11 +124,17 @@
                             <option *ngFor="let g of reqData.grade_list" [value]="g.value">{{g.value}}</option>
                           </select>
                         </td>
-                        <td>
+                        <td *ngIf="classLevel == 'GM'">
                           <select class="custom-select  col-md-12" #TRNS_LANG="ngModel" name="TRNS_LANG"
                             [(ngModel)]="it.TRNS_LANG">
                             <option selected value="1">{{"general.ar_language"|translate}}</option>
                             <option value="2">{{"general.en_language"|translate}}</option>
+                          </select>
+                        </td>
+                        <td *ngIf="classLevel == 'GY'">
+                          <select class="custom-select  col-md-12" #year="ngModel" name="year"
+                            [(ngModel)]="it.TRNS_YEAR">
+                            <option *ngFor="let year of reqData.yearsList" [value]="year">{{year}}</option>
                           </select>
                         </td>
                         <td>
@@ -163,6 +186,21 @@
                     <input name="attachment2" [class.is-invalid]="curseEqual.attachment2 ==''" type="file"
                       (change)="handleInputChange2($event)" id="attachment2" class="custom-file-input" required />
                     <label for="attachment2 " class="custom-file-label ">
+                    </label>
+                  </div>
+                </div>
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+              <div *ngIf="classLevel == 'GY'" class="col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.course-equalize.english"|translate}} (PDF file less than 5MB)</h6>
+                  <div class="custom-file">
+                    <input name="attachment3" [class.is-invalid]="curseEqual.attachment3 ==''" type="file"
+                      (change)="handleInputChange3($event)" id="attachment3" class="custom-file-input" required />
+                    <label for="attachment3 " class="custom-file-label ">
                     </label>
                   </div>
                 </div>

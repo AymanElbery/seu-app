@@ -8,8 +8,8 @@ export const environment = {
   wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS_TEST/jersey/', // wafi
   servie_admission: 'https://apps.seu.edu.sa/newservices/api-test/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
-  servicesprefix: 'api', // api-test
-  appsprefix: 'apps', // api-test
+  servicesprefix: 'api-test', // api-test
+  appsprefix: 'apps-test', // api-test
   loginpage: 'login-local.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
   ssoAuth: 'sso:s$0$3u2030',

@@ -16,21 +16,39 @@ export class AddCourseEqualizeComponent implements OnInit {
   curseEqual;
   reqData: CourseEqualMaster;
   msgs: any;
+  classLevel;
   private imageSrc = '';
   coursesList = [];
-  constructor(@Inject(MAT_DIALOG_DATA) public data,
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<AddCourseEqualizeComponent>,
-    private toastr: AppToasterService, private acadmicProc: MasterCourseEqualizerService) { }
+    private toastr: AppToasterService, 
+    private acadmicProc: MasterCourseEqualizerService
+    ) { 
+      this.classLevel = this.data.classLevel
+    }
 
   ngOnInit() {
-    this.curseEqual = {
-      courses: [],
-      attachment: '',
-      attachment2: '',
-      year: '',
-      university: '',
-      custom_university_name: ''
-    };
+    if(this.classLevel == "GM"){
+      this.curseEqual = {
+        courses: [],
+        attachment: '',
+        attachment2: '',
+        year: '',
+        university: '',
+        custom_university_name: ''
+      };
+    }else{
+      this.curseEqual = {
+        courses: [],
+        attachment: '',
+        attachment2: '',
+        attachment3: '',
+        university: '',
+        custom_university_name: ''
+      };
+    }
+    
     this.reqData = this.acadmicProc.reqData as CourseEqualMaster;
     this.coursesList = (JSON.parse(JSON.stringify(this.reqData.courses)));
   }
@@ -61,9 +79,24 @@ export class AddCourseEqualizeComponent implements OnInit {
     reader.onload = this._handleReaderLoaded2.bind(this);
     reader.readAsDataURL(file);
   }
+  handleInputChange3(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    if (!file) {
+      this.curseEqual.attachment3 = '';
+      return;
+    }
+    const pattern = /image-*/;
+    const reader = new FileReader();
+    reader.onload = this._handleReaderLoaded3.bind(this);
+    reader.readAsDataURL(file);
+  }
   _handleReaderLoaded2(e) {
     const reader = e.target;
     this.curseEqual.attachment2 = reader.result;
+  }
+  _handleReaderLoaded3(e) {
+    const reader = e.target;
+    this.curseEqual.attachment3 = reader.result;
   }
 
   requesting = false;
@@ -89,19 +122,36 @@ export class AddCourseEqualizeComponent implements OnInit {
       }
     }
     let courses = [];
-    this.coursesList.forEach(item => {
-      if (item.checked && item.TRNS_GRADE && item.TRNS_LANG && item.TRNS_HRS) {
-        courses.push({
-          CRSE: item.id,
-          TRNS_GRADE: item.TRNS_GRADE,
-          TRNS_LANG: item.TRNS_LANG,
-          TRNS_HRS: item.TRNS_HRS
-        })
-      }
-      if (courses.length == 0) {
-        return;
-      }
-    });
+    if(this.classLevel == 'GM'){
+      this.coursesList.forEach(item => {
+        if (item.checked && item.TRNS_GRADE && item.TRNS_LANG && item.TRNS_HRS) {
+          courses.push({
+            CRSE: item.id,
+            TRNS_GRADE: item.TRNS_GRADE,
+            TRNS_LANG: item.TRNS_LANG,
+            TRNS_HRS: item.TRNS_HRS
+          })
+        }
+        if (courses.length == 0) {
+          return;
+        }
+      });
+    }else{
+      this.coursesList.forEach(item => {
+        if (item.checked && item.TRNS_GRADE && item.TRNS_YEAR && item.TRNS_HRS) {
+          courses.push({
+            CRSE: item.id,
+            TRNS_GRADE: item.TRNS_GRADE,
+            TRNS_YEAR: item.TRNS_YEAR,
+            TRNS_HRS: item.TRNS_HRS
+          })
+        }
+        if (courses.length == 0) {
+          return;
+        }
+      });
+    }
+    
     if (this.requesting) {
       return false;
     }
