@@ -1,6 +1,6 @@
 <div class="main-content">
-  <service-header [title]="'services.excuse_request_corona.title' |translate"
-  [desc]="'services.excuse_request_corona.desc' |translate"></service-header>
+  <service-header [title]="'services.postpone_corona_request.title' |translate"
+  [desc]="'services.postpone_corona_request.desc' |translate"></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
   <div class="ser-state" *ngIf="!isLoading">
     <div *ngFor="let msg of msgs"
@@ -11,9 +11,9 @@
   </div>
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
-      <h3 class="widget-title">{{"general.request.pre_requests"|translate}}
+      <h3 class="widget-title"> {{"general.request.pre_requests"|translate}}
         <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
-          {{"general.request.add_request"|translate}}<i class="ik ik-plus"></i>
+          {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>
     </div>
@@ -24,7 +24,7 @@
             <th scope="col">{{"general.request.req_no"|translate}}</th>
             <th scope="col">{{"general.request.req_date"|translate}}</th>
             <th scope="col">{{"general.request.req_status"|translate}}</th>
-            <th scope="col">{{"general.request.req_print"|translate}}</th>
+            <th scope="col"> {{"general.request.req_print"|translate}}</th>
             <th scope="col">{{"general.request.req_delete"|translate}}</th>
           </tr>
         </thead>
@@ -33,15 +33,14 @@
             <td>{{it.request_number}}</td>
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
-            <td><a class="btn btn-primary" seu-auto-print [href]="print(it.request_number)"><span
-                  class="ik ik-printer"></span>
+            <td><a class="btn btn-primary" seu-auto-print [href]="print(it.request_number)"><span class="ik ik-printer"></span>
                 {{"general.print" | translate}} </a></td>
             <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
-                (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button></td>
-                <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"|translate}}</td>
+                (click)="delete(it.request_number,i)"><i class="fa fa-trash">
+                </i> </button></td>
+            <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"|translate}}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-</div>

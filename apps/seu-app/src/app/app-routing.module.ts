@@ -5,6 +5,7 @@ import { BlankComponent } from './home/blank.component';
 
 import { PrintLayoutComponent } from './PrintExample/print-layout/print-layout.component';
 import { PrintFileComponent } from './PrintExample/print-file/print-file.component';
+import { UDGuard } from './guards/ud.guard';
 import { UGGuard } from './guards/ug.guard';
 import { GRGuard } from './guards/gr.guard';
 import { AdmisPagesComponent } from './admis-pages/old/admis-pages.component';
@@ -86,6 +87,17 @@ const routes: Routes = [
         path: 'academic-assistant',
         loadChildren: './modules/academic-assistant-module/academic-assistant.module#AcademicAssistantModule',
         canActivate: [GRGuard, UGGuard]
+      },
+      // {
+      //   path: 'diplome',
+      //   loadChildren: './diplome/diplome.module#DiplomeModule',
+      //   canActivate: [UDGuard]
+      // },
+      {
+        path: 'procedures-diplome',
+        loadChildren:
+          './academicprocs-diplome/academicprocs-diplome.module#AcademicprocsDiplomeModule',
+        canActivate: [UGGuard]
       },
       {
         path: 'academicrequests',

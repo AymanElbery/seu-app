@@ -2,13 +2,13 @@
   <service-header [title]="'services.term_execuse_master_corona.title' |translate"
   [desc]="'services.term_execuse_master_corona.desc' |translate"></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
-    <!-- <div class="ser-state" *ngIf="!isLoading">
+    <div class="ser-state" *ngIf="!isLoading">
       <div style="text-align: right" *ngFor="let msg of msgs"
         [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
         role="alert">
         {{msg.body}}
       </div>
-    </div> -->
+    </div>
     <div class="widget" *ngIf="!isLoading">
       <div class="widget-header">
         <h3 class="widget-title"> {{"general.request.pre_requests"|translate}}

@@ -69,7 +69,11 @@ export class MenuComponent implements OnInit, AfterContentInit {
       // console.log('level GR');
       this.menuType = 2;
       this.showServices = true;
-    } else {
+    } else if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'UD') {
+      // console.log('level GR');
+      this.menuType = 3;
+      this.showServices = true;
+    }else {
       this.menuType = 0;
       this.showServices = this.userService.userData.act_as_student;
       // console.log('else');
