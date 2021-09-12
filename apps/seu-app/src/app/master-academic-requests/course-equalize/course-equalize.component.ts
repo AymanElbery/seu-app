@@ -20,6 +20,7 @@ export class MasterCourseEqualizeComponent implements OnInit {
   msgs;
   status;
   isLoading = false;
+  classLevel;
 
 
   constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: MasterCourseEqualizerService) { }
@@ -47,6 +48,7 @@ export class MasterCourseEqualizeComponent implements OnInit {
       res => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
+        this.classLevel = (res as any).data.class_level;
         this.reqData = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
@@ -62,7 +64,7 @@ export class MasterCourseEqualizeComponent implements OnInit {
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '60%';
-
+    dialogConfig.data = { classLevel: this.classLevel };
 
     let dialogref = this.dialog.open(AddCourseEqualizeComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {

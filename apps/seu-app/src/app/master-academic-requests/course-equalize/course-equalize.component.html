@@ -1,6 +1,8 @@
 <div class="main-content">
-  <service-header [title]="'menu.masterequalize' |translate"
-    [desc]="'menu.masterequalize' |translate"></service-header>
+  <service-header *ngIf="classLevel == 'GY'" [title]="'menu.masterequalize' |translate"
+    [desc]="'menu.masterequalize_gy' |translate"></service-header>
+  <service-header *ngIf="classLevel == 'GM'" [title]="'menu.masterequalize' |translate"
+    [desc]="'menu.masterequalize_gm' |translate"></service-header>
 
   <seu-loader [isLoading]="isLoading"></seu-loader>
 
@@ -26,9 +28,9 @@
         <thead>
           <tr>
             <th scope="col">{{"general.request.req_no"|translate}}</th>
-            <th scope="col"> {{"general.request.course"|translate}}</th>
+            <th scope="col"> {{"general.course_code"|translate}}</th>
             <th scope="col">{{"general.request.req_date"|translate}}</th>
-            <th scope="col" colspan="2">{{"general.request.req_status"|translate}}</th>
+            <th scope="col">{{"general.request.req_status"|translate}}</th>
             <th scope="col">{{"general.request.req_delete"|translate}}</th>
           </tr>
         </thead>
@@ -36,19 +38,14 @@
           <tr *ngFor="let it of reqData.reqs;let i=index;">
             <td>{{it.request_number}}</td>
             <td>{{it.course}}</td>
-
             <td>{{it.insert_date}}</td>
             <td>{{it.status}}</td>
-            <td>{{it.reason}}</td>
-
             <td *ngIf='it.deletable'>
               <button [disabled]='deleting' class="btn btn-sm btn-danger" style="color: white"
                 (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i> </button>
             </td>
             <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"|translate}}</td>
-
           </tr>
-
         </tbody>
       </table>
     </div>
