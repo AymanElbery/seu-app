@@ -43,6 +43,7 @@ import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
 import { PolicyComponent } from './home/policy.component';
 import { DocsConfirmComponent } from './home/docs-confirm.component';
 import { VaccineStatusComponent } from './home/vaccine-status/vaccine-status.component';
+import { StudentRightsComponent } from './home/student-rights/student-rights.component';
 import { AppErrorComponent } from './home/error.component';
 import { GMPolicyComponent } from './home/gmpolicy.component';
 import { StdUploadPhotoComponent } from './home/std-upload-photo/std-upload-photo.component';
@@ -67,6 +68,7 @@ import { District_pipe } from './home/pips/district_pipe';
     PolicyComponent,
     DocsConfirmComponent,
     VaccineStatusComponent,
+    StudentRightsComponent,
     GMPolicyComponent,
     StdUploadPhotoComponent,
     StdUploadPhotoListComponent,
@@ -118,7 +120,7 @@ import { District_pipe } from './home/pips/district_pipe';
     , { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
 
   ],
-  entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent,VedioComponent, VaccineStatusComponent],
+  entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent,VedioComponent, VaccineStatusComponent, StudentRightsComponent],
   exports: [DownloadPrintDirective, ExternalLinkDirective,VedioComponent],
   bootstrap: [AppComponent]
 })

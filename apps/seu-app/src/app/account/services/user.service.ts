@@ -375,4 +375,15 @@ export class UserService extends BaseService {
 
     return this.http.post(url + "status/update", data, { headers: headers });
   }
+
+  updateStudentRights(data) {
+    var url = environment.baselink + environment.servicesprefix + "/rest/std_rights/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth
+    });
+
+    return this.http.post(url + "std_rights/update", data, { headers: headers });
+  }
 }

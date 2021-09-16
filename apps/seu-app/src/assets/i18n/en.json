@@ -1055,6 +1055,21 @@
         "uni_en": "University Name (English)",
         "birth_city": "City of birth"
     },
+    "student_rights":{
+        "save": "Save",
+        "title": "know Your Rights",
+        "p1": "The Saudi Electronic University (SEU) is seeking to raise awareness and maintain providing a distinguished, academic, and administrative environment for all beneficiaries of its students, employees, staff and faculty members. SEU also seeks responsibility in achieving and applying transparency, and independence.",
+        "p2_1": " Therefore, we would like you to read SEU's developed",
+        "p2_2": " University student’s guide",
+        "p2_3": " This Link",
+        "p2_4": " Students rights and responsibilities",
+        "p2_5": " added in",
+        "p2_6": " and acknowledge viewing it in the designated box at the bottom of the page.",
+        "p3_1": "We would also like the faculty and administrative staff members to view the",
+        "p3_2": " Charters of performance and profession ethics, the Administrator duties and responsibilities, Guide to the Rights and Duties for Faculty Members and their Equivalent and the Guideline for the administrative staff",
+        "p3_3": " and acknowledge viewing it in the designated box at the bottom of the page.",
+        "agree": "I acknowledge reviewing the regulations and regulatory and awareness guides attached in the link"
+    },
     "instructions": {
         "exams": {
             "title": "eExam Instructions",

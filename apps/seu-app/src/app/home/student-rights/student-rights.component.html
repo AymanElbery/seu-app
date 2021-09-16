@@ -1,0 +1,32 @@
+<mat-dialog-content dir="{{translate.currentLang == 'ar' ? 'rtl':'ltr'}}">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="width:100%;text-align: center" class="modal-title " id="exampleModalLabel">
+                {{ "student_rights.title"|translate }}
+            </h5>
+        </div>
+        <div class="modal-body" style="width: 100%" (scroll)="onScroll($event)">
+            <div class="row">
+                <div class="col-md-12" style="padding: 10px;">
+                    <h6>{{ "student_rights.p1"|translate }}</h6>
+                    <h6>{{ "student_rights.p2_1"|translate }}{{ "student_rights.p2_2"|translate }}<a style="color: #6f42c1;" target="_blank" href="https://seu.edu.sa/vropdq/ar/guides/">{{ "student_rights.p2_3"|translate }}</a>{{ "student_rights.p2_4"|translate }}{{ "student_rights.p2_5"|translate }}<a style="color: #6f42c1;" target="_blank" href="https://seu.edu.sa/vropdq/ar/university-students-rights-regulation/">{{ "student_rights.p2_3"|translate }}</a>{{ "student_rights.p2_6"|translate }}</h6>
+                    <h6>{{ "student_rights.p3_1"|translate }}{{ "student_rights.p3_2"|translate }}{{ "student_rights.p2_5"|translate }}<a style="color: #6f42c1;" target="_blank" href="https://seu.edu.sa/vropdq/ar/guides/">{{ "student_rights.p2_3"|translate }}</a></h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-check">
+                        <label style="position: relative; top: 30px; right: 20px;" class="form-check-label">{{"student_rights.agree"|translate}}</label><br>
+                        <input (click)="agreeFunc()" style="width: 26px; height: 26px; cursor: pointer"
+                            type="checkbox" class="form-check-input" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-12" style="text-align: center; margin-bottom: 20px;">
+                    <button [disabled]="saving || !agree" style="width: 20%;" (click)="submit()" type="submit" class="btn btn-dark btn-lg">{{ "student_rights.save" | translate }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
