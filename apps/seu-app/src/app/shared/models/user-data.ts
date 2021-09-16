@@ -20,4 +20,5 @@ export interface UserData {
     email: string;
     act_as_student: boolean;
     activeRole: string;
+    STD_RIGHTS: number;
 }

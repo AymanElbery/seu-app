@@ -47,6 +47,7 @@ export class UserService extends BaseService {
       coll: '',
       id: '',
       PIDM: '',
+      STD_RIGHTS: 0,
       level: '',
       major: '',
       name_ar: '',

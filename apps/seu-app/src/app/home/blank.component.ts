@@ -112,7 +112,7 @@ export class BlankComponent implements OnInit {
   }
 
   showStudentRight(){
-    if (!this.userService.userData['STD_RIGHTS']) {
+    if (!this.userService.userData.STD_RIGHTS) {
       const dialogConfig = new MatDialogConfig();
       dialogConfig.autoFocus = true;
       dialogConfig.disableClose = true;

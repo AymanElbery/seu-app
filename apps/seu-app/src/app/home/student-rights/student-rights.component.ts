@@ -60,7 +60,7 @@ export class StudentRightsComponent implements OnInit, OnDestroy {
             (response: any) => {
               if (response) {
                 if (response['status']) {
-                  this.userService.userData['STD_RIGHTS'] = 0;
+                  this.userService.userData.STD_RIGHTS = 1;
                   this.dialogRef.close();
                 } else {
                   this.saving = false;
