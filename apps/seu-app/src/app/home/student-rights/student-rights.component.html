@@ -16,7 +16,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-check">
-                        <label style="position: relative; top: 30px; right: 20px;" class="form-check-label">{{"student_rights.agree"|translate}}</label><br>
+                        <label *ngIf="lang == 'ar'" style="position: relative; top: 55px; right: 20px;" class="form-check-label">{{"student_rights.agree"|translate}}</label><br>
+                        <label *ngIf="lang == 'en'" style="position: relative; top: 30px; right: -20px;" class="form-check-label">{{"student_rights.agree"|translate}}</label><br>
                         <input (click)="agreeFunc()" style="width: 26px; height: 26px; cursor: pointer"
                             type="checkbox" class="form-check-input" value="">
                     </div>

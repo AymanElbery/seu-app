@@ -18,6 +18,7 @@ export class StudentRightsComponent implements OnInit, OnDestroy {
     saving = false;
     agree = false;
     allowSelection = false;
+    lang;
 
     constructor(
         public userService: UserService, 
@@ -30,6 +31,7 @@ export class StudentRightsComponent implements OnInit, OnDestroy {
         @Inject(MAT_DIALOG_DATA) public confirmdata
     ) {
         this.std_id = confirmdata.username;
+        this.lang = localStorage.getItem('seu-lang');
     }
 
     ngOnInit() {
