@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { ReqAssistantService } from '../../services/req-assistant.service';
 import { TranslateService } from '@ngx-translate/core';
