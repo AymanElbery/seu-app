@@ -1073,8 +1073,8 @@
     },
     "written_forms":{
         "form": "Title",
-        "download_pdf": "PDF",
-        "download_word": "Word",
+        "download_with": "With Logo",
+        "download_without": "Without Logo",
         "download": "Download",
         "guide": "You can view the Guide to Written Correspondence ",
         "click_here": "click here",

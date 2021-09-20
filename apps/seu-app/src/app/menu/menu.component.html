@@ -49,6 +49,12 @@
 
 
         <div *ngIf="hasTasks">
+          <div class="nav-item">
+            <a routerLink="/written-forms/forms" class="menu-item">
+              {{ "menu.written_forms" | translate }}
+              <i class="ik ik-user-check"></i>
+            </a>
+          </div>
           <div class="nav-item has-sub">
             <a href="javascript:void(0)">
               <span>{{ "menu.tasks" | translate }} </span>
@@ -648,10 +654,6 @@
               {{ "menu.EDUSYSTEMS" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
-            <a routerLink="/written-forms/forms" class="menu-item">
-              {{ "menu.written_forms" | translate }}
-              <i class="ik ik-user-check"></i>
-            </a>
             <a routerLink="/instructions/exams" class="menu-item">
               {{ "menu.INSTRUCTEXAM" | translate }}
               <i class="ik ik-user-check"></i>
@@ -842,10 +844,6 @@
             </a>
             <a routerLink="/instructions/exams" class="menu-item">
               {{ "menu.INSTRUCTEXAM" | translate }}
-              <i class="ik ik-user-check"></i>
-            </a>
-            <a routerLink="/written-forms/forms" class="menu-item">
-              {{ "menu.written_forms" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
             <a [routerLink]="['/attendance']" class="menu-item">
