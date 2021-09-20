@@ -34,8 +34,17 @@ const routes: Routes = [
         loadChildren: './instructions/instructions.module#InstructionsModule',
       },
       {
+        path: 'written-forms',
+        loadChildren: './written-forms/written-forms.module#WrittenFormsModule',
+      },
+      {
         path: 'academicaff',
         loadChildren: './academicaff/academicaff.module#AcademicaffModule',
+        canActivate: [UGGuard]
+      },
+      {
+        path: 'academicaff-diplome',
+        loadChildren: './academicaff-diplome/academicaff-diplome.module#AcademicaffDiplomeModule',
         canActivate: [UGGuard]
       },
       {

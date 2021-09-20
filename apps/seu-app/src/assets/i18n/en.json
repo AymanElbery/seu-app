@@ -212,6 +212,7 @@
         "RESGISTERCOURSES": "Register Courses",
         "EDUSYSTEMS": " Eduaction systems insturctions ",
         "INSTRUCTEXAM": "Electronic Exam Instructions ",
+        "written_forms": "Written Forms ",
         "StdLaw": "Student rights ",
         "StdSRV": "Students self service   ",
         "KnowMng": " Knowlege source managment   ",
@@ -1069,6 +1070,21 @@
         "p3_2": " Charters of performance and profession ethics, the Administrator duties and responsibilities, Guide to the Rights and Duties for Faculty Members and their Equivalent and the Guideline for the administrative staff",
         "p3_3": " and acknowledge viewing it in the designated box at the bottom of the page.",
         "agree": "I acknowledge reviewing the regulations and regulatory and awareness guides attached in the link"
+    },
+    "written_forms":{
+        "form": "Title",
+        "download_pdf": "PDF",
+        "download_word": "Word",
+        "download": "Download",
+        "guide": "You can view the Guide to Written Correspondence ",
+        "click_here": "click here",
+        "file_1" : "External Letters",
+        "file_2" : "Internal Letters",
+        "file_3" : "Management Decisions",
+        "file_4" : "Proceedings",
+        "file_5" : "Internal Letters With Guidance",
+        "file_6" : "Reports",
+        "file_7" : "Internal Generalizations"
     },
     "instructions": {
         "exams": {

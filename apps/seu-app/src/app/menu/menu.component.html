@@ -290,7 +290,7 @@
             <a href="#" class="menu-item" routerLink="/academicrequests/withdrawal">
               {{ "menu.withdrawal" | translate }}
             </a>
-            
+
           </div>
         </div>
         <div *ngIf="menuType == 2 && showServices" class="nav-item has-sub">
@@ -383,6 +383,15 @@
           </div>
         </div>
         <div *ngIf="menuType == 3 && showServices" class="nav-item has-sub">
+          <a href="javascript:void(0)"><span> {{ "menu.affairs" | translate }} </span>
+            <i class="ik ik-user"></i></a>
+          <div class="submenu-content">
+            <a href="#" class="menu-item" routerLink="/academicaff-diplome/status">
+              {{ "menu.status" | translate }}
+            </a>
+          </div>
+        </div>
+        <div *ngIf="menuType == 3 && showServices" class="nav-item has-sub">
           <a href="javascript:void(0)"><span> {{ "menu.procedures" | translate }} </span>
             <i class="ik ik-layers"></i></a>
           <div class="submenu-content">
@@ -443,10 +452,10 @@
             </a>
             <a href="#" class="menu-item" routerLink="/procedures/withdrawuniv">
               {{ "menu.withdrawuniv" | translate }}</a>
-            
-            <a  href="#" class="menu-item" routerLink="/procedures/change-schedule">
+
+            <a href="#" class="menu-item" routerLink="/procedures/change-schedule">
               {{ "menu.change_schedule" | translate }}</a>
-              
+
             <!-- <a href="#" class="menu-item" routerLink="/procedures/terminate"> طلب فصل استثنائي   </a> -->
             <!-- <a href="#" class="menu-item" routerLink="/procedures/examexcuse"> تقديم الأعذار للمتغيبين عن الاختبارات   </a> -->
           </div>
@@ -534,7 +543,8 @@
             </a>
           </div>
         </div>
-        <div *ngIf="userService.userData && userService.userData.activeRole == 'Student' && menuType != 3" class="nav-item has-sub">
+        <div *ngIf="userService.userData && userService.userData.activeRole == 'Student' && menuType != 3"
+          class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "menu.academic_assistant" | translate }} </span>
             <i class="ik ik-book-open"></i>
@@ -638,10 +648,15 @@
               {{ "menu.EDUSYSTEMS" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
+            <a routerLink="/written-forms/forms" class="menu-item">
+              {{ "menu.written_forms" | translate }}
+              <i class="ik ik-user-check"></i>
+            </a>
             <a routerLink="/instructions/exams" class="menu-item">
               {{ "menu.INSTRUCTEXAM" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
+            
           </div>
         </div>
         <div *ngIf="false && showadmis" id="admis-pages-cont" class="nav-item has-sub">
@@ -829,10 +844,15 @@
               {{ "menu.INSTRUCTEXAM" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
+            <a routerLink="/written-forms/forms" class="menu-item">
+              {{ "menu.written_forms" | translate }}
+              <i class="ik ik-user-check"></i>
+            </a>
             <a [routerLink]="['/attendance']" class="menu-item">
               {{ "menu.student_attendance" | translate
               }}<i class="ik ik-users"></i>
             </a>
+            
           </div>
         </div>
         <div *ngIf="
@@ -863,7 +883,8 @@
               <i class="ik ik-user-check"></i>
             </a>
 
-            <a *ngIf="menuType != 3" target="_blank" href="https://seu.edu.sa/ar/instructions-educational-systems/" class="menu-item">
+            <a *ngIf="menuType != 3" target="_blank" href="https://seu.edu.sa/ar/instructions-educational-systems/"
+              class="menu-item">
               {{ "menu.EDUSYSTEMS" | translate }}
               <i class="ik ik-user-check"></i>
             </a>
@@ -872,12 +893,13 @@
               {{ "menu.StdSRV" | translate }}
               <i class="ik ik-user"></i>
             </a>
-            <a *ngIf="menuType != 3" target="_blank" href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement"
-              class="menu-item">
+            <a *ngIf="menuType != 3" target="_blank"
+              href="https://bannservices.seu.edu.sa/SelfServiceBannerGeneralEventManagement" class="menu-item">
               {{ "menu.EVENTSMANAGE" | translate }}
               <i class="ik ik-briefcase"></i>
             </a>
-            <a *ngIf="menuType != 3" target="_blank" href="https://bannservices.seu.edu.sa/StudentRegistrationSsb" class="menu-item">
+            <a *ngIf="menuType != 3" target="_blank" href="https://bannservices.seu.edu.sa/StudentRegistrationSsb"
+              class="menu-item">
               {{ "menu.RESGISTERCOURSES" | translate }}
               <i class="ik ik-book"></i>
             </a>
