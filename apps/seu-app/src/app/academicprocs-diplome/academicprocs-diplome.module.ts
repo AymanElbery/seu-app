@@ -13,6 +13,9 @@ import { WithdrawFromUnivComponent } from './withdraw-from-univ/withdraw-from-un
 import { AddRequestComponent } from './withdraw-from-univ/diag/add-request/add-request.component';
 import { ExecuseRequestCoronaComponent } from './execuse-request-corona/execuse-request-corona.component';
 import { AddExecuseTermCoronaComponent } from './execuse-request-corona/diag/add-execuse-term-corona/add-execuse-term-corona.component';
+import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
+import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component'
+
 
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -29,11 +32,14 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     ExecuseRequestCoronaComponent,
     AddExecuseTermCoronaComponent,
     AddPostponeCoronaComponent,
+    LecturesExecusesComponent,
+    AddLecturesExecusesComponent
   ],
   entryComponents: [
     AddRequestComponent,
     AddPostponeCoronaComponent,
     AddExecuseTermCoronaComponent,
+    AddLecturesExecusesComponent
   ],
 
   imports: [

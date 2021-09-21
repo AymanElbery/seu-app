@@ -66,6 +66,12 @@ const routes: Routes = [
         canActivate: [GRGuard]
       },
       {
+        path: 'statements-diplome',
+        loadChildren:
+          './statements-diplime/statements-diplime.module#StatementsDiplomeModule',
+        canActivate: [GRGuard]
+      },
+      {
         path: 'registercourses',
         loadChildren:
           './register-courses/register-courses.module#RegisterCoursesModule',
