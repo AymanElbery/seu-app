@@ -41,6 +41,6 @@ export class WithdrawFromUnivService {
   download(req) {
     this.configService.baseUrl = 'std_api_diplome';
     const sid = this.configService.getSid();
-    return this.configService.getApiURI() + '/withdraw_service/download/withdraw_request/' + req + '?sid=' + sid + '&lang=' + this.translate.currentLang;
+    return this.configService.getApiURI() + '/withdraw_service/download/withdraw_request_diplome/' + req + '?sid=' + sid + '&lang=' + this.translate.currentLang;
   }
 }
