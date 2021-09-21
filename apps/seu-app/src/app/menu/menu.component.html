@@ -49,12 +49,6 @@
 
 
         <div *ngIf="hasTasks">
-          <div class="nav-item">
-            <a routerLink="/written-forms/forms" class="menu-item">
-              {{ "menu.written_forms" | translate }}
-              <i class="ik ik-user-check"></i>
-            </a>
-          </div>
           <div class="nav-item has-sub">
             <a href="javascript:void(0)">
               <span>{{ "menu.tasks" | translate }} </span>
@@ -666,6 +660,7 @@
             
           </div>
         </div>
+
         <div *ngIf="false && showadmis" id="admis-pages-cont" class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "general.admis_pages" | translate }} </span>
@@ -856,6 +851,19 @@
               }}<i class="ik ik-users"></i>
             </a>
             
+          </div>
+        </div>
+
+        <div *ngIf="userService.userData && userService.userData.activeRole == 'Employee' || userService.userData.activeRole == 'Instructor'" class="nav-item has-sub">
+          <a href="javascript:void(0)">
+            <span>{{ "menu.forms" | translate }} </span>
+            <i class="ik ik-book-open"></i>
+          </a>
+          <div class="submenu-content">
+            <a routerLink="/written-forms/forms" class="menu-item">
+              {{ "menu.written_forms" | translate }}
+              <i class="ik ik-user-check"></i>
+            </a>
           </div>
         </div>
         <div *ngIf="
