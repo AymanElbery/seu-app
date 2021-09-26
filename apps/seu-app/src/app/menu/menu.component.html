@@ -389,6 +389,9 @@
             <a href="#" class="menu-item" routerLink="/academicaff-diplome/status">
               {{ "menu.status" | translate }}
             </a>
+            <a href="#" class="menu-item" routerLink="/academicaff-diplome/record">
+              {{ "menu.record" | translate }}
+            </a>
             <a href="#" class="menu-item" routerLink="/statements-diplome/all">
               {{ "menu.statements" | translate }}
             </a>
@@ -408,6 +411,24 @@
             <!-- <a href="#" class="menu-item" routerLink="/procedures-diplome/execuse-corona">
               {{ "menu.execuse_corona" | translate }}
             </a> -->
+          </div>
+        </div>
+        <div *ngIf="menuType == 3 && showServices" class="nav-item has-sub">
+          <a href="javascript:void(0)"><span> {{ "menu.EXAMAFF" | translate }} </span>
+            <i class="ik ik-trending-up"></i></a>
+          <div class="submenu-content">
+            <a href="#" class="menu-item" routerLink="/exams-diplome/examexcuse">
+              {{ "menu.EXAMEXEC" | translate }}
+            </a>
+          </div>
+        </div>
+        <div *ngIf="menuType == 3 && showServices" class="nav-item has-sub">
+          <a href="javascript:void(0)"><span> {{ "menu.financeaff" | translate }} </span>
+            <i class="ik ik-dollar-sign"></i></a>
+          <div class="submenu-content">
+            <a href="#" class="menu-item" routerLink="/finance-diplome/stdpay">
+              {{ "menu.FEEPAY" | translate }}
+            </a>
           </div>
         </div>
         <div *ngIf="menuType == 1 && showServices" class="nav-item has-sub">

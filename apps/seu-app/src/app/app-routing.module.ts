@@ -84,9 +84,20 @@ const routes: Routes = [
         canActivate: [UGGuard]
       },
       {
+        path: 'finance-diplome',
+        loadChildren:
+          './finance-diplome-affair/finance-diplome-affair.module#FinanceDiplomeAffairModule',
+        canActivate: [UDGuard]
+      },
+      {
         path: 'exams',
         loadChildren: './exams-affair/exams-affair.module#ExamsAffairModule',
         canActivate: [UGGuard]
+      },
+      {
+        path: 'exams-diplome',
+        loadChildren: './exams-diplome-affair/exams-diplome-affair.module#ExamsDiplomeAffairModule',
+        canActivate: [UDGuard]
       },
       {
         path: 'other',

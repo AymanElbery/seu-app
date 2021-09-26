@@ -1,0 +1,202 @@
+<div class="main-content">
+    <service-header [title]="'services.academic_record.title' |translate"
+        [desc]="'services.academic_record.desc' |translate"></service-header>
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <div *ngIf="isClosed">
+        <seu-flash [msgs]="messagesList" [isLoading]="isLoading"> </seu-flash>
+    </div>
+    <ng-container *ngIf="!isClosed">
+        <div *ngIf="!isLoading">
+            <div class="state">
+                <h5> <span>{{"general.student_name" | translate}}</span> {{recoredData.student_name}} </h5>
+            </div>
+        </div>
+        <section *ngIf="!isLoading" class="ser-state">
+            <div class="container">
+                <div class="row ser-block">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="state">
+                            <h6>{{"general.faculty" | translate}}</h6>
+                            <h5> {{recoredData.coll}} </h5>
+                        </div>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-info"></div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-12">
+                        <div class="state">
+                            <h6>{{"general.major" | translate}}</h6>
+                            <h5> {{recoredData.major}} </h5>
+                        </div>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-info"></div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-12">
+                        <div class="state">
+                            <h6>{{"general.student_id" | translate}}</h6>
+                            <h5>{{recoredData.std_id}} </h5>
+                        </div>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-info"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row ser-block">
+                    <div class=" col-md-4 col-sm-12">
+                        <div class="state">
+                            <h6>{{"general.ssn" | translate}}</h6>
+                            <h5>{{recoredData.ssn}} </h5>
+                        </div>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-info"></div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-12">
+                        <div class="state">
+                            <h6>{{"general.grade" | translate}}</h6>
+                            <h5>{{recoredData.grade}} </h5>
+                        </div>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-info"></div>
+                        </div>
+                    </div>
+                    <div class=" col-md-4 col-sm-12">
+                        <div class="state">
+                            <h6>{{"general.student_status" | translate}}</h6>
+                            <h5>{{recoredData.status}} </h5>
+                        </div>
+                        <div class="progress progress-sm">
+                            <div class="progress-bar bg-info"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="accordion" *ngIf="!isLoading" id="accordionExample">
+            <div *ngFor="let item of recoredData.terms ; let i = index">
+                <div class="card ">
+                    <div class="card-header" id="heading{{i}}">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block" type="button" data-toggle="collapse"
+                                [attr.data-target]="'#collapse'+i" aria-expanded="false"
+                                [attr.aria-controls]="'collapse'+i">
+                                <b> {{"general.term" | translate}} {{item.Term}} {{"general.for_year" | translate}}
+                                    {{item.Year}} </b>
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapse{{i}}" class="collapse" [attr.aria-labelledby]="'heading'+i"
+                        data-parent="#accordionExample">
+                        <div class="container">
+                            <div class="back">
+                                <div class="row ser-block">
+                                    <div class="col-md-3 col-sm-12 ">
+                                        <div class="state">
+                                            <h6>{{"general.term" | translate}}</h6>
+                                            <h5> {{item.Term}} </h5>
+                                        </div>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-info"></div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-md-3 col-sm-12 ">
+                                        <div class="state">
+                                            <h6>{{"general.year" | translate}}</h6>
+                                            <h5>{{item.Year}} </h5>
+                                        </div>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-info"></div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-md-3 col-sm-12 ">
+                                        <div class="state">
+                                            <h6>{{"general.major" | translate}}</h6>
+                                            <h5> {{item.Major}} </h5>
+                                        </div>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-info"></div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-md-3 col-sm-12 ">
+                                        <div class="state">
+                                            <h6>{{"general.status" | translate}}</h6>
+                                            <h5>{{item.Status}} </h5>
+                                        </div>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar bg-info"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">{{"general.course_code" | translate}}</th>
+                                                <th scope="col">{{"general.course_name" | translate}}</th>
+                                                <th scope="col" *ngIf="!item.isCurrentRegistration">{{"general.rating" |
+                                                    translate}}</th>
+                                                <th scope="col">{{"general.course_hours" | translate}}</th>
+                                                <th scope="col" *ngIf="!item.isCurrentRegistration">{{"general.points" |
+                                                    translate}}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let it of item.courses">
+                                                <td>{{it.ID}}</td>
+                                                <td>{{it.CRSE_TITLE}}</td>
+                                                <td *ngIf="!item.isCurrentRegistration"> {{it.GRADE_TITLE}}</td>
+                                                <td>{{it.HRS}}</td>
+                                                <td *ngIf="!item.isCurrentRegistration">{{it.Points}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="table-responsive" *ngIf="!item.isCurrentRegistration">
+                                    <table class="table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">{{"general.hours" | translate}}</th>
+                                                <th scope="col">{{"general.recorded" | translate}} </th>
+                                                <th scope="col">{{"general.success" | translate}}</th>
+                                                <th scope="col">{{"general.earned" | translate}}</th>
+                                                <th scope="col">{{"general.points" | translate}}</th>
+                                                <th scope="col">{{"general.average" | translate}}</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <th scope="row">{{"general.quarterly" | translate}}</th>
+                                            <td>{{item.registredHours}}</td>
+                                            <td>{{item.gpa_hours}}</td>
+                                            <td>{{item.earned_hours}}</td>
+                                            <td>{{item.quality_points}}</td>
+                                            <td>{{item.gpa}}</td>
+                                            <tr>
+                                                <th scope="row">{{"general.cumulative" | translate}}</th>
+                                                <td>{{item.TotalregistredHours}}</td>
+                                                <td>{{item.total_gpa_hours}}</td>
+                                                <td>{{item.total_earned_hours}}</td>
+                                                <td>{{item.total_quality_points}}</td>
+                                                <td>{{item.total_gpa}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center" class="prin" *ngIf="!isLoading && recoredData.terms.length">
+            <a class="btn" seu-auto-print href="{{arabicPrint}}">{{"general.ar_print" | translate}}<i
+                    class="ik ik-save"></i>
+            </a>
+            <a class="btn" seu-auto-print href="{{EngPrint}}"> <i class="ik ik-save"></i> {{"general.en_print" |
+                translate}}
+            </a>
+        </div>
+    </ng-container>
+</div>
