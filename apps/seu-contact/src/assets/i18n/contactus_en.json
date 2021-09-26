@@ -33,6 +33,7 @@
         "attachment": "Attachement",
         "success_req_no": "Ticket No ",
         "success": "Request has been send, we will reply as soon as possible",
+        "success_note": "You can inquire about the solution in the (Inquiry) tab",
         "ticket_id": "Ticket No",
         "enquiry": "Submit",
         "status": "Status",
