@@ -1,92 +1,75 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { ReqAssistantService } from '../../services/req-assistant.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-reg-assistant-form',
-    templateUrl: './ticket-add.component.html',
-    styleUrls: ['./ticket-add.component.css']
+    selector: 'app-reg-assistant-form-crn',
+    templateUrl: './crn-add.component.html',
+    styleUrls: ['./crn-add.component.css']
 })
-export class RegistrationAssistantFormComponent implements OnInit {
+export class RegistrationAssistantFormCrnComponent implements OnInit {
 
     isLoading = false;
-    form: FormGroup;
-    submitted = false;
+    formCrn: FormGroup;
+    submittedCrn = false;
 
     courses = [];
-    messages = [];
     crns = [];
-    lectures = [];
-    tickets;
+    days = [];
+    times = [];
+    requests;
     can_add_new = true;
-    
 
     constructor(
     @Inject(MAT_DIALOG_DATA) public data, 
     private fb: FormBuilder,
-    public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, 
+    public dialogRef: MatDialogRef<RegistrationAssistantFormCrnComponent>, 
     private translate: TranslateService,
     private toastr: AppToasterService, 
     private service: ReqAssistantService) {
-        this.tickets = data;
-        this.form = this.fb.group({
+        this.requests = data;
+        this.formCrn = this.fb.group({
             crse: ['', [Validators.required]],
-            message: ['', [Validators.required]],
-            comments: ['', [Validators.required]]
+            day: [''],
+            time: [''],
+            comments: ['']
         });
     }
 
     ngOnInit() {
-        
         this.service.loadlookups();
         this.service.courses_list().subscribe(list => {
             this.courses = list;
         });
-        
-        this.form.controls['crse'].valueChanges.subscribe(() => {
-            this.form.controls['crn'].setValue("");
-            if (this.form.controls['crse'].value) {
-                let crsecode = this.form.controls['crse'].value.split(" ");
-                this.service.crns_list(crsecode[0] + crsecode[1]).subscribe(list => {
-                    this.crns = list;
-                });
-            } else {
-                this.crns = [];
-            }
-
+        this.service.days_list().subscribe(list => {
+            this.days = list;
         });
-
-        this.service.messages_list().subscribe(list => {
-            this.messages = list;
-        });
-       
-        this.service.lectures_list().subscribe(list => {
-            this.lectures = list;
+        this.service.times_list().subscribe(list => {
+            this.times = list;
         });
     }
 
     crseCange(e){
         this.can_add_new = true;
         let course_code = e.value.split("|")[0].trim();
-        this.tickets.forEach(ticket => {
-            if(course_code.trim() == ticket.subject.split("|")[1].trim()){
+        this.requests.forEach(request => {
+            if(course_code.trim() == request.CRN_CODE && request.STATUS == 2){
                 this.can_add_new = false;
             }
         });
     }
-
-    onSubmit() {
-        if (this.form.invalid) {
+    
+    onSubmitCrn() {
+        if (this.formCrn.invalid) {
             return;
         }
-        let data = this.form.value;
-        this.submitted = true;
+        let data = this.formCrn.value;
+        this.submittedCrn = true;
         this.isLoading = true;
-        this.service.AddRequest(data).subscribe(
+        this.service.AddRequestCrn(data).subscribe(
             (response: any) => {
                 if (response.status) {
                     this.toastr.push([{
@@ -98,12 +81,12 @@ export class RegistrationAssistantFormComponent implements OnInit {
                     this.toastr.push(response['messages']);
                 }
                 this.isLoading = false;
-                this.submitted = false;
+                this.submittedCrn = false;
             },
             error => {
                 this.toastr.tryagain();
                 this.isLoading = false;
-                this.submitted = false;
+                this.submittedCrn = false;
             }
         );
     }

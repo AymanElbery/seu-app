@@ -10,11 +10,11 @@
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"general.category"|translate}} <span class="reqstart">*</span></h6>
-                            <ng-select [items]="categories" bindLabel="text" bindValue="value"
-                                formControlName="category">
+                            <ng-select style="direction: rtl;" [items]="subcategories" bindLabel="text" bindValue="value"
+                                formControlName="subcategory">
                             </ng-select>
                         </div>
-                        <control-validations-errors [control]="form.controls.category"></control-validations-errors>
+                        <control-validations-errors [control]="form.controls.subcategory"></control-validations-errors>
                     </div>
 
                     <div class="col-md-12">
@@ -25,7 +25,13 @@
                         </div>
                         <control-validations-errors [control]="form.controls.item"></control-validations-errors>
                     </div>
-
+                    <div class="col-md-12" *ngIf="desc">
+                        <div class="state">
+                            <div class="alert alert-info">
+                                <strong>{{ desc }}</strong>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"general.subject"|translate}} <span class="reqstart">*</span></h6>
@@ -36,7 +42,7 @@
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"general.description"|translate}} <span class="reqstart">*</span></h6>
-                            <textarea maxlength="500" class="form-control" formControlName="description"></textarea>
+                            <textarea maxlength="500" class="form-control" formControlName="description"></textarea> 
                         </div>
                         <control-validations-errors [control]="form.controls.description"></control-validations-errors>
                     </div>
@@ -49,9 +55,6 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col-md-12" style="text-align: center;">
-                        <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                            {{"general.back"|translate}}</button>
-
                         <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="onSubmit()"
                             type="submit" class="btn btn-primary">{{ "general.send" |
                             translate}}

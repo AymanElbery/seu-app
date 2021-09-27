@@ -15,34 +15,45 @@ export class RegistrationAssistantFormComponent implements OnInit {
     isLoading = false;
     form: FormGroup;
     submitted = false;
-
-    categories = [];
+    subcategories = [];
     items = [];
+    desc = false;
     constructor(@Inject(MAT_DIALOG_DATA) public data, private fb: FormBuilder,
         public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, private translate: TranslateService,
         private toastr: AppToasterService, private service: AcademicRequestsService) { }
 
     ngOnInit() {
         this.form = this.fb.group({
-            category: ['', [Validators.required]],
+            subcategory: ['', [Validators.required]],
             item: ['', [Validators.required]],
             subject: ['', [Validators.required]],
             description: ['', [Validators.required]],
             file: ['']
         });
         this.service.loadlookups();
-        this.service.categories_list().subscribe(list => {
-            this.categories = list;
+        this.service.subcategories_list().subscribe(list => {
+            this.subcategories = list;
         });
-        this.form.controls['category'].valueChanges.subscribe(() => {
+        this.form.controls['subcategory'].valueChanges.subscribe(() => {
             this.form.controls['item'].setValue("");
-            if (this.form.controls['category'].value) {
-                let category_code = this.form.controls['category'].value;
-                this.service.items_list(category_code).subscribe(list => {
+            if (this.form.controls['subcategory'].value) {
+                let subcategory_code = this.form.controls['subcategory'].value;
+                this.service.items_list(subcategory_code).subscribe(list => {
                     this.items = list;
                 });
             } else {
                 this.items = [];
+            }
+        });
+        this.form.controls['item'].valueChanges.subscribe(() => {
+            this.desc = false;
+            if (this.form.controls['item'].value) {
+                let item_code = this.form.controls['item'].value;
+                this.service.desc_list(item_code).subscribe(desc => {
+                    this.desc = desc;
+                });
+            } else {
+                this.desc = false;
             }
         });
     }

@@ -5,8 +5,9 @@
   <div class="widget">
     <div class="widget-header">
       <h3 class="widget-title">
+        {{ "reg_assistant.tickets_title" | translate}}
         &nbsp;
-        <button *ngIf="can_add_new" type="button" class="btn btn-primary" (click)="openDialoge()">
+        <button *ngIf="can_add_new_ticket" type="button" class="btn btn-primary" (click)="openDialoge()">
           {{"general.add" | translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>
@@ -36,8 +37,64 @@
                   <button class="btn btn-primary" (click)="openDetailsDialoge(ticket.id)">{{ "general.view" |
                     translate}}</button>
                   &nbsp;
+                  <button class="btn btn-primary" *ngIf="ticket.status == 'Resolved' || ticket.status == 'Closed'" (click)="reOpen(ticket.id)">{{
+                    "general.reopen" | translate}}</button>
+                  &nbsp;
                   <button class="btn btn-primary" *ngIf="ticket.status == 'Open'" (click)="delete(ticket.id)">{{
                     "general.delete" | translate}}</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="widget">
+    <div class="widget-header">
+      <h3 class="widget-title">
+        {{ "reg_assistant.requests_crn_title" | translate}}
+        &nbsp;
+        <button type="button" class="btn btn-primary" (click)="openCrnDialoge()">
+          {{"general.add" | translate}} <i class="ik ik-plus"></i>
+        </button>
+      </h3>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{ "reg_assistant.corse_code" | translate}}</th>
+                <th scope="col">{{ "reg_assistant.corse_title" | translate}}</th>
+                <th scope="col">{{ "reg_assistant.days" | translate}}</th>
+                <th scope="col">{{ "reg_assistant.times" | translate}}</th>
+                <th scope="col">{{ "general.ticket_status" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let request of requests; let i = index">
+                <td>{{ i }}</td>
+                <td>{{ request.CRN_CODE }}</td>
+                <td>{{ request.CRN_TITLE }}</td>
+                <td>
+                  <strong *ngIf="request.DAY == 1">{{ "reg_assistant.sunday" | translate}}</strong>
+                  <strong *ngIf="request.DAY == 2">{{ "reg_assistant.monday" | translate}}</strong>
+                  <strong *ngIf="request.DAY == 3">{{ "reg_assistant.tuesday" | translate}}</strong>
+                  <strong *ngIf="request.DAY == 4">{{ "reg_assistant.wednesday" | translate}}</strong>
+                  <strong *ngIf="request.DAY == 5">{{ "reg_assistant.thursday" | translate}}</strong>
+                </td>
+                <td>
+                  <strong *ngIf="request.TIME == 'am'">{{ "reg_assistant.am" | translate}}</strong>
+                  <strong *ngIf="request.STATUS == 'pm'">{{ "reg_assistant.pm" | translate}}</strong>
+                </td>
+                <td>
+                  <strong *ngIf="request.STATUS == 2">{{ "reg_assistant.status_2" | translate}}</strong>
+                  <strong *ngIf="request.STATUS == 1">{{ "reg_assistant.status_1" | translate}}</strong>
+                  <strong *ngIf="request.STATUS == 0">{{ "reg_assistant.status_0" | translate}}</strong>
                 </td>
               </tr>
             </tbody>
