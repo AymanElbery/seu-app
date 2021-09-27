@@ -12,6 +12,7 @@ import { CourseEqualizeComponent } from './course-equalize/course-equalize.compo
 import { EnglishEqualizeComponent } from './english-equalize/english-equalize.component';
 import { ReEenrollmentComponent } from './re-eenrollment/re-eenrollment.component';
 import { ChangeMajorComponent } from './change-major/change-major.component';
+import { ChangeCampMajorComponent } from './change-camp-major/change-camp-major.component';
 import { ChangeRequestComponent } from './change-request/change-request.component';
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
 import { ObjectExamComponent } from './object-exam/object-exam.component';
@@ -37,6 +38,7 @@ const routes: Routes = [{ path: '', component: WithdrawFromUnivComponent },
     { path: 'reenrol', component: ReEenrollmentComponent },
     { path: 'changemajor', component: ChangeMajorComponent },
     { path: 'changerequest', component: ChangeRequestComponent },
+    { path: 'change-camp-major', component: ChangeCampMajorComponent },
     { path: 'objectexam', component: ObjectExamComponent },
     { path: 'lecexecuse', component: LecturesExecusesComponent },
     { path: 'terminate', component: TerminationRequestComponent },

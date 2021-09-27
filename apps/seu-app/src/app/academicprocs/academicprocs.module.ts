@@ -42,6 +42,7 @@ import { EnglishEqualizerService } from './services/english-equalizer.service';
 import { AddReEnrollComponent } from './re-eenrollment/diag/add-re-enroll/add-re-enroll.component';
 import { ReEnrollService } from './services/re-enroll.service';
 import { ChangeMajorComponent } from './change-major/change-major.component';
+import { ChangeCampMajorComponent } from './change-camp-major/change-camp-major.component';
 import { ChangeMajorService } from './services/change-major.service';
 import { AddChangeMajorComponent } from './change-major/diag/add-change-major/add-change-major.component';
 import { AddRequestChangeComponent } from './change-request/diag/add-request-change/add-request-change.component';
@@ -73,6 +74,8 @@ import { TimerModule } from '../shared/components/timer/timer.module';
 import { MatCheckboxModule } from '@angular/material';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
+import { ChangeCampMajorService } from './services/change-camp-major.service';
+import { AddChangeCampMajorComponent } from './change-camp-major/diag/add-change-camp-major/add-change-camp-major.component';
 
 @NgModule({
   declarations: [
@@ -118,9 +121,9 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     MissingCardComponent,
     AddBankReceiptComponent,
     AddVisitorStudentComponent,
-    AbsenceQueryComponent
-    
-
+    AbsenceQueryComponent,
+    ChangeCampMajorComponent,
+    AddChangeCampMajorComponent,
   ],
   entryComponents: [AddRequestComponent,
     AddPostponeComponent,
@@ -142,6 +145,7 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     AddBankReceiptComponent,
     AddMissingCardDataComponent,
     AddVisitorStudentComponent,
+    AddChangeCampMajorComponent
 
   ],
 
@@ -170,6 +174,7 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
     EnglishEqualizerService,
     ReEnrollService,
     ChangeMajorService,
+    ChangeCampMajorService,
     LectureExecuseServiceService,
     UvnivCardService,
     TerminationService,
