@@ -185,6 +185,11 @@ const routes: Routes = [
         canActivate: [EmpGuard]
       },
       {
+        path: 'teaching_load',
+        loadChildren: './teaching_load/teaching_load.module#Teaching_loadModule',
+        canActivate: [EmpGuard]
+      },
+      {
         path: 'enquries',
         loadChildren: './enquries/enquries.module#EnquriesModule'
       },

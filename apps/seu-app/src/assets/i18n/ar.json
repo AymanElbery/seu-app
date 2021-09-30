@@ -285,6 +285,7 @@
         "masterequalize_gm": "معادلة مقررات الفصل التحضيري",
         "masterequalize_gy": "معادلة مقررات البرنامج التمهيدي لكلية الحوسبة والمعلوماتية",
         "leadership": "الوظائف القيادية",
+        "teaching_load": "العبئ التدريسي",
         "skills": "السجل المهاري والتدريب",
         "translation": "مركز اللغات والترجمة",
         "exam": "الاختبارات الالكترونية",
@@ -333,6 +334,20 @@
             "card_has_been_saved": "تم حفظ الطلب بنجاح",
             "card_has_been_deleted": "تم حذف الطلب بنجاح"
         }
+    },
+    "teaching_load":{
+        "all_loads": "طلبات تحت الإجراء",
+        "rejected_loads": "الطلبات المرفوضة",
+        "all_load_title": "البدل التعليمي",
+        "all_load_desc": "البدل التعليمي لأعضاء هيئة التدريس في القسم",
+        "filter": "بحث ...",
+        "instructor_name_ar": "الاسم باللغة العربية",
+        "instructor_name_en": "الاسم باللغة الإنجليزية",
+        "instructor_working_load": "الساعات المسندة الفعلية",
+        "instructor_min_working_load": "الحد الأدنى للنصاب",
+        "instructor_deserve": "استحقاق البدل التعليمي",
+        "actions": "الإجراء",
+        "request_has_been_accepted": "تم قبول الطلب بنجاح"
     },
     "leadership": {
         "jobs": "إدارة الوظائف",

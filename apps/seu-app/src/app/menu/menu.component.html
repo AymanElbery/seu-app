@@ -748,6 +748,18 @@
           </div>
         </div> -->
 
+        <div *ngIf="teaching_load['show_menu']" class="nav-item has-sub">
+          <a href="javascript:void(0)">
+            <span>{{ "menu.teaching_load" | translate }} </span>
+            <i class="ik ik-book-open"></i>
+          </a>
+          <div class="submenu-content" *ngIf="teaching_load['menu_hod']">
+            <a [routerLink]="['/teaching_load/hod-all-loads']" class="menu-item">
+              {{ "teaching_load.all_loads" | translate }} <i class="ik ik-book-open"></i>
+            </a>
+          </div>
+        </div>
+
         <div *ngIf="leadership['show_menu']" class="nav-item has-sub">
           <a href="javascript:void(0)">
             <span>{{ "menu.leadership" | translate }} </span>

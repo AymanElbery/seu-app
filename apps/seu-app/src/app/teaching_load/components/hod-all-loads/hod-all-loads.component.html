@@ -1,0 +1,49 @@
+<div class="main-content" >
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <section class="service-single">
+      <div class="container">
+        <h3>{{ "teaching_load.all_load_title" | translate}}</h3>
+        <h6>{{ "teaching_load.all_load_desc" | translate}}</h6>
+      </div>
+    </section>
+    <div class="row" style="margin-top: 2px;">
+      <div class="col-md-12">
+        <input class="form-control" [(ngModel)]="filter_text" type="text" placeholder="{{'teaching_load.filter' | translate}}">
+      </div>
+    </div>
+    <div class="row" style="margin-top: 2px;">
+      <div class="col-md-12">
+        <div class="table-responsive" *ngIf="!isLoading">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{"teaching_load.instructor_name_ar" | translate}}</th>
+                <th scope="col">{{"teaching_load.instructor_working_load" | translate}}</th>
+                <th scope="col">{{"teaching_load.instructor_min_working_load" | translate}}</th>
+                <th scope="col">{{"teaching_load.instructor_deserve" | translate}}</th>
+                <th scope="col">{{"teaching_load.actions" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr [ngClass]="{'table-danger': load.WORKLOAD < load.MIN_WORKLOAD, 'table-success' : load.WORKLOAD >= load.MIN_WORKLOAD }" *ngFor="let load of loads | filter : filter_text; let i = index;">
+                <td>{{i+1}}</td>
+                <td>{{load.NAME_AR}}</td>
+                <td>{{load.WORKLOAD}}</td>
+                <td>{{load.MIN_WORKLOAD}}</td>
+                <td>{{load.WORKLOAD_FULFILMENT}}</td>
+                <!-- <td>
+                    <strong class="text-danger" *ngIf="load.WORKLOAD_FULFILMENT == 'n'">{{"teaching_load.no" | translate}}</strong>
+                    <strong class="text-success" *ngIf="load.WORKLOAD_FULFILMENT == 'y'">{{"teaching_load.yes" | translate}}</strong>
+                </td> -->
+                <td>
+                  <button (click)="accept(load.EMPLOYEE_ID)" class="btn btn-success">{{"leadership.accept" | translate}}</button>&nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+    

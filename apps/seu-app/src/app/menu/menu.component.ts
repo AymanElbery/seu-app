@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { TasksManagementService } from '../tasks/services/tasks-management.service';
 import { EnquriesService } from '../enquries/services/enquries.service';
 import { LeadershipService } from '../leadership/services/leadership.service';
+import { Teaching_loadService } from '../teaching_load/services/teaching_load.service';
 
 @Component({
   selector: 'app-menu',
@@ -19,16 +20,16 @@ export class MenuComponent implements OnInit, AfterContentInit {
   showServices = false;
   environment;
   unreadEnqueries;
-  constructor(private leadershipService: LeadershipService, public userService: UserService, private router: Router, public task: TasksManagementService, private enquriesService: EnquriesService) {
+  teaching_load = {};
+  constructor(
+    private leadershipService: LeadershipService, 
+    private teaching_loadService: Teaching_loadService, 
+    public userService: UserService, 
+    private router: Router, 
+    public task: TasksManagementService, 
+    private enquriesService: EnquriesService
+  ) {
     this.environment = environment;
-
-    // if (this.environment.chatbot_mails.includes(this.userService.userData.email)) {
-    let unread = this;
-    // this.getUnreadEnquries();
-    // setInterval(function(){ 
-    //   unread.getUnreadEnquries(); 
-    // }, 60000);
-    // }
   }
   ngAfterContentInit() {
     window['WindowStartSerices']();
@@ -51,41 +52,19 @@ export class MenuComponent implements OnInit, AfterContentInit {
   hasTasks = false;
   isEmp = false;
   fillmenu() {
-    /*if (this.userService.userData.role == 'Employee' || this.userService.userData.role == 'Instructor') {
-      this.showMySystem = true;
-    }*/
-    // console.log('userService.userData.level',this.userService.userData.level);
-    // console.log('userService.userData.level : ' + this.userService.userData.level);
     this.acStd = this.userService.userData.act_as_student;
-    // tslint:disable-next-line: triple-equals
-    // tslint:disable-next-line: max-line-length
-    // tslint:disable-next-line: triple-equals
-    // tslint:disable-next-line: max-line-length
     if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'UG') {
-      // console.log('level ug');
       this.menuType = 1;
       this.showServices = true;
     } else if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'GR') {
-      // console.log('level GR');
       this.menuType = 2;
       this.showServices = true;
     } else if ((this.userService.userData.activeRole == 'Student' || this.userService.userData.act_as_student) && this.userService.userData.level === 'UD') {
-      // console.log('level GR');
       this.menuType = 3;
       this.showServices = true;
     }else {
       this.menuType = 0;
       this.showServices = this.userService.userData.act_as_student;
-      // console.log('else');
-      // console.log(this.userService.userData.act_as_student);
-      /*if (this.userService.userData.act_as_student) {
-        this.acStd = this.userService.userData.act_as_student;
-        this.showServices = this.acStd;
-        //console.log('ac as ' + this.acStd);
-      } else {
-        this.acStd = false;
-        this.showServices = false;
-      }*/
     }
     this.admisPage = {};
     this.showadmis = false;
@@ -118,10 +97,15 @@ export class MenuComponent implements OnInit, AfterContentInit {
       this.leadershipService.settings().subscribe((settings) => {
         this.leadership = settings;
       })
-    } else {
-
     }
-    // this.hasWafi = true;
+
+    // check for teaching_load
+    if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
+      this.teaching_loadService.settings().subscribe((settings) => {
+        this.teaching_load = settings;
+      })
+    }
+    
   }
   leadership = {};
   hasNoRole = false;
