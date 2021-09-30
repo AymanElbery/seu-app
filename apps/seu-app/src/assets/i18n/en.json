@@ -215,6 +215,7 @@
         "EDUSYSTEMS": " Eduaction systems insturctions ",
         "INSTRUCTEXAM": "Electronic Exam Instructions ",
         "written_forms": "Written Forms ",
+        "project_forms": "Project management office templates",
         "StdLaw": "Student rights ",
         "StdSRV": "Students self service   ",
         "KnowMng": " Knowlege source managment   ",
@@ -1087,6 +1088,13 @@
         "file_5" : "Internal Letters With Guidance",
         "file_6" : "Reports",
         "file_7" : "Internal Generalizations"
+    },
+    "project_forms":{
+        "form": "Title",
+        "download_pdf": "PDF",
+        "download_word": "WORD",
+        "download": "Download",
+        "file_1" : "Initiative/Project Implementation Approval Form"
     },
     "instructions": {
         "exams": {
