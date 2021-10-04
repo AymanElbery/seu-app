@@ -4,19 +4,19 @@ import { Teaching_loadService } from '../../services/teaching_load.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { MatDialog, MatDialogConfig } from '@angular/material';
-import { DeanReasonComponent } from './notes_dialogue/notes_dialogue.component';
+import { RejectDeanReasonComponent } from './reject_dialogue/reject_dialogue.component';
 
 @Component({
-  selector: 'app-hod-all-loads',
-  styleUrls: ['./hod-all-loads.component.css'],
-  templateUrl: './hod-all-loads.component.html'
+  selector: 'app-dean-all-loads',
+  styleUrls: ['./dean-all-loads.component.css'],
+  templateUrl: './dean-all-loads.component.html'
 })
-export class HodAllLoadsComponent {
+export class DeanAllLoadsComponent {
 
   loads;
   filter_text;
   isLoading = false;
-  email;
+
   constructor(
     public userService: UserService,
     public teaching_loadService: Teaching_loadService,
@@ -29,7 +29,7 @@ export class HodAllLoadsComponent {
 
   getLoads() {
     this.isLoading = true;
-    this.teaching_loadService.get("hod/loads")
+    this.teaching_loadService.get("dean/loads")
     .subscribe(
       (response: any) => {
         if (response) {
@@ -44,7 +44,7 @@ export class HodAllLoadsComponent {
 
   accept(id){
     this.isLoading = true;
-    let url = "hod/update_status";
+    let url = "dean/update_status";
     let data = {id: id, status: 1};
     this.teaching_loadService.post(url, data)
     .subscribe(
@@ -61,16 +61,18 @@ export class HodAllLoadsComponent {
     )
   }
 
-  reason(reason){
+  reject(id){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    dialogConfig.data = {
-      reason: reason
-    };
+    if (id != 0) {
+      dialogConfig.data = {
+        id: id
+      };
+    }
 
-    let dialogref = this.dialog.open(DeanReasonComponent, dialogConfig);
+    let dialogref = this.dialog.open(RejectDeanReasonComponent, dialogConfig);
     dialogref.afterClosed().subscribe(refresh => {
       if (refresh)
         this.getLoads();

@@ -10,12 +10,20 @@ import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import {DatepickerModule, BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 import { Teaching_loadBlankComponent } from './components/teaching_load-blank/teaching_load-blank.component';
 import { HodAllLoadsComponent } from './components/hod-all-loads/hod-all-loads.component';
+import { DeanAllLoadsComponent } from './components/dean-all-loads/dean-all-loads.component';
+import { RejectDeanReasonComponent } from './components/dean-all-loads/reject_dialogue/reject_dialogue.component';
+import { DeanReasonComponent } from './components/hod-all-loads/notes_dialogue/notes_dialogue.component';
+import { HRAllLoadsComponent } from './components/hr-all-loads/hr-all-loads.component';
 import { FilterPipe } from './pipes/filter-pipe';
 
 @NgModule({
   declarations: [
     Teaching_loadBlankComponent,
     HodAllLoadsComponent,
+    DeanAllLoadsComponent,
+    RejectDeanReasonComponent,
+    DeanReasonComponent,
+    HRAllLoadsComponent,
     FilterPipe,
   ],
   imports: [
@@ -32,7 +40,8 @@ import { FilterPipe } from './pipes/filter-pipe';
     BsDatepickerModule.forRoot(),
   ],
   entryComponents: [
-    
+    RejectDeanReasonComponent,
+    DeanReasonComponent,
   ]
 })
 export class Teaching_loadModule {

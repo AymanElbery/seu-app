@@ -337,9 +337,12 @@
     },
     "teaching_load":{
         "all_loads": "طلبات تحت الإجراء",
+        "approved_loads": "الطلبات المكتملة",
         "rejected_loads": "الطلبات المرفوضة",
         "all_load_title": "البدل التعليمي",
         "all_load_desc": "البدل التعليمي لأعضاء هيئة التدريس في القسم",
+        "dean_load_desc": "البدل التعليمي لأعضاء هيئة التدريس",
+        "hr_load_desc": "البدل التعليمي لأعضاء هيئة التدريس",
         "filter": "بحث ...",
         "instructor_name_ar": "الاسم باللغة العربية",
         "instructor_name_en": "الاسم باللغة الإنجليزية",
@@ -347,7 +350,16 @@
         "instructor_min_working_load": "الحد الأدنى للنصاب",
         "instructor_deserve": "استحقاق البدل التعليمي",
         "actions": "الإجراء",
-        "request_has_been_accepted": "تم قبول الطلب بنجاح"
+        "request_has_been_accepted": "تم قبول الطلب بنجاح",
+        "no": "غير مستحق",
+        "yes": "مستحق",
+        "reject": "رفض",
+        "accept": "قبول",
+        "export_as_excel": "ملف إكسيل",
+        "reason": "سبب الرفض",
+        "dean_reason": "ملاحظات العميد",
+        "status": "حالة الطلب",
+        "dean_reject_reason": "رفض البدل التعليمي"
     },
     "leadership": {
         "jobs": "إدارة الوظائف",

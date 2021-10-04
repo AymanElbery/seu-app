@@ -758,6 +758,16 @@
               {{ "teaching_load.all_loads" | translate }} <i class="ik ik-book-open"></i>
             </a>
           </div>
+          <div class="submenu-content" *ngIf="teaching_load['menu_dean']">
+            <a [routerLink]="['/teaching_load/dean-all-loads']" class="menu-item">
+              {{ "teaching_load.all_loads" | translate }} <i class="ik ik-book-open"></i>
+            </a>
+          </div>
+          <div class="submenu-content" *ngIf="teaching_load['menu_hr']">
+            <a [routerLink]="['/teaching_load/hr-all-loads']" class="menu-item">
+              {{ "teaching_load.approved_loads" | translate }} <i class="ik ik-book-open"></i>
+            </a>
+          </div>
         </div>
 
         <div *ngIf="leadership['show_menu']" class="nav-item has-sub">

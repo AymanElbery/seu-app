@@ -3,7 +3,7 @@
     <section class="service-single">
       <div class="container">
         <h3>{{ "teaching_load.all_load_title" | translate}}</h3>
-        <h6>{{ "teaching_load.all_load_desc" | translate}}</h6>
+        <h6>{{ "teaching_load.dean_load_desc" | translate}}</h6>
       </div>
     </section>
     <div class="row" style="margin-top: 2px;">
@@ -36,9 +36,8 @@
                     <strong *ngIf="load.WORKLOAD_FULFILMENT == 'Y'">{{"teaching_load.yes" | translate}}</strong>
                 </td>
                 <td>
-                  <button (click)="accept(load.EMPLOYEE_ID)" class="btn btn-success">{{"leadership.accept" | translate}}</button>&nbsp;
-                  <button *ngIf="load.DEAN_STATUS == 2" disabled (click)="reason(load.REASON)" class="btn btn-success">{{"teaching_load.dean_reason" | translate}}</button>
-                  <button *ngIf="load.DEAN_STATUS == 0" (click)="reason(load.REASON)" class="btn btn-success">{{"teaching_load.dean_reason" | translate}}</button>
+                  <button (click)="accept(load.EMPLOYEE_ID)" class="btn btn-success">{{"teaching_load.accept" | translate}}</button>&nbsp;
+                  <button (click)="reject(load.EMPLOYEE_ID)" class="btn btn-success">{{"teaching_load.reject" | translate}}</button>&nbsp;
                 </td>
               </tr>
             </tbody>
