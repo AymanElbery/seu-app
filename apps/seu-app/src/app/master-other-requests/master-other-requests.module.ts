@@ -17,8 +17,9 @@ import { ChangeCourseComponent } from './change-course/change-course.component';
 import { AddChangeCourseComponent } from './change-course/diag/add-change-course/add-change-course.component';
 import { ChangeCourseService } from './services/change-course.service';
 import { MatCheckboxModule } from '@angular/material';
-
-
+import { ChangeCampMajorComponent } from './change-camp-major/change-camp-major.component';
+import { AddChangeCampMajorComponent } from './change-camp-major/diag/add-change-camp-major/add-change-camp-major.component';
+import { ChangeCampMajorMasterService } from './services/change-camp-major.service';
 import { PersonalIDComponent } from './personal-id/personal-id.component';
 import { AddPersonalIdComponent } from './personal-id/diag/add-personal-id/add-personal-id.component';
 import { PersonalIDService } from './services/personal-id.service';
@@ -33,12 +34,30 @@ import { MasterGraduateAddressComponent } from './graduate-address/graduate-addr
 
 @NgModule({
 
-  declarations: [AbsenceQueryComponent, ChangeBranchComponent, AddChangeBranchComponent,
-    ChangeCourseComponent, PersonalIDComponent,
-    AddChangeBranchComponent, AddChangeCourseComponent,MasterGraduateAddressComponent,
-    AddPersonalIdComponent, GraduateProfileComponent, GraduateProfileDetailComponent, AddGraduateProfileComponent],
-  entryComponents: [AddChangeBranchComponent, AddChangeCourseComponent,
-    AddPersonalIdComponent, GraduateProfileDetailComponent, AddGraduateProfileComponent],
+  declarations: [
+    AbsenceQueryComponent, 
+    ChangeBranchComponent, 
+    AddChangeBranchComponent,
+    ChangeCourseComponent, 
+    PersonalIDComponent,
+    AddChangeBranchComponent, 
+    AddChangeCourseComponent,
+    MasterGraduateAddressComponent,
+    AddPersonalIdComponent, 
+    GraduateProfileComponent, 
+    GraduateProfileDetailComponent, 
+    AddGraduateProfileComponent,
+    ChangeCampMajorComponent,
+    AddChangeCampMajorComponent,
+  ],
+  entryComponents: [
+    AddChangeBranchComponent, 
+    AddChangeCourseComponent,
+    AddPersonalIdComponent, 
+    GraduateProfileDetailComponent, 
+    AddGraduateProfileComponent,
+    AddChangeCampMajorComponent
+  ],
   imports: [
     CommonModule,
     MasterOtherRequestsRoutingModule,
@@ -54,7 +73,13 @@ import { MasterGraduateAddressComponent } from './graduate-address/graduate-addr
     AppLazyTransModule,
     NgSelectModule
   ],
-  providers: [AbseneQueryService, ChangeBranchService, ChangeCourseService, PersonalIDService]
+  providers: [
+    AbseneQueryService, 
+    ChangeBranchService, 
+    ChangeCourseService, 
+    PersonalIDService,
+    ChangeCampMajorMasterService
+  ]
 
 
 })
