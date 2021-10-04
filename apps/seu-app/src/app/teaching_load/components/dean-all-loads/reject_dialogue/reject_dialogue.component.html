@@ -1,0 +1,36 @@
+<mat-dialog-content dir="rtl">
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          {{ "teaching_load.dean_reject_reason" | translate}}
+        </h5>
+      </div>
+      <div class="modal-body">
+        <form role="form" [formGroup]="RejectForm">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="state">
+                <h6>{{"teaching_load.reason"|translate}} <span class="reqstart">*</span></h6>
+                <textarea class="form-control" formControlName="reason" rows="5"></textarea>
+              </div>
+              <div
+                *ngIf="RejectForm.controls.reason.invalid && (RejectForm.controls.reason.dirty || RejectForm.controls.reason.touched)">
+                <div *ngIf="RejectForm.controls.reason.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 20px;">
+            <div class="col-md-12" style="text-align: center;">
+              <button style="width: 30%;" [disabled]="submitted || RejectForm.invalid" (click)="onSubmit()"
+                type="submit" class="btn btn-primary">{{ ("leadership.save" ) | translate}}
+                <i class="fa fa-save"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </mat-dialog-content>
