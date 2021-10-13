@@ -38,33 +38,7 @@ export class BlankComponent implements OnInit {
     translate.addLangs(['ar', 'en']);
     translate.setDefaultLang('ar');
 
-    this.setLang(localStorage.getItem('seu-lang'));
-    this.route.queryParams
-      .subscribe(params => {
-        if (params.lang) {
-          this.setLang(params.lang);
-        }
-      });
-
-    // this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
-    //   res => {
-    //     localStorage.setItem('sid', encodeURI(res['csid']));
-    //     this.userService.loadUserData();
-    //   },
-    //   error => {
-    //     this.userService.relogin();
-    //   });
-  }
-  setLang(ulang) {
-    let lang = 'ar';
-    if (ulang == 'en' || ulang == 'ar') {
-      lang = ulang;
-    }
-    localStorage.setItem('seu-lang', lang);
-    this.translate.use(lang);
-  }
-  ngOnInit() {
-    // alert(this.globalService.getSID());
+    //
     this.userService.userDataSubject.subscribe(res => {
       if (res != null) {
         this.sessionloaded = true;
@@ -72,7 +46,9 @@ export class BlankComponent implements OnInit {
           ? document.getElementById('bodyloading').remove()
           // tslint:disable-next-line: no-unused-expression
           : '';
-
+        if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData.DATA_CLEANED) {
+          this.router.navigate(['/emp-clean-data/emp']);
+        }
         this.showVaccineStatus();
         this.showStudentRight();
         this.showConfirmation();
@@ -97,6 +73,27 @@ export class BlankComponent implements OnInit {
         }
       }
     });
+    //
+    this.setLang(localStorage.getItem('seu-lang'));
+    this.route.queryParams
+      .subscribe(params => {
+        if (params.lang) {
+          this.setLang(params.lang);
+        }
+      });
+
+    
+  }
+  setLang(ulang) {
+    let lang = 'ar';
+    if (ulang == 'en' || ulang == 'ar') {
+      lang = ulang;
+    }
+    localStorage.setItem('seu-lang', lang);
+    this.translate.use(lang);
+  }
+  ngOnInit() {
+
   }
 
   showVaccineStatus(){

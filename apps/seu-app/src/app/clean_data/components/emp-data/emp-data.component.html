@@ -1,0 +1,153 @@
+<div class="main-content" >
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <div class="widget">
+      <div class="widget-header">
+        <h3 class="widget-title"> {{"clean_data.title"|translate}}  <button (click)="skip()" class="btn btn-primary">{{"clean_data.skip"|translate}} <i class="fa fa-arrow-left skip_icon"></i></button></h3>
+      </div>
+      <div class="widget-body">
+        <form role="form" [formGroup]="form">
+          <div class="row">
+            <div class="col-md-12">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.birthdate"|translate}} <span class="reqstart">*</span></h6>
+                  <input (ngModelChange)="changeBirthDate($event)" type="text" formControlName="birth_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.birth_date.invalid && (form.controls.birth_date.dirty || form.controls.birth_date.touched)">
+                    <div *ngIf="form.controls.birth_date.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+
+              <!-- Error block ... -->
+              <ng-container *ngIf="errorDisplay" class="text-center">
+                <strong class="text-danger">{{"clean_data.try_again"|translate}}</strong>
+              </ng-container>
+
+              <!-- Bacis info block ... -->
+              <ng-container *ngIf="basicDisplay">
+                <h6 class="basic_title">{{"clean_data.basic"|translate}}</h6>
+                <div class="row basic_row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">{{"clean_data.name_ar" | translate}}</th>
+                              <td>{{ basic.firstName_AR }} {{ basic.fatherName_AR }} {{ basic.grandFatherName_AR }} {{ basic.familyName_AR }}</td>
+                              <th scope="col">{{"clean_data.name_en" | translate}}</th>
+                              <td>{{ basic.firstName_EN }} {{ basic.fatherName_EN }} {{ basic.grandFatherName_EN }} {{ basic.familyName_EN }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.emp_ssn" | translate}}</th>
+                              <td>{{ emp_ssn }}</td>
+                              <th scope="col">{{"clean_data.emp_email" | translate}}</th>
+                              <td>{{ emp_email }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.emp_id" | translate}}</th>
+                              <td>{{ emp_id }}</td>
+                              <th scope="col">{{"clean_data.gender" | translate}}</th>
+                              <td *ngIf="basic.gender == 'F'">{{"clean_data.female" | translate}}  <i class="fa fa-female"></i></td>
+                              <td *ngIf="basic.gender == 'M'">{{"clean_data.male" | translate}}  <i class="fa fa-male"></i></td>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+              </ng-container>
+
+              <!-- Address info block ... -->
+              <ng-container *ngIf="addressDisplay">
+                <h6 class="basic_title">{{"clean_data.address"|translate}}</h6>
+                <div class="row basic_row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">{{"clean_data.city_ar" | translate}}</th>
+                              <td>{{ address.CityNameAr }}</td>
+                              <th scope="col">{{"clean_data.city_en" | translate}}</th>
+                              <td>{{ address.CityNameEn }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.street_ar" | translate}}</th>
+                              <td>{{ address.StreetNameAr }}</td>
+                              <th scope="col">{{"clean_data.street_en" | translate}}</th>
+                              <td>{{ address.StreetNameEn }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.district_ar" | translate}}</th>
+                              <td>{{ address.DistrictAreaAr }}</td>
+                              <th scope="col">{{"clean_data.district_en" | translate}}</th>
+                              <td>{{ address.DistrictAreaEn }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.unit_no" | translate}}</th>
+                              <td>{{ address.UnitNo }}</td>
+                              <th scope="col">{{"clean_data.zip_code" | translate}}</th>
+                              <td>{{ address.ZipCode }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.building_no" | translate}}</th>
+                              <td>{{ address.BuildingNo }}</td>
+                              <th scope="col">{{"clean_data.additional_no" | translate}}</th>
+                              <td>{{ address.AdditionalNo }}</td>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+              </ng-container>
+
+              <!-- Qualification info block ... -->
+              <ng-container *ngIf="qualifyDisplay">
+                <h6 class="basic_title">{{"clean_data.qualify"|translate}}</h6>
+                <div class="row basic_row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">{{"clean_data.institute_name" | translate}}</th>
+                              <td>{{ qualify.InstituteName }}</td>
+                              <th scope="col">{{"clean_data.college_name" | translate}}</th>
+                              <td>{{ qualify.CollegeName }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.major" | translate}}</th>
+                              <td>{{ qualify.MajorName }}</td>
+                              <th scope="col">{{"clean_data.gpa" | translate}}</th>
+                              <td>{{ qualify.GPA }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.cert" | translate}}</th>
+                              <td>{{ qualify.Certificate }}</td>
+                              <th scope="col">{{"clean_data.graduation_date" | translate}}</th>
+                              <td>{{ qualify.GraduationDate }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.degree" | translate}}</th>
+                              <td>{{ qualify.DegreeName }}</td>
+                              <th scope="col">{{"clean_data.qualify_country" | translate}}</th>
+                              <td>{{ qualify.Country }}</td>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="widget-footer">
+      </div>
+    </div>
+  </div>
+    
