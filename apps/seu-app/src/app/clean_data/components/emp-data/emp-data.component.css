@@ -32,6 +32,15 @@ h6.basic_title{
 td{
     background-color: #FFF;
 }
-.basic_row{
+.row{
     width: 100% !important;
+    margin-top: 10px;
+}
+ng-select{
+    margin-top: 5px;
+    position: relative;
+    top: 5px;
+}
+ng-select .ng-select-container{
+    height: 40px !important;
 }

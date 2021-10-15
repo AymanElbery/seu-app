@@ -21,15 +21,22 @@ export class EmpDataComponent implements OnInit, OnDestroy{
   emp_id;
   emp_email;
   emp_ssn;
+  cities;
+  districts;
+  universities;
+  majors;
+
   errorDisplay = false;
 
   basicDisplay = false;
   basic;
 
   addressDisplay = false;
+  addressManualDisplay = false;
   address;
 
   qualifyDisplay = false;
+  qualifyManualDisplay = false;
   qualify;
   constructor(
     public userService: UserService,
@@ -41,11 +48,33 @@ export class EmpDataComponent implements OnInit, OnDestroy{
     private fb: FormBuilder
   ) {
     this.form = this.fb.group({
-      'birth_date': ['', [Validators.required]],
+      'birth_date'    : ['', [Validators.required]],
+      'personal_email': ['', [Validators.required]],
+      'mobile'        : ['', [Validators.required]],
+      'birth_city'    : ['', [Validators.required]],
+      'city_ar'    : [''],
+      'city_en'    : [''],
+      'street_ar'    : [''],
+      'street_en'    : [''],
+      'district_ar'    : [''],
+      'district_en'    : [''],
+      'unit_no'    : [''],
+      'zip_code'    : [''],
+      'building_no'    : [''],
+      'additional_no'    : [''],
+      'institute_name'    : [''],
+      'college_name'    : [''],
+      'major_name'    : [''],
+      'GPA'    : [''],
+      'certificate'    : [''],
+      'graduation_date'    : [''],
+      'degree_name'    : [''],
+      'country'    : [''],
     });
     this.emp_ssn = this.userService.userData.ssn;
     this.emp_id = this.userService.userData.id;
     this.emp_email= this.userService.userData.email;
+    this.getLookups();
   }
 
   ngOnInit() {
@@ -61,6 +90,24 @@ export class EmpDataComponent implements OnInit, OnDestroy{
     this.router.navigate(['/']);
   }
 
+  getLookups(){
+    this.isLoading = true;
+    this.clean_dataService.get("data_clean/lookups") 
+    .subscribe(
+      (response: any) => {
+        if (response.status) {
+          this.cities = response.data.cities;
+          this.districts = response.data.districts;
+          this.universities = response.data.universities;
+          this.majors = response.data.majors;
+        }
+        this.isLoading = false;
+      },
+      error => {
+      }
+    )
+  }
+
   changeBirthDate(value){
     let birthDate = this.formatDate(value);
     this.isLoading = true;
@@ -69,20 +116,64 @@ export class EmpDataComponent implements OnInit, OnDestroy{
       (response: any) => {
         if (response.status) {
           this.basic = response.data.basic;
-          this.basicDisplay = true;
-
           this.address = response.data.address;
-          this.addressDisplay = true;
-
           this.qualify = response.data.qualify;
-          this.qualifyDisplay = true;
 
-          this.errorDisplay = false;
-        }else{
-          this.basicDisplay = false;
-          this.addressDisplay = false;
-          this.qualifyDisplay = false;
-          this.errorDisplay = true;
+          if(!response.address){
+            this.basicDisplay = true;
+            this.addressDisplay = false;
+            this.addressManualDisplay = true;
+            //
+            this.form.get('city_ar').setValidators(Validators.required);
+            this.form.get('city_en').setValidators(Validators.required);
+            this.form.get('street_ar').setValidators(Validators.required);
+            this.form.get('street_en').setValidators(Validators.required);
+            this.form.get('district_ar').setValidators(Validators.required);
+            this.form.get('district_en').setValidators(Validators.required);
+            this.form.get('unit_no').setValidators(Validators.required);
+            this.form.get('zip_code').setValidators(Validators.required);
+            this.form.get('building_no').setValidators(Validators.required);
+            this.form.get('additional_no').setValidators(Validators.required);
+            //
+            this.qualifyDisplay = true;
+          }else{
+            this.basicDisplay = true;
+            this.addressDisplay = true;
+            this.addressManualDisplay = false;
+            this.qualifyDisplay = true;
+          }
+
+          if(!response.qualify){
+            this.basicDisplay = true;
+            this.qualifyDisplay = false;
+            this.qualifyManualDisplay = true;
+             //
+             this.form.get('institute_name').setValidators(Validators.required);
+             this.form.get('college_name').setValidators(Validators.required);
+             this.form.get('major_name').setValidators(Validators.required);
+             this.form.get('GPA').setValidators(Validators.required);
+             this.form.get('certificate').setValidators(Validators.required);
+             this.form.get('graduation_date').setValidators(Validators.required);
+             this.form.get('degree_name').setValidators(Validators.required);
+             this.form.get('country').setValidators(Validators.required);
+             //
+          }else{
+            this.basicDisplay = true;
+            this.qualifyDisplay = true;
+            this.qualifyManualDisplay = false;
+          }
+
+          if(!response.basic){
+            this.errorDisplay = true;
+            this.basicDisplay = false;
+            this.addressDisplay = false;
+            this.addressManualDisplay = false;
+            this.qualifyDisplay = false;
+            this.qualifyManualDisplay = false;
+          }else{
+            this.errorDisplay = false;
+            this.basicDisplay = true;
+          }
         }
         this.isLoading = false;
       },
