@@ -84,6 +84,7 @@ export class VouchersComponent implements OnInit, OnDestroy {
         this.isLoading = false;
       } else {
         // this.messages = [];
+        this.isLoading = false;
       }
     });
 
