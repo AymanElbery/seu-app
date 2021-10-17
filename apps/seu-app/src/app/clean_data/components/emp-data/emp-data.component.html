@@ -2,9 +2,9 @@
     <seu-loader [isLoading]="isLoading"></seu-loader>
     <div class="widget">
       <div class="widget-header">
-        <h3 class="widget-title"> {{"clean_data.title"|translate}}  <button (click)="skip()" class="btn btn-primary">{{"clean_data.skip"|translate}} <i class="fa fa-arrow-left skip_icon"></i></button></h3>
+        <h3 class="widget-title"> {{"clean_data.title"|translate}}  <button *ngIf="dataForm" (click)="skip()" class="btn btn-primary">{{"clean_data.skip"|translate}} <i class="fa fa-arrow-left skip_icon"></i></button></h3>
       </div>
-      <div class="widget-body">
+      <div class="widget-body" *ngIf="dataForm">
         <form role="form" [formGroup]="form">
           <div class="row">
             <div class="col-md-6">
@@ -304,13 +304,13 @@
                               <td>{{ qualify.CollegeName }}</td>
                             </tr>
                             <tr>
-                              <th scope="col">{{"clean_data.major" | translate}}</th>
+                              <th scope="col">{{"clean_data.major_name" | translate}}</th>
                               <td>{{ qualify.MajorName }}</td>
                               <th scope="col">{{"clean_data.gpa" | translate}}</th>
                               <td>{{ qualify.GPA }}</td>
                             </tr>
                             <tr>
-                              <th scope="col">{{"clean_data.cert" | translate}}</th>
+                              <th scope="col">{{"clean_data.certificate" | translate}}</th>
                               <td *ngIf="qualify.Certificate">{{ qualify.Certificate }}</td>
                               <td *ngIf="!qualify.Certificate"><strong class="text-danger">{{"clean_data.not_found" | translate}}</strong></td>
                               <th scope="col">{{"clean_data.graduation_date" | translate}}</th>
@@ -319,7 +319,7 @@
                             <tr>
                               <th scope="col">{{"clean_data.degree" | translate}}</th>
                               <td>{{ qualify.DegreeName }}</td>
-                              <th scope="col">{{"clean_data.qualify_country" | translate}}</th>
+                              <th scope="col">{{"clean_data.country" | translate}}</th>
                               <td>{{ qualify.Country }}</td>
                             </tr>
                           </thead>
@@ -373,10 +373,131 @@
                     </ng-container>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.graduation_date"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="graduation_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.graduation_date.invalid && (form.controls.graduation_date.dirty || form.controls.graduation_date.touched)">
+                          <div *ngIf="form.controls.graduation_date.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.degree"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="degrees" bindLabel="NAME" bindValue="NAME" formControlName="degree"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.degree.invalid && (form.controls.degree.dirty || form.controls.degree.touched)">
+                          <div *ngIf="form.controls.degree.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.country"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="countries" bindLabel="NAME_AR" bindValue="NAME_AR" formControlName="country"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.country.invalid && (form.controls.country.dirty || form.controls.country.touched)">
+                          <div *ngIf="form.controls.country.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.gpa"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="gpa" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.gpa.invalid && (form.controls.gpa.dirty || form.controls.gpa.touched)">
+                          <div *ngIf="form.controls.gpa.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.certificate"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="file" formControlName="certificate" (change)="idFileQualifyChange($event)" required>
+                      </div>
+                      <div *ngIf="form.controls.certificate.invalid && (form.controls.certificate.dirty || form.controls.certificate.touched)">
+                        <div *ngIf="form.controls.certificate.errors.required">
+                            <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+              </ng-container>
+
+              <ng-container>
+                <div class="row" style="margin-top: 20px; padding-top: 20px; border-top: solid 1px #EDEDED;">
+                  <div class="col-md-12 text-right">
+                    <button style="width: 20%;" class="btn btn-primary" [disabled]="submitted || form.invalid" (click)="onSubmit()">{{"clean_data.next"|translate}}</button>
+                  </div>
+                </div>
               </ng-container>
             </div>
           </div>
         </form>
+      </div>
+      <div class="widget-body" *ngIf="emailForm">
+        <div class="row">
+          <div class="col-md-12">
+            <ng-container>
+              <div class="state">
+                <h6>{{"clean_data.email_code"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" [(ngModel)]="email_code" class="form-control" />
+              </div>
+              <div *ngIf="email_code_error" class="alert alert-danger">
+                <b>{{"clean_data.code_error"|translate}}</b>
+              </div>
+            </ng-container>
+            <ng-container>
+              <div class="row" style="margin-top: 20px; padding-top: 20px;">
+                <div class="col-md-12 text-right">
+                  <button style="width: 20%;" class="btn btn-primary" [disabled]="submitted" (click)="sendSms()">{{"clean_data.next"|translate}}</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="widget-body" *ngIf="smsForm">
+        <div class="row">
+          <div class="col-md-12">
+            <ng-container>
+              <div class="state">
+                <h6>{{"clean_data.sms_code"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" [(ngModel)]="sms_code" class="form-control" />
+              </div>
+              <div *ngIf="sms_code_error" class="alert alert-danger">
+                <b>{{"clean_data.code_error"|translate}}</b>
+              </div>
+            </ng-container>
+            <ng-container>
+              <div class="row" style="margin-top: 20px; padding-top: 20px;">
+                <div class="col-md-12 text-right">
+                  <button style="width: 20%;" class="btn btn-primary" [disabled]="submitted" (click)="sendSMS_confirm()">{{"clean_data.next"|translate}}</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
       </div>
       <div class="widget-footer">
       </div>

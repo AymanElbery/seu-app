@@ -342,7 +342,7 @@ export class UserService extends BaseService {
       'Authorization': auth
     });
 
-    return this.http.post(url + "info_confirmations/send_email", {email: email}, { headers: headers });
+    return this.http.post(url + "data_clean/send_email", {email: email}, { headers: headers });
   }
 
   sendSMS(email, code, mobile) {
@@ -353,7 +353,7 @@ export class UserService extends BaseService {
       'Authorization': auth
     });
 
-    return this.http.post(url + "info_confirmations/confirm_email", {email: email, code: code, mobile: mobile}, { headers: headers });
+    return this.http.post(url + "data_clean/confirm_email", {email: email, code: code, mobile: mobile}, { headers: headers });
   }
   
   sendSMS_confirm(mobile, code, data) {
@@ -364,7 +364,7 @@ export class UserService extends BaseService {
       'Authorization': auth
     });
 
-    return this.http.post(url + "info_confirmations/confirm_sms", {mobile: mobile, code: code, data: data}, { headers: headers });
+    return this.http.post(url + "data_clean/confirm_sms", {mobile: mobile, code: code, data: data}, { headers: headers });
   }
 
   updateStudentVaccineStatus(data) {

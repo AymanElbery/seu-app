@@ -25,6 +25,14 @@ export class EmpDataComponent implements OnInit, OnDestroy{
   districts;
   universities;
   majors;
+  degrees;
+  countries;
+  idFileQualify = false;
+  idFileNameWork;
+  idFileNameQualify;
+  qualify_file_error;
+  qualifyFile;
+  qualifyDocError;
 
   errorDisplay = false;
 
@@ -38,6 +46,18 @@ export class EmpDataComponent implements OnInit, OnDestroy{
   qualifyDisplay = false;
   qualifyManualDisplay = false;
   qualify;
+
+  submitted = false;
+
+  dataForm = true;
+  emailForm = false;
+  smsForm = false;
+
+  email_code;
+  sms_code;
+  email_code_error = false;
+  sms_code_error = false;
+  data;
   constructor(
     public userService: UserService,
     public clean_dataService: Clean_dataService,
@@ -65,10 +85,10 @@ export class EmpDataComponent implements OnInit, OnDestroy{
       'institute_name'    : [''],
       'college_name'    : [''],
       'major_name'    : [''],
-      'GPA'    : [''],
+      'gpa'    : [''],
       'certificate'    : [''],
       'graduation_date'    : [''],
-      'degree_name'    : [''],
+      'degree'    : [''],
       'country'    : [''],
     });
     this.emp_ssn = this.userService.userData.ssn;
@@ -100,6 +120,8 @@ export class EmpDataComponent implements OnInit, OnDestroy{
           this.districts = response.data.districts;
           this.universities = response.data.universities;
           this.majors = response.data.majors;
+          this.degrees = response.data.degrees;
+          this.countries = response.data.countries;
         }
         this.isLoading = false;
       },
@@ -151,10 +173,10 @@ export class EmpDataComponent implements OnInit, OnDestroy{
              this.form.get('institute_name').setValidators(Validators.required);
              this.form.get('college_name').setValidators(Validators.required);
              this.form.get('major_name').setValidators(Validators.required);
-             this.form.get('GPA').setValidators(Validators.required);
+             this.form.get('gpa').setValidators(Validators.required);
              this.form.get('certificate').setValidators(Validators.required);
              this.form.get('graduation_date').setValidators(Validators.required);
-             this.form.get('degree_name').setValidators(Validators.required);
+             this.form.get('degree').setValidators(Validators.required);
              this.form.get('country').setValidators(Validators.required);
              //
           }else{
@@ -194,5 +216,123 @@ export class EmpDataComponent implements OnInit, OnDestroy{
         day = '0' + day;
 
     return [year, month, day].join('-');
+  }
+
+  idFileQualifyChange(e) {
+    this.idFileQualify = true;
+    this.idFileNameQualify = e.target.files[0].name;
+    this.qualify_file_error = false;
+
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    const pattern = /image-*/;
+    const reader = new FileReader();
+    reader.onload = this._handleReaderLoadedQualify.bind(this);
+    reader.readAsDataURL(file);
+
+    this.qualifyDocError = false;
+  }
+
+  _handleReaderLoadedQualify(e) {
+    const reader = e.target;
+    this.qualifyFile = reader.result;
+  }
+
+  onSubmit(){
+    let formData = this.form.value;
+    this.data = {
+      'EMPLOYEE_ID'     : this.emp_id,
+      'NAME_AR'         : this.basic.firstName_AR + " " + this.basic.fatherName_AR + " " + this.basic.grandFatherName_AR + " " + this.basic.familyName_AR,
+      'NAME_EN'         : this.basic.firstName_EN + " " + this.basic.fatherName_EN + " " + this.basic.grandFatherName_EN + " " + this.basic.familyName_EN,
+      'BIRTH_DATE'      : this.formatDate(formData.birth_date),
+      'PERSONAL_EMAIL'  : formData.personal_email,
+      'MOBILE'          : formData.mobile,
+      'BIRTH_CITY'      : formData.birth_city,
+      'CITY_AR'         : (this.addressDisplay) ? this.address.CityNameAr : formData.city_ar,
+      'CITY_EN'         : (this.addressDisplay) ? this.address.CityNameEn : formData.city_en,
+      'STREET_AR'       : (this.addressDisplay) ? this.address.StreetNameAr : formData.street_ar,
+      'STREET_EN'       : (this.addressDisplay) ? this.address.StreetNameEn : formData.street_en,
+      'DISTRICT_AR'     : (this.addressDisplay) ? this.address.DistrictAreaAr : formData.district_ar,
+      'DISTRICT_EN'     : (this.addressDisplay) ? this.address.DistrictAreaEn : formData.district_en,
+      'UNIT_NO'         : (this.addressDisplay) ? this.address.UnitNo : formData.unit_no,
+      'ZIP_CODE'        : (this.addressDisplay) ? this.address.ZipCode : formData.zip_code,
+      'BUILDING_NO'     : (this.addressDisplay) ? this.address.BuildingNo : formData.building_no,
+      'ADDITIONAL_NO'   : (this.addressDisplay) ? this.address.AdditionalNo : formData.additional_no,
+      'INSTITUTE_NAME'  : (this.qualifyDisplay) ? this.qualify.InstituteName : formData.institute_name,
+      'COLLEGE_NAME'    : (this.qualifyDisplay) ? this.qualify.CollegeName : formData.college_name,
+      'MAJOR_NAME'      : (this.qualifyDisplay) ? this.qualify.MajorName : formData.major_name,
+      'GPA'             : (this.qualifyDisplay) ? this.qualify.GPA : formData.gpa,
+      'CERTIFICATE'     : (this.qualifyDisplay) ? this.qualify.Certificate : this.qualifyFile,
+      'GRADUATION_DATE' : (this.qualifyDisplay) ? this.qualify.GraduationDate : this.formatDate(formData.graduation_date),
+      'DEGREE'          : (this.qualifyDisplay) ? this.qualify.DegreeName : formData.degree,
+      'COUNTRY'         : (this.qualifyDisplay) ? this.qualify.Country : formData.country,
+      'UPLOAD_CERT'     : (this.qualifyDisplay) ? 0 : 1,
+      'ADDRESS'         : (this.addressDisplay) ? 0 : 1,
+      'QUALIFY'         : (this.qualifyDisplay) ? 0 : 1,
+      'STATUS'          : (this.qualifyDisplay && this.addressDisplay) ? 1 : 2,
+      'SSN'             : this.emp_ssn,
+      'EMP_EMAIL'       : this.emp_email,
+      'GENDER'          : this.basic.gender,
+    };
+    //console.log(this.data);
+    this.sendEmail();
+  }
+
+  sendEmail(){
+    this.dataForm = false;
+    this.emailForm = true;
+    this.smsForm = false;
+    this.userService.sendEmail(this.data.PERSONAL_EMAIL).subscribe(
+      (response: any) => {
+        if (response) {
+          if (response['status']) {
+          } else {
+            this.submitted = false;
+            this.toastr.tryagain();
+          }
+        }
+      },
+      error => {
+        this.toastr.tryagain();
+        this.submitted = false;
+      });
+  }
+
+  sendSms(){
+    this.userService.sendSMS(this.data.PERSONAL_EMAIL, this.email_code , this.data.MOBILE).subscribe(
+    (response: any) => {
+      if (response) {
+        if (response['status']) {
+          this.dataForm = false;
+          this.emailForm = false;
+          this.smsForm = true;
+        } else {
+          this.submitted = false;
+          this.email_code_error = true;
+        }
+      }
+    },
+    error => {
+      this.toastr.tryagain();
+      this.submitted = false;
+    });
+  }
+
+  sendSMS_confirm(){
+    this.userService.sendSMS_confirm(this.data.MOBILE, this.sms_code, this.data).subscribe(
+    (response: any) => {
+      if (response) {
+        if (response['status']) {
+          this.userService.userData.DATA_CLEANED = 1;
+          this.router.navigate(['/']);
+        } else {
+          this.submitted = false;
+          this.sms_code_error = true;
+        }
+      }
+    },
+    error => {
+      this.toastr.tryagain();
+      this.submitted = false;
+    });
   }
 }
