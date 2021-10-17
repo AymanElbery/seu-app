@@ -52,8 +52,12 @@ export class VouchersComponent implements OnInit, OnDestroy {
       if (fillddl['data']) {
         this.FillDDLDataYear = (fillddl as any).data["years"];
         this.FillDDLDatavouchertype = (fillddl as any).data["voucherTypes"];
-        this.selectedyear = (this.selectedyear ? this.selectedyear : this.FillDDLDataYear[0]['value']);
-        this.vouchertype = (this.vouchertype ? this.vouchertype : this.FillDDLDatavouchertype[0]['value']);
+        if(this.FillDDLDataYear){
+          this.selectedyear = (this.selectedyear ? this.selectedyear : this.FillDDLDataYear[0]['value']);
+        }
+        if(this.FillDDLDatavouchertype){
+          this.vouchertype = (this.vouchertype ? this.vouchertype : this.FillDDLDatavouchertype[0]['value']);
+        }
         this.getvoucherselect(this.vouchertype);
         //console.log("emp lett",fillddl);      
       }
