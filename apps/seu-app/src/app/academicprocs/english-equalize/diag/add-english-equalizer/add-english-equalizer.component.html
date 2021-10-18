@@ -5,7 +5,6 @@
       <div class="modal-header">
         <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
           {{"services.english-equalize.equalize_english_req"|translate}}</h5>
-
       </div>
       <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
         <div class="modal-body">
@@ -13,19 +12,15 @@
             <span style="font-weight: bold; font-size: 15px;">{{reqData.notes.txt1}} </span>
             <br />
             {{reqData.notes.txt2}} :
-
             <br />
             {{reqData.notes.txt3}}
-
             <br />
             {{reqData.notes.txt4}}
-
             <br />
             {{reqData.notes.txt5}}
             <br />
             {{reqData.notes.txt6}}
             <br />
-
             {{reqData.notes.txt11}}
           </P>
           <table style="text-align: center" class="table table-bordered">
@@ -69,43 +64,53 @@
                         <tr>
                           <th scope="col">{{"services.english-equalize.exam_name"|translate}}</th>
                           <th scope="col">{{"services.english-equalize.degree"|translate}}</th>
-
+                          <th scope="col">{{"services.english-equalize.date"|translate}}</th>
+                          <th scope="col">{{"services.english-equalize.number"|translate}}</th>
                           <th scope="col"> </th>
-
                         </tr>
                       </thead>
                       <tbody>
                         <tr *ngFor="let it of reqData.ENG_TESTS;let i=index;">
                           <td>{{it.TEST_TITLE}}</td>
-
-
-                          <td> <input #score="ngModel" name="score" [(ngModel)]="it.score"
-                              class="form-control col-md-10" min="1" max="10" type="number" value="1" />
+                          <td> 
+                            <input #score="ngModel" name="score" [(ngModel)]="it.score" class="form-control col-md-10" min="1" max="10" type="number" value="1" />
                           </td>
-
-
-
-
+                          <td>
+                            <input bsDatepicker [bsConfig]="datePickerConfig" #date="ngModel" name="date" [(ngModel)]="it.date" class="form-control col-md-10" type="text"  />
+                          </td>
+                          <td> 
+                            <input *ngIf="it.TEST_PK == '2'" #number="ngModel" name="number" [(ngModel)]="it.number" class="form-control col-md-10" type="number" />
+                          </td>
                           <td>
                             <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event)" #chkCourse>
                           </td>
-
                         </tr>
-
                       </tbody>
                     </table>
                   </div>
-
                   <div class="progress progress-sm">
                     <div class="progress-bar bg-info"></div>
                   </div>
                 </div>
-
                 <div class="col-md-12 col-sm-12">
                   <div class="state">
-                    <h6>{{"services.english-equalize.certificate_image"|translate}}</h6>
+                    <h6>{{"services.english-equalize.step_certificate_image"|translate}}</h6>
                     <div class="custom-file">
                       <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)"
+                        id="customFileLang" class="custom-file-input" />
+                      <label for="customFileLang" class="custom-file-label ">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12" style="margin-top: 20px;">
+                  <div class="state">
+                    <h6>{{"services.english-equalize.ilets_certificate_image"|translate}}</h6>
+                    <div class="custom-file">
+                      <input name="imageUrlIlets" type="file" accept="*/*" (change)="handleInputChangeIlets($event)"
                         id="customFileLang" class="custom-file-input" />
                       <label for="customFileLang" class="custom-file-label ">
                       </label>
@@ -118,7 +123,6 @@
               </div>
             </div>
           </section>
-
         </div>
         <div class="modal-footer">
           <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
@@ -126,11 +130,6 @@
           <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"general.save"|translate}}</button>
         </div>
       </form>
-
     </div>
-
   </div>
-
-
-
 </mat-dialog-content>

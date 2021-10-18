@@ -812,8 +812,11 @@
             "equalize_english_req": "طلب معادلة اللغة الإنجليزية",
             "choose_exam_degree": "إختر الاختبار وحدد الدرجة",
             "exam_name": "اسم الاختبار",
-            "certificate_image": "صورة الشهادة",
-            "degree": "الدرجة"
+            "step_certificate_image": "صورة الشهادة (STEP)",
+            "ilets_certificate_image": "صورة الشهادة (IELTS)",
+            "degree": "الدرجة",
+            "date": "تاريخ الشهادة",
+            "number": "الرقم التسلسلي"
         },
         "excuse_request": {
             "title": "الاعتذار عن فصل دراسي",
