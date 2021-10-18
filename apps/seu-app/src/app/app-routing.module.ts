@@ -193,6 +193,10 @@ const routes: Routes = [
         path: 'enquries',
         loadChildren: './enquries/enquries.module#EnquriesModule'
       },
+      {
+        path: 'emp-clean-data',
+        loadChildren: './clean_data/clean_data.module#Clean_dataModule'
+      },
     ]
   },
   {

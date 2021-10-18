@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 import { EnglishEqualizerService } from 'src/app/academicprocs/services/english-equalizer.service';
 import { EnglishEqual } from 'src/app/shared/models/english-equal';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @Component({
   selector: 'app-add-english-equalizer',
@@ -15,7 +16,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
   styleUrls: ['./add-english-equalizer.component.scss']
 })
 export class AddEnglishEqualizerComponent implements OnInit {
-
+  datePickerConfig: Partial<BsDatepickerConfig>;
   englishEqual: EnglishEqual;
   reqData: EnglishEqual;
   msgs: any;
@@ -76,18 +77,28 @@ export class AddEnglishEqualizerComponent implements OnInit {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
     const pattern = /image-*/;
     const reader = new FileReader();
-    /* if (!file.type.match(pattern)) {
-      alert('invalid format');
-      return;
-    }
-     */
+
     reader.onload = this._handleReaderLoaded.bind(this);
     reader.readAsDataURL(file);
   }
+
+  handleInputChangeIlets(e) {
+    const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    const pattern = /image-*/;
+    const reader = new FileReader();
+
+    reader.onload = this._handleReaderLoadedIlets.bind(this);
+    reader.readAsDataURL(file);
+  }
+
   _handleReaderLoaded(e) {
     const reader = e.target;
     this.englishEqual.attachment = reader.result;
-    ////console.log(this.englishEqual.attachment);
+  }
+
+  _handleReaderLoadedIlets(e) {
+    const reader = e.target;
+    this.englishEqual.attachment2 = reader.result;
   }
 
 }

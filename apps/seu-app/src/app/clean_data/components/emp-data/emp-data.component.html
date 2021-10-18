@@ -1,0 +1,506 @@
+<div class="main-content" >
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <div class="widget">
+      <div class="widget-header">
+        <h3 class="widget-title"> {{"clean_data.title"|translate}}  <button *ngIf="dataForm" (click)="skip()" class="btn btn-primary">{{"clean_data.skip"|translate}} <i class="fa fa-arrow-left skip_icon"></i></button></h3>
+      </div>
+      <div class="widget-body" *ngIf="dataForm">
+        <form role="form" [formGroup]="form">
+          <div class="row">
+            <div class="col-md-6">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.personal_email"|translate}} <span class="reqstart">*</span></h6>
+                  <input type="text" formControlName="personal_email" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.personal_email.invalid && (form.controls.personal_email.dirty || form.controls.personal_email.touched)">
+                    <div *ngIf="form.controls.personal_email.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.mobile"|translate}} <span class="reqstart">*</span></h6>
+                  <input type="text" formControlName="mobile" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.mobile.invalid && (form.controls.mobile.dirty || form.controls.mobile.touched)">
+                    <div *ngIf="form.controls.mobile.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.birth_city"|translate}} <span class="reqstart">*</span></h6>
+                  <input type="text" formControlName="birth_city" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.birth_city.invalid && (form.controls.birth_city.dirty || form.controls.birth_city.touched)">
+                    <div *ngIf="form.controls.birth_city.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.birthdate"|translate}} <span class="reqstart">*</span></h6>
+                  <input (ngModelChange)="changeBirthDate($event)" type="text" formControlName="birth_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.birth_date.invalid && (form.controls.birth_date.dirty || form.controls.birth_date.touched)">
+                    <div *ngIf="form.controls.birth_date.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.birth_date_required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-12">
+              <!-- Error block ... -->
+              <ng-container *ngIf="errorDisplay">
+                <div style="margin-top: 20px;" class="alert alert-danger text-center">
+                  <strong>{{"clean_data.try_again"|translate}}</strong>
+                </div>
+              </ng-container>
+
+              <!-- Bacis info block ... -->
+              <ng-container *ngIf="basicDisplay">
+                <h6 class="basic_title">{{"clean_data.basic"|translate}}</h6>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">{{"clean_data.name_ar" | translate}}</th>
+                              <td>{{ basic.firstName_AR }} {{ basic.fatherName_AR }} {{ basic.grandFatherName_AR }} {{ basic.familyName_AR }}</td>
+                              <th scope="col">{{"clean_data.name_en" | translate}}</th>
+                              <td>{{ basic.firstName_EN }} {{ basic.fatherName_EN }} {{ basic.grandFatherName_EN }} {{ basic.familyName_EN }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.emp_ssn" | translate}}</th>
+                              <td>{{ emp_ssn }}</td>
+                              <th scope="col">{{"clean_data.emp_email" | translate}}</th>
+                              <td>{{ emp_email }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.emp_id" | translate}}</th>
+                              <td>{{ emp_id }}</td>
+                              <th scope="col">{{"clean_data.gender" | translate}}</th>
+                              <td *ngIf="basic.gender == 'F'">{{"clean_data.female" | translate}}  <i class="fa fa-female"></i></td>
+                              <td *ngIf="basic.gender == 'M'">{{"clean_data.male" | translate}}  <i class="fa fa-male"></i></td>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+              </ng-container>
+
+              <!-- Address info block ... -->
+              <ng-container *ngIf="addressDisplay">
+                <h6 class="basic_title">{{"clean_data.address"|translate}}</h6>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">{{"clean_data.city_ar" | translate}}</th>
+                              <td>{{ address.CityNameAr }}</td>
+                              <th scope="col">{{"clean_data.city_en" | translate}}</th>
+                              <td>{{ address.CityNameEn }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.street_ar" | translate}}</th>
+                              <td>{{ address.StreetNameAr }}</td>
+                              <th scope="col">{{"clean_data.street_en" | translate}}</th>
+                              <td>{{ address.StreetNameEn }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.district_ar" | translate}}</th>
+                              <td>{{ address.DistrictAreaAr }}</td>
+                              <th scope="col">{{"clean_data.district_en" | translate}}</th>
+                              <td>{{ address.DistrictAreaEn }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.unit_no" | translate}}</th>
+                              <td>{{ address.UnitNo }}</td>
+                              <th scope="col">{{"clean_data.zip_code" | translate}}</th>
+                              <td>{{ address.ZipCode }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.building_no" | translate}}</th>
+                              <td>{{ address.BuildingNo }}</td>
+                              <th scope="col">{{"clean_data.additional_no" | translate}}</th>
+                              <td>{{ address.AdditionalNo }}</td>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+              </ng-container>
+
+              <!-- Address manual block ... -->
+              <ng-container *ngIf="addressManualDisplay">
+                <h6 class="basic_title">{{"clean_data.address"|translate}}</h6>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.city_ar"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="cities" bindLabel="NAME_AR" bindValue="NAME_AR" formControlName="city_ar"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.city_ar.invalid && (form.controls.city_ar.dirty || form.controls.city_ar.touched)">
+                          <div *ngIf="form.controls.city_ar.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-6">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.city_en"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="cities" bindLabel="NAME_EN" bindValue="NAME_EN" formControlName="city_en"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.city_en.invalid && (form.controls.city_en.dirty || form.controls.city_en.touched)">
+                          <div *ngIf="form.controls.city_en.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.district_ar"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="districts" bindLabel="NAME_AR" bindValue="NAME_AR" formControlName="district_ar"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.district_ar.invalid && (form.controls.district_ar.dirty || form.controls.district_ar.touched)">
+                          <div *ngIf="form.controls.district_ar.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-6">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.district_en"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="districts" bindLabel="NAME_EN" bindValue="NAME_EN" formControlName="district_en"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.district_en.invalid && (form.controls.district_en.dirty || form.controls.district_en.touched)">
+                          <div *ngIf="form.controls.district_en.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.street_ar"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="street_ar" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.street_ar.invalid && (form.controls.street_ar.dirty || form.controls.street_ar.touched)">
+                          <div *ngIf="form.controls.street_ar.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-6">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.street_en"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="street_en" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.street_en.invalid && (form.controls.street_en.dirty || form.controls.street_en.touched)">
+                          <div *ngIf="form.controls.street_en.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.unit_no"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="unit_no" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.unit_no.invalid && (form.controls.unit_no.dirty || form.controls.unit_no.touched)">
+                          <div *ngIf="form.controls.unit_no.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-3">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.zip_code"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="zip_code" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.zip_code.invalid && (form.controls.zip_code.dirty || form.controls.zip_code.touched)">
+                          <div *ngIf="form.controls.zip_code.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-3">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.additional_no"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="additional_no" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.additional_no.invalid && (form.controls.additional_no.dirty || form.controls.additional_no.touched)">
+                          <div *ngIf="form.controls.additional_no.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-3">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.building_no"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="building_no" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.building_no.invalid && (form.controls.building_no.dirty || form.controls.building_no.touched)">
+                          <div *ngIf="form.controls.building_no.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+              </ng-container>
+
+              <!-- Qualification info block ... -->
+              <ng-container *ngIf="qualifyDisplay">
+                <h6 class="basic_title">{{"clean_data.qualify"|translate}}</h6>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">{{"clean_data.institute_name" | translate}}</th>
+                              <td>{{ qualify.InstituteName }}</td>
+                              <th scope="col">{{"clean_data.college_name" | translate}}</th>
+                              <td>{{ qualify.CollegeName }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.major_name" | translate}}</th>
+                              <td>{{ qualify.MajorName }}</td>
+                              <th scope="col">{{"clean_data.gpa" | translate}}</th>
+                              <td>{{ qualify.GPA }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.certificate" | translate}}</th>
+                              <td *ngIf="qualify.Certificate">{{ qualify.Certificate }}</td>
+                              <td *ngIf="!qualify.Certificate"><strong class="text-danger">{{"clean_data.not_found" | translate}}</strong></td>
+                              <th scope="col">{{"clean_data.graduation_date" | translate}}</th>
+                              <td>{{ qualify.GraduationDate }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.degree" | translate}}</th>
+                              <td>{{ qualify.DegreeName }}</td>
+                              <th scope="col">{{"clean_data.country" | translate}}</th>
+                              <td>{{ qualify.Country }}</td>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+              </ng-container>
+
+              <!-- Qualification manual block ... -->
+              <ng-container *ngIf="qualifyManualDisplay">
+                <h6 class="basic_title">{{"clean_data.qualify"|translate}}</h6>
+                <div class="row">
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.institute_name"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="universities" bindLabel="NAME" bindValue="NAME" formControlName="institute_name"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.institute_name.invalid && (form.controls.institute_name.dirty || form.controls.institute_name.touched)">
+                          <div *ngIf="form.controls.institute_name.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.college_name"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="college_name" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.college_name.invalid && (form.controls.college_name.dirty || form.controls.college_name.touched)">
+                          <div *ngIf="form.controls.college_name.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.major_name"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="majors" bindLabel="NAME" bindValue="NAME" formControlName="major_name"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.major_name.invalid && (form.controls.major_name.dirty || form.controls.major_name.touched)">
+                          <div *ngIf="form.controls.major_name.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.graduation_date"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="graduation_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.graduation_date.invalid && (form.controls.graduation_date.dirty || form.controls.graduation_date.touched)">
+                          <div *ngIf="form.controls.graduation_date.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.degree"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="degrees" bindLabel="NAME" bindValue="NAME" formControlName="degree"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.degree.invalid && (form.controls.degree.dirty || form.controls.degree.touched)">
+                          <div *ngIf="form.controls.degree.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.country"|translate}} <span class="reqstart">*</span></h6>
+                        <ng-select [items]="countries" bindLabel="NAME_AR" bindValue="NAME_AR" formControlName="country"></ng-select>
+                      </div>
+                      <div *ngIf="form.controls.country.invalid && (form.controls.country.dirty || form.controls.country.touched)">
+                          <div *ngIf="form.controls.country.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.gpa"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="gpa" class="form-control" />
+                      </div>
+                      <div *ngIf="form.controls.gpa.invalid && (form.controls.gpa.dirty || form.controls.gpa.touched)">
+                          <div *ngIf="form.controls.gpa.errors.required">
+                              <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                          </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                  <div class="col-md-4">
+                    <ng-container>
+                      <div class="state">
+                        <h6>{{"clean_data.certificate"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="file" formControlName="certificate" (change)="idFileQualifyChange($event)" required>
+                      </div>
+                      <div *ngIf="form.controls.certificate.invalid && (form.controls.certificate.dirty || form.controls.certificate.touched)">
+                        <div *ngIf="form.controls.certificate.errors.required">
+                            <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                        </div>
+                      </div>
+                    </ng-container>
+                  </div>
+                </div>
+              </ng-container>
+
+              <ng-container>
+                <div class="row" style="margin-top: 20px; padding-top: 20px; border-top: solid 1px #EDEDED;">
+                  <div class="col-md-12 text-right">
+                    <button style="width: 20%;" class="btn btn-primary" [disabled]="submitted || form.invalid" (click)="onSubmit()">{{"clean_data.next"|translate}}</button>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="widget-body" *ngIf="emailForm">
+        <div class="row">
+          <div class="col-md-12">
+            <ng-container>
+              <div class="state">
+                <h6>{{"clean_data.email_code"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" [(ngModel)]="email_code" class="form-control" />
+              </div>
+              <div *ngIf="email_code_error" class="alert alert-danger">
+                <b>{{"clean_data.code_error"|translate}}</b>
+              </div>
+            </ng-container>
+            <ng-container>
+              <div class="row" style="margin-top: 20px; padding-top: 20px;">
+                <div class="col-md-12 text-right">
+                  <button style="width: 20%;" class="btn btn-primary" [disabled]="submitted" (click)="sendSms()">{{"clean_data.next"|translate}}</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="widget-body" *ngIf="smsForm">
+        <div class="row">
+          <div class="col-md-12">
+            <ng-container>
+              <div class="state">
+                <h6>{{"clean_data.sms_code"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" [(ngModel)]="sms_code" class="form-control" />
+              </div>
+              <div *ngIf="sms_code_error" class="alert alert-danger">
+                <b>{{"clean_data.code_error"|translate}}</b>
+              </div>
+            </ng-container>
+            <ng-container>
+              <div class="row" style="margin-top: 20px; padding-top: 20px;">
+                <div class="col-md-12 text-right">
+                  <button style="width: 20%;" class="btn btn-primary" [disabled]="submitted" (click)="sendSMS_confirm()">{{"clean_data.next"|translate}}</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="widget-footer">
+      </div>
+    </div>
+  </div>
+    

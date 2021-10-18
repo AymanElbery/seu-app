@@ -21,4 +21,5 @@ export interface UserData {
     act_as_student: boolean;
     activeRole: string;
     STD_RIGHTS: number;
+    DATA_CLEANED: number;
 }
