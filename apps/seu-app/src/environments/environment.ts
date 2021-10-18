@@ -5,7 +5,7 @@ export const environment = {
   diplome_base_api_url: 'http://localhost:8000/api/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
-  wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi
+  wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS_TEST/jersey/', // wafi
   servie_admission: 'https://apps.seu.edu.sa/newservices/api-test/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
   servicesprefix: 'api', // api-test
