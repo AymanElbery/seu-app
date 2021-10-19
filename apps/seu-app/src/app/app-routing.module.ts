@@ -29,10 +29,10 @@ const routes: Routes = [
       { path: 'policy', component: PolicyComponent },
       { path: 'docs-confirm', component: DocsConfirmComponent },
       { path: 'exam-photo', component: StdUploadPhotoListComponent },
-      // {
-      //   path: 'instructions',
-      //   loadChildren: './instructions/instructions.module#InstructionsModule',
-      // },
+      {
+        path: 'instructions',
+        loadChildren: './instructions/instructions.module#InstructionsModule',
+      },
       {
         path: 'written-forms',
         loadChildren: './written-forms/written-forms.module#WrittenFormsModule',
