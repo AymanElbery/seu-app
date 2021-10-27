@@ -3,12 +3,13 @@ export const environment = {
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   diplome_base_api_url: 'http://localhost:8000/api/', // newservices/
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
+  common: '/rest', // common_api-prod/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
   wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi
   servie_admission: 'https://apps.seu.edu.sa/newservices/api/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api/fees",
-  servicesprefix: 'api', // api
+  servicesprefix: 'api/', // api
   appsprefix: 'apps-prod', // api-test
   loginpage: 'login-ss.php',
   notesAuth: 'nots:N0t!fic@ti0n$',

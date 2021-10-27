@@ -1,16 +1,13 @@
 export const environment = {
   production:false,
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
-  //baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices-prod/
   baselink: 'http://eservices.local/', // newservices-dev/
-  //common: 'rest', // common_api-prod/
   common: 'common_api', // common_api-dev/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
   wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS_TEST/jersey/', // wafi
   servie_admission: 'https://apps.seu.edu.sa/newservices/api-test/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
-  //servicesprefix: 'api', // api-test
   servicesprefix: '', // api-dev
   appsprefix: 'apps', // api-test
   loginpage: 'login-local.php',
