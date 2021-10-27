@@ -24,7 +24,7 @@ export class ReqAssistantService extends SDService {
     currentAddApps;
     currentAdd;
     instructor;
-    URL = environment.baselink + environment.servicesprefix + "/rest/sd/std/";
+    URL = environment.baselink + environment.servicesprefix + environment.common + "/sd/std/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     headers = new HttpHeaders({
         'Content-Type': 'application/json',

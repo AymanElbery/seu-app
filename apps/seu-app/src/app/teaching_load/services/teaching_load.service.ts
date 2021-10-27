@@ -12,7 +12,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class Teaching_loadService {
   _settings;
-  URL = environment.baselink + environment.servicesprefix + '/rest/teaching_load/';
+  URL = environment.baselink + environment.servicesprefix + environment.common + "/teaching_load/";
   auth = `Basic ${window.btoa('emp:Emp@201620')}`;
   headers = new HttpHeaders({
     'Content-Type': 'application/json',

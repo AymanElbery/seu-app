@@ -57,7 +57,7 @@ export class LeadershipAdRecommendationsComponent implements OnInit {
   }
   exportAsXLSX_js(): void {
     let i = 1;
-    const baseLink = environment.baselink + environment.servicesprefix + "/rest/download.php?folder=INT_JOB_APPLICATIONS&file=";
+    const baseLink = environment.baselink + environment.servicesprefix + environment.common + "/download.php?folder=INT_JOB_APPLICATIONS&file=";
     const download = this.translate.instant("leadership.applications.download");
     const exportAppsList = this.appsList.map((app) => {
       let record = {};

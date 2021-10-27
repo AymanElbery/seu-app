@@ -70,7 +70,7 @@ export class HttpRequestServiceBase {
     this.globalService.relogin();
   }
   requestUser() {
-    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/user';
+    const url = environment.baselink + environment.servicesprefix + environment.common + "/ssosession/user";
     const auth = this.getSSOAuth();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ export class HttpRequestServiceBase {
     return this.http.get(url, { headers });
   }
   login(userName, passWord) {
-    const url = environment.baselink + environment.servicesprefix + '/rest/ssosession/user';
+    const url = environment.baselink + environment.servicesprefix + environment.common + "/ssosession/user";
     const auth = this.getSSOAuth();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',

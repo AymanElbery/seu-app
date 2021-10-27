@@ -152,7 +152,7 @@ export class StdUploadPhotoComponent implements OnInit, OnDestroy {
             'Content-Type': 'application/json',
         });
         this.submitting = true;
-        this.http.post(environment.baselink + environment.servicesprefix + "/rest/upload_photo/update_std_data", data, { headers }).subscribe(res => {
+        this.http.post(environment.baselink + environment.servicesprefix + environment.common + "/upload_photo/update_std_data", data, { headers }).subscribe(res => {
             if (res['status']) {
                 this.userService.userData['UPLOAD_PHOTO_STATUS'] = "Done";
                 this.dialogRef.close();

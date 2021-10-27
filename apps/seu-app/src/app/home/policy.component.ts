@@ -46,7 +46,7 @@ export class PolicyComponent implements OnInit, OnDestroy {
       Authorization: this.reqservice.getSSOAuth(),
       'Content-Type': 'application/json',
     });
-    this.http.post(environment.baselink + environment.servicesprefix + "/rest/policy_acceptance/change_status", { username: this.userService.userData.username, status: this.selection, emp_id: this.userService.userData.id }, { headers }).subscribe(res => {
+    this.http.post(environment.baselink + environment.servicesprefix + environment.common + "/policy_acceptance/change_status", { username: this.userService.userData.username, status: this.selection, emp_id: this.userService.userData.id }, { headers }).subscribe(res => {
       if (res['status']) {
         this.userService.userData['policy'] = "Done";
         this.dialogRef.close();

@@ -10,7 +10,7 @@ import { environment } from '../../../../../environments/environment';
 })
 export class JobApplicationService extends AppUserService {
   
-  URL = environment.baselink + environment.servicesprefix + "/rest/employment/";
+  URL = environment.baselink + environment.servicesprefix + environment.common + "/employment/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     headers = new HttpHeaders({
         'Content-Type': 'application/json',

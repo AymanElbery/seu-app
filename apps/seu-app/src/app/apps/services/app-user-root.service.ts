@@ -57,7 +57,7 @@ export class AppUserRootService extends AppUserService {
   }
 
   getApiURI() {
-    return environment.baselink + environment.servicesprefix + "/rest/";
+    return environment.baselink + environment.servicesprefix + environment.common + "/";
   }
 
   getHeader() {

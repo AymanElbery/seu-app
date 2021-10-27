@@ -17,6 +17,6 @@ export class PublicDocsService extends PublicBaseService {
     }
 
     getCertInfo(id) {
-        return this.get("/rest/stds/info/cert/" + id);
+        return this.get(environment.common + "/stds/info/cert/" + id);
     }
 }

@@ -29,14 +29,14 @@ export class PaymentsService {
   }
 
   status(std_id, app) {
-    return this.request('/rest/pay/' + app + '/status', { student_id: std_id });
+    return this.request(environment.common + '/pay/' + app + '/status', { student_id: std_id });
   }
   checkout(std_id, app) {
-    return this.request('/rest/pay/' + app + '/checkout', { student_id: std_id });
+    return this.request(environment.common + '/pay/' + app + '/checkout', { student_id: std_id });
   }
   
   inquery(tid, app) {
-    return this.request('/rest/pay/' + app + '/inquery', { tid: tid });
+    return this.request(environment.common + '/pay/' + app + '/inquery', { tid: tid });
   }
   
 

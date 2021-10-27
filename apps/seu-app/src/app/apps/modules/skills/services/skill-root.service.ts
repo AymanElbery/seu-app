@@ -14,7 +14,7 @@ import { SkillServicesModule } from './skills-service.module';
     providedIn: SkillServicesModule
 })
 export class SkillsRootService {
-    URL = environment.baselink + environment.servicesprefix + "/rest/skills/";
+    URL = environment.baselink + environment.servicesprefix + environment.common + "/skills/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
 
     langPrefix = '_AR';

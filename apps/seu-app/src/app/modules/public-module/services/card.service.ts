@@ -17,6 +17,6 @@ export class PublicCardService extends PublicBaseService {
     }
 
     getStdData(id) {
-        return this.get("/rest/stds/info/card/" + id);
+        return this.get(environment.common + "/stds/info/card/" + id);
     }
 }

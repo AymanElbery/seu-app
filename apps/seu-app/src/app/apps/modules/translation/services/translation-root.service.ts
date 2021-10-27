@@ -13,7 +13,7 @@ import { TranslationServicesModule } from './translation-service.module';
     providedIn: TranslationServicesModule
 })
 export class TranslationRootService {
-    URL = environment.baselink + environment.servicesprefix + "/rest/translation/";
+    URL = environment.baselink + environment.servicesprefix + environment.common + "/translation/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
 
     langPrefix = '_AR';

@@ -44,7 +44,7 @@ export class NotificationsService {
     //FEES_REFUND_MASTER: { path: '/academicrequests/lecexecuse' },
   }
 
-  notsURL = environment.baselink + environment.servicesprefix + "/rest/notifications/";
+  notsURL = environment.baselink + environment.servicesprefix + environment.common + "/notifications/";
   auth="Basic bm90czpOMHQhZmljQHRpMG4k";
   notesList = [];
 

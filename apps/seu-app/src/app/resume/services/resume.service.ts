@@ -9,7 +9,7 @@ import { environment } from '../../../environments/environment';
 })
 export class ResumeService {
 
-    URL = environment.baselink + environment.servicesprefix + "/rest/resume/";
+    URL = environment.baselink + environment.servicesprefix + environment.common + "/resume/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     headers = new HttpHeaders({
         'Content-Type': 'application/json',

@@ -58,7 +58,7 @@ export class StdUploadPhotoListComponent implements OnInit, OnDestroy {
     if (!(std_id)) {
       return;
     }
-    this.http.get(environment.baselink + environment.servicesprefix + "/rest/upload_photo/list/" + std_id, { headers }).subscribe(
+    this.http.get(environment.baselink + environment.servicesprefix + environment.common + "/upload_photo/list/" + std_id, { headers }).subscribe(
       res => {
         this.reqData = (res as any).data;
         this.msgs = (res as any).messages;
@@ -91,7 +91,7 @@ export class StdUploadPhotoListComponent implements OnInit, OnDestroy {
         Authorization: this.reqservice.getSSOAuth(),
         'Content-Type': 'application/json',
       });
-      this.http.get(environment.baselink + environment.servicesprefix + "/rest/upload_photo/delete/" + id, { headers }).subscribe(
+      this.http.get(environment.baselink + environment.servicesprefix + environment.common + "/upload_photo/delete/" + id, { headers }).subscribe(
         res => {
           //this.toastr.push((res as any).messages);
           this.getRequests();

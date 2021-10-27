@@ -13,7 +13,7 @@ import { ResumeServicesModule } from './resume-service.module';
     providedIn: ResumeServicesModule
 })
 export class ResumeRootService {
-    URL = environment.baselink + environment.servicesprefix + "/rest/resume/";
+    URL = environment.baselink + environment.servicesprefix + environment.common + "/resume/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
 
     langPrefix = '_AR';

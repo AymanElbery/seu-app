@@ -39,7 +39,7 @@ export class NotificationsService {
     EMP_NOTIFI: { emailPath: 'https://outlook.office365.com/owa/seu.edu.sa' }
   }
 
-  notsURL = environment.baselink + environment.servicesprefix + "/rest/notifications/";
+  notsURL = environment.baselink + environment.servicesprefix + environment.common + "/notifications/";
   auth = `Basic ${window.btoa('nots:N0t!fic@ti0n$')}`;
   notesList = [];
 

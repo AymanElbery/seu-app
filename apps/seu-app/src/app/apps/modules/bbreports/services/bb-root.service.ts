@@ -13,7 +13,7 @@ import { BBServicesModule } from '../bb-services.module';
     providedIn: BBServicesModule
 })
 export class BBRootService {
-    URL = environment.baselink + environment.servicesprefix + "/rest/bb/";
+    URL = environment.baselink + environment.servicesprefix + environment.common + "/bb/";
     auth = `Basic ${window.btoa('emp:Emp@201620')}`;
 
     langPrefix = '_AR';

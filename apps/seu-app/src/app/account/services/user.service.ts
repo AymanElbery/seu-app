@@ -127,7 +127,7 @@ export class UserService extends BaseService {
   SignIn(userName, pass) {
     this.baseUrl = '';
     this.configService.baseUrl = '';
-    return this.httRequest.postAuthRequest('rest/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
+    return this.httRequest.postAuthRequest(environment.common+'/ssosession/login', { user: userName, password: pass, full: 1 }).toPromise();
   }
   resetPassword(opassword, npassword, cpassword) {
     this.baseUrl = '';
@@ -135,7 +135,7 @@ export class UserService extends BaseService {
     const user = this.userData.username;
     //console.log(user);
     const lang = this.translate.currentLang;
-    return this.httRequest.postAuthRequest('rest/ssosession/resetpassword', { user, opassword, npassword, cpassword, lang }).toPromise();
+    return this.httRequest.postAuthRequest(environment.common+'/ssosession/resetpassword', { user, opassword, npassword, cpassword, lang }).toPromise();
   }
 
   errorRedirect() {
@@ -209,7 +209,7 @@ export class UserService extends BaseService {
   getAdmisPerm() {
     const udata = this.getActiveRoleDetails();
     const username = udata.username;
-    const notsURL = environment.baselink + environment.servicesprefix + '/rest/admisperm/index';
+    const notsURL = environment.baselink + environment.servicesprefix + environment.common+'/admisperm/index';
     const auth = this.httRequest.getNotinficationsAuth();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -220,7 +220,7 @@ export class UserService extends BaseService {
   }
 
   getEmpData(emp_id) {
-    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var url = environment.baselink + environment.servicesprefix + environment.common+"/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -233,7 +233,7 @@ export class UserService extends BaseService {
   }
 
   getStdData(std_id) {
-    var url = environment.baselink + environment.servicesprefix + "/rest/public/";
+    var url = environment.baselink + environment.servicesprefix + environment.common +"/public/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -246,7 +246,7 @@ export class UserService extends BaseService {
   }
 
   getResumeAdminUsers() {
-    var url = environment.baselink + environment.servicesprefix + "/rest/resume/";
+    var url = environment.baselink + environment.servicesprefix + environment.common +"/resume/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -259,7 +259,7 @@ export class UserService extends BaseService {
   }
 
   getTraficUsers() {
-    var url = environment.baselink + environment.servicesprefix + "/rest/trafic/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/trafic/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -272,7 +272,7 @@ export class UserService extends BaseService {
   }
 
   getDistrictsByCityId(cityId) {
-    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -285,7 +285,7 @@ export class UserService extends BaseService {
   }
 
   getUniversities() {
-    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -298,7 +298,7 @@ export class UserService extends BaseService {
   }
 
   getrels() {
-    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -311,7 +311,7 @@ export class UserService extends BaseService {
   }
 
   getCities() {
-    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -324,7 +324,7 @@ export class UserService extends BaseService {
   }
 
   updateEmpInfo(data) {
-    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -335,7 +335,7 @@ export class UserService extends BaseService {
   }
 
   sendEmail(email) {
-    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -346,7 +346,7 @@ export class UserService extends BaseService {
   }
 
   sendSMS(email, code, mobile) {
-    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -357,7 +357,7 @@ export class UserService extends BaseService {
   }
   
   sendSMS_confirm(mobile, code, data) {
-    var url = environment.baselink + environment.servicesprefix + "/rest/erp/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -368,7 +368,7 @@ export class UserService extends BaseService {
   }
 
   updateStudentVaccineStatus(data) {
-    var url = environment.baselink + environment.servicesprefix + "/rest/vaccine/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/vaccine/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -379,7 +379,7 @@ export class UserService extends BaseService {
   }
 
   updateStudentRights(data) {
-    var url = environment.baselink + environment.servicesprefix + "/rest/std_rights/";
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/std_rights/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',

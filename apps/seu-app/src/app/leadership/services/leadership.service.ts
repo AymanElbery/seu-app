@@ -20,7 +20,7 @@ export class LeadershipService {
   currentAdd;
   instructor;
 
-  URL = environment.baselink + environment.servicesprefix + '/rest/leadership/';
+  URL = environment.baselink + environment.servicesprefix + environment.common + "/leadership/";
   auth = `Basic ${window.btoa('emp:Emp@201620')}`;
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
