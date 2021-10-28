@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ConfigService } from '../../shared/services/config.service';
 import { HttpRequestService } from '../../shared/services/http-request.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,23 +9,23 @@ import { HttpRequestService } from '../../shared/services/http-request.service';
 export class AcademicDiplomeRecordService {
 
   constructor(private configService: ConfigService, private httRequest: HttpRequestService) {
-    this.configService.baseUrl = 'std_api_diplome';
+    this.configService.baseUrl = environment.ud;
   }
 
   getِAcademicRecord() {
-    this.configService.baseUrl = 'std_api_diplome';
+    this.configService.baseUrl = environment.ud;
 
     return this.httRequest.GetRequest('academic_record_service/get_academic_record').toPromise();
   }
   getٍِStudentGrades() {
-    this.configService.baseUrl = 'std_api_diplome';
+    this.configService.baseUrl = environment.ud;
 
     return this.httRequest.GetRequest('academic_record_service/grades').toPromise();
   }
 
   Download() {
 
-    this.configService.baseUrl = 'std_api_diplome';
+    this.configService.baseUrl = environment.ud;
     const sid = this.configService.getSid();
 
 
@@ -32,7 +33,7 @@ export class AcademicDiplomeRecordService {
   }
   DownloadEng() {
 
-    this.configService.baseUrl = 'std_api_diplome';
+    this.configService.baseUrl = environment.ud;
     const sid = this.configService.getSid();
 
 

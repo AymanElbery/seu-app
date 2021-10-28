@@ -82,9 +82,7 @@ export class AcademicStatusComponent implements OnInit {
         this.student = (res as any).data.student;
         this.acceptanceTerm = this.student.std_adm_term_label.match(/[^0-9\/م]/g).join('');
         this.acceptanceYear = this.student.std_adm_term_label.match(/[0-9\/[0-9]/g).join('');
-        console.log(this.acceptanceYear);
         this.studentTerms = (res as any).data.STD_TERMS;
-        console.log("studentTerms",this.studentTerms);
         // tslint:disable-next-line: prefer-for-of
         for (let i = 0; i < this.studentTerms.length; i++) {
           this.terms.push(

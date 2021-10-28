@@ -13,7 +13,7 @@
   <div class="widget" *ngIf="!isLoading">
     <div class="widget-header">
       <h3 class="widget-title"> {{"general.pre_requesr" | translate}}
-        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+        <button *ngIf="req_data && req_data.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
           {{"general.request.add_request" | translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>
@@ -33,8 +33,8 @@
             <th scope="col">{{"general.request.req_delete" | translate}} </th>
           </tr>
         </thead>
-        <tbody>
-          <tr *ngFor="let it of reqData.requests;let i=index;">
+        <tbody *ngIf="req_data">
+          <tr *ngFor="let it of req_data.requests;let i=index;">
             <td>{{it.request_number}}</td>
             <td>{{it.courseId}}</td>
             <td>{{it.course_title}}</td>

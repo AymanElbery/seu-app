@@ -23,7 +23,12 @@ export class HttpRequestService extends HttpRequestServiceBase {
   }
 
   setStudentIdHeader(url, headers) {
-    if (url.includes('stdservicesapi') || url.includes('stdsUnivapi')) {
+    if (
+      url.includes('stdservicesapi') || 
+      url.includes('stdsUnivapi') ||
+      url.includes('std_api_diplome') ||
+      url.includes('ud_api')
+    ) {
       headers = headers.append('Student-ID', this.userService.userData.username);
     }
     return headers;

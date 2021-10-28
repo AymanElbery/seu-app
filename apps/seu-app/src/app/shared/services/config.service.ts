@@ -16,8 +16,8 @@ export class ConfigService {
   // tslint:disable-next-line: variable-name
   private _tokenName: string;
   constructor(private globalBaseService: GlobalBaseService) {
-    this._apiURI = environment.baselink + environment.servicesprefix + '/';
-    this.stdapi = environment.baselink + environment.servicesprefix + '/';
+    this._apiURI = environment.baselink + environment.servicesprefix ;
+    this.stdapi = environment.baselink + environment.servicesprefix ;
     this.cmsURI = environment.cmslink;
 
     this._tokenName = 'auth_token';

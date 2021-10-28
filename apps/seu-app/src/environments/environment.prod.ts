@@ -1,13 +1,14 @@
 export const environment = {
   production: true,
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
-  diplome_base_api_url: 'http://localhost:8000/api/', // newservices/
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
   wafi_apilink: 'https://sso.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi
   servie_admission: 'https://apps.seu.edu.sa/newservices/api/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api/fees",
+  common: '/rest', 
+  ud: '/std_api_diplome', 
   servicesprefix: 'api', // api
   appsprefix: 'apps-prod', // api-test
   loginpage: 'login-ss.php',

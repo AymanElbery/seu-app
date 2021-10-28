@@ -11,7 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./exam-diplome-excuse.component.scss']
 })
 export class ExamDiplomeExcuseComponent implements OnInit {
-  reqData;
+  req_data;
   msgs;
   status;
   isLoading = false;
@@ -45,13 +45,14 @@ export class ExamDiplomeExcuseComponent implements OnInit {
   getRequests() {
     this.isLoading = true;
     this.acadmicProc.getgetRequests().then(
-      res => {
+      (res :any) => {
         this.acadmicProc.reqData = (res as any).data;
         this.acadmicProc.msgs = (res as any).messages;
-        this.reqData = this.acadmicProc.reqData;
+        this.req_data = this.acadmicProc.reqData;
         this.msgs = this.acadmicProc.msgs;
         this.isLoading = false;
       }, err => {
+        console.log(err);
         this.toastr.tryagain();
         this.isLoading = false;
       }
@@ -79,7 +80,7 @@ export class ExamDiplomeExcuseComponent implements OnInit {
       this.acadmicProc.deleteReq(id).then(res => {
         this.toastr.push((res as any).messages);
         if ((res as any).status == 1) {
-          this.reqData.requests.splice(index, 1);
+          this.req_data.requests.splice(index, 1);
         }
         this.deleting = false;
       }
