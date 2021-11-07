@@ -58,6 +58,9 @@ export class EmpDataComponent implements OnInit, OnDestroy{
   email_code_error = false;
   sms_code_error = false;
   data;
+
+  showOtherBirthCity = false;
+  skip_button = false;
   constructor(
     public userService: UserService,
     public clean_dataService: Clean_dataService,
@@ -69,9 +72,10 @@ export class EmpDataComponent implements OnInit, OnDestroy{
   ) {
     this.form = this.fb.group({
       'birth_date'    : ['', [Validators.required]],
-      'personal_email': ['', [Validators.required]],
+      'personal_email': ['', [Validators.required, Validators.email]],
       'mobile'        : ['', [Validators.required]],
       'birth_city'    : ['', [Validators.required]],
+      'birth_city_other'    : [''],
       'city_ar'    : [''],
       'city_en'    : [''],
       'street_ar'    : [''],
@@ -122,12 +126,22 @@ export class EmpDataComponent implements OnInit, OnDestroy{
           this.majors = response.data.majors;
           this.degrees = response.data.degrees;
           this.countries = response.data.countries;
+          this.skip_button = response.data.skip;
         }
         this.isLoading = false;
       },
       error => {
       }
     )
+  }
+
+  changeBirthCity(value){
+    if(value.NAME_EN == 'Other'){
+      this.showOtherBirthCity = true;
+      this.form.get('birth_city_other').setValidators(Validators.required);
+    }else{
+      this.showOtherBirthCity = false;
+    }
   }
 
   changeBirthDate(value){
@@ -145,18 +159,17 @@ export class EmpDataComponent implements OnInit, OnDestroy{
             this.basicDisplay = true;
             this.addressDisplay = false;
             this.addressManualDisplay = true;
-            //
-            this.form.get('city_ar').setValidators(Validators.required);
-            this.form.get('city_en').setValidators(Validators.required);
-            this.form.get('street_ar').setValidators(Validators.required);
-            this.form.get('street_en').setValidators(Validators.required);
-            this.form.get('district_ar').setValidators(Validators.required);
-            this.form.get('district_en').setValidators(Validators.required);
-            this.form.get('unit_no').setValidators(Validators.required);
-            this.form.get('zip_code').setValidators(Validators.required);
-            this.form.get('building_no').setValidators(Validators.required);
-            this.form.get('additional_no').setValidators(Validators.required);
-            //
+            // this.form.get('city_ar').setValidators(Validators.required);
+            // this.form.get('city_en').setValidators(Validators.required);
+            // this.form.get('street_ar').setValidators(Validators.required);
+            // this.form.get('street_en').setValidators(Validators.required);
+            // this.form.get('district_ar').setValidators(Validators.required);
+            // this.form.get('district_en').setValidators(Validators.required);
+            // this.form.get('unit_no').setValidators(Validators.required);
+            // this.form.get('zip_code').setValidators(Validators.required);
+            // this.form.get('building_no').setValidators(Validators.required);
+            // this.form.get('additional_no').setValidators(Validators.required);
+
             this.qualifyDisplay = true;
           }else{
             this.basicDisplay = true;
@@ -169,16 +182,14 @@ export class EmpDataComponent implements OnInit, OnDestroy{
             this.basicDisplay = true;
             this.qualifyDisplay = false;
             this.qualifyManualDisplay = true;
-             //
-             this.form.get('institute_name').setValidators(Validators.required);
-             this.form.get('college_name').setValidators(Validators.required);
-             this.form.get('major_name').setValidators(Validators.required);
-             this.form.get('gpa').setValidators(Validators.required);
-             this.form.get('certificate').setValidators(Validators.required);
-             this.form.get('graduation_date').setValidators(Validators.required);
-             this.form.get('degree').setValidators(Validators.required);
-             this.form.get('country').setValidators(Validators.required);
-             //
+            //  this.form.get('institute_name').setValidators(Validators.required);
+            //  this.form.get('college_name').setValidators(Validators.required);
+            //  this.form.get('major_name').setValidators(Validators.required);
+            //  this.form.get('gpa').setValidators(Validators.required);
+            //  this.form.get('certificate').setValidators(Validators.required);
+            //  this.form.get('graduation_date').setValidators(Validators.required);
+            //  this.form.get('degree').setValidators(Validators.required);
+            //  this.form.get('country').setValidators(Validators.required);
           }else{
             this.basicDisplay = true;
             this.qualifyDisplay = true;
@@ -246,7 +257,7 @@ export class EmpDataComponent implements OnInit, OnDestroy{
       'BIRTH_DATE'      : this.formatDate(formData.birth_date),
       'PERSONAL_EMAIL'  : formData.personal_email,
       'MOBILE'          : formData.mobile,
-      'BIRTH_CITY'      : formData.birth_city,
+      'BIRTH_CITY'      : this.showOtherBirthCity ? formData.birth_city_other : formData.birth_city,
       'CITY_AR'         : (this.addressDisplay) ? this.address.CityNameAr : formData.city_ar,
       'CITY_EN'         : (this.addressDisplay) ? this.address.CityNameEn : formData.city_en,
       'STREET_AR'       : (this.addressDisplay) ? this.address.StreetNameAr : formData.street_ar,
