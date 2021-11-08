@@ -30,6 +30,12 @@
             <img _ngcontent-rbd-c3="" src="../../assets/images/cop2.png">
           </a>
         </div>
+        <div *ngIf="have_reenroll_permession" [ngClass]="{'active': current == 'reenroll'}" class="nav-item">
+          <a href="#" routerLink="/apps/stds-services/reenroll" (click)="redirectTo('reenroll')">
+            <span>{{ "menu.reenroll" | translate }} </span>
+            <img _ngcontent-rbd-c3="" src="../../assets/images/cop2.png">
+          </a>
+        </div>
         <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a href="#" class="menu-item" (click)="logout()">
             <span> {{'logout' | translate}} </span>

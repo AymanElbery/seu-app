@@ -11,12 +11,17 @@ import { GlobalService } from 'src/app/shared/services/global.service';
 })
 export class StdSmsVerifyComponent implements OnInit {
 
-  
+  from_component ;
   form: FormGroup;
   submitted = false;
-  constructor(private stdService: StudentService, private fb: FormBuilder,
-    private router: Router, private route: ActivatedRoute, private globalService: GlobalService) {
-
+  constructor(
+    private stdService: StudentService, 
+    private fb: FormBuilder,
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private globalService: GlobalService
+  ) {
+    
     this.form = fb.group({
       'code': ['', [Validators.required, Validators.minLength(4), Validators.maxLength(4)]]
     });
@@ -31,7 +36,9 @@ export class StdSmsVerifyComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.route.queryParams.subscribe(params => {
+      this.from_component = params.from_component; 
+    });
   }
 
   redirectToLogin() {
@@ -50,7 +57,7 @@ export class StdSmsVerifyComponent implements OnInit {
         return false;
       }
       this.stdService.LoggedInUser['TOKEN_VERIFIED'] = 2;
-      this.router.navigate(['../docs'], { relativeTo: this.route });
+      this.router.navigate(['../'+this.from_component], { relativeTo: this.route });
     }, error => {
       this.stdService.tryagain();
       this.submitted = false;

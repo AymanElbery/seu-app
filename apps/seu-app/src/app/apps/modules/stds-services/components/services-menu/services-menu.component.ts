@@ -10,6 +10,7 @@ import { StudentService } from '../../services/student.service';
 export class ServicesMenuComponent implements OnInit {
   current = '';
   have_docs_permession = false;
+  have_reenroll_permession = false;
   constructor(
     private stdservice: StudentService,
     private route: ActivatedRoute,
@@ -22,9 +23,11 @@ export class ServicesMenuComponent implements OnInit {
     this.current = (path) ? path['path'] : "";
 
     this.have_docs_permession = this.stdservice.have_docs_permession;
+    this.have_reenroll_permession = this.stdservice.have_reenroll_permession;
     this.isLoggedIn = this.stdservice.isLoggedIn;
     this.stdservice.userLoadedObservable.subscribe(() => {
       this.have_docs_permession = this.stdservice.have_docs_permession;
+      this.have_reenroll_permession = this.stdservice.have_reenroll_permession;
       this.isLoggedIn = this.stdservice.isLoggedIn;
     });
   }

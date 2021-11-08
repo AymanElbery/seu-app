@@ -27,7 +27,8 @@ export class HttpRequestService extends HttpRequestServiceBase {
       url.includes('stdservicesapi') || 
       url.includes('stdsUnivapi') ||
       url.includes('std_api_diplome') ||
-      url.includes('ud_api')
+      url.includes('ud_api') ||
+      url.includes('gr_api') 
     ) {
       headers = headers.append('Student-ID', this.userService.userData.username);
     }

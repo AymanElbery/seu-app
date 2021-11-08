@@ -9,6 +9,7 @@ export const environment = {
   paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
   common: 'common_api', 
   ud: 'ud_api', 
+  gr: 'gr_api', 
   servicesprefix: '', 
   appsprefix: 'apps', 
   loginpage: 'login-local.php',

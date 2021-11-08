@@ -24,7 +24,12 @@ export class ReEnrollComponent implements OnInit,OnDestroy {
   status;
   isLoading = false;
 
-  constructor(private translate: TranslateService, public dialog: MatDialog, private toastr: AppToasterService, private acadmicProc: ReEnrollService) { }
+  constructor(
+    private translate: TranslateService, 
+    public dialog: MatDialog, 
+    private toastr: AppToasterService, 
+    private acadmicProc: ReEnrollService
+  ) { }
 
   ngOnInit() {
     this.reEnroll = { proof: '', reason: '', has_proof: '' };

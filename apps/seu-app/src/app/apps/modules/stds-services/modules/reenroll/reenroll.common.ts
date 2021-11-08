@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { StdsPrintDocsComponent } from './components/stds-print-docs/stds-print-docs.component'
+import { ReenrollRequestsComponent } from './components/reenroll-requests/reenroll-requests.component'
 import { STDServicesUSERGuard } from '../../services-guard/user.guard';
 import { STDServicesUSERVerifiedGuard } from '../../services-guard/user-verified.guard';
 
 export const componentDeclarations: any[] = [
-    StdsPrintDocsComponent
+    ReenrollRequestsComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -13,8 +13,8 @@ export const providerDeclarations: any[] = [
 export const routes: Routes = [
     {
         path: '',
-        component: StdsPrintDocsComponent,
+        component: ReenrollRequestsComponent,
         canActivate: [STDServicesUSERVerifiedGuard],
-        data: {from_component: 'docs'}
+        data: {from_component: 'reenroll'}
     }
 ];

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, CanLoad } from '@angular/router'; import { Observable } from 'rxjs';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, CanLoad, NavigationExtras } from '@angular/router'; import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { StudentServicesModule } from '../services/student-services.module';
 import { StudentService } from '../services/student.service';
@@ -10,7 +10,11 @@ import { STDServicesUSERGuard } from './user.guard';
   providedIn: StudentServicesModule
 })
 export class STDServicesUSERVerifiedGuard extends STDServicesUSERGuard implements CanActivate, CanLoad {
-  constructor( router: Router, translate: TranslateService, stdsService: StudentService) {
+  constructor( 
+    router: Router, 
+    translate: TranslateService, 
+    stdsService: StudentService
+  ) {
     super(router,translate,stdsService);
   }
   isActiveService(state) {
@@ -19,7 +23,12 @@ export class STDServicesUSERVerifiedGuard extends STDServicesUSERGuard implement
       return true;
     }
     if(isLoggedId){
-      this.router.navigate(['/apps/stds-services/sms-verification']);
+      let comp = this.from_component;
+      // let navigationExtras: NavigationExtras = {
+      //   queryParams: { 'from_component': comp },
+      //   fragment: 'anchor'
+      // };
+      this.router.navigate(['/apps/stds-services/sms-verification'], { queryParams: {'from_component': comp }});
       return false;
     }
     return false

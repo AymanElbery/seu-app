@@ -9,10 +9,12 @@ import { map } from 'rxjs/operators';
   providedIn: StudentServicesModule
 })
 export class STDServicesUSERGuard implements CanActivate, CanLoad {
+  from_component;
   constructor(protected router: Router, protected translate: TranslateService, protected stdsService: StudentService) {
 
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Observable<boolean> {
+    this.from_component = route.data["from_component"] as string;
     return this.isLoggedIn(state);
   }
   canLoad(): boolean | Observable<boolean> {
