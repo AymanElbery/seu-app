@@ -320,8 +320,15 @@
               </ng-container> -->
 
               <!-- Qualification info block ... -->
-              <ng-container *ngIf="qualifyDisplay">
-                <h6 class="basic_title">{{"clean_data.qualify"|translate}}</h6>
+              <ng-container *ngIf="qualifyDisplay && !manual_qualify_insert">
+                <div class="row">
+                  <div class="col-md-10">
+                    <h6 class="basic_title">{{"clean_data.qualify"|translate}}</h6>
+                  </div>
+                  <div class="col-md-2">
+                    <button style="position: relative; top: 12px; border-radius: unset; width: 100%;" (click)="manualQualify()" class="btn btn-primary">{{"clean_data.edit"|translate}} </button>
+                  </div>
+                </div>
                 <div class="row">
                     <div class="col-md-12">
                       <div class="table-responsive">
@@ -360,18 +367,26 @@
               </ng-container>
 
               <!-- Qualification manual block ... -->
-              <ng-container *ngIf="qualifyManualDisplay">
-                <h6 class="basic_title">{{"clean_data.qualify"|translate}}</h6>
+              <ng-container *ngIf="qualifyManualDisplay  && !manual_qualify_insert">
+                <div class="row">
+                  <div class="col-md-10">
+                    <h6 class="basic_title">{{"clean_data.qualify"|translate}}</h6>
+                  </div>
+                  <div class="col-md-2">
+                    <button style="position: relative; top: 12px; border-radius: unset; width: 100%;" (click)="manualQualify()" class="btn btn-primary">{{"clean_data.edit"|translate}} </button>
+                  </div>
+                </div>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="alert alert-info text-center">
-                        <strong>{{"clean_data.qualify_not_found"|translate}} <a target="blanck" href="https://jameah.moe.gov.sa/">{{"clean_data.manzoma"|translate}}</a> {{"clean_data.according_to_qualify"|translate}} <a target="blanck" href="https://moe.gov.sa/ar/knowledgecenter/eservices/Documents/%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%20-%20%D8%AC%D8%A7%D9%85%D8%B9%D8%A92%20%D8%A7%D9%84%D8%A8%D9%88%D8%A7%D8%A8%D8%A9.pdf">{{"clean_data.manzoma_instructions"|translate}}</a></strong>
+                        <strong>{{"clean_data.qualify_not_found"|translate}} <a target="blanck" href="https://jameah.moe.gov.sa/">{{"clean_data.manzoma"|translate}}</a> {{"clean_data.according_to_qualify"|translate}} <a target="blanck" href="https://moe.gov.sa/ar/knowledgecenter/eservices/Documents/%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%20-%20%D8%AC%D8%A7%D9%85%D8%B9%D8%A92%20%D8%A7%D9%84%D8%A8%D9%88%D8%A7%D8%A8%D8%A9.pdf">{{"clean_data.manzoma_instructions"|translate}}</a></strong><br>
+                        <strong>{{"clean_data.manual_insert"|translate}} </strong>
                     </div>
                   </div>
                 </div>
               </ng-container>
 
-              <!-- <ng-container *ngIf="qualifyManualDisplay">
+              <ng-container *ngIf="manual_qualify_insert">
                 <h6 class="basic_title">{{"clean_data.qualify"|translate}}</h6>
                 <div class="row">
                   <div class="col-md-4">
@@ -483,7 +498,7 @@
                     </ng-container>
                   </div>
                 </div>
-              </ng-container> -->
+              </ng-container> 
 
               <ng-container>
                 <div class="row" style="margin-top: 20px; padding-top: 20px; border-top: solid 1px #EDEDED;">

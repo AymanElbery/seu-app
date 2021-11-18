@@ -1053,7 +1053,9 @@
         "according_to": "according to the guide",
         "according_to_qualify": "affiliated to the Ministry of Education, according to the guide",
         "mobile_pattern": "The mobile number must be correct",
-        "email_error": "Email must be valid"
+        "email_error": "Email must be valid",
+        "manual_insert": "Or you can enter it manually by clicking on the edit button",
+        "edit": "Edit"
     },
     "docs_confirm": {
         "title": "A pop-up window to confirm your information",

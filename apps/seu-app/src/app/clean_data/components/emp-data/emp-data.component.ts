@@ -61,6 +61,8 @@ export class EmpDataComponent implements OnInit, OnDestroy{
 
   showOtherBirthCity = false;
   skip_button = false;
+
+  manual_qualify_insert = false; 
   constructor(
     public userService: UserService,
     public clean_dataService: Clean_dataService,
@@ -213,6 +215,11 @@ export class EmpDataComponent implements OnInit, OnDestroy{
       error => {
       }
     )
+  }
+
+  manualQualify(){
+    this.manual_qualify_insert = !this.manual_qualify_insert;
+    this.qualifyManualDisplay = false;
   }
 
   formatDate(date) {  
