@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'login',
     loadChildren: './modules/login/sd-login.module#SDLoginModule',
   },
+  {
+    path: 'committe',
+    loadChildren: './modules/committe/sd-committe.module#SDCommitteModule',
+  },
 ];
 
 @NgModule({
