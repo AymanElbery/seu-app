@@ -49,6 +49,7 @@ export class UserService extends BaseService {
       PIDM: '',
       STD_RIGHTS: 0,
       DATA_CLEANED: 0,
+      COMMITTE_CONFIRM: 0,
       level: '',
       major: '',
       name_ar: '',

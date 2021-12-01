@@ -22,4 +22,5 @@ export interface UserData {
     activeRole: string;
     STD_RIGHTS: number;
     DATA_CLEANED: number;
+    COMMITTE_CONFIRM: number;
 }

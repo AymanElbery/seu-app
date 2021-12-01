@@ -197,6 +197,10 @@ const routes: Routes = [
         path: 'emp-clean-data',
         loadChildren: './clean_data/clean_data.module#Clean_dataModule'
       },
+      {
+        path: 'committe-confirm',
+        loadChildren: './committe_confirm/committe_confirm.module#Committe_confirmModule'
+      },
     ]
   },
   {
