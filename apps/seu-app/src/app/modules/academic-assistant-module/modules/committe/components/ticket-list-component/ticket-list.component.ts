@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from '../../../../../../account/services/user.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialogConfig, MatDialog } from '@angular/material';
@@ -12,7 +12,7 @@ import { TicketDetailsComponent } from './../ticket-details-component/ticket-det
   styleUrls: ['./ticket-list.component.css'],
   templateUrl: './ticket-list.component.html'
 })
-export class TicketListComponent {
+export class TicketListComponent implements OnInit, OnDestroy{
 
   can_add_new = false;
   tickets;
@@ -40,6 +40,14 @@ export class TicketListComponent {
         this.getTickets();
       }
     });
+  }
+
+  ngOnInit() {
+    document.getElementById("side-menu").style.display = "none";
+  }
+
+  ngOnDestroy() {
+    document.getElementById("side-menu").style.display = "block";
   }
 
   getTickets() {

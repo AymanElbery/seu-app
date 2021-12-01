@@ -9,14 +9,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @Component({
-  selector: 'app-emp-data',
-  styleUrls: ['./emp-data.component.css'],
-  templateUrl: './emp-data.component.html'
+  selector: 'app-committe',
+  styleUrls: ['./committe.component.css'],
+  templateUrl: './committe.component.html'
 })
 export class CommitteComponent implements OnInit, OnDestroy{
 
   isLoading = false;
-  
+  date;
+  save_button = false;
   constructor(
     public userService: UserService,
     public committeService: CommitteService,
@@ -26,7 +27,7 @@ export class CommitteComponent implements OnInit, OnDestroy{
     private router: Router,
     private fb: FormBuilder
   ) {
-
+    this.date = new Date();
   }
 
   ngOnInit() {
@@ -35,6 +36,14 @@ export class CommitteComponent implements OnInit, OnDestroy{
 
   ngOnDestroy() {
     document.getElementById("side-menu").style.display = "block";
+  }
+
+  navigateToSd(){
+    this.router.navigate(['/academic-assistant/committe']);
+  }
+
+  acknowledgmentChange(e){
+    this.save_button = e.target.checked;
   }
 
 }

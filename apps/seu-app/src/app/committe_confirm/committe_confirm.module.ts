@@ -33,5 +33,5 @@ import { CommitteComponent } from './components/committe/committe.component';
     
   ]
 })
-export class Clean_dataModule {
+export class Committe_confirmModule {
 }
