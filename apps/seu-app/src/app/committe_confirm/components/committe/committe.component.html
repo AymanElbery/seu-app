@@ -16,7 +16,7 @@
                   </tr>
                   <tr>
                     <th scope="col">{{"committe.punishment" | translate}}</th>
-                    <td>التعهد مع الإلنذار الخطي من الطالب المخالف</td>
+                    <td>التعهد مع الإنذار الخطي من الطالب المخالف</td>
                   </tr>
                   <tr>
                     <th scope="col">{{"committe.system_document" | translate}}</th>
@@ -28,7 +28,7 @@
                   </tr>
                   <tr>
                     <th style="vertical-align: middle;" scope="col">{{"committe.violation_type" | translate}}</th>
-                    <td><img src="../../../../assets/images/test.jpeg" width="200px" height="200px"></td>
+                    <td>(<a target="_blank" href="https://seu.edu.sa">للإطلاع من هنا</a>)</td>
                   </tr>
                   <tr>
                     <th scope="col">{{"committe.acknowledgment" | translate}}</th>
@@ -48,7 +48,7 @@
         </div>
         <div class="row" *ngIf="save_button">
           <div class="col-md-12 text-center">
-            <button style="width: 20%;" class="btn btn-primary">{{"committe.save" | translate}}</button>
+            <button [disabled]="submitted" (click)="save()" style="width: 20%;" class="btn btn-primary">{{"committe.save" | translate}}</button>
           </div>
         </div>
       </div>

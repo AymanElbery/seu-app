@@ -12,7 +12,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class CommitteService {
   _settings;
-  URL = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
+  URL = environment.baselink + environment.servicesprefix + environment.common + "/committe/";
   auth = `Basic ${window.btoa('emp:Emp@201620')}`;
   headers = new HttpHeaders({
     'Content-Type': 'application/json',

@@ -5,6 +5,8 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { CommitteService } from '../../services/committe.service';
 import { TranslateService } from '@ngx-translate/core';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { UserService } from '../../../../../../account/services/user.service';
+
 
 @Component({
     selector: 'sd-knowledge-resources-form',
@@ -23,7 +25,7 @@ export class RegistrationAssistantFormComponent implements OnInit {
     terms = [];
     constructor(@Inject(MAT_DIALOG_DATA) public data, private fb: FormBuilder,
         public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, private translate: TranslateService,
-        private toastr: AppToasterService, private service: CommitteService) { }
+        private toastr: AppToasterService, private service: CommitteService, private userService: UserService) { }
 
     ngOnInit() {
         this.form = this.fb.group({
@@ -61,6 +63,8 @@ export class RegistrationAssistantFormComponent implements OnInit {
                         'body': this.translate.instant('messages.request_added')
                     }]);
                     this.closeDiag(true);
+                    this.userService.userData.COMMITTE_CONFIRM = 1;
+                    document.getElementById("side-menu").style.display = "block";
                 } else {
                     this.toastr.push(response['messages']);
                 }

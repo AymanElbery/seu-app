@@ -6,7 +6,6 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { CommitteService } from '../../services/committe.service';
 import { RegistrationAssistantFormComponent } from '../ticket-add-component/ticket-add.component';
 import { TicketDetailsComponent } from './../ticket-details-component/ticket-details.component';
-
 @Component({
   selector: 'sd-knowledge-resources-ticket-list',
   styleUrls: ['./ticket-list.component.css'],
@@ -43,7 +42,9 @@ export class TicketListComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit() {
-    document.getElementById("side-menu").style.display = "none";
+    if(!this.userService.userData.COMMITTE_CONFIRM){
+      document.getElementById("side-menu").style.display = "none";
+    }
   }
 
   ngOnDestroy() {
