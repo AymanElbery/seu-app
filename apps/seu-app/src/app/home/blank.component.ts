@@ -49,7 +49,7 @@ export class BlankComponent implements OnInit {
         if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData.DATA_CLEANED) {
           this.router.navigate(['/emp-clean-data/emp']);
         }
-        if ((this.userService.userData.role == "Student") && !this.userService.userData.COMMITTE_CONFIRM) {
+        if ((this.userService.userData.role == "Student") && this.userService.userData.COMMITTE_CONFIRM == 0) {
           this.router.navigate(['/committe-confirm/committe']);
         }
         this.showVaccineStatus();

@@ -42,7 +42,7 @@ export class TicketListComponent implements OnInit, OnDestroy{
   }
 
   ngOnInit() {
-    if(!this.userService.userData.COMMITTE_CONFIRM){
+    if(this.userService.userData.COMMITTE_CONFIRM == 2 || this.userService.userData.COMMITTE_CONFIRM == 0){
       document.getElementById("side-menu").style.display = "none";
     }
   }

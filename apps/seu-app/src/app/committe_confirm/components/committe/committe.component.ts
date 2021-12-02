@@ -40,6 +40,8 @@ export class CommitteComponent implements OnInit, OnDestroy{
   }
 
   navigateToSd(){
+    console.log("Asd");
+    this.userService.userData.COMMITTE_CONFIRM = 2;
     this.router.navigate(['/academic-assistant/committe']);
   }
 
