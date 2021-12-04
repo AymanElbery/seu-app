@@ -1422,9 +1422,9 @@
         "system_document": "المستند النظامي",
         "violation": "تفاصيل المخالفة",
         "violation_type": "أنواع المخالفات المرصودة",
-        "acknowledgment": "الإقرار و التعهد",
+        "acknowledgment": "الإقرار والتعهد",
         "objection": "الاعتراض على القرار",
-        "acknowledgment_text": "أقر وأتعهد بعلمي بالمخالفة و العقوبة، وأتعهد بعدم تكرارها.",
+        "acknowledgment_text": "أقر وأتعهد بعلمي بالمخالفة والعقوبة، وأتعهد بعدم تكرارها.",
         "save":"حفظ"
     },
     "docs_confirm": {
