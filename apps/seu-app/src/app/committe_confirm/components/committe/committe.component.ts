@@ -19,6 +19,7 @@ export class CommitteComponent implements OnInit, OnDestroy{
   date;
   save_button = false;
   submitted = false;
+  std_id;
   constructor(
     public committeService: CommitteService,
     public userService: UserService,
@@ -29,6 +30,7 @@ export class CommitteComponent implements OnInit, OnDestroy{
     private fb: FormBuilder
   ) {
     this.date = new Date();
+    this.std_id = this.userService.userData.id;
   }
 
   ngOnInit() {
@@ -47,6 +49,23 @@ export class CommitteComponent implements OnInit, OnDestroy{
 
   acknowledgmentChange(e){
     this.save_button = e.target.checked;
+  }
+
+  click(){
+    let data = {
+      'ID'                : this.userService.userData.id,
+    };
+    this.committeService.post('committe_confirm/secure_file' , data).subscribe(
+    (response: any) => {
+      if(response){
+        if(response.data){
+          window.location.href = "https://seuapps.seu.edu.sa/newservices/api/rest/committe.php?file=" + this.std_id + ".pdf";
+        }
+      }
+    },
+    error => {
+      return false;
+    });
   }
 
   save(){
