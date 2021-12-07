@@ -20,7 +20,10 @@
         "system": "النظام",
         "description":"الوصف",
         "attachments": "المرفقات",
-        "note": "ملاحظة"
+        "note": "ملاحظة",
+        "instruction_pdf_file": "ملف توضيحي للخدمة",
+        "instruction_vedio_file": "فيديو توضيحي للخدمة",
+        "instruction_": "الدليل الارشادي"
     },
     "reg_assistant": {
         "title": "مساعد التسجيل",

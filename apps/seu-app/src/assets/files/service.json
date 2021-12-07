@@ -310,5 +310,11 @@
             "pdf": "m200.pdf",
             "vedio": ""
         }
+    },
+    "/academic-assistant/committe": {
+        "ar": {
+            "pdf": "committe_guide.pdf",
+            "vedio": ""
+        }
     }
 }
