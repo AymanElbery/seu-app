@@ -19,7 +19,6 @@ export class ExamTimelineComponent implements OnInit {
     private toastr: AppToasterService,
     private acadmicProc: ExamExcuseService
   ) { 
-    console.log(this.userService.userData['class_level']);
     if(this.userService.userData['class_level'] == 'PY' || this.userService.userData['class_level'] == 'PL'){
       this.image = "assets/images/exam_py.png";
     }else{
