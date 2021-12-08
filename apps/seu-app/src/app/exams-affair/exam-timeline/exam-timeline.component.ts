@@ -12,6 +12,7 @@ import { UserService } from '../../account/services/user.service';
 })
 export class ExamTimelineComponent implements OnInit {
   image;
+  isLoading = false;
   constructor(
     private userService: UserService, 
     public dialog: MatDialog, 
