@@ -92,7 +92,7 @@ const routes: Routes = [
       {
         path: 'exams',
         loadChildren: './exams-affair/exams-affair.module#ExamsAffairModule',
-        canActivate: [UGGuard]
+        canActivate: [UGGuard, GRGuard]
       },
       {
         path: 'exams-diplome',

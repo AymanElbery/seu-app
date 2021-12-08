@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule } from 'ngx-toastr';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
+import {ExamTimelineComponent} from './exam-timeline/exam-timeline.component';
 
 @NgModule({
   declarations: [ExamsScheduleComponent,
@@ -26,8 +27,8 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
       ExamsResultObjectionComponent,
       ExamsAttendAppComponent,
       ExamExcuseComponent,
-      AddExamExcuseComponent
-      
+      AddExamExcuseComponent,
+      ExamTimelineComponent
 
     ],
     entryComponents: [AddExamExcuseComponent],

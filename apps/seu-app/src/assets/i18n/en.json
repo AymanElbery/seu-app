@@ -165,6 +165,7 @@
         "graduateprofile": " Graduate Profile",
         "affairs": "Academic affairs ",
         "status": "Academic status ",
+        "timeline": "Final exams",
         "certificate": "Certificate ID ",
         "record": "Academic record ",
         "graduationstatment": "Graduate statement ",
@@ -539,6 +540,8 @@
         "exam": {
             "execreq": " upload exam execuses",
             "sch": " exam schedule",
+            "timeline": "Final exams",
+            "timeline_desc": "Final exams for the first semester of the academic year 1443",
             "exec": "  upload exam execuses requests   ",
             "choosecourse": "choose course   ",
             "coursename": "course name  ",

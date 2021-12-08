@@ -1,0 +1,8 @@
+<div class="main-content">
+  <service-header [title]="'services.exam.timeline' |translate" [desc]="'services.exam.timeline_desc' |translate">
+  </service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div class="widget" *ngIf="!isLoading">
+    <img style="width: 100%;" [src]="image" alt="">
+  </div>
+</div>
