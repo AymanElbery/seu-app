@@ -32,14 +32,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12" *ngIf="crn_check">
-                        <div class="state">
-                            <h6>{{"general.crn"|translate}} <span class="reqstart">*</span></h6>
-                            <ng-select [items]="crns" bindLabel="text" bindValue="value" formControlName="crn">
-                            </ng-select>
-                        </div>
-                        <control-validations-errors [control]="form.controls.crn"></control-validations-errors>
-                    </div>
                     <div class="col-md-12" *ngIf="course_check">
                         <div class="state">
                             <h6>{{"general.course"|translate}} <span class="reqstart">*</span></h6>
@@ -47,6 +39,22 @@
                             </ng-select>
                         </div>
                         <control-validations-errors [control]="form.controls.course"></control-validations-errors>
+                    </div>
+                    <div class="col-md-6" *ngIf="course_a_check">
+                        <div class="state">
+                            <h6>{{"general.course_a"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="course_a">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.course_a"></control-validations-errors>
+                    </div>
+                    <div class="col-md-6" *ngIf="course_b_check">
+                        <div class="state">
+                            <h6>{{"general.course_b"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="course_b">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.course_b"></control-validations-errors>
                     </div>
                     <div class="col-md-12">
                         <div class="state">

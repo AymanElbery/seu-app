@@ -17,9 +17,9 @@ export class RegistrationAssistantFormComponent implements OnInit {
     submitted = false;
     categories = [];
     courses = [];
-    crns = [];
     course_check = false;
-    crn_check = false;
+    course_a_check = false;
+    course_b_check = false;
     items = [];
     suggest = false;
     constructor(
@@ -48,9 +48,6 @@ export class RegistrationAssistantFormComponent implements OnInit {
         this.service.courses_list().subscribe(list => {
             this.courses = list;
         });
-        this.service.crns_list().subscribe(list => {
-            this.crns = list;
-        });
         this.form.controls['category'].valueChanges.subscribe(() => {
             this.form.controls['item'].setValue("");
             if (this.form.controls['category'].value) {
@@ -70,13 +67,20 @@ export class RegistrationAssistantFormComponent implements OnInit {
                 });
 
                 let extra = this.service.extra_fields(item)[0];
-                this.crn_check = extra.crn;
-                this.course_check = extra.course;
-                if(this.crn_check){
-                    this.form.addControl('crn', new FormControl('', Validators.required));
+                this.course_a_check = extra.course_a;
+                this.course_b_check = extra.course_b;
+                if(this.course_a_check && this.course_b_check){
+                    this.course_check = false;
+                    this.form.addControl('course_a', new FormControl('', Validators.required));
+                    this.form.addControl('course_b', new FormControl('', Validators.required));
                 }
-                if(this.course_check){
+                if(this.course_a_check && !this.course_b_check){
+                    this.course_check = true;
+                    this.course_a_check = false;
+                    this.course_b_check = false;
                     this.form.addControl('course', new FormControl('', Validators.required));
+                }else{
+                    this.course_check = false;
                 }
             } else {
                 this.suggest = false;

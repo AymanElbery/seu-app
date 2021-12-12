@@ -41,14 +41,6 @@ export class AcademicRequestsService extends SDService {
         });
     }
 
-    crns() {
-        return this._lookups['courses'].map(rec => {
-            let item = {};
-            item['text'] = rec['CRN'];
-            item['value'] = rec['CRN'];
-            return item;
-        });
-    }
     items(category) {
         return this._lookups['items'].filter(item => {
             return item['CATEGORY'] == category;
@@ -88,17 +80,6 @@ export class AcademicRequestsService extends SDService {
                 return this.courses();
             }));
     }
-
-    crns_list() {
-        if (this._lookups) {
-            return of(this.crns());
-        }
-        return this._lookups_observ.pipe(
-            map(() => {
-                return this.crns();
-            }));
-    }
-
     items_list(coll_code) {
         if (this._lookups) {
             return of(this.items(coll_code));
@@ -122,8 +103,8 @@ export class AcademicRequestsService extends SDService {
             return item['ITEM'] == _code;
         }).map(rec => {
             return {
-                'course' : rec['COURSE'] == 0 ? false : rec['COURSE'],
-                'crn' : rec['CRN'] == 0 ? false : rec['CRN'],
+                'course_a' : rec['COURSE_A'] == 0 ? false : rec['COURSE_A'],
+                'course_b' : rec['COURSE_B'] == 0 ? false : rec['COURSE_B'],
             };
         });
     }
