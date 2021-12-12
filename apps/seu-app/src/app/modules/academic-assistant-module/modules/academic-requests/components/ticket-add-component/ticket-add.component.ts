@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { AcademicRequestsService } from '../../services/academic-requests.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,30 +15,47 @@ export class RegistrationAssistantFormComponent implements OnInit {
     isLoading = false;
     form: FormGroup;
     submitted = false;
-    subcategories = [];
+    categories = [];
+    courses = [];
+    crns = [];
+    course_check = false;
+    crn_check = false;
     items = [];
-    desc = false;
-    constructor(@Inject(MAT_DIALOG_DATA) public data, private fb: FormBuilder,
-        public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, private translate: TranslateService,
-        private toastr: AppToasterService, private service: AcademicRequestsService) { }
+    suggest = false;
+    constructor(
+        @Inject(MAT_DIALOG_DATA) public data, 
+        private fb: FormBuilder,
+        public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, 
+        private translate: TranslateService,
+        private toastr: AppToasterService, 
+        private service: AcademicRequestsService
+    ) {
+
+    }
 
     ngOnInit() {
         this.form = this.fb.group({
-            subcategory: ['', [Validators.required]],
+            category: ['', [Validators.required]],
             item: ['', [Validators.required]],
             subject: ['', [Validators.required]],
             description: ['', [Validators.required]],
             file: ['']
         });
         this.service.loadlookups();
-        this.service.subcategories_list().subscribe(list => {
-            this.subcategories = list;
+        this.service.categories_list().subscribe(list => {
+            this.categories = list;
         });
-        this.form.controls['subcategory'].valueChanges.subscribe(() => {
+        this.service.courses_list().subscribe(list => {
+            this.courses = list;
+        });
+        this.service.crns_list().subscribe(list => {
+            this.crns = list;
+        });
+        this.form.controls['category'].valueChanges.subscribe(() => {
             this.form.controls['item'].setValue("");
-            if (this.form.controls['subcategory'].value) {
-                let subcategory_code = this.form.controls['subcategory'].value;
-                this.service.items_list(subcategory_code).subscribe(list => {
+            if (this.form.controls['category'].value) {
+                let category = this.form.controls['category'].value;
+                this.service.items_list(category).subscribe(list => {
                     this.items = list;
                 });
             } else {
@@ -46,14 +63,23 @@ export class RegistrationAssistantFormComponent implements OnInit {
             }
         });
         this.form.controls['item'].valueChanges.subscribe(() => {
-            this.desc = false;
             if (this.form.controls['item'].value) {
-                let item_code = this.form.controls['item'].value;
-                this.service.desc_list(item_code).subscribe(desc => {
-                    this.desc = desc;
+                let item = this.form.controls['item'].value;
+                this.service.suggest_list(item).subscribe(suggest => {
+                    this.suggest = suggest[0];
                 });
+
+                let extra = this.service.extra_fields(item)[0];
+                this.crn_check = extra.crn;
+                this.course_check = extra.course;
+                if(this.crn_check){
+                    this.form.addControl('crn', new FormControl('', Validators.required));
+                }
+                if(this.course_check){
+                    this.form.addControl('course', new FormControl('', Validators.required));
+                }
             } else {
-                this.desc = false;
+                this.suggest = false;
             }
         });
     }

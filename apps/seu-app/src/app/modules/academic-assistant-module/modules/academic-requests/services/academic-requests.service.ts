@@ -24,51 +24,78 @@ export class AcademicRequestsService extends SDService {
         this._controller = 'academic_requests';
     }
 
-    subcategories() {
-        return this._lookups['subcategories'].map(rec => {
+    categories() {
+        return this._lookups['categories'].map(rec => {
             let item = {};
-            item['text'] = rec['NAME'];
-            item['value'] = rec['SUBCATEGORYID'];
+            item['text'] = rec;
+            item['value'] = rec;
             return item;
         });
     }
-    items(code) {
+    courses() {
+        return this._lookups['courses'].map(rec => {
+            let item = {};
+            item['text'] = rec['SUBJ_CODE'] + rec['CRSE_NUMB'] + ' | ' + rec['CRSE_TITLE'];
+            item['value'] = rec['SUBJ_CODE'] + rec['CRSE_NUMB'] + ' | ' + rec['CRSE_TITLE'];
+            return item;
+        });
+    }
+
+    crns() {
+        return this._lookups['courses'].map(rec => {
+            let item = {};
+            item['text'] = rec['CRN'];
+            item['value'] = rec['CRN'];
+            return item;
+        });
+    }
+    items(category) {
         return this._lookups['items'].filter(item => {
-            return item['SUBCATEGORYID'] == code;
+            return item['CATEGORY'] == category;
         }).map(rec => {
             let item = {};
-            item['text'] = rec['NAME'];
-            item['value'] = rec['ITEMID'];
+            item['text'] = rec['ITEM'];
+            item['value'] = rec['ITEM'];
             return item;
         });
     }
     description(_code) {
         if (this._lookups) {
-            return of(this.getDesc(_code));
+            return of(this.get_suggest(_code));
         }
         return this._lookups_observ.pipe(
             map(() => {
-                return this.getDesc(_code);
+                return this.get_suggest(_code);
             }));
     }
 
-    getDesc(_code){
-        return this._lookups['descs'].filter(description => {
-            return description['ITEM'] == _code;
-        }).map(rec => {
-            let desc = "";
-            desc = rec['DESC'];
-            return desc;
-        });
-    }
-
-    subcategories_list() {
+    categories_list() {
         if (this._lookups) {
-            return of(this.subcategories());
+            return of(this.categories());
         }
         return this._lookups_observ.pipe(
             map(() => {
-                return this.subcategories();
+                return this.categories();
+            }));
+    }
+
+    courses_list() {
+        if (this._lookups) {
+            return of(this.courses());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.courses();
+            }));
+    }
+
+    crns_list() {
+        if (this._lookups) {
+            return of(this.crns());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.crns();
             }));
     }
 
@@ -82,13 +109,32 @@ export class AcademicRequestsService extends SDService {
             }));
     }
 
-    desc_list(coll_code) {
+    get_suggest(_code){
+        return this._lookups['items'].filter(item => {
+            return item['ITEM'] == _code;
+        }).map(rec => {
+            return rec['SUGGEST'] == '0' ? false : rec['SUGGEST'];
+        });
+    }
+
+    extra_fields(_code){
+        return this._lookups['items'].filter(item => {
+            return item['ITEM'] == _code;
+        }).map(rec => {
+            return {
+                'course' : rec['COURSE'] == 0 ? false : rec['COURSE'],
+                'crn' : rec['CRN'] == 0 ? false : rec['CRN'],
+            };
+        });
+    }
+
+    suggest_list(item) {
         if (this._lookups) {
-            return of(this.getDesc(coll_code));
+            return of(this.get_suggest(item));
         }
         return this._lookups_observ.pipe(
             map(() => {
-                return this.getDesc(coll_code);
+                return this.get_suggest(item);
             }));
     }
 

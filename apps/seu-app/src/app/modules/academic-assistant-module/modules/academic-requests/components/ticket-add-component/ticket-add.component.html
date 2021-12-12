@@ -10,11 +10,11 @@
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"general.category"|translate}} <span class="reqstart">*</span></h6>
-                            <ng-select style="direction: rtl;" [items]="subcategories" bindLabel="text" bindValue="value"
-                                formControlName="subcategory">
+                            <ng-select style="direction: rtl;" [items]="categories" bindLabel="text" bindValue="value"
+                                formControlName="category">
                             </ng-select>
                         </div>
-                        <control-validations-errors [control]="form.controls.subcategory"></control-validations-errors>
+                        <control-validations-errors [control]="form.controls.category"></control-validations-errors>
                     </div>
 
                     <div class="col-md-12">
@@ -25,12 +25,28 @@
                         </div>
                         <control-validations-errors [control]="form.controls.item"></control-validations-errors>
                     </div>
-                    <div class="col-md-12" *ngIf="desc">
+                    <div class="col-md-12" *ngIf="suggest">
                         <div class="state">
                             <div class="alert alert-info">
-                                <strong>{{ desc }}</strong>
+                                <strong>{{ suggest }}</strong>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="crn_check">
+                        <div class="state">
+                            <h6>{{"general.crn"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="crns" bindLabel="text" bindValue="value" formControlName="crn">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.crn"></control-validations-errors>
+                    </div>
+                    <div class="col-md-12" *ngIf="course_check">
+                        <div class="state">
+                            <h6>{{"general.course"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="course">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.course"></control-validations-errors>
                     </div>
                     <div class="col-md-12">
                         <div class="state">
