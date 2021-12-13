@@ -47,7 +47,7 @@ export class AcademicRequestsService extends SDService {
         }).map(rec => {
             let item = {};
             item['text'] = rec['ITEM'];
-            item['value'] = rec['ITEM'];
+            item['value'] = rec['ID'];
             return item;
         });
     }
@@ -92,7 +92,7 @@ export class AcademicRequestsService extends SDService {
 
     get_suggest(_code){
         return this._lookups['items'].filter(item => {
-            return item['ITEM'] == _code;
+            return item['ID'] == _code;
         }).map(rec => {
             return rec['SUGGEST'] == '0' ? false : rec['SUGGEST'];
         });
@@ -100,7 +100,7 @@ export class AcademicRequestsService extends SDService {
 
     extra_fields(_code){
         return this._lookups['items'].filter(item => {
-            return item['ITEM'] == _code;
+            return item['ID'] == _code;
         }).map(rec => {
             return {
                 'course_a' : rec['COURSE_A'] == 0 ? false : rec['COURSE_A'],
