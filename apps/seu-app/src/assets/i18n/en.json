@@ -140,6 +140,7 @@
         "userData": "Student data",
         "academic_status": "Academic status",
         "infoupdate": "Info Update",
+        "dms": "Management System",
         "termexecuse": "Semester postponement (exception)",
         "termexecuse_corona": "Term Excuse",
         "postpone": "Term Postpone",

@@ -401,12 +401,6 @@
                                             </a>
                                         </p>
                                     </div>
-                                    <!-- <div class="col-md-6 new-ser">
-                    <p><a [routerLink]="['/apps/skills/user']">
-                      <img src="assets/images/skills.png">
-                        {{"menu.skills" | translate}}
-                      </a></p>
-                  </div> -->
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a [routerLink]="['/apps/translation/user']">
@@ -454,6 +448,13 @@
                                             </a>
                                         </p>
                                     </div>
+                                    <div class="col-md-4 new-ser">
+                                        <p>
+                                            <a target="_blank" href="https://dms.seu.edu.sa/dms/">
+                                                <img src="assets/images/black.png"> {{"menu.dms" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
                                     <div class="col-md-4 new-ser" *ngIf="userService.userData['guest']">
                                         <p>
                                             <a href="https://guest.seu.edu.sa/sso_auth" target="_blank">
@@ -471,7 +472,6 @@
                                             </a>
                                         </p>
                                     </div>
-
                                 </div>
                             </div>
 
