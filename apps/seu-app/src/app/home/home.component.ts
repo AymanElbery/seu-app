@@ -71,9 +71,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   sysNotes;
   subscriptions;
   ngOnInit() {
-    // console.log('home');
-    // console.log(this.userService.userData);
-    // console.log('intial');
+    console.log(this.userService.userData);
     this.userService.userDataSubject.subscribe(res => {
       if (res) {
         //console.log("user change load Data");

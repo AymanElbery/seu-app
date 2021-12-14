@@ -24,22 +24,43 @@ export class IssuesService extends SDService {
         this._controller = 'issues';
     }
 
-    items() {
-        return this._lookups['items'].map(rec => {
+    categories_list() {
+        if (this._lookups) {
+            return of(this.categories());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.categories();
+            }));
+    }
+
+    categories() {
+        return this._lookups['categories'].map(rec => {
             let item = {};
-            item['text'] = rec['NAME'];
-            item['value'] = rec['ITEMID'];
+            item['text'] = rec;
+            item['value'] = rec;
             return item;
         });
     }
 
-    items_list() {
+    items(category) {
+        return this._lookups['items'].filter(item => {
+            return item['CATEGORY'] == category;
+        }).map(rec => {
+            let item = {};
+            item['text'] = rec['ITEM'];
+            item['value'] = rec['ID'];
+            return item;
+        });
+    }
+
+    items_list(coll_code) {
         if (this._lookups) {
-            return of(this.items());
+            return of(this.items(coll_code));
         }
         return this._lookups_observ.pipe(
             map(() => {
-                return this.items();
+                return this.items(coll_code);
             }));
     }
 
