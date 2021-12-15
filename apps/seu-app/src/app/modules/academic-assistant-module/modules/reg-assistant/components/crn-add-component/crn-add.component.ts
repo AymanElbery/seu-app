@@ -40,16 +40,16 @@ export class RegistrationAssistantFormCrnComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.service.loadlookups();
-        this.service.courses_list().subscribe(list => {
-            this.courses = list;
-        });
-        this.service.days_list().subscribe(list => {
-            this.days = list;
-        });
-        this.service.times_list().subscribe(list => {
-            this.times = list;
-        });
+        // this.service.loadlookups();
+        // this.service.courses_list().subscribe(list => {
+        //     this.courses = list;
+        // });
+        // this.service.days_list().subscribe(list => {
+        //     this.days = list;
+        // });
+        // this.service.times_list().subscribe(list => {
+        //     this.times = list;
+        // });
     }
 
     crseCange(e){
