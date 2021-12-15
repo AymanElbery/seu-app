@@ -25,7 +25,13 @@
                         </div>
                         <control-validations-errors [control]="form.controls.item"></control-validations-errors>
                     </div>
-
+                    <div class="col-md-12" *ngIf="exam_guide">
+                        <div class="state">
+                            <div class="alert alert-info text-center">
+                                <strong>{{"issues.exam_guide"|translate}} <a target="_blank" href="https://eservice.seu.edu.sa/instructions/exams">{{"issues.click_here"|translate}}</a></strong>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"general.subject"|translate}} <span class="reqstart">*</span></h6>

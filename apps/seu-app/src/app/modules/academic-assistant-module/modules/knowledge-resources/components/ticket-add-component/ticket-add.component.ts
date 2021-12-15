@@ -15,6 +15,7 @@ export class RegistrationAssistantFormComponent implements OnInit {
     isLoading = false;
     form: FormGroup;
     submitted = false;
+    guide = false;
     
     categories = [];
     items = [];
@@ -43,6 +44,14 @@ export class RegistrationAssistantFormComponent implements OnInit {
                 });
             } else {
                 this.items = [];
+            }
+        });
+        this.form.controls['item'].valueChanges.subscribe(() => {
+            if (this.form.controls['item'].value) {
+                let itemId = this.form.controls['item'].value;
+                if(itemId == 1){
+                    this.guide = true;
+                }
             }
         });
     }
