@@ -7,7 +7,7 @@
         <div class="modal-body">
             <form role="form" [formGroup]="form">
                 <div class="row">
-                    <!-- <div class="col-md-12">
+                    <div class="col-md-12">
                         <div class="state">
                             <h6>{{"general.category"|translate}} <span class="reqstart">*</span></h6>
                             <ng-select [items]="categories" bindLabel="text" bindValue="value"
@@ -15,7 +15,7 @@
                             </ng-select>
                         </div>
                         <control-validations-errors [control]="form.controls.category"></control-validations-errors>
-                    </div> -->
+                    </div>
 
                     <div class="col-md-12">
                         <div class="state">
@@ -24,6 +24,28 @@
                             </ng-select>
                         </div>
                         <control-validations-errors [control]="form.controls.item"></control-validations-errors>
+                    </div>
+
+                    <div class="col-md-12" *ngIf="item_1">
+                        <div class="state">
+                            <div class="alert alert-info text-center">
+                                <strong>{{"sadad.item_1"|translate}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="item_2">
+                        <div class="state">
+                            <div class="alert alert-info text-center">
+                                <strong>{{"sadad.item_2"|translate}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="item_5">
+                        <div class="state">
+                            <div class="alert alert-info text-center">
+                                <strong>{{"sadad.item_5"|translate}}</strong>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-md-12">
