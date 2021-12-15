@@ -16,67 +16,67 @@ export class RegistrationAssistantFormComponent implements OnInit {
     isLoading = false;
     form: FormGroup;
     submitted = false;
-
-    courses = [];
-    messages = [];
-    crns = [];
-    lectures = [];
-    tickets;
-    can_add_new = true;
-    
-
+    item_1 = false;
+    item_5 = false;
+    item_7 = false;
+    item_16 = false;
+    categories = [];
+    items = [];
     constructor(
     @Inject(MAT_DIALOG_DATA) public data, 
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, 
     private translate: TranslateService,
     private toastr: AppToasterService, 
-    private service: ReqAssistantService) {
-        this.tickets = data;
-        this.form = this.fb.group({
-            crse: ['', [Validators.required]],
-            message: ['', [Validators.required]],
-            comments: ['', [Validators.required]]
-        });
-    }
+    private service: ReqAssistantService) {}
 
     ngOnInit() {
-        
-        this.service.loadlookups();
-        this.service.courses_list().subscribe(list => {
-            this.courses = list;
+        this.form = this.fb.group({
+            category: ['', [Validators.required]],
+            item: ['', [Validators.required]],
+            subject: ['', [Validators.required]],
+            description: ['', [Validators.required]],
+            file: ['']
         });
-        
-        this.form.controls['crse'].valueChanges.subscribe(() => {
-            this.form.controls['crn'].setValue("");
-            if (this.form.controls['crse'].value) {
-                let crsecode = this.form.controls['crse'].value.split(" ");
-                this.service.crns_list(crsecode[0] + crsecode[1]).subscribe(list => {
-                    this.crns = list;
+        this.service.loadlookups();
+        this.service.categories_list().subscribe(list => {
+            this.categories = list;
+        });
+        this.form.controls['category'].valueChanges.subscribe(() => {
+            this.form.controls['item'].setValue("");
+            if (this.form.controls['category'].value) {
+                let category = this.form.controls['category'].value;
+                this.service.items_list(category).subscribe(list => {
+                    this.items = list;
                 });
             } else {
-                this.crns = [];
+                this.items = [];
             }
-
         });
-
-        this.service.messages_list().subscribe(list => {
-            this.messages = list;
-        });
-       
-        this.service.lectures_list().subscribe(list => {
-            this.lectures = list;
+        this.form.controls['item'].valueChanges.subscribe(() => {
+            if (this.form.controls['item'].value) {
+                let itemId = this.form.controls['item'].value;
+                if(itemId == 1){
+                    this.item_1 = true;
+                    this.item_5 = this.item_7 = this.item_16 = false;
+                } else if(itemId == 5){
+                    this.item_5 = true;
+                    this.item_1 = this.item_7 = this.item_16 = false;
+                } else if(itemId == 7){
+                    this.item_7 = true;
+                    this.item_1 = this.item_5 = this.item_16 = false;
+                } else if(itemId == 16){
+                    this.item_16 = true;
+                    this.item_1 = this.item_5 = this.item_7 = false;
+                } else{
+                    this.item_1 = this.item_5 = this.item_7 = this.item_16 = false;
+                }
+            }
         });
     }
 
-    crseCange(e){
-        this.can_add_new = true;
-        let course_code = e.value.split("|")[0].trim();
-        this.tickets.forEach(ticket => {
-            if(course_code.trim() == ticket.subject.split("|")[1].trim()){
-                this.can_add_new = false;
-            }
-        });
+    handleFileInput(files: FileList) {
+        this.form.controls['file'].setValue(files.item(0));
     }
 
     onSubmit() {
@@ -113,3 +113,5 @@ export class RegistrationAssistantFormComponent implements OnInit {
     }
 
 }
+
+

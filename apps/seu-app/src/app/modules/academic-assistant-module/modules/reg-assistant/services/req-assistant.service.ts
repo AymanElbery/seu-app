@@ -13,24 +13,7 @@ import { SDService } from "../../../sd.service";
     providedIn: "root"
 })
 export class ReqAssistantService extends SDService {
-
-    _usedCourses = [];
-    _lookups: any;
-    _lookups_observ = new Subject<any>();
-
-
-    _settings;
-    currentApp;
-    currentAddApps;
-    currentAdd;
-    instructor;
-    URL = environment.baselink + environment.servicesprefix + environment.common + "/sd/std/";
-    auth = `Basic ${window.btoa('emp:Emp@201620')}`;
-    headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': this.auth
-    });
-
+    
     constructor(
         http: HttpClient,
         router: Router,
@@ -42,157 +25,43 @@ export class ReqAssistantService extends SDService {
         this._controller = 'registration_assistant';
     }
 
-    loadlookups() {
+    categories_list() {
         if (this._lookups) {
-            return;
+            return of(this.categories());
         }
-        this.getLockups().subscribe(response => {
-            this._lookups = response['data'];
-            this._lookups_observ.next();
-
-        });
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.categories();
+            }));
     }
 
-
-    colleges() {
-        return this._lookups['colleges'].map(rec => {
+    categories() {
+        return this._lookups['categories'].map(rec => {
             let item = {};
-            item['text'] = rec['COLL_NAME'];
-            item['value'] = rec['COLL_PK'] + ' - ' + rec['COLL_NAME'];
+            item['text'] = rec;
+            item['value'] = rec;
             return item;
         });
     }
-    // courses(coll_code) {
-    //     return this._lookups['courses'][coll_code].filter(item => {
-    //         return !this._usedCourses.includes(item['SUBJ_CODE'] + item['CRSE_NUMB']);
-    //     }).map(rec => {
-    //         let item = {};
-    //         item['text'] = rec['CRSE_CODE'] + ' | ' + rec['CRSE_TITLE'];
-    //         item['value'] = rec['CRSE_CODE'] + ' | ' + rec['CRSE_TITLE'];
-    //         return item;
-    //     });
-    // }
-    courses() {
-        return this._lookups['courses'].map(rec => {
+
+    items(category) {
+        return this._lookups['items'].filter(item => {
+            return item['CATEGORY'] == category;
+        }).map(rec => {
             let item = {};
-            item['text'] = rec['COURSE_CODE'] + ' | ' + rec['COURSE_TITLE'];
-            item['value'] = rec['COURSE_CODE']  + ' | ' + rec['COURSE_TITLE'];
-            return item;
-        });
-    }
-    messages() {
-        return this._lookups['messages'].map(rec => {
-            let item = {};
-            item['text'] = rec['MESSAGE'];
-            item['value'] = rec['MESSAGE'];
-            return item;
-        });
-    }
-    days() {
-        return this._lookups['days'].map(rec => {
-            let item = {};
-            item['text'] = rec['NAME_AR'];
+            item['text'] = rec['ITEM'];
             item['value'] = rec['ID'];
             return item;
         });
     }
-    times() {
-        return this._lookups['times'].map(rec => {
-            let item = {};
-            item['text'] = rec['NAME_AR'];
-            item['value'] = rec['CODE'];
-            return item;
-        });
-    }
-    lectures() {
-        return this._lookups['lectures'];
-    }
 
-    colleges_list() {
+    items_list(coll_code) {
         if (this._lookups) {
-            return of(this.colleges());
+            return of(this.items(coll_code));
         }
         return this._lookups_observ.pipe(
             map(() => {
-                return this.colleges();
+                return this.items(coll_code);
             }));
-    }
-
-    // courses_list(coll_code) {
-    //     if (this._lookups) {
-    //         return of(this.courses(coll_code));
-    //     }
-    //     return this._lookups_observ.pipe(
-    //         map(() => {
-    //             return this.courses(coll_code);
-    //         }));
-    // }
-    courses_list() {
-        if (this._lookups) {
-            return of(this.courses());
-        }
-        return this._lookups_observ.pipe(
-            map(() => {
-            return this.courses();
-        }));
-    }
-    lectures_list() {
-        if (this._lookups) {
-            return of(this.lectures());
-        }
-        return this._lookups_observ.pipe(
-            map(() => {
-                return this.lectures();
-            }));
-    }
-    messages_list() {
-        if (this._lookups) {
-            return of(this.messages());
-        }
-        return this._lookups_observ.pipe(
-            map(() => {
-                return this.messages();
-            }));
-    }
-    days_list() {
-        if (this._lookups) {
-            return of(this.days());
-        }
-        return this._lookups_observ.pipe(
-            map(() => {
-                return this.days();
-            }));
-    }
-    times_list() {
-        if (this._lookups) {
-            return of(this.times());
-        }
-        return this._lookups_observ.pipe(
-            map(() => {
-                return this.times();
-            }));
-    }
-    crns_list(crse) {
-        return this.post("registration_assistant/crns", { 'crse': crse }).pipe(
-            map((response) => {
-                return response['data']['crns'].map(rec => {
-                    let item = {};
-                    item['text'] = rec['CRN'] + ' ' + rec['BLDG_DESC'];
-                    item['value'] = rec['CRN'] + ' ' + rec['BLDG_DESC'];
-                    return item;
-                });
-            })
-        );
-    }
-
-    checkCourses(tickets) {
-        let usedCourses = [];
-        tickets.forEach(element => {
-            if (element['status'] == 'Open') {
-                let crsecode = element['crse'].split(" ");
-                usedCourses.push(crsecode[0] + crsecode[1]);
-            }
-        });
-        this._usedCourses = usedCourses;
     }
 }

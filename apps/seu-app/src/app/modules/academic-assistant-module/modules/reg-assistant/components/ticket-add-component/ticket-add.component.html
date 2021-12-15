@@ -3,7 +3,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <h5 style="text-align: center" class="modal-title ">
-                {{ "reg_assistant.reg_problems" | translate}}
+                {{ "reg_assistant.title" | translate}}
             </h5>
         </div>
         <div class="modal-body">
@@ -11,40 +11,76 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="state">
-                            <h6>{{"reg_assistant.crse"|translate}} <span class="reqstart">*</span></h6>
-                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="crse" (change)="crseCange($event)">
+                            <h6>{{"general.category"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="categories" bindLabel="text" bindValue="value"
+                                formControlName="category">
                             </ng-select>
                         </div>
-                        <control-validations-errors [control]="form.controls.crse"></control-validations-errors>
+                        <control-validations-errors [control]="form.controls.category"></control-validations-errors>
                     </div>
-                </div>
-                <div class="row" *ngIf="!can_add_new">
-                    <div class="col-md-12 alert alert-danger text-center">
-                        <strong>{{"reg_assistant.can_add_new_ticket"|translate}}</strong>
-                    </div>
-                </div>
-                <div class="row" style="margin-top: 10px;">
+
                     <div class="col-md-12">
                         <div class="state">
-                            <h6>{{"reg_assistant.error_message"|translate}} <span class="reqstart">*</span></h6>
-                            <ng-select [items]="messages" bindLabel="text" bindValue="value" formControlName="message">
+                            <h6>{{"general.item"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="items" bindLabel="text" bindValue="value" formControlName="item">
                             </ng-select>
                         </div>
-                        <control-validations-errors [control]="form.controls.message"></control-validations-errors>
+                        <control-validations-errors [control]="form.controls.item"></control-validations-errors>
                     </div>
-                </div>
-                <div class="row" style="margin-top: 10px;">
+                    
+                    <div class="col-md-12" *ngIf="item_1">
+                        <div class="state">
+                            <div class="alert alert-info text-center">
+                                <strong>{{"reg_assistant.item_1"|translate}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="item_5">
+                        <div class="state">
+                            <div class="alert alert-info text-center">
+                                <strong>{{"reg_assistant.item_5"|translate}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="item_7">
+                        <div class="state">
+                            <div class="alert alert-info text-center">
+                                <strong>{{"reg_assistant.item_7"|translate}}</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="item_16">
+                        <div class="state">
+                            <div class="alert alert-info text-center">
+                                <strong>{{"reg_assistant.item_16"|translate}}</strong>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-md-12">
                         <div class="state">
-                            <h6>{{"reg_assistant.comments"|translate}} <span class="reqstart">*</span><span style="font-weight: normal;color: red;"> ({{"reg_assistant.crsecomments"|translate}})</span></h6>
-                            <textarea maxlength="500" class="form-control" formControlName="comments"></textarea>
+                            <h6>{{"general.subject"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" class="form-control" formControlName="subject" />
                         </div>
-                        <control-validations-errors [control]="form.controls.comments"></control-validations-errors>
+                        <control-validations-errors [control]="form.controls.subject"></control-validations-errors>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.description"|translate}} <span class="reqstart">*</span></h6>
+                            <textarea maxlength="1000" class="form-control" formControlName="description"></textarea>
+                        </div>
+                        <control-validations-errors [control]="form.controls.description"></control-validations-errors>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.attachments"|translate}} <span class="reqstart"></span></h6>
+                            <input type="file" class="form-control" (change)="handleFileInput($event.target.files)" />
+                        </div>
                     </div>
                 </div>
-                <div class="row" style="margin-top: 10px;">
+                <div class="row" style="margin-top: 20px;">
                     <div class="col-md-12" style="text-align: center;">
-                        <button style="width: 30%;" [disabled]="submitted || form.invalid || !can_add_new" (click)="onSubmit()"
+                        <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="onSubmit()"
                             type="submit" class="btn btn-primary">{{ "general.send" |
                             translate}}
                             <i class="fa fa-save"></i>

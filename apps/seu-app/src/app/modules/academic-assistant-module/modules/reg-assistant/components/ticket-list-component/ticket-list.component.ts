@@ -15,7 +15,7 @@ import { TicketDetailsComponent } from './../ticket-details-component/ticket-det
 })
 export class TicketListComponent {
 
-  can_add_new_ticket = false;
+  can_add_new = false;
   tickets;
   requests;
   isLoading = false;
@@ -69,8 +69,7 @@ export class TicketListComponent {
         this.isLoading = false;
         this.tickets = response.data.requests;
         this.requests = response.data.requestsCrn;
-        this.can_add_new_ticket = response.data.can_add_new_ticket;
-        this.reqAssistantService.checkCourses(this.tickets);
+        this.can_add_new = response.data.can_add_new;
       },
       error => {
         this.isLoading = false;

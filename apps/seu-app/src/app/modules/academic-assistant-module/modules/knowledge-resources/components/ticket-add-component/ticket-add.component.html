@@ -57,9 +57,6 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col-md-12" style="text-align: center;">
-                        <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
-                            {{"general.back"|translate}}</button>
-
                         <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="onSubmit()"
                             type="submit" class="btn btn-primary">{{ "general.send" |
                             translate}}

@@ -5,9 +5,8 @@
   <div class="widget">
     <div class="widget-header">
       <h3 class="widget-title">
-        {{ "reg_assistant.tickets_title" | translate}}
         &nbsp;
-        <button *ngIf="can_add_new_ticket" type="button" class="btn btn-primary" (click)="openDialoge()">
+        <button *ngIf="can_add_new" type="button" class="btn btn-primary" (click)="openDialoge()">
           {{"general.add" | translate}} <i class="ik ik-plus"></i>
         </button>
       </h3>
@@ -19,8 +18,8 @@
             <thead>
               <tr>
                 <th scope="col">{{ "general.ticket_id" | translate}}</th>
-                <th scope="col">{{ "reg_assistant.crse" | translate}}</th>
-                <th scope="col">{{ "reg_assistant.error_message" | translate}}</th>
+                <th scope="col">{{ "general.item" | translate}}</th>
+                <th scope="col">{{ "general.subject" | translate}}</th>
                 <th scope="col">{{ "general.created_at" | translate}}</th>
                 <th scope="col">{{ "general.ticket_status" | translate}}</th>
                 <th scope="col">{{ "general.actions" | translate}}</th>
@@ -29,17 +28,17 @@
             <tbody>
               <tr *ngFor="let ticket of tickets; let i = index">
                 <td>{{ ticket.id }}</td>
-                <td>{{ ticket.crse }}</td>
-                <td>{{ ticket.message }}</td>
+                <td>{{ ticket.item }}</td>
+                <td>{{ ticket.subject }}</td>
                 <td>{{ ticket.created_time.display_value }}</td>
                 <td>{{ ticket.status }}</td>
                 <td>
                   <button class="btn btn-primary" (click)="openDetailsDialoge(ticket.id)">{{ "general.view" |
                     translate}}</button>
                   &nbsp;
-                  <button class="btn btn-primary" *ngIf="ticket.status == 'Resolved' || ticket.status == 'Closed'" (click)="reOpen(ticket.id)">{{
+                  <!-- <button class="btn btn-primary" *ngIf="ticket.status == 'Resolved' || ticket.status == 'Closed'" (click)="reOpen(ticket.id)">{{
                     "general.reopen" | translate}}</button>
-                  &nbsp;
+                  &nbsp; -->
                   <button class="btn btn-primary" *ngIf="ticket.status == 'Open'" (click)="delete(ticket.id)">{{
                     "general.delete" | translate}}</button>
                 </td>
@@ -50,7 +49,7 @@
       </div>
     </div>
   </div>
-
+<!-- 
   <div class="widget">
     <div class="widget-header">
       <h3 class="widget-title">
@@ -102,5 +101,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
