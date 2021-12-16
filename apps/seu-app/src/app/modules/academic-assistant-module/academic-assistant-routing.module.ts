@@ -28,6 +28,10 @@ const routes: Routes = [
     loadChildren: './modules/issues/sd-issues.module#SDIssuesModule',
   },
   {
+    path: 'inquiries',
+    loadChildren: './modules/inquiries/sd-inquiries.module#SDInquiriesModule',
+  },
+  {
     path: 'login',
     loadChildren: './modules/login/sd-login.module#SDLoginModule',
   },

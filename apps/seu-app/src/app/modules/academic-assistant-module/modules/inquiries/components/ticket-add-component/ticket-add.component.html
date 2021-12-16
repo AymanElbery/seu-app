@@ -1,0 +1,83 @@
+<mat-dialog-content dir="rtl" style="height: 500px !important">
+    <div class="modal-content" style="border: none !important;">
+        <div class="modal-header">
+            <h5 style="text-align: center" class="modal-title ">
+                {{"inquiries.title"|translate}}</h5>
+        </div>
+        <div class="modal-body">
+            <form role="form" [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.category"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="categories" bindLabel="text" bindValue="value"
+                                formControlName="category">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.category"></control-validations-errors>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.item"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="items" bindLabel="text" bindValue="value" formControlName="item">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.item"></control-validations-errors>
+                    </div>
+                    <div class="col-md-12" *ngIf="suggest">
+                        <div class="state">
+                            <div class="alert alert-info text-center">
+                                <h5>{{"inquiries.suggest"|translate}}</h5>
+                                <hr>
+                                <strong [innerHTML]="suggest"></strong>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-md-12" *ngIf="suggest">
+                        <div class="state">
+                            <div>
+                                <h6 style="display: inline-block; margin-left: 10%;">{{"inquiries.quest"|translate}}</h6>
+                                <input #yes_check style="width: 20px; display: inline-block; cursor: pointer; position: relative; top: 15px; right: 5px;" type="checkbox" class="form-control" (click)="yes(yes_check.checked)" />
+                                <span style="font-size: 1.3em; position: relative; right: 10px;">{{"inquiries.yes"|translate}}</span>
+                                <span style="margin-right: 5%"></span>
+                                <input #no_check style="width: 20px; display: inline-block; cursor: pointer; position: relative; top: 15px; right: 5px;" type="checkbox" class="form-control" (click)="no(no_check.checked)" />
+                                <span style="font-size: 1.3em; position: relative; right: 10px;">{{"inquiries.no"|translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" *ngIf="ticket">
+                        <div class="state">
+                            <h6>{{"general.subject"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" class="form-control" formControlName="subject" />
+                        </div>
+                        <control-validations-errors [control]="form.controls.subject"></control-validations-errors>
+                    </div>
+                    <div class="col-md-12" *ngIf="ticket">
+                        <div class="state">
+                            <h6>{{"general.description"|translate}} <span class="reqstart">*</span></h6>
+                            <textarea maxlength="1000" class="form-control" formControlName="description"></textarea>
+                        </div>
+                        <control-validations-errors [control]="form.controls.description"></control-validations-errors>
+                    </div>
+                    <div class="col-md-12" *ngIf="ticket">
+                        <div class="state">
+                            <h6>{{"general.attachments"|translate}} <span class="reqstart"></span></h6>
+                            <input type="file" class="form-control" (change)="handleFileInput($event.target.files)" />
+                        </div>
+                    </div> 
+                </div>
+                <div class="row" style="margin-top: 20px;" *ngIf="ticket">
+                    <div class="col-md-12" style="text-align: center;">
+                        <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="onSubmit()"
+                            type="submit" class="btn btn-primary">{{ "general.send" |
+                            translate}}
+                            <i class="fa fa-save"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-dialog-content>
