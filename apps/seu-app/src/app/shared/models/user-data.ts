@@ -23,4 +23,5 @@ export interface UserData {
     STD_RIGHTS: number;
     DATA_CLEANED: number;
     COMMITTE_CONFIRM: number;
+    COMMITTE_CONFIRM_DATA: any;
 }

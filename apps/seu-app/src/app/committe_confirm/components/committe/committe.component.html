@@ -16,11 +16,13 @@
                   </tr>
                   <tr>
                     <th scope="col">{{"committe.punishment" | translate}}</th>
-                    <td>الإنذار مع تعهد خطي من الطالب المخالف</td>
+                    <td>{{ data[0].DECESION }}</td>
                   </tr>
                   <tr>
                     <th scope="col">{{"committe.violation" | translate}}</th>
-                    <td><button (click)="click()"  class="btn btn-primary">للإطلاع من هنا</button></td>
+                    <td>
+                      <button style="margin-right: 5px;" *ngFor="let violation of data" (click)="click(violation.PUNISHMENT_DETAILS_FILE)"  class="btn btn-primary">للإطلاع من هنا</button> 
+                    </td>
                   </tr>
                   <tr>
                     <th scope="col">{{"committe.acknowledgment" | translate}}</th>
