@@ -11,39 +11,17 @@
   </section>
   <div class="widget">
     <div class="widget-header">
-
-
-
       <h3 class="widget-title">
         {{"instructions.exams.title" | translate}}
       </h3>
       <p>
         {{"instructions.exams.desc" | translate}}
-
       </p>
     </div>
     <section class="ser-state">
       <div class="container">
         <div class="row ser-block">
-          <!-- <h6> {{"instructions.exams.downloadapps" | translate}} </h6>
-          <table class="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th>{{"instructions.exams.Device" | translate}}</th>
-                <th>{{"instructions.exams.DownloadLink" | translate}}</th>
-              </tr>
-            </thead>
-            <tr *ngFor="let app of apps;">
-              <td>{{app.title}}
-                <br />
-                <span>{{app.desc}}</span>
-              </td>
-              <td>
-                <a href="{{app.link}}" target="_blank">{{"instructions.exams.Download" | translate}}</a>
-              </td>
-            </tr>
-          </table> -->
-          <h6> {{"instructions.exams.Guidelines" | translate}} </h6>
+          <h6> {{"instructions.exams.Guidelines_online" | translate}} </h6>
           <table class="table table-striped table-bordered">
             <thead>
               <tr>
@@ -52,6 +30,7 @@
                 <th>{{"instructions.exams.actions" | translate}}</th>
               </tr>
             </thead>
+
             <tr>
               <td>1</td>
               <td>{{"instructions.exams.guide_doc" | translate}}</td>
@@ -60,7 +39,76 @@
                   target="_blank">{{"instructions.exams.Download" | translate}}</a>
               </td>
             </tr>
+
             <tr>
+              <td>2</td>
+              <td>{{"instructions.exams.guide_vedio_SwiftAssess" | translate}}</td>
+              <td>
+                <a href="javascript:;" (click)="play('vedio_SwiftAssess_new_'+_lang+'.mp4')">{{"instructions.exams.Play"
+                  |
+                  translate}}</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>{{"instructions.exams.guide_vedio_WebEx" | translate}}</td>
+              <td>
+                <a href="javascript:;" (click)="play('vedio_Webex_new_'+_lang+'.mp4')">{{"instructions.exams.Play" |
+                  translate}}</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>4</td>
+              <td>{{"instructions.exams.sd_ticketes" | translate}}</td>
+              <td>
+                <a href="javascript:;" (click)="play('vedio_sd_new_'+_lang+'.mp4')">{{"instructions.exams.Play" |
+                  translate}}</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+              <td>{{"instructions.exams.guide_faqs" | translate}}</td>
+              <td>
+                <a href="https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs_new_{{_lang}}.pdf"
+                  target="_blank">{{"instructions.exams.Download" | translate}}</a>
+              </td>
+            </tr>
+
+            <tr>
+              <td>6</td>
+              <td>{{"instructions.exams.browser" | translate}}</td>
+              <td>
+                <a href="https://app-electron-eu.sumadi.net/download/app/en/eu/global/v2"
+                  target="_blank">{{"instructions.exams.Download" | translate}}</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row ser-block">
+          <h6> {{"instructions.exams.Guidelines_attend" | translate}} </h6>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>{{"instructions.exams.Manual" | translate}}</th>
+                <th>{{"instructions.exams.actions" | translate}}</th>
+              </tr>
+            </thead>
+
+            <tr>
+              <td>1</td>
+              <td>{{"instructions.exams.guide_doc_attend" | translate}}</td>
+              <td>
+                <a href="https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/Guides_attend_{{_lang}}.pdf"
+                  target="_blank">{{"instructions.exams.Download" | translate}}</a>
+              </td>
+            </tr>
+
             <tr>
               <td>2</td>
               <td>{{"instructions.exams.guide_attend_mac" | translate}}</td>
@@ -69,6 +117,7 @@
                   target="_blank">{{"instructions.exams.Download" | translate}}</a>
               </td>
             </tr>
+
             <tr>
               <td>3</td>
               <td>{{"instructions.exams.guide_attend_windows" | translate}}</td>
@@ -77,52 +126,33 @@
                   target="_blank">{{"instructions.exams.Download" | translate}}</a>
               </td>
             </tr>
+           
             <tr>
               <td>4</td>
-              <td>{{"instructions.exams.guide_vedio_SwiftAssess" | translate}}</td>
-              <td>
-                <a href="javascript:;" (click)="play('vedio_SwiftAssess_new_'+_lang+'.mp4')">{{"instructions.exams.Play" |
-                  translate}}</a>
-              </td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>{{"instructions.exams.guide_vedio_WebEx" | translate}}</td>
-              <td>
-                <a href="javascript:;" (click)="play('vedio_Webex_new_'+_lang+'.mp4')">{{"instructions.exams.Play" |
-                  translate}}</a>
-              </td>
-            </tr>
-            <tr>
-              <td>6</td>
               <td>{{"instructions.exams.sd_ticketes" | translate}}</td>
               <td>
                 <a href="javascript:;" (click)="play('vedio_sd_new_'+_lang+'.mp4')">{{"instructions.exams.Play" |
                   translate}}</a>
               </td>
             </tr>
+
             <tr>
-              <td>7</td>
-              <td>{{"instructions.exams.guide_faqs" | translate}}</td>
+              <td>5</td>
+              <td>{{"instructions.exams.guide_faq_attend" | translate}}</td>
               <td>
-                <a href="https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs_new_{{_lang}}.pdf"
+                <a href="https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/Guides_faq_attend_{{_lang}}.pdf"
                   target="_blank">{{"instructions.exams.Download" | translate}}</a>
               </td>
             </tr>
+
             <tr>
-              <td>8</td>
+              <td>6</td>
               <td>{{"instructions.exams.browser" | translate}}</td>
               <td>
                 <a href="https://app-electron-eu.sumadi.net/download/app/en/eu/global/v2"
                   target="_blank">{{"instructions.exams.Download" | translate}}</a>
               </td>
             </tr>
-            <!-- <tr *ngFor="let guid of guidlines;">
-              <td>{{guid.title}}</td>
-              <td>
-                <a href="{{guid.link}}" target="_blank">{{"instructions.exams.Download" | translate}}</a>
-              </td>
-            </tr> -->
           </table>
         </div>
       </div>
