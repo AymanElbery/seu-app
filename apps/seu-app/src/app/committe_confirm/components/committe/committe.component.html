@@ -19,9 +19,9 @@
                     <td>{{ data[0].DECESION }}</td>
                   </tr>
                   <tr>
-                    <th scope="col">{{"committe.violation" | translate}}</th>
+                    <th style="vertical-align: middle;" scope="col">{{"committe.violation" | translate}}</th>
                     <td>
-                      <button style="margin-right: 5px;" *ngFor="let violation of data" (click)="click(violation.PUNISHMENT_DETAILS_FILE)"  class="btn btn-primary">للإطلاع من هنا</button> 
+                      <strong *ngFor="let violation of data; let i = index"> <span style="font-weight: bold; position: relative; top: 4px;">مخالفة رقم ({{ i+1 }})</span> <button style="margin-top: 10px; margin-right: 10px;" (click)="click(violation.PUNISHMENT_DETAILS_FILE)"  class="btn btn-primary">للإطلاع من هنا</button> <br></strong>
                     </td>
                   </tr>
                   <tr>
