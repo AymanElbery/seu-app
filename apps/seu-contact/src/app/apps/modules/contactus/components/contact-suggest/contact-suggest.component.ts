@@ -18,12 +18,16 @@ export class ContactSuggestComponent implements OnInit {
   environment;
   form: FormGroup;
 
+  categories = [];
+  items = [];
+  _lookups = [];
   groups = [];
+  std_invalid = false;
   constructor(
     private toastr: AppToasterService,
     private translate: TranslateService,
     private fb: FormBuilder,
-    private contact: ContactService
+    private contact: ContactService,
   ) {
     this.environment = environment;
   }
@@ -34,7 +38,8 @@ export class ContactSuggestComponent implements OnInit {
       'phone': ['', [Validators.required, Validators.maxLength(12), Validators.minLength(10)]],
       'ssn': ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
       'email': ['', [Validators.required, Validators.email]],
-      'group': ['', [Validators.required]],
+      'category': ['', [Validators.required]],
+      'item': ['', [Validators.required]],
       'type': ['', [Validators.required]],
       'subject': ['', [Validators.required]],
       'description': ['', [Validators.required]],
@@ -44,13 +49,42 @@ export class ContactSuggestComponent implements OnInit {
     this.form.valueChanges.subscribe(() => {
       this.ticket_id = '';
     });
-    this.getGroups();
+
+    this.getLookups();
+
+    this.form.controls['category'].valueChanges.subscribe(() => {
+      this.form.controls['item'].setValue("");
+      if (this.form.controls['category'].value) {
+          let category = this.form.controls['category'].value;
+          this.contact.items_list(category, this._lookups).subscribe(list => {
+              this.items = list;
+          });
+      } else {
+          this.items = [];
+      }
+    });
+    this.form.controls['category'].valueChanges.subscribe(() => {
+      if (this.form.controls['category'].value == 'خدمات طلابية') {
+        this.contact.get_std_data(this.form.controls['ssn'].value).subscribe(resposne => {
+          this.std_invalid = !resposne['data'];
+          if(this.std_invalid){
+            this.form.controls['category'].setValue("");
+          }
+        })
+      }
+    });
+    this.form.controls['ssn'].valueChanges.subscribe(() => {
+      this.form.controls['category'].setValue("");
+      this.std_invalid = false;
+    });
   }
-  getGroups() {
+  getLookups() {
     this.contact.getLookups().subscribe(resposne => {
-      this.groups = resposne['data']['groups'];
+      this.categories = resposne['data']['categories'];
+      this._lookups = resposne['data'];
     })
   }
+
   onFileSelect(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];

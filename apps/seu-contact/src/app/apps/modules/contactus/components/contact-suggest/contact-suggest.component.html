@@ -34,16 +34,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
-      <label>{{'form.group' | translate}}<span class="reqstart">*</span></label>
-      <!-- <ng-select [items]="groups" bindLabel="NAME_AR" bindValue="ID" formControlName="group">
-      </ng-select> -->
-      <select class="form-control" formControlName="group">
-        <option *ngFor="let b of groups" [value]="b.ID">{{b.NAME_AR}}</option>
-      </select>
-      <control-validations-errors *ngIf="submit" [control]="form.controls.group"></control-validations-errors>
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <label>{{'form.type' | translate}}<span class="reqstart">*</span></label>
       <select class="form-control" formControlName="type">
         <option value="{{'form.type_suggest'|translate}}">{{'form.type_suggest'|translate}}</option>
@@ -51,6 +42,27 @@
         <option value="{{'form.type_problem'|translate}}">{{'form.type_problem'|translate}}</option>
       </select>
       <control-validations-errors *ngIf="submit" [control]="form.controls.type"></control-validations-errors>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label>{{'form.category' | translate}}<span class="reqstart">*</span></label>
+      <select class="form-control" formControlName="category">
+        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select>
+      <control-validations-errors *ngIf="submit" [control]="form.controls.category"></control-validations-errors>
+    </div>
+    <div class="col-md-6">
+      <label>{{'form.item' | translate}}<span class="reqstart">*</span></label>
+      <select class="form-control" formControlName="item">
+        <option *ngFor="let item of items" [value]="item.value">{{item.text}}</option>
+      </select>
+      <control-validations-errors *ngIf="submit" [control]="form.controls.item"></control-validations-errors>
+    </div>
+  </div>
+  <div class="row" *ngIf="std_invalid">
+    <div class="col-md-12 alert alert-danger text-center">
+      <strong>{{'form.std_invalid_msg' | translate}}</strong>
     </div>
   </div>
   <div class="row">
