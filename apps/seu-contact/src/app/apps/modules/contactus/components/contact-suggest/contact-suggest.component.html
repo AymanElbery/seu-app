@@ -8,6 +8,11 @@
   </div>
 </div>
 <form [formGroup]="form" (submit)="onSubmit()" id="contactForm">
+  <div *ngIf="!ticket_id" class="row">
+    <div class="col-md-12 alert alert-info text-center">
+      <strong>{{'form.note3' | translate}}</strong>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-6">
       <label>{{'form.name' | translate}}<span class="reqstart">*</span></label>
@@ -31,17 +36,6 @@
       <label>{{'form.phone' | translate}}<span class="reqstart">*</span></label>
       <input class="form-control" type="text" formControlName="phone" (keypress)="keyPress($event)" maxlength="12">
       <control-validations-errors *ngIf="submit" [control]="form.controls.phone"></control-validations-errors>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <label>{{'form.type' | translate}}<span class="reqstart">*</span></label>
-      <select class="form-control" formControlName="type">
-        <option value="{{'form.type_suggest'|translate}}">{{'form.type_suggest'|translate}}</option>
-        <option value="{{'form.type_complaint'|translate}}">{{'form.type_complaint'|translate}}</option>
-        <option value="{{'form.type_problem'|translate}}">{{'form.type_problem'|translate}}</option>
-      </select>
-      <control-validations-errors *ngIf="submit" [control]="form.controls.type"></control-validations-errors>
     </div>
   </div>
   <div class="row">

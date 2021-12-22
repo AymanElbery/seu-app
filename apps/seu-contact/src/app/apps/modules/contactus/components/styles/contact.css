@@ -53,11 +53,6 @@
     font-size: 18px;
 }
 
-.contact-page-inner .address-data a span{
-    font-size: 12px;
-    color: #5db5b3;
-    margin-left: 6px;
-}
 .contact-page-inner  a.btn-suggest.sug{
     background: #1e2170;
     color: #fff;
@@ -134,10 +129,10 @@
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 5px;
-    color: #1c2172
+    text-align: center;
 }
 
-.section-header::before {
+/* .section-header::before {
     content: '';
     position: absolute;
     display: block;
@@ -146,7 +141,7 @@
     background: #5db5b3;
     bottom: 0;
     left: calc(50% - 25px)
-}
+} */
 
 .about-col .section-header::before,
 .arabic .section-header::before,
