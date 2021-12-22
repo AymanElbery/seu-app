@@ -54,6 +54,14 @@ export class AddFeesExceptionComponent implements OnInit {
 
   }
 
+  keyPress(event: any) {
+    const pattern = /[0-9\+\-\ ]/;
+    const inputChar = String.fromCharCode(event.charCode);
+    if (event.keyCode !== 8 && !pattern.test(inputChar)) {
+      event.preventDefault();
+    }
+  }
+
   closeDiag() {
     this.dialogRef.close();
   }
@@ -88,7 +96,13 @@ export class AddFeesExceptionComponent implements OnInit {
     // console.log('handleInputChange ');
     // console.log(this.fileType);
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
+    const pattern = /pdf-*/;
     const reader = new FileReader();
+    if (!file.type.match(pattern)) {
+      this.toastr.push([{body:this.translate.instant("services.finance.format_not_correct"),type:'error'}]);
+      return false;
+    }
+    
     reader.onload = this._handleReaderLoaded.bind(this);
 
     reader.readAsDataURL(file);
