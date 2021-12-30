@@ -702,7 +702,7 @@ nav.navbar.bootsnav ul.nav .dropdown-menu .about {
 }
 @media (min-width: 1200px) {
   nav.bootsnav.brand-center.center-side .navbar-collapse .col-half.left {
-    padding-left: 70px;
+    padding-left: 150px;
     padding-right: 0;
     text-align: left;
   }
@@ -716,7 +716,7 @@ nav.navbar.bootsnav ul.nav .dropdown-menu .about {
 }
 @media (min-width: 1200px) {
   nav.bootsnav.brand-center.center-side .navbar-collapse .col-half.right {
-    padding-right: 105px;
+    padding-right: 170px;
     padding-left: 0;
     text-align: right;
   }
@@ -1011,7 +1011,7 @@ nav.navbar.bootsnav ul.nav > li > a {
 .logos {
   text-align: center;
   position: absolute;
-  top: 0px;
+  top: 20px;
   left: 0;
   right: 0;
   z-index: 99;
