@@ -1,9 +1,10 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ElementRef, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { InquiriesService } from '../../services/inquiries.service';
 import { TranslateService } from '@ngx-translate/core';
+
 
 @Component({
     selector: 'sd-issues-form',
@@ -11,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./ticket-add.component.css']
 })
 export class RegistrationAssistantFormComponent implements OnInit {
+    @ViewChild('no_check', {static: false}) no_check: ElementRef; 
 
     isLoading = false;
     form: FormGroup;
@@ -18,6 +20,7 @@ export class RegistrationAssistantFormComponent implements OnInit {
     suggest = false;
     ticket = false;
     categories = [];
+    category;
     items = [];
     constructor(@Inject(MAT_DIALOG_DATA) public data, private fb: FormBuilder,
         public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, private translate: TranslateService,
@@ -36,6 +39,10 @@ export class RegistrationAssistantFormComponent implements OnInit {
             this.categories = list;
         });
         this.form.controls['category'].valueChanges.subscribe(() => {
+            this.ticket = false;
+            if(this.no_check){
+                this.no_check.nativeElement.checked = false;
+            }
             this.form.controls['item'].setValue("");
             if (this.form.controls['category'].value) {
                 let category = this.form.controls['category'].value;
@@ -47,8 +54,13 @@ export class RegistrationAssistantFormComponent implements OnInit {
             }
         });
         this.form.controls['item'].valueChanges.subscribe(() => {
+            this.ticket = false;
+            if(this.no_check){
+                this.no_check.nativeElement.checked = false;
+            }
             if (this.form.controls['item'].value) {
                 let itemId = this.form.controls['item'].value;
+                this.category = this.form.controls['category'].value;
                 this.service.suggest_list(itemId).subscribe(suggest => {
                     this.suggest = suggest[0];
                 });
