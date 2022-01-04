@@ -40,7 +40,7 @@ export class ContactSuggestComponent implements OnInit {
       'email': ['', [Validators.required, Validators.email]],
       'category': ['', [Validators.required]],
       'item': ['', [Validators.required]],
-      'type': ['', [Validators.required]],
+      'type': [''],
       'subject': ['', [Validators.required]],
       'description': ['', [Validators.required]],
       'captcha': ['', [Validators.required]],
