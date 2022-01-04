@@ -56,7 +56,7 @@ export class ContactSuggestComponent implements OnInit {
       this.form.controls['item'].setValue("");
       if (this.form.controls['category'].value) {
           let category = this.form.controls['category'].value;
-          this.contact.items_list(category, this._lookups).subscribe(list => {
+          this.contact.items_list(category, this._lookups, localStorage.getItem('seu-lang')).subscribe(list => {
               this.items = list;
           });
       } else {
@@ -80,7 +80,11 @@ export class ContactSuggestComponent implements OnInit {
   }
   getLookups() {
     this.contact.getLookups().subscribe(resposne => {
-      this.categories = resposne['data']['categories'];
+      if(localStorage.getItem('seu-lang') == 'ar'){
+        this.categories = resposne['data']['categories'];
+      }else{
+        this.categories = resposne['data']['categories_en'];
+      }
       this._lookups = resposne['data'];
     })
   }

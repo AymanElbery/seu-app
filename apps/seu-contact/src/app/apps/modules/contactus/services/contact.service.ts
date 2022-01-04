@@ -52,24 +52,24 @@ export class ContactService extends AppUserRootService {
     return this.post('/contactus/contactus_sd/add_note', data);
   }
 
-  items(category, _lookups) {
+  items(category, _lookups, lang) {
     return _lookups['items'].filter(item => {
-        return item['CATEGORY'] == category;
+        return (lang == 'ar') ? item['CATEGORY'] == category : item['CATEGORY_EN'] == category;
     }).map(rec => {
         let item = {};
-        item['text'] = rec['ITEM'];
+        item['text'] = (lang == 'ar') ? rec['ITEM'] : rec['ITEM_EN'];
         item['value'] = rec['ID'];
         return item;
     });
   }
 
-  items_list(coll_code, _lookups) {
+  items_list(coll_code, _lookups, lang) {
     if (_lookups) {
-        return of(this.items(coll_code, _lookups));
+        return of(this.items(coll_code, _lookups, lang));
     }
     return this._lookups_observ.pipe(
       map(() => {
-          return this.items(coll_code, _lookups);
+          return this.items(coll_code, _lookups, lang);
       }));
   }
 

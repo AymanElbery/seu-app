@@ -103,6 +103,8 @@ nav.navbar.bootsnav li.dropdown ul.baculoria img {
     padding-right: 70px;
     padding-left: 0;
     text-align: right;
+    position: relative;
+    right: 130px;
   }
 }
 @media (max-width: 1200px) {
@@ -115,6 +117,8 @@ nav.navbar.bootsnav li.dropdown ul.baculoria img {
     padding-left: 105px;
     padding-right: 0;
     text-align: left;
+    position: relative;
+    left: 110px;
   }
 }
 @media (max-width: 1200px) {
