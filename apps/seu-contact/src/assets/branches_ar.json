@@ -2,12 +2,12 @@
     "title": "المقر الرئيسي",
     "contact": [
         {
-            "label": "",
+            "label": "الموقع",
             "iconclass": "fas fa-map-marker-alt",
             "value": "​​​​​​​​​​​​​​​​​​​​​​المملكة العربية السعودية - الرياض "
         },
         {
-            "label": "تلفون",
+            "label": "هاتف",
             "iconclass": "fas fa-phone",
             "value": "00966112613500 - 199099"
         }
@@ -29,7 +29,7 @@
         "title": "فرع الدمام",
         "contact": [
             {
-                "label": "",
+                "label": "الموقع",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": " ​​​​​​​​​​​​​​​​​​​​​​​المملكة العربية السعودية - الدمام - حي الريان"
             },
@@ -44,7 +44,7 @@
                 "value": "31454"
             },
             {
-                "label": "تلفون",
+                "label": "هاتف",
                 "iconclass": "fas fa-phone",
                 "value": "7444 892 13 00966"
             },
@@ -71,7 +71,7 @@
         "title": "فرع المدينة المنورة",
         "contact": [
             {
-                "label": "",
+                "label": "الموقع",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​​​​​​​​​​​​​​​​​​​المملكة العربية السعودية - المدينة المنورة"
             },
@@ -86,7 +86,7 @@
                 "value": "4101"
             },
             {
-                "label": "تلفون",
+                "label": "هاتف",
                 "iconclass": "fas fa-phone",
                 "value": "00966112613500"
             },
@@ -113,7 +113,7 @@
         "title": "فرع جدة",
         "contact": [
             {
-                "label": "",
+                "label": "الموقع",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​​​​​​​​​​​المملكة العربية السعودية - جدة - حي الفيصلية"
             },
@@ -128,7 +128,7 @@
                 "value": "2323"
             },
             {
-                "label": "تلفون",
+                "label": "هاتف",
                 "iconclass": "fas fa-phone",
                 "value": "00966112613500"
             },
@@ -155,7 +155,7 @@
         "title": "فرع القصيم",
         "contact": [
             {
-                "label": "",
+                "label": "الموقع",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "المملكة العربية السعودية، مدينة بريدة، مبنى السنة التحضيرية في جامعة القصيم"
             },
@@ -165,7 +165,7 @@
                 "value": "6000"
             },
             {
-                "label": "تلفون",
+                "label": "هاتف",
                 "iconclass": "fas fa-phone",
                 "value": "00966112613500"
             },
@@ -187,12 +187,12 @@
         "title": "فرع الأحساء",
         "contact": [
             {
-                "label": "",
+                "label": "الموقع",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​​​​​​​​​​​​​​المملكة العربية السعودية - الأحساء - الهفوف "
             },
             {
-                "label": "تلفون",
+                "label": "هاتف",
                 "iconclass": "fas fa-phone",
                 "value": "00966112613500"
             },
@@ -214,12 +214,12 @@
         "title": "فرع أبها",
         "contact": [
             {
-                "label": "",
+                "label": "الموقع",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​​​​​​​​​​المملكة العربية السعودية - أبها"
             },
             {
-                "label": "تلفون",
+                "label": "هاتف",
                 "iconclass": "fas fa-phone",
                 "value": "00966172417139"
             },
@@ -246,12 +246,12 @@
         "title": "فرع تبوك",
         "contact": [
             {
-                "label": "",
+                "label": "الموقع",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​​​​​​​​​​​​​​​​​​​​​​​​المملكة العربية السعودية - تبوك"
             },
             {
-                "label": "تلفون",
+                "label": "هاتف",
                 "iconclass": "fas fa-phone",
                 "value": "00966112613500"
             },
@@ -273,17 +273,17 @@
         "title": "فرع جازان",
         "contact": [
             {
-                "label": "",
+                "label": "الموقع",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​​​​​​​​​​المملكة العربية السعودية - جازان"
             },
             {
-                "label": "تلفون الطلاب",
+                "label": "هاتف الطلاب",
                 "iconclass": "fas fa-phone",
                 "value": "0173342801 – 0173342815"
             },
             {
-                "label": "تلفون الطالبات",
+                "label": "هاتف الطالبات",
                 "iconclass": "fas fa-phone",
                 "value": "0173223347"
             },

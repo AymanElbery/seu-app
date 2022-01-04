@@ -23,10 +23,10 @@ export class ContactInfoComponent implements OnInit {
 
   ngOnInit() {
     this.getBrannhes();
-    this.currLang = this.translate.currentLang;
+    this.currLang = localStorage.getItem('seu-lang');//this.translate.currentLang;
     this.translate.onLangChange.subscribe(() => {
       this.getBrannhes();
-      this.currLang = this.translate.currentLang;
+      this.currLang = localStorage.getItem('seu-lang');//this.translate.currentLang;
     });
     if (localStorage.getItem("contactform") == "1") {
       setTimeout(() => {
@@ -41,7 +41,7 @@ export class ContactInfoComponent implements OnInit {
 
   getBrannhes() {
     this.loading = true;
-    this.http.get("assets/branches_" + (this.translate.currentLang) + ".json").subscribe((branches) => {
+    this.http.get("assets/branches_" + (localStorage.getItem('seu-lang')) + ".json").subscribe((branches) => {
       this.branchesData = branches;
       let blist = [];
       Object.keys(branches).forEach(key => {

@@ -2,12 +2,12 @@
     "title": "Headquarters ",
     "contact": [
         {
-            "label": "",
+            "label": "Location",
             "iconclass": "fas fa-map-marker-alt",
             "value": "Saudi Arabia - Ryiadh"
         },
         {
-            "label": "تلفون",
+            "label": "Phone",
             "iconclass": "fas fa-phone",
             "value": "+966112613500 - 199099"
         }
@@ -29,7 +29,7 @@
         "title": "Dammam Branch",
         "contact": [
             {
-                "label": "",
+                "label": "Location",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​​​​​​​​​​Saudi Arabia - Dammam - AlRayyan Dist"
             },
@@ -71,7 +71,7 @@
         "title": "Madinah Branch",
         "contact": [
             {
-                "label": "",
+                "label": "Location",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​Saudi Arabia – Medina"
             },
@@ -113,7 +113,7 @@
         "title": "Jeddah Branch",
         "contact": [
             {
-                "label": "",
+                "label": "Location",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "Saudi Arabia - Jeddah - Al Faisaliah Dist."
             },
@@ -155,7 +155,7 @@
         "title": "Qassim Branch",
         "contact": [
             {
-                "label": "",
+                "label": "Location",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "KSA, Buraydah City, Preparatory-Year Building at Al-Qassim University"
             },
@@ -187,7 +187,7 @@
         "title": "Alahsa Branch",
         "contact": [
             {
-                "label": "",
+                "label": "Location",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​Kingdom Of Saudi Arabia – Ahsa - hofuf"
             },
@@ -214,7 +214,7 @@
         "title": "Abha Branch",
         "contact": [
             {
-                "label": "",
+                "label": "Location",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​Kingdom Of Saudi Arabia – Abha"
             },
@@ -246,7 +246,7 @@
         "title": "Tabuk Branch",
         "contact": [
             {
-                "label": "",
+                "label": "Location",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Kingdom of Saudi Arabia -Tabuk"
             },
@@ -273,7 +273,7 @@
         "title": "Jazan Branch",
         "contact": [
             {
-                "label": "",
+                "label": "Location",
                 "iconclass": "fas fa-map-marker-alt",
                 "value": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Kingdom of Saudi Arabia -Jazan"
             },
