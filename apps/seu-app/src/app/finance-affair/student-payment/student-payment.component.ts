@@ -14,6 +14,8 @@ export class StudentPaymentComponent implements OnInit, OnDestroy {
   urlSafe: SafeResourceUrl;
   sid;
   srcUrl;
+  agree = false;
+
   constructor(private translate: TranslateService, public sanitizer: DomSanitizer, private userService: UserService) { }
 
   ngOnInit() {
@@ -38,6 +40,10 @@ export class StudentPaymentComponent implements OnInit, OnDestroy {
     const user = this.userService.getActiveRoleDetails();
     this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url + '/' + user.username + '?sid=' + this.sid + "&lang=" + this.translate.currentLang);
     //console.log(this.urlSafe);
+  }
+
+  agree_fun(){
+    this.agree = !this.agree;
   }
 
 }
