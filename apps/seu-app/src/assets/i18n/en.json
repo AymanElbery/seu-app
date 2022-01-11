@@ -63,6 +63,7 @@
         "choosefile": "Choose file ...... ",
         "request": {
             "reject_reason": "Reject Reason",
+            "note": "Notes",
             "add_request": "Add Request",
             "cname": "Course ",
             "req_date": "Request Date",

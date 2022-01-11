@@ -74,6 +74,7 @@
         "choosefile": "  إختر الملف ...",
         "request": {
             "reject_reason": "سبب الرفض",
+            "note": "ملاحظات",
             "add_request": "إضافة طلب",
             "cname": "اسم المقرر ",
             "req_date": "تاريخ الطلب",
