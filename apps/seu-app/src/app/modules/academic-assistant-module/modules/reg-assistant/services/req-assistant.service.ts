@@ -58,7 +58,7 @@ export class ReqAssistantService extends SDService {
         return this._lookups['courses'].map(rec => {
             let item = {};
             item['text'] = rec['COURSE_TITLE'] + " | " + rec['COURSE_CODE'];
-            item['value'] = rec['COLLEGE_CODE'];
+            item['value'] = rec['COURSE_CODE'];
             return item;
         });
     }
