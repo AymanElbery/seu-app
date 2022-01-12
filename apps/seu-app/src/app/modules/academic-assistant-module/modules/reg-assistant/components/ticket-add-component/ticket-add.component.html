@@ -27,6 +27,15 @@
                         </div>
                         <control-validations-errors [control]="form.controls.item"></control-validations-errors>
                     </div>
+
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"general.courses"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="coll_code">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.item"></control-validations-errors>
+                    </div>
                     
                     <div class="col-md-12" *ngIf="item_1">
                         <div class="state">

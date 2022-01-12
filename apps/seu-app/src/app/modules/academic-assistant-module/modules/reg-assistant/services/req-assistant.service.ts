@@ -44,6 +44,25 @@ export class ReqAssistantService extends SDService {
         });
     }
 
+    courses_list() {
+        if (this._lookups) {
+            return of(this.courses());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.courses();
+            }));
+    }
+
+    courses() {
+        return this._lookups['courses'].map(rec => {
+            let item = {};
+            item['text'] = rec['COURSE_TITLE'] + " | " + rec['COURSE_CODE'];
+            item['value'] = rec['COLLEGE_CODE'];
+            return item;
+        });
+    }
+
     items(category) {
         return this._lookups['items'].filter(item => {
             return item['CATEGORY'] == category;

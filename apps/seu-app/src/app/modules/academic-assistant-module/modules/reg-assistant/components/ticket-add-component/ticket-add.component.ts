@@ -21,6 +21,7 @@ export class RegistrationAssistantFormComponent implements OnInit {
     item_7 = false;
     item_16 = false;
     categories = [];
+    courses = [];
     items = [];
     constructor(
     @Inject(MAT_DIALOG_DATA) public data, 
@@ -34,6 +35,7 @@ export class RegistrationAssistantFormComponent implements OnInit {
         this.form = this.fb.group({
             category: ['', [Validators.required]],
             item: ['', [Validators.required]],
+            coll_code: ['', [Validators.required]],
             subject: ['', [Validators.required]],
             description: ['', [Validators.required]],
             file: ['']
@@ -41,6 +43,9 @@ export class RegistrationAssistantFormComponent implements OnInit {
         this.service.loadlookups();
         this.service.categories_list().subscribe(list => {
             this.categories = list;
+        });
+        this.service.courses_list().subscribe(list => {
+            this.courses = list;
         });
         this.form.controls['category'].valueChanges.subscribe(() => {
             this.form.controls['item'].setValue("");
