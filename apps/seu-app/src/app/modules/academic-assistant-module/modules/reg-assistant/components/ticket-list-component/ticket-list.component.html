@@ -2,6 +2,9 @@
 
   <service-header [title]="'general.title' |translate" [desc]="'reg_assistant.title' |translate"></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div *ngIf="!can_add_new" class="alert alert-danger text-center">
+    <strong>النظام الآن تحت الصيانة</strong>
+  </div>
   <div class="widget">
     <div class="widget-header">
       <h3 class="widget-title">
