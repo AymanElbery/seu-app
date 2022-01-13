@@ -22,7 +22,7 @@
         <br />
         <p style="color: #26226a;" class="text-center">{{'general.reg_charter_note2'|translate}}</p>
     </div>
-    <div class="text-center">
+    <div class="text-center" *ngIf="!agree">
         <button style="width: 15%;" (click)="agree_fun()" class="btn btn-primary">{{'general.reg_charter_agree'|translate}}</button>
     </div>
 </div>
