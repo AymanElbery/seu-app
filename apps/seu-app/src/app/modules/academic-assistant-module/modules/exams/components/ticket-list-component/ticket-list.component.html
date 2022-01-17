@@ -48,6 +48,8 @@
                   &nbsp;
                   <button class="btn btn-primary" *ngIf="ticket.status == 'Open'" (click)="delete(ticket.id)">{{
                     "general.delete" | translate}}</button>
+                  &nbsp;
+                  <a *ngIf="ticket.status == 'Resolved' || ticket.status == 'Closed'" class="btn btn-primary" target="_blank" href="https://bluesurvey.seu.edu.sa/Blue/a.aspx?l=211_1_AAAAAAAABs8">{{ "general.rating" | translate}}</a>
                 </td>
               </tr>
             </tbody>
