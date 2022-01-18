@@ -5,6 +5,7 @@ import { CancelCousre } from 'src/app/shared/models/cancel-cousre';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { ReqAssistantService } from '../../services/req-assistant.service';
 import { TranslateService } from '@ngx-translate/core';
+import { UserService } from 'src/app/account/services/user.service';
 
 @Component({
     selector: 'app-reg-assistant-form',
@@ -23,30 +24,46 @@ export class RegistrationAssistantFormComponent implements OnInit {
     categories = [];
     courses = [];
     items = [];
+    class_level = "";
     constructor(
     @Inject(MAT_DIALOG_DATA) public data, 
     private fb: FormBuilder,
     public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, 
     private translate: TranslateService,
     private toastr: AppToasterService, 
-    private service: ReqAssistantService) {}
+    public userService: UserService,
+    private service: ReqAssistantService) {
+        this.class_level = this.userService.userData['class_level'];
+    }
 
     ngOnInit() {
-        this.form = this.fb.group({
-            category: ['', [Validators.required]],
-            item: ['', [Validators.required]],
-            coll_code: ['', [Validators.required]],
-            subject: ['', [Validators.required]],
-            description: ['', [Validators.required]],
-            file: ['']
-        });
+        if(this.class_level == "PY" || this.class_level == "PL"){
+            this.form = this.fb.group({
+                category: ['', [Validators.required]],
+                item: ['', [Validators.required]],
+                subject: ['', [Validators.required]],
+                description: ['', [Validators.required]],
+                file: ['']
+            }); 
+        }else{
+            this.form = this.fb.group({
+                category: ['', [Validators.required]],
+                item: ['', [Validators.required]],
+                coll_code: ['', [Validators.required]],
+                subject: ['', [Validators.required]],
+                description: ['', [Validators.required]],
+                file: ['']
+            });
+            this.service.courses_list().subscribe(list => {
+                this.courses = list;
+            });
+        }
+        
         this.service.loadlookups();
         this.service.categories_list().subscribe(list => {
             this.categories = list;
         });
-        this.service.courses_list().subscribe(list => {
-            this.courses = list;
-        });
+        
         this.form.controls['category'].valueChanges.subscribe(() => {
             this.form.controls['item'].setValue("");
             if (this.form.controls['category'].value) {
