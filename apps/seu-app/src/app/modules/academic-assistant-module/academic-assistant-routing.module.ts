@@ -32,6 +32,10 @@ const routes: Routes = [
     loadChildren: './modules/inquiries/sd-inquiries.module#SDInquiriesModule',
   },
   {
+    path: 'coronavirus',
+    loadChildren: './modules/coronavirus/sd-coronavirus.module#SDCoronavirusModule',
+  },
+  {
     path: 'login',
     loadChildren: './modules/login/sd-login.module#SDLoginModule',
   },
