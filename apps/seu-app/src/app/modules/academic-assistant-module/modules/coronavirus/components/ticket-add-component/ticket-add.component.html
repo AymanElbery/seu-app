@@ -10,27 +10,9 @@
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"coronavirus.appointment"|translate}} <span class="reqstart">*</span></h6>
-                            <input type="text" class="form-control" formControlName="appointment" />
+                            <input bsDatepicker [bsConfig]="datePickerConfig" type="text" class="form-control" formControlName="appointment" />
                         </div>
                         <control-validations-errors [control]="form.controls.appointment"></control-validations-errors>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="state">
-                            <h6>{{"general.subject"|translate}} <span class="reqstart">*</span></h6>
-                            <input type="text" class="form-control" formControlName="subject" />
-                        </div>
-                        <control-validations-errors [control]="form.controls.description"></control-validations-errors>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="state">
-                            <h6>{{"general.description"|translate}} <span class="reqstart">*</span></h6>
-                            <textarea maxlength="1000" class="form-control" formControlName="description"></textarea>
-                        </div>
-                        <control-validations-errors [control]="form.controls.description"></control-validations-errors>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 10px;">

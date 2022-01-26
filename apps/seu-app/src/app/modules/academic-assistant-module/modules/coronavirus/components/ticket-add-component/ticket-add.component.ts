@@ -4,14 +4,14 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { CoronavirusService } from '../../services/coronavirus.service';
 import { TranslateService } from '@ngx-translate/core';
-
+import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 @Component({
     selector: 'sd-issues-form',
     templateUrl: './ticket-add.component.html',
     styleUrls: ['./ticket-add.component.css']
 })
 export class RegistrationAssistantFormComponent implements OnInit {
-
+    datePickerConfig: Partial<BsDatepickerConfig>;
     isLoading = false;
     form: FormGroup;
     submitted = false;
@@ -26,9 +26,7 @@ export class RegistrationAssistantFormComponent implements OnInit {
     ngOnInit() {
         this.form = this.fb.group({
             appointment: ['', [Validators.required]],
-            subject: ['', [Validators.required]],
-            description: ['', [Validators.required]],
-            file: ['',[Validators.required]]
+            file: ['',[Validators.required]] 
         });
         this.service.loadlookups();
     }

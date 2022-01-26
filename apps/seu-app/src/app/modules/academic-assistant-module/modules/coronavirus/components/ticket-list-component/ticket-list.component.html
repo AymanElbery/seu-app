@@ -30,7 +30,7 @@
             <tbody>
               <tr *ngFor="let ticket of tickets; let i = index">
                 <td>{{ ticket.id }}</td>
-                <td>{{ ticket.appointment }}</td>
+                <td>{{ ticket.appointment | date : 'yyyy-MM-dd'}}</td>
                 <td>{{ ticket.created_time.display_value }}</td>
                 <td>{{ ticket.status }}</td>
                 <td>
