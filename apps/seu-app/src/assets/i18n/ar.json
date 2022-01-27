@@ -230,6 +230,7 @@
         "PublicServices": "أنظمتي",
         "argos": "تقارير معلومات الطلبة",
         "forms": "النماذج",
+        "procedure_guide": "دليل إجراءات الجامعة",
         "email": "البريد الإلكتروني",
         "ALWAFI": "خدماتي الذاتية",
         "Attednace": "الحضور والانصراف",
@@ -244,6 +245,11 @@
         "EDUSYSTEMS": "تعليمات الأنظمة التعليمية",
         "INSTRUCTEXAM": "تعليمات الاختبارات الإلكترونية",
         "written_forms": "نماذج المراسلات الكتابية",
+        "university_guide": "رئاسة الجامعة",
+        "university_agency_guide": "وكالة الجامعة للتخطيط و التطوير و الجودة",
+        "university_agency_gr_guide": "وكالة الجامعة للدراسات العليا و البحث العلمي ",
+        "university_agency_all": "وكالات الجامعة المختلفة",
+        "university_educational_affairs": "وكالة الجامعة للشؤون التعليمية",
         "project_forms": "نماذج مكتب إدارة المشاريع",
         "StdLaw": "الحقوق الطلابية",
         "StdSRV": "الخدمات الذاتية للطلبة",
@@ -1556,6 +1562,94 @@
         "p3_2": "ميثاق الأداء وأخلاقيات المهنة و الواجبات والحقوق الوظيفية و دليل الحقوق والوجبات لأعضاء هيئة التدريس ومن في حكمهم و الدليل الإرشادي للكادر الإداري ",
         "p3_3": " والاقرار بذلك في الخانة المخصصة أدناه.",
         "agree": "أقر بالاطلاع على اللوائح والأدلة الارشادية التنظيمية والتوعوية المرفقة في الروابط."
+    },
+    "procedure_guide":{
+        "form": "الجهة / الوكالة / العمادة",
+        "procedure_name": "مسمى الإجراء",
+        "download": "تحميل",
+        "serial_number": "الرقم التسلسلي",
+        "university" : {
+            "file_1" : {
+                "text": "إدارة المراجعة الداخلية",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_file1_link.pdf"
+            },
+            "file_2" : {
+                "text": "الإدارة القانونية",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_file2_link.pdf"
+            },
+            "file_3" : {
+                "text": "إدارة العلاقات العامة و الإعلام",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_file3_link.pdf"
+            }
+        },
+        "university_agency": {
+            "file_1" : {
+                "text": "وكالة الجامعة للتخطيط والتطوير والجودة",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_file1_link.pdf"
+            }
+        },
+        "university_agency_gr": {
+            "file_1" : {
+                "text": "عمادة البحث العلمي",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_gr_file1_link.pdf"
+            },
+            "file_2" : {
+                "text": "عمادة الدراسات العليا",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_gr_file2_link.pdf"
+            },
+            "file_3" : {
+                "text": "إدارة الابتعاث",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_gr_file3_link.pdf"
+            }
+        },
+        "university_agency_all": {
+            "file_1" : {
+                "text": "وكالة الجامعة لشؤون الفروع",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file1_link.pdf"
+            },
+            "file_2" : {
+                "text": "وكالة الجامعة لشؤون الطالبات",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file2_link.pdf"
+            },
+            "file_3" : {
+                "text": "وكالة الجامعة - إدارة المستودعات",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file3_link.pdf"
+            },
+            "file_4" : {
+                "text": "وكالة الجامعة - إدارة العقود و المشتريات",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file4_link.pdf"
+            },
+            "file_5" : {
+                "text": "وكالة الجامعة - عمادة تقنية المعلومات و تكنولوجيا التعليم ",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file5_link.pdf"
+            },
+            "file_6" : {
+                "text": "وكالة الجامعة - إدارة الأمن و السلامة ",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file6_link.pdf"
+            },
+            "file_7" : {
+                "text": "وكالة الجامعة - إدارة الحركة و النقل ",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file7_link.pdf"
+            },
+            "file_8" : {
+                "text": "وكالة الجامعة - إدارة الإتصالات الإدارية ",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file8_link.pdf"
+            },
+            "file_9" : {
+                "text": "وكالة الجامعة - عمادة الموارد البشرية ",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file9_link.pdf"
+            }
+        },
+        "university_educational_affairs": {
+            "file_1" : {
+                "text": "وكالة الجامعة للشؤون التعليمية",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_educational_affairs_file1_link.pdf"
+            },
+            "file_2" : {
+                "text": "عمادة القبول و شؤون الطلاب - مركز العناية بالطالب",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_educational_affairs_file2_link.pdf"
+            }
+        }
     },
     "written_forms":{
         "form": "عنوان النموذج",

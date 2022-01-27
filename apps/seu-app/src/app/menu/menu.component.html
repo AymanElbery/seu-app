@@ -940,6 +940,31 @@
             </a>
           </div>
         </div>
+
+        <div *ngIf="userService.userData && userService.userData.activeRole == 'Employee' || userService.userData.activeRole == 'Instructor'" class="nav-item has-sub">
+          <a href="javascript:void(0)">
+            <span>{{ "menu.procedure_guide" | translate }} </span>
+            <i class="ik ik-book-open"></i>
+          </a>
+          <div class="submenu-content">
+            <a routerLink="/procedure-guide/university" class="menu-item">
+              {{ "menu.university_guide" | translate }}
+            </a>
+            <a routerLink="/procedure-guide/university-agency" class="menu-item">
+              {{ "menu.university_agency_guide" | translate }}
+            </a>
+            <a routerLink="/procedure-guide/university-agency-gr" class="menu-item">
+              {{ "menu.university_agency_gr_guide" | translate }}
+            </a>
+            <a routerLink="/procedure-guide/university-educational-affairs" class="menu-item">
+              {{ "menu.university_educational_affairs" | translate }}
+            </a>
+            <a routerLink="/procedure-guide/university-agency-all" class="menu-item">
+              {{ "menu.university_agency_all" | translate }}
+            </a>
+          </div>
+        </div>
+
         <div *ngIf="
             userService.userData && userService.userData.activeRole == 'Student'
           " class="nav-item has-sub">

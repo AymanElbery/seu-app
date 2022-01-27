@@ -38,6 +38,10 @@ const routes: Routes = [
         loadChildren: './written-forms/written-forms.module#WrittenFormsModule',
       },
       {
+        path: 'procedure-guide',
+        loadChildren: './procedure-guide/procedure-guide.module#ProcedureGuideModule',
+      },
+      {
         path: 'academicaff',
         loadChildren: './academicaff/academicaff.module#AcademicaffModule',
         canActivate: [UGGuard]
