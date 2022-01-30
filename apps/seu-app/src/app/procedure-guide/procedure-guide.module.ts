@@ -6,6 +6,8 @@ import { UniversityComponent } from './university/university.component';
 import { UniversityAgencyComponent } from './university-agency/university-agency.component';
 import { UniversityAgencyGrComponent } from './university-agency-gr/university-agency-gr.component';
 import { UniversityAgencyAllComponent } from './university-agency-all/university-agency-all.component';
+import { UniversityAgencyCampComponent } from './university-agency-camp/university-agency-camp.component';
+import { UniversityAgencyFemaleComponent } from './university-agency-female/university-agency-female.component';
 import { UniversityEducationalAffairsComponent } from './university-educational-affairs/university-educational-affairs.component';
 
 @NgModule({
@@ -14,7 +16,9 @@ import { UniversityEducationalAffairsComponent } from './university-educational-
     UniversityAgencyComponent,
     UniversityAgencyGrComponent,
     UniversityEducationalAffairsComponent,
-    UniversityAgencyAllComponent
+    UniversityAgencyAllComponent,
+    UniversityAgencyCampComponent,
+    UniversityAgencyFemaleComponent
   ],
   entryComponents: [],
   imports: [
