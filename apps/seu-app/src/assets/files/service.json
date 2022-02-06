@@ -316,5 +316,47 @@
             "pdf": "committe_guide.pdf",
             "vedio": ""
         }
+    },
+    "/academic-assistant/reg-assistant/tickets": {
+        "ar": {
+            "pdf": "general_assis_guide.pdf",
+            "vedio": ""
+        }
+    },
+    "/academic-assistant/academic-requests": {
+        "ar": {
+            "pdf": "general_assis_guide.pdf",
+            "vedio": ""
+        }
+    },
+    "/academic-assistant/issues": {
+        "ar": {
+            "pdf": "general_assis_guide.pdf",
+            "vedio": ""
+        }
+    },
+    "/academic-assistant/exams": {
+        "ar": {
+            "pdf": "general_assis_guide.pdf",
+            "vedio": ""
+        }
+    },
+    "/academic-assistant/sadad": {
+        "ar": {
+            "pdf": "general_assis_guide.pdf",
+            "vedio": ""
+        }
+    },
+    "/academic-assistant/knowledge-resources": {
+        "ar": {
+            "pdf": "general_assis_guide.pdf",
+            "vedio": ""
+        }
+    },
+    "/academic-assistant/inquiries": {
+        "ar": {
+            "pdf": "general_assis_guide.pdf",
+            "vedio": ""
+        }
     }
 }
