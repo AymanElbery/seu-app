@@ -16,6 +16,8 @@ export class RegistrationAssistantFormComponent implements OnInit {
     form: FormGroup;
     submitted = false;
     exam_guide = false;
+    std_note = false;
+    invalid = true;
     
     categories = [];
     items = [];
@@ -52,10 +54,15 @@ export class RegistrationAssistantFormComponent implements OnInit {
                 if(itemId == 13){
                     this.exam_guide = true;
                 }
+                if(itemId == 18){
+                    this.std_note = true;
+                    this.form.get('file').setValidators(Validators.required)
+                }
             }
         });
     }
     handleFileInput(files: FileList) {
+        this.invalid = false;
         this.form.controls['file'].setValue(files.item(0));
     }
 

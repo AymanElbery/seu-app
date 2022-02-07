@@ -32,6 +32,13 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-12" *ngIf="std_note">
+                        <div class="state">
+                            <div class="alert alert-danger text-center">
+                                <strong>{{"issues.std_note"|translate}}</strong>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"general.subject"|translate}} <span class="reqstart">*</span></h6>
@@ -48,14 +55,14 @@
                     </div>
                     <div class="col-md-12">
                         <div class="state">
-                            <h6>{{"general.attachments"|translate}} <span class="reqstart"></span></h6>
+                            <h6>{{"general.attachments"|translate}} <span *ngIf="std_note" class="reqstart">*</span></h6>
                             <input type="file" class="form-control" (change)="handleFileInput($event.target.files)" />
                         </div>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <div class="col-md-12" style="text-align: center;">
-                        <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="onSubmit()"
+                        <button style="width: 30%;" [disabled]="submitted || form.invalid || invalid" (click)="onSubmit()"
                             type="submit" class="btn btn-primary">{{ "general.send" |
                             translate}}
                             <i class="fa fa-save"></i>
