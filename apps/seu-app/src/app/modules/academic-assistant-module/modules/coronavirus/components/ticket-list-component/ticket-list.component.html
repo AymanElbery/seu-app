@@ -2,8 +2,10 @@
 
   <service-header [title]="'general.title' |translate" [desc]="'coronavirus.title' |translate"></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
-  <div *ngIf="!can_add_new" class="alert alert-danger text-center">
-    <strong>النظام الآن تحت الصيانة</strong>
+  <div class="alert alert-info text-center">
+    <strong>عزيزي الطالب/ عزيزتي الطالبة
+      هذه الأيقونة تابعة للمركز الطبي الجامعي للتحقق من صحة بيانات الإصابة والإجازة المرضية .
+      ولا تغني عن رفع العذر على أيقونة التغيب عن المحاضرات</strong>
   </div>
   <div class="widget">
     <div class="widget-header">
