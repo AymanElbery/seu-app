@@ -49,6 +49,7 @@ export class UserService extends BaseService {
       PIDM: '',
       STD_RIGHTS: 0,
       DATA_CLEANED: 0,
+      DATA_CLEANED_STD: 0,
       COMMITTE_CONFIRM: 0,
       COMMITTE_CONFIRM_DATA: [],
       level: '',
@@ -347,6 +348,17 @@ export class UserService extends BaseService {
     return this.http.post(url + "data_clean/send_email", {email: email}, { headers: headers });
   }
 
+  sendEmailStd(email) {
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth
+    });
+
+    return this.http.post(url + "data_clean_std/send_email", {email: email}, { headers: headers });
+  }
+
   sendSMS(email, code, mobile) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
@@ -356,6 +368,17 @@ export class UserService extends BaseService {
     });
 
     return this.http.post(url + "data_clean/confirm_email", {email: email, code: code, mobile: mobile}, { headers: headers });
+  }
+
+  sendSMSStd(email, code, mobile) {
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth
+    });
+
+    return this.http.post(url + "data_clean_std/confirm_email", {email: email, code: code, mobile: mobile}, { headers: headers });
   }
   
   sendSMS_confirm(mobile, code, data) {
@@ -367,6 +390,17 @@ export class UserService extends BaseService {
     });
 
     return this.http.post(url + "data_clean/confirm_sms", {mobile: mobile, code: code, data: data}, { headers: headers });
+  }
+
+  sendSMS_confirm_std(mobile, code, data) {
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth
+    });
+
+    return this.http.post(url + "data_clean_std/confirm_sms", {mobile: mobile, code: code, data: data}, { headers: headers });
   }
 
   updateStudentVaccineStatus(data) {

@@ -1,0 +1,240 @@
+<div class="main-content" >
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <div class="widget">
+      <div class="widget-header">
+        <h3 class="widget-title"> {{"clean_data.title"|translate}}  <button *ngIf="skip_button && dataForm" (click)="skip()" class="btn btn-primary">{{"clean_data.skip"|translate}} <i class="fa fa-arrow-left skip_icon"></i></button></h3>
+      </div>
+      <div class="widget-body" *ngIf="dataForm">
+        <form role="form" [formGroup]="form">
+          <div class="row">
+            <div class="col-md-6">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.personal_email"|translate}} <span class="reqstart">*</span></h6>
+                  <input type="text" formControlName="personal_email" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.personal_email.invalid && (form.controls.personal_email.dirty || form.controls.personal_email.touched)">
+                    <div *ngIf="form.controls.personal_email.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                    <div *ngIf="form.controls.personal_email.errors.email">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.email_error"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.mobile"|translate}} <span class="reqstart">*</span></h6>
+                  <input type="text" formControlName="mobile" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.mobile.invalid && (form.controls.mobile.dirty || form.controls.mobile.touched)">
+                    <div *ngIf="form.controls.mobile.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                    <div *ngIf="form.controls.mobile.errors.pattern">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.mobile_pattern"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.birth_city"|translate}} <span class="reqstart">*</span></h6>
+                  <ng-select (change)="changeBirthCity($event)" [items]="cities" bindLabel="NAME_AR" bindValue="NAME_AR" formControlName="birth_city"></ng-select>
+                </div>
+                <div *ngIf="form.controls.birth_city.invalid && (form.controls.birth_city.dirty || form.controls.birth_city.touched)">
+                    <div *ngIf="form.controls.birth_city.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.birthdate"|translate}} <span class="reqstart">*</span></h6>
+                  <input (ngModelChange)="changeBirthDate($event)" type="text" formControlName="birth_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.birth_date.invalid && (form.controls.birth_date.dirty || form.controls.birth_date.touched)">
+                    <div *ngIf="form.controls.birth_date.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6" *ngIf="showOtherBirthCity">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.birth_city_other"|translate}} <span class="reqstart">*</span></h6>
+                  <input type="text" formControlName="birth_city_other" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.birth_city_other.invalid && (form.controls.birth_city_other.dirty || form.controls.birth_city_other.touched)">
+                  <div *ngIf="form.controls.birth_city_other.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+            
+            <div class="col-md-12">
+              <!-- Error block ... -->
+              <ng-container *ngIf="errorDisplay">
+                <div style="margin-top: 20px;" class="alert alert-danger text-center">
+                  <strong>{{"clean_data.try_again"|translate}}</strong>
+                </div>
+              </ng-container>
+
+              <!-- Bacis info block ... -->
+              <ng-container *ngIf="basicDisplay">
+                <h6 class="basic_title">{{"clean_data.basic"|translate}}</h6>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">{{"clean_data.name_ar" | translate}}</th>
+                              <td>{{ basic.firstName_AR }} {{ basic.fatherName_AR }} {{ basic.grandFatherName_AR }} {{ basic.familyName_AR }}</td>
+                              <th scope="col">{{"clean_data.name_en" | translate}}</th>
+                              <td>{{ basic.firstName_EN }} {{ basic.fatherName_EN }} {{ basic.grandFatherName_EN }} {{ basic.familyName_EN }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.emp_ssn" | translate}}</th>
+                              <td>{{ std_ssn }}</td>
+                              <th scope="col">{{"clean_data.emp_email" | translate}}</th>
+                              <td>{{ std_email }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.emp_id" | translate}}</th>
+                              <td>{{ std_id }}</td>
+                              <th scope="col">{{"clean_data.gender" | translate}}</th>
+                              <td *ngIf="basic.gender == 'F'">{{"clean_data.female" | translate}}  <i class="fa fa-female"></i></td>
+                              <td *ngIf="basic.gender == 'M'">{{"clean_data.male" | translate}}  <i class="fa fa-male"></i></td>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+              </ng-container>
+
+              <!-- Address info block ... -->
+              <ng-container *ngIf="addressDisplay">
+                <h6 class="basic_title">{{"clean_data.address"|translate}}</h6>
+                <div class="row">
+                    <div class="col-md-12">
+                      <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                          <thead>
+                            <tr>
+                              <th scope="col">{{"clean_data.city_ar" | translate}}</th>
+                              <td>{{ address.CityNameAr }}</td>
+                              <th scope="col">{{"clean_data.city_en" | translate}}</th>
+                              <td>{{ address.CityNameEn }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.street_ar" | translate}}</th>
+                              <td>{{ address.StreetNameAr }}</td>
+                              <th scope="col">{{"clean_data.street_en" | translate}}</th>
+                              <td>{{ address.StreetNameEn }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.district_ar" | translate}}</th>
+                              <td>{{ address.DistrictAreaAr }}</td>
+                              <th scope="col">{{"clean_data.district_en" | translate}}</th>
+                              <td>{{ address.DistrictAreaEn }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.unit_no" | translate}}</th>
+                              <td>{{ address.UnitNo }}</td>
+                              <th scope="col">{{"clean_data.zip_code" | translate}}</th>
+                              <td>{{ address.ZipCode }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">{{"clean_data.building_no" | translate}}</th>
+                              <td>{{ address.BuildingNo }}</td>
+                              <th scope="col">{{"clean_data.additional_no" | translate}}</th>
+                              <td>{{ address.AdditionalNo }}</td>
+                            </tr>
+                          </thead>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+              </ng-container>
+
+              <!-- Address manual block ... -->
+              <ng-container *ngIf="addressManualDisplay">
+                <h6 class="basic_title">{{"clean_data.address"|translate}}</h6>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="alert alert-info text-center">
+                        <strong>{{"clean_data.address_not_found"|translate}} <a target="blanck" href="https://accounts.splonline.com.sa/ar/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dextrdopravov2%26redirect_uri%3Dhttps%253A%252F%252Feservices.splonline.com.sa%252Fsignin-oidc%26response_type%3Dcode%2520id_token%26scope%3Dopenid%2520email%2520profile%2520offline_access%2520baridi_apis%2520portal_services_apis%26state%3DOpenIdConnect.AuthenticationProperties%253Dpq5k7QSLvX6mWDclRCKeASvGcceYtOB2115oLmbdH-cigfg5xTorCj4MuT94ifPs3Qrl342tncrckWwfFWvLxzgxx2xTNGxZVEjY2VuIYMzPJXcO_l4OD1vmJp2LKh2UmVaT0veoOdXf0Hw2l95mxP6g5Sh9G6abIlgKRfkC3rnRYe2boR_0pbLnXS6WzddJgG7JcSgiZvGgLgo3eiNUyhnl7LAFZgPYirNIAn4YZ0fnZyll%26response_mode%3Dform_post%26nonce%3D637714725576787611.MDU2ODdlNDktMjA1NS00MjBiLThhN2ItMDFkY2Y4NjcyMmYzMmRmZWU5NDQtODE1Yy00ZTE1LWFhNTctYjg5MTY5NTM3Nzlj%26x-client-SKU%3DID_NET461%26x-client-ver%3D5.3.0.0">{{"clean_data.sobol"|translate}}</a> {{"clean_data.according_to"|translate}} <a target="blanck" href="">{{"clean_data.sobol_instructions"|translate}}</a></strong>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+              
+              <ng-container>
+                <div class="row" style="margin-top: 20px; padding-top: 20px; border-top: solid 1px #EDEDED;">
+                  <div class="col-md-12 text-right">
+                    <button style="width: 20%;" class="btn btn-primary" [disabled]="submitted || form.invalid || addressManualDisplay || errorDisplay" (click)="onSubmit()">{{"clean_data.next"|translate}}</button>
+                  </div>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="widget-body" *ngIf="emailForm">
+        <div class="row">
+          <div class="col-md-12">
+            <ng-container>
+              <div class="state">
+                <h6>{{"clean_data.email_code"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" [(ngModel)]="email_code" class="form-control" />
+              </div>
+              <div *ngIf="email_code_error" class="alert alert-danger">
+                <b>{{"clean_data.code_error"|translate}}</b>
+              </div>
+            </ng-container>
+            <ng-container>
+              <div class="row" style="margin-top: 20px; padding-top: 20px;">
+                <div class="col-md-12 text-right">
+                  <button style="width: 20%;" class="btn btn-primary" [disabled]="submitted" (click)="sendSms()">{{"clean_data.next"|translate}}</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="widget-body" *ngIf="smsForm">
+        <div class="row">
+          <div class="col-md-12">
+            <ng-container>
+              <div class="state">
+                <h6>{{"clean_data.sms_code"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" [(ngModel)]="sms_code" class="form-control" />
+              </div>
+              <div *ngIf="sms_code_error" class="alert alert-danger">
+                <b>{{"clean_data.code_error"|translate}}</b>
+              </div>
+            </ng-container>
+            <ng-container>
+              <div class="row" style="margin-top: 20px; padding-top: 20px;">
+                <div class="col-md-12 text-right">
+                  <button style="width: 20%;" class="btn btn-primary" [disabled]="submitted" (click)="sendSMS_confirm()">{{"clean_data.next"|translate}}</button>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="widget-footer">
+      </div>
+    </div>
+  </div>
+    

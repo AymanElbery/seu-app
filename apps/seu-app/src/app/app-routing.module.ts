@@ -202,6 +202,10 @@ const routes: Routes = [
         loadChildren: './clean_data/clean_data.module#Clean_dataModule'
       },
       {
+        path: 'std-clean-data',
+        loadChildren: './clean_data_std/clean_data_std.module#Clean_data_stdModule'
+      },
+      {
         path: 'committe-confirm',
         loadChildren: './committe_confirm/committe_confirm.module#Committe_confirmModule'
       },
