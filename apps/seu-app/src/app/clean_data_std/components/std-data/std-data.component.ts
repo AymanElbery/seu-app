@@ -50,7 +50,18 @@ export class StdDataComponent implements OnInit, OnDestroy{
   data;
 
   showOtherBirthCity = false;
+  show_emp = false;
   skip_button = false;
+
+  emp_statuses = [
+    {'NAME' : 'موظف', 'VALUE' : 1},
+    {'NAME' : 'غير موظف', 'VALUE' : 0},
+  ];
+
+  emp_types = [
+    {'NAME' : 'حكومي', 'VALUE' : 1},
+    {'NAME' : 'خاص', 'VALUE' : 0},
+  ];
 
   constructor(
     public userService: UserService,
@@ -65,6 +76,9 @@ export class StdDataComponent implements OnInit, OnDestroy{
       'birth_date'    : ['', [Validators.required]],
       'personal_email': ['', [Validators.required, Validators.email]],
       'mobile'        : ['', [Validators.required]],
+      'emp'         : ['', [Validators.required]],
+      'emp_type'        : [''],
+      'work'        : [''],
       'birth_city'    : ['', [Validators.required]],
       'birth_city_other'    : [''],
       'city_ar'    : [''],
@@ -120,6 +134,16 @@ export class StdDataComponent implements OnInit, OnDestroy{
       this.form.get('birth_city_other').setValidators(Validators.required);
     }else{
       this.showOtherBirthCity = false;
+    }
+  }
+
+  changeEmpStatus(value){
+    if(value == 1){
+      this.show_emp = true;
+      this.form.get('emp_type').setValidators(Validators.required);
+      this.form.get('work').setValidators(Validators.required);
+    }else{
+      this.show_emp = false;
     }
   }
 
@@ -184,6 +208,9 @@ export class StdDataComponent implements OnInit, OnDestroy{
       'BIRTH_DATE'      : this.formatDate(formData.birth_date),
       'PERSONAL_EMAIL'  : formData.personal_email,
       'MOBILE'          : formData.mobile,
+      'EMP'             : formData.emp,
+      'EMP_TYPE'        : formData.emp_type,
+      'WORK'            : formData.work,
       'BIRTH_CITY'      : this.showOtherBirthCity ? formData.birth_city_other : formData.birth_city,
       'CITY_AR'         : (this.addressDisplay) ? this.address.CityNameAr : formData.city_ar,
       'CITY_EN'         : (this.addressDisplay) ? this.address.CityNameEn : formData.city_en,

@@ -78,7 +78,45 @@
                 </div>
               </ng-container>
             </div>
-            
+            <div class="col-md-3">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.emp_status"|translate}} <span class="reqstart">*</span></h6>
+                  <ng-select (ngModelChange)="changeEmpStatus($event)" [items]="emp_statuses" bindLabel="NAME" bindValue="VALUE" formControlName="emp"></ng-select>
+                </div>
+                <div *ngIf="form.controls.emp.invalid && (form.controls.emp.dirty || form.controls.emp.touched)">
+                    <div *ngIf="form.controls.emp.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-3" *ngIf="show_emp">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.emp_type"|translate}} <span class="reqstart">*</span></h6>
+                  <ng-select [items]="emp_types" bindLabel="NAME" bindValue="VALUE" formControlName="emp_type"></ng-select>
+                </div>
+                <div *ngIf="form.controls.emp_type.invalid && (form.controls.emp_type.dirty || form.controls.emp_type.touched)">
+                    <div *ngIf="form.controls.emp_type.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
+            <div class="col-md-6" *ngIf="show_emp">
+              <ng-container>
+                <div class="state">
+                  <h6>{{"clean_data.work"|translate}} <span class="reqstart">*</span></h6>
+                  <input type="text" formControlName="work" class="form-control" />
+                </div>
+                <div *ngIf="form.controls.work.invalid && (form.controls.work.dirty || form.controls.work.touched)">
+                    <div *ngIf="form.controls.work.errors.required">
+                        <b style="position: relative; left: -10px;" class="text-danger">{{"clean_data.required"|translate}}</b>
+                    </div>
+                </div>
+              </ng-container>
+            </div>
             <div class="col-md-12">
               <!-- Error block ... -->
               <ng-container *ngIf="errorDisplay">
