@@ -13,12 +13,14 @@ import { MasterRefundComponent } from './master-refund/master-refund.component';
 import { RefundRequestComponent } from './master-refund/dialog/refund-request.component';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import{SeucommonModule} from '../seucommon/seucommon.module';
-
-
-
+import { StudentInvoicesComponent } from './student-invoices/student-invoices.component';
 @NgModule({
-  declarations: [MasterPaymentComponent, MasterRefundComponent,RefundRequestComponent],
-
+  declarations: [
+    MasterPaymentComponent, 
+    MasterRefundComponent,
+    RefundRequestComponent,
+    StudentInvoicesComponent
+  ],
   imports: [
     CommonModule,
     MasterFinanceAffairRoutingModule,

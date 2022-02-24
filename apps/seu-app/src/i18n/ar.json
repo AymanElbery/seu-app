@@ -2,6 +2,7 @@
 {
     "app.name": "SEU",
     "general": {
+        "term_code": "الفصل الدراسى",
         "print": "طباعة",
         "note": "ملحوظة",
         "delete_confirm": "هل انت متأكد؟",

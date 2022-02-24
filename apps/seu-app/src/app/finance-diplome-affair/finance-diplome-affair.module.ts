@@ -9,10 +9,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
 import { StudentDiplomePaymentComponent } from './student-diplome-payment/student-diplome-payment.component';
+import { StudentInvoicesComponent } from './student-invoices/student-invoices.component';
 
 @NgModule({
   declarations: [
-    StudentDiplomePaymentComponent
+    StudentDiplomePaymentComponent,
+    StudentInvoicesComponent
   ],
   imports: [
     CommonModule,

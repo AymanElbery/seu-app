@@ -16,7 +16,6 @@ export class WithdrawFromUnivService {
   }
 
   getِgetRequests() {
-    //?std_id=S120000101
     this.configService.baseUrl = environment.ud;
 
     return this.httRequest.GetRequest('withdraw_service').toPromise();
