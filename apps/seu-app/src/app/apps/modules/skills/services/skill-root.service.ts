@@ -49,9 +49,9 @@ export class SkillsRootService {
         }).pipe(
             map((res: any) => {
                 if (!res.status && (res.res_code == "invalid_user" || res.res_code == "invalid_session")) {
-                    console.log("INVALID", this.URL + url, res);
+                    //console.log("INVALID", this.URL + url, res);
 
-                    // /this.config.relogin();
+                    this.config.relogin();
                 } else {
                     return res;
                 }
@@ -96,11 +96,17 @@ export class SkillsRootService {
     printCerts(c_id, std_id, rate) {
         return this.get("certs/cert/" + c_id + '/' + std_id + '/' + (rate ? 1 : 0));
     }
-    downloadPDF(response) {
+    printAttend(c_id, std_id) {
+        return this.get("std/courses/attend_cert/" + c_id + '/' + std_id);
+    }
+    printAttendAdmin(c_id, std_id) {
+        return this.get("emp/courses/attend_cert/" + c_id + '/' + std_id);
+    }
+    downloadPDF(response, file_name ="certificate.pdf") {
         if (response['status']) {
             const linkSource = `data:application/pdf;base64,${response['data']['content']}`;
             const downloadLink = document.createElement("a");
-            const fileName = "cert.pdf";
+            const fileName = file_name;
 
             downloadLink.href = linkSource;
             downloadLink.download = fileName;

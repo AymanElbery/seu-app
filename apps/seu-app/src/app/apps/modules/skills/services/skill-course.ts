@@ -26,6 +26,10 @@ export class SkillsCourseService extends SkillsRootService {
         return this.get("emp/courses/list/" + (active ? 1 : 0));
     }
 
+    getAllCompletedSkills(){
+        return this.get("emp/courses/skills")
+    }
+
     getCampus() {
         return this.get("lookups/campus");
     }
@@ -52,6 +56,10 @@ export class SkillsCourseService extends SkillsRootService {
 
     getCourseStudents(id) {
         return this.post("emp/courses/get_course_students", id);
+    }
+
+    getCoursesStudents(excel) {
+        return this.get("emp/courses/get_courses_students/" + excel);
     }
 
     getCourseAppointments(id) {

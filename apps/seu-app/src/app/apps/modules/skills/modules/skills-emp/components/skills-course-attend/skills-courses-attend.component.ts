@@ -47,28 +47,30 @@ export class SkillsCoursesAttendComponent implements OnInit {
     );
   }
 
-  loadings = {};
-  isdownloaing = false;
-  print_attend(lect_id, std_id) {
-    if (this.isdownloaing) {
-      return false;
-    }
-    this.isdownloaing = true;
-    if (!this.loadings[lect_id]) {
-      this.loadings[lect_id] = [];
-    }
-    this.loadings[lect_id][std_id] = true;
-    this.skillsCourseService.printAttendByLect(lect_id, std_id).subscribe(response => {
-      this.skillsCourseService.downloadPDF(response);
-      this.loadings[lect_id][std_id] = false;
-      this.isdownloaing = false;
+  loadingsAtt = {};
+  isdownloaingAtt = false;
+
+  printAttend(std_id) {
+    let crse_id = this.course_id;
+    this.isdownloaingAtt = true;
+    this.loadingsAtt[crse_id] = true;
+    this.skillsCourseService.printAttendAdmin(crse_id,std_id).subscribe(response => {
+      
+      if (response['status'] == false && response['res_code'] == 'no_attending') {
+        this.skillsCourseService.notifyError('must_attend_course');
+        this.loadingsAtt[crse_id] = false;
+        this.isdownloaingAtt = false;
+        return false;
+      }
+      this.skillsCourseService.downloadPDF(response, "attend_certificate.pdf");
+      this.loadingsAtt[crse_id] = false;
+      this.isdownloaingAtt = false;
     }, err => {
       this.skillsCourseService.tryagain();
-      this.loadings[lect_id][std_id] = false;
-      this.isdownloaing = false;
+      this.loadingsAtt[crse_id] = false;
+      this.isdownloaingAtt = false;
+
     });
     return false;
   }
-
-
 }

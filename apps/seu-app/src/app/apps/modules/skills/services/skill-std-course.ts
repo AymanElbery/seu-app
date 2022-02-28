@@ -28,6 +28,13 @@ export class StudentCoursesService extends SkillsRootService {
     mycourses() {
         return this.get("std/courses/mycourses");
     }
+    myskillsclassifications(print = 0) {
+        return this.get("std/courses/myclassifications/" + print);
+    }
+    
+    myskillscourses() {
+        return this.get("std/courses/myskillscourses");
+    }
     getCourseDetails(id) {
         return this.get("std/courses/details/" + id);
     }

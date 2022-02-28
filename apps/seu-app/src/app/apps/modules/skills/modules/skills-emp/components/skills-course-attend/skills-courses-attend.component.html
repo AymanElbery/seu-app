@@ -9,7 +9,7 @@
                             <th scope="col">#</th>
                             <th scope="col">{{ 'courses.std_no' | translate }}</th>
                             <th scope="col">{{ 'courses.std_name' | translate }}</th>
-                            <th *ngFor="let lec of appointments">{{lec.TITLE}}</th>
+                            <th>{{ 'courses.attends' | translate }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -17,23 +17,15 @@
                             <td>{{ i+1 }}</td>
                             <td>{{ stdLec.key }}</td>
                             <td>{{ stdLec.key | getStdName: students }}</td>
-                            <td *ngFor="let item of stdLec.value | keyvalue">
-                                <span class="attend" *ngIf="item.value == 1">{{ 'courses.attend' | translate }}</span>
-                                <a *ngIf="item.value == 1" (click)="print_attend(item.key ,stdLec.key)" class="btn btn-primary"
-                                    href="#">
+                            <td>
+                                <a (click)="printAttend(stdLec.key)"
+                                    class="btn btn-primary" href="#">
                                     <span class="ik ik-printer"></span>
-                                    <span *ngIf="loadings[item.key] && loadings[item.key][stdLec.key]">
-                                        {{"general.loading" | translate}}
+                                    {{"general.attend" | translate}}
+                                    <span *ngIf="stdLec[key]">
+                                    {{"general.loading" | translate}}
                                     </span>
                                 </a>
-
-
-
-
-                                <span class="not-attend"
-                                    *ngIf="item.value == 0">{{ 'courses.not_attend' | translate }}</span>
-                                <span class="not-attend-yet"
-                                    *ngIf="item.value == 'n'">{{ 'courses.not_attend_yet' | translate }}</span>
                             </td>
                         </tr>
                     </tbody>

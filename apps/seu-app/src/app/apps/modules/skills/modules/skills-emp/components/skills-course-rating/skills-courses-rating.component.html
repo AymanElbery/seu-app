@@ -18,12 +18,12 @@
                     <tbody>
                         <tr *ngFor="let question of questions; let i = index">
                             <td>{{ i+1 }}</td>
-                            <td>{{ question.QUESTION_AR }}</td>
+                            <td>{{ question.QUESTION_AR }} {{question.ID}}</td>
                             <td>{{ ratings[question.ID][5] | ratingPipe }}</td>
                             <td>{{ ratings[question.ID][4] | ratingPipe }}</td>
                             <td>{{ ratings[question.ID][3] | ratingPipe }}</td>
                             <td>{{ ratings[question.ID][2] | ratingPipe }}</td>
-                            <td>{{ ratings[question.ID][1] | ratingPipe }}</td>
+                            <td>{{ ratings[question.ID][1] | ratingPipe }}</td> 
                         </tr>
                     </tbody>
                 </table>

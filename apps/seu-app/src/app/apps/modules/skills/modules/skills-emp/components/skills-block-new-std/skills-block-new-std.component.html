@@ -1,0 +1,57 @@
+<app-service-header title="{{'skills' | translate}}" subtitle="{{'menu.block-users' | translate}}"></app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap ug-content" style="margin-top: 30px; padding: 0 30px;">
+    <form role="form" [formGroup]="AddUserForm">
+        <h3> {{'courses.block_std_user' | translate}} </h3>
+        <ng-container *ngIf="!isLoading">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="state">
+                        <h6>{{"courses.std_no"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="STD_ID" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddUserForm.controls.STD_ID.invalid && (AddUserForm.controls.STD_ID.dirty || AddUserForm.controls.STD_ID.touched)">
+                        <div *ngIf="AddUserForm.controls.STD_ID.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="col-md-6">
+                    <div class="state">
+                        <h6>{{"courses.block_start_date"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="START_DATE" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddUserForm.controls.START_DATE.invalid && (AddUserForm.controls.START_DATE.dirty || AddUserForm.controls.START_DATE.touched)">
+                        <div *ngIf="AddUserForm.controls.START_DATE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="state">
+                        <h6>{{"courses.block_end_date"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="END_DATE" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddUserForm.controls.END_DATE.invalid && (AddUserForm.controls.END_DATE.dirty || AddUserForm.controls.END_DATE.touched)">
+                        <div *ngIf="AddUserForm.controls.END_DATE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <div class="row" style="margin-top: 50px; text-align: center;">
+            <div class="col-md-12">
+                <button style="width: 30%;" [disabled]="submitted || AddUserForm.invalid" (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "general.save" | translate}} <i class="fa fa-save"></i></button>
+            </div>
+        </div>
+    </form>
+</section>

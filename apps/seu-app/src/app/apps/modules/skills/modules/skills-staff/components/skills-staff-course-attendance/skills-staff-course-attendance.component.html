@@ -35,13 +35,20 @@
         </div>
 
         <div *ngIf="currentLec">
-          <h3>{{currentLec['TITLE']}}</h3>
+          <h3 style="padding-right: 10px;">{{currentLec['TITLE']}}</h3>
           <table class="table table-striped table-bordered" style="font-size: 0.9em;">
             <thead>
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">{{"staff.student_name" | translate}}</th>
-                <th scope="col"><input type="checkbox" (change)="check($event.target.checked)" /></th>
+                <th scope="col">
+                  <p>
+                    {{"staff.attend_absent" | translate}}
+                    (<img width="25" src="/assets/images/skills-attend.png"> {{"staff.attend" | translate}}
+                    <img width="25" src="/assets/images/skills-absent.png"> {{"staff.absent" | translate}})
+                  </p>
+                  <input type="checkbox" (change)="check($event.target.checked)" />
+                </th>
               </tr>
             </thead>
             <tbody>

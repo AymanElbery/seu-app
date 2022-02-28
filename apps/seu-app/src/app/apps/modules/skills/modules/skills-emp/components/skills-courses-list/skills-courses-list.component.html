@@ -2,7 +2,12 @@
 </app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
-    <div class="row">
+    <div class="row" style="margin-top: 2px;">
+        <div class="col-md-12">
+          <input class="form-control" [(ngModel)]="filter_text" type="text" placeholder="{{'courses.filter_courses' | translate}}">
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
         <div class="col-md-12">
             <div class="widget" *ngIf="!isLoading">
                 <div class="widget-header">
@@ -32,7 +37,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let course of courses; let i = index">
+                            <tr *ngFor="let course of courses | filter : filter_text; let i = index">
                                 <td>{{i+1}}</td>
                                 <td>{{course.TITLE_AR}}</td>
                                 <td>

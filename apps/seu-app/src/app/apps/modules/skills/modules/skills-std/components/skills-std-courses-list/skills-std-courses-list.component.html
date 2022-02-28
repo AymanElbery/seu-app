@@ -2,6 +2,13 @@
 </app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row" *ngIf="checkBlock">
+    <div class="col-md-12">
+      <div class="alert alert-danger text-center" style="font-weight: bold;">
+        {{"courses.you_are_blocked_from" | translate}} {{ block_record.START_DATE }} {{"courses.you_are_blocked_to" | translate}} {{ block_record.END_DATE }}
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-12">
       <div class="widget" *ngIf="!isLoading">
@@ -108,4 +115,5 @@
       </div>
     </div>
   </div>
+  
 </section>

@@ -11,6 +11,7 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 })
 export class SkillsCoursesListComponent implements OnInit {
 
+  filter_text;
   courses;
   isLoading;
   listActive = true;

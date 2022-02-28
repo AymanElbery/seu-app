@@ -16,11 +16,11 @@ import { DatePipe } from '@angular/common';
   providers: [DatePipe]
 })
 export class SkillsCoursesAppointmentsComponent implements OnInit {
-  
+
   datePickerConfig: Partial<BsDatepickerConfig>;
   isLoading = false;
   submitted = false;
-  AddCourseAppointmentsForm : FormGroup;
+  AddCourseAppointmentsForm: FormGroup;
 
   course_id;
   course_title;
@@ -44,21 +44,22 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
     this.course_id = this.route.snapshot.params['id'];
     this.getCourseById(this.course_id);
     this.getCourseAppointments(this.course_id);
-    
+
     this.AddCourseAppointmentsForm = this.fb.group({
       'TITLE': ['', [Validators.required]],
       'ACTUAL_DATE': ['', [Validators.required]],
     });
 
+    this.datePickerConfig = { dateInputFormat: 'DD-MM-YYYY', showWeekNumbers: false };
   }
 
   ngOnInit() {
-    
+
   }
 
-  getCourseById(id){
+  getCourseById(id) {
     let data = {
-      'ID'      : id,
+      'ID': id,
     };
     this.skillsCourseService.getCourseById(data).subscribe(
       (response: any) => {
@@ -74,51 +75,67 @@ export class SkillsCoursesAppointmentsComponent implements OnInit {
     );
   }
 
-  getCourseAppointments(id){
+  getCourseAppointments(id) {
     let data = {
-      'ID'      : id,
+      'ID': id,
     };
     this.skillsCourseService.getCourseAppointments(data).subscribe(
       (response: any) => {
         if (response) {
           this.appointments = response.data;
-          this.appointments.forEach(element => {
-            element.ACTUAL_DATE = this.formatDisplayDate(element.ACTUAL_DATE);
-          });
+          // this.appointments.forEach(element => {
+          //   element.ACTUAL_DATE = this.formatDisplayDate(element.ACTUAL_DATE);
+          // });
           this.isLoading = false;
         }
       }
     );
   }
 
-  formatDatepickerDate(date){
-    let dateArr = date.split("-");
-    let months = {
-      'AUG' : '08',
-      'SEP' : '09',
-      'OCT' : '10',
-      'NOV' : '11',
-      'DEC' : '12',
-    };
-    let dateStr = dateArr[2]+"20"+"-"+months[dateArr[1]]+"-"+dateArr[0];
-    return dateStr;
+  formatDatepickerDate(date) {
+    return date;
+    // let dateArr = date.split("-");
+    // let months = {
+    //   'JAN' : '01',
+    //   'FEB' : '02',
+    //   'MAR' : '03',
+    //   'APR' : '04',
+    //   'MAY' : '05',
+    //   'JUN' : '06',
+    //   'JUL' : '07',
+    //   'AUG' : '08',
+    //   'SEP' : '09',
+    //   'OCT' : '10',
+    //   'NOV' : '11',
+    //   'DEC' : '12',
+    // };
+    // let dateStr = dateArr[2]+"20"+"-"+months[dateArr[1]]+"-"+dateArr[0];
+    // return dateStr;
   }
 
-  formatDisplayDate(date){
-    let dateArr = date.split("-");
-    let months = {
-      'AUG' : 'أغسطس',
-      'SEP' : 'سبتمبر',
-      'OCT' : 'أكتوبر',
-      'NOV' : 'نوفمبر',
-      'DEC' : 'ديسيمبر',
-    };
-    return dateArr[0]+" "+months[dateArr[1]]+" "+dateArr[2]+"20";
+  formatDisplayDate(date) {
+    return date;
+    // let dateArr = date.split("-");
+    // let months = {
+    //   'JAN' : 'يناير',
+    //   'FEB' : 'فبراير',
+    //   'MAR' : 'مارس',
+    //   'APR' : 'أبريل',
+    //   'MAY' : 'مايو',
+    //   'JUN' : 'يونيو',
+    //   'JUL' : 'يوليو',
+    //   'AUG' : 'أغسطس',
+    //   'SEP' : 'سبتمبر',
+    //   'OCT' : 'أكتوبر',
+    //   'NOV' : 'نوفمبر',
+    //   'DEC' : 'ديسيمبر',
+    // };
+    // return dateArr[0]+" "+months[dateArr[1]]+" 20"+dateArr[2];
   }
 
-  delete(id){
+  delete(id) {
     let data = {
-      'ID'      : id,
+      'ID': id,
     };
     if (confirm(this.translate.instant('courses.delete_confirm'))) {
       this.isLoading = true;

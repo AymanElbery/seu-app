@@ -82,15 +82,16 @@ export class SkillsCoursesStdComponent implements OnInit {
   }
 
   formatDisplayDate(date) {
-    let dateArr = date.split("-");
-    let months = {
-      'AUG': 'أغسطس',
-      'SEP': 'سبتمبر',
-      'OCT': 'أكتوبر',
-      'NOV': 'نوفمبر',
-      'DEC': 'ديسيمبر',
-    };
-    return dateArr[0] + " " + months[dateArr[1]] + " " + dateArr[2] + "20";
+    return date;
+    // let dateArr = date.split("-");
+    // let months = {
+    //   'AUG': 'أغسطس',
+    //   'SEP': 'سبتمبر',
+    //   'OCT': 'أكتوبر',
+    //   'NOV': 'نوفمبر',
+    //   'DEC': 'ديسيمبر',
+    // };
+    // return dateArr[0] + " " + months[dateArr[1]] + " " + dateArr[2] + "20";
   }
 
   changeStatus(id, status) {

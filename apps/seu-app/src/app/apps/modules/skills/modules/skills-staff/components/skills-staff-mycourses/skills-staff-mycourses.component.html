@@ -2,7 +2,12 @@
 </app-service-header>
 <seu-loader [isLoading]="isLoading"></seu-loader>
 <section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
-  <div class="row">
+  <div class="row" style="margin-top: 2px;">
+    <div class="col-md-12">
+      <input class="form-control" [(ngModel)]="filter_text" type="text" placeholder="{{'courses.filter_std' | translate}}">
+    </div>
+  </div>
+  <div class="row" style="margin-top: 20px;">
     <div class="col-md-12">
       <div class="widget">
 
@@ -25,15 +30,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let course of coursesList; let i = index">
+              <tr *ngFor="let course of coursesList | filter : filter_text; let i = index">
                 <td>{{i+1}}</td>
                 <td>{{course['TITLE'+coursesService.langPrefix]}}</td>
                 <td>
                   <span *ngIf="course.CERT_TYPE == 'c'">{{"courses.cert_course" | translate}}</span>
                   <span *ngIf="course.CERT_TYPE == 'w'">{{"courses.cert_work" | translate}}</span>
                 </td>
-                <td>{{course['START_DATE'] | date : 'yyyy-MM-dd'}}</td>
-                <td>{{course['END_DATE'] | date : 'yyyy-MM-dd'}}</td>
+                <td>{{course['START_DATE'] }}</td>
+                <td>{{course['END_DATE'] }}</td>
                 <td>{{ "statuses."+course['STATUS'] | translate}}</td>
                 <td>
                   <button (click)="details(course.ID)"

@@ -1,0 +1,29 @@
+<app-service-header title="{{'skills' | translate}}" subtitle="{{'menu.settings' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section *ngIf="!isLoading" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">{{"settings.title" | translate}}</th>
+                            <th style="width: 250px !important;" scope="col">{{"courses.actions" | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let setting of settings; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{setting.SET_TITLE}}</td>
+                            <td>
+                                <button (click)="edit(setting.SET_KEY)" class="btn btn-primary">{{"general.edit" | translate}} <i class="fa fa-edit"></i></button> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

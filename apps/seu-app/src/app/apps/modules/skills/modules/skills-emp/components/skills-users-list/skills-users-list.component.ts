@@ -58,6 +58,19 @@ export class SkillsUsersListComponent implements OnInit {
     )
   }
 
+
+  deleteUser(id) {
+    this.isLoading = true;
+    this.skillsUserService.deleteUser(id, this.instuctors).subscribe(
+      (response: any) => {
+        if (response) {
+          this.getAllUsers();
+        }
+      },
+      error => { }
+    )
+  }
+
   activeUser(id) {
     this.isLoading = true;
     this.skillsUserService.activeUser(id, this.instuctors).subscribe(

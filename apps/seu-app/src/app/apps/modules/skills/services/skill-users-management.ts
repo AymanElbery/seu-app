@@ -37,9 +37,16 @@ export class SkillsUsersManagementService extends SkillsRootService {
         return this.post("emp/users/update", { 'USER_ID': id, 'ACTIVE': 0 });
     }
 
+    deleteUser(id, instructors = false) {
+        if (instructors) {
+            return this.post("emp/instructors/delete", { 'USER_ID': id, 'ACTIVE': 0 , 'DELETED': 1});
+        }
+        return this.post("emp/users/delete", { 'USER_ID': id, 'ACTIVE': 0 ,'DELETED': 1});
+    }
+
     activeUser(id, instructors) {
         if (instructors) {
-            return this.post("emp/instructor/update", { 'USER_ID': id, 'ACTIVE': 0 });
+            return this.post("emp/instructors/update", { 'USER_ID': id, 'ACTIVE': 1 });
         }
         return this.post("emp/users/update", { 'USER_ID': id, 'ACTIVE': 1 });
     }
@@ -56,6 +63,23 @@ export class SkillsUsersManagementService extends SkillsRootService {
             return this.post("emp/instructors/add", data);
         }
         return this.post("emp/users/add", data);
+    }
+
+    stdClassifications(std_id, print = 0) {
+        return this.get("emp/courses/std_classifications/" + std_id + "/" + print);
+    }
+
+    blockNewUser(data) {
+        return this.post("emp/users/block_new_std" , data );
+    }
+
+    removeUserFromBlock(id) {
+        let data = {'id' : id};
+        return this.post("emp/users/remove_from_block_list" , data );
+    }
+
+    getBlockedStudents(){
+        return this.get("emp/users/list_blocked");
     }
 }
 

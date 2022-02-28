@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentCoursesService } from '../../../../services/skill-std-course';
+import { SkillsUserService } from '../../../../services/skill-user';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 
@@ -12,10 +13,16 @@ export class SkillsStdCoursesListComponent implements OnInit {
 
   coursesList = [];
   isLoading = false;
+  checkBlock;
+  block_record;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private coursesService: StudentCoursesService) { }
+    private coursesService: StudentCoursesService,
+    private userService: SkillsUserService,
+    ) { 
+        
+    }
 
   ngOnInit() {
     this.getCourses();
@@ -29,7 +36,9 @@ export class SkillsStdCoursesListComponent implements OnInit {
   getCourses() {
     this.isLoading = true;
     this.coursesService.getAllCourses().subscribe((response) => {
-      this.coursesList = response['data'];
+      this.coursesList = response['data']['courses'];
+      this.checkBlock = response['data']['checkBlock'];
+      this.block_record = response['data']['block_record'];
       this.isLoading = false;
     });
   }
