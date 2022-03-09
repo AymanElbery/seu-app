@@ -11,11 +11,16 @@ import { SeucommonModule } from '../seucommon/seucommon.module';
 import { ExamDiplomeExcuseComponent } from './exam-excuse/exam-diplome-excuse.component';
 import { AddExamDiplomeExcuseComponent } from './exam-excuse/diag/add-exam-diplome-excuse/add-exam-diplome-excuse.component';
 import { ExamDiplomeExcuseService } from './services/exam-excuse.service';
-
+import { ExamAttendanceService } from './services/exam-attendance.service';
+import { ExamsAttendAppService } from './services/exams-attend-app.service';
+import { ExamsDiplomeAttendStatComponent } from './exams-attend-stat/exams-attend-stat.component';
+import { ExamsDiplomeAttendAppComponent } from './exams-attend-app/exams-attend-app.component';
 @NgModule({
   declarations: [
     ExamDiplomeExcuseComponent,
     AddExamDiplomeExcuseComponent,
+    ExamsDiplomeAttendStatComponent,
+    ExamsDiplomeAttendAppComponent,
   ],
   entryComponents: [
     AddExamDiplomeExcuseComponent,
@@ -32,6 +37,8 @@ import { ExamDiplomeExcuseService } from './services/exam-excuse.service';
   ],
   providers: [
     ExamDiplomeExcuseService,
+    ExamAttendanceService,
+    ExamsAttendAppService,
   ]
 })
 export class ExamsDiplomeAffairModule { }
