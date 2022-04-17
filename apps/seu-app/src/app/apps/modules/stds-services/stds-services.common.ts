@@ -37,6 +37,10 @@ export const routes: Routes = [
             {
                 path: 'reenroll',
                 loadChildren: './modules/reenroll/reenroll.module#ReenrollModule',
+            },
+            {
+                path: 'refund',
+                loadChildren: './modules/refund/refund.module#RefundModule',
             }
         ]
     }

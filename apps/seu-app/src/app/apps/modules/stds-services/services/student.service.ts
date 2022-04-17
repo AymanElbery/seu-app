@@ -28,6 +28,11 @@ export class StudentService extends AppUserRootService {
             return (this.LoggedInUser['LEVEL_CODE'] == 'GR' ); //&& this.LoggedInUser['STD_STATUS_CODE'] == 'IG'
         return false;
     }
+    get have_refund_permession() {
+        if (this.isLoggedIn)
+            return (this.LoggedInUser['STD_STATUS_CODE'] == 'AS' ); //&& this.LoggedInUser['STD_STATUS_CODE'] == 'IG'
+        return false;
+    }
     get fullName() {
         if (this.isLoggedIn)
             return this.LoggedInUser['FULL_NAME_AR'];

@@ -26,7 +26,8 @@ export class ServicesAutoLoginComponent implements OnInit {
     this.form = fb.group({
       'std_id': ['', [Validators.required, Validators.minLength(9), Validators.minLength(9)]],
       'ssn': ['', [Validators.required, Validators.minLength(10), Validators.minLength(10)]],
-      'captcha': ['', [Validators.required]]
+      // 'captcha': ['', [Validators.required]]
+      'captcha': ['']
     });
     this.environment = environment;
   }

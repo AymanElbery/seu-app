@@ -1,0 +1,61 @@
+<mat-dialog-content dir="rtl">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!-- if -->
+                <div *ngIf="!conditions" class="modal-header">
+                    <h5 class="modal-title">{{"refund.conditions"|translate}}</h5>
+                </div>
+                <div *ngIf="!conditions" class="modal-body">
+                    <section class="ser-state">
+                        <div class="container">
+                            <div class="row ser-block">
+                                <div class="col-md-12">
+                                    <ol class="list-group">
+                                        <li class="li-list">{{"refund.condition_1"|translate}}</li>
+                                        <li class="li-list">{{"refund.condition_2"|translate}}</li>
+                                        <li class="li-list">{{"refund.condition_3"|translate}}</li>
+                                        <li class="li-list">{{"refund.condition_4"|translate}}</li>
+                                        <li class="li-list">{{"refund.condition_5"|translate}}</li>
+                                        <li class="li-list">{{"refund.condition_6"|translate}}</li>
+                                        <li class="li-list">{{"refund.condition_7"|translate}}</li>
+                                        <li class="li-list">{{"refund.condition_8"|translate}}</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div *ngIf="!conditions" class="modal-footer">
+                    <button (click)="agree_conditions()" type="button" class="btn btn-dark"><i class="fas fa-check-circle"></i>
+                        {{"refund.agree"|translate}}</button>
+                </div>
+            <!-- else -->
+            <form *ngIf="conditions" role="form" [formGroup]="add_request_form" autocomplete="off">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{"refund.add_refund_request"|translate}}</h5>
+                </div>
+                <div class="modal-body">
+                    <section class="ser-state">
+                        <div class="container">
+                            <div class="row ser-block">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="state">
+                                        <h6>{{"refund.case"|translate}}<span class="reqstart">*</span></h6>
+                                        <ng-select (change)="change_cases($event.value)" [items]="cases" bindLabel="title" bindValue="value" formControlName="CASE">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+                        {{"refund.cancel"|translate}}</button>
+                    <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+                        {{"refund.save"|translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-dialog-content>

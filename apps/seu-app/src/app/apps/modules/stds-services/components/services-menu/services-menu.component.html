@@ -36,6 +36,12 @@
             <img _ngcontent-rbd-c3="" src="../../assets/images/cop2.png">
           </a>
         </div>
+        <div *ngIf="have_refund_permession" [ngClass]="{'active': current == 'refund'}" class="nav-item">
+          <a href="#" routerLink="/apps/stds-services/refund" (click)="redirectTo('refund')">
+            <span>{{ "menu.refund" | translate }} </span>
+            <img _ngcontent-rbd-c3="" src="../../assets/images/cop2.png">
+          </a>
+        </div>
         <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
           <a href="#" class="menu-item" (click)="logout()">
             <span> {{'logout' | translate}} </span>

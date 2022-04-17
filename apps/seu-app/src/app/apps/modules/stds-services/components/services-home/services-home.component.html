@@ -4,41 +4,53 @@
   <section class="ug-content">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <h3> {{'general.services' | translate}} </h3>
-          <!-- <p> {{'desc' | translate}} </p> -->
           <seu-loader [isLoading]="isLoading"></seu-loader>
           <ng-container *ngIf="!isLoading">
-            <div class="d-flex justify-content-between block">
-              <a routerLink="/apps/stds-services/appointments">
-                <div class="d-flex ">
-                  <div class="">
-                    <h4><img src="../../assets/images/admit.png"></h4>
+            <div class="row d-flex justify-content-between block">
+              <div class="col-md-3">
+                <a routerLink="/apps/stds-services/appointments" style="display: block; width: 100%">
+                  <div class="card card-service">
+                    <div class="card-body">
+                      <h2 class="card-title text-light">{{'menu.appointments' | translate}}</h2>
+                      <p class="card-text">{{'menu.appointments_desc' | translate}}</p>
+                    </div>
                   </div>
-                  <div class="text"> <span>{{'menu.appointments' | translate}}</span></div>
-                </div>
-              </a>
-              <a *ngIf="have_docs_permession" routerLink="/apps/stds-services/docs">
-                <div class="d-flex ">
-                  <div class="">
-                    <h4><img src="../../assets/images/admit.png"></h4>
+                </a>
+              </div>
+              <div *ngIf="have_docs_permession" class="col-md-3">
+                <a routerLink="/apps/stds-services/docs" style="display: block; width: 100%">
+                  <div class="card card-service">
+                    <div class="card-body">
+                      <h2 class="card-title text-light">{{'menu.print_docuemnts' | translate}}</h2>
+                    <p class="card-text">{{'menu.print_docuemnts_desc' | translate}}</p>
+                    </div>
                   </div>
-                  <div class="text"> <span>{{'menu.print_docuemnts' | translate}}</span></div>
-                </div>
-              </a>
-              <a *ngIf="have_reenroll_permession" routerLink="/apps/stds-services/reenroll">
-                <div class="d-flex ">
-                  <div class="">
-                    <h4><img src="../../assets/images/admit.png"></h4>
+                </a>
+              </div>
+              <div *ngIf="have_reenroll_permession" class="col-md-3">
+                <a routerLink="/apps/stds-services/reenroll" style="display: block; width: 100%">
+                  <div class="card card-service">
+                    <div class="card-body">
+                      <h2 class="card-title text-light">{{'menu.reenroll' | translate}}</h2>
+                      <p class="card-text">{{'menu.reenroll_desc' | translate}}</p>
+                    </div>
                   </div>
-                  <div class="text"> <span>{{'menu.reenroll' | translate}}</span></div>
-                </div>
-              </a>
+                </a>
+              </div>
+              <div *ngIf="have_refund_permession" class="col-md-3">
+                <a routerLink="/apps/stds-services/refund" style="display: block; width: 100%">
+                  <div class="card card-service">
+                    <div class="card-body">
+                      <h2 class="card-title text-light">{{'menu.refund' | translate}}</h2>
+                      <p class="card-text">{{'menu.refund_desc' | translate}}</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
           </ng-container>
-        </div>
-        <div class="col-md-6">
-          <img src="../../assets/images/home-img.png" class="img-fluid">
         </div>
       </div>
     </div>
