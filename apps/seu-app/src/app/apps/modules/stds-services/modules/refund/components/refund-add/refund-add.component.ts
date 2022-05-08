@@ -87,7 +87,15 @@ export class RefundAddComponent implements OnInit {
     }
   
     change_cases(value){
-        console.log(value);
+        if(value == 'CHAR' || value == 'AMAL'){
+            if(!this.can_add_new_req_for_CHAR_and_AMAL){
+
+            }else{
+
+            }
+        }else{
+
+        }
     }
 
     closeDiag() {

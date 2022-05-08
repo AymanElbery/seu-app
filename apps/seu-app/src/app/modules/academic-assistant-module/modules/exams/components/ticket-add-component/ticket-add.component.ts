@@ -58,7 +58,7 @@ export class SDExamsFormComponent implements OnInit {
                     } else {
                         this.toastr.push([{
                             'type': 'error',
-                            'body': this.translate.instant(response['res_code'])
+                            'body': this.translate.instant("messages."+response['res_code'])
                         }]);
 
                     }

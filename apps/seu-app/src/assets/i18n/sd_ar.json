@@ -131,6 +131,7 @@
         "request_added": " تم اضافة الطلب بنجاح",
         "request_deleted": "تم حذف الطلب بنجاح",
         "request_reopened": "تم إعادة فتح التذكرة بنجاح",
+        "crse_has_open_rquest": "لديك تذكرة مفتوحة لهذا المقرر مُسبقاً",
         "thanks": "شكراً لك"
     }
 }
