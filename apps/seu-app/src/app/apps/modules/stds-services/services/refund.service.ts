@@ -23,6 +23,10 @@ export class RefundService extends StudentService {
         super(router, globalService, http, translate, toaster)
     }
     
+    get_fee_refund_cases(){
+        return this.get('/stds/refund/get_fee_refund_cases');
+    }
+
     getRequests(){
         return this.get('/stds/refund/requests');
     }

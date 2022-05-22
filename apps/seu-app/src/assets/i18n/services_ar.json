@@ -75,6 +75,7 @@
         "desc": "استرداد الرسوم",
         "refund_request": "طلب استرداد الرسوم",
         "save": "حفظ",
+        "send": "إرسال الطلب",
         "cancel":"إلغاء",
         "pending": "تحت الإجراء",
         "confirm": "تمت الموافقة",
@@ -94,7 +95,12 @@
         "name": "الإسم",
         "col": "الكلية",
         "major": "التخصص",
-        "case": "الحالة"
+        "case": "الحالة",
+        "service_finish_message" : "انتهت الفترة النظامية لاستلام الطلبات",
+        "std_not_pay_message" : "لا يوجد لديك سداد في الفصل الحالي",
+        "std_have_no_balance_message" : "لا يوجد لديك رصيد مستحق",
+        "balance" : "إجمالي الرصيد المستحق"
+
     },
     "appointments": {
         "appointments": "مواعيدي",
