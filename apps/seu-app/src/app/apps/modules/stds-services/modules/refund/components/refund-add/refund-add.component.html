@@ -30,7 +30,7 @@
                     {{"refund.agree"|translate}}</button>
             </div>
             <!-- else -->
-            <form *ngIf="conditions" role="form" [formGroup]="add_request_form" autocomplete="off">
+            <form *ngIf="conditions" role="form" [formGroup]="add_request_form" autocomplete="off" (submit)="onSubmit(form)">
                 <div class="modal-header">
                     <h5 class="modal-title">{{"refund.add_refund_request"|translate}}</h5>
                 </div>
