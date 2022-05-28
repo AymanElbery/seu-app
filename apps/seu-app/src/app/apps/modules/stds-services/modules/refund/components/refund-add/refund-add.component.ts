@@ -90,14 +90,14 @@ export class RefundAddComponent implements OnInit {
         if (this.requesting) {
             return false;
         }
-        this.requesting = true;
-        if (this.reEnroll.has_proof.toString() == "true") {
-        this.reEnroll.has_proof = "1"
-        }
-        else {
-        this.reEnroll.has_proof = "0"
-        }
-        this.addRequest(this.reEnroll);
+        // this.requesting = true;
+        // if (this.reEnroll.has_proof.toString() == "true") {
+        // this.reEnroll.has_proof = "1"
+        // }
+        // else {
+        // this.reEnroll.has_proof = "0"
+        // }
+        // this.addRequest(this.reEnroll);
     }
 
     set_message(key){
