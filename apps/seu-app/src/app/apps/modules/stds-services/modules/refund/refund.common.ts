@@ -16,5 +16,5 @@ export const routes: Routes = [
         component: RefundRequestsComponent,
         canActivate: [STDServicesUSERVerifiedGuard],
         data: {from_component: 'refund'}
-    }
+    } 
 ];

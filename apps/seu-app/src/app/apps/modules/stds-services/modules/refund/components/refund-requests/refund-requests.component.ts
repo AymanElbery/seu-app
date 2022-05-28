@@ -17,7 +17,7 @@ export class RefundRequestsComponent implements OnInit {
   isLoading = false;
   reqData;
   std_id;
-  name;
+  name; 
   col;
   major;
   deleting = false;
