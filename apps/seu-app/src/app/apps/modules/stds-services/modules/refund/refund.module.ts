@@ -6,12 +6,16 @@ import { SeucommonModule } from 'src/app/seucommon/seucommon.module';
 import { ServicesCommonModule } from '../services-common/services-common.module';
 import { MatDialogModule, MatCheckboxModule } from '@angular/material';
 import { RefundAddComponent } from './components/refund-add/refund-add.component';
+import { RefundContinueComponent } from './components/refund-continue/refund-continue.component';
+import { RefundReasonComponent } from './components/refund-reason/refund-reason.component';
 
 
 @NgModule({
   declarations: [
     componentDeclarations,
-    RefundAddComponent
+    RefundAddComponent,
+    RefundContinueComponent,
+    RefundReasonComponent
   ],
   imports: [
     MatDialogModule,
@@ -22,7 +26,9 @@ import { RefundAddComponent } from './components/refund-add/refund-add.component
     ServicesCommonModule
   ],
   entryComponents: [
-    RefundAddComponent
+    RefundAddComponent,
+    RefundContinueComponent,
+    RefundReasonComponent
   ],
 })
 export class RefundModule { }

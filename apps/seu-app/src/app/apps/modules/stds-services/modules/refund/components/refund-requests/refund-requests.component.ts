@@ -5,6 +5,8 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { StudentService } from '../../../../services/student.service';
 import { RefundService } from '../../../../services/refund.service';
 import { RefundAddComponent } from '../refund-add/refund-add.component';
+import { RefundContinueComponent } from '../refund-continue/refund-continue.component';
+import { RefundReasonComponent } from '../refund-reason/refund-reason.component';
 
 @Component({
   selector: 'app-refund-requests',
@@ -56,14 +58,43 @@ export class RefundRequestsComponent implements OnInit {
     );
   }
 
-  openDialoge(can_add_new_request) {
+  openDialoge() {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    dialogConfig.data = can_add_new_request;
 
     const dialogref = this.dialog.open(RefundAddComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getRequests();
+      }
+    });
+  }
+
+  openContinueDialoge(id) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = id;
+
+    const dialogref = this.dialog.open(RefundContinueComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getRequests();
+      }
+    });
+  }
+
+  openReasonDialoge(reason) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = reason;
+
+    const dialogref = this.dialog.open(RefundReasonComponent, dialogConfig);
     dialogref.afterClosed().subscribe(result => {
       if (result) {
         this.getRequests();
@@ -75,9 +106,8 @@ export class RefundRequestsComponent implements OnInit {
     if (confirm(this.translate.instant('refund.delete_confirm'))) {
       this.deleting = true;
       this.service.deleteReq(id).subscribe(res => {
-        //this.toastr.push((res as any).messages);
         if ((res as any).status == 1) {
-          this.reqData.requests.splice(index, 1);
+          this.getRequests();
         }
         this.deleting = false;
       }, err => {

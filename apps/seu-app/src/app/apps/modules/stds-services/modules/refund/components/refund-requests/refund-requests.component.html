@@ -32,7 +32,7 @@
               <div class="widget-header">
                 <h3 class="widget-title" style="color: #FFF;">{{"refund.pre_requests"|translate}}
                   <button type="button" class="btn btn-primary"
-                    (click)="openDialoge(reqData.can_add_new_request)">
+                    (click)="openDialoge()" *ngIf="reqData.can_add_new_request">
                     {{"refund.add_request"|translate}}<i class="ik ik-plus"></i>
                   </button>
                 </h3>
@@ -44,18 +44,25 @@
                       <th scope="col">{{"refund.req_no"|translate}}</th>
                       <th scope="col">{{"refund.req_date"|translate}}</th>
                       <th scope="col">{{"refund.req_status"|translate}}</th>
-                      <th scope="col">{{"refund.req_delete"|translate}}</th>
+                      <th scope="col">{{"refund.actions"|translate}}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr *ngFor="let it of reqData.requests;let i=index;">
-                      <td>{{it.request_number}}</td>
-                      <td>{{it.insert_date}}</td>
-                      <td>{{it.status}}</td>
-                      <td *ngIf='it.deletable'><button [disabled]='deleting' class="btn btn-sm btn-danger"
-                          style="color: white" (click)="delete(it.request_number,i)"><i class="fa fa-trash"></i>
-                        </button></td>
-                      <td *ngIf='!it.deletable'>{{"refund.non_cancelable_request"|translate}}</td>
+                      <td>{{it.ID}}</td>
+                      <td>{{it.REQ_DATE}}</td>
+                      <td>{{it.STATUS_DESC}}</td>
+                      <td>
+                        <button *ngIf='it.DELETABLE' [disabled]='deleting' class="btn btn-sm btn-danger"
+                          style="color: white" (click)="delete(it.ID,i)">{{"refund.req_delete"|translate}}
+                        </button>
+                        <button *ngIf='it.STATUS == "1"' class="btn btn-sm btn-danger"
+                          style="color: white" (click)="openContinueDialoge(it.ID)">{{"refund.continue"|translate}}
+                        </button>
+                        <button *ngIf='it.STATUS == "0"' class="btn btn-sm btn-danger"
+                          style="color: white" (click)="openReasonDialoge(it.REASON)">{{"refund.reason"|translate}}
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

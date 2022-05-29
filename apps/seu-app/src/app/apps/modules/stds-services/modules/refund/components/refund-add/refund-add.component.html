@@ -65,7 +65,26 @@
                                 <div class="col-md-12 col-sm-12">
                                     <div class="state">
                                         <h6>{{"refund.balance"|translate}}</h6>
-                                        <input type="text" disabled formControlName="STD_BALANCE" [value]="balance" class="form-control" />
+                                        <div style="background-color:#5b3283; padding: 10px; border-radius: 3px; color: #FFF; text-align: center;">
+                                           <strong>{{balance}} {{"refund.SAR"|translate}}</strong> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="message == 'service_pay_message'" class="row ser-block">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="state">
+                                        <h6>{{"refund.proof_file"|translate}}</h6>
+                                        <input type="file" accept="*/*" (change)="handleInputChange($event)" id="file" class="form-control-file form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngIf="filename_handle" class="row ser-block">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="state">
+                                        <div style="background-color:#5b3283; padding: 10px; border-radius: 3px; color: #FFF; text-align: center;">
+                                            <strong>{{filename}}</strong> 
+                                         </div>
                                     </div>
                                 </div>
                             </div>

@@ -1,0 +1,8 @@
+.li-list{
+    border: solid 1px #CCC;
+    padding: 10px;
+    background-color: #CCC;
+    color: #000;
+    margin-top: 5px;
+    border-radius: 5px;
+}
