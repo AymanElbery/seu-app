@@ -16,6 +16,7 @@ import { ChangeCampMajorComponent } from './change-camp-major/change-camp-major.
 import { ChangeRequestComponent } from './change-request/change-request.component';
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
 import { ObjectExamComponent } from './object-exam/object-exam.component';
+import { ExamObjectComponent } from './exam-object/exam-object.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
 import { TerminationRequestComponent } from './termination-request/termination-request.component';
 import { VisitorStudentComponent } from './visitor-student/visitor-student.component';
@@ -40,6 +41,7 @@ const routes: Routes = [{ path: '', component: WithdrawFromUnivComponent },
     { path: 'changerequest', component: ChangeRequestComponent },
     { path: 'change-camp-major', component: ChangeCampMajorComponent },
     { path: 'objectexam', component: ObjectExamComponent },
+    { path: 'exam-object', component: ExamObjectComponent },
     { path: 'lecexecuse', component: LecturesExecusesComponent },
     { path: 'terminate', component: TerminationRequestComponent },
     { path: 'visitorstudent', component: VisitorStudentComponent },

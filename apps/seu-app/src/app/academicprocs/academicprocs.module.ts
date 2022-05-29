@@ -13,7 +13,7 @@ import { CancelCourseComponent } from './cancel-course/cancel-course.component';
 import { WithdrawFromUnivComponent } from './withdraw-from-univ/withdraw-from-univ.component';
 import { ChangeScheduleComponent } from './change-schedule-request/change-schedule-request.component';
 import { WithdrawFromUnivService } from './services/withdraw-from-univ.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { AddRequestComponent } from './withdraw-from-univ/diag/add-request/add-request.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -49,8 +49,10 @@ import { AddRequestChangeComponent } from './change-request/diag/add-request-cha
 import { AddChangeScheduleRequestComponent } from './change-schedule-request/dialogue/add-change-schedule-request.component';
 import { LecturesExecusesComponent } from './lectures-execuses/lectures-execuses.component';
 import { ObjectExamComponent } from './object-exam/object-exam.component';
+import { ExamObjectComponent } from './exam-object/exam-object.component';
 import { AddLecturesExecusesComponent } from './lectures-execuses/diag/add-lectures-execuses/add-lectures-execuses.component';
 import { AddExamObjectComponent } from './object-exam/diag/add-exam-object/add-exam-object.component';
+import { AddObjectExamComponent } from './exam-object/add-object-exam/add-object-exam.component';
 import { LectureExecuseServiceService } from './services/lecture-execuse-service.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -108,6 +110,8 @@ import { AddChangeCampMajorComponent } from './change-camp-major/diag/add-change
     AddRequestChangeComponent,
     LecturesExecusesComponent,
     ObjectExamComponent,
+    AddObjectExamComponent,
+    ExamObjectComponent,
     AddLecturesExecusesComponent,
     AddExamObjectComponent,
     UnivCardComponent,
@@ -140,6 +144,7 @@ import { AddChangeCampMajorComponent } from './change-camp-major/diag/add-change
     AddChangeScheduleRequestComponent,
     AddLecturesExecusesComponent,
     AddExamObjectComponent,
+    AddObjectExamComponent,
     AddUnivCardComponent,
     AddTerminationRequestComponent,
     AddBankReceiptComponent,
@@ -150,6 +155,7 @@ import { AddChangeCampMajorComponent } from './change-camp-major/diag/add-change
   ],
 
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     AcademicprocsRoutingModule,
     FormsModule,

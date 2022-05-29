@@ -14,29 +14,35 @@ export class ObjectExamService {
   }
 
   getRequests() {
-    //?std_id=S160239561
-    return this.httRequest.GetRequest('exam_objections_service').toPromise();
+    return this.httRequest.GetRequest('exam_objection_service').toPromise();
   }
   getgetRequests() {
 
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.httRequest.GetRequest('exam_objections_service').toPromise();
+    return this.httRequest.GetRequest('exam_objection_service').toPromise();
   }
   AddRequest(data) {
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.httRequest.postRequest('exam_objections_service/insert?', data).toPromise();
+    return this.httRequest.postRequest('exam_objection_service/insert?', data).toPromise();
   }
+
+  cancelReq(id) {
+    this.configService.baseUrl = 'stdservicesapi';
+
+    return this.httRequest.GetRequest('exam_objection_service/cancel/' + id).toPromise();
+  }
+
   deleteReq(id) {
     this.configService.baseUrl = 'stdservicesapi';
 
-    return this.httRequest.GetRequest('exam_objections_service/remove/' + id).toPromise();
+    return this.httRequest.GetRequest('exam_objection_service/remove/' + id).toPromise();
   }
 
   download(req) {
     this.configService.baseUrl = 'stdservicesapi';
     const sid = this.configService.getSid();
-    return this.configService.getApiURI() + '/exam_objections_service/download/exam_objection_request/' + req;
+    return this.configService.getApiURI() + '/exam_objection_service/download/exam_objection_request/' + req;
   }
 }
