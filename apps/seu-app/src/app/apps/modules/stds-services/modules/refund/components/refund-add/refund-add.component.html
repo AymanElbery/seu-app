@@ -27,7 +27,7 @@
             </div>
             <div *ngIf="!conditions" class="modal-footer">
                 <button (click)="agree_conditions()" type="button" class="btn btn-dark"><i class="fas fa-check-circle"></i>
-                    {{"refund.agree"|translate}}</button>
+                    {{"refund.agree"|translate}}</button> 
             </div>
             <!-- else -->
             <form *ngIf="conditions" role="form" [formGroup]="add_request_form" autocomplete="off" (submit)="onSubmit(form)">

@@ -156,7 +156,7 @@ export class RefundAddComponent implements OnInit {
         this.dialogRef.close(false);
     }
 
-    agree_conditions(){
+    agree_conditions(){ 
         this.conditions = !this.conditions;
     }
 }

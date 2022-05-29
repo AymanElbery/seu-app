@@ -18,7 +18,7 @@ import { RefundReasonComponent } from './components/refund-reason/refund-reason.
     RefundReasonComponent
   ],
   imports: [
-    MatDialogModule,
+    MatDialogModule, 
     MatCheckboxModule,
     SeucommonModule,
     AppsSharedModule,
