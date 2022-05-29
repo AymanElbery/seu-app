@@ -78,7 +78,6 @@ export class RefundAddComponent implements OnInit {
                 this.set_message('service_finish_message');
             }
         }else{
-            this.std_balance = -500;
             if (this.std_balance < 0) {
                 this.reset_message();
                 this.set_message('std_have_balance');
