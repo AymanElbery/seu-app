@@ -157,6 +157,7 @@ import { AddChangeCampMajorComponent } from './change-camp-major/diag/add-change
   imports: [
     ReactiveFormsModule,
     CommonModule,
+    SeucommonModule,
     AcademicprocsRoutingModule,
     FormsModule,
     // BrowserAnimationsModule,

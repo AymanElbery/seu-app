@@ -1,4 +1,27 @@
 <mat-dialog-content style="direction: rtl;">
+    <div *ngIf="!conditions" class="modal-header">
+        <h5 class="modal-title">{{"services.object_exam.conditions"|translate}}</h5>
+    </div>
+    <div *ngIf="!conditions" class="modal-body">
+        <section class="ser-state">
+            <div class="container">
+                <div class="row ser-block">
+                    <div class="col-md-12">
+                        <strong>{{"services.object_exam.note"|translate}}</strong>
+                        <ul class="list-group list-unstyled">
+                            <li class="li-list">{{"services.object_exam.condition_1"|translate}}</li>
+                            <li class="li-list">{{"services.object_exam.condition_2"|translate}}</li>
+                            <li class="li-list">{{"services.object_exam.condition_3"|translate}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div *ngIf="!conditions" class="modal-footer">
+        <button (click)="agree_conditions()" type="button" class="btn btn-dark"><i class="fas fa-check-circle"></i>
+            {{"services.object_exam.agree"|translate}}</button> 
+    </div>
     <form *ngIf="conditions" role="form" [formGroup]="add_request_form" autocomplete="off" (submit)="onSubmit(form)">
         <div class="modal-header">
             <h5 class="modal-title">{{"services.object_exam.add_objection"|translate}}</h5>

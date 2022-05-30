@@ -22,7 +22,7 @@ export class AddObjectExamComponent implements OnInit {
     fees_display = false;
     CRN;
     CRSE_TITLE;
-    conditions = true;
+    conditions = false;
 
     constructor(
         @Inject(MAT_DIALOG_DATA) public data,
@@ -70,6 +70,10 @@ export class AddObjectExamComponent implements OnInit {
         }
         this.requesting = true;
         this.addRequest(this.add_request_form.value);
+    }
+
+    agree_conditions(){
+        this.conditions = !this.conditions;
     }
    
 
