@@ -6,12 +6,14 @@ import { NgForm } from '@angular/forms';
 import { AddObjectExamComponent } from './add-object-exam/add-object-exam.component';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { TranslateService } from '@ngx-translate/core';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { UserService } from 'src/app/account/services/user.service';
 
 
 @Component({
   selector: 'app-exam-object',
   templateUrl: './exam-object.component.html',
-  styleUrls: ['./exam-object.component.scss']
+  styleUrls: ['./exam-object.component.css']
 })
 export class ExamObjectComponent implements OnInit, OnDestroy {
 
@@ -21,12 +23,18 @@ export class ExamObjectComponent implements OnInit, OnDestroy {
   isLoading = false;
   deleting = false;
   subscriptions;
+  urlSafe: SafeResourceUrl;
+  sid;
+  srcUrl;
+  url = 'https://apps.seu.edu.sa/fees/ug_exam_objection/index';
 
   constructor(
     private translate: TranslateService,
     public dialog: MatDialog, 
     private toastr: AppToasterService, 
-    private acadmicProc: ObjectExamService
+    private acadmicProc: ObjectExamService,
+    private userService: UserService,
+    public sanitizer: DomSanitizer
   ) {
 
   }
@@ -114,5 +122,12 @@ export class ExamObjectComponent implements OnInit, OnDestroy {
           this.deleting = false;
         });
     }
+  }
+
+  pay() {
+    this.sid = localStorage.getItem('sid');
+    const user = this.userService.getActiveRoleDetails();
+    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url + '/' + user.username + '?sid=' + this.sid + "&lang=" + this.translate.currentLang);
+    console.log(this.urlSafe);
   }
 }
