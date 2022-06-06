@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { SadadService } from '../../services/sadad.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -18,7 +18,9 @@ export class RegistrationAssistantFormComponent implements OnInit {
     item_1 = false;
     item_2 = false;
     item_5 = false;
+    course_check = false;
     categories = [];
+    courses = [];
     items = [];
     constructor(@Inject(MAT_DIALOG_DATA) public data, private fb: FormBuilder,
         public dialogRef: MatDialogRef<RegistrationAssistantFormComponent>, private translate: TranslateService,
@@ -35,6 +37,9 @@ export class RegistrationAssistantFormComponent implements OnInit {
         this.service.loadlookups();
         this.service.categories_list().subscribe(list => {
             this.categories = list;
+        });
+        this.service.courses_list().subscribe(list => {
+            this.courses = list;
         });
         this.form.controls['category'].valueChanges.subscribe(() => {
             this.form.controls['item'].setValue("");
@@ -66,6 +71,12 @@ export class RegistrationAssistantFormComponent implements OnInit {
                     this.item_1 = false;
                     this.item_2 = false;
                     this.item_5 = false;
+                }
+
+                this.course_check = this.service.extra_fields(itemId)[0].course;
+                if(this.course_check){
+                    this.course_check = true;
+                    this.form.addControl('course', new FormControl('', Validators.required));
                 }
             }
         });

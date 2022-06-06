@@ -48,6 +48,15 @@
                         </div>
                     </div>
 
+                    <div class="col-md-12" *ngIf="course_check">
+                        <div class="state">
+                            <h6>{{"general.course"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="course">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.course"></control-validations-errors>
+                    </div>
+
                     <div class="col-md-12">
                         <div class="state">
                             <h6>{{"general.subject"|translate}} <span class="reqstart">*</span></h6>

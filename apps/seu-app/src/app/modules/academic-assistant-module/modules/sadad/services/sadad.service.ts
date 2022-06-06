@@ -64,4 +64,33 @@ export class SadadService extends SDService {
             }));
     }
 
+    extra_fields(_code){
+        return this._lookups['items'].filter(item => {
+            return item['ID'] == _code;
+        }).map(rec => {
+            return {
+                'course' : rec['COURSE'] == 0 ? false : rec['COURSE'],
+            };
+        });
+    }
+
+    courses_list() {
+        if (this._lookups) {
+            return of(this.courses());
+        }
+        return this._lookups_observ.pipe(
+            map(() => {
+                return this.courses();
+            }));
+    }
+
+    courses() {
+        return this._lookups['courses'].map(rec => {
+            let item = {};
+            item['text'] = rec['SUBJ_CODE'] + rec['CRSE_NUMB'] + ' | ' + rec['CRSE_TITLE'];
+            item['value'] = rec['SUBJ_CODE'] + rec['CRSE_NUMB'] + ' | ' + rec['CRSE_TITLE'];
+            return item;
+        });
+    }
+
 }
