@@ -26,7 +26,8 @@ export class ExamObjectComponent implements OnInit, OnDestroy {
   urlSafe: SafeResourceUrl;
   sid;
   srcUrl;
-  url = 'https://apps.seu.edu.sa/fees/ug_exam_objection/index';
+  collabse = false;
+  url = 'https://apps.seu.edu.sa/fees/ug_exam_objection/get_req_id';
 
   constructor(
     private translate: TranslateService,
@@ -124,10 +125,16 @@ export class ExamObjectComponent implements OnInit, OnDestroy {
     }
   }
 
-  pay() {
+  pay(id) {
     this.sid = localStorage.getItem('sid');
     const user = this.userService.getActiveRoleDetails();
-    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url + '/' + user.username + '?sid=' + this.sid + "&lang=" + this.translate.currentLang);
-    console.log(this.urlSafe);
+    if(!this.collabse){
+      this.url = this.url + "/" + id;
+      this.url = this.url + "/" + user.username;
+    }else{
+      this.url = "https://apps.seu.edu.sa/fees/ug_exam_objection/get_req_id";
+    }
+    this.collabse = !this.collabse;
+    this.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(this.url +'?sid=' + this.sid + "&lang=" + this.translate.currentLang);
   }
 }

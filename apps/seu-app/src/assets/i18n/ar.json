@@ -1037,6 +1037,7 @@
             "curriculum_name": "اسم المقرر",
             "teacher_name": "اسم المعلم",
             "bank": "البنك",
+            "can_not_cancel": "لا يمكنك الإلغاء",
             "agree": "موافق",
             "account_no": "رقم الحساب",
             "deposite": "المبلغ الذى تم إيداعه:",
