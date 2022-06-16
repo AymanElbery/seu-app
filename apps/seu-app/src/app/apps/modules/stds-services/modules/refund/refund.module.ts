@@ -8,8 +8,7 @@ import { MatDialogModule, MatCheckboxModule } from '@angular/material';
 import { RefundAddComponent } from './components/refund-add/refund-add.component';
 import { RefundContinueComponent } from './components/refund-continue/refund-continue.component';
 import { RefundReasonComponent } from './components/refund-reason/refund-reason.component';
-
-
+import { NgxIbanModule } from "ngx-iban";
 @NgModule({
   declarations: [
     componentDeclarations,
@@ -23,7 +22,8 @@ import { RefundReasonComponent } from './components/refund-reason/refund-reason.
     SeucommonModule,
     AppsSharedModule,
     RouterModule.forChild(routes),
-    ServicesCommonModule
+    ServicesCommonModule,
+    NgxIbanModule
   ],
   entryComponents: [
     RefundAddComponent,

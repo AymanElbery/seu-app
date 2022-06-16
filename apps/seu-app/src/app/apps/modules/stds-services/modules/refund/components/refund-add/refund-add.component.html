@@ -46,6 +46,15 @@
                                     </div>
                                 </div>
                             </div>
+                            <div *ngIf="message == 'exam_obj_reqs'" class="row ser-block">
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="state">
+                                        <h6>{{"refund.exam_obj_reqs"|translate}}<span class="reqstart">*</span></h6>
+                                        <ng-select [items]="exam_obj_reqs" bindLabel="CRSE_TITLE" bindValue="ID" formControlName="EXAM_OBJ_REQ_ID">
+                                        </ng-select>
+                                    </div>
+                                </div>
+                            </div>
                             <div *ngIf="message == 'service_finish_message'" class="row ser-block">
                                 <div class="col-md-12 col-sm-12 alert alert-danger text-center">
                                     <strong>{{"refund.service_finish_message"|translate}}</strong>

@@ -37,7 +37,17 @@ export class RefundService extends StudentService {
 
     AddRequest(data){
         return this.post('/stds/refund/add', data);
-    }   
+    }    
+
+    ///
+
+    get_banks_data(){
+        return this.get('/stds/refund_continous/get_banks_data');
+    }
+
+    AddCountinousRequest(data){
+        return this.post('/stds/refund_continous/add', data);
+    }  
 }
 
 

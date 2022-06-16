@@ -17,6 +17,7 @@ export class RefundAddComponent implements OnInit {
   reqData;
   msgs;
   cases;
+  exam_obj_reqs;
   std_balance = 0;
   balance = 0;
   can_add_new_req_for_CHAR_and_AMAL;
@@ -46,7 +47,8 @@ export class RefundAddComponent implements OnInit {
 
     ngOnInit() {
         this.add_request_form = this.fb.group({
-            'CASE': ['', [Validators.required]]
+            'CASE': ['', [Validators.required]],
+            'EXAM_OBJ_REQ_ID': [''],
         });
     }
 
@@ -54,6 +56,7 @@ export class RefundAddComponent implements OnInit {
         this.isLoading = true;
         this.service.get_fee_refund_cases().subscribe(response => {
             this.cases = response['data']['cases'];
+            this.exam_obj_reqs = response['data']['exam_obj_reqs'];
             this.std_balance = response['data']['std_balance'];
             this.isLoading = false;
         }, error => {
@@ -77,6 +80,9 @@ export class RefundAddComponent implements OnInit {
                 this.reset_message();
                 this.set_message('service_finish_message');
             }
+        }else if(choice.CODE == 'OFER'){
+            this.reset_message();
+            this.set_message('exam_obj_reqs');
         }else{
             if (this.std_balance < 0) {
                 this.reset_message();
@@ -137,11 +143,11 @@ export class RefundAddComponent implements OnInit {
         reader.readAsDataURL(file);
       }
 
-      _handleReaderLoaded(e) {
+    _handleReaderLoaded(e) {
         const reader = e.target;
         this.filename_handle = true;
         this.file = reader.result;
-      }
+    }
 
     set_message(key){
         this.message = key;
