@@ -43,7 +43,8 @@
                     <tr>
                       <th scope="col">{{"refund.req_no"|translate}}</th>
                       <th scope="col">{{"refund.req_date"|translate}}</th>
-                      <th scope="col">{{"refund.req_status"|translate}}</th>
+                      <th scope="col">{{"refund.req_coll_status"|translate}}</th>
+                      <th scope="col">{{"refund.req_finance_status"|translate}}</th>
                       <th scope="col">{{"refund.actions"|translate}}</th>
                     </tr>
                   </thead>
@@ -51,16 +52,28 @@
                     <tr *ngFor="let it of reqData.requests;let i=index;">
                       <td>{{it.ID}}</td>
                       <td>{{it.REQ_DATE}}</td>
-                      <td>{{it.STATUS_DESC}}</td>
+                      <td>
+                        <span *ngIf="it.STATUS == '1'" class="badge badge-success">{{it.STATUS_DESC}}</span>
+                        <span *ngIf="it.STATUS == '2'" class="badge badge-info">{{it.STATUS_DESC}}</span>
+                        <span *ngIf="it.STATUS == '0'" class="badge badge-danger">{{it.STATUS_DESC}}</span>
+                      </td>
+                      <td *ngIf="it.CONTINOUS == '1'">
+                        <span *ngIf="it.STATUS_CONT == '1'" class="badge badge-success">{{it.STATUS_CONT_DESC}}</span>
+                        <span *ngIf="it.STATUS_CONT == '2'" class="badge badge-info">{{it.STATUS_CONT_DESC}}</span>
+                        <span *ngIf="it.STATUS_CONT == '0'" class="badge badge-danger">{{it.STATUS_CONT_DESC}}</span>
+                      </td>
                       <td>
                         <button *ngIf='it.DELETABLE' [disabled]='deleting' class="btn btn-sm btn-danger"
                           style="color: white" (click)="delete(it.ID,i)">{{"refund.req_delete"|translate}}
                         </button>
-                        <button *ngIf='it.STATUS == "1"' class="btn btn-sm btn-danger"
+                        <button *ngIf='it.STATUS == "1" && it.CONTINOUS == "0"' class="btn btn-sm btn-danger"
                           style="color: white" (click)="openContinueDialoge(it.ID)">{{"refund.continue"|translate}}
                         </button>
                         <button *ngIf='it.STATUS == "0"' class="btn btn-sm btn-danger"
                           style="color: white" (click)="openReasonDialoge(it.REASON)">{{"refund.reason"|translate}}
+                        </button>
+                        <button *ngIf='it.STATUS_CONT == "0"' class="btn btn-sm btn-danger"
+                          style="color: white" (click)="openReasonContDialoge(it.REASON)">{{"refund.reason"|translate}}
                         </button>
                       </td>
                     </tr>

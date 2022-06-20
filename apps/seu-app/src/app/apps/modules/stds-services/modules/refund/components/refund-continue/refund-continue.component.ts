@@ -44,6 +44,7 @@ export class RefundContinueComponent implements OnInit {
   filename_handle = false; 
   filename = ''; 
   file ;
+  FEE_REFUND_REQ_ID;
   constructor(
         @Inject(MAT_DIALOG_DATA) public data,
         public dialogRef: MatDialogRef<RefundContinueComponent>,
@@ -52,6 +53,7 @@ export class RefundContinueComponent implements OnInit {
         private fb: FormBuilder,
         private translate: TranslateService
     ) { 
+      this.FEE_REFUND_REQ_ID = this.data;
       this.get_banks_data();
     }
 
@@ -86,9 +88,6 @@ export class RefundContinueComponent implements OnInit {
         this.continous_request_form.addControl('FULL_NAME', new FormControl('', [Validators.required]));
         this.continous_request_form.addControl('SNN', new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^[0-9]*$")]));
         this.continous_request_form.addControl('PHONE', new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern("^[0-9]*$")]));
-
-      }else{
-
       }
     }
 
@@ -129,7 +128,7 @@ export class RefundContinueComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true
+    this.submitted = true;
     if (this.continous_request_form.invalid) {
       return;
     }
@@ -139,6 +138,7 @@ export class RefundContinueComponent implements OnInit {
 
   addRequest(form: any) {
     let data = form.value;
+    data.FEE_REFUND_REQ_ID = this.FEE_REFUND_REQ_ID;
     data.file = this.file;
     data.filename = this.filename;
     this.service.AddCountinousRequest(data).subscribe(res => {

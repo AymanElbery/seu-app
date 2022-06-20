@@ -13,7 +13,7 @@ export function ValidateIBANBank(bank, iban) {
             if(bank_iban_value !== iban){
                 iban_control.setErrors({ ...(iban_control.errors || {}), mustMatch: true })
             }else{
-                iban_control.setErrors({ ...(iban_control.errors || {})})
+                iban_control.setErrors(iban_control.errors)
             }
         }
     }

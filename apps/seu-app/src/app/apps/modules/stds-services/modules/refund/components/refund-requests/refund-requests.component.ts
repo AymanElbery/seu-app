@@ -102,6 +102,21 @@ export class RefundRequestsComponent implements OnInit {
     });
   }
 
+  openReasonContDialoge(reason) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '50%';
+    dialogConfig.data = reason;
+
+    const dialogref = this.dialog.open(RefundReasonComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getRequests();
+      }
+    });
+  }
+
   delete(id, index) {
     if (confirm(this.translate.instant('refund.delete_confirm'))) {
       this.deleting = true;
