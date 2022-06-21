@@ -58,6 +58,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { City_pipe } from './home/pips/city_pipe';
 import { District_pipe } from './home/pips/district_pipe';
+import { Committe_confirmModule } from '../app/committe_confirm/committe_confirm.module';
 @NgModule({
   declarations: [
     City_pipe,
@@ -107,6 +108,7 @@ import { District_pipe } from './home/pips/district_pipe';
     , SeucommonModule,
     VgCoreModule,
     VgControlsModule,
+    Committe_confirmModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ConfigService,

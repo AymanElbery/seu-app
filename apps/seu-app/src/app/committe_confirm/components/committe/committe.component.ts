@@ -21,6 +21,7 @@ export class CommitteComponent implements OnInit, OnDestroy{
   submitted = false;
   std_id;
   data;
+  allow_objection = false;
   constructor(
     public committeService: CommitteService,
     public userService: UserService,
@@ -33,7 +34,11 @@ export class CommitteComponent implements OnInit, OnDestroy{
     this.date = new Date();
     this.std_id = this.userService.userData.id;
     this.data = this.userService.userData.COMMITTE_CONFIRM_DATA;
-    console.log(this.data);
+    this.data.forEach(function (violation) {
+      if(!violation.JUST_WARNING){
+        this.allow_objection = true;
+      }
+    }); 
   }
 
   ngOnInit() {

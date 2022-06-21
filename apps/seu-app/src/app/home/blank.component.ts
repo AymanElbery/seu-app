@@ -52,6 +52,7 @@ export class BlankComponent implements OnInit {
         if (this.userService.userData.role == "Student" && !this.userService.userData.DATA_CLEANED_STD) {
           this.router.navigate(['/std-clean-data/std']);
         }
+        
         if ((this.userService.userData.role == "Student") && this.userService.userData.COMMITTE_CONFIRM == 0) {
           this.router.navigate(['/committe-confirm/committe']);
         }
