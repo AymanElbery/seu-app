@@ -27,7 +27,7 @@ import { NgxIbanModule } from "ngx-iban";
   ],
   entryComponents: [
     RefundAddComponent,
-    //RefundContinueComponent,
+    RefundContinueComponent,
     RefundReasonComponent
   ],
 })

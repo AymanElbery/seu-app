@@ -57,6 +57,9 @@
                         <span *ngIf="it.STATUS == '2'" class="badge badge-info">{{it.STATUS_DESC}}</span>
                         <span *ngIf="it.STATUS == '0'" class="badge badge-danger">{{it.STATUS_DESC}}</span>
                       </td>
+                      <td *ngIf="it.CONTINOUS == '0'">
+                        <span *ngIf="it.STATUS_CONT == '2'" class="badge badge-info">{{it.STATUS_CONT_DESC}}</span>
+                      </td>
                       <td *ngIf="it.CONTINOUS == '1'">
                         <span *ngIf="it.STATUS_CONT == '1'" class="badge badge-success">{{it.STATUS_CONT_DESC}}</span>
                         <span *ngIf="it.STATUS_CONT == '2'" class="badge badge-info">{{it.STATUS_CONT_DESC}}</span>
