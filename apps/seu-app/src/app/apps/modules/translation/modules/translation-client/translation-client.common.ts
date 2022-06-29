@@ -4,12 +4,16 @@ import { TranslationClientNewrequestsComponent } from './components/translation-
 import { TranslationCLIENTGuard } from '../../translation-guard/client.guard';
 import { TranslationPayFeeCheckComponent } from './components/translation-pay-fee-check/translation-pay-fee-callback.component';
 import { TranslationPayFeeComponent } from './components/translation-pay-fee/translation-pay-fee.component';
+import { TranslationPayRejectComponent } from './components/translation-pay-reject/translation-pay-reject.component';
+import { TranslationPriceComponent } from './components/translation-price/translation-price.component';
 
 export const componentDeclarations: any[] = [
     TranslationClientMyrequestsComponent,
     TranslationClientNewrequestsComponent,
     TranslationPayFeeCheckComponent,
-    TranslationPayFeeComponent
+    TranslationPayFeeComponent,
+    TranslationPayRejectComponent,
+    TranslationPriceComponent
 ];
 
 export const providerDeclarations: any[] = [
@@ -27,5 +31,8 @@ export const routes: Routes = [
     },
     {
         path: 'pay-callback/:tid', component: TranslationPayFeeCheckComponent
+    },
+    {
+        path: 'translate-price', component: TranslationPriceComponent
     }
 ];

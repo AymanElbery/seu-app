@@ -26,7 +26,7 @@ export class TranslationLoginComponent implements OnInit {
     this.form = fb.group({
       'username': ['', [Validators.required, Validators.minLength(6)]],
       'password': ['', [Validators.required, Validators.minLength(8)]],
-      'captcha': ['', [Validators.required]]
+      // 'captcha': ['', [Validators.required]]
     });
     this.environment = environment;
 

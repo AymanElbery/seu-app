@@ -29,6 +29,14 @@
     border-radius: 3px;
     color: #FFF;
 }
+
+.unpaid{
+    padding: 3px 10px;
+    background-color: rgb(221, 28, 250);
+    border-radius: 3px;
+    color: #FFF;
+}
+
 .dropdown{
     display: inline-block;
 }

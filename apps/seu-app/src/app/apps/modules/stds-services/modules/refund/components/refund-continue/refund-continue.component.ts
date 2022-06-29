@@ -14,9 +14,9 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./refund-continue.component.css']
 })
 
-@Directive({
-  selector: '[appBlockCopyPaste]'
-})
+// @Directive({
+//   selector: '[appBlockCopyPaste]'
+// })
 export class RefundContinueComponent implements OnInit {
 
   // @HostListener('paste', ['$event']) blockPaste(e: KeyboardEvent) {

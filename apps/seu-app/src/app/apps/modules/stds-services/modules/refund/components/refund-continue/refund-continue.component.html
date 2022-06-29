@@ -87,7 +87,7 @@
                                     </div>
                                     <div class="state">
                                         <h6>{{"refund.iban"|translate}}<span class="reqstart">*</span></h6>
-                                        <input appBlockCopyPaste (keypress)="restrict_iban_length($event)" style="text-transform: uppercase;" type="text" formControlName="IBAN" class="form-control" />
+                                        <input (keypress)="restrict_iban_length($event)" style="text-transform: uppercase;" type="text" formControlName="IBAN" class="form-control" />
                                     </div>
                                     <strong class="text-danger mr-3 d-block" *ngIf="submitted && continous_request_form.controls.IBAN.errors && continous_request_form.controls.IBAN.errors.required">{{ "refund.errors.required" | translate}}</strong>
                                     <strong class="text-danger mr-3 d-block" *ngIf="submitted && continous_request_form.controls.IBAN.errors && continous_request_form.controls.IBAN.errors.invalidIBAN">{{ "refund.errors.invalidIBAN" | translate}}</strong>

@@ -34,6 +34,7 @@
                 <th scope="col" *ngIf=" payment_action == 'paid'">{{"my_requests_page.paid_date" | translate}}</th>
                 
                 <th scope="col">{{"my_requests_page.req_file" | translate}}</th>
+                <th scope="col">{{"reject_pay_reason.just_reason" | translate}}</th>
                 <th scopr="col">{{"general.actions" | translate}}</th>
               </tr>
             </thead>
@@ -52,6 +53,12 @@
                 <td>
                   <a target="_blanck" [href]="req.downloadURL" style="margin-right: 5px;"
                     class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
+                </td>
+                <td>
+                  <span class="badge badge-danger b-5" *ngIf="req.REJECT_PAY_REASON == null">{{"reject_pay_reason.reason3" | translate}}</span>
+                  <span class="badge badge-danger b-5" *ngIf="req.REJECT_PAY_REASON == 'price'">{{"reject_pay_reason.reason1" | translate}}</span>
+                  <span class="badge badge-danger b-5" *ngIf="req.REJECT_PAY_REASON == 'time'">{{"reject_pay_reason.reason2" | translate}}</span>
+                  <span class="badge badge-danger b-5" *ngIf="req.REJECT_PAY_REASON == 'other'">{{ req.REJECT_PAY_REASON_OTHER }}</span>
                 </td>
                 <td>
                   <!-- <button (click)="openChangeStatusDialog(req)" class="btn btn-primary">{{"my_requests_page.update" | translate}} <i class="fa fa-edit"></i></button> -->
