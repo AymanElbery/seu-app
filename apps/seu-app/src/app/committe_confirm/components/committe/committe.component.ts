@@ -58,7 +58,7 @@ export class CommitteComponent implements OnInit, OnDestroy{
     this.save_button = e.target.checked;
   }
 
-  click(file){
+  click(file, coll){
     let data = {
       'ID'                : this.userService.userData.id,
     };
@@ -66,7 +66,7 @@ export class CommitteComponent implements OnInit, OnDestroy{
     (response: any) => {
       if(response){
         if(response.data){
-          window.location.href = "https://seuapps.seu.edu.sa/newservices/api/rest/committe.php?file=" + file;
+          window.location.href = "https://seuapps.seu.edu.sa/newservices/api/rest/committe.php?file=" + file + "&coll=" + coll;
         }
       }
     },
