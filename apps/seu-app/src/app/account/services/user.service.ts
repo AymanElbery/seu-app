@@ -126,6 +126,9 @@ export class UserService extends BaseService {
   requestUser() {
     return this.httRequest.requestUser().toPromise();
   }
+  requestٍSession(){
+    return this.httRequest.requestٍSession().toPromise();
+  }
 
   SignIn(userName, pass) {
     this.baseUrl = '';

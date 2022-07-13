@@ -48,6 +48,7 @@
     "ag-grid-angular": "^24.1.0",
     "ag-grid-community": "^24.1.0",
     "angular-font-awesome": "^3.1.2",
+    "angular-oauth2-oidc": "^8.0.4",
     "base-64": "^0.1.0",
     "bootstrap": "^4.5.3",
     "buble": "^0.19.8",

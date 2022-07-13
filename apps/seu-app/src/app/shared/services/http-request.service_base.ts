@@ -79,6 +79,16 @@ export class HttpRequestServiceBase {
     });
     return this.http.get(url, { headers });
   }
+  requestٍSession() {
+    const url = environment.baselink + environment.servicesprefix + environment.common + "/ssosession/user";
+    const auth = this.getSSOAuth();
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      sessionid: this.globalService.getSID(),
+      Authorization: auth
+    });
+    return this.http.get(url, { headers });
+  }
   login(userName, passWord) {
     const url = environment.baselink + environment.servicesprefix + environment.common + "/ssosession/user";
     const auth = this.getSSOAuth();

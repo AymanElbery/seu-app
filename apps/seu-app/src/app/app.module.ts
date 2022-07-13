@@ -59,6 +59,12 @@ import { environment } from '../environments/environment';
 import { City_pipe } from './home/pips/city_pipe';
 import { District_pipe } from './home/pips/district_pipe';
 import { Committe_confirmModule } from '../app/committe_confirm/committe_confirm.module';
+import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
+
+export function oAuthStorageFactory(): OAuthStorage {
+  return localStorage;
+}
+
 @NgModule({
   declarations: [
     City_pipe,
@@ -109,7 +115,15 @@ import { Committe_confirmModule } from '../app/committe_confirm/committe_confirm
     VgCoreModule,
     VgControlsModule,
     Committe_confirmModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    //ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    OAuthModule.forRoot(
+    {
+      resourceServer: {
+          allowedUrls: ['https://test-seuapps.seu.edu.sa/'],
+          sendAccessToken: true
+      }
+  }
+  )
   ],
   providers: [ConfigService,
     HttpRequestService,
@@ -120,6 +134,7 @@ import { Committe_confirmModule } from '../app/committe_confirm/committe_confirm
     , PrintService
     , HomeService
     , { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
+    , { provide: OAuthStorage, useFactory: oAuthStorageFactory },
 
   ],
   entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent,VedioComponent, VaccineStatusComponent, StudentRightsComponent],
