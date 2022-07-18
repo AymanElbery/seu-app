@@ -56,7 +56,7 @@
         </div>
       </div>
       <div class="row">
-        <ul>
+        <ul *ngIf="instructions['txt'] == 0">
           <li>{{instructions['txt1']}}</li>
           <li>{{instructions['txt2']}}
             <ng-container *ngIf="instructions['formAr']">
@@ -72,6 +72,9 @@
           </li>
           <li *ngIf="instructions['txt3']">{{instructions['txt3']}}</li>
           <li *ngIf="instructions['txt4']">{{instructions['txt4']}}</li>
+        </ul>
+        <ul *ngIf="instructions['txt'] != 0">
+          <li>{{instructions['txt']}} <a target="_blank" [href]="instructions['link']">{{"services.training_request.click_here"|translate}}</a></li>
         </ul>
       </div>
     </div>
