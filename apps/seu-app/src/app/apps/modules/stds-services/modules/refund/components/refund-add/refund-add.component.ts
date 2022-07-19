@@ -33,6 +33,7 @@ export class RefundAddComponent implements OnInit {
   filename = ''; 
   message = '';
   file ;
+  valid = false;
   constructor(
         @Inject(MAT_DIALOG_DATA) public data,
         public dialogRef: MatDialogRef<RefundAddComponent>,
@@ -72,25 +73,31 @@ export class RefundAddComponent implements OnInit {
                 if (this.std_balance == 0) {
                     this.reset_message();
                     this.set_message('service_pay_message');
+                    this.valid = true;
                 } else if (this.std_balance > 0) {
                     this.reset_message();
                     this.set_message('std_not_pay_message');
+                    this.valid = false;
                 }
             }else{
                 this.reset_message();
                 this.set_message('service_finish_message');
+                this.valid = false;
             }
         }else if(choice.CODE == 'OFER'){
             this.reset_message();
             this.set_message('exam_obj_reqs');
+            this.valid = true;
         }else{
             if (this.std_balance < 0) {
                 this.reset_message();
                 this.set_message('std_have_balance');
                 this.balance = -1 * this.std_balance;
+                this.valid = true;
             } else {
                 this.reset_message();
                 this.set_message('std_have_no_balance_message');
+                this.valid = false;
             }
         }
     }

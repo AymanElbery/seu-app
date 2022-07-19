@@ -35,10 +35,10 @@ export class CommitteComponent implements OnInit, OnDestroy{
     this.std_id = this.userService.userData.id;
     this.data = this.userService.userData.COMMITTE_CONFIRM_DATA;
     this.data.forEach(function (violation) {
-      if(!violation.JUST_WARNING){
+      if(violation.JUST_WARNING == '0'){
         this.allow_objection = true;
       }
-    }); 
+    }.bind(this)); 
   }
 
   ngOnInit() {
