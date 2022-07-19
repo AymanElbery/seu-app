@@ -30,11 +30,12 @@ export class StudentService extends AppUserRootService {
     }
     get have_refund_permession() {
         if (this.isLoggedIn)
-            return (this.LoggedInUser['STD_STATUS_CODE'] == 'AS' || 
-                    this.LoggedInUser['STD_STATUS_CODE'] == 'AD' || 
-                    this.LoggedInUser['STD_STATUS_CODE'] == 'WD' || 
-                    this.LoggedInUser['STD_STATUS_CODE'] == 'WA' ||
-                    this.LoggedInUser['STD_STATUS_CODE'] == 'DS'); //&& this.LoggedInUser['STD_STATUS_CODE'] == 'IG'
+            return true;
+            // return (this.LoggedInUser['STD_STATUS_CODE'] == 'AS' || 
+            //         this.LoggedInUser['STD_STATUS_CODE'] == 'AD' || 
+            //         this.LoggedInUser['STD_STATUS_CODE'] == 'WD' || 
+            //         this.LoggedInUser['STD_STATUS_CODE'] == 'WA' ||
+            //         this.LoggedInUser['STD_STATUS_CODE'] == 'DS'); //&& this.LoggedInUser['STD_STATUS_CODE'] == 'IG'
         return false;
     }
     get fullName() {
