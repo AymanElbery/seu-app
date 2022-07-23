@@ -362,8 +362,9 @@ var AuthConfig = /** @class */ (function () {
         /**
          * The client's id as registered with the auth server
          */
-        this.clientId = '';
-        /**
+         this.clientId = '';
+         this.identityDomainName = '';
+         /**
          * The client's redirectUri as registered with the auth server
          */
         this.redirectUri = '';
@@ -1366,7 +1367,7 @@ var OAuthService = /** @class */ (function (_super) {
          */
         function (resolve, reject) {
             if (_this.jwksUri) {
-                _this.http.get(_this.jwksUri + "?identityDomainName=StudentServicesDomain").subscribe((/**
+                _this.http.get(_this.jwksUri + "?identityDomainName="+_this.identityDomainName).subscribe((/**
                  * @param {?} jwks
                  * @return {?}
                  */
@@ -1607,7 +1608,7 @@ var OAuthService = /** @class */ (function (_super) {
                 /** @type {?} */
                 var header = btoa(_this.clientId + ":" + _this.dummyClientSecret);
                 headers = headers.set('Authorization', 'Basic ' + header);
-                headers = headers.set('x-oauth-identity-domain-name', 'StudentServicesDomain');
+                headers = headers.set('x-oauth-identity-domain-name', _this.identityDomainName);
 
             }
             if (!_this.useHttpBasicAuth) {
@@ -2760,7 +2761,7 @@ var OAuthService = /** @class */ (function (_super) {
             /** @type {?} */
             var header = btoa(this.clientId + ":" + this.dummyClientSecret);
             headers = headers.set('Authorization', 'Basic ' + header);
-            headers = headers.set('x-oauth-identity-domain-name', 'StudentServicesDomain');
+            headers = headers.set('x-oauth-identity-domain-name',this.identityDomainName);
         }
         if (!this.useHttpBasicAuth) {
             params = params.set('client_id', this.clientId);

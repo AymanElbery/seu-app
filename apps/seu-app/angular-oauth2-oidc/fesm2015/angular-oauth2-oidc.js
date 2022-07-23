@@ -282,6 +282,7 @@ class AuthConfig {
          * The client's id as registered with the auth server
          */
         this.clientId = '';
+        this.identityDomainName = '';
         /**
          * The client's redirectUri as registered with the auth server
          */
@@ -1069,7 +1070,7 @@ class OAuthService extends AuthConfig {
          */
         (resolve, reject) => {
             if (this.jwksUri) {
-                this.http.get(this.jwksUri).subscribe((/**
+                this.http.get(this.jwksUri+ "?identityDomainName="+_this.identityDomainName).subscribe((/**
                  * @param {?} jwks
                  * @return {?}
                  */
@@ -1244,6 +1245,7 @@ class OAuthService extends AuthConfig {
                 /** @type {?} */
                 const header = btoa(`${this.clientId}:${this.dummyClientSecret}`);
                 headers = headers.set('Authorization', 'Basic ' + header);
+                headers = headers.set('x-oauth-identity-domain-name', _this.identityDomainName);
             }
             if (!this.useHttpBasicAuth) {
                 params = params.set('client_id', this.clientId);
@@ -2140,6 +2142,7 @@ class OAuthService extends AuthConfig {
             /** @type {?} */
             const header = btoa(`${this.clientId}:${this.dummyClientSecret}`);
             headers = headers.set('Authorization', 'Basic ' + header);
+            headers = headers.set('x-oauth-identity-domain-name',this.identityDomainName);
         }
         if (!this.useHttpBasicAuth) {
             params = params.set('client_id', this.clientId);
