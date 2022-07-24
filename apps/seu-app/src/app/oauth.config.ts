@@ -1,9 +1,9 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
 
-export const oAuthDevelopmentConfig: AuthConfig = {
+export const oAuthDevelopmentConfig = {
     issuer: "https://iamtest.seu.edu.sa:443/oauth2",
     clientId: "TestClient",
-    dummyClientSecret:"welcome1",
+    dummyClientSecret: "welcome1",
 
     redirectUri: "https://test-eservice.seu.edu.sa/home",
     postLogoutRedirectUri: "https://test-eservice.seu.edu.sa/home",
@@ -18,6 +18,7 @@ export const oAuthDevelopmentConfig: AuthConfig = {
     sessionCheckIntervall: 5 * 1000,
     silentRefreshRedirectUri: "https://test-eservice.seu.edu.sa/silent-refresh.html",
     silentRefreshTimeout: 5 * 1000,
-//    nonceStateSeparator:'-',
-    customQueryParams: {domain:'StudentServicesDomain',requiresConsent:false}
+    //    nonceStateSeparator:'-',
+    customQueryParams: { domain: 'StudentServicesDomain', requiresConsent: false },
+    identityDomainName: 'StudentServicesDomain'
 }
