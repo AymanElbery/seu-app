@@ -1,0 +1,41 @@
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget" style="padding: 10px 0px;">
+        <div class="container" style="margin-top:20px; margin-bottom:15px;">
+          <form [formGroup]="addRejectPayForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>{{ "reject_pay_reason.reason" | translate}}</label>
+                  <select (change)="change_reason($event)" formControlName="REJECT_PAY_REASON" class="form-control">
+                      <option value="price">{{ "reject_pay_reason.reason1" | translate}}</option>
+                      <option value="time">{{ "reject_pay_reason.reason2" | translate}}</option>
+                      <option value="other">{{ "reject_pay_reason.other" | translate}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row" *ngIf="reason_input">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>{{ "reject_pay_reason.reject_reason" | translate}}</label>
+                  <textarea class="form-control" formControlName="REJECT_PAY_REASON_OTHER" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+              <div class="col-md-12">
+                  <div class="form-group">
+                      <button [disabled]="submitted || addRejectPayForm.invalid" style="width: 100%;"
+                          type="submit" class="btn sub">{{ "new_request_page.save" | translate}} <i
+                              class="fa fa-save"></i></button>
+                  </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

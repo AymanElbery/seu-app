@@ -29,8 +29,13 @@ export class ClientMyrequestsService extends TranslationRootService {
     checkout(req_id) {
         return this.get('/client/request/checkout/' + req_id);
     }
+
     payment_status(tid) {
         return this.get('/client/request/payment_status/' + tid);
+    }
+
+    add_reject_pay_reason(data) {
+        return this.post("client/request/add_reject_pay_reason" , data) ;
     }
 }
 
