@@ -100,7 +100,7 @@
                         </div>
                     </section>
                 </div>
-                <div class="modal-footer">
+                <div *ngIf="valid" class="modal-footer">
                     <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
                         {{"refund.send"|translate}}</button>
                 </div>

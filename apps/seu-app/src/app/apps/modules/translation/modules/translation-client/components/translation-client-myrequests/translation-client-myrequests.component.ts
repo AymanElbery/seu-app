@@ -6,6 +6,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig } from '@angu
 import { TranslationAddCommentComponent } from './../../../translation-admin/components/translation-add-comment/translation-add-comment.component';
 import { TranslationViewRequestComponent } from '../../../translation-admin/components/translation-view-request/translation-view-request.component';
 import { TranslationPayFeeComponent } from '../translation-pay-fee/translation-pay-fee.component';
+import { TranslationPayRejectComponent } from '../translation-pay-reject/translation-pay-reject.component';
 
 @Component({
   selector: 'app-translation-client-myrequests',
@@ -77,6 +78,22 @@ export class TranslationClientMyrequestsComponent implements OnInit {
       }
     });
   }
+
+  openRejectPayment(req) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '30%';
+    dialogConfig.data = req;
+
+    let dialogref = this.dialog.open(TranslationPayRejectComponent, dialogConfig);
+    dialogref.afterClosed().subscribe(result => {
+      if (result) {
+        this.getMyRequests();
+      }
+    });
+  }
+  
   openAddCommentDialog(reqId) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
