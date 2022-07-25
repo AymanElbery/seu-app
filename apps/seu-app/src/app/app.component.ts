@@ -105,26 +105,7 @@ export class AppComponent implements OnInit {
       // Stores discovery document.
       //this.authService.setItem('discoveryDocument', doc.info.discoveryDocument);
       // Tries login.
-      this.oAuthService.tryLogin({
-        disableOAuth2StateCheck:true,
-        onTokenReceived: context => {
-          // Loads user profile.
-          console.log("WWWWWWWWWWWWW");
-          this.userService.loadUserData();
-
-          this.oAuthService.loadUserProfile().then(() => {
-            //this.authService.init();
-            this.userService.loadUserData();
-            // Gets the redirect URL.
-            // If no redirect has been set, uses the default.
-            const redirect: string = this.authService.getItem('redirectUrl')
-              ? this.authService.getItem('redirectUrl')
-              : '/home';
-            // Redirects the user.
-            this.router.navigate([redirect]);
-          });
-        }
-      }).then(() => {
+      this.oAuthService.tryLogin().then(() => {
         if (!this.oAuthService.hasValidAccessToken()) {
           this.oAuthService.initImplicitFlow(window.location.href);
         }
@@ -142,8 +123,8 @@ export class AppComponent implements OnInit {
     this.oAuthService.events.subscribe(e => {
       console.log(e);
             if((e => e.type === 'token_received')){
-        this.oAuthService.loadUserProfile();
-      }
+              this.userService.loadUserData();
+            }
 
       // if((e => e.type === 'session_terminated')){
       //   this.authService.refreshSession();
