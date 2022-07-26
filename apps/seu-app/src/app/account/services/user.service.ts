@@ -49,6 +49,7 @@ export class UserService extends BaseService {
       PIDM: '',
       STD_RIGHTS: 0,
       DATA_CLEANED: 0,
+      SEU_STRUCTURE_EMP: 0,
       DATA_CLEANED_STD: 0,
       COMMITTE_CONFIRM: 0,
       COMMITTE_CONFIRM_DATA: [],
@@ -423,5 +424,18 @@ export class UserService extends BaseService {
     });
 
     return this.http.post(url + "std_rights/update", data, { headers: headers });
+  }
+
+  get_seu_structure(){
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/seu_structure/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth
+    });
+
+    return this.http.get(url + "emp/lookups", {
+      headers: headers
+    });
   }
 }

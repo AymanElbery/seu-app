@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AccountModule } from './account/account.module';
 import { ConfigService } from './shared/services/config.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { BlankComponent } from './home/blank.component';
 import { HeaderComponent } from './header/header.component';
@@ -43,6 +43,7 @@ import { StdsPagesComponent } from './admis-pages/stds/stds-pages.component';
 import { PolicyComponent } from './home/policy.component';
 import { DocsConfirmComponent } from './home/docs-confirm.component';
 import { VaccineStatusComponent } from './home/vaccine-status/vaccine-status.component';
+import { SeuStructureEmpComponent } from './home/seu-structure-emp/seu-structure-emp.component';
 import { StudentRightsComponent } from './home/student-rights/student-rights.component';
 import { AppErrorComponent } from './home/error.component';
 import { GMPolicyComponent } from './home/gmpolicy.component';
@@ -69,6 +70,7 @@ import { Committe_confirmModule } from '../app/committe_confirm/committe_confirm
     PolicyComponent,
     DocsConfirmComponent,
     VaccineStatusComponent,
+    SeuStructureEmpComponent,
     StudentRightsComponent,
     GMPolicyComponent,
     StdUploadPhotoComponent,
@@ -101,6 +103,7 @@ import { Committe_confirmModule } from '../app/committe_confirm/committe_confirm
     AccountModule,
     DashboardModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot()
     , TimerModule
     , MatProgressSpinnerModule
@@ -122,7 +125,7 @@ import { Committe_confirmModule } from '../app/committe_confirm/committe_confirm
     , { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } }
 
   ],
-  entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent,VedioComponent, VaccineStatusComponent, StudentRightsComponent],
+  entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent,VedioComponent, VaccineStatusComponent,SeuStructureEmpComponent, StudentRightsComponent],
   exports: [DownloadPrintDirective, ExternalLinkDirective,VedioComponent],
   bootstrap: [AppComponent]
 })

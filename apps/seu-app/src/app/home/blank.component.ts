@@ -11,6 +11,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { PolicyComponent } from './policy.component';
 import { DocsConfirmComponent } from './docs-confirm.component';
 import { VaccineStatusComponent } from './vaccine-status/vaccine-status.component';
+import { SeuStructureEmpComponent } from './seu-structure-emp/seu-structure-emp.component';
 import { StudentRightsComponent } from './student-rights/student-rights.component';
 import { GMPolicyComponent } from './gmpolicy.component';
 import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.component';
@@ -59,6 +60,7 @@ export class BlankComponent implements OnInit {
         this.showVaccineStatus();
         this.showStudentRight();
         this.showConfirmation();
+        this.showSeuStructureEmp();
 
         if ((this.userService.userData.role == "Student" && this.userService.userData.level == "GR") && this.userService.userData['GM_policy'] && this.userService.userData['GM_policy']['show'] && !this.userService.userData['gmpolicy']) {
           //this.router.navigate(['/policy']);
@@ -112,6 +114,18 @@ export class BlankComponent implements OnInit {
       dialogConfig.maxWidth = 1000;
       dialogConfig.data = this.userService.userData;
       this.dialog.open(VaccineStatusComponent, dialogConfig);
+    }
+  }
+
+  showSeuStructureEmp(){
+    if (this.userService.userData.role == "Employee" && !this.userService.userData.SEU_STRUCTURE_EMP) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      dialogConfig.disableClose = true;
+      dialogConfig.width = '75%';
+      dialogConfig.maxWidth = 1000;
+      dialogConfig.data = this.userService.userData;
+      this.dialog.open(SeuStructureEmpComponent, dialogConfig);
     }
   }
 
