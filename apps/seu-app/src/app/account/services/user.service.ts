@@ -415,6 +415,17 @@ export class UserService extends BaseService {
     return this.http.post(url + "status/update", data, { headers: headers });
   }
 
+  updateEmpSeuStructureData(data) {
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/seu_structure/";
+    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth
+    });
+
+    return this.http.post(url + "emp/insert", data, { headers: headers });
+  }
+
   updateStudentRights(data) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/std_rights/";
     var auth = `Basic ${window.btoa('emp:Emp@201620')}`;

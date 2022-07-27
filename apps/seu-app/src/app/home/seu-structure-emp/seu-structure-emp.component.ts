@@ -23,7 +23,6 @@ export class SeuStructureEmpComponent implements OnInit, OnDestroy {
     levels_c = [];
     saving = false;
     show_form = false;
-    show_footer = false;
     show_level_b = false;
     show_level_c = false;
     allowSelection = false;
@@ -32,6 +31,7 @@ export class SeuStructureEmpComponent implements OnInit, OnDestroy {
         public userService: UserService, 
         public translate: TranslateService,
         private fb: FormBuilder,
+        private toastr: AppToasterService,
         public dialogRef: MatDialogRef<SeuStructureEmpComponent>, 
         @Inject(MAT_DIALOG_DATA) public data
     ) {
@@ -39,7 +39,8 @@ export class SeuStructureEmpComponent implements OnInit, OnDestroy {
         this.emp_id = data.id;
         this.form = this.fb.group({
           'MANAGER_EMAIL'    : ['', [Validators.required]],
-          'LEVEL_A'    : ['', [Validators.required]]
+          'LEVEL_A'    : ['', [Validators.required]],
+          'NOTES'    : ['']
         });
         
     }
@@ -69,15 +70,14 @@ export class SeuStructureEmpComponent implements OnInit, OnDestroy {
           arr_b.push(item.LEVEL_B);
         }
       }
-      
       if(arr_b.length > 0 && arr_b[0] != null){
         this.form.addControl('LEVEL_B', new FormControl('', [Validators.required]));
         for (let item of arr_b) {
-          this.levels_b.push({'LEVEL_B' : item});
+          if(item != null){
+            this.levels_b.push({'LEVEL_B' : item});
+          }
         }
         this.show_level_b = true;
-      }else{
-        this.show_footer = true;
       }
     }
 
@@ -91,15 +91,16 @@ export class SeuStructureEmpComponent implements OnInit, OnDestroy {
           arr_c.push(item.LEVEL_C);
         }
       }
-      
       if(arr_c.length > 0 && arr_c[0] != null){
         this.form.addControl('LEVEL_C', new FormControl('', [Validators.required]));
         for (let item of arr_c) {
-          this.levels_b.push({'LEVEL_C' : item});
+          if(item != null){
+            this.levels_c.push({'LEVEL_C' : item});
+          }
         }
         this.show_level_c = true;
       }else{
-        this.show_footer = true;
+        this.form.removeControl("LEVEL_C");
       }
     }
 
@@ -133,27 +134,26 @@ export class SeuStructureEmpComponent implements OnInit, OnDestroy {
     }
 
     submit(){
-        // let data = {
-        //     STD_ID : this.std_id,
-        //     STATUS : this.status
-        // };
-        // this.saving = true;
-        // this.userService.updateStudentVaccineStatus(data).subscribe(
-        //     (response: any) => {
-        //       if (response) {
-        //         if (response['status']) {
-        //           this.userService.userData['VACCINE_STATUS'] = 0;
-        //           this.dialogRef.close();
-        //         } else {
-        //           this.saving = false;
-        //           this.toastr.tryagain();
-        //         }
-        //       }
-        //     },
-        //     error => {
-        //       this.toastr.tryagain();
-        //       this.saving = false;
-        //     }
-        //   );
+      let data = this.form.value;
+      data.EMP_ID = this.emp_id;
+      this.saving = true;
+      this.userService.updateEmpSeuStructureData(data).subscribe(
+        (response: any) => {
+          if (response) {
+            if (response['status']) {
+              this.userService.userData['SEU_STRUCTURE_EMP'] = 1;
+              this.dialogRef.close();
+              this.toastr.push([{ type: 'success', 'body': response['message'] }]);
+            } else {
+              this.saving = false;
+              this.toastr.tryagain();
+            }
+          }
+        },
+        error => {
+          this.toastr.tryagain();
+          this.saving = false;
+        }
+      );
     }
 }
