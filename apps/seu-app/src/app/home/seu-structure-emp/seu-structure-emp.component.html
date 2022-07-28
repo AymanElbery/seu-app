@@ -70,6 +70,9 @@
                                 <div *ngIf="form.controls.MANAGER_EMAIL.errors.required">
                                     <b style="position: relative; left: -10px;" class="text-danger">{{"seu_structure.required"|translate}}</b>
                                 </div>
+                                <div *ngIf="form.controls.MANAGER_EMAIL.errors.email">
+                                    <b style="position: relative; left: -10px;" class="text-danger">{{"seu_structure.email_not_valid"|translate}}</b>
+                                </div>
                             </div>
                         </ng-container>
                     </div>

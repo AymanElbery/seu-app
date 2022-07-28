@@ -38,7 +38,7 @@ export class SeuStructureEmpComponent implements OnInit, OnDestroy {
         this.getLookups();
         this.emp_id = data.id;
         this.form = this.fb.group({
-          'MANAGER_EMAIL'    : ['', [Validators.required]],
+          'MANAGER_EMAIL'    : ['', [Validators.required, Validators.email]],
           'LEVEL_A'    : ['', [Validators.required]],
           'NOTES'    : ['']
         });
