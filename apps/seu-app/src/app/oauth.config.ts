@@ -5,9 +5,9 @@ export const oAuthDevelopmentConfig = {
     clientId: "TestClient",
     dummyClientSecret: "welcome1",
 
-     redirectUri: "https://test-eservice.seu.edu.sa/home",
+    //redirectUri: "https://test-eservice.seu.edu.sa/home",
     // postLogoutRedirectUri: "https://test-eservice.seu.edu.sa/home",
-    //redirectUri: "http://localhost:4200/home",
+    redirectUri: "http://localhost:4200/home",
     postLogoutRedirectUri: "http://localhost:4200/home",
     scope: "", //openid offline_access profile email groups resource
     oidc: true,
