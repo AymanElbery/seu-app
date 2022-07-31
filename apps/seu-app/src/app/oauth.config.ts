@@ -5,8 +5,10 @@ export const oAuthDevelopmentConfig = {
     clientId: "TestClient",
     dummyClientSecret: "welcome1",
 
-    redirectUri: "https://test-eservice.seu.edu.sa/home",
-    postLogoutRedirectUri: "https://test-eservice.seu.edu.sa/home",
+    //redirectUri: "https://test-eservice.seu.edu.sa/home",
+    // postLogoutRedirectUri: "https://test-eservice.seu.edu.sa/home",
+    redirectUri: "http://localhost:4200/home",
+    postLogoutRedirectUri: "http://localhost:4200/home",
     scope: "", //openid offline_access profile email groups resource
     oidc: true,
     requireHttps: false,
@@ -16,7 +18,8 @@ export const oAuthDevelopmentConfig = {
     timeoutFactor: 0.90,
     sessionChecksEnabled: false,
     sessionCheckIntervall: 5 * 1000,
-    silentRefreshRedirectUri: "https://test-eservice.seu.edu.sa/silent-refresh.html",
+    //silentRefreshRedirectUri: "https://test-eservice.seu.edu.sa/silent-refresh.html",
+    silentRefreshRedirectUri: "http://localhost:4200/silent-refresh.html",
     silentRefreshTimeout: 5 * 1000,
     //    nonceStateSeparator:'-',
     customQueryParams: { domain: 'StudentServicesDomain', requiresConsent: false },

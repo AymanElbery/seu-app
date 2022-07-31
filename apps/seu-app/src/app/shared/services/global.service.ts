@@ -12,7 +12,8 @@ export class GlobalService extends GlobalBaseService {
     window.location.href = environment.ssolink + '/' + environment.loginpage;
   }
   getSID(): string {
-    return localStorage.getItem('sid');
+    //return localStorage.getItem('sid');
+    return localStorage.getItem('access_token');
   }
 
   removeItem(key) {

@@ -116,14 +116,7 @@ export function oAuthStorageFactory(): OAuthStorage {
     VgControlsModule,
     Committe_confirmModule,
     //ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    OAuthModule.forRoot(
-    {
-      resourceServer: {
-          allowedUrls: ['https://test-seuapps.seu.edu.sa/'],
-          sendAccessToken: true
-      }
-  }
-  )
+    OAuthModule.forRoot()
   ],
   providers: [ConfigService,
     HttpRequestService,
