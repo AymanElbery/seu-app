@@ -1,0 +1,102 @@
+<mat-dialog-content dir="{{translate.currentLang == 'ar' ? 'rtl':'ltr'}}">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="width:100%;text-align: center" class="modal-title " id="exampleModalLabel">
+                {{ "seu_structure.title"|translate }}
+            </h5>
+        </div>
+        <div class="modal-body" style="width: 100%;" (scroll)="onScroll($event)">
+            <form role="form" *ngIf="show_form" [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info text-center">
+                            <strong>{{"seu_structure.message"|translate}}</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ng-container>
+                            <div class="state">
+                                <h6>{{"seu_structure.level_a"|translate}} <span class="reqstart">*</span></h6>
+                                <ng-select (change)="change_level_a($event)" [items]="levels_a" bindLabel="LEVEL_A" bindValue="LEVEL_A" formControlName="LEVEL_A"></ng-select>
+                            </div>
+                            <div *ngIf="form.controls.LEVEL_A.invalid && (form.controls.LEVEL_A.dirty || form.controls.LEVEL_A.touched)">
+                                <div *ngIf="form.controls.LEVEL_A.errors.required">
+                                    <b style="position: relative; left: -10px;" class="text-danger">{{"seu_structure.required"|translate}}</b>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="row" *ngIf="show_level_b">
+                    <div class="col-md-12">
+                        <ng-container>
+                            <div class="state">
+                                <h6>{{"seu_structure.level_b"|translate}} <span class="reqstart">*</span></h6>
+                                <ng-select (change)="change_level_b($event)" [items]="levels_b" bindLabel="LEVEL_B" bindValue="LEVEL_B" formControlName="LEVEL_B"></ng-select>
+                            </div>
+                            <div *ngIf="form.controls.LEVEL_B.invalid && (form.controls.LEVEL_B.dirty || form.controls.LEVEL_B.touched)">
+                                <div *ngIf="form.controls.LEVEL_B.errors.required">
+                                    <b style="position: relative; left: -10px;" class="text-danger">{{"seu_structure.required"|translate}}</b>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="row" *ngIf="show_level_c">
+                    <div class="col-md-12">
+                        <ng-container>
+                            <div class="state">
+                                <h6>{{"seu_structure.level_c"|translate}} <span class="reqstart">*</span></h6>
+                                <ng-select [items]="levels_c" bindLabel="LEVEL_C" bindValue="LEVEL_C" formControlName="LEVEL_C"></ng-select>
+                            </div>
+                            <div *ngIf="form.controls.LEVEL_C.invalid && (form.controls.LEVEL_C.dirty || form.controls.LEVEL_C.touched)">
+                                <div *ngIf="form.controls.LEVEL_C.errors.required">
+                                    <b style="position: relative; left: -10px;" class="text-danger">{{"seu_structure.required"|translate}}</b>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ng-container>
+                            <div class="state">
+                                <h6>{{"seu_structure.manager_email"|translate}} <span class="reqstart">*</span></h6>
+                                <input class="form-control" type="email" formControlName="MANAGER_EMAIL">
+                            </div>
+                            <div *ngIf="form.controls.MANAGER_EMAIL.invalid && (form.controls.MANAGER_EMAIL.dirty || form.controls.MANAGER_EMAIL.touched)">
+                                <div *ngIf="form.controls.MANAGER_EMAIL.errors.required">
+                                    <b style="position: relative; left: -10px;" class="text-danger">{{"seu_structure.required"|translate}}</b>
+                                </div>
+                                <div *ngIf="form.controls.MANAGER_EMAIL.errors.email">
+                                    <b style="position: relative; left: -10px;" class="text-danger">{{"seu_structure.email_not_valid"|translate}}</b>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ng-container>
+                            <div class="state">
+                                <h6>{{"seu_structure.notes"|translate}} </h6>
+                                <textarea class="form-control" rows="6" formControlName="NOTES"></textarea>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <ng-container>
+                            <div class="state" style="text-align: center;">
+                                <button style="width: 30%;" class="btn btn-primary" [disabled]="form.invalid" (click)="submit()">{{"seu_structure.save"|translate}}</button>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-dialog-content>
