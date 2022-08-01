@@ -9,8 +9,8 @@ export const oAuthDevelopmentConfig = {
     // postLogoutRedirectUri: "https://test-eservice.seu.edu.sa/home",
     redirectUri: "http://localhost:4200/home",
     postLogoutRedirectUri: "http://localhost:4200/home",
-    scope: "", //openid offline_access profile email groups resource
-    oidc: true,
+    scope: "ResServer1.scope1 ResServer1.scope2 ResServer1.scope3 openid email profile", //openid offline_access profile email groups resource
+    oidc: false,
     requireHttps: false,
     useHttpBasicAuth: true,
     responseType: "code", //openid profile email offline_access api
