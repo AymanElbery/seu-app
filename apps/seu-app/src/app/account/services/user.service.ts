@@ -175,7 +175,7 @@ export class UserService extends BaseService {
             return this.userData;
           } else {
             this.userErroCode = res['errCode'];
-            this.errorRedirect();
+            //this.errorRedirect();
           }
         },
           err => {
