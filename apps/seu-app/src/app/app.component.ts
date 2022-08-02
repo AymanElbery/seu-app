@@ -96,7 +96,7 @@ export class AppComponent implements OnInit {
 
   oidc() {
     this.oAuthService.configure(oAuthDevelopmentConfig);
-    let url: string = "https://iamtest.seu.edu.sa/.well-known/openid-configuration";
+    let url: string = "https://iam.seu.edu.sa/.well-known/openid-configuration";
     this.oAuthService.setStorage(localStorage);
     this.oAuthService.tokenValidationHandler = new JwksValidationHandler();
 
