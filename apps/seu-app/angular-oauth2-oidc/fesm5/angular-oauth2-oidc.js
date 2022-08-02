@@ -1716,6 +1716,8 @@ var OAuthService = /** @class */ (function (_super) {
             }
             /** @type {?} */
             var headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+            headers = headers.set('x-oauth-identity-domain-name',_this.identityDomainName);
+            
             _this.http
                 .post(_this.tokenEndpoint, params, { headers: headers })
                 .pipe(switchMap((/**
