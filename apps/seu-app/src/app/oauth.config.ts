@@ -3,13 +3,15 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 export const oAuthDevelopmentConfig = {
     issuer: "https://iam.seu.edu.sa:443/oauth2",
     clientId: "SSClient",
-    dummyClientSecret: "welcome1",
+    //dummyClientSecret: "welcome1",
+    dummyClientSecret: "r25WLbwerqAzpgDZ2aaWelcome1",
 
     redirectUri: "https://eservice.seu.edu.sa/home",
     postLogoutRedirectUri: "https://eservice.seu.edu.sa/home",
     // redirectUri: "http://localhost:4200/home",
     // postLogoutRedirectUri: "http://localhost:4200/home",
-    scope: 'ResServer1.scope1 ResServer1.scope2 ResServer1.scope3 openid email profile',
+    //scope: 'ResServer1.scope1 ResServer1.scope2 ResServer1.scope3 openid email profile',
+    scope: 'StudentServiceResourceServer.openid StudentServiceResourceServer.Email StudentServiceResourceServer.Offline_access StudentServiceResourceServer.profile openid profile phone address email',
     oidc: false,
     requireHttps: false,
     useHttpBasicAuth: true,

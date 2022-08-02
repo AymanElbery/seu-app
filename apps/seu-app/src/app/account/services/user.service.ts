@@ -154,7 +154,7 @@ export class UserService extends BaseService {
     if (reqseq >= 3) {
       localStorage.removeItem("userreloaded");
       console.log("REDIRECT TO ERROR");
-      this.router.navigate(['/error']);
+      //this.router.navigate(['/error']);
     } else {
       localStorage.setItem("userreloaded", "" + (reqseq + 1));
       console.log("UPDATE 1");
@@ -179,7 +179,7 @@ export class UserService extends BaseService {
           }
         },
           err => {
-            this.errorRedirect();
+            //this.errorRedirect();
             // if (localStorage.getItem("userreloaded")) {
             //   localStorage.removeItem("userreloaded");
             //   window.location.href = "https://seu.edu.sa";
