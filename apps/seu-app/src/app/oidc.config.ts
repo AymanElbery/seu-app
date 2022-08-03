@@ -2,7 +2,7 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 
 export const authCodeFlowConfig: AuthConfig = {
   // Url of the Identity Provider
-  issuer: 'https://iamtest.seu.edu.sa:443/oauth2',
+  issuer: 'https://iam.seu.edu.sa:443/oauth2',
 
   // URL of the SPA to redirect the user to after login
   redirectUri: window.location.origin + '/index.html',

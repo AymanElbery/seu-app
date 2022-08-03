@@ -1070,7 +1070,7 @@ class OAuthService extends AuthConfig {
          */
         (resolve, reject) => {
             if (this.jwksUri) {
-                this.http.get(this.jwksUri+ "?identityDomainName="+_this.identityDomainName).subscribe((/**
+                this.http.get(this.jwksUri+ "?identityDomainName="+this.identityDomainName).subscribe((/**
                  * @param {?} jwks
                  * @return {?}
                  */
@@ -1245,7 +1245,7 @@ class OAuthService extends AuthConfig {
                 /** @type {?} */
                 const header = btoa(`${this.clientId}:${this.dummyClientSecret}`);
                 headers = headers.set('Authorization', 'Basic ' + header);
-                headers = headers.set('x-oauth-identity-domain-name', _this.identityDomainName);
+                headers = headers.set('x-oauth-identity-domain-name', this.identityDomainName);
             }
             if (!this.useHttpBasicAuth) {
                 params = params.set('client_id', this.clientId);
@@ -1315,6 +1315,7 @@ class OAuthService extends AuthConfig {
             }
             /** @type {?} */
             const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+            headers = headers.set('x-oauth-identity-domain-name', this.identityDomainName);
             this.http
                 .post(this.tokenEndpoint, params, { headers })
                 .pipe(switchMap((/**
