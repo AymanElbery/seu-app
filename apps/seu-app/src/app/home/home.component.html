@@ -175,7 +175,7 @@
                                     </div>
                                     <div class="col-md-4 new-ser">
                                         <p>
-                                            <a href="https://jobs.seu.edu.sa/sso_auth" target="_blank">
+                                            <a [href]="jobs_gate_url" target="_blank">
                                                 <img src="assets/images/black.png"> {{"menu.jobs" |
                                                 translate}}
                                             </a>
@@ -385,7 +385,7 @@
                                     </div>
                                     <div class="col-md-4 new-ser">
                                         <p>
-                                            <a href="https://jobs.seu.edu.sa/sso_auth" target="_blank">
+                                            <a [href]="jobs_gate_url" target="_blank">
                                                 <img src="assets/images/black.png"> {{"menu.jobs" |
                                                 translate}}
                                             </a>
@@ -504,6 +504,15 @@
                                             <a target="_blank"
                                                 href="https://saudieu-pyramid2018-analytics.blackboard.com">
                                                 <img src="assets/images/black.png"> {{"menu.BBREPORTS" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 new-ser"
+                                        *ngIf="userService.userData.email == 'a.elbery@seu.edu.sa'">
+                                        <p>
+                                            <a [href]="jobs_gate_url" target="_blank">
+                                                <img src="assets/images/black.png"> {{"menu.jobs" |
+                                                translate}}
                                             </a>
                                         </p>
                                     </div>

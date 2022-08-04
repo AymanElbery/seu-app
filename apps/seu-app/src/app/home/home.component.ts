@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PrintService } from '../shared/services/print.service';
 import { HomeService } from '../rootservices/home.service';
+import { GlobalService } from '../shared/services/global.service';
 import { UserService } from '../account/services/user.service';
 import { ApiUserRoles } from '../shared/models/StaticData/api-user-roles';
 import { CMSUserRoles } from '../shared/models/StaticData/cmsuser-roles';
@@ -37,18 +38,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   isResumeUser = false;
   isTraficUser = false;
   // CarouselOptions = { items: 3, dots: true, nav: true };
-
+  jobs_gate_url = '';
   hasNoRole = false;
 
   constructor(
     public printService: PrintService,
     public homeService: HomeService,
     public userService: UserService,
+    public globalService: GlobalService,
     private router: Router,
     private translate: TranslateService,
     private sanitized: DomSanitizer
   ) {
-    
+    this.jobs_gate_url = 'https://jobs.seu.edu.sa/sso_auth/' + this.globalService.getSID();
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
