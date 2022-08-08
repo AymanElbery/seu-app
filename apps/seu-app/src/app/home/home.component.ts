@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   isTraficUser = false;
   // CarouselOptions = { items: 3, dots: true, nav: true };
   jobs_gate_url = '';
+  guest_gate_url = '';
   hasNoRole = false;
 
   constructor(
@@ -51,6 +52,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private sanitized: DomSanitizer
   ) {
     this.jobs_gate_url = 'https://jobs.seu.edu.sa/sso_auth/' + this.globalService.getSID();
+    this.guest_gate_url = 'https://guest.seu.edu.sa/sso_auth/' + this.globalService.getSID();
     // tslint:disable-next-line: only-arrow-functions
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;

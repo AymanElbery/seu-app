@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="col-md-4 new-ser" *ngIf="userService.userData['guest']">
                                         <p>
-                                            <a href="https://guest.seu.edu.sa/sso_auth" target="_blank">
+                                            <a [href]="guest_gate_url" target="_blank">
                                                 <img src="assets/images/black.png"> {{"menu.guest" |
                                                 translate}}
                                             </a>
@@ -377,7 +377,7 @@
                                     </div>
                                     <div class="col-md-4 new-ser" *ngIf="userService.userData['guest']">
                                         <p>
-                                            <a href="https://guest.seu.edu.sa/sso_auth" target="_blank">
+                                            <a [href]="guest_gate_url" target="_blank">
                                                 <img src="assets/images/black.png"> {{"menu.guest" |
                                                 translate}}
                                             </a>
@@ -492,7 +492,7 @@
                                     </div>
                                     <div class="col-md-4 new-ser" *ngIf="userService.userData['guest']">
                                         <p>
-                                            <a href="https://guest.seu.edu.sa/sso_auth" target="_blank">
+                                            <a [href]="guest_gate_url" target="_blank">
                                                 <img src="assets/images/black.png"> {{"menu.guest" |
                                                 translate}}
                                             </a>
