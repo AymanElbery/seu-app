@@ -51,14 +51,21 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.oidc();
+    const notapps = (document.location.href.indexOf("/apps") == -1) ? true : false;
+    const notpublic = (document.location.href.indexOf("/public") == -1) ? true : false;
+    const notcontactus = (document.location.href.indexOf("/contactus") == -1) ? true : false;
+    if (notapps && notpublic && notcontactus) {
+      this.oidc();
 
-    this.signedIn = this.authService.isSignedIn();
+      this.signedIn = this.authService.isSignedIn();
 
-    this.authService.userChanged().subscribe(
-        (user) => {
-            console.log("USER CHECNGED",user);
-        });
+      this.authService.userChanged().subscribe(
+      (user) => {
+          console.log("USER CHECNGED",user);
+      });
+      //this.userService.relogin();
+    }
+    
   }
   custionsso() {
     this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
