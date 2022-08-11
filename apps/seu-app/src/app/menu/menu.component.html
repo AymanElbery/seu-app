@@ -763,7 +763,7 @@
 
         <div *ngIf="
             userService.userData &&
-            environment.chatbot_mails.includes(userService.userData.email)
+            environment.chatbot_mails.includes(userService.userData.email.toLowerCase())
           " class="nav-item">
           <a routerLink="/enquries">
             <span>{{ "menu.enquries" | translate }} </span>
