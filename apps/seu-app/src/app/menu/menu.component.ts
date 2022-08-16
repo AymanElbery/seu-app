@@ -113,7 +113,7 @@ export class MenuComponent implements OnInit, AfterContentInit {
   ngOnInit() {
     this.userService.userDataSubject.subscribe(res => {
       // console.log('fill menu');
-      if (this.environment.chatbot_mails.includes(this.userService.userData.email)) {
+      if (this.environment.chatbot_mails.includes(this.userService.userData.email.toLowerCase())) {
         let unread = this;
         this.getUnreadEnquries();
         if (this.enqueryInterval) {
