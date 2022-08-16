@@ -18,5 +18,6 @@ export const oAuthDevelopmentConfig = {
     silentRefreshRedirectUri: "https://eservice.seu.edu.sa/silent-refresh.html",
     silentRefreshTimeout: 5 * 1000,
     customQueryParams: { domain: 'StudentServicesDomain', requiresConsent: false },
-    identityDomainName: 'StudentServicesDomain'
+    identityDomainName: 'StudentServicesDomain',
+    config_openid: "https://iam.seu.edu.sa/.well-known/openid-configuration"
 }

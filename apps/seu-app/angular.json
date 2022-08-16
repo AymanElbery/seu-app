@@ -86,6 +86,10 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.test.ts"
+                },
+                {
+                  "replace": "src/app/oauth.config.ts",
+                  "with": "src/app/oauth.test.config.ts"
                 }
               ],
               "optimization": true,
