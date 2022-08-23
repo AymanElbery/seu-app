@@ -1,12 +1,12 @@
 import { AuthConfig } from 'angular-oauth2-oidc';
 
 export const oAuthDevelopmentConfig = {
-    issuer: "https://iamtest.seu.edu.sa:443/oauth2",
-    clientId: "TestClient",
-    dummyClientSecret: "welcome1",
+    issuer: "https://iam.seu.edu.sa:443/oauth2",
+    clientId: "SSClient",
+    dummyClientSecret: "r25WLbwerqAzpgDZ2aaWelcome1",
     redirectUri: "http://localhost:4200/home",
     postLogoutRedirectUri: "http://localhost:4200/home",
-    scope: 'ResServer1.scope1 ResServer1.scope2 ResServer1.scope3 openid email profile',
+    scope: 'StudentServiceResourceServer.openid StudentServiceResourceServer.Email StudentServiceResourceServer.Offline_access StudentServiceResourceServer.profile openid profile phone address email',
     oidc: false,
     requireHttps: false,
     useHttpBasicAuth: true,
@@ -19,5 +19,5 @@ export const oAuthDevelopmentConfig = {
     silentRefreshTimeout: 5 * 1000,
     customQueryParams: { domain: 'StudentServicesDomain', requiresConsent: false },
     identityDomainName: 'StudentServicesDomain',
-    config_openid: "https://iamtest.seu.edu.sa/.well-known/openid-configuration"
+    config_openid: "https://iam.seu.edu.sa/.well-known/openid-configuration"
 }

@@ -39,7 +39,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   logout() {
-    this.userManager.logout();
+    //this.userManager.logout();
+    //localStorage.removeItem('access_token');
+    localStorage.removeItem('access_token');
+    window.location.href = "https://iam.seu.edu.sa/oam/server/logout?end_url=https://iam.seu.edu.sa/SEUSSO/pages/Logout.jsp";
   }
   useLang(code) {
     this.currLang = code;
