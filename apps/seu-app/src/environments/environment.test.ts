@@ -2,7 +2,7 @@ export const environment = {
   production: true,
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
-  ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', // newservices/
+  ssolink: 'https://eservice.seu.edu.sa/', // newservices/
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
   wafi_apilink: 'https://iam.seu.edu.sa/CPTIT_SEU_WS_TEST/jersey/', // wafi
   servie_admission: 'https://apps.seu.edu.sa/newservices/api-test/admission',
