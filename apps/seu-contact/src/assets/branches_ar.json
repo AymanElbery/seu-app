@@ -178,8 +178,13 @@
         "maps": [
             {
                 "title": "مقر الطلاب",
-                "desc": "يقع مقر الطلاب فرع الجامعة السعودية الإلكترونية في مبنى جامعة جدة ​بكلية التربية بحي الفيصلية مبنى (ب)",
+                "desc": "يقع مقر الطلاب فرع الجامعة السعودية الإلكترونية في مدينة بريدة في مبنى السنة التحضيرية التابع لجامعة القصيم حي المليداء.",
                 "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.410458919383!2d43.762695315032886!3d26.345582983375163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDIwJzQ0LjEiTiA0M8KwNDUnNTMuNiJF!5e0!3m2!1sen!2ssa!4v1456912631249"
+            },
+            {
+                "title": "مقر الطالبات",
+                "desc": "يقع مقر الطلاب فرع الجامعة السعودية الإلكترونية في حي الإسكان مدينة بريدة.",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7148.302707253283!2d43.9239031!3d26.3862974!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x157f576ffe39547b%3A0xf241780dc221054a!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KfZhNmD2KrYsdmI2YbZitip!5e0!3m2!1sen!2ssa!4v1660208704977!5m2!1sen!2ssa%22%20width=%22600%22%20height=%22450%22%20style=%22border:0;%22%20allowfullscreen=%22%22%20loading=%22lazy%22%20referrerpolicy=%22no-referrer-when-downgrade"
             }
         ]
     },
@@ -232,13 +237,13 @@
         "maps": [
             {
                 "title": "مقر الطلاب",
-                "desc": "مدينة أبها—فرع الجامعة السعودية الإلكترونية في جامعة الملك خالد  بالمدينة الجامعية حي القريقر مبنى أ",
-                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1894.58159536099!2d42.55992592346373!3d18.248339098965143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fcaac8d05abed1%3A0x249997a8b354e044!2zNzc0OdiMINin2YTZgtix2YrZgtix2Iwg2KPYqNmH2KcgNjI1MjnCoDMzNzQ!5e0!3m2!1sar!2ssa!4v1456914787919"
+                "desc": "مدينة أبها—فرع الجامعة السعودية الإلكترونية في جامعة الملك خالد بالمدينة الجامعية بالقرعاء",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14493.851921222311!2d46.757523!3d24.74531035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fca583ac6b9a3b%3A0x5870bf70c4c0c42c!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KXZhNmD2KrYsdmI2YbZitipLCBVbm5hbWVkIFJvYWQgNjIyMjPYjOKArQ!5e0!3m2!1sen!2ssa!4v1661662266467!5m2!1sen!2ssa"
             },
             {
                 "title": " مقر الطالبات",
-                "desc": "فرع الجامعة السعودية الإلكترونية في  حي السامر المركز الجامعي لدراسة الطالبات مبنى أ",
-                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4613.647742679007!2d42.51415128469909!3d18.22802278281215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e354f5575f9c27%3A0x49a7f080a68cd1fc!2zNDYzMiDYp9mE2LHZitin2LbYjCDYtNmF2LPYp9mG2Iwg2KPYqNmH2KcgNjI1MjHCoDkxNDA!5e1!3m2!1sar!2ssa!4v1456914994290"
+                "desc": "مدينة أبها—فرع الجامعة السعودية الإلكترونية في جامعة الملك خالد بالمدينة الجامعية حي القريقر مبنى أ",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1894.58159536099!2d42.55992592346373!3d18.248339098965143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fcaac8d05abed1%3A0x249997a8b354e044!2zNzc0OdiMINin2YTZgtix2YrZgtix2Iwg2KPYqNmH2KcgNjI1MjnCoDMzNzQ!5e0!3m2!1sar!2ssa!4v1456914787919"
             }
         ]
     },
@@ -264,8 +269,13 @@
         "maps": [
             {
                 "title": "مقر الطلاب",
-                "desc": "يقع مقر الجامعة الإلكترونية للطلاب في مدينة تبوك في مبنى كلية العلوم التابع لجامعة تبوك على طريق ضبا",
+                "desc": "يقع مقر الجامعة السعودية الالكترونية فرع تبوك لشطر الطلاب في مبنى كلية العلوم التابع لجامعة تبوك على طريق ضبا",
                 "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.4651693814167!2d36.47253431507686!3d28.375014982520096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDIyJzMwLjEiTiAzNsKwMjgnMjkuMCJF!5e0!3m2!1sen!2ssa!4v1456982034569"
+            },
+            {
+                "title": "مقر الطالبات",
+                "desc": "يقع مقر الجامعة السعودية الالكترونية فرع تبوك لشطر الطالبات في مبنى كلية ادارة الاعمال التابع لجامعة تبوك على طريق ضبا",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.159202575802!2d36.467075400000006!3d28.384259099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15a9af1b57f5c505%3A0xc525a7674420c565!2z2YPZhNmK2Kkg2KfYr9in2LHYqSDYp9mE2KfYudmF2KfZhCAoINi32KfZhNio2KfYqik!5e0!3m2!1sar!2ssa!4v1662287559071!5m2!1sar!2ssa"
             }
         ]
     },
@@ -306,11 +316,92 @@
             },
             {
                 "title": " مقر الطالبات",
-                "desc": "يقع في فرع الجامعة السعودية الإلكترونية بمنطقة جازان بالمدينة الجامعية، مبنى السنة التحضيرية",
-                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15264.798797533424!2d42.5508258!3d16.9647246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16080763837ef1a3%3A0xf3b94b7cd2d2f6bc!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KXZhNmD2KrYsdmI2YbZitipINmB2LHYuSDYrNin2LLYp9mG!5e0!3m2!1sar!2ssa!4v1456982468857"
+                "desc": "يقع في فرع الجامعة السعودية الإلكترونية بمنطقة جازان بالمجمع الأكاديمي للطالبات 1",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1134.8888290586929!2d42.554991462182066!3d16.91070314211657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1607e2ab1c963e79%3A0xfc1d9a1526b06224!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KfZhNmD2KrYsdmI2YbZitipINmB2Yog2KzYp9iy2KfZhiAo2LTYt9ixINin2YTYt9in2KjYp9iqICk!5e0!3m2!1sar!2ssa!4v1661780296401!5m2!1sar!2ssa"
             }
         ]
+    },
+    "najran": {
+        "title": "فرع نجران",
+        "contact": [
+            {
+                "label": "الموقع",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​المملكة العربية السعودية - نجران"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب",
+                "desc": "يقع في فرع الجامعة السعودية الإلكترونية في كلية الحاسب الآلي بجامعة نجران",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3802.396519970803!2d44.54165438512014!3d17.63136918793288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15ff2f7d8bf37dcf%3A0x673f92ef117f5a7f!2z2YPZhNmK2Kkg2KfZhNit2KfYs9io!5e0!3m2!1sar!2ssa!4v1629792059020!5m2!1sar!2ssa"
+            },
+            {
+                "title": " مقر الطالبات",
+                "desc": "يقع في فرع الجامعة السعودية الإلكترونية في عمادة السنة التحضيرية بجامعة نجران",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.9075833313277!2d44.54025398511991!3d17.654535587919014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDM5JzE2LjMiTiA0NMKwMzInMTcuMCJF!5e0!3m2!1sar!2ssa!4v1629792641635!5m2!1sar!2ssa"
+            }
+        ]
+    },
+    "hail": {
+        "title": "فرع حائل",
+        "contact": [
+            {
+                "label": "الموقع",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​المملكة العربية السعودية - حائل"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب",
+                "desc": "يقع في فرع الجامعة السعودية الإلكترونية في كلية علوم وهندسة الحاسب الآلي بجامعة حائل",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.7838974020083!2d41.715156315061165!3d27.662156982810682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDM5JzQzLjgiTiA0McKwNDMnMDIuNCJF!5e0!3m2!1sen!2sus!4v1629792930827!5m2!1sen!2sus"
+            },
+            {
+                "title": " مقر الطالبات",
+                "desc": "A17 , B17 يقع مقر الطالبات في مجمع الطالبات بآجا بوابة رقم 5 مبنى السنة التحضيرية رقم المبنى",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.986031529353!2d41.69304731505891!3d27.5629439828519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjfCsDMzJzQ2LjYiTiA0McKwNDEnNDIuOSJF!5e0!3m2!1sen!2ssa!4v1629792970799!5m2!1sen!2ssa"
+            }
+        ]   
+    },
+    "aljubail": {
+        "title": "فرع الجبيل",
+        "contact": [
+            {
+                "label": "الموقع",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​المملكة العربية السعودية - الجبيل"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب والطالبات",
+                "desc": "كلية الجبيل الجامعية",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3552.5615321530604!2d49.5910344!3d27.075584900000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e3509484fa1953f%3A0xc1b2c29d0dbf277c!2sJubail%20University%20College!5e0!3m2!1sen!2ssa!4v1660023943400!5m2!1sen!2ssa%22%20width=%22600%22%20height=%22450%22%20style=%22border:0;%22%20allowfullscreen=%22%22%20loading=%22lazy%22%20referrerpolicy=%22no-referrer-when-downgrade"
+            }
+        ]   
+    },
+    "yanbu": {
+        "title": "فرع ينبع",
+        "contact": [
+            {
+                "label": "الموقع",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​المملكة العربية السعودية - ينبع"
+            }
+        ],
+        "maps": [
+            {
+                "title": "مقر الطلاب",
+                "desc": "يقع في فرع الجامعة السعودية الإلكترونية في كلية ينبع الجامعية (قسم الطلاب)",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.1847205498716!2d38.18200540000001!3d24.0245504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15b91bb1d29fe2dd%3A0x6850e838011da918!2z2YPZhNmK2Kkg2YrZhtio2Lkg2KfZhNis2KfZhdi52YrYqSAoINmC2LPZhSDYp9mE2LfZhNin2KggKQ!5e0!3m2!1sar!2ssa!4v1660024578024!5m2!1sar!2ssa%22%20width=%22600%22%20height=%22450%22%20style=%22border:0;%22%20allowfullscreen=%22%22%20loading=%22lazy%22%20referrerpolicy=%22no-referrer-when-downgrade"
+            },
+            {
+                "title": " مقر الطالبات",
+                "desc": "يقع في فرع الجامعة السعودية الإلكترونية في كلية ينبع الجامعية (قسم الطالبات)",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3644.200412409996!2d38.189318199999995!3d24.0239969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15b91affc2618591%3A0xd574f080f2582238!2z2YPZhNmK2Kkg2YrZhtio2Lkg2KfZhNis2KfZhdi52YrYqSAtINmC2LPZhSDYp9mE2KjZhtin2Ko!5e0!3m2!1sar!2ssa!4v1660024626980!5m2!1sar!2ssa%22%20width=%22600%22%20height=%22450%22%20style=%22border:0;%22%20allowfullscreen=%22%22%20loading=%22lazy%22%20referrerpolicy=%22no-referrer-when-downgrade"
+            }
+        ]   
     }
-
-
 }
