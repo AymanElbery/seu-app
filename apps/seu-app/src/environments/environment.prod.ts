@@ -8,7 +8,7 @@ export const environment = {
   servie_admission: 'https://apps.seu.edu.sa/newservices/api/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api/fees",
   common: '/rest', 
-  ud: '/std_api_diplome', 
+  ud: '/std_api_diplome/', 
   gr: '/stdsUnivapi', 
   servicesprefix: 'api/', 
   appsprefix: 'apps-prod', 
