@@ -42,6 +42,9 @@ export class TranslationRootService {
         if (session_id) {
             headers = headers.append('sessionid', session_id);
         }
+        if (localStorage.getItem('sid_translate')) {
+            headers = headers.append('sid_translate', localStorage.getItem('sid_translate'));
+        }
         return headers;
     }
 

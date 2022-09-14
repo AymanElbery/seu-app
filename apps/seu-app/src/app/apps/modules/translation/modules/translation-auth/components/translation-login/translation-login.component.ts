@@ -52,9 +52,8 @@ export class TranslationLoginComponent implements OnInit {
         this.submitted = false;
         return false;
       }
-      localStorage.setItem('sid', encodeURI(response['data']['token']));
-      localStorage.setItem('sid_out', '1');
-
+      localStorage.setItem('sid_translate', encodeURI(response['data']['token']));
+      localStorage.setItem('sid_out_translate', '1');
       this.tuser.setUser(response['data']['user']);
       this.router.navigate(["/apps/translation/client/my-requests"]);
     }, error => {
