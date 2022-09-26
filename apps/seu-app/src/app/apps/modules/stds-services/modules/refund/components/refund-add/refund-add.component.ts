@@ -70,7 +70,7 @@ export class RefundAddComponent implements OnInit {
         if(choice.CODE == 'CHAR' || choice.CODE == 'AMAL'){
             if(choice.IS_OPEN == 1){
                 this.reset_message();
-                if (this.std_balance == 0) {
+                if (this.std_balance <= 0) {
                     this.reset_message();
                     this.set_message('service_pay_message');
                     this.valid = true;
