@@ -18,6 +18,7 @@ export const environment = {
   appsprefix: 'apps', 
   loginpage: 'login-local.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
+  basicAuth: 'api_seu_prod_rest_auth:Seu$123_321',
   ssoAuth: 'sso:s$0$3u2030',
   allowWafi: true,
   captchaSiteKey: "6LcZJOgUAAAAADeusuP0ndPRe8A5ip1FBypF_WlQ",

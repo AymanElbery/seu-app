@@ -228,7 +228,7 @@ export class UserService extends BaseService {
 
   getEmpData(emp_id) {
     var url = environment.baselink + environment.servicesprefix + environment.common+"/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -241,7 +241,7 @@ export class UserService extends BaseService {
 
   getStdData(std_id) {
     var url = environment.baselink + environment.servicesprefix + environment.common +"/public/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -254,7 +254,7 @@ export class UserService extends BaseService {
 
   getResumeAdminUsers() {
     var url = environment.baselink + environment.servicesprefix + environment.common +"/resume/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -267,7 +267,7 @@ export class UserService extends BaseService {
 
   getTraficUsers() {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/trafic/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -280,7 +280,7 @@ export class UserService extends BaseService {
 
   getDistrictsByCityId(cityId) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -293,7 +293,7 @@ export class UserService extends BaseService {
 
   getUniversities() {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -306,7 +306,7 @@ export class UserService extends BaseService {
 
   getrels() {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -319,7 +319,7 @@ export class UserService extends BaseService {
 
   getCities() {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -332,7 +332,7 @@ export class UserService extends BaseService {
 
   updateEmpInfo(data) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -343,7 +343,7 @@ export class UserService extends BaseService {
 
   sendEmail(email) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -354,7 +354,7 @@ export class UserService extends BaseService {
 
   sendEmailStd(email) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -365,7 +365,7 @@ export class UserService extends BaseService {
 
   sendSMS(email, code, mobile) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -376,7 +376,7 @@ export class UserService extends BaseService {
 
   sendSMSStd(email, code, mobile) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -387,7 +387,7 @@ export class UserService extends BaseService {
   
   sendSMS_confirm(mobile, code, data) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -398,7 +398,7 @@ export class UserService extends BaseService {
 
   sendSMS_confirm_std(mobile, code, data) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/erp/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -409,7 +409,7 @@ export class UserService extends BaseService {
 
   updateStudentVaccineStatus(data) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/vaccine/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -420,7 +420,7 @@ export class UserService extends BaseService {
 
   updateEmpSeuStructureData(data) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/seu_structure/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -431,7 +431,7 @@ export class UserService extends BaseService {
 
   updateStudentRights(data) {
     var url = environment.baselink + environment.servicesprefix + environment.common + "/std_rights/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth
@@ -442,7 +442,7 @@ export class UserService extends BaseService {
 
   get_seu_structure(){
     var url = environment.baselink + environment.servicesprefix + environment.common + "/seu_structure/";
-    var auth = `Basic ${window.btoa('emp:Emp@201620')}`;
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': auth

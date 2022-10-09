@@ -102,7 +102,7 @@ export class HttpRequestServiceBase {
 
   creatAuthHeader() {
     // alert('hi');
-    const auth = 'Basic ${c3NvOnMkMCQzdTIwMzA=}';
+    const auth = `Basic ${window.btoa(environment.basicAuth)}`;
     // alert(auth);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -121,11 +121,11 @@ export class HttpRequestServiceBase {
   }
 
   getNotinficationsAuth() {
-    return `Basic ${window.btoa(environment.notesAuth)}`;
+    return `Basic ${window.btoa(environment.basicAuth)}`;
   }
   getSSOAuth() {
     // alert('10');
-    return 'Basic bm90czpOMHQhZmljQHRpMG4k';
+    return `Basic ${window.btoa(environment.basicAuth)}`;
   }
 
 }
