@@ -10,6 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 import { HttpRequestServiceBase } from '../../shared/services/http-request.service_base';
 import { Router } from '@angular/router';
+import { GlobalBaseService } from 'src/app/shared/services/global-base.service';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +36,8 @@ export class UserService extends BaseService {
     private httRequest: HttpRequestServiceBase,
     private http: HttpClient,
     private translate: TranslateService,
-    private router: Router
+    private router: Router,
+    protected globalService: GlobalBaseService
   ) {
     super();
     this.configService.baseUrl = '';
@@ -220,6 +222,7 @@ export class UserService extends BaseService {
     const auth = this.httRequest.getNotinficationsAuth();
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
+      'sessionid': this.globalService.getSID(),
       username,
       Authorization: auth
     });
@@ -231,7 +234,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.get(url + "info_confirmations/info/" + emp_id, {
@@ -244,7 +248,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.get(url + "stds/get_stds_info/" + std_id, {
@@ -257,7 +262,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.get(url + "api/get_admin_users", {
@@ -270,7 +276,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.get(url + "trafic/get_users", {
@@ -283,7 +290,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.get(url + "info_confirmations/districts/" + cityId, {
@@ -296,7 +304,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.get(url + "info_confirmations/univs", {
@@ -309,7 +318,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.get(url + "info_confirmations/rels", {
@@ -322,7 +332,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.get(url + "info_confirmations/cities", {
@@ -335,7 +346,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "info_confirmations/update", data, { headers: headers });
@@ -346,7 +358,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "data_clean/send_email", {email: email}, { headers: headers });
@@ -357,7 +370,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "data_clean_std/send_email", {email: email}, { headers: headers });
@@ -368,7 +382,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "data_clean/confirm_email", {email: email, code: code, mobile: mobile}, { headers: headers });
@@ -379,7 +394,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "data_clean_std/confirm_email", {email: email, code: code, mobile: mobile}, { headers: headers });
@@ -390,7 +406,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "data_clean/confirm_sms", {mobile: mobile, code: code, data: data}, { headers: headers });
@@ -401,7 +418,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "data_clean_std/confirm_sms", {mobile: mobile, code: code, data: data}, { headers: headers });
@@ -412,7 +430,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "status/update", data, { headers: headers });
@@ -423,7 +442,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "emp/insert", data, { headers: headers });
@@ -434,7 +454,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.post(url + "std_rights/update", data, { headers: headers });
@@ -445,7 +466,8 @@ export class UserService extends BaseService {
     var auth =`Basic ${window.btoa(environment.basicAuth)}`;
     var headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': auth
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
     });
 
     return this.http.get(url + "emp/lookups", {
