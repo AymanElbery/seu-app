@@ -110,7 +110,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.hasNoRole = true;
     }
     // console.log('LoadNews');
-    // console.log('user is ' + this.userService.userData);
     // tslint:disable-next-line: triple-equals
     if (this.userService.userData.activeRole === ApiUserRoles.Student) {
       return this.loadStudentNews();
