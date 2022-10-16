@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12" *ngIf="continous_request_form.controls.BANK.value">
                                     <div class="state">
-                                        <h6>{{"refund.bank_iban"|translate}}</h6>
+                                        <h6>{{"refund.bank_iban"|translate}}<span class="reqstart">*</span></h6>
                                         <input type="file" accept="*/*" (change)="handleInputChange($event)" id="file" class="form-control-file form-control">
                                     </div>
                                 </div>
