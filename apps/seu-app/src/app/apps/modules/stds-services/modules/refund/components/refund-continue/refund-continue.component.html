@@ -31,7 +31,7 @@
                                 <div class="col-md-12 col-sm-12">
                                     <div class="state">
                                         <h6>{{"refund.dob"|translate}}<span class="reqstart">*</span></h6>
-                                        <input type="text" formControlName="DOB" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                                        <input type="text" formControlName="DOB" [maxDate]="maxDate" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
                                     </div>
                                     <strong class="text-danger mr-3 d-block" *ngIf="submitted && continous_request_form.controls.DOB.errors && continous_request_form.controls.DOB.errors.required">{{ "refund.errors.required" | translate}}</strong>
                                 </div>

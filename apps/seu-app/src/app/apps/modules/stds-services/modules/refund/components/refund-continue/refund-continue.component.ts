@@ -45,6 +45,7 @@ export class RefundContinueComponent implements OnInit {
   filename = ''; 
   file ;
   FEE_REFUND_REQ_ID;
+  maxDate;
   constructor(
         @Inject(MAT_DIALOG_DATA) public data,
         public dialogRef: MatDialogRef<RefundContinueComponent>,
@@ -54,6 +55,7 @@ export class RefundContinueComponent implements OnInit {
         private translate: TranslateService
     ) { 
       this.FEE_REFUND_REQ_ID = this.data;
+      this.maxDate = new Date(new Date().getFullYear() - 10, new Date().getMonth(), new Date().getDate());
       this.get_banks_data();
     }
 
