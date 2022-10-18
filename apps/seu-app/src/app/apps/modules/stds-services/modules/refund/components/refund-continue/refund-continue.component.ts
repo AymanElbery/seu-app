@@ -6,6 +6,7 @@ import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angula
 import { AppToasterService } from 'src/app/shared/services/app-toaster';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { ValidateIBAN } from '../../../shared/iban.validator';
+import { ValidateHolderName } from '../../../shared/holder_name.validator';
 import { ValidateIBANBank } from '../../../shared/iban_with_bank.validator';
 import { TranslateService } from '@ngx-translate/core';
 @Component({
@@ -46,6 +47,9 @@ export class RefundContinueComponent implements OnInit {
   file ;
   FEE_REFUND_REQ_ID;
   maxDate;
+  submit_enable = false;
+  show_certificate = false;
+  
   constructor(
         @Inject(MAT_DIALOG_DATA) public data,
         public dialogRef: MatDialogRef<RefundContinueComponent>,
@@ -63,7 +67,7 @@ export class RefundContinueComponent implements OnInit {
       this.continous_request_form = this.fb.group({
         'BANK_IS_YOURS': ['', [Validators.required]],
         'DOB': ['', [Validators.required]],
-        'HOLDER_NAME': ['', [Validators.required]],
+        'HOLDER_NAME': ['', [Validators.required, ValidateHolderName]],
         'BANK': ['', [Validators.required]],
         'IBAN': ['', [Validators.required, ValidateIBAN]],
       },
@@ -71,6 +75,18 @@ export class RefundContinueComponent implements OnInit {
         validator: ValidateIBANBank('BANK', 'IBAN'),
       }
       );
+    }
+
+    accept_eqrar(e){
+      this.submit_enable = e.checked;
+    }
+
+    show_cert(e){
+      if(!this.show_certificate){
+        e.preventDefault();
+        this.show_certificate = true;
+        window.open("https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/bank_cerificate_template.pdf", '_blank');
+      }
     }
 
     get_banks_data(){
