@@ -1,0 +1,38 @@
+<mat-dialog-content dir="rtl">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.change_branch.change_branch_req"|translate}}</h5>
+
+      </div>
+      <h5 style="text-align: center">{{"services.change_branch.alert"|translate}}</h5>
+      <h6 style="text-align: center">{{"services.change_branch.alert_content"|translate}}</h6>
+      <h6 style="text-align: center"> {{"services.change_branch.branch_cancellation_validity"|translate}}</h6>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+        <div class="modal-body">
+          <!--drop down list-->
+          <p style="text-align:center">{{"services.change_branch.choose_branch"|translate}}</p>
+
+          <select class="form-control" #CampID="ngModel" [(ngModel)]="cmp.camp" name="Camp"
+            [class.is-invalid]="cmp.camp == ''">
+            <option value=''>{{"services.change_branch.choose_branch"|translate}}</option>
+            <option *ngFor="let camp of camps" [value]="camp.CAMP_CODE">{{camp.CAMP_DESC}}</option>
+          </select>
+
+          <!--<mat-select >
+  <mat-option *ngFor="let camp of reqData.camps" [value]="camp.CAMP_CODE">{{camp.CAMP_DESC}}</mat-option>
+</mat-select>-->
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i
+              class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

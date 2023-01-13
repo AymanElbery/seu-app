@@ -1,0 +1,43 @@
+<!-- Modal -->
+<mat-dialog-content>
+  <div class="modal-dialog" role="document" dir="rtl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> {{"services.postpone_corona_request.postpone_req"|translate}}</h5>
+
+      </div>
+      <div class="modal-body">
+        <P class="text-center"> </P>
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+
+
+
+
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"> {{"services.postpone_corona_request.cause"|translate}}</div>
+                </div>
+                <input name="reason" #reason="ngModel" [(ngModel)]="postpone.reason" class="form-control">
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+              {{"general.cancel"|translate}}</button>
+
+            <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> {{"general.save"|translate}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</mat-dialog-content>

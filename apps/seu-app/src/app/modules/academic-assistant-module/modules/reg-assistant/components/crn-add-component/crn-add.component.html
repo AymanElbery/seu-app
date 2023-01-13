@@ -1,0 +1,72 @@
+<mat-dialog-content dir="rtl">
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="text-align: center" class="modal-title ">
+                {{"reg_assistant.requests_crn_title"|translate}}
+            </h5>
+        </div>
+        <div class="modal-body">
+            <form role="form" [formGroup]="formCrn">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-info text-center">
+                            <strong>{{"reg_assistant.crncomments"|translate}}</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"reg_assistant.crse"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="crse" (change)="crseCange($event)"> 
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="formCrn.controls.crse"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row" *ngIf="!can_add_new">
+                    <div class="col-md-12 alert alert-danger text-center">
+                        <strong>{{"reg_assistant.can_add_new_crn"|translate}}</strong>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"reg_assistant.days"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="days" bindLabel="text" bindValue="value" formControlName="day">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="formCrn.controls.day"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"reg_assistant.times"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="times" bindLabel="text" bindValue="value" formControlName="time">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="formCrn.controls.time"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"reg_assistant.comments"|translate}}</h6>
+                            <textarea maxlength="500" class="form-control" formControlName="comments"></textarea>
+                        </div>
+                        <control-validations-errors [control]="formCrn.controls.comments"></control-validations-errors>
+                    </div>
+                </div> 
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-12" style="text-align: center;">
+                        <button style="width: 30%;" [disabled]="submittedCrn || formCrn.invalid" (click)="onSubmitCrn()"
+                            type="submit" class="btn btn-primary">{{ "general.send" |
+                            translate}}
+                            <i class="fa fa-save"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-dialog-content>

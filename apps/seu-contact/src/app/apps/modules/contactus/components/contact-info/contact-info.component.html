@@ -1,0 +1,142 @@
+<div class="container {{currLang == 'ar' ? 'content-arabic' : 'content-english'}} ">
+    <div class="row" style="margin-top: 3%;">
+        <div class="contact-page-inner col-md-5">
+            <div class="section-header wow fadeInDown" data-wow-duration="2s"
+                style="visibility: visible; animation-duration: 2s; animation-name: fadeInDown;">
+                <h2 style="text-align: center;"><i style="padding: 10px; border: solid 1bx #337ab7; background: linear-gradient(to left, #5b3283, #3580ab, #5db5b3);; color: #FFF;" class="fa fa-phone"></i> </h2>
+                <h2 style="text-align: center; margin-top: 5px;"> {{'general.phone_answer' | translate}} </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="address-data  wow fadeInDown" data-wow-duration="2s"
+                        style="visibility: visible; animation-duration: 2s; animation-name: fadeInDown;">
+                        <p>{{"general.in_saudia" | translate}}</p>
+                        <p>{{"general.out_saudia" | translate}}</p>
+                        <strong class="text-danger">{{"general.phone_note" | translate}}</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-page-inner left-contact col-md-5">
+            <div class="section-header wow fadeInDown" data-wow-duration="2s"
+                style="visibility: visible; animation-duration: 2s; animation-name: fadeInDown;">
+                <h2 style="text-align: center;"><i style="padding: 10px; border: solid 1bx #337ab7; background: linear-gradient(to left, #5b3283, #3580ab, #5db5b3);; color: #FFF;" class="fab fa-twitter"></i> </h2>
+                <h2 style="text-align: center; margin-top: 5px;"> {{'general.twitter' | translate}} </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="address-data  wow fadeInDown" data-wow-duration="2s"
+                        style="visibility: visible; animation-duration: 2s; animation-name: fadeInDown;">
+                        <p>{{"general.twitter_account" | translate}}</p>
+                        <strong class="text-danger">{{"general.twitter_note" | translate}}</strong>
+                        <p>{{"general.response_twitter" | translate}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="contact-page-inner col-md-12" style="width: 88.5%;">
+            <div class="section-header wow fadeInDown" data-wow-duration="2s"
+                style="visibility: visible; animation-duration: 2s; animation-name: fadeInDown;">
+                <h2 style="text-align: center;"><i style="padding: 10px; border: solid 1bx #337ab7; background: linear-gradient(to left, #5b3283, #3580ab, #5db5b3);; color: #FFF;" class="fab fa-whatsapp"></i></h2>
+                <h2 style="text-align: center; margin-top: 5px;"> {{'general.chatbot' | translate}} </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="address-data  wow fadeInDown" data-wow-duration="2s"
+                        style="visibility: visible; animation-duration: 2s; animation-name: fadeInDown;">
+                        <h3>{{"general.whatsapp_2" | translate}}</h3>
+                        <strong class="text-danger">{{"general.whatsapp_2_note" | translate}}</strong>
+                        <h4>({{"general.direct_phone_val" | translate}})</h4>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="address-data  wow fadeInDown" data-wow-duration="2s" data-wow-delay=".6s"
+                        style="visibility: visible; animation-duration: 2s; animation-delay: 0.6s; animation-name: fadeInDown;">
+                        <h3>{{"general.whatsapp_1" | translate}}</h3>
+                        <strong class="text-danger">{{"general.whatsapp_1_note" | translate}}</strong>
+                        <h4>({{"general.direct_phone_val" | translate}})</h4>
+                        <div class="social_share">
+                            <ul class="thim-social-share">
+                                <li>
+                                    <div class="facebook-social">
+                                        <a target="_blank" class="facebook"
+                                            href="https://www.facebook.com/SaudiElectronicUniversity" title="Facebook">
+                                            <i class="fab fa-facebook-f"></i> </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="youtube-social">
+                                        <a target="_blank" class="youtube"
+                                            href="https://www.youtube.com/user/SaudiEUniversity" title="youtube">
+                                            <i class="fab fa-youtube"></i> </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="twitter-social">
+                                        <a target="_blank" class="twitter" href="https://twitter.com/SEU_Care"
+                                            title="Twitter">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </div>
+                                </li>
+    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="contact-page-inner" *ngIf="!loading" style="width: 88.5%;">
+            <h6>{{"general.visitors_gate_link" | translate }} <strong><a style="color: #337ab7 !important;" target="_blank" href="https://guest.seu.edu.sa/">{{"general.click_here" | translate }}</a></strong></h6> 
+            <h6 class="text-danger">{{"general.appointment_note1" | translate }} </h6>
+            <h6 class="text-danger">{{"general.appointment_note2" | translate }} </h6>
+            <div class="section-header wow fadeInDown" data-wow-duration="2s"
+                style="visibility: visible; animation-duration: 2s; animation-name: fadeInDown;">
+                <h2>{{"general.nearest_branch" | translate }} </h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="address-data  wow fadeInDown" data-wow-duration="2s"
+                        style="visibility: visible; animation-duration: 2s; animation-name: fadeInDown;">
+                        <div class="form-group group2 ">
+                            <label for="Select2">{{"general.branch_name" | translate }}</label>
+                            <select class="form-control control2" name="BranchId" id="BranchId"
+                                [(ngModel)]="selectedbranch">
+                                <option *ngFor="let b of branchesList" [value]="b.code">{{b.title}}</option>
+                            </select>
+                        </div>
+    
+                        <div class="branch-data">
+                            <ng-container *ngFor="let item of branchesData[selectedbranch]['contact']">
+                                <p>
+                                    <i [class]="item['iconclass']"></i>
+                                    {{item['label']}} :
+                                    <span> {{item['value']}}</span>
+                                </p>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <ng-container *ngFor="let map of branchesData[selectedbranch]['maps']">
+                    <div class="col-md-6">
+                        <p class="title">
+                            {{map['title']}} :
+                            <span> {{map['desc']}}</span>
+                        </p>
+                        <div class="address-data  wow fadeInDown" data-wow-duration="2s" data-wow-delay=".6s"
+                            style="visibility: visible; animation-duration: 2s; animation-delay: 0.6s; animation-name: fadeInDown;">
+                            <iframe [src]="map['url']" style="border:0" allowfullscreen="" width="100%" height="300"
+                                frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

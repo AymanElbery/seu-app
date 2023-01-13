@@ -1,0 +1,220 @@
+<app-header></app-header>
+
+
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"services.academic_status.title" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    </GridLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+        <ListView [items]="messagesList">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
+
+    <FlexboxLayout *ngIf="!isLoading && !isClosed"  flexDirection="column"  class="wrap" >
+
+        <FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+            <Button class=" print-btn " (tap)="onArabicPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" {{printAR}}"></Span>
+                </FormattedString>
+            </Button>
+            <Button class=" print-btn " (tap)="onEnglishPrint()">
+                <FormattedString>
+                    <Span text="&#xf02f;" class="fas"></Span>
+                    <Span text=" {{printEN}}"></Span>
+                </FormattedString>
+            </Button>
+        </FlexboxLayout>
+        
+        <StackLayout *ngIf="!isLoading">
+            <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+          
+              <Label row="0" colSpan="2"  class="ysHBox"  text="{{'general.student_data'|translate}}"></Label>
+          
+              <Label row="1" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text="{{'general.female_or_male_name'|translate}} :"></Label>
+              <Label row="1"  column="0" class="ysPBox2" textWrap="true" text="{{student.name}}"></Label>
+          
+              <Label row="2" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text="{{'general.student_id'|translate}} :"></Label>
+              <Label row="2"  column="0" class="ysPBox2" textWrap="true" text="{{student.std_id}}" ></Label>
+          
+              <Label row="3" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text="{{'general.ssn'|translate}} :"></Label>
+              <Label row="3"  column="0" class="ysPBox2" textWrap="true" text="{{student.ssn}}" ></Label>
+              <Label row="4" column="1" class="ysPBox"     textwrap="true" style="font-weight: 800;" text='{{"general.acceptance_term" | translate}} :'></Label>
+              <Label row="4"  column="0" class="ysPBox2"  textWrap="true" text="{{student.std_adm_term_label}}"></Label>
+              <Label row="5" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.current_academic_status" | translate}} :'></Label>
+              <Label row="5"  column="0" class="ysPBox2" textWrap="true" text="{{student.current_acadimic_status_label}}"></Label>
+              <Label row="6" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.graduation_gpa" | translate}} :'></Label>
+              <Label row="6"  column="0" class="ysPBox2" textWrap="true" text="{{student.final_graduation_GPA}}" ></Label>
+              
+              <Label row="7" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.academic_position" | translate}} :'></Label>
+              <Label row="7"  column="0" class="ysPBox2" textWrap="true" text="{{student.acadimic_position_label}}" ></Label>
+
+              <Label row="8" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.fees" | translate}} :'></Label>
+              <Label row="8"  column="0" class="ysPBox2" textWrap="true" text="{{student.std_fees}}"></Label>
+            </GridLayout>
+          </StackLayout>
+
+        <GridLayout *ngIf="!isLoading" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" style="margin: 0 20;">
+            <label  textWrap="true"  verticalAlignment="middle" row="0" colSpan="2" class="yslab-dr"  text='{{"general.academic_status_through_terms" | translate}}'   style="margin-top: 15;"  ></label>
+            <DropDown  row="1" colSpan="2" class="dro"
+                  [items]="studentTermsDropDown"
+                  (selectedIndexChanged)="getTrmsDetails($event)"
+                  [(ngModel)]="selectedIndex"
+                  hint='{{"general.term" | translate}}'
+                  itemsTextAlignment="left"
+            >
+            </DropDown>
+        </GridLayout>
+
+        <ActivityIndicator [busy]="isLoadingTerm && !isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+            <GridLayout *ngIf="!isLoadingTerm" class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                    
+              <Label row="0" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.faculty" | translate}} :'></Label>
+              <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{studentTermDetails.COLL_CODE}}"></Label>
+          
+              <Label row="1" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.major" | translate}} :'></Label>
+              <Label row="1"  column="0" class="ysPBox2" textWrap="true" text="{{studentTermDetails.MAJR_code}}" ></Label>
+          
+              <Label row="2" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.branch" | translate}} :'></Label>
+              <Label row="2"  column="0" class="ysPBox2" textWrap="true" text="{{studentTermDetails.CAMP_code}}"></Label>
+
+              <Label row="3" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.gpa" | translate}} :'></Label>
+              <Label row="3"  column="0" class="ysPBox2" textWrap="true" text="{{studentTermDetails.gba}}" ></Label>
+
+              <Label row="4" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.regestration_status" | translate}} :'></Label>
+              <Label row="4"  column="0" class="ysPBox2" textWrap="true" text="{{studentTermDetails.RegisterationStatus}}"></Label>
+
+              <Label row="5" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.level" | translate}} :'></Label>
+              <Label row="5"  column="0" class="ysPBox2" textWrap="true" text="{{studentTermDetails.study_level}}"></Label>
+              
+              <Label row="6" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"services.academic_status.title" | translate}} :'></Label>
+              <Label row="6"  column="0" class="ysPBox2" textWrap="true" text="{{studentTermDetails.acadimic_status}}"></Label>
+
+              <Label row="7" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.academic_position" | translate}} :'></Label>
+              <Label row="7"  column="0" class="ysPBox2" textWrap="true" text="{{studentTermDetails.ACADIMICPOSITION}}" ></Label>
+
+              <Label row="8" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"general.stage" | translate}} :'></Label>
+              <Label row="8"  column="0" class="ysPBox2" textWrap="true" text="{{studentTermDetails.STD_UGGR}}"  ></Label>
+            </GridLayout>
+<!--
+        <FlexboxLayout *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
+            <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
+            <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
+        </FlexboxLayout>   
+-->
+    </FlexboxLayout>
+</FlexboxLayout>
+</ScrollView>
+
+ <!--
+<ScrollView>
+    <FlexboxLayout  flexDirection="column" style="padding: 20;">   
+           <ActivityIndicator [busy]="isLoading" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+
+            <FlexboxLayout justifyContent="center"  >
+                <label text="بيانات الطالب/الطالبة"></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw">
+                <label text="اسم الطالب / الطالبة"  ></label>
+                <label text="الرقم الجامعي"  ></label>
+                <label text="رقم الهوية"  ></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="trow">
+                <label text="فاطمة على ال فردان"  ></label>
+                <label text="190017700"  ></label>
+                <label text="1062958200"  ></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw">
+                <label text="فصل القبول"  ></label>
+                <label text="الحالة الأكاديمية الحالية"  ></label>
+                <label text="المعدل التراكمي النهائي"  ></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="trow" >
+                <label text="الاول"  ></label>
+                <label text="منتظم"  ></label>
+                <label text="3.75"  ></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="throw">
+                <label text="الوضع الأكاديمي"  ></label>
+                <label text="الرسوم الدراسية"  ></label>
+            </FlexboxLayout>
+
+            <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="trow" >
+                <label text="منتظم"  ></label>
+                <label text="555452"  ></label>
+            </FlexboxLayout>
+
+            
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between">
+
+            <label text="الحالة الأكاديمية للطالب خلال الفصول الدراسية"   style="margin-top: 15;"></label>
+            <DropDown
+                  [items]="studentTermsDropDownStatic"
+                  (selectedIndexChanged)="getTrmsDetails($event)"
+                  [(ngModel)]="selectedIndex"
+                  hint="اختر الفصل الدراسى "
+                  itemsTextAlignment="right"
+            >
+            </DropDown>
+        </FlexboxLayout>
+        <ActivityIndicator [busy]="isLoadingTerm" color="navy" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw">
+            <label text="الكلية"  ></label>
+            <label text="التخصص"  ></label>
+            <label text="الفرع"  ></label>
+        </FlexboxLayout>
+
+        <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="trow">
+            <label text="الحوسبة والمعلوماتية"  ></label>
+            <label text="تقنية المعلومات"  ></label>
+            <label text="الرياض طلاب"  ></label>
+        </FlexboxLayout>
+
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw">
+            <label text="المعدل التراكمي"  ></label>
+            <label text="حالة التسجيل"  ></label>
+            <label text="المستوي الدراسي"  ></label>
+        </FlexboxLayout>
+
+        <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="trow" >
+            <label text="3.75"  ></label>
+            <label text="منتظم"  ></label>
+            <label text="الاول"  ></label>
+        </FlexboxLayout>
+
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw">
+            <label text="الحالة الأكاديمية"  ></label>
+            <label text="الوضع الأكاديمي"  ></label>
+            <label text="المرحلة الدراسية"  ></label>
+        </FlexboxLayout>
+
+        <FlexboxLayout  flexDirection="row-reverse" justifyContent="space-between" class="trow" >
+            <label text="منتظم"  ></label>
+            <label text="منتظم"  ></label>
+            <label text="الاول"  ></label>
+        </FlexboxLayout>
+        
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="center" class="buttonsLayout">
+            <Button text="عربى" class="my-button"  (tap)="onArabicPrint()" ></Button>
+            <Button text="English" class="my-button"  (tap)="onEnglishPrint()"></Button>
+        </FlexboxLayout>            
+    </FlexboxLayout>
+</ScrollView>-->

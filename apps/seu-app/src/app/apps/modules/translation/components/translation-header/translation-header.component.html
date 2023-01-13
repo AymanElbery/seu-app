@@ -1,0 +1,60 @@
+<header class="header-top" header-theme="">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between">
+            <div class="top-menu d-flex align-items-center w-25">
+                <div class="dropdown align-items-right mr-0 mr-sm-5">
+                    <a class="dropdown-toggle pub-ser d-flex align-items-center" href="#" id="userDropdown" data-toggle="dropdown">
+                        <img class="avatar d-none d-sm-inline-block" src="assets/images/avatar.png" alt="">
+                        <span *ngIf="userData" class="d-none d-sm-block"> 
+                            <bdi>
+                            {{"menu.hello" | translate}} : <span class="d-none d-sm-inline-block">{{userData.NAME}}</span>
+                        </bdi>
+                        </span>
+                        <i *ngIf="userData" class="ik ik-user mobile-user-drop d-sm-none"></i>
+                        <i *ngIf="userData" class="ik ik-chevron-down d-none d-sm-inline-block"></i>
+                    </a>
+                    <div class="dropdown-menu" *ngIf="userData" aria-labelledby="userDropdown">
+                        <div class="d-sm-none">
+                            <div>
+                                <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social" style="font-size: 20px; font-weight: 400"> E </a>
+                                <a href="javascript:;" *ngIf="currLang == 'en'" (click)="useLang('ar')" class="social" style="font-size: 20px; margin-top: -6px;"> ع</a>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            <p class="d-flex flex-column align-items-center">
+                                <img class="avatar" src="assets/images/avatar.png" alt="">
+                                <span class=""> 
+                                    <bdi>{{"menu.hello" | translate}} :<span class="">{{userData.NAME}}</span>
+                                </bdi>
+                                </span>
+                            </p>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                        <!-- <a class="dropdown-item" href="javascript:;" (click)="resetPawwordFrom()">
+                            <i class="ik ik-user dropdown-icon"></i>{{"menu.resetpassword" | translate}}
+                        </a> -->
+                        <a class="dropdown-item" href="#" (click)="logout()">
+                            <i class="ik ik-power dropdown-icon"></i> {{"menu.logout" | translate}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-logo w-75">
+                <a target="_blank" href="https://seu.edu.sa">
+                    <img class="" src="assets/images/logo_mobile.png" alt="">
+                </a>
+            </div>
+            <div class="top-menu d-flex align-items-center  justify-content-end w-25">
+                <a type="" class="btn-icon mobile-nav-toggle d-lg-none"><span></span></a>
+                <div class="header-search d-none d-sm-block">
+                    <div class="input-group ">
+                    </div>
+                </div>
+                <div class="d-none d-sm-block" style="white-space: nowrap;">
+                    <a href="javascript:;" *ngIf="currLang == 'ar'" (click)="useLang('en')" class="social" style="font-size: 20px; font-weight: 400"> English
+            </a>
+                    <a href="javascript:;" *ngIf="currLang == 'en'" (click)="useLang('ar')" class="social" style="font-size: 20px; margin-top: -6px;"> عربي</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

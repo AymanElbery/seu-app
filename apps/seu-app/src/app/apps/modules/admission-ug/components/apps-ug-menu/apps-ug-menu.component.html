@@ -1,0 +1,84 @@
+<div id="side-menu" class="app-sidebar colored" >
+  <!-- style="padding-top: 45px!important;" -->
+  <div class="sidebar-header d-none">
+    <a id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></a>
+    <a class="header-brand" href="#">
+      <div class="logo-img">
+        <img src="assets/images/logo-ar.png" class="header-brand-img" alt="lavalite">
+      </div>
+    </a>
+  </div>
+  <div class="sidebar-content">
+    <div class="nav-container">
+      <nav id="main-menu-navigation" class="navigation-main">
+
+        <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a href="#" class="menu-item" routerLink="/apps/admission-ug">
+            <span> {{'home' | translate}} </span>
+            <img src="../../assets/images/Home-menu2.png">
+          </a>
+        </div>
+
+        <div *ngIf="newRequest" class="nav-item">
+          <a target="_blank" href="https://bannerssb.seu.edu.sa/PPRD_en/bwskalog.P_DispLoginNon" class="menu-item">
+            <span> {{'newrequest' | translate}} </span>
+            <i class="ik ik ik-layers"></i>
+          </a>
+        </div>
+
+        <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a href="#" class="menu-item" routerLink="/apps/admission-ug/admission-result">
+            <span> {{'admissionResult' | translate}} </span>
+            <img src="../../assets/images/admit2.png">
+          </a>
+        </div>
+        <!-- <a *ngIf="!admissionugService.isLoggedIn" href="#" class="menu-item" routerLink="/apps/admission-ug/ug-login">
+            <span> {{'Log In' | translate}} </span>
+            <i class="ik ik ik-layers"></i>
+          </a> -->
+        <ng-container>
+          <!--*ngIf="admissionugService.isLoggedIn"-->
+          <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a href="#" class="menu-item" routerLink="/apps/admission-ug/pay-fee">
+              <span> {{"PaytheFee" | translate}} </span>
+              <img src="../../assets/images/pay-card2.png">
+            </a>
+          </div>
+          <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a href="#" class="menu-item" routerLink="/apps/admission-ug/match-documents">
+              <span> {{'matchdocuments' | translate}} </span>
+              <img src="../../assets/images/cop2.png">
+            </a>
+          </div>
+          <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+
+            <a href="#" class="menu-item" routerLink="/apps/admission-ug/upload-documents">
+              <span> {{'UploadDocument' | translate}} </span>
+              <img src="../../assets/images/up2.png">
+            </a>
+          </div>
+          <div class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+
+            <a href="#" class="menu-item" routerLink="/apps/admission-ug/payment-refund">
+              <span> {{'paymentrefund' | translate}} </span>
+              <img src="../../assets/images/cancel2.png">
+            </a>
+          </div>
+          <div *ngIf="admissionugService.isLoggedIn" class="nav-item" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+            <a href="#" class="menu-item" (click)="logout()">
+              <span> {{'logout' | translate}} </span>
+              <img src="../../assets/images/logout.png">
+            </a>
+          </div>
+          <!-- <div  *ngIf="!admissionugService.isLoggedIn" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a href="#" routerLink="/apps/admission-ug/ug-login" class="menu-item">
+              <span> {{'LogIn' | translate}} </span>
+              <i class="ik ik ik-layers"></i>
+            </a>
+          </div> -->
+        </ng-container>
+      </nav>
+    </div>
+  </div>
+</div>

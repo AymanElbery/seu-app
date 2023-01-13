@@ -1,0 +1,73 @@
+<mat-dialog-content dir="rtl">
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">
+        {{ "leadership.ad.add_new_ads" | translate}} <i class="fa fa-file"></i>
+      </h5>
+    </div>
+    <div class="modal-body">
+      <form role="form" [formGroup]="form">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.job.title"|translate}} <span class="reqstart">*</span></h6>
+              <ng-select [items]="jobs" bindLabel="JOB_TITLE" bindValue="JOB_PK" formControlName="JOB_ID">
+              </ng-select>
+            </div>
+            <div *ngIf="form.controls.JOB_ID.invalid && (form.controls.JOB_ID.dirty || form.controls.JOB_ID.touched)">
+              <div *ngIf="form.controls.JOB_ID.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.ad.active"|translate}}</h6>
+              <input style="width: 8%; margin-top: 20px; cursor: pointer;" type="checkbox"
+                formControlName="ADS_IS_ACTIVE" class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 15px;">
+          <div class="col-md-6">
+            <ng-container>
+              <div class="state">
+                <h6>{{"leadership.ad.start_date"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" formControlName="ADS_START_DATE" bsDatepicker [bsConfig]="datePickerConfig"
+                  class="form-control" />
+              </div>
+              <div
+                *ngIf="form.controls.ADS_START_DATE.invalid && (form.controls.ADS_START_DATE.dirty || form.controls.ADS_START_DATE.touched)">
+                <div *ngIf="form.controls.ADS_START_DATE.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"users.required"|translate}}</b>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+          <div class="col-md-6">
+            <ng-container>
+              <div class="state">
+                <h6>{{"leadership.ad.end_date"|translate}} <span class="reqstart">*</span></h6>
+                <input type="text" formControlName="ADS_END_DATE" bsDatepicker [bsConfig]="datePickerConfig"
+                  class="form-control" />
+              </div>
+              <div
+                *ngIf="form.controls.ADS_END_DATE.invalid && (form.controls.ADS_END_DATE.dirty || form.controls.ADS_END_DATE.touched)">
+                <div *ngIf="form.controls.ADS_END_DATE.errors.required">
+                  <b style="position: relative; left: -10px;" class="text-danger">{{"users.required"|translate}}</b>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-md-12" style="text-align: center;">
+            <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="save()" type="submit"
+              class="btn btn-primary">{{ "leadership.save" | translate}} <i class="fa fa-save"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

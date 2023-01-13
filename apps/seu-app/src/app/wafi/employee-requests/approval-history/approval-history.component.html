@@ -1,0 +1,58 @@
+<div class="main-content">
+
+  <service-header title='{{"wafi.ApprovalHistory" | translate}}'></service-header>
+
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div class="col-md-6 col-sm-6" >  
+    <div class="state">
+      <h6>{{"wafi.searchdata"|translate}} </h6>
+    <input class="form-control" type="text"  [(ngModel)]="filter">   
+    </div>     
+</div> 
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">{{"wafi.Sequence" | translate}}</th>  
+        <!-- <th scope="col">{{"wafi.fromDate" | translate}}</th>  
+        <th scope="col">{{"wafi.toDate" | translate}}</th>         -->
+        <th scope="col">{{"wafi.EmpNo" | translate}}</th>
+        <th scope="col">{{"wafi.EmpName" | translate}}</th>
+        <th scope="col">{{"wafi.ServiceDescription" | translate}}</th>
+        <th scope="col">{{"wafi.TransactionDate" | translate}}</th>
+        <th scope="col">{{"wafi.Agree/disagree" | translate}}</th>      
+        <!-- <th scope="col">{{"wafi.RejecteReasone" | translate}}</th> -->
+     
+        <th scope="col">{{"wafi.Details" | translate}}</th>
+       
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let appreq of emplisthistoryapproval |filter:filter | paginate: { itemsPerPage: 12, currentPage: p };let i=index;">
+        
+        <td>{{appreq.requestIndex}}</td>
+        <!-- <td>{{appreq.fromDate}}</td>
+        <td>{{appreq.toDate}}</td>     -->
+        <td>{{appreq.requestEmpId}}</td>
+        <td>{{appreq.requestEmpName}}</td>
+        <td>{{appreq.requestTypeDesc}}</td>
+        <td>{{appreq.approvedDate}}</td>        
+        <td>{{appreq.isApprovedDesc}}</td>  
+        <!-- <td>{{appreq.disagreeReasone}}</td>  -->
+          <td class="prin" style="color: #fff;"><a (click)="getapphistorydetail(appreq.requestSeq,appreq.requestEmpId,appreq.requestType)"
+            class="btn">{{"wafi.Details" | translate}}  </a></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <ul class="pagination">  
+    <pagination-controls (pageChange)="p = $event"
+    directionLinks="true"
+    autoHide="true"
+    previousLabel="{{'wafi.Previous' | translate}}"
+    nextLabel="{{'wafi.Next' | translate}}"
+    ></pagination-controls>  
+    </ul> 
+</div>
+  </div>

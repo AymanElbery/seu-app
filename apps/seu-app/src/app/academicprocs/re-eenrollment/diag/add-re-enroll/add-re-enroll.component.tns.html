@@ -1,0 +1,22 @@
+<FlexboxLayout  flexDirection="column" class="pop iosFont">
+    <Label text=' {{"services.re-enrollment.re-enroll_request"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+
+    <Label text='{{"services.re-enrollment.alert"|translate}}'
+     class="font" textWrap="true"></Label>
+
+    <Label text='{{"services.re-enrollment.cause"|translate}}' class="font" textWrap="true"
+     style="color: #f08b1c;; margin-top:10 ;margin-right: 20;"></Label>
+    <TextView 
+    #reason="ngModel" [(ngModel)]="reEnroll.reason" required>
+    </TextView>
+
+    <Label text='{{"services.re-enrollment.file"|translate}}'
+     class="font" textWrap="true" style="color: #f08b1c;" style="margin-top: 20;"></Label>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker()" class="print-btn iosFontCenter"></Button>
+
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn" [isEnabled]="reason.valid"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

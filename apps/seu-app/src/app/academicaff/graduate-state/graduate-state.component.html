@@ -1,0 +1,150 @@
+<div class="main-content">
+  <service-header [title]="'services.graduate_state.title' |translate"
+  [desc]="'services.graduate_state.desc' |translate"></service-header>
+
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+
+  <div class="ser-state" *ngIf="!isLoading">
+    <div *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}
+    </div>
+  </div>
+
+  <div class="widget" *ngIf="!isLoading && allowed">
+    <h6 class="display-6 text-center" *ngIf="!isLoading">
+      {{graduateData.labels.date}}:{{graduateData.values.date}}</h6>
+
+
+    <div class="widget-header">
+      <h3 class="widget-title">{{"general.student_data" | translate}}</h3>
+    </div>
+    <section class="ser-state" *ngIf="!isLoading">
+      <div class="container">
+        <div class="row ser-block">
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{graduateData.labels.student_name}} </h6>
+              <h5>{{graduateData.values.student_name}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{graduateData.labels.college}} </h6>
+              <h5>{{graduateData.values.coll}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6> {{"general.student_id" |translate}}</h6>
+              <h5>{{graduateData.values.std_id}}</h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="row ser-block">
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{graduateData.labels.ssn}} </h6>
+              <h5>{{graduateData.values.ssn}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{graduateData.labels.major}} </h6>
+              <h5>{{graduateData.values.major}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6> {{graduateData.labels.branch}} </h6>
+              <h5>{{graduateData.values.branch}}</h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="row ser-block">
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{graduateData.labels.GPA}} </h6>
+              <h5>{{graduateData.values.final_graduation_GPA}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{"general.stage" | translate}}</h6>
+              <h5>{{graduateData.values.level}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{"general.city" | translate}}</h6>
+              <h5>{{graduateData.values.city}}</h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </div>
+  <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading && allowed">
+
+    <div class="row">
+
+      <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+        {{graduateData.labels.txt1}} {{graduateData.values.term}}
+        {{graduateData.labels.txt2}} {{graduateData.values.final_graduation_GPA}} {{graduateData.labels.txt7}}
+        <br />
+        {{graduateData.labels.txt5}}
+        <!-- {{graduateData.labels.txt3}}
+        <br />
+        {{graduateData.labels.txt4}}
+        <br />-->
+        <!--  -->
+        <br /><br /><br />
+        <b>{{"general.note"|translate}}</b>
+        <b> {{graduateData.labels.txt6}}</b>
+      </p>
+    </div>
+  </div>
+  <div class="prin text-center" *ngIf="!isLoading && allowed">
+    <a class="btn btn-primary" seu-auto-print href="{{arabicPrint}}"><span class="ik ik-printer"></span>
+      {{"general.ar_print" | translate}}</a>
+    <a class="btn btn-primary" seu-auto-print href="{{EngPrint}}"><span class="ik ik-printer"></span>
+      {{"general.en_print" | translate}}</a>
+  </div>
+</div>

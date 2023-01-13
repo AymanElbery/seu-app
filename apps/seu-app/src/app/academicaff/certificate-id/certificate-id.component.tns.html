@@ -1,0 +1,163 @@
+<app-header></app-header>
+<ScrollView>
+  <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+  <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+
+  <GridLayout  columns="auto, *" class="serv-title">
+    <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+    <Label col="1" text='{{"services.certificate_id.title" |translate}}' class="serv-name" ></Label>
+    <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+  </GridLayout>
+
+<FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+  <ListView [items]="messagesList">
+      <ng-template let-item="item">
+          <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+      </ng-template>
+  </ListView>
+</FlexboxLayout>
+
+<FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+  <ListView [items]="msgs">
+      <ng-template let-item="item">
+          <Label verticalAlignment="center" textWrap="true" [text]="item.body" class="ysMsg"></Label>
+      </ng-template>
+  </ListView>
+</FlexboxLayout>
+
+<FlexboxLayout  flexDirection="column"  *ngIf="!isLoading && !isClosed&& certificateDetails&&certificateDetails.labels && certificateDetails.values">
+
+<FlexboxLayout  *ngIf="!isLoading" flexDirection="row-reverse" justifyContent="center">
+    <Button class=" print-btn " (tap)="onArabicPrint()">
+        <FormattedString>
+            <Span text="&#xf02f;" class="fas"></Span>
+            <Span text="{{printAR}}"></Span>
+        </FormattedString>
+    </Button>
+    <Button class=" print-btn " (tap)="onEnglishPrint()">
+        <FormattedString>
+            <Span text="&#xf02f;" class="fas"></Span>
+            <Span text="{{printEN}}"></Span>
+        </FormattedString>
+    </Button>
+</FlexboxLayout>
+
+  <StackLayout row="0" *ngIf="!isLoading">
+    <GridLayout  class="ysBox" rows="auto,auto" columns="*,150">
+  
+  
+      <Label row="0" column="1" textWrap="true" class="ysPBox"  style="font-weight: 800;" text="{{certificateDetails.labels.date}}"></Label>
+      <Label row="0"  column="0" textWrap="true" class="ysPBox2" text="{{certificateDetails.values.date}}"></Label>
+  
+      <Label row="1" column="1" textWrap="true" class="ysPBox"  style="font-weight: 800;" text="{{certificateDetails.labels.ssn}}"></Label>
+      <Label row="1"  column="0" textWrap="true" class="ysPBox2"  text="{{certificateDetails.values.ssn}}"></Label>
+
+    </GridLayout>
+  </StackLayout>
+
+
+  <FlexboxLayout row="1" flexDirection="row-reverse" class="paragraph" flexWrap="wrap" *ngIf="!isLoading">
+    <label textWrap="true" [text]="certificateDetails.labels.txt1"></label>
+    <label textWrap="true" [text]="certificateDetails.values.std_name"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt2"></label>
+    <label  textWrap="true" [text]="certificateDetails.values.std_id"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt3"></label>
+    <label  textWrap="true" [text]="certificateDetails.values.coll"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt4"></label>
+    <label textWrap="true"  [text]="certificateDetails.values.major"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt5"></label>
+    <label  textWrap="true" [text]="certificateDetails.values.term"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt6"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt7"></label>
+  </FlexboxLayout>
+
+  <ng-template [ngIf]="lectures !=null" [ngIfElse]="NoLec">
+    <!--
+    <StackLayout  class="ysBox" row="2">
+    <FlexboxLayout  justifyContent="space-between" flexDirection="column">
+    <FlexboxLayout class="throw" justifyContent="space-between" flexWrap="nowrap" flexDirection="row-reverse" [ngClass]="{'throw_no_border':lectures.length === 0}">
+      <FlexboxLayout>
+        <Label [text]="certificateDetails.labels.crn"></Label>
+        <Label text="/"></Label>
+        <Label [text]="certificateDetails.labels.course_title" textWrap="true"></Label>
+      </FlexboxLayout>
+      <Label [text]="certificateDetails.labels.roomcode"></Label>
+      <Label [text]="certificateDetails.labels.day_and_date"></Label>
+      <Label [text]="certificateDetails.labels.time"></Label>
+      <Label [text]="certificateDetails.labels.course_type"></Label>
+
+    </FlexboxLayout>
+
+   
+    <FlexboxLayout justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of lectures" flexDirection="row-reverse" class="trow tabl">
+      <FlexboxLayout flexDirection="column" alignItems="center" class="wideColumn" style="width: 30%;">
+        <Label [text]="item.CRSE_TITLE" textWrap="true" style="text-align: center;"></Label>
+        <Label [text]="item.CRN" textWrap="true" style="text-align: center;"></Label>
+      </FlexboxLayout>
+      <Label [text]="item.ROOM_CODE" style="width: 15%;text-align: center;" textWrap="true"></Label>
+      <Label [text]="item.DAYES" style="width: 20%;text-align: center;"></Label>
+      <Label [text]="item.LECT_TIME" style="width: 20%; text-align: center;" textWrap="true"></Label>
+      <Label [text]="item.CRSE_TYPE" style="width: 15%; text-align: center;" textWrap="true"></Label>
+
+    </FlexboxLayout>
+  </FlexboxLayout>
+</StackLayout>
+-->
+<GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of lectures" >
+                      
+                      
+  <Label row="1"  column="1" textWrap="true" class="ysPBox" style="font-weight:800;" [text]="certificateDetails.labels.course_title"></Label>
+  <Label row="1"  column="0" textWrap="true" class="ysPBox2" [text]="item.CRSE_TITLE"></Label>
+
+  <Label row="2"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" [text]="certificateDetails.labels.crn"></Label>
+  <Label row="2"  column="0" textWrap="true" class="ysPBox2" [text]="item.CRN"></Label>
+ 
+  <Label row="3"  column="1"  textWrap="true" class="ysPBox" style="font-weight:800;" [text]="certificateDetails.labels.roomcode" ></Label>
+  <Label row="3"  column="0" textWrap="true" class="ysPBox2" [text]="item.ROOM_CODE" ></Label>
+
+  <Label row="4"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"   [text]="certificateDetails.labels.day_and_date"></Label>
+  <Label row="4"  column="0" textWrap="true" class="ysPBox2"[text]="item.DAYES"></Label>
+   
+  <Label row="5"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800;"  [text]="certificateDetails.labels.time"></Label>
+  <Label row="5"  column="0" textWrap="true" class="ysPBox2"[text]="item.LECT_TIME"></Label>
+
+  <Label row="6"  column="1"  textWrap="true" class="ysPBox" style="font-weight: 800; " [text]="certificateDetails.labels.course_type" ></Label>
+  <Label row="6"  column="0" textWrap="true" class="ysPBox2" [text]="item.CRSE_TYPE"  ></Label>
+ 
+
+</GridLayout>
+
+</ng-template>
+
+<ng-template #NoLec>  
+  <FlexboxLayout row="2" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
+      <label textWrap="true" [text]="certificateDetails.labels.txt8"></label>
+  </FlexboxLayout>
+</ng-template>
+
+  <FlexboxLayout row="3" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
+    <label  [text]="certificateDetails.labels.txt9" textWrap="true"></label>
+    <label textWrap="true" [text]="certificateDetails.labels.txt10"></label>
+    <label textWrap="true" [text]="certificateDetails.labels.txt11"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt12"></label>
+    <label  textWrap="true" [text]="certificateDetails.labels.txt13"></label>
+  </FlexboxLayout>
+<!--
+  <FlexboxLayout row="4" flexDirection="row-reverse" justifyContent="center" *ngIf="!isLoading">
+    <Button text='{{"general.ar_language" | translate}}' class="-primary -rounded-sm"  (tap)="onArabicPrint()" ></Button>
+    <Button text='{{"general.en_language" | translate}}' class="-primary -rounded-sm"  (tap)="onEnglishPrint()"></Button>
+  </FlexboxLayout>
+-->
+</FlexboxLayout>
+<!--
+<FlexboxLayout row="3" justifyContent="center">
+  <StackLayout  margin="10" >
+    <Image class="nt-drawer__header-image fas t-36" src="font://&#xf19d;"></Image>
+</StackLayout>
+  <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+</FlexboxLayout>
+-->
+
+</FlexboxLayout>
+</ScrollView>

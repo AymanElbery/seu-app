@@ -1,0 +1,36 @@
+<div class="main-content">
+    <service-header [title]="'services.statements.statements_list' | translate" [desc]="'services.statements.statements_list' | translate"></service-header>
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <ng-container>
+        <div class="ser-state" *ngIf="!isLoading"></div>
+        <div class="widget" *ngIf="!isLoading">
+            <div class="widget-header">
+                <h3 class="widget-title"> {{'services.statements.statements_list'|translate}}</h3>
+            </div>
+            <section class="ser-state" *ngIf="!isLoading">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">{{'services.statements.state_type'|translate}}</th>
+                                <th scope="col">{{'services.statements.action'|translate}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let state of statements;let i=index;">
+                                <td>{{i+1}}</td>
+                                <td>{{ state['name_' + lang] }}</td>
+                                <td>
+                                    <a *ngIf="state.can_print" seu-auto-print style="font-weight: bold;" class="btn btn-primary" seu-auto-print href="{{baseApiUrl + state.ar_print}}"><span class="ik ik-printer"></span> {{"general.ar_print" | translate}}</a>
+                                    <a *ngIf="state.can_print" seu-auto-print style="font-weight: bold; margin: 0 5px;" class="btn btn-primary" seu-auto-print href="{{baseApiUrl + state.en_print}}"><span class="ik ik-printer"></span> {{"general.en_print" | translate}}</a>
+                                    <span *ngIf="!state.can_print" class="text-danger">{{'services.statements.can_not_print'|translate}}</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </ng-container>
+</div>

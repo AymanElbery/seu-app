@@ -1,0 +1,184 @@
+html,
+body {
+  direction: ltr !important;
+  text-align: left;
+}
+
+.wrapper {
+  .page-wrap {
+    .main-content {
+      padding-left: 240px;
+      padding-right: 0;
+    }
+
+    .footer {
+      padding-left: 240px;
+      padding-right: 0;
+    }
+
+    .app-sidebar {
+      right: auto;
+      left: 0;
+
+      .sidebar-content .nav-container .navigation-main .nav-item {
+        &.has-sub {
+          a::before {
+            right: 10px;
+            left: auto;
+            transform: rotate(0deg);
+          }
+
+          .submenu-content .menu-item {
+            padding-left: 34px;
+            padding-right: 5px;
+          }
+        }
+
+        &.open::after {
+          left: 0;
+          right: auto;
+        }
+
+        &.open a::before {
+          transform: rotate(90deg);
+        }
+
+        a i {
+          margin-right: 10px;
+          margin-left: 0;
+        }
+      }
+
+      &.colored .sidebar-content .nav-container .navigation-main .nav-item a {
+        direction: rtl;
+      }
+    }
+  }
+
+  .header-top {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.dropdown-item {
+  text-align: left;
+}
+
+.dropdown-menu {
+  left: 0;
+  right: auto !important;
+  text-align: left;
+}
+
+.form-control {
+  background-position: center right 15px;
+  direction: ltr !important;
+}
+
+.modal-dialog {
+  direction: ltr !important;
+}
+
+.latest-update-card .card-block .latest-update-box {
+  &:after {
+    left: 19px;
+    right: auto;
+  }
+
+  .update-meta i.update-icon {
+    margin-right: 0;
+    margin-left: 19px;
+  }
+}
+
+select.form-control {
+  background-position: center right 15px;
+  direction: ltr !important;
+}
+
+.widget .widget-header .widget-title .btn {
+  float: right;
+
+  .ik {
+    float: left;
+    margin-left: 0;
+    margin-right: 5px;
+  }
+}
+
+.btn i {
+  margin-right: 5px;
+  // margin-left: 5px;
+}
+
+.wrapper .page-wrap .app-sidebar.hide-sidebar {
+  transform: translate3d(-100%, 0, 0);
+}
+
+@media (max-width: 576px) {
+  .wrapper .header-top {
+    padding-left: inherit;
+  }
+}
+.custom-file-label:after {
+  right: 0;
+  left: auto;
+}
+.descr {
+  text-align: right;
+}
+
+.news1 .date {
+ 
+ float: right
+}
+
+.news1:before {
+  content: '';
+  position: absolute;
+  left:  -10px;
+  top: 8%;
+  border-left: 0;
+  border-bottom: 8px solid transparent;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #3580ab;
+
+}
+.img-eve{  
+  margin-left: 19px;
+}
+
+.wrapper .page-wrap .app-sidebar.colored .sidebar-content .nav-container .navigation-main .nav-item a img{
+margin-right: 5px;
+}
+
+.ug-content h3 { 
+  border: none;   
+  border-left: 6px solid #f28d1e;
+
+  padding-left: 15px;
+}
+
+.wrapper .page-wrap .app-sidebar .sidebar-content .nav-container .navigation-main .nav-item.active::after {
+ 
+  content: " ";
+  height: 30px;
+  left: 0;
+ 
+}
+.ug-content .text {
+border-radius: 0;
+border-bottom-right-radius: 15px;
+width: 135px;
+
+
+}
+
+.ug-content h4{
+border-radius: 0;
+border-top-left-radius: 50%;
+border-bottom-left-radius: 50%;
+
+}
+

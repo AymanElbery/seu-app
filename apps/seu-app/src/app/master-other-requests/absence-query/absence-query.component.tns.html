@@ -1,0 +1,60 @@
+<app-header></app-header>
+<StackLayout>
+
+<ScrollView>
+
+  <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+
+  <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+
+  
+    <GridLayout  columns="auto, *" class="serv-title">
+      <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+      <Label col="1" text='{{"services.absence_quyery.title" |translate}}' class="serv-name" ></Label>
+      <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    </GridLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+      <ListView [items]="messagesList">
+          <ng-template let-item="item">
+              <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+          </ng-template>
+      </ListView>
+    </FlexboxLayout>
+
+
+<FlexboxLayout flexDirection="column" *ngIf="!isLoading && !isClosed">
+	<StackLayout *ngIf="!isLoading">
+
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of reqData">
+    
+    
+            <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.course_name" | translate}}'></Label>
+            <Label row="0"  column="0" class="ysPBox2" text="{{item.CRS_TITLE}}"></Label>
+        
+            <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.crn" | translate}}'></Label>
+            <Label row="1"  column="0" class="ysPBox2" text="{{item.CRN}}"></Label>
+
+            <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.course_code" | translate}}'></Label>
+            <Label row="2"  column="0" class="ysPBox2" text="{{item.CRSE_CODE}}"></Label>
+
+            <Label row="3" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.vitrual" |translate}}'></Label>
+            <Label row="3"  column="0" class="ysPBox2" text="{{item.VCOUNT}}"></Label>
+
+            <Label row="4" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.class" |translate}}'></Label>
+            <Label row="4"  column="0" class="ysPBox2" text="{{item.FCOUNT}}"></Label>
+
+            <Label row="5" column="1" class="ysPBox" style="font-weight: 800;" text='{{"general.total" |translate}}'></Label>
+            <Label row="5"  column="0" class="ysPBox2" text="{{item.TOTAL}}"></Label>
+      
+          </GridLayout>
+
+        <ng-template #array1>
+            <Label text='{{"general.no_absence_registered" |translate}}' class="trow"></Label>
+        </ng-template>
+
+	</StackLayout>
+</FlexboxLayout>
+</FlexboxLayout>
+</ScrollView>
+</StackLayout>

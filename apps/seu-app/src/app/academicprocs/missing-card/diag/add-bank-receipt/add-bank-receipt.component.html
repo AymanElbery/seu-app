@@ -1,0 +1,46 @@
+<mat-dialog-content>
+  <div class="modal-dialog" role="document" style="direction: rtl;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title  " id="exampleModalLabel">
+          {{"services.missing_card.upload_bank_receipt_for_missing_card"|translate}}</h5>
+
+      </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)" class="mt-20">
+        <div class="modal-body">
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.missing_card.bank_receipt"|translate}} </h6>
+                    <div class="custom-file">
+                      <input name="receipt" type="file" accept="*/*" (change)="handleInputChange($event)"
+                        class="custom-file-input" />
+                      <label for="customFileLang" class="custom-file-label ">
+                      </label>
+                      <!-- <input type="text" name="request_number"  #request_number="ngModel" [(ngModel)]="missingCard.request_number"  hidden /> -->
+                    </div>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</mat-dialog-content>

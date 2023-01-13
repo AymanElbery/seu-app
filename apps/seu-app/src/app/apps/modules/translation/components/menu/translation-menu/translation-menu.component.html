@@ -1,0 +1,24 @@
+<div id="side-menu" class="app-sidebar colored" style="padding-top: 45px!important;">
+    <div class="sidebar-header d-none">
+        <a id="sidebarClose" class="nav-close"><i class="ik ik-x"></i></a>
+        <a class="header-brand" href="#">
+            <div class="logo-img">
+                <img src="assets/images/logo-ar.png" class="header-brand-img" alt="lavalite">
+            </div>
+        </a>
+    </div>
+    <div class="sidebar-content">
+        <div class="nav-container">
+            <nav id="main-menu-navigation" class="navigation-main">
+                <br />
+                <div class="nav-item" *ngIf="sso">
+                    <a href="#" routerLink="/"><span>{{ "menu.home" | translate }} </span>
+              <i class="ik ik-home"></i></a>
+                </div>
+                <!-- <app-skills-emp-menu *ngIf="menuType == 'emp' "></app-skills-emp-menu> -->
+                <app-translation-admin-menu *ngIf="menuType == 'admin'"></app-translation-admin-menu>
+                <app-translation-client-menu *ngIf="menuType == 'client'"></app-translation-client-menu>
+            </nav>
+        </div>
+    </div>
+</div>

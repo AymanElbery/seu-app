@@ -1,0 +1,32 @@
+<div class="main-content">
+  <app-service-header title="{{'general.services' | translate}}" subtitle="{{'menu.print_docuemnts' | translate}}">
+  </app-service-header>
+
+  <section class="ug-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <h3> {{'menu.print_docuemnts' | translate}} </h3>
+          <!-- <p> {{'desc' | translate}} </p> -->
+          <seu-loader [isLoading]="isLoading"></seu-loader>
+          <ng-container *ngIf="!isLoading">
+            <div class="d-flex justify-content-between block">
+              <a href="#" (click)="downloadCert()">
+                <div class="d-flex ">
+                  <div class="">
+                    <h4><img src="../../assets/images/admit.png"></h4>
+                  </div>
+                  <div class="text">
+                    <span>{{'docs.certification' | translate}}</span>
+                    <span class="loading-span" *ngIf="current_download == 'cert'">{{'general.loading' | translate}}</span>
+
+                  </div>
+                </div>
+              </a>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

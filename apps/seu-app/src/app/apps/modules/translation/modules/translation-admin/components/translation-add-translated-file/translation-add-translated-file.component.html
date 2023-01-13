@@ -1,0 +1,21 @@
+<form [formGroup]="addFileForm" (ngSubmit)="onSubmit()">
+  <div class="row" style="padding: 20px;">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>{{ "my_requests_page.upload_tranlate_file" | translate}}</label>
+        <input type="file" accept="*/*" (change)="handleInputChange($event)" id="photo" class="form-control-file form-control">
+        <!-- <button id="fake-file" class="btn btn-primary">{{ "new_request_page.choose_file" | translate}}</button> -->
+      </div>
+    </div>
+    <div *ngIf="showFileName" class="col-md-6" style="margin-top: 35px;">
+      <b class="file-name">{{ fileName }}</b>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 40px;">
+    <div class="col-md-12">
+      <div class="form-group" >
+        <button [disabled]="submitted" style="width: 50%; margin-right: 25%; margin-bottom: 40px;" type="submit" class="btn sub">{{ "new_request_page.save" | translate}}  <i class="fa fa-save"></i></button>
+      </div>
+    </div>
+  </div>
+</form>

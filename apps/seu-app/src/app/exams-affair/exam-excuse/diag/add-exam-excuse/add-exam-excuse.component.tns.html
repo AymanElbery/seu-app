@@ -1,0 +1,65 @@
+
+<ActionBar style="background:#001628; ">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <Label text='{{"services.exam.exec" | translate}}' class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  style="font-size: 25px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" style="font-size: 25px;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
+</ActionBar>
+<ScrollView>
+<FlexboxLayout flexDirection="column" class="iosFont">
+
+    <Label text='{{"services.exam.choosecourse" | translate}}' style="color: #f08b1c; font-weight: 800;margin-right: 20; margin-top: 20;"></Label>
+
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw" [ngClass]="{'throw_no_border':reqData.schedules.length === 0}"> 
+            <label text='{{"services.exam.coursename" | translate}}'></label>
+            <label text='{{"services.exam.courseno" | translate}}'></label>
+            <label text="&#xf00c;" class="fas"></label>
+            <label text='#'></label>
+        </FlexboxLayout>
+
+        <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of reqData.schedules;let i=index;" flexDirection="row-reverse" 
+         alignContent="center" class="trow tabl" [ngStyle]="{'border-bottom-width':i === reqData.schedules.length-1 ? '0' : '1' }">
+           
+            <Label [text]="item.CRSE_TITLE" textWrap="true" style="width: 35%;"></Label>
+            <Label [text]="item.CRN" textWrap="true"></Label>
+            <CheckBox #chkCourse (checkedChange)="changeStatus(item,$event)" checked="false"></CheckBox>
+            <Label [text]="i+1" textWrap="true"></Label>
+        </FlexboxLayout>
+    </FlexboxLayout>
+
+    <Label text='{{"services.exam.cet" | translate}}' style="color: #f08b1c; font-weight: 800;margin-right: 20;
+    margin-top: 20;"></Label>
+    <DropDown
+    [items]="cetsDropDown"
+    (selectedIndexChanged)="getCet($event)"
+    hint='{{"services.exam.et" | translate}}'
+    itemsTextAlignment="left"
+    itemsPadding="5"
+    style="margin-right: 20;"
+    >
+    </DropDown>
+
+    
+    <Label text='{{"services.exam.raexam" | translate}}' textWrap="true"
+    style="color: #f08b1c; margin-right:20 ;margin-top: 20;"></Label>
+
+    <TextView style="border-color: gray;border-width: 1; padding:10;"
+    #reason="ngModel" [(ngModel)]="examExcuse.reason"></TextView>
+   
+    <Label text='{{"services.exam.cfiles" | translate}}' textWrap="true" style="color: #f08b1c;margin-right: 20;margin-top: 20;"></Label>
+    <Button [text]="fileName" (tap)="openCustomFilesPicker('file')" class="print-btn iosFontCenter"></Button>
+
+
+</FlexboxLayout>
+</ScrollView>

@@ -1,0 +1,315 @@
+{   "MainCampus": {
+    "title": "Headquarters ",
+    "contact": [
+        {
+            "label": "Location",
+            "iconclass": "fas fa-map-marker-alt",
+            "value": "Saudi Arabia - Ryiadh"
+        },
+        {
+            "label": "Phone",
+            "iconclass": "fas fa-phone",
+            "value": "+966112613500 - 199099"
+        }
+    ],
+    "maps": [
+        {
+            "title": "Main Campus",
+            "desc": "Saudi Arabia - Ryiadh - Prince Muhammad Ibn Salman Rd - Ar Rabi.",
+            "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.0409008627457!2d46.67493811537127!3d24.794052954021275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efcce47c28ac1%3A0xcd8c06eb681e5fd4!2s4552+Prince+Saud+Ibn+Muhammad+Ibn+Muqrin+Rd%2C+Ar+Rabi%2C+Riyadh+13316%C2%A06867%2C+Saudi+Arabia!5e0!3m2!1sen!2s!4v1456984539732"
+        },
+        {
+            "title": "Female Campus",
+            "desc": "Saudi Arabia - Ryiadh - Abi Bakr As Siddiq Rd- An Narjis.",
+            "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7243.013389557378!2d46.66941!3d24.81234!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4bf3263eabe4940c!2sSaudi+Electronic+University+-+Female+Section!5e0!3m2!1sen!2sus!4v1456984456764"
+        }
+    ]
+},
+    "dammam": {
+        "title": "Dammam Branch",
+        "contact": [
+            {
+                "label": "Location",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​Saudi Arabia - Dammam - AlRayyan Dist"
+            },
+            {
+                "label": "PO Box",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "15515"
+            },
+            {
+                "label": "Zip Code",
+                "iconclass": "far fa-compass",
+                "value": "31454"
+            },
+            {
+                "label": "Phone",
+                "iconclass": "fas fa-phone",
+                "value": "7444 892 13 966+"
+            },
+            {
+                "label": "Male-students Email",
+                "iconclass": "fas fa-envelope-open",
+                "value": "dmm-seu@seu.edu.sa"
+            },
+            {
+                "label": "Female-students ​Email",
+                "iconclass": "fas fa-envelope-open",
+                "value": "seufd@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "Male and Female Campus",
+                "desc": "Dammam Branch of Saudi Electronic University (students -​female) is located at AlRayyan Dist behind girls' colleges campus.",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3573.5612977993223!2d50.08733781503413!3d26.405357383348804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x170d794395ebe005!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KfZhNmD2KrYsdmI2YbZitip!5e0!3m2!1sen!2sus!4v1456900533716"
+            }
+        ]
+    },
+    "madina": {
+        "title": "Madinah Branch",
+        "contact": [
+            {
+                "label": "Location",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​Saudi Arabia – Medina"
+            },
+            {
+                "label": "Male-students Section's",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "4001"
+            },
+            {
+                "label": "Fem​ale-students Section's",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "4101"
+            },
+            {
+                "label": "Phone",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": "Branch's email",
+                "iconclass": "fas fa-envelope-open",
+                "value": "med-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "Male Campus",
+                "desc": "Male students centre in Medina is located in Taibah University (Abar Ali site)",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.220243241886!2d39.52343131499383!3d24.40841498426911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDI0JzMwLjMiTiAzOcKwMzEnMzIuMiJF!5e0!3m2!1sen!2suk!4v1456911436942"
+            },
+            {
+                "title": "Female Campus",
+                "desc": "Female students centre is located in Taibah University, Alsalam​​​ Colleges complex, Faisaliah district",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14523.563003371657!2d39.5489243!3d24.4892419!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x5e09cad39a5b224e!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KfZhNmD2KrYsdmI2YbZitipINi02LfYsSDYp9mE2LfYp9mE2KjYp9iq!5e0!3m2!1sar!2ssa!4v1456911504113"
+            }
+        ]
+    },
+    "jeddah": {
+        "title": "Jeddah Branch",
+        "contact": [
+            {
+                "label": "Location",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "Saudi Arabia - Jeddah - Al Faisaliah Dist."
+            },
+            {
+                "label": "Male-students Section's",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "2002"
+            },
+            {
+                "label": "Fem​ale-students Section's",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "2323"
+            },
+            {
+                "label": "Phone",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": " Zip Code",
+                "iconclass": "far fa-compass",
+                "value": "23442"
+            }
+        ],
+        "maps": [
+            {
+                "title": "Male Campus",
+                "desc": "Jeddah City -Saudi Electronic University Branch in Faculty of Education of Jeddah University- Faisaliyah Dist.-Building ( B )",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d927.5356003625877!2d39.1699217!3d21.5803639!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x94f9baa00eee7ef3!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KfZhNmD2KrYsdmI2YbZitip!5e0!3m2!1sen!2s!4v1456909410066"
+            },
+            {
+                "title": "Female Campus",
+                "desc": "Jeddah City -Saudi Electronic University Branch in Faculty of Education of Jeddah University- Faisaliyah Dist.-Building (14)",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3710.237085086981!2d39.1804486!3d21.5766668!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3d058fc21b109%3A0x285877cf5a9e9c0c!2sSaudi+Electronic+University+-+Girls+Section!5e0!3m2!1sen!2s!4v1456909299553"
+            }
+        ]
+    },
+    "qassim": {
+        "title": "Qassim Branch",
+        "contact": [
+            {
+                "label": "Location",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "KSA, Buraydah City, Preparatory-Year Building at Al-Qassim University"
+            },
+            {
+                "label": "Student Ext",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "6000"
+            },
+            {
+                "label": "Phone",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": "E-mail",
+                "iconclass": "fas fa-envelope-open",
+                "value": "elq-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "Male Campus",
+                "desc": "Breida City, Preparatory-Year Building, Annexed to Al-Qaseem University, Al-Muledah Quarter",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.410458919383!2d43.762695315032886!3d26.345582983375163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDIwJzQ0LjEiTiA0M8KwNDUnNTMuNiJF!5e0!3m2!1sen!2ssa!4v1456912631249"
+            }
+        ]
+    },
+    "alahsa": {
+        "title": "Alahsa Branch",
+        "contact": [
+            {
+                "label": "Location",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​Kingdom Of Saudi Arabia – Ahsa - hofuf"
+            },
+            {
+                "label": "Phone",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": "Email",
+                "iconclass": "fas fa-envelope-open",
+                "value": "ahf-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "Male and Female Campus",
+                "desc": "On Al Khalij Road​​​​",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1803.8228693597957!2d49.734983241918314!3d25.282499995964134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE2JzU3LjAiTiA0OcKwNDQnMDIuMCJF!5e0!3m2!1sar!2ssa!4v1483515610428"
+            }
+        ]
+    },
+    "abha": {
+        "title": "Abha Branch",
+        "contact": [
+            {
+                "label": "Location",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​Kingdom Of Saudi Arabia – Abha"
+            },
+            {
+                "label": "Phone",
+                "iconclass": "fas fa-phone",
+                "value": "+966172417139"
+            },
+            {
+                "label": "E-mail",
+                "iconclass": "fas fa-envelope-open",
+                "value": "ahb-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "Male Campus",
+                "desc": "Male students centre in Abha is located in King Khalid University in the University City, Alqurair distrect, building A",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1894.58159536099!2d42.55992592346373!3d18.248339098965143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fcaac8d05abed1%3A0x249997a8b354e044!2zNzc0OdiMINin2YTZgtix2YrZgtix2Iwg2KPYqNmH2KcgNjI1MjnCoDMzNzQ!5e0!3m2!1sar!2ssa!4v1456914787919"
+            },
+            {
+                "title": "Female Campus",
+                "desc": "Female students centre is located in the University Center for female students in Alsamer distrect, building A",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4613.647742679007!2d42.51415128469909!3d18.22802278281215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15e354f5575f9c27%3A0x49a7f080a68cd1fc!2zNDYzMiDYp9mE2LHZitin2LbYjCDYtNmF2LPYp9mG2Iwg2KPYqNmH2KcgNjI1MjHCoDkxNDA!5e1!3m2!1sar!2ssa!4v1456914994290"
+            }
+        ]
+    },
+    "tabuk": {
+        "title": "Tabuk Branch",
+        "contact": [
+            {
+                "label": "Location",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Kingdom of Saudi Arabia -Tabuk"
+            },
+            {
+                "label": "Phone",
+                "iconclass": "fas fa-phone",
+                "value": "+966112613500"
+            },
+            {
+                "label": "E-mail",
+                "iconclass": "fas fa-envelope-open",
+                "value": "Tabu-seu@seu.edu.sa"
+            }
+        ],
+        "maps": [
+            {
+                "title": "Male Campus",
+                "desc": "SEU Male Students Branch is located in Tabuk City, College of Sciences Building, annexed to Tabuk University, Dhaba Road",
+                "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.4651693814167!2d36.47253431507686!3d28.375014982520096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDIyJzMwLjEiTiAzNsKwMjgnMjkuMCJF!5e0!3m2!1sen!2ssa!4v1456982034569"
+            }
+        ]
+    },
+    "jazan": {
+        "title": "Jazan Branch",
+        "contact": [
+            {
+                "label": "Location",
+                "iconclass": "fas fa-map-marker-alt",
+                "value": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​Kingdom of Saudi Arabia -Jazan"
+            },
+            {
+                "label": "Male Phone",
+                "iconclass": "fas fa-phone",
+                "value": "0173342801 – 0173342815"
+            },
+            {
+                "label": "Female Phone",
+                "iconclass": "fas fa-phone",
+                "value": "0173223347"
+            },
+            {
+                "label": "Email ",
+                "iconclass": "fas fa-envelope-open",
+                "value": "Jaz-seu@seu.edu.sa"
+            },
+            {
+                "label": "Extension ",
+                "iconclass": "fas fa-mail-bulk",
+                "value": "1548"
+            }
+        ],
+        "maps": [
+            {
+                "title": "Male Campus",
+                "desc": "Male Students Section is located in the Campus of SEU Branch in Jazan Region, Preparatory-Year Building",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15264.798797533424!2d42.5508258!3d16.9647246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16080763837ef1a3%3A0xf3b94b7cd2d2f6bc!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KXZhNmD2KrYsdmI2YbZitipINmB2LHYuSDYrNin2LLYp9mG!5e0!3m2!1sar!2ssa!4v1456982468857"
+            },
+            {
+                "title": "Female Campus",
+                "desc": "Male Students Section is located in the Campus of SEU Branch in Jazan Region, Preparatory-Year Building",
+                "url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15264.798797533424!2d42.5508258!3d16.9647246!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x16080763837ef1a3%3A0xf3b94b7cd2d2f6bc!2z2KfZhNis2KfZhdi52Kkg2KfZhNiz2LnZiNiv2YrYqSDYp9mE2KXZhNmD2KrYsdmI2YbZitipINmB2LHYuSDYrNin2LLYp9mG!5e0!3m2!1sar!2ssa!4v1456982468857"
+            }
+        ]
+    }
+
+}

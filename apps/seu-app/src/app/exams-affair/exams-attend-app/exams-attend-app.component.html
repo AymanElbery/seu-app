@@ -1,0 +1,353 @@
+<div class="main-content">
+
+  <service-header [title]="'services.exam.caa' |translate"
+  [desc]="'services.exam.caadesc' |translate"></service-header>
+
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div *ngIf="isClosed">
+    <seu-flash [msgs]="messagesList"  [isLoading]="isLoading"> </seu-flash>
+   </div>
+   <ng-container *ngIf="!isClosed">
+  <section class="ser-state" *ngIf="!isLoading">
+    <div *ngIf="status==0" class="alert alert-primary text-center" role="alert">
+      {{absData.messages}}
+    </div>
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+        <a class="nav-item nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="One"
+          aria-selected="true">
+          {{"services.exam.tt"| translate}}
+        </a>
+
+        <a class=" nav-item nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="Two"
+          aria-selected="false"> {{"services.exam.tnt" | translate}}</a>
+        <a class="nav-item nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="Three"
+          aria-selected="false"> {{"services.exam.ft" | translate}} </a>
+
+        <a class="nav-item nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="Four"
+          aria-selected="false"> {{"services.exam.fnt" | translate}}</a>
+
+      </div>
+    </nav>
+
+
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active p-3" id="one" role="tabpanel" aria-labelledby="one-tab">
+        <div class="ser-state" *ngIf="!isLoading && eaData.Term_Exam_With_Schedule.messages.length>0">
+          <div *ngFor="let msg of eaData.Term_Exam_With_Schedule.messages"
+            [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+            role="alert">
+            {{msg.body}}
+          </div>
+        </div>
+        <div *ngIf="!isLoading && eaData.Term_Exam_With_Schedule.messages.length == 0">
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title" style="font-size:14px;">{{eaData.Term_Exam_With_Schedule.labels.title}}</h3>
+            </div>
+            <div class="hints">
+
+              <p style="text-align: right;padding: 5px">
+                {{eaData.Term_Exam_With_Schedule.labels.date}}: {{eaData.Term_Exam_With_Schedule.values.date}}
+                <br />
+                {{"services.exam.uno" | translate}} : {{eaData.Term_Exam_With_Schedule.values.std_id}}
+
+                <br />
+                {{eaData.Term_Exam_With_Schedule.labels.txt1}}
+                {{eaData.Term_Exam_With_Schedule.values.student_name}}
+                {{eaData.Term_Exam_With_Schedule.labels.txt2}}
+                {{eaData.Term_Exam_With_Schedule.values.std_id}}
+                {{eaData.Term_Exam_With_Schedule.labels.txt3}}
+                {{eaData.Term_Exam_With_Schedule.values.coll}}
+                {{eaData.Term_Exam_With_Schedule.labels.txt4}}
+                {{eaData.Term_Exam_With_Schedule.values.term}}
+                <br />
+                {{eaData.Term_Exam_With_Schedule.labels.txt5}}
+
+                {{eaData.Term_Exam_With_Schedule.values.startDay}}
+                {{eaData.Term_Exam_With_Schedule.labels.txt6}}
+                {{eaData.Term_Exam_With_Schedule.values.endDay}}
+                <br />
+                {{eaData.Term_Exam_With_Schedule.labels.txt7}}
+
+
+
+
+              </p>
+            </div>
+          </div>
+          <div class="widget">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">CRN </th>
+                    <th scope="col"> {{"general.request.req_cname" | translate}} </th>
+                    <th scope="col"> {{"general.request.day" | translate}}</th>
+                    <th scope="col"> {{"general.request.time" | translate}}</th>
+                    <th scope="col"> {{"general.request.att" | translate}}</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let it of eaData.Term_Exam_With_Schedule.Term_Schedule">
+                    <td>{{it.CRN}}</td>
+                    <td>{{it.CRSE_TITLE}}</td>
+                    <td>{{it.CRSE_DAY}}</td>
+                    <td style="direction: ltr">({{toHTML(it.CRSE_TIME)}})</td>
+                    <td>{{it.STD_ATTEND}}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading">
+
+            <div class="row">
+              <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+                {{eaData.Term_Exam_With_Schedule.labels.txt8}}
+                <br />
+                {{eaData.Term_Exam_With_Schedule.labels.txt9}}
+                <br />
+                <br />
+                {{eaData.Term_Exam_With_Schedule.labels.txt10}}
+
+                {{eaData.Term_Exam_With_Schedule.labels.txt11}}
+              </p>
+            </div>
+          </div>
+          <div style="text-align: center" class="prin">
+            <a class="btn "  seu-auto-print href="{{termSchedule}}"><span class="ik ik-printer"></span>
+              {{"general.ar_print"|translate}}</a>
+            <a class="btn " seu-auto-print href="{{termScheduleEn}}"><span class="ik ik-printer"></span>
+              {{"general.en_print"|translate}}</a>
+
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade p-3" id="two" role="tabpanel" aria-labelledby="two-tab">
+        <div class="ser-state" *ngIf="!isLoading && eaData.Term_Exam_Without_Schedule.messages.length>0">
+          <div *ngFor="let msg of eaData.Term_Exam_Without_Schedule.messages"
+            [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+            role="alert">
+            {{msg.body}}
+          </div>
+        </div>
+        <div *ngIf="!isLoading && eaData.Term_Exam_Without_Schedule.messages.length == 0">
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title" style="font-size:14px;">{{eaData.Term_Exam_Without_Schedule.labels.title}}</h3>
+            </div>
+            <div class="hints">
+
+              <p style="text-align: right;padding: 5px">
+
+                {{eaData.Term_Exam_Without_Schedule.labels.date}}: {{eaData.Term_Exam_Without_Schedule.values.date}}
+                <br />
+                {{"services.exam.uno" | translate}} : {{eaData.Term_Exam_Without_Schedule.values.std_id}}
+                <br />
+                {{eaData.Term_Exam_Without_Schedule.labels.txt1}}
+                {{eaData.Term_Exam_Without_Schedule.values.student_name}}
+                {{eaData.Term_Exam_Without_Schedule.labels.txt2}}
+                {{eaData.Term_Exam_Without_Schedule.values.std_id}}
+                {{eaData.Term_Exam_Without_Schedule.labels.txt3}}
+                {{eaData.Term_Exam_Without_Schedule.values.coll}}
+                {{eaData.Term_Exam_Without_Schedule.labels.txt4}}
+                {{eaData.Term_Exam_Without_Schedule.values.term}}
+                <br />
+                {{eaData.Term_Exam_Without_Schedule.labels.txt5}}
+
+                {{eaData.Term_Exam_Without_Schedule.values.startDay}}
+                {{eaData.Term_Exam_Without_Schedule.labels.txt6}}
+                {{eaData.Term_Exam_Without_Schedule.values.endDay}}
+                <br />
+                {{eaData.Term_Exam_Without_Schedule.labels.txt7}}
+                <br>
+                {{eaData.Term_Exam_Without_Schedule.labels.txt8}}
+
+                {{eaData.Term_Exam_Without_Schedule.labels.txt9}}
+                <br>
+                {{eaData.Term_Exam_Without_Schedule.labels.txt10}}
+
+                {{eaData.Term_Exam_Without_Schedule.labels.txt11}}
+
+
+
+
+              </p>
+            </div>
+          </div>
+          <div style="text-align: center" class="prin">
+
+            <a class="btn btn-primary" seu-auto-print href="{{term}}"><span class="ik ik-printer"></span>
+              {{"general.ar_print" | translate}} </a>
+            <a class="btn btn-primary" seu-auto-print href="{{termEn}}"><span class="ik ik-printer"></span>
+              {{"general.en_print" | translate}} </a>
+
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade p-3" id="three" role="tabpanel" aria-labelledby="three-tab">
+        <div class="ser-state" *ngIf="!isLoading && eaData.Final_Exam_With_Schedule.messages.length>0">
+          <div *ngFor="let msg of eaData.Final_Exam_With_Schedule.messages"
+            [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+            role="alert">
+            {{msg.body}}
+          </div>
+        </div>
+        <div *ngIf="!isLoading && eaData.Final_Exam_With_Schedule.messages.length == 0">
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title" style="font-size:14px;">{{eaData.Final_Exam_With_Schedule.labels.title}} </h3>
+            </div>
+            <div class="hints">
+
+              <p style="text-align: right;padding: 5px">
+                {{eaData.Final_Exam_With_Schedule.labels.date}}: {{eaData.Final_Exam_With_Schedule.values.date}}
+                <br />
+                {{"services.exam.uno" | translate}} : {{eaData.Final_Exam_With_Schedule.values.std_id}}
+
+                <br />
+                {{eaData.Final_Exam_With_Schedule.labels.txt1}}
+                {{eaData.Final_Exam_With_Schedule.values.student_name}}
+                {{eaData.Final_Exam_With_Schedule.labels.txt2}}
+                {{eaData.Final_Exam_With_Schedule.values.std_id}}
+                {{eaData.Final_Exam_With_Schedule.labels.txt3}}
+                {{eaData.Final_Exam_With_Schedule.values.coll}}
+                {{eaData.Final_Exam_With_Schedule.labels.txt4}}
+                {{eaData.Final_Exam_With_Schedule.values.term}}
+                <br />
+                {{eaData.Final_Exam_With_Schedule.labels.txt5}}
+
+                {{eaData.Final_Exam_With_Schedule.values.startDay}}
+                {{eaData.Final_Exam_With_Schedule.labels.txt6}}
+                {{eaData.Final_Exam_With_Schedule.values.endDay}}
+                <br />
+                {{eaData.Final_Exam_With_Schedule.labels.txt7}}
+
+
+
+
+              </p>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">CRN </th>
+                  <th scope="col"> {{"general.request.req_cname" | translate}} </th>
+                  <th scope="col"> {{"general.request.day" | translate}}</th>
+                  <th scope="col"> {{"general.request.time" | translate}}</th>
+                  <th scope="col"> {{"general.request.att" | translate}}</th>
+
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let it of eaData.Final_Exam_With_Schedule.Final_Schedule">
+                  <td>{{it.CRN}}</td>
+                  <td>{{it.CRSE_TITLE}}</td>
+                  <td>{{it.CRSE_DAY}}</td>
+                  <td style="direction: ltr">({{toHTML(it.CRSE_TIME)}})</td>
+                  <td>{{it.STD_ATTEND}}</td>
+
+
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading">
+            <div class="row">
+              <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+                {{eaData.Final_Exam_With_Schedule.labels.txt8}}
+                <br />
+                {{eaData.Final_Exam_With_Schedule.labels.txt9}}
+                <br />
+                <br />
+                {{eaData.Final_Exam_With_Schedule.labels.txt10}}
+
+                {{eaData.Final_Exam_With_Schedule.labels.txt11}}
+              </p>
+            </div>
+          </div>
+
+
+          <div style="text-align: center" class="prin">
+
+            <a class="btn btn-primary" seu-auto-print href="{{finalschedule}}"><span class="ik ik-printer"></span>
+              {{"general.ar_print" | translate}}</a>
+            <a class="btn btn-primary" seu-auto-print href="{{finalscheduleEn}}"><span class="ik ik-printer"></span>
+              {{"general.en_print" | translate}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade p-3" id="four" role="tabpanel" aria-labelledby="four-tab">
+        <div class="ser-state" *ngIf="!isLoading && eaData.Final_Exam_Without_Schedule.messages.length>0">
+          <div *ngFor="let msg of eaData.Final_Exam_Without_Schedule.messages"
+            [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+            role="alert">
+            {{msg.body}}
+          </div>
+        </div>
+        <div *ngIf="!isLoading && eaData.Final_Exam_Without_Schedule.messages.length == 0">
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title" style="font-size:14px;">{{eaData.Final_Exam_Without_Schedule.labels.title}}
+              </h3>
+            </div>
+            <p class="card-text" style="text-align: right">
+              {{eaData.Final_Exam_Without_Schedule.labels.date}}: {{eaData.Final_Exam_Without_Schedule.values.date}}
+              <br />
+              {{"services.exam.uno" | translate}} : {{eaData.Final_Exam_Without_Schedule.values.std_id}}
+              <br />
+              {{eaData.Final_Exam_Without_Schedule.labels.txt1}}
+              {{eaData.Final_Exam_Without_Schedule.values.student_name}}
+              {{eaData.Final_Exam_Without_Schedule.labels.txt2}}
+              {{eaData.Final_Exam_Without_Schedule.values.std_id}}
+              {{eaData.Final_Exam_Without_Schedule.labels.txt3}}
+              {{eaData.Final_Exam_Without_Schedule.values.coll}}
+              {{eaData.Final_Exam_Without_Schedule.labels.txt4}}
+              {{eaData.Final_Exam_Without_Schedule.values.term}}
+              <br />
+              {{eaData.Final_Exam_Without_Schedule.labels.txt5}}
+
+              {{eaData.Final_Exam_Without_Schedule.values.startDay}}
+              {{eaData.Final_Exam_Without_Schedule.labels.txt6}}
+              {{eaData.Final_Exam_Without_Schedule.values.endDay}}
+              <br />
+              {{eaData.Final_Exam_Without_Schedule.labels.txt7}}
+              <br>
+              {{eaData.Final_Exam_Without_Schedule.labels.txt8}}
+
+              {{eaData.Final_Exam_Without_Schedule.labels.txt9}}
+              <br>
+              {{eaData.Final_Exam_Without_Schedule.labels.txt10}}
+
+              {{eaData.Final_Exam_Without_Schedule.labels.txt11}}
+
+
+
+
+            </p>
+          </div>
+          <div style="text-align: center" class="prin">
+
+            <a class="btn " seu-auto-print href="{{final}}"><span class="ik ik-printer"></span>
+              {{"general.ar_print" | translate}} </a>
+            <a class="btn" seu-auto-print href="{{finalEn}}"><span class="ik ik-printer"></span>
+              {{"general.en_print" | translate}} </a>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+</div>

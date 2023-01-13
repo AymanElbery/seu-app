@@ -1,0 +1,59 @@
+<!-- Modal -->
+<mat-dialog-content dir="rtl">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.change_major.change_major_req"|translate}} </h5>
+
+      </div>
+      <div class="modal-body">
+        <!-- <P class="text-center">
+                <span style="font-weight: bold; font-size: 15px;color: red;" >تنبيه:   </span>{{reqData.notes.txt1}}
+
+               </P> -->
+
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+          <div class="main-content">
+            <P class="text-center">
+              <span
+                style="font-weight: bold; font-size: 15px;color: red;">{{"services.change_major.alert"|translate}}</span>
+              {{"services.change_major.alert_content"|translate}}<br />
+              {{"services.change_major.major_cancellation_validity"|translate}}
+
+            </P>
+            <section class="ser-state">
+              <div class="container">
+                <div class="row ser-block">
+
+                  <div class="col-md-12 col-sm-12">
+                    <div class="state">
+                      <h6>{{"services.change_major.choose_major"|translate}}</h6>
+                      <select name="major" #BranchID="ngModel" [(ngModel)]="mj.major" class="form-control"
+                        [class.is-invalid]="mj.major==''">
+                        <option value="">{{"services.change_major.choose_major"|translate}}</option>
+                        <option *ngFor="let item of reqData.majors" value="{{item.MAJOR_PK}}">{{item.MAJOR_TITLE}}
+                        </option>
+                      </select>
+                    </div>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-info"></div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </section>
+            <div class="modal-footer">
+              <button type="button" (click)="closeDiag()" class="btn btn-outline"><i
+                  class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
+              <button type="submit" class="btn btn-dark"><i
+                  class="fa fa-database"></i>{{"general.save"|translate}}</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,96 @@
+<mat-dialog-content dir="rtl">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{"wafi.UpdateInfo" | translate}}</h4>
+        <button type="button" class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
+      </div>
+      <!-- <seu-loader [isLoading]="isLoading"></seu-loader> -->
+      <!-- <mat-dialog-content> -->
+      <section class="dashboard-wrap" style="margin-top: 1px;">
+        <form role="form" [formGroup]="AddReqForm">
+          <div class="modal-body">
+
+
+
+
+            <div class="row ser-block">
+              <div class=" col-md12- col-sm-12">
+                <div class="state">
+                  <h6>{{"wafi.poersonalemail"|translate}} <span class="reqstart">*</span></h6>
+
+                  <input type="text" class="form-control" formControlName="email" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row ser-block">
+              <div class=" col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"wafi.Mobile"|translate}} <span class="reqstart">*</span></h6>
+
+                  <input type="text" class="form-control" formControlName="mobile_no" (keypress)="keyPress($event)"
+                    maxlength="10" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row ser-block">
+              <div class=" col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"wafi.AlternativePhone"|translate}} <span class="reqstart">*</span></h6>
+
+                  <input type="text" class="form-control" formControlName="phone_no" (keypress)="keyPress($event)"
+                    maxlength="10" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="row ser-block">
+              <div class=" col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"wafi.address"|translate}} <span class="reqstart">*</span></h6>
+
+                  <input type="text" class="form-control" formControlName="address" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row ser-block">
+              <div class=" col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"wafi.addressEN"|translate}} <span class="reqstart">*</span></h6>
+
+                  <input type="text" class="form-control" formControlName="address_s" class="form-control" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row ser-block">
+              <div class=" col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"wafi.comminicationlanguage"|translate}} <span class="reqstart">*</span></h6>
+                  <select class="form-control" formControlName="preferred_lang_sms">
+                    <option *ngFor="let lang of langsList" value={{lang.value}}>{{lang.label}} </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div class=" col-md-12 col-sm-12">
+                <div class="form-group  prin" style="color: #fff;margin-top: 30px !important;">
+                  <button (click)="onFormSubmit()" type="button" [disabled]="submitted || AddReqForm.invalid"
+                    class="btn" style="color: #fff;margin-top: 0px !important;"><i class="fa fa-database"></i>
+                    {{"tasks.Send" | translate}}</button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </form>
+      </section>
+      <!-- </mat-dialog-content> -->
+    </div>
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,114 @@
+<div class="main-content">
+
+  <service-header [title]="'services.medical_report.title' |translate"
+  [desc]="'services.medical_report.desc' |translate"></service-header>
+
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div *ngIf="isClosed">
+    <seu-flash [msgs]="messagesList"  [isLoading]="isLoading"> </seu-flash>
+   </div>
+   <ng-container *ngIf="!isClosed">
+  <div class="widget" *ngIf="!isLoading">
+    <br>
+
+    <h6 class="display-6 text-center">
+
+      {{mrData.labels.title}}</h6>
+
+
+
+    <h6 class="display-6 text-center">
+
+      {{mrData.labels.txt1}} : {{mrData.values.date}}</h6>
+
+    <div class="widget-header">
+      <h3 class="widget-title">{{"general.student_data"|translate}}</h3>
+    </div>
+
+    <section class="ser-state">
+      <div class="container">
+        <div class="row ser-block">
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{"general.female_or_male_name"|translate}} </h6>
+              <h5>{{mrData.values.std_name}}</h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{"general.student_id"|translate}} </h6>
+              <h5>{{mrData.values.std_id}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6> {{"general.ssn"|translate}}</h6>
+              <h5>{{mrData.values.ssn}}</h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row ser-block">
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6> {{"general.faculty"|translate}} </h6>
+              <h5>{{mrData.values.coll}}</h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-4 col-sm-12">
+            <div class="state">
+              <h6>{{"general.major"|translate}}</h6>
+              <h5>{{mrData.values.major}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="jumbotron jumbtron-fluid" *ngIf="!isLoading">
+    <div class="row">
+      <p style="direction: rtl;float: right;text-align: center;padding-right: 50px">
+        <br />
+        {{mrData.labels.part1}}
+        <br />
+        {{mrData.labels.part2}}
+      </p>
+      <br />
+      <br />
+      <p style="direction: rtl;float: right;text-align: right;padding-right: 50px">
+        {{"general.note"|translate}}
+        <br />
+        {{mrData.labels.txt2}}
+        <br />
+        <b>
+          -{{mrData.labels.txt3}}
+        </b>
+      </p>
+    </div>
+  </div>
+  <div class="prin text-center " *ngIf="!isLoading">
+    <a class="btn " seu-auto-print href="{{arabicPrint}}"><i class="ik ik-save"></i>
+      {{"general.ar_print"|translate}}</a>
+    <a class="btn " seu-auto-print href="{{EngPrint}}"><i class="ik ik-save"></i>
+      {{"general.en_print"|translate}}</a>
+  </div>
+</ng-container>
+</div>

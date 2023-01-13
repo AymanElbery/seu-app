@@ -1,0 +1,37 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+
+<div  class="modal-header">
+  <h4 class="modal-title">{{"wafi.salarydetailsselected" | translate}}</h4>
+    <!-- <button  class="close" type="button">×</button> -->
+<button type="button"  class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
+
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+
+      <tr>
+
+        <th scope="col">{{"wafi.month" | translate}}</th>
+        <th scope="col">{{"wafi.year" | translate}}</th>
+        <th scope="col">{{"wafi.description" | translate}}</th>
+        <th scope="col">{{"wafi.amount" | translate}}</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let salry of saldetails;let i=index;">
+        
+       
+        
+        <td>{{salry.month}}</td>
+        <td>{{salry.year}}</td>
+        <td>{{salry.desc}}</td>
+        <td>{{salry.amount}}</td>        
+      
+      </tr>
+
+    </tbody>
+  </table>
+</div>

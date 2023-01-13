@@ -1,0 +1,109 @@
+
+<ActionBar style="background:#001628; ">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActioncurrentServiceRequestTables are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActioncurrentServiceRequestTable for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <Label text="{{'wafi.ApprovalRequestDtails'|translate}}" class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  style="font-size: 25px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+
+</ActionBar>
+
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading"></ActivityIndicator>
+    <StackLayout>
+<GridLayout *ngIf="currentServiceRequestTable!=null" class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,
+auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                      
+                      
+    <Label *ngIf="currentServiceRequestTable.requestType" row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.RequestType" | translate}}'></Label>
+    <Label *ngIf="currentServiceRequestTable.requestType" row="1"  column="0" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.requestDesc"></Label>
+
+    <Label *ngIf="currentServiceRequestTable.vacationEnabled==true" row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.VacationDescription" | translate}}'></Label>
+    <Label *ngIf="currentServiceRequestTable.vacationEnabled==true" row="2"  column="0" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.vacationDesc"></Label>
+
+    <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.beginDate" | translate}}'></Label>
+    <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.beginDate"></Label>
+   
+    <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.endDate" | translate}}'></Label>
+    <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.endDate" ></Label>
+
+    <Label row="5"  column="1" *ngIf="currentServiceRequestTable.fromCountryEnabled==true"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.fromCountry" | translate}}'></Label>
+    <Label row="5"  column="0" *ngIf="currentServiceRequestTable.fromCountryEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.fromCountryDesc" ></Label>
+
+    <Label row="6"  column="1" *ngIf="currentServiceRequestTable.toCountryEnabled==true"  class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.ToCountry-City" | translate}}'></Label>
+    <Label row="6"  column="0" *ngIf="currentServiceRequestTable.toCountryEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.toCountryDesc" ></Label>
+
+    <Label row="7"  column="1"  *ngIf="currentServiceRequestTable.ticketEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.Ticket" | translate}}'></Label>
+    <Label row="7"  column="0" *ngIf="currentServiceRequestTable.ticketEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.ticket" ></Label>
+     
+    <Label row="8"  column="1"  *ngIf="currentServiceRequestTable.roundTripEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.RoundTrip" | translate}}'></Label>
+    <Label row="8"  column="0" *ngIf="currentServiceRequestTable.roundTripEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.roundTrip" ></Label>
+
+    <Label row="9"  column="1"  *ngIf="currentServiceRequestTable.attendantsEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.Attendants" | translate}}'></Label>
+    <Label row="9"  column="0" *ngIf="currentServiceRequestTable.attendantsEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.attendants" ></Label>
+
+    <Label row="10"  column="1" *ngIf="currentServiceRequestTable.amountEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.CompensationAmount" | translate}}'></Label>
+    <Label row="10"  column="0" *ngIf="currentServiceRequestTable.amountEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.compensationAmount" ></Label>
+
+    <Label row="11"  column="1"  *ngIf="currentServiceRequestTable.decisionEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.DecisionNo" | translate}}'></Label>
+    <Label row="11"  column="0" *ngIf="currentServiceRequestTable.decisionEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.decisionNo" ></Label>
+
+    <Label row="12"  column="1" *ngIf="currentServiceRequestTable.subjectEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.Task/Direction" | translate}}'></Label>
+    <Label row="12"  column="0" *ngIf="currentServiceRequestTable.subjectEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.subject" ></Label>
+
+    <Label row="13"  column="1"  *ngIf="currentServiceRequestTable.startTimeEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.FromTime" | translate}}'></Label>
+    <Label row="13"  column="0" *ngIf="currentServiceRequestTable.startTimeEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.startTime" ></Label>
+
+    <Label row="14"  column="1"  *ngIf="currentServiceRequestTable.endTimeEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.ToTime" | translate}}'></Label>
+    <Label row="14"  column="0" *ngIf="currentServiceRequestTable.endTimeEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.endTime" ></Label>
+
+    <Label row="15"  column="1"  *ngIf="currentServiceRequestTable.regCourseEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.scheduleName" | translate}}'></Label>
+    <Label row="15"  column="0" *ngIf="currentServiceRequestTable.regCourseEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.scheduleDesc" ></Label>
+
+    <Label row="16"  column="1"  *ngIf="currentServiceRequestTable.regCourseEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.sideName" | translate}}'></Label>
+    <Label row="16"  column="0" *ngIf="currentServiceRequestTable.regCourseEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.trainSideDesc" ></Label>
+
+    <Label row="17"  column="1"  *ngIf="currentServiceRequestTable.disclaimerReasonEnabled==true" class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.DisclaimerReason" | translate}}'></Label>
+    <Label row="17"  column="0" *ngIf="currentServiceRequestTable.disclaimerReasonEnabled==true" class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.disclaimerReasonDesc" ></Label>
+
+    <Label row="18"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.notes" | translate}}'></Label>
+    <Label row="18"  column="0"  class="ysPBox2" textWrap="true" [text]="currentServiceRequestTable.notes" ></Label>
+  </GridLayout>
+
+  <GridLayout  columns="auto, *" class="serv-title">
+    <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+    <Label col="1" text='{{"wafi.ApprovalData" | translate}}' class="serv-name" ></Label>
+    <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+  </GridLayout>
+
+  <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of transactionData">
+                      
+                      
+    <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.StepNo" | translate}}'></Label>
+    <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.stepNo"></Label>
+
+    <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.ApprovedEmployee" | translate}}'></Label>
+    <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.approvedEmpName"></Label>
+
+    <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.DuatyDescription" | translate}}'></Label>
+    <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.duatyDesc"></Label>
+   
+    <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.TransactionDate" | translate}}'></Label>
+    <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.approvedDate" ></Label>
+
+    <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.Agree/disagree" | translate}}'></Label>
+    <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.isApprovedDesc" ></Label>
+
+    <Label row="6"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.RejecteReasone" | translate}}'></Label>
+    <Label row="6"  column="0" class="ysPBox2" textWrap="true" [text]="item.disagreeReasone" ></Label>
+     
+  </GridLayout>
+</StackLayout>
+</ScrollView>

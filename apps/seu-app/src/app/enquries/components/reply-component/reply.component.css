@@ -1,0 +1,35 @@
+.section-content{
+    padding: 10px;
+    margin-top: 20px;
+}
+.tabs-navbar{
+    margin-right: 6px;
+}
+.nav-tabs{
+    border-bottom: none;
+}
+.nav-tabs li a{
+    border-radius: 3px;
+    background-color: #f28d1e;
+    color: #FFF;
+    border-color: #f28d1e;
+}
+.nav-tabs li a:hover{
+    border-radius: 3px;
+    background-color: #26226a;
+    color: #FFF;
+    border-color: #26226a;
+}
+.widget{
+    margin-top: 20px;
+}
+.active{
+    color: #FFF;
+    border-color: #26226a !important; 
+    background-color: #26226a !important;
+}
+li select{
+    width: 250%;
+    position: relative;
+    top: 6px;
+}

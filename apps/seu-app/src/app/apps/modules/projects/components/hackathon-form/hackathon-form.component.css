@@ -1,0 +1,44 @@
+.main-content{
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.container{
+    max-width: 1300px;
+}
+
+#resume{
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+button#fake-file{
+    width: 100%;
+    position: relative;
+    top: -40px;
+	right: 0px;
+    z-index:-1;
+    cursor: pointer;
+}
+form {
+    border-radius: 15px;
+    box-shadow: 0 0 7px 2px rgba(0,0,0,.07);
+    padding-bottom: 20px;
+}
+form .state {
+    box-shadow: none;
+    margin-top: 20px;
+}
+.form-check {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #01182a;
+}
+
+.ser-state h5 {
+    font-size: 18px;
+    padding: 16px;
+    margin: 0;
+    letter-spacing: 0;
+    font-weight: normal;
+}

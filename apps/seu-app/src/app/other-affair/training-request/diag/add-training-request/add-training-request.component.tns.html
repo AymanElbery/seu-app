@@ -1,0 +1,19 @@
+<FlexboxLayout  flexDirection="column" style="padding: 20;" class="pop iosFont">
+    <Label text=' {{"services.training_request.practical_train"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+
+    <Label text='{{"services.training_request.alert"|translate}} {{"services.training_request.alert_content"|translate}}'
+     textWrap="true"></Label>
+
+    <Label text='{{"services.training_request.destination_letter"|translate}}' textWrap="true"
+     style="color: #f08b1c;; margin-top:10 ;margin-right: 20;"></Label>
+
+    <TextView style="border-color: gray;border-width: 1; padding:10;"
+    #organization="ngModel" [(ngModel)]="training.organization" required>
+    </TextView>
+    
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 20;">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

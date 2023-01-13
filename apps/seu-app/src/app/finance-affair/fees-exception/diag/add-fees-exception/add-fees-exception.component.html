@@ -1,0 +1,191 @@
+<mat-dialog-content>
+
+  <div class="modal-dialog" role="document" style="direction: rtl;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{'general.request.add_request' | translate}}
+        </h5>
+      </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+          <div class="row ser-block">
+            <div class="col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.cat" | translate}}</h6>
+                <select required class="form-control" #association="ngModel" [(ngModel)]="feesException.association"
+                  name="association" [class.is-invalid]="feesException.association == ''" #t
+                  (change)="associationChange(feesException.association)">
+                  <option value=''> {{"services.finance.choose" | translate}} </option>
+                  <option *ngFor="let e of associationsList" [value]="e.id">{{e.value}}</option>
+                </select>
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.doyou" | translate}} </h6>
+                <select required class="form-control" #exceptionType="ngModel"
+                  [(ngModel)]="feesException.exception_type" name="exceptionType"
+                  [class.is-invalid]="feesException.exception_type == ''" #t (change)="exceptionTypeChange(t.value)">
+                  <option value=''> {{"services.finance.choose" | translate}} </option>
+                  <option *ngFor="let e of exceptionTypeListFiltered" [value]="e.id">{{e.value}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row ser-block">
+            <div *ngIf="feesException.association=='0'" class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.sc" | translate}} </h6>
+                <input required class="form-control" name="proofStatusAtt" id="proofStatusAtt" type="file" accept="*/*"
+                  (change)="handleInputChange($event,'proof_status')"
+                  [class.is-invalid]="feesException.proof_status == ''" />
+              </div>
+            </div>
+            <div *ngIf="feesException.association=='0'" class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.cid" | translate}} </h6>
+                <input required class="form-control" name="idCardAtt" id="idCardAtt" type="file" accept="*/*"
+                  (change)="handleInputChange($event,'id_card')" [class.is-invalid]="feesException.id_card == ''" />
+              </div>
+            </div>
+            <div *ngIf="feesException.association=='1'" class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.wletter" | translate}} </h6>
+                <input required class="form-control" name="workStatusAtt" id="workStatusAtt" type="file" accept="*/*"
+                  (change)="handleInputChange($event,'work_status')"
+                  [class.is-invalid]="feesException.work_status == ''" />
+              </div>
+            </div>
+            <div *ngIf="feesException.association=='2'" class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.assletter" | translate}} </h6>
+                <input required class="form-control" name="letterAtt" id="letterAtt" type="file" accept="*/*"
+                  (change)="handleInputChange($event,'letter')" [class.is-invalid]="feesException.letter == ''" />
+              </div>
+            </div>
+            <div *ngIf="feesException.association=='2'" class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.id" | translate}} </h6>
+                <input required class="form-control" name="mcoIdCardAtt" id="mcoIdCardAtt" type="file" accept="*/*"
+                  (change)="handleInputChange($event,'mco_id_card')"
+                  [class.is-invalid]="feesException.mco_id_card == ''" />
+              </div>
+            </div>
+          </div>
+          <div *ngIf="feesException.exception_type=='1'" class="row ser-block">
+            <div class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.bank" | translate}}</h6>
+                <select required class="form-control" #bank="ngModel" [(ngModel)]="feesException.bank" name="bank"
+                  [class.is-invalid]="feesException.bank == ''">
+                  <option value=''> {{"services.finance.choose" | translate}} </option>
+                  <option *ngFor="let e of banksList" [value]="e.BANK_PK">{{e.BANK_TITLE}}</option>
+                </select>
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.iban" | translate}} <span>({{"services.finance.iban_notes" |
+                    translate}})</span></h6>
+                <input type="text" required class="form-control" #Iban="ngModel" [(ngModel)]="feesException.iban"
+                  name="Iban" (keypress)="keyPress($event)" maxlength="22" [class.is-invalid]="feesException.iban == '' || feesException.iban.length != 22">
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.accno" | translate}} </h6>
+                <input type="text" required class="form-control" #AccountId="ngModel"
+                  [(ngModel)]="feesException.account_id" name="AccountId"
+                  [class.is-invalid]="feesException.account_id == '' || feesException.account_id.length != 10">
+              </div>
+            </div>
+            <div *ngIf="feesException.exception_type=='1'" class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.accname" | translate}} </h6>
+                <input type="text" required class="form-control" #AccountName="ngModel"
+                  [(ngModel)]="feesException.account_name" name="AccountName"
+                  [class.is-invalid]="feesException.account_name == ''">
+              </div>
+            </div>
+          </div>
+          <div *ngIf="feesException.exception_type=='1'" class="row ser-block">
+            <div *ngIf="feesException.exception_type=='1'" class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.email" | translate}} </h6>
+                <input type="email" required class="form-control" #Email="ngModel" [(ngModel)]="feesException.email"
+                  name="Email" [class.is-invalid]="feesException.email == ''">
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.bankid" | translate}} </h6>
+                <input name="bankCardAtt" id="bankCardAtt" type="file" accept="*/*"
+                  (change)="handleInputChange($event,'bank_card')" />
+              </div>
+            </div>
+          </div>
+          <div *ngIf="feesException.exception_type=='1'" class="row ser-block">
+            <div class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.areu" | translate}}</h6>
+                <select required class="form-control" #accountOwner1="ngModel" [(ngModel)]="accountOwner"
+                  name="accountOwner1" [class.is-invalid]="accountOwner == ''" #p (change)="ownerChange(p.value)">
+                  <option value=''> {{"services.finance.choose" | translate}} </option>
+                  <option *ngFor="let e of haveAccountList" [value]="e.id">{{e.value}}</option>
+                </select>
+              </div>
+            </div>
+            <div class=" col-md-6 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.rel" | translate}} </h6>
+                <select required class="form-control" #accountRelative="ngModel"
+                  [(ngModel)]="feesException.account_relative" name="accountRelative"
+                  [class.is-invalid]="feesException.account_relative == '' && accountOwner=='0'"
+                  [disabled]="accountOwner=='1' || accountOwner==''">
+                  <option value=''> {{"services.finance.choose" | translate}} </option>
+                  <option *ngFor="let e of accountRelativeList" [value]="e.id">{{e.value}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row  ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6> {{"services.finance.conditions" | translate}}</h6>
+                <ul>
+                  <li>{{"services.finance.condition_1" | translate}}</li>
+                  <li>{{"services.finance.condition_2" | translate}}</li>
+                  <li>{{"services.finance.condition_3" | translate}}</li>
+                  <li>{{"services.finance.condition_4" | translate}}</li>
+                  <li>{{"services.finance.condition_5" | translate}}</li>
+                  <li>{{"services.finance.condition_6" | translate}}</li>
+                  <li>{{"services.finance.condition_7" | translate}}</li>
+                  <li>{{"services.finance.condition_8" | translate}}</li>
+                  <li>{{"services.finance.condition_9" | translate}}</li>
+                  <li>{{"services.finance.condition_10" | translate}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row  ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6> <input type="checkbox" class="checkbox" style="height: 20px;width:20px; cursor: pointer;" #ApproveCheck="ngModel"
+                  [(ngModel)]="approve" name="ApproveCheck"> {{"services.finance.agree" | translate}}</h6>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"services.finance.cancel" | translate}}</button>
+          <button [disabled]="(form.invalid || !approve)" type="submit" class="btn btn-dark"><i
+              class="fa fa-database"></i>
+            {{"services.finance.save" | translate}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

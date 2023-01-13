@@ -1,0 +1,120 @@
+
+<GridLayout class="view" style="background:#070f40">
+<Image src="~/images/log-b99.png" scaleX="1.1" scaleY="1.6" fill="aspectFill"></Image>
+
+  <ActionBar  visability="collapsed"  class="view" title=" " style="background:#070f40">
+    
+  </ActionBar>
+
+ 
+  <ScrollView>
+    
+    <StackLayout >
+
+      <StackLayout class="form"  verticalAlignment="center" >
+        <StackLayout>
+          <Image src="~/images/logo3d14.png" class="logo-login" ></Image>
+       
+        </StackLayout>
+
+        
+
+        <StackLayout margin="10">
+          <Image class="" style="width: 45; margin-top: 10;" src="~/images/user.png"></Image>
+        </StackLayout>
+        <StackLayout  class="form-login">
+        <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center" style="margin-top:0;"></ActivityIndicator>
+        <GridLayout class="m-10 input-field logi" columns="auto,*">
+          <Label col="0" text="&#xf007;" class="far log-icon" verticalAlignment="center"></Label>
+          <TextField horizontalAlignment="right"   col="1" hint="اسم المستخدم " [(ngModel)]="credentials.email" class="input" [editable]="!isLoading"></TextField>
+        </GridLayout>
+        <GridLayout class="m-10 input-field logi" columns="auto,*">
+          <Label col="0" text="&#xf13e;" class="fas log-icon" verticalAlignment="center"></Label>
+          <TextField  horizontalAlignment="right"  col="1" hint="كلمة المرور" secure="true" [(ngModel)]="credentials.password" class="input" [editable]="!isLoading">
+          </TextField>
+        </GridLayout>
+    
+        <Button text="{{'general.login' | translate}}" (tap)="login(credentials)" class="login-btn login-animate" [isEnabled]="!isLoading"></Button>
+        
+      </StackLayout>
+       
+      <StackLayout style="margin-top:0;">
+        <FlexboxLayout flexDirection="row-reverse" alignItems="flex-start" justifyContent="center">
+
+          <GridLayout class="heading8" rows="auto,auto" columns="*,*" [nsRouterLink]="['/news']">
+            <Image row="0" colSpan="2" class="heading-img8" src="~/images/u-n.png"></Image>
+            <label row="1" colSpan="2" text=" أخبار  الجامعة " class=" heading-text8 "></label>
+          </GridLayout>
+  
+          <GridLayout class="heading8" rows="auto,auto" columns="*,*"  [nsRouterLink]="['/branches']">
+            <Image row="0" colSpan="2" class="heading-img8" src="~/images/u-b.png"></Image>
+            <label row="1" colSpan="2" text=" فروع الجامعة " class=" heading-text8 "></label>
+          </GridLayout>
+  
+  
+  
+        </FlexboxLayout>
+
+        <FlexboxLayout flexDirection="row-reverse" alignItems="flex-start" justifyContent="center">
+
+          <GridLayout class="heading8" rows="auto,auto" columns="*,*"  [nsRouterLink]="['/accept']">
+            <Image row="0" colSpan="2" class="heading-img8" src="~/images/u-a.png"></Image>
+            <label row="1" colSpan="2" text=" تعليمات القبول " class=" heading-text8 "></label>
+          </GridLayout>
+  
+          <GridLayout class="heading8" rows="auto,auto" columns="*,*" (tap)="openWhatsAppConversation()">
+            <Image row="0" colSpan="2" class="heading-img8" src="~/images/u.png"></Image>
+            <label row="1" colSpan="2" text=" المساعد الذكي " class=" heading-text8 "></label>
+          </GridLayout>
+  
+  
+  
+        </FlexboxLayout>
+        </StackLayout>
+
+        <StackLayout class="hr hr2 m-10"></StackLayout> 
+
+        <FlexboxLayout  flexDirection="row-reverse"  alignItems="center" justifyContent="center">
+
+     <!--      <label [nsRouterLink]="['/policy']" class=" contact-btn">
+              <FormattedString>
+                  <Span text="&#xf084; " class="fas"></Span> 
+                  <Span text="الخصوصيه"></Span>
+              </FormattedString>
+          </label>
+                 <label [nsRouterLink]="['/contact']" class=" contact-btn ">
+              <FormattedString>
+                  <Span text="&#xf0e0; " class="far"></Span>
+                  <Span text="تواصل معنا"></Span>
+              </FormattedString>
+          </label>
+          <label horizontalAlignment="center" [nsRouterLink]="['/forget']" class=" contact-btn ">
+            <FormattedString>
+                <Span text="&#xf0e0; " class="far"></Span>
+                <Span text="نسيت كلمة المرور "></Span>
+            </FormattedString>
+        </label> -->
+
+        <GridLayout class="heading9" rows="auto,auto" columns="*,*" [nsRouterLink]="['/policy']">
+          <Image row="0" colSpan="2"  src="~/images/shield.png" class="heading-img9 "></Image>
+          <label row="1" colSpan="2" text=" الخصوصيه " class=" heading-text9 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading9" rows="auto,auto" columns="*,*" [nsRouterLink]="['/forget']">
+          <Image row="0" colSpan="2"  src="~/images/password.png" class="heading-img9 "></Image>
+          <label row="1" colSpan="2" text=" نسيت كلمة المرور " class=" heading-text9 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading9" rows="auto,auto" columns="*,*" [nsRouterLink]="['/contact']">
+          <Image row="0" colSpan="2"  src="~/images/contact2.png" class="heading-img9 "></Image>
+          <label row="1" colSpan="2" text=" تواصل معنا " class=" heading-text9 "></label>
+        </GridLayout>
+
+      </FlexboxLayout>
+
+
+      </StackLayout>
+
+    </StackLayout>
+  </ScrollView>
+</GridLayout>

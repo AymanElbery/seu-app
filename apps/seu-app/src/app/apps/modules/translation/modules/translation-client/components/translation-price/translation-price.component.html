@@ -1,0 +1,42 @@
+<app-service-header title="{{'translation' | translate}}" subtitle="{{'menu.translate_price' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+    <div class="row">
+        <div class="col-6">
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        {{"price_page.conditions" | translate}}
+                    </h3>
+                </div>
+                <div class="widget-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" style="background-color: #EDEDED;">{{"price_page.condition_1" | translate}}</li>
+                        <li class="list-group-item" style="background-color: #EDEDED;">{{"price_page.condition_2" | translate}}</li>
+                        <li class="list-group-item" style="background-color: #EDEDED;">{{"price_page.condition_3" | translate}}</li>
+                        <li class="list-group-item" style="background-color: #EDEDED;">{{"price_page.condition_4" | translate}}</li>
+                        <li class="list-group-item" style="background-color: #EDEDED;">{{"price_page.condition_5" | translate}}</li>
+                        <li class="list-group-item" style="background-color: #EDEDED;">{{"price_page.condition_6" | translate}} <span class="text-danger" style="font-weight: bold;">translation@seu.edu.sa</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="widget">
+                <div class="widget-header">
+                    <h3 class="widget-title">
+                        {{"price_page.price_250" | translate}}
+                    </h3>
+                </div>
+                <div class="widget-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" style="background-color: #EDEDED; font-weight: bold;">{{"price_page.price_1" | translate}}</li>
+                        <li class="list-group-item" style="background-color: #EDEDED; font-weight: bold;">{{"price_page.price_2" | translate}}</li>
+                        <li class="list-group-item" style="background-color: #EDEDED; font-weight: bold;">{{"price_page.price_3" | translate}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

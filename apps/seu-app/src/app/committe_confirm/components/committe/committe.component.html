@@ -1,0 +1,54 @@
+<div class="main-content" >
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <div class="widget">
+      <div class="widget-header">
+        <h3 class="widget-title text-center"> {{"committe.title"|translate}}</h3>
+      </div>
+      <div class="widget-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">{{"committe.report_date" | translate}}</th>
+                    <td>{{date | date: 'dd-MM-yyyy'}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">{{"committe.punishment" | translate}}</th>
+                    <td>{{ data[0].DECESION }}</td>
+                  </tr>
+                  <tr>
+                    <th style="vertical-align: middle;" scope="col">{{"committe.violation" | translate}}</th>
+                    <td>
+                      <strong *ngFor="let violation of data; let i = index"> <span style="font-weight: bold; position: relative; top: 4px;">مخالفة رقم ({{ i+1 }})</span> <button style="margin-top: 10px; margin-right: 10px;" (click)="click(violation.PUNISHMENT_DETAILS_FILE, violation.COLL)"  class="btn btn-primary">للإطلاع من هنا</button> <br></strong>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="col" class="text-danger">{{"committe.acknowledgment" | translate}}</th>
+                    <td>
+                      <input style="cursor: pointer;" class="form-check-input" (change)="acknowledgmentChange($event)" type="checkbox" value="1">
+                      <span style="margin-right: 3px; position: relative; top: 5px" class="form-check-label">{{"committe.acknowledgment_text"|translate}}</span>
+                    </td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="row" *ngIf="allow_objection">
+          <div class="col-md-12 text-center">
+            <strong>ملاحظة: </strong>  في حال الاعتراض على قرار اللجنة، يمكنك تقديم طلب اعتراض خلال 14 يوم من تاريخ التبليغ عن طريق خدمة المساعد الأكاديمي وفقاً للخطوات الموضحة في الرابط التالي  <a style="text-decoration: underline; color: #5a3484; cursor: pointer;" target="_blank" href="https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/committe_guide.pdf">(الدليل الإرشادي)</a>
+          </div>
+        </div>
+        <div class="row" *ngIf="save_button">
+          <div class="col-md-12 text-center">
+            <button [disabled]="submitted" (click)="save()" style="width: 20%;" class="btn btn-primary">{{"committe.save" | translate}}</button>
+          </div>
+        </div>
+      </div>
+      <div class="widget-footer">
+      </div>
+    </div>
+  </div>
+    

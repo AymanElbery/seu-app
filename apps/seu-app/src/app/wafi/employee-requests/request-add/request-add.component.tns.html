@@ -1,0 +1,36 @@
+<app-header></app-header>
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+
+        <GridLayout columns="auto, *" class="serv-title">
+          <Label col="1" text="&#xf0d9;" class="fas serv-ico-r"></Label>
+          <Label col="1" text='{{"wafi.AddNewRequest" | translate}}' class="serv-name"></Label>
+          <Label col="1" text="&#xf0da;" class="fas serv-ico "></Label>
+    
+        </GridLayout>
+    
+    
+    
+  
+    
+        <StackLayout height="100%" *ngIf="!isLoading">
+          <StackLayout >
+    
+    
+            <StackLayout *ngFor="let rtype of reqtype;" >
+
+                <Button  colSpan="2" text='{{rtype.requestDesc}}'   class=" print-btn " (tap)="getrequesttype(i,rtype.requestType)" ></Button>
+              </StackLayout>
+    
+    
+    
+        </StackLayout>
+     
+        </StackLayout>
+      </FlexboxLayout>
+    
+
+
+
+</ScrollView>

@@ -1,0 +1,55 @@
+<div class="main-content">
+    <service-header [title]="'upload_photo.title' |translate" [desc]="'upload_photo.desc' |translate"></service-header>
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+
+    <div class="ser-state" *ngIf="!isLoading">
+        <div style="text-align: right" *ngFor="let msg of msgs" [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))" role="alert">
+            {{msg.body}}
+        </div>
+    </div>
+    <div class="widget" *ngIf="!isLoading">
+        <div class="widget-header">
+            <h3 class="widget-title">{{"general.request.pre_requests"| translate}}
+                <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+          {{"general.request.add_request"| translate}}
+        </button>
+            </h3>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col"> {{"general.request.req_no"| translate}}</th>
+                        <th scope="col">{{"general.request.req_date"| translate}}</th>
+                        <th scope="col">{{"general.request.req_status"| translate}}</th>
+                        <th scope="col">{{"upload_photo.photo"| translate}}</th>
+                        <th scope="col">{{"upload_photo.ssn"| translate}}</th>
+                        <th scope="col">{{"general.request.req_delete"| translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let it of reqData.requests;let i=index;">
+                        <td>{{it.REQ_ID}}</td>
+                        <td>{{it.INSERT_DATE}}</td>
+                        <td>{{"upload_photo.STATUS_"+it['IS_ACTIVE'] | translate}}</td>
+                        <td>
+                            <img *ngIf="it.IMAGE_URL" width="50" src="{{it.IMAGE_URL}}" />
+                        </td>
+                        <td>
+                            <a href="{{it.ID_URL}}" target="_blank">{{"general.download"| translate}}</a>
+                        </td>
+                        <td *ngIf='it.deletable'>
+                            <button [disabled]='!it.deletable || deleting' class="btn btn-sm btn-danger" style="color: white" (click)="delete(it.REQ_ID,i)">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                        </td>
+
+
+                        <td *ngIf='!it.deletable'>{{"general.request.non_cancelable_request"| translate}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<mat-dialog-content dir="rtl">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="text-align: center" class="modal-title ">
+                {{"committe.title"|translate}}</h5>
+        </div>
+        <div class="modal-body">
+            <form role="form" [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"committe.course"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="courses" bindLabel="text" bindValue="value" formControlName="course_code">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.course_code"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"committe.decision_number_label"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" class="form-control" formControlName="decision_number" />
+                        </div>
+                        <control-validations-errors [control]="form.controls.decision_number"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"committe.violation_label"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" class="form-control" formControlName="violation" />
+                        </div>
+                        <control-validations-errors [control]="form.controls.violation"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"committe.punishment_label"|translate}} <span class="reqstart">*</span></h6>
+                            <ng-select [items]="punishments" bindLabel="text" bindValue="value" formControlName="punishment">
+                            </ng-select>
+                        </div>
+                        <control-validations-errors [control]="form.controls.punishment"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"committe.student_know_date"|translate}} <span class="reqstart">*</span></h6>
+                            <input type="text" formControlName="student_know_date" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+                        </div>
+                        <control-validations-errors [control]="form.controls.student_know_date"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="state">
+                            <h6>{{"committe.description"|translate}} <span class="reqstart">*</span></h6>
+                            <textarea maxlength="1000" class="form-control" formControlName="description"></textarea>
+                        </div>
+                        <control-validations-errors [control]="form.controls.description"></control-validations-errors>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px;">
+                    <div class="col-md-12" style="text-align: center;">
+                        <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="onSubmit()"
+                            type="submit" class="btn btn-primary">{{ "general.send" |
+                            translate}}
+                            <i class="fa fa-save"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</mat-dialog-content>

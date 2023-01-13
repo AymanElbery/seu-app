@@ -1,0 +1,285 @@
+<!-- <app-header></app-header> -->
+
+<ActionBar style="background:#080f43; ">
+  <!-- 
+  Use the NavigationButton as a side-drawer button in Android
+  because ActionItems are shown on the right side of the ActionBar
+<NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+
+-->
+<!-- <ActionItem (tap)="navigate('land')" ios:visibility="collapsed" class="" >
+<Image  class="ico-hom"   src="~/images/Home-menu.png" ></Image>
+</ActionItem> -->
+
+<!-- <NavigationButton ios:visibility="collapsed" icon="font://&#xf015;"  class="fas"
+style="font-size:13; color: #fff;"  (tap)="navigate('land')">
+</NavigationButton> -->
+
+ <NavigationButton ios:visibility="collapsed" icon="font://&#xf0f3;
+{{notifications.notesList.length}}"  class="far" style="font-size:10; color: #fff;" (tap)="getNotifications()">
+</NavigationButton> 
+
+<ActionItem style="margin: 0;"  ios.position="left" android:visibility="collapsed" icon="font://&#xf0f3;
+{{notifications.notesList.length}}"   class="fas " style="font-size:30; color: #fff;" (tap)="getNotifications()">
+<label  class="fas" style="margin: 0;padding-left: -10px;margin-left: -10px;color: #fff;"  ios.position="left" android:visibility="collapsed" text="&#xf0f3; {{notifications.notesList.length}}"   class="fas " style="font-size:25; color: #fff;" (tap)="getNotifications()">
+
+</label>
+</ActionItem>
+
+
+
+<!--<ActionItem icon="font://&#xf0f3;"  class="far" style="font-size:10; color: #fff;" ios.position="right" (tap)="openSettings()"></ActionItem>
+-->
+<StackLayout   horizontalAlignment="center" style="height: 100%;margin-top: 15px;">
+
+  <Image style="width: 90%;"   (tap)="navigate('land')" src="~/images/logo_3d.png" ></Image>
+</StackLayout>
+
+
+
+  <ActionItem icon="font://&#xf0c9;"  class="fas " style="font-size:20; color: #fff;"  (tap)="onDrawerButtonTap()" ios.position="right">
+  </ActionItem>
+ 
+
+</ActionBar>
+
+<GridLayout style="background:#ededed">
+  <Image src="~/images/home-ba.png" scaleX="1.1" scaleY="1.1" fill="aspectFill"></Image>
+
+  <ScrollView height="100%">
+
+    <StackLayout>
+
+
+      <GridLayout class="heading2" rows="auto,auto" columns="*,150">
+        <label row="1" colSpan="2" text=" أهلا بك {{userService.userData.name_ar}}" class=" heading-text2"></label>
+      </GridLayout>
+
+      <FlexboxLayout flexDirection="row-reverse" alignItems="center" justifyContent="space-between">
+
+        <GridLayout class="heading4" rows="auto,auto" columns="*,150" (tap)="navigate('news')">
+          <Image row="0" colSpan="2" class="heading-img" src="~/images/news.png"></Image>
+          <label row="1" colSpan="2" text="   أخر الأخبار  " class=" heading-text4 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading4" rows="auto,auto" columns="*,150" (tap)="navigate('ads')">
+          <Image row="0" colSpan="2" class="heading-img" src="~/images/ads.png"></Image>
+          <label row="1" colSpan="2" text="   أخر الإعلانات  " class=" heading-text4 "></label>
+        </GridLayout>
+
+      </FlexboxLayout>
+
+
+      <GridLayout class="heading3" columns="auto,*">
+        <Image col="0" class="heading-img3" src="~/images/req.png"></Image>
+        <label text="  الاستعلامات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right"
+          col="1"></label>
+      </GridLayout>
+
+      <FlexboxLayout flexDirection="row-reverse" alignItems="flex-start" justifyContent="center">
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/status')"
+          *ngIf="level=='UG'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/st.png"></Image>
+          <label row="1" colSpan="2" text=" الحالة الاكاديمية " class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/masteraff/stdata')"
+          *ngIf="level=='GR'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/st.png"></Image>
+          <label row="1" colSpan="2" text=" الحالة الاكاديمية " class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/certificate')"
+          *ngIf="level=='UG'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/certificate.png"></Image>
+          <label row="1" colSpan="2" text="  شهادة تعريف  " class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/cert/id')"
+          *ngIf="level=='GR'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/certificate.png"></Image>
+          <label row="1" colSpan="2" text="  شهادة تعريف  " class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/print-report')"
+          *ngIf="role=='Employee' || role=='Instructor'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/certificate.png"></Image>
+          <label row="1" colSpan="2" text="طباعة شهادة التعاريف" class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/salaries')"
+          *ngIf="role=='Employee' || role=='Instructor'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/sal.png"></Image>
+          <label row="1" colSpan="2" text="تفاصيل الرواتب" class=" heading-text6 "></label>
+        </GridLayout>
+
+
+      </FlexboxLayout>
+
+      <FlexboxLayout flexDirection="row-reverse" alignItems="flex-start" justifyContent="center">
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('academicaff/record')"
+          *ngIf="level=='UG'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/record.png"></Image>
+          <label row="1" colSpan="2" text="   السجل الأكاديمي  " class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/masteraff/strec')"
+          *ngIf="level=='GR'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/record.png"></Image>
+          <label row="1" colSpan="2" text="   السجل الأكاديمي  " class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('procedures/changemajor')"
+          *ngIf="level=='UG'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/check-list.png"></Image>
+          <label row="1" colSpan="2" text="    شهادة حضور اختبارات " class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/changecourse')"
+          *ngIf="level=='GR' && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/check-list.png"></Image>
+          <label row="1" colSpan="2" text=" شهادة حضور اختبارات" class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/personal/vacations')"
+          *ngIf="role=='Employee' || role=='Instructor'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/vaca.png"></Image>
+          <label row="1" colSpan="2" text="استعلام عن الاجازات " class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/administrative/vouchers')"
+          *ngIf="role=='Employee' || role=='Instructor'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/sal2.png"></Image>
+          <label row="1" colSpan="2" text="البدلات و المكافأت" class=" heading-text6 "></label>
+        </GridLayout>
+
+      </FlexboxLayout>
+
+
+      <GridLayout class="heading3" columns="auto,*" style="margin-top: 20px;">
+        <Image col="0" class="heading-img3" src="~/images/ser.png"></Image>
+        <label text="  الخدمات الأكثر استخداما " class=" heading-text3 " horizontalAlignment="right" col="1"></label>
+      </GridLayout>
+
+      <FlexboxLayout flexDirection="row-reverse" alignItems="flex-start" justifyContent="center">
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/vacation-request/1')"
+          *ngIf="role=='Employee' || role=='Instructor'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/re.png"></Image>
+          <label row="1" colSpan="2" text="  طلب اجازة" class=" heading-text6 "></label>
+        </GridLayout>
+
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/requests/requests-list')"
+          *ngIf="role=='Employee' || role=='Instructor'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/add.png"></Image>
+          <label row="1" colSpan="2" text=" متابعة طلباتي" class=" heading-text6 "></label>
+        </GridLayout>
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/procedures/cancelcourse')"
+          *ngIf="level=='UG'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/book.png"></Image>
+          <label row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 "></label>
+        </GridLayout>
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/universitycard')"
+          *ngIf="level=='UG'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/card.png"></Image>
+          <label row="1" colSpan="2" text="طلب البطاقه الجامعية" class=" heading-text6 "></label>
+        </GridLayout>
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/academicrequests/cancelcourse')"
+          *ngIf="level=='GR'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/book.png"></Image>
+          <label row="1" colSpan="2" text="  حذف مقرر  " class=" heading-text6 "></label>
+        </GridLayout>
+        <GridLayout class="heading6" rows="auto,auto" columns="*,*" (tap)="navigate('/other/personalid')"
+          *ngIf="level=='GR'  && role=='Student'">
+          <Image row="0" colSpan="2" class="heading-img6" src="~/images/card.png"></Image>
+          <label row="1" colSpan="2" text="طلب البطاقه الجامعية" class=" heading-text6 "></label>
+        </GridLayout>
+      </FlexboxLayout>
+
+
+
+      <!-- <GridLayout height="170" class="slider">
+        <Carousel  selectedPage="{{sindex}}" finite="true" bounce="false" #myCarousel [items]="userService.adsData"
+            height="100%" width="100%" color="white" android:indicatorAnimation="slide"
+            android:indicatorAnimation="slide" indicatorColorUnselected ="#f08b1c"indicatorColor="#243686" indicatorOffset="0, -15" showIndicator="true" >
+            <CarouselItem *ngFor="let item of userService.adsData" [backgroundColor]="item.color"
+                verticalAlignment="middle" >
+                <GridLayout  >
+                    <StackLayout>
+                            <Image class="slid-itme" height="140" stretch="aspectFill" stretch="aspectFill" row="0"
+                            src="{{item.image}}"></Image>
+                        <Label horizontalAlignment="right" class="label-itme" textWrap="true" row="1"
+                            text="{{item.title}}"></Label>
+                    </StackLayout>
+                </GridLayout>
+            </CarouselItem>
+        </Carousel>
+    </GridLayout> -->
+
+
+    </StackLayout>
+
+  </ScrollView>
+
+  <GridLayout verticalAlignment="bottom" class="fixed-button">
+    <FlexboxLayout justifyContent="center" width="100%">
+      <Image class="fixed-img" src="~/images/telephone.png" (tap)="navigate('contact')"></Image>
+    </FlexboxLayout>
+  </GridLayout>
+
+
+
+
+  <!--  <GridLayout col="*" style="direction: rtl;" class="page__content">
+        <StackLayout>
+          
+             <GridLayout class="heading3" columns="auto,*">
+                <Label col="0"  text="&#xf781;" class=" fas heading-icon3" verticalAlignment="center"></Label>
+                <label text="  الأخــبــار  " class=" heading-text3 " horizontalAlignment="right"   col="1"></label>
+              </GridLayout> 
+ 
+                <StackLayout>
+
+                    <GridLayout *ngIf="!newsLoaded" >
+
+                        <StackLayout class="form" verticalAlignment="center">
+                           
+                            <StackLayout>
+                                <ActivityIndicator *ngIf="!newsLoaded" 
+                                    [busy]="!newsLoaded"></ActivityIndicator>
+
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </GridLayout>                                            
+
+                    <StackLayout  class="list-group-item news"
+                    *ngFor="let news of userService.newsData">
+                           <GridLayout rows="*" backgroundColor="White">
+                            <GridLayout rows="*" columns="*"> 
+                                    <Image stretch="aspectFill"
+                                    src="{{decodeURL(news.image)}}" class="news-im"></Image>
+                                <GridLayout verticalAlignment="top">
+                                    <GridLayout  columns="auto, *"  class="date-bac">
+                                        <Label   col="1" text="{{news.date}}" class="news-source"></Label>
+                                        <Label  col="1" text="&#xf274;" class="far date-icon "></Label>
+                                    </GridLayout>
+                                </GridLayout>
+                            </GridLayout>
+                        </GridLayout>
+                        <StackLayout class="title-bac">
+                            <Label  text="{{news.title}}" class="news-title"
+                                textWrap="true"></Label>
+                        </StackLayout>
+                    </StackLayout> 
+
+                </StackLayout>
+        </StackLayout>
+
+
+    </GridLayout> -->
+
+</GridLayout>

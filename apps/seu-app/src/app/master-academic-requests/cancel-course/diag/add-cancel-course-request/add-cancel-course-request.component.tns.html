@@ -1,0 +1,54 @@
+
+<ActionBar style="background:#001628; ">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <Label text='{{"services.master_cancel_course.title"|translate}}' class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  style="font-size: 25px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" style="font-size: 25px;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
+</ActionBar>
+<ScrollView>
+<FlexboxLayout flexDirection="column" class="iosFont">
+
+    <StackLayout class="ysBox paragraph" style="margin-bottom: 20; margin-top: 20; padding: 5 10 ;">
+        <Label [text]="reqData.notes.text1" style="font-weight: 800; color: #f08b1c;"></Label>
+        <Label [text]="reqData.notes.text2"></Label>
+        <Label [text]="reqData.notes.text3"></Label>
+        <Label [text]="reqData.notes.text4" textWrap="true" ></Label>
+        <Label [text]="reqData.notes.text5" textWrap="true"></Label>
+        <Label [text]="reqData.notes.text6" textWrap="true" style="margin-bottom: 10;"></Label>
+
+    </StackLayout>
+
+    <FlexboxLayout flexDirection="column" justifyContent="space-between" class="ysBox">
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-between" class="throw"> 
+            <label text='{{"general.choose"|translate}}'></label>
+            <label text='{{"general.crn"|translate}}'></label>
+            <label text='{{"general.course_code"|translate}}'></label>
+            <label text='{{"general.course_name"|translate}}'></label>
+            <label text='{{"general.hours"|translate}}'></label>
+        </FlexboxLayout>
+
+        <FlexboxLayout alignItems="center" justifyContent="space-between" flexWrap="nowrap" *ngFor="let item of radioButtonOptions;let i=index;" flexDirection="row-reverse" 
+        alignContent="center" class="trow tabl" [ngStyle]="{'border-bottom-width':i === radioButtonOptions.length-1 ? '0' : '1' }">
+            <CheckBox #elem boxType="circle" (checkedChange)="elem.checked !== item.selected && changeStatus(item)" [checked]="item.selected"></CheckBox>
+            <Label [text]="item.courses.CRN"></Label>
+            <Label [text]="item.courses.CRES_CODE"  ></Label>
+            <Label [text]="item.courses.CRSE_TITLE" style="width: 30%;text-align: center;" textWrap="true"></Label>
+            <Label [text]="item.courses.CREDIT_HR"></Label>
+        </FlexboxLayout>
+    </FlexboxLayout>
+    <FlexboxLayout flexDirection="row-reverse" flexWrap="wrap" alignItems="center" style="color: #6189f4;margin:20 20">
+        <CheckBox checked="false"></CheckBox>
+        <Label text='{{reqData.notes.agrement}}' textWrap="true" style="color:#f08b1c ;"></Label>
+    </FlexboxLayout>
+</FlexboxLayout>
+</ScrollView>

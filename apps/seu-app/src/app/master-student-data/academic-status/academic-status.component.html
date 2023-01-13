@@ -1,0 +1,107 @@
+<div class="main-content">
+
+  <!-- <mat-spinner *ngIf="isLoading"
+  style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+</mat-spinner> -->
+<service-header [title]="'services.academic_status.title' |translate"
+  [desc]="'services.academic_status.desc' |translate"></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div *ngIf="isClosed">
+    <seu-flash [msgs]="messagesList"  [isLoading]="isLoading"> </seu-flash>
+   </div>
+   <ng-container *ngIf="!isClosed">
+  <div class="ser-state" *ngIf="!isLoading">
+    <div *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}
+    </div>
+  </div>
+
+  <div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+      <h3 class="widget-title">  {{"general.student_data" | translate}} </h3>
+    </div>
+
+
+    <section class="ser-state">
+      <div class="container">
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>  {{"general.female_or_male_name" | translate}}  </h6>
+              <h5>{{reqData.name}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>  {{"general.student_id" | translate}}  </h6>
+              <h5>{{reqData.std_id}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>{{"general.faculty" | translate}} </h6>
+              <h5>{{reqData.colledge}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>{{"general.major" | translate}} </h6>
+              <h5>{{reqData.major}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row  ser-block">
+
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6> {{"general.branch" | translate}} </h6>
+              <h5>{{reqData.branch}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+
+          <div class=" col-md-6 col-sm-12">
+            <div class="state">
+              <h6>{{"services.academic_status.title" | translate}}  </h6>
+              <h5>{{reqData.academic_status}} </h5>
+            </div>
+            <div class="progress progress-sm">
+              <div class="progress-bar bg-info"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+  </div>
+
+</ng-container>
+
+
+
+
+</div>

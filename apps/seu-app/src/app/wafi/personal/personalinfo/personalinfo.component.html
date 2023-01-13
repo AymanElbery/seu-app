@@ -1,0 +1,25 @@
+<div class="main-content">
+  <service-header title='{{"wafi.PersonalInfo" | translate}}'></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div class="row ser-block">
+    <ng-container *ngFor="let empin of empInfo">
+      <div class=" col-md-4 col-sm-12">
+        <div class="state">
+          <h6><span [innerHTML]="empin.header"></span> </h6>
+          <h5>{{empin.data}} </h5>
+        </div>
+        <div class="progress progress-sm">
+          <div class="progress-bar bg-info"></div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row ser-block">
+    <div class=" col-md-4 col-sm-12">
+      <button type="button" class="btn btn-primary" (click)="openDialog()">
+        {{"wafi.UpdateInfo"|translate}} <i class="ik ik-edit"></i>
+      </button>
+    </div>
+  </div>
+</div>

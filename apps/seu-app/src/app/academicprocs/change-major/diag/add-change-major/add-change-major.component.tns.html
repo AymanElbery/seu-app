@@ -1,0 +1,25 @@
+<FlexboxLayout  flexDirection="column" class="pop iosFont">
+
+    <Label text='{{"services.change_major.change_major_req"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+    <StackLayout  style="color: #080b57;">
+        <Label text='{{"services.change_major.alert"|translate}}'  style="font-weight: 800;"></Label>
+        <Label text='{{"services.change_major.alert_content"|translate}}' textWrap="true"></Label>
+        <Label text='{{"services.change_major.major_cancellation_validity"|translate}}' textWrap="true"></Label>
+
+        <Label text='{{"services.change_major.choose_major"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <DropDown
+        #dropdown
+        [items]="majorsDropDown"
+        (selectedIndexChanged)="getmajor($event)"
+        hint='{{"services.change_major.choose_major"|translate}}'
+        itemsTextAlignment="left"
+        itemsPadding="5"
+        required>
+        </DropDown>
+    </StackLayout>
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn" [isEnabled]="mj.major!=''"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

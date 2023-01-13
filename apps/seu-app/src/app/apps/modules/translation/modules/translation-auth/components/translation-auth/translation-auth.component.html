@@ -1,0 +1,17 @@
+<main role="main">
+    <div class="wrapper">
+        <app-translation-header></app-translation-header>
+        <div class="page-wrap">
+            <div class="">
+                <div class="main-content" style="padding: 0px;margin-top: 125px;">
+                    <app-service-header title="{{'seu' | translate}}" subtitle="{{'translation' | translate}}">
+                    </app-service-header>
+                    <section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+                        <router-outlet></router-outlet>
+                    </section>
+                </div>
+                <app-footer></app-footer>
+            </div>
+        </div>
+    </div>
+</main>

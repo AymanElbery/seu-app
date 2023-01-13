@@ -1,0 +1,57 @@
+<app-header></app-header>
+
+
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+    <StackLayout>
+
+      <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"wafi.Salaries" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+      </GridLayout>
+ <GridLayout class="ysBox" rows="auto" columns="*,150">    
+    <Label *ngIf="yearsDropDown &&yearsDropDown.length>0" class="ysPBox" row="0" col="1" text='{{"wafi.selectyear" | translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c"></Label>
+     <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
+    <DropDown 
+      class="ysPBox2"
+      row="0" col="0"
+      *ngIf="yearsDropDown &&yearsDropDown.length>0"
+      #dropdown
+ 
+      [items]="yearsDropDown"
+      (selectedIndexChanged)="getYear($event)"
+      itemsTextAlignment="right"
+      itemsPadding="5"
+      required
+      (loaded) =onLoadedDropDown(dropdown)
+      style="color: blueviolet;"
+      >
+      </DropDown>
+    </GridLayout>
+ 
+    <StackLayout *ngIf="yearsDropDown &&yearsDropDown.length==0">
+      <Label text='{{"wafi.emp_no_data" |translate}}' style="margin: 20 20;color: orange;" class="iosFont"></Label>
+    </StackLayout>
+      <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of Empsalary;let i=index;">
+                      
+                      
+        <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.monthYear" | translate}}'></Label>
+        <Button row="1"  column="0" class="blue-button fas" textWrap="true" [text]="item.monthYear" (tap)="getsalarydetail(i,item.month,item.year)"></Button>
+
+        <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.bank" | translate}}'></Label>
+        <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.bank"></Label>
+
+        <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.acnountno" | translate}}'></Label>
+        <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.accountNo"></Label>
+       
+        <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.basicsalary" | translate}}'></Label>
+        <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.basicSalary" ></Label>
+
+        <Label row="5"  column="1"  class="ysPBox" textWrap="true" style="font-weight: 800;"    text='{{"wafi.balance" | translate}}'></Label>
+        <Label row="5"  column="0" class="ysPBox2" textWrap="true" [text]="item.balance" ></Label>
+         
+      </GridLayout>
+    </StackLayout>
+</ScrollView>

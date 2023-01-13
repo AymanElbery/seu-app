@@ -1,0 +1,56 @@
+<div class="nav-item has-sub">
+  <a href="javascript:void(0)"><span>{{ "menu.users" | translate }} </span>
+    <i class="ik ik-user"></i></a>
+  <div class="submenu-content">
+    <a *ngIf="is_admin" [ngClass]="{'active': activeRoute == 'users-list' || activeRoute == 'users-add'}" href="#" class="menu-item"
+      routerLink="emp/users-list">
+      {{ "menu.users-list" | translate }}
+    </a>
+
+    <a [ngClass]="{'active': activeRoute == 'instructors-list' || activeRoute == 'instructors-add'}" href="#" class="menu-item"
+      routerLink="emp/instructors-list">
+      {{ "menu.instructors-list" | translate }}
+    </a>
+  </div>
+</div>
+
+<div class="nav-item has-sub">
+  <a href="javascript:void(0)"><span>{{ "menu.courses" | translate }} </span>
+    <i class="ik ik-user"></i></a>
+  <div class="submenu-content">
+    <a [ngClass]="{'active': activeRoute == 'courses-list' || activeRoute == 'courses-add'}" href="#" class="menu-item" routerLink="emp/courses-list">
+      {{ "menu.courses-list" | translate }}
+    </a>
+    <a [ngClass]="{'active': activeRoute == 'courses-inactive'}" href="#" class="menu-item" routerLink="emp/courses-inactive">
+      {{ "menu.inactive-courses-list" | translate }}
+    </a>
+    <a [ngClass]="{'active': activeRoute == 'block-users' || activeRoute == 'block-std-add'}" href="#" class="menu-item" routerLink="emp/block-users">
+      {{ "menu.block-users" | translate }}
+    </a>
+    <a [ngClass]="{'active': activeRoute == 'courses-students'}" href="#" class="menu-item" routerLink="emp/courses-students">
+      {{ "menu.students_lists" | translate }}
+    </a>
+    <a [ngClass]="{'active': activeRoute == 'courses-conditions'}" href="#" class="menu-item" routerLink="emp/courses-conditions">
+      {{ "menu.courses_conditions" | translate }}
+    </a>
+  </div>
+</div>
+
+<div class="nav-item has-sub">
+  <a href="javascript:void(0)"><span>{{ "menu.skills" | translate }} </span>
+    <i class="ik ik-user"></i></a>
+  <div class="submenu-content">
+    <a [ngClass]="{'active': activeRoute == 'skills'}" href="#" class="menu-item" routerLink="emp/skills"><span>{{ "menu.skills" | translate }} </span>
+      <i class="ik ik-user"></i>
+    </a>
+    <a [ngClass]="{'active': activeRoute == 'instructions'}" href="#" class="menu-item" routerLink="emp/instructions"><span>{{ "menu.instructions" | translate }} </span>
+      <i class="ik ik-user"></i>
+    </a>
+  </div>
+</div>
+
+
+<div [ngClass]="{'active': activeRoute == 'settings'}" class="nav-item">
+  <a href="#" routerLink="emp/settings"><span>{{ "menu.settings" | translate }} </span>
+    <i class="ik ik-settings"></i></a>
+</div>

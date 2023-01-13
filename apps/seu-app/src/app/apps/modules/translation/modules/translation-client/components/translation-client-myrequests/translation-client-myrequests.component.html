@@ -1,0 +1,91 @@
+<app-service-header title="{{'translation' | translate}}" subtitle="{{'menu.my_requests' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="widget">
+
+        <div class="widget-header">
+          <h3 class="widget-title">
+            {{"menu.my_requests" | translate}}
+          </h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered" style="font-size: 0.9em;">
+            <thead>
+              <tr>
+                <th scope="col">{{"my_requests_page.req_num" | translate}}</th>
+                <th scope="col">{{"my_requests_page.req_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.req_file" | translate}}</th>
+                <th scopr="col">{{"my_requests_page.status" | translate}}</th>
+                <th scopr="col">{{"my_requests_page.pay_amount" | translate}}</th>
+                <th scopr="col">{{"my_requests_page.pay_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.estimate_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.trans_date" | translate}}</th>
+                <th scope="col">{{"my_requests_page.trans_file" | translate}}</th>
+                <th scopr="col">
+                  <!-- {{"general.details" | translate}} -->
+                </th>
+              </tr>
+            </thead>
+            <tbody style="font-size: 1.3em;">
+              <tr *ngFor="let req of requestsList; let i = index">
+                <td>{{ req.REQ_ID }}</td>
+                <td>{{ req.INSERTED_DATE }}</td>
+                <td>
+                  <a target="_blanck" [href]="req.downloadURL" style="margin-right: 5px;"
+                    class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
+                </td>
+                <td>
+                  <span class="{{req.STATUS}}">{{"statuses."+req.STATUS | translate}}</span>
+                </td>
+                <td>{{ req.AMOUNT}}</td>
+                <td>{{ req.PAYMENT_DATE }}</td>
+
+                <td>
+                  <span *ngIf="req.ESTIMATED_DATE && req.STATUS != 'pendding'">
+                    {{ req.ESTIMATED_DATE }}
+                  </span>
+                </td>
+                <td>
+                  <span *ngIf="req.TRANSLATION_DATE && req.STATUS == 'completed'">
+                    {{ req.TRANSLATION_DATE }}
+                  </span>
+                </td>
+                <td>
+                  <ng-container *ngIf="req.TRANSLATION_DATE && req.STATUS == 'completed'">
+                    <a target="_blanck" [href]="req.downloadTransURL" style="margin-right: 5px;"
+                      class="btn btn-danger">{{"general.download" | translate}} <i class="fa fa-download"></i></a>
+                  </ng-container>
+                </td>
+                <td style="text-align: right;">
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonreports"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{"general.actions" | translate}} <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonreports">
+                      <button class="dropdown-item" *ngIf="req.STATUS == 'pendding' || req.STATUS == 'payment'"
+                        (click)="cancel(req.REQ_ID)">{{"general.cancel" | translate}}</button>
+                      <button class="dropdown-item" *ngIf="req.STATUS == 'payment'"
+                        (click)="openAddPayment(req)">{{"general.pay_accept" |
+                        translate}}</button>
+                      <button class="dropdown-item" *ngIf="req.STATUS == 'payment'"
+                        (click)="openRejectPayment(req)">{{"general.pay_reject" |
+                        translate}}</button>
+                      <button class="dropdown-item" (click)="openAddCommentDialog(req.REQ_ID)">{{"general.comments" |
+                        translate}}</button>
+                      <button class="dropdown-item" (click)="openDetailsDialog(req)">{{"general.details" |
+                        translate}}</button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

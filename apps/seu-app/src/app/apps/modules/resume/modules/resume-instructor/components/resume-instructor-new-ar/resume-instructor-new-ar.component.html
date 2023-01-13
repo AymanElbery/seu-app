@@ -1,0 +1,756 @@
+<app-service-header title="{{'resume' | translate}}" subtitle="{{'menu.new_request_ar' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section *ngIf="contentReasonAr != '' || contentReasonEn != ''" class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-warning text-center">
+        <b>{{ "new_request_ar_page.content_reason" | translate}}  <a style="color: #5a3585;" (click)="openReasonDialog(req)" [routerLink]="">{{ "new_request_ar_page.click_here" | translate}}</a></b>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="dashboard-wrap" style="margin-top: 30px; padding: 0 30px;">
+  <form #eduElement [formGroup]="addRequestForm" (ngSubmit)="onSubmit(eduElement)">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="profile">
+          <img *ngIf="profile == 'notExist' && !imagePath" src="assets/images/profile.png">
+          <img *ngIf="profile == 'notExist' && imagePath" [src]="imagePath">
+          <img *ngIf="profile != 'notExist' && !imagePath" src="https://seuapps.seu.edu.sa/newservices/api/profile.php?image={{profile}}">
+          <img *ngIf="profile != 'notExist' && imagePath" [src]="imagePath">
+          <div class="form-group">
+            <input type="file" accept="*/*" (change)="handleInputChange($event)" id="photo" class="form-control-file form-control">
+            <button style="top: 85%; right: 4%" id="fake-file" class="btn btn-primary">{{ "new_request_ar_page.choose_file" | translate}}</button>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-8" style="border: solid 1px #EDEDED; padding: 30px;">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">{{ "new_request_ar_page.name" | translate}} <span class="text-danger">*</span></label>
+              <input formControlName="NAME" [(ngModel)]="req.NAME" (keypress)="keyPressArabic($event)" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.NAME.invalid && (addRequestForm.controls.NAME.dirty || addRequestForm.controls.NAME.touched)">
+                <div *ngIf="addRequestForm.controls.NAME.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">{{ "new_request_en_page.name" | translate}} <span class="text-danger">*</span></label>
+              <input formControlName="NAME_EN" [(ngModel)]="req.NAME_EN" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.NAME_EN.invalid && (addRequestForm.controls.NAME_EN.dirty || addRequestForm.controls.NAME_EN.touched)">
+                <div *ngIf="addRequestForm.controls.NAME_EN.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">{{ "new_request_ar_page.job" | translate}} <span class="text-danger">*</span></label>
+              <input formControlName="JOB_TITLE" [(ngModel)]="req.JOB_TITLE" (keypress)="keyPressArabic($event)" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.JOB_TITLE.invalid && (addRequestForm.controls.JOB_TITLE.dirty || addRequestForm.controls.JOB_TITLE.touched)">
+                <div *ngIf="addRequestForm.controls.JOB_TITLE.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">{{ "new_request_en_page.job" | translate}} <span class="text-danger">*</span></label>
+              <input formControlName="JOB_TITLE_EN" [(ngModel)]="req.JOB_TITLE_EN" (keypress)="keyPressEnglish($event)" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.JOB_TITLE_EN.invalid && (addRequestForm.controls.JOB_TITLE_EN.dirty || addRequestForm.controls.JOB_TITLE_EN.touched)">
+                <div *ngIf="addRequestForm.controls.JOB_TITLE_EN.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">{{ "new_request_ar_page.email" | translate}} <span class="text-danger">*</span></label>
+              <input formControlName="EMAIL" [(ngModel)]="req.EMAIL" class="form-control" type="text">
+              <div *ngIf="addRequestForm.controls.EMAIL.invalid && (addRequestForm.controls.EMAIL.dirty || addRequestForm.controls.EMAIL.touched)">
+                <div *ngIf="addRequestForm.controls.EMAIL.errors.required">
+                    <b style="position: relative; left: -10px;" class="text-danger">{{"new_request_ar_page.req"|translate}}</b>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">{{ "new_request_ar_page.dob" | translate}}</label>
+              <input type="text" formControlName="DOB" bsDatepicker [bsConfig]="datePickerConfig" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-form"> <!-- Education -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row" *ngIf="eduErrorAr">
+          <div class="col-md-10">
+            <div class="alert alert-danger text-center">
+              <strong>{{ eduErrorMsg }}</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{educationTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of educationTitle.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.edu_degree" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.degree" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(educationTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(educationTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-form"> <!-- Education EN -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row" *ngIf="eduErrorEn">
+          <div class="col-md-10">
+            <div class="alert alert-danger text-center">
+              <strong>{{ eduErrorMsgEn }}</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{educationTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of educationTitleEn.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.edu_degree" | translate}}</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.degree" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(educationTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(educationTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row row-form"> <!-- Experience -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row" *ngIf="excepErrorAr">
+          <div class="col-md-10">
+            <div class="alert alert-danger text-center">
+              <strong>{{ excepErrorMsg }}</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{experienceTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of experienceTitle.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.position" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.position" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(experienceTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(experienceTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-form"> <!-- Experience EN -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row" *ngIf="excepErrorEn">
+          <div class="col-md-10">
+            <div class="alert alert-danger text-center">
+              <strong>{{ excepErrorMsgEn }}</strong>
+            </div>
+          </div>
+        </div>
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{experienceTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of experienceTitleEn.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.position" | translate}}</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.position" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(experienceTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(experienceTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row row-form"> <!-- Committees -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{committesTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of committesTitle.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.commit" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.commit" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(committesTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(committesTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-form"> <!-- Committees EN -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{committesTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of committesTitleEn.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.commit" | translate}}</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.commit" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(committesTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(committesTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row row-form"> <!-- organizations -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{organizationsTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of organizationsTitle.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.organization" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.org" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(organizationsTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(organizationsTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-form"> <!-- organizations EN -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{organizationsTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of organizationsTitleEn.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.organization" | translate}}</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.org" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(organizationsTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(organizationsTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row row-form"> <!-- publishing -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <h5 style="text-align: center;">{{ "new_request_ar_page.publishing" | translate}}</h5>
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{booksTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of booksTitle.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.book" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.book" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(booksTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(booksTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            <div class="form-group" style="margin-top: 20px;"> 
+              <legend style="font-size: 1.2em;">{{researchTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of researchTitle.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.research" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.research" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(researchTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(researchTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            <div class="form-group" style="margin-top: 20px;"> 
+              <legend style="font-size: 1.2em;">{{workshopsTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of workshopsTitle.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_ar_page.workshop" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.workshop" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(workshopsTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(workshopsTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-form"> <!-- publishing EN -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <h5 style="text-align: center;">{{ "new_request_en_page.publishing" | translate}}</h5>
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{booksTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of booksTitleEn.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.book" | translate}}</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.book" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(booksTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(booksTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            <div class="form-group" style="margin-top: 20px;"> 
+              <legend style="font-size: 1.2em;">{{researchTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of researchTitleEn.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}"  class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.research" | translate}}</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.research" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(researchTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(researchTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+            <div class="form-group" style="margin-top: 20px;"> 
+              <legend style="font-size: 1.2em;">{{workshopsTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of workshopsTitleEn.items; let j = index;">
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.edu_general" | translate}}</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressNumber($event)" [(ngModel)]="item.year" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-5 item">
+                  <div class="form-group">
+                    <label> {{ "new_request_en_page.workshop" | translate}}</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.workshop" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(workshopsTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(workshopsTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row row-form"> <!-- social -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{socialTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of socialTitle.items; let j = index;">
+                <div class="col-md-10 item">
+                  <div class="form-group">
+                    <label>{{j+1}}.</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(socialTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(socialTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-form"> <!-- social EN -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{socialTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of socialTitleEn.items; let j = index;">
+                <div class="col-md-10 item">
+                  <div class="form-group">
+                    <label>{{j+1}}.</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(socialTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(socialTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row row-form"> <!-- science interests -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{scienceInterestTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of scienceInterestTitle.items; let j = index;">
+                <div class="col-md-10 item">
+                  <div class="form-group">
+                    <label>{{j+1}}.</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(scienceInterestTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(scienceInterestTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-form"> <!-- science interests EN -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{scienceInterestTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of scienceInterestTitleEn.items; let j = index;">
+                <div class="col-md-10 item">
+                  <div class="form-group">
+                    <label>{{j+1}}.</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(scienceInterestTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(scienceInterestTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row row-form"> <!-- other interests -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{otherInterestTitle.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of otherInterestTitle.items; let j = index;">
+                <div class="col-md-10 item">
+                  <div class="form-group">
+                    <label>{{j+1}}.</label>
+                    <input name="item{{j}}" class="form-control" (keypress)="keyPressArabic($event)" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(otherInterestTitle, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(otherInterestTitle)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-form"> <!-- other interests EN -->
+      <div class="col-md-12" style="padding-top: 10px;">
+        <div class="row row-form">
+          <div class="col-md-10 title">
+            <div class="form-group"> 
+              <legend style="font-size: 1.2em;">{{otherInterestTitleEn.text}} :</legend>
+              <div class="row row-form" *ngFor="let item of otherInterestTitleEn.items; let j = index;">
+                <div class="col-md-10 item">
+                  <div class="form-group">
+                    <label>{{j+1}}.</label>
+                    <input name="item{{j}}" (keypress)="keyPressEnglish($event)" class="form-control" [(ngModel)]="item.text" [ngModelOptions]="{standalone: true}">
+                  </div>
+                </div>
+                <div class="col-md-1">
+                  <button (click)="removeItem(otherInterestTitleEn, j)" class="btn remove-item" >-</button>
+                </div>
+              </div>
+              <div class="row row-form">
+                <div class="col-md-8">
+                  <button (click)="addItem(otherInterestTitleEn)" type="button" class="btn">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row row-form sub-row">
+      <div class="col-md-4 offset-md-3">
+        <div style="padding-right: 20px;" class="form-check">
+          <input (change)="agreeCond(agree)" type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">{{ "new_request_ar_page.agree" | translate}}</label>
+        </div>
+        <button *ngIf="agree" style="margin-top: 20px; width: 100%;" (click)="onSubmit(eduElement)" type="button" class="btn sub">{{ "new_request_ar_page.save" | translate}}  <i class="fa fa-save"></i></button>
+        <button *ngIf="!agree" disabled style="margin-top: 20px;width: 100%;" (click)="onSubmit(eduElement)" type="button" class="btn sub">{{ "new_request_ar_page.save" | translate}}  <i class="fa fa-save"></i></button>
+      </div>
+    </div> 
+  </form>
+</section>

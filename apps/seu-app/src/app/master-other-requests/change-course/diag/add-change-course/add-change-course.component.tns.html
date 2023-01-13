@@ -1,0 +1,82 @@
+<ActionBar style="background:#001628; ">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <Label text="{{'general.request.add_request' | translate}}" class="label-action"></Label>
+
+    <NavigationButton  icon="font://&#xf104;"  style="font-size: 25px;"  class="fas icon-action" (tap)="goBack()" ios.position="left"></NavigationButton>
+    <ActionItem icon="font://&#xf0c7;" style="font-size: 25px;" class="fas icon-action" ios.position="right" (tap)="onSubmit()"></ActionItem>
+
+</ActionBar>
+<ScrollView >
+
+    <StackLayout class="iosFont">
+    <Label text='{{"services.change_major.change_major_req"|translate}}' class="header"></Label>
+    <StackLayout style="margin-bottom: 10;">
+
+        <StackLayout class="ysBox paragraph" style="margin-bottom: 20;"> 
+            <Label text='{{"services.change_major.alert"|translate}}' style="font-weight: 800;"></Label>
+            <Label text='{{"services.change_major.alert_content"|translate}}' textWrap="true"></Label>
+            <Label text='{{"services.change_major.major_cancellation_validity"|translate}}' textWrap="true"></Label>
+        </StackLayout>
+
+        <StackLayout class="input-field" style="margin-right: 20;">
+            <Label text='{{"services.change_major.choose_major"|translate}}'
+            style="color: #f08b1c;font-weight: 800;"></Label>
+            <DropDown #dropdown [items]="majorsDropDown" (selectedIndexChanged)="getmajor($event)"
+                hint='{{"services.change_major.choose_major"|translate}}'
+                itemsTextAlignment="left" 
+                itemsPadding="5"
+                style="margin-bottom: 20;"
+                required>
+            </DropDown>
+        </StackLayout>
+
+        <StackLayout class="input-field" style="margin:0 20;">
+            <Label text='{{"services.change_branch.mobile"|translate}}' style="color: #f08b1c;font-weight: 800;"></Label>
+            <TextField keyboardType="number" class="input" [(ngModel)]="course.mobile"></TextField>
+        </StackLayout>
+
+        <StackLayout class="input-field" style="margin:0 20;">
+            <Label text='{{"services.change_branch.reason"|translate}}' style="color: #f08b1c;font-weight: 800;"></Label>
+            <TextField  class="input" [(ngModel)]="course.reason"></TextField>
+        </StackLayout>
+        
+        <StackLayout class="input-field">
+            <Label text="{{'services.change_major.record' | translate}}" style="color: #f08b1c;margin-right: 20;font-weight: 800;"></Label>
+
+            <Button [text]="fileTxt0" (tap)="openCustomFilesPicker('1')" class="print-btn"></Button>
+
+        </StackLayout>
+
+        <StackLayout class="input-field" style="margin-top: 20;">
+            <Label text="{{'services.change_major.doc'|translate}}" style="color: #f08b1c;margin-right: 20;font-weight: 800;"></Label>
+
+            <Button [text]="fileTxt1" (tap)="openCustomFilesPicker('2')" class="print-btn"></Button>
+
+        </StackLayout>
+
+        <StackLayout class="form" padding="15">
+            <FlexboxLayout class="input-field" flexDirection="row-reverse">
+                <CheckBox #chkCourse (checkedChange)="changeStatus($event)" checked="false"></CheckBox>
+                <Label textWrap="true" text="{{'services.change_major.out_kingdom' | translate}}"
+                style="color: #f08b1c;font-weight: 800;"></Label>
+            </FlexboxLayout>
+        </StackLayout>
+        <StackLayout *ngIf="outSide" class="input-field">
+            <Label text="{{'services.change_major.equalize' | translate}}" style="color: #f08b1c;margin-right: 20;font-weight: 800;"></Label>
+
+            <Button [text]="fileTxt2" (tap)="openCustomFilesPicker('3')" class="print-btn iosFontCenter"></Button>
+
+        </StackLayout>
+
+    </StackLayout>
+   
+    </StackLayout>
+</ScrollView>

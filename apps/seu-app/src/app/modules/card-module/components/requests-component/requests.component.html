@@ -1,0 +1,63 @@
+<div class="main-content">
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <section class="service-single">
+    <div class="container">
+      <h3>{{ "card.title" | translate}}</h3>
+      <div class="row">
+        <div class="col-md-5">
+          &nbsp;
+          <!-- <p>{{ "leadership.title" | translate}}</p> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="widget">
+    <div class="widget-header">
+      <h3 class="widget-title">
+        &nbsp;
+        <button *ngIf="!request" type="button" class="btn btn-primary" (click)="openDialoge()">
+          {{"card.add_card" | translate}} <i class="ik ik-plus"></i>
+        </button>
+      </h3>
+    </div>
+
+    <!-- <div class="row">
+    <div class="col-md-12">
+      &nbsp;
+      <div class="add-block">
+        <button *ngIf="!isLoading && !request"  (click)="openDialoge()" class="btn btn-primary"><i class="fa fa-plus"></i> {{ "card.add_card" | translate}}</button>
+      </div>
+    </div>
+  </div> -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{ "card.date" | translate}}</th>
+                <th scope="col">{{ "card.print" | translate}}</th>
+                <th scope="col">{{ "card.actions" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="request">
+              <tr>
+                <td>1</td>
+                <td>{{ request.INSERTED_DATE }}</td>
+                <td>
+                  <button style="margin-right: 5px;" (click)="print(request.STD_ID)"
+                    class="btn btn-danger">{{"card.print" | translate}} <i class="fa fa-print"></i></button>
+                </td>
+                <td>
+                  <button style="margin-right: 5px;" (click)="delete(request.REQUEST_PK)"
+                    class="btn btn-danger">{{"card.delete" | translate}} <i class="fa fa-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

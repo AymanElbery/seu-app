@@ -1,0 +1,62 @@
+{
+    "general": {
+        "seu": "Saudi Electronic University",
+        "help": "Single Sign On Suppoert",
+        "suggestions": "Complaints and suggestions",
+        "enquiry": "Enquiry",
+        "main_camups": "Main Campus",
+        "main_address": "Saudi Arabia - Ryiadh - Prince Muhammad Ibn Salman Rd - Ar Rabi",
+        "branch_name": "Branch Name",
+        "nearest_branch": "Nearest Branch",
+        "main_phone": "SEU Hotline",
+        "direct_phone": "(International)",
+        "local_phone": "Call (Local) ",
+        "local_phone_Val": "199099",
+        "direct_phone_val": "00966112613500",
+        "Complaints_and_suggestions": "Suggestions and Complaints"
+    },
+    "form": {
+        "name": "Name",
+        "user_name": "User Name (sso)",
+        "phone": "Phone",
+        "email": "Personal Email",
+        "ssn": "SSN",
+        "birth_date": "Birth date",
+        "subject": "Subject",
+        "description": "Description",
+        "group": "Department",
+        "send": "Send",
+        "captcha": "",
+        "attachment": "Attachement",
+        "success_req_no": "Ticket No ",
+        "success": "Request has been send, we will reply as soon as possible",
+        "ticket_id": "Ticket No",
+        "enquiry": "Submit",
+        "status": "Status",
+        "note": "Comment",
+        "add_note": "Add Comment",
+        "type": "Type",
+        "type_suggest": "suggestion",
+        "type_complaint": "Complaint",
+        "id": "Request #"
+    },
+    "details": {
+        "attachments": "Attachments",
+        "time": "Time",
+        "to": "Sent to",
+        "title": "Subject",
+        "description": "Description"
+    },
+    "validations": {
+        "required": "Required",
+        "email": "invalid Email",
+        "minlength": "min length is {{requiredLength}}"
+    },
+    "messages": {
+        "missing_params": "Please fill all fields",
+        "invlid_params": "please fill fields with valid data",
+        "ticket_not_found": "invalid request number",
+        "ticket_ssn_invalid": "request no and ssn doesn't match",
+        "invalid_captach": "Capcha code is invalid"
+    }
+}

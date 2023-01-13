@@ -1,0 +1,36 @@
+<StackLayout>
+  <ListView [items]="postsData" (setupItemView)="onSetupItemView($event)" class="list-group">
+    <ng-template let-dataitem="item" let-i="index"  let-third="third" let-header="header" let-footer="footer">
+        <GridLayout [class.third]="true"  class="list-group-item">
+            <Label [text]="dataitem.title" android:class="label-item"></Label>
+        </GridLayout>
+    </ng-template>
+</ListView>  
+</StackLayout>
+
+<!--
+Original Web template:
+
+
+  <br/>
+  <br/>
+  <br/>
+  posts works!
+  <button (click)="GetPosts()"  value="Load Posts">Auth Posts</button>
+  <button (click)="GetPostsAnon()"  value="Load Posts">Posts</button>
+  <button (click)="update()"  value="Load Posts">update</button>
+
+  {{showMsg$ |async}}
+ 
+  <ul >
+    <li  *ngFor="let post of posts$ | async ;">{{post.title}} </li>
+  
+  </ul>
+  <ng-template #loading>
+    <p>
+      Show this only if "show" is not true
+    </p>
+  </ng-template>
+
+
+-->

@@ -1,0 +1,31 @@
+<!-- Modal -->
+<mat-dialog-content dir="rtl">
+  <div class="modal-dialog" role="document" style="direction: rtl;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.excuse_request_corona.execuse_req"|translate}}</h5>
+      </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">{{"services.excuse_request_corona.cause"|translate}}</div>
+                </div>
+                <input required name="reason" #reason="ngModel" [(ngModel)]="postpone.reason" class="form-control">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i
+                class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
+            <button [disabled]="form.invalid" type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+              {{"general.save"|translate}}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

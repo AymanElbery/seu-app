@@ -1,0 +1,92 @@
+<div class="main-content">
+  <app-service-header title="{{'general.services' | translate}}" subtitle="{{'menu.refund' | translate}}">
+  </app-service-header>
+  <section class="ug-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3> {{'menu.refund' | translate}} </h3>
+          <div class="table-responsive" style="border-radius: 5px ;">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">{{"refund.std_id"|translate}}</th>
+                  <th scope="col">{{"refund.name"|translate}}</th>
+                  <th scope="col">{{"refund.col"|translate}}</th>
+                  <th scope="col">{{"refund.major"|translate}}</th>
+                </tr>
+              </thead>
+              <tbody> 
+                <tr>
+                  <td>{{ std_id }}</td>
+                  <td>{{ name }}</td>
+                  <td>{{ col }}</td>
+                  <td>{{ major }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <seu-loader [isLoading]="isLoading"></seu-loader>
+          <ng-container *ngIf="!isLoading" style="margin-top: 5px;">
+            <div class="widget" *ngIf="!isLoading">
+              <div class="widget-header">
+                <h3 class="widget-title" style="color: #FFF;">{{"refund.pre_requests"|translate}}
+                  <button type="button" class="btn btn-primary"
+                    (click)="openDialoge()" *ngIf="reqData.can_add_new_request">
+                    {{"refund.add_request"|translate}}<i class="ik ik-plus"></i>
+                  </button>
+                </h3>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                  <thead>
+                    <tr>
+                      <th scope="col">{{"refund.req_no"|translate}}</th>
+                      <th scope="col">{{"refund.req_date"|translate}}</th>
+                      <th scope="col">{{"refund.req_coll_status"|translate}}</th>
+                      <th scope="col">{{"refund.req_finance_status"|translate}}</th>
+                      <th scope="col">{{"refund.actions"|translate}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let it of reqData.requests;let i=index;">
+                      <td>{{it.ID}}</td>
+                      <td>{{it.REQ_DATE}}</td>
+                      <td>
+                        <span *ngIf="it.STATUS == '1'" class="badge badge-success">{{it.STATUS_DESC}}</span>
+                        <span *ngIf="it.STATUS == '2'" class="badge badge-info">{{it.STATUS_DESC}}</span>
+                        <span *ngIf="it.STATUS == '0'" class="badge badge-danger">{{it.STATUS_DESC}}</span>
+                      </td>
+                      <td *ngIf="it.CONTINOUS == '0'">
+                        <span *ngIf="it.STATUS_CONT == '2'" class="badge badge-info">{{it.STATUS_CONT_DESC}}</span>
+                      </td>
+                      <td *ngIf="it.CONTINOUS == '1'">
+                        <span *ngIf="it.STATUS_CONT == '1'" class="badge badge-success">{{it.STATUS_CONT_DESC}}</span>
+                        <span *ngIf="it.STATUS_CONT >= '2'" class="badge badge-info">{{it.STATUS_CONT_DESC}}</span>
+                        <span *ngIf="it.STATUS_CONT == '0'" class="badge badge-danger">{{it.STATUS_CONT_DESC}}</span>
+                      </td>
+                      <td>
+                        <button *ngIf='it.DELETABLE' [disabled]='deleting' class="btn btn-sm btn-danger"
+                          style="color: white" (click)="delete(it.ID,i)">{{"refund.req_delete"|translate}}
+                        </button>
+                        <button *ngIf='it.STATUS == "1" && it.CONTINOUS == "0"' class="btn btn-sm btn-danger"
+                          style="color: white" (click)="openContinueDialoge(it.ID)">{{"refund.continue"|translate}}
+                        </button>
+                        <button *ngIf='it.STATUS == "0"' class="btn btn-sm btn-danger"
+                          style="color: white" (click)="openReasonDialoge(it.REASON)">{{"refund.reason"|translate}}
+                        </button>
+                        <button *ngIf='it.STATUS_CONT == "0"' class="btn btn-sm btn-danger"
+                          style="color: white" (click)="openReasonContDialoge(it.REASON)">{{"refund.reason"|translate}}
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,25 @@
+.row{
+    margin-top: 20px;
+}
+.radio{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.back-gray{
+    background-color: #CCC;
+}
+.card{
+    border-radius: 5px;
+    text-align: center;
+}
+.card h5{
+    position: relative;
+    top: 8px;
+}
+.card .percent{
+    padding: 14px 20px;
+    background-color: #343a40;
+    color: #FFF;
+    border-radius: 2px;
+}

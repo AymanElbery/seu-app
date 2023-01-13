@@ -1,0 +1,69 @@
+<div class="main-content">
+  <service-header title='{{"wafi.EmployeeVouchers" | translate}}'></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div class="row ser-block">
+    <div class=" col-md-6 col-sm-6">
+      <div class="state">
+        <h6>{{"wafi.EMP_SLRY_YEAR"|translate}} </h6>
+        <select class="form-control"  (change)="getyearsselect($event.target.value)">          
+          <option *ngFor="let yeradta of FillDDLDataYear" [selected]="yeradta.value == selectedyear"
+            value={{yeradta.value}}>{{yeradta.label}} </option>
+        </select>
+      </div>
+    </div>
+  
+    <div class=" col-md-6 col-sm-6">
+      <div class="state">
+        <h6>{{"wafi.EMP_PSNL_VCHR_TYPE"|translate}} </h6>
+        <select class="form-control" (change)="getvoucherselect($event.target.value)" >
+          
+          <option *ngFor="let vochertype of FillDDLDatavouchertype"  [selected]="vochertype.value == vouchertype"  value={{vochertype.value}}>{{vochertype.label}} </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="vocherlistdata" class="table-responsive no-print">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">{{"wafi.EMP_PSNL_VCHR_TYPE" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_PSNL_VCHR_AMOUNT" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_PSNL_VCHR_PAID" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_VCTN_DECISION_NO" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_PSNL_DECISION_DATE" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_MNG_DTS_START_DATE" | translate}}</th>
+          <th scope="col">{{"wafi.EMP_MNG_DTS_END_DATE" | translate}}</th>     
+          <th scope="col">{{"wafi.EMP_SRVC_PERIOD" | translate}}</th>     
+          <th scope="col">{{"wafi.EMP_PSNL_VCHR_NOTE" | translate}}</th> 
+   
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vocherdata of vocherlistdata | paginate: { itemsPerPage: 12, currentPage: p };let i=index;">
+          
+          <td>{{vocherdata.voucherType}}</td>
+          <td>{{vocherdata.amount}}</td>
+          <td>{{vocherdata.claimStatusDesc}}</td>
+          <td>{{vocherdata.decisionNumber}}</td>
+          <td>{{vocherdata.voucherDate}}</td>
+          <td>{{vocherdata.startHdate}}</td>
+          <td>{{vocherdata.endHdate}}</td>
+          <td>{{vocherdata.period}}</td>
+          <td>{{vocherdata.note}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="pagination">  
+      <pagination-controls (pageChange)="p = $event"  
+      directionLinks="true"
+      autoHide="true"
+      previousLabel="{{'wafi.Previous' | translate}}"
+      nextLabel="{{'wafi.Next' | translate}}"      
+      ></pagination-controls>  
+      </ul>  
+  </div>
+
+
+</div>

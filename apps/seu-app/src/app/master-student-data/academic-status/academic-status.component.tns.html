@@ -1,0 +1,64 @@
+<app-header></app-header>
+
+<ScrollView>
+    <StackLayout>
+        <ActivityIndicator [busy]="isLoading" color="#6189f4"></ActivityIndicator>
+    </StackLayout>
+
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"services.academic_status.title" | translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    </GridLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+        <ListView [items]="messagesList">
+            <ng-template let-item="item">
+                <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+            </ng-template>
+        </ListView>
+    </FlexboxLayout>
+
+    <FlexboxLayout flexDirection="column" class="wrap" *ngIf="!isLoading  && !isClosed">
+
+        <StackLayout *ngIf="!isLoading">
+            <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                <Label row="0" colSpan="2" class="ysHBox" text="{{'general.student_data'|translate}}"></Label>
+                <Label row="1" column="1" class="ysPBox" style="font-weight: 800;"
+                    text="{{'general.female_or_male_name'|translate}} :"></Label>
+                <Label row="1" column="0" class="ysPBox2" text="{{student.name}}"></Label>
+                <Label row="2" column="1" class="ysPBox" style="font-weight: 800;" text="{{'general.student_id'|translate}} :"></Label>
+                <Label row="2" column="0" class="ysPBox2" text="{{student.std_id}}"></Label>
+
+                <Label row="3" column="1" class="ysPBox" style="font-weight: 800;"
+                    text="{{'general.faculty'|translate}} :"></Label>
+                <Label row="3" column="0" class="ysPBox2" text="{{student.colledge}}"></Label>
+              
+
+                <Label row="4" column="1" class="ysPBox" style="font-weight: 800;"
+                text="{{'general.major'|translate}} :"></Label>
+                <Label row="4" column="0" class="ysPBox2" text="{{student.major}}"></Label>
+
+                <Label row="5" column="1" class="ysPBox" style="font-weight: 800;"
+                text="{{'general.branch'|translate}} :"></Label>
+                <Label row="5" column="0" class="ysPBox2" text="{{student.branch}}"></Label>
+
+                <Label row="6" column="1" class="ysPBox" style="font-weight: 800;"
+                    text='{{"services.academic_status.title" | translate}} :'></Label>
+                <Label row="6" column="0" class="ysPBox2" text="{{student.academic_status}}"></Label>
+
+               
+            </GridLayout>
+        </StackLayout>
+
+
+
+
+
+
+
+
+
+
+    </FlexboxLayout>
+</ScrollView>

@@ -1,0 +1,64 @@
+<mat-dialog-content dir="rtl">
+  <seu-loader [isLoading]="loading"></seu-loader>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">
+        {{ (user ? "leadership.user.edit_title":"leadership.user.newuser") | translate}}
+      </h5>
+    </div>
+    <div class="modal-body">
+      <form role="form" [formGroup]="form">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="state">
+              <h6>{{"leadership.user.name"|translate}} <span class="reqstart">*</span></h6>
+              <input type="text" formControlName="USER_NAME" class="form-control" />
+            </div>
+            <div
+              *ngIf="form.controls.USER_NAME.invalid && (form.controls.USER_NAME.dirty || form.controls.USER_NAME.touched)">
+              <div *ngIf="form.controls.USER_NAME.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-12">
+            <div class="state">
+              <h6>{{"leadership.user.username"|translate}} <span class="reqstart">*</span></h6>
+              <input type="text" formControlName="USER_SSO" class="form-control" id="USER_SSO" />
+            </div>
+            <div
+              *ngIf="form.controls.USER_SSO.invalid && (form.controls.USER_SSO.dirty || form.controls.USER_SSO.touched)">
+              <div *ngIf="form.controls.USER_SSO.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.user.active_1"|translate}}</h6>
+              <input style="width: 8%; margin-top: 20px; cursor: pointer;" type="checkbox" formControlName="ACTIVE"
+                class="form-control" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.user.admin"|translate}}</h6>
+              <input style="width: 8%; margin-top: 20px; cursor: pointer;" type="checkbox" formControlName="IS_ADMIN"
+                class="form-control" />
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-md-12" style="text-align: center;">
+            <button style="width: 30%;" [disabled]="submitted || form.invalid" (click)="save()" type="submit"
+              class="btn btn-primary">{{ "leadership.save" | translate}} <i class="fa fa-save"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

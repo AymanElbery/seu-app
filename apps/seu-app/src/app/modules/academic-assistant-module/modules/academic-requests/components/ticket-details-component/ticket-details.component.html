@@ -1,0 +1,97 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title ">
+            {{"general.ticket_details"|translate}}</h5>
+    </div>
+    <div class="modal-body" *ngIf="ticket">
+        <div class="row">
+            <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'general.ticket_id' |
+                    translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.id }}</label>
+            </div>
+            <!-- <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'general.category' |
+                    translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.category }}</label>
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'general.item' | translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.item }}</label>
+            </div> -->
+            <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'general.subject' | translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.subject }}</label>
+            </div>
+            <!-- <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'reg_assistant.description' |
+                    translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.description }}</label>
+            </div> -->
+            <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'general.created_at' |
+                    translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.created_time.display_value
+                    }}</label>
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'general.due_date' |
+                    translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.due_date.display_value
+                    }}</label>
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'general.ticket_status' |
+                    translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.status }}</label>
+            </div>
+            <div class="col-md-12" *ngIf="ticket.resolution">
+                <label class="col-md-3 col-form-label">{{'general.resolution' |
+                    translate}}:</label>
+                <div style="color: #1c2172;" class="col-md-8 col-form-label" [innerHtml]="ticket.resolution.content">
+                </div>
+            </div>
+
+        </div>
+        <hr *ngIf="ticket.attachments.length > 0">
+        <div class="row" *ngIf="ticket.attachments.length > 0">
+            <div class="col-md-12">
+                <h5 class="col-md-3">{{'reg_assistant.attachments' | translate}}:</h5>
+                <div class="col-md-8 col-form-label font-weight-normal" style="margin-top: 10px;">
+                    <a *ngFor="let attch of ticket.attachments" href="#" class="attch" (click)="download(attch)"
+                        target="_blank">{{attch.name}}</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row" *ngIf="ticket.conversations.length > 0">
+            <div class="col-md-12">
+                <h5 class="col-md-3">{{'reg_assistant.conversations' | translate}}:</h5>
+                <div class="col-md-12 col-form-label font-weight-normal">
+                    <div class="card" *ngFor="let conv of ticket.conversations">
+                        <div class="card-body">
+                            <h6><span class="badge badge-primary">{{'reg_assistant.'+conv.type |
+                                    translate}}</span></h6>
+                            <h6 class="card-title">{{ conv.title }}</h6>
+                            <div [innerHTML]="conv.description "></div>
+                            <span style="margin-top: 5px;" class="badge badge-secondary">{{ conv.time }}</span>
+                            <a *ngFor="let attch of conv.attachments" href="#" class="attch" (click)="download(attch)"
+                                target="_blank">{{attch.name}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <sd-request-note [ticket_id]="ticketId" (newNote)="addNote($event)"></sd-request-note>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" (click)="closeDiag()" class="btn btn-outline pull-left">
+                    <i class="ik ik-x"></i>
+                    {{"general.back"|translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

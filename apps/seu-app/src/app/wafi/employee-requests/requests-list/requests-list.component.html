@@ -1,0 +1,53 @@
+<div class="main-content">
+
+  <service-header title='{{"wafi.employee-requests" | translate}}'></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+
+
+  <div class="table-responsive no-print">
+    <table class="table table-striped table-bordered">
+      <thead>
+
+        <tr>
+
+          <th scope="col">{{"wafi.RequestType" | translate}}</th>
+          <th scope="col">{{"wafi.VactionType" | translate}}</th>
+          <th scope="col">{{"wafi.Period" | translate}}</th>
+          <th scope="col">{{"wafi.BeginDate" | translate}}</th>
+          <th scope="col">{{"wafi.EndDate" | translate}}</th>
+          <th scope="col">{{"wafi.Status" | translate}}</th>
+          <th scope="col">{{"wafi.Details" | translate}}</th>
+          <th scope="col"></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empreqs of emplistrequest | paginate: { itemsPerPage: 12, currentPage: p };let i=index;">
+
+          <td>{{empreqs.requestDesc}}</td>
+          <td>{{empreqs.vacationDesc}}</td>
+          <td>{{empreqs.timePeriod}}</td>
+          <td>{{empreqs.beginDate}}</td>
+          <td>{{empreqs.endDate}}</td>
+          <td>{{empreqs.requestStatus}}</td>
+
+          <td class="prin" style="color: #fff;"><a (click)="getreqdetail(i,empreqs.requestSeq,empreqs.requestType)"
+              class="btn">{{"wafi.Details" | translate}} </a>
+          </td>
+          <td class="prin" style="color: #fff;" *ngIf="empreqs.enableDelete==true"><a
+              (click)="delete(empreqs.requestSeq,empreqs.requestType)" class="btn">{{"wafi.Delete" | translate}}</a>
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+    <ul class="pagination">
+      <pagination-controls (pageChange)="p = $event" directionLinks="true" autoHide="true"
+        previousLabel="{{'wafi.Previous' | translate}}" nextLabel="{{'wafi.Next' | translate}}"></pagination-controls>
+    </ul>
+  </div>
+
+
+</div>

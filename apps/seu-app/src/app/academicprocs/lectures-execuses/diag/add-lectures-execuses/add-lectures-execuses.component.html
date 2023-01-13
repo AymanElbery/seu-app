@@ -1,0 +1,162 @@
+<!-- Modal -->
+<mat-dialog-content>
+
+  <div class="modal-dialog" role="document" style="direction: rtl;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.lecture_execuse.title"|translate}}
+        </h5>
+      </div>
+      <div class="modal-body" style=" direction: rtl;">
+
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+          <div class="modal-body">
+            <div class="main-content">
+
+              <P class="text-center">
+                <span style="font-weight: bold; font-size: 15px;">{{reqData.text_list[0].text1}} </span>
+                <br />
+                {{reqData.text_list[1].text1}}
+
+                <br />
+                {{reqData.text_list[2].text1}}
+
+                <br />
+                {{reqData.text_list[3].text1}}
+
+                <br />
+                {{reqData.text_list[4].text1}}
+
+              </P>
+
+              <section class="ser-state">
+
+                <div class="row ser-block">
+                  <div class="col-md-12 col-sm-12">
+                    <div class="state">
+                      <h6>{{"services.lecture_execuse.define_courses_names"|translate}}</h6>
+                      <table style="text-align: center" class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">{{"general.crn"|translate}}</th>
+
+                            <th scope="col">{{"general.course_name"|translate}}</th>
+
+
+                            <th scope="col"> </th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let it of reqData.schedules;let i=index;">
+                            <td>{{it.CRN}}</td>
+                            <td>{{it.CRSE_TITLE}}</td>
+                            <td>
+                              <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event,i)" #chkCourse>
+                            </td>
+
+                          </tr>
+
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-info"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12">
+                    <div class="state">
+                      <h6>{{"services.lecture_execuse.choose_lec_type"|translate}}</h6>
+                      <select name="type" #type="ngModel" [(ngModel)]="lectureExecuse.type" class="form-control"
+                        [class.is-invalid]=" lectureExecuse.reason==''">
+                        <option *ngFor="let item of reqData.lectures_type" value="{{item.id}}">{{item.value}}</option>
+                      </select>
+                    </div>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-info"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12">
+                    <div class="state">
+                      <h6> {{"services.lecture_execuse.choose_week"|translate}}</h6>
+                      <select name="week" #week="ngModel" [(ngModel)]="lectureExecuse.week" class="form-control"
+                        [class.is-invalid]=" lectureExecuse.week==''">
+                        <option *ngFor="let item of reqData.weeks_list" value="{{item.id}}">{{item.value}}</option>
+                      </select>
+                    </div>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-info"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12">
+                    <div class="state">
+                      <h6>{{"services.lecture_execuse.define_date"|translate}}</h6>
+                      <select name="date" #date="ngModel" [(ngModel)]="lectureExecuse.date" class="form-control"
+                        [class.is-invalid]=" lectureExecuse.date==''">
+                        <option></option>
+                        <option *ngFor="let item of reqData.weeks_dates[lectureExecuse.week]" value="{{item}}">{{item}}
+                        </option>
+                      </select>
+                      <!-- <input style="direction: rtl;" class="form-control" name="date" #date="ngModel"
+                        [(ngModel)]="lectureExecuse.date" type="date" style="direction: rtl;text-align:right"> -->
+                    </div>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-info"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-sm-12">
+                    <div class="state">
+                      <h6>{{"services.lecture_execuse.absence_cause"|translate}}</h6>
+                      <textarea name="reason" #reason="ngModel" [(ngModel)]="lectureExecuse.reason"
+                        class="form-control"></textarea>
+                      <!-- <select name="reason" #reason="ngModel" [(ngModel)]="lectureExecuse.reason" class="form-control"
+                        [class.is-invalid]=" lectureExecuse.reason==''">
+                        <option value="">العذر </option>
+                        <option *ngFor="let item of reqData.text_list" value="{{item.text1}}">{{item.text1}}</option>
+                      </select> -->
+                    </div>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-info"></div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-12 col-sm-12">
+                    <div class="state">
+                      <h6>{{"services.lecture_execuse.file"|translate}}</h6>
+                      <div class="custom-file">
+                        <input name="imageUrl" type="file" accept="*/*" (change)="handleInputChange($event)"
+                          id="imageUrl" class="custom-file-input" />
+                        <label for="imageUrl" class="custom-file-label ">
+                        </label>
+                      </div>
+                    </div>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-info"></div>
+                    </div>
+                  </div>
+
+
+
+
+
+                </div>
+
+              </section>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+              {{"general.cancel"|translate}}</button>
+
+            <button type="submit" [disabled]="requesting" class="btn btn-dark"><i
+                class="fa fa-database"></i>{{"general.save"|translate}}</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</mat-dialog-content>

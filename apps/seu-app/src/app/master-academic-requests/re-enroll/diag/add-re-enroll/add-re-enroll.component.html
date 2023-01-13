@@ -1,0 +1,72 @@
+<mat-dialog-content dir="rtl">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          {{"services.re-enrollment.re-enroll_request"|translate}}</h5>
+      </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+          <h6 style="text-align: center">{{"services.re-enrollment.alert"|translate}}
+          </h6>
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.re-enrollment.cause"|translate}}</h6>
+                    <textarea name="reason" #reason="ngModel" [(ngModel)]="reEnroll.reason" class="form-control">
+                                     </textarea>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-info"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <mat-checkbox #has_proof name="reEnroll.has_proof " [(ngModel)]="reEnroll.has_proof">
+                      <h6>{{"services.re-enrollment.prove"|translate}}</h6>
+
+                    </mat-checkbox>
+
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12" *ngIf="has_proof.checked">
+                  <div class="state">
+                    <h6>{{"services.re-enrollment.file"|translate}}</h6>
+                    <div class="custom-file">
+                      <input name="attachment" id="attachment" type="file" accept="*/*"
+                        (change)="handleInputChange($event)"  class="custom-file-input" />
+                      <label for="attachment" class="custom-file-label ">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</mat-dialog-content>

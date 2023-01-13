@@ -1,0 +1,29 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<div *ngIf="message && message['body']" class="container" style="margin-top:20px; margin-bottom:15px;">
+  <div class="ser-state">
+    <div style="text-align: right" class="alert alert-{{message['type']}}" role="alert">
+      {{message['body']}}
+    </div>
+  </div>
+</div>
+<div *ngIf="amount" style="text-align: center;">
+  <h5>عزيزي الطالب / عزيزتي الطالبة<br />
+    لتسديد الرسوم نرجو منك استخدام إحدى البطاقات التالية (
+    {{brands_title}}
+    )<br />
+    قبل إدخال المعلومات في الصفحة التالية ، نرجو منك التحقق من صحة اختيار نوع البطاقة و رقمها والمكون من 16 رقم كما
+    نرجو منك التحقق من أنها سارية المفعول
+    علماً بأن رمز التحقق (CVV) يشير إلى الرقم خلف البطاقة والمكون من 3 أرقام
+  </h5>
+  <br />
+  <h5 style="color:red;">في حالة استخدام بطاقة مدى يجب التأكد من تفعيل خاصية
+    <br />
+    <u>الشراء عن طريق الإنترنت</u>
+  </h5>
+  <div class="page-header">
+    <br>
+    <h5>
+      <a href="#" (click)="pay()" class="btn btn-warning btn-lg">سداد الرسوم الدراسية
+        {{amount}} ريال</a>
+    </h5>
+  </div>

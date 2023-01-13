@@ -1,0 +1,101 @@
+<!-- Modal -->
+<mat-dialog-content>
+
+
+
+  <div class="modal-dialog" role="document" dir="rtl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel"> {{"services.withdrow_univ.title"|translate}}</h5>
+
+      </div>
+      <div class="modal-body">
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.withdrow_univ.branch"|translate}} </h6>
+
+                <select required name="branch" #BranchID="ngModel" [(ngModel)]="withdraw.branch" class="form-control"
+                  [class.is-invalid]=" withdraw.branch==''">
+                  <option value="">{{"services.withdrow_univ.choose_branch"|translate}} </option>
+                  <option *ngFor="let item of reqData.branches" value="{{item.id}}">{{item.name}}</option>
+                </select>
+
+              </div>
+            </div>
+          </div>
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.withdrow_univ.phone_no"|translate}} </h6>
+                <input type="mobile" required name="mobile" #mobile="ngModel" [(ngModel)]="withdraw.mobile" class="form-control"
+                  [class.is-invalid]="withdraw.mobile==null">
+
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="row ser-block">
+            <div class=" col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.withdrow_univ.e-mail"|translate}} </h6>
+                <input email required type="email" name="email" #email="ngModel" [(ngModel)]="withdraw.email"
+                  class="form-control" [class.is-invalid]="withdraw.email==''">
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+              {{"general.cancel"|translate}}</button>
+
+            <button [disabled]="form.invalid || requesting" type="submit" class="btn btn-dark"><i
+                class="fa fa-database"></i>
+                {{"general.save"|translate}}</button>
+          </div>
+        </form>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- <div *ngIf="reqData.display_bank_account">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">IBAN </div>
+                  </div>
+                  <input name="IBAN" #IBAN="ngModel" [(ngModel)]="withdraw.IBAN" class="form-control">
+                </div>
+              </div>
+
+            </div>
+            <div class="form-group">
+
+              <select name="BANKID" #BANKID="ngModel" [(ngModel)]="withdraw.BANKID" class="form-control"
+                [class.is-invalid]="!isValid && withdraw.BANKID==0">
+                <option value="0">اختر البنك</option>
+                <option *ngFor="let item of reqData.bankList" value="{{item.BANK_PK}}">{{item.BANK_TITLE}}</option>
+              </select>
+            </div>
+            <div class="image-upload">
+              <img [src]="withdraw.bankimage" style="width:400px;height:300px" />
+              <input name="imageUrl" type="file" accept="image/*" (change)="handleInputChange($event)" />
+            </div>
+
+          </div>
+        -->
+
+
+
+
+</mat-dialog-content>

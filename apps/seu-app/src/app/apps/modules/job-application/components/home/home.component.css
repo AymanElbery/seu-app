@@ -1,0 +1,20 @@
+.main-content{
+    padding-right: 0px !important;
+}
+
+.container{
+    max-width: 1300px;
+}
+#resume{
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+button#fake-file{
+    width: 100%;
+    position: relative;
+    top: -40px;
+	right: 0px;
+    z-index:-1;
+    cursor: pointer;
+}

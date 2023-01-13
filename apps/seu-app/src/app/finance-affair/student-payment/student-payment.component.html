@@ -1,0 +1,30 @@
+<div class="main-content">
+    <service-header [title]="'services.finance.feepay' |translate"
+    [desc]="'services.finance.feepay' |translate"></service-header>
+    <div class="iframe-content" *ngIf="agree">
+        <br /><br /><br />
+        <iframe width="100%" height="500px" frameBorder="0" [src]="urlSafe"></iframe>
+    </div>
+    <div style="padding: 30px;" *ngIf="!agree">
+        <h4 style="color: #26226a;" class="text-center">{{'general.reg_charter'|translate}}</h4>
+        <br />
+        <h5>{{'general.dear'|translate}}</h5>
+        <h5>{{'general.reg_charter_note1'|translate}}</h5>
+        <div class="text-right">
+            <ul class="text-right">
+                <li style="text-align: right !important;">{{'general.reg_charter_item1'|translate}}</li>
+                <li style="text-align: right !important;">{{'general.reg_charter_item2'|translate}}</li>
+                <li style="text-align: right !important;">{{'general.reg_charter_item3'|translate}}</li>
+                <li style="text-align: right !important;">{{'general.reg_charter_item4'|translate}}</li>
+                <li style="text-align: right !important;">{{'general.reg_charter_item5'|translate}}</li>
+                <li style="text-align: right !important;">{{'general.reg_charter_item6'|translate}}</li>
+                <li style="text-align: right !important;">{{'general.reg_charter_item7'|translate}}</li>
+            </ul>
+        </div>
+        <br />
+        <p style="color: #26226a;" class="text-center">{{'general.reg_charter_note2'|translate}}</p>
+    </div>
+    <div class="text-center" *ngIf="!agree">
+        <button style="width: 15%;" (click)="agree_fun()" class="btn btn-primary">{{'general.reg_charter_agree'|translate}}</button>
+    </div>
+</div>

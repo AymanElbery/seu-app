@@ -1,0 +1,106 @@
+.section-content{
+    padding: 10px;
+    margin-top: 20px;
+}
+.row-form{
+    margin-top: 10px;
+    padding-right: 10px;
+}
+.title{
+    background-color:  #EDEDED;
+    border-radius: 5px;
+    padding: 20px;
+    margin-right: 20px;
+}
+.item{
+    border: solid 1px #FFF;
+    border-radius: 5px;
+    padding: 20px;
+    margin-right: 20px;
+}
+.remove-item{
+    text-align: center;
+}
+.sub{
+    width: 100%;
+}
+.sub-row{
+    margin-top: 30px;
+}
+.btn:hover , .btn:active{
+    color: #FFF
+}
+a.sub-a{
+    color: #FFF
+}  
+a.sub-a:hover, a.sub-a:active{
+    color: #FFF
+}  
+.profile{
+    border: solid 1px #EDEDED;
+    height: 230px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 5px;
+} 
+.profile img{
+    width: 100%;
+    height: 100%;
+}
+.errorBorder{
+    border: solid 1px red
+}
+.del{
+    position: relative;
+    right: 3px;
+}
+#photo{
+    color: #FFF;
+}
+.tabs-navbar{
+    padding: 1%;
+}
+.nav-tabs .nav-link{
+    border-color: #FFF;
+    background-color: #26226a;
+    color: #FFF;
+    border-radius: 5px;
+}
+.nav-tabs .nav-link:hover{
+    border-color: #FFF;
+    background-color: #f28d1e;
+}
+.nav-tabs .nav-link.active{
+    background-color: #f28d1e;
+    border-color: #FFF;
+}
+.nav-tabs{
+    border-color: #FFF;
+}
+input#photo{
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    bottom: 30px;
+    cursor: pointer;
+    width: 100%;
+    top: 0px;
+    left: 10px;
+    background-color: #26226a;
+}
+button#fake-file{
+    width: 90%;
+    position: absolute;
+    top: 0px;
+	right: 0px;
+	z-index: 1;
+}
+input#exampleCheck1{
+    width: 17px;
+    height: 17px;
+    cursor: pointer;
+}
+.form-check-label{
+    margin-right: 7px;
+}

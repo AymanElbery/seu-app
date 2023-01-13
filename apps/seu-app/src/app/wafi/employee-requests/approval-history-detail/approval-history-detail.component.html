@@ -1,0 +1,100 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+
+<div  class="modal-header">
+  <h4 class="modal-title">{{"wafi.ApprovalRequestDtails" | translate}}</h4>  
+<button type="button"  class="btn-close-brd" mat-dialog-close><i class="ik ik-x"></i> </button>
+</div>
+
+<div *ngIf="currentServiceRequestTable" class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th *ngIf="currentServiceRequestTable.requestType" scope="col">{{"wafi.RequestType" | translate}}</th>       
+        <th *ngIf="currentServiceRequestTable.vacationEnabled==true" scope="col">{{"wafi.VacationDescription" | translate}}</th>
+        <th  scope="col">{{"wafi.beginDate" | translate}}</th>
+        <th  scope="col">{{"wafi.endDate" | translate}}</th>       
+        <th *ngIf="currentServiceRequestTable.fromCountryEnabled==true" scope="col">{{"wafi.fromCountry" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.toCountryEnabled==true" scope="col">{{"wafi.ToCountry-City" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.ticketEnabled==true" scope="col">{{"wafi.Ticket" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.roundTripEnabled==true" scope="col">{{"wafi.RoundTrip" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.attendantsEnabled==true" scope="col">{{"wafi.Attendants" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.amountEnabled==true" scope="col">{{"wafi.CompensationAmount" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.decisionEnabled==true" scope="col">{{"wafi.DecisionNo" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.subjectEnabled==true" scope="col">{{"wafi.Task/Direction" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.startTimeEnabled==true" scope="col">{{"wafi.FromTime" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.endTimeEnabled==true" scope="col">{{"wafi.ToTime" | translate}}</th>       
+        <th *ngIf="currentServiceRequestTable.regCourseEnabled==true" scope="col">{{"wafi.scheduleName" | translate}}</th>
+        <th *ngIf="currentServiceRequestTable.regCourseEnabled==true" scope="col">{{"wafi.sideName" | translate}}</th>
+      
+        <th *ngIf="currentServiceRequestTable.disclaimerReasonEnabled==true" scope="col">{{"wafi.DisclaimerReason" | translate}}</th>  
+        <th  scope="col">{{"wafi.notes" | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>        
+        <td *ngIf="currentServiceRequestTable.requestType">{{currentServiceRequestTable.requestDesc}}</td>
+        <td  *ngIf="currentServiceRequestTable.vacationEnabled==true">{{currentServiceRequestTable.vacationDesc}}</td>
+        <td >{{currentServiceRequestTable.beginDate}}</td>
+        <td  >{{currentServiceRequestTable.endDate}}</td>
+        <td  *ngIf="currentServiceRequestTable.fromCountryEnabled==true">{{currentServiceRequestTable.fromCountryDesc}}</td>
+        <td  *ngIf="currentServiceRequestTable.toCountryEnabled==true">{{currentServiceRequestTable.toCountryDesc}}</td>
+        <td  *ngIf="currentServiceRequestTable.ticketEnabled==true">{{currentServiceRequestTable.ticket}}</td>
+        <td  *ngIf="currentServiceRequestTable.roundTripEnabled==true">{{currentServiceRequestTable.roundTrip}}</td>
+        <td  *ngIf="currentServiceRequestTable.attendantsEnabled==true">{{currentServiceRequestTable.attendants}}</td>
+        <td  *ngIf="currentServiceRequestTable.amountEnabled==true">{{currentServiceRequestTable.compensationAmount}}</td>
+        <td  *ngIf="currentServiceRequestTable.decisionEnabled==true">{{currentServiceRequestTable.decisionNo}}</td>
+        <td  *ngIf="currentServiceRequestTable.subjectEnabled==true">{{currentServiceRequestTable.subject}}</td>
+        <td  *ngIf="currentServiceRequestTable.startTimeEnabled==true">{{currentServiceRequestTable.startTime}}</td>
+        <td  *ngIf="currentServiceRequestTable.endTimeEnabled==true">{{currentServiceRequestTable.endTime}}</td>       
+        <td  *ngIf="currentServiceRequestTable.regCourseEnabled==true">{{currentServiceRequestTable.scheduleDesc}}</td>
+        <td  *ngIf="currentServiceRequestTable.regCourseEnabled==true">{{currentServiceRequestTable.trainSideDesc}}</td>
+        
+        <td  *ngIf="currentServiceRequestTable.disclaimerReasonEnabled==true">{{currentServiceRequestTable.disclaimerReasonDesc}}</td>
+
+        <td >{{currentServiceRequestTable.notes}}</td>
+      
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div  class="modal-header">
+  <h4 class="modal-title">{{"wafi.ApprovalData" | translate}}</h4>
+  
+</div>
+
+
+<div *ngIf="transactionData" class="table-responsive">
+  <table class="table table-striped table-bordered">
+    <thead>
+
+      <tr>
+
+        <th scope="col">{{"wafi.StepNo" | translate}}</th>
+        <th scope="col">{{"wafi.ApprovedEmployee" | translate}}</th>
+        <th scope="col">{{"wafi.DuatyDescription" | translate}}</th>
+        <th scope="col">{{"wafi.TransactionDate" | translate}}</th>
+        <th scope="col">{{"wafi.Agree/disagree" | translate}}</th>
+        <th scope="col">{{"wafi.RejecteReasone" | translate}}</th>
+        
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let reqapprvl of transactionData;let i=index;">
+             
+        <td>{{reqapprvl.stepNo}}</td>
+        <td>{{reqapprvl.approvedEmpName}}</td>
+        <td>{{reqapprvl.duatyDesc}}</td>
+        <td>{{reqapprvl.approvedDate}}</td>        
+        <td>{{reqapprvl.isApprovedDesc}}</td>
+        <td >  {{reqapprvl.disagreeReasone}}</td>       
+       
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+

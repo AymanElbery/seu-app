@@ -1,0 +1,62 @@
+<mat-dialog-content dir="{{translate.currentLang == 'ar' ? 'rtl':'ltr'}}">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="width:100%;text-align: center" class="modal-title " id="exampleModalLabel">
+                {{ "vaccine_status.title"|translate }}
+            </h5>
+        </div>
+        <div class="modal-body" style="width: 100%" (scroll)="onScroll($event)">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="dears">{{ "vaccine_status.dears" | translate }}</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="notes">{{ "vaccine_status.notes1" | translate }} <strong style="color: #1c2172;">{{ "vaccine_status.inside_1" | translate }}</strong> {{ "vaccine_status.notes4" | translate }} <strong>{{ "vaccine_status.inside_2" | translate }}</strong> {{ "vaccine_status.notes5" | translate }} <strong style="color: #1c2172;">{{ "vaccine_status.inside_3" | translate }}</strong> {{ "vaccine_status.notes6" | translate }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="notes">{{ "vaccine_status.notes2" | translate }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="notes" style="color: #1c2172;">{{ "vaccine_status.notes3" | translate }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-check" style="text-align: center;">
+                        <label class="form-check-label">{{"vaccine_status.status1"|translate}}</label><br>
+                        <input (change)="choice()" [(ngModel)]="status" style="width: 22px; height: 22px; cursor: pointer" type="radio" class="form-check-input" value="1">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-check" style="text-align: center;">
+                        <label class="form-check-label">{{"vaccine_status.status2"|translate}}</label><br>
+                        <input (change)="choice()" [(ngModel)]="status" style="width: 22px; height: 22px; cursor: pointer" type="radio" class="form-check-input" value="2">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-check" style="text-align: center;">
+                        <label class="form-check-label">{{"vaccine_status.status3"|translate}}</label><br>
+                        <input (change)="choice()" [(ngModel)]="status" style="width: 22px; height: 22px; cursor: pointer" type="radio" class="form-check-input" value="3">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-check" style="text-align: center;">
+                        <label class="form-check-label">{{"vaccine_status.status4"|translate}}</label><br>
+                        <input (change)="choice()" [(ngModel)]="status" style="width: 22px; height: 22px; cursor: pointer" type="radio" class="form-check-input" value="4">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-12" style="text-align: center; margin-bottom: 20px;">
+                    <button [disabled]="!choiceChange" style="width: 20%;" (click)="submit()" type="submit" class="btn btn-dark btn-lg">{{ "vaccine_status.save" | translate }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>

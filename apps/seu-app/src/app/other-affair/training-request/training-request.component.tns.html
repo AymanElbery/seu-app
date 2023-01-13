@@ -1,0 +1,72 @@
+<app-header></app-header>
+<StackLayout>
+<StackLayout>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+</StackLayout>
+
+<ScrollView>    
+
+    <FlexboxLayout  class="wrap"  flexDirection="column">
+
+        <GridLayout  columns="auto, *" class="serv-title" *ngIf="!isLoading">
+            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+            <Label col="1" text='{{"services.training_request.title" | translate}}' class="serv-name" ></Label>
+            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        
+        </GridLayout>
+
+        <FlexboxLayout flexDirection="row-reverse" *ngIf="!isLoading && msgs.length>0">
+            <ListView [items]="msgs">
+                <ng-template let-item="item">
+                    <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+                </ng-template>
+            </ListView>
+        </FlexboxLayout>
+
+      
+
+      
+        <FlexboxLayout flexDirection="row-reverse" alignItems="center" *ngIf="!isLoading" justifyContent="center"> 
+            <Button text='{{"general.request.add_request"|translate}}' *ngIf="reqData.can_add_new_request" (tap)="onTap()" class="print-btn"></Button>
+        </FlexboxLayout>
+        <!--*ngIf="reqData.can_add_new_request"-->
+
+     <StackLayout  *ngIf="!isLoading && reqData.reqs &&reqData.reqs.length>0">
+
+    
+
+        <GridLayout   class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150"  *ngFor="let item of reqData.reqs;let i=index;" >
+                      
+                      
+            <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text='{{"services.training_request.destination"|translate}}'></Label>
+            <Label row="1"  column="0" class="ysPBox2" [text]="item.organization_name"></Label>
+        
+            <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.req_date"|translate}}'></Label>
+            <Label row="2"  column="0" class="ysPBox2" [text]="item.insert_date" ></Label>
+           
+            <Label row="3"  column="1"  class="ysPBox" style="font-weight:800;" text='{{"general.request.req_status"|translate}}'></Label>
+            <Label row="3"  column="0" class="ysPBox2" [text]="item.status" ></Label>
+
+            <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;"   text='{{"general.request.req_print"|translate}}'></Label>
+            <Button  row="4"  column="0"  text="&#xf02f;" (tap)="print(item.request_number,i)" class="fas blue-button "></Button>
+             
+            <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;"   text='{{"general.request.req_delete"|translate}}'></Label>
+            <Button row="5" column="0" *ngIf='item.deletable' [disabled]='deleting' text="&#xf1f8;" (tap)="delete(item.request_number,i)" class="fas  blue-button"></Button>
+            <Label row="5" class="ysPBox2" column="0" *ngIf='!item.deletable' text='{{"general.request.non_cancelable_request"|translate}}'  ></Label>
+       
+          </GridLayout>
+        
+        
+          <FlexboxLayout class="paragraph" flexWrap="wrap" *ngIf="!isLoading &&reqData" flexDirection="row-reverse">
+            <label text='1-{{"services.training_request.condition"|translate}}' textWrap="true"></label>
+            <label textWrap="true" text='2-{{"services.training_request.text"|translate}}'></label>
+            <HtmlView [html]="htmlString2" style="text-align: right;"></HtmlView>
+            <HtmlView [html]="htmlString1" style="text-align: right;"></HtmlView>
+            <label textWrap="true" text=' {{"services.training_request.info"|translate}}'></label>
+            <HtmlView [html]="htmlString3"></HtmlView>
+            <label text='3-{{"services.training_request.training_mail"|translate}}' textWrap="true"></label>
+        </FlexboxLayout>
+    </StackLayout>
+    </FlexboxLayout>
+</ScrollView>
+</StackLayout>

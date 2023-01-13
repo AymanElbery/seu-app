@@ -1,0 +1,68 @@
+<mat-dialog-content>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="exampleModalLabel">{{"services.change_branch.change_branch_req"|translate}}</h5>
+      </div>
+
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.change_branch.choose_branch"|translate}}</h6>
+                    <select name="camp" #camp="ngModel" [(ngModel)]="branch.camp" class="form-control"
+                      [class.is-invalid]="branch.camp==''">
+
+                      <option *ngFor="let item of reqData.camps" value="{{item.key}}">{{item.value}}</option>
+                    </select>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.change_branch.mobile"|translate}}</h6>
+                    <input name="mobile" #mobile="ngModel" [(ngModel)]="branch.mobile" class="form-control">
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.change_branch.reason"|translate}}</h6>
+                    <textarea name="reason" #reason="ngModel" [(ngModel)]="branch.reason" class="form-control">
+                                     </textarea>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</mat-dialog-content>

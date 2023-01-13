@@ -1,0 +1,101 @@
+<mat-dialog-content>
+
+  <div class="modal-dialog" role="document" style="direction: rtl;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.master_exam_excuse.execuse_req"|translate}}
+        </h5>
+
+      </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+          <h6>{{reqData.notes[0].text1}} </h6>
+          <div class="row ser-block">
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.master_exam_excuse.choose_course"|translate}}</h6>
+                <table style="text-align: center" class="table">
+                  <thead style="font-size: 15px;">
+                    <tr>
+                      <th scope="col">{{"general.course_name"|translate}}</th>
+
+                      <th scope="col"> {{"general.course_code"|translate}}</th>
+                      <th scope="col"> </th>
+                      <th scope="col"> # </th>
+
+
+                    </tr>
+                  </thead>
+                  <tbody style="font-size: 14px;">
+                    <tr *ngFor="let it of reqData.schedules;let i=index;">
+                      <td>{{it.CRSE_TITLE}}</td>
+                      <td>{{it.CRN}}</td>
+
+                      <td>
+                        <input type="checkbox" name="courses" (change)="changeStatus(it,$event)" #courses>
+                      </td>
+                      <td>{{i+1}}</td>
+
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.master_exam_excuse.choose_exam_type"|translate}}</h6>
+                <select name="type" #time="ngModel" [(ngModel)]="examExcuse.type" class="form-control"
+                  [class.is-invalid]="examExcuse.type==''">
+                  <option value="">{{"services.master_exam_excuse.exam_type"|translate}}</option>
+                  <option *ngFor="let item of reqData.exams_type" value="{{item.id}}">{{item.value}}</option>
+                </select>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.master_exam_excuse.absence_reason"|translate}} </h6>
+                <textarea name="reason" class="form-control" #reason="ngModel"
+                  [(ngModel)]="examExcuse.reason"></textarea>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.master_exam_excuse.upload_proof"|translate}}</h6>
+                <div class="custom-file">
+                  <input name="attachment" id="attachment" type="file" accept="*/*"
+                    (change)="handleInputChange($event)" class="custom-file-input" />
+                  <label for="attachment" class="custom-file-label ">
+                  </label>
+                </div>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,82 @@
+<div class="main-content">
+  <!-- <service-header title='{{"UplaodDocs" | translate}}'></service-header> -->
+  <app-service-header title="{{'ug' | translate}}" subtitle="{{'UplaodDocs' | translate}}"></app-service-header>
+
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <seu-flash [msgs]="messages"  [isLoading]="isLoading"> </seu-flash>
+
+  <section *ngIf="!isLoading && can_upload" class="dashboard-wrap mtb-40" style="margin-top: 30px;">
+    <div style="text-align: right" [ngClass]="'alert alert-info'" role="alert">
+      <span>{{'upload_file_nots' | translate}}</span>
+    </div>
+    <form role="form" [formGroup]="AddReqForm" (ngSubmit)="onFormSubmit()">
+      <ng-container *ngIf="attachemngtss">
+        <div style="text-align: right" [ngClass]="'alert alert-info'" role="alert">
+          <span>{{'upload_file_nots_view' | translate}}</span>
+        </div>
+        <div class="row ser-block">
+          <div class=" col-md-6 col-sm-6">
+            <div class="state">
+              <a class="downaloadlink" href="{{uploaddata.attachement}}"
+                target="_blank">{{"downlaodattachement" | translate}}</a>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="uploaddata.mother_id_link" class="row ser-block">
+          <div class=" col-md-6 col-sm-6">
+            <div class="state prin">
+              <a class="downaloadlink" href="{{uploaddata.mother_id_link}}"
+                target="_blank">{{"downlaodmotherId" | translate}}</a>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <div class="row ser-block">
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"attachment"|translate}} <span class="reqstart">*</span></h6>
+            <div class="custom-file">
+              <input class="custom-file-input" name="attachement" id="file" type="file" accept="*/*"
+                (change)="handleFileInput($event)" />
+              <label for="file" class="custom-file-label ">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="upload_mother_id==true" class="row ser-block">
+        <div class=" col-md-6 col-sm-6">
+          <div class="state">
+            <h6>{{"mother_id"|translate}} <span class="reqstart">*</span></h6>
+            <div class="custom-file">
+              <input class="custom-file-input" name="mother_id" id="file" type="file" accept="*/*"
+                (change)="handleFileInput_motherId($event)" />
+              <label for="file" class="custom-file-label ">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row ser-block">
+        <div class=" col-md-6 col-sm-6">
+          <div class="state prin" style="margin-top: 20px !important;">
+            <button type="submit" [disabled]="!AddReqForm.valid || submitted" class="btn">
+              <i class="fa fa-database"></i>
+              {{"Submit" | translate}}
+            </button>
+            <!-- <button type="button" (click)="back()" class="btn"><i class="fa fa-back"></i>
+              {{"updatedocument" | translate}}</button> -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </form>
+  </section>
+</div>

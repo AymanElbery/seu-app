@@ -1,0 +1,18 @@
+<FlexboxLayout  flexDirection="column" class="pop iosFont">
+    <Label text='{{"services.withdrow_univ.title"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+
+    <Label text='{{"services.withdrow_univ.alert"|translate}}' textWrap="true" style="color: #010447;" class="font"></Label>
+    <Label text='{{"services.withdrow_univ.alert_content"|translate}}' textWrap="true"></Label>
+
+    <Label text='{{"services.withdrow_univ.mobile"|translate}}' style="color: #010447;" class="font"></Label>
+    <TextField #mobile="ngModel" [(ngModel)]="withdrawalReq.mobile" required></TextField>
+
+    <Label text='{{"services.withdrow_univ.personal_mail"|translate}}' style="color: #010447;" class="font"></Label>
+    <TextField [(ngModel)]="withdrawalReq.email" #reason="ngModel" required></TextField>
+    
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()"  class="print-btn"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

@@ -1,0 +1,41 @@
+<div class="main-content">
+
+  <service-header title='{{"wafi.managerialduties" | translate}}'></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div class="widget">
+
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">{{"wafi.position" | translate}}</th>
+            <th scope="col">{{"wafi.decisionNo" | translate}}</th>
+            <th scope="col">{{"wafi.decisionDate" | translate}}</th>
+            <th scope="col">{{"wafi.startDate" | translate}}</th>
+            <th scope="col">{{"wafi.endDate" | translate}}</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let managlist of mangerialdutiesdata  | paginate: { itemsPerPage: 12, currentPage: p };let i=index;">
+            <td>{{managlist.position}}</td>
+            <td>{{managlist.decisionNo}}</td>
+            <td>{{managlist.decisionDate}}</td>
+            <td>{{managlist.startDate}}</td>
+            <td>{{managlist.endDate}}</td>
+           
+
+        </tbody>
+      </table>
+      <ul class="pagination">  
+        <pagination-controls (pageChange)="p = $event"
+        directionLinks="true"
+        autoHide="true"
+        previousLabel="{{'waif.Previous' | translate}}"
+        nextLabel="{{'wafi.Next' | translate}}"
+        ></pagination-controls>  
+        </ul> 
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,31 @@
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" verticalAlignment="center" horizontalAlignment="center"></ActivityIndicator>
+
+
+    <FlexboxLayout  flexDirection="column" class="pop iosFont" *ngIf="!isLoading">
+    
+        <Label text='{{"wafi.salarydetailsselected" | translate}} {{data.context.month}} {{"wafi.year" | translate}} {{data.context.year}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+  
+        <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,80" *ngFor="let item of saldetails;let i=index;">
+                      
+                      
+           <!-- <Label row="1"  column="1" class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.month" | translate}}'></Label>
+            <Label row="1"  column="0" class="ysPBox2" textWrap="true" [text]="item.month" ></Label>
+    
+            <Label row="2"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.year" | translate}}'></Label>
+            <Label row="2"  column="0" class="ysPBox2" textWrap="true" [text]="item.year"></Label>-->
+    
+            <Label row="3"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.description" | translate}}'></Label>
+            <Label row="3"  column="0" class="ysPBox2" textWrap="true" [text]="item.desc"></Label>
+           
+            <Label row="4"  column="1"  class="ysPBox" textWrap="true" style="font-weight:800;" text='{{"wafi.amount" | translate}}'></Label>
+            <Label row="4"  column="0" class="ysPBox2" textWrap="true" [text]="item.amount" ></Label>
+             
+          </GridLayout>
+          
+        <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
+            <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn"></Button>
+        </FlexboxLayout>
+    
+    </FlexboxLayout>
+    </ScrollView>

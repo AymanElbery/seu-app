@@ -1,0 +1,53 @@
+<div class="main-content">
+
+  <service-header title='{{"wafi.penaltydiscount" | translate}}'></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div class="widget">
+    <div class="col-md-6 col-sm-6" >  
+      <div class="state">
+        <h6>{{"tasks.searchdata"|translate}} </h6>
+      <input class="form-control" type="text"  [(ngModel)]="filter">   
+      </div>     
+  </div> 
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">{{"wafi.serviceSeq" | translate}}</th>
+            <th scope="col">{{"wafi.absenceDateH" | translate}}</th>
+            <th scope="col">{{"wafi.absentTypeDesc" | translate}}</th>
+            <th scope="col">{{"wafi.absentDay" | translate}}</th>
+            <th scope="col">{{"wafi.absentHour" | translate}}</th>            
+            <th scope="col">{{"wafi.decisionNo" | translate}}</th>
+            <th scope="col">{{"wafi.decisionDateH" | translate}}</th>
+            <th scope="col">{{"wafi.inService" | translate}}</th>
+            <th></th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let panaltylist of getepanaltydata  |filter:filter | paginate: { itemsPerPage: 12, currentPage: p };let i=index;">
+            <td>{{panaltylist.serviceSeq}}</td>
+            <td>{{panaltylist.absenceDateH}}</td>
+            <td>{{panaltylist.absentTypeDesc}}</td>
+            <td>{{panaltylist.absentDay}}</td>
+            <td>{{panaltylist.absentHour}}</td>        
+            <td>{{panaltylist.decisionNo}}</td>
+            <td>{{panaltylist.decisionDateH}}</td>
+            <td>{{panaltylist.inService ? "YES" : "NO"}}</td>
+           <td class="prin"><button *ngIf="panaltylist.deductionType=='2'" class="btn"  (click)="printreport(panaltylist.decisionNo,panaltylist.decisionDate,panaltylist.absenceDate)" >{{"wafi.print" | translate}}<i class="ik ik-save"></i> </button></td>
+
+        </tbody>
+      </table>
+      <ul class="pagination">  
+        <pagination-controls (pageChange)="p = $event"
+        directionLinks="true"
+        autoHide="true"
+        previousLabel="{{'wafi.Previous' | translate}}"
+        nextLabel="{{'wafi.Next' | translate}}"
+        ></pagination-controls>  
+        </ul> 
+    </div>
+  </div>
+
+</div>

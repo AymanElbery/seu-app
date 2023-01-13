@@ -1,0 +1,556 @@
+<app-service-header title="{{'skills' | translate}}" subtitle="{{'courses.add-course' | translate}}">
+</app-service-header>
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section class="dashboard-wrap ug-content" style="margin-top: 30px; padding: 0 30px;">
+    <form role="form" [formGroup]="AddCourseForm">
+        <h3> {{'courses.course_data' | translate}} </h3>
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.title"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="TITLE_AR" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.TITLE_AR.invalid && (AddCourseForm.controls.TITLE_AR.dirty || AddCourseForm.controls.TITLE_AR.touched)">
+                        <div *ngIf="AddCourseForm.controls.TITLE_AR.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.title_en"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="TITLE_EN" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.TITLE_EN.invalid && (AddCourseForm.controls.TITLE_EN.dirty || AddCourseForm.controls.TITLE_EN.touched)">
+                        <div *ngIf="AddCourseForm.controls.TITLE_EN.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="col-md-2">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.type"|translate}} <span class="reqstart">*</span></h6>
+                        <select class="form-control" formControlName="TYPE" style="height: 40px !important;">
+                            <option value="in">{{"courses.in_type"|translate}}</option>
+                            <option value="out">{{"courses.out_type"|translate}}</option>
+                            <option value="in_out">{{"courses.in_out_type"|translate}}</option>
+                        </select>
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.TYPE.invalid && (AddCourseForm.controls.TYPE.dirty || AddCourseForm.controls.TYPE.touched)">
+                        <div *ngIf="AddCourseForm.controls.TYPE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-2">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.cert_type"|translate}} <span class="reqstart">*</span></h6>
+                        <select class="form-control" formControlName="CERT_TYPE" style="height: 40px !important;">
+                            <option value="c">{{"courses.cert_course"|translate}}</option>
+                            <option value="w">{{"courses.cert_work"|translate}}</option>
+                        </select>
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.CERT_TYPE.invalid && (AddCourseForm.controls.CERT_TYPE.dirty || AddCourseForm.controls.CERT_TYPE.touched)">
+                        <div *ngIf="AddCourseForm.controls.CERT_TYPE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="col-md-2">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.c_lang"|translate}} <span class="reqstart">*</span></h6>
+                        <select class="form-control" formControlName="C_LANG" style="height: 40px !important;">
+                            <option value="ar">{{"general.ar"|translate}}</option>
+                            <option value="en">{{"general.en"|translate}}</option>
+                        </select>
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.C_LANG.invalid && (AddCourseForm.controls.C_LANG.dirty || AddCourseForm.controls.C_LANG.touched)">
+                        <div *ngIf="AddCourseForm.controls.C_LANG.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-2">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.seats"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="number" formControlName="SEATS" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.SEATS.invalid && (AddCourseForm.controls.SEATS.dirty || AddCourseForm.controls.SEATS.touched)">
+                        <div *ngIf="AddCourseForm.controls.SEATS.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-4">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.stuff_name"|translate}} <span class="reqstart">*</span></h6>
+                        <select class="form-control" formControlName="STAFF_ID" style="height: 40px !important;">
+                            <option *ngFor="let stuff of stuffs" [value]="stuff.USER_ID">{{ stuff.NAME_AR }}</option>
+                        </select>
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.STAFF_ID.invalid && (AddCourseForm.controls.STAFF_ID.dirty || AddCourseForm.controls.STAFF_ID.touched)">
+                        <div *ngIf="AddCourseForm.controls.STAFF_ID.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.start_date"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="START_DATE" bsDatepicker [bsConfig]="datePickerConfig"
+                            class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.START_DATE.invalid && (AddCourseForm.controls.START_DATE.dirty || AddCourseForm.controls.START_DATE.touched)">
+                        <div *ngIf="AddCourseForm.controls.START_DATE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.end_date"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="END_DATE" bsDatepicker [bsConfig]="datePickerConfig"
+                            class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.END_DATE.invalid && (AddCourseForm.controls.END_DATE.dirty || AddCourseForm.controls.END_DATE.touched)">
+                        <div *ngIf="AddCourseForm.controls.END_DATE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.req_start_date"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="REG_START_DATE" bsDatepicker [bsConfig]="datePickerConfig"
+                            class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.REG_START_DATE.invalid && (AddCourseForm.controls.REG_START_DATE.dirty || AddCourseForm.controls.REG_START_DATE.touched)">
+                        <div *ngIf="AddCourseForm.controls.REG_START_DATE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.req_end_date"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="REG_END_DATE" bsDatepicker [bsConfig]="datePickerConfig"
+                            class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.REG_END_DATE.invalid && (AddCourseForm.controls.REG_END_DATE.dirty || AddCourseForm.controls.REG_END_DATE.touched)">
+                        <div *ngIf="AddCourseForm.controls.REG_END_DATE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-3">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.period"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="number" formControlName="PERIOD" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.PERIOD.invalid && (AddCourseForm.controls.PERIOD.dirty || AddCourseForm.controls.PERIOD.touched)">
+                        <div *ngIf="AddCourseForm.controls.PERIOD.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-3">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.time"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="TIME" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.TIME.invalid && (AddCourseForm.controls.TIME.dirty || AddCourseForm.controls.TIME.touched)">
+                        <div *ngIf="AddCourseForm.controls.TIME.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-3">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.hr_hours"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="number" formControlName="HR_HOURS" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.HR_HOURS.invalid && (AddCourseForm.controls.HR_HOURS.dirty || AddCourseForm.controls.HR_HOURS.touched)">
+                        <div *ngIf="AddCourseForm.controls.HR_HOURS.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-3">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.allowed_absense"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="number" formControlName="ALLOWED_ABSENSE" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.ALLOWED_ABSENSE.invalid && (AddCourseForm.controls.ALLOWED_ABSENSE.dirty || AddCourseForm.controls.ALLOWED_ABSENSE.touched)">
+                        <div *ngIf="AddCourseForm.controls.ALLOWED_ABSENSE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.institution"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="INSTITUTION_AR" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.INSTITUTION_AR.invalid && (AddCourseForm.controls.INSTITUTION_AR.dirty || AddCourseForm.controls.INSTITUTION_AR.touched)">
+                        <div *ngIf="AddCourseForm.controls.INSTITUTION_AR.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.institution_en"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="INSTITUTION_EN" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.INSTITUTION_EN.invalid && (AddCourseForm.controls.INSTITUTION_EN.dirty || AddCourseForm.controls.INSTITUTION_EN.touched)">
+                        <div *ngIf="AddCourseForm.controls.INSTITUTION_EN.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.location_ar"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="LOCATION_AR" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.LOCATION_AR.invalid && (AddCourseForm.controls.LOCATION_AR.dirty || AddCourseForm.controls.LOCATION_AR.touched)">
+                        <div *ngIf="AddCourseForm.controls.LOCATION_AR.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.location_en"|translate}} <span class="reqstart">*</span></h6>
+                        <input type="text" formControlName="LOCATION_EN" class="form-control" />
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.LOCATION_EN.invalid && (AddCourseForm.controls.LOCATION_EN.dirty || AddCourseForm.controls.LOCATION_EN.touched)">
+                        <div *ngIf="AddCourseForm.controls.LOCATION_EN.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.face_attend"|translate}} {{"courses.class_room"|translate}} <span
+                                class="reqstart">*</span></h6>
+                        <input *ngIf="!course" (change)="classRoomChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="FACE_ATTEND" class="form-control" />
+                        <input *ngIf="course" [checked]="course.FACE_ATTEND == 1" (change)="classRoomChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="FACE_ATTEND" class="form-control" />
+                        <input style="width: 90%; display: inline-block;"
+                            [attr.disabled]="classRoomDisabled ? '' : null" type="text" formControlName="CLASS_ROOM"
+                            class="form-control" />
+                    </div>
+
+                    <div
+                        *ngIf="AddCourseForm.controls.CLASS_ROOM.invalid && (AddCourseForm.controls.CLASS_ROOM.dirty || AddCourseForm.controls.CLASS_ROOM.touched)">
+                        <div *ngIf="AddCourseForm.controls.CLASS_ROOM.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.virual_attend"|translate}} {{"courses.link"|translate}} <span
+                                class="reqstart">*</span></h6>
+                        <input *ngIf="!course" (change)="linkChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="VIRTUAL_ATTEND" class="form-control" />
+                        <input *ngIf="course" [checked]="course.VIRTUAL_ATTEND == 1" (change)="linkChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="VIRTUAL_ATTEND" class="form-control" />
+                        <input style="width: 90%; display: inline-block;" [attr.disabled]="linkDisabled ? '' : null"
+                            type="text" formControlName="LINK" class="form-control" />
+                    </div>
+
+                    <div
+                        *ngIf="AddCourseForm.controls.LINK.invalid && (AddCourseForm.controls.LINK.dirty || AddCourseForm.controls.LINK.touched)">
+                        <div *ngIf="AddCourseForm.controls.LINK.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.cancel"|translate}} {{"courses.cancel_date"|translate}} <span
+                                class="reqstart">*</span></h6>
+                        <input *ngIf="!course" (change)="cancelChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="CANCEL_OPTION" class="form-control" />
+                        <input *ngIf="course" [checked]="course.CANCEL_OPTION == 1" (change)="cancelChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="CANCEL_OPTION" class="form-control" />
+                        <input style="width: 90%; display: inline-block;" [attr.disabled]="cancelDisabled ? '' : null"
+                            type="text" formControlName="CANCEL_DATE" class="form-control" bsDatepicker
+                            [bsConfig]="datePickerConfig" />
+                    </div>
+
+                    <div
+                        *ngIf="AddCourseForm.controls.CANCEL_DATE.invalid && (AddCourseForm.controls.CANCEL_DATE.dirty || AddCourseForm.controls.CANCEL_DATE.touched)">
+                        <div *ngIf="AddCourseForm.controls.CANCEL_DATE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.excuse"|translate}} {{"courses.excuse_date"|translate}} <span
+                                class="reqstart">*</span></h6>
+                        <input *ngIf="!course" (change)="excuseChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="EXCUSE_OPTION" class="form-control" />
+                        <input *ngIf="course" [checked]="course.EXCUSE_OPTION == 1" (change)="excuseChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="EXCUSE_OPTION" class="form-control" />
+                        <input style="width: 90%; display: inline-block;" [attr.disabled]="excuseDisabled ? '' : null"
+                            type="text" formControlName="EXCUSE_DATE" class="form-control" bsDatepicker
+                            [bsConfig]="datePickerConfig" />
+                    </div>
+
+                    <div
+                        *ngIf="AddCourseForm.controls.EXCUSE_DATE.invalid && (AddCourseForm.controls.EXCUSE_DATE.dirty || AddCourseForm.controls.EXCUSE_DATE.touched)">
+                        <div *ngIf="AddCourseForm.controls.EXCUSE_DATE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.add_to_skill_record"|translate}} {{"courses.classification"|translate}} <span
+                                class="reqstart">*</span></h6>
+                        <input *ngIf="!course" (change)="skillsChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="SKILLS_OPTION" class="form-control" />
+                        <input *ngIf="course" [checked]="course.SKILLS_OPTION == 1" (change)="skillsChange()"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" formControlName="SKILLS_OPTION" class="form-control" />
+                        <select style="width: 90%; display: inline-block; height: 40px !important;"
+                            [attr.disabled]="skillsDisabled ? '' : null" class="form-control"
+                            formControlName="CLASSIFICATION_ID">
+                            <option *ngFor="let classification of classifications" [value]="classification.ID">
+                                {{ classification.NAME_AR }}</option>
+                        </select>
+                    </div>
+
+                    <div
+                        *ngIf="AddCourseForm.controls.CLASSIFICATION_ID.invalid && (AddCourseForm.controls.CLASSIFICATION_ID.dirty || AddCourseForm.controls.CLASSIFICATION_ID.touched)">
+                        <div *ngIf="AddCourseForm.controls.CLASSIFICATION_ID.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.status"|translate}} <span class="reqstart">*</span></h6>
+                        <select class="form-control" formControlName="STATUS"
+                            style="margin-top: 20px; height: 40px !important;">
+                            <option value="0">{{"courses.course_not_active"|translate}}</option>
+                            <option value="1">{{"courses.course_active"|translate}}</option>
+                            <option value="2">{{"courses.course_canceled"|translate}}</option>
+                        </select>
+                    </div>
+                    <div
+                        *ngIf="AddCourseForm.controls.STATUS.invalid && (AddCourseForm.controls.STATUS.dirty || AddCourseForm.controls.STATUS.touched)">
+                        <div *ngIf="AddCourseForm.controls.STATUS.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.campus"|translate}} <span class="reqstart">*</span>
+
+                            <a href="#" (click)="allcampus()">{{'general.all'|translate}}</a>&nbsp;&nbsp;
+                            <a href="#" (click)="allcampus('M')">{{'general.allmales'|translate}}</a>&nbsp;&nbsp;
+                            <a href="#" (click)="allcampus('F')">{{'general.allfemals'|translate}}</a>
+                        </h6>
+                        <ng-select [items]="campus" bindLabel="CAMP_TITLE" [multiple]="true" bindValue="CAMP_PK"
+                            formControlName="CAMP">
+                        </ng-select>
+                    </div>
+
+                    <div
+                        *ngIf="AddCourseForm.controls.CAMP.invalid && (AddCourseForm.controls.CAMP.dirty || AddCourseForm.controls.CAMP.touched)">
+                        <div *ngIf="AddCourseForm.controls.CAMP.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="col-md-6" *ngIf="checkCollege">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.colleges"|translate}} <span class="reqstart">*</span>
+                            <a href="#" (click)="allcolleges()">{{'general.all'|translate}}</a>
+
+                        </h6>
+                        <ng-select [items]="colleges" bindLabel="COLL_TITLE" [multiple]="true" bindValue="COLL_PK"
+                            formControlName="COLLEGE">
+                        </ng-select>
+                    </div>
+
+                    <div
+                        *ngIf="AddCourseForm.controls.COLLEGE.invalid && (AddCourseForm.controls.COLLEGE.dirty || AddCourseForm.controls.COLLEGE.touched)">
+                        <div *ngIf="AddCourseForm.controls.COLLEGE.errors.required">
+                            <b style="position: relative; left: -10px;"
+                                class="text-danger">{{"users.required"|translate}}</b>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+            <h6>{{"courses.details_ar"|translate}}</h6>
+            <ckeditor [config]="toolbarConfig" [(ngModel)]="editorData.DETAILS_AR" [editor]="EditorAR"></ckeditor>
+        </div>
+        <div class="col-md-12" style="margin-top: 15px;">
+            <h6>{{"courses.details_en"|translate}}</h6>
+            <ckeditor [config]="toolbarConfig" [(ngModel)]="editorData.DETAILS_EN" [editor]="EditorEN"></ckeditor>
+        </div>
+    </div>
+    <div *ngIf="AddCourseForm.invalid" class="row" style="margin-top: 20px; text-align: center;">
+        <div class="col-md-12">
+            <span class="text-danger"><b>{{ "general.submit_note" | translate}}  <i class="fas fa-exclamation-circle"></i></b></span>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px; text-align: center;">
+        <div class="col-md-12">
+            <button *ngIf=" !course" style="width: 20%;" [disabled]="submitted || AddCourseForm.invalid"
+                (click)="onSubmit()" type="submit" class="btn btn-primary">{{ "general.save" | translate}} <i
+                    class="fa fa-save"></i></button>
+            <button *ngIf=" course" style="width: 20%;" [disabled]="submitted || AddCourseForm.invalid"
+                (click)="onUpdate()" type="submit" class="btn btn-primary">{{ "general.edit" | translate}} <i
+                    class="fa fa-save"></i></button>
+
+            <button style="width: 20%; margin-right: 10px;" [disabled]="submitted || AddCourseForm.invalid" (click)="back()" type="submit"
+                class="btn btn-primary">{{ "general.cancel" | translate}} <i class="fa fa-save"></i></button>
+        </div>
+    </div>
+</section>

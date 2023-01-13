@@ -1,0 +1,37 @@
+<div class="nav-item has-sub">
+    <a href="javascript:void(0)"><span>{{ "menu.traingnig" | translate }} </span>
+        <i class="ik ik-user"></i></a>
+    <div class="submenu-content">
+        <a [ngClass]="{'active': activeRoute == 'courses-list'}" href="#" class="menu-item"
+            routerLink="std/courses-list">
+            {{ "menu.stds-courses-list" | translate }}
+        </a>
+        <a [ngClass]="{'active': activeRoute == 'mycourses'}" href="#" class="menu-item"
+            routerLink="std/mycourses">
+            {{ "menu.mycourses" | translate }}
+        </a>
+    </div>
+</div>
+
+<div class="nav-item has-sub">
+    <a href="javascript:void(0)"><span>{{ "menu.skills" | translate }} </span>
+        <i class="ik ik-user"></i></a>
+    <div class="submenu-content">
+        <a [ngClass]="{'active': activeRoute == 'conditions'}" href="#" class="menu-item"
+            routerLink="std/conditions">
+            {{ "menu.stds-conditions" | translate }}
+        </a>
+        <a [ngClass]="{'active': activeRoute == 'standards'}" href="#" class="menu-item"
+            routerLink="std/standards">
+            {{ "menu.standards" | translate }}
+        </a>
+        <a [ngClass]="{'active': activeRoute == 'skills-courses'}" href="#" class="menu-item"
+            routerLink="std/skills-courses">
+        {{ "menu.stds-skills-courses" | translate }}
+        </a>
+        <a [ngClass]="{'active': activeRoute == 'skills-courses-record'}" href="#" class="menu-item"
+            routerLink="std/skills-courses-record">
+        {{ "menu.skills" | translate }}
+        </a>
+    </div>
+</div>

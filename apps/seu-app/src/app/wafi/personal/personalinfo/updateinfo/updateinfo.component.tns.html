@@ -1,0 +1,52 @@
+<ScrollView>
+
+<FlexboxLayout  flexDirection="column" class="pop iosFont">
+
+    <Label text='{{"wafi.UpdateInfo" | translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+    <StackLayout  style="color: #080b57;">
+       
+
+        <Label text='{{"wafi.poersonalemail"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.email" #mail="ngModel"
+         required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"></TextField>
+         <Label *ngIf="!mail.valid" text='{{"wafi.email_err_msg"|translate}}' style="color: red;"></Label>
+
+        <Label text='{{"wafi.Mobile"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.mobile_no" #mobile="ngModel" keyboardType="phone" required pattern="[0-9]+"></TextField>
+        <Label *ngIf="!mobile.valid" text='{{"wafi.phone_no_err"|translate}}' style="color: red;"></Label>
+
+
+        <Label text='{{"wafi.AlternativePhone"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.phone_no" #phone="ngModel" keyboardType="phone" required pattern="[0-9]+"></TextField>
+        <Label *ngIf="!phone.valid" text='{{"wafi.phone_no_err"|translate}}' style="color: red;"></Label>
+
+        <Label text='{{"wafi.address"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.address" #address="ngModel" required></TextField>
+
+        <Label text='{{"wafi.addressEN"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <TextField [(ngModel)]="updatedForm.address_s" #reason="ngModel" required></TextField>
+
+        <Label text='{{"wafi.comminicationlanguage"|translate}}' style="font-weight: 800;margin-top:20; color: #f08b1c"></Label>
+        <GridLayout rows="auto" columns="*,10" class="ysBox">
+            <Label row="0" col="1" class="ysPBox"></Label>
+             <Label row="0" col="0" text="&#xf0d7;" style="text-align: right;margin-right: 20;color:orange;" class="fas arr-drop" android:visibility="collapsed"></Label> 
+            <DropDown class="ysPBox2"
+            row="0" col="0"
+            #dropdown
+            [items]="langsDropDown"
+            (selectedIndexChanged)="getLang($event)"
+            itemsTextAlignment="left"
+            itemsPadding="5"
+            required
+            (loaded) =onLoadedDropDown(dropdown)
+            >
+            </DropDown>
+        </GridLayout>
+    </StackLayout>
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
+        <Button text='{{"tasks.Send" | translate}}' (tap)="onFormSubmit()" class="print-btn"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>
+</ScrollView>

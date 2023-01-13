@@ -1,0 +1,137 @@
+<mat-dialog-content>
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="exampleModalLabel">{{"services.lecture_execuse.title"|translate}}
+        </h5>
+      </div>
+
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+
+          <P class="text-center">
+            <span style="font-weight: bold; font-size: 15px;">{{reqData.notes[0].text1}} : </span>
+            <br />
+            {{reqData.notes[1].text1}}
+
+            <br />
+            {{reqData.notes[2].text1}}
+
+            <br />
+            {{reqData.notes[3].text1}}
+
+            <br />
+            {{reqData.notes[4].text1}}
+
+          </P>
+
+          <div class="row ser-block">
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6> {{"services.lecture_execuse.define_courses_names"|translate}}</h6>
+                <table style="text-align: center" class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">{{"general.crn"|translate}} </th>
+
+                      <th scope="col">{{"general.course_name"|translate}}</th>
+
+
+                      <th scope="col"> </th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let it of reqData.schedules;let i=index;">
+                      <td>{{it.CRN}}</td>
+                      <td>{{it.CRSE_TITLE}}</td>
+                      <td>
+                        <input type="checkbox" name="chkCourse" (change)="changeStatus(it,$event,i)" #chkCourse>
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.lecture_execuse.choose_lec_type"|translate}}</h6>
+                <select name="type" #type="ngModel" [(ngModel)]="lectureExecuse.type" class="form-control"
+                  [class.is-invalid]=" lectureExecuse.reason==''">
+                  <option value="">{{"services.lecture_execuse.lecture_type"|translate}}</option>
+                  <option *ngFor="let item of reqData.lectures_type" value="{{item.id}}">{{item.value}}</option>
+                </select>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.lecture_execuse.choose_week"|translate}}</h6>
+                <select name="week" #week="ngModel" [(ngModel)]="lectureExecuse.week" class="form-control"
+                  [class.is-invalid]=" lectureExecuse.week==''">
+                  <option value="">{{"general.week"|translate}}</option>
+                  <option *ngFor="let item of reqData.weeks_list" value="{{item.id}}">{{item.value}}</option>
+                </select>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.lecture_execuse.define_date"|translate}}</h6>
+                <input style="direction: rtl;" class="form-control" name="date" #date="ngModel"
+                  [(ngModel)]="lectureExecuse.date" type="date" style="direction: rtl;text-align:right">
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.lecture_execuse.absence_cause"|translate}}</h6>
+                <textarea name="reason" #reason="ngModel" [(ngModel)]="lectureExecuse.reason"
+                  class="form-control"></textarea>
+
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <div class="state">
+                <h6>{{"services.lecture_execuse.file_size"|translate}}</h6>
+                <div class="custom-file">
+                  <input name="imageUrl"  class="custom-file-input" type="file" accept="*/*" (change)="handleInputChange($event)" id="imageUrl" />
+                  <label for="imageUrl" class="custom-file-label ">
+                  </label>
+                </div>
+              </div>
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-info"></div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline-dark ml-1"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>{{"general.save"|translate}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</mat-dialog-content>

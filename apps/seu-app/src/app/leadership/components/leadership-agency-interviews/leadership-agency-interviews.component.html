@@ -1,0 +1,36 @@
+<div class="main-content">
+    <seu-loader [isLoading]="isLoading"></seu-loader>
+    <service-header [title]="'leadership.agency_interview_page.ads' | translate"></service-header>
+    <div class="widget" *ngIf="!isLoading">
+        <div class="widget-header">
+            <h3 class="widget-title">
+                {{ 'leadership.agency_interview_page.ads' | translate }}
+            </h3>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{{"leadership.job.title" | translate}}</th>
+                    <th scope="col">{{"leadership.agency_interview_page.start_date" | translate}}</th>
+                    <th scope="col">{{"leadership.agency_interview_page.end_date" | translate}}</th>
+                    <th scope="col">{{"leadership.actions" | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ad of adsList; let i = index;">
+                    <td>{{i+1}}</td>
+                    <td>{{ad.JOB_TITLE}}</td>
+                    <td>{{ad.AGENCY_START_DATE | date :'dd/MM/yyyy'}}</td>
+                    <td>{{ad.AGENCY_END_DATE | date :'dd/MM/yyyy'}}</td>
+                    <td>
+                      <button (click)="applications(ad)" class="btn btn-primary">{{"leadership.ad.apps" | translate}}</button>
+                      &nbsp;
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<mat-dialog-content dir="rtl">
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">
+        {{ "leadership.job.add_new_job" | translate}}
+      </h5>
+    </div>
+    <div class="modal-body">
+      <form role="form" [formGroup]="AddJobForm">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.job.title"|translate}} <span class="reqstart">*</span></h6>
+              <input type="text" formControlName="JOB_TITLE" class="form-control" />
+            </div>
+            <div
+              *ngIf="AddJobForm.controls.JOB_TITLE.invalid && (AddJobForm.controls.JOB_TITLE.dirty || AddJobForm.controls.JOB_TITLE.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_TITLE.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.job.category"|translate}} <span class="reqstart">*</span></h6>
+              <ng-select [items]="cats" bindLabel="LOOKUP_NAME" bindValue="LOOKUP_CODE" formControlName="JOB_CAT_CODE">
+              </ng-select>
+            </div>
+            <div
+              *ngIf="AddJobForm.controls.JOB_CAT_CODE.invalid && (AddJobForm.controls.JOB_CAT_CODE.dirty || AddJobForm.controls.JOB_CAT_CODE.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_CAT_CODE.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.job.college_dean"|translate}} <span class="reqstart">*</span></h6>
+              <ng-select #SelectJobCode [items]="job_depts_list" bindLabel="DEPT_NAME" bindValue="DEPT_CODE"
+                formControlName="JOB_DEPT_CODE">
+              </ng-select>
+            </div>
+            <div
+              *ngIf="AddJobForm.controls.JOB_DEPT_CODE.invalid && (AddJobForm.controls.JOB_DEPT_CODE.dirty || AddJobForm.controls.JOB_DEPT_CODE.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_DEPT_CODE.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.job.agency"|translate}} <span class="reqstart">*</span></h6>
+              <ng-select [items]="agences" bindLabel="DEPT_NAME" bindValue="DEPT_CODE"
+                formControlName="JOB_AGENCY_CODE">
+              </ng-select>
+            </div>
+            <div
+              *ngIf="AddJobForm.controls.JOB_AGENCY_CODE.invalid && (AddJobForm.controls.JOB_AGENCY_CODE.dirty || AddJobForm.controls.JOB_AGENCY_CODE.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_AGENCY_CODE.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="state">
+              <h6>{{"leadership.job.gender"|translate}} <span class="reqstart">*</span></h6>
+              <ng-select [items]="genders" bindLabel="value" bindValue="id" formControlName="JOB_GENDER">
+              </ng-select>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 30px;">
+          <div class="col-md-12">
+            <div class="state cke_rtl">
+              <h6>{{"leadership.job.desc"|translate}} <span class="reqstart">*</span></h6>
+              <ckeditor style="height: 100px;" [config]="toolbarConfig" formControlName="JOB_DESC" [editor]="EditorAR">
+              </ckeditor>
+            </div>
+            <div
+              *ngIf="AddJobForm.controls.JOB_DESC.invalid && (AddJobForm.controls.JOB_DESC.dirty || AddJobForm.controls.JOB_DESC.touched)">
+              <div *ngIf="AddJobForm.controls.JOB_DESC.errors.required">
+                <b style="position: relative; left: -10px;" class="text-danger">{{"leadership.required"|translate}}</b>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-md-12" style="text-align: center;">
+            <button style="width: 30%;" [disabled]="submitted || AddJobForm.invalid" (click)="onSubmit()"
+              type="submit" class="btn btn-primary">{{ (job ? "leadership.update" : "leadership.save" ) | translate}}
+              <i class="fa fa-save"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,25 @@
+<FlexboxLayout  flexDirection="column" class="pop iosFont">
+    <Label text='{{"services.change_branch.change_branch_req"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+
+    <StackLayout class="font">
+        <Label text='{{"services.change_branch.alert"|translate}}' style="font-weight: 800;"></Label>
+        <Label text='{{"services.change_branch.alert_content"|translate}}' textWrap="true"></Label>
+        <Label text='{{"services.change_branch.branch_cancellation_validity"|translate}}' textWrap="true"></Label>
+
+        <Label text='{{"services.change_branch.choose_branch"|translate}}' style="font-weight: 800;margin-top: 20; color:#f08b1c"></Label>
+        <DropDown
+        [items]="branchesDropDown"
+        (selectedIndexChanged)="getBranch($event)"
+        hint='{{"services.change_branch.choose_branch"|translate}}'
+        itemsTextAlignment="left"
+        itemsPadding="5"
+        >
+        </DropDown>
+    </StackLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" justifyContent="space-around" style="margin-top: 5;">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()" class="print-btn" [isEnabled]="cmp.camp != '' "></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()" class="print-btn"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

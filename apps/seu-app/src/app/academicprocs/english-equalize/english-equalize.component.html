@@ -1,0 +1,51 @@
+<div class="main-content">
+  <service-header [title]="'services.english-equalize.title' |translate"
+    [desc]="'services.english-equalize.desc' |translate"></service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+
+  <div class="ser-state" *ngIf="!isLoading">
+    <div *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}
+    </div>
+  </div>
+  <br />
+  <div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+      <h3 class="widget-title">{{"general.request.pre_requests"|translate}}
+        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+          {{"general.request.add_request"|translate}}<i class="ik ik-plus"></i>
+        </button>
+      </h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">{{"general.request.req_no"|translate}}</th>
+            <th scope="col">{{"services.english-equalize.exam_name"|translate}}</th>
+            <th scope="col">{{"general.request.req_date"|translate}}</th>
+            <th scope="col">{{"services.english-equalize.reply_date"|translate}}</th>
+            <th scope="col">{{"general.request.req_status"|translate}}</th>
+            <th scope="col">{{"general.print"|translate}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let it of reqData.requests;let i=index;">
+            <td>{{it.request_number}}</td>
+            <td>{{it.name}}</td>
+            <td>{{it.insert_date}}</td>
+            <td>{{it.approval_date}}</td>
+            <td>{{it.status}}</td>
+            <td>
+              <a class="btn btn-primary" seu-auto-print [href]="print(it.request_number)"><span
+                  class="ik ik-printer"></span>
+                {{"general.print"|translate}}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

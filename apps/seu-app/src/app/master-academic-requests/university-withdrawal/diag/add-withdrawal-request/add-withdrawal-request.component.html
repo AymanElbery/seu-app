@@ -1,0 +1,59 @@
+<mat-dialog-content dir="rtl">
+  <div class="modal-content">
+    <div class="modal-header">
+
+      <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">{{"services.withdrow_univ.title"|translate}}</h5>
+
+    </div>
+    <div class="modal-body">
+      <P class="text-center">
+        <span style="color: red;">{{"services.withdrow_univ.alert"|translate}}</span>{{"services.withdrow_univ.alert_content"|translate}}
+      </P>
+      <!-- <P class="text-center">---  </P> -->
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="main-content">
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.withdrow_univ.mobile"|translate}}</h6>
+                    <input name="mobile" type="text" #mobile="ngModel" [(ngModel)]="withdrawalReq.mobile"
+                      class="form-control" />
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.withdrow_univ.personal_mail"|translate}}</h6>
+                    <input name="email" type="text" #email="ngModel" [(ngModel)]="withdrawalReq.email"
+                      class="form-control" />
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+
+
+
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+              {{"general.cancel"|translate}}</button>
+
+            <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>  {{"general.save"|translate}}</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+</mat-dialog-content>

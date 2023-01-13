@@ -1,0 +1,53 @@
+<div class="main-content">
+  <service-header [title]="'services.change_schedule.title' |translate" [desc]="'services.change_schedule.desc' |translate">
+  </service-header>
+  <seu-loader [isLoading]="isLoading"></seu-loader>
+  <div class="ser-state" *ngIf="!isLoading">
+    <div *ngFor="let msg of msgs"
+      [ngClass]="msg.type == 'info' ? 'alert alert-info' : (msg.type == 'error' ? 'alert alert-danger' : (msg.type == 'success' ? 'alert alert-success' : 'alert alert-warning'))"
+      role="alert">
+      {{msg.body}}
+    </div>
+  </div>
+  <div class="widget" *ngIf="!isLoading">
+    <div class="widget-header">
+      <h3 class="widget-title">{{"general.request.pre_requests"|translate}}
+        <button *ngIf="reqData.can_add_new_request" type="button" class="btn btn-primary" (click)="openDialoge()">
+          {{"general.request.add_request"|translate}} <i class="ik ik-plus"></i>
+        </button>
+      </h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">{{"general.request.req_no"|translate}}</th>
+            <th scope="col">{{"services.change_schedule.day"|translate}}</th>
+            <th scope="col">{{"services.change_schedule.duration"|translate}}</th>
+            <th scope="col">{{"services.change_schedule.status"|translate}}</th>
+            <th scope="col">{{"services.change_schedule.actions"|translate}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of reqData.requests;let i=index;">
+            <td>CH-SH-{{request.REQ_PK}}</td>
+            <td>{{"services.change_schedule."+days[request.DAY] | translate}}</td>
+            <td>
+              <span *ngIf="request.DURATION == 'am'">{{"services.change_schedule.am"|translate}}</span>
+              <span *ngIf="request.DURATION == 'pm'">{{"services.change_schedule.pm"|translate}}</span>
+            </td>
+            <td>
+              <span *ngIf="request.APPROVAL == 2" class="badge badge-info">{{"services.change_schedule.pendding"|translate}}</span>
+              <span *ngIf="request.APPROVAL == 1" class="badge badge-success">{{"services.change_schedule.confirm"|translate}}</span>
+              <span *ngIf="request.APPROVAL == 0" class="badge badge-danger">{{"services.change_schedule.reject"|translate}}</span>
+            </td>
+            <td>
+              <button *ngIf="request.APPROVAL == 2" class="btn btn-danger" (click)="cancel(request.REQ_PK)">{{"services.change_schedule.cancel"|translate}}</button>
+              <strong *ngIf="request.APPROVAL != 2" class="text-danger" >{{"services.change_schedule.can_not_cancel"|translate}}</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<!-- Modal -->
+<mat-dialog-content>
+  <div class="modal-dialog" style="direction: rtl;" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"services.summer_withdraw.title"|translate}}</h5>
+
+      </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+
+          <h5>
+            {{"services.summer_withdraw.alert"|translate}}
+          </h5>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i
+              class="ik ik-x"></i>{{"general.cancel"|translate}}</button>
+
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,69 @@
+<app-header></app-header>
+<ScrollView>
+    <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
+
+    <StackLayout *ngIf="!isLoading" >
+
+        <GridLayout  columns="auto, *" class="serv-title">
+            <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+            <Label col="1"     text='{{"wafi.employee-requests" | translate}}' class="serv-name" ></Label>
+            <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+        
+        </GridLayout>
+
+
+        <StackLayout *ngIf="emplistrequest.length==0">
+            <Label text='{{"wafi.data_not_found"|translate}}' style="font-weight: 800;margin-right:20; color: #f08b1c" class="iosFont"></Label>
+         </StackLayout>
+
+    <StackLayout height="100%" *ngIf="!isLoading">
+        <StackLayout  *ngFor="let empreqs of emplistrequest;let i=index;">
+            <FlexboxLayout (tap)="clickme(empreqs)" [visibility]="clicked == empreqs ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between" class=" ysHdrop2">
+                <Label  text="&#xf107;"  class="fas arr-drop" textWrap="true" style="width: 10% ;"></Label>
+                <FlexboxLayout flexDirection="row-reverse" style="width: 90% ;">
+                    <Label text='{{empreqs.requestDesc}}-{{empreqs.requestStatus}}'></Label>
+                </FlexboxLayout>
+            </FlexboxLayout>
+            <FlexboxLayout  [visibility]="clicked == empreqs ? 'visible' : 'collapsed'"  flexDirection="column">
+                <FlexboxLayout  flexDirection="column">
+                    <FlexboxLayout (tap)="uclickme(empreqs)" flexDirection="row" justifyContent="space-between" class="ysHdrop">
+                        <Label  text="&#xf106;"  class="fas arr-drop" textWrap="true" style="width: 10% ;"></Label>
+                        <FlexboxLayout flexDirection="row-reverse" style="width: 90% ;">
+                            <Label text='{{empreqs.requestDesc}}-{{empreqs.requestStatus}}'></Label>        
+                        </FlexboxLayout>
+                    </FlexboxLayout>
+    
+                    <GridLayout class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,150">
+                              
+                        <Label row="0"  column="1" class="ysPBox" textWrap="true"  style="font-weight: 800;" text='{{"wafi.RequestType" | translate}} :'></Label>
+                        <Label row="0"  column="0" class="ysPBox2" textWrap="true" text="{{empreqs.requestDesc}}"></Label>
+                    
+                        <Label row="1" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.VactionType" | translate}} :'></Label>
+                        <Label row="1"  column="0" class="ysPBox2" textWrap="true" text="{{empreqs.vacationDesc}}"></Label>
+                    
+                        <Label row="2" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.Period" | translate}} :'></Label>
+                        <Label row="2"  column="0" class="ysPBox2" textWrap="true" text="{{empreqs.timePeriod}}" ></Label>
+          
+                        <Label row="3" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.BeginDate" | translate}} :'></Label>
+                        <Label row="3"  column="0" class="ysPBox2" textWrap="true" text="{{empreqs.beginDate}}"></Label>
+          
+                        <Label row="4" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.EndDate" | translate}} :'></Label>
+                        <Label row="4"  column="0" class="ysPBox2" textWrap="true" text="{{empreqs.endDate}}"></Label>
+                        <Label row="5" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.Status" | translate}} :'></Label>
+                        <Label row="5"  column="0" class="ysPBox2" textWrap="true" text="{{empreqs.requestStatus}}"></Label>
+
+                        <Label row="6" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.Details" | translate}} :'></Label>
+                        <Label row="6"  column="0" (tap)="getreqdetail(i,empreqs.requestSeq,empreqs.requestType)" textWrap="true" class="fas ysPBox2" text="&#xf0e0;"></Label>
+                       
+                        <Label *ngIf="empreqs.enableDelete==true" row="7" column="1" class="ysPBox" textWrap="true" style="font-weight: 800;" text='{{"wafi.Delete" | translate}} :'></Label>
+
+                        <Label *ngIf="empreqs.enableDelete==true" row="7"  column="0" class="ysPBox2 fas"  [disabled]='deleting' text="&#xf1f8;" (tap)="delete(empreqs.requestSeq,empreqs.requestType)" ></Label>
+
+                      </GridLayout>
+    
+                </FlexboxLayout>
+            </FlexboxLayout>
+        </StackLayout>
+    </StackLayout>
+</StackLayout>
+</ScrollView>

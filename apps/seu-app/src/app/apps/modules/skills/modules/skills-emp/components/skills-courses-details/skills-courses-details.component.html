@@ -1,0 +1,309 @@
+<seu-loader [isLoading]="isLoading"></seu-loader>
+<section *ngIf="!isLoading" class="dashboard-wrap ug-content"
+    style="margin-top: 30px; padding: 0 30px;position: relative;">
+    <div style="position: absolute;left: 0;right: 0;bottom: 0;top: 0;background: white;z-index: 1000;opacity: .1;"></div>
+    <form role="form" [formGroup]="AddCourseForm">
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.title"|translate}}</h6>
+                        <input type="text" disabled formControlName="TITLE_AR" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.title_en"|translate}}</h6>
+                        <input type="text" disabled formControlName="TITLE_EN" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="col-md-2">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.type"|translate}}</h6>
+                        <select class="form-control" disabled formControlName="TYPE" style="height: 40px !important;">
+                            <option value="in">{{"courses.in_type"|translate}}</option>
+                            <option value="out">{{"courses.out_type"|translate}}</option>
+                            <option value="in_out">{{"courses.in_out_type"|translate}}</option>
+                        </select>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-2">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.cert_type"|translate}}</h6>
+                        <select class="form-control" disabled formControlName="CERT_TYPE"
+                            style="height: 40px !important;">
+                            <option value="c">{{"courses.cert_course"|translate}}</option>
+                            <option value="w">{{"courses.cert_work"|translate}}</option>
+                        </select>
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="col-md-2">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.c_lang"|translate}}</h6>
+                        <select class="form-control" disabled formControlName="C_LANG" style="height: 40px !important;">
+                            <option value="ar">{{"general.ar"|translate}}</option>
+                            <option value="en">{{"general.en"|translate}}</option>
+                        </select>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-2">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.seats"|translate}}</h6>
+                        <input type="number" disabled formControlName="SEATS" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-4">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.stuff_name"|translate}}</h6>
+                        <select class="form-control" disabled formControlName="STAFF_ID"
+                            style="height: 40px !important;">
+                            <option *ngFor="let stuff of stuffs" [value]="stuff.USER_ID">{{ stuff.NAME_AR }}</option>
+                        </select>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.start_date"|translate}}</h6>
+                        <h5>{{courseDetails.START_DATE}}</h5>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.end_date"|translate}}</h6>
+                        <h5>{{courseDetails.END_DATE}}</h5>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.req_start_date"|translate}}</h6>
+                        <h5>{{courseDetails.REG_START_DATE}}</h5>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.req_end_date"|translate}}</h6>
+                        <h5>{{courseDetails.REG_END_DATE}}</h5>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-3">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.period"|translate}}</h6>
+                        <input type="number" disabled formControlName="PERIOD" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-3">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.time"|translate}}</h6>
+                        <input type="text" disabled formControlName="TIME" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-3">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.hr_hours"|translate}}</h6>
+                        <input type="number" disabled formControlName="HR_HOURS" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-3">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.allowed_absense"|translate}}</h6>
+                        <input type="number" disabled formControlName="ALLOWED_ABSENSE" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.institution"|translate}}</h6>
+                        <input type="text" disabled formControlName="INSTITUTION_AR" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.institution_en"|translate}}</h6>
+                        <input type="text" disabled formControlName="INSTITUTION_EN" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.location_ar"|translate}}</h6>
+                        <input type="text" disabled formControlName="LOCATION_AR" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.location_en"|translate}}</h6>
+                        <input type="text" disabled formControlName="LOCATION_EN" class="form-control" />
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6" *ngIf="courseDetails.FACE_ATTEND == 1">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.face_attend"|translate}} {{"courses.class_room"|translate}}</h6>
+                        <input [checked]="true"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" disabled formControlName="FACE_ATTEND" class="form-control" />
+                        <span style="font-size: 1.3em;">{{courseDetails.CLASS_ROOM}}</span>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6" *ngIf="courseDetails.VIRTUAL_ATTEND == 1">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.virual_attend"|translate}} {{"courses.link"|translate}}</h6>
+                        <input [checked]="true"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" disabled formControlName="VIRTUAL_ATTEND" class="form-control" />
+                        <a href="{{courseDetails.LINK}}" target="_blank" style="font-size: 1.3em;">{{courseDetails.LINK}}</a>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6" *ngIf="courseDetails.CANCEL_OPTION == 1">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.cancel"|translate}} {{"courses.cancel_date"|translate}}</h6>
+                        <input [checked]="true"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" disabled formControlName="CANCEL_OPTION" class="form-control" />
+                        <span style="font-size: 1.3em;">{{courseDetails.CANCEL_DATE}}</span>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6" *ngIf="courseDetails.EXCUSE_OPTION == 1">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.excuse"|translate}} {{"courses.excuse_date"|translate}}</h6>
+                        <input [checked]="true"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" disabled formControlName="EXCUSE_OPTION" class="form-control" />
+                        <span style="font-size: 1.3em;">{{courseDetails.EXCUSE_DATE}}</span>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6" *ngIf="courseDetails.SKILLS_OPTION == 1">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.add_to_skill_record"|translate}} {{"courses.classification"|translate}}</h6>
+                        <input [checked]="true"
+                            style="width: 10%; display: inline-block; cursor: pointer; position: relative; top: 15px;"
+                            type="checkbox" disabled formControlName="SKILLS_OPTION" class="form-control" />
+                        <select style="width: 90%; display: inline-block; height: 40px !important;" disabled
+                            class="form-control" formControlName="CLASSIFICATION_ID">
+                            <option *ngFor="let classification of classifications" [value]="classification.ID">
+                                {{ classification.NAME_AR }}</option>
+                        </select>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6 style="margin-bottom: 25px;">{{"courses.status"|translate}}</h6>
+                        <h5 *ngIf="courseDetails.STATUS == '0'">{{"courses.course_not_active"|translate}}</h5>
+                        <h5 *ngIf="courseDetails.STATUS == '1'">{{"courses.course_active"|translate}}</h5>
+                        <h5 *ngIf="courseDetails.STATUS == '2'">{{"courses.course_canceled"|translate}}</h5>
+                        <h5 *ngIf="courseDetails.STATUS == '4'">{{"courses.course_completed"|translate}}</h5>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 15px;">
+            <div class="col-md-6">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.campus"|translate}}</h6>
+                        <ng-select class="disable-arrow disable-dropdown disable-clear-all" [items]="campus"
+                            bindLabel="CAMP_TITLE" [multiple]="true" bindValue="CAMP_PK" formControlName="CAMP"
+                            [searchable]="false" [clearable]="true">
+                        </ng-select>
+                    </div>
+                </ng-container>
+            </div>
+
+            <div class="col-md-6" *ngIf="checkCollege">
+                <ng-container>
+                    <div class="state">
+                        <h6>{{"courses.colleges"|translate}}</h6>
+                        <ng-select class="disable-arrow disable-dropdown disable-clear-all" [items]="colleges"
+                            bindLabel="COLL_TITLE" [multiple]="true" bindValue="COLL_PK" formControlName="COLLEGE"
+                            [searchable]="false" [clearable]="true">
+                        </ng-select>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+            <div class="form-group">
+                <label for="DETAILS_AR">{{"courses.details_ar"|translate}}</label>
+                <p style="padding: 10px; background-color: #EDEDED; border-radius: 5px;"
+                    [innerHtml]="courseDetails.DETAILS_AR"></p>
+            </div>
+        </div>
+        <div class="col-md-12" style="margin-top: 15px;">
+            <div class="form-group">
+                <label for="DETAILS_EN">{{"courses.details_en"|translate}}</label>
+                <p style="padding: 10px; background-color: #EDEDED; border-radius: 5px;"
+                    [innerHtml]="courseDetails.DETAILS_EN"></p>
+            </div>
+        </div>
+    </div>
+</section>

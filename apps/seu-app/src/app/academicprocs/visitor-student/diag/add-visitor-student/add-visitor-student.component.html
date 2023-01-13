@@ -1,0 +1,235 @@
+<mat-dialog-content>
+  <div class="modal-dialog" role="document" dir="rtl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="text-align: center" class="modal-title " id="exampleModalLabel">
+          {{"general.request.add_request"|translate}}</h5>
+
+      </div>
+      <div class="modal-body">
+
+        <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title">{{"services.visitor_student.college_info"|translate}}</h3>
+            </div>
+            <div class="row ser-block">
+              <div class=" col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.desired_college"|translate}} </h6>
+                  <div class="row">
+                    <div class=" col-md-6 col-sm-12">
+                      <select required class="form-control" #UniversityID="ngModel"
+                        [(ngModel)]="visitorStudent.university" name="UniversityID"
+                        [class.is-invalid]="visitorStudent.university == ''">
+                        <!-- <option value=''>{{"services.visitor_student.choose_college"|translate}}</option> -->
+                        <option *ngFor="let un of universitiesList" [value]="un.UN_ID">{{un.UN_NAME}}</option>
+                      </select>
+                    </div>
+                    <div class=" col-md-6 col-sm-12"
+                      *ngIf="visitorStudent.university == '39' || visitorStudent.university == '37'">
+                      <input type="text" required class="form-control" #custom_university_name="ngModel"
+                        [(ngModel)]="visitorStudent.custom_university_name" name="custom_university_name"
+                        [class.is-invalid]="visitorStudent.custom_university_name == ''">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row ser-block">
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.term"|translate}} </h6>
+                  <select required class="form-control" #TermID="ngModel" [(ngModel)]="visitorStudent.term"
+                    name="TermID" [class.is-invalid]="visitorStudent.term == ''">
+                    <!-- <option value=''>{{"services.visitor_student.choose_term"|translate}}</option> -->
+                    <option *ngFor="let t of termList" [value]="t.id">{{t.value}}</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.academic_year"|translate}}</h6>
+                  <select required class="form-control" #YearID="ngModel" [(ngModel)]="visitorStudent.year"
+                    name="YearID" [class.is-invalid]="visitorStudent.year == ''">
+                    <!-- <option value=''>{{"services.visitor_student.choose_academic_year"|translate}}</option> -->
+                    <option *ngFor="let y of yearList" [value]="y.id">{{y.value}}</option>
+                  </select>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title">{{"services.visitor_student.course_info"|translate}}</h3>
+            </div>
+            <div class="row ser-block">
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"general.course_name"|translate}}</h6>
+                  <input type="text" required class="form-control" #CourseName="ngModel"
+                    [(ngModel)]="visitorStudent.course_name" name="CourseName"
+                    [class.is-invalid]="visitorStudent.course_name == ''">
+
+                </div>
+
+              </div>
+
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.course_hours"|translate}}</h6>
+                  <input type="text" required class="form-control" #CourseHours="ngModel"
+                    [(ngModel)]="visitorStudent.hours" name="CourseHours"
+                    [class.is-invalid]="visitorStudent.hours == 0">
+
+
+                </div>
+
+              </div>
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.course_alpha_code"|translate}}</h6>
+                  <input type="text" required class="form-control" #CourseSymbol="ngModel"
+                    [(ngModel)]="visitorStudent.course_symbol" name="CourseSymbol"
+                    [class.is-invalid]="visitorStudent.course_symbol == ''">
+
+                </div>
+
+              </div>
+
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.course_number_code"|translate}}</h6>
+                  <input type="text" required class="form-control" #CourseCode="ngModel"
+                    [(ngModel)]="visitorStudent.course_code" name="CourseCode"
+                    [class.is-invalid]="visitorStudent.course_code == ''">
+
+                </div>
+
+              </div>
+
+
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.upload_course_desc"|translate}}</h6>
+                  <input name="attachment" id="attachment" type="file" accept="*/*"
+                    (change)="handleInputChange($event)" />
+                  <h6>{{"services.visitor_student.file_size"|translate}}</h6>
+                </div>
+
+              </div>
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.upload_university_approval"|translate}}</h6>
+                  <input name="univ_approval" id="univ_approval" type="file" accept="*/*"
+                    (change)="handleInputChangeApproval($event)" />
+                  <h6>{{"services.visitor_student.file_size"|translate}}</h6>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title">{{"services.visitor_student.equivalent_course"|translate}}</h3>
+            </div>
+            <div class="row  ser-block">
+              <div class=" col-md-6 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.choose_subject"|translate}}</h6>
+                  <select required class="form-control" #CourseID="ngModel" [(ngModel)]="visitorStudent.course_equal"
+                    name="CourseID" [class.is-invalid]="visitorStudent.course_equal == ''">
+                    <!-- <option value=''>{{"services.visitor_student.choose_subject"|translate}}</option> -->
+                    <option *ngFor="let c of coursesList" [value]="c.id">{{c.value}}</option>
+                  </select>
+
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-header">
+              <h3 class="widget-title">{{"services.visitor_student.commitment"|translate}}</h3>
+            </div>
+            <div class="row  ser-block">
+              <div class=" col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{reqData.notes.nots}}</h6>
+                  <h6>1- {{reqData.notes.txt1}}</h6>
+                  <h6>2- {{reqData.notes.txt2}}</h6>
+                  <h6>3- {{reqData.notes.txt3}}</h6>
+                  <h6>4- {{reqData.notes.txt4}}</h6>
+                  <h6>5- {{reqData.notes.txt5}}</h6>
+
+
+
+
+                </div>
+
+              </div>
+
+            </div>
+            <div class="row  ser-block">
+              <div class=" col-md-12 col-sm-12">
+                <div class="state">
+                  <h6>{{"services.visitor_student.accept"|translate}}</h6>
+                  <input type="checkbox" class="checkbox" style="height: 20px;width:20px;" #Approve="ngModel"
+                    [(ngModel)]="approves.approve" name="Approve">
+
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="modal-footer">
+            <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+              {{"general.cancel"|translate}}</button>
+
+            <button [disabled]="(form.invalid || !approves.approve) || requesting" type="submit" class="btn btn-dark"><i
+                class="fa fa-database"></i>
+              {{"general.save"|translate}}</button>
+          </div>
+        </form>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!--<div class="widget-header">
+            <h3 class="widget-title"> تسجيل طلب</h3>
+          </div>
+        -->
+
+  <mat-spinner *ngIf="isLoading"
+    style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+  </mat-spinner>
+
+
+
+
+
+
+</mat-dialog-content>

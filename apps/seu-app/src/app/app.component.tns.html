@@ -1,0 +1,105 @@
+<!--
+RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawer/getting-started
+-->
+<RadSideDrawer    [drawerTransition]="sideDrawerTransition" gesturesEnabled="true" (loaded)="onLoaded()"  drawerContentSize="330">
+
+    <GridLayout  tkDrawerContent rows="auto, *" class="nt-drawer__content bgimg">
+        <!-- <Image src="~/images/log-b99.png" scaleX="1.1" scaleY="1.9" fill="aspectFill"></Image> -->
+ 
+        <StackLayout row="0" class="nt-drawer__header" style="background-color: #081247;">
+           <!--<Image class="nt-drawer__header-image fas t-36 img-user" src="font://&#xf2bd;"></Image> --> 
+            <Label class="nt-drawer__header-brand" style="font-size: 14px;" text="{{userName}}  " textWrap="true"></Label>
+        </StackLayout>
+
+        <ScrollView row="1" class="nt-drawer__body " style="direction: rtl;"  >
+
+             <StackLayout >
+                <GridLayout  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/land')">
+                   <!-- <Label col="1" text="الرئيسية" class="ysRootMenuItem" ></Label> -->
+                    <!-- <Label col="1"  text="&#xf015;" class="fas ysRootMenuIcon"></Label> -->
+                   <Image col="1"  class="home-img" src="~/images/home.png"></Image>
+
+                </GridLayout>  
+               <!--
+                      <StackLyout *ngFor="let item of _dataItems">
+                <FlexboxLayout flexDirection="row" justifyContent="space-between" >
+                    <GridLayout columns="auto, *" class="ysMenuGridHeader2 ">
+                        <Label col="1" text="&#xf107;" class="fas arr-drop" style="color: #f08b1c;"></Label>
+                        <Label col="1" text='{{item.title}}' class="ysMenuhead"></Label>
+                        <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead" (tap)="clicked(item)"></Label>
+                    </GridLayout>
+                </FlexboxLayout>
+                <GridLayout *ngFor="let it  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
+                    <Label col="1" text='{{it.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(it.route)" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>
+                    <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>
+
+                </GridLayout>
+                
+            </StackLyout>
+        -->
+               <!--menu :  <GridLayout style="margin-top: 40px">
+                    <StackLayout>
+                            <StackLayout  horizontalAlignment="right" style="margin-bottom: 30px" *ngFor="let item of _dataItems">
+                                <GridLayout  horizontalAlignment="right" columns="auto, *" class="ysMenuGridHeader2 " (tap)="clicked(item)">
+                                    <Label *ngIf="!clickedArray.includes(item)"  col="0" text="&#xf107;" class="fas arr-drop" style="color: #f08b1c;"></Label>
+                                    <Label *ngIf="clickedArray.includes(item)" col="0" text="&#xf106;" class="fas arr-drop" style="color: #f08b1c;"></Label>
+                                    <Label col="1" text='{{item.title}}' class="ysMenuhead"></Label>
+                                    <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead" ></Label>
+                                </GridLayout>
+                              <StackLayout orientation="horizontal" verticalAlignment="center" horizontalAlignment="right" *ngFor="let it  of item.subTitles; let i = index">
+                                <Label  horizontalAlignment="right" text='{{it.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(it.route)" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>
+                                <Label  text="&#xf0a3;"  class=" fas ysMenuIcon" [visibility]="clickedArray.includes(item) ? 'visible' : 'collapsed'"></Label>                                
+                              </StackLayout>
+                            </StackLayout>
+                    </StackLayout>
+                </GridLayout> -->
+      <StackLayout width="100%"  class="">
+            <StackLayout *ngFor="let item of _dataItems" >
+                <FlexboxLayout horizontalAlignment="right" (tap)="clickme(item)" [visibility]="clickedd == item ? 'collapsed' : 'visible'" flexDirection="row" justifyContent="space-between">
+                    <GridLayout    (tap)="clickme(item)" columns="auto, *" class="ysMenuGridHeader2 ">
+                        <Label col="1" text="&#xf107;"   class="fas arr-drop" style="color: #f08b1c;"></Label>
+                        <Label col="1"  horizontalAlignment="right" text='{{item.title}}' class="ysMenuhead"></Label>
+                        <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead"></Label>
+                    </GridLayout>
+                </FlexboxLayout>
+                <FlexboxLayout  horizontalAlignment="right"  [visibility]="clickedd == item ? 'visible' : 'collapsed'" flexDirection="column">
+                    <GridLayout (tap)="uclickme(item)" columns="auto, *" class="ysMenuGridHeader ">
+                        <Label col="1" text="&#xf106;"  class="fas arr-drop" style="color: #f08b1c;"></Label>
+                        <Label  horizontalAlignment="right"  col="1" text='{{item.title}}' class="ysMenuhead"></Label>
+                        <Label col="1" text="&#xf2b9;"  class=" far  ysMenuIconhead"></Label>
+
+                    </GridLayout>
+          
+
+
+                    <GridLayout (tap)="onNavItemTap(item.route)"  horizontalAlignment="right" *ngFor="let item  of item.subTitles" columns="auto, *" class="nt-drawer__list-item">
+                        <Label  horizontalAlignment="right" col="1" textWrap="true"  text='{{item.subTitle}}' class="ysMenuItem" (tap)="onNavItemTap(item.route)"></Label>
+                        <Label col="1"  text="&#xf0a3;"  class=" fas ysMenuIcon"></Label>
+    
+                    </GridLayout>
+                </FlexboxLayout>
+            </StackLayout>
+
+           
+        </StackLayout> 
+        <StackLayout class="hr m-10"></StackLayout>
+
+        <GridLayout horizontalAlignment="right"  columns="auto, *" class="nt-drawer__list-item"  (tap)="onNavItemTap('/reset')">
+            <Label  horizontalAlignment="right" col="1" text="تغير كلمة المرور " class="ysRootMenuItem" ></Label>
+            <Label col="1"  text="&#xf13e;" class="fas ysRootMenuIcon2"></Label>
+
+        </GridLayout>
+        <GridLayout horizontalAlignment="right"  columns="auto, *" class="nt-drawer__list-item"  (tap)="logout()">
+             <Label  horizontalAlignment="right" col="1" text="تسجيل خروج" class="ysRootMenuItem" ></Label> 
+            <Label col="1"  text="&#xf2f5;" class="fas ysRootMenuIcon2"></Label>
+
+        </GridLayout>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+
+    
+    <page-router-outlet  tkMainContent></page-router-outlet>
+</RadSideDrawer>

@@ -1,0 +1,48 @@
+<app-header></app-header>
+<ScrollView height="100%">
+ 
+    <StackLayout>
+
+
+    <ActivityIndicator *ngIf="!adsLoaded" [busy]="!adsLoaded"></ActivityIndicator>
+
+    <GridLayout  columns="auto, *" class="serv-title">
+        <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+        <Label col="1" text='{{"menu.ADS"| translate}}' class="serv-name" ></Label>
+        <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    
+    </GridLayout>
+
+       <!--  <StackLayout height="180" class="list-group-item news"
+            *ngFor="let item of userService.adsData">
+
+            <GridLayout >
+                <StackLayout>
+                   
+
+                        <Image class="slid-itme" height="120" stretch="aspectFill" stretch="aspectFill" row="0"
+                        src="{{decodeURL(item.image)}}"></Image>
+                    <Label horizontalAlignment="right" class="label-itme" textWrap="true" row="1"
+                        text="{{item.title}}"></Label>
+                </StackLayout>
+            </GridLayout>
+
+        </StackLayout> -->
+
+        <StackLayout  class="list-group-item news"
+        *ngFor="let item of userService.adsData">
+               <GridLayout rows="*" backgroundColor="White">
+                <GridLayout rows="*" columns="*"> 
+                        <Image stretch="aspectFill"
+                        src="{{decodeURL(item.image)}}" class="news-im"></Image>
+                   
+                </GridLayout>
+            </GridLayout>
+            <StackLayout class="title-bac">
+                <Label  text="{{item.title}}" class="news-title"
+                    textWrap="true"></Label>
+            </StackLayout>
+        </StackLayout> 
+
+    </StackLayout>
+</ScrollView>

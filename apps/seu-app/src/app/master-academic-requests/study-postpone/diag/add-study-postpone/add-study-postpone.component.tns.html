@@ -1,0 +1,30 @@
+<FlexboxLayout  flexDirection="column" class="pop iosFont">
+    <Label text='{{"services.postpone_request.postpone_req"|translate}}' style="color:#010447; border-color: #f08b1c;" class="header"></Label>
+
+    <Label text='{{"services.postpone_request.alert"|translate}}' textWrap="true" style="color: #010447;" class="font"></Label>
+    <Label text=' {{"services.postpone_request.desire"|translate}}{{reqData.cur_term}}' textWrap="true"></Label>
+
+    <Label text='{{"services.postpone_request.period"|translate}}' style="color: #010447;" class="font"></Label>
+    <DropDown
+    [items]="termsDropDown"
+    (selectedIndexChanged)="getTerm($event)"
+    itemsTextAlignment="left"
+    itemsPadding="5"
+    hint='{{"services.postpone_request.period"|translate}}'
+    style="padding: 5 15; color:#f08b1c;"
+    class="font dro "
+    >
+    </DropDown>
+
+    <Label text='{{"services.postpone_request.mobile"|translate}}' style="color: #010447;" class="font"></Label>
+    <TextField #mobile="ngModel" [(ngModel)]="postpone.mobile" required></TextField>
+
+    <Label text='{{"services.postpone_request.reason"|translate}}' style="color: #010447;" class="font"></Label>
+    <TextField [(ngModel)]="postpone.reason" #reason="ngModel" required></TextField>
+    
+    <FlexboxLayout flexDirection="row-reverse" justifyContenr="space-around" style="margin-top: 5;">
+        <Button text='{{"general.save"|translate}}' (tap)="onSubmit()"  class="print-btn"></Button>
+        <Button text='{{"general.cancel"|translate}}' (tap)="closeDiag()"  class="print-btn"></Button>
+    </FlexboxLayout>
+
+</FlexboxLayout>

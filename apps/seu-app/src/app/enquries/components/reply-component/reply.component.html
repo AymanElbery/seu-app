@@ -1,0 +1,66 @@
+<div class="main-content">
+
+  <section class="service-single">
+    <div class="container">
+      <h3>{{ "menu.enquries" | translate}}</h3>
+      <div class="row">
+        <div class=" col-md-5">
+          <p>{{ "enquries.title" | translate}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div *ngIf="isLoading" class=" loading-indicator  ">
+    <div class="state">
+      <mat-spinner style="position: absolute;z-index: 10000;; margin: auto; top: 0; right: 0;  bottom: 0;left: 0; width: 10px; height: 10px;">
+      </mat-spinner>
+    </div>
+  </div>
+  <div *ngIf="admins.includes(email)" class="row row-form tabs-navbar">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/enquries/all">{{ "enquries.all" | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/enquries/unreply">{{ "enquries.unreply" | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" routerLink="/enquries/reply">{{ "enquries.reply" | translate}}</a>
+      </li>
+      <li class="nav-item">
+        <select class="form-control" (change)="onChange($event.target.value)" id="emps">
+          <option selected value="all">{{ "enquries.all_emp" | translate}}</option>
+          <option [value]="emp.email" *ngFor="let emp of emps">{{ emp.name }}</option>
+        </select>
+      </li>
+    </ul>
+  </div>
+  <div class="widget" >
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+          <thead>
+              <tr>
+                  <th scope="col"> {{"enquries.message"|translate}}</th>
+                  <th scope="col"> {{"enquries.email"|translate}}</th>
+                  <th scope="col"> {{"enquries.replyMsg"|translate}}</th>
+                  <!-- <th scope="col"> {{"enquries.replyTime"|translate}}</th> -->
+              </tr>
+            </thead>
+          <tbody>
+              <tr *ngFor="let enquiry of data | paginate: { itemsPerPage: 30, currentPage: p }; let i = index;">
+                  <td>{{ enquiry.clientMessage }}</td>
+                  <td>{{ enquiry.userEmail | getName }}</td>
+                  <td>{{ enquiry.replyMessage }}</td>
+                  <!-- <td>{{ enquiry.repliedAt }}</td> -->
+              </tr>
+          </tbody>
+      </table>
+      <div style="text-align: left;" class="col-md-12">
+        <ul class="pagination">  
+          <pagination-controls (pageChange)="p = $event" previousLabel="{{'wafi.Previous' | translate}}" nextLabel="{{'wafi.Next' | translate}}" directionLinks="true"></pagination-controls>  
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  

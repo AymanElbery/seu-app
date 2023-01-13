@@ -1,0 +1,60 @@
+<mat-dialog-content style="direction: rtl;">
+    <div *ngIf="!conditions" class="modal-header">
+        <h5 class="modal-title">{{"services.object_exam.conditions"|translate}}</h5>
+    </div>
+    <div *ngIf="!conditions" class="modal-body">
+        <section class="ser-state">
+            <div class="container">
+                <div class="row ser-block">
+                    <div class="col-md-12">
+                        <strong>{{"services.object_exam.note"|translate}}</strong>
+                        <ul class="list-group list-unstyled">
+                            <li class="li-list">{{"services.object_exam.condition_1"|translate}}</li>
+                            <li class="li-list">{{"services.object_exam.condition_2"|translate}}</li>
+                            <li class="li-list">{{"services.object_exam.condition_3"|translate}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div *ngIf="!conditions" class="modal-footer">
+        <button (click)="agree_conditions()" type="button" class="btn btn-dark"><i class="fas fa-check-circle"></i>
+            {{"services.object_exam.agree"|translate}}</button> 
+    </div>
+    <form *ngIf="conditions" role="form" [formGroup]="add_request_form" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-header">
+            <h5 class="modal-title">{{"services.object_exam.add_objection"|translate}}</h5>
+        </div>
+        <div class="modal-body" style=" min-height: 30vh;">
+            <section class="ser-state">
+                <div class="container">
+                    <div class="row ser-block">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="state">
+                                <h6>{{"services.object_exam.choose_curriculum"|translate}}<span class="reqstart">*</span></h6>
+                                <ng-select (change)="change_courses($event)" [items]="courses" bindLabel="COURSE" bindValue="CRSE_CODE" formControlName="CRSE_CODE">
+                                </ng-select>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="fees_display" class="row ser-block">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="state">
+                                <div style="background-color:#5b3283; padding: 10px; border-radius: 3px; color: #FFF; text-align: center;">
+                                   <strong>{{"services.object_exam.notes"|translate}}</strong> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="modal-footer">
+            <button (click)="onSubmit()" type="button" class="btn btn-dark"><i class="fa fa-database"></i>
+                {{"general.send"|translate}}</button>
+        </div>
+    </form>
+</mat-dialog-content>
+
+  

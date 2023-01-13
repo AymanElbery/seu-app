@@ -1,0 +1,112 @@
+<app-header></app-header>
+  
+  <ScrollView>
+      <ActivityIndicator [busy]="isLoading" color="#6189f4" horizontalAlignment="center"></ActivityIndicator>
+
+      
+    <FlexboxLayout flexDirection="column" *ngIf="!isLoading">
+
+    <GridLayout  columns="auto, *" class="serv-title">
+      <Label col="1"  text="&#xf0d9;" class="fas serv-ico-r"></Label>
+      <Label col="1" text='{{"services.certificate_id.title" |translate}}' class="serv-name" ></Label>
+      <Label col="1"  text="&#xf0da;" class="fas serv-ico "></Label>
+    </GridLayout>
+
+    <FlexboxLayout flexDirection="row-reverse" *ngIf="isClosed && messagesList.length>0">
+      <ListView [items]="messagesList">
+          <ng-template let-item="item">
+              <Label verticalAlignment="center" [text]="item.body" class="ysMsg"></Label>
+          </ng-template>
+      </ListView>
+  </FlexboxLayout>
+  <FlexboxLayout  *ngIf="!isLoading &&!isClosed" flexDirection="row-reverse" justifyContent="center">
+    <Button class=" print-btn " (tap)="onArabicPrint()">
+        <FormattedString>
+            <Span text="&#xf02f;" class="fas"></Span>
+            <Span text=" {{printAR}}"></Span>
+        </FormattedString>
+    </Button>
+    <Button class=" print-btn " (tap)="onEnglishPrint()">
+        <FormattedString>
+            <Span text="&#xf02f;" class="fas"></Span>
+            <Span text=" {{printEN}}"></Span>
+        </FormattedString>
+    </Button>
+</FlexboxLayout>
+  <FlexboxLayout  flexDirection="column"  *ngIf="!isLoading &&!isClosed">
+  
+  
+<StackLayout>
+  <GridLayout rows="auto,auto,*,auto,auto" *ngIf="!isLoading">
+  
+    <StackLayout row="0" *ngIf="!isLoading">
+      <GridLayout  class="ysBox" rows="auto,auto" columns="*,150">
+    
+    
+        <Label row="0" column="1" class="ysPBox" style="font-weight: 800;" text="{{certificateDetails.labels.date}}"></Label>
+        <Label row="0"  column="0" class="ysPBox2" text="{{certificateDetails.values.date}}"></Label>
+    
+        <Label row="1" column="1" class="ysPBox" style="font-weight: 800;" text="{{certificateDetails.labels.ssn}}"></Label>
+        <Label row="1"  column="0" class="ysPBox2" text="{{certificateDetails.values.ssn}}"></Label>
+  
+      </GridLayout>
+    </StackLayout>
+  
+  
+    <FlexboxLayout row="1" flexDirection="row-reverse" class="paragraph" flexWrap="wrap" *ngIf="!isLoading">
+      <label  [text]="certificateDetails.labels.txt1"></label>
+      <label  [text]="certificateDetails.values.std_name"></label>
+      <label  [text]="certificateDetails.labels.txt2"></label>
+      <label  [text]="certificateDetails.values.std_id"></label>
+      <label  [text]="certificateDetails.labels.txt3"></label>
+      <label  [text]="certificateDetails.values.coll"></label>
+      <label  [text]="certificateDetails.labels.txt4"></label>
+      <label  [text]="certificateDetails.values.major"></label>
+      <label  [text]="certificateDetails.labels.txt5"></label>
+      <label  [text]="certificateDetails.values.term"></label>
+      <label  [text]="certificateDetails.labels.txt6"></label>
+      <label  [text]="certificateDetails.labels.txt7"></label>
+    </FlexboxLayout>
+  
+      <StackLayout  class="ysBox" row="2">
+
+        <GridLayout  class="ysBox" rows="auto,auto,auto,auto,auto,auto,auto" columns="*,150" *ngFor="let item of lectures" >
+                      
+                      
+          <Label row="1"  column="1" class="ysPBox" style="font-weight:800;" text="{{'general.request.req_cname' |translate}}"></Label>
+          <Label row="1"  column="0" class="ysPBox2" [text]="item.course_name"></Label>
+        
+          <Label row="2"  column="1"  class="ysPBox" style="font-weight:800;" text="CRN"></Label>
+          <Label row="2"  column="0" class="ysPBox2" [text]="item.course_id"></Label>
+         
+          <Label row="3"  column="1"  class="ysPBox" style="font-weight:800;" text="{{'general.request.day' |translate}}" ></Label>
+          <Label row="3"  column="0" class="ysPBox2" [text]="item.day" ></Label>
+        
+          <Label row="4"  column="1"  class="ysPBox" style="font-weight: 800;" text="{{'general.request.time' |translate}}"></Label>
+          <Label row="4"  column="0" class="ysPBox2"[text]="item.time"></Label>
+        
+          <Label row="5"  column="1"  class="ysPBox" style="font-weight: 800;" text="{{'services.lecture_execuse.lecture_type' |translate}}" ></Label>
+          <Label row="5"  column="0" class="ysPBox2" [text]="item.type"  ></Label>
+         
+        
+        </GridLayout>
+  </StackLayout>
+ 
+  
+  
+  
+    <FlexboxLayout row="3" flexDirection="row-reverse" flexWrap="wrap" class="paragraph" *ngIf="!isLoading">
+      <label  [text]="certificateDetails.labels.txt8" textWrap="true"></label>
+      <label  [text]="certificateDetails.labels.txt9" textWrap="true"></label>
+      <label text="{{'general.note' |translate}}"></label>
+      <label  [text]="certificateDetails.labels.txt11" textWrap="true"></label>
+      <label  [text]="certificateDetails.labels.txt12" textWrap="true"></label>
+    </FlexboxLayout>
+
+  </GridLayout>
+</StackLayout>
+
+</FlexboxLayout>
+</FlexboxLayout>
+</ScrollView>
+  
