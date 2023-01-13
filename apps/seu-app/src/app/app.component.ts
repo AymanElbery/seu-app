@@ -134,7 +134,7 @@ export class AppComponent implements OnInit {
     this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
       res => {
         localStorage.setItem('sid', encodeURI(res['csid']));
-        this.userService.loadUserData();
+        //this.userService.loadUserData();
       },
       err => {
         const notapps = (document.location.href.indexOf("/apps") == -1) ? true : false;
@@ -186,7 +186,7 @@ export class AppComponent implements OnInit {
     this.oAuthService.setupAutomaticSilentRefresh();
     if (this.oAuthService.hasValidAccessToken()) {
       //console.log("HAS VALID TOKEN");
-      this.userService.loadUserData();
+     // this.userService.loadUserData();
     }
     // Events.
     // On silently refreshed.

@@ -191,9 +191,9 @@ export class UserService extends BaseService {
           });
     }
   }
-  loadUserDetailsData() {
-    return this.requestUser();
-  }
+  // loadUserDetailsData() {
+  //   return this.requestUser();
+  // }
   pushUserDataChanges() {
     this.userDataSubject.next(this.userData);
     this.userDataObservable.next(this.userData);
