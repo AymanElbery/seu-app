@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  whoami_service: 'https://whoami.seu.edu.sa/api/user',
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   baselink: 'https://seuapps.seu.edu.sa/newservices/', 
   ssolink: 'https://stage-eservice.seu.edu.sa/', 
