@@ -1,5 +1,6 @@
 export const environment = {
   production:false,
+  whoami_service: 'http://localhost/whoami/api/user',
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   //baselink: 'http://eservices.local/', 
   reloginlink: 'http://localhost:4200/', 
@@ -15,7 +16,7 @@ export const environment = {
   //gr: 'gr_api', 
   gr: '/stdsUnivapi',  
   //servicesprefix: '', 
-  servicesprefix: 'api/', 
+  servicesprefix: 'api-test/', 
   appsprefix: 'apps', 
   loginpage: 'login-local.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
