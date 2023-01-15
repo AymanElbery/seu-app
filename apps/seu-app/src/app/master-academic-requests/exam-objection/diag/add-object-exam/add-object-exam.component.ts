@@ -49,7 +49,6 @@ export class AddObjectExamComponent implements OnInit {
   requesting = false;
   addRequest(data: any) {
     data.bank = parseInt(data.bank);
-    console.log(data);
     this.acadmicProc.AddRequest(data).then(res => {
       this.toastr.push((res as any).messages);
       if (res['status']) {
@@ -78,11 +77,12 @@ export class AddObjectExamComponent implements OnInit {
 
   changeStatus(item, e) {
     for (let i = 0; i < this.exam.courses.length; i++) {
-      if (this.exam.courses[i].CRSE == item.CRN)
+      if (this.exam.courses[i].CRSE == item.CRSE_CODE){
         this.exam.courses.splice(i, 1);
+      }
     }
     if (item.checekd) {
-      this.exam.courses.push({ CRSE: parseInt(item.CRN), teacher: item.teacher });
+      this.exam.courses.push({ CRSE: item.CRSE_CODE ,CRN: parseInt(item.CRN), teacher: item.teacher });
     }
   }
 
