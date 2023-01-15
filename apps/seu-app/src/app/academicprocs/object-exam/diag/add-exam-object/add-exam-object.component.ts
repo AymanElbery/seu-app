@@ -77,11 +77,11 @@ export class AddExamObjectComponent implements OnInit {
 
   changeStatus(item) {
     for (let i = 0; i < this.exam.courses.length; i++) {
-      if (this.exam.courses[i].CRSE == item.CRN)
+      if (this.exam.courses[i].CRSE == item.CRSE_CODE)
         this.exam.courses.splice(i, 1);
     }
     if (item.checked) {
-      this.exam.courses.push({ CRSE: parseInt(item.CRN), teacher: item.teacher });
+      this.exam.courses.push({ CRSE: item.CRSE_CODE ,CRN: parseInt(item.CRN), teacher: item.teacher });
     }
   }
 
