@@ -15,15 +15,21 @@ import { ExamAttendanceService } from './services/exam-attendance.service';
 import { ExamsAttendAppService } from './services/exams-attend-app.service';
 import { ExamsDiplomeAttendStatComponent } from './exams-attend-stat/exams-attend-stat.component';
 import { ExamsDiplomeAttendAppComponent } from './exams-attend-app/exams-attend-app.component';
+import { ExamsDiplomeObjectionComponent } from './exams-objection/exams-objection.component';
+import { AddObjectExamComponent } from './exams-objection/diag/add-object-exam.component';
+
 @NgModule({
   declarations: [
     ExamDiplomeExcuseComponent,
     AddExamDiplomeExcuseComponent,
     ExamsDiplomeAttendStatComponent,
     ExamsDiplomeAttendAppComponent,
+    ExamsDiplomeObjectionComponent,
+    AddObjectExamComponent
   ],
   entryComponents: [
     AddExamDiplomeExcuseComponent,
+    AddObjectExamComponent
   ],
   imports: [
     CommonModule,
