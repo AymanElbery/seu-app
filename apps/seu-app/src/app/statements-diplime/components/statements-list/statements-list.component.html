@@ -23,7 +23,7 @@
                                 <td>{{ state['name_' + lang] }}</td>
                                 <td>
                                     <a *ngIf="state.can_print" seu-auto-print style="font-weight: bold;" class="btn btn-primary" seu-auto-print href="{{baseApiUrl + state.ar_print}}"><span class="ik ik-printer"></span> {{"general.ar_print" | translate}}</a>
-                                    <a *ngIf="state.can_print" seu-auto-print style="font-weight: bold; margin: 0 5px;" class="btn btn-primary" seu-auto-print href="{{baseApiUrl + state.en_print}}"><span class="ik ik-printer"></span> {{"general.en_print" | translate}}</a>
+                                    <a *ngIf="state.can_print && state.en_print" seu-auto-print style="font-weight: bold; margin: 0 5px;" class="btn btn-primary" seu-auto-print href="{{baseApiUrl + state.en_print}}"><span class="ik ik-printer"></span> {{"general.en_print" | translate}}</a>
                                     <span *ngIf="!state.can_print" class="text-danger">{{'services.statements.can_not_print'|translate}}</span>
                                 </td>
                             </tr>

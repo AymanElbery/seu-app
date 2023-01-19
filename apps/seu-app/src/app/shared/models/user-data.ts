@@ -12,8 +12,9 @@ export interface UserData {
     PIDM: string;
     ssn: string;
     camp: string;
-    student_details: StudentDetails;
+    student_details_ug: StudentDetails;
     student_details_gr: StudentDetails;
+    student_details_ud: StudentDetails;
 
     username: string;
     role: string;

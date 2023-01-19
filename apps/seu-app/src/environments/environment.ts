@@ -8,15 +8,15 @@ export const environment = {
   ssolink: 'https://seuapps.seu.edu.sa/newservices/sso', 
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
   wafi_apilink: 'https://intservs.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi
-  servie_admission: 'https://apps.seu.edu.sa/newservices/api-test/admission',
-  paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
+  servie_admission: 'https://seuapps.seu.edu.sa/newservices/api/admission',
+  paymentLink: "https://seuapps.seu.edu.sa/newservices/api/fees",
   //common: 'common_api', 
   common: '/rest', 
   ud: 'std_api_diplome', 
   //gr: 'gr_api', 
   gr: '/stdsUnivapi',  
   //servicesprefix: '', 
-  servicesprefix: 'api-test/', 
+  servicesprefix: 'api/', 
   appsprefix: 'apps', 
   loginpage: 'login-local.php',
   notesAuth: 'nots:N0t!fic@ti0n$',

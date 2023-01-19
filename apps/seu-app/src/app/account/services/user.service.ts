@@ -65,7 +65,7 @@ export class UserService extends BaseService {
       sex: '',
       ssn: '',
       stdName: '',
-      student_details: {
+      student_details_ug: {
         name_en: '',
         ssn: '',
         sex: '',
@@ -78,6 +78,17 @@ export class UserService extends BaseService {
       },
       username: '',
       student_details_gr: {
+        name_en: '',
+        ssn: '',
+        sex: '',
+        name_ar: '',
+        major: '',
+        camp: '',
+        coll: '',
+        id: '',
+        level: ''
+      },
+      student_details_ud: {
         name_en: '',
         ssn: '',
         sex: '',
@@ -203,11 +214,14 @@ export class UserService extends BaseService {
     let data;
     // tslint:disable-next-line: triple-equals
     if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'UG') {
-      data = JSON.parse(JSON.stringify(this.userData.student_details));
+      data = JSON.parse(JSON.stringify(this.userData.student_details_ug));
       data.username = data.id;
       // tslint:disable-next-line: triple-equals
     } else if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'GR') {
       data = JSON.parse(JSON.stringify(this.userData.student_details_gr));
+      data.username = data.id;
+    } else if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'UD') {
+      data = JSON.parse(JSON.stringify(this.userData.student_details_ud));
       data.username = data.id;
     } else {
       data = JSON.parse(JSON.stringify(this.userData));
