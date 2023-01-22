@@ -49,6 +49,7 @@ export class TicketListComponent {
         this.isLoading = false;
         this.tickets = response.data.requests;
         this.can_add_new = response.data.can_add_new;
+        this.toastr.push(response['messages']);
       },
       error => {
         this.isLoading = false;
