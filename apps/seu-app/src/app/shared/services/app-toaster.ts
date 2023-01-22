@@ -17,7 +17,6 @@ export class AppToasterService {
   }
 
   push(messages) {
-    console.log(messages);
     messages.forEach((element: any) => {
       const type = element.type;
       const body = element.body;
