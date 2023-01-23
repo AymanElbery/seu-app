@@ -29,6 +29,13 @@ export class StudentService extends AppUserRootService {
             return (this.LoggedInUser['LEVEL_CODE'] == 'GR' && this.LoggedInUser['STD_STATUS_CODE'] == 'IG')
         return false;
     }
+
+    get have_docs_ud_permession() {
+        if (this.isLoggedIn)
+            return (this.LoggedInUser['LEVEL_CODE'] == 'UD' && this.LoggedInUser['STD_STATUS_CODE'] == 'IG')
+        return false;
+    }
+
     get have_reenroll_permession() {
         if (this.isLoggedIn)
             return (this.LoggedInUser['LEVEL_CODE'] == 'GR' ); //&& this.LoggedInUser['STD_STATUS_CODE'] == 'IG'

@@ -39,6 +39,10 @@ export const routes: Routes = [
                 loadChildren: './modules/documents_gr/documents_gr.module#DocumentsGrModule',
             },
             {
+                path: 'docs_ud',
+                loadChildren: './modules/documents_ud/documents_ud.module#DocumentsUdModule',
+            },
+            {
                 path: 'reenroll',
                 loadChildren: './modules/reenroll/reenroll.module#ReenrollModule',
             },

@@ -1,6 +1,6 @@
 export const environment = {
   production:false,
-  whoami_service: 'http://localhost/whoami/api/user',
+  whoami_service: 'https://whoami.seu.edu.sa/api/user',
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
   //baselink: 'http://eservices.local/', 
   reloginlink: 'http://localhost:4200/', 

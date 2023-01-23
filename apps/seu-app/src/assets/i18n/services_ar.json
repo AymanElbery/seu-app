@@ -164,6 +164,7 @@
         "invalid_verification_code": "الكود غير صحيح",
         "only_ug_can_print": "الخدمة متوفرة فقط لطلبة البكالوريوس",
         "only_gr_can_print": "الخدمة متوفرة فقط لطلبة الدراسات العليا",
+        "only_ud_can_print": "الخدمة متوفرة فقط لطلبة الدبلوم",
         "only_ig_can_print": "الخدمة متوفرة للخريجين فقط ، برجاء مراسلة شؤون الخريجين graduation@seu.edu.sa",
         "only_sadad_can_print": "يوجد عليك رسوم دراسية للجامعة، الرجاء سداد الرسوم حتي تتمكن من طباعة الوثائق",
         "docs_not_permitted":"الوثائق غير متاحة، برجاء مراسلة شؤون الخريجين graduation@seu.edu.sa",
