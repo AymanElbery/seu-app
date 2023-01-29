@@ -29,26 +29,32 @@ export const routes: Routes = [
             {
                 path: 'appointments',
                 loadChildren: './modules/appointments/appointments.module#AppointmentsModule',
+                data: { title: 'الخدمات الإلكترونية | الخدمات الخارجية' }
             },
             {
                 path: 'docs',
                 loadChildren: './modules/documents/documents.module#DocumentsModule',
+                data: { title: 'الخدمات الإلكترونية | الخدمات الخارجية' }
             },
             {
                 path: 'docs_gr',
                 loadChildren: './modules/documents_gr/documents_gr.module#DocumentsGrModule',
+                data: { title: 'الخدمات الإلكترونية | الخدمات الخارجية' }
             },
             {
                 path: 'docs_ud',
                 loadChildren: './modules/documents_ud/documents_ud.module#DocumentsUdModule',
+                data: { title: 'الخدمات الإلكترونية | الخدمات الخارجية' }
             },
             {
                 path: 'reenroll',
                 loadChildren: './modules/reenroll/reenroll.module#ReenrollModule',
+                data: { title: 'الخدمات الإلكترونية | الخدمات الخارجية' }
             },
             { 
                 path: 'refund',
                 loadChildren: './modules/refund/refund.module#RefundModule',
+                data: { title: 'الخدمات الإلكترونية | الخدمات الخارجية' }
             }
         ]
     }

@@ -43,7 +43,8 @@ export class StudentService extends AppUserRootService {
     }
     get have_refund_permession() {
         if (this.isLoggedIn)
-            return true;
+            return (this.LoggedInUser['LEVEL_CODE'] == 'UG' || this.LoggedInUser['LEVEL_CODE'] == 'GR');
+            //return true;
             // return (this.LoggedInUser['STD_STATUS_CODE'] == 'AS' || 
             //         this.LoggedInUser['STD_STATUS_CODE'] == 'AD' || 
             //         this.LoggedInUser['STD_STATUS_CODE'] == 'WD' || 
