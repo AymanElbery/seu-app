@@ -10,7 +10,7 @@
                     translate}}:</label>
                 <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.id }}</label>
             </div>
-            <div class="col-md-12">
+            <!-- <div class="col-md-12">
                 <label class="col-md-3 col-form-label">{{'general.category' |
                     translate}}:</label>
                 <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.category }}</label>
@@ -18,20 +18,26 @@
             <div class="col-md-12">
                 <label class="col-md-3 col-form-label">{{'general.item' | translate}}:</label>
                 <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.item }}</label>
-            </div>
+            </div> -->
             <div class="col-md-12">
                 <label class="col-md-3 col-form-label">{{'general.subject' | translate}}:</label>
                 <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.subject }}</label>
             </div>
-            <div class="col-md-12">
+            <!-- <div class="col-md-12">
                 <label class="col-md-3 col-form-label">{{'reg_assistant.description' |
                     translate}}:</label>
                 <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.description }}</label>
-            </div>
+            </div> -->
             <div class="col-md-12">
                 <label class="col-md-3 col-form-label">{{'general.created_at' |
                     translate}}:</label>
                 <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.created_time.display_value
+                    }}</label>
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'general.due_date' |
+                    translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.due_date.display_value
                     }}</label>
             </div>
             <div class="col-md-12">

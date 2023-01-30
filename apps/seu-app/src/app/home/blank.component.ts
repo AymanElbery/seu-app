@@ -12,6 +12,7 @@ import { PolicyComponent } from './policy.component';
 import { DocsConfirmComponent } from './docs-confirm.component';
 import { VaccineStatusComponent } from './vaccine-status/vaccine-status.component';
 import { SeuStructureEmpComponent } from './seu-structure-emp/seu-structure-emp.component';
+import { OtpConfirmation } from './otp-confirmation/otp-confirmation.component';
 import { StudentRightsComponent } from './student-rights/student-rights.component';
 import { GMPolicyComponent } from './gmpolicy.component';
 import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.component';
@@ -47,20 +48,11 @@ export class BlankComponent implements OnInit {
           ? document.getElementById('bodyloading').remove()
           // tslint:disable-next-line: no-unused-expression
           : '';
-        if ((this.userService.userData.role == "Instructor" || this.userService.userData.role == "Employee") && !this.userService.userData.DATA_CLEANED) {
-          this.router.navigate(['/emp-clean-data/emp']);
-        }
-        if (this.userService.userData.role == "Student" && !this.userService.userData.DATA_CLEANED_STD) {
-          this.router.navigate(['/std-clean-data/std']);
-        }
-        
         if ((this.userService.userData.role == "Student") && this.userService.userData.COMMITTE_CONFIRM == 0) {
           this.router.navigate(['/committe-confirm/committe']);
         }
-        this.showVaccineStatus();
-        this.showStudentRight();
+        
         this.showConfirmation();
-        this.showSeuStructureEmp();
 
         if ((this.userService.userData.role == "Student" && this.userService.userData.level == "GR") && this.userService.userData['GM_policy'] && this.userService.userData['GM_policy']['show'] && !this.userService.userData['gmpolicy']) {
           //this.router.navigate(['/policy']);
@@ -102,44 +94,26 @@ export class BlankComponent implements OnInit {
     this.translate.use(lang);
   }
   ngOnInit() {
-
+    this.showOtpConfirm();
   }
 
-  showVaccineStatus(){
-    if (this.userService.userData.role == "Student" && !this.userService.userData['VACCINE_STATUS']) {
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.autoFocus = true;
-      dialogConfig.disableClose = true;
-      dialogConfig.width = '75%';
-      dialogConfig.maxWidth = 1000;
-      dialogConfig.data = this.userService.userData;
-      this.dialog.open(VaccineStatusComponent, dialogConfig);
-    }
+  showOtpConfirm(){
+    this.userService.userDataSubject.subscribe(userData => {
+      if (userData) {
+        if (!userData.OTP) {
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.autoFocus = true;
+          dialogConfig.disableClose = true;
+          dialogConfig.width = '50%';
+          dialogConfig.maxWidth = 1000;
+          this.dialog.open(OtpConfirmation, dialogConfig);
+        }
+      }
+    });
+    
+    
   }
 
-  showSeuStructureEmp(){
-    if (this.userService.userData.role == "Employee" && !this.userService.userData.SEU_STRUCTURE_EMP) {
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.autoFocus = true;
-      dialogConfig.disableClose = true;
-      dialogConfig.width = '75%';
-      dialogConfig.maxWidth = 1000;
-      dialogConfig.data = this.userService.userData;
-      this.dialog.open(SeuStructureEmpComponent, dialogConfig);
-    }
-  }
-
-  showStudentRight(){
-    if (!this.userService.userData.STD_RIGHTS) {
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.autoFocus = true;
-      dialogConfig.disableClose = true;
-      dialogConfig.width = '45%';
-      dialogConfig.maxWidth = 1000;
-      dialogConfig.data = this.userService.userData;
-      this.dialog.open(StudentRightsComponent, dialogConfig);
-    }
-  }
 
   showConfirmation() {
     let showConf = false;

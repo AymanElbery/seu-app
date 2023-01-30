@@ -7,9 +7,9 @@ const routes: Routes = [{ path: '', component: CertificateIDComponent },
 {
   path: '',
   children: [
-  { path: 'idcertificate',  component: CertificateIDComponent },
-  { path:'examattendacecertificate', component:ExamAttendanceCertificateComponent},
-  { path:'examattendacecertificateapp', component:ExamAttendanceCertificateAppComponent}
+  { path: 'idcertificate',  component: CertificateIDComponent, data: { title: 'الخدمات الإلكترونية |  - ماجيستير' } },
+  { path:'examattendacecertificate', component:ExamAttendanceCertificateComponent, data: { title: 'الخدمات الإلكترونية | شهادة حضور إختبارات - ماجيستير' }},
+  { path:'examattendacecertificateapp', component:ExamAttendanceCertificateAppComponent, data: { title: 'الخدمات الإلكترونية | إثبات حضور إختبارات - ماجيستير' }}
  
 
  ]

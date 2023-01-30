@@ -15,6 +15,7 @@
         <option value="0"> {{ "menu.myservices" | translate }}</option>
         <option value="1">{{ "menu.ugservices" | translate }}</option>
         <option value="2">{{ "menu.grservices" | translate }}</option>
+        <option value="3">{{ "menu.udservices" | translate }}</option>
       </select>
     </div>
     <div class="nav-container">
@@ -240,9 +241,9 @@
           <a href="javascript:void(0)"><span> {{ "menu.printCert" | translate }} </span>
             <i class="ik ik-printer"></i></a>
           <div class="submenu-content">
-            <a href="#" class="menu-item" routerLink="/masterstdcertificate/idcertificate">
+            <!-- <a href="#" class="menu-item" routerLink="/masterstdcertificate/idcertificate">
               {{ "menu.idcertificate" | translate }}
-            </a>
+            </a> -->
             <a href="#" class="menu-item" routerLink="/masterstdcertificate/examattendacecertificate">
               {{ "menu.examattendacecertificate" | translate }}
             </a>
@@ -368,9 +369,9 @@
             <!-- <a href="#" id="menuskillsrecord" class="menu-item" routerLink="/academicaff/skills">
               {{ "menu.skills_record" | translate }}
             </a> -->
-            <a href="#" class="menu-item" routerLink="/academicaff/certificate">
+            <!-- <a href="#" class="menu-item" routerLink="/academicaff/certificate">
               {{ "menu.certificate" | translate }}
-            </a>
+            </a> -->
             <a href="#" class="menu-item" routerLink="/academicaff/record">
               {{ "menu.record" | translate }}
             </a>
@@ -436,6 +437,9 @@
             </a>
             <a href="#" class="menu-item" routerLink="/exams-diplome/attendapp">
               {{ "menu.EXAMAPP" | translate }}
+            </a>
+            <a href="#" class="menu-item" routerLink="/exams-diplome/objectexam">
+              {{ "menu.objectexam" | translate }}
             </a>
           </div>
         </div>
@@ -604,6 +608,11 @@
             <span>{{ "menu.academic_assistant" | translate }} </span>
             <i class="ik ik-book-open"></i>
           </a>
+          <!-- <div class="submenu-content">
+            <a href="#" class="menu-item" routerLink="/academic-assistant/std-assistant/tickets">
+              {{ "menu.std_assistant" | translate }}
+            </a>
+          </div> -->
           <div class="submenu-content">
             <a href="#" class="menu-item" routerLink="/academic-assistant/reg-assistant/tickets">
               {{ "menu.reg_assistant" | translate }}

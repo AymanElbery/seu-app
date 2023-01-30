@@ -59,7 +59,7 @@ constructor(private configService: ConfigService, private httRequest: HttpReques
 
 
     this.configService.baseUrl = 'stdservicesapi';
-    return this.configService.getApiURI() + '/proof_attendance_service/download?type=Term_Exam_Without_Schedule';
+    return this.configService.getApiURI() + '/proof_attendance_service/download?type=Term_Exam_Without_Schedule&Lang=en';
    }
    Print_Final_Exam_With_ScheduleEn() {
     const sid =   this.configService.getSid();

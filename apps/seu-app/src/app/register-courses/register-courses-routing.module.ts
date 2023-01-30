@@ -6,7 +6,7 @@ const routes: Routes =  [{ path: '', component: RegisterWishesComponent },
 {
   path: '',
   children: [
-  { path: 'registerwishes',  component: RegisterWishesComponent },
+  { path: 'registerwishes',  component: RegisterWishesComponent, data: { title: 'الخدمات الإلكترونية | رغبات التسجيل للمستجدين - بكالوريوس' }  },
   { path: 'reghelper',  component: RegisterationHelperComponent }
 
  ]

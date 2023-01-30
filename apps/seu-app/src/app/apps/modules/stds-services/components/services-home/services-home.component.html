@@ -39,6 +39,16 @@
                   </div>
                 </a>
               </div>
+              <div *ngIf="have_docs_ud_permession" class="col-md-3">
+                <a routerLink="/apps/stds-services/docs_ud" style="display: block; width: 100%">
+                  <div class="card card-service">
+                    <div class="card-body">
+                      <h2 class="card-title text-light">{{'menu.print_docuemnts' | translate}}</h2>
+                    <p class="card-text">{{'menu.print_docuemnts_desc' | translate}}</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
               <div *ngIf="have_reenroll_permession" class="col-md-3">
                 <a routerLink="/apps/stds-services/reenroll" style="display: block; width: 100%">
                   <div class="card card-service">

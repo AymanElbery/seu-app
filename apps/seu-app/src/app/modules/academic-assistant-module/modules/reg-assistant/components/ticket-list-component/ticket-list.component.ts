@@ -70,6 +70,7 @@ export class TicketListComponent {
         this.tickets = response.data.requests;
         this.requests = response.data.requestsCrn;
         this.can_add_new = response.data.can_add_new;
+        this.toastr.push(response['messages']);
       },
       error => {
         this.isLoading = false;

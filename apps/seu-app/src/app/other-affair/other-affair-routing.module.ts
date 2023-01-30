@@ -14,10 +14,10 @@ const routes: Routes = [{ path: '', component: MedicalReportComponent },
     { path: 'medicalreport', component: MedicalReportComponent },
     { path: 'universitycard', component: UnivCardComponent },
     { path: 'missingcard', component: MissingCardComponent },
-    { path: 'training', component: TrainingRequestComponent },
-    { path: 'studentinfo', component: StudentInfoComponent },
-    { path: 'chineescourse', component: ChineescourseComponent },
-    { path: 'gpa', component: CourseGpaComponent }
+    { path: 'training', component: TrainingRequestComponent, data: { title: 'الخدمات الإلكترونية | التدريب الميداني - بكالوريوس' }  },
+    { path: 'studentinfo', component: StudentInfoComponent, data: { title: 'الخدمات الإلكترونية | بيانات خريج - بكالوريوس' } },
+    { path: 'chineescourse', component: ChineescourseComponent, data: { title: 'الخدمات الإلكترونية | الدورة الصينية - بكالوريوس' }  },
+    { path: 'gpa', component: CourseGpaComponent, data: { title: 'الخدمات الإلكترونية | نظام التقديرات المعتمد - بكالوريوس' }  }
   ]
 }
 ];

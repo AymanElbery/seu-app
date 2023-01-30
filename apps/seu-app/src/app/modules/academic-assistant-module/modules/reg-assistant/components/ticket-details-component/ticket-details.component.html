@@ -40,6 +40,12 @@
                     }}</label>
             </div>
             <div class="col-md-12">
+                <label class="col-md-3 col-form-label">{{'general.due_date' |
+                    translate}}:</label>
+                <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.due_date.display_value
+                    }}</label>
+            </div>
+            <div class="col-md-12">
                 <label class="col-md-3 col-form-label">{{'general.ticket_status' |
                     translate}}:</label>
                 <label style="color: #1c2172;" class="col-md-8 col-form-label">{{ ticket.status }}</label>

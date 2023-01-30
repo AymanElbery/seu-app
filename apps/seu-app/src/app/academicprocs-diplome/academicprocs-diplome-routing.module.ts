@@ -9,8 +9,8 @@ const routes: Routes = [{ path: '', component: PostponeCoronaRequestComponent },
 {
   path: '',
   children: [
-    { path: 'lecexecuse', component:  LecturesExecusesComponent},
-    { path: 'withdrawuniv', component: WithdrawFromUnivComponent },
+    { path: 'lecexecuse', component:  LecturesExecusesComponent, data: { title: 'الخدمات الإلكترونية | التغيب عن المحاضرات - دبلوم' }},
+    { path: 'withdrawuniv', component: WithdrawFromUnivComponent, data: { title: 'الخدمات الإلكترونية | الإنسحاب من الجامعة - دبلوم' } },
     { path: 'postpone-corona', component: PostponeCoronaRequestComponent },
     { path: 'execuse-corona', component: ExecuseRequestCoronaComponent },
   ]

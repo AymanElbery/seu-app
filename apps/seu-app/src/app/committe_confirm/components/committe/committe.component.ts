@@ -65,9 +65,8 @@ export class CommitteComponent implements OnInit, OnDestroy{
     this.committeService.post('committe_confirm/secure_file' , data).subscribe(
     (response: any) => {
       if(response){
-        if(response.data){
-          window.location.href = "https://seuapps.seu.edu.sa/newservices/api/rest/committe.php?file=" + file + "&coll=" + coll;
-        }
+        var url = "https://seuapps.seu.edu.sa/newservices/api/rest/committe.php?file=" + file + "&coll=" + coll;
+        window.open(url, '_blank');
       }
     },
     error => {

@@ -9,11 +9,11 @@ import { FormsModule } from '@angular/forms';
 import { ManagerialDutiesComponent } from './managerial-duties/managerial-duties.component';
 const routes: Routes = [
 
-  { path: '', component: PersonalinfoComponent },
-  { path: 'salaries', component: SalariesComponent },
-  { path: 'managerial-duties', component: ManagerialDutiesComponent },
-  { path: 'vacations', component: VacationsComponent },
-  { path: 'print-report', component: PrintReportComponent }
+  { path: '', component: PersonalinfoComponent, data: { title: 'الخدمات الإلكترونية | بيانات الموظف' } },
+  { path: 'salaries', component: SalariesComponent, data: { title: 'الخدمات الإلكترونية | الرواتب' } },
+  { path: 'managerial-duties', component: ManagerialDutiesComponent , data: { title: 'الخدمات الإلكترونية | المناصب الإدارية' }},
+  { path: 'vacations', component: VacationsComponent , data: { title: 'الخدمات الإلكترونية | الإجازات' }},
+  { path: 'print-report', component: PrintReportComponent, data: { title: 'الخدمات الإلكترونية | طباعة تعاريف الموظف' } }
 
 ];
 

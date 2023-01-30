@@ -5,7 +5,8 @@ import { RequestsComponent } from './components/requests-component/requests.comp
 const routes: Routes = [
   {
     path: "requests",
-    component: RequestsComponent
+    component: RequestsComponent,
+    data: { title: 'الخدمات الإلكترونية | البطاقة الجامعية' }
   }
 ];
 

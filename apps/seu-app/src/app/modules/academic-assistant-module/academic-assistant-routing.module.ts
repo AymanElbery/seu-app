@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReqAssistantModule } from './modules/reg-assistant/reg-assistant.module'
+import { StdAssistantModule } from './modules/std-assistant/std-assistant.module'
 
 const routes: Routes = [
+  {
+    path: 'std-assistant',
+    loadChildren: './modules/std-assistant/std-assistant.module#StdAssistantModule',
+  },
   {
     path: 'reg-assistant',
     loadChildren: './modules/reg-assistant/reg-assistant.module#ReqAssistantModule',
@@ -46,7 +51,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), ReqAssistantModule],
+  imports: [RouterModule.forChild(routes), ReqAssistantModule, StdAssistantModule],
   exports: [RouterModule]
 })
 export class AcademicAssistantRoutingModule { }

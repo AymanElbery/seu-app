@@ -11,15 +11,15 @@ import {ApprovalHistoryComponent} from  '../employee-requests/approval-history/a
 
 const routes: Routes = [
 
-  { path: '', component: RequestsListComponent },
-  { path: 'requests-list', component: RequestsListComponent },
-  { path: 'add-new-request', component: RequestAddComponent },
+  { path: '', component: RequestsListComponent, data: { title: 'الخدمات الإلكترونية | عرض الطلبات' }  },
+  { path: 'requests-list', component: RequestsListComponent, data: { title: 'الخدمات الإلكترونية | عرض الطلبات' } },
+  { path: 'add-new-request', component: RequestAddComponent, data: { title: 'الخدمات الإلكترونية | إضافة طلب جديد' } },
   { path: 'vacation-request/:id', component: VacationRequestComponent },
   { path: 'attend-course-request/:id', component: AttendCourceRequestComponent },
   { path: 'regular-leave-request/:id', component: RegularLeaveRequestComponent },
   { path: 'evacuate-party-request/:id', component: EvacuatePartyRequestComponent },
-  { path: 'approval-requests', component: ApprovalRequestsComponent },
-  { path: 'approval-history', component: ApprovalHistoryComponent }
+  { path: 'approval-requests', component: ApprovalRequestsComponent , data: { title: 'الخدمات الإلكترونية | الموافقة على الطلبات' }},
+  { path: 'approval-history', component: ApprovalHistoryComponent, data: { title: 'الخدمات الإلكترونية | حركة الموافقات' } }
 ];
 
 @NgModule({

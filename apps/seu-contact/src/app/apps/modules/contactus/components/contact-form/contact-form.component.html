@@ -8,6 +8,13 @@
 </div>
 <form [formGroup]="form" (submit)="onSubmit()" id="contactForm">
   <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-danger text-center">
+        <strong>{{'form.note_before' | translate}}</strong>
+      </div>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-6">
       <label>{{'form.user_name' | translate}}<span class="reqstart">*</span></label>
       <input class="form-control" type="text" formControlName="user_name">

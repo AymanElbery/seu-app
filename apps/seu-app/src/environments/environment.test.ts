@@ -1,19 +1,22 @@
 export const environment = {
   production: true,
+  whoami_service: 'https://whoami.seu.edu.sa/api/user',
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
-  baselink: 'https://seuapps.seu.edu.sa/newservices/', // newservices/
-  ssolink: 'https://eservice.seu.edu.sa/', // newservices/
+  baselink: 'https://seuapps.seu.edu.sa/newservices/', 
+  ssolink: 'https://stage-eservice.seu.edu.sa/', 
+  reloginlink: 'https://stage-eservice.seu.edu.sa/', 
   service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
-  wafi_apilink: 'https://iam.seu.edu.sa/CPTIT_SEU_WS_TEST/jersey/', // wafi
-  servie_admission: 'https://apps.seu.edu.sa/newservices/api-test/admission',
-  paymentLink: "https://apps.seu.edu.sa/newservices/api-test/fees",
+  wafi_apilink: 'https://intservs.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi
+  servie_admission: 'https://apps.seu.edu.sa/newservices/api/admission',
+  paymentLink: "https://apps.seu.edu.sa/newservices/api/fees",
   common: '/rest', 
-  ud: '/std_api_diplome', 
-  gr: '/stdsUnivapi',
-  servicesprefix: 'api-test', // api
-  appsprefix: 'apps-test', // api-test
-  loginpage: 'login-sst.php',
+  ud: '/std_api_diplome/', 
+  gr: '/stdsUnivapi', 
+  servicesprefix: 'api-test/', 
+  appsprefix: 'apps-prod', 
+  loginpage: 'login-ss.php',
   notesAuth: 'nots:N0t!fic@ti0n$',
+  basicAuth: 'api_seu_prod_rest_auth:Seu$123_321',
   ssoAuth: 'sso:s$0$3u2030',
   allowWafi: true,
   captchaSiteKey: "6LcZJOgUAAAAADeusuP0ndPRe8A5ip1FBypF_WlQ",
@@ -45,7 +48,14 @@ export const environment = {
     'halharbi@seu.edu.sa',
     'a.algeffary@seu.edu.sa',
     'a.farouk@seu.edu.sa',
-    'o.alturiqi@seu.edu.sa'
+    'o.alturiqi@seu.edu.sa',
+    't.alshiban@seu.edu.sa',
+    'o.almeleihi@seu.edu.sa',
+    'a.algeffary@seu.edu.sa',
+    'f.alswilem@seu.edu.sa',
+    'n.alwahby@seu.edu.sa',
+    'ralfahad@seu.edu.sa',
+    'nalfahad@seu.edu.sa'
   ],
   chatbot_emps_emails: [
     'm.aldwaesh@seu.edu.sa', 
@@ -70,6 +80,13 @@ export const environment = {
     'n.alwahby@seu.edu.sa',
     'halharbi@seu.edu.sa',
     'a.algeffary@seu.edu.sa',
+    't.alshiban@seu.edu.sa',
+    'o.almeleihi@seu.edu.sa',
+    'a.algeffary@seu.edu.sa',
+    'f.alswilem@seu.edu.sa',
+    'n.alwahby@seu.edu.sa',
+    'ralfahad@seu.edu.sa',
+    'nalfahad@seu.edu.sa'
   ],
   chatbot_emps_names: [
     'موضي مطلق الدويش', 
@@ -93,7 +110,14 @@ export const environment = {
     'لولوة ماجد بجاد الحربي',
     'نورة راشد محمد الوهبي',
     'هجوس فهد الحربي ',
-    'اميرة سليمان القفاري'
+    'اميرة سليمان القفاري',
+    'تهاني الشيبان',
+    'عهود المليحي',
+    'اميره القفاري',
+    'فاطمة السويلم',
+    'نوره الوهبي',
+    'ريم فوزان الفهد',
+    'نوف فوزان الفهد',
   ],
   chatbot_emps_admins_emails: [
     'a.elbery@seu.edu.sa',

@@ -5,11 +5,13 @@ import { TicketListComponent } from './components/ticket-list-component/ticket-l
 const routes: Routes = [
     {
         path: "",
-        component: TicketListComponent
+        component: TicketListComponent,
+        data: { title: 'الخدمات الإلكترونية | الإبلاغ عن كورونا' }
     },
     {
         path: "tickets",
-        component: TicketListComponent
+        component: TicketListComponent,
+        data: { title: 'الخدمات الإلكترونية | الإبلاغ عن كورونا' }
     }
 ];
 

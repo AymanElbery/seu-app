@@ -135,9 +135,7 @@ export class MenuComponent implements OnInit, AfterContentInit {
   }
 
   onChange(e) {
-    // tslint:disable-next-line: triple-equals
     if (e == 0) {
-      // console.log('change me not allow');
       if (this.userService.userData.act_as_student === true) {
         this.userService.userData.activeRole = this.userService.userData.role;
         this.userService.userData.coll = '';
@@ -145,12 +143,11 @@ export class MenuComponent implements OnInit, AfterContentInit {
         this.userService.userData.camp = '';
         //this.router.navigateByUrl('/home/emp');
       }
-      // tslint:disable-next-line: triple-equals
     } else if (e == 1) {
       this.userService.userData.activeRole = ApiUserRoles.Student;
-      this.userService.userData.coll = this.userService.userData.student_details.coll;
-      this.userService.userData.level = this.userService.userData.student_details.level;
-      this.userService.userData.camp = this.userService.userData.student_details.camp;
+      this.userService.userData.coll = this.userService.userData.student_details_ug.coll;
+      this.userService.userData.level = this.userService.userData.student_details_ug.level;
+      this.userService.userData.camp = this.userService.userData.student_details_ug.camp;
 
       //this.router.navigateByUrl('/home/bsc');
 
@@ -160,6 +157,12 @@ export class MenuComponent implements OnInit, AfterContentInit {
       this.userService.userData.coll = this.userService.userData.student_details_gr.coll;
       this.userService.userData.level = this.userService.userData.student_details_gr.level;
       this.userService.userData.camp = this.userService.userData.student_details_gr.camp;
+      //this.router.navigateByUrl('/home/msc');
+    } else if (e == 3) {
+      this.userService.userData.activeRole = ApiUserRoles.Student;
+      this.userService.userData.coll = this.userService.userData.student_details_ud.coll;
+      this.userService.userData.level = this.userService.userData.student_details_ud.level;
+      this.userService.userData.camp = this.userService.userData.student_details_ud.camp;
       //this.router.navigateByUrl('/home/msc');
     }
     //this.userService.pushUserDataChanges();

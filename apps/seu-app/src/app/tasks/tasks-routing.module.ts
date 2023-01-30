@@ -6,12 +6,12 @@ import { AddCommentComponent } from './components//add-comment/add-comment.compo
 import { TaskDetailsComponent } from './components/task-details/task-details.component';
 import { FavEmpComponent } from './components/fav-emp/fav-emp.component';
 const routes: Routes = [
-  { path: '', component: TasksListComponent },
-  { path: 'createdTasks', component: TasksListComponent },
-  { path: 'mytasks', component: TasksListComponent },
-  { path: 'alltasks', component: TasksListComponent },
+  { path: '', component: TasksListComponent, data: { title: 'الخدمات الإلكترونية | مهامي' } },
+  { path: 'createdTasks', component: TasksListComponent , data: { title: 'الخدمات الإلكترونية | إضافة المهام' }},
+  { path: 'mytasks', component: TasksListComponent, data: { title: 'الخدمات الإلكترونية | مهامي' } },
+  { path: 'alltasks', component: TasksListComponent, data: { title: 'الخدمات الإلكترونية | جميع المهام' } },
   { path: 'add-task', component: AddTaskComponent },
-  { path: 'fav-emps', component: FavEmpComponent },
+  { path: 'fav-emps', component: FavEmpComponent , data: { title: 'الخدمات الإلكترونية | القائمة المفضلة' }},
   { path: 'add-comment/:tid', component: AddCommentComponent },
   { path: 'details/:tid', component: TaskDetailsComponent }
 

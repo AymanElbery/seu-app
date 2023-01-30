@@ -6,9 +6,9 @@ import { UDGuard } from '../guards/ud.guard';
 
 const routes: Routes = [
 
-  { path: '', component: AcademicDiplomeStatusComponent },
-  { path: 'status', component: AcademicDiplomeStatusComponent , canActivate: [UDGuard]},
-  { path: 'record', component: AcademicRecordDiplomeComponent , canActivate: [UDGuard]},
+  { path: '', component: AcademicDiplomeStatusComponent, data: { title: 'الخدمات الإلكترونية | الحالة الأكاديمية - دبلوم' } },
+  { path: 'status', component: AcademicDiplomeStatusComponent , canActivate: [UDGuard], data: { title: 'الخدمات الإلكترونية | الحالة الأكاديمية - دبلوم' }},
+  { path: 'record', component: AcademicRecordDiplomeComponent , canActivate: [UDGuard], data: { title: 'الخدمات الإلكترونية | السجل الأكاديمي - دبلوم' }},
   
 ];
 

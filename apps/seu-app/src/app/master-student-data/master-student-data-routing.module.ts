@@ -8,10 +8,10 @@ const routes: Routes = [{ path: '', component: AcademicStatusComponent },
 {
   path: '',
   children: [
-    { path: 'academicstatus', component: AcademicStatusComponent },
-    { path: 'academicrecord', component: AcademicRecordComponent },
-    { path: 'info-update', component: InfoUpdateComponent },
-    { path: 'grades', component: MasterStudentGradesComponent }
+    { path: 'academicstatus', component: AcademicStatusComponent, data: { title: 'الخدمات الإلكترونية | الحالة الأكاديمية - ماجيستير' } },
+    { path: 'academicrecord', component: AcademicRecordComponent, data: { title: 'الخدمات الإلكترونية | السجل الأكاديمي - ماجيستير' } },
+    { path: 'info-update', component: InfoUpdateComponent, data: { title: 'الخدمات الإلكترونية | ' } },
+    { path: 'grades', component: MasterStudentGradesComponent, data: { title: 'الخدمات الإلكترونية | التقديرات قبل حساب المعدل - ماجيستير' } }
   ]
 }
 

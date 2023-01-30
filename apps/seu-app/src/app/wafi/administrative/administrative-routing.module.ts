@@ -11,12 +11,12 @@ import { PenaltyDiscountComponent } from './penalty-discount/penalty-discount.co
 const routes: Routes = [
 
   { path: '', component: EmpEvaluationsComponent },
-  { path: 'emp-evaluations', component: EmpEvaluationsComponent },
-  { path: 'penalty-discount', component: PenaltyDiscountComponent },
-  { path: 'emp-custody', component: EmpCustodyComponent },
-  { path: 'emp-letters', component: EmpLettersComponent },
-  { path: 'training', component: TrainingComponent },
-  { path: 'vouchers', component: VouchersComponent }
+  { path: 'emp-evaluations', component: EmpEvaluationsComponent , data: { title: 'الخدمات الإلكترونية | التقييم الوظيفي' } },
+  { path: 'penalty-discount', component: PenaltyDiscountComponent, data: { title: 'الخدمات الإلكترونية | حسم من الإجازة العادية' } },
+  { path: 'emp-custody', component: EmpCustodyComponent, data: { title: 'الخدمات الإلكترونية | عهد الموظف' } },
+  { path: 'emp-letters', component: EmpLettersComponent, data: { title: 'الخدمات الإلكترونية | خطابات الشكر و الإنذارات' }  },
+  { path: 'training', component: TrainingComponent , data: { title: 'الخدمات الإلكترونية | الدورات التدريبية' } },
+  { path: 'vouchers', component: VouchersComponent, data: { title: 'الخدمات الإلكترونية | البدلات و المكافآت' } }
 ];
 
 @NgModule({

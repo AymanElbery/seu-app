@@ -21,6 +21,7 @@ const routes: Routes = [
     path: 'stds-services',
     loadChildren:
       './modules/stds-services/stds-services.module#STDSServicesModule',
+    data: { title: 'الخدمات الإلكترونية | الخدمات الخارجية' }
   },
   {
     path: 'skills',

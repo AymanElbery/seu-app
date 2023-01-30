@@ -4,11 +4,11 @@ import { StudentDiplomePaymentComponent } from './student-diplome-payment/studen
 import { StudentInvoicesComponent } from './student-invoices/student-invoices.component';
 
 const routes: Routes = [
-  { path: '', component: StudentDiplomePaymentComponent },
+  { path: '', component: StudentDiplomePaymentComponent, data: { title: 'الخدمات الإلكترونية | سداد الرسوم - دبلوم' } },
   {
     path: '',
     children: [
-      { path: 'stdpay', component: StudentDiplomePaymentComponent },
+      { path: 'stdpay', component: StudentDiplomePaymentComponent, data: { title: 'الخدمات الإلكترونية | سداد الرسوم - دبلوم' } },
       { path: 'invoices', component: StudentInvoicesComponent }
     ]
   }

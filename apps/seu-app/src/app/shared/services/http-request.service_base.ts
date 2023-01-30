@@ -70,34 +70,12 @@ export class HttpRequestServiceBase {
     this.globalService.relogin();
   }
   requestUser() {
-    const url = environment.baselink + environment.servicesprefix + environment.common + "/ssosession/user";
-    const auth = this.getSSOAuth();
+    const url = environment.whoami_service;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      sessionid: this.globalService.getSID(),
-      Authorization: auth
+      'sid': this.globalService.getSID()
     });
     return this.http.get(url, { headers });
-  }
-  requestٍSession() {
-    const url = environment.baselink + environment.servicesprefix + environment.common + "/ssosession/user";
-    const auth = this.getSSOAuth();
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      sessionid: this.globalService.getSID(),
-      Authorization: auth
-    });
-    return this.http.get(url, { headers });
-  }
-  login(userName, passWord) {
-    const url = environment.baselink + environment.servicesprefix + environment.common + "/ssosession/user";
-    const auth = this.getSSOAuth();
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      sessionid: this.globalService.getSID(),
-      Authorization: auth
-    });
-    return this.http.post(url, { headers });
   }
 
   creatAuthHeader() {

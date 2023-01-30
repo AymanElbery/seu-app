@@ -9,8 +9,10 @@ export const providerDeclarations: any[] = [
 export const routes: Routes = [
     {
         path: 'all', component: StatementsListComponent,
+        data: { title: 'الخدمات الإلكترونية | الإفادات الطلابية - دبلوم' }
     },
     {
         path: '', component: StatementsListComponent,
+        data: { title: 'الخدمات الإلكترونية | الإفادات الطلابية - دبلوم' }
     }
 ];

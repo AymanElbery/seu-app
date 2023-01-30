@@ -18,17 +18,17 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      { path: 'withdrawal', component: UniversityWithdrawalComponent },
-      { path: 'termexecuse', component: TermExecuseComponent },
+      { path: 'withdrawal', component: UniversityWithdrawalComponent, data: { title: 'الخدمات الإلكترونية | الانسحاب من الجامعة - ماجيستير' } },
+      { path: 'termexecuse', component: TermExecuseComponent , data: { title: 'الخدمات الإلكترونية | الاعتذار عن الفصل - ماجيستير' }},
       { path: 'termexecuse-corona', component: TermExecuseCoronaComponent },
-      { path: 'studypostpone', component: StudyPostponeComponent },
+      { path: 'studypostpone', component: StudyPostponeComponent , data: { title: 'الخدمات الإلكترونية | تأجيل الفصل الدراسي - ماجيستير' }},
       { path: 'studypostpone-corona', component: StudyPostponeCoronaComponent},
-      { path: 'reEnroll', component: ReEnrollComponent },
-      { path: 'cancelcourse', component: CancelCourseComponent },
-      { path: 'objectexam', component: ExamObjectionComponent },
-      { path: 'examsexecuses', component: ExamsExecusesComponent },
-      { path: 'lecturesexecuses', component: LecturesExecusesComponent },
-      { path: 'equalize', component: MasterCourseEqualizeComponent }
+      { path: 'reEnroll', component: ReEnrollComponent , data: { title: 'الخدمات الإلكترونية | إعادة القيد - ماجيستير' }},
+      { path: 'cancelcourse', component: CancelCourseComponent , data: { title: 'الخدمات الإلكترونية | حذف مقرر دراسي - ماجيستير' }},
+      { path: 'objectexam', component: ExamObjectionComponent , data: { title: 'الخدمات الإلكترونية | الاعتراض على نتيجة الاختبار النهائي - ماجيستير' }},
+      { path: 'examsexecuses', component: ExamsExecusesComponent , data: { title: 'الخدمات الإلكترونية | أعذار التغيب عن الاختبارات - ماجيستير' }},
+      { path: 'lecturesexecuses', component: LecturesExecusesComponent, data: { title: 'الخدمات الإلكترونية | أعذار التغيب عن المحاضرات - ماجيستير' } },
+      { path: 'equalize', component: MasterCourseEqualizeComponent , data: { title: 'الخدمات الإلكترونية | معادلة المقررات - ماجيستير' }}
     ]
   }
 ];

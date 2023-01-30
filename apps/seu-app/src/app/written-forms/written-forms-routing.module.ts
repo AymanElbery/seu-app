@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsComponent } from './forms/forms.component';
 import { ProjectComponent } from './project/project.component';
 const routes: Routes = [
-  { path: 'forms', component: FormsComponent },
-  { path: 'project', component: ProjectComponent }
+  { path: 'forms', component: FormsComponent, data: { title: 'الخدمات الإلكترونية | نماذج المراسلات الكتابية' } },
+  { path: 'project', component: ProjectComponent, data: { title: 'الخدمات الإلكترونية | نماذج مكتب إدارة المشاريع' } }
 ];
 
 @NgModule({

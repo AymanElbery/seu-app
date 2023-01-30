@@ -11,9 +11,9 @@ const routes: Routes = [
     path: '',
     children: [
       { path: 'fees', component: TuitionFeesStatComponent },
-      { path: 'feesexception', component: FeesExceptionComponent },
-      { path: 'stdpay', component: StudentPaymentComponent },
-      { path: 'invoices', component: StudentInvoicesComponent }
+      { path: 'feesexception', component: FeesExceptionComponent, data: { title: 'الخدمات الإلكترونية | الإعفاء من الرسوم - بكالوريوس' } },
+      { path: 'stdpay', component: StudentPaymentComponent, data: { title: 'الخدمات الإلكترونية | سداد الرسوم الدراسية - بكالوريوس' } },
+      { path: 'invoices', component: StudentInvoicesComponent, data: { title: 'الخدمات الإلكترونية | الفاتورة الإلكترونية - بكالوريوس' } }
     ]
   }
 ];

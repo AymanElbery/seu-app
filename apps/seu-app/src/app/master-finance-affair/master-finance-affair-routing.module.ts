@@ -8,8 +8,8 @@ const routes: Routes = [{ path: '', component: MasterPaymentComponent },
 {
   path: '',
   children: [
-    { path: 'payment',  component: MasterPaymentComponent },
-    { path: 'refund',  component: MasterRefundComponent },
+    { path: 'payment',  component: MasterPaymentComponent, data: { title: 'الخدمات الإلكترونية | سداد الرسوم - ماجيستير' }  },
+    { path: 'refund',  component: MasterRefundComponent , data: { title: 'الخدمات الإلكترونية | استرداد الرسوم الدراسية - ماجيستير' } },
     { path: 'invoices', component: StudentInvoicesComponent }
   ]
 }

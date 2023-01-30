@@ -21,14 +21,14 @@ const routes: Routes = [
     path: '',
     component: BlankComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'home/:t', component: HomeComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full', data: { title: 'الخدمات الإلكترونية | الصفحة الرئيسية' } },
+      { path: 'home', component: HomeComponent, data: { title: 'الخدمات الإلكترونية | الصفحة الرئيسية' } },
+      { path: 'home/:t', component: HomeComponent , data: { title: 'الخدمات الإلكترونية | الصفحة الرئيسية' }},
       { path: 'admis-pages/:cat', component: AdmisPagesComponent },
       { path: 'stdsnew-pages', component: StdsPagesComponent },
       { path: 'policy', component: PolicyComponent },
       { path: 'docs-confirm', component: DocsConfirmComponent },
-      { path: 'exam-photo', component: StdUploadPhotoListComponent },
+      { path: 'exam-photo', component: StdUploadPhotoListComponent, data: { title: 'الخدمات الإلكترونية | صورة نظام الاختبارات' } },
       {
         path: 'instructions',
         loadChildren: './instructions/instructions.module#InstructionsModule',

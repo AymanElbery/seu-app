@@ -17,8 +17,6 @@ export class StatementsListComponent implements OnInit {
     constructor(
         private translate: TranslateService,
         private statementsService: StatementsService, 
-        private router: Router, 
-        private route: ActivatedRoute,
         private toastr: AppToasterService
     ) { 
         this.lang = this.translate.currentLang;

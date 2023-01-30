@@ -65,7 +65,8 @@
         "type_suggest": "suggestion",
         "type_complaint": "Inquiry",
         "type_problem": "Issue / Problem",
-        "id": "Request #"
+        "id": "Request #",
+        "note_before": "Please note that this service is intended only for access problems to electronic systems, and cannot be used for any other technical  or academic problems"
     },
     "details": {
         "attachments": "Attachments",

@@ -44,6 +44,7 @@ import { PolicyComponent } from './home/policy.component';
 import { DocsConfirmComponent } from './home/docs-confirm.component';
 import { VaccineStatusComponent } from './home/vaccine-status/vaccine-status.component';
 import { SeuStructureEmpComponent } from './home/seu-structure-emp/seu-structure-emp.component';
+import { OtpConfirmation } from './home/otp-confirmation/otp-confirmation.component';
 import { StudentRightsComponent } from './home/student-rights/student-rights.component';
 import { AppErrorComponent } from './home/error.component';
 import { GMPolicyComponent } from './home/gmpolicy.component';
@@ -77,6 +78,7 @@ export function oAuthStorageFactory(): OAuthStorage {
     DocsConfirmComponent,
     VaccineStatusComponent,
     SeuStructureEmpComponent,
+    OtpConfirmation,
     StudentRightsComponent,
     GMPolicyComponent,
     StdUploadPhotoComponent,
@@ -133,7 +135,7 @@ export function oAuthStorageFactory(): OAuthStorage {
     , { provide: OAuthStorage, useFactory: oAuthStorageFactory },
 
   ],
-  entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent,VedioComponent, VaccineStatusComponent,SeuStructureEmpComponent, StudentRightsComponent],
+  entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent,VedioComponent, VaccineStatusComponent,SeuStructureEmpComponent, StudentRightsComponent, OtpConfirmation],
   exports: [DownloadPrintDirective, ExternalLinkDirective,VedioComponent],
   bootstrap: [AppComponent]
 })

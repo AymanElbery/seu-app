@@ -12,8 +12,9 @@ export interface UserData {
     PIDM: string;
     ssn: string;
     camp: string;
-    student_details: StudentDetails;
+    student_details_ug: StudentDetails;
     student_details_gr: StudentDetails;
+    student_details_ud: StudentDetails;
 
     username: string;
     role: string;
@@ -23,6 +24,7 @@ export interface UserData {
     STD_RIGHTS: number;
     DATA_CLEANED: number;
     SEU_STRUCTURE_EMP: number;
+    OTP: number;
     DATA_CLEANED_STD: number;
     COMMITTE_CONFIRM: number;
     COMMITTE_CONFIRM_DATA: any;
