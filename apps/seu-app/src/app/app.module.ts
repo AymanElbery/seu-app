@@ -45,6 +45,7 @@ import { DocsConfirmComponent } from './home/docs-confirm.component';
 import { VaccineStatusComponent } from './home/vaccine-status/vaccine-status.component';
 import { SeuStructureEmpComponent } from './home/seu-structure-emp/seu-structure-emp.component';
 import { OtpConfirmation } from './home/otp-confirmation/otp-confirmation.component';
+import { FeesUDConfirmation } from './home/fees-UD-confirmation/fees-UD-confirmation.component';
 import { StudentRightsComponent } from './home/student-rights/student-rights.component';
 import { AppErrorComponent } from './home/error.component';
 import { GMPolicyComponent } from './home/gmpolicy.component';
@@ -79,6 +80,7 @@ export function oAuthStorageFactory(): OAuthStorage {
     VaccineStatusComponent,
     SeuStructureEmpComponent,
     OtpConfirmation,
+    FeesUDConfirmation,
     StudentRightsComponent,
     GMPolicyComponent,
     StdUploadPhotoComponent,
@@ -135,7 +137,18 @@ export function oAuthStorageFactory(): OAuthStorage {
     , { provide: OAuthStorage, useFactory: oAuthStorageFactory },
 
   ],
-  entryComponents: [PolicyComponent,GMPolicyComponent, StdUploadPhotoComponent, DocsConfirmComponent,VedioComponent, VaccineStatusComponent,SeuStructureEmpComponent, StudentRightsComponent, OtpConfirmation],
+  entryComponents: [
+    PolicyComponent,
+    GMPolicyComponent, 
+    StdUploadPhotoComponent, 
+    DocsConfirmComponent,
+    VedioComponent, 
+    VaccineStatusComponent,
+    SeuStructureEmpComponent, 
+    StudentRightsComponent, 
+    OtpConfirmation,
+    FeesUDConfirmation
+  ],
   exports: [DownloadPrintDirective, ExternalLinkDirective,VedioComponent],
   bootstrap: [AppComponent]
 })

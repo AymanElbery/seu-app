@@ -52,10 +52,8 @@ export class UserService extends BaseService {
       STD_RIGHTS: 0,
       DATA_CLEANED: 0,
       SEU_STRUCTURE_EMP: 0,
-<<<<<<< HEAD
-=======
       OTP : 0,
->>>>>>> d2670be4026448eb0fed4a7b28bbfebbc67e099b
+      FEES_UD : 0,
       DATA_CLEANED_STD: 0,
       COMMITTE_CONFIRM: 0,
       COMMITTE_CONFIRM_DATA: [],
@@ -68,11 +66,7 @@ export class UserService extends BaseService {
       sex: '',
       ssn: '',
       stdName: '',
-<<<<<<< HEAD
-      student_details: {
-=======
       student_details_ug: {
->>>>>>> d2670be4026448eb0fed4a7b28bbfebbc67e099b
         name_en: '',
         ssn: '',
         sex: '',
@@ -94,8 +88,6 @@ export class UserService extends BaseService {
         coll: '',
         id: '',
         level: ''
-<<<<<<< HEAD
-=======
       },
       student_details_ud: {
         name_en: '',
@@ -107,7 +99,6 @@ export class UserService extends BaseService {
         coll: '',
         id: '',
         level: ''
->>>>>>> d2670be4026448eb0fed4a7b28bbfebbc67e099b
       }
     };
     this.newsData = [];
@@ -151,15 +142,9 @@ export class UserService extends BaseService {
   requestUser() {
     return this.httRequest.requestUser().toPromise();
   }
-<<<<<<< HEAD
-  requestٍSession(){
-    return this.httRequest.requestٍSession().toPromise();
-  }
-=======
   // requestٍSession(){
   //   return this.httRequest.requestٍSession().toPromise();
   // }
->>>>>>> d2670be4026448eb0fed4a7b28bbfebbc67e099b
 
   SignIn(userName, pass) {
     this.baseUrl = '';
@@ -197,10 +182,6 @@ export class UserService extends BaseService {
         .then(res => {
           if (res['status']) {
             this.userData = (res as any).data;
-<<<<<<< HEAD
-            // console.log('userdata:'+this.userData);
-=======
->>>>>>> d2670be4026448eb0fed4a7b28bbfebbc67e099b
             //this.userData.role = "Instructor";
             this.userData.activeRole = this.userData.role;
             this.userDataLoaded = true;
@@ -222,15 +203,9 @@ export class UserService extends BaseService {
           });
     }
   }
-<<<<<<< HEAD
-  loadUserDetailsData() {
-    return this.requestUser();
-  }
-=======
   // loadUserDetailsData() {
   //   return this.requestUser();
   // }
->>>>>>> d2670be4026448eb0fed4a7b28bbfebbc67e099b
   pushUserDataChanges() {
     this.userDataSubject.next(this.userData);
     this.userDataObservable.next(this.userData);
@@ -240,22 +215,15 @@ export class UserService extends BaseService {
     let data;
     // tslint:disable-next-line: triple-equals
     if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'UG') {
-<<<<<<< HEAD
-      data = JSON.parse(JSON.stringify(this.userData.student_details));
-=======
       data = JSON.parse(JSON.stringify(this.userData.student_details_ug));
->>>>>>> d2670be4026448eb0fed4a7b28bbfebbc67e099b
       data.username = data.id;
       // tslint:disable-next-line: triple-equals
     } else if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'GR') {
       data = JSON.parse(JSON.stringify(this.userData.student_details_gr));
       data.username = data.id;
-<<<<<<< HEAD
-=======
     } else if (this.userData.activeRole == 'Student' && this.userData.act_as_student && this.userData.level === 'UD') {
       data = JSON.parse(JSON.stringify(this.userData.student_details_ud));
       data.username = data.id;
->>>>>>> d2670be4026448eb0fed4a7b28bbfebbc67e099b
     } else {
       data = JSON.parse(JSON.stringify(this.userData));
     }
@@ -520,5 +488,17 @@ export class UserService extends BaseService {
     return this.http.get(url + "emp/lookups", {
       headers: headers
     });
+  }
+
+  updateFeesUdPopup(data) {
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/popups/";
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
+    });
+
+    return this.http.post(url + "fees_ud/update", data, { headers: headers });
   }
 }

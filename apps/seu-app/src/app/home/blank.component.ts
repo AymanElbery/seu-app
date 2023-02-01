@@ -13,6 +13,7 @@ import { DocsConfirmComponent } from './docs-confirm.component';
 import { VaccineStatusComponent } from './vaccine-status/vaccine-status.component';
 import { SeuStructureEmpComponent } from './seu-structure-emp/seu-structure-emp.component';
 import { OtpConfirmation } from './otp-confirmation/otp-confirmation.component';
+import { FeesUDConfirmation } from './fees-UD-confirmation/fees-UD-confirmation.component';
 import { StudentRightsComponent } from './student-rights/student-rights.component';
 import { GMPolicyComponent } from './gmpolicy.component';
 import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.component';
@@ -24,6 +25,7 @@ import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.com
 export class BlankComponent implements OnInit {
   title = 'seu-app';
   print: PrintService;
+  showFeesUDOnce= 0;
   sessionloaded = false;
   constructor(
     public printService: PrintService,
@@ -72,6 +74,9 @@ export class BlankComponent implements OnInit {
           dialogConfig.data = {'showCancelNotes':CanCancel,'allowCancel':CanCancel};
           this.dialog.open(StdUploadPhotoComponent, dialogConfig);
         }
+        if(!this.showFeesUDOnce){
+          this.showFeesUdConfirm();
+        }
       }
     });
     //
@@ -110,8 +115,18 @@ export class BlankComponent implements OnInit {
         }
       }
     });
-    
-    
+  }
+  
+  showFeesUdConfirm(){
+    this.showFeesUDOnce = 1;
+    if (!this.userService.userData['FEES_UD']) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      dialogConfig.disableClose = true;
+      dialogConfig.width = '50%';
+      dialogConfig.maxWidth = 1000;
+      this.dialog.open(FeesUDConfirmation, dialogConfig);
+    }
   }
 
 

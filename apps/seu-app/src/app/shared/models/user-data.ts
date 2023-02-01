@@ -25,6 +25,7 @@ export interface UserData {
     DATA_CLEANED: number;
     SEU_STRUCTURE_EMP: number;
     OTP: number;
+    FEES_UD: number;
     DATA_CLEANED_STD: number;
     COMMITTE_CONFIRM: number;
     COMMITTE_CONFIRM_DATA: any;
