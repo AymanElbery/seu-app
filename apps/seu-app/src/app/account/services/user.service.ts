@@ -54,9 +54,11 @@ export class UserService extends BaseService {
       SEU_STRUCTURE_EMP: 0,
       OTP : 0,
       FEES_UD : 0,
+      CHANGE_MAJOR_SURVEY : 0,
       DATA_CLEANED_STD: 0,
       COMMITTE_CONFIRM: 0,
       COMMITTE_CONFIRM_DATA: [],
+      CHANGE_MAJOR_SURVEY_DATA: [],
       level: '',
       major: '',
       name_ar: '',
@@ -500,5 +502,17 @@ export class UserService extends BaseService {
     });
 
     return this.http.post(url + "fees_ud/update", data, { headers: headers });
+  }
+
+  updateChangeMajorPopup(data) {
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/popups/";
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
+    });
+
+    return this.http.post(url + "change_major/update", data, { headers: headers });
   }
 }

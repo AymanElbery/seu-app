@@ -14,6 +14,7 @@ import { VaccineStatusComponent } from './vaccine-status/vaccine-status.componen
 import { SeuStructureEmpComponent } from './seu-structure-emp/seu-structure-emp.component';
 import { OtpConfirmation } from './otp-confirmation/otp-confirmation.component';
 import { FeesUDConfirmation } from './fees-UD-confirmation/fees-UD-confirmation.component';
+import { ChangeMajorConfirmation } from './change-major-confirmation/change-major-confirmation.component';
 import { StudentRightsComponent } from './student-rights/student-rights.component';
 import { GMPolicyComponent } from './gmpolicy.component';
 import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.component';
@@ -25,7 +26,8 @@ import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.com
 export class BlankComponent implements OnInit {
   title = 'seu-app';
   print: PrintService;
-  showFeesUDOnce= 0;
+  showFeesUDOnce = 0;
+  showChangeMajorOnce = 0;
   sessionloaded = false;
   constructor(
     public printService: PrintService,
@@ -77,6 +79,9 @@ export class BlankComponent implements OnInit {
         if(!this.showFeesUDOnce){
           this.showFeesUdConfirm();
         }
+        if(!this.showChangeMajorOnce){
+          this.showChangeMajorConfirm();
+        }
       }
     });
     //
@@ -126,6 +131,19 @@ export class BlankComponent implements OnInit {
       dialogConfig.width = '50%';
       dialogConfig.maxWidth = 1000;
       this.dialog.open(FeesUDConfirmation, dialogConfig);
+    }
+  }
+
+  showChangeMajorConfirm(){
+    this.showChangeMajorOnce = 1;
+    if (!this.userService.userData['CHANGE_MAJOR_SURVEY']) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      dialogConfig.disableClose = true;
+      dialogConfig.width = '50%';
+      dialogConfig.maxWidth = 1000;
+      dialogConfig.data = this.userService.userData['CHANGE_MAJOR_SURVEY_DATA'];
+      this.dialog.open(ChangeMajorConfirmation, dialogConfig);
     }
   }
 

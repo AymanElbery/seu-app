@@ -1,0 +1,13 @@
+<mat-dialog-content dir="{{translate.currentLang == 'ar' ? 'rtl':'ltr'}}">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="width:100%;text-align: center" class="modal-title " id="exampleModalLabel">
+                {{ "change_major_popup.title"|translate }}
+            </h5>
+        </div>
+        <div class="modal-body text-center" style="width: 100%;" (scroll)="onScroll($event)">
+            <p class="text-center" [innerHTML]="data.message"></p>
+            <button style="width: 20%;" class="btn btn-primary" (click)="do_logic()">{{ "change_major_popup.click_here"|translate }}</button>
+        </div>
+    </div>
+</mat-dialog-content>

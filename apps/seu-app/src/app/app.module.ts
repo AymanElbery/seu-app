@@ -46,6 +46,7 @@ import { VaccineStatusComponent } from './home/vaccine-status/vaccine-status.com
 import { SeuStructureEmpComponent } from './home/seu-structure-emp/seu-structure-emp.component';
 import { OtpConfirmation } from './home/otp-confirmation/otp-confirmation.component';
 import { FeesUDConfirmation } from './home/fees-UD-confirmation/fees-UD-confirmation.component';
+import { ChangeMajorConfirmation } from './home/change-major-confirmation/change-major-confirmation.component';
 import { StudentRightsComponent } from './home/student-rights/student-rights.component';
 import { AppErrorComponent } from './home/error.component';
 import { GMPolicyComponent } from './home/gmpolicy.component';
@@ -81,6 +82,7 @@ export function oAuthStorageFactory(): OAuthStorage {
     SeuStructureEmpComponent,
     OtpConfirmation,
     FeesUDConfirmation,
+    ChangeMajorConfirmation ,
     StudentRightsComponent,
     GMPolicyComponent,
     StdUploadPhotoComponent,
@@ -147,7 +149,8 @@ export function oAuthStorageFactory(): OAuthStorage {
     SeuStructureEmpComponent, 
     StudentRightsComponent, 
     OtpConfirmation,
-    FeesUDConfirmation
+    FeesUDConfirmation,
+    ChangeMajorConfirmation
   ],
   exports: [DownloadPrintDirective, ExternalLinkDirective,VedioComponent],
   bootstrap: [AppComponent]

@@ -29,4 +29,6 @@ export interface UserData {
     DATA_CLEANED_STD: number;
     COMMITTE_CONFIRM: number;
     COMMITTE_CONFIRM_DATA: any;
+    CHANGE_MAJOR_SURVEY: number;
+    CHANGE_MAJOR_SURVEY_DATA: any;
 }

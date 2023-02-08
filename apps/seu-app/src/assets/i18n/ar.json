@@ -1607,6 +1607,10 @@
         "desc_5": "متمنين لكم دوام التوفيق",
         "click_here": "إقـــرار"
     },
+    "change_major_popup":{
+        "title": "تذكير عدم الإستجابة للإستبيان",
+        "click_here": "من هنا"
+    },
     "student_rights":{
         "save": "حفظ",
         "title": "اعرف حقك",
