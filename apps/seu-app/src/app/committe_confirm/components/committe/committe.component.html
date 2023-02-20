@@ -12,16 +12,16 @@
                 <thead>
                   <tr>
                     <th scope="col">{{"committe.report_date" | translate}}</th>
-                    <td>{{date | date: 'dd-MM-yyyy'}}</td>
+                    <td>{{ data[0].report_date }}</td>
                   </tr>
                   <tr>
                     <th scope="col">{{"committe.punishment" | translate}}</th>
-                    <td>{{ data[0].DECESION }}</td>
+                    <td>{{ data[0].decesion }}</td>
                   </tr>
                   <tr>
                     <th style="vertical-align: middle;" scope="col">{{"committe.violation" | translate}}</th>
                     <td>
-                      <strong *ngFor="let violation of data; let i = index"> <span style="font-weight: bold; position: relative; top: 4px;">مخالفة رقم ({{ i+1 }})</span> <button style="margin-top: 10px; margin-right: 10px;" (click)="click(violation.PUNISHMENT_DETAILS_FILE, violation.COLL)"  class="btn btn-primary">للإطلاع من هنا</button> <br></strong>
+                      <strong *ngFor="let violation of data; let i = index"> <span style="font-weight: bold; position: relative; top: 4px;">مخالفة رقم ({{ i+1 }})</span> <button style="margin-top: 10px; margin-right: 10px;" (click)="click(violation.punishment_details_file, violation.coll)"  class="btn btn-primary">للإطلاع من هنا</button> <br></strong>
                     </td>
                   </tr>
                   <tr>
