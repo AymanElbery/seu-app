@@ -64,6 +64,7 @@ import { City_pipe } from './home/pips/city_pipe';
 import { District_pipe } from './home/pips/district_pipe';
 import { Committe_confirmModule } from '../app/committe_confirm/committe_confirm.module';
 import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
+import { AssetsPolicyComponent } from './home/assets-policy/assets-policy.component';
 
 export function oAuthStorageFactory(): OAuthStorage {
   return localStorage;
@@ -99,7 +100,8 @@ export function oAuthStorageFactory(): OAuthStorage {
     StdsPagesComponent,
     AppErrorComponent,
     ContactRedirectComponent,
-    VedioComponent
+    VedioComponent,
+    AssetsPolicyComponent
   ],
   imports: [
     CommonModule,
@@ -150,7 +152,8 @@ export function oAuthStorageFactory(): OAuthStorage {
     StudentRightsComponent, 
     OtpConfirmation,
     FeesUDConfirmation,
-    ChangeMajorConfirmation
+    ChangeMajorConfirmation,
+    AssetsPolicyComponent
   ],
   exports: [DownloadPrintDirective, ExternalLinkDirective,VedioComponent],
   bootstrap: [AppComponent]

@@ -15,6 +15,7 @@ import { SeuStructureEmpComponent } from './seu-structure-emp/seu-structure-emp.
 import { OtpConfirmation } from './otp-confirmation/otp-confirmation.component';
 import { FeesUDConfirmation } from './fees-UD-confirmation/fees-UD-confirmation.component';
 import { ChangeMajorConfirmation } from './change-major-confirmation/change-major-confirmation.component';
+import { AssetsPolicyComponent } from './assets-policy/assets-policy.component';
 import { StudentRightsComponent } from './student-rights/student-rights.component';
 import { GMPolicyComponent } from './gmpolicy.component';
 import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.component';
@@ -28,6 +29,7 @@ export class BlankComponent implements OnInit {
   print: PrintService;
   showFeesUDOnce = 0;
   showChangeMajorOnce = 0;
+  showPolicyOnce = 0;
   sessionloaded = false;
   constructor(
     public printService: PrintService,
@@ -81,6 +83,9 @@ export class BlankComponent implements OnInit {
         }
         if(!this.showChangeMajorOnce){
           this.showChangeMajorConfirm();
+        }
+        if(!this.showPolicyOnce){
+          this.showPolicy();
         }
       }
     });
@@ -144,6 +149,18 @@ export class BlankComponent implements OnInit {
       dialogConfig.maxWidth = 1000;
       dialogConfig.data = this.userService.userData['CHANGE_MAJOR_SURVEY_DATA'];
       this.dialog.open(ChangeMajorConfirmation, dialogConfig);
+    }
+  }
+
+  showPolicy(){
+    this.showPolicyOnce = 1;
+    if (this.userService.userData['SHOW_POLICY']) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      dialogConfig.disableClose = true;
+      dialogConfig.width = '50%';
+      dialogConfig.maxWidth = 1000;
+      this.dialog.open(AssetsPolicyComponent, dialogConfig);
     }
   }
 

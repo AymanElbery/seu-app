@@ -55,6 +55,7 @@ export class UserService extends BaseService {
       OTP : 0,
       FEES_UD : 0,
       CHANGE_MAJOR_SURVEY : 0,
+      SHOW_POLICY : 0,
       DATA_CLEANED_STD: 0,
       COMMITTE_CONFIRM: 0,
       COMMITTE_CONFIRM_DATA: [],
@@ -514,5 +515,17 @@ export class UserService extends BaseService {
     });
 
     return this.http.post(url + "change_major/update", data, { headers: headers });
+  }
+
+  updateAssetsPolicyPopup(data) {
+    var url = environment.baselink + environment.servicesprefix + environment.common + "/popups/";
+    var auth =`Basic ${window.btoa(environment.basicAuth)}`;
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': auth,
+      'sessionid': this.globalService.getSID(),
+    });
+    
+    return this.http.post(url + "assets_policy/insert", data, { headers: headers });
   }
 }

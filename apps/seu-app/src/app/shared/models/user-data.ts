@@ -30,5 +30,6 @@ export interface UserData {
     COMMITTE_CONFIRM: number;
     COMMITTE_CONFIRM_DATA: any;
     CHANGE_MAJOR_SURVEY: number;
+    SHOW_POLICY: number;
     CHANGE_MAJOR_SURVEY_DATA: any;
 }
