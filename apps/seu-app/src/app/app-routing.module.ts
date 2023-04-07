@@ -42,6 +42,10 @@ const routes: Routes = [
         loadChildren: './procedure-guide/procedure-guide.module#ProcedureGuideModule',
       },
       {
+        path: 'policies',
+        loadChildren: './policies/policies.module#PoliciesModule',
+      },
+      {
         path: 'academicaff',
         loadChildren: './academicaff/academicaff.module#AcademicaffModule',
         canActivate: [UGGuard]

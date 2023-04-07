@@ -998,6 +998,18 @@
             
           </div>
         </div>
+        
+        <div *ngIf="userService.userData && userService.userData.activeRole == 'Employee' || userService.userData.activeRole == 'Instructor'" class="nav-item has-sub">
+          <a href="javascript:void(0)">
+            <span>{{ "menu.policies" | translate }} </span>
+            <i class="ik ik-book-open"></i>
+          </a>
+          <div class="submenu-content">
+            <a routerLink="/policies/security-policies" class="menu-item">
+              {{ "menu.security_policies" | translate }}
+            </a>
+          </div>
+        </div>
 
         <div *ngIf="
             userService.userData && userService.userData.activeRole == 'Student'

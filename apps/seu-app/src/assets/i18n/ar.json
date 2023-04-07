@@ -242,6 +242,8 @@
         "jobs": "بوابة التوظيف",
         "forms": "النماذج",
         "procedure_guide": "دليل إجراءات الجامعة",
+        "policies": "السياسات",
+        "security_policies": "سياسات الأمن السيبراني",
         "email": "البريد الإلكتروني",
         "ALWAFI": "خدماتي الذاتية",
         "Attednace": "الحضور والانصراف",
@@ -1718,6 +1720,116 @@
             "file_2" : {
                 "text": "عمادة القبول و شؤون الطلاب - مركز العناية بالطالب",
                 "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_educational_affairs_file2_link.pdf"
+            }
+        }
+    },
+    "cybersecurity": {
+        "header_title": "عنوان السياسة",
+        "download"  : "تحميل",
+        "items": {
+            "file_1": {
+                "text": "السياسة العامة للأمن السيبراني",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file1_link.docx"
+            },
+            "file_2": {
+                "text": "الهيكل التنظيمي للأمن السيبراني",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file2_link.docx"
+            },
+            "file_3": {
+                "text": "سياسة اختبار الاختراق",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file3_link.docx"
+            },
+            "file_4": {
+                "text": "سياسة إدارة الثغرات",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file4_link.docx"
+            },
+            "file_5": {
+                "text": "سياسة إدارة حزم التحديثات والإصلاحات",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file5_link.docx"
+            },
+            "file_6": {
+                "text": "سياسة إدارة حوادث وتهديدات الأمن السيبراني",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file6_link.docx"
+            },
+            "file_7": {
+                "text": "سياسة إدارة سجلات الأحداث ومراقبة الأمن السيبراني",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file7_link.docx"
+            },
+            "file_8": {
+                "text": "سياسة إدارة مخاطر الأمن السيبراني",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file8_link.docx"
+            },
+            "file_9": {
+                "text": "سياسة إدارة هويات الدخول والصلاحيات",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file9_link.docx"
+            },
+            "file_10": {
+                "text": "سياسة الاستخدام المقبول للأصول",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file10_link.docx"
+            },
+            "file_11": {
+                "text": "سياسة الإعدادات والتحصين",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file11_link.docx"
+            },
+            "file_12": {
+                "text": "سياسة الالتزام بتشريعات وتنظيمات الأمن السيبراني",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file12_link.docx"
+            },
+            "file_13": {
+                "text": "سياسة الأمن السيبراني المتعلّق بالأطراف الخارجية",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file13_link.docx"
+            },
+            "file_14": {
+                "text": "سياسة الأمن السيبراني المتعلق بالأمن المادي",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file14_link.docx"
+            },
+            "file_15": {
+                "text": "سياسة الأمن السيبراني المتعلق بالحوسبة السحابية والاستضافة",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file15_link.docx"
+            },
+            "file_16": {
+                "text": "سياسة الأمن السيبراني ضمن استمرارية الأعمال",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file16_link.docx"
+            },
+            "file_17": {
+                "text": "سياسة الأمن السيبراني للموارد البشرية",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file17_link.docx"
+            },
+            "file_18": {
+                "text": "سياسة التشفير",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file18_link.docx"
+            },
+            "file_19": {
+                "text": "سياسة الحماية من البرمجيات الضارة",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file19_link.docx"
+            },
+            "file_20": {
+                "text": "سياسة أمن أجهزة المستخدمين والأجهزة المحمولة والأجهزة الشخصية",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file20_link.docx"
+            },
+            "file_21": {
+                "text": "سياسة أمن البريد الإلكتروني",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file21_link.docx"
+            },
+            "file_22": {
+                "text": "سياسة أمن الخوادم",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file22_link.docx"
+            },
+            "file_23": {
+                "text": "سياسة أمن الشبكات",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file23_link.docx"
+            },
+            "file_24": {
+                "text": "سياسة أمن قواعد البيانات",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file24_link.docx"
+            },
+            "file_25": {
+                "text": "سياسة حماية تطبيقات الويب",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file25_link.docx"
+            },
+            "file_26": {
+                "text": "سياسة مراجعة وتدقيق الأمن السيبراني",
+                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file26_link.docx"
             }
         }
     },
