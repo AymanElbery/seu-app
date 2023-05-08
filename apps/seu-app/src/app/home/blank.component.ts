@@ -16,6 +16,7 @@ import { OtpConfirmation } from './otp-confirmation/otp-confirmation.component';
 import { FeesUDConfirmation } from './fees-UD-confirmation/fees-UD-confirmation.component';
 import { ChangeMajorConfirmation } from './change-major-confirmation/change-major-confirmation.component';
 import { AssetsPolicyComponent } from './assets-policy/assets-policy.component';
+import { RehltyPopupComponent } from './rehlty-popup/rehlty-popup.component';
 import { StudentRightsComponent } from './student-rights/student-rights.component';
 import { GMPolicyComponent } from './gmpolicy.component';
 import { StdUploadPhotoComponent } from './std-upload-photo/std-upload-photo.component';
@@ -30,6 +31,7 @@ export class BlankComponent implements OnInit {
   showFeesUDOnce = 0;
   showChangeMajorOnce = 0;
   showPolicyOnce = 0;
+  showRehltyOnce = 0;
   sessionloaded = false;
   constructor(
     public printService: PrintService,
@@ -86,6 +88,9 @@ export class BlankComponent implements OnInit {
         }
         if(!this.showPolicyOnce){
           this.showPolicy();
+        }
+        if(!this.showRehltyOnce){
+          this.showRehlty();
         }
       }
     });
@@ -161,6 +166,18 @@ export class BlankComponent implements OnInit {
       dialogConfig.width = '50%';
       dialogConfig.maxWidth = 1000;
       this.dialog.open(AssetsPolicyComponent, dialogConfig);
+    }
+  }
+
+  showRehlty(){
+    this.showRehltyOnce = 1;
+    if (this.userService.userData['SHOW_REHLTY']) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = true;
+      dialogConfig.disableClose = false;
+      dialogConfig.width = '50%';
+      dialogConfig.maxWidth = 600;
+      this.dialog.open(RehltyPopupComponent, dialogConfig);
     }
   }
 

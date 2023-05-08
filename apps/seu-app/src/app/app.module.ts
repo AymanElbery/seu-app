@@ -65,6 +65,7 @@ import { District_pipe } from './home/pips/district_pipe';
 import { Committe_confirmModule } from '../app/committe_confirm/committe_confirm.module';
 import { OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { AssetsPolicyComponent } from './home/assets-policy/assets-policy.component';
+import { RehltyPopupComponent } from './home/rehlty-popup/rehlty-popup.component';
 
 export function oAuthStorageFactory(): OAuthStorage {
   return localStorage;
@@ -101,7 +102,8 @@ export function oAuthStorageFactory(): OAuthStorage {
     AppErrorComponent,
     ContactRedirectComponent,
     VedioComponent,
-    AssetsPolicyComponent
+    AssetsPolicyComponent,
+    RehltyPopupComponent
   ],
   imports: [
     CommonModule,
@@ -153,7 +155,8 @@ export function oAuthStorageFactory(): OAuthStorage {
     OtpConfirmation,
     FeesUDConfirmation,
     ChangeMajorConfirmation,
-    AssetsPolicyComponent
+    AssetsPolicyComponent,
+    RehltyPopupComponent
   ],
   exports: [DownloadPrintDirective, ExternalLinkDirective,VedioComponent],
   bootstrap: [AppComponent]

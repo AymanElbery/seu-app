@@ -1,0 +1,16 @@
+<mat-dialog-content dir="{{translate.currentLang == 'ar' ? 'rtl':'ltr'}}">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" style="background-color: #ededed;" class="close" (click)="closeDialog()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 style="width:100%;text-align: center" class="modal-title " id="exampleModalLabel">
+                {{ "rehlty_popup.title"|translate }}
+            </h5>
+        </div>
+        <div class="modal-body text-center" style="width: 100%;">
+            <p class="text-center">{{ "rehlty_popup.message"|translate }}</p>
+            <p class="text-center">{{ "rehlty_popup.to_visit"|translate }} <a class="text-info" href="https://rehlati.seu.edu.sa/" target="_blank">{{ "rehlty_popup.click_here"|translate }}</a></p>
+        </div>
+    </div>
+</mat-dialog-content>
