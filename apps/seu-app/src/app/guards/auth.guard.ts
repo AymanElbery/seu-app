@@ -12,7 +12,7 @@ import { map, catchError } from 'rxjs/operators';
 export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
 
   constructor(private router: Router, private userService: UserService, private http: HttpClient) {
-
+    
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.isLoggedIn();

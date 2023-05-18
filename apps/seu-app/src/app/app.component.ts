@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
 
   signedIn: Observable<boolean>;
   loadingDataImg: boolean = false;
+  token_received_once: boolean = false;
 
   constructor(
     public userService: UserService, 
@@ -101,7 +102,7 @@ export class AppComponent implements OnInit {
       if (event instanceof NavigationError) {
         this.loadingDataImg = false;
       }
-    }
+  }
 
 
   setLang(ulang) {
@@ -122,46 +123,29 @@ export class AppComponent implements OnInit {
 
       this.signedIn = this.authService.isSignedIn();
 
-      this.authService.userChanged().subscribe(
-      (user) => {
-          //console.log("USER CHECNGED",user);
-      });
+      // this.authService.userChanged().subscribe(
+      // (user) => {
+      //     //console.log("USER CHECNGED",user);
+      // });
       //this.userService.relogin();
     }
     
   }
-  custionsso() {
-    this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
-      res => {
-        localStorage.setItem('sid', encodeURI(res['csid']));
-        //this.userService.loadUserData();
-      },
-      err => {
-        const notapps = (document.location.href.indexOf("/apps") == -1) ? true : false;
-        const notpublic = (document.location.href.indexOf("/public") == -1) ? true : false;
-        const notcontactus = (document.location.href.indexOf("/contactus") == -1) ? true : false;
-        if (notapps && notpublic && notcontactus) {
-          this.userService.relogin();
-        }
-      }
-    );
-  }
-
-  // asda() {
-  //   const data = JSON.parse('{"configuration":{"release-version":"12.2.1.4.6"},"access-configuration":{"http-direct-authentication-endpoint":"https://iamtest.seu.edu.sa:443/oam/server/authentication","http-logout-endpoint":"https://iamtest.seu.edu.sa:443/oam/server/logout","http-credential-submit-endpoint":"https://iamtest.seu.edu.sa:443/oam/server/auth_cred_submit"},"openid-configuration":{"issuer":"https://iamtest.seu.edu.sa:443/oauth2","authorization_endpoint":"https://iamtest.seu.edu.sa:443/oauth2/rest/authorize","token_endpoint":"https://iamtest.seu.edu.sa:443/oauth2/rest/token","userinfo_endpoint":"https://iamtest.seu.edu.sa:443/oauth2/rest/userinfo","introspect_endpoint":"https://iamtest.seu.edu.sa:443/oauth2/rest/token/info","jwks_uri":"https://iamtest.seu.edu.sa:443/oauth2/rest/security","end_session_endpoint":"https://iamtest.seu.edu.sa:443/oauth2/rest/userlogout","scopes_supported":["openid","profile","email","address","phone"],"response_types_supported":["code","token","id_token","token id_token"],"grant_types_supported":["client_credentials","password","refresh_token","authorization_code","implicit","urn:ietf:params:oauth:grant-type:jwt-bearer"],"subject_types_supported":["public"],"id_token_signing_alg_values_supported":["RS256"],"userinfo_signing_alg_values_supported":["none"],"token_endpoint_auth_methods_supported":["client_secret_basic","client_secret_jwt"],"token_endpoint_auth_signing_alg_values_supported":["RS256"],"claims_supported":["aud","exp","iat","iss","jti","sub"],"ui_locales_supported":["en"]}}');
-  //   let doc: any = data['openid-configuration'];
-  //   this.oAuthService.loginUrl = doc.authorization_endpoint;
-  //   this.oAuthService.logoutUrl = doc.end_session_endpoint;
-  //   this.oAuthService.issuer = doc.issuer;
-  //   this.oAuthService.tokenEndpoint = doc.token_endpoint;
-  //   this.oAuthService.userinfoEndpoint = doc.userinfo_endpoint;
-  //   this.oAuthService.sessionCheckIFrameUrl = doc.check_session_iframe || this.oAuthService.sessionCheckIFrameUrl;
-  //   this.oAuthService.discoveryDocumentLoaded = true;
-  //   //this.oAuthService.grantTypesSupported = doc.grant_types_supported;
-  //   //this.oAuthService.discoveryDocumentLoadedSubject.next(doc);
-  //   if (this.oAuthService.sessionChecksEnabled) {
-  //     this.oAuthService.restartSessionChecksIfStillLoggedIn();
-  //   }
+  // custionsso() {
+  //   this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
+  //     res => {
+  //       localStorage.setItem('sid', encodeURI(res['csid']));
+  //       //this.userService.loadUserData();
+  //     },
+  //     err => {
+  //       const notapps = (document.location.href.indexOf("/apps") == -1) ? true : false;
+  //       const notpublic = (document.location.href.indexOf("/public") == -1) ? true : false;
+  //       const notcontactus = (document.location.href.indexOf("/contactus") == -1) ? true : false;
+  //       if (notapps && notpublic && notcontactus) {
+  //         this.userService.relogin();
+  //       }
+  //     }
+  //   );
   // }
 
   oidc() {
@@ -183,18 +167,18 @@ export class AppComponent implements OnInit {
     });
 
     // Setups silent refresh.
-    this.oAuthService.setupAutomaticSilentRefresh();
-    if (this.oAuthService.hasValidAccessToken()) {
-      //console.log("HAS VALID TOKEN");
-     // this.userService.loadUserData();
-    }
+    // this.oAuthService.setupAutomaticSilentRefresh();
+    // if (this.oAuthService.hasValidAccessToken()) {
+    //   //console.log("HAS VALID TOKEN");
+    //  // this.userService.loadUserData();
+    // }
     // Events.
     // On silently refreshed.
     this.oAuthService.events.subscribe(e => {
-      //console.log(e);
-            if((e => e.type === 'token_received')){
-              this.userService.loadUserData();
-            }
+      if((e => e.type === 'token_received') && !this.token_received_once){
+        this.token_received_once = true;
+        this.userService.loadUserData();
+      }
 
       // if((e => e.type === 'session_terminated')){
       //   this.authService.refreshSession();

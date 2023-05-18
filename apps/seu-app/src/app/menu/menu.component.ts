@@ -79,7 +79,7 @@ export class MenuComponent implements OnInit, AfterContentInit {
 
       });
     }
-    //console.log(this.userService.userData.activeRole);
+    // //console.log(this.userService.userData.activeRole);
     if (this.userService.userData.activeRole == ApiUserRoles.Student || this.userService.userData.activeRole == ApiUserRoles.Emplpyee || this.userService.userData.activeRole == ApiUserRoles.Instructor) {
       this.hasNoRole = false;
     } else {
@@ -92,19 +92,19 @@ export class MenuComponent implements OnInit, AfterContentInit {
     if (this.hasTasks) {
       this.task.loadStats();
     }
-    // check for leasership
-    if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
-      this.leadershipService.settings().subscribe((settings) => {
-        this.leadership = settings;
-      })
-    }
+    // // check for leasership
+    // if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
+    //   this.leadershipService.settings().subscribe((settings) => {
+    //     this.leadership = settings;
+    //   })
+    // }
 
-    // check for teaching_load
-    if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
-      this.teaching_loadService.settings().subscribe((settings) => {
-        this.teaching_load = settings;
-      })
-    }
+    // // check for teaching_load
+    // if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
+    //   this.teaching_loadService.settings().subscribe((settings) => {
+    //     this.teaching_load = settings;
+    //   })
+    // }
     
   }
   leadership = {};

@@ -48,7 +48,7 @@ export class BlankComponent implements OnInit {
     translate.addLangs(['ar', 'en']);
     translate.setDefaultLang('ar');
 
-    //
+    
     this.userService.userDataSubject.subscribe(res => {
       if (res != null) {
         this.sessionloaded = true;
@@ -56,6 +56,7 @@ export class BlankComponent implements OnInit {
           ? document.getElementById('bodyloading').remove()
           // tslint:disable-next-line: no-unused-expression
           : '';
+        
         if ((this.userService.userData.role == "Student") && this.userService.userData.COMMITTE_CONFIRM == 0) {
           this.router.navigate(['/committe-confirm/committe']);
         }
@@ -114,7 +115,7 @@ export class BlankComponent implements OnInit {
     this.translate.use(lang);
   }
   ngOnInit() {
-    this.showOtpConfirm();
+    //this.showOtpConfirm();
   }
 
   showOtpConfirm(){
