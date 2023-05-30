@@ -123,30 +123,30 @@ export class AppComponent implements OnInit {
 
       this.signedIn = this.authService.isSignedIn();
 
-      // this.authService.userChanged().subscribe(
-      // (user) => {
-      //     //console.log("USER CHECNGED",user);
-      // });
+      this.authService.userChanged().subscribe(
+      (user) => {
+          //console.log("USER CHECNGED",user);
+      });
       //this.userService.relogin();
     }
     
   }
-  // custionsso() {
-  //   this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
-  //     res => {
-  //       localStorage.setItem('sid', encodeURI(res['csid']));
-  //       //this.userService.loadUserData();
-  //     },
-  //     err => {
-  //       const notapps = (document.location.href.indexOf("/apps") == -1) ? true : false;
-  //       const notpublic = (document.location.href.indexOf("/public") == -1) ? true : false;
-  //       const notcontactus = (document.location.href.indexOf("/contactus") == -1) ? true : false;
-  //       if (notapps && notpublic && notcontactus) {
-  //         this.userService.relogin();
-  //       }
-  //     }
-  //   );
-  // }
+  custionsso() {
+    this.http.jsonp(environment.ssolink + '/sess.php', "callback").subscribe(
+      res => {
+        localStorage.setItem('sid', encodeURI(res['csid']));
+        //this.userService.loadUserData();
+      },
+      err => {
+        const notapps = (document.location.href.indexOf("/apps") == -1) ? true : false;
+        const notpublic = (document.location.href.indexOf("/public") == -1) ? true : false;
+        const notcontactus = (document.location.href.indexOf("/contactus") == -1) ? true : false;
+        if (notapps && notpublic && notcontactus) {
+          this.userService.relogin();
+        }
+      }
+    );
+  }
 
   oidc() {
     this.oAuthService.configure(oAuthDevelopmentConfig);
@@ -167,16 +167,15 @@ export class AppComponent implements OnInit {
     });
 
     // Setups silent refresh.
-    // this.oAuthService.setupAutomaticSilentRefresh();
-    // if (this.oAuthService.hasValidAccessToken()) {
-    //   //console.log("HAS VALID TOKEN");
-    //  // this.userService.loadUserData();
-    // }
+    this.oAuthService.setupAutomaticSilentRefresh();
+    if (this.oAuthService.hasValidAccessToken()) {
+      //console.log("HAS VALID TOKEN");
+     // this.userService.loadUserData();
+    }
     // Events.
     // On silently refreshed.
     this.oAuthService.events.subscribe(e => {
-      if((e => e.type === 'token_received') && !this.token_received_once){
-        this.token_received_once = true;
+      if((e => e.type === 'token_received')){
         this.userService.loadUserData();
       }
 

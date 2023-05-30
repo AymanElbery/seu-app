@@ -93,18 +93,18 @@ export class MenuComponent implements OnInit, AfterContentInit {
       this.task.loadStats();
     }
     // // check for leasership
-    // if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
-    //   this.leadershipService.settings().subscribe((settings) => {
-    //     this.leadership = settings;
-    //   })
-    // }
+    if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
+      this.leadershipService.settings().subscribe((settings) => {
+        this.leadership = settings;
+      })
+    }
 
     // // check for teaching_load
-    // if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
-    //   this.teaching_loadService.settings().subscribe((settings) => {
-    //     this.teaching_load = settings;
-    //   })
-    // }
+    if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
+      this.teaching_loadService.settings().subscribe((settings) => {
+        this.teaching_load = settings;
+      })
+    }
     
   }
   leadership = {};

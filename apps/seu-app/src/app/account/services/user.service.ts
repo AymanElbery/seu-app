@@ -176,7 +176,7 @@ export class UserService extends BaseService {
     } else {
       localStorage.setItem("userreloaded", "" + (reqseq + 1));
       console.log("UPDATE 1");
-      //this.loadUserData();
+      this.loadUserData();
     }
   }
   loadUserData() {
@@ -189,12 +189,14 @@ export class UserService extends BaseService {
             this.userData.activeRole = this.userData.role;
             this.userDataLoaded = true;
             this.pushUserDataChanges();
+            return this.userData;
           } else {
-            window.location.href = "https://apps.seu.edu.sa/offline/";
+            this.userErroCode = res['errCode'];
+            //this.errorRedirect();
           }
         },
           err => {
-            window.location.href = "https://apps.seu.edu.sa/offline/";
+            //window.location.href = "https://seu.edu.sa";
             // this.errorRedirect();
             // if (localStorage.getItem("userreloaded")) {
             //   localStorage.removeItem("userreloaded");
@@ -210,7 +212,7 @@ export class UserService extends BaseService {
   // }
   pushUserDataChanges() {
     this.userDataSubject.next(this.userData);
-    //this.userDataObservable.next(this.userData);
+    this.userDataObservable.next(this.userData);
   }
 
   getActiveRoleDetails() {

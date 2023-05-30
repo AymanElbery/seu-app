@@ -133,6 +133,7 @@
         "mysystemNotes": ""
     },
     "menu": {
+        "note_hr": "You can access the services that were previously available in the (My Data / My Inquiries / My Requests) lists through the Human Resources Services icon.",
         "grades": "التقديرات قبل حساب المعدل",
         "myservices": "My Services",
         "ugservices": "Undergradulate",

@@ -3,6 +3,14 @@
         <div class="col-md-12 ">
             <div class="row ">
                 <div class="col-md-7">
+                    <div *ngIf="userService.userData && (userService.userData.activeRole=='Instructor' || userService.userData.activeRole=='Employee')" class="row mb-5">
+                        <div class="col-12 alert alert-primary alert-dismissible fade show text-left" role="alert">
+                            <strong>{{ "menu.note_hr" | translate}}</strong>
+                            <button type="button" class="close text-right" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
                     <div class="widget">
                         <div class="card">
                             <div class="widget-header">
@@ -19,6 +27,13 @@
                                 *ngIf="userService.userData && userService.userData.activeRole=='Employee'"
                                 style="padding: 0 15px">
                                 <div class="row">
+                                    <div class="col-md-4 new-ser">
+                                        <p><a target="_blank" href="http://erpgate.seu.edu.sa">
+                                                <img src="assets/images/browser.png">
+                                                {{"menu.erp_gate" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
@@ -50,7 +65,7 @@
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank"
-                                                href="https://lms.seu.edu.sa">
+                                                href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_175_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab">
                                                 <img src="assets/images/blackboard.png"> {{"menu.BLACKBOARD" |
                                                 translate}} </a>
                                         </p>
@@ -188,13 +203,7 @@
                                             </a>
                                         </p>
                                     </div>
-                                    <div class="col-md-4 new-ser">
-                                        <p><a target="_blank" href="http://erpgate.seu.edu.sa">
-                                                <img src="assets/images/browser.png">
-                                                {{"menu.erp_gate" | translate}}
-                                            </a>
-                                        </p>
-                                    </div>
+                                    
                                     <div *ngIf="userService.userData.email == 'malkhalaf@seu.edu.sa' " class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank" href="https://app.powerbi.com/groups/me/reports/7bab5c80-f5fb-47ae-beb7-8aca8eb36f49?ctid=1f00763a-1f87-473b-bba1-b6c746af03e4&pbi_source=linkShare&bookmarkGuid=f591f562-9de3-485d-ae37-d9f07ae8b301">
@@ -209,6 +218,13 @@
                                 style="padding: 0 15px">
                                 <div class="row">
                                     <div class="col-md-4 new-ser">
+                                        <p><a target="_blank" href="http://erpgate.seu.edu.sa">
+                                                <img src="assets/images/browser.png">
+                                                {{"menu.erp_gate" | translate}}
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank" href="https://outlook.office365.com/owa/seu.edu.sa">
                                                 <img src="assets/images/mail.png"> {{"menu.email" | translate}} </a>
@@ -217,7 +233,7 @@
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank"
-                                                href="https://lms.seu.edu.sa">
+                                                href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_175_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab">
                                                 <img src="assets/images/blackboard.png">
                                                 <span class="text-eng"> {{"menu.BLACKBOARD" | translate}}</span> </a>
                                         </p>
@@ -397,13 +413,7 @@
                                             </a>
                                         </p>
                                     </div>
-                                    <div class="col-md-4 new-ser">
-                                        <p><a target="_blank" href="http://erpgate.seu.edu.sa">
-                                                <img src="assets/images/browser.png">
-                                                {{"menu.erp_gate" | translate}}
-                                            </a>
-                                        </p>
-                                    </div>
+                                    
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a [href]="jobs_gate_url" target="_blank">
@@ -434,7 +444,7 @@
                                 <div class="row">
                                     <div class="col-md-4 new-ser">
                                         <a target="_blank"
-                                            href="https://lms.seu.edu.sa">
+                                            href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_175_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab">
                                             <img src="assets/images/blackboard.png">
                                             <span class="text-eng"> {{"menu.BLACKBOARD" | translate}}</span>
 
@@ -587,7 +597,7 @@
                                     <div class="col-md-4 new-ser">
                                         <p>
                                             <a target="_blank"
-                                                href="https://lms.seu.edu.sa">
+                                                href="https://lms.seu.edu.sa/auth-saml/saml/login?apId=_175_1&redirectUrl=https%3A%2F%2Flms.seu.edu.sa%2Fwebapps%2Fportal%2Fexecute%2FdefaultTab">
                                                 <img src="assets/images/blackboard.png"> {{"menu.BLACKBOARD" |
                                                 translate}}</a>
                                         </p>
