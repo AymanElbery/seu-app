@@ -17,8 +17,8 @@
                 <tbody>
                   <tr>
                     <th >الإسم</th>
-                    <th >{{ info['new_data']['NAME_AR'] }}</th>
-                    <th >{{ info['new_data']['NAME_EN'] }}</th>
+                    <th >{{ info['student_data']['FULL_NAME_AR'] }}</th>
+                    <th >{{ info['student_data']['FULL_NAME_EN'] }}</th>
                     <th >Name</th>
                   </tr>
                   <tr>
@@ -59,15 +59,9 @@
                   </tr>
                   <tr>
                     <th >الفصل الدراسي</th>
-                    <th >{{ info['term']['TERM_DESC_HIJRI']}}</th>
-                    <th >{{ info['term']['TERM_DESC_EN'] }}</th>
+                    <th >{{ info['GRADUATION_TERM']}}</th>
+                    <th >{{ info['GRADUATION_TERM']}}</th>
                     <th >TERM</th>
-                  </tr>
-                  <tr>
-                    <th >تاريخ الإعتماد</th>
-                    <th >{{ info['commit_date']['HIGRY_DATE']}}</th>
-                    <th >{{ info['commit_date']['GEOGRY_DATE']}}</th>
-                    <th >Date</th>
                   </tr>
                 </tbody>
               </table>
