@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { BlankComponent } from './home/blank.component';
+import { PublicationRewardsSystemComponent } from './policies/publication-rewards-system/publication-rewards-system.component';
 
 import { PrintLayoutComponent } from './PrintExample/print-layout/print-layout.component';
 import { PrintFileComponent } from './PrintExample/print-file/print-file.component';

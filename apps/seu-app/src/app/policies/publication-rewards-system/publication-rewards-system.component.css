@@ -1,0 +1,18 @@
+.introduction, .first, .second, .third {
+    color: #FFF;
+    background: linear-gradient(to left, #5b3283, #3580ab, #5db5b3);
+    padding: 1px 10px;
+    border-radius: 15px;
+}
+
+ul.parent-ul{
+    list-style-type: decimal;
+}
+
+ul.child-ul{
+    list-style-type: square ;
+}
+
+table tr th, table tr td{
+    text-align: center;
+}

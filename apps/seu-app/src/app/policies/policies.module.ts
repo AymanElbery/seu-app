@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { AppLazyTransModule } from '../app.lazytrans.module';
 import { PoliciesRoutingModule } from './policies-routing.module';
 import { SecurityPolicyComponent } from './security-policy/security-policy.component';
+import { PublicationRewardsSystemComponent } from './publication-rewards-system/publication-rewards-system.component';
 
 @NgModule({
   declarations: [ 
-    SecurityPolicyComponent
+    SecurityPolicyComponent,
+    PublicationRewardsSystemComponent
   ],
   entryComponents: [],
   imports: [
