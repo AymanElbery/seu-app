@@ -16,6 +16,8 @@ import { TermExecuseCoronaComponent } from './term-execuse-corona/term-execuse-c
 import { AddTermExecuseCoronaComponent } from './term-execuse-corona/diag/add-term-execuse-corona/add-term-execuse-corona.component';
 import { TermExecuseCoronaService } from './services/term-execuse-corona.service';
 import { StudyPostponeComponent } from './study-postpone/study-postpone.component';
+import { AdmitionPostponeComponent } from './admition-postpone/admition-postpone.component';
+import { AdmitionPostponeService } from './services/admition-postpone.service';
 import { StudyPostponeService } from './services/study-postpone.service';
 import { AddStudyPostponeComponent } from './study-postpone/diag/add-study-postpone/add-study-postpone.component';
 import { StudyPostponeCoronaComponent } from './study-postpone-corona/study-postpone-corona.component';
@@ -41,6 +43,7 @@ import { AppLazyTransModule } from '../app.lazytrans.module';
 import { SeucommonModule } from '../seucommon/seucommon.module';
 import { MasterCourseEqualizeComponent } from './course-equalize/course-equalize.component';
 import { AddCourseEqualizeComponent } from './course-equalize/dialog/add-course-equalize/add-course-equalize.component';
+import { AddAdmitionPostponeComponent } from './admition-postpone/diag/add-admition-postpone/add-admition-postpone.component';
 
 @NgModule({
   declarations: [AddWithdrawalRequestComponent
@@ -65,9 +68,9 @@ import { AddCourseEqualizeComponent } from './course-equalize/dialog/add-course-
     AddExamExecuseComponent,
     AddLecturesExecusesComponent,
     MasterCourseEqualizeComponent,
-    AddCourseEqualizeComponent
-
-
+    AddCourseEqualizeComponent,
+    AdmitionPostponeComponent,
+    AddAdmitionPostponeComponent
   ],
   entryComponents: [AddWithdrawalRequestComponent,
     AddTermExecuseComponent,
@@ -79,7 +82,8 @@ import { AddCourseEqualizeComponent } from './course-equalize/dialog/add-course-
     AddObjectExamComponent,
     AddExamExecuseComponent,
     AddLecturesExecusesComponent,
-    AddCourseEqualizeComponent
+    AddCourseEqualizeComponent,
+    AddAdmitionPostponeComponent
   ],
   imports: [
     CommonModule,
@@ -94,8 +98,14 @@ import { AddCourseEqualizeComponent } from './course-equalize/dialog/add-course-
     AppLazyTransModule,
     SeucommonModule
   ],
-  providers: [UniversityWithdrawalService,
-    TermExecuseService, StudyPostponeService, ReEnrollService, StudyPostponeCoronaService, TermExecuseCoronaService,
+  providers: [
+    UniversityWithdrawalService,
+    TermExecuseService, 
+    StudyPostponeService, 
+    ReEnrollService, 
+    StudyPostponeCoronaService, 
+    TermExecuseCoronaService,
+    AdmitionPostponeService
   ]
 })
 export class MasterAcademicRequestsModule { }

@@ -1,0 +1,43 @@
+<!-- Modal -->
+<mat-dialog-content>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="exampleModalLabel">{{"services.admition_postpone_request.title"|translate}}</h5>
+      </div>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <div class="modal-body">
+          <section class="ser-state">
+            <div class="container">
+              <div class="row ser-block">
+                <div class="col-md-12 col-sm-12">
+                  <div class="state">
+                    <h6>{{"services.admition_postpone_request.reason"|translate}}</h6>
+                    <textarea name="reason" #reason="ngModel" [(ngModel)]="postpone.reason" class="form-control">
+                                     </textarea>
+                  </div>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-info"></div>
+                  </div>
+                </div>
+
+                <div class="progress progress-sm">
+                  <div class="progress-bar bg-info"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="closeDiag()" class="btn btn-outline"><i class="ik ik-x"></i>
+            {{"general.cancel"|translate}}</button>
+          <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i>
+            {{"general.save"|translate}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</mat-dialog-content>

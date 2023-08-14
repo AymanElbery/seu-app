@@ -4,6 +4,7 @@ import { UniversityWithdrawalComponent } from './university-withdrawal/universit
 import { TermExecuseComponent } from './term-execuse/term-execuse.component';
 import { TermExecuseCoronaComponent } from './term-execuse-corona/term-execuse-corona.component';
 import { StudyPostponeComponent } from './study-postpone/study-postpone.component';
+import { AdmitionPostponeComponent } from './admition-postpone/admition-postpone.component';
 import { StudyPostponeCoronaComponent } from './study-postpone-corona/study-postpone-corona.component';
 import { ReEnrollComponent } from './re-enroll/re-enroll.component';
 import { CancelCourseComponent } from './cancel-course/cancel-course.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
       { path: 'termexecuse', component: TermExecuseComponent , data: { title: 'الخدمات الإلكترونية | الاعتذار عن الفصل - ماجيستير' }},
       { path: 'termexecuse-corona', component: TermExecuseCoronaComponent },
       { path: 'studypostpone', component: StudyPostponeComponent , data: { title: 'الخدمات الإلكترونية | تأجيل الفصل الدراسي - ماجيستير' }},
+      { path: 'admition_postpone', component: AdmitionPostponeComponent , data: { title: 'الخدمات الإلكترونية | طلب تأجيل القبول - ماجيستير' }},
       { path: 'studypostpone-corona', component: StudyPostponeCoronaComponent},
       { path: 'reEnroll', component: ReEnrollComponent , data: { title: 'الخدمات الإلكترونية | إعادة القيد - ماجيستير' }},
       { path: 'cancelcourse', component: CancelCourseComponent , data: { title: 'الخدمات الإلكترونية | حذف مقرر دراسي - ماجيستير' }},
