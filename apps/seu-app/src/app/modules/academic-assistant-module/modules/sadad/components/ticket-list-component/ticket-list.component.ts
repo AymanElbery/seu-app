@@ -18,6 +18,8 @@ export class TicketListComponent {
   tickets;
   isLoading = false;
   std_id;
+  template_status;
+  template_status_msg;
   constructor(
     public userService: UserService,
     public servie: SadadService,
@@ -49,6 +51,8 @@ export class TicketListComponent {
         this.isLoading = false;
         this.tickets = response.data.requests;
         this.can_add_new = response.data.can_add_new;
+        this.template_status = response.data.template_status;
+        this.template_status_msg = response.data.template_status_msg;
         this.toastr.push(response['messages']);
       },
       error => {

@@ -2,9 +2,9 @@
 
   <service-header [title]="'general.title' |translate" [desc]="'sadad.title' |translate"></service-header>
   <seu-loader [isLoading]="isLoading"></seu-loader>
-  <!-- <div *ngIf="!can_add_new" class="alert alert-danger text-center">
-    <strong>النظام الآن تحت الصيانة</strong>
-  </div> -->
+  <div *ngIf="template_status_msg" class="alert alert-info text-center">
+    <strong>{{ template_status_msg }}</strong>
+  </div>
   <div class="widget">
     <div class="widget-header">
       <h3 class="widget-title">
@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="table-responsive">
-          <table class="table table-striped table-bordered">
+          <table class="table table-striped table-bordered" *ngIf="template_status">
             <thead>
               <tr>
                 <th scope="col">{{ "general.ticket_id" | translate}}</th>
@@ -44,6 +44,22 @@
                   &nbsp;
                   <a *ngIf="ticket.status == 'Resolved' || ticket.status == 'Closed'" class="btn btn-primary" target="_blank" href="https://bluesurvey.seu.edu.sa/Blue/a.aspx?l=211_1_AAAAAAAABs8">{{ "general.rating" | translate}}</a>
                 </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-striped table-bordered" *ngIf="!template_status">
+            <thead>
+              <tr>
+                <th scope="col">{{ "general.ticket_id" | translate}}</th>
+                <th scope="col">{{ "general.created_at" | translate}}</th>
+                <th scope="col">{{ "general.ticket_status" | translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let ticket of tickets; let i = index">
+                <td>{{ ticket.TICKET_ID }}</td>
+                <td>{{ ticket.CREATED_AT }}</td>
+                <td>تحت الإجراء</td>
               </tr>
             </tbody>
           </table>

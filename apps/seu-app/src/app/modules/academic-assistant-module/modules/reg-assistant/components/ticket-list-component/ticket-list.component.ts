@@ -20,6 +20,8 @@ export class TicketListComponent {
   requests;
   isLoading = false;
   std_id;
+  template_status;
+  template_status_msg;
   constructor(
     public userService: UserService,
     public reqAssistantService: ReqAssistantService,
@@ -69,6 +71,8 @@ export class TicketListComponent {
         this.isLoading = false;
         this.tickets = response.data.requests;
         this.requests = response.data.requestsCrn;
+        this.template_status = response.data.template_status;
+        this.template_status_msg = response.data.template_status_msg;
         this.can_add_new = response.data.can_add_new;
         this.toastr.push(response['messages']);
       },
