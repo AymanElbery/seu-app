@@ -99,6 +99,10 @@ export class SDService {
         return this.get(this._controller + "/details/" + id);
     }
 
+    getTicketResolution(id) {
+        return this.get(this._controller + "/resolution/" + id);
+    }
+
     delete(id) {
         return this.get(this._controller + "/delete/" + id);
     }

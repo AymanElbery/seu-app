@@ -13,8 +13,10 @@ import { AppToasterService } from 'src/app/shared/services/app-toaster';
 export class TicketDetailsComponent implements OnInit {
 
   isLoading;
-  ticket;
+  ticketResolution;
+  ticketDetails;
   ticketId;
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data,
     public dialogRef: MatDialogRef<TicketDetailsComponent>,
@@ -23,8 +25,8 @@ export class TicketDetailsComponent implements OnInit {
     public userService: UserService,
     private toastr: AppToasterService
   ) {
-    this.ticketId = data;
-    this.getTicketDetails();
+    this.ticketDetails = data;
+    this.getTicketResolution();
   }
 
   ngOnInit() {
@@ -32,16 +34,16 @@ export class TicketDetailsComponent implements OnInit {
   }
 
   addNote(data) {
-    this.ticket.conversations.push(data);
+    this.ticketDetails.conversations.push(data);
   }
 
-  getTicketDetails() {
+  getTicketResolution() {
     this.isLoading = true;
-    this.reqAssistantService.getTicketDetails(this.ticketId).subscribe(
+    this.reqAssistantService.getTicketResolution(this.ticketDetails.id).subscribe(
       (response: any) => {
         if (response) {
           this.isLoading = false;
-          this.ticket = response.data.ticket;
+          this.ticketResolution = response.data.result.resolution;
         }
       },
       error => {

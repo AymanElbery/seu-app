@@ -36,7 +36,7 @@
                 <td>{{ ticket.created_time.display_value }}</td>
                 <td>{{ ticket.status }}</td>
                 <td>
-                  <button class="btn btn-primary" (click)="openDetailsDialoge(ticket.id)">{{ "general.view" |
+                  <button class="btn btn-primary" (click)="openDetailsDialoge(ticket)">{{ "general.view" |
                     translate}}</button>
                   &nbsp;
                   <!-- <button class="btn btn-primary" *ngIf="ticket.status == 'Resolved' || ticket.status == 'Closed'" (click)="reOpen(ticket.id)">{{
