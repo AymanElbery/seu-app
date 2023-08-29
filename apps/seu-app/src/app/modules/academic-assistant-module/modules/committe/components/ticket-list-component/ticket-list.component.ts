@@ -67,12 +67,12 @@ export class TicketListComponent implements OnInit, OnDestroy{
     )
   }
 
-  openDetailsDialoge(id) {
+  openDetailsDialoge(ticket) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.disableClose = false;
     dialogConfig.width = '50%';
-    dialogConfig.data = id;
+    dialogConfig.data = ticket;
 
     let dialogref = this.dialog.open(TicketDetailsComponent, dialogConfig);
     dialogref.afterClosed().subscribe(refresh => {
