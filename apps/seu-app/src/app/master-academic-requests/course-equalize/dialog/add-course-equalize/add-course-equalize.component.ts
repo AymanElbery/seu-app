@@ -51,6 +51,7 @@ export class AddCourseEqualizeComponent implements OnInit {
     
     this.reqData = this.acadmicProc.reqData as CourseEqualMaster;
     this.coursesList = (JSON.parse(JSON.stringify(this.reqData.courses)));
+    
   }
   handleInputChange(e) {
     const file = e.dataTransfer ? e.dataTransfer.files[0] : e.target.files[0];
@@ -138,7 +139,7 @@ export class AddCourseEqualizeComponent implements OnInit {
       });
     }else{
       this.coursesList.forEach(item => {
-        if (item.checked && item.TRNS_GRADE && item.TRNS_YEAR && item.TRNS_HRS) {
+        if (item.checked && item.TRNS_GRADE && item.TRNS_HRS) {
           courses.push({
             CRSE: item.id,
             TRNS_GRADE: item.TRNS_GRADE,

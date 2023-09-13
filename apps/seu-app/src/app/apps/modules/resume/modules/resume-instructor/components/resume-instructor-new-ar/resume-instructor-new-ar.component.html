@@ -17,7 +17,7 @@
         <div class="profile">
           <img *ngIf="profile == 'notExist' && !imagePath" src="assets/images/profile.png">
           <img *ngIf="profile == 'notExist' && imagePath" [src]="imagePath">
-          <img *ngIf="profile != 'notExist' && !imagePath" src="https://seuapps.seu.edu.sa/newservices/api/profile.php?image={{profile}}">
+          <img *ngIf="profile != 'notExist' && !imagePath" src="https://api.seu.edu.sa/newservices/api/profile.php?image={{profile}}">
           <img *ngIf="profile != 'notExist' && imagePath" [src]="imagePath">
           <div class="form-group">
             <input type="file" accept="*/*" (change)="handleInputChange($event)" id="photo" class="form-control-file form-control">

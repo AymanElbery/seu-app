@@ -85,7 +85,7 @@ export class RefundContinueComponent implements OnInit {
       if(!this.show_certificate){
         e.preventDefault();
         this.show_certificate = true;
-        window.open("https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/bank_cerificate_template.pdf", '_blank');
+        window.open("https://api.seu.edu.sa/newservices/api/docs/ServicesInstructions/bank_cerificate_template.pdf", '_blank');
       }
     }
 

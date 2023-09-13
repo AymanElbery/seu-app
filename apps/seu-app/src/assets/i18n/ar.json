@@ -1716,83 +1716,83 @@
         "university" : {
             "file_1" : {
                 "text": "إدارة المراجعة الداخلية",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_file1_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_file1_link.pdf"
             },
             "file_2" : {
                 "text": "الإدارة القانونية",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_file2_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_file2_link.pdf"
             },
             "file_3" : {
                 "text": "إدارة العلاقات العامة و الإعلام",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_file3_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_file3_link.pdf"
             }
         },
         "university_agency": {
             "file_1" : {
                 "text": "وكالة الجامعة للتخطيط والتطوير والجودة",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_file1_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_file1_link.pdf"
             }
         },
         "university_agency_gr": {
             "file_1" : {
                 "text": "عمادة البحث العلمي",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_gr_file1_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_gr_file1_link.pdf"
             },
             "file_2" : {
                 "text": "عمادة الدراسات العليا",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_gr_file2_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_gr_file2_link.pdf"
             },
             "file_3" : {
                 "text": "إدارة الابتعاث",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_gr_file3_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_gr_file3_link.pdf"
             }
         },
         "university_agency_all": {
             "file_1" : {
                 "text": "وكالة الجامعة لشؤون الفروع",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file1_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file1_link.pdf"
             },
             "file_2" : {
                 "text": "وكالة الجامعة لشؤون الطالبات",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file2_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file2_link.pdf"
             },
             "file_3" : {
                 "text": "وكالة الجامعة - إدارة المستودعات",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file3_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file3_link.pdf"
             },
             "file_4" : {
                 "text": "وكالة الجامعة - إدارة العقود و المشتريات",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file4_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file4_link.pdf"
             },
             "file_5" : {
                 "text": "وكالة الجامعة - عمادة تقنية المعلومات و تكنولوجيا التعليم ",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file5_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file5_link.pdf"
             },
             "file_6" : {
                 "text": "وكالة الجامعة - إدارة الأمن و السلامة ",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file6_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file6_link.pdf"
             },
             "file_7" : {
                 "text": "وكالة الجامعة - إدارة الحركة و النقل ",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file7_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file7_link.pdf"
             },
             "file_8" : {
                 "text": "وكالة الجامعة - إدارة الإتصالات الإدارية ",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file8_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file8_link.pdf"
             },
             "file_9" : {
                 "text": "وكالة الجامعة - عمادة الموارد البشرية ",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file9_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_agency_all_file9_link.pdf"
             }
         },
         "university_educational_affairs": {
             "file_1" : {
                 "text": "وكالة الجامعة للشؤون التعليمية",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_educational_affairs_file1_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_educational_affairs_file1_link.pdf"
             },
             "file_2" : {
                 "text": "عمادة القبول و شؤون الطلاب - مركز العناية بالطالب",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/procedure_guide/university_educational_affairs_file2_link.pdf"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/procedure_guide/university_educational_affairs_file2_link.pdf"
             }
         }
     },
@@ -1802,107 +1802,107 @@
         "items": {
             "file_1": {
                 "text": "السياسة العامة للأمن السيبراني",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file1_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file1_link.docx"
             },
             "file_2": {
                 "text": "الهيكل التنظيمي للأمن السيبراني",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file2_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file2_link.docx"
             },
             "file_3": {
                 "text": "سياسة اختبار الاختراق",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file3_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file3_link.docx"
             },
             "file_4": {
                 "text": "سياسة إدارة الثغرات",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file4_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file4_link.docx"
             },
             "file_5": {
                 "text": "سياسة إدارة حزم التحديثات والإصلاحات",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file5_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file5_link.docx"
             },
             "file_6": {
                 "text": "سياسة إدارة حوادث وتهديدات الأمن السيبراني",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file6_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file6_link.docx"
             },
             "file_7": {
                 "text": "سياسة إدارة سجلات الأحداث ومراقبة الأمن السيبراني",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file7_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file7_link.docx"
             },
             "file_8": {
                 "text": "سياسة إدارة مخاطر الأمن السيبراني",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file8_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file8_link.docx"
             },
             "file_9": {
                 "text": "سياسة إدارة هويات الدخول والصلاحيات",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file9_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file9_link.docx"
             },
             "file_10": {
                 "text": "سياسة الاستخدام المقبول للأصول",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file10_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file10_link.docx"
             },
             "file_11": {
                 "text": "سياسة الإعدادات والتحصين",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file11_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file11_link.docx"
             },
             "file_12": {
                 "text": "سياسة الالتزام بتشريعات وتنظيمات الأمن السيبراني",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file12_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file12_link.docx"
             },
             "file_13": {
                 "text": "سياسة الأمن السيبراني المتعلّق بالأطراف الخارجية",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file13_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file13_link.docx"
             },
             "file_14": {
                 "text": "سياسة الأمن السيبراني المتعلق بالأمن المادي",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file14_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file14_link.docx"
             },
             "file_15": {
                 "text": "سياسة الأمن السيبراني المتعلق بالحوسبة السحابية والاستضافة",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file15_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file15_link.docx"
             },
             "file_16": {
                 "text": "سياسة الأمن السيبراني ضمن استمرارية الأعمال",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file16_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file16_link.docx"
             },
             "file_17": {
                 "text": "سياسة الأمن السيبراني للموارد البشرية",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file17_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file17_link.docx"
             },
             "file_18": {
                 "text": "سياسة التشفير",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file18_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file18_link.docx"
             },
             "file_19": {
                 "text": "سياسة الحماية من البرمجيات الضارة",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file19_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file19_link.docx"
             },
             "file_20": {
                 "text": "سياسة أمن أجهزة المستخدمين والأجهزة المحمولة والأجهزة الشخصية",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file20_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file20_link.docx"
             },
             "file_21": {
                 "text": "سياسة أمن البريد الإلكتروني",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file21_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file21_link.docx"
             },
             "file_22": {
                 "text": "سياسة أمن الخوادم",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file22_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file22_link.docx"
             },
             "file_23": {
                 "text": "سياسة أمن الشبكات",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file23_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file23_link.docx"
             },
             "file_24": {
                 "text": "سياسة أمن قواعد البيانات",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file24_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file24_link.docx"
             },
             "file_25": {
                 "text": "سياسة حماية تطبيقات الويب",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file25_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file25_link.docx"
             },
             "file_26": {
                 "text": "سياسة مراجعة وتدقيق الأمن السيبراني",
-                "link": "https://seuapps.seu.edu.sa/newservices/api/docs/cybersecurity/file26_link.docx"
+                "link": "https://api.seu.edu.sa/newservices/api/docs/cybersecurity/file26_link.docx"
             }
         }
     },
@@ -1974,15 +1974,15 @@
             "GuidelinesList": [
                 {
                     "title": "تعليمات ما قبل الاختبارات",
-                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
+                    "link": "https://api.seu.edu.sa/newservices/api/docs/ExamsInstructions/BeforeExam.pdf"
                 },
                 {
                     "title": "تعليمات أثناء الاختبارات",
-                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam.pdf"
+                    "link": "https://api.seu.edu.sa/newservices/api/docs/ExamsInstructions/DuringExam.pdf"
                 },
                 {
                     "title": "المتطلبات الفنية للأجهزة المحمولة/ اللوحية خاص بالاختبارات الإلكترونية",
-                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements.pdf"
+                    "link": "https://api.seu.edu.sa/newservices/api/docs/ExamsInstructions/TechnicalRequirements.pdf"
                 },
                 {
                     "title": "فيديو تعريفي لكيفية أداء الاختبار الإلكتروني",
@@ -1990,27 +1990,27 @@
                 },
                 {
                     "title": "الاختبارات الإلكترونية باستخدام أجهزة الحاسوب المكتبية/المحمولة​ (Windows & Mac)",
-                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
+                    "link": "https://api.seu.edu.sa/newservices/api/docs/ExamsInstructions/ACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "​الاختبارات الإلكترونية باستخدام الأجهزة اللوحية (iOS &Android )",
-                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
+                    "link": "https://api.seu.edu.sa/newservices/api/docs/ExamsInstructions/TabletACU_ExamStudentGuide.pdf"
                 },
                 {
                     "title": "الأسئلة الشائعة​",
-                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs.pdf"
+                    "link": "https://api.seu.edu.sa/newservices/api/docs/ExamsInstructions/E-Exams_FAQs.pdf"
                 },
                 {
                     "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام Mac",
-                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC.pdf"
+                    "link": "https://api.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkMAC.pdf"
                 },
                 {
                     "title": "خطوات الدخول على شبكة الجامعة لأجهزة نظام windows",
-                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN.pdf"
+                    "link": "https://api.seu.edu.sa/newservices/api/docs/ExamsInstructions/SEUNetworkWIN.pdf"
                 },
                 {
                     "title": "متطلبات وتعليمات عامة لأداء الاختبار الإلكتروني عن بعد",
-                    "link": "https://seuapps.seu.edu.sa/newservices/api/docs/ExamsInstructions/requirements-and-instructions-ar.pdf"
+                    "link": "https://api.seu.edu.sa/newservices/api/docs/ExamsInstructions/requirements-and-instructions-ar.pdf"
                 }
             ]
         }

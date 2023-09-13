@@ -24,7 +24,7 @@
           <div class="profile">
             <img *ngIf="profile == 'notExist' && !imagePath" src="assets/images/profile.png">
             <img *ngIf="profile == 'notExist' && imagePath" [src]="imagePath">
-            <img *ngIf="profile != 'notExist' && !imagePath" src="https://seuapps.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
+            <img *ngIf="profile != 'notExist' && !imagePath" src="https://api.seu.edu.sa/newservices/api-test/profile.php?image={{profile}}">
             <img *ngIf="profile != 'notExist' && imagePath" [src]="imagePath">
           </div>
         </div>

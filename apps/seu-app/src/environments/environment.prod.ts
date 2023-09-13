@@ -2,10 +2,10 @@ export const environment = {
   production: true,
   whoami_service: 'https://whoami.seu.edu.sa/api/user',
   cmslink: 'https://seu.edu.sa/umbraco/Surface/',
-  baselink: 'https://seuapps.seu.edu.sa/newservices/', 
+  baselink: 'https://api.seu.edu.sa/newservices/', 
   ssolink: 'https://eservice.seu.edu.sa/', 
   reloginlink: 'https://eservice.seu.edu.sa/', 
-  service_json: 'https://seuapps.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
+  service_json: 'https://api.seu.edu.sa/newservices/api/docs/ServicesInstructions/', //doenlaod and play vedios
   wafi_apilink: 'https://intservs.seu.edu.sa/CPTIT_SEU_WS/jersey/', // wafi
   servie_admission: 'https://apps.seu.edu.sa/newservices/api/admission',
   paymentLink: "https://apps.seu.edu.sa/newservices/api/fees",
