@@ -103,6 +103,7 @@ export class MenuComponent implements OnInit, AfterContentInit {
     if (this.userService.userData.activeRole && this.userService.userData.activeRole != 'Student') {
       this.teaching_loadService.settings().subscribe((settings) => {
         this.teaching_load = settings;
+        console.log(this.teaching_load);
       })
     }
     

@@ -82,7 +82,21 @@
                       <h6> {{"services.lecture_execuse.choose_week"|translate}}</h6>
                       <select name="week" #week="ngModel" [(ngModel)]="lectureExecuse.week" class="form-control"
                         [class.is-invalid]=" lectureExecuse.week==''">
-                        <option *ngFor="let item of reqData.weeks_list" value="{{item.id}}">{{item.value}}</option>
+                        <option value="1">الأسبوع الأول</option>
+                        <option value="2">الأسبوع الثاني</option>
+                        <option value="3">الأسبوع الثالث</option>
+                        <option value="4">الأسبوع الرابع</option>
+                        <option value="5">الأسبوع الخامس</option>
+                        <option value="6">الأسبوع السادس</option>
+                        <option value="7">الأسبوع السابع</option>
+                        <option value="8">الأسبوع الثامن</option>
+                        <option value="9">الأسبوع التاسع</option>
+                        <option value="10">الأسبوع العاشر</option>
+                        <option value="11">الأسبوع الحادي عشر</option>
+                        <option value="12">الأسبوع الثاني عشر</option>
+                        <option value="13">الأسبوع الثالث عشر</option>
+                        <option value="14">الأسبوع الرابع عشر </option>
+                        <option value="15">الأسبوع الخامس عشر</option>
                       </select>
                     </div>
                     <div class="progress progress-sm">
@@ -92,14 +106,14 @@
                   <div class="col-md-12 col-sm-12">
                     <div class="state">
                       <h6>{{"services.lecture_execuse.define_date"|translate}}</h6>
-                      <select name="date" #date="ngModel" [(ngModel)]="lectureExecuse.date" class="form-control"
+                      <!-- <select name="date" #date="ngModel" [(ngModel)]="lectureExecuse.date" class="form-control"
                         [class.is-invalid]=" lectureExecuse.date==''">
                         <option></option>
                         <option *ngFor="let item of reqData.weeks_dates[lectureExecuse.week]" value="{{item}}">{{item}}
                         </option>
-                      </select>
-                      <!-- <input style="direction: rtl;" class="form-control" name="date" #date="ngModel"
-                        [(ngModel)]="lectureExecuse.date" type="date" style="direction: rtl;text-align:right"> -->
+                      </select> -->
+                      <input style="direction: rtl;" class="form-control" name="date" #date="ngModel"
+                        [(ngModel)]="lectureExecuse.date" type="date" style="direction: rtl;text-align:right">
                     </div>
                     <div class="progress progress-sm">
                       <div class="progress-bar bg-info"></div>
