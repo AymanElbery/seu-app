@@ -10,6 +10,10 @@ export class AppToasterService {
   tryagain() {
     this.push([{ type: 'error', body: 'خطأ: حاول مرة أخري' }]);
   }
+
+  try_again_equalize() {
+    this.push([{ type: 'error', body: 'خطأ: يجب ألا يزيد حجم الملفات عن 5 ميجا' }]);
+  }
   
 
   download() {

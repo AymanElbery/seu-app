@@ -92,7 +92,7 @@ export class AddCourseEqualizeComponent implements OnInit {
       this.requesting = false;
     },
       err => {
-        this.toastr.tryagain();
+        this.toastr.try_again_equalize();
         this.requesting = false;
       });
   }

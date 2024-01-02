@@ -6,8 +6,7 @@ import { StudentService } from '../../../../services/student.service';
 import { RefundService } from '../../../../services/refund.service';
 import { RefundAddComponent } from '../refund-add/refund-add.component';
 import { RefundContinueComponent } from '../refund-continue/refund-continue.component';
-import { RefundReasonComponent } from '../refund-reason/refund-reason.component';
-
+import Swal from 'sweetalert2'
 @Component({
   selector: 'app-refund-requests',
   templateUrl: './refund-requests.component.html',
@@ -88,32 +87,20 @@ export class RefundRequestsComponent implements OnInit {
   }
 
   openReasonDialoge(reason) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = '50%';
-    dialogConfig.data = reason;
-
-    const dialogref = this.dialog.open(RefundReasonComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {
-      if (result) {
-        this.getRequests();
-      }
+    Swal.fire({
+      title: 'سبب الرفض',
+      text: reason,
+      icon: 'error',
+      confirmButtonText: 'تم'
     });
   }
 
   openReasonContDialoge(reason) {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = '50%';
-    dialogConfig.data = reason;
-
-    const dialogref = this.dialog.open(RefundReasonComponent, dialogConfig);
-    dialogref.afterClosed().subscribe(result => {
-      if (result) {
-        this.getRequests();
-      }
+    Swal.fire({
+      title: 'سبب الرفض',
+      text: reason,
+      icon: 'error',
+      confirmButtonText: 'حسناً'
     });
   }
 
